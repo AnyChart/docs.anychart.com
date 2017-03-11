@@ -1,81 +1,74 @@
 {:index 1}
 #Vertical Charts
 
-* [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
-* [Changing the Orientation On-The-Fly](#onthefly)
+* [Quick Start](#quick_start)
+* [Changing On-The-Fly](#onthefly)
+  * [Series](#series)
+  * [Chart](#chart)
+* [Supported Types](#supported_types)
 
-Most types of series can be drawn both in horizontal and vertical orientation, and this article explains how do it. It also  tells how to change the orientation of a chart on-the-fly.
+In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature – see the [Supported Types](#supported_types) section.
 
-<a name='creating_a_vertical_chart_series'></a>
-## Creating a Vertical Chart/Series
+This article explains how to create a vertical chart and how to change the orientation of a chart on-the-fly.
 
-To create a vertical chart, use one of the three chart constructors: {api:anychart#bar}anychart.bar(){api}, {api:anychart#verticalLine}anychart.verticalLine(){api}, and {api:anychart#verticalArea}anychart.verticalArea(){api}.
+## Quick Start
+
+To create a vertical chart, use one of these three chart constructors:
+* {api:anychart#verticalArea}anychart.verticalArea(){api}
+* {api:anychart#verticalLine}anychart.verticalLine(){api}
+* {api:anychart#bar}anychart.bar(){api}
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-By default, when you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}verticalArea(){api} chart constructor draws a chart with an area series: 
+You can pass your data to the chart constructor to create a series of the same type. Alternatively, you can specify the series type manually. A series supports vertical orientation if its class has has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series. You can also see the [Supported Types](#supported_types) section of this article.
+
+In the sample below, there are two series, Spline Area and Spline, created by the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} and {api:anychart.charts.Cartesian#spline}spline(){api} methods, and the chart constructor is {api:anychart#area}area(){api}:
 
 ```
 // create a data set
 var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+  ["January", 10000, 12500],
+  ["February", 12000, 15000],
+  ["March", 13000, 16500],
+  ["April", 10000, 13000],
+  ["May", 9000, 11000]
 ]);
 
-// set the chart type
-var chart = anychart.verticalArea(data);
-```
+// map the data
+var seriesData_1 = data.mapAs({x: [0], value: [1]});
+var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-{sample}BCT\_Vertical\_Charts\_01{sample}
+// create a vertical area chart
+chart = anychart.verticalArea();
 
-After creating a vertical chart, you can also specify the series type.
-
-Most of the series types in AnyChart can be vertical – to find out whether this option is available for the series you need to draw, check whether the class of the series has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series.
-
-In the sample below, the {api:anychart#verticalArea}verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two spline area series:
-
-```
-// set the chart type
-var chart = anychart.verticalArea();
-
-// create the first series, set the data and name
+// create the first series (bar)
 var series1 = chart.splineArea(seriesData_1);
-series1.name("2004");
 
-// create the second series, set the data and name  
-var series2 = chart.splineArea(seriesData_2);
-series2.name("2005");
+// create the second series (spline)
+var series2 = chart.spline(seriesData_2);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-{sample}BCT\_Vertical\_Charts\_02{sample}
-
-In the next sample there are two series, bar and line, created by the {api:anychart.charts.Cartesian#bar}bar(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods, and the chart constructor is {api:anychart#bar}bar(){api}:
-
-```
-// set the chart type
-var chart = anychart.bar();
-
-// create the first series
-var series1 = chart.bar(seriesData_1);
-
-// create the second series
-var series2 = chart.line(seriesData_2);
-```
-
-{sample}BCT\_Vertical\_Charts\_03{sample}
+{sample}BCT\_Vertical\_01{sample}
 
 <a name='onthefly'></a>
-## Changing the Orientation On-The-Fly
+## Changing On-The-Fly
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series). Please, keep in mind that it affects only the series, not the axes.
+### Series
+
+After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
+
+**Note** This setting affects only the series, not the axes.
 
 In the following sample this method is used to draw two horizontal (area) and a vertical (bar) series on the same chart:
 
 ```
-// set the chart type
+// create a chart
 var chart = anychart.area();
 
 // create the first series
@@ -91,18 +84,20 @@ var series2 = chart.column(seriesData_3);
 chart.getSeriesAt(2).isVertical(true);
 ```
 
-{sample}BCT\_Vertical\_Charts\_04{sample}
+{sample}BCT\_Vertical\_02{sample}
 
-To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the [axes](..Axes_and_Grids/Axis_Orientation) (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
+### Chart
+
+To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and [axes](..Axes_and_Grids/Axis_Orientation). So, use the **isVertical** and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods:
 
 ```
-// set the chart type
+// create a chart
 var chart = anychart.column();
 
 // create the first series
 var series1 = chart.column(seriesData_1);
 
-// create the second series, set the data and name
+// create the second series
 var series2 = chart.column(seriesData_2);
 
 // change the orientation of the series
@@ -114,4 +109,42 @@ chart.xAxis().orientation('left');
 chart.yAxis().orientation('bottom');
 ```
 
-{sample}BCT\_Vertical\_Charts\_05{sample}
+{sample}BCT\_Vertical\_03{sample}
+
+## Supported Types
+
+Here are the supported types of vertical charts:
+
+* [Bar](../Bar_Chart) (vertical column)
+* [Vertical Area](Area_Chart)
+* [Vertical Box](Box_Chart)
+* [Vertical Bubble](Bubble_Chart)
+* [Vertical Candlestick](Candlestick_Chart)
+* [Vertical Line](Line_Chart)
+* [Vertical Marker](Marker_Chart)
+* [Vertical OHLC](OHLC_Chart)
+* [Vertical Range Area](../Range_Area_Chart) 
+* [Range Bar](../Range_Bar_Chart) (vertical range column)
+
+* [Vertical Range Spline Area](../Range_Spline_Area_Chart)
+* [Vertical Range Step Area](../Range_Step_Area_Chart)  
+* [Vertical Spline](Spline_Chart)
+* [Vertical Spline Area](../Spline_Area_Chart)
+* [Vertical Step Area](../Step_Area_Chart)
+* [Vertical Step Line](../Step_Line_Chart)
+
+See also [stacked](../Stacked/Overview) charts:
+
+* [Value Stacked Bar](../Stacked/Value/Bar_Chart) (vertical value stacked column)
+* [Value Stacked Vertical Area](../Stacked/Value/Vertical_Area_Chart)
+* [Value Stacked Vertical Column](../Stacked/Value/Vertical_Column_Chart)
+
+* [Value Stacked Vertical Spline Area](../Stacked/Value/Vertical_Spline_Area_Chart)
+* [Value Stacked Vertical Step Area](../Stacked/Value/Vertical_Step_Area_Chart)
+
+* [Percent Stacked Bar](../Stacked/Percent/Vertical_Bar_Chart) (vertical percent stacked column)
+* [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)
+* [Percent Stacked Vertical Column](../Stacked/Percent/Vertical_Column_Chart)
+
+* [Percent Stacked Vertical Spline Area](../Stacked/Percent/Vertical_Spline_Area_Chart)
+* [Percent Stacked Vertical Step Area](../Stacked/Percent/Vertical_Step_Area_Chart)

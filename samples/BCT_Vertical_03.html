@@ -28,23 +28,15 @@
     // set the chart type
     var chart = anychart.column();
 
-    // create the first series, set the data and name
+    // create the first seriese
     var series1 = chart.column(seriesData_1);
-    series1.name("Sales in 2015");
 
     // create the second series, set the data and name
     var series2 = chart.column(seriesData_2);
-    series2.name("Sales in 2016");
-
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Manager");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
 
     // set the chart position and title
     chart.top(35);
-    chart.title("Changing the Orientation of a Chart");
+    chart.title("Vertical Charts: Changing On-the-Fly (Chart)");
 
     // set the container
     chart.container(stage);
