@@ -115,7 +115,7 @@ chart.yAxis().orientation('bottom');
 
 Here are the supported types of vertical charts:
 
-* [Bar](../Bar_Chart) (vertical column)
+* [Bar](../Bar_Chart)
 * [Vertical Area](Area_Chart)
 * [Vertical Box](Box_Chart)
 * [Vertical Bubble](Bubble_Chart)
@@ -124,7 +124,7 @@ Here are the supported types of vertical charts:
 * [Vertical Marker](Marker_Chart)
 * [Vertical OHLC](OHLC_Chart)
 * [Vertical Range Area](../Range_Area_Chart) 
-* [Range Bar](../Range_Bar_Chart) (vertical range column)
+* [Range Bar](../Range_Bar_Chart)
 
 * [Vertical Range Spline Area](../Range_Spline_Area_Chart)
 * [Vertical Range Step Area](../Range_Step_Area_Chart)  
@@ -135,16 +135,14 @@ Here are the supported types of vertical charts:
 
 See also [stacked](../Stacked/Overview) charts:
 
-* [Value Stacked Bar](../Stacked/Value/Bar_Chart) (vertical value stacked column)
+* [Value Stacked Bar](../Stacked/Value/Bar_Chart)
 * [Value Stacked Vertical Area](../Stacked/Value/Vertical_Area_Chart)
-* [Value Stacked Vertical Column](../Stacked/Value/Vertical_Column_Chart)
 
 * [Value Stacked Vertical Spline Area](../Stacked/Value/Vertical_Spline_Area_Chart)
 * [Value Stacked Vertical Step Area](../Stacked/Value/Vertical_Step_Area_Chart)
 
-* [Percent Stacked Bar](../Stacked/Percent/Vertical_Bar_Chart) (vertical percent stacked column)
+* [Percent Stacked Bar](../Stacked/Percent/Bar_Chart)
 * [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)
-* [Percent Stacked Vertical Column](../Stacked/Percent/Vertical_Column_Chart)
 
 * [Percent Stacked Vertical Spline Area](../Stacked/Percent/Vertical_Spline_Area_Chart)
 * [Percent Stacked Vertical Step Area](../Stacked/Percent/Vertical_Step_Area_Chart)
