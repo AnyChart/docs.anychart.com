@@ -22,10 +22,10 @@
 	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
 	// set chart type
-	chart = anychart.column3d();
+	chart = anychart.bar();
 
 	// setting title
-	chart.title("Percent Stacked 3D Column Chart");
+	chart.title("Vertical Stick Chart");
 
     // enabled grids
     chart.grid(0).enabled(true);
@@ -37,15 +37,12 @@
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
 
-	var yScale = chart.yScale();
-	yScale.stackMode("percent");
-
-	// set data
-	var series1 = chart.column(dataSet1);
+	// create series
+	var series1 = chart.stick(dataSet1);
 	series1.name("Sales 2009");
-	var series2 = chart.column(dataSet2);
+	var series2 = chart.stick(dataSet2);
 	series2.name("Sales 2010");
-	var series3 = chart.column(dataSet3);
+	var series3 = chart.stick(dataSet3);
 	series3.name("Sales 2011");
 
 	// draw chart
