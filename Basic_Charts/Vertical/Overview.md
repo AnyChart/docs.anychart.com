@@ -113,7 +113,7 @@ chart.yAxis().orientation('bottom');
 
 ## Supported Types
 
-Here is the list of supported vertical chart types:
+Here is the list of supported vertical charts:
 
 * [Bar](../Bar_Chart)
 * [Range Bar](../Range_Bar_Chart)
