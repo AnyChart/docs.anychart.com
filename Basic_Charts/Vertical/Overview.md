@@ -2,7 +2,7 @@
 #Vertical Charts
 
 * [Quick Start](#quick_start)
-* [Changing On-The-Fly](#onthefly)
+* [Changing On-the-Fly](#onthefly)
   * [Series](#series)
   * [Chart](#chart)
 * [Supported Types](#supported_types)
@@ -57,7 +57,7 @@ chart.draw();
 {sample}BCT\_Vertical\_01{sample}
 
 <a name='onthefly'></a>
-## Changing On-The-Fly
+## Changing On-the-Fly
 
 ### Series
 
