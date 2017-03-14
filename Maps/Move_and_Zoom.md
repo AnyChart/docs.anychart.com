@@ -46,7 +46,7 @@ You can decide how you want to allow user to navigate a map, this is configured 
 
 To enable or disable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
 
-To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
+To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api}. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
 
 To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){} method.
 
