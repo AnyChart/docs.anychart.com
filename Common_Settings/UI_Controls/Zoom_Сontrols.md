@@ -4,7 +4,7 @@ Zoom Controls
 
 * [Overview](#overview)
 * [Enable](#enable)
-* [Adjusting](#adjusting)
+* [Dispose](#dispose)
 
 ## Overview
 
@@ -29,6 +29,9 @@ zoomController.render();
 ```
 {sample}Maps\_ZoomControls\_01{sample}
 
+
+## Dispose
+
 If it is necessary to get rid of the Zoom Control Panel, call the {api:anychart.ui.Zoom#dispose}dispose(){api} method.
 
 ```
@@ -38,15 +41,4 @@ map.listen("click", function(){
 });
 ```
 {sample}Maps\_ZoomControls\_02{sample}
-
-
-
-
-
-## Adjusting
-
-The zooming panel consists of three buttons positioned vertically in the left-up corner of stage. The first button represents the 100% zoom, other two buttons stand for Zoom In and Zoom Out functions. Position of the panel can be easily adjusted using css.
-
-```
-```
 
