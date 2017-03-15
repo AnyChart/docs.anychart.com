@@ -279,7 +279,7 @@ As you know, AnyChart supports quite a variety of chart types. Some of them are 
 // set chart data
 var chart = funnel(data);
 
-// get fourth point
+// get point #4
 var point = chart.getPoint(3);
 ```
 
@@ -288,7 +288,7 @@ The way of managing chart's points is pretty much the same as the one in [single
 ```
 var chart = anychart.funnel(data);
 
-// get sixth point of the funnel chart
+// get the sixth point of the funnel chart
 var point = chart.getPoint(5);
 // set red inner color for the point
 point.set("fill", "red");
@@ -348,43 +348,6 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 {sample}CS\_Interactivity\_14{sample} 
 
 In this sample not the data but the series are added and removed depending on selections made:
-
-```
-chart.listen("pointsSelect", function(evt){
-var pointsNum = evt.points.length;
-console.log(pointsNum);
-var myData = [];
-
-for (var i = 0; i < pointsNum; i++) {
-  var point = evt.points[i];
-  if (!point.selected())
-    continue;
-  dataRow = data.row(point.getIndex());
-  myData.push([
-    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
-    {x: "Feb", value: dataRow[4], fill: "#520085"},
-    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
-    {x: "Apr", value: dataRow[6], fill: "#336600"},
-    {x: "May", value: dataRow[7], fill: "#0099CC"},
-    {x: "Jun", value: dataRow[8], fill: "#520085"},
-    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
-    {x: "Aug", value: dataRow[4], fill: "#520085"},
-    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
-    {x: "Oct", value: dataRow[6], fill: "#336600"},
-    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
-    {x: "Dec", value: dataRow[8], fill: "#520085"}
-  ]);
-}
-lineChart.removeAllSeries();
-lineChart.addSeries.apply(lineChart, myData);
-
-lineChart.title(pieTitle + lineSubTitle);
-lineChart.tooltip().textFormatter(function() {
-    console.log(this.value);
-    var text = 'Sales amount: $' + this.value;
-    return text;
-});
-```
 
 Check out some other drilldown samples we've got in our gallery:
  - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
