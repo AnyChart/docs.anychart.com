@@ -19,7 +19,7 @@ To build a Vertical Spline Area chart, use the {api:anychart#verticalArea}anycha
 chart = anychart.verticalArea();
 
 // create a spline area series and set the data
-var series = chart.stepArea(data);
+var series = chart.splineArea(data);
 ```
 
 {sample}BCT\_Vertical\_Spline\_Area\_Chart{sample}

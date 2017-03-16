@@ -10,13 +10,17 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 	// create data
-	var data = anychart.data.set([
-	  ["January", 0.7, 6.1],
-	  ["February", 0.6, 6.3],
-	  ["March", 1.9, 8.5],
-	  ["April", 3.1, 10.8],
-	  ["May", 5.7, 14.4]
-	]);
+	var data = [
+	  {x: "1995", low: 0.10, high: 0.15},
+	  {x: "1996", low: 0.10, high: 0.15},
+	  {x: "1997", low: 0.12, high: 0.17},
+	  {x: "1998", low: 0.13, high: 0.20},
+	  {x: "1999", low: 0.15, high: 0.20},
+	  {x: "2000", low: 0.15, high: 0.22},
+	  {x: "2001", low: 0.15, high: 0.22},
+	  {x: "2002", low: 0.19, high: 0.23},
+	  {x: "2003", low: 0.20, high: 0.23}
+	];
 
 	// create a chart
 	chart = anychart.verticalArea();
