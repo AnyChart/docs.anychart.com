@@ -13,7 +13,7 @@
   chart = anychart.financial();
 
   // chart title
-  chart.title("Multi-series");
+  chart.title("Multi-series Japanese Candlestick Chart with custom colors");
 
   // adjust x scale type
   var xScale = chart.xScale();
@@ -23,7 +23,7 @@
   xTicks.interval(0,0,1);
 
   // set first series data
-  chart.candlestick([
+  var series1 = chart.candlestick([
     {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
     {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
     {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
@@ -32,12 +32,12 @@
   ]);
 
   // set second series data
-  chart.candlestick([
-    {x: Date.UTC(2007, 7, 28), open: 522.95, high:523.10, low:522.50, close:522.52},
-    {x: Date.UTC(2007, 7, 29), open: 522.60, high:522.69, low:522.27, close:522.55},
-    {x: Date.UTC(2007, 7, 30), open: 522.49, high:522.91, low:522.38, close:522.61},
-    {x: Date.UTC(2007, 7, 31), open: 522.81, high:522.83, low:522.51, close:522.73},
-    {x: Date.UTC(2007, 8, 4),  open: 523.30, high:524.50, low:523.20, close:523.97}
+  var series2 = chart.candlestick([
+    {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close:522.52},
+    {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close:524.55},
+    {x: Date.UTC(2007, 7, 30), open: 522.49, high:527.91, low:522.38, close:526.61},
+    {x: Date.UTC(2007, 7, 31), open: 524.81, high:526.83, low:520.51, close:521.73},
+    {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close:529.97}
   ]);
 
   // set axes title
@@ -57,6 +57,29 @@
     };
     return date.toLocaleDateString("en-US", options);
   });
+
+  // set colors for the first series
+  series1.risingStroke("#0066cc");
+  series1.risingFill("#0066cc", 0.3);
+  series1.hoverRisingStroke("#0066cc", 2);
+  series1.hoverRisingFill("#0066cc", 0.1);
+  series1.selectRisingStroke("#0066cc", 4);
+  series1.selectRisingFill("#0066cc", 0.5);
+
+  series1.fallingStroke("#00cc99", 1, "10 5", "round");
+  series1.fallingFill("#00cc99", 0.3);
+  series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+  series1.hoverFallingFill("#00cc99", 0.1);
+  series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
+  series1.selectFallingFill("#00cc99", 0.5);
+
+  // set hatch for the second series
+  series2.fallingHatchFill("forwardDiagonal");
+  series2.risingHatchFill("backwardDiagonal");
+  series2.hoverFallingHatchFill("diagonalCross");
+  series2.hoverRisingHatchFill("diagonalCross");
+  series2.selectFallingHatchFill("percent20");
+  series2.selectRisingHatchFill("percent20");
 
   // draw
   chart.container("container");
