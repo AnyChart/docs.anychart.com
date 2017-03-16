@@ -27,7 +27,7 @@ var zoomController = anychart.ui.zoom();
 zoomController.target(map);
 zoomController.render();
 ```
-{sample}Maps\_ZoomControls\_01{sample}
+{sample}CS\_ZoomControls\_01{sample}
 
 
 ## Dispose
@@ -40,5 +40,5 @@ map.listen("click", function(){
   zoomController.dispose();
 });
 ```
-{sample}Maps\_ZoomControls\_02{sample}
+{sample}CS\_ZoomControls\_02{sample}
 
