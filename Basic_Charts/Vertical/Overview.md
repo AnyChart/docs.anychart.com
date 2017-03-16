@@ -2,7 +2,7 @@
 #Vertical Charts
 
 * [Quick Start](#quick_start)
-* [Changing On-the-Fly](#onthefly)
+* [Switching On-the-Fly](#onthefly)
   * [Series](#series)
   * [Chart](#chart)
 * [Supported Types](#supported_types)
@@ -57,7 +57,7 @@ chart.draw();
 {sample}BCT\_Vertical\_01{sample}
 
 <a name='onthefly'></a>
-## Changing On-the-Fly
+## Switching On-the-Fly
 
 ### Series
 
@@ -88,7 +88,7 @@ chart.getSeriesAt(2).isVertical(true);
 
 ### Chart
 
-To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical** and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods:
+To switch the orientation of the whole chart on-the-fly, you should change the orientation of both the series and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical** and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods:
 
 ```
 // create a chart
@@ -115,12 +115,13 @@ chart.yAxis().orientation('bottom');
 
 Here is the list of supported vertical charts:
 
-* [Bar](../Bar_Chart)
-* [Range Bar](../Range_Bar_Chart)
+* [Bar (Vertical Column)](../Bar_Chart)
+* [Range Bar (Vertical Column)](../Range_Bar_Chart)
 * [Vertical Area](Area_Chart)
 * [Vertical Box](Box_Chart)
 * [Vertical Bubble](Bubble_Chart)
 * [Vertical Candlestick](Candlestick_Chart)
+* [Vertical Jump Line](../Jump_Line_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
 * [Vertical OHLC](OHLC_Chart)
@@ -131,14 +132,15 @@ Here is the list of supported vertical charts:
 * [Vertical Spline Area](../Spline_Area_Chart)
 * [Vertical Step Area](../Step_Area_Chart)
 * [Vertical Step Line](../Step_Line_Chart)
+* [Vertical Stick](../Stick_Chart)
 
 See also [stacked](../Stacked/Overview) charts:
 
-* [Percent Stacked Bar](../Stacked/Percent/Bar_Chart)
+* [Percent Stacked Bar (Vertical Column)](../Stacked/Percent/Bar_Chart)
 * [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)
 * [Percent Stacked Vertical Spline Area](../Stacked/Percent/Vertical_Spline_Area_Chart)
 * [Percent Stacked Vertical Step Area](../Stacked/Percent/Vertical_Step_Area_Chart)
-* [Value Stacked Bar](../Stacked/Value/Bar_Chart)
+* [Value Stacked Bar (Vertical Column)](../Stacked/Value/Bar_Chart)
 * [Value Stacked Vertical Area](../Stacked/Value/Vertical_Area_Chart)
 * [Value Stacked Vertical Spline Area](../Stacked/Value/Vertical_Spline_Area_Chart)
 * [Value Stacked Vertical Step Area](../Stacked/Value/Vertical_Step_Area_Chart)
