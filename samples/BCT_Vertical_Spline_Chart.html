@@ -19,13 +19,13 @@
 	];
 
 	// create a chart
-	chart = anychart.verticalArea();
+	chart = anychart.verticalLine();
 
-    // create a spline area series and set the data
-	var series = chart.splineArea(data);
+    // create a spline series and set the data
+	var series = chart.spline(data);
 
 	// set the chart title
-	chart.title("Vertical Spline Area Chart");
+	chart.title("Vertical Spline Chart");
 
 	// set the container id
 	chart.container("container");
