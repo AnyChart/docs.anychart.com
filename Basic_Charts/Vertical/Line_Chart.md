@@ -1,5 +1,5 @@
 {:index 2}
-# Vertical Line Area Chart
+# Vertical Line Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
