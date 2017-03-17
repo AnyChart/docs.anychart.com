@@ -23,7 +23,7 @@ Then call the {api:anychart.charts.Cartesian#ohlc}ohlc(){api} method to create a
 // create a chart
 chart = anychart.verticalArea();
 
-// create an OHLC series and set the data
+// create an ohlc series and set the data
 var series = chart.ohlc(data);
 ```
 
