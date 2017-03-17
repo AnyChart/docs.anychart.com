@@ -35,12 +35,7 @@ Candlesticks are usually consist of the body (black or white), an upper and a lo
   
 Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](OHLC_Chart).
 
-Note that Stock Candlestick
-
-сказать о стоках, и что стоки специально заточены под stock market data и дать ссылку на свечки в стоках
-
-
-
+Japanese Candlestick is a type of series that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candelstick series are built in an appropriate way for using them on Stock plot. Learn more about using Japanese Candlestick series in Stocks in the [Japanese Candlestick series in Stocks](../Stock_Charts/Series/Japanese_Candlestick) article.
 
 
 ## Quick Start
