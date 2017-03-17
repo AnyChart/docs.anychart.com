@@ -97,7 +97,7 @@ In this section we will describe main parts of candlestick chart visualization a
 * {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks in the hovered state
 * {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks while they are selected.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are two Japanese Candlestick series with some of the appearance settings configured:
 
@@ -278,7 +278,7 @@ Now we need to convert this data into acceptable format.
 
 ## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
 
-Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line-Spline-StepLine_Charts) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
+Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Chart) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
   
   
 AnyChart javascript charting library provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
