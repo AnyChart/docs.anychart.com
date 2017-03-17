@@ -17,7 +17,7 @@ To build a Vertical Japanese Candlestick chart, use one of these three chart con
 * {api:anychart#verticalLine}anychart.verticalLine(){api}
 * {api:anychart#bar}anychart.bar(){api}
 
-Then call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method to create a Box series.
+Then call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method to create a Japanese Candlestick series.
 
 ```
 // create a chart

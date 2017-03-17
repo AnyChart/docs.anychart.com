@@ -120,7 +120,7 @@ Here is the list of supported vertical charts:
 * [Vertical Area](Area_Chart)
 * [Vertical Box](Box_Chart)
 * [Vertical Bubble](Bubble_Chart)
-* [Vertical Candlestick](Candlestick_Chart)
+* [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
 * [Vertical Jump Line](Jump_Line_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
