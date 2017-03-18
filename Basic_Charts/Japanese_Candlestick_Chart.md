@@ -40,9 +40,9 @@ Japanese Candlestick is a type of series that is predominantly used for demonstr
 
 ## Quick Start
 
-To create an Area chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. If you pass the data to this chart constructor, it creates an Area series.
+To create a Japanese Candlestick chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. If you pass the data to this chart constructor, it will create a Candlestick series.
 
-To create an Area series explicitly, call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method.
+To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method.
 
 The following sample demonstrates how a basic single-series Japanese Candlestick chart is created using an imaginable price ranges:
 
@@ -278,7 +278,7 @@ Now we need to convert this data into acceptable format.
 
 ## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
 
-Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Chart) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
+Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Chart) (to show **moving average**), [Range Areas](./Range_Area_Chart) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
   
   
 AnyChart javascript charting library provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
