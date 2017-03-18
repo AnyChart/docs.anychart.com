@@ -2,6 +2,17 @@
 # Open High Low Close (OHLC) Chart
 
 * [Overview](#overview)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Stacked Area](#stacked_area)
+  * [Vertical Area](#vertical_area)
+  * [3D Area](#3d_area)
+
+  
 * [Chart](#chart)
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
@@ -19,8 +30,11 @@
 ## Overview
 
 An **open-high-low-close** chart (also known as **OHLC**, **HLOC** chart) is a type of chart typically used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
-  
-  
+
+This article explains how to create a basic OHLC chart as well as configure specific settings. See the table below to get a brief overview of the OHLC chart's characteristics:
+
+
+
 The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the candlestick chart easier to read.
 
 ## Chart
