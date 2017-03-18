@@ -120,7 +120,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ## Advanced OHLC Chart sample - OHLC, Line and Range Area Combination
 
-In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line-Spline-StepLine_Charts) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
+In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Charts) (to show **moving average**), [Range Areas](./Range_Area_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
   
   
 AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
