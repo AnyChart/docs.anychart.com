@@ -10,16 +10,28 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = [
-    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-    {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
-    {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
-    {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-    {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
-  ];
+  var data = anychart.data.set([
+[Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44, 23.335],
+[Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97, 23.285],
+[Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92, 23.2945],
+[Date.UTC(2007, 08, 02), 22.65, 23.7, 22.65, 23.36, 23.332],
+[Date.UTC(2007, 08, 01), 23.17, 23.4, 22.85, 23.25, 23.367],
+[Date.UTC(2007, 07, 31), 23.88, 23.93, 23.24, 23.25, 23.4035],
+[Date.UTC(2007, 07, 30), 23.55, 23.88, 23.38, 23.62, 23.433],
+[Date.UTC(2007, 07, 27), 23.98, 24.49, 23.47, 23.49, 23.428],
+[Date.UTC(2007, 07, 26), 23.2, 23.39, 22.87, 22.92, 23.2945],
+[Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44, 23.335],
+[Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36, 23.332],
+[Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62, 23.433]
+    ]);
 
-  // chart type
-  chart = anychart.financial();
+    // create a chart
+    chart = anychart.financial();
+    
+    var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+
+    // create an area series and set the data
+    var series = chart.ohlc(seriesData);
 
   // set axes title
   var xAxis = chart.xAxis();
@@ -32,25 +44,10 @@
 
   // adjust x scale type
   var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2007, 7, 27));
-  xScale.maximum(Date.UTC(2007, 8, 5));
+  xScale.minimum(Date.UTC(2007, 07, 22));
+  xScale.maximum(Date.UTC(2007, 08, 08));
   var xTicks = chart.xScale().ticks();
   xTicks.interval(0,0,1);
-
-  // set data and define chart type
-  var series = chart.ohlc(data);
-
-  // set x axis lables width for the better outlook
-  xAxis.staggerLines(1);
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(value){
-    var date = new Date(value["tickValue"]);
-    var options = {
-      day: "numeric",
-      month: "short"
-    };
-    return date.toLocaleDateString("en-US", options);
-  });
 
   // set container
   chart.container("container");
