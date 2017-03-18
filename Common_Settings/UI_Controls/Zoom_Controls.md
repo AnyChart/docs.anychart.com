@@ -5,10 +5,11 @@ Zoom Controls
 * [Overview](#overview)
 * [Enable](#enable)
 * [Dispose](#dispose)
+* [Appearance](#appearance)
 
 ## Overview
 
-Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Zoom), Zoom In and Zoom Out. It can be easily put on the Map with the {api:anychart.ui#zoom}zoom(){api} method. This zooming panel is rather useful and comfortable in case user has no mouse and uses a touchpad.
+Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Zoom), Zoom In and Zoom Out. To create a Zoom Control Panel use the {api:anychart.ui#zoom}zoom(){api} method. 
 
 
 ## Enable
@@ -42,3 +43,7 @@ map.listen("click", function(){
 ```
 {sample}CS\_ZoomControls\_02{sample}
 
+
+## Appearance
+
+If necessary, it is possible to change the appearance and position of the Zoom Control Panel using css. 
