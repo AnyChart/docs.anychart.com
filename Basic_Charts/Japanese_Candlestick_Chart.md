@@ -9,12 +9,17 @@
   * [Labels](#labels)
   * [Tooltips](#tooltips)
 * [All Candlestick Types](#all_candlestick_types)
-* [Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination](#advanced_candlestick_chart_sample_-_candlestick,_line_and_range_area_combination)
 
 
 ## Overview
 
 The Japanese candlestick chart is a combination of a line chart and a bar chart used primarily to describe price movements of an equity over time, where each bar represents the range of price movement over a given time interval. It is mostly used in technical analysis of equity and currency price patterns.
+  
+Candlesticks consist of the body (black or white), an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body represents the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. It's not necessary for a candlestick to have either a body or a wick.  
+  
+Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](OHLC_Chart).
+
+Japanese Candlestick is a type of series that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are available in AnyStock. Learn more about using Japanese Candlestick series in Stocks in the [Japanese Candlestick series in Stocks](../Stock_Charts/Series/Japanese_Candlestick) article.
 
 This article explains how to create a basic Japanese Candlestick chart as well as configure specific settings. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
@@ -30,12 +35,6 @@ This article explains how to create a basic Japanese Candlestick chart as well a
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/" target="_blank">Chartopedia: Japanese Candlestick Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>  
-  
-Candlesticks are usually consist of the body (black or white), an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body represents the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. It's not necessary for a candlestick to have either a body or a wick.  
-  
-Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](OHLC_Chart).
-
-Japanese Candlestick is a type of series that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candelstick series are built in an appropriate way for using them on Stock plot. Learn more about using Japanese Candlestick series in Stocks in the [Japanese Candlestick series in Stocks](../Stock_Charts/Series/Japanese_Candlestick) article.
 
 
 ## Quick Start
@@ -146,141 +145,65 @@ The sample with the following data demonstrates all possible types of candlestic
 <table width="319" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="133"><b>Pattern</b></th>
-<th width="38"><b>Open</b></th>
-<th width="38"><b>High</b></th>
-<th width="38"><b>Low</b></th>
-<th width="38"><b>Close</b></th>
+<th width="152"><b>Description</b></th>
 </tr>
 <tr>
 <td>White </td>
-<td>507</td>
-<td>511</td>
-<td>506</td>
-<td>510</td>
+<td>The close price is lower than the open price, and both are lower that the high price and upper than the low price. The difference between the values is not significant.</td>
 </tr>
 <tr>
 <td>Black</td>
-<td>510</td>
-<td>511</td>
-<td>506</td>
-<td>507</td>
+<td>The open price is lower than the close price, and both are lower that the high price and upper than the low price. The difference between the values is not significant.</td>
 </tr>
 <tr>
 <td>Long lower shadow</td>
-<td>508.5</td>
-<td>511</td>
-<td>506</td>
-<td>510</td>
+<td>The close price is lower than the open price, and both are lower that the high price and upper than the low price, wherein the difference between the low price and the body is quite higher than between the high price and the body</td>
 </tr>
 <tr>
 <td>Long upper shadow</td>
-<td>508.5</td>
-<td>511</td>
-<td>506</td>
-<td>507</td>
+<td>The open price is lower than the close price, and both are lower that the high price and upper than the low price, wherein the difference between the high price and the body is quite higher than between the low price and the body</td>
 </tr>
 <tr>
 <td>Hammer </td>
-<td>510</td>
-<td>511</td>
-<td>506</td>
-<td>511</td>
+<td>The open price is lower than the close price, and the close price equals the high price</td>
 </tr>
 <tr>
 <td>Inverted hammer</td>
-<td>507</td>
-<td>511</td>
-<td>506</td>
-<td>506</td>
+<td>The close price is lower than the open price, and the close price equals the low price</td>
 </tr>
 <tr>
 <td>Spinning top white</td>
-<td>508</td>
-<td>511</td>
-<td>506</td>
-<td>509</td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
 <td>Spinning top black</td>
-<td>509</td>
-<td>511</td>
-<td>506</td>
-<td>508</td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
-<td>Doji</td>
-<td>508.5</td>
-<td>510</td>
-<td>507</td>
-<td>508.5</td>
+<td>Four Price Doji</td>
+<td>All four prices are equal</td>
 </tr>
 <tr>
 <td>Long legged doji </td>
-<td>508.5</td>
-<td>511</td>
-<td>506</td>
-<td>508.5</td>
+<td>Prices moved above and below the open price, but the close price equals the open price</td>
 </tr>
 <tr>
 <td>Dragonfly doji</td>
-<td>511</td>
-<td>511</td>
-<td>506</td>
-<td>511</td>
+<td>The open price equals the close price and they both are the same as the high price</td>
 </tr>
 <tr>
 <td>Gravestone doji</td>
-<td>506</td>
-<td>511</td>
-<td>506</td>
-<td>506</td>
+<td>The open price equals the close price and they both are the same as the low price</td>
 </tr>
 <tr>
 <td>Marubozu white</td>
-<td>506</td>
-<td>511</td>
-<td>506</td>
-<td>511</td>
+<td>The open price equals the low price and the close price equals the high price</td>
 </tr>
 <tr>
 <td>Marubozu black</td>
-<td>511</td>
-<td>511</td>
-<td>506</td>
-<td>506</td>
+<td>The open equals the high and the close equals the low</td>
 </tr>
 </tbody>
 </table>
 
-Now we need to convert this data into acceptable format.
-
-```
-  var data = [
-    ["White", 507, 511, 506, 510],
-    ["Black", 510, 511, 506, 507],
-    ["Long lower shadow", 508.5, 511, 506, 510],
-    ["Long upper shadow", 508.5, 511, 506, 507],
-    ["Hammer", 510, 511, 506, 511],
-    ["Inverted hammer", 507, 511, 506,506],
-    ["Spinning top white", 508, 511, 506, 509],
-    ["Spinning top black", 509, 511, 506, 508],
-    ["Doji", 508.5, 510, 507, 508.5],
-    ["Long legged doji", 508.5, 511, 506, 508.5],
-    ["Dragonfly doji", 511, 511, 506, 511],
-    ["Gravestone doji", 506, 511, 506, 506],
-    ["Marubozu white", 506, 511, 506, 511],
-    ["Marubozu black", 511, 511, 506, 506]
-  ];
-```
- 
 {sample}BCT\_Japanese-Candlestick\_Chart\_03{sample}
-
-
-## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
-
-Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Chart) (to show **moving average**), [Range Areas](./Range_Area_Chart) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
-  
-  
-AnyChart javascript charting library provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
-
-{sample}BCT\_Japanese-Candlestick\_Chart\_04{sample}
