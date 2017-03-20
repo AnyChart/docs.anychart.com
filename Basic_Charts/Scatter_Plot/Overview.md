@@ -1,5 +1,5 @@
 {:index 1}
-# Overview
+# Scatter Plot
 
 * [Overview](#overview)
 * [Chart](#chart)
