@@ -8,7 +8,7 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-* [All Candlestick Types](#all_candlestick_types)
+* [Candlestick Patterns](#candlestick_patterns)
 
 
 ## Overview
@@ -29,12 +29,22 @@ This article explains how to create a basic Japanese Candlestick chart as well a
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[open, high, low, close](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Japanese Candlestick](../Stock_Charts/Series/Japanese_Candlestick)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[OHLC](OHLC_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/" target="_blank">Chartopedia: Japanese Candlestick Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
-</table>  
+</table>
 
 
 ## Quick Start
@@ -43,7 +53,7 @@ To create a Japanese Candlestick chart, use the {api:anychart#financial}anychart
 
 To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method.
 
-The following sample demonstrates how a basic single-series Japanese Candlestick chart is created using an imaginable price ranges:
+The following sample demonstrates how a basic single-series Japanese Candlestick chart is created:
 
 ```
 // create a data set
@@ -90,7 +100,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Visual appearance of candlestick is defined using certain parameters. The most important parameters for jaapanese candlestick series are the following:
+In this section, we will describe main parts of candlestick chart visualization and ways to adjust it. The visual appearance of candlesticks is defined using certain parameters. The most important parameters for Japanese candlestick series are the following:
 
 * {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks
 * {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks in the hovered state
@@ -138,9 +148,10 @@ series2.selectRisingHatchFill("percent20");
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 
-## All Candlestick Types
+## Candlestick Patterns
 
-The sample with the following data demonstrates all possible types of candlesticks.
+In technical analysis, a candlestick pattern is a movement in prices shown graphically on a candlestick chart that some believe can predict a particular market movement. The recognition of the pattern is subjective and programs that are used for charting have to rely on predefined rules to match the pattern. There are 42 recognized patterns that can be split into simple and complex patterns.
+The sample with the following data demonstrates most popular simple patterns.
 
 <table width="319" border="1" class="dtTABLE">
 <tbody><tr>
@@ -157,19 +168,19 @@ The sample with the following data demonstrates all possible types of candlestic
 </tr>
 <tr>
 <td>Long lower shadow</td>
-<td>The close price is lower than the open price, and both are lower that the high price and upper than the low price, wherein the difference between the low price and the body is quite higher than between the high price and the body</td>
+<td>The close price is lower than the open price, and both are lower that the high price and upper than the low price, wherein the difference between the low price and the body is quite higher than between the high price and the body.</td>
 </tr>
 <tr>
 <td>Long upper shadow</td>
-<td>The open price is lower than the close price, and both are lower that the high price and upper than the low price, wherein the difference between the high price and the body is quite higher than between the low price and the body</td>
+<td>The open price is lower than the close price, and both are lower that the high price and upper than the low price, wherein the difference between the high price and the body is quite higher than between the low price and the body.</td>
 </tr>
 <tr>
 <td>Hammer </td>
-<td>The open price is lower than the close price, and the close price equals the high price</td>
+<td>The open price is lower than the close price, and the close price equals the high price.</td>
 </tr>
 <tr>
 <td>Inverted hammer</td>
-<td>The close price is lower than the open price, and the close price equals the low price</td>
+<td>The close price is lower than the open price, and the close price equals the low price.</td>
 </tr>
 <tr>
 <td>Spinning top white</td>
@@ -181,27 +192,27 @@ The sample with the following data demonstrates all possible types of candlestic
 </tr>
 <tr>
 <td>Four Price Doji</td>
-<td>All four prices are equal</td>
+<td>All four prices are equal.</td>
 </tr>
 <tr>
 <td>Long legged doji </td>
-<td>Prices moved above and below the open price, but the close price equals the open price</td>
+<td>Prices moved above and below the open price, but the close price equals the open price.</td>
 </tr>
 <tr>
 <td>Dragonfly doji</td>
-<td>The open price equals the close price and they both are the same as the high price</td>
+<td>The open price equals the close price and they both are the same as the high price.</td>
 </tr>
 <tr>
 <td>Gravestone doji</td>
-<td>The open price equals the close price and they both are the same as the low price</td>
+<td>The open price equals the close price and they both are the same as the low price.</td>
 </tr>
 <tr>
 <td>Marubozu white</td>
-<td>The open price equals the low price and the close price equals the high price</td>
+<td>The open price equals the low price and the close price equals the high price.</td>
 </tr>
 <tr>
 <td>Marubozu black</td>
-<td>The open equals the high and the close equals the low</td>
+<td>The open equals the high and the close equals the low.</td>
 </tr>
 </tbody>
 </table>
