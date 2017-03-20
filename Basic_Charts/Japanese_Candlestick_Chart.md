@@ -77,7 +77,7 @@ chart = anychart.financial();
     
 var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
-// create an area series and set the data
+// create a japanese candlestick series and set the data
 var series = chart.candlestick(seriesData);
 
 // set the container id
