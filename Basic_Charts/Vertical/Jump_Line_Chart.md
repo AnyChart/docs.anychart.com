@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical Jump Line chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Jump Line Chart](../Jump_Line_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Jump Line](../Jump_Line_Chart) chart.
 
 ## Quick Start
 

@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical Stick chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Stick Chart](../Stick_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Stick](../Stick_Chart) chart.
 
 ## Quick Start
 

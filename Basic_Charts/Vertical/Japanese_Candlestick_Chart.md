@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical Japanese Candlestick chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Japanese Candlestick Chart](../Japanese_Candlestick_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Japanese Candlestick](../Japanese_Candlestick_Chart) chart.
 
 ## Quick Start
 

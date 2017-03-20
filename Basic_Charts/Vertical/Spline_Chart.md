@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical Spline chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Spline Chart](../Spline_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Spline](../Spline_Chart) chart.
 
 ## Quick Start
 
