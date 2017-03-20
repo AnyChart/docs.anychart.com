@@ -44,21 +44,8 @@
   series2.hoverMarkers().enabled(false);
   series2.selectMarkers().enabled(false);
 
-  // set axes title
-  var xAxis = chart.xAxis();
-  xAxis.title("Day");
-  var yAxis = chart.yAxis();
-  yAxis.title("Price");
-
   // chart title
   chart.title("Multi-series OHLC Chart with custom colors");
-
-  // adjust x scale type
-  var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2007, 07, 22));
-  xScale.maximum(Date.UTC(2007, 08, 08));
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(0,0,1);
 
   // set container
   chart.container("container");

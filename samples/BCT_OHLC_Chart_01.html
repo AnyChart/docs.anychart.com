@@ -11,50 +11,33 @@
 
   // data
   var data = anychart.data.set([
-[Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44, 23.335],
-[Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97, 23.285],
-[Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92, 23.2945],
-[Date.UTC(2007, 08, 02), 22.65, 23.7, 22.65, 23.36, 23.332],
-[Date.UTC(2007, 08, 01), 23.17, 23.4, 22.85, 23.25, 23.367],
-[Date.UTC(2007, 07, 31), 23.88, 23.93, 23.24, 23.25, 23.4035],
-[Date.UTC(2007, 07, 30), 23.55, 23.88, 23.38, 23.62, 23.433],
-[Date.UTC(2007, 07, 27), 23.98, 24.49, 23.47, 23.49, 23.428],
-[Date.UTC(2007, 07, 26), 23.2, 23.39, 22.87, 22.92, 23.2945],
-[Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44, 23.335],
-[Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36, 23.332],
-[Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62, 23.433]
+    [Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44, 23.335],
+    [Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97, 23.285],
+    [Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92, 23.2945],
+    [Date.UTC(2007, 08, 02), 22.65, 23.7, 22.65, 23.36, 23.332],
+    [Date.UTC(2007, 08, 01), 23.17, 23.4, 22.85, 23.25, 23.367],
+    [Date.UTC(2007, 07, 31), 23.88, 23.93, 23.24, 23.25, 23.4035],
+    [Date.UTC(2007, 07, 30), 23.55, 23.88, 23.38, 23.62, 23.433],
+    [Date.UTC(2007, 07, 27), 23.98, 24.49, 23.47, 23.49, 23.428],
+    [Date.UTC(2007, 07, 26), 23.2, 23.39, 22.87, 22.92, 23.2945],
+    [Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44, 23.335],
+    [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36, 23.332],
+    [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62, 23.433]
     ]);
 
-    // create a chart
-    chart = anychart.financial();
+  // create a chart
+  chart = anychart.financial();
     
-    var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+  var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
-    // create an area series and set the data
-    var series = chart.ohlc(seriesData);
-
-  // set axes title
-  var xAxis = chart.xAxis();
-  xAxis.title("Day");
-  var yAxis = chart.yAxis();
-  yAxis.title("Price");
+  // create an area series and set the data
+  var series = chart.ohlc(seriesData);
 
   // chart title
   chart.title("Open High Low Close (OHLC) Chart");
 
-  // adjust x scale type
-  var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2007, 07, 22));
-  xScale.maximum(Date.UTC(2007, 08, 08));
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(0,0,1);
-
   // set container
   chart.container("container");
-
-  // limit width of each point in series
-  var containerWidth = chart.container().width();
-  series.pointWidth(containerWidth/15);
 
   // draw chart
   chart.draw();

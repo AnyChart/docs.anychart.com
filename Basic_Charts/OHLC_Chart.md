@@ -8,11 +8,14 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-* [Advanced OHLC Chart Sample - OHLC, Line and Range Area Combination](#advanced_ohlc_chart_sample_-_ohlc,_line_and_range_area_combination)
 
 ## Overview
 
 An **open-high-low-close** chart (also known as **OHLC**, **HLOC** chart) is a type of chart typically used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
+
+The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the Candlestick Chart easier to read.
+
+OHLC is a type of series that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart OHLC series are available in AnyStock. Learn more about using OHLC series in Stocks in the [OHLC series in Stocks](../Stock_Charts/Series/OHLC) article.
 
 This article explains how to create a basic OHLC chart as well as configure specific settings. See the table below to get a brief overview of the OHLC chart's characteristics:
 
@@ -22,15 +25,22 @@ This article explains how to create a basic OHLC chart as well as configure spec
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[open, high, low, close](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Stock</td><td>[Stock OHLC](../Stock_Charts/Series/OHLC)</td></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock OHLC](../Stock_Charts/Series/Japanese_Candlestick)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Japanese Candlestick](OHLC_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/ohlc-chart/" target="_blank">Chartopedia: OHLC Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table> 
-
-The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the Candlestick Chart easier to read.
-
 
 ## Quick Start
 
@@ -62,7 +72,7 @@ chart = anychart.financial();
     
 var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
-// create an area series and set the data
+// create an ohlc series and set the data
 var series = chart.ohlc(seriesData);
 
 // set the container id
@@ -85,7 +95,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Visual appearance of candlestick is defined using certain parameters. The most important parameters for jaapanese candlestick series are the following:
+In this section we will describe main parts of candlestick chart visualization and ways to adjust it. The visual appearance of candlestick is defined using certain parameters. The most important parameters for OHLC series are the following:
 
 * {api:anychart.core.cartesian.series.OHLC#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api} methods are used for adjusting stroking colors of rising and falling 
 * {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#hoverRisingStroke}hoverRisingStroke(){api} methods are used for adjusting stroking colors of rising and falling items in the hovered state
@@ -116,13 +126,3 @@ series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-
-## Advanced OHLC Chart sample - OHLC, Line and Range Area Combination
-
-In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line_Charts) (to show **moving average**), [Range Areas](./Range_Area_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
-  
-  
-AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
-
-{sample}BCT\_OHLC\_Chart\_03{sample}
