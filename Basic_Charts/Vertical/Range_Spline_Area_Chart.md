@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical Range Spline Area chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Range Spline Area](../Range_Spline_Area_Chart) chart.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Range Spline Area Chart](../Range_Spline_Area_Chart) article to learn about other available settings.
 
 ## Quick Start
 
