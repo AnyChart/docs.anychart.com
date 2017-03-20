@@ -9,6 +9,7 @@ Move and Zoom API
  * [Navigational Interactivity](#navigational_interactivity)
  * [Clipboard Text](#clipboard_text)
  * [Zoom](#zoom)
+ * [Zoom Controls](#zoom_controls)
  * [Move](#move)
 
 ## Overview
@@ -121,6 +122,14 @@ map.listen('pointClick', function(e) {
 {sample}Maps\_Move\_and\_Zoom\_06{sample}
 
 Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](Event_Listeners).
+
+### Zoom Controls
+
+There is one more option how to manage your map zooming. Instead of using listeners and methods described above, add the Zoom Control Panel on the map. This panel includes 3 buttons: for 100% view, for zooming in and zooming out. 
+
+{sample}CS\_ZoomControls\_01{sample}
+
+Read more about this feature in the [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls)
 
 ### Move
 
