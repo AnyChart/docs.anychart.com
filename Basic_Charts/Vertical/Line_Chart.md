@@ -6,13 +6,13 @@
 
 ## Overview
 
-This article explains how to create a Vertical Line Area chart in AnyChart.
+This article explains how to create a Vertical Line chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Line Area Chart](../Spline_Area_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read about the settings available for the [Line Chart](../Line_Chart).
 
 ## Quick Start
 
-To build a Vertical Line Area chart, use the {api:anychart#line}anychart.line(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#line}line(){api} method:
+To build a Vertical Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#line}line(){api} method:
 
 ```
 // create a chart
