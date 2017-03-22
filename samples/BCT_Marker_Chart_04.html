@@ -12,34 +12,54 @@
   // chart type
   chart = anychart.scatter();
 
-  // set title
-  chart.title("Axes Management");
-
-  // draw axes and set titles and adjust position
-  var xAxis = chart.xAxis();
-  xAxis.title("Year");
-  var yAxis = chart.yAxis();
-  yAxis.title("Box office");
-  xAxis.orientation("top");
-  yAxis.orientation("right");
-  
-  // define chart and set data
-  chart.marker([
-    [2000, 1100],
-    [2001, 880],
-    [2002, 1100],
-    [2003, 1500],
-    [2004, 921],
-    [2005, 1000],
-    [2006, 1400]
+  // all data
+  var data = anychart.data.set([
+    [2000, 1100, 1000],
+    [2001, 880, 950],
+    [2002, 1100, 800],
+    [2003, 1500, 1000],
+    [2004, 921, 890],
+    [2005, 1000, 1000],
+    [2006, 1400, 800]
   ]);
 
-  var xScale = chart.xScale();
-  xScale.minimum(1999);
-  xScale.maximum(2007);
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(1);
+  // set data for each series
+  series1 = chart.marker(data.mapAs({x: [0], value: [1]}));
+  series2 = chart.marker(data.mapAs({x: [0], value: [2]}));
 
+  // set colors
+  series1.fill("#00cc99", 0.5);
+  series1.stroke("#00cc99", 1, "10 5", "round");
+  series1.hoverFill("#00cc99", 0.2);
+  series1.hoverStroke("#00cc99", 2, "10 5", "round");
+  series1.selectFill("#00cc99", 0.8);
+  series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+  series2.fill("none");
+  series2.hoverFill("none");
+  series2.selectFill("none");
+  series2.hatchFill("percent10");
+  series2.hoverHatchFill("percent30");
+  series2.selectHatchFill("percent50");
+
+  // set marker types
+  series1.type("arrowDown");
+  series2.type("arrowUp");
+
+  // Sets settings for interactivity.
+  chart.interactivity({hoverMode: "byX"});
+
+  // set marker size
+  series1.size(15);
+  series2.size(15);
+  series1.hoverSize(25);
+  series2.hoverSize(25);
+  series1.selectSize(25);
+  series2.selectSize(25);
+  
+  // chart title
+  chart.title("Multi-Series Marker Chart with size and marker type adjusted");
+  
   // draw
   chart.container("container");
   chart.draw();
