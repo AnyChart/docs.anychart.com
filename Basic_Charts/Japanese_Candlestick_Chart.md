@@ -31,7 +31,7 @@ This article explains how to create a basic Japanese Candlestick chart as well a
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Vertical Japanese Candlestick](Vertical/Japanese_Candlestick_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>

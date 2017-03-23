@@ -28,17 +28,13 @@
   ]);
 
   // chart type
-  chart = anychart.financial();
+  chart = anychart.cartesian();
+  
+  // change chart hover mode
+  chart.interactivity("byX");
 
   // rotate x axis labels
-  var xLabels = chart.xAxis().labels();
-  xLabels.rotation(-90);
-  xLabels.textFormatter(function(){
-      return this.value;
-  });
-
-  // adjust x scale type
-  chart.xScale(anychart.scales.ordinal());
+  chart.xAxis().labels().rotation(-90);
 
   // set data and adjust colors
   var series = chart.candlestick(data);
@@ -46,7 +42,6 @@
   series.fallingStroke("black");
   series.risingFill("white");
   series.risingStroke("black");
-  series.tooltip(false);
 
   // draw
   chart.container("container");
