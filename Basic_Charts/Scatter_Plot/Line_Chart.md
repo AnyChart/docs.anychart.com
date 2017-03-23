@@ -15,7 +15,11 @@ To learn more about scatter charts in general and how to customize them, see [Sc
 To build a Scatter Line chart...
 
 ```
+// create a chart
+chart = anychart.scatter();
 
+// create a line series and set the data
+var series = chart.line(data);
 ```
 
 {sample}BCT\_Scatter\_Line\_Chart{sample}

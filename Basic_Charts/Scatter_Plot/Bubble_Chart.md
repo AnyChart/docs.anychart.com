@@ -15,7 +15,11 @@ To learn more about scatter charts in general and how to customize them, see [Sc
 To build a Scatter Bubble chart...
 
 ```
+// create a chart
+chart = anychart.scatter();
 
+// create a bubble series and set the data
+var series = chart.bubble(data);
 ```
 
 {sample}BCT\_Scatter\_Bubble\_Chart{sample}

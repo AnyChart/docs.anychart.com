@@ -15,7 +15,11 @@ To learn more about scatter charts in general and how to customize them, see [Sc
 To build a Scatter Marker chart...
 
 ```
+// create a chart
+chart = anychart.scatter();
 
+// create a marker series and set the data
+var series = chart.marker(data);
 ```
 
 {sample}BCT\_Scatter\_Marker\_Chart{sample}
