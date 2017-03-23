@@ -11,23 +11,42 @@
 
   	// create data
     var data = [
-      {x: 2000, value: 1100},
-      {x: 2001, value: 880},
-      {x: 2002, value: 1100},
-      {x: 2003, value: 1500},
-      {x: 2004, value: 921},
-      {x: 2005, value: 1000},
-      {x: 2006, value: 1400}
+      {x: 4.4, value: 78},
+      {x: 3.9, value: 74},
+      {x: 4, value: 68},
+      {x: 4, value: 76},
+      {x: 3.5, value: 80},
+      {x: 4.1, value: 84},
+      {x: 2.3, value: 50},
+      {x: 4.7, value: 93},
+      {x: 1.7, value: 55}
     ];
   	
   	// create a chart
-  	chart = anychart.verticalArea();
+  	chart = anychart.scatter();
 
     // create a marker series and set the data
   	var series = chart.marker(data);
 
+    // create major grids and bind them to the X and Y axes
+    var x_grid = chart.grid(0);
+    x_grid.axis(chart.xAxis());
+
+    var y_grid = chart.grid(1);
+    y_grid.axis(chart.yAxis());
+
+    // create minor grids and bind them to the X and Y axes
+    var x_minor_grid = chart.minorGrid(0);
+    x_minor_grid.axis(chart.xAxis());
+
+    var y_minor_grid = chart.minorGrid(1);
+    y_minor_grid.axis(chart.yAxis());
+
+    // set the interval of ticks on the X-scale
+    chart.xScale().ticks().interval(1);
+
   	// set the chart title
-  	chart.title("Scatter Marker Chart");
+  	chart.title("Scatter Plot: Marker Chart");
 
   	// set the container id
   	chart.container("container");

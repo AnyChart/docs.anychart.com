@@ -1,5 +1,5 @@
 {:index 2}
-# Vertical Marker Chart
+# Scatter Marker Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
