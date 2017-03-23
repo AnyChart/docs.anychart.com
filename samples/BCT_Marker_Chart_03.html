@@ -27,21 +27,6 @@
   series1 = chart.marker(data.mapAs({x: [0], value: [1]}));
   series2 = chart.marker(data.mapAs({x: [0], value: [2]}));
 
-  // set colors
-  series1.fill("#00cc99", 0.5);
-  series1.stroke("#00cc99", 1, "10 5", "round");
-  series1.hoverFill("#00cc99", 0.2);
-  series1.hoverStroke("#00cc99", 2, "10 5", "round");
-  series1.selectFill("#00cc99", 0.8);
-  series1.selectStroke("#00cc99", 4, "10 5", "round");
-
-  series2.fill("none");
-  series2.hoverFill("none");
-  series2.selectFill("none");
-  series2.hatchFill("percent10");
-  series2.hoverHatchFill("percent30");
-  series2.selectHatchFill("percent50");
-
   // Sets settings for interactivity.
   chart.interactivity({hoverMode: "byX"});
 

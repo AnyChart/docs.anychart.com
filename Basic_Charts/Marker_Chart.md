@@ -9,7 +9,7 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Tooltips](#type)
+  * [Type](#type)
 
 ## Overview
 
@@ -35,7 +35,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point)_Maps)</td></tr>
+<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Maps)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/marker-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
