@@ -7,9 +7,9 @@
 * [Special Settings](#special_settings)
   * [Size](#size)
   * [Appearance](#appearance)
+  * [Type](#type)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Type](#type)
 
 ## Overview
 
@@ -35,7 +35,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Maps)</td></tr>
+<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/marker-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -68,7 +68,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_Area\_Chart\_01{sample}
+{sample}BCT\_Marker\_Chart\_01{sample}
 
 ## General Settings
 
@@ -131,14 +131,6 @@ series2.selectHatchFill("percent50");
 
 {sample}BCT\_Marker\_Chart\_02{sample}
 
-### Labels
-
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-### Tooltips
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
 ### Type
 
 Markers can be of different shape. There are several marker types, which can be set through the {api:anychart.core.scatter.series.Marker#type}type(){api} method. The list of available marker types can be found on the {api:anychart.enums.MarkerType}Marker Types page{api}.
@@ -150,3 +142,12 @@ series2.type("arrowUp");
 ```
 
 {sample}BCT\_Marker\_Chart\_04{sample}
+
+### Labels
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
