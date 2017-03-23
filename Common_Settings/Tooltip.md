@@ -275,9 +275,14 @@ That is how tooltip background with the settings from above looks like:
 
 ## Out of chart
 
-In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow series tooltips to leave the chart bounds. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
+In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
+// applies to all series
+chart.tooltip().allowLeaveChart(true);
+
+// series settings override chart settings
+
 // allow tooltips to leave the chart bounds
 series1.tooltip().allowLeaveChart(true);
 
@@ -287,21 +292,23 @@ series2.tooltip().allowLeaveChart(false);
 
 {sample}CS\_Tooltip\_13{sample}
 
-Note that series' individual tooltip settings are supposed to override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
+Note that series' individual tooltip settings override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that [legend](../Common_Settings/Legend) or the [dataGrid](../Gantt_Chart/DataGrid).
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting "true" to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
 
 ## Out of stage
 
-One chart or any other tooltip parent element may not be the same size as its stage. Stage can be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
+A chart may not be the same size as its [stage](../Graphics/Basics). Stage can be smaller or greater, so if it is necessary to allow or forbid the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
+// applies to all series
+chart.tooltip().allowLeaveStage(false);
+
+// series settings override chart settings
+
 // adjust series tooltips
 series1.tooltip().allowLeaveStage(true);
 series2.tooltip().allowLeaveStage(false);
-
-// adjust chart tooltips for the third series
-chart.tooltip().allowLeaveStage(false);
 ```
 
 {sample}CS\_Tooltip\_13\_1{sample}
@@ -310,7 +317,9 @@ Note: that stage the chart belongs to is considered as the stage of the tooltip 
 
 ### Tooltip global container
 
-When any tooltip gets both methods {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} set as "true", the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips left is to call the {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
+*IMPORTANT NOTE:*
+
+When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get "true" as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
 
 ## Out of screen
 
@@ -322,10 +331,9 @@ series1.tooltip().allowLeaveScreen(true);
 series2.tooltip().allowLeaveScreen(false);
 ```
 
-The third series inherit the chart's defaults in this sample.
+The third series inherits the chart's defaults in this sample.
 
 {sample}CS\_Tooltip\_13\_2{sample}
-
 
 ## Position
 
