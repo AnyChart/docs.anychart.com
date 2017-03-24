@@ -10,7 +10,7 @@
 
 ## Overview
 
-Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Lines are popular in describing statistical information, such as birth rates, currency rates changing, temperature and so on. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts_Types/Line_Chart).
+Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Lines are popular in describing statistical information, such as birth rates, currency rates changing, temperature and so on. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts_Types/Line-Spline-StepLine_Charts).
 
 The main difference between usual Line Series and Line Series in Stocks is in amount of information displayed. Stocks are intended to show far much more information than basic charts, so some features are different due to this reason. Let's now consider using Lines in Stocks.
 
