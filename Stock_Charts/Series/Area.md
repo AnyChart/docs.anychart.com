@@ -10,7 +10,7 @@
 
 ## Overview
 
-Area series is a kind of basic chart series that can be used in stocks. This series creates an area between the x-axis and the line that is formed of the data points. It is very useful in demonstrating the magnitude of change over time. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit. To know how to manage Area series in Basic Charts, look up the [Area Chart article](../../Basic_Chart_Types/Area_Chart).
+Area series is a kind of basic chart series that can be used in stocks. This series creates an area between the x-axis and the line that is formed of the data points. It is very useful in demonstrating the magnitude of change over time. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit. To know how to manage Area series in Basic Charts, look up the [Area Chart article](../../Basic_Charts_Types/Area_Chart).
 
 In stock, it works the same way. It's quite a popular instrument in representing the changes in finances, sales and everything that has volume and suits for being represented as a changing volume. 
 

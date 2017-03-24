@@ -10,7 +10,7 @@
 
 ## Overview
 
-Range Column series is quite similar to Basic Column Chart, which is a standard series that uses columns to show the value ranges of a parameter changing through time or to show the difference between value ranges of similar subjects in some area. For example, range column charts are widely used in meteorology, economics, etc. - everything that is or might be connected with statistics is suitable for using column series. You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Chart_Types/Range_Bar-Column_Charts).
+Range Column series is quite similar to Basic Column Chart, which is a standard series that uses columns to show the value ranges of a parameter changing through time or to show the difference between value ranges of similar subjects in some area. For example, range column charts are widely used in meteorology, economics, etc. - everything that is or might be connected with statistics is suitable for using column series. You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Charts_Types/Range_Bar-Column_Charts).
 
 In stocks, the difference is in quantity of range columns displayed at once in the chart. Stocks are intended to show how a some value changes in a longer period of time. 
 
@@ -62,7 +62,7 @@ It's clearly seen there's nothing different in these samples' appearance.
 
 More about data settings in stocks can be found in the [Stock Data tutorial](../Data). Now, let's look at some stock settings.
 
-Of course, stock Range Column charts can contain several series. You can find how to create a multi-series Range Column chart in the [Column Chart](../../Basic_Chart_Types/Column_Chart#multi_series) tutorial.
+Of course, stock Range Column charts can contain several series. You can find how to create a multi-series Range Column chart in the [Column Chart](../../Basic_Charts_Types/Column_Chart#multi_series) tutorial.
 
 Stocks usually demonstrate a number of charts, making the stock more informative. Sometimes these series are of different types. The sample below contains two plots with column series, but it's possible to add series of other types.
 

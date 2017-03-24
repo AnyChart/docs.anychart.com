@@ -11,7 +11,7 @@
 
 ## Overview
 
-OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Chart_Types/OHLC_Chart).
+OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Charts_Types/OHLC_Chart).
 
 This series type is often used in stocks. This article will help you to adjust some settings of OHLC Charts in Stocks.
 
@@ -80,7 +80,7 @@ The next sample contains the same data items arranged as array of arrays.
 
 {sample}STOCK\_OHLC\_01{sample}
 
-As in case with the most of the basic charts, OHLC Stocks can contain several series. In creating multi-series stock, there are two options as well: we can create several series in one plot or create several plots and distribute the series between them. A tutorial about creating a multi-series OHLC Chart can be found [here](../../Basic_Chart_Types/OHLC_Chart#multi_series). 
+As in case with the most of the basic charts, OHLC Stocks can contain several series. In creating multi-series stock, there are two options as well: we can create several series in one plot or create several plots and distribute the series between them. A tutorial about creating a multi-series OHLC Chart can be found [here](../../Basic_Charts_Types/OHLC_Chart#multi_series).
 
 Plots are something like frames in the chart, that let us to display several series in one chart without them crossing each other. You can find all information about the plots in stocks in the [Chart Plot](../Chart_Plots) article. Now, let's create a sample with two plots each holding a series.
 

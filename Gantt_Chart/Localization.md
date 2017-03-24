@@ -11,7 +11,7 @@ AnyChart Gantt charts support full localization of input and output date time an
 
 ##Applying automatic locale
 
-You can use locales created by AnyChart for the most regions and cultures, do that, first link a file from [AnyChart CDN](locales_cdn) or download it on your server and link from there.
+You can use locales created by AnyChart for the most regions and cultures, do that, first link a file from [AnyChart CDN](https://cdn.anychart.com/#locales) or download it on your server and link from there.
 
 Linking from CDN looks like this:
 

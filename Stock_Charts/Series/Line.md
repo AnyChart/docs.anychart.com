@@ -10,7 +10,7 @@
 
 ## Overview
 
-Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Lines are popular in describing statistical information, such as birth rates, currency rates changing, temperature and so on. Read more about Line Series in the [Line Series tutorial](../../Basic_Chart_Types/Line_Chart).
+Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Lines are popular in describing statistical information, such as birth rates, currency rates changing, temperature and so on. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts_Types/Line_Chart).
 
 The main difference between usual Line Series and Line Series in Stocks is in amount of information displayed. Stocks are intended to show far much more information than basic charts, so some features are different due to this reason. Let's now consider using Lines in Stocks.
 
@@ -65,7 +65,7 @@ In the sample above we arranged data as an array of arrays. The next sample cont
 
 It's rather clear that there's no difference in both samples, so there's no matter for your stock appearance which data type you choose - it depends only on your preferences. Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
-A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. You can find more about multi-series Line charts in the [Line Chart](../../Basic_Chart_Types/Line_Chart#multi_series) tutorial.
+A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. You can find more about multi-series Line charts in the [Line Chart](../../Basic_Charts_Types/Line-Spline-StepLine_Charts#multi_series) tutorial.
 
 
 ```

@@ -10,7 +10,7 @@
 
 ## Overview
 
-Range Spline Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Spline Area Chart](../../Basic_Chart_Types/Range_Area-SplineArea_Charts).
+Range Spline Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Spline Area Chart](../../Basic_Charts_Types/Range_Area-SplineArea_Charts).
 
 This series is can be successfully used as stock series. There are some things different about parameters of Range Spline Area in Basic Charts and in Stocks due to a big amount of data in the last case, so we will consider those in this article.
 

@@ -48,7 +48,7 @@ The ticks in AnyStocks are a little bit different too. As the X-axis is an area,
 
 Scroll the chart to see them all.
 
-We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method. 
+We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method.
 
 You can find how to work with the X-axis height in the [Axis Line](#axis_line) part of the article.
 
@@ -90,7 +90,7 @@ In AnyStock, the x-axis is not a line, but an area with the background and heigh
 
 ## Grids
 
-Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axis_Basics#grids), but it is a method of a plot, not a chart:
+Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
 // defining the chart 

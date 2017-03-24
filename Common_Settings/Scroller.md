@@ -40,7 +40,7 @@ First of all, we need to define that area of the chart that we'd like to have be
 
 #### Set the limits by ratio
 
-The simplest way of limiting the show area is using the ratio. We have the {api:anychart.charts.Cartesian.XZoom#setTo}**.setTo()**{api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3). Look at the following sample.
+The simplest way of limiting the show area is using the ratio. We have the {api:anychart.core.utils.OrdinalZoom#setTo}**.setTo()**{api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3). Look at the following sample.
 
 ```
 	// turn it on
@@ -52,7 +52,7 @@ The simplest way of limiting the show area is using the ratio. We have the {api:
 
 #### Set the limits by values
 
-Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, unless you do this, the default xScale is used. So, if we'd like to zoom the chart to the area from Part 1 to Part 4 by Y-axis, we should use the {api:anychart.charts.Cartesian.XZoom#setToValue}**.setToValue()**{api} method and write the following:
+Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, unless you do this, the default xScale is used. So, if we'd like to zoom the chart to the area from Part 1 to Part 4 by Y-axis, we should use the {api:anychart.core.utils.OrdinalZoom#setToValue}**.setToValue()**{api} method and write the following:
 
 ```
 	// set the yZoom
@@ -84,7 +84,7 @@ The third way of setting the limits is to set the number of points from the begi
 
 Note that this method works only with ordinal scales. 
 
-By default, the chart is changing while being scrolled. We can prevent this and redraw chart only when the mouse button is released, this may improve user experience when you show very large data sets. For this option we've got the {api:anychart.charts.Cartesian.XZoom#continuous}**.continuous()**{api} method:
+By default, the chart is changing while being scrolled. We can prevent this and redraw chart only when the mouse button is released, this may improve user experience when you show very large data sets. For this option we've got the {api:anychart.core.utils.OrdinalZoom#continuous}**.continuous()**{api} method:
 
 ```
 	// set the xZoom
@@ -98,7 +98,7 @@ By default, the chart is changing while being scrolled. We can prevent this and 
 
 #### Get the limits ratio
 
-You can also get the limiting points ratio using {api:anychart.charts.Cartesian.XZoom#getStartRatio}**.getStartRatio()**{api} and {api:anychart.charts.Cartesian.XZoom#getEndRatio}**.getEndRatio()**{api} methods. They will return the limiting ratio values.
+You can also get the limiting points ratio using {api:anychart.core.utils.OrdinalZoom#getStartRatio}**.getStartRatio()**{api} and {api:anychart.core.utils.OrdinalZoom#getEndRatio}**.getEndRatio()**{api} methods. They will return the limiting ratio values.
 
 
 ```
