@@ -22,7 +22,7 @@ or like a number of colored boxes, each presenting a range of values.
 To create a colorrange, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
 (to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). You can find more about visual settings in the end of this article.
 
-However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](Scales) to know, how to set and adjust it according to your needs.
+However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](./Scales) to know, how to set and adjust it according to your needs.
 
 The first step of adjusting the colors is to set the series and data correctly. Let's make an example with a Choropleth Series Map. Look at the code below.
 
@@ -62,7 +62,7 @@ Note that a ColorRange can only be connected to an only axis, while it's possibl
  
 ## Enabling the ColorRange
 
-To enable the ColorRange, there's a simple method **{api:anychart.charts.Map#colorRange}.colorRange(){api}**. 
+To enable the ColorRange, there's a simple method **{api:anychart.charts.Map#colorRange}.colorRange(){api}**.
 
 ```
 // create and enable the colorRange
@@ -120,7 +120,7 @@ In case you set the only value, this value will be interpreted as the same paddi
 
 {sample}Maps\_ColorRange\_06{sample}
 
-And if you define all four padding values, you'll be able to change the distance between the ColorKange and both map and its field borders. 
+And if you define all four padding values, you'll be able to change the distance between the ColorKange and both map and its field borders.
 
 ```
 	// set the colorRange padding 
@@ -133,7 +133,7 @@ As you can see, the usage of this method with ColorRange is the same as in simpl
 
 ### Stroke 
 
-To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}**.stroke()**{api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
+To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}**.stroke()**{api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale).
 
 ```
 	// create, enable and stroke the colorRange

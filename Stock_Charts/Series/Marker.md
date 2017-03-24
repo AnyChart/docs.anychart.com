@@ -11,7 +11,7 @@
 
 ## Overview
 
-The most popular usage of basic Marker series is demonstrating the distribution of some events through the timeline. It's rather useful in statistics, ecomonics, sports, finances, etc. Marker Charts use only points to show the values. It can display a lot of series at once - this feature might be quite useful in some cases. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Chart_Types/Marker_Chart).
+The most popular usage of basic Marker series is demonstrating the distribution of some events through the timeline. It's rather useful in statistics, ecomonics, sports, finances, etc. Marker Charts use only points to show the values. It can display a lot of series at once - this feature might be quite useful in some cases. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Charts_Types/Marker_Chart).
 
 In Stocks, Marker series are intended to show a big amount of data, so some their settings in stocks are special. We'll consider them in this article.
 

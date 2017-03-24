@@ -61,7 +61,7 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 ### Tokens List
 
-Here is a list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on. 
+Here is a list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on.
 
 The full list of tokens is available in API: {api:anychart.enums.Statistics}anychart.enums.Statistics{api}
 
@@ -344,8 +344,8 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 
 ## Formatting Parameters
 
-Along with usage of special tokens which help to define the source of text, you can set options which help to format numeric values in the text. Options follow the token in curly brackets. 
-  
+Along with usage of special tokens which help to define the source of text, you can set options which help to format numeric values in the text. Options follow the token in curly brackets.
+
 Here is a simple code with tokens:
 
 ```
@@ -361,10 +361,11 @@ Here is a chart with a tooltip configured using tokens with options:
 
 {sample}CS\_TextFormatter\_01{sample}
 
-### Formatting Parameters List  
+
+### Formatting Parameters List
 
 There is a list of formatting parameters, which help to organize your data presentation in the way you prefer. You can find a sample after the table that list formatting parameters.
-  
+
 <table width="700px" class="dtTABLE">
 <tr>
 <th>Option</th>
@@ -398,7 +399,7 @@ var columnTooltip = columnSeries.tooltip();
 
 // scaling value
 columnTooltip.textFormatter("{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}");
-```  
+```
 
 {sample}CS\_TextFormatter\_02{sample}
 
@@ -409,7 +410,7 @@ On the sample below there is another popular case of scale formatting shown: a t
 ```
 // string for formatting tooltips
 var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
-```  
+```
 
 {sample}CS\_TextFormatter\_03{sample}
 
@@ -422,7 +423,7 @@ var tooltip = series.tooltip();
 
 // use coma as the thousands separator
 tooltip.textFormatter("{%Value}{groupsSeparator:\\,}");
-```  
+```
 
 {sample}CS\_TextFormatter\_04{sample}
 
@@ -550,6 +551,7 @@ labels.textFormatter(function(){
 
 In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api}.
 
+
 Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api} method.
 
 ```
@@ -572,7 +574,7 @@ var tooltip = series.tooltip();
 
 // adjust tooltip text
 tooltip.textFormatter(function(){
-    return 
+    return
         this.seriesName + ": " + this.value + " millions" +
         "\nYear over year: " + this.getDataValue("yoy") + "%";
 });
@@ -598,7 +600,7 @@ var series_1 = chart.ohlc([
 ]);
 series_1.xPointPosition(0.5);
 series_1.meta("company", "ACME Corp.");
- 
+
 // set second series data
 
 var series_2 = chart.ohlc([

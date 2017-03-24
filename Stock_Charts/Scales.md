@@ -12,7 +12,7 @@
 
 ## Overview
 
-In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](Axes Tutorial), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).
+In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](./Axes), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).
 
 In this section we will demonstrate only the differences of AnyStock scales from basic charts' ones.
 

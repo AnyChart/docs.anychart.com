@@ -61,7 +61,7 @@ On a stage, you can draw anything using simple shapes, such as [rectangles, elli
 // draw a circle
 stage.circle(200, 250, 100);
 
-// draw a square 
+// draw a square
 stage.rect(25, 50, 350, 300);
 ```
 
@@ -71,7 +71,7 @@ There are a lot of shapes and predefined paths in GraphicsJS: see [Shapes](Shape
 
 ## Path
 
-### Building the path 
+### Building the path
 
 To draw a custom complicated shapes use the {api:anychart.graphics#path}path(){api} method. Don't forget to check [Shapes](Shapes) article, GraphicsJS has several built-in primitives, like {api:anychart.graphics.vector.Stage#star}star(){api} or {api:anychart.graphics.vector.Stage#cross}cross(){api}.
 
@@ -83,7 +83,7 @@ stage.path().moveTo(25, 350)
             .lineTo(200, 50)
             .lineTo(375, 350)
             .close();
-            
+
 // draw a wand in the middle
 stage.path().moveTo(200,50)
             .lineTo(200,350);
@@ -115,7 +115,7 @@ Visit the [Fill](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to lear
 
 To create anything more complex than a bunch of lines and shapes you should use [Layers](Layers), for example, if we want to show a pseudo-3D picture with a cube, cylinder and a hexagonal prism and make a realistic pseudo-3D we should not only color and position the figures correctly, but put some lights and shades together too. In terms of logic - working with layers is pretty similar to working with groups and layers in Photoshop or Illustrator.
 
-One 3D figure may contain several shapes created using [primitives](Shapes) or [paths](Paths). Layers allow as to group, control and [transform](Transformations) several elements at once. Using layers makes it really easy to operate with groups of elements, when you need to possible to [transform](Transformations), [remove or add a plenty of elements](Virtual_DOM) - don't draw everything on a stage directly, [Layers](Layers) is the way to go. 
+One 3D figure may contain several shapes created using [primitives](Shapes) or [paths](Paths). Layers allow as to group, control and [transform](Transformations) several elements at once. Using layers makes it really easy to operate with groups of elements, when you need to possible to [transform](Transformations), [remove or add a plenty of elements](Virtual_DOM) - don't draw everything on a stage directly, [Layers](Layers) is the way to go.
 
 Layers are transparent by default, have no bounds and can be created as many times as necessary:
 
@@ -133,13 +133,13 @@ And here is a sample with all these shapes and layers:
 
 Layers can be transformed. For example, in the sample above the {api:anychart.graphics.vector.Element#translate}translate(){api} method is used to change the layers' position, the {api:anychart.graphics.vector.Element#rotate}rotate(){api} method to rotate and {api:anychart.graphics.vector.Element#scale}scale(){api}, if we need to scale it in some way.
 
-It's possible to add and remove elements on a layer separately using its names or indexes. Use the {api:anychart.graphics.vector.Stage#addChild}addChild(){api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. 
+It's possible to add and remove elements on a layer separately using its names or indexes. Use the {api:anychart.graphics.vector.Stage#addChild}addChild(){api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor.
 
 The similar method {api:anychart.graphics.vector.Stage#addChildAt}addChildAt(){api} will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
 
-The same thing is with removing elements. We use {api:anychart.graphics.vector.Element#remove}remove(){api} to remove the element. As layers are elements themselves, so they can be put one into another. 
+The same thing is with removing elements. We use {api:anychart.graphics.vector.Element#remove}remove(){api} to remove the element. As layers are elements themselves, so they can be put one into another.
  
-In the example above 5 different layers are used to build each figure and its shadows on each layer. Now if any layer is removed, it will look like we've removed a figure. 
+In the example above 5 different layers are used to build each figure and its shadows on each layer. Now if any layer is removed, it will look like we've removed a figure.
 
 Let's use the {api:anychart.graphics.vector.Stage#removeChild}remove(){api} method to remove the cylinder with its shadow.
 
@@ -150,8 +150,7 @@ layer_cylinder.remove();
 
 {sample}GFX\_Basics\_05{sample}
 
-The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Element#remove}remove(){api} method to get rid of the big shadow under all objects which is situated on the separate layer.
-
+The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Layer#removeChild}remove(){api} method to get rid of the big shadow under all objects which is situated on the separate layer.
 ```
 // remove the cylinder layer
 layer_cylinder.remove();
@@ -187,7 +186,7 @@ There are far much more settings to fix with the text elements. You can find all
 
 ##Custom marker
 
-And again a section for AnyChart 7 users: if you are still in doubt about why to use GraphicsJS, pay some attention to this section. Here we will talk about custom markers that can be simply created using GraphicsJS. 
+And again a section for AnyChart 7 users: if you are still in doubt about why to use GraphicsJS, pay some attention to this section. Here we will talk about custom markers that can be simply created using GraphicsJS.
 
 Let's use stage to create a simple bar chart with an unusual marker:
 
@@ -201,7 +200,7 @@ function customMarkerDrawer(path, x, y, size) {
                 .lineTo(x + 25, y - 20)
                 .arcTo(50,25,180,325)
                 .close();
-}    
+}
 ```
 
 Using GraphicsJS makes it simple to create new forms and shapes which may become markers on a chart or visualize something else, e.g. it can be useful in dashboards building.  Visit [Stage-Based Layout](../Dashboards/Stage-Based_Layout) tutorial to read more about using GraphicsJS in dashboards. You can also visit [AnyChart Custom Drawings Gallery](http://www.anychart.com/products/anychart/gallery/Custom_Drawing/) to see how you can make use of custom drawing capabilities in AnyChart.
