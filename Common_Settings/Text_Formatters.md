@@ -280,8 +280,8 @@ Using these methods, you can display the values from the extra params, if you ha
 {sample}CS\_TextFormatter\_03{sample}
 
 In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
-  
-  
+
+
 Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} method.
 
 ```
@@ -294,16 +294,16 @@ Managing additional information for chart tooltips works pretty much the same as
         // set data row for custom parameter
         yoy: [2]
     });
-    
+
     // set data for series
     var series = chart.column(seriesData);
     series.name("Unique users in 2013");
-    
+
     // series tooltip settings
     var tooltip = series.tooltip();
     // adjust tooltip text
     tooltip.textFormatter(function(){
-        return 
+        return
             this.seriesName + ": " + this.value + " millions" +
             "\nYear over year: " + this.getDataValue("yoy") + "%";
     });

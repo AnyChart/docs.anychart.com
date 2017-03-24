@@ -28,7 +28,7 @@ AnyStock supports a lot of different series types. Here's a sample where we have
 ```
 {sample}STOCK\_Supported\_Series\_01{sample}
 
-You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axis_Basics).
+You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](../../Stock_Charts/Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../../../Axes_and_Grids/Axis_Basics).
 
 ### AnyStock Series Adjusting
 

@@ -4,10 +4,10 @@
  * [Themes Explained](#themes_explained)
  * [Out of the box Themes](#out_of_the_box_themes)
 * [Create Theme](#create_theme)
-* [Internal Themes](#internal_themes) 
+* [Internal Themes](#internal_themes)
 * [External Themes](#external_themes)
  * [Default Theme](#default_theme)
- * [Old Theme](#old_theme) 
+ * [Old Theme](#old_theme)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
 * [Reset Theme](#reset_theme)
@@ -16,15 +16,17 @@
 
 ##Overview
 
-To simplify visual adjustment of js charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for chart settings. In this tutorial we will explain what for and how themes are used.
+To simplify visual adjustment of js charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for  chart settings.
+
+
+In this tutorial we will explain what  for and how themes are used.
   
 ###Themes Explained
   
 The main idea of themes is to segregate chart settings and data section for easy changing and/or reuse settings in another charts that should look the same way.
-    
-If some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.
-
-AnyChart comes with a number of Out of the box themes that can be used to change look and feel of every chart in the package, learn about them in the next section.
+  
+  
+If  some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.AnyChart comes with a number of Out of the box themes that can be used to change look and feel of every chart in the package, learn about them in the next section.
 
 ###Out of the box Themes
 
@@ -44,7 +46,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
           ["Men's/Women's Specialty Stores", 148662],
           ["All other outlets", 90000]
         ]);
-      
+
         // apply coffee theme
         anychart.theme(anychart.themes.coffee);
 
@@ -60,7 +62,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
   </head>
 ```
 
-You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed. 
+You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed.
 
 There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Earth*, *Dark Glamour*, *Dark Provence*, *Default Theme*, *Light Blue*, *Light Earth*, *Light Glamour*, *Light Provence*, *Monochrome*, *Morning*, *Pastel*, *Sea*, *6.x Version*, *Wines*.
 
@@ -70,7 +72,8 @@ You can take a look at the [AnyChart Themes Demo](http://www.anychart.com/produc
 
 ##Create Theme
 
-To create a theme is to create variable with all desirable chart settings and set it using {api:anychart#theme}theme(){api}.
+To create a theme is to create variable with all desirable chart settingsand set it using {api:anychart#theme}theme(){api}.
+
 
 Suppose you want to create a bar charts many times, and all of them will use the same axes and chart titles.
 
@@ -241,8 +244,9 @@ The content of **custom_theme.js** should be something like the snippet below:
 
 You can find **defaultTheme.js** in **binaries** folder in the downloaded AnyChart package.
 This file can be found in **binaries** folder in the downloaded AnyChart package. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
-
-**Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want  to be persistent.
+  
+  
+**Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want  to be persistent .
 
 ### Old Theme
   
@@ -297,12 +301,13 @@ There is one very important thing you need to remember when you work with themes
 
 ## Global Settings, Defaults and Theme Reference
 
-As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../Working_with_Data/Data_FromJSON#schema).
-
+As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../Working_with_Data/Data_From_JSON#schema).
 But there are some very important characteristics and features in a theme: you can set defaults and global settings for some elements, and you can set default settings for a chart type.
   
+
 **Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values and this file can be used as a reference of all theme settings. Read more about default theme in [Default Theme section](#default_theme).
   
+
 Here is a list of global settings and defaults that can be defined in a theme:
 
 <table class="dtTABLE" width="700">
@@ -406,9 +411,12 @@ Here is a sample of a dashboard with a column chart, pie chart and a radar with 
 
 Themes are introduced in AnyChart 7.6, along with new color scheme and changed default settings. If you have never used AnyChart 7 before the release version 7.6 you can ignore this section cause it does not affect you.
   
+
 If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
   
+
 * use special **anychart.theme_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package or you can get this js from anychart cdn server using the link [cdn.anychart.com/themes/latest/v6.min.js](http://cdn.anychart.com/themes/latest/v6.min.js)).
 * or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
   
+
 **Note**: AnyChart html5 charting framework recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
