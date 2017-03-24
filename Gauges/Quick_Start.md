@@ -38,7 +38,8 @@ dataSet = anychart.data.set([
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. <!--See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.-->
+This code example uses JavaScript API to create a chart, but you also can use JSON or XML format.
+See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
 Example:
 
 ```

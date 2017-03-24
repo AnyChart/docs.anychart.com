@@ -22,7 +22,7 @@ General settings are the settings that can be done with any annotation regardles
 
 * [Annotations General Settings](General_Settings)
 * [Managing Drawing Process](Drawing)
-* [Serializing and Deserializing Drawings](Serializing_Deserializing)
+* [Serializing and Deserializing Drawings](./Serializing_Deserialazing)
 
 ## Annotation Types
 

@@ -15,7 +15,7 @@ Coming soon.
 
 ## Hardcoding Annotations
 
-Adding in code or [Serialize and Deserialize](Serializing_Deserializing) as a list.
+Adding in code or [Serialize and Deserialize](./Serializing_Deserialazing) as a list.
 
 ```
 anychart.onDocumentReady(function () {

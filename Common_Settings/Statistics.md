@@ -48,7 +48,7 @@ numberOfTrees = chart.getStat("sum");
 
 ## Series
 
-Sometimes it is necessary to call the {api:anychart.core.Cartesian#getStat}getStat(){api} method of an instance of the series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
+Sometimes it is necessary to call the {api:anychart.charts.Cartesian#getStat}getStat(){api} method of an instance of the series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
 
 The following sample is based on one of the samples from the previous section. Here, the average is obtained for each series separately, and two numbers are displayed in the title: 
 

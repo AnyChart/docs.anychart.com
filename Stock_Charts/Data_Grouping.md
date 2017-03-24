@@ -7,7 +7,7 @@ Data Grouping
  * [Adjusting](#adjusting)
   * [Levels](#levels)
   * [Set Maximum Points Number](#set_maximum_points_number)
-  * [Set Minimum Width for a Point](set_minimum_width_for_a_point)
+  * [Set Minimum Width for a Point](#set_minimum_width_for_a_point)
   * [Disable](#disable)
 
  

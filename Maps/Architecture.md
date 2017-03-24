@@ -44,8 +44,8 @@ AnyChart provides GeoData in GeoJSON, TopoJSON, SVG and SHP format to make it ea
   
 AnyChart component is able to work with files in GeoJSON, TopoJSON and SVG formats. If your GeoData is in SHP format or any other, you need to convert it before using with AnyChart. You can find more about custom maps in the following articles:
 
-* [Custom GeoJSON Maps](Custom_GeoJSON_Maps)
-* [Custom TopJSON Maps](Custom_TopoJSON_Maps)
+* [Custom GeoJSON Maps](./Custom_GeoJson_Maps)
+* [Custom TopJSON Maps](Custom_TopoJSON)
 * [Custom SVG Maps](Custom_SVG_Maps)
 
 ## Map Series Types
@@ -60,7 +60,7 @@ Bubble Maps, or Proportional Symbol maps, are maps where bubbles (or other symbo
 
 ### Point Maps
 
-Dot (or Point, or Marker) Maps are those that demonstrate the existence of a subject or a feature. Unlike Bubble Maps, the dots' sizes don't depend on values. This type of maps is created with a help of [Dot Map Series](Dot_(Point)_Map).
+Dot (or Point, or Marker) Maps are those that demonstrate the existence of a subject or a feature. Unlike Bubble Maps, the dots' sizes don't depend on values. This type of maps is created with a help of [Dot Map Series](Dot_\(Point\)_Map).
 
 ### Seat Maps
 

@@ -87,7 +87,8 @@ No matter how many plots with or without series you create, all of them are scro
 ###4. Create a chart
 
 Add the JavaScript tag `<script>` with the following code anywhere in the page.
-This code example uses JavaScript API to create a chart, but you also can use [JSON](../Working_with_Data/Data_From_JSON) or [ XML ](../Working_with_Data/Data_From_XML).
+This code example uses JavaScript API to create a chart, but you also can use JSON or XML format.
+See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
 
 ```
 <script>
