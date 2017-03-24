@@ -48,7 +48,7 @@ The ticks in AnyStocks are a little bit different too. As the X-axis is an area,
 
 Scroll the chart to see them all.
 
-We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method. 
+We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method.
 
 You can find how to work with the X-axis height in the (Axis Line)[#axis_line] part of the article.
 

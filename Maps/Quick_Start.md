@@ -15,7 +15,7 @@ You can use the link as shown below or download anychart-bundle.min.js from the 
 
 ###2. Include the necessary Map into Your Web Page
 Reference the JavaScript file in the <head> section of your web page.
-Download the *.zip file from the [Map Collection](../Maps_List), put it into any folder of your site and reference it or simply use the link as shown below.
+Download the *.zip file from the [Map Collection](./Maps_List), put it into any folder of your site and reference it or simply use the link as shown below.
 
 ```
 <head>
@@ -51,7 +51,7 @@ dataSet = anychart.data.set([
 
 ###4. Create a map
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use GeoJSON format. See [Maps List](../Maps_List) and [Custom GeoJson Maps](../Custom_GeoJson_Maps) to learn more about supported formats and ways of creating maps.
+This code example uses JavaScript API to create a chart, but you also can use GeoJSON format. See [Maps List](./Maps_List) and [Custom GeoJson Maps](./Custom_GeoJson_Maps) to learn more about supported formats and ways of creating maps.
 Example:
 
 ```
