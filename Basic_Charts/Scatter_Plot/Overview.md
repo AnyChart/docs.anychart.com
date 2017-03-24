@@ -18,7 +18,7 @@
 ```
 // create data for the first series
 var data_1 = [
-  {x: 4.4, value: 78},
+  {x: 0.6, value: 22},
   {x: 3.9, value: 74},
   {x: 4, value: 68},
   {x: 4, value: 76},
@@ -31,7 +31,7 @@ var data_1 = [
 
 // create data for the second series
 var data_2 = [
-  {x: 1.5, value: 17.5},
+  {x: 0.5, value: 17.5},
   {x: 4.75, value: 100}
 ];
 

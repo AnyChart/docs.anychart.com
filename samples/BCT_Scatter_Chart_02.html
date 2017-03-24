@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {x: 4.4, value: 78},
+      {x: 0.6, value: 22},
       {x: 3.9, value: 74},
       {x: 4, value: 68},
       {x: 4, value: 76},
@@ -49,12 +49,6 @@
     // configure the visual settings of minor grids
     x_minor_grid.stroke({color: "#85adad", thickness: 0.3, dash: 5});
     y_minor_grid.stroke({color: "#85adad", thickness: 0.3, dash: 5});
-
-    // set the interval of ticks on the X-scale
-    chart.xScale().ticks().interval(1);
-
-    // set the interval of ticks on the Y-scale
-    chart.yScale().ticks().interval(10);
 
     // set the chart title
     chart.title("Scatter Plot: Grids");

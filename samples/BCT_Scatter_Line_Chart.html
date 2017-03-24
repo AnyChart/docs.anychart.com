@@ -11,15 +11,15 @@
 
   	// create data
     var data = [
-      {x: 5.0, value: 0},
-      {x: 5.0, value: 100},
-      {x: 6.0, value: 60},
-      {x: 5.4, value: 60},
-      {x: 6.5, value: 20},
-      {x: 3.5, value: 20},
-      {x: 4.6, value: 60},
-      {x: 4.0, value: 60},
-      {x: 5.0, value: 100},
+      {x: 20, value: 0},
+      {x: 20, value: 100},
+      {x: 30, value: 60},
+      {x: 24, value: 60},
+      {x: 35, value: 20},
+      {x: 5, value: 20},
+      {x: 16, value: 60},
+      {x: 10, value: 60},
+      {x: 20, value: 100},
     ];
   	
   	// create a chart
@@ -29,21 +29,12 @@
   	var series = chart.line(data);
 
     // create major grids and bind them to the X and Y axes
-    var x_grid = chart.grid(0);
-    x_grid.axis(chart.xAxis());
-
-    var y_grid = chart.grid(1);
-    y_grid.axis(chart.yAxis());
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
 
     // create minor grids and bind them to the X and Y axes
-    var x_minor_grid = chart.minorGrid(0);
-    x_minor_grid.axis(chart.xAxis());
-
-    var y_minor_grid = chart.minorGrid(1);
-    y_minor_grid.axis(chart.yAxis());
-
-    // set the interval of ticks on the X-scale
-    chart.xScale().ticks().interval(1);
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
 
   	// set the chart title
   	chart.title("Scatter Line Chart");

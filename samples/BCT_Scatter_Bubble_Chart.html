@@ -12,8 +12,8 @@
   	// create data
     var data = [
       {x: 1.3, value: 637, size: 6},
-      {x: 2.5, value: 72, size: 14},
-      {x: 3.2, value: 48, size: 20},
+      {x: 2.5, value: 202, size: 12},
+      {x: 3.2, value: 68, size: 5},
       {x: 3.9, value: 348, size: 18},
       {x: 5.1, value: 100, size: 10}
     ];
@@ -25,21 +25,12 @@
   	var series = chart.bubble(data);
 
     // create major grids and bind them to the X and Y axes
-    var x_grid = chart.grid(0);
-    x_grid.axis(chart.xAxis());
-
-    var y_grid = chart.grid(1);
-    y_grid.axis(chart.yAxis());
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
 
     // create minor grids and bind them to the X and Y axes
-    var x_minor_grid = chart.minorGrid(0);
-    x_minor_grid.axis(chart.xAxis());
-
-    var y_minor_grid = chart.minorGrid(1);
-    y_minor_grid.axis(chart.yAxis());
-
-    // set the interval of ticks on the X-scale
-    chart.xScale().ticks().interval(1);
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
     chart.title("Scatter Bubble Chart");    

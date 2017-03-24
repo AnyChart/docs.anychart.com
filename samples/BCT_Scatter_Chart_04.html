@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {x: 4.4, value: 78},
+      {x: 0.6, value: 22},
       {x: 3.9, value: 74},
       {x: 4, value: 68},
       {x: 4, value: 76},
@@ -29,21 +29,12 @@
     var series = chart.marker(data);
 
     // create major grids and bind them to the X and Y axes
-    var x_grid = chart.grid(0);
-    x_grid.axis(chart.xAxis());
-
-    var y_grid = chart.grid(1);
-    y_grid.axis(chart.yAxis());
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
 
     // create minor grids and bind them to the X and Y axes
-    var x_minor_grid = chart.minorGrid(0);
-    x_minor_grid.axis(chart.xAxis());
-
-    var y_minor_grid = chart.minorGrid(1);
-    y_minor_grid.axis(chart.yAxis());
-
-    // set the interval of ticks on the X-scale
-    chart.xScale().ticks().interval(1);
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
     chart.title("Scatter Plot: Error Chart");
