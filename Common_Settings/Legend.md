@@ -72,7 +72,7 @@ var title = chart.legend().title();
 title.enabled(true);
 ```
 
-To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Text_Settings) article.
 
 ```
 var title = chart.legend().title();
@@ -93,7 +93,7 @@ Here is a sample bar chart and the legend has tuned title:
 
 ## Positioning
 
-Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}position(){api} method of {api:anychart.core.ui.Legend}legend(){api}. 
+Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}position(){api} method of {api:anychart.core.ui.Legend}legend(){api}.
 
 As an addition to the {api:anychart.core.ui.Legend#position}position(){api} method, method {api:anychart.core.ui.Legend#align}align(){api} controls legend alignment.
 
@@ -107,14 +107,14 @@ As far as a legend is a part of a chart, its appearance should be tuned properly
 
 ### Background
 
-Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}background(){api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
+Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}background(){api} controls background visual appearance. To learn more about background setting please study the [background tutorial](../Appearance_Settings/Background).
 
 {sample}AS\_Legend\_05{sample}
 
 ### Size
 
-Legend size is controlled by {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} parameters. 
-    
+Legend size is controlled by {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} parameters.
+
 Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size positioned to the *"Left"* of the chart, aligned to *"Top"*, with padding of 10 pixels:
 
 ```
@@ -151,7 +151,7 @@ paginator.orientation("right");
 When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem(){api} method. Sample code presented below.
 
 ```
-// chart data 
+// chart data
 var series = chart.line([
   {x: "John", value: 16000},
   {x: "Jake", value: 21000},
@@ -179,13 +179,13 @@ If you want to configure legend tooltips - you should do that using {api:anychar
 
 ## Series Management
 
-You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series.
 
 {sample}AS\_Legend\_10{sample}
 
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter(){api} method. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter(){api} method.
 
 ```
 var legend = chart.legend();
@@ -207,7 +207,7 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 ## Custom Legend
 
-AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart.
 
 {sample}AS\_Legend\_12{sample}
 

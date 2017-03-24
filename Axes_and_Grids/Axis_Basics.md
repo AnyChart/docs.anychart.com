@@ -15,7 +15,7 @@
 ## Overview
 
 In AnyChart axes are used to control grids, axes labels, lines and tick marks, axes themselves depend on [scales](Scales).
-  
+
 * To know what scale options are available - please see: [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
@@ -69,7 +69,7 @@ And here is the demonstration of this feature on the Single series column chart:
 To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
-    
+
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
 
 ```
@@ -97,7 +97,7 @@ Adaptive stagger mode and with the maximum number of lines defined:
   var xAxis = chart.xAxis();
   // enables stagger mode
   xAxis.staggerMode(true);
-  // set the maximum number lines for labels to stagger 
+  // set the maximum number lines for labels to stagger
   // if chart is able to fit labels without staggering or staggering
   // in 2 or 3 lines - it will do so. It will not go over 4 lines:
   xAxis.staggerMaxLines(4);
@@ -110,7 +110,7 @@ Stagger always mode with the fixed number of lines:
   var xAxis = chart.xAxis();
   // enables stagger mode
   xAxis.staggerMode(true);
-  // set the number of lines for labels to stagger 
+  // set the number of lines for labels to stagger
   xAxis.staggerLines(3);
 ```
 Here is a sample of two similar charts with adaptive and fixed stagger modes enabled, you can see that the first one uses adaptive strategy and occupies two lines, the second one always uses three lines:
@@ -119,16 +119,16 @@ Here is a sample of two similar charts with adaptive and fixed stagger modes ena
 
 ## Axis Line and Zero Line
 
-It is possible to tune visual appearance of axis line and zero line. To do this you need to use 
+It is possible to tune visual appearance of axis line and zero line. To do this you need to use
 {api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method.
 
 ```
   var line = chart.lineMarker();
-  line.value(0);  
+  line.value(0);
   line.stroke("2 red");
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
@@ -207,7 +207,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 ### Layout
 
-Either grids and minor grids can be placed vertically or horizontally on the chart. You can control grids placement in two ways, the first is to bind a grid to an appropriate axis using {api:anychart.grids.Linear#axis}**axis()**{api} method:
+Either grids and minor grids can be placed vertically or horizontally on the chart . You can control grids placement in two ways, the first is to bind agridto an appropriate axis using {api:anychart.grids.Linear#axis}**axis()**{api} method:
 
 ```
   // create major and minor grids and bind them to X and Y axes
@@ -221,14 +221,14 @@ Either grids and minor grids can be placed vertically or horizontally on the cha
   y_minor_grid.axis(chart.yAxis());
 
   var x_minor_grid = chart.minorGrid(1);
-  x_minor_grid.axis(chart.xAxis());  
+  x_minor_grid.axis(chart.xAxis());
 ```
 
-In such case the grid will be bound to this axis and change its orientation and placement according to axis orientation and placement, as it is shown in the sample below: 
+In such case the grid will be bound to this axis and change its orientation and placement according to axis orientation and placement, as it is shown in the sample below:
 
 {sample}AGST\_Axes\_Basic\_11{sample}
 
-Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**layout()**{api} method and {api:anychart.grids.Linear#scale}**scale()**{api} methods. This can be done like shown below and is used in dashboards and charts with complex configurations:
+Alternatively, you can control gridusing {api:anychart.grids.Linear#layout}**layout()**{api} methodand {api:anychart.grids.Linear#scale}**scale()**{api} methods. This can be done like shown below and is used in dashboards and charts with complex configurations:
 
 ```
   var grid = chart.grid();
@@ -237,12 +237,12 @@ Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**la
 
 ```
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("circuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("circuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout.
 
 ```
   // create radar chart
   var chart = anychart.radar();
-  
+
   var grid = chart.grid();
   grid.layout("circuit");
 ```
@@ -251,6 +251,6 @@ Here is a sample of radar chart with circular grid:
 
 {sample}AGST\_Axes\_Basic\_12{sample}
 
-And here is a sample of Polar chart with radial layout: 
+And here is a sample of Polar chart with radial layout:
 
 {sample}AGST\_Axes\_Basic\_13{sample}
