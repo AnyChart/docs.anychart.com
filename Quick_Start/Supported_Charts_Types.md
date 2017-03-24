@@ -1,8 +1,8 @@
 {:index 3}
 Supported Charts Types
 ======================
-AnyChart offers of chart types and their modifications and combinations, 
-in the table below you can find a full list of all chart types available, 
+AnyChart offers of chart types and their modifications and combinations,
+in the table below you can find a full list of all chart types available,
 with links to tutorials where you can find out how to create them.
   
     
