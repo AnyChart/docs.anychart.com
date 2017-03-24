@@ -38,7 +38,7 @@ Using horizontal range marker let's highlights unsatisfactory result and using v
 
 ## Advanced Layout
 
-In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.range#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Range#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
+In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Range#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
 
 ### Advanced Option
