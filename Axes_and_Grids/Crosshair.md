@@ -16,7 +16,7 @@ Crosshair is a pair of perpendicular lines (horizontal and vertical), moving wit
 
 Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside the DataPlot box, Crosshair appears. Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
 
-Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../Basic_Chart_Types/Scatter_Chart).
+Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../Basic_Charts_Types/Scatter_Chart).
  
 ## Enable           
  

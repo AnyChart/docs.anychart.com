@@ -18,7 +18,7 @@ In AnyChart, when user interacts with a chart, there's an event object generated
 Events are distributed to the chart elements (title, legend, axis, etc.), and to make those elements respond to events, you should attach event listeners to them. 
 Event Listeners are simply JavaScript functions once applied to an object wait for the defined action over this object to be performed. 
 It's possible to apply more than one listener to an object. 
-There are 5 listener methods ({api:anychart.core.Base.listen}**.listen()**{api}, {api:anychart.core.Base.listenOnce}**.listenOnce()**{api}, {api:anychart.core.Base.removeAllListeners}**.removeAllListeners()**{api}, {api:anychart.core.Base.unlisten}**.unlisten()**{api} and {api:anychart.core.Base.unlistenByKey}**.unlistenByKey()**{api}) and a lot of event types, which you can read about in this article.
+There are 5 listener methods ({api:anychart.core.Chart#listen}**.listen()**{api}, {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api}, {api:anychart.core.Chart#removeAllListeners}**.removeAllListeners()**{api}, {api:anychart.core.Chart#unlisten}**.unlisten()**{api} and {api:anychart.core.Chart#unlistenByKey}**.unlistenByKey()**{api}) and a lot of event types, which you can read about in this article.
 
 ## Listener Types
 
@@ -26,7 +26,7 @@ There are five listener methods in Anychart, each type for a special case. Read 
 
 ###listen()
 
-This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base.listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
+This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Chart#listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
@@ -47,7 +47,7 @@ Look at the sample and through its code. It's necessary to define the event type
 ###listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
-You can add the {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
+You can add the {api:anychart.core.Chart##listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
 ```
@@ -62,7 +62,7 @@ It's necessary to define the event type and the action to perform to get any rea
 ###removeAllListeners()
 
 This listener type removes all event listeners from the object, unless you define the particular type.
-You can add the {api:anychart.core.Base.removeAllListeners}**.removeAllListeners()**{api} method to an object more than once.
+You can add the {api:anychart.core.Chart#removeAllListeners}**.removeAllListeners()**{api} method to an object more than once.
 
 ```
     //remove all listeners
@@ -73,14 +73,14 @@ You can add the {api:anychart.core.Base.removeAllListeners}**.removeAllListeners
 
 {sample}CMN\_Event\_Listener\_03{sample}
 
-Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Base#listen}**.listen()**{api} one. 
+Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Chart##unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Chart#listen}**.listen()**{api} one.
 
 
 ###unlisten()
 
-This listener type disables the particular listener added using the {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOnce}**.listenOnce()**{api} methods. 
-You can add the {api:anychart.core.Base.unlisten}**.unlisten()**{api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
-To stop listen to the particular action, place an {api:anychart.core.Base.unlisten}**.unlisten**(){api} method to the event you\d like to stop listen to inside the {api:anychart.core.Base.listen}**.listen()**{api} method, enabled for any action.
+This listener type disables the particular listener added using the {api:anychart.core.Chart#listen}**.listen()**{api} or {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api} methods.
+You can add the {api:anychart.core.Chart#unlisten}**.unlisten()**{api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
+To stop listen to the particular action, place an {api:anychart.core.Chart#unlisten}**.unlisten**(){api} method to the event you\d like to stop listen to inside the {api:anychart.core.Chart#listen}**.listen()**{api} method, enabled for any action.
 
 ```
 //create a function for what to listen and then unlisten
@@ -108,8 +108,8 @@ To stop listen to the particular action, place an {api:anychart.core.Base.unlist
 
 ###unlistenByKey()
 
-This listener type removes an event listener which was added with {api:anychart.core.Base.listen}**.listen()**{api} by the key returned by {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOnce}**.listenOnce()**{api}. The only parameter of this method is the key to be listened to.
-You can use the {api:anychart.core.Base.unlistenByKey}**.unlistenByKey()**{api} method more than once with one object.
+This listener type removes an event listener which was added with {api:anychart.core.Chart#listen}**.listen()**{api} by the key returned by {api:anychart.core.Chart#listen}**.listen()**{api} or {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api}. The only parameter of this method is the key to be listened to.
+You can use the {api:anychart.core.Chart#unlistenByKey}**.unlistenByKey()**{api} method more than once with one object.
 Look at the sample and its code. It's necessary to define the key of the listener that you need to disable.
 
 ```

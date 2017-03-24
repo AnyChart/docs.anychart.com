@@ -10,7 +10,6 @@ Downloading AnyChart
 * [AnyChart CDN](#anychart_cdn)
 * [Production vs Development Builds](#production_vs_development_builds)
 * [Package Content](#package_content)
-* [Custom Build](#custom_build)
 * [Old Releases](#old_releases)
 
 ###Downloading
@@ -71,16 +70,6 @@ Binaries package contains all resources you may need to work with AnyChart:
   * _anychart.min.js_ - production build,
   * _anychart.dev.min.js_ - development build,
 * _index.html_ - binaries package index.
-  
-
-###Custom Build
-
-Coming soon.
-<!--
-Using <a href="build.anychart.com">AnyChart Build Server</a>, you can create your custom build of AnyChart 7.x.<br>
-Build Server provides a simple web interface where you can choose which charts types and features you want to include.<br>
-You can read more about Build Server and custom builds in the <a href="./Environment/Build_Server">Build Server</a> documentation section.
--->
 
 ### Old Releases
 

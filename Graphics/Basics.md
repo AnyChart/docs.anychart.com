@@ -154,7 +154,7 @@ Let's use the {api:anychart.graphics.vector.Stage#removeChild}**.remove()**{api}
 ```
 {sample}GRAPHICS\_Basics\_05{sample}
 
-The situation would be different if we decided to remove the cube also. In this case we should have used the **{api:anychart.graphics.vector.Element.removeChild()}**.removeChild()**{api}** method to get rid of the big shadow under all objects which is situated on a separated layer.
+The situation would be different if we decided to remove the cube also. In this case we should have used the **{api:anychart.graphics.vector.Layer#removeChild}**.removeChild()**{api}** method to get rid of the big shadow under all objects which is situated on a separated layer.
 ```
     //remove the cylinder layer
     layer_cylinder.remove();
@@ -196,7 +196,7 @@ There are far much more settings to fix with the text elements. You can find all
 
 If you are still in doubt about why to use graphics, put your attention on this paragraph. Here we'll talk about custom markers, which can be simply created with graphics. 
 
-Let's use stage to create a simple bar chart where we place our self-made marker. You can find more about stage in our [Stage](../Dashboards/Stage-Stage-Based_Layout) tutorial.
+Let's use stage to create a simple bar chart where we place our self-made marker. You can find more about stage in our [Stage](../Dashboards/Stage-Based_Layout) tutorial.
 
 {sample}GRAPHICS\_Basics\_08{sample}
 
