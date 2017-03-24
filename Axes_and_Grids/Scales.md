@@ -22,11 +22,11 @@
 ## Overview
 
 Scales allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display - please see: [Axis Basics tutorial](Axis_Basics).
-  
-  
+
+
 In this section we will explain main scales options.
-  
-  
+
+
 If you want to control any of scale settings - you should do that using {api:anychart.scales}**scale()**{api} method.
 
 ## Types
@@ -40,7 +40,7 @@ There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linea
   chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
+Note: working with extra axes is explained in [Additional Axes Tutorial](./Additional_Axes)
 
 ### Linear
 
@@ -54,7 +54,7 @@ Linear scale type is a default type for yScale in most charts. Values for this s
 
 ### Logarithmic
 
-A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the logarithm reduces this to a more manageable range. 
+A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the logarithm reduces this to a more manageable range.
 <!--You can set any positive number as a logarithm base using log_base attribute.-->
 
 ```
@@ -156,9 +156,9 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Minor and Major Ticks
 
-For any scale, but ordinal, you can set {api:anychart.scales.Linear#ticks}major{api} and {api:anychart.scales.Linear#minorTicks}minor{api} ticks intervals, which are calculated automatically by default. 
-  
-  
+For any scale, but ordinal, you can set {api:anychart.scales.Linear#ticks}major{api} and {api:anychart.scales.Linear#minorTicks}minor{api} ticks intervals, which are calculated automatically by default.
+
+
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
@@ -235,7 +235,7 @@ You can control visual appearance of grid lines using {api:anychart.grids.Linear
 ```
 
 {sample}AGST\_Scales\_12{sample}
-  
+
 
 Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**oddFill()**{api} method controls the color settings of all odd spaces.
 
@@ -254,7 +254,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 ### Layout
 
-Grids can be placed vertically or horizontally on the chart plot. You can control grid's placement using {api:anychart.grids.Linear#layout}**layout()**{api} method. 
+Grids can be placed vertically or horizontally on the chart plot. You can control grid's placement using {api:anychart.grids.Linear#layout}**layout()**{api} method.
 
 ```
   var grid = chart.grid();
@@ -263,12 +263,12 @@ Grids can be placed vertically or horizontally on the chart plot. You can contro
 
 {sample}AGST\_Scales\_14{sample}
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout.
 
 ```
   // create radar chart
   var chart = anychart.radar();
-  
+
   var grid = chart.grid();
   grid.layout("curcuit");
 ```
@@ -277,7 +277,7 @@ Here is a sample of radar chart with circular grid:
 
 {sample}AGST\_Scales\_15{sample}
 
-And here is a sample of Polar chart with radial layout: 
+And here is a sample of Polar chart with radial layout:
 
 {sample}AGST\_Scales\_16{sample}
 

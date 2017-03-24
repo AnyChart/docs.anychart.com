@@ -13,8 +13,8 @@
 ## Overview
 
 Crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular data of an action, while the axes contain any other information, such as years/months or any kind of percentage. Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary point and get some extra information about it with the crosshair on a chart.
-  
-  
+
+
 Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside the DataPlot box, Crosshair appears. Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
 
 Crosshairs can be used on all Cartesians ([Area](../Basic_Charts_Types/Area_Chart), [Line](../Basic_Charts_Types/Line-Spline-StepLine_Charts), [Bar](../Basic_Charts_Types/Bar_Chart), [Column](../Basic_Charts_Types/Column_Chart), etc.) and [Scatter Charts](../Basic_Charts_Types/Scatter_Chart).
@@ -53,7 +53,7 @@ In some situations you may not need one or both lines but highlighted labels are
 ```
   // remove the x-axis line
   var crosshair = chart.crosshair();
-  crosshair.xStroke(null); 
+  crosshair.xStroke(null);
 ```
 {sample}AGST\_Crosshair\_03{sample}
 
@@ -72,7 +72,7 @@ Use the standard function to disable the axes labels.
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}**textFormatter()**{api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}**textFormatter()**{api} to change the crosshair's labels' performance.
 
 ```
   // set the label performance

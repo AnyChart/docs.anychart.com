@@ -70,7 +70,7 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
   chart.legend().title().enabled(true);
 ```
 
-To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Text_Settings) article.
 
 ```
   chart.legend().title()
@@ -87,7 +87,7 @@ Here is a sample bar chart and the legend has tuned title:
 
 ## Positioning
 
-Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} method of {api:anychart.core.ui.Legend}**.legend()**{api}. 
+Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} method of {api:anychart.core.ui.Legend}**.legend()**{api}.
   
   
 As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} method, method {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
@@ -102,7 +102,7 @@ As far as a legend is a part of a chart, its appearance should be tuned properly
 
 ### Background
 
-Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
+Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](../Appearance_Settings/Background).
 
 {sample}AS\_Legend\_05{sample}
 
@@ -115,7 +115,7 @@ Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size posi
 
 ```
   chart.legend()
-    .height(140)  // set legend height to 140px 
+    .height(140)  // set legend height to 140px
     .width(95)    // set legend width to 95px
 ```
 
@@ -169,13 +169,13 @@ If you want to configure legend tooltips - you should do that using {api:anychar
 
 ## Series Management
 
-You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series.
 
 {sample}AS\_Legend\_10{sample}
 
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method.
 
 ```
 chart.legend()
@@ -193,7 +193,7 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 ## Custom Legend
 
-AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart.
 
 {sample}AS\_Legend\_12{sample}
 
@@ -205,7 +205,7 @@ As you can see, one legend can contain different information from one chart. Mor
   // define charts
   var chart2005 = anychart.column();
   var chart2006 = anychart.column();
-  
+
   // create custom legend
   var legend = anychart.ui.legend();
   legend.itemsSource([chart2005, chart2006]); // set sources for legend items

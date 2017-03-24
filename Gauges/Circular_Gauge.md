@@ -208,7 +208,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 ```
 {sample}GAUGE\_Circular\_06{sample}
 
-To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
+To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
 
 For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
