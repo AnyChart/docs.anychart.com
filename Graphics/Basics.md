@@ -196,7 +196,7 @@ There are far much more settings to fix with the text elements. You can find all
 
 If you are still in doubt about why to use graphics, put your attention on this paragraph. Here we'll talk about custom markers, which can be simply created with graphics. 
 
-Let's use stage to create a simple bar chart where we place our self-made marker. You can find more about stage in our [Stage](../Dashboards/Stage-Based_Laoyut) tutorial.
+Let's use stage to create a simple bar chart where we place our self-made marker. You can find more about stage in our [Stage](../Dashboards/Stage-Stage-Based_Layout) tutorial.
 
 {sample}GRAPHICS\_Basics\_08{sample}
 

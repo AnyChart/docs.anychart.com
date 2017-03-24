@@ -41,7 +41,7 @@ Visual settings control:
 With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.ui.Table#cellFill}**.cellFill()**{api} method.
   
   
-This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../Appearance_Settings/Fill).
+This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../Appearance_Settings/Color_Management).
 
 #### Table fill
 
@@ -118,7 +118,7 @@ Default width of the table is the width of the container. Fixed width of the tab
 
 Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any
  part of chart it can be configured and all settings can be adjusted. In this section there are just several
- demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../Appearance_Settings/Strokes_and_Lines) tutorial.
+ demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../Appearance_Settings/Lines_Settings) tutorial.
   
   
 In this section revealed all methods of controlling borders in a table. 
