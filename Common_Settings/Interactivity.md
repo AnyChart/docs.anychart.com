@@ -11,13 +11,13 @@
   * [Select](#series_select)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
-  * [DrillDown](#drilldown) 
+  * [DrillDown](#drilldown)
 * [Creating Custom Tooltip](#creating_custom_tooltip)
   * [Chart as Tooltip](#chart_as_tooltip)
 * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
-## Overview 
+## Overview
 
 Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
@@ -32,8 +32,8 @@ That's what happens by default when users interact with charts:
  - a number of series are selected (multi-selecting)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
-  
-  
+
+
 Here we've got a line chart with three series and a legend enabled. Click on legend items to hide/show series.
 
 You can see the code of this sample in the playground.
@@ -60,12 +60,12 @@ There are also two basic events: hover and select.
 
 Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select. <a name = "bySpot"> </a>
 
-##### bySpot 
+##### bySpot
 
 So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
 
 ```
-  // multi-hover enabling 
+  // multi-hover enabling
   var interactivity = chart.interactivity();
   interactivity.hoverMode("bySpot");
   interactivity.spotRadius(30);
@@ -80,7 +80,7 @@ This way of hovering, when a couple of points are hovered simultaneously, is a m
 Note that you can define the mode in a easier way:
 
 ```
-  // single-hover enabling 
+  // single-hover enabling
   chart.interactivity("byX");
 ```
 
@@ -89,15 +89,15 @@ The code line above does the same as the previous one, but we have changed the h
 {sample}CS\_Interactivity\_04{sample}
 
 So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to move the cursor over the chart plot. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
-  
-  
+
+
 Now, let's have a look at the **select and multi-select** features.
 
 ### Select
 
 If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the following arguments: "none", "singleSelect" or "multiSelect". The "none" value disables the ability to select completely, "singleSelect" disables multi-select and "multiSelect" is the default.
-  
-  
+
+
 The **Shift** key is used as it is usually used with selection: if you need to select several points, hold **Shift** key while clicking them one by one.
 Selection feature is enabled by default, to switch it off do the following:
 
@@ -139,7 +139,7 @@ And the last is single selection mode. As you could guess, the "singleSelect" is
 
 ### Series behaviour
 <a name="series_hover"></a>
-#### Hover 
+#### Hover
 
 Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
@@ -150,7 +150,7 @@ Change the hovering mode in playground and see the difference.
 ```	
 	// setting some points hovered for the series
 	series_1.hover([4, 6, 12, 16]);
-  series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);	
+  series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
 ```
 
 If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}**.unhover()**{api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
@@ -165,7 +165,7 @@ chart.title().listen("mouseOut", function(){
 {sample}CS\_Interactivity\_08{sample} 
 
 <a name="series_select"> </a>
-#### Select 
+#### Select
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
@@ -178,13 +178,13 @@ There might be some points which you'd like to be selected by default or adjust 
 {sample}CS\_Interactivity\_09{sample} 
 
 The same as with hovering action, just define an array with the numbers and you'll get a couple of points selected at the beginning.
-  
+
 Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}**.select()**{api} function, the continuous series will be selected, but not the discrete one.
-  
+
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
-  
+
 Some of our html5 charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
-  
+
 We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}**.selectFill**{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}**.selectStroke()**{api}. 
 
 Let's change the selection settings for the box chart.
@@ -198,7 +198,7 @@ Let's change the selection settings for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**{api} or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**{api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
@@ -328,8 +328,8 @@ Custom tooltips can be more complicated than the one above. Tooltips may contain
 ## Interactivity Settings in Data Sets
 
 Now, let's look at our dataSets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed some light on using dataSet values for defining interactivity parameters.
-  
-  
+
+
 Look at the following sample.
 
 {sample}CS\_Interactivity\_16{sample} 
@@ -352,8 +352,8 @@ Here we have defined all interactivity colors (selection and hovering fills) thr
 ```
 
 So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
-  
-  
+
+
 Another way of defining interactivity through the dataSet is setting the data as objects, like in the following:
 
 ```

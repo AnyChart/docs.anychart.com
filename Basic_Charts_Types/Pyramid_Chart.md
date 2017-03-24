@@ -151,7 +151,7 @@ Labels of a pyramid are text boxes with additional information for presented dat
 
 ### Connectors
 
-The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method. 
+The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method.
 
 ```
   var chart = anychart.pyramid(data);

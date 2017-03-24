@@ -93,7 +93,7 @@ Here is a sample bar chart and the legend has tuned title:
 
 ## Positioning
 
-Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} method of {api:anychart.core.ui.Legend}**.legend()**{api}. 
+Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} method of {api:anychart.core.ui.Legend}**.legend()**{api}.
   
   
 As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} method, method {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
@@ -182,13 +182,13 @@ If you want to configure legend tooltips - you should do that using {api:anychar
 
 ## Series Management
 
-You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series.
 
 {sample}AS\_Legend\_10{sample}
 
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method.
 
 ```
   var legend = chart.legend();
@@ -210,7 +210,7 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 ## Custom Legend
 
-AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart.
 
 {sample}AS\_Legend\_12{sample}
 
@@ -222,7 +222,7 @@ As you can see, one legend can contain different information from one chart. Mor
   // define charts
   var chart2005 = anychart.column();
   var chart2006 = anychart.column();
-  
+
   // create custom legend
   var legend = anychart.ui.legend();
   // set sources for legend items

@@ -13,7 +13,7 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 ```
 
 ###2. Create a Container for the Chart
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified. 
+Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified.
 Example:
 ```
 <body>
@@ -85,7 +85,7 @@ No matter how many plots with or without series you create, all of them are scro
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use [JSON](../Working_with_Data/Data_From_JSON), [XML](../Working_with_Data/Data_From_JSON) and CSV.
+This code example uses JavaScript API to create a chart, but you also can use [JSON](../Working_with_Data/Data_From_JSON) or [XML](../Working_with_Data/Data_From_XML).
 Example:
 
 ```
