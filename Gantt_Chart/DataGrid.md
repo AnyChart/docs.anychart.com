@@ -177,11 +177,11 @@ dataGrid.rowEvenFill('#8a2be2 .4');
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowOddFill}**rowOddFill()**{api}</td>
+<td>{api:anychart.core.ui.Timeline#rowOddFill}**rowOddFill()**{api}</td>
 <td>Used to set row odd fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowEvenFill}**rowEvenFill()**{api}</td>
+<td>{api:anychart.core.ui.Timeline#rowEvenFill}**rowEvenFill()**{api}</td>
 <td>Used to set row even fill.</td>
 </tr>
 </tbody>
