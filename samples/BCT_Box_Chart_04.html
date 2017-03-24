@@ -1,0 +1,88 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="['sparkline']"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // chart data
+  var data1 = [
+    {x: "1", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
+    {x: "2", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+    {x: "4", low: 4000, q1: 5000, median: 6500, q3: 6900, high: 7200, outliers: [8930]},
+    {x: "5", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
+  ];
+  var data2 = [
+    {x: "1", low: 4000, q1: 4050, median: 6200, q3: 6800, high: 7000},
+    {x: "2", low: 1500, q1: 2000, median: 2500, q3: 3000, high: 3500},
+    {x: "3", low: 2000, q1: 2200, median: 3000, q3: 3200, high: 3000},
+    {x: "4", low: 3600, q1: 4000, median: 6900, q3: 7300, high: 8000},
+    {x: "5", low: 7800, q1: 8050, median: 8350, q3: 8400, high: 9000}
+  ];
+
+  // create box chart
+  chart = anychart.box();
+
+  chart.interactivity("byX");
+
+  // create box chart series with our data
+  series1 = chart.box(data1);
+  series2 = chart.box(data2);
+
+  // set colors for the outliers
+  outlierMarkers = series1.outlierMarkers();
+  outlierMarkers.fill("#DC143C", 0.7);
+  outlierMarkers.stroke("#DC143C", 1, "5 1", "round");
+  outlierMarkers.size(10);
+  outlierMarkers.type("star5");
+  hoverOutlierMarkers = series1.hoverOutlierMarkers();
+  hoverOutlierMarkers.fill("#DC143C", 0.5);
+  hoverOutlierMarkers.stroke("#DC143C", 2, "5 1", "round");
+  hoverOutlierMarkers.size(10);
+  hoverOutlierMarkers.type("star5");
+  selectOutlierMarkers = series1.selectOutlierMarkers();
+  selectOutlierMarkers.fill("#DC143C", 1);
+  selectOutlierMarkers.stroke("#DC143C", 2, "5 1", "round");
+  selectOutlierMarkers.size(10);
+  selectOutlierMarkers.type("star5");
+
+  // adjust median settings for the second series
+  series2.medianStroke("#000");
+  series2.hoverMedianStroke("#000", 2);
+  series2.selectMedianStroke("#000", 4);
+
+  // color settings
+  series1.fill("#00cc99", 0.4);
+  series1.hoverFill("#00cc99", 0.2);
+  series1.selectFill("#00cc99", 0.6);
+  series1.stroke("#00cc99", 1, "10 5", "round");
+  series1.hoverStroke("#00cc99", 2, "10 5", "round");
+  series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+  series2.color("none");
+  series2.hatchFill("forwardDiagonal");
+  series2.hoverHatchFill("backwardDiagonal");
+  series2.selectHatchFill("diagonalCross");
+  series2.stroke("#000");
+  series2.hoverStroke("#000", 2);
+  series2.selectStroke("#000", 4);
+
+  // set chart title text settings
+  var title = chart.title("Multi-Series Box Chart with colors adjusted");
+  
+  // set container id for the chart
+  chart.container("container");
+  
+  // initiate chart drawing
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
