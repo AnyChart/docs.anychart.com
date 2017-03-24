@@ -35,16 +35,6 @@ anychart.server("http://localhost:2000");
 
 You can read all about AnyChart Export Server and Server-side rendering in [AnyChart Export Server](Server-side_Rendering) article.
 
-## File name
-
-If you want to change default file name for all exports at once you can use {api:anychart.exports#filename}anychart.exports.filename(){api} method:
-
-```
-anychart.exports.filename('custom_name');
-```
-
-After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods as shown below.
-
 ## Image
 
 AnyChart js charting library allows to save charts in 3 different image formats: SVG, PNG and JPG, using {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api}, {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} and {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} methods.

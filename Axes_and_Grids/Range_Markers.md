@@ -45,7 +45,7 @@ In some cases you may need to customize your marker's emplacement. The {api:anyc
 
 Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method.  
   
-**Note**: if you define neither {api:anychart.core.axisMarkers.Range#scale}**.scale()**{api} nor {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} the marker will be bound to the primary y axis.
+**Note**: if you define neither {api:anychart.axisMarkers.Range#scale}**.scale()**{api} nor {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} the marker will be bound to the primary y axis.
 
 
 ```
