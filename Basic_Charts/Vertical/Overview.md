@@ -40,7 +40,7 @@ var data = anychart.data.set([
 var seriesData_1 = data.mapAs({x: [0], value: [1]});
 var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-// create a vertical area chart
+// create a chart
 chart = anychart.vertical();
 
 // create the first series (bar)
