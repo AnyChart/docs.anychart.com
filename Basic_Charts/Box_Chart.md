@@ -97,12 +97,12 @@ Read the overview of general settings: [General Settings](General_Settings).
 Here is a full list of methods used to configure visual settings that are available for the Box series:
 
 * {api:anychart.core.cartesian.series.Box#color}color(){api}, {api:anychart.core.cartesian.series.Box#fill}fill(){api}, {api:anychart.core.cartesian.series.Box#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Box#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.cartesian.series.Box#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Box#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Box#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.cartesian.series.Box#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Box#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Box#selectStroke}selectStroke(){api} configure the visual settings on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two Area series with some of the appearance settings configured:
+In the sample below, there are two Box series with some of the appearance settings configured:
 
 ```
 // color settings
