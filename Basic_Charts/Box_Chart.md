@@ -17,7 +17,7 @@
 
 A Box Chart is a convenient way of graphically depicting groups of numerical data through their quartiles. Box Charts are useful when it is necessary to describe the values as they spread across the entire range. For example, to analyze salaries in a company, it is necessary to have more information than the sum of salaries for each salary grade. Even a measure of average salary wouldn't depict all. 
   
-Box Charts allow showing the minimum and the maximum with a median (a numerical value separating the higher half of a data sample, a population, or a probability distribution, from the lower half) and quartiles, which helps making the story more complete. But still, giving only the highest, the lowest and the medium values doesn't tell the full story. So it is often useful to display the data in a way that reveals more about values' distribution.
+Box Charts allow showing the minimum and the maximum with a median (a numerical value separating the higher half of a data sample, a population, or a probability distribution, from the lower half) and quartiles, which helps to make the story more complete. But still, giving only the highest, the lowest and the medium values doesn't tell the full story. So it is often useful to display the data in a way that reveals more about values' distribution.
 
 This article explains how to create a basic Box chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Box Chart's characteristics:
 
@@ -139,7 +139,7 @@ series2.selectMedianStroke("#000", 4);
 
 ### Outliers
 
-There are several methods for adjusting the settings of outliers: {api:}outlierMarkers(){api}, {api:}hoverOutlierMarkers(){api} (for configuring outliers settings on hover) and {api:}selectOutlierMarkers(){api} (for configuring outliers settings on select). Using those methods allow to change not only the colors, but also the type and size of the outliers. Let's add these settings to the previous sample:
+There are several methods for adjusting the settings of outliers: {api:anychart.core.cartesian.series.Box#outlierMarkers}outlierMarkers(){api}, {api:anychart.core.cartesian.series.Box#hoverOutlierMarkers}hoverOutlierMarkers(){api} (for configuring outliers settings on hover) and {api:anychart.core.cartesian.series.Box#selectOutlierMarkers}selectOutlierMarkers(){api} (for configuring outliers settings on select). Using those methods allows changing not only the colors but also the type and size of the outliers. Let's add these settings to the previous sample:
 
 ```
 // set colors for the outliers
