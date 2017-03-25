@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#area}area(){api} method:
+To build a Vertical Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#area}area(){api} method to create an Area series.
 
 ```
 // create a chart

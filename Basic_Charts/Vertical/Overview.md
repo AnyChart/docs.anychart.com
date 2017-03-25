@@ -14,15 +14,17 @@ This article explains how to create a vertical chart and how to change the orien
 ## Quick Start
 
 To create a vertical chart, use one of these three chart constructors:
+* {api:anychart#vertical}anychart.vertical(){api}
 * {api:anychart#verticalArea}anychart.verticalArea(){api}
 * {api:anychart#verticalLine}anychart.verticalLine(){api}
 * {api:anychart#bar}anychart.bar(){api}
+
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
 You can pass your data to the chart constructor to create a series of the same type. Alternatively, you can specify the series type manually. A series supports vertical orientation if its class has has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series. You can also see the [Supported Types](#supported_types) section of this article.
 
-In the sample below, there are two series, Spline Area and Spline, created by the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} and {api:anychart.charts.Cartesian#spline}spline(){api} methods, and the chart constructor is {api:anychart#area}area(){api}:
+In the sample below, there are two series, Spline Area and Spline, created by the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} and {api:anychart.charts.Cartesian#spline}spline(){api} methods, and the chart constructor is {api:anychart#vertical}anychart.vertical(){api}:
 
 ```
 // create a data set
@@ -39,7 +41,7 @@ var seriesData_1 = data.mapAs({x: [0], value: [1]});
 var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
 // create a vertical area chart
-chart = anychart.verticalArea();
+chart = anychart.vertical();
 
 // create the first series (bar)
 var series1 = chart.splineArea(seriesData_1);

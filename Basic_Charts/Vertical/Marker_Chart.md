@@ -12,16 +12,11 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Marker chart, use one of these three chart constructors:
-* {api:anychart#verticalArea}anychart.verticalArea(){api}
-* {api:anychart#verticalLine}anychart.verticalLine(){api}
-* {api:anychart#bar}anychart.bar(){api}
-
-Then call the {api:anychart.charts.Cartesian#marker}marker(){api} method to create a Marker series.
+To build a Vertical Marker chart, use the {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#marker}marker(){api} method to create a Marker series.
 
 ```
 // create a chart
-chart = anychart.verticalArea();
+chart = anychart.vertical();
 
 // create a marker series and set the data
 var series = chart.marker(data);

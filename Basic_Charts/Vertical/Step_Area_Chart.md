@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Step Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method to create a Step Area series.
+To build a Vertical Step Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method to create a Step Area series.
 
 ```
 // create a chart

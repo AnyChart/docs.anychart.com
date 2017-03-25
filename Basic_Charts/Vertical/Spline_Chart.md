@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Spline chart, use the {api:anychart#verticalLine}anychart.verticalLine(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#spline}spline(){api} method to create a Spline series.
+To build a Vertical Spline chart, use the {api:anychart#verticalLine}anychart.verticalLine(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#spline}spline(){api} method to create a Spline series.
 
 ```
 // create a chart

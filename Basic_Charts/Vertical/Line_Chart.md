@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#line}line(){api} method:
+To build a Vertical Line chart, use the {api:anychart#line}anychart.line(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#line}line(){api} method to create a Line series.
 
 ```
 // create a chart

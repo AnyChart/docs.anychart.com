@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Range Step Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#rangeStepArea}rangeStepArea(){api} method to create a Range Step Area series.
+To build a Vertical Range Step Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#rangeStepArea}rangeStepArea(){api} method to create a Range Step Area series.
 
 ```
 // create a chart
