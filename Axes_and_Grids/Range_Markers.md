@@ -14,7 +14,7 @@ Range Markers (sometimes referred as areas or zones) are colored areas bound to 
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}rangeMarker(){api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Range#axis}axis(){api} method. The basic range marker's properties can be set using {api:anychart.axisMarkers.Range#from}from(){api}, {api:anychart.axisMarkers.Range#to}to(){api} and {api:anychart.axisMarkers.Range#fill}fill(){api} methods.
+To add range marker you need to use {api:anychart.charts.Cartesian#rangeMarker}**.rangeMarker()**{api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Range#axis}**.axis()**{api} method. The basic range marker's properties can be set using {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods.
 
 ```
   // y axis getter
@@ -38,14 +38,14 @@ Using horizontal range marker let's highlights unsatisfactory result and using v
 
 ## Advanced Layout
 
-In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Range#layout}layout(){api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Range#axis}axis(){api} method the marker's layout is defined to be perpendicular to the axis' orientation.
+In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.range#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Range#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
 
 ### Advanced Option
 
-Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Range#scale}scale(){api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Range#layout}layout(){api} method.
+Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method.
   
-**Note**: if you define neither {api:anychart.axisMarkers.Range#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary y axis.
+**Note**: if you define neither {api:anychart.core.axisMarkers.Range#scale}**.scale()**{api} nor {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} the marker will be bound to the primary y axis.
 
 
 ```
@@ -75,7 +75,7 @@ Combination of range and text markers may be very useful to emphasize certain in
 
 ## Advanced Visualization
 
-You can use {api:anychart.graphics.vector.Fill}fill(){api}method to control the inner color of the marker. Note, that this method can be used to set gradient and image inner color for your marker.
+You can use {api:anychart.graphics.vector.Fill}**.fill()**{api}method to control the inner color of the marker. Note, that this method can be used to set gradient and image inner color for your marker.
 
 ```
   // create range marker

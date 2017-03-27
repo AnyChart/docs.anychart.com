@@ -189,7 +189,7 @@ Colors of the scroll bar can be easily changed with simple methods {api:anychart
 
 #### Dimensions
 
-Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.ui.Scroller#height}height(){api} setter method. There are also methods {api:anychart.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.ui.Scroller#minHeight}minHeight(){api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
+Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.core.ui.Scroller#height}height(){api} setter method. There are also methods {api:anychart.core.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Scroller#minHeight}minHeight(){api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
 
 ```
     // set the bar height

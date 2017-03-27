@@ -200,7 +200,7 @@ To configure data labels and tooltips for all series use {api:anychart.charts.Pi
 
 Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pie#labels}labels(){api} method.
 
-You can place labels inside or outside pie slices using {api:anychart.ui.Label#position}position(){api} method.
+You can place labels inside or outside pie slices using {api:anychart.core.ui.Label#position}position(){api} method.
 
 ```
 var labels = chart.labels();

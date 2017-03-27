@@ -19,7 +19,7 @@ In this article we will try to give an overview of GraphicsJS capabilities and g
 
 ## Note to AnyChart Users
 
-If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround](https://playground.anychart.com/), you might have noticed the code like this:
+If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround](http://playground.anychart.com/), you might have noticed the code like this:
 
 ```
 // set stage
@@ -54,7 +54,7 @@ Note that the stage coordinate system starts in the left top corner.
 
 ## Basic shapes and primitives
 
-On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), [Images](Images) and more.Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
+On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts) and more. Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
 
 ```
 // draw a circle

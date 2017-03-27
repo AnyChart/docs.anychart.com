@@ -31,13 +31,13 @@ A number of settings can be applied to any annotation regardless its type. For e
 
 * [General Settings](General_Settings)
 * [Drawing](Drawing)
-* [Serializing and Deserializing](./Serializing_Deserialazing)
+* [Serializing and Deserializing](./Serializing_Deserializing)
 
 ## Annotation Types
 
 Here is a full list of annotations available in AnyStock (with links to the articles explaining how to configure them):
 
-### Fibonacci Tools
+### Fibonacci 9
 
 * [Fibonacci Arc](Fibonacci_Arc)
 * [Fibonacci Fan](Fibonacci_Fan)
