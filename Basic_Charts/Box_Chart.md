@@ -6,8 +6,10 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
-  * [Median](#median)
-  * [Outliers](#ouliers)
+   * [Median](#median)
+   * [Outliers](#outliers)
+   * [Whiskers](#whiskers)
+   * [Stems](#stems)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
   * [Vertical Box](#vertical_box)
@@ -124,43 +126,71 @@ series2.selectStroke("#000", 4);
 
 {sample}BCT\_Box\_Chart\_02{sample}
 
-### Median
+#### Median
 
 The special line across the box is a median. Median has its own appearance settings methods: {api:anychart.core.cartesian.series.Box#medianStroke}medianStroke(){api}, {api:anychart.core.cartesian.series.Box#hoverMedianStroke}hoverMedianStroke(){api} and {api:anychart.core.cartesian.series.Box#selectMedianStroke}selectMedianStroke(){api}. The following sample demonstrates these methods usage:
 
 ```
 // adjust median settings for the second series
-series2.medianStroke("#000");
-series2.hoverMedianStroke("#000", 2);
-series2.selectMedianStroke("#000", 4);
+series.medianStroke("#000");
+series.hoverMedianStroke("#000", 2);
+series.selectMedianStroke("#000", 4);
 ```
 
 {sample}BCT\_Box\_Chart\_03{sample}
 
-### Outliers
+#### Outliers
 
 There are several methods for adjusting the settings of outliers: {api:anychart.core.cartesian.series.Box#outlierMarkers}outlierMarkers(){api}, {api:anychart.core.cartesian.series.Box#hoverOutlierMarkers}hoverOutlierMarkers(){api} (for configuring outliers settings on hover) and {api:anychart.core.cartesian.series.Box#selectOutlierMarkers}selectOutlierMarkers(){api} (for configuring outliers settings on select). Using those methods allows changing not only the colors but also the type and size of the outliers. Let's add these settings to the previous sample:
 
 ```
-// set colors for the outliers
-outlierMarkers = series1.outlierMarkers();
-outlierMarkers.fill("#DC143C", 0.7);
-outlierMarkers.stroke("#DC143C", 1, "5 1", "round");
-outlierMarkers.size(10);
-outlierMarkers.type("star5");
-hoverOutlierMarkers = series1.hoverOutlierMarkers();
-hoverOutlierMarkers.fill("#DC143C", 0.5);
-hoverOutlierMarkers.stroke("#DC143C", 2, "5 1", "round");
-hoverOutlierMarkers.size(10);
-hoverOutlierMarkers.type("star5");
-selectOutlierMarkers = series1.selectOutlierMarkers();
-selectOutlierMarkers.fill("#DC143C", 1);
-selectOutlierMarkers.stroke("#DC143C", 2, "5 1", "round");
-selectOutlierMarkers.size(10);
-selectOutlierMarkers.type("star5");
+// outliers setting adjusting
+series.outlierMarkers(
+  {fill: "#DC143C 0.7",
+  stroke: {color: "#DC143C", thickness: 0.5, dash: "5 1", lineJoin: "round"},
+  size: 10,
+  type: "star5"});
+series.hoverOutlierMarkers(
+  {fill: "#DC143C 0.5",
+  stroke: {color: "#DC143C", thickness: 1, dash: "5 1", lineJoin: "round"},
+  size: 10,
+  type: "star5"});
+series.selectOutlierMarkers(
+  {fill: "#DC143C",
+  stroke: {color: "#DC143C", thickness: 2, dash: "5 1", lineJoin: "round"},
+  size: 10,
+  type: "star5"});
 ```
 
-{sample}BCT\_Box\_Chart\_03{sample}
+Note that these settings are adjusted in JSON format. Read more about using JSON in the [Data from JSON article](../Working_with_Data/Data_From_JSON).
+
+{sample}BCT\_Box\_Chart\_04{sample}
+
+
+#### Stems
+
+Stems are those vertical sticks going beyond the boxes, demonstrating the difference between low value and first quartile and between third quartile and high value. Stems stroking settings are to be adjuste with the following methods: {api:anychart.core.cartesian.series.Box.stemStroke}stemStroke(){api} for boxes in normal state, {api:anychart.core.cartesian.series.Box.hoverStemStroke}hoverStemStroke(){api} for stem stroke in hovered state and {api:anychart.core.cartesian.series.Box.selectStemStroke}selectStemStroke(){api} for stems of a selected box. Stroke settings include value (which is usually color, but can also be a function, a string parameter or a stroke type - look through the API of these methods), thickness, dash pattern, line join style and line cap style. None of parameters are necessary.
+
+The sample below demonstrates those methods' usage.
+
+```
+// stem settings adjusted
+series.stemStroke("#F44336", 1, "5 2");
+series.hoverStemStroke("#F44336", 2, "5 2", "round", "round");
+series.selectStemStroke("#F44336", 3, "5 2");
+```
+{sample}BCT\_Box\_Chart\_05{sample}
+
+
+#### Whiskers
+
+Whiskers are horizontal line segments on the stems' tops. They have "0" width by default, but this can be adjusted with the {api:anychart.core.cartesian.series.Box.whiskerWidth}whiskerWidth(){api} method. Set whiskers stroke with the {api:anychart.core.cartesian.series.Box.whiskerStroke}whiskerStroke(){api} method. For hovered state use {api:anychart.core.cartesian.series.Box.hoverWhiskerWidth}hoverWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.hoverWhiskerStroke}hoverWhiskerStroke(){api}, for selected state use {api:anychart.core.cartesian.series.Box.selectWhiskerWidth}selectWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.selectWhiskerStroke}selectWhiskerStroke(){api} respectively.
+
+```
+// set whiskers
+
+```
+{sample}BCT\_Box\_Chart\_06{sample}
 
 
 ### Labels

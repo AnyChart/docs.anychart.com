@@ -11,28 +11,28 @@
   
   // chart data
   var data1 = [
-    {x: "1", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
-    {x: "2", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
-    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
-    {x: "4", low: 4000, q1: 5000, median: 6500, q3: 6900, high: 7200, outliers: [8930]},
-    {x: "5", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
+    {x: "Jan", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
+    {x: "Feb", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+    {x: "Mar", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+    {x: "Apr", low: 4000, q1: 5000, median: 6500, q3: 6900, high: 7200, outliers: [8930]},
+    {x: "May", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
   ];
   var data2 = [
-    {x: "1", low: 4000, q1: 4050, median: 6200, q3: 6800, high: 7000},
-    {x: "2", low: 1500, q1: 2000, median: 2500, q3: 3000, high: 3500},
-    {x: "3", low: 2000, q1: 2200, median: 3000, q3: 3200, high: 3000},
-    {x: "4", low: 3600, q1: 4000, median: 6900, q3: 7300, high: 8000},
-    {x: "5", low: 7800, q1: 8050, median: 8350, q3: 8400, high: 9000}
+    {x: "Jan", low: 4000, q1: 4050, median: 6200, q3: 6800, high: 7000},
+    {x: "Feb", low: 1500, q1: 2000, median: 2500, q3: 3000, high: 3500},
+    {x: "Mar", low: 2000, q1: 2200, median: 3000, q3: 3200, high: 3000},
+    {x: "Apr", low: 3600, q1: 4000, median: 6900, q3: 7300, high: 8000},
+    {x: "May", low: 7800, q1: 8050, median: 8350, q3: 8400, high: 9000}
   ];
 
   // create box chart
   chart = anychart.box();
 
-  chart.interactivity("byX");
-
   // create box chart series with our data
   series1 = chart.box(data1);
+  series1.name("Documentary movies");
   series2 = chart.box(data2);
+  series2.name("Sci-Fi movies");
 
   // color settings
   series1.fill("#00cc99", 0.4);
@@ -52,6 +52,11 @@
 
   // set chart title text settings
   var title = chart.title("Multi-Series Box Chart with colors adjusted");
+
+  chart.interactivity("byX");
+
+  // enable legend
+  chart.legend(true);
   
   // set container id for the chart
   chart.container("container");
