@@ -25,10 +25,10 @@
 	chart = anychart.area3d();
 
 	var yScale = chart.yScale();
-	yScale.stackMode("value");
+	yScale.stackMode("percent");
 
 	// setting title
-	chart.title("Value Stacked 3D Area Chart");
+	chart.title("3D Percent Stacked Area Chart");
 
     // enabled grids
     chart.grid(0).enabled(true);
@@ -39,6 +39,12 @@
 	xAxis.title("Month");
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
+
+  	// configure tooltips
+  	chart.tooltip().textFormatter("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
+
+	// configure labels on the Y-axis
+  	yAxis.labels().textFormatter("{%Value}%");
 
 	// create series
 	var series1 = chart.area(dataSet1);

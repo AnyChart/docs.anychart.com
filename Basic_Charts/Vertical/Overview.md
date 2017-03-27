@@ -1,4 +1,4 @@
-{:index 1}
+{:index 0}
 #Vertical Charts
 
 * [Quick Start](#quick_start)
