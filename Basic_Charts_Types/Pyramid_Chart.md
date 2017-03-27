@@ -152,7 +152,7 @@ Labels of a pyramid are text boxes with additional information for presented dat
 
 ### Connectors
 
-The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method. 
+The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method.
 
 ```
   var chart = anychart.pyramid(data);
@@ -185,7 +185,7 @@ If you are using **outsideLeft** or **outsideRight** you can adjust length of la
 ```
 var chart = anychart.pyramid(data);
 
-chart.labels().position('outsideRight');  // place labels to the right    
+chart.labels().position('outsideRight');  // place labels to the right
 chart.connectorLength(45);    // set 45px connectors length
 ```
 
@@ -218,14 +218,14 @@ In this section we will explain how to tune pyramid tooltip. Method {api:anychar
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element.
 
 In the sample below we take single-series data described above and mark the element with the biggest value in series with a "Star5" of the "Gold" color.
-  
+
 To make marker visually appealing we set its size to 12 pixels in normal state, and 15px while hovered.
 
 ```
 var chart = pyramid([
   {name: "Fantasy", value: 637166},
   {
-    name: "Science Fiction", 
+    name: "Science Fiction",
     value: 721630,
      // marker settings
     marker:{
@@ -265,8 +265,7 @@ Let's demonstrate how to apply different colors to different parts of pyramid. T
 
 ## Hatch Fills
 
-AnyChart charting library allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill). 
-
+AnyChart charting library allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Color_Management).
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have pyramid chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
 
 ```

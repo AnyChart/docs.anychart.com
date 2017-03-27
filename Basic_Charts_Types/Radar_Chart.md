@@ -102,8 +102,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
-
+More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings).
 Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
 
 {sample}BCT\_RadarChart\_04{sample}
@@ -129,9 +128,9 @@ You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scal
 var logScale = anychart.scales.log();
 // set minimum and maximum value for the scale
 logScale.minimum(10);
-logScale.maximum(10000); 
+logScale.maximum(10000);
 // set logarithmic scale as y scale for the chart
-chart.yScale(logScale); 
+chart.yScale(logScale);
 ```
 
 Here is the demonstration of Logarithmic Y-Axis on a simple radar with area series:

@@ -12,7 +12,7 @@
 
 AnyStock supports a lot of [different series types](Supported_Series), some of them compatible to be [switched during run time](Series_Type).
 
-Here's a sample where we put three of them. 
+Here's a sample where we put three of them.
 
 ```
 // set the plots
@@ -58,9 +58,9 @@ In case of adding the thumbnail series to the scroller, you should know that tho
 // create a thumbnail series in the scroller
 var thSeries = chart.scroller().column(lineMapping);
 
-// define the shown part of a chart 
+// define the shown part of a chart
 chart.selectRange('2014-02-01','2014-05-06');
-    
+
 // set the color for the selected columns in the thumbnail series
 thSeries.selectedFill("#4527A0");
 ```

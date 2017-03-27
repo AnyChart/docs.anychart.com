@@ -11,7 +11,7 @@
 
 ## Overview
 
-Step Line Series is usually used to show how a parameter changes its value in time or in dependancy of some other parameter which values are used as categories (e.g. branches of a company). It is rather similar to Line Series. Find all information about using Step Lines in Basic Charts in the [StepLine Charts tutorial](../../Basic_Chart_Types/Line-Spline-StepLine_Charts).
+Step Line Series is usually used to show how a parameter changes its value in time or in dependancy of some other parameter which values are used as categories (e.g. branches of a company). It is rather similar to Line Series. Find all information about using Step Lines in Basic Charts in the [StepLine Charts tutorial](../../Basic_Charts_Types/Line-Spline-StepLine_Charts).
 
 This series type is popular to be used in Stocks, as well as Line series. There are some aspects different between managing StepLines in Basic Charts and in Stocks. This article will consider those aspects.
 

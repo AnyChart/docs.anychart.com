@@ -16,7 +16,7 @@ Map Labels
 
 Labels in Maps are somewhat similar to the usual labels you can find and configure for any other chart type, with the common differences of keywords and the fact that some data is provided by the map source itself.
 
-To learn about Labels editing and formatting in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](..\Common_Settings/Text_Formatters).
+To learn about Labels editing and formatting in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](../Common_Settings/Text_Formatters).
 
 To learn about creating maps visit [Quick Start](Quick_Start) article.
 
@@ -32,7 +32,7 @@ A simple choropleth map of Australia is used as a basis for the following sample
 // enable labels
 series.labels(true);
 labels = series.labels();
-    
+
 // labels setting
 labels.fontColor('black');
 labels.fontSize("10px");
@@ -46,14 +46,14 @@ Let's now create labels not related to the series points: add some descriptive t
 ```
 // custom text label
 custom_label = map.label();
-custom_label.text("Australia's sons let us rejoice, \nFor we are young and free;\nWe've golden soil and wealth for toil,\nOur home is girt by sea;\nOur land abounds in Nature's gifts\nOf beauty rich and rare;\nIn hist'ry's page, let ev'ry stage\nAdvance Australia fair.\nIn joyful strains then let us sing,\nAdvance Australia fair.");  
+custom_label.text("Australia's sons let us rejoice, \nFor we are young and free;\nWe've golden soil and wealth for toil,\nOur home is girt by sea;\nOur land abounds in Nature's gifts\nOf beauty rich and rare;\nIn hist'ry's page, let ev'ry stage\nAdvance Australia fair.\nIn joyful strains then let us sing,\nAdvance Australia fair.");
 custom_label.position("rightcenter");
 custom_label.anchor("rightcenter");
 custom_label.offsetX(30);
 custom_label.width(210);
 custom_label.fontSize(10);
 custom_label.fontColor("black");
-  
+
 // custom image label
 image = stage.image("//static.anychart.com/images/australia.png");
 image.width(150);
@@ -76,27 +76,27 @@ In the sample above there are many settings for custom graphic elements and a li
 
 Labels can get information to show not only from data sets, it is possible to obtain any property defined in the GeoJSON map source file. Look at the next sample and explore it in the playground to understand how it works.
 
-Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. 
+Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source.
 
 That is how properties are set in GeoJSON:
 
 ```
 "properties": {
-    "labelrank": 2, 
-    "code_hasc": "AU.NT", 
-    "name": "Northern Territory", 
-    "admin": "Australia", 
-    "type_en": "Territory", 
-    "region": "", 
-    "woe_id": 2344701, 
-    "longitude": 133, 
-    "woe_name": "Northern Territory", 
-    "fips": "AS03", 
-    "woe_label": "Northern Territory, AU, Australia", 
-    "latitude": -20, 
-    "iso_a2": "AU", 
-    "postal": "NT", 
-    "type": "Territory", 
+    "labelrank": 2,
+    "code_hasc": "AU.NT",
+    "name": "Northern Territory",
+    "admin": "Australia",
+    "type_en": "Territory",
+    "region": "",
+    "woe_id": 2344701,
+    "longitude": 133,
+    "woe_name": "Northern Territory",
+    "fips": "AS03",
+    "woe_label": "Northern Territory, AU, Australia",
+    "latitude": -20,
+    "iso_a2": "AU",
+    "postal": "NT",
+    "type": "Territory",
     "id": "AU.NT"
 }
 ```
@@ -208,25 +208,25 @@ These properties can be set through the GeoJSON code:
 
 ```
 "properties": {
-    "labelrank": 5, 
-    "middle-x": 0.5, 
-    "middle-y": 0.3, 
-    "middleXYMode": 
-    "relative", 
-    "code_hasc": "AU.SA", 
-    "name": "South Australia", 
-    "admin": "Australia", 
-    "type_en": "State", 
-    "region": "", 
-    "woe_id": 2344703, 
-    "longitude": 135, 
-    "woe_name": "South Australia", 
-    "fips": "AS05", 
-    "woe_label": "South Australia, AU, Australia", 
-    "latitude": -29, 
-    "iso_a2": "AU", 
-    "postal": "SA", 
-    "type": "State", 
+    "labelrank": 5,
+    "middle-x": 0.5,
+    "middle-y": 0.3,
+    "middleXYMode":
+    "relative",
+    "code_hasc": "AU.SA",
+    "name": "South Australia",
+    "admin": "Australia",
+    "type_en": "State",
+    "region": "",
+    "woe_id": 2344703,
+    "longitude": 135,
+    "woe_name": "South Australia",
+    "fips": "AS05",
+    "woe_label": "South Australia, AU, Australia",
+    "latitude": -29,
+    "iso_a2": "AU",
+    "postal": "SA",
+    "type": "State",
     "id": "AU.SA"
 },
 ```
@@ -249,14 +249,14 @@ The following sample demonstrates several region labels set with "absolute" posi
 
 ```
 var dataSet_1 = anychart.data.set([
-    {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"}, 
+    {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"},
     {'id': 'AU.NT', 'value': 2, "middle-y": -20.159, "middle-x": 133.66, "middleXYMode": "absolute"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
 ]);
 
 var dataSet_2 = anychart.data.set([
-    {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"}, 
+    {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"},
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-y": -28.86, "middle-x": 134.678, "middleXYMode": "absolute"},
     {'id': 'AU.VI', 'value': 3.86, "middle-y": -37.68, "middle-x": 143.77, "middleXYMode": "absolute"},
     {'id': 'AU.QL', 'value': 1.1, "middle-y": -23.335, "middle-x": 143.71, "middleXYMode": "absolute"},
@@ -274,7 +274,7 @@ If it is necessary to show the labels for those tiny regions, it is possible to 
 
 In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 
-```  
+```
 {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}},
 {'id': 'AU.NT', 'value': 1},
 {'id': 'AU.WA', 'value': 2},
@@ -323,15 +323,15 @@ The {api:anychart.core.ui.Callout#align}align(){api} method helps to set the pos
 // set callout positions
 calloutBottom.orientation("bottom");
 calloutRight.orientation("right");
-  
+
 // set label text position
 calloutBottom.align("center");
-calloutRight.align("center");  
+calloutRight.align("center");
 ```
 
 To change the size of callout labels, use {api:anychart.core.ui.Callout#width}width(){api} method. By default, callout labels have a form of a square, so it is necessary to set only one measure. Though, if it is necessary to make the labels rectangular instead of a square, set the length to the whole callout element through the {api:anychart.core.ui.Callout#length}length(){api} element.
 
-```  
+```
 // set width and length
 calloutBottom.width(50);
 calloutBottom.length(300);

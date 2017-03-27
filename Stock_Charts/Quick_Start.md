@@ -8,14 +8,13 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 
 ```
 <head>
-  <script src="//cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script> 
+  <script src="//cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script>
 </head>
 ```
 
 ###2. Create a Container for the Chart
 
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified. 
-
+Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified.
 ```
 <body>
   <div id="container" style="width: 500px; height: 400px;"></div>
@@ -49,7 +48,7 @@ table.addData([
 ['2016-01-09T12:00:00','509.12', '515.97', '505.15', '510.12'],
 ['2016-01-10T12:00:00','508.53', '516.13', '505.66', '510.42'],
 ['2016-01-11T12:00:00','508.90', '516.24', '505.73', '510.40']
-]); 
+]);
 ```
 
 We may use quotes or not, because our data is numerical except the dateTime, which should be defined as above (in UTC format) or as in the following line, which is equal to the first data point of the array set above:
@@ -83,12 +82,13 @@ Due to specialty of stock charts, it can have more than one plot and a plenty of
 chart.plot(0).ohlc(mapping);
 ```
 
-No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X scale. 
+No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X scale.
 
 ###4. Create a chart
 
-Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](../Working_with_Data/Supported_Data_Formats). 
+Add the JavaScript tag `<script>` with the following code anywhere in the page.
+This code example uses JavaScript API to create a chart, but you also can use JSON or XML format.
+See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
 
 ```
 <script>
@@ -118,7 +118,7 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 		['2016-01-11T12:00:00','508.90', '516.24', '505.73', '510.40']	
 	]);
   
-	// mapping the data  
+	// mapping the data
 	mapping = table.mapAs();
 	mapping.addField('open', 1, 'first');
 	mapping.addField('high', 2, 'max');
@@ -128,13 +128,13 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 
 	// defining the chart type
 	chart = anychart.stock();
-	  
+
 	// set the series type
 	chart.plot(0).ohlc(mapping).name('ACME Corp.');
-	  
+
 	// setting the chart title
 	chart.title('AnyStock Basic Sample');
-	  
+
 	chart.container('container');
 	chart.draw();
 	});
@@ -181,7 +181,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 		['2016-01-09T12:00:00','509.12', '515.97', '505.15', '510.12'],
 		['2016-01-10T12:00:00','508.53', '516.13', '505.66', '510.42']
 	]);
-	  
+
 	// mapping the data
 	mapping = table.mapAs();
 	mapping.addField('open', 1, 'first');
@@ -192,13 +192,13 @@ You can copy this to a file on your computer and open it in your browser to disp
 
 	// defining the chart type
 	chart = anychart.stock();
-	  
+
 	// set the series type
 	chart.plot(0).ohlc(mapping).name('ACME Corp.');
-	  
+
 	// setting the chart title
 	chart.title('AnyStock Demo');
-	  
+
 	chart.container('container');
 	chart.draw();
 });

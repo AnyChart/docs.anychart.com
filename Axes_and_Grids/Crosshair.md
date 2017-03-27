@@ -52,7 +52,7 @@ In some situations you may not need one or both lines but highlighted labels are
 ```
 // remove the x-axis line
 var crosshair = chart.crosshair();
-crosshair.xStroke(null); 
+crosshair.xStroke(null);
 ```
 {sample}AGST\_Crosshair\_03{sample}
 
@@ -71,7 +71,7 @@ crosshair.yLabel(false);
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} to change the crosshair's labels' performance.
 
 ```
 // set the label performance

@@ -33,7 +33,9 @@ Example:
 
 ###3. Create a chart
 
-Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
+Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section.
+This code example uses JavaScript API to create a chart, but you also can use JSON or XML format.
+See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
 
 Example:
 

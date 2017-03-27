@@ -23,7 +23,7 @@
 Data that is arranged in a one column or an only row can be plotted on a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
 
 Use a pie chart when:
-  
+
 * You only have one data series that you want to plot.
 * None of the values that you want to plot are negative.
 * Almost none of the values that you want to plot are zero values.
@@ -134,7 +134,7 @@ chart.explode(30);
 To explode only one slice set an “explode” value to a point:
 
 ```
-chart.explodeSlice(0, true); 
+chart.explodeSlice(0, true);
 ```
 The first parameter is the number of the slice and the second one is boolean responsible for activating the explosion. Slices numbering starts from 0.
 
@@ -159,7 +159,7 @@ var chart = anychart.pieChart([
 ## Visualization
 
 In this section we will describe the main parts of a pie chart style and demonstrate how to apply a style.
-  
+
 Also, you can use styles to make charts interactive: you can define each element’s appearance and behavior by default, while hovered, etc.
 
 ### Basic Sample
@@ -239,7 +239,7 @@ Using {api:anychart.charts.Pie#insideLabelsOffset}insideLabelsOffset(){api} is e
 
 ###Tooltips
 
-In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}tooltip(){api} controls tooltip of the pie. 
+In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}tooltip(){api} controls tooltip of the pie.
 
 ```
 // get tooltip title
@@ -255,7 +255,7 @@ tooltip.textFormatter(function(){
   var name = this.name;
   // get value of each slice
   var value = this.value
-  
+
   // content to show
   return "Chanel: " + name + "\nSales: " + value + "\nPeriod: Year 2003";
 });
@@ -277,10 +277,9 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart charting library has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial tutorial.
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart charting library has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Color_Management) tutorial tutorial.
 
 To demonstrate hatch fill feature we've prepared the following sample. We have pie chart with 6 points. For every point we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}hatchFill(){api} parameter.
-
 That’s how we did it in our code:
 
 ```

@@ -19,7 +19,7 @@ International accessibility standards are invented to make technology and the In
 
 You can find a lot of information about section 508 at [https://www.section508.gov/](https://www.section508.gov/).
 
-There are several methods AnyChart supports that make charts accessible. The main idea is in creating special tags (ARIA tags) in SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, it helps disabled people to understand the information on charts and maps. 
+There are several methods AnyChart supports that make charts accessible. The main idea is in creating special tags (ARIA tags) in SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, it helps disabled people to understand the information on charts and maps.
 
 ## Why a11y
 
@@ -29,7 +29,7 @@ Accessibility is often abbreviated as the numeronym **a11y**, where the number 1
 
 The accessibility support is enabled by default. It means that you don't need to enable accessibility unless you've turned it off. Switching the accessibility support off will lead to the absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information available to a screen reader will be barely understandable.
 
-The default Accessibility mode is ["Chart Elements"](chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard to navigate between them. If you change the mode to the ["Data Table"](data_table_mode), an invisible readable table with the chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
+The default Accessibility mode is ["Chart Elements"](#chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard to navigate between them. If you change the mode to the ["Data Table"](#data_table_mode), an invisible readable table with the chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
 
 ## Enable/Disable
 
@@ -97,7 +97,7 @@ Note that setting the mode to the chart does not affect the series.
 
 ## Data Table Mode
 
-In this mode, an invisible table with chart data is generated. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, and the VoiceOver reads it appropriately.  
+In this mode, an invisible table with chart data is generated. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, and the VoiceOver reads it appropriately.
 
 ```
 // set the accessibility mode as table data

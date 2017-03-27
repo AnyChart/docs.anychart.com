@@ -31,7 +31,7 @@ A number of settings can be applied to any annotation regardless its type. For e
 
 * [General Settings](General_Settings)
 * [Drawing](Drawing)
-* [Serializing and Deserializing](Serializing_Deserializing)
+* [Serializing and Deserializing](./Serializing_Deserialazing)
 
 ## Annotation Types
 

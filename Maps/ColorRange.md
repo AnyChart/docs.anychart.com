@@ -19,10 +19,10 @@ ColorRange
 ColorRange is a tool that is necessary when we need to identify the value that each point on a map presents. It looks like a range bar, colored as gradient 
 or like a number of colored boxes, each presenting a range of values.
  
-To create a colorrange, use the {api:anychart.charts.Map#colorRange}colorRange(){api} function. There are a lot of parameters might be adjusted, such as orientation 
+To create a colorrange, use the {api:anychart.charts.Map#colorRange}colorRange(){api} function. There are a lot of parameters might be adjusted, such as orientation
 (to change it use the {api:anychart.core.axes.Linear#orientation}orientation(){api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api}) or alignment ({api:anychart.graphics.vector.Image#align}align(){api} in this case). You can find more about visual settings in the end of this article.
 
-However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](Scales) to know, how to set and adjust it according to your needs.
+However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](./Scales) to know, how to set and adjust it according to your needs.
 
 The first step of adjusting the colors is to set the series and data correctly. Let's make an example with a Choropleth Series Map. Look at the code below.
 
@@ -43,7 +43,7 @@ var dataSet = anychart.data.set([
 // set the map
 var map = anychart.map();
 
-// set the geoData 
+// set the geoData
 map.geoData(anychart.maps.australia);
 	
 // set the series
@@ -62,7 +62,7 @@ Note that a ColorRange can only be connected to an only axis, while it's possibl
  
 ## Enabling the ColorRange
 
-To enable the ColorRange, there's a simple method {api:anychart.charts.Map#colorRange}colorRange(){api}. 
+To enable the ColorRange, there's a simple method {api:anychart.charts.Map#colorRange}colorRange(){api}.
 
 ```
 // create and enable the colorRange
@@ -108,11 +108,11 @@ colorRange.length(100);
 
 ### Size and position
 
-When you need to change the distance between the ColorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}padding(){api} method. 
+When you need to change the distance between the ColorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}padding(){api} method.
 You may define and only argument or all four (if you want them different) for all sides. Look at the following sample:
 
 ```
-// set the colorRange padding 
+// set the colorRange padding
 colorRange.padding(100);
 ```
 
@@ -120,10 +120,10 @@ In case you set the only value, this value will be interpreted as the same paddi
 
 {sample}Maps\_ColorRange\_06{sample}
 
-And if you define all four padding values, you'll be able to change the distance between the ColorKange and both map and its field borders. 
+And if you define all four padding values, you'll be able to change the distance between the ColorKange and both map and its field borders.
 
 ```
-// set the colorRange padding 
+// set the colorRange padding
 colorRange.padding(0, 100, 0, -100);
 ```
 
@@ -133,7 +133,7 @@ As you can see, the usage of this method with ColorRange is the same as in simpl
 
 ### Stroke 
 
-To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}stroke(){api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
+To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}stroke(){api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale).
 
 ```
 // create, enable and stroke the colorRange

@@ -23,7 +23,7 @@ Choropleth maps are also appropriate for indicating differences in land use, lik
 You can use a choropleth map when your data:
 1) is attached to enumeration units (e.g., counties, provinces, countries);
 2) standardized to show rates or ratios (never use choropleth with raw data/counts);
-3) is something that can be measured anywhere in space (even 'zero' is a valid measurement). 
+3) is something that can be measured anywhere in space (even 'zero' is a valid measurement).
 
 For example, if our data is a count like a number of cats, this data type is not suitable for the choropleth, 
 but a number of cats per square mile is a statistical ratio which always has a value and, thus, is appropriate for choropleth maps.
@@ -96,13 +96,13 @@ Classed Choropleth is a Choropleth Map, which scale is (and, consequently, a Col
 <!--Classification Method-->
 
 The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges.
-The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
+The main goal of classification is to unite territories with similar rates through coloring them in one shade or color.
 <!-- There are three general ways to classify the data: -->
 
 <!-- - Equal interval  -->
 One of the most popular ways to classify the data is using equal intervals. The data is divided into ranges of equal size 
 (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
-but has no sense, when the data values are spread unequally. 	
+but has no sense, when the data values are spread unequally.
 
 <!-- - Quantiles
 This way will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
@@ -152,7 +152,7 @@ And there's the sample with the colorRange of linear type:
 
 {sample}Maps\_Choropleth\_04{sample}
 
-Read more about [ColorRange](../Color_Range.md).
+Read more about [ColorRange](./ColorRange).
 
 ## Advantages and Disadvantages
 
@@ -178,8 +178,5 @@ It can be difficult to distinguish between different shades.
 Variations within map units are hidden, and for this reason smaller units are better than large ones.
 
 If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
-- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
-
+- [Graduated/Proportional Symbol Maps](./Proportional_Symbol_Map)
 These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.

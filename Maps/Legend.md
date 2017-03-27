@@ -49,11 +49,11 @@ Multiple Legends might be useful when you need to show different data in one map
 
 {sample}Maps\_Legend\_02{sample}
 
-Note that the Color Range is also used in the sample, read more about it in [Color Range](ColorRange) article.
+Note that the Color Range is also used in the sample, read more about it in [Color Range](./ColorRange) article.
 
 ## Thresholds in Legend
 
-You can use Legend with thresholds; with thresholds, the legend looks similar to a Color Range with an ordinal [Color Scale](Scales). 
+You can use Legend with thresholds; with thresholds, the legend looks similar to a Color Range with an ordinal [Color Scale](Scales).
 
 Let's create one more data set and a legend for it and define another color scale. This new series tells us about rival companies average profit.
 
