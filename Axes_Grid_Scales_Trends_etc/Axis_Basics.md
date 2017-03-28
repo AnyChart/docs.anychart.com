@@ -53,7 +53,7 @@ Learn how to format keywords in Number Formatting section.-->
 
 ## Position
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axes-Positioning).
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axis_Position).
 
 ```
 chart.xAxis(0).orientation('top);
@@ -68,7 +68,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
-Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Tutorial)
+Learn more about axes labels formatting in [Axes Labels Tutorial](./Axes_Labels_Formatting)
 
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
 
