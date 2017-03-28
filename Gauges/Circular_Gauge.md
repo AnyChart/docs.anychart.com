@@ -57,14 +57,14 @@ That's how it looks like in a sample:
 
 ##StartAngle and SweepAngle
 
-Change the {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
+Change the **.startAngle()** parameter to fix the angle you need axes to start from:
 
 ```
 //set the angle
   axis.startAngle(270);
 ```  
 
-Axis can be limited setting the {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
+Axis can be limited setting the **.sweepAngle()** parameter (its value represents the angle which would be drawn):
 
 ```
 //set the angle
@@ -97,7 +97,7 @@ In general, gauge scale settings is the same as the standard scale. You can find
 
 Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame. Generally, axis in Gauges behaves like a series in other chart types. The Gauge can be multi-axes.
 
-Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.core.axes.Circular#radius}**.radius()**{api} and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
+Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the **.radius()** and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
 
 ```
 	//axis settings
@@ -139,7 +139,7 @@ At the moment our speedometer has only 4 ticks each 40 mph, that is not actually
         .enabled(true);
 ```
 
-To enable the ticks and set the interval we used the {api:anychart.core.axes.Circular#ticks}**.ticks()**{api} method and the {api:anychart.core.axes.Circular#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
+To enable the ticks and set the interval we used the **.ticks()** method and the {api:anychart.core.axes.Circular#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
 
 {sample}GAUGE\_Circular\_04{sample}
 
@@ -202,7 +202,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 ```
 {sample}GAUGE\_Circular\_06{sample}
 
-To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
+To bind the pointers to the axis and data we want them to show, we use **.axisIndex()** and **.dataIndex()** methods. The value transmitted to the method is the number of axis or data accordingly.
 
 For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
