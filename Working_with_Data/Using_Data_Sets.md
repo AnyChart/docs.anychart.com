@@ -302,13 +302,6 @@ We map zero column of the Data Set as X, and the first column of the Data Set as
 Result of the `mapAs` call very similar to the Data Set itself, you can use it in the any chart or series create function exactly as any Data Set.  
 
 {sample}WD\_Using\_Data\_Sets\_04{sample}
-You can learn more about Data Mapping in the appropriate article.
-<!--
-See also:  
-<a href="./Advanced_Data_Mapping_features">Advanced Data Mapping features</a>  
-<a href="#">Multiple Charts layout</a>  
-<a href="#">Series and Point Meta Data</a>
--->
 
 
 
