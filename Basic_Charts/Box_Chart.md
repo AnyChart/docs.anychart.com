@@ -8,8 +8,8 @@
   * [Appearance](#appearance)
    * [Median](#median)
    * [Outliers](#outliers)
-   * [Whiskers](#whiskers)
    * [Stems](#stems)
+   * [Whiskers](#whiskers)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
   * [Vertical Box](#vertical_box)
@@ -169,7 +169,7 @@ Note that these settings are adjusted in JSON format. Read more about using JSON
 
 #### Stems
 
-Stems are those vertical sticks going beyond the boxes, demonstrating the difference between low value and first quartile and between third quartile and high value. Stems stroking settings are to be adjuste with the following methods: {api:anychart.core.cartesian.series.Box.stemStroke}stemStroke(){api} for boxes in normal state, {api:anychart.core.cartesian.series.Box.hoverStemStroke}hoverStemStroke(){api} for stem stroke in hovered state and {api:anychart.core.cartesian.series.Box.selectStemStroke}selectStemStroke(){api} for stems of a selected box. Stroke settings include value (which is usually color, but can also be a function, a string parameter or a stroke type - look through the API of these methods), thickness, dash pattern, line join style and line cap style. None of parameters are necessary.
+Stems are those vertical sticks going beyond the boxes, demonstrating the difference between low value and first quartile and between third quartile and high value. Stems stroking settings are to be adjusted with the following methods: {api:anychart.core.cartesian.series.Box.stemStroke}stemStroke(){api} for boxes in the normal state, {api:anychart.core.cartesian.series.Box.hoverStemStroke}hoverStemStroke(){api} for stem stroke in hovered state and {api:anychart.core.cartesian.series.Box.selectStemStroke}selectStemStroke(){api} for stems of a selected box. Stroke settings include the value (which is usually color but can also be a function, a string parameter or a stroke type - look through the API of these methods), thickness, dash pattern, line join style and line cap style. None of the parameters are necessary.
 
 The sample below demonstrates those methods' usage.
 
@@ -188,7 +188,12 @@ Whiskers are horizontal line segments on the stems' tops. They have "0" width by
 
 ```
 // set whiskers
-
+series.whiskerWidth(30);
+series.hoverWhiskerWidth(30);
+series.selectWhiskerWidth(30);
+series.whiskerStroke("#c2b65d", 0.7);
+series.hoverWhiskerStroke("#c2b65d", 0.5);
+series.selectWhiskerStroke("#c2b65d", 1);
 ```
 {sample}BCT\_Box\_Chart\_06{sample}
 
