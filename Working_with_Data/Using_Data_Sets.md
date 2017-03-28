@@ -9,7 +9,7 @@ For example, here is some data about a weather in three cities, and we want to s
 <tbody>
 <tr>
 <th>Date</th>
-<th>New York</th>	
+<th>New York</th>
 <th>San Francisco</th>
 <th>Los Angeles</th>
 </tr>
@@ -115,7 +115,7 @@ In many cases you are forced to create three sets to create a line chart with th
 </tbody> 
 </table>
 
-In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.  
+In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.
 
 To avoid this we recommend to use Data Sets, which are the natural representation of a table, a view or a database query result.
 
