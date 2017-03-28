@@ -41,7 +41,7 @@ scale type use appropriate constructor:
     chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional-Axis)
+Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
 
 ### Linear
 

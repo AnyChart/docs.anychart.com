@@ -243,7 +243,7 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts), on 
 the picture below you can see what are these paddings:
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** parameters in 
 **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For 
@@ -270,7 +270,7 @@ using certain styles. Style can be applied to all column charts or single column
 On the image below you can see what **Chart** can be decorated with: fill (including solid color fill, hatch fill, 
 image fill and gradient fill), border and effects applied to whole column.
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
 Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user 
 moves cursor over an element.
