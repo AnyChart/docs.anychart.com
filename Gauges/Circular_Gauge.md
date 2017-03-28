@@ -97,7 +97,7 @@ In general, gauge scale settings is the same as the standard scale. You can find
 
 Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame. Generally, axis in Gauges behaves like a series in other chart types. The Gauge can be multi-axes.
 
-Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the **.radius()** and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
+Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the **.radius()** and the **.width()** methods.
 
 ```
 	//axis settings
@@ -139,7 +139,7 @@ At the moment our speedometer has only 4 ticks each 40 mph, that is not actually
         .enabled(true);
 ```
 
-To enable the ticks and set the interval we used the **.ticks()** method and the {api:anychart.core.axes.Circular#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
+To enable the ticks and set the interval we used the **.ticks()** method and the **.minorTicks()** for our minor ticks acordingly.
 
 {sample}GAUGE\_Circular\_04{sample}
 
