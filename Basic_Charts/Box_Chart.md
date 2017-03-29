@@ -47,6 +47,7 @@ This article explains how to create a basic Box chart as well as configure setti
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
+
 ## Quick Start
 
 To create a Box chart, use the {api:anychart#box}anychart.box(){api} chart constructor. If you pass the data to this chart constructor, it will create a Box series.
