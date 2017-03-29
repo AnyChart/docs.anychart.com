@@ -14,29 +14,25 @@
 
   // all data
   var data = anychart.data.set([
-    [2000, 1100, 1000],
-    [2001, 880, 950],
-    [2002, 1100, 800],
-    [2003, 1500, 1000],
-    [2004, 921, 800],
-    [2005, 1000, 790],
-    [2006, 1400, 800]
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
   ]);
 
   // set data for each series
-  series1 = chart.marker(data.mapAs({x: [0], value: [1]}));
-  series2 = chart.marker(data.mapAs({x: [0], value: [2]}));
+  series = chart.marker(data.mapAs({x: [0], value: [1]}));
 
   // Sets settings for interactivity.
   chart.interactivity({hoverMode: "byX"});
 
   // set marker size
-  series1.size(10);
-  series2.size(5);
-  series1.hoverSize(15);
-  series2.hoverSize(10);
-  series1.selectSize(15);
-  series2.selectSize(10);
+  series.size(10);
+  series.hoverSize(15);
+  series.selectSize(15);
 
   // set axes titles 
   chart.xAxis().title("Years");

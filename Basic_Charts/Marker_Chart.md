@@ -96,18 +96,15 @@ It is possible to adjust the size of the markers to make them more noticeable or
 
 ```
 // set marker size
-series1.size(10);
-series2.size(5);
+series.size(10);
 ```
 
 The {api:anychart.core.scatter.series.Marker#hoverSize}hoverSize(){api} and {api:anychart.core.scatter.series.Marker#selectSize}selectSize(){api} are used for adjusting the markers' size for the series in hovered and selected states. 
 
 ```
 // set marker size
-series1.hoverSize(15);
-series2.hoverSize(10);
-series1.selectSize(15);
-series2.selectSize(10);
+series.hoverSize(15);
+series.selectSize(15);
 ```
 
 {sample}BCT\_Marker\_Chart\_02{sample}
