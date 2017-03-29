@@ -29,8 +29,8 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Marker_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Marker_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Polar_Marker_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Radar_Marker_Chart)</td></tr>
 <tr><td>Scatter</td><td>[Marker on Scatter Plot](Scatter_Plot/Overview)</td></tr>
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
@@ -47,24 +47,35 @@ To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} ch
 
 To create a Marker series explicitly, call the {api:anychart.charts.Cartesian#marker}marker(){api} method.
 
-The following sample demonstrates how a basic Marker chart is created:
+In the following sample, we DO NOT not create a [Scatter Marker Chart](Scatter/Marker_Chart), we create a basic categorized Marker chart:
 
 ```
-// create a chart
-var chart = anychart.marker([  
-    [2000, 1100],
-    [2001, 880],
-    [2002, 1100],
-    [2003, 1500],
-    [2004, 921],
-    [2005, 1000],
-    [2006, 1400]
-]);
-
-// set the container id
+// create a categorized chart
+chart = anychart.cartesian();
+  
+// data
+data = [  
+    ["2000", 1100],
+    ["2001", 880],
+    ["2002", 1100],
+    ["2003", 1500],
+    ["2004", 921],
+    ["2005", 1000],
+    ["2006", 1400]
+];
+  
+// add a marker seris
+chart.marker(data);
+  
+// set chart title
+chart.title("Marker Chart");
+  
+// set axes titles 
+chart.xAxis().title("Years");
+chart.yAxis().title("Sales");
+  
+// draw
 chart.container("container");
-
-// initiate drawing the chart
 chart.draw();
 ```
 
@@ -85,7 +96,7 @@ It is possible to adjust the size of the markers to make them more noticable or 
 ```
 // set marker size
 series1.size(10);
-series2.size(10);
+series2.size(5);
 ```
 
 The {api:anychart.core.scatter.series.Marker#hoverSize}hoverSize(){api} and {api:anychart.core.scatter.series.Marker#selectSize}selectSize(){api} are used for adjusting size of the marker seriesin hovered and selected states. 
@@ -93,12 +104,31 @@ The {api:anychart.core.scatter.series.Marker#hoverSize}hoverSize(){api} and {api
 ```
 // set marker size
 series1.hoverSize(15);
-series2.hoverSize(15);
+series2.hoverSize(10);
 series1.selectSize(15);
-series2.selectSize(15);
+series2.selectSize(10);
 ```
 
-{sample}BCT\_Marker\_Chart\_03{sample}
+To set size for a detached marker, use the data set:
+
+
+```
+// all data
+var data = anychart.data.set([
+  [2000, 1100, 1000],
+  [2001, 880, 950],
+  [2002, 1100, 800],
+  [2003, 1500, 1000, 20],
+  [2004, 921, 800],
+  [2005, 1000, 790],
+  [2006, 1400, 800]
+]);
+
+// set data for each series
+series1 = chart.marker(data.mapAs({x: [0], value: [1], markerSize:[3]}));
+```
+
+{sample}BCT\_Marker\_Chart\_02{sample}
 
 ### Appearance
 
@@ -129,7 +159,23 @@ series2.hoverHatchFill("percent30");
 series2.selectHatchFill("percent50");
 ```
 
-{sample}BCT\_Marker\_Chart\_02{sample}
+It is also possible to set specific colors for a single marker through the dataset:
+
+```
+var data1 = anychart.data.set([
+    {"x": 2000, value: 1100},
+    {"x": 2001, value: 880},
+    {"x": 2002, value: 1100},
+    {"x": 2003, value: 1500, fill: "#FDE56E 0.7", hoverFill: "#FDE56E 0.3", selectFill: "#FDE56E", stroke: {value: "#936A0B", thickness: 1}, hoverStroke: {value: "#C7A453", thickness: 2}, selectStroke: {value: "#402D02", thickness: 4}},
+    {"x": 2004, value: 921},
+    {"x": 2005, value: 1000},
+    {"x": 2006, value: 1400}
+  ]);
+```
+
+{sample}BCT\_Marker\_Chart\_03{sample}
+
+Note: settings adjusted in the dataset override those which are adjusted through the methods. Read more about setting the data an data formats in the [Working with Data article](../Working_with_Data/Overview).
 
 ### Type
 
@@ -141,7 +187,22 @@ series1.type("arrowDown");
 series2.type("arrowUp");
 ```
 
+Let's make one of the markers of different type:
+
+```
+var data1 = anychart.data.set([
+  {"x": 2000, value: 1100},
+  {"x": 2001, value: 880},
+  {"x": 2002, value: 1100},
+  {"x": 2003, value: 1500, type: "star5"},
+  {"x": 2004, value: 921},
+  {"x": 2005, value: 1000},
+  {"x": 2006, value: 1400}
+]);
+```
+
 {sample}BCT\_Marker\_Chart\_04{sample}
+
 
 ### Labels
 
