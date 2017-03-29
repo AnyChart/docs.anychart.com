@@ -1,3 +1,3 @@
 Linear Gauge
 ======
-*Coming soon*
+*Coming soon...*
