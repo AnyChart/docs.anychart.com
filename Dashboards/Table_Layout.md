@@ -120,7 +120,6 @@ Border is a part of a table. It visually divides whole table into separate cells
  part of chart it can be configured and all settings can be adjusted. In this section there are just several
  demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../Appearance_Settings/Lines_Settings) tutorial.
   
-  
 In this section revealed all methods of controlling borders in a table. 
 Parameter {api:anychart.core.ui.Table#cellBorder}**.cellBorder()**{api} provides an opportunity to set desirably configured border for all cells in a table. As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well.
   
