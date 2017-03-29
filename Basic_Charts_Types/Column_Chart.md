@@ -223,7 +223,7 @@ Look at the demonstration of the maximum and the minimum values in the Single-se
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts). The picture below shows what are these paddings:
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in the **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
@@ -240,7 +240,7 @@ The main idea of styles is to segregate visualization and data definition. Visua
 
 On the image below you can see which elements of the chart can be decorated with: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole column.
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
 Styles are also used to make charts interactive: you can define how elements will be displayed by default and when hovered.
 
@@ -365,7 +365,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 ## Hatch Fills
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
-To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
+To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Color_Management) tutorial.
 
 To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter opposite to {api:anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
 

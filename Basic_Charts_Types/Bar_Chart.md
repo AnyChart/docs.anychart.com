@@ -191,7 +191,7 @@ And here is the demonstration of maximum and minimum values in the Single-series
 
 The special thing about bar charts is the padding between a bar and a group of bars (in multi-series charts). You can see what are these paddings in the picture below :
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
 
 If you want to set these paddings you need to set {api:anychart.core.cartesian.series.Base#xPointPosition}**xPointPosition()**{api} in **bar_series**. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars set **xPointPosition** to 0.
 
@@ -207,7 +207,7 @@ The main idea of styles is to segregate visualization and data definition. Visua
 
 On the image below you can see what a bar_style consists of: a variety of fill types, border and effects applied to whole bar.
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when hovered, etc.
 
@@ -298,7 +298,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 ## Hatch Fills
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
-To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
+To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Color_Management) tutorial.
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 

@@ -9,9 +9,9 @@
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
 * [Minimum and Maximum](#minimum_and_maximum) 
-* [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
+* [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum)
 * [Stick to Zero](#stick_to_zero)
-* [Minor and Major Ticks](#minor_and_major_ticks) 
+* [Minor and Major Ticks](#minor_and_major_ticks)
 * [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
 * [Grids](#grids)
@@ -42,7 +42,7 @@ There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linea
     chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axis)
+Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
 
 ### Linear
 
