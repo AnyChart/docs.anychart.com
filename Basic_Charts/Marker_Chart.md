@@ -9,6 +9,7 @@
   * [Appearance](#appearance)
   * [Type](#type)
   * [Labels](#labels)
+  * [Single Marker Adjusting](#single_marker_adjusting)
   * [Tooltips](#tooltips)
 
 ## Overview
@@ -47,7 +48,7 @@ To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} ch
 
 To create a Marker series explicitly, call the {api:anychart.charts.Cartesian#marker}marker(){api} method.
 
-In the following sample, we DO NOT not create a [Scatter Marker Chart](Scatter/Marker_Chart), we create a basic categorized Marker chart:
+In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter/Marker_Chart), we create a basic categorized Marker chart:
 
 ```
 // create a categorized chart
@@ -91,7 +92,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Size
 
-It is possible to adjust the size of the markers to make them more noticable or for any other reasons. Use {api:anychart.core.scatter.series.Marker#size}size(){api} method:
+It is possible to adjust the size of the markers to make them more noticeable or for any other reasons. Use {api:anychart.core.scatter.series.Marker#size}size(){api} method:
 
 ```
 // set marker size
@@ -99,7 +100,7 @@ series1.size(10);
 series2.size(5);
 ```
 
-The {api:anychart.core.scatter.series.Marker#hoverSize}hoverSize(){api} and {api:anychart.core.scatter.series.Marker#selectSize}selectSize(){api} are used for adjusting size of the marker seriesin hovered and selected states. 
+The {api:anychart.core.scatter.series.Marker#hoverSize}hoverSize(){api} and {api:anychart.core.scatter.series.Marker#selectSize}selectSize(){api} are used for adjusting the markers' size for the series in hovered and selected states. 
 
 ```
 // set marker size
@@ -142,7 +143,7 @@ series2.selectHatchFill("percent50");
 
 {sample}BCT\_Marker\_Chart\_03{sample}
 
-Note: settings adjusted in the dataset override those which are adjusted through the methods. Read more about setting the data an data formats in the [Working with Data article](../Working_with_Data/Overview).
+**Note:** settings adjusted in the dataset override those which are adjusted through the methods. Read more about setting the data and data formats in the [Working with Data article](../Working_with_Data/Overview).
 
 ### Type
 
