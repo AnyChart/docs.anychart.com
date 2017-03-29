@@ -7,7 +7,7 @@
 
 ## Overview
 
-A simple moving average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
 
 AnyChart Stock allows you to add SMA with desired period to any of your charts.
 
@@ -44,7 +44,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator need three parameters: mapping with value field in it, period and a type of series to be displayed as:
+SMA indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
 
 ```
 var sma10 = plot.sma(mapping, 10, "column");

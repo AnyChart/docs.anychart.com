@@ -9,19 +9,37 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// set data and chart type
-	chart = anychart.pie3d([
-		{name: "Department Stores",         value: 637166},
-		{name: "Discount Stores",           value: 721630},
-		{name: "Men's/Women's Stores",      value: 148662},
-		{name: "Juvenile Specialty Stores", value: 78662},
-		{name: "All other outlets",         value: 90000}
+	// create a data set
+	var data = anychart.data.set([
+		["Winter", 12000, 12000, 10000],
+		["Spring", 13000, 12000, 17000],
+		["Summer", 25000, 15000, 19000],
+		["Autumn", 16000, 16000, 16000]
 	]);
 
-	chart.title("3D Pie Chart");
+	// map the data
+	var seriesData_1 = data.mapAs({x: [0], value: [1]});
+	var seriesData_2 = data.mapAs({x: [0], value: [2]});
+	var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
-	// draw
+	// create a 3d column chart
+	chart = anychart.column3d();
+
+	// enable the z-axis distribution mode
+	chart.zDistribution(true);
+
+	// create series (column) and set the data
+	var series1 = chart.column(seriesData_1);
+	var series2 = chart.column(seriesData_2);
+	var series3 = chart.column(seriesData_3);
+
+	// set the chart title
+	chart.title("3D Charts: Z-Axis Distribution");
+
+	// set the container id
 	chart.container("container");
+
+	// initiate drawing the chart
 	chart.draw();
 });</script>
 </head>

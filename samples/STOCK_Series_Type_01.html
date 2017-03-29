@@ -11,11 +11,11 @@
     stage = anychart.graphics.create("container");
 
     // set the data
-    var table = anychart.data.table("x");
+    var table = anychart.data.table('x');
     table.addData(data_us_population());
   
     // map the data
-    mapping = table.mapAs({'x':"x", 'value':"value"});
+    mapping = table.mapAs({x:'x', value:'value'});
 
     // set the chart type
     chart = anychart.stock();

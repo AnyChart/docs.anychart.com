@@ -49,34 +49,20 @@ After you do so, all files, images, pdf and data, will be saved under this name,
 
 AnyChart js charting library allows to save charts in 3 different image formats: SVG, PNG and JPG, using {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api}, {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} and {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} methods.
 
-Each method has common parameter: filename, and special parameters depending on format:
+Each method has common parameter: filename, and special parameters depending on format.
 
 ### SVG
 
 {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api} can be launched in two modes, one with width and height passed:
 
 ```
-saveAsSvg(
-    // width
-    360, 
-    // height
-    500, 
-    // file name
-    "custom_name"
-  );
+saveAsSvg({width: 360, height: 500, filename: 'custom_name'})
 ```
 
 And another one with paper size and page orientation set:
 
 ```
-saveAsSvg(
-    // paper size
-    "A4", 
-    // landscape or not
-    false, 
-    // file name
-    "custom_name"
-  );
+saveAsSvg({paperSize: "A4", "landscape": false, "filename": "custom_name"});  
 ```
 
 ### PNG
@@ -84,16 +70,7 @@ saveAsSvg(
 With {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} you can set width, height and quality in addition to file name:
 
 ```
-saveAsPng(
-    // width
-    360, 
-    // height
-    500, 
-    // quality
-    0.3,
-    // file name
-    "custom_name"
-  );
+saveAsPng({width: 360, height: 500, quality: 0.3, filename: "custom_name"});
 ```
 
 ### JPG
@@ -101,18 +78,7 @@ saveAsPng(
 With {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} you can set width, height, quality and forceTransparentWhite flag and in addition to file name:
 
 ```
-saveAsJpg(
-    // width
-    360, 
-    // height
-    500, 
-    // quality
-    0.3,
-    // forceTransparentWhite
-    false,
-    // file name
-    "custom_name"
-  );
+saveAsJpg({width: 360, height: 500, quality: 0.3, forceTransparentWhite: "false", filename: "custom_name"});
 ```
 
 To launch the export you need to use these methods as shown:
@@ -135,7 +101,7 @@ And here is a sample where you can see all methods in action:
 To save chart in Pdf format use: {api:anychart.core.Chart#saveAsPdf}saveAsPdf{api} method:
 
 ```
-// in PDF format
+// initiate saving chart in PDF format
 chart.saveAsPdf();
 ```
 
@@ -143,45 +109,33 @@ chart.saveAsPdf();
 
 ## Data
 
-AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}XLSX{api} (Excel file).
+AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} (Excel file).
 
 {api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (SPECIFIC), all data in the data set (RAW) and a special mode for stock charts allows to export grouped data (GROUPED).
 
 ### CSV
 
-With {api:anychart.core.Chart#saveAsCsv}CSV{api} you can set how you export data and file name:
+With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you export data and file name:
 
 ```
-saveAsCsv(
-    // CSV Mode
-    anychart.enums.ChartDataExportMode.RAW,
-    // csvSettings
-    {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true},
-    // file name
-    "csv"
-);
+saveAsCsv({chartDataExportMode: anychart.enums.ChartDataExportMode.RAW, csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
 ```
 
 ### Excel
 
-With {api:anychart.core.Chart#saveAsXlsx}XLSX{api} you can set how you export data and file name:
+With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you export data and file name:
 
 ```
-// this method will chart's data in Xlsx format
-chart.saveAsXlsx(
-    // chart data export mode
-    anychart.enums.ChartDataExportMode.SPECIFIC,
-    // file name
-    "excel"
-);
+// initiate saving chart's data in Xlsx format
+chart.saveAsXlsx({chartDataExportMode: anychart.enums.ChartDataExportMode.SPECIFIC, filename: "excel"});
 ```
 
 To launch the export you need to use these methods as shown:
 
 ```
-// this method will chart's data in Xlsx format
+// initiate saving chart's data in Xlsx format
 chart.saveAsXlsx();
-// this method will chart's data in CSV format
+// initiate saving chart's data in CSV format
 chart.saveAsCsv();
 ```
 
@@ -195,24 +149,14 @@ Chart config may be saved using {api:anychart.core.Chart#saveAsXml}XML{api} and 
 
 ```
 // save chart data and configuration in XML format
-chart.saveAsXml(
-  // include theme or not
-  false,
-  // file name
-  "chart_xml"
-);
+chart.saveAsXml({includeTheme: "false", filename: "chart_xml"});
 ```
 
 ### JSON
 
 ```
 // save chart data and configuration in Json format
-chart.saveAsJson(
-  // include theme or not
-  false,
-  // file name
-  "chart_json"
-);
+chart.saveAsJson({includeTheme: "false", filename: "chart_json"});
 ```
 
 Here is a sample of chart save as XML and save as JSON methods:

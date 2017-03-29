@@ -9,7 +9,15 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
     <script x-export="australiaMap">anychart.onDocumentReady(function() {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     var firstDataSet = anychart.data.set([
         {id: "AU.NT", value: 64, title: "Northern Territory"},
         {id: "AU.TS", value: 28, title: "Tasmania"},
@@ -36,7 +44,7 @@
 
     // Creates palette
     var myPalette = anychart.palettes.distinctColors();
-    myPalette.colors([
+    myPalette.items([
         ["#DCEDC8", "#689F38"],
         "#4FC3F7",
         "#4DD0E1"
@@ -45,21 +53,13 @@
     // Sets palette
     australiaMap.palette(myPalette);
 
-    var firstSeries = australiaMap.choropleth(firstDataSetForSeries);
-    firstSeries.geoIdField("code_hasc");
-
-    var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
-    secondSeries.geoIdField("code_hasc");
-
-    var thirdSeries = australiaMap.choropleth(thirdDataSetForSeries);
-    thirdSeries.geoIdField("code_hasc");
+    australiaMap.choropleth(firstDataSetForSeries);
+    australiaMap.choropleth(secondDataSetForSeries);
+    australiaMap.choropleth(thirdDataSetForSeries);
 
     australiaMap.container("container");
     australiaMap.draw();
-});
-    
-        </script>
-
+});</script>
 </head>
 <body>
 <div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>

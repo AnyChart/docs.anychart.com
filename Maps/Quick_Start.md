@@ -30,9 +30,18 @@ You also can use **GeoJSON**, **TopoJSON** or **SVG** formats. See [AnyChart Map
 
 You can use the link as shown above or download file from the [Map Collection](./Maps_List), put it into any folder of your site (you’ll have to use your own link in such case).
 
+If you are going to use geographic cooridnates, it is necessary to reference to prof4.js file:
+
+```
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```
+
+
 ##3. Create a Container for the Map
 
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyMap will use 100% of the container.
+Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyMap will use 100% of the container.
 
 ```
 <body>

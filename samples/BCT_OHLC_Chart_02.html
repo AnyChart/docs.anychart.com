@@ -9,54 +9,48 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
+  // create a chart
   chart = anychart.financial();
 
-  // chart title
-  chart.title("Multi-series");
-
-  // adjust x scale type
-  var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2007, 7, 27));
-  xScale.maximum(Date.UTC(2007, 8, 5));
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(0,0,1);
-
   // set first series data
-  chart.ohlc([
+  var series1 = chart.ohlc([
     {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
     {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
     {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
     {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-    {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
+    {x: Date.UTC(2007, 8, 4),  open:515.02, high:528.00, low:514.62, close:525.15}
   ]);
 
   // set second series data
-  chart.ohlc([
-    {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
-    {x: Date.UTC(2007, 7, 29), open: 522.60, high: 522.69, low: 522.27, close: 522.55},
-    {x: Date.UTC(2007, 7, 30), open: 522.49, high: 522.91, low: 522.38, close: 522.61},
-    {x: Date.UTC(2007, 7, 31), open: 522.81, high: 522.83, low: 522.51, close: 522.73},
-    {x: Date.UTC(2007, 8, 4),  open: 523.30, high: 524.50, low: 523.20, close: 523.97}
+  var series2 = chart.ohlc([
+    {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close:522.52},
+    {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close:524.55},
+    {x: Date.UTC(2007, 7, 30), open: 522.49, high:527.91, low:522.38, close:526.61},
+    {x: Date.UTC(2007, 7, 31), open: 524.81, high:526.83, low:520.51, close:521.73},
+    {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close:529.97}
   ]);
+    
+  // set colors for the first series
+  series1.risingStroke("#0066cc");
+  series1.hoverRisingStroke("#0066cc", 2);
+  series1.selectRisingStroke("#0066cc", 4);
+  series1.fallingStroke("#00cc99", 1, "10 5", "round");
+  series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+  series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
-  // set axes title
-  var xAxis = chart.xAxis();
-  xAxis.title("Day");
-  var yAxis = chart.yAxis();
-  yAxis.title("Price");
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(value){
-    var date = new Date(value["tickValue"]);
-    var options = {
-      month: "short",
-      day: "numeric"
-    };
-    return date.toLocaleDateString("en-US", options);
-  });
+  // disable markers
+  series1.hoverMarkers().enabled(false);
+  series1.selectMarkers().enabled(false);
+  series2.hoverMarkers().enabled(false);
+  series2.selectMarkers().enabled(false);
 
-  // draw
+  // chart title
+  chart.title("Multi-series OHLC Chart with custom colors");
+
+  // set container
   chart.container("container");
+
+  // draw chart
   chart.draw();
 });</script>
 </head>

@@ -8,9 +8,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>
-    <script x-export="chart">
-anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
     var dataTable = anychart.data.table();
+    // data comes from the function in https://cdn.anychart.com/csv-data/dji-daily-short.js
     dataTable.addData(get_dji_daily_short_data());
 
     var firstMapping = dataTable.mapAs({value: 1});
@@ -54,8 +54,6 @@ anychart.onDocumentReady(function() {
     thirdPlotYScale.compareWith(1209081600000);
     // the following line gives the same result
     // thirdPlotYScale.compareWith(Date.UTC(2008, 3, 25));
-
-   
 
     chart.title("Different Comparison Bases in Percent mode");
     chart.container("container");

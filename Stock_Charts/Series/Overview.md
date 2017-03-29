@@ -7,7 +7,6 @@
  * [AnyStock Scroller Series Adjusting](#anystock_scroller_series_adjusting)
 * [List of Supported Series](#list_of_supported_series)
 
-
 ## Overview
 
 AnyStock supports a lot of [different series types](Supported_Series), some of them compatible to be [switched during run time](Series_Type).
@@ -34,11 +33,11 @@ requests.name("Requests");
 
 {sample}STOCK\_Series\_01{sample}
 
-You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them in the article about [Chart Plots](../Chart_Plots). Also one of our plots has two axes. You can find information about managing axes in the [Axis tutorial](../Axes).
+You can see that the whole chart is divided in parts, where one contains OHLC and Line series and the second one has column in it, both parts have identical X Axis and are scrolled simultaneously. This parts we call **plots**, you can read about them [Chart Plots](../Chart_Plots) article. 
 
 ### AnyStock Series Adjusting
 
-Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors.
+You can adjust the colors of the series, adjust the tooltips, etc. Let's now create a sample with adjusted colors.
 
 ```
 // set the filling color for the rates series
@@ -52,7 +51,7 @@ requests.stroke("#00796B");
 
 ### AnyStock Scroller Series Adjusting
 
-In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of a column type to the scroll bar background and adjust its "selected" state colors.
+Adding a background series of a column type to the scroll bar background and adjusting its "selected" state colors:
 
 ```
 // create a thumbnail series in the scroller

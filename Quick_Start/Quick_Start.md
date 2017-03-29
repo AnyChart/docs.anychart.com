@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1 :title "Quick Start | AnyChart"}
 Quick Start
 ===========
   
@@ -22,7 +22,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ###2. Create a container for the chart
 
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
+Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
 
 Example:
 ```
@@ -111,6 +111,3 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
 * Read the [blog](http://www.anychart.com/blog/)
-
-
-

@@ -9,7 +9,15 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
     <script x-export="australiaMap">anychart.onDocumentReady(function() {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     var firstDataSet = anychart.data.set([
         {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
         {id: "AU.VI", value: 23, title: "Victoria"},
@@ -29,15 +37,11 @@
 
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
-    // Sets palette.
-    //australiaMap.palette(["#FFEB3B", "#FFC107"]);
 
     var firstSeries = australiaMap.choropleth(firstDataSetForSeries);
-    firstSeries.geoIdField("code_hasc");
     firstSeries.fill('#FFCC99');
 
     var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
-    secondSeries.geoIdField("code_hasc");
     secondSeries.fill('#8CE3B0');
     
     // set the color for the selections of the first series
@@ -48,10 +52,7 @@
 
     australiaMap.container("container");
     australiaMap.draw();
-});
-    
-    </script>
-
+});</script>
 </head>
 <body>
 <div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>

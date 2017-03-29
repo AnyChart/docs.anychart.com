@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" ></script>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" data-export = "true"></script>
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
     html, body, #container {
@@ -20,6 +20,12 @@
     <script x-export="usaMap">
 
     anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
 
     usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);

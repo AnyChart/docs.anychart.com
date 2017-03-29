@@ -19,7 +19,7 @@ In this article we will try to give an overview of GraphicsJS capabilities and g
 
 ## Note to AnyChart Users
 
-If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround]https://playground.anychart.com/), you might have noticed the code like this:
+If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround](https://playground.anychart.com/), you might have noticed the code like this:
 
 ```
 // set stage

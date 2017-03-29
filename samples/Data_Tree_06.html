@@ -22,7 +22,7 @@
   treeDataGrid = anychart.standalones.dataGrid();
 
   // set Data Tree
-  treeDataGrid.data(tree).titleHeight(20);
+  treeDataGrid.data(tree).headerHeight(20);
 
   // create button for Parent node
   treeDataGrid.listen("signal", treeDataGrid.draw, false, treeDataGrid);
@@ -64,7 +64,7 @@
   treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).width("100%").draw();
 
   // set container height
-  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
+  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
 
   var title = anychart.standalones.title();
   title.parentBounds(0, 0, "100%", 30)
@@ -81,7 +81,7 @@
       tree.removeChildAt(0);  // remove child
 
       // change container size for the sake of visual appearance
-      treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
+      treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
     }
     childNum--;               // reduce number of children in custom variable
   }

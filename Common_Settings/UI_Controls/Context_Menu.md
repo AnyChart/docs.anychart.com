@@ -31,7 +31,7 @@ Here is a sample with enabled context menu:
 
 ## Disable
 
-The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}.enabled(){api} method:
+The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}enabled(){api} method:
 
 ```
 var chart = anychart.column();
@@ -39,7 +39,7 @@ var menu = chart.contextMenu();
 menu.enabled(false);
 ```
 
-**Note:** there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
+**Note:** there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}contextMenu(){api} method:
 
 ```
 var chart = anychart.column();
@@ -52,14 +52,15 @@ chart.contextMenu(false);
 
 The default context menu in all charts consists of the following elements:
 
-* Save chart as
-* Save data as
-* Print 
+* [Save chart as](../Exports#image)
+* [Save data as](../Exports#data)
+* [Share with](../Sharing)
+* [Print](../Printing)
 * AnyChart vX.XX.X
 
 **Note**: the list of the elements above may vary in different types of charts. For instance: Context Menu of a cartesian chart contains "Include/Exclude" functionality, Treemap charts provide "Drill up" option when available.
   
-You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
+You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} method. This method uses function as a parameter:
 
 ```
 var chart = anychart.column();
@@ -90,7 +91,7 @@ menu.itemsFormatter(function(items){
   
 ### Hide Element
 
-JavaScript provides variety of methods for working with arrays. [These methods](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) can be used for manipulating Context Menu items in any way you want. For instance, you can use method [**.pop()**](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) to exclude last item of the Context Menu:
+JavaScript provides variety of methods for working with arrays. [These methods](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) can be used for manipulating Context Menu items in any way you want. For instance, you can use method [**pop()**](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) to exclude last item of the Context Menu:
 
 ```
 var chart = anychart.column();
@@ -129,7 +130,7 @@ AnyChart charting library doesn't limit the number of charts on a single plot, t
 menu.attach(chart);
 ```
 
-The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsProvider}.itemsProvider(){api} method to set a function for creating custom items array:
+The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsProvider}itemsProvider(){api} method to set a function for creating custom items array:
 
 ```
 menu.itemsProvider(function(){
@@ -167,7 +168,7 @@ Here is a sample of a custom context menu:
 
 ## Change the Look
 
-If you want to tune the visual appearance of the Context Menu you can define desirable appearance in you css file for custom css class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}.addClassName(){api} method.
+If you want to tune the visual appearance of the Context Menu you can define desirable appearance in you css file for custom css class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}addClassName(){api} method.
 
 ## Context
 

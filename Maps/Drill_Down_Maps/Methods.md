@@ -18,7 +18,11 @@ In all samples of this article all necessary maps are being loaded ahead as scri
 
 ## Methods
 
-There are four general methods that make working with drill down easier: {api:anychart.charts.Map#drillTo}drillTo(){api}, {api:anychart.charts.Map#drillUp}drillUp(){api}, {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} and {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. 
+The following methods make working with drill down easier:
+- {api:anychart.charts.Map#drillTo}drillTo(){api},
+- {api:anychart.charts.Map#drillUp}drillUp(){api},
+- {api:anychart.charts.Map#drillDownMap}drillDownMap(){api}
+- {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. 
 
 ### Drill To
 
@@ -88,6 +92,6 @@ function printPath(path){
 
 {sample}Maps\_Drill\_Down\_Methods\_04{sample}
 
-In the sample above we've used the {api:anychart.core.MapPoint#getCurrentChart}getCurrentChart(){api} method to obtain the link to the current map. A custom function *printpath(path)* helps to print the whole path in the title of the chart.
+In the sample above the {api:anychart.core.MapPoint#getCurrentChart}getCurrentChart(){api} method is used to obtain the link to the current map. A custom function *printpath(path)* helps to print the whole path in the title of the chart.
 
-Using {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. Look up the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.
+Using the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. See the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.
