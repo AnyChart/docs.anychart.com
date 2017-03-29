@@ -64,7 +64,7 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
 
 ### Background 
 
-You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](./Background) article.
+You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
 
 {sample}AS\_Titles\_04{sample}
 

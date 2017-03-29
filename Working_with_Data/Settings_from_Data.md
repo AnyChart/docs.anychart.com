@@ -6,7 +6,7 @@
 
 # Overview
 
-AnyChart allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of [Bar Chart](Bar_Chart).
+AnyChart allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of [Bar Chart](../Basic_Charts_Types/Bar_Chart).
 
 <br>As you know you can use a data set to create charts with the following code:
 
@@ -28,7 +28,7 @@ var series = chart.bar(data);
 And the chart will look this way:
 {sample}Settings\_From\_Data\_01{sample}
 
-<br>Visual appearance of bars is defined using [these settings](Bar_Chart#visualization):
+<br>Visual appearance of bars is defined using [these settings](../Basic_Charts_Types/Bar_Chart#visualization):
 
 ```
 var series = chart.bar(data);

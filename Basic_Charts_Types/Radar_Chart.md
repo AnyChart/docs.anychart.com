@@ -96,7 +96,7 @@ Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}**.
   chart.yAxis().stroke('2 #9900FF');  // set stroke thickness equal to 2px and set custom stroke color
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
+More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings).
 
 
 Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
