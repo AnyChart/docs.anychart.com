@@ -109,25 +109,6 @@ series1.selectSize(15);
 series2.selectSize(10);
 ```
 
-To set size for a detached marker, use the data set:
-
-
-```
-// all data
-var data = anychart.data.set([
-  [2000, 1100, 1000],
-  [2001, 880, 950],
-  [2002, 1100, 800],
-  [2003, 1500, 1000, 20],
-  [2004, 921, 800],
-  [2005, 1000, 790],
-  [2006, 1400, 800]
-]);
-
-// set data for each series
-series1 = chart.marker(data.mapAs({x: [0], value: [1], markerSize:[3]}));
-```
-
 {sample}BCT\_Marker\_Chart\_02{sample}
 
 ### Appearance
@@ -159,20 +140,6 @@ series2.hoverHatchFill("percent30");
 series2.selectHatchFill("percent50");
 ```
 
-It is also possible to set specific colors for a single marker through the dataset:
-
-```
-var data1 = anychart.data.set([
-    {"x": 2000, value: 1100},
-    {"x": 2001, value: 880},
-    {"x": 2002, value: 1100},
-    {"x": 2003, value: 1500, fill: "#FDE56E 0.7", hoverFill: "#FDE56E 0.3", selectFill: "#FDE56E", stroke: {value: "#936A0B", thickness: 1}, hoverStroke: {value: "#C7A453", thickness: 2}, selectStroke: {value: "#402D02", thickness: 4}},
-    {"x": 2004, value: 921},
-    {"x": 2005, value: 1000},
-    {"x": 2006, value: 1400}
-  ]);
-```
-
 {sample}BCT\_Marker\_Chart\_03{sample}
 
 Note: settings adjusted in the dataset override those which are adjusted through the methods. Read more about setting the data an data formats in the [Working with Data article](../Working_with_Data/Overview).
@@ -187,21 +154,28 @@ series1.type("arrowDown");
 series2.type("arrowUp");
 ```
 
-Let's make one of the markers of different type:
-
-```
-var data1 = anychart.data.set([
-  {"x": 2000, value: 1100},
-  {"x": 2001, value: 880},
-  {"x": 2002, value: 1100},
-  {"x": 2003, value: 1500, type: "star5"},
-  {"x": 2004, value: 921},
-  {"x": 2005, value: 1000},
-  {"x": 2006, value: 1400}
-]);
-```
-
 {sample}BCT\_Marker\_Chart\_04{sample}
+
+
+### Single Marker Adjusting
+
+Sometimes it is necessary to emphasize an only item for some reasons. In this case, use your dataset to fix the parameters for detached markers instead of the whole series.
+
+The following sample demonstrates adjusting some settings for a single item:
+
+```
+var data = anychart.data.set([
+    {x: "2000", value: 1100},
+    {x: "2001", value: 880},
+    {x: "2002", value: 1100},
+    {x: "2003", value: 1500, fill: "gold", stroke: "#663399", markerSize: 15, hoverMarkerSize: 15, selectMarkerSize: 20, type: "star5"},
+    {x: "2004", value: 921},
+    {x: "2005", value: 1000},
+    {x: "2006", value: 1400}
+  ]);
+```
+
+{sample}BCT\_Marker\_Chart\_05{sample}
 
 
 ### Labels
