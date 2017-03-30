@@ -8,6 +8,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
 // create a data set
 var data = [
   ["January", 10000],
@@ -18,6 +19,17 @@ var data = [
 ];
 
 chart = anychart.funnel(data);
+
+// adjust colors
+chart.fill("#DEB887");
+chart.hoverFill("#FFEBCD");
+chart.selectFill("#A0522D");
+chart.hatchFill("forwardDiagonal");
+chart.hoverHatchFill("#backwardDiagonal");
+chart.selectHatchFill("diagonalCross");
+chart.stroke("#fff");
+chart.hoverStroke("#fff", 2);
+chart.selectStroke("fff", 4);
 
 // set the container id
 chart.container("container");

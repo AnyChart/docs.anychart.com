@@ -8,13 +8,14 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
 // create a data set
 var data = [
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+  {name: "January", value: 10000, fill: "#1E90FF", selectFill: "#00008B", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
+  {name: "February", value: 12000, fill: "#00BFFF", selectFill: "#1E90FF", stroke: "#fff", selectStroke: "#00008B"},
+  {name: "March", value: 18000, fill: "#87CEFA", selectFill: "#00BFFF", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
+  {name: "April", value: 11000, fill: "#B0E0E6", selectFill: "#87CEFA", stroke: "#fff", selectStroke: "#00008B"},
+  {name: "May", value: 9000, fill: "#7FFFD4 0.5", selectFill: "#B0E0E6", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"}
 ];
 
 chart = anychart.funnel(data);
