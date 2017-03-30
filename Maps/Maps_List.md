@@ -6,4 +6,4 @@ This is a collection of maps you can use in AnyMap at no additional charge, AnyM
 
 * AnyMap Map Collection: [https://cdn.anychart.com/#map-collection](https://cdn.anychart.com/#maps-collection)
 
-* AnyMap Map Collection Gallery at AnyChart Playground: [http://playground.anychart.com/maps-collection/](http://playground.anychart.com/maps-collection/)
+* AnyMap Map Collection Gallery at AnyChart Playground: [https://playground.anychart.com/maps-collection/](https://playground.anychart.com/maps-collection/)

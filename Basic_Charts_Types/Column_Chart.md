@@ -352,4 +352,4 @@ To demonstrate hatch fill feature we've edited one of the previous samples. As y
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Column Charts Gallery](http://anychart.com/products/anychart/gallery/Column_Charts/).
+You can see a lot of other samples in [AnyChart Web Column Charts Gallery](https://www.anychart.com/products/anychart/gallery/Column_Charts/).

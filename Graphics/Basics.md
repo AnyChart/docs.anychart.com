@@ -13,13 +13,13 @@
   
 ## Overview
 
-As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an [intuitive graphics API](https://api.anychart.com/latest/anychart.graphics), [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.
+As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an {api:anychart.graphics}intuitive graphics API{api}, [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.
 
 In this article we will try to give an overview of GraphicsJS capabilities and go slightly far than [GraphicsJS Quick Start](Quick_Start) article does.
 
 ## Note to AnyChart Users
 
-If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround](http://playground.anychart.com/), you might have noticed the code like this:
+If you have already used AnyChart html5 charting solution or explored samples in [AnyChart Documentation](https://docs.anychart.com/) articles or [AnyChart PlayGround](https://playground.anychart.com/), you might have noticed the code like this:
 
 ```
 // set stage

@@ -40,19 +40,19 @@ You can find more about events [here](../Common_Settings/Event_Listeners).
 </td>
 <td>One interval becomes connected to another and we see the connector.</td>
 <td>
-<img src ="http://static.anychart.com/images/connector_creater.png" alt="Connector creater" />
+<img src ="https://static.anychart.com/images/connector_creater.png" alt="Connector creater" />
 <br>
 A pointer that is shown when a connector thumb is hovered
 <br><br>
-<img src ="http://static.anychart.com/images/connector_thumb.png" alt="Connector thumb" />
+<img src ="https://static.anychart.com/images/connector_thumb.png" alt="Connector thumb" />
 <br>
 The connector thumb shown when the interval is hovered
 <br><br>
-<img src ="http://static.anychart.com/images/dashed_connector.jpg" alt="Dashed connector" />
+<img src ="https://static.anychart.com/images/dashed_connector.jpg" alt="Dashed connector" />
 <br>
 The unconnected connector line
 <br><br>
-<img src ="http://static.anychart.com/images/final_connector.png" alt="Final connector" />
+<img src ="https://static.anychart.com/images/final_connector.png" alt="Final connector" />
 <br>
 That's how the final connector looks like
 </td>
@@ -63,7 +63,7 @@ That's how the final connector looks like
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
 
-<img src ="http://static.anychart.com/images/horizontal_resizer.png" alt="Horizontal resizer" />
+<img src ="https://static.anychart.com/images/horizontal_resizer.png" alt="Horizontal resizer" />
 <br>
 The horizontal resizer
 <br>
@@ -76,7 +76,7 @@ The horizontal resizer
 <td>Drags the interval through the time <!--and space--> without lengthening or shortening it.</td>
 <td>
 
-<img src ="http://static.anychart.com/images/dragger.png" alt="Dragger" />
+<img src ="https://static.anychart.com/images/dragger.png" alt="Dragger" />
 <br>
 The dragger
 <br>
@@ -89,7 +89,7 @@ The dragger
 <td>Lengthens or shortens the progress part of the task.</td>
 <td>
 
-<img src ="http://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
+<img src ="https://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
 <br>
 Progress slider 
 <br>
@@ -105,17 +105,17 @@ Progress slider
 <td>Changes the Gantt chart tree structure visually and logically.</td>
 <td>
 <!--
-<img src ="http://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
+<img src ="https://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
 <br>
 The cursor becomes of this type when we hover and press the button on the item.
 <br>
 
-<img src ="http://static.anychart.com/images/progress_slider.png" alt="Forbid the operation" />
+<img src ="https://static.anychart.com/images/progress_slider.png" alt="Forbid the operation" />
 <br>
 We see this symbol when we hover the item we cannot drop the dragged one into.
 <br>
 
-<img src ="http://static.anychart.com/images/progress_slider.png" alt="A between stroke and cursor" />
+<img src ="https://static.anychart.com/images/progress_slider.png" alt="A between stroke and cursor" />
 <br>
 The cursor becomes of this type when we hover and press the button on the item.
 <br>

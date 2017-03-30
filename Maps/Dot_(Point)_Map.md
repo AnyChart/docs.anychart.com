@@ -198,7 +198,7 @@ Another way to create unique markers is to set an image (or an array of images) 
     series_acme.hoverFill(customImageMarker(0.5));
 
     function customImageMarker(op){
-    var image_link = 'http://static.anychart.com/images/acme.jpg';
+    var image_link = 'https://static.anychart.com/images/acme.jpg';
       return {
           src: image_link,
             mode: 'fitMax',

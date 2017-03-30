@@ -7,7 +7,7 @@
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <script x-export="usaMap">
 anychart.onDocumentReady(function () {
 
@@ -73,7 +73,7 @@ anychart.onDocumentReady(function () {
     series_citrus.hoverType(customMarkerType);
 
     // set the link for the directory with images
-    var image_link = 'http://static.anychart.com/images/acme.jpg';
+    var image_link = 'https://static.anychart.com/images/acme.jpg';
     
     // set the images for our series defined in normal state
     series_acme.fill(customImageMarker(1));
@@ -100,7 +100,7 @@ anychart.onDocumentReady(function () {
         }
     
     function customImageMarker(op){
-    var image_link = 'http://static.anychart.com/images/acme.jpg';
+    var image_link = 'https://static.anychart.com/images/acme.jpg';
       return {
           src: image_link,
             mode: 'fitMax',

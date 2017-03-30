@@ -396,11 +396,11 @@ lineChart.tooltip().textFormatter(function() {
 ```
 
 Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
+ - [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
+ - [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
+ - [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
+ - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
+ - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 

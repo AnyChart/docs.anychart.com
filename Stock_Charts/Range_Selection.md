@@ -24,16 +24,16 @@ AnyStock provides a lot of features and tools to a chart viewer to make the work
 Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{api} package and you need to reference UI CSS file if you are using `anychart-bundle.min.js`:
 
 ```
-<script src="http://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="http://static.anychart.com/css/develop/anychart-ui.min.css" />
+<script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+<link rel="stylesheet" href="https://static.anychart.com/css/latest/anychart-ui.min.css" />
 ```
 
 Or, if you are using a specialized `anystock.min.js` you need to reference ui JavaScript file as well:
 
 ```
-<script src="http://cdn.anychart.com/js/latest/anystock.min.js"></script>
+<script src="https://cdn.anychart.com/js/latest/anystock.min.js"></script>
 <script src="https://cdn.anychart.com/js/latest/anychart-ui.min.js"/>
-<link rel="stylesheet" href="http://static.anychart.com/css/develop/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://static.anychart.com/css/latest/anychart-ui.min.css" />
 ```
 
 ## Add to a chart

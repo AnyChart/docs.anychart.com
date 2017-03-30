@@ -10,7 +10,7 @@
 
 ## Basic Methods
  
-There are several methods adjusting custom text on a stage. You can find all of them in our <a href="http://api.anychart.stg/develop/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set text and adjust its parameters.
+There are several methods adjusting custom text on a stage. You can find all of them in our {api:anychart.graphics.vector.Text}text API{api}. This article describes some basic methods which allow to set text and adjust its parameters.
 
 ### Set the text
 
@@ -23,7 +23,7 @@ stage.text(20, 20, "This is my custom text");
 
 {sample :width 832 :height 120}GFX\_Basic\_Text\_01{sample}
 
-Let's now consider some basic styling methods. The {api:}fontSize(){api} method changes your font size, to change the font itself use {api:}fontFamily(){api}, the {api:}color(){api} method stands for setting the text color. Let's adjust the text from above with those methods:
+Let's now consider some basic styling methods. The {api:}fontSize(){api} method changes your font size, to change the font itself use {api:anychart.graphics.vector.Text#fontFamily}fontFamily(){api}, the {api:anychart.graphics.vector.Text#color}color(){api} method stands for setting the text color. Let's adjust the text from above with those methods:
 
 ```
 // create the text style 

@@ -356,4 +356,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ## Samples
 
- You can see a lot of other samples in [AnyChart Web Bubble and Markers Charts Gallery](http://anychart.com/products/anychart/gallery/Marker_and_Bubble_Charts/).
+ You can see a lot of other samples in [AnyChart Web Bubble and Markers Charts Gallery](https://anychart.com/products/anychart/gallery/Marker_and_Bubble_Charts/).

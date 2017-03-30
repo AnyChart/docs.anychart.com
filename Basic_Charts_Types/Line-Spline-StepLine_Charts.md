@@ -358,4 +358,4 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
+You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](https://www.anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
