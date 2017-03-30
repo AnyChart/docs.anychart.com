@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scatter();
+  chart = anychart.cartesian();
 
   // all data
   var data1 = anychart.data.set([
@@ -54,6 +54,10 @@
   
   // chart title
   chart.title("Multi-Series Marker Chart with marker types adjusted");
+  
+  // set axes titles 
+  chart.xAxis().title("Years");
+  chart.yAxis().title("Sales");
   
   // draw
   chart.container("container");
