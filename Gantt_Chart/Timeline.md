@@ -16,14 +16,14 @@ Timeline of a Project Chart is rather different from a timeline of a Resoure Gan
 ### Resource Gantt Chart
 This illustration highlights almost all major resource timeline elements, and this tutorial will describe how each element is configured:
 
-<img width="700" src ="http://static.anychart.com/images/resource_timeline.jpg" />
+<img width="700" src ="https://static.anychart.com/images/resource_timeline.jpg" />
 
 You can look up the [Resource Chart](Resource_Chart) article to know more about managing Gantt Charts of this type.
 
 ### Project Gantt Chart
 This illustration highlights almost all major project timeline elements, and this tutorial will describe how each element is configured:
 
-<img width="700" src ="http://static.anychart.com/images/project_timeline.jpg" />
+<img width="700" src ="https://static.anychart.com/images/project_timeline.jpg" />
 
 You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 

@@ -43,7 +43,7 @@ To load the SVG file, use an .ajax request:
 ```
 $.ajax({
 type: "GET",
-url: "http://static.anychart.com/images/docs/seat_map/house.svg",
+url: "https://static.anychart.com/images/docs/seat_map/house.svg",
 ```
 
 {sample}Maps\_Seat\_01{sample}
@@ -53,7 +53,7 @@ url: "http://static.anychart.com/images/docs/seat_map/house.svg",
 Another way to add an SVG image is to put it directly into the script as a string. This way may suit you if the SVG code is not too long.
 
 ```
-svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
+svgString = "<svg xmlns='https://www.w3.org/2000/svg'>" +
             "<g data-ac-wrapper-id='3'>" +
             "<circle id='1' cx='50' cy='50' r='20'></circle>" +
             "<circle id='2' cx='150' cy='40' r='30'></circle>" +

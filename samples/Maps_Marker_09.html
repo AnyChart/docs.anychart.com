@@ -16,7 +16,7 @@ anychart.onDocumentReady(function () {
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See http://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_ACME = anychart.data.set([
@@ -80,7 +80,7 @@ anychart.onDocumentReady(function () {
     series_citrus.hoverType(customMarkerType);
 
     // set the link for the directory with images
-    var image_link = 'http://static.anychart.com/images/acme.jpg';
+    var image_link = 'https://static.anychart.com/images/acme.jpg';
     
     // set the images for our series defined in normal state
     series_acme.fill(customImageMarker(1));
@@ -107,7 +107,7 @@ anychart.onDocumentReady(function () {
         }
     
     function customImageMarker(op){
-    var image_link = 'http://static.anychart.com/images/acme.jpg';
+    var image_link = 'https://static.anychart.com/images/acme.jpg';
       return {
           src: image_link,
             mode: 'fitMax',

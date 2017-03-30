@@ -27,8 +27,8 @@ AnyChart provides built-in locales covering most regions and cultures. To use an
 Linking from CDN looks like this:
 
 ```
-<script src="http://cdn.anychart.com/locale/1.0.0/english-(united-kingdom).js">
-<script src="http://cdn.anychart.com/locale/1.0.0/english-(united-states).js">
+<script src="https://cdn.anychart.com/locale/1.0.0/english-(united-kingdom).js">
+<script src="https://cdn.anychart.com/locale/1.0.0/english-(united-states).js">
 ```
 
 Linking from your server may look like this:

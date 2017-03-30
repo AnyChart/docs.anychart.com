@@ -3,7 +3,7 @@
 <head>
     <script src="../anychart-bundle.min.js"></script>
     <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" data-export = "true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" data-export = "true"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
@@ -24,7 +24,7 @@ anychart.onDocumentReady(function () {
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See http://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // define the map
     usaMap = anychart.map();    
@@ -111,7 +111,7 @@ anychart.onDocumentReady(function () {
       if (id == "US.TX") {
         jQuery.ajax({
             type: "GET",  //POST
-            url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
+            url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
             dataType: "json", //script
             success: function(data){
               var txMap = anychart.map();
@@ -129,7 +129,7 @@ anychart.onDocumentReady(function () {
       if (id == "US.FL") {
         jQuery.ajax({
             type: "GET", 
-            url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
+            url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
             dataType: "json", 
             success: function(data){
               var flMap = anychart.map();

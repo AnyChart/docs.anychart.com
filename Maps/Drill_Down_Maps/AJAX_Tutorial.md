@@ -26,13 +26,13 @@ If you need any other AnyChart components, it's better to include anychart-bundl
 To create a sample with maps being added through AJAX request, we need to do is to include some AJAX component to our Drill Down Map sample (in the same &lt;head&gt; section). We will use jQuery.
 
 ```
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 ```
 
 It is better to add the root map the same way as the AnyMap component and jQuery:
 
 ```
-<script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+<script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
 ```
 
 ## Data
@@ -103,7 +103,7 @@ jQuery.ajax({
 });
 ```
 
-You can find links to all maps in <a href="http://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
+You can find links to all maps in <a href="https://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
 
 ### Drill To
 
@@ -135,8 +135,8 @@ We need to add a field with url to both states in the dataset of the USA map:
 ```
 // set the data for the USA map
 var usaDataSet = anychart.data.set([
-    {"id": "US.TX", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
-    {"id": "US.FL", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
+    {"id": "US.TX", "value": 26956958, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
+    {"id": "US.FL", "value": 19552860, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
 ]);
 
 // load the map using AJAX

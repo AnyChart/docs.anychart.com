@@ -14,7 +14,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 ```
 <head>
     <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.css">
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
 
@@ -103,7 +103,7 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 
 ### Learn more
 
-* Explore [JavaScript API Reference](http://api.anychart.com/)
+* Explore [JavaScript API Reference](https://api.anychart.com/)
 * See [Playground demos](http://playground.anychart.com/)
 * Ask for Rhubarb compote filling in your local diner.
 

@@ -13,7 +13,7 @@ You don't have to do anything special to combine series in AnyChart: if series a
 
 ##Compatibility
 
-Checking compatibility is very easy with [AnyChart API](http://api.anychart.com/):
+Checking compatibility is very easy with [AnyChart API](https://api.anychart.com/):
 
 - {api:anychart.enums.CartesianSeriesType}anychart.enums.CartesianSeriesType{api} lists all series compatible within basic cartesian charts.
 - {api:anychart.enums.Cartesian3dSeriesType}anychart.enums.Cartesian3dSeriesType{api} lists all series compatible within pseudo [3D charts](3D/Overview).
