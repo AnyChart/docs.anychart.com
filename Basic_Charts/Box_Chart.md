@@ -40,8 +40,8 @@ This article explains how to create a basic Box chart as well as configure setti
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Error Chart](Error_Chart)</td></tr>
-<tr><td></td><td>[Pareto Chart](Pareto_Chart)</td></tr>
+<tr><td></td><td>[Error](Error_Chart)</td></tr>
+<tr><td></td><td>[Pareto](Pareto_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/box-chart/" target="_blank">Chartopedia: Box Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -57,7 +57,7 @@ To create a Box series explicitly, call the {api:anychart.charts.Cartesian#box}b
 The following sample demonstrates how a basic Box chart is created:
 
 ```
-// chart data
+// create data
 var data = [
   {x: "1", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
   {x: "2", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
@@ -66,19 +66,16 @@ var data = [
   {x: "5", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
 ];
 
-// create box chart
+// create a chart
 chart = anychart.box();
 
-// create box chart series with our data
+// create a box series and set the data
 series = chart.box(data);
 
-// set chart title text settings
-var title = chart.title("Basic Box Chart");
-  
-// set container id for the chart
+// set the container id
 chart.container("container");
-  
-// initiate chart drawing
+
+// initiate drawing the chart
 chart.draw();
 ```
 
@@ -108,7 +105,7 @@ You can learn more from the [Appearance Settings](../Appearance_Settings) articl
 In the sample below, there are two Box series with some of the appearance settings configured:
 
 ```
-// color settings
+// configure the visual settings of the first series
 series1.fill("#00cc99", 0.4);
 series1.hoverFill("#00cc99", 0.2);
 series1.selectFill("#00cc99", 0.6);
@@ -116,6 +113,7 @@ series1.stroke("#00cc99", 1, "10 5", "round");
 series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
+// configure the visual settings of the second series
 series2.color("none");
 series2.hatchFill("forwardDiagonal");
 series2.hoverHatchFill("backwardDiagonal");
@@ -132,7 +130,7 @@ series2.selectStroke("#000", 4);
 The special line across the box is a median. Median has its own appearance settings methods: {api:anychart.core.cartesian.series.Box#medianStroke}medianStroke(){api}, {api:anychart.core.cartesian.series.Box#hoverMedianStroke}hoverMedianStroke(){api} and {api:anychart.core.cartesian.series.Box#selectMedianStroke}selectMedianStroke(){api}. The following sample demonstrates these methods usage:
 
 ```
-// adjust median settings for the second series
+// configure the median
 series.medianStroke("#000");
 series.hoverMedianStroke("#000", 2);
 series.selectMedianStroke("#000", 4);
@@ -145,7 +143,7 @@ series.selectMedianStroke("#000", 4);
 There are several methods for adjusting the settings of outliers: {api:anychart.core.cartesian.series.Box#outlierMarkers}outlierMarkers(){api}, {api:anychart.core.cartesian.series.Box#hoverOutlierMarkers}hoverOutlierMarkers(){api} (for configuring outliers settings on hover) and {api:anychart.core.cartesian.series.Box#selectOutlierMarkers}selectOutlierMarkers(){api} (for configuring outliers settings on select). Using those methods allows changing not only the colors but also the type and size of the outliers. Let's add these settings to the previous sample:
 
 ```
-// outliers setting adjusting
+// configure outliers
 series.outlierMarkers(
   {fill: "#DC143C 0.7",
   stroke: {color: "#DC143C", thickness: 0.5, dash: "5 1", lineJoin: "round"},
@@ -175,7 +173,7 @@ Stems are those vertical sticks going beyond the boxes, demonstrating the differ
 The sample below demonstrates those methods' usage.
 
 ```
-// stem settings adjusted
+// configure stems
 series.stemStroke("#F44336", 1, "5 2");
 series.hoverStemStroke("#F44336", 2, "5 2", "round", "round");
 series.selectStemStroke("#F44336", 3, "5 2");
@@ -188,7 +186,7 @@ series.selectStemStroke("#F44336", 3, "5 2");
 Whiskers are horizontal line segments on the stems' tops. They have "0" width by default, but this can be adjusted with the {api:anychart.core.cartesian.series.Box.whiskerWidth}whiskerWidth(){api} method. Set whiskers stroke with the {api:anychart.core.cartesian.series.Box.whiskerStroke}whiskerStroke(){api} method. For hovered state use {api:anychart.core.cartesian.series.Box.hoverWhiskerWidth}hoverWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.hoverWhiskerStroke}hoverWhiskerStroke(){api}, for selected state use {api:anychart.core.cartesian.series.Box.selectWhiskerWidth}selectWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.selectWhiskerStroke}selectWhiskerStroke(){api} respectively.
 
 ```
-// set whiskers
+// configure whiskers
 series.whiskerWidth(30);
 series.hoverWhiskerWidth(30);
 series.selectWhiskerWidth(30);

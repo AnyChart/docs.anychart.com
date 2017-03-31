@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  // chart data
+  // create data
   var data1 = [
     {x: "Jan", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
     {x: "Feb", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
@@ -25,16 +25,18 @@
     {x: "May", low: 7800, q1: 8050, median: 8350, q3: 8400, high: 9000}
   ];
 
-  // create box chart
+  // create a chart
   chart = anychart.box();
 
-  // create box chart series with our data
+  // create the first series, set the data and name
   series1 = chart.box(data1);
   series1.name("Documentary movies");
+
+  // create the second series, set the data and name
   series2 = chart.box(data2);
   series2.name("Sci-Fi movies");
 
-  // color settings
+  // configure the visual settings of the first series
   series1.fill("#00cc99", 0.4);
   series1.hoverFill("#00cc99", 0.2);
   series1.selectFill("#00cc99", 0.6);
@@ -42,7 +44,7 @@
   series1.hoverStroke("#00cc99", 2, "10 5", "round");
   series1.selectStroke("#00cc99", 4, "10 5", "round");
 
-  series2.color("none");
+  // configure the visual settings of the second series
   series2.hatchFill("forwardDiagonal");
   series2.hoverHatchFill("backwardDiagonal");
   series2.selectHatchFill("diagonalCross");
@@ -50,18 +52,18 @@
   series2.hoverStroke("#000", 2);
   series2.selectStroke("#000", 4);
 
-  // set chart title text settings
-  var title = chart.title("Multi-Series Box Chart with colors adjusted");
+  // set the chart title
+  var title = chart.title("Box Chart: Appearance");
 
   chart.interactivity("byX");
 
-  // enable legend
+  // enable the legend
   chart.legend(true);
   
-  // set container id for the chart
+  // set the container id
   chart.container("container");
   
-  // initiate chart drawing
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

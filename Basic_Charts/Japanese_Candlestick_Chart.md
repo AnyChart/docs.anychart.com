@@ -111,7 +111,7 @@ You can learn more from the [Appearance Settings](../Appearance_Settings) sectio
 In the sample below, there are two Japanese Candlestick series with some of the appearance settings configured:
 
 ```
-// set colors for the first series
+// configure the visual settings of the first series
 series1.risingStroke("#0066cc");
 series1.risingFill("#0066cc", 0.3);
 series1.hoverRisingStroke("#0066cc", 2);
@@ -126,7 +126,7 @@ series1.hoverFallingFill("#00cc99", 0.1);
 series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 series1.selectFallingFill("#00cc99", 0.5);
 
-// set hatch for the second series
+// configure the visual settings of the second series
 series2.fallingHatchFill("forwardDiagonal");
 series2.risingHatchFill("backwardDiagonal");
 series2.hoverFallingHatchFill("diagonalCross");

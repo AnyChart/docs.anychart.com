@@ -36,7 +36,7 @@ This article explains how to create a basic OHLC chart as well as configure spec
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock OHLC](../Stock_Charts/Series/Japanese_Candlestick)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Japanese Candlestick](OHLC_Chart)</td></tr>
+<tr><td></td><td>[Japanese Candlestick](Japanese_Candlestick_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/ohlc-chart/" target="_blank">Chartopedia: OHLC Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -69,10 +69,11 @@ var data = anychart.data.set([
 
 // create a chart
 chart = anychart.financial();
-    
+  
+// map the data      
 var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
-// create an ohlc series and set the data
+// create an OHLC series and set the data
 var series = chart.ohlc(seriesData);
 
 // set the container id
@@ -106,7 +107,7 @@ You can learn more from the [Appearance Settings](../Appearance_Settings) sectio
 In the sample below, there are two OHLC series with appearance settings configured for the first series:
 
 ```
-// set colors for the first series
+// configure the visual settings of the first series
 series1.risingStroke("#0066cc");
 series1.hoverRisingStroke("#0066cc", 2);
 series1.selectRisingStroke("#0066cc", 4);

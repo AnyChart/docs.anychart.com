@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  // chart data
+  // create data
   var data = [
     {x: "Jan", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
     {x: "Feb", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
@@ -18,13 +18,13 @@
     {x: "May", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
   ];
 
-  // create box chart
+  // create a chart
   chart = anychart.box();
 
-  // create box chart series with our data
+  // create a series and set the data
   series = chart.box(data);
 
-  // outliers setting adjusting
+  // configure outliers
   series.outlierMarkers(
     {fill: "#DC143C 0.7",
     stroke: {color: "#DC143C", thickness: 0.5, dash: "5 1", lineJoin: "round"},
@@ -41,15 +41,15 @@
     size: 10,
     type: "star5"});
 
-  // set chart title text settings
-  var title = chart.title("Box Chart with outliers adjusted");
+  // set the chart title
+  var title = chart.title("Box Chart: Outliers");
 
   chart.interactivity("byX");
   
-  // set container id for the chart
+  // set the container id
   chart.container("container");
   
-  // initiate chart drawing
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

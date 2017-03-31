@@ -12,16 +12,16 @@
   // create a chart
   chart = anychart.financial();
 
-  // set first series data
+  // create the first series and set the data
   var series1 = chart.ohlc([
-    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-    {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
-    {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
-    {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-    {x: Date.UTC(2007, 8, 4),  open:515.02, high:528.00, low:514.62, close:525.15}
+    {x: Date.UTC(2007, 7, 28), open: 511.53, high: 514.98, low: 505.79, close: 506.40},
+    {x: Date.UTC(2007, 7, 29), open: 507.84, high: 513.30, low: 507.23, close: 512.88},
+    {x: Date.UTC(2007, 7, 30), open: 512.36, high: 515.40, low: 510.58, close: 511.40},
+    {x: Date.UTC(2007, 7, 31), open: 513.10, high: 516.50, low: 511.47, close: 515.25},
+    {x: Date.UTC(2007, 8, 4),  open: 515.02, high: 528.00, low: 514.62, close: 525.15}
   ]);
 
-  // set second series data
+  // create the second series and set the data
   var series2 = chart.ohlc([
     {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close:522.52},
     {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close:524.55},
@@ -30,7 +30,7 @@
     {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close:529.97}
   ]);
     
-  // set colors for the first series
+  // configure the visual settings of the first series
   series1.risingStroke("#0066cc");
   series1.hoverRisingStroke("#0066cc", 2);
   series1.selectRisingStroke("#0066cc", 4);
@@ -38,7 +38,7 @@
   series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
   series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
-  // disable markers
+  // disable markers on the first series
   series1.hoverMarkers().enabled(false);
   series1.selectMarkers().enabled(false);
   series2.hoverMarkers().enabled(false);
