@@ -103,7 +103,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.core.cartesian.series.RangeColumn#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.RangeColumn#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.RangeColumn#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.cartesian.series.RangeColumn#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.RangeColumn#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.RangeColumn#selectStroke}selectStroke(){api} configure the visual settings on select
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are two Range Column series with some of the appearance settings configured:
 

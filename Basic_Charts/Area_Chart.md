@@ -96,7 +96,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are two Area series with some of the appearance settings configured:
 

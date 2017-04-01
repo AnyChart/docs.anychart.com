@@ -26,24 +26,25 @@
 
   // configure outliers
   series.outlierMarkers(
-    {fill: "#DC143C 0.7",
-    stroke: {color: "#DC143C", thickness: 0.5, dash: "5 1", lineJoin: "round"},
+    {fill: "#dc143c 0.7",
+    stroke: {color: "#dc143c", thickness: 0.5, dash: "5 1", lineJoin: "round"},
     size: 10,
     type: "star5"});
   series.hoverOutlierMarkers(
-    {fill: "#DC143C 0.5",
-    stroke: {color: "#DC143C", thickness: 1, dash: "5 1", lineJoin: "round"},
+    {fill: "#dc143c 0.5",
+    stroke: {color: "#dc143c", thickness: 1, dash: "5 1", lineJoin: "round"},
     size: 10,
     type: "star5"});
   series.selectOutlierMarkers(
-    {fill: "#DC143C",
-    stroke: {color: "#DC143C", thickness: 2, dash: "5 1", lineJoin: "round"},
+    {fill: "#dc143c",
+    stroke: {color: "#dc143c", thickness: 2, dash: "5 1", lineJoin: "round"},
     size: 10,
     type: "star5"});
 
   // set the chart title
   var title = chart.title("Box Chart: Outliers");
 
+  // set the interactivity mode
   chart.interactivity("byX");
   
   // set the container id

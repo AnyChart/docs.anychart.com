@@ -23,22 +23,30 @@
 
   // create the second series and set the data
   var series2 = chart.ohlc([
-    {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close:522.52},
-    {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close:524.55},
-    {x: Date.UTC(2007, 7, 30), open: 522.49, high:527.91, low:522.38, close:526.61},
-    {x: Date.UTC(2007, 7, 31), open: 524.81, high:526.83, low:520.51, close:521.73},
-    {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close:529.97}
+    {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close: 522.52},
+    {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close: 524.55},
+    {x: Date.UTC(2007, 7, 30), open: 522.49, high:527.91, low:522.38, close: 526.61},
+    {x: Date.UTC(2007, 7, 31), open: 524.81, high:526.83, low:520.51, close: 521.73},
+    {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close: 529.97}
   ]);
     
   // configure the visual settings of the first series
-  series1.risingStroke("#0066cc");
-  series1.hoverRisingStroke("#0066cc", 2);
-  series1.selectRisingStroke("#0066cc", 4);
-  series1.fallingStroke("#00cc99", 1, "10 5", "round");
-  series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
-  series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
+  series1.risingStroke("#33ccff");
+  series1.hoverRisingStroke("#33ccff", 1.5);
+  series1.selectRisingStroke("#33ccff", 3);
+  series1.fallingStroke("#ff33cc");
+  series1.hoverFallingStroke("#ff33cc", 1.5);
+  series1.selectFallingStroke("#ff33cc", 3);
 
-  // disable markers on the first series
+  // configure the visual settings of the second series
+  series2.risingStroke("#33ccff", 1, "10 5", "round");
+  series2.hoverRisingStroke("#33ccff", 1.5, "10 5", "round");
+  series2.selectRisingStroke("#33ccff", 3, "10 5", "round");
+  series2.fallingStroke("#ff33cc", 1, "10 5", "round");
+  series2.hoverFallingStroke("#ff33cc", 1.5, "10 5", "round");
+  series2.selectFallingStroke("#ff33cc", 3, "10 5", "round");
+
+  // disable markers
   series1.hoverMarkers().enabled(false);
   series1.selectMarkers().enabled(false);
   series2.hoverMarkers().enabled(false);
@@ -47,10 +55,13 @@
   // chart title
   chart.title("Multi-series OHLC Chart with custom colors");
 
-  // set container
+  // set the interactivity mode
+  chart.interactivity("byX");
+
+  // set the container id
   chart.container("container");
 
-  // draw chart
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

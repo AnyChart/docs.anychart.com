@@ -86,7 +86,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.charts.Pie#fill}fill(){api}, {api:anychart.charts.Pie#hatchFill}hatchFill(){api}, {api:anychart.charts.Pie#stroke}stroke(){api} set the fill, hatch fill, and stroke
 * {api:anychart.charts.Pie#hoverFill}hoverFill(){api}, {api:anychart.charts.Pie#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pie#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there a Pie chart with some of the appearance settings configured:
 

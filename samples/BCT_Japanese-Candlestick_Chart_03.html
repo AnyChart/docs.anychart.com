@@ -30,6 +30,7 @@
   // create a chart
   chart = anychart.cartesian();
   
+  // set the interactivity mode
   chart.interactivity("byX");
 
   // rotate the labels on the X-axis
@@ -42,10 +43,13 @@
   series.risingFill("white");
   series.risingStroke("black");
 
+  // set the interactivity mode
+  chart.interactivity("byX");
+
   // set the container id
   chart.container("container");
 
-  // initiane drawing the chart
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

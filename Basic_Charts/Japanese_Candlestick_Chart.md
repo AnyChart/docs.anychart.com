@@ -8,7 +8,7 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Candlestick Patterns](#candlestick_patterns)
+* [Candlestick Patterns](#candlestick_patterns)
 
 
 ## Overview
@@ -19,7 +19,7 @@ Candlesticks consist of the body (black or white) and an upper and a lower shado
   
 Some traders find candlestick charts easier to read than [OHLC charts](OHLC_Chart).
 
-Japanese Candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock – see the [Japanese Candlestick series in Stocks](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
+Japanese Candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock – see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
 
 This article explains how to create a basic Japanese Candlestick chart as as well as configure settings that are specific to the type. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
@@ -74,7 +74,8 @@ var data = anychart.data.set([
 
 // create a chart
 chart = anychart.financial();
-    
+ 
+// map the data    
 var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
 // create a japanese candlestick series and set the data
@@ -100,7 +101,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-In this section, we will describe main parts of candlestick chart visualization and ways to adjust it. The visual appearance of candlesticks is defined using certain parameters. The most important parameters for Japanese candlestick series are the following:
+Here is a full list of methods used to configure visual settings that are available for the Japanese Candlestick series:
 
 * {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api} set the stroke, fill, and hatchfill of rising and falling candlesticks
 * {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api} set the stroke, fill, and hatchfill of rising and falling candlesticks on hover
@@ -148,7 +149,7 @@ series2.selectRisingHatchFill("percent20");
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 
-### Candlestick Patterns
+## Candlestick Patterns
 
 In technical analysis, a candlestick pattern is a movement in prices shown graphically on a candlestick chart. Some believe that it can predict a particular market movement. The recognition of the pattern is subjective, and charting programs have to rely on predefined rules to match the pattern. There are 42 recognized patterns, which can be divided into two groups: simple and complex.
 
