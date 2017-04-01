@@ -126,7 +126,7 @@ series2.selectStroke("#000", 4);
 
 #### Median
 
-A median is a special line across a box. Here are methods that allow you to configure the stroke of medians in normal state, on hover, and on select:
+A median is a special line across a box. Here are methods that allow you to configure the stroke of medians in the normal state, on hover, and on select:
 
 * {api:anychart.core.cartesian.series.Box#medianStroke}medianStroke(){api}
 * {api:anychart.core.cartesian.series.Box#hoverMedianStroke}hoverMedianStroke(){api}
@@ -143,7 +143,7 @@ series.selectMedianStroke("#000", 4);
 
 #### Outliers
 
-Not every box has outliers: they are optional values that belong to a category, but do not fit the range between the low and the high values. You can adjust the appearance, type, and size of outliers (in normal state, on hover, and on select) by using the following methods:
+Not every box has outliers: they are optional values that belong to a category, but do not fit the range between the low and the high values. You can adjust the appearance, type, and size of outliers (in the normal state, on hover, and on select) by using the following methods:
 
 * {api:anychart.core.cartesian.series.Box#outlierMarkers}outlierMarkers(){api}
 * {api:anychart.core.cartesian.series.Box#hoverOutlierMarkers}hoverOutlierMarkers(){api}
@@ -175,7 +175,7 @@ series.selectOutlierMarkers(
 
 #### Stems
 
-Stems are vertical sticks that go beyond the boxes and show the difference between the low value and the first quartile and between the third quartile and the high value. To configure the stroke of stems in normal state, on hover, and on select, use these methods:
+Stems are vertical sticks that go beyond boxes and show the difference between the low value and the first quartile and between the third quartile and the high value. Use these methods to configure the stroke of stems in the normal state, on hover, and on select:
 
 * {api:anychart.core.cartesian.series.Box.stemStroke}stemStroke(){api}
 * {api:anychart.core.cartesian.series.Box.hoverStemStroke}hoverStemStroke(){api}
