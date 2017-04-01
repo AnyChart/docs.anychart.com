@@ -108,7 +108,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api} – falling candlesticks on hover
 * {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api} – rising candlesticks on hover
 * {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api} – falling candlesticks on select
-* {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}selectRisingHatchFill(){api} – rising candlesticks on select
+* {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api} – rising candlesticks on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
