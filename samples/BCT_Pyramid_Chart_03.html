@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  chart = anychart.pyramid([
+    {name: "Fantasy", value: 637166, fill: "#FFDEAD", selectFill: "#D2B48C", stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"},
+    {name: "Science Fiction", value: 721630, fill: "#D2B48C", selectFill: "#B8860B", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross"},
+    {name: "Detective", value: 148662, fill: "#B8860B", selectFill: "#A0522D", stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"},
+    {name: "Classics", value: 78662, fill: "#A0522D", selectFill: "#8B4513", hatchFill: "forwardDiagonal", hoverHatchFill:"backwardDiagonal", selectHatchFill: "diagonalCross"},
+    {name: "Textbooks", value: 90000, stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"}
+  ]);
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
