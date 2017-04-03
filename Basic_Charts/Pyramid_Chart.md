@@ -104,12 +104,12 @@ chart.selectStroke("#fff", 3);
 
 ```
 chart = anychart.pyramid([
-  {name: "Fantasy", value: 637166, fill: "#FFDEAD", selectFill: "#D2B48C", stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"},
-  {name: "Science Fiction", value: 721630, fill: "#D2B48C", selectFill: "#B8860B", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross"},
-  {name: "Detective", value: 148662, fill: "#B8860B", selectFill: "#A0522D", stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"},
-    {name: "Classics", value: 78662, fill: "#A0522D", selectFill: "#8B4513", hatchFill: "forwardDiagonal", hoverHatchFill:"backwardDiagonal", selectHatchFill: "diagonalCross"},
-    {name: "Textbooks", value: 90000, stroke: "#800000", hoverStroke: "#800000", selectStroke: "#f00"}
-  ]);
+  {name: "Fantasy", value: 637166, stroke: {color: "#800000", thickness: 2}, hoverStroke: {color: "#800000", thickness: 3}, selectStroke: "#f00"},
+  {name: "Science Fiction", value: 721630, fill: "#D2B48C", selectFill: "#B8860B", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#F0F"},
+  {name: "Detective", value: 148662},
+  {name: "Classics", value: 78662},
+  {name: "Textbooks", value: 90000}
+]);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_03{sample}
@@ -150,7 +150,7 @@ As you can see, each part of a pyramid is separated from another with some space
 
 ```
 // set space between pyramid blocks
-chart.pointsPadding(15);
+chart.pointsPadding(5);
 ```
 
 Here is how the pyramid chart with a significant spacing looks like.
@@ -211,14 +211,12 @@ chart.labels().textFormatter("{%name}: {%Value}");
 
 #### Overlapping
 
-After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. Sample below demonstrates labels with overlapping allowed.
+After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. Code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
-
-{sample}BCT\_Pyramid\_Chart\_09{sample}
 
 
 ### Tooltips
