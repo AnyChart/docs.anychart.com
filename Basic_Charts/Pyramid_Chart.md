@@ -6,11 +6,14 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
+  * [Base](#base)
+  * [Orientation](#orientation)
+  * [Padding](#padding)
   * [Labels](#labels)
+   * [Connectors](#connectors)
+   * [Position](#position)
+   * [Overlapping](#overlapping)
   * [Tooltips](#tooltips)
-  * [Stacked Area](#stacked_area)
-  * [Vertical Area](#vertical_area)
-  * [3D Area](#3d_area)
 
 ## Overview
 
