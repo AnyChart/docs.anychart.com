@@ -48,7 +48,7 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 
 ## Quick Start
 
-To create an Pyramid Chart, use the {api:anychart#pyramid}anychart.pyramid(){api} chart constructor. Another way to create a Pyramid Chart is to use the {api:anychart.charts.Pyramid}anychart.charts.Pyramid{api} class constructor.
+To create a Pyramid Chart, use the {api:anychart#pyramid}anychart.pyramid(){api} chart constructor. Another way to create a Pyramid Chart is to use the {api:anychart.charts.Pyramid}anychart.charts.Pyramid{api} class constructor.
 
 The following sample demonstrates how a basic Pyramid chart is created:
 
@@ -132,7 +132,7 @@ chart.baseWidth("50%")
 
 ### Orientation
 
-By default, base of the pyramid is placed at the bottom of the chart. Use the {api:anychart.charts.Pyramid#reversed}reversed(){api} method to turn the pyramid upside down.
+By default, the base of the pyramid is placed at the bottom of the chart. Use the {api:anychart.charts.Pyramid#reversed}reversed(){api} method to turn the pyramid upside down.
 
 ```
 // upend the pyramid
@@ -181,18 +181,18 @@ chart.connectorStroke({
 
 Find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
 
-*Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method.
+*Note:* if you want to hide connectors set the **null** value for {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method.
 
 #### Position
 
-Position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
+The position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
 * **inside** - place labels inside each pyramid point.
 * **outsideLeftInColumn** - place labels to the left of the pyramid and align them in a column.
 * **outsideRightInColumn** - place labels to the right of the pyramid and align them in a column.
 * **outsideLeft** - place labels to the left of the pyramid.
 * **outsideRight** - place labels to the right of the pyramid.
 
-If you use **outsideLeft** or **outsideRight** it will be possible to adjust length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
+If you use **outsideLeft** or **outsideRight** it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
 
 ```
 // change the labels position
@@ -211,7 +211,7 @@ chart.labels().textFormatter("{%name}: {%Value}");
 
 #### Overlapping
 
-After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. Code sample below demonstrates setting labels with overlapping allowed.
+After adjusting the content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. The code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
@@ -221,5 +221,5 @@ chart.overlapMode("allowOverlap");
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a chart point is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
