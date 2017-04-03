@@ -16,7 +16,7 @@
 
 ## Overview
 
-Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. A Funnel chart is somewhat similar to a [Waterfall chart](Waterfall_Chart).
+Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. 
 
 This article explains how to create a basic Funnel chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel chart's characteristics:
 
@@ -54,11 +54,10 @@ The following sample demonstrates how a basic Funnel chart is created:
 
 ```
 var data = [
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+  ["Total Market", 232000],
+  ["Prospects", 94480],
+  ["Leads", 47390],
+  ["Sales", 22181]
 ];
 
 chart = anychart.funnel(data);
@@ -135,11 +134,10 @@ Note that when you set colors through the methods, it is not possible to set dif
 
 ```
 var data = [
-  {name: "January", value: 10000, fill: "#1E90FF", selectFill: "#00008B", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
-  {name: "February", value: 12000, fill: "#00BFFF", selectFill: "#1E90FF", stroke: "#fff", selectStroke: "#00008B"},
-  {name: "March", value: 18000, fill: "#87CEFA", selectFill: "#00BFFF", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
-  {name: "April", value: 11000, fill: "#B0E0E6", selectFill: "#87CEFA", stroke: "#fff", selectStroke: "#00008B"},
-  {name: "May", value: 9000, fill: "#7FFFD4 0.5", selectFill: "#B0E0E6", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"}
+  {name: "Total Market", value: 232000},
+  {name: "Prospects", value: 94480, fill: "#00BFFF", selectFill: "#1E90FF", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
+  {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
+  {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
 ];
 ```
 
@@ -199,14 +197,12 @@ The content of the labels is adjusted with the {api:anychart.core.ui.LabelsFacto
 
 #### Overlapping
 
-After adjusting content of the funnel labels some of them can overlap others. To control or prevent overlapping use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. Sample below demonstrates labels with "allowed" overlapping state.
+After adjusting content of the funnel labels some of them can overlap others. To control or prevent overlapping use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. Code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
-
-{sample}BCT\_Funnel\_Chart\_08{sample}
 
 
 ### Tooltips
