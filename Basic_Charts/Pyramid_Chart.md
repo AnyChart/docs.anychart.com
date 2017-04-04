@@ -15,6 +15,7 @@
    * [Overlapping](#overlapping)
   * [Tooltips](#tooltips)
 
+
 ## Overview
 
 Pyramid chart is a kind of [Funnel chart](Funnel_Chart) that presents data in the similar way the funnel does. The main different of the pyramid chart from the funnel is an absence of the neck part. 
