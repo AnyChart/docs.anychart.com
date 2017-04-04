@@ -16,9 +16,9 @@
 
 ## Overview
 
-Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. 
+Funnel Charts are so-called Accumulation Charts and they show percentage ratio. Funnel Charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. 
 
-This article explains how to create a basic Funnel chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel chart's characteristics:
+This article explains how to create a basic Funnel Chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -47,10 +47,10 @@ This article explains how to create a basic Funnel chart as well as configure se
 
 ## Quick Start
 
-To create a Funnel chart, use the {api:anychart#funnel}anychart.funnel(){api} chart constructor. If you pass the data to this chart constructor, it will create a Funnel series. Another way to create the Funnel Chart is to call the {api:anychart.charts.Funnel}funnel(){api} method. Funnel charts does not have series due to its specific, like Pie or Pyramid charts.
+To create a Funnel Chart, use the {api:anychart#funnel}anychart.funnel(){api} chart constructor. If you pass the data to this chart constructor, it will create a Funnel series. Another way to create the Funnel Chart is to call the {api:anychart.charts.Funnel}funnel(){api} method. Funnel Charts are single-series, like Pie or Pyramid Charts.
 
 
-The following sample demonstrates how a basic Funnel chart is created:
+The following sample demonstrates how a basic Funnel Chart is created:
 
 ```
 var data = [
@@ -93,7 +93,7 @@ chart.baseWidth("50%");
 
 ### Neck
 
-Neck is a lower part of a Funnel. All values under the neck look like a Stacked Column, which means that the difference between them is not really important. The default value of the Neck height is 25%. The {api:anychart.charts.Funnel#neckWidth}neckWidth(){api} and {api:anychart.charts.Funnel#width}width(){api} will help to adjust the neck width, and the {api:anychart.charts.Funnel#neckHeight}neckHeight(){api} method is used for setting the Funnel chart neck's height.
+The neck is a lower part of a Funnel. All values under the neck look like a Stacked Column, which means that the difference between them is not really important. The default value of the Neck height is 25%. The {api:anychart.charts.Funnel#neckWidth}neckWidth(){api} and {api:anychart.charts.Funnel#width}width(){api} will help to adjust the neck width, and the {api:anychart.charts.Funnel#neckHeight}neckHeight(){api} method is used for setting the Funnel Chart neck's height.
 
 ```
 // adjust the funnels neck
@@ -113,7 +113,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there is a Funnel chart with some of the appearance settings configured:
+In the sample below, there is a Funnel Chart with some of the appearance settings configured:
 
 ```
 // adjust appearance
@@ -135,7 +135,7 @@ Note that when you set colors through the methods, it is not possible to set dif
 ```
 var data = [
   {name: "Total Market", value: 232000},
-  {name: "Prospects", value: 94480, fill: "#00BFFF", selectFill: "#1E90FF", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
+  {name: "Prospects", value: 94480, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
   {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
   {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
 ];

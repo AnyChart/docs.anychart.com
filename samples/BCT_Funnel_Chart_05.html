@@ -12,12 +12,14 @@
 // create a data set
 var data = [
   {name: "Total Market", value: 232000},
-  {name: "Prospects", value: 94480, fill: "#00BFFF", selectFill: "#1E90FF", stroke: "#fff", selectStroke: "#00008B", hatchFill: "diagonalCross"},
+  {name: "Prospects", value: 94480, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
   {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
   {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
 ];
 
 chart = anychart.funnel(data);
+
+chart.fill("#64b5f6 0.9");
 
 // set the container id
 chart.container("container");
