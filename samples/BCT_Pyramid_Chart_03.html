@@ -10,12 +10,14 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   chart = anychart.pyramid([
-    {name: "Fantasy", value: 637166, stroke: {color: "#800000", thickness: 2}, hoverStroke: {color: "#800000", thickness: 3}, selectStroke: "#f00"},
-    {name: "Science Fiction", value: 721630, fill: "#D2B48C", selectFill: "#B8860B", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#F0F"},
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
     {name: "Detective", value: 148662},
     {name: "Classics", value: 78662},
     {name: "Textbooks", value: 90000}
   ]);
+
+  chart.fill("#64b5f6 0.9");
 
   // draw chart
   chart.container("container");

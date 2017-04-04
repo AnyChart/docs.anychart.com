@@ -104,8 +104,8 @@ chart.selectStroke("#fff", 3);
 
 ```
 chart = anychart.pyramid([
-  {name: "Fantasy", value: 637166, stroke: {color: "#800000", thickness: 2}, hoverStroke: {color: "#800000", thickness: 3}, selectStroke: "#f00"},
-  {name: "Science Fiction", value: 721630, fill: "#D2B48C", selectFill: "#B8860B", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#F0F"},
+  {name: "Fantasy", value: 637166},
+  {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
   {name: "Detective", value: 148662},
   {name: "Classics", value: 78662},
   {name: "Textbooks", value: 90000}
@@ -116,7 +116,7 @@ chart = anychart.pyramid([
 
 ### Base
 
-Base of a pyramid is the largest horizontal line of the pyramid chart. In this section we will quickly demonstrate how we can set custom base width and invert base position.
+The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
 You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define flexible base size in percentage ratio.
 
@@ -135,7 +135,7 @@ chart.baseWidth("50%")
 By default, the base of the pyramid is placed at the bottom of the chart. Use the {api:anychart.charts.Pyramid#reversed}reversed(){api} method to turn the pyramid upside down.
 
 ```
-// upend the pyramid
+// turn the pyramid upside-down
 chart.reversed(true);
 ```
 
