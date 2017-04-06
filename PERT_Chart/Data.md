@@ -1,16 +1,23 @@
-{:index 4}
+{:index 3}
 PERT Chart Data
 ===========
 
 * [Overview](#overview)
-* [Nodes and Connections Set Simultaneously](#nodes_and_connections_set_simultaneously)
-* [Nodes and Connections Set Separately](#nodes_and_connections_set_separately)
+* [Data Formats](#data_formats)
+ * [Nodes and Connections Set Simultaneously](#nodes_and_connections_set_simultaneously)
+ * [Nodes and Connections Set Separately](#nodes_and_connections_set_separately)
+* [Duration Setting Options](#duration_setting_options)
+ * [Duration](#duration)
+ * [Time Estimates](#time_estimates)
+* [Statistics](#statistics)
 
 ## Overview
 
 PERT charts use a special type of data, which cannot be set the same way as data for other chart types: one needs not only to create a set of items (nodes), but also to specify how they are connected. There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model).
 
-## Nodes and Connections Set Simultaneously
+## Data Formats
+
+### Nodes and Connections Set Simultaneously
 
 Nodes and connections between them can be set simultaneously. In this case, nodes' descriptions contain information on their connections.
 
@@ -30,7 +37,7 @@ Here is a sample with data set in this way:
 
 {sample}PERT\_Data\_01{sample}
 
-## Nodes and Connections Set Separately
+### Nodes and Connections Set Separately
 
 Nodes and connections can be set separately, in two sets of data.
 
@@ -58,3 +65,24 @@ Here is a sample with data set in this way:
 
 {sample}PERT\_Data\_02{sample}
 
+## Duration Setting Options
+
+When a task is created, it is necessary to set its duration. The PERT technology
+
+### Duration
+
+
+
+### Time Estimates
+
+## Statistics
+
+Use {api:anychart.charts.Pert#getStat}getStat(){api} and {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} to obtain and set PERT statistical calculations.
+
+```
+chart = anychart.pert();
+// get project duration
+var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+// get project deviation
+var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
+```

@@ -1,4 +1,4 @@
-{:index 3}
+{:index 1}
 PERT Chart Quick Start
 ===========
  
@@ -35,6 +35,8 @@ var data = [
     {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
 ];
 ```
+
+Look through the [Data article](Data) for more information about setting and managing the data.
 
 ###4. Create a Chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
