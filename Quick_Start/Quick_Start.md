@@ -14,7 +14,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 ```
 <head>
     <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.css">
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
 
@@ -71,7 +71,7 @@ Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
     <script>
         anychart.onDocumentLoad(function() {
             // create an instance of pie chart with data
@@ -111,6 +111,3 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
 * Read the [blog](http://www.anychart.com/blog/)
-
-
-

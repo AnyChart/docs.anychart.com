@@ -6,8 +6,8 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="australiaMap">
 anychart.onDocumentReady(function () {
@@ -36,11 +36,11 @@ anychart.onDocumentReady(function () {
     var series_id = australiaMap.marker(dataSet_id);
 
     //format the labels of the id-defined series
-    series_id.labels().textFormatter(function(e){
+    series_id.labels().format(function(e){
       return e.name;
     });
 
-    series_id.tooltip().textFormatter("Id: {%id} \nSheep farms: {%farms}");
+    series_id.tooltip().format("Id: {%id} \nSheep farms: {%farms}");
 
     // hovered and selected labels
     series_id.hoverLabels().fontColor("black");

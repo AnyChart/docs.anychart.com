@@ -15,6 +15,9 @@
 * [Size](#size)
 * [Background](#background)
 * [Out of chart](#out_of_chart)
+* [Out of stage](#out_of_stage)
+ * [Tooltip global container](#tooltip_global_container)
+* [Out of screen](#out_of_screen)
 * [Position](#position)
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
@@ -178,7 +181,7 @@ Here is a sample with the settings from above.
 
 {sample}CS\_Tooltip\_10{sample}
 
-The default content of a tooltip may vary for different chart types and series, but mainly it displays main points' properties: **x** and **value**. Check out the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method which is described in [Advanced Content Formatting](#advanced_content_formatting) section to find information about changing tooltip content.
+The default content of a tooltip may vary for different chart types and series, but mainly it displays main points' properties: **x** and **value**. Check out the {api:anychart.core.ui.Tooltip#format}format(){api} method which is described in [Advanced Content Formatting](#advanced_content_formatting) section to find information about changing tooltip content.
 
 ### Advanced Content Formatting
 
@@ -186,21 +189,21 @@ There are two parts of a tooltip that can hold some information: its title and i
 
 ### Title
 
-For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormatter}titleFormatter(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
+For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
 ```
-tooltip1.titleFormatter("Manager: {%x}");
+tooltip1.titleFormat("Manager: {%x}");
 ```
 
 {sample}CS\_Tooltip\_14{sample}
 
 ### Content
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#textFormatter}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#format}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();
-tooltip.textFormatter(function(){
+tooltip.format(function(){
   /* code of your function */
 });
 ```
@@ -213,7 +216,7 @@ The following sample demonstrates using tokens for formatting tooltips:
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
-tooltip.textFormatter("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
 ```
 
 {sample}CS\_Tooltip\_15{sample}
@@ -222,11 +225,11 @@ Use several formatting ways if there are some series on your chart or charts on 
 
 ```
 // set the tooltip title and text for the Column Chart
-columnChart.tooltip().titleFormatter("{%SeriesName}");
-columnChart.tooltip().textFormatter("Department: {%x} \nSum: {%Value}");
+columnChart.tooltip().titleFormat("{%SeriesName}");
+columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
 
 // set the tooltip content
-seriesSpline.tooltip().textFormatter(function(e){
+seriesSpline.tooltip().format(function(e){
   var value = (this.value)/1000000;
   return "Total: $" + value + "M";
 });
@@ -272,16 +275,65 @@ That is how tooltip background with the settings from above looks like:
 
 ## Out of chart
 
-In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds.
+In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
-// allow tooltips to leave the chart bounds
+// applies to all series
 chart.tooltip().allowLeaveChart(true);
-```
 
-Note that this method can be applied only for all tooltips in a chart, it can't be set for the given series.
+// series settings override chart settings
+
+// allow tooltips to leave the chart bounds
+series1.tooltip().allowLeaveChart(true);
+
+// forbid tooltips to leave the chart bounds
+series2.tooltip().allowLeaveChart(false);
+```
 
 {sample}CS\_Tooltip\_13{sample}
+
+Note that series' individual tooltip settings override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
+
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting "true" to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
+
+## Out of stage
+
+A chart may not be the same size as its [stage](../Graphics/Basics). Stage can be smaller or greater, so if it is necessary to allow or forbid the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
+
+```
+// applies to all series
+chart.tooltip().allowLeaveStage(false);
+
+// series settings override chart settings
+
+// adjust series tooltips
+series1.tooltip().allowLeaveStage(true);
+series2.tooltip().allowLeaveStage(false);
+```
+
+{sample}CS\_Tooltip\_13\_1{sample}
+
+Note: that stage the chart belongs to is considered as the stage of the tooltip of this chart.
+
+### Tooltip global container
+
+*IMPORTANT NOTE:*
+
+When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get "true" as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
+
+## Out of screen
+
+If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting "true" will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
+
+```
+// adjust series tooltips
+series1.tooltip().allowLeaveScreen(true);
+series2.tooltip().allowLeaveScreen(false);
+```
+
+The third series inherits the chart's defaults in this sample.
+
+{sample}CS\_Tooltip\_13\_2{sample}
 
 ## Position
 

@@ -34,22 +34,22 @@
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
   secondColumn.width(50);
-  secondColumn.textFormatter(function(item) {
+  secondColumn.format(function(item) {
     return item.get("name");
   });
 
   var thirdColumn = dataGrid.column(2);
   thirdColumn.title("Actual Start");
   thirdColumn.width(100);
-  thirdColumn.textFormatter(thirdColumnTextFormatter);
+  thirdColumn.format(thirdColumnformat);
 
   // set fourth column settings
   var fourthColumn = dataGrid.column(3);
   fourthColumn.title().text("Actual End");
-  fourthColumn.textFormatter(fourthColumnTextFormatter);
+  fourthColumn.format(fourthColumnformat);
 
 
-  function thirdColumnTextFormatter(item) {
+  function thirdColumnformat(item) {
   var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
 
     var actualStart = new Date(field);
@@ -59,7 +59,7 @@
 
 
 // do pretty formatting for dates in fourth column
-function fourthColumnTextFormatter(item) {
+function fourthColumnformat(item) {
   var field = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
     var actualEnd = new Date(field);
     return formatDate((actualEnd.getUTCMonth() + 1)) + "/" +

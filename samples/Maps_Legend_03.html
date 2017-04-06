@@ -8,7 +8,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/countries/usa/usa_mainland.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/geodata/countries/usa/usa_mainland.js" data-export="true"></script>
     <script x-export="stage">var dataSet = anychart.data.set([
   {id: 'US-MN', name: "Minnesota", 'value': 8.4},
   {id: 'US-MT', name: "Montana", 'value': 8.5},
@@ -88,11 +88,11 @@ anychart.onDocumentReady(function() {
   series.hoverStroke(anychart.color.darken('#F79430'));
   series.selectFill('#663300');
   series.selectStroke(anychart.color.darken('#663300'));
-  series.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
+  series.labels().fontSize(10).fontColor('#212121').format(function(){
 	return (this.name+'\n'+this.value);
   });
   series.tooltip().textWrap('byLetter').useHtml(true);
-  series.tooltip().textFormatter(function() {
+  series.tooltip().format(function() {
     return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
   });
   series.colorScale(anychart.scales.linearColor('#E08529', '#753D05'));
@@ -102,11 +102,11 @@ anychart.onDocumentReady(function() {
   var series_other = map.choropleth(dataSet_other);
   series_other.geoIdField('iso_3166_2');
   series_other.name('Sales of other companies');
-  series_other.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
+  series_other.labels().fontSize(10).fontColor('#212121').format(function(){
 	return (this.value);
   });
   series_other.tooltip().textWrap('byLetter').useHtml(true);
-  series_other.tooltip().textFormatter(function() {
+  series_other.tooltip().format(function() {
     return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
   });
   

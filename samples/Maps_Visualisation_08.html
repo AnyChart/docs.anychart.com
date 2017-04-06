@@ -8,8 +8,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
     <script x-export="australiaMap">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
@@ -53,21 +53,13 @@
     // Sets palette
     australiaMap.palette(myPalette);
 
-    var firstSeries = australiaMap.choropleth(firstDataSetForSeries);
-    firstSeries.geoIdField("code_hasc");
-
-    var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
-    secondSeries.geoIdField("code_hasc");
-
-    var thirdSeries = australiaMap.choropleth(thirdDataSetForSeries);
-    thirdSeries.geoIdField("code_hasc");
+    australiaMap.choropleth(firstDataSetForSeries);
+    australiaMap.choropleth(secondDataSetForSeries);
+    australiaMap.choropleth(thirdDataSetForSeries);
 
     australiaMap.container("container");
     australiaMap.draw();
-});
-    
-        </script>
-
+});</script>
 </head>
 <body>
 <div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>

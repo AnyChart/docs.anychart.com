@@ -17,7 +17,7 @@ When you attach the data to your map, you can add some extra fields which you ma
 
 In the sample below we've got a map of Australia, where each state data contains some extra information which later is shown in tooltips.
 
-Note that we added extra fields to each data point, and one of the regions has one extra field. We use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter{api} to transform our tooltips and make them show the information we need instead of what is displayed by default.
+Note that we added extra fields to each data point, and one of the regions has one extra field. We use {api:anychart.core.ui.Tooltip#format}format{api} to transform our tooltips and make them show the information we need instead of what is displayed by default.
 
 ```
 var mapDataSet = anychart.data.set([
@@ -41,9 +41,9 @@ mapChart.geoData(anychart.maps.australia);
 var series = mapChart.choropleth(mapDataSet);
 
 // enable the tooltips and format them at once
-series.tooltip().textFormatter(function(e){
-   return "Capital: " + e.getDataValue("capital") +"\n"+
-   "Population: " + e.getDataValue("population")
+series.tooltip().format(function(e){
+   return "Capital: " + e.getData("capital") +"\n"+
+   "Population: " + e.getData("population")
 });
 
 ```

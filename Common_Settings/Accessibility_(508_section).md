@@ -57,19 +57,19 @@ series.a11y(true);
 
 ## Accessible Elements
 
-Before we go into to some specific settings of accessibility, let's configure chart elements. We need to set the chart title and series titles using the {api:anychart.core.Chart#a11y}a11y(){api} method to make them  readable by VoiceOver. Let's use the {api:anychart.core.utils.ChartA11y#titleFormatter}titleFormatter(){api} method for both chart and series.
+Before we go into to some specific settings of accessibility, let's configure chart elements. We need to set the chart title and series titles using the {api:anychart.core.Chart#a11y}a11y(){api} method to make them  readable by VoiceOver. Let's use the {api:anychart.core.utils.ChartA11y#titleFormat}titleFormat(){api} method for both chart and series.
 
 ```
-// set the titleFormatter for the chart
-chart.a11y().titleFormatter(function(e){
+// set the titleFormat for the chart
+chart.a11y().titleFormat(function(e){
   var chart = this.chart;
   return "Data Plot Y Sum is " + chart.getStat("dataPlotYSum") + "\n" +
               "First Series Y minimum is " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
               "First Series Y maximum is " + chart.getSeries(0).getStat("seriesYMax");
 });
 
-// set the titleFormatter for the series
-series2014.a11y().titleFormatter(function(e){
+// set the titleFormat for the series
+series2014.a11y().titleFormat(function(e){
   var series = this.series;
   return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  series.getStat("average") + " and minimum value in $" + series.getStat("seriesYMin");
 });
@@ -84,7 +84,7 @@ AnyChart supports two accessibility modes: representing the chart/series element
 
 ## Chart Elements Mode
 
-The "chartElements" mode is enabled by default. In this mode, a user interacts with elements of a chart. The chart title, created by *titleFormatter()* or by *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
+The "chartElements" mode is enabled by default. In this mode, a user interacts with elements of a chart. The chart title, created by *titleFormat()* or by *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
 
 ```
 // set the accessibility mode as chart elements
@@ -97,7 +97,7 @@ Note that setting the mode to the chart does not affect the series.
 
 ## Data Table Mode
 
-In this mode, an invisible table with chart data is generated. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, and the VoiceOver reads it appropriately.  
+In this mode, an invisible table with chart data is generated. This table contains the chart title (taken from *titleFormat()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, and the VoiceOver reads it appropriately.  
 
 ```
 // set the accessibility mode as table data

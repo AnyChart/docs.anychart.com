@@ -19,7 +19,7 @@
     ]);
 
     // set the chart type
-    var chart = anychart.line();
+    chart = anychart.line();
 
     // create a series, set the data and name
     var series = chart.column(data);
@@ -29,7 +29,7 @@
     series.labels(true);
     series.labels().fontColor("green");
     series.labels().fontWeight(900);
-    series.labels().textFormatter("${%value}");
+    series.labels().format("${%value}");
 
     // set the chart title
     chart.title("Labels (Series)");

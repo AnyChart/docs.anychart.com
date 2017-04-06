@@ -29,7 +29,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter("${%Value}{groupsSeparator: }");
+  yLabels.format("${%Value}{groupsSeparator: }");
   // set y axis title
   var yAxis = chart.yAxis(0);
   yAxis.title("Revenue in US Dollars");
@@ -41,7 +41,7 @@
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.textFormatter(function(){
+  yLabels1.format(function(){
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*0.7094716);

@@ -47,7 +47,7 @@
   var xLabels = chart.xAxis().labels();
   xLabels.useHtml(true);
   // set labels content
-  xLabels.textFormatter("<b>{%Value}</b>");
+  xLabels.format("<b>{%Value}</b>");
 
   // set series data
   seriesFormatter(gold, "gold", "Gold");
@@ -67,7 +67,7 @@
     series.hoverStroke("3 "+color);
     series.name(text);
     var tooltip = series.tooltip();
-    tooltip.textFormatter("{%x}\n" + text + ": {%Value}");
+    tooltip.format("{%x}\n" + text + ": {%Value}");
     var tooltipBackground = series.tooltip().background();
     tooltipBackground.fill(color+" 0.7");
     tooltip.fontColor("#000");

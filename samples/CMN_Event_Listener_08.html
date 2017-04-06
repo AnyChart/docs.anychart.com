@@ -34,7 +34,7 @@
 
 	// adding dollar symbols to yAxis labels
 	var yLabels = chart.yAxis().labels();
-	yLabels.textFormatter(function(){
+	yLabels.format(function(){
 		return "$" + this.value;
 	});
 
@@ -76,7 +76,7 @@
 
 
 	var tooltip = series.tooltip();
-	tooltip.titleFormatter(function(point){
+	tooltip.titleFormat(function(point){
 		// index of the current point
 		var index = point.index;
 		// adjust title depending on point's index
@@ -86,7 +86,7 @@
 		else return "Fourth Quarter";
 	});
 
-	tooltip.textFormatter(function(point){
+	tooltip.format(function(point){
 		// get an array of months the point belong to
 		var months = getQuarterMonths(point.index);
 		// create variable for counting the income in the months

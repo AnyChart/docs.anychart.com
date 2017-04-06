@@ -53,7 +53,7 @@
   extraYAxis.orientation("right");
   extraYAxis.scale(extraYScale);
   var extraLabels = extraYAxis.labels();
-  extraLabels.textFormatter(function(){
+  extraLabels.format(function(){
     return (this.value+"%");
   });
 

@@ -51,7 +51,7 @@
     secondColumn.title('Person');
     secondColumn.width(120);
     secondColumn.cellTextSettings().hAlign('left');
-    secondColumn.textFormatter(function (item) {
+    secondColumn.format(function (item) {
 return item.get('name');
     });
 

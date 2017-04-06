@@ -51,14 +51,14 @@ When selected, the whole row and the items get filled with default selecting col
 <a name="altering_tooltips"></a>
 ### Tooltips
 
-When you need a tooltip that will show more or less than it does by default, you always can use the textFormatter method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
+When you need a tooltip that will show more or less than it does by default, you always can use the format method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_04{sample}
 
-As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method:
+As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#format}format(){api} method:
 
 ```
-	chart.getTimeline().tooltip().textFormatter(function (e) {
+	chart.getTimeline().tooltip().format(function (e) {
         var item = e['item'];
         return item.get('name') + '<br>' + 'Start time: ' + anychart.utils.defaultDateFormatter(item.meta('minPeriodDate')) + '<br>'
             + 'End time: ' + anychart.utils.defaultDateFormatter(item.meta('maxPeriodDate'));

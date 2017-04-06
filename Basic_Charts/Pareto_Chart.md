@@ -137,7 +137,7 @@ When AnyChart creates a Pareto chart cumulative and relative frequency values ar
 As string tokens these values are a part of {api:anychart.enums.StringToken}StringToken{api} enum:
 
 ```
-tooltip.textFormatter("Cumulative frequency: {%CF} \n Relative frequency: {%RF}");
+tooltip.format("Cumulative frequency: {%CF} \n Relative frequency: {%RF}");
 ```
 
 See below to learn more about using these values in chart's configuration.
@@ -188,7 +188,7 @@ chart.getSeriesAt(1).selectLabels().enabled(true);
 chart.getSeriesAt(1).selectLabels().anchor("bottom");
 chart.getSeriesAt(1).hoverLabels(true);
 chart.getSeriesAt(1).hoverLabels().anchor("bottom");
-chart.getSeriesAt(1).hoverLabels().textFormatter("{%Value}%");
+chart.getSeriesAt(1).hoverLabels().format("{%Value}%");
 ```
 
 Here is a sample of a Pareto chart with a custom labels configuration:
@@ -201,10 +201,10 @@ To configure Pareto series tooltip settings please study general [Tooltips Tutor
 
 ```
 // get the column series and format tooltip
-chart.getSeriesAt(0).tooltip().textFormatter("Value: {%Value}");
+chart.getSeriesAt(0).tooltip().format("Value: {%Value}");
 
 // get the line series and format tooltip
-chart.getSeriesAt(1).tooltip().textFormatter("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
+chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
 ```
 
 {sample}BCT\_Pareto\_Chart\_05{sample}

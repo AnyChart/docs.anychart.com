@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  chart = anychart.line();
+
+  chart.title("Tokens with Options: thousandfold scaling");
+  var tooltip = chart.tooltip();
+  tooltip.displayMode("separated");
+  tooltip.positionMode("point");
+
+  // string for formatting tooltips
+  var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
+
+  // setting and adjusting data visualisation
+  var columnSeries = chart.column([
+    ["A", 10000000000],
+    ["B", 1000000000],
+    ["C", 1000000],
+    ["D", 1000],
+    ["E", 1]
+  ]);
+  columnSeries.name("Income");
+
+  var columnTooltip = columnSeries.tooltip();
+  columnTooltip.format(formatter);
+  
+  tooltipSetter(columnTooltip);
+
+  function tooltipSetter(seriesTooltip) {
+    seriesTooltip.anchor("bottomCenter");
+    seriesTooltip.position("topCenter");
+    seriesTooltip.title(false);
+    seriesTooltip.separator(false);
+  }
+
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

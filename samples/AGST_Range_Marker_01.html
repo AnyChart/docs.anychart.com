@@ -24,7 +24,7 @@
   // set data
   var series = chart.column(data);
   var tooltip = series.tooltip();
-  tooltip.textFormatter("Year: {%x}\nSales: {%Value}");
+  tooltip.format("Year: {%x}\nSales: {%Value}");
 
   // set y scale ticks interval
   var yScale = chart.yScale();
@@ -35,7 +35,7 @@
 
   // adjust y axis labels
   var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter("${%Value}");
+  yLabels.format("${%Value}");
 
   // set green marker
   var rangeMarker = chart.rangeMarker(0);

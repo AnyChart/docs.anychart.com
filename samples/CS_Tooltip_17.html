@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
   stage = anychart.graphics.create("container");
 
@@ -40,10 +40,10 @@
   columnChart.bounds(0, 0, "100%", "50%");
   splineChart.bounds(0, "50%", "100%", "50%");
 
-  columnChart.tooltip().titleFormatter("{%SeriesName}");
-  columnChart.tooltip().textFormatter("Department: {%x} \nSum: {%Value}");
+  columnChart.tooltip().titleFormat("{%SeriesName}");
+  columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
 
-  seriesSpline.tooltip().textFormatter(function(e){
+  seriesSpline.tooltip().format(function(e){
     var value = (this.value)/1000000;
     return "Total: $" + value + "M";
   });

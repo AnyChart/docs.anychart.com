@@ -3,9 +3,9 @@
 <head>
   <meta name="x-cat-tags" content="anyMap"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/france/france.js"  data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/france/france.js"  data-export="true"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -61,7 +61,7 @@ var series_marker = map.marker(data_marker);
 series.curvature(0.3);
 
 // tooltips for the connector series
-series.tooltip().textFormatter("From: {%from} \nTo: {%to} \nThe best way to get there: by {%take}");
+series.tooltip().format("From: {%from} \nTo: {%to} \nThe best way to get there: by {%take}");
 
 // changing the startSize and endSize of the connectors
 series.startSize(0);
@@ -78,7 +78,7 @@ var markers = series.markers();
 markers.position("middle");
 
 // tooltips of the marker series
-series_marker.tooltip().textFormatter("{%info}");
+series_marker.tooltip().format("{%info}");
 
 // setting the marker type
 markers.type(anychart.enums.MarkerType.ARROWHEAD);

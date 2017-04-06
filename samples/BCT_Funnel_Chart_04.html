@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+// create a data set
+var data = [
+  ["Total Market", 232000],
+  ["Prospects", 94480],
+  ["Leads", 47390],
+  ["Sales", 22181]
+];
+
+chart = anychart.funnel(data);
+
+// adjust colors
+chart.fill("#DEB887");
+chart.hoverFill("#FFEBCD");
+chart.selectFill("#A0522D");
+chart.hatchFill("forwardDiagonal");
+chart.hoverHatchFill("#backwardDiagonal");
+chart.selectHatchFill("diagonalCross");
+chart.stroke("#fff");
+chart.hoverStroke("#fff", 2);
+chart.selectStroke("fff", 4);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

@@ -65,10 +65,10 @@ var data = anychart.data.tree([
 // set data and data type settings
 chart = anychart.treeMap(data);
 
-chart.headers().textFormatter("{%name}");
-chart.labels().textFormatter("{%name}");
-chart.tooltip().titleFormatter("{%name}");
-chart.tooltip().textFormatter("Area: {%Value} square km");
+chart.headers().format("{%name}");
+chart.labels().format("{%name}");
+chart.tooltip().titleFormat("{%name}");
+chart.tooltip().format("Area: {%Value} square km");
 
 chart.title("Setting the data as tree");
 

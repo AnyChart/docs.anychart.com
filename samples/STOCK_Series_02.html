@@ -155,7 +155,7 @@ anychart.onDocumentReady(function() {
     var plot_column = chart.plot(1);
 
     // legend formatter
-    plot_line_ohlc.legend().itemsTextFormatter("{%SeriesName}: {%Value}{trailingZeros:true}");
+    plot_line_ohlc.legend().itemsFormat("{%SeriesName}: {%Value}{trailingZeros:true}");
 
     // Create and tune additional y scale
     var extraYScale = anychart.scales.linear();
@@ -173,7 +173,7 @@ anychart.onDocumentReady(function() {
     var rates = plot_column.column(mapping);
     rates.name("Highest rate");
 
-    extraYAxis.labels().textFormatter("{%Value}");
+    extraYAxis.labels().format("{%Value}");
 
     // set the chart width
     chart.right(55);

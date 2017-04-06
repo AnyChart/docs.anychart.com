@@ -6,11 +6,10 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="chart">
-anychart.onDocumentReady(function() {
+  <script x-export="map">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -76,11 +75,11 @@ anychart.onDocumentReady(function() {
     series_2.labels(false);
 
     // tooltip formatting
-    series_1.tooltip().textFormatter(function(){
+    series_1.tooltip().format(function(){
         return ("Employed international workers: "+this.size+ "%");
     });
 
-    series_2.tooltip().textFormatter(function(){
+    series_2.tooltip().format(function(){
         return ("Unemployed local workers: "+this.value+ "%");
     });
 
@@ -98,11 +97,7 @@ anychart.onDocumentReady(function() {
 
     // initiate chart drawing
     map.draw();
-
-});
-
-</script>
-
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

@@ -172,7 +172,7 @@ extraYAxis.scale(extraYScale);
 var columnSeries = plot_column.column(mapping);
 columnSeries.name("Highest rate");
 
-extraYAxis.labels().textFormatter(function () {
+extraYAxis.labels().format(function () {
     var value = this.value;
     return value / 1000000 + " mil";
 });

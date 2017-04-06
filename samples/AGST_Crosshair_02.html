@@ -20,7 +20,7 @@
   var crossYLabels = chart.crosshair().yLabel();
   crossYLabels.axisIndex(1);
   // set formatter for crosshair y labels
-  crossYLabels.textFormatter(function(){
+  crossYLabels.format(function(){
     return this.value+"%";
   });
 
@@ -36,7 +36,7 @@
   extraYAxis.orientation("right");
   extraYAxis.scale(extraYScale);
   var extraLabels = extraYAxis.labels();
-  extraLabels.textFormatter(function(){
+  extraLabels.format(function(){
     return this.value+"%";
   });
 

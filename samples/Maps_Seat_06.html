@@ -13,7 +13,7 @@
 anychart.onDocumentReady(function () {
 $.ajax({
     type: "GET",
-    url: "http://static.anychart.com/images/docs/seat_map/house.svg",
+    url: "https://static.anychart.com/images/docs/seat_map/house.svg",
     success: function (svgData) {
             createSeatMap(svgData);
         }
@@ -48,7 +48,7 @@ function createSeatMap(svg){
     // enable labels and adjust them
     labels.enabled(true);
     seatMapSeries.labels({fontSize: 10, background: {fill: 'green .3'}});
-    labels.textFormatter("{%id} \n{%info} \n{%sq}");
+    labels.format("{%id} \n{%info} \n{%sq}");
     labels.offsetY(-13);
 
     // load svg-file without elements with no values

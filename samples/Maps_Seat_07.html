@@ -12,7 +12,7 @@
 anychart.onDocumentReady(function () {
 $.ajax({
     type: "GET",
-    url: "http://static.anychart.com/images/docs/seat_map/house.svg",
+    url: "https://static.anychart.com/images/docs/seat_map/house.svg",
     success: function (svgData) {
             createSeatMap(svgData);
         }
@@ -44,8 +44,8 @@ function createSeatMap(svg){
     tooltips = seatMapSeries.tooltip();
 
     // set the tooltips titles and body texts
-    tooltips.titleFormatter("{%id}");
-    tooltips.textFormatter("{%info}");
+    tooltips.titleFormat("{%id}");
+    tooltips.format("{%info}");
 
     // set the tooltips colors
     tooltips.background("green 0.8");

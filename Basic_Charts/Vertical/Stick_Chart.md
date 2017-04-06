@@ -1,31 +1,25 @@
-{:index 4}
+{:index 2}
 # Vertical Stick Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
 
 ## Overview
 
-A Vertical Stick Chart is a simple Stick Chart with its categories spread among the vertical axis. It looks like a Bar Chart with bars of no width.
+This article explains how to create a Vertical Stick chart in AnyChart.
 
-Find how to create an Area Chart in the following article: [Stick Chart](../Stick_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview).  You can also read the [Stick Chart](../Stick_Chart) article to learn about other available settings.
 
 ## Quick Start
 
-To build a Vertical Stick Chart, create a simple [Stick Chart](../Stick_Chart) using the {api:anychart#bar}bar(){api} method of chart creation instead of the {api:anychart#column}column(){api}:
+To build a Vertical Stick chart, use the {api:anychart#bar}anychart.bar(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stick}stick(){api} method to create a Stick series.
 
 ```
 // create a chart
-var chart = chart.bar();
+chart = anychart.bar();
 
-// create area series
-var series1 = chart.stick(seriesData_1);
-var series2 = chart.stick(seriesData_2);
+// create a stick series and set the data
+var series = chart.stick(data);
 ```
 
 {sample}BCT\_Vertical\_Stick\_Chart{sample}
-
-## Adjusting
-
-The Vertical Stick series' settings are mostly the same as Stick series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

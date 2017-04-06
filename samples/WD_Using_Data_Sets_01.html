@@ -22,13 +22,12 @@
   var dataSet = anychart.data.set(data);
 
   // create a pie chart using the data set
-  var pie = anychart.pie(dataSet);
+  chart = anychart.pie(dataSet);
 
   // set container id for the chart  
-  pie.container("container");
-
+  chart.container("container");
   // initiate chart drawing
-  pie.draw();
+  chart.draw();
 });</script>
 </head>
 <body>

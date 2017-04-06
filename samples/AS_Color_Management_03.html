@@ -41,7 +41,7 @@
   var series = chart.column(data);
   series.stroke(null);
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     var mixColor2 = anychart.color.blend(color1, color2, (this.index * 0.2));
     return "Input Color: " + color1 +
       "\nBlend Color: " + color2 +

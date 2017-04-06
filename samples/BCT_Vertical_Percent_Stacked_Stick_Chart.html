@@ -23,7 +23,7 @@
   var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
   // create a chart
-  var chart = anychart.bar();
+  chart = anychart.bar();
 
   // enable the percent stacking mode
   chart.yScale().stackMode("percent");
@@ -34,10 +34,10 @@
   var series3 = chart.stick(seriesData_3);
 
   // configure tooltips
-  chart.tooltip().textFormatter("{%Value}");
+  chart.tooltip().format("{%Value}");
 
   // configure labels on the Y-axis
-  chart.yAxis().labels().textFormatter("{%Value}");
+  chart.yAxis().labels().format("{%Value}");
 
   // set the chart title
   chart.title("Vertical Percent Stacked Stick Chart");

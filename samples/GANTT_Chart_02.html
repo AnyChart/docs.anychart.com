@@ -33,7 +33,7 @@
   dataGrid.column(0).width(30).title().text("#");
 
   // settings for the second column
-  dataGrid.column(1).width(140).textFormatter(function(item) {
+  dataGrid.column(1).width(140).format(function(item) {
     return item.get("name");
   }).title().text("Plan");
 

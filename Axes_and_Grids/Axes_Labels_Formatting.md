@@ -42,21 +42,21 @@ A line chart with labels enabled for both Y-Axes and disabled for X-Axis is show
 
 In order to make a chart readable and understandable it is very important to format axes labels in a proper way, e.g. add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
-You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
+You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
 It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](Text_Formatters#tokens_list) you can find a list of available tokens.
 
-TextFormatter works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's textFormatter looks like the following:
+format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 
 ```
-chart.axis().textFormatter(function(){
+chart.axis().format(function(){
   return this.value
 });
 ```
 
 The following code sample demonstrates setting the same parameter to show using tokens:
 ```
-chart.axis().textFormatter("{%Value}");
+chart.axis().format("{%Value}");
 ```
 
 Tokens can be also used in xml and json, unlike other formatting methods. Setting tokens through the json format looks like the following:
@@ -64,22 +64,22 @@ Tokens can be also used in xml and json, unlike other formatting methods. Settin
 ```
 "labels":{
   "enabled":true,
-  "textFormatter":"$ {%Value}{groupsSeparator: }"
+  "format":"$ {%Value}{groupsSeparator: }"
 }
 ```
 
 ### Prefixes and Postfixes
 
-There are several ways how to edit prefix or postfix of the label. The easiest way is to use tokens through the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method:
+There are several ways how to edit prefix or postfix of the label. The easiest way is to use tokens through the {api:anychart.core.ui.LabelsFactory#format}format(){api} method:
 
 ```
-chart.yAxis().labels().textFormatter("${%Value}");
+chart.yAxis().labels().format("${%Value}");
 ```
 
 The code above shows the axis value with the dollar sign as prefix. Also, it's possible to set a formatting function. This code recalculates the dollar-axis values into euro and sets the euro sign as a prefix:
 
 ```
-chart.yAxis(1).labels()textFormatter(function(){
+chart.yAxis(1).labels().format(function(){
   var value = this.value;
   // scale USD to EUR and rouns the result
   value = Math.round(value*0.7094716);
@@ -91,14 +91,14 @@ chart.yAxis(1).labels()textFormatter(function(){
 
 ### Number Formatting
 
-It might be necessary to format the value that corresponds to the label, e.g. do scaling or some mathematical operations using tokens, textFormatter or any other javascript functions.
+It might be necessary to format the value that corresponds to the label, e.g. do scaling or some mathematical operations using tokens, format or any other javascript functions.
   
 Here is a sample of financial chart with euro and dollar axes. Axis that represents dollar rate is set as main and the additional euro axis gets value from the dollar axis and transforms it into euro according to the exchange rate. Some separators are added to adjust X-axis labels visual appearance.
 
 ```
 // formats labels of additional axis
 var yLabels1 = chart.yAxis(1).labels();
-yLabels1.textFormatter("€ {%Value}{scale:(113e-2)|()}");
+yLabels1.format("€ {%Value}{scale:(113e-2)|()}");
 ```
 
 {sample}AGST\_Labels\_Formatting\_03{sample}
@@ -111,7 +111,7 @@ If the label value is too long, it's possible to limit the number of characters 
 
 ```
 // limits length of x axis labels to 3 or less
-chart.xAxis().labels().textFormatter(function(){
+chart.xAxis().labels().format(function(){
   var value = this.value;
   // limit the number of symbols to 3
   value = value.substr(0, 3);

@@ -24,7 +24,7 @@
     var seriesData_4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
-    var chart = anychart.column();
+    chart = anychart.column();
 
     // create scales and set stacking modes
     yScale1 = anychart.scales.linear();
@@ -48,10 +48,10 @@
     chart.yAxis().scale(yScale1);
 
     // configure labels on the Y-axis
-    chart.yAxis().labels().textFormatter("{%Value}%");
+    chart.yAxis().labels().format("{%Value}%");
 
     // configure tooltips
-    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
+    chart.tooltip().format("{%yPercentOfCategory}{decimalCount:2}%");
 
     // set the chart title
     chart.title("Percent Stacked Chart: Area/Column Overlay");

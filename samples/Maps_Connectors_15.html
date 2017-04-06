@@ -3,9 +3,9 @@
 <head>
   <meta name="x-cat-tags" content="anyMap"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export="true"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -16,8 +16,8 @@
   </style>
 </head>
 <body>
-    <div id="container"></div>
-  <script x-export="map">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script x-export="map">anychart.onDocumentReady(function() {
 
 // This sample uses 3rd party proj4 component
 // that makes it possible to set coordinates
@@ -52,7 +52,7 @@ series.fill("maroon");
 series.stroke("maroon", 2);
 series.hoverStroke("maroon", 2);
 series.select("maroon", 2);
-series.tooltip().textFormatter("Basic border along which the hostilities took place");
+series.tooltip().format("Basic border along which the hostilities took place");
 
 // data set for the choropeth series
 var dataSet = anychart.data.set([
@@ -110,7 +110,7 @@ var dataSet = anychart.data.set([
 
 var ch_series = map.choropleth(dataSet);
 
-ch_series.tooltip().textFormatter("{%position}");
+ch_series.tooltip().format("{%position}");
 
 // set geodata 
 map.geoData(anychart.maps.united_states_of_america);

@@ -59,7 +59,7 @@ var extraYAxis = plot_line_ohlc.yAxis(1);
 extraYAxis.orientation("right");
 extraYAxis.scale(extraYScale);
 
-extraYAxis.labels().textFormatter(function(){
+extraYAxis.labels().format(function(){
     var value = this.value;
     return value/1000000 + " mil";
 });

@@ -61,7 +61,7 @@ Let's create one more data set and a legend for it and define another color scal
 var series_other = map.choropleth(dataSet_other);
 series_other.geoIdField('iso_3166_2');
 series_other.name('Sales of other companies');
-series_other.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
+series_other.labels().fontSize(10).fontColor('#212121').format(function(){
   return (this.value);
 });
 series_other.tooltip().content().textWrap('byLetter').useHtml(true);

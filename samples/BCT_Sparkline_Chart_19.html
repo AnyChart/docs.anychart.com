@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="table">anychart.onDocumentReady(function() {
 
   // create charts and set data
   var chart1 = anychart.sparkline([1.1371,1.1341,1.1132,1.1381,1.1371]);  // eur\usd feb
@@ -18,7 +18,7 @@
   var chart6 = anychart.sparkline([0.2738,0.2723,0.2755,0.2721,0.2680]);  // cny\usd june
 
   // create table
-  var table = anychart.standalones.table();
+  table = anychart.standalones.table();
 
   // set table content
   table.contents([

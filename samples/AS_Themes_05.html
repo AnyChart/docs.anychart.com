@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="table">anychart.onDocumentReady(function() {
 
   // create variable for custom theme
   var customTheme = {
@@ -16,7 +16,7 @@
       "defaultXAxisSettings": {
         "labels": {
           // make all x labels 3 symbols long
-          "textFormatter": function(){
+          "format": function(){
             var value = this.value;
             value = value.substr(0, 3);
             return value
@@ -51,7 +51,7 @@
           "scale": 2,
           "orientation": "left",
           "labels": {
-            "textFormatter": function(){
+            "format": function(){
               return "$"+this.value
             }
           }
@@ -62,7 +62,7 @@
           "scale": 1,
           "drawLastLabel": false,
           "labels": {
-            "textFormatter": function(){
+            "format": function(){
               return this.value + "%"
             }
           }
@@ -80,7 +80,7 @@
             "fontWeight": 900
           },
           "tooltip": {
-            "textFormatter": function() {
+            "format": function() {
               return "Month: " + this.x + "\nIncome: " + this.value
             }
           }
@@ -111,7 +111,7 @@
   // apply custom theme
   anychart.theme(customTheme);
 
-  var table = anychart.standalones.table();
+  table = anychart.standalones.table();
   table.contents([
     ["Year 2005", null],
     [

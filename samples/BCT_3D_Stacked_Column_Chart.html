@@ -41,10 +41,10 @@
 	yScale.stackMode("value");
 
   	// configure tooltips
-  	chart.tooltip().textFormatter("{%Value}");
+  	chart.tooltip().format("{%Value}");
 
 	// configure labels on the Y-axis
-  	yAxis.labels().textFormatter("{%Value}");
+  	yAxis.labels().format("{%Value}");
 
 	// set data
 	var series1 = chart.column(dataSet1);

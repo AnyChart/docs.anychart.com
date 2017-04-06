@@ -42,7 +42,7 @@
   // adjust tooltip text
   series.stroke(null);
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     return "Language: " + this.x + "\nArticles: " + this.value;
   });
 
@@ -57,7 +57,7 @@
   labels.position("centerTop");
   labels.anchor("center");
   labels.offsetY(-15);
-  labels.textFormatter(function(){return this.x});
+  labels.format(function(){return this.x});
 
   // draw
   chart.container("container");

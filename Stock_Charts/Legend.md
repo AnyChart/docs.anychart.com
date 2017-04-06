@@ -33,7 +33,7 @@ legend.itemsSpacing(1);
 
 ## Title
 
-By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.ui.Legend#titleFormatter}titleFormatter(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.ui.Legend#position}position(){api}, {api:anychart.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive. 
+By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.ui.Legend#titleFormat}titleFormat(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.ui.Legend#position}position(){api}, {api:anychart.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive. 
 
 ```
 // turn the title on and set the position
@@ -41,7 +41,7 @@ legend.title(true);
 legend.title().orientation('top').align('left');
 
 // format the title
-legend.titleFormatter(function(){
+legend.titleFormat(function(){
     return "ACME Corp. Stock Prices"
 });
 
@@ -67,10 +67,10 @@ firstPlot.legend().itemsFormatter(function(){
 
 {sample}STOCK\_Legend\_03{sample}
 
-When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsTextFormatter}itemsTextFormatter(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
+When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
 
 ```
-plot.legend().itemsTextFormatter(function(){
+plot.legend().itemsFormat(function(){
       if (this.open !== undefined){ 
       return "Open: " + this.open + "   High: " + this.high+ "   Low: " + this.low + "   Close: " + this.close 
       }

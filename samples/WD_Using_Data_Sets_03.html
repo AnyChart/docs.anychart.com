@@ -22,15 +22,15 @@
     var dataMappingList = anychart.data.mapAsTable(data);
 
     // create line chart
-    var line = anychart.line.apply(null, dataMappingList);
-    line.getSeries(0).name("NY");
-    line.getSeries(1).name("SF");
-    line.getSeries(2).name("LA");
+    chart = anychart.line.apply(null, dataMappingList);
+    chart.getSeries(0).name("NY");
+    chart.getSeries(1).name("SF");
+    chart.getSeries(2).name("LA");
+    
     // set container
-    line.container("container");
-
+    chart.container("container");
     // initiate chart drawing
-    line.draw();
+    chart.draw();
 });</script>
 </head>
 <body>

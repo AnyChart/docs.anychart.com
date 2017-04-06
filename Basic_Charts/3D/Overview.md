@@ -14,7 +14,6 @@ AnyChart supports 3D versions of the following chart types: Area, Bar, Column, a
 
 This article explains how to create and configure 3D charts.
 
-
 ## Quick Start
 
 To create a 3D chart, use one of the following chart constructors:
@@ -103,7 +102,7 @@ chart.zDistribution(true);
 
 ##Supported Types
 
-Here you can learn more about the supported types of 3D charts:
+Here is the list of supported 3D charts:
 
 * [3D Area](Area_Chart)
 * [3D Bar](Bar_Chart)
@@ -113,9 +112,9 @@ Here you can learn more about the supported types of 3D charts:
 
 See also 3D [stacked](../Stacked/Overview) charts:
 
-* [3D Value Stacked Area](../Stacked/Value/3D_Area_Chart)
-* [3D Value Stacked Bar](../Stacked/Value/3D_Bar_Chart)
-* [3D Value Stacked Column](../Stacked/Value/3D_Column_Chart)
 * [3D Percent Stacked Area](../Stacked/Percent/3D_Area_Chart)
 * [3D Percent Stacked Bar](../Stacked/Percent/3D_Bar_Chart)
 * [3D Percent Stacked Column](../Stacked/Percent/3D_Column_Chart)
+* [3D Value Stacked Area](../Stacked/Value/3D_Area_Chart)
+* [3D Value Stacked Bar](../Stacked/Value/3D_Bar_Chart)
+* [3D Value Stacked Column](../Stacked/Value/3D_Column_Chart)

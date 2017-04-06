@@ -23,7 +23,7 @@
   var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
   // create a chart
-  var chart = anychart.area();
+  chart = anychart.area();
 
   // enable the percent stacking mode
   chart.yScale().stackMode("value");
@@ -34,10 +34,10 @@
   var series3 = chart.stepArea(seriesData_3);
 
   // configure tooltips
-  chart.tooltip().textFormatter("{%Value} ({%yPercentOfCategory}{decimalCount:2}%)");
+  chart.tooltip().format("{%Value} ({%yPercentOfCategory}{decimalCount:2}%)");
 
   // configure labels on the Y-axis
-  chart.yAxis().labels().textFormatter("{%Value}");
+  chart.yAxis().labels().format("{%Value}");
 
   // set the chart title
   chart.title("Stacked Step Area Chart");

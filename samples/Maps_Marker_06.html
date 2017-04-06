@@ -6,8 +6,8 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="usaMap">
 anychart.onDocumentReady(function () {
@@ -37,12 +37,12 @@ anychart.onDocumentReady(function () {
     var series_acme = usaMap.marker(dataSet_lat_long);
 
     // format the tooltips
-    series_acme.tooltip().titleFormatter("{%name} of ACME Corp.");
-    series_acme.tooltip().textFormatter("Yearly profit: ${%value}m");
+    series_acme.tooltip().titleFormat("{%name} of ACME Corp.");
+    series_acme.tooltip().format("Yearly profit: ${%value}m");
 
     // format the labels
-    series_acme.labels().textFormatter(function(){
-        return this.getDataValue("name");
+    series_acme.labels().format(function(){
+        return this.getData("name");
     });
     series_acme.labels().fontSize(14);
     series_acme.labels().fontColor("#000");
@@ -53,7 +53,6 @@ anychart.onDocumentReady(function () {
     series_acme.hoverLabels().fontColor("#660000");
     series_acme.selectLabels().fontSize(12);
     series_acme.selectLabels().fontColor("#660000");
-
 
     usaMap.title("Formatting the labels and tooltips in hovered state");
     usaMap.interactivity().zoomOnMouseWheel(false);

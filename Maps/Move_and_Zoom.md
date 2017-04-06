@@ -9,6 +9,7 @@ Move and Zoom API
  * [Navigational Interactivity](#navigational_interactivity)
  * [Clipboard Text](#clipboard_text)
  * [Zoom](#zoom)
+ * [Zoom Controls](#zoom_controls)
  * [Move](#move)
 
 ## Overview
@@ -46,7 +47,7 @@ You can decide how you want to allow user to navigate a map, this is configured 
 
 To enable or disable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
 
-To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
+To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api}. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
 
 To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){} method.
 
@@ -65,13 +66,13 @@ The sample below shows the same map as above with navigational interactivity dis
 
 ### Clipboard Text
 
-It is possible to put information about the points directly in computer clipboard by selecting a region or a several and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted using the {api:anychart.core.utils.MapInteractivity#copyFormatter}copyFormatter(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
+It is possible to put information about the points directly in computer clipboard by selecting a region or a several and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted using the {api:anychart.core.utils.MapInteractivity#copyFormat}copyFormat(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
 
 ```
 currentInteractivity = map.interactivity();
 
 // Adjust the text
-currentInteractivity.copyFormatter(function() {
+currentInteractivity.copyFormat(function() {
     return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
 });
 ```
@@ -121,6 +122,14 @@ map.listen('pointClick', function(e) {
 {sample}Maps\_Move\_and\_Zoom\_06{sample}
 
 Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](Event_Listeners).
+
+### Zoom Controls
+
+There is one more option how to manage your map zooming. Instead of using listeners and methods described above, add the Zoom Control Panel on the map. This panel includes 3 buttons: for 100% view, for zooming in and zooming out. 
+
+{sample}CS\_ZoomControls\_01{sample}
+
+Read more about this feature in the [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls)
 
 ### Move
 

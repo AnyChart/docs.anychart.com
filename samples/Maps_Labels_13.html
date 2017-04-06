@@ -6,8 +6,8 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function() {
 
@@ -21,7 +21,7 @@
 
   // data set for the choropleth series
   var dataSet_1 = anychart.data.set([
-    {'id': 'AU.JB', 'value': 1.5, label:{textFormatter: "Jervis \nBay \nTerritory", fontColor: "white"}},
+    {'id': 'AU.JB', 'value': 1.5, label:{format: "Jervis \nBay \nTerritory", fontColor: "white"}},
     {'id': 'AU.NT', 'value': 2},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
@@ -53,8 +53,8 @@
   map.overlapMode("noOverlap");
 
   // set tooltips
-  series_1.tooltip().textFormatter("More women");
-  series_2.tooltip().textFormatter("More men");
+  series_1.tooltip().format("More women");
+  series_2.tooltip().format("More men");
 
   // create callouts
   calloutRight = map.callout(0);

@@ -12,7 +12,7 @@
   
 In AnyChart charting library axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X and Y axes to your charts with AnyChart.
   
-  
+
 This article describes how to use the multi axis feature of AnyChart js framework. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
   
   
@@ -211,14 +211,14 @@ dollars and in percents of GDP. We need to create one additional Axis adjust bot
     extraYAxis.title("GDP");
     
     var yLabels = chart.yAxis(0).labels();
-    yLabels.textFormatter(function(){
+    yLabels.format(function(){
       var value = (this.value/1000000000000);
       if (value > 0)
         value = (this.value/1000000000000) + " 000 bil.";
       return "$" + value;
     });
     var yLabels1 = chart.yAxis(1).labels();
-    yLabels1.textFormatter(function(){
+    yLabels1.format(function(){
       return this.value + "%";
     });
 

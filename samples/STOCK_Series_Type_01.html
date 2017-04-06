@@ -5,7 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="series">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a stage    
     stage = anychart.graphics.create("container");
@@ -25,7 +25,7 @@
     series.name("Population");
 
     // format y-axis labels
-    chart.plot(0).yAxis().labels().textFormatter("{%Value}m");
+    chart.plot(0).yAxis().labels().format("{%Value}m");
 
     // set the chart title and padding
     chart.title('Switching the Series Type in Stock Charts');

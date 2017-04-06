@@ -220,9 +220,9 @@ Adjusting the position of labels is similar to adjusting it for the markers. Set
 
 The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} method.
 
-To change the content of labels use {api:anychart.core.ui.LabelsFactory.Label#textFormatter}textFormatter(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
+To change the content of labels use {api:anychart.core.ui.LabelsFactory.Label#format}format(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
 
-Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormatter}titleFormatter(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} and {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../Common_Settings/Tooltip).
+Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#format}format(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} and {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../Common_Settings/Tooltip).
 
 All label settings can be also defined through the dataSet as well.
 
@@ -239,10 +239,10 @@ var labels = series.labels();
 labels.enabled(true);
 labels.position("end");
 labels.anchor("leftBottom");
-labels.textFormatter("To {%to}");
+labels.format("To {%to}");
 
 // tooltip adjusting
-series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
+series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
 ```
 
 {sample}Maps\_Connectors\_11{sample}

@@ -34,14 +34,14 @@ chart.splitterPosition(210);
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
   secondColumn.width(75);
-  secondColumn.textFormatter(function(item) {
+  secondColumn.format(function(item) {
     return item.get("name");
   });
 
 var thirdColumn = dataGrid.column(2);
   thirdColumn.cellTextSettings().hAlign("left");
   thirdColumn.title("Owner");
-  thirdColumn.textFormatter(function(item) {
+  thirdColumn.format(function(item) {
     return item.get("owner");
   });
 

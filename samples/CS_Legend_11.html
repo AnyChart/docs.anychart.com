@@ -55,7 +55,7 @@
   // configure tooltip considering new item 
   var tooltip = chart.legend().tooltip();
   tooltip.enabled(true);
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     // to avoid failing on "total" item
     if(this.meta.pointValue === undefined)
       return this.value;

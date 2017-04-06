@@ -158,7 +158,7 @@ Header is usually a name of a parent of the current level. Due to its settings, 
   chart.headers().fontSize(14);
   chart.headers().fontWeight('bold');
   chart.hoverHeaders().fontColor("LightCoral");
-  chart.headers().textFormatter("{%name}");
+  chart.headers().format("{%name}");
   });
 ```
 
@@ -167,7 +167,7 @@ Header is usually a name of a parent of the current level. Due to its settings, 
 That's how you can override header content:
 
 ```
-{name: "South-Eastern Asia",  header: {textFormatter: "SEA"}, children:[
+{name: "South-Eastern Asia",  header: {format: "SEA"}, children:[
       {name: "Singapoor", value: 718.3, capital: 'Singapoor'},
       {name: "Indonesia", value: 1919440, capital: "Jakarta"},
       {name: "Thailand", value: 513.120, capital: 'Bangkok'},
@@ -277,12 +277,12 @@ When you change some visualization setting of your charts, you make them not onl
 
 ### Labels
 
-To configure data labels use {api:anychart.charts.TreeMap#labels}.labels(){api}. For formatting the text of the labels use {api:anychart.core.ui.LabelsFactory#textFormatter}.textFormatter(){api}. Let's format the labels so they show the represented value and color the labels' text in black.
+To configure data labels use {api:anychart.charts.TreeMap#labels}.labels(){api}. For formatting the text of the labels use {api:anychart.core.ui.LabelsFactory#format}format(){api}. Let's format the labels so they show the represented value and color the labels' text in black.
 
 ```
 // labels
 chart.labels().fontColor('black');
-chart.labels().textFormatter("{%name}: ${%Value}B");
+chart.labels().format("{%name}: ${%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_09{sample}
@@ -291,13 +291,13 @@ It's possible to set some additional information through the data that is to be 
 
 ### Tooltip
 
-Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}.tooltip(){api} method. To format the text and title of tooltips we use {api:anychart.core.ui.Tooltip#textFormatter}.textFormatter(){api} and {api:anychart.core.ui.Tooltip#titleFormatter}.titleFormatter(){api}; to change the position we use special positioning methods: {api:anychart.core.ui.Tooltip#positionMode}.positionMode(){api} and {api:anychart.core.ui.Tooltip#anchor}.anchor(){api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}.tooltip(){api} method. To format the text and title of tooltips we use {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}; to change the position we use special positioning methods: {api:anychart.core.ui.Tooltip#positionMode}.positionMode(){api} and {api:anychart.core.ui.Tooltip#anchor}.anchor(){api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
 
 ```
 // tooltips settings
 chart.tooltip().positionMode('point');
-chart.tooltip().titleFormatter('{%name}');
-chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
+chart.tooltip().titleFormat('{%name}');
+chart.tooltip().format("Income from export in 2012: $ {%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_10{sample}

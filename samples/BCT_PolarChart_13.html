@@ -71,13 +71,13 @@
   var hoverMarkers = series.hoverMarkers();
   hoverMarkers.size(1);
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     return "X: " + this.x.toFixed(1) + "\nValue: " + this.value.toFixed(0);
   });
 
   // adjust content and visualisation of labels
   var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
+  xLabels.format(function(){
     return this.value + ".00"
   });
 

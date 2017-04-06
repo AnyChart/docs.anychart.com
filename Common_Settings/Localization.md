@@ -27,15 +27,15 @@ AnyChart provides built-in locales covering most regions and cultures. To use an
 Linking from CDN looks like this:
 
 ```
-<script src="http://cdn.anychart.com/locale/1.0.0/english-(united-kingdom).js">
-<script src="http://cdn.anychart.com/locale/1.0.0/english-(united-states).js">
+<script src="https://cdn.anychart.com/locale/1.1.0/en-gb.js">
+<script src="https://cdn.anychart.com/locale/1.1.0/en-us.js">
 ```
 
 Linking from your server may look like this:
 
 ```
-<script src="./locales/english-(united-kingdom).js">
-<script src="http://mydomain.com/anychart-locales/english-(united-states).js">
+<script src="./locales/en-gb.js">
+<script src="http://mydomain.com/anychart-locales/en-us.js">
 ```
 
 After the file is linked, AnyChart engine knows about it, and you can start applying the locale in your charts: just set the code of the locale using the {api:anychart.format#inputLocale}inputLocale(){api} or {api:anychart.format#outputLocale}outputLocale(){api} methods. Codes of locales are listed in the CODE column on [AnyChart CDN](https://cdn.anychart.com/#locales).
@@ -64,10 +64,10 @@ anychart.format.outputDateTimeFormat('dd MMM');
 You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:}number(){api} methods:
 
 ```
-chart.xAxis().labels().textFormatter(function () {
+chart.xAxis().labels().format(function () {
     return anychart.format.dateTime(this.value, 'MMM', -8 * 60, locale);
 });
-chart.tooltip().titleFormatter(function () {
+chart.tooltip().titleFormat(function () {
     return anychart.format.dateTime(this.points[0].x, format, -8 * 60, locale);
 });
 ```

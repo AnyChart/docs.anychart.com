@@ -31,7 +31,7 @@
   return dateUnit + "";
 }
 
-function customTextFormatter(item) {
+function customformat(item) {
   var periods = item.get(anychart.enums.GanttDataFields.PERIODS);
   if (periods) {
       var startTime = new Date(periods[0].start);
@@ -44,14 +44,14 @@ function customTextFormatter(item) {
 
 dataGrid.column(0).title().text("№");
 
-dataGrid.column(1).width(100).textFormatter(function(item) {
+dataGrid.column(1).width(100).format(function(item) {
     return item.get("name");
   }).title().text("Resources");
 
 var custom = dataGrid.column(2);
   custom.title("Start Date");
   custom.width(90);
-  custom.textFormatter(customTextFormatter);
+  custom.format(customformat);
 
   // initiate chart drawing
   chart.draw();

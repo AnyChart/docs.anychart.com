@@ -56,8 +56,8 @@
   var tooltip = chart.tooltip();
   var title = tooltip.title();
   title.hAlign("center");
-  tooltip.titleFormatter("{%y}");
-  tooltip.textFormatter(function(){
+  tooltip.titleFormat("{%y}");
+  tooltip.format(function(){
     return "Month: " + this.x + "\nOpens: " + this.heat + "%";
   });
 
@@ -65,10 +65,10 @@
   var labels = chart.labels();
   labels.enabled(true);
 
-  labels.textFormatter("{%heat}%");
+  labels.format("{%heat}%");
 
   var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
+  xLabels.format(function(){
     return (this.value).substr(0, 3);
   });
 

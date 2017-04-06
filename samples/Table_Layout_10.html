@@ -74,7 +74,7 @@
   axis.title().enabled(false);
   axis.labels()
     .fontSize("9px")
-    .textFormatter(function(value) {
+    .format(function(value) {
       return value["tickValue"] + "%";
     });
   axis.ticks().stroke("#ccc");

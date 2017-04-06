@@ -44,7 +44,7 @@ There are labels, tooltips and legend in English, French, Portuguese, Spanish, R
 If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}useHtml(){api} method in *true*:
 
 ```
-series.labels().useHtml(true).textFormatter(function(){
+series.labels().useHtml(true).format(function(){
 	return '<b>Name: </b>' + this.x ;
 })
 ```
