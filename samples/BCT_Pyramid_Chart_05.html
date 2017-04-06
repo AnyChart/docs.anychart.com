@@ -9,27 +9,17 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var data = [
+  chart = anychart.pyramid([
     {name: "Fantasy", value: 637166},
     {name: "Science Fiction", value: 721630},
     {name: "Detective", value: 148662},
     {name: "Classics", value: 78662},
     {name: "Textbooks", value: 90000}
-  ];
-  
-  chart = anychart.pyramid(data);
-  
-  chart.connectorStroke(
-    // set 2px thickness and #444 color
-    "2 #444",
-    // set lines opacity
-    1,
-    // dashes and gaps settings
-    "4 2"     
-  );
-  
-  chart.title("Tuned Labels Connectors");
-  
+  ]);
+
+  // turn the pyramid upside-down
+  chart.reversed(true);
+
   // draw chart
   chart.container("container");
   chart.draw();

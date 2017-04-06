@@ -11,16 +11,13 @@
   
   chart = anychart.pyramid([
     {name: "Fantasy", value: 637166},
-    {name: "Science Fiction", value: 721630},
+    {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
     {name: "Detective", value: 148662},
     {name: "Classics", value: 78662},
     {name: "Textbooks", value: 90000}
   ]);
-  
-  // disable padding between parts of the chart
-  chart.pointsPadding(0);
-  
-  chart.title("Disabled Padding");
+
+  chart.fill("#64b5f6 0.9");
 
   // draw chart
   chart.container("container");
