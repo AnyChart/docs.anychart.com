@@ -10,11 +10,11 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // JSON data
-  anychart.fromJson({
+  chart = anychart.fromJson({
     "chart": {
       // chart type 
       "type": "column",
-      "yScale": {       // invoke y scale
+      "yScale": {       // y scale
         "minimum": 100, // set minimum value
         "maximum": 350  // set maximum value
       },
@@ -26,7 +26,9 @@
       // chart container
       "container": "container"
     }
-  }).draw();
+  });
+
+  chart.draw();
 });</script>
 </head>
 <body>

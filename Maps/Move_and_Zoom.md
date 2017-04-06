@@ -66,13 +66,13 @@ The sample below shows the same map as above with navigational interactivity dis
 
 ### Clipboard Text
 
-It is possible to put information about the points directly in computer clipboard by selecting a region or a several and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted using the {api:anychart.core.utils.MapInteractivity#copyFormatter}copyFormatter(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
+It is possible to put information about the points directly in computer clipboard by selecting a region or a several and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted using the {api:anychart.core.utils.MapInteractivity#copyFormat}copyFormat(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
 
 ```
 currentInteractivity = map.interactivity();
 
 // Adjust the text
-currentInteractivity.copyFormatter(function() {
+currentInteractivity.copyFormat(function() {
     return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
 });
 ```

@@ -23,15 +23,15 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set
-var line = anychart.line(dataSet);
+chart = anychart.line(dataSet);
+
+chart.title("New York weather");
+chart.getSeries(0).name("New York");
 
 // set container id for the chart
-line.container("container");
-line.title("New York weather");
-line.getSeries(0).name("New York");
-
+chart.container("container");
 // initiate chart drawing
-line.draw();
+chart.draw();
 });</script>
 </head>
 <body>
