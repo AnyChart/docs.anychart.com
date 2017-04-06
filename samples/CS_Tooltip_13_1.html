@@ -7,11 +7,11 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-var stage = anychart.graphics.create("container");
+    <script x-export="stage">anychart.onDocumentReady(function() {
+  var stage = anychart.graphics.create("container");
 
-var dataSet = anychart.data.set([
-    ["John", 10000, 13000, 15000],
+  var dataSet = anychart.data.set([
+      ["John", 10000, 13000, 15000],
     ["Jake", 12000, 10000, 18000],
     ["Peter", 18000, 19000, 16000],
     ["James", 11000, 10000, 14000],
@@ -32,7 +32,7 @@ var dataSet = anychart.data.set([
   series3.name("Year 2012");
 
   // set title
-  chart.title("Tooltips of one of the series can leave the chart bounds");
+  chart.title("Tooltips can leave the chart and the stage bounds");
 
   // set the padding for the chart
   chart.bounds(10, 20, "90%", "70%");
@@ -40,20 +40,23 @@ var dataSet = anychart.data.set([
 
   // let tooltips to leave the chart bounds
   series1.tooltip().allowLeaveChart(true);
-  series2.tooltip().allowLeaveChart(false);
-
-  series1.tooltip().textFormatter("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
-  series2.tooltip().textFormatter("This tooltip is not able to be demonstrated out of the chart");
+  series1.tooltip().allowLeaveStage(true);
+  series1.tooltip().textFormatter("This tooltip can be demonstrated out of chart and out of stage, if it becomes necessary to show it all, though it still cannot go beyond the screen");
+  series2.tooltip().allowLeaveChart(true);
+  series2.tooltip().allowLeaveStage(false);
+  series2.tooltip().textFormatter("This tooltip is not allowed to be demonstrated out of stage, though it can leave the chart bounds");
 
   // font settings for tooltip text
-  var tooltip1 = series1.tooltip();
-  tooltip1.fontWeight(900);
-  var title1 = series1.tooltip().title();
-  title1.fontWeight(900);
+  var tooltip = series1.tooltip();
+  tooltip.fontWeight(900);
+  var title = series1.tooltip().title();
+  title.fontWeight(900);
 
   // adjust chart tooltips for the third series
-  chart.tooltip().textFormatter("This series tooltips' settings are inherited from chart tooltip defaults");
-  
+  chart.tooltip().allowLeaveChart(false);
+  chart.tooltip().allowLeaveStage(false);
+  chart.tooltip().textFormatter("This series tooltips' settings are inherited from chart tooltip settings");
+
   // draw
   chart.container(stage);
   chart.draw();
