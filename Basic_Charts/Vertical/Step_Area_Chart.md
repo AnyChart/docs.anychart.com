@@ -1,31 +1,25 @@
-{:index 3}
+{:index 2}
 # Vertical Step Area Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
 
 ## Overview
 
-A Vertical Step Area Chart is a simple Step Area Chart with its categories spread among the vertical axis. The difference between Step Area Chart and Area Chart is that points and angles are replaced with a polyline.
+This article explains how to create a Vertical Step Area chart in AnyChart.
 
-Find how to create a Step Area Chart in the following article: [Step Area Chart](../Step_Area_Chart).
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview).  You can also read the [Step Area Chart](../Step_Area_Chart) article to learn about other available settings.
 
 ## Quick Start
 
-To build a Vertical Step Area Chart, create a simple [Step Area Chart](../Step_Area_Chart) using the {api:anychart#verticalArea}verticalArea(){api} method of chart creation instead of the {api:anychart#area}area(){api}:
+To build a Vertical Step Area chart, use the {api:anychart#verticalArea}anychart.verticalArea(){api} or {api:anychart#vertical}anychart.vertical(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method to create a Step Area series.
 
 ```
-// create a vartical area chart
-var chart = chart.verticalArea();
+// create a chart
+chart = anychart.verticalArea();
 
-// create stepArea series
-var series1 = chart.stepArea(seriesData_1);
-var series2 = chart.stepArea(seriesData_2);
+// create a step area series and set the data
+var series = chart.stepArea(data);
 ```
 
 {sample}BCT\_Vertical\_Step\_Area\_Chart{sample}
-
-## Adjusting
-
-The Vertical Step Area series' settings are mostly the same as Area series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

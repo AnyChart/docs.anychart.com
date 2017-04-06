@@ -83,7 +83,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.core.cartesian.series.Stick#hoverStroke}hoverStroke(){api} configures the stroke on hover
 * {api:anychart.core.cartesian.series.Stick#selectStroke}selectStroke(){api} configures the stroke on select
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are two Stick series with some of the appearance settings configured:
 

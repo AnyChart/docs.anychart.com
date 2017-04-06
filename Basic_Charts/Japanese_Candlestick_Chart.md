@@ -13,15 +13,15 @@
 
 ## Overview
 
-The Japanese candlestick chart is a combination of a line chart and a bar chart used primarily to describe price movements of an equity over time, where each bar represents the range of price movement over a given time interval. It is mostly used in technical analysis of equity and currency price patterns.
+A Japanese candlestick chart is a combination of a line and bar chart used to describe price movements of an equity over time, where each bar represents the range of price movement over a given time interval. It is mostly used in technical analysis of equity and currency price patterns.
   
-Candlesticks consist of the body (black or white), an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body represents the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. It's not necessary for a candlestick to have either a body or a wick.  
+Candlesticks consist of the body (black or white) and an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body represents the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. It is not necessary for a candlestick to have either a body or a wick.  
   
-Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](OHLC_Chart).
+Some traders find candlestick charts easier to read than [OHLC charts](OHLC_Chart).
 
-Japanese Candlestick is a type of series that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are available in AnyStock. Learn more about using Japanese Candlestick series in Stocks in the [Japanese Candlestick series in Stocks](../Stock_Charts/Series/Japanese_Candlestick) article.
+Japanese Candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock – see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
 
-This article explains how to create a basic Japanese Candlestick chart as well as configure specific settings. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
+This article explains how to create a basic Japanese Candlestick chart as as well as configure settings that are specific to the type. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -49,7 +49,7 @@ This article explains how to create a basic Japanese Candlestick chart as well a
 
 ## Quick Start
 
-To create a Japanese Candlestick chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. If you pass the data to this chart constructor, it will create a Candlestick series.
+To create a Japanese Candlestick chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. If you pass the data to this chart constructor, it creates a Candlestick series.
 
 To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method.
 
@@ -74,7 +74,8 @@ var data = anychart.data.set([
 
 // create a chart
 chart = anychart.financial();
-    
+ 
+// map the data    
 var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
 // create a japanese candlestick series and set the data
@@ -100,18 +101,27 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-In this section, we will describe main parts of candlestick chart visualization and ways to adjust it. The visual appearance of candlesticks is defined using certain parameters. The most important parameters for Japanese candlestick series are the following:
+You can set the stroke, fill, and hatch fill of falling and rising candlesticks. Use the following methods:
 
-* {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks
-* {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks in the hovered state
-* {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api} methods are used for adjusting stroking, filling colors or hatch type of rising and falling candlesticks while they are selected.
+* {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}
+* {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}
+
+To configure these settings on hover, use:
+
+* {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}
+* {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api}
+
+To configure these settings on select, use:
+
+* {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api}
+* {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api}
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are two Japanese Candlestick series with some of the appearance settings configured:
 
 ```
-// set colors for the first series
+// configure the visual settings of the first series
 series1.risingStroke("#0066cc");
 series1.risingFill("#0066cc", 0.3);
 series1.hoverRisingStroke("#0066cc", 2);
@@ -126,7 +136,7 @@ series1.hoverFallingFill("#00cc99", 0.1);
 series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 series1.selectFallingFill("#00cc99", 0.5);
 
-// set hatch for the second series
+// configure the visual settings of the second series
 series2.fallingHatchFill("forwardDiagonal");
 series2.risingHatchFill("backwardDiagonal");
 series2.hoverFallingHatchFill("diagonalCross");
@@ -150,8 +160,9 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ## Candlestick Patterns
 
-In technical analysis, a candlestick pattern is a movement in prices shown graphically on a candlestick chart that some believe can predict a particular market movement. The recognition of the pattern is subjective and programs that are used for charting have to rely on predefined rules to match the pattern. There are 42 recognized patterns that can be split into simple and complex patterns.
-The sample with the following data demonstrates most popular simple patterns.
+In technical analysis, a candlestick pattern is a movement in prices shown graphically on a candlestick chart. Some believe that it can predict a particular market movement. The recognition of the pattern is subjective, and charting programs have to rely on predefined rules to match the pattern. There are 42 recognized patterns, which can be divided into two groups: simple and complex.
+
+Here are the most popular simple patterns, shown in the sample below:
 
 <table width="319" border="1" class="dtTABLE">
 <tbody><tr>

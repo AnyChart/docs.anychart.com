@@ -28,6 +28,7 @@
     // create a chart
     chart = anychart.financial();
     
+    // map the data
     var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
     // create a japanese candlestick series and set the data
@@ -36,6 +37,9 @@
     
     // set the chart title
     chart.title("Japanese Candlestick Chart: Basic Sample");
+
+    // set the interactivity mode
+    chart.interactivity("byX");
 
     // set the container id
     chart.container("container");

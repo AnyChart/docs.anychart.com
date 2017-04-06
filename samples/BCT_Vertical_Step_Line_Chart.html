@@ -11,21 +11,28 @@
 
 	// create data
 	var data = [
-	  {x: "January", value: 10000},
-	  {x: "February", value: 12000},
-	  {x: "March", value: 18000},
-	  {x: "April", value: 11000},
-	  {x: "May", value: 9000}
+	  {x: "1995", value: 0.10},
+	  {x: "1996", value: 0.10},
+	  {x: "1997", value: 0.12},
+	  {x: "1998", value: 0.13},
+	  {x: "1999", value: 0.15},
+	  {x: "2000", value: 0.15},
+	  {x: "2001", value: 0.15},
+	  {x: "2002", value: 0.19},
+	  {x: "2003", value: 0.20}
 	];
 
 	// create a chart
-	chart = anychart.verticalArea();
+	chart = anychart.verticalLine();
 
-    // create a spline area series and set the data
-	var series = chart.splineArea(data);
+    // create a step line series and set the data
+	var series = chart.stepLine(data);
+
+	// set step direction to the forward mode
+    series.stepDirection("forward");  
 
 	// set the chart title
-	chart.title("Vertical Spline Area Chart");
+	chart.title("Vertical Step Line Chart");
 
 	// set the container id
 	chart.container("container");

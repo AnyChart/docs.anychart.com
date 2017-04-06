@@ -19,20 +19,19 @@
     ];
   	
   	// create a chart
-  	chart = anychart.bar();
+  	chart = anychart.verticalLine();
 
-    // create a stick series and set the data
-  	var series = chart.stick(data);
+    // create a jump line series and set the data
+  	var series = chart.jumpLine(data);
 
   	// set the chart title
-  	chart.title("Vertical Stick Chart");
+  	chart.title("Vertical Jump Line Chart");
 
   	// set the container id
   	chart.container("container");
 
   	// initiate drawing the chart
   	chart.draw();
-
 });</script>
 </head>
 <body>

@@ -12,7 +12,7 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 
 ## Quick Start
 
-To build a 3D Pie Chart, use the {api:anychart#pie3d}anychart.bar3d(){api} chart constructor:
+To build a 3D Pie chart, use the {api:anychart#pie3d}anychart.bar3d(){api} chart constructor:
 
 ```
 // create a 3d pie chart

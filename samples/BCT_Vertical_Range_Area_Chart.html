@@ -11,21 +11,21 @@
 
 	// create data
 	var data = [
-	  {x: "January", value: 10000},
-	  {x: "February", value: 12000},
-	  {x: "March", value: 18000},
-	  {x: "April", value: 11000},
-	  {x: "May", value: 9000}
+	  {x: "January", low: 0.7, high: 6.1},
+	  {x: "February", low: 0.6, high: 6.3},
+	  {x: "March", low: 1.9, high: 8.5},
+	  {x: "April", low: 3.1, high: 10.8},
+	  {x: "May", low: 5.7, high: 14.4}
 	];
-
+	
 	// create a chart
 	chart = anychart.verticalArea();
 
-    // create a spline area series and set the data
-	var series = chart.splineArea(data);
+    // create a range area series and set the data
+	var series = chart.rangeArea(data);
 
 	// set the chart title
-	chart.title("Vertical Spline Area Chart");
+	chart.title("Vertical Range Area Chart");
 
 	// set the container id
 	chart.container("container");
