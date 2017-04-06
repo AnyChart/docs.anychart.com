@@ -10,7 +10,7 @@
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
   * [getData](#getdata)
-  * [getSeriesMeta](#getseriesmeta)
+  * [Series Meta](#series_meta)
   * [getStat](#getstat)
 
 ## Overview
@@ -582,7 +582,7 @@ Here is a sample with additional information in the chart tooltip. Full informat
 
 {sample}CS\_format\_08{sample}
 
-####getSeriesMeta
+####Series Meta
 
 You can add extra parameters not only to the data points but to series too. Let's add an extra parameter as to the series of OHLC chart and show it with format.
 
@@ -596,7 +596,6 @@ var series_1 = chart.ohlc([
     {x: Date.UTC(2007, 7, 30), open: 517.36, high: 518.40, low: 516.58, close: 516.80},
     {x: Date.UTC(2007, 8, 1), open: 513.10, high: 516.50, low: 511.47, close: 515.25},
 ]);
-series_1.xPointPosition(0.5);
 series_1.meta("company", "ACME Corp.");
  
 // set second series data
@@ -606,25 +605,22 @@ var series_2 = chart.ohlc([
     {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
     {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
 ]);
-series_2.xPointPosition(0.5);
 series_2.meta("company", "Duff B. Corp.");
 
 // format
 
 var labels_1 = series_1.labels();
 labels_1.format(function(){
-    return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+    return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
 });
 
 var labels_2 = series_2.labels();
 labels_2.format(function(){
-    return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+    return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
 });
 ```
 
 {sample}CS\_format\_09{sample}
-
-**Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api} method in Pie, Funnel or Pyramid Charts.
 
 ####getStat
 

@@ -30,7 +30,7 @@
   columnSeries.name("Income");
 
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.textFormatter(formatter);
+  columnTooltip.format(formatter);
 
   var lineSeries = chart.line([
     ["A", 95.073],
@@ -42,7 +42,7 @@
   lineSeries.name("Percentage");
 
   var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
+  lineTooltip.format("{%SeriesName}: {%Value}{decimalsCount:1}%");
 
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0).maximum(100);

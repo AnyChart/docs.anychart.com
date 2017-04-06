@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
     // create data
     var data = [
@@ -25,25 +25,17 @@
     var pie1 = anychart.pie(data);
     pie1.title("Start Angle: Default (0°)");
     pie1.bounds(0, 0, "50%", "100%");
-    formatPie(pie1);
+    pie1.container(stage).draw();
 
     // set the position and data for the second pie chart
     var pie2 = anychart.pie(data);
     pie2.title("Start Angle: 90°");
     pie2.bounds("50%", 0, "50%", "100%");
-    formatPie(pie2);
     // set the start angle
     pie2.startAngle(90);
+    pie2.container(stage).draw();    
 });
-
-/* a helper function for configuring
-and drawing pie charts*/
-function formatPie(pie){
-  // set the chart container
-  pie.container(stage);
-  // initiate drawing the chart
-  pie.draw();
-};</script>
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
