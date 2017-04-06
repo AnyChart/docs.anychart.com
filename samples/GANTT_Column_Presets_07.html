@@ -6,7 +6,9 @@
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="dataGrid">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+    stage = anychart.graphics.create("container");
 
   var data = [
     {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000},
@@ -28,7 +30,7 @@
 
   dataGrid.tooltip(false);
   dataGrid.listen("signal", dataGrid.draw);
-  dataGrid.container("container");
+  dataGrid.container(stage);
   dataGrid.draw();
 });</script>
 </head>
