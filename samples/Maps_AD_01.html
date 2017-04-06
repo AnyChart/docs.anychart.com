@@ -8,7 +8,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="map">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -31,19 +31,20 @@
     // mapping the data to the chart
     var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
 
-    var mapChart = anychart.map();
-    mapChart.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
     
-    mapChart.container('container');
-    mapChart.title('Australia Map');
+    map.title('Australia Map');
     
     // set the series
-    var series = mapChart.choropleth(mapDataSet);
-    series.geoIdField('code_hasc');
+    var series = map.choropleth(mapDataSet);
 
     // disable the labels
     series.labels(false);
-    mapChart.draw();
+
+    // draw a map
+    map.container('container');    
+    map.draw();
 });</script>
 </head>
 <body>

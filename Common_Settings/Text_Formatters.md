@@ -9,7 +9,7 @@
 * [Formatting functions](#formatting_functions)
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
-  * [getDataValue](#getdatavalue)
+  * [getData](#getdata)
   * [getSeriesMeta](#getseriesmeta)
   * [getStat](#getstat)
 
@@ -525,9 +525,9 @@ labels_summer.format(function(){
 
 ### Extra fields
 
-The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api}. Which one to use depends on the unique situation.
+The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api}, {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api}. Which one to use depends on the unique situation.
 
-#### getDataValue
+#### getData
 
 Using these methods, you can display the values from the extra parameters, if you have added any to the series or to the data. Look at the sample and its code below:
 
@@ -542,15 +542,15 @@ labels.enabled(true);
 
 // use format
 labels.format(function(){
-    return(this.getDataValue("extra_inf"));
+    return(this.getData("extra_inf"));
 });
 ```
 
 {sample}CS\_format\_07{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api}.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api}.
 
-Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api} method.
+Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} method.
 
 ```
 // map data for series
@@ -574,7 +574,7 @@ var tooltip = series.tooltip();
 tooltip.format(function(){
     return 
         this.seriesName + ": " + this.value + " millions" +
-        "\nYear over year: " + this.getDataValue("yoy") + "%";
+        "\nYear over year: " + this.getData("yoy") + "%";
 });
 ```
 
@@ -636,7 +636,7 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
 // format
 var labels = chart.labels();
 labels.format(function(){
-    return((this.getDataValue("value"))+"(of "+this.getStat("sum")) + ")";
+    return((this.getData("value"))+"(of "+this.getStat("sum")) + ")";
 });
 ```
 

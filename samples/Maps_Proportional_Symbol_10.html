@@ -65,7 +65,7 @@ anychart.onDocumentReady(function() {
 
     // format the labels
     series.labels().format(function(){
-        return(this.getDataValue("name")+"\n"+this.size);
+        return(this.getData("name")+"\n"+this.size);
     });
     series.labels().anchor('center');
     series.labels().position('center');

@@ -30,7 +30,7 @@
                 {'id': 'AU.QL', 'capital': 'Brisbane', 'population': 1820375}
     ]);
 
-    var map = anychart.map();
+    map = anychart.map();
     map.geoData(anychart.maps.australia);
     map.title("Move mouse over the map to see tooltip");
     // set the series
@@ -38,8 +38,8 @@
     
     //enable the tooltips and format them at once
     series.tooltip().format(function(e){
-       return "Capital: " + e.getDataValue("capital") +"\n"+
-       "Population: " + e.getDataValue("population")
+       return "Capital: " + e.getData("capital") +"\n"+
+       "Population: " + e.getData("population")
     });
     
     // disable the labels

@@ -28,7 +28,7 @@
     // format
     var labels = chart.labels();
     labels.format(function(){
-        return((this.getDataValue("value"))+"(of "+this.getStat("sum")+")");
+        return((this.getData("value"))+"(of "+this.getStat("sum")+")");
     });
 
     // labels positioning

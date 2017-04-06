@@ -42,8 +42,8 @@ var series = mapChart.choropleth(mapDataSet);
 
 // enable the tooltips and format them at once
 series.tooltip().format(function(e){
-   return "Capital: " + e.getDataValue("capital") +"\n"+
-   "Population: " + e.getDataValue("population")
+   return "Capital: " + e.getData("capital") +"\n"+
+   "Population: " + e.getData("population")
 });
 
 ```

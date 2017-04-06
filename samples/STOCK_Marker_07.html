@@ -113,7 +113,7 @@ anychart.onDocumentReady(function() {
 
     // tooltip formatter
     series_usa.tooltip().format(function(e){
-        if (this.value !== null) return "USA population growth: " + e.getDataValue("value")
+        if (this.value !== null) return "USA population growth: " + e.getData("value")
             else return "USA population growth: no data"
     });
     series_uk.tooltip().format("UK population growth: {%Value}");

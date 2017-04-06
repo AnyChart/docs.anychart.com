@@ -197,7 +197,7 @@ series.labels().fontSize(10);
 
 // format the labels
 series.labels().format(function(){
-    return(this.getDataValue("name")+"\n"+this.size);
+    return(this.getData("name")+"\n"+this.size);
 });
 ```
 
