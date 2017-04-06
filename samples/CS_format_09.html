@@ -45,10 +45,10 @@
      
     // text formatter
     labels_1.format(function(){
-        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+        return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     labels_2.format(function(){
-        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+        return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     
     // labels positioning
