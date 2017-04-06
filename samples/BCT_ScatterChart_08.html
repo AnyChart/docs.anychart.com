@@ -21,7 +21,7 @@
       .interval(50);
 
   // adjust y axis labels representation
-  chart.yAxis().labels().textFormatter("{%Value}%");
+  chart.yAxis().labels().format("{%Value}%");
 
   chart.yAxis().title("Job Growth");
 
@@ -33,7 +33,7 @@
       .interval(10000);
 
   // adjust x axis labels representation
-  chart.xAxis().labels().textFormatter("${%Value}");
+  chart.xAxis().labels().format("${%Value}");
 
   chart.xAxis().title("Wages");
 
@@ -66,14 +66,14 @@
       .fontColor(anychart.color.darken("DodgerBlue"))
       .fontSize(12)
       .fontWeight(400)
-      .textFormatter("{%Name}");
+      .format("{%Name}");
 
   // set series size
   chart.minBubbleSize(10);
   chart.maxBubbleSize(30);
 
   // set tooltips
-  bubble.tooltip().textFormatter("{%Name}\nWages: ${%x}\nJob Growth: {%Value}");
+  bubble.tooltip().format("{%Name}\nWages: ${%x}\nJob Growth: {%Value}");
 
   // create major and minor grids and bind them to X and Y axes
   var y_grid = chart.grid(0);

@@ -63,13 +63,13 @@
     series.labels().fontSize(10);
 
     // format the labels
-    series.labels().textFormatter(function(){
+    series.labels().format(function(){
         return(this.getDataValue("name")+"\n"+this.size);
     });
     series.labels().anchor('center');
     series.labels().position('center');
 
-    series.tooltip().textFormatter(function(){
+    series.tooltip().format(function(){
         return(this.size+' employed local workers');
     });
 

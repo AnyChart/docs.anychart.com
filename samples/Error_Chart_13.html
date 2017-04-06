@@ -28,7 +28,7 @@
   series.hoverSize(5);
 
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(point){
+  tooltip.format(function(point){
     return "\nxUpperError - " + point.xUpperError
     + "\nxLowerError - " + point.xLowerError
     + "\nvalueLowerError - " + point.valueLowerError

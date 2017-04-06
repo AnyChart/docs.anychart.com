@@ -315,7 +315,7 @@ Moreover, you may consider it's useful to manage tooltip content, as far as we w
 
 ```
 	var tooltip = series.tooltip();
-	tooltip.titleFormatter(function(point){
+	tooltip.titleFormat(function(point){
 		var index = point.index;
 		switch (true){
 			case (index<3): return "First Quarter";
@@ -325,7 +325,7 @@ Moreover, you may consider it's useful to manage tooltip content, as far as we w
 		}
 	});
 
-	tooltip.textFormatter(function(point){
+	tooltip.format(function(point){
 		var index = point.index;
 		var prefix = "Income: $";
 		switch (true){

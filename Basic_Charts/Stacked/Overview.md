@@ -72,7 +72,7 @@ To add percent symbol to axis labels use [Axes Labels](/Axes_and_Grids/Axes_Labe
 
 ```
 // configure labels on the Y-axis
-chart.yAxis().labels().textFormatter("{%Value}%");
+chart.yAxis().labels().format("{%Value}%");
 ```
 
 ### Tooltips and Labels
@@ -81,7 +81,7 @@ To add percent symbol and show percentage instead (or in addition to) in tooltip
 
 ```
 // configure tooltips
-chart.tooltip().textFormatter("{%yPercentOfCategory}%");
+chart.tooltip().format("{%yPercentOfCategory}%");
 ```
 
 Here is a sample percent stacked chart with all typical settings put together:

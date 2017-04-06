@@ -42,11 +42,11 @@
   series1.tooltip().allowLeaveChart(true);
   series1.tooltip().allowLeaveStage(true);
   series1.tooltip().allowLeaveScreen(true);
-  series1.tooltip().textFormatter("This tooltip can be demonstrated out of chart, out of stage and even go beyond the screen, if it becomes necessary to show it all");
+  series1.tooltip().format("This tooltip can be demonstrated out of chart, out of stage and even go beyond the screen, if it becomes necessary to show it all");
   series2.tooltip().allowLeaveChart(true);
   series2.tooltip().allowLeaveStage(true);
   series2.tooltip().allowLeaveScreen(false);
-  series2.tooltip().textFormatter("This tooltip is not allowed to be demonstrated out of screen, though it can leave the chart and the stage bounds");
+  series2.tooltip().format("This tooltip is not allowed to be demonstrated out of screen, though it can leave the chart and the stage bounds");
 
   // font settings for tooltip text
   var tooltip = series1.tooltip();
@@ -55,7 +55,7 @@
   title.fontWeight(900);
 
   // adjust chart tooltips for the third series
-  chart.tooltip().textFormatter("This series tooltips' settings are inherited from chart tooltip defaults");
+  chart.tooltip().format("This series tooltips' settings are inherited from chart tooltip defaults");
 
   // draw
   chart.container(stage);

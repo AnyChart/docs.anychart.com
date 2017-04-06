@@ -34,10 +34,10 @@
   var series3 = chart.bar(seriesData_3);
 
   // configure tooltips
-  chart.tooltip().textFormatter("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
+  chart.tooltip().format("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
 
   // configure labels on the Y-axis
-  chart.yAxis().labels().textFormatter("{%Value}%");
+  chart.yAxis().labels().format("{%Value}%");
 
   // set the chart title
   chart.title("3D Percent Stacked Bar Chart");

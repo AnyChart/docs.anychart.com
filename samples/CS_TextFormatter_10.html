@@ -25,9 +25,9 @@
     // set aqua style
     chart.fill("aquastyle");
     
-    // textFormatter
+    // format
     var labels = chart.labels();
-    labels.textFormatter(function(){
+    labels.format(function(){
         return((this.getDataValue("value"))+"(of "+this.getStat("sum")+")");
     });
 

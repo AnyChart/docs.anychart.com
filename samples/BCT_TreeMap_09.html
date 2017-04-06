@@ -32,12 +32,12 @@
     chart = anychart.treeMap();
 
     // labels
-    chart.labels().textFormatter("{%name}: ${%Value}B");
+    chart.labels().format("{%name}: ${%Value}B");
     chart.labels().fontColor('black');
 
         
     // tune labels
-    chart.labels().textFormatter("{%name}");
+    chart.labels().format("{%name}");
 
     // data set
     var data = [

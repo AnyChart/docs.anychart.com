@@ -75,11 +75,11 @@
     series_2.labels(false);
 
     // tooltip formatting
-    series_1.tooltip().textFormatter(function(){
+    series_1.tooltip().format(function(){
         return ("Employed international workers: "+this.size+ "%");
     });
 
-    series_2.tooltip().textFormatter(function(){
+    series_2.tooltip().format(function(){
         return ("Unemployed local workers: "+this.value+ "%");
     });
 

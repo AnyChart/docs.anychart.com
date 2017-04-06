@@ -60,29 +60,29 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 </tr>
 <tr>
 <td>Product 1 </td>
-<td> 637 </td>
-<td> $6 </td>
+<td>637 </td>
+<td>$6 </td>
 </tr>
 <tr>
 <td>Product 2 </td>
-<td> 472 </td>
-<td> $14 </td>
+<td>472 </td>
+<td>$14 </td>
 </tr>
 <tr>
 <td>Product 3 </td>
-<td> 48 </td>
-<td> $10 </td>
+<td>48 </td>
+<td>$10 </td>
 </tr>
 </tbody></table>
 
 Now we need to convert this data table into format acceptable by AnyChart javascript charting library. In terms of AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
 
 ```
-  var series = chart.bubble([
-      [1, 637, 6],
-      [2, 472, 14],
-      [3, 48, 10]
-  ]);
+var series = chart.bubble([
+    [1, 637, 6],
+    [2, 472, 14],
+    [3, 48, 10]
+]);
 ```
 
 As you can see, we've categorised chart using {api:anychart.charts.Scatter#bubble}**bubble()**{api} method, set parameters that defines categories in X-axis into first column, sales amount in Y-axis into second and parameter that defines bubble size (which is the same with the profit amount) into third one.
@@ -261,18 +261,9 @@ If you want to configure data labels and tooltips for all series - you should us
 With the following example let's make data labels appear to the top from each bubble, format them to show only the value corresponding to the bubble and force tooltips to show detailed description.
   
   
-When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter**{api} to choose the column we need to get information from.
+When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#format}format{api} to choose the column we need to get information from.
  
 {sample}BCT\_Bubble\_Chart\_09{sample}
-<!--
-**Related Help Topics:**
-
-Learn more about labels and tooltips in Labels and tooltips
-Full Keywords reference and formatting guide:Labels and tooltips
-Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> 
-nodes.
-to top
--->
 
 ## Markers
 

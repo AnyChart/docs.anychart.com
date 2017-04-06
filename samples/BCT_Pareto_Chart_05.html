@@ -21,10 +21,10 @@
 	chart = anychart.pareto(data);
 
 	// get the column series and format tooltip
-	chart.getSeriesAt(0).tooltip().textFormatter("Value: {%Value}");
+	chart.getSeriesAt(0).tooltip().format("Value: {%Value}");
 
 	// get the line series and format tooltip
-	chart.getSeriesAt(1).tooltip().textFormatter("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
+	chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
 
 	// set chart title text settings
 	chart.title("Pareto chart: tooltip configuration");

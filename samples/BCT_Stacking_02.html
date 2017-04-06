@@ -38,10 +38,10 @@
     chart.column(seriesData_3);
 
     // configure labels on the Y-axis
-    chart.yAxis().labels().textFormatter("{%Value}%");
+    chart.yAxis().labels().format("{%Value}%");
 
     // configure tooltips
-    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
+    chart.tooltip().format("{%yPercentOfCategory}{decimalCount:2}%");
  
     // set the chart title
     chart.title("Stacked Chart: Percent Mode");

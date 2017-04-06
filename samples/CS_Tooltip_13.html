@@ -42,8 +42,8 @@ var dataSet = anychart.data.set([
   series1.tooltip().allowLeaveChart(true);
   series2.tooltip().allowLeaveChart(false);
 
-  series1.tooltip().textFormatter("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
-  series2.tooltip().textFormatter("This tooltip is not able to be demonstrated out of the chart");
+  series1.tooltip().format("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
+  series2.tooltip().format("This tooltip is not able to be demonstrated out of the chart");
 
   // font settings for tooltip text
   var tooltip1 = series1.tooltip();
@@ -52,7 +52,7 @@ var dataSet = anychart.data.set([
   title1.fontWeight(900);
 
   // adjust chart tooltips for the third series
-  chart.tooltip().textFormatter("This series tooltips' settings are inherited from chart tooltip defaults");
+  chart.tooltip().format("This series tooltips' settings are inherited from chart tooltip defaults");
   
   // draw
   chart.container(stage);

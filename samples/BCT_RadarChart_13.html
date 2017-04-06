@@ -50,7 +50,7 @@
   var tooltip = series.tooltip();
   tooltip.fontWeight(400);
   // adjust tooltip content
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     return "Month: " + this.x +
       "\nSales: " + this.value + "$";
   });

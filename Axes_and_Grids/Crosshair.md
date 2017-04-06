@@ -71,12 +71,12 @@ crosshair.yLabel(false);
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#format}format(){api} to change the crosshair's labels' performance. 
 
 ```
 // set the label performance
 var yLabel = chart.crosshair().yLabel();
-yLabel.textFormatter(function() {
+yLabel.format(function() {
   return "$" + this.value;
 });
 ```
@@ -85,6 +85,6 @@ Here is the sample with customized both x and y crosshair labels.
 
 {sample}AGST\_Crosshair\_05{sample}
 
-As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
+As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#format}format(){api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
 
 {sample}AGST\_Crosshair\_06{sample}

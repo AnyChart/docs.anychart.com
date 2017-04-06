@@ -181,7 +181,7 @@ Here is a sample with the settings from above.
 
 {sample}CS\_Tooltip\_10{sample}
 
-The default content of a tooltip may vary for different chart types and series, but mainly it displays main points' properties: **x** and **value**. Check out the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method which is described in [Advanced Content Formatting](#advanced_content_formatting) section to find information about changing tooltip content.
+The default content of a tooltip may vary for different chart types and series, but mainly it displays main points' properties: **x** and **value**. Check out the {api:anychart.core.ui.Tooltip#format}format(){api} method which is described in [Advanced Content Formatting](#advanced_content_formatting) section to find information about changing tooltip content.
 
 ### Advanced Content Formatting
 
@@ -189,21 +189,21 @@ There are two parts of a tooltip that can hold some information: its title and i
 
 ### Title
 
-For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormatter}titleFormatter(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
+For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
 ```
-tooltip1.titleFormatter("Manager: {%x}");
+tooltip1.titleFormat("Manager: {%x}");
 ```
 
 {sample}CS\_Tooltip\_14{sample}
 
 ### Content
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#textFormatter}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#format}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();
-tooltip.textFormatter(function(){
+tooltip.format(function(){
   /* code of your function */
 });
 ```
@@ -216,7 +216,7 @@ The following sample demonstrates using tokens for formatting tooltips:
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
-tooltip.textFormatter("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
 ```
 
 {sample}CS\_Tooltip\_15{sample}
@@ -225,11 +225,11 @@ Use several formatting ways if there are some series on your chart or charts on 
 
 ```
 // set the tooltip title and text for the Column Chart
-columnChart.tooltip().titleFormatter("{%SeriesName}");
-columnChart.tooltip().textFormatter("Department: {%x} \nSum: {%Value}");
+columnChart.tooltip().titleFormat("{%SeriesName}");
+columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
 
 // set the tooltip content
-seriesSpline.tooltip().textFormatter(function(e){
+seriesSpline.tooltip().format(function(e){
   var value = (this.value)/1000000;
   return "Total: $" + value + "M";
 });

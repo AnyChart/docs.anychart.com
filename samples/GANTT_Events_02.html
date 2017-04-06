@@ -34,7 +34,7 @@
     firstColumn.title('System Engineering');
     firstColumn.width(140);
     firstColumn.cellTextSettings().hAlign('left');
-    firstColumn.textFormatter(function(item) {
+    firstColumn.format(function(item) {
       return item.get('name');
     });
     firstColumn.cellTextSettingsOverrider(labelTextSettingsOverrider);

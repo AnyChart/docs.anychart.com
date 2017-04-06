@@ -33,7 +33,7 @@ chart.splitterPosition(120);
 
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
-  secondColumn.textFormatter(function(item) {
+  secondColumn.format(function(item) {
     return item.get("name");
   });
 

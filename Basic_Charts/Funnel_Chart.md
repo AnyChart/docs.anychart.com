@@ -192,7 +192,7 @@ chart.connectorLength(45);
 
 {sample}BCT\_Funnel\_Chart\_07{sample}
 
-The content of the labels is adjusted with the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method. Read more about text formatting in the [Labels Text Formatting article](../Common_Settings/Labels#format_text).
+The content of the labels is adjusted with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. Read more about text formatting in the [Labels Text Formatting article](../Common_Settings/Labels#format_text).
 
 
 #### Overlapping

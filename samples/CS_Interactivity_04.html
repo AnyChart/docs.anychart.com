@@ -52,7 +52,7 @@
 
   var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
         series.name("Youth unemployment ratio in Nevada");
-        series.tooltip().textFormatter(function(){
+        series.tooltip().format(function(){
             return ("Ratio: "+this.value+"%");
         });
 

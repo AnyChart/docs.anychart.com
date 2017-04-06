@@ -54,9 +54,9 @@ anychart.onDocumentReady(function () {
 
     // format the tooltips
     series_acme.tooltip({title: false, separator: false});
-    series_acme.tooltip().textFormatter("Yearly profit: ${%value}m");
+    series_acme.tooltip().format("Yearly profit: ${%value}m");
     series_citrus.tooltip({title: false, separator: false});
-    series_citrus.tooltip().textFormatter("Yearly profit: ${%value}m");
+    series_citrus.tooltip().format("Yearly profit: ${%value}m");
 
     // turn off labels
     series_acme.labels(false);

@@ -34,7 +34,7 @@
 
   // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
   var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(value) {
+  yLabels.format(function(value) {
     var date = new Date(value["value"]);
     var options = {year: "numeric"};
     return date.toLocaleDateString("en-US", options);

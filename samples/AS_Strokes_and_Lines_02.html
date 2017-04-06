@@ -63,7 +63,7 @@
 
   // adjust tooltip
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
+  tooltip.format(function(){
     return this.x + ", " + this.value + "%";
   });
   tooltip.fontColor("white");
@@ -83,7 +83,7 @@
   var yLabels = chart.yAxis().labels();
   yLabels.fontColor("white");
   yLabels.fontWeight(900);
-  yLabels.textFormatter(function() {
+  yLabels.format(function() {
     return this.value + " %";
   });
 

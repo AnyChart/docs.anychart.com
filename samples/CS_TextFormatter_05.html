@@ -30,7 +30,7 @@
   columnSeries.name("Income");
 
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.textFormatter(formatter);
+  columnTooltip.format(formatter);
 
   var lineSeries = chart.line([
     ["A", 95.073],
@@ -43,7 +43,7 @@
 
   // formatting through function
   var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter(function(){
+  lineTooltip.format(function(){
     return "Income: " + this.value + "%";
   });
 

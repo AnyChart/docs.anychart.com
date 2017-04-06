@@ -62,7 +62,7 @@ map.geoData(anychart.maps.australia);
 series_connector.markers(false);
 
 // tooltip formatter
-series_connector.tooltip().textFormatter("From: {%from} \nTo: {%to} \nPassengers (in 2013): {%passengers}");
+series_connector.tooltip().format("From: {%from} \nTo: {%to} \nPassengers (in 2013): {%passengers}");
 
 // set the start and end sizes
 series_connector.startSize(15);
@@ -77,7 +77,7 @@ series_connector.selectFill("#006666");
 series_connector.selectStroke("#336666")
 
 // adjust marker series tooltips
-series_marker.tooltip().titleFormatter("{%name}");
+series_marker.tooltip().titleFormat("{%name}");
 series_marker.labels().fontColor("#000");
 
 series_marker.fill("#336666");

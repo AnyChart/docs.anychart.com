@@ -115,7 +115,7 @@ In the sample below, there is a Column chart with labels enabled on the whole se
 series.labels(true);
 series.labels().fontColor("green");
 series.labels().fontWeight(900);
-series.labels().textFormatter("${%value}");
+series.labels().format("${%value}");
 ```
 
 The next sample shows how to configure labels in particular points:
@@ -126,8 +126,8 @@ The next sample shows how to configure labels in particular points:
 // create data, enable and configure labels
 var data = [
   {x: "John", value:10000},
-  {x: "Jake", value:12000, label:{enabled:true, fontColor:"green", fontWeight:900, textFormatter:"${%value}"}},
-  {x: "Peter", value:13000, label:{enabled:true, fontColor:"red", fontWeight:900, textFormatter:"${%value}"}},
+  {x: "Jake", value:12000, label:{enabled:true, fontColor:"green", fontWeight:900, format:"${%value}"}},
+  {x: "Peter", value:13000, label:{enabled:true, fontColor:"red", fontWeight:900, format:"${%value}"}},
   {x: "James", value:10000},
   {x: "Mary", value:9000}
 ];
@@ -146,7 +146,7 @@ In this sample, there is a Column chart with two series, and tooltips are config
 ```
 // configure tooltips on the chart
 chart.tooltip().title("Information");
-chart.tooltip().textFormatter("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
+chart.tooltip().format("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_06{sample}
@@ -156,11 +156,11 @@ Here tooltips are configured on each series separately, and the tooltip text on 
 ```
 // configure tooltips on the first series
 series1.tooltip().title("Last Year");
-series1.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
+series1.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
 
 // configure tooltips on the second series
 series2.tooltip().title("This Year");
-series2.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
+series2.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_07{sample}

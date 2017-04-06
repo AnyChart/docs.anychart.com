@@ -47,14 +47,14 @@
 
   // yAxes labels text adjusting
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(function(){
+  yLabels.format(function(){
     var value = (this.value/1000000000000);
     if (value > 0)
       value = (this.value/1000000000000) + " 000 bil.";
     return "$" + value;
   });
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.textFormatter(function(){
+  yLabels1.format(function(){
     return this.value + "%";
   });
 
@@ -236,10 +236,10 @@
   columnSeries.hoverFill(["#FF0000", "#880000"], -90);
 
   var tooltip = chart.tooltip();
-  tooltip.titleFormatter(function(){
+  tooltip.titleFormat(function(){
     return "Year: " + this.points[0].x;
   });
-  tooltip.unionTextFormatter(function(){
+  tooltip.unionFormat(function(){
     var gdp = "GDP - " + this.points[0].value + "%";
     var debt = (this.points[1].value / 1000000000).toFixed(0);
     if (debt > 999)

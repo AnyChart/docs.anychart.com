@@ -39,16 +39,15 @@
     var series = map.bubble(dataSet);
 
     //set series geo id field settings
-    series.geoIdField("code_hasc");
-    series.labels().textFormatter(function(){
+    series.labels().format(function(){
       return (this.id);
     });
 
-    series.tooltip().textFormatter(function(){
+    series.tooltip().format(function(){
       return (this.size + "th of tourists");
     });
 
-    series.tooltip().titleFormatter(function(){
+    series.tooltip().titleFormat(function(){
       return (this.id);
     });
 

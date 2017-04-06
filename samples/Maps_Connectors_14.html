@@ -25,7 +25,7 @@
     // required for custom projections and grid labels formatting.
     // See http://docs.anychart.com/latest/Maps/Map_Projections
 
-customTheme = {chart: {defaultSeriesSettings: {base: {tooltip: {textFormatter:"{%SeriesName}",titleFormatter:"{%Name}"}}}}};
+customTheme = {chart: {defaultSeriesSettings: {base: {tooltip: {format:"{%SeriesName}",titleFormat:"{%Name}"}}}}};
 anychart.theme(customTheme);
 
 // create map chart

@@ -47,7 +47,7 @@
   
   // format tooltip content
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(e){
+  tooltip.format(function(e){
     // tooltip text
     return "Value: " + this.value + "\nAverage: " + e.getStat("seriesAverage").toFixed(2);
   });

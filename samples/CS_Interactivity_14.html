@@ -85,7 +85,7 @@
         var lineSubTitle;
         var lineSeries = lineChart.line(lineDataSet);
 
-        lineChart.tooltip().textFormatter(function() {
+        lineChart.tooltip().format(function() {
             var text = 'Sales amount: $' + this.points[0].value;
             return text;
         });
@@ -120,7 +120,7 @@
             lineChart.addSeries.apply(lineChart, myData);
 
             lineChart.title(lineTitle + lineSubTitle);
-            lineChart.tooltip().textFormatter(function() {
+            lineChart.tooltip().format(function() {
                 var text = 'Sales amount: $' + this.points[0].value;
                 return text;
             });

@@ -60,7 +60,7 @@
 	extraYAxis.orientation("right");
 	extraYAxis.scale(scale);
 	var extraYLabels = chart_1.yAxis().labels();
-	extraYLabels.textFormatter(function(){
+	extraYLabels.format(function(){
 		return this.tickValue+"%";
 	});
 

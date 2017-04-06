@@ -42,7 +42,7 @@
   tooltip1.title("Information");
 
   // set and adjust tooltip content
-  tooltip1.textFormatter(function() {
+  tooltip1.format(function() {
     return "Sales: Product " + this.x +
       "\nUnit: " + this.value + "\nYear: 2003" +
       "\nProfit: $" + this.size;
@@ -62,14 +62,14 @@
   labels2.position("top");
   labels2.fontSize(15);
   labels2.fontWeight("bold");
-  labels2.textFormatter("{%Value}");
+  labels2.format("{%Value}");
 
   // set tooltip title
   var tooltip2 = series2.tooltip();
   tooltip2.title("Information");
 
   // set and adjust tooltip content
-  tooltip2.textFormatter(function() {
+  tooltip2.format(function() {
     return "Sales: Product " + this.x + 
       "\nUnit: " + this.value + "\nYear: 2004" + 
       "\nProfit: $" + this.size;

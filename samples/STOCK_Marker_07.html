@@ -112,11 +112,11 @@ anychart.onDocumentReady(function() {
     series_uk.size(7);
 
     // tooltip formatter
-    series_usa.tooltip().textFormatter(function(e){
+    series_usa.tooltip().format(function(e){
         if (this.value !== null) return "USA population growth: " + e.getDataValue("value")
             else return "USA population growth: no data"
     });
-    series_uk.tooltip().textFormatter("UK population growth: {%Value}");
+    series_uk.tooltip().format("UK population growth: {%Value}");
 
     // crosshair settings
     chart.plot(0).dateTimeHighlighter("#999", 1.5, "6 2", "round");

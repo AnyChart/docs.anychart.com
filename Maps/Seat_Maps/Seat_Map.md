@@ -163,20 +163,20 @@ To configure labels and tooltips, use the {api:anychart.charts.Map#label}label()
 // enable labels and adjust them
 labels.enabled(false);
 series.labels({fontSize: 10});
-labels.textFormatter("{%id} \n{%info} \n{%sq}");
+labels.format("{%id} \n{%info} \n{%sq}");
 ```
 
 {sample}Maps\_Seat\_06{sample}
 
-To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.ChartTooltip#format}format(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
 ```
 // set the tooltips
 tooltips = series.tooltip();
 
 // set the tooltips titles and body texts
-tooltips.titleFormatter("{%id}");
-tooltips.textFormatter("{%info}");
+tooltips.titleFormat("{%id}");
+tooltips.format("{%info}");
 
 // set the tooltips colors
 tooltips.background("green 0.8");

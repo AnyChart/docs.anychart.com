@@ -32,7 +32,7 @@
   customColumn.title("Duration");
   customColumn.width(120);
   // Sets column formats.
-  customColumn.textFormatter(customColumnTextFormatter);
+  customColumn.format(customColumnFormat);
 
   var columnStyle = customColumn.cellTextSettings();
   columnStyle.useHtml(true);
@@ -43,7 +43,7 @@
   chart.fitAll();
 
   //define a custom content with actual start values
-  function customColumnTextFormatter(item){
+  function customColumnFormat(item){
     var start = item.get("actualStart");
     var end = item.get("actualEnd");
     var duration = end - start;

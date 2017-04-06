@@ -39,14 +39,14 @@ m<html>
   yAxis.minorTicks(false);
 
   // set y axis labels position and format content
-  chart.yAxis().labels().offsetX(12).textFormatter("{%Value}{useNegativeSign:false}");
+  chart.yAxis().labels().offsetX(12).format("{%Value}{useNegativeSign:false}");
 
   var xLabels = chart.xAxis().labels();
   // set labels padding
   xLabels.padding(5);
   // set font weight for labels
   xLabels.fontWeight(900);
-  xLabels.textFormatter("{%Value}°");
+  xLabels.format("{%Value}°");
 
   // set data for first series
   var series1 = chart.line([

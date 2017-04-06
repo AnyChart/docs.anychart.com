@@ -43,11 +43,11 @@
     var labels_1 = series_1.labels();
     var labels_2 = series_2.labels();
      
-    // textFormatter
-    labels_1.textFormatter(function(){
+    // format
+    labels_1.format(function(){
         return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
-    labels_2.textFormatter(function(){
+    labels_2.format(function(){
         return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     
@@ -65,7 +65,7 @@
     var xAxis = chart.xAxis();
     xAxis.title("Day");
     var xLabels = chart.xAxis().labels();
-    xLabels.textFormatter(function(value){
+    xLabels.format(function(value){
         var date = new Date(value["tickValue"]);
         var options = {
             month: "short",

@@ -49,23 +49,20 @@ anychart.onDocumentReady(function () {
     var series_id = australiaMap.marker(dataSet_id);
 
     // format the tooltips of the lat_long series    
-    series_lat_long.tooltip().titleFormatter(function(){
+    series_lat_long.tooltip().titleFormat(function(){
         return this.getDataValue("name");
     });
-    // series_lat_long.tooltip().textFormatter(function(){
-    //     return "Yearly profit: $" + this.getDataValue("value") + "m";
-    // });
 
-    series_lat_long.tooltip().textFormatter("Yearly profit: ${%value}m");
+    series_lat_long.tooltip().format("Yearly profit: ${%value}m");
 
     // format the tooltips of the id-defined series    
-    series_id.tooltip().titleFormatter(function(){
+    series_id.tooltip().titleFormat(function(){
         return this.name;
     });
-    series_id.tooltip().textFormatter("Sheep farms: {%farms}");
+    series_id.tooltip().format("Sheep farms: {%farms}");
 
     //format the labels of the id-defined series
-    series_id.labels().textFormatter(function(e){
+    series_id.labels().format(function(e){
       return this.name;
     });
 

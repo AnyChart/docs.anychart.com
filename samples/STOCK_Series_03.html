@@ -154,7 +154,7 @@
     plot_line_ohlc.xAxis(false);
 
     // legend formatter
-    plot_line_ohlc.legend().itemsTextFormatter(function(e){
+    plot_line_ohlc.legend().itemsFormat(function(e){
         var name = this.seriesName;
         var value = Math.round(this.value);
         return(name + ": " + value);

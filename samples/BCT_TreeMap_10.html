@@ -33,11 +33,11 @@
     // tooltips settings
     chart.tooltip(true);
     chart.tooltip().positionMode('point');
-    chart.tooltip().titleFormatter("{%name}");
-    chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
+    chart.tooltip().titleFormat("{%name}");
+    chart.tooltip().format("Income from export in 2012: $ {%Value}B");
 
     // tune labels
-    chart.labels().textFormatter("{%name}");
+    chart.labels().format("{%name}");
 
     var data = [
         {name: "Europe", id: "Europe", parent: null},

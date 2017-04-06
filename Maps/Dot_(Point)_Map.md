@@ -117,14 +117,14 @@ We can edit the appearance of our map as we want. We can change the color of the
 We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}labels(){api} and {api:anychart.core.map.series.Marker#tooltip}tooltip(){api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
 
 ```
-    // format the tooltips
-    series_acme.tooltip({title: false, separator: false});
-    series_acme.tooltip().textFormatter("Yearly profit: ${%value}");
+// format the tooltips
+series_acme.tooltip({title: false, separator: false});
+series_acme.tooltip().format("Yearly profit: ${%value}");
 
-    // format the labels
-    series_acme.labels().fontSize(10)
-    series_acme.labels().fontColor("#000");
-    series_acme.labels().fontFamily("Georgia");
+// format the labels
+series_acme.labels().fontSize(10)
+series_acme.labels().fontColor("#000");
+series_acme.labels().fontFamily("Georgia");
 ```
 {sample}Maps\_Marker\_05{sample}
 

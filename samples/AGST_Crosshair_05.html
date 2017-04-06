@@ -17,11 +17,11 @@
 
   // set the label performance
   var yCrossLabel = chart.crosshair().yLabel();
-  yCrossLabel.textFormatter(function() {
+  yCrossLabel.format(function() {
     return this.value + "min.";
   });
   var xCrossLabel = chart.crosshair().xLabel();
-  xCrossLabel.textFormatter(function(){
+  xCrossLabel.format(function(){
     return this.value + "min."
   });
 
@@ -277,7 +277,7 @@
   marker.hoverSize(7);
   marker.hoverFill("red");
   var tooltip = marker.tooltip();
-  tooltip.textFormatter(function() {
+  tooltip.format(function() {
     return "Waiting Time: " + this.value + " min.\nDuration: " + this.x + " min.";
   });
       

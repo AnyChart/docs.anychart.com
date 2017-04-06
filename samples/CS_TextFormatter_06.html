@@ -42,15 +42,15 @@
   series_winter.name("Winter");
   series_summer.name("Summer");
   
-  // set textFormatter
+  // set format
   var labels_winter = series_winter.labels();
   labels_winter.enabled(true);
-  labels_winter.textFormatter(function(){
+  labels_winter.format(function(){
       return(this.seriesName + ": $" + this.value);
   });
   var labels_summer = series_summer.labels();
   labels_summer.enabled(true);
-  labels_summer.textFormatter(function(){
+  labels_summer.format(function(){
       return(this.seriesName + ": $" + this.value);
   });
   

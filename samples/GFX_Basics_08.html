@@ -68,7 +68,7 @@
 // second series data
     series = chart.bar(days_off);
     series.name("Days off");
-    series.labels().textFormatter(function () {
+    series.labels().format(function () {
         if (this.index == 2) return "Let's go party!";
         return this.value;
     });

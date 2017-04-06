@@ -44,8 +44,8 @@ function createSeatMap(svg){
     tooltips = seatMapSeries.tooltip();
 
     // set the tooltips titles and body texts
-    tooltips.titleFormatter("{%id}");
-    tooltips.textFormatter("{%info}");
+    tooltips.titleFormat("{%id}");
+    tooltips.format("{%info}");
 
     // set the tooltips colors
     tooltips.background("green 0.8");

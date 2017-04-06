@@ -33,7 +33,7 @@
   labels.hAlign("center");
   labels.position("outside");
   labels.useHtml(true);
-  labels.textFormatter(function() {
+  labels.format(function() {
     return "<a style='text-decoration: underline; font-weight: 900;'>" + this.x + " — " + this.value + "%</a>" + customAttributes[this.x];
   });
   

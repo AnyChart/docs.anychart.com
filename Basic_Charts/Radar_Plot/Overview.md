@@ -170,7 +170,7 @@ var chart = anychaty.radarChart();
 var xLabels = chart.xAxis().labels();
 xLabels.useHtml(true);
 // set labels content
-xLabels.textFormatter("<b>{%Value}</b>");
+xLabels.format("<b>{%Value}</b>");
 ```
 
 {sample}BCT\_RadarChart\_09{sample}
@@ -255,14 +255,14 @@ var labels = series.labels();
 // enables labels
 labels.enabled(true);
 // setting content
-labels.textFormatter(function(point){
+labels.format(function(point){
   return point.x;
 });
 
 // setting tooltips
 var tooltip = series.tooltip();
 // setting content
-tooltip.textFormatter("{%x}");
+tooltip.format("{%x}");
 ```
 
 Sample below has more complex tooltip than snippet above. Click 'Launch in playground' to see format settings of a tooltip.

@@ -33,7 +33,7 @@
   var valueColumn = treeDataGrid.column(2);
   valueColumn.title().text("Value");
   valueColumn.width(100);
-  valueColumn.textFormatter(function(item) {
+  valueColumn.format(function(item) {
     return item.get("value");
   });
   // create new button

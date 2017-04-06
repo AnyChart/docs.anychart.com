@@ -53,12 +53,12 @@ crosshair.yLabel(false);
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#format}format(){api} to change the crosshair's labels' performance. 
 
 ```
 // set the label formatting
 var yLabel = map.crosshair().yLabel();
-yLabel.textFormatter(function() {
+yLabel.format(function() {
 	return "Lon:" + this.value;
 });
 ```

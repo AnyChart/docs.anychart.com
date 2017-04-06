@@ -201,11 +201,11 @@ chart.labels().position('outsideRight');  // place labels to the right
 chart.connectorLength(45);    // set 45px connectors length
 ```
 
-These settings set each label's position as 45px to the right from each pyramid point. The {api:anychart.ui.LabelsFactory#textFormatter}textFormatter(){api} method is to be used for adjusting the labels' content.
+These settings set each label's position as 45px to the right from each pyramid point. The {api:anychart.ui.LabelsFactory#format}format(){api} method is to be used for adjusting the labels' content.
 
 ```
 // format the labels text
-chart.labels().textFormatter("{%name}: {%Value}");
+chart.labels().format("{%name}: {%Value}");
 ```
 
 {sample}BCT\_Pyramid\_Chart\_08{sample}

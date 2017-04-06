@@ -50,8 +50,8 @@
   var labels = series.labels();
   labels.enabled(true);
    
-  // usage of textFormatter
-  labels.textFormatter(function(){
+  // format labels
+  labels.format(function(){
     return(this.getDataValue("extra_inf"));
   });
 

@@ -33,12 +33,12 @@
   dataGrid.column(0).collapseExpandButtons(true);
 
   // settings for the first column
-  dataGrid.column(0).width(25).textFormatter(function(item) {
+  dataGrid.column(0).width(25).format(function(item) {
     return "";
   }).title().text("#");
   
   // settings for the second column
-  dataGrid.column(1).width(135).textFormatter(function(item) {
+  dataGrid.column(1).width(135).format(function(item) {
     return item.get("name");
   }).title().text("Plan");
 

@@ -94,7 +94,7 @@
     // set data
     var scatterSeries = scatterChart.line(data);
     scatterSeries.tooltip().enabled(false);
-    scatterSeries.labels().enabled(true).fontSize(9).textFormatter(function(){
+    scatterSeries.labels().enabled(true).fontSize(9).format(function(){
         return view.get(
             this.index, "point"
   )});

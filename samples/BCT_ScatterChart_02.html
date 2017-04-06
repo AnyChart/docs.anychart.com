@@ -24,7 +24,7 @@
       .interval(50);
 
   // adjust y axis labels representation
-  chart.yAxis().labels().textFormatter("{%Value}%");
+  chart.yAxis().labels().format("{%Value}%");
 
   chart.yAxis().title().text("Job Growth");
 
@@ -36,7 +36,7 @@
       .interval(10000);
 
   // adjust x axis labels representation
-  chart.xAxis().labels().textFormatter("${%Value}");
+  chart.xAxis().labels().format("${%Value}");
 
   chart.xAxis().title("Wages");
 

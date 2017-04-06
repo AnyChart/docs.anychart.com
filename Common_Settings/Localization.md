@@ -64,10 +64,10 @@ anychart.format.outputDateTimeFormat('dd MMM');
 You can also tune any output in tooltips or labels formatters using {api:anychart.format#dateTime}dateTime(){api} and {api:}number(){api} methods:
 
 ```
-chart.xAxis().labels().textFormatter(function () {
+chart.xAxis().labels().format(function () {
     return anychart.format.dateTime(this.value, 'MMM', -8 * 60, locale);
 });
-chart.tooltip().titleFormatter(function () {
+chart.tooltip().titleFormat(function () {
     return anychart.format.dateTime(this.points[0].x, format, -8 * 60, locale);
 });
 ```

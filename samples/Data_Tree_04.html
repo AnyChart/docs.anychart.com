@@ -32,7 +32,7 @@
   var column2004 = treeDataGrid.column(2);
   column2004.title().text("Year 2004");         // set title for the second column
   column2004.width(100);                        // set width for the second column
-  column2004.textFormatter(function(item) {     // format data
+  column2004.format(function(item) {     // format data
     return item.get("year 2004");               // set name of the field with required data
   });
 
@@ -41,7 +41,7 @@
   var column2005 = treeDataGrid.column(3);
   column2005.title().text("Year 2005");         // set title for the third column
   column2005.width(100);                        // set width for the third column
-  column2005.textFormatter(function(item) {     // format data
+  column2005.format(function(item) {     // format data
     return item.get("year 2005");               // set name of the field with required data
   });
 

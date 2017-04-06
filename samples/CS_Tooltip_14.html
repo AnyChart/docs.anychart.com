@@ -51,14 +51,14 @@
   var tooltip4 = series4.tooltip();
   var tooltip5 = series5.tooltip();
 
-  tooltip1.titleFormatter("Manager: {%x}");
-  tooltip2.titleFormatter(titleFormatterFunction);
-  tooltip3.titleFormatter(titleFormatterFunction);
-  tooltip4.titleFormatter(titleFormatterFunction);
+  tooltip1.titleFormat("Manager: {%x}");
+  tooltip2.titleFormat(titleFormatFunction);
+  tooltip3.titleFormat(titleFormatFunction);
+  tooltip4.titleFormat(titleFormatFunction);
 
-  tooltip5.titleFormatter(
+  tooltip5.titleFormat(
     // get formatting function of the first series tooltip
-    tooltip4.titleFormatter()
+    tooltip4.titleFormat()
   );
 
   tooltipSettings(tooltip1);
@@ -67,7 +67,7 @@
   tooltipSettings(tooltip4);
   tooltipSettings(tooltip5);
 
-  function titleFormatterFunction(){
+  function titleFormatFunction(){
     return "Manager of this store is " + this.x
   }
 

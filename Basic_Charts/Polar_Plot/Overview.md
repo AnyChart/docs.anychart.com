@@ -150,14 +150,14 @@ AnyChart allows to customise Axes Labels in any required way. Below there is a s
 var chart = anychart.polar();
 
 // set y axis labels position and format content
-chart.yAxis().labels().offsetX(12).textFormatter("{%Value}{useNegativeSign:false}");
+chart.yAxis().labels().offsetX(12).format("{%Value}{useNegativeSign:false}");
 
 var xLabels = chart.xAxis().labels();
 // set labels padding
 xLabels.padding(5);
 // set font weight for labels
 xLabels.fontWeight(900);
-xLabels.textFormatter("{%Value}°");
+xLabels.format("{%Value}°");
 ```
 
 {sample}BCT\_PolarChart\_07{sample}
@@ -235,7 +235,7 @@ In this section we will explain how to add and configure data labels and tooltip
 
 Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.
 
-When formatting tooltips, we use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} to adjust source of content and visual appearance. To control labels’ position use {api:anychart.core.ui.Label#position}position(){api} parameter.
+When formatting tooltips, we use {api:anychart.core.ui.Tooltip#format}format(){api} to adjust source of content and visual appearance. To control labels’ position use {api:anychart.core.ui.Label#position}position(){api} parameter.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
@@ -256,7 +256,7 @@ labels.fontWeight(900);
 
 // format tooltip content
 var tooltip = series.tooltip();
-tooltip.textFormatter(function(e){
+tooltip.format(function(e){
   // tooltip text
   return "Value: " + this.value + "\nAverage: " + e.getStat("seriesAverage").toFixed(2);
 });

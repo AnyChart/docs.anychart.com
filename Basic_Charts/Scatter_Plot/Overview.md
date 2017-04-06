@@ -253,7 +253,7 @@ If you want to configure data labels and tooltips for all series - you should us
 
 ```
 // set labels
-chart.bubble(data).labels().textFormatter("{%Name}");
+chart.bubble(data).labels().format("{%Name}");
 ```
 
 {sample}BCT\_ScatterChart\_08{sample}

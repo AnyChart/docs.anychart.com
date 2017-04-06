@@ -42,7 +42,7 @@
     thirdColumn.title('Start Time');
     thirdColumn.width(70);
     thirdColumn.cellTextSettings().hAlign('right');
-    thirdColumn.textFormatter(function (item) {
+    thirdColumn.format(function (item) {
         var actStart = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
         var date = new Date(actStart || item.meta('autoStart'));
         var month = date.getUTCMonth() + 1;
@@ -57,7 +57,7 @@
     fourthColumn.title('End Time');
     fourthColumn.width(80);
     fourthColumn.cellTextSettings().hAlign('right');
-    fourthColumn.textFormatter(function (item) {
+    fourthColumn.format(function (item) {
         var actEnd = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
         var date = new Date(actEnd || item.meta('autoEnd'));
         var month = date.getUTCMonth() + 1;

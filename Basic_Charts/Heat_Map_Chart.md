@@ -200,7 +200,7 @@ var chart = anychart.heatMap(dataSet);
 var labels = chart.labels();
 // enable labels
 labels.enabled(true);
-labels.textFormatter(function(){
+labels.format(function(){
   // get heat parameter of the point
   var value = (this.heat).toFixed(0);
   return "$" + value
@@ -231,8 +231,8 @@ chart = anychart.heatMap(dataSet);
 var tooltip = chart.tooltip();
 var title = tooltip.title();
 title.hAlign("center");
-tooltip.titleFormatter("{%y}");
-tooltip.textFormatter(function(){
+tooltip.titleFormat("{%y}");
+tooltip.format(function(){
   return "Month: " + this.x + "\nOpens: " + this.heat + "%";
 });
 ```
