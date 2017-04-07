@@ -5,7 +5,7 @@
 * [Quick Start](#quick_start)
 * [Grids](#grids)
 * [DateTime Scale](#datetime_scale)
-* [Scatter Chart with Error Bars](#scatter_сhart_with_error_bars)
+* [Scatter Charts with Error Bars](#scatter_сharts_with_error_bars)
 * [Drawing Tools and Annotations](#drawing_tools_and_annotations)
 * [Supported Types](#supported_types)
 
@@ -119,7 +119,9 @@ chart.xScale(dateScale);
 
 {sample}BCT\_Scatter\_Chart\_03{sample}
 
-## Scatter Chart with Error Bars
+## Scatter Charts with Error Bars
+
+(*) Как заголовок? Пытаюсь избежать нелюбимого тобой слова plot. Правда, в заголовках примеров оно используется. Но там выхода нет: я везде делаю так, чтобы первая часть заголовка примера совпадала с заголовком статьи.
 
 Есть такая фича, как Error Chart. Ее можно и нужно применять в скаттерах, особенно, когда они используются для изображения каких-либо результатов или измерений.
 
