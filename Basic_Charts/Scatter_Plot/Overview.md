@@ -5,7 +5,7 @@
 * [Quick Start](#quick_start)
 * [Grids](#grids)
 * [DateTime Scale](#datetime_scale)
-* [Scatter Charts with Error Bars](#scatter_сharts_with_error_bars)
+* [Scatter Charts with Error Bars](#scatter_charts_with_error_bars)
 * [Drawing Tools and Annotations](#drawing_tools_and_annotations)
 * [Supported Types](#supported_types)
 
@@ -15,7 +15,7 @@ In AnyChart you can create scatter charts by using the Scatter chart constructor
 
 Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-To learn more about the difference between Scatter and Cartesian charts, read the [Scatter vs. Cartesian](../Architecture/Scatter_vs_Cartesian) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
+To learn more about the difference between Scatter and Cartesian charts, read the [Scatter vs. Cartesian](../../../Architecture/Scatter_vs_Cartesian) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
 
 ## Quick Start
 
@@ -68,11 +68,11 @@ chart.draw();
 
 ## Grids
 
-As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Cartesian#grid}grid(){api} and {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} methods to create a major and a minotr grid. The appearence of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Cartesian#grid}grid(){api} and {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} methods to create a major and a minor grid. The appearence of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
 
 (*) ссылки на апи правильные?
 
-For more information, see this section: [Grids (Axes and Grids)](../Axes and Grids/Axis_Basics#grids).
+For more information, see this section: [Grids (Axes and Grids)](../../Axes and Grids/Axis_Basics#grids).
 
 (*) нормально, что в тексте ссылки пишу название секции, а в скобках, даже не название статьи - а название сразу всего раздела? название статьи мне не нравится тупо.
 
