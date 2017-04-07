@@ -28,14 +28,6 @@
     // create a marker series and set the data
     var series = chart.marker(data);
     
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
-
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
-
     // create a dateTime scale
     var dateScale = anychart.scales.dateTime();
 
@@ -48,7 +40,7 @@
 
     // configure labels on the X-axis
     var xLabels = chart.xAxis().labels();
-    xLabels.textFormatter(function(value) {
+    xLabels.format(function(value) {
       var date = new Date(value["tickValue"]);
       var options = {year: "numeric"};
       return date.toLocaleDateString("en-US", options);
@@ -56,6 +48,14 @@
 
     // disable tooltips
     series.tooltip(false);
+
+    // create major grids and bind them to the X and Y axes
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
+
+    // create minor grids and bind them to the X and Y axes
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
     chart.title("Scatter Plot: DateTime Scale");

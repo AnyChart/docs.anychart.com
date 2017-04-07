@@ -28,6 +28,13 @@
     // create a marker series and set the data
     var series = chart.marker(data);
 
+    // create and configure error bars
+    var error = series.error();
+    error.xLowerError("1%");
+    error.xUpperError("6%");
+    error.valueUpperError("2%");
+    error.valueLowerError("4%");
+
     // create major grids and bind them to the X and Y axes
     chart.grid(0).axis(chart.xAxis());
     chart.grid(1).axis(chart.yAxis());
@@ -37,7 +44,7 @@
     chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
-    chart.title("Scatter Plot: Error Chart");
+    chart.title("Scatter Plot: Error Bars");
 
     // set the container id
     chart.container("container");
