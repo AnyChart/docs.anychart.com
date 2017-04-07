@@ -4,43 +4,46 @@
 * [Quick Start](#quick_start)
 * [Grids](#onthefly)
 * [DateTime Scale](#datetime_scale)
-* [Error Chart](#error_chart)
+* [Scatter Chart with Error Bars](#ыcatter_сhart_with_error_bars)
 * [Drawing Tools and Annotations](#drawing_tools_and_annotations)
 * [Supported Types](#supported_types)
 
 ## Overview
 
-Отличие scatter chart constructor от картезиана состоит в том, что при первичной обработке данных точки в скаттере берутся как есть (as is): набор аргументов одной серии никак не влияет на набор аргументов другой серии. В скаттер-плоте точки будут отображаться всегда в том порядке, в котором вы их задали; линии могут быть вертикальными и самопересекаться. В картезиан-графиках точки всегда evenly distributed, а в скаттере они распределяются согласно значению. О разнице скаттера и картезиана вы можете почитать в статье [Scatter vs. Cartesian](../Architecture/Scatter_vs_Cartesian).
+In AnyChart you can create scatter charts by using the Scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the Scatter constructor distributes points according to their values.
 
-Обычно используется, когда нужно отобразить результаты каких-то математических вычислений или физических экспериментов.
+Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-+ поддерживаемые типы, что написано в этой статье
-
-...
+To learn more about the difference between Scatter and Cartesian charts, read the [Scatter vs. Cartesian](../Architecture/Scatter_vs_Cartesian) article. See also the [Supported Types](#supported types) section to find the list of supported series types.
 
 ## Quick Start
 
-чарт конструктор
-серии (не перечислять, дать ссылку на энумы)
+To create a Scatter chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then create one of the {api:anychart.enums.ScatterSeriesType}supported series types{api}.
+
+(*) ссылка наверное выглядит некрасиво, т.к. оформлена как ссылка на апи, устраивает?
+
+In the sample below, there are two series, Marker and Line, created by the {api:anychart.charts.Cartesian#marker}marker(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods:
+
+(*) правильные ли ссылки на методы?
 
 ```
 // create data for the first series
 var data_1 = [
-{x: 0.6, value: 22},
-{x: 3.9, value: 74},
-{x: 4, value: 68},
-{x: 4, value: 76},
-{x: 3.5, value: 80},
-{x: 4.1, value: 84},
-{x: 2.3, value: 50},
-{x: 4.7, value: 93},
-{x: 1.7, value: 55}
+  {x: 0.6, value: 22},
+  {x: 3.9, value: 74},
+  {x: 4, value: 68},
+  {x: 4, value: 76},
+  {x: 3.5, value: 80},
+  {x: 4.1, value: 84},
+  {x: 2.3, value: 50},
+  {x: 4.7, value: 93},
+  {x: 1.7, value: 55}
 ];
 
 // create data for the second series
 var data_2 = [
-{x: 0.5, value: 17.5},
-{x: 4.75, value: 100}
+  {x: 0.5, value: 17.5},
+  {x: 4.75, value: 100}
 ];
 
 // create a chart
@@ -64,8 +67,15 @@ chart.draw();
 
 ## Grids
 
-Когда вы рисуете скаттер, вам скорее всего захочется задать гриды...
-ссылка на статью про гриды
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Cartesian#grid}grid(){api} method to create a major grid and {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} to create a minor grid. The appearence of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
+
+(*) ссылки на апи правильные?
+
+For more information, see this section: [Grids (Axes and Grids)](../Axis and Grids/Axis_Basics#grids).
+
+(*) нормально, что в тексте ссылки пишу название секции, а в скобках, даже не название статьи - а название сразу всего раздела? название статьи мне не нравится тупо.
+
+The sample below shows how to create minor and major grids and configure their strokes:
 
 ```
 // create major grids and bind them to the X and Y axes
@@ -93,7 +103,6 @@ chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 Скаттеры также могут использоваться с временными шкалами, см. статью про временные шкалы.
 Используются такие-то методы...
 Вот пример, как сделать одну из шкал временной:
-(форматирование лейблов в код не включать)
 
 ```
 // create a dateTime scale
@@ -109,9 +118,7 @@ chart.xScale(dateScale);
 
 {sample}BCT\_Scatter\_Chart\_03{sample}
 
-## Error Chart
-
-Scatter Chart with Error Bars
+## Scatter Chart with Error Bars
 
 Есть такая фича, как Error Chart. Ее можно и нужно применять в скаттерах, особенно, когда они используются для изображения каких-либо результатов или измерений.
 + кратко сказать, как задается error bar
@@ -163,6 +170,8 @@ ellipse.allowEdit(false);
 // disable interactivity for the rectangle annotation
 rectangle.allowEdit(false);
 ```
+
+(*) нормально ли все сделано и прокомментировано? нормальный ли способ отключить заливку, может есть лучше?
 
 {sample}BCT\_Scatter\_Chart\_05{sample}
 
