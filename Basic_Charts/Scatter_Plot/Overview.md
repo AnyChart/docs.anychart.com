@@ -67,7 +67,7 @@ chart.draw();
 
 ## Grids
 
-As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Cartesian#grid}grid(){api} method to create a major grid and {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} to create a minor grid. The appearence of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Cartesian#grid}grid(){api} and {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} methods to create a major and a minotr grid. The appearence of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
 
 (*) ссылки на апи правильные?
 
