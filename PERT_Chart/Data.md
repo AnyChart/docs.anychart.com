@@ -35,7 +35,7 @@ var tree = anychart.data.tree(data);
 
 Here is a sample with data set in this way:
 
-{sample}PERT\_Data\_01{sample}
+{sample}Pert\_Data\_01{sample}
 
 ### Nodes and Connections Set Separately
 
@@ -63,17 +63,50 @@ var tree = anychart.data.tree(data, dependencies);
 
 Here is a sample with data set in this way:
 
-{sample}PERT\_Data\_02{sample}
+{sample}Pert\_Data\_02{sample}
+
 
 ## Duration Setting Options
 
-When a task is created, it is necessary to set its duration. The PERT technology
+When a task is created, it is necessary to set its duration. The PERT technology is based on time, so it is very important to set all time values appropriately.
+
+There are two ways how the time periods can be transferred to the dataset. 
 
 ### Duration
 
+You can set the estimated time period directly to the task. It this case, no standard deviation will be calculated as the optimistic, pessimistic and most likely values are not set and the deviation is not actually necessary.
+
+```
+var data = [
+  {id: "1", duration: 1, name: "A"},
+  {id: "2", duration: 3, name: "B"},
+  {id: "3", duration: 1, name: "D"},
+  {id: "4", duration: 2, name: "AD", dependsOn: ["1", "3"]},
+  {id: "5", duration: 2, name: "BC", dependsOn: ["2", "3"]}
+];
+```
+
+{sample}Pert\_Data\_03{sample}
 
 
 ### Time Estimates
+
+It is also possible to set three time estimates: optimistic, pessimistic and most likely time periods. Find more about them in the [Terminology article](Terminology). 
+
+In case when these parameters are set, the estimated time and the standard deviation are calculated.
+
+```
+var data = [
+  {id: "1", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
+  {id: "2", optimistic: 3, pessimistic: 8, mostLikely: 5, name: "B"},
+  {id: "3", optimistic: 1, pessimistic: 4, mostLikely: 3, name: "D"},
+  {id: "4", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "AD", dependsOn: ["1", "3"]},
+  {id: "5", optimistic: 4, pessimistic: 16, mostLikely: 10, name: "BC", dependsOn: ["2", "3"]}
+];
+```
+
+{sample}Pert\_Data\_04{sample}
+
 
 ## Statistics
 

@@ -14,8 +14,6 @@ PERT Chart
 
 
 
-
-
 ## Overview
 
 The PERT Chart (also known as PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
@@ -86,7 +84,14 @@ Here is a full list of methods used to configure visual coloring settings that a
 In the sample below, there is a Pert Chart with some of the appearance settings configured:
 
 ```
-
+// set colors for milestones
+milestones = chart.milestones();
+milestones.fill("#7B68EE");
+milestones.hoverFill("#B0C4DE");
+milestones.selectFill("#483D8B");
+milestones.stroke("#4B0082", 1);
+milestones.hoverStroke("#4B0082", 2);
+milestones.selectStroke("#4B0082", 4);
 ```
 
 {sample}Pert\_Chart\_02{sample}
@@ -115,6 +120,8 @@ Learn more about colors and visual appearance of the chart from the [Appearance 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+There are something special about labels in PERT. As there are two 
 
 ### Tooltips
 
