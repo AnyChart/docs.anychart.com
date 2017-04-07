@@ -72,7 +72,7 @@ As a rule, scatter charts look better with grids. Use the {api:anychart.charts.C
 
 (*) ссылки на апи правильные?
 
-For more information, see this section: [Grids (Axes and Grids)](../../Axes and Grids/Axis_Basics#grids).
+For more information, see this section: [Grids (Axes and Grids)](../../Axes_and_Grids/Axis_Basics#grids).
 
 (*) нормально, что в тексте ссылки пишу название секции, а в скобках, даже не название статьи - а название сразу всего раздела? название статьи мне не нравится тупо.
 
