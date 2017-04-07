@@ -11,7 +11,7 @@
 
 ## Overview
 
-In AnyChart you can create scatter charts by using the scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the cartesian constructor distributes points along the X-axis at equal intervals (categories), the Scatter constructor distributes points according to their values.
+In AnyChart you can create scatter charts by using the scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the Scatter constructor distributes points according to their values.
 
 Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
