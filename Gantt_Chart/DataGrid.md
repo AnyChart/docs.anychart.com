@@ -3,7 +3,7 @@
 * [Columns](#columns)
  * [Columns Set](#columns_set)
  * [Title](#title)
- * [Content](#inner_content)
+ * [Text](#text)
  * [Width](#width)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
@@ -39,7 +39,7 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-For more information about the {api:anychart.core.ui.DataGrid.Column#format}format(){api} method see the [Content](#inner_content) topic.
+For more information about the {api:anychart.core.ui.DataGrid.Column#format}format(){api} method see the [Text](#text) topic.
 
 The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 
@@ -72,8 +72,7 @@ title.fontWeight("bold").fontStyle("italic");
 title.hAlign("left");
 ```
 
-<a name="inner_content">
-### Content
+### Text
 
 Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#format}format(){api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```

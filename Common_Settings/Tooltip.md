@@ -10,7 +10,7 @@
 * [Formatting](#formatting)
  * [Title](#title)
  * [Separator](#separator)
- * [Content](#content)
+ * [Text](#text)
  * [Prefix and Postfix](#prefix_and_postfix)
 * [Size](#size)
 * [Background](#background)
@@ -165,8 +165,7 @@ Here is a sample with a title separator disabled.
 
 {sample}CS\_Tooltip\_09{sample}
 
-<a name="content_settings"></a>
-### Content
+### Text
 
 You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.cartesian.series.Base#tooltip}tooltip(){api} method.
 
@@ -197,7 +196,7 @@ tooltip1.titleFormat("Manager: {%x}");
 
 {sample}CS\_Tooltip\_14{sample}
 
-### Content
+### Text
 
 In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#format}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
