@@ -22,6 +22,6 @@ chart = anychart.scatter();
 var series = chart.line(data);
 ```
 
-**Note** Unlike basic Line charts, Scatter Lines can be vertical and can cross themselves.
+**Note:** Unlike basic Line charts, Scatter Lines can be vertical and can cross themselves.
 
 {sample}BCT\_Scatter\_Line\_Chart{sample}
