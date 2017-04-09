@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Grids](#grids)
-* [DateTime Scale](#date_time_scale)
+* [Date/Time Scale](#date_time_scale)
 * [Scatter Charts with Error Bars](#scatter_charts_with_error_bars)
 * [Drawing Tools and Annotations](#drawing_tools_and_annotations)
 * [Supported Types](#supported_types)
@@ -101,7 +101,7 @@ chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 {sample}BCT\_Scatter\_Chart\_02{sample}
 
 
-<a name='date time scale'></a>
+<a name='date_time_scale'></a>
 ## Date/Time Scale
 
 Scatter charts are typically used with date/time scales – to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
