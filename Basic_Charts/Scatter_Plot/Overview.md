@@ -146,6 +146,9 @@ And these methods configure error bars along the X-axis:
 * {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets the lower X-value
 * {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets the upper X-value
 
+(*) не уверена, нужно ли все эти методы приводить, но пока оставила
+
+In the sample below, there is a Scatter Marker chart with X and Y error bars:
 
 ```
 // create and configure error bars
@@ -160,7 +163,11 @@ error.valueLowerError("4%");
 
 ## Drawing Tools and Annotations
 
-Есть такая фича. Преимущественно используется в стоках (отдельно ссылка на стоки, отдельно на аннотации в стоках). Но hardcoded annotations могут быть очень удобны при работе со скаттерами для отображения basic shapes на графике.
+Drawing tools provide you with the ability to draw/display custom objects on a chart — in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
+
+To add an annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../Stock_Charts/Drawing_Tools_and_Annotations/Overview) in AnyStock.
+
+Here is a sample scatter chart with two annotations, Ellipse and Rectangle. Some of their visual settings are configured:
 
 ```
 // access the annotations() object of the chart to work with annotations
