@@ -1,11 +1,14 @@
 {:index 0}
 #Vertical Charts
 
+* [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Switching On-the-Fly](#onthefly)
   * [Series](#series)
   * [Chart](#chart)
 * [Supported Types](#supported_types)
+
+## Overview
 
 In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature – see the [Supported Types](#supported_types) section.
 

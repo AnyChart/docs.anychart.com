@@ -28,14 +28,14 @@
     // create a marker series and set the data
     var series = chart.marker(data);
     
-    // create a dateTime scale
+    // create a date/time scale
     var dateScale = anychart.scales.dateTime();
 
-    // configure major and minor ticks on the dateTime scale
+    // configure major and minor ticks on the date/time scale
     dateScale.ticks().interval(1);
     dateScale.minorTicks().interval(0, 2);
 
-    // set the dateTime as the X-scale
+    // set the date/time as the X-scale
     chart.xScale(dateScale);
 
     // configure labels on the X-axis
@@ -58,7 +58,7 @@
     chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
-    chart.title("Scatter Plot: DateTime Scale");
+    chart.title("Scatter Plot: Date/Time Scale");
 
     // set the container id
     chart.container("container");

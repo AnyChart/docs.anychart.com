@@ -4,24 +4,24 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Grids](#grids)
-* [DateTime Scale](#datetime_scale)
+* [DateTime Scale](#date_time_scale)
 * [Scatter Charts with Error Bars](#scatter_charts_with_error_bars)
 * [Drawing Tools and Annotations](#drawing_tools_and_annotations)
 * [Supported Types](#supported_types)
 
 ## Overview
 
-In AnyChart you can create scatter charts by using the scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter constructor distributes points according to their values.
+AnyChart allows you to create scatter charts by using a special scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter constructor distributes points according to their values.
 
 Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-To learn more about the difference between Scatter and Cartesian charts, read the [Scatter vs. Cartesian](../../../Architecture/Scatter_vs_Cartesian) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
+To learn more about the difference between the scatter and Cartesian constructors, read the [Scatter vs. Cartesian](../../Architecture/Scatter_vs_Cartesian) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
 
-This article explains how to create and configure Scatter charts.
+This article explains how to create and configure scatter charts.
 
 ## Quick Start
 
-To create a Scatter chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then create one of the {api:anychart.enums.ScatterSeriesType}supported series types{api}.
+To create a scatter chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then create one of the {api:anychart.enums.ScatterSeriesType}supported series types{api}.
 
 (*) ссылка наверное выглядит некрасиво, т.к. оформлена как ссылка на апи, устраивает?
 
@@ -101,21 +101,24 @@ chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 {sample}BCT\_Scatter\_Chart\_02{sample}
 
 
-## DateTime Scale
+<a name='date time scale'></a>
+## Date/Time Scale
 
-Скаттеры также могут использоваться с временными шкалами, см. статью про временные шкалы.
-Используются такие-то методы...
-Вот пример, как сделать одну из шкал временной:
+Scatter charts are typically used with date/time scales — to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
+
+In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.anychart.charts.Cartesian#xScale}xScale(){api} method):
+
+(*) в ссылках на апи и тут не до конца уверена, паранойя
 
 ```
-// create a dateTime scale
+// create a date/time scale
 var dateScale = anychart.scales.dateTime();
 
-// configure major and minor ticks on the dateTime scale
+// configure major and minor ticks on the datetime scale
 dateScale.ticks().interval(1);
 dateScale.minorTicks().interval(0, 2);
 
-// set the dateTime as the X-scale
+// set the date/time scale as the X-scale
 chart.xScale(dateScale);
 ```
 
@@ -125,11 +128,24 @@ chart.xScale(dateScale);
 
 (*) Как заголовок? Пытаюсь избежать нелюбимого тобой слова plot. Правда, в заголовках примеров оно используется. Но там выхода нет: я везде делаю так, чтобы первая часть заголовка примера совпадала с заголовком статьи.
 
-Есть такая фича, как Error Chart. Ее можно и нужно применять в скаттерах, особенно, когда они используются для изображения каких-либо результатов или измерений.
+In AnyChart, you can create charts with error bars (see [Error Chart](../Error_Chart)). This feature is often used with scatter charts, especially when they show results of some calculations or measurements.
 
-кратко сказать, как задается error bar
-на всех чартах lower и upper error могут отличаться
-ключевая особенность скаттер-чартов с error-барами: можно задавать задавать ошибку как по x, так и по y
+Error bars are created with the {api:anychart.core.cartesian.series.Base#error}error(){api} method.
+
+**Note:** Lower and upper errors can be different. Also,the key feature of error bars on scatter charts is that errors can be set both along the X and Y axes. 
+
+Here are the methods configuring error bars along the Y-axis:
+
+* {api:anychart.core.utils.Error#valueError}valueError(){api} sets the lower and upper Y-values as equal
+* {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets the lower Y-value
+* {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets the upper Y-value
+
+And these methods configure error bars along the X-axis:
+
+* {api:anychart.core.utils.Error#xError}xError(){api} sets the lower and upper X-values as equal
+* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets the lower X-value
+* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets the upper X-value
+
 
 ```
 // create and configure error bars
@@ -183,7 +199,7 @@ rectangle.allowEdit(false);
 
 ## Supported Types
 
-Here is the list...
+Here is the list of supported scatter charts:
 
 * [Scatter Bubble](Bubble_Chart)
 * [Scatter Marker](Marker_Chart)
