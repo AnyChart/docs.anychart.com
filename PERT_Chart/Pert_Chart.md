@@ -20,7 +20,7 @@ The PERT Chart (also known as PERT Diagram) is a chart type realizes the Project
 
 This article explains how to create a basic Pert Chart as well as configure settings that are specific to the type. 
 
-Pert Chart Data needs [] fields to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
+Pert Chart Data should be an array of arrays or as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
 
 See also: <a href="http://www.anychart.com/chartopedia/chart-types/pert-chart/" target="_blank">Chartopedia: PERT Chart</a>
 
@@ -109,7 +109,13 @@ Here is a full list of methods used to configure visual coloring settings that a
 In the sample below, there is a Pert Chart with some of the appearance settings configured:
 
 ```
-
+tasks = chart.tasks();
+tasks.stroke("#0000ff");
+tasks.fill("#0000ff");
+tasks.hoverStroke("#0000ff", 0.7);
+tasks.hoverFill("#0000ff", 0.7);
+tasks.selectStroke("#0000ff", 2);
+tasks.selectFill("#0000ff", 2);
 ```
 
 {sample}Pert\_Chart\_03{sample}

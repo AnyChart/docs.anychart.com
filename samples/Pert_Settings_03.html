@@ -19,12 +19,10 @@
             chart = anychart.pert();
             chart.data(data, "asTable");
 
-            // set critical path milestones filling color
-            chart.criticalPath({milestones: {fill: "#F44336", selectFill: "#590909"}});
-            // set critical tasks stroke
-            chart.criticalPath({tasks: {stroke: "#F44336"}});
+            // set milestones color
+            chart.milestones().fill("#4CAF50");
 
-            chart.title("Nodes and Connections Set Simultaneously");
+            chart.title("Coloring milestones");
             chart.container("container");
             chart.draw();
         });</script>
