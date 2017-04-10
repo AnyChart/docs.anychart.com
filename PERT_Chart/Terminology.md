@@ -48,7 +48,7 @@ Most likely time is the best estimate of the time required to accomplish an acti
 
 Expected time is the best estimate of the time required to accomplish an activity (te) or a path (TE), accounting for the fact that things don't always proceed as normal (something goes wrong, something goes better than expected). It is being calculated by the following formula:
 
-<img src="http://static.anychart.com/images/docs/pert\_criticalpath.png"/>
+<img src="http://static.anychart.com/images/docs/criticalpath.png"/>
 
 ## Standard deviation of time
 

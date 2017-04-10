@@ -6,7 +6,6 @@ PERT Chart Settings
 * [Tasks](#tasks)
 * [Milestones](#milestones)
 * [Critical Path](#critical_path)
- * [Tasks and milestones](#tasks_and_milestones)
 * [Statistics](#statistics)
 
 ## Chart
@@ -18,36 +17,50 @@ Pert charts are created using {api:anychart#pert}pert(){api} constructor which r
 chart = anychart.pert();
 ```
 
-## Critical Path
- 
-
-Critical Path is configured using {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
-
-```
-chart = anychart.pert();
-// set critical path milestones color
-chart.criticalPath({milestones: {fill: "#F44336"}});
-```
-
 ### Tasks 
 
 Tasks are controlled using {api:anychart.charts.Pert#tasks}tasks(){} method, spacing between tasks by {api:anychart.charts.Pert#horizontalSpacing}horizontalSpacing(){api} and {api:anychart.charts.Pert#verticalSpacing}verticalSpacing(){api} methods.
 
 ```
-chart = anychart.pert();
 // set tasks color
 chart.tasks().stroke("2 #4CAF50");
+// set vertical spacing between tasks
+chart.verticalSpacing("10%");
 ```
+{sample}Pert\_Settings\_01{sample}
 
 ### Milestones 
 
 Milestones are set up using {api:anychart.charts.Pert#milestones}milestones(){} method.
 
 ```
-chart = anychart.pert();
 // set milestones color
 chart.milestones().fill("#4CAF50");
 ```
+{sample}Pert\_Settings\_02{sample}
+
+## Critical Path 
+
+Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements belong to a critical path will be the same as of non-critical ones. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
+
+```
+// set critical path milestones filling color
+chart.criticalPath({milestones: {fill: "#F44336", selectFill: "#590909"}});
+// set critical tasks stroke
+chart.criticalPath({tasks: {stroke: "#F44336"}});
+```
+{sample}Pert\_Settings\_03{sample}
+
 
 ## Statistics
 
+There are two statistic values can be got from the Pert Chart: standard deviation and the critical path duration. Use {api:anychart.charts.Pert#getStat}getStat(){api} method for both.
+
+```
+// get both statistic values on click
+chart.milestones(). listen("click", function(){
+	dev = chart.getStat("pertChartCriticalPathStandardDeviation");
+	alert("Standard deviation for this project is " + dev);
+})
+```
+{sample}Pert\_Settings\_04{sample}
