@@ -27,6 +27,9 @@
 
     // create a marker series and set the data
     var series = chart.marker(data);
+
+    // set the output date format
+    anychart.format.outputDateFormat("yyyy");
     
     // create a date/time scale
     var dateScale = anychart.scales.dateTime();
@@ -37,14 +40,6 @@
 
     // set the date/time as the X-scale
     chart.xScale(dateScale);
-
-    // configure labels on the X-axis
-    var xLabels = chart.xAxis().labels();
-    xLabels.format(function(value) {
-      var date = new Date(value["tickValue"]);
-      var options = {year: "numeric"};
-      return date.toLocaleDateString("en-US", options);
-    });
 
     // disable tooltips
     series.tooltip(false);
