@@ -28,7 +28,7 @@ There are two ways to set data for PERT charts, both based on [Anychart Data Tre
 // raw data
 var data = [
     {id: "1", duration: 1, name: "Task A"},
-    {id: "2", duration: 3, name: "Task B"},
+    {id: "2", duration: 4, name: "Task B"},
     {id: "3", duration: 3, name: "Task C"},
     {id: "4", duration: 1, name: "Task D"},
     {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
@@ -49,7 +49,7 @@ anychart.onDocumentReady(function () {
 // raw data
 var data = [
 	{id: "1", duration: 1, name: "Task A"},
-	{id: "2", duration: 3, name: "Task B"},
+	{id: "2", duration: 4, name: "Task B"},
 	{id: "3", duration: 3, name: "Task C"},
 	{id: "4", duration: 1, name: "Task D"},
 	{id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
@@ -75,12 +75,12 @@ chart.draw();
 ```
 
 ## The Result
-###See the Result
+### See the Result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using AnyChart Playground.
 
 {sample :width 700 :height 700}PERT\_Basic\_Sample{sample}
 
-###Full Source Code
+### Full Source Code
 You can copy this to a file on your computer and open it in your browser to display the PERT Chart shown above:
 
 ```
@@ -105,7 +105,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 		// raw data
 		var data = [
 		    {id: "1", duration: 1, name: "Task A"},
-		    {id: "2", duration: 3, name: "Task B"},
+		    {id: "2", duration: 4, name: "Task B"},
 		    {id: "3", duration: 3, name: "Task C"},
 		    {id: "4", duration: 1, name: "Task D"},
 		    {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},

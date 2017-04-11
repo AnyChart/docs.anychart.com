@@ -7,8 +7,6 @@ PERT Chart
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
-   * [Milestones](#milestones)
-   * [Tasks](#tasks)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
 
@@ -69,65 +67,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-There are two basic classes of elements in PERT: milestones and tasks. Both of them have visual settings. Let's now explore them.
+There are two basic classes of elements in PERT: milestones and tasks. Also there is a critical path consists of both tasks and milestones. All of them have visual settings, which can be found in the [Pert Settings Article](Settings).
 
-#### Milestones
-
-Here is a full list of methods used to configure visual coloring settings that are available for the Pert Chart:
-
-* {api:anychart.core.pert.Milestones#color}color(){api}, {api:anychart.core.pert.Milestones#fill}fill(){api}, {api:anychart.core.pert.Milestones#stroke}stroke(){api} set the color, fill and stroke
-
-* {api:anychart.core.pert.Milestones#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Milestones#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-
-* {api:anychart.core.pert.Milestones#selectFill}selectFill(){api}, {api:anychart.core.pert.Milestones#selectStroke}selectStroke(){api} configure milestones' visual settings on select
-
-In the sample below, there is a Pert Chart with some of the appearance settings configured:
-
-```
-// set colors for milestones
-milestones = chart.milestones();
-milestones.fill("#7B68EE");
-milestones.hoverFill("#B0C4DE");
-milestones.selectFill("#483D8B");
-milestones.stroke("#4B0082", 1);
-milestones.hoverStroke("#4B0082", 2);
-milestones.selectStroke("#4B0082", 4);
-```
-
-{sample}Pert\_Chart\_02{sample}
-
-#### Tasks
-
-Here is a full list of methods used to configure visual coloring settings that are available for the Pert Chart:
-
-* {api:anychart.core.pert.Tasks#color}color(){api}, {api:anychart.core.pert.Tasks#fill}fill(){api}, {api:anychart.core.pert.Tasks#stroke}stroke(){api} set the color, fill and stroke
-
-* {api:anychart.core.pert.Tasks#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Tasks#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-
-* {api:anychart.core.pert.Tasks#selectFill}selectFill(){api}, {api:anychart.core.pert.Tasks#selectStroke}selectStroke(){api} configure tasks' visual settings on select
-
-In the sample below, there is a Pert Chart with some of the appearance settings configured:
-
-```
-tasks = chart.tasks();
-tasks.stroke("#0000ff");
-tasks.fill("#0000ff");
-tasks.hoverStroke("#0000ff", 0.7);
-tasks.hoverFill("#0000ff", 0.7);
-tasks.selectStroke("#0000ff", 2);
-tasks.selectFill("#0000ff", 2);
-```
-
-{sample}Pert\_Chart\_03{sample}
-
-
-Learn more about colors and visual appearance of the chart from the [Appearance Settings](../Appearance_Settings) article. More visual settings can be found in the [Settings article](Settings).
+Learn more about colors and visual appearance of the chart from the [Appearance Settings](../Appearance_Settings) section.
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-There are something special about labels in PERT. As there are two 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. There are some special settings for the PERT Chart labels, which can be found in the [PERT Labels Settings](Settings#labels) article.
 
 ### Tooltips
 
