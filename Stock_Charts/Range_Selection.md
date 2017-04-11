@@ -25,7 +25,7 @@ Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{
 
 ```
 <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="https://static.anychart.com/css/develop/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
 ```
 
 Or, if you are using a specialized `anystock.min.js` you need to reference ui JavaScript file as well:
@@ -33,7 +33,7 @@ Or, if you are using a specialized `anystock.min.js` you need to reference ui Ja
 ```
 <script src="https://cdn.anychart.com/js/latest/anystock.min.js"></script>
 <script src="https://cdn.anychart.com/js/latest/anychart-ui.min.js"/>
-<link rel="stylesheet" href="https://static.anychart.com/css/develop/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
 ```
 
 ## Add to a chart
