@@ -41,7 +41,7 @@ This article explains how to create a basic Funnel Chart as well as configure se
 <tr><td></td><td>[Pyramid](Pyramid_Chart)</td></tr>
 <tr><td></td><td>[Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/funnel-chart/" target="_blank">Chartopedia: Funnel Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/funnel-chart/" target="_blank">Chartopedia: Funnel Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

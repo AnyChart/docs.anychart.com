@@ -33,7 +33,7 @@ Or, if you are using a specialized `anystock.min.js` you need to reference ui Ja
 ```
 <script src="https://cdn.anychart.com/js/latest/anystock.min.js"></script>
 <script src="https://cdn.anychart.com/js/latest/anychart-ui.min.js"/>
-<link rel="stylesheet" href="http://static.anychart.com/css/develop/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://static.anychart.com/css/develop/anychart-ui.min.css" />
 ```
 
 ## Add to a chart

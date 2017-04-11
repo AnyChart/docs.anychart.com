@@ -234,7 +234,7 @@ These properties can be set through the GeoJSON code:
 Put the GeoJSON code with edits as a function into the JS file and link the last:
 
 ```
-<script src="http://static.anychart.com/data/maps/docs/australia_with_settings.js"></script>
+<script src="https://static.anychart.com/data/maps/docs/australia_with_settings.js"></script>
 ```
 
 Then load the data from the JS file:

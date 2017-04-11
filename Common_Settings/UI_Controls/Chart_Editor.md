@@ -21,12 +21,12 @@ Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenc
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
-<link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.7.3/anychart.css">
 ```
 
 ## Demo App
 
-You can see a live demo and a downloadble sample of the Chart editor at [http://www.anychart.com/products/anychart/chart_editor/](//www.anychart.com/products/anychart/chart_editor/).
+You can see a live demo and a downloadble sample of the Chart editor at [https://www.anychart.com/products/anychart/chart_editor/](//www.anychart.com/products/anychart/chart_editor/).
 
 Source code of this sample can be obtained from [https://github.com/AnyChart/chart-editor-demo](https://github.com/AnyChart/chart-editor-demo) repository.
 

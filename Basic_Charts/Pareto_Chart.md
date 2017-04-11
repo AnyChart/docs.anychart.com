@@ -249,4 +249,4 @@ There are no special events in Pareto charts, you can use everything you can use
 
 ## Samples
 
-You can find more ready to use samples of Pareto Charts in [AnyChart Pareto Charts](http://www.anychart.com/products/anychart/gallery/Pareto_Charts/) Gallery.
+You can find more ready to use samples of Pareto Charts in [AnyChart Pareto Charts](https://www.anychart.com/products/anychart/gallery/Pareto_Charts/) Gallery.

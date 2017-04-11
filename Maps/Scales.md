@@ -17,7 +17,7 @@ There are two types of ColorScale: Ordinal and Linear (Quantitative). The type o
  
 This type of ColorScale looks like a number of boxes with different colors. Colors of these boxes depend on the palette chosen according to the type of map and its data, but they also may be defined independent from any of color progressions using the following method.
 
-<img src = "http://static.anychart.com/images/ord_colorrange.jpg">
+<img src = "https://static.anychart.com/images/ord_colorrange.jpg">
 
 ```
 	// set the colors and ranges for the scale
@@ -40,7 +40,7 @@ The following code does the same as the code above.
  
 This type of ColorScale looks like a single bar colored with a gradient, where it colors depend on a chosen palette. 
 
-<img src = "http://static.anychart.com/images/quant_colorrange.jpg">
+<img src = "https://static.anychart.com/images/quant_colorrange.jpg">
 
 Using the Linear type of coloring, there are three ways of coloring the map:
 1) we may define no colors - in this case the coloring will be based on the default palette;
@@ -72,10 +72,10 @@ This palette type is usually used to show the difference in values of something 
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/single\_hue\_ord.png">
+<img src = "https://static.anychart.com/images/single\_hue\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/single\_hue\_quant.png">
+<img src = "https://static.anychart.com/images/single\_hue\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -100,10 +100,10 @@ Technically this progression is a simple single-hue progression for a shade of g
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/value\_progr\_ord.png">
+<img src = "https://static.anychart.com/images/value\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/value\_progr\_quant.png">
+<img src = "https://static.anychart.com/images/value\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -128,10 +128,10 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/bi\_polar\_ord.png">
+<img src = "https://static.anychart.com/images/bi\_polar\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/bi\_polar\_quant.png">
+<img src = "https://static.anychart.com/images/bi\_polar\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -160,10 +160,10 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/blended\_c\_progr\_ord.png">
+<img src = "https://static.anychart.com/images/blended\_c\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/blended\_c\_progr\_quant.png">
+<img src = "https://static.anychart.com/images/blended\_c\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -193,10 +193,10 @@ This ColorRange type looks like a gradient between two adjacent opponent hues an
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/partial\_c\_progr\_ord.png">
+<img src = "https://static.anychart.com/images/partial\_c\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/partial\_c\_progr\_quant.png">
+<img src = "https://static.anychart.com/images/partial\_c\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -216,10 +216,10 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/full\_c\_ord.png">
+<img src = "https://static.anychart.com/images/full\_c\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/full\_c\_quant.png">
+<img src = "https://static.anychart.com/images/full\_c\_quant.png">
 </td>
 </tr>
 </tbody>

@@ -14,7 +14,7 @@ Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenc
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
-<link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.7.3/anychart.css">
 ```
 
 ## Sample

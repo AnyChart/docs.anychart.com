@@ -14,7 +14,7 @@ Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and c
 
 ## Solid color
 
-The most simple fill is a solid color fill. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](http://www.w3schools.com/cssref/css_colors_legal.asp).
+The most simple fill is a solid color fill. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](https://www.w3schools.com/cssref/css_colors_legal.asp).
 
 Color opacity can be set in two ways:
 

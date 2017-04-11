@@ -9,7 +9,7 @@ Overview
 
 ## Overview
 
-AnyChart Maps are JavaScript interactive maps, with ability to create Drill Down maps, you can find several samples of such maps at [AnyChart Drill Down Maps Gallery](http://www.anychart.com/products/anymap/gallery/Maps_with_Drill_Down/).
+AnyChart Maps are JavaScript interactive maps, with ability to create Drill Down maps, you can find several samples of such maps at [AnyChart Drill Down Maps Gallery](https://www.anychart.com/products/anymap/gallery/Maps_with_Drill_Down/).
 
 Drill Down Maps are those which use several maps to become multi-level, so it becomes possible to zoom into regions, towns and even smaller geographical units - in case you've got maps for them. 
 

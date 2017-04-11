@@ -43,7 +43,7 @@ To load the SVG file, use an .ajax request:
 ```
 $.ajax({
 type: "GET",
-url: "http://static.anychart.com/images/docs/seat_map/house.svg",
+url: "https://static.anychart.com/images/docs/seat_map/house.svg",
 ```
 
 {sample}Maps\_Seat\_01{sample}
@@ -53,7 +53,7 @@ url: "http://static.anychart.com/images/docs/seat_map/house.svg",
 Another way to add an SVG image is to put it directly into the script as a string. This way may suit you if the SVG code is not too long.
 
 ```
-svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
+svgString = "<svg xmlns='https://www.w3.org/2000/svg'>" +
             "<g data-ac-wrapper-id='3'>" +
             "<circle id='1' cx='50' cy='50' r='20'></circle>" +
             "<circle id='2' cx='150' cy='40' r='30'></circle>" +
@@ -83,7 +83,7 @@ anychart.onDocumentLoad(function() {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
+Take a look at the <a href="https://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
 
 ## Mapping Data
 
@@ -187,4 +187,4 @@ tooltips.separator("white");
 
 ## Gallery Samples
 
-You can find samples of using SVG images in seat maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
+You can find samples of using SVG images in seat maps in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).

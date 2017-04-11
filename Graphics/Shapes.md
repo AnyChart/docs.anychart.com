@@ -197,7 +197,7 @@ There are several methods that can be used for coloring the shapes. You can find
  - [Hatch Fill Settings](Hatch_Fill_Settings)
  - [Stroke Settings](Stroke_Settings)
 
-Coloring methods accept values in HEX notation ("#00033A"), as web color ("black"), in RGB format ("rgb(0,0,255)") and more. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](http://www.w3schools.com/cssref/css_colors_legal.asp).
+Coloring methods accept values in HEX notation ("#00033A"), as web color ("black"), in RGB format ("rgb(0,0,255)") and more. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](https://www.w3schools.com/cssref/css_colors_legal.asp).
 
 ### Fill
 

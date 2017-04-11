@@ -9,11 +9,11 @@
 
 ##Overview
 
-You don't have to do anything special to combine series in AnyChart: if series are compatible you just use them together with no fuss. Most of the sample we feature in [AnyChart JavaScript Charts Gallery](http://www.anychart.com/products/anychart/gallery/) take advantage of this feature and contain [lines and columns](http://www.anychart.com/products/anychart/gallery/Combined_Charts/Column,_Spline-Area_and_Spline_Chart.php), [range area and markers](http://www.anychart.com/products/anychart/gallery/Combined_Charts/Range_Spline-Area,_Spline_and_Marker_Chart.php), [stacked chart with lines](http://www.anychart.com/products/anychart/gallery/Combined_Charts/Stacked_Column_and_Line_Chart.php) and so on.
+You don't have to do anything special to combine series in AnyChart: if series are compatible you just use them together with no fuss. Most of the sample we feature in [AnyChart JavaScript Charts Gallery](https://www.anychart.com/products/anychart/gallery/) take advantage of this feature and contain [lines and columns](https://www.anychart.com/products/anychart/gallery/Combined_Charts/Column,_Spline-Area_and_Spline_Chart.php), [range area and markers](https://www.anychart.com/products/anychart/gallery/Combined_Charts/Range_Spline-Area,_Spline_and_Marker_Chart.php), [stacked chart with lines](https://www.anychart.com/products/anychart/gallery/Combined_Charts/Stacked_Column_and_Line_Chart.php) and so on.
 
 ##Compatibility
 
-Checking compatibility is very easy with [AnyChart API](http://api.anychart.com/):
+Checking compatibility is very easy with [AnyChart API](https://api.anychart.com/):
 
 - {api:anychart.enums.CartesianSeriesType}anychart.enums.CartesianSeriesType{api} lists all series compatible within basic cartesian charts.
 - {api:anychart.enums.Cartesian3dSeriesType}anychart.enums.Cartesian3dSeriesType{api} lists all series compatible within pseudo [3D charts](3D/Overview).
