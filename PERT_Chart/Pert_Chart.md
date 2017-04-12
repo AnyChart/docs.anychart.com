@@ -6,10 +6,10 @@ PERT Chart
 * [Quick Start](#quick_start)
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-
+ * [Interactivity](#interactivity)
+ * [Appearance](#appearance)
+ * [Labels](#labels)
+ * [Tooltips](#tooltips)
 
 
 ## Overview
@@ -18,7 +18,7 @@ The PERT Chart (also known as PERT Diagram) is a chart type realizes the Project
 
 This article explains how to create a basic Pert Chart as well as configure settings that are specific to the type. 
 
-Pert Chart Data should be an array of arrays or as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
+Pert Chart Data should be arranged as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
 
 See also: <a href="http://www.anychart.com/chartopedia/chart-types/pert-chart/" target="_blank">Chartopedia: PERT Chart</a>
 
@@ -59,11 +59,41 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Pert Chart (for example, legend and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Pert Chart (for example, some interactivity settings).
 
-Read the overview of general settings: [General Settings](General_Settings).
+Read the overview of general settings: [General Settings](../Basic_Charts/General_Settings).
 
 ## Special Settings
+
+### Interactivity
+
+Besides interactivity settings common for all charts, there is something special about PERT Charts events. The "pointsSelect" event returns such fields as "selectedMilestones" and "selectedTasks", both fields contain all information about the milestones and tasks selected. 
+
+The following sample uses this event. Select milestones or tasks and watch the chart title.
+
+```
+chart.listen("pointsselect", function(e){
+        for (var i = 0; i < e.selectedMilestones.length; i++){
+            if (e.selectedMilestones[i].isCritical === true) {
+                chart.title("This milestone belongs to the critical path");
+            }
+            else {
+                chart.title("This milestone does not belong to the critical path");
+            }
+        }
+        for (var i = 0; i < e.selectedTasks.length; i++){
+            if (e.selectedTasks[i].isCritical === true) {
+                chart.title("This task belongs to the critical path");
+            }
+            else {
+                chart.title("This task does not belong to the critical path");
+            }
+        }
+        }
+    );
+```
+
+{sample}Pert\_Chart\_02{sample}
 
 ### Appearance
 

@@ -5,8 +5,8 @@ PERT Chart Settings
 * [Chart](#chart)
 * [Tasks](#tasks)
 * [Milestones](#milestones)
-* [Labels](#labels)
 * [Critical Path](#critical_path)
+* [Labels](#labels)
 * [Statistics](#statistics)
 
 ## Chart
@@ -32,6 +32,18 @@ Here is a full list of methods used to configure coloring settings of the tasks 
 
 In the sample below, there is a Pert Chart with some of the appearance settings configured:
 
+
+```
+// set vertical spacing between tasks
+chart.verticalSpacing("20%");
+// set tasks colors
+tasks.stroke("#0000ff");
+tasks.fill("#0000ff");
+tasks.hoverStroke("#0000ff", 0.7);
+tasks.hoverFill("#0000ff", 0.7);
+tasks.selectStroke("#0000ff", 2);
+tasks.selectFill("#0000ff", 2);
+```
 
 {sample}Pert\_Settings\_01{sample}
 
@@ -62,6 +74,18 @@ milestones.selectStroke("#4B0082", 4);
 {sample}Pert\_Settings\_02{sample}
 
 
+## Critical Path 
+
+Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements will be taken from defaults. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
+
+```
+// set critical path milestones filling color
+chart.criticalPath({milestones: {fill: "#F44336", selectFill: "#590909"}});
+// set critical tasks stroke
+chart.criticalPath({tasks: {stroke: "#F44336"}});
+```
+{sample}Pert\_Settings\_03{sample}
+
 ### Labels
 
 Besides the colors and spacing, there are some special settings for the tasks' labels. Due to a specific shape, tasks have upper and lower labels, and it is possible to adjust both. Use the {api:anychart.core.pert.Tasks#upperLabels}upperLabels(){api} and {api:anychart.core.pert.Tasks#lowerLabels}lowerLabels(){api} methods for it.
@@ -72,9 +96,9 @@ chart.tasks().upperLabels().padding(5);
 chart.tasks().upperLabels().fontSize(20);
 ```
 
-{sample}Pert\_Settings\_03{sample}
+{sample}Pert\_Settings\_04{sample}
 
-It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The  following sample demonstrates formatting the milestones labels.
+It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
 
 ```
 chart.milestones().labels().format(function(){
@@ -100,20 +124,8 @@ chart.milestones().labels().format(function(){
 });
 ```
 
-{sample}Pert\_Settings\_04{sample}
+{sample}Pert\_Settings\_05{sample}
 
-
-## Critical Path 
-
-Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements will be taken from defaults. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
-
-```
-// set critical path milestones filling color
-chart.criticalPath({milestones: {fill: "#F44336", selectFill: "#590909"}});
-// set critical tasks stroke
-chart.criticalPath({tasks: {stroke: "#F44336"}});
-```
-{sample}Pert\_Settings\_04{sample}
 
 
 ## Statistics
@@ -127,4 +139,4 @@ chart.milestones(). listen("click", function(){
 	alert("Standard deviation for this project is " + dev);
 })
 ```
-{sample}Pert\_Settings\_05{sample}
+{sample}Pert\_Settings\_06{sample}

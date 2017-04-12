@@ -18,31 +18,6 @@ To learn more about PERT in general, see [Wikipedia](https://en.wikipedia.org/wi
 
 ## Use cases
 
-While recognizing that, at first sight, Programme Evaluation and -
-Review Technique might seem too complicated for general application to
-all education programmes in the developing countries, the fact nevertheless
-remains that it can be profitably applied in certain circumstances. For
-example, the programming of school building projects can usefully be based
-on the PERT method! similarly, the organization of examinations on a
-national scale, owing to its cost and complexity, is worth basing on a
-PERT network^ furthermore, the introduction of a reform or innovation
-into a school system should be carefully planned, and simplified versions
-of PERT methods will probably prove very valuable in planning the timetable
-of operations. One last example of the potential use of PERT methods is
-often suggested, namely for the preparation of education plans. 
+Despite PERT technology might seem too complicated, it can still be profitably applied and used in some circumstances. For example, planning a building project can be successfully based on the PERT method. Similarly, the organization of any examinations or competitions, especially on national scale, due to being complicated and expensive, is worth basing on PERT. Any reforms, innovations or other activities which demands a great time and resource planning are good cases for using PERT. 
 
-PERT is based on the theory of graphsj it is expressed in graphic
-diagrams in the form of a network of arrows resulting from the analysis
-of a programme. These diagrams support the elements used to establish the
-calculations. 
-
-PERT events, therefore, unlike activities, consume neither time nor
-resources. Furthermore, each event except the first event (or events) and
-the last event (or events) are bound to be the beginning and the end of
-one or more activities,, Similarly, every activity starts with an event
-and ends with an event.
-In a sense, therefore, activities constitute a constraint in the
-achievement of events, since an event cannot be deemed to be achieved
-(or attained) unless the activities which lead to it (or predecessor
-activities) are accomplished. The result is constraints between activities
-starting from (or successor to) an event and the predecessor activities,(l)
+PERT is based of the graphs theory. Each activity (task) starts with an event (milestone) and ends with an event.
