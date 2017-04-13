@@ -10,17 +10,16 @@ PERT Chart Terminology
 * [Pessimistic time](#pessimistic_time)
 * [Most likely time](#most_likely_time)
 * [Expected time](#expected_time)
-* [Standart deviation of time](#standart_deviation_of_time)
+* [Standard deviation of time](#standard_deviation_of_time)
 * [Slack](#slack)
 
 ## Milestone
 
 A milestone (known also as a PERT event) is an element of a PERT chart, marking the start or completion of a task or several tasks. It consumes no time and uses no resources. When it marks the completion of one or more activities, it is not "reached" (does not occur) until all of the activities leading to that event have been completed. When task or tasks take the beginning from the milestone, it is called Start milestone (or a predecessor event). Those ones which tasks end in are called Finish milestones (or successor events). Only the Start milestone can become a predecessor event for several tasks, and only the Finish milestone can become a successor event for several tasks.
 
-## Tasks
+## Task
 
 The actual performance of a task which consumes time and requires resources (such as labor, materials, space, machinery). It can be understood as representing the time, effort, and resources required to move from one event to another. A PERT activity cannot be performed until the predecessor event has occurred.
-
 
 A task is an arrow-shaped element of a PERT chart, representing activity that must be performed. There are two types of tasks: predecessors, which precedes a milestone (event), and successors, which follows a milestone (event). 
 

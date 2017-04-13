@@ -20,4 +20,44 @@ To learn more about PERT in general, see [Wikipedia](https://en.wikipedia.org/wi
 
 Despite PERT technology might seem too complicated, it can still be profitably applied and used in some circumstances. For example, planning a building project can be successfully based on the PERT method. Similarly, the organization of any examinations or competitions, especially on national scale, due to being complicated and expensive, is worth basing on PERT. Any reforms, innovations or other activities which demands a great time and resource planning are good cases for using PERT. 
 
-PERT is based of the graphs theory. Each activity (task) starts with an event (milestone) and ends with an event.
+1. Total Project Duration
+
+PERT Chart allows to calculate and provide the duration of the whole project. This duration is the length of the critical path, so it is the most important parameter in project management. If the result duration overcomes the time reserve, it is a sygnal to recheck and rearrange the resources to make the project critical duration fit in the reserved time period.
+
+In the following sample, the critical path is highlighted with red color, and its calculated length is passed into the chart title.
+
+{sample}Pert\_UseCase\_01{sample}
+
+
+2. The Project Duration Deviation
+
+The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [Settings](Settings#statistics) article.
+
+In the following sample, the project duration with the standard deviation of the critical path value is passed into the chart title.
+
+{sample}Pert\_UseCase\_02{sample}
+
+
+3. Resource Optimization
+
+There is a parameter for all tasks named *slack*. Slack is a time period, which is actually wasted due to some reasons. For example, when there are two tasks of different durations and the next task can start only after these two end, the difference between those durations of the tasks-predecessors if a slack of the shortest. In this case, the best decision is to send the resources from the shorter task to the longer one, so it can help to shorten the duration of the longer task.
+
+The following sample demonstrates all slack values for all tasks, making it evident for the project manager what should be changed in the resources planning to minimize the slacks.
+
+{sample}Pert\_UseCase\_03{sample}
+
+
+4. Middle tasks control
+
+Sometimes it is necessary to control the time bounds for some separated tasks. In this case, use the "earliest/latest start/finish" automatically calculated parameters.
+
+{sample}Pert\_UseCase\_04{sample}
+
+
+5. Duration calculation
+
+In real project management, it is impossible to give the exact value for a project duration. Even taking the deviation in mind, there is still a very high risk not to fit in the time bounds. Therefore, you can set your own function for the duration calculation instead of the standard formula.
+
+The duration in following sample with the same data as above is calculated
+
+{sample}Pert\_UseCase\_05{sample}

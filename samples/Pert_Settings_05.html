@@ -27,6 +27,8 @@
     chart.data(data, "asTable");
     
     chart.milestones().labels().fontSize(10);
+    chart.milestones().shape("rect");
+    chart.milestones().size(80);
     
     chart.milestones().labels().format(function(){
         if (this.creator) {
@@ -49,6 +51,8 @@
             return this.isStart ? "S" : "F";
         }
     });
+
+    chart.criticalPath({milestones: {fill: "#FF4040", selectFill: "#92000A"}});
 
     // set the title of the chart
     chart.title("PERT Chart");
