@@ -139,10 +139,10 @@ In the sample below, there is a Scatter Marker chart with X and Y error bars:
 ```
 // create and configure error bars
 var error = series.error();
-error.xLowerError("1%");
-error.xUpperError("6%");
-error.valueUpperError("2%");
-error.valueLowerError("4%");
+error.xLowerError(0.2);
+error.xUpperError(0.4);
+error.valueUpperError(4);
+error.valueLowerError(8);
 ```
 
 {sample}BCT\_Scatter\_Chart\_04{sample}
