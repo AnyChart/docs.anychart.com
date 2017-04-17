@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: Date.UTC(2000, 01, 01), value: 78},
+      {x: Date.UTC(2001, 06, 11), value: 74},
+      {x: Date.UTC(2002, 02, 25), value: 68},
+      {x: Date.UTC(2003, 07, 21), value: 76},
+      {x: Date.UTC(2004, 08, 08), value: 80},
+      {x: Date.UTC(2005, 04, 15), value: 84},
+      {x: Date.UTC(2006, 03, 19), value: 50},
+      {x: Date.UTC(2007, 11, 05), value: 93},
+      {x: Date.UTC(2008, 04, 22), value: 55}
+    ];
+    
+    // create a chart
+    chart = anychart.scatter();
+
+    // create a marker series and set the data
+    var series = chart.marker(data);
+
+    // set the output date format
+    anychart.format.outputDateFormat("yyyy");
+    
+    // create a date/time scale
+    var dateScale = anychart.scales.dateTime();
+
+    // configure major and minor ticks on the date/time scale
+    dateScale.ticks().interval(1);
+    dateScale.minorTicks().interval(0, 2);
+
+    // set the date/time as the X-scale
+    chart.xScale(dateScale);
+
+    // disable tooltips
+    series.tooltip(false);
+
+    // create major grids and bind them to the X and Y axes
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
+
+    // create minor grids and bind them to the X and Y axes
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
+
+    // set the chart title
+    chart.title("Scatter Plot: Date/Time Scale");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
