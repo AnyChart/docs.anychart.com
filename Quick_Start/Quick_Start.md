@@ -29,7 +29,7 @@ Example:
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-```  
+``` 
 
 ###3. Create a chart
 
