@@ -3,7 +3,7 @@
 #Technical Indicators Mathematical Decsription
 
 * [Overview](#overview)
-* [Accumulation Distribution Line (ADL)](#)
+* [Accumulation Distribution Line (ADL)](#accumulation_distribution_line)
 * [Adaptive Moving Average (AMA)](#adaptive_moving_average)
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#average_true_range)
@@ -47,7 +47,10 @@ For all formulas and indicators below:
 
 ## Accumulation Distribution Line
 
-Coming soon.
+Accumulation Distribution Line is calculated according to these formulas:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
+
 
 ## Adaptive Moving Average
 
@@ -110,11 +113,32 @@ Coming soon.
 
 ## Commodity Channel Index (CCI)
 
-Coming soon.
+Commodity Channel Index is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cci.png"></center>
+
+Where TP is a Typical Price calculated as:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/tp.png"></center>
+
+And SMA is calculated as stated in SMA part of this article.
+
 
 ## Chaikin Money Flow (CMF)
 
-Coming soon.
+Chaikin Money Flow is calculated in three steps.
+
+1. First a MFM(i) is calculated for all points according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfm.png"></center>
+
+2. Next an MFV(i) value is calculated for all points like this:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfv.png"></center>
+
+3. And finally the CMF(i) value is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center>
 
 ## Chaikin Oscillator (CHO)
 
