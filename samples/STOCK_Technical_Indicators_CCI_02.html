@@ -19,30 +19,19 @@
         // create stock chart
         chart = anychart.stock();
         // create plots on the chart
-        var plot_0 = chart.plot(0);
-        var plot_1 = chart.plot(1);
+        var plot0 = chart.plot(0);
+        var plot1 = chart.plot(1);
+        plot0.height("70%");
 
         // create line series on both of them
-        var ohlcSeries_0 = plot_0.ohlc(mapping);
-        ohlcSeries_0.name("CSCO OHLC");
-        ohlcSeries_0.stroke("2px #64b5f6");
+        var ohlcSeries = plot0.ohlc(mapping);
+        ohlcSeries.name("CSCO OHLC");
+        ohlcSeries.stroke("2px #64b5f6");
 
-        var lineSeries_1 = plot_1.line(mapping);
-        lineSeries_1.name("CSCO Line (Close Values)");
-        lineSeries_1.stroke("2px #64b5f6");
-
-        // create first CCI indicator of default series type
-        var cci_1 = plot_0.cci(mapping).series();
-        cci_1.seriesType("spline");
-        cci_1.stroke("#bf360c", 2, "5 2");
-
-        // create second CCI indicator of column series
-        var cci_2 = plot_1.cci(mapping).series();
-        cci_2.seriesType("marker");
-        cci_2.fill("#E5BE01");
-        cci_2.size(3);
-        cci_2.stroke("none");
-        cci_2.type("star5");
+        // adjust CCI indicator
+        var cci = plot1.cci(mapping).series();
+        cci.seriesType("spline");
+        cci.stroke("#bf360c", 2, "5 2");
         
         // set container id for the chart
         chart.container("container");

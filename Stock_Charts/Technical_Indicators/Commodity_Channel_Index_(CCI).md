@@ -28,13 +28,15 @@ var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "value": 4});
 // create stock chart
 chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create plots on the chart
+var plot0 = chart.plot(0);
+var plot1 = chart.plot(1);
 
-// create ADL indicator
-var cci = plot.cci(mapping).series();
-cci.stroke('#bf360c');
+// create CCI indicator
+var cci = plot1.cci(mapping).series();
 ```
+
+Note that CCI indicator needs to be built on a separate plot due to rather huge difference between the indicator values and the data values.
 
 Here is a live sample:
 
@@ -44,21 +46,13 @@ It is possible to change the series type any time using the {api:anychart.core.s
 
 ## Visualization
 
-Visualization of an indicator depends on series type. Here is a sample where CCI with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where CCI indicator is visually adjusted:
 
 ```
-// create first CCI indicator 
-var cci_1 = plot_0.cci(mapping).series();
-cci_1.seriesType("spline");
-cci_1.stroke("#bf360c", 2, "5 2");
-
-// create second CCI indicator 
-var cci_2 = plot_1.cci(mapping).series();
-cci_2.seriesType("marker");
-cci_2.fill("#E5BE01");
-cci_2.size(3);
-cci_2.stroke("none");
-cci_2.type("star5");
+// adjust CCI indicator
+var cci = plot1.cci(mapping).series();
+cci.seriesType("spline");
+cci.stroke("#bf360c", 2, "5 2");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_CCI\_02{sample}

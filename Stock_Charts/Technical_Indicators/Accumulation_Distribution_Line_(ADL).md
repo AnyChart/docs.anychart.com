@@ -28,13 +28,15 @@ var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "volu
 // create stock chart
 chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create plots on the chart
+var plot0 = chart.plot(0);
+var plot1 = chart.plot(1);
 
 // create ADL indicator
-var adl = plot.adl(mapping).series();
-adl.stroke('#bf360c');
+var adl = plot1.adl(mapping).series();
 ```
+
+Note that ADL indicator needs to be built on a separate plot due to rather huge difference between the indicator values and the data values.
 
 Here is a live sample:
 
@@ -44,21 +46,16 @@ It is possible to change the series type any time using the {api:anychart.core.s
 
 ## Visualization
 
-Visualization of an indicator depends on series type. Here is a sample where ADL with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where ADL indicator is visually adjusted:
 
 ```
-// create first ADL indicator of spline series type
-var adl_1 = plot_0.adl(mapping).series();
-adl_1.seriesType("spline");
-adl_1.stroke("#bf360c");
-
-// create second ADL indicator of marker series
-var adl_2 = plot_1.adl(mapping).series();
-adl_2.seriesType("marker");
-adl_2.fill("#E5BE01");
-adl_2.size(3);
-adl_2.stroke("none");
-adl_2.type("star5");
+// adjust ADL indicator
+var adl = plot1.adl(mapping).series();
+adl.seriesType("marker");
+adl.fill("#E5BE01");
+adl.size(5);
+adl.stroke("none");
+adl.type("triangleUp");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_ADL\_02{sample}

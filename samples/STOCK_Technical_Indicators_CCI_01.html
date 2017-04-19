@@ -22,16 +22,17 @@
         chart = anychart.stock();
 
         // create plot on the chart
-        var plot = chart.plot(0);
+        var plot0 = chart.plot(0);
+        var plot1 = chart.plot(1);
+        plot0.height("70%");
 
         // create line series
-        var splineSeries = plot.spline(mapping);
+        var splineSeries = plot0.spline(mapping);
         splineSeries.name("CSCO");
         splineSeries.stroke("2px #64b5f6");
 
         // create CCI indicator
-        var cci = plot.cci(mapping).series();
-        cci.stroke("#bf360c");
+        var cci = plot1.cci(mapping).series();
 
         // set container id for the chart
         chart.container("container");

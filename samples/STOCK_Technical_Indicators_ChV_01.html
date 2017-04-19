@@ -16,26 +16,22 @@
         dataTable.addData(get_csco_daily_data());
 
         // map loaded data
-        var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "volume": 3});
+        var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 5, "value": 4});
 
         // create stock chart
         chart = anychart.stock();
 
-        // create plots on the chart
-        var plot0 = chart.plot(0);
-        var plot1 = chart.plot(1);
-        plot0.height("70%");
+        // create plot on the chart
+        var plot = chart.plot(0);
 
         // create line series
-        var ohlcSeries = plot0.ohlc(mapping);
-        ohlcSeries.name("CSCO");
-        ohlcSeries.stroke("2px #64b5f6");
+        var splineSeries = plot.spline(mapping);
+        splineSeries.name("CSCO");
+        splineSeries.stroke("2px #64b5f6");
 
-        // create ADL indicator
-        var adl = plot1.adl(mapping).series();
-
-        // create scroller series with mapped data
-        chart.scroller().line(mapping);
+        // create CMF indicator
+        var cmf = plot.cmf(mapping).series();
+        cmf.stroke("#bf360c");
 
         // set container id for the chart
         chart.container("container");

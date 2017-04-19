@@ -10,11 +10,11 @@
 * [Bollinger Bands (BBands)](#bollinger_bands)
 * [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
 * [Bollinger Bands Width (BBW)](#bollinger_bands_width)
-* [Commodity Channel Index (CCI)](#)
-* [Chaikin Money Flow (CMF)](#)
-* [Chaikin Oscillator (CHO)](#)
-* [Chaikin Volatility (CHV)](#)
-* [Directional Movement Indicator (DMI)](#)
+* [Commodity Channel Index (CCI)](#commodity_channel_index)
+* [Chaikin Money Flow (CMF)](#chaikin_money_flow)
+* [Chaikin Oscillator (CHO)](#chaikin_oscillator)
+* [Chaikin Volatility (CHV)](#chaikin_volatility)
+* [Directional Movement Indicator (DMI)](#directional_movement_indicator)
 * [Exponential Moving Average (EMA)](#exponential\_moving\_average)
 * [KDJ](#kdj)
 * [Keltner Channels](#)
@@ -111,7 +111,7 @@ bandwidth = (upperBB − lowerBB) / middleBB
 
 Coming soon.
 
-## Commodity Channel Index (CCI)
+## Commodity Channel Index
 
 Commodity Channel Index is calculated according to this formula:
 
@@ -124,33 +124,51 @@ Where TP is a Typical Price calculated as:
 And SMA is calculated as stated in SMA part of this article.
 
 
-## Chaikin Money Flow (CMF)
+## Chaikin Money Flow
 
 Chaikin Money Flow is calculated in three steps.
 
 1. First a MFM(i) is calculated for all points according to this formula:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfm.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center>
 
 2. Next an MFV(i) value is calculated for all points like this:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf_mfv.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center>
 
 3. And finally the CMF(i) value is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center>
 
-## Chaikin Oscillator (CHO)
+## Chaikin Oscillator
 
-Coming soon.
+Chaikin Oscillator is calculated according to this formula:
 
-## Chaikin Volatility (CHV)
+<center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
 
-Coming soon.
+You can see how the ADL indicator is calculated in the <a href="#accumulation_distribution_line">ADL part of this article</a>.
 
-## Directional Movement Indicator (DMI)
+## Chaikin Volatility
 
-Coming soon.
+Chaikin Volatility indicator in each point is calculated according to the following formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
+
+## Directional Movement Indicator
+
+Directional Movement Indicator is calculated in three steps: 
+
+1. First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_tr.png"></center> 
+
+2. Next they are smoothed using <a href="#exponential_moving_average">EMA</a> or Wilder's method, calculated as:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_smoothing.png"></center>
+
+3. And finally the +DI and -DI values are calculated according to these formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi_pdi.png"></center>
 
 ## Exponential Moving Average
 
