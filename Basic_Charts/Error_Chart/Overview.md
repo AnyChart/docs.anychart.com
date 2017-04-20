@@ -78,7 +78,7 @@ And these methods configure error bars along the X-axis:
 
 ## Appearance
 
-{api:anychart.core.utils.Error#xErrorWidth}xErrorWidth()
+{api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api}
 {api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api}
 
 {api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api}
