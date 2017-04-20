@@ -43,8 +43,8 @@
     // configure the appearance of error bars on the first series
     error1.valueErrorWidth(6);
     error1.xErrorWidth(0);
-    error1.valueErrorStroke("grey", 2);
-    error1.xErrorStroke("grey", 2, "2 2", "round");
+    error1.valueErrorStroke("#6fb6ee", 2);
+    error1.xErrorStroke("#6fb6ee", 2, "2 2", "round");
 
     // create error bars on the second series
     var error2 = series2.error(); 
@@ -56,8 +56,8 @@
     // configure the appearance of error bars on the second series
     error2.valueErrorWidth(6);
     error2.xErrorWidth(6);
-    error2.valueErrorStroke("#2574c1", 2);
-    error2.xErrorStroke("#2574c1", 2);
+    error2.valueErrorStroke("grey", 0.5);
+    error2.xErrorStroke("grey", 0.5);
 
     // create major grids and bind them to the X and Y axes
     chart.grid(0).axis(chart.xAxis());
