@@ -12,8 +12,6 @@
 
 ## Overview
 
-## Chart
-
 ## Quick Start
 
 ??? {api:anychart.core.cartesian.series.Base#error}error(){api}
