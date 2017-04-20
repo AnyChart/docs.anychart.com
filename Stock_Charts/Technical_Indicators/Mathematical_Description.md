@@ -71,7 +71,7 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) in
 
 ## Average True Range
 
-[Average True Range](Average\_True\_Range\_(ATR)) in each point is calculated according to the following formula:
+[Average True Range](Average\_True\_Range\_(ATR\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
@@ -160,15 +160,15 @@ Directional Movement Indicator is calculated in three steps:
 
 1. First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi_tr.png"></center> 
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> 
 
 2. Next they are smoothed using <a href="#exponential_moving_average">EMA</a> or Wilder's method, calculated as:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi_smoothing.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center>
 
 3. And finally the +DI and -DI values are calculated according to these formulas:
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi_pdi.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center>
 
 ## Exponential Moving Average
 
