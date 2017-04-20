@@ -41,13 +41,10 @@
     lowerLabels = chart.tasks().lowerLabels();
     lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
-    // chart.criticalPath().tasks().lowerLabels().fontColor("#eee");
-    // chart.criticalPath().tasks().stroke("#000", 2);
-    // chart.criticalPath().tasks().fill("#000");
-    // chart.criticalPath().milestones().stroke("#000", 2);
-
     // set the container id for the chart
     chart.container("container");
+
+    chart.padding().left(30);
 
     // initiate drawing the chart
     chart.draw();

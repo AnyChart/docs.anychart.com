@@ -35,7 +35,7 @@ var tree = anychart.data.tree(data);
 
 Here is a sample with data set in this way:
 
-{sample}Pert\_Data\_01{sample}
+{sample :width 827 :height 300}Pert\_Data\_01{sample}
 
 ### Nodes and Connections Set Separately
 
@@ -63,7 +63,7 @@ var tree = anychart.data.tree(data, dependencies);
 
 Here is a sample with data set in this way:
 
-{sample}Pert\_Data\_02{sample}
+{sample :width 827 :height 300}Pert\_Data\_02{sample}
 
 
 ## Duration Setting Options
@@ -86,7 +86,7 @@ var data = [
 ];
 ```
 
-{sample}Pert\_Data\_03{sample}
+{sample :width 827 :height 300}Pert\_Data\_03{sample}
 
 
 ### Time Estimates
@@ -105,7 +105,7 @@ var data = [
 ];
 ```
 
-{sample}Pert\_Data\_04{sample}
+{sample :width 827 :height 300}Pert\_Data\_04{sample}
 
 
 ## Statistics

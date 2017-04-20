@@ -8,8 +8,12 @@ PERT Chart
 * [Special Settings](#special_settings)
  * [Interactivity](#interactivity)
  * [Appearance](#appearance)
+ * [Tasks](#tasks)
+ * [Milestones](#milestones)
+ * [Critical Path](#critical_path)
  * [Labels](#labels)
  * [Tooltips](#tooltips)
+ * [Statistics](#statistics)
 
 
 ## Overview
@@ -101,10 +105,129 @@ There are two basic classes of elements in PERT: milestones and tasks. Also ther
 
 Learn more about colors and visual appearance of the chart from the [Appearance Settings](../Appearance_Settings) section.
 
+### Tasks 
+
+Tasks are controlled using the {api:anychart.charts.Pert#tasks}tasks(){api} method, spacing between tasks by the {api:anychart.charts.Pert#horizontalSpacing}horizontalSpacing(){api} and the {api:anychart.charts.Pert#verticalSpacing}verticalSpacing(){api} methods.
+
+Here is a full list of methods used to configure coloring settings of the tasks in Pert Charts:
+
+* {api:anychart.core.pert.Tasks#color}color(){api}, {api:anychart.core.pert.Tasks#fill}fill(){api}, {api:anychart.core.pert.Tasks#stroke}stroke(){api} set the color, fill and stroke
+
+* {api:anychart.core.pert.Tasks#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Tasks#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+
+* {api:anychart.core.pert.Tasks#selectFill}selectFill(){api}, {api:anychart.core.pert.Tasks#selectStroke}selectStroke(){api} configure tasks' visual settings on select
+
+In the sample below, there is a Pert Chart with some of the appearance settings configured:
+
+
+```
+// set vertical spacing between tasks
+chart.verticalSpacing("20%");
+// set tasks colors
+tasks.stroke("#519790");
+tasks.fill("#519790");
+tasks.hoverStroke("#519790", 0.7);
+tasks.hoverFill("#519790", 0.7);
+tasks.selectStroke("#519790", 2);
+tasks.selectFill("#519790", 2);
+```
+
+{sample}Pert\_Settings\_01{sample}
+
+
+### Milestones 
+
+Here is a full list of methods used to configure visual coloring settings for the milestones of a Pert Chart:
+
+* {api:anychart.core.pert.Milestones#color}color(){api}, {api:anychart.core.pert.Milestones#fill}fill(){api}, {api:anychart.core.pert.Milestones#stroke}stroke(){api} set the color, fill and stroke
+
+* {api:anychart.core.pert.Milestones#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Milestones#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+
+* {api:anychart.core.pert.Milestones#selectFill}selectFill(){api}, {api:anychart.core.pert.Milestones#selectStroke}selectStroke(){api} configure milestones' visual settings on select
+
+In the sample below, there is a Pert Chart with some of the appearance settings configured:
+
+```
+// set colors for milestones
+milestones = chart.milestones();
+milestones.fill("#00acc1", 0.7);
+milestones.hoverFill("#80cbc4");
+milestones.selectFill("#00acc1");
+milestones.stroke("#90caf9", 1);
+milestones.hoverStroke("#90caf9", 2);
+milestones.selectStroke("#90caf9", 4);
+```
+
+{sample}Pert\_Settings\_02{sample}
+
+
+### Critical Path 
+
+Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements will be taken from defaults. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
+
+```
+// set critical path milestones filling color
+chart.criticalPath({milestones: {fill: "#ffab91", hoverFill: "#ff6e40", selectFill: "#ff6e40", labels: {fontColor: "#86614e"}}});
+// set critical tasks stroke
+chart.criticalPath({tasks: {stroke: "#ffab91"}});
+```
+{sample}Pert\_Settings\_03{sample}
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. There are some special settings for the PERT Chart labels, which can be found in the [PERT Labels Settings](Settings#labels) article.
 
+Though, besides the colors and spacing, there are some special settings for the tasks' labels. Due to a specific shape, tasks have upper and lower labels, and it is possible to adjust both. Use the {api:anychart.core.pert.Tasks#upperLabels}upperLabels(){api} and {api:anychart.core.pert.Tasks#lowerLabels}lowerLabels(){api} methods for it.
+
+```
+// set upper labels padding and font size
+chart.tasks().upperLabels().padding(5);
+chart.tasks().upperLabels().fontSize(20);
+```
+
+{sample}Pert\_Settings\_04{sample}
+
+It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
+
+```
+chart.milestones().labels().format(function(){
+    if (this.creator) {
+        var result ="";
+        var comma, i;
+            
+        for (i = 0; i < this.predecessors.length; i++){
+            comma = i == this.predecessors.length - 1 ? "" : ",";
+            result += this.predecessors[i].get("name") + comma;
+        }
+        result += " → ";
+        
+        for (i = 0; i < this.successors.length; i++){
+            comma = i == this.successors.length - 1 ? "" : ",";
+            result += this.successors[i].get("name") + comma;
+        }
+        return result;
+        
+    } else {
+        return this.isStart ? "S" : "F";
+    }
+});
+```
+
+{sample}Pert\_Settings\_05{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+### Statistics
+
+There are two statistic values can be got from the Pert Chart: standard deviation and the critical path duration. Use {api:anychart.charts.Pert#getStat}getStat(){api} method for both.
+
+```
+// get both statistic values on click
+chart.milestones(). listen("click", function(){
+  dev = chart.getStat("pertChartCriticalPathStandardDeviation");
+  alert("Standard deviation for this project is " + dev);
+})
+```
+{sample}Pert\_Settings\_06{sample}
