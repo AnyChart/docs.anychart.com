@@ -68,7 +68,7 @@ And these methods configure error bars along the X-axis:
 
 ## Error Mode
 
-??? {api:anychart.core.utils.Error#mode}mode(){api}
+{api:anychart.core.utils.Error#mode}mode(){api}
 
 ```
 
