@@ -3,8 +3,9 @@
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Cartesian Charts](#cartesian_charts)
-* [Scatter Charts](#scatter_charts)
+* [Lower and Upper Bars](#lower_and_upper_bars)
+  * [On Cartesian Charts](cartesian_charts)
+  * [On Scatter Charts](scatter_charts)
 * [Error Mode](#error_mode)
 * [Appearance](#appearance)
 * [Labels And Tooltips](#labels_and_tooltips)
@@ -22,7 +23,9 @@
 
 {sample}BCT\_Error\_Chart\_01{sample}
 
-## Cartesian Charts
+## Lower and Upper Bars
+
+### On Cartesian Charts
 
 * {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper bars as equal
 * {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower bars
@@ -40,7 +43,7 @@
 
 {sample}BCT\_Error\_Chart\_03{sample}
 
-## Scatter Charts
+### On Scatter Charts
 
 Here are the methods configuring error bars along the Y-axis:
 
@@ -93,6 +96,13 @@ And these methods configure error bars along the X-axis:
 ## Labels And Tooltips
 
 {api:core.cartesian.series.Base#label}label(){api}
+
+```
+
+```
+
+{sample}BCT\_Error\_Chart\_08{sample}
+
 {api:core.cartesian.series.Base#tooltip}tooltip(){api}
 
 ```

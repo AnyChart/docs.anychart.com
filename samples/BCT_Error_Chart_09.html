@@ -11,35 +11,24 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["A", 10000, 12500],
-      ["B", 12000, 15000],
-      ["C", 13000, 16500],
-      ["D", 10000, 13000],
-      ["E", 9000, 11000]
+      ["A", 10000],
+      ["B", 12000],
+      ["C", 13000],
+      ["D", 10000],
+      ["E", 9000]
     ]);
-
-    // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
     // create a chart
     chart = anychart.column();
 
-    // create the first series and set the data
-    var series1 = chart.column(seriesData_1);
+    // create a column series and set the data
+    var series = chart.column(data);
 
-    // create the second series and set the data
-    var series2 = chart.column(seriesData_2);
-
-    // create error bars on the first series
-    series1.error().valueError(400);
-
-    // create error bars on the second series
-    series2.error().valueLowerError(700);
-    series2.error().valueUpperError(200);
+    // create error bars
+    series.error("10%");
 
     // set the chart title
-    chart.title("Lower and Upper Error Bars: Cartesian");
+    chart.title("Error Chart: Tooltips");
 
     // set the container id
     chart.container("container");
