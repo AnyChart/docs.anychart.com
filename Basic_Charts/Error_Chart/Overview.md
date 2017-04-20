@@ -4,8 +4,8 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Lower and Upper Bars](#lower_and_upper_bars)
-  * [On Cartesian Charts](cartesian_charts)
-  * [On Scatter Charts](scatter_charts)
+  * [On Cartesian Charts](on_cartesian_charts)
+  * [On Scatter Charts](on_scatter_charts)
 * [Error Mode](#error_mode)
 * [Appearance](#appearance)
 * [Labels And Tooltips](#labels_and_tooltips)
@@ -109,7 +109,7 @@ And these methods configure error bars along the X-axis:
 
 ```
 
-{sample}BCT\_Error\_Chart\_08{sample}
+{sample}BCT\_Error\_Chart\_09{sample}
 
 ## Supported Types
 
