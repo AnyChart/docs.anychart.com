@@ -78,7 +78,7 @@ And these methods configure error bars along the X-axis:
 
 {sample}BCT\_Error\_Chart\_06{sample}
 
-## Visualization
+## Appearance
 
 {api:anychart.core.utils.Error#xErrorWidth}xErrorWidth()
 {api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api}
