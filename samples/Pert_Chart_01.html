@@ -22,8 +22,13 @@
     // create a chart
     var chart = anychart.pert();
 
+    // milestones size    
+    chart.milestones().size(50);
+
     // set chart data
     chart.data(data, "asTable");
+
+    chart.milestones()
 
     // set the title of the chart
     chart.title("PERT Chart");
