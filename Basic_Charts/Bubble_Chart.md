@@ -7,8 +7,8 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
-  * [Type](#type)
   * [Labels](#labels)
+  * [Size](#size)
   * [Single Marker Adjusting](#single_marker_adjusting)
   * [Tooltips](#tooltips)
 
@@ -36,8 +36,8 @@ This article explains how to create a basic Bubble chart as well as configure se
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Error Bubble](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Bubble](Polar_Plot/Polar_Bubble_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Bubble](Radar_Plot/Radar_Bubble_Chart)</td></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>[Bubble on Scatter Plot](Scatter_Plot/Overview)</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
@@ -110,16 +110,16 @@ In the sample below, there are two Bubble series with some of the appearance set
 
 ```
 // set colors
-series1.fill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverFill("#00cc99", 0.2);
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectFill("#00cc99", 0.8);
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
+series1.stroke("#00897b", 1, "10 5", "round");
+series1.hoverFill("#6aabcc", 0.3);
+series1.hoverStroke("#00897b", 2, "10 5", "round");
+series1.selectFill("#1976d2", 0.8);
+series1.selectStroke("#00897b", 4, "10 5", "round");
 
-series2.fill("none");
-series2.hoverFill("none");
-series2.selectFill("none");
+series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
+series2.hoverFill("#80cbc4", 0.5);
+series2.selectFill("#16685d");
 series2.hatchFill("percent10");
 series2.hoverHatchFill("percent30");
 series2.selectHatchFill("percent50");
@@ -132,14 +132,14 @@ series2.selectHatchFill("percent50");
 
 ### Size
 
-The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}.maxBubbleSize(){api} and {api:anychart.charts.Scatter#minBubbleSize}.minBubbleSize(){api} parameters. Both of them can be set either in pixels or in percents of a less chart side:
+The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Scatter#minBubbleSize}minBubbleSize(){api} parameters. Both of them can be set either in pixels or in percents of a less chart side:
 
 ```
 chart.maxBubbleSize("15%");
 chart.minBubbleSize("5%");
 ```
 
-When you set {api:anychart.charts.Scatter#maxBubbleSize}.maxBubbleSize("15%"){api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
+When you set {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize("15%"){api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
   
   
 Here is the sample where bubbles are sized in percents, as specified above:
@@ -149,8 +149,8 @@ Here is the sample where bubbles are sized in percents, as specified above:
 And there is a sample when bubbles are sized in pixels:
 
 ```
-chart.maxBubbleSize(0104);
-chart.minBubbleSize(3);
+chart.maxBubbleSize(100);
+chart.minBubbleSize(10);
 ```
 Note: this size setting type (in pixels) may lead to the nasty results when chart is resized.
 
