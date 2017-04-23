@@ -28,11 +28,11 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Marker](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Error Marker](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Error Marker](Error_Chart/Marker_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Polar_Marker_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Radar_Marker_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Marker on Scatter Plot](Scatter_Plot/Overview)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Marker](Scatter_Plot/Marker_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>

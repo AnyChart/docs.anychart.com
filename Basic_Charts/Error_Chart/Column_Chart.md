@@ -12,7 +12,7 @@ To learn more about error charts in general and how to customize them, see [Erro
 
 ## Quick Start
 
-To build a Column chart, use the {api:anychart#column}anychart.column(){api} chart constructor, then create a Column series with the {api:anychart.charts.Cartesian#column}column(){api} method. To add error bars, call {api:anychart.core.cartesian.series.Columnr#error}error(){api}.
+To build a Column chart, use the {api:anychart#column}anychart.column(){api} chart constructor, then create a Column series with the {api:anychart.charts.Cartesian#column}column(){api} method. To add error bars, call {api:anychart.core.cartesian.series.Column#error}error(){api}.
 
 ```
 // create a chart

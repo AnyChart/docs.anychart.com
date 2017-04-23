@@ -4,8 +4,8 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Lower and Upper Bars](#lower_and_upper_bars)
-  * [On Cartesian Charts](on_cartesian_charts)
-  * [On Scatter Charts](on_scatter_charts)
+  * [On Cartesian Charts](#on_cartesian_charts)
+  * [On Scatter Charts](#on_scatter_charts)
 * [Error Mode](#error_mode)
 * [Appearance](#appearance)
 * [Labels And Tooltips](#labels_and_tooltips)
@@ -200,4 +200,20 @@ tooltip.format(function(point){
 
 ## Supported Types
 
-Here is the list of chart types compatible with error bars:
+Here is the list of Cartesian chart types that can be combined with error bars:
+
+* [Area with Error Bars](Area_Chart)
+* [Marker with Error Bars](Marker_Chart)
+* [Column with Error Bars](Column_Chart)
+* [Jump Line with Error Bars](Jump_Line_Chart)
+* [Line with Error Bars](Line_Chart)
+* [Marker with Error Bars](Marker_Chart)
+* [Spline Area with Error Bars](Spine_Area_Chart)
+* [Spline with Error Bars](Spline_Chart)
+* [Step Area with Error Bars](Step_Area_Chart)
+* [Step Line with Error Bars](Step_Line_Chart)
+
+Scatter charts compatible with error bars include:
+
+* [Scatter Line with Error Bars](Scatter_Line_Chart)
+* [Scatter Marker with Error Bars](Scatter_Marker_Chart)

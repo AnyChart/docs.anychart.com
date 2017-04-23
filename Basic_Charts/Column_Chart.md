@@ -31,7 +31,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Percent/Column_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Column](3D/3D_Column_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart/Column_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
