@@ -196,7 +196,7 @@ Here is the list of supported scatter charts:
 * [Scatter Marker](Marker_Chart)
 * [Scatter Line](Line_Chart)
 
-See also (error)(../Error_Chart/Overview) charts:
+See also [error](../Error_Chart/Overview) charts:
 
 * [Scatter Marker with Error Bars](../Error_ChartMarker_Chart)
 * [Scatter Line with Error Bars](../Error_ChartLine_Chart)
