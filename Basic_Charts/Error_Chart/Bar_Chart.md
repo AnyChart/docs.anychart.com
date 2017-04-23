@@ -25,4 +25,4 @@ var series = chart.bar(data);
 series.error("10%");
 ```
 
-{sample}BCT\_Error\Bar\_Chart{sample}
+{sample}BCT\_Error\_Bar\_Chart{sample}
