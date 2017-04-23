@@ -11,33 +11,24 @@
 
     // create data
     var data = [
-      {x: 0.6, value: 22},
-      {x: 1.7, value: 55},
-      {x: 2.3, value: 50},
-      {x: 3.5, value: 80},
-      {x: 3.9, value: 74},
-      {x: 4, value: 68},
-      {x: 4, value: 76},
-      {x: 4.1, value: 84},
-      {x: 4.7, value: 93}
+      {x: "A", value: 10000},
+      {x: "B", value: 12000},
+      {x: "C", value: 13000},
+      {x: "D", value: 10000},
+      {x: "E", value: 9000}
     ];
   	
   	// create a chart
-  	chart = anychart.scatter();
+  	chart = anychart.area();
 
-    // create a marker series and set the data
-  	var series = chart.marker(data);
+    // create an area series and set the data
+  	var series = chart.area(data);
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
-
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // create error bars
+    series.error("10%");
 
   	// set the chart title
-  	chart.title("Scatter Marker Chart");
+  	chart.title("Area Chart with Error Bars");
 
   	// set the container id
   	chart.container("container");

@@ -11,31 +11,25 @@
 
     // create data
     var data = [
-      {x: 0.6, value: 22, valueError: 8, xError: 0.2},
-      {x: 1.7, value: 55, xLowerError: "6%", xUpperError:  "10%"},
-      {x: 2.3, value: 50, valueError: "12%"},
-      {x: 2.6, value: 76, valueUpperError: 7},
-      {x: 2.7, value: 64},
-      {x: 4, value: 71},
-      {x: 4, value: 88, valueLowerError: 6, valueUpperError: 4, xError: 0.4},
-      {x: 4.5, value: 74},
-      {x: 4.9, value: 83}
+      {x: 20, value: 0},
+      {x: 20, value: 100},
+      {x: 30, value: 60},
+      {x: 24, value: 60},
+      {x: 35, value: 20},
+      {x: 5, value: 20},
+      {x: 16, value: 60},
+      {x: 10, value: 60},
+      {x: 20, value: 100},
     ];
-
+    
     // create a chart
     chart = anychart.scatter();
 
-    // create a marker series and set the data
-    var series = chart.marker(data);
+    // create a line series and set the data
+    var series = chart.line(data);
 
-    // configure tooltips
-    var tooltip = series.tooltip();
-    tooltip.format(function(point){
-      return "\nxUpperError – " + point.xUpperError
-      + "\nxLowerError – " + point.xLowerError
-      + "\nvalueLowerError – " + point.valueLowerError
-      + "\nvalueUpperError – " + point.valueUpperError
-    });
+    // create error bars
+    series.error("10%");
 
     // create major grids and bind them to the X and Y axes
     chart.grid(0).axis(chart.xAxis());
@@ -46,7 +40,7 @@
     chart.minorGrid(1).axis(chart.yAxis());
 
     // set the chart title
-    chart.title("Error Chart: Tooltips");
+    chart.title("Scatter Line Chart with Error Bars");
 
     // set the container id
     chart.container("container");

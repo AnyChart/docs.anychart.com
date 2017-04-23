@@ -29,14 +29,14 @@ In the sample below, there are two series, Marker and Line, created by the {api:
 // create data for the first series
 var data_1 = [
   {x: 0.6, value: 22},
+  {x: 1.7, value: 55},
+  {x: 2.3, value: 50},
+  {x: 3.5, value: 80},
   {x: 3.9, value: 74},
   {x: 4, value: 68},
   {x: 4, value: 76},
-  {x: 3.5, value: 80},
   {x: 4.1, value: 84},
-  {x: 2.3, value: 50},
-  {x: 4.7, value: 93},
-  {x: 1.7, value: 55}
+  {x: 4.7, value: 93}
 ];
 
 // create data for the second series

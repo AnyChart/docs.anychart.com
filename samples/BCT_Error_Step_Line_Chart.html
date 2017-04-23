@@ -23,7 +23,7 @@
   ];
 
   // create a chart
-  chart = anychart.verticalLine();
+  chart = anychart.line();
 
   // create a step line series and set the data
   var series = chart.stepLine(data);
@@ -31,8 +31,11 @@
   // set step direction to the forward mode
   series.stepDirection("forward");  
 
+  // create error bars
+  series.error("10%");
+
   // set the chart title
-  chart.title("Vertical Step Line Chart");
+  chart.title("Step Line Chart with Error Bars");
 
   // set the container id
   chart.container("container");
