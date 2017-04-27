@@ -29,7 +29,7 @@ Accessibility is often abbreviated as the numeronym **a11y**, where the number 1
 
 The accessibility support is enabled by default. It means that you don't need to enable accessibility unless you've turned it off. Switching the accessibility support off will lead to the absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information available to a screen reader will be barely understandable.
 
-The default Accessibility mode is ["Chart Elements"](chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard to navigate between them. If you change the mode to the ["Data Table"](data_table_mode), an invisible readable table with the chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
+The default Accessibility mode is ["Chart Elements"](#chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard to navigate between them. If you change the mode to the ["Data Table"](#data_table_mode), an invisible readable table with the chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
 
 ## Enable/Disable
 

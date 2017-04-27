@@ -64,7 +64,7 @@ Dot (or Point, or Marker) Maps are those that demonstrate the existence of a sub
 
 ### Seat Maps
 
-Seat Maps are not Geographical Maps, seat map or seating chart, is a diagram of the seat layout inside a building, passenger aircraft or else. They are often published by airlines for informational purposes, and are of use to passengers for selection of their seat at booking or check-in. AnyMap technology allows to create any kind of seat maps, schemes or interactive layouts. See [Seat Map](Seat_Map) article for more.
+Seat Maps are not Geographical Maps, seat map or seating chart, is a diagram of the seat layout inside a building, passenger aircraft or else. They are often published by airlines for informational purposes, and are of use to passengers for selection of their seat at booking or check-in. AnyMap technology allows to create any kind of seat maps, schemes or interactive layouts. See [Seat Map](Seat_Maps/Seat_Map) article for more.
 
 ## Controls
 

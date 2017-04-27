@@ -188,7 +188,7 @@ We will also draw a "best-fit" straight line through the data, calculated using 
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
 ### Orientation
 

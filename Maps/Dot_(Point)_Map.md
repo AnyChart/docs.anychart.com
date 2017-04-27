@@ -17,7 +17,7 @@ Dot (Point) Maps
 
 Dot Maps use dots (points, markers) to demonstrate the existence of a subject or a feature. It's a lot like Bubble Maps ([Proportional Symbol Maps](Proportional_Symbol_Map)), but the dots' sizes don't depend on their values, as there's no size setting. Usually the tooltips are formatted to show some information about points - so these maps are very useful and popular in census, tourism, health service and any other researches.
 
-Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of [Marker type](../Basic_Chart_Types/Marker_Chart).
+Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of [Marker type](../Basic_Charts/Marker_Chart).
 
 Note that when you use this type to draw density maps they must be drawn on an equal area map projection. This is critical - using a map projection which does not preserve the size of areas will distort the perceived density of the dots.
 

@@ -89,7 +89,7 @@ That is how labels background with the settings from above looks like:
 
 ### Font
 
-Font settings are set as for any other [Text](Text_Settings):
+Font settings are set as for any other [Text](Text_Formatters):
 
 ```
 // font labels font settings

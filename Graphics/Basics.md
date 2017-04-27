@@ -38,7 +38,7 @@ anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](
 
 ## Basics
 
-Everything is drawn on a stage. To create the stage use the {api:anychart.graphics.create}create(){api} method:
+Everything is drawn on a stage. To create the stage use the {api:anychart.graphics#create}create(){api} method:
 
 ```
 var stage = anychart.graphics.create('container');

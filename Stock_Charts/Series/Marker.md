@@ -11,7 +11,7 @@
 
 ## Overview
 
-With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Chart_Types/Marker_Chart).
+With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Charts/Marker_Chart).
 
 ## AnyStock Marker Series Adjustment
 

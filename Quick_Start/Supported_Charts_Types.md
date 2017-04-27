@@ -67,19 +67,19 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/TreeMap_Chart)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
-<tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
-<tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
-<tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
-<tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart)</td></tr>
+<tr><td>Vertical Bubble Chart</td></tr>
+<tr><td>Vertical Jump Line Chart</td></tr>
+<tr><td>Vertical Line Chart</td></tr>
+<tr><td>Vertical Marker Chart</td></tr>
 <tr><td>[Vertical Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Area_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart)</td></tr>
-<tr><td>[Vertical Range Area Chart](../Basic_Charts/Vertical/Range_Area_Chart)</td></tr>
-<tr><td>[Vertical Range Spline Area Chart](../Basic_Charts/Vertical/Range_Spline_Area_Chart)</td></tr>
-<tr><td>[Vertical Spline Chart](../Basic_Charts/Vertical/Spline_Chart)</td></tr>
+<tr><td>Vertical Range Area Chart</td></tr>
+<tr><td>Vertical Range Spline Area Chart</td></tr>
+<tr><td>Vertical Spline Chart</td></tr>
 <tr><td>[Vertical Spline Area Chart](../Basic_Charts/Vertical/Spline_Area_Chart)</td></tr> 
 <tr><td>[Vertical Stacked Area Chart](../Basic_Charts/Stacked/Value/Vertical_Area_Chart)</td></tr>
 <tr><td>[Vertical Stacked Spline Area Chart](../Basic_Charts/Stacked/Value/Vertical_Spline_Area_Chart)</td></tr>
 <tr><td>[Vertical Stick Chart](../Basic_Charts/Vertical/Stick_Chart)</td></tr>
 <tr><td>[Vertical Step Area Chart](../Basic_Charts/Vertical/Step_Area_Chart)</td></tr> 
-<tr><td>[Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart)</td></tr>
+<tr><td>Vertical Step Line Chart</td></tr>
 </table>

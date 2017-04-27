@@ -26,7 +26,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Line](Vertical/Line_Chart)</td></tr>
+<tr><td>Vertical</td><td>Vertical Line</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -125,10 +125,10 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Vertical Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
+Most types of series in AnyChart can be drawn also in vertical orientation: [Vertical Charts](Vertical/Overview).
 
-Here is the information about creating Vertical Line series:
+The Vertical Line series can be of several kinds:
 
-* [Vertical Line](Vertical/Line_Chart)
-* [Vertical Spline](Vertical/Spline_Chart)
-* [Vertical Step Line](Vertical/Step_Line_Chart)
+* Vertical Line
+* Vertical Spline
+* Vertical Step Line

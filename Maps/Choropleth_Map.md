@@ -178,8 +178,8 @@ It can be difficult to distinguish between different shades.
 Variations within map units are hidden, and for this reason smaller units are better than large ones.
 
 If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
+- [Dot Density Maps](Dot_\(Point\)_Map)
 - [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
+- Cartograms
 
 These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.

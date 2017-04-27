@@ -148,7 +148,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](../Tooltips) and [Map Labels](Maps/Labels) articles.
 
 ```
 // data set

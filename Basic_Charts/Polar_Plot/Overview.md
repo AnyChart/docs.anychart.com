@@ -69,7 +69,7 @@ Below you can see our sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change polar background using {api:anychart.core.ui.Background}background(){api} method. Learn more about it in [Background settings tutorial](../Appearance_Settings/Background).
+You can change polar background using {api:anychart.core.ui.Background}background(){api} method. Learn more about it in [Background settings tutorial](../../Appearance_Settings/Background).
 
 ```
 var background = chart.background();
@@ -89,7 +89,7 @@ Here is a sample of a polar chart with tuned background:
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../../Axes_and_Grids/Axis_Basics) tutorial.
 
 ### Stroke
 
@@ -162,7 +162,7 @@ xLabels.textFormatter("{%Value}°");
 
 {sample}BCT\_PolarChart\_07{sample}
 
-You can change labels' background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
+You can change labels' background. Learn more about background configuration in [Background settings tutorial](../../Appearance_Settings/Background).
 
 ```
 // settings for axis labels

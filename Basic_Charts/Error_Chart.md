@@ -301,7 +301,7 @@ Look at the chart sample below and click on it to see it's javascript source.
 
 ## Labels And Tooltips
 
-If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:core.cartesian.series.Base#label}label(){api} and {api:core.cartesian.series.Base#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:anychart.charts.Cartesian#label}label(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format.
 
 {sample}Error\_Chart\_13{sample}
 

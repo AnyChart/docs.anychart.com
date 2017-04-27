@@ -68,7 +68,7 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) in
 
 ## Average True Range
 
-[Average True Range](Average\_True\_Range\_(ATR)) in each point is calculated according to the following formula:
+[Average True Range](Average\_True\_Range\_(ATR\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
