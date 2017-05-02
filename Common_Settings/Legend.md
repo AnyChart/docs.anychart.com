@@ -73,7 +73,7 @@ var title = chart.legend().title();
 title.enabled(true);
 ```
 
-To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](../Appearance_Settings/Title) article.
+To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](Title) article.
 
 ```
 var title = chart.legend().title();

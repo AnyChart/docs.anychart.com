@@ -105,7 +105,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../../Appearance_Settings/Strokes_and_Lines).
 
 Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis has a stroke colored with gradient.
 
@@ -126,7 +126,7 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}scale(){api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}scale(){api} method. More information about scale types can be found in [Scale tutorial](../../Axes_and_Grids/Scales#types)
 
 ```
 // create logarithmic scale
@@ -223,7 +223,7 @@ grid.layout("circuit");
 grid.stroke("white");    
 ```
 
-**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids).
+**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../../Axes_and_Grids/Scales#grids).
 
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
@@ -266,7 +266,7 @@ tooltip.textFormatter(function(e){
 
 ## Series Types
 
-Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
 
 {sample}BCT\_PolarChart\_12{sample}
 

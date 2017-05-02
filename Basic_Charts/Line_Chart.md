@@ -26,13 +26,13 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>Vertical Line</td></tr>
+<tr><td>Vertical</td><td>[Vertical Line](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Polar_Line_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Line](Radar_Plot/Radar_Line_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Scatter_Line_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Overview)</td></tr>
+<tr><td>Radar</td><td>[Radar Line](Radar_Plot/Overview)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Overview)</td></tr>
 <tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Line)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Spline](Spline_Chart)</td></tr>

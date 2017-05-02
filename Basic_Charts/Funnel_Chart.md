@@ -183,7 +183,7 @@ labels.position("outsideRight");
 chart.connectorLength(45);
 ```
 
-Using these settings we have set each label 45px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}textFormatter(){api} method we can adjust content for the labels.
+Using these settings we have set each label 45px to the right from the each funnel point. Using {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method we can adjust content for the labels.
 
 {sample}BCT\_FunnelChart\_06{sample}
 

@@ -194,7 +194,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}.orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}.yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}.xAxis(){api} methods.
 
-Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
 chart.xAxis().orientation('right');

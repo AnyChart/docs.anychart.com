@@ -102,7 +102,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
+More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Appearance_Settings/Strokes_and_Lines).
 
 Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
 
@@ -122,7 +122,7 @@ Look at the demonstration of Y-Axis inversion in the sample below:
 
 ### Logarithmic Scale
 
-You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scale(){api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scale(){api} method. More information about scale types can be found in [Scale tutorial](../../Axes_and_Grids/Scales#types)
 
 ```
 // create logarithmic scale
@@ -231,7 +231,7 @@ grid.evenFill("darkred");
 grid.layout("radial");
 ```
 
-**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
+**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../../Axes_and_Grids/Scales#grids)
 
 Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
@@ -271,6 +271,6 @@ Sample below has more complex tooltip than snippet above. Click 'Launch in playg
 
 ## Series Types
 
-Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
 
 {sample}BCT\_RadarChart\_14{sample}

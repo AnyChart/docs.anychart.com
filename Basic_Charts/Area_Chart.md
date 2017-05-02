@@ -28,7 +28,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Area](Vertical/Vertical_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Area](Vertical/Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>

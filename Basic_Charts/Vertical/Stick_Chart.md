@@ -28,4 +28,4 @@ var series2 = chart.stick(seriesData_2);
 
 ## Adjusting
 
-The Vertical Stick series' settings are mostly the same as Stick series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).
+The Vertical Stick series' settings are mostly the same as Stick series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../General_Settings).

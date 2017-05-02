@@ -304,7 +304,7 @@ In some cases you might need a custom chart reaction on some user's actions whic
 
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
-You can find more about listeners [here](../Common_Settings/Event_Listeners).
+You can find more about listeners in the [Event Listeners article](../Common_Settings/Event_Listeners).
 
 **Note**: Points of a pie chart can't be selected. Use {api:anychart.charts.Pie#explode}exploded(){api} method to adjust current state of pie's slice.
 
@@ -368,7 +368,7 @@ Custom tooltips can be more complicated than the one above. Tooltips may contain
 
 {sample}CS\_Interactivity\_18{sample}
 
-**Note**: you can find more information about AnyChart tooltips [here](../Common_Settings/Tooltip).
+**Note**: you can find more information about AnyChart tooltips in the [Tooltip tutorial](../Common_Settings/Tooltip).
 
 ## Interactivity Settings in Data Sets
 

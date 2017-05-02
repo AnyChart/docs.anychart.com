@@ -196,7 +196,7 @@ tooltip1.titleFormatter("Manager: {%x}");
 
 ### Content
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#textFormatter}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();

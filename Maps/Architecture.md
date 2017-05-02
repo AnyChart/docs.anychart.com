@@ -44,8 +44,8 @@ AnyChart provides GeoData in GeoJSON, TopoJSON, SVG and SHP format to make it ea
   
 AnyChart component is able to work with files in GeoJSON, TopoJSON and SVG formats. If your GeoData is in SHP format or any other, you need to convert it before using with AnyChart. You can find more about custom maps in the following articles:
 
-* [Custom GeoJSON Maps](Custom_GeoJSON_Maps)
-* [Custom TopJSON Maps](Custom_TopoJSON_Maps)
+* [Custom GeoJSON Maps](Custom_GeoJson_Maps)
+* [Custom TopJSON Maps](Custom_TopoJSON)
 * [Custom SVG Maps](Custom_SVG_Maps)
 
 ## Map Series Types

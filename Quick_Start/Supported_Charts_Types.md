@@ -70,7 +70,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>Vertical Bubble Chart</td></tr>
 <tr><td>Vertical Jump Line Chart</td></tr>
 <tr><td>Vertical Line Chart</td></tr>
-<tr><td>Vertical Marker Chart</td></tr>
+<tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Overview)</td></tr>
 <tr><td>[Vertical Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Area_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart)</td></tr>
 <tr><td>Vertical Range Area Chart</td></tr>

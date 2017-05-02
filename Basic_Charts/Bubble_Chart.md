@@ -20,7 +20,7 @@
  
 ## Overview
 
-A Bubble chart is a variation of a [Scatter chart](./Scatter_Chart) where the data points are replaced with bubbles.
+A Bubble chart is a variation of a [Scatter chart](Scatter_Plot/Overview) where the data points are replaced with bubbles.
   
   
 HTML5 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
@@ -36,7 +36,7 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 Depending on data model and the visualization purpose the bubble chart may contain single or several series. As bubble chart needs 3 values to show bubbles - you need to pass this data to chart. Here are two samples of data formatting:
   
   
-When using Bubble chart on a [scatter plot](./Scatter_Chart):
+When using Bubble chart on a [scatter plot](Scatter_Plot/Overview):
 
 ```
   [10, 63, 20]

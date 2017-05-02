@@ -21,7 +21,7 @@ This article will help you to understand how to work with colors and palettes wh
 
 ## Coloring the Map regions
 
-There are three slightly different situations when you might need to adjust colors for the map without colorScale (read about colorScale [here](../Map_Scales)). First is when you've got a simple uncolored Map and you don't want or don't need to use a colorScale; second is when you want to set the colors for highlighting an only point (region) or a series; in the third case you might want to define colors for the selected regions.
+There are three slightly different situations when you might need to adjust colors for the map without colorScale (read about colorScale in the [Scales article](Scales)). First is when you've got a simple uncolored Map and you don't want or don't need to use a colorScale; second is when you want to set the colors for highlighting an only point (region) or a series; in the third case you might want to define colors for the selected regions.
 
 Let's consider those situations.
 
@@ -41,7 +41,7 @@ You might have defined a number of series for some reason. As you don't use the 
 
 In this sample we've got the map of Australia, where its regions are defined in two different series which are then colored separately, independent from its values. 
 
-You can also change the color of labels and the title color. You can read about those [here](../Map_Labels).
+You can also change the color of labels and the title color. You can read about those in the [Map Labels article](../Map_Labels).
 
 Also, there is nothing different from our basic charts if you want to use the dataset for defining the region's colors:
 
@@ -162,7 +162,7 @@ This way of coloring is not possible using other palette types.
 
 ## LinearColorScale
 
-Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange (read about it [here](../ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.core.map.scale.LinearColor}LinearColor{api} method is a bit different.
+Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange ([ColorRange tutorial](ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.scales#linearColor}linearColor(){api} method is a bit different.
 
 ```
 	// map the data of two dataSets

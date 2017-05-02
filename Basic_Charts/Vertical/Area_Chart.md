@@ -28,4 +28,4 @@ var series2 = chart.area(seriesData_2);
 
 ## Adjusting
 
-The Vertical Area series' settings are mostly the same as Area series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).
+The Vertical Area series' settings are mostly the same as Area series' settings. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../General_Settings).
