@@ -8,13 +8,13 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>
-    <script x-export="chart">nychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
     var dataTable = anychart.data.table();
     // data comes from the function in https://cdn.anychart.com/csv-data/dji-daily-short.js
     dataTable.addData(get_dji_daily_short_data());
 
     var firstMapping = dataTable.mapAs({value: 1});
-    var secondMapping = dataTable.mapAs({value: 5});
+    var secondMapping = dataTable.mapAs({value: 2});
 
     chart = anychart.stock();
 
@@ -30,7 +30,7 @@
     // format axis to show percents
     chart.plot(0).yAxis().labels().format("{%Value}%");
 
-    chart.title("Value Stack Mode in Percent Charts");
+    chart.title("Percent Stack Mode in Percent Charts");
     chart.container("container");
     chart.draw();
 });

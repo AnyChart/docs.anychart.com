@@ -9,9 +9,9 @@
   * [Values](#values)
   * [Percents](#percents)
   * [Comparison Base](#comparison_base)
-* [Stacked Mode](stacked_mode)
-  * [Value](value)
-  * [Percent](percent)
+* [Stacked Mode](#stacked_mode)
+  * [Value](#value)
+  * [Percent](#percent)
 
 ## Overview
 
