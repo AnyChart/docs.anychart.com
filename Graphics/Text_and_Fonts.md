@@ -123,10 +123,6 @@ text2.textWrap("byLetter");
 text2.textOverflow(true);
 text2.letterSpacing(3);
 text2.lineHeight(20);
-
-// create the third text 
-text3 = stage.text(20, 75, "This is my third custom text element, which is made multiline with the help of AnyChart Graphics methods", textStyle);
-text3.textWrap("byWord");
 ```
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_07{sample}
