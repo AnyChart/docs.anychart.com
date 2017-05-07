@@ -138,7 +138,7 @@ table.remove('2015-12-25','2015-12-25');
 
 Using this method with no arguments removes *all points*, so be careful. 
 
-# Individual point settings
+## Individual point settings
 
 Stock Charts are built to handle big data sets and by default there is no way to set color for the individual point. However, this can be done too.
 

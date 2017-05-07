@@ -400,6 +400,8 @@ var columnTooltip = columnSeries.tooltip();
 columnTooltip.format("{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}");
 ```  
 
+Here is a live sample with such settings:
+
 {sample}CS\_format\_02{sample}
 
 If you explore the sample, you can see that all values are set in pence, but the shown value is formatted.
@@ -410,6 +412,8 @@ On the sample below there is another popular case of scale formatting shown: a t
 // string for formatting tooltips
 var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
 ```  
+
+Here is a live sample with such settings:
 
 {sample}CS\_format\_03{sample}
 
@@ -424,6 +428,8 @@ var tooltip = series.tooltip();
 tooltip.format("{%Value}{groupsSeparator:\\,}");
 ```  
 
+Here is a live sample with such settings:
+
 {sample}CS\_format\_04{sample}
 
 ## Formatting functions
@@ -437,6 +443,8 @@ lineTooltip.format(function(){
   return "Income: " + this.value/100 + "%";
 });
 ```
+
+Here is a live sample with such settings:
 
 {sample}CS\_format\_05{sample}
 
