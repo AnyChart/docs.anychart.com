@@ -13,13 +13,11 @@
     // data comes from the function in https://cdn.anychart.com/csv-data/dji-daily-short.js
     dataTable.addData(get_dji_daily_short_data());
 
-    var firstMapping = dataTable.mapAs({value: 1});
-    var secondMapping = dataTable.mapAs({value: 2});
-
     chart = anychart.stock();
 
-    chart.plot(0).column(firstMapping);
-    chart.plot(0).column(secondMapping);
+    chart.plot(0).column(dataTable.mapAs({value: 1}));
+    chart.plot(0).column(dataTable.mapAs({value: 2}));
+    chart.plot(0).column(dataTable.mapAs({value: 3}));
 
     // set y scale stack mode to value
     chart.plot(0).yScale().stackMode("value");
@@ -27,6 +25,8 @@
     chart.title("Value Stack Mode in Stock Charts");
     chart.container("container");
     chart.draw();
+
+    chart.selectRange("MTD");    
 });
 
 </script>
