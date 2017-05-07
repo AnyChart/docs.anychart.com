@@ -59,15 +59,15 @@ Now it's posiible to set the data not only as array of arrays, but as array of o
 var table = anychart.data.table('x');
 
 table.addData([
-    {"x":"2015-12-24", "open":511.53, "high":514.98, "low":505.79, "close":506.40},
-    {"x":"2015-12-25", "open":512.53, "high":514.88, "low":505.69, "close":510.34},
-    {"x":"2015-12-26", "open":511.83, "high":514.98, "low":505.59, "close":507.23},
-    {"x":"2015-12-27", "open":511.22, "high":515.30, "low":505.49, "close":506.47},
-    {"x":"2015-12-28", "open":511.53, "high":514.98, "low":505.79, "close":506.40},
-    {"x":"2015-12-29", "open":512.53, "high":513.88, "low":505.69, "close":510.34},
-    {"x":"2015-12-30", "open":511.83, "high":512.98, "low":502.59, "close":503.23},
-    {"x":"2015-12-31", "open":511.22, "high":515.30, "low":505.49, "close":506.47},
-    {"x":"2016-01-01", "open":510.35, "high":515.72, "low":505.23, "close":508.80}
+    {'x': '2015-12-24', 'open': 511.53, 'high': 514.98, 'low': 505.79, 'close': 506.40},
+    {'x': '2015-12-25', 'open': 512.53, 'high': 514.88, 'low': 505.69, 'close': 510.34},
+    {'x': '2015-12-26', 'open': 511.83, 'high': 514.98, 'low': 505.59, 'close': 507.23},
+    {'x': '2015-12-27', 'open': 511.22, 'high': 515.30, 'low': 505.49, 'close': 506.47},
+    {'x': '2015-12-28', 'open': 511.53, 'high': 514.98, 'low': 505.79, 'close': 506.40},
+    {'x': '2015-12-29', 'open': 512.53, 'high': 513.88, 'low': 505.69, 'close': 510.34},
+    {'x': '2015-12-30', 'open': 511.83, 'high': 512.98, 'low': 502.59, 'close': 503.23},
+    {'x': '2015-12-31', 'open': 511.22, 'high': 515.30, 'low': 505.49, 'close': 506.47},
+    {'x': '2016-01-01', 'open': 510.35, 'high': 515.72, 'low': 505.23, 'close': 508.80}
 ]);
 ```
 
@@ -173,7 +173,9 @@ table.addData([
 var mapping = table.mapAs({value: 1, fill: 2});
 
 var series = chart.plot(0).column(mapping);
-``` 
+```
+
+Here is a live sample with such settings:
 
 {sample}STOCK\_Data\_03{sample}
 
@@ -197,6 +199,8 @@ table.addData([
 var mapping = table.mapAs({'value':'volume', 'stroke': 'stroke'});
 
 var series = chart.plot(0).column(mapping);
-```  
+```
+
+Here is a live sample with such settings:
 
 {sample}STOCK\_Data\_04{sample}
