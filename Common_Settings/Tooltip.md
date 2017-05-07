@@ -432,4 +432,6 @@ Settings for the tooltip in the sample below are applied using themes. Click "la
 
 ## Custom Tooltip
 
-If the built-in tooltip features are not enough - you can always create your own custom tooltip, which can contain anything, even another chart. See [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip) article to learn more.
+If the built-in tooltip features are not enough - you can always create your own custom tooltip, which can contain anything, even another chart. 
+
+See [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip) article to learn more.
