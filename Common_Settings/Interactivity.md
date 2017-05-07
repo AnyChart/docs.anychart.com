@@ -26,12 +26,12 @@ Our js charts are interactive by default, and almost everything can be adjusted 
 ## Default interactivity
 
 That's what happens by default when users interact with charts:
- - series and points are highlighted when hovered
- - points are selected
- - tooltips of hovered points are shown
- - series becomes highlighted when a legend is hovered
- - the series gets shown or hidden when a legend element is clicked
- - a number of series are selected (multi-select)
+- series and points are highlighted when hovered
+- points are selected
+- tooltips of hovered points are shown
+- series becomes highlighted when a legend is hovered
+- the series gets shown or hidden when a legend element is clicked
+- a number of series are selected (multi-select)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
    
