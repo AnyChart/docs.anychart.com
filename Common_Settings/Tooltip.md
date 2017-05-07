@@ -22,6 +22,7 @@
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
 * [Themes](#themes)
+* [Custom Tooltip](custom_tooltip)
 
 ## Overview
 
@@ -428,3 +429,7 @@ var themeSettings = {
 Settings for the tooltip in the sample below are applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
 
 {sample}CS\_Tooltip\_21{sample}
+
+## Custom Tooltip
+
+If the built-in tooltip features are not enough - you can always create your own custom tooltip, which can contain anything, even another chart. See [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip) article to learn more.

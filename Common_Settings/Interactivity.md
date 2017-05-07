@@ -350,9 +350,9 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
+ - [Dashboard with the US Map and Multiselect](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
+ - [World Temperature Map](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
+ - [Wine Sales in Australia](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
  - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
  - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
@@ -364,7 +364,7 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 ### Chart as Tooltip
 
-Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit sophisticated. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on mouse events managing.
+Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on management of mouse events.
 
 {sample}CS\_Interactivity\_18{sample}
 
