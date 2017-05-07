@@ -22,7 +22,7 @@
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
 * [Themes](#themes)
-* [Custom Tooltip](custom_tooltip)
+* [Custom Tooltip](#custom_tooltip)
 
 ## Overview
 

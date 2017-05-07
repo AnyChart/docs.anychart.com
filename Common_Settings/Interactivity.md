@@ -318,43 +318,23 @@ Explore the code of this sample in the playground.
 
 #### DrillDown
 
-Using all these features, it's possible to create a drilldown chart. You can easily get points' data using the "pointSelect" event and show or hide them. Look at the following sample:
+To create a drilldown chart you just need to decide which event you want chart to react to and then made the changes in the data accordingly.
+
+Here is a sample of a basic drill down chart where the new data is loaded into a chart when a column is clicked and goes back to initial state when click happens on drilled down data:
 
 {sample}CS\_Interactivity\_13{sample} 
 
-```
-chart.listen("pointSelect", function(evt){
-  var ind = evt.pointIndex;
-
-  dataRow = data.row(ind);
-  pieDataSet.data([
-          {x: "John", value: dataRow[2]},
-          {x: "James", value: dataRow[3]},
-          {x: "Peter", value: dataRow[4]},
-          {x: "Mattew", value: dataRow[5]}
-  ]);
-  pieSubTitle = "\nYear: "+ dataRow[0];
-
-  pie.data(pieDataSet);
-
-  pie.title(pieTitle + pieSubTitle);
-});
-```
-
-Here we can see the column chart showing sales amounts of ACME Corp. by year, accompanied by a line chart displaying monthly sales statistics. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
-
-If you need the similar drilldown chart with multi-selection, you may do the following:
+The next drilldown chart works with multiselect, in this sample the series are added and removed depending on selection made on the left chart:
 
 {sample}CS\_Interactivity\_14{sample} 
 
-In this sample not the data but the series are added and removed depending on selections made:
+Check out some other drilldown samples in the gallery:
 
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
- - [Wine Sales in Australia](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
- - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
+- [Dashboard with the US Map and Multiselect](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
+- [World Temperature Map](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
+- [Wine Sales in Australia](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
+- [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
+- [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 
