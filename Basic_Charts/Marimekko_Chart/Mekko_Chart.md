@@ -105,7 +105,6 @@ var series1 = chart.mekko(seriesData_1);
 series1.fill("#00cc99", 0.3);
 series1.hoverFill("#00cc99", 0.3);
 series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
 series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
@@ -117,7 +116,6 @@ series2.fill("#0066cc", 0.3);
 series2.hoverFill("#0066cc", 0.3);
 series2.selectFill("#0066cc", 0.5);
 series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.stroke("#0066cc");
 series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
@@ -138,5 +136,5 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 
 Here is the information about creating Vertical Mekko Chart:
 
-* [Vertical Mekko Line](Vertical/Mekko_Chart)
+* [Vertical Mekko](../Vertical/Mekko_Chart)
 

@@ -132,4 +132,4 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 
 Here is the information about creating Vertical Mosaic Chart:
 
-* [Vertical Mosaic Line](Vertical/Mosaic_Chart)
+* [Vertical Mosaic](../Vertical/Mosaic_Chart)

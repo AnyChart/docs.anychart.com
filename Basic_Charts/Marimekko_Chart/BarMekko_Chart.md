@@ -100,9 +100,6 @@ var series1 = chart.mekko(seriesData_1);
 series1.fill("#00cc99", 0.3);
 series1.hoverFill("#00cc99", 0.3);
 series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.mekko(seriesData_2);
@@ -133,5 +130,5 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 
 Here is the information about creating Vertical BarMekko Chart:
 
-* [Vertical BarMekko Line](Vertical/BarMekko_Chart)
+* [Vertical BarMekko](../Vertical/BarMekko_Chart)
 

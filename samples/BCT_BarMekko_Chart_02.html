@@ -24,9 +24,6 @@
     // create a chart
     var chart = anychart.barmekko();
 
-    // create a mekko series and set the data
-    var series = chart.mekko(data);
-
     // create the first series
     var series1 = chart.mekko(seriesData_1);
 
@@ -34,9 +31,6 @@
     series1.fill("#00cc99", 0.3);
     series1.hoverFill("#00cc99", 0.3);
     series1.selectFill("#00cc99", 0.5);
-    series1.stroke("#00cc99", 1, "10 5", "round");
-    series1.hoverStroke("#00cc99", 2, "10 5", "round");
-    series1.selectStroke("#00cc99", 4, "10 5", "round");
 
     // create the second series
     var series2 = chart.mekko(seriesData_2);
