@@ -24,19 +24,31 @@
     // create a chart
     chart = anychart.mosaic();
 
-    // swap axes
-    chart.xAxis().orientation("left");
-    chart.yAxis().orientation("bottom");    
+    // create the first series
+    var series1 = chart.mekko(seriesData_1);
 
-    // add series and change the orientation
-    var series1 = chart.mekko(seriesData_1).name("Item 1");
-    series1.isVertical(true);
+    // configure the visual settings of the first series
+    series1.fill("#00cc99", 0.3);
+    series1.hoverFill("#00cc99", 0.3);
+    series1.selectFill("#00cc99", 0.5);
+    series1.stroke("#00cc99", 1, "10 5", "round");
+    series1.hoverStroke("#00cc99", 2, "10 5", "round");
+    series1.selectStroke("#00cc99", 4, "10 5", "round");
 
-    var series2 = chart.mekko(seriesData_2).name("Item 2");
-    series2.isVertical(true);
+    // create the second series
+    var series2 = chart.mekko(seriesData_2);
+
+    // configure the visual settings of the second series
+    series2.fill("#0066cc", 0.3);
+    series2.hoverFill("#0066cc", 0.3);
+    series2.selectFill("#0066cc", 0.5);
+    series2.hatchFill("zigzag", "#808080", 1, 15);
+    series2.stroke("#0066cc");
+    series2.hoverStroke("#0066cc", 2);
+    series2.selectStroke("#0066cc", 4);
 
     // set the chart title
-    chart.title("Vertical Charts: Mosaic Chart");
+    chart.title("Mosaic Chart: Appearance Settings");
 
     // set the container id
     chart.container("container");

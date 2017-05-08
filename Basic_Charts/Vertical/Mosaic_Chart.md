@@ -29,7 +29,7 @@ var series1 = chart.mekko(seriesData_1).name("Item 1");
 series1.isVertical(true);
 
 var series2 = chart.mekko(seriesData_2).name("Item 2");
-series1.isVertical(true);
+series2.isVertical(true);
 ```
 
 {sample}BCT\_Vertical\_Mosaic\_Chart{sample}

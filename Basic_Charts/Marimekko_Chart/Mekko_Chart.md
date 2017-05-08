@@ -20,10 +20,10 @@ A Mekko chart with %-axis (often called *marimekko chart* or *100% cost curve*) 
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](Mekko_Chart)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[YES]</td></tr>
+<tr><td>Stacked</td><td>[YES](Mekko_Chart)</td></tr>
 <tr><td>Vertical</td><td>[YES](Vertical/Mekko_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Mekko Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -37,16 +37,92 @@ A Mekko chart with %-axis (often called *marimekko chart* or *100% cost curve*) 
 <tr><td></td><td>[Stacked Charts](../Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mekko-chart/" target="_blank">Chartopedia: Marimekko Mekko Chart</a></td></tr>
-<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+<tr><td></td><td>[General Settings](../General_Settings)</td></tr>
 </table>
 
 ## Quick Start
 
+To create a Mekko chart, use the {api:anychart#mekko}anychart.mekko(){api} chart constructor. If you pass the data to this chart constructor, it creates mekko series.
+
+To create mekko series explicitly, call the {api:anychart.charts.Mekko#mekko}mekko(){api} method.
+
+The following sample demonstrates how a basic Mekko chart is created:
+
+```
+// create a data set
+var data = anychart.data.set([
+  ["QTR1", 10000, 12500],
+  ["QTR2", 12000, 15000],
+  ["QTR3", 13000, 16500],
+  ["QTR4", 10000, 13000],
+]);
+
+// map the data
+var seriesData_1 = data.mapAs({x: 0, value: 1});
+var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+// create a chart
+chart = anychart.mekko();
+
+// add series and change the orientation
+var series1 = chart.mekko(seriesData_1).name("Item 1");
+var series2 = chart.mekko(seriesData_2).name("Item 2");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+```
+
 {sample}BCT\_Mekko\_Chart\_01{sample}
 
 ## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
+
+Read the overview of general settings: [General Settings](../General_Settings).
+
 ## Special Settings
+
 ### Appearance
+
+Here is a full list of methods used to configure visual settings that are available for the Mekko series:
+
+* {api:anychart.core.mekko.series.Mekko#color}color(){api}, {api:anychart.core.mekko.series.Mekko#fill}fill(){api}, {api:anychart.core.mekko.series.Mekko#hatchFill}hatchFill(){api}, {api:anychart.core.mekko.series.Mekko#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
+* {api:anychart.core.mekko.series.Mekko#hoverFill}hoverFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.mekko.series.Mekko#selectFill}selectFill(){api}, {api:anychart.core.mekko.series.Mekko#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#selectStroke}selectStroke(){api} configure the visual settings on select
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+In the sample below, there are two mekko series with some of the appearance settings configured:
+
+```
+// create the first series
+var series1 = chart.mekko(seriesData_1);
+
+// configure the visual settings of the first series
+series1.fill("#00cc99", 0.3);
+series1.hoverFill("#00cc99", 0.3);
+series1.selectFill("#00cc99", 0.5);
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.mekko(seriesData_2);
+
+// configure the visual settings of the second series
+series2.fill("#0066cc", 0.3);
+series2.hoverFill("#0066cc", 0.3);
+series2.selectFill("#0066cc", 0.5);
+series2.hatchFill("zigzag", "#808080", 1, 15);
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
+```
+
+{sample}BCT\_Mekko\_Chart\_02{sample}
 
 ### Labels
 
