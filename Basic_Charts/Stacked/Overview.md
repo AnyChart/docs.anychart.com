@@ -2,6 +2,7 @@
 #Stacked Charts
 
 * [Overview](#overview)
+ * [Marimekko Charts](#marimekko)
 * [Value Stacking](#value_stacking)
 * [Percent Stacking](#percent_stacking)
  * [Scale Interval](#scale_interval)
@@ -20,6 +21,10 @@ The stacked charts are a popular visual aid used for categorizing and comparing 
 In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
+
+## Marimekko Charts
+
+Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Overview) articles to learn how to build them with AnyChart.
 
 ## Value Stacking
 
