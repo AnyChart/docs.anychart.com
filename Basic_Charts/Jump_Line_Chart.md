@@ -44,7 +44,7 @@ Jump Line Charts are usually used for demonstrating rates.
 
 ## Quick Start
 
-To create a  chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+To create a chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
 
 To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method.
 

@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 10000],
+      ["QTR2", 12000],
+      ["QTR3", 13000],
+      ["QTR4", 10000],
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+
+    // create a chart
+    chart = anychart.barmekko();
+
+    // swap axes
+    chart.xAxis().orientation("left");
+    chart.yAxis().orientation("bottom");    
+
+    // add series
+    var series = chart.mekko(seriesData_1);
+    series.isVertical(true);
+
+    // set the chart title
+    chart.title("Vertical Charts: BarMekko Chart");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
