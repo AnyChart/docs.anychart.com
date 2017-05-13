@@ -1,5 +1,5 @@
 {:index 1}
-#Working with Data
+#Working With Data
 
 * [Overview](#overview)
 * [Resource](#resource)
@@ -24,26 +24,18 @@ Resource is an element that can be given a task (activity), which will be finish
 
 There is a list of paramters that a resource has or can have. 
 
- - name
- - image
- - description
- - type
- - tags
- - activities
- - imageSize
- - imageBorderRadius
- - imageOpacity
- - imageAlign
- - imageFittingMode
- - imageMargin
- - nameMargin
- - textSettings (?)
- - tagsPadding
- - tagsBackground
+- name
+- image
+- description
+- type
+- tags
+- activities
 
-There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visualization) article.
+Let's create a simple 
 
-The height of a resource depends on a maximum number of activities this resource has during a day on the chart timeline. This can be performed if the [TimeTracking mode](TimeTracking_Mode) is ON.
+There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visual_Appearance) article.
+
+The height of a resource depends on a maximum number of activities this resource has during a day on the chart timeline. This can be performed if the [TimeTracking mode](TimeTracking_Mode) is ON. Otherwise, the height of the resource is set automatically or can be set through the {api:anychart.charts.Resource#minRowHeight}minRowHeight(){api} method.
 
 
 ## Activity
@@ -54,17 +46,19 @@ Activity is an element representing a task that a resource can do during a perio
 
 There is a list of paramters that a resource has or can have. 
 
- - name
- - start
- - end
- - totalMinutes/minutesPerDay
- - intervals
-   - start
-   - end
-   - totalMinutes/minutesPerDay
+- name
+- start
+- end
+- totalMinutes/minutesPerDay
+- intervals
 
-There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visualization) article.
+Intervals have their own parameters 
+- start
+- end
+- totalMinutes/minutesPerDay
+
+There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visual_Appearance) article.
 
 ### Split Activity Feature
 
-There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful whern
+There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful when it is necessary to demonstrate the activity's complexity. 

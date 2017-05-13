@@ -13,6 +13,16 @@ Time tracking is a feature which is responsible for the activities distribution 
 
 When the time tracking is set off, the height of the resource row depends on the value set for the {api:anychart.charts.Resource#minRowHeight}minRowHeight(){api} method. Unless this method is set, the height value is set by default.
 
+```
+```
+
+{sample}Resource\_TimeTracking\_01{sample}
+
 ## ON
 
-If you set the daily worktime and  When the time tracked, i.e. there are
+If you set the daily worktime for the resource, and  When the time tracked, i.e. there are
+
+```
+```
+
+{sample}Resource\_TimeTracking\_02{sample}

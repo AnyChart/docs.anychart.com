@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function(){
+    chart = anychart.resource();
+    
+    var dateSet = anychart.data.set([
+{
+    "name": "Gym 3",
+    "defaultMinutesPerDay": 360,
+    "activities": [
+        {
+            "name": "FREESTYLE CYCLE",
+            "group": "Group A",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "FIGHT CLUB",
+            "group": "Group E",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "STAGING DANCE",
+            "group": "Group C",
+            "start": '2016-06-10',
+            "end": '2016-06-16',
+            "minutesPerDay": 120
+        }
+    ]
+},{
+    "name": "Aqua Zone",
+    "defaultMinutesPerDay": 240,
+    "activities": [
+        {
+            "name": "WATER AEROBICS",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "SWIM CAMP",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        }
+    ]
+},
+    ]);
+
+    // set chart data
+    chart.data(dateSet.mapAs(undefined));
+
+    // set the title of the chart
+    chart.title("resource Chart");
+
+    // set the container id for the chart
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
