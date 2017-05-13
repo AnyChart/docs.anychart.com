@@ -1,0 +1,300 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function(){
+    chart = anychart.resource();
+    chart.zoomLevel(0);
+    
+    chart.timeTrackingMode('activityPerChart');
+
+    var dateSet = anychart.data.set([
+{
+    "name": "Gym 1",
+    "defaultMinutesPerDay": 720,
+    "activities": [
+        {
+            "name": "STEP",
+            "group": "Group A",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "ZUMBA",
+            "group": "Group E",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "STEP",
+            "group": "Group C",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "AEROBICS",
+            "group": "Group F",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": " ",
+            "group": "individual lessons time",
+            "start": '2016-06-10',
+            "end": '2016-06-16',
+            "fill": "#aaa",
+            "minutesPerDay": 120
+        },
+        {
+            "name": "SWEAT! X",
+            "group": "WE vs RD",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "HOT IRON",
+            "group": "W40 vs W44",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "ZUMBA",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "SWEAT! X",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        }
+    ]
+},{
+    "name": "Gym 2",
+    "defaultMinutesPerDay": 720,
+    "activities": [
+        {
+            "name": "YOGA",
+            "group": "Group A",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "YOGA",
+            "group": "Group E",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "STRETCHING",
+            "group": "Group C",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CI",
+            "group": "Group F",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "YOGA",
+            "group": "YOGA",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "PILATES",
+            "group": "PILATES",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "STRETCHING",
+            "group": "WE vs RD",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CI",
+            "group": "W40 vs W44",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "YOGA",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "PILATES",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        }
+    ]
+},{
+    "name": "Dance Hall",
+    "defaultMinutesPerDay": 720,
+    "activities": [
+        {
+            "name": "BALLET CLASSICS",
+            "group": "Group A",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CONTEMP",
+            "group": "Group E",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CONTEMP",
+            "group": "Group C",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "BALLET CLASSICS",
+            "group": "Group F",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "SAMBA",
+            "group": "",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "",
+            "group": "",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "fill": "#aaa",
+            "minutesPerDay": 60
+        },
+        {
+            "name": "BALLET CLASSICS",
+            "group": "WE vs RD",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "BACHATA",
+            "group": "W40 vs W44",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CONTEMP",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        },
+        {
+            "name": "CONTEMP",
+            "group": "W49 vs W50",
+            "start": '2016-06-10',
+            "end": '2016-06-11',
+            "minutesPerDay": 60
+        }
+    ]
+},{
+    "name": "Gym 3",
+    "defaultMinutesPerDay": 360,
+    "activities": [
+        {
+            "name": "FREESTYLE CYCLE",
+            "group": "Group A",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "FIGHT CLUB",
+            "group": "Group E",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "STAGING DANCE",
+            "group": "Group C",
+            "start": '2016-06-10',
+            "end": '2016-06-16',
+            "minutesPerDay": 120
+        }
+    ]
+},{
+    "name": "Aqua Zone",
+    "defaultMinutesPerDay": 240,
+    "activities": [
+        {
+            "name": "WATER AEROBICS",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        },
+        {
+            "name": "SWIM CAMP",
+            "start": '2016-06-10',
+            "end": '2016-06-10',
+            "minutesPerDay": 120
+        }
+    ]
+},
+    ]);
+
+    chart.data(dateSet.mapAs(undefined, {'description': 'city'}));
+
+    chart.activities().labels().useHtml(true);
+    chart.activities().labels().textFormatter(function() {
+return this['activityName'] + '<br><span style="color: #ccc">' + this['activityInfo']['group'] + '</span>';
+    });
+
+    chart.pixPerHour(30);
+    //chart.minRowHeight(80);
+    chart.currentStartDate('2016-06-10');
+
+    chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

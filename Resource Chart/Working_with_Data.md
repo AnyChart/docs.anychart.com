@@ -62,13 +62,9 @@ There is a list of paramters that a resource has or can have.
    - start
    - end
    - totalMinutes/minutesPerDay
- - fill
- - stroke
- - hatchFill
- - label
 
 There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visualization) article.
 
 ### Split Activity Feature
 
-There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected
+There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful whern
