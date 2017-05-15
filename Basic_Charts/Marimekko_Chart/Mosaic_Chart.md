@@ -1,4 +1,4 @@
-{:index 3}
+{:index 2}
 # Mosaic Chart
 
 * [Overview](#overview)

@@ -1,4 +1,4 @@
-{:index 2}
+{:index 1}
 # BarMekko Chart
 
 * [Overview](#overview)
@@ -11,13 +11,13 @@
 
 ## Overview
 
-A [Mekko chart](Overview) with a single series and units is called BarMekko in AnyChart, it is often used with one series only. 
+A [Mekko chart](Mekko_Chart) with a single series and units is called BarMekko in AnyChart, it is often used with one series only. 
 
 The difference between this constructor and other variations are:
 - [Palette](../../Appearance_Settings/Palettes) applies to elements of a single series if there is only one series, similar to [Pie Chart](../Pie_Chart) or [Donut Chart](../Doughnut_Chart),
 - [Scale](../../Axes_and_Grids/Scales) stacked mode is set to [values stacking](../Stacked/Overview#value_stacking),
 - When only one series is present [Legend](../../Common_Settings/Legend) {api:anychart.standalones.Legend#itemsSourceMode}itemsSourceMode(){api} is set to *CATEGORIES* to show names from X Scale instead of series names,
-- [Points padding](Overview#points_padding) is set to 0.
+- [Points padding](Mekko_Chart#points_padding) is set to 0.
 
 ## Quick Start
 
@@ -61,7 +61,7 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ### Apperance
 
-Barmekko appearance is tuned similar to basic [Mekko chart](Overview) or [Column chart](../Column_Chart).
+Barmekko appearance is tuned similar to basic [Mekko chart](Mekko_Chart) or [Column chart](../Column_Chart).
 
 ### Multi Series
 
