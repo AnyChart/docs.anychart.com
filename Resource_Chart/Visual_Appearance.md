@@ -15,69 +15,31 @@
 
 ## Overview
 
-Due to specifics of the elements used by this chart, there are some methods untypical for basic charts
+Due to specifics of the elements used by this chart, there are some methods untypical for basic charts used for adjusting the chart's appearance. This article considers those methods and gives examples with the result.
+
+## Logo
+
+There are three special methods for setting the logo appearance. It is possible to affect the corners with the {api:anychart.core.resource.Logo#cornerType}cornerType(){api} and {api:anychart.core.resource.Logo#corners}corners(){api} methods. The first one is responsible for the corner type and the second is used for adjusting the corner radius. The {api:anychart.core.resource.Logo#overlay}overlay(){api} method is responsible for the logo overlaying other elements.
+
+```
+chart.logo().fill("red");
+chart.logo().cornerType("roundInner");
+chart.logo().corners(20, 20, 20, 20);
+chart.logo().overlay(true);
+```
+
+{sample}Resource\_Visualization\_01{sample}
+
 
 ## Resource parameters list
 
 There is a list of paramters that a resource has or can have. 
 
-<table colspan=2>
-<tr colspan=2><td><b>Image settings</b></td><td></td></tr>
-<tr>
-<td>image size</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#size}size(){api}</td>
-</tr>
-<tr>
-<td>image border radius</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#borderRadius}borderRadius(){api}</td>
-</tr>
-<tr>
-<td>image opacity</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#opacity}opacity(){api}</td>
-</tr>
-<tr>
-<td>image align</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#align}align(){api}</td>
-</tr>
-<tr>
-<td>image fitting mode</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#fittingMode}fittingMode(){api}</td>
-</tr>
-<tr>
-<td>image margin</td>
-<td>{api:anychart.core.resource.resourceList.ImageSettings#margin}margin(){api}</td>
-</tr>
-<tr colspan=2><td><b>Tags settings</b></td><td></td></tr>
-<tr>
-<td>tags padding</td>
-<td>{api:anychart.core.resource.resourceList.TagsSettings#padding}padding(){api}</td>
-</tr>
-<tr>
-<td>tags background</td>
-<td>{api:anychart.core.resource.resourceList.TagsSettings#background}background(){api}</td>
-</tr>
+- {api:anychart.core.resource.resourceList.ImageSettings#size}size(){api}, {api:anychart.core.resource.resourceList.ImageSettings#borderRadius}borderRadius(){api}, api:anychart.core.resource.resourceList.ImageSettings#opacity}opacity(){api}, {api:anychart.core.resource.resourceList.ImageSettings#align}align(){api}, {api:anychart.core.resource.resourceList.ImageSettings#fittingMode}fittingMode(){api}, {api:anychart.core.resource.resourceList.ImageSettings#margin}margin(){api} methods are used for adjusting the picture settings.
 
-<tr colspan=2><td><b>All text Settings, which can be applied to the whole resource chart or to one of the following elements: name, tags, type, description</b></td><td></td></tr>
-<tr><td>Font Color</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontColor}fontColor(){api}</td></tr>
-<tr><td>Font Decoration</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontDecoration}fontDecoration(){api}</td></tr>
-<tr><td>Font Family</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontFamily}fontFamily(){api}</td></tr>
-<tr><td>Font Opacity</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontOpacity}fontOpacity(){api}</td></tr>
-<tr><td>Font Size</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontSize}fontSize(){api}</td></tr>
-<tr><td>Font Style</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontStyle}fontStyle(){api}</td></tr>
-<tr><td>Font Variant</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontVariant}fontVariant(){api}</td></tr>
-<tr><td>Font Weight</td><td>{api:anychart.core.resource.resourceList.TextSettings#fontWeight}fontWeight(){api}</td></tr>
-<tr><td>Horizontal Align</td><td>{api:anychart.core.resource.resourceList.TextSettings#hAlign}hAlign(){api}</td></tr>
-<tr><td>Letter Spacing</td><td>{api:anychart.core.resource.resourceList.TextSettings#letterSpacing}letterSpacing(){api}</td></tr>
-<tr><td>Line Height</td><td>{api:anychart.core.resource.resourceList.TextSettings#lineHeight}lineHeight(){api}</td></tr>
-<tr><td>Selectable</td><td>{api:anychart.core.resource.resourceList.TextSettings#selectable}selectable(){api}</td></tr>
-<tr><td>Text Direction</td><td>{api:anychart.core.resource.resourceList.TextSettings#textDirection}textDirection(){api}</td></tr>
-<tr><td>Text Indent</td><td>{api:anychart.core.resource.resourceList.TextSettings#textIndent}textIndent(){api}</td></tr>
-<tr><td>Text Overflow</td><td>{api:anychart.core.resource.resourceList.TextSettings#textOverflow}textOverflow(){api}</td></tr>
-<tr><td>Text Wrap</td><td>{api:anychart.core.resource.resourceList.TextSettings#textWrap}textWrap(){api}</td></tr>
-<tr><td>Use HTML</td><td>{api:anychart.core.resource.resourceList.TextSettings#useHtml}useHtml(){api}</td></tr>
-<tr><td>Vertical Align</td><td>{api:anychart.core.resource.resourceList.TextSettings#vAlign}vAlign(){api}</td></tr>
-</table>
+- {api:anychart.core.resource.resourceList.TagsSettings#padding}padding(){api} and {api:anychart.core.resource.resourceList.TagsSettings#background}background(){api} methods are used for tags adjusting
 
+- {api:anychart.core.resource.resourceList.TextSettings#fontColor}fontColor(){api}, {api:anychart.core.resource.resourceList.TextSettings#fontFamily}fontFamily(){api}, {api:anychart.core.resource.resourceList.TextSettings#fontSize}fontSize(){api} and other text settings are the same for all text elements in AnyChart, as well as name, tags, type, descriptions in Resource Charts. Find more about text editing in the [Text Settings](../Appearance_Settings/Text_Settings) article.
 
 
 The height of a resource depends on a maximum number of activities this resource has during a day on the chart timeline. This can be performed if the [TimeTracking mode](TimeTracking_Mode) is ON.
@@ -85,24 +47,11 @@ The height of a resource depends on a maximum number of activities this resource
 
 ## Activity parameters list
 
-<table>
-<tr>
-<td>Filling settings</td>
-<td>{api:anychart.core.resource.Activities#fill}fill(){api}<br>{api:anychart.core.resource.Activities#hoverFill}hoverFill(){api}<br>{api:anychart.core.resource.Activities#selectFill}selectFill(){api}</td>
-</tr>
-<tr>
-<td>Hatch filling settings</td>
-<td>{api:anychart.core.resource.Activities#hatchFill}hatchFill(){api}<br>{api:anychart.core.resource.Activities#hatchHoverFill}hatchHoverFill(){api}<br>{api:anychart.core.resource.Activities#hatchSelectFill}hatchSelectFill(){api}</td>
-</tr>
-<tr>
-<td>Stroking settings</td>
-<td>{api:anychart.core.resource.Activities#stroke}stroke(){api}<br>{api:anychart.core.resource.Activities#hoverStroke}hoverStroke(){api}<br>{api:anychart.core.resource.Activities#selectStroke}selectStroke(){api}</td>
-</tr>
-<tr>
-<td>Label settings</td>
-<td>{api:anychart.core.resource.Activities#labels}labels(){api}<br>{api:anychart.core.resource.Activities#hoverLabels}hoverLabels(){api}<br>{api:anychart.core.resource.Activities#selectStroke}selectStroke(){api}</td>
-</tr>
-</table>
+- {api:anychart.core.resource.Activities#fill}fill(){api}, {api:anychart.core.resource.Activities#hatchFill}hatchFill(){api}, {api:anychart.core.resource.Activities#stroke}stroke(){api}, {api:anychart.core.resource.Activities#labels}labels(){api} set the color, fill, hatch fill, and stroke
+
+- {api:anychart.core.resource.Activities#hoverFill}hoverFill(){api}, {api:anychart.core.resource.Activities#hatchHoverFill}hatchHoverFill(){api}, {api:anychart.core.resource.Activities#hoverStroke}hoverStroke(){api}, {api:anychart.core.resource.Activities#hoverLabels}hoverLabels(){api} configure the visual settings on hover
+
+- {api:anychart.core.resource.Activities#selectFill}selectFill(){api}, {api:anychart.core.resource.Activities#hatchSelectFill}hatchSelectFill(){api}, {api:anychart.core.resource.Activities#hatchSelectFill}hatchSelectFill(){api}, {api:anychart.core.resource.Activities#selectStroke}selectStroke(){api} configure the visual settings on select
 
 
 ### Split Activity Feature
