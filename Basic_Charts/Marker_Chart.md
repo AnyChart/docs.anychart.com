@@ -28,7 +28,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Marker](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Error Marker](Error_Chart/Marker_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Marker Chart with Error Bars](Error_Chart/Marker_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Polar_Marker_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Radar_Marker_Chart)</td></tr>
