@@ -15,25 +15,26 @@ Find the mathematical description of the indicator on the [Chaikin Money Flow (C
 
 CMF indicator is added through the {api:anychart.core.stock.Plot#cmf}cmf(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the CMF indicator applied to a spline series which data values are equal to "close" values.
 
-```
-// create data table on loaded data
-var dataTable = anychart.data.table();
+The indicator values differ too much from the series values, so it is reasonable to build the indicator on a separate plot.
 
+```
 // add data to a table
-dataTable.addData(get_data());
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 1, "value": 4});
+var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 5, "value": 4});
 
 // create stock chart
 chart = anychart.stock();
 
-// create plot on the chart
+// create plots on the chart
 var plot = chart.plot(0);
+var plot1 = chart.plot(1);
 
-// create ADL indicator
-var cmf = plot.cmf(mapping).series();
-cmf.stroke('#bf360c');
+// create CMF indicator
+var cmf = plot1.cmf(mapping).series();
+cmf.stroke("#bf360c");
 ```
 
 Here is a live sample:
@@ -47,18 +48,12 @@ It is possible to change the series type any time using the {api:anychart.core.s
 Visualization of an indicator depends on series type. Here is a sample where CMF with different parameters and settings is added to different plots:
 
 ```
-// create first CMF indicator 
-var cmf_1 = plot_0.cmf(mapping).series();
-cmf_1.seriesType("spline");
-cmf_1.stroke("#bf360c", 2, "5 2");
-
-// create second CMF indicator 
-var cmf_2 = plot_1.cmf(mapping).series();
-cmf_2.seriesType("marker");
-cmf_2.fill("#E5BE01");
-cmf_2.size(3);
-cmf_2.stroke("none");
-cmf_2.type("star5");
+// create and adjust CMF indicator 
+cmf_0.seriesType("marker");
+cmf_0.fill("#E5BE01");
+cmf_0.size(3);
+cmf_0.stroke("none");
+cmf_0.type("star5");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_CMF\_02{sample}

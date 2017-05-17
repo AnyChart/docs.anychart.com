@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
+* [Indicator parameters](#indicator_parameters)
 * [Visualization](#visualization)
 
 ## Overview
@@ -15,22 +16,50 @@ Find the mathematical description of the indicator on the [DMI Mathematical Desc
 
 DMI indicator is added through the {api:anychart.core.stock.Plot#dmi}dmi(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the DMI indicator applied to a spline series which data values are equal to "close" values.
 
-```
+The indicator values differ too much from the series values, so it is reasonable to build the indicator on a separate plot.
 
+```
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// create stock chart
+chart = anychart.stock();
+
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
+
+// create line series on both of them
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO OHLC");
+ohlcSeries.stroke("2px #64b5f6");
+
+// create a DMI indicator of column series
+var dmi = plot_1.dmi(mapping);
 ```
 
 Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_DMI\_01{sample}
 
-It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
+## Indicator parameters
+
+DMI indicator needs seven parameters: mapping with value field in it (required), two periods: period and a period for ADX, a smoothing mode for whilders ad three series types (for +DI, -DI and ADX series of the indicator). The following code sample demonstrates a DMI indicator with all parameters set as default.
+
+```
+var dmi = plot.dmi(mapping, 14, 14, "true, "line", "line", "line");
+```
 
 ## Visualization
 
 Visualization of an indicator depends on series type. Here is a sample where DMI with different parameters and settings is added to different plots:
 
 ```
-
+var dmi2 = plot_2.dmi(mapping, 30, 30, "false", "spline", "spline", "spline");
+dmi2.adxSeries().stroke("red");
+dmi2.ndiSeries().stroke("navy");
+dmi2.pdiSeries().stroke("green");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_DMI\_02{sample}
