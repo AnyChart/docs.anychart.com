@@ -40,7 +40,7 @@ Note that ADL indicator needs to be built on a separate plot due to rather huge 
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_ADL\_01{sample}
+{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_ADL\_01{sample}
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
@@ -58,4 +58,4 @@ adl.stroke("none");
 adl.type("triangleUp");
 ```
 
-{sample}STOCK\_Technical\_Indicators\_ADL\_02{sample}
+{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_ADL\_02{sample}

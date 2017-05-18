@@ -41,7 +41,7 @@ Note that CCI indicator needs to be built on a separate plot due to rather huge 
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_CCI\_01{sample}
+{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_CCI\_01{sample}
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
@@ -68,4 +68,4 @@ cci2Series = cci2.series();
 cci2Series.stroke("#bf360c", 2, "5 2");
 ```
 
-{sample}STOCK\_Technical\_Indicators\_CCI\_02{sample}
+{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_CCI\_02{sample}
