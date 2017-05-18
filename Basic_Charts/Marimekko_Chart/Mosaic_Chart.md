@@ -2,6 +2,12 @@
 # Mosaic Chart
 
 * [Overview](#overview)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+ * [Points padding](#points_padding)
+ * [Appearance](#appearance)
+ * [Vertical Mosaic Chart](#vertical_mosaic_chart)
 
 ## Overview
 
