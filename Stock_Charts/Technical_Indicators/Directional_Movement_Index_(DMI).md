@@ -53,9 +53,13 @@ var dmi = plot.dmi(mapping, 14, 14, "true, "line", "line", "line");
 
 ## Visualization
 
-Visualization of an indicator depends on series type. Here is a sample where DMI with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. It is possible to change some settings for separate series through the special methdos: {api:anychart.core.stock.indicators.DMI#adxSeries}adxSeries(){api}, {api:anychart.core.stock.indicators.DMI#ndiSeries}ndiSeries(){api} and {api:anychart.core.stock.indicators.DMI#pdiSeries}pdiSeries(){api}. Here is a sample where DMI with different parameters and settings is added to different plots:
 
 ```
+// create a DMI indicator with default parameters
+var dmi1 = plot_1.dmi(mapping);
+
+// create a DMI indicator with parameters adjusted
 var dmi2 = plot_2.dmi(mapping, 30, 30, "false", "spline", "spline", "spline");
 dmi2.adxSeries().stroke("red");
 dmi2.ndiSeries().stroke("navy");

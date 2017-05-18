@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
+* [Indicator parameters](#indicator_parameters)
 * [Visualization](#visualization)
 
 ## Overview
@@ -41,19 +42,28 @@ Here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_CMF\_01{sample}
 
-It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
+## Indicator parameters
+
+There are three parameters a CMF indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a CMF indicator with parameters set as default.
+
+```
+var cmf = plot1.cmf(mapping, 20, "line");
+```
 
 ## Visualization
 
 Visualization of an indicator depends on series type. Here is a sample where CMF with different parameters and settings is added to different plots:
 
 ```
-// create and adjust CMF indicator 
-cmf_0.seriesType("marker");
-cmf_0.fill("#E5BE01");
-cmf_0.size(3);
-cmf_0.stroke("none");
-cmf_0.type("star5");
+// create a CMF indicator with default parameters
+cmf_0 = plot_1.cmf(mapping);
+
+// create and adjust the CMF indicator with settings adjusted
+cmf_1 = plot_2.cmf(mapping, 35, "marker").series();
+cmf_1.fill("#E5BE01");
+cmf_1.size(3);
+cmf_1.stroke("none");
+cmf_1.type("star5");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_CMF\_02{sample}

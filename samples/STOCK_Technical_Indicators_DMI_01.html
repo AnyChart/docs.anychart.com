@@ -18,6 +18,7 @@ dataTable.addData(get_csco_daily_data());
 var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "value": 4, "volume": 4});
 // create stock chart
 chart = anychart.stock();
+
 // create plots on the chart
 var plot_0 = chart.plot(0);
 var plot_1 = chart.plot(1);
@@ -27,7 +28,7 @@ var ohlcSeries = plot_0.ohlc(mapping);
 ohlcSeries.name("CSCO OHLC");
 ohlcSeries.stroke("2px #64b5f6");
 
-// create a DMI indicator of column series
+// create a DMI indicator
 var dmi = plot_1.dmi(mapping);
 
 // set container id for the chart

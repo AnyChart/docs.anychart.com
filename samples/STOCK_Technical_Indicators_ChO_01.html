@@ -29,9 +29,10 @@
         splineSeries.name("CSCO");
         splineSeries.stroke("2px #64b5f6");
 
-        // create CMF indicator
-        var cmf = plot.cmf(mapping).series();
-        cmf.stroke("#bf360c");
+        // create CHO indicator
+        cho = plot.cho(mapping);
+        choSeries = cho.series();
+        choSeries.stroke("#bf360c");
 
         // set container id for the chart
         chart.container("container");

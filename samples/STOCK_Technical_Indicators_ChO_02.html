@@ -23,26 +23,17 @@
         var plot_1 = chart.plot(1);
 
         // create line series on both of them
-        var ohlcSeries_0 = plot_0.ohlc(mapping);
-        ohlcSeries_0.name("CSCO OHLC");
-        ohlcSeries_0.stroke("2px #64b5f6");
+        var ohlcSeries = plot_0.ohlc(mapping);
+        ohlcSeries.name("CSCO OHLC");
+        ohlcSeries.stroke("2px #64b5f6");
 
-        var lineSeries_1 = plot_1.line(mapping);
-        lineSeries_1.name("CSCO Line (Close Values)");
-        lineSeries_1.stroke("2px #64b5f6");
-
-        // create first CCI indicator of default series type
-        var cmf_1 = plot_0.cmf(mapping).series();
-        cmf_1.seriesType("spline");
-        cmf_1.stroke("#bf360c", 2, "5 2");
-
-        // create second CCI indicator of column series
-        var cmf_2 = plot_1.cmf(mapping).series();
-        cmf_2.seriesType("marker");
-        cmf_2.fill("#E5BE01");
-        cmf_2.size(3);
-        cmf_2.stroke("none");
-        cmf_2.type("star5");
+        // create a CHO indicator with adjusted parameters
+        var cho = plot_1.cho(mapping, 10, 20, "sma").series();
+        cho.seriesType("marker");
+        cho.fill("#E5BE01");
+        cho.size(3);
+        cho.stroke("none");
+        cho.type("star5");
         
         // set container id for the chart
         chart.container("container");

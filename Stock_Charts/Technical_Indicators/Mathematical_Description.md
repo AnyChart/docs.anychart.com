@@ -1,6 +1,6 @@
 {:index 3}
 
-#Technical Indicators Mathematical Decsription
+#Technical Indicators Mathematical Description
 
 * [Overview](#overview)
 * [Accumulation Distribution Line (ADL)](#accumulation_distribution_line)
@@ -54,14 +54,16 @@ Accumulation Distribution Line is calculated according to these formulas:
 
 ## Adaptive Moving Average
 
-Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) indicator is calculated by the following steps:
+Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) indicator is calculated by the following steps:
 
-1. Calculate the ER:
+<ol>
+<li>Calculate the ER:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
-2. Then, use the following formula to calculate the SSC value:
+<li>Then, use the following formula to calculate the SSC value:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
-3. Now, use the results from the actions made before and calcuate the indicator:
+<li>Now, use the results from the actions made before and calculate the indicator:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
+</ol>
 
 ## Aroon
 
@@ -85,15 +87,18 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 [Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
 
-1. Calculate the SMA according to the SMA formula.
+<ol>
+<li>Calculate the SMA according to the SMA formula.</li><br>
 
-2. Use the next formula to calculate the standard deviation:
+<li>Use the next formula to calculate the standard deviation:</li><br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center><br>
 
-3. Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:
+<li>Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:</li><br>
 
 <center><img src="https://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
+
+</ol>
 
 ## Bollinger Bands %B
 
@@ -128,17 +133,15 @@ And SMA is calculated as stated in SMA part of this article.
 
 Chaikin Money Flow is calculated in three steps.
 
-1. First a MFM(i) is calculated for all points according to this formula:
+<ol>
+	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center><br>
+	<li>Next an MFV(i) value is calculated for all points like this:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center><br>
+	<li>And finally the CMF(i) value is calculated according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center><br>
+</ol>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center>
-
-2. Next an MFV(i) value is calculated for all points like this:
-
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center>
-
-3. And finally the CMF(i) value is calculated according to this formula:
-
-<center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center>
 
 ## Chaikin Oscillator
 
@@ -157,18 +160,19 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 ## Directional Movement Indicator
 
 Directional Movement Indicator is calculated in three steps: 
+<ol>
+<li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
-1. First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> <br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> 
+<li>Next they are smoothed using <a href="#exponential_moving_average">EMA</a> or Wilder's method, calculated as:</li><br>
 
-2. Next they are smoothed using <a href="#exponential_moving_average">EMA</a> or Wilder's method, calculated as:
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center><br>
 
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center>
+<li>And finally the +DI and -DI values are calculated according to these formulas:</li><br>
 
-3. And finally the +DI and -DI values are calculated according to these formulas:
-
-<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
+</ol>
 
 ## Exponential Moving Average
 
@@ -181,11 +185,11 @@ Directional Movement Indicator is calculated in three steps:
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
 
 <ol>
-	<li>The %K line is calculated the following way:<br>
+	<li>The %K line is calculated the following way:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj1.png"></center>
-	<li>To create the %D line, use the next formula:<br>
+	<li>To create the %D line, use the next formula:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj2.png"></center>
-	<li>This is how the %J line is calculated:<br>
+	<li>This is how the %J line is calculated:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
 </ol>
 

@@ -28,9 +28,10 @@ var ohlcSeries = plot_0.ohlc(mapping);
 ohlcSeries.name("CSCO OHLC");
 ohlcSeries.stroke("2px #64b5f6");
 
-// create a DMI indicator of column series
+// create a DMI indicator with default parameters
 var dmi1 = plot_1.dmi(mapping);
 
+// create a DMI indicator with paramters adjusted
 var dmi2 = plot_2.dmi(mapping, 30, 30, "false", "spline", "spline", "spline");
 dmi2.adxSeries().stroke("red");
 dmi2.ndiSeries().stroke("navy");

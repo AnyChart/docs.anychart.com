@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
+* [Indicator parameters](#indicator_parameters)
 * [Visualization](#visualization)
 
 ## Overview
@@ -13,7 +14,7 @@ Find the mathematical description of the indicator on the [Chaikin Oscillator Ma
 
 ## Adding indicator
 
-Chaikin Oscillator indicator is added through the {api:anychart.core.stock.Plot#chv}chv(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the Chaikin Oscillator indicator applied to a spline series which data values are equal to "close" values.
+Chaikin Oscillator indicator is added through the {api:anychart.core.stock.Plot#cho}cho(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the Chaikin Oscillator indicator applied to a spline series which data values are equal to "close" values.
 
 ```
 
@@ -25,12 +26,35 @@ Here is a live sample:
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
 
-Visualization of an indicator depends on series type. Here is a sample where Chaikin Oscillator with different parameters and settings is added to different plots:
+## Indicator parameters
+
+The Chaikin Oscillator indicator has 5 parameters. The only necessary one is mapping. Optional parameters are fast period, slow period, moving averagae type and the series type. The following code sample creates an indicator with parameters set as default:
 
 ```
+// create a CHO indicator with default parameters
+cho = plot.cho(mapping, 3, 10, "ema", "line");
+```
 
+This line equals the following:
+
+```
+// create a CHO indicator with default parameters
+cho = plot.cho(mapping);
+```
+
+## Visualization
+
+Visualization of an indicator depends on series type. Here is a sample with an adjusted Chaikin Oscillator indicator:
+
+```
+// create a CHO indicator with adjusted parameters
+var cho = plot_1.cho(mapping, 10, 20, "sma").series();
+cho.seriesType("marker");
+cho.fill("#E5BE01");
+cho.size(3);
+cho.stroke("none");
+cho.type("star5");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_ChO\_02{sample}

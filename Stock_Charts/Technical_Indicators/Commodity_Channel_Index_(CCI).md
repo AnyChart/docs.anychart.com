@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
+* [Indicator parameters](#indicator_parameters)
 * [Visualization](#visualization)
 
 ## Overview
@@ -33,7 +34,7 @@ var plot0 = chart.plot(0);
 var plot1 = chart.plot(1);
 
 // create CCI indicator
-var cci = plot1.cci(mapping).series();
+var cci = plot1.cci(mapping);
 ```
 
 Note that CCI indicator needs to be built on a separate plot due to rather huge difference between the indicator values and the data values.
@@ -44,15 +45,27 @@ Here is a live sample:
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
+## Indicator parameters
 
-Visualization of an indicator depends on series type. Here is a sample where CCI indicator is visually adjusted:
+There are three parameters the CCI indicator has. The mapping is necessary, the period and the series type are optional. The following code sample demonstrates a CCI indicator creating with default parameters.
 
 ```
-// adjust CCI indicator
-var cci = plot1.cci(mapping).series();
-cci.seriesType("spline");
-cci.stroke("#bf360c", 2, "5 2");
+// create a CCI indicator with default parameters
+cci = plot1.cci(mapping, 20, "line");
+```
+
+## Visualization
+
+Visualization of an indicator depends on series type. Here is a sample where two CCI indicators with different parameters are created on different plots:
+
+```
+// create a default CCI indicator
+var cci1 = plot1.cci(mapping);
+
+// create a CCI indicator with parameters adjusted
+var cci2 = plot2.cci(mapping, 45, "stick");
+cci2Series = cci2.series();
+cci2Series.stroke("#bf360c", 2, "5 2");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_CCI\_02{sample}
