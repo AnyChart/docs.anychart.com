@@ -11,7 +11,9 @@
 
 ## Overview
 
-Mosaic chart is pretty much the same as the [basic Mekko chart](Mekko_Chart) but with one important difference: Y scale is ordinal and contains series names instead of numbers.
+Mosaic chart is similar to the [basic Mekko chart](Mekko_Chart), with the following differences:
+- Y scale is ordinal and axes labels contain series names instead of numbers,
+- [Points padding](#points_padding) is increased.
 
 ## Quick Start
 
@@ -60,15 +62,15 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ### Points Padding
 
-Points padding
-
-{sample}BCT\_Mosaic\_Chart\_02{sample}
+Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [BarMekko](BarMekko_Chart) constructors.
 
 ### Appearance
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the BarMekko chart (for example, legend and interactivity settings).
+Mosaic chart appearance is tuned similar to basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
-Read the overview of general settings: [General Settings](../General_Settings).
+Here is a sample of a mosaic chart with visual settings configured:
+
+{sample}BCT\_Mosaic\_Chart\_02{sample}
 
 ### Vertical Mosaic Chart
 

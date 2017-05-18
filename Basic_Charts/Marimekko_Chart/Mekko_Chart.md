@@ -114,7 +114,7 @@ Changing X scale will convert Mekko chart into usual [percent stacked column cha
 
 ### Points padding
 
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [BarMekko](BarMekko_Chart) and [Mosaic](Mosaic_Chart) constuctors.
+Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [BarMekko](BarMekko_Chart) and [Mosaic](Mosaic_Chart) constructors.
 
 ### Appearance
 
