@@ -14,7 +14,7 @@ PERT Chart Overview
 
 PERT is an abbreviation for "Program (Project) Evaluation and Review Technique". This technique, developed by the U.S. Navy in the 1950s, is used in project management to analyze and represent the tasks involved in completing a given project. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. For example, PERT was used in planning the 1968 Winter Olympics in Grenoble.
 
-To learn more about PERT in general, see [Wikipedia](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique), and to learn how to create PERT charts in AnyChart, read the following sections in our documentation:
+To learn more about PERT in general, see [Program evaluation and review technique the article at Wikipedia](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique), and to learn how to create PERT charts in AnyChart, read the following sections in our documentation:
 
 * [PERT Chart Quick Start](Quick_Start)
 * [PERT Chart Terminology](Terminology)
@@ -33,10 +33,12 @@ In the following sample, the critical path is highlighted with red color, and it
 
 {sample}Pert\_UseCase\_01{sample}
 
+Find how to get the cricital paths duration in the [AnyChart PERT statistics section](Pert_Chart#statistics).
+
 
 ### The Project Duration Deviation
 
-The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [Settings](Settings#statistics) article.
+The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [AnyChart PERT statistics section](Pert_Chart#statistics) article.
 
 In the following sample, the project duration with the standard deviation of the critical path value is passed into the chart title.
 
@@ -51,6 +53,8 @@ The following sample demonstrates all slack values for all tasks, making it evid
 
 {sample}Pert\_UseCase\_03{sample}
 
+Find how to get the slacks duration shown in the [AnyChart PERT slacks section](Pert_Chart#slacks).
+
 
 ### Middle tasks control
 
@@ -63,6 +67,6 @@ Sometimes it is necessary to control the time bounds for some separated tasks. I
 
 In real project management, it is impossible to give the exact value for a project duration. Even taking the deviation in mind, there is still a very high risk not to fit in the time bounds. Therefore, you can set your own function for the duration calculation instead of the standard formula.
 
-The duration in following sample with the same data as above is calculated
+The duration in following sample with the same data as above is calculated automatically.
 
 {sample}Pert\_UseCase\_05{sample}

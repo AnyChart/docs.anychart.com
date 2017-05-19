@@ -19,11 +19,14 @@
             chart = anychart.pert();
             chart.data(data, "asTable");
 
-            // set upper labels padding and font size
-            chart.tasks().upperLabels().padding(5);
-            chart.tasks().upperLabels().fontSize(20);
+            // get both statistic values on click
+            chart.listen("click", function(){
+                dev = chart.getStat("pertChartCriticalPathStandardDeviation");
+                dur = chart.getStat("pertChartProjectDuration");
+                alert("Standard deviation for this project is " + dev + " units \nThe critical path duration makes " + dur + " units");
+            })
 
-            chart.title("Coloring tasks");
+            chart.title("Getting the statistics");
             chart.container("container");
             chart.draw();
         });</script>

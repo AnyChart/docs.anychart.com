@@ -9,6 +9,7 @@ PERT Chart
  * [Interactivity](#interactivity)
  * [Appearance](#appearance)
  * [Tasks](#tasks)
+  * [Slacks](#slacks)
  * [Milestones](#milestones)
  * [Critical Path](#critical_path)
  * [Labels](#labels)
@@ -117,6 +118,7 @@ Here is a full list of methods used to configure coloring settings of the tasks 
 
 * {api:anychart.core.pert.Tasks#selectFill}selectFill(){api}, {api:anychart.core.pert.Tasks#selectStroke}selectStroke(){api} configure tasks' visual settings on select
 
+
 In the sample below, there is a Pert Chart with some of the appearance settings configured:
 
 
@@ -133,6 +135,21 @@ tasks.selectFill("#519790", 2);
 ```
 
 {sample}Pert\_Settings\_01{sample}
+
+### Slacks
+
+There is a parameter all tasks have called "slack". Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
+
+The following example demonstrates the efficiency of the resources distribution due to the slacks existence.
+
+```
+// set the slacks to the tasks labels
+labels = chart.tasks().lowerLabels();
+labels.format(function(e){
+    return "Slack: " + e.slack;
+});
+```
+{sample}Pert\_Settings\_02{sample}
 
 
 ### Milestones 
@@ -158,7 +175,7 @@ milestones.hoverStroke("#90caf9", 2);
 milestones.selectStroke("#90caf9", 4);
 ```
 
-{sample}Pert\_Settings\_02{sample}
+{sample}Pert\_Settings\_03{sample}
 
 
 ### Critical Path 
@@ -171,7 +188,7 @@ chart.criticalPath({milestones: {fill: "#ffab91", hoverFill: "#ff6e40", selectFi
 // set critical tasks stroke
 chart.criticalPath({tasks: {stroke: "#ffab91"}});
 ```
-{sample}Pert\_Settings\_03{sample}
+{sample}Pert\_Settings\_04{sample}
 
 ### Labels
 
@@ -185,7 +202,7 @@ chart.tasks().upperLabels().padding(5);
 chart.tasks().upperLabels().fontSize(20);
 ```
 
-{sample}Pert\_Settings\_04{sample}
+{sample}Pert\_Settings\_05{sample}
 
 It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
 
@@ -213,7 +230,7 @@ chart.milestones().labels().format(function(){
 });
 ```
 
-{sample}Pert\_Settings\_05{sample}
+{sample}Pert\_Settings\_06{sample}
 
 ### Tooltips
 
@@ -230,4 +247,4 @@ chart.milestones(). listen("click", function(){
   alert("Standard deviation for this project is " + dev);
 })
 ```
-{sample}Pert\_Settings\_06{sample}
+{sample}Pert\_Settings\_07{sample}

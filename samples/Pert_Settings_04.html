@@ -19,11 +19,12 @@
             chart = anychart.pert();
             chart.data(data, "asTable");
 
-            // set upper labels padding and font size
-            chart.tasks().upperLabels().padding(5);
-            chart.tasks().upperLabels().fontSize(20);
+            // set critical path milestones filling color
+            chart.criticalPath({milestones: {fill: "#ffab91", hoverFill: "#ff6e40", selectFill: "#ff6e40", labels: {fontColor: "#86614e"}}});
+            // set critical tasks stroke
+            chart.criticalPath({tasks: {stroke: "#ffab91"}});
 
-            chart.title("Coloring tasks");
+            chart.title("Adjusting visual settings for the critical path");
             chart.container("container");
             chart.draw();
         });</script>

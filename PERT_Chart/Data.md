@@ -22,6 +22,7 @@ PERT charts use a special type of data, which cannot be set the same way as data
 Nodes and connections between them can be set simultaneously. In this case, nodes' descriptions contain information on their connections.
 
 ```
+// set the data
 var data = [
   {id: 0, name: 'A'},
   {id: 1, name: 'B'},
@@ -30,6 +31,8 @@ var data = [
   {id: 4, name: 'E', dependsOn: [0]},
   {id: 5, name: 'F', dependsOn: [4, 3]}
 ];
+
+// transform the data
 var tree = anychart.data.tree(data);
 ```
 
@@ -42,6 +45,7 @@ Here is a sample with data set in this way:
 Nodes and connections can be set separately, in two sets of data.
 
 ```
+// set the data
 var data = [
   {id: 0, name: 'A'},
   {id: 1, name: 'B'},
@@ -51,6 +55,7 @@ var data = [
   {id: 5, name: 'F'}
 ];
 
+// set the dependencies for the data
 var dependencies = [
   {from: 0, to: 3},
   {from: 0, to: 4},
@@ -77,6 +82,7 @@ There are two ways how the time periods can be transferred to the dataset.
 You can set the estimated time period directly to the task. It this case, no standard deviation will be calculated as the optimistic, pessimistic and most likely values are not set and the deviation is not actually necessary.
 
 ```
+// set the data with strict durations
 var data = [
   {id: "1", duration: 1, name: "A"},
   {id: "2", duration: 3, name: "B"},
@@ -96,6 +102,7 @@ It is also possible to set three time estimates: optimistic, pessimistic and mos
 In case when these parameters are set, the estimated time and the standard deviation are calculated.
 
 ```
+// set the data with three time estimates
 var data = [
   {id: "1", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
   {id: "2", optimistic: 3, pessimistic: 8, mostLikely: 5, name: "B"},
@@ -113,9 +120,12 @@ var data = [
 Use {api:anychart.charts.Pert#getStat}getStat(){api} and {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} to obtain and set PERT statistical calculations.
 
 ```
+// chart initiation
 chart = anychart.pert();
+
 // get project duration
 var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+
 // get project deviation
 var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
 ```
