@@ -9,44 +9,32 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create data for the first series
-    var data_1 = [
-      {x: 0.6, value: 22},
-      {x: 3.9, value: 74},
-      {x: 4, value: 68},
-      {x: 4, value: 76},
-      {x: 3.5, value: 80},
-      {x: 4.1, value: 84},
-      {x: 2.3, value: 50},
-      {x: 4.7, value: 93},
-      {x: 1.7, value: 55}
-    ];
-
-    // create data for the second series
-    var data_2 = [
-      {x: 0.5, value: 17.5},
-      {x: 4.75, value: 100}
+    // create data
+    var data = [
+      {x: 4, value: 42},
+      {x: 13, value: 59},
+      {x: 25, value: 68},
+      {x: 25, value: 63},
+      {x: 44, value: 54},
+      {x: 55, value: 58},
+      {x: 56, value: 46},
+      {x: 60, value: 54},
+      {x: 72, value: 73}
     ];
 
     // create a chart
-    chart = anychart.scatter();
+    chart = anychart.quadrant(data);
 
-    // create the second series (marker) and set the data
-    var series1 = chart.marker(data_1);
-
-    // create the first series (line) and set the data
-    var series2 = chart.line(data_2);
-
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
-
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // configure scales
+    chart.yScale()
+            .minimum(-500)
+            .maximum(500);
+    chart.xScale()
+            .minimum(-500)
+            .maximum(500);
 
     // set the chart title
-    chart.title("Scatter Plot: Basic Sample");
+    chart.title("Quandrant Chart: Scales");
 
     // set the container id
     chart.container("container");
