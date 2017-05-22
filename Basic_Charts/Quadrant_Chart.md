@@ -23,19 +23,16 @@ This article explains how to create a basic Quadrant chart as well as configure 
 
 ## Quick Start
 
-конструктор создает scatter chart с определенными настройками:
-две x и y оси, образующие рамку
-отключены тики лейблы
-закрашиваются правая верхняя и левая нижняя четверти (quarter)
-отключены гриды
-минимум и максимум у шкал от 0 до 100
+To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
-To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor. If you pass the data to this chart constructor, it creates a marker series.
+This constructor creates a scatter chart with some predefined settings:
+* The chart is framed with two X and Y axes.
+* Ticks and labels on the axes are disabled.
+* There are no grids.
+* The minimum and maximum values of the scales are 0 and 100.
+* The right-top and left-bottom quarters are colored.
 
-по дефолту - создается маркер серия
-но также могут быть line и bubble
-
-To create ... explicitly, call the following methods:
+If you just pass the data to the chart constructor, it creates a Marker series. But you can also create a Marker, Bubble, or Line series explicitly by using one these methods:
 
 {api:anychart.charts.Scatter#marker}marker(){api}
 {api:anychart.charts.Scatter#bubble}bubble(){api}
@@ -79,15 +76,15 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-ссылка на настройки трех типов серий
+Each of the supported series types has its own visual settings – see the following articles:
 
-* [Marker Chart](Marker_Chart)
-* [Bubble Chart](Bubble_Chart)
-* [Line Chart](Line_Chart)
+* [Marker Chart](Marker_Chart#appearance)
+* [Bubble Chart](Bubble_Chart#appearance)
+* [Line Chart](Line_Chart#appearance)
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+Also, you can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
-In the sample below, there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
+In this sample there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
 
 ```
 // create the first series (marker) and set the data
@@ -123,18 +120,20 @@ series3.selectStroke("#0066cc", 4);
 
 ### Quarters
 
-настройка четвертей - заливка, граница, углы, titles + все методы, которые есть, включая labels
+Each Quadrant chart has four quarters, which can be configured separately. Use these methods to refer to them:
 
 * {api:anychart.core.utils.QuarterSettings#leftBottom}leftBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#leftTop}leftTop(){api}
 * {api:anychart.core.utils.QuarterSettings#rightBottom}rightBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#rightTop}rightTop(){api}
 
-Here is a full list of methods used to configure visual settings that are available for quarters:
+The following methods configure visual settings of quartes:
 
 * {api:anychart.core.utils.Quarter#fill}fill(){api} and {api:anychart.core.utils.Quarter#stroke}stroke(){api} set the fill and stroke
 * {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} set strokes on particular sides
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
+
+The sample below shows how to configure the fill and corners:
 
 ```
 // configure quarters
@@ -166,14 +165,14 @@ chart.quarters(
 
 {sample}BCT\_Quadrant\_Chart\_03{sample}
 
-other settings (titles, margins, paddings, and labels):
+You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
 
 * {api:anychart.core.utils.Quarter#title}title(){api}
 * {api:anychart.core.utils.Quarter#margin}margin(){api}
 * {api:anychart.core.utils.Quarter#padding}padding(){api}
 * {api:anychart.core.utils.Quarter#label}label(){api}
 
-может быть, написать, что про лейблы будет ниже
+The following sample shows how to set titles:
 
 ```
 // configure quarters
@@ -219,7 +218,7 @@ chart.quarters(
 
 ### Crossing
 
-{api:anychart.core.utils.Crossing#stroke}stroke(){api}
+To configure the intersecting lines ("crossing") in the center of a Quadrant chart, use the {api:anychart.core.utils.Crossing#stroke}stroke(){api} method:
 
 ```
 // configure the crossing
@@ -230,36 +229,25 @@ chart.crossing().stroke("grey", 3, "7 3", "round");3
 
 ### Scales
 
-повторить про параметры шкал по умолчанию
-сказать, что данные не влияют на шкалы
-если данные выходят за пределы дефолтных шкал, то они просто не отображются
-ссылка на статью про шкалы - если нужно изменить дефолт
-после примера: обратите внимания, что четверти строго делят шкалу пополам, независимо от значений
-crossing lines пройдут по началу координат если минимум и максимум шкал совпадают по модулю
-(начало координат - origin + ссылка на википедию
-вариант: пройдут по нулевым значениям)
-более наглядно это можно будет увидеть в следующем разделе
+In Quadrant charts data do not affect scales: the data falling outside scales just are not displayed.
 
-[Axes and Grids](../Axes_and_Grids/Scales)
+By default, the minimum and maximum values of the X and Y scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
 
 ```
 // configure scales
 chart.yScale()
-        .minimum(-500)
-        .maximum(500);
+        .minimum(-100)
+        .maximum(100);
 chart.xScale()
-        .minimum(-500)
-        .maximum(500);
+        .minimum(-100)
+        .maximum(100);
 ```
+
+Please note that quarters always divide scales in two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the <a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">origin</a> only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
 
 ### Axes
 
-повторить про оси, создающиеся по умолчанию - их по две
-к ним можно обратиться по индексам: 0 и 1
-по умолчанию отключены лейблы и тики, а также заголовки
-ссылка на статью про оси
-
-[Scales](../Axes_and_Grids)
+The Quadrant chart is framed by two X and Y axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
 
 ```
 // configure axes
@@ -268,17 +256,17 @@ chart.xAxis(1, {ticks: true, labels: true});
 chart.yAxis(0, {ticks: true, labels: true});
 chart.yAxis(1, {ticks: true, labels: true});
 ```
-
 {sample}BCT\_Quadrant\_Chart\_06{sample}
 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-лейблы точек серии настраиваются согласно правилам этой серии - например... ссылка на маркеры
-еще есть лейблы четвертей, четверть может иметь больше 1 лейбла
+Labels of series are configured according to the rules of the series type. For example, see the [Maker Chart](Marker_Chart#labels) article.
 
-{api:anychart.core.utils.Quarter#label}label(){api} sets labels 
+You can also configure labels of quartes: use the {api:anychart.core.utils.Quarter#label}label(){api} method. A quarter can have more than one label.
+
+The sample below shows how to create and adjust quarter labels:
 
 ```
 // create a label on the left-top quarter
