@@ -133,7 +133,7 @@ series3.selectStroke("#0066cc", 4);
 Here is a full list of methods used to configure visual settings that are available for quarters:
 
 * {api:anychart.core.utils.Quarter#fill}fill(){api} and {api:anychart.core.utils.Quarter#stroke}stroke(){api} set the fill and stroke
-* {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} configure strokes on particular sides
+* {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} set strokes on particular sides
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
 
 ```
@@ -166,12 +166,12 @@ chart.quarters(
 
 {sample}BCT\_Quadrant\_Chart\_03{sample}
 
-other settings:
+other settings (titles, margins, paddings, and labels):
 
-* {api:anychart.core.utils.Quarter#title}title(){api} sets titles 
-* {api:anychart.core.utils.Quarter#margin}margin(){api} sets margins
-* {api:anychart.core.utils.Quarter#padding}padding(){api} sets paddings
-* {api:anychart.core.utils.Quarter#label}label(){api} sets labels 
+* {api:anychart.core.utils.Quarter#title}title(){api}
+* {api:anychart.core.utils.Quarter#margin}margin(){api}
+* {api:anychart.core.utils.Quarter#padding}padding(){api}
+* {api:anychart.core.utils.Quarter#label}label(){api}
 
 может быть, написать, что про лейблы будет ниже
 
@@ -240,7 +240,7 @@ crossing lines пройдут по началу координат если ми
 вариант: пройдут по нулевым значениям)
 более наглядно это можно будет увидеть в следующем разделе
 
-[Scales](../Axes_and_Grids/Scales)
+[Axes and Grids](../Axes_and_Grids/Scales)
 
 ```
 // configure scales
