@@ -51,7 +51,7 @@ To create a Line series explicitly, call the {api:anychart.charts.Cartesian#line
 The following sample demonstrates how a basic Line chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},

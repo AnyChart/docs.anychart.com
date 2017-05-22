@@ -1,70 +1,64 @@
 {:index 1}
-#Line Chart
+#Quadrant Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
+  * [Quarters](#quarters)
+  * [Crossing](#crossing)
+  * [Scales](#scales)
+  * [Axes](#axes)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Vertical Line](#vertical_line)
 
 ## Overview
 
-A line chart is a chart that shows information as a series of data points connected by straight line segments.
+A quadrant chart...
 
-The line chart is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
+The quadrant chart...
 
-This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line chart's characteristics:
-
-<table border="1" class="seriesTABLE">
-<tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api}</td></tr>
-<tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
-<tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Line](Vertical/Line_Chart)</td></tr>
-<tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
-<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Polar_Line_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Line](Radar_Plot/Radar_Line_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Scatter_Line_Chart)</td></tr>
-<tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Line)</td></tr>
-<tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Spline](Spline_Chart)</td></tr>
-<tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
-<tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/" target="_blank">Chartopedia: Line Chart</a></td></tr>
-<tr><td></td><td>[General Settings](General_Settings)</td></tr>
-</table>
+This article explains how to create a basic Quadrant chart as well as configure settings that are specific to the type.
 
 ## Quick Start
 
-To create a Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor. If you pass the data to this chart constructor, it creates a line series.
+конструктор создает scatter chart с определенными настройками:
+	две x и y оси, образующие рамку
+	отключены тики лейблы
+	закрашиваются правая верхняя и левая нижняя четверти (quarter)
+	отключены гриды
+	минимум и максимум у шкал от 0 до 100
 
-To create a Line series explicitly, call the {api:anychart.charts.Cartesian#line}line(){api} method.
+To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor. If you pass the data to this chart constructor, it creates a marker series.
 
-The following sample demonstrates how a basic Line chart is created:
+по дефолту - создается маркер серия
+но также могут быть line и bubble
+
+To create ... explicitly, call the following methods:
+
+{api:anychart.charts.Scatter#line}line(){api}
+{api:anychart.charts.Scatter#bubble}bubble(){api}
+{api:anychart.charts.Scatter#marker}line(){api}
+
+The following sample demonstrates how a basic Quadrant chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
-  {x: "January", value: 10000},
-  {x: "February", value: 12000},
-  {x: "March", value: 18000},
-  {x: "April", value: 11000},
-  {x: "May", value: 9000}
+  {x: 4, value: 42},
+  {x: 13, value: 59},
+  {x: 25, value: 68},
+  {x: 25, value: 63},
+  {x: 44, value: 54},
+  {x: 55, value: 58},
+  {x: 56, value: 46},
+  {x: 60, value: 54},
+  {x: 72, value: 73}
 ];
 
 // create a chart
-var chart = anychart.line();
-
-// create a line series and set the data
-var series = chart.line(data);
+chart = anychart.quadrant(data);
 
 // set the container id
 chart.container("container");
@@ -73,11 +67,11 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_Line\_Chart\_01{sample}
+{sample}BCT\_Quadrant\_Chart\_01{sample}
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Line chart (for example, legend and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Quadrant chart (for example, legend and interactivity settings).
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -85,50 +79,254 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Line series:
+ссылка на настройки трех типов серий
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+In the sample below, there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
+
+```
+// create the first series (marker) and set the data
+var series1 = chart.marker(data_1);
+
+// configure the visual settings of the first series
+series1.fill("black", 0.3);
+series1.hoverFill("black", 0.3);
+series1.selectFill("black", 0.5);
+series1.stroke("black", 1);
+series1.hoverStroke("black", 2);
+series1.selectStroke("black", 4);
+
+// create the second series (line) and set the data
+var series2 = chart.line(data_2);
+
+// configure the visual settings of the second series
+series2.stroke("#00cc99", 3, "10 5", "round");
+
+// create the third series (bubble) and set the data
+var series3 = chart.bubble(data_3);
+
+// configure the visual settings of the third series
+series3.fill("#0066cc", 0.3);
+series3.hoverFill("#0066cc", 0.3);
+series3.selectFill("#0066cc", 0.5);
+series3.stroke("#0066cc");
+series3.hoverStroke("#0066cc", 2);
+series3.selectStroke("#0066cc", 4);
+```
+
+{sample}BCT\_Quadrant\_Chart\_02{sample}
+
+### Quarters
+
+настройка четвертей - заливка, граница, углы, titles + все методы, которые есть, включая labels
+
+может быть, написать, что про лейблы будет ниже
+
+Here is a full list of methods used to configure visual settings that are available for quarters:
 
 * {api:anychart.core.cartesian.series.Line#color}color(){api} and {api:anychart.core.cartesian.series.Line#stroke}stroke(){api} set the color and stroke
 * {api:anychart.core.cartesian.series.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
 * {api:anychart.core.cartesian.series.Line#selectStroke}selectStroke(){api} configures the stroke on select
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+```
+// configure quarters
+chart.quarters(
+        {
+            rightTop: {
+                fill: "#ccfff2",
+                corners: 30,
+                cornerType: "cut"
+            },
+            rightBottom: {
+                fill: "#e6f9ff",
+                corners: 30,
+                cornerType: "cut"
+            },
+            leftTop: {
+                fill: "#fff9e6",
+                corners: 30,
+                cornerType: "cut"
+            },
+            leftBottom: {
+                fill: "#f9e6ff",
+                corners: 30,
+                cornerType: "cut"
+            },
+        }
+);
+```
 
-In the sample below, there are two Line series with some of the appearance settings configured:
+{sample}BCT\_Quadrant\_Chart\_03{sample}
+
+...:
+
+* {api:anychart.core.cartesian.series.Line#color}color(){api} and {api:anychart.core.cartesian.series.Line#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.Line#selectStroke}selectStroke(){api} configures the stroke on select
+
 
 ```
-// create the first series
-var series1 = chart.line(seriesData_1);
-
-// configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
-
-// create the second series
-var series2 = chart.line(seriesData_2);
-
-// configure the visual settings of the second series
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+// configure quarters
+chart.quarters(
+        {
+            rightTop: {
+                title: {
+                    text: "Right Top",
+                    fontSize: "24",
+                    fontWeight: "bold",
+                    fontColor: "#fa8072"
+                }
+            },
+            rightBottom: {
+                title: {
+                    text: "Right Bottom",
+                    fontSize: "24",
+                    fontWeight: "bold",
+                    fontColor: "#72fa80"
+                }
+            },
+            leftTop: {
+                title: {
+                    text: "Left Top",
+                    fontSize: "24",
+                    fontWeight: "bold",
+                    fontColor: "#72fa80"
+                }
+            },
+            leftBottom: {
+                title: {
+                    text: "Left Bottom",
+                    fontSize: "24",
+                    fontWeight: "bold",
+                    fontColor: "#fa8072"
+                }
+            },
+        }
+);
 ```
 
-{sample}BCT\_Line\_Chart\_02{sample}
+{sample}BCT\_Quadrant\_Chart\_04{sample}
+
+### Crossing
+
+настройка кроссинга - stroke
+
+```
+// configure the crossing
+chart.crossing().stroke("grey", 3, "7 3", "round");3
+```
+
+{sample}BCT\_Quadrant\_Chart\_05{sample}
+
+### Scales
+
+повторить про параметры шкал по умолчанию
+сказать, что данные не влияют на шкалы
+если данные выходят за пределы дефолтных шкал, то они просто не отображются
+ссылка на статью про шкалы - если нужно изменить дефолт
+после примера: обратите внимания, что четверти строго делят шкалу пополам, независимо от значений
+crossing lines пройдут по началу координат если минимум и максимум шкал совпадают по модулю
+(начало координат - origin + ссылка на википедию
+вариант: пройдут по нулевым значениям)
+более наглядно это можно будет увидеть в следующем разделе
+
+```
+// configure scales
+chart.yScale()
+        .minimum(-500)
+        .maximum(500);
+chart.xScale()
+        .minimum(-500)
+        .maximum(500);
+```
+
+### Axes
+
+повторить про оси, создающиеся по умолчанию - их по две
+к ним можно обратиться по индексам: 0 и 1
+по умолчанию отключены лейблы и тики, а также заголовки
+ссылка на статью про оси
+
+```
+// configure axes
+chart.xAxis(0, {ticks: true, labels: true});
+chart.xAxis(1, {ticks: true, labels: true});
+chart.yAxis(0, {ticks: true, labels: true});
+chart.yAxis(1, {ticks: true, labels: true});
+```
+
+{sample}BCT\_Quadrant\_Chart\_06{sample}
 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+лейблы точек серии настраиваются согласно правилам этой серии - например... ссылка на маркеры
+еще есть лейблы четвертей, четверть может иметь больше 1 лейбла
+
+```
+// create a label on the left-top quarter
+var labelLTop = chart.quarters().leftTop().label();
+labelLTop.text("1");
+labelLTop.fontColor("grey");
+labelLTop.fontWeight("bold");
+labelLTop.fontSize(24);
+labelLTop.position("rightBottom");
+labelLTop.offsetX(-20);
+labelLTop.offsetY(-20);
+
+// create a label on the right-top quarter
+var labelRTop = chart.quarters().rightTop().label();
+labelRTop.text("2");
+labelRTop.fontColor("grey");
+labelRTop.fontWeight("bold");
+labelRTop.fontSize(24);
+labelRTop.position("leftBottom");
+labelRTop.offsetX(20);
+labelRTop.offsetY(-20);
+
+// create the first label on the left-bottom quarter
+var labelLBottom1 = chart.quarters().leftBottom().label(0);
+labelLBottom1.text("3");
+labelLBottom1.fontColor("grey");
+labelLBottom1.fontWeight("bold");
+labelLBottom1.position("rightTop");
+labelLBottom1.fontSize(24);
+labelLBottom1.offsetX(-20);
+labelLBottom1.offsetY(20);
+
+// create the second label on the left-bottom quarter
+var labelLBottom2 = chart.quarters().leftBottom().label(1);
+labelLBottom2.useHtml(true);
+labelLBottom2.text("Important / Not Important &#8594;");
+labelLBottom2.position("leftBottom");
+labelLBottom2.offsetX(-20);
+labelLBottom2.offsetY(-100);
+labelLBottom2.rotation(-90);
+
+// create the third label on the left-bottom quarter
+var labelLBottom2 = chart.quarters().leftBottom().label(3);
+labelLBottom2.useHtml(true);
+labelLBottom2.text("Urgent / Not Urgent &#8594;");
+labelLBottom2.position("leftBottom");
+labelLBottom2.offsetX(80);
+labelLBottom2.offsetY(20);
+
+// create a label on the right-bottom quarter
+var labelRBottom = chart.quarters().rightBottom().label();
+
+labelRBottom.text("4");
+labelRBottom.fontColor("grey");
+labelRBottom.fontWeight("bold");
+labelRBottom.fontSize(24);
+labelRBottom.position("leftTop");
+labelRBottom.offsetX(20);
+labelRBottom.offsetY(20);
+```
+
+{sample}BCT\_Quadrant\_Chart\_07{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-### Vertical Line
-
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
-
-Here is the information about creating Vertical Line series:
-
-* [Vertical Line](Vertical/Line_Chart)
-* [Vertical Spline](Vertical/Spline_Chart)
-* [Vertical Step Line](Vertical/Step_Line_Chart)
