@@ -125,16 +125,16 @@ series3.selectStroke("#0066cc", 4);
 
 настройка четвертей - заливка, граница, углы, titles + все методы, которые есть, включая labels
 
-* {api:anychart.core.untils.QuarterSettings#leftBottom}leftBottom(){api}
-* {api:anychart.core.untils.QuarterSettings#leftTop}leftTop(){api}
-* {api:anychart.core.untils.QuarterSettings#rightBottom}rightBottom(){api}
-* {api:anychart.core.untils.QuarterSettings#rightTop}rightTop(){api}
+* {api:anychart.core.utils.QuarterSettings#leftBottom}leftBottom(){api}
+* {api:anychart.core.utils.QuarterSettings#leftTop}leftTop(){api}
+* {api:anychart.core.utils.QuarterSettings#rightBottom}rightBottom(){api}
+* {api:anychart.core.utils.QuarterSettings#rightTop}rightTop(){api}
 
 Here is a full list of methods used to configure visual settings that are available for quarters:
 
-* {api:anychart.core.untils.Quarter#fill}fill(){api} and {api:anychart.core.untils.Quarter#stroke}stroke(){api} set the fill and stroke
-* {api:anychart.core.untils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.untils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.untils.Quarter#rightStroke}rightStroke(){api}, and {api:anychart.core.untils.Quarter#topStroke}topStroke(){api} configure strokes on particular sides of quarters
-* {api:anychart.core.untils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.untils.Quarter#corner}corner(){api} set the type and radius of corners
+* {api:anychart.core.utils.Quarter#fill}fill(){api} and {api:anychart.core.utils.Quarter#stroke}stroke(){api} set the fill and stroke
+* {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, and {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} configure strokes on particular sides of quarters
+* {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
 
 ```
 // configure quarters
@@ -168,10 +168,10 @@ chart.quarters(
 
 other settings:
 
-* {api:anychart.core.untils.Quarter#title}title(){api} sets titles 
-* {api:anychart.core.untils.Quarter#margin}margin(){api} sets margins
-* {api:anychart.core.untils.Quarter#padding}padding(){api} sets paddings
-* {api:anychart.core.untils.Quarter#label}label(){api} sets labels 
+* {api:anychart.core.utils.Quarter#title}title(){api} sets titles 
+* {api:anychart.core.utils.Quarter#margin}margin(){api} sets margins
+* {api:anychart.core.utils.Quarter#padding}padding(){api} sets paddings
+* {api:anychart.core.utils.Quarter#label}label(){api} sets labels 
 
 может быть, написать, что про лейблы будет ниже
 
@@ -219,7 +219,7 @@ chart.quarters(
 
 ### Crossing
 
-{api:anychart.core.untils.Crossing#stroke}stroke(){api}
+{api:anychart.core.utils.Crossing#stroke}stroke(){api}
 
 ```
 // configure the crossing
@@ -278,7 +278,7 @@ chart.yAxis(1, {ticks: true, labels: true});
 лейблы точек серии настраиваются согласно правилам этой серии - например... ссылка на маркеры
 еще есть лейблы четвертей, четверть может иметь больше 1 лейбла
 
-{api:anychart.core.untils.Quarter#label}label(){api} sets labels 
+{api:anychart.core.utils.Quarter#label}label(){api} sets labels 
 
 ```
 // create a label on the left-top quarter
