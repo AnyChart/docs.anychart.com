@@ -9,6 +9,8 @@ PERT Chart
  * [Interactivity](#interactivity)
  * [Appearance](#appearance)
  * [Tasks](#tasks)
+  * [Dummy Tasks](#dummy_tasks)
+  * [Earliest and latest](#earliest_and_latest)
   * [Slacks](#slacks)
  * [Milestones](#milestones)
  * [Critical Path](#critical_path)
@@ -136,6 +138,38 @@ tasks.selectFill("#519790", 2);
 
 {sample}Pert\_Settings\_01{sample}
 
+### Dummy Tasks
+
+Dummy tasks are visual representations of dependencies between real tasks. Dummy task does not exist as a real task, does not affect the project duration (the duration of a dummy task equals 0) and connects milestones of real tasks for better visualization.
+
+Dummy tasks have their own methods for appearance configuration: {api:anychart.core.pert.Tasks#dummyFill}dummyFill(){api} and {api:anychart.core.pert.Tasks#dummyStroke}dummyStroke(){api}. There are no methods for dummy tasks in hover and selected states as they are not interactive. 
+
+```
+// set dummy tasks colors
+tasks.dummyFill("#888");
+tasks.dummyStroke("#000", 0.5, "5 2");
+```
+
+{sample}Pert\_Settings\_02{sample}
+
+
+### Earliest and latest
+
+Earliest and latest start and finish values are automatically calculated from the optimistic, pessimistic and most likely values or from duration value. These values are a good help in planning, as they show the most favorable and the worst time frames so they can be noticed in time and changed if critical.
+
+The following sample demonstrates how to demonstrate those values to watch them:
+
+```
+// set labels with earliest and latest values
+upperLabels = tasks.upperLabels();
+upperLabels.format("ES: {%earliestStart}, LS: {%latestStart}");
+lowerLabels = tasks.lowerLabels();
+lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
+```
+
+{sample}Pert\_Settings\_03{sample}
+
+
 ### Slacks
 
 There is a parameter all tasks have called "slack". Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
@@ -149,7 +183,8 @@ labels.format(function(e){
     return "Slack: " + e.slack;
 });
 ```
-{sample}Pert\_Settings\_02{sample}
+
+{sample}Pert\_Settings\_04{sample}
 
 
 ### Milestones 
@@ -175,7 +210,7 @@ milestones.hoverStroke("#90caf9", 2);
 milestones.selectStroke("#90caf9", 4);
 ```
 
-{sample}Pert\_Settings\_03{sample}
+{sample}Pert\_Settings\_05{sample}
 
 
 ### Critical Path 
@@ -188,7 +223,7 @@ chart.criticalPath({milestones: {fill: "#ffab91", hoverFill: "#ff6e40", selectFi
 // set critical tasks stroke
 chart.criticalPath({tasks: {stroke: "#ffab91"}});
 ```
-{sample}Pert\_Settings\_04{sample}
+{sample}Pert\_Settings\_06{sample}
 
 ### Labels
 
@@ -202,7 +237,7 @@ chart.tasks().upperLabels().padding(5);
 chart.tasks().upperLabels().fontSize(20);
 ```
 
-{sample}Pert\_Settings\_05{sample}
+{sample}Pert\_Settings\_07{sample}
 
 It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
 
@@ -230,7 +265,7 @@ chart.milestones().labels().format(function(){
 });
 ```
 
-{sample}Pert\_Settings\_06{sample}
+{sample}Pert\_Settings\_08{sample}
 
 ### Tooltips
 
@@ -247,4 +282,4 @@ chart.milestones(). listen("click", function(){
   alert("Standard deviation for this project is " + dev);
 })
 ```
-{sample}Pert\_Settings\_07{sample}
+{sample}Pert\_Settings\_09{sample}

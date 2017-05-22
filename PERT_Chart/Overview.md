@@ -58,15 +58,18 @@ Find how to get the slacks duration shown in the [AnyChart PERT slacks section](
 
 ### Middle tasks control
 
-Sometimes it is necessary to control the time bounds for some separated tasks. In this case, use the "earliest/latest start/finish" automatically calculated parameters.
+Sometimes it is necessary to control the time bounds for some separated tasks. In this case, watch the "earliest/latest start/finish" automatically calculated parameters.
 
 {sample}Pert\_UseCase\_04{sample}
 
+Look through the [tasks part of the PERT article]() to know more about those parameters.
 
 ### Duration calculation
 
 In real project management, it is impossible to give the exact value for a project duration. Even taking the deviation in mind, there is still a very high risk not to fit in the time bounds. Therefore, you can set your own function for the duration calculation instead of the standard formula.
 
-The duration in following sample with the same data as above is calculated automatically.
+The duration in following sample with the same data as above is calculated automatically through the PERT statistics.
 
 {sample}Pert\_UseCase\_05{sample}
+
+Find more about using PERT statistics in the [AnyChart PERT statistics section](Pert_Chart#statistics).
