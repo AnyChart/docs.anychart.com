@@ -24,11 +24,11 @@ This article explains how to create a basic Quadrant chart as well as configure 
 ## Quick Start
 
 конструктор создает scatter chart с определенными настройками:
-	две x и y оси, образующие рамку
-	отключены тики лейблы
-	закрашиваются правая верхняя и левая нижняя четверти (quarter)
-	отключены гриды
-	минимум и максимум у шкал от 0 до 100
+две x и y оси, образующие рамку
+отключены тики лейблы
+закрашиваются правая верхняя и левая нижняя четверти (quarter)
+отключены гриды
+минимум и максимум у шкал от 0 до 100
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor. If you pass the data to this chart constructor, it creates a marker series.
 
@@ -37,7 +37,7 @@ To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){a
 
 To create ... explicitly, call the following methods:
 
-{api:anychart.charts.Scatter#line}line(){api}
+{api:anychart.charts.Scatter#marker}marker(){api}
 {api:anychart.charts.Scatter#bubble}bubble(){api}
 {api:anychart.charts.Scatter#marker}line(){api}
 
@@ -81,6 +81,10 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ссылка на настройки трех типов серий
 
+* [Marker Chart](Marker_Chart)
+* [Bubble Chart](Bubble_Chart)
+* [Line Chart](Line_Chart)
+
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the sample below, there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
@@ -121,13 +125,16 @@ series3.selectStroke("#0066cc", 4);
 
 настройка четвертей - заливка, граница, углы, titles + все методы, которые есть, включая labels
 
-может быть, написать, что про лейблы будет ниже
+* {api:anychart.core.untils.QuarterSettings#leftBottom}leftBottom(){api}
+* {api:anychart.core.untils.QuarterSettings#leftTop}leftTop(){api}
+* {api:anychart.core.untils.QuarterSettings#rightBottom}rightBottom(){api}
+* {api:anychart.core.untils.QuarterSettings#rightTop}rightTop(){api}
 
 Here is a full list of methods used to configure visual settings that are available for quarters:
 
-* {api:anychart.core.cartesian.series.Line#color}color(){api} and {api:anychart.core.cartesian.series.Line#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Line#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.untils.Quarter#fill}fill(){api} and {api:anychart.core.untils.Quarter#stroke}stroke(){api} set the fill and stroke
+* {api:anychart.core.untils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.untils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.untils.Quarter#rightStroke}rightStroke(){api}, and {api:anychart.core.untils.Quarter#topStroke}topStroke(){api} configure strokes on particular sides of quarters
+* {api:anychart.core.untils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.untils.Quarter#corner}corner(){api} set the type and radius of corners
 
 ```
 // configure quarters
@@ -159,12 +166,14 @@ chart.quarters(
 
 {sample}BCT\_Quadrant\_Chart\_03{sample}
 
-...:
+other settings:
 
-* {api:anychart.core.cartesian.series.Line#color}color(){api} and {api:anychart.core.cartesian.series.Line#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Line#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.untils.Quarter#title}title(){api} sets titles 
+* {api:anychart.core.untils.Quarter#margin}margin(){api} sets margins
+* {api:anychart.core.untils.Quarter#padding}padding(){api} sets paddings
+* {api:anychart.core.untils.Quarter#label}label(){api} sets labels 
 
+может быть, написать, что про лейблы будет ниже
 
 ```
 // configure quarters
@@ -210,7 +219,7 @@ chart.quarters(
 
 ### Crossing
 
-настройка кроссинга - stroke
+{api:anychart.core.untils.Crossing#stroke}stroke(){api}
 
 ```
 // configure the crossing
@@ -231,6 +240,8 @@ crossing lines пройдут по началу координат если ми
 вариант: пройдут по нулевым значениям)
 более наглядно это можно будет увидеть в следующем разделе
 
+[Scales](../Axes_and_Grids/Scales)
+
 ```
 // configure scales
 chart.yScale()
@@ -248,6 +259,8 @@ chart.xScale()
 по умолчанию отключены лейблы и тики, а также заголовки
 ссылка на статью про оси
 
+[Scales](../Axes_and_Grids)
+
 ```
 // configure axes
 chart.xAxis(0, {ticks: true, labels: true});
@@ -264,6 +277,8 @@ chart.yAxis(1, {ticks: true, labels: true});
 
 лейблы точек серии настраиваются согласно правилам этой серии - например... ссылка на маркеры
 еще есть лейблы четвертей, четверть может иметь больше 1 лейбла
+
+{api:anychart.core.untils.Quarter#label}label(){api} sets labels 
 
 ```
 // create a label on the left-top quarter
