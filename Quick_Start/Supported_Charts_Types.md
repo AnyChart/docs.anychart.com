@@ -10,6 +10,7 @@ with links to tutorials where you can find out how to create them.
 <tr><th>Name</th></tr>
 <tr><td>[Area Chart](../Basic_Charts/Area_Chart)</td></tr>
 <tr><td>[Bar Chart](../Basic_Charts/Bar_Chart)</td></tr>
+<tr><td>[BarMekko Chart](../Basic_Charts/Marimekko_Chart/BarMekko_Chart)</td></tr>
 <tr><td>[Box Chart](../Basic_Charts/Box_Chart)</td></tr>
 <tr><td>[Bubble Chart](../Basic_Charts/Bubble_Chart)</td></tr>
 <tr><td>[Bullet Chart](../Basic_Charts/Bullet_Chart)</td></tr>
@@ -30,7 +31,10 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Maps - Dot, Point, Marker](../Maps/Dot_\(Point\)_Map)</td></tr>
 <tr><td>[Maps - Connector, Line](../Maps/Connector_Maps)</td></tr>
 <tr><td>[Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map)</td></tr>
+<tr><td>[Marimekko Chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts/Marker_Chart)</td></tr>
+<tr><td>[Mekko Chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart)</td></tr>
+<tr><td>[Mosaic Chart](../Basic_Charts/Marimekko_Chart/Mosaic_Chart)</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts/OHLC_Chart)</td></tr>
 <tr><td>[Pareto Chart](../Basic_Charts/Pareto_Chart)</td></tr>
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart)</td></tr>
@@ -67,10 +71,14 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/TreeMap_Chart)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
+<tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
+<tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Marimekko_Chart)</td></tr>
 <tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart)</td></tr>
+<tr><td>[Vertical Mekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
+<tr><td>[Vertical Mosaic Chart](../Basic_Charts/Vertical/Mosaic_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Area_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart)</td></tr>
 <tr><td>[Vertical Range Area Chart](../Basic_Charts/Vertical/Range_Area_Chart)</td></tr>
