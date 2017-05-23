@@ -8,14 +8,14 @@
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#average_true_range)
 * [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
+* [Bollinger Bands %B](#bollinger_bands_%b)
 * [Bollinger Bands Width (BBW)](#bollinger_bands_width)
 * [Commodity Channel Index (CCI)](#commodity_channel_index)
 * [Chaikin Money Flow (CMF)](#chaikin_money_flow)
 * [Chaikin Oscillator (CHO)](#chaikin_oscillator)
 * [Chaikin Volatility (CHV)](#chaikin_volatility)
 * [Directional Movement Indicator (DMI)](#directional_movement_indicator)
-* [Exponential Moving Average (EMA)](#exponential\_moving\_average)
+* [Exponential Moving Average (EMA)](#exponential_moving_average)
 * [KDJ](#kdj)
 * [Keltner Channels](#)
 * [Modified (Smoothed) Moving Average (MMA)](#modified_moving_average)
@@ -51,7 +51,6 @@ Accumulation Distribution Line is calculated according to these formulas:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
 
-
 ## Adaptive Moving Average
 
 Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) indicator is calculated by the following steps:
@@ -79,7 +78,7 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) 
 
 This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
-- current High less than current Low;
+- current High less than current Low
 - current High less than previous Close (absolute value)
 - current Low less than previous Close (absolute value)
 
@@ -89,15 +88,10 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 <ol>
 <li>Calculate the SMA according to the SMA formula.</li><br>
-
 <li>Use the next formula to calculate the standard deviation:</li><br>
-
 <center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center><br>
-
-<li>Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:</li><br>
-
+<li>Bollinger Bands values are calculated according to this formula, where "d" is a deviation:</li><br>
 <center><img src="https://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
-
 </ol>
 
 ## Bollinger Bands %B
@@ -114,11 +108,9 @@ The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculat
 bandwidth = (upperBB − lowerBB) / middleBB
 ```
 
-Coming soon.
-
 ## Commodity Channel Index
 
-Commodity Channel Index is calculated according to this formula:
+[Commodity Channel Index](Commodity\_Channel\_Index\_\(CCI\)) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cci.png"></center>
 
@@ -131,7 +123,7 @@ And SMA is calculated as stated in SMA part of this article.
 
 ## Chaikin Money Flow
 
-Chaikin Money Flow is calculated in three steps.
+[Chaikin Money Flow](Chaikin\_Money\_Flow\_\(CMF\)) is calculated in three steps.
 
 <ol>
 	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
@@ -145,7 +137,7 @@ Chaikin Money Flow is calculated in three steps.
 
 ## Chaikin Oscillator
 
-Chaikin Oscillator is calculated according to this formula:
+[Chaikin Oscillator](Chaikin\_Oscillator\_\(CHO\)) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
 
@@ -153,13 +145,15 @@ You can see how the ADL indicator is calculated in the <a href="#accumulation_di
 
 ## Chaikin Volatility
 
+Coming soon.
+
 Chaikin Volatility indicator in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
 
 ## Directional Movement Indicator
 
-Directional Movement Indicator is calculated in three steps: 
+[Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\)) is calculated in three steps: 
 <ol>
 <li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
