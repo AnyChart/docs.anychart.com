@@ -40,7 +40,7 @@ Note that ADL indicator needs to be built on a separate plot due to rather huge 
 
 Here is a live sample:
 
-{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_ADL\_01{sample}
+{sample :height 700}STOCK\_Technical\_Indicators\_ADL\_01{sample}
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
@@ -51,11 +51,8 @@ Visualization of an indicator depends on series type. Here is a sample where ADL
 ```
 // adjust ADL indicator
 var adl = plot1.adl(mapping).series();
-adl.seriesType("marker");
+adl.seriesType("area");
 adl.fill("#E5BE01");
-adl.size(5);
-adl.stroke("none");
-adl.type("triangleUp");
 ```
 
-{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_ADL\_02{sample}
+{sample :height 700}STOCK\_Technical\_Indicators\_ADL\_02{sample}

@@ -29,11 +29,8 @@
 
         // adjust ADL indicator
         var adl = plot1.adl(mapping).series();
-        adl.seriesType("marker");
+        adl.seriesType("area");
         adl.fill("#E5BE01");
-        adl.size(5);
-        adl.stroke("none");
-        adl.type("triangleUp");
         
         // set container id for the chart
         chart.container("container");
