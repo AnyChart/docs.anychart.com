@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyStock"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="2"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+        // The data used in this sample can be obtained from the CDN
+        // https://cdn.anychart.com/csv-data/csco-daily.js
+        // create data table on loaded data
+        var dataTable = anychart.data.table();
+        dataTable.addData(get_csco_daily_data());
+
+        // map loaded data
+        var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "volume": 3});
+
+        // create stock chart
+        chart = anychart.stock();
+
+        // create plots on the chart
+        var plot0 = chart.plot(0);
+        var plot1 = chart.plot(1);
+
+        // create line series
+        var ohlcSeries = plot0.ohlc(mapping);
+        ohlcSeries.name("CSCO");
+        ohlcSeries.stroke("2px #64b5f6");
+
+        // create ADL indicator
+        var adl = plot1.adl(mapping).series();
+
+        // create scroller series with mapped data
+        chart.scroller().line(mapping);
+
+        // set container id for the chart
+        chart.container("container");
+        
+        // initiate chart drawing
+        chart.draw();
+    });
+    </script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
