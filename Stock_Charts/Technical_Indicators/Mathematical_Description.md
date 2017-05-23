@@ -47,7 +47,7 @@ For all formulas and indicators below:
 
 ## Accumulation Distribution Line
 
-Accumulation Distribution Line is calculated according to these formulas:
+[Accumulation Distribution Line](Accumulation\_Distribution\_Line\_\(ADL\)) is calculated according to these formulas:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
 
@@ -118,7 +118,7 @@ Where TP is a Typical Price calculated as:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/tp.png"></center>
 
-And SMA is calculated as stated in SMA part of this article.
+And SMA is calculated as stated in [SMA part](#simple_moving_average) of this article.
 
 
 ## Chaikin Money Flow
@@ -141,7 +141,7 @@ And SMA is calculated as stated in SMA part of this article.
 
 <center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
 
-You can see how the ADL indicator is calculated in the <a href="#accumulation_distribution_line">ADL part of this article</a>.
+You can see how the ADL indicator is calculated in the [ADL part](#accumulation_distribution_line) of this article</a>.
 
 ## Chaikin Volatility
 
@@ -159,7 +159,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 <center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> <br>
 
-<li>Next they are smoothed using <a href="#exponential_moving_average">EMA</a> or Wilder's method, calculated as:</li><br>
+<li>Next they are smoothed using [EMA](#exponential_moving_average) or Wilder's method, calculated as:</li><br>
 
 <center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center><br>
 
@@ -193,7 +193,7 @@ Coming soon.
 
 ## Modified Moving Average
 
-[Modified Moving Average](Modified\_Moving\_Average\_(MMA)) indicator points are calculated by the following formula:
+[Modified Moving Average](Modified\_Moving\_Average\_\(MMA\)) indicator points are calculated by the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
@@ -260,7 +260,7 @@ Coming soon.
 
 ## Simple Moving Average
 
-[Simple Moving Average](Simple\_Moving\_Average\_(SMA)) in each point is calculated according to the following formula:
+[Simple Moving Average](Simple\_Moving\_Average\_\(SMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
