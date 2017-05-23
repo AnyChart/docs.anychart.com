@@ -11,7 +11,6 @@ Developed by Donald Lambert and featured in Commodities magazine in 1980, the Co
 
 Find the mathematical description of the indicator on the [Commodity Channel Index (CCI) Mathematical Description](Mathematical_Description#commodity_channel_index) page.
 
-
 ## Adding indicator
 
 CCI indicator is added through the {api:anychart.core.stock.Plot#cci}cci(){api} method. It requires a mapping with three fields: "high", "low" and "close". The following sample demonstrates the CCI indicator applied to a spline series which data values are equal to "close" values.
@@ -41,7 +40,7 @@ Note that CCI indicator needs to be built on a separate plot due to rather huge 
 
 Here is a live sample:
 
-{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_CCI\_01{sample}
+{sample :height 700}STOCK\_Technical\_Indicators\_CCI\_01{sample}
 
 It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
@@ -63,9 +62,9 @@ Visualization of an indicator depends on series type. Here is a sample where two
 var cci1 = plot1.cci(mapping);
 
 // create a CCI indicator with parameters adjusted
-var cci2 = plot2.cci(mapping, 45, "stick");
+var cci2 = plot2.cci(mapping, 45, "column");
 cci2Series = cci2.series();
-cci2Series.stroke("#bf360c", 2, "5 2");
+cci2Series.stroke("#bf360c");
 ```
 
-{sample :width 825 :height 700}STOCK\_Technical\_Indicators\_CCI\_02{sample}
+{sample :height 700}STOCK\_Technical\_Indicators\_CCI\_02{sample}

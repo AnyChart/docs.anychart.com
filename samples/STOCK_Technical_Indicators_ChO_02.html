@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
         // The data used in this sample can be obtained from the CDN
         // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -31,9 +31,7 @@
         var cho = plot_1.cho(mapping, 10, 20, "sma").series();
         cho.seriesType("marker");
         cho.fill("#E5BE01");
-        cho.size(3);
-        cho.stroke("none");
-        cho.type("star5");
+        cho.stroke(null);
         
         // set container id for the chart
         chart.container("container");

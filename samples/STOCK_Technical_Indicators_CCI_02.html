@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
         // The data used in this sample can be obtained from the CDN
         // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -32,9 +32,9 @@
         var cci1 = plot1.cci(mapping);
 
         // create a CCI indicator with parameters adjusted
-        var cci2 = plot2.cci(mapping, 45, "stick");
+        var cci2 = plot2.cci(mapping, 45, "column");
         cci2Series = cci2.series();
-        cci2Series.stroke("#bf360c", 2, "5 2");
+        cci2Series.stroke("#bf360c");
         
         // set container id for the chart
         chart.container("container");

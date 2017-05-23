@@ -53,6 +53,7 @@ Visualization of an indicator depends on series type. Here is a sample where ADL
 var adl = plot1.adl(mapping).series();
 adl.seriesType("area");
 adl.fill("#E5BE01");
+adl.stroke(null);
 ```
 
 {sample :height 700}STOCK\_Technical\_Indicators\_ADL\_02{sample}

@@ -11,7 +11,6 @@ Developed by Marc Chaikin, Chaikin Money Flow measures the amount of Money Flow 
 
 Find the mathematical description of the indicator on the [Chaikin Money Flow (CMF) Mathematical Description](Mathematical_Description#chaikin_money_flow) page.
 
-
 ## Adding indicator
 
 CMF indicator is added through the {api:anychart.core.stock.Plot#cmf}cmf(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the CMF indicator applied to a spline series which data values are equal to "close" values.
@@ -59,11 +58,9 @@ Visualization of an indicator depends on series type. Here is a sample where CMF
 cmf_0 = plot_1.cmf(mapping);
 
 // create and adjust the CMF indicator with settings adjusted
-cmf_1 = plot_2.cmf(mapping, 35, "marker").series();
+cmf_1 = plot_2.cmf(mapping, 35, "area").series();
 cmf_1.fill("#E5BE01");
-cmf_1.size(3);
-cmf_1.stroke("none");
-cmf_1.type("star5");
+cmf_1.stroke(null);
 ```
 
 {sample}STOCK\_Technical\_Indicators\_CMF\_02{sample}

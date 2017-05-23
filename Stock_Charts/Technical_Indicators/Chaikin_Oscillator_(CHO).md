@@ -53,11 +53,9 @@ Visualization of an indicator depends on series type. Here is a sample with an a
 ```
 // create a CHO indicator with adjusted parameters
 var cho = plot_1.cho(mapping, 10, 20, "sma").series();
-cho.seriesType("marker");
+cho.seriesType("area");
 cho.fill("#E5BE01");
-cho.size(3);
-cho.stroke("none");
-cho.type("star5");
+cho.stroke(null);
 ```
 
 {sample}STOCK\_Technical\_Indicators\_ChO\_02{sample}

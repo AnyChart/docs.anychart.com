@@ -11,7 +11,6 @@ Developed by Marc Chaikin, the DMI measures the momentum of the Accumulation Dis
 
 Find the mathematical description of the indicator on the [DMI Mathematical Description](Mathematical_Description#directional_movement_index) page.
 
-
 ## Adding indicator
 
 DMI indicator is added through the {api:anychart.core.stock.Plot#dmi}dmi(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the DMI indicator applied to a spline series which data values are equal to "close" values.
