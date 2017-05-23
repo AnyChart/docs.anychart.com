@@ -19,17 +19,21 @@
             chart = anychart.pert();
             chart.data(data, "asTable");
 
-            // set critical path milestones colors
-            milestones = chart.criticalPath().milestones();
-            milestones.fill("#ffab91");
-            milestones.hoverFill("#ff6e40");
-            milestones.selectFill("#ff6e40");
-            milestones.labels().fontColor("#86614e");
-            // set critical tasks stroke
-            tasks = chart.criticalPath().tasks();
-            tasks.stroke("#ffab91");
+            tasks = chart.tasks();
 
-            chart.title("Adjusting visual settings for the critical path");
+            // set vertical spacing between tasks
+            chart.verticalSpacing("20%");
+            
+            // Set expected time
+            chart.expectedTimeCalculator(function() {
+              return (this.pessimistic + this.optimistic + this.mostLikely)/3;
+            });
+
+            // get project duration
+            var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+
+            // set the chart title to show the duration
+            chart.title("The duration equals " + duration);
             chart.container("container");
             chart.draw();
         });</script>

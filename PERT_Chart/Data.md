@@ -117,7 +117,7 @@ var data = [
 
 ## Statistics
 
-Use {api:anychart.charts.Pert#getStat}getStat(){api} and {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} to obtain and set PERT statistical calculations.
+Use the {api:anychart.charts.Pert#getStat}getStat(){api} method to obtain and set PERT statistical calculations.
 
 ```
 // chart initiation

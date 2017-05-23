@@ -35,25 +35,25 @@ See [how to configure the critical path in AnyChart PERT Charts](Pert_Chart#crit
 
 ## Critical Activity
 
-Critical activity is an activity that has total float equal to zero. An activity with zero float is not necessarily on the critical path since its path may not be the longest.
+Critical activity is an activity that has slack equal to zero. An activity with zero slack is not necessarily on the critical path since its path may not be the longest.
 
 Find more about activities and their types in the [milestones section in AnyChart PERT](Pert_Chart#milestones) and about critical path in the [critical path section in AnyChart PERT](Pert_Chart#critical_path).
 
 ## Optimistic Time
 
-Optimistic time is the minimum possible time required to accomplish an activity (o) or a path (O), assuming everything proceeds better than is normally expected.
+Optimistic time is the minimum possible time required to accomplish an activity or a path, assuming everything proceeds better than is normally expected.
 
 See [how to set the optimistic time AnyChart PERT Charts](Data#time_estimates).
 
 ## Pessimistic Time
 
-Pessimistic time is the maximum possible time required to accomplish an activity (p) or a path (P), assuming everything goes wrong (but excluding major catastrophes).
+Pessimistic time is the maximum possible time required to accomplish an activity or a path, assuming everything goes wrong (but excluding major catastrophes).
 
 See [how to set the pessimistic time AnyChart PERT Charts](Data#time_estimates).
 
 ## Most Likely Time
 
-Most likely time is the best estimate of the time required to accomplish an activity (m) or a path (M), assuming everything proceeds as normal.
+Most likely time is the best estimate of the time required to accomplish an activity or a path, assuming everything proceeds as normal.
 
 See [how to set the most likely time AnyChart PERT Charts](Data#time_estimates).
 
@@ -63,16 +63,20 @@ Expected time is the best estimate of the time required to accomplish an activit
 
 <img src="http://static.anychart.com/images/docs/criticalpath.png"/>
 
+, where "o" is optimistic activity duration, "p" is pessimistic activity duration and "M" stands for most likely activity duration.
+
 ## Standard deviation of time
 
 Standard deviation of time is the variability of the time for accomplishing an activity (σte) or a path (σTE). It is being calculated by the following formula:
 
 <img src="http://static.anychart.com/images/docs/standardeviation.png"/>
 
+, where "o" is optimistic activity duration and "p" is pessimistic activity duration.
+
 Find more about getting the value of the standard deviation of time in the [Statistics in PERT section](Pert_Chart#statistics).
 
 ## Slack
 
-Slack (or float) is a measure of the excess time and resources available to complete a task. It is the amount of time that a project task can be delayed without causing a delay in any subsequent tasks (free float) or the whole project (total float). Positive slack would indicate ahead of schedule; negative slack would indicate behind schedule; and zero slack would indicate on schedule.
+Slack (or float) is a measure of the excess time and resources available to complete a task. It is the amount of time that a project task can be delayed without causing a delay in any subsequent tasks (free float) or the whole project (total float). The existence of a slack indicates resources wasting, and zero slack indicates everything goes on schedule.
 
 Find more about managing slacks in the [slacks section in AnyChart PERT tutorial](Pert_Chart#slacks).

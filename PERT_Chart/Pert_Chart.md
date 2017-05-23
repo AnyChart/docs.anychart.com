@@ -9,6 +9,7 @@ PERT Chart
  * [Interactivity](#interactivity)
  * [Appearance](#appearance)
  * [Tasks](#tasks)
+  * [Duration calculation](#duration_calculation)
   * [Dummy Tasks](#dummy_tasks)
   * [Earliest and latest](#earliest_and_latest)
   * [Slacks](#slacks)
@@ -138,6 +139,31 @@ tasks.selectFill("#519790", 2);
 
 {sample}Pert\_Settings\_01{sample}
 
+
+### Duration calculation
+
+When the data is arranged, it is possible to set the exact duration for each task and the whole path. However, it is quite hard to evaluate time bounds of activities. To make an approximate calculation of the path duration, it is better to use three values: optimistic time (the shortest term which is necessary for an activity to be accomplished), pessimistic time (the longest term which is necessary for an activity to be accomplished) and the most likely time for the activity completion. There is a default formula used for the calculation, which you can find in the [Terminology article](Terminology/#expected_time). To rearrange the formula, use the {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} method.
+
+```
+// Set expected time
+chart.expectedTimeCalculator(function() {
+  return (this.pessimistic + this.optimistic + this.mostLikely)/3;
+});
+```
+
+This method calculates the duration for each task separately, and the {api:anychart.charts.Pert#getStat}getStat(){api} method should be used to get the duration of the whole critical path.
+
+```
+// get project duration
+var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+
+// set the chart title to show the duration
+chart.title("The duration equals " + duration);
+```
+
+{sample}Pert\_Settings\_01\_1{sample}
+
+
 ### Dummy Tasks
 
 Dummy tasks are visual representations of dependencies between real tasks. Dummy task does not exist as a real task, does not affect the project duration (the duration of a dummy task equals 0) and connects milestones of real tasks for better visualization.
@@ -157,7 +183,7 @@ tasks.dummyStroke("#000", 0.5, "5 2");
 
 Earliest and latest start and finish values are automatically calculated from the optimistic, pessimistic and most likely values or from duration value. These values are a good help in planning, as they show the most favorable and the worst time frames so they can be noticed in time and changed if critical.
 
-The following sample demonstrates how to demonstrate those values to watch them:
+The following sample shows how to demonstrate those values to watch them:
 
 ```
 // set labels with earliest and latest values
@@ -218,10 +244,15 @@ milestones.selectStroke("#90caf9", 4);
 Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements will be taken from defaults. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
 
 ```
-// set critical path milestones filling color
-chart.criticalPath({milestones: {fill: "#ffab91", hoverFill: "#ff6e40", selectFill: "#ff6e40", labels: {fontColor: "#86614e"}}});
+// set critical path milestones colors
+milestones = chart.criticalPath().milestones();
+milestones.fill("#ffab91");
+milestones.hoverFill("#ff6e40");
+milestones.selectFill("#ff6e40");
+milestones.labels().fontColor("#86614e");
 // set critical tasks stroke
-chart.criticalPath({tasks: {stroke: "#ffab91"}});
+tasks = chart.criticalPath().tasks();
+tasks.stroke("#ffab91");
 ```
 {sample}Pert\_Settings\_06{sample}
 

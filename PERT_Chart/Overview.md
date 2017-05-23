@@ -47,7 +47,7 @@ In the following sample, the project duration with the standard deviation of the
 
 ### Resource Optimization
 
-There is a parameter for all tasks named *slack*. Slack is a time period, which is actually wasted due to some reasons. For example, when there are two tasks of different durations and the next task can start only after these two end, the difference between those durations of the tasks-predecessors if a slack of the shortest. In this case, the best decision is to send the resources from the shorter task to the longer one, so it can help to shorten the duration of the longer task.
+There is a parameter for all tasks named *slack*. Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after two other tasks end, the difference between these tasks is a slack of the shorter one. In this case, the best decision is to send the resources from the shorter task to the longer one, so it can help to shorten the duration of the longer task.
 
 The following sample demonstrates all slack values for all tasks, making it evident for the project manager what should be changed in the resources planning to minimize the slacks.
 
@@ -62,7 +62,7 @@ Sometimes it is necessary to control the time bounds for some separated tasks. I
 
 {sample}Pert\_UseCase\_04{sample}
 
-Look through the [tasks part of the PERT article]() to know more about those parameters.
+Look through the [tasks part of the PERT article](Pert_Chart#earliest_and_latest) to know more about those parameters.
 
 ### Duration calculation
 

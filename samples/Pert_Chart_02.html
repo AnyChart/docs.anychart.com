@@ -49,7 +49,7 @@
             }
         }
         for (var i = 0; i < e.selectedTasks.length; i++){
-            if (e.selectedTasks[i].isCritical === true) {
+            if (e.selectedTasks[i].slack == 0) {
                 chart.title("This task belongs to the critical path");
             }
             else {
