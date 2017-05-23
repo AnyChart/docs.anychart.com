@@ -64,7 +64,8 @@ var cci1 = plot1.cci(mapping);
 // create a CCI indicator with parameters adjusted
 var cci2 = plot2.cci(mapping, 45, "column");
 cci2Series = cci2.series();
-cci2Series.stroke("#bf360c");
+cci2Series.fill("#bf360c");
+cci2Series.stroke(null);
 ```
 
 {sample :height 700}STOCK\_Technical\_Indicators\_CCI\_02{sample}

@@ -34,7 +34,8 @@
         // create a CCI indicator with parameters adjusted
         var cci2 = plot2.cci(mapping, 45, "column");
         cci2Series = cci2.series();
-        cci2Series.stroke("#bf360c");
+        cci2Series.fill("#bf360c");
+        cci2Series.stroke(null);
         
         // set container id for the chart
         chart.container("container");
