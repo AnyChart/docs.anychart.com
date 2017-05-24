@@ -52,7 +52,7 @@
     // create a label on the left-top quarter
     var labelLTop = chart.quarters().leftTop().label();
     labelLTop.text("1");
-    labelLTop.fontColor("grey");
+    labelLTop.fontColor("gray");
     labelLTop.fontWeight("bold");
     labelLTop.fontSize(16);
     labelLTop.position("rightBottom");
@@ -62,7 +62,7 @@
     // create a label on the right-top quarter
     var labelRTop = chart.quarters().rightTop().label();
     labelRTop.text("2");
-    labelRTop.fontColor("grey");
+    labelRTop.fontColor("gray");
     labelRTop.fontWeight("bold");
     labelRTop.fontSize(16);
     labelRTop.position("leftBottom");
@@ -72,7 +72,7 @@
     // create the first label on the left-bottom quarter
     var labelLBottom1 = chart.quarters().leftBottom().label(0);
     labelLBottom1.text("3");
-    labelLBottom1.fontColor("grey");
+    labelLBottom1.fontColor("gray");
     labelLBottom1.fontWeight("bold");
     labelLBottom1.position("rightTop");
     labelLBottom1.fontSize(16);
@@ -89,18 +89,18 @@
     labelLBottom2.rotation(-90);
 
     // create the third label on the left-bottom quarter
-    var labelLBottom2 = chart.quarters().leftBottom().label(3);
-    labelLBottom2.useHtml(true);
-    labelLBottom2.text("Urgent / Not Urgent &#8594;");
-    labelLBottom2.position("leftBottom");
-    labelLBottom2.offsetX(80);
-    labelLBottom2.offsetY(20);
+    var labelLBottom3 = chart.quarters().leftBottom().label(3);
+    labelLBottom3.useHtml(true);
+    labelLBottom3.text("Urgent / Not Urgent &#8594;");
+    labelLBottom3.position("leftBottom");
+    labelLBottom3.offsetX(80);
+    labelLBottom3.offsetY(20);
 
     // create a label on the right-bottom quarter
     var labelRBottom = chart.quarters().rightBottom().label();
 
     labelRBottom.text("4");
-    labelRBottom.fontColor("grey");
+    labelRBottom.fontColor("gray");
     labelRBottom.fontWeight("bold");
     labelRBottom.fontSize(16);
     labelRBottom.position("leftTop");

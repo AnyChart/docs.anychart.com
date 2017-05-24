@@ -120,7 +120,7 @@ series3.selectStroke("#0066cc", 4);
 
 ### Quarters
 
-Each Quadrant chart has four quarters, which can be configured separately. Use these methods to refer to them:
+Each Quadrant chart has four quarters, which can be configured separately. Use these methods to access and configure them:
 
 * {api:anychart.core.utils.QuarterSettings#leftBottom}leftBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#leftTop}leftTop(){api}
@@ -148,17 +148,6 @@ chart.quarters(
                 fill: "#e6f9ff",
                 corners: 30,
                 cornerType: "cut"
-            },
-            leftTop: {
-                fill: "#fff9e6",
-                corners: 30,
-                cornerType: "cut"
-            },
-            leftBottom: {
-                fill: "#f9e6ff",
-                corners: 30,
-                cornerType: "cut"
-            },
         }
 );
 ```
@@ -194,22 +183,6 @@ chart.quarters(
                     fontColor: "#72fa80"
                 }
             },
-            leftTop: {
-                title: {
-                    text: "Left Top",
-                    fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#72fa80"
-                }
-            },
-            leftBottom: {
-                title: {
-                    text: "Left Bottom",
-                    fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#fa8072"
-                }
-            },
         }
 );
 ```
@@ -222,7 +195,7 @@ To configure the intersecting lines ("crossing") in the center of a Quadrant cha
 
 ```
 // configure the crossing
-chart.crossing().stroke("grey", 3, "7 3", "round");3
+chart.crossing().stroke("gray", 3, "7 3", "round");
 ```
 
 {sample}BCT\_Quadrant\_Chart\_05{sample}
@@ -235,12 +208,10 @@ By default, the minimum and maximum values of the X and Y scales are 0 and 100, 
 
 ```
 // configure scales
-chart.yScale()
-        .minimum(-100)
-        .maximum(100);
-chart.xScale()
-        .minimum(-100)
-        .maximum(100);
+chart.yScale().minimum(-100)
+chart.yScale().maximum(100);
+chart.xScale().minimum(-100)
+chart.xScale().maximum(100);
 ```
 
 Please note that quarters always divide scales in two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the <a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">origin</a> only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
@@ -269,30 +240,10 @@ You can also configure labels of quartes: use the {api:anychart.core.utils.Quart
 The sample below shows how to create and adjust quarter labels:
 
 ```
-// create a label on the left-top quarter
-var labelLTop = chart.quarters().leftTop().label();
-labelLTop.text("1");
-labelLTop.fontColor("grey");
-labelLTop.fontWeight("bold");
-labelLTop.fontSize(16);
-labelLTop.position("rightBottom");
-labelLTop.offsetX(-20);
-labelLTop.offsetY(-20);
-
-// create a label on the right-top quarter
-var labelRTop = chart.quarters().rightTop().label();
-labelRTop.text("2");
-labelRTop.fontColor("grey");
-labelRTop.fontWeight("bold");
-labelRTop.fontSize(16);
-labelRTop.position("leftBottom");
-labelRTop.offsetX(20);
-labelRTop.offsetY(-20);
-
 // create the first label on the left-bottom quarter
 var labelLBottom1 = chart.quarters().leftBottom().label(0);
 labelLBottom1.text("3");
-labelLBottom1.fontColor("grey");
+labelLBottom1.fontColor("gray");
 labelLBottom1.fontWeight("bold");
 labelLBottom1.position("rightTop");
 labelLBottom1.fontSize(16);
@@ -307,25 +258,6 @@ labelLBottom2.position("leftBottom");
 labelLBottom2.offsetX(-20);
 labelLBottom2.offsetY(-100);
 labelLBottom2.rotation(-90);
-
-// create the third label on the left-bottom quarter
-var labelLBottom2 = chart.quarters().leftBottom().label(3);
-labelLBottom2.useHtml(true);
-labelLBottom2.text("Urgent / Not Urgent &#8594;");
-labelLBottom2.position("leftBottom");
-labelLBottom2.offsetX(80);
-labelLBottom2.offsetY(20);
-
-// create a label on the right-bottom quarter
-var labelRBottom = chart.quarters().rightBottom().label();
-
-labelRBottom.text("4");
-labelRBottom.fontColor("grey");
-labelRBottom.fontWeight("bold");
-labelRBottom.fontSize(16);
-labelRBottom.position("leftTop");
-labelRBottom.offsetX(20);
-labelRBottom.offsetY(20);
 ```
 
 {sample}BCT\_Quadrant\_Chart\_07{sample}
