@@ -15,9 +15,9 @@
 
 ## Overview
 
-A quadrant chart...
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (or quadrants) to make the visualization more readable. Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, and points are shown in the exact order they are set. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT_analysis" target="_blank">SWOT-analysis</a>. 
 
-The quadrant chart...
+In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
 This article explains how to create a basic Quadrant chart as well as configure settings that are specific to the type.
 
@@ -120,7 +120,7 @@ series3.selectStroke("#0066cc", 4);
 
 ### Quarters
 
-Each Quadrant chart has four quarters, which can be configured separately. Use these methods to access and configure them:
+Each Quadrant chart has four quarters (or quadrants), which can be configured separately. Use these methods to access and configure them:
 
 * {api:anychart.core.utils.QuarterSettings#leftBottom}leftBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#leftTop}leftTop(){api}
