@@ -19,11 +19,12 @@ You can use the link as shown below or download graphics.min.js from the [Graphi
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes.
 
 Example:
+
 ```
 <body>
     <div id="container" style="width: 100%; height: 100%;"></div>
 </body>
-```  
+```
 
 ## Create a drawing
 
@@ -33,26 +34,26 @@ Example:
 
 ```
 <script>
-    // create a stage for the Deathly Hallows symbol
-    stage = anychart.graphics.create('container');
+// create a stage for the Deathly Hallows symbol
+stage = acgraph.create('container');
 
-    // draw the square
-    stage.rect(25, 50, 350, 300);
+// draw the square
+stage.rect(25, 50, 350, 300);
 
-    // draw the circle
-    stage.circle(200, 250, 100);
+// draw the circle
+stage.circle(200, 250, 100);
 
-    // draw the triangle
-    stage.path()
-        .moveTo(25, 350)
-        .lineTo(200, 50)
-        .lineTo(375, 350)
-        .close();
+// draw the triangle
+stage.path()
+    .moveTo(25, 350)
+    .lineTo(200, 50)
+    .lineTo(375, 350)
+    .close();
 
-    // draw the wand in the middle
-    stage.path()
-        .moveTo(200, 50)
-        .lineTo(200, 350);
+// draw the wand in the middle
+stage.path()
+    .moveTo(200, 50)
+    .lineTo(200, 350);
 </script>
 ```
   
@@ -65,6 +66,7 @@ After all these steps you should have the following result. You can launch and e
 ###Full source code
 
 Below you can see how your full web page code should look like:
+
 ```
 <!doctype html>
 <html>
@@ -76,7 +78,7 @@ Below you can see how your full web page code should look like:
     <div id="container" style="width: 100%; height: 100%"></div>
     <script>
         // create a stage for the Deathly Hallows symbol
-        stage = anychart.graphics.create('container');
+        stage = acgraph.create('container');
 
         // draw the square
         stage.rect(25, 50, 350, 300);
