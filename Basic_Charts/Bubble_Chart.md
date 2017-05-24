@@ -1,7 +1,6 @@
 {:index 1}
 # Bubble Chart
 
-
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [General Settings](#general_settings)
@@ -17,7 +16,7 @@
 A Bubble chart is a variation of a [Scatter chart](./Scatter_Chart) where the data points are replaced with bubbles.  
   
 HTML5 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.  
-  
+
 Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
   
 Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing priority industries that should receive attention from a state economic development agency.
@@ -32,7 +31,7 @@ This article explains how to create a basic Bubble chart as well as configure se
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Bubble](Vertical/Overview)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Bubble](Vertical/Bubble_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Error Bubble](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -54,7 +53,7 @@ To create a Bubble chart, use the {api:anychart#bubble}anychart.bubble(){api} ch
 
 To create a Bubble series explicitly, call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Bubble Chart](Scatter/Bubble_Chart), we create a basic categorized Marker chart:
+In the following sample, we DO NOT create a [Scatter Bubble Chart](Scatter/Bubble_Chart), we create a basic categorized Bubble chart:
 
 ```
 // create a categorized chart
