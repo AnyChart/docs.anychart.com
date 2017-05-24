@@ -34,7 +34,7 @@ Example:
 ```
 <script>
     // create a stage for the Deathly Hallows symbol
-    stage = anychart.graphics.create('container');
+    stage = acgraph.create('container');
 
     // draw the square
     stage.rect(25, 50, 350, 300);
@@ -76,7 +76,7 @@ Below you can see how your full web page code should look like:
     <div id="container" style="width: 100%; height: 100%"></div>
     <script>
         // create a stage for the Deathly Hallows symbol
-        stage = anychart.graphics.create('container');
+        stage = acgraph.create('container');
 
         // draw the square
         stage.rect(25, 50, 350, 300);
