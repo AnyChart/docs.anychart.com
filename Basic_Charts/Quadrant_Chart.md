@@ -15,7 +15,7 @@
 
 ## Overview
 
-Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (or quadrants) to make the visualization more readable. Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, and points are shown in the exact order they are set. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT_analysis" target="_blank">SWOT-analysis</a>. 
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, and points are shown in the exact order they are set. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT%5Fanalysis" target="_blank">SWOT-analysis</a>. 
 
 In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
@@ -25,18 +25,20 @@ This article explains how to create a basic Quadrant chart as well as configure 
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
-This constructor creates a scatter chart with some predefined settings:
+This constructor creates a [scatter chart](Scatter_Plot/Overview) with some predefined settings:
 * The chart is framed with two X and Y axes.
 * Ticks and labels on the axes are disabled.
 * There are no grids.
 * The minimum and maximum values of the scales are 0 and 100.
 * The right-top and left-bottom quarters are colored.
 
+Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter and quadrant constructors distribute points according to their values.
+
 If you just pass the data to the chart constructor, it creates a Marker series. But you can also create a Marker, Bubble, or Line series explicitly by using one these methods:
 
-{api:anychart.charts.Scatter#marker}marker(){api}
-{api:anychart.charts.Scatter#bubble}bubble(){api}
-{api:anychart.charts.Scatter#marker}line(){api}
+* {api:anychart.charts.Scatter#marker}marker(){api}
+* {api:anychart.charts.Scatter#bubble}bubble(){api}
+* {api:anychart.charts.Scatter#marker}line(){api}
 
 The following sample demonstrates how a basic Quadrant chart is created:
 
@@ -120,7 +122,7 @@ series3.selectStroke("#0066cc", 4);
 
 ### Quarters
 
-Each Quadrant chart has four quarters (or quadrants), which can be configured separately. Use these methods to access and configure them:
+Each Quadrant chart has four quarters (quadrants), which can be configured separately. Use these methods to access and configure them:
 
 * {api:anychart.core.utils.QuarterSettings#leftBottom}leftBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#leftTop}leftTop(){api}
@@ -133,7 +135,7 @@ The following methods configure visual settings of quartes:
 * {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} set strokes on particular sides
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
 
-The sample below shows how to configure the fill and corners:
+The sample below shows how to set the fill and corners:
 
 ```
 // configure quarters
@@ -208,13 +210,13 @@ By default, the minimum and maximum values of the X and Y scales are 0 and 100, 
 
 ```
 // configure scales
-chart.yScale().minimum(-100)
+chart.yScale().minimum(-100);
 chart.yScale().maximum(100);
-chart.xScale().minimum(-100)
+chart.xScale().minimum(-100);
 chart.xScale().maximum(100);
 ```
 
-Please note that quarters always divide scales in two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the <a href="https://en.wikipedia.org/wiki/Origin_(mathematics)" target="_blank">origin</a> only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
+Please note that quarters always divide scales in two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the <a href="https://en.wikipedia.org/wiki/Origin%5F(mathematics)" target="_blank">origin</a> only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
 
 ### Axes
 
@@ -233,11 +235,9 @@ chart.yAxis(1, {ticks: true, labels: true});
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Labels of series are configured according to the rules of the series type. For example, see the [Maker Chart](Marker_Chart#labels) article.
+Labels of series are configured according to the rules of the series type – for example, see the [Maker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
 
-You can also configure labels of quartes: use the {api:anychart.core.utils.Quarter#label}label(){api} method. A quarter can have more than one label.
-
-The sample below shows how to create and adjust quarter labels:
+The sample below shows how to create quarter labels:
 
 ```
 // create the first label on the left-bottom quarter
