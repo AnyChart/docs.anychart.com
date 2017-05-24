@@ -7,9 +7,9 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
-  * [Labels](#labels)
   * [Size](#size)
-  * [Single Marker Adjusting](#single_marker_adjusting)
+  * [Single Bubble Adjusting](#single_bubble_adjusting)
+  * [Labels](#labels)
   * [Tooltips](#tooltips)
 
 ## Overview
@@ -165,11 +165,11 @@ The following sample demonstrates adjusting some settings for a single item:
 
 ```
 var data = anychart.data.set([
-    {x: "2000", value: 1100, size: 5},
-    {x: "2001", value: 880, size: 6},
+    {x: "2000", value: 1100, size: 3},
+    {x: "2001", value: 880, size: 4},
     {x: "2002", value: 1100, size: 4},
-    {x: "2003", value: 1500, size: 5, fill: "gold", stroke: "#663399", markerSize: 15, hoverMarkerSize: 15, selectMarkerSize: 20, type: "star5"},
-    {x: "2004", value: 921, size: 5},
+    {x: "2003", value: 1300, size: 5, fill: "gold", stroke: "#663399", type: "star5"},
+    {x: "2004", value: 921, size: 4.5},
     {x: "2005", value: 1000, size: 3},
     {x: "2006", value: 1400, size: 4}
   ]);
