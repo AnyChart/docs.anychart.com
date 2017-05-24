@@ -15,7 +15,7 @@
 
 ## Overview
 
-Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, and points are shown in the exact order they are set. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT%5Fanalysis" target="_blank">SWOT-analysis</a>. 
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT%5Fanalysis" target="_blank">SWOT-analysis</a>. 
 
 In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
@@ -25,14 +25,14 @@ This article explains how to create a basic Quadrant chart as well as configure 
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
-This constructor creates a [scatter chart](Scatter_Plot/Overview) with some predefined settings:
+This constructor creates a [Scatter chart](Scatter_Plot/Overview) with some predefined settings:
 * The chart is framed with two X and Y axes.
 * Ticks and labels on the axes are disabled.
 * There are no grids.
 * The minimum and maximum values of the scales are 0 and 100.
 * The right-top and left-bottom quarters are colored.
 
-Like scatter charts, quadrant charts process data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter and quadrant constructors distribute points according to their values.
+Like the scatter constructor, it processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter and quadrant constructors distribute points according to their values.
 
 If you just pass the data to the chart constructor, it creates a Marker series. But you can also create a Marker, Bubble, or Line series explicitly by using one these methods:
 
