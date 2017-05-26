@@ -130,4 +130,4 @@ var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATI
 var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
 ```
 
-{sample :width 827 :height 300}Pert\_Data\_04{sample}
+{sample :width 827 :height 300}Pert\_Data\_05{sample}
