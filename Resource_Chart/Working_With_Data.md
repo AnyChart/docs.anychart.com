@@ -22,7 +22,7 @@ Resource is an element that can be given a task (activity), which will be finish
 
 ### Resource parameters list
 
-There is a list of paramters that a resource has or can have. 
+There is a list of paramters that a resource can have. 
 
 - name
 - image
@@ -31,7 +31,7 @@ There is a list of paramters that a resource has or can have.
 - tags
 - activities
 
-Let's create a simple 
+Let's create a sample with
 
 There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visual_Appearance) article.
 
