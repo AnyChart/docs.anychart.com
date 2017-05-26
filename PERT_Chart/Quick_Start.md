@@ -25,7 +25,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
 
 ```
-// raw data
+// data
 var data = [
     {id: "1", duration: 1, name: "Task A"},
     {id: "2", duration: 4, name: "Task B"},
@@ -46,7 +46,7 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 <script>
 anychart.onDocumentReady(function () {
 	   
-// raw data
+// data
 var data = [
 	{id: "1", duration: 1, name: "Task A"},
 	{id: "2", duration: 4, name: "Task B"},
@@ -102,7 +102,7 @@ You can copy this to a file on your computer and open it in your browser to disp
     <script>
 	anychart.onDocumentReady(function () {
 		   
-		// raw data
+		// data
 		var data = [
 		    {id: "1", duration: 1, name: "Task A"},
 		    {id: "2", duration: 4, name: "Task B"},

@@ -23,10 +23,10 @@
             chart.listen("click", function(){
                 dev = chart.getStat("pertChartCriticalPathStandardDeviation");
                 dur = chart.getStat("pertChartProjectDuration");
-                alert("Standard deviation for this project is " + dev + " units \nThe critical path duration makes " + dur + " units");
+                chart.title(The critical path duration makes " + dur + " units" \n "Standard deviation for this project is " + dev + " units);
             })
 
-            chart.title("Getting the statistics");
+            chart.title("Getting the statistics. Click anywhere on the chart to get the duration and deviation values");
             chart.container("container");
             chart.draw();
         });</script>

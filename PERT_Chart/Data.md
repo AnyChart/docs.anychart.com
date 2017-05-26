@@ -33,7 +33,7 @@ var data = [
 ];
 
 // transform the data
-var tree = anychart.data.tree(data);
+chart.data(data, "asTable");
 ```
 
 Here is a sample with data set in this way:
@@ -63,7 +63,7 @@ var dependencies = [
   {from: 4, to: 5}
 ];
 
-var tree = anychart.data.tree(data, dependencies);
+chart.data(data, "asTree", dependencies);
 ```
 
 Here is a sample with data set in this way:
@@ -129,3 +129,5 @@ var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATI
 // get project deviation
 var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
 ```
+
+{sample :width 827 :height 300}Pert\_Data\_04{sample}

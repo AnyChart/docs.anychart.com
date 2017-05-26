@@ -23,24 +23,24 @@ To learn more about PERT in general, see [Program evaluation and review techniqu
 
 ## Use cases
 
-Despite PERT technology might seem too complicated, it can still be profitably applied and used in some circumstances. For example, planning a building project can be successfully based on the PERT method. Similarly, the organization of any examinations or competitions, especially on national scale, due to being complicated and expensive, is worth basing on PERT. Any reforms, innovations or other activities which demands a great time and resource planning are good cases for using PERT. 
+Despite PERT technology might seem too complicated, it can still be profitably applied and used in some circumstances. For example, planning a building project can be successfully based on the PERT method. Similarly, the organization of any examinations or competitions, especially on a national scale, due to being complicated and expensive, is worth being based on PERT. Any reforms, innovations or other activities which demand a great time and resource planning are good cases for using PERT. 
 
 ### Total Project Duration
 
-PERT Chart allows to calculate and provide the duration of the whole project. This duration is the length of the critical path, so it is the most important parameter in project management. If the result duration overcomes the time reserve, it is a sygnal to recheck and rearrange the resources to make the project critical duration fit in the reserved time period.
+PERT Chart allows to calculate and provide the duration of the whole project. This duration is the length of the critical path, so it is the most important parameter in project management. If the result duration overcomes the time reserve, it is a signal to recheck and rearrange the resources to make the project critical duration fit in the reserved time period.
 
-In the following sample, the critical path is highlighted with red color, and its calculated length is passed into the chart title.
+In the following sample, the critical path is highlighted with red color, and its calculated length is shown in the chart title.
 
 {sample}Pert\_UseCase\_01{sample}
 
-Find how to get the cricital paths duration in the [AnyChart PERT statistics section](Pert_Chart#statistics).
+Find how to get the critical paths duration in the [AnyChart PERT statistics section](Pert_Chart#statistics).
 
 
 ### The Project Duration Deviation
 
 The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [AnyChart PERT statistics section](Pert_Chart#statistics) article.
 
-In the following sample, the project duration with the standard deviation of the critical path value is passed into the chart title.
+In the following sample, the project duration with the standard deviation of the critical path value is shown in the chart title.
 
 {sample}Pert\_UseCase\_02{sample}
 
@@ -58,7 +58,7 @@ Find how to get the slacks duration shown in the [AnyChart PERT slacks section](
 
 ### Middle tasks control
 
-Sometimes it is necessary to control the time bounds for some separated tasks. In this case, watch the "earliest/latest start/finish" automatically calculated parameters.
+Sometimes it is necessary to control the time bounds for some separated tasks. In this case, look at the "earliest/latest start/finish" automatically calculated parameters.
 
 {sample}Pert\_UseCase\_04{sample}
 
@@ -68,7 +68,7 @@ Look through the [tasks part of the PERT article](Pert_Chart#earliest_and_latest
 
 In real project management, it is impossible to give the exact value for a project duration. Even taking the deviation in mind, there is still a very high risk not to fit in the time bounds. Therefore, you can set your own function for the duration calculation instead of the standard formula.
 
-The duration in following sample with the same data as above is calculated automatically through the PERT statistics.
+The duration in the following sample with the same data as above is calculated automatically through the PERT statistics.
 
 {sample}Pert\_UseCase\_05{sample}
 

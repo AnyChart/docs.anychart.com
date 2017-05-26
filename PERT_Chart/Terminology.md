@@ -29,7 +29,7 @@ See [how to configure the tasks in AnyChart PERT Charts](Pert_Chart#tasks).
 
 ## Critical Path
 
-A critical path is the longest possible continuous pathway taken from the initial event to the terminal event (some projects can have several critical paths). It determines the total duraton of the project, so any delay along the path means a delay for the whole project. The critical path is calculated by the Critical Path Method (CPM) – an algorithm for scheduling a set of project activities.
+A critical path is the longest possible continuous pathway taken from the initial event to the terminal event (some projects can have several critical paths). It determines the total duration of the project, so any delay along the path means a delay for the whole project. The critical path is calculated by the Critical Path Method (CPM) – an algorithm for scheduling a set of project activities.
 
 See [how to configure the critical path in AnyChart PERT Charts](Pert_Chart#critical_path).
 
@@ -37,7 +37,7 @@ See [how to configure the critical path in AnyChart PERT Charts](Pert_Chart#crit
 
 Critical activity is an activity that has slack equal to zero. An activity with zero slack is not necessarily on the critical path since its path may not be the longest.
 
-Find more about activities and their types in the [milestones section in AnyChart PERT](Pert_Chart#milestones) and about critical path in the [critical path section in AnyChart PERT](Pert_Chart#critical_path).
+Find more about activities and their types in the [milestones section in AnyChart PERT](Pert_Chart#milestones) and about the critical path in the [critical path section in AnyChart PERT](Pert_Chart#critical_path).
 
 ## Optimistic Time
 
@@ -61,17 +61,19 @@ See [how to set the most likely time AnyChart PERT Charts](Data#time_estimates).
 
 Expected time is the best estimate of the time required to accomplish an activity (te) or a path (TE), accounting for the fact that things don't always proceed as normal (something goes wrong, something goes better than expected). It is being calculated by the following formula:
 
-<img src="http://static.anychart.com/images/docs/criticalpath.png"/>
+<img src="http://static.anychart.com/images/docs/criticalpath.png"/>,
 
-, where "o" is optimistic activity duration, "p" is pessimistic activity duration and "M" stands for most likely activity duration.
+where "o" is optimistic activity duration, "p" is pessimistic activity duration and "M" stands for most likely activity duration.
+
+Find more about getting the duration value in the [Statistics in PERT section](Pert_Chart#statistics).
 
 ## Standard deviation of time
 
-Standard deviation of time is the variability of the time for accomplishing an activity (σte) or a path (σTE). It is being calculated by the following formula:
+The standard deviation of time is the variability of the time for accomplishing an activity (σte) or a path (σTE). It is being calculated by the following formula:
 
-<img src="http://static.anychart.com/images/docs/standardeviation.png"/>
+<img src="http://static.anychart.com/images/docs/standardeviation.png"/>,
 
-, where "o" is optimistic activity duration and "p" is pessimistic activity duration.
+where "o" is optimistic activity duration and "p" is pessimistic activity duration.
 
 Find more about getting the value of the standard deviation of time in the [Statistics in PERT section](Pert_Chart#statistics).
 
