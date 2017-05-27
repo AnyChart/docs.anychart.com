@@ -8,7 +8,7 @@
 
 This article explains how to create a Spline chart with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). You can also read the [Spline Chart](../Spline_Chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Spline Chart](../Spline_Chart) article to learn about other available settings.
 
 ## Quick Start
 

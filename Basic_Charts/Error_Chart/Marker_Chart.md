@@ -8,7 +8,10 @@
 
 This article explains how to create a Marker chart with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). You can also read the [Marker Chart](../Marker_Chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Marker Chart](../Marker_Chart) article to learn about other available settings.
+
+Please note that error bars are also supported by Scatter Marker charts – see [Scatter Marker Chart with Error Bars](Scatter_Marker_Chart) (this article describes the [Cartesian Marker](../Marker_Chart) chart).
+
 
 ## Quick Start
 

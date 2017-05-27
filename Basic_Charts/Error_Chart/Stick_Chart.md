@@ -8,7 +8,7 @@
 
 This article explains how to create a Stick chart with error bars.
 
-To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). You can also read the [Stick Chart](../Stick_Chart) article to learn about other available settings.
+To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Stick Chart](../Stick_Chart) article to learn about other available settings.
 
 ## Quick Start
 
