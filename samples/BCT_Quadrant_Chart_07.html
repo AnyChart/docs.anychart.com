@@ -1,0 +1,125 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a chart
+    chart = anychart.quadrant();
+
+    // set the padding of the chart
+    chart.padding(35);
+
+    // configure quarters
+    chart.quarters(
+            {
+                rightTop: {
+                    title: {
+                        text: "Important but Not Urgent",
+                        fontSize: "16",
+                        fontWeight: "bold"
+                    }
+                },
+                rightBottom: {
+                    title: {
+                        text: "Not Important and Not Urgent",
+                        fontSize: "16",
+                        fontWeight: "bold"
+                    }
+                },
+                leftTop: {
+                    title: {
+                        text: "Important and Urgent",
+                        fontSize: "16",
+                        fontWeight: "bold"
+                    }
+                },
+                leftBottom: {
+                    title: {
+                        text: "Urgent But Not Important",
+                        fontSize: "16",
+                        fontWeight: "bold"
+                    }
+                },
+            }
+    );
+
+    // create a label on the left-top quarter
+    var labelLTop = chart.quarters().leftTop().label();
+    labelLTop.text("1");
+    labelLTop.fontColor("gray");
+    labelLTop.fontWeight("bold");
+    labelLTop.fontSize(16);
+    labelLTop.position("rightBottom");
+    labelLTop.offsetX(-20);
+    labelLTop.offsetY(-20);
+
+    // create a label on the right-top quarter
+    var labelRTop = chart.quarters().rightTop().label();
+    labelRTop.text("2");
+    labelRTop.fontColor("gray");
+    labelRTop.fontWeight("bold");
+    labelRTop.fontSize(16);
+    labelRTop.position("leftBottom");
+    labelRTop.offsetX(20);
+    labelRTop.offsetY(-20);
+
+    // create the first label on the left-bottom quarter
+    var labelLBottom1 = chart.quarters().leftBottom().label(0);
+    labelLBottom1.text("3");
+    labelLBottom1.fontColor("gray");
+    labelLBottom1.fontWeight("bold");
+    labelLBottom1.position("rightTop");
+    labelLBottom1.fontSize(16);
+    labelLBottom1.offsetX(-20);
+    labelLBottom1.offsetY(20);
+
+    // create the second label on the left-bottom quarter
+    var labelLBottom2 = chart.quarters().leftBottom().label(1);
+    labelLBottom2.useHtml(true);
+    labelLBottom2.text("Important / Not Important &#8594;");
+    labelLBottom2.position("leftBottom");
+    labelLBottom2.offsetX(-20);
+    labelLBottom2.offsetY(-100);
+    labelLBottom2.rotation(-90);
+
+    // create the third label on the left-bottom quarter
+    var labelLBottom3 = chart.quarters().leftBottom().label(3);
+    labelLBottom3.useHtml(true);
+    labelLBottom3.text("Urgent / Not Urgent &#8594;");
+    labelLBottom3.position("leftBottom");
+    labelLBottom3.offsetX(80);
+    labelLBottom3.offsetY(20);
+
+    // create a label on the right-bottom quarter
+    var labelRBottom = chart.quarters().rightBottom().label();
+
+    labelRBottom.text("4");
+    labelRBottom.fontColor("gray");
+    labelRBottom.fontWeight("bold");
+    labelRBottom.fontSize(16);
+    labelRBottom.position("leftTop");
+    labelRBottom.offsetX(20);
+    labelRBottom.offsetY(20);
+
+    // enable HTML in the title
+    chart.title().useHtml(true);
+    chart.title("Quadrant Chart: Quarter Labels" + "<br>" +
+    			"<a style=\"font-size: 12px;\">Procrastination Matrix</a>");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

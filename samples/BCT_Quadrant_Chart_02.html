@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data for the first series
+    var data_1 = [
+      {x: 4, value: 42},
+      {x: 13, value: 59},
+      {x: 25, value: 68},
+      {x: 25, value: 63},
+      {x: 44, value: 54},
+      {x: 55, value: 58},
+      {x: 56, value: 46},
+      {x: 60, value: 54},
+      {x: 72, value: 73}
+    ];
+
+    // create data for the second series
+    var data_2 = [
+      {x: 42, value: 36},
+      {x: 80, value: 80}
+    ];
+
+    // create data for the third series
+    var data_3 = [
+      {x: 18, value: 74, size: 7},
+      {x: 71, value: 23, size: 14}
+    ];
+
+    // create a chart
+    chart = anychart.quadrant();
+
+    // create the first series (marker) and set the data
+    var series1 = chart.marker(data_1);
+
+    // configure the visual settings of the first series
+    series1.fill("black", 0.3);
+    series1.hoverFill("black", 0.3);
+    series1.selectFill("black", 0.5);
+    series1.stroke("black", 1);
+    series1.hoverStroke("black", 2);
+    series1.selectStroke("black", 4);
+
+    // create the second series (line) and set the data
+    var series2 = chart.line(data_2);
+
+    // configure the visual settings of the second series
+    series2.stroke("#00cc99", 3, "10 5", "round");
+
+    // create the third series (bubble) and set the data
+    var series3 = chart.bubble(data_3);
+
+    // configure the visual settings of the third series
+    series3.fill("#0066cc", 0.3);
+    series3.hoverFill("#0066cc", 0.3);
+    series3.selectFill("#0066cc", 0.5);
+    series3.stroke("#0066cc");
+    series3.hoverStroke("#0066cc", 2);
+    series3.selectStroke("#0066cc", 4);
+
+    // set the chart title
+    chart.title("Quadrant Chart: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
