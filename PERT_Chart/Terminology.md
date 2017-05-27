@@ -65,7 +65,7 @@ Expected time is the best estimate of the time required to accomplish an activit
 
 where "o" is optimistic activity duration, "p" is pessimistic activity duration and "M" stands for most likely activity duration.
 
-Find more about getting the duration value in the [Statistics in PERT section](Pert_Chart#statistics).
+Find more about getting the expected activity duration value in the [expected duration section](Pert_Chart#duration_calculation).
 
 ## Standard deviation of time
 
