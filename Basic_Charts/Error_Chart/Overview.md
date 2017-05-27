@@ -13,11 +13,17 @@
 
 ## Overview
 
-See also the [Supported Types](#supported_types) section to find the list of supported series types.
+Error bars are visual representations of the variability of data: they indicate the error or uncertainty in a measurement or calculation. The length of bars shows how far from the reported value the true value might be.
+
+This feature is often used with scatter charts, but Cartesian charts in AnyChart also support error bars – see the [Supported Types](#supported_types) section.
+
+This article explains how to create and configure error bars on both Cartesian and scatter charts.
 
 ## Quick Start
 
 To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method.
+
+??? ЧТО ПИСАТЬ ПРО ПРОЦЕНТЫ/ЦИФРЫ
 
 Here is a basic sample showing how to create a Column chart with error bars:
 
@@ -109,7 +115,7 @@ And these methods configure error bars along the X-axis:
 
 **Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
-In the following sample, there is a Scatter chart with two Marker series and customized lower/upper and right/left error bars:
+In the following sample, there is a scatter chart with two Marker series and customized lower/upper and right/left error bars:
 
 ```
 // create error bars on the first series
@@ -125,7 +131,7 @@ error2.xUpperError(0.2);
 ```
 {sample}BCT\_Error\_Chart\_04{sample}
 
-This sample shows how to add customized error bars to particular points of a series on a Scatter chart:
+This sample shows how to add customized error bars to particular points of a series on a scatter chart:
 
 ```
 // create data
@@ -177,7 +183,7 @@ Here is a full list of methods used to configure the appearance of error bars:
 
 Each of the series types that support error bars has its own visual settings – see the [Supported Types](#supported_types) section. Also, you can learn more from the [Appearance Settings](../../Appearance_Settings) section.
 
-In the sample below, there is Scatter chart with two Marker series and error bars on both of them, some of the appearance settings configured:
+In the sample below, there is scatter chart with two Marker series and error bars on both of them, some of the appearance settings configured:
 
 ```
 // create error bars on the first series
@@ -207,6 +213,9 @@ error2.xErrorStroke("black", 0.5);
 {sample}BCT\_Error\_Chart\_07{sample}
 
 ## Labels And Tooltips
+
+??? МОЖНО ЛИ РАЗБИТЬ ЭТОТ РАЗДЕЛ НА ДВА (КАК ОБЫЧНО)
+??? ЧТО ТУТ ПИСАТЬ
 
 {api:core.cartesian.series.Base#label}label(){api}
 
