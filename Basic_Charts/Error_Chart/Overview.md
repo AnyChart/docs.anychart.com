@@ -53,7 +53,7 @@ chart.draw();
 * {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower bars
 * {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper bars
 
-<strong>Note:</strong> The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
+<strong>Note:</strong> The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
 
 ```
 // create error bars on the first series
@@ -95,7 +95,7 @@ And these methods configure error bars along the X-axis:
 * {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets left X-bars
 * {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets right X-bars
 
-**Note:** The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
+**Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
 ```
 // create error bars on the first series
