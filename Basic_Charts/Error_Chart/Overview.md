@@ -15,16 +15,16 @@
 
 ## Quick Start
 
-??? {api:anychart.core.cartesian.series.Base#error}error(){api}
+{api:anychart.core.cartesian.series.Base#error}error(){api}
 
 ```
 // create a data set
 var data = anychart.data.set([
-  ["A", 10000],
-  ["B", 12000],
-  ["C", 13000],
-  ["D", 10000],
-  ["E", 9000]
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 13000],
+  ["April", 10000],
+  ["May", 9000]
 ]);
 
 // create a chart
@@ -52,6 +52,8 @@ chart.draw();
 * {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper bars as equal
 * {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower bars
 * {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper bars
+
+<strong>Note:</strong> The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
 
 ```
 // create error bars on the first series
@@ -87,9 +89,12 @@ Here are the methods configuring error bars along the Y-axis:
 
 And these methods configure error bars along the X-axis:
 
-* {api:anychart.core.utils.Error#xError}xError(){api} sets lower and upper X-bars as equal
-* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets lower X-bars
-* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets upper X-bars
+* {api:anychart.core.utils.Error#xError}xError(){api} sets left and right X-bars as equal
+* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets left X-bars
+* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets right X-bars
+
+<strong>Note:</strong> The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
+
 
 ```
 // create error bars on the first series
@@ -128,7 +133,15 @@ var data = [
 {api:anychart.core.utils.Error#mode}mode(){api}
 
 ```
-???
+// create and configure error bars
+var error = series.error();
+error.xLowerError(0.1);
+error.xUpperError(0.2);
+error.valueUpperError(5);
+error.valueLowerError(8);
+
+// show only value error bars 
+error.mode("value");
 ```
 
 {sample}BCT\_Error\_Chart\_06{sample}
