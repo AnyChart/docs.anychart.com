@@ -11,14 +11,14 @@
 
     // create a data set
     var data = [
-        {id: "A", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
-        {id: "AB", optimistic: 2, pessimistic: 4, mostLikely: 3, name: "AB", dependsOn: ["A"]},
-        {id: "AC", optimistic: 3, pessimistic: 8, mostLikely: 6, name: "AC", dependsOn: ["A"]},
-        {id: "BD", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "BD", dependsOn: ["AB"]},
-        {id: "CE", optimistic: 2, pessimistic: 12, mostLikely: 6, name: "CE", dependsOn: ["AC"]},
+        {id: "A",  optimistic: 1, pessimistic: 10, mostLikely: 6,  name: "A"},
+        {id: "AB", optimistic: 2, pessimistic: 4,  mostLikely: 3,  name: "AB", dependsOn: ["A"]},
+        {id: "AC", optimistic: 3, pessimistic: 8,  mostLikely: 6,  name: "AC", dependsOn: ["A"]},
+        {id: "BD", optimistic: 2, pessimistic: 12, mostLikely: 5,  name: "BD", dependsOn: ["AB"]},
+        {id: "CE", optimistic: 2, pessimistic: 12, mostLikely: 6,  name: "CE", dependsOn: ["AC"]},
         {id: "DF", optimistic: 4, pessimistic: 18, mostLikely: 12, name: "DF", dependsOn: ["BD"]},
-        {id: "EF", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "EF", dependsOn: ["CE"]},
-        {id: "F", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "F", dependsOn: ["BD", "CE"]}
+        {id: "EF", optimistic: 3, pessimistic: 10, mostLikely: 5,  name: "EF", dependsOn: ["CE"]},
+        {id: "F",  optimistic: 3, pessimistic: 10, mostLikely: 5,  name: "F",  dependsOn: ["BD", "CE"]}
     ];
 
     // create a chart
@@ -34,11 +34,9 @@
     
     chart.milestones().labels(false);
 
-    upperLabels = chart.tasks().upperLabels();
-    upperLabels.format("ES: {%earliestStart}, LS: {%latestStart}");
+    chart.tasks().upperLabels().format("ES: {%earliestStart}, LS: {%latestStart}");
 
-    lowerLabels = chart.tasks().lowerLabels();
-    lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
+    chart.tasks().lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
     // expected time calculation
     chart.expectedTimeCalculator(function() {
@@ -51,8 +49,6 @@
 
     // set the container id for the chart
     chart.container("container");
-
-    chart.padding().left(30);
 
     // initiate drawing the chart
     chart.draw();

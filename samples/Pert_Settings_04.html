@@ -19,10 +19,11 @@
     chart = anychart.pert();
     chart.data(data, "asTable");
 
-    tasks = chart.tasks();
-
     // set vertical spacing between tasks
     chart.verticalSpacing("20%");
+
+    tasks = chart.tasks();
+
     // set tasks colors
     tasks.stroke("#519790");
     tasks.fill("#519790");
@@ -32,8 +33,7 @@
     tasks.selectFill("#519790", 2);
 
     // set the slacks to the tasks labels
-    labels = chart.tasks().lowerLabels();
-    labels.format(function(e){
+    chart.tasks().lowerLabels().format(function(e){
         return "Slack: " + e.slack;
     });
 

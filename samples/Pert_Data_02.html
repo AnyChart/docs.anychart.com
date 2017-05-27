@@ -16,18 +16,20 @@
     {id: "4", name: "AD"},
     {id: "5", name: "BC"}
   ];
-  // set the dependencies for the data
+  // set the dependencies
   var dependencies = [
     {from: '1', to: '4'},
     {from: '3', to: '4'},
     {from: '2', to: '5'},
     {from: '3', to: '5'}
   ];
-
+  // create a chart
   chart = anychart.pert();
+  // set the data with dependencies
   chart.data(data, "asTree", dependencies);
-
+  // set chart title
   chart.title("Nodes and Connections Set Separately");
+  // display the chart
   chart.container("container");
   chart.draw();
 });</script>

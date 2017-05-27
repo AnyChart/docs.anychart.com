@@ -19,7 +19,6 @@ PERT Chart
  * [Tooltips](#tooltips)
  * [Statistics](#statistics)
 
-
 ## Overview
 
 The PERT Chart (also known as PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
@@ -139,7 +138,6 @@ tasks.selectFill("#519790", 2);
 
 {sample}Pert\_Settings\_01{sample}
 
-
 ### Duration calculation
 
 When the data is arranged, it is possible to set the exact duration for each task and the whole path. However, it is quite hard to evaluate time bounds of activities. To make an approximate calculation of the path duration, it is better to use three values: optimistic time (the shortest term which is necessary for an activity to be accomplished), pessimistic time (the longest term which is necessary for an activity to be accomplished) and the most likely time for the activity completion. There is a default formula used for the calculation, which you can find in the [Terminology article](Terminology/#expected_time). To rearrange the formula, use the {api:anychart.charts.Pert#expectedTimeCalculator}expectedTimeCalculator(){api} method.
@@ -163,7 +161,6 @@ chart.title("The duration equals " + duration);
 
 {sample}Pert\_Settings\_01\_1{sample}
 
-
 ### Dummy Tasks
 
 Dummy tasks are visual representations of dependencies between real tasks. Dummy task does not exist as a real task, does not affect the project duration (the duration of a dummy task equals 0) and connects milestones of real tasks for better visualization.
@@ -177,7 +174,6 @@ tasks.dummyStroke("#000", 0.5, "5 2");
 ```
 
 {sample}Pert\_Settings\_02{sample}
-
 
 ### Earliest and latest
 
@@ -195,7 +191,6 @@ lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
 {sample}Pert\_Settings\_03{sample}
 
-
 ### Slacks
 
 There is a parameter all tasks have called "slack". Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
@@ -204,14 +199,12 @@ The following example demonstrates the efficiency of the resources distribution 
 
 ```
 // set the slacks to the tasks labels
-labels = chart.tasks().lowerLabels();
-labels.format(function(e){
+chart.tasks().lowerLabels().format(function(e){
     return "Slack: " + e.slack;
 });
 ```
 
 {sample}Pert\_Settings\_04{sample}
-
 
 ### Milestones 
 
@@ -238,7 +231,6 @@ milestones.selectStroke("#90caf9", 4);
 
 {sample}Pert\_Settings\_05{sample}
 
-
 ### Critical Path 
 
 Critical Path consists of milestones and tasks. If nothing special is set for the critical path, the visual settings of those elements will be taken from defaults. If you prefer to emphasize the critical path by changing the visual settings for its components, use the {api:anychart.charts.Pert#criticalPath}criticalPath(){api} method.
@@ -254,6 +246,7 @@ milestones.labels().fontColor("#86614e");
 tasks = chart.criticalPath().tasks();
 tasks.stroke("#ffab91");
 ```
+
 {sample}Pert\_Settings\_06{sample}
 
 ### Labels
@@ -307,10 +300,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 There are two statistic values can be got from the Pert Chart: standard deviation and the critical path duration. Use {api:anychart.charts.Pert#getStat}getStat(){api} method for both.
 
 ```
-// get both statistic values on click
-chart.milestones(). listen("click", function(){
-  dev = chart.getStat("pertChartCriticalPathStandardDeviation");
-  alert("Standard deviation for this project is " + dev);
-})
+// get both statistic values when rendered
+chart.listen("chartdraw", function(){
+    deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
+    duration = chart.getStat("pertChartProjectDuration");
+    chart.title("The critical path duration makes " + duration.toFixed(2) + 
+    " units \n Standard deviation for this project is " + deviation.toFixed(2) + " units");
+});
 ```
 {sample}Pert\_Settings\_09{sample}

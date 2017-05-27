@@ -30,13 +30,9 @@
 
     // set the title of the chart
     chart.title("PERT Chart");
-
-    // set the container id for the chart
-    chart.container("container");
     
-    var interactivity = chart.interactivity();
-    // Sets selection mode for single selection.
-    interactivity.selectionMode("singleSelect");
+    // sets selection mode for single selection
+    chart.interactivity().selectionMode("singleSelect");
 
     // pointsselect event
     chart.listen("pointsselect", function(e){
@@ -59,6 +55,8 @@
         }
     );
 
+    // set the container id for the chart
+    chart.container("container");
     // initiate drawing the chart
     chart.draw();
 });</script>

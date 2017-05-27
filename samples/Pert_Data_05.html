@@ -21,15 +21,15 @@
     chart = anychart.pert();
     chart.data(data, "asTable");
 
-    chart.listen("click", function(){
-    // get project duration
-    var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
-    // get project deviation
-    var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
-    chart.title("Duration: " + duration + "\n Deviation: " + deviation);
+    chart.listen("chartDraw", function(){
+        // get project duration
+        var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+        // get project deviation
+        var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
+        chart.title("Duration: " + duration.toFixed(2) + "\n Deviation: " + deviation.toFixed(2));
     })
 
-    chart.title("Click anywhere on the chart to get the duration and deviation values from the statistics");
+    chart.title("Chart statistics is shown in the title");
     chart.container("container");
     chart.draw();
 });

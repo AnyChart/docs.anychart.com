@@ -19,16 +19,14 @@
             chart = anychart.pert();
             chart.data(data, "asTable");
 
-            tasks = chart.tasks();
-
             // set vertical spacing between tasks
             chart.verticalSpacing("20%");
+            
+            tasks = chart.tasks();
 
             // set labels with earliest and latest values
-            upperLabels = tasks.upperLabels();
-            upperLabels.format("ES: {%earliestStart}, LS: {%latestStart}");
-            lowerLabels = tasks.lowerLabels();
-            lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
+            tasks.upperLabels().format("ES: {%earliestStart}, LS: {%latestStart}");
+            tasks.lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
             chart.title("Coloring tasks");
             chart.container("container");

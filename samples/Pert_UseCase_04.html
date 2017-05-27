@@ -35,16 +35,12 @@
     
     chart.milestones().labels(false);
 
-    upperLabels = chart.tasks().upperLabels();
-    upperLabels.format("ES: {%earliestStart}, LS: {%latestStart}");
+    chart.tasks().upperLabels().format("ES: {%earliestStart}, LS: {%latestStart}");
 
-    lowerLabels = chart.tasks().lowerLabels();
-    lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
+    chart.tasks().lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
     // set the container id for the chart
     chart.container("container");
-
-    chart.padding().left(30);
 
     // initiate drawing the chart
     chart.draw();
