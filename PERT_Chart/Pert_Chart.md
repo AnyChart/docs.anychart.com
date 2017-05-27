@@ -183,10 +183,8 @@ The following sample shows how to demonstrate those values to watch them:
 
 ```
 // set labels with earliest and latest values
-upperLabels = tasks.upperLabels();
-upperLabels.format("ES: {%earliestStart}, LS: {%latestStart}");
-lowerLabels = tasks.lowerLabels();
-lowerLabels.format("EF: {%earliestFinish}, LF: {%latestFinish}");
+tasks.upperLabels().format("ES: {%earliestStart}, LS: {%latestStart}");
+tasks.lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 ```
 
 {sample}Pert\_Settings\_03{sample}
