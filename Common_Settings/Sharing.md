@@ -263,13 +263,13 @@ The following sample demonstrates setting defaults for all networks available at
 anychart.exports.facebook({caption: "A sample shared with Facebook", link: "http://anychart.com", height: "600", appID: "1167712323282103"});
 
 // this method sets the Twitter export settings
-anychart.exports.twitter("http://export.anychart.stg/sharing/twitter", "800", "600");
+anychart.exports.twitter("https://export.anychart.com/sharing/twitter", "800", "600");
 
 // this method sets the LinkedIn export settings
 anychart.exports.linkedin("AnyChart Area Chart sample shared with LinkedIn", undefined, undefined, "400");
 
 // this method sets the Pinterest export settings
-anychart.exports.pinterest("http://anychart.com", undefined, "800", undefined);
+anychart.exports.pinterest("https://www.anychart.com", undefined, "800", undefined);
 
 // attach click listener
 chart.listen("pointClick", function(e){

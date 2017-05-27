@@ -182,7 +182,7 @@ Full list of server parameters that can be set:
 <tr>
 <td>--allow-scripts-executing</td>
 <td>y (yes), n (no)</td>
-<td>A boolean parameter. If set in Y (e.g. as we do with http://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
+<td>A boolean parameter. If set in Y (e.g. as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
 </tr>
 </tbody>
 </table>

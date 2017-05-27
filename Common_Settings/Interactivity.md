@@ -330,9 +330,9 @@ The next drilldown chart works with multiselect, in this sample the series are a
 
 Check out some other drilldown samples in the gallery:
 
-- [Dashboard with the US Map and Multiselect](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
-- [World Temperature Map](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
-- [Wine Sales in Australia](http://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
+- [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
+- [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
+- [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
 - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
 - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 

@@ -61,7 +61,7 @@ See [how to set the most likely time AnyChart PERT Charts](Data#time_estimates).
 
 Expected time is the best estimate of the time required to accomplish an activity (te) or a path (TE), accounting for the fact that things don't always proceed as normal (something goes wrong, something goes better than expected). It is being calculated by the following formula:
 
-<img src="http://static.anychart.com/images/docs/criticalpath.png"/>,
+<img src="https://static.anychart.com/images/docs/criticalpath.png"/>,
 
 where "o" is optimistic activity duration, "p" is pessimistic activity duration and "M" stands for most likely activity duration.
 
@@ -71,7 +71,7 @@ Find more about getting the expected activity duration value in the [expected du
 
 The standard deviation of time is the variability of the time for accomplishing an activity (σte) or a path (σTE). It is being calculated by the following formula:
 
-<img src="http://static.anychart.com/images/docs/standardeviation.png"/>,
+<img src="https://static.anychart.com/images/docs/standardeviation.png"/>,
 
 where "o" is optimistic activity duration and "p" is pessimistic activity duration.
 
