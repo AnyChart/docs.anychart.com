@@ -5,22 +5,25 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
-   
-    // data
+    <script src="https://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
     var data = [
         {id: "1", duration: 1, name: "Task A"},
-        {id: "2", duration: 4, name: "Task B"},
-        {id: "3", duration: 3, name: "Task C"},
+        {id: "2", duration: 3, name: "Task B"},
+        {id: "3", duration: 4, name: "Task C"},
         {id: "4", duration: 1, name: "Task D"},
         {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
         {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
     ];
 
-    // create a PERT chart
-    chart = anychart.pert();
+    // create a chart
+    var chart = anychart.pert();
+
+    // milestones size    
+    chart.milestones().size(50);
 
     // set chart data
     chart.data(data, "asTable");

@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function () {
+  // set the data
+  var data = [
+    {id: "1", name: "A"},
+    {id: "2", name: "B"},
+    {id: "3", name: "D"},
+    {id: "4", name: "AD"},
+    {id: "5", name: "BC"}
+  ];
+  // set the dependencies
+  var dependencies = [
+    {from: '1', to: '4'},
+    {from: '3', to: '4'},
+    {from: '2', to: '5'},
+    {from: '3', to: '5'}
+  ];
+  // create a chart
+  chart = anychart.pert();
+  // set the data with dependencies
+  chart.data(data, "asTree", dependencies);
+  // set chart title
+  chart.title("Nodes and Connections Set Separately");
+  // display the chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
