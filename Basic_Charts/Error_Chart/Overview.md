@@ -13,9 +13,13 @@
 
 ## Overview
 
+See also the [Supported Types](#supported_types) section to find the list of supported series types.
+
 ## Quick Start
 
-{api:anychart.core.cartesian.series.Base#error}error(){api}
+To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method.
+
+Here is a basic sample showing how to create a Column chart with error bars:
 
 ```
 // create a data set
@@ -49,11 +53,15 @@ chart.draw();
 
 ### On Cartesian Charts
 
+Cartesian charts support error bars along the Y-axis. The {api:anychart.core.cartesian.series.Base#error}error(){api} method adds error bars to all points of a series and sets lower and upper bars as equal, but you can also use the following methods to fine-tune them:
+
 * {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper bars as equal
 * {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower bars
 * {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper bars
 
 <strong>Note:</strong> The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
+
+In the sample below, there are two Column series with different lower and upper error bars:
 
 ```
 // create error bars on the first series
@@ -65,6 +73,8 @@ series2.error().valueUpperError(200);
 ```
 
 {sample}BCT\_Error\_Chart\_02{sample}
+
+The next sample shows how to add customized error bars to particular points of a Cartesian series:
 
 ```
 // create data
@@ -83,6 +93,8 @@ var data = [
 
 The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes.
 
+The {api:anychart.core.cartesian.series.Base#error}error(){api} method adds error bars to all points of a series and sets lower/upper and right/left bars as equal, but you can also use the methods below to fine-tune them.
+
 Here are the methods configuring error bars along the Y-axis:
 
 * {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper Y-bars as equal
@@ -97,6 +109,8 @@ And these methods configure error bars along the X-axis:
 
 **Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
+In the following sample, there is a Scatter chart with two Marker series and customized lower/upper and right/left error bars:
+
 ```
 // create error bars on the first series
 series1.error().valueError(8);
@@ -109,8 +123,9 @@ error2.valueUpperError(4);
 error2.xLowerError(0.1);
 error2.xUpperError(0.2);
 ```
-
 {sample}BCT\_Error\_Chart\_04{sample}
+
+This sample shows how to add customized error bars to particular points of a series on a Scatter chart:
 
 ```
 // create data
@@ -131,7 +146,12 @@ var data = [
 
 ## Error Mode
 
-{api:anychart.core.utils.Error#mode}mode(){api}
+The {api:anychart.core.utils.Error#mode}mode(){api} method allows you to change the error mode of a series (to enable or disable error bars on it). There are four possible error modes that are set by these parameters:
+
+* "both" enables both X and Y error bars
+* "none" disables all error bars
+* "value" shows only Y-bars
+* "x" shows only X-bars
 
 ```
 // create and configure error bars
@@ -144,16 +164,20 @@ error.valueLowerError(8);
 // show only value error bars 
 error.mode("value");
 ```
-
 {sample}BCT\_Error\_Chart\_06{sample}
 
 ## Appearance
 
-{api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api}
-{api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api}
+Here is a full list of methods used to configure the appearance of error bars:
 
-{api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api}
-{api:anychart.core.utils.Error#valueErrorStroke}valueErrorStroke(){api}
+* {api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api} sets the width of Y-bars
+* {api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api} sets the width of X-bars
+* {api:anychart.core.utils.Error#valueErrorStroke}valueErrorStroke(){api} sets the stroke of Y-bars
+* {api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api} sets the stroke of X-bars
+
+Each of the series types that support error bars has its own visual settings – see the [Supported Types](#supported_types) section. Also, you can learn more from the [Appearance Settings](../../Appearance_Settings) section.
+
+In the sample below, there is Scatter chart with two Marker series and error bars on both of them, some of the appearance settings configured:
 
 ```
 // create error bars on the first series
@@ -180,7 +204,6 @@ error2.xErrorWidth(6);
 error2.valueErrorStroke("black", 0.5);
 error2.xErrorStroke("black", 0.5);
 ```
-
 {sample}BCT\_Error\_Chart\_07{sample}
 
 ## Labels And Tooltips
