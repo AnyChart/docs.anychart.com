@@ -70,7 +70,6 @@ Here is a sample with data set in this way:
 
 {sample :width 827 :height 300}Pert\_Data\_02{sample}
 
-
 ## Duration Setting Options
 
 When a task is created, it is necessary to set its duration. The PERT technology is based on time, so it is very important to set all time values appropriately.
@@ -94,7 +93,6 @@ var data = [
 
 {sample :width 827 :height 300}Pert\_Data\_03{sample}
 
-
 ### Time Estimates
 
 It is also possible to set three time estimates: optimistic, pessimistic and most likely time periods. Find more about them in the [Terminology article](Terminology). 
@@ -113,7 +111,6 @@ var data = [
 ```
 
 {sample :width 827 :height 300}Pert\_Data\_04{sample}
-
 
 ## Statistics
 
