@@ -48,10 +48,10 @@ var data_2 = [
 // create a chart
 chart = anychart.scatter();
 
-// create the second series (marker) and set the data
+// create the first series (marker) and set the data
 var series1 = chart.marker(data_1);
 
-// create the first series (line) and set the data
+// create the second series (line) and set the data
 var series2 = chart.line(data_2);
 
 // set the container id
@@ -118,31 +118,33 @@ chart.xScale(dateScale);
 
 In AnyChart, you can create charts with error bars (see [Error Chart](../Error_Chart)). This feature is often used with scatter charts, especially when they show results of some calculations or measurements.
 
-Error bars are created with the {api:anychart.core.scatter.series.Marker#error}error(){api} method.
+Error bars are created with the {api:anychart.core.scatter.series.Base#error}error(){api} method.
 
-**Note:** Lower and upper errors can be different. Also,the key feature of error bars on scatter charts is that errors can be set both along the X and Y axes. 
+**Note:** The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes. Also, lower/upper and right/left errors can be different.
 
 Here are the methods configuring error bars along the Y-axis:
 
-* {api:anychart.core.utils.Error#valueError}valueError(){api} sets the lower and upper Y-values as equal
-* {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets the lower Y-value
-* {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets the upper Y-value
+* {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper Y-bars as equal
+* {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower Y-bars
+* {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper Y-bars
 
 And these methods configure error bars along the X-axis:
 
-* {api:anychart.core.utils.Error#xError}xError(){api} sets the lower and upper X-values as equal
-* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets the lower X-value
-* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets the upper X-value
+* {api:anychart.core.utils.Error#xError}xError(){api} sets left and right X-bars as equal
+* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets left X-bars
+* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets right X-bars
+
+**Note:** The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
 In the sample below, there is a Scatter Marker chart with X and Y error bars:
 
 ```
 // create and configure error bars
 var error = series.error();
-error.xLowerError(0.2);
-error.xUpperError(0.4);
+error.valueLowerError(7);
 error.valueUpperError(4);
-error.valueLowerError(8);
+error.xLowerError(0.1);
+error.xUpperError(0.2);
 ```
 
 {sample}BCT\_Scatter\_Chart\_04{sample}

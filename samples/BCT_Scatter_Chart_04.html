@@ -11,17 +11,17 @@
 
     // create data
     var data = [
-      {x: 0.6, value: 22},
-      {x: 1.7, value: 55},
-      {x: 2.3, value: 50},
-      {x: 3.5, value: 80},
-      {x: 3.9, value: 74},
-      {x: 4, value: 68},
-      {x: 4, value: 76},
-      {x: 4.1, value: 84},
-      {x: 4.7, value: 93}
+      {x: 0.5, value: 105},
+      {x: 1, value: 109},
+      {x: 2.4, value: 133},
+      {x: 2.9, value: 116},
+      {x: 2.4, value: 119},
+      {x: 4.6, value: 115},
+      {x: 4.1, value: 117},
+      {x: 3.9, value: 125},
+      {x: 5, value: 128}
     ];
-    
+
     // create a chart
     chart = anychart.scatter();
 
@@ -30,10 +30,10 @@
 
     // create and configure error bars
     var error = series.error();
-    error.xLowerError(0.2);
-    error.xUpperError(0.4);
+    error.valueLowerError(7);
     error.valueUpperError(4);
-    error.valueLowerError(8);
+    error.xLowerError(0.1);
+    error.xUpperError(0.2);
 
     // create major grids and bind them to the X and Y axes
     chart.grid(0).axis(chart.xAxis());

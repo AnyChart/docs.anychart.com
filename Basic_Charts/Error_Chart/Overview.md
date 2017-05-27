@@ -81,6 +81,8 @@ var data = [
 
 ### On Scatter Charts
 
+The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes.
+
 Here are the methods configuring error bars along the Y-axis:
 
 * {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper Y-bars as equal
@@ -93,8 +95,7 @@ And these methods configure error bars along the X-axis:
 * {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets left X-bars
 * {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets right X-bars
 
-<strong>Note:</strong> The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
-
+**Note:** The api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
 ```
 // create error bars on the first series
