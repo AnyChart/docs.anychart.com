@@ -11,6 +11,7 @@
   * [Hover](#series_hover)
   * [Select](#series_select)
   * [Single Point](#single_point)
+* [Rectangle/Marquee Select](#rectangle_marquee_select)
 * [Single Series Chart](#single_series_chart)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
@@ -270,6 +271,21 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 {sample}CS\_Interactivity\_20{sample}
 
 **Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../Common_Settings/Legend).
+
+## Rectangle Marqee Select
+
+### Charts
+
+Use the {api:anychart.core.Chart.startSelectMarquee}startSelectMarquee{api} and {api:anychart.core.Chart.cancelMarquee}cancelMarquee{api} methods to work with rectangle marqee select.
+
+Use the {api:anychart.core.Chart.selectMarqueeFill}{api} and {api:anychart.core.Chart.selectMarqueeStroke}{api} methods to configure marqee appearance.
+
+Handle {api:anychart.enums.EventType.SELECT_MARQUEE_START}SELECT_MARQUEE_START{api},  {api:anychart.enums.EventType.SELECT_MARQUEE_CHANGE}SELECT_MARQUEE_CHANGE{api} and {api:anychart.enums.EventType.SELECT_MARQUEE_FINISH}SELECT_MARQUEE_FINISH{api} events {api:anychart.core.Chart.inMarquee}inMarquee{api} property to track marquee progress.
+
+### Stock
+
+Use the {api:anychart.charts.Stock.startZoomMarquee}startZoomMarquee(){api} along with
+{api:anychart.charts.Stock.zoomMarqueeStroke}zoomMarqueeStroke(){api} and {api:anychart.charts.Stock.zoomMarqueeFill}zoomMarqueeFill(){api} methods to work with marquee zoom in Stock charts.
 
 ## Single Series Chart
 

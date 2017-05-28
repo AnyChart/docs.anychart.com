@@ -1,4 +1,4 @@
-{:index 6}
+{:index 6.2}
 # TreeMap Chart
 
 * [Overview](#overview)

@@ -1,4 +1,4 @@
-{:index 5.9}
+{:index 6.1}
 #Tag Cloud
 
 * [Overview](#overview)
