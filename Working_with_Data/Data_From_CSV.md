@@ -82,5 +82,5 @@ See it live:
 
 ## Loading CSV Files
 
-You can also load CSV data from files using [Data Adapter](Data_Adapter/Overview) as described in [Data Adapter](Loading_CSV_File).
+You can also load CSV data from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_CSV_File).
 

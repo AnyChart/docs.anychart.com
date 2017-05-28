@@ -13,7 +13,7 @@ Supported Data Formats
 
 AnyChart charting library supports a lot of ways to set data to your charts. You can choose which one suits your task the best:
 
-- [JavaScript API]()
+- [JavaScript API](#javascript_api)
 - [XML](#xml)
 - [JSON](#json)
 - [CSV](#csv)
@@ -24,7 +24,7 @@ Each way has some strengths and weaknesses. We recommend JavaScript API – this
 
 ### JavaScript API
 
-JavaScript API helps you the best when you need to Create, Read, Update, and Delete data points dynamically. 
+JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](/.Data_Manipulation) data points dynamically. 
 
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
 
@@ -143,11 +143,11 @@ See detailed description in:
 
 ## Google Spreadsheet
 
-You have an option to use Google Spreadsheet as the data source see:
+You have an option to use Google Spreadsheet as the data source using [Data Adapter](./Data_Adapter/Overview), see:
 - [Loading Google Spreadsheet Files](./Data_Adapter/Loading_Google_Spreadsheet) article.
 
 ## HTML Table
 
-You have an option to load data from HTML table on a page:
+You have an option to load data from HTML table on a page using [Data Adapter](./Data_Adapter/Overview), see:
 - [Loading Google Spreadsheet Files](./Data_Adapter/Parsing_HTML_Table) article.
 
