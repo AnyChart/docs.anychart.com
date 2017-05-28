@@ -69,7 +69,9 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Area Chart](../Basic_Charts/Step_Area_Chart)</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
+<tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/TreeMap_Chart)</td></tr>
+<tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
 <tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
@@ -90,4 +92,6 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Stick Chart](../Basic_Charts/Vertical/Stick_Chart)</td></tr>
 <tr><td>[Vertical Step Area Chart](../Basic_Charts/Vertical/Step_Area_Chart)</td></tr> 
 <tr><td>[Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart)</td></tr>
+<tr><td>[Waterfall Chart](../Basic_Charts/Waterfall_Chart)</td></tr>
+<tr><td>[Word Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 </table>
