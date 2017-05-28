@@ -272,7 +272,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 **Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../Common_Settings/Legend).
 
-## Rectangle Marqee Select
+## Rectangle Marquee Select
 
 ### Charts
 
@@ -280,7 +280,7 @@ Use the {api:anychart.core.Chart.startSelectMarquee}startSelectMarquee{api} and 
 
 Use the {api:anychart.core.Chart.selectMarqueeFill}{api} and {api:anychart.core.Chart.selectMarqueeStroke}{api} methods to configure marqee appearance.
 
-Handle {api:anychart.enums.EventType.SELECT_MARQUEE_START}SELECT_MARQUEE_START{api},  {api:anychart.enums.EventType.SELECT_MARQUEE_CHANGE}SELECT_MARQUEE_CHANGE{api} and {api:anychart.enums.EventType.SELECT_MARQUEE_FINISH}SELECT_MARQUEE_FINISH{api} events {api:anychart.core.Chart.inMarquee}inMarquee{api} property to track marquee progress.
+Handle {api:anychart.enums.EventType.SELECT\_MARQUEE\_START}SELECT\_MARQUEE\_START{api},  {api:anychart.enums.EventType.SELECT\_MARQUEE\_CHANGE}SELECT\_MARQUEE\_CHANGE{api} and {api:anychart.enums.EventType.SELECT\_MARQUEE\_FINISH}SELECT\_MARQUEE\_FINISH{api} events {api:anychart.core.Chart.inMarquee}inMarquee{api} property to track marquee progress.
 
 ### Stock
 
