@@ -1,29 +1,52 @@
 {:index 7.5}
 #Venn Diagram
+
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Special Settings](#special_settings)
+* [Samples](#samples)
 
 ## Overview
-## Overview
 
-A waterfall chart is a form of data visualization that helps in understanding the cumulative effect of sequentially introduced positive or negative values. The waterfall chart is also known as a flying bricks chart or Mario chart due to the apparent suspension of columns (bricks) in mid-air.
+a diagram representing mathematical or logical sets pictorially as circles or closed curves within an enclosing rectangle (the universal set), common elements of the sets being represented by intersections of the circles.
 
 ## Quick Start
 
-To create a Waterfall chart use {api:anychart#waterfall}waterfall(){api} method, you can pass the data right into the constructor:
+To create a Venn diagramm use {api:anychart#venn}waterfall(){api} method, you can pass the data right into the constructor:
 
 ```
-chart = anychart.waterfall(
-        [4, 5, NaN, -2, 4, NaN], // series 1
-        [4, 5, NaN, 3, 4, NaN], // series 2
-        [4, {value: 10, isTotal: false}, NaN, -2, 4, NaN]); // series 3
-chart.dataMode('diff');
-chart.container('container')
-chart.draw();
+anychart.onDocumentReady(function () {
+    var data = [
+        {
+            x: 'A',
+            name: 'Play computer games',
+            value: 100
+        },
+        {
+            x: 'B',
+            name: 'To much homework',
+            value: 100
+        },
+        {
+            x: 'A&B',
+            name: 'Late Nights',
+            value: 25,
+        }
+    ];
+
+    // create venn diagram
+    chart = anychart.venn(data);
+
+    // set container id for the chart
+    chart.container('container');
+    // initiate chart drawing
+    chart.draw();
 });
 ```
 
-Here is a basic Waterfall chart:
+Here is a live sample:
 
 {sample}BCT\_Venn\_Diagram\_01{sample}
+
+## Samples
+
+You can find a lot of samples of Waterfall charts in [AnyChart Waterfall Charts Gallery](https://www.anychart.com/products/anychart/gallery/Waterfall_Charts/)

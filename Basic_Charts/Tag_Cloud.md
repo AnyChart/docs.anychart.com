@@ -1,28 +1,50 @@
 {:index 7.5}
 #Tag Cloud
+
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Special Settings](#special_settings)
+* [Samples](#samples)
 
 ## Overview
 
-A waterfall chart is a form of data visualization that helps in understanding the cumulative effect of sequentially introduced positive or negative values. The waterfall chart is also known as a flying bricks chart or Mario chart due to the apparent suspension of columns (bricks) in mid-air.
+A tag cloud (word cloud, or weighted list in visual design) is a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag is shown with font size or color.
 
 ## Quick Start
 
-To create a Waterfall chart use {api:anychart#waterfall}waterfall(){api} method, you can pass the data right into the constructor:
+To create a Tag cloud use {api:anychart#tagCloud}tagCloud(){api} method, you can pass the data right into the constructor:
 
 ```
-chart = anychart.waterfall(
-        [4, 5, NaN, -2, 4, NaN], // series 1
-        [4, 5, NaN, 3, 4, NaN], // series 2
-        [4, {value: 10, isTotal: false}, NaN, -2, 4, NaN]); // series 3
-chart.dataMode('diff');
-chart.container('container')
-chart.draw();
+anychart.onDocumentReady(function () {
+    var data = [
+        {"x": "learning", "value": 80},
+        {"x": "lists", "value": 44},
+        {"x": "meaning", "value": 40},
+        {"x": "useful", "value": 36},
+        {"x": "different", "value": 32},
+        {"x": "grammar", "value": 28},
+        {"x": "teaching", "value": 24},
+        {"x": "example", "value": 20},
+        {"x": "includes", "value": 56},
+        {"x": "thing", "value": 12},
+        {"x": "vocabulary", "value": 10},
+        {"x": "frequency", "value": 10},
+        {"x": "phrases", "value": 15},
+        {"x": "content", "value": 27}
+    ];
+
+    // create a tag cloud chart
+    chart = anychart.tagCloud(data);
+
+    // display chart
+    chart.container("container");
+    chart.draw();
 });
 ```
 
-Here is a basic Waterfall chart:
+Here is a basic Tag cloud chart:
 
 {sample}BCT\_Tag\_Cloud\_01{sample}
+
+## Samples
+
+You can find a lot of samples of Waterfall charts in [AnyChart Tag Cloud (Word Cloud) Charts Gallery](https://www.anychart.com/products/anychart/gallery/Tag_Cloud/)
