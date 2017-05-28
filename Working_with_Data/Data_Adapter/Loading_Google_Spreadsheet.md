@@ -31,6 +31,7 @@ AnyChart Data Adapter can be used to load only Google Spreadsheets that are:
 <img alt="how to publish google spreadsheet to web to use in anychart data adapter" src="https://static.anychart.com/images/docs/data-adapter-google-spreadsheet-publish-1.png"/>
 <img alt="how to publish google spreadsheet to web to use in anychart data adapter" src="https://static.anychart.com/images/docs/data-adapter-google-spreadsheet-publish-2.png"/>
 
+
 - Follow the certain format, where the first row **must** contain series names and first column - arguments:
 <img alt="format for google spreadsheet to be used in anychart data adapter" src="https://static.anychart.com/images/docs/data-adapter-google-spreadsheet-format.png"/>
 
