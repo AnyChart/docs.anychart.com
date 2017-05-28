@@ -81,7 +81,43 @@ Here is a live sample:
 
 ## CSS Table
 
-text
+To load data from a table created with CSS you need to use the {api:anychart.data#parseHtmlTable}parseHtmlTable(){api} method and provide proper CSS selectors. For example, if the table is created in CSS like this:
 
-<iframe height='265' scrolling='no' title='AnyChart HTML Table Parsing' src='//codepen.io/SitePoint/embed/eWymYg/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/SitePoint/pen/eWymYg/'>AnyChart HTML Table Parsing</a> by SitePoint (<a href='https://codepen.io/SitePoint'>@SitePoint</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+```
+<div class="table">
+  <div class="heading">
+    <div class="cell">
+      <p>Date</p>
+    </div>
+    <div class="cell">
+      <p>ILS (₪)</p>
+    </div>
+    <div class="cell">
+      <p>CNY (¥)</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/01</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+```
+
+Then you can load data from it like this, notice that you can dig into divs and obtain a proper element:
+
+```
+var tableData = anychart.data.parseHtmlTable(".table", ".row", ".cell p", ".heading .cell p", ".title");
+```
+
+Here is a live sample:
+
+<p data-height="265" data-theme-id="0" data-slug-hash="vmpEzq" data-default-tab="html,result" data-user="SitePoint" data-embed-version="2" data-pen-title="AnyChart HTML Div Table Parsing" class="codepen">See the Pen <a href="https://codepen.io/SitePoint/pen/vmpEzq/">AnyChart HTML Div Table Parsing</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
