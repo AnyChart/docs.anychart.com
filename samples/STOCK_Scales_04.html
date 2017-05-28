@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyStock"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="['column' 'axis']"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="https://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+    var dataTable = anychart.data.table();
+    // data comes from the function in https://cdn.anychart.com/csv-data/dji-daily-short.js
+    dataTable.addData(get_dji_daily_short_data());
+
+    chart = anychart.stock();
+
+    chart.plot(0).column(dataTable.mapAs({value: 1}));
+    chart.plot(0).column(dataTable.mapAs({value: 2}));
+    chart.plot(0).column(dataTable.mapAs({value: 3}));
+
+    // set y scale stack mode to value
+    chart.plot(0).yScale().stackMode("value");
+
+    chart.title("Value Stack Mode in Stock Charts");
+    chart.container("container");
+    chart.draw();
+
+    chart.selectRange("YTD");
+});
+
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
