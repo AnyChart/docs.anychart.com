@@ -183,9 +183,9 @@ Stems are vertical sticks that go beyond boxes and show the difference between t
 
 Use these methods to configure the stroke of stems in the normal state, on hover, and on select:
 
-* {api:anychart.core.cartesian.series.Box.stemStroke}stemStroke(){api}
-* {api:anychart.core.cartesian.series.Box.hoverStemStroke}hoverStemStroke(){api}
-* {api:anychart.core.cartesian.series.Box.selectStemStroke}selectStemStroke(){api}
+* {api:anychart.core.cartesian.series.Box#stemStroke}stemStroke(){api}
+* {api:anychart.core.cartesian.series.Box#hoverStemStroke}hoverStemStroke(){api}
+* {api:anychart.core.cartesian.series.Box#selectStemStroke}selectStemStroke(){api}
 
 ```
 // configure stems
@@ -200,9 +200,9 @@ series.selectStemStroke("#f44336", 3, "5 2");
 
 Whiskers are horizontal line segments on the tops of stems. Here are methods that allow you to configure their appearance:
 
-* {api:anychart.core.cartesian.series.Box.whiskerWidth}whiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.whiskerStroke}whiskerStroke(){api} set the width and stroke
-* {api:anychart.core.cartesian.series.Box.hoverWhiskerWidth}hoverWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.hoverWhiskerStroke}hoverWhiskerStroke(){api} set the width and stroke on hover
-* {api:anychart.core.cartesian.series.Box.selectWhiskerWidth}selectWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box.selectWhiskerStroke}selectWhiskerStroke(){api} set the width and stroke on select
+* {api:anychart.core.cartesian.series.Box#whiskerWidth}whiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#whiskerStroke){api} set the width and stroke
+* {api:anychart.core.cartesian.series.Box#hoverWhiskerWidth}hoverWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#hoverWhiskerStroke}hoverWhiskerStroke(){api} set the width and stroke on hover
+* {api:anychart.core.cartesian.series.Box#selectWhiskerWidth}selectWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#selectWhiskerStroke}selectWhiskerStroke(){api} set the width and stroke on select
 
 **Note:** By default the width is 0.
 

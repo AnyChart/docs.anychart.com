@@ -11,7 +11,7 @@
 
 ## Overview
 
-Range Column series is quite similar to Basic [Column Chart](Column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Chart_Types/Range_Column_Chart).
+Range Column series is quite similar to Basic [Column Chart](Column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Charts/Range_Column_Chart).
 
 ## AnyStock Column Adjustment
 

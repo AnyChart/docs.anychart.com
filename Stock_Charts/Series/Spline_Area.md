@@ -11,7 +11,7 @@
 
 ## Overview
 
-Spline Area series is very similar to [Area series](Area). To know how to manage Spline Area and Area series in Basic Charts, see the [Area Chart article](../../Basic_Chart/Area_Chart).
+Spline Area series is very similar to [Area series](Area). To know how to manage Spline Area and Area series in Basic Charts, see the [Area Chart article](../../Basic_Charts/Area_Chart).
  
 ## AnyStock Spline Area Series Adjustment
 

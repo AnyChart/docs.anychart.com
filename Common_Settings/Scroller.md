@@ -49,7 +49,7 @@ chart.xZoom().setTo(0, 0.3);
 
 ### Limits by values
 
-Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.charts.Cartesian.XZoom#setToValues}setToValues(){api} method:
+Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.core.utils.OrdinalZoom#setToValues}setToValues(){api} method:
 
 **Note:** only [Heat maps](../Basic_Charts/Heat_Map_Chart) support scroll or zoom by Y in this version.
 
@@ -73,7 +73,7 @@ chart.xZoom()setToPointsCount(10, true);
 
 ### Get the limits ratio
 
-To get the limiting points ratio using {api:anychart.charts.Cartesian.XZoom#getStartRatio}getStartRatio(){api} and {api:anychart.charts.Cartesian.XZoom#getEndRatio}getEndRatio(){api} methods.
+To get the limiting points ratio using {api:anychart.core.utils.OrdinalZoom#getStartRatio}getStartRatio(){api} and {api:anychart.core.utils.OrdinalZoom#getEndRatio}getEndRatio(){api} methods.
 
 ```
 // set the xZoom
@@ -144,7 +144,7 @@ chart.xScroller().outlineStroke("#33CC33", 2);
 
 ### Size
 
-To adjust scroll bar height (width) use the {api:anychart.ui.Scroller#height}height(){api} method. There are also  {api:anychart.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.ui.Scroller#minHeight}minHeight(){api} methods which are useful when your charts are being resized.
+To adjust scroll bar height (width) use the {api:anychart.core.ui.Scroller#height}height(){api} method. There are also  {api:anychart.core.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Scroller#minHeight}minHeight(){api} methods which are useful when your charts are being resized.
 
 ```
 // set the bar height
@@ -174,7 +174,7 @@ chart.xScroller().thumbs().hoverFill("#FFD700");
 
 ## Live update
 
-By default, the chart is changing while being scrolled. To redraw a chart only when the mouse button is released use the {api:anychart.charts.Cartesian.XZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
+By default, the chart is changing while being scrolled. To redraw a chart only when the mouse button is released use the {api:anychart.core.utils.OrdinalZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
 
 ```
 // prevent the scrolling while the button is not released yet

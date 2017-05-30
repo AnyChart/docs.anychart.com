@@ -73,7 +73,7 @@ var title = chart.legend().title();
 title.enabled(true);
 ```
 
-To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](../Appearance_Settings/Title) article.
+To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](../Appearance_Settings/Text_Settings) article.
 
 ```
 var title = chart.legend().title();
@@ -275,7 +275,7 @@ Here is a sample with defaults for legend set to show series icons with markers:
 
 ### Mouse Cursor
 
-Use the {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} method to set the type of cursor that is shown when mouse moves over the legend items. You can use string values or {api:anychart.enums.Cursor.HAND}anychart.enums.Cursor{api}.
+Use the {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} method to set the type of cursor that is shown when mouse moves over the legend items. You can use string values or {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
 
 ```
 var legend = chart.legend();

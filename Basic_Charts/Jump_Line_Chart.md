@@ -20,7 +20,7 @@ Jump Line Charts are usually used for demonstrating rates.
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Jumpline}anychart.core.cartesian.series.Jumpline{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.JumpLine}anychart.core.cartesian.series.JumpLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
@@ -87,9 +87,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Here is a full list of methods used to configure visual settings that are available for the Jump Line series:
 
-* {api:anychart.core.cartesian.series.Jumpline#color}color(){api} and {api:anychart.core.cartesian.series.Jumpline#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Jumpline#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Jumpline#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.cartesian.series.JumpLine#color}color(){api} and {api:anychart.core.cartesian.series.JumpLine#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.JumpLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.JumpLine#selectStroke}selectStroke(){api} configures the stroke on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
