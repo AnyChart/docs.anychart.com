@@ -162,7 +162,7 @@ This way of coloring is not possible using other palette types.
 
 ## LinearColorScale
 
-Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange (read about it [here](../ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.core.map.scale.LinearColor}LinearColor{api} method is a bit different.
+Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange (read about it [here](../ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.scales.LinearColor}LinearColor{api} method is a bit different.
 
 ```
 	// map the data of two dataSets

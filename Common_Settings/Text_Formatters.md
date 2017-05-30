@@ -525,7 +525,8 @@ labels_summer.format(function(){
 
 ### Extra fields
 
-The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api}, {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api}. Which one to use depends on the unique situation.
+The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.format.Context#getStat}getStat(){api}, {api:anychart.format.Context#getData}getData(){api} or {api:anychart.format.Context#getMeta}getMeta(){api}.
+Which one to use depends on the unique situation.
 
 #### getData
 

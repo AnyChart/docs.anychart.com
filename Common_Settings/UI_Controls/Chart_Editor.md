@@ -87,7 +87,7 @@ editor.listen('close', function(){});
 
 ## Getting Result
 
-The following three methods are used to get configuration result: {api:http:anychart.ui.chartEditor.Dialog#getResultJson}getResultJson(){api}, {api:http:anychart.ui.chartEditor.Dialog#getResultXml}getResultXml(){api} and {api:http:anychart.ui.chartEditor.Dialog#getResultCode}getResultCode(){api}. 
+The following three methods are used to get configuration result: {api:anychart.ui.chartEditor.Dialog#getResultJson}getResultJson(){api}, {api:anychart.ui.chartEditor.Dialog#getResultJson#getResultXml}getResultXml(){api} and {api:anychart.ui.chartEditor.Dialog#getResultJson#getResultCode}getResultCode(){api}.
 
 ```
 editor = anychart.ui.chartEditorDialog();

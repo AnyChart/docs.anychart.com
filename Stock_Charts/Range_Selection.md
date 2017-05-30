@@ -38,7 +38,7 @@ Or, if you are using a specialized `anystock.min.js` you need to reference ui Ja
 
 ## Add to a chart
 
-The easiest way to add range selector or range picker is to add them (render to) to an instance of a stock chart. You need to create them using constructor methods {api:}rangeSelector(){api} and {api:}rangePicker{api} before that:
+The easiest way to add range selector or range picker is to add them (render to) to an instance of a stock chart. You need to create them using constructor methods {api:anychart.ui.RangeSelector}rangeSelector(){api} and {api:anychart.ui.RangePicker}rangePicker{api} before that:
 
 ```
 chart = anychart.stock();

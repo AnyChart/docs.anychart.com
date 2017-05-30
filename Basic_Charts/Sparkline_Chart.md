@@ -432,7 +432,7 @@ It's also possible to add a hatchfill to a point through the data - if you need 
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
-To learn more about hatch fills visit the [Hatch Tutorial](../Appearance_Settings/Hatch_Fill) page.
+To learn more about hatch fills visit the [Hatch Tutorial](../Graphics/Hatch_Fill_Settings) page.
 
 ##Layout
 

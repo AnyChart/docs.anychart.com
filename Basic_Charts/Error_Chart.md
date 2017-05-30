@@ -19,7 +19,7 @@ Error Charts are defined as part of the series and are used on graphs to indicat
 
 Here is the list of series compatible with error bars:
 
-**Cartesian**: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); 
+**Cartesian**: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line_Chart#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Spline_Chart#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Step_Line#single_series_step_line_chart);
 
 [**Scatter**](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
 
@@ -301,7 +301,7 @@ Look at the chart sample below and click on it to see it's javascript source.
 
 ## Labels And Tooltips
 
-If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:core.cartesian.series.Base#label}label(){api} and {api:core.cartesian.series.Base#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format.
 
 {sample}Error\_Chart\_13{sample}
 
