@@ -222,7 +222,7 @@ The following sample shows how to customize labels on a chart with error bars:
 var labels = series.labels();
 labels.enabled(true);
 series.labels().format("{%Value}(±{%ValueUpperError})");
-series.labels().offsetY(+100);
+series.labels().offsetY(+50);
 ```
 
 {sample}BCT\_Error\_Chart\_08{sample}
