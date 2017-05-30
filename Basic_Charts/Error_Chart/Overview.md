@@ -8,7 +8,8 @@
   * [On Scatter Charts](#on_scatter_charts)
 * [Error Mode](#error_mode)
 * [Appearance](#appearance)
-* [Labels And Tooltips](#labels_and_tooltips)
+* [Labels](#labels)
+* [Tooltips](#tooltips)
 * [Supported Types](#supported_types)
 
 ## Overview
@@ -21,9 +22,7 @@ This article explains how to create and configure error bars on both Cartesian a
 
 ## Quick Start
 
-To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method.
-
-??? ЧТО ПИСАТЬ ПРО ПРОЦЕНТЫ/ЦИФРЫ
+To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either in percent or in pixels).
 
 Here is a basic sample showing how to create a Column chart with error bars:
 
@@ -212,12 +211,11 @@ error2.xErrorStroke("black", 0.5);
 ```
 {sample}BCT\_Error\_Chart\_07{sample}
 
-## Labels And Tooltips
+## Labels
 
-??? МОЖНО ЛИ РАЗБИТЬ ЭТОТ РАЗДЕЛ НА ДВА (КАК ОБЫЧНО)
-??? ЧТО ТУТ ПИСАТЬ
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-{api:core.cartesian.series.Base#label}label(){api}
+The following sample shows how to customize labels on a chart with error bars:
 
 ```
 //configure labels
@@ -229,7 +227,11 @@ series.labels().offsetY(+100);
 
 {sample}BCT\_Error\_Chart\_08{sample}
 
-{api:core.cartesian.series.Base#tooltip}tooltip(){api}
+## Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+This sample shows how to customize tooltips on a chart with error bars:
 
 ```
 // configure tooltips
