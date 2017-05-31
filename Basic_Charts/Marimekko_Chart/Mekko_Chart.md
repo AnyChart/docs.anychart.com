@@ -108,7 +108,7 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 When Mekko chart is created both its scales are put into stacked mode: Y scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X scale to value stacking mode.
 
-Changing Y scale to [value stacked mode](../Stacked/Overview#percent_stacking) but consider using [Barmekko Chart](BarMekko_Chart) in such cases.
+Changing Y scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using [Barmekko Chart](BarMekko_Chart) in such cases.
 
 Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
