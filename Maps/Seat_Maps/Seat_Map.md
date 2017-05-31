@@ -22,7 +22,7 @@ A seat map is a diagram of a seat layout inside a passenger aircraft, theater, s
 
 ## Preparing an SVG Image
 
-To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
+To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](../Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
 If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
@@ -148,7 +148,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](../Tooltips) and [Map Labels](../Labels) articles.
 
 ```
 // data set

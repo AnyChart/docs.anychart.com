@@ -158,7 +158,7 @@ chart.colorRange(true);
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
 
-There are some other ways to set colors for a Color Scale: for example, it is possible to set the gradient mode (to learn more, see the [Color Range](../Color_Range) article). 
+There are some other ways to set colors for a Color Scale: for example, it is possible to set the gradient mode (to learn more, see the [Color Range](../ColorRange) article). 
 
 Using a color gradient can make the chart more illustrative, and in this case there is no need to set a color for each value range.
 

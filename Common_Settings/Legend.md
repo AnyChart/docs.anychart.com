@@ -232,7 +232,7 @@ paginator.orientation("right");
 
 ### Background
 
-To configure the border and the inner color of the legend use the {api:anychart.core.ui.Legend#background}background(){api} method. To learn more about background setting please see the [background tutorial](Background).
+To configure the border and the inner color of the legend use the {api:anychart.core.ui.Legend#background}background(){api} method. To learn more about background setting please see the [background tutorial](../Appearance_Settings/Background).
 
 {sample}CS\_Legend\_05{sample}
 

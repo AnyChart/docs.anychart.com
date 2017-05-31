@@ -31,7 +31,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 <tr><td>Stock</td><td>[Stock Spline Area](../Stock_Charts/Series/Spline_Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
-<tr><td></td><td>[Step Area](ST\tep_Area_Chart)</td></tr>
+<tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>

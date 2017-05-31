@@ -28,7 +28,7 @@ Some modifications can be done very easy, some require understanding how AnyChar
 
 At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
 
-You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
+You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
 
 If you want something more than what this article offers, please [contact us](http://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
 

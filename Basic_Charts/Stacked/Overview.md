@@ -24,7 +24,7 @@ There are two modes of stacking: **value** and **percent**. These article explai
 
 ## Marimekko Charts
 
-Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Overview) articles to learn how to build them with AnyChart.
+Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Mekko_Chart) articles to learn how to build them with AnyChart.
 
 ## Value Stacking
 
@@ -227,7 +227,7 @@ chart.line(seriesData_3);
 * [Vertical Percent Stacked Area Chart](./Percent/Vertical_Spline_Area_Chart)
 * [Vertical Percent Stacked Step Area Chart](./Percent/Vertical_Step_Area_Chart)
 * [Vertical Percent Stacked Stick Chart](./Percent/Vertical_Stick_Chart)
-* [3D Stacked Area Chart](./Value/3D/Area_Chart)
+* [3D Stacked Area Chart](./Value/3D_Area_Chart)
 * [3D Stacked Bar Chart](./Value/3D_Bar_Chart)
 * [3D Stacked Column Chart](./Value/3D_Column_Chart)
 * [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)

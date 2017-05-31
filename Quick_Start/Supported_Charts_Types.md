@@ -26,7 +26,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>
 <tr><td>[Line Chart](../Basic_Charts/Line_Chart)</td></tr>
-<tr><td>[Maps - Geo Maps](../Maps/Overview)</td></tr>
+<tr><td>[Maps - Geo Maps](../Maps/)</td></tr>
 <tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td></tr>
 <tr><td>[Maps - Dot, Point, Marker](../Maps/Dot_\(Point\)_Map)</td></tr>
 <tr><td>[Maps - Connector, Line](../Maps/Connector_Maps)</td></tr>
@@ -77,7 +77,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
-<tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Marimekko_Chart)</td></tr>
+<tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
 <tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart)</td></tr>
 <tr><td>[Vertical Mekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
 <tr><td>[Vertical Mosaic Chart](../Basic_Charts/Vertical/Mosaic_Chart)</td></tr>

@@ -30,13 +30,13 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Error Marker](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Polar_Marker_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Radar_Marker_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Marker on Scatter Plot](Scatter_Plot/Overview)</td></tr>
+<tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Overview)</td></tr>
+<tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Overview)</td></tr>
+<tr><td>Scatter</td><td>[Marker on Scatter Plot](Scatter_Plot/Marker_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Map)</td></tr>
+<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot\_\(Point\)\_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/marker-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

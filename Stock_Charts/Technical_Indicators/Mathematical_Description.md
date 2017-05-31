@@ -170,7 +170,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Exponential Moving Average
 
-[Exponential Moving Average](Exponential\_Moving\_Average\_(EMA)) in each point is calculated according to the following formula:
+[Exponential Moving Average](Exponential\_Moving\_Average\_\(EMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 

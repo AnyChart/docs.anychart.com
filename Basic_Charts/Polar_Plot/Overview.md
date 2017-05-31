@@ -105,7 +105,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information on possible stroke settings can be found in [Strokes and Lines tutorial](../../Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../../Graphics/Stroke_Settings).
 
 Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis has a stroke colored with gradient.
 
@@ -266,7 +266,7 @@ tooltip.format(function(e){
 
 ## Series Types
 
-Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
 
 {sample}BCT\_PolarChart\_12{sample}
 

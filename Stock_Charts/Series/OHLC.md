@@ -13,7 +13,7 @@
 
 OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Charts/OHLC_Chart).
 
-See also: [Candlestick](Candlestick).
+See also: [Japanese Candlestick](Japanese_Candlestick).
 
 ## AnyStock OHLC Series Adjustment
 

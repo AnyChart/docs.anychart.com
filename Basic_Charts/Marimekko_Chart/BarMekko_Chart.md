@@ -73,7 +73,7 @@ You can create multiseries barmekko chart the same way you always do:
 
 ### Vertical BarMekko Chart
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
 Here is the information about creating Vertical BarMekko Chart:
 

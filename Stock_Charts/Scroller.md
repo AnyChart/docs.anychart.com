@@ -53,7 +53,7 @@ chart.scroller().allowRangeChange(false);
 
 ### Background Series
 
-Scroller can display one of the [supported series](Supported_Series) in the background. It is done pretty much like creating a series in a plot:
+Scroller can display one of the [supported series](Series/Supported_Series) in the background. It is done pretty much like creating a series in a plot:
 
 ```
 // create scroller series with mapped data
@@ -62,7 +62,7 @@ chart.scroller().column(mapping);
 
 {sample}STOCK\_Scroller\_03{sample}
 
-Visit [Supported series](Supported_Series) article to know more about series supported by AnyStock Charts.
+Visit [Supported series](Series/Supported_Series) article to know more about series supported by AnyStock Charts.
 
 ### Scroller Axis
 

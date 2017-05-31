@@ -235,7 +235,7 @@ chart.yAxis(1, {ticks: true, labels: true});
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Labels of series are configured according to the rules of the series type – for example, see the [Maker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
+Labels of series are configured according to the rules of the series type – for example, see the [Marker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
 
 The sample below shows how to create quarter labels:
 

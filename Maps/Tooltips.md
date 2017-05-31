@@ -13,7 +13,7 @@ To learn about Tooltips editing in general please visit [Text Settings](../Appea
 
 ## Tooltips for Map regions
 
-When you attach the data to your map, you can add some extra fields which you may want to show later in the tooltip. Just look through the [Text Formatters article](..\Common_Settings/Text_Formatters) to know more about meta.
+When you attach the data to your map, you can add some extra fields which you may want to show later in the tooltip. Just look through the [Text Formatters article](../Common_Settings/Text_Formatters) to know more about meta.
 
 In the sample below we've got a map of Australia, where each state data contains some extra information which later is shown in tooltips.
 

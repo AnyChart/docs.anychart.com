@@ -102,7 +102,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Appearance_Settings/Strokes_and_Lines).
+More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Graphics/Stroke_Settings).
 
 Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
 
@@ -271,6 +271,6 @@ Sample below has more complex tooltip than snippet above. Click 'Launch in playg
 
 ## Series Types
 
-Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
 
 {sample}BCT\_RadarChart\_14{sample}

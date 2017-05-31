@@ -74,7 +74,7 @@ Here is a sample of a mosaic chart with visual settings configured:
 
 ### Vertical Mosaic Chart
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
 Here is the information about creating Vertical Mosaic Chart:
 

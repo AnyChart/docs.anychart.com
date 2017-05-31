@@ -17,15 +17,15 @@
 
 ## Overview
 
-[Marimekko](http://www.marimekko.com/) is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
+<a href="http://www.marimekko.com/" target="_blank">Marimekko</a> is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
 
-The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a [Marimekko print](https://www.google.ru/search?q=Marimekko+print&tbm=isch). The chart's design encodes two variables (such as percentage of sales and market share).
+The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.mekko.series.Mekko}anychart.core.mekko.series.Mekko{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, value](../../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>YES</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[YES](#stacked_mode)</td></tr>
@@ -64,7 +64,7 @@ This type of marimekko chart is created with {api:anychart#mekko}mekko(){api} co
 chart = anychart.mekko();
 ```
 
-See the basic sample and read more in [Mekko Chart](Mekko_Chart) article.
+See the basic sample and read more in [later in this article](#special_settings).
 
 {sample}BCT\_Mekko\_Chart\_01{sample}
 
@@ -72,13 +72,13 @@ See the basic sample and read more in [Mekko Chart](Mekko_Chart) article.
 
 A Mekko chart with units (sometimes also called *submarine chart* or *olympic chart*) is a two-dimensional stacked chart. As in the [regular stacked chart](../Stacked/Overview), the value axis and the datasheet of this chart are based on absolute values.
 
-This type of marimekko chart is created with {api:anychart#barmekko}mekko(){api} constructor:
+This type of marimekko chart is created with {api:anychart#barmekko}barmekko(){api} constructor:
 
 ```
 chart = anychart.barmekko();
 ```
 
-See the basic sample and read more in [Barmekko Chart](Barmekko_Chart) article.
+See the basic sample and read more in [Barmekko Chart](BarMekko_Chart) article.
 
 {sample}BCT\_BarMekko\_Chart\_01{sample}
 
@@ -92,7 +92,7 @@ This type of marimekko chart is created with {api:anychart#mosaic}mosaic(){api} 
 chart = anychart.mosaic();
 ```
 
-See the basic sample and read more in [Barmekko Chart](Barmekko_Chart) article.
+See the basic sample and read more in [Mosaic Chart](Mosaic_Chart) article.
 
 {sample}BCT\_Mosaic\_Chart\_01{sample}
 
@@ -108,9 +108,9 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 When Mekko chart is created both its scales are put into stacked mode: Y scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X scale to value stacking mode.
 
-Changing Y scale to [value stacked mode](../Stacked/Overview#percent_stacking) but consider using [Barmekko Chart](Barmekko_Chart) in such cases.
+Changing Y scale to [value stacked mode](../Stacked/Overview#percent_stacking) but consider using [Barmekko Chart](BarMekko_Chart) in such cases.
 
-Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Stacked/Percent/Column_Chart).
+Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
 ### Points padding
 
@@ -124,7 +124,7 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.core.mekko.series.Mekko#hoverFill}hoverFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.mekko.series.Mekko#selectFill}selectFill(){api}, {api:anychart.core.mekko.series.Mekko#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#selectStroke}selectStroke(){api} configure the visual settings on select
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+You can learn more from the [Appearance Settings](../../Appearance_Settings) section.
 
 In the sample below, there are two mekko series with some of the appearance settings configured:
 
@@ -155,15 +155,15 @@ series2.selectStroke("#0066cc", 4);
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Vertical Marimekko Chart
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
 Here is the information about creating Vertical Mekko Chart:
 

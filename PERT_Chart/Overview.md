@@ -19,7 +19,7 @@ To learn more about PERT in general, see [Program evaluation and review techniqu
 * [PERT Chart Quick Start](Quick_Start)
 * [PERT Chart Terminology](Terminology)
 * [PERT Chart Data](Data)
-* [PERT Chart Settings](Settings)
+* [PERT Chart Settings](Pert_Chart)
 
 ## Use cases
 

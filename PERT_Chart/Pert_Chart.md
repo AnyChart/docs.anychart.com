@@ -104,7 +104,7 @@ chart.listen("pointsselect", function(e){
 
 ### Appearance
 
-There are two basic classes of elements in PERT: milestones and tasks. Also there is a critical path consists of both tasks and milestones. All of them have visual settings, which can be found in the [Pert Settings Article](Settings).
+There are two basic classes of elements in PERT: milestones and tasks. Also there is a critical path consists of both tasks and milestones.
 
 Learn more about colors and visual appearance of the chart from the [Appearance Settings](../Appearance_Settings) section.
 
@@ -119,7 +119,6 @@ Here is a full list of methods used to configure coloring settings of the tasks 
 * {api:anychart.core.pert.Tasks#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Tasks#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 
 * {api:anychart.core.pert.Tasks#selectFill}selectFill(){api}, {api:anychart.core.pert.Tasks#selectStroke}selectStroke(){api} configure tasks' visual settings on select
-
 
 In the sample below, there is a Pert Chart with some of the appearance settings configured:
 
