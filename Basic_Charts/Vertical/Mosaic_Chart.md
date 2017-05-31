@@ -12,7 +12,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 ## Quick Start
 
-To build a Vertical Mosaic chart, use the {api:anychart#mekko}anychart.mosaic(){api} chart constructor. Then you need to make some adjustments to make it vertical:
+To build a Vertical Mosaic chart, use the {api:anychart#mosaic}anychart.mosaic(){api} chart constructor. Then you need to make some adjustments to make it vertical:
 - set vertical orientation as default for mekko series,
 - swap X and Y axes positions.
 
