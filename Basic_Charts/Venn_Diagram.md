@@ -11,7 +11,7 @@ a diagram representing mathematical or logical sets pictorially as circles or cl
 
 ## Quick Start
 
-To create a Venn diagramm use {api:anychart#venn}waterfall(){api} method, you can pass the data right into the constructor:
+To create a Venn diagramm use {api:anychart#venn}venn()(){api} method, you can pass the data right into the constructor:
 
 ```
 anychart.onDocumentReady(function () {
@@ -49,4 +49,4 @@ Here is a live sample:
 
 ## Samples
 
-You can find a lot of samples of Waterfall charts in [AnyChart Waterfall Charts Gallery](https://www.anychart.com/products/anychart/gallery/Waterfall_Charts/)
+You can find a lot of samples of Venn charts in [AnyChart Venn Charts Gallery](https://www.anychart.com/products/anychart/gallery/Venn_Diagram/)

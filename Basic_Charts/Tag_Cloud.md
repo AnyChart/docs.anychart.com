@@ -47,4 +47,4 @@ Here is a basic Tag cloud chart:
 
 ## Samples
 
-You can find a lot of samples of Waterfall charts in [AnyChart Tag Cloud (Word Cloud) Charts Gallery](https://www.anychart.com/products/anychart/gallery/Tag_Cloud/)
+You can find a lot of samples of Tag Cloud charts in [AnyChart Tag Cloud (Word Cloud) Charts Gallery](https://www.anychart.com/products/anychart/gallery/Tag_Cloud/)
