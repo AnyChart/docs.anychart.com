@@ -53,7 +53,7 @@ To create a Bubble chart, use the {api:anychart#bubble}anychart.bubble(){api} ch
 
 To create a Bubble series explicitly, call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Bubble Chart](Scatter/Bubble_Chart), we create a basic categorized Bubble chart:
+In the following sample, we DO NOT create a [Scatter Bubble Chart](Scatter_Plot/Bubble_Chart), we create a basic categorized Bubble chart:
 
 ```
 // create a categorized chart

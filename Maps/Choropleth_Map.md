@@ -133,7 +133,7 @@ And there's the sample with the colorRange of linear type:
 
 {sample}Maps\_Choropleth\_04{sample}
 
-Read more about [ColorRange](Color_Range).
+Read more about [ColorRange](ColorRange).
 
 ## Advantages and Disadvantages
 

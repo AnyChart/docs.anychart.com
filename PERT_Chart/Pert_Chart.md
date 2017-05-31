@@ -248,7 +248,7 @@ tasks.stroke("#ffab91");
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. There are some special settings for the PERT Chart labels, which can be found in the [PERT Labels Settings](Settings#labels) article.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 Though, besides the colors and spacing, there are some special settings for the tasks' labels. Due to a specific shape, tasks have upper and lower labels, and it is possible to adjust both. Use the {api:anychart.core.pert.Tasks#upperLabels}upperLabels(){api} and {api:anychart.core.pert.Tasks#lowerLabels}lowerLabels(){api} methods for it.
 

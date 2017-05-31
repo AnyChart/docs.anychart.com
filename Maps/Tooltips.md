@@ -9,7 +9,7 @@ Map Tooltips
 
 Tooltips in Maps are quite similar to the usual tooltips you can find and configure for any other chart type, the only differences is that you can use keywords provided by the map source.
 
-To learn about Tooltips editing in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](..\Common_Settings/Text_Formatters).
+To learn about Tooltips editing in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](../Common_Settings/Text_Formatters).
 
 ## Tooltips for Map regions
 

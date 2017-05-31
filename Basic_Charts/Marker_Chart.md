@@ -48,7 +48,7 @@ To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} ch
 
 To create a Marker series explicitly, call the {api:anychart.charts.Cartesian#marker}marker(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter/Marker_Chart), we create a basic categorized Marker chart:
+In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter_Plot/Marker_Chart), we create a basic categorized Marker chart:
 
 ```
 // create a categorized chart
