@@ -11,7 +11,7 @@ a diagram representing mathematical or logical sets pictorially as circles or cl
 
 ## Quick Start
 
-To create a Venn diagramm use {api:anychart#venn}venn()(){api} method, you can pass the data right into the constructor:
+To create a Venn diagramm use {api:anychart#venn}venn(){api} method, you can pass the data right into the constructor:
 
 ```
 anychart.onDocumentReady(function () {
