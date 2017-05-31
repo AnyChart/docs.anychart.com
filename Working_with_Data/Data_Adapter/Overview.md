@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [HTML Tables](#html_tables)
 * [Loading Files](#loading_files)
- * [CSV File](#csv)
+ * [CSV File](#csv_file)
  * [Google Spreadsheet](#google_spreadsheet)
  * [JSON File](#json_file)
  * [XML File](#xml_file)
@@ -54,7 +54,7 @@ See details in [Loading JSON File](Loading_JSON_File) article.
 
 ### XML File
 
-You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadJsonFile}loadXmlFile(){api} method, or deserialize chart from JSON file using the {api:anychart.data#fromXmlFile}fromXmlFile(){api} method:
+You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} method, or deserialize chart from JSON file using the {api:anychart.data#fromXmlFile}fromXmlFile(){api} method:
 
 See details in [Loading XML File](Loading_XML_File) article.
 

@@ -2,12 +2,12 @@
 # Loading XML File
 
 * [Overview](#overview)
-* [Loading File with loadXmlFile method](#loading_file_loadxmlfile_method)
+* [Loading File with loadXmlFile method](#loading_file_with_loadxmlfile_method)
 * [Deserializing from XML File](#deserializing_from_xml)
 
 ## Overview
 
-Ability to [load XML files](#loading_file_loadxmlfile_method) and [deserialize directly from XML files](#deserializing_from_xml) are the features [Data Adapter](Overview) provides.
+Ability to [load XML files](#loading_file_loadxmlfile_method) and [deserialize directly from XML files](#deserializing_from_xml_file) are the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 

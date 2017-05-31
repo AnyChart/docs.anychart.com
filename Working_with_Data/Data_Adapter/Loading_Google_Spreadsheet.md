@@ -65,7 +65,7 @@ anychart.data.loadGoogleSpreadsheet({key: 1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1
 });
 ```
 
-Or you need to specify the unique identifier of the sheet, the only way to figure out the identifier is to proceed to spreadsheet XML that follows [http://schemas.google.com/spreadsheets/2006](http://schemas.google.com/spreadsheets/2006) schema and locate `<id>` tag in `<entry>` tag. For example, for our sample sheet, [https://spreadsheets.google.com/feeds/worksheets/1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU/public/basic](https://spreadsheets.google.com/feeds/worksheets/1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU/public/basic), the `<entry>` for the second sheet looks like this:
+Or you need to specify the unique identifier of the sheet, the only way to figure out the identifier is to proceed to spreadsheet XML that follows **http://schemas.google.com/spreadsheets/2006** schema and locate `<id>` tag in `<entry>` tag. For example, for our sample sheet, [https://spreadsheets.google.com/feeds/worksheets/1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU/public/basic](https://spreadsheets.google.com/feeds/worksheets/1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU/public/basic), the `<entry>` for the second sheet looks like this:
 
 ```
 <entry>

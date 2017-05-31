@@ -2,7 +2,7 @@
 # Loading CSV File
 
 * [Overview](#overview)
-* [loadCsvFile() method](#loadCsvFile_method)
+* [loadCsvFile() method](#loadcsvfile_method)
 * [CSV Settings](#csv_settings)
 
 ## Overview
