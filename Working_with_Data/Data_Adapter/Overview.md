@@ -13,7 +13,7 @@
 
 AnyChart JavaScript charting framework supports several ways of setting data. For the information about this see [Overview](../Overview), [Using Data Sets](../Using_Data_Sets) and [Supported Data Formats](../Supported_Data_Formats) articles - these are things built-in into AnyChart core engine.
 
-Data Adapter is an additional script that can do even more: load [CSV](#csv), [JSON](#json_file) and [XML](#xml_file) files, load [data from HTML Tables](#html_tables) and [Google Spreadsheets](#google_spreadsheet).
+Data Adapter is an additional script that can do even more: load [CSV](#csv_file), [JSON](#json_file) and [XML](#xml_file) files, load [data from HTML Tables](#html_tables) and [Google Spreadsheets](#google_spreadsheet).
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
@@ -54,7 +54,7 @@ See details in [Loading JSON File](Loading_JSON_File) article.
 
 ### XML File
 
-You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} method, or deserialize chart from JSON file using the {api:anychart.data#fromXmlFile}fromXmlFile(){api} method:
+You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} method, or deserialize chart from XML file using the {api:anychart.data#fromXmlFile}fromXmlFile(){api} method:
 
 See details in [Loading XML File](Loading_XML_File) article.
 
