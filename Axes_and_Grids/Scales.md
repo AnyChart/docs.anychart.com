@@ -216,5 +216,21 @@ for (var i = 0; i < yScales.length; i++) {
 }  
 ```
 
+Here is a live sampe:
+
 {sample}AGST\_Scales\_12{sample}
 
+The same can be done with X Scales if needed:
+
+```
+// sync minimums and maximums of the scales
+globalMax = chart.getStat("xScalesMax");
+globalMin = chart.getStat("xScalesMin");
+// get all y scales
+var xScales = chart.getXScales();
+// set the same minimum and maximum
+for (var i = 0; i < xScales.length; i++) {
+   xScales[i].minimum(globalMin);
+   xScales[i].maximum(globalMax);
+}  
+```
