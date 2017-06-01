@@ -1,4 +1,4 @@
-{:index 3}
+{:index 1}
 Resource Chart Quick Start
 ===========
  
@@ -8,7 +8,7 @@ Resource Chart needs no more than a Basic Chart, so all you need to include in y
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js" type="text/javascript"></script>
+    <script src="http://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
 </head>
 ```
 

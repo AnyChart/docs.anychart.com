@@ -13,16 +13,35 @@
     
     chart.timeTrackingMode("activityPerChart");
 
-    // logo adjusting
-    chart.logo().fill("red");
-    chart.logo().cornerType("roundInner");
-    chart.logo().corners(20, 20, 20, 20);
-    chart.logo().overlay(true);
+    // resource list setting
+    resourceList = chart.resourceList();
+    
+    // Get images
+    images = resourceList.images();
+    // Get names
+    names = resourceList.names();
+
+    // images settings
+    images.size(50);
+    images.opacity("70%");
+    images.align("bottom");
+    images.margin().top("30");
+    images.margin().left("10");
+    images.fittingMode("slice");
+    images.borderRadius(0);
+
+    // set resource list width
+    chart.resourceListWidth(150);
+
+    // names settings
+    names.margin(5,0,0,-50);
+    names.fontColor("#01579B");
 
     var dateSet = anychart.data.set([
 {
     "name": "Gym 1",
     "defaultMinutesPerDay": 720,
+    "image": "http://static.anychart.com/images/docs/resourceGym.png",
     "activities": [
         {
             "name": "STEP",
@@ -127,13 +146,14 @@
             "group": "indiviual workouts",
             "start":"2016-06-14", 
             "end": "2016-06-14",
-            "minutesPerDay": 720,
+            "minutesPerDay": 600,
             "fill": "#aaa"
         }
     ]
 },{
     "name": "Aqua Zone",
     "defaultMinutesPerDay": 240,
+    "image": "http://static.anychart.com/images/docs/resourceAqua.png",
     "activities": [
         {
             "name": "WATER AEROBICS",
@@ -171,7 +191,6 @@ return this['activityName'] + "<br><span style=\"color: #ccc\">" + this['activit
     });
 
     chart.pixPerHour(30);
-    //chart.minRowHeight(80);
     chart.currentStartDate("2016-06-10");
 
     chart.container("container").draw();

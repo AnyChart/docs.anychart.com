@@ -12,15 +12,45 @@
     chart.zoomLevel(0);
     
     chart.timeTrackingMode("activityPerChart");
+    // resource list image setting
+    resourceList = chart.resourceList();
 
-    // logo adjusting
-    chart.logo().fill("#D1DBFA");
-    chart.logo().overlay(true);
+    // Get timeLine
+    timeLine = chart.timeLine();    
+    // Get images
+    images = resourceList.images();
+    // Get names
+    names = resourceList.names();
+
+    // timeLine settings
+    timeLine.fill("#D1DBFA");
+    timeLine.fontColor("#01579B");
+    timeLine.holidays().fill("#aaa");
+    timeLine.holidays().fontColor("#000");
+    timeLine.drawBottomLine("false");
+    timeLine.stroke("#fff");
+
+    // images settings
+    images.size(50);
+    images.opacity("70%");
+    images.align("bottom");
+    images.margin().top("30");
+    images.margin().left("10");
+    images.fittingMode("slice");
+    images.borderRadius(0);
+
+    // set resource list width
+    chart.resourceListWidth(150);
+
+    // names settings
+    names.margin(5,0,0,-50);
+    names.fontColor("#01579B");
 
     var dateSet = anychart.data.set([
 {
     "name": "Gym 1",
     "defaultMinutesPerDay": 720,
+    "image": "http://static.anychart.com/images/docs/resourceGym.png",
     "activities": [
         {
             "name": "STEP",
@@ -106,7 +136,7 @@
             "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
-            "name": "BRAZILIAN JIU JITSU ",
+            "name": "BRAZILIAN JIU JITSU",
             "group": "W40 vs W44",
             "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
@@ -132,6 +162,7 @@
 },{
     "name": "Aqua Zone",
     "defaultMinutesPerDay": 240,
+    "image": "http://static.anychart.com/images/docs/resourceAqua.png",
     "activities": [
         {
             "name": "WATER AEROBICS",
@@ -169,6 +200,7 @@ return this['activityName'] + "<br><span style=\"color: #ccc\">" + this['activit
     });
 
     chart.pixPerHour(30);
+    //chart.minRowHeight(80);
     chart.currentStartDate("2016-06-10");
 
     chart.container("container").draw();

@@ -13,7 +13,16 @@ Resource Chart is a great instrument of planning and resource distribution. It h
 <li>resource planning</li>
 </ul>
 
- Resource Chart is rather similar to a Resource Gantt Chart, the only difference between them is in the appearance. The purposes of a Resource Chart are completely the same as those for a Resource Gantt Chart.
+Resource Chart is rather similar to a Resource Gantt Chart, the only difference between them is in the appearance. The purposes of a Resource Chart are completely the same as those for a Resource Gantt Chart.
+
+This section is supposed to give all the information about Resource Charts and its adjusting. The very first article we would recommend to visit is [Quick Start](Quick_Start) - this article explains the basic moments about creating a Resource Chart. 
+
+To learn more about data and its adjusting, look through the [Working with Data](Working_With_Data) article. 
+
+Different modes of working with time and adjusting them is described in the [Time Tracking Mode](Time_Tracking_Mode) article.
+
+The [Visual Appearance](Visual_Appearance) tells about fixing colors, fonts and other visual settings.
+
 
 ## Picture Guide
 
@@ -36,6 +45,6 @@ A Resource Chart consists of:
 
 The following picture demonstrates parts of a Resource Chart.
 
-<img src="https://static.anychart.com/images/resource\_charts/development\_team\_plan.png" style = "width: 830"/>
+<img src="https://static.anychart.com/images/resource\_charts/development\_team\_plan.png" width = "830"/>
 
-Note that not all elements are displayed in the picture. Some of them are abstract and
+Note that not all elements are displayed in the picture. Some of them are abstract and cannot be shown, but still are quite important. 

@@ -23,8 +23,6 @@ There are three special methods for setting the logo appearance. It is possible 
 
 ```
 chart.logo().fill("red");
-chart.logo().cornerType("roundInner");
-chart.logo().corners(20, 20, 20, 20);
 chart.logo().overlay(true);
 ```
 
@@ -33,19 +31,52 @@ chart.logo().overlay(true);
 
 ## Resource parameters list
 
-There is a list of parameters that a resource can have. 
+There is a list of parameters that a Resource List can have. 
+
+- {api:anychart.core.resource.ResourceList#images}images(){api} method is responsible for images settings
 
 - {api:anychart.core.resource.resourceList.ImageSettings#size}size(){api}, {api:anychart.core.resource.resourceList.ImageSettings#borderRadius}borderRadius(){api}, api:anychart.core.resource.resourceList.ImageSettings#opacity}opacity(){api}, {api:anychart.core.resource.resourceList.ImageSettings#align}align(){api}, {api:anychart.core.resource.resourceList.ImageSettings#fittingMode}fittingMode(){api}, {api:anychart.core.resource.resourceList.ImageSettings#margin}margin(){api} methods are used for adjusting the picture settings.
 
+- {api:anychart.core.resource.ResourceList#tags}tags(){api} method is responsible for tags' settings 
+
 - {api:anychart.core.resource.resourceList.TagsSettings#padding}padding(){api} and {api:anychart.core.resource.resourceList.TagsSettings#background}background(){api} methods are used for tags adjusting
+
+- {api:anychart.core.resource.ResourceList#names}names(){api} method is responsible for the resources' names' settings
+- {api:anychart.core.resource.ResourceList#types}types(){api} method is responsible for the resources' types' settings
 
 - {api:anychart.core.resource.resourceList.TextSettings#fontColor}fontColor(){api}, {api:anychart.core.resource.resourceList.TextSettings#fontFamily}fontFamily(){api}, {api:anychart.core.resource.resourceList.TextSettings#fontSize}fontSize(){api} and other text settings are the same for all text elements in AnyChart, as well as name, tags, type, descriptions in Resource Charts. Find more about text editing in the [Text Settings](../Appearance_Settings/Text_Settings) article.
 
-Let's create a sample with resources visual appearance adjusted:
+Let's create a sample with resources visual appearance adjusted. In this sample, let's adjust the font color and the position for the names of the resources, add images and fix them, and set the resource list width:
 
 ```
+// resource list setting
+resourceList = chart.resourceList();
+    
+// Get images
+images = resourceList.images();
+// Get names
+names = resourceList.names();
 
+// images settings
+images.size(50);
+images.opacity("70%");
+images.align("bottom");
+images.margin().top("30");
+images.margin().left("10");
+images.fittingMode("slice");
+images.borderRadius(0);
+
+// set resource list width
+chart.resourceListWidth(150);
+
+// names settings
+names.margin(5,0,0,-50);
+names.fontColor("#01579B");
 ```
+
+{sample}Resource\_Visualization\_02{sample}
+
+There are several methods for Resource List adjusting. 
 
 
 The height of a resource depends on a maximum number of activities this resource has during a day on the chart timeline. This can be performed if the [TimeTracking mode](TimeTracking_Mode) is enabled.
@@ -63,13 +94,24 @@ Use the following methods to adjust the timeline appearance:
 
 - {api:anychart.core.resource.TimeLine#background}{api}, {api:anychart.core.resource.TimeLine#fill}{api} and {api:anychart.core.resource.TimeLine#stroke}{api} methods help to adjust the colors of the timeline.
 
+TimeLine also has all [text settings](../Appearance_Settings/Text_Settings) as well as a Resource List as there are text elements (dates).
+
 Let's create a sample with a timeline adjusted:
 
 ```
+// Get timeLine
+timeLine = chart.timeLine();
 
+// timeLine settings
+timeLine.fill("#D1DBFA");
+timeLine.fontColor("#01579B");
+timeLine.holidays().fill("#aaa");
+timeLine.holidays().fontColor("#000");
+timeLine.drawBottomLine("false");
+timeLine.stroke("#fff");
 ```
 
-{sample}Resource\_Visualization\_02{sample}
+{sample}Resource\_Visualization\_03{sample}
 
 
 ## Grid
@@ -86,11 +128,21 @@ Grid in Resource Charts is the table body. Grid can be adjusted with the followi
 
 - {api:anychart.core.resource.Grid#horizontalStroke}horizontalStroke(){api} and {api:anychart.core.resource.Grid#verticalStroke}verticalStroke(){api} are used for stroke adjusting
 
-```
+- {api:anychart.scales.DateTimeWithCalendar#unitPixSize}unitPixSize(){api} method will set the width of the grid columns.
 
 ```
+// Get grid
+grid = chart.grid();
+// grid settings
+grid.evenFill("#E7ECF0");
+grid.oddFill("#F3F7FA");
+grid.evenHolidayHatchFill("forwardDiagonal");
+grid.oddHolidayHatchFill("forwardDiagonal");
+// set columns width
+chart.xScale().unitPixSize(140);
+```
 
-{sample}Resource\_Visualization\_03{sample}
+{sample}Resource\_Visualization\_04{sample}
 
 
 
