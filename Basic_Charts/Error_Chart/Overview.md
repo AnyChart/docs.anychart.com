@@ -213,7 +213,7 @@ error2.xErrorStroke("black", 0.5);
 
 ## Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
 The following sample shows how to customize labels on a chart with error bars:
 
@@ -229,7 +229,7 @@ series.labels().offsetY(+50);
 
 ## Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 This sample shows how to customize tooltips on a chart with error bars:
 
