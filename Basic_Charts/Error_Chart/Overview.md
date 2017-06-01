@@ -256,7 +256,7 @@ Here is the list of Cartesian chart types that can be combined with error bars:
 * [Jump Line with Error Bars](Jump_Line_Chart)
 * [Line with Error Bars](Line_Chart)
 * [Marker with Error Bars](Marker_Chart)
-* [Spline Area with Error Bars](Spine_Area_Chart)
+* [Spline Area with Error Bars](Spline_Area_Chart)
 * [Spline with Error Bars](Spline_Chart)
 * [Step Area with Error Bars](Step_Area_Chart)
 * [Step Line with Error Bars](Step_Line_Chart)
