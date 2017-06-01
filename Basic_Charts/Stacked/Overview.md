@@ -141,7 +141,7 @@ yScale2.maximum(20);
 yScale2.minimum(0);
 ```
 
-But you can also [sync scales](../../Axes_and_Grids/Scales#scales_synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
+But you can also [sync scales](../../Axes_and_Grids/Scales#synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
 
 ```
 // sync minimums and maximums of the scales
@@ -156,7 +156,7 @@ for (var i = 0; i < yScales.length; i++) {
 }  
 ```
 
-Here is a sample of clustered value stacked column chart with [synced scales](../../Axes_and_Grids/Scales#scales_synchronization):
+Here is a sample of clustered value stacked column chart with [synced scales](../../Axes_and_Grids/Scales#synchronization):
 
 {sample}BCT\_Stacking\_04{sample}
 

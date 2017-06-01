@@ -15,7 +15,7 @@
 * [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
 * [One Scale for Different Charts](#one_scale_for_different_charts)
-* [Scales Synchronization](#scales_synchronization)
+* [Synchronization](#synchronization)
 
 ## Overview
 
@@ -196,7 +196,7 @@ Scale calculates values and in many cases it is very useful to adjust settings o
 
 {sample}AGST\_Scales\_11{sample}
 
-## Scales Synchronization
+## Synchronization
 
 Sometimes you may encounter situations when you need to sync minimums and/or maximums of several scales and you don't want to set exact values [minimum and maximum](#minimum_and_maximum). In such cases you need to use several special methods: {api:anychart.charts.Cartesian#getYScales}getYScales{api} and {api:anychart.charts.Cartesian#getYScales}getXScales{api} - the allow you to get a collection of all scales from the chart, and the
 {api:anychart.core.Chart#getStat}getStat(){api} method that can obtain maximums and minimums of all scales.
