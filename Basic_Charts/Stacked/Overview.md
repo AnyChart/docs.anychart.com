@@ -237,6 +237,6 @@ Here is the list of supported stacked charts:
 Marimekko charts are a special case of stacked charts:
 
 * [Mekko Chart](../Marimekko_Chart/Mekko_Chart)
-* [BarMekko Chart](../Marimekko_Chart/BarMekko_Chartt)
+* [BarMekko Chart](../Marimekko_Chart/BarMekko_Chart)
 * [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart)
 
