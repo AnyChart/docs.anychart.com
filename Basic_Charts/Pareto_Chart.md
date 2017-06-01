@@ -1,4 +1,4 @@
-{:index 1.6}
+{:index 1.61}
 #Pareto Chart
 
 * [Overview](#overview)
