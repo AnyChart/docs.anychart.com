@@ -25,7 +25,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Range Step Area](Vertical/Range_Step_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Range Step Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.6}
 # Heat Map Chart
 
 * [Overview](#overview)

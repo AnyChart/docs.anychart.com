@@ -8,7 +8,7 @@
 
 This article explains how to create a Scatter Bubble chart in AnyChart.
 
-To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). You can also read the [Bubble Chart](../Bubble_Chart) article to learn about other available settings.
+To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). In addition, you can read the [Bubble Chart](../Bubble_Chart) article to learn about other available settings.
 
 ## Quick Start
 

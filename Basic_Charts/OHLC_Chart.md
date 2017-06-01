@@ -1,4 +1,4 @@
-{:index 1.1}
+{:index 1.6}
 # Open-High-Low-Close (OHLC) Chart
 
 * [Overview](#overview)

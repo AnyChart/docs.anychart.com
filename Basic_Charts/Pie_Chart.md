@@ -1,4 +1,4 @@
-{:index 1.1}
+{:index 1.6}
 #Pie Chart
 
 * [Overview](#overview)

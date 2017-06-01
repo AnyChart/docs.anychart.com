@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.6}
 #Line Chart
 
 * [Overview](#overview)
@@ -28,7 +28,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Line](Vertical/Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart/Line_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Line](Polar_Plot/Overview)</td></tr>
 <tr><td>Radar</td><td>[Radar Line](Radar_Plot/Overview)</td></tr>

@@ -28,7 +28,7 @@ This article explains how to create a basic Range Bar chart as well as configure
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Range Bar](Range_Bar_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Range Bar Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>

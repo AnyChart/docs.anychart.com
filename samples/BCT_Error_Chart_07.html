@@ -1,0 +1,83 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      [0.6, 22, 0.5, 105],
+      [1.7, 55, 1, 109],
+      [2.3, 50, 2.4, 133],
+      [2.6, 76, 2.9, 116],
+      [2.7, 64, 2.4, 119],
+      [4, 71, 4.6, 115],
+      [4, 88, 4.1, 117],
+      [4.5, 74, 3.9, 125],
+      [4.9, 83, 5, 128]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: [0], value: [1]});
+    var seriesData_2 = data.mapAs({x: [2], value: [3]});
+
+    // create a chart
+    chart = anychart.scatter();
+
+    // create the first series and set the data
+    var series1 = chart.marker(seriesData_1);
+
+    // create the second series and set the data
+    var series2 = chart.marker(seriesData_2);
+
+    // create error bars on the first series
+    var error1 = series1.error();
+    error1.valueError(8);
+    error1.xError(0.4);
+
+    // configure the appearance of error bars on the first series
+    error1.valueErrorWidth(6);
+    error1.xErrorWidth(0);
+    error1.valueErrorStroke("#6fb6ee", 2);
+    error1.xErrorStroke("#6fb6ee", 2, "2 2", "round");
+
+    // create error bars on the second series
+    var error2 = series2.error(); 
+    error2.valueLowerError(7);
+    error2.valueUpperError(4);
+    error2.xLowerError(0.1);
+    error2.xUpperError(0.2);
+
+    // configure the appearance of error bars on the second series
+    error2.valueErrorWidth(6);
+    error2.xErrorWidth(6);
+    error2.valueErrorStroke("black", 0.5);
+    error2.xErrorStroke("black", 0.5);
+
+    // create major grids and bind them to the X and Y axes
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
+
+    // create minor grids and bind them to the X and Y axes
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
+
+    // set the chart title
+    chart.title("Error Chart: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
