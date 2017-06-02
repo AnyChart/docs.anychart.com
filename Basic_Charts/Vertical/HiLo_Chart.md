@@ -8,7 +8,7 @@
 
 This article explains how to create a Vertical HiLo chart in AnyChart.
 
-To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [Line Chart](../HiLo_Chart) article to learn about other available settings.
+To learn more about vertical charts in general and how to customize them, see [Vertical Charts (Overview)](Overview). You can also read the [HiLo Chart](../HiLo_Chart) article to learn about other available settings.
 
 ## Quick Start
 
