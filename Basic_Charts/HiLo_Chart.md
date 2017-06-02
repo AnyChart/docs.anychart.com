@@ -48,7 +48,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-## Quick Start<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
+## Quick Start
 
 To create a HiLo chart, use the {api:anychart#hilo}anychart.hilo(){api} chart constructor. If you pass the data to this chart constructor, it creates a HiLo series.
 
