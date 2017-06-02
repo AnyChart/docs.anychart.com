@@ -12,9 +12,9 @@
 
 ## Overview
 
-A high-low (HiLo) chart is a chart type used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.
+A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.
 
-HiLo is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart HiLo series are also available in AnyStock – see the [OHLC series in AnyStock](../Stock_Charts/Series/OHLC) article to learn more.
+HiLo is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart HiLo series are also available in AnyStock – see the [HiLo series in AnyStock](../Stock_Charts/Series/HiLo) article to learn more.
 
 This article explains how to create a basic HiLo chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the HiLo chart's characteristics:
 
@@ -35,9 +35,9 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock HiLo](../Stock_Charts/Series/HiLo)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Stick](Stick_Chart)</td></tr>
 <tr><td></td><td>[OHLC](OHLC_Chart)</td></tr>
 <tr><td></td><td>[Japanese Candlestick](Japanese_Candlestick_Chart)</td></tr>
+<tr><td></td><td>[Stick](Stick_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Bar](Range_Bar_Chart)</td></tr>
 <tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
