@@ -34,9 +34,10 @@ This article explains how to create a basic OHLC chart as well as configure sett
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock OHLC](../Stock_Charts/Series/Japanese_Candlestick)</td></tr>
+<tr><td>Stock</td><td>[Stock OHLC](../Stock_Charts/Series/OHLC)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Japanese Candlestick](Japanese_Candlestick_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/ohlc-chart/" target="_blank">Chartopedia: OHLC Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

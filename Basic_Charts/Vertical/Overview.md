@@ -127,6 +127,7 @@ Here is the list of supported vertical charts:
 * [Vertical Bubble](Bubble_Chart)
 * [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
 * [Vertical Jump Line](Jump_Line_Chart)
+* [Vertical HiLo](HiLo_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
 * [Vertical OHLC](OHLC_Chart)
