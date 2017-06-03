@@ -3,7 +3,7 @@
 
 * [Overview](#overview)
 * [Logo](#logo)
-* [Resource parameters list](#resource_parameters_list)
+* [Resource List parameters](#resource_list_parameters)
 * [Timeline](#timeline)
 * [Grid](#grid)
 * [Activity parameters list](#activity_parameters_list)
@@ -22,14 +22,14 @@ Due to specifics of the elements used by this chart, there are some methods unty
 There are three special methods for setting the logo appearance. It is possible to affect the corners with the {api:anychart.core.resource.Logo#cornerType}cornerType(){api} and {api:anychart.core.resource.Logo#corners}corners(){api} methods. The first one is responsible for the corner type and the second is used for adjusting the corner radius. The {api:anychart.core.resource.Logo#overlay}overlay(){api} method is responsible for the logo overlaying other elements.
 
 ```
-chart.logo().fill("red");
+chart.logo().fill("#D1DBFA");
 chart.logo().overlay(true);
 ```
 
 {sample}Resource\_Visualization\_01{sample}
 
 
-## Resource parameters list
+## Resource List parameters
 
 There is a list of parameters that a Resource List can have. 
 
@@ -60,7 +60,6 @@ names = resourceList.names();
 // images settings
 images.size(50);
 images.opacity("70%");
-images.align("bottom");
 images.margin().top("30");
 images.margin().left("10");
 images.fittingMode("slice");
@@ -145,7 +144,6 @@ chart.xScale().unitPixSize(140);
 {sample}Resource\_Visualization\_04{sample}
 
 
-
 ## Activity parameters list
 
 - {api:anychart.core.resource.Activities#fill}fill(){api}, {api:anychart.core.resource.Activities#hatchFill}hatchFill(){api}, {api:anychart.core.resource.Activities#stroke}stroke(){api}, {api:anychart.core.resource.Activities#labels}labels(){api} set the color, fill, hatch fill, and stroke
@@ -153,6 +151,27 @@ chart.xScale().unitPixSize(140);
 - {api:anychart.core.resource.Activities#hoverFill}hoverFill(){api}, {api:anychart.core.resource.Activities#hatchHoverFill}hatchHoverFill(){api}, {api:anychart.core.resource.Activities#hoverStroke}hoverStroke(){api}, {api:anychart.core.resource.Activities#hoverLabels}hoverLabels(){api} configure the visual settings on hover
 
 - {api:anychart.core.resource.Activities#selectFill}selectFill(){api}, {api:anychart.core.resource.Activities#hatchSelectFill}hatchSelectFill(){api}, {api:anychart.core.resource.Activities#hatchSelectFill}hatchSelectFill(){api}, {api:anychart.core.resource.Activities#selectStroke}selectStroke(){api} configure the visual settings on select
+
+Let's configure our sample's activities and try to make them more emphatic.
+
+```    
+// Get activities
+activities = chart.activities();
+
+// activities fills
+activities.fill("#c7b299");
+activities.hoverFill("#ffcc80");
+activities.selectFill("#86614e");
+
+// activites labels settings
+labels = activities.labels();
+selectLabels = activities.selectLabels();
+labels.fontFamily("Georgia");
+labels.fontColor("#000");
+selectLabels.fontColor("#fff");
+```
+
+{sample}Resource\_Visualization\_05{sample}
 
 
 ### Split Activity Feature

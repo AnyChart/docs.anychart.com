@@ -24,7 +24,6 @@
     // images settings
     images.size(50);
     images.opacity("70%");
-    images.align("bottom");
     images.margin().top("30");
     images.margin().left("10");
     images.fittingMode("slice");
@@ -186,7 +185,7 @@
     chart.data(dateSet.mapAs(undefined, {"description": "city"}));
 
     chart.activities().labels().useHtml(true);
-    chart.activities().labels().textFormatter(function() {
+    chart.activities().labels().format(function() {
 return this['activityName'] + "<br><span style=\"color: #ccc\">" + this['activityInfo']['group'] + "</span>";
     });
 

@@ -12,17 +12,9 @@
     chart.zoomLevel(0);
     
     chart.timeTrackingMode("activityPerChart");
-    // resource list image setting
-    resourceList = chart.resourceList();
 
     // Get grid
     grid = chart.grid();
-    // Get timeLine
-    timeLine = chart.timeLine();    
-    // Get images
-    images = resourceList.images();
-    // Get names
-    names = resourceList.names();
 
     // grid settings
     grid.evenFill("#E7ECF0");
@@ -30,37 +22,15 @@
     grid.evenHolidayHatchFill("forwardDiagonal");
     grid.oddHolidayHatchFill("forwardDiagonal");
 
-    // timeLine settings
-    timeLine.fill("#D1DBFA");
-    timeLine.fontColor("#01579B");
-    timeLine.holidays().fill("#aaa");
-    timeLine.holidays().fontColor("#000");
-    timeLine.drawBottomLine("false");
-    timeLine.stroke("#fff");
-
-    // images settings
-    images.size(50);
-    images.opacity("70%");
-    images.align("bottom");
-    images.margin().top("30");
-    images.margin().left("10");
-    images.fittingMode("slice");
-    images.borderRadius(0);
-
     // set resource list width
     chart.resourceListWidth(150);
     // set columns width
     chart.xScale().unitPixSize(140);
 
-    // names settings
-    names.margin(5,0,0,-50);
-    names.fontColor("#01579B");
-
     var dateSet = anychart.data.set([
 {
     "name": "Gym 1",
     "defaultMinutesPerDay": 720,
-    "image": "http://static.anychart.com/images/docs/resourceGym.png",
     "activities": [
         {
             "name": "STEP",
@@ -172,7 +142,6 @@
 },{
     "name": "Aqua Zone",
     "defaultMinutesPerDay": 240,
-    "image": "http://static.anychart.com/images/docs/resourceAqua.png",
     "activities": [
         {
             "name": "WATER AEROBICS",
@@ -205,7 +174,7 @@
     chart.data(dateSet.mapAs(undefined, {"description": "city"}));
 
     chart.activities().labels().useHtml(true);
-    chart.activities().labels().textFormatter(function() {
+    chart.activities().labels().format(function() {
 return this['activityName'] + "<br><span style=\"color: #ccc\">" + this['activityInfo']['group'] + "</span>";
     });
 

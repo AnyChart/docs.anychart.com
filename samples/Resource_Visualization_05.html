@@ -13,9 +13,25 @@
     
     chart.timeTrackingMode("activityPerChart");
 
-    // logo adjusting
-    chart.logo().fill("#D1DBFA");
-    chart.logo().overlay(true);
+    // Get activities
+    activities = chart.activities();
+
+    // activities fills
+    activities.fill("#c7b299");
+    activities.hoverFill("#ffcc80");
+    activities.selectFill("#86614e");
+
+    // activites labels settings
+    labels = activities.labels();
+    selectLabels = activities.selectLabels();
+    labels.fontFamily("Georgia");
+    labels.fontColor("#000");
+    selectLabels.fontColor("#fff");
+
+    // set resource list width
+    chart.resourceListWidth(150);
+    // set columns width
+    chart.xScale().unitPixSize(140);
 
     var dateSet = anychart.data.set([
 {
@@ -106,7 +122,7 @@
             "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
-            "name": "BRAZILIAN JIU JITSU ",
+            "name": "BRAZILIAN JIU JITSU",
             "group": "W40 vs W44",
             "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
@@ -169,6 +185,7 @@ return this['activityName'] + "<br><span style=\"color: #ccc\">" + this['activit
     });
 
     chart.pixPerHour(30);
+    //chart.minRowHeight(80);
     chart.currentStartDate("2016-06-10");
 
     chart.container("container").draw();
