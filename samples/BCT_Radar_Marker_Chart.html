@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: 0.6, value: 22},
+      {x: 1.7, value: 55},
+      {x: 2.3, value: 50},
+      {x: 3.5, value: 80},
+      {x: 3.9, value: 74},
+      {x: 4, value: 68},
+      {x: 4, value: 76},
+      {x: 4.1, value: 84},
+      {x: 4.7, value: 93}
+    ];
+  	
+  	// create a chart
+  	chart = anychart.scatter();
+
+    // create a marker series and set the data
+  	var series = chart.marker(data);
+
+    // create major grids and bind them to the X and Y axes
+    chart.grid(0).axis(chart.xAxis());
+    chart.grid(1).axis(chart.yAxis());
+
+    // create minor grids and bind them to the X and Y axes
+    chart.minorGrid(0).axis(chart.xAxis());
+    chart.minorGrid(1).axis(chart.yAxis());
+
+  	// set the chart title
+  	chart.title("Scatter Marker Chart");
+
+  	// set the container id
+  	chart.container("container");
+
+  	// initiate drawing the chart
+  	chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
