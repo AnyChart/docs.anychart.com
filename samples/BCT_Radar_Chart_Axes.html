@@ -11,49 +11,44 @@
 
     // create data
     var data = [
-      {x: Date.UTC(2000, 01, 01), value: 78},
-      {x: Date.UTC(2001, 06, 11), value: 74},
-      {x: Date.UTC(2002, 02, 25), value: 68},
-      {x: Date.UTC(2003, 07, 21), value: 76},
-      {x: Date.UTC(2004, 08, 08), value: 80},
-      {x: Date.UTC(2005, 04, 15), value: 84},
-      {x: Date.UTC(2006, 03, 19), value: 50},
-      {x: Date.UTC(2007, 11, 05), value: 93},
-      {x: Date.UTC(2008, 04, 22), value: 55}
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876},
+      {x: "I", value: 2187}
     ];
     
     // create a chart
-    chart = anychart.scatter();
+    chart = anychart.radar();
 
-    // create a marker series and set the data
-    var series = chart.marker(data);
+    // create a line series and set the data
+    var series = chart.line(data);
 
-    // set the output date format
-    anychart.format.outputDateFormat("yyyy");
-    
-    // create a date/time scale
-    var dateScale = anychart.scales.dateTime();
+    // configure the appearance of the Y-Axis
+    var yAxis = chart.yAxis();
+    yAxis.stroke({
+      color: "gray",
+      thickness: 2,
+      dash: "10 5"
+    });  
 
-    // configure major and minor ticks on the date/time scale
-    dateScale.ticks().interval(1);
-    dateScale.minorTicks().interval(0, 2);
+    // configure the appearance of the X-Axis
+    var xAxis = chart.xAxis();
+    xAxis.stroke({
+      color: "#00cc99",
+      thickness: 4,
+    });  
 
-    // set the date/time as the X-scale
-    chart.xScale(dateScale);
-
-    // disable tooltips
-    series.tooltip(false);
-
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
-
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // invert the Y-scale
+    var yScale = chart.yScale();
+    yScale.inverted(true);
 
     // set the chart title
-    chart.title("Scatter Plot: Date/Time Scale");
+    chart.title("Radar Plot: Axes and Scales");
 
     // set the container id
     chart.container("container");

@@ -11,38 +11,38 @@
 
     // create data for the first series
     var data_1 = [
-    {x: "Product A", value: 1222},
-    {x: "Product B", value: 2431},
-    {x: "Product C", value: 3624},
-    {x: "Product D", value: 5243},
-    {x: "Product E", value: 6813},
-    {x: "Product F", value: 5321},
-    {x: "Product G", value: 1567},
-    {x: "Product H", value: 3876},
-    {x: "Product I", value: 2187}
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876},
+      {x: "I", value: 2187}
     ];
 
     // create data for the second series
     var data_2 = [
-    {x: "Product A", value: 722},
-    {x: "Product B", value: 1431},
-    {x: "Product C", value: 1624},
-    {x: "Product D", value: 1243},
-    {x: "Product E", value: 1813},
-    {x: "Product F", value: 1321},
-    {x: "Product G", value: 567},
-    {x: "Product H", value: 1876},
-    {x: "Product I", value: 1187}
+      {x: "A", value: 722},
+      {x: "B", value: 1431},
+      {x: "C", value: 1624},
+      {x: "D", value: 1243},
+      {x: "E", value: 1813},
+      {x: "F", value: 1321},
+      {x: "G", value: 567},
+      {x: "H", value: 1876},
+      {x: "I", value: 1187}
     ];
 
     // create a chart
-    chart = anychart.radat();
+    chart = anychart.radar();
 
     // create the first series (line) and set the data
     var series1 = chart.line(data_1);
 
     // create the second series (marker) and set the data
-    var series2 = chart.marker(data_2);
+    var series2 = chart.area(data_2);
 
     // set the chart title
     chart.title("Radar Plot: Basic Sample");

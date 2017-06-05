@@ -9,70 +9,41 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // create data
-  var data = [
-    {x: 0.6, value: 22},
-    {x: 1.7, value: 55},
-    {x: 2.3, value: 50},
-    {x: 3.5, value: 80},
-    {x: 3.9, value: 74},
-    {x: 4, value: 68},
-    {x: 4, value: 76},
-    {x: 4.1, value: 84},
-    {x: 4.7, value: 93}
-  ];
+    // create data
+    var data = [
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876},
+      {x: "I", value: 2187}
+    ];
     
-  // create a chart
-  chart = anychart.scatter();
+    // create a chart
+    chart = anychart.radar();
 
-  // create a marker series and set the data
-  var series = chart.marker(data);
+    // create a line series and set the data
+    var series = chart.line(data);
 
-  // access the annotations() object of the chart to work with annotations
-  var controller = chart.annotations();
+    // set the chart title
+    chart.title("Radar Plot: Grids...");
 
-  // create an ellipse annotation
-  var ellipse = controller.ellipse({
-      xAnchor: "1.5",
-      valueAnchor: 45,
-      secondXAnchor: "2.6",
-      secondValueAnchor: 62,
-      fill: {opacity: 0},
-      stroke: "2 red"
-  });
+    var grid = chart.grid(0);
+    // set the layout type
+    grid.layout("circuit");
+    // set the fill of odd-numbered grids
+    grid.oddFill("#33ffcc", 0.1);
+    // set the fill of even-numbered grids
+    grid.evenFill("#3399ff", 0.1);
 
-  // create a rectangle annotation
-  var rectangle = controller.rectangle({
-      xAnchor: "3.3",
-      valueAnchor: 64,
-      secondXAnchor: "4.4",
-      secondValueAnchor: 88,
-      fill: {opacity: 0},
-      stroke: "2 red"
-  });
+    // set the container id
+    chart.container("container");
 
-  // disable interactivity for the ellipse annotation
-  ellipse.allowEdit(false);
-
-  // disable interactivity for the rectangle annotation
-  rectangle.allowEdit(false);
-
-  // create major grids and bind them to the X and Y axes
-  chart.grid(0).axis(chart.xAxis());
-  chart.grid(1).axis(chart.yAxis());
-
-  // create minor grids and bind them to the X and Y axes
-  chart.minorGrid(0).axis(chart.xAxis());
-  chart.minorGrid(1).axis(chart.yAxis());
-
-  // set the chart title
-  chart.title("Scatter Plot: Annotations");
-
-  // set the container id
-  chart.container("container");
-
-  // initiate drawing the chart
-  chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

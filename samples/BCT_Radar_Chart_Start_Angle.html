@@ -11,41 +11,38 @@
 
     // create data
     var data = [
-      {x: 0.6, value: 22},
-      {x: 1.7, value: 55},
-      {x: 2.3, value: 50},
-      {x: 3.5, value: 80},
-      {x: 3.9, value: 74},
-      {x: 4, value: 68},
-      {x: 4, value: 76},
-      {x: 4.1, value: 84},
-      {x: 4.7, value: 93}
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876},
+      {x: "I", value: 2187}
     ];
     
-    // create a chart
-    chart = anychart.scatter();
+    // create a stage
+    stage = anychart.graphics.create("container");
 
-    // create a marker series and set the data
-    var series = chart.marker(data);
+    // set the position and data for the first chart
+    var radar1 = anychart.radar(data);
+    radar1.title("Start Angle: Default (0°)");
+    radar1.bounds(0, 0, "50%", "100%");
+    // initiate drawing the chart
+    radar1.container(stage).draw();
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
-
-    // configure the visual settings of major grids
-    chart.grid(0).stroke({color: "#85adad", thickness: 0.7});
-    chart.grid(1).stroke({color: "#85adad", thickness: 0.7});
-
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
-
-    // configure the visual settings of minor grids
-    chart.minorGrid(0).stroke({color: "#85adad", thickness: 0.3, dash: 5});
-    chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
+    // set the position and data for the second chart
+    var radar2 = anychart.radar(data);
+    radar2.title("Start Angle: 90°");
+    radar2.bounds("50%", 0, "50%", "100%");
+    // set the start angle
+    radar2.startAngle(90);
+    // initiate drawing the chart
+    radar2.container(stage).draw();    
 
     // set the chart title
-    chart.title("Scatter Plot: Grids");
+    chart.title("Radar Plot: Start Angle");
 
     // set the container id
     chart.container("container");

@@ -11,39 +11,31 @@
 
     // create data
     var data = [
-      {x: 0.6, value: 22},
-      {x: 1.7, value: 55},
-      {x: 2.3, value: 50},
-      {x: 3.5, value: 80},
-      {x: 3.9, value: 74},
-      {x: 4, value: 68},
-      {x: 4, value: 76},
-      {x: 4.1, value: 84},
-      {x: 4.7, value: 93}
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876},
+      {x: "I", value: 2187}
     ];
-  	
-  	// create a chart
-  	chart = anychart.scatter();
+    
+    // create a chart
+    chart = anychart.radar();
 
     // create a marker series and set the data
-  	var series = chart.marker(data);
+    var series = chart.marker(data);
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
+    // set the chart title
+    chart.title("Radar Marker Chart");
 
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // set the container id
+    chart.container("container");
 
-  	// set the chart title
-  	chart.title("Scatter Marker Chart");
-
-  	// set the container id
-  	chart.container("container");
-
-  	// initiate drawing the chart
-  	chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
