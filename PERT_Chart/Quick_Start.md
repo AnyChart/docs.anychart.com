@@ -1,8 +1,10 @@
 {:index 1}
-PERT Chart Quick Start
-===========
+# PERT Chart Quick Start
  
 ## Getting started with PERT Chart
+
+To get started with PERT Chart follow these simple steps and you will get your first web PERT chart in a minute.
+
 ###1. Include PERT Chart into Your Web Page
 Include the JavaScript file in the `<head>` section of your web page – visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below:
 

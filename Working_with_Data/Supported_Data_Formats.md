@@ -1,5 +1,5 @@
 {:index 1}
-Supported Data Formats
+# Supported Data Formats
 
 * [Introduction](#introduction)
 * [JavaScript API](#javascript_api)

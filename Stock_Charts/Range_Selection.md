@@ -1,6 +1,6 @@
 {:index 7.1}
 
-#Range Selection UI
+# Range Selection UI
 
 * [Overview](#overview)
 * [Add to a chart](#add_to_a_chart)
@@ -15,7 +15,7 @@
 
 ## Overview
 
-AnyStock provides a lot of features and tools to a chart viewer to make the working process rather comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](Scroller) article. 
+Range Selection UI is on of the great chart navigation features AnyStock provides to a chart viewer to make the data mining process comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](Scroller) article. 
 
 **Range Selector** helps to use scroller by providing a set of buttons to select certain periods of time.
 

@@ -1,8 +1,9 @@
 {:index 1}
-AnyMap Quick Start
-===========
+# AnyMap Quick Start
   
 ## Getting started with Maps
+
+To get started with AnyMap follow these simple steps and you will get your first web html5 ready geo map in a minute.
 
 ##1. Include AnyMap into Your Web Page
 

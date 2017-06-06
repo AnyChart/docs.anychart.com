@@ -1,5 +1,5 @@
 {:index 3}
-Data Grouping
+# Data Grouping
 
 * [Overview](#overview)
 * [Settings](#settings)
