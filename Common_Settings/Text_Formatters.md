@@ -635,7 +635,7 @@ labels_2.format(function(){
 
 This method is to be used when you want to obtain various statistical information from a chart. Read more about this in [Statistics](Statistics) article.
 
-Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api} method used in a Pie chart.
+Here is a sample of the {api:anychart.format.Context#getStat}getStat(){api} method used in a Pie chart.
 
 ```
 // format
