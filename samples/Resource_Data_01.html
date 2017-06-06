@@ -11,287 +11,53 @@
     chart = anychart.resource();
     chart.zoomLevel(0);
     
-    chart.timeTrackingMode('activityPerChart');
+    chart.timeTrackingMode("activityPerChart");
 
-    var dateSet = anychart.data.set([
+    // set resource list width
+    chart.resourceListWidth(300);
+    // set columns width
+    chart.xScale().unitPixSize(140);
+
+    dataSet = anychart.data.set([
 {
-    "name": "Gym 1",
-    "defaultMinutesPerDay": 720,
-    "activities": [
-        {
-            "name": "STEP",
-            "group": "Group A",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "ZUMBA",
-            "group": "Group E",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "STEP",
-            "group": "Group C",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "AEROBICS",
-            "group": "Group F",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": " ",
-            "group": "individual lessons time",
-            "start": '2016-06-10',
-            "end": '2016-06-16',
-            "fill": "#aaa",
-            "minutesPerDay": 120
-        },
-        {
-            "name": "SWEAT! X",
-            "group": "WE vs RD",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "HOT IRON",
-            "group": "W40 vs W44",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "ZUMBA",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "SWEAT! X",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        }
-    ]
+    "name": "Developer 1",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "The leading developer in the office",
+    "type": "develop",
+    "tags": ["developer", "office worker", "manager", "js", "c++", "python"],
+    "activities": []
 },{
-    "name": "Gym 2",
-    "defaultMinutesPerDay": 720,
-    "activities": [
-        {
-            "name": "YOGA",
-            "group": "Group A",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "YOGA",
-            "group": "Group E",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "STRETCHING",
-            "group": "Group C",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CI",
-            "group": "Group F",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "YOGA",
-            "group": "YOGA",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "PILATES",
-            "group": "PILATES",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "STRETCHING",
-            "group": "WE vs RD",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CI",
-            "group": "W40 vs W44",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "YOGA",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "PILATES",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        }
-    ]
+    "name": "Developer 2",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "A remote developer",
+    "type": "develop",
+    "tags": ["developer", "remote worker", "js", "python"],
+    "activities": []
 },{
-    "name": "Dance Hall",
-    "defaultMinutesPerDay": 720,
-    "activities": [
-        {
-            "name": "BALLET CLASSICS",
-            "group": "Group A",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CONTEMP",
-            "group": "Group E",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CONTEMP",
-            "group": "Group C",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "BALLET CLASSICS",
-            "group": "Group F",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "SAMBA",
-            "group": "",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "",
-            "group": "",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "fill": "#aaa",
-            "minutesPerDay": 60
-        },
-        {
-            "name": "BALLET CLASSICS",
-            "group": "WE vs RD",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "BACHATA",
-            "group": "W40 vs W44",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CONTEMP",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        },
-        {
-            "name": "CONTEMP",
-            "group": "W49 vs W50",
-            "start": '2016-06-10',
-            "end": '2016-06-11',
-            "minutesPerDay": 60
-        }
-    ]
-},{
-    "name": "Gym 3",
-    "defaultMinutesPerDay": 360,
-    "activities": [
-        {
-            "name": "FREESTYLE CYCLE",
-            "group": "Group A",
-            "start": '2016-06-10',
-            "end": '2016-06-10',
-            "minutesPerDay": 120
-        },
-        {
-            "name": "FIGHT CLUB",
-            "group": "Group E",
-            "start": '2016-06-10',
-            "end": '2016-06-10',
-            "minutesPerDay": 120
-        },
-        {
-            "name": "STAGING DANCE",
-            "group": "Group C",
-            "start": '2016-06-10',
-            "end": '2016-06-16',
-            "minutesPerDay": 120
-        }
-    ]
-},{
-    "name": "Aqua Zone",
-    "defaultMinutesPerDay": 240,
-    "activities": [
-        {
-            "name": "WATER AEROBICS",
-            "start": '2016-06-10',
-            "end": '2016-06-10',
-            "minutesPerDay": 120
-        },
-        {
-            "name": "SWIM CAMP",
-            "start": '2016-06-10',
-            "end": '2016-06-10',
-            "minutesPerDay": 120
-        }
-    ]
+    "name": "Tester",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "One of the beta-testers in the office",
+    "type": "test",
+    "tags": ["tester", "qa", "wtf man"],
+    "activities": []
 },
     ]);
 
-    chart.data(dateSet.mapAs(undefined, {'description': 'city'}));
+    chart.data(dataSet.mapAs(undefined, {"description": "city"}));
 
     chart.activities().labels().useHtml(true);
-    chart.activities().labels().textFormatter(function() {
-return this['activityName'] + '<br><span style="color: #ccc">' + this['activityInfo']['group'] + '</span>';
+    chart.activities().labels().format(function() {
+        return this['activityName'];
     });
 
     chart.pixPerHour(30);
-    //chart.minRowHeight(80);
-    chart.currentStartDate('2016-06-10');
+    chart.minRowHeight(150);
+    images = chart.resourceList().images();
+    images.size(50);
+    images.borderRadius(0);
+    chart.currentStartDate("2016-06-10");
 
-    chart.container('container').draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

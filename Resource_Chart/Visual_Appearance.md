@@ -7,6 +7,8 @@
 * [Timeline](#timeline)
 * [Grid](#grid)
 * [Activity parameters list](#activity_parameters_list)
+ * [Split activity feature](#split_activity_feature)
+* [Conflict parameters](#conflict_parameters)
 * [Scrollers](#scrollers)
  * [Vertical](#vertical)
  * [Horizontal](#horizontal)
@@ -176,11 +178,49 @@ selectLabels.fontColor("#fff");
 
 ### Split Activity Feature
 
-There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected.
+There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. Another interpretation of a split activity is a repeating activity, which has several time periods set.
+
+The sample we are working with has a couple of activities of this type:
+
+```
+{
+	"name": " ",
+    "group": "individual lessons time",
+    "intervals": [{"start":"2016-06-10", "end": "2016-06-10", "minutesPerDay": 120}, {"start": "2016-06-12", "end": "2016-06-12", "minutesPerDay": 120}]
+},
+{
+	"name": " ",
+    "group": "individual lessons time",
+    "intervals": [{"start":"2016-06-11", "end": "2016-06-11", "minutesPerDay": 120}, {"start": "2016-06-13", "end": "2016-06-13", "minutesPerDay": 120}, {"start": "2016-06-15", "end": "2016-06-15", "minutesPerDay": 120}]
+}
+```
+
+Note there are no special methods for split activities, so the only way to adjust any visual settings for those is to use the dataset:
+
+```
+{
+    "name": "individual lessons time",
+    "intervals": [{"start":"2016-06-11", "end": "2016-06-11", "minutesPerDay": 120}, {"start": "2016-06-13", "end": "2016-06-13", "minutesPerDay": 120}, {"start": "2016-06-15", "end": "2016-06-15", "minutesPerDay": 120}],
+    "fill": "#e6ecff",
+    "hoverFill": "#e6ecff",
+    "selectFill": "#ccd8ff",
+    "hatchFill": "forwardDiagonal",
+    "hoverHatchFill": "backwardDiagonal",
+    "selectHatchFill": "diagonalCross",         
+    "label": {
+        "fontColor": "#000055",
+        "textWrap": "byWord",
+        "hAlign": "center"
+    }
+},
+```
+
+{sample}Resource\_Visualization\_06{sample}
+
 
 ## Conflict parameters
 
-Conflict is a feature that creates itself in case there are two or more activities set for one resource at the same time. It looks like a red 
+Conflict is a feature that creates itself in case there are two or more activities set for one resource at the same time. It looks like a red line
 
 <table>
 <tr>
@@ -197,3 +237,20 @@ Conflict is a feature that creates itself in case there are two or more activiti
 </tr>
 </table>
 
+```
+```
+
+{sample}Resource\_Visualization\_07{sample}
+
+
+## Scrollers
+
+### Vertical 
+
+### Horizontal
+
+
+## Overlay
+
+
+## Appearance settings from Data

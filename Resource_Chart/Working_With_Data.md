@@ -7,6 +7,7 @@
 * [Activity](#activity)
  * [Activity parameters list](#activity_parameters_list)
  * [Split Activity Feature](#split_activity_feature)
+* [Adding custom parameters](#adding_custom_parameters)
 
 ## Overview
 
@@ -31,7 +32,36 @@ There is a list of paramters that a resource can have.
 - tags
 - activities
 
-Let's create a sample with
+Let's create a sample with several resources and their parameters adjusted as necessary.
+
+```
+dataSet = anychart.data.set([
+{
+    "name": "Developer 1",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "The leading developer in the office",
+    "type": "develop",
+    "tags": ["developer", "office worker", "manager", "js", "c++", "python"],
+    "activities": []
+},{
+    "name": "Developer 2",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "A remote developer",
+    "type": "develop",
+    "tags": ["developer", "remote worker", "js", "python"],
+    "activities": []
+},{
+    "name": "Tester",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "One of the beta-testers in the office",
+    "type": "test",
+    "tags": ["tester", "qa", "wtf man"],
+    "activities": []
+},
+]);
+```
+
+{sample}Resource\_Data\_01{sample}
 
 There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visual_Appearance) article.
 
@@ -57,8 +87,19 @@ Intervals have their own parameters
 - end
 - totalMinutes/minutesPerDay
 
+Now, let's edit our sample from above and add several activities with the parameters given above:
+
+```
+```
+
+{sample}Resource\_Data\_02{sample}
+
+
 There are some other settings responsible for the elements' appearance, which are all described in the [Visualization](Visual_Appearance) article.
 
 ### Split Activity Feature
 
 There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful when it is necessary to demonstrate the activity's complexity. 
+
+
+## Adding custom parameters

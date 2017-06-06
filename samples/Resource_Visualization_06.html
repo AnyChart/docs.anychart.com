@@ -1,0 +1,183 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function(){
+    chart = anychart.resource();
+    chart.zoomLevel(0);
+    
+    chart.timeTrackingMode("activityPerChart");
+
+    // set resource list width
+    chart.resourceListWidth(150);
+    // set columns width
+    chart.xScale().unitPixSize(140);
+
+    var dateSet = anychart.data.set([
+{
+    "name": "Gym 1",
+    "defaultMinutesPerDay": 720,
+    "activities": [
+        {
+            "name": "STEP",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "ZUMBA",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "STEP",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "AEROBICS",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "individual lessons time",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10", "minutesPerDay": 120}, {"start": "2016-06-12", "end": "2016-06-12", 
+            "minutesPerDay": 120}],
+            "fill": "#e6ecff",
+            "hoverFill": "#e6ecff",
+            "selectFill": "#ccd8ff",
+            "hatchFill": "forwardDiagonal",
+            "hoverHatchFill": "backwardDiagonal",
+            "selectHatchFill": "diagonalCross",         
+            "label": {
+                "fontColor": "#000055",
+                "textWrap": "byWord",
+                "hAlign": "center"
+            }
+        },
+        {
+            "name": "SWEAT! X",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "HOT IRON",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "ZUMBA",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+        {
+            "name": "SWEAT! X",
+            "intervals": [{"start":"2016-06-10", "end": "2016-06-10"}, {"start": "2016-06-12", "end": "2016-06-12"}]
+        },
+
+
+
+        {
+            "name": "REPS & REVS",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+            
+        },
+        {
+            "name": "EXTREME",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "META BURN",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "individual lessons time",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11", "minutesPerDay": 120}, {"start": "2016-06-13", "end": "2016-06-13", 
+            "minutesPerDay": 120}, {"start": "2016-06-15", "end": "2016-06-15", "minutesPerDay": 120}],
+            "fill": "#e6ecff",
+            "hoverFill": "#e6ecff",
+            "selectFill": "#ccd8ff",
+            "hatchFill": "forwardDiagonal",
+            "hoverHatchFill": "backwardDiagonal",
+            "selectHatchFill": "diagonalCross",            
+            "label": {
+                "fontColor": "#000055",
+                "textWrap": "byWord",
+                "hAlign": "center"
+            }
+        },
+        {
+            "name": "AEROBICS",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "AEROBICS",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "BRAZILIAN JIU JITSU",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "TRX",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "CORE FOCUS",
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+        },
+        {
+            "name": "indiviual workouts",
+            "start":"2016-06-14", 
+            "end": "2016-06-14",
+            "minutesPerDay": 600,
+            "fill": "#aaa"
+        }
+    ]
+},{
+    "name": "Aqua Zone",
+    "defaultMinutesPerDay": 240,
+    "activities": [
+        {
+            "name": "WATER AEROBICS",
+            "start": "2016-06-10",
+            "end": "2016-06-10",
+            "minutesPerDay": 120
+        },
+        {
+            "name": "SWIM CAMP",
+            "start": "2016-06-10",
+            "end": "2016-06-10",
+            "minutesPerDay": 120
+        },
+        {
+            "name": "WATER AEROBICS",
+            "start": "2016-06-14",
+            "end": "2016-06-14",
+            "minutesPerDay": 120
+        },
+        {
+            "name": "SWIM CAMP",
+            "start": "2016-06-14",
+            "end": "2016-06-14",
+            "minutesPerDay": 120
+        }
+    ]
+},
+    ]);
+
+    chart.data(dateSet.mapAs(undefined, {"description": "city"}));
+
+    chart.activities().labels().useHtml(true);
+    chart.activities().labels().format(function() {
+        return this['activityName'];
+    });
+
+    chart.pixPerHour(30);
+    //chart.minRowHeight(80);
+    chart.currentStartDate("2016-06-10");
+
+    chart.container("container").draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
