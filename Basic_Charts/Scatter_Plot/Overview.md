@@ -98,7 +98,7 @@ chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 
 Scatter charts are typically used with date/time scales – to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
 
-In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.anychart.charts.Scatter#xScale}xScale(){api} method):
+In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.charts.Scatter#xScale}xScale(){api} method):
 
 ```
 // create a date/time scale

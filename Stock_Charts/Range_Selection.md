@@ -85,7 +85,7 @@ rangePicker.render("rangepickerContainer");
 
 ### Customizing preset periods
 
-To customize preset periods you need to access {api:api:anychart.ui.RangeSelector#ranges}ranges(){api} array and change the fields you want to change or remove items you don't want to see. Each element of this array is an object of {api:anychart.ui.RangeSelector.Range}Range{api} type and contains the following fields:
+To customize preset periods you need to access {api:anychart.ui.RangeSelector#ranges}ranges(){api} array and change the fields you want to change or remove items you don't want to see. Each element of this array is an object of {api:anychart.ui.RangeSelector.Range}Range{api} type and contains the following fields:
 
 <table>
 <tr>

@@ -557,9 +557,9 @@ labels.format(function(){
 
 {sample}CS\_format\_07{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api}.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.format.Context#getData}getData(){api}.
 
-Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} method.
+Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.format.Context#getData}getData(){api} method.
 
 ```
 // map data for series
