@@ -61,7 +61,7 @@ Example:
 
 ###See the result
 
-After all these steps you should have the following result. You can launch and explore this example further [here](https://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
+After all these steps you should have the following result. You can launch and explore this example further {pg:/docs/samples/quick_start_pie-plain}here{pg}.
 
 {sample}quick\_start\_pie{sample}
 
