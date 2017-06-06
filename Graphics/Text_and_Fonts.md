@@ -95,12 +95,13 @@ If you want to use a custom font in your chart, use one of the services providin
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
 ```
 
+and then:
+
 ```
 font-family: 'Dancing Script', cursive;
 ```
 
 {sample :width 832 :height 120}GFX\_Basic\_Text\_06{sample}
-
 
 ## Multiline
 
@@ -127,7 +128,7 @@ text2.lineHeight(20);
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_07{sample}
 
-# Wrap
+## Wrap
 
 There are two word wrap modes: by letter and by word. Choose one depending on your visualization needs, one is more predictable, another one is more natural:
 
@@ -138,4 +139,3 @@ There are two word wrap modes: by letter and by word. Choose one depending on yo
 ### Wrap by Letter
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
-

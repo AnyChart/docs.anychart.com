@@ -15,7 +15,7 @@ GraphicsJS has one the most powerful line drawing features among SVG/VML based g
 
 Do not invoke class constructor directly. Use {api:anychart.graphics.vector.Stage#path}stage.path(){api}, {api:anychart.graphics.vector.Layer#path}layer.path(){api} or {api:anychart.graphics#path}anychart.graphics.path(){api} instead:
 
-# Methods
+## Methods
 
 <table>
 <tr><th>Method</th><th>Description</th></tr>
