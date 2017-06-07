@@ -63,7 +63,7 @@ Example:
 
 ### See the result
 
-After all these steps you should have the following result. Launch and explore {pg:/docs/samples/quick\_start\_pie-plain}basic AnyChart chart{pg} or see and launch it below:
+After all these steps you should have the following result. Launch and explore {pg:docs/samples/quick_start_pie-plain}basic AnyChart chart{pg} or see and launch it below:
 
 {sample}quick\_start\_pie{sample}
 
