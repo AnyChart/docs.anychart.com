@@ -19,6 +19,9 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<th>Technical Indicator</th>
 		</tr>
 		<tr>
+			<td>[Accumulation Distribution Line](Accumulation\_Distribution\_Line\_\(ADL\))</td>
+		</tr>
+		<tr>
 			<td>[Adaptive Moving Average](Adaptive_Moving_Average_\(AMA\))</td>
 		</tr>
 		<tr>
@@ -35,7 +38,19 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 		</tr>
 		<tr>
 			<td>[Bollinger Bands Width](Bollinger_Bands_Width)</td>
-		</tr>		
+		</tr>
+		<tr>
+			<td>[Chaikin Money Flow](Chaikin\_Money\_Flow\_\(CMF\))</td>
+		</tr>
+		<tr>
+			<td>[Chaikin Oscillator](Chaikin\_Oscillator\_\(CHO\))</td>
+		</tr>
+		<tr>
+			<td>[Commodity Channel Index](Commodity\_Channel\_Index\_\(CCI\))</td>
+		</tr>
+		<tr>
+			<td>[Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\))</td>
+		</tr>
 		<tr>
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 		</tr>
