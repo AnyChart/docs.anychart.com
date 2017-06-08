@@ -87,9 +87,22 @@ Intervals have their own parameters
 - end
 - totalMinutes/minutesPerDay
 
-Now, let's edit our sample from above and add several activities with the parameters given above:
+Now, let's edit our sample from above and add several activities with the adjusted parameters given above:
 
 ```
+"activities": [
+{
+    "name": "Task 1",
+    "start": "2016-06-10",
+    "end": "2016-06-12",
+    "totalMinutes": "1200"
+},{
+    "name": "Task 2",
+    "start": "2016-06-12",
+    "end": "2016-06-15",
+    "minutesPerDay": "240"
+}
+]
 ```
 
 {sample}Resource\_Data\_02{sample}
@@ -101,5 +114,72 @@ There are some other settings responsible for the elements' appearance, which ar
 
 There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful when it is necessary to demonstrate the activity's complexity. 
 
+```
+"activities": [
+{
+    "name": "Task 3",
+    "intervals": [
+        {
+            "start": "2016-06-10",
+            "end": "2016-06-11",
+            "totalMinutes": "480"
+        },
+        {
+            "start": "2016-06-12",
+            "end": "2016-06-14",
+            "totalMinutes": "1080"
+        },
+        {
+            "start": "2016-06-15",
+            "end": "2016-06-16",
+            "totalMinutes": "720"
+        }
+    ]
+},{
+    "name": "Task 4",
+    "intervals": [
+        {
+            "start": "2016-06-13",
+            "end": "2016-06-17",
+            "minutesPerDay": "120"
+        },
+        {
+            "start": "2016-06-15",
+            "end": "2016-06-17",
+            "minutesPerDay": "120"
+        }
+    ]
+}
+]
+```
+
+{sample}Resource\_Data\_03{sample}
+
 
 ## Adding custom parameters
+
+In some cases, it might be necessary to display more information than the standard data fields are able to transfer. It is possible to create custom data fields and adjust them to be displayed on the chart correctly.
+
+Let's add a "group" and a "priority" fields to the activities of the sample created above. This field will designate an affiliation of a task to a some group and the priority of the task resolving.
+
+```
+{
+    "name": "Task 1",
+    "group": "developer tasks",
+    "priority": "high",
+    "start": "2016-06-10",
+    "end": "2016-06-12",
+    "totalMinutes": "1200"
+}
+```
+
+To display the value of this field, it is necessary to adjust the labels:
+
+```
+// display the groups and priorities (custom fields)
+chart.activities().labels().format(function() {
+    return this['activityName'] + "<br><span style=\"color: #ccc\">Group: " + this['activityInfo']['group'] + "</span>" + "<br><span style=\"color: #ccc\">Priority: " + this['activityInfo']['priority'] + "</span>";
+});
+```
+
+{sample}Resource\_Data\_04{sample}

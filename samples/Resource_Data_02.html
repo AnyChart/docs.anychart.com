@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function(){
+    chart = anychart.resource();
+    chart.zoomLevel(0);
+    
+    chart.timeTrackingMode("activityPerResource");
+
+    // set resource list width
+    chart.resourceListWidth(300);
+    // set columns width
+    chart.xScale().unitPixSize(140);
+
+    dataSet = anychart.data.set([
+{
+    "name": "Developer 1",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "The leading developer in the office",
+    "type": "develop",
+    "tags": ["developer", "office worker", "manager", "js", "c++", "python"],
+    "activities": [
+        {
+            "name": "Task 1",
+            "start": "2016-06-10",
+            "end": "2016-06-12",
+            "totalMinutes": "1200"
+        },{
+            "name": "Task 2",
+            "start": "2016-06-12",
+            "end": "2016-06-15",
+            "minutesPerDay": "240"
+        }
+    ]
+},{
+    "name": "Developer 2",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "A remote developer",
+    "type": "develop",
+    "tags": ["developer", "remote worker", "js", "python"],
+    "activities": []
+},{
+    "name": "Tester",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "One of the beta-testers in the office",
+    "type": "test",
+    "tags": ["tester", "qa", "wtf man"],
+    "activities": []
+},
+    ]);
+
+    chart.data(dataSet.mapAs(undefined, {"description": "city"}));
+
+    chart.activities().labels().useHtml(true);
+    chart.activities().labels().format(function() {
+        return this['activityName'];
+    });
+
+    chart.pixPerHour(30);
+    chart.minRowHeight(150);
+    images = chart.resourceList().images();
+    images.size(50);
+    images.borderRadius(0);
+    chart.currentStartDate("2016-06-10");
+
+    chart.container("container").draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

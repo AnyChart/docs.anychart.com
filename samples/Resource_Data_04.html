@@ -11,25 +11,32 @@
     chart = anychart.resource();
     chart.zoomLevel(0);
     
-    // set the time tracking mode
-    chart.timeTrackingMode("activityPerChart");
+    chart.timeTrackingMode("activityPerResource");
 
     // set resource list width
-    chart.resourceListWidth(150);
+    chart.resourceListWidth(300);
     // set columns width
     chart.xScale().unitPixSize(140);
 
     dataSet = anychart.data.set([
 {
     "name": "Developer 1",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "The leading developer in the office",
+    "type": "develop",
+    "tags": ["developer", "office worker", "manager", "js", "c++", "python"],
     "activities": [
         {
             "name": "Task 1",
+            "group": "developer tasks",
+            "priority": "high",
             "start": "2016-06-10",
             "end": "2016-06-12",
             "totalMinutes": "1200"
         },{
             "name": "Task 2",
+            "priority": "high",
+            "group": "developer tasks",
             "start": "2016-06-12",
             "end": "2016-06-15",
             "minutesPerDay": "240"
@@ -37,9 +44,15 @@
     ]
 },{
     "name": "Developer 2",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "A remote developer",
+    "type": "develop",
+    "tags": ["developer", "remote worker", "js", "python"],
     "activities": [
         {
             "name": "Task 3",
+            "group": "developer tasks",
+            "priority": "low",
             "intervals": [
                 {
                     "start": "2016-06-10",
@@ -59,6 +72,8 @@
             ]
         },{
             "name": "Task 4",
+            "priority": "normal",
+            "group": "developer tasks",
             "intervals": [
                 {
                     "start": "2016-06-13",
@@ -75,9 +90,15 @@
     ]
 },{
     "name": "Tester",
+    "image": "http://static.anychart.com/images/docs/personIcon.png",
+    "description": "One of the beta-testers in the office",
+    "type": "test",
+    "tags": ["tester", "qa", "wtf man"],
     "activities": [
         {
             "name": "Testing Tasks 1 & 2",
+            "priority": "high",
+            "group": "tester tasks",
             "intervals": [
                 {
                     "start": "2016-06-13",
@@ -93,6 +114,8 @@
         },
         {
             "name": "Testing Tasks 3 & 4",
+            "priority": "normal",
+            "group": "tester tasks",
             "intervals": [
                 {
                     "start": "2016-06-15",
@@ -111,7 +134,19 @@
     ]);
 
     chart.data(dataSet.mapAs(undefined, {"description": "city"}));
-    chart.pixPerHour(15);
+
+    chart.activities().labels().useHtml(true);
+
+    // display the groups and priorities (custom fields)
+    chart.activities().labels().format(function() {
+        return this['activityName'] + "<br><span style=\"color: #ccc\">Group: " + this['activityInfo']['group'] + "</span>" + "<br><span style=\"color: #ccc\">Priority: " + this['activityInfo']['priority'] + "</span>";
+    });
+
+    chart.pixPerHour(30);
+    chart.minRowHeight(150);
+    images = chart.resourceList().images();
+    images.size(50);
+    images.borderRadius(0);
     chart.currentStartDate("2016-06-10");
 
     chart.container("container").draw();
