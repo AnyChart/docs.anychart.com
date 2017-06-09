@@ -1,4 +1,4 @@
-{:index 2}
+{:index 5}
 # Visualization
 
 * [Overview](#overview)
@@ -91,7 +91,7 @@ Use the following methods to adjust the timeline appearance:
 
 - {api:anychart.core.resource.TimeLine#drawBottomLine}drawBottomLine(){api}, {api:anychart.core.resource.TimeLine#drawLeftLine}drawLeftLine(){api}, {api:anychart.core.resource.TimeLine#drawRightLine}drawRightLine(){api}, {api:anychart.core.resource.TimeLine#drawTopLine}drawTopLine(){api} for the header borders settings
 
-- {api:anychart.core.resource.TimeLine#format}format(){api}, {api:anychart.core.resource.TimeLine#holidays}holidays(){api, {api:anychart.core.resource.TimeLine#overlay}overlay(){api}, {api:anychart.core.resource.TimeLine#maxFontSize}maxFontSize(){api} and {api:anychart.core.resource.TimeLine#minFontSize}minFontSize(){api} methods are responible for the header content adjusting
+- {api:anychart.core.resource.TimeLine#format}format(){api}, {api:anychart.core.resource.TimeLine#holidays}holidays(){api, {api:anychart.core.resource.TimeLine#overlay}overlay(){api}, {api:anychart.core.resource.TimeLine#maxFontSize}maxFontSize(){api} and {api:anychart.core.resource.TimeLine#minFontSize}minFontSize(){api} methods are responsible for the header content adjusting
 
 - {api:anychart.core.resource.TimeLine#background}{api}, {api:anychart.core.resource.TimeLine#fill}{api} and {api:anychart.core.resource.TimeLine#stroke}{api} methods help to adjust the colors of the timeline.
 
@@ -125,7 +125,7 @@ Grid in Resource Charts is the table body. Grid can be adjusted with the followi
 
 - {api:anychart.core.resource.Grid#evenFill}evenFill(){api}, {api:anychart.core.resource.Grid#evenHatchFill}evenHatchFill(){api}, {api:anychart.core.resource.Grid#evenHolidayFill}evenHolidayFill(){api}, {api:anychart.core.resource.Grid#evenHolidayHatchFill}evenHolidayHatchFill(){api} are used when it is neessary to adjust even rows of the table
 
-- {api:anychart.core.resource.Grid#oddFill}oddFill(){api}, {api:anychart.core.resource.Grid#oddHatchFill}oddHatchFill(){api}, {api:anychart.core.resource.Grid#oddHolidayFill}oddHolidayFill(){api}, {api:anychart.core.resource.Grid#oddHolidayHatchFill}oddHolidayHatchFill(){api} are used when it is neessary to adjust odd rows of the table
+- {api:anychart.core.resource.Grid#oddFill}oddFill(){api}, {api:anychart.core.resource.Grid#oddHatchFill}oddHatchFill(){api}, {api:anychart.core.resource.Grid#oddHolidayFill}oddHolidayFill(){api}, {api:anychart.core.resource.Grid#oddHolidayHatchFill}oddHolidayHatchFill(){api} are used when it is necessary to adjust odd rows of the table
 
 - {api:anychart.core.resource.Grid#horizontalStroke}horizontalStroke(){api} and {api:anychart.core.resource.Grid#verticalStroke}verticalStroke(){api} are used for stroke adjusting
 
@@ -165,7 +165,7 @@ activities.fill("#c7b299");
 activities.hoverFill("#ffcc80");
 activities.selectFill("#86614e");
 
-// activites labels settings
+// activities labels settings
 labels = activities.labels();
 selectLabels = activities.selectLabels();
 labels.fontFamily("Georgia");
@@ -178,7 +178,7 @@ selectLabels.fontColor("#fff");
 
 ### Split Activity Feature
 
-There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. Another interpretation of a split activity is a repeating activity, which has several time periods set.
+There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the activity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. Another interpretation of a split activity is a repeating activity, which has several time periods set.
 
 The sample we are working with has a couple of activities of this type:
 
@@ -220,7 +220,9 @@ Note there are no special methods for split activities, so the only way to adjus
 
 ## Conflict parameters
 
-Conflict is a feature that creates itself in case there are two or more activities set for one resource at the same time. It looks like a red line
+Conflict is a feature that creates itself in case there are two or more activities set for one resource at the same time. It looks like a red line above an activity/those activities which form more hours than available during the day.
+
+Note that the maximum working hours a day is set to 24. To change this parameter, use [Calendar](Calendar).
 
 <table>
 <tr>

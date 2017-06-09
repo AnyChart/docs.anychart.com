@@ -25,7 +25,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 ###3. Prepare Your Data
 
-There are two ways to set data for Resource Charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
+There are two ways to set data for Resource Charts, both based on the [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
 
 ```
 var dataSet = anychart.data.set([
@@ -149,7 +149,7 @@ chart.draw();
 ```
 
 ## The Result
-###See the Result
+### See the Result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using AnyChart Playground.
 
 {sample :width 700 :height 700}Resource\_Quick\_Start\_01{sample}

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 2}
 #Working With Data
 
 * [Overview](#overview)
@@ -13,17 +13,17 @@
 
 Each Chart starts from setting the data. The Resource Chart has something special about setting the data, so this article considers this process and the Resource Chart Data constituents.
 
-Two main and basic entites for the Resource Chart are Resources and Activities. These are what the Resource Chart is made for demonstrating and analysing, so it is very important to treat setting the parameters and values of these entities with care.
+Two main and basic entities for the Resource Chart are Resources and Activities. These are what the Resource Chart is made for demonstrating and analyzing, so it is very important to treat setting the parameters and values of these entities with care.
 
-Both entities have paramters or fields, which are better be set through the data.
+Both entities have parameters or fields, which are better be set through the data.
 
 ## Resource
 
-Resource is an element that can be given a task (activity), which will be finishied in a some period of time. Resource can have several activities one after another or at the same time if necessary. When one resource has deveral activities simultaneously, this situation is called **a conflict**. This conflict will not be resolved automatically, but the Resource Chart demonstrates this and emphasizes with a red line, so you can resolve this problem or leave it as it is.
+Resource is an element that can be given a task (activity), which will be finished in a some period of time. Resource can have several activities one after another or at the same time if necessary. When one resource has several activities simultaneously, this situation is called **a conflict**. This conflict will not be resolved automatically, but the Resource Chart demonstrates this and emphasizes with a red line, so you can resolve this problem or leave it as it is.
 
 ### Resource parameters list
 
-There is a list of paramters that a resource can have. 
+There is a list of parameters that a resource can have. 
 
 - name
 - image
@@ -74,7 +74,7 @@ Activity is an element representing a task that a resource can do during a perio
 
 ### Activity parameters list
 
-There is a list of paramters that a resource has or can have. 
+There is a list of parameters that a resource has or can have. 
 
 - name
 - start
@@ -112,7 +112,7 @@ There are some other settings responsible for the elements' appearance, which ar
 
 ### Split Activity Feature
 
-There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the acitivity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful when it is necessary to demonstrate the activity's complexity. 
+There is one more feature about Activities in AnyChart Resource Charts. When one Activity consists of several tasks, it is possible to split this huge activity into these small tasks, avoiding them to become separate activities. All tasks the activity consists of will behave as one complicated object, e.g. when a cursor is put over one of those subtasks, all of them will be hovered; if one of them is clicked, the whole activity will be selected. This feature is rather useful when it is necessary to demonstrate the activity's complexity. 
 
 ```
 "activities": [
