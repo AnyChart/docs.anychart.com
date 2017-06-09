@@ -20,7 +20,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.HiLo}anychart.core.cartesian.series.HiLo{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
@@ -96,9 +96,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Here is a full list of methods used to configure visual settings that are available for the HiLo series:
 
-* {api:anychart.core.cartesian.series.HiLo#color}color(){api} and {api:anychart.core.cartesian.series.HiLo#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.HiLo#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.HiLo#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.cartesian.series.Hilo#color}color(){api} and {api:anychart.core.cartesian.series.Hilo#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.Hilo#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.Hilo#selectStroke}selectStroke(){api} configures the stroke on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
