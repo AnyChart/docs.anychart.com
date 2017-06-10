@@ -22,7 +22,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[high, low](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
