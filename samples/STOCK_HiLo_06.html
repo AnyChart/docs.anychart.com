@@ -105,13 +105,11 @@ anychart.onDocumentReady(function() {
     // coloring
     series_globex.stroke("#0066cc", 1.5);
 
-    chart.title('Stock HiLo Demo: Currency rates');
-
     // crosshair settings
     chart.plot(0).dateTimeHighlighter("#806000", 0.7);
     chart.plot(1).dateTimeHighlighter("#806000", 0.7, "6 3", "round");
 
-    chart.title('Stock Area Demo \nPopulation (millions)');
+    chart.title('Stock HiLo Demo: Stock Prices \nACME Corp. vs. Globex Corp.');
 
     chart.container('container');
     chart.draw();

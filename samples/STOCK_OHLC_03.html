@@ -97,12 +97,12 @@
 
     // set the series
     var series_acme = chart.plot(0).ohlc(mapping_acme);
-    series_acme.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
+    series_acme.name("ACME Corp. stock prices");
     // set the series
     var series_globex = chart.plot(1).ohlc(mapping_globex);
-    series_globex.name("Globex Corp. stock prices (apr 2015 - jul 2015)");
+    series_globex.name("Globex Corp. stock prices");
 
-    chart.title('Stock Line Demo: Currency Rates');
+    chart.title('Stock OHLC Demo: Stock Prices \nACME Corp. vs. Globex Corp.');
     chart.container('container');
 
     chart.draw();
