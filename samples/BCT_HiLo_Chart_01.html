@@ -21,6 +21,9 @@
     // create a chart
     chart = anychart.hilo();
 
+    // set the interactivity mode
+    chart.interactivity("byX");
+
     // create a HiLo series and set the data
     var series = chart.hilo(data);
     
@@ -32,9 +35,6 @@
     xAxis.title("Month");
     var yAxis = chart.yAxis();
     yAxis.title("Price, $");
-
-    // set the interactivity mode
-    chart.interactivity("byX");
 
     // set the container id
     chart.container("container");
