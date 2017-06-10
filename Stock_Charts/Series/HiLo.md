@@ -125,14 +125,14 @@ var series_acme = chart.plot(0).hilo(mapping_acme);
 series_acme.name("ACME Corp. stock prices");
 
 // coloring
-series_acme.stroke("#00cc99", 2);
+series_acme.stroke("#00cc99", 1.5);
 
 // set the Globex series
 var series_globex = chart.plot(1).hilo(mapping_globex);
 series_globex.name("Globex Corp. stock prices");
 
 // coloring
-series_globex.stroke("#0066cc", 2);
+series_globex.stroke("#0066cc", 1.5);
 ```
 
 {sample}STOCK\_HiLo\_05{sample}
