@@ -11,7 +11,7 @@
 
 ## Overview
 
-HiLo series is a kind of basic chart series that can be used in stocks. To know how to manage HiLo series in see the [HiLo Chart article](../../Basic_Charts/HiLo_Chart).
+HiLo series is a kind of basic chart series that can be used in stocks. To know how to manage HiLo series, see the [HiLo Chart article](../../Basic_Charts/HiLo_Chart).
 
 ## AnyStock HiLo Series Adjustment
 
