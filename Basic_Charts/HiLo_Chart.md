@@ -22,7 +22,7 @@ This article explains how to create a basic HiLo chart as well as configure sett
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Hilo}anychart.core.cartesian.series.HiLo{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[high, low](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, high, low](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -59,11 +59,11 @@ The following sample demonstrates how a basic HiLo chart is created:
 ```
 // create a data set
 var data = anychart.data.set([
-  ["January", 1000, 10000],
-  ["February", 500, 12000],
-  ["March", 3000, 18000],
-  ["April", 4000, 11000],
-  ["May", 6000, 9000]
+  ["January", 10000, 1000],
+  ["February", 12000, 500],
+  ["March", 18000, 3000],
+  ["April", 11000, 4000],
+  ["May", 9000, 6000]
 ]);
 
 // create a chart
