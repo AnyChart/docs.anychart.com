@@ -12,7 +12,7 @@ To learn more about radar charts in general and how to customize them, see [Rada
 
 ## Quick Start
 
-To build a Radar Line chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#line}area(){api} method to create a Line series:
+To build a Radar Line chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#line}line(){api} method to create a Line series:
 
 ```
 // create a chart

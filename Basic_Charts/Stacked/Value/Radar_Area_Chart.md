@@ -13,7 +13,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Radar Stacked Area Chart, create a multi-series [Radar Area Chart](../../Radar/Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a Radar Stacked Area Chart, create a multi-series [Radar Area Chart](../../Radar_Plot/Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
 // create a chart

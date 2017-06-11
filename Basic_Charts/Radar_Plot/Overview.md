@@ -19,15 +19,15 @@ The radar chart is also known as a web chart, spider chart, star chart, cobweb c
 
 This article explains how to create and configure radar charts.
 
-## Chart
+## Quick Start
 
 To create a radar chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor.
 
 AnyChart allows you to display three types of series on radar charts: Line, Area and Marker. If you just pass your data to the chart constructor, a Line series is created. You can also set the type of a series explicitly by calling one of the following methods:
 
+* {api:anychart.charts.Cartesian#line}line(){api}
 * {api:anychart.charts.Cartesian#area}area(){api}
-* {api:anychart.charts.Cartesian#bar}bar(){api}
-* {api:anychart.charts.Cartesian#column}column(){api}
+* {api:anychart.charts.Cartesian#marker}marker(){api}
 
 
 In the sample below, there is a radar chart with thwo series, Line and Area:
@@ -160,7 +160,7 @@ grid.evenFill("#3399ff", 0.1);
 
 ## Stacked Radar Charts
 
-## Series Types
+## Supported Types
 
 Here is the list of supported radar charts:
 

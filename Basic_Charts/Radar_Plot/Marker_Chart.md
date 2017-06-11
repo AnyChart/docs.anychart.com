@@ -12,7 +12,7 @@ To learn more about radar charts in general and how to customize them, see [Rada
 
 ## Quick Start
 
-To build a Radar Marker chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#marker}area(){api} method to create a Marker series:
+To build a Radar Marker chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#marker}marker(){api} method to create a Marker series:
 
 ```
 // create a chart
