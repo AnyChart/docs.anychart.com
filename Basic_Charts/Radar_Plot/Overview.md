@@ -164,7 +164,7 @@ grid.evenFill("#3399ff", 0.1);
 
 Here is the list of supported radar charts:
 
-* [Radarr Line](Line_Chart)
+* [Radar Line](Line_Chart)
 * [Radar Area](Area_Chart)
 * [Radar Marker](Marker_Chart)
 
