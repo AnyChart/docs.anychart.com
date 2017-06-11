@@ -1,29 +1,25 @@
 {:index 2}
-# Scatter Line Chart
+# Radar Area Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 
 ## Overview
 
-This article explains how to create a Scatter Line chart in AnyChart.
+This article explains how to create a Radar Area chart in AnyChart.
 
-To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
-
-Please note that there are also [Cartesian Line charts](../Line_Chart).
+To learn more about radar charts in general and how to customize them, see [Radar Charts (Overview)](Overview). In addition, you can read the [Area Chart](../Area_Chart) article to learn about other available settings.
 
 ## Quick Start
 
-To build a Scatter Line chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#line}line(){api} method to create a Line series:
+To build a Radar Area chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#area}area(){api} method to create an Area series:
 
 ```
 // create a chart
-chart = anychart.scatter();
+chart = anychart.radar();
 
-// create a line series and set the data
-var series = chart.line(data);
+// create an area series and set the data
+var series = chart.area(data);
 ```
 
-**Note:** Unlike basic Line charts, Scatter Lines can be vertical and can cross themselves.
-
-{sample}BCT\_Scatter\_Line\_Chart{sample}
+{sample}BCT\_Radar\_Area\_Chart{sample}

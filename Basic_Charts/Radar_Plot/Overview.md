@@ -170,5 +170,5 @@ Here is the list of supported radar charts:
 
 See also [stacked](../Stacked/Overview) charts:
 
-* [Stacked Radar Area Chart](../Stacked/Value/Radar_Area_Chart)
-* [Percent Stacked Radar Area Chart](../Stacked/Percent/Stacked_Radar_Area_Chart)
+* [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
+* [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)
