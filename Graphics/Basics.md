@@ -54,7 +54,7 @@ Note that the stage coordinate system starts in the left top corner.
 
 ## Basic shapes and primitives
 
-On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), [Images](Images) and more.Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
+On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), Images and more.Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
 
 ```
 // draw a circle

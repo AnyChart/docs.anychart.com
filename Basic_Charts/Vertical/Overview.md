@@ -70,7 +70,7 @@ var series2 = chart.line(seriesData_2);
 <a name='onthefly'></a>
 ## Changing the Orientation On-The-Fly
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series). Please, keep in mind that it affects only the series, not the axes.
+After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series). Please, keep in mind that it affects only the series, not the axes.
 
 In the following sample this method is used to draw two horizontal (area) and a vertical (bar) series on the same chart:
 
@@ -93,7 +93,7 @@ chart.getSeriesAt(2).isVertical(true);
 
 {sample}BCT\_Vertical\_Charts\_04{sample}
 
-To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the [axes](..Axes_and_Grids/Axis_Orientation) (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
+To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the axes (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
 
 ```
 // set the chart type

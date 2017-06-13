@@ -102,7 +102,7 @@ var yAxis = chart.yAxis();
 yAxis.stroke("2 #9900FF");
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Appearance_Settings/Strokes_and_Lines).
+More information about possible stroke settings can be found in Strokes and Lines tutorial.
 
 Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
 

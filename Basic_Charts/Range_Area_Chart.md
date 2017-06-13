@@ -38,8 +38,6 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
 <tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
-<tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
-<tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-area-chart/" target="_blank">Chartopedia: Range Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -146,9 +144,3 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 ### Vertical Range Area
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
-
-Here is the information about creating Vertical Range Area series:
-
-* [Vertical Range Area](Vertical/Range_Area_Chart)
-* [Vertical Range Spline Area](Vertical/Range_Spline_Area_Chart)
-* [Vertical Range Step Area](Vertical/Range_Step_Area_Chart)

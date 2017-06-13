@@ -381,7 +381,7 @@ Now let's apply these setting to the sample.
 ##Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Box#labels}labels(){api} and {api:anychart.core.cartesian.series.Box#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
+If you want to configure data labels and tooltips for all series - you should use labels() and tooltip() methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
 With the following example let's make data labels appear to the top from the boxes, format them to show only the number of the range and force tooltips to show detailed description.
 
 ```

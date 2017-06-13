@@ -265,7 +265,7 @@ Let's demonstrate how to apply different colors to different parts of pyramid. T
 
 ## Hatch Fills
 
-AnyChart charting library allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill). 
+AnyChart charting library allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch tutorial.
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have pyramid chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
 

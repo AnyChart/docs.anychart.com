@@ -41,7 +41,7 @@ You might have defined a number of series for some reason. As you don't use the 
 
 In this sample we've got the map of Australia, where its regions are defined in two different series which are then colored separately, independent from its values. 
 
-You can also change the color of labels and the title color. You can read about those in the [Map Labels article](../Map_Labels).
+You can also change the color of labels and the title color. You can read about those in the Map Labels article.
 
 Also, there is nothing different from our basic charts if you want to use the dataset for defining the region's colors:
 

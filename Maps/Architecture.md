@@ -60,7 +60,7 @@ Bubble Maps, or Proportional Symbol maps, are maps where bubbles (or other symbo
 
 ### Point Maps
 
-Dot (or Point, or Marker) Maps are those that demonstrate the existence of a subject or a feature. Unlike Bubble Maps, the dots' sizes don't depend on values. This type of maps is created with a help of [Dot Map Series](Dot_(Point)_Map).
+Dot (or Point, or Marker) Maps are those that demonstrate the existence of a subject or a feature. Unlike Bubble Maps, the dots' sizes don't depend on values. This type of maps is created with a help of Dot Map Series.
 
 ### Seat Maps
 

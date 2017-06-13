@@ -229,5 +229,3 @@ The vertical column chart is called the bar chart: it shows categories on the ve
 Using AnyChart, you can create 3D versions of some chart types, including the Column chart.
 
 To learn about 3D charts in general, see [3D Charts](3D/Overview).
-
-The 3D Column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).

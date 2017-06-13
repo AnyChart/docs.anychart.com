@@ -132,7 +132,7 @@ chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.E
 
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
-To limit the number of decimal characters or edit the separator use [formatting parameters](Common_Settings/Text_Formatters#formatting_parameters).
+To limit the number of decimal characters or edit the separator use [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters).
 
 ## Visual Appearance
 
