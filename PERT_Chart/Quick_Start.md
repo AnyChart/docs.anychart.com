@@ -38,7 +38,7 @@ var data = [
 
 ###4. Create a Chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
-This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](Data_from_JSON,_XML,_CSV). 
+This code example uses JavaScript API to create a chart, but you also can use JSON, XML and CSV.
 
 ```
 <script>

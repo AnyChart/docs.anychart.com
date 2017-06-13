@@ -5,7 +5,6 @@
 * [AJAX and Maps](#ajax_and_maps)
 * [Data](#data)
 * [Load maps using AJAX](#load_maps_using_ajax)
- * [Drill To](drill_to)
  * [Dynamic URL](#dynamic_url)
 * [Adjust settings](#adjust_settings)
 

@@ -51,7 +51,7 @@ Coming soon.
 
 ## Adaptive Moving Average
 
-Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) indicator is calculated by the following steps:
+Each point of the Adaptive Moving Average indicator is calculated by the following steps:
 
 1. Calculate the ER:
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
@@ -220,7 +220,7 @@ Coming soon.
 
 ## Simple Moving Average
 
-[Simple Moving Average](Simple\_Moving\_Average\_(SMA)) in each point is calculated according to the following formula:
+Simple Moving Average in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
