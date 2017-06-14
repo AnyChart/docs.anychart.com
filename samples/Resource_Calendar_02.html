@@ -14,11 +14,16 @@
     // set chart time tracking mode
     chart.timeTrackingMode("activityPerResource");
 
-    // set the numbers for weekend days
-    chart.calendar().weekendRange([0,6]);
-
-    // color the weekends differently to emphasize them
-    chart.timeLine().holidays().fill("#aaa");
+    // set availabilities
+    chart.calendar().availabilities([
+        {each: "day", from: "10:00", to: "17:00"},
+        {each: "day", from: "13:00", to: "14:00", isWorking: false},
+        {each: "week", on: "0", isWorking: "false"},
+        {each: "week", on: "6", isWorking: "false"}
+    ]);
+    
+    // set the time interval you need the information about
+    chart.calendar().getWorkingSchedule("2016-06-10", "2016-06-14", "hour");
 
     // set resource list width
     chart.resourceListWidth(300);
