@@ -18,7 +18,7 @@
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
+In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack_mode) set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
 
@@ -60,7 +60,7 @@ Percent stacked charts usually need some fine tuning to get going:
 
 ### Scale Interval
 
-Setting scale to percent stacked mode will force it's [minimum and maximum](/Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
+Setting scale to percent stacked mode will force it's [minimum and maximum](../../Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
 
 ```
 /* enable the value stacking mode
@@ -73,7 +73,7 @@ chart.yScale().ticks().interval(20);
 
 ### Axis Percent Labels
 
-To add percent symbol to axis labels use [Axes Labels](/Axes_and_Grids/Axes_Labels_Formatting) formatting:
+To add percent symbol to axis labels use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
 // configure labels on the Y-axis
