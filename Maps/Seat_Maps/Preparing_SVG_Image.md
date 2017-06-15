@@ -53,7 +53,7 @@ The picture below demonstrates a situation you may get into: a new shape comes t
 
 Right-click on this shape and choose "Arrange" -> "Send to back".
 
-<a href="https://static.anychart.com/images/docs/seat\_map/09\_arrange\_send\_to\_back.png" target="_blank"><img src="https://static.anychart.com/images/docs/seat\_map/09\_arrange\_send\_to\_back.png" alt="Arrange send to back" title="Arrange send to back" border="0" width=600 align="center"></a>
+<a href="https://static.anychart.com/images/docs/seat\_map/09\_arrange\_sent\_to\_back.png" target="_blank"><img src="https://static.anychart.com/images/docs/seat\_map/09\_arrange\_sent\_to\_back.png" alt="Arrange send to back" title="Arrange send to back" border="0" width=600 align="center"></a>
 
 Now, the layout with the house is visible again. Let's add some "furniture" into the plan.
 
