@@ -13,12 +13,15 @@
     
     chart.timeTrackingMode("activityPerChart");
 
-    conflicts = chart.conflicts();
+    // horizontal scroller
+    horizontalScrollBar = chart.horizontalScrollBar();
+    horizontalScrollBar.thumbs(true);
+    horizontalScrollBar.fill("#B2D7FF");
 
-    // Conflicts settings
-    conflicts.fill("#911B58");
-    conflicts.hatchFill("diagonalCross");
-    conflicts.stroke("#000");
+    // vertical scroller
+    verticalScrollBar = chart.verticalScrollBar();
+    verticalScrollBar.thumbs(true);
+    verticalScrollBar.fill("#B2D7FF");
 
     // set resource list width
     chart.resourceListWidth(150);
@@ -99,11 +102,11 @@
         },
         {
             "name": "BRAZILIAN JIU JITSU",
-            "intervals": [{"start":"2016-06-11", "end": "2016-06-11", "minutesPerDay": 120}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
             "name": "TRX",
-            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15", "minutesPerDay": 120}]
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
             "name": "CORE FOCUS",
@@ -157,16 +160,6 @@
     });
 
     chart.pixPerHour(30);
-
-    var customCalendar = chart.calendar();
-    customCalendar.availabilities([
-        {
-            "each": "day",
-            "from": 10,
-            "to": 19,
-            "isWorking": true
-        }
-    ]);
 
     chart.currentStartDate("2016-06-10");
 

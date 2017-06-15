@@ -13,13 +13,6 @@
     
     chart.timeTrackingMode("activityPerChart");
 
-    conflicts = chart.conflicts();
-
-    // Conflicts settings
-    conflicts.fill("#911B58");
-    conflicts.hatchFill("diagonalCross");
-    conflicts.stroke("#000");
-
     // set resource list width
     chart.resourceListWidth(150);
     // set columns width
@@ -99,11 +92,11 @@
         },
         {
             "name": "BRAZILIAN JIU JITSU",
-            "intervals": [{"start":"2016-06-11", "end": "2016-06-11", "minutesPerDay": 120}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
             "name": "TRX",
-            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15", "minutesPerDay": 120}]
+            "intervals": [{"start":"2016-06-11", "end": "2016-06-11"}, {"start": "2016-06-13", "end": "2016-06-13"}, {"start": "2016-06-15", "end": "2016-06-15"}]
         },
         {
             "name": "CORE FOCUS",
@@ -123,24 +116,40 @@
     "activities": [
         {
             "name": "WATER AEROBICS",
+            "fill": "#00CCCC",
+            "hoverFill": "#C9FFFF",
+            "selectFill": "#007474",
+            "label": {"fontColor": "#000055","textWrap": "byWord", "hAlign": "center"},
             "start": "2016-06-10",
             "end": "2016-06-10",
             "minutesPerDay": 120
         },
         {
             "name": "SWIM CAMP",
+            "fill": "#00CCCC",
+            "hoverFill": "#C9FFFF",
+            "selectFill": "#007474",
+            "label": {"fontColor": "#000055","textWrap": "byWord", "hAlign": "center"},
             "start": "2016-06-10",
             "end": "2016-06-10",
             "minutesPerDay": 120
         },
         {
             "name": "WATER AEROBICS",
+            "fill": "#00CCCC",
+            "hoverFill": "#C9FFFF",
+            "selectFill": "#007474",
+            "label": {"fontColor": "#000055","textWrap": "byWord", "hAlign": "center"},
             "start": "2016-06-14",
             "end": "2016-06-14",
             "minutesPerDay": 120
         },
         {
             "name": "SWIM CAMP",
+            "fill": "#00CCCC",
+            "hoverFill": "#C9FFFF",
+            "selectFill": "#007474",
+            "label": {"fontColor": "#000055","textWrap": "byWord", "hAlign": "center"},
             "start": "2016-06-14",
             "end": "2016-06-14",
             "minutesPerDay": 120
@@ -157,16 +166,6 @@
     });
 
     chart.pixPerHour(30);
-
-    var customCalendar = chart.calendar();
-    customCalendar.availabilities([
-        {
-            "each": "day",
-            "from": 10,
-            "to": 19,
-            "isWorking": true
-        }
-    ]);
 
     chart.currentStartDate("2016-06-10");
 

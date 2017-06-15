@@ -10,9 +10,6 @@
  * [Split activity feature](#split_activity_feature)
 * [Conflict parameters](#conflict_parameters)
 * [Scrollers](#scrollers)
- * [Vertical](#vertical)
- * [Horizontal](#horizontal)
-* [Overlay](#overlay)
 * [Appearance settings from Data](#appearance_settings_from_data)
 
 ## Overview
@@ -21,9 +18,10 @@ Due to specifics of the elements used by this chart, there are some methods unty
 
 ## Logo
 
-There are three special methods for setting the logo appearance. It is possible to affect the corners with the {api:anychart.core.resource.Logo#cornerType}cornerType(){api} and {api:anychart.core.resource.Logo#corners}corners(){api} methods. The first one is responsible for the corner type and the second is used for adjusting the corner radius. The {api:anychart.core.resource.Logo#overlay}overlay(){api} method is responsible for the logo overlaying other elements.
+There are three special methods for setting the logo appearance. It is possible to affect the corners with the {api:anychart.core.resource.Logo#cornerType}cornerType(){api} and {api:anychart.core.resource.Logo#corners}corners(){api} methods. The first one is responsible for the corner type and the second one is used for adjusting the corner radius. The {api:anychart.core.resource.Logo#overlay}overlay(){api} method is responsible for the logo overlaying other elements (in case when logo width and height are set more than it fits the table).
 
 ```
+// chart logo 
 chart.logo().fill("#D1DBFA");
 chart.logo().overlay(true);
 ```
@@ -37,7 +35,7 @@ There is a list of parameters that a Resource List can have.
 
 - {api:anychart.core.resource.ResourceList#images}images(){api} method is responsible for images settings
 
-- {api:anychart.core.resource.resourceList.ImageSettings#size}size(){api}, {api:anychart.core.resource.resourceList.ImageSettings#borderRadius}borderRadius(){api}, api:anychart.core.resource.resourceList.ImageSettings#opacity}opacity(){api}, {api:anychart.core.resource.resourceList.ImageSettings#align}align(){api}, {api:anychart.core.resource.resourceList.ImageSettings#fittingMode}fittingMode(){api}, {api:anychart.core.resource.resourceList.ImageSettings#margin}margin(){api} methods are used for adjusting the picture settings.
+- {api:anychart.core.resource.resourceList.ImageSettings#size}size(){api}, {api:anychart.core.resource.resourceList.ImageSettings#borderRadius}borderRadius(){api}, {api:anychart.core.resource.resourceList.ImageSettings#opacity}opacity(){api}, {api:anychart.core.resource.resourceList.ImageSettings#align}align(){api}, {api:anychart.core.resource.resourceList.ImageSettings#fittingMode}fittingMode(){api}, {api:anychart.core.resource.resourceList.ImageSettings#margin}margin(){api} methods are used for adjusting the picture settings.
 
 - {api:anychart.core.resource.ResourceList#tags}tags(){api} method is responsible for tags' settings 
 
@@ -79,6 +77,16 @@ names.fontColor("#01579B");
 
 There are several methods for Resource List adjusting. 
 
+Note that the images for resource icons should be defined through the data set:
+
+```
+{
+    "name": "Gym 1",
+    "defaultMinutesPerDay": 720,
+    "image": "http://static.anychart.com/images/docs/resourceGym.png",
+    "activities": []
+}
+```
 
 The height of a resource depends on a maximum number of activities this resource has during a day on the chart timeline. This can be performed if the [TimeTracking mode](TimeTracking_Mode) is enabled.
 
@@ -222,7 +230,7 @@ Note there are no special methods for split activities, so the only way to adjus
 
 Conflict is a feature that creates itself in case there are two or more activities set for one resource at the same time. It looks like a red line above an activity/those activities which form more hours than available during the day.
 
-Note that the maximum working hours a day is set to 24. To change this parameter, use [Calendar](Calendar).
+Note that the maximum working hours a day is set to 24 by default. To change this parameter, use [Calendar](Calendar).
 
 <table>
 <tr>
@@ -240,6 +248,10 @@ Note that the maximum working hours a day is set to 24. To change this parameter
 </table>
 
 ```
+// Conflicts settings
+conflicts.fill("#911B58");
+conflicts.hatchFill("diagonalCross");
+conflicts.stroke("#000");
 ```
 
 {sample}Resource\_Visualization\_07{sample}
@@ -247,12 +259,48 @@ Note that the maximum working hours a day is set to 24. To change this parameter
 
 ## Scrollers
 
-### Vertical 
+Scrollers in Resource Charts are usual scrollers which can be found almost on any page. Use them to scroll the grid with activities and resources. There can be both vertical and horizontal scrollers, depending on the number of resources and on the time period the calendar covers.
 
-### Horizontal
+To edit the view of the vertical scroller, use the {api:anychart.charts.Resource#verticalScrollBar}verticalScrollBar(){api} method, for the horizontal one use {api:anychart.charts.Resource#horizontalScrollBar}horizontalScrollBar(){api}. 
 
+Let's add thumbs to both scrollers and fill them with another color:
 
-## Overlay
+```
+// horizontal scroller
+horizontalScrollBar = chart.horizontalScrollBar();
+horizontalScrollBar.thumbs(true);
+horizontalScrollBar.fill("#B2D7FF");
+
+// vertical scroller
+verticalScrollBar = chart.verticalScrollBar();
+verticalScrollBar.thumbs(true);
+verticalScrollBar.fill("#B2D7FF");
+```
+
+{sample}Resource\_Visualization\_08{sample}
 
 
 ## Appearance settings from Data
+
+Most of the settings described above can be defined through the data. The following sample demonstrates how to 
+
+```
+{
+    "name": "Aqua Zone",
+    "defaultMinutesPerDay": 240,
+    "activities": [
+        {
+            "name": "WATER AEROBICS",
+            "fill": "#00CCCC",
+            "hoverFill": "#C9FFFF",
+            "selectFill": "#007474",
+            "label": {"fontColor": "#000055","textWrap": "byWord", "hAlign": "center"},
+            "start": "2016-06-10",
+            "end": "2016-06-10",
+            "minutesPerDay": 120
+        }
+    ]
+}
+```
+
+{sample}Resource\_Visualization\_09{sample}
