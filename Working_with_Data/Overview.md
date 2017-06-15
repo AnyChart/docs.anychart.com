@@ -12,7 +12,7 @@
 
 ## Overview
 
-This section is dedicated to the ways AnyChart gets, treats .
+This section is dedicated to the ways AnyChart gets, processes and treats data that is visualized by the charts.
 
 It is recommended that you read [Quick Start](../Quick_Start/Quick_Start) article before you read any article in this section.
 
