@@ -141,9 +141,9 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 This section explains how configure the appearance and layout of grids on radar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_Basics/Axis_Basics#grids).
 
-The {api:anychart.charts.Radar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
+The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
 
-To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or **circuit** parameters.
+The {api:anychart.charts.Radar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1. To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or **circuit** parameters.
 
 For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
 
@@ -160,8 +160,6 @@ var grid = chart.grid(0);
 // set the layout type
 grid.layout("circuit");
 ```
-
-The appearance is configured with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
 
 In the sample below there is a Radar Line chart having only a radial grid, the odd- and even-numbered cells filled with different colors:
 
