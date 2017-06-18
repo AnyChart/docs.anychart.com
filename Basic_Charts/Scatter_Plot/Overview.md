@@ -68,7 +68,7 @@ chart.draw();
 
 As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#grid}grid(){api} and {api:anychart.charts.Scatter#minorGrid}minorGrid(){api} methods to create a major and a minor grid. The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
 
-For more information, see this article: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
+For more information, see [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 The sample below shows how to create minor and major grids and configure their strokes:
 
