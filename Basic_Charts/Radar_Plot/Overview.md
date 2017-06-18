@@ -11,13 +11,11 @@
 
 ## Overview
 
-[A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
+A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
-The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon or kiviat diagram.]
+The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
 
-[Supported Types](#supported_types)
-
-This article explains how to create and configure radar charts.
+This article explains how to create and configure radar charts. To find out which series can be drawn on a radar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
 ## Quick Start
 
@@ -92,7 +90,7 @@ radar2.startAngle(90);
 
 ## Axes and Scales
 
-To find all available settings that can be applied to [axes](../../Axes_and_Grids/Axis_Basics) and [scales](../../Axes_and_Grids/Scales), see [Axes and Grids](../../Axes_and_Grids/Scales). In this section you can find some settings often used with radar charts.
+In this section you can find some settings of axes and scales that are often used with radar charts. To learn about all the available settings, see [Axes and Grids](../../Axes_and_Grids).
 
 If you want to configure the stroke of the X and Y axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
@@ -113,7 +111,7 @@ xAxis.stroke({
 });    
 ```
 
-To invert a scale, use the {api:anychart.scales.Linear#inverted}inverted(){api} method:
+To invert a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
 // invert the Y-scale
@@ -121,7 +119,7 @@ var yScale = chart.yScale();
 yScale.inverted(true);
 ```
 
-You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – call {api:anychart.scales#log}log(){api}:
+You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – use {api:anychart.scales#log}log(){api}:
 
 ```
 // create a logarithmic scale
@@ -141,11 +139,11 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 ## Grid
 
-You can configure the appearance and layout of grids on radar charts.
+This section explains how configure the appearance and layout of grids on radar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_Basics/Axis_Basics#grids).
 
 The {api:anychart.charts.Radar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or *circuit* parameters.
+To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or **circuit** parameters.
 
 For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
 
@@ -164,8 +162,6 @@ grid.layout("circuit");
 ```
 
 The appearance is configured with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
-
-For more information, see this article: [Axis Basics: Grids](../../Axes_Basics/Axis_Basics#grids)/
 
 In the sample below there is a Radar Line chart having only a radial grid, the odd- and even-numbered cells filled with different colors:
 
