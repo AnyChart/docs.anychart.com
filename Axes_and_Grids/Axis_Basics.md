@@ -237,7 +237,7 @@ Alternatively, you can control grid using {api:anychart.grids.Linear#layout}layo
 
 ```
 
-As far as [radar](../Basic_Charts/Radar_Chart) and [polar](../Basic_Charts/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use the {api:anychart.grids.Radar#layout}layout(){api} method to define circular or radial grid layout.
+As far as [radar](../Basic_Charts/Radar_Plot/Overview) and [polar](../Basic_Charts/Polar_Plot/Overview) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use the {api:anychart.grids.Radar#layout}layout(){api} method to define circular or radial grid layout.
 
 ```
   // create radar chart
