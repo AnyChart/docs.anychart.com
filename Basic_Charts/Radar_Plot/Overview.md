@@ -139,7 +139,7 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 ## Grid
 
-This section explains how configure the appearance and layout of grids on radar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_Basics/Axis_Basics#grids).
+This section explains how configure the appearance and layout of grids on radar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
 
