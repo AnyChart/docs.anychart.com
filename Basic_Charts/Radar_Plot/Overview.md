@@ -30,56 +30,58 @@ AnyChart allows you to display three types of series on radar charts: Line, Area
 * {api:anychart.charts.Cartesian#marker}marker(){api}
 
 
-In the sample below, there is a radar chart with thwo series, Line and Area:
+In the sample below, there is a radar chart with two series, Line and Area:
 
 ```
-    // create data for the first series
-    var data_1 = [
-      {x: "A", value: 1222},
-      {x: "B", value: 2431},
-      {x: "C", value: 3624},
-      {x: "D", value: 5243},
-      {x: "E", value: 6813},
-      {x: "F", value: 5321},
-      {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
-    ];
+// create data for the first series
+var data_1 = [
+  {x: "A", value: 1222},
+  {x: "B", value: 2431},
+  {x: "C", value: 3624},
+  {x: "D", value: 5243},
+  {x: "E", value: 6813},
+  {x: "F", value: 5321},
+  {x: "G", value: 1567},
+  {x: "H", value: 3876},
+  {x: "I", value: 2187}
+];
 
-    // create data for the second series
-    var data_2 = [
-      {x: "A", value: 722},
-      {x: "B", value: 1431},
-      {x: "C", value: 1624},
-      {x: "D", value: 1243},
-      {x: "E", value: 1813},
-      {x: "F", value: 1321},
-      {x: "G", value: 567},
-      {x: "H", value: 1876},
-      {x: "I", value: 1187}
-    ];
+// create data for the second series
+var data_2 = [
+  {x: "A", value: 722},
+  {x: "B", value: 1431},
+  {x: "C", value: 1624},
+  {x: "D", value: 1243},
+  {x: "E", value: 1813},
+  {x: "F", value: 1321},
+  {x: "G", value: 567},
+  {x: "H", value: 1876},
+  {x: "I", value: 1187}
+];
 
-    // create a chart
-    chart = anychart.radar();
+// create a chart
+chart = anychart.radar();
 
-    // create the first series (line) and set the data
-    var series1 = chart.line(data_1);
+// create the first series (line) and set the data
+var series1 = chart.line(data_1);
 
-    // create the second series (marker) and set the data
-    var series2 = chart.area(data_2);
+// create the second series (marker) and set the data
+var series2 = chart.area(data_2);
 
-    // set the container id
-    chart.container("container");
+// set the container id
+chart.container("container");
 
-    // initiate drawing the chart
-    chart.draw();
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Radar\_Chart\_01{sample}
 
 ## Start Angle
 
-[By default radar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Radar#startAngle}startAngle(){api} parameter:]
+You can set the start angle of a radar chart by using the {api:anychart.charts.Radar#startAngle}startAngle(){api} method. The angle is 0° by default.
+
+In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
 ```
 // set the start angle
@@ -90,10 +92,9 @@ radar2.startAngle(90);
 
 ## Axes and Scales
 
-[Axes Basics](../Axes_and_Grids/Axis_Basics)
-(???) [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
+To find all available settings that can be applied to [axes](../../Axes_and_Grids/Axis_Basics) and [scales](../../Axes_and_Grids/Scales), see [Axes and Grids](../../Axes_and_Grids/Scales). In this section you can find some settings often used with radar charts.
 
-{api:anychart.core.axes.Radar#stroke}stroke(){api}
+If you want to configure the stroke of the X and Y axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
 // configure the appearance of the Y-Axis
@@ -103,9 +104,16 @@ yAxis.stroke({
   thickness: 2,
   dash: "10 5"
 });  
+
+// configure the appearance of the X-Axis
+var xAxis = chart.xAxis();
+xAxis.stroke({
+  color: "#00cc99",
+  thickness: 4,
+});    
 ```
 
-[Scale tutorial](../Axes_and_Grids/Scales#types)
+To invert a scale, use the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
 // invert the Y-scale
@@ -113,7 +121,7 @@ var yScale = chart.yScale();
 yScale.inverted(true);
 ```
 
-{api:anychart.scales.Logarithmic}scale(){api}
+You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – call {api:anychart.scales#log}log(){api}:
 
 ```
 // create a logarithmic scale
@@ -127,38 +135,71 @@ logScale.maximum(10000);
 chart.yScale(logScale); 
 ```
 
+The following sample shows how to configure the appearance of the X and Y axes and invert the Y-scale:
+
 {sample}BCT\_Radar\_Chart\_03{sample}
 
 ## Grid
 
-[Grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
+You can configure the appearance and layout of grids on radar charts.
 
+The {api:anychart.charts.Radar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
+
+To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or *circuit* parameters.
+
+For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
 
 ```
-var grid = chart.grid(0);
+var grid = chart.grid(1);
 // set the layout type
 grid.layout("radial");
-// set the fill of odd-numbered grids
-grid.oddFill("#33ffcc", 0.1);
-// set the fill of even-numbered grids
-grid.evenFill("#3399ff", 0.1);
 ```
 
-{sample}BCT\_Radar\_Chart\_04{sample}
+In case you want your chart to have only a circular grid, get the grid with the index 0 and set the layout to "circuit":
 
 ```
 var grid = chart.grid(0);
 // set the layout type
 grid.layout("circuit");
-// set the fill of odd-numbered grids
-grid.oddFill("#33ffcc", 0.1);
-// set the fill of even-numbered grids
-grid.evenFill("#3399ff", 0.1);
+```
+
+The appearance is configured with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
+
+For more information, see this article: [Axis Basics: Grids](../../Axes_Basics/Axis_Basics#grids)/
+
+In the sample below there is a Radar Line chart having only a radial grid, the odd- and even-numbered cells filled with different colors:
+
+```
+var grid = chart.grid(1);
+// set the layout type
+grid.layout("radial");
+// set the fill of odd-numbered cells
+grid.oddFill("#80ffdf", 0.1);
+// set the fill of even-numbered cells
+grid.evenFill("#ffdf80", 0.1);
+```
+
+{sample}BCT\_Radar\_Chart\_04{sample}
+
+This sample shows a Radar Line chart having only a circular grid, the odd- and even-numbered cells filled with different colors:
+
+```
+var grid = chart.grid(0);
+// set the layout type
+grid.layout("circuit");
+// set the fill of odd-numbered cells
+grid.oddFill("#80ffdf", 0.1);
+// set the fill of even-numbered cells
+grid.evenFill("#ffdf80", 0.1);
 ```
 
 {sample}BCT\_Radar\_Chart\_05{sample}
 
 ## Stacked Radar Charts
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+
+You can create [Radar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Radar Percent Stacked Area](../Stacked/Percent/Radar_Area_Chart) charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](Stacked/Overview).
 
 ## Supported Types
 
