@@ -111,7 +111,7 @@ xAxis.stroke({
 });    
 ```
 
-To invert a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
+To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
 // invert the Y-scale
