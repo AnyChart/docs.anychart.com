@@ -11,41 +11,29 @@
 
     // create data for the first series
     var data_1 = [
-      {x: "A", value: 1222},
-      {x: "B", value: 2431},
-      {x: "C", value: 3624},
-      {x: "D", value: 5243},
-      {x: "E", value: 6813},
-      {x: "F", value: 5321},
-      {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
+      {x: 50, value: 0},
+      {x: 100, value: 100},
+      {x: 50, value: 0}
     ];
 
     // create data for the second series
     var data_2 = [
-      {x: "A", value: 722},
-      {x: "B", value: 1431},
-      {x: "C", value: 1624},
-      {x: "D", value: 1243},
-      {x: "E", value: 1813},
-      {x: "F", value: 1321},
-      {x: "G", value: 567},
-      {x: "H", value: 1876},
-      {x: "I", value: 1187}
+      {x: 0, value: 0},
+      {x: 50, value: 100},
+      {x: 100, value: 0}
     ];
 
     // create a chart
-    chart = anychart.radar();
+    chart = anychart.polar();
 
     // create the first series (line) and set the data
     var series1 = chart.line(data_1);
 
-    // create the second series (area) and set the data
+    // create the second series (marker) and set the data
     var series2 = chart.area(data_2);
 
     // set the chart title
-    chart.title("Radar Plot: Basic Sample");
+    chart.title("Polar Plot: Basic Sample");
 
     // set the container id
     chart.container("container");

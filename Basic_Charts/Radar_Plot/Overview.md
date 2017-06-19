@@ -63,7 +63,7 @@ chart = anychart.radar();
 // create the first series (line) and set the data
 var series1 = chart.line(data_1);
 
-// create the second series (marker) and set the data
+// create the second series (area) and set the data
 var series2 = chart.area(data_2);
 
 // set the container id
