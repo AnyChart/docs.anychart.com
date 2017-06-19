@@ -282,7 +282,7 @@ verticalScrollBar.fill("#B2D7FF");
 
 ## Appearance settings from Data
 
-Most of the settings described above can be defined through the data. The following sample demonstrates how to 
+Most of the settings described above can be defined through the data. The following sample demonstrates how to adjust the visual appearance for some elements of a Resource Chart using the dataset.
 
 ```
 {
@@ -302,5 +302,7 @@ Most of the settings described above can be defined through the data. The follow
     ]
 }
 ```
+
+One of the advantages of this way of adjusting the colors and other visual settings is an opportunity to adjust elements separately from similar ones and make them unique for some reasons.
 
 {sample}Resource\_Visualization\_09{sample}
