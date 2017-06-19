@@ -28,7 +28,7 @@ In the sample below, there is a polar chart with two series, Line and Area:
 
 ```
 
-{sample}BCT\_Radar\_Chart\_01{sample}
+{sample}BCT\_Polar\_Chart\_01{sample}
 
 ## Start Angle
 
