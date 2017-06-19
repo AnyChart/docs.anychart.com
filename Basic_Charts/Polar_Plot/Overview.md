@@ -49,7 +49,7 @@ polar2.startAngle(90);
 
 ```
 
-{sample}BCT\Polar\_Chart\_03{sample}
+{sample}BCT\_Polar\_Chart\_03{sample}
 
 ## Axes and Scales
 
@@ -150,7 +150,7 @@ grid.oddFill("#80ffdf", 0.1);
 grid.evenFill("#ffdf80", 0.1);
 ```
 
-{sample}BCT\Polar\_Chart\_06{sample}
+{sample}BCT\_Polar\_Chart\_06{sample}
 
 ## Supported Types
 
