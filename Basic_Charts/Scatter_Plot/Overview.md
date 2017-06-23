@@ -195,10 +195,10 @@ rectangle.allowEdit(false);
 Here is the list of supported scatter charts:
 
 * [Scatter Bubble](Bubble_Chart)
-* [Scatter Marker](Marker_Chart)
 * [Scatter Line](Line_Chart)
+* [Scatter Marker](Marker_Chart)
 
 See also [error](../Error_Chart/Overview) charts:
 
-* [Scatter Marker with Error Bars](../Error_Chart/Marker_Chart)
 * [Scatter Line with Error Bars](../Error_Chart/Line_Chart)
+* [Scatter Marker with Error Bars](../Error_Chart/Marker_Chart)
