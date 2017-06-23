@@ -136,9 +136,9 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 ## Grid
 
-This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids in general here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
+This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids in general: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
-To get grids by index, use the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
+To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
 The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. They are used to configure grid strokes and the fill of even- and odd-numbered cells.
 

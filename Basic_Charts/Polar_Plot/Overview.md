@@ -5,7 +5,8 @@
 * [Quick Start](#quick_start)
 * [Start Angle](#start_angle)
 * [Omitting points](#omitting_points)
-* [Axes and Scales](#axes_and_scales)
+* [Axes](#axes)
+* [Scales](#scales)
 * [Grid](#grid)
 * [Supported Types](#supported_types)
 
@@ -51,106 +52,47 @@ polar2.startAngle(90);
 
 {sample}BCT\_Polar\_Chart\_03{sample}
 
-## Axes and Scales
+#Axes
 
-In this section you can find some settings of axes and scales that are often used with polar charts. To learn about all the available settings, see [Axes and Grids](../../Axes_and_Grids).
+[Axis Basicss](../../Axes_and_Grids/Axis_Basics)
 
-If you want to configure the stroke of the X and Y axes of your polar chart, use the {api:anychart.core.axes.Polar#stroke}stroke(){api} method:
-
-```
-// configure the appearance of the Y-Axis
-var yAxis = chart.yAxis();
-yAxis.stroke({
-  color: "gray",
-  thickness: 2,
-  dash: "10 5"
-});  
-
-// configure the appearance of the X-Axis
-var xAxis = chart.xAxis();
-xAxis.stroke({
-  color: "#00cc99",
-  thickness: 4,
-});    
-```
-
-To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
+{api:anychart.core.axes.Radar#stroke}stroke(){api}
 
 ```
-// invert the Y-scale
-var yScale = chart.yScale();
-yScale.inverted(true);
-```
-
-You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – use {api:anychart.scales#log}log(){api}:
 
 ```
-// create a logarithmic scale
-var logScale = anychart.scales.log();
-
-// set the minimum and maximum values of the scale
-logScale.minimum(10);
-logScale.maximum(10000); 
-
-// set the logarithmic scale as the Y-scale
-chart.yScale(logScale); 
-```
-
-The following sample shows how to configure the appearance of the X and Y axes and invert the Y-scale:
 
 {sample}BCT\_Polar\_Chart\_04{sample}
 
+#Scales
+
+```
+
+```
+
+{sample}BCT\_Polar\_Chart\_05{sample}
+
 ## Grid
 
-This section explains how configure the appearance and layout of grids on polar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
-
-The appearance is set with the {api:anychart.core.grids.Polar#stroke}stroke(){api}, {api:anychart.core.grids.Polar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Polar#oddFill}oddFill(){api} methods. 
-
-The {api:anychart.charts.Polar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1. To change the default layouts, use the {api:anychart.core.grids.Polar#layot}layout(){api} method with either **radial** or **circuit** parameter.
-
-For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
-
-```
-var grid = chart.grid(1);
-// set the layout type
-grid.layout("radial");
 ```
 
-In case you want your chart to have only a circular grid, get the grid with the index 0 and set the layout to "circuit":
-
-```
-var grid = chart.grid(0);
-// set the layout type
-grid.layout("circuit");
-```
-
-In the sample below there is a Polar Line chart having only a radial grid, the odd- and even-numbered cells filled with different colors:
-
-```
-var grid = chart.grid(1);
-// set the layout type
-grid.layout("radial");
-// set the fill of odd-numbered cells
-grid.oddFill("#80ffdf", 0.1);
-// set the fill of even-numbered cells
-grid.evenFill("#ffdf80", 0.1);
-```
-
-{sample}BCT\_Radar\_Chart\_05{sample}
-
-This sample shows a Polar Line chart having only a circular grid, the odd- and even-numbered cells filled with different colors:
-
-```
-var grid = chart.grid(0);
-// set the layout type
-grid.layout("circuit");
-// set the fill of odd-numbered cells
-grid.oddFill("#80ffdf", 0.1);
-// set the fill of even-numbered cells
-grid.evenFill("#ffdf80", 0.1);
 ```
 
 {sample}BCT\_Polar\_Chart\_06{sample}
+
+```
+
+```
+
+{sample}BCT\_Polar\_Chart\_07{sample}
+
+```
+
+```
+
+{sample}BCT\_Polar\_Chart\_08{sample}
+
+
 
 ## Supported Types
 
