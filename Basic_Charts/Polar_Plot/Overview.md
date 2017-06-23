@@ -156,10 +156,10 @@ grid.evenFill("#ffdf80", 0.1);
 
 Here is the list of supported polar charts:
 
-* [Polar Line](Line_Chart)
 * [Polar Area](Area_Chart)
 * [Polar Column](Column_Chart)
-* [Polar Range_Column](Range_Column_Chart)
+* [Polar Line](Line_Chart)
 * [Radar Marker](Marker_Chart)
 * [Polar Polygon](Polygon_Chart)
 * [Polar Polyline](Polyline_Chart)
+* [Polar Range Column](Range_Column_Chart)

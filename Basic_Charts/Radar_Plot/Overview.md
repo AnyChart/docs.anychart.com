@@ -199,8 +199,8 @@ You can create [Radar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Rada
 
 Here is the list of supported radar charts:
 
-* [Radar Line](Line_Chart)
 * [Radar Area](Area_Chart)
+* [Radar Line](Line_Chart)
 * [Radar Marker](Marker_Chart)
 
 See also [stacked](../Stacked/Overview) charts:
