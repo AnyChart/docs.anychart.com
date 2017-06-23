@@ -7,7 +7,7 @@
 * [Omitting points](#omitting_points)
 * [Axes](#axes)
 * [Scales](#scales)
-* [Grid](#grid)
+* [Grids](#grids)
 * [Supported Types](#supported_types)
 
 ## Overview
@@ -80,7 +80,7 @@ polar2.startAngle(90);
 
 {sample}BCT\_Polar\_Chart\_03{sample}
 
-#Axes
+##Axes
 
 [Axis Basicss](../../Axes_and_Grids/Axis_Basics)
 
@@ -103,7 +103,7 @@ chart.xAxis().stroke({
 
 {sample}BCT\_Polar\_Chart\_04{sample}
 
-#Scales
+##Scales
 
 ```
 
@@ -111,7 +111,7 @@ chart.xAxis().stroke({
 
 {sample}BCT\_Polar\_Chart\_05{sample}
 
-## Grid
+##Grids
 
 ```
 // configure the stroke of the radial grid

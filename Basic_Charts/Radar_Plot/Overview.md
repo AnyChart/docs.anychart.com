@@ -5,7 +5,7 @@
 * [Quick Start](#quick_start)
 * [Start Angle](#start_angle)
 * [Axes and Scales](#axes_and_scales)
-* [Grid](#grid)
+* [Grids](#grids)
 * [Stacked Radar Charts](#stacked_radar_charts)
 * [Supported Types](#supported_types)
 
@@ -134,7 +134,7 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 {sample}BCT\_Radar\_Chart\_03{sample}
 
-## Grid
+## Grids
 
 This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids in general: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
