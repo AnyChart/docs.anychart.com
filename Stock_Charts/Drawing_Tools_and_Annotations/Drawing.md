@@ -148,6 +148,10 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 <tr><td>ANNOTATION\_DRAWING\_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
+
+<tr><td>ANNOTATION\_CHANGE\_START</td><td>annotationChangeStart</td><td>When aborted, no changes are applied.</td></tr>
+<tr><td>ANNOTATION_CHANGE</td><td>annotationChange</td><td>When aborted, no changes are applied for the "mouseMove" event, but the process itself is going on.</td></tr>
+<tr><td>ANNOTATION\_CHANGE\_FINISH</td><td>annotationChangeFinish</td><td>Cannot be aborted.</td></tr>
 </table>
 
 Please note that you should attach listeners to the chart object.
