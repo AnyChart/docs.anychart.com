@@ -26,7 +26,35 @@ Then create one of the supported series types from this enum: {api:anychart.enum
 In the sample below, there is a polar chart with two series, Line and Area:
 
 ```
+// create data for the first series
+var data_1 = [
+  {x: 0, value: 500},
+  {x: 180, value: 200},
+];
 
+// create data for the second series
+var data_2 = [
+  {x: 0, value: 0},
+  {x: 180, value: 200},
+];
+
+// create a chart
+chart = anychart.polar();
+
+// create the first series (line) and set the data
+var series1 = chart.line(data_1);
+
+// create the second series (marker) and set the data
+var series2 = chart.area(data_2);
+
+// set the chart title
+chart.title("Polar Plot: Basic Sample");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Polar\_Chart\_01{sample}
@@ -59,7 +87,18 @@ polar2.startAngle(90);
 {api:anychart.core.axes.Radar#stroke}stroke(){api}
 
 ```
+// configure the appearance of the Y-Axis
+chart.yAxis().stroke({
+  color: "gray",
+  thickness: 2,
+  dash: "10 5"
+});  
 
+// configure the appearance of the X-Axis
+chart.xAxis().stroke({
+  color: "#00cc99",
+  thickness: 4,
+});
 ```
 
 {sample}BCT\_Polar\_Chart\_04{sample}

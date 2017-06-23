@@ -11,39 +11,40 @@
 
     // create data
     var data = [
-      {x: "A", value: 1222},
-      {x: "B", value: 2431},
-      {x: "C", value: 3624},
-      {x: "D", value: 5243},
-      {x: "E", value: 6813},
-      {x: "F", value: 5321},
-      {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
+      {x: 0, value: 500},
+      {x: 180, value: 200},
     ];
     
     // create a stage
     stage = anychart.graphics.create("container");
 
     // set the position and data for the first chart
-    var radar1 = anychart.radar(data);
-    radar1.title("Start Angle: Default (0°)");
-    radar1.bounds(0, 0, "50%", "100%");
+    var polar1 = anychart.polar();
+    polar1.title("Start Angle: Default (0°)");
+    polar1.bounds(0, 0, "50%", "100%");
+    // create a line series
+    polar1.line(data);
+    // set the maximum value of the X-scale
+    polar1.xScale().maximum(360);
     // set the chart container
-    radar1.container(stage);
+    polar1.container(stage);
     // initiate drawing the chart
-    radar1.draw();  
+    polar1.draw();  
 
     // set the position and data for the second chart
-    var radar2 = anychart.radar(data);
-    radar2.title("Start Angle: 90°");
-    radar2.bounds("50%", 0, "50%", "100%");
+    var polar2 = anychart.polar(data);
+    polar2.title("Start Angle: 90°");
+    polar2.bounds("50%", 0, "50%", "100%");
+    // create a line series
+    polar2.line(data);
     // set the start angle
-    radar2.startAngle(90);
+    polar2.startAngle(90);
+    // set the maximum value of the X-scale
+    polar2.xScale().maximum(360);
     // set the chart container
-    radar2.container(stage);
+    polar2.container(stage);
     // initiate drawing the chart
-    radar2.draw();    
+    polar2.draw();    
 });</script>
 </head>
 <body>
