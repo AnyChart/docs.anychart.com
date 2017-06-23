@@ -96,16 +96,14 @@ If you want to configure the stroke of the X and Y axes of your radar chart, use
 
 ```
 // configure the appearance of the Y-Axis
-var yAxis = chart.yAxis();
-yAxis.stroke({
+chart.yAxis().stroke({
   color: "gray",
   thickness: 2,
   dash: "10 5"
 });  
 
 // configure the appearance of the X-Axis
-var xAxis = chart.xAxis();
-xAxis.stroke({
+chart.xAxis().stroke({
   color: "#00cc99",
   thickness: 4,
 });    
@@ -115,8 +113,7 @@ To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anycha
 
 ```
 // invert the Y-scale
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.yScale().inverted(true);
 ```
 
 You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – use {api:anychart.scales#log}log(){api}:
@@ -139,55 +136,72 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 ## Grid
 
-This section explains how configure the appearance and layout of grids on radar charts. To learn about grids in general, read [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
+This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids in general here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
-The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. 
+To get grids by index, use the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-The {api:anychart.charts.Radar#grid}grid(){api} method is used to get grids by index. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1. To change the default layouts, use the {api:anychart.core.grids.Radar#layot}layout(){api} method with either **radial** or **circuit** parameter.
+The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. They are used to configure grid strokes and the fill of even- and odd-numbered cells.
 
-For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
+Here is a radar chart with strokes configured:
 
 ```
-var grid = chart.grid(1);
+// configure the stroke of the radial grid
+chart.grid(0).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5,
+  dash: "10 5"
+});
+
+// configure the stroke of the circular grid
+chart.grid(1).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5
+});
+```
+
+{sample}BCT\_Radar\_Chart\_04{sample}
+
+In this sample grid cells are filled with color:
+
+```
+// color the odd-numbered cells of the radial grid
+chart.grid(0).oddFill({
+  color: "gray",
+  opacity: 0.05
+});
+
+// color the odd-numbered cells of the circular grid  
+chart.grid(1).oddFill({
+  color: "gray",
+  opacity: 0.05
+});
+
+// color the even-numbered cells of the circular grid 
+chart.grid(1).evenFill({
+  color: "gray",
+  opacity: 0.1
+});
+```
+
+{sample}BCT\_Radar\_Chart\_05{sample}
+
+To change the default layouts of grids, use the {api:anychart.core.grids.Radar#layout}layout(){api} method with either **radial** or **circuit** parameter. For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
+
+```
 // set the layout type
-grid.layout("radial");
+chart.grid(1).layout("radial");
 ```
 
 In case you want your chart to have only a circular grid, get the grid with the index 0 and set the layout to "circuit":
 
 ```
-var grid = chart.grid(0);
 // set the layout type
-grid.layout("circuit");
+chart.grid(0).layout("circuit");
 ```
 
-In the sample below there is a Radar Line chart having only a radial grid, the odd- and even-numbered cells filled with different colors:
-
-```
-var grid = chart.grid(1);
-// set the layout type
-grid.layout("radial");
-// set the fill of odd-numbered cells
-grid.oddFill("#80ffdf", 0.1);
-// set the fill of even-numbered cells
-grid.evenFill("#ffdf80", 0.1);
-```
-
-{sample}BCT\_Radar\_Chart\_04{sample}
-
-This sample shows a Radar Line chart having only a circular grid, the odd- and even-numbered cells filled with different colors:
-
-```
-var grid = chart.grid(0);
-// set the layout type
-grid.layout("circuit");
-// set the fill of odd-numbered cells
-grid.oddFill("#80ffdf", 0.1);
-// set the fill of even-numbered cells
-grid.evenFill("#ffdf80", 0.1);
-```
-
-{sample}BCT\_Radar\_Chart\_05{sample}
+{sample}BCT\_Radar\_Chart\_06{sample}
 
 ## Stacked Radar Charts
 

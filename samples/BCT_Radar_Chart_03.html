@@ -29,23 +29,20 @@
     var series = chart.line(data);
 
     // configure the appearance of the Y-Axis
-    var yAxis = chart.yAxis();
-    yAxis.stroke({
+    chart.yAxis().stroke({
       color: "gray",
       thickness: 2,
       dash: "10 5"
     });  
 
     // configure the appearance of the X-Axis
-    var xAxis = chart.xAxis();
-    xAxis.stroke({
+    chart.xAxis().stroke({
       color: "#00cc99",
       thickness: 4,
     });  
 
     // invert the Y-scale
-    var yScale = chart.yScale();
-    yScale.inverted(true);
+    chart.yScale().inverted(true);
 
     // set the chart title
     chart.title("Radar Plot: Axes and Scales");

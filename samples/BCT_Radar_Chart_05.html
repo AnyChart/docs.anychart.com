@@ -28,16 +28,26 @@
     // create a line series and set the data
     var series = chart.line(data);
 
-    // set the chart title
-    chart.title("Radar Plot: Grids (Circular)");
+    // color the odd-numbered cells of the radial grid
+    chart.grid(0).oddFill({
+      color: "gray",
+      opacity: 0.05
+    });
 
-    var grid = chart.grid(0);
-    // set the layout type
-    grid.layout("circuit");
-    // set the fill of odd-numbered cells
-    grid.oddFill("#80ffdf", 0.1);
-    // set the fill of even-numbered cells
-    grid.evenFill("#ffdf80", 0.1);
+    // color the odd-numbered cells of the circular grid  
+    chart.grid(1).oddFill({
+      color: "gray",
+      opacity: 0.05
+    });
+
+    // color the even-numbered cells of the circular grid 
+    chart.grid(1).evenFill({
+      color: "gray",
+      opacity: 0.1
+    });
+
+    // set the chart title
+    chart.title("Radar Plot: Grids (Cells)");
 
     // set the container id
     chart.container("container");
