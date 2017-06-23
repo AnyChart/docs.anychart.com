@@ -114,24 +114,45 @@ chart.xAxis().stroke({
 ## Grid
 
 ```
+// configure the stroke of the radial grid
+chart.grid(0).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5
+});
 
+// configure the stroke of the circular grid
+chart.grid(1).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5,
+  dash: "10 5"
+});
 ```
 
 {sample}BCT\_Polar\_Chart\_06{sample}
 
 ```
+// color the odd-numbered cells of the radial grid
+chart.grid(0).oddFill({
+  color: "gray",
+  opacity: 0.05
+});
 
+// color the odd-numbered cells of the circular grid  
+chart.grid(1).oddFill({
+  color: "gray",
+  opacity: 0.05
+});
+
+// color the even-numbered cells of the circular grid 
+chart.grid(1).evenFill({
+  color: "gray",
+  opacity: 0.1
+});
 ```
 
 {sample}BCT\_Polar\_Chart\_07{sample}
-
-```
-
-```
-
-{sample}BCT\_Polar\_Chart\_08{sample}
-
-
 
 ## Supported Types
 
