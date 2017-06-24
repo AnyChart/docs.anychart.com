@@ -40,8 +40,7 @@ var data_1 = [
   {x: "E", value: 6813},
   {x: "F", value: 5321},
   {x: "G", value: 1567},
-  {x: "H", value: 3876},
-  {x: "I", value: 2187}
+  {x: "H", value: 3876}
 ];
 
 // create data for the second series
@@ -53,8 +52,7 @@ var data_2 = [
   {x: "E", value: 1813},
   {x: "F", value: 1321},
   {x: "G", value: 567},
-  {x: "H", value: 1876},
-  {x: "I", value: 1187}
+  {x: "H", value: 1876}
 ];
 
 // create a chart
@@ -166,20 +164,26 @@ chart.grid(1).stroke({
 In this sample grid cells are filled with color:
 
 ```
+// color the even-numbered cells of the radial grid
+radar1.grid(0).evenFill({
+  color: "gray",
+  opacity: 0.05
+});
+
 // color the odd-numbered cells of the radial grid
-chart.grid(0).oddFill({
+radar1.grid(0).oddFill({
+  color: "gray",
+  opacity: 0.1
+});
+
+// color the even-numbered cells of the circular grid 
+radar2.grid(1).evenFill({
   color: "gray",
   opacity: 0.05
 });
 
 // color the odd-numbered cells of the circular grid  
-chart.grid(1).oddFill({
-  color: "gray",
-  opacity: 0.05
-});
-
-// color the even-numbered cells of the circular grid 
-chart.grid(1).evenFill({
+radar2.grid(1).oddFill({
   color: "gray",
   opacity: 0.1
 });

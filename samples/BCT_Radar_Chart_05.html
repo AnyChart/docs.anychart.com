@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
     // create data
     var data = [
@@ -18,42 +18,49 @@
       {x: "E", value: 6813},
       {x: "F", value: 5321},
       {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
+      {x: "H", value: 3876}
     ];
     
-    // create a chart
-    chart = anychart.radar();
+    // create a stage
+    stage = anychart.graphics.create("container");
 
-    // create a line series and set the data
-    var series = chart.line(data);
-
+    // set the position and data for the first chart
+    var radar1 = anychart.radar(data);
+    radar1.title("Cells Color: Radial Grid");
+    radar1.bounds(0, 0, "50%", "100%");
+    // color the even-numbered cells of the radial grid
+    radar1.grid(0).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
     // color the odd-numbered cells of the radial grid
-    chart.grid(0).oddFill({
-      color: "gray",
-      opacity: 0.05
-    });
-
-    // color the odd-numbered cells of the circular grid  
-    chart.grid(1).oddFill({
-      color: "gray",
-      opacity: 0.05
-    });
-
-    // color the even-numbered cells of the circular grid 
-    chart.grid(1).evenFill({
+    radar1.grid(0).oddFill({
       color: "gray",
       opacity: 0.1
     });
-
-    // set the chart title
-    chart.title("Radar Plot: Grids (Cells)");
-
-    // set the container id
-    chart.container("container");
-
+    // set the chart container
+    radar1.container(stage);
     // initiate drawing the chart
-    chart.draw();
+    radar1.draw();  
+
+    // set the position and data for the second chart
+    var radar2 = anychart.radar(data);
+    radar2.title("Cells Color: Circular Grid");
+    radar2.bounds("50%", 0, "50%", "100%");
+    // color the even-numbered cells of the circular grid 
+    radar2.grid(1).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
+    // color the odd-numbered cells of the circular grid  
+    radar2.grid(1).oddFill({
+      color: "gray",
+      opacity: 0.1
+    });
+    // set the chart container
+    radar2.container(stage);
+    // initiate drawing the chart
+    radar2.draw(); 
 });</script>
 </head>
 <body>

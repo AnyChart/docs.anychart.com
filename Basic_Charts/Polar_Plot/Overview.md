@@ -136,20 +136,26 @@ chart.grid(1).stroke({
 {sample}BCT\_Polar\_Chart\_06{sample}
 
 ```
+// color the even-numbered cells of the radial grid
+polar1.grid(0).evenFill({
+  color: "gray",
+  opacity: 0.05
+});
+
 // color the odd-numbered cells of the radial grid
-chart.grid(0).oddFill({
+polar1.grid(0).oddFill({
+  color: "gray",
+  opacity: 0.1
+});
+
+// color the even-numbered cells of the circular grid 
+radar2.grid(1).evenFill({
   color: "gray",
   opacity: 0.05
 });
 
 // color the odd-numbered cells of the circular grid  
-chart.grid(1).oddFill({
-  color: "gray",
-  opacity: 0.05
-});
-
-// color the even-numbered cells of the circular grid 
-chart.grid(1).evenFill({
+radar2.grid(1).oddFill({
   color: "gray",
   opacity: 0.1
 });

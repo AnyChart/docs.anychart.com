@@ -18,8 +18,7 @@
       {x: "E", value: 6813},
       {x: "F", value: 5321},
       {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
+      {x: "H", value: 3876}
     ];
     
     // create a stage
@@ -27,7 +26,7 @@
 
     // set the position and data for the first chart
     var radar1 = anychart.radar(data);
-    radar1.title("Radial Grid");
+    radar1.title("Layout: Radial Grid");
     radar1.bounds(0, 0, "50%", "100%");
     // set the layout type
     radar1.grid(1).layout("radial");
@@ -38,7 +37,7 @@
 
     // set the position and data for the second chart
     var radar2 = anychart.radar(data);
-    radar2.title("Circular Grid");
+    radar2.title("Layout: Circular Grid");
     radar2.bounds("50%", 0, "50%", "100%");
     // set the layout type
     radar2.grid(0).layout("circuit");
