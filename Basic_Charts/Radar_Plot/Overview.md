@@ -140,7 +140,7 @@ To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} meth
 
 The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. They are used to configure grid strokes and the fill of even- and odd-numbered cells.
 
-Here is a radar chart with strokes configured:
+Here is a radar chart with grid strokes configured:
 
 ```
 // configure the stroke of the radial grid
