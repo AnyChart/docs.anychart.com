@@ -198,7 +198,7 @@ radar2.grid(1).oddFill({
 
 {sample}BCT\_Radar\_Chart\_05{sample}
 
-To change the default layouts of grids, use the {api:anychart.core.grids.Radar#layout}layout(){api} method with either **radial** or **circuit** parameter. For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
+To change the default layouts of grids, use the {api:anychart.core.grids.Radar#layout}layout(){api} method with either the **radial** or **circuit** parameter. For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
 
 ```
 // set the layout type
