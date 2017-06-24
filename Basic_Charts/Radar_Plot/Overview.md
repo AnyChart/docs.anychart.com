@@ -134,13 +134,13 @@ The following sample shows how to configure the appearance of the X and Y axes a
 
 ## Grids
 
-This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids in general: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
+This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-The appearance is set with the {api:anychart.core.grids.Radar#stroke}stroke(){api}, {api:anychart.core.grids.Radar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} methods. They are used to configure grid strokes and the fill of even- and odd-numbered cells.
+You can configure the appearance of any grid. The {api:anychart.core.grids.Radar#stroke}stroke(){api} method sets the stroke, {api:anychart.core.grids.Radar#evenFill}evenFill(){api} and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} set the fill of even- and odd-numbered cells.
 
-Here is a radar chart with grid strokes configured:
+Here is a polar chart with the stroke of both grids configured:
 
 ```
 // configure the stroke of the radial grid
@@ -161,7 +161,7 @@ chart.grid(1).stroke({
 
 {sample}BCT\_Radar\_Chart\_04{sample}
 
-In this sample grid cells are filled with color:
+In this sample cells of the radial (first chart) and circular (second chart) grids are filled with color:
 
 ```
 // color the even-numbered cells of the radial grid

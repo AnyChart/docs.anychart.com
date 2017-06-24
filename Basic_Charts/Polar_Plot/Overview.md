@@ -20,8 +20,7 @@ This article explains how to create and configure polar charts. To find out whic
 
 To create a polar chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor.
 
-Then create one of the supported series types from this enum: {api:anychart.enums.PolarSeriesType}anychart.enums.PolarSeriesType{api}.
-
+Then add one of the supported series types from this enum: {api:anychart.enums.PolarSeriesType}anychart.enums.PolarSeriesType{api}. If you just pass your data to the chart constructor, a Marker series is created.
 
 In the sample below, there is a polar chart with two series, Line and Area:
 
@@ -85,9 +84,9 @@ polar2.startAngle(90);
 
 ##Axes
 
-[Axis Basicss](../../Axes_and_Grids/Axis_Basics)
+To learn about axes in general, see the [Axes and Grids](../../Axes_and_Grids) section.
 
-{api:anychart.core.axes.Radar#stroke}stroke(){api}
+In the case of polar charts, it is often necessary to configure the stroke of the X and Y axes. Use he {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
 // configure the appearance of the Y-Axis
@@ -108,6 +107,8 @@ chart.xAxis().stroke({
 
 ##Scales
 
+To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) section.
+
 ```
 
 ```
@@ -116,13 +117,13 @@ chart.xAxis().stroke({
 
 ##Grids
 
-This section explains how to configure the appearance and layout of grids on polar charts. You can also read about grids in general: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
+This section explains how to configure the appearance and layout of grids on polar charts. You can also read about grids here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-The appearance is set with the {api:anychart.core.grids.Polar#stroke}stroke(){api}, {api:anychart.core.grids.Polar#evenFill}evenFill(){api}, and {api:anychart.core.grids.Polar#oddFill}oddFill(){api} methods. They are used to configure grid strokes and the fill of even- and odd-numbered cells.
+You can configure the appearance of any grid. The {api:anychart.core.grids.Polar#stroke}stroke(){api} method sets the stroke, {api:anychart.core.grids.Polar#evenFill}evenFill(){api} and {api:anychart.core.grids.Polar#oddFill}oddFill(){api} set the fill of even- and odd-numbered cells.
 
-Here is a polar chart with grid strokes configured:
+Here is a polar chart with the stroke of both grids configured:
 
 ```
 // configure the stroke of the radial grid
@@ -143,7 +144,7 @@ chart.grid(1).stroke({
 
 {sample}BCT\_Polar\_Chart\_06{sample}
 
-In this sample grid cells are filled with color:
+In this sample cells of the radial (first chart) and circular (second chart) grids are filled with color:
 
 ```
 // color the even-numbered cells of the radial grid
