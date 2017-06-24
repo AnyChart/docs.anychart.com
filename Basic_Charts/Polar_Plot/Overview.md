@@ -121,9 +121,13 @@ This section explains how to configure the appearance and layout of grids on pol
 
 To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-You can configure the appearance of any grid. The {api:anychart.core.grids.Polar#stroke}stroke(){api} method sets the stroke, {api:anychart.core.grids.Polar#evenFill}evenFill(){api} and {api:anychart.core.grids.Polar#oddFill}oddFill(){api} set the fill of even- and odd-numbered cells.
+You can configure the appearance of any grid — here is the list of available methods:
 
-Here is a polar chart with the stroke of both grids configured:
+* {api:anychart.core.grids.Polar#stroke}stroke(){api} sets the stroke
+* {api:anychart.core.grids.Polar#evenFill}evenFill(){api} sets the fill of even-numbered cells
+* {api:anychart.core.grids.Polar#oddFill}oddFill(){api} sets the fill of odd-numbered cells
+
+In the sample below, there is a polar chart with the stroke of both grids configured:
 
 ```
 // configure the stroke of the radial grid
@@ -144,7 +148,7 @@ chart.grid(1).stroke({
 
 {sample}BCT\_Polar\_Chart\_06{sample}
 
-In this sample cells of the radial (first chart) and circular (second chart) grids are filled with color:
+In this sample cells of the radial and circular grids are filled with color:
 
 ```
 // color the even-numbered cells of the radial grid

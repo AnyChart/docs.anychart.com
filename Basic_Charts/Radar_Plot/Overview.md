@@ -142,7 +142,7 @@ You can configure the appearance of any grid — here is the list of available m
 
 * {api:anychart.core.grids.Radar#stroke}stroke(){api} sets the stroke
 * {api:anychart.core.grids.Radar#evenFill}evenFill(){api} sets the fill of even-numbered cells
-* {api:anychart.core.grids.Radar#oddFill}oddFill(){api} sets the fill ofodd-numbered cells
+* {api:anychart.core.grids.Radar#oddFill}oddFill(){api} sets the fill of odd-numbered cells
 
 In the sample below, there is a radar chart with the stroke of both grids configured:
 
@@ -168,7 +168,7 @@ chart.grid(1).stroke({
 
 {sample}BCT\_Radar\_Chart\_04{sample}
 
-In this sample cells of the radial (first chart) and circular (second chart) grids are filled with color:
+In this sample cells of the radial and circular grids are filled with color:
 
 ```
 // color the even-numbered cells of the radial grid
