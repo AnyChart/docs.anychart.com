@@ -138,7 +138,14 @@ This section explains how to configure the appearance and layout of grids on rad
 
 To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-You can configure the appearance of any grid. The {api:anychart.core.grids.Radar#stroke}stroke(){api} method sets the stroke, {api:anychart.core.grids.Radar#evenFill}evenFill(){api} and {api:anychart.core.grids.Radar#oddFill}oddFill(){api} set the fill of even- and odd-numbered cells.
+You can configure the appearance of any grid — here is the list of available methods:
+
+* {api:anychart.core.grids.Radar#stroke}stroke(){api} sets the stroke
+* {api:anychart.core.grids.Radar#evenFill}evenFill(){api} sets the fill of even-numbered cells
+* {api:anychart.core.grids.Radar#oddFill}oddFill(){api} sets the fill ofodd-numbered cells
+
+In the sample below, there is a radar chart with the stroke of both grids configured:
+
 
 Here is a polar chart with the stroke of both grids configured:
 
