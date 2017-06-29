@@ -24,7 +24,7 @@ Each way has some strengths and weaknesses. We recommend JavaScript API – this
 
 ### JavaScript API
 
-JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](/.Data_Manipulation) data points dynamically. 
+JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](./Data_Manipulation) data points dynamically.
 
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
 
