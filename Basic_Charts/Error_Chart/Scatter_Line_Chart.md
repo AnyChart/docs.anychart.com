@@ -6,7 +6,7 @@
 
 ## Overview
 
-This article explains how to create a [Scatter Line](../Scatter_Plot/Line_Chart) chart with error bars.
+This article explains how to create a [Scatter Line chart](../Scatter_Plot/Line_Chart) with error bars.
 
 To learn more about error charts in general and how to customize them, see [Error Chart (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
 

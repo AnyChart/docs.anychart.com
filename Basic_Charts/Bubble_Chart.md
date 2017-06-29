@@ -37,7 +37,7 @@ This article explains how to create a basic Bubble chart as well as configure se
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
-<tr><td>Scatter</td><td>[Bubble on Scatter Plot](Scatter_Plot/Bubble_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Bubble](Scatter_Plot/Bubble_Chart)</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Marker](Marker_Chart)</td></tr>

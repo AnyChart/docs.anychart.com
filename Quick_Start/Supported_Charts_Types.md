@@ -24,6 +24,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Gauge Circular](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Gauge Linear](../Gauges/Linear_Gauge)</td></tr>
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
+<tr><td>[HiLo Chart](../Basic_Charts/HiLo_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>
 <tr><td>[Line Chart](../Basic_Charts/Line_Chart)</td></tr>
 <tr><td>[Maps - Geo Maps](../Maps/)</td></tr>
@@ -75,6 +76,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
 <tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
+<tr><td>[Vertical HiLo Chart](../Basic_Charts/Vertical/HiLo_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
 <tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>

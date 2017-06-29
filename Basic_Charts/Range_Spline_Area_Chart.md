@@ -35,6 +35,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 <tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/" target="_blank">Chartopedia: Range Spline Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

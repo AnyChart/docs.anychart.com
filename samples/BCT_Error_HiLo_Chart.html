@@ -10,25 +10,28 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create data
-    var data = [
-      {x: "January", open: 511.53, high: 514.98, low: 505.79, close: 506.40},
-      {x: "February", open: 507.84, high: 513.30, low: 507.23, close: 512.88},
-      {x: "March", open: 512.36, high: 515.40, low: 510.58, close: 511.40},
-      {x: "April", open: 513.10, high: 516.50, low: 511.47, close: 515.25},
-      {x: "May",  open: 515.02, high :528.00, low: 514.62, close: 525.15}
-    ];
+    var data = anychart.data.set([
+      {x: "January", high: 10000, low: 1000},
+      {x: "February", high: 12000, low: 500},
+      {x: "March", high: 18000, low: 3000},
+      {x: "April", high: 11000, low: 4000},
+      {x: "May", high: 9000, low: 6000}
+    ]);
     
     // create a chart
-    chart = anychart.vertical();
+    chart = anychart.hilo();
 
     // set the interactivity mode
     chart.interactivity("byX");
 
-    // create an OHLC series and set the data
-    var series = chart.ohlc(data);
+    // create a HiLo series and set the data
+    var series = chart.hilo(data);
+
+    // create error bars
+    series.error("40%");
 
     // set the chart title
-    chart.title("Vertical OHLC Chart");
+    chart.title("HiLo Chart with Error Bars");
 
     // set the container id
     chart.container("container");

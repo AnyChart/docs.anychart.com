@@ -82,7 +82,7 @@ chart.yAxis().labels().format("{%Value}%");
 
 ### Tooltips and Labels
 
-To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](/Common_Settings/Text_Formatters):
+To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](../../Common_Settings/Text_Formatters):
 
 ```
 // configure tooltips

@@ -24,6 +24,10 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
+<td>[HiLo series in AnyStock](HiLo)</td>
+<td>x, high, low</td>
+</tr>
+<tr>
 <td>[Japanese Candlestick series in AnyStock](Japanese_Candlestick)</td>
 <td>x, open, high, low, close</td>
 </tr>

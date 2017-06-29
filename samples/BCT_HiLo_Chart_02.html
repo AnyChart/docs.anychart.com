@@ -11,25 +11,25 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 12000, 10000],
-      ["February", 15000, 12000],
-      ["March", 16000, 18000],
-      ["April", 15000, 11000],
-      ["May", 14000, 9000]
+      ["January", 10000, 1000, 17000, 13000],
+      ["February", 12000, 500, 16500, 13500],
+      ["March", 18000, 3000, 21000, 19000],
+      ["April", 11000, 4000, 14000, 11500],
+      ["May", 9000, 6000, 12500, 10000]
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+    var seriesData_1 = data.mapAs({x: [0], high: [1], low: [2]});
+    var seriesData_2 = data.mapAs({x: [0], high: [3], low: [4]});
 
     // create a chart
-    chart = anychart.column();
-
+    chart = anychart.hilo();
+    
     // set the interactivity mode
-    chart.interactivity("byX");
+    chart.interactivity().hoverMode("byX");
 
     // create the first series, set the data and name
-    var series1 = chart.stick(seriesData_1);
+    var series1 = chart.hilo(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
@@ -38,22 +38,22 @@
     series1.selectStroke("#00cc99", 4, "10 5", "round");
 
     // create the second series, set the data and name  
-    var series2 = chart.stick(seriesData_2);
+    var series2 = chart.hilo(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the second series
     series2.stroke("#0066cc");
     series2.hoverStroke("#0066cc", 2);
     series2.selectStroke("#0066cc", 4);
-
+    
     // set the chart title
-    chart.title("Stick Chart: Appearance");
+    chart.title("HiLo Chart: Appearance");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Month");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    yAxis.title("Price, $");
 
     // set the container id
     chart.container("container");

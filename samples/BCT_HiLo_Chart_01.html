@@ -9,26 +9,32 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create data
-    var data = [
-      {x: "January", open: 511.53, high: 514.98, low: 505.79, close: 506.40},
-      {x: "February", open: 507.84, high: 513.30, low: 507.23, close: 512.88},
-      {x: "March", open: 512.36, high: 515.40, low: 510.58, close: 511.40},
-      {x: "April", open: 513.10, high: 516.50, low: 511.47, close: 515.25},
-      {x: "May",  open: 515.02, high :528.00, low: 514.62, close: 525.15}
-    ];
-    
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 10000, 1000],
+      ["February", 12000, 500],
+      ["March", 18000, 3000],
+      ["April", 11000, 4000],
+      ["May", 9000, 6000]
+    ]);
+
     // create a chart
-    chart = anychart.vertical();
+    chart = anychart.hilo();
 
     // set the interactivity mode
     chart.interactivity("byX");
 
-    // create an OHLC series and set the data
-    var series = chart.ohlc(data);
-
+    // create a HiLo series and set the data
+    var series = chart.hilo(data);
+    
     // set the chart title
-    chart.title("Vertical OHLC Chart");
+    chart.title("HiLo Chart: Basic Sample");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Price, $");
 
     // set the container id
     chart.container("container");
