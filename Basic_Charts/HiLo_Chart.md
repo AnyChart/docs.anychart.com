@@ -1,5 +1,5 @@
 {:index 1.5}
-#High-Low (HiLo) Chart
+# High-Low (HiLo) Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
