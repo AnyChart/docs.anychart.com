@@ -78,27 +78,27 @@ Let's build an example with 2 single-series line charts using the following data
 Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have 2 charts with one series of data (rates) each with dates as categories. Each point in series represents one date and the rate. Converted data looks like:
 
 ```
-  var stage = anychart.graphics.create('container');
-    
-  //create charts
-  chart1 = anychart.sparkline();
-  chart2 = anychart.sparkline();
-
-  //set container id for the charts
-  chart1.container(stage);
-  chart2.container(stage);
-
-  //create data for both charts
-  chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
-  chart2.data([1.5500,1.5458,1.5463,1.5397,1.5385]);
-
-  //set charts dimensions and position
-  chart1.bounds(0, 0, 90, 20);
-  chart2.bounds(0, 25, 90, 20);
+var stage = anychart.graphics.create('container');
   
-  //initiate chart drawing
-  chart1.draw();
-  chart2.draw();
+//create charts
+chart1 = anychart.sparkline();
+chart2 = anychart.sparkline();
+
+//set container id for the charts
+chart1.container(stage);
+chart2.container(stage);
+
+//create data for both charts
+chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
+chart2.data([1.5500,1.5458,1.5463,1.5397,1.5385]);
+
+//set charts dimensions and position
+chart1.bounds(0, 0, 90, 20);
+chart2.bounds(0, 25, 90, 20);
+
+//initiate chart drawing
+chart1.draw();
+chart2.draw();
 ```
   
 As you can see, we defined only the values, no categories are mentioned in the code. 
@@ -110,9 +110,9 @@ That's how the charts will look like:
 All titles are disabled by default, so we have to put them in visible mode.
 
 ```
-  //setting the titles
-  chart1.title('EUR/USD');
-  chart2.title('GBP/USD');
+//setting the titles
+chart1.title('EUR/USD');
+chart2.title('GBP/USD');
 ```
 
 That's how it looks with titles:
@@ -124,9 +124,9 @@ That's how it looks with titles:
 An area sparkline is a line sparkline with the area between its points and the horizontal axis colored in. Now let's use the same data as we used for the sample above, but this time define both charts as area.  
 
 ```
-  //set series type
-  chart1.type('area');
-  chart2.type('area');
+//set series type
+chart1.type('area');
+chart2.type('area');
 ```
 
 
@@ -139,8 +139,8 @@ A Column Sparkline is a kind of column chart with minimum number of options enab
 You can easily switch types: 
 
 ```
-  //set series type
-  chart1.type('column');
+//set series type
+chart1.type('column');
 ```
 
 Currency rates are not the best example for Columns, so let's take the sum of positive and negative reviews for an Ebay seller as an example.
@@ -154,8 +154,8 @@ A WinLoss is a type used predominantly for scores in sports, games, etc. It show
 That's how we swap types:
 
 ```
-  //set series type
-  chart1.type('wl');
+//set series type
+chart1.type('wl');
 ```
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_05{sample}
@@ -169,9 +169,9 @@ Axes in Sparklines are invisible, but still you can control the scales as you ca
 Let's change the Y scale type to logarithmic and define the min and the max values for one chart and show the sparkline with the default scale below to make the  difference between the plain and the tuned charts clear:
 
 ```
-  //change scales
-  chart1.yScale(anychart.scales.log());
-  chart1.yScale().minimum('79').maximum('10445');
+//change scales
+chart1.yScale(anychart.scales.log());
+chart1.yScale().minimum('79').maximum('10445');
 ```
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_06{sample}
@@ -182,8 +182,8 @@ Let's change the Y scale type to logarithmic and define the min and the max valu
 Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
 
 ```
-  chart1.data([1.1371,1.1341, 'miss', 1.1132,1.1381,1.1371]);
-  chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]);
+chart1.data([1.1371,1.1341, 'miss', 1.1132,1.1381,1.1371]);
+chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]);
 ```
 
 There's no difference in what you write instead of the point you need to be missed. This only applies to strings - be careful and don't use numerical values here. 
@@ -205,8 +205,8 @@ Here you will find some information about main parts of the sparkline chart styl
 For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
 
 ```
-    chart1.pointWidth('50%');
-    chart2.pointWidth(25);
+chart1.pointWidth('50%');
+chart2.pointWidth(25);
 ```
 Note that you can define pointWidth values as percent or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
@@ -222,13 +222,13 @@ If you want to configure data labels for all series - you should do that in the 
 The following code enables only the general chart label, i.e. name:
 
 ```
-    chart.label().enabled(true);
+chart.label().enabled(true);
 ```
 
 To enable the labels for the points, you shall write the following:
 
 ```
-    chart.labels().enabled(true);
+chart.labels().enabled(true);
 ```
 
 That's how it looks when we adjust the previous code for our sample:
@@ -261,9 +261,9 @@ Line Marker is similar to Range Marker, but there's no area to be shown with Lin
 The following code will help you to add a Line Marker to your chart:
 
 ```
-  chart.lineMarker()
-    .scale(chart.yScale()) //you may change the scale
-    .value(-50);
+chart.lineMarker()
+  .scale(chart.yScale()) //you may change the scale
+  .value(-50);
 ```
 
 That's how it all looks in the example:
@@ -284,13 +284,13 @@ Let's demonstrate how to apply different colors to different data series. To app
 The code for the example above is the following:
 
 ```
-	//colorize our charts
-	chart1.stroke('red');
-	chart2.stroke('yellow');
-	chart2.fill('#996633');
-	chart3.maxFill('green');
-	chart3.minFill('red');
-	chart4.negativeFill('darkred');
+//colorize our charts
+chart1.stroke('red');
+chart2.stroke('yellow');
+chart2.fill('#996633');
+chart3.maxFill('green');
+chart3.minFill('red');
+chart4.negativeFill('darkred');
 ```
 
 ###Special points 
@@ -363,18 +363,18 @@ Let's have a look on two different line sparklines with negative points emphasiz
 That's what we should write to color our negative points in green and stroke them in red:
 
 ```
-  chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
-  chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
 ```
 
 Now let's color the first and the last columns of two different column Sparklines. For that we use special methods {api:anychart.charts.Sparkline#firstFill}firstFill(){api} and {api:anychart.charts.Sparkline#lastFill}lastFill(){api} accordingly:
 
 ```
-  //colorize our charts
-  chart1.firstFill('darkRed');
-  chart1.lastFill('green');
-  chart2.firstFill('darkRed');
-  chart2.lastFill('green');
+//colorize our charts
+chart1.firstFill('darkRed');
+chart1.lastFill('green');
+chart2.firstFill('darkRed');
+chart2.lastFill('green');
 ```
 
 That's how it looks like on the board: 
@@ -385,10 +385,10 @@ You may notice that other points are now in one color. We've colored them in one
 You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLables}maxLabels(){api} and {api:anychart.charts.Sparkline#minLables}minLabels(){api} methods:
 
 ```
-  chart1.maxLabels().enabled(true);
-  chart1.minLabels().enabled(true);
-  chart2.maxLabels().enabled(true);
-  chart2.minLabels().enabled(true);
+chart1.maxLabels().enabled(true);
+chart1.minLabels().enabled(true);
+chart2.maxLabels().enabled(true);
+chart2.minLabels().enabled(true);
 ```
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
@@ -401,25 +401,25 @@ It's also possible to emphasize any other point besides the special ones. To col
 
 ```
 //create data for both charts
-  chart1.data([-20, 30, 50, -10, {value:'25', fill:'green'}, -50, 70, 10]);
-  chart2.data([20, 30, -10, 20, {value:'-25', fill:'green'}, -5, -30, 50]);
+chart1.data([-20, 30, 50, -10, {value:'25', fill:'green'}, -50, 70, 10]);
+chart2.data([20, 30, -10, 20, {value:'-25', fill:'green'}, -5, -30, 50]);
 ```
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_20{sample}
 
 ###HatchFill
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Hatch_Fill).
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Graphics/Hatch_Fill_Settings).
 Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}negativeFill(){api}, {api:anychart.charts.Sparkline#negativeHatchFill}negativeHatchFill{api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in light grey color.
 
 ```
-  //colorize our charts
-  chart1.negativeHatchFill('diagonal');
-  chart1.negativeFill('lightGray');
-  chart1.fill('lightGray');
-  chart2.negativeFill('lightGray');
-  chart2.negativeHatchFill('diagonal');
-  chart2.fill('lightGray');
+//colorize our charts
+chart1.negativeHatchFill('diagonal');
+chart1.negativeFill('lightGray');
+chart1.fill('lightGray');
+chart2.negativeFill('lightGray');
+chart2.negativeHatchFill('diagonal');
+chart2.fill('lightGray');
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_17{sample}
@@ -427,12 +427,12 @@ Downwards you can see a couple of WinLoss Sparklines which we've colored with ha
 It's also possible to add a hatchfill to a point through the data - if you need to emphasize how the same numbered points differ. You need to define the data as the array in this case:
 
 ```
-  chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
+chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
-To learn more about hatch fills visit the [Hatch Tutorial](../Appearance_Settings/Hatch_Fill) page.
+To learn more about hatch fills visit the [Hatch Tutorial](../Graphics/Hatch_Fill_Settings) page.
 
 ##Layout
 
@@ -451,43 +451,43 @@ chart2.bounds(0, 25, 90, 20);
 Another way to place a lot of sparklines is to use the [AnyChart table](../Dashboards/Table_Layout):
 
 ```
-  // create table
-  var table = anychart.ui.table();
- 
-  // set table content
-  table.contents([
-    [
-      null,
-      'February',
-      'June'
-    ],[
-      'EUR/USD',
-      chart1,
-      chart4
-    ],[
-      'GBP/USD',
-      chart2,
-      chart5
-    ],[
-      'CNY/USD',
-      chart3,
-      chart6
-    ]
-  ]);
- 
-  table.getRow(0).height('25%');  // Get first row and set height 25%
-  table.getCol(0).width(70);      // Get first column and set width 70 px
- 
-  table
-    .cellBorder('#B8B8B8')        // Adjust table border
-    .vAlign('center')             // Position text into the center
-    .hAlign('center')             // Position text into the center
-    .fontWeight(900)              // Bold text
-    .height(100)                  // Set table height
-    .width(200);                  // Set table width
- 
-  // set table container and initiate draw
-  table.container('container').draw();
+// create table
+var table = anychart.ui.table();
+
+// set table content
+table.contents([
+  [
+    null,
+    'February',
+    'June'
+  ],[
+    'EUR/USD',
+    chart1,
+    chart4
+  ],[
+    'GBP/USD',
+    chart2,
+    chart5
+  ],[
+    'CNY/USD',
+    chart3,
+    chart6
+  ]
+]);
+
+table.getRow(0).height('25%');  // Get first row and set height 25%
+table.getCol(0).width(70);      // Get first column and set width 70 px
+
+table
+  .cellBorder('#B8B8B8')        // Adjust table border
+  .vAlign('center')             // Position text into the center
+  .hAlign('center')             // Position text into the center
+  .fontWeight(900)              // Bold text
+  .height(100)                  // Set table height
+  .width(200);                  // Set table width
+
+// set table container and initiate draw
+table.container('container').draw();
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}

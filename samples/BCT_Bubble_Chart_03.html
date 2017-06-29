@@ -10,37 +10,64 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scatter();
+  chart = anychart.cartesian();
 
-  // set title
-  chart.title("Bubble Series");
-
-  // set data
-  chart.bubble([
-    [1, 637, 6],
-    [2, 472, 14],
-    [3, 48, 20],
-    [4, 348, 18],
-    [5, 100, 10]
+  // all data
+  var data1 = anychart.data.set([
+    {"x": 2000, value: 1100, size: 3},
+    {"x": 2001, value: 800, size: 3},
+    {"x": 2002, value: 1100, size: 3},
+    {"x": 2003, value: 1500, size: 2},
+    {"x": 2004, value: 921, size: 4},
+    {"x": 2005, value: 1000, size: 3},
+    {"x": 2006, value: 1400, size: 2}
   ]);
 
-  chart.minBubbleSize("5%");
-  chart.maxBubbleSize("15%");
+  var data2 = anychart.data.set([
+    {"x": 2000, value: 900, size: 1},
+    {"x": 2001, value: 950, size: 4},
+    {"x": 2002, value: 800, size: 2},
+    {"x": 2003, value: 1000, size: 3},
+    {"x": 2004, value: 800, size: 3},
+    {"x": 2005, value: 750, size: 1},
+    {"x": 2006, value: 800, size: 2}
+  ]);
 
-  // adjust axes settings
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
-  var xAxis = chart.xAxis();
-  xAxis.drawFirstLabel(false);
-  xAxis.drawLastLabel(false);
-  xAxis.title("Products");
+  // set data for each series
+  series1 = chart.bubble(data1);
+  series2 = chart.bubble(data2);
 
-  var xScale = chart.xScale();
-  xScale.minimum(0);
-  xScale.maximum(6);
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(1);
+  // set colors
+  series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
+  series1.stroke("#00897b", 1, "10 5", "round");
+  series1.hoverFill("#6aabcc", 0.3);
+  series1.hoverStroke("#00897b", 2, "10 5", "round");
+  series1.selectFill("#1976d2", 0.8);
+  series1.selectStroke("#00897b", 4, "10 5", "round");
 
+  series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
+  series2.hoverFill("#80cbc4", 0.5);
+  series2.selectFill("#16685d");
+  series2.hatchFill("percent10");
+  series2.hoverHatchFill("percent30");
+  series2.selectHatchFill("percent50");
+
+  // limit bubbles size
+  chart.minBubbleSize("3%");
+  chart.maxBubbleSize("10%");
+  
+  // chart title
+  chart.title("Multi-Series Bubble Chart with bubbles size limits set");
+
+  chart.legend(true);
+
+  // Sets settings for interactivity.
+  chart.interactivity({hoverMode: "byX"});
+
+  // set axes titles 
+  chart.xAxis().title("Years");
+  chart.yAxis().title("Sales");
+  
   // draw
   chart.container("container");
   chart.draw();

@@ -1,15 +1,14 @@
 {:index 3}
-Data Grouping
-==========
+# Data Grouping
+
 * [Overview](#overview)
 * [Settings](#settings)
  * [Default](#default)
  * [Adjusting](#adjusting)
   * [Levels](#levels)
   * [Set Maximum Points Number](#set_maximum_points_number)
-  * [Set Minimum Width for a Point](set_minimum_width_for_a_point)
+  * [Set Minimum Width for a Point](#set_minimum_width_for_a_point)
   * [Disable](#disable)
-
  
 ## Overview
 
@@ -31,33 +30,33 @@ As can be clearly seen from the sample, grouping is enabled by default. The leve
 
 #### List of levels
 
- - 1 millisecond
- - 5 ms
- - 10 ms
- - 25 ms
- - 50 ms
- - 100 ms
- - 250 ms
- - 500 ms
- - 1 second
- - 5 s
- - 10 s
- - 20 s
- - 30 s
- - 1 minute
- - 5 min
- - 15 min
- - 30 min
- - 1 hour
- - 2 h
- - 6 h
- - 12 h
- - 1 day
- - 1 week
- - 1 month
- - 3 months
- - 6 months
- - 1 year
+- 1 millisecond
+- 5 ms
+- 10 ms
+- 25 ms
+- 50 ms
+- 100 ms
+- 250 ms
+- 500 ms
+- 1 second
+- 5 s
+- 10 s
+- 20 s
+- 30 s
+- 1 minute
+- 5 min
+- 15 min
+- 30 min
+- 1 hour
+- 2 h
+- 6 h
+- 12 h
+- 1 day
+- 1 week
+- 1 month
+- 3 months
+- 6 months
+- 1 year
 
 ### Adjusting
 
@@ -68,16 +67,16 @@ Let's consider all methods that can adjust the grouping feature of a stock chart
 There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
 
 ```
-	// define the grouping
-    grouping = chart.grouping();
+// define the grouping
+grouping = chart.grouping();
 
-	// set the levels of grouping
-    grouping.levels([
-        {unit: 'year', count: 5},
-        {unit: 'year', count: 10},
-        {unit: 'year', count: 15},
-        {unit: 'year', count: 20}
-    ]);
+// set the levels of grouping
+grouping.levels([
+    {unit: 'year', count: 5},
+    {unit: 'year', count: 10},
+    {unit: 'year', count: 15},
+    {unit: 'year', count: 20}
+]);
 ```
 {sample}STOCK\_Grouping\_02{sample}
 
@@ -145,8 +144,3 @@ grouping.enabled(false);
 #### Get the grouping state
 
 You can use {api:anychart.core.stock.Grouping#isGrouped}isGrouped(){api} method to determine if the data is grouped at the moment. You can create a special element on your chart or use some default elements to demonstrate if the grouping is enabled or not. In the following sample we've used the chart title to show that.
-
-```
-
-```
-{sample}STOCK\_Grouping\_08{sample}

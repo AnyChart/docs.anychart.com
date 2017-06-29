@@ -1,14 +1,16 @@
 {:index 4}
-
-#Scales
+# Scales
 
 * [Overview](#overview)
 * [Stock Scales Features](#stock_axes_features)
 * [Multiple scales and axes](#multiple_scales_and_axes)
 * [Comparison Mode](#comparison_mode)
-  * [Values](#values)
-  * [Percents](#percents)
-  * [Comparison Base](#comparison_base)
+ * [Values](#values)
+ * [Percents](#percents)
+ * [Comparison Base](#comparison_base)
+* [Stacked Mode](#stacked_mode)
+ * [Value](#value)
+ * [Percent](#percent)
 
 ## Overview
 
@@ -94,3 +96,33 @@ chart.plot(1).yScale().compareWith(1209081600000);
 ```
 
 {sample}STOCK\_Scales\_03{sample}
+
+## Stacked Mode
+
+The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs.
+
+Stacking is a special mode of a Scale set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and several types of series are compatible with this mode. If a series can not be stacked it simply ignores the mode.
+
+There are two modes of stacking: value and percent.
+
+### Value
+
+To create a value stacked chart you need to set scale stackMode to "value":
+
+```
+chart = anychart.stock();
+chart.plot(0).yScale().stackMode("value");
+```
+
+{sample}STOCK\_Scales\_04{sample}
+
+### Percent
+
+To create a value stacked chart you need to set scale stackMode to "percent":
+
+```
+chart = anychart.stock();
+chart.plot(0).yScale().stackMode("percent");
+```
+
+{sample}STOCK\_Scales\_05{sample}

@@ -1,0 +1,67 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: 4, value: 42},
+      {x: 13, value: 59},
+      {x: 25, value: 68},
+      {x: 25, value: 63},
+      {x: 44, value: 54},
+      {x: 55, value: 58},
+      {x: 56, value: 46},
+      {x: 60, value: 54},
+      {x: 72, value: 73}
+    ];
+
+    // create a chart
+    chart = anychart.quadrant(data);
+
+    // configure quarters
+    chart.quarters(
+            {
+                rightTop: {
+                    fill: "#ccfff2",
+                    corners: 30,
+                    cornerType: "cut"
+                },
+                rightBottom: {
+                    fill: "#e6f9ff",
+                    corners: 30,
+                    cornerType: "cut"
+                },
+                leftTop: {
+                    fill: "#fff9e6",
+                    corners: 30,
+                    cornerType: "cut"
+                },
+                leftBottom: {
+                    fill: "#f9e6ff",
+                    corners: 30,
+                    cornerType: "cut"
+                },
+            }
+    );
+
+    // set the chart title
+    chart.title("Quadrant Chart: Quarters (Appearance)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

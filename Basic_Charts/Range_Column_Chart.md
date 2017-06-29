@@ -29,7 +29,7 @@ This article explains how to create a basic Range Column chart as well as config
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Range Bar](Range_Bar_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Range Column Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Range Column](Polar_Plot/Range_Column_Chart)</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -39,6 +39,7 @@ This article explains how to create a basic Range Column chart as well as config
 <tr><td></td><td>[Column](Column_Chart)</td></tr>
 <tr><td></td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td></td><td>[Range Bar](Range_Bar_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-column-chart/" target="_blank">Chartopedia: Range Column Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

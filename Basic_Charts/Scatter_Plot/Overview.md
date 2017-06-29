@@ -1,259 +1,204 @@
 {:index 1}
-# Overview
+# Scatter Plot
 
 * [Overview](#overview)
-* [Chart](#chart)
-  * [Line Chart](#line_chart)
-  * [Bubble Chart](#bubble_chart)
-  * [Marker Chart](#marker_chart)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
-  * [Logarithmic](#logarithmic)
-* [Labels and Tooltips](#labels_and_tooltips)
+* [Quick Start](#quick_start)
+* [Grids](#grids)
+* [Date/Time Scale](#date_time_scale)
+* [Error Bars](#error_bars)
+* [Drawing Tools and Annotations](#drawing_tools_and_annotations)
+* [Supported Types](#supported_types)
 
 ## Overview
 
-Scatter charts show the relationships among the numeric values in several data series, or between two groups of numbers as one series of XY coordinates.
+AnyChart allows you to create scatter charts by using a special scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter constructor distributes points according to their values.
 
-A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (X-axis) and another one along the vertical axis (Y axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical and engineering data.
+Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-Use a scatter chart when:
+To learn more about the difference between the scatter and Cartesian constructors, read the [Scatter vs. Cartesian](#) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
 
- * You want to change the scale of the horizontal axis.
- * You want to make that axis logarithmic.
- * Values for horizontal axis are not evenly spaced.
- * There are a lot of data points on the horizontal axis.
- * You want an effective representation of data that includes pairs or groups of value sets and adjust the independent scales of a scatter chart to reveal more information about the grouped values.
- * You want to show similarities between large sets of data instead of differences between data points.
- * You want to compare large numbers of data points without regard to time — the more data you have in a scatter chart, the better comparisons you can make.
+This article explains how to create and configure scatter charts.
 
-## Chart
+## Quick Start
 
-Depending on your task you can plot the following types on a Scatter plot: Line, Marker and Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart#scatter}.scatter(){api} method.
+To create a scatter chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then create one of the supported series types from this enum: {api:anychart.enums.ScatterSeriesType}anychart.enums.ScatterSeriesType{api}.
+
+In the sample below, there are two series, Marker and Line, created by the {api:anychart.charts.Scatter#marker}marker(){api} and {api:anychart.charts.Scatter#line}line(){api} methods:
 
 ```
-var chart = anychart.scatter();
+// create data for the first series
+var data_1 = [
+  {x: 0.6, value: 22},
+  {x: 1.7, value: 55},
+  {x: 2.3, value: 50},
+  {x: 3.5, value: 80},
+  {x: 3.9, value: 74},
+  {x: 4, value: 68},
+  {x: 4, value: 76},
+  {x: 4.1, value: 84},
+  {x: 4.7, value: 93}
+];
+
+// create data for the second series
+var data_2 = [
+  {x: 0.5, value: 17.5},
+  {x: 4.75, value: 100}
+];
+
+// create a chart
+chart = anychart.scatter();
+
+// create the first series (marker) and set the data
+var series1 = chart.marker(data_1);
+
+// create the second series (line) and set the data
+var series2 = chart.line(data_2);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-### Line Chart
+{sample}BCT\_Scatter\_Chart\_01{sample}
 
-As Scatter charts are plotted using two values you always need to specify both x and y.
 
-Let's take the following table as the source of data for the scatter chart as the first line:
+## Grids
 
-<table border="1" class="dtTABLE">
- <tbody>
-  <tr>
-   <th width="80">x</th>
-   <th width="80">y</th>
-  </tr>
-  <tr>
-   <td>-2</td>
-   <td>4</td>
-  </tr>
-  <tr>
-   <td>-1</td>
-   <td>1</td>
-  </tr>
-  <tr>
-   <td>0</td>
-   <td>0</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>1</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>4</td>
-  </tr>
- </tbody>
-</table>
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#grid}grid(){api} and {api:anychart.charts.Scatter#minorGrid}minorGrid(){api} methods to create a major and a minor grid. The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
 
-And here is the data for the second line:
+For more information, see [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
-<table border="1" class="dtTABLE">
- <tbody>
-  <tr>
-   <th width="80">x</th>
-   <th width="80">y</th>
-  </tr>
-  <tr>
-   <td>-2</td>
-   <td>-4</td>
-  </tr>
-  <tr>
-   <td>-1</td>
-   <td>-1</td>
-  </tr>
-  <tr>
-   <td>0</td>
-   <td>0</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>-1</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>-4</td>
-  </tr>
- </tbody>
-</table>
-
-Converted data from the tables is represented below:
+The sample below shows how to create minor and major grids and configure their strokes:
 
 ```
-// set chart type
-var chart = anychart.scatter();
+// create major grids and bind them to the X and Y axes
+chart.grid(0).axis(chart.xAxis());
+chart.grid(1).axis(chart.yAxis());
 
-// data for the first line series
-chart.line ([
-  [-2, 4],
-  [-1, 1],
-  [0, 0],
-  [1, 1],
-  [2, 4]
-]);
+// configure the visual settings of major grids
+chart.grid(0).stroke({color: "#85adad", thickness: 0.7});
+chart.grid(1).stroke({color: "#85adad", thickness: 0.7});
 
-// data for the second line series
-chart.line([
-  [-2, -4],
-  [-1, -1],
-  [0, 0],
-  [1, -1],
-  [2, -4],
-]);
+// create minor grids and bind them to the X and Y axes
+chart.minorGrid(0).axis(chart.xAxis());
+chart.minorGrid(1).axis(chart.yAxis());
+
+// configure the visual settings of minor grids
+chart.minorGrid(0).stroke({color: "#85adad", thickness: 0.3, dash: 5});
+chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 ```
 
-As you can see we've created two Line series on the scatter plot:
+{sample}BCT\_Scatter\_Chart\_02{sample}
 
-{sample}BCT\_ScatterChart\_01{sample}
 
-### Bubble Chart
+<a name='date\_time\_scale'></a>
+## Date/Time Scale
 
-Scatter Bubble Charts are widely used in many analytical studies as it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Bubble charts can be used to plot up to 4 different variables on a single plot:
+Scatter charts are typically used with date/time scales – to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
 
-```
-chart.bubble([
-  {name: 'Point 1', x: 10, y: 20, size: 10},
-  {name: 'Point 2', x: 20, y: 30, size: 20}
-]).fill('red');
-
-chart.bubble([
-  {name: 'Point 3', x: '20', y: '30', size: '18' }
-]).fill('green');
-```
-
-Above there is a demonstration of two data series of Bubble type, colored with Red and Green colors and set x, y and size.
-
-In the sample below we use these knowledge to make a real sample of cluster analysis charting.
-
-We illustrate industry cluster relationships for the 17 "Springfield" targeted industry clusters. The following four variables are plotted in this single graphic:
-
- * 1. Average cluster wages: on the x-axis (horizontal)
- * 2. Growth in jobs; on the y-axis (vertical)
- * 3. Employment size of the industry; indicated by the size of the bubble
- * 4. The industry’s location quotient; indicated by the color of the bubble
-
-  
-{sample}BCT\_ScatterChart\_02{sample}
-
-### Marker Chart
-
-Scatter Point or Marker JavaScript chart is used to make a scatter plot (scatter diagram or scatter graph). It is a chart used to display values of two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
-
-A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
-
-To plot a scatter diagram using AnyChart you should use {api:anychart.charts.Scatter#marker}Marker{api} series type along with {api:anychart.charts.Scatter}anychart.scatterChart(){api}:
+In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.charts.Scatter#xScale}xScale(){api} method):
 
 ```
-var chart = anychart.scatter();
+// create a date/time scale
+var dateScale = anychart.scales.dateTime();
 
-chart.marker([
-  {2, 10},
-  {2, 20},
-  {3, 0},
-  {13, 0}
-])
+// configure major and minor ticks on the date/time scale
+dateScale.ticks().interval(1);
+dateScale.minorTicks().interval(0, 2);
+
+// set the date/time as the X-scale
+chart.xScale(dateScale);
 ```
 
-In the sample below we plot waiting time between eruptions and the duration of the eruptions for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
+{sample}BCT\_Scatter\_Chart\_03{sample}
 
-We will also draw a "best-fit" straight line through the data, calculated using linear regression method.
+## Error Bars
 
-{sample}BCT\_ScatterChart\_03{sample}
+In AnyChart, you can create charts with error bars (see [Error Chart](../Error_Chart)). This feature is often used with scatter charts, especially when they show results of some calculations or measurements.
 
-## Axes
+Error bars are created with the {api:anychart.core.scatter.series.Base#error}error(){api} method.
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+**Note:** The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes. Also, lower/upper and right/left errors can be different.
 
-### Orientation
+Here are the methods configuring error bars along the Y-axis:
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}.orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}.yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}.xAxis(){api} methods.
+* {api:anychart.core.utils.Error#valueError}valueError(){api} sets lower and upper Y-bars as equal
+* {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower Y-bars
+* {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper Y-bars
 
-Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+And these methods configure error bars along the X-axis:
 
-```
-chart.xAxis().orientation('right');
-chart.yAxis().orientation('top');
-```
+* {api:anychart.core.utils.Error#xError}xError(){api} sets left and right X-bars as equal
+* {api:anychart.core.utils.Error#xLowerError}xLowerError(){api} sets left X-bars
+* {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} sets right X-bars
 
-{sample}BCT\_ScatterChart\_04{sample}
+**Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
-### Inversion
-
-AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis **scale().inverted()**:
-
-```
-chart.yScale().inverted(true);
-```
-
-And here is the demonstration of Y and X-Axis inversion in the Marker sample:
-
-{sample}BCT\_ScatterChart\_05{sample}
-
-### Minimum and Maximum
-
-By default AnyChart charting library calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is -5, and maximum is 5. You can control these values by setting **.maximum()** and **.minimum()** parameters of the scale:
-
+In the sample below, there is a Scatter Marker chart with X and Y error bars:
 
 ```
-chart.yScale().minimum('-20').maximum('30');
+// create and configure error bars
+var error = series.error();
+error.valueLowerError(7);
+error.valueUpperError(4);
+error.xLowerError(0.1);
+error.xUpperError(0.2);
 ```
 
-And here is the demonstration of maximum and minimum values in the Line sample:
+{sample}BCT\_Scatter\_Chart\_04{sample}
 
-{sample}BCT\_ScatterChart\_06{sample}
+## Drawing Tools and Annotations
 
-### Logarithmic
+Drawing tools provide you with the ability to draw/display custom objects on a chart – in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales.Logarithmic}scale{api}:
+To add an annotation to a chart, refer to the {api:anychart.charts.Scatter#annotations}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../Stock_Charts/Drawing_Tools_and_Annotations/Overview) in AnyStock.
 
-```
-var logScaleY = anychart.scales.log();  // create logarithmic scale
-logScaleY.minimum(0.1).maximum(10000);  // set parameters for the scale
-chart.yScale(logScaleY);                // use logarithmic scale as Y scale of the chart
-
-var logScaleX = anychart.scales.log();  // create logarithmic scale
-logScaleX.minimum(0.1).maximum(10000);  // set parameters for the scale
-chart.xScale(logScaleX);                // use logarithmic scale as X scale of the chart
-```
-
-And here is the demonstration of Logarithmic Y Scale on Line chart sample - using of both X an Y logarithmic axes
-allowed us to plot data within hundreds and within thousands on the same plot:
-
-{sample}BCT\_ScatterChart\_07{sample}
-
-## Labels and Tooltips
-
-If you want to configure data labels and tooltips for all series - you should use{api:anychart.core.scatter.series.Base#labels}labels(){api} and {api:anychart.charts.Scatter#tooltip}tooltip(){api} methods. You can tune the visual appearance, positioning and format of labels and tooltips.
+Here is a sample scatter chart with two annotations, Ellipse and Rectangle. Some of their visual settings are configured:
 
 ```
-// set labels
-chart.bubble(data).labels().format("{%Name}");
+// access the annotations() object of the chart to work with annotations
+var controller = chart.annotations();
+
+// create an ellipse annotation
+var ellipse = controller.ellipse({
+  xAnchor: "1.5",
+  valueAnchor: 45,
+  secondXAnchor: "2.6",
+  secondValueAnchor: 62,
+  fill: {opacity: 0},
+  stroke: "2 red"
+});
+
+// create a rectangle annotation
+var rectangle = controller.rectangle({
+  xAnchor: "3.3",
+  valueAnchor: 64,
+  secondXAnchor: "4.4",
+  secondValueAnchor: 88,
+  fill: {opacity: 0},
+  stroke: "2 red"
+});
+
+// disable interactivity for the ellipse annotation
+ellipse.allowEdit(false);
+
+// disable interactivity for the rectangle annotation
+rectangle.allowEdit(false);
 ```
 
-{sample}BCT\_ScatterChart\_08{sample}
+{sample}BCT\_Scatter\_Chart\_05{sample}
+
+## Supported Types
+
+Here is the list of supported scatter charts:
+
+* [Scatter Bubble](Bubble_Chart)
+* [Scatter Line](Line_Chart)
+* [Scatter Marker](Marker_Chart)
+
+See also [error](../Error_Chart/Overview) charts:
+
+* [Scatter Line with Error Bars](../Error_Chart/Line_Chart)
+* [Scatter Marker with Error Bars](../Error_Chart/Marker_Chart)

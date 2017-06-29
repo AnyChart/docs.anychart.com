@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function () {
+            var data = [
+                {id: "1", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
+                {id: "2", optimistic: 3, pessimistic: 8, mostLikely: 5, name: "B"},
+                {id: "3", optimistic: 1, pessimistic: 4, mostLikely: 3, name: "D"},
+                {id: "4", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "AD", dependsOn: ["1", "3"]},
+                {id: "5", optimistic: 4, pessimistic: 16, mostLikely: 10, name: "BC", dependsOn: ["2", "3"]}
+            ];
+
+            chart = anychart.pert();
+            chart.data(data, "asTable");
+
+            // set upper labels padding and font size
+            chart.tasks().upperLabels().padding(5);
+            chart.tasks().upperLabels().fontSize(20);
+
+            chart.title("Coloring tasks");
+            chart.container("container");
+            chart.draw();
+        });</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

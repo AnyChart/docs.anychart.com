@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 10000, 1000],
+      ["February", 12000, 500],
+      ["March", 18000, 3000],
+      ["April", 11000, 4000],
+      ["May", 9000, 6000]
+    ]);
+
+    // create a chart
+    chart = anychart.hilo();
+
+    // set the interactivity mode
+    chart.interactivity("byX");
+
+    // create a HiLo series and set the data
+    var series = chart.hilo(data);
+    
+    // set the chart title
+    chart.title("HiLo Chart: Basic Sample");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Price, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

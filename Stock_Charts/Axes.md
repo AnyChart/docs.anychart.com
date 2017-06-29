@@ -90,7 +90,7 @@ In AnyStock, the x-axis is not a line, but an area with the background and heigh
 
 ## Grids
 
-Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axis_Basics#grids), but it is a method of a plot, not a chart:
+Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
 // defining the chart 

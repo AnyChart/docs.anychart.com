@@ -400,6 +400,8 @@ var columnTooltip = columnSeries.tooltip();
 columnTooltip.format("{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}");
 ```  
 
+Here is a live sample with such settings:
+
 {sample}CS\_format\_02{sample}
 
 If you explore the sample, you can see that all values are set in pence, but the shown value is formatted.
@@ -410,6 +412,8 @@ On the sample below there is another popular case of scale formatting shown: a t
 // string for formatting tooltips
 var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
 ```  
+
+Here is a live sample with such settings:
 
 {sample}CS\_format\_03{sample}
 
@@ -424,6 +428,8 @@ var tooltip = series.tooltip();
 tooltip.format("{%Value}{groupsSeparator:\\,}");
 ```  
 
+Here is a live sample with such settings:
+
 {sample}CS\_format\_04{sample}
 
 ## Formatting functions
@@ -437,6 +443,8 @@ lineTooltip.format(function(){
   return "Income: " + this.value/100 + "%";
 });
 ```
+
+Here is a live sample with such settings:
 
 {sample}CS\_format\_05{sample}
 
@@ -525,7 +533,8 @@ labels_summer.format(function(){
 
 ### Extra fields
 
-The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api}, {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api}. Which one to use depends on the unique situation.
+The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.format.Context#getStat}getStat(){api}, {api:anychart.format.Context#getData}getData(){api} or {api:anychart.format.Context#getMeta}getMeta(){api}.
+Which one to use depends on the unique situation.
 
 #### getData
 
@@ -548,9 +557,9 @@ labels.format(function(){
 
 {sample}CS\_format\_07{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api}.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.format.Context#getData}getData(){api}.
 
-Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getData}getData(){api} method.
+Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.format.Context#getData}getData(){api} method.
 
 ```
 // map data for series
@@ -626,7 +635,7 @@ labels_2.format(function(){
 
 This method is to be used when you want to obtain various statistical information from a chart. Read more about this in [Statistics](Statistics) article.
 
-Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api} method used in a Pie chart.
+Here is a sample of the {api:anychart.format.Context#getStat}getStat(){api} method used in a Pie chart.
 
 ```
 // format

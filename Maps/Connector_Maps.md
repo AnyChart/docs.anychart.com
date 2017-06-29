@@ -185,7 +185,7 @@ Curvature parameter cannot be different for hovered and selected states, as well
 
 To change the position of a marker on a connector use {api:anychart.core.ui.MarkersFactory.Marker#position}position(){api} method. It accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value as a parameter. This method manages each marker's position on a connector and can be defined through the dataSet as well.
 
-The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.MarkerType}Marker Type list{api}.
 
 ```
 	// create data set

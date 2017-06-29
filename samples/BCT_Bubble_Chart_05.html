@@ -9,39 +9,34 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // scatter type
-  chart = anychart.scatter();
+  // chart type
+  chart = anychart.cartesian();
 
-  // set title
-  chart.title("Axes Management");
-
-  // set data
-  chart.bubble([
-    [1, 637, 6],
-    [2, 472, 14],
-    [3, 48, 10]
+  // all data
+  var data = anychart.data.set([
+    {x: "2000", value: 1100, size: 3},
+    {x: "2001", value: 880, size: 4},
+    {x: "2002", value: 1100, size: 4},
+    {x: "2003", value: 1300, size: 5, fill: "gold", stroke: "#663399", type: "star5"},
+    {x: "2004", value: 921, size: 4.5},
+    {x: "2005", value: 1000, size: 3},
+    {x: "2006", value: 1400, size: 4}
   ]);
-      
-  chart.minBubbleSize(10);
-  chart.maxBubbleSize(30);
 
-  // adjust axes position
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
+  // set data for each series
+  series = chart.bubble(data);
   
-  // adjust axes settings
-  yAxis.title("Sales");
-  xAxis.drawFirstLabel(false);
-  xAxis.drawLastLabel(false);
-  xAxis.title("Products");
-  
-  var xScale = chart.xScale();
-  xScale.minimum(0);
-  xScale.maximum(4);
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(1);
+  // chart title
+  chart.title("Multi-Series Bubble Chart with an only bubble configured");
+
+  chart.legend(true);
+
+  // Sets settings for interactivity.
+  chart.interactivity({hoverMode: "byX"});
+
+  // set axes titles 
+  chart.xAxis().title("Years");
+  chart.yAxis().title("Sales");
   
   // draw
   chart.container("container");

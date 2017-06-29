@@ -5,13 +5,13 @@
 * [AJAX and Maps](#ajax_and_maps)
 * [Data](#data)
 * [Load maps using AJAX](#load_maps_using_ajax)
- * [Drill To](drill_to)
+ * [Drill To](#drill_to)
  * [Dynamic URL](#dynamic_url)
 * [Adjust settings](#adjust_settings)
 
 ## Include AnyMap component
 
-First of all, you need the AnyMap component, which can be found on the [download page](../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
+First of all, you need the AnyMap component, which can be found on the [download page](../../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
@@ -70,7 +70,7 @@ After we have defined the data, it's time to create series.
 
 AnyMap provides several types of series, so at the first step you should make up your mind about which series (map) type (or types) you are going to use in your Drill Down Map.
 
-In this sample we've decided to use [Choropleth Map](Choropleth_Map), as it's one of the most popular series type.
+In this sample we've decided to use [Choropleth Map](../Choropleth_Map), as it's one of the most popular series type.
 
 ```
 // create series for USA map

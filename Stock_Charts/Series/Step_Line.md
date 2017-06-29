@@ -11,7 +11,7 @@
 
 ## Overview
 
-Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Chart_Types/Step_Line_Chart).
+Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Charts/Step_Line_Chart).
 
 ## AnyStock Step Line Series Adjustment
 

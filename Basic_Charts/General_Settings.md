@@ -301,4 +301,4 @@ Using AnyChart, you can create 3D versions of the following chart types: Area, B
 
 ## Custom Drawing
 
-It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom Drawing).
+It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom_Drawing).

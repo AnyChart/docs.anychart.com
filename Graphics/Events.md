@@ -67,7 +67,7 @@ Try this sample to see how it works:
 
 {sample}GFX\_Events\_02{sample}
 
-# Propagation
+## Propagation
 
 To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
 
@@ -91,7 +91,6 @@ layer.listen("click", function(e) {
 Try the sample and explore it in the Playground:
 
 {sample}GFX\_Events\_03{sample}
-
 
 ## Stage
 

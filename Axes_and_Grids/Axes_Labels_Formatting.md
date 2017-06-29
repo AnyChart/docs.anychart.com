@@ -44,7 +44,7 @@ In order to make a chart readable and understandable it is very important to for
   
 You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
-It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](Text_Formatters#tokens_list) you can find a list of available tokens.
+It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find a list of available tokens.
 
 format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 
@@ -103,7 +103,7 @@ yLabels1.format("€ {%Value}{scale:(113e-2)|()}");
 
 {sample}AGST\_Labels\_Formatting\_03{sample}
 
-Find more about text formatting parameters in the [Text Formatters article](Common_Settings/Text_Formatters#formatting_parameters).
+Find more about text formatting parameters in the [Text Formatters article](../Common_Settings/Text_Formatters#formatting_parameters).
 
 ### Label Length
 
@@ -132,7 +132,7 @@ chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.E
 
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
-To limit the number of decimal characters or edit the separator use [formatting parameters](Common_Settings/Text_Formatters#formatting_parameters).
+To limit the number of decimal characters or edit the separator use [formatting parameters](../Common_Settings/Text_Formatters#formatting_parameters).
 
 ## Visual Appearance
 

@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="https://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = [
+        {id: "1", duration: 1, name: "Task A"},
+        {id: "2", duration: 4, name: "Task B"},
+        {id: "3", duration: 3, name: "Task C"},
+        {id: "4", duration: 1, name: "Task D"},
+        {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
+        {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
+    ];
+
+    // create a chart
+    var chart = anychart.pert();
+
+    // set chart data
+    chart.data(data, "asTable");
+
+    // set colors for milestones
+    milestones = chart.milestones();
+    milestones.fill("#00acc1", 0.7);
+    milestones.hoverFill("#80cbc4");
+    milestones.selectFill("#00acc1");
+    milestones.stroke("#90caf9", 1);
+    milestones.hoverStroke("#90caf9", 2);
+    milestones.selectStroke("#90caf9", 4);
+    milestones.size(40);
+
+    // set the title of the chart
+    chart.title("PERT Chart");
+
+    // set the container id for the chart
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

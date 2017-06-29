@@ -11,6 +11,7 @@
   * [Hover](#series_hover)
   * [Select](#series_select)
   * [Single Point](#single_point)
+* [Rectangle/Marquee Select](#rectangle_marquee_select)
 * [Single Series Chart](#single_series_chart)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
@@ -26,12 +27,12 @@ Our js charts are interactive by default, and almost everything can be adjusted 
 ## Default interactivity
 
 That's what happens by default when users interact with charts:
- - series and points are highlighted when hovered
- - points are selected
- - tooltips of hovered points are shown
- - series becomes highlighted when a legend is hovered
- - the series gets shown or hidden when a legend element is clicked
- - a number of series are selected (multi-select)
+- series and points are highlighted when hovered
+- points are selected
+- tooltips of hovered points are shown
+- series becomes highlighted when a legend is hovered
+- the series gets shown or hidden when a legend element is clicked
+- a number of series are selected (multi-select)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
    
@@ -271,6 +272,21 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 **Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../Common_Settings/Legend).
 
+## Rectangle Marquee Select
+
+### Charts
+
+Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee{api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee{api} methods to work with rectangle marqee select.
+
+Use the {api:anychart.core.Chart#selectMarqueeFill}{api} and {api:anychart.core.Chart#selectMarqueeStroke}{api} methods to configure marqee appearance.
+
+Handle {api:anychart.enums.EventType}SELECT\_MARQUEE\_START{api},  {api:anychart.enums.EventType}SELECT\_MARQUEE\_CHANGE{api} and {api:anychart.enums.EventType}SELECT\_MARQUEE\_FINISH{api} events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
+
+### Stock 
+
+Use the {api:anychart.charts.Stock#startZoomMarquee}startZoomMarquee(){api} along with
+{api:anychart.charts.Stock#zoomMarqueeStroke}zoomMarqueeStroke(){api} and {api:anychart.charts.Stock#zoomMarqueeFill}zoomMarqueeFill(){api} methods to work with marquee zoom in Stock charts.
+
 ## Single Series Chart
 
 As you know, AnyChart supports quite a variety of chart types. Some of them are single series charts, such as pie chart, funnel chart or pyramid chart. Managing their points is much easier than managing a number of points in a series. Use {api:anychart.core.Point}getPoint(){api} as a chart method to get the point you need:
@@ -318,43 +334,23 @@ Explore the code of this sample in the playground.
 
 #### DrillDown
 
-Using all these features, it's possible to create a drilldown chart. You can easily get points' data using the "pointSelect" event and show or hide them. Look at the following sample:
+To create a drilldown chart you just need to decide which event you want chart to react to and then made the changes in the data accordingly.
+
+Here is a sample of a basic drill down chart where the new data is loaded into a chart when a column is clicked and goes back to initial state when click happens on drilled down data:
 
 {sample}CS\_Interactivity\_13{sample} 
 
-```
-chart.listen("pointSelect", function(evt){
-  var ind = evt.pointIndex;
-
-  dataRow = data.row(ind);
-  pieDataSet.data([
-          {x: "John", value: dataRow[2]},
-          {x: "James", value: dataRow[3]},
-          {x: "Peter", value: dataRow[4]},
-          {x: "Mattew", value: dataRow[5]}
-  ]);
-  pieSubTitle = "\nYear: "+ dataRow[0];
-
-  pie.data(pieDataSet);
-
-  pie.title(pieTitle + pieSubTitle);
-});
-```
-
-Here we can see the column chart showing sales amounts of ACME Corp. by year, accompanied by a line chart displaying monthly sales statistics. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
-
-If you need the similar drilldown chart with multi-selection, you may do the following:
+The next drilldown chart works with multiselect, in this sample the series are added and removed depending on selection made on the left chart:
 
 {sample}CS\_Interactivity\_14{sample} 
 
-In this sample not the data but the series are added and removed depending on selections made:
+Check out some other drilldown samples in the gallery:
 
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
+- [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/States_of_United_States_Dashboard_with_MultiSelect.php)
+- [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/World_Temperature.php)
+- [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps_in_Dashboard/Sales_by_Region.php)
+- [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
+- [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 
@@ -364,7 +360,7 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 ### Chart as Tooltip
 
-Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit sophisticated. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on mouse events managing.
+Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on management of mouse events.
 
 {sample}CS\_Interactivity\_18{sample}
 

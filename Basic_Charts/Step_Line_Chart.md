@@ -25,7 +25,7 @@ The Step Line and Line chart types share almost all the settings, so this articl
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Step Line](Vertical/Step_Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Step Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Step Line Chart with Error Bars](Error_Chart/Step_Line_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>

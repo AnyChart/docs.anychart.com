@@ -71,5 +71,3 @@ Here is the list of possible paper formats:
 Here is a sample for printing chart on paper of **A2** format with **landscape** layout:
 
 {sample}Exports\_04{sample}
-
-**Note**: consider using {api:anychart.core.ui.toolbar.Toolbar}anychart.toolbar(){api} method if you want to add multiple ways of printing to your chart.

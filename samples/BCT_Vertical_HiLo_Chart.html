@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = anychart.data.set([
+      {x: "January", high: 10000, low: 1000},
+      {x: "February", high: 12000, low: 500},
+      {x: "March", high: 18000, low: 3000},
+      {x: "April", high: 11000, low: 4000},
+      {x: "May", high: 9000, low: 6000}
+    ]);
+
+	// create a chart
+	chart = anychart.vertical();
+
+  // set the interactivity mode
+  chart.interactivity("byX");
+
+  // create a HiLo series and set the data
+	var series = chart.hilo(data);
+
+	// set the chart title
+	chart.title("Vertical HiLo Chart");
+
+	// set the container id
+	chart.container("container");
+
+	// initiate drawing the chart
+	chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

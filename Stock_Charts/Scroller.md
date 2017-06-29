@@ -1,6 +1,6 @@
 {:index 7}
 
-#Scroller
+# Scroller
 
 * [Overview](#overview)
 * [Basics](#basics)
@@ -10,14 +10,13 @@
 
 ## Overview
 
-AnyStock provides a lot of features and tools to a chart viewer to make the working process rather comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in this article.
+Scroller is a main navigational control AnyStock provides to a chart viewer to make chart comprehension process comfortable and easy. 
 
-Scroller is a complex component that consists of the several configurable parts: Scroller itself, thumbnail series in its background (optional) and thumbs.
+Scroller is a complex component that consists of the several configurable parts: Scroller itself, optional thumbnail series in its background and thumbs.
 
 Note: this is a Scroller for Stock charts, basic charts have their own [basic scroller](../Common_Settings/Scroller) with slightly different settings.
 
- The scroller is enabled by default, it is possible to enable/disable the scroller by passing the "true" or "false" value to the {api:anychart.charts.Stock#scroller}scroller(){api} method or {api:anychart.core.stock.Scroller#enabled}enabled(){api} method:
-
+The scroller is enabled by default, it is possible to enable/disable the scroller by passing the "true" or "false" value to the {api:anychart.charts.Stock#scroller}scroller(){api} method or {api:anychart.core.stock.Scroller#enabled}enabled(){api} method:
 
 ```
 // turn scroller on
@@ -53,7 +52,7 @@ chart.scroller().allowRangeChange(false);
 
 ### Background Series
 
-Scroller can display one of the [supported series](Supported_Series) in the background. It is done pretty much like creating a series in a plot:
+Scroller can display one of the [supported series](Series/Supported_Series) in the background. It is done pretty much like creating a series in a plot:
 
 ```
 // create scroller series with mapped data
@@ -62,7 +61,7 @@ chart.scroller().column(mapping);
 
 {sample}STOCK\_Scroller\_03{sample}
 
-Visit [Supported series](Supported_Series) article to know more about series supported by AnyStock Charts.
+Visit [Supported series](Series/Supported_Series) article to know more about series supported by AnyStock Charts.
 
 ### Scroller Axis
 

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.61}
 # Marker Chart
 
 * [Overview](#overview)
@@ -28,7 +28,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Marker](Vertical/Overview)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Error Marker](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Marker Chart with Error Bars](Error_Chart/Marker_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Marker](Polar_Plot/Marker_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Marker](Radar_Plot/Marker_Chart)</td></tr>
@@ -36,7 +36,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td>Stock</td><td>[Stock Marker](../Stock_Charts/Series/Marker)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
-<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Map)</td></tr>
+<tr><td></td><td>[Dot (Point) Maps](../Maps/Dot\_\(Point\)\_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/marker-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -48,7 +48,7 @@ To create a Marker chart, use the {api:anychart#marker}anychart.marker(){api} ch
 
 To create a Marker series explicitly, call the {api:anychart.charts.Cartesian#marker}marker(){api} method.
 
-In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter/Marker_Chart), we create a basic categorized Marker chart:
+In the following sample, we DO NOT create a [Scatter Marker Chart](Scatter_Plot/Marker_Chart), we create a basic categorized Marker chart:
 
 ```
 // create a categorized chart

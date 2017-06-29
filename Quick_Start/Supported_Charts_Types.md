@@ -10,6 +10,7 @@ with links to tutorials where you can find out how to create them.
 <tr><th>Name</th></tr>
 <tr><td>[Area Chart](../Basic_Charts/Area_Chart)</td></tr>
 <tr><td>[Bar Chart](../Basic_Charts/Bar_Chart)</td></tr>
+<tr><td>[BarMekko Chart](../Basic_Charts/Marimekko_Chart/BarMekko_Chart)</td></tr>
 <tr><td>[Box Chart](../Basic_Charts/Box_Chart)</td></tr>
 <tr><td>[Bubble Chart](../Basic_Charts/Bubble_Chart)</td></tr>
 <tr><td>[Bullet Chart](../Basic_Charts/Bullet_Chart)</td></tr>
@@ -23,14 +24,18 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Gauge Circular](../Gauges/Circular_Gauge)</td></tr>
 <tr><td>[Gauge Linear](../Gauges/Linear_Gauge)</td></tr>
 <tr><td>[Heat Map Chart](../Basic_Charts/Heat_Map_Chart)</td></tr>
+<tr><td>[HiLo Chart](../Basic_Charts/HiLo_Chart)</td></tr>
 <tr><td>[Jump Line Chart](../Basic_Charts/Jump_Line_Chart)</td></tr>
 <tr><td>[Line Chart](../Basic_Charts/Line_Chart)</td></tr>
-<tr><td>[Maps - Geo Maps](../Maps/Overview)</td></tr>
+<tr><td>[Maps - Geo Maps](../Maps/)</td></tr>
 <tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td></tr>
 <tr><td>[Maps - Dot, Point, Marker](../Maps/Dot_\(Point\)_Map)</td></tr>
 <tr><td>[Maps - Connector, Line](../Maps/Connector_Maps)</td></tr>
 <tr><td>[Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map)</td></tr>
+<tr><td>[Marimekko Chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts/Marker_Chart)</td></tr>
+<tr><td>[Mekko Chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart)</td></tr>
+<tr><td>[Mosaic Chart](../Basic_Charts/Marimekko_Chart/Mosaic_Chart)</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts/OHLC_Chart)</td></tr>
 <tr><td>[Pareto Chart](../Basic_Charts/Pareto_Chart)</td></tr>
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Area_Chart)</td></tr>
@@ -65,12 +70,19 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Area Chart](../Basic_Charts/Step_Area_Chart)</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
+<tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/TreeMap_Chart)</td></tr>
+<tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
+<tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
+<tr><td>[Vertical HiLo Chart](../Basic_Charts/Vertical/HiLo_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>[Vertical Line Chart](../Basic_Charts/Vertical/Line_Chart)</td></tr>
+<tr><td>[Vertical Marimekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
 <tr><td>[Vertical Marker Chart](../Basic_Charts/Vertical/Marker_Chart)</td></tr>
+<tr><td>[Vertical Mekko Chart](../Basic_Charts/Vertical/Mekko_Chart)</td></tr>
+<tr><td>[Vertical Mosaic Chart](../Basic_Charts/Vertical/Mosaic_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Area_Chart)</td></tr>
 <tr><td>[Vertical Percent Stacked Spline Area Chart](../Basic_Charts/Stacked/Percent/Vertical_Spline_Area_Chart)</td></tr>
 <tr><td>[Vertical Range Area Chart](../Basic_Charts/Vertical/Range_Area_Chart)</td></tr>
@@ -82,4 +94,6 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Stick Chart](../Basic_Charts/Vertical/Stick_Chart)</td></tr>
 <tr><td>[Vertical Step Area Chart](../Basic_Charts/Vertical/Step_Area_Chart)</td></tr> 
 <tr><td>[Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart)</td></tr>
+<tr><td>[Waterfall Chart](../Basic_Charts/Waterfall_Chart)</td></tr>
+<tr><td>[Word Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
 </table>

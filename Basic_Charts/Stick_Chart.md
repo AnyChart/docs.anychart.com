@@ -26,7 +26,7 @@ This article explains how to create a basic Stick chart as well as configure set
 <tr><td>Stacked</td><td>[Stacked Stick](Stacked/Value/Stick_Chart), [Percent Stacked Stick](Stacked/Percent/Stick_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Stick](Vertical/Stick_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](Error_Chart/Stick_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -35,6 +35,7 @@ This article explains how to create a basic Stick chart as well as configure set
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Column](Column_Chart)</td></tr>
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stick-chart/" target="_blank">Chartopedia: Stick Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

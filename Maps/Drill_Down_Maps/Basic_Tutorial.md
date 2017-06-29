@@ -8,7 +8,7 @@
 
 ## Include AnyMap component
 
-First of all, you need the Anymap component, which can be found on the [download page](../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
+First of all, you need the Anymap component, which can be found on the [download page](../../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
@@ -79,7 +79,7 @@ After we have defined the data, it's time to pass it to series.
 
 AnyMap provide a wide range of series, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map
 
-In this sample we've decided to use [Choropleth Map](Choropleth_Map), as it's one of the most popular series type.
+In this sample we've decided to use [Choropleth Map](../Choropleth_Map), as it's one of the most popular series type.
 
 ```
 // Set the series for all maps

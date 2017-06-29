@@ -28,9 +28,9 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Area](Vertical/Vertical_Area_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Area](3D/3D_Area_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Area](Vertical/Area_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart/Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
@@ -166,4 +166,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Ar
 
 To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Area chart is described in the following article: [3D Area Chart](3D/3D_Area_Chart)
+The 3D Area chart is described in the following article: [3D Area Chart](3D/Area_Chart)

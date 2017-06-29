@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.5}
 #Line Chart
 
 * [Overview](#overview)
@@ -16,7 +16,7 @@ A line chart is a chart that shows information as a series of data points connec
 
 The line chart is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
 
-This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line chart's characteristics:
+This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -28,7 +28,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Line](Vertical/Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart/Line_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Line](Polar_Plot/Line_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Line](Radar_Plot/Line_Chart)</td></tr>
@@ -51,7 +51,7 @@ To create a Line series explicitly, call the {api:anychart.charts.Cartesian#line
 The following sample demonstrates how a basic Line chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},

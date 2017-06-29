@@ -14,7 +14,7 @@
       ["QTR1", 3.8, 5.5, 6.9, 7.9],
       ["QTR2", 5.5, 7.0, 9.6, 8.6],
       ["QTR3", 9.9, 9.7, 8.3, 7.3],
-      ["QTR4", 5.7, 7.6, 9.7, 8.7]
+      ["QTR4", 5.7, 7.6, 9.7, 18.7]
     ]);
 
     // map the data
@@ -32,7 +32,7 @@
 
     yScale2 = anychart.scales.linear();
     yScale2.stackMode("value");
-
+    
     // create column series and bind them to different scales
     chart.column(seriesData_1).yScale(yScale1);
     chart.column(seriesData_2).yScale(yScale1);
@@ -56,17 +56,16 @@
     chart.draw();
 
     // sync minimums and maximums of the scales
-    if (yScale1.maximum() > yScale2.maximum())
-        yScale2.maximum(yScale1.maximum());
-    else
-        yScale1.maximum(yScale2.maximum());
-
-
-    if (yScale1.minimum() < yScale2.minimum())
-        yScale2.minimum(yScale1.minimum());
-    else
-        yScale1.minimum(yScale2.minimum());
-
+    globalMax = chart.getStat("yScalesMax");
+    globalMin = chart.getStat("yScalesMin");
+    // get all y scales
+    var yScales = chart.getYScales();
+    // set the same minimum and maximum
+    for (var i = 0; i < yScales.length; i++) {
+       yScales[i].minimum(globalMin);
+       yScales[i].maximum(globalMax);
+    }    
+    
 });</script>
 </head>
 <body>

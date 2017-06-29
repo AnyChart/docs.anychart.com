@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.61}
 #Pareto Chart
 
 * [Overview](#overview)
@@ -235,7 +235,7 @@ Using these variables you can change scale intervals, axes colors and so on:
 
 ### Pareto Analysis Axes Markers
 
-To display lines that are usually used to do 80/20 rule analysis and alike, you need to combine knowledge from the previous section about [Axes and Scales](axes_and_scales) with the knowledge about [Line](../Axes_and_Grids/Line_Markers), [Text](../Axes_and_Grids/Text_Markers), and [Range](../Axes_and_Grids/Range_Markers).
+To display lines that are usually used to do 80/20 rule analysis and alike, you need to combine knowledge from the previous section about [Axes and Scales](#axes_and_scales) with the knowledge about [Line](../Axes_and_Grids/Line_Markers), [Text](../Axes_and_Grids/Text_Markers), and [Range](../Axes_and_Grids/Range_Markers).
 
 Here is a sample of a Pareto chart with 80% line and label displayed:
 

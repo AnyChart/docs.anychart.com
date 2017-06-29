@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.5}
 #Funnel Chart
 
 * [Overview](#overview)

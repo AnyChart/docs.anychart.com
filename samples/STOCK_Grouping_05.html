@@ -6,8 +6,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   // set the data
   table = anychart.data.table();
@@ -74,9 +73,7 @@ anychart.onDocumentReady(function() {
     chart.title('Stock Area Demo: USA population growth');
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().format(function(){
-      return this.value/1000000 + "m";
-    });
+    chart.plot(0).yAxis().labels().format("{%Value}{scale:(1000000)|(m)}");
 
     grouping = chart.grouping();
 

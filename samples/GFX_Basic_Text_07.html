@@ -13,11 +13,12 @@ stage = acgraph.create("container");
 // create the text style object
 textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
 
-// create the text element as html
+/// create a text element as HTML
 text1  = stage.text().htmlText("<p fontFace='Dancing Script'>This is my custom text,<br>which has several lines, separated<br>with the &lt;br&gt; tags.</p>");
 
-// create second text 
+// create the second text 
 text2 = stage.text(20, 50, "This is my second custom text element, which is made multiline with the help of AnyChart Graphics methods", textStyle);
+
 // text settings
 text2.width(150);
 text2.height(150);

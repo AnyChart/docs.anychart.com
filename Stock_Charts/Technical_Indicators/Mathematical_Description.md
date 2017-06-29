@@ -1,21 +1,21 @@
 {:index 3}
 
-#Technical Indicators Mathematical Decsription
+#Technical Indicators Mathematical Description
 
 * [Overview](#overview)
-* [Accumulation Distribution Line (ADL)](#)
+* [Accumulation Distribution Line (ADL)](#accumulation_distribution_line)
 * [Adaptive Moving Average (AMA)](#adaptive_moving_average)
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#average_true_range)
 * [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
+* [Bollinger Bands %B](#bollinger_bands_%b)
 * [Bollinger Bands Width (BBW)](#bollinger_bands_width)
-* [Commodity Channel Index (CCI)](#)
-* [Chaikin Money Flow (CMF)](#)
-* [Chaikin Oscillator (CHO)](#)
-* [Chaikin Volatility (CHV)](#)
-* [Directional Movement Indicator (DMI)](#)
-* [Exponential Moving Average (EMA)](#exponential\_moving\_average)
+* [Commodity Channel Index (CCI)](#commodity_channel_index)
+* [Chaikin Money Flow (CMF)](#chaikin_money_flow)
+* [Chaikin Oscillator (CHO)](#chaikin_oscillator)
+* [Chaikin Volatility (CHV)](#chaikin_volatility)
+* [Directional Movement Indicator (DMI)](#directional_movement_indicator)
+* [Exponential Moving Average (EMA)](#exponential_moving_average)
 * [KDJ](#kdj)
 * [Keltner Channels](#)
 * [Modified (Smoothed) Moving Average (MMA)](#modified_moving_average)
@@ -47,18 +47,22 @@ For all formulas and indicators below:
 
 ## Accumulation Distribution Line
 
-Coming soon.
+[Accumulation Distribution Line](Accumulation\_Distribution\_Line\_\(ADL\)) is calculated according to these formulas:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
 
 ## Adaptive Moving Average
 
-Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) indicator is calculated by the following steps:
+Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) indicator is calculated by the following steps:
 
-1. Calculate the ER:
+<ol>
+<li>Calculate the ER:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
-2. Then, use the following formula to calculate the SSC value:
+<li>Then, use the following formula to calculate the SSC value:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
-3. Now, use the results from the actions made before and calcuate the indicator:
+<li>Now, use the results from the actions made before and calculate the indicator:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
+</ol>
 
 ## Aroon
 
@@ -68,13 +72,13 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) in
 
 ## Average True Range
 
-[Average True Range](Average\_True\_Range\_(ATR)) in each point is calculated according to the following formula:
+[Average True Range](Average\_True\_Range\_(ATR\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
 This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
-- current High less than current Low;
+- current High less than current Low
 - current High less than previous Close (absolute value)
 - current Low less than previous Close (absolute value)
 
@@ -82,15 +86,13 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 [Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
 
-1. Calculate the SMA according to the SMA formula.
-
-2. Use the next formula to calculate the standard deviation:
-
-<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center>
-
-3. Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:
-
+<ol>
+<li>Calculate the SMA according to the SMA formula.</li><br>
+<li>Use the next formula to calculate the standard deviation:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center><br>
+<li>Bollinger Bands values are calculated according to this formula, where "d" is a deviation:</li><br>
 <center><img src="https://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
+</ol>
 
 ## Bollinger Bands %B
 
@@ -106,31 +108,69 @@ The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculat
 bandwidth = (upperBB − lowerBB) / middleBB
 ```
 
+## Commodity Channel Index
+
+[Commodity Channel Index](Commodity\_Channel\_Index\_\(CCI\)) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cci.png"></center>
+
+Where TP is a Typical Price calculated as:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/tp.png"></center>
+
+And SMA is calculated as stated in [SMA part](#simple_moving_average) of this article.
+
+
+## Chaikin Money Flow
+
+[Chaikin Money Flow](Chaikin\_Money\_Flow\_\(CMF\)) is calculated in three steps.
+
+<ol>
+	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center><br>
+	<li>Next an MFV(i) value is calculated for all points like this:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center><br>
+	<li>And finally the CMF(i) value is calculated according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center><br>
+</ol>
+
+
+## Chaikin Oscillator
+
+[Chaikin Oscillator](Chaikin\_Oscillator\_\(CHO\)) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
+
+You can see how the ADL indicator is calculated in the [ADL part](#accumulation_distribution_line) of this article</a>.
+
+## Chaikin Volatility
+
 Coming soon.
 
-## Commodity Channel Index (CCI)
+Chaikin Volatility indicator in each point is calculated according to the following formula:
 
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
 
-## Chaikin Money Flow (CMF)
+## Directional Movement Indicator
 
-Coming soon.
+[Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\)) is calculated in three steps: 
+<ol>
+<li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
-## Chaikin Oscillator (CHO)
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> <br>
 
-Coming soon.
+<li>Next they are smoothed using [EMA](#exponential_moving_average) or Wilder's method, calculated as:</li><br>
 
-## Chaikin Volatility (CHV)
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center><br>
 
-Coming soon.
+<li>And finally the +DI and -DI values are calculated according to these formulas:</li><br>
 
-## Directional Movement Indicator (DMI)
-
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
+</ol>
 
 ## Exponential Moving Average
 
-[Exponential Moving Average](Exponential\_Moving\_Average\_(EMA)) in each point is calculated according to the following formula:
+[Exponential Moving Average](Exponential\_Moving\_Average\_\(EMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 
@@ -139,11 +179,11 @@ Coming soon.
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
 
 <ol>
-	<li>The %K line is calculated the following way:<br>
+	<li>The %K line is calculated the following way:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj1.png"></center>
-	<li>To create the %D line, use the next formula:<br>
+	<li>To create the %D line, use the next formula:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj2.png"></center>
-	<li>This is how the %J line is calculated:<br>
+	<li>This is how the %J line is calculated:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
 </ol>
 
@@ -153,7 +193,7 @@ Coming soon.
 
 ## Modified Moving Average
 
-[Modified Moving Average](Modified\_Moving\_Average\_(MMA)) indicator points are calculated by the following formula:
+[Modified Moving Average](Modified\_Moving\_Average\_\(MMA\)) indicator points are calculated by the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
@@ -220,7 +260,7 @@ Coming soon.
 
 ## Simple Moving Average
 
-[Simple Moving Average](Simple\_Moving\_Average\_(SMA)) in each point is calculated according to the following formula:
+[Simple Moving Average](Simple\_Moving\_Average\_\(SMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/sma.png"></center>
 

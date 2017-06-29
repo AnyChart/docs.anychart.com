@@ -1,11 +1,14 @@
 {:index 0}
 #Vertical Charts
 
+* [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Switching On-the-Fly](#onthefly)
   * [Series](#series)
   * [Chart](#chart)
 * [Supported Types](#supported_types)
+
+## Overview
 
 In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature – see the [Supported Types](#supported_types) section.
 
@@ -63,7 +66,7 @@ chart.draw();
 
 ### Series
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
+After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
 
 **Note:** This setting affects only the series, not the axes.
 
@@ -124,6 +127,7 @@ Here is the list of supported vertical charts:
 * [Vertical Bubble](Bubble_Chart)
 * [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
 * [Vertical Jump Line](Jump_Line_Chart)
+* [Vertical HiLo](HiLo_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
 * [Vertical OHLC](OHLC_Chart)

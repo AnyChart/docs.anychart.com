@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 10000, 12500],
+      ["QTR2", 12000, 15000],
+      ["QTR3", 13000, 16500],
+      ["QTR4", 10000, 13000],
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // create a chart
+    chart = anychart.mekko();
+
+    // create the first series
+    var series1 = chart.mekko(seriesData_1);
+
+    // configure the visual settings of the first series
+    series1.fill("#00cc99", 0.3);
+    series1.hoverFill("#00cc99", 0.3);
+    series1.selectFill("#00cc99", 0.5);
+    series1.hoverStroke("#00cc99", 2, "10 5", "round");
+    series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+    // create the second series
+    var series2 = chart.mekko(seriesData_2);
+
+    // configure the visual settings of the second series
+    series2.fill("#0066cc", 0.3);
+    series2.hoverFill("#0066cc", 0.3);
+    series2.selectFill("#0066cc", 0.5);
+    series2.hatchFill("zigzag", "#808080", 1, 15);
+    series2.hoverStroke("#0066cc", 2);
+    series2.selectStroke("#0066cc", 4);
+    
+    // set the chart title
+    chart.title("Mekko Chart: Appearance Settings");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

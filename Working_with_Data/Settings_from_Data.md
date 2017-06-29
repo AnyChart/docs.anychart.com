@@ -7,7 +7,7 @@ Settings from Data
 
 ## Overview
 
-AnyChart js charting framework allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of JavaScript [Bar Chart](Bar_Chart).
+AnyChart js charting framework allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of JavaScript [Bar Chart](../Basic_Charts/Bar_Chart).
 
 As you know you can use a data set to create charts with the following code:
 
@@ -30,7 +30,7 @@ And the chart will look this way:
 
 {sample}Settings\_From\_Data\_01{sample}
 
-Visual appearance of bars is defined using [these settings](Bar_Chart#visualization):
+Visual appearance of bars is defined using [these settings](../Basic_Charts/Bar_Chart#appearance):
 
 ```
 var series = chart.bar(data);

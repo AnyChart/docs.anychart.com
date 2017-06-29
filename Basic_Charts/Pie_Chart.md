@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1.61}
 #Pie Chart
 
 * [Overview](#overview)
@@ -31,7 +31,7 @@ This article explains how to create a basic Pie chart as well as configure setti
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
-<tr><td>3D</td><td>[3D Pie](3D_Charts/3D_Pie_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Pie](3D/Pie_Chart)</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>

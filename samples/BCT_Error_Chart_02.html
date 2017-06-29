@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 10000, 12500],
+      ["February", 12000, 15000],
+      ["March", 13000, 16500],
+      ["April", 10000, 13000],
+      ["May", 9000, 11000]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: [0], value: [1]});
+    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+
+    // create a chart
+    chart = anychart.column();
+
+    // create the first series and set the data
+    var series1 = chart.column(seriesData_1);
+
+    // create the second series and set the data
+    var series2 = chart.column(seriesData_2);
+
+    // create error bars on the first series
+    series1.error().valueError(400);
+
+    // create error bars on the second series
+    series2.error().valueLowerError(700);
+    series2.error().valueUpperError(200);
+
+    // set the chart title
+    chart.title("Lower and Upper Error Bars: Cartesian");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

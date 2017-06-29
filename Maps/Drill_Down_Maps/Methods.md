@@ -26,7 +26,7 @@ The following methods make working with drill down easier:
 
 ### Drill To
 
-Using the {api:anychart.charts.Map#drillTo}.drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](Event_Listeners).
+Using the {api:anychart.charts.Map#drillTo}.drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](../../Common_Settings/Event_Listeners).
 
 ```
 // Drill down to specified map

@@ -13,7 +13,7 @@ Line marker is a line that is drawn on chart plot and bound to some value on an 
 
 ## Declare
 
-To create a line marker use the {api:anychart.axisMarkers#line}lineMarker(){api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.axisMarkers.Line#value}value(){api} method.
+To create a line marker use the {api:anychart.charts.Cartesian#lineMarker}anychart.charts.Cartesian#lineMarker} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.core.axisMarkers.Line#value}value(){api} method.
 
 ```
 var yAxis = chart.yAxis();
@@ -47,11 +47,11 @@ Here is a sample with a dash line marker:
 
 ## Advanced Layout
 
-In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}layout(){api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method the marker's layout is defined to be perpendicular to the axis' orientation.
+In some cases you may need to customize your marker's emplacement. The {api:anychart.core.axisMarkers.Line#layout}layout(){api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
 ### Advanced option
 
-Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Line#scale}scale(){api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Line#layout}layout(){api} method.  
+Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.core.axisMarkers.Line#scale}scale(){api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.core.axisMarkers.Line#layout}layout(){api} method.  
   
 **Note**: if you define neither {api:anychart.core.axisMarkers.Line#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary y axis.
 
@@ -62,7 +62,7 @@ marker.value(Date.UTC(2016, 1, 01));
 marker.scale(chart.xScale());
 ```
 
-Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future. As you can see, the line marker uses {api:anychart.axisMarkers.Line#scale}scale(){api} and {api:anychart.axisMarkers.Line#layout}layout(){api} methods to use advanced marker's positioning. Let's use main {api:anychart.core.axisMarkers.Text#axis}axis(){api} method for positioning text marker on the same sport and see the result:
+Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future. As you can see, the line marker uses {api:anychart.core.axisMarkers.Line#scale}scale(){api} and {api:anychart.core.axisMarkers.Line#layout}layout(){api} methods to use advanced marker's positioning. Let's use main {api:anychart.core.axisMarkers.Text#axis}axis(){api} method for positioning text marker on the same sport and see the result:
 
 ```
 var text = chart.textMarker();

@@ -30,8 +30,8 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Percent/Column_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Column](3D/3D_Column_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Column](3D/Column_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart/Column_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Column](Polar_Plot/Column_Chart)</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -230,4 +230,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Co
 
 To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).
+The 3D Column chart is described in the following article: [3D Column Chart](3D/Column_Chart).

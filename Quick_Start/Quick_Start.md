@@ -4,6 +4,8 @@ Quick Start
   
 ## Getting started with AnyChart
 
+To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
+
 Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be.
 
 ###1. Include AnyChart into your web page
@@ -29,7 +31,7 @@ Example:
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-```  
+``` 
 
 ###3. Create a chart
 
@@ -59,9 +61,9 @@ Example:
   
 ## The result
 
-###See the result
+### See the result
 
-After all these steps you should have the following result. You can launch and explore this example further [here](https://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
+After all these steps you should have the following result. Launch and explore {pg:docs/samples/quick_start_pie-plain}basic AnyChart chart{pg} or see and launch it below:
 
 {sample}quick\_start\_pie{sample}
 

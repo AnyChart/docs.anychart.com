@@ -1,6 +1,5 @@
 {:index 2}
-AnyStock Supported Series List
-==========
+# AnyStock Supported Series List
 
 * [Overview](#overview)
 * [List of Supported Series](#list_of_supported_series)
@@ -25,11 +24,15 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
+<td>[HiLo series in AnyStock](HiLo)</td>
+<td>x, high, low</td>
+</tr>
+<tr>
 <td>[Japanese Candlestick series in AnyStock](Japanese_Candlestick)</td>
 <td>x, open, high, low, close</td>
 </tr>
 <tr>
-<td>[Jump Line series in AnyStock](JumpLine)</td>
+<td>[Jump Line series in AnyStock](Jump_Line)</td>
 <td>x, value</td>
 </tr>
 <tr>
@@ -81,5 +84,3 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 </tbody></table>
-
-

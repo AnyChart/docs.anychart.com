@@ -68,7 +68,7 @@ chart.width("80%");
 
 {sample}Standalones\_04{sample}
 
-There are more standalone elements you can use. Let's try a Label element and add some description text. Also you can use {api:anychart.standalones.grids.linear}a linear standalone grid{api} in the chart.
+There are more standalone elements you can use. Let's try a Label element and add some description text. Also you can use {api:anychart.standalones.grids#linear}a linear standalone grid{api} in the chart.
 
 ```
 // set chart width

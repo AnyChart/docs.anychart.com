@@ -64,9 +64,9 @@
         chart.yAxis().orientation('left');
     });
 });
-
-    // a helper function for creating buttons
-    function createLabel(text, offset, action){
+    
+// a helper function for creating buttons
+function createLabel(text, offset, action){
     var label = anychart.standalones.label();
     label.background({fill: "#1976d2"});
     label.text(text);
@@ -80,12 +80,12 @@
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
-        });
+    });
     label.listen("mouseOut", function(){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();
-        });    
+    });    
     return label;
 };</script>
 </head>
