@@ -8,145 +8,146 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-        anychart.onDocumentReady(function () {
-            var tooltip = $("<div class='custom-tooltip' id='tooltip'></div>").css({
-                "position": "absolute",
-                "pointerEvents": "none",
-                "display": "none",
-                "border": "1px solid #d8d8d8",
-                "height": "150px"
-            });
+    <script x-export="chart">anychart.onDocumentReady(function () {
+  var tooltip = $("<div class='custom-tooltip' id='tooltip'></div>").css({
+    "position": "absolute",
+    "pointerEvents": "none",
+    "display": "none",
+    "border": "1px solid #d8d8d8",
+    "height": "150px",
+    "width": "320px"
+  });
 
-            // data
-            var data = anychart.data.set([
-                ["2000", 10048, 2600, 3200, 2159, 2089],
-                ["2001", 10938, 2367, 1989, 2383, 4199],
-                ["2002", 9989, 2156, 2399, 2867, 2567],
-                ["2003", 10226, 2398, 2225, 3010, 2593],
-                ["2004", 11004, 2851, 3007, 2805, 2341],
-                ["2005", 10934, 3400, 2105, 2563, 2866],
-                ["2006", 11275, 2878, 2933, 3561, 1903],
-                ["2007", 11945, 2959, 3855, 3109, 2022],
-                ["2008", 12245, 4001, 2156, 3928, 2160],
-                ["2009", 12056, 1995, 2057, 4902, 3102],
-                ["2010", 11734, 2584, 3166, 3101, 2883],
-                ["2011", 12337, 3106, 2845, 2933, 3453],
-                ["2012", 12761, 3296, 2655, 3144, 3666],
-                ["2013", 13390, 2611, 4194, 3206, 3379],
-                ["2014", 13818, 3000, 2599, 4107, 4112],
-                ["2015", 13188, 3199, 2564, 3118, 4307]
-            ]);
+  // data
+  var data = anychart.data.set([
+    ["2000", 10048, 2600, 3200, 2159, 2089],
+    ["2001", 10938, 2367, 1989, 2383, 4199],
+    ["2002", 9989, 2156, 2399, 2867, 2567],
+    ["2003", 10226, 2398, 2225, 3010, 2593],
+    ["2004", 11004, 2851, 3007, 2805, 2341],
+    ["2005", 10934, 3400, 2105, 2563, 2866],
+    ["2006", 11275, 2878, 2933, 3561, 1903],
+    ["2007", 11945, 2959, 3855, 3109, 2022],
+    ["2008", 12245, 4001, 2156, 3928, 2160],
+    ["2009", 12056, 1995, 2057, 4902, 3102],
+    ["2010", 11734, 2584, 3166, 3101, 2883],
+    ["2011", 12337, 3106, 2845, 2933, 3453],
+    ["2012", 12761, 3296, 2655, 3144, 3666],
+    ["2013", 13390, 2611, 4194, 3206, 3379],
+    ["2014", 13818, 3000, 2599, 4107, 4112],
+    ["2015", 13188, 3199, 2564, 3118, 4307]
+  ]);
 
-            // map data for the each series
-            var dataMapping = data.mapAs({x: [0], value: [1]});
+  // map data for the each series
+  var dataMapping = data.mapAs({x: [0], value: [1]});
 
-            // chart type
-            chart = anychart.column();
+  // chart type
+  chart = anychart.column();
 
-            // set data
-            var column = chart.column(dataMapping);
-            // disable default tooltip
-            column.tooltip(false);
+  // set data
+  var column = chart.column(dataMapping);
+  // disable default tooltip
+  column.tooltip(false);
 
-            // chart title
-            var title = chart.title();
-            title.useHtml(true);
-            title.text("<span style=\"color:#545f69; font-size: 18px;\">" +
-                    "Sales volume</span>" +
-                    "<br>" +
-                    "<span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
-            title.enabled(true);
+  // chart title
+  var title = chart.title();
+  title.useHtml(true);
+  title.text("<span style=\"color:#545f69; font-size: 18px;\">" +
+      "Sales volume</span>" +
+      "<br>" +
+      "<span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
+  title.enabled(true);
 
-            // set axes titles
-            var xAxis = chart.xAxis();
-            xAxis.title("Retail Channel");
-            var yAxis = chart.yAxis();
-            yAxis.title("Sales");
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-            // disable legend
-            chart.legend(false);
+  // disable legend
+  chart.legend(false);
 
-            // disable select mode
-            var interactivity = chart.interactivity();
-            interactivity.selectionMode("none");
+  // disable select mode
+  var interactivity = chart.interactivity();
+  interactivity.selectionMode("none");
 
-            var barChart = anychart.bar();
-            var barSeries = barChart.bar([0]);
+  var barChart = anychart.bar();
+  var barSeries = barChart.bar([0]);
 
-            // create tooltip chart and adjust some settings
-            function createTooltipChart() {
-                // adjust series
-                barSeries.stroke(null);
-                // configure axes and labels
-                var barXAxis = barChart.xAxis();
-                barXAxis.stroke(null);
-                barXAxis.ticks(false);
-                var xLabels = barXAxis.labels();
-                xLabels.fontSize(10);
-                var yLabels = barChart.yAxis().labels();
-                yLabels.fontSize(10);
-                // adjust title
-                var barTitle = barChart.title();
-                barTitle.enabled(true);
-                barTitle.fontSize(12);
-                // set padding
-                barChart.padding([0, 12, 0, 0]);
-                // set tooltip container
-                barChart.container("tooltip");
-                // draw tooltip chart
-                barChart.draw();
-            }
+  // create tooltip chart and adjust some settings
+  function createTooltipChart() {
+    // adjust series
+    barSeries.stroke(null);
+    // configure axes and labels
+    var barXAxis = barChart.xAxis();
+    barXAxis.stroke(null);
+    barXAxis.ticks(false);
+    var xLabels = barXAxis.labels();
+    xLabels.fontSize(10);
+    var yLabels = barChart.yAxis().labels();
+    yLabels.fontSize(10);
+    // adjust title
+    var barTitle = barChart.title();
+    barTitle.enabled(true);
+    barTitle.fontSize(12);
+    // set padding
+    barChart.padding([0, 12, 0, 0]);
+    // set tooltip container
+    barChart.container("tooltip");
+    // draw tooltip chart
+    barChart.draw();
+  }
 
-            // event for mouse over a column
-            chart.listen("pointMouseOver", function (e) {
-                // display hidden tooltip
-                tooltip.css({"display": "block"});
-                var index = e.pointIndex;
+  // event for mouse over a column
+  chart.listen("pointMouseOver", function (e) {
+    // display hidden tooltip
+    tooltip.css({"display": "block"});
+    var index = e.pointIndex;
 
-                var dataRow = data.row(index);
-                // set new data for tooltip chart
-                barSeries.data([
-                    {x: "John", value: dataRow[2]},
-                    {x: "James", value: dataRow[3]},
-                    {x: "Peter", value: dataRow[4]},
-                    {x: "Mattew", value: dataRow[5]}
-                ]);
-                var titleText = "Sales Persons Share: ";
-                // adjust title
-                barChart.title(titleText + dataRow[0]);
-            });
+    var dataRow = data.row(index);
+    // set new data for tooltip chart
+    barSeries.data([
+      {x: "John", value: dataRow[2]},
+      {x: "James", value: dataRow[3]},
+      {x: "Peter", value: dataRow[4]},
+      {x: "Mattew", value: dataRow[5]}
+    ]);
+    var titleText = "Sales Persons Share: ";
+    // adjust title
+    barChart.title(titleText + dataRow[0]);
+  });
 
-            // event for mouse leaving column
-            chart.listen("pointMouseOut", function () {
-                tooltip.css({"display": "none"});
-            });
+  // event for mouse leaving column
+  chart.listen("pointMouseOut", function () {
+    tooltip.css({"display": "none"});
+  });
 
-            // adjust tooltip position on mouse move
-            chart.listen("mouseMove", function (e) {
-                var clientX = e['offsetX'];
-                var clientY = e['offsetY'];
-                var $container = $(this.container().getStage().container());
+  // adjust tooltip position on mouse move
+  chart.listen("mouseMove", function (e) {
+    var $container = $(this.container().getStage().container());
+    var offset = $container.offset();
+    var clientX = e['clientX'] - offset['left'];
+    var clientY = e['clientY'] - offset['top'];
 
-                if (!$container.find('.custom-tooltip').length) {
-                    $container.append(tooltip);
-                    createTooltipChart();
-                }
+    if (!$container.find('.custom-tooltip').length) {
+      $container.append(tooltip);
+      createTooltipChart();
+    }
 
-                // prevent tooltip from leaving the screen
-                var left = (clientX - 10) - tooltip.width() / 2;
-                if (left + tooltip.width() > chart.container().width())
-                    left = chart.container().width() - 2 - tooltip.width();
-                if (left < 0)
-                    left = 0;
-                // get mouse position and move tooltip
-                tooltip.css({"left": left, "top": (clientY - 10) - tooltip.height()});
-            });
+    // prevent tooltip from leaving the screen
+    var left = (clientX - 10) - tooltip.width() / 2;
+    if (left + tooltip.width() > chart.container().width())
+      left = chart.container().width() - 2 - tooltip.width();
+    if (left < 0)
+      left = 0;
+    // get mouse position and move tooltip
+    tooltip.css({"left": left, "top": (clientY - 10) - tooltip.height()});
+  });
 
-            // draw
-            chart.container("container");
-            chart.draw();
-        });
+  // draw
+  chart.container("container");
+  chart.draw();
+});
     </script>
 </head>
 <body>

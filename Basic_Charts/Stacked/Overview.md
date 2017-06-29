@@ -141,26 +141,24 @@ yScale2.maximum(20);
 yScale2.minimum(0);
 ```
 
-But you can also sync scales after they auto-calculate their minimums and maximums, it can be done like that in case of two scales:
+But you can also [sync scales](../../Axes_and_Grids/Scales#synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
 
 ```
 // sync minimums and maximums of the scales
-if (yScale1.maximum() > yScale2.maximum())
-    yScale2.maximum(yScale1.maximum());
-else
-    yScale1.maximum(yScale2.maximum());
-
-
-if (yScale1.minimum() < yScale2.minimum())
-    yScale2.minimum(yScale1.minimum());
-else
-    yScale1.minimum(yScale2.minimum());
+globalMax = chart.getStat("yScalesMax");
+globalMin = chart.getStat("yScalesMin");
+// get all y scales
+var yScales = chart.getYScales();
+// set the same minimum and maximum
+for (var i = 0; i < yScales.length; i++) {
+   yScales[i].minimum(globalMin);
+   yScales[i].maximum(globalMax);
+}  
 ```
 
-Here is a sample of clustered value stacked column chart with synced scales:
+Here is a sample of clustered value stacked column chart with [synced scales](../../Axes_and_Grids/Scales#synchronization):
 
 {sample}BCT\_Stacking\_04{sample}
-
 
 ### Overlay
 
@@ -235,3 +233,10 @@ Here is the list of supported stacked charts:
 * [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)
 * [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
 * [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
+
+Marimekko charts are a special case of stacked charts:
+
+* [Mekko Chart](../Marimekko_Chart/Mekko_Chart)
+* [BarMekko Chart](../Marimekko_Chart/BarMekko_Chart)
+* [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart)
+

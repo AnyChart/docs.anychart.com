@@ -11,7 +11,7 @@
 
 ## Overview
 
-Crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular data of an action, while the axes contain any other information, such as years/months or any kind of percentage. Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary point and get some extra information about it with the crosshair on a web chart.
+Map crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular map area data, while the axes contain any other information, such as coordinates and more. Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary region and get some extra information about it with the crosshair on a javascript web map.
   
 Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside a map, Crosshair appears.
  

@@ -15,6 +15,7 @@
 * [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
 * [One Scale for Different Charts](#one_scale_for_different_charts)
+* [Synchronization](#synchronization)
 
 ## Overview
 
@@ -194,3 +195,42 @@ Sample of the chart with inverted scale:
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
 
 {sample}AGST\_Scales\_11{sample}
+
+## Synchronization
+
+Sometimes you may encounter situations when you need to sync minimums and/or maximums of several scales and you don't want to set exact values [minimum and maximum](#minimum_and_maximum). In such cases you need to use several special methods: {api:anychart.charts.Cartesian#getYScales}getYScales{api} and {api:anychart.charts.Cartesian#getYScales}getXScales{api} - the allow you to get a collection of all scales from the chart, and the
+{api:anychart.core.Chart#getStat}getStat(){api} method that can obtain maximums and minimums of all scales.
+
+Let's see it in a sample: say you have created a [value stacked column chart with two stacked clusters](../Basic_Charts/Stacked/Overview#clustered) and you need scales to be in sync, then you need to do the following:
+
+```
+// sync minimums and maximums of the scales
+globalMax = chart.getStat("yScalesMax");
+globalMin = chart.getStat("yScalesMin");
+// get all y scales
+var yScales = chart.getYScales();
+// set the same minimum and maximum
+for (var i = 0; i < yScales.length; i++) {
+   yScales[i].minimum(globalMin);
+   yScales[i].maximum(globalMax);
+}  
+```
+
+Here is a live sampe:
+
+{sample}AGST\_Scales\_12{sample}
+
+The same can be done with X Scales if needed:
+
+```
+// sync minimums and maximums of the scales
+globalMax = chart.getStat("xScalesMax");
+globalMin = chart.getStat("xScalesMin");
+// get all y scales
+var xScales = chart.getXScales();
+// set the same minimum and maximum
+for (var i = 0; i < xScales.length; i++) {
+   xScales[i].minimum(globalMin);
+   xScales[i].maximum(globalMax);
+}  
+```

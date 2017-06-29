@@ -276,16 +276,16 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 ### Charts
 
-Use the {api:anychart.core.Chart.startSelectMarquee}startSelectMarquee{api} and {api:anychart.core.Chart.cancelMarquee}cancelMarquee{api} methods to work with rectangle marqee select.
+Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee{api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee{api} methods to work with rectangle marqee select.
 
-Use the {api:anychart.core.Chart.selectMarqueeFill}{api} and {api:anychart.core.Chart.selectMarqueeStroke}{api} methods to configure marqee appearance.
+Use the {api:anychart.core.Chart#selectMarqueeFill}{api} and {api:anychart.core.Chart#selectMarqueeStroke}{api} methods to configure marqee appearance.
 
-Handle {api:anychart.enums.EventType.SELECT\_MARQUEE\_START}SELECT\_MARQUEE\_START{api},  {api:anychart.enums.EventType.SELECT\_MARQUEE\_CHANGE}SELECT\_MARQUEE\_CHANGE{api} and {api:anychart.enums.EventType.SELECT\_MARQUEE\_FINISH}SELECT\_MARQUEE\_FINISH{api} events {api:anychart.core.Chart.inMarquee}inMarquee{api} property to track marquee progress.
+Handle {api:anychart.enums.EventType}SELECT\_MARQUEE\_START{api},  {api:anychart.enums.EventType}SELECT\_MARQUEE\_CHANGE{api} and {api:anychart.enums.EventType}SELECT\_MARQUEE\_FINISH{api} events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
 
-### Stock
+### Stock 
 
-Use the {api:anychart.charts.Stock.startZoomMarquee}startZoomMarquee(){api} along with
-{api:anychart.charts.Stock.zoomMarqueeStroke}zoomMarqueeStroke(){api} and {api:anychart.charts.Stock.zoomMarqueeFill}zoomMarqueeFill(){api} methods to work with marquee zoom in Stock charts.
+Use the {api:anychart.charts.Stock#startZoomMarquee}startZoomMarquee(){api} along with
+{api:anychart.charts.Stock#zoomMarqueeStroke}zoomMarqueeStroke(){api} and {api:anychart.charts.Stock#zoomMarqueeFill}zoomMarqueeFill(){api} methods to work with marquee zoom in Stock charts.
 
 ## Single Series Chart
 

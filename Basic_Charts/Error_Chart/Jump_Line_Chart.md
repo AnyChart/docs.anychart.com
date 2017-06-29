@@ -12,7 +12,7 @@ To learn more about error charts in general and how to customize them, see [Erro
 
 ## Quick Start
 
-To build a Jump Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor, then create a Jump Line series with the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method. To add error bars, call {api:anychart.core.cartesian.series.jumpLine#error}error(){api}.
+To build a Jump Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor, then create a Jump Line series with the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method. To add error bars, call {api:anychart.core.cartesian.series.JumpLine#error}error(){api}.
 
 ```
 // create a chart

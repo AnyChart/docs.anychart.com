@@ -21,7 +21,7 @@ The AnyChart Maps are supplied in [GeoJSON](https://en.wikipedia.org/wiki/GeoJSO
 
 Now let's walk through the process of creating a custom map. Note that there are many ways of working with QGIS, so some commands or interface might be different due to version of the program or the platform used. Only one way of using QGIS is considered here, so look up their documentation if you need any extra information.
 
-1) Get the QGIS from [http://qgis.org/en/site/forusers/download.html](http://qgis.org/en/site/forusers/download.html). 
+1) Get the QGIS from [https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html).
 
 2) When you have installed the QGIS, the first step is importing your data.  Let's take the World Map as a source and select North America for demonstration. Select the "Add Vector Layer" in the "Layer" menu.
 
@@ -89,7 +89,7 @@ You may notice that QGIS includes a large amount of decimals in the GeoJSON coor
 
 Don't forget to choose the CRS that you've used in the project, as the default one might be automatically set.
 
-8) Try your GeoJSON map by pasting the code into [jsFiddle](http://jsfiddle.net/xbzxfx2L/130/). Your result should look something like this:
+8) Try your GeoJSON map by pasting the code into [jsFiddle](https://jsfiddle.net/xbzxfx2L/130/). Your result should look something like this:
 
 <a href="https://static.anychart.com/images/creating\_maps\_14.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 
