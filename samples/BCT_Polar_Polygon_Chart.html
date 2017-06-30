@@ -11,31 +11,37 @@
 
     // create data
     var data = [
-      {x: "A", value: 1222},
-      {x: "B", value: 2431},
-      {x: "C", value: 3624},
-      {x: "D", value: 5243},
-      {x: "E", value: 6813},
-      {x: "F", value: 5321},
-      {x: "G", value: 1567},
-      {x: "H", value: 3876},
-      {x: "I", value: 2187}
+      {x: "A", value: 4},
+      {x: "B", value: 2},
+      {x: "C", value: 8},
+      {x: "D", value: 5},
+      {x: "E", value: 3},
+      {x: "F", value: 9}
     ];
     
     // create a chart
-    chart = anychart.radar();
+    chart = anychart.polar();
 
-    // create a line series and set the data
-    var series = chart.line(data);
+    // create a polygon series and set the data
+    var series = chart.polygon(data);
 
-  	// set the chart title
-  	chart.title("Radar Line Chart");
+    // set the type of the X-scale
+    chart.xScale("ordinal");
 
-  	// set the container id
-  	chart.container("container");
+    // enable sorting points by X
+    chart.sortPointsByX(true);
 
-  	// initiate drawing the chart
-  	chart.draw();
+    // set the inner radius
+    chart.innerRadius(50);
+
+    // set the chart title
+    chart.title("Polar Polygon Chart");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
