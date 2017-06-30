@@ -22,4 +22,4 @@ chart = anychart.polar();
 var series = chart.polar(data);
 ```
 
-{sample}BCT\_Radar\_Line\_Chart{sample}
+{sample}BCT\_Polar\_Line\_Chart{sample}

@@ -32,7 +32,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Line](Polar_Plot/Line_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Line](Radar_Plot/Line_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Scatter_Line_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Line_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Line)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Spline](Spline_Chart)</td></tr>
