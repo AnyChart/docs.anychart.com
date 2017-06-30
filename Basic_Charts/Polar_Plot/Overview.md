@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Start Angle](#start_angle)
-* [Omitting points](#omitting_points)
+* [Missing Points](#missing_points)
 * [Axes](#axes)
 * [Scales](#scales)
 * [Grids](#grids)
@@ -74,10 +74,17 @@ polar2.startAngle(90);
 
 {sample}BCT\_Polar\_Chart\_02{sample}
 
-## Omitting Points
+## Missing Points
+
+It is possible to skip a point or several points in a data set of a polar chart. Just write "missing" in the "value" field of a point you want to skip:
 
 ```
-
+// create data
+var data = [
+  {x: 0, value: 500},
+  {x: 180, value: 200},
+  {x: 360, value: "missing"},
+];
 ```
 
 {sample}BCT\_Polar\_Chart\_03{sample}
@@ -86,7 +93,7 @@ polar2.startAngle(90);
 
 To learn about axes in general, see the [Axes and Grids](../../Axes_and_Grids) section.
 
-In the case of polar charts, it is often necessary to configure the stroke of the X and Y axes. Use he {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
+If you want to configure the stroke of the X and Y axes, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
 // configure the appearance of the Y-Axis
