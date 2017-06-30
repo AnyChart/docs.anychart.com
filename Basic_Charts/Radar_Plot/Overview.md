@@ -77,11 +77,7 @@ chart.draw();
 
 You can set the start angle of a radar chart by using the {api:anychart.charts.Radar#startAngle}startAngle(){api} method. The angle is 0° by default.
 
-<<<<<<< HEAD
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
-=======
-You can change radar background using {api:anychart.core.ui.Background}background(){api} method, learn more about this method at [Background settings tutorial](../../Appearance_Settings/Background).
->>>>>>> develop
 
 ```
 // set the start angle
@@ -92,11 +88,7 @@ radar2.startAngle(90);
 
 ## Axes and Scales
 
-<<<<<<< HEAD
 In this section you can find some settings of axes and scales that are often used with radar charts. To learn about all the available settings, see [Axes and Grids](../../Axes_and_Grids).
-=======
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../../Axes_and_Grids/Axis_Basics) tutorial.
->>>>>>> develop
 
 If you want to configure the stroke of the X and Y axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
@@ -115,34 +107,13 @@ chart.xAxis().stroke({
 });    
 ```
 
-<<<<<<< HEAD
 To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
-=======
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Graphics/Stroke_Settings).
-
-Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
-
-{sample}BCT\_RadarChart\_04{sample}
-
-### Inversion
-
-AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}inverted(){api} method:
->>>>>>> develop
 
 ```
 // invert the Y-scale
 chart.yScale().inverted(true);
 ```
-
-<<<<<<< HEAD
 You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – use {api:anychart.scales#log}log(){api}:
-=======
-{sample}BCT\_RadarChart\_05{sample}
-
-### Logarithmic Scale
-
-You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scale(){api} method. More information about scale types can be found in [Scale tutorial](../../Axes_and_Grids/Scales#types)
->>>>>>> develop
 
 ```
 // create a logarithmic scale
@@ -196,11 +167,7 @@ chart.grid(1).stroke({
 
 {sample}BCT\_Radar\_Chart\_04{sample}
 
-<<<<<<< HEAD
 In this sample cells of the radial and circular grids are filled with color:
-=======
-You can change labels' background. Learn more about background configuration in [Background settings tutorial](../../Appearance_Settings/Background).
->>>>>>> develop
 
 ```
 // color the even-numbered cells of the radial grid
@@ -237,15 +204,7 @@ To change the default layouts of grids, use the {api:anychart.core.grids.Radar#l
 chart.grid(1).layout("radial");
 ```
 
-<<<<<<< HEAD
 In case you want your chart to have only a circular grid, get the grid with the index 0 and set the layout to "circuit":
-=======
-**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../../Axes_and_Grids/Scales#grids)
-
-Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
-
-{sample}BCT\_RadarChart\_12{sample}
->>>>>>> develop
 
 ```
 // set the layout type
@@ -268,11 +227,7 @@ Here is the list of supported radar charts:
 * [Radar Line](Line_Chart)
 * [Radar Marker](Marker_Chart)
 
-<<<<<<< HEAD
 See also [stacked](../Stacked/Overview) charts:
-=======
-Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
->>>>>>> develop
 
 * [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
 * [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)
