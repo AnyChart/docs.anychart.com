@@ -27,7 +27,6 @@ AnyChart allows you to display three types of series on radar charts: Line, Area
 * {api:anychart.charts.Cartesian#area}area(){api}
 * {api:anychart.charts.Cartesian#marker}marker(){api}
 
-
 In the sample below, there is a radar chart with two series, Line and Area:
 
 ```
@@ -144,7 +143,6 @@ You can configure the appearance of any grid — here is the list of available m
 * {api:anychart.core.grids.Radar#oddFill}oddFill(){api} sets the fill of odd-numbered cells
 
 In the sample below, there is a radar chart with the stroke of both grids configured:
-
 
 Here is a polar chart with the stroke of both grids configured:
 
