@@ -12,7 +12,7 @@
 
 ## Overview
 
-A polar chart...
+A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar coordinate system – a two-dimensional coordinate system where each point is determined by a distance from a fixed point and an angle from a fixed direction.
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
