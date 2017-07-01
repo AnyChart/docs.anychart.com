@@ -70,7 +70,7 @@ To enable or disable axis labels you need to specify {api:anychart.core.ui.Label
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
     
-Look at the demonstration of possible labels display modes: "Normal" and "Stager".
+Look at the demonstration of possible label display modes: "Normal" and "Stagger".
 
 ```
 var xAxis = chart.xAxis();
