@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function () {
+
+    //create data
+    var data = [
+        {
+            x: "A",
+            name: "Element A",
+            value: 400
+        },
+        {
+            x: "B",
+            name: "Element B",
+            value: 200
+        }
+    ];
+
+    // create a chart and set the data
+    chart = anychart.venn(data);
+
+    // set the chart title
+    chart.title("Venn Diagram: Data");
+
+    // set the container id
+    chart.container('container');
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

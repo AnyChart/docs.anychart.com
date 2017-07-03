@@ -8,51 +8,38 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function () {
+
+    //create data
     var data = [
         {
-            x: 'A',
-            name: 'Play computer games',
+            x: "A",
+            name: "Element A",
             value: 100
         },
         {
-            x: 'B',
-            name: 'To much homework',
+            x: "B",
+            name: "Element B",
             value: 100
         },
         {
-            x: 'A&B',
-            name: 'Late Nights',
-            value: 25,
-            hoverFill: anychart.color.lighten('#3a444d')
+            x: ["A", "B"],
+            value: 25
         }
     ];
 
-    // create venn diagram
+    // create a chart and set the data
     chart = anychart.venn(data);
 
-    // set chart title
-    chart.title()
-            .enabled(true)
-            .padding({bottom: 35})
-            .text('Schoolboy Behavior');
+    // configure labels of intersections
+    chart.intersections().labels().format("{%X}");
 
-    // set chart labels format
-    chart.labels().format('{%Name}');
+    // set the chart title
+    chart.title("Venn Diagram: Basic Sample");
 
-    // set intersections labels settings
-    chart.intersections().labels()
-            .fontWeight('bold')
-            .format('{%Name}');
-
-    // set legend padding
-    chart.legend().padding({top: 35});
-
-    // set tooltip settings
-    chart.tooltip().titleFormat('{%Name}');
-
-    // set container id for the chart
+    // set the container id
     chart.container('container');
-    // initiate chart drawing
+
+    // initiate drawing the chart
     chart.draw();
 });
 </script>
