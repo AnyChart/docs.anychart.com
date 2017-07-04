@@ -10,9 +10,12 @@
 <script x-export="chart">anychart.onDocumentReady(function() {
   chart = anychart.marker();
 
-  chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("FDH 1mg/day");
-  chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("FDH 5mg/day");
-  chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
+  series1 = chart.marker([[1,1],[1,1],[5,6],[10,1]]);
+  series1.name("FDH 1mg/day");
+  series2 = chart.marker([[2,3],[1,4],[7,6],[13,1]]);
+  series2.name("FDH 5mg/day");
+  series3 = chart.marker([[2,1],[1,2],[3,6],[8,1]])
+  series3.name("Placebo");
 
   // add grid
   chart.grid(0).enabled(true);
@@ -30,8 +33,41 @@
   // legend title
   title = legend.title("Drag the legend");
 
+  // chart title  
+  chartTitle = "Inside Legend Position";
+  chart.title(chartTitle);
+
   // allow drag
   legend.drag(true);
+
+  // Get default fill colors
+  grid = chart.grid();
+  background = chart.background();
+  backgroundFill = background.fill();
+  series1Fill = series1.color();
+  series2Fill = series2.color();
+  series3Fill = series3.color();
+  gridStroke = grid.stroke();
+
+  // actions on events
+  legend.listen("dragStart", function(){
+    background.fill(anychart.color.lighten(backgroundFill, 0.3));
+    series1.fill(anychart.color.lighten(series1Fill, 0.3));
+    series2.fill(anychart.color.lighten(series2Fill, 0.3));
+    series3.fill(anychart.color.lighten(series3Fill, 0.3));
+    grid.stroke(anychart.color.lighten(gridStroke, 0.3));
+  });
+  legend.listen("drag", function(){
+    chart.title("Legend is being dragged");
+  });
+  legend.listen("dragEnd", function(){
+    background.fill(backgroundFill);
+    series1.fill(series1Fill);
+    series2.fill(series2Fill);
+    series3.fill(series3Fill);
+    grid.stroke(gridStroke);
+    chart.title(chartTitle);
+  });
 
   // set position mode
   legend.positionMode("inside");
@@ -41,8 +77,6 @@
   legend.itemsLayout("verticalExpandable");
   legend.width(200);
   legend.height(130);
-
-  chart.title("Inside Legend Position");
   chart.container("container");
   chart.draw();
 });

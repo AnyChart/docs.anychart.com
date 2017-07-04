@@ -26,7 +26,7 @@
   chart = anychart.column();
   
   // set title
-  chart.title("Legend Title Configuration");
+  chart.title("Legend Items events");
   
   // set data
   var series1 = chart.column(Quarter1);
@@ -37,7 +37,6 @@
   series3.name("Quarter 3");
   var series4 = chart.column(Quarter4);
   series4.name("Quarter 4");
-  series4.enabled(false);
   
   // legend settings
   var legend = chart.legend();
@@ -51,6 +50,51 @@
   legend.align("top");
   // set items layout
   legend.itemsLayout("vertical");
+
+  // legend items events adjusting
+  legend.listen("legendItemClick", function(e){
+      e.preventDefault();
+      itemIndex = e.itemIndex;
+      switch(itemIndex){
+        case "0":
+        series1.enabled(true);
+        series1.select();
+        break;
+        case "1":
+        series2.enabled(true);
+        series2.select();
+        break;
+        case "2":
+        series3.enabled(true);
+        series3.select();
+        break;
+        case "3":
+        series4.enabled(true);
+        series4.select();
+        break;
+      }
+  });
+
+  legend.listen("legendItemDblclick", function(e){
+    itemIndex = e.itemIndex;
+    switch(itemIndex){
+      case "0":
+        if (series1.enabled() == "true")
+          series1.enabled(false)
+        else
+          series1.enabled(true);
+      break;
+      case "1":
+      series1.enabled(false);
+      break;
+      case "2":
+      series1.enabled(false);
+      break;
+      case "3":
+      series1.enabled(false);
+      break;
+    }
+  });
   
   // settings for legend title  
   var title = chart.legend().title();

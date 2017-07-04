@@ -2,20 +2,30 @@
 
 * [Overview](#overview)
 * [Auto Legend](#auto_legend)
-* [Easy Auto Legend for Single Series Charts](#easy_auto_legend_for_single_series_charts)
+ * [Single Series](#single_series)
 * [Title](#title)
 * [Positioning](#positioning)
+ * [Outside](#outside)
+ * [Inside](#inside)
+ * [Drag and Drop](#drag_and_drop)
+* [Layout](#layout)
 * [Size](#size)
+ * [Expandable](#expandable)
+ * [Fixed](#fixed)
 * [Paging](#paging)
 * [Visualization](#visualization)
  * [Background](#background)
  * [Marker Symbol](#marker_symbol)
+ * [Mouse Cursor](#mouse_cursor)
+ * [Tooltip](#tooltip)
 * [Series Management](#series_management)
-* [Mouse Cursor](#mouse_cursor)
-* [Tooltip](#tooltip)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
+* [Events](#events)
+ * [Legend Events](#legend_events)
+ * [Legend Items Events](#legend_items_events)
 * [One Legend for Several Charts](#one_legend_for_several_charts)
+* [One Legend for Several Series](#one_legend_for_several_series)
 
 ## Overview
 
@@ -48,7 +58,7 @@ In the live sample, please notice that when you move the mouse over the series n
 
 {sample}CS\_Legend\_01{sample}
 
-## Easy Auto Legend for Single Series Charts
+### Single Series
 
 If you are showing a single series chart and want your legend to show all points names and values you should configure the legend:
 
@@ -129,7 +139,7 @@ legend.position("top");
 legend.align("right");
 ```
 
-{sample}CS\_Legend\_04\_1{sample}
+{sample}CS\_Legend\_05{sample}
 
 ### Drag and Drop
 
@@ -146,7 +156,7 @@ Note that drag and drop always works withing constraints set by the [position mo
 
 Here is a sample of a legend that can be moved around:
 
-{sample}CS\_Legend\_04\_2{sample}
+{sample}CS\_Legend\_06{sample}
 
 ## Layout
 
@@ -187,7 +197,7 @@ legend.paginator().orientation("bottom");
 
 See how these settings work in the following interactive sample: you can click buttons to add or remove series and see how legend and chart change their sizes. Once the legend reached maximum allowed size - a [paginator](#paginator) appears.
 
-{sample}CS\_Legend\_06\_1{sample}
+{sample}CS\_Legend\_09{sample}
 
 ### Fixed
 
@@ -211,7 +221,7 @@ legend.padding(10);
 
 Here is a sample a legend with a fixed size:
 
-{sample}CS\_Legend\_06\_2{sample}
+{sample}CS\_Legend\_10{sample}
 
 ## Paging
 
@@ -226,7 +236,7 @@ paginator.layout("vertical");
 paginator.orientation("right");
 ```
 
-{sample}CS\_Legend\_07{sample}
+{sample}CS\_Legend\_11{sample}
 
 ## Visualization
 
@@ -234,7 +244,7 @@ paginator.orientation("right");
 
 To configure the border and the inner color of the legend use the {api:anychart.core.ui.Legend#background}background(){api} method. To learn more about background setting please see the [background tutorial](../Appearance_Settings/Background).
 
-{sample}CS\_Legend\_05{sample}
+{sample}CS\_Legend\_07{sample}
 
 ### Marker Symbol
 
@@ -271,7 +281,7 @@ anychart.theme({
 
 Here is a sample with defaults for legend set to show series icons with markers:
 
-{sample}CS\_Legend\_08{sample}
+{sample}CS\_Legend\_12{sample}
 
 ### Mouse Cursor
 
@@ -287,13 +297,13 @@ legend.hoverCursor("pointer"); // sets hover cursor using a string
 
 If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
 
-{sample}CS\_Legend\_09{sample}
+{sample}CS\_Legend\_13{sample}
 
 ## Series Management
 
 You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
 
-{sample}CS\_Legend\_10{sample}
+{sample}CS\_Legend\_14{sample}
 
 ## Custom Item
 
@@ -315,13 +325,70 @@ legend.itemsFormatter(function(items){
 
 In the sample chart below we've used custom item that adds *Total* data to legend.
 
-{sample}CS\_Legend\_11{sample}
+{sample}CS\_Legend\_15{sample}
 
 ## Custom Legend
 
 AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}CS\_Legend\_12{sample}
+{sample}CS\_Legend\_16{sample}
+
+
+## Events
+
+As an interactive component of Chart, Legend has some events which can be used for managing and adjusting the Chart and the Legend itself. Look through this section to know all about legend events.
+
+### Legend Events
+
+There are only three events the Legend has:
+
+- **drag** -  Event type for legend moving.
+- **dragEnd** - Event type for legend at the end of moving.
+- **dragStart** - Event type for legend at the start of moving.
+
+```
+// actions on events
+legend.listen("dragStart", function(){
+  background.fill(anychart.color.lighten(backgroundFill, 0.3));
+  series1.fill(anychart.color.lighten(series1Fill, 0.3));
+  series2.fill(anychart.color.lighten(series2Fill, 0.3));
+  series3.fill(anychart.color.lighten(series3Fill, 0.3));
+  grid.stroke(anychart.color.lighten(gridStroke, 0.3));
+});
+legend.listen("drag", function(){
+  chart.title("Legend is being dragged");
+});
+legend.listen("dragEnd", function(){
+  background.fill(backgroundFill);
+  series1.fill(series1Fill);
+  series2.fill(series2Fill);
+  series3.fill(series3Fill);
+  grid.stroke(gridStroke);
+  chart.title(chartTitle);
+});
+```
+
+{sample}CS\_Legend\_17{sample}
+
+
+### Legend Items Events
+
+Legend items are child elements of a legend, but they have some events which have nothing to do with the whole legend. The table below demonstrates the list of legend items events.
+
+
+- **legendItemClick** - Event type for click on item of legend.
+- **legendItemDblclick** -  Event type for double click on item of legend.
+- **legendItemMouseDown** - Event type for item of legend at mouse down.
+- **legendItemMouseMove** - Event type for item of legend at mouse moving.
+- **legendItemMouseOut** -  Event type for item of legend at mouse leading off.
+- **legendItemMouseOver** - Event type for item of legend at hover mouse.
+- **legendItemMouseUp** - Event type for item of legend at up mouse.
+
+```
+```
+
+{sample}CS\_Legend\_18{sample}
+
 
 ## One Legend for Several Charts
 
@@ -338,7 +405,7 @@ var legend = anychart.standalones.legend();
 legend.itemsSource([chart2005, chart2006]);
 ```
 
-{sample}CS\_Legend\_13{sample}
+{sample}CS\_Legend\_19{sample}
 
 ## One Legend for Several Series
 
@@ -360,4 +427,4 @@ legend.listen("legendItemClick", function(event) {
 
 Sample below demonstrate managing several series with one legend item.
 
-{sample}CS\_Legend\_14{sample}
+{sample}CS\_Legend\_20{sample}

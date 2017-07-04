@@ -7,38 +7,75 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-  
-  // set default icons for legend items 
-  // for lines, splines and markers
-  anychart.theme({
-        chart: {
-            defaultSeriesSettings: {
-                line: {legendItem: {iconType: "line"}},
-                spline: {legendItem: {iconType: "spline"}},
-                marker: {legendItem: {iconType: "marker"}}
-    }}});
-  
-  // create a chart
-  chart = anychart.line();
-  // enable legend
-  chart.legend(true);
-  
-  // series data
-  var data = anychart.data.set([
-    ["John",  1, 3, 2],
-    ["Jake",  4, 2, 1],
-    ["Pete",  6, 3, 5]
-  ]);
+    <script x-export="chart">anychart.onDocumentReady(function () {
+    stage = anychart.graphics.create("container");
 
-  chart.marker(data.mapAs({x: 0, value: 1}));
-  chart.line(data.mapAs({x: 0, value: 2})).markers(true);
-  chart.spline(data.mapAs({x: 0, value: 3})).markers(true);
+    var data = [
+        ["Apples", 21, 99, 19, 72, 94, 71],
+        ["Pears", 41, 7, 71, 10, 27, 79],
+        ["Bananas", 9, 15, 77, 58, 97, 79],
+        ["Grapes", 71, 34, 40, 21, 72, 6],
+        ["Oranges", 6, 29, 11, 46, 19, 49]
+    ];
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
-});</script>
+    chart = anychart.column();
+
+    var series = anychart.data.mapAsTable(data, "value");
+
+    for (var i in series) {
+        chart.column(series[i]);
+    }
+
+    var legend = chart.legend();
+    legend.enabled(true);
+
+    // Set maximum width and height.
+    legend.maxWidth("30%");
+    legend.maxHeight("30%");
+    
+    // legend mode and position
+    legend.itemsLayout("verticalExpandable");
+    legend.position("right");
+
+    // paginator position
+    legend.paginator().orientation("bottom");
+
+    
+    chart.title("Adding and removing series");
+    chart.container(stage);
+    chart.draw();
+
+    createLabel("Click to remove 6 series", 5, function(){
+        for (var i = 1; i < 7; i++){
+        chart.removeSeriesAt(chart.getSeriesCount() - i)
+    }
+    });
+
+    createLabel("Click to add 6 series", 180, function(){
+        for (var i in series) {
+            chart.column(series[i]);
+        }
+    });
+});
+    
+function createLabel(text, offset, action){
+    var lbl = anychart.standalones.label();
+    lbl.background({fill: "#9E9E9E"});
+    lbl.text(text);
+    lbl.fontColor("#fff");
+    lbl.padding(5);
+    lbl.offsetX(offset);
+    lbl.offsetY(5);
+    lbl.listen("mouseOver", function () {
+        document.body.style.cursor = "pointer";
+    });
+    lbl.listen("mouseOut", function () {
+        document.body.style.cursor = "auto";
+    });
+    lbl.listen("click", action);
+    lbl.container(stage);
+    lbl.draw();    
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
