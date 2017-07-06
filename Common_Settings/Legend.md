@@ -37,7 +37,7 @@ By default legend shows all series names with a symbol that shows the color and 
 
 To enable legend you have to pass "true" to {api:anychart.core.ui.Legend#enabled}enabled(){api} method or {api:anychart.core.ui.Legend}legend(){api} constructor:
 
-Enable using the *legend()# method:
+Enable using the **legend()** method:
 
 ```
 chart.legend(true);
@@ -76,14 +76,14 @@ To create a legend for a single series chart you  have to set **categories** val
 
 ## Title
 
-To enable or disable a legend title you have to use the {api:anychart.core.ui.Title#enabled}enabled(){api} method of the legend {api:anychart.core.ui.Legend#title}title(){api}:
+To enable or disable a legend title use the {api:anychart.core.ui.Title#enabled}enabled(){api} method of the legend {api:anychart.core.ui.Legend#title}title(){api}:
 
 ```
 var title = chart.legend().title();
 title.enabled(true);
 ```
 
-To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](../Appearance_Settings/Text_Settings) article.
+To specify and format the legend title use the {api:anychart.core.ui.Title#text}text(){api} method of a {api:anychart.core.ui.Legend#title}title(){api}. Settings of a legend title are very similar to the [Chart Title](../Appearance_Settings/Text_Settings) settings.
 
 ```
 var title = chart.legend().title();
@@ -104,11 +104,11 @@ Here is a sample of a chart and the legend title is configured:
 
 ## Positioning
 
-Depending on the layout and type of your chart you can position legend to a desired place using the {api:anychart.core.ui.Legend#positionMode}positionMode(){api}, {api:anychart.core.ui.Legend#position}position(){api} and  {api:anychart.core.ui.Legend#align}align(){api} methods of a {api:anychart.core.ui.Legend}legend(){api}.
+Depending on the layout and type of your chart it is possible to position the legend to a desired place using the {api:anychart.core.ui.Legend#positionMode}positionMode(){api}, {api:anychart.core.ui.Legend#position}position(){api} and  {api:anychart.core.ui.Legend#align}align(){api} methods of a {api:anychart.core.ui.Legend}legend(){api}.
 
 ### Outside
 
-"Outside" is a default legend position mode for the most of the charts. In this mode you define the side of the chart it should be placed to, and the alignement:
+"Outside" is a default legend position mode for the most of the charts. In this mode you can define the side of the chart it should be bound to, and the alignment:
 
 ```
 var legend = chart.legend();
@@ -116,7 +116,7 @@ legend.enabled(true);
 
 // set position mode
 legend.positionMode("outside");
-// set position and alignement
+// set position and alignment
 legend.position("bottom");
 legend.align("center");
 legend.itemsLayout("horizontalExpandable");
@@ -126,7 +126,7 @@ legend.itemsLayout("horizontalExpandable");
 
 ### Inside
 
-"Inside" position mode is when legend is placed within a data plot (inner area of a chart). In this mode you define the side of a data plot it should be placed to, and the alignement:
+"Inside" position mode is when the legend is placed within a data plot (inner area of a chart). In this mode you can define the side of a data plot it should be bound to, and the alignment:
 
 ```
 var legend = chart.legend();
@@ -134,7 +134,7 @@ legend.enabled(true);
 
 // set position mode
 legend.positionMode("inside");
-// set position and alignement
+// set position and alignment
 legend.position("top");
 legend.align("right");
 ```
@@ -143,7 +143,7 @@ legend.align("right");
 
 ### Drag and Drop
 
-You can enable the "Drag and Drop" feature of a legend, it allows user to move the legend to any position on a chart. Use the {api:anychart.core.ui.Legend#drag}drag(){api} to enable this mode:
+The "Drag and Drop" feature of a legend allows user to move the legend to any position on a chart. Use the {api:anychart.core.ui.Legend#drag}drag(){api} method to enable this mode:
 
 ```
 var legend = chart.legend();
@@ -152,7 +152,7 @@ var legend = chart.legend();
 legend.drag(true);
 ```
 
-Note that drag and drop always works withing constraints set by the [position mode and align](#positioning). It means if a legend {api:anychart.core.ui.Legend#positionMode}positionMode(){api} is set to [Inside](#inside) - you can't move it outside of a data plot, and if it is [Outside](#outside) - you can't move it inside of a data plot.
+Note that "drag and drop" always works withing constraints set by the [position mode and align](#positioning). It means that if the legend's {api:anychart.core.ui.Legend#positionMode}positionMode(){api} is set to [Inside](#inside) - you cannot move it outside of a data plot, and if it is [Outside](#outside) - you cannot move it inside of a data plot.
 
 Here is a sample of a legend that can be moved around:
 
@@ -160,7 +160,7 @@ Here is a sample of a legend that can be moved around:
 
 ## Layout
 
-The {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method controls how the items of a legend are placed. Possible values are listed in {api:anychart.enums.LegendLayout}anychart.enums.LegendLayout{api} and they are:
+The {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method controls how the items of a legend are placed. Possible values are listed in the {api:anychart.enums.LegendLayout}anychart.enums.LegendLayout{api} and they are:
 - "horizontal",
 - "horizontalExpandable",
 - "vertical",
@@ -180,7 +180,7 @@ Legend size is controlled by the following methods:
 
 ### Expandable
 
-When the legend [layout mode](#layout) is set to *"horizontalExpandable"* or *"verticalExpandable"* it makes sense to use {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods control the extent to which legend can expand to. It can be set both in pixels and percents. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
+When the legend [layout mode](#layout) is set to *"horizontalExpandable"* or *"verticalExpandable"* it makes sense to use the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and the {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which control the extent to which legend can expand to. It can be set both in pixels and percents. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
 
 ```
 // Set maximum width and height.
@@ -195,15 +195,15 @@ legend.position("right");
 legend.paginator().orientation("bottom");
 ```
 
-See how these settings work in the following interactive sample: you can click buttons to add or remove series and see how legend and chart change their sizes. Once the legend reached maximum allowed size - a [paginator](#paginator) appears.
+See how these settings work in the following interactive sample: click buttons to add or remove series and see how the legend and the chart change their sizes. Once the legend reached maximum allowed size, a [paginator](#paginator) appears.
 
 {sample}CS\_Legend\_09{sample}
 
 ### Fixed
 
-{api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} methods are used to set the fixed size in pixels or percents. They override {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} if both are set simultaneously.
+The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} methods are used to set the fixed size of a legend in pixels or percents. They override {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} if both are set simultaneously.
 
-Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size positioned to the *"Left"* of the chart, aligned to *"Top"*, with padding of 10 pixels:
+A Pie Chart Sample with a legend of a fixed (75px - width, 140px height) size positioned to the *"Left"* of the chart, aligned to *"Top"*, with padding of 10 pixels:
 
 ```
 var legend = chart.legend();
@@ -219,13 +219,11 @@ legend.align("top");
 legend.padding(10);
 ```
 
-Here is a sample a legend with a fixed size:
-
 {sample}CS\_Legend\_10{sample}
 
 ## Paging
 
-If legend items can't fit into an area legend can occupy (this is controlled by [size settings](#size)) {api:anychart.core.ui.Legend#paginator}paginator(){api} appears. You can choose paginator layout and position:
+If legend items can't fit into an area, the legend can occupy (this is controlled by [size settings](#size)) the {api:anychart.core.ui.Legend#paginator}paginator(){api} appears. You can choose paginator layout and position:
 
 ```
 // legend settings
@@ -242,13 +240,13 @@ paginator.orientation("right");
 
 ### Background
 
-To configure the border and the inner color of the legend use the {api:anychart.core.ui.Legend#background}background(){api} method. To learn more about background setting please see the [background tutorial](../Appearance_Settings/Background).
+To configure the border and the inner color of the legend use the {api:anychart.core.ui.Legend#background}background(){api} method. To learn more about background adjusting please see the [background tutorial](../Appearance_Settings/Background).
 
 {sample}CS\_Legend\_07{sample}
 
 ### Marker Symbol
 
-When you are working with [line](../Basic_Charts/Line_Chart) and [spline](../Basic_Charts/Spline_Chart) charts you can use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}legendItem(){api} method. Sample code presented below:
+When you are working with [line](../Basic_Charts/Line_Chart) and [spline](../Basic_Charts/Spline_Chart) charts you can use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If it is necessary to tune markers in legend icons, adjust the {api:anychart.core.ui.LegendItem}legendItem(){api} method. Sample code presented below:
 
 ```
 // chart data 
@@ -295,13 +293,13 @@ legend.hoverCursor("pointer"); // sets hover cursor using a string
 
 ### Tooltip
 
-If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
+If you want to configure legend tooltips - you should do that using the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method. You can tune its visual appearance and format. In the following sample we format the tooltips of the legend to show detailed description information.
 
 {sample}CS\_Legend\_13{sample}
 
 ## Series Management
 
-You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show the hidden series. 
 
 {sample}CS\_Legend\_14{sample}
 
@@ -323,20 +321,20 @@ legend.itemsFormatter(function(items){
 });
 ```
 
-In the sample chart below we've used custom item that adds *Total* data to legend.
+In the sample chart below we've used custom item that adds the *Total* data to legend.
 
 {sample}CS\_Legend\_15{sample}
 
 ## Custom Legend
 
-AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legends at the bottom of the chart. 
 
 {sample}CS\_Legend\_16{sample}
 
 
 ## Events
 
-As an interactive component of Chart, Legend has some events which can be used for managing and adjusting the Chart and the Legend itself. Look through this section to know all about legend events.
+As an interactive component of a Chart, Legend has some events which can be used for managing and adjusting the Chart and the Legend itself. Look through this section to know all about legend events.
 
 
 ### Legend Items Events
@@ -422,7 +420,7 @@ legend.itemsSource([chart2005, chart2006]);
 
 ## One Legend for Several Series
 
-You can attache an event to a legend items. Use {api:anychart.core.ui.Legend#listen}listen(){api} method to set an event for a legend. List of possible event can be found in {api:anychart.enums.EventType}anychart.enums.EventType{api}. For additional information on events in AnyChart you can find in [Event Listeners tutorial](../Common_Settings/Event_Listeners)
+One legend can be used for several series on different charts. Look through and explore the following sample:
 
 ```
 // create legend
