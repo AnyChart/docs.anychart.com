@@ -22,8 +22,8 @@
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 * [Events](#events)
- * [Legend Events](#legend_events)
  * [Legend Items Events](#legend_items_events)
+ * [Legend Events](#legend_events)
 * [One Legend for Several Charts](#one_legend_for_several_charts)
 * [One Legend for Several Series](#one_legend_for_several_series)
 
@@ -338,42 +338,10 @@ AnyChart JavaScript Framework sets no limits to the amount of legends on one cha
 
 As an interactive component of Chart, Legend has some events which can be used for managing and adjusting the Chart and the Legend itself. Look through this section to know all about legend events.
 
-### Legend Events
-
-There are only three events the Legend has:
-
-- **drag** -  Event type for legend moving.
-- **dragEnd** - Event type for legend at the end of moving.
-- **dragStart** - Event type for legend at the start of moving.
-
-```
-// actions on events
-legend.listen("dragStart", function(){
-  background.fill(anychart.color.lighten(backgroundFill, 0.3));
-  series1.fill(anychart.color.lighten(series1Fill, 0.3));
-  series2.fill(anychart.color.lighten(series2Fill, 0.3));
-  series3.fill(anychart.color.lighten(series3Fill, 0.3));
-  grid.stroke(anychart.color.lighten(gridStroke, 0.3));
-});
-legend.listen("drag", function(){
-  chart.title("Legend is being dragged");
-});
-legend.listen("dragEnd", function(){
-  background.fill(backgroundFill);
-  series1.fill(series1Fill);
-  series2.fill(series2Fill);
-  series3.fill(series3Fill);
-  grid.stroke(gridStroke);
-  chart.title(chartTitle);
-});
-```
-
-{sample}CS\_Legend\_17{sample}
-
 
 ### Legend Items Events
 
-Legend items are child elements of a legend, but they have some events which have nothing to do with the whole legend. The table below demonstrates the list of legend items events.
+Legend items are child elements of a legend, but they have some events which have nothing to do with the whole legend. The list below demonstrates the list of legend items events.
 
 
 - **legendItemClick** - Event type for click on item of legend.
@@ -385,9 +353,54 @@ Legend items are child elements of a legend, but they have some events which hav
 - **legendItemMouseUp** - Event type for item of legend at up mouse.
 
 ```
+// legend items events adjusting
+legend.listen("legendItemMouseDown", function(e){
+    // stop reacting on this event
+    e.preventDefault();
+});
+
+legend.listen("legendItemDblclick", function(e){
+  itemIndex = e.itemIndex + 1;
+  chart.title("You have chosen the "+ itemIndex + " series");
+  switch(itemIndex){
+    case 1:
+      series1.enabled(!series1.enabled())
+    break;
+    case 2:
+      series2.enabled(!series2.enabled())
+    break;
+    case 3:
+      series3.enabled(!series3.enabled())
+      break;
+    case 4:
+      series4.enabled(!series4.enabled())
+    break;
+  }
+});
 ```
 
 {sample}CS\_Legend\_18{sample}
+
+
+### Legend Events
+
+There are only three events the Legend has:
+
+- **drag** -  Event type for legend moving.
+- **dragEnd** - Event type for legend at the end of moving.
+- **dragStart** - Event type for legend at the start of moving.
+
+```
+// allow drag
+legend.drag(true);
+
+// chart title changes on dragging event
+legend.listen("drag", function(){
+  chart.title("Legend is being dragged");
+});
+```
+
+{sample}CS\_Legend\_17{sample}
 
 
 ## One Legend for Several Charts

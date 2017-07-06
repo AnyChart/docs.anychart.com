@@ -8,6 +8,39 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // chart type
+  chart = anychart.column();
+
+  // legend settings
+  var legend = chart.legend();
+  // enable legend
+  legend.enabled(true);
+
+  // legend items events adjusting
+  legend.listen("legendItemMouseDown", function(e){
+      // stop reacting on this event
+      e.preventDefault();
+     });
+
+  legend.listen("legendItemDblclick", function(e){
+    itemIndex = e.itemIndex + 1;
+    chart.title("You have chosen the "+ itemIndex + " series");
+     switch(itemIndex){
+       case 1:
+        series1.enabled(!series1.enabled())
+      break;
+      case 2:
+        series2.enabled(!series2.enabled())
+      break;
+      case 3:
+        series3.enabled(!series3.enabled())
+        break;
+      case 4:
+        series4.enabled(!series4.enabled())
+      break;
+    }
+  });
   
   // data
   var data = anychart.data.set([
@@ -21,91 +54,16 @@
   var Quarter2 = data.mapAs({x: [0], value: [2]});
   var Quarter3 = data.mapAs({x: [0], value: [3]});
   var Quarter4 = data.mapAs({x: [0], value: [4]});
-  
-  // chart type
-  chart = anychart.column();
-  
+     
   // set title
   chart.title("Legend Items events");
   
   // set data
-  var series1 = chart.column(Quarter1);
-  series1.name("Quarter 1");
-  var series2 = chart.column(Quarter2);
-  series2.name("Quarter 2");
-  var series3 = chart.column(Quarter3);
-  series3.name("Quarter 3");
-  var series4 = chart.column(Quarter4);
-  series4.name("Quarter 4");
-  
-  // legend settings
-  var legend = chart.legend();
-  // enable title separator
-  legend.titleSeparator(true);
-  // enable legend
-  legend.enabled(true);
-  // set legend position
-  legend.position("right");
-  // set legend align
-  legend.align("top");
-  // set items layout
-  legend.itemsLayout("vertical");
-
-  // legend items events adjusting
-  legend.listen("legendItemClick", function(e){
-      e.preventDefault();
-      itemIndex = e.itemIndex;
-      switch(itemIndex){
-        case "0":
-        series1.enabled(true);
-        series1.select();
-        break;
-        case "1":
-        series2.enabled(true);
-        series2.select();
-        break;
-        case "2":
-        series3.enabled(true);
-        series3.select();
-        break;
-        case "3":
-        series4.enabled(true);
-        series4.select();
-        break;
-      }
-  });
-
-  legend.listen("legendItemDblclick", function(e){
-    itemIndex = e.itemIndex;
-    switch(itemIndex){
-      case "0":
-        if (series1.enabled() == "true")
-          series1.enabled(false)
-        else
-          series1.enabled(true);
-      break;
-      case "1":
-      series1.enabled(false);
-      break;
-      case "2":
-      series1.enabled(false);
-      break;
-      case "3":
-      series1.enabled(false);
-      break;
-    }
-  });
-  
-  // settings for legend title  
-  var title = chart.legend().title();
-  title.useHtml(true);
-  // enables legend title
-  title.enabled(true);
-  title.text("Total sales<br><i style=\"color: #999; font-weight: 400; font-size: 11px;\">(Year 2004)</i>");
-  // set font size
-  title.fontSize(14);
-  title.hAlign("center");
-    
+  series1 = chart.column(Quarter1);
+  series2 = chart.column(Quarter2);
+  series3 = chart.column(Quarter3);
+  series4 = chart.column(Quarter4);
+      
   // draw chart
   chart.container("container");
   chart.draw();
