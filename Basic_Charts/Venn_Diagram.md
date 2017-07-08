@@ -11,7 +11,7 @@
 
 ## Overview
 
-[a diagram representing mathematical or logical sets pictorially as circles or closed curves within an enclosing rectangle (the universal set), common circles of the sets being represented by intersections of the circles.]
+A Venn diagram, named John Venn, is a diagram representing all possible logical relations between a finite collection of different sets. Sets are shown as regions inside closed curves (usually circles), and common elements of the sets are shown as intersections of these circles. 
 
 This article explains how to create a basic Venn diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
 
@@ -91,12 +91,12 @@ The sample below shows two circles with their names set:
 var data = [
     {
         x: "A",
-        name: "Circle A",
+        name: "Set A",
         value: 400
     },
     {
         x: "B",
-        name: "Circle B",
+        name: "Set B",
         value: 200
     }
 ];
