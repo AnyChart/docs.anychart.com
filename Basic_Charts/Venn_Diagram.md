@@ -76,7 +76,7 @@ chart.draw();
 
 ## Data
 
-When you create data for a Venn diagram, you should use these data fields for each element (circles or intersection):
+When you create data for a Venn diagram, you should use these data fields for each element (circles or intersection areas):
 
 * **x** to set a unique identifier
 * **value** to set the size
@@ -185,7 +185,7 @@ chart.selectStroke("#00cc99", 4);
 
 ## Intersection
 
-Here are methods that configure visual settings of intersections:
+Here are methods that configure visual settings of intersection areas:
 
 * {api:anychart.core.venn.Intersections#fill}fill(){api}, {api:anychart.core.venn.Intersections#hatchFill}hatchFill(){api}, {api:anychart.core.venn.Intersections#stroke}stroke(){api} set the fill, hatch fill, and stroke
 * {api:anychart.core.venn.Intersections#hoverFill}hoverFill(){api}, {api:anychart.core.venn.Intersections#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.venn.Intersections#hoverStroke}hoverStroke(){api} configure the visual settings on hover
