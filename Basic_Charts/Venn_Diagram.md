@@ -11,9 +11,11 @@
 
 ## Overview
 
-A Venn diagram, named John Venn, is a diagram representing all possible logical relations between a finite collection of different sets. Sets are shown as regions inside closed curves (usually circles), and common elements of the sets are shown as intersections of these circles. 
+A Venn diagram, named after John Venn, is a diagram representing all possible logical relations between a finite collection of different sets. Sets are shown as regions inside circles or other closed curves, and common elements of the sets are shown as intersections of these circles.
 
-This article explains how to create a basic Venn diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
+The AnyChart Venn chart type can be also used for creating Euler diagrams. The Euler diagram, named after Leonhard Euler, is very similar to the Venn diagram, but represents only relevant relations between sets.
+
+This article explains how to create a basic Venn (or Euler) diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
