@@ -41,7 +41,33 @@
 {api:anychart#venn}venn(){api}
 
 ```
+//create data
+var data = [
+    {
+        x: "A",
+        value: 100
+    },
+    {
+        x: "B",
+        value: 100
+    },
+    {
+        x: ["A", "B"],
+        value: 25
+    }
+];
 
+// create a chart and set the data
+chart = anychart.venn(data);
+
+// configure labels of intersections
+chart.intersections().labels().format("{%X}");
+
+// set the container id
+chart.container('container');
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Venn\_Diagram\_01{sample}
@@ -49,19 +75,102 @@
 ## Data
 
 ```
-
+//create data
+var data = [
+    {
+        x: "A",
+        name: "Element A",
+        value: 400
+    },
+    {
+        x: "B",
+        name: "Element B",
+        value: 200
+    }
+];
 ```
 
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
 ```
-
+//create data
+var data = [
+    {
+        x: "A",
+        name: "Element A",
+        value: 100
+    },
+    {
+        x: "B",
+        name: "Element B",
+        value: 100
+    },
+    {
+        x: "C",
+        name: "Element C",
+        value: 100
+    },
+    {
+        x: ["A", "B"],
+        value: 20
+    },
+    {
+        x: ["A", "C"],
+        value: 20
+    },
+    {
+        x: ["B", "C"],
+        value: 20
+    },
+    {
+        x: ["A", "B", "C"],
+        value: 20
+    }
+];
 ```
 
 {sample}BCT\_Venn\_Diagram\_03{sample}
 
 ```
+// set the data separator
+chart.dataSeparator("+")
+```
 
+```
+//create data
+var data = [
+    {
+        x: "A",
+        name: "Element A",
+        value: 100
+    },
+    {
+        x: "B",
+        name: "Element B",
+        value: 100
+    },
+    {
+        x: "C",
+        name: "Element C",
+        value: 100
+    },
+    {
+        x: "A+B",
+        value: 20
+    },
+    {
+        x: "A+C",
+        value: 20
+    },
+    {
+        x: "B+C",
+        value: 20
+    },
+    {
+        x: "A+B+C",
+        value: 20
+    }
+];
 ```
 
 {sample}BCT\_Venn\_Diagram\_04{sample}
@@ -69,7 +178,16 @@
 ## Appearance
 
 ```
-
+// configure visual settings
+chart.fill("#00cc99", 0.3);
+chart.hoverFill("#00cc99", 0.3);
+chart.selectFill("#00cc99", 0.5);
+chart.hatchFill("percent20", "#808080");
+chart.hoverHatchFill("percent20", "#808080");
+chart.selectHatchFill("percent20", "#808080");
+chart.stroke("#00cc99");
+chart.hoverStroke("#00cc99", 2);
+chart.selectStroke("#00cc99", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
@@ -77,7 +195,17 @@
 ## Intersection
 
 ```
-
+// configure visual settings of intersections
+var intersect = chart.intersections();    
+intersect.fill("white", 0.3);
+intersect.hoverFill("white", 0.3);
+intersect.selectFill("white", 0.5);
+intersect.hatchFill("percent20", "#808080");
+intersect.hoverHatchFill("percent20", "white");
+intersect.selectHatchFill("percent20", "white");
+intersect.stroke("white");
+intersect.hoverStroke("white", 2);
+intersect.selectStroke("white", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_06{sample}
