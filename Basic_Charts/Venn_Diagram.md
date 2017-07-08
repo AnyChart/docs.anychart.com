@@ -76,9 +76,13 @@ chart.draw();
 
 ## Data
 
-When you create data for a Venn diagram, you should use the **x** data field to set a unique identifier of an element (circle or intersection), and **value** to set the size of an element.
+When you create data for a Venn diagram, you should use this data fields for all elements (circles and intersections):
 
-There is also **name**, an optional field that allows you to add a name, not necessarily unique, of an element. By default, the names of circles are shown in labels, tooltips, and the legend. In the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+* **x** to set a unique identifier
+* **value** to set the size
+* **name** to set the name
+
+The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
 The sample below shows two circles with their names set:
 
@@ -100,7 +104,7 @@ var data = [
 
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
-To identify intersections (in their **x** fields), you need to combine the identifiers of intersecting circles. You can do that via an array:
+To identify an intersection when filling in its **x** field, combine the identifiers of intersecting circles. You can use an array:
 
 ```
 {
@@ -121,10 +125,10 @@ To identify intersections (in their **x** fields), you need to combine the ident
 
 {sample}BCT\_Venn\_Diagram\_03{sample}
 
-The identifiers of circles can be also combined via data separators, the default separator being **&**:
+With the help of data separators, the identifiers of circles can be also combined in strings. The default separator is *&*:
 
 ```
-x: "A&B",
+x: "A&B&C",
 value: 20
 ```
 
@@ -157,7 +161,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
-In the sample below, there a Venn diagram with some of the appearance settings configured:
+In the sample below, there is a Venn diagram with some of the appearance settings configured:
 
 ```
 // configure visual settings
