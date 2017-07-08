@@ -76,9 +76,9 @@ chart.draw();
 
 ## Data
 
-To create data for a Venn diagram, you should use the **x** data field to set a unique identifier of an element (circle or intersection), and **value** to set the size of an element.
+When you create data for a Venn diagram, you should use the **x** data field to set a unique identifier of an element (circle or intersection), and **value** to set the size of an element.
 
-There is also **name**, an optional field that allows you to add a name, not necessarily unique, of a circle or an intersection. By default, the names of circles are shown in labels, tooltips, and the legend. In the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+There is also **name**, an optional field that allows you to add a name, not necessarily unique, of an element. By default, the names of circles are shown in labels, tooltips, and the legend. In the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
 The sample below shows two circles with their names set:
 
@@ -98,94 +98,66 @@ var data = [
 ];
 ```
 
-можно задать пересечения данных, например массивом; используется поле x
-
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
+To identify intersections (in their **x** fields), you need to combine the identifiers of intersecting circles. You can do that via an array:
+
 ```
-//create data
-var data = [
-    {
-        x: "A",
-        name: "Circle A",
-        value: 100
-    },
-    {
-        x: "B",
-        name: "Circle B",
-        value: 100
-    },
-    {
-        x: "C",
-        name: "Circle C",
-        value: 100
-    },
-    {
-        x: ["A", "B"],
-        value: 20
-    },
-    {
-        x: ["A", "C"],
-        value: 20
-    },
-    {
-        x: ["B", "C"],
-        value: 20
-    },
-    {
-        x: ["A", "B", "C"],
-        value: 20
-    }
-];
+{
+    x: ["A", "B"],
+    value: 20
+},
+{
+},
+{
+    x: ["B", "C"],
+    value: 20
+},
+{
+    x: ["A", "B", "C"],
+    value: 20
+}
 ```
 
 {sample}BCT\_Venn\_Diagram\_03{sample}
 
-```
-// set the data separator
-chart.dataSeparator("+")
-```
+The identifiers of circles can be also combined via data separators, the default separator being **&**:
 
 ```
-//create data
-var data = [
-    {
-        x: "A",
-        name: "Circle A",
-        value: 100
-    },
-    {
-        x: "B",
-        name: "Circle B",
-        value: 100
-    },
-    {
-        x: "C",
-        name: "Circle C",
-        value: 100
-    },
-    {
-        x: "A+B",
-        value: 20
-    },
-    {
-        x: "A+C",
-        value: 20
-    },
-    {
-        x: "B+C",
-        value: 20
-    },
-    {
-        x: "A+B+C",
-        value: 20
-    }
-];
+x: "A&B",
+value: 20
+```
+
+The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you to change it to anything you like:
+
+```
+{
+    x: "A+C",
+    value: 20
+},
+{
+    x: "B+C",
+    value: 20
+},
+{
+    x: "A+B+C",
+    value: 20
+}
 ```
 
 {sample}BCT\_Venn\_Diagram\_04{sample}
 
 ## Appearance
+
+Here is a full list of methods used to configure visual settings that are available for the Venn diagram:
+
+* {api:anychart.charts.Venn#fill}fill(){api}, {api:anychart.charts.Venn#hatchFill}hatchFill(){api}, {api:anychart.charts.Venn#stroke}stroke(){api} set the fill, hatch fill, and stroke
+* {api:anychart.charts.Venn#hoverFill}hoverFill(){api}, {api:anychart.charts.Venn#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Venn#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.charts.Venn#selectFill}selectFill(){api}, {api:anychart.charts.Venn#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Venn#selectStroke}selectStroke(){api} configure the visual settings on select
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+In the sample below, there a Venn diagram with some of the appearance settings configured:
 
 ```
 // configure visual settings
@@ -203,6 +175,14 @@ chart.selectStroke("#00cc99", 4);
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
 ## Intersection
+
+Here are methods that configure visual settings of intersections:
+
+* {api:anychart.core.venn.Intersections#fill}fill(){api}, {api:anychart.core.venn.Intersections#hatchFill}hatchFill(){api}, {api:anychart.core.venn.Intersections#stroke}stroke(){api} set the fill, hatch fill, and stroke
+* {api:anychart.core.venn.Intersections#hoverFill}hoverFill(){api}, {api:anychart.core.venn.Intersections#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.venn.Intersections#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.venn.Intersections#selectFill}selectFill(){api}, {api:anychart.core.venn.Intersections#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.venn.Intersections#selectStroke}selectStroke(){api} configure the visual settings on select
+
+This sample shows a Venn diagram with the appearance of intersections configured:
 
 ```
 // configure visual settings of intersections
