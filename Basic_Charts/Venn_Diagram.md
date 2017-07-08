@@ -76,7 +76,7 @@ chart.draw();
 
 ## Data
 
-When you create data for a Venn diagram, you should use this data fields for all elements (circles and intersections):
+When you create data for a Venn diagram, you should use these data fields for each element (circles or intersection):
 
 * **x** to set a unique identifier
 * **value** to set the size
@@ -104,7 +104,7 @@ var data = [
 
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
-To identify an intersection when filling in its **x** field, combine the identifiers of intersecting circles. You can use an array:
+To set the identifier of an intersection (in its **x** field), combine the identifiers of intersecting circles. You can use an array:
 
 ```
 {
@@ -133,6 +133,11 @@ value: 20
 ```
 
 The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you to change it to anything you like:
+
+```
+    // set the data separator
+    chart.dataSeparator("+")
+```
 
 ```
 {
