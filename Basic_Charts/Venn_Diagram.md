@@ -11,7 +11,9 @@
 
 ## Overview
 
-[a diagram representing mathematical or logical sets pictorially as circles or closed curves within an enclosing rectangle (the universal set), common elements of the sets being represented by intersections of the circles.]
+[a diagram representing mathematical or logical sets pictorially as circles or closed curves within an enclosing rectangle (the universal set), common circles of the sets being represented by intersections of the circles.]
+
+This article explains how to create a basic Venn diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -38,7 +40,7 @@
 
 ## Quick Start
 
-{api:anychart#venn}venn(){api}
+To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart constructor, like in the following sample:
 
 ```
 //create data
@@ -74,21 +76,29 @@ chart.draw();
 
 ## Data
 
+To create data for a Venn diagram, you should use the **x** data field to set a unique identifier of an element (circle or intersection), and **value** to set the size of an element.
+
+There is also **name**, an optional field that allows you to add a name, not necessarily unique, of a circle or an intersection. By default, the names of circles are shown in labels, tooltips, and the legend. In the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+
+The sample below shows two circles with their names set:
+
 ```
 //create data
 var data = [
     {
         x: "A",
-        name: "Element A",
+        name: "Circle A",
         value: 400
     },
     {
         x: "B",
-        name: "Element B",
+        name: "Circle B",
         value: 200
     }
 ];
 ```
+
+можно задать пересечения данных, например массивом; используется поле x
 
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
@@ -97,17 +107,17 @@ var data = [
 var data = [
     {
         x: "A",
-        name: "Element A",
+        name: "Circle A",
         value: 100
     },
     {
         x: "B",
-        name: "Element B",
+        name: "Circle B",
         value: 100
     },
     {
         x: "C",
-        name: "Element C",
+        name: "Circle C",
         value: 100
     },
     {
@@ -141,17 +151,17 @@ chart.dataSeparator("+")
 var data = [
     {
         x: "A",
-        name: "Element A",
+        name: "Circle A",
         value: 100
     },
     {
         x: "B",
-        name: "Element B",
+        name: "Circle B",
         value: 100
     },
     {
         x: "C",
-        name: "Element C",
+        name: "Circle C",
         value: 100
     },
     {
