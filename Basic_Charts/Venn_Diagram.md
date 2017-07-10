@@ -3,11 +3,13 @@
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Data](#data)
-* [Appearance](#appearance)
-* [Intersection](#intersection)
-* [Labels](#labels)
-* [Tooltips](#tooltips)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Data](#data)
+  * [Appearance](#appearance)
+  * [Intersection](#intersection)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
 
 ## Overview
 
@@ -76,7 +78,15 @@ chart.draw();
 
 {sample}BCT\_Venn\_Diagram\_01{sample}
 
-## Data
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Venn diagram (for example, legend and interactivity settings).
+
+Read the overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Data
 
 When you create data for a Venn diagram, you should use these data fields for each element (circles or intersection areas):
 
@@ -158,7 +168,7 @@ The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you
 
 {sample}BCT\_Venn\_Diagram\_04{sample}
 
-## Appearance
+### Appearance
 
 Here is a full list of methods used to configure visual settings that are available for the Venn diagram:
 
@@ -185,7 +195,7 @@ chart.selectStroke("#00cc99", 4);
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-## Intersection
+### Intersection
 
 Here are methods that configure visual settings of intersection areas:
 
@@ -211,7 +221,7 @@ intersect.selectStroke("white", 4);
 
 {sample}BCT\_Venn\_Diagram\_06{sample}
 
-## Labels
+### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
@@ -257,7 +267,7 @@ chart.intersections().labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
 {sample}BCT\_Venn\_Diagram\_07{sample}
 
-## Tooltips
+### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
