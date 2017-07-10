@@ -7,11 +7,13 @@
 * [Special Settings](#special_settings)
   * [Data](#data)
   * [Appearance](#appearance)
+  * [Mode](#mode)
+  * [Angles](#angles)
   * [Scale](#scale)
   * [Color Scale](#color_scale)
-  * [Interactivity](#interactivity)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
+  * [Interactivity](#interactivity)
 
 ## Overview
 
@@ -23,7 +25,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, value, category](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -87,13 +89,37 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
+When you create data for a Tag Cloud, you should use these data fields for each element (circles or intersection areas):
+
+* **x** to ...
+* **value** to ...
+* **category** to set the category
+
+The **category** field is optional...
+
 ### Appearance
+
+{api:anychart.charts.TagCloud#normal}normal(){api}
+{api:anychart.charts.TagCloud#hovered}hovered(){api}
+{api:anychart.charts.TagCloud#selected}selected(){api}
+
+### Mode
+
+rect
+spiral
+
+{api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
+
+### Angles
+
+{api:anychart.charts.TagCloud#angles}angles{api}
+{api:anychart.charts.TagCloud#anglesCount}anglesCount(){api}
+{api:anychart.charts.TagCloud#fromAngle}fromAngle(){api}
+{api:anychart.charts.TagCloud#toAngle}{api}
 
 ### Scale
 
 ### Color Scale
-
-### Interactivity
 
 ### Labels
 
@@ -102,3 +128,5 @@ Read the overview of general settings: [General Settings](General_Settings).
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+### Interactivity
