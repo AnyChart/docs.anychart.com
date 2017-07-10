@@ -108,6 +108,8 @@ The **category** field is optional...
 
 {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
 
+{sample}BCT\_Tag\_Cloud\_03{sample}
+
 ### Angles
 
 * {api:anychart.charts.TagCloud#angles}angles(){api}
