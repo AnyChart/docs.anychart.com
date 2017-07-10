@@ -84,7 +84,7 @@ When you create data for a Venn diagram, you should use these data fields for ea
 * **value** to set the size
 * **name** to set the name
 
-The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections it is different – read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**. Read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
 The sample below shows two circles with their names set:
 
@@ -217,7 +217,7 @@ intersect.selectStroke("white", 4);
 
 Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
 
-This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections it is the **value** field. If you want some other field to be displayed in labels of intersections, you should configure them manually.
+This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections the default choice is **value**. If you want some other field to be displayed in labels of intersections, you should configure them manually.
 
 You can also add a custom data field and use it for configuring labels.
 
