@@ -7,7 +7,7 @@
 * [Special Settings](#special_settings)
   * [Data](#data)
   * [Appearance](#appearance)
-  * [Intersection](#intersection)
+  * [Intersections](#intersections)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
 
@@ -195,7 +195,7 @@ chart.selectStroke("#00cc99", 4);
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-### Intersection
+### Intersections
 
 Here are methods that configure visual settings of intersection areas:
 
