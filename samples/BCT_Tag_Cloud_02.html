@@ -8,8 +8,11 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function () {
+
+    // create data   
     var data = [
         {"x": "learning", "value": 80},
+        {"x": "includes", "value": 56},
         {"x": "lists", "value": 44},
         {"x": "meaning", "value": 40},
         {"x": "useful", "value": 36},
@@ -17,22 +20,30 @@
         {"x": "grammar", "value": 28},
         {"x": "teaching", "value": 24},
         {"x": "example", "value": 20},
-        {"x": "includes", "value": 56},
         {"x": "thing", "value": 12},
-        {"x": "vocabulary", "value": 10},
-        {"x": "frequency", "value": 10},
-        {"x": "phrases", "value": 15},
-        {"x": "content", "value": 27}
     ];
 
-    // Creates Tag Cloud chart.
+    // create a chart and set the data
     chart = anychart.tagCloud(data);
 
-    chart.title("Create a Tag Cloud chart");
+    // set the chart title
+    chart.title("Tag Cloud Chart: Appearance");
+
+    // configure the visual settings in normal state
+    chart.normal({fill: "gray 0.5"});
+
+    // configure the visual settings in hovered state
+    chart.hovered({fill: "#00cc99 0.5"});
+
+    // configure visual settings in selected state
+    chart.selected({fill: "#00cc99"});
+
+    // set the container id
     chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
-});
-</script>
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
