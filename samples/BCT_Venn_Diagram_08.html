@@ -14,17 +14,19 @@
         {
             x: "A",
             name: "Set A",
+            custom_field: "info 1",
             value: 100
         },
         {
             x: "B",
-             name: "Set A",
+            name: "Set A",
+            custom_field: "info 2",
             value: 100
         },
         {
             x: ["A", "B"],
             name: "Set A + Set B",
-            info: "INFO",
+            custom_field: "info 3",
             value: 25
         }
     ];
@@ -32,11 +34,14 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure labels of intersections
-    chart.intersections().labels().format("{%name}\n{%info}");
+    // configure tooltips of circles
+    chart.tooltip().format("{%custom_field}\n{%value}");
 
     // configure tooltips of intersections
-    chart.intersections().tooltip().format("{%value}\n{%info}");
+    chart.intersections().tooltip().format("{%custom_field}\n{%value}");
+
+    // configure labels of intersections
+    chart.intersections().labels().format("{%name}");
 
     // set the chart title
     chart.title("Venn Diagram: Tooltips");
