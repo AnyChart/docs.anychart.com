@@ -215,9 +215,9 @@ intersect.selectStroke("white", 4);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Please note: when you create a Venn diagram, you can set labels for circles as well as intersections.
+Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
 
-This chart type supports an optional data field – **name**. Names of circles are shown in labels by default, but in the case of intersections it is the **value** field. If you want **name** or other field to be displayed there, you should configure labels manually.
+This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections it is the **value** field. If you want **name** or other field to be displayed in labels of intersections, you should configure labels manually.
 
 You can also add a custom data field and use it for configuring labels.
 
@@ -261,11 +261,9 @@ chart.intersections().labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-Please note: when you create a Venn diagram, you can set tooltips for circles as well as intersections.
+Please note: when you create a Venn diagram, you can set tooltips both for circles and intersections.
 
-This chart type supports an optional data field – **name**, which is shown in tooltips by default (it works both for circles and intersections).
-
-You can also add a custom data field and use it for configuring tooltips.
+This chart type supports an optional data field – **name**, which is shown in tooltips of labels and intersections by default. You can also add a custom data field and use it for configuring tooltips.
 
 In the sample below, there is a Venn diagram with customized tooltips of circles and intersections:
 
