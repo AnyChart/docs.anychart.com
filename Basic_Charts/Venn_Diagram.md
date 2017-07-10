@@ -217,7 +217,7 @@ intersect.selectStroke("white", 4);
 
 Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
 
-This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections it is the **value** field. If you want **name** or other field to be displayed in labels of intersections, you should configure labels manually.
+This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections it is the **value** field. If you want some other field to be displayed in labels of intersections, you should configure them manually.
 
 You can also add a custom data field and use it for configuring labels.
 
