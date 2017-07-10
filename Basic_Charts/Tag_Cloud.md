@@ -3,11 +3,44 @@
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Samples](#samples)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Data](#data)
+  * [Appearance](#appearance)
+  * [Scale](#scale)
+  * [Color Scale](#color_scale)
+  * [Interactivity](#interactivity)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
 
 ## Overview
 
-A tag cloud (word cloud, or weighted list in visual design) is a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag is shown with font size or color.
+[A tag cloud (word cloud, or weighted list in visual design) is a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag is shown with font size or color.]
+
+This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
+
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>N/A</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>N/A</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[]()</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/tag-cloud-chart/" target="_blank">Chartopedia: Venn Diagram</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ## Quick Start
 
@@ -45,6 +78,24 @@ Here is a basic Tag cloud chart:
 
 {sample}BCT\_Tag\_Cloud\_01{sample}
 
-## Samples
+## General Settings
 
-You can find a lot of samples of Tag Cloud charts in [AnyChart Tag Cloud (Word Cloud) Charts Gallery](https://www.anychart.com/products/anychart/gallery/Tag_Cloud/)
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Tag Cloud chart (for example, legend and interactivity settings).
+
+Read the overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Data
+
+### Appearance
+
+### Scale
+
+### Color Scale
+
+### Interactivity
+
+### Labels
+
+### Tooltips
