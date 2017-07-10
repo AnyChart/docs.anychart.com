@@ -34,9 +34,9 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[???](???)</td></tr>
+<tr><td></td><td>[TreeMap](TreeMap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="???" target="_blank">Chartopedia: Venn Diagram</a></td></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/venn-diagram/" target="_blank">Chartopedia: Venn Diagram</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -49,14 +49,17 @@ To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart construct
 var data = [
     {
         x: "A",
+        name: "Set A",
         value: 100
     },
     {
         x: "B",
+        name: "Set B",
         value: 100
     },
     {
         x: ["A", "B"],
+        name: "Set A + Set B",
         value: 25
     }
 ];
@@ -65,7 +68,7 @@ var data = [
 chart = anychart.venn(data);
 
 // configure labels of intersections
-chart.intersections().labels().format("{%X}");
+chart.intersections().labels().format("{%name}");
 
 // set the container id
 chart.container('container');
@@ -127,7 +130,7 @@ To set the identifier of an intersection (in its **x** field), combine the ident
 
 {sample}BCT\_Venn\_Diagram\_03{sample}
 
-With the help of data separators, the identifiers of circles can be also combined in strings. The default separator is *&*:
+With the help of data separators, the identifiers of circles can be also set as strings. The default separator is *&*:
 
 ```
 x: "A&B&C",
