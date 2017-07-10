@@ -263,7 +263,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 Please note: when you create a Venn diagram, you can set tooltips both for circles and intersections.
 
-This chart type supports an optional data field – **name**, which is shown in tooltips of labels and intersections by default. You can also add a custom data field and use it for configuring tooltips.
+This chart type supports an optional data field – **name**, which is shown in tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
 
 In the sample below, there is a Venn diagram with customized tooltips of circles and intersections:
 
