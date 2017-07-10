@@ -44,43 +44,42 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 
 ## Quick Start
 
-To create a Tag cloud use {api:anychart#tagCloud}tagCloud(){api} method, you can pass the data right into the constructor:
+To create a Tag cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
 
 ```
-anychart.onDocumentReady(function () {
-    var data = [
-        {"x": "learning", "value": 80},
-        {"x": "lists", "value": 44},
-        {"x": "meaning", "value": 40},
-        {"x": "useful", "value": 36},
-        {"x": "different", "value": 32},
-        {"x": "grammar", "value": 28},
-        {"x": "teaching", "value": 24},
-        {"x": "example", "value": 20},
-        {"x": "includes", "value": 56},
-        {"x": "thing", "value": 12},
-        {"x": "vocabulary", "value": 10},
-        {"x": "frequency", "value": 10},
-        {"x": "phrases", "value": 15},
-        {"x": "content", "value": 27}
-    ];
+// create data
+var data = [
+    {"x": "learning", "value": 80},
+    {"x": "lists", "value": 44},
+    {"x": "meaning", "value": 40},
+    {"x": "useful", "value": 36},
+    {"x": "different", "value": 32},
+    {"x": "grammar", "value": 28},
+    {"x": "teaching", "value": 24},
+    {"x": "example", "value": 20},
+    {"x": "includes", "value": 56},
+    {"x": "thing", "value": 12},
+    {"x": "vocabulary", "value": 10},
+    {"x": "frequency", "value": 10},
+    {"x": "phrases", "value": 15},
+    {"x": "content", "value": 27}
+];
 
-    // create a tag cloud chart
-    chart = anychart.tagCloud(data);
+// create a chart and set the data
+chart = anychart.tagCloud(data);
 
-    // display chart
-    chart.container("container");
-    chart.draw();
-});
+// set the container id
+chart.container('container');
+
+// initiate drawing the chart
+chart.draw();
 ```
-
-Here is a basic Tag cloud chart:
 
 {sample}BCT\_Tag\_Cloud\_01{sample}
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Tag Cloud chart (for example, legend and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Tag Cloud chart (for example, legend settings).
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -98,4 +97,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Labels
 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
 ### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
