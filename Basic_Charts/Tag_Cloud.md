@@ -99,6 +99,8 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
+{sample}BCT\_Tag\_Cloud\_02{sample}
+
 ### Mode
 
 * rect
