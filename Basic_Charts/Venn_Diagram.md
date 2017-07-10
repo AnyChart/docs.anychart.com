@@ -49,17 +49,14 @@ To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart construct
 var data = [
     {
         x: "A",
-        name: "Set A",
         value: 100
     },
     {
         x: "B",
-        name: "Set B",
         value: 100
     },
     {
         x: ["A", "B"],
-        name: "Set A + Set B",
         value: 25
     }
 ];
@@ -68,7 +65,7 @@ var data = [
 chart = anychart.venn(data);
 
 // configure labels of intersections
-chart.intersections().labels().format("{%name}");
+chart.intersections().labels().format("{%X}");
 
 // set the container id
 chart.container('container');
@@ -216,4 +213,8 @@ intersect.selectStroke("white", 4);
 
 ## Labels
 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
 ## Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
