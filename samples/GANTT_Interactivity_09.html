@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="actualBug anyGantt"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+	<script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function(){
+
+	// create data tree on our data
+	var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+
+	// create project gantt chart
+	chart = anychart.ganttProject();
+
+	// set data for the chart
+	chart.data(treeData);
+	
+	// enable Gantt editing
+	chart.editing(true);
+	
+	// set pixel position of the main splitter
+    chart.splitterPosition(220);
+
+    // edit connetors appearance
+    timeline = chart.getTimeline();
+    // set the connector control marker type
+	timeline.editStartConnectorMarkerType("arrowLeft");
+	timeline.editFinishConnectorMarkerType("arrowRight");
+	// connectors controls marker type
+	timeline.editStartConnectorMarkerSize(30);
+	timeline.editFinishConnectorMarkerSize(30);
+	// offsets of the connectors controls
+	timeline.editStartConnectorMarkerHorizontalOffset(10);
+	timeline.editFinishConnectorMarkerHorizontalOffset(-10);
+	timeline.editStartConnectorMarkerVerticalOffset(-7);
+	timeline.editFinishConnectorMarkerVerticalOffset(7);
+
+	// the width of the interval length editor
+	timeline.editIntervalWidth(15);
+
+	// disable tooltips
+	timeline.tooltip().enabled(false);
+
+	// set container id for the chart
+	chart.container("container");
+
+	// initiate chart drawing
+	chart.draw();
+
+	// zoom chart to specified date
+	chart.fitAll();
+	
+	chart.editing(true);
+
+});
+function getData() {
+	return [
+		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000, "rowHeight": 40},
+		{"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000, "rowHeight": 40},
+		{"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "4", "name": "Identify available skills, information and support", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "5", "name": "Decide whether to proceed", parent:"2", "progressValue": "0%", "actualStart": 951753600000, "actualEnd": 951786000000, "connectTo": "7", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "6", "name": "Define the Opportunity", parent:"1", "progressValue": "27%", "actualStart": 951782400000, "actualEnd": 952992000000, "rowHeight": 40},
+		{"id": "7", "name": "Research the market and competition", parent:"6", "progressValue": "0%", "actualStart": 951840000000, "actualEnd": 951872400000, "connectTo": "8", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "8", "name": "Interview owners of similar businesses", parent:"6", "progressValue": "60%", "actualStart": 951868800000, "actualEnd": 952473600000, "connectTo": "9", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "9", "name": "Identify needed resources", parent:"6", "progressValue": "0%", "actualStart": 952531200000, "actualEnd": 952650000000, "connectTo": "10", "connectorType": "FinishStart", "rowHeight": 40},
+		{"id": "10", "name": "Identify operating cost elements", parent:"6", "progressValue": "0%", "actualStart": 952704000000, "actualEnd": 952995600000, "connectTo": "12", "connectorType": "FinishStart", "rowHeight": 40}
+	];
+}
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

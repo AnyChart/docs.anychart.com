@@ -5,6 +5,9 @@
  * [Controls](#controls) 
   * [Customizing Controls](#customizing_controls) 
  * [Events](#events) 
+  * [Data Tree Events](#data_tree_events) 
+  * [Grid Events](#grid_events) 
+  * [Connector Events](#connector_events) 
  * [Data Grid](#data_grid)
  * [TimeLine](#timeline)
 * [Coloring](#coloring)
@@ -134,16 +137,16 @@ When an interval on a Live Edit Chart is hovered, its controls appear. It is pos
 
 ```
 // set the connector control marker type
-timeline.editStartConnectorMarkerType("diamond");
-timeline.editFinishConnectorMarkerType("diamond");
+timeline.editStartConnectorMarkerType("arrowLeft");
+timeline.editFinishConnectorMarkerType("arrowRight");
 ```
 
 The {api:anychart.core.ui.Timeline#editStartConnectorMarkerSize}editStartConnectorMarkerSize(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerSize}editFinishConnectorMarkerSize(){api} methods manage the size of the start and finish connector controls of an interval.
 
 ```
 // set the connector control marker size
-timeline.editStartConnectorMarkerSize(20);
-timeline.editFinishConnectorMarkerSize(20);
+timeline.editStartConnectorMarkerSize(30);
+timeline.editFinishConnectorMarkerSize(30);
 ```
 
 To set the desired position for both connector controls, use the {api:anychart.core.ui.Timeline#editStartConnectorMarkerHorizontalOffset}editStartConnectorMarkerHorizontalOffset(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerHorizontalOffset}editFinishConnectorMarkerHorizontalOffset(){api} methods. They accept integer values (px). Positive values will shift the controls to the right and negative ones will shift them to the left.
@@ -151,34 +154,35 @@ To set the desired position for both connector controls, use the {api:anychart.c
 
 ```
 // set the connector control marker offset
-timeline.editStartConnectorMarkerHorizontalOffset(5);
-timeline.editFinishConnectorMarkerHorizontalOffset(-5);
+timeline.editStartConnectorMarkerHorizontalOffset(10);
+timeline.editFinishConnectorMarkerHorizontalOffset(-10);
 ```
 
 The {api:anychart.core.ui.Timeline#editStartConnectorMarkerVerticalOffset}editStartConnectorMarkerVerticalOffset(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerVerticalOffset}editFinishConnectorMarkerVerticalOffset(){api} methods do the same as a couple of previous ones, but in vertical direction. Positive values will shift the controls downwards and negative ones will shift them upwards.
 
 ```
 // set the connector control marker offset
-timeline.editStartConnectorMarkerVerticalOffset(-5);
-timeline.editFinishConnectorMarkerVerticalOffset(5);
+timeline.editStartConnectorMarkerVerticalOffset(-7);
+timeline.editFinishConnectorMarkerVerticalOffset(7);
 ```
 
 There are other controls on an interval. The {api:anychart.core.ui.Timeline#editIntervalWidth}editIntervalWidth(){api} method changes the width of the conrol which helps to change the interval's length:
 
 ```
-timeline.editIntervalWidth(7);
+// the width of the interval length editor
+timeline.editIntervalWidth(15);
 ```
 
-
-
-
+{sample :width 690 :height 300 }GANTT\_Interactivity\_09{sample}
 
 
 ## Events
 
 Changes made in Live Edit mode lead to data changes. In this case we use events to inform user about those changes.
 
-### move
+### Data Tree Events
+
+#### move
 
 The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
@@ -199,14 +203,14 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
   - targetIndex: 2
   - item: "Part 1"
 
- ```
- 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE, function(e){
- 		chart.title.text("The "+e.itemIndex+" item was moved");
- 	});
- ```
+```
+var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE, function(e){
+	chart.title.text("The "+e.itemIndex+" item was moved");
+});
+```
 
-### update
+#### update
 
 "Update" event will be dispatched by the data tree when we change anything about our data items. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched by the Gantt chart data tree because of changing the fields' values.
 
@@ -218,12 +222,12 @@ Our "update" event includes the following fields:
 - "field": the field which value was changed
 - "value": the new value for the field
 
- ```
- 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE, function(e){
- 		chart.title.text("The "+e.itemIndex+" item was updated");
- 	});
- ```
+```
+var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE, function(e){
+	chart.title.text("The "+e.itemIndex+" item was updated");
+});
+```
 
 For example: we lengthen the second period of a tree data item "Act 1". The start date was 02/27, end date 03/03. We change the end date to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the "update" event will have those parameters:
 
@@ -233,7 +237,7 @@ For example: we lengthen the second period of a tree data item "Act 1". The star
 - "field": "periods"
 - "value": 1425772800000
 
-### create
+#### create
 
 The "create" event will be dispatched when we create a new tree data item. It will have these fields:
 - "type": the event type (anychart.enums.EventType.TREE\_ITEM\_CREATE)
@@ -241,14 +245,14 @@ The "create" event will be dispatched when we create a new tree data item. It wi
 - "targetIndex": the index of our target
 - "item": a DataItem object
 
- ```
- 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE, function(e){
- 		chart.title.text("The "+e.itemIndex+" item was created");
- 	});
- ```
+```
+var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE, function(e){
+ 	chart.title.text("The "+e.itemIndex+" item was created");
+});
+```
 
-### remove
+#### remove
 
 When we remove an object, the Gantt tree dispatches the "remove" event. Its fields are similar to ones that the "create" event has:
 
@@ -258,14 +262,16 @@ When we remove an object, the Gantt tree dispatches the "remove" event. Its fiel
 - "item": a DataItem object
 
 
- ```
- 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.REMOVE, function(e){
- 		chart.title.text("The "+e.itemIndex+" item was removed");
- 	});
- ```
+```
+var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+tree.listen(anychart.enums.EventType.REMOVE, function(e){
+	chart.title.text("The "+e.itemIndex+" item was removed");
+});
+```
 
-### beforeCreateConnector
+### Grid Events
+
+#### beforeCreateConnector
 
 The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and, as it can be seen from its name, it is dispatched before the action itself, so it will not have any information about the source. To get this information we need to listen to the "update" event. The fields of the "beforeCreateConnector" event are:
 
@@ -277,6 +283,75 @@ The "beforeCreateConnector" event is similar to the "create", but this is dispat
 That was a description of the Project Gantt charts, and when we deal with the Resource Gantt chart there are more fields about periods (period objects and those indexes).
 
 Also it's possible to prevent the default event behavior, using **.preventDefault()** method. In this case, when the event happens, there will be no default reaction.
+
+### Connector Events
+
+There is a list of connectors events, which hold some information about the active connector. 
+
+<table>
+<tr>
+<td><b>Event</b></td>
+<td><b>Dispatched when</b></td>
+<tr>
+<tr>
+<td>connectorselect</td>
+<td>Dispatched when connector is selected</td>
+<tr>
+<tr>
+<td>connectorclick</td>
+<td>Dispatched when connector is clicked</td>
+<tr>
+<tr>
+<td>connectordblclick</td>
+<td>Dispatched when connector is clicked twice</td>
+<tr>
+<tr>
+<td>connectormouseover</td>
+<td>Dispatched when the mouse cursor is over a connector</td>
+<tr>
+<tr>
+<td>connectormouseout</td>
+<td>Dispatched when the mouse cursor leaves the connector area</td>
+<tr>
+<tr>
+<td>connectormousemove</td>
+<td>Dispatched when the mouse cursor moves over a connector</td>
+<tr>
+<tr>
+<td>connectormousedown</td>
+<td>Dispatched when the mouse button is pushed down and the mouse cursor is over the connector</td>
+<tr>
+<tr>
+<td>connectormouseup</td>
+<td>Dispatched when the mouse button is released and the mouse cursor is over the connector</td>
+<tr>
+</table>
+
+These events have several standard fields (such as type, clientX, clientY, etc.), and also some information about the active connector. The table below describes those special fields.
+
+<table>
+<tr>
+<td><b></b></td>
+<td><b></b></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+
+
+fromItemIndex - Индекс датаИтема в глобально видимом списке, из которого выходит коннектор
+toItemIndex - Индекс датаИтема в глобально видимом списке, в который выходит коннектор
+connType - Тип коннектора
+fromItem - Сам датаИтем, из которого выходит
+toItem - Сам дата итем, к который входит.
+path (опциональный) - Path линии коннектора
+arrow (опциональный) - Path стрелки коннектора
+fromPeriodIndex (опциональный, только для resource chart) - индекс периода в fromItem, откуда выходит коннектор
+toPeriodIndex (опциональный, только для resource chart) - индекс периода в Item, куда входит коннектор
+
 
 ## Data Grid
 
