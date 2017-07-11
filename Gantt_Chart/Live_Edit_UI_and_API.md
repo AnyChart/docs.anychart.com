@@ -100,6 +100,21 @@ Progress slider
 
 </td>
 </tr>
+
+<tr>
+<td>Connector deleting</td>
+<td>Hover the connector, select it and press "Delete" in Windows or "cmd+Backspace" in Mac.</td>
+<td>Lengthens or shortens the progress part of the task.</td>
+<td>
+
+<img src ="https://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
+<br>
+Progress slider 
+<br>
+
+</td>
+</tr>
+
 <tr>
 <th colspan=4><b>Data Grid part</b></td>
 </tr>
@@ -173,7 +188,7 @@ There are other controls on an interval. The {api:anychart.core.ui.Timeline#edit
 timeline.editIntervalWidth(15);
 ```
 
-{sample :width 690 :height 300 }GANTT\_Interactivity\_09{sample}
+{sample}GANTT\_Interactivity\_09{sample}
 
 
 ## Events
@@ -286,7 +301,7 @@ Also it's possible to prevent the default event behavior, using **.preventDefaul
 
 ### Connector Events
 
-There is a list of connectors events, which hold some information about the active connector. 
+There is a list of events connectors dispatch on different actions. 
 
 <table>
 <tr>
@@ -331,26 +346,57 @@ These events have several standard fields (such as type, clientX, clientY, etc.)
 
 <table>
 <tr>
-<td><b></b></td>
-<td><b></b></td>
+<td><b>Field</b></td>
+<td><b>Description</b></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>fromItemIndex</td>
+<td>The index of a data item, which connector starts from</td>
+</tr>
+<tr>
+<td>toItemIndex</td>
+<td>The index of a data item, which is the final point for the connector</td>
+</tr>
+<tr>
+<td>connType</td>
+<td>The connector type</td>
+</tr>
+<tr>
+<td>fromItem</td>
+<td>The item which connector starts from</td>
+</tr>
+<tr>
+<td>toItem</td>
+<td>The item which is the final point for the connector</td>
+</tr>
+<tr>
+<td>path</td>
+<td>The path of a connector polyline. Optional</td>
+</tr>
+<tr>
+<td>arrow</td>
+<td>The path of a connector arrow polyline. Optional</td>
+</tr>
+<tr>
+<td>fromPeriodIndex</td>
+<td>The index of a period in the fromItem, which connector starts with. Optional</td>
+</tr>
+<tr>
+<td>toPeriodIndex</td>
+<td>The index of a period in the fromItem, which connector starts with. Optional</td>
 </tr>
 </table>
 
+The following sample demonstrates how these fields can be used for providing the user some information about the connectors.
 
+```
+// set the title changing at events
+chart.listen("connectorclick", function(e){
+    chart.title("Connects the \"" + e.fromItem.get("name") + "\" with \"" + e.toItem.get("name") + "\". \nThe connector\'s type is \"" + e.connType + "\".");
+});
+```
 
-fromItemIndex - Индекс датаИтема в глобально видимом списке, из которого выходит коннектор
-toItemIndex - Индекс датаИтема в глобально видимом списке, в который выходит коннектор
-connType - Тип коннектора
-fromItem - Сам датаИтем, из которого выходит
-toItem - Сам дата итем, к который входит.
-path (опциональный) - Path линии коннектора
-arrow (опциональный) - Path стрелки коннектора
-fromPeriodIndex (опциональный, только для resource chart) - индекс периода в fromItem, откуда выходит коннектор
-toPeriodIndex (опциональный, только для resource chart) - индекс периода в Item, куда входит коннектор
+{sample}GANTT\_Interactivity\_10{sample}
 
 
 ## Data Grid
@@ -421,8 +467,6 @@ We have said in the paragraph above that when we edit the length or move the tim
 Also we can change the thumbs fill color and stroke. We use the {api:anychart.core.ui.Timeline#editIntervalThumbFill}editIntervalThumbFill(){api} and {api:anychart.core.ui.Timeline#editIntervalThumbStroke}editIntervalThumbStroke(){api} methods accordingly. In the code this will look like below:
 
 ```
-var timeline = chart.getTimeline();
-
 // sets edit interval thumb fill
 timeline.editIntervalThumbFill("red");
 ```
@@ -430,10 +474,10 @@ timeline.editIntervalThumbFill("red");
 You can define colors as objects as well. The following piece of code would do the same as the previous one:
 
 ```
-var timeline = chart.getTimeline();
-
 // sets edit interval thumb fill
 timeline.editIntervalThumbFill({
     color: "red"
 });
 ```
+
+{sample}GANTT\_Interactivity\_11{sample}

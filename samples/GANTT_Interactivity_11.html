@@ -15,6 +15,18 @@
 	// create project gantt chart
 	chart = anychart.ganttProject();
 
+	// coloring the chart
+	var timeline = chart.getTimeline();
+
+	// changing the color of the connector preview to red
+	timeline.connectorPreviewStroke("red", 1, "5 2");
+	// sets edit interval thumb fill
+	timeline.editIntervalThumbFill("red");
+	// sets edit interval thumb fill
+	timeline.editIntervalThumbFill({
+	    color: "red"
+	});
+
 	// set data for the chart
 	chart.data(treeData);
 
@@ -25,15 +37,9 @@
 	chart.editing(true);
 
 	dataGrid = chart.dataGrid();
-
-	// set the title changing at events
-	chart.listen("connectorclick", function(e){
-        chart.title("Connects the \"" + e.fromItem.get("name") + "\" with \"" + e.toItem.get("name") + "\". \nThe connector\'s type is \"" + e.connType + "\".");
-    });
 	
 	// set pixel position of the main splitter
     chart.splitterPosition(220);
-
 	// set container id for the chart
 	chart.container("container");
 
