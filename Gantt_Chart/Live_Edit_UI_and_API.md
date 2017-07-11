@@ -56,7 +56,7 @@ The connector thumb shown when the interval is hovered
 <br>
 The unconnected connector line
 <br><br>
-<img src ="https://static.anychart.com/images/final_connector.png" alt="Final connector" />
+<img src ="https://static.anychart.com/images/final_connector.png" width="32" height="32" alt="Final connector" />
 <br>
 That's how the final connector looks like
 </td>
