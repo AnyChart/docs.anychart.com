@@ -61,6 +61,21 @@ The unconnected connector line
 That's how the final connector looks like
 </td>
 </tr>
+
+<tr>
+<td>Connector deleting</td>
+<td>Hover the connector and select it. The cursor will become of a pointer type, the connector will become of an orange color. To remove the connector, press "Delete" in Windows or "cmd+Backspace" in Mac. The connector will be removed.</td>
+<td>The connector will be destroyed.</td>
+<td>
+
+<img src ="https://static.anychart.com/images/cursor_pointer.png" alt="Progress slider" />
+<br>
+The pointer cursor which is shown when we hover and select the connector
+<br>
+
+</td>
+</tr>
+
 <tr>
 <td>Duration changing</td>
 <td>Hover the duration changing thumb, press the left mouse button and drag the cursor. You will see the preview contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the Gantt tree. Find more information about those events downwards.</td>
@@ -90,20 +105,6 @@ The dragger
 <tr>
 <td>Changing the duration of progress </td>
 <td>Hover the bar, look for the slider and press the button. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
-<td>Lengthens or shortens the progress part of the task.</td>
-<td>
-
-<img src ="https://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
-<br>
-Progress slider 
-<br>
-
-</td>
-</tr>
-
-<tr>
-<td>Connector deleting</td>
-<td>Hover the connector, select it and press "Delete" in Windows or "cmd+Backspace" in Mac.</td>
 <td>Lengthens or shortens the progress part of the task.</td>
 <td>
 
