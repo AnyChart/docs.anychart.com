@@ -34,9 +34,11 @@ chart.title("Connects the \"" + e.fromItem.get("name") + "\" with \"" + e.toItem
     // make connectors bolder
     chart.getTimeline().connectorStroke("#455A64", 3);
     
-    // increase the connector markers in size
-    chart.getTimeline().editStartConnectorMarkerSize(20);
-    chart.getTimeline().editFinishConnectorMarkerSize(20);
+    // lengthen the interval length editor
+    chart.getTimeline().editIntervalWidth(15);
+
+    // rowheight
+    chart.defaultRowHeight(45);
 
     // set width for the datagrid
     dataGrid = chart.dataGrid();
@@ -59,18 +61,16 @@ chart.title("Connects the \"" + e.fromItem.get("name") + "\" with \"" + e.toItem
 
 	// zoom chart to specified date
 	chart.fitAll();
-	
-	chart.editing(true);
 
 });
 function getData() {
 	return [
-		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": "2107-02-04", "actualEnd": "2107-04-14", "rowHeight": 30},
-		{"id": "3", "name": "Define business vision", parent:"1", "progressValue": "0%", "actualStart": "2107-02-06", "actualEnd": "2107-02-15", "connectTo": "4", "connectorType": "StartStart", "rowHeight": 30},
-		{"id": "4", "name": "Identify available skills and information", parent:"1", "progressValue": "0%", "actualStart": "2107-02-16", "actualEnd": "2107-02-20", "connectTo": "5", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "5", "name": "Decide whether to proceed", parent:"1", "progressValue": "0%", "actualStart": "2107-02-28", "actualEnd": "2107-03-10", "connectTo": "6", "connectorType": "FinishFinish", "rowHeight": 30},
-		{"id": "6", "name": "Research the market and competition", parent:"1", "progressValue": "0%", "actualStart": "2107-03-15", "actualEnd": "2107-03-25", "connectTo": "7", "connectorType": "StartFinish", "rowHeight": 30},
-		{"id": "7", "name": "Interview owners of similar businesses", parent:"1", "progressValue": "60%", "actualStart": "2107-02-28", "actualEnd": "2107-03-10", "rowHeight": 30}
+		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": "2107-02-04", "actualEnd": "2107-04-14"},
+		{"id": "3", "name": "Define business vision", parent:"1", "progressValue": "0%", "actualStart": "2107-02-06", "actualEnd": "2107-02-15", "connectTo": "4", "connectorType": "StartStart"},
+		{"id": "4", "name": "Identify available skills and information", parent:"1", "progressValue": "0%", "actualStart": "2107-02-16", "actualEnd": "2107-02-20", "connectTo": "5", "connectorType": "FinishStart"},
+		{"id": "5", "name": "Decide whether to proceed", parent:"1", "progressValue": "0%", "actualStart": "2107-02-28", "actualEnd": "2107-03-10", "connectTo": "6", "connectorType": "FinishFinish"},
+		{"id": "6", "name": "Research the market and competition", parent:"1", "progressValue": "0%", "actualStart": "2107-03-15", "actualEnd": "2107-03-25", "connectTo": "7", "connectorType": "StartFinish"},
+		{"id": "7", "name": "Interview owners of similar businesses", parent:"1", "progressValue": "60%", "actualStart": "2107-02-28", "actualEnd": "2107-03-10"}
 		
 	];
 }

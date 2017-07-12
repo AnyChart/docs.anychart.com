@@ -49,6 +49,9 @@
 	// set pixel position of the main splitter
     chart.splitterPosition(300);
 
+    // rowheight
+    chart.defaultRowHeight(30);
+
 	// set container id for the chart
 	chart.container("container");
 
@@ -63,16 +66,16 @@
 });
 function getData() {
 	return [
-		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000, "rowHeight": 30},
-		{"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000, "rowHeight": 30},
-		{"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "4", "name": "Identify available skills and information", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "5", "name": "Decide whether to proceed", parent:"2", "progressValue": "0%", "actualStart": 951753600000, "actualEnd": 951786000000, "connectTo": "7", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "6", "name": "Define the Opportunity", parent:"1", "progressValue": "27%", "actualStart": 951782400000, "actualEnd": 952992000000, "rowHeight": 30},
-		{"id": "7", "name": "Research the market and competition", parent:"6", "progressValue": "0%", "actualStart": 951840000000, "actualEnd": 951872400000, "connectTo": "8", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "8", "name": "Interview owners of similar businesses", parent:"6", "progressValue": "60%", "actualStart": 951868800000, "actualEnd": 952473600000, "connectTo": "9", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "9", "name": "Identify needed resources", parent:"6", "progressValue": "0%", "actualStart": 952531200000, "actualEnd": 952650000000, "connectTo": "10", "connectorType": "FinishStart", "rowHeight": 30},
-		{"id": "10", "name": "Identify operating cost elements", parent:"6", "progressValue": "0%", "actualStart": 952704000000, "actualEnd": 952995600000, "connectTo": "12", "connectorType": "FinishStart", "rowHeight": 30}
+		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000},
+		{"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000},
+		{"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "FinishStart"},
+		{"id": "4", "name": "Identify available skills and information", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "FinishStart"},
+		{"id": "5", "name": "Decide whether to proceed", parent:"2", "progressValue": "0%", "actualStart": 951753600000, "actualEnd": 951786000000, "connectTo": "7", "connectorType": "FinishStart"},
+		{"id": "6", "name": "Define the Opportunity", parent:"1", "progressValue": "27%", "actualStart": 951782400000, "actualEnd": 952992000000},
+		{"id": "7", "name": "Research the market and competition", parent:"6", "progressValue": "0%", "actualStart": 951840000000, "actualEnd": 951872400000, "connectTo": "8", "connectorType": "FinishStart"},
+		{"id": "8", "name": "Interview owners of similar businesses", parent:"6", "progressValue": "60%", "actualStart": 951868800000, "actualEnd": 952473600000, "connectTo": "9", "connectorType": "FinishStart"},
+		{"id": "9", "name": "Identify needed resources", parent:"6", "progressValue": "0%", "actualStart": 952531200000, "actualEnd": 952650000000, "connectTo": "10", "connectorType": "FinishStart"},
+		{"id": "10", "name": "Identify operating cost elements", parent:"6", "progressValue": "0%", "actualStart": 952704000000, "actualEnd": 952995600000, "connectTo": "12", "connectorType": "FinishStart"}
 	];
 }
 </script>
