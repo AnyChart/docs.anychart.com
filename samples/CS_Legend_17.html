@@ -40,9 +40,12 @@
   // allow drag
   legend.drag(true);
 
-  // chart title changes on dragging event
-  legend.listen("drag", function(){
-    chart.title("Legend is being dragged");
+  // legend get emphasized when dragging through background darkening
+  legend.listen("dragStart", function(){
+      chart.background().fill("#eee");
+  });
+  legend.listen("dragEnd", function(){
+      chart.background().fill("#fff");
   });
 
   // set position mode
