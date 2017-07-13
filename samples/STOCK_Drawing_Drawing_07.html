@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
-    annotationsAtServer = {};
-
     // create a stage    
     stage = anychart.graphics.create("container");  
    
@@ -39,7 +37,7 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Selecting and Unselecting Annotations");
+    chart.title("Handling Events");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
@@ -63,38 +61,23 @@
         controller.startDrawing("ellipse");
     });
 
-    // create a label for saving annotations
-    createLabel("Save All", 277, function() {
-        // save all annotations
-        sendAnnotationsToServer(chart.plot().annotations().toJson(true));
-    });
-
     // create a label for removing annotations
-    createLabel("Remove All", 346, function() {
+    createLabel("Remove All", 300, function() {
         // remove all annotations
         controller.removeAllAnnotations();
+        // change the chart title
+        chart.title("Handling Events");
     });
 
-    // create a label for loading annotations
-    createLabel("Load", 435, function() {
-        // load all saved annotations
-        var annotations = getAnnotationsFromServer();
-        chart.plot().annotations().fromJson(annotations);
+    // create an event listener for selection
+    chart.listen("annotationSelect", function(e){
+        var selectedAnnotation = e.annotation;
+        // change the annotation stroke on selection
+        selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+        // change the chart title on selection
+        chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
     });
-
-    // create a label for selecting the first annotation
-    createLabel("Select the First", 515, function() {
-        // get the first annotation
-        var firstAnnotation = controller.getAnnotationAt(0);
-        // select the first annotation
-        controller.select(firstAnnotation);
-    });
-
-    // create a label for unselecting a selected annotation
-    createLabel("Clear Selection", 636, function() {
-        // unselect the annotation
-        controller.unselect();
-    });
+    
 });
 
 // a helper function for creating buttons
@@ -119,19 +102,7 @@ function createLabel(text, offset, action){
         label.draw();
     });    
     return label;
-};
-
-// this function loads the annotations from the server
-function getAnnotationsFromServer() {
-    return annotationsAtServer;
-}
-
-// this function sends the annotations to the server
-function sendAnnotationsToServer(data) {
-    annotationsAtServer = data;
-}
-
-</script>
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

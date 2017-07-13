@@ -10,11 +10,12 @@
 * [Managing Annotations](#managing_annotations)
  * [Removing](#removing)
  * [Selecting/Unselecting](#selecting_unselecting)
+ * [Saving](#saving)
 * [Handling Events](#handling_events)
 
 ## Overview
 
-This article describes methods that allows users to draw annotations on AnyStock plots.
+This article describes methods that allow users to draw annotations on AnyStock plots.
 
 Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in our API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
 
@@ -139,6 +140,48 @@ plot.annotations().unselect();
 
 {sample}STOCK\_Drawing\_Drawing\_05{sample}
 
+
+### Saving
+
+If it is necessary to save an annotation to the server or to load it from there, use the following:
+
+- **{api:anychart#onDocumentReady}onDocumentReady(){api}** - this method should be used for loading the list of annotations and adding them to the chart 
+- **{api:anychart.enums.EventType}annotationDrawingFinish{api}** - this event is necessary for creating the description of a newly created or changed annotation and send the list of annotations (or the new one) to the server.
+
+The code sample below demonstrates the emulation of creating a couple of functions to save and load the annotations. In this code sample, no server is used as the list of annotations is being saved into a simple variable.
+
+```
+// this function loads the annotations from the server
+function getAnnotationsFromServer() {
+    return annotationsAtServer;
+}
+
+// this function sends the annotations to the server
+function sendAnnotationsToServer(data) {
+    annotationsAtServer = data;
+}
+```
+
+The following methods are of a great help:
+
+- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for making the list of the annotations on a plot.
+
+- the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for loading the list of annotations into the plot.
+
+These methods are used in conjugation with the functions above.
+
+```
+// save all annotations
+sendAnnotationsToServer(chart.plot().annotations().toJson(true));
+
+// load all saved annotations
+var annotations = getAnnotationsFromServer();
+chart.plot().annotations().fromJson(annotations);
+```
+
+{sample}STOCK\_Drawing\_Drawing\_06{sample}
+
+
 ## Handling Events
 
 When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
@@ -149,9 +192,9 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 
-<tr><td>ANNOTATION\_CHANGE\_START</td><td>annotationChangeStart</td><td>Event that occurs straight after the mouseDown event.</td></tr>
+<tr><td>ANNOTATION\_CHANGE\_START</td><td>annotationChangeStart</td><td>Event that occurs right after the mouseDown event.</td></tr>
 <tr><td>ANNOTATION_CHANGE</td><td>annotationChange</td><td>Event that occurs while dragging.</td></tr>
-<tr><td>ANNOTATION\_CHANGE\_FINISH</td><td>annotationChangeFinish</td><td>Event that occurs straight after the mouseUp event.</td></tr>
+<tr><td>ANNOTATION\_CHANGE\_FINISH</td><td>annotationChangeFinish</td><td>Event that occurs right after the mouseUp event.</td></tr>
 </table>
 
 Please note that you should attach listeners to the chart object.
@@ -169,4 +212,4 @@ chart.listen("annotationSelect", function(e){
 });
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_06{sample}
+{sample}STOCK\_Drawing\_Drawing\_07{sample}
