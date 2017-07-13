@@ -391,9 +391,9 @@ These events have several standard fields (such as type, clientX, clientY, etc.)
 The following sample demonstrates how these fields can be used for providing the user some information about the connectors.
 
 ```
-// set the title changing at events
-chart.listen("connectorclick", function(e){
-    chart.title("Connects the \"" + e.fromItem.get("name") + "\" with \"" + e.toItem.get("name") + "\". \nThe connector\'s type is \"" + e.connType + "\".");
+// listen to the connectorclick event and change the title 
+chart.listen('connectorclick', function(e){
+  chart.title(e.fromItem.get('name') + ' to ' + e.toItem.get('name') + ': ' + e.connType);
 });
 ```
 
