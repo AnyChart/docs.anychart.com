@@ -8,55 +8,42 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  // data
+  var data = [
+    ["John",  10000, 12000, 20000, 16000],
+    ["Jake",  12000, 15000, 19000, 21000],
+    ["Peter", 16000, 17000, 21000, 22000]
+  ];
 
-  // chart type
-  chart = anychart.column();
+  // Create data mapping
+  chart = anychart.column.apply(this, anychart.data.mapAsTable(data));
 
   // legend settings
   var legend = chart.legend();
   // enable legend
   legend.enabled(true);
-
   // legend items events adjusting
   legend.listen("legendItemMouseDown", function(e){
       // stop reacting on this event
       e.preventDefault();
      });
 
-  var selectedStates = [];
+  // set the action to the double-click event
   legend.listen("legendItemDblclick", function(e){
       var series = chart.getSeriesAt(e.itemIndex);
-      var selected = !selectedStates[e.itemIndex];
-      if(selected)
+      var selected = !series.meta("selected");
+      if(selected){
         series.select();
-      else
+      } else {
         series.unselect();
-      selectedStates[e.itemIndex] = selected; 
-    chart.title("You have chosen the "+ itemIndex + " series");
+      }
+      series.meta("selected", selected);
+    chart.title("You have chosen the "+ e.itemIndex + " series");
   });
-  
-  // data
-  var data = anychart.data.set([
-    ["John",  10000, 12000, 20000, 16000],
-    ["Jake",  12000, 15000, 19000, 21000],
-    ["Peter", 16000, 17000, 21000, 22000]
-  ]);
-  
-  // map data
-  var Quarter1 = data.mapAs({x: [0], value: [1]});
-  var Quarter2 = data.mapAs({x: [0], value: [2]});
-  var Quarter3 = data.mapAs({x: [0], value: [3]});
-  var Quarter4 = data.mapAs({x: [0], value: [4]});
-     
+       
   // set title
   chart.title("Legend Items events");
-  
-  // set data
-  series1 = chart.column(Quarter1);
-  series2 = chart.column(Quarter2);
-  series3 = chart.column(Quarter3);
-  series4 = chart.column(Quarter4);
-      
+         
   // draw chart
   chart.container("container");
   chart.draw();
