@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
-    annotationsAtServer = {};
+    annotationsAtServer = '{"annotationsList":[{"enabled":true,"type":"triangle"},{"enabled":true,"type":"ellipse","xAnchor":1175481606099,"valueAnchor":34.733333333333334,"secondXAnchor":1204609494282,"secondValueAnchor":26.033333333333335}]}';
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -27,73 +27,63 @@
     // create a stock chart
     chart = anychart.stock();
 
-    // create a plot on the chart
-    var plot = chart.plot(0);
+    // load an existing annotation
+    chart.plot().annotations().fromJson(annotationsAtServer);
 
     // create a line series
-    var lineSeries = plot.line(mapping);
-    lineSeries.name("CSCO");
-
-    // an auxiliary variable for working with annotations
-    var controller = plot.annotations();
+    chart.plot(0).line(mapping);
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Selecting and Unselecting Annotations");
+    chart.title("Serialization and deserialization of the annotations");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
     chart.draw();
 
-    // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 10, function() {
-        // start drawing the annotation
-        controller.startDrawing("andrewsPitchfork");
-    });
+    // this function loads the annotations from the server
+    function getAnnotationsFromServer() {
+        // we use a variable for loading the annotations,
+        // but it is possible to reference wherever it is necessary (e.g. custom server)
+        return annotationsAtServer;
+    }
+
+    // this function sends the annotations to the server
+    function sendAnnotationsToServer(data) {
+        // we use a variable for saving the annotations,
+        // but it is possible to reference wherever it is necessary (e.g. custom server)
+        annotationsAtServer = data;
+    }
 
     // create a label for the Triangle annotation
-    createLabel("Triangle", 150, function() {
+    createLabel("Triangle", 19, function() {
         // start drawing the annotation
-        controller.startDrawing("triangle");
+        chart.plot().annotations().startDrawing("triangle");
     });
 
     // create a label for the Ellipse annotation
-    createLabel("Ellipse", 219, function() {
+    createLabel("Ellipse", 90, function() {
         // start drawing the annotation
-        controller.startDrawing("ellipse");
+        chart.plot().annotations().startDrawing("ellipse");
+    });    
+
+    // create a label for removing annotations
+    createLabel("Remove All", 150, function() {
+        // remove all annotations
+        chart.plot().annotations().removeAllAnnotations();
     });
 
     // create a label for saving annotations
-    createLabel("Save All", 277, function() {
+    createLabel("Save", 240, function() {
         // save all annotations
         sendAnnotationsToServer(chart.plot().annotations().toJson(true));
-    });
-
-    // create a label for removing annotations
-    createLabel("Remove All", 346, function() {
-        // remove all annotations
-        controller.removeAllAnnotations();
-    });
+    });   
 
     // create a label for loading annotations
-    createLabel("Load", 435, function() {
+    createLabel("Load", 290, function() {
         // load all saved annotations
         var annotations = getAnnotationsFromServer();
         chart.plot().annotations().fromJson(annotations);
-    });
-
-    // create a label for selecting the first annotation
-    createLabel("Select the First", 515, function() {
-        // get the first annotation
-        var firstAnnotation = controller.getAnnotationAt(0);
-        // select the first annotation
-        controller.select(firstAnnotation);
-    });
-
-    // create a label for unselecting a selected annotation
-    createLabel("Clear Selection", 636, function() {
-        // unselect the annotation
-        controller.unselect();
     });
 });
 
@@ -120,16 +110,6 @@ function createLabel(text, offset, action){
     });    
     return label;
 };
-
-// this function loads the annotations from the server
-function getAnnotationsFromServer() {
-    return annotationsAtServer;
-}
-
-// this function sends the annotations to the server
-function sendAnnotationsToServer(data) {
-    annotationsAtServer = data;
-}
 
 </script>
 </head>
