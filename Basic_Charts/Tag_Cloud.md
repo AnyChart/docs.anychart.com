@@ -7,11 +7,10 @@
 * [Special Settings](#special_settings)
   * [Data](#data)
   * [Appearance](#appearance)
+  * [Color Scale](#color_scale)
   * [Mode](#mode)
   * [Angles](#angles)
-  * [Scale](#scale)
-  * [Color Scale](#color_scale)
-  * [Labels](#labels)
+  * [Scales](#scales)
   * [Tooltips](#tooltips)
   * [Interactivity](#interactivity)
 
@@ -38,7 +37,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[]()</td></tr>
+<tr><td></td><td>N/A</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/tag-cloud-chart/" target="_blank">Chartopedia: Venn Diagram</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -101,6 +100,8 @@ The **category** field is optional...
 
 {sample}BCT\_Tag\_Cloud\_02{sample}
 
+### Color Scale
+
 ### Mode
 
 * rect
@@ -117,13 +118,7 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api}
 * {api:anychart.charts.TagCloud#toAngle}toAngle(){api}
 
-### Scale
-
-### Color Scale
-
-### Labels
-
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+### Scales
 
 ### Tooltips
 
