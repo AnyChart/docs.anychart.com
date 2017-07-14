@@ -9,14 +9,19 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   // data
-  var data = [
-    ["John",  10000, 12000, 20000, 16000],
-    ["Jake",  12000, 15000, 19000, 21000],
-    ["Peter", 16000, 17000, 21000, 22000]
-  ];
+  data = {
+      rows: [
+      ["John",  10000, 12000, 20000, 16000],
+      ["Jake",  12000, 15000, 19000, 21000],
+      ["Peter", 16000, 17000, 21000, 22000]
+    ]
+  };
+  
+  // create column chart
+  chart = anychart.column();
 
-  // Create data mapping
-  chart = anychart.column.apply(this, anychart.data.mapAsTable(data));
+  // set chart data
+  chart.data(data);
 
   // legend settings
   var legend = chart.legend();
