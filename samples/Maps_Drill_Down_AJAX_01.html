@@ -2,8 +2,8 @@
 <html>
 <head>
     <script src="../anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/latest/data-adapter.min.js"></script>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" data-export = "true"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export = "true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
@@ -109,37 +109,50 @@ anychart.onDocumentReady(function () {
     usaSeries.listen("pointClick", function(e) {
       var id = e.point.get("id");
       if (id == "US.TX") {
-        jQuery.ajax({
-            type: "GET",  //POST
-            url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
-            dataType: "json", //script
-            success: function(data){
-              var txMap = anychart.map();
-              txMap.geoData(data);
-              txSeries = txMap.choropleth(dataSetTX); 
-              usaMap.drillTo("US.TX", txMap);   
-            },
-            error: function(){
-            },
-          });
+
+        anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", function (data){
+            var txMap = anychart.map();
+            txMap.geoData(data);
+            txSeries = txMap.choropleth(dataSetTX); 
+            usaMap.drillTo("US.TX", txMap);
+        });
+        // jQuery.ajax({
+        //     type: "GET",  //POST
+        //     url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
+        //     dataType: "json", //script
+        //     success: function(data){
+        //       var txMap = anychart.map();
+        //       txMap.geoData(data);
+        //       txSeries = txMap.choropleth(dataSetTX); 
+        //       usaMap.drillTo("US.TX", txMap);   
+        //     },
+        //     error: function(){
+        //     },
+        //   });
         //debugger;
         
       }        
       // load the map of Florida
       if (id == "US.FL") {
-        jQuery.ajax({
-            type: "GET", 
-            url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
-            dataType: "json", 
-            success: function(data){
-              var flMap = anychart.map();
-              flMap.geoData(data);
-              flSeries = flMap.choropleth(dataSetFL); 
-              usaMap.drillTo("US.FL", flMap);
-            },
-            error: function(){
-            }
+        anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json", function (data){
+            var flMap = anychart.map();
+            flMap.geoData(data);
+            flSeries = flMap.choropleth(dataSetFL); 
+            usaMap.drillTo("US.FL", flMap);
         });
+        // jQuery.ajax({
+        //     type: "GET", 
+        //     url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
+        //     dataType: "json", 
+        //     success: function(data){
+        //       var flMap = anychart.map();
+        //       flMap.geoData(data);
+        //       flSeries = flMap.choropleth(dataSetFL); 
+        //       usaMap.drillTo("US.FL", flMap);
+        //     },
+        //     error: function(){
+        //     }
+        // });
       }
     });
 });
