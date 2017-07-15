@@ -49,9 +49,6 @@ var series2 = chart.area(data_2);
 // set the maximum value of the X-scale
 chart.xScale().maximum(360);
 
-// set the chart title
-chart.title("Polar Plot: Basic Sample");
-
 // set the container id
 chart.container("container");
 
