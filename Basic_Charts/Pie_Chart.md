@@ -6,13 +6,13 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
-  * [Labels](#labels)
-    * [Outer Labels](#outer_labels)
-  * [Tooltips](#tooltips)
   * [Start Angle](#start_angle)
   * [Sorting Order](#sorting_order)
   * [Exploded Slices](#exploded_slices)
   * [Radius](#radius)
+    * [Labels](#labels)
+    * [Outer Labels](#outer_labels)
+  * [Tooltips](#tooltips)
 
 ##Overview
 
@@ -122,38 +122,6 @@ var data = [
 
 {sample}BCT\_Pie\_Chart\_04{sample}
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
-
-### Labels
-
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-#### Outer Labels
-
-By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the <strong>"outside"</strong> parameter:
-
-```
-// set the position of labels
-chart.labels().position("outside");
-```
-
-To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
-
-```
-// configure connectors
-chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
-```
-
-Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
-
-In this sample, there are outside labels with customized connectors:
-
-{sample}BCT\_Pie\_Chart\_05{sample}
-
-### Tooltips
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
 ### Start Angle
 
 You can set the start angle of the first slice by using the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
@@ -228,3 +196,33 @@ pie2.radius("30%")
 {sample}BCT\_Pie\_Chart\_09{sample}
 
 The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut Chart](Doughnut_Chart) article.
+
+### Labels
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+#### Outer Labels
+
+By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the <strong>"outside"</strong> parameter:
+
+```
+// set the position of labels
+chart.labels().position("outside");
+```
+
+To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
+
+```
+// configure connectors
+chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
+```
+
+Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
+
+In this sample, there are outside labels with customized connectors:
+
+{sample}BCT\_Pie\_Chart\_05{sample}
+
+### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
