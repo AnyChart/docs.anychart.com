@@ -6,7 +6,7 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Data](#data)
-  * [Appearance](#appearance)
+    * [Appearance](#appearance)
   * [Intersections](#intersections)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
@@ -119,20 +119,23 @@ var data = [
 To set the identifier of an intersection (in its **x** field), combine the identifiers of intersecting circles. You can use an array:
 
 ```
-{
-    x: ["A", "B"],
-    value: 20
-},
-{
-},
-{
-    x: ["B", "C"],
-    value: 20
-},
-{
-    x: ["A", "B", "C"],
-    value: 20
-}
+// create data
+var data = [
+	{
+	    x: ["A", "B"],
+	    value: 20
+	},
+	{
+	},
+	{
+	    x: ["B", "C"],
+	    value: 20
+	},
+	{
+	    x: ["A", "B", "C"],
+	    value: 20
+	}
+];
 ```
 
 {sample}BCT\_Venn\_Diagram\_03{sample}
@@ -140,30 +143,64 @@ To set the identifier of an intersection (in its **x** field), combine the ident
 With the help of data separators, the identifiers of circles can be also set as strings. The default separator is *&*:
 
 ```
-x: "A&B&C",
-value: 20
+// create data
+var data = [
+	{
+		x: "A",
+		value: 100
+	},
+	{
+		x: "B",
+		value: 100
+	},
+	{
+		x: "C",
+		value: 100
+	},
+	{
+		x: "A&B&C",
+		value: 20
+	}
+];
 ```
 
 The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you to change it to anything you like:
 
 ```
-    // set the data separator
-    chart.dataSeparator("+")
-```
+// create data
+var data = [
+    {
+        x: "A",
+        value: 100
+    },
+    {
+        x: "B",
+        value: 100
+    },
+    {
+        x: "C",
+        value: 100
+    },
+    {
+        x: "A+B",
+        value: 20
+    },
+    {
+        x: "A+C",
+        value: 20
+    },
+    {
+        x: "B+C",
+        value: 20
+    },
+    {
+        x: "A+B+C",
+        value: 20
+    }
+];
 
-```
-{
-    x: "A+C",
-    value: 20
-},
-{
-    x: "B+C",
-    value: 20
-},
-{
-    x: "A+B+C",
-    value: 20
-}
+// set the data separator
+chart.dataSeparator("+")
 ```
 
 {sample}BCT\_Venn\_Diagram\_04{sample}
@@ -195,7 +232,7 @@ chart.selectStroke("#00cc99", 4);
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-### Intersections
+#### Intersections
 
 Here are methods that configure visual settings of intersection areas:
 
