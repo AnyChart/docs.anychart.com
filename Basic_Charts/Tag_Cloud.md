@@ -92,15 +92,19 @@ When you create data for a Tag Cloud, you should use these data fields for each 
 
 The **category** field is optional...
 
+{sample}BCT\_Tag\_Cloud\_02{sample}
+
 ### Appearance
 
 * {api:anychart.charts.TagCloud#normal}normal(){api}
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-{sample}BCT\_Tag\_Cloud\_02{sample}
+{sample}BCT\_Tag\_Cloud\_03{sample}
 
 ### Color Scale
+
+{sample}BCT\_Tag\_Cloud\_04{sample}
 
 ### Mode
 
@@ -109,7 +113,7 @@ The **category** field is optional...
 
 {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
 
-{sample}BCT\_Tag\_Cloud\_03{sample}
+{sample}BCT\_Tag\_Cloud\_05{sample}
 
 ### Angles
 
@@ -118,10 +122,20 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api}
 * {api:anychart.charts.TagCloud#toAngle}toAngle(){api}
 
+{sample}BCT\_Tag\_Cloud\_06{sample}
+
 ### Scales
+
+{sample}BCT\_Tag\_Cloud\_07{sample}
 
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+{sample}BCT\_Tag\_Cloud\_08{sample}
+
+{sample}BCT\_Tag\_Cloud\_09{sample}
+
 ### Interactivity
+
+{sample}BCT\_Tag\_Cloud\_010{sample}
