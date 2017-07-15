@@ -130,8 +130,9 @@ var data = [
     {x: "A", value: 100},
     {x: "B", value: 100},
     {x: "C", value: 100},
-    {x: A&B, value: 20},
-    {x: B&C, value: 20},
+    {x: "A&B", value: 20},
+    {x: "A&C", value: 20},
+    {x: "B&C", value: 20},
     {x: "A&B&C", value: 20}
 ];
 ```
