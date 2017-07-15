@@ -40,8 +40,8 @@
     // configure tooltips of intersections
     chart.intersections().tooltip().format("{%custom_field}\n{%value}");
 
-    // configure labels of intersections
-    chart.intersections().labels().format("{%name}");
+    // disable labels
+    chart.labels(false);
 
     // set the chart title
     chart.title("Venn Diagram: Tooltips");
