@@ -6,8 +6,8 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Data](#data)
-    * [Appearance](#appearance)
-  * [Intersections](#intersections)
+  * [Appearance](#appearance)
+    * [Intersections](#intersections)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
 
@@ -49,18 +49,9 @@ To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart construct
 ```
 //create data
 var data = [
-    {
-        x: "A",
-        value: 100
-    },
-    {
-        x: "B",
-        value: 100
-    },
-    {
-        x: ["A", "B"],
-        value: 25
-    }
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: ["A", "B"], value: 25}
 ];
 
 // create a chart and set the data
@@ -102,14 +93,14 @@ The sample below shows two circles with their names set:
 //create data
 var data = [
     {
-        x: "A",
-        name: "Set A",
-        value: 400
+    	x: "A",
+    	name: "Set A",
+    	value: 400
     },
     {
-        x: "B",
-        name: "Set B",
-        value: 200
+    	x: "B",
+    	name: "Set B",
+    	value: 200
     }
 ];
 ```
@@ -121,20 +112,12 @@ To set the identifier of an intersection (in its **x** field), combine the ident
 ```
 // create data
 var data = [
-	{
-	    x: ["A", "B"],
-	    value: 20
-	},
-	{
-	},
-	{
-	    x: ["B", "C"],
-	    value: 20
-	},
-	{
-	    x: ["A", "B", "C"],
-	    value: 20
-	}
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: "C", value: 100},
+	{x: ["A", "B"],	value: 20},
+	{x: ["B", "C"], value: 20},
+	{x: ["A", "B", "C"], value: 20}
 ];
 ```
 
@@ -145,22 +128,12 @@ With the help of data separators, the identifiers of circles can be also set as 
 ```
 // create data
 var data = [
-	{
-		x: "A",
-		value: 100
-	},
-	{
-		x: "B",
-		value: 100
-	},
-	{
-		x: "C",
-		value: 100
-	},
-	{
-		x: "A&B&C",
-		value: 20
-	}
+	{x: "A", value: 100},
+	{x: "B", value: 100},
+	{x: "C", value: 100},
+	{x: A&B, value: 20},
+	{x: B&C, value: 20},
+	{x: "A&B&C", value: 20}
 ];
 ```
 
@@ -169,34 +142,13 @@ The {api:anychart.charts.Venn#dataSeparator}dataSeparator{api} method allows you
 ```
 // create data
 var data = [
-    {
-        x: "A",
-        value: 100
-    },
-    {
-        x: "B",
-        value: 100
-    },
-    {
-        x: "C",
-        value: 100
-    },
-    {
-        x: "A+B",
-        value: 20
-    },
-    {
-        x: "A+C",
-        value: 20
-    },
-    {
-        x: "B+C",
-        value: 20
-    },
-    {
-        x: "A+B+C",
-        value: 20
-    }
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: "C", value: 100},
+    {x: "A+B", value: 20},
+    {x: "A+C", value: 20},
+    {x: "B+C", value: 20},
+    {x: "A+B+C", value: 20}
 ];
 
 // set the data separator
