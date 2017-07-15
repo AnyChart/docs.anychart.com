@@ -7,7 +7,6 @@
 * [Special Settings](#special_settings)
   * [Data](#data)
   * [Appearance](#appearance)
-    * [Intersections](#intersections)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
 
@@ -115,9 +114,9 @@ var data = [
     {x: "A", value: 100},
     {x: "B", value: 100},
     {x: "C", value: 100},
-	{x: ["A", "B"],	value: 20},
-	{x: ["B", "C"], value: 20},
-	{x: ["A", "B", "C"], value: 20}
+    {x: ["A", "B"],	value: 20},
+    {x: ["B", "C"], value: 20},
+    {x: ["A", "B", "C"], value: 20}
 ];
 ```
 
@@ -128,12 +127,12 @@ With the help of data separators, the identifiers of circles can be also set as 
 ```
 // create data
 var data = [
-	{x: "A", value: 100},
-	{x: "B", value: 100},
-	{x: "C", value: 100},
-	{x: A&B, value: 20},
-	{x: B&C, value: 20},
-	{x: "A&B&C", value: 20}
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: "C", value: 100},
+    {x: A&B, value: 20},
+    {x: B&C, value: 20},
+    {x: "A&B&C", value: 20}
 ];
 ```
 
@@ -183,8 +182,6 @@ chart.selectStroke("#00cc99", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
-
-#### Intersections
 
 Here are methods that configure visual settings of intersection areas:
 
