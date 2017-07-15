@@ -25,8 +25,7 @@
         },
         {
             x: ["A", "B"],
-            custom_field: "Set A + Set B",
-            custom_field: "info 3",
+            name: "Set A + Set B",
             value: 25
         }
     ];
@@ -38,7 +37,7 @@
     chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
     // configure labels of intersections
-    chart.intersections().labels().format("{%name}\n\n{%custom_field}\n{%value}");
+    chart.intersections().labels().format("{%name}\n\n{%value}");
 
     // set the chart title
     chart.title("Venn Diagram: Labels");

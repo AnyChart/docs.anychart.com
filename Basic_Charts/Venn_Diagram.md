@@ -237,18 +237,15 @@ var data = [
     {
         x: ["A", "B"],
         name: "Set A + Set B",
-        custom_field: "info 3",
         value: 25
     }
 ];
-```
 
-```
 // configure labels of circles
 chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
 // configure labels of intersections
-chart.intersections().labels().format("{%name}\n\n{%custom_field}\n{%value}");
+chart.intersections().labels().format("{%name}\n\n{%value}");
 ```
 
 {sample}BCT\_Venn\_Diagram\_07{sample}
@@ -285,11 +282,16 @@ var data = [
         value: 25
     }
 ];
-```
 
-```
+// configure tooltips of circles
+chart.tooltip().format(
+    "Set Info: {%custom_field}\n_Cardinality: {%value}"
+);
+
 // configure tooltips of intersections
-chart.intersections().tooltip().format("{%custom_field}\n{%value}");
+chart.intersections().tooltip().format(
+    "Intersection Info: {%custom_field}\nCardinality: {%value}"
+);
 ```
 
 {sample}BCT\_Venn\_Diagram\_08{sample}

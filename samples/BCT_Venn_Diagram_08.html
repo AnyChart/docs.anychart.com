@@ -35,10 +35,14 @@
     chart = anychart.venn(data);
 
     // configure tooltips of circles
-    chart.tooltip().format("{%custom_field}\n{%value}");
+    chart.tooltip().format(
+        "Set Info: {%custom_field}\nCardinality: {%value}"
+    );
 
     // configure tooltips of intersections
-    chart.intersections().tooltip().format("{%custom_field}\n{%value}");
+    chart.intersections().tooltip().format(
+        "Intersection Info: {%custom_field}\nCardinality: {%value}"
+    );
 
     // disable labels
     chart.labels(false);
