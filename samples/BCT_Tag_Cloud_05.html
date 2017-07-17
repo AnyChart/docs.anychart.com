@@ -26,6 +26,19 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
+    // create and configure a custom color scale.
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+        {less: 20},
+        {from: 20, to: 60},
+        {greater: 60}
+    ]);
+    customColorScale.colors(["yellow", "orange", "red"]);
+
+    /* set the custom color scale
+    as the color scale of the chart*/
+    chart.colorScale(customColorScale);
+
     // set the chart title
     chart.title("Tag Cloud Chart: Color Scale (Ordinal)");
 
