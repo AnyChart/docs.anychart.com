@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
@@ -23,58 +23,18 @@
         {"x": "thing", "value": 12},
     ];
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
-    // set the chart position and title
-    chart.top(35);
-    chart.title("Tag Cloud Chart: Mode");
+    // set the chart title
+    chart.title("Tag Cloud Chart: Color Scale");
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for changing the mode to rectangle
-    createLabel("Rectangle Mode", 10, function() {
-        // set the mode
-        chart.mode("rect");
-    });
-
-    // create a label for changing the mode to spiral
-    createLabel("Spiral Mode", 135, function() {
-        // set the mode
-        chart.mode("spiral");
-    });
-});
-
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
-    });
-    label.listen("mouseOut", function(){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
-    });    
-    return label;
-};</script>
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
