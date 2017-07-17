@@ -115,22 +115,7 @@ anychart.onDocumentReady(function () {
             txMap.geoData(data);
             txSeries = txMap.choropleth(dataSetTX); 
             usaMap.drillTo("US.TX", txMap);
-        });
-        // jQuery.ajax({
-        //     type: "GET",  //POST
-        //     url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
-        //     dataType: "json", //script
-        //     success: function(data){
-        //       var txMap = anychart.map();
-        //       txMap.geoData(data);
-        //       txSeries = txMap.choropleth(dataSetTX); 
-        //       usaMap.drillTo("US.TX", txMap);   
-        //     },
-        //     error: function(){
-        //     },
-        //   });
-        //debugger;
-        
+        });        
       }        
       // load the map of Florida
       if (id == "US.FL") {
@@ -140,19 +125,6 @@ anychart.onDocumentReady(function () {
             flSeries = flMap.choropleth(dataSetFL); 
             usaMap.drillTo("US.FL", flMap);
         });
-        // jQuery.ajax({
-        //     type: "GET", 
-        //     url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
-        //     dataType: "json", 
-        //     success: function(data){
-        //       var flMap = anychart.map();
-        //       flMap.geoData(data);
-        //       flSeries = flMap.choropleth(dataSetFL); 
-        //       usaMap.drillTo("US.FL", flMap);
-        //     },
-        //     error: function(){
-        //     }
-        // });
       }
     });
 });
