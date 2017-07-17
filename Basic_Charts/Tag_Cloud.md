@@ -92,6 +92,8 @@ When you create data for a Tag Cloud, you should use these data fields for each 
 
 The **category** field is optional...
 
+* {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
+
 {sample}BCT\_Tag\_Cloud\_02{sample}
 
 ### Appearance
@@ -99,6 +101,8 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#normal}normal(){api}
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
+
+* {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}
 
 {sample}BCT\_Tag\_Cloud\_03{sample}
 
@@ -121,7 +125,7 @@ The **category** field is optional...
 * rect
 * spiral
 
-{api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
+* {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
 
 {sample}BCT\_Tag\_Cloud\_07{sample}
 

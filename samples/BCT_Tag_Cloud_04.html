@@ -26,8 +26,17 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
+    // create and configure a custom color scale.
+    var customColorScale = anychart.scales.linearColor();
+    customColorScale.colors(["yellow", "red"]);
+
+    /* set the custom color scale
+    as the color scale of the chart*/
+    chart.colorScale(customColorScale);
+
+
     // set the chart title
-    chart.title("Tag Cloud Chart: Color Scale");
+    chart.title("Tag Cloud Chart: Color Scale (Linear)");
 
     // set the container id
     chart.container("container");
