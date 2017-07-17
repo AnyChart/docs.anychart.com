@@ -29,7 +29,7 @@ It is better to add the root map the same way:
 
 ## AJAX and Data Adapter
 
-To create a sample with maps being added through AJAX request, we need to include some AJAX component to our Drill Down Map sample (in the same &lt;head&gt; section). We will use jQuery.
+To create a sample with maps being added through AJAX request, we need to include a AJAX component to our Drill Down Map sample (in the same &lt;head&gt; section), e.g. jQuery.
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
