@@ -357,7 +357,8 @@ legend.listen("legendItemMouseDown", function(e){
     e.preventDefault();
 });
 
-legend.listen("legendItemDblclick", function(e){
+// set the action to the click event
+legend.listen("legendItemСlick", function(e){
   itemIndex = e.itemIndex + 1;
   chart.title("You have chosen the "+ itemIndex + " series");
   switch(itemIndex){

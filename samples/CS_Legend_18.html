@@ -10,10 +10,15 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   // data
   data = {
+      // set the series data
       rows: [
       ["John",  10000, 12000, 20000, 16000],
       ["Jake",  12000, 15000, 19000, 21000],
       ["Peter", 16000, 17000, 21000, 22000]
+    ], 
+    // set the series names
+    header:[
+        "#", "Winter", "Spring", "Summer", "Fall"
     ]
   };
   
@@ -31,10 +36,10 @@
   legend.listen("legendItemMouseDown", function(e){
       // stop reacting on this event
       e.preventDefault();
-     });
+  });
 
-  // set the action to the double-click event
-  legend.listen("legendItemDblclick", function(e){
+  // set the action to the click event
+  legend.listen("legendItemClick", function(e){
       var series = chart.getSeriesAt(e.itemIndex);
       var selected = !series.meta("selected");
       if(selected){
@@ -43,12 +48,11 @@
         series.unselect();
       }
       series.meta("selected", selected);
-    chart.title("You have chosen the "+ e.itemIndex + " series");
   });
        
   // set title
   chart.title("Legend Items events");
-         
+ 
   // draw chart
   chart.container("container");
   chart.draw();
