@@ -359,22 +359,14 @@ legend.listen("legendItemMouseDown", function(e){
 
 // set the action to the click event
 legend.listen("legendItemСlick", function(e){
-  itemIndex = e.itemIndex + 1;
-  chart.title("You have chosen the "+ itemIndex + " series");
-  switch(itemIndex){
-    case 1:
-      series1.enabled(!series1.enabled())
-    break;
-    case 2:
-      series2.enabled(!series2.enabled())
-    break;
-    case 3:
-      series3.enabled(!series3.enabled())
-      break;
-    case 4:
-      series4.enabled(!series4.enabled())
-    break;
-  }
+      var series = chart.getSeriesAt(e.itemIndex);
+      var selected = !series.meta("selected");
+      if(selected){
+series.select();
+      } else {
+series.unselect();
+      }
+      series.meta("selected", selected);
 });
 ```
 
