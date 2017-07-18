@@ -2,9 +2,8 @@
 <html>
 <head>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/js/latest/data-adapter.min.js"></script>
+    <script src="https://cdn.anychart.com/js/latest/data-adapter.min.js" data-export = "true"></script>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
     <style>
       html, body, #container {
@@ -20,23 +19,17 @@
     <script x-export="usaMap">
 anychart.onDocumentReady(function () {
 
-    // This sample uses 3rd party proj4 component
-    // that makes it possible to set coordinates
-    // for the points and labels on the map and
-    // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
-
     // define the map
     usaMap = anychart.map();    
 
     // set the data for the USA map
-    usaDataSet = anychart.data.set([
+    usaDataSet = [
         {"id": "US.TX", "value": 26956958, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
         {"id": "US.FL", "value": 19552860, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
-    ]);
+    ];
 
     // create data set for Texas districts
-    dataSetTX = anychart.data.set([
+    dataSetTX = [
         {'id': 'US.TX.111', 'value': 6222}, //Dallam
         {'id': 'US.TX.421', 'value': 3186}, //Sherman
         {'id': 'US.TX.195', 'value': 5369}, //hansford
@@ -63,10 +56,10 @@ anychart.onDocumentReady(function () {
         {'id': 'US.TX.045', 'value': 1790}, //Briscoe
         {'id': 'US.TX.191', 'value': 3782}, //Hall
         {'id': 'US.TX.075', 'value': 7688}, //Childress
-    ]);
+    ];
 
     // create data set for Florida districts
-    dataSetFL = anychart.data.set([
+    dataSetFL = [
         {'id': 'US.FL.063', 'value': 46755}, //Jackson]
         {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
         {'id': 'US.FL.077', 'value': 7021}, //Liberty County
@@ -94,7 +87,7 @@ anychart.onDocumentReady(function () {
         {'id': 'US.FL.125', 'value': 13442}, //Union
         {'id': 'US.FL.059', 'value': 18564}, //Holmes
         {'id': 'US.FL.133', 'value': 20973}, //Washington
-    ]);
+    ];
 
     // a dataset array for setting the series inside the states
     dataSets = {
