@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function () {
+
+    //create data
+    var data = [
+        {
+            x: "A",
+            name: "Set A",
+            custom_field: "info 1",
+            value: 100
+        },
+        {
+            x: "B",
+            name: "Set A",
+            custom_field: "info 2",
+            value: 100
+        },
+        {
+            x: ["A", "B"],
+            name: "Set A + Set B",
+            value: 25
+        }
+    ];
+
+    // create a chart and set the data
+    chart = anychart.venn(data);
+
+    // configure labels of circles
+    chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
+
+    // configure labels of intersections
+    chart.intersections().labels().format("{%name}\n\n{%value}");
+
+    // set the chart title
+    chart.title("Venn Diagram: Labels");
+
+    // set the container id
+    chart.container('container');
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

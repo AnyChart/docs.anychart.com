@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function () {
+
+    //create data
+    var data = [
+        {x: "A", value: 100},
+        {x: "B", value: 100},
+        {x: "C", value: 100},
+        {x: ["A", "B"], value: 20},
+        {x: ["A", "C"], value: 20},
+        {x: ["B", "C"], value: 20},
+        {x: ["A", "B", "C"], value: 20}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.venn(data);
+
+    // configure visual settings of intersections
+    var intersect = chart.intersections();    
+    intersect.fill("white", 0.3);
+    intersect.hoverFill("white", 0.3);
+    intersect.selectFill("white", 0.5);
+    intersect.hatchFill("percent20", "#808080");
+    intersect.hoverHatchFill("percent20", "white");
+    intersect.selectHatchFill("percent20", "white");
+    intersect.stroke("white");
+    intersect.hoverStroke("white", 2);
+    intersect.selectStroke("white", 4);
+
+    // disable labels of intersections
+    chart.intersections().labels(false);
+
+    // disable the legend
+    chart.legend(false);
+
+    // set the chart title
+    chart.title("Venn Diagram: Appearance (Intersections)");
+
+    // set the container id
+    chart.container('container');
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
