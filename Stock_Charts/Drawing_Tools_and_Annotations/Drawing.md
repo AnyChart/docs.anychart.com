@@ -177,11 +177,11 @@ plot.annotations().unselect();
 
 ### Saving
 
-If it is necessary to save an annotation to the server or to load it from there, use the following:
+There are a lot of ways to save annotations to a server or to load them. Below you can find a basic sample that shows how to do it with special events and methods AnyChart provides.
 
-- **{api:anychart#onDocumentReady}onDocumentReady(){api}** - this method is called when t he document is ready. The external content might not been loaded for this moment, though.
+- **{api:anychart#onDocumentReady}onDocumentReady(){api}** - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-- **{api:anychart.enums.EventType}annotationDrawingFinish{api}** - this event is necessary for creating the description of a newly created or changed annotation and send the list of annotations (or the new one) to the server. Find the information about annotation events in the [Handling events section](#handling_events).
+- **{api:anychart.enums.EventType}annotationDrawingFinish{api}** - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
 
 The following methods are of a great help:
 
@@ -189,7 +189,7 @@ The following methods are of a great help:
 
 - the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for serialization the list of annotations.
 
-In the following code sample we use the custom functions sendAnnotationsToServer() and getAnnotationsFromServer(), which are supposed to 
+In the following code sample we use the custom functions sendAnnotationsToServer() and getAnnotationsFromServer(), which are supposed to help with saving and loading the annotations.
 
 ```
 // save all annotations

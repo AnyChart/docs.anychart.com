@@ -74,13 +74,13 @@
     });
 
     // create a label for saving annotations
-    createLabel("Save", 240, function() {
+    createLabel("Save", 280, function() {
         // save all annotations
         sendAnnotationsToServer(chart.plot().annotations().toJson(true));
     });   
 
     // create a label for loading annotations
-    createLabel("Load", 290, function() {
+    createLabel("Load", 330, function() {
         // load all saved annotations
         var annotations = getAnnotationsFromServer();
         chart.plot().annotations().fromJson(annotations);
