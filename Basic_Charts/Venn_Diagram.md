@@ -152,7 +152,7 @@ var data = [
 ];
 
 // set the data separator
-chart.dataSeparator("+")
+chart.dataSeparator("+");
 ```
 
 {sample}BCT\_Venn\_Diagram\_04{sample}
