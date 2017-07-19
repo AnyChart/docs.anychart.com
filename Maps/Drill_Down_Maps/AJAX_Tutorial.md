@@ -1,5 +1,5 @@
 {:index 4}
-#Data Adapter
+#AJAX Tutorial
 
 * [Include AnyMap component](#include_anymap_component)
 * [Data Adapter](#data_adapter)
@@ -15,7 +15,7 @@ First of all, add the AnyMap component, which can be found on the [download page
 
 ```
 <head>
-<script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/anymap.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -32,7 +32,7 @@ It is better to add the root map the same way:
 There are a lot of ways how to add the maps into the charts. This article describes using the special AnyChart Data Adapter. If necessary, it is possible to use any other libriary, e.g. jQuery; though, the Data Adapter is functional enough. To create a sample with maps being added through AJAX request, include an AJAX component to the Drill Down Map sample (in the same &lt;head&gt; section):
 
 ```
-<script src="https://cdn.anychart.com/js/latest/data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/data-adapter.min.js"></script>
 ```
 
 The following sections and examples are describing and demonstrating working with the AnyChart Data Adapter.
@@ -45,27 +45,27 @@ As usual, the data can be defined as array of arrays or as array of objects. In 
 
 ``` 
 // set the data for the USA map
-var dataSetUSA = anychart.data.set([
+var dataSetUSA = [
     {"id": "US.TX", "value": 26956958},
     {"id": "US.FL", "value": 19552860}
-]);
+];
 
 // create data set for Texas
-var dataSetTX = anychart.data.set([
+var dataSetTX = [
     {'id': 'US.TX.111', 'value': 6222}, // Dallam
     {'id': 'US.TX.421', 'value': 3186}, // Sherman
     {'id': 'US.TX.195', 'value': 5369}, // Hansford
     {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
     {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
-]);
+];
 
 // create data set for Florida 
-var dataSetFL = anychart.data.set([
+var dataSetFL = [
     {'id': 'US.FL.063', 'value': 46755}, //Jackson
     {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
     {'id': 'US.FL.077', 'value': 7021}, //Liberty County
     {'id': 'US.FL.079', 'value': 18733}, //Madison
-});
+};
 ```
 
 When the data is defined, it's time to create series.
