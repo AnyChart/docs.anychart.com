@@ -353,20 +353,22 @@ Legend items are child elements of a legend, but they have some events which hav
 ```
 // legend items events adjusting
 legend.listen("legendItemMouseDown", function(e){
-    // stop reacting on this event
-    e.preventDefault();
+  // stop reacting on this event
+  e.preventDefault();
 });
 
 // set the action to the click event
 legend.listen("legendItemСlick", function(e){
-      var series = chart.getSeriesAt(e.itemIndex);
-      var selected = !series.meta("selected");
-      if(selected){
-series.select();
-      } else {
-series.unselect();
-      }
-      series.meta("selected", selected);
+  var series = chart.getSeriesAt(e.itemIndex);
+  var selected = !series.meta("selected");
+  if(selected){
+    series.select();
+  } else {
+    series.unselect();
+  }
+  series.meta("selected", selected);
+  // prevent chart click from happenning
+  e.stopWrapperPropagation();
 });
 ```
 
