@@ -17,11 +17,11 @@
 
 This article describes methods that allow users to draw annotations on AnyStock plots.
 
-Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in our API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
+Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in AnyChart API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
 
 ## Sample Application
 
-To make the integration process easier for you, we created a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
+To make the integration process easier, there is a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
 You can see the application live at [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
 
@@ -185,11 +185,11 @@ There are a lot of ways to save annotations to a server or to load them. Below y
 
 The following methods are of a great help:
 
-- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for deserialization the list of annotations.
+- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for deserialization the list of annotations,
 
 - the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for serialization the list of annotations.
 
-In the following code sample we use the custom functions sendAnnotationsToServer() and getAnnotationsFromServer(), which are supposed to help with saving and loading the annotations.
+In the following code sample, there are custom functions *sendAnnotationsToServer()* and *getAnnotationsFromServer()* used, which act like placeholders for functions that would send and receive the annotations from a server.
 
 ```
 // save all annotations
