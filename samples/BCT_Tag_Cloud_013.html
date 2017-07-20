@@ -11,29 +11,36 @@
 
     // create data   
     var data = [
-        {"x": "learning", "value": 80},
-        {"x": "includes", "value": 56},
-        {"x": "lists", "value": 44},
-        {"x": "meaning", "value": 40},
-        {"x": "useful", "value": 36},
-        {"x": "different", "value": 32},
-        {"x": "grammar", "value": 28},
-        {"x": "teaching", "value": 24},
-        {"x": "example", "value": 20},
-        {"x": "thing", "value": 12},
+        {x: "learning", value: 80, url: "//www.google.com/search?q=learning"},
+        {x: "includes", value: 56, url: "//www.google.com/search?q=includes"},
+        {x: "lists", value: 44, url: "//www.google.com/search?q=lists"},
+        {x: "meaning", value: 40, url: "//www.google.com/search?q=meaning"},
+        {x: "useful", value: 36, url: "//www.google.com/search?q=useful"},
+        {x: "different", value: 32, url: "//www.google.com/search?q=different"},
+        {x: "grammar", value: 28, url: "//www.google.com/search?q=grammar"},
+        {x: "teaching", value: 24, url: "//www.google.com/search?q=teaching"},
+        {x: "example", value: 20, url: "//www.google.com/search?q=example"},
+        {x: "thing", value: 12, url: "//www.google.com/search?q=thing"}
     ];
 
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Interactivity");
+    chart.title("Tag Cloud Chart: Interactivity\n(Opening a URL on a Double Click)");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
+
+    //add an event listener
+    chart.listen("pointDblClick", function(e){
+        var new_value = e.point.get("url");
+        window.open(new_value,"_blank");
+    });
+
 });</script>
 </head>
 <body>
