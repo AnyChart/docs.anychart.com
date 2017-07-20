@@ -26,7 +26,7 @@
     // create a stage
     stage = anychart.graphics.create("container");
 
-    // set the position and data for the first pie chart
+    // set the position and data for the first tag cloud
     var tagCloud1 = anychart.tagCloud(data);
     tagCloud1.title("Linear Scale (Default)");
     tagCloud1.bounds(0, 0, "50%", "100%");
@@ -35,7 +35,7 @@
     //initiate drawing the chart 
     tagCloud1.draw(); 
 
-    // set the position and data for the second pie chart
+    // set the position and data for the second tag cloud
     var tagCloud2 = anychart.tagCloud(data);
     tagCloud2.title("Logarithmic Sclae");
     tagCloud2.bounds("50%", 0, "50%", "100%");

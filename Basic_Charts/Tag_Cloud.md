@@ -94,6 +94,31 @@ The **category** field is optional...
 
 * {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
 
+```
+// create data
+var text =
+    "Tyger, tyger, burning bright " +
+    "In the forests of the night, " +
+    "What immortal hand or eye " +
+    "Could frame thy fearful symmetry? ";
+
+// set the parsing mode and configure parsing settings
+chart.data(text, {
+        mode: "byWord",
+        maxItems: 16,
+        ignoreItems: [
+
+                         "the",
+                         "and",
+                         "he",
+                         "or",
+                         "of",
+                         "in",
+                         "thy",
+        ]
+});
+```
+
 {sample}BCT\_Tag\_Cloud\_02{sample}
 
 ### Appearance
@@ -103,6 +128,17 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
 * {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}
+
+```
+// configure the visual settings in the normal state
+chart.normal({fill: "#009999 0.7", fontWeight: 600});
+
+// configure the visual settings on hover
+chart.hovered({fill: "#003366 0.5"});
+
+// configure the visual settings on select
+chart.selected({fill: "#003366 0.7"});
+```
 
 {sample}BCT\_Tag\_Cloud\_03{sample}
 
@@ -114,9 +150,48 @@ The **category** field is optional...
 * {api:anychart.scales.LinearColor}anychart.scales.LinearColor{api}
 * {api:anychart.scales.OrdinalColor}anychart.scales.OdinalColor{api}
 
+```
+// create and configure a custom color scale.
+var customColorScale = anychart.scales.linearColor();
+customColorScale.colors(["#ffcc00", "#00ccff"]);
+
+/* set the custom color scale
+as the color scale of the chart*/
+chart.colorScale(customColorScale);
+```
+
 {sample}BCT\_Tag\_Cloud\_04{sample}
 
+```
+// create and configure a custom color scale.
+var customColorScale = anychart.scales.ordinalColor();
+customColorScale.ranges([
+    {less: 50},
+    {from: 50, to: 60},
+    {greater: 60}
+]);
+customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
+
+/* set the custom color scale
+as the color scale of the chart*/
+chart.colorScale(customColorScale);
+```
+
 {sample}BCT\_Tag\_Cloud\_05{sample}
+
+```
+// create and configure a custom color scale.
+var customColorScale = anychart.scales.ordinalColor();
+customColorScale.colors(["#00b8e6", "#e6b800", "#ff4d4d"]);
+
+/* set the custom color scale
+as the color scale of the chart*/
+chart.colorScale(customColorScale);
+
+// add a color range
+chart.colorRange().enabled(true);
+chart.colorRange().colorLineSize(30);
+```
 
 {sample}BCT\_Tag\_Cloud\_06{sample}
 
@@ -127,6 +202,11 @@ The **category** field is optional...
 
 * {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
 
+```
+// change the mode
+chart.mode("rect");
+```
+
 {sample}BCT\_Tag\_Cloud\_07{sample}
 
 ### Angles
@@ -136,11 +216,28 @@ The **category** field is optional...
 * {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api}
 * {api:anychart.charts.TagCloud#toAngle}toAngle(){api}
 
+```
+// configure angles
+chart.angles([0, 30, 90]);
+```
+
 {sample}BCT\_Tag\_Cloud\_08{sample}
+
+```
+// configure angles
+chart.fromAngle(10);
+chart.toAngle(100);
+chart.anglesCount(5);
+```
 
 {sample}BCT\_Tag\_Cloud\_09{sample}
 
 ### Scales
+
+```
+// create a logarithmic scale and set it as the Y-scale
+tagCloud2.scale(anychart.scales.log());
+```
 
 {sample}BCT\_Tag\_Cloud\_010{sample}
 
@@ -148,10 +245,40 @@ The **category** field is optional...
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+```
+
+```
+
 {sample}BCT\_Tag\_Cloud\_011{sample}
+
+```
+
+```
 
 {sample}BCT\_Tag\_Cloud\_012{sample}
 
 ### Interactivity
+
+```
+// create data   
+var data = [
+    {x: "learning", value: 80, url: "//en.wiktionary.org/wiki/learning"},
+    {x: "includes", value: 56, url: "//en.wiktionary.org/wiki/include"},
+    {x: "lists", value: 44, url: "//en.wiktionary.org/wiki/list"},
+    {x: "meaning", value: 40, url: "//en.wiktionary.org/wiki/meaning"},
+    {x: "useful", value: 36, url: "//en.wiktionary.org/wiki/useful"},
+    {x: "different", value: 32, url: "//en.wiktionary.org/wiki/different"},
+    {x: "grammar", value: 28, url: "//en.wiktionary.org/wiki/grammar"},
+    {x: "teaching", value: 24, url: "//en.wiktionary.org/wiki/teaching"},
+    {x: "example", value: 20, url: "//en.wiktionary.org/wiki/example"},
+    {x: "thing", value: 12, url: "//en.wiktionary.org/wiki/thing"}
+];
+
+//add an event listener
+chart.listen("pointDblClick", function(e){
+    var new_value = e.point.get("url");
+    window.open(new_value,"_blank");
+});
+```
 
 {sample}BCT\_Tag\_Cloud\_013{sample}
