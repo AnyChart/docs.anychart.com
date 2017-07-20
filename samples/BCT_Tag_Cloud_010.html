@@ -7,33 +7,44 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
-        {"x": "learning", "value": 80},
-        {"x": "includes", "value": 56},
-        {"x": "lists", "value": 44},
-        {"x": "meaning", "value": 40},
-        {"x": "useful", "value": 36},
-        {"x": "different", "value": 32},
-        {"x": "grammar", "value": 28},
-        {"x": "teaching", "value": 24},
-        {"x": "example", "value": 20},
-        {"x": "thing", "value": 12},
+        {"x": "learning", "value": 100},
+        {"x": "includes", "value": 10},
+        {"x": "lists", "value": 10},
+        {"x": "meaning", "value": 1},
+        {"x": "useful", "value": 1},
+        {"x": "different", "value": 1},
+        {"x": "grammar", "value": 1},
+        {"x": "teaching", "value": 1},
+        {"x": "example", "value": 1},
+        {"x": "thing", "value": 1},
     ];
 
-    // create a chart and set the data
-    chart = anychart.tagCloud(data);
+    // create a stage
+    stage = anychart.graphics.create("container");
 
-    // set the chart title
-    chart.title("Tag Cloud Chart: Basic Sample");
+    // set the position and data for the first pie chart
+    var tagCloud1 = anychart.tagCloud(data);
+    tagCloud1.title("Linear Scale (Default)");
+    tagCloud1.bounds(0, 0, "50%", "100%");
+    //set the chart container
+    tagCloud1.container(stage)
+    //initiate drawing the chart 
+    tagCloud1.draw(); 
 
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
-    chart.draw();
+    // set the position and data for the second pie chart
+    var tagCloud2 = anychart.tagCloud(data);
+    tagCloud2.title("Logarithmic Sclae");
+    tagCloud2.bounds("50%", 0, "50%", "100%");
+    // create a logarithmic scale and set it as the Y-scale
+    tagCloud2.scale(anychart.scales.log());
+    //set the chart container
+    tagCloud2.container(stage)
+    //initiate drawing the chart 
+    tagCloud2.draw();  
 });</script>
 </head>
 <body>

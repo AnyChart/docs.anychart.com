@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-    // create data   
+    /* create data   
     var data = [
         {"x": "learning", "value": 80},
         {"x": "includes", "value": 56},
@@ -24,10 +24,64 @@
     ];
 
     // create a chart and set the data
-    chart = anychart.tagCloud(data);
+    chart = anychart.tagCloud(data);*/
+
+        // create data
+    var text =
+        "Tyger, tyger, burning bright " +
+        "In the forests of the night, " +
+        "What immortal hand or eye " +
+        "Could frame thy fearful symmetry? " +
+        "In what distant deeps or skies " +
+        "Burnt the fire of thine eyes? " +
+        "On what wings dare he aspire? " +
+        "What the hand dare seize the fire? " +
+        "And what shoulder and what art " +
+        "Could twist the sinews of thy heart? " +
+        "And, when thy heart began to beat, " +
+        "What dread hand and what dread feet? " +
+        "What the hammer? what the chain? " +
+        "In what furnace was thy brain? " +
+        "What the anvil? what dread grasp " +
+        "Dare its deadly terrors clasp? " +
+        "When the stars threw down their spears, " +
+        "And watered heaven with their tears, " +
+        "Did He smile His work to see? " +
+        "Did He who made the lamb make thee? " +
+        "Tyger, tyger, burning bright " +
+        "In the forests of the night, " +
+        "What immortal hand or eye " +
+        "Dare frame thy fearful symmetry? ";
+
+    // create a chart
+    chart = anychart.tagCloud();
+
+    // set the parsing mode and configure parsing settings
+    chart.data(text, {
+            mode: "byWord",
+            maxItems: 16,
+            ignoreItems: [
+
+                             "the",
+                             "and",
+                             "he",
+                             "or",
+                             "of",
+                             "in",
+                             "thy",
+            ]
+    });
+
+    // configure tooltips
+    chart.tooltip().format("{%Value}");
+
+    /* configure tooltips
+    chart.tooltip().format(function(){
+      return this.getData("value");
+    });*/
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Basic Sample");
+    chart.title("Tag Cloud Chart: Tooltips");
 
     // set the container id
     chart.container("container");
