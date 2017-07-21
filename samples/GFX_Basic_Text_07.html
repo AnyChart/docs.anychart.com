@@ -8,10 +8,10 @@
 <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
-stage = acgraph.create("container");
+stage = anychart.graphics.create("container");
 
 // create the text style object
-textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
+textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green", letterSpacing: "3px", lineHeight: "10px"};
 
 /// create a text element as HTML
 text1  = stage.text().htmlText("<p fontFace='Dancing Script'>This is my custom text,<br>which has several lines, separated<br>with the &lt;br&gt; tags.</p>");
@@ -22,10 +22,9 @@ text2 = stage.text(20, 50, "This is my second custom text element, which is made
 // text settings
 text2.width(150);
 text2.height(150);
-text2.textWrap("byLetter");
-text2.textOverflow(true);
-text2.letterSpacing(3);
-text2.lineHeight(20);
+text2.textOverflow("...");
+text2.wordWrap("break-word");
+text2.wordBreak("normal");
 </script>
 </head>
 <body>

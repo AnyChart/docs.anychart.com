@@ -29,7 +29,8 @@
   var yLabels = chart.yAxis().labels();
   yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
-  xLabels.textWrap("byLetter");
+  xLabels.wordWrap("break-word");
+  xLabels.wordBreak("break-all");
   xLabels.hAlign("center");
   xLabels.width(60);
 

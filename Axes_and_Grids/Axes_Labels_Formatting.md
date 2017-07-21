@@ -285,12 +285,13 @@ The following example demonstrates standard behavior of the X axis labels. As yo
 
 The following sample demonstrates exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps text in order to fit the width:
   
-To adjust the labels' width and allow or forbid the labels' text wrapping use {api:anychart.core.ui.Label#width}width(){api} and {api:anychart.core.ui.LabelsFactory#textWrap}textWrap(){api} methods:
+To adjust the labels' width and allow or forbid the labels' text wrapping use {api:anychart.core.ui.Label#width}width(){api},  and {api:anychart.core.ui.LabelsFactory#wordWrap}wordWrap(){api} and {api:anychart.core.ui.LabelsFactory#wordBreak}wordBreak(){api} methods:
 
 ```
 var xLabels = chart.xAxis().labels();
 xLabels.width(60);
-xLabels.textWrap("byLetter");
+xLabels.wordWrap("break-word");
+xLabels.wordBreak("break-all");
 ```
 
 {sample}AGST\_Labels\_Formatting\_15{sample}
