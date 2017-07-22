@@ -7,20 +7,21 @@
 * [Canceling Drawing](#canceling_drawing)
 * [Forbidding Drawing](#forbidding_drawing)
 * [Forbidding Editing](#forbidding_editing)
+* [Handling Events](#handling_events)
 * [Managing Annotations](#managing_annotations)
  * [Removing](#removing)
  * [Selecting/Unselecting](#selecting_unselecting)
-* [Handling Events](#handling_events)
+ * [Saving](#saving)
 
 ## Overview
 
-This article describes methods that allows users to draw annotations on AnyStock plots.
+This article describes methods that allow users to draw annotations on AnyStock plots.
 
-Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in our API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
+Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in AnyChart API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
 
 ## Sample Application
 
-To make the integration process easier for you, we created a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
+To make the integration process easier, there is a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
 You can see the application live at [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
 
@@ -81,6 +82,40 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_editing)
 
+
+## Handling Events
+
+When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
+
+<table>
+<tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
+<tr><td>ANNOTATION\_DRAWING\_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
+<tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
+<tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
+
+<tr><td>ANNOTATION\_CHANGE\_START</td><td>annotationChangeStart</td><td>Event that occurs right after the mouseDown event.</td></tr>
+<tr><td>ANNOTATION_CHANGE</td><td>annotationChange</td><td>Event that occurs while dragging.</td></tr>
+<tr><td>ANNOTATION\_CHANGE\_FINISH</td><td>annotationChangeFinish</td><td>Event that occurs right after the mouseUp event.</td></tr>
+</table>
+
+Please note that you should attach listeners to the chart object.
+
+In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
+
+```
+// create an event listener for selection
+chart.listen("annotationSelect", function(e){
+    var selectedAnnotation = e.annotation;
+    // change the annotation stroke on selection
+    selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+    // change the chart title on selection
+    chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
+});
+```
+
+{sample}STOCK\_Drawing\_Drawing\_07{sample}
+
+
 ## Managing Annotations
 
 There are several methods that allow you to manage annotations:
@@ -139,30 +174,30 @@ plot.annotations().unselect();
 
 {sample}STOCK\_Drawing\_Drawing\_05{sample}
 
-## Handling Events
 
-When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
+### Saving
 
-<table>
-<tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
-<tr><td>ANNOTATION\_DRAWING\_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
-<tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
-<tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
-</table>
+There are a lot of ways to save annotations to a server or to load them. Below you can find a basic sample that shows how to do it with special events and methods AnyChart provides.
 
-Please note that you should attach listeners to the chart object.
+- **{api:anychart#onDocumentReady}onDocumentReady(){api}** - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
+- **{api:anychart.enums.EventType}annotationDrawingFinish{api}** - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
+
+The following methods are of a great help:
+
+- the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method is used for deserialization the list of annotations,
+
+- the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for serialization the list of annotations.
+
+In the following code sample, there are custom functions *sendAnnotationsToServer()* and *getAnnotationsFromServer()* used, which act like placeholders for functions that would send and receive the annotations from a server.
 
 ```
-// create an event listener for selection
-chart.listen("annotationSelect", function(e){
-    var selectedAnnotation = e.annotation;
-    // change the annotation stroke on selection
-    selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
-    // change the chart title on selection
-    chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
-});
+// save all annotations
+sendAnnotationsToServer(chart.plot().annotations().toJson(true));
+
+// load all saved annotations
+var annotations = getAnnotationsFromServer();
+chart.plot().annotations().fromJson(annotations);
 ```
 
 {sample}STOCK\_Drawing\_Drawing\_06{sample}
