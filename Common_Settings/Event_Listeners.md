@@ -310,40 +310,7 @@ function getQuarterMonths(month) {
   return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
 }
 ```
-<!--
-Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
 
-```
-	var tooltip = series.tooltip();
-	tooltip.titleFormat(function(point){
-		var index = point.index;
-		switch (true){
-			case (index<3): return "First Quarter";
-			case (index<6): return "Second Quarter";
-			case (index<9): return "Third Quarter";
-			case (index<12): return "Fourth Quarter";
-		}
-	});
-
-	tooltip.format(function(point){
-		var index = point.index;
-		var prefix = "Income: $";
-		switch (true){
-			case (index<3): return prefix+sumValues([0,1,2]);
-			case (index<6): return prefix+sumValues([3,4,5]);
-			case (index<9): return prefix+sumValues([6,7,8]);
-			case (index<12): return prefix+sumValues([9,10,11]);
-		}
-
-		function sumValues(array){
-			var value = 0;
-			for (var i=0;i<array.length;i++)
-				value+=chart.getSeries(0).getPoint(array[i]).get("value");
-			return value;
-		}
-	});
-```
--->
 And here is a sample with these settings:
 
 {sample}CMN\_Event\_Listener\_08{sample}
