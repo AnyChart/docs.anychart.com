@@ -48,9 +48,11 @@
     // set the parsing mode
     chart.data(text, {mode: "byWord"});
 
-    // set the chart position and title
+    // set the chart position
     chart.top(35);
-    chart.title("Tag Cloud Chart: Mode");
+    chart.listen("chartDraw", function() {
+        chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
+    });
 
     // set the container
     chart.container(stage);
@@ -66,7 +68,7 @@
 
     // create a label for changing the mode of the tag cloud
     createLabel("Spiral Mode", 135, function() {
-        // change the orientation of the series
+        // change the mode
         chart.mode("spiral");
     });
 });
