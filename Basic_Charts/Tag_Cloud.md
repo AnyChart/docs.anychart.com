@@ -236,8 +236,13 @@ chart.anglesCount(5);
 
 ### Text Spacing
 
-```
+* {api:anychart.charts.TagCloud#textSpacing}textSpacing(){api}
 
+default: 1
+
+```
+// set text spacing
+chart.textSpacing(15);
 ```
 
 {sample}BCT\_Tag\_Cloud\_010{sample}
@@ -275,25 +280,11 @@ chart.tooltip().format(function(){
 ### Interactivity
 
 ```
-// create data   
-var data = [
-    {x: "learning", value: 80, url: "//en.wiktionary.org/wiki/learning"},
-    {x: "includes", value: 56, url: "//en.wiktionary.org/wiki/include"},
-    {x: "lists", value: 44, url: "//en.wiktionary.org/wiki/list"},
-    {x: "meaning", value: 40, url: "//en.wiktionary.org/wiki/meaning"},
-    {x: "useful", value: 36, url: "//en.wiktionary.org/wiki/useful"},
-    {x: "different", value: 32, url: "//en.wiktionary.org/wiki/different"},
-    {x: "grammar", value: 28, url: "//en.wiktionary.org/wiki/grammar"},
-    {x: "teaching", value: 24, url: "//en.wiktionary.org/wiki/teaching"},
-    {x: "example", value: 20, url: "//en.wiktionary.org/wiki/example"},
-    {x: "thing", value: 12, url: "//en.wiktionary.org/wiki/thing"}
-];
-
-//add an event listener
-chart.listen("pointDblClick", function(e){
-    var new_value = e.point.get("url");
-    window.open(new_value,"_blank");
-});
+  //add an event listener
+  chart.listen("pointDblClick", function(e){
+      var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
+      window.open(url, "_blank");
+  });
 ```
 
 {sample}BCT\_Tag\_Cloud\_014{sample}
