@@ -85,9 +85,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-There are two ways to create data for a Tag Cloud: you can add either a list of words of a text.
+There are two ways to create data for a Tag Cloud: you can add either a list of words or a text.
 
-When you add a list of words, like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
+When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
 
 * **x** to set words
 * **value** to set frequencies
@@ -113,9 +113,27 @@ var data = [
 ];
 ```
 
-When you add a just text, the next step is to parse it into words and calculate their frequencies.
+When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with the following settings (see {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}):
 
-* {api:anychart.data.TextParsingSettings}anychart.data.TextParsing Settings{api}
+* **cutLength** — cuts the length of words
+* **ignoreItems** — adds a list of ignored elements
+* **ignoreTrailingSpaces** — ignores trailing spaces
+* **maxItems** — sets the number of the top frequent elements to be displayed
+* **maxLength** — ignores elements longer than a certain number of characters
+* **minLength** — ignores elements shorter than a certain number of characters
+* **mode** — sets the parsing mode
+
+The parsing mode, unlike other settings, must be always specified. There are two parsing modes:
+
+* **byWord** — parses a text into words
+* **byChar** — parses a text into characters
+
+If the only thing you want to change is the mode, you can use a shortcut (see {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}):
+
+```
+chart.data("Tyger, tyger, burning bright", "by-char");
+```
+In this sample...
 
 ```
 // create data
