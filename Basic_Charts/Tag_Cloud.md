@@ -8,9 +8,9 @@
   * [Data](#data)
   * [Appearance](#appearance)
   * [Color Scale](#color_scale)
-  * [Mode](#mode)
   * [Angles](#angles)
   * [Text Scpacing](#text_spacing)
+  * [Mode](#mode)
   * [Scales](#scales)
   * [Tooltips](#tooltips)
   * [Interactivity](#interactivity)
@@ -85,11 +85,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-When you create data for a Tag Cloud, you should use these data fields for each element (circles or intersection areas):
+When you create data for a Tag Cloud, you should use these data fields:
 
-* **x** to ...
-* **value** to ...
-* **category** to set the category
+* **x** to set words
+* **value** to set frequencies
+* **category** to set categories
 
 The **category** field is optional...
 
@@ -203,20 +203,6 @@ chart.colorRange().colorLineSize(30);
 
 {sample}BCT\_Tag\_Cloud\_06{sample}
 
-### Mode
-
-* rect
-* spiral
-
-* {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
-
-```
-// change the mode
-chart.mode("rect");
-```
-
-{sample}BCT\_Tag\_Cloud\_07{sample}
-
 ### Angles
 
 * {api:anychart.charts.TagCloud#angles}angles(){api}
@@ -229,7 +215,7 @@ chart.mode("rect");
 chart.angles([0, 30, 90]);
 ```
 
-{sample}BCT\_Tag\_Cloud\_08{sample}
+{sample}BCT\_Tag\_Cloud\_07{sample}
 
 ```
 // configure angles
@@ -238,7 +224,7 @@ chart.toAngle(100);
 chart.anglesCount(5);
 ```
 
-{sample}BCT\_Tag\_Cloud\_09{sample}
+{sample}BCT\_Tag\_Cloud\_08{sample}
 
 
 ### Text Spacing
@@ -250,6 +236,20 @@ default: 1
 ```
 // set text spacing
 chart.textSpacing(15);
+```
+
+{sample}BCT\_Tag\_Cloud\_09{sample}
+
+### Mode
+
+* rect
+* spiral
+
+* {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
+
+```
+// change the mode
+chart.mode("rect");
 ```
 
 {sample}BCT\_Tag\_Cloud\_010{sample}
