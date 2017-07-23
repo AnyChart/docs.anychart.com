@@ -85,15 +85,37 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-When you create data for a Tag Cloud, you should use these data fields:
+There are two ways to create data for a Tag Cloud: you can add either a list of words of a text.
+
+When you add a list of words, like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
 
 * **x** to set words
 * **value** to set frequencies
 * **category** to set categories
 
-The **category** field is optional...
+The **category** field is optional: it is required for the [color scale](#color_scale).
 
-* {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}
+This is how working with a list of words looks like:
+
+```
+// create data
+var data = [
+    {"x": "learning", "value": 80},
+    {"x": "includes", "value": 56},
+    {"x": "lists", "value": 44},
+    {"x": "meaning", "value": 40},
+    {"x": "useful", "value": 36},
+    {"x": "different", "value": 32},
+    {"x": "grammar", "value": 28},
+    {"x": "teaching", "value": 24},
+    {"x": "example", "value": 20},
+    {"x": "thing", "value": 12},
+];
+```
+
+When you add a just text, the next step is to parse it into words and calculate their frequencies.
+
+* {api:anychart.data.TextParsingSettings}anychart.data.TextParsing Settings{api}
 
 ```
 // create data
