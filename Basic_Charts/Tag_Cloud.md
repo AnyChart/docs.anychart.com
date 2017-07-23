@@ -10,6 +10,7 @@
   * [Color Scale](#color_scale)
   * [Mode](#mode)
   * [Angles](#angles)
+  * [Text Scpacing](#text_spacing)
   * [Scales](#scales)
   * [Tooltips](#tooltips)
   * [Interactivity](#interactivity)
@@ -232,6 +233,15 @@ chart.anglesCount(5);
 
 {sample}BCT\_Tag\_Cloud\_09{sample}
 
+
+### Text Spacing
+
+```
+
+```
+
+{sample}BCT\_Tag\_Cloud\_010{sample}
+
 ### Scales
 
 ```
@@ -239,7 +249,7 @@ chart.anglesCount(5);
 tagCloud2.scale(anychart.scales.log());
 ```
 
-{sample}BCT\_Tag\_Cloud\_010{sample}
+{sample}BCT\_Tag\_Cloud\_011{sample}
 
 ### Tooltips
 
@@ -250,7 +260,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
 
-{sample}BCT\_Tag\_Cloud\_011{sample}
+{sample}BCT\_Tag\_Cloud\_012{sample}
 
 ```
 // configure tooltips
@@ -260,7 +270,7 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_012{sample}
+{sample}BCT\_Tag\_Cloud\_013{sample}
 
 ### Interactivity
 
@@ -286,4 +296,4 @@ chart.listen("pointDblClick", function(e){
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_013{sample}
+{sample}BCT\_Tag\_Cloud\_014{sample}
