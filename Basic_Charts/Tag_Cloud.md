@@ -127,7 +127,7 @@ chart.data(text, {
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-* {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}
+* {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}
 
 ```
 // configure the visual settings in the normal state
@@ -246,13 +246,18 @@ tagCloud2.scale(anychart.scales.log());
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ```
-
+// configure tooltips
+chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_011{sample}
 
 ```
-
+// configure tooltips
+chart.tooltip().format(function(){
+    percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+    return percentOfTotal.toFixed(1) + "%";
+});
 ```
 
 {sample}BCT\_Tag\_Cloud\_012{sample}
