@@ -113,7 +113,7 @@ var data = [
 ];
 ```
 
-When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with the following settings (see {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}):
+When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with the following settings:
 
 * **cutLength** — cuts the length of words
 * **ignoreItems** — adds a list of ignored elements
@@ -123,16 +123,20 @@ When you add just a text, the next step is to parse it into elements and calcula
 * **minLength** — ignores elements shorter than a certain value
 * **mode** — sets the parsing mode
 
+See also: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
+
 The parsing mode, unlike other settings, must be always specified. There are two parsing modes:
 
 * **byWord** — parses a text into words
 * **byChar** — parses a text into characters
 
-If the only thing you want to change is the mode, you can use a shortcut (see {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}):
+If the only thing you want to change is the mode, you can use a shortcut:
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
 ```
+See also: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}.
+
 In this sample...
 
 ```
