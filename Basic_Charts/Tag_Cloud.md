@@ -118,9 +118,9 @@ When you add just a text, the next step is to parse it into elements and calcula
 * **cutLength** — cuts the length of words
 * **ignoreItems** — adds a list of ignored elements
 * **ignoreTrailingSpaces** — ignores trailing spaces
-* **maxItems** — sets the number of the top frequent elements to be displayed
-* **maxLength** — ignores elements longer than a certain number of characters
-* **minLength** — ignores elements shorter than a certain number of characters
+* **maxItems** — sets the number of the most frequent elements to be displayed
+* **maxLength** — ignores elements longer than a certain value
+* **minLength** — ignores elements shorter than a certain value
 * **mode** — sets the parsing mode
 
 The parsing mode, unlike other settings, must be always specified. There are two parsing modes:
