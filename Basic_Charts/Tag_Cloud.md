@@ -93,7 +93,7 @@ When you add a list of words (or other elements), like in the sample from [Quick
 * **value** to set frequencies
 * **category** to set categories
 
-The **category** field is optional: it is required for the [color scale](#color_scale).
+The "category" field is optional: it is required for the [color scale](#color_scale).
 
 This is how working with a list of words looks like:
 
