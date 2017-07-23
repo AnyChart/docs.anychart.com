@@ -130,6 +130,13 @@ chart.data(text, {
 
 * {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}
 
+(*) методы normal, hovered, selected
+  позволяют задать настойки а) объектно; б) вызывая одноименные методы
+  дать ссылку: http://api.anychart.stg/develop/anychart.core.TagCloudStateSettings
+  дать список методов
+
+(*) тип шрифта наследуется из normal, проверить остальное
+
 ```
 // configure the visual settings in the normal state
 chart.normal({fill: "#009999 0.7", fontWeight: 600});
@@ -259,6 +266,8 @@ tagCloud2.scale(anychart.scales.log());
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+frequency = value
 
 ```
 // configure tooltips

@@ -26,11 +26,13 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
+    // configure angles
+    chart.fromAngle(10);
+    chart.toAngle(100);
+    chart.anglesCount(5);
+
     // set the chart title
     chart.title("Tag Cloud Chart: Angles");
-
-    // configure angles
-    chart.angles([0, 30, 90]);
 
     // set the container id
     chart.container("container");
