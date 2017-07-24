@@ -135,7 +135,7 @@ The parsing mode, unlike other settings, must be always specified. There are two
 * **byWord** — parses a text into words
 * **byChar** — parses a text into characters
 
-If the only thing you want to change is the mode, you can use a shortcut:
+If the only thing you want to set is the mode, you can use a shortcut:
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
