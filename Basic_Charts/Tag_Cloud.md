@@ -46,7 +46,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 
 ## Quick Start
 
-To create a Tag cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
+To create a Tag Cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
 
 ```
 // create data
@@ -85,9 +85,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data can be passed either to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method. There are two ways to create data for a Tag Cloud: you can add either a list of words or a text.
+Data for a Tag Cloud can be passed either to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
 
-When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields with the {api:anychart.charts.TagCloud#data}data(){api} method:
+There are two ways to create data: you can add either a list of words or a text.
+
+When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
 
 * **x** to set words
 * **value** to set frequencies
