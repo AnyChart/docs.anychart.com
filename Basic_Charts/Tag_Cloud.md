@@ -139,7 +139,7 @@ If the only thing you want to set is the mode, you can use a shortcut from here:
 chart.data("Tyger, tyger, burning bright", "by-char");
 ```
 
-The sample below shows how to work with parsing settings. It is a Tag Cloud with the 16 most frequent words in William Blake's poem "The Tyger", some function words ignored:
+The following sample shows how to work with parsing settings. It is a Tag Cloud with the 16 most frequent words in William Blake's poem "The Tyger", some function words ignored:
 
 ```
 // create data
@@ -176,16 +176,14 @@ The visual settings of a Tag Cloud chart can be configured in three states: norm
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-To specify settings, combine these methods with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
+Combine them with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
 
-* {api:anychart.charts.TagCloud#normal}normal(){api}
-*
-*
-*
-*
-*
-*
-*
+* {apianychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
+* {apianychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets 
+* {apianychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets 
+* {apianychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets 
+* {apianychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets 
+* {apianychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets 
 
 For example:
 
@@ -193,19 +191,9 @@ For example:
 // configure visual settings in the normal state
 chart.normal().fill("#009999", 0.7);
 ```
-
-The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} can also be used with...
-
-(*) методы normal, hovered, selected
-  позволяют задать настойки а) объектно; б) вызывая одноименные методы
-  дать ссылку: http://api.anychart.stg/develop/anychart.core.TagCloudStateSettings
-  дать список методов
-
-(*) тип шрифта наследуется из normal, проверить остальное
-
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
-The following sample...
+The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} also allow to specify settings as an object. See the sample below:
 
 ```
 // configure visual settings in the normal state
