@@ -118,31 +118,28 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
-When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with the following settings:
+When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings from this list: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}
 
-* **cutLength** — cuts the length of words
-* **ignoreItems** — adds a list of ignored elements
-* **ignoreTrailingSpaces** — ignores trailing spaces
-* **maxItems** — sets the number of the most frequent elements to be displayed
-* **maxLength** — ignores elements longer than a certain value
-* **minLength** — ignores elements shorter than a certain value
-* **mode** — sets the parsing mode
-
-See also: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
+* **cutLength** cuts the length of words
+* **ignoreItems** adds a list of ignored elements
+* **ignoreTrailingSpaces** ignores trailing spaces
+* **maxItems** sets the number of the most frequent elements to be displayed
+* **maxLength** ignores elements longer than a certain value
+* **minLength** ignores elements shorter than a certain value
+* **mode** sets the parsing mode
 
 The parsing mode, unlike other settings, must be always specified. There are two parsing modes:
 
-* **byWord** — parses a text into words
-* **byChar** — parses a text into characters
+* **byWord** parses a text into words
+* **byChar** parses a text into characters
 
-If the only thing you want to set is the mode, you can use a shortcut:
+If the only thing you want to set is the mode, you can use a shortcut from here: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
 ```
-See also: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}.
 
-In this sample...
+The sample below shows how to work with parsing settings. It is a Tag Cloud with the 16 most frequent words in William Blake's poem "The Tyger", some function words ignored:
 
 ```
 // create data
@@ -173,11 +170,31 @@ chart.data(text, {
 
 ### Appearance
 
+The visual settings of a Tag Cloud chart can be configured in three states: normal, hover, and selected. Use the following methods:
+
 * {api:anychart.charts.TagCloud#normal}normal(){api}
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-* {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}
+To specify settings, combine these methods with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
+
+* {api:anychart.charts.TagCloud#normal}normal(){api}
+*
+*
+*
+*
+*
+*
+*
+
+For example:
+
+```
+// configure visual settings in the normal state
+chart.normal().fill("#009999", 0.7);
+```
+
+The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} can also be used with...
 
 (*) методы normal, hovered, selected
   позволяют задать настойки а) объектно; б) вызывая одноименные методы
@@ -186,14 +203,18 @@ chart.data(text, {
 
 (*) тип шрифта наследуется из normal, проверить остальное
 
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+The following sample...
+
 ```
-// configure the visual settings in the normal state
+// configure visual settings in the normal state
 chart.normal({fill: "#009999 0.7", fontWeight: 600});
 
-// configure the visual settings on hover
+// configure visual settings in the hover state
 chart.hovered({fill: "#003366 0.5"});
 
-// configure the visual settings on select
+// configure visual settings in the selected state
 chart.selected({fill: "#003366 0.7"});
 ```
 
