@@ -85,7 +85,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a Tag Cloud can be passed either to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
+Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
 
 There are two ways to create data: you can add either a list of words or a text.
 
