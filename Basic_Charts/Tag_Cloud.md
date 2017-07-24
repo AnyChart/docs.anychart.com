@@ -194,7 +194,7 @@ chart.normal().fill("#009999", 0.7);
 
 **Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
 
-The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} also allow to specify settings as an object. See the sample below:
+The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods also allow you to specify settings as an object. See the sample below:
 
 ```
 // configure visual settings in the normal state
