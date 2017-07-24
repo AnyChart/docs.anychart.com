@@ -179,11 +179,11 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 Combine them with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
 
 * {apianychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
-* {apianychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets 
-* {apianychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets 
-* {apianychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets 
-* {apianychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets 
-* {apianychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets 
+* {apianychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets font family
+* {apianychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
+* {apianychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
+* {apianychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
+* {apianychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
 
 For example:
 
