@@ -176,13 +176,13 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-Combine them with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
+Combine them with methods from this list: {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}.
 
 * {api:anychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
-* {api:anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets the font family
+* {api:anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets the font family (Verdana, Helvetica, Arial, etc.)
 * {api:anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
-* {api:anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
-* {api:anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
+* {api:anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style (normal, italic, oblique)
+* {api:anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant (normal or small caps)
 * {api:anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
 
 For example:
