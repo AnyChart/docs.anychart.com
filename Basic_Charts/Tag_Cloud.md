@@ -170,7 +170,7 @@ chart.data(text, {
 
 ### Appearance
 
-The visual settings of a Tag Cloud chart can be configured in three states: normal, hover, and selected. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.charts.TagCloud#normal}normal(){api}
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
@@ -191,7 +191,8 @@ For example:
 // configure visual settings in the normal state
 chart.normal().fill("#009999", 0.7);
 ```
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+**Note**:
 
 The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} also allow to specify settings as an object. See the sample below:
 
