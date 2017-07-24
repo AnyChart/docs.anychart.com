@@ -211,6 +211,8 @@ chart.selected({fill: "#003366 0.7"});
 
 ### Color Scale
 
+...
+
 * {api:anychart.scales.LinearColor}colorScale(){api}
 * {api:anychart.charts.TagCloud#colorRange}colorRange(){api}
 
