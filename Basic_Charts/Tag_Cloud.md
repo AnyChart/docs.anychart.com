@@ -130,8 +130,8 @@ When you add just a text, the next step is to parse it into elements and calcula
 
 The parsing mode, unlike other settings, must be always specified. There are two parsing modes:
 
-* **byWord** parses a text into words
-* **byChar** parses a text into characters
+* **byWord** for parsing text into words
+* **byChar** for parsing text into characters
 
 If the only thing you want to set is the mode, you can use a shortcut from here: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}.
 
@@ -178,12 +178,12 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 
 Combine them with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
 
-* {api: anychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
-* {api: anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets font family
-* {api: anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
-* {api: anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
-* {api: anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
-* {api: anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
+* {api:anychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
+* {api:anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets the font family
+* {api:anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
+* {api:anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
+* {api:anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
+* {api:anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
 
 For example:
 
