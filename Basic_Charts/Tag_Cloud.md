@@ -118,7 +118,7 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
-When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings from this list: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}
+When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings from this list: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
 
 * **cutLength** cuts the length of words
 * **ignoreItems** adds a list of ignored elements
@@ -133,7 +133,7 @@ The parsing mode, unlike other settings, must be always specified. There are two
 * **byWord** parses a text into words
 * **byChar** parses a text into characters
 
-If the only thing you want to set is the mode, you can use a shortcut from here: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}
+If the only thing you want to set is the mode, you can use a shortcut from here: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}.
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
@@ -178,12 +178,12 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 
 Combine them with methods from {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
 
-* {api}anychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
-* {api}anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets font family
-* {api}anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
-* {api}anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
-* {api}anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
-* {api}anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
+* {api: anychart.core.TagCloudStateSettings#fill}fill(){api} sets the fill
+* {api: anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets font family
+* {api: anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
+* {api: anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style
+* {api: anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant
+* {api: anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
 
 For example:
 
