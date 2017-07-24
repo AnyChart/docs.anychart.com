@@ -78,7 +78,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-When you create data for a Venn diagram, you should use these data fields for both circles and intersection areas:
+Data can be passed either to the chart constructor {api:anychart#venn}venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
+
+When you create data for a Venn diagram, you should use these data fields (for both circles and intersection areas):
 
 * **x** to set unique identifiers
 * **value** to set sizes
@@ -102,6 +104,9 @@ var data = [
     	value: 200
     }
 ];
+
+// create a chart and set the data
+chart = anychart.venn(data);
 ```
 
 {sample}BCT\_Venn\_Diagram\_02{sample}

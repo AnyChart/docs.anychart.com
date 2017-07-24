@@ -85,9 +85,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-There are two ways to create data for a Tag Cloud: you can add either a list of words or a text.
+Data can be passed either to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method. There are two ways to create data for a Tag Cloud: you can add either a list of words or a text.
 
-When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
+When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields with the {api:anychart.charts.TagCloud#data}data(){api} method:
 
 * **x** to set words
 * **value** to set frequencies
@@ -111,6 +111,9 @@ var data = [
     {"x": "example", "value": 20},
     {"x": "thing", "value": 12},
 ];
+
+// create a chart and set the data
+chart = anychart.tagCloud(data);
 ```
 
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with the following settings:
