@@ -9,7 +9,7 @@
   * [Appearance](#appearance)
   * [Color Scale](#color_scale)
   * [Angles](#angles)
-  * [Text Scpacing](#text_spacing)
+  * [Text Spacing](#text_spacing)
   * [Mode](#mode)
   * [Scales](#scales)
   * [Tooltips](#tooltips)
