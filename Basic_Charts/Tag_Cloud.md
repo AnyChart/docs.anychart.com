@@ -211,7 +211,7 @@ chart.selected({fill: "#003366 0.7"});
 
 ### Color Scale
 
-By default, elements of different frequencies are colored in different ways (the colors of the default [palette](../Appearance_Settings/Palettes) are used). You can also create a custom color scale, linear or ordinal, and add a color range.
+By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a custom color scale, linear or ordinal, and add a color range.
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructo.
 
