@@ -219,7 +219,9 @@ Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two color
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
-Optionally, you can call {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range** – a special element that makes the color scale visible. With the linear color scale, it looks like a gradient from the first to the second color. The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+Optionally, you can call {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range** – a special element representing the color scale. With the linear color scale, it looks like a gradient from the first to the second color.
+
+The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
 The following sample shows a Tag Cloud with a linear color scale and a color range:
 
