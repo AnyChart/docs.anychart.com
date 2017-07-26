@@ -213,7 +213,7 @@ chart.selected({fill: "#003366 0.7"});
 
 By default, words with different frequencies
 
-* {api:anychart.scales.colorScale}colorScale(){api}
+* {api:anychart.charts.TagCloud#colorScale}colorScale(){api}
 * {api:anychart.charts.TagCloud#colorRange}colorRange(){api}
 
 * {api:anychart.scales.LinearColor}anychart.scales.LinearColor{api}
