@@ -211,9 +211,9 @@ chart.selected({fill: "#003366 0.7"});
 
 ### Color Scale
 
-By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a custom color scale, linear or ordinal, and add a color range.
+By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a color scale, linear or ordinal, and add a color range.
 
-To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructo.
+To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify the colors, the default colors of the linear color scale are used.
 
@@ -226,11 +226,11 @@ The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows y
 The following sample shows a Tag Cloud with a linear color scale and a color range:
 
 ```
-// create and configure a custom color scale.
+// create and configure a color scale.
 var customColorScale = anychart.scales.linearColor();
 customColorScale.colors(["#ffcc00", "#00ccff"]);
 
-// set the custom color scale as the color scale of the chart
+// set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
 // add a color range
@@ -249,7 +249,7 @@ Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set 
 In this sample, there is a Tag Cloud with an ordinal color scale and a color range:
 
 ```
-// create and configure a custom color scale.
+// create and configure a color scale.
 var customColorScale = anychart.scales.ordinalColor();
 customColorScale.ranges([
     {less: 50},
@@ -258,7 +258,7 @@ customColorScale.ranges([
 ]);
 customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 
-// set the custom color scale as the color scale of the chart
+// set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
 // add a color range
@@ -284,11 +284,11 @@ var data = [
     {x: "thing", value: 12, category: "noun"}
 ];
 
-// create and configure a custom color scale.
+// create and configure a color scale.
 var customColorScale = anychart.scales.ordinalColor();
 customColorScale.colors(["#00b8e6", "#e6b800", "#ff4d4d"]);
 
-// set the custom color scale as the color scale of the chart
+// set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
 // add a color range
