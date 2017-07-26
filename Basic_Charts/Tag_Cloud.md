@@ -95,7 +95,7 @@ When you add a list of words (or other elements), like in the sample from [Quick
 * **value** to set frequencies
 * **category** to set categories
 
-The "category" field is optional: it is required for the [color scale](#color_scale).
+The "category" field is optional: it can be used with the ordinal [color scale](#color_scale).
 
 This is how working with a list of words looks like:
 
@@ -211,35 +211,40 @@ chart.selected({fill: "#003366 0.7"});
 
 ### Color Scale
 
-By default, elements of different frequencies are colored in different ways. You can also create a custom color scale, linear or ordinal.
+By default, elements of different frequencies are colored in different ways. You can also create a custom color scale, linear or ordinal, and add a color range.
 
-To create a **linear color scale**, call the {api:anychart.scales#linearColor}linearColor(){api} method. Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one applied to the least frequent element, and the second one to the most frequent element. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors.
+To create a **linear color scale**, call the {api:anychart.scales#linearColor}linearColor(){api} method. Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the fist one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors.
 
-**Note**: If you do not specify the colors, the default colors of the linear scale are used.
+**Note**: If you do not specify the colors, the default colors of the linear color scale are used.
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
-The following sample shows how to create and configure a linear color scale:
+Optionally, you can call {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range** – a special element that makes the color scale visible. With the linear color scale, it looks like a gradient from the first to the second color.
+
+The following sample shows a Tag Cloud with a linear color scale and a color range:
 
 ```
 // create and configure a custom color scale.
 var customColorScale = anychart.scales.linearColor();
 customColorScale.colors(["#ffcc00", "#00ccff"]);
 
-/* set the custom color scale
-as the color scale of the chart*/
+// set the custom color scale as the color scale of the chart
 chart.colorScale(customColorScale);
+
+// add a color range
+chart.colorRange().enabled(true);
+chart.colorRange().colorLineSize(30);
 ```
 
 {sample}BCT\_Tag\_Cloud\_04{sample}
 
-When you create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} method and combine it with {api:anychart.scales.OrdinalColor#ranges}ranges() to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method.
+To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} method and combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method.
 
-**Note**: If you do not specify the colors and ranges, the default settings of the ordinal scale are used.
+**Note**: If you do not specify the colors and ranges, the default settings of the ordinal color scale are used.
 
-Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
+Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a color range. With the ordinal color scale, the color range shows the ranges and their colors.
 
-This sample shows how the ordinal scale is configured:
+In this sample, there is a Tag Cloud with an ordinal color scale and a color range:
 
 ```
 // create and configure a custom color scale.
@@ -251,21 +256,37 @@ customColorScale.ranges([
 ]);
 customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 
-/* set the custom color scale
-as the color scale of the chart*/
+// set the custom color scale as the color scale of the chart
 chart.colorScale(customColorScale);
-```
-{api:anychart.charts.TagCloud#colorRange}colorRange(){api}
 
+// add a color range
+chart.colorRange().enabled(true);
+chart.colorRange().colorLineSize(30);
+```
 {sample}BCT\_Tag\_Cloud\_05{sample}
 
+Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. To set them, add the **category** field to your data:
+
 ```
+// create data   
+var data = [
+    {x: "learning", value: 80, category: "noun"},
+    {x: "includes", value: 56, category: "verb"},
+    {x: "lists", value: 44, category: "noun"},
+    {x: "meaning", value: 40, category: "noun"},
+    {x: "useful", value: 36, category: "adjective"},
+    {x: "different", value: 32, category: "adjective"},
+    {x: "grammar", value: 28, category: "noun"},
+    {x: "teaching", value: 24, category: "noun"},
+    {x: "example", value: 20, category: "noun"},
+    {x: "thing", value: 12, category: "noun"}
+];
+
 // create and configure a custom color scale.
 var customColorScale = anychart.scales.ordinalColor();
 customColorScale.colors(["#00b8e6", "#e6b800", "#ff4d4d"]);
 
-/* set the custom color scale
-as the color scale of the chart*/
+// set the custom color scale as the color scale of the chart
 chart.colorScale(customColorScale);
 
 // add a color range

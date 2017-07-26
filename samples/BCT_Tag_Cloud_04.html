@@ -30,10 +30,12 @@
     var customColorScale = anychart.scales.linearColor();
     customColorScale.colors(["#ffcc00", "#00ccff"]);
 
-    /* set the custom color scale
-    as the color scale of the chart*/
+    // set the custom color scale as the color scale of the chart
     chart.colorScale(customColorScale);
 
+    // add a color range
+    chart.colorRange().enabled(true);
+    chart.colorRange().colorLineSize(30);
 
     // set the chart title
     chart.title("Tag Cloud Chart: Color Scale (Linear)");
