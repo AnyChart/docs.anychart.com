@@ -118,7 +118,7 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
-When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings from this list: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
+When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
 * **cutLength** cuts the length of words
 * **ignoreItems** adds a list of ignored elements
@@ -176,7 +176,7 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-Combine them with methods from this list: {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}.
+Combine them with methods listed in {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
 
 * {api:anychart.core.TagCloudStateSettings#fill}fill(){api} sets the color and opacity of the fill
 * {api:anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.
