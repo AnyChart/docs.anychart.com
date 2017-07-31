@@ -244,7 +244,7 @@ To create an **ordinal color scale**, you should use the {api:anychart.scales#or
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify the colors and ranges, the default settings of the ordinal color scale are used.
 
-Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a color range. With the ordinal color scale, the color range shows the ranges and their colors.
+Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range**. With the ordinal color scale, the color range shows the ranges and their colors.
 
 In this sample, there is a Tag Cloud with an ordinal color scale and a color range:
 
@@ -300,17 +300,24 @@ chart.colorRange().colorLineSize(10);
 
 ### Angles
 
-* {api:anychart.charts.TagCloud#angles}angles(){api}
-* {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api}
-* {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api}
-* {api:anychart.charts.TagCloud#toAngle}toAngle(){api}
+Every element on a Tag Cloud chart is rotated by a certain angle. To configure these angles, use the following methods:
+
+* {api:anychart.charts.TagCloud#angles}angles(){api} specifies the set of angles
+* {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} sets the number of angles
+* {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} sets the  first angle in a range
+* {api:anychart.charts.TagCloud#toAngle}toAngle(){api} sets the last angle in a range
+
+You can specify the set of angles to be used in your chart by passing an array of angles to {api:anychart.charts.TagCloud#angles}angles(){api}:
 
 ```
 // configure angles
 chart.angles([0, 30, 90]);
 ```
-
 {sample}BCT\_Tag\_Cloud\_07{sample}
+
+There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle (0&deg; and 90&deg; by default) in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles.
+
+For example, in this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
 
 ```
 // configure angles
