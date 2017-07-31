@@ -14,8 +14,6 @@ Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your 
 ###2. Creating a Container for the Gauge
 Add a block-level HTML element to your page and set the `id`, `width` and `height` attributes (when they are not set, AnyChart uses 100% of the container):
 
-(??? block-based HTML element не гуглится) 
-
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
