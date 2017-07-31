@@ -354,15 +354,15 @@ chart.mode("rect");
 
 ### Scales
 
-To learn about scales in general, see the [Scales](../Axes_and_Gids/Scales) section.
+To learn about scales in general, see the [Scales](../Axes_and_Grids/Scales) section.
 
 If frequencies of elements cover a large range, the font size of the least frequent elements tends to be too small. You can prevent this situation with the help of the [logarithmic scale](../Axes_and_Grids/Scales#logarithmic). 
 
 Use the {api:anychart.scales#log}log(){api} method to create a logarithmic scale and {api:anychart.charts.TagCloud#scale}scale(){api} to set it as the value scale of your chart:
 
 ```
-/* create a logarithmic scale
-and set it as the value scale of the chart */
+/* create a logarithmic scale and set it
+as the value scale of the chart */
 tagCloud2.scale(anychart.scales.log());
 ```
 
