@@ -372,9 +372,7 @@ tagCloud2.scale(anychart.scales.log());
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-In the case of Tag Clouds, you need to know that the *{%Value}* [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the ... and {api}anychart.core.ui.LabelsFactory#format{api} methods.
-
-The following sample shows how to work with tokens to change the the default text:
+In the case of Tag Clouds, you need to know that the *{%Value}* [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api}anychart.core.ui.LabelsFactory#format{api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
@@ -382,7 +380,7 @@ chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
 {sample}BCT\_Tag\_Cloud\_012{sample}
 
-You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting functions) instead of tokens. The function used in the sample below returns the percent of total frequency:
+You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 
 ```
 // configure tooltips
