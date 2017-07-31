@@ -112,7 +112,8 @@ To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anycha
 // invert the Y-scale
 chart.yScale().inverted(true);
 ```
-You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic) – use {api:anychart.scales#log}log(){api}:
+
+You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic). Use {api:anychart.scales#log}log(){api} for creating it and {api:anychart.charts.Radar#yScale}yScale(){api} for setting it as the Y-scale of your chart:
 
 ```
 // create a logarithmic scale
