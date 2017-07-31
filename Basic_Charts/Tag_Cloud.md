@@ -328,12 +328,11 @@ chart.anglesCount(5);
 
 {sample}BCT\_Tag\_Cloud\_08{sample}
 
-
 ### Text Spacing
 
-* {api:anychart.charts.TagCloud#textSpacing}textSpacing(){api}
+The {api:anychart.charts.TagCloud#textSpacing}textSpacing(){api} method allows you to change the spacing between elements of your Tag Cloud chart. The default value is 1.
 
-default: 1
+In the sample below the spacing is set to 15:
 
 ```
 // set text spacing
