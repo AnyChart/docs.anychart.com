@@ -46,7 +46,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 
 ## Quick Start
 
-To create a Tag Cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
+To create a Tag Cloud, use the {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
 
 ```
 var data = [
