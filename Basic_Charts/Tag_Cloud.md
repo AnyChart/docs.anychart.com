@@ -55,7 +55,7 @@ var data = [
     {x: "lists", value: 44},
     {x: "meaning", value: 40},
     {x: "useful", value: 36},
-    {x: "different", value: 32},
+    {x: "different", value: 32}
 ];
 
 // create a chart and set the data
