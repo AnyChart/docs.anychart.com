@@ -49,18 +49,13 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 To create a Tag Cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
 
 ```
-// create data
 var data = [
-    {"x": "learning", "value": 80},
-    {"x": "includes", "value": 56},
-    {"x": "lists", "value": 44},
-    {"x": "meaning", "value": 40},
-    {"x": "useful", "value": 36},
-    {"x": "different", "value": 32},
-    {"x": "grammar", "value": 28},
-    {"x": "teaching", "value": 24},
-    {"x": "example", "value": 20},
-    {"x": "thing", "value": 12},
+    {x: "learning", value: 80},
+    {x: "includes", value: 56},
+    {x: "lists", value: 44},
+    {x: "meaning", value: 40},
+    {x: "useful", value: 36},
+    {x: "different", value: 32},
 ];
 
 // create a chart and set the data
@@ -89,15 +84,13 @@ Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagClo
 
 There are two ways to create data: you can add either a list of words or a text.
 
-When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
+When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
 * **x** to set words
 * **value** to set frequencies
 * **category** to set categories
 
-The "category" field is optional: it can be used with the ordinal [color scale](#color_scale).
-
-This is how working with a list of words looks like:
+This is how working with "x" and "value" looks like:
 
 ```
 // create data
@@ -119,6 +112,27 @@ chart = anychart.tagCloud(data);
 ```
 
 {sample}BCT\_Tag\_Cloud\_02{sample}
+
+The "category" field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
+
+```
+// create data   
+var data = [
+    {x: "learning", value: 80, category: "noun"},
+    {x: "includes", value: 56, category: "verb"},
+    {x: "lists", value: 44, category: "noun"},
+    {x: "meaning", value: 40, category: "noun"},
+    {x: "useful", value: 36, category: "adjective"},
+    {x: "different", value: 32, category: "adjective"},
+    {x: "grammar", value: 28, category: "noun"},
+    {x: "teaching", value: 24, category: "noun"},
+    {x: "example", value: 20, category: "noun"},
+    {x: "thing", value: 12, category: "noun"}
+];
+
+// create a chart and set the data
+chart = anychart.tagCloud(data);
+```
 
 {sample}BCT\_Tag\_Cloud\_03{sample}
 
