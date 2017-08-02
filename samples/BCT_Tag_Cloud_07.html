@@ -26,11 +26,24 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
-    // set the chart title
-    chart.title("Tag Cloud Chart: Angles");
+    // create and configure a color scale.
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+        {less: 50},
+        {from: 50, to: 60},
+        {greater: 60}
+    ]);
+    customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 
-    // configure angles
-    chart.angles([0, 30, 90]);
+    // set the color scale as the color scale of the chart
+    chart.colorScale(customColorScale);
+
+    // add a color range
+    chart.colorRange().enabled(true);
+    chart.colorRange().colorLineSize(10);
+
+    // set the chart title
+    chart.title("Tag Cloud Chart: Color Scale (Ordinal)");
 
     // set the container id
     chart.container("container");
