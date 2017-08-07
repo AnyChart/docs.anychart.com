@@ -52,19 +52,19 @@ var dataSetUSA = [
 
 // create data set for Texas
 var dataSetTX = [
-    {'id': 'US.TX.111', 'value': 6222}, // Dallam
-    {'id': 'US.TX.421', 'value': 3186}, // Sherman
-    {'id': 'US.TX.195', 'value': 5369}, // Hansford
-    {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
-    {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
+    {'id': 'US.TX.111', 'value': 6222},
+    {'id': 'US.TX.421', 'value': 3186},
+    {'id': 'US.TX.195', 'value': 5369},
+    {'id': 'US.TX.357', 'value': 9006}, 
+    {'id': 'US.TX.295', 'value': 3057},
 ];
 
 // create data set for Florida 
 var dataSetFL = [
-    {'id': 'US.FL.063', 'value': 46755}, //Jackson
-    {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
-    {'id': 'US.FL.077', 'value': 7021}, //Liberty County
-    {'id': 'US.FL.079', 'value': 18733}, //Madison
+    {'id': 'US.FL.063', 'value': 46755},
+    {'id': 'US.FL.091', 'value': 170498},
+    {'id': 'US.FL.077', 'value': 7021},
+    {'id': 'US.FL.079', 'value': 18733},
 };
 ```
 
@@ -93,7 +93,7 @@ The request of the JSON file with the Data Adapter should be done through the {a
 anychart.data.loadJsonFile(URL, function (data){}); 
 ```
 
-Find all links to AneChart Maps on the <a href="https://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
+Find all links to AnyChart Maps on the <a href="https://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
 
 ### Drill To
 
