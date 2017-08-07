@@ -73,13 +73,6 @@ series.labels().useHtml(true).format(function(){
 <td>Italic tag</td>
 <td>The <b>&lt;i&gt;</b> tag displays the tagged text in italics. An italic typeface must be available for the font used.</td>
 </tr>
-<!--<tr>
-<td>Paragraph tag</td>
-<td>The <b>&lt;p&gt;</b> tag creates a new paragraph. You must set the text field to be a multi line text field to use this tag. The <b>&lt;p&gt;</b> tag supports the following attributes:
-<ul>
-<li> <strong>align</strong> - Specifies alignment of text within the paragraph; valid values are <b>left</b>, <b>right</b>, <b>justify</b>, and <b>center</b>. </li>
-</ul></td>
-</tr>-->
 <tr>
 <td>Underline tag</td>
 <td>The <b>&lt;u&gt;</b> tag underlines the tagged text.</td>
@@ -163,7 +156,7 @@ Here is a table with all possible methods for controlling the text view.
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordWrap}wordWrap(){api}</td>
-<td>sets the word-wrap mode. Defines the rules for breaking lines.</td>
+<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="http://docs.anychart.stg/DVF-3155-textwrap/Graphics/Text_and_Fonts#wrap">Text Wrapping article</a></td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordBreak}wordBreak(){api}</td>

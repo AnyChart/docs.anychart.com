@@ -29,7 +29,11 @@
   var yLabels = chart.yAxis().labels();
   yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
+
+  // allows to break words at random points
   xLabels.wordWrap("break-word");
+
+  // breaks in words can be inserted between any characters
   xLabels.wordBreak("break-all");
   xLabels.hAlign("center");
   xLabels.width(60);
