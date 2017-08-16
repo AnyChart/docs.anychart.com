@@ -31,7 +31,7 @@
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Pareto](Pareto)</td></tr>
+<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Pareto](Pareto_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/" target="_blank">Chartopedia: Waterfall Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -76,7 +76,7 @@ isTotal: optional, boolean
 
 data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
 
-diff data mode:
+diff data mode (default):
 
 ```
 

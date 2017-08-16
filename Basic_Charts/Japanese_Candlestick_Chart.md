@@ -123,19 +123,19 @@ In the sample below, there are two Japanese Candlestick series with some of the 
 
 ```
 // configure the visual settings of the first series
-series1.risingStroke("#0066cc");
 series1.risingFill("#0066cc", 0.3);
-series1.hoverRisingStroke("#0066cc", 2);
+series1.risingStroke("#0066cc");
 series1.hoverRisingFill("#0066cc", 0.1);
-series1.selectRisingStroke("#0066cc", 4);
+series1.hoverRisingStroke("#0066cc", 2);
 series1.selectRisingFill("#0066cc", 0.5);
+series1.selectRisingStroke("#0066cc", 4);
 
-series1.fallingStroke("#00cc99", 1, "10 5", "round");
 series1.fallingFill("#00cc99", 0.3);
-series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+series1.fallingStroke("#00cc99", 1, "10 5", "round");
 series1.hoverFallingFill("#00cc99", 0.1);
-series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
+series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
 series1.selectFallingFill("#00cc99", 0.5);
+series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
 // configure the visual settings of the second series
 series2.fallingHatchFill("forwardDiagonal");
