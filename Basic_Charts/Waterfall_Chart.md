@@ -74,6 +74,8 @@ isTotal: optional, boolean
     Если isTotal = true - рисуется Column
     Если isTotal = false - рисуется Missing]
 
+[value - в зависимости от chart.dataMode ожидается либо абсолютное значение, либо значение относительно предыдущего.]
+
 data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
 
 diff data mode (default):
@@ -117,7 +119,7 @@ To configure these settings on select, use:
 
 ???
 
-* api:anychart.core.cartesian.series.Waterfall#fill}fill(){api}, {api:anychart.core.cartesian.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#stroke}stroke(){api} set the fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.Waterfall#fill}fill(){api}, {api:anychart.core.cartesian.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#stroke}stroke(){api} set the fill, hatch fill, and stroke
 * {api:anychart.core.cartesian.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.cartesian.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectStroke}selectStroke(){api} configure the visual settings on select
 
