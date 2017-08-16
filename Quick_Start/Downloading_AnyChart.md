@@ -60,9 +60,7 @@ To download one of our predefined themes, choose the theme and click on the acco
   
 To use AnyChart CDN simply reference the [anychart-bundle.min.js file](//cdn.anychart.com/js/latest/anychart-bundle.min.js) using script tag:
 ```
-<script>
-    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
-</script>
+<script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
 ```
 
 ## Production vs Development Builds
