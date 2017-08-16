@@ -7,7 +7,9 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <script x-export="chart">anychart.onDocumentReady(function () {
+
+    // create data   
     var data = [
         {x: 'Start', value: 23},
         {x: 'Jan', value: 22},
@@ -25,17 +27,19 @@
         {x: 'End', isTotal: true}
     ];
 
-    // create waterfall chart with our data
+    // create a chart and set the data
     chart = anychart.waterfall(data);
 
-    // set chart title
-    chart.title('Waterfall Chart Diff Data Mode');
+    // set the chart title
+    chart.title("Waterfall Chart: Basic Sample");
     
+    // set the data mode
     chart.dataMode("diff");
 
-    // set container id for the chart
-    chart.container('container');
-    // initiate chart drawing
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
 });
 </script>
