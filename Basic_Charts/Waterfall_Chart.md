@@ -5,8 +5,9 @@
 * [Quick Start](#quick_start)
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
-  * [Data Mode](#data_mode)
+  * [Data](#data)
   * [Appearance](#appearance)
+  * [Connectors](#connectors)
   * [Labels](#labels)
 
 ## Overview
@@ -18,9 +19,9 @@
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value, isTotal](../Working_with_Data/Overview)</td></tr>
-<tr><td>Multiple Series</td><td>N/A</td></tr>
+<tr><td>Multiple Series</td><td>???</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Stacked</td><td>???</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
@@ -30,7 +31,7 @@
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](Column_Chart), [Range Bar](Range_Bar_Chart), [Pareto](Pareto)</td></tr>
+<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Pareto](Pareto)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/" target="_blank">Chartopedia: Waterfall Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -54,11 +55,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
-### Data Mode
+### Data
 
-{api:anychart.xxx}XXX(){api} 
+Data for a Waterfall chart can be passed to the chart constructor {api:anychart#waterfall}waterfall(){api} or to the {api:anychart.charts.Waterfall#data}data(){api} method.
 
-diff:
+Use the following data fields:
+
+* **x **to set words
+* **value** to set frequencies
+* **isTotal** to set...
+
+isTotal: optional, boolean
+
+[Если есть value, то по дефолту isTotal считается false
+    Если isTotal = true - рисуется Column
+    Если isTotal = false - рисуется RangeColumn
+Если value нет, то по дефолту isTotal считается true
+    Если isTotal = true - рисуется Column
+    Если isTotal = false - рисуется Missing]
+
+data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
+
+diff data mode:
 
 ```
 
@@ -66,18 +84,25 @@ diff:
 
 {sample}BCT\_Waterfall\_Chart\_02{sample}
 
-absolute:
+absolute data mode:
 
 {sample}BCT\_Waterfall\_Chart\_03{sample}
 
-
 ### Appearance
 
-...
+???
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
-In the sample below, ...
+### Connectors
+
+{api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} 
+
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_01{sample}
 
 ### Labels
 
@@ -86,3 +111,5 @@ In the sample below, ...
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+[В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
