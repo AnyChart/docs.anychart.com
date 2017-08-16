@@ -113,9 +113,9 @@ To configure these settings on select, use:
 
 You can also set fill, hatch fill, and stroke of...
 
-* {api:anychart.core.cartesian.series.Waterfall#fill}fill(){api}, {api:anychart.core.cartesian.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api} set the fill, hatch fill, and stroke
+* {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.waterfall.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectStroke}selectStroke(){api} configure the visual settings on select
 
 Learn more: [Appearance Settings](../Appearance_Settings) section.
 
