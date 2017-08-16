@@ -104,8 +104,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 You can set the stroke, fill, and hatch fill of falling and rising candlesticks. Use the following methods:
 
-* {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}
+* {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}
+* {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}
 
 To configure these settings on hover, use:
 
