@@ -133,7 +133,7 @@ Lear more: [Appearance Settings](../Appearance_Settings) section.
 
 ```
 
-{sample}BCT\_Waterfall\_Chart\_01{sample}
+{sample}BCT\_Waterfall\_Chart\_05{sample}
 
 ### Labels
 
