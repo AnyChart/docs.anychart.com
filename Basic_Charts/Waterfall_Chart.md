@@ -68,11 +68,11 @@ Use the following data fields:
 isTotal: optional, boolean
 
 [Если есть value, то по дефолту isTotal считается false
-    Если isTotal = true - рисуется Column
-    Если isTotal = false - рисуется RangeColumn
+Если isTotal = true - рисуется Column
+Если isTotal = false - рисуется RangeColumn
 Если value нет, то по дефолту isTotal считается true
-    Если isTotal = true - рисуется Column
-    Если isTotal = false - рисуется Missing]
+Если isTotal = true - рисуется Column
+Если isTotal = false - рисуется Missing]
 
 [value - в зависимости от chart.dataMode ожидается либо абсолютное значение, либо значение относительно предыдущего.]
 
@@ -117,7 +117,7 @@ You can also set fill, hatch fill, and stroke of...
 * {api:anychart.core.cartesian.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.cartesian.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Waterfall#selectStroke}selectStroke(){api} configure the visual settings on select
 
-Lear more: [Appearance Settings](../Appearance_Settings) section.
+Learn more: [Appearance Settings](../Appearance_Settings) section.
 
 ```
 
