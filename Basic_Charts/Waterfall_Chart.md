@@ -303,7 +303,14 @@ chart.labels().format("{%Absolute}");
 {sample}BCT\_Waterfall\_Chart\_07{sample}
 
 ```
+// enable HTML for labels
+chart.labels().useHtml(true);
 
+// configure labels
+chart.labels().format(function(){
+    if (this.isTotal) return "<b>" + this.diff + "</b>";
+    return this.diff;
+});
 ```
 
 {sample}BCT\_Waterfall\_Chart\_08{sample}

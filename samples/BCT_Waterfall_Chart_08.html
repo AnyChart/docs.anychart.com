@@ -38,7 +38,7 @@
 
     // configure labels
     chart.labels().format(function(){
-        if (this.isTotal) chart.labels().fontColor('red'); "<b>" + this.diff + "</b>";
+        if (this.isTotal) return "<b>" + this.diff + "</b>";
         return this.diff;
     });
 
