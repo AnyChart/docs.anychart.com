@@ -38,8 +38,8 @@
 
     // configure labels
     chart.labels().format(function(){
-        if (this.isTotal) return "<b>" + this.diff + "</b>";
-        return this.diff;
+        if (this.isTotal) return "<b>" + this.absolute + "</b>";
+        return this.absolute;
     });
 
     // set the chart title

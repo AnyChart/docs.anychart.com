@@ -308,8 +308,8 @@ chart.labels().useHtml(true);
 
 // configure labels
 chart.labels().format(function(){
-    if (this.isTotal) return "<b>" + this.diff + "</b>";
-    return this.diff;
+    if (this.isTotal) return "<b>" + this.absolute + "</b>";
+    return this.absolute;
 });
 ```
 
@@ -327,12 +327,17 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 // configure tooltips
-chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
+chart.tooltip().format("{%Absolute}\n{%Diff}");
+chart.tooltip().titleFormat("Absolute | Difference");
 ```
 {sample}BCT\_Waterfall\_Chart\_09{sample}
 
 ```
-
+// configure tooltips
+chart.tooltip().titleFormat(function(){
+    if (this.isTotal) return "Total";
+    return this.x;
+});
 ```
 {sample}BCT\_Waterfall\_Chart\_10{sample}
 

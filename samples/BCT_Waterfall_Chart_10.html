@@ -35,12 +35,9 @@
 
     // configure tooltips
     chart.tooltip().titleFormat(function(){
-        if (this.isTotal) return "<b>" + this.isTotal + "</b>";
-        return this.diff;
+        if (this.isTotal) return "Total";
+        return this.x;
     });
-
-    // configure tooltips
-    // chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
 
     // set the chart title
     chart.title("Waterfall Chart: Tooltips (Formatting Functions)");
