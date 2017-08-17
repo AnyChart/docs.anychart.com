@@ -43,7 +43,7 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 
 ## Quick Start
 
-To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart constructor, like in the following sample:
+To create a Venn diagram, use the {api:anychart#venn}anychart.venn(){api} chart constructor, like in the following sample:
 
 ```
 //create data
@@ -78,7 +78,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a Venn diagram can be passed to the chart constructor {api:anychart#venn}venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
+Data for a Venn diagram can be passed to the chart constructor {api:anychart#venn}anychart.venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
 
 When you create data, you should use these data fields (for both circles and intersection areas):
 

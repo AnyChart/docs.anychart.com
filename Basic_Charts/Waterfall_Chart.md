@@ -11,6 +11,7 @@
   * [Connectors](#connectors)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
+  * [Legend](#legend)
 
 ## Overview
 
@@ -64,8 +65,11 @@ var data = [
     {x: "End", isTotal: true}
 ];
 
-// create a chart and set the data
-chart = anychart.waterfall(data);
+// create a waterfall chart
+chart = anychart.waterfall();
+
+// create a series and set the data
+var series = chart.waterfall(data);
 
 // set the container id
 chart.container("container");
@@ -128,8 +132,12 @@ var data = [
     {x: "End", isTotal: true}
 ];
 
-// create a chart and set the data
-chart = anychart.waterfall(data);
+
+// create a waterfall chart
+chart = anychart.waterfall();
+
+// create a series and set the data
+var series = chart.waterfall(data);
 
 // set the data mode
 chart.dataMode("diff");
@@ -158,8 +166,12 @@ var data = [
     {x: "End", isTotal: true}
 ];
 
-// create a chart and set the data
-chart = anychart.waterfall(data);
+
+// create a waterfall chart
+chart = anychart.waterfall();
+
+// create a series and set the data
+var series = chart.waterfall(data);
 
 // set the data mode
 chart.dataMode("absolute");
@@ -194,7 +206,7 @@ var seriesData_1 = data.mapAs({x: [0], value: [1]});
 var seriesData_2 = data.mapAs({x: [0], value: [2]});
 var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
-// create a chart
+// create a waterfall chart
 chart = anychart.waterfall();
 
 // create the first series and set the data
@@ -290,6 +302,12 @@ chart.labels().format("{%Absolute}");
 
 {sample}BCT\_Waterfall\_Chart\_07{sample}
 
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_08{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
@@ -304,4 +322,20 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 // configure tooltips
 chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
 ```
-{sample}BCT\_Waterfall\_Chart\_08{sample}
+{sample}BCT\_Waterfall\_Chart\_09{sample}
+
+```
+
+```
+{sample}BCT\_Waterfall\_Chart\_10{sample}
+
+### Legend
+
+* [Legend](../Common_Settings/Legend)
+
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_011{sample}
+
