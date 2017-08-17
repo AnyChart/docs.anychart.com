@@ -276,6 +276,14 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+[В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
+
+* [tokens](../Common_Settings/Text_Formatters#string_tokens)
+* [fields](../Common_Settings/Text_Formatters#default_fields)
+
+* {api:anychart.charts.Waterfall#labels}labels(){api} (???)
+* {api:anychart.core.ui.LabelsFactory#format}format(){api}
+
 ```
 // configure labels
 chart.labels().format("{%Absolute}");
@@ -287,7 +295,12 @@ chart.labels().format("{%Absolute}");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-[В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
+* [tokens](../Common_Settings/Text_Formatters#string_tokens)
+* [fields](../Common_Settings/Text_Formatters#default_fields)
+
+* {api:anychart.charts.Waterfall#tooltip}tooltip(){api}
+* {api:anychart.core.ui.LabelsFactory#format}format(){api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 
 ```
 // configure tooltips
