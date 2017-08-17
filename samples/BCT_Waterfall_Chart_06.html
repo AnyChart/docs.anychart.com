@@ -27,37 +27,14 @@
         {x: 'End', isTotal: true}
     ];
 
-    // create a chart
-    chart = anychart.waterfall();
+    // create a chart and set the data
+    chart = anychart.waterfall(data);
 
-    // create a series and set the data
-    var series = chart.waterfall(data);
-
-    // configure the visual settings
-    series.fill("#ff6666", 0.3);
-    series.hatchFill("forwardDiagonal", "#ff6666", 0.5, 10);
-    series.stroke("#ff6666");
-    series.hoverFill("#ff6666", 0.1);
-    series.hoverStroke("#ff6666", 2);
-    series.selectFill("#ff6666", 0.5);
-    series.selectStroke("#ff6666", 4);
-
-    series.risingFill("#0066cc", 0.3);
-    series.risingStroke("#0066cc");
-    series.hoverRisingFill("#0066cc", 0.1);
-    series.hoverRisingStroke("#0066cc", 2);
-    series.selectRisingFill("#0066cc", 0.5);
-    series.selectRisingStroke("#0066cc", 4);
-    
-    series.fallingFill("#00cc99", 0.3);
-    series.fallingStroke("#00cc99", 1, "10 5", "round");
-    series.hoverFallingFill("#00cc99", 0.1);
-    series.hoverFallingStroke("#00cc99", 2, "10 5", "round");
-    series.selectFallingFill("#00cc99", 0.5);
-    series.selectFallingStroke("#00cc99", 4, "10 5", "round");
-    
+    // configure connectors
+    chart.connectorStroke("#ff6666", 2, "2 2", "round");
+  
     // set the chart title
-    chart.title("Waterfall Chart: Appearance");
+    chart.title("Waterfall Chart: Connectors");
     
     // set the data mode
     chart.dataMode("diff");

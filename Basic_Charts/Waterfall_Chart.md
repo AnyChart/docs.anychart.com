@@ -6,6 +6,7 @@
 * [General Settings](#general_settings)
 * [Special Settings](#special_settings)
   * [Data](#data)
+  * [Multiple Series](#multiple_series)
   * [Appearance](#appearance)
   * [Connectors](#connectors)
   * [Labels](#labels)
@@ -21,7 +22,7 @@
 <tr><td>Data Fields</td><td>[x, value, isTotal](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>???</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>???</td></tr>
+<tr><td>Stacked</td><td>[Multiple Series](#multiple_series)</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
@@ -39,7 +40,9 @@
 
 ## Quick Start
 
-To create a Waterfall chart, use the {api:anychart#waterfall}waterfall(){api} chart constructor, like in the following sample:
+To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(){api} chart constructor. If you pass the data to this chart constructor, it creates a Waterfall series.
+
+To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
 
 ```
 
@@ -94,6 +97,15 @@ absolute data mode:
 
 {sample}BCT\_Waterfall\_Chart\_03{sample}
 
+
+### Multiple Series
+
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_04{sample}
+
 ### Appearance
 
 You can set the stroke, fill, and hatch fill of falling and rising elements. Use the following methods:
@@ -123,7 +135,7 @@ Learn more: [Appearance Settings](../Appearance_Settings) section.
 
 ```
 
-{sample}BCT\_Waterfall\_Chart\_04{sample}
+{sample}BCT\_Waterfall\_Chart\_05{sample}
 
 ### Connectors
 
@@ -133,14 +145,26 @@ Learn more: [Appearance Settings](../Appearance_Settings) section.
 
 ```
 
-{sample}BCT\_Waterfall\_Chart\_05{sample}
+{sample}BCT\_Waterfall\_Chart\_06{sample}
 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_07{sample}
 
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 [В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
+
+```
+
+```
+
+{sample}BCT\_Waterfall\_Chart\_08{sample}
