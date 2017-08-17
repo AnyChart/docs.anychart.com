@@ -60,7 +60,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a Waterfall chart can be passed to the chart constructor {api:anychart#waterfall}waterfall(){api} or to the {api:anychart.charts.Waterfall#data}data(){api} method.
+Data for a Waterfall chart can be passed to the chart constructor {api:anychart#waterfall}anychart.waterfall(){api} or to the {api:anychart.charts.Waterfall#data}data(){api} method.
 
 Use the following data fields:
 
@@ -110,18 +110,18 @@ absolute data mode:
 
 You can set the stroke, fill, and hatch fill of falling and rising elements. Use the following methods:
 
-* {api:anychart.core.waterfall.series.Waterfall#fallingFill}fallingFill{api}, {api:anychart.core.waterfall.series.Waterfall#fallingHatchFill}fallingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#fallingStroke}fallingStroke{api}
-* {api:anychart.core.waterfall.series.Waterfall#risingFill}risingFill{api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}risingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#risingStroke}risingStroke{api}
+* {api:anychart.core.waterfall.series.Waterfall#fallingFill}fallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingStroke}fallingStroke(){api}
+* {api:anychart.core.waterfall.series.Waterfall#risingFill}risingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingStroke}risingStroke(){api}
 
 To configure these settings on hover, use:
 
-* {api:anychart.core.waterfall.series.Waterfall#hoverFallingFill}hoverFallingFill{api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingHatchFill}hoverFallingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingStroke}hoverFallingStroke{api}
-* {api:anychart.core.waterfall.series.Waterfall#hoverRisingFill}hoverRisingFill{api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}hoverRisingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#hoverRisingStroke}hoverRisingStroke{api}
+* {api:anychart.core.waterfall.series.Waterfall#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingStroke}hoverFallingStroke(){api}
+* {api:anychart.core.waterfall.series.Waterfall#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}hoverRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverRisingStroke}hoverRisingStroke(){api}
 
 To configure these settings on select, use:
 
-* {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill{api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke{api}
-* {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill{api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill{api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke{api}
+* {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke(){api}
+* {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke(){api}
 
 You can also set fill, hatch fill, and stroke of...
 
@@ -150,6 +150,8 @@ Learn more: [Appearance Settings](../Appearance_Settings) section.
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+[пример: вывести не diff, а абсолютное значение]
 
 ```
 
