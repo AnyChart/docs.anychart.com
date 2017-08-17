@@ -350,17 +350,17 @@ chart.legend().itemsSourceMode("default");]
 
 ```
 // add hatch fills
-series1.hatchFill("diagonalCross", "white", 1, 9);
-series1.fallingHatchFill("diagonalCross", "white", 1, 9);
-series1.risingHatchFill("diagonalCross", "white", 1, 9);
+series1.hatchFill("percent05", "white", 1, 9);
+series1.fallingHatchFill("percent05", "white", 1, 9);
+series1.risingHatchFill("percent05", "white", 1, 9);
 
 series2.hatchFill("dashedBackwardDiagonal", "white", 1, 9);
 series2.fallingHatchFill("dashedBackwardDiagonal", "white", 1, 9);
 series2.risingHatchFill("dashedBackwardDiagonal", "white", 1, 9);
 
-series3.hatchFill("forwardDiagonal", "white", 1, 9);
-series3.fallingHatchFill("forwardDiagonal", "white", 1, 9);
-series3.risingHatchFill("forwardDiagonal", "white", 1, 9);
+series3.hatchFill("forwardDiagonal", "white", 1, 6);
+series3.fallingHatchFill("forwardDiagonal", "white", 1, 6);
+series3.risingHatchFill("forwardDiagonal", "white", 1, 6);
 
 // configure the legend
 chart.legend().itemsSourceMode("default");
