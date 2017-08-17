@@ -45,7 +45,32 @@ To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(
 To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
 
 ```
+// create data
+var data = [
+    {x: "Start", value: 23},
+    {x: "Jan", value: 22},
+    {x: "Feb", value: -46},
+    {x: "Mar", value: -91},
+    {x: "Apr", value: 37},
+    {x: "May", value: -21},
+    {x: "Jun", value: 53},
+    {x: "Jul", value: 31},
+    {x: "Aug", value: -15},
+    {x: "Sep", value: 42},
+    {x: "Oct", value: 53},
+    {x: "Nov", value: -15},
+    {x: "Dec", value: 51},
+    {x: "End", isTotal: true}
+];
 
+// create a chart and set the data
+chart = anychart.waterfall(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Waterfall\_Chart\_01{sample}
@@ -84,7 +109,29 @@ data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
 diff data mode (default):
 
 ```
+// create data   
+var data = [
+    {x: "Start", value: 23},
+    {x: "Jan", value: 22},
+    {x: "Feb", value: -46},
+    {x: "Mar", value: -91},
+    {x: "Apr", value: 37},
+    {x: "May", value: -21},
+    {x: "Jun", value: 53},
+    {x: "Jul", value: 31},
+    {x: "Aug", value: -15},
+    {x: "Sep", value: 42},
+    {x: "Oct", value: 53},
+    {x: "Nov", value: -15},
+    {x: "Dec", value: 51},
+    {x: "End", isTotal: true}
+];
 
+// create a chart and set the data
+chart = anychart.waterfall(data);
+
+// set the data mode
+chart.dataMode("diff");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_02{sample}
@@ -92,7 +139,29 @@ diff data mode (default):
 absolute data mode:
 
 ```
+// create data   
+var data = [
+    {x: "Start", value: 23},
+    {x: "Jan", value: 22},
+    {x: "Feb", value: -46},
+    {x: "Mar", value: -91},
+    {x: "Apr", value: 37},
+    {x: "May", value: -21},
+    {x: "Jun", value: 53},
+    {x: "Jul", value: 31},
+    {x: "Aug", value: -15},
+    {x: "Sep", value: 42},
+    {x: "Oct", value: 53},
+    {x: "Nov", value: -15},
+    {x: "Dec", value: 51},
+    {x: "End", isTotal: true}
+];
 
+// create a chart and set the data
+chart = anychart.waterfall(data);
+
+// set the data mode
+chart.dataMode("absolute");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_03{sample}
@@ -132,7 +201,28 @@ You can also set fill, hatch fill, and stroke of...
 Learn more: [Appearance Settings](../Appearance_Settings) section.
 
 ```
+// configure the visual settings
+series.fill("#ff6666", 0.3);
+series.hatchFill("forwardDiagonal", "#ff6666", 0.5, 10);
+series.stroke("#ff6666");
+series.hoverFill("#ff6666", 0.1);
+series.hoverStroke("#ff6666", 2);
+series.selectFill("#ff6666", 0.5);
+series.selectStroke("#ff6666", 4);
 
+series.risingFill("#0066cc", 0.3);
+series.risingStroke("#0066cc");
+series.hoverRisingFill("#0066cc", 0.1);
+series.hoverRisingStroke("#0066cc", 2);
+series.selectRisingFill("#0066cc", 0.5);
+series.selectRisingStroke("#0066cc", 4);
+
+series.fallingFill("#00cc99", 0.3);
+series.fallingStroke("#00cc99", 1, "10 5", "round");
+series.hoverFallingFill("#00cc99", 0.1);
+series.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+series.selectFallingFill("#00cc99", 0.5);
+series.selectFallingStroke("#00cc99", 4, "10 5", "round");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_05{sample}
@@ -142,7 +232,8 @@ Learn more: [Appearance Settings](../Appearance_Settings) section.
 {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} 
 
 ```
-
+// configure connectors
+chart.connectorStroke("#ff6666", 2, "2 2", "round");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
