@@ -171,7 +171,40 @@ chart.dataMode("absolute");
 ### Multiple Series
 
 ```
+// create a data set
+var data = anychart.data.set([
+    ["Start", 23,  30,  21],
+    ["Jan",   22,  19,  54],
+    ["Feb",  -46,  45, -32],
+    ["Mar",  -91, -30,  -28],
+    ["Apr",   37, -27,  36],
+    ["May",  -21,  62, -48],
+    ["Jun",   55,  40, -29],
+    ["Jul",   31,  33,  41],
+    ["Aug",  -25, -46,  36],
+    ["Sep",   42,  21,  22],
+    ["Oct",   67, -44, -40],
+    ["Nov",  -15, -31,  17],
+    ["Dec",   51,  28,  25],
+    ["End", {isTotal: true}, {isTotal: true}, {isTotal: true}],
+]);
 
+// map the data
+var seriesData_1 = data.mapAs({x: [0], value: [1]});
+var seriesData_2 = data.mapAs({x: [0], value: [2]});
+var seriesData_3 = data.mapAs({x: [0], value: [3]});
+
+// create a chart
+chart = anychart.waterfall();
+
+// create the first series and set the data
+var series1 = chart.waterfall(seriesData_1);
+
+// create the second series and set the data
+var series2 = chart.waterfall(seriesData_2);
+
+// create the third series and set the data
+var series3 = chart.waterfall(seriesData_3);
 ```
 
 {sample}BCT\_Waterfall\_Chart\_04{sample}
@@ -243,10 +276,9 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-[пример: вывести не diff, а абсолютное значение]
-
 ```
-
+// configure labels
+chart.labels().format("{%Absolute}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_07{sample}
@@ -258,7 +290,8 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 [В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
 
 ```
-
+// configure tooltips
+chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_08{sample}

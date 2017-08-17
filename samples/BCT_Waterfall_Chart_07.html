@@ -30,6 +30,9 @@
     // create a chart and set the data
     chart = anychart.waterfall(data);
 
+    // configure labels
+    chart.labels().format("{%Absolute}");
+
     // set the chart title
     chart.title("Waterfall Chart: Labels");
 
