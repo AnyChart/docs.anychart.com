@@ -34,7 +34,13 @@
     var series = chart.waterfall(data);
 
     // configure tooltips
-    chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
+    chart.tooltip().titleFormat(function(){
+        if (this.isTotal) return "<b>" + this.isTotal + "</b>";
+        return this.diff;
+    });
+
+    // configure tooltips
+    // chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
 
     // set the chart title
     chart.title("Waterfall Chart: Tooltips (Formatting Functions)");
