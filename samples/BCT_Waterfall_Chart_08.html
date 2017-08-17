@@ -33,8 +33,14 @@
     // create a series and set the data
     var series = chart.waterfall(data);
 
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+
     // configure labels
-    chart.labels().format("{%Absolute}");
+    chart.labels().format(function(){
+        if (this.isTotal) chart.labels().fontColor('red'); "<b>" + this.diff + "</b>";
+        return this.diff;
+    });
 
     // set the chart title
     chart.title("Waterfall Chart: Labels (Formatting Functions)");

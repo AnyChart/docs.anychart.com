@@ -186,17 +186,17 @@ chart.dataMode("absolute");
 // create a data set
 var data = anychart.data.set([
     ["Start", 23,  30,  21],
-    ["Jan",   22,  19,  54],
+    ["Jan",   22,  22,  54],
     ["Feb",  -46,  45, -32],
     ["Mar",  -91, -30,  -28],
     ["Apr",   37, -27,  36],
-    ["May",  -21,  62, -48],
+    ["May",  -24,  62, -48],
     ["Jun",   55,  40, -29],
     ["Jul",   31,  33,  41],
     ["Aug",  -25, -46,  36],
-    ["Sep",   42,  21,  22],
+    ["Sep",   42,  23,  22],
     ["Oct",   67, -44, -40],
-    ["Nov",  -15, -31,  17],
+    ["Nov",  -24, -31,  37],
     ["Dec",   51,  28,  25],
     ["End", {isTotal: true}, {isTotal: true}, {isTotal: true}],
 ]);
