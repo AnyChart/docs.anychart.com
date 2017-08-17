@@ -46,21 +46,21 @@ To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(
 To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
 
 ```
-// create data
+// create data   
 var data = [
-    {x: "Start", value: 23},
-    {x: "Jan", value: 22},
-    {x: "Feb", value: -46},
-    {x: "Mar", value: -91},
-    {x: "Apr", value: 37},
-    {x: "May", value: -21},
-    {x: "Jun", value: 53},
-    {x: "Jul", value: 31},
-    {x: "Aug", value: -15},
-    {x: "Sep", value: 42},
-    {x: "Oct", value: 53},
-    {x: "Nov", value: -15},
-    {x: "Dec", value: 51},
+    {x: "Start", value:  23},
+    {x: "Jan",   value:  22},
+    {x: "Feb",   value: -46},
+    {x: "Mar",   value: -91},
+    {x: "Apr",   value:  37},
+    {x: "May",   value: -21},
+    {x: "Jun",   value:  53},
+    {x: "Jul",   value:  31},
+    {x: "Aug",   value: -15},
+    {x: "Sep",   value:  42},
+    {x: "Oct",   value:  53},
+    {x: "Nov",   value: -15},
+    {x: "Dec",   value:  51},
     {x: "End", isTotal: true}
 ];
 
@@ -112,19 +112,19 @@ diff data mode (default):
 ```
 // create data   
 var data = [
-    {x: "Start", value: 23},
-    {x: "Jan", value: 22},
-    {x: "Feb", value: -46},
-    {x: "Mar", value: -91},
-    {x: "Apr", value: 37},
-    {x: "May", value: -21},
-    {x: "Jun", value: 53},
-    {x: "Jul", value: 31},
-    {x: "Aug", value: -15},
-    {x: "Sep", value: 42},
-    {x: "Oct", value: 53},
-    {x: "Nov", value: -15},
-    {x: "Dec", value: 51},
+    {x: "Start", value:  23},
+    {x: "Jan",   value:  22},
+    {x: "Feb",   value: -46},
+    {x: "Mar",   value: -91},
+    {x: "Apr",   value:  37},
+    {x: "May",   value: -21},
+    {x: "Jun",   value:  53},
+    {x: "Jul",   value:  31},
+    {x: "Aug",   value: -15},
+    {x: "Sep",   value:  42},
+    {x: "Oct",   value:  53},
+    {x: "Nov",   value: -15},
+    {x: "Dec",   value:  51},
     {x: "End", isTotal: true}
 ];
 
@@ -142,19 +142,19 @@ absolute data mode:
 ```
 // create data   
 var data = [
-    {x: "Start", value: 23},
-    {x: "Jan", value: 22},
-    {x: "Feb", value: -46},
-    {x: "Mar", value: -91},
-    {x: "Apr", value: 37},
-    {x: "May", value: -21},
-    {x: "Jun", value: 53},
-    {x: "Jul", value: 31},
-    {x: "Aug", value: -15},
-    {x: "Sep", value: 42},
-    {x: "Oct", value: 53},
-    {x: "Nov", value: -15},
-    {x: "Dec", value: 51},
+    {x: "Start", value:  23},
+    {x: "Jan",   value:  22},
+    {x: "Feb",   value: -46},
+    {x: "Mar",   value: -91},
+    {x: "Apr",   value:  37},
+    {x: "May",   value: -21},
+    {x: "Jun",   value:  53},
+    {x: "Jul",   value:  31},
+    {x: "Aug",   value: -15},
+    {x: "Sep",   value:  42},
+    {x: "Oct",   value:  53},
+    {x: "Nov",   value: -15},
+    {x: "Dec",   value:  51},
     {x: "End", isTotal: true}
 ];
 
