@@ -33,7 +33,7 @@
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Pareto](Pareto_Chart)</td></tr>
+<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/" target="_blank">Chartopedia: Waterfall Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -279,7 +279,6 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 [В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
 
 * [tokens](../Common_Settings/Text_Formatters#string_tokens)
-* [fields](../Common_Settings/Text_Formatters#default_fields)
 
 * {api:anychart.charts.Waterfall#labels}labels(){api} (???)
 * {api:anychart.core.ui.LabelsFactory#format}format(){api}
@@ -296,7 +295,6 @@ chart.labels().format("{%Absolute}");
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 * [tokens](../Common_Settings/Text_Formatters#string_tokens)
-* [fields](../Common_Settings/Text_Formatters#default_fields)
 
 * {api:anychart.charts.Waterfall#tooltip}tooltip(){api}
 * {api:anychart.core.ui.LabelsFactory#format}format(){api}
@@ -306,5 +304,4 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 // configure tooltips
 chart.tooltip().titleFormat("{%Absolute} | {%Diff}");
 ```
-
 {sample}BCT\_Waterfall\_Chart\_08{sample}
