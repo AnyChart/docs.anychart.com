@@ -10,6 +10,7 @@
   * [Appearance](#appearance)
   * [Connectors](#connectors)
   * [Labels](#labels)
+  * [Tooltips](#tooltips)
 
 ## Overview
 
