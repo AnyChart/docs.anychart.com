@@ -34,6 +34,7 @@
     var chart1 = anychart.waterfall(data);
     chart1.title("Data Mode: Difference");
     chart1.bounds(0, 0, "100%", "50%");
+    chart1.legend(false);
     chart1.labels(false);
     // set the data mode
     chart1.dataMode("diff");
@@ -46,6 +47,7 @@
     var chart2 = anychart.waterfall(data);
     chart2.title("Data Mode: Absolute");
     chart2.bounds(0, "50%", "100%", "50%");
+    chart2.legend(false);
     chart2.labels(false);
     // set the data mode
     chart2.dataMode("absolute");
