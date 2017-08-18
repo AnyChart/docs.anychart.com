@@ -308,8 +308,7 @@ chart.tooltip().titleFormat(function(){
 
 ### Legend
 
-[легенда здесь работает не как везде
-chart.legend().itemsSourceMode("default");]
+[легенда здесь работает не как везде]
 
 * [Legend](../Common_Settings/Legend)
 
