@@ -111,7 +111,7 @@ isTotal: optional, boolean
 
 data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
 
-diff data mode (default):
+default: diff
 
 ```
 // create data   
@@ -132,53 +132,18 @@ var data = [
     {x: "End", isTotal: true}
 ];
 
-
-// create a waterfall chart
-chart = anychart.waterfall();
-
-// create a series and set the data
-var series = chart.waterfall(data);
-
+// create and configure the first waterfall chart
+var chart1 = anychart.waterfall(data);
 // set the data mode
-chart.dataMode("diff");
+chart1.dataMode("diff");
+
+// create and configure the second waterfall chart
+var chart2 = anychart.waterfall(data);
+// set the data mode
+chart2.dataMode("absolute");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_02{sample}
-
-absolute data mode:
-
-```
-// create data   
-var data = [
-    {x: "Start", value:  23},
-    {x: "Jan",   value:  22},
-    {x: "Feb",   value: -46},
-    {x: "Mar",   value: -91},
-    {x: "Apr",   value:  37},
-    {x: "May",   value: -21},
-    {x: "Jun",   value:  53},
-    {x: "Jul",   value:  31},
-    {x: "Aug",   value: -15},
-    {x: "Sep",   value:  42},
-    {x: "Oct",   value:  53},
-    {x: "Nov",   value: -15},
-    {x: "Dec",   value:  51},
-    {x: "End", isTotal: true}
-];
-
-
-// create a waterfall chart
-chart = anychart.waterfall();
-
-// create a series and set the data
-var series = chart.waterfall(data);
-
-// set the data mode
-chart.dataMode("absolute");
-```
-
-{sample}BCT\_Waterfall\_Chart\_03{sample}
-
 
 ### Multiple Series
 
@@ -219,7 +184,7 @@ var series2 = chart.waterfall(seriesData_2);
 var series3 = chart.waterfall(seriesData_3);
 ```
 
-{sample}BCT\_Waterfall\_Chart\_04{sample}
+{sample}BCT\_Waterfall\_Chart\_03{sample}
 
 ### Appearance
 
@@ -271,7 +236,7 @@ series.selectFallingFill("#00cc99", 0.5);
 series.selectFallingStroke("#00cc99", 4, "10 5", "round");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_05{sample}
+{sample}BCT\_Waterfall\_Chart\_04{sample}
 
 ### Connectors
 
@@ -282,7 +247,7 @@ series.selectFallingStroke("#00cc99", 4, "10 5", "round");
 chart.connectorStroke("#ff6666", 2, "2 2", "round");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_06{sample}
+{sample}BCT\_Waterfall\_Chart\_05{sample}
 
 ### Labels
 
@@ -300,7 +265,7 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 chart.labels().format("{%Absolute}");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_07{sample}
+{sample}BCT\_Waterfall\_Chart\_06{sample}
 
 ```
 // enable HTML for labels
@@ -313,7 +278,7 @@ chart.labels().format(function(){
 });
 ```
 
-{sample}BCT\_Waterfall\_Chart\_08{sample}
+{sample}BCT\_Waterfall\_Chart\_07{sample}
 
 ### Tooltips
 
@@ -330,7 +295,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 chart.tooltip().format("{%Absolute}\n{%Diff}");
 chart.tooltip().titleFormat("Absolute | Difference");
 ```
-{sample}BCT\_Waterfall\_Chart\_09{sample}
+{sample}BCT\_Waterfall\_Chart\_08{sample}
 
 ```
 // configure tooltips
@@ -339,7 +304,7 @@ chart.tooltip().titleFormat(function(){
     return this.x;
 });
 ```
-{sample}BCT\_Waterfall\_Chart\_10{sample}
+{sample}BCT\_Waterfall\_Chart\_09{sample}
 
 ### Legend
 
@@ -366,5 +331,5 @@ series3.risingHatchFill("forwardDiagonal", "white", 1, 6);
 chart.legend().itemsSourceMode("default");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_11{sample}
+{sample}BCT\_Waterfall\_Chart\_10{sample}
 

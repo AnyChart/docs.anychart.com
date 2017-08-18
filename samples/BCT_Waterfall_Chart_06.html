@@ -33,14 +33,11 @@
     // create a series and set the data
     var series = chart.waterfall(data);
 
-    // configure connectors
-    chart.connectorStroke("#ff6666", 2, "2 2", "round");
-  
+    // configure labels
+    chart.labels().format("{%Absolute}");
+
     // set the chart title
-    chart.title("Waterfall Chart: Connectors");
-    
-    // set the data mode
-    chart.dataMode("diff");
+    chart.title("Waterfall Chart: Labels (Tokens)");
 
     // set the container id
     chart.container("container");

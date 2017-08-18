@@ -34,11 +34,13 @@
     var series = chart.waterfall(data);
 
     // configure tooltips
-    chart.tooltip().format("{%Absolute}\n{%Diff}");
-    chart.tooltip().titleFormat("Absolute | Difference");
+    chart.tooltip().titleFormat(function(){
+        if (this.isTotal) return "Total";
+        return this.x;
+    });
 
     // set the chart title
-    chart.title("Waterfall Chart: Tooltips (Tokens)");
+    chart.title("Waterfall Chart: Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

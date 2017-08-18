@@ -7,7 +7,10 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <script x-export="stage">anychart.onDocumentReady(function () {
+
+    // create a stage    
+    stage = anychart.graphics.create("container"); 
 
     // create data   
     var data = [
@@ -27,25 +30,28 @@
         {x: "End", isTotal: true}
     ];
 
-    // create a waterfall chart
-    chart = anychart.waterfall();
-
-    // create a series and set the data
-    var series = chart.waterfall(data);
-
+    // create and configure the first waterfall chart
+    var chart1 = anychart.waterfall(data);
+    chart1.title("Data Mode: Difference");
+    chart1.bounds(0, 0, "100%", "50%");
     // set the data mode
-    chart.dataMode("diff");
-
-    // set the chart title
-    chart.title("Waterfall Chart: Data Mode (Diff)");
-
-    // set the container id
-    chart.container("container");
-
+    chart1.dataMode("diff");
+    // set the chart container
+    chart1.container(stage);
     // initiate drawing the chart
-    chart.draw();
-});
-</script>
+    chart1.draw();
+
+    // create and configure the second waterfall chart
+    var chart2 = anychart.waterfall(data);
+    chart2.title("Data Mode: Absolute");
+    chart2.bounds(0, "50%", "100%", "50%");
+    // set the data mode
+    chart2.dataMode("absolute");
+    // set the chart container
+    chart2.container(stage);
+    // initiate drawing the chart
+    chart2.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

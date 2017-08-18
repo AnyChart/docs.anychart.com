@@ -9,47 +9,55 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-        ["Start", 23,  30,  21],
-        ["Jan",   22,  22,  54],
-        ["Feb",  -46,  45, -32],
-        ["Mar",  -91, -30, -28],
-        ["Apr",   37, -27,  36],
-        ["May",  -24,  62, -48],
-        ["Jun",   55,  40, -29],
-        ["Jul",   31,  33,  41],
-        ["Aug",  -25, -46,  36],
-        ["Sep",   42,  23,  22],
-        ["Oct",   67, -44, -40],
-        ["Nov",  -24, -31,  37],
-        ["Dec",   51,  28,  25],
-        ["End", {isTotal: true}, {isTotal: true}, {isTotal: true}],
-    ]);
-
-    // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
-    var seriesData_3 = data.mapAs({x: [0], value: [3]});
+    // create data   
+    var data = [
+        {x: "Start", value:  23},
+        {x: "Jan",   value:  22},
+        {x: "Feb",   value: -46},
+        {x: "Mar",   value: -91},
+        {x: "Apr",   value:  37},
+        {x: "May",   value: -21},
+        {x: "Jun",   value:  53},
+        {x: "Jul",   value:  31},
+        {x: "Aug",   value: -15},
+        {x: "Sep",   value:  42},
+        {x: "Oct",   value:  53},
+        {x: "Nov",   value: -15},
+        {x: "Dec",   value:  51},
+        {x: "End", isTotal: true}
+    ];
 
     // create a waterfall chart
     chart = anychart.waterfall();
 
-    // create the first series and set the data
-    var series1 = chart.waterfall(seriesData_1);
+    // create a series and set the data
+    var series = chart.waterfall(data);
 
-    // create the second series and set the data
-    var series2 = chart.waterfall(seriesData_2);
+    // configure the visual settings
+    series.fill("#ff6666", 0.3);
+    series.hatchFill("forwardDiagonal", "#ff6666", 0.5, 10);
+    series.stroke("#ff6666");
+    series.hoverFill("#ff6666", 0.1);
+    series.hoverStroke("#ff6666", 2);
+    series.selectFill("#ff6666", 0.5);
+    series.selectStroke("#ff6666", 4);
 
-    // create the third series and set the data
-    var series3 = chart.waterfall(seriesData_3);
-
-    // configure labels
-    chart.labels().position("center");
-    chart.labels().fontColor("white");
-
+    series.risingFill("#0066cc", 0.3);
+    series.risingStroke("#0066cc");
+    series.hoverRisingFill("#0066cc", 0.1);
+    series.hoverRisingStroke("#0066cc", 2);
+    series.selectRisingFill("#0066cc", 0.5);
+    series.selectRisingStroke("#0066cc", 4);
+    
+    series.fallingFill("#00cc99", 0.3);
+    series.fallingStroke("#00cc99", 1, "10 5", "round");
+    series.hoverFallingFill("#00cc99", 0.1);
+    series.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+    series.selectFallingFill("#00cc99", 0.5);
+    series.selectFallingStroke("#00cc99", 4, "10 5", "round");
+    
     // set the chart title
-    chart.title("Waterfall Chart: Multiple Series");
+    chart.title("Waterfall Chart: Appearance");
 
     // set the container id
     chart.container("container");
