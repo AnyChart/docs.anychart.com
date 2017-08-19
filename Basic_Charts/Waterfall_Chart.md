@@ -267,7 +267,7 @@ chart.labels().format("{%Absolute}");
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
 
-You can also configure labels with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
+You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
 
 For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored:
 
@@ -306,7 +306,7 @@ chart.tooltip().format("{%Absolute}\n{%Diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
 
-You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
+You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
 
 The function in the sample below modifies the tooltips of columns indicating total values:
 
@@ -321,7 +321,7 @@ chart.tooltip().titleFormat(function(){
 
 ### Legend
 
-The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use "default as a parameter":
+The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use "default" as a parameter:
 
 ```
 // add hatch fills
