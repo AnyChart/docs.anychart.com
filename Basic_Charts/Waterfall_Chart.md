@@ -104,7 +104,7 @@ The "isTotal" field is boolean, used optionally for showing/hiding a total value
 
 The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either "diff" or "absolute" as a parameter.
 
-The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current and previous point, the absolute value being calculated automatically.
+The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 
 In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
@@ -202,7 +202,7 @@ To configure these settings on select, use:
 * {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke(){api}
 
-You can also set fill, hatch fill, and stroke of the column indicating a total value:
+You can also set fill, hatch fill, and stroke of columns indicating total values:
 
 * {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api}
@@ -254,7 +254,7 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
 
@@ -267,7 +267,7 @@ chart.labels().format("{%Absolute}");
 
 You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): "diff", "absolute", "isTotal". The last field allows to find out whether a column shows a total value or not.
 
-For example, the function in the sample below modifies labels of the columns that indicate total values. The "absolute" and "isTotal" fields are used.
+For example, the function in the sample below modifies labels of columns that indicate total values. The "absolute" and "isTotal" fields are used.
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
 
@@ -287,20 +287,28 @@ chart.labels().format(function(){
 
 ### Tooltips
 
+* {api:anychart.charts.Waterfall#tooltip}tooltip(){api}
+* {api:anychart.core.ui.Tooltip#format}format(){api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
+
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-* [tokens](../Common_Settings/Text_Formatters#string_tokens)
+To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-* {api:anychart.charts.Waterfall#tooltip}tooltip(){api}
-* {api:anychart.core.ui.LabelsFactory#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
+In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
+
+In the sample below, these tokens are used to change the default text of tooltips, including titles:
 
 ```
 // configure tooltips
-chart.tooltip().format("{%Absolute}\n{%Diff}");
 chart.tooltip().titleFormat("Absolute | Difference");
+chart.tooltip().format("{%Absolute}\n{%Diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
+
+You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): "diff", "absolute", "isTotal". The last field allows to find out whether a column shows a total value or not.
+
+For example, the function in the sample below modifies labels of columns that indicate total values. The "absolute" and "isTotal" fields are used.
 
 ```
 // configure tooltips
