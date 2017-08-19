@@ -46,6 +46,8 @@ To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(
 
 To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
 
+The following sample demonstrates how a basic Waterfall chart is created:
+
 ```
 // create data   
 var data = [
@@ -94,7 +96,7 @@ Data for a Waterfall chart can be passed to the chart constructor {api:anychart#
 
 Use the following data fields:
 
-* **x **to set categories
+* **x**to set categories
 * **value** to set values
 * **isTotal** to show the total value
 
@@ -106,7 +108,7 @@ The default data mode is **difference**. It means that the "value" data field is
 
 In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
-The following sample demonstrates how to set the data mode:
+The sample below shows how to set the data mode:
 
 ```
 // create data   
@@ -141,6 +143,8 @@ chart2.dataMode("absolute");
 {sample :height 800}BCT\_Waterfall\_Chart\_02{sample}
 
 ### Multiple Series
+
+The Waterfall chart supports multiple series, and this sample shows how they are visualized:
 
 ```
 // create a data set
@@ -198,13 +202,15 @@ To configure these settings on select, use:
 * {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke(){api}
 
-You can also set fill, hatch fill, and stroke of...
+You can also set fill, hatch fill, and stroke of the element indicating the total value:
 
-* {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.waterfall.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api}
+* {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api}
+* {api:anychart.core.waterfall.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectStroke}selectStroke(){api}
 
 Learn more: [Appearance Settings](../Appearance_Settings) section.
+
+In the followoing sample, there is a Waterfall chart with some of the appearance settings configured:
 
 ```
 // configure the visual settings
@@ -234,6 +240,8 @@ series.selectFallingStroke("#00cc99", 4, "10 5", "round");
 {sample}BCT\_Waterfall\_Chart\_04{sample}
 
 ### Connectors
+
+On all Waterfall charts there are connectors — the elements
 
 {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} 
 
