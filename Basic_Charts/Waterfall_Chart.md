@@ -94,24 +94,19 @@ Data for a Waterfall chart can be passed to the chart constructor {api:anychart#
 
 Use the following data fields:
 
-* **x **to set words
-* **value** to set frequencies
-* **isTotal** to set...
+* **x **to set categories
+* **value** to set values
+* **isTotal** to show the total value
 
-isTotal: optional, boolean
+The "isTotal" field is boolean, used optionally for showing/hiding the total value. By default, the total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
-[Если есть value, то по дефолту isTotal считается false
-Если isTotal = true - рисуется Column
-Если isTotal = false - рисуется RangeColumn
-Если value нет, то по дефолту isTotal считается true
-Если isTotal = true - рисуется Column
-Если isTotal = false - рисуется Missing]
+The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either "diff" or "absolute" as a parameter.
 
-[value - в зависимости от chart.dataMode ожидается либо абсолютное значение, либо значение относительно предыдущего.]
+The default data mode is **difference*. It means that the "value" data field is interpreted as a difference between the current point and the previous one, the absolute value being calculated automatically.
 
-data mode: {api:anychart.charts.Waterfall#dataMode}dataMode(){api}
+In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
-default: diff
+The following sample demonstrates how to set the data mode:
 
 ```
 // create data   
