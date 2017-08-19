@@ -265,11 +265,11 @@ By default, labels show the difference, and in this sample the *{%Absolute}* tok
 chart.labels().format("{%Absolute}");
 ```
 
-You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): "diff", "absolute", "isTotal". The last field allows to find out whether a column shows a total value or not.
-
-For example, the function in the sample below modifies labels of columns that indicate total values. The "absolute" and "isTotal" fields are used.
-
 {sample}BCT\_Waterfall\_Chart\_06{sample}
+
+You can also configure labels with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
+
+For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored:
 
 ```
 // enable HTML for labels
@@ -297,7 +297,7 @@ To change the text of tooltips, combine the {api:anychart.charts.Waterfall#toolt
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-In the sample below, these tokens are used to change the default text of tooltips, including titles:
+In the following sample, these tokens are used to change the default text of tooltips, including titles:
 
 ```
 // configure tooltips
@@ -306,9 +306,9 @@ chart.tooltip().format("{%Absolute}\n{%Diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
 
-You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): "diff", "absolute", "isTotal". The last field allows to find out whether a column shows a total value or not.
+You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
 
-For example, the function in the sample below modifies labels of columns that indicate total values. The "absolute" and "isTotal" fields are used.
+The function in the sample below modifies the tooltips of columns indicating total values:
 
 ```
 // configure tooltips
@@ -321,9 +321,7 @@ chart.tooltip().titleFormat(function(){
 
 ### Legend
 
-[легенда здесь работает не как везде]
-
-* [Legend](../Common_Settings/Legend)
+The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use "default as a parameter":
 
 ```
 // add hatch fills
