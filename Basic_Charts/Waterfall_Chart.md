@@ -98,13 +98,13 @@ Use the following data fields:
 
 * **x**to set categories
 * **value** to set values
-* **isTotal** to show the total value
+* **isTotal** to show a total value
 
-The "isTotal" field is boolean, used optionally for showing/hiding the total value. By default, the total value is shown in a point if its value is not specified, and not shown if the value is specified.
+The "isTotal" field is boolean, used optionally for showing/hiding a total value. By default, a total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
 The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either "diff" or "absolute" as a parameter.
 
-The default data mode is **difference**. It means that the "value" data field is interpreted as a difference between the current point and the previous one, the absolute value being calculated automatically.
+The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current and previous point, the absolute value being calculated automatically.
 
 In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
@@ -187,7 +187,7 @@ var series3 = chart.waterfall(seriesData_3);
 
 ### Appearance
 
-You can set the stroke, fill, and hatch fill of falling and rising elements. Use the following methods:
+You can set the stroke, fill, and hatch fill of falling and rising columns. Use the following methods:
 
 * {api:anychart.core.waterfall.series.Waterfall#fallingFill}fallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingStroke}fallingStroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#risingFill}risingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingStroke}risingStroke(){api}
@@ -202,7 +202,7 @@ To configure these settings on select, use:
 * {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke(){api}
 
-You can also set fill, hatch fill, and stroke of the element indicating the total value:
+You can also set fill, hatch fill, and stroke of the column indicating a total value:
 
 * {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api}
 * {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api}
@@ -241,9 +241,7 @@ series.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
 ### Connectors
 
-On all Waterfall charts there are connectors — the elements
-
-{api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} 
+A connector is a line connecting two columns of a Waterfall chart. To configure the stroke of connectors, use the {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} method:
 
 ```
 // configure connectors
@@ -256,17 +254,20 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-[В контексты форматтеров, помимо обычных данных для stacked column серии приходят поля 'diff', 'absolute' и 'isTotal'. Они приходят как поля и как токены (кроме isTotal - он не токен), их так же можно спросить через this.getMeta() (но не через this.getData())]
+To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-* [tokens](../Common_Settings/Text_Formatters#string_tokens)
+In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-* {api:anychart.charts.Waterfall#labels}labels(){api} (???)
-* {api:anychart.core.ui.LabelsFactory#format}format(){api}
+By default, labels show the difference, and in this sample the *{%Absolute}* token is used to show absolute values:
 
 ```
 // configure labels
 chart.labels().format("{%Absolute}");
 ```
+
+You can also configure tooltips with the help of [formatting functions](Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): "diff", "absolute", "isTotal". The last field allows to find out whether a column shows a total value or not.
+
+For example, the function in the sample below modifies labels of the columns that indicate total values. The "absolute" and "isTotal" fields are used.
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
 
