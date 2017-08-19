@@ -397,7 +397,7 @@ chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
 {sample}BCT\_Tag\_Cloud\_014{sample}
 
-You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
+You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 
 ```
 // configure tooltips
