@@ -140,7 +140,7 @@ var series2 = chart2.waterfall(data);
 chart2.dataMode("absolute");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_02{sample}
+{sample :height 800}BCT\_Waterfall\_Chart\_02{sample}
 
 ### Multiple Series
 
