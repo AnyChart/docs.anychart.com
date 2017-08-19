@@ -38,7 +38,8 @@
 
     // configure labels
     chart.labels().format(function(){
-        if (this.isTotal) return "<b>" + this.absolute + "</b>";
+        if (this.isTotal)
+            return "<span style='color:#FF0000;font-weight:bold'>" + this.absolute + "</span>";
         return this.absolute;
     });
 

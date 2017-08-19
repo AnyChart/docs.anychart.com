@@ -31,12 +31,10 @@
     ];
 
     // create and configure the first waterfall chart
-    var chart1 = anychart.waterfall();
-    var series1 = chart1.waterfall(data);
+    var chart1 = anychart.waterfall(data);
     chart1.title("Data Mode: Difference");
     chart1.bounds(0, 0, "100%", "50%");
     chart1.legend(false);
-    series1.labels(false);
     // set the data mode
     chart1.dataMode("diff");
     // set the chart container
@@ -45,12 +43,10 @@
     chart1.draw();
 
     // create and configure the second waterfall chart
-    var chart2 = anychart.waterfall();
-    var series2 = chart2.waterfall(data);
+    var chart2 = anychart.waterfall(data);
     chart2.title("Data Mode: Absolute");
     chart2.bounds(0, "50%", "100%", "50%");
     chart2.legend(false);
-    series2.labels(false);
     // set the data mode
     chart2.dataMode("absolute");
     // set the chart container

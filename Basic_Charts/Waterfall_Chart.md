@@ -128,14 +128,12 @@ var data = [
 ];
 
 // create and configure the first waterfall chart
-var chart1 = anychart.waterfall();
-var series1 = chart1.waterfall(data);
+var chart1 = anychart.waterfall(data);
 // set the data mode
 chart1.dataMode("diff");
 
 // create and configure the second waterfall chart
-var chart2 = anychart.waterfall();
-var series2 = chart2.waterfall(data);
+var chart2 = anychart.waterfall(data);
 // set the data mode
 chart2.dataMode("absolute");
 ```
@@ -270,7 +268,8 @@ chart.labels().useHtml(true);
 
 // configure labels
 chart.labels().format(function(){
-    if (this.isTotal) return "<b>" + this.absolute + "</b>";
+    if (this.isTotal)
+        return "<span style='color:#FF0000;font-weight:bold'>" + this.absolute + "</span>";
     return this.absolute;
 });
 ```
