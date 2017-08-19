@@ -102,7 +102,7 @@ The "isTotal" field is boolean, used optionally for showing/hiding the total val
 
 The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either "diff" or "absolute" as a parameter.
 
-The default data mode is **difference*. It means that the "value" data field is interpreted as a difference between the current point and the previous one, the absolute value being calculated automatically.
+The default data mode is **difference**. It means that the "value" data field is interpreted as a difference between the current point and the previous one, the absolute value being calculated automatically.
 
 In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
