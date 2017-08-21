@@ -301,7 +301,7 @@ To change the text of tooltips, combine the {api:anychart.charts.Waterfall#toolt
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-In the following sample, these tokens are used to change the default text of tooltips, including titles:
+In the following sample, these tokens are used to change the text of tooltips, including titles:
 
 ```
 // configure tooltips
