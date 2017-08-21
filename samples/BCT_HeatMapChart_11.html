@@ -1,0 +1,83 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create data set
+  var dataSet = anychart.data.set([
+    {x: "January", y: "Desktop", heat: 24},
+    {x: "January", y: "Mobile", heat: 27},
+    {x: "January", y: "Web", heat: 49},
+    {x: "February", y: "Desktop", heat: 25},
+    {x: "February", y: "Mobile", heat: 27},
+    {x: "February", y: "Web", heat: 48},
+    {x: "March", y: "Desktop", heat: 25},
+    {x: "March", y: "Mobile", heat: 28},
+    {x: "March", y: "Web", heat: 47},
+    {x: "April", y: "Desktop", heat: 26},
+    {x: "April", y: "Mobile", heat: 28},
+    {x: "April", y: "Web", heat: 46},
+    {x: "May", y: "Desktop", heat: 33},
+    {x: "May", y: "Mobile", heat: 24},
+    {x: "May", y: "Web", heat: 43},
+    {x: "June", y: "Desktop", heat: 32},
+    {x: "June", y: "Mobile", heat: 24},
+    {x: "June", y: "Web", heat: 44},
+    {x: "July", y: "Desktop", heat: 28},
+    {x: "July", y: "Mobile", heat: 27},
+    {x: "July", y: "Web", heat: 45},
+    {x: "August", y: "Desktop", heat: 30},
+    {x: "August", y: "Mobile", heat: 22},
+    {x: "August", y: "Web", heat: 48},
+    {x: "September", y: "Desktop", heat: 28},
+    {x: "September", y: "Mobile", heat: 24},
+    {x: "September", y: "Web", heat: 48},
+    {x: "October", y: "Desktop", heat: 29},
+    {x: "October", y: "Mobile", heat: 25},
+    {x: "October", y: "Web", heat: 47},
+    {x: "November", y: "Desktop", heat: 28},
+    {x: "November", y: "Mobile", heat: 23},
+    {x: "November", y: "Web", heat: 49},
+    {x: "December", y: "Desktop", heat: 22},
+    {x: "December", y: "Mobile", heat: 30},
+    {x: "December", y: "Web", heat: 48}
+  ]);
+
+  // create chart
+  chart = anychart.heatMap(dataSet);
+  chart.title("Email Opens by Environment 2014");
+
+  var tooltip = chart.tooltip();
+  var title = tooltip.title();
+  title.hAlign("center");
+  tooltip.titleFormat("{%y}");
+  tooltip.format(function(){
+    return "Month: " + this.x + "\nOpens: " + this.heat + "%";
+  });
+
+  // format labels
+  var labels = chart.labels();
+  labels.enabled(true);
+
+  labels.format("{%heat}%");
+
+  var xLabels = chart.xAxis().labels();
+  xLabels.format(function(){
+    return (this.value).substr(0, 3);
+  });
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

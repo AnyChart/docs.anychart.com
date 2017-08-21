@@ -26,27 +26,34 @@
     {x: "Illinois",      y: "2004", heat: 727914},
     {x: "Illinois",      y: "2005", heat: 1150659},
     {x: "Illinois",      y: "2006", heat: 1134085},
-    {x: "Texas",         y: "2004", heat: 219967},
-    {x: "Texas",         y: "2005", heat: 3732889},
-    {x: "Texas",         y: "2006", heat: 4185098},
     {x: "Massachusetts", y: "2004", heat: 238819},
     {x: "Massachusetts", y: "2005", heat: 157719},
     {x: "Massachusetts", y: "2006", heat: 887169},
     {x: "New York",      y: "2004", heat: 1667969},
     {x: "New York",      y: "2005", heat: 2763503},
-    {x: "New York",      y: "2006", heat: 3151022}
-    
+    {x: "New York",      y: "2006", heat: 3151022},
+    {x: "Texas",         y: "2004", heat: 219967},
+    {x: "Texas",         y: "2005", heat: 3732889},
+    {x: "Texas",         y: "2006", heat: 4185098}
   ]);
 
   // set chart type
   chart = anychart.heatMap(data);
   chart.title("Sales Revenue");
+  // create ordinalColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of heat parameters and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the heat less than 1200000
+    {less: 750000, color: "#FF4500"},
+    {from: 750000, to: 1000000, color: "#FFA500"},
+    {from: 1000000, to: 2000000, color: "#FFFF00"},
+    {from: 2000000, to: 3000000, color: "#9ACD32"},
+    {greater: 3000000, color: "#008000"}
+  ]);
 
-  chart.fill("#FFD54F");
-  chart.stroke("#FFF");
-  var labels = chart.labels();
-  labels.enabled(true);
-  labels.format("${%heat}");
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
 
   var xLabels = chart.xAxis().labels();
   xLabels.fontSize(10);
