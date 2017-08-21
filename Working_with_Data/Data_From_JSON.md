@@ -265,7 +265,7 @@ chart.spline(
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_07{sample}
+{sample}WD\_Data\_from\_JSON\_07{sample}
 </td>
 </tr>
 </tbody></table>
@@ -330,7 +330,7 @@ chart.title()
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_08{sample}
+{sample}WD\_Data\_from\_JSON\_08{sample}
 </td>
 </tr>
 </tbody></table>
@@ -411,7 +411,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_09{sample}
+{sample}WD\_Data\_from\_JSON\_09{sample}
 </td>
 </tr>
 </tbody></table>
@@ -488,7 +488,7 @@ chart.yAxis(1)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_10{sample}
+{sample}WD\_Data\_from\_JSON\_10{sample}
 </td>
 </tr>
 </tbody></table>
@@ -603,7 +603,7 @@ chart.textMarker(2)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_11{sample}
+{sample}WD\_Data\_from\_JSON\_11{sample}
 </td>
 </tr>
 </tbody></table>
