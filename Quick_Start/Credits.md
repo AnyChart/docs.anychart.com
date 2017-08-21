@@ -64,18 +64,18 @@ Credits position can be adjusted only through CSS. There are three classes you c
 CSS code:
 
 ```
-  .anychart-credits {
-    left: 10px !important;
-    width: 200px !important;
-  }
-  .anychart-credits-logo {
-    right: 10px;
-    left: auto !important;
-  }
-  .anychart-credits-text{
-    right: 25px;
-    left: auto !important;
-  }
+.anychart-credits{
+  left: 10px !important;
+  width: 200px !important;
+}
+.anychart-credits-logo{
+  right: 10px;
+  left: auto !important;
+}
+.anychart-credits-text{
+  right: 25px;
+  left: auto !important;
+}
 ```
 
 ### Disable
