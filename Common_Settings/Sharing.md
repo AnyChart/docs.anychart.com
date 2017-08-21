@@ -16,7 +16,7 @@ Sharing is a feature that allowes to share a chart made with AnyChart component 
 
 There are two ways how to share a chart. First one is to use the context menu that provides four social networks for a chart sharing.
 
-<a href="https://static.anychart.com/images/share.jpg" target="_blank"><img src = "https://static.anychart.com/images/share.jpg"></a>
+<a href="https://static.anychart.com/images/share.jpg" target="_blank"><img width="100%" src = "https://static.anychart.com/images/share.jpg"></a>
 
 A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG image.
 

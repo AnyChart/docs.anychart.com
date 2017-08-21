@@ -362,7 +362,6 @@ var tank = gauge.tank();
 
 There are several settings can be adjusted for the Tank pointer. It is possible to fill empty parts of the tanks with a color or hatch filling with the following methods: {api:anychart.core.linearGauge.pointers.Tank#emptyFill}emptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#emptyHatchFill}emptyHatchFill(){api}.
 
-
 ```
 // set colors for empty parts of tanks
 tankF.emptyFill("#fbceb1");

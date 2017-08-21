@@ -4,24 +4,24 @@
 * [Getting Started](#getting_started)
 * [Include AnyChart](#include_anychart)
 * [Create a Container](#create_a_container)
-* [See the Chart](#see_the_)chart)
+* [See the Chart](#see_the_chart)
 * [Full Source Code](#full_source_code)
   
 ## Getting started
 
 To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
 
-Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be.
+Create an HTML file and give it the *index.htm* name if you want to make a new web page, or open your HTML file where the chart should be.
 
 ## Include AnyChart
 
 Reference the JavaScript file in the *head* section of your web page.  
-You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case). 
+You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you have to use your own link in this case). 
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
+  <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
 
@@ -33,7 +33,7 @@ Add a block-level HTML element into your page, set the element *id*, and its *wi
 
 ```
 <body>
-    <div id="container" style="width: 500px; height: 400px;"></div>
+  <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ``` 
 

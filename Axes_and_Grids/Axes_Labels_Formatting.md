@@ -246,7 +246,7 @@ staggerAxis.drawLastLabel(false);
 
 {sample}AGST\_Labels\_Formatting\_11{sample}
 
-<a name="y-axis_labels-fixed-width"/></a>
+<a name="y-axis_labels-fixed-width"></a>
 ## Y-Axis Labels: Fixed Width
 
 It's possible to set fixed custom width for Y axis labels. This function may be of great use in dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X axis arguments.
@@ -274,7 +274,7 @@ There is the same data with Y axis label width set to 70 pixels, which results i
 
 Please note that width restriction can lead to wrapping the labels' content, so the label text might not fit the custom width. 
 
-<a name="x-axis-labels-wrapping-width"/></a>
+<a name="x-axis-labels-wrapping-width"></a>
 ## X-Axis Labels: Fixed Width and Text Wrapping
 
 Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in X axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use standard javascript **textOverflow()** method), or set fixed width to the labels and make them wrap their content.
