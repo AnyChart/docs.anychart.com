@@ -1,11 +1,11 @@
 {:index 1 :title "Quick Start | AnyChart"}
 # Quick Start
 
-* [Getting Started](#getting-started)
-* [Include AnyChart](#include-anychart)
-* [Create a Container](#create-a-container)
-* [See the Chart](#see-the-chart)
-* [Full Source Code](#full-source-code)
+* [Getting Started](#getting_started)
+* [Include AnyChart](#include_anychart)
+* [Create a Container](#create_a_container)
+* [See the Chart](#see_the_)chart)
+* [Full Source Code](#full_source_code)
   
 ## Getting started
 
