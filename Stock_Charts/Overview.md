@@ -6,7 +6,6 @@
 * [Technical Indicators](#technical_indicators) 
 * [Working with Data in AnyStock](#working_with_data_in_anystock)
 
-
 ## Overview
 
 Stock Chart is a special type of charts that can effectively visualize great amount of date time based data. It has lots of special features such as zoom with Scroller UI, synchronized plots, data grouping and so on. Moreover, Stock Charts are very useful for real-time data visualization. Use them when you have a large amount of date time based data; so it's quite logical to use them, for example, not only for showing the company assets and earnings, but also such things as changes of gage height and water discharge in a Water Supply District for the last decade. That's what makes AnyStock are this popular: it can show large amounts of data and keep it clear to the audience.
@@ -37,7 +36,7 @@ AnyStock allows to stream data efficiently, you can see this on our <a href="htt
 * [Chart Plots](Chart_Plots) - learn what are plots, what for are they needed, and how to use them properly.
 * [Benchmarking](https://www.anychart.com/products/anystock/benchmark/) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/products/anystock/benchmark/).
 
-## Indicators
+## Technical Indicators
 
 A technical indicator is a type of analysis chart that indicates market direction. Indicators are mathematical calculation based on historic price, volume, or (in the case of futures contracts) open interest, used to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 

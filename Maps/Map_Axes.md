@@ -1,7 +1,7 @@
 {:index 13.5}
 # Map Axes
 
-* [Overview](#axes)
+* [Overview](#overview)
 * [Lines](#lines)
 * [Labels](#labels)
 * [Ticks](#ticks)

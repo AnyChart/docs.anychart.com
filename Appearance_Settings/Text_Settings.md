@@ -10,8 +10,7 @@
 ## Overview
 
 You can control the font settings of every text object in AnyChart js charts. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
-  
-  
+
 There are [built-in font formatting settings](#basic_settings) (like <b>bold</b>, <i>italic</i>, <u>underline</u>, <font size="+1">size</font>, <font color="red">color</font> or <font face="Times New Roman, Times, serif">font family</font>). 
 These settings are applied to all characters within a text element; use [HTML formatting](#html) in case you need a complex formatting.
 
@@ -20,11 +19,11 @@ These settings are applied to all characters within a text element; use [HTML fo
 Most of the time the following methods are used to tune the appearance of a text: {api:anychart.graphics.vector.Text#fontFamily}fontFamily(){api}, {api:anychart.graphics.vector.Text#fontSize}fontSize(){api}, {api:anychart.graphics.vector.Text#fontWeight}fontWeight(){api}, {api:anychart.graphics.vector.Text#fontStyle}fontStyle(){api}, {api:anychart.graphics.vector.Text#htmlText}useHtml(){api}. Full list of methods can be found in [Text Formatting](#text_formatting) section or in {api:anychart.graphics.vector.Text}API{api}.
 
 ```
-  .fontColor('Red')
-  .fontFamily('Tahoma')
-  .fontSize(12)
-  .fontStyle('normal')
-  .useHtml(false)
+.fontColor('Red')
+.fontFamily('Tahoma')
+.fontSize(12)
+.fontStyle('normal')
+.useHtml(false)
 ```
 
 These settings are applied to the given all text within text field, if you want to do more complex formatting (only part of the text is bold, for example) - consider using HTML formatting.
@@ -73,13 +72,6 @@ series.labels().useHtml(true).format(function(){
 <td>Italic tag</td>
 <td>The <b>&lt;i&gt;</b> tag displays the tagged text in italics. An italic typeface must be available for the font used.</td>
 </tr>
-<!--<tr>
-<td>Paragraph tag</td>
-<td>The <b>&lt;p&gt;</b> tag creates a new paragraph. You must set the text field to be a multi line text field to use this tag. The <b>&lt;p&gt;</b> tag supports the following attributes:
-<ul>
-<li> <strong>align</strong> - Specifies alignment of text within the paragraph; valid values are <b>left</b>, <b>right</b>, <b>justify</b>, and <b>center</b>. </li>
-</ul></td>
-</tr>-->
 <tr>
 <td>Underline tag</td>
 <td>The <b>&lt;u&gt;</b> tag underlines the tagged text.</td>

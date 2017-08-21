@@ -2,7 +2,7 @@
 # Map Grid
 
 * [Overview](#overview)
-* [Lines](#grid_lines)
+* [Lines](#lines)
 * [Interlace](#interlace)
 
 ## Overview

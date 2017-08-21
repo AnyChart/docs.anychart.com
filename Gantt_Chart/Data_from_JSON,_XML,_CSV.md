@@ -184,7 +184,7 @@ The sample looks completely the same as the JSON-converted one.
 {sample :width 680 :height 200}GANTT\_JXC\_03{sample}
 
 
-## XML Schema
+### XML Schema
 
 XML Schema specifies a XML-based format to define the structure of XML data 
 (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information).

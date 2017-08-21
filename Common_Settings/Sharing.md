@@ -1,7 +1,6 @@
 {:index 3}
 
 Sharing
-======================
 
 * [Overview](#overview)
 * [Facebook](#facebook)
@@ -11,14 +10,13 @@ Sharing
 * [Defaults](#defaults)
 * [Sharing Buttons Sample](#sharing_buttons_sample)
 
-
 ## Overview
 
 Sharing is a feature that allowes to share a chart made with AnyChart component to your page in a social network like Facebook, Pinterest and else. This article describes the settings and methods necessary for sharing activation, adjusting and using.
 
 There are two ways how to share a chart. First one is to use the context menu that provides four social networks for a chart sharing.
 
-<a href="https://static.anychart.com/images/share.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/share.jpg"></a>
+<a href="https://static.anychart.com/images/share.jpg" target="_blank"><img src = "https://static.anychart.com/images/share.jpg"></a>
 
 A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG image.
 
@@ -71,7 +69,6 @@ chart.shareWithFacebook({caption:"Sharing with Facebook sample", link: "anychart
 
 There is one more way to change the sharing settings. The {api:anychart.exports#facebook}anychart.exports.facebook(){api} method is used to set the defaults. Read more about this in the [Defaults](#defaults) section.
 
-
 ## Twitter
 
 While sharing with Twitter there are no extra options to be adjusted:
@@ -84,7 +81,6 @@ chart.shareWithTwitter();
 {sample}CS\_Sharing\_03{sample}
 
 It is possible to change some default settings of export by using the {api:anychart.exports#twitter}anychart.exports.twitter(){api} method. Read more about this in the [Defaults](#defaults) section.
-
 
 ## LinkedIn
 

@@ -8,7 +8,6 @@
 * [Data Formats](#data_formats)
 * [Loading Data](#loading_data)
 * [Data Streaming](#data_streaming)
-* [Settings from Data](#data_streaming)
 
 ## Overview
 

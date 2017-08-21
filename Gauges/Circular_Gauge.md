@@ -9,15 +9,12 @@
  * [Minimum and Maximum](#minimum_and_maximum)
  * [Ticks](#ticks)
 * [Visualization](#visualization)
- * [Basic Sample](#basic_sample)
  * [Pointers](#pointers)
  * [Cap](#cap)
 * [Label](#label)
 * [Range](#range)
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
-
-
 
 ##Overview
 

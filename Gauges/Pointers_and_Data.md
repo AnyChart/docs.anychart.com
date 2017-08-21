@@ -1,4 +1,4 @@
-#Pointers and Data
+# Pointers and Data
 
 * [Overview](#overview)
 * [Connection with the Data](#connection_with_the_data)
@@ -178,8 +178,7 @@ bar.radius(100);
 {sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
 
 There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke. 
-  
-  
+
 Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.enums.GaugeSidePosition}position(){api} method. The value is to be "outside", "inside" or "center". Let's put our bar inside the circle of the defined radius:
 
 ```
