@@ -15,14 +15,16 @@ text1  = stage.text(0, 0, "By Letter Text Wrap Mode. This is another custom text
 // text settings
 text1.width(150);
 text1.height(150);
-text1.textWrap("byLetter");
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
 
 // create second text 
 text2 = stage.text(170, 0, "By Word Text Wrap Mode. This is another custom text element, which is made multiline with the help of AnyChart Graphics methods. It shows how the natural text behaves.");
 // text settings
 text2.width(150);
 text2.height(150);
-text2.textWrap("byWord");
+text2.wordWrap("break-word");
+text2.wordBreak("normal");
 </script>
 </head>
 <body>

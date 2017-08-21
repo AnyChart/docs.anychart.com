@@ -404,8 +404,12 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <td>{"defaultFontSettings": {"hAlign": ""}}</td>
 </tr>
 <tr>
-<td>{api:anychart.core.Text#textWrap}textWrap{api}</td>
-<td>{"defaultFontSettings": {"textWrap": ""}}</td>
+<td>{api:anychart.core.Text#wordWrap}wordWrap{api}</td>
+<td>{"defaultFontSettings": {"wordWrap": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#wordBreak}wordBreak{api}</td>
+<td>{"defaultFontSettings": {"wordBreak": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#textOverflow}textOverflow{api}</td>

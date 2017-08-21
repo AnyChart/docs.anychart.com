@@ -29,8 +29,9 @@
   var yLabels = chart.yAxis().labels();
   yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
-  xLabels.textWrap("byLetter");
-  xLabels.width(75);
+  xLabels.wordWrap("break-word");
+  xLabels.wordBreak("break-all");
+  xLabels.width(60);
   xLabels.hAlign("right");
 
   // draw chart

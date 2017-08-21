@@ -154,8 +154,12 @@ Here is a table with all possible methods for controlling the text view.
 <td>defines rules for clipping overflowing text.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.Text#textWrap}textWrap(){api}</td>
-<td>defines rules for breaking lines in the text.</td>
+<td>{api:anychart.core.Text#wordWrap}wordWrap(){api}</td>
+<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="http://docs.anychart.stg/DVF-3155-textwrap/Graphics/Text_and_Fonts#wrap">Text Wrapping article</a></td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#wordBreak}wordBreak(){api}</td>
+<td>sets the word-break mode. Defines the rules for breaking lines.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#vAlign}vAlign(){api}</td>

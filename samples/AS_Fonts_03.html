@@ -117,11 +117,16 @@
       +" reaches the cell border and there is no space for "
       +"another line."                                          // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
     ],[
-      "textWrap()",
-      "This text has no wrapping. The whole text has no line "
-      +"breaking." ,                                            // table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO_WRAP);
-      "This text is wrapped by letters. The line breaks the "
-      +"moment it reaches the cell border"                      // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
+      "wordWrap()",
+      "The words in the text are allowed to be broken at arbitrary points",
+      													// table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.WordWrap.BREAK_WORD);
+      "The words in this text are broken only at normal word break points." // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.WordWrap.NORMAL);
+    ],[
+      "wordBreak()",
+      "In this text, all word breaks may be inserted between any character," +
+      " so it is broken without following the rules" ,		// table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.WordBreak.BREAK_ALL);
+      "In this text, all word breaks may be inserted only according to the rules "
+      +"moment it reaches the cell border"                     // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.WordBreak.NORMAL);
     ],[
       "vAlign()",
       "This text align to the center",                          // table.getCell(15,1).content().vAlign("center");
@@ -153,12 +158,12 @@
   table.getCell(0,0).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
   table.getCell(0,1).colSpan(2).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
   
-  table.getCell(1,1).textDirection(anychart.graphics.vector.Text.Direction.LTR);
-  table.getCell(1,2).textDirection(anychart.graphics.vector.Text.Direction.RTL);
-  table.getCell(2,1).fontDecoration(anychart.graphics.vector.Text.Decoration.OVERLINE);
-  table.getCell(2,2).fontDecoration(anychart.graphics.vector.Text.Decoration.UNDERLINE);
-  table.getCell(3,1).fontVariant(anychart.graphics.vector.Text.FontVariant.NORMAL);
-  table.getCell(3,2).fontVariant(anychart.graphics.vector.Text.FontVariant.SMALL_CAP);
+  table.getCell(1,1).textDirection("ltr");
+  table.getCell(1,2).textDirection("rtl");
+  table.getCell(2,1).fontDecoration("overline");
+  table.getCell(2,2).fontDecoration("underline");
+  table.getCell(3,1).fontVariant("normal");
+  table.getCell(3,2).fontVariant("small-caps");
   table.getCell(4,1).fontWeight(700);
   table.getCell(4,2).fontWeight("bold");
   table.getCell(5,1).hAlign("center");
@@ -178,12 +183,14 @@
   
   table.getCell(12,1).textIndent(30);
   table.getCell(12,2).textIndent(0);
-  table.getCell(13,1).textOverflow(anychart.graphics.vector.Text.TextOverflow.CLIP);
-  table.getCell(13,2).textOverflow(anychart.graphics.vector.Text.TextOverflow.ELLIPSIS);
-  table.getCell(14,1).textWrap(anychart.graphics.vector.Text.TextWrap.NO_WRAP);
-  table.getCell(14,2).textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
-  table.getCell(15,1).vAlign("center");
-  table.getCell(15,2).vAlign("bottom");
+  table.getCell(13,1).textOverflow(" ");
+  table.getCell(13,2).textOverflow("...");
+  table.getCell(14,1).wordWrap("break-word");
+  table.getCell(14,2).wordWrap("normal");
+  table.getCell(15,1).wordBreak("break-all");
+  table.getCell(15,2).wordBreak("normal");
+  table.getCell(16,1).vAlign("center");
+  table.getCell(16,2).vAlign("bottom");
   
   stage.height(680);
   stage.width(690);

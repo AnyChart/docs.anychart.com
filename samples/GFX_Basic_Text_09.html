@@ -15,14 +15,16 @@ text1  = stage.text(0, 0, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ABCDEFGHIJKLMNOP
 // text settings
 text1.width(150);
 text1.height(150);
-text1.textWrap("byLetter");
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
 
 // create second text 
 text2 = stage.text(170, 0, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
 // text settings
 text2.width(150);
 text2.height(150);
-text2.textWrap("byWord");
+text2.wordWrap("normal");
+text2.wordBreak("keep-all");
 </script>
 </head>
 <body>

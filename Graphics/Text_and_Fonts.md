@@ -105,7 +105,7 @@ font-family: 'Dancing Script', cursive;
 
 ## Multiline
 
-Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#textWrap}textWrap(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
+Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#wordWrap}wordWrap(){api}, {api:anychart.graphics.vector.Text#wordBreak}wordBreak(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
 
 ```
 // create the text style object
@@ -120,7 +120,8 @@ text2 = stage.text(20, 50, "This is my second custom text element, which is made
 // text settings
 text2.width(150);
 text2.height(150);
-text2.textWrap("byLetter");
+text2.wordWrap("break-all");
+text2.wordBreak("break-word");
 text2.textOverflow(true);
 text2.letterSpacing(3);
 text2.lineHeight(20);
@@ -130,12 +131,43 @@ text2.lineHeight(20);
 
 ## Wrap
 
-There are two word wrap modes: by letter and by word. Choose one depending on your visualization needs, one is more predictable, another one is more natural:
+There are two modes of the {api:anychart.core.Text#wordWrap}wordWrap(){api} method: 
+- "break-word" allows to break the word in any point if there are no acceptable points in the text line to break the text in there;
+- "normal" allows to break at normal word break points only. 
+
+There are three modes of the {api:anychart.core.Text#wordbreak}wordBreak(){api} method:
+- "break-all" means that the text can is allowed to be broken in any point of the text, even between the characters of one word;
+- "keep-all" means that the text will be broken in any place, except for the CJK texts;
+- "normal" means that words would be broken according to their usual rules.
 
 ### Wrap by Word
+
+In the following sample, there are two pieces of the same text with different settings of wrapping and breaking. The sample shoes the difference:
+
+```
+// first text settings
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
+
+// second text settings
+text2.wordWrap("break-word");
+text2.wordBreak("normal");
+```
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_08{sample}
 
 ### Wrap by Letter
+
+This sample shows two similar texts with two extremely long words, being wrapped and broken in different modes. 
+
+```
+// first text settings
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
+
+// second text settings
+text2.wordWrap("normal");
+text2.wordBreak("keep-all");
+```
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
