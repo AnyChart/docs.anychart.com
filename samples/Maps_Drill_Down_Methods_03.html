@@ -45,22 +45,22 @@ anychart.onDocumentReady(function () {
     // canada map
     canadaMap = anychart.map();
 
-    worldDataSet = anychart.data.set([
+    worldDataSet = [
         {id: "US", name: "USA", value: "1"},
         {id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
-    ]);
+    ];
 
-    usaDataSet = anychart.data.set([
+    usaDataSet = [
         {"id": "US.LA", "value": 22},
         {"id": "US.TX", "value": 23},
         {"id": "US.NY", "value": 45}
-    ]);
+    ];
 
-    canadaDataSet = anychart.data.set([
+    canadaDataSet = [
         {"id": "CA.BC", "value": 3},
         {"id": "CA.NF", "value": 11},
         {"id": "CA.PE", "value": 12}
-    ]);
+    ];
 
     // world data and series
     chart.geoData(anychart.maps.world);

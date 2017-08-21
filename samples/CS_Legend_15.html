@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // set data and define chart type
-  chart = anychart.pie([
+  var dataSet = anychart.data.set([
     {name: "John", value: 10000},
     {name: "Jake", value: 12000},
     {name: "Peter", value: 16000},
@@ -19,28 +19,51 @@
     {name: "Julia", value: 18000}
   ]);
   
+  // variable for total sales
+  var total = 0;
+  
+  for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
+    total+=dataSet.mapAs().get(i,"value");
+  
+  chart = anychart.pie(dataSet);
+  
   // legend settings
   var legend = chart.legend();
   // enables legend
   legend.enabled(true);
-  // set legend height
-  legend.height(140);
-  // set legend width
-  legend.width(95);
   // set legend position
   legend.position("left");
   // set legend align
   legend.align("top");
-  // set padding 10px
-  legend.padding(10);
   // legend items layout
   legend.itemsLayout("vertical");
-  // paginator settings
-  var paging = chart.legend().paginator();
-  // place paginator at the bottom of a legend
-  paging.orientation("bottom");
+  // adjust legend items
+  legend.itemsFormatter(function(items){
+    // push into items array
+    items.push({
+      // set item text
+      text: "Total: "+total.toString(),
+      // disable icon for a new item
+      iconEnabled: false,
+      // bold text of the item
+      fontWeight: 900
+    });
+    // return items array
+    return items;
+  });
   
-  // draw
+  // configure tooltip considering new item 
+  var tooltip = chart.legend().tooltip();
+  tooltip.enabled(true);
+  tooltip.format(function(){
+    // to avoid failing on "total" item
+    if(this.meta.pointValue === undefined)
+      return this.value;
+    // for all other points
+    return this.value+"\n"+this.meta.pointValue.toString();
+  });
+  
+  // set container and draw chart
   chart.container("container");
   chart.draw();
 });</script>

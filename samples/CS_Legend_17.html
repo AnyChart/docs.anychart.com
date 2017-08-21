@@ -8,13 +8,14 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="chart">anychart.onDocumentReady(function() {
-  // create a chart
   chart = anychart.marker();
 
-  // add series
-  chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("FDH 1mg/day");
-  chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("FDH 5mg/day");
-  chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
+  series1 = chart.marker([[1,1],[1,1],[5,6],[10,1]]);
+  series1.name("FDH 1mg/day");
+  series2 = chart.marker([[2,3],[1,4],[7,6],[13,1]]);
+  series2.name("FDH 5mg/day");
+  series3 = chart.marker([[2,1],[1,2],[3,6],[8,1]])
+  series3.name("Placebo");
 
   // add grid
   chart.grid(0).enabled(true);
@@ -26,8 +27,26 @@
   var legend = chart.legend();
   legend.enabled(true);
   legend.background().enabled(true).stroke("1 black");
-  legend.padding(5); 
-  legend.margin(25);
+  legend.padding(10); 
+  legend.margin(5);
+
+  // legend title
+  title = legend.title("Drag the legend");
+
+  // chart title  
+  chartTitle = "Inside Legend Position";
+  chart.title(chartTitle);
+
+  // allow drag
+  legend.drag(true);
+
+  // legend get emphasized when dragging through background darkening
+  legend.listen("dragStart", function(){
+      chart.background().fill("#eee");
+  });
+  legend.listen("dragEnd", function(){
+      chart.background().fill("#fff");
+  });
 
   // set position mode
   legend.positionMode("inside");
@@ -35,8 +54,8 @@
   legend.position("top");
   legend.align("right");
   legend.itemsLayout("verticalExpandable");
-
-  chart.title("Inside Legend Position");
+  legend.width(200);
+  legend.height(130);
   chart.container("container");
   chart.draw();
 });

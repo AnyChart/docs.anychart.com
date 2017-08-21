@@ -5,7 +5,7 @@
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
   <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>
   <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" data-export = "true"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css" />
   <style>
     html, body, #container {
       width: 100%;
@@ -21,12 +21,6 @@
 
     anychart.onDocumentReady(function () {
 
-    // This sample uses 3rd party proj4 component
-    // that makes it possible to set coordinates
-    // for the points and labels on the map and
-    // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
-
     usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
 
@@ -37,13 +31,13 @@
     txMap.geoData(anychart.maps["texas"]);
 
     // set the data for the USA map
-    dataSetUSA = anychart.data.set([
+    dataSetUSA = [
         {"id": "US.TX", "value": 26956958},
         {"id": "US.FL", "value": 19552860}
-    ]);
+    ];
 
     // create data set for Texas districts
-    dataSetTX = anychart.data.set([
+    dataSetTX = [
         {'id': 'US.TX.111', 'value': 6222},   // Dallam
         {'id': 'US.TX.421', 'value': 3186},   // Sherman
         {'id': 'US.TX.195', 'value': 5369},   // Hansford
@@ -70,10 +64,10 @@
         {'id': 'US.TX.045', 'value': 1790},   // Briscoe
         {'id': 'US.TX.191', 'value': 3782},   // Hall
         {'id': 'US.TX.075', 'value': 7688},   // Childress
-    ]);
+    ];
 
     // create data set for Florida districts
-    dataSetFL = anychart.data.set([
+    dataSetFL = [
         {'id': 'US.FL.063', 'value': 46755},  // Jackson]
         {'id': 'US.FL.091', 'value': 170498}, // Okaloosa
         {'id': 'US.FL.077', 'value': 7021},   // Liberty County
@@ -101,7 +95,7 @@
         {'id': 'US.FL.125', 'value': 13442},  // Union
         {'id': 'US.FL.059', 'value': 18564},  // Holmes
         {'id': 'US.FL.133', 'value': 20973},  // Washington
-    ]);    
+    ];    
     
     // Set the series for all maps
     usaSeries = usaMap.choropleth(dataSetUSA);

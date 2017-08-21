@@ -7,73 +7,46 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
-    stage = anychart.graphics.create("container");
+<script x-export="chart">anychart.onDocumentReady(function() {
+  chart = anychart.marker();
 
-    var data = [
-        ["Apples", 21, 99, 19, 72, 94, 71],
-        ["Pears", 41, 7, 71, 10, 27, 79],
-        ["Bananas", 9, 15, 77, 58, 97, 79],
-        ["Grapes", 71, 34, 40, 21, 72, 6],
-        ["Oranges", 6, 29, 11, 46, 19, 49]
-    ];
+  chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("FDH 1mg/day");
+  chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("FDH 5mg/day");
+  chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
 
-    chart = anychart.column();
+  // add grid
+  chart.grid(0).enabled(true);
+  chart.grid(1).axis(chart.xAxis()).enabled(true);
+  chart.minorGrid(0).enabled(true);
+  chart.minorGrid(1).axis(chart.xAxis()).enabled(true);  
 
-    var series = anychart.data.mapAsTable(data, "value");
+  // configure legend
+  var legend = chart.legend();
+  legend.enabled(true);
+  legend.background().enabled(true).stroke("1 black");
+  legend.padding(10); 
+  legend.margin(5);
 
-    for (var i in series) {
-        chart.column(series[i]);
-    }
+  // legend title
+  title = legend.title("Drag the legend");
 
-    var legend = chart.legend();
-    legend.enabled(true);
+  // allow drag
+  legend.drag(true);
 
-    // Set maximum width and height.
-    legend.maxWidth("30%");
-    legend.maxHeight("30%");
-    
-    // legend mode and position
-    legend.itemsLayout("verticalExpandable");
-    legend.position("right");
+  // set position mode
+  legend.positionMode("inside");
+  // set position and alignement
+  legend.position("top");
+  legend.align("right");
+  legend.itemsLayout("verticalExpandable");
+  legend.width(200);
+  legend.height(130);
 
-    // paginator position
-    legend.paginator().orientation("bottom");
-
-    
-    chart.title("Set a maximum width for the legend");
-    chart.container(stage);
-    chart.draw();
-
-    createLabel("Click to remove 7 series", 5, function(){
-        chart.removeSeriesAt(chart.getSeriesCount() - 1);
-    });
-
-    createLabel("Click to add 7 series", 180, function(){
-        for (var i in series) {
-            chart.column(series[i]);
-        }
-    });
+  chart.title("Inside Legend Position");
+  chart.container("container");
+  chart.draw();
 });
-    
-function createLabel(text, offset, action){
-    var lbl = anychart.standalones.label();
-    lbl.background({fill: "#9E9E9E"});
-    lbl.text(text);
-    lbl.fontColor("#fff");
-    lbl.padding(5);
-    lbl.offsetX(offset);
-    lbl.offsetY(5);
-    lbl.listen("mouseOver", function () {
-        document.body.style.cursor = "pointer";
-    });
-    lbl.listen("mouseOut", function () {
-        document.body.style.cursor = "auto";
-    });
-    lbl.listen("click", action);
-    lbl.container(stage);
-    lbl.draw();    
-}</script>
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

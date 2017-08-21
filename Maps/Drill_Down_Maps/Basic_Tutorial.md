@@ -12,7 +12,7 @@ First of all, you need the Anymap component, which can be found on the [download
 
 ```
 <head>
-<script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/anymap.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -52,27 +52,27 @@ Let's use some statistical data about population in those states in 2000 for the
 
 ``` 
 // set the data for the USA map
-var dataSetUSA = anychart.data.set([
+var dataSetUSA = [
     {'id': 'US.TX', 'value': 26956958},
     {'id': 'US.FL', 'value': 19552860}
-]);
+];
 
 // create dataset for Texas
-var dataSetTX = anychart.data.set([
-    {'id': 'US.TX.111', 'value': 6222}, // Dallam
-    {'id': 'US.TX.421', 'value': 3186}, // Sherman
-    {'id': 'US.TX.195', 'value': 5369}, // Hansford
-    {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
-    {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
-]);
+var dataSetTX = [
+    {'id': 'US.TX.111', 'value': 6222},
+    {'id': 'US.TX.421', 'value': 3186},
+    {'id': 'US.TX.195', 'value': 5369},
+    {'id': 'US.TX.357', 'value': 9006},
+    {'id': 'US.TX.295', 'value': 3057}, 
+];
 
 // create dataset for Florida 
-var dataSetFL = anychart.data.set([
-    {'id': 'US.FL.063', 'value': 46755},  // Jackson
-    {'id': 'US.FL.091', 'value': 170498}, // Okaloosa
-    {'id': 'US.FL.077', 'value': 7021},   // Liberty County
-    {'id': 'US.FL.079', 'value': 18733},  //Madison
-});
+var dataSetFL = [
+    {'id': 'US.FL.063', 'value': 46755},
+    {'id': 'US.FL.091', 'value': 170498},
+    {'id': 'US.FL.077', 'value': 7021}, 
+    {'id': 'US.FL.079', 'value': 18733},
+};
 ```
 
 After we have defined the data, it's time to pass it to series.
