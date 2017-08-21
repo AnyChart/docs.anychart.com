@@ -15,7 +15,11 @@
 
 ## Overview
 
-[A waterfall chart is a form of data visualization that helps in understanding the cumulative effect of sequentially introduced positive or negative values. The waterfall chart is also known as a flying bricks chart or Mario chart due to the apparent suspension of columns (bricks) in mid-air.]
+A waterfall chart is a data visualization that shows how an initial value is affected by a series of intermediate positive or negative values. This type is also known as a cascade chart, bridge chart, flying bricks chart, or Mario chart. 
+
+As a rule, intermediate values are visualized as floating columns, while the initial and the final values look like whole columns. The elements are usually connected with lines.
+
+This article explains how to create a basic Waterfall chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waterfall chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
