@@ -35,7 +35,7 @@ Add a block-level HTML element into your page, set the element *id*, and its *wi
 <body>
   <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-``` 
+```
 
 ## Create a Chart
 
