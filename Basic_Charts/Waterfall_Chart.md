@@ -297,11 +297,11 @@ chart.labels().format(function(){
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-In the following sample, these tokens are used to change the text of tooltips, including titles:
+In the following sample, these tokens are used to change the text of tooltips, including the titles:
 
 ```
 // configure tooltips
