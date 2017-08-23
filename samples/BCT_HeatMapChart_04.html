@@ -9,62 +9,57 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // create heatMap
-  chart = anychart.heatMap([
-    {x: "Rare",             y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-    {x: "Rare",             y: "Minor",          heat: 0, fill: "#9ACD32"},
-    {x: "Rare",             y: "Moderate",       heat: 0, fill: "#9ACD32"},
-    {x: "Rare",             y: "Major",          heat: 0, fill: "#9ACD32"},
-    {x: "Rare",             y: "Extreme",        heat: 0, fill: "#9ACD32"},
-    {x: "Unlikely",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-    {x: "Unlikely",         y: "Minor",          heat: 0, fill: "#9ACD32"},
-    {x: "Unlikely",         y: "Moderate",       heat: 0, fill: "#9ACD32"},
-    {x: "Unlikely",         y: "Major",          heat: 1, fill: "#FFFF00"},
-    {x: "Unlikely",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
-    {x: "Possible",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-    {x: "Possible",         y: "Minor",          heat: 0, fill: "#9ACD32"},
-    {x: "Possible",         y: "Moderate",       heat: 1, fill: "#FFFF00"},
-    {x: "Possible",         y: "Major",          heat: 1, fill: "#FFFF00"},
-    {x: "Possible",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
-    {x: "Likely",           y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-    {x: "Likely",           y: "Minor",          heat: 1, fill: "#FFFF00"},
-    {x: "Likely",           y: "Moderate",       heat: 1, fill: "#FFFF00"},
-    {x: "Likely",           y: "Major",          heat: 2, fill: "#FF6347"},
-    {x: "Likely",           y: "Extreme",        heat: 2, fill: "#FF6347"},
-    {x: "Almost\nCertain",  y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-    {x: "Almost\nCertain",  y: "Minor",          heat: 1, fill: "#FFFF00"},
-    {x: "Almost\nCertain",  y: "Moderate",       heat: 1, fill: "#FFFF00"},
-    {x: "Almost\nCertain",  y: "Major",          heat: 2, fill: "#FF6347"},
-    {
-      x: "Almost\nCertain",
-      y: "Extreme",
-      heat: 3,
-      fill: "#FF0000",
-      hoverFill: "#AA0000",
-      stroke: {color: "#AA0000"},
-      hoverStroke: {color: "#550000"},
-      hoverLabel:{fontColor: "#FFF"}
-    }
-  ]);
+    // create data
+    var data = [
+      {x: "1", y: "A", fill: "#ffcc00"},
+      {x: "1", y: "B", fill: "#ffcc00"},
+      {x: "1", y: "C", fill: "#ffcc00"},
+      {x: "1", y: "D", fill: "#ffcc00"},
+      {x: "1", y: "E", fill: "#ffcc00"},
+      {x: "2", y: "A", fill: "#ffcc00"},
+      {x: "2", y: "B", fill: "#ffcc00"},
+      {x: "2", y: "C", fill: "#ffcc00"},
+      {x: "2", y: "D", fill: "#ff9933"},
+      {x: "2", y: "E", fill: "#ff9933"},
+      {x: "3", y: "A", fill: "#ffcc00"},
+      {x: "3", y: "B", fill: "#ffcc00"},
+      {x: "3", y: "C", fill: "#ff9933"},
+      {x: "3", y: "D", fill: "#ff9933"},
+      {x: "3", y: "E", fill: "#ff9933"},
+      {x: "4", y: "A", fill: "#ffcc00"},
+      {x: "4", y: "B", fill: "#ff9933"},
+      {x: "4", y: "C", fill: "#ff9933"},
+      {x: "4", y: "D", fill: "#ff6600"},
+      {x: "4", y: "E", fill: "#ff6600"},
+      {x: "5", y: "A", fill: "#ffcc00"},
+      {x: "5", y: "B", fill: "#ff9933"},
+      {x: "5", y: "C", fill: "#ff9933"},
+      {x: "5", y: "D", fill: "#ff6600"},
+      {
+        x: "5",
+        y: "E",
+        fill: "#ff0000",
+        hoverFill: "#b30059",
+        selectFill: "#b30059",
+        stroke: {color: "#b30059", thickness: 6},
+        hoverStroke: {color: "#b30059"},
+        selectStroke: {color: "white", thickness: 6}
+      }
+    ];
 
-  chart.title("Risk Matrix in Project Server");
+  // create a chart and set the data
+  chart = anychart.heatMap(data);
 
-  // adjust chart labels
-  var labels = chart.labels();
-  // display labels
-  labels.enabled(true);
-  // variable with list of labels
-  var namesList = ["Low", "Medium", "High", "Extreme"];
-  // format labels' content
-  labels.format(function(){
-    // get points heat
-    var value = this.heat;
-    // replace values with words
-    return namesList[value];
-  });
-  // disable tooltip
+  // disable tooltips
   chart.tooltip(false);
+
+  // set the chart title
+  chart.title("Heat Map: Appearance");
+
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

@@ -9,51 +9,45 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    {x: "California",    y: "2004", heat: 1704211},
-    {x: "California",    y: "2005", heat: 2782680},
-    {x: "California",    y: "2006", heat: 2992679},
-    {x: "Colorado",      y: "2004", heat: 448302},
-    {x: "Colorado",      y: "2005", heat: 768390},
-    {x: "Colorado",      y: "2006", heat: 843584},
-    {x: "DC",            y: "2004", heat: 693211},
-    {x: "DC",            y: "2005", heat: 1215158},
-    {x: "DC",            y: "2006", heat: 1053581},
-    {x: "Florida",       y: "2004", heat: 405985},
-    {x: "Florida",       y: "2005", heat: 661250},
-    {x: "Florida",       y: "2006", heat: 811924},
-    {x: "Illinois",      y: "2004", heat: 727914},
-    {x: "Illinois",      y: "2005", heat: 1150659},
-    {x: "Illinois",      y: "2006", heat: 1134085},
-    {x: "Texas",         y: "2004", heat: 219967},
-    {x: "Texas",         y: "2005", heat: 3732889},
-    {x: "Texas",         y: "2006", heat: 4185098},
-    {x: "Massachusetts", y: "2004", heat: 238819},
-    {x: "Massachusetts", y: "2005", heat: 157719},
-    {x: "Massachusetts", y: "2006", heat: 887169},
-    {x: "New York",      y: "2004", heat: 1667969},
-    {x: "New York",      y: "2005", heat: 2763503},
-    {x: "New York",      y: "2006", heat: 3151022}
-    
-  ]);
+    // create data
+    var data = [
+      {x: "2010", y: "A", heat: 15},
+      {x: "2011", y: "A", heat: 17},
+      {x: "2012", y: "A", heat: 21},
+      {x: "2013", y: "A", heat: 23},
+      {x: "2010", y: "B", heat: 34},
+      {x: "2011", y: "B", heat: 33},
+      {x: "2012", y: "B", heat: 32},
+      {x: "2013", y: "B", heat: 30},
+      {x: "2010", y: "C", heat: 43},
+      {x: "2011", y: "C", heat: 42},
+      {x: "2012", y: "C", heat: 40},
+      {x: "2013", y: "C", heat: 38},
+      {x: "2010", y: "D", heat: 8},
+      {x: "2011", y: "D", heat: 8},
+      {x: "2012", y: "D", heat: 7},
+      {x: "2013", y: "D", heat: 8}
+    ];
 
-  // set chart type
-  chart = anychart.heatMap(data);
-  chart.title("Sales Revenue");
+    // create a chart and set the data
+    chart = anychart.heatMap(data);
 
-  chart.fill("#FFD54F");
-  chart.stroke("#FFF");
-  var labels = chart.labels();
-  labels.enabled(true);
-  labels.format("${%heat}");
+    // configure the visual settings
+    chart.hoverFill("gray", 0.4);
+    chart.selectFill("gray", 0.6);
+    chart.selectHatchFill("backwardDiagonal", "gray", 2, 20);
+    chart.stroke("null");
+    chart.hoverStroke("null");
+    chart.selectStroke("gray", 2);
 
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontSize(10);
+    // set the chart title
+    chart.title("Heat Map: Appearance");
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
