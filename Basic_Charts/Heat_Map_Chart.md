@@ -94,7 +94,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 ### Color Scale
 
 * {api:anychart.charts.HeatMap#colorScale}colorScale(){api}
-* { api:anychart.scales.OrdinalColor}ordinalColor(){api}
+* {api:anychart.scales.OrdinalColor}ordinalColor(){api}
 * {api:anychart.charts.HeatMap#colorScale}colorScale(){api}
 
 ```
