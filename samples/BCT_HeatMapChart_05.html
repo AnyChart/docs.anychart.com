@@ -32,6 +32,13 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
+    // create and configure a color scale.
+    var customColorScale = anychart.scales.linearColor();
+    customColorScale.colors(["#00ccff", "#ffcc00"]);
+
+    // set the color scale as the color scale of the chart
+    chart.colorScale(customColorScale);
+
     // set the chart title
     chart.title("Heat Map: Color Scale (Linear)");
 

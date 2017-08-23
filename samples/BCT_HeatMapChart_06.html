@@ -32,6 +32,18 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
+    // create and configure a color scale.
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+      {less: 19},
+      {from: 19, to: 39},
+      {greater: 39}
+    ]);
+    customColorScale.colors(["lightgray", "#00ccff", "#ffcc00", ]);
+
+    // set the color scale as the color scale of the chart
+    chart.colorScale(customColorScale);
+
     // set the chart title
     chart.title("Heat Map: Color Scale (Ordinal)");
 

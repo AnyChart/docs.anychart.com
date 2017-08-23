@@ -9,7 +9,7 @@
   * [Appearance](#appearance)
   * [Color Scale](#color_scale)
   * [Labels](#labels)
-  * [Tooltip](#tooltip)
+  * [Tooltips](#tooltips)
   * [Scroller](#scroller)
 
 ## Overview
