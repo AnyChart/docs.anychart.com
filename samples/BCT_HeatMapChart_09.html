@@ -7,113 +7,40 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="table">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-  function heatMap(mode){
-    // create heatMap
-    var chart = anychart.heatMap(data());
+    // create data
+    var data = [
+      {x: "2010", y: "A", heat: 15},
+      {x: "2011", y: "A", heat: 17},
+      {x: "2012", y: "A", heat: 21},
+      {x: "2013", y: "A", heat: 23},
+      {x: "2010", y: "B", heat: 34},
+      {x: "2011", y: "B", heat: 33},
+      {x: "2012", y: "B", heat: 32},
+      {x: "2013", y: "B", heat: 30},
+      {x: "2010", y: "C", heat: 43},
+      {x: "2011", y: "C", heat: 42},
+      {x: "2012", y: "C", heat: 40},
+      {x: "2013", y: "C", heat: 38},
+      {x: "2010", y: "D", heat: 8},
+      {x: "2011", y: "D", heat: 8},
+      {x: "2012", y: "D", heat: 7},
+      {x: "2013", y: "D", heat: 8}
+    ];
 
-    // set labels display mode
-    chart.labelsDisplayMode(mode);
-    chart.title(mode);
-    chart.xAxis(false);
-    chart.yAxis(false);
+    // create a chart and set the data
+    chart = anychart.heatMap(data);
 
-    // create color scale
-    var colorScale = anychart.scales.ordinalColor();
-    // set range of heat parameters and corresponding colors
-    colorScale.ranges([
-      {equal: 0, color: "#9ACD32"},
-      {equal: 1, color: "#FFFF00"},
-      {equal: 2, color: "#FF6347"},
-      {equal: 3, color: "#FF0000"}
-    ]);
-    // apply colorScale for colorizing heatMap chart
-    chart.colorScale(colorScale);
+    // set the chart title
+    chart.title("Heat Map: Labels (Display Mode)");
 
-    // adjust chart labels
-    var labels = chart.labels();
-    // display labels
-    labels.enabled(true);
-    // set minimum font size
-    labels.minFontSize(12);
-    // variable with list of labels
-    var namesList = ["Low", "Medium", "High", "Extreme"];
-    // format labels' content
-    labels.format(function(){
-      // get points heat
-      var value = this.heat;
-      // replace values with words
-      return namesList[value];
-    });
-    // disable tooltip
-    chart.tooltip(false);
-    // manage chart position
-    var padding = chart.padding();
-    padding.bottom(0);
-    padding.top(10);
+    // set the container id
+    chart.container("container");
 
-    return chart;
-  }
-
-  table = anychart.standalones.table();
-  table.contents([
-    [
-      "Labels Display Mode"
-    ],[
-      heatMap("clip")
-    ],[
-      heatMap("drop")
-    ],[
-      heatMap("alwaysShow")
-    ]
-  ]);
-
-  for (var i=1;i<4;i++){
-    var row = table.getRow(i);
-    row.minHeight(230);
-  }
-  var col = table.getCol(0);
-  col.width(245);
-  table.cellBorder(null);
-  var row0 = table.getRow(0);
-  row0.height(30);
-  row0.hAlign("center");
-
-  // set table container and initiate draw
-  table.container("container");
-  table.left((table.container().width()/2)-122);
-  table.draw();
-});
-function data(){
-  return anychart.data.set([
-    {x: "Rare", y: "Insignificant", heat: 0},
-    {x: "Rare", y: "Minor", heat: 0},
-    {x: "Rare", y: "Moderate", heat: 0},
-    {x: "Rare", y: "Major", heat: 0},
-    {x: "Rare", y: "Extreme", heat: 0},
-    {x: "Unlikely", y: "Insignificant", heat: 0},
-    {x: "Unlikely", y: "Minor", heat: 0},
-    {x: "Unlikely", y: "Moderate", heat: 0},
-    {x: "Unlikely", y: "Major", heat: 1},
-    {x: "Unlikely", y: "Extreme", heat: 1},
-    {x: "Possible", y: "Insignificant", heat: 0},
-    {x: "Possible", y: "Minor", heat: 0},
-    {x: "Possible", y: "Moderate", heat: 1},
-    {x: "Possible", y: "Major", heat: 1},
-    {x: "Possible", y: "Extreme", heat: 1},
-    {x: "Likely", y: "Insignificant", heat: 0},
-    {x: "Likely", y: "Minor", heat: 1},
-    {x: "Likely", y: "Moderate", heat: 1},
-    {x: "Likely", y: "Major", heat: 2},
-    {x: "Likely", y: "Extreme", heat: 2},
-    {x: "Almost\nCertain", y: "Insignificant", heat: 0},
-    {x: "Almost\nCertain", y: "Minor", heat: 1},
-    {x: "Almost\nCertain", y: "Moderate", heat: 1},
-    {x: "Almost\nCertain", y: "Major", heat: 2},
-    {x: "Almost\nCertain", y: "Extreme", heat: 3}
-  ]);
-}</script>
+    // initiate drawing the chart
+    chart.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

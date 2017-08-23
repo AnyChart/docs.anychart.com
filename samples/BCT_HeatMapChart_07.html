@@ -9,33 +9,37 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    {x: "Quarter 1", y: "Mobile", heat: 15},
-    {x: "Quarter 2", y: "Mobile", heat: 17},
-    {x: "Quarter 3", y: "Mobile", heat: 21},
-    {x: "Quarter 4", y: "Mobile", heat: 23},
-    {x: "Quarter 1", y: "WebMail", heat: 34},
-    {x: "Quarter 2", y: "WebMail", heat: 33},
-    {x: "Quarter 3", y: "WebMail", heat: 32},
-    {x: "Quarter 4", y: "WebMail", heat: 30},
-    {x: "Quarter 1", y: "Desktop", heat: 43},
-    {x: "Quarter 2", y: "Desktop", heat: 42},
-    {x: "Quarter 3", y: "Desktop", heat: 40},
-    {x: "Quarter 4", y: "Desktop", heat: 38},
-    {x: "Quarter 1", y: "Undetected", heat: 8},
-    {x: "Quarter 2", y: "Undetected", heat: 8},
-    {x: "Quarter 3", y: "Undetected", heat: 7},
-    {x: "Quarter 4", y: "Undetected", heat: 8}
-  ]);
+    // create data
+    var data = [
+      {x: "2010", y: "A", heat: 15},
+      {x: "2011", y: "A", heat: 17},
+      {x: "2012", y: "A", heat: 21},
+      {x: "2013", y: "A", heat: 23},
+      {x: "2010", y: "B", heat: 34},
+      {x: "2011", y: "B", heat: 33},
+      {x: "2012", y: "B", heat: 32},
+      {x: "2013", y: "B", heat: 30},
+      {x: "2010", y: "C", heat: 43},
+      {x: "2011", y: "C", heat: 42},
+      {x: "2012", y: "C", heat: 40},
+      {x: "2013", y: "C", heat: 38},
+      {x: "2010", y: "D", heat: 8},
+      {x: "2011", y: "D", heat: 8},
+      {x: "2012", y: "D", heat: 7},
+      {x: "2013", y: "D", heat: 8}
+    ];
 
-  // set chart type
-  chart = anychart.heatMap(data);
-  chart.title("Email Opens by Environment\nper Quarter 2011");
+    // create a chart and set the data
+    chart = anychart.heatMap(data);
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
+    // set the chart title
+    chart.title("Heat Map: Labels (Tokens)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
