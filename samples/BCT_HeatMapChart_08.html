@@ -39,11 +39,11 @@
     chart.labels().format(function(){
       var heat = (this.heat);
       if (heat < 20)
-        return "<span style='font-size:16'>Low</span><br/>" + heat + "%";
-        else if (heat < 40)
-        return "<span style='font-size:16''>Medium</span><br/>" + heat + "%";
-        else if (heat >= 40)
-        return "<span style='font-weight:bold;font-size:16'>High</span><br/>" + heat + "%";
+        return "Low</span><br/>" + heat + "%";
+      if (heat < 40)
+        return "Medium</span><br/>" + heat + "%";
+      if (heat >= 40)
+        return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
     });
 
     // set the chart title
