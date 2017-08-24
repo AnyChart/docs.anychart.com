@@ -402,7 +402,7 @@ You can also configure tooltips by using [formatting functions](../Common_Settin
 ```
 // configure tooltips
 chart.tooltip().format(function(){
-    percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
     return percentOfTotal.toFixed(1) + "%";
 });
 ```
