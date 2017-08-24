@@ -39,9 +39,9 @@
     chart.labels().format(function(){
       var heat = (this.heat);
       if (heat < 20)
-        return "Low</span><br/>" + heat + "%";
+        return "Low<br/>" + heat + "%";
       if (heat < 40)
-        return "Medium</span><br/>" + heat + "%";
+        return "Medium<br/>" + heat + "%";
       if (heat >= 40)
         return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
     });
