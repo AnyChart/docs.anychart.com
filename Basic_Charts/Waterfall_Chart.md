@@ -282,7 +282,7 @@ chart.labels().useHtml(true);
 // configure labels
 chart.labels().format(function(){
     if (this.isTotal)
-        return "<span style='color:#FF0000;font-weight:bold'>" + this.absolute + "</span>";
+        return "<span style='color:red;font-weight:bold'>" + this.absolute + "</span>";
     return this.absolute;
 });
 ```
