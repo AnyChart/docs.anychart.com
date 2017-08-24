@@ -35,11 +35,11 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
-    // set the chart position and title
+    // set the chart position, size, and title
     chart.top(35);
-    chart.title("Heat Map: Labels (Display Mode)");
     chart.width(320);
     chart.height(320);
+    chart.title("Heat Map: Labels (Display Mode)");
 
     // enable HTML for labels
     chart.labels().useHtml(true);
@@ -63,45 +63,45 @@
 
     // create a label for changing the display mode to "always show"
     createLabel("Always Show", 10, function() {
-        // change the display mode
-        chart.labelsDisplayMode("alwaysShow")
+      // change the display mode
+      chart.labelsDisplayMode("alwaysShow")
     });
 
     // create a label for changing the display mode to "clip"
     createLabel("Clip", 118, function() {
-        // change the display mode
-        chart.labelsDisplayMode("clip")
+      // change the display mode
+      chart.labelsDisplayMode("clip")
     });
 
     // create a label for changing the display mode to "drop"
     createLabel("Drop", 162, function() {
-        // change the display mode
-        chart.labelsDisplayMode("drop")
+      // change the display mode
+      chart.labelsDisplayMode("drop")
     });
 });
     
 // a helper function for creating buttons
 function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
+  var label = anychart.standalones.label();
+  label.background({fill: "#1976d2"});
+  label.text(text);
+  label.fontColor("#fff");
+  label.padding(5);
+  label.parentBounds(offset, 5, 130, 100);    
+  label.listen("click", action);
+  label.container(stage);
+  label.draw();
+  label.listen("mouseOver", function(){
+    label.background().fill("#1976d2 0.5");
+    document.body.style.cursor = "pointer";
     label.draw();
-    label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
-    });
-    label.listen("mouseOut", function(){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
-    });    
-    return label;
+  });
+  label.listen("mouseOut", function(){
+    label.background().fill("#1976d2");
+    document.body.style.cursor = "auto";
+    label.draw();
+  });    
+  return label;
 };</script>
 </head>
 <body>

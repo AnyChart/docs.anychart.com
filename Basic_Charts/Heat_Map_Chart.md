@@ -10,7 +10,7 @@
   * [Color Scale](#color_scale)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Scroller](#scroller)
+  * [Scrollers](#scrollers)
 
 ## Overview
 
@@ -134,7 +134,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * [**"Drop"** parameter hides the whole label, if it doesn't fit point's width]
 * [**"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.]
   
-{sample :width 690 :height 725}BCT\_HeatMapChart\_09{sample}
+{sample}BCT\_HeatMapChart\_09{sample}
 
 ### Tooltips
 
@@ -152,12 +152,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 {sample}BCT\_HeatMapChart\_11{sample}
 
-### Scroller
+### Scrollers
 
 * {api:anychart.charts.Cartesian#xScroller}xScroller(){api}
 * {api:anychart.charts.Cartesian#yScroller}yScroller(){api} 
 * {api:anychart.charts.Cartesian#xZoom}xZoom(){api}
-* {api:anychart.charts.Cartesian#yZoom}yZoom(){api}methods.
+* {api:anychart.charts.Cartesian#yZoom}yZoom(){api}.
 * [Scroller](../Common_Settings/Scroller)
 
 [y-scroller есть только у этого типа]
