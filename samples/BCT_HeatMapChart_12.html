@@ -22,6 +22,9 @@
   chart.yScroller().enabled(true);
   chart.yZoom().setToPointsCount(4);
 
+  // disable labels
+  chart.labels(false);
+
   // set the container id
   chart.container("container");
 
@@ -33,10 +36,13 @@
 // a function for creating data
 function createData(){
   var arr = [];
-  for (var i = 0; i < 18; i++){
-    arr[i] = new Array();
-    for (var k = 0; k < 12; k++){
-      arr[i][k] = i+k+1;
+  for (var x = 2000; x < 2018; x++){
+    for (var y = 1; y < 13; y++){
+      var obj = {};
+      obj.x = x;
+      obj.y = y;
+      obj.heat = Math.floor(Math.random() * (10000)); 
+      arr.push(obj);
     }
   }
   return arr;
