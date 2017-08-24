@@ -32,6 +32,17 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
+    // configure labels
+    chart.tooltip().format(function(){
+      var heat = (this.heat);
+      if (heat < 20)
+        return this.y + ": Low (" + heat + "%)";
+      if (heat < 40)
+        return this.y + ": Medium (" + heat + "%)";
+      if (heat >= 40)
+        return this.y + ": High (" + heat + "%)";
+    });
+
     // set the chart title
     chart.title("Heat Map: Tooltips (Formatting Functions)");
 
