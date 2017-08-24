@@ -17,10 +17,10 @@
   chart.title("Heat Map: Tooltips (Scrollers)");
   
   // enable and configure scrollers
-  xScroller.enabled(true);
-  xZoom.setToPointsCount(8);
-  yScroller.enabled(true);
-  yZoom.setToPointsCount(4);
+  chart.xScroller().enabled(true);
+  chart.xZoom().setToPointsCount(8);
+  chart.yScroller().enabled(true);
+  chart.yZoom().setToPointsCount(4);
 
   // set the container id
   chart.container("container");
@@ -32,9 +32,14 @@
 
 // a function for creating data
 function createData(){
-
-
-
+  var arr = [];
+  for (var i = 0; i < 18; i++){
+    arr[i] = new Array();
+    for (var k = 0; k < 12; k++){
+      arr[i][k] = i+k+1;
+    }
+  }
+  return arr;
 };</script>
 </head>
 <body>
