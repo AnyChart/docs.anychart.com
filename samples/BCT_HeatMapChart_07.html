@@ -32,6 +32,9 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
+    // configure labels
+    chart.labels().format("{%Heat}%")
+
     // set the chart title
     chart.title("Heat Map: Labels (Tokens)");
 

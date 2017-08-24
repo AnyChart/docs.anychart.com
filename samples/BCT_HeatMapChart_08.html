@@ -32,6 +32,20 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+
+    // configure labels
+    chart.labels().format(function(){
+      var heat = (this.heat);
+      if (heat < 20)
+        return "<span style='font-size:16'>Low</span><br/>" + heat + "%";
+        else if (heat < 40)
+        return "<span style='font-size:16''>Medium</span><br/>" + heat + "%";
+        else if (heat >= 40)
+        return "<span style='font-weight:bold;font-size:16'>High</span><br/>" + heat + "%";
+    });
+
     // set the chart title
     chart.title("Heat Map: Labels (Formatting Functions)");
 
