@@ -82,6 +82,16 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
+Data for a Heat Map chart can be passed to the chart constructor {api:anychart#heatMap}anychart.heatMap(){api} or to the {api:anychart.charts.HeatMap#data}data(){api} method.
+
+Use the following data fields:
+
+* **x** to set the names of columns
+* **y** to set the names of rows
+* **heat** to set values
+
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually, and in this case the "heat" field can be omitted. See the [Appearance](#appearance) section to learn more.
+
 ```
 // create data
 var data = [
@@ -111,10 +121,15 @@ chart = anychart.heatMap(data);
 
 ### Appearance
 
-* **fill**
-* **hoverFill**
-* **stroke** ({api:anychart.charts.HeatMap#stroke}.stroke(){api})
-* **hoverStroke**
+Here is a full list of methods used to configure visual settings that are available for the Heat Map chart:
+
+*  {api:anychart.charts.HeatMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.HeatMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
+*  {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+*  {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
+
+You can learn more from the (../Appearance_Settings)[#appearance settings] section.
+
+In the followoing sample, there is a Heat Map chart with some of the appearance settings configured:
 
 ```
 // configure visual settings
