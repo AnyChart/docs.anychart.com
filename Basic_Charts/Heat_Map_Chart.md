@@ -92,6 +92,8 @@ Use the following data fields:
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually, and in this case the "heat" field can be omitted. See the [Appearance](#appearance) section to learn more.
 
+This how working with data fields of the Heat Map chart looks like:
+
 ```
 // create data
 var data = [
