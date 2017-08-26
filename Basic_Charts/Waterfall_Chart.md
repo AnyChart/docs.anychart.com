@@ -102,7 +102,7 @@ Data for a Waterfall chart can be passed to the chart constructor {api:anychart#
 
 Use the following data fields:
 
-* **x**to set categories
+* **x** to set categories
 * **value** to set values
 * **isTotal** to show a total value
 
