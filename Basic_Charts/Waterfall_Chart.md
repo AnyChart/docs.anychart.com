@@ -217,7 +217,7 @@ Learn more: [Appearance Settings](../Appearance_Settings) section.
 In the followoing sample, there is a Waterfall chart with some of the appearance settings configured:
 
 ```
-// configure the visual settings
+// configure visual settings
 series.fill("#ff6666", 0.3);
 series.hatchFill("forwardDiagonal", "#ff6666", 0.5, 10);
 series.stroke("#ff6666");
