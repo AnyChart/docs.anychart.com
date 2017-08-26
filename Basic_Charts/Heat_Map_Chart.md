@@ -44,7 +44,7 @@ This article explains how to create a basic Area chart as well as configure sett
 
 ## Quick Start
 
-{api:anychart#heatMap}anychart.heatMap(){api}
+To create a Heat Map chart, use the {api:anychart#heatMap}anychart.heatMap(){api} chart constructor, like in the following sample:
 
 ```
 // create data
