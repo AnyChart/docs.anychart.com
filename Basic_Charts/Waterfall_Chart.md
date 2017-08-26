@@ -38,7 +38,9 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Column](Column_Chart), [Range Column](Range_Column_Chart), [Stacked](Stacked/Overview)</td></tr>
+<tr><td></td><td>[Column](Column_Chart)</td></tr>
+<tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
+<tr><td></td><td>[Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/" target="_blank">Chartopedia: Waterfall Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
