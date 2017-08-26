@@ -137,11 +137,40 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
-
-**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.
+[**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.]
 
 ```
+// create data
+var data = [
+  {x: "1", y: "A", fill: "#ffcc00"},
+  {x: "1", y: "B", fill: "#ffcc00"},
+  {x: "1", y: "C", fill: "#ff9933"},
+  {x: "1", y: "D", fill: "#ff9933"},
+  {x: "2", y: "A", fill: "#ffcc00"},
+  {x: "2", y: "B", fill: "#ff9933"},
+  {x: "2", y: "C", fill: "#ff9933"},
+  {x: "2", y: "D", fill: "#ff9933"},
+  {x: "3", y: "A", fill: "#ff9933"},
+  {x: "3", y: "B", fill: "#ff9933"},
+  {x: "3", y: "C", fill: "#ff6600"},
+  {x: "3", y: "D", fill: "#ff6600"},
+  {x: "4", y: "A", fill: "#ff9933"},
+  {x: "4", y: "B", fill: "#ff9933"},
+  {x: "4", y: "C", fill: "#ff6600"},
+  {
+    x: "4",
+    y: "D",
+    fill: "#ff0000",
+    hoverFill: "#ff0000",
+    selectFill: "#b30059",
+    stroke: {color: "#b30059", thickness: 4},
+    hoverStroke: {color: "white", thickness: 5},
+    selectStroke: {color: "white", thickness: 5}
+  }
+];
 
+// create a chart and set the data
+chart = anychart.heatMap(data);
 ```
 
 {sample}BCT\_HeatMapChart\_04{sample}
@@ -153,13 +182,28 @@ chart.selectStroke("gray", 2);
 * {api:anychart.charts.HeatMap#colorScale}colorScale(){api}
 
 ```
+// create and configure a color scale.
+var customColorScale = anychart.scales.linearColor();
+customColorScale.colors(["#00ccff", "#ffcc00"]);
 
+// set the color scale as the color scale of the chart
+chart.colorScale(customColorScale);
 ```
 
 {sample}BCT\_HeatMapChart\_05{sample}
 
 ```
+// create and configure a color scale.
+var customColorScale = anychart.scales.ordinalColor();
+customColorScale.ranges([
+  {less: 20},
+  {from: 20, to: 40},
+  {greater: 40}
+]);
+customColorScale.colors(["lightgray", "#00ccff", "#ffcc00", ]);
 
+// set the color scale as the color scale of the chart
+chart.colorScale(customColorScale);
 ```
 
 {sample}BCT\_HeatMapChart\_06{sample}
@@ -169,12 +213,26 @@ chart.selectStroke("gray", 2);
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ```
-
+// configure labels
+chart.labels().format("{%Heat}%");
 ```
+
 {sample}BCT\_HeatMapChart\_07{sample}
 
 ```
+// enable HTML for labels
+chart.labels().useHtml(true);
 
+// configure labels
+chart.labels().format(function(){
+  var heat = (this.heat);
+  if (heat < 20)
+    return "Low<br/>" + heat + "%";
+  if (heat < 40)
+    return "Medium<br/>" + heat + "%";
+  if (heat >= 40)
+    return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
+});
 ```
 {sample}BCT\_HeatMapChart\_08{sample}
 
@@ -186,6 +244,11 @@ chart.selectStroke("gray", 2);
 * [**"Clip"** parameter makes all labels be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.]
 * [**"Drop"** parameter hides the whole label, if it doesn't fit point's width]
 * [**"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.]
+
+```
+// change the display mode
+chart.labelsDisplayMode("clip");
+```
   
 {sample}BCT\_HeatMapChart\_09{sample}
 
@@ -194,13 +257,23 @@ chart.selectStroke("gray", 2);
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ```
-
+// configure tooltips
+chart.tooltip().format("{%Y}: {%Heat}%");
 ```
 
 {sample}BCT\_HeatMapChart\_10{sample}
 
 ```
-
+// configure tooltips
+chart.tooltip().format(function(){
+  var heat = (this.heat);
+  if (heat < 20)
+    return this.y + ": Low (" + heat + "%)";
+  if (heat < 40)
+    return this.y + ": Medium (" + heat + "%)";
+  if (heat >= 40)
+    return this.y + ": High (" + heat + "%)";
+});
 ```
 
 {sample}BCT\_HeatMapChart\_11{sample}
@@ -216,7 +289,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 [y-scroller есть только у этого типа]
 
 ```
-
+// enable and configure scrollers
+chart.xScroller().enabled(true);
+chart.xZoom().setToPointsCount(8);
+chart.yScroller().enabled(true);
+chart.yZoom().setToPointsCount(4);
 ```
 
 {sample}BCT\_HeatMapChart\_12{sample}

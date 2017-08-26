@@ -32,7 +32,7 @@
     // create a chart and set the data
     chart = anychart.heatMap(data);
 
-    // configure labels
+    // configure tooltips
     chart.tooltip().format(function(){
       var heat = (this.heat);
       if (heat < 20)
