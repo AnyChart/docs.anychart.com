@@ -20,34 +20,31 @@ This article explains how to create a basic Area chart as well as configure sett
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
-<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, value, heat](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Area](Vertical/Area_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart/Area_Chart)</td></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Overview)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Overview)</td></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
-<tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
+<tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
-<tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
-<tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
-<tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
-<tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Tree Map](Tree_Map_Chart)</td></tr>
+<tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/" target="_blank">Chartopedia: Heat Map Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
 ## Quick Start
 
-{api:anychart#heatMap}heatMap(){api}
+{api:anychart#heatMap}anychart.heatMap(){api}
 
 ```
 // create data
@@ -73,7 +70,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_HeatMapChart\_01{sample}
+{sample}BCT\_Heat\_Map\_Chart\_01{sample}
 
 ## General Settings
 
@@ -108,15 +105,9 @@ var data = [
 
 // create a chart and set the data
 chart = anychart.heatMap(data);
-
-// set the container id
-chart.container("container");
-
-// initiate drawing the chart
-chart.draw();
 ```
 
-{sample}BCT\_HeatMapChart\_02{sample}
+{sample}BCT\_Heat\_Map\_Chart\_02{sample}
 
 ### Appearance
 
@@ -135,7 +126,7 @@ chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
 
-{sample}BCT\_HeatMapChart\_03{sample}
+{sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
 [**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.]
 
@@ -173,7 +164,7 @@ var data = [
 chart = anychart.heatMap(data);
 ```
 
-{sample}BCT\_HeatMapChart\_04{sample}
+{sample}BCT\_Heat\_Map\_Chart\_04{sample}
 
 ### Color Scale
 
@@ -190,7 +181,7 @@ customColorScale.colors(["#00ccff", "#ffcc00"]);
 chart.colorScale(customColorScale);
 ```
 
-{sample}BCT\_HeatMapChart\_05{sample}
+{sample}BCT\_Heat\_Map\_Chart\_05{sample}
 
 ```
 // create and configure a color scale.
@@ -206,7 +197,7 @@ customColorScale.colors(["lightgray", "#00ccff", "#ffcc00", ]);
 chart.colorScale(customColorScale);
 ```
 
-{sample}BCT\_HeatMapChart\_06{sample}
+{sample}BCT\_Heat\_Map\_Chart\_06{sample}
 
 ### Labels
 
@@ -217,7 +208,7 @@ chart.colorScale(customColorScale);
 chart.labels().format("{%Heat}%");
 ```
 
-{sample}BCT\_HeatMapChart\_07{sample}
+{sample}BCT\_Heat\_Map\_Chart\_07{sample}
 
 ```
 // enable HTML for labels
@@ -234,7 +225,7 @@ chart.labels().format(function(){
     return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
 });
 ```
-{sample}BCT\_HeatMapChart\_08{sample}
+{sample}BCT\_Heat\_Map\_Chart\_08{sample}
 
 * {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api}
 * **"clip"**
@@ -250,7 +241,7 @@ chart.labels().format(function(){
 chart.labelsDisplayMode("clip");
 ```
   
-{sample}BCT\_HeatMapChart\_09{sample}
+{sample}BCT\_Heat\_Map\_Chart\_09{sample}
 
 ### Tooltips
 
@@ -261,7 +252,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 chart.tooltip().format("{%Y}: {%Heat}%");
 ```
 
-{sample}BCT\_HeatMapChart\_10{sample}
+{sample}BCT\_Heat\_Map\_Chart\_10{sample}
 
 ```
 // configure tooltips
@@ -276,7 +267,7 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample}BCT\_HeatMapChart\_11{sample}
+{sample}BCT\_Heat\_Map\_Chart\_11{sample}
 
 ### Scrollers
 
@@ -296,4 +287,4 @@ chart.yScroller().enabled(true);
 chart.yZoom().setToPointsCount(4);
 ```
 
-{sample}BCT\_HeatMapChart\_12{sample}
+{sample}BCT\_Heat\_Map\_Chart\_12{sample}
