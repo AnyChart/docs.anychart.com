@@ -50,7 +50,27 @@ This article explains how to create a basic Area chart as well as configure sett
 {api:anychart#heatMap}heatMap(){api}
 
 ```
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15},
+  {x: "2011", y: "A", heat: 17},
+  {x: "2012", y: "A", heat: 21},
+  {x: "2010", y: "B", heat: 34},
+  {x: "2011", y: "B", heat: 33},
+  {x: "2012", y: "B", heat: 32},
+  {x: "2010", y: "C", heat: 51},
+  {x: "2011", y: "C", heat: 50},
+  {x: "2012", y: "C", heat: 47}
+];
 
+// create a chart and set the data
+chart = anychart.heatMap(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_HeatMapChart\_01{sample}
@@ -66,7 +86,34 @@ Read the overview of general settings: [General Settings](General_Settings).
 ### Data
 
 ```
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15},
+  {x: "2011", y: "A", heat: 17},
+  {x: "2012", y: "A", heat: 21},
+  {x: "2013", y: "A", heat: 23},
+  {x: "2010", y: "B", heat: 34},
+  {x: "2011", y: "B", heat: 33},
+  {x: "2012", y: "B", heat: 32},
+  {x: "2013", y: "B", heat: 30},
+  {x: "2010", y: "C", heat: 43},
+  {x: "2011", y: "C", heat: 42},
+  {x: "2012", y: "C", heat: 40},
+  {x: "2013", y: "C", heat: 38},
+  {x: "2010", y: "D", heat: 8},
+  {x: "2011", y: "D", heat: 8},
+  {x: "2012", y: "D", heat: 7},
+  {x: "2013", y: "D", heat: 8}
+];
 
+// create a chart and set the data
+chart = anychart.heatMap(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_HeatMapChart\_02{sample}
@@ -79,7 +126,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 * **hoverStroke**
 
 ```
-
+// configure visual settings
+chart.hoverFill("gray", 0.4);
+chart.selectFill("gray", 0.6);
+chart.selectHatchFill("backwardDiagonal", "gray", 2, 20);
+chart.stroke("gray");
+chart.hoverStroke("gray");
+chart.selectStroke("gray", 2);
 ```
 
 {sample}BCT\_HeatMapChart\_03{sample}
