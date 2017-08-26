@@ -157,7 +157,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 * {api:anychart.charts.Cartesian#xScroller}xScroller(){api}
 * {api:anychart.charts.Cartesian#yScroller}yScroller(){api} 
 * {api:anychart.charts.Cartesian#xZoom}xZoom(){api}
-* {api:anychart.charts.Cartesian#yZoom}yZoom(){api}.
+* {api:anychart.charts.Cartesian#yZoom}yZoom(){api}
 * [Scroller](../Common_Settings/Scroller)
 
 [y-scroller есть только у этого типа]
