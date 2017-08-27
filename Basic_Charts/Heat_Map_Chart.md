@@ -129,7 +129,7 @@ Here is a full list of methods used to configure visual settings that are availa
 *  {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 *  {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
 
-You can learn more from the (../Appearance_Settings)[#appearance settings] section.
+You can learn more from the [appearance settings](../Appearance_Settings) section.
 
 In the followoing sample, there is a Heat Map chart with some of the appearance settings configured:
 
@@ -145,15 +145,9 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-You can also configure the appearance of each cell individually — add extra fields to your data:
-
-* **fill**, **hatchFill*, **stroke**
-* **hoverFill**, **hoverHatchFill**, **hoverStroke**
-* **selectFill**, **selectHatchFill**, **selectStroke**
+It is also possible to configure the appearance of each cell individually — add extra fields (corresponding with the methods mentioned above) to your data. In this case the "heat" field can be omitted.
 
 **Note**: With **stroke**, **hoverStroke**, and **selectStroke**, you can use only objects as values. In other cases, you can use either objects or strings.
-
-**Note**: In this case the "heat" field can be omitted.
 
 In the sample below, the visual settings of each item are configured individually, and heats are not set:
 
