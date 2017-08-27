@@ -90,9 +90,9 @@ Use the following data fields:
 * **y** to set the names of rows
 * **heat** to set values
 
-By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually, and in this case the "heat" field can be omitted. See the [Appearance](#appearance) section to learn more.
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the "heat" field can be omitted. See the [Appearance](#appearance) section to learn more.
 
-This how working with data fields of the Heat Map chart looks like:
+This is how working with data fields of the Heat Map chart looks like:
 
 ```
 // create data
@@ -145,7 +145,17 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-[**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.]
+You can also configure the appearance of each cell individually — add extra fields to your data:
+
+* **fill**, **hatchFill*, **stroke**
+* **hoverFill**, **hoverHatchFill**, **hoverStroke**
+* **selectFill**, **selectHatchFill**, **selectStroke**
+
+**Note**: With **stroke**, **hoverStroke**, and **selectStroke**, you can use only objects as values. In other cases, you can use either objects or strings.
+
+**Note**: In this case the "heat" field can be omitted.
+
+In the sample below, the visual settings of each item are configured individually, and heats are not set:
 
 ```
 // create data
