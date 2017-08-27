@@ -1,9 +1,21 @@
 {:index 2}
 # GraphicsJS Quick Start
 
+* [Getting Started](#getting_started)
+* [Include GraphicsJS](#include_graphicsjs)
+* [Create a Container](#create_a_container)
+* [Create a Drawing](#create_a_drawing)
+* [See the Result](#see_the_result)
+* [Full Source Code](#full_source_code)
+* [Further Steps](#further_steps)
+ * [Learn more](#learn_more)
+ * [Subscribe](#subscribe)
+
+## Getting Started
+
 Create an HTML file and give it the “index.html” name if you want to make a new web page, or open your HTML file where the drawing should be.
 
-## Include GraphicsJS into your web page
+## Include GraphicsJS
 
 Reference the JavaScript file in the `<head>` section of your web page.  
 You can use the link as shown below or download graphics.min.js from the [GraphicsJS CDN page](https://cdn.anychart.com/#graphics) and then put it into any folder of your site (you’ll have to use your own link in this case). 
@@ -14,11 +26,9 @@ You can use the link as shown below or download graphics.min.js from the [Graphi
 </head>
 ```
 
-## Create a container for the drawing
+## Create a Container
 
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes.
-
-Example:
 
 ```
 <body>
@@ -26,11 +36,9 @@ Example:
 </body>
 ```
 
-## Create a drawing
+## Create a Drawing
 
 Put the JavaScript tag `<script>` with the following code anywhere after the `<div>` section.
-
-Example:
 
 ```
 <script>
@@ -57,13 +65,13 @@ stage.path()
 </script>
 ```
   
-## The result
+## See the Result
 
 After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](https://playground.anychart.com/docs/latest/samples/GFX_quick_start-plain).
 
 {sample}GFX\_quick\_start{sample}
 
-###Full source code
+## Full Source Code
 
 Below you can see how your full web page code should look like:
 
@@ -102,7 +110,7 @@ Below you can see how your full web page code should look like:
 </html>
 ```
 
-Also, you can copy and paste this code to a file on your computer and run it in browser to see how it works.  
+Also, you can copy and paste this code to a file on your computer and run it in browser to see how it works  
 
 ## Further Steps
 

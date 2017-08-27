@@ -2,7 +2,7 @@
 # Getting Data from CSV
 
 * [Overview](#overview)
-* [CSV Parsing Settings](#csv_parsin_settings)
+* [CSV Parsing Settings](#csv_parsing_settings)
 * [Loading CSV files](#loading_csv_files)
 
 ## Overview

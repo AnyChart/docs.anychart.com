@@ -4,10 +4,14 @@
 * [Getting Started](#getting_started)
 * [Include AnyChart](#include_anychart)
 * [Create a Container](#create_a_container)
+* [Create the Chart](#create_the_chart)
 * [See the Chart](#see_the_chart)
 * [Full Source Code](#full_source_code)
+* [Further Steps](#further_steps)
+ * [Learn more](#learn_more)
+ * [Subscribe](#subscribe)
   
-## Getting started
+## Getting Started
 
 To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
 
@@ -27,7 +31,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 **Note**: first link in the snippet above reference AnyChart JS file and the second one reference CSS file that is required for proper work of [AnyChart UI](../Common_Settings/UI_Controls/AnyChart_UI) elements.
 
-### Create a Container
+## Create a Container
 
 Add a block-level HTML element into your page, set the element *id*, and its *width* and *height*.
 
@@ -37,7 +41,7 @@ Add a block-level HTML element into your page, set the element *id*, and its *wi
 </body>
 ```
 
-## Create a Chart
+## Create the Chart
 
 Put the JavaScript tag *script* with the following code anywhere in the *head* or *body* section. This code example uses JavaScript API to create a chart, but you also can use JSON, XML, CSV and many other formats, see [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more.
 

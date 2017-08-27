@@ -1,6 +1,6 @@
 {:index 3}
 
-Sharing
+# Sharing
 
 * [Overview](#overview)
 * [Facebook](#facebook)

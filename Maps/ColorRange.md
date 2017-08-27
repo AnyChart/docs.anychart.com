@@ -1,6 +1,5 @@
 {:index 12}
-ColorRange
-==========
+# ColorRange
 
 * [Overview](#overview)
 * [Enabling the ColorRange](#enabling_the_colorrange)
@@ -12,7 +11,6 @@ ColorRange
  * [Stroke](#stroke)
  * [Labels](#labels)
  * [Marker](#marker)
- 
  
 ## Overview
  
@@ -58,8 +56,7 @@ Here we took an Australia map for the example. You may notice that some regions 
 {sample}Maps\_ColorRange\_01{sample}
 
 Note that a ColorRange can only be connected to an only axis, while it's possible to make a map with several series.
- 
- 
+
 ## Enabling the ColorRange
 
 To enable the ColorRange, there's a simple method {api:anychart.charts.Map#colorRange}colorRange(){api}. 
@@ -78,7 +75,6 @@ Here is the second case with the linear ColorScale. The ColorRange here looks li
 {sample}Maps\_ColorRange\_03{sample}
 
 You may notice that there is a marker on the ColorRange that helps to find the value on the ColorRange.
- 
 
 ## Visual Settings
 
@@ -106,7 +102,7 @@ colorRange.length(100);
 
 {sample}Maps\_ColorRange\_05{sample}
 
-### Size and position
+### Size
 
 When you need to change the distance between the ColorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}padding(){api} method. 
 You may define and only argument or all four (if you want them different) for all sides. Look at the following sample:
@@ -142,7 +138,6 @@ colorRange.enabled(true).stroke('#BBB');
 ```
 
 {sample}Maps\_ColorRange\_08{sample}
-
 
 ### Labels
 
@@ -189,6 +184,3 @@ marker.size(7);
 ```
 
 {sample}Maps\_ColorRange\_12{sample}
-	
-	
-	

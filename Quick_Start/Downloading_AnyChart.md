@@ -9,7 +9,6 @@
  * [Bundle](#bundle)
  * [Themes](#themes)
 * [AnyChart CDN](#anychart_cdn)
-* [Production vs Development Builds](#production_vs_development_builds)
 * [Package Content](#package_content)
 * [Custom Build](#custom_build)
 * [Old Releases](#old_releases)
@@ -51,25 +50,23 @@ To download the latest version of AnyChart Bundle, which contains **all** produc
 * Development edition - [anychart-bundle.dev.min.js](https://static.anychart.com/cdn/js/latest/anychart-bundle.dev.min.js?download)
 
 ### Themes
+
 To download one of our predefined themes, choose the theme and click on the according link.
 * AnyChart 7 Default Theme - [defaultTheme.min.js](//cdn.anychart.com/themes/latest/defaultTheme.min.js)
 * AnyChart 6 Theme - [v6.min.js](//cdn.anychart.com/themes/latest/v6.min.js)
 
 ## AnyChart CDN
+
 <a href="//en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
   
 To use AnyChart CDN simply reference the [anychart-bundle.min.js file](//cdn.anychart.com/js/latest/anychart-bundle.min.js) using script tag:
+
 ```
 <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
 ```
 
-## Production vs Development Builds
-
-Development build contains debug functionality, which may be useful to debug your code in old browser version (IE6 e.g). Also it provides some log information in console, such as misconfiguration warnings. 
-
-Production Build is smaller and more robust, we recommended to use it to get the best performance and deliver the fastest possible user experience to your customers.
-
 ## Package Content
+
 Binaries package contains all resources you may need to work with AnyChart:  
 * _demos/_ - chart gallery adapted to work offline,
 * _js/_ - JavaScript binaries folder,
@@ -77,10 +74,10 @@ Binaries package contains all resources you may need to work with AnyChart:
   * _anychart.dev.min.js_ - development build,
 * _index.html_ - binaries package index.
   
-###Custom Build
+## Custom Build
 
 Coming soon.
 
-### Old Releases
+## Old Releases
 
-Previous versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a> or in your [AnyChart Customer Area](//anychart.com/customer_area/) if you have a subscription contract.
+Previous versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a> or in your [AnyChart Customer Area](https://www.anychart.com/customer_area/) if you have a subscription contract.

@@ -33,11 +33,11 @@ All the series in the sample below are added using {api:anychart.charts.Cartesia
 
 {sample}CRUD\_07{sample}
 
-### Identifying Series
+## Identifying Series
 
 When you add multiple series in such way you may need to obtain a link to some or all of of them for further adjustments. You can use either series id or series index to do this.
 
-#### Index
+### Index
 
 Each series has an index and this index can be used to obtain a link to a series object. The {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} method can be used to obtain a link to a series and it uses series index as a parameter. Index is a sequence number of the series which is set by AnyChart Engine automatically and it can not be changed.
 
@@ -83,7 +83,7 @@ Sample below demonstrates the code shown above. Each series is renamed and legen
 
 {sample}CRUD\_08{sample}
 
-#### ID
+### ID
 
 Another way to obtain a link to a series object is to use series id. The {api:anychart.core.cartesian.series.Base#id}id(){api} method sets a unique identifier for a series. When custom id is set, the link to a series object can be obtained using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} method with the series id as a parameter.
 
@@ -108,7 +108,7 @@ series = chart.getSeries("First Series");
 series.name("First Series");
 ```
 
-### Removing Series
+## Removing Series
 
 As far as any chart can be adjusted or added at any time, you can also remove any series. If you know the id of the series that should be removed, invoke {api:anychart.charts.Cartesian#removeSeries}removeSeries(){api} method and use series id as a parameter for this method. In the situation, when the series has no id it can be removed using {api:anychart.charts.Cartesian#removeSeriesAt}removeSeriesAt(){api} method. {api:anychart.charts.Cartesian#removeSeriesAt}removeSeriesAt(){api} method uses series index as a parameter and removes the series with the given index.
 

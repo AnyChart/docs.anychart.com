@@ -1,6 +1,5 @@
 {:index 5}
-Using Data Tree Model
-===============
+# Using Data Tree Model
 
 * [Overview](#overview)
 * [Usage](#usage)
@@ -11,7 +10,6 @@ Using Data Tree Model
  * [Delete](#delete)
  * [Search](#search)
  * [Traverse](#traverse)
-
 
 ## Overview
 

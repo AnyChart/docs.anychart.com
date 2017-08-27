@@ -21,7 +21,7 @@ For more information visit [https://en.wikipedia.org/wiki/JSON](https://en.wikip
 
 You can use JSON to define the chart configuration with functions and other complicated structures. Look at the sample below:
 
-{sample :width 680 :height 200}GANTT\_JXC\_01{sample}
+{sample :height 200}GANTT\_JXC\_01{sample}
 
 Explore the sample in playground to see the whole code in Javascript.
 
@@ -34,7 +34,7 @@ console.log(chart.toJson());
 
 The sample below is the same simple Project Gantt, built with the use of JSON. Explore it in playground to see the whole code.
 
-{sample :width 680 :height 200}GANTT\_JXC\_02{sample}
+{sample :height 200}GANTT\_JXC\_02{sample}
 
 And that's how the code looks like in JSON. 
 It is necessary to define the chart type, container (or as in the example) and data items to make the JSON config valid.
@@ -117,7 +117,6 @@ AnyChart JSON schema varies from version to version. For example, JSON Schema fo
 Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 
 The latest schema can always be found at [https://www.anychart.com/schemas/latest/json-schema.json](https://www.anychart.com/schemas/latest/json-schema.json)
 
-
 ## XML
 
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing,  XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere.  More information on XML can be found on [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)
@@ -127,54 +126,54 @@ You can use XML to define the chart configuration as a string. Let's take the sa
 ```
 anychart.onDocumentReady(function() {
 
-            var xml =
-                    '<anychart xmlns="https://www.anychart.com/schemas/7.5.0/xml-schema.xsd">'+
-                    '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
-                    '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
-                    '<tree_data>'+
-                    '<children>'+
-                    '<data_item>'+
-                    '<tree_data_item_data name="Activities" actual_start="1169683200000" actual_end="1173830400000"/>'+
-                    '<tree_data_item_meta nc="true" depth="0" index="0" auto_progress="0" auto_start="1169683200000" auto_end="1173830400000"/>'+
-                    '<children>'+
-                    '<data_item>'+
-                    '<tree_data_item_data name="Draft plan" actual_start="1169683200000" actual_end="1170460800000"/>'+
-                    '<tree_data_item_meta nc="true" depth="1" index="1"/>'+
-                    '</data_item>'+
-                    '<data_item>'+
-                    '<tree_data_item_data name="Board meeting" actual_start="1170547200000" actual_end="1170547200000"/>'+
-                    '<tree_data_item_meta nc="true" depth="1" index="2"/>'+
-                    '</data_item>'+
-                    '<data_item>'+
-                    '<tree_data_item_data name="Research option" actual_start="1170547200000" actual_end="1172275200000"/>'+
-                    '<tree_data_item_meta nc="true" depth="1" index="3"/>'+
-                    '</data_item>'+
-                    '<data_item>'+
-                    '<tree_data_item_data name="Final plan" actual_start="1172275200000" actual_end="1173830400000"/>'+
-                    '<tree_data_item_meta nc="true" depth="1" index="4"/>'+
-                    '</data_item>'+
-                    '</children>'+
-                    '</data_item>'+
-                    '</children>'+
-                    '<index>'+
-                    '<key><![CDATA[id]]></key>'+ 
-                    '</index>'+
-                    '</tree_data>'+
-                    '</controller>'+
-                    '</scale>'+
-                    '</timeline>'
-                    '</gantt>'+
-                    '</anychart>';
+var xml =
+        '<anychart xmlns="https://www.anychart.com/schemas/7.5.0/xml-schema.xsd">'+
+        '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
+        '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
+        '<tree_data>'+
+        '<children>'+
+        '<data_item>'+
+        '<tree_data_item_data name="Activities" actual_start="1169683200000" actual_end="1173830400000"/>'+
+        '<tree_data_item_meta nc="true" depth="0" index="0" auto_progress="0" auto_start="1169683200000" auto_end="1173830400000"/>'+
+        '<children>'+
+        '<data_item>'+
+        '<tree_data_item_data name="Draft plan" actual_start="1169683200000" actual_end="1170460800000"/>'+
+        '<tree_data_item_meta nc="true" depth="1" index="1"/>'+
+        '</data_item>'+
+        '<data_item>'+
+        '<tree_data_item_data name="Board meeting" actual_start="1170547200000" actual_end="1170547200000"/>'+
+        '<tree_data_item_meta nc="true" depth="1" index="2"/>'+
+        '</data_item>'+
+        '<data_item>'+
+        '<tree_data_item_data name="Research option" actual_start="1170547200000" actual_end="1172275200000"/>'+
+        '<tree_data_item_meta nc="true" depth="1" index="3"/>'+
+        '</data_item>'+
+        '<data_item>'+
+        '<tree_data_item_data name="Final plan" actual_start="1172275200000" actual_end="1173830400000"/>'+
+        '<tree_data_item_meta nc="true" depth="1" index="4"/>'+
+        '</data_item>'+
+        '</children>'+
+        '</data_item>'+
+        '</children>'+
+        '<index>'+
+        '<key><![CDATA[id]]></key>'+ 
+        '</index>'+
+        '</tree_data>'+
+        '</controller>'+
+        '</scale>'+
+        '</timeline>'
+        '</gantt>'+
+        '</anychart>';
 
-            var chart = anychart.fromXml(xml);
+var chart = anychart.fromXml(xml);
 
-            // set container id for the chart
-            chart.container('container');
+// set container id for the chart
+chart.container('container');
 
-            // initiate chart drawing
-            chart.draw();
+// initiate chart drawing
+chart.draw();
 
-        });
+});
 ```
 
 Note: in XML, you should set the whole code as a string object.
@@ -182,7 +181,6 @@ Note: in XML, you should set the whole code as a string object.
 The sample looks completely the same as the JSON-converted one.
 
 {sample :width 680 :height 200}GANTT\_JXC\_03{sample}
-
 
 ### XML Schema
 
@@ -194,48 +192,44 @@ All objects of this schema correspond to JavaScript methods and parameters of a 
 Latest version of XML schema can be found at [https://www.anychart.com/schemas/latest/xml-schema.xsd](https://www.anychart.com/schemas/latest/xml-schema.xsd)
 This file can also be used to validate your own XML structure. 
 
-
 ## CSV 
 
-CSV or Comma-Separated Values, is a common data exchange format that is widely supported by consumer, business, 
-and scientific applications. Among its most common uses is moving tabular data between programs that natively 
-operate on incompatible (often proprietary and/or undocumented) formats. This works despite lack of adherence 
-to RFC 4180 (or any other standard), because so many programs support variations on the CSV format for data import.
+CSV or Comma-Separated Values, is a common data exchange format that is widely supported by consumer, business, and scientific applications. Among its most common uses is moving tabular data between programs that natively operate on incompatible (often proprietary and/or undocumented) formats. This works despite lack of adherence to RFC 4180 (or any other standard), because so many programs support variations on the CSV format for data import.
 
 For example, a user may need to transfer information from a database program that stores data in a proprietary format, to a spreadsheet that uses a completely different format. The database program most likely can export its data as "CSV"; the exported CSV file can then be imported by the spreadsheet program.
+
 For more information visit [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/CSV)
 
 If we take the above sample as an example, that's how the part of code for the Gantt Project chart will look like: 
 
 ```
-		var csvString =
-            '0,0,Activities,1169683200000,1173830400000,,\n' +
-            '1,1,Draft plan,1169683200000,1170460800000,0,\n' +
-            '2,2,Board meeting,1170547200000,1170547200000,0,\n' +
-            '3,3,Research option,1170547200000,1172275200000,0,\n' +
-            '4,4,Final plan,1172275200000,1173830400000,0,\n'
- 
-            var mapping = {
-                id: 0,
-                index: 1,
-                name: 2,
-                actualStart: 3,
-                actualEnd: 4,
-                parent: 5
-            };  
- 
-            var csvSettings = {
-                rowsSeparator: ',',
-                columnsSeparator: ';',
-                ignoreFirstRow: false
-            };
- 
-            data = anychart.data.tree(csvString, mapping, csvSettings);
+var csvString =
+    '0,0,Activities,1169683200000,1173830400000,,\n' +
+    '1,1,Draft plan,1169683200000,1170460800000,0,\n' +
+    '2,2,Board meeting,1170547200000,1170547200000,0,\n' +
+    '3,3,Research option,1170547200000,1172275200000,0,\n' +
+    '4,4,Final plan,1172275200000,1173830400000,0,\n'
 
+var mapping = {
+    id: 0,
+    index: 1,
+    name: 2,
+    actualStart: 3,
+    actualEnd: 4,
+    parent: 5
+};  
+
+var csvSettings = {
+    rowsSeparator: ',',
+    columnsSeparator: ';',
+    ignoreFirstRow: false
+};
+
+data = anychart.data.tree(csvString, mapping, csvSettings);
 ```
 
 And there is the sample of the Project Gantt with CSV-formatted data:
 
-{sample :width 680 :height 200}GANTT\_JXC\_04{sample}
+{sample :height 200}GANTT\_JXC\_04{sample}
  
 As we can not define the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and other CSV parsing options.
