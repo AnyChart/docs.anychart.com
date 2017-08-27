@@ -33,14 +33,22 @@
     chart = anychart.heatMap(data);
 
     // create and configure a color scale.
-    var customColorScale = anychart.scales.linearColor();
-    customColorScale.colors(["#00ccff", "#ffcc00"]);
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+      {less: 20},
+      {from: 20, to: 40},
+      {greater: 40}
+    ]);
+    customColorScale.colors(["lightgray", "#00ccff", "#ffcc00"]);
 
     // set the color scale as the color scale of the chart
     chart.colorScale(customColorScale);
 
+    // enable legend
+    chart.legend(true);
+
     // set the chart title
-    chart.title("Heat Map: Color Scale (Linear)");
+    chart.title("Heat Map: Color Scale (Ordinal)");
 
     // set the container id
     chart.container("container");

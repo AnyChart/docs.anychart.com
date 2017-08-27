@@ -195,20 +195,15 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-* {api:anychart.charts.HeatMap#colorScale}colorScale(){api}
-* {api:anychart.scales.OrdinalColor}ordinalColor(){api}
-* {api:anychart.charts.HeatMap#colorScale}colorScale(){api}
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
 
-```
-// create and configure a color scale.
-var customColorScale = anychart.scales.linearColor();
-customColorScale.colors(["#00ccff", "#ffcc00"]);
+To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
-// set the color scale as the color scale of the chart
-chart.colorScale(customColorScale);
-```
+Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify the colors and ranges, the default settings of the ordinal color scale are used.
 
-{sample}BCT\_Heat\_Map\_Chart\_05{sample}
+Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
+
+This sample shows a Heat Map with an ordinal color scale:
 
 ```
 // create and configure a color scale.
@@ -218,7 +213,26 @@ customColorScale.ranges([
   {from: 20, to: 40},
   {greater: 40}
 ]);
-customColorScale.colors(["lightgray", "#00ccff", "#ffcc00", ]);
+customColorScale.colors(["lightgray", "#00ccff", "#ffcc00"]);
+
+// set the color scale as the color scale of the chart
+chart.colorScale(customColorScale);
+```
+
+{sample}BCT\_Heat\_Map\_Chart\_05{sample}
+
+To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
+
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify the colors, the default colors of the linear color scale are used.
+
+To set your scale as the color scale of the chart, use the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method.
+
+In the following sample, there is a Heat Map with a linear color scale:
+
+```
+// create and configure a color scale.
+var customColorScale = anychart.scales.linearColor();
+customColorScale.colors(["#00ccff", "#ffcc00"]);
 
 // set the color scale as the color scale of the chart
 chart.colorScale(customColorScale);
