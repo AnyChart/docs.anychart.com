@@ -129,7 +129,7 @@ Here is a full list of methods used to configure visual settings that are availa
 *  {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 *  {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
 
-You can learn more from the [appearance settings](../Appearance_Settings) section.
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
 In the followoing sample, there is a Heat Map chart with some of the appearance settings configured:
 
@@ -147,7 +147,7 @@ chart.selectStroke("gray", 2);
 
 It is also possible to configure the appearance of each cell individually — add extra fields (corresponding with the methods mentioned above) to your data. In this case the "heat" field can be omitted.
 
-**Note**: With **stroke**, **hoverStroke**, and **selectStroke**, you can use only objects as values. In other cases, you can use either objects or strings.
+**Note**: With "stroke", "hoverStroke", and "selectStroke", you can use only objects as values. In other cases, you can use either objects or strings.
 
 In the sample below, the visual settings of each item are configured individually, and heats are not set:
 
@@ -193,7 +193,7 @@ By default, the color scale of a Heat Map chart is ordinal, and cells are colore
 
 To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
-Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify the colors and ranges, the default settings of the ordinal color scale are used.
+Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
 Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 
@@ -321,7 +321,7 @@ chart.tooltip().format(function(){
 
 Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers – to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
 
-You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with the {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api} method, a certain amount of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
+You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api}, a certain number of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
 
 The sample below shows how to configure scrollers on a Heat Map chart. Initially, 4 rows and 8 columns are shown:
 
