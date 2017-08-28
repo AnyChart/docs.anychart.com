@@ -238,12 +238,18 @@ chart.colorScale(customColorScale);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
+
 ```
 // configure labels
 chart.labels().format("{%Heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
+
+Labels are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
 
 ```
 // enable HTML for labels
@@ -262,18 +268,19 @@ chart.labels().format(function(){
 ```
 {sample}BCT\_Heat\_Map\_Chart\_08{sample}
 
-* {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api}
-* **"clip"**
-* **"drop"**
-* **"alwaysShow"**
+You can also configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
 
-* [**"Clip"** parameter makes all labels be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.]
-* [**"Drop"** parameter hides the whole label, if it doesn't fit point's width]
-* [**"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.]
+* **"alwaysShow"** – labels are always shown
+* **"clip"** – labels are cropped to fit cells
+* **"drop"** – too long labels are hidden
+
+The default display mode is "drop": a label is not shown if it does not fit the width of a cell.
+
+The following sample shows how these modes work:
 
 ```
 // change the display mode
-chart.labelsDisplayMode("clip");
+chart.labelsDisplayMode("alwaysShow");
 ```
   
 {sample}BCT\_Heat\_Map\_Chart\_09{sample}
@@ -282,12 +289,18 @@ chart.labelsDisplayMode("clip");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+To change the text of tooltips, combine the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
+
 ```
 // configure tooltips
 chart.tooltip().format("{%Y}: {%Heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_10{sample}
+
+Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
 
 ```
 // configure tooltips
@@ -306,13 +319,11 @@ chart.tooltip().format(function(){
 
 ### Scrollers
 
-* {api:anychart.charts.Cartesian#xScroller}xScroller(){api}
-* {api:anychart.charts.Cartesian#yScroller}yScroller(){api} 
-* {api:anychart.charts.Cartesian#xZoom}xZoom(){api}
-* {api:anychart.charts.Cartesian#yZoom}yZoom(){api}
-* [Scroller](../Common_Settings/Scroller)
+Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers – to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
 
-[y-scroller есть только у этого типа]
+You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with the {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api} method, a certain amount of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
+
+The sample below shows how to configure scrollers on a Heat Map chart. Initially, 4 rows and 8 columns are shown:
 
 ```
 // enable and configure scrollers
