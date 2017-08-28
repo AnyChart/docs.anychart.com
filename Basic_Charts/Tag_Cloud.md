@@ -233,7 +233,7 @@ By default, elements are colored in the colors of the default [palette](../Appea
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify the colors, the default colors of the linear color scale are used.
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
