@@ -53,7 +53,7 @@
     ];
 
     // set data and data type settings
-    chart = anychart.treeMap(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+    chart = anychart.treeMap(data, "as-table");
     
     chart.headers().format("{%name}");
     chart.labels().format("{%name}");

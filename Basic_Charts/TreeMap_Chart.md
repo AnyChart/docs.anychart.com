@@ -1,5 +1,5 @@
 {:index 6.2}
-# TreeMap Chart
+# Treemap Chart
 
 * [Overview](#overview)
 * [Data](#data)

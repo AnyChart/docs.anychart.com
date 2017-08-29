@@ -31,7 +31,7 @@
     chart = anychart.treeMap(data);
 
     // disable drilldown
-    chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
+    chart.listen("drill-change", function(e) {
         return false;
     });
 
@@ -62,7 +62,7 @@
     ];
 
     // set data to chart
-    chart.data(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+    chart.data(data, "as-table");
     
     // display chart
     chart.container('container');
