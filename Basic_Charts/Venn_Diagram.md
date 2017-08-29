@@ -43,7 +43,7 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 
 ## Quick Start
 
-To create a Venn diagram, use the {api:anychart#venn}venn(){api} chart constructor, like in the following sample:
+To create a Venn diagram, use the {api:anychart#venn}anychart.venn(){api} chart constructor, like in the following sample:
 
 ```
 //create data
@@ -78,11 +78,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-When you create data for a Venn diagram, you should use these data fields for each element (circles or intersection areas):
+Data for a Venn diagram can be passed to the chart constructor {api:anychart#venn}anychart.venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
 
-* **x** to set a unique identifier
-* **value** to set the size
-* **name** to set the name
+When you create data, you should use these data fields (for both circles and intersection areas):
+
+* **x** to set unique identifiers
+* **value** to set sizes
+* **name** to set names
 
 The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**. Read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
@@ -102,6 +104,9 @@ var data = [
     	value: 200
     }
 ];
+
+// create a chart and set the data
+chart = anychart.venn(data);
 ```
 
 {sample}BCT\_Venn\_Diagram\_02{sample}

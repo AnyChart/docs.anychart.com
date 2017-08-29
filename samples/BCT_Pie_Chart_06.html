@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
+    // create a stage
+    stage = anychart.graphics.create("container");
+
     // create data
     var data = [
       {x: "A", value: 637166},
@@ -17,9 +20,6 @@
       {x: "D", value: 78662},
       {x: "E", value: 90000}
     ];
-
-    // create a stage
-    stage = anychart.graphics.create("container");
 
     // set the position and data for the first pie chart
     var pie1 = anychart.pie(data);

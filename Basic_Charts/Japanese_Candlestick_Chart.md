@@ -104,8 +104,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 You can set the stroke, fill, and hatch fill of falling and rising candlesticks. Use the following methods:
 
-* {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}
+* {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}
+* {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}
 
 To configure these settings on hover, use:
 
@@ -123,19 +123,19 @@ In the sample below, there are two Japanese Candlestick series with some of the 
 
 ```
 // configure the visual settings of the first series
-series1.risingStroke("#0066cc");
 series1.risingFill("#0066cc", 0.3);
-series1.hoverRisingStroke("#0066cc", 2);
+series1.risingStroke("#0066cc");
 series1.hoverRisingFill("#0066cc", 0.1);
-series1.selectRisingStroke("#0066cc", 4);
+series1.hoverRisingStroke("#0066cc", 2);
 series1.selectRisingFill("#0066cc", 0.5);
+series1.selectRisingStroke("#0066cc", 4);
 
-series1.fallingStroke("#00cc99", 1, "10 5", "round");
 series1.fallingFill("#00cc99", 0.3);
-series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
+series1.fallingStroke("#00cc99", 1, "10 5", "round");
 series1.hoverFallingFill("#00cc99", 0.1);
-series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
+series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
 series1.selectFallingFill("#00cc99", 0.5);
+series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
 // configure the visual settings of the second series
 series2.fallingHatchFill("forwardDiagonal");
