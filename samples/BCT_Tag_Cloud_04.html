@@ -9,36 +9,54 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-    // create data   
-    var data = [
-        {x: "learning", value: 80},
-        {x: "includes", value: 56},
-        {x: "lists", value: 44},
-        {x: "meaning", value: 40},
-        {x: "useful", value: 36},
-        {x: "different", value: 32},
-        {x: "grammar", value: 28},
-        {x: "teaching", value: 24},
-        {x: "example", value: 20},
-        {x: "thing", value: 12}
-    ];
+    // create data
+    var text =
+        "Tyger, tyger, burning bright " +
+        "In the forests of the night, " +
+        "What immortal hand or eye " +
+        "Could frame thy fearful symmetry? " +
+        "In what distant deeps or skies " +
+        "Burnt the fire of thine eyes? " +
+        "On what wings dare he aspire? " +
+        "What the hand dare seize the fire? " +
+        "And what shoulder and what art " +
+        "Could twist the sinews of thy heart? " +
+        "And, when thy heart began to beat, " +
+        "What dread hand and what dread feet? " +
+        "What the hammer? what the chain? " +
+        "In what furnace was thy brain? " +
+        "What the anvil? what dread grasp " +
+        "Dare its deadly terrors clasp? " +
+        "When the stars threw down their spears, " +
+        "And watered heaven with their tears, " +
+        "Did He smile His work to see? " +
+        "Did He who made the lamb make thee? " +
+        "Tyger, tyger, burning bright " +
+        "In the forests of the night, " +
+        "What immortal hand or eye " +
+        "Dare frame thy fearful symmetry? ";
 
-    // create a chart and set the data
-    chart = anychart.tagCloud(data);
+    // create a chart
+    chart = anychart.tagCloud();
 
-    // create and configure a color scale.
-    var customColorScale = anychart.scales.linearColor();
-    customColorScale.colors(["#ffcc00", "#00ccff"]);
+    // set the parsing mode and configure parsing settings
+    chart.data(text, {
+            mode: "byWord",
+            maxItems: 16,
+            ignoreItems: [
 
-    // set the color scale as the color scale of the chart
-    chart.colorScale(customColorScale);
-
-    // add a color range
-    chart.colorRange().enabled(true);
-    chart.colorRange().colorLineSize(10);
+                             "the",
+                             "and",
+                             "he",
+                             "or",
+                             "of",
+                             "in",
+                             "thy",
+            ]
+    });
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Color Scale (Linear)");
+    chart.title("Tag Cloud Chart: Data (Parsing Text)");
 
     // set the container id
     chart.container("container");

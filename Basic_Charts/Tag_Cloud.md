@@ -17,7 +17,7 @@
 
 ## Overview
 
-[A tag cloud (word cloud, or weighted list in visual design) is a visual representation of text data, typically used to depict keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag is shown with font size or color.]
+A tag cloud, also known as a word cloud or weighted list,  is a visual representation of text data. This chart is typically used to show keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag, which is often based on its frequency, is shown with font size or color.
 
 This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
 
@@ -46,21 +46,16 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 
 ## Quick Start
 
-To create a Tag Cloud, use {api:anychart#tagCloud}tagCloud(){api} method, like in the following sample:
+To create a Tag Cloud, use the {api:anychart#tagCloud}anychart.tagCloud(){api} chart constructor, like in the following sample:
 
 ```
-// create data
 var data = [
-    {"x": "learning", "value": 80},
-    {"x": "includes", "value": 56},
-    {"x": "lists", "value": 44},
-    {"x": "meaning", "value": 40},
-    {"x": "useful", "value": 36},
-    {"x": "different", "value": 32},
-    {"x": "grammar", "value": 28},
-    {"x": "teaching", "value": 24},
-    {"x": "example", "value": 20},
-    {"x": "thing", "value": 12},
+    {x: "learning", value: 80},
+    {x: "includes", value: 56},
+    {x: "lists", value: 44},
+    {x: "meaning", value: 40},
+    {x: "useful", value: 36},
+    {x: "different", value: 32}
 ];
 
 // create a chart and set the data
@@ -85,19 +80,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagCloud}tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
+Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagCloud}anychart.tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
 
 There are two ways to create data: you can add either a list of words or a text.
 
-When you add a list of words (or other elements), like in the sample from [Quick Start](#quick_start), you have to specify their frequencies. Use the following data fields:
+When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
 * **x** to set words
 * **value** to set frequencies
 * **category** to set categories
 
-The "category" field is optional: it can be used with the ordinal [color scale](#color_scale).
-
-This is how working with a list of words looks like:
+This is how working with "x" and "value" looks like:
 
 ```
 // create data
@@ -118,6 +111,31 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
+{sample}BCT\_Tag\_Cloud\_02{sample}
+
+The "category" field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
+
+```
+// create data   
+var data = [
+    {x: "learning", value: 80, category: "noun"},
+    {x: "includes", value: 56, category: "verb"},
+    {x: "lists", value: 44, category: "noun"},
+    {x: "meaning", value: 40, category: "noun"},
+    {x: "useful", value: 36, category: "adjective"},
+    {x: "different", value: 32, category: "adjective"},
+    {x: "grammar", value: 28, category: "noun"},
+    {x: "teaching", value: 24, category: "noun"},
+    {x: "example", value: 20, category: "noun"},
+    {x: "thing", value: 12, category: "noun"}
+];
+
+// create a chart and set the data
+chart = anychart.tagCloud(data);
+```
+
+{sample}BCT\_Tag\_Cloud\_03{sample}
+
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
 * **cutLength** cuts the length of words
@@ -133,7 +151,7 @@ The parsing mode, unlike other settings, must be always specified. There are two
 * **byWord** for parsing text into words
 * **byChar** for parsing text into characters
 
-If the only thing you want to set is the mode, you can use a shortcut from here: {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}.
+If the only thing you want to set is the mode, you can use a shortcut from {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}:
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");
@@ -166,7 +184,7 @@ chart.data(text, {
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_02{sample}
+{sample}BCT\_Tag\_Cloud\_04{sample}
 
 ### Appearance
 
@@ -207,7 +225,7 @@ chart.hovered({fill: "#003366 0.5"});
 chart.selected({fill: "#003366 0.7"});
 ```
 
-{sample}BCT\_Tag\_Cloud\_03{sample}
+{sample}BCT\_Tag\_Cloud\_05{sample}
 
 ### Color Scale
 
@@ -215,7 +233,7 @@ By default, elements are colored in the colors of the default [palette](../Appea
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify the colors, the default colors of the linear color scale are used.
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
@@ -238,11 +256,11 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Tag\_Cloud\_04{sample}
+{sample}BCT\_Tag\_Cloud\_06{sample}
 
 To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
-Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify the colors and ranges, the default settings of the ordinal color scale are used.
+Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
 Finally, call {api:anychart.charts.TagCloud#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to add a **color range**. With the ordinal color scale, the color range shows the ranges and their colors.
 
@@ -265,7 +283,7 @@ chart.colorScale(customColorScale);
 chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
-{sample}BCT\_Tag\_Cloud\_05{sample}
+{sample}BCT\_Tag\_Cloud\_07{sample}
 
 Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
 
@@ -296,7 +314,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Tag\_Cloud\_06{sample}
+{sample}BCT\_Tag\_Cloud\_08{sample}
 
 ### Angles
 
@@ -313,8 +331,7 @@ You can specify the set of angles to be used in your chart by passing an array o
 // configure angles
 chart.angles([0, 30, 90]);
 ```
-{sample}BCT\_Tag\_Cloud\_07{sample}
-
+{sample}BCT\_Tag\_Cloud\_09
 There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
 In this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
@@ -326,7 +343,7 @@ chart.toAngle(100);
 chart.anglesCount(5);
 ```
 
-{sample}BCT\_Tag\_Cloud\_08{sample}
+{sample}BCT\_Tag\_Cloud\_010{sample}
 
 ### Text Spacing
 
@@ -339,7 +356,7 @@ In the sample below the spacing is set to 15:
 chart.textSpacing(15);
 ```
 
-{sample}BCT\_Tag\_Cloud\_09{sample}
+{sample}BCT\_Tag\_Cloud\_011{sample}
 
 ### Mode
 
@@ -350,7 +367,7 @@ There are two modes of positioning elements on a Tag Cloud: **spiral** (default)
 chart.mode("rect");
 ```
 
-{sample}BCT\_Tag\_Cloud\_010{sample}
+{sample}BCT\_Tag\_Cloud\_012{sample}
 
 ### Scales
 
@@ -366,33 +383,37 @@ as the value scale of the chart */
 tagCloud2.scale(anychart.scales.log());
 ```
 
-{sample}BCT\_Tag\_Cloud\_011{sample}
+{sample}BCT\_Tag\_Cloud\_013{sample}
 
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
+In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
-{sample}BCT\_Tag\_Cloud\_012{sample}
+{sample}BCT\_Tag\_Cloud\_014{sample}
 
-You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
+You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 
 ```
 // configure tooltips
 chart.tooltip().format(function(){
-    percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
     return percentOfTotal.toFixed(1) + "%";
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_013{sample}
+{sample}BCT\_Tag\_Cloud\_015{sample}
 
 ### Interactivity
+
+You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../Common_Settings/Event_Listeners) to your chart and make sure that links open on an event of your choice.
+
+For example, here double-clicking on a word leads to its page opening in Wiktionary:
 
 ```
   //add an event listener
@@ -402,4 +423,4 @@ chart.tooltip().format(function(){
   });
 ```
 
-{sample}BCT\_Tag\_Cloud\_014{sample}
+{sample}BCT\_Tag\_Cloud\_016{sample}

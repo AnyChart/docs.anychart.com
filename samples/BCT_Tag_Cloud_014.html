@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
@@ -26,21 +26,17 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
+    // configure tooltips
+    chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
+
     // set the chart title
-    chart.title("Tag Cloud Chart: Interactivity\n(Opening a URL on a Double Click)");
+    chart.title("Tag Cloud Chart: Tooltips (Tokens)");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-
-    //add an event listener
-    chart.listen("pointDblClick", function(e){
-        var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
-        window.open(url, "_blank");
-    });
-
 });</script>
 </head>
 <body>

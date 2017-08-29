@@ -11,32 +11,26 @@
 
     // create data   
     var data = [
-        {x: "learning", value: 80},
-        {x: "includes", value: 56},
-        {x: "lists", value: 44},
-        {x: "meaning", value: 40},
-        {x: "useful", value: 36},
-        {x: "different", value: 32},
-        {x: "grammar", value: 28},
-        {x: "teaching", value: 24},
-        {x: "example", value: 20},
-        {x: "thing", value: 12}
+        {x: "learning", value: 80, category: "noun"},
+        {x: "includes", value: 56, category: "verb"},
+        {x: "lists", value: 44, category: "noun"},
+        {x: "meaning", value: 40, category: "noun"},
+        {x: "useful", value: 36, category: "adjective"},
+        {x: "different", value: 32, category: "adjective"},
+        {x: "grammar", value: 28, category: "noun"},
+        {x: "teaching", value: 24, category: "noun"},
+        {x: "example", value: 20, category: "noun"},
+        {x: "thing", value: 12, category: "noun"}
     ];
 
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
+    // enable the legend
+    chart.legend(true);
+
     // set the chart title
-    chart.title("Tag Cloud Chart: Appearance");
-
-    // configure visual settings in the normal state
-    chart.normal({fill: "#009999 0.7", fontWeight: 600});
-
-    // configure visual settings in the hover state
-    chart.hovered({fill: "#003366 0.5"});
-
-    // configure visual settings in the selected state
-    chart.selected({fill: "#003366 0.7"});
+    chart.title("Tag Cloud Chart: Data (Category)");
 
     // set the container id
     chart.container("container");

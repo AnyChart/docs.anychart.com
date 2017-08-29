@@ -26,13 +26,14 @@
     // create a chart and set the data
     chart = anychart.tagCloud(data);
 
-    // configure angles
-    chart.fromAngle(10);
-    chart.toAngle(100);
-    chart.anglesCount(5);
+    // configure tooltips
+    chart.tooltip().format(function(){
+        var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+        return percentOfTotal.toFixed(1) + "%";
+    });
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Angles");
+    chart.title("Tag Cloud Chart: Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");
