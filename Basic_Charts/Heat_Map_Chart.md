@@ -35,7 +35,7 @@ This article explains how to create a basic Heat Map chart in AnyChart as well a
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Tree Map](Tree_Map_Chart)</td></tr>
+<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/" target="_blank">Chartopedia: Heat Map Chart</a></td></tr>
