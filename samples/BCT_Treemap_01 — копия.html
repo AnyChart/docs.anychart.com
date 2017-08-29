@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+// create data
+var data = anychart.data.tree([
+{name: 'Eurasia',
+    children: [
+        {name: "Asia", children: [
+            {name: "Eastern Asia", children: [
+                {name:"Mongolia", value: 1564116},
+                {name: "China", value: 1564116},
+                {name: "Southern Korea", value: 1564116},
+                {name: "Northern Korea", value: 120540},
+                {name: "Japan", value: 1564116, children: [
+                    {name: "Hokkaido", value: 83400},
+                    {name: "Kyushu", value: 35640},
+                    {name: "Honshu", value: 230500},
+                    {name: "Shikoku", value: 1200}
+                ]}
+            ]},
+        ]},
+        {name: "Europe", children: [
+            {name: "Northern Europe", children: [
+                {name: "Finland", value: 338424},
+                {name: "Great Britain", value: 209331},
+                {name: "Ireland", value: 84421},
+                {name: "Scandinavia", value: 928057, children: [
+                    {name: "Sweden", value: 450295},
+                    {name: "Norway", value: 385178},
+                    {name: "Denmark", value: 42923.53}
+                ]},                        
+            ]}
+        ]}
+     ]} 
+], "as-tree");
+
+// create a chart and set the data
+chart = anychart.treeMap(data);
+
+// set the chart title
+chart.title("Treemap: Quick Start");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
