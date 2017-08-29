@@ -331,7 +331,9 @@ You can specify the set of angles to be used in your chart by passing an array o
 // configure angles
 chart.angles([0, 30, 90]);
 ```
-{sample}BCT\_Tag\_Cloud\_09
+
+{sample}BCT\_Tag\_Cloud\_09{sample}
+
 There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
 In this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
@@ -343,7 +345,7 @@ chart.toAngle(100);
 chart.anglesCount(5);
 ```
 
-{sample}BCT\_Tag\_Cloud\_010{sample}
+{sample}BCT\_Tag\_Cloud\_10{sample}
 
 ### Text Spacing
 
@@ -356,7 +358,7 @@ In the sample below the spacing is set to 15:
 chart.textSpacing(15);
 ```
 
-{sample}BCT\_Tag\_Cloud\_011{sample}
+{sample}BCT\_Tag\_Cloud\_11{sample}
 
 ### Mode
 
@@ -367,7 +369,7 @@ There are two modes of positioning elements on a Tag Cloud: **spiral** (default)
 chart.mode("rect");
 ```
 
-{sample}BCT\_Tag\_Cloud\_012{sample}
+{sample}BCT\_Tag\_Cloud\_12{sample}
 
 ### Scales
 
@@ -383,7 +385,7 @@ as the value scale of the chart */
 tagCloud2.scale(anychart.scales.log());
 ```
 
-{sample}BCT\_Tag\_Cloud\_013{sample}
+{sample}BCT\_Tag\_Cloud\_13{sample}
 
 ### Tooltips
 
@@ -395,7 +397,7 @@ In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Comm
 // configure tooltips
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
-{sample}BCT\_Tag\_Cloud\_014{sample}
+{sample}BCT\_Tag\_Cloud\_14{sample}
 
 You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 
@@ -407,20 +409,20 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_015{sample}
+{sample}BCT\_Tag\_Cloud\_15{sample}
 
 ### Interactivity
 
 You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../Common_Settings/Event_Listeners) to your chart and make sure that links open on an event of your choice.
 
-For example, here double-clicking on a word leads to its page opening in Wiktionary:
+For example, here clicking on a word leads to its page opening in Wiktionary:
 
 ```
   //add an event listener
-  chart.listen("pointDblClick", function(e){
+  chart.listen("pointClick", function(e){
       var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
       window.open(url, "_blank");
   });
 ```
 
-{sample}BCT\_Tag\_Cloud\_016{sample}
+{sample}BCT\_Tag\_Cloud\_16{sample}
