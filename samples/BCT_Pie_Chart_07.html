@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
-    // create a stage
-    stage = anychart.graphics.create("container");
-
     // create data
     var data = [
       {x: "A", value: 637166},
@@ -21,39 +18,46 @@
       {x: "E", value: 90000}
     ];
 
-    // set the position and data for the first pie chart
+    // create a stage
+    stage = anychart.graphics.create("container");
+
+    // create and configure  the first pie chart
     var pie1 = anychart.pie(data);
     pie1.title("No Sorting");
     pie1.bounds(0, 0, "33.3%", "100%");
-    formatPie(pie1);
+    // disable the legend
+    pie1.legend(false);
+    // set the chart container
+    pie1.container(stage);
+    // initiate drawing the chart
+    pie1.draw();
 
-    // set the position and data for the second pie chart
+    // create and configure second pie chart
     var pie2 = anychart.pie(data);
     pie2.title("Ascending Order");
     pie2.bounds("33.3%", 0, "33.3%", "100%");
-    formatPie(pie2);
     // set the sorting mode
     pie2.sort("asc");
+    // disable the legend
+    pie2.legend(false);
+    // set the chart container
+    pie2.container(stage);
+    // initiate drawing the chart
+    pie2.draw();
 
-    // set the position and data for the third pie
+    // create and configure the third pie chart
     var pie3 = anychart.pie(data);
     pie3.title("Descending Order");
     pie3.bounds("66.6%", 0, "33.3%", "100%");
-    formatPie(pie3);
-      // set the sorting mode
+    // set the sorting mode
     pie3.sort("desc");
-});
-    
-/* a helper function for configuring
-and drawing pie charts*/
-function formatPie(pie){
-  // disable the legend
-  pie.legend(false);
-  // set the chart container
-  pie.container(stage);
-  // initiate drawing the chart
-  pie.draw();
-};</script>
+    // disable the legend
+    pie3.legend(false);
+    // set the chart container
+    pie3.container(stage);
+    // initiate drawing the chart
+    pie3.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

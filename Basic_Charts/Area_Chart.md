@@ -32,8 +32,8 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart/Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Overview)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Overview)</td></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>

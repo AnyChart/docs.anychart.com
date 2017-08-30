@@ -196,9 +196,9 @@ legend.itemsSourceMode("categories");
 
 ## Axes and Scales
 
-In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chart types allow you to add extra scales and axes and bind different series to different scales.
+In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids/Scales). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chart types allow you to add extra scales and axes and bind different series to different scales.
 
-Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
+Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids).
 
 In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 

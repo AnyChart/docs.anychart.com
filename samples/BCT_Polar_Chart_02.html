@@ -11,35 +11,40 @@
 
     // create data
     var data = [
-      {x: "A", value: 637166},
-      {x: "B", value: 721630},
-      {x: "C", value: 148662},
-      {x: "D", value: 78662},
-      {x: "E", value: 90000}
+      {x: 0, value: 500},
+      {x: 180, value: 200}
     ];
-
+    
     // create a stage
     stage = anychart.graphics.create("container");
 
-    // create and configure the first pie chart
-    var pie1 = anychart.pie(data);
-    pie1.title("Start Angle: Default (0°)");
-    pie1.bounds(0, 0, "50%", "100%");
+    // set the position and data for the first chart
+    var polar1 = anychart.polar();
+    polar1.title("Start Angle: Default (0°)");
+    polar1.bounds(0, 0, "50%", "100%");
+    // create a line series
+    polar1.line(data);
+    // set the maximum value of the X-scale
+    polar1.xScale().maximum(360);
     // set the chart container
-    pie1.container(stage);
+    polar1.container(stage);
     // initiate drawing the chart
-    pie1.draw();   
+    polar1.draw();  
 
-    // create and configure the second pie chart
-    var pie2 = anychart.pie(data);
-    pie2.title("Start Angle: 90°");
-    pie2.bounds("50%", 0, "50%", "100%");
+    // set the position and data for the second chart
+    var polar2 = anychart.polar();
+    polar2.title("Start Angle: 90°");
+    polar2.bounds("50%", 0, "50%", "100%");
+    // create a line series
+    polar2.line(data);
     // set the start angle
-    pie2.startAngle(90);
+    polar2.startAngle(90);
+    // set the maximum value of the X-scale
+    polar2.xScale().maximum(360);
     // set the chart container
-    pie2.container(stage);
+    polar2.container(stage);
     // initiate drawing the chart
-    pie2.draw();     
+    polar2.draw();    
 });</script>
 </head>
 <body>

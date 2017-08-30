@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create a data set
+  var data = anychart.data.set([
+    ["A", 90, 32, 58],
+    ["B", 65, 73, 42],
+    ["C", 73, 23, 95],
+    ["D", 88, 82, 41],
+    ["E", 75, 30, 71],
+    ["F", 100, 100, 80]
+  ]);
+
+  // map the data
+  var seriesData_1 = data.mapAs({x: [0], value: [1]});
+  var seriesData_2 = data.mapAs({x: [0], value: [2]});
+  var seriesData_3 = data.mapAs({x: [0], value: [3]});
+
+  // create a chart
+  chart = anychart.radar();
+
+  // enable the percent stacking mode
+  chart.yScale().stackMode("percent");
+
+  // create area series, set the data
+  var series1 = chart.area(seriesData_1);
+  var series2 = chart.area(seriesData_2);
+  var series3 = chart.area(seriesData_3);
+
+  // configure tooltips
+  chart.tooltip().format("{%yPercentOfCategory}{decimalCount:2}%");
+
+  // configure labels on the Y-axis
+  chart.yAxis().labels().format("{%Value}%");
+
+  // set the chart title
+  chart.title("Radar Percent Stacked Area Chart");
+
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

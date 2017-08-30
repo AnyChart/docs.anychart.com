@@ -31,7 +31,7 @@ This article explains how to create a basic Range Column chart as well as config
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Polar</td><td>[Polar Range Column](Polar_Plot/Range_Column_Chart)</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Range Column](../Stock_Charts/Series/Range_Column)</td></tr>
