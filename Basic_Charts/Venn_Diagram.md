@@ -80,7 +80,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Data for a Venn diagram can be passed to the chart constructor {api:anychart#venn}anychart.venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
 
-When you create data, you should use these data fields (for both circles and intersection areas):
+When you create data, you should use these data fields for both circles and intersection areas:
 
 * **x** to set unique identifiers
 * **value** to set sizes
