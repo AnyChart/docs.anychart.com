@@ -11,35 +11,19 @@
 
 // create data
 var data = anychart.data.tree([
-{name: 'Eurasia',
-    children: [
-        {name: "Asia", children: [
-            {name: "Eastern Asia", children: [
-                {name:"Mongolia", value: 1564116},
-                {name: "China", value: 1564116},
-                {name: "Southern Korea", value: 1564116},
-                {name: "Northern Korea", value: 120540},
-                {name: "Japan", value: 1564116, children: [
-                    {name: "Hokkaido", value: 83400},
-                    {name: "Kyushu", value: 35640},
-                    {name: "Honshu", value: 230500},
-                    {name: "Shikoku", value: 1200}
-                ]}
-            ]},
-        ]},
-        {name: "Europe", children: [
-            {name: "Northern Europe", children: [
-                {name: "Finland", value: 338424},
-                {name: "Great Britain", value: 209331},
-                {name: "Ireland", value: 84421},
-                {name: "Scandinavia", value: 928057, children: [
-                    {name: "Sweden", value: 450295},
-                    {name: "Norway", value: 385178},
-                    {name: "Denmark", value: 42923.53}
-                ]},                        
-            ]}
-        ]}
-     ]} 
+{name: 'European Union – Top 10 Most Populated Countries',
+  children: [
+    {name:"Germany",         value: 82900000},
+    {name: "France",         value: 66991000},
+    {name: "United Kingdom", value: 65110000},
+    {name: "Italy",          value: 60795612},
+    {name: "Spain",          value: 46468102},
+    {name: "Poland",         value: 38567614},
+    {name: "Romania",        value: 19861408}, 
+    {name: "Netherlands",    value: 17100475},
+    {name: "Belgium",        value: 12258434},      
+    {name: "Greece",         value: 10812467}
+  ]} 
 ], "as-tree");
 
 // create a chart and set the data
