@@ -2,275 +2,231 @@
 # Overview
 
 * [Overview](#overview)
-* [Chart](#chart)
-* [Configuration](#configuration)
- * [Start angle](#start_angle)
- * [Plot background](#plot_background)
-* [Axes](#axes)
- * [Stroke](#stroke)
- * [Inversion](#inversion)
- * [Logarithmic Scale](#logarithmic_scale)
- * [Stacked Mode](#stacked_mode)
- * [Labels Settings](#labels_settings)
-* [Visualization](#visualization)
- * [Grid](#grid)
- * [Labels and Tooltips](#labels_and_tooltips)
-* [Series Types](#series_types)
+* [Quick Start](#quick_start)
+* [Start Angle](#start_angle)
+* [Axes and Scales](#axes_and_scales)
+* [Grids](#grids)
+* [Stacked Radar Charts](#stacked_radar_charts)
+* [Supported Types](#supported_types)
 
 ## Overview
 
 A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
-The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon or kiviat diagram.
+The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
 
-## Chart
+This article explains how to create and configure radar charts. To find out which series can be drawn on a radar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
-AnyChart JavaScript charting library allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}radar(){api} method to display Radar chart:
+## Quick Start
+
+To create a radar chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor.
+
+AnyChart allows you to display three types of series on radar charts: Line, Area and Marker. If you just pass your data to the chart constructor, a Line series is created. You can also set the type of a series explicitly by calling one of the following methods:
+
+* {api:anychart.charts.Cartesian#line}line(){api}
+* {api:anychart.charts.Cartesian#area}area(){api}
+* {api:anychart.charts.Cartesian#marker}marker(){api}
+
+In the sample below, there is a radar chart with two series, Line and Area:
 
 ```
-// chart type
+// create data for the first series
+var data_1 = [
+  {x: "A", value: 1222},
+  {x: "B", value: 2431},
+  {x: "C", value: 3624},
+  {x: "D", value: 5243},
+  {x: "E", value: 6813},
+  {x: "F", value: 5321},
+  {x: "G", value: 1567},
+  {x: "H", value: 3876}
+];
+
+// create data for the second series
+var data_2 = [
+  {x: "A", value: 722},
+  {x: "B", value: 1431},
+  {x: "C", value: 1624},
+  {x: "D", value: 1243},
+  {x: "E", value: 1813},
+  {x: "F", value: 1321},
+  {x: "G", value: 567},
+  {x: "H", value: 1876}
+];
+
+// create a chart
 chart = anychart.radar();
 
-// series type and data setting
-chart.line([
-  {x: "Administration", value: 22},
-  {x: "Sales",          value: 34},
-  {x: "Marketing",      value: 16},
-  {x: "Research",       value: 12},
-  {x: "Support",        value: 38},
-  {x: "Development",    value: 47}
-]);
+// create the first series (line) and set the data
+var series1 = chart.line(data_1);
+
+// create the second series (area) and set the data
+var series2 = chart.area(data_2);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-As you can see each point is represented with **x** and **value** fields.
+{sample}BCT\_Radar\_Chart\_01{sample}
 
-Here is a basic Radar sample:
+## Start Angle
 
-{sample}BCT\_RadarChart\_01{sample}
+You can set the start angle of a radar chart by using the {api:anychart.charts.Radar#startAngle}startAngle(){api} method. The angle is 0° by default.
 
-## Configuration
-
-Radar chart has several distinctive configuration options, which are presented in section "Chart rotation and background settings".
-
-### Start angle
-
-By default radar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Radar#startAngle}startAngle(){api} parameter:
+In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
 ```
-chart.startAngle(90);
+// set the start angle
+radar2.startAngle(90);
 ```
 
-Here is the radar chart sample with starting angle shifted to 90°:
+{sample}BCT\_Radar\_Chart\_02{sample}
 
-{sample}BCT\_RadarChart\_02{sample}
+## Axes and Scales
 
-### Plot background
+In this section you can find some settings of axes and scales that are often used with radar charts. To learn about all the available settings, see [Axes and Grids](../../Axes_and_Grids).
 
-You can change radar background using {api:anychart.core.ui.Background}background(){api} method, learn more about this method at [Background settings tutorial](../../Appearance_Settings/Background).
-
-```
-var background = chart.background();
-// enables background
-background.enabled(true)
-background.fill({
-  // set gradient colors
-  keys: [".1 white", ".7 gray", ".9 darkgray"],
-  // set angle of colors drawing
-  angle: -130
-});
-```
-
-Here is a Radar chart with tuned background:
-
-{sample}BCT\_RadarChart\_03{sample}
-
-## Axes
-
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../../Axes_and_Grids/Axis_Basics) tutorial.
-
-### Stroke
-
-Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}stroke(){api} parameter.
+If you want to configure the stroke of the X and Y axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
-// set chart type
-var chart = anychart.radarChart();
+// configure the appearance of the Y-Axis
+chart.yAxis().stroke({
+  color: "gray",
+  thickness: 2,
+  dash: "10 5"
+});  
 
-// adjust y axis visualization
-var yAxis = chart.yAxis();
-// set stroke thickness equal to 2px and set custom stroke color
-yAxis.stroke("2 #9900FF");
+// configure the appearance of the X-Axis
+chart.xAxis().stroke({
+  color: "#00cc99",
+  thickness: 4,
+});    
 ```
 
-More information about possible stroke settings can be found in [Strokes and Lines tutorial](../../Graphics/Stroke_Settings).
-
-Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
-
-{sample}BCT\_RadarChart\_04{sample}
-
-### Inversion
-
-AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}inverted(){api} method:
+To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
-var yScale = chart.yScale();
-yScale.inverted(true);
+// invert the Y-scale
+chart.yScale().inverted(true);
 ```
-Look at the demonstration of Y-Axis inversion in the sample below:
 
-{sample}BCT\_RadarChart\_05{sample}
-
-### Logarithmic Scale
-
-You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scale(){api} method. More information about scale types can be found in [Scale tutorial](../../Axes_and_Grids/Scales#types)
+You might also want to create a [logarithmic scale](../../Axes_and_Grids/Scales#logarithmic). Use {api:anychart.scales#log}log(){api} for creating it and {api:anychart.charts.Radar#yScale}yScale(){api} for setting it as the Y-scale of your chart:
 
 ```
-// create logarithmic scale
+// create a logarithmic scale
 var logScale = anychart.scales.log();
-// set minimum and maximum value for the scale
+
+// set the minimum and maximum values of the scale
 logScale.minimum(10);
 logScale.maximum(10000); 
-// set logarithmic scale as y scale for the chart
+
+// set the logarithmic scale as the Y-scale
 chart.yScale(logScale); 
 ```
 
-Here is the demonstration of Logarithmic Y-Axis on a simple radar with area series:
+The following sample shows how to configure the appearance of the X and Y axes and invert the Y-scale:
 
-{sample}BCT\_RadarChart\_06{sample}
+{sample}BCT\_Radar\_Chart\_03{sample}
 
-### Stacked Mode
+## Grids
 
-Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which share one of the values. Use {api:anychart.enums.ScaleStackMode}stackMode(){api} parameter to enable stacked mode.
+This section explains how to configure the appearance and layout of grids on radar charts. You can also read about grids here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
-```
-// set chart type
-var chart = anychart.radarChart();
+To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
 
-// set stacked mod
-var yScale = chart.yScale();
-yScale.stackMode("value");
-```
+You can configure the appearance of any grid — here is the list of available methods:
 
-{sample}BCT\_RadarChart\_07{sample}
+* {api:anychart.core.grids.Radar#stroke}stroke(){api} sets the stroke
+* {api:anychart.core.grids.Radar#evenFill}evenFill(){api} sets the fill of even-numbered cells
+* {api:anychart.core.grids.Radar#oddFill}oddFill(){api} sets the fill of odd-numbered cells
 
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set {api:anychart.enums.ScaleStackMode#PERCENT}stackMode("percent"){api}.
+In the sample below, there is a radar chart with the stroke of both grids configured:
 
-{sample}BCT\_RadarChart\_08{sample}
-
-### Labels Settings
-
-You can easily tune visual appearance of axes' labels as well as adjust labels' length.
-
-In the sample below all names are limited to the length of 3:
+Here is a polar chart with the stroke of both grids configured:
 
 ```
-// chart type
-var chart = anychaty.radarChart();
-
-var xLabels = chart.xAxis().labels();
-xLabels.useHtml(true);
-// set labels content
-xLabels.format("<b>{%Value}</b>");
-```
-
-{sample}BCT\_RadarChart\_09{sample}
-
-You can change labels' background. Learn more about background configuration in [Background settings tutorial](../../Appearance_Settings/Background).
-
-```
-  var xLabels = chart.xAxis().labels();
-  // set paddings for labels
-  xLabels.padding(5);
-  // set font weight for labels
-  xLabels.fontWeight(900);
-  // axes background settings
-  var labelsBackground = chart.xAxis().labels().background();
-  // enable background
-  labelsBackground.enabled(true);
-  // background fill
-  labelsBackground.fill("lightblue");
-  // stroke color
-  labelsBackground.stroke("blue");
-  // corner type
-  labelsBackground.cornerType("round");
-  // corner size
-  labelsBackground.corners(5);
-```
-
-{sample}BCT\_RadarChart\_10{sample}
-
-You can hide the first and/or the last use of labels {api:anychart.core.axes.Linear#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Linear#drawLastLabel}drawLastLabel(){api} parameters:
-
-```
-  // adjust y axis settings
-  var yAxis = chart.yAxis();
-  // disable first label
-  yAxis.drawFirstLabel(false);
-  // disable last label
-  yAxis.drawLastLabel(false);
-```
-
-{sample}BCT\_RadarChart\_11{sample}
-
-## Visualization
-
-### Grid
-
-Radar grid is a combination of circular and radial grids. Grid visual appearance can be set using several methods:
-
-```
-// chart type
-var chart = anychart.radarChart();
-
-var grid = chart.grid(0);
-// color odd cells in the grid
-grid.oddFill("red");
-// color even cells in the grid
-grid.evenFill("darkred");
-// set layout type
-grid.layout("radial");
-```
-
-**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../../Axes_and_Grids/Scales#grids)
-
-Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
-
-{sample}BCT\_RadarChart\_12{sample}
-
-### Labels and Tooltips
-
-In this section we will explain how to add and configure data labels and tooltips.
-
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.SeriesBase#labels}labels(){api} and {api:anychart.charts.Polar#tooltip}tooltip(){api} methods. You can tune visual appearance, positioning and format of labels and tooltips.
-
-```
-// chart type
-var chart = anychart.radarChart();
-
-// setting data
-var series = chart.area(data);
-
-// setting labels
-var labels = series.labels();
-// enables labels
-labels.enabled(true);
-// setting content
-labels.format(function(point){
-  return point.x;
+// configure the stroke of the radial grid
+chart.grid(0).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5,
+  dash: "10 5"
 });
 
-// setting tooltips
-var tooltip = series.tooltip();
-// setting content
-tooltip.format("{%x}");
+// configure the stroke of the circular grid
+chart.grid(1).stroke({
+  color: "green",
+  thickness: 0.5,
+  opacity: 0.5
+});
 ```
 
-Sample below has more complex tooltip than snippet above. Click 'Launch in playground' to see format settings of a tooltip.
+{sample}BCT\_Radar\_Chart\_04{sample}
 
-{sample}BCT\_RadarChart\_13{sample}
+In this sample cells of the radial and circular grids are filled with color:
 
-## Series Types
+```
+// color the even-numbered cells of the radial grid
+radar1.grid(0).evenFill({
+  color: "gray",
+  opacity: 0.05
+});
 
-Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](../Area_Chart), [Line chart](../Line_Chart) and [Marker chart](../Marker_Chart).
+// color the odd-numbered cells of the radial grid
+radar1.grid(0).oddFill({
+  color: "gray",
+  opacity: 0.1
+});
 
-{sample}BCT\_RadarChart\_14{sample}
+// color the even-numbered cells of the circular grid 
+radar2.grid(1).evenFill({
+  color: "gray",
+  opacity: 0.05
+});
+
+// color the odd-numbered cells of the circular grid  
+radar2.grid(1).oddFill({
+  color: "gray",
+  opacity: 0.1
+});
+```
+
+{sample}BCT\_Radar\_Chart\_05{sample}
+
+To change the default layouts of grids, use the {api:anychart.core.grids.Radar#layout}layout(){api} method with either the **radial** or **circuit** parameter. For example, if you want your chart to have only a radial grid, get the grid with the index 1 and set the layout to "radial":
+
+```
+// set the layout type
+chart.grid(1).layout("radial");
+```
+
+In case you want your chart to have only a circular grid, get the grid with the index 0 and set the layout to "circuit":
+
+```
+// set the layout type
+chart.grid(0).layout("circuit");
+```
+
+{sample}BCT\_Radar\_Chart\_06{sample}
+
+## Stacked Radar Charts
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+
+You can create [Radar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Radar Percent Stacked Area](../Stacked/Percent/Radar_Area_Chart) charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
+
+## Supported Types
+
+Here is the list of supported radar charts:
+
+* [Radar Area](Area_Chart)
+* [Radar Line](Line_Chart)
+* [Radar Marker](Marker_Chart)
+
+See also [stacked](../Stacked/Overview) charts:
+
+* [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
+* [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)

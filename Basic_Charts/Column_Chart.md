@@ -33,7 +33,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td>3D</td><td>[3D Column](3D/Column_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart/Column_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Polar</td><td>[Polar Column](Polar_Plot/Column_Chart)</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Column](../Stock_Charts/Series/Column)</td></tr>

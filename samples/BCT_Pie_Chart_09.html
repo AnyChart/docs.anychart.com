@@ -21,31 +21,30 @@
     // create a stage
     stage = anychart.graphics.create("container");
 
-    // set the position and data for the first pie chart
+    // create and configure the first pie chart
     var pie1 = anychart.pie(data);
     pie1.title("Radius: Default");
     pie1.bounds(0, 0, "50%", "100%");
-    formatPie(pie1);
+    // disable the legend
+    pie1.legend(false);
+    // set the chart container
+    pie1.container(stage);
+    // initiate drawing the chart
+    pie1.draw();
 
-    // set the position and data for the second pie chart
+    // create and configure the second pie chart
     var pie2 = anychart.pie(data);
     pie2.title("Radius: 30%");
     pie2.bounds("50%", 0, "50%", "100%");
-    formatPie(pie2);
     // set the radius
     pie2.radius("30%");
-});
-
-/* a helper function for configuring
-and drawing pie charts*/
-function formatPie(pie){
-  // disable the legend
-  pie.legend(false);
-  // set the chart container
-  pie.container(stage);
-  // initiate drawing the chart
-  pie.draw();
-};</script>
+    // disable the legend
+    pie2.legend(false);
+    // set the chart container
+    pie2.container(stage);
+    // initiate drawing the chart
+    pie2.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

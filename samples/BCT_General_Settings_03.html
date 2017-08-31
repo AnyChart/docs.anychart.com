@@ -9,27 +9,34 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create data, enable and configure markers
-    var data = [
-      {x: "January", value:10000},
-      {x: "February", value:12000, marker:{enabled:true, type:"star5", fill:"gold", size:10}},
-      {x: "March", value:13000, marker:{enabled:true, type:"star5", fill:"red", size:15}},
-      {x: "April", value:10000},
-      {x: "May", value:9000}
-    ];
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ]);
 
     // set the chart type
     chart = anychart.line();
 
-    // create a series and set the data
-    var series = chart.line(data);
-    // set the chart title
-    
-    chart.title("Markers (Point)");
-    // set the titles of the axes
+    // create a series, set the data and name
+    var series = chart.column(data);
+    series.name("Sales");
 
+    // enable and configure labels on the series
+    series.labels(true);
+    series.labels().fontColor("green");
+    series.labels().fontWeight(900);
+    series.labels().format("${%value}");
+
+    // set the chart title
+    chart.title("Labels (Series)");
+
+    // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("Month");
+    xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
 

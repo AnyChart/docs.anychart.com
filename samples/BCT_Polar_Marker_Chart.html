@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: 0, value: 0},
+      {x: 10, value: 1},
+      {x: 20, value: 2},
+      {x: 30, value: 3},
+      {x: 40, value: 4},
+      {x: 50, value: 5},
+      {x: 60, value: 6},
+      {x: 70, value: 7},
+      {x: 80, value: 8},
+      {x: 90, value: 9},
+      {x: 100, value: 10}
+    ];
+    
+    // create a chart
+    chart = anychart.polar();
+
+    // create a marker series and set the data
+    var series = chart.marker(data);
+
+    // set the maximum value of the X-scale
+    chart.xScale().maximum(100);
+
+    // set the chart title
+    chart.title("Polar Marker Chart");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // set data
+  var data = createData();
+
+  // create a chart and set the data
+  chart = anychart.heatMap(data);
+  chart.title("Heat Map: Scrollers");
+  
+  // enable and configure scrollers
+  chart.xScroller().enabled(true);
+  chart.xZoom().setToPointsCount(8);
+  chart.yScroller().enabled(true);
+  chart.yZoom().setToPointsCount(4);
+
+  // disable labels
+  chart.labels(false);
+
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+
+});
+
+// a function for generating data
+function createData(){
+  var arr = [];
+  for (var x = 2000; x < 2018; x++){
+    for (var y = 1; y < 13; y++){
+      var obj = {};
+      obj.x = x;
+      obj.y = y;
+      obj.heat = Math.floor(Math.random() * (10000)); 
+      arr.push(obj);
+    }
+  }
+  return arr;
+};</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

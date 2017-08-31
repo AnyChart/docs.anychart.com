@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: 0, value: 500},
+      {x: 180, value: 200}
+    ];
+    
+    // create a stage
+    stage = anychart.graphics.create("container");
+
+    // set the position and data for the first chart
+    var polar1 = anychart.polar();
+    polar1.title("Cell Color: Radial Grid");
+    polar1.bounds(0, 0, "50%", "100%");
+    // create a line series
+    polar1.line(data);
+    // color the even-numbered cells of the radial grid
+    polar1.grid(0).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
+    // color the odd-numbered cells of the radial grid
+    polar1.grid(0).oddFill({
+      color: "gray",
+      opacity: 0.1
+    });
+    // set the maximum value of the X-scale
+    polar1.xScale().maximum(360);
+    // set the chart container
+    polar1.container(stage);
+    // initiate drawing the chart
+    polar1.draw();  
+
+    // set the position and data for the second chart
+    var polar2 = anychart.polar();
+    polar2.title("Cell Color: Circular Grid");
+    polar2.bounds("50%", 0, "50%", "100%");
+    // create a line series
+    polar2.line(data);
+    // color the even-numbered cells of the circular grid 
+    polar2.grid(1).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
+    // color the odd-numbered cells of the circular grid  
+    polar2.grid(1).oddFill({
+      color: "gray",
+      opacity: 0.1
+    });
+    // set the maximum value of the X-scale
+    polar2.xScale().maximum(360);
+    // set the chart container
+    polar2.container(stage);
+    // initiate drawing the chart
+    polar2.draw();    
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

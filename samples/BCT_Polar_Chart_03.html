@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: 0, value: 500},
+      {x: 180, value: 200},
+      {x: 360, value: "missing"}
+    ];
+
+    // create a chart
+    chart = anychart.polar();
+
+    // create a line series and set the data
+    var series = chart.line(data);
+
+    // set the maximum value of the X-scale
+    chart.xScale().maximum(360);
+
+    // set the chart title
+    chart.title("[Polar Plot: Missing Points]");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

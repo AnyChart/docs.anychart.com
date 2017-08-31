@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function () {
+
+    // create data   
+    var data = [
+        {x: "learning", value: 80},
+        {x: "includes", value: 56},
+        {x: "lists", value: 44},
+        {x: "meaning", value: 40},
+        {x: "useful", value: 36},
+        {x: "different", value: 32},
+        {x: "grammar", value: 28},
+        {x: "teaching", value: 24},
+        {x: "example", value: 20},
+        {x: "thing", value: 12}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.tagCloud(data);
+
+    // set the chart title
+    chart.title("Tag Cloud Chart: Appearance");
+
+    // configure visual settings in the normal state
+    chart.normal({fill: "#009999 0.7", fontWeight: 600});
+
+    // configure visual settings in the hover state
+    chart.hovered({fill: "#003366 0.5"});
+
+    // configure visual settings in the selected state
+    chart.selected({fill: "#003366 0.7"});
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

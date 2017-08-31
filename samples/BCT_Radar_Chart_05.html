@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: "A", value: 1222},
+      {x: "B", value: 2431},
+      {x: "C", value: 3624},
+      {x: "D", value: 5243},
+      {x: "E", value: 6813},
+      {x: "F", value: 5321},
+      {x: "G", value: 1567},
+      {x: "H", value: 3876}
+    ];
+    
+    // create a stage
+    stage = anychart.graphics.create("container");
+
+    // set the position and data for the first chart
+    var radar1 = anychart.radar(data);
+    radar1.title("Cell Color: Radial Grid");
+    radar1.bounds(0, 0, "50%", "100%");
+    // color the even-numbered cells of the radial grid
+    radar1.grid(0).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
+    // color the odd-numbered cells of the radial grid
+    radar1.grid(0).oddFill({
+      color: "gray",
+      opacity: 0.1
+    });
+    // set the chart container
+    radar1.container(stage);
+    // initiate drawing the chart
+    radar1.draw();  
+
+    // set the position and data for the second chart
+    var radar2 = anychart.radar(data);
+    radar2.title("Cell Color: Circular Grid");
+    radar2.bounds("50%", 0, "50%", "100%");
+    // color the even-numbered cells of the circular grid 
+    radar2.grid(1).evenFill({
+      color: "gray",
+      opacity: 0.05
+    });
+    // color the odd-numbered cells of the circular grid  
+    radar2.grid(1).oddFill({
+      color: "gray",
+      opacity: 0.1
+    });
+    // set the chart container
+    radar2.container(stage);
+    // initiate drawing the chart
+    radar2.draw(); 
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
