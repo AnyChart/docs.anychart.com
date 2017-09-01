@@ -28,16 +28,14 @@
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create treemap chart
     chart = anychart.treeMap();
-    
-    // tune on colorRange and tune color scale
-    chart.colorRange(true);
-    chart.colorScale(anychart.scales.ordinalColor([{less:100,color:"#FFCC99"},{from:100, to:200, color:'#CC9966'},{from:200, to:250, color:'#996633'},{greater:250, color:'#663300'}]));
-    
-    // tune hint opacity
-    chart.hintDepth(0);
-    
+
+    // tooltips settings
+    chart.tooltip(true);
+    chart.tooltip().positionMode('point');
+    chart.tooltip().titleFormat("{%name}");
+    chart.tooltip().format("Income from export in 2012: $ {%Value}B");
+
     // tune labels
     chart.labels().format("{%name}");
 
@@ -162,7 +160,7 @@
         {name: "Petroleum oils, refined", id: "petr_oils_ref_gb", parent: "petroleum_gb", value: 31.2},
         {name: "Petroleum oils, crude", id: "petr_oils_crude_gb", parent: "petroleum_gb", value: 25.7},
         {name: "Petroleum gases", id: "petr_gases_gb", parent: "petroleum_gb", value: 5.6},
-
+        
         {name: "Ireland", id: "Ireland", parent: 'Northern Europe'},
         {name: "Medical", id: "medical_irl", parent: "Ireland"},
         {name: "Instruments (surgery, vet, dental)", id: "instruments_med_irl", parent: "medical_irl", value: 4.05},
@@ -176,11 +174,12 @@
 
     // set data
     chart.data(data, "as-table");
-        
+
     // display chart
     chart.container('container');
     chart.draw();
-});</script>
+});
+</script>
 
 </body>
 </html>

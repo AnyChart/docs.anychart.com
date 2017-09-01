@@ -27,19 +27,18 @@
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 <script x-export="chart">anychart.onDocumentReady(function() {
-
     // create treemap chart
     chart = anychart.treeMap();
 
-    // labels
-    chart.labels().format("{%name}: ${%Value}B");
-    chart.labels().fontColor('black');
+    // setting the maximum levels depth
+    chart.maxDepth(2);
 
-        
+    // setting the number of levels shown 
+    chart.hintDepth(3);
+    
     // tune labels
     chart.labels().format("{%name}");
 
-    // data set
     var data = [
         {name: "Europe", id: "Europe", parent: null},
         {name: "Eastern Europe", id: "Eastern Europe", parent: "Europe"},
@@ -179,6 +178,9 @@
     // display chart
     chart.container('container');
     chart.draw();
-});</script>
+});
+
+</script>
+
 </body>
 </html>

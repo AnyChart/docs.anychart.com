@@ -9,43 +9,40 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // set data
-  var data = createData();
+    // create a chart and set the data
+    chart = anychart.heatMap(createData());
+   
+    // enable and configure scrollers
+    chart.xScroller().enabled(true);
+    chart.xZoom().setToPointsCount(8);
+    chart.yScroller().enabled(true);
+    chart.yZoom().setToPointsCount(4);
 
-  // create a chart and set the data
-  chart = anychart.heatMap(data);
-  chart.title("Heat Map: Scrollers");
-  
-  // enable and configure scrollers
-  chart.xScroller().enabled(true);
-  chart.xZoom().setToPointsCount(8);
-  chart.yScroller().enabled(true);
-  chart.yZoom().setToPointsCount(4);
+    // disable labels
+    chart.labels(false);
 
-  // disable labels
-  chart.labels(false);
+    // set the chart title
+    chart.title("Heat Map: Scrollers");
 
-  // set the container id
-  chart.container("container");
+    // set the container id
+    chart.container("container");
 
-  // initiate drawing the chart
-  chart.draw();
-
+    // initiate drawing the chart
+    chart.draw();
 });
 
 // a function for generating data
 function createData(){
-  var arr = [];
+  var data = [];
   for (var x = 2000; x < 2018; x++){
     for (var y = 1; y < 13; y++){
-      var obj = {};
-      obj.x = x;
+      var obj = {};   obj.x = x;
       obj.y = y;
-      obj.heat = Math.floor(Math.random() * (10000)); 
-      arr.push(obj);
+      obj.heat = Math.floor(Math.random() * 10000) + 1; 
+      data.push(obj);
     }
   }
-  return arr;
+  return data;
 };</script>
 </head>
 <body>

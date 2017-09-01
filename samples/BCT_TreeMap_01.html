@@ -1,80 +1,45 @@
-<!doctype html>
 <html>
 <head>
   <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-    <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
+    // create data
+    var data = anychart.data.tree([
+    {name: "European Union – Top 10 Most Populated Countries",
+      children: [
+        {name: "Belgium",        value: 11443830},
+        {name: "France",         value: 64938716},
+        {name: "Germany",        value: 80636124},
+        {name: "Greece",         value: 10892931},
+        {name: "Italy",          value: 59797978},
+        {name: "Netherlands",    value: 17032845},
+        {name: "Poland",         value: 38563573},
+        {name: "Romania",        value: 19237513}, 
+        {name: "Spain",          value: 46070146},
+        {name: "United Kingdom", value: 65511098}  
+      ]} 
+    ], "as-tree");
 
-        #container {
-            width: 500px;
-            height: 500px;
-            float: left
-        }
+    // create a chart and set the data
+    chart = anychart.treeMap(data);
 
-        #controls {
-            margin: 5px;
-            float: left
-        }
-    </style>
+    // set the chart title
+    chart.title("Treemap: Quick Start");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
 </head>
 <body>
-<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-
-
-<script x-export="chart">anychart.onDocumentReady(function() {
-//Data set using tree method
-var data = anychart.data.tree([
-{name: 'Eurasia',
-    children:[
-        {name: "Asia", children:[
-            {name: "Eastern Asia", children:[
-                {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
-                {name: "China", value: 1564116, capital: 'Beijing'},
-                {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
-                {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
-                {name: "Japan", value: 1564116, capital: 'Tokio', children:[
-                    {name: "Hokkaido", value: 83400},
-                    {name: "Kyushu", value: 35640},
-                    {name: "Honshu", value: 230500},
-                    {name: "Shikoku", value: 1200}
-                ]}
-            ]},
-        ]},
-        {name: "Europe", children: [
-            {name: "Northern Europe", children:[
-                {name: "Finland", value: 338424, capital: 'Helsinki'},
-                {name: "Great Britain", value: 209331, capital: 'London'},
-                {name: "Ireland", value: 84421, capital: 'Dublin'},
-                {name: "Scandinavia", value: 928057, children:[
-                    {name: "Sweden", value: 450295, capital: 'Stockholm'},
-                    {name: "Norway", value: 385178, capital: 'Oslo'},
-                    {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
-                ]},                        
-            ]}
-        ]}
-     ]} 
-], "as-tree");
-
-// set data and data type settings
-chart = anychart.treeMap(data);
-
-chart.headers().format("{%name}");
-chart.labels().format("{%name}");
-chart.tooltip().titleFormat("{%name}");
-chart.tooltip().format("Area: {%Value} square km");
-
-chart.title("Setting the data as tree");
-
-chart.container('container');
-chart.draw();
-});</script>
-
+<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

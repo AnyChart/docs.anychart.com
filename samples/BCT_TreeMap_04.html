@@ -1,140 +1,45 @@
-<!doctype html>
 <html>
 <head>
   <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-    <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
+    // create data
+    var data = anychart.data.tree([
+    {name: "EU – Population Density in Top 10 Most Populated Countries",
+      children: [
+        {name: "Belgium",        size: 11443830, value: 378},
+        {name: "France",         size: 64938716, value: 119},
+        {name: "Germany",        size: 80636124, value: 231},
+        {name: "Greece",         size: 10892931, value:  85},
+        {name: "Italy",          size: 59797978, value: 203},
+        {name: "Netherlands",    size: 17032845, value: 505},
+        {name: "Poland",         size: 38563573, value: 126},
+        {name: "Romania",        size: 19237513, value:  84}, 
+        {name: "Spain",          size: 46070146, value:  92},
+        {name: "United Kingdom", size: 65511098, value: 271}  
+      ]} 
+    ], "as-tree");
 
-        #container {
-            width: 500px;
-            height: 500px;
-            float: left
-        }
+    // create a chart and set the data
+    chart = anychart.treeMap(data);
 
-        #controls {
-            margin: 5px;
-            float: left
-        }
-    </style>
-</head>
-<body>
-<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script x-export="chart">anychart.onDocumentReady(function() {
+    // set the chart title
+    chart.title("Treemap: Data (Size and Value)");
 
-    // create treemap chart
-    chart = anychart.treeMap();
-    
-    // headers settings
-    chart.headers().fontColor("Black");
-    chart.headers().fontSize(14);
-    chart.headers().background().fill("LightGray 0.7");
-    chart.headers().fontWeight('bold');
-    chart.hoverHeaders().fontColor("LightCoral");
-    chart.headers().format("{%name}");
-    
-    // setting the maximum levels depth
-    chart.maxDepth(3);
-    
-    var rawData = [
-    {name: 'Eurasia',
-        children:[
-            {name: "Asia", children:[
-                {name: "Eastern Asia", children:[
-                    {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
-                    {name: "China", value: 1564116, capital: 'Beijing'},
-                    {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
-                    {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
-                    {name: "Japan", value: 1564116, capital: 'Tokio', children:[
-                        {name: "Hokkaido", value: 83400},
-                        {name: "Kyushu", value: 35640},
-                        {name: "Honshu", value: 230500},
-                        {name: "Shikoku", value: 1200}
-                    ]}
-                ]},
-                {name: "Western Asia", children:[
-                    {name: "Jordan", value: 92300, capital: 'Amman'},
-                    {name: "Georgia", value: 69700, capital: 'Tbilisi'},
-                    {name: "Israel", value: 20770, capital: 'Jerusalem'},
-                    {name: "Armenia", value: 29743, capital: 'Yerevan'},
-                    {name: "Azerbaijan", value: 86600, capital: 'Baku'},
-                    {name: "Bahrain", value: 750, capital: 'Manama'},
-                ]},
-                {name: "Southern Asia", children:[
-                    {name:"India", value: 3287263, capital: "New Delhi"},
-                    {name: 'Iran', parent: 'Southern Asia', value: 16480},
-                    {name: 'Shri-Lanka', value: 65610, capital: 'Colombo'},
-                    {name: 'Nepal', value: 140800, capital: 'Kathmandu'}
-                ]},
-                {name: "South-Eastern Asia", children:[
-                    {name: "Singapoor", value: 718.3, capital: 'Singapoor'},
-                    {name: "Indonesia", value: 1919440, capital: "Jakarta", children:[
-                        {name: "Java", value: 128297},
-                        {name: "Kalimantan (Borneo)", value: 174600},
-                        {name: "Sulawesi", value: 174600},
-                        {name: "Sumatra", value: 473481}
-                    ]},
-                    {name: "Thailand", value: 513.120, capital: 'Bangkok'},
-                    {name: "Philippines", value: 300000, capital: 'Manila', children:[
-                        {name: "Luzon", value: 104688},
-                        {name: "Eastern Visayas", value: 15875},
-                        {name: "Central Visayas", value: 21562},
-                        {name: "Mindanayo", value: 21562}
-                    ]},
-                    {name: "Laos", value: 236800, capital: 'Vientiane'},
-                    {name: "Cambodia", value: 181040, capital: 'Phnom Penh'}
-                ]},
-                {name: "Central Asia", children:[
-                    {name: "Kazakhstan", value: 2724902, capital: 'Astana'},
-                    {name: "Kyrgyzstan", value: 199951, capital: 'Bishkek'},
-                    {name: "Tajikistan", value: 142000, capital: 'Dushanbe'},
-                    {name: "Turkmenistan", value: 491200, capital: 'Ashgabat'},
-                    {name: "Uzbekistan", value: 447400, capital: 'Tashkent'}
-                ]}
-            ]},
-            {name: "Europe", children: [
-                {name: "Eastern Europe", children:[
-                    {name: "Poland", value: 312679, capital: 'Warsaw'},
-                    {name: "Ukraine", value: 603628, capital: 'Kiev'}
-                ]},
-                {name: "Western Europe", children:[
-                    {name: "Austria", value: 83879, capital: 'Vienna'},
-                    {name: "Germany", value: 357168, capital: 'Berlin'},
-                    {name: "France", value: 643801, capital: 'Paris'}
-                ]},
-                {name: "Southern Europe", children:[
-                    {name: "Malta", value: 316, capital: 'Valletta'},
-                    {name: "Greece", value: 131957, capital: 'Athens'},
-                    {name: "Italy", value: 301338, capital: 'Rome'}
-                ]},
-                {name: "Northern Europe", children:[
-                    {name: "Finland", value: 338424, capital: 'Helsinki'},
-                    {name: "Great Britain", value: 209331, capital: 'London'},
-                    {name: "Ireland", value: 84421, capital: 'Dublin'},
-                    {name: "Scandinavia", value: 928057, children:[
-                        {name: "Sweden", value: 450295, capital: 'Stockholm'},
-                        {name: "Norway", value: 385178, capital: 'Oslo'},
-                        {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
-                    ]},                        
-                ]}
-            ]}
-         ]}
-    ];
-    
-    // set data
-    var data = anychart.data.tree(rawData, "as-tree");
-    chart.data(data);
-    
-    // display chart
-    chart.container('container');
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
 });</script>
-
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

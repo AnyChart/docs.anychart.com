@@ -25,6 +25,8 @@
     var pie1 = anychart.pie(data);
     pie1.title("No Sorting");
     pie1.bounds(0, 0, "33.3%", "100%");
+    // set the sorting mode
+    pie1.sort("none");
     // disable the legend
     pie1.legend(false);
     // set the chart container

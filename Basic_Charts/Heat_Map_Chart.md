@@ -279,7 +279,7 @@ The default display mode is "drop": a label is not shown if it does not fit the 
 The following sample shows how these modes work:
 
 ```
-// change the display mode
+// set the display mode
 chart.labelsDisplayMode("alwaysShow");
 ```
   

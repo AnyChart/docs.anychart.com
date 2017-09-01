@@ -28,18 +28,20 @@
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create treemap chart
     chart = anychart.treeMap();
+    
+    // hint opacity setting
+    chart.hintOpacity(0.7);
 
-    // labels
-    chart.labels().format("{%name}: ${%Value}B");
-    chart.labels().fontColor('black');
+    // setting the maximum levels depth
+    chart.maxDepth(2);
 
-        
+    // setting the number of levels shown additionally
+    chart.hintDepth(1);    
+
     // tune labels
     chart.labels().format("{%name}");
 
-    // data set
     var data = [
         {name: "Europe", id: "Europe", parent: null},
         {name: "Eastern Europe", id: "Eastern Europe", parent: "Europe"},
@@ -172,7 +174,7 @@
         {name: "Transmission apparatus for radio, TV, telephone", id: "transmission_irl", parent: "machinery_irl", value: 1.86},
         {name: "Printers and copying machines", id: "printers_irl", parent: "machinery_irl", value: 1.17}
     ];
-
+        
     // set data
     chart.data(data, "as-table");
 
@@ -180,5 +182,6 @@
     chart.container('container');
     chart.draw();
 });</script>
+
 </body>
 </html>
