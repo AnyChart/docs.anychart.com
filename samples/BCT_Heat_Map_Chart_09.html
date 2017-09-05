@@ -61,21 +61,24 @@
     // initiate drawing the chart
     chart.draw();
 
-    // create a label for setting the display mode to "always show"
+    /* create a label for setting the display mode
+    of labels to "always show"*/
     createLabel("Always Show", 10, function() {
-      // set the display mode
+      // set the display mode of labels
       chart.labelsDisplayMode("alwaysShow");
     });
 
-    // create a label for setting the display mode to "clip"
+    /* create a label for setting the display mode
+    of labels to "clip"*/
     createLabel("Clip", 118, function() {
-      // set the display mode
+      // set the display mode of labels
       chart.labelsDisplayMode("clip");
     });
 
-    // create a label for setting the display mode to "drop"
+    /* create a label for setting the display mode
+    of labels to "drop"*/
     createLabel("Drop", 162, function() {
-      // set the display mode
+      // set the display mode of labels
       chart.labelsDisplayMode("drop");
     });
 });

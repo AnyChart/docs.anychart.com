@@ -28,7 +28,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 
 ```
 
-{sample}BCT\_Treemap\_01{sample}
+{sample}BCT\_Treemap\_Chart\_01{sample}
 
 ## General Settings
 
@@ -44,19 +44,19 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_02{sample}
+{sample}BCT\_Treemap\_Chart\_02{sample}
 
 ```
 
 ```
 
-{sample}BCT\_Treemap\_03{sample}
+{sample}BCT\_Treemap\_Chart\_03{sample}
 
 ```
 
 ```
 
-{sample}BCT\_Treemap\_04{sample}
+{sample}BCT\_Treemap\_Chart\_04{sample}
 
 
 ### Depth and Hints
@@ -65,7 +65,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_05{sample}
+{sample}BCT\_Treemap\_Chart\_05{sample}
 
 ### Sorting Order
 
@@ -73,7 +73,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_06{sample}
+{sample}BCT\_Treemap\_Chart\_06{sample}
 
 ### Appearance
 
@@ -81,13 +81,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_07{sample}
+{sample}BCT\_Treemap\_Chart\_07{sample}
 
 ```
 
 ```
 
-{sample}BCT\_Treemap\_08{sample}
+{sample}BCT\_Treemap\_Chart\_08{sample}
 
 ### Color Scale
 
@@ -95,13 +95,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_09{sample}
+{sample}BCT\_Treemap\_Chart\_09{sample}
 
 ```
 
 ```
 
-{sample}BCT\_Treemap\_10{sample}
+{sample}BCT\_Treemap\_Chart\_10{sample}
 
 ### Headers
 
@@ -109,7 +109,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_11{sample}
+{sample}BCT\_Treemap\_Chart\_11{sample}
 
 ### Labels and Tooltips
 
@@ -121,12 +121,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Treemap\_12{sample}
+{sample}BCT\_Treemap\_Chart\_12{sample}
 
 ```
 
 ```
 
-{sample}BCT\_Treemap\_13{sample}
+{sample}BCT\_Treemap\_Chart\_13{sample}
 
 ### Interactivity
