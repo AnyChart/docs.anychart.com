@@ -111,6 +111,12 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Treemap\_Chart\_11{sample}
 
+```
+
+```
+
+{sample}BCT\_Treemap\_Chart\_12{sample}
+
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -121,12 +127,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Treemap\_Chart\_12{sample}
-
-```
-
-```
-
 {sample}BCT\_Treemap\_Chart\_13{sample}
+
+```
+
+```
+
+{sample}BCT\_Treemap\_Chart\_14{sample}
 
 ### Interactivity
