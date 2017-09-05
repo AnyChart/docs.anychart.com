@@ -24,6 +24,12 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 
 ## Quick Start
 
+```
+
+```
+
+{sample}BCT\_Treemap\_01{sample}
+
 ## General Settings
 
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Treemap chart (for example, legend and interactivity settings).
@@ -38,12 +44,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_01{sample}
-
-```
-
-```
-
 {sample}BCT\_Treemap\_02{sample}
 
 ```
@@ -52,6 +52,12 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Treemap\_03{sample}
 
+```
+
+```
+
+{sample}BCT\_Treemap\_04{sample}
+
 
 ### Depth and Hints
 
@@ -59,7 +65,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_04{sample}
+{sample}BCT\_Treemap\_05{sample}
 
 ### Sorting Order
 
@@ -67,7 +73,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_05{sample}
+{sample}BCT\_Treemap\_06{sample}
 
 ### Appearance
 
@@ -75,15 +81,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_06{sample}
-
-```
-
-```
-
 {sample}BCT\_Treemap\_07{sample}
-
-### Color Scale
 
 ```
 
@@ -91,11 +89,19 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Treemap\_08{sample}
 
+### Color Scale
+
 ```
 
 ```
 
 {sample}BCT\_Treemap\_09{sample}
+
+```
+
+```
+
+{sample}BCT\_Treemap\_10{sample}
 
 ### Headers
 
@@ -103,7 +109,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Treemap\_10{sample}
+{sample}BCT\_Treemap\_11{sample}
 
 ### Labels and Tooltips
 
@@ -115,12 +121,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Treemap\_11{sample}
-
-```
-
-```
-
 {sample}BCT\_Treemap\_12{sample}
+
+```
+
+```
+
+{sample}BCT\_Treemap\_13{sample}
 
 ### Interactivity
