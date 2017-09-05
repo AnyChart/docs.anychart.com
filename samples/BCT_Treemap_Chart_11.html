@@ -12,15 +12,15 @@
     // create data
     var data = anychart.data.tree([
       {id: 1,  parent: null, name: "Slavic Languages"},
-      {id: 2,  parent:    1, name: "East Slavic"},
+      {id: 2,  parent:    1, name: "East"},
       {id: 3,  parent:    2, name: "Russian",        value: 150000000},
       {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
       {id: 5,  parent:    2, name: "Belarusian",     value:   3200000},
-      {id: 6,  parent:    1, name: "West Slavic"},
+      {id: 6,  parent:    1, name: "West"},
       {id: 7,  parent:    6, name: "Polish",         value:  55000000},
       {id: 8,  parent:    6, name: "Czech",          value:  10600000},
       {id: 9,  parent:    6, name: "Slovak",         value:   5200000},
-      {id: 10, parent:    1, name: "South Slavic"},
+      {id: 10, parent:    1, name: "South"},
       {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
       {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
       {id: 13, parent:   10, name: "Slovene",        value:   2500000},
@@ -33,14 +33,15 @@
     // set the maximum depth of levels shown
     chart.maxDepth(3);
 
+    // configure the text of headers
+    chart.headers().format("{%name} – {%value}");
+
     // configure the appearance of headers
     chart.headers().fontColor("#990000");
     chart.headers().fontWeight('bold');
-    chart.headers().fontSize("14");
-    chart.hoverHeaders().fontColor("black");
-
-    // configure the text of headers
-    chart.headers().format("{%name} – {%value}");
+    chart.headers().fontSize("20");
+    chart.hoverHeaders().fontColor("#000099");
+    chart.maxHeadersHeight("40");
 
     // set the chart title
     chart.title("Treemap: Headers");

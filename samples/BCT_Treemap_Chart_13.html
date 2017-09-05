@@ -14,16 +14,16 @@
 
     // create data
     var data = anychart.data.tree([
-      {id: 1,  parent: null, name: "Slavic Languages – Number of Speakers"},
-      {id: 2,  parent:    1, name: "East Slavic Languages – 198200000 Speakers (approx.)"},
+      {id: 1,  parent: null, name: "Slavic"},
+      {id: 2,  parent:    1, name: "East Slavic"},
       {id: 3,  parent:    2, name: "Russian",        value: 150000000},
       {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
       {id: 5,  parent:    2, name: "Belarusian",     value:   3200000},
-      {id: 6,  parent:    1, name: "West Slavic Languages  – 70800000 Speakers (approx.)"},
+      {id: 6,  parent:    1, name: "West Slavic Languages"},
       {id: 7,  parent:    6, name: "Polish",         value:  55000000},
       {id: 8,  parent:    6, name: "Czech",          value:  10600000},
       {id: 9,  parent:    6, name: "Slovak",         value:   5200000},
-      {id: 10, parent:    1, name: "South Slavic Languages  – 33900000 Speakers (approx.)"},
+      {id: 10, parent:    1, name: "South Slavic"},
       {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
       {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
       {id: 13, parent:   10, name: "Slovene",        value:   2500000},
@@ -35,6 +35,15 @@
 
     // set the maximum depth of levels shown
     chart.maxDepth(3);
+
+    // configure the text of headers
+    chart.headers().format("{%name} Languages – {%value}");
+
+    // configure the appearance of headers
+    chart.headers().fontSize("30");
+
+    // set the display mode of headers
+    chart.headersDisplayMode("drop");
 
     // set the chart position and title
     chart.top(35);
@@ -49,21 +58,21 @@
     /* create a label for setting the display mode
     of labels to "always show"*/
     createLabel("Always Show", 10, function() {
-      // set the display mode
+      // set the display mode of headers
       chart.headersDisplayMode("alwaysShow");
     });
 
     /* create a label for setting the display mode
     of labels to "clip"*/
     createLabel("Clip", 118, function() {
-      // set the display mode
+      // set the display mode of headers
       chart.headersDisplayMode("clip");
     });
 
     /* create a label for setting the display mode
     of labels to "drop"*/
     createLabel("Drop", 162, function() {
-      // set the display mode
+      // set the display mode of headers
       chart.headersDisplayMode("drop");
     });
 });
