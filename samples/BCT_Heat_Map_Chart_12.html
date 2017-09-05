@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a chart and set the data
-    chart = anychart.heatMap(createData());
+    chart = anychart.heatMap(getData());
    
     // enable and configure scrollers
     chart.xScroller().enabled(true);
@@ -32,13 +32,14 @@
 });
 
 // a function for generating data
-function createData(){
+function getData(){
+  // generate data
   var data = [];
   for (var x = 2000; x < 2018; x++){
     for (var y = 1; y < 13; y++){
       var obj = {};   obj.x = x;
       obj.y = y;
-      obj.heat = Math.floor(Math.random() * 10000) + 1; 
+      obj.heat = Math.floor(Math.random()*10000) + 1; 
       data.push(obj);
     }
   }

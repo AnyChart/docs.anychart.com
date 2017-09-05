@@ -34,7 +34,7 @@
 
     // configure labels
     chart.labels().format(function(){
-      var population = Math.round(this.value / 1000000) / 10;
+      var population = Math.round(this.value/1000000)/10;
       return "<span style='font-weight:bold'>" + this.name + 
              "</span><br/>" + population + " mln";
     });

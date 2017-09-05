@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a chart and set the data
-    chart = anychart.treeMap(createData());
+    chart = anychart.treeMap(getData());
 
     // set the maximum depth of levels shown
     chart.maxDepth(2);
@@ -32,7 +32,8 @@
 });
 
 // a function for creating data
-function createData(){
+function getData(){
+  // create data
   var data = anychart.data.tree([
   {name: "Root",
     children: [
