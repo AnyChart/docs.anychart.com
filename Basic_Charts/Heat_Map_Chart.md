@@ -78,7 +78,7 @@ In AnyChart there are many settings that are configured in the same way for all 
 
 Read the overview of general settings: [General Settings](General_Settings).
 
-### Special Settings
+## Special Settings
 
 ### Data
 
