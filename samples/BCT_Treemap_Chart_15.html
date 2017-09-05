@@ -13,16 +13,16 @@
     var data = anychart.data.tree([
     {name: "European Union – Top 10 Most Populated Countries",
       children: [
-        {name: "Belgium",        value: 11443830, capital: "Brussels" },
-        {name: "France",         value: 64938716, capital: "Paris"    },
-        {name: "Germany",        value: 80636124, capital: "Berlin"   },
-        {name: "Greece",         value: 10892931, capital: "Athens"   },
-        {name: "Italy",          value: 59797978, capital: "Rome"     },
-        {name: "Netherlands",    value: 17032845, capital: "Amsterdam"},
-        {name: "Poland",         value: 38563573, capital: "Warsaw"   },
-        {name: "Romania",        value: 19237513, capital: "Bucharest"}, 
-        {name: "Spain",          value: 46070146, capital: "Madrid"   },
-        {name: "United Kingdom", value: 65511098, capital: "London"   }  
+        {name: "Belgium",        value: 11443830},
+        {name: "France",         value: 64938716},
+        {name: "Germany",        value: 80636124},
+        {name: "Greece",         value: 10892931},
+        {name: "Italy",          value: 59797978},
+        {name: "Netherlands",    value: 17032845},
+        {name: "Poland",         value: 38563573},
+        {name: "Romania",        value: 19237513},
+        {name: "Spain",          value: 46070146},
+        {name: "United Kingdom", value: 65511098} 
       ]} 
     ], "as-tree");
 
@@ -33,17 +33,20 @@
     chart.labels().useHtml(true);
 
     // configure labels
-    chart.labels().format(
-      "<span style='font-weight:bold'>{%name}</span><br>{%value}"
-    );
+    chart.labels().format(function(){
+      var population = Math.round(this.value / 1000000) / 10;
+      return "<span style='font-weight:bold'>" + this.name + 
+             "</span><br/>" + population + " mln";
+    });
 
     // configure tooltips
-    chart.tooltip().format(
-      "population: {%value}\ncapital: {%capital}"
-    );
+    chart.tooltip().format(function(){
+      var population = Math.round(this.value / 1000000) / 10;
+      return "population: " + population + " mln";
+    });
 
     // set the chart title
-    chart.title("Treemap: Labels and Tooltips (Tokens)");
+    chart.title("Treemap: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

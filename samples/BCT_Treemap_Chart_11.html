@@ -11,7 +11,7 @@
 
     // create data
     var data = anychart.data.tree([
-      {id: 1,  parent: null, name: "Slavic Languages – Number of Speakers"},
+      {id: 1,  parent: null, name: "Slavic Languages"},
       {id: 2,  parent:    1, name: "East Slavic"},
       {id: 3,  parent:    2, name: "Russian",        value: 150000000},
       {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
@@ -32,6 +32,15 @@
 
     // set the maximum depth of levels shown
     chart.maxDepth(3);
+
+    // configure the appearance of headers
+    chart.headers().fontColor("#990000");
+    chart.headers().fontWeight('bold');
+    chart.headers().fontSize("14");
+    chart.hoverHeaders().fontColor("black");
+
+    // configure the text of headers
+    chart.headers().format("{%name} – {%value}");
 
     // set the chart title
     chart.title("Treemap: Headers");
