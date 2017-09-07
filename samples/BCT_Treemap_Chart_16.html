@@ -24,10 +24,13 @@
     // set the depth of hints
     chart.hintDepth(3);
 
+    // disable labels
+    chart.labels(false);
+
     /* listen to the chartDraw event
-    and add the drill-down path to the chart title*/
+    and add the drill-down path to the chart title */
     chart.listen("chartDraw",function(){
-      // update the drill-down path and convert it to a string
+      // get the drill-down path and convert it to a string
       var text = printPath(chart.getDrilldownPath());
       // set the chart title
       chart.title().useHtml(true);
@@ -45,17 +48,17 @@
     // initiate drawing the chart
     chart.draw();
 
-    // create a label for drilling down to the level 3-4-5
-    createLabel("Drill Down to Lvl 3-4-5", 10, function() {
+    // create a label for drilling down to the level 3-4
+    createLabel("Drill Down to Lvl 3-4", 10, function() {
       /* locate an item in the data tree,
       get the item as an object*/
-      var item = treeData.search("name", "Lvl 3-4-5");
+      var item = treeData.search("name", "Lvl 3-4");
       // drill down to the item
       chart.drillTo(item);
     });
 
     // create a label for drilling up a level"
-    createLabel("Drill Up a Level", 180, function() {
+    createLabel("Drill Up a Level", 166, function() {
       // drill up
       chart.drillUp();
     });
@@ -116,10 +119,10 @@ function getData(){
 };
 
 /* a function for converting the current
-drill-down path to a string*/
+drill-down path to a string */
 function printPath(path){
   /* go through the array of the data tree items
-  and use the get() method to obtain the "name" field*/
+  and use the get() method to obtain the "name" field */
   var text = "";
   for (i = 0; i <  path.length; i++){ 
     text += path[i].get("name") + "\\";
