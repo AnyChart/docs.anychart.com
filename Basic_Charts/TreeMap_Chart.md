@@ -142,3 +142,15 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 {sample}BCT\_Treemap\_Chart\_15{sample}
 
 ### Interactivity
+
+```
+
+```
+
+{sample}BCT\_Treemap\_Chart\_16{sample}
+
+```
+
+```
+
+{sample}BCT\_Treemap\_Chart\_17{sample}

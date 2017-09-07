@@ -37,7 +37,8 @@ function getData(){
   var data = [];
   for (var x = 2000; x < 2018; x++){
     for (var y = 1; y < 13; y++){
-      var obj = {};   obj.x = x;
+      var obj = {};
+      obj.x = x;
       obj.y = y;
       obj.heat = Math.floor(Math.random()*10000) + 1; 
       data.push(obj);

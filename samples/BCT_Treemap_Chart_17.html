@@ -12,17 +12,16 @@
     // create a chart and set the data
     chart = anychart.treeMap(getData());
 
-    // set the maximum depth of levels shown
-    chart.maxDepth(2);
-
     // set the depth of hints
     chart.hintDepth(3);
 
-    // set the opacity of hints
-    chart.hintOpacity(0.7);  
+    // disable the drill-down option
+    chart.listen("drillchange", function(e){
+      return false;
+    });
 
     // set the chart title
-    chart.title("Treemap: Depth and Hints");
+    chart.title("Treemap: Interactivity\n(Disabling the Drill-Down Option)");
 
     // set the container id
     chart.container("container");
@@ -60,7 +59,7 @@ function getData(){
           {name: "Lvl 2-2-2", value:   300},
           {name: "Lvl 2-2-3", value:   150},
           {name: "Lvl 2-2-4", value:   100},
-          {name: "Lvl 2-2-5", value:    25}
+          {name: "Lvl 2-2-5", value:    15}
         ]},
         {name: "Lvl 2-3",     value:   400}
       ]},
