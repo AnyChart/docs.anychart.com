@@ -68,7 +68,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_Tag\_Cloud\_01{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_01{sample}
 
 ## General Settings
 
@@ -111,7 +111,7 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
-{sample}BCT\_Tag\_Cloud\_02{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
 The "category" field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
 
@@ -134,7 +134,7 @@ var data = [
 chart = anychart.tagCloud(data);
 ```
 
-{sample}BCT\_Tag\_Cloud\_03{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_03{sample}
 
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
@@ -184,7 +184,7 @@ chart.data(text, {
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_04{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_04{sample}
 
 ### Appearance
 
@@ -225,7 +225,7 @@ chart.hovered({fill: "#003366 0.5"});
 chart.selected({fill: "#003366 0.7"});
 ```
 
-{sample}BCT\_Tag\_Cloud\_05{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
 
 ### Color Scale
 
@@ -256,7 +256,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Tag\_Cloud\_06{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
 
 To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
@@ -283,7 +283,7 @@ chart.colorScale(customColorScale);
 chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
-{sample}BCT\_Tag\_Cloud\_07{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
 
 Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
 
@@ -314,7 +314,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Tag\_Cloud\_08{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_08{sample}
 
 ### Angles
 
@@ -332,7 +332,7 @@ You can specify the set of angles to be used in your chart by passing an array o
 chart.angles([0, 30, 90]);
 ```
 
-{sample}BCT\_Tag\_Cloud\_09{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_09{sample}
 
 There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
@@ -345,7 +345,7 @@ chart.toAngle(100);
 chart.anglesCount(5);
 ```
 
-{sample}BCT\_Tag\_Cloud\_10{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_10{sample}
 
 ### Text Spacing
 
@@ -358,7 +358,7 @@ In the sample below the spacing is set to 15:
 chart.textSpacing(15);
 ```
 
-{sample}BCT\_Tag\_Cloud\_11{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_11{sample}
 
 ### Mode
 
@@ -369,7 +369,7 @@ There are two modes of positioning elements on a Tag Cloud: **spiral** (default)
 chart.mode("rect");
 ```
 
-{sample}BCT\_Tag\_Cloud\_12{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_12{sample}
 
 ### Scales
 
@@ -385,7 +385,7 @@ as the value scale of the chart */
 tagCloud2.scale(anychart.scales.log());
 ```
 
-{sample}BCT\_Tag\_Cloud\_13{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_13{sample}
 
 ### Tooltips
 
@@ -397,7 +397,7 @@ In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Comm
 // configure tooltips
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
-{sample}BCT\_Tag\_Cloud\_14{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
 
 You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 
@@ -409,7 +409,7 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_15{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_15{sample}
 
 ### Interactivity
 
@@ -425,4 +425,4 @@ For example, here clicking on a word leads to its page opening in Wiktionary:
   });
 ```
 
-{sample}BCT\_Tag\_Cloud\_16{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_16{sample}

@@ -10,8 +10,8 @@
   * [Sorting Order](#sorting_order)
   * [Appearance](#appearance)
   * [Color Scale](#color_scale)
-  * [Headers](#headers)
   * [Labels and Tooltips](#labels_and_tooltips)
+  * [Headers](#headers)
   * [Interactivity](#interactivity)
 
 ## Overview
@@ -103,7 +103,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Treemap\_Chart\_10{sample}
 
-### Headers
+### Labels and Tooltips
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ```
 
@@ -117,17 +121,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Treemap\_Chart\_12{sample}
 
+### Headers
+
 ```
 
 ```
 
 {sample}BCT\_Treemap\_Chart\_13{sample}
-
-### Labels and Tooltips
-
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ```
 

@@ -11,40 +11,39 @@
 
     // create data
     var data = anychart.data.tree([
-      {id: 1,  parent: null, name: "Slavic Languages"},
-      {id: 2,  parent:    1, name: "East"},
-      {id: 3,  parent:    2, name: "Russian",        value: 150000000},
-      {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
-      {id: 5,  parent:    2, name: "Belarusian",     value:   3200000},
-      {id: 6,  parent:    1, name: "West"},
-      {id: 7,  parent:    6, name: "Polish",         value:  55000000},
-      {id: 8,  parent:    6, name: "Czech",          value:  10600000},
-      {id: 9,  parent:    6, name: "Slovak",         value:   5200000},
-      {id: 10, parent:    1, name: "South"},
-      {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
-      {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
-      {id: 13, parent:   10, name: "Slovene",        value:   2500000},
-      {id: 13, parent:   10, name: "Macedonian",     value:   1400000}
-    ], "as-table");
+    {name: "European Union – Top 10 Most Populated Countries",
+      children: [
+        {name: "Belgium",        value: 11443830, capital: "Brussels" },
+        {name: "France",         value: 64938716, capital: "Paris"    },
+        {name: "Germany",        value: 80636124, capital: "Berlin"   },
+        {name: "Greece",         value: 10892931, capital: "Athens"   },
+        {name: "Italy",          value: 59797978, capital: "Rome"     },
+        {name: "Netherlands",    value: 17032845, capital: "Amsterdam"},
+        {name: "Poland",         value: 38563573, capital: "Warsaw"   },
+        {name: "Romania",        value: 19237513, capital: "Bucharest"}, 
+        {name: "Spain",          value: 46070146, capital: "Madrid"   },
+        {name: "United Kingdom", value: 65511098, capital: "London"   }  
+      ]} 
+    ], "as-tree");
 
     // create a chart and set the data
     chart = anychart.treeMap(data);
 
-    // set the maximum depth of levels shown
-    chart.maxDepth(3);
+    // enable HTML for labels
+    chart.labels().useHtml(true);
 
-    // configure the text of headers
-    chart.headers().format("{%name} – {%value}");
+    // configure labels
+    chart.labels().format(
+      "<span style='font-weight:bold'>{%name}</span><br>{%value}"
+    );
 
-    // configure the appearance of headers
-    chart.headers().fontColor("#990000");
-    chart.headers().fontWeight('bold');
-    chart.headers().fontSize("20");
-    chart.hoverHeaders().fontColor("#000099");
-    chart.maxHeadersHeight("40");
+    // configure tooltips
+    chart.tooltip().format(
+      "population: {%value}\ncapital: {%capital}"
+    );
 
     // set the chart title
-    chart.title("Treemap: Headers");
+    chart.title("Treemap: Labels and Tooltips (Tokens)");
 
     // set the container id
     chart.container("container");
