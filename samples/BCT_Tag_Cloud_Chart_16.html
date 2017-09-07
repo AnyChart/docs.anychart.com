@@ -27,7 +27,7 @@
     chart = anychart.tagCloud(data);
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Interactivity\n(Opening the URL on Click)");
+    chart.title("Tag Cloud Chart: Interactivity\n(Opening a URL on Click)");
 
     // set the container id
     chart.container("container");
@@ -35,7 +35,7 @@
     // initiate drawing the chart
     chart.draw();
 
-    // add an event listener
+    // add an event listener to open a url on click
     chart.listen("pointClick", function(e){
         var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
         window.open(url, "_blank");
