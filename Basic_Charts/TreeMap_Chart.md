@@ -20,9 +20,34 @@ A treemap is...
 
 This article explains how to create a basic Treemap chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Treemap chart's characteristics:
 
-...
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[name, value, id, parent, size](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>N/A</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>N/A</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Heat Map](Heat_Map_Chart)</td></tr>
+<tr><td></td><td>[Marimekko](Marimekko_Chart/Mekko_Chart)</td></tr>
+<tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/treemap/" target="_blank">Chartopedia: Treemap Chart</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ## Quick Start
+
+To create a Treemap chart, use the {api:anychart#treeMap}anychart.treeMap(){api} chart constructor, like in the following sample, which shows the populations of top 10 most populated EU countries:
 
 ```
 // create data
@@ -63,6 +88,20 @@ Read the overview of general settings: [General Settings](General_Settings).
 ## Special Settings
   
 ### Data
+
+Data for a Treemap chart can be passed to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method.
+
+Use the following data fields:
+
+* **name** to set the names of tiles
+* **value** to set values
+* **id** to set unique identifiers
+* **parent** to set parents
+* **size** to set sizes
+
+There are two ways to arrange your data for a Treemap chart: as a tree or as a table... 
+
+This is how working with data fields of the Treemap chart looks like:
 
 ```
 // create data
@@ -118,6 +157,10 @@ chart = anychart.treeMap(data);
 ```
 
 {sample}BCT\_Treemap\_Chart\_03{sample}
+
+The "size" field is optional: it is used to show two parameters on one Treemap. If you use only the "value" field, both colors and sizes of tiles are calculated from it. If you add "size", colors still represent values, and sizes are calculated from "size".
+
+On this Treemap chart, the size of each tile represents the population of a country  ("size"), and the color represents the population density ("value").
 
 ```
 // create data
