@@ -47,7 +47,9 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 
 ## Quick Start
 
-To create a Treemap chart, use the {api:anychart#treeMap}anychart.treeMap(){api} chart constructor, like in the following sample, which shows the populations of top 10 most populated EU countries:
+To create a Treemap chart, use the {api:anychart#treeMap}anychart.treeMap(){api} chart constructor.
+
+In the sample below, there is a basic Treemap comparing the top 10 most populated EU countries by their population:
 
 ```
 // create data
@@ -93,15 +95,17 @@ Data for a Treemap chart can be passed to the chart constructor {api:anychart#tr
 
 Use the following data fields:
 
-* **name** to set the names of tiles
 * **value** to set values
+* **name** to set names
 * **id** to set unique identifiers
 * **parent** to set parents
 * **size** to set sizes
 
-There are two ways to arrange your data for a Treemap chart: as a tree or as a table... 
+There are two ways to arrange your data for a Treemap chart: as a tree or as a table. 
 
-This is how working with data fields of the Treemap chart looks like:
+For setting data as a tree, the "value" and "name" fields are required. You can also use "id" instead of "name", or both "id" and "name".
+
+That is how working with the tree representation of data looks like:
 
 ```
 // create data
@@ -133,6 +137,8 @@ chart = anychart.treeMap(data);
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
 
+For setting data as a table, the "id", "parent", and "value" fields are required:
+
 ```
 // create data
 var data = anychart.data.tree([
@@ -158,9 +164,9 @@ chart = anychart.treeMap(data);
 
 {sample}BCT\_Treemap\_Chart\_03{sample}
 
-The "size" field is optional: it is used to show two parameters on one Treemap. If you use only the "value" field, both colors and sizes of tiles are calculated from it. If you add "size", colors still represent values, and sizes are calculated from "size".
+No matter how your data is organised, colors and sizes of tiles represent the "value" field. Alternatively, sizes can represent an optional "size" field, so adding it to the data allows you to show two different parameters instead of one.
 
-On this Treemap chart, the size of each tile represents the population of a country  ("size"), and the color represents the population density ("value").
+On the Treemap chart below, the size of each tile represents the population of a country ("size"), and the color represents the population density ("value"):
 
 ```
 // create data
