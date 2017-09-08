@@ -101,9 +101,11 @@ Use the following data fields:
 * **parent** to set parents
 * **size** to set sizes
 
-There are two ways to arrange your data for a Treemap chart: as a tree or as a table. 
+There are two ways to arrange your data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model). The first one is expected by the Treemap by default.
 
-For setting data as a tree, the "value" and "name" fields are required. You can also use "id" instead of "name", or both "id" and "name".
+For organizing data as a tree, the "value" and "name" fields are required. You can also use "id" instead of "name", or both "id" and "name".
+
+Values are represented as different colors and sizes of tiles, and by default both values and names are shown in labels. If there is no "id" field, names are also used to identify elements (but, unlike identifiers, they do not need to be unique). 
 
 That is how working with the tree representation of data looks like:
 
@@ -137,7 +139,11 @@ chart = anychart.treeMap(data);
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
 
-For setting data as a table, the "id", "parent", and "value" fields are required:
+Arranging data as a table is particularly useful when you store your data in a relational database table. This way of organizing data requires the "name", "value", id", and "parent" fields.
+
+Values are represented as sizes and colors of tiles, and names (as well as values) are shown in labels. The "id" and "parent" fields are used for identifying elements and specifying their hierarchy.
+
+That is how working with the table representation of data looks like:
 
 ```
 // create data
