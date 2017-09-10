@@ -24,7 +24,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[name, value, id, parent, size](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[children, id, name, parent, size, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -95,19 +95,18 @@ Data for a Treemap chart can be passed to the chart constructor {api:anychart#tr
 
 Use the following data fields:
 
-* **value** to set values
-* **name** to set names
+* **children** to set children
 * **id** to set unique identifiers
+* **name** to set names
 * **parent** to set parents
 * **size** to set sizes
+* **value** to set values
 
 In addition, it is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
-Tree data structure is expected by the Treemap by default. It requires two fields: "value" and "name" / "id".
-
-Values are represented as different colors and sizes of tiles, and by default values and names / identifiers are shown in labels. If there are both the "id" and "name" fields, identifiers are used to identify elements, and names shown in labels (please note that, unlike identifiers, names do not need to be unique). 
+Tree data structure is expected by the Treemap by default. It requires three fields: "value", "name" or "id", "children" (the last one used to specify the hierarchy of elements).
 
 That is how working with tree data structure looks like:
 
@@ -141,11 +140,9 @@ chart = anychart.treeMap(data);
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
 
-Arranging data as a table is particularly useful when you store your data in a relational database table. This way of organizing data requires the "name", "value", id", and "parent" fields.
+Arranging data as a table is particularly useful when you store your data in a relational database table. This way of organizing data requires the "name", "value", id", and "parent" fields ("id" and "parent" used to specify the hierarchy of elements).
 
-Values are represented as sizes and colors of tiles, and names (as well as values) are shown in labels. The "id" and "parent" fields are used for identifying elements and specifying their hierarchy.
-
-That is how working with the table representation of data looks like:
+That is how working with table data structure looks like:
 
 ```
 // create data
