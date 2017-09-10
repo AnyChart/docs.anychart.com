@@ -199,15 +199,26 @@ chart = anychart.treeMap(data, "as-tree");
 
 {sample}BCT\_Treemap\_Chart\_04{sample}
 
-
 ### Depth and Hints
+
+You can specify how many levels of the hierarchy are shown simultaneously on a chart: use the {api:anychart.charts.TreeMap#maxDepth}maxDepth(){api} method.
+
+All elements shown with this method are interactive, and their parents are visualized as [headers](#headers). The default value is 1, which means that users can see only one level with its parent at a time, and the lower levels are hidden.
+
+The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints – lines indicating the elements of hidden levels.
+
+The elements shown with this method are not interactive, and [hidden parent elements are not visualized]. The default value is 0, which means that hints are disabled.
+
+To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
+
+The following sample demonstrates how to configure the depth of levels shown and the depth and opacity of hints:
 
 ```
 // set the maximum depth of levels shown
 chart.maxDepth(2);
 
 // set the depth of hints
-chart.hintDepth(3);
+chart.hintDepth(1);
 
 // set the opacity of hints
 chart.hintOpacity(0.7);  

@@ -16,13 +16,13 @@
     chart.maxDepth(2);
 
     // set the depth of hints
-    chart.hintDepth(3);
+    chart.hintDepth(1);
 
     // set the opacity of hints
     chart.hintOpacity(0.7);  
 
-    // disable labels
-    chart.labels(false);
+    // configure labels
+    chart.labels().format("{%name}");
 
     // set the chart title
     chart.title("Treemap: Depth and Hints");
