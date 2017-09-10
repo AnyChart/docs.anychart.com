@@ -101,13 +101,15 @@ Use the following data fields:
 * **parent** to set parents
 * **size** to set sizes
 
-There are two ways to arrange your data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model). The first one is expected by the Treemap by default.
+In addition, it is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-For organizing data as a tree, the "value" and "name" fields are required. You can also use "id" instead of "name", or both "id" and "name".
+There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
-Values are represented as different colors and sizes of tiles, and by default both values and names are shown in labels. If there is no "id" field, names are also used to identify elements (but, unlike identifiers, they do not need to be unique). 
+Tree data structure is expected by the Treemap by default. It requires two fields: "value" and "name" / "id".
 
-That is how working with the tree representation of data looks like:
+Values are represented as different colors and sizes of tiles, and by default values and names / identifiers are shown in labels. If there are both the "id" and "name" fields, identifiers are used to identify elements, and names shown in labels (please note that, unlike identifiers, names do not need to be unique). 
+
+That is how working with tree data structure looks like:
 
 ```
 // create data

@@ -86,7 +86,9 @@ When you create data, you should use these data fields for both circles and inte
 * **value** to set sizes
 * **name** to set names
 
-The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**. Read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**.
+
+Please note that it is possible to add custom fields to your data – see the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
 The sample below shows two circles with their names set:
 
