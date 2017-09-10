@@ -102,13 +102,13 @@ Use the following data fields to create data for a Treemap chart:
 
 In addition, it is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) (expected by this chart type by default) or [as a table](../Working_with_Data/Using_Table_Data_Model).
+There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
-To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use **"as-tree"** as the second parameter.
+Tree data structure is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use **"as-tree"** as the second parameter.
 
-Three data fields are required: **"value"**, **"name"** / **"id"**, and **"children"**; the last one  is used to specify the hierarchy of elements.
+Three data fields are required: **"value"**, **"name"** / **"id"**, and **"children"** – the last one is used to specify the hierarchy of elements.
 
-That is how working with tree data structure looks like:
+That is how it looks like:
 
 ```
 // create data
@@ -142,7 +142,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 Organizing data as a table is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use **"as-table"** as the second parameter.
 
-Four data fields are required: **"name"**, **"value"**, **"id"**, and **"parent"** ("id" and "parent" are used to specify the hierarchy of elements).
+Four data fields are required: **"name"**, **"value"**, **"id"**, and **"parent"** – the last two are used to specify the hierarchy of elements.
 
 That is how it looks like:
 
@@ -171,7 +171,7 @@ chart = anychart.treeMap(data, "as-table");
 
 {sample}BCT\_Treemap\_Chart\_03{sample}
 
-No matter what data structure you use, colors and sizes of tiles represent the "value" field. Alternatively, sizes can represent an optional "size" field, so adding it to the data allows you to show two different parameters instead of one.
+No matter what data structure you use, colors and sizes of tiles represent the **"value"** field. Alternatively, sizes can represent an optional **"size"** field, so adding it to the data allows you to show two different parameters instead of one.
 
 On the Treemap chart below, the size of each tile represents the population of a country ("size"), and the color represents the population density ("value"):
 
