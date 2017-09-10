@@ -53,7 +53,7 @@ In the sample below, there is a basic Treemap comparing the top 10 most populate
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
 {name: "European Union – Top 10 Most Populated Countries",
   children: [
     {name: "Belgium",        value: 11443830},
@@ -67,10 +67,10 @@ var data = anychart.data.tree([
     {name: "Spain",          value: 46070146},
     {name: "United Kingdom", value: 65511098}  
   ]} 
-], "as-tree");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-tree");
 
 // set the container id
 chart.container("container");
@@ -112,7 +112,7 @@ That is how working with tree data structure looks like:
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
 {name: "Slavic Languages – Number of Speakers",
   children: [
     {name: "East Slavic", children: [
@@ -132,10 +132,10 @@ var data = anychart.data.tree([
       {name: "Macedonian",     value:   1400000}
     ]}  
   ]} 
-], "as-tree");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-tree");
 ```
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
@@ -146,7 +146,7 @@ That is how working with table data structure looks like:
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
   {id: 1,  parent: null, name: "Slavic Languages – Number of Speakers"},
   {id: 2,  parent:    1, name: "East Slavic"},
   {id: 3,  parent:    2, name: "Russian",        value: 150000000},
@@ -161,10 +161,10 @@ var data = anychart.data.tree([
   {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
   {id: 13, parent:   10, name: "Slovene",        value:   2500000},
   {id: 13, parent:   10, name: "Macedonian",     value:   1400000}
-], "as-table");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-table");
 ```
 
 {sample}BCT\_Treemap\_Chart\_03{sample}
@@ -175,7 +175,7 @@ On the Treemap chart below, the size of each tile represents the population of a
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
 {name: "EU – Population Density in Top 10 Most Populated Countries",
   children: [
     {name: "Belgium",        size: 11443830, value: 378},
@@ -189,10 +189,10 @@ var data = anychart.data.tree([
     {name: "Spain",          size: 46070146, value:  92},
     {name: "United Kingdom", size: 65511098, value: 271}  
   ]} 
-], "as-tree");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-tree");
 ```
 
 {sample}BCT\_Treemap\_Chart\_04{sample}
@@ -238,7 +238,7 @@ chart.selectStroke("gray", 2);
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
 {name: "European Union – Top 10 Most Populated Countries",
   children: [
     {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
@@ -261,10 +261,10 @@ var data = anychart.data.tree([
       selectStroke: {color: "white", thickness: 5}
     }  
   ]} 
-], "as-tree");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-tree");
 ```
 
 {sample}BCT\_Treemap\_Chart\_08{sample}
@@ -369,7 +369,7 @@ chart.maxHeadersHeight("40");
 
 ```
 // create data
-var data = anychart.data.tree([
+var data = [
   {id: 1,  parent: null, name: "Slavic Languages", header: {
                                                      format: "{%name} – {%value} Speakers",
                                                      fontColor: "#990000",
@@ -391,10 +391,10 @@ var data = anychart.data.tree([
   {id: 12, parent:   10, name: "Bulgarian",        value:   9000000},
   {id: 13, parent:   10, name: "Slovene",          value:   2500000},
   {id: 13, parent:   10, name: "Macedonian",       value:   1400000}
-], "as-table");
+];
 
 // create a chart and set the data
-chart = anychart.treeMap(data);
+chart = anychart.treeMap(data, "as-tree");
 ```
 
 {sample}BCT\_Treemap\_Chart\_14{sample}
@@ -407,6 +407,8 @@ chart = anychart.treeMap(data);
 {sample}BCT\_Treemap\_Chart\_15{sample}
 
 ### Interactivity
+
+[создать instance of the anychart.data.Tree class, используя метод anychart.data.tree()]
 
 ```
 /* locate an item in the data tree,

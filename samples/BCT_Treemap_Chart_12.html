@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create data
-    var data = anychart.data.tree([
+    var data = [
     {name: "European Union – Top 10 Most Populated Countries",
       children: [
         {name: "Belgium",        value: 11443830, capital: "Brussels" },
@@ -24,10 +24,10 @@
         {name: "Spain",          value: 46070146, capital: "Madrid"   },
         {name: "United Kingdom", value: 65511098, capital: "London"   } 
       ]} 
-    ], "as-tree");
+    ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
     // enable HTML for labels
     chart.labels().useHtml(true);

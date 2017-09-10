@@ -13,7 +13,7 @@
     stage = anychart.graphics.create("container"); 
 
     // create data
-    var data = anychart.data.tree([
+    var data = [
     {name: "European Union – Top 10 Most Populated Countries",
       children: [
         {name: "Belgium",        value: 11443830},
@@ -27,10 +27,10 @@
         {name: "Spain",          value: 46070146},
         {name: "United Kingdom", value: 65511098}  
       ]} 
-    ], "as-tree");
+    ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
     // set the chart position and title
     chart.top(35);

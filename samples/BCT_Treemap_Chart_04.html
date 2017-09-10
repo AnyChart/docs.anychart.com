@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create data
-    var data = anychart.data.tree([
+    var data = [
     {name: "EU – Population Density in Top 10 Most Populated Countries",
       children: [
         {name: "Belgium",        size: 11443830, value: 378},
@@ -24,10 +24,10 @@
         {name: "Spain",          size: 46070146, value:  92},
         {name: "United Kingdom", size: 65511098, value: 271}  
       ]} 
-    ], "as-tree");
+    ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
     chart.title("Treemap: Data (Size and Value)");

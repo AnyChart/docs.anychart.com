@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create data
-    var data = anychart.data.tree([
+    var data = [
     {name: "European Union – Top 10 Most Populated Countries",
       children: [
         {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
@@ -33,10 +33,10 @@
           selectStroke: {color: "white", thickness: 5}
         }  
       ]} 
-    ], "as-tree");
+    ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
     chart.title("Treemap: Appearance\n(Configuring Each Cell Individually)");

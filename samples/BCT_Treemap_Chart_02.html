@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create data
-    var data = anychart.data.tree([
+    var data = [
     {name: "Slavic Languages – Number of Speakers",
       children: [
         {name: "East Slavic", children: [
@@ -30,10 +30,10 @@
           {name: "Macedonian",     value:   1400000}
         ]}  
       ]} 
-    ], "as-tree");
+    ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
     chart.title("Treemap: Data (Tree)");
