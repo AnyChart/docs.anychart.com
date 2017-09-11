@@ -147,15 +147,15 @@ That is how it looks like:
 ```
 // create data
 var data = [
-  {id: 1,  parent: null, name: "Slavic Languages – Number of Speakers"},
-  {id: 2,  parent:    1, name: "East Slavic"},
-  {id: 3,  parent:    2, name: "Russian",        value: 150000000},
-  {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
-  {id: 5,  parent:    2, name: "Belarusian",     value:   3200000},
-  {id: 6,  parent:    1, name: "West Slavic"},
-  {id: 7,  parent:    6, name: "Polish",         value:  55000000},
-  {id: 8,  parent:    6, name: "Czech",          value:  10600000},
-  {id: 9,  parent:    6, name: "Slovak",         value:   5200000},
+  {id:  1, parent: null, name: "Slavic Languages – Number of Speakers"},
+  {id:  2, parent:    1, name: "East Slavic"},
+  {id:  3, parent:    2, name: "Russian",        value: 150000000},
+  {id:  4, parent:    2, name: "Ukrainian",      value:  45000000},
+  {id:  5, parent:    2, name: "Belarusian",     value:   3200000},
+  {id:  6, parent:    1, name: "West Slavic"},
+  {id:  7, parent:    6, name: "Polish",         value:  55000000},
+  {id:  8, parent:    6, name: "Czech",          value:  10600000},
+  {id:  9, parent:    6, name: "Slovak",         value:   5200000},
   {id: 10, parent:    1, name: "South Slavic"},
   {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
   {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
@@ -360,6 +360,22 @@ chart.tooltip().format(
 {sample}BCT\_Treemap\_Chart\_11{sample}
 
 ```
+// create data
+var data = [
+  {name:   "European Union – Top 10 Most Populated Countries", children: [
+    {name: "Belgium",        value: 11443830, capital: "Brussels" },
+    {name: "France",         value: 64938716, capital: "Paris"    },
+    {name: "Germany",        value: 80636124, capital: "Berlin"   },
+    {name: "Greece",         value: 10892931, capital: "Athens"   },
+    {name: "Italy",          value: 59797978, capital: "Rome"     },
+    {name: "Netherlands",    value: 17032845, capital: "Amsterdam"},
+    {name: "Poland",         value: 38563573, capital: "Warsaw"   },
+    {name: "Romania",        value: 19237513, capital: "Bucharest"}, 
+    {name: "Spain",          value: 46070146, capital: "Madrid"   },
+    {name: "United Kingdom", value: 65511098, capital: "London"   }  
+  ]} 
+];
+
 // create a chart and set the data
 chart = anychart.treeMap(data, "as-tree");
 
