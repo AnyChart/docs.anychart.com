@@ -236,6 +236,16 @@ chart.sort("asc");
 
 ### Appearance
 
+Here is a full list of methods used to configure visual settings that are available for the Treemap chart:
+
+*  {api:anychart.charts.Treemap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.Treemap#stroke}stroke(){api} set the fill, hatch fill, and stroke
+*  {api:anychart.charts.Treemap#hoverFill}hoverFill(){api}, {api:anychart.charts.Treemap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Treemap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+*  {api:anychart.charts.Treemap#selectFill}selectFill(){api}, {api:anychart.charts.Treemap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Treemap#selectStroke()}selectStroke(){api} configure the visual settings on select
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+
+In the followoing sample, there is a Treemap chart with some of the appearance settings configured:
+
 ```
 // configure visual settings
 chart.hoverFill("gray", 0.4);
@@ -245,6 +255,11 @@ chart.stroke("gray");
 chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
+It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data.
+
+**Note**: With "stroke", "hoverStroke", and "selectStroke", you can use only objects as values. In other cases, you can use either objects or strings.
+
+In the sample below, the visual settings of each item are configured individually:
 
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
@@ -281,6 +296,20 @@ chart = anychart.treeMap(data, "as-tree");
 
 ### Color Scale
 
+By default, the color scale of a Treemap chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+
+To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
+
+Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
+
+To set your scale as the color scale of the chart, use the {api:anychart.charts.Treemap#colorScale}colorScale(){api} method.
+
+Optionally, you can use {api:anychart.charts.Treemap#colorRange}colorRange(){api} to enable a **color range** – a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
+
+The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
+
+This sample shows a Treemap with an ordinal color scale and a color range:
+
 ```
 // create and configure a color scale.
 var customColorScale = anychart.scales.ordinalColor();
@@ -301,6 +330,14 @@ chart.colorRange().colorLineSize(10);
 ```
 
 {sample}BCT\_Treemap\_Chart\_09{sample}
+
+To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
+
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
+
+Finally, call {api:anychart.charts.Treemap#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.Treemap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
+
+In the following sample, there is a Treemap with a linear color scale and a color range:
 
 ```
 // create and configure a color scale.
