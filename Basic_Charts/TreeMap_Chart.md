@@ -54,8 +54,7 @@ In the sample below, there is a basic Treemap comparing the top 10 most populate
 ```
 // create data
 var data = [
-{name: "European Union – Top 10 Most Populated Countries",
-  children: [
+  {name:   "European Union – Top 10 Most Populated Countries", children: [
     {name: "Belgium",        value: 11443830},
     {name: "France",         value: 64938716},
     {name: "Germany",        value: 80636124},
@@ -113,19 +112,18 @@ That is how it looks like:
 ```
 // create data
 var data = [
-{name: "Slavic Languages – Number of Speakers",
-  children: [
-    {name: "East Slavic", children: [
+  {name:     "Slavic Languages – Number of Speakers", children: [
+    {name:   "East Slavic", children: [
       {name: "Russian",        value: 150000000},
       {name: "Ukrainian",      value:  45000000},
       {name: "Belarusian",     value:   3200000}
     ]},
-    {name: "West Slavic", children: [
+    {name:   "West Slavic", children: [
       {name: "Polish",         value:  55000000},
       {name: "Czech",          value:  10600000},
       {name: "Slovak",         value:   5200000}
     ]},
-    {name: "South Slavic", children: [
+    {name:   "South Slavic", children: [
       {name: "Serbo-Croatian", value:  21000000},
       {name: "Bulgarian",      value:   9000000},
       {name: "Slovene",        value:   2500000},
@@ -178,8 +176,7 @@ On the Treemap chart below, the size of each tile represents the population of a
 ```
 // create data
 var data = [
-{name: "EU – Population Density in Top 10 Most Populated Countries",
-  children: [
+  {name:   "EU – Population Density in Top 10 Most Populated Countries", children: [
     {name: "Belgium",        size: 11443830, value: 378},
     {name: "France",         size: 64938716, value: 119},
     {name: "Germany",        size: 80636124, value: 231},
@@ -205,9 +202,9 @@ You can specify how many levels of the hierarchy are shown simultaneously on a c
 
 All elements shown with this method are interactive, and their parents are visualized as [headers](#headers). The default value is 1, which means that users can see only one level with its parent at a time, and the lower levels are hidden.
 
-The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints – lines indicating the elements of hidden levels.
+The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints – lines indicating the elements of hidden levels. The elements shown with this method are not interactive; the default value is 0, which means that hints are disabled.
 
-The elements shown with this method are not interactive; the default value is 0, which means that hints are disabled. To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
+To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
 
 The following sample demonstrates how to configure the depth of levels shown and the depth and opacity of hints:
 
@@ -225,6 +222,10 @@ chart.hintOpacity(0.7);
 {sample}BCT\_Treemap\_Chart\_05{sample}
 
 ### Sorting Order
+
+You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with **"desc"**, **"asc"**, or **"none"** as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
+
+The sample below shows how to set the sorting mode:
 
 ```
 // set the sorting mode
@@ -250,8 +251,7 @@ chart.selectStroke("gray", 2);
 ```
 // create data
 var data = [
-{name: "European Union – Top 10 Most Populated Countries",
-  children: [
+  {name:   "European Union – Top 10 Most Populated Countries",  children: [
     {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
     {name: "France",         value: 64938716, fill: "#ff6600"},
     {name: "Greece",         value: 10892931, fill: "#ffcc00"},
@@ -262,14 +262,14 @@ var data = [
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
     {
-      name: "Germany",
-      value: 80636124,
-      fill: "#ff0000",
-      hoverFill: "#ff0000",
-      selectFill: "#b30059",
-      stroke: {color: "#b30059", thickness: 4},
-      hoverStroke: {color: "white", thickness: 5},
-      selectStroke: {color: "white", thickness: 5}
+       name: "Germany",
+       value: 80636124,
+       fill: "#ff0000",
+       hoverFill: "#ff0000",
+       selectFill: "#b30059",
+       stroke: {color: "#b30059", thickness: 4},
+       hoverStroke: {color: "white", thickness: 5},
+       selectStroke: {color: "white", thickness: 5}
     }  
   ]} 
 ];
@@ -325,6 +325,25 @@ chart.colorRange().colorLineSize(10);
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ```
+// create data
+var data = [
+  {name:   "European Union – Top 10 Most Populated Countries", children: [
+    {name: "Belgium",        value: 11443830, capital: "Brussels" },
+    {name: "France",         value: 64938716, capital: "Paris"    },
+    {name: "Germany",        value: 80636124, capital: "Berlin"   },
+    {name: "Greece",         value: 10892931, capital: "Athens"   },
+    {name: "Italy",          value: 59797978, capital: "Rome"     },
+    {name: "Netherlands",    value: 17032845, capital: "Amsterdam"},
+    {name: "Poland",         value: 38563573, capital: "Warsaw"   },
+    {name: "Romania",        value: 19237513, capital: "Bucharest"}, 
+    {name: "Spain",          value: 46070146, capital: "Madrid"   },
+    {name: "United Kingdom", value: 65511098, capital: "London"   }  
+  ]} 
+];
+
+// create a chart and set the data
+chart = anychart.treeMap(data, "as-tree");
+
 // enable HTML for labels
 chart.labels().useHtml(true);
 
@@ -342,6 +361,9 @@ chart.tooltip().format(
 {sample}BCT\_Treemap\_Chart\_11{sample}
 
 ```
+// create a chart and set the data
+chart = anychart.treeMap(data, "as-tree");
+
 // enable HTML for labels
 chart.labels().useHtml(true);
 
@@ -381,27 +403,32 @@ chart.maxHeadersHeight("40");
 ```
 // create data
 var data = [
-  {id: 1,  parent: null, name: "Slavic Languages", header: {
-                                                     format: "{%name} – {%value} Speakers",
-                                                     fontColor: "#990000",
-                                                     fontWeight: "bold",
-                                                     fontSize: "14"
-                                                   },
-                                                   hoverHeader: {fontColor: "#000099"}
-  },
-  {id: 2,  parent:    1, name: "East Slavic",      header: null},
-  {id: 3,  parent:    2, name: "Russian",          value: 150000000},
-  {id: 4,  parent:    2, name: "Ukrainian",        value:  45000000},
-  {id: 5,  parent:    2, name: "Belarusian",       value:   3200000},
-  {id: 6,  parent:    1, name: "West Slavic",      header: null},
-  {id: 7,  parent:    6, name: "Polish",           value:  55000000},
-  {id: 8,  parent:    6, name: "Czech",            value:  10600000},
-  {id: 9,  parent:    6, name: "Slovak",           value:   5200000},
-  {id: 10, parent:    1, name: "South Slavic",     header: null},
-  {id: 11, parent:   10, name: "Serbo-Croatian",   value:  21000000},
-  {id: 12, parent:   10, name: "Bulgarian",        value:   9000000},
-  {id: 13, parent:   10, name: "Slovene",          value:   2500000},
-  {id: 13, parent:   10, name: "Macedonian",       value:   1400000}
+  {name:     "Slavic Languages – Number of Speakers",
+   header: {
+     format: "{%name} – {%value} Speakers",
+     fontColor: "#990000",
+     fontWeight: "bold",
+     fontSize: "14"
+   },
+   hoverHeader: {fontColor: "#000099"},
+   children: [
+    {name:   "East Slavic", header: null, children: [
+      {name: "Russian",        value: 150000000},
+      {name: "Ukrainian",      value:  45000000},
+      {name: "Belarusian",     value:   3200000}
+    ]},
+    {name:   "West Slavic", header: null, children: [
+      {name: "Polish",         value:  55000000},
+      {name: "Czech",          value:  10600000},
+      {name: "Slovak",         value:   5200000}
+    ]},
+    {name:   "South Slavic", header: null, children: [
+      {name: "Serbo-Croatian", value:  21000000},
+      {name: "Bulgarian",      value:   9000000},
+      {name: "Slovene",        value:   2500000},
+      {name: "Macedonian",     value:   1400000}
+    ]}  
+  ]} 
 ];
 
 // create a chart and set the data

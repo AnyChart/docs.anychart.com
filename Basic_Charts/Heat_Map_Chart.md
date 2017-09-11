@@ -170,14 +170,14 @@ var data = [
   {x: "4", y: "B", fill: "#ff9933"},
   {x: "4", y: "C", fill: "#ff6600"},
   {
-    x: "4",
-    y: "D",
-    fill: "#ff0000",
-    hoverFill: "#ff0000",
-    selectFill: "#b30059",
-    stroke: {color: "#b30059", thickness: 4},
-    hoverStroke: {color: "white", thickness: 5},
-    selectStroke: {color: "white", thickness: 5}
+     x: "4",
+     y: "D",
+     fill: "#ff0000",
+     hoverFill: "#ff0000",
+     selectFill: "#b30059",
+     stroke: {color: "#b30059", thickness: 4},
+     hoverStroke: {color: "white", thickness: 5},
+     selectStroke: {color: "white", thickness: 5}
   }
 ];
 

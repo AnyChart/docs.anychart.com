@@ -11,20 +11,24 @@
 
     // create data
     var data = [
-      {id: 1,  parent: null, name: "Slavic Languages"},
-      {id: 2,  parent:    1, name: "East"},
-      {id: 3,  parent:    2, name: "Russian",        value: 150000000},
-      {id: 4,  parent:    2, name: "Ukrainian",      value:  45000000},
-      {id: 5,  parent:    2, name: "Belarusian",     value:   3200000},
-      {id: 6,  parent:    1, name: "West"},
-      {id: 7,  parent:    6, name: "Polish",         value:  55000000},
-      {id: 8,  parent:    6, name: "Czech",          value:  10600000},
-      {id: 9,  parent:    6, name: "Slovak",         value:   5200000},
-      {id: 10, parent:    1, name: "South"},
-      {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
-      {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
-      {id: 13, parent:   10, name: "Slovene",        value:   2500000},
-      {id: 13, parent:   10, name: "Macedonian",     value:   1400000}
+      {name:     "Slavic Languages – Number of Speakers", children: [
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
+        ]},
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
+      ]} 
     ];
 
     // create a chart and set the data
