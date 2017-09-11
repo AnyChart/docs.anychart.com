@@ -251,7 +251,7 @@ chart.selectStroke("gray", 2);
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries",  children: [
+  {name:   "European Union – Top 10 Most Populated Countries", children: [
     {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
     {name: "France",         value: 64938716, fill: "#ff6600"},
     {name: "Greece",         value: 10892931, fill: "#ffcc00"},
@@ -261,15 +261,14 @@ var data = [
     {name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
-    {
-       name: "Germany",
-       value: 80636124,
-       fill: "#ff0000",
-       hoverFill: "#ff0000",
-       selectFill: "#b30059",
-       stroke: {color: "#b30059", thickness: 4},
-       hoverStroke: {color: "white", thickness: 5},
-       selectStroke: {color: "white", thickness: 5}
+    {name: "Germany",
+     value: 80636124,
+     fill: "#ff0000",
+     hoverFill: "#ff0000",
+     selectFill: "#b30059",
+     stroke: {color: "#b30059", thickness: 4},
+     hoverStroke: {color: "white", thickness: 5},
+     selectStroke: {color: "white", thickness: 5}
     }  
   ]} 
 ];
