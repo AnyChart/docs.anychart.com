@@ -360,6 +360,15 @@ chart.colorRange().colorLineSize(10);
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+To change the text of labels, combine the {api:anychart.charts.Treemap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the {api:anychart.charts.Treemap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Here is the list of tokens that work with the Treemap chart:
+
+* *{%x}*
+...
+
 ```
 // create data
 var data = [
