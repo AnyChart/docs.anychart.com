@@ -207,9 +207,7 @@ All elements shown with this method are interactive, and their parents are visua
 
 The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints – lines indicating the elements of hidden levels.
 
-The elements shown with this method are not interactive, and [hidden parent elements are not visualized]. The default value is 0, which means that hints are disabled.
-
-To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
+The elements shown with this method are not interactive; the default value is 0, which means that hints are disabled. To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
 
 The following sample demonstrates how to configure the depth of levels shown and the depth and opacity of hints:
 
