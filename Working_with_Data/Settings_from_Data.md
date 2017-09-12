@@ -1,9 +1,5 @@
 {:index 9}
-Settings from Data
-========
-
-* [Overview](#overview)
-* [Supported Functionality](#supported_functionality)
+# Settings from Data
 
 ## Overview
 
@@ -84,7 +80,7 @@ var data = [
 
 It was a simple demonstration of this feature, we've created the sample below to illustrate more opportunities:
 
-{sample :width 690 :height 450}Settings\_From\_Data\_04{sample}
+{sample :height 450}Settings\_From\_Data\_04{sample}
 
 ## Supported Functionality
 

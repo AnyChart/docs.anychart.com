@@ -1,10 +1,6 @@
 {:index 2}
 # Loading CSV File
 
-* [Overview](#overview)
-* [loadCsvFile() method](#loadcsvfile_method)
-* [CSV Settings](#csv_settings)
-
 ## Overview
 
 Ability to load CSV files is one of the things [Data Adapter](Overview) provides.
@@ -18,7 +14,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 
 You can load [Data from CSV](../Data_From_CSV) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadCsvFile}loadCsvFile(){api} method as described below.
 
-## loadCsvFile method
+## loadCsvFile() method
 
 Using {api:anychart.data#loadCsvFile}loadCsvFile(){api} method is as easy as this:
 

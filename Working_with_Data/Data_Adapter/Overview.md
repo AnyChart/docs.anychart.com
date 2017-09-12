@@ -1,14 +1,6 @@
 {:index 1}
 # Data Adapter
 
-* [Overview](#overview)
-* [HTML Tables](#html_tables)
-* [Loading Files](#loading_files)
- * [CSV File](#csv_file)
- * [Google Spreadsheet](#google_spreadsheet)
- * [JSON File](#json_file)
- * [XML File](#xml_file)
-
 ## Overview
 
 AnyChart JavaScript charting framework supports several ways of setting data. For the information about this see [Overview](../Overview), [Using Data Sets](../Using_Data_Sets) and [Supported Data Formats](../Supported_Data_Formats) articles - these are things built-in into AnyChart core engine.

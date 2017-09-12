@@ -1,13 +1,5 @@
 {:index 0.4}
-#Working with Data in AnyChart
-
-* [Overview](#overview)
-* [Single Series and Multi Series Charts](#single_series_and_multi_series_charts)
-* [Mapping Data Sets](#mapping_data_sets)
-* [Data Models](#data_models)
-* [Data Formats](#data_formats)
-* [Loading Data](#loading_data)
-* [Data Streaming](#data_streaming)
+# Working with Data in AnyChart
 
 ## Overview
 

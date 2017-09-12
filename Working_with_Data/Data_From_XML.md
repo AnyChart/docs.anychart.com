@@ -1,17 +1,6 @@
 {:index 8}
 # Getting Data from XML
 
-* [Overview](#overview)
-* [Schema](#schema)
-* [XML vs JavaScript](#xml_vs_javascript)
-* [Serialization](#serialization)
-* [Multiple Series](#multiple_series)
-* [Settings](#settings)
- * [Axes](#axes)
- * [Visualization](#visualization)
-* [Samples](#samples)
-* [Complex](#complex)
-
 ## Overview
 
 AnyChart JavaScript charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.

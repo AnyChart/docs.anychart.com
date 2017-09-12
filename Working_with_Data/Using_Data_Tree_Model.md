@@ -1,16 +1,6 @@
 {:index 5}
 # Using Data Tree Model
 
-* [Overview](#overview)
-* [Usage](#usage)
-* [Data Manipulation](#data_manipulation)
- * [Create](#create)
- * [Read](#read)
- * [Update](#update)
- * [Delete](#delete)
- * [Search](#search)
- * [Traverse](#traverse)
-
 ## Overview
 
 Tree Data is a way of implementing hierarchical structures with parent/child relations.

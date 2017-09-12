@@ -1,15 +1,6 @@
 {:index 5}
 # Loading Google Spreadsheet
 
-* [Overview](#overview)
-* [Loading Spreadsheet](#loading_spreadsheet)
- * [Key](#key)
- * [Sheet](#sheet)
-* [Setting Data](#setting_data)
- * [From the default sheet](#from_the_default_sheet)
- * [From a sheet by index](#from_a_sheet_by_index)
- * [From a sheet by id](#from_a_sheet_by_id)
-
 ## Overview
 
 Ability to [load data from Google Spreadsheet](#loading_spreadsheet) is one of the features [Data Adapter](Overview) provides.

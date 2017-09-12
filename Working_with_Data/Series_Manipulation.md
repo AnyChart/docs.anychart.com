@@ -1,13 +1,6 @@
 {:index 4}
 # Series Manipulation
 
-* [Overview](#overview)
-* [Adding Series](#adding_series)
-* [Identifying Series](#identifying_series)
- * [Index](#index)
- * [ID](#id)
-* [Removing Series](#removing_series)
-
 ## Overview
 
 Series is a single set of data, that is visualized on a chart's plot. Series has a type and series data can be changed any time you want, when data changes in the data set or you update series properties you see updated visualization instantly.
@@ -74,8 +67,8 @@ Also, you can get the exact number of series in a chart using {api:anychart.char
 
 ```
 var seriesIndexes = [];
-for (var i=0; i<chart.getSeriesCount();i++){
-  seriesIndexes.push(chart.getSeriesAt(i).index());
+for (var i=0; i < chart.getSeriesCount();i++){
+seriesIndexes.push(chart.getSeriesAt(i).index());
 }
 ```
 

@@ -1,10 +1,6 @@
 {:index 8.5}
 # Getting Data from CSV
 
-* [Overview](#overview)
-* [CSV Parsing Settings](#csv_parsing_settings)
-* [Loading CSV files](#loading_csv_files)
-
 ## Overview
 
 AnyChart js charting library supports several ways of setting data. This article tells  how [Comma-Separated Values (CSV)](https://en.wikipedia.org/wiki/Comma-separated_values) format can be used in AnyChart component. 

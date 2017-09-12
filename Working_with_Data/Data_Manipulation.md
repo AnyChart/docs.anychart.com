@@ -1,15 +1,6 @@
 {:index 3}
 # Data Manipulation
 
-* [Overview](#overview)
- * [Add](#add)
- * [Meta-adding](#meta-add)
- * [Read](#read)
- * [Update](#update)
- * [Delete](#delete)
- * [Insert](#insert)
-* [Data Streaming](#data_streaming)
-
 ## Overview
 
 AnyChart html5 charting library gives you the ability to create, read, update and delete charts in real-time without full reloading and redrawing - our charts can be cnanged fast and in a flexible manner.

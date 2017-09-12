@@ -1,17 +1,6 @@
 {:index 7}
 # Getting Data from JSON
 
-* [Overview](#overview)
-* [Schema](#schema)
-* [JSON vs JavaScript](#json_vs_javascript)
-* [Serialization](#serialization)
-* [Multiple Series](#multiple_series)
-* [Settings](#settings)
- * [Axes](#axes)
- * [Visualization](#visualization)
-* [Samples](#samples)
-* [Complex](#complex)
-
 ## Overview
 
 AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
