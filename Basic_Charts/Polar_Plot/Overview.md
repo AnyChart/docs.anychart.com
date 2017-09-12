@@ -86,7 +86,7 @@ var data = [
 
 {sample}BCT\_Polar\_Chart\_03{sample}
 
-##Axes
+## Axes
 
 To learn about axes in general, see the [Axes and Grids](../../Axes_and_Grids) section.
 
@@ -109,7 +109,7 @@ chart.xAxis().stroke({
 
 {sample}BCT\_Polar\_Chart\_04{sample}
 
-##Scales
+## Scales
 
 To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) section.
 
