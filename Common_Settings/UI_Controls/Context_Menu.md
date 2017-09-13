@@ -20,8 +20,8 @@ To enable AnyChart Context Menu feature you need to reference the css file in th
  
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
+    <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">
 </head>
 ```
 

@@ -151,7 +151,7 @@ The parsing mode, unlike other settings, must be always specified. There are two
 * **byWord** for parsing text into words
 * **byChar** for parsing text into characters
 
-If the only thing you want to set is the mode, you can use a shortcut from {api:anychart.anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}:
+If the only thing you want to set is the mode, you can use a shortcut from {api:anychart.enums.TextParsingMode}anychart.anychart.enums.TextParsingMode{api}:
 
 ```
 chart.data("Tyger, tyger, burning bright", "by-char");

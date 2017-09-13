@@ -103,14 +103,3 @@ series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Step\_Line\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair.
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Step\_Line\_06{sample}

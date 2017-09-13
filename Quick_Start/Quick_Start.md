@@ -1,15 +1,5 @@
 {:index 1 :title "Quick Start | AnyChart"}
 # Quick Start
-
-* [Getting Started](#getting_started)
-* [Include AnyChart](#include_anychart)
-* [Create a Container](#create_a_container)
-* [Create the Chart](#create_the_chart)
-* [See the Chart](#see_the_chart)
-* [Full Source Code](#full_source_code)
-* [Further Steps](#further_steps)
- * [Learn more](#learn_more)
- * [Subscribe](#subscribe)
   
 ## Getting Started
 
@@ -24,8 +14,8 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
+  <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">
 </head>
 ```
 
@@ -80,8 +70,8 @@ Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">    
+    <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">    
     <script>
       anychart.onDocumentLoad(function() {
         // create an instance of a pie chart

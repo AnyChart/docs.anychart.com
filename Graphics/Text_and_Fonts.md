@@ -13,7 +13,7 @@
 
 ## Basic Methods
  
-There are several methods adjusting custom text on a stage. You can find all of them in our <a href="https://api.anychart.com/latest/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set text and adjust its parameters.
+There are several methods adjusting custom text on a stage. You can find all of them in our <a href="https://api.anychart.com/{{branch-name}}/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set text and adjust its parameters.
 
 ### Set the text
 

@@ -101,7 +101,7 @@ chart.plot(1).yScale().compareWith(1209081600000);
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs.
 
-Stacking is a special mode of a Scale set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and several types of series are compatible with this mode. If a series can not be stacked it simply ignores the mode.
+Stacking is a special mode of a Scale set by [stackMode()](https://api.anychart.com/{{branch-name}}/?entry=stackMode) method, and several types of series are compatible with this mode. If a series can not be stacked it simply ignores the mode.
 
 There are two modes of stacking: value and percent.
 

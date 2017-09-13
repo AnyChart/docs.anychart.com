@@ -1,23 +1,16 @@
 {:index 5}
-Zoom Controls
-===========
-
-* [Overview](#overview)
-* [Enable](#enable)
-* [Dispose](#dispose)
-* [Appearance](#appearance)
+# Zoom Controls
 
 ## Overview
 
 Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Zoom), Zoom In and Zoom Out. To create a Zoom Control Panel use the {api:anychart.ui#zoom}zoom(){api} method. 
-
 
 ## Enable
 
 First of all, it is necessary to reference the following files for sample functioning correctly.
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css" />
 <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.7.3/anychart.css" />
 ```
 
@@ -41,8 +34,8 @@ map.listen("click", function(){
   zoomController.dispose();
 });
 ```
-{sample}CS\_ZoomControls\_02{sample}
 
+{sample}CS\_ZoomControls\_02{sample}
 
 ## Appearance
 

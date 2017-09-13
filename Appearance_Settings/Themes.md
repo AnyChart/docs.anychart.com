@@ -1,21 +1,5 @@
 # Themes
 
-* [Overview](#overview)
- * [Themes Explained](#themes_explained)
- * [Out of the box Themes](#out_of_the_box_themes)
-* [Create Theme](#create_theme)
-* [Internal Themes](#internal_themes) 
-* [External Themes](#external_themes)
- * [Default Theme](#default_theme)
- * [Old Theme](#old_theme) 
-* [Several Themes](#several_themes)
-* [Append Theme](#append_theme)
-* [Multiple Chart Types](#multiple_chart_types)
-* [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
-* [Reset Theme](#reset_theme)
-* [Global Settings, Defaults and Theme Reference](#global_settings,_defaults_and_theme_reference)
-* [AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion](#anychart_6.x,_7.0.0_to_7.5.1_look_to_anychart_7.6_conversion)
-
 ## Overview
 
 To simplify visual adjustment of JS charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for chart settings. The themes' usage is described in this article.
@@ -35,8 +19,8 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
 ```
 <head>
   <!--Link to the files with out of the box themes -->
-  <script src="https://cdn.anychart.com/themes/latest/coffee.min.js"></script>
-  <script src="https://cdn.anychart.com/themes/latest/dark_blue.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/{{branch-name}}/coffee.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/{{branch-name}}/dark_blue.min.js"></script>
   <script>
     anychart.onDocumentReady(function() {
       // data
@@ -246,15 +230,6 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
 
 **Note**: the theme you create does not need to contain all settings you see in a default theme - tune only the settings you want to change.
 
-### Old Theme
-  
-AnyChart provides [several default themes](#out_of_the_box_themes) along with the opportunity to [create custom themes](#create_theme). One of the default themes is AnyChart 5.x, 6.x default theme. To use old theme reference special theme file with the name **v6.js**. It can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file set the **anychart.themes.v6** to the {api:anychart#theme}theme(){api} method to apply old theme:
-
-```
-// apply old theme
-anychart.theme(anychart.themes.v6);
-```
-
 ## Several Themes
 
 It is possible to set several themes through one {api:anychart#theme}theme(){api} method. Themes, set as an array, will be applied to a chart or all charts on a dashboard one after another, in the order they are set, so the settings from the last theme in the array have the highest priority.
@@ -437,15 +412,3 @@ Here is a list of global settings and defaults that can be defined in a theme:
 Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
 {sample :width 690 :height 220}AS\_Themes\_06{sample}
-
-
-## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
-
-Themes are introduced in AnyChart 7.6, along with new color scheme and changed default settings. If you have never used AnyChart 7 before the release version 7.6 you can ignore this section cause it does not affect you.
-  
-If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
-  
-* use special **anychart.theme_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package or you can get this js from anychart cdn server using the link [cdn.anychart.com/themes/latest/v6.min.js](https://cdn.anychart.com/themes/latest/v6.min.js)).
-* or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
-  
-**Note**: AnyChart html5 charting framework recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.

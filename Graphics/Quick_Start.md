@@ -22,7 +22,7 @@ You can use the link as shown below or download graphics.min.js from the [Graphi
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/latest/graphics.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/js/{{branch-name}}/graphics.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -67,7 +67,7 @@ stage.path()
   
 ## See the Result
 
-After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](https://playground.anychart.com/docs/latest/samples/GFX_quick_start-plain).
+After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](https://playground.anychart.com/docs/{{branch-name}}/samples/GFX_quick_start-plain).
 
 {sample}GFX\_quick\_start{sample}
 
@@ -80,7 +80,7 @@ Below you can see how your full web page code should look like:
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <script src="https://cdn.anychart.com/js/latest/graphics.min.js"></script>
+    <script src="https://cdn.anychart.com/js/{{branch-name}}/graphics.min.js"></script>
 </head>
 <body>
     <div id="container" style="width: 100%; height: 100%"></div>
@@ -116,7 +116,7 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 
 ### Learn more
 
-* Explore [JavaScript API Reference](https://api.anychart.com/latest/anychart.graphics)
+* Explore [JavaScript API Reference](https://api.anychart.com/{{branch-name}}/anychart.graphics)
 * See [GraphicsJS Site](http://www.graphicsjs.org/)
 * Go on with [GraphicsJS Docs](Overview)
 * Read Harry Potter book series to learn more about the Deathly Hallows

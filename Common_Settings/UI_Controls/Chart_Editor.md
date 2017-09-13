@@ -1,15 +1,4 @@
-#Chart Editor
-
-* [Overview](#overview)
-* [Prerequisites](#prerequisites)
-* [Demo App](#demo_app)
-* [Rendering](#rendering)
-* [Data](#data)
-* [Events](#events)
-* [Getting Result](#getting_result)
-* [Creating Charts](#creating_charts)
- * [JSON and XML](#json_xml)
- * [JavaScript](#javascript)
+# Chart Editor
 
 ## Overview
 
@@ -20,7 +9,7 @@ Chart Editor is a dialog window that allows to create and set up various chart t
 Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/#ui):
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css">
 <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.7.3/anychart.css">
 ```
 

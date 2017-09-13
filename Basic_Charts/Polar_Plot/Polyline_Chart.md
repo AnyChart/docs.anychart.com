@@ -8,7 +8,7 @@
 
 This article explains how to create a Polar Polyline chart in AnyChart.
 
-To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Polyline Chart](../Polyline_Chart) article to learn about other available settings.
+To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview).In addition, you can read the [Polyline Chart](Polyline_Chart) article to learn about other available settings.
 
 ## Quick Start
 

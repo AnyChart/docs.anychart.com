@@ -1,68 +1,55 @@
 {:index 2}
 # Downloading AnyChart
 
-* [Downloading](#downloading)
- * [AnyChart](#anychart)
- * [AnyStock](#anystock)
- * [AnyGantt](#anygantt)
- * [AnyMap](#anymap)
- * [Bundle](#bundle)
- * [Themes](#themes)
-* [AnyChart CDN](#anychart_cdn)
-* [Package Content](#package_content)
-* [Custom Build](#custom_build)
-* [Old Releases](#old_releases)
-
 ## Downloading
 
 ### AnyChart
 
 To download the latest version of AnyChart charting library, which contains the basic chart types, choose the most suitable option and click the link below.
-* Production edition - [anychart.min.js](https://static.anychart.com/cdn/js/latest/anychart.min.js?download)
-* Development edition - [anychart.dev.min.js](https://static.anychart.com/cdn/js/latest/anychart.dev.min.js?download)
-* Binaries package - [anychart.zip](https://static.anychart.com/cdn/binaries-package/latest/anychart.zip?download)  
+* Production edition - [anychart.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anychart.min.js?download)
+* Development edition - [anychart.dev.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anychart.dev.min.js?download)
+* Binaries package - [anychart.zip](https://static.anychart.com/cdn/binaries-package/{{branch-name}}/anychart.zip?download)  
 
 ### AnyStock
 
 To download the latest version of AnyStock, which contains **only** the stock chart, choose the most suitable option and click the link below.
-* Production edition - [anystock.min.js](https://static.anychart.com/cdn/js/latest/anystock.min.js?download)
-* Development edition - [anystock.dev.min.js](https://static.anychart.com/cdn/js/latest/anystock.dev.min.js?download)
-* Binaries package - [anystock.zip](https://static.anychart.com/cdn/binaries-package/latest/anystock.zip?download)  
+* Production edition - [anystock.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anystock.min.js?download)
+* Development edition - [anystock.dev.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anystock.dev.min.js?download)
+* Binaries package - [anystock.zip](https://static.anychart.com/cdn/binaries-package/{{branch-name}}/anystock.zip?download)  
 
 ### AnyGantt
 
 To download the latest version of AnyGantt, which contains **only** the gantt chart, choose the most suitable option and click the link below.
-* Production edition - [anygantt.min.js](https://static.anychart.com/cdn/js/latest/anygantt.min.js?download)
-* Development edition - [anygantt.dev.min.js](https://static.anychart.com/cdn/js/latest/anygantt.dev.min.js?download)
-* Binaries package - [anygantt.zip](https://static.anychart.com/cdn/binaries-package/latest/anygantt.zip?download)  
+* Production edition - [anygantt.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anygantt.min.js?download)
+* Development edition - [anygantt.dev.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anygantt.dev.min.js?download)
+* Binaries package - [anygantt.zip](https://static.anychart.com/cdn/binaries-package/{{branch-name}}/anygantt.zip?download)  
 
 ### AnyMap
 
 To download the latest version of AnyMap, which contains **only** the map charts, choose the most suitable option and click the link below.
-* Production edition - [anymap.min.js](https://static.anychart.com/cdn/js/latest/anymap.min.js?download)
-* Development edition - [anymap.dev.min.js](https://static.anychart.com/cdn/js/latest/anymap.dev.min.js?download)
-* Binaries package - [anymap.zip](https://static.anychart.com/cdn/binaries-package/latest/anymap.zip?download)
+* Production edition - [anymap.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anymap.min.js?download)
+* Development edition - [anymap.dev.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anymap.dev.min.js?download)
+* Binaries package - [anymap.zip](https://static.anychart.com/cdn/binaries-package/{{branch-name}}/anymap.zip?download)
 
 ### Bundle
 
 To download the latest version of AnyChart Bundle, which contains **all** products we have at the moment, choose the most suitable option and click the link below.
-* Production edition - [anychart-bundle.min.js](https://static.anychart.com/cdn/js/latest/anychart-bundle.min.js?download)
-* Development edition - [anychart-bundle.dev.min.js](https://static.anychart.com/cdn/js/latest/anychart-bundle.dev.min.js?download)
+* Production edition - [anychart-bundle.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anychart-bundle.min.js?download)
+* Development edition - [anychart-bundle.dev.min.js](https://static.anychart.com/cdn/js/{{branch-name}}/anychart-bundle.dev.min.js?download)
 
 ### Themes
 
 To download one of our predefined themes, choose the theme and click on the according link.
-* AnyChart 7 Default Theme - [defaultTheme.min.js](//cdn.anychart.com/themes/latest/defaultTheme.min.js)
-* AnyChart 6 Theme - [v6.min.js](//cdn.anychart.com/themes/latest/v6.min.js)
+* AnyChart 7 Default Theme - [defaultTheme.min.js](//cdn.anychart.com/themes/{{branch-name}}/defaultTheme.min.js)
 
 ## AnyChart CDN
 
 <a href="//en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
   
-To use AnyChart CDN simply reference the [anychart-bundle.min.js file](//cdn.anychart.com/js/latest/anychart-bundle.min.js) using script tag:
+To use AnyChart CDN simply reference the [anychart-bundle.min.js file](//cdn.anychart.com/js/{{branch-name}}/anychart-bundle.min.js) using script tag:
 
 ```
-<script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/anychart-bundle.min.js"></script>
 ```
 
 ## Package Content

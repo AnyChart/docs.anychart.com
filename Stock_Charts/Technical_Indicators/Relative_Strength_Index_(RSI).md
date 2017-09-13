@@ -64,4 +64,4 @@ rsi30.fill('#ff6d00');
 
 Live sample:
 
-{sample 825 :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}
+{sample :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}
