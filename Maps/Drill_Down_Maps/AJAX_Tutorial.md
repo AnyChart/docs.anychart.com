@@ -1,13 +1,5 @@
 {:index 4}
-#AJAX Tutorial
-
-* [Include AnyMap component](#include_anymap_component)
-* [Data Adapter](#data_adapter)
-* [Data](#data)
-* [Load maps using Data Adapter](#load_maps_using_data_adapter)
- * [Drill To](#drill_to)
- * [Dynamic URL](#dynamic_url)
-* [Adjust settings](#adjust_settings)
+# AJAX Tutorial
 
 ## Include AnyMap component
 

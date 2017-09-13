@@ -1,6 +1,5 @@
 {:index 0.5}
-Switching the Series Type
-=========================
+# Switching the Series Type
 
 AnyChart provides a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported chart types](../Quick_Start/Supported_Charts_Types) to find out what series types can be converted to each other.
 

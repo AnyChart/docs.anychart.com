@@ -1,11 +1,6 @@
 {:index 13.5}
 # Map Grid
 
-* [Overview](#overview)
-* [Grid](#grid)
-* [Lines](#lines)
-* [Interlace](#interlace)
-
 ## Overview
 
 Drawing Parallels and Meridians Grid is controlled using Map Grid object described in this Article, [Axes](Map_Axes) to control lines, labels and ticks and [Geo Scale](Geo_Scale) to control axes and grid parameters.

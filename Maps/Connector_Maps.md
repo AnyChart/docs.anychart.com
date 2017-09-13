@@ -1,24 +1,5 @@
 {:index 8}
-Connector Maps
-==================
-
-* [Overview](#overview)
-* [Data](#data)
- * [Object notation](#object_notation)
- * [Array notation](#array_notation)
- * [Settings](#settings)
- * [Segments](#segments)
-* [Altering Connectors](#altering_connectors)
- * [Connector settings](#connector_settings)
-  * [Curvature](#curvature)
-  * [Start/end size](#start/end_size)
- * [Series colors](#series_colors)
- * [Markers](#markers)
- * [Labels and Tooltips](#labels_and_tooltips)
-* [Maps usage](#maps_usage)
- * [Route Map](#route_map)
- * [Flight Map](#flight_map)
- * [Areas and Landscape](#areas_and_landscape)
+# Connector Maps
 
 ## Overview
 

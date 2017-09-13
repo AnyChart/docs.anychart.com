@@ -1,11 +1,5 @@
 {:index 1}
-Overview
-=================
-
-* [Overview](#overview)
-* [Use Cases](#use_cases)
-* [Drill Down Methods](#methods)
-* [Breadcrumbs](#breadcrumbs)
+# Drill Down Maps
 
 ## Overview
 

@@ -2,14 +2,6 @@
 
 # Amap to GeoJson
 
-* [Overview](#overview)
-* [Installation](#installation)
- * [Windows](#windows_install)
- * [Unix](#unix_install)
-* [Converting](#converting)
- * [Single File](#single_file)
- * [Multiple Files](#multiple_files)
-
 ## Overview
 
 This Python-based converter allows you to convert any AnyMap 4.x, 5.x and 6.x **amap** map source files to AnyMap 7.x GeoJSON based JavaScript, pure GeoJSON and SHP format.  

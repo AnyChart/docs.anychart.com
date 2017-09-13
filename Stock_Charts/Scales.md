@@ -1,17 +1,6 @@
 {:index 4}
 # Scales
 
-* [Overview](#overview)
-* [Stock Scales Features](#stock_axes_features)
-* [Multiple scales and axes](#multiple_scales_and_axes)
-* [Comparison Mode](#comparison_mode)
- * [Values](#values)
- * [Percents](#percents)
- * [Comparison Base](#comparison_base)
-* [Stacked Mode](#stacked_mode)
- * [Value](#value)
- * [Percent](#percent)
-
 ## Overview
 
 In AnyChart scales control calculations and modes while Axes control axes labels, lines and tick marks. Learn more about basis Axes options available (like tickmarks, axis line and so on) see [Axes](Axes Tutorial), to learn more about basic scale options (like maximum, minimum, scale modes and so on) see [Scale tutorial](../Axes_and_Grids/Scales).

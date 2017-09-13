@@ -1,14 +1,5 @@
 # Credits
 
- * [Overview](#overview)
-   * [Text](#text)
-   * [Tooltip](#tooltip)
-   * [URL](#url)
-   * [Logo](#logo)
-   * [Position](#position)
-   * [Disable](#disable)
-   * [License](#license)
-
 ## Overview
 
 Credits is a single object shown as a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credits placed in your chart, you can purchase a license at [AnyChart Website](https://www.anychart.com/buy/).

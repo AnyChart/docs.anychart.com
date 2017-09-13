@@ -1,12 +1,5 @@
 {:index 2}
-Advanced Coloring
-===========
-
-* [Overview](#overview)
-* [Using SVG Image Colors](#using_svg_image_colors)
-* [Selective Coloring](#selective_coloring)
-* [Palette](#palette)
-* [Color Scale and Color Range](#color_scale_and_color_range)
+# Advanced Coloring
 
 ## Overview
 

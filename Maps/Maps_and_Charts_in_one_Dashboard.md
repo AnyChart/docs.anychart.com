@@ -1,9 +1,5 @@
 {:index 16}
-Maps and Charts in one Dashboard
-======================
-
-* [Overview](#overview)
-* [Simple Dashboard](#simple_dashboard)
+# Maps and Charts in one Dashboard
 
 ## Overview
 

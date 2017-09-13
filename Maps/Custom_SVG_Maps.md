@@ -2,12 +2,6 @@
 
 # Custom SVG Maps
 
-* [Overview](#overview)
-* [Loading SVG](#loading_svg)
-* [SVG Structure](#svg_structure)
-* [Sample SVG String](#sample_svg_string)
-* [Sample SVG Map](#sample_svg_map)
-
 ## Overview
 
 AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](Custom_TopoJSON) and SVG formats.

@@ -1,13 +1,5 @@
 {:index 1}
-Preparing SVG Image
-===========
-
-* [Overview](#overview)
-* [Creating a picture](#creating_a_picture)
-* [Grouping](#grouping)
-* [Setting ID](#setting_id)
- * [Adobe Illustrator](#adobe_illustrator)
- * [SVG Code](#svg_code)
+# Preparing SVG Image
 
 ## Overview
 

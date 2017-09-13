@@ -1,15 +1,5 @@
 {:index 7}
-#Choropleth Maps
-
-* [Choropleth Map](#choropleth_map)
-* [Data](#data)
-* [Data Classes](#data_classes)
- * [Classed Choropleth](#classed_choropleth)
- * [Unclassed Choropleth](#unclassed_choropleth)
-* [Advantages and Disadvantages](#advantages_and_disadvantages)
- * [Advantages](#advantages)
- * [Disadvantages](#disadvantages)
-
+# Choropleth Maps
 
 ## Choropleth Map
 

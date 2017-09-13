@@ -1,17 +1,5 @@
 {:index 9}
-Proportional Symbol Map
-===========
-
-* [Overview](#overview)
-* [Creating Bubbles](#creating_bubbles)
- * [Data](#data)
-  * [Latitude and Longitude](#latitude_and_longitude)
-  * [Region ID](#region_id)
-  * [Size](#size)
-* [Altering Bubbles](#altering_bubbles)
- * [Series colors](#series_colors)
- * [Labels and Tooltips](#labels_and_tooltips)
-* [Multi series](#multi_series)
+# Proportional Symbol Map
 
 ## Overview
 

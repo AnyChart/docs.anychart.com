@@ -2,12 +2,6 @@
 
 # Scroller
 
-* [Overview](#overview)
-* [Basics](#basics)
-* [Background Series](#background_series)
-* [Scroller Axis](#scroller_axis)
-* [Events](#events)
-
 ## Overview
 
 Scroller is a main navigational control AnyStock provides to a chart viewer to make chart comprehension process comfortable and easy. 

@@ -1,16 +1,5 @@
 {:index 14}
-Map Labels
-======================
-
-* [Overview](#overview)
-* [Common Settings](#common_settings)
-* [Source Data Access](#source_data_access)
-* [Overlap](#overlap)
-* [Positioning](#positioning)
- * [Inside](#inside)
- * [Out of region labels](#out_of_region_labels)
-* [Callout](#callout)
- * [Connectors](#connectors)
+# Map Labels
 
 ## Overview 
 

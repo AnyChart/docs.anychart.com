@@ -1,16 +1,5 @@
 {:index 17}
-Move and Zoom API
-=================
-
-* [Overview](#overview)
-* [Interactivity](#interactivity)
- * [Default](#default)
- * [Enable/Disable](#enable/disable)
- * [Navigational Interactivity](#navigational_interactivity)
- * [Clipboard Text](#clipboard_text)
- * [Zoom](#zoom)
- * [Zoom Controls](#zoom_controls)
- * [Move](#move)
+# Move and Zoom API
 
 ## Overview
 

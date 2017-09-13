@@ -1,7 +1,6 @@
 {:index 2}
 # Using Data Sets
 
-
 ## Why do we need Data Sets?
 
 A situation when we need to analyze different data using the same set of values in the different series of one or different charts happens quite often. 

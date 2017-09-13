@@ -1,14 +1,5 @@
 {:index 1 :title "Quick Start | AnyMap"}
 # Quick Start
-
-* [Getting Started](#getting_started)
-* [Include AnyMap](#include_anymap)
-* [Include the GeoData](#include_the_geodata)
-* [Prepare the Data](#prepare_the_data)
-* [Create a Container](#create_a_container)
-* [Create the Map](#create_the_map)
-* [See the Map](#see_the_map)
-* [Full Source Code](#full_source_code)
   
 ## Getting Started
 

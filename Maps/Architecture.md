@@ -1,19 +1,5 @@
 {:index 2}
-Architecture
-===========
-
-* [Overview](#overview)
-* [Supported Formats](#supported_formats)
-* [Where to Get Maps](#where_to_get_maps)
-* [Custom Maps](#custom_maps)
-* [Map Series Types](#map_types)
- * [Colored Maps](#colored_maps)
- * [Bubble Maps](#bubble_maps)
- * [Point Maps](#point_maps)
- * [Seat Maps](#seat_maps)
-* [Controls](#controls)
-* [Settings](#settings)
-* [Interactivity](#interactivity)
+# Architecture
 
 ## Overview
 

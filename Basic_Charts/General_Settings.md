@@ -1,20 +1,5 @@
 {:index 0.45}
-#General Settings
-
-* [Overview](#overview)
-* [Data](#data)
-* [Appearance Settings](#appearance_settings)
-* [Markers](#markers)
-* [Labels](#labels)
-* [Tooltips](#tooltips)
-* [Legend](#legend)
-* [Axes and Scales](#axes_and_scales)
-  * [Stacking](#stacking)
-* [Interactivity](#interactivity)
-* [Events](#events)
-* [Vertical Charts](#vertical_charts)
-* [3D Charts](#3d_charts)
-* [Custom Drawing](#custom_drawing)
+# Series General Settings
 
 ## Overview
 

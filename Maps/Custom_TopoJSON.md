@@ -2,9 +2,6 @@
 
 # Custom TopoJSON Maps
 
-* [Overview](#overview)
-* [Sample](#sample)
-
 ## Overview
 
 AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps), TopoJSON and [SVG](Custom_SVG_Maps) formats.

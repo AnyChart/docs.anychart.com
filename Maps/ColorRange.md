@@ -1,17 +1,6 @@
 {:index 12}
 # ColorRange
 
-* [Overview](#overview)
-* [Enabling the ColorRange](#enabling_the_colorrange)
-* [Visual Settings](#visual_settings)
- * [Orientation](#orientation)
- * [Length](#length)
- * [Size](#size)
- * [Size and Position](#size_and_position)
- * [Stroke](#stroke)
- * [Labels](#labels)
- * [Marker](#marker)
- 
 ## Overview
  
 ColorRange is a tool that is necessary when we need to identify the value that each point on a map presents. It looks like a range bar, colored as gradient 

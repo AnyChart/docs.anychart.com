@@ -1,18 +1,5 @@
 {:index 0}
-Seat Maps
-===========
-
-* [Overview](#overview)
-* [Preparing an SVG Image](#preparing_an_svg_image)
-* [SVG Data](#svg_data)
- * [AJAX](#ajax)
- * [As a String](#as_a_string)
- * [HTML DOM Image](#html_dom_image)
-* [Mapping Data](#mapping_data)
-* [Coloring](#coloring)
-* [Unbound Regions](#unbound_regions)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Gallery Samples](#gallery_samples)
+# Seat Maps
 
 ## Overview
 

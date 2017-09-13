@@ -1,13 +1,5 @@
 {:index 2}
-Drill Down Maps
-=================
-
-* [Overview](#overview)
-* [Methods](#methods)
- * [Drill To](#drill_to)
- * [Drill Up](#drill_up)
- * [Drill Down Map](#drill_down_map)
- * [Get Drill Down Path](#get_drill_down_path)
+# Drill Down Maps
 
 ## Overview
 

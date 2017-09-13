@@ -1,13 +1,5 @@
 {:index 13.6}
-# Crosshair
-
-* [Overview](#overview)
-* [Enable](#enable)
-* [Appearance](#appearance)
-   * [Lines](#lines)
-* [Labels](#labels)
-   * [Disable](#disable)
-   * [Change text](#change_text)
+# Map Crosshair
 
 ## Overview
 

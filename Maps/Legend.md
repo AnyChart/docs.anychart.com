@@ -1,12 +1,5 @@
 {:index 13}
-Map Legend
-======================
-
-* [Overview](#overview)
-* [Simple Legend](#simple_legend)
-* [Multiple Legends](#multiple_legends)
-* [Thresholds in Legend](#thresholds_in_legend)
-* [Undefined Regions In Legend](#undefined_regions_in_legend)
+# Map Legend
 
 ## Overview
 

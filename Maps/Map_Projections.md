@@ -1,25 +1,6 @@
 {:index 13}
 # Map Projections
 
-* [Overview](#overview)
-* [Setting map projection](#setting_map_projection)
-* [Available Projections](#available_projections)
- * [Aitoff](#aitoff)
- * [August](#august)
- * [Bonne](#bonne)
- * [Eckert1](#eckert1)
- * [Eckert3](#eckert3)
- * [Equirectangular](#equirectangular)
- * [Fahey](#fahey)
- * [Hammer](#hammer)
- * [Mercator](#mercator)
- * [Orthographic](#orthographic)
- * [Robinson](#robinson)
- * [Wagner6](#wagner6)
- * [WSG84](#wsg84)
-* [Changing region projection](#changing_region_projection)
- * [Using PROJ4.JS](#using_proj4.js)
-
 ##Overview
 
 A map projection is any method used in cartography to represent the two-dimensional curved surface of the earth or other body on a plane. The term "projection" here refers to any function defined on the earth's surface and with values on the plane, and not necessarily a geometric projection.  

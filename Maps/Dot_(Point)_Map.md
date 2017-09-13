@@ -1,17 +1,5 @@
 {:index 8}
-Dot (Point) Maps
-===========
-
-* [Overview](#overview)
-* [Creating Markers](#creating_markers)
- * [Data](#data)
-  * [Latitude and Longitude](#latitude_and_longitude)
-  * [Region ID](#region_id)
-* [Visualization](#visualization)
- * [Labels and Tooltips](#labels_and_tooltips)
- * [Series colors](#series_colors)
- * [Markers](#markers)
-
+# Dot (Point) Maps
 
 ## Overview
 

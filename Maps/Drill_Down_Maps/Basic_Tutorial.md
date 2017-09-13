@@ -1,10 +1,5 @@
 {:index 3}
-#Basic tutorial
-
-* [Include AnyMap component](#include_anymap_component)
-* [Add maps](#add_maps)
-* [Data](#data)
-* [Drill Down Map](#drill_down_map)
+# Basic tutorial
 
 ## Include AnyMap component
 
