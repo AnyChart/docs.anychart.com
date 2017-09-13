@@ -1,10 +1,5 @@
 # Bollinger Bands Width
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 Bollinger Bands Width is an indicator derived from [Bollinger Bands](Bollinger_Bands). 

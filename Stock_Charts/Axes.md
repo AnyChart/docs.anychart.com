@@ -1,15 +1,6 @@
 {:index 4}
 
-#Axes
-
-* [Overview](#overview)
-* [Stock Axes features](#stock_axes_features)
-* [Orientation](#orientation)
-* [Tickmarks](#tickmarks)
-* [Labels](#labels)
-* [Axis Line](#axis_line)
-* [Extra/Additional Axes](#extra/additional_axes)
-* [Grids](#grids)
+# Axes
 
 ## Overview
 
@@ -59,8 +50,8 @@ Labels of the X-axis have an additional feature: it is a helper label that "save
 That happens when the helperLabel is on (by default). You can disable it by passing false to the {api:anychart.core.axes.StockDateTime#showHelperLabel}showHelperLabel(){api} method.
 
 ```
-	// disabling the Helper Label
-	chart.plot(0).xAxis().showHelperLabel(false);
+// disabling the Helper Label
+chart.plot(0).xAxis().showHelperLabel(false);
 ```
 
 {sample}STOCK\_Axes\_02{sample}
@@ -68,10 +59,10 @@ That happens when the helperLabel is on (by default). You can disable it by pass
 Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}position(){api} and {api:anychart.core.ui.Label#anchor}anchor(){api} to move them correctly.
 
 ```
-	// moving the labels
-	xAxis = chart.plot(0).xAxis();
-	xAxis.labels().position('right').anchor('left_center');
-	xAxis.minorLabels().position('right').anchor('left_center');
+// moving the labels
+xAxis = chart.plot(0).xAxis();
+xAxis.labels().position('right').anchor('left_center');
+xAxis.minorLabels().position('right').anchor('left_center');
 ```
 
 {sample}STOCK\_Axes\_03{sample}
@@ -81,9 +72,9 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 In AnyStock, the x-axis is not a line, but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}background(){api} and {api:anychart.core.axes.StockDateTime#height}height(){api} methods. Let's apply these methods:
 
 ```
-	// changing the background and the height of the axis
-	xAxis.background('#CCFFFF');
-	xAxis.height(40);
+// changing the background and the height of the axis
+xAxis.background('#CCFFFF');
+xAxis.height(40);
 ```
 
 {sample}STOCK\_Axes\_04{sample}
@@ -100,6 +91,7 @@ chart = anychart.stock();
 chart.plot(0).grid(0).enabled(true);
 chart.plot(0).grid(0).stroke({dash: "3 5"});
 ```
+
 {sample}STOCK\_Axes\_05{sample}
 
 ## Extra/Additional Axes
@@ -123,4 +115,3 @@ chart.padding("10%", 10, 10, 50);
 ```
 
 {sample}STOCK\_Plots\_03{sample}
-

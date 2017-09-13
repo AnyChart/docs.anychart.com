@@ -1,13 +1,6 @@
 {:index 3}
-#Data
 
-* [Overview](#overview)
-* [Add](#add)
- * [Data as array of arrays](#data_as_array_of_arrays)
- * [Data as array of objects](#data_as_array_of_objects)
-* [Mapping](#mapping)
-* [Remove](#remove)
-* [Individual point settings](#individual_point_settings)
+# Data
 
 ## Overview
 

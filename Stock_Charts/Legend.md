@@ -1,14 +1,6 @@
 {:index 6}
 
-#Legend
-
-* [Overview](#overview)
-* [Positioning](#positioning)
-* [Title](#title)
-* [Items](#items)
-* [Visualization](#visualization)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
+# Legend
 
 ## Overview
 

@@ -1,10 +1,5 @@
 # Relative Strength Index
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 The Relative Strength Index (RSI) is a financial technical analysis momentum oscillator measuring the velocity and magnitude of directional price movement by comparing upward and downward close-to-close movements.
@@ -69,4 +64,4 @@ rsi30.fill('#ff6d00');
 
 Live sample:
 
-{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}
+{sample 825 :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}

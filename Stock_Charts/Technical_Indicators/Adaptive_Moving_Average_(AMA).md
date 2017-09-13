@@ -1,10 +1,5 @@
 # Adaptive Moving Average
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 An Adaptive Moving Average (AMA) is another indicator like SMA, MMA and EMA, but has more parameters. It changes its sensitivity due to the price fluctuations. The Adaptive Moving Average becomes more sensitive during periods when price is moving in a certain direction and becomes less sensitive to price movements when it become unstable.

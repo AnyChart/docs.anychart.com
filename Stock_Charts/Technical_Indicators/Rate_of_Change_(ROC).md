@@ -1,10 +1,5 @@
 # Rate of change
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 Rate of change (ROC) is a simple technical analysis indicator showing the difference between today's closing price and the close N days ago.
@@ -69,4 +64,4 @@ roc30.fill('#ff6d00');
 
 Live sample:
 
-{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_ROC\_2{sample}
+{sample :height 800}STOCK\_Technical\_Indicators\_ROC\_2{sample}

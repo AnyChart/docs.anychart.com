@@ -1,38 +1,6 @@
 {:index 3}
 
-#Technical Indicators Mathematical Description
-
-* [Overview](#overview)
-* [Accumulation Distribution Line (ADL)](#accumulation_distribution_line)
-* [Adaptive Moving Average (AMA)](#adaptive_moving_average)
-* [Aroon](#aroon)
-* [Average True Range (ATR)](#average_true_range)
-* [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bollinger_bands_%b)
-* [Bollinger Bands Width (BBW)](#bollinger_bands_width)
-* [Commodity Channel Index (CCI)](#commodity_channel_index)
-* [Chaikin Money Flow (CMF)](#chaikin_money_flow)
-* [Chaikin Oscillator (CHO)](#chaikin_oscillator)
-* [Chaikin Volatility (CHV)](#chaikin_volatility)
-* [Directional Movement Indicator (DMI)](#directional_movement_indicator)
-* [Exponential Moving Average (EMA)](#exponential_moving_average)
-* [KDJ](#kdj)
-* [Keltner Channels](#)
-* [Modified (Smoothed) Moving Average (MMA)](#modified_moving_average)
-* [Money Flow Index (MFI)](#)
-* [Momentum](#)
-* [Moving Average Convergence Divergence (MACD)](#moving_average_convergence_divergence)
-* [Moving Average Envelopes (MA Envelopes)](#)
-* [On Balance Volume (OBV)](#)
-* [Parabolic SAR (PSAR)](#)
-* [Price Channels](#)
-* [Rate of Change (ROC)](#rate_of_change)
-* [Relative Strength Index (RSI)](#relative_strength_index)
-* [Simple Moving Average (SMA)](#simple_moving_average)
-* [Stochastic Oscillator (Fast, Slow)](#stochastic_oscillator)
-* [TRIX](#)
-* [Volume + MA](#)
-* [Williams %R](#)
+# Technical Indicators Mathematical Description
 
 ## Overview
 

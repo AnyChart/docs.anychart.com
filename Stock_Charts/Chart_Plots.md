@@ -1,14 +1,6 @@
 {:index 5}
 
-#Chart Plots
-
-* [Overview](#overview)
-* [Add](#add)
-* [Edit](#edit)
- * [Series](#series)
- * [Axes](#axes)
- * [Position](#position)
- * [DateTime Highlighter](#datetime_highlighter)
+# Chart Plots
 
 ## Overview
 
@@ -112,20 +104,3 @@ thirdPlot.bounds("55%", 0, "45%", "45%")
 ```
 
 {sample}STOCK\_Plots\_04{sample}
-
-### DateTime Highlighter
-
-DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on an AnyStock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
-
-```
-// adjust the highlighter of the third plot
-firstPlot.dateTimeHighLighter("#F44336", 1.5, "6 2", "round");
-
-// make the second plot highlighter of green color
-secondPlot.dateTimeHighlighter({color: "green"});
-
-// disable the highlighter on the first plot
-thirdPlot.dateTimeHighlighter(false);
-```
-
-{sample}STOCK\_Plots\_05{sample}

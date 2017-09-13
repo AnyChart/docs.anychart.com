@@ -1,13 +1,5 @@
 # Stochastic
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Fast](#fast)
-* [Slow](#slow)
-* [Full](#full)
-* [Visualization](#visualization)
-
 ## Overview
 
 Stochastic oscillator is a momentum indicator introduced by George Lane in the 1950s. Stochastic oscillator helps with comparing the closing price of a commodity to its price range over a given time span. The %K and %D lines  show whether it's better to buy or sell: the moments when those two lines cross each other are regarded as the best for money operations.

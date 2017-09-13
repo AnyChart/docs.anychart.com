@@ -1,10 +1,6 @@
 {:index 4}
 
-#Custom Technical Indicators
-
-* [Overview](#overview)
-* [Creating a custom technical indicator](#creating_a_custom_technical_indicator)
-* [Advanced Options](#advanced_options)
+# Custom Technical Indicators
 
 ## Overview
 
@@ -85,5 +81,3 @@ That's it! In this sample we've created a very simple "indicator" that can't tel
 ## Advanced Options
 
 Coming soon: {api:anychart.data.TableComputer#setContext}setContext(){api} and {api:anychart.data.TableComputer#setStartFunction}setStartFunction(){api} description and building complex multi-series custom indicators description.
-
-

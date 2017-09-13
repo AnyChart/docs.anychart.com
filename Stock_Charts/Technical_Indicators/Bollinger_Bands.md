@@ -1,11 +1,5 @@
 # Bollinger Bands
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization using lines](#visualization_using_lines)
-* [Visualization using ranges](#visualization_using_ranges)
-
 ## Overview
 
 Bollinger Bands are a technical analysis tool invented by John Bollinger in the 1980s. Having evolved from the concept of trading bands, Bollinger Bands can be used to measure the "highness" or "lowness" of the price relative to previous trades.

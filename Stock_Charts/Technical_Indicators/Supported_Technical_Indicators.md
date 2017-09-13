@@ -1,9 +1,5 @@
 {:index 2}
-
-#Supported Technical Indicators
-
-* [Overview](#overview)
-* [List](#List)
+# Supported Technical Indicators
 
 ## Overview
 

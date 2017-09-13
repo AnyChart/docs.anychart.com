@@ -1,10 +1,6 @@
 {:index 1}
-#AnyStock
 
-* [Overview](#overview)
-* [Useful Links](#useful_links)
-* [Technical Indicators](#technical_indicators) 
-* [Working with Data in AnyStock](#working_with_data_in_anystock)
+# AnyStock
 
 ## Overview
 
@@ -12,19 +8,17 @@ Stock Chart is a special type of charts that can effectively visualize great amo
 
 AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other AnyChart products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of [technical indicators](#technical_indicators). AnyChart JavaScript Stock Chart Component supports automatic building of several types of technical indicators and allows to add custom indicators as well. AnyStock is a native Javascript, which makes it very flexible and easy to use.
 
-Stocks are so special because of three main features:
-
-<b>Data grouping</b>
+## Data grouping
 
 This feature is what lets showing those loads of information on one chart at a time. If your data contains more than certain points in the time interval shown on a chart, AnyStock Charts will automatically group them to avoid cluttering and allow chart to be displayed fast. 
 
 For example, if you've got data that shows daily changes of anything for ten years, it means that you've got 3650 data points. To make this information understandable, our stock can group the data monthly, so we'll have only 120 points on a chart. But what to do if you need to see the values for a couple of days? That's where we go to the second AnyStock feature.
 
-<b>Navigation through the data</b>
+## Navigation through the data
 
 If you are not satisfied with having the generalized data shown on a data plot, you can use a scrollbar in the bottom of the chart to bring the data to more detailed form.
 
-<b>Streaming</b> 
+## Streaming
 
 AnyStock allows to stream data efficiently, you can see this on our <a href="https://www.anychart.com/products/anystock/benchmark/" target="_blank">AnyStock Speed Test Page</a>.
 

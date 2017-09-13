@@ -1,10 +1,5 @@
 # Moving Average Convergence/Divergence
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 MACD, which stands for Moving Average Convergence / Divergence, is a technical analysis indicator created by Gerald Appel in the 1960s. It shows the difference between a fast and slow exponential moving average (EMA) of closing prices.
@@ -77,4 +72,4 @@ macd_all_lines.histogramSeries().stroke('#ffe082');
 
 Live sample:
 
-{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_MACD\_2{sample}
+{sample :height 800}STOCK\_Technical\_Indicators\_MACD\_2{sample}
