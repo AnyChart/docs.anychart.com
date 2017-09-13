@@ -26,4 +26,3 @@ chart.palette = anychart.palettes.defaultPalette;
 Here is a sample of a pie chart, click slices to change palettes:
 
 {sample}AS\_Palettes\_01{sample}
-

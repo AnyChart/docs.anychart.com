@@ -1,17 +1,6 @@
 {:index 1}
 # Axis Basics
 
-* [Overview](#overview)
-* [Declaration](#declaration)
-* [Title](#title)
-* [Orientation](#orientation)
-* [Labels](#labels)
-* [Axis Line and Zero Line](#axis_line_and_zero_line)
-* [Tickmarks](#tickmarks)
-* [Grids](#grids)
-  * [Visualization](#visualization)
-  * [Layout](#layout)
-
 ## Overview
 
 In AnyChart axes are used to control grids, axes labels, lines and tick marks, axes themselves depend on [scales](Scales).
@@ -115,7 +104,7 @@ xAxis.staggerLines(3);
 ```
 Here is a sample of two similar charts with adaptive and fixed stagger modes enabled, you can see that the first one uses adaptive strategy and occupies two lines, the second one always uses three lines:
 
-{sample :width 600 :height 800}AGST\_Axes\_Basic\_05{sample}
+{sample :height 800}AGST\_Axes\_Basic\_05{sample}
 
 ## Axis Line and Zero Line
 

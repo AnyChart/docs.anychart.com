@@ -1,12 +1,5 @@
 # Text Settings
 
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [International Symbols](#international_symbols)
-* [HTML](#html)
-  * [Supported tags](#supported_tags)
-* [Text Formatting](#text_formatting)
-
 ## Overview
 
 You can control the font settings of every text object in AnyChart js charts. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
@@ -155,7 +148,7 @@ Here is a table with all possible methods for controlling the text view.
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordWrap}wordWrap(){api}</td>
-<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the <a href="http://docs.anychart.stg/DVF-3155-textwrap/Graphics/Text_and_Fonts#wrap">Text Wrapping article</a></td>
+<td>sets the word-wrap mode. Defines the rules for breaking lines. Find more information in the [Text Wrapping](../Graphics/Text_and_Fonts#wrap) article.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#wordBreak}wordBreak(){api}</td>

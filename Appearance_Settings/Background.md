@@ -1,14 +1,5 @@
 # Background
 
-* [Overview](#overview)
-* [Stroke](#stroke)
-* [Fill](#fill)
-  * [Solid](#solid)
-  * [Gradient](#gradient)
-  * [Image](#image)
-* [Corners Settings](#corners_settings)
-* [Hatch fill](#hatch_fill)
-
 ## Overview
 
 In this tutorial we will explain in details how to configure background in AnyChart charting framework.

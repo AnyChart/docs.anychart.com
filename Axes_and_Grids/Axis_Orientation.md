@@ -1,10 +1,6 @@
 {:index 2}
 # Axes Orientation
 
-* [Overview](#overview)
-* [Column Mode](#column_mode)
-* [Bar Mode](#bar_mode)
-
 ## Overview
    
 Orientation depends on plot type and inversion of axes, below you will find all possible axes {api:anychart.core.axes.Linear#orientation}orientation{api} and {api:anychart.scales.Linear#inverted}inverting{api} JS Settings with demonstration preview.
@@ -24,18 +20,18 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  // set x axis position. This position is set by default
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
+// set x axis position. This position is set by default
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
 
-  // set y axis position. This position is set by default
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
+// set y axis position. This position is set by default
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
 
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -45,14 +41,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -62,14 +58,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -79,14 +75,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -96,14 +92,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -113,14 +109,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -130,14 +126,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -147,14 +143,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -164,14 +160,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -181,14 +177,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -198,14 +194,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -215,14 +211,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -232,14 +228,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -249,14 +245,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -266,14 +262,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -283,14 +279,14 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -313,14 +309,14 @@ Here are some samples of Bar chart Axes orientation
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -330,14 +326,14 @@ Here are some samples of Bar chart Axes orientation
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("bottom");
+var yAxis = chart.yAxis();
+yAxis.orientation("left");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -347,15 +343,14 @@ Here are some samples of Bar chart Axes orientation
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(false);
-  var yScale = chart.yScale();
-  yScale.inverted(false);
-
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(false);
+var yScale = chart.yScale();
+yScale.inverted(false);
 ```
 </td>
 </tr>
@@ -365,14 +360,14 @@ Here are some samples of Bar chart Axes orientation
 </td>
 <td>
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  var xScale = chart.xScale();
-  xScale.inverted(true);
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
+var yAxis = chart.yAxis();
+yAxis.orientation("right");
+var xScale = chart.xScale();
+xScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 </td>
 </tr>

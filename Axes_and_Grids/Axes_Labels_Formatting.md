@@ -1,25 +1,6 @@
 {:index 3}
 # Axes Labels Formatting
 
-* [Overview](#overview)
-* [Enable or Disable](#enable_or_disable)
-* [Formatting Labels](#formatting_labels)
- * [Prefixes and Postfixes](#prefixes_and_postfixes)
- * [Number Formatting](#number_formatting)
- * [Label Length](#label_length)
-* [Visual Appearance](#visual_appearance)
- * [Font](#font)
- * [Background](#background)
-* [Positioning](#positioning)
- * [Labels Alignment](#labels_alignment)
- * [Padding](#padding)
- * [Rotation](#rotation)
- * [Stagger Mode](#stagger_mode)
-* [First and Last Labels](#first_and_last_labels)
-* [Y-Axis Labels: Fixed Width](#y-axis_labels-fixed-width)
-* [X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)
-* [Overlapping](#overlapping)
-
 ## Overview
 
 With AnyChart, you've got a full control over the axes labels: you can format them, tune visual appearance and position.
@@ -55,6 +36,7 @@ chart.axis().format(function(){
 ```
 
 The following code sample demonstrates setting the same parameter to show using tokens:
+
 ```
 chart.axis().format("{%Value}");
 ```
@@ -246,7 +228,6 @@ staggerAxis.drawLastLabel(false);
 
 {sample}AGST\_Labels\_Formatting\_11{sample}
 
-<a name="y-axis_labels-fixed-width"></a>
 ## Y-Axis Labels: Fixed Width
 
 It's possible to set fixed custom width for Y axis labels. This function may be of great use in dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X axis arguments.
@@ -274,7 +255,6 @@ There is the same data with Y axis label width set to 70 pixels, which results i
 
 Please note that width restriction can lead to wrapping the labels' content, so the label text might not fit the custom width. 
 
-<a name="x-axis-labels-wrapping-width"></a>
 ## X-Axis Labels: Fixed Width and Text Wrapping
 
 Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in X axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use standard javascript **textOverflow()** method), or set fixed width to the labels and make them wrap their content.

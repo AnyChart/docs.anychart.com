@@ -1,22 +1,6 @@
 {:index 5}
 # Scales
 
-* [Overview](#overview)
-* [Types](#types)
-  * [Linear](#linear) 
-  * [Logarithmic](#logarithmic)
-  * [Ordinal](#ordinal)
-  * [Date Time](#date_time)
-* [Stack Mode](#stack_mode)
-* [Minimum and Maximum](#minimum_and_maximum) 
-* [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
-* [Stick to Zero](#stick_to_zero)
-* [Minor and Major Ticks](#minor_and_major_ticks) 
-* [Minimum and Maximum Gap](#minimum_and_maximum_gap)
-* [Inversion](#inversion)
-* [One Scale for Different Charts](#one_scale_for_different_charts)
-* [Synchronization](#synchronization)
-
 ## Overview
 
 Scales allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display see: [Axis Basics tutorial](Axis_Basics).
