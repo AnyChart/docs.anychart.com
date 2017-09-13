@@ -1,9 +1,5 @@
 {:index 4.1}
-#Spline Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
+# Spline Chart
 
 ## Overview
 
@@ -37,7 +33,7 @@ The Line and Spline chart types share all the settings, so this article explains
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-##Quick Start
+## Quick Start
 
 To create a Spline series, use the {api:anychart.charts.Cartesian#spline}spline(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.line(){api} or any other cartesian chart constructor):
 

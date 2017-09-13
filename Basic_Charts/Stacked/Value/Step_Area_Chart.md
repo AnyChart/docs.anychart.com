@@ -1,10 +1,6 @@
 {:index 4}
 # Stacked Step Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Stacked Step Area Chart is a multi-series Step Area Chart that displays the trend of the value each series contributes over time or categories. The difference between simple Area Chart and Step Area is that points and angles are replaced with horizontal segments so the whole chart reminds of stairs.

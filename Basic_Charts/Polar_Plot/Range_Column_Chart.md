@@ -1,9 +1,6 @@
 {:index 2}
 # Polar Line Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Polar Range Column chart in AnyChart.

@@ -1,18 +1,5 @@
 {:index 1}
-#Stacked Charts
-
-* [Overview](#overview)
- * [Marimekko Charts](#marimekko)
-* [Value Stacking](#value_stacking)
-* [Percent Stacking](#percent_stacking)
- * [Scale Interval](#scale_interval)
- * [Axis Percent Labels](#axis_percent_labels)
- * [Tooltips and Labels](#tooltips_and_labels)
-* [Combination](#combination)
- * [Clustered](#clustered)
- * [Overlay](#overlay)
- * [With unstackable series](#with_unstackable_series)
-* [Supported Types](#supported_types)
+# Stacked Charts
 
 ## Overview
 

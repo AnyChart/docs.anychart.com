@@ -1,19 +1,5 @@
 {:index 6.1}
-#Tag Cloud
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Data](#data)
-  * [Appearance](#appearance)
-  * [Color Scale](#color_scale)
-  * [Angles](#angles)
-  * [Text Spacing](#text_spacing)
-  * [Mode](#mode)
-  * [Scales](#scales)
-  * [Tooltips](#tooltips)
-  * [Interactivity](#interactivity)
+# Tag Cloud
 
 ## Overview
 

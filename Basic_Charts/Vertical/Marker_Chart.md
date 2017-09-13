@@ -1,9 +1,6 @@
 {:index 2}
 # Vertical Marker Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Vertical Marker chart in AnyChart.

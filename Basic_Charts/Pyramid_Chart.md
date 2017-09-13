@@ -1,20 +1,5 @@
 {:index 2}
-#Pyramid Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Base](#base)
-  * [Orientation](#orientation)
-  * [Padding](#padding)
-  * [Labels](#labels)
-   * [Connectors](#connectors)
-   * [Position](#position)
-   * [Overlapping](#overlapping)
-  * [Tooltips](#tooltips)
-
+# Pyramid Chart
 
 ## Overview
 
@@ -219,8 +204,6 @@ After adjusting the content of the pyramid labels some of them moved to prevent 
 chart.overlapMode("allowOverlap");
 ```
 
-
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a chart point is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-

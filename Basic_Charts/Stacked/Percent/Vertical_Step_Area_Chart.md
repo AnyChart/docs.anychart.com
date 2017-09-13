@@ -1,10 +1,6 @@
 {:index 8}
 # Vertical Percent Stacked Step Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Percent Stacked Step Area Chart is a multi-series Step Area Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis. The difference between simple Area Chart and Step Area is that points and angles are replaced with a polyline so the whole chart reminds of stairs.

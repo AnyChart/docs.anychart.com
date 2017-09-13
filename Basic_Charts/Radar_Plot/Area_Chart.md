@@ -1,9 +1,6 @@
 {:index 2}
 # Radar Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Radar Area chart in AnyChart.

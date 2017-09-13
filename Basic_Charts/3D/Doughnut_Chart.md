@@ -1,9 +1,6 @@
 {:index 2}
 # 3D Doughnut Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a 3D Doughnut chart in AnyChart.

@@ -1,20 +1,6 @@
 {:index 0}
 # Marimekko Charts
 
-* [Overview](#overview)
-* [Quick start](#quick_start)
- * [Mekko](#mekko)
- * [BarMekko](#barmekko)
- * [Mosaic](#mosaic)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
- * [Stacked Mode](#stacked_mode)
- * [Points padding](#points_padding)
- * [Appearance](#appearance)
- * [Labels](#labels)
- * [Tooltips](#tooltips) 
- * [Vertical Marimekko Chart](#vertical_marimekko_chart)
-
 ## Overview
 
 <a href="http://www.marimekko.com/" target="_blank">Marimekko</a> is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.

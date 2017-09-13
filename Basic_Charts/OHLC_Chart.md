@@ -1,14 +1,6 @@
 {:index 1.61}
 # Open-High-Low-Close (OHLC) Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-
 ## Overview
 
 An open-high-low-close chart (also known as OHLC and HLOC) is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
@@ -125,11 +117,9 @@ series2.selectFallingStroke("#ff33cc", 3, "10 5", "round");
 
 {sample}BCT\_OHLC\_Chart\_02{sample}
 
-
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (they can be enabled on a whole series or for a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
 
 ### Tooltips
 

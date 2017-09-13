@@ -1,19 +1,5 @@
 {:index 1}
-#Box Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-   * [Median](#median)
-   * [Outliers](#outliers)
-   * [Stems](#stems)
-   * [Whiskers](#whiskers)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Box](#vertical_box)
-
+# Box Chart
 
 ## Overview
 

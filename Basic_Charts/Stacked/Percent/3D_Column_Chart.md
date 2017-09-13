@@ -1,10 +1,6 @@
 {:index 12}
 # 3D Percent Stacked Column Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A 3D Percent Stacked Column Chart is a multi-series 3D Column Chart that displays the trend of the percentage each value contributes over time or categories.

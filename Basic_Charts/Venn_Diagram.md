@@ -1,14 +1,5 @@
 {:index 6.9}
-#Venn Diagram
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Data](#data)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
+# Venn Diagram
 
 ## Overview
 

@@ -1,11 +1,5 @@
 {:index 6}
-#Step Line Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
-* [Special Settings](#special_settings)
-  * [Step Direction](#step_direction)
+# Step Line Chart
 
 ## Overview
 

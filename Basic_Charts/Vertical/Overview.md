@@ -1,12 +1,5 @@
 {:index 0}
-#Vertical Charts
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Switching On-the-Fly](#onthefly)
-  * [Series](#series)
-  * [Chart](#chart)
-* [Supported Types](#supported_types)
+# Vertical Charts
 
 ## Overview
 
@@ -21,7 +14,6 @@ To create a vertical chart, use one of these three chart constructors:
 * {api:anychart#verticalArea}anychart.verticalArea(){api}
 * {api:anychart#verticalLine}anychart.verticalLine(){api}
 * {api:anychart#bar}anychart.bar(){api}
-
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
@@ -61,7 +53,6 @@ chart.draw();
 
 {sample}BCT\_Vertical\_01{sample}
 
-<a name='onthefly'></a>
 ## Switching On-the-Fly
 
 ### Series

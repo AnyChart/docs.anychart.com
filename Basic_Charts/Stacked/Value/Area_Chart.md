@@ -1,10 +1,6 @@
 {:index 0}
 # Stacked Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Stacked Area Chart is a multi-series Area Chart that displays the trend of the value each series contributes over time or categories.

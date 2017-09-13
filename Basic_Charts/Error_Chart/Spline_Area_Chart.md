@@ -1,9 +1,6 @@
 {:index 2}
 # Spline Area Chart with Error Bars
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Spline Area chart with error bars.

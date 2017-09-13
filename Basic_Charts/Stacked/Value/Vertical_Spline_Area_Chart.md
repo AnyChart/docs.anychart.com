@@ -1,10 +1,6 @@
 {:index 7}
 # Vertical Stacked Spline Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Stacked Spline Area Chart is a multi-series Spline Area Chart that displays the trend of the value each series contributes over time or categories, which categories are spread among the vertical axis. The difference between simple Area Chart and Spline Area is that points and angles are replaced with a single spline.

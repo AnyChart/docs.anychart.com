@@ -1,20 +1,7 @@
 {:index 1.61}
-#Pie Chart
+# Pie Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Start Angle](#start_angle)
-  * [Sorting Order](#sorting_order)
-  * [Exploded Slices](#exploded_slices)
-  * [Radius](#radius)
-    * [Labels](#labels)
-    * [Outer Labels](#outer_labels)
-  * [Tooltips](#tooltips)
-
-##Overview
+## Overview
 
 A pie chart is a circular chart looking like a pie divided into slices (sectors). Slices show the percentage each value contributes to a total, the area of each slice being proportional to the quantity it represents, and the circle representing 100%. A pie chart with a blank circular area in the center is called a [doughnut chart](Doughnut_Chart).
 

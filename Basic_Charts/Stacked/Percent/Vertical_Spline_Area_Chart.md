@@ -1,10 +1,6 @@
 {:index 7}
 # Vertical Percent Stacked Spline Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Percent Stacked Spline Area Chart is a multi-series Spline Area Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis. The difference between simple Area Chart and Spline Area is that points and angles are replaced with a single spline.

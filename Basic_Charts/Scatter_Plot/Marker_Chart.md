@@ -1,9 +1,6 @@
 {:index 2}
 # Scatter Marker Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Scatter Marker chart in AnyChart.

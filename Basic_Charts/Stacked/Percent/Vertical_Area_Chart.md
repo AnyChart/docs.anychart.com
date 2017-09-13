@@ -1,10 +1,6 @@
 {:index 6}
 # Vertical Percent Stacked Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Percent Stacked Area Chart is a multi-series Area Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis.

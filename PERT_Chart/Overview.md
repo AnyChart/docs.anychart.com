@@ -1,14 +1,5 @@
 {:index 0}
-PERT Chart Overview
-===========
-
-* [Overview](#overview)
-* [Use cases](#use_cases)
- * [Total Project Duration](#total_project_duration)
- * [The Project Duration Deviation](#the_project_duration_deviation)
- * [Resource Optimization](#resource_optimization)
- * [Middle tasks control](#middle_tasks_control)
- * [Duration calculation](#duration_calculation)
+# PERT Chart Overview
 
 ## Overview
 
@@ -35,7 +26,6 @@ In the following sample, the critical path is highlighted with red color, and it
 
 Find how to get the critical paths duration in the [AnyChart PERT statistics section](Pert_Chart#statistics).
 
-
 ### The Project Duration Deviation
 
 The Standard Deviation is an estimated statistic value of the critical path duration deviation, which can be quite important in the project planning. Find how to manage the PERT statistics in the [AnyChart PERT statistics section](Pert_Chart#statistics) article.
@@ -43,7 +33,6 @@ The Standard Deviation is an estimated statistic value of the critical path dura
 In the following sample, the project duration with the standard deviation of the critical path value is shown in the chart title.
 
 {sample}Pert\_UseCase\_02{sample}
-
 
 ### Resource Optimization
 
@@ -54,7 +43,6 @@ The following sample demonstrates all slack values for all tasks, making it evid
 {sample}Pert\_UseCase\_03{sample}
 
 Find how to get the slacks duration shown in the [AnyChart PERT slacks section](Pert_Chart#slacks).
-
 
 ### Middle tasks control
 

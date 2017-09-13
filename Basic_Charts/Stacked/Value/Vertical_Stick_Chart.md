@@ -1,10 +1,6 @@
 {:index 9}
 # Vertical Stacked Stick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Stacked Stick Chart is a multi-series Stick Chart that displays the trend of the value each series contributes over time or categories, which categories are spread among the vertical axis.

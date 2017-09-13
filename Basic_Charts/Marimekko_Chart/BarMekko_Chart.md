@@ -1,14 +1,6 @@
 {:index 1}
 # BarMekko Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
- * [Appearance](#appearance)
- * [Multi series](#multi_series)
- * [Vertical BarMekko Chart](#vertical_barmekko_chart)
-
 ## Overview
 
 A [Mekko chart](Mekko_Chart) with a single series and units is called BarMekko in AnyChart, it is often used with one series only. 
@@ -78,4 +70,3 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 Here is the information about creating Vertical BarMekko Chart:
 
 * [Vertical BarMekko](../Vertical/BarMekko_Chart)
-

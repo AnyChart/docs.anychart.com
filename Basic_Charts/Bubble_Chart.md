@@ -1,16 +1,6 @@
 {:index 1}
 # Bubble Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Size](#size)
-  * [Single Bubble Adjusting](#single_bubble_adjusting)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-
 ## Overview
 
 A Bubble chart is a variation of a [Scatter chart](Scatter_Plot/Overview) where the data points are replaced with bubbles.  
@@ -175,7 +165,6 @@ var data = anychart.data.set([
 ```
 
 {sample}BCT\_Bubble\_Chart\_05{sample}
-
 
 ### Labels
 

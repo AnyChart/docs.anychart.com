@@ -1,15 +1,5 @@
 {:index 3.1}
-#Range Column Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Padding](#padding)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Range Column](#vertical_range_column)
+# Range Column Chart
 
 ## Overview
 

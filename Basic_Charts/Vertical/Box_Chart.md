@@ -1,9 +1,6 @@
 {:index 2}
 # Vertical Box Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Vertical Box chart in AnyChart.

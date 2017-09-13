@@ -1,10 +1,6 @@
 {:index 5}
 # Percent Stacked Stick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Percent Stacked Stick Chart (also known as a 100% Stacked Stick Chart) is a multi-series Stick Chart that displays the trend of the percentage each value contributes over time or categories.

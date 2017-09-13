@@ -1,10 +1,6 @@
 {:index 3}
 # Percent Stacked Spline Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Percent Stacked Spline Area Chart (also known as a 100% Stacked Spline Area Chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.

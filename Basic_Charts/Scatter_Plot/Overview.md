@@ -1,14 +1,6 @@
 {:index 1}
 # Scatter Plot
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Grids](#grids)
-* [Date/Time Scale](#date_time_scale)
-* [Error Bars](#error_bars)
-* [Drawing Tools and Annotations](#drawing_tools_and_annotations)
-* [Supported Types](#supported_types)
-
 ## Overview
 
 AnyChart allows you to create scatter charts by using a special scatter chart constructor. It processes data points as-is: sets of arguments from different series don't influence each other, points are shown in the exact order they are set, and lines can be vertical and cross themselves. While the Cartesian constructor distributes points along the X-axis at equal intervals (categories), the scatter constructor distributes points according to their values.
@@ -63,7 +55,6 @@ chart.draw();
 
 {sample}BCT\_Scatter\_Chart\_01{sample}
 
-
 ## Grids
 
 As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#grid}grid(){api} and {api:anychart.charts.Scatter#minorGrid}minorGrid(){api} methods to create a major and a minor grid. The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
@@ -92,8 +83,6 @@ chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
 
 {sample}BCT\_Scatter\_Chart\_02{sample}
 
-
-<a name='date\_time\_scale'></a>
 ## Date/Time Scale
 
 Scatter charts are typically used with date/time scales – to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).

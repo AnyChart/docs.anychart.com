@@ -1,23 +1,5 @@
 {:index 3}
-PERT Chart
-===========
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
- * [Interactivity](#interactivity)
- * [Appearance](#appearance)
- * [Tasks](#tasks)
-  * [Duration calculation](#duration_calculation)
-  * [Dummy Tasks](#dummy_tasks)
-  * [Earliest and latest](#earliest_and_latest)
-  * [Slacks](#slacks)
- * [Milestones](#milestones)
- * [Critical Path](#critical_path)
- * [Labels](#labels)
- * [Tooltips](#tooltips)
- * [Statistics](#statistics)
+# PERT Chart
 
 ## Overview
 

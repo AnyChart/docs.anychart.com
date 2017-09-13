@@ -1,15 +1,6 @@
 {:index 1.5}
 # Jump Line Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Jump Line](#vertical_jump_line)
-
 ## Overview
 
 Jump Line Chart is similar to [Line Chart](Line_Chart) and [Step Line Chart](Step_Line_Chart): Jump Line considers the data points as the center points of "jumps" - horizontal line segments of a category width. 

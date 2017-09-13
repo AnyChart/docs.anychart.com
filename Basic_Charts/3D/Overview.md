@@ -1,12 +1,5 @@
 {:index 1}
-#3D Charts
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Z-Angle](#z_angle)
-* [Z-Aspect](#z_aspect)
-* [Z-Distribution](#z_distribution)
-* [Supported Types](#supported_types)
+# 3D Charts
 
 ## Overview
 
@@ -54,7 +47,6 @@ chart.draw();
 
 {sample}BCT\_3d\_01{sample}
 
-<a name='z_angle'></a>
 ## Z-Angle
 
 3D charts can be shown from different angles of view: to set the angle, use the {api:anychart.charts.Cartesian3d#zAngle}zAngle(){api} method with any 3D chart except the 3D Pie.
@@ -70,7 +62,6 @@ chart.zAngle(20);
 
 {sample}BCT\_3d\_02{sample}
 
-<a name='z_aspect'></a>
 ## Z-Aspect
 
 3D charts can vary in depth: to set it, use the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
@@ -86,7 +77,6 @@ chart.zAspect("100%"");
 
 {sample}BCT\_3d\_03{sample}
 
-<a name='z_distribution'></a>
 ## Z-Distribution
 
 In 3D multi-series charts, series are distributed along the X-axis by defalut. However, you can also distribute them along the Z-axis: call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use **"true"** as a parameter. The **"false"** paramater enables the default X-distribution.

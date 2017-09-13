@@ -1,16 +1,5 @@
 {:index 1}
-#Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Stacked Area](#stacked_area)
-  * [Vertical Area](#vertical_area)
-  * [3D Area](#3d_area)
+# Area Chart
 
 ## Overview
 

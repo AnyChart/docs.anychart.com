@@ -1,17 +1,6 @@
 {:index 1.5}
 # Heat Map Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Data](#data)
-  * [Appearance](#appearance)
-  * [Color Scale](#color_scale)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Scrollers](#scrollers)
-
 ## Overview
 
 A heat map is a visualization of a data matrix where values are represented as colors.

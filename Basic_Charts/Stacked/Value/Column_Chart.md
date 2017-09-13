@@ -1,10 +1,6 @@
 {:index 2}
 # Stacked Column Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Stacked Column Chart is a multi-series Column Chart that displays the trend of the value each series contributes over time or categories.

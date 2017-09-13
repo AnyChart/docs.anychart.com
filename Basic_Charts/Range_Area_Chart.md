@@ -1,14 +1,5 @@
 {:index 3.1}
-#Range Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Range Area](#vertical_range_area)
+# Range Area Chart
 
 ## Overview
 

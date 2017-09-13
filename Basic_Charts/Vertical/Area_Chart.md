@@ -1,9 +1,6 @@
 {:index 2}
 # Vertical Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Vertical Area chart in AnyChart.

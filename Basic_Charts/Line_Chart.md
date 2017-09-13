@@ -1,14 +1,5 @@
 {:index 1.5}
-#Line Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Line](#vertical_line)
+# Line Chart
 
 ## Overview
 

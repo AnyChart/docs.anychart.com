@@ -1,10 +1,6 @@
 {:index 1}
 # Stacked Bar Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Stacked Bar Chart is a multi-series Bar Chart that displays the trend of the value each series contributes over time or categories.

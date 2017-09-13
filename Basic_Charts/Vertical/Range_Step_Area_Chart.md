@@ -1,9 +1,6 @@
 {:index 2}
 # Vertical Range Step Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Vertical Range Step Area chart in AnyChart.

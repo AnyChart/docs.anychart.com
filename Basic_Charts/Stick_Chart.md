@@ -1,15 +1,6 @@
 {:index 6}
 # Stick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Stick](#vertical_stick)
-
 ## Overview
 
 Stick Charts look like Column Charts with no width. Sticks are good at demonstrating some discrete data.

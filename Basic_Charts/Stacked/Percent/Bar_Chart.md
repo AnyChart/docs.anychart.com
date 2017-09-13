@@ -1,10 +1,6 @@
 {:index 1}
 # Percent Stacked Bar Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Percent Stacked Bar Chart (also known as a 100% Stacked Bar Chart) is a multi-series Bar Chart that displays the trend of the percentage each value contributes over time or categories.

@@ -1,15 +1,5 @@
 {:index 3}
-PERT Chart Data
-===========
-
-* [Overview](#overview)
-* [Data Formats](#data_formats)
- * [Nodes and Connections Set Simultaneously](#nodes_and_connections_set_simultaneously)
- * [Nodes and Connections Set Separately](#nodes_and_connections_set_separately)
-* [Duration Setting Options](#duration_setting_options)
- * [Duration](#duration)
- * [Time Estimates](#time_estimates)
-* [Statistics](#statistics)
+# PERT Chart Data
 
 ## Overview
 

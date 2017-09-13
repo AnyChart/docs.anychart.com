@@ -1,17 +1,5 @@
 {:index 1}
-#Column Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Padding](#padding)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Stacked Column](#stacked_column)
-  * [Vertical Column (Bar)](#vertical_column)
-  * [3D Column](#3d_column)
+# Column Chart
 
 ## Overview
 

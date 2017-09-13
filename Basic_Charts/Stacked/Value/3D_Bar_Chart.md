@@ -1,10 +1,6 @@
 {:index 11}
 # 3D Stacked Bar Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A 3D Stacked Bar Chart is a multi-series 3D Bar Chart that displays the trend of the value each series contributes over time or categories.

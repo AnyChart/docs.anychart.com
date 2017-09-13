@@ -1,16 +1,5 @@
 {:index 1}
-#Error Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Lower and Upper Bars](#lower_and_upper_bars)
-  * [On Cartesian Charts](#on_cartesian_charts)
-  * [On Scatter Charts](#on_scatter_charts)
-* [Error Mode](#error_mode)
-* [Appearance](#appearance)
-* [Labels](#labels)
-* [Tooltips](#tooltips)
-* [Supported Types](#supported_types)
+# Error Chart
 
 ## Overview
 

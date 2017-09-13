@@ -1,15 +1,6 @@
 {:index 1.5}
 # High-Low (HiLo) Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical HiLo](#vertical_hilo)
-
 ## Overview
 
 A high-low (HiLo) chart is a chart type mostly used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. So, the HiLo chart looks like the [OHLC chart](OHLC_Chart), but does not have tick marks indicating the opening and closing prices.

@@ -1,15 +1,8 @@
 {:index 1}
-#Doughnut Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
-* [Special Settings](#special_settings)
-  * [Labels](#labels)
-    * [Outer Labels](#outer_labels)
-    * [Inner Labels](#inner_labels)
+# Doughnut Chart
 
-##Overview
+## Overview
 
 A doughnut (or donut) chart is a pie chart with a "hole" – a blank circular area in the center. The chart is divided into parts that show the percentage each value contributes to a total. 
 

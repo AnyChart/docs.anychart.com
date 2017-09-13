@@ -1,10 +1,6 @@
 {:index 0}
 # Percent Stacked Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Percent Stacked Area Chart (also known as a 100% Stacked Area Chart) is a multi-series Area Chart that displays the trend of the percentage each value contributes over time or categories.

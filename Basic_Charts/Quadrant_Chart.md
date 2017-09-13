@@ -1,17 +1,5 @@
 {:index 2}
-#Quadrant Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Quarters](#quarters)
-  * [Crossing](#crossing)
-  * [Scales](#scales)
-  * [Axes](#axes)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
+# Quadrant Chart
 
 ## Overview
 

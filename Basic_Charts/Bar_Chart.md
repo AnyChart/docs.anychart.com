@@ -1,16 +1,5 @@
 {:index 1}
-#Bar Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Padding](#padding)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Stacked Bar](#stacked_bar)
-  * [3D Bar](#3d_bar)
+# Bar Chart
 
 ## Overview
 

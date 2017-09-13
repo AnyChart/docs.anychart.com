@@ -1,10 +1,6 @@
 {:index 2}
 # Percent Stacked Column Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A percent Stacked Column Chart (also known as a 100% Stacked Column Chart) is a multi-series Column Chart that displays the trend of the percentage each value contributes over time or categories.

@@ -1,9 +1,6 @@
 {:index 2}
 # Line Chart with Error Bars
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Line chart with error bars.

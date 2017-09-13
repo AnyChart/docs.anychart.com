@@ -1,17 +1,6 @@
 {:index 1.61}
 # Marker Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Size](#size)
-  * [Appearance](#appearance)
-  * [Type](#type)
-  * [Labels](#labels)
-  * [Single Marker Adjusting](#single_marker_adjusting)
-  * [Tooltips](#tooltips)
-
 ## Overview
 
 Marker chart (also known as a point chart) is identical to a line chart without the lines. A marker chart shows only endpoints of segments that make each line up.
@@ -175,7 +164,6 @@ var data = anychart.data.set([
 
 {sample}BCT\_Marker\_Chart\_05{sample}
 
-
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -183,4 +171,3 @@ var data = anychart.data.set([
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-

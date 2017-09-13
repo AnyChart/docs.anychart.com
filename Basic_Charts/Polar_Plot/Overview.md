@@ -1,14 +1,5 @@
 {:index 1}
-# Overview
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Start Angle](#start_angle)
-* [Missing Points](#missing_points)
-* [Axes](#axes)
-* [Scales](#scales)
-* [Grids](#grids)
-* [Supported Types](#supported_types)
+# Polar Charts
 
 ## Overview
 

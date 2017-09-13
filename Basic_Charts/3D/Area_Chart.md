@@ -1,9 +1,6 @@
 {:index 2}
 # 3D Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a 3D Area chart in AnyChart.

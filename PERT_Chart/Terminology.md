@@ -1,17 +1,5 @@
 {:index 2}
-PERT Chart Terminology
-===========
-
-* [Milestone](#milestone)
-* [Task](#task)
-* [Critical Path](#critical_path)
-* [Critical Activity](#critical_activity)
-* [Optimistic time](#optimistic_time)
-* [Pessimistic time](#pessimistic_time)
-* [Most likely time](#most_likely_time)
-* [Expected time](#expected_time)
-* [Standard deviation of time](#standard_deviation_of_time)
-* [Slack](#slack)
+# PERT Chart Terminology
 
 ## Milestone
 

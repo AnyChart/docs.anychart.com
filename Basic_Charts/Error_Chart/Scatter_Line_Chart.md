@@ -1,9 +1,6 @@
 {:index 2}
 # Scatter Line Chart with Error Bars
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a [Scatter Line chart](../Scatter_Plot/Line_Chart) with error bars.

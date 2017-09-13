@@ -1,19 +1,5 @@
 {:index 1.61}
-#Pareto Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Special Settings](#special_settings)
- * [Data](#data)
- * [Series](#series)
- * [Pareto tokens](#pareto_tokens) 
- * [Coloring conditions](#coloring_conditions)
- * [Labels](#labels)
- * [Tooltips](#tooltips)
- * [Axes and Scales](#axes_and_scales)
- * [Pareto Analysis Axes Markers](#pareto_analysis_axes_markers)
-* [Events](#events)
-* [Samples](#samples)
+# Pareto Chart
 
 ## Overview
 

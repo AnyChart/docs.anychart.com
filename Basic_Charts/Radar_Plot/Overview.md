@@ -1,13 +1,5 @@
 {:index 1}
-# Overview
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Start Angle](#start_angle)
-* [Axes and Scales](#axes_and_scales)
-* [Grids](#grids)
-* [Stacked Radar Charts](#stacked_radar_charts)
-* [Supported Types](#supported_types)
+# Radar Chart
 
 ## Overview
 

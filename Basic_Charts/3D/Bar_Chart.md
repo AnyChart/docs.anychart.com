@@ -1,9 +1,6 @@
 {:index 2}
 # 3D Bar Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a 3D Bar chart in AnyChart.

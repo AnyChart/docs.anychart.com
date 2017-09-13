@@ -1,18 +1,6 @@
 {:index 1.5}
-#Funnel Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Head](#head)
-  * [Neck](#neck)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-   * [Connectors](#connectors)
-   * [Position](#position)
-   * [Overlapping](#overlapping)
-  * [Tooltips](#tooltips)
+# Funnel Chart
 
 ## Overview
 
@@ -194,7 +182,6 @@ chart.connectorLength(45);
 
 The content of the labels is adjusted with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. Read more about text formatting in the [Labels Text Formatting article](../Common_Settings/Labels#format_text).
 
-
 #### Overlapping
 
 After adjusting content of the funnel labels some of them can overlap others. To control or prevent overlapping use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
@@ -203,7 +190,6 @@ After adjusting content of the funnel labels some of them can overlap others. To
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
-
 
 ### Tooltips
 

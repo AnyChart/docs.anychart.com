@@ -1,9 +1,5 @@
 {:index 4.1}
-#Spline Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
+# Spline Area Chart
 
 ## Overview
 

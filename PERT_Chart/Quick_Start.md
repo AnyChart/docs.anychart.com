@@ -1,13 +1,5 @@
 {:index 1}
 # PERT Chart Quick Start
-
-* [Getting Started](#getting_started)
-* [Include AnyChart](#include_anychart)
-* [Create a Container](#create_a_container)
-* [Prepare the Data](#prepare_the_data)
-* [Create the Chart](#create_the_chart)
-* [See the Chart](#see_the_chart)
-* [Full Source Code](#full_source_code)
  
 ## Getting Started
 

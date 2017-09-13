@@ -1,17 +1,5 @@
 {:index 7.5}
-#Waterfall Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Data](#data)
-  * [Multiple Series](#multiple_series)
-  * [Appearance](#appearance)
-  * [Connectors](#connectors)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Legend](#legend)
+# Waterfall Chart
 
 ## Overview
 

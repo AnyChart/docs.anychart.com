@@ -1,9 +1,6 @@
 {:index 2}
 # Polar Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Polar Area chart in AnyChart.

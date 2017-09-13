@@ -1,10 +1,6 @@
 {:index 10}
 # 3D Percent Stacked Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A 3D Percent Stacked Area Chart is a multi-series 3D Area Chart that displays the trend of the percentage each value contributes over time or categories.

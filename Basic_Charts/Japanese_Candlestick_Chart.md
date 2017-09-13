@@ -1,16 +1,6 @@
 {:index 1.5}
 # Japanese Candlestick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-* [Candlestick Patterns](#candlestick_patterns)
-
-
 ## Overview
 
 A Japanese candlestick chart is a combination of a line and bar chart used to describe price movements of an equity over time, where each bar represents the range of price movement over a given time interval. It is mostly used in technical analysis of equity and currency price patterns.
