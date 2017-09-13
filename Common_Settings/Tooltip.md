@@ -1,28 +1,4 @@
-#Tooltip
-
-* [Overview](#overview)
-* [Default Tooltip](#default_tooltip)
-* [Basic Settings](#basic_setings)
-* [Display Mode](#display_mode)
- * [Single](#single)
- * [Union](#union)
- * [Separated](#separated)
-* [Formatting](#formatting)
- * [Title](#title)
- * [Separator](#separator)
- * [Text](#text)
- * [Prefix and Postfix](#prefix_and_postfix)
-* [Size](#size)
-* [Background](#background)
-* [Out of chart](#out_of_chart)
-* [Out of stage](#out_of_stage)
- * [Tooltip global container](#tooltip_global_container)
-* [Out of screen](#out_of_screen)
-* [Position](#position)
- * [Fixed Tooltip Position](#fixed_tooltip_position)
-* [Hiding Time](#hiding_time)
-* [Themes](#themes)
-* [Custom Tooltip](#custom_tooltip)
+# Tooltip
 
 ## Overview
 

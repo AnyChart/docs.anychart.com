@@ -1,17 +1,4 @@
-#Text Formatters
-
-* [Overview](#overview)
-* [String Tokens](#string_tokens)
- * [Tokens List](#tokens_list)
-* [Formatting Parameters](#formatting_parameters)
- * [Formatting Parameters List](#formatting_parameters_list)
- * [Escaping symbols](#escaping_symbols)
-* [Formatting functions](#formatting_functions)
- * [Default fields](#default_fields)
- * [Extra fields](#extra_fields)
-  * [getData](#getdata)
-  * [Series Meta](#series_meta)
-  * [getStat](#getstat)
+# Text Formatters
 
 ## Overview
 

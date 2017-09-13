@@ -1,21 +1,4 @@
-#Scroller
-
-* [Overview](#overview)
-* [Zoom Settings](#zoom_settings)
- * [Limits by ratio](#limits_by_ratio)
- * [Limits by values](#limits_by_values)
- * [Limits by the number of points](#limits_by_the_number_of_points)
- * [Get the limits ratio](#get_the_limits_ratio)
- * [Allow range change](#allow_range_change) 
-* [Scroll bar](#scroll_bar)
- * [Orientation](#orientation)
- * [Position](#position)
- * [Colors](#colors)
- * [Size](#size)
- * [Thumbs](#thumbs)
-* [Live update](#live_update)
-* [Auto hide](#auto_hide)
-* [Events](#events)
+# Scroller
 
 ## Overview
 

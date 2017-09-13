@@ -1,11 +1,6 @@
 {:index 5}
 
-#Localization
-
-* [Overview](#overview)
-* [Applying an Automatic Locale](#applying_an_automatic_locale)
-* [Tuning a Locale](#tuning_a_locale)
-* [Locales in AnyChart CDN](#locales_in_anychart_cdn)
+# Localization
 
 ##Overview
 

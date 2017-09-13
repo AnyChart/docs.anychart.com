@@ -1,13 +1,5 @@
 # Server-Side Rendering
 
-* [Overview](#overview)
-* [Environment](#environment)
-* [Command Line Usage](#command_line_usage)
-* [Web Server Usage](#web_server_usage)
-* [How to set the path to PhantomJS](#how_to_set_the_path_to_phantomjs)
-* [How to set the path to Export Server](#how_to_set_the_path_to_export_server)
-* [Contribution](#contribution)
-
 ## Overview
 
 Server-side rendering is a tool that helps a lot in some cases: for example, when you've got an automated email system, and you need to include charts in letters; when you need charts in reports, which are generated on servers; when you need to show the charts on a Smart TV with a stripped version of a browser; etc. In such cases we offer you to use AnyChart Export Server.

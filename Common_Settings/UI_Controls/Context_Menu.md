@@ -1,14 +1,4 @@
-#Context Menu
-
-* [Overview](#overview)
-* [Enable](#enable)
-* [Disable](#disable)
-* [Change Standard Element](#change_standard_element)
- * [Adjust Text](#adjust_text)
- * [Hide Element](#hide_element)
-* [Custom Context Menu](#custom_context_menu)
-* [Change the Look](#change_the_look)
-* [Context](#context)
+# Context Menu
 
 ## Overview 
 

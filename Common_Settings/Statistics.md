@@ -1,11 +1,4 @@
-Statistics
-==========
-
-* [Overview](#overview)
-* [Basics](#basics)
-* [Chart](#chart)
-* [Series](#series)
-* [Point](#point)
+# Statistics
 
 ## Overview 
 

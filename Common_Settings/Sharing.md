@@ -2,14 +2,6 @@
 
 # Sharing
 
-* [Overview](#overview)
-* [Facebook](#facebook)
-* [Twitter](#twitter)
-* [LinkedIn](#linkedin)
-* [Pinterest](#pinterest)
-* [Defaults](#defaults)
-* [Sharing Buttons Sample](#sharing_buttons_sample)
-
 ## Overview
 
 Sharing is a feature that allowes to share a chart made with AnyChart component to your page in a social network like Facebook, Pinterest and else. This article describes the settings and methods necessary for sharing activation, adjusting and using.

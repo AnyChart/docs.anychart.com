@@ -1,15 +1,6 @@
 {:index 4}
 
-#Accessibility (508 Section)
-
-* [What is Section 508](#what_is_section_508)
-* [Why a11y](#why_a11y)
-* [Default](#default)
-* [Enable/Disable](#enable/disable)
-* [Accessible Elements](#accessible_elements)
-* [Accessibility Modes](#accessibility_modes)
-* [Chart Elements Mode](#chart_elements_mode)
-* [Data Table mode](#data_table_mode)
+# Accessibility (508 Section)
 
 ## What is Section 508
 

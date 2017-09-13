@@ -1,11 +1,6 @@
 {:index 3}
 
-ASYNC Rendering
-======================
-
-* [Overview](#overview)
-* [Asynchronous Execution](#asynchronous_execution)
-* [Rendering Multiple Charts](#rendering_multiple_charts)
+# ASYNC Rendering
 
 ## Overview
 

@@ -1,15 +1,5 @@
 # Title
 
-* [Overview](#overview)
-* [Default Title](#default_title)
-* [Settings Text](#settings_text)
-* [Visualization](#visualization)
- * [Position](#position)
- * [Background](#background)
- * [Text Settings](#text_settings)
-* [HTML in Title](#html_in_title)
-* [Adding Events](#adding_events)
-
 ## Overview
 
 Every js chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.standalones.Title}title(){api} is placed on the top of the chart.

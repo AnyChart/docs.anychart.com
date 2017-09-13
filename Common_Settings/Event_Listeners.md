@@ -1,16 +1,4 @@
-#Event Listeners
-
-* [Overview](#overview)
-* [Listener Types](#listener_types)
-  * [listen](#listen)
-  * [listenOnce](#listenonce)
-  * [removeAllListeners](#removealllisteners)
-  * [unlisten](#unlisten)
-  * [unlistenByKey](#unlistenbykey)
-* [Event types](#event_types)
-  * [Mouse-related](#mouse-related)
-  * [Point-related](#point-related)
-* [Manage Single Point](#manage_single_point)
+# Event Listeners
 
 ## Overview
 
@@ -24,7 +12,6 @@ There are 5 listener methods ({api:anychart.core.Base#listen}listen(){api}, {api
 
 There are five listener methods in Anychart, each type for a special case. Read the following information to find out how to use listeners.
 
-<a name="listen"></a>
 ###listen()
 
 This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base#listen}listen(){api} method to an object more than once (but not to an event); each time it's added its key is returned.

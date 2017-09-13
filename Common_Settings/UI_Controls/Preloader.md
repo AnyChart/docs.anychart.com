@@ -1,8 +1,4 @@
-#Preloader
-
-* [Overview](#overview)
-* [Prerequisites](#prerequisites)
-* [](#sample)
+# Preloader
 
 ## Overview
 

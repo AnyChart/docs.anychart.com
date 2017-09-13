@@ -1,15 +1,4 @@
-#Labels
-
-* [Overview](#overview)
-* [Basic Settings](#basic_setings)
- * [Enable](#enable)
- * [Format Text](#format_text)
-* [Visual Settings](#visual_settings)
- * [Background](#background)
- * [Font](#font)
- * [Position](#position)
- * [Size](#size)
-* [Themes](#themes)
+# Labels
 
 ## Overview
 

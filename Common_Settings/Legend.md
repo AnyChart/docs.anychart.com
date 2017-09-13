@@ -1,32 +1,5 @@
 # Legend
 
-* [Overview](#overview)
-* [Auto Legend](#auto_legend)
- * [Single Series](#single_series)
-* [Title](#title)
-* [Positioning](#positioning)
- * [Outside](#outside)
- * [Inside](#inside)
- * [Drag and Drop](#drag_and_drop)
-* [Layout](#layout)
-* [Size](#size)
- * [Expandable](#expandable)
- * [Fixed](#fixed)
-* [Paging](#paging)
-* [Visualization](#visualization)
- * [Background](#background)
- * [Marker Symbol](#marker_symbol)
- * [Mouse Cursor](#mouse_cursor)
- * [Tooltip](#tooltip)
-* [Series Management](#series_management)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
-* [Events](#events)
- * [Legend Items Events](#legend_items_events)
- * [Legend Events](#legend_events)
-* [One Legend for Several Charts](#one_legend_for_several_charts)
-* [One Legend for Several Series](#one_legend_for_several_series)
-
 ## Overview
 
 Legend is a element of a chart that lists and explains the symbols and colors used on a chart or a map. Sometimes it contains additional information that helps user to understand a chart.

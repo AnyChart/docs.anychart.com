@@ -1,3 +1,3 @@
-#Gantt Toolbar
+# Gantt Toolbar
 
-*description coming soon*
+*Coming soon*

@@ -1,24 +1,4 @@
-#Interactivity
-
-* [Overview](#overview)
-* [Default interactivity](#default_interactivity)
-  * [Include and Exclude Points](#include_and_exclude_points)
-* [Altering interactivity](#altering_interactivity)
-* [Charts behaviour](#charts_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
-* [Series behaviour](#series_behaviour)
-  * [Hover](#series_hover)
-  * [Select](#series_select)
-  * [Single Point](#single_point)
-* [Rectangle/Marquee Select](#rectangle_marquee_select)
-* [Single Series Chart](#single_series_chart)
-* [Handling chart events](#handling_chart_events)
-  * [Navigating to URL](#interactivity_settings_in_data_sets)
-  * [DrillDown](#drilldown) 
-* [Creating Custom Tooltip](#creating_custom_tooltip)
-  * [Chart as Tooltip](#chart_as_tooltip)
-* [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
+# Interactivity
 
 ## Overview 
 
@@ -66,7 +46,7 @@ There are also two basic events: hover and select.
 
 #### Hover
 
-Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select. <a name = "bySpot"> </a>
+Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select.
 
 ##### bySpot 
 
@@ -81,7 +61,7 @@ interactivity.spotRadius(30);
 
 {sample}CS\_Interactivity\_03{sample}
 
-This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").<a name="byX"></a>
+This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").
 
 ##### byX
 
@@ -115,8 +95,6 @@ interactivity.selectionMode("none");
 
 {sample}CS\_Interactivity\_05{sample} 
 
-<a name="multiselect"></a>
-
 ##### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
@@ -128,8 +106,6 @@ interactivity.selectionMode("multiSelect");
 ```
 
 {sample}CS\_Interactivity\_06{sample} 
-
-<a name="singleselect"></a>
 
 ##### Single-select
 
@@ -144,7 +120,7 @@ interactivity.selectionMode("singleSelect");
 {sample}CS\_Interactivity\_07{sample}
 
 ### Series behaviour
-<a name="series_hover"></a>
+
 #### Hover 
 
 Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}hover(){api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
