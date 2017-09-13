@@ -2,18 +2,6 @@
 
 # Standalones
 
-* [Overview](#overview)
-* [Standalones List](#standalones_list)
-* [Using Standalones](#using_standalones)
- * [Scales](#scales)
- * [Legend](#legend)
- * [Axes](#axes)
- * [Color Range](#color_range)
- * [Data Grid](#data_grid)
- * [Timeline](#timeline)
- * [Resource List](#resource_list)
-* [Custom Chart with Standalones](#custom_chart_with_standalones)
-
 ## Overview
 
 Standalones are elements of the charting library. They are not charts or parts of charts themselves, they are building blocks that can be used to build anything or create the added functionality. Standalones do not depend on a chart, so they allow to create completely custom charts and manage them or add some custom elements to charts made with AnyChart solutions. 

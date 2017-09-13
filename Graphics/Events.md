@@ -1,12 +1,6 @@
 {:index 4}
 # GraphicsJS Events
 
-* [Overview](#overview)
-* [Listening](#listening)
-* [Unlistening](#unlistening)
-* [Propagation](#propagation)
-* [Stage](#stage)
-
 ## Overview
 
 Any object, stage or layer in GraphicsJS can listen events. The list of events that can be handled for any element is available at: {api:anychart.graphics.events}API: events{api}

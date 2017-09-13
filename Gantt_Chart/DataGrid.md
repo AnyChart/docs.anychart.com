@@ -1,16 +1,4 @@
-#Data Grid
-
-* [Columns](#columns)
- * [Columns Set](#columns_set)
- * [Title](#title)
- * [Text](#text)
- * [Width](#width)
-* [Visual Settings](#visual_settings)
- * [Interlaced mode](#interlaced_mode)
-* [General Settings](#general_settings)
- * [Turning On/Off](#turning_on/off)
- * [Data Grid Width](#data_grid_width)
- * [Expand/Collapse](#expand/collapse)
+# Data Grid
 
 Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
@@ -52,11 +40,11 @@ The same for Project Gantt Chart. The next sample shows the data grid with the a
 You can create and display custom fields in data items:
 
 ```
-    'id': '1',
-    'name': 'Task 1',
-    'owner': 'Anthony Quayle',
-    'actualStart': Date.UTC(2008, 7, 9),
-    'actualEnd': Date.UTC(2008, 7, 20)
+'id': '1',
+'name': 'Task 1',
+'owner': 'Anthony Quayle',
+'actualStart': Date.UTC(2008, 7, 9),
+'actualEnd': Date.UTC(2008, 7, 20)
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_12{sample}

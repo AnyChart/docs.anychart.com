@@ -1,18 +1,4 @@
-#Gantt Interactivity
-
-* [Overview](#overview)
-* [Default Interactivity](#default_interactivity)
- * [Tooltips](#tooltips)
- * [Hover](#hover)
- * [Select](#select)
-* [Altering Interactivity](#altering_interactivity)
- * [Tooltips](#altering_tooltips)
- * [Hover](#altering_hover)
- * [Select](#altering_select)
- * [DataGrid and Timeline adjusting](#datagrid_and_timeline_adjusting)
-* [Handling chart events](#handling_chart_events)
-* [Editing mode](#editing_mode)
- 
+# Gantt Interactivity
  
 ## Overview
 
@@ -48,7 +34,7 @@ Note that if you select the row or item that is already selected, the rowSelect 
 When selected, the whole row and the items get filled with default selecting colors, but they can be changed. Look through the next paragraph.
 
 ## Altering Interactivity
-<a name="altering_tooltips"></a>
+
 ### Tooltips
 
 When you need a tooltip that will show more or less than it does by default, you always can use the format method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
@@ -58,16 +44,14 @@ When you need a tooltip that will show more or less than it does by default, you
 As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#format}format(){api} method:
 
 ```
-	chart.getTimeline().tooltip().format(function (e) {
-        var item = e['item'];
-        return item.get('name') + '<br>' + 'Start time: ' + anychart.utils.defaultDateFormatter(item.meta('minPeriodDate')) + '<br>'
-            + 'End time: ' + anychart.utils.defaultDateFormatter(item.meta('maxPeriodDate'));
-    });
+chart.getTimeline().tooltip().format(function (e) {
+      var item = e['item'];
+      return item.get('name') + '<br>' + 'Start time: ' + anychart.utils.defaultDateFormatter(item.meta('minPeriodDate')) + '<br>'
+          + 'End time: ' + anychart.utils.defaultDateFormatter(item.meta('maxPeriodDate'));
+  });
 ```
 
 You can find more about text formatters [here](../../Common_Settings/Text_Formatters). 
-
-<a name="altering_hover"></a>
 ### Hover
 
 All default colors might be changed according to your needs and preferences. By default, there is one hovering color for both timeline and datagrid parts. 
@@ -79,7 +63,7 @@ You can change them using {api:anychart.core.ui.Timeline#rowHoverFill}getTimelin
 ```
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_05{sample}
-<a name="altering_select"></a>
+
 ### Select
 
 There are some default colors that might not fit your needs or the color scheme, so they can be changed. 
@@ -87,7 +71,6 @@ For changing the selected item color use {api:anychart.core.ui.Timeline#selected
 In the following sample we have changed the default selecting color using those methods.
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_06{sample}
-
 
 ### DataGrid and Timeline adjusting
 
@@ -98,9 +81,9 @@ You can adjust the dimensions of both gantt parts with simply dragging its borde
 You can listen to some events happening on a chart to collect some data and make your Gantt react somehow. For example, let's delete the selected row:
 
 ```
-	chart.listen('rowSelect', function(e) {
-        e.item.remove();
-    });
+chart.listen('rowSelect', function(e) {
+    e.item.remove();
+});
 ```
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_07{sample}
@@ -112,8 +95,8 @@ You may use listeners for adjusting the gantt view or editing the data as well. 
 Our Gantts are so interactive that we can edit them in "live" mode, without even touching the code. All you need to do is to press the "Enable Live Edit" button on the chart toolbar and start working on Gantt chart. It's possible to edit connectors, duration length and start/end time.
 
 ```
-	// to make a Gantt chart editable
-	chart.editing(true);
+// to make a Gantt chart editable
+chart.editing(true);
 ```
 
 {sample :width 825 :height 300 }GANTT\_Interactivity\_08{sample}

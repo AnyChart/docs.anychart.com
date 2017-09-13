@@ -1,16 +1,4 @@
 # Live Edit UI
-
-* [Overview](#overview)
-* [Defaults](#defaults)
- * [Controls](#controls) 
-  * [Customizing Controls](#customizing_controls) 
- * [Events](#events) 
-  * [Data Tree Events](#data_tree_events) 
-  * [Grid Events](#grid_events) 
-  * [Connector Events](#connector_events) 
- * [Data Grid](#data_grid)
- * [TimeLine](#timeline)
-* [Coloring](#coloring)
  
 # Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.

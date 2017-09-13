@@ -1,16 +1,6 @@
 {:index 2}
 # GraphicsJS Quick Start
 
-* [Getting Started](#getting_started)
-* [Include GraphicsJS](#include_graphicsjs)
-* [Create a Container](#create_a_container)
-* [Create a Drawing](#create_a_drawing)
-* [See the Result](#see_the_result)
-* [Full Source Code](#full_source_code)
-* [Further Steps](#further_steps)
- * [Learn more](#learn_more)
- * [Subscribe](#subscribe)
-
 ## Getting Started
 
 Create an HTML file and give it the “index.html” name if you want to make a new web page, or open your HTML file where the drawing should be.

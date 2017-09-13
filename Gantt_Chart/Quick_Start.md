@@ -1,13 +1,5 @@
 {:index 1}
 # Gantt Chart Quick Start
-
-* [Getting Started](#getting_started)
-* [Include AnyGantt](#include_anygantt)
-* [Create a Container](#create_a_container)
-* [Prepare the Data](#prepare_the_data)
-* [Create a Chart](#create_a_chart)
-* [See the Chart](#see_the_chart)
-* [Full Source Code](#full_source_code)
   
 ## Getting Started
 

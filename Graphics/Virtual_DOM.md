@@ -1,9 +1,6 @@
 {:index 3}
 # Virtual DOM
 
-* [Overview](#overview)
-* [Methods](#methods)
-
 ## Overview
 
 GraphicsJS implements Virtual DOM which makes drawing more robust and manageable.

@@ -1,10 +1,7 @@
 # Resource Chart
-* [Overview](#overview)
-* [Chart](#chart)
-* [Expand/Collapse](#expand/collapse)
-* [Periods](#periods)
 
 ## Overview
+
 JavaScript Resources Gantt Chart is one of two types of Gantt Charts. It is intended for showing the resources you have and spreading these resources along the timeline (into periods). Resources can be servers, equipment, vacancies of employees, expendable materials, or anything else.
 
 ## Chart
@@ -12,8 +9,8 @@ JavaScript Resources Gantt Chart is one of two types of Gantt Charts. It is inte
 The JS Resource Gantt Chart creation is the same as JS Project Chart except you should define the resource chat type using the {api:anychart#ganttResource}ganttResource(){api} method:
 
 ```
-//create resource gantt chart
-  chart = anychart.ganttResource();
+// create resource gantt chart
+chart = anychart.ganttResource();
 ```
 
 Here is a sample demonstrates how to create simple Project Chart.
@@ -57,18 +54,18 @@ Let's demonstrate these possibilities with some sample code:
 As shown above every resource has a set of its own properties:
 
 ```
- "id": "1",
- "name": "main server",
- "periods": [..]
+"id": "1",
+"name": "main server",
+"periods": [..]
 ```
 
 Each period has the id, name, start and end time.
 
 ```
- "periods": [
-        {"id": "1_1", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 3, 2)}},
-        {"id": "1_2", "start": Date.UTC(2013, 3, 2), "end": Date.UTC(2013, 4, 5)}}
-        ]
+"periods": [
+      {"id": "1_1", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 3, 2)}},
+      {"id": "1_2", "start": Date.UTC(2013, 3, 2), "end": Date.UTC(2013, 4, 5)}}
+      ]
 ```
 
 Also you can define the view of the given period:

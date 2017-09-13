@@ -1,11 +1,5 @@
 {:index 7}
-DataGrid Column Presets
-===========
-
-* [Overview](#overview)
-* [Column Formatting](#column_formatting)
- * [Presets](#presets)
- * [Custom Formatter](#custom_formatter)
+# DataGrid Column Presets
 
 ## Overview
 

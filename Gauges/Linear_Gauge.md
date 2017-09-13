@@ -1,12 +1,4 @@
-Linear Gauge
-============
-
-* [Overview](#overview)
-* [Basics](#basics)
-* [Layout](#layout)
-* [Scales and axes](#scales_and_axes)
-* [Scale Bar](#scale_bar)
-* [Pointers](#pointers)
+# Linear Gauge
 
 ## Overview
 

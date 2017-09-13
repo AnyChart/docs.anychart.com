@@ -1,16 +1,6 @@
 {:index 1}
 # Quick Start
 
-* [Getting Started](#getting_started)
-* [Include AnyChart](#include_anychart)
-* [Create a Container](#create_a_container)
-* [Prepare the Data](#prepare_the_data)
-* [Create the Chart](#create_the_chart)
-* [See the Chart](#see_the_chart)
-* [Full Source Code](#full_source_code)
-
-## Getting Started
-
 ## Including AnyChart
 
 Reference the anychart.min.js JavaScript file in the `<head>` section of your web page. You can use the link as shown below or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (in this case, you have to use your own link).

@@ -1,10 +1,6 @@
-#Markers (Multiple Milestones)
+# Markers (Multiple Milestones)
 
-* [Overview](#overview)
-* [Adding markers](#adding_markers)
-* [Tuning appearance](#tuning_appearance)
-
-##Overview
+## Overview
 
 Markers feature allows you to add Milestone-like elements to your [Project](Project_Chart) or [Resource](Resource_Chart) Charts. Markers should not be confused with milestones, which are [elements in Project charts with only one date](Project_Chart#tasks_types).
 

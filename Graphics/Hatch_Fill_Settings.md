@@ -2,16 +2,6 @@
 
 # GraphicsJS Hatch Fill Settings
 
-* [Overview](#overview)
-* [Hatch fill presets](#hatch_fill_presets)
-  * [Color](#color)
-  * [Thickness](#thickness)
-  * [Pattern Size](#pattern_size)
-* [Pattern](#pattern)
-  * [Shape](#shape)
-  * [Font](#font)
-
-
 ## Overview
 
 Some color printers print colors unpredictable and sometimes it is quite hard to identify similar colors as different. 

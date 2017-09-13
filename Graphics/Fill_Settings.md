@@ -2,12 +2,6 @@
 
 # GraphicsJS Fill Settings
 
-* [Overview](#overview)
-* [Solid Color](#solid_color)
-* [Linear Gradient](#linear_gradient)
-* [Radial Gradient](#radial_gradient)
-* [Image Fill](#image_fill)
-
 ## Overview
 
 Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and closed [Paths](Paths) have the **fill()** method.

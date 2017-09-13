@@ -1,14 +1,4 @@
-#Project Chart
-
-* [Overview](#overview)
-* [Chart](#chart)
-* [Hierarchy](#hierarchy)
-* [Tasks Types](#tasks_types)
-* [Expand/Collapse control](#expand/collapse_control)
-* [Task Progress](#task_progress)
-* [Actual and Planned](#actual_and_planned)
- * [Swap Actual and Planned](#swap_actual_and_planned) 
-* [Connectors](#connectors)
+# Project Chart
 
 ## Overview
 

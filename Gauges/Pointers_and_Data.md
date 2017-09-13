@@ -1,17 +1,5 @@
 # Pointers and Data
 
-* [Overview](#overview)
-* [Connection with the Data](#connection_with_the_data)
- * [Bind to Data](#bind_to_data)
- * [Bind to Axis](#bind_to_axis)
- * [Multiple pointers](#multiple_pointers)
-* [Types](#types)
- * [Bar](#bar)
- * [Marker](#marker)
- * [Needle](#needle)
- * [Knob](#knob)
- * [Tank](#tank)
-
 ## Overview
 
 Pointers are elements of the Gauge charts, which are necessary for the data representation. 

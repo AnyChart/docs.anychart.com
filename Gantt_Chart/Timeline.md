@@ -1,12 +1,4 @@
-#Timeline
-
-* [Overview](#overview)
- * [Resource Gantt Chart](#resource_gantt_chart)
- * [Project Gantt Chart](#project_gantt_chart)
-* [Markers](#markers)
- * [Enums](#enums)
- * [Special Features](#special_features)
-* [Visualisation](#visualisation)
+# Timeline
 
 ## Overview
 
@@ -38,8 +30,6 @@ There are three marker types we've got in Gantt Charts:
 * rangeMarker - to highlight some parts of a Gantt Chart
 
 Let's make a couple of samples with these markers.
-
-
 
 First of all, let's create 2 line markers: one showing the current date and second one - the date when the ongoing process should become finished.
 

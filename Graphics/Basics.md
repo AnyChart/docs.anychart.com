@@ -1,16 +1,6 @@
 {:index 2.5}
 # GraphicJS Basics
 
-* [Overview](#overview)
-* [Note to AnyChart Users](#note_to_anychart_users)
-* [Basics](#basics)
-* [Shapes and primitives](#basic_shapes_and_primitives)
-* [Path](#path)
-  * [Building the path](#building_the_path)
-  * [Coloring](#coloring)
-* [Layers](#layers)
-* [Text and image](#text_and_image)
-  
 ## Overview
 
 As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an {api:anychart.graphics}intuitive graphics API{api}, [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.

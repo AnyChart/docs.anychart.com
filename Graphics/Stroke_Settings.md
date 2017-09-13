@@ -2,12 +2,6 @@
 
 # Stroke Settings
 
-* [Overview](#overview)
-* [Color](#color)
-* [Thickness](#thickness)
-* [Dash](#dash)
-* [Join and Cap](#join_and_cap)
-
 ## Overview
 
 Stroke settings define how a path (line), or a border of a shape is drawn. All [Shapes](Shapes) and [Paths](Paths) have a stroke method.

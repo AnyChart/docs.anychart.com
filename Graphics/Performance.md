@@ -1,10 +1,6 @@
 {:index 9.1}
 # GraphicsJS Performance Tips
 
-* [Overview](#overview)
-* [Suspend and Resume](#suspend_and_resume)
-* [Reuse of elements](#reuse_of_elements)
-
 ## Overview
 
 This section is supposed to give our users some additional information about AnyChart GraphicsJS, how to make using and managing it easier and faster. 

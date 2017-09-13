@@ -1,9 +1,6 @@
 {:index 1}
 # GraphicsJS JavaScript Drawing Library
 
-* [Overview](#overview)
-* [Documentation](#documentation)
-
 ## Overview
 
 [GraphicsJS](http://www.graphicsjs.org/) is a JavaScript graphics library that allows you to draw absolutely anything, including any sort of interactive and animated graphics with any visual effects.

@@ -1,22 +1,6 @@
-#Circular Gauge Chart
+# Circular Gauge Chart
 
-* [Overview](#overview)
-* [Chart](#chart)
- * [Setting the data](#setting_the_data)
-* [StartAngle and SweepAngle](#startangle_and_sweepangle)
-* [Scales](#scales)
- * [Axis](#axis)
- * [Minimum and Maximum](#minimum_and_maximum)
- * [Ticks](#ticks)
-* [Visualization](#visualization)
- * [Pointers](#pointers)
- * [Cap](#cap)
-* [Label](#label)
-* [Range](#range)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
-
-##Overview
+## Overview
 
 In this tutorial we will learn how to build the basic circular gauge step by step, trying to cover all major elements and pointing to the articles for the further tuning a gauge.
 
@@ -24,7 +8,7 @@ So, a Circular Gauge is a visual representation of a measuring device with a rad
 
 Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical JavaScript speedometer gauge as a result.
 
-##Chart
+## Chart
 
 Depending on data model and the visualization purpose the gauge may contain single series or multi series.
 Let's build a gauge that should look like a speedometer. Step by step, we will make our gauge to look more realistic.

@@ -1,14 +1,6 @@
 {:index 7}
 # GraphicsJS Shapes and Primitives
 
-* [Overview](#overview)
-* [Basic Shapes](#basic_shapes)
-* [Predefined Shapes](#predefined_shapes)
-* [Clip](#clip)
-* [Coloring](#coloring)
- * [Fill](#fill)
- * [Stroke](#stroke)
-
 ## Overview
 
 GraphicsJS is a lightweight JavaScript graphics library which allows to create graphic elements for all purposes, from very simple to very complex. This article describes how to draw simple shapes using GraphicsJS and use them to create more complex shapes.

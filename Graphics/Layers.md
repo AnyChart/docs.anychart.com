@@ -1,12 +1,6 @@
 {:index 5.5}
 # GraphicsJS Layers
 
-* [Overview](#overview)
-* [Creating and Managing](#creating_and_managing)
-* [Transformation](#transformation)
-* [Clipping and Bounds](#clipping_and_bounds)
-* [zIndex](#zindex)
-
 ## Overview 
 
 {api:anychart.graphics.vector.Layer}Layer{api} is an object used to group elements in GraphicsJS. Elements must be grouped if you want to apply similar changes to them,  [transformation](Transformations) and alike. You can change layers in [suspended mode](Virtual_DOM), increasing performance and improving user experience.

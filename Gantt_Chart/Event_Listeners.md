@@ -1,11 +1,6 @@
-#Event Listeners
+# Event Listeners
 
-* [Overview](#overview)
-* [Event Types](#event_types)
-* [Default Events](#default_events)
-* [Prevent Defaults](#prevent_defaults)
-
-##Overview
+## Overview
 
 AnyChart charting library supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
 explain when they are dispatched and what data is available in them. There is also some useful information about how to create an event handler and how to use the data coming from AnyGantt.

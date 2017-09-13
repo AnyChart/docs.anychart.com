@@ -2,20 +2,6 @@
 
 # Table Layout
 
-* [Overview](#overview)
-* [Acceptable Content](#acceptable_content)
-* [Visual Settings](#visual_settings)
-  * [Fill](#fill)
-  * [Row Settings](#row_settings)
-  * [Column Settings](#column_settings)
-  * [Border](#border)
-  * [Text Settings and Padding](#text_settings_and_padding)
-  * [Span](#span)
-* [Using Table](#using_table)
-  * [Title](#title)
-  * [Header Row](#header_row)
-  * [Common Elements](#common_elements)
-
 ## Overview
 
 The table layout is a kind of dashboard tools, which provides a clear and effective way of positioning chart. A dashboard is easy to read, often single page, real-time user interface, showing a graphical presentation of the current status (snapshot) and historical trends of an organization’s key performance indicators to enable instantaneous and informed decisions to be made at a glance.
