@@ -1,14 +1,5 @@
 # AnyStock Step Line Series
 
-* [Overview](#overview)
-* [AnyStock Step Line Series Adjustment](#anystock_step_line_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Charts/Step_Line_Chart).
@@ -42,19 +33,18 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Step\_Line\_01{sample}
 
-
 ```
 // set the data
 table = anychart.data.table('x');
 table.addData([
-	{'x':"2004-01-02", 'value': 29955800},
-	{'x':"2004-01-05", 'value': 38892100},
-	{'x':"2004-01-06", 'value': 43684400},
-	{'x':"2004-01-07", 'value': 48757500},
-	{'x':"2004-01-08", 'value': 61683300},
-	{'x':"2004-01-09", 'value': 68856400},
-	{'x':"2004-01-12", 'value': 52871900},
-	{'x':"2004-01-13", 'value': 56334200}
+	{'x':'2004-01-02', 'value': 29955800},
+	{'x':'2004-01-05', 'value': 38892100},
+	{'x':'2004-01-06', 'value': 43684400},
+	{'x':'2004-01-07', 'value': 48757500},
+	{'x':'2004-01-08', 'value': 61683300},
+	{'x':'2004-01-09', 'value': 68856400},
+	{'x':'2004-01-12', 'value': 52871900},
+	{'x':'2004-01-13', 'value': 56334200}
 ]);
 
 // map the data

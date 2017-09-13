@@ -1,14 +1,5 @@
 # AnyStock Range Step Area Series
 
-* [Overview](#overview)
-* [AnyStock Range Step Area Series Adjustment](#anystock_range_step_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Range Step Area Series is quite similar to [Range Area](Range_Area) series, both in visualization and purpose. It uses two values for a point, each point looks like a both-sided step, so the whole series form a polygon. Find more information about using Range Areas of different types in Basic Charts in the [Range Step Area Charts tutorial](../../Basic_Charts/Range_Step_Area_Chart).
@@ -112,14 +103,3 @@ series_ex2.fill("#fff");
 series_ex2.hatchFill("diagonalCross");
 ```
 {sample}STOCK\_Range\_Step\_Area\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Range\_Step\_Area\_06{sample}

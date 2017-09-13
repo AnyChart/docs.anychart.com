@@ -1,6 +1,5 @@
 {:index 3}
-Switching the Series Type
-=========================
+# Switching the Series Type
 
 You can change the series type on the fly if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
 

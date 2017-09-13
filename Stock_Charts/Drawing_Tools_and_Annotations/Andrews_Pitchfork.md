@@ -1,9 +1,5 @@
 {:index 3}
-#Andrews' Pitchfork
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Andrews' Pitchfork
 
 ## Overview
 

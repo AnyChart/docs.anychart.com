@@ -1,10 +1,5 @@
 {:index 2.3}
-#Serializing and Deserializing
-
-* [Overview](#overview)
-* [Methods](#methods)
- * [JSON](#json)
- * [XML](#xml)
+# Serializing and Deserializing
 
 ## Overview
 

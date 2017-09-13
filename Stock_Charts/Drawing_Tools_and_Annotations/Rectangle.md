@@ -1,9 +1,5 @@
 {:index 3}
-#Rectangle
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Rectangle
 
 ## Overview
 

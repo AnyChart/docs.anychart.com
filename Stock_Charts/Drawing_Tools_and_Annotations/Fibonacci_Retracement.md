@@ -1,10 +1,5 @@
 {:index 3}
-#Fibonacci Retracement
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Configuring Levels](#configuring_levels)
-* [Visual Settings](#visual_settings)
+# Fibonacci Retracement
 
 ## Overview
 

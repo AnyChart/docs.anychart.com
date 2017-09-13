@@ -1,14 +1,5 @@
 # AnyStock Spline Series
 
-* [Overview](#overview)
-* [AnyStock Spline Series Adjustment](#anystock_spline_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Spline Series is rather similar to Basic [Line series](Line) in its appearance, behavior and use: it is intended to show how a value of some object changes in time. The only difference is that Spline series uses splines of some curvature instead of straight segments, so the spline looks more smooth.
@@ -109,14 +100,3 @@ To change the stroke color use the {api:anychart.core.stock.series.Spline#stroke
 series_euro.stroke("#ff0000");
 ```
 {sample}STOCK\_Spline\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair.
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Spline\_06{sample}

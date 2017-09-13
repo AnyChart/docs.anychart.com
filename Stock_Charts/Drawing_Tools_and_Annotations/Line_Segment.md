@@ -1,9 +1,5 @@
 {:index 3}
-#Line Segment
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Line Segment
 
 ## Overview
 

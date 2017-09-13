@@ -1,9 +1,5 @@
 {:index 3}
-#Label
-
-* [Overview](#overview)
-* [Hardcoding](#hardcoding)
-* [Visual Settings](#visual_settings)
+# Label
 
 ## Overview
 

@@ -1,14 +1,5 @@
 # AnyStock Spline Area Series
 
-* [Overview](#overview)
-* [AnyStock Spline Area Series Adjustment](#anystock_spline_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Spline Area series is very similar to [Area series](Area). To know how to manage Spline Area and Area series in Basic Charts, see the [Area Chart article](../../Basic_Charts/Area_Chart).
@@ -130,15 +121,3 @@ series_uk.hatchFill("diagonalCross");
 ```
 
 {sample}STOCK\_Spline\_Area\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-chart.plot(1).dateTimeHighlighter("#999", 1.5);
-```
-
-{sample}STOCK\_Spline\_Area\_06{sample}

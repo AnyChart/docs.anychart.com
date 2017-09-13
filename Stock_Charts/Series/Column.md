@@ -1,14 +1,5 @@
 # AnyStock Column Series
 
-* [Overview](#overview)
-* [AnyStock Column Adjustment](#anystock_column_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Column series is a standard series that uses columns to show the values of a parameter changing through time or to show the difference between values of similar subjects in some area. You can find all information about creating a standard column chart in the [Column Chart article](../../Basic_Charts/Column_Chart).
@@ -108,18 +99,3 @@ series_sydney.stroke("#000");
 ```
 
 {sample}STOCK\_Column\_04{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-chart.plot(1).dateTimeHighlighter("#999", 1.5);
-chart.plot(2).dateTimeHighlighter("#000066", 1.5, "7 4");
-```
-
-{sample}STOCK\_Column\_05{sample}
-
- 

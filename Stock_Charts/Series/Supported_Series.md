@@ -1,9 +1,6 @@
 {:index 2}
 # AnyStock Supported Series List
 
-* [Overview](#overview)
-* [List of Supported Series](#list_of_supported_series)
-
 ## Overview
 
 AnyStock supports a lot of different series types. For the general information on working with them see [Overview](Overview), the table below shows all series supported in the current version of AnyStock. Please [contact us](http://support.anychart.com/) if you are interested in any series type not listed here.

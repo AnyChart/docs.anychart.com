@@ -1,13 +1,5 @@
 {:index 2.1}
-#General Settings
-
-* [Overview](#overview)
-* [Hardcoding](#hardcoding)
-* [Visual Settings](#visual_settings)
-* [Hover Gap](#hover_gap)
-* [Forbidding Editing](#forbidding_editing)
-* [Binding to Axes](#binding_to_axes)
-* [Drawing](#drawing)
+# General Settings
 
 ## Overview
 

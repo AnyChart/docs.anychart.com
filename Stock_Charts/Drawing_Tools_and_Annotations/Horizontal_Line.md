@@ -1,9 +1,5 @@
 {:index 3}
-#Horizontal Line
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Horizontal Line
 
 ## Overview
 

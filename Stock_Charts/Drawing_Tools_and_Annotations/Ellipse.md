@@ -1,9 +1,5 @@
 {:index 3}
-#Ellipse
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Ellipse
 
 ## Overview
 
@@ -83,4 +79,3 @@ ellipse2.fill(null);
 ```
 
 {sample}STOCK\_Drawing\_Ellipse\_02{sample}
-

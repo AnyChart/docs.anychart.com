@@ -1,10 +1,5 @@
 {:index 3}
-#Marker
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Type and Size](#type_and_size)
-* [Visual Settings](#visual_settings)
+# Marker
 
 ## Overview
 
@@ -115,4 +110,3 @@ marker2.fill(null);
 ```
 
 {sample}STOCK\_Drawing\_Marker\_03{sample}
-

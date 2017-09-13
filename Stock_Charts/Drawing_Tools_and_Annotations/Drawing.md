@@ -1,17 +1,5 @@
 {:index 2.2}
-#Drawing
-
-* [Overview](#overview)
-* [Sample Application](#sample_application)
-* [Initiating Drawing](#initiating_drawing)
-* [Canceling Drawing](#canceling_drawing)
-* [Forbidding Drawing](#forbidding_drawing)
-* [Forbidding Editing](#forbidding_editing)
-* [Handling Events](#handling_events)
-* [Managing Annotations](#managing_annotations)
- * [Removing](#removing)
- * [Selecting/Unselecting](#selecting_unselecting)
- * [Saving](#saving)
+# Drawing
 
 ## Overview
 
@@ -78,10 +66,9 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 {sample}STOCK\_Drawing\_Drawing\_03{sample}
 
-## Forbidding Editing</a>
+## Forbidding Editing
 
 To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_editing)
-
 
 ## Handling Events
 
@@ -114,7 +101,6 @@ chart.listen("annotationSelect", function(e){
 ```
 
 {sample}STOCK\_Drawing\_Drawing\_07{sample}
-
 
 ## Managing Annotations
 
@@ -156,8 +142,7 @@ plot.annotations().removeAnnotation(selectedAnnotation);
 
 {sample}STOCK\_Drawing\_Drawing\_04{sample}
 
-<a name='selecting\_unselecting'></a>
-###Selecting/Unselecting
+## Selecting/Unselecting
 
 To select or unselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
 
@@ -174,14 +159,13 @@ plot.annotations().unselect();
 
 {sample}STOCK\_Drawing\_Drawing\_05{sample}
 
-
 ### Saving
 
 There are a lot of ways to save annotations to a server or to load them. Below you can find a basic sample that shows how to do it with special events and methods AnyChart provides.
 
-- **{api:anychart#onDocumentReady}onDocumentReady(){api}** - this method is called when the document is ready. The external content might not been loaded for this moment, though.
+- {api:anychart#onDocumentReady}onDocumentReady(){api} - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-- **{api:anychart.enums.EventType}annotationDrawingFinish{api}** - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
+- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
 
 The following methods are of a great help:
 

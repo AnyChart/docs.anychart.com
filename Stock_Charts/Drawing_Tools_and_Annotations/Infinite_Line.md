@@ -1,9 +1,5 @@
 {:index 3}
-#Infinite Line
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Infinite Line
 
 ## Overview
 

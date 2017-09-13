@@ -1,14 +1,5 @@
 # AnyStock Step Area Series
 
-* [Overview](#overview)
-* [AnyStock Step Area Series Adjustment](#anystock_step_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Step Area Series is quite similar to [Area series](Area), both in visualization and purpose. It uses one value for a point, but the points look like steps instead of vertexes of a polygon. Find more information about using Step Area in Basic Charts in the [Step Area Chart tutorial](../../Basic_Charts/Step_Area_Chart).
@@ -47,14 +38,14 @@ mapping.addField('value', 1);
 // set the data
 table = anychart.data.table('x');
 table.addData([
-	{'x':"2004-01-02", 'value': 29955800},
-	{'x':"2004-01-05", 'value': 38892100},
-	{'x':"2004-01-06", 'value': 43684400},
-	{'x':"2004-01-07", 'value': 48757500},
-	{'x':"2004-01-08", 'value': 61683300},
-	{'x':"2004-01-09", 'value': 68856400},
-	{'x':"2004-01-12", 'value': 52871900},
-	{'x':"2004-01-13", 'value': 56334200}
+	{'x':'2004-01-02', 'value': 29955800},
+	{'x':'2004-01-05', 'value': 38892100},
+	{'x':'2004-01-06', 'value': 43684400},
+	{'x':'2004-01-07', 'value': 48757500},
+	{'x':'2004-01-08', 'value': 61683300},
+	{'x':'2004-01-09', 'value': 68856400},
+	{'x':'2004-01-12', 'value': 52871900},
+	{'x':'2004-01-13', 'value': 56334200}
 ]);
 
 // map the data
@@ -117,14 +108,3 @@ series_region.hatchFill("diagonalCross");
 
 ```
 {sample}STOCK\_Step\_Area\_05{sample}
-
-### Hovered state
-
-In Stocks, when a point is hovered, there's a crosshair. You can adjust the crosshair (or highlighter) using the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Step\_Area\_06{sample}

@@ -1,15 +1,5 @@
 {:index 1}
-#Drawing Tools and Annotations
-
-* [Overview](#overview)
-* [Sample Application](#sample_application)
-* [General Settings](#general_settings)
-* [Annotation Types](#annotation_types)
- * [Fibonacci Tools](#fibonacci_tools)
- * [Trend Lines](#trend_lines)
- * [Geometric Shapes](#geometric_shapes)
- * [Labels, Markers, Buy/Sell Signals](#signals)
- * [Other Tools](#other_tools)
+# Drawing Tools and Annotations
 
 ## Overview
 
@@ -58,7 +48,6 @@ Here is a full list of annotations available in AnyStock (with links to the arti
 * [Rectangle](Rectangle)
 * [Triangle](Triangle)
 
-<a name="signals"></a>
 ### Labels, Markers, Buy/Sell Signals
 
 * [Markers, Buy/Sell Signals](Marker)

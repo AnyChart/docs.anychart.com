@@ -1,10 +1,5 @@
 {:index 3}
-#Fibonacci Time Zones
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Configuring Levels](#configuring_levels)
-* [Visual Settings](#visual_settings)
+# Fibonacci Time Zones
 
 ## Overview
 

@@ -1,11 +1,6 @@
 {:index 1}
 
-#AnyStock Series Overview
-
-* [Overview](#overview)
- * [AnyStock Series Adjusting](#anystock_series_adjusting)
- * [AnyStock Scroller Series Adjusting](#anystock_scroller_series_adjusting)
-* [List of Supported Series](#list_of_supported_series)
+# AnyStock Series Overview
 
 ## Overview
 

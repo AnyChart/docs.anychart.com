@@ -1,10 +1,5 @@
 {:index 3}
-#Fibonacci Fan
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Configuring Levels](#configuring_levels_and_Time_Levels)
-* [Visual Settings](#visual_settings)
+# Fibonacci Fan
 
 ## Overview
 

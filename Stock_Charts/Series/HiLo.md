@@ -1,14 +1,5 @@
 # AnyStock HiLo Series
 
-* [Overview](#overview)
-* [AnyStock HiLo Series Adjustment](#anystock_hilo_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 HiLo series is a kind of basic chart series that can be used in stocks. To know how to manage HiLo series, see the [HiLo Chart article](../../Basic_Charts/HiLo_Chart).
@@ -136,17 +127,4 @@ series_globex.stroke("#0066cc", 1.5);
 ```
 
 {sample}STOCK\_HiLo\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#806000", 0.7);
-chart.plot(1).dateTimeHighlighter("#806000", 0.7, "6 3", "round");
-```
-
-{sample}STOCK\_HiLo\_06{sample}
-
  

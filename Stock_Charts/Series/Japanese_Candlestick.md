@@ -1,14 +1,5 @@
 # AnyStock Candlestick Series
 
-* [Overview](#overview)
-* [AnyStock Candlestick Series Adjustment](#anystock_candlestick_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC charts](../../Basic_Charts/OHLC_Chart)): Open, High, Low and Close. Those params describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close"). Read more about Basic Candlestick Charts in the [Japanese Candlestick Chart article](../../Basic_Charts/Japanese_Candlestick_Chart)
@@ -144,16 +135,3 @@ series_acme.fallingStroke("#000");
 ```
 
 {sample}STOCK\_Candlestick\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// highlighter (crosshair) adjusting
-chart.plot(1).dateTimeHighlighter("#0000FF", 0.5);
-```
-
-{sample}STOCK\_Candlestick\_06{sample}
-
- 

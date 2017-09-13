@@ -1,9 +1,5 @@
 {:index 3}
-#Trend Channel
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Trend Channel
 
 ## Overview
 
