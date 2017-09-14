@@ -12,7 +12,7 @@ There are 5 listener methods ({api:anychart.core.Base#listen}listen(){api}, {api
 
 There are five listener methods in Anychart, each type for a special case. Read the following information to find out how to use listeners.
 
-###listen()
+### listen()
 
 This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base#listen}listen(){api} method to an object more than once (but not to an event); each time it's added its key is returned.
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
@@ -32,8 +32,7 @@ chart.listen("click", function(){
 
 {sample}CMN\_Event\_Listener\_01{sample}
 
-<a name="listenonce"></a>
-###listenOnce()
+### listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
 You can add the {api:anychart.core.Base#listenOnce}listenOnce(){api} method to an object more than once; each time it's added its key is returned.
@@ -51,8 +50,7 @@ range.listenOnce("dblClick",
 
 {sample}CMN\_Event\_Listener\_02{sample}
 
-<a name="removealllisteners"></a>
-###removeAllListeners()
+### removeAllListeners()
 
 This listener type removes all event listeners from the object, unless you define the particular type.
 You can add the {api:anychart.core.Base#removeAllListeners}removeAllListeners(){api} method to an object more than once.
@@ -68,8 +66,7 @@ chart.listen("dblClick", function(){
 
 Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}unlisten(){api} method from inside of the {api:anychart.core.Base#listen}listen(){api} one. 
 
-<a name="unlisten">
-###unlisten()
+### unlisten()
 
 This listener type disables the particular listener added using the {api:anychart.core.Base#listen}listen(){api} or {api:anychart.core.Base#listenOnce}listenOnce(){api} methods. 
 You can add the {api:anychart.core.Base#unlisten}unlisten(){api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
@@ -99,8 +96,7 @@ chart.listenOnce("click",function(){
 
 {sample}CMN\_Event\_Listener\_04{sample}
 
-<a name="unlistenbykey">
-###unlistenByKey()
+### unlistenByKey()
 
 This listener type removes an event listener which was added with {api:anychart.core.Base#listen}listen(){api} by the key returned by {api:anychart.core.Base#listen}listen(){api} or {api:anychart.core.Base#listenOnce}listenOnce(){api}. The only parameter of this method is the key to be listened to.
 You can use the {api:anychart.core.Base#unlistenByKey}unlistenByKey(){api} method more than once with one object.
@@ -121,17 +117,17 @@ chart.listen("dblclick",
 
 {sample}CMN\_Event\_Listener\_05{sample}
 
-##Event types
+## Event types
 
 There are a lot of event types, which are separated to two categories: mouse-oriented and point-oriented. Types of both categories are similar to each other, the only difference is that point-oriented events contains some information about the point, while the mouse-oriented events are simple events with no point parameters. All those types you can see in the table below.
 
-<table width="700" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="150"><b>Mouse-oriented event</b></th>
-<th width="200"><b>Parameters</b></th>
-<th width="150"><b>Point-oriented event</b></th>
-<th width="200"><b>Parameters</b></th>
+<th>Mouse event</th>
+<th>Parameters</th>
+<th>Point event</th>
+<th>Parameters</th>
 </tr>
 <tr>
 <td>mouseOver</td>
@@ -190,7 +186,7 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 </tbody>
 </table>
 
-###Mouse-related
+### Mouse-related
 
 As mentioned above, these event types provides no information about the point any event is committed on. 
 For further information, see the example below.
@@ -207,7 +203,7 @@ chart.listen("mouseDown", function(){
 
 Here we have made a chart that opens a new page when the mouse is pressed. Look through the next paragraph to understand the difference between the mouse-related and point-related events.
 
-###Point-related
+### Point-related
 
 Opposite to mouse-related methods, these event types are able to tell some extra information about the point any of those events are committed on. See and explore the example below.
 
@@ -301,4 +297,3 @@ function getQuarterMonths(month) {
 And here is a sample with these settings:
 
 {sample}CMN\_Event\_Listener\_08{sample}
-
