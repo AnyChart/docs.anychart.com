@@ -9,8 +9,6 @@ In the following sample you can disable or enable editing mode and try to change
 
 ## Defaults
 
-### Controls
-
 There are several pointer cursors a user can see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
 
 All controls' appearance can be edited by using special methods, which are described below, or by choosing the theme you prefer. 
@@ -115,7 +113,7 @@ Progress slider
 </tbody></table>
 
 
-#### Customizing Controls
+## Customizing Controls
 
 The controls above are shown in their default state. AnyChart provides anyone an opportunity to become unique and remarkable, so it is not hard to customize colors and shapes of all chart details - even so small as Live Edit Chart Controls.
 
@@ -389,7 +387,7 @@ Note that it's not possible to drop connectors into a baseline, as they cannot h
 Another difference between the behavior of the actual time bar and its baseline is in having progress.
 You may notice that some of the actual time bars are colored differently and the progress part is of dark color. Those are the intervals of parent items, so when you change their progress, you change the progress for the whole group.
 
-### Baseline changing
+### Changing baseline
 
 As it has been noted, the baseline bar looks and behaves almost like an actual time bar, with the difference of not having any progress and connectors, as it shows the planned time. The position in time and the duration can be changed using the same controls.
 
@@ -401,7 +399,7 @@ You cannot change the duration of a milestone as they have no duration, but you 
 
 When you change the length of the time bars or move them or milestones later or earlier than the screen with Gantt chart displays, the display will start scrolling automatically. Also, in live mode the Gantt chart's scales' ranges can automatically expand when the minimum and maximum range values are hit while scrolling.
 
-# Coloring
+### Coloring
 
 Besides basic Gantt chart elements, there are some more elements which show up in the Live Edit mode. You can alter the view of these elements using special methods described below. 
 
