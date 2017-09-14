@@ -1,14 +1,15 @@
 # Live Edit UI
  
-# Overview
+## Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In the following sample you can disable or enable editing mode and try to change whatever you like:
 
 {sample :height 300 }GANTT\_Interactivity\_08{sample}
 
-# Defaults
-## Controls
+## Defaults
+
+### Controls
 
 There are several pointer cursors a user can see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
 
@@ -16,16 +17,13 @@ All controls' appearance can be edited by using special methods, which are descr
 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="175"><b>Compound action</b></th>
-<th width="175"><b>Interaction</b></th>
-<th width="175"><b>Typical effect</b></th>
-<th width="175"><b>Pointers</b></th>
+<th>Action</th>
+<th>Interaction</th>
+<th>Effect</th>
+<th>Pointers</th>
 </tr>
 <tr>
-<th colspan=4><b>Timeline part</b></th>
-</tr>
-<tr>
-<td>Connectors creating</td>
+<td>Creating connectors</td>
 <td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where the bar is hovered (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar, watch the final connector preview and then release the mouse, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
 You can find more about events in [Event Listeners](../Common_Settings/Event_Listeners) article.
@@ -51,7 +49,7 @@ That's how the final connector looks like
 </tr>
 
 <tr>
-<td>Connector deleting</td>
+<td>Deleting connectors</td>
 <td>Hover the connector and select it. The cursor will become of a pointer type, the connector will become of an orange color. To remove the connector, press "Delete" in Windows or "cmd+Backspace" in Mac. The connector will be removed.</td>
 <td>The connector will be destroyed.</td>
 <td>
@@ -65,7 +63,7 @@ The pointer cursor which is shown when the connector is hovered and selected
 </tr>
 
 <tr>
-<td>Duration changing</td>
+<td>Changing duration</td>
 <td>Hover the duration changing thumb, press the left mouse button and drag the cursor. You will see the preview contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the Gantt tree. Find more information about those events downwards.</td>
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
@@ -91,7 +89,7 @@ The dragger
 </td>
 </tr>
 <tr>
-<td>Changing the duration of progress </td>
+<td>Changing the progress</td>
 <td>Hover the bar, look for the slider and press the button. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
 <td>Lengthens or shortens the progress part of the task.</td>
 <td>
@@ -105,7 +103,7 @@ Progress slider
 </tr>
 
 <tr>
-<th colspan=4><b>Data Grid part</b></td>
+<th colspan=4>Data Grid part</td>
 </tr>
 <tr>
 <td>Changing the Gantt chart tree structure</td>
@@ -117,7 +115,7 @@ Progress slider
 </tbody></table>
 
 
-### Customizing Controls
+#### Customizing Controls
 
 The controls above are shown in their default state. AnyChart provides anyone an opportunity to become unique and remarkable, so it is not hard to customize colors and shapes of all chart details - even so small as Live Edit Chart Controls.
 
@@ -138,7 +136,6 @@ timeline.editFinishConnectorMarkerSize(30);
 ```
 
 To set the desired position for both connector controls, use the {api:anychart.core.ui.Timeline#editStartConnectorMarkerHorizontalOffset}editStartConnectorMarkerHorizontalOffset(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerHorizontalOffset}editFinishConnectorMarkerHorizontalOffset(){api} methods. They accept integer values (px). Positive values will shift the controls to the right and negative ones will shift them to the left.
-
 
 ```
 // set the connector control marker offset
@@ -174,22 +171,21 @@ Changes made in Live Edit mode lead to data changes. Events can be used to track
 
 The data tree dispatches the "move" event when the Gantt chart tree structur is changed. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
- - "type": the event type (anychart.enums.EventType.TREE\_ITEM\_MOVE),
- - "source", the data item where item is moved from,
- - "sourceIndex": the "source" item index,
- - "target": the data item where item is moved to,
- - "targetIndex": the target item index,
- - "item": the item moved (dragged and dropped).
+- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_MOVE),
+- "source", the data item where item is moved from,
+- "sourceIndex": the "source" item index,
+- "target": the data item where item is moved to,
+- "targetIndex": the target item index,
+- "item": the item moved (dragged and dropped).
 
+For example: the parent item "Part 1" is moved inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
 
- For example: the parent item "Part 1" is moved inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
-
-  - type: anychart.enums.EventType.TREE\_ITEM\_MOVE
-  - source: null
-  - sourceIndex: null
-  - target: "Part 3"
-  - targetIndex: 2
-  - item: "Part 1"
+- type: anychart.enums.EventType.TREE\_ITEM\_MOVE
+- source: null
+- sourceIndex: null
+- target: "Part 3"
+- targetIndex: 2
+- item: "Part 1"
 
 ```
 var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
@@ -249,7 +245,6 @@ When an object is removed, the Gantt tree dispatches the "remove" event. Its fie
 - "sourceIndex": the index of a source,
 - "item": a DataItem object.
 
-
 ```
 var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 tree.listen(anychart.enums.EventType.REMOVE, function(e){
@@ -274,8 +269,8 @@ There is a list of events connectors dispatch:
 
 <table>
 <tr>
-<td><b>Event</b></td>
-<td><b>Dispatched when</b></td>
+<th>Event</th>
+<th>Description</th>
 <tr>
 <tr>
 <td>connectorselect</td>
@@ -287,7 +282,7 @@ There is a list of events connectors dispatch:
 <tr>
 <tr>
 <td>connectordblclick</td>
-<td>Dispatched when connector is clicked twice</td>
+<td>Dispatched when connector is doubleclicked</td>
 <tr>
 <tr>
 <td>connectormouseover</td>
@@ -315,8 +310,8 @@ These events have several standard fields (such as type, clientX, clientY, etc.)
 
 <table>
 <tr>
-<td><b>Field</b></td>
-<td><b>Description</b></td>
+<td>Field</td>
+<td>Description</td>
 </tr>
 <tr>
 <td>fromItemIndex</td>
@@ -356,7 +351,7 @@ These events have several standard fields (such as type, clientX, clientY, etc.)
 </tr>
 </table>
 
-The following sample demonstrates how these fields can be used for providing the user some information about the connectors.
+The following sample demonstrates how these fields can be used to get information about a connector.
 
 ```
 // listen to the connectorclick event and change the title 
@@ -366,7 +361,6 @@ chart.listen('connectorclick', function(e){
 ```
 
 {sample}GANTT\_Interactivity\_10{sample}
-
 
 ## Data Grid
 
@@ -424,10 +418,10 @@ To change the thumbs' fill and stroke use the {api:anychart.core.ui.Timeline#edi
 
 To change the edit preview display use the following methods:
 
- - {api:anychart.core.ui.Timeline#editPreviewFill}editPreviewFill(){api} - for changing the fill color of the preview bar,
- - {api:anychart.core.ui.Timeline#editPreviewStroke}editPreviewStroke(){api} - for changing the stroke color of the preview bar,
- - {api:anychart.core.ui.Timeline#editProgressFill}editProgressFill(){api} - for changing the fill color of the progress part of the time interval bar,
- - {api:anychart.core.ui.Timeline#editProgressStroke}editProgressStroke(){api} - for changing the stroke color of progress.
+- {api:anychart.core.ui.Timeline#editPreviewFill}editPreviewFill(){api} - for changing the fill color of the preview bar,
+- {api:anychart.core.ui.Timeline#editPreviewStroke}editPreviewStroke(){api} - for changing the stroke color of the preview bar,
+- {api:anychart.core.ui.Timeline#editProgressFill}editProgressFill(){api} - for changing the fill color of the progress part of the time interval bar,
+- {api:anychart.core.ui.Timeline#editProgressStroke}editProgressStroke(){api} - for changing the stroke color of progress.
 
 Thumbs fill color and stroke can be changed, use the {api:anychart.core.ui.Timeline#editIntervalThumbFill}editIntervalThumbFill(){api} and {api:anychart.core.ui.Timeline#editIntervalThumbStroke}editIntervalThumbStroke(){api} methods for that:
 
