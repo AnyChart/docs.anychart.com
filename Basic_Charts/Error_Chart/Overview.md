@@ -53,7 +53,7 @@ Cartesian charts support error bars along the Y-axis. The {api:anychart.core.car
 * {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} sets lower bars
 * {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} sets upper bars
 
-<strong>Note:</strong> The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
+**Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} and {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api}.
 
 In the sample below, there are two Column series with different lower and upper error bars:
 

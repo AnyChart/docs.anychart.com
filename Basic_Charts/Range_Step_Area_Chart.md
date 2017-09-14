@@ -41,7 +41,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 
 To create a Range Step Area series, use the {api:anychart.charts.Cartesian#rangeStepArea}rangeStepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong> and <strong>"high"</strong> parameters.
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the **"low"** and **"high"** parameters.
 
 ```
 // create data
@@ -89,9 +89,9 @@ In addition, see the full list of methods available for the Range Step Area seri
 
 The Range Step Area chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.RangeStepArea#stepDirection}stepDirection(){api}.
 
-There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
+There are three modes of step direction: center, backward, and forward. The default mode is **center** (in this case data points are placed to the center of horizontal segments).
 
-In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
+In the **forward** mode data points are the starting points of horizontal segments:  
 
 ```
 // set step direction to the forward mode
@@ -100,7 +100,7 @@ series.stepDirection("forward");
 
 {sample}BCT\_Range\_Step\_Area\_Chart\_02{sample}
 
-The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
+The **backward** mode sets data points as the final points of horizontal segments: 
 
 ```
 // set step direction to the backward mode

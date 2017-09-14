@@ -8,9 +8,9 @@ This document contains mathematical description of all technical indicators avai
 
 For all formulas and indicators below:
 <ul>
-	<li><strong>n</strong> is a period for which calculations are done, it is usually set by the <strong>period</strong> parameter of the 
+	<li>**n** is a period for which calculations are done, it is usually set by the **period** parameter of the 
 	method that creates an indicator.</li>
-	<li><strong>X<sub>i</sub></strong> is the value passed by the data source.</li>
+	<li>**X<sub>i</sub>** is the value passed by the data source.</li>
 </ul>
 
 ## Accumulation Distribution Line
@@ -179,11 +179,11 @@ Coming soon.
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
-	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
+	and fast period are set by **slowPeriod** (default 26) and **fastPeriod** (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
-	by <strong>signalPeriod</strong> parameter.</li>
+	by **signalPeriod** parameter.</li>
 	<li>Signal series value is calculated:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
 	<li>Histogram series is calculated:<br>

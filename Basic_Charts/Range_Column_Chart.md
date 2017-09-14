@@ -39,7 +39,7 @@ This article explains how to create a basic Range Column chart as well as config
 
 To create a Range Column chart, use the {api:anychart.charts.Cartesian#rangeColumn}rangeColumn(){api} method (before, of course, you should create a chart by using {api:anychart#column}anychart.column(){api} or any other cartesian chart constructor).
 
-Since range column charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong> and <strong>"high"</strong> parameters. That is how it looks like in object notation:
+Since range column charts plot two Y-values per data point, you need to specify two values for each category by using the **"low"** and **"high"** parameters. That is how it looks like in object notation:
 
 ```
 var data = [

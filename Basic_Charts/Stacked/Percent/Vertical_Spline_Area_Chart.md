@@ -9,7 +9,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Vertical Percent Stacked Spline Area Chart, create a multi-series [Vertical Spline Area Chart](../../Vertical/Spline_Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>percent</strong>:
+To build a Vertical Percent Stacked Spline Area Chart, create a multi-series [Vertical Spline Area Chart](../../Vertical/Spline_Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a vertical area chart

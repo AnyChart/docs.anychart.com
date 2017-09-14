@@ -31,9 +31,9 @@ Full list of the parameters available:
 <table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="190"><strong>Name</strong></th>
-<th width="100"><strong>Options</strong></th>
-<th width="200"><strong>Description</strong></th>
+<th width="190">**Name**</th>
+<th width="100">**Options**</th>
+<th width="200">**Description**</th>
 </tr>
 <tr>
 <td>--help</td>
@@ -157,9 +157,9 @@ Full list of server parameters that can be set:
 <table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="190"><strong>Name</strong></th>
-<th width="100"><strong>Options</strong></th>
-<th width="200"><strong>Description</strong></th>
+<th width="190">**Name**</th>
+<th width="100">**Options**</th>
+<th width="200">**Description**</th>
 </tr>
 <tr>
 <td>--host</td>

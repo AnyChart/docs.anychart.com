@@ -1,5 +1,7 @@
 # Data Grid
 
+## Overview
+
 Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
 ## Columns

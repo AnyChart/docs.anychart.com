@@ -24,7 +24,7 @@ This article explains how to create a basic Heat Map chart in AnyChart as well a
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
+<tr><td></td><td>[Treemap](TreeMap_Chart)</td></tr>
 <tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/" target="_blank">Chartopedia: Heat Map Chart</a></td></tr>
@@ -114,9 +114,9 @@ chart = anychart.heatMap(data);
 
 Here is a full list of methods used to configure visual settings that are available for the Heat Map chart:
 
-*  {api:anychart.charts.HeatMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.HeatMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
-*  {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-*  {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
+* {api:anychart.charts.HeatMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.HeatMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
+* {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 

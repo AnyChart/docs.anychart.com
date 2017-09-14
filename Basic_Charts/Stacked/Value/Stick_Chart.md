@@ -9,7 +9,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart

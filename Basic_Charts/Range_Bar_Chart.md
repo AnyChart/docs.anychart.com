@@ -39,7 +39,7 @@ This article explains how to create a basic Range Bar chart as well as configure
 
 To create a Range Bar chart, use the {api:anychart.charts.Cartesian#rangeBar}rangeBar(){api} method (before, of course, you should create a chart by using {api:anychart#bar}anychart.bar(){api} or any other cartesian chart constructor).
 
-Since range bar charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong> and <strong>"high"</strong> parameters. That is how it looks like in object notation:
+Since range bar charts plot two Y-values per data point, you need to specify two values for each category by using the **"low"** and **"high"** parameters. That is how it looks like in object notation:
 
 ```
 var data = [

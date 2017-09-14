@@ -83,9 +83,9 @@ In addition, see the full list of methods available for the Step Line series: {a
 
 The Step Line chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepLine#stepDirection}stepDirection(){api}.
 
-There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
+There are three modes of step direction: center, backward, and forward. The default mode is **center** (in this case data points are placed to the center of horizontal segments).
 
-In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
+In the **forward** mode data points are the starting points of horizontal segments:  
 
 ```
 // set step direction to the forward mode
@@ -94,7 +94,7 @@ series.stepDirection("forward");
 
 {sample}BCT\_Step\_Line\_Chart\_02{sample}
 
-The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
+The **backward** mode sets data points as the final points of horizontal segments: 
 
 ```
 // set step direction to the backward mode
