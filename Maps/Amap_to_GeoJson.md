@@ -15,7 +15,7 @@ Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.js
 After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](Custom_GeoJson_Maps).
 
 ## Installation
-<a name="windows_install">
+
 ### Windows
 
 First of all, you need to download the converter from the [github page of AMAP to JSON converter](https://github.com/AnyChart/amap-converter).  
@@ -31,7 +31,7 @@ Reboot your system to finish Python installation.
 After you've installed Python on your PC you need to install all requirements for the converter. Run Command Prompt and switch to converter's folder:
 
 ```
-  cd PATH\TO\THE\FOLDER
+cd PATH\TO\THE\FOLDER
 ```
 
 Here is a sample of switching to another folder in Command Prompt:
@@ -41,14 +41,13 @@ Here is a sample of switching to another folder in Command Prompt:
 Then launch the process of installing requirements, run the following command:
 
 ```
-  pip install -r requirements
+pip install -r requirements
 ```
 
 After all the requirements are installed you will see the message as the screenshot below shows:
 
 <a href="https://static.anychart.com/images/amap-converter/pip-install.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/pip-install.jpg"></a>
 
-<a name="unix_install">
 ### Unix
 
 The process of installing converter in operation systems of the Unix family works almost in the same as for Windows. You need to download and install Python version 2.7.x from [official Python web site](https://www.python.org/downloads/) and the converter itself from the [AMAP to JSON Converter github page](https://github.com/AnyChart/amap-converter).  
@@ -56,13 +55,13 @@ The process of installing converter in operation systems of the Unix family work
 Then you install requirements. You need to launch the terminal and switch to the converter's directory:
 
 ```
-  cd PATH\TO\THE\CONVERTER
+cd PATH\TO\THE\CONVERTER
 ```
 
 Run the following command to launch installation of requirements:
 
 ```
-  pip install -r requirements
+pip install -r requirements
 ```
 
 Now we can proceed to converting AMAP files to JSON format.
@@ -74,7 +73,7 @@ Now we can proceed to converting AMAP files to JSON format.
 Conversion of .amap files works the same in all the systems: you need to switch to the converter's folder and run the following command:
 
 ```
-  python converter.py PATH\TO\YOUR\MAP\sample.amap OUTPUT_PATH\FILE_NAME
+python converter.py PATH\TO\YOUR\MAP\sample.amap OUTPUT_PATH\FILE_NAME
 ```
 
 <a href="https://static.anychart.com/images/amap-converter/single-file-windows.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/single-file-windows.jpg"></a>
@@ -90,10 +89,10 @@ There is a special script to convert files in batch. There are two different scr
 The way of converting multiple files in both systems is pretty much the same: launch the script in termnial and provide it with a path to a folder with .amap files and a path for the converted files.
   
   
-####Unix systems
+#### Unix systems
 
 ```
-  ./convert-batch src-folder output-folder
+./convert-batch src-folder output-folder
 ```
 
 Converting a folder with **amap** files in UNIX:
@@ -108,10 +107,10 @@ The output folder will contain several folders with files like these:
 
 <a href="https://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg"></a>
 
-####Windows
+#### Windows
 
 ```
-  windows_convert-batch.bat src-folder out-folder
+windows_convert-batch.bat src-folder out-folder
 ```
 The result folder in Windows may look like this:
 
