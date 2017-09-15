@@ -1,19 +1,6 @@
 {:index 6.2}
 # Treemap Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Data](#data)
-  * [Depth and Hints](#depth_and_hints)
-  * [Sorting Order](#sorting_order)
-  * [Appearance](#appearance)
-  * [Color Scale](#color_scale)
-  * [Labels and Tooltips](#labels_and_tooltips)
-  * [Headers](#headers)
-  * [Interactivity](#interactivity)
-
 ## Overview
 
 A treemap is...
@@ -49,7 +36,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 
 To create a Treemap chart, use the {api:anychart#treeMap}anychart.treeMap(){api} chart constructor.
 
-In the sample below, there is a basic Treemap comparing the top 10 most populated EU countries by their population:
+In the sample below, there is a basic Treemap comparing the top 10 most populated European Union countries by their population:
 
 ```
 // create data
@@ -99,7 +86,7 @@ Use the following data fields to create data for a Treemap chart:
 * **size** to set sizes
 * **value** to set values
 
-In addition, it is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+In addition, it is possible to add custom fields to your data – read the [Labels and Tooltips](#labels_and_tooltips) section of this article to learn how you can use this feature.
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
@@ -171,6 +158,8 @@ chart = anychart.treeMap(data, "as-table");
 
 No matter what data structure you use, colors and sizes of tiles represent the **"value"** field. Alternatively, sizes can represent an optional **"size"** field, so adding it to the data allows you to show two different parameters instead of one.
 
+Please note: you do not need to specify values and sizes of parent elements – they are calculated automatically. Also note that tiles are (sorted)[*sorting_order] by value, but if you add the "size" field, they are sorted by size.
+
 On the Treemap chart below, the size of each tile represents the population of a country ("size"), and the color represents the population density ("value"):
 
 ```
@@ -224,6 +213,8 @@ chart.hintOpacity(0.7);
 ### Sorting Order
 
 You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with **"desc"**, **"asc"**, or **"none"** as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
+
+Please note: if you add the "size" field, tiles are sorted by size, not value.
 
 The sample below shows how to set the sorting mode:
 
@@ -358,7 +349,7 @@ chart.colorRange().colorLineSize(10);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 To change the text of labels, combine the {api:anychart.charts.Treemap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
@@ -366,8 +357,14 @@ To configure tooltips, do the same with the {api:anychart.charts.Treemap#tooltip
 
 Here is the list of tokens that work with the Treemap chart:
 
-* *{%x}*
-...
+* *{%id}*
+* *{%name}*
+* *{%size}*
+* *{%value}*
+
+Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. The *{%value}* and {%size}* tokens work anyway.
+
+In addition, you can use a custom data field and a custom token of the same name, like in this sample:
 
 ```
 // create data
@@ -404,6 +401,16 @@ chart.tooltip().format(
 ```
 
 {sample}BCT\_Treemap\_Chart\_11{sample}
+
+Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+
+* *name*
+* *size*
+* *value*
+
+Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. The *value* and *size* fields work anyway.
+
+If there is a custom field in your data, you can use a field of the same name in formatting functions:
 
 ```
 // create data
@@ -447,17 +454,44 @@ chart.tooltip().format(function(){
 
 ### Headers
 
+By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states. Plus, you can set the maximum height of headers.
+
+To disable headers, use the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with *false* or *null* as parameters. To enable headers, use the same methods with *true*.
+
+**Note:** The {api:anychart.charts.TreeMap#headers}headers(){api} method works only for the normal state, so you have to use both methods if you want to disable headers completely:
+
+```
+// disable headers in the normal state
+chart.headers(false);
+// disable headers in the hover state
+chart.hoverHeaders(false);
+```
+
+To configure the text of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions), like for configuring [labels and tooltips](#labels_and_tooltips):
+
 ```
 // configure the text of headers
-chart.headers().format("{%name} – {%value}");
+chart.headers().format("{%name}\n{%value}");
+```
 
-// configure the appearance of headers
+To configure the font of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with... (???)
+
+```
+// configure the font of headers
 chart.headers().fontColor("#990000");
 chart.headers().fontWeight('bold');
-chart.headers().fontSize("20");
+chart.headers().fontSize("14");
 chart.hoverHeaders().fontColor("#000099");
-chart.maxHeadersHeight("40");
 ```
+
+The height of headers adjusts to the height of their text. However, by default the maximum height is 25 pixels, and the text is not shown if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
+
+```
+// set the maximum height of headers
+chart.maxHeadersHeight("50");
+```
+
+The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
 
 {sample}BCT\_Treemap\_Chart\_13{sample}
 
@@ -466,7 +500,7 @@ chart.maxHeadersHeight("40");
 var data = [
   {name:     "Slavic Languages – Number of Speakers",
    header: {
-     format: "{%name} – {%value} Speakers",
+     format: "{%name} ({%value} Total)",
      fontColor: "#990000",
      fontWeight: "bold",
      fontSize: "14"

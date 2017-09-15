@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {name:   "European Union – Top 10 Most Populated Countries", children: [
+      {name:   "European Union", children: [
         {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
         {name: "France",         value: 64938716, fill: "#ff6600"},
         {name: "Greece",         value: 10892931, fill: "#ffcc00"},
@@ -37,7 +37,10 @@
     chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
-    chart.title("Treemap: Appearance\n(Configuring Each Cell Individually)");
+    chart.title().useHtml(true);
+    chart.title("Treemap: Appearance<br>(Configuring Each Cell Individually)" +
+                "<br><br><span style='font-size:12; font-style:italic'>" +
+                "Top 10 Most Populated EU Countries by Population</span>");
 
     // set the container id
     chart.container("container");
