@@ -478,7 +478,7 @@ To configure the font of headers, combine the {api:anychart.charts.TreeMap#heade
 // configure the font of headers
 chart.headers().fontColor("#990000");
 chart.headers().fontWeight('bold');
-chart.headers().fontSize("20");
+chart.headers().fontSize("18");
 chart.hoverHeaders().fontColor("#000099");
 ```
 
@@ -486,7 +486,7 @@ The height of headers adjusts to the height of their text. However, by default t
 
 ```
 // set the maximum height of headers
-chart.maxHeadersHeight("35");
+chart.maxHeadersHeight("30");
 ```
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
