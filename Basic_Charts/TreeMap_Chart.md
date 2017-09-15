@@ -468,8 +468,8 @@ chart.hoverHeaders(false);
 To configure the text of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions), like for configuring [labels and tooltips](#labels_and_tooltips):
 
 ```
-// configure the text of headers
-chart.headers().format("{%name}\n{%value}");
+// configure the text of headers on hover
+chart.hoverHeaders().format("{%value}");
 ```
 
 To configure the font of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with... (???)
@@ -478,15 +478,15 @@ To configure the font of headers, combine the {api:anychart.charts.TreeMap#heade
 // configure the font of headers
 chart.headers().fontColor("#990000");
 chart.headers().fontWeight('bold');
-chart.headers().fontSize("14");
+chart.headers().fontSize("20");
 chart.hoverHeaders().fontColor("#000099");
 ```
 
-The height of headers adjusts to the height of their text. However, by default the maximum height is 25 pixels, and the text is not shown if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
+The height of headers adjusts to the height of their text. However, by default the maximum height is 25 pixels, and the text is cropped if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
 
 ```
 // set the maximum height of headers
-chart.maxHeadersHeight("50");
+chart.maxHeadersHeight("35");
 ```
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:

@@ -40,19 +40,20 @@
     // set the maximum depth of levels shown
     chart.maxDepth(3);
 
-    // configure the text of headers
-    chart.headers().format("{%name}\n{%value}");
+    // configure the text of headers on hover
+    chart.hoverHeaders().format("{%value}");
 
     // configure the font of headers
     chart.headers().fontColor("#990000");
     chart.headers().fontWeight('bold');
-    chart.headers().fontSize("14");
+    chart.headers().fontSize("20");
     chart.hoverHeaders().fontColor("#000099");
 
     // set the maximum height of headers
-    chart.maxHeadersHeight("50");
+    chart.maxHeadersHeight("35");
 
-    // set the chart title
+    // set the chart position and title
+    chart.top(35);
     chart.title("Treemap: Headers");
 
     // set the container
