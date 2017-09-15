@@ -112,7 +112,7 @@ The "value" field can be interpreted in different ways, depending on the data mo
 
 The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 
-In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
+In the **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
 The sample below shows how to set the data mode:
 
