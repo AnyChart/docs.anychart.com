@@ -79,20 +79,20 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Use the following data fields to create data for a Treemap chart:
 
-* **children** to set children
-* **id** to set unique identifiers
-* **name** to set names
-* **parent** to set parents
-* **size** to set sizes
-* **value** to set values
+* `children` to set children
+* `id` to set unique identifiers
+* `name` to set names
+* `parent` to set parents
+* `size` to set sizes
+* `value` to set values
 
 In addition, it is possible to add custom fields to your data – read the [Labels and Tooltips](#labels_and_tooltips) section of this article to learn how you can use this feature.
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
-The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use *"as-tree"* as the second parameter.
+The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-tree"` as the second parameter.
 
-Three data fields are required: **value**, **name** / **id**, and **children** – the last one is used to specify the hierarchy of elements.
+Three data fields are required: `value`, `name` / `id`, and `children` – the last one is used to specify the hierarchy of elements.
 
 That is how it looks like:
 
@@ -125,9 +125,9 @@ chart = anychart.treeMap(data, "as-tree");
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
 
-The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use *"as-table"* as the second parameter.
+The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
 
-Four data fields are required: **name**, **value**, **id**, and **parent** – the last two are used to specify the hierarchy of elements.
+Four data fields are required: `name`, `value`, `id`, and `parent` – the last two are used to specify the hierarchy of elements.
 
 That is how it looks like:
 
@@ -156,11 +156,11 @@ chart = anychart.treeMap(data, "as-table");
 
 {sample}BCT\_Treemap\_Chart\_03{sample}
 
-No matter what data structure you use, colors and sizes of tiles represent the **value** field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
+No matter what data structure you use, colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
 Please note: you do not need to specify values and sizes of parent elements – they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
 
-On the Treemap chart below, the size of each tile represents the population of a country ("size"), and the color represents the population density ("value"):
+On the Treemap chart below, the size of each tile represents the population of a country (`size`), and the color represents the population density (`value`):
 
 ```
 // create data
@@ -212,9 +212,9 @@ chart.hintOpacity(0.7);
 
 ### Sorting Order
 
-You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with **"desc"**, **"asc"**, or **"none"** as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
+You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with `"desc"`, `"asc"`, or `"none"` as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
 
-Please note: if you add the "size" field, tiles are sorted by size, not value.
+Please note: if you add the `size` field, tiles are sorted by size, not value.
 
 The sample below shows how to set the sorting mode:
 
@@ -247,8 +247,6 @@ chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
 It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data.
-
-**Note**: With "stroke", "hoverStroke", and "selectStroke", you can use only objects as values. In other cases, you can use either objects or strings.
 
 In the sample below, the visual settings of each item are configured individually:
 
@@ -357,14 +355,14 @@ To configure tooltips, do the same with the {api:anychart.charts.Treemap#tooltip
 
 Here is the list of tokens that work with the Treemap chart:
 
-* *{%id}*
-* *{%name}*
-* *{%size}*
-* *{%value}*
+* `{%id}`
+* `{%name}`
+* `{%size}`
+* `{%value}`
 
-Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data – the *{%value}* and *{%size}* tokens work anyway.
+Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data – the `{%value}` and `{%size}` tokens work anyway.
 
-You can use a custom data field and a custom token of the same name, like in this sample:
+You can use custom data fields and custom tokens of the same name, like in this sample:
 
 ```
 // create data
@@ -404,9 +402,9 @@ chart.tooltip().format(
 
 Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
-* *name*
-* *size*
-* *value*
+* `*name`
+* `size`
+* `value`
 
 Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. If there is a custom field in your data, you can use a field of the same name in formatting functions:
 
@@ -454,7 +452,7 @@ chart.tooltip().format(function(){
 
 By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states. Plus, you can set the maximum height of headers.
 
-To disable headers, use the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with *false* or *null* as parameters. To enable headers, use the same methods with *true*.
+To disable headers, use the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with `false` or `null` as parameters. To enable headers, use the same methods with `true`.
 
 **Note:** The {api:anychart.charts.TreeMap#headers}headers(){api} method affects only the normal state, so you have to use both methods if you want to disable headers completely:
 
