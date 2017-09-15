@@ -158,7 +158,7 @@ chart = anychart.treeMap(data, "as-table");
 
 No matter what data structure you use, colors and sizes of tiles represent the **value** field. Alternatively, sizes can represent an optional **size** field, so adding it to the data allows you to show two different parameters instead of one.
 
-Please note: you do not need to specify values and sizes of parent elements – they are calculated automatically. Also note that tiles are (sorted)[#sorting_order] by value, but if you add the "size" field, they are sorted by size.
+Please note: you do not need to specify values and sizes of parent elements – they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the "size" field, they are sorted by size.
 
 On the Treemap chart below, the size of each tile represents the population of a country ("size"), and the color represents the population density ("value"):
 
