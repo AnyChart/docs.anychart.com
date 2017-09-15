@@ -145,11 +145,7 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data. In this case the "heat" field can be omitted.
-
-**Note**: With "stroke", "hoverStroke", and "selectStroke", you can use only objects as values. In other cases, you can use either objects or strings.
-
-In the sample below, the visual settings of each item are configured individually, and heats are not set:
+It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data. In this case the "heat" field can be omitted:
 
 ```
 // create data
@@ -174,9 +170,9 @@ var data = [
    fill: "#ff0000",
    hoverFill: "#ff0000",
    selectFill: "#b30059",
-   stroke: {color: "#b30059", thickness: 4},
-   hoverStroke: {color: "white", thickness: 5},
-   selectStroke: {color: "white", thickness: 5}
+   stroke: "4 #b30059",
+   hoverStroke: "5 white",
+   selectStroke: "5 white"
   }
 ];
 
