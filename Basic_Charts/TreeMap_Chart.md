@@ -362,7 +362,7 @@ Here is the list of tokens that work with the Treemap chart:
 * *{%size}*
 * *{%value}*
 
-Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. The *{%value}* and *{%size}* tokens work anyway.
+Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data – the *{%value}* and *{%size}* tokens work anyway.
 
 You can use a custom data field and a custom token of the same name, like in this sample:
 
@@ -408,9 +408,7 @@ Labels and Tooltips are also configured with the help of [formatting functions](
 * *size*
 * *value*
 
-Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. The *value* and *size* fields work anyway.
-
-If there is a custom field in your data, you can use a field of the same name in formatting functions:
+Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. If there is a custom field in your data, you can use a field of the same name in formatting functions:
 
 ```
 // create data
