@@ -145,7 +145,7 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data. In this case the "heat" field can be omitted:
+It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
 
 ```
 // create data

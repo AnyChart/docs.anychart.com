@@ -246,7 +246,7 @@ chart.stroke("gray");
 chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
-It is also possible to configure the appearance of each cell individually — add extra fields corresponding with the methods mentioned above to your data:
+It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above:
 
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
