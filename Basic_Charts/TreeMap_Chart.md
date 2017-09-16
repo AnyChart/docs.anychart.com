@@ -90,7 +90,7 @@ In addition, it is possible to add custom fields to your data – read the [Labe
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
-#### Tree Data Structure
+#### Tree Structure
 
 The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-tree"` as the second parameter.
 
@@ -127,7 +127,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 {sample}BCT\_Treemap\_Chart\_02{sample}
 
-#### Table Data Structure
+#### Table Structure
 
 The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
 
@@ -501,7 +501,7 @@ chart.maxHeadersHeight("30");
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
 
-{sample :height 500}BCT\_Treemap\_Chart\_13{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_13{sample}
 
 ```
 // create data
@@ -543,11 +543,11 @@ chart = anychart.treeMap(data, "as-tree");
 #### Display Mode
 
 ```
-  // set the display mode of headers
-  chart.headersDisplayMode("alwaysShow");
+// set the display mode of headers
+chart.headersDisplayMode("alwaysShow");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_15{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_15{sample}
 
 ### Interactivity
 
