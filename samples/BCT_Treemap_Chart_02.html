@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {name:     "Slavic Languages – Number of Speakers", children: [
+      {name:     "Slavic Languages", children: [
         {name:   "East Slavic", children: [
           {name: "Russian",        value: 150000000},
           {name: "Ukrainian",      value:  45000000},
@@ -35,7 +35,10 @@
     chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
-    chart.title("Treemap: Data (Tree)");
+    chart.title().useHtml(true);
+    chart.title("Treemap: Data (Tree)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Slavic Languages by Number of Speakers");
 
     // set the container id
     chart.container("container");

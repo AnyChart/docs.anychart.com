@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {name:   "European Union – Top 10 Most Populated Countries", children: [
+      {name:   "European Union", children: [
         {name: "Belgium",        value: 11443830, capital: "Brussels" },
         {name: "France",         value: 64938716, capital: "Paris"    },
         {name: "Germany",        value: 80636124, capital: "Berlin"   },
@@ -42,7 +42,10 @@
     );
 
     // set the chart title
-    chart.title("Treemap: Labels and Tooltips (Tokens)");
+    chart.title().useHtml(true);
+    chart.title("Treemap: Labels and Tooltips (Tokens)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Top 10 European Union Countries by Population</span>");
 
     // set the container id
     chart.container("container");

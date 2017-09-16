@@ -11,7 +11,7 @@
 
     // create data
     var data = [
-      {name:   "EU – Population Density in Top 10 Most Populated Countries", children: [
+      {name:   "European Union", children: [
         {name: "Belgium",        size: 11443830, value: 378},
         {name: "France",         size: 64938716, value: 119},
         {name: "Germany",        size: 80636124, value: 231},
@@ -29,7 +29,10 @@
     chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
-    chart.title("Treemap: Data (Size and Value)");
+    chart.title().useHtml(true);
+    chart.title("Treemap: Data (Size and Value)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Population & Population Density of Top 10 Most Populated EU Countries</span>");
 
     // set the container id
     chart.container("container");

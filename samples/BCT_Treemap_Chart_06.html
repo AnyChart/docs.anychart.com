@@ -14,7 +14,7 @@
 
     // create data
     var data = [
-      {name:   "European Union – Top 10 Most Populated Countries", children: [
+      {name:   "European Union", children: [
         {name: "Belgium",        value: 11443830},
         {name: "France",         value: 64938716},
         {name: "Germany",        value: 80636124},
@@ -33,7 +33,10 @@
 
     // set the chart position and title
     chart.top(35);
-    chart.title("Treemap: Sorting Order");
+     chart.title().useHtml(true);
+    chart.title("Treemap: Sorting Order<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Top 10 European Union Countries by Population</span>");
 
     // set the container
     chart.container(stage);

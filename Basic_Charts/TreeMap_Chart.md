@@ -65,7 +65,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_Treemap\_Chart\_01{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_01{sample}
 
 ## General Settings
 
@@ -123,7 +123,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_02{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_02{sample}
 
 The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
 
@@ -154,7 +154,7 @@ var data = [
 chart = anychart.treeMap(data, "as-table");
 ```
 
-{sample}BCT\_Treemap\_Chart\_03{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_03{sample}
 
 No matter what data structure you use, colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
@@ -183,7 +183,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_04{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_04{sample}
 
 ### Depth and Hints
 
@@ -223,7 +223,7 @@ The sample below shows how to set the sorting mode:
 chart.sort("asc");
 ```
 
-{sample}BCT\_Treemap\_Chart\_06{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_06{sample}
 
 ### Appearance
 
@@ -248,7 +248,7 @@ chart.selectStroke("gray", 2);
 ```
 It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above:
 
-{sample}BCT\_Treemap\_Chart\_07{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_07{sample}
 
 ```
 // create data
@@ -279,7 +279,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_08{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_08{sample}
 
 ### Color Scale
 
@@ -316,7 +316,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Treemap\_Chart\_09{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_09{sample}
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
@@ -339,7 +339,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample}BCT\_Treemap\_Chart\_10{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_10{sample}
 
 ### Labels and Tooltips
 
@@ -396,7 +396,7 @@ chart.tooltip().format(
 );
 ```
 
-{sample}BCT\_Treemap\_Chart\_11{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_11{sample}
 
 Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
@@ -444,7 +444,7 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_12{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_12{sample}
 
 ### Headers
 
@@ -487,7 +487,7 @@ chart.maxHeadersHeight("30");
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
 
-{sample}BCT\_Treemap\_Chart\_13{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_13{sample}
 
 ```
 // create data
@@ -524,7 +524,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_14{sample}
 
 ```
   // set the display mode of headers
@@ -574,7 +574,7 @@ function printPath(path){
 };
 ```
 
-{sample}BCT\_Treemap\_Chart\_16{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_16{sample}
 
 ```
 // disable the drill-down option
