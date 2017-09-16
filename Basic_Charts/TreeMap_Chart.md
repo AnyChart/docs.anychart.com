@@ -65,7 +65,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_01{sample}
+{sample}BCT\_Treemap\_Chart\_01{sample}
 
 ## General Settings
 
@@ -89,6 +89,8 @@ Use the following data fields to create data for a Treemap chart:
 In addition, it is possible to add custom fields to your data – read the [Labels and Tooltips](#labels_and_tooltips) section of this article to learn how you can use this feature.
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
+
+#### Tree Data Structure
 
 The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-tree"` as the second parameter.
 
@@ -123,7 +125,9 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_02{sample}
+{sample}BCT\_Treemap\_Chart\_02{sample}
+
+#### Table Data Structure
 
 The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
 
@@ -154,7 +158,9 @@ var data = [
 chart = anychart.treeMap(data, "as-table");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_03{sample}
+{sample}BCT\_Treemap\_Chart\_03{sample}
+
+#### Size and Value
 
 No matter what data structure you use, colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
@@ -183,7 +189,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_04{sample}
+{sample}BCT\_Treemap\_Chart\_04{sample}
 
 ### Depth and Hints
 
@@ -223,7 +229,7 @@ The sample below shows how to set the sorting mode:
 chart.sort("asc");
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_06{sample}
+{sample}BCT\_Treemap\_Chart\_06{sample}
 
 ### Appearance
 
@@ -246,9 +252,9 @@ chart.stroke("gray");
 chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
-It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above:
+{sample}BCT\_Treemap\_Chart\_07{sample}
 
-{sample :height 500}BCT\_Treemap\_Chart\_07{sample}
+It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -279,11 +285,13 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_08{sample}
+{sample}BCT\_Treemap\_Chart\_08{sample}
 
 ### Color Scale
 
 By default, the color scale of a Treemap chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+
+#### Ordinal
 
 To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
@@ -316,7 +324,9 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_09{sample}
+{sample}BCT\_Treemap\_Chart\_09{sample}
+
+#### Linear
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
@@ -339,13 +349,15 @@ chart.colorRange().enabled(true);
 chart.colorRange().colorLineSize(10);
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_10{sample}
+{sample}BCT\_Treemap\_Chart\_10{sample}
 
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
+#### Tokens
 
 To change the text of labels, combine the {api:anychart.charts.Treemap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
@@ -396,7 +408,9 @@ chart.tooltip().format(
 );
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_11{sample}
+{sample}BCT\_Treemap\_Chart\_11{sample}
+
+#### Formatting Functions
 
 Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
@@ -444,7 +458,7 @@ chart.tooltip().format(function(){
 });
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_12{sample}
+{sample}BCT\_Treemap\_Chart\_12{sample}
 
 ### Headers
 
@@ -487,7 +501,7 @@ chart.maxHeadersHeight("30");
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
 
-{sample :height 600}BCT\_Treemap\_Chart\_13{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_13{sample}
 
 ```
 // create data
@@ -526,12 +540,14 @@ chart = anychart.treeMap(data, "as-tree");
 
 {sample :height 500}BCT\_Treemap\_Chart\_14{sample}
 
+#### Display Mode
+
 ```
   // set the display mode of headers
   chart.headersDisplayMode("alwaysShow");
 ```
 
-{sample}BCT\_Treemap\_Chart\_15{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_15{sample}
 
 ### Interactivity
 
@@ -574,7 +590,7 @@ function printPath(path){
 };
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_16{sample}
+{sample}BCT\_Treemap\_Chart\_16{sample}
 
 ```
 // disable the drill-down option
