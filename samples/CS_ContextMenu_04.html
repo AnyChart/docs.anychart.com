@@ -9,54 +9,29 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // set data and define chart type
-  chart = anychart.pie([
-    {name: "John", value: 10000},
-    {name: "Jake", value: 12000},
-    {name: "Peter", value: 16000},
-    {name: "Alex", value: 11000},
-    {name: "Tom", value: 13000},
-    {name: "Julia", value: 18000}
-  ]);
+  // create a chart
+  chart = anychart.column();
 
-  var menu = chart.contextMenu();
+  // set chart data
+  chart.data ([
+    ["John" , 10000, 12000],
+    ["Jake" , 12000, 15000],
+    ["Peter", 18000, 16000],
+    ["James", 11000, 13000],
+    ["Mary", 9000, 19000]
+  ]);  
+
+  // create custom context menu
+  var menu = anychart.ui.contextMenu();
   menu.itemsProvider(function(){
-    var data = chart.data();
-    var slices = [];
-    for (var i=0;i<data.getRowsCount();i++)
-      slices.push({text: data.get(i, "name"), action: function(){
-        var slice = data.find("name", this.item.text);
-        chart.explodeSlice(slice, !chart.getPoint(slice).selected());
-      }});
-    return [
-      {
-        enabled: allState(true),
-        text: "Explode All",
-        action: function(){
-          chart.explodeSlices(true)
-        }
-      },
-      {
-        enabled: allState(false),
-        text: "Explode None",
-        action: function(){
-          chart.explodeSlices(false);
-        }
-      },
-      {
-        text: "Slices",
-        subMenu: slices
-      }
-    ];
+    items['my-menu-item-1'].text = "Print chart";
+    items['my-menu-item-2'].text = "Save chart as SVG";
+
+    return items;
   });
 
-  function allState (state){
-    for (var i=0;i<chart.data().getRowsCount();i++)
-      if (state != chart.getPoint(i).selected()) return true;
-    return false;
-  }
-
-  chart.title("Custom Context Menu");
+  // set title
+  chart.title("Basic Custom Context Menu");
 
   // draw
   chart.container("container");
