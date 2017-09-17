@@ -418,7 +418,7 @@ Labels and Tooltips are also configured with the help of [formatting functions](
 * `size`
 * `value`
 
-Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. If there is a custom field in your data, you can use a field of the same name in formatting functions:
+Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. If there is a custom field in your data, you can use the {api: anychart.format.Context#getData}getData(){api} method to refer this field:
 
 ```
 // create data
@@ -459,6 +459,18 @@ chart.tooltip().format(function(){
 ```
 
 {sample}BCT\_Treemap\_Chart\_12{sample}
+
+#### Adjusting Font Size
+
+The font size of labels can be automatically adjusted according to the size of tiles — use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}{api} and `true` as a parameter to enable this mode:
+
+```
+/* ajust the font size of labels
+according to the size of tiles */
+chart.labels().adjustFontSize(true);
+```
+
+{sample :height 500}BCT\_Treemap\_Chart\_13{sample}
 
 ### Headers
 
@@ -501,7 +513,7 @@ chart.maxHeadersHeight("30");
 
 The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
 
-{sample :height 600}BCT\_Treemap\_Chart\_13{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_14{sample}
 
 ```
 // create data
@@ -538,7 +550,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_15{sample}
 
 #### Display Mode
 
@@ -547,7 +559,7 @@ chart = anychart.treeMap(data, "as-tree");
 chart.headersDisplayMode("alwaysShow");
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_15{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_16{sample}
 
 ### Interactivity
 
@@ -590,7 +602,7 @@ function printPath(path){
 };
 ```
 
-{sample}BCT\_Treemap\_Chart\_16{sample}
+{sample}BCT\_Treemap\_Chart\_17{sample}
 
 ```
 // disable the drill-down option
@@ -599,4 +611,4 @@ chart.listen("drillchange", function(e){
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_17{sample}
+{sample}BCT\_Treemap\_Chart\_18{sample}

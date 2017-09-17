@@ -7,30 +7,25 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+    // create a stage    
+    stage = anychart.graphics.create("container"); 
 
     // create data
     var data = [
-      {name:     "Slavic Languages",
-       header: {
-         format: "{%name} ({%value} Total)",
-         fontColor: "#990000",
-         fontWeight: "bold",
-         fontSize: "14"
-       },
-       hoverHeader: {fontColor: "#000099"},
-       children: [
-        {name:   "East Slavic", header: null, children: [
+      {name:     "Slavic Languages", children: [
+        {name:   "East Slavic", children: [
           {name: "Russian",        value: 150000000},
           {name: "Ukrainian",      value:  45000000},
           {name: "Belarusian",     value:   3200000}
         ]},
-        {name:   "West Slavic", header: null, children: [
+        {name:   "West Slavic", children: [
           {name: "Polish",         value:  55000000},
           {name: "Czech",          value:  10600000},
           {name: "Slovak",         value:   5200000}
         ]},
-        {name:   "South Slavic", header: null, children: [
+        {name:   "South Slavic", children: [
           {name: "Serbo-Croatian", value:  21000000},
           {name: "Bulgarian",      value:   9000000},
           {name: "Slovene",        value:   2500000},
@@ -45,19 +40,72 @@
     // set the maximum depth of levels shown
     chart.maxDepth(3);
 
-    // set the chart title
+    // configure the text of headers on hover
+    chart.hoverHeaders().format("{%value}");
+
+    // configure the font of headers
+    chart.headers().fontColor("#990000");
+    chart.headers().fontWeight('bold');
+    chart.headers().fontSize("18");
+    chart.hoverHeaders().fontColor("#000099");
+
+    // set the maximum height of headers
+    chart.maxHeadersHeight("30");
+
+    // set the chart position and title
+    chart.top(35);
+    chart.title("Treemap: Headers");
     chart.title().useHtml(true);
-    chart.title("Treemap: Headers<br>" +
-                "(Configuring Each Header Individually)" +
-                "<br><br><span style='font-size:12; font-style:italic'>" +
+    chart.title("Treemap: Headers<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
                 "Slavic Languages by Number of Speakers</span>");
 
-    // set the container id
-    chart.container("container");
+    // set the container
+    chart.container(stage);
 
     // initiate drawing the chart
     chart.draw();
-});</script>
+
+    // create a label for disabling headers
+    createLabel("Disable Headers", 10, function() {
+      // disable headers in the normal state
+      chart.headers(false);
+      // disable headers in the hover state
+      chart.hoverHeaders(false);
+    });
+
+    // create a label for enabling headers
+    createLabel("Enable Headers", 136, function() {
+      // enable headers in the normal state
+      chart.headers(true);
+      // enable headers in the select state
+      chart.hoverHeaders(true);
+    });
+});
+    
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+  var label = anychart.standalones.label();
+  label.background({fill: "#1976d2"});
+  label.text(text);
+  label.fontColor("#fff");
+  label.padding(5);
+  label.parentBounds(offset, 5, 130, 100);    
+  label.listen("click", action);
+  label.container(stage);
+  label.draw();
+  label.listen("mouseOver", function(){
+    label.background().fill("#1976d2 0.5");
+    document.body.style.cursor = "pointer";
+    label.draw();
+  });
+  label.listen("mouseOut", function(){
+    label.background().fill("#1976d2");
+    document.body.style.cursor = "auto";
+    label.draw();
+  });    
+  return label;
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
