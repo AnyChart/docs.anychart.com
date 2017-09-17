@@ -494,7 +494,7 @@ To configure the text of headers, combine the {api:anychart.charts.TreeMap#heade
 chart.hoverHeaders().format("{%value}");
 ```
 
-To configure the font of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with... (???)
+To configure the font of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed in {api:http://api.anychart.stg/develop/anychart.core.ui.LabelsFactoryhttp://api.anychart.stg/develop/anychart.core.ui.LabelsFactory}http://api.anychart.stg/develop/anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
@@ -504,7 +504,7 @@ chart.headers().fontSize("18");
 chart.hoverHeaders().fontColor("#000099");
 ```
 
-The height of headers adjusts to the height of their text. However, by default the maximum height is 25 pixels, and the text is cropped if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
+The height of headers adjusts according to the height of their text. However, by default the maximum height is 25 pixels, and the text is cropped if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
 
 ```
 // set the maximum height of headers
