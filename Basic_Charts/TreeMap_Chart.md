@@ -254,7 +254,7 @@ chart.selectStroke("gray", 2);
 ```
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
-It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above:
+It is also possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -462,7 +462,7 @@ chart.tooltip().format(function(){
 
 #### Adjusting Font Size
 
-The font size of labels can be automatically adjusted according to the size of tiles — use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
+The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
 /* ajust the font size of labels
@@ -498,7 +498,7 @@ To [configure the font](../Appearance_Settings/Text_Settings) of headers, combin
 // configure the font of headers
 chart.headers().fontColor("#990000");
 chart.headers().fontWeight('bold');
-chart.headers().fontSize("18");
+chart.headers().fontSize("14");
 chart.hoverHeaders().fontColor("#000099");
 ```
 
@@ -512,6 +512,8 @@ chart.maxHeadersHeight("20%");
 The following sample demonstrates how to disable/enable headers and change their font settings and text:
 
 {sample :height 600}BCT\_Treemap\_Chart\_14{sample}
+
+Each header can be configured individually by adding the `header` field to the data:
 
 ```
 // create data
@@ -551,6 +553,8 @@ chart = anychart.treeMap(data, "as-tree");
 {sample :height 500}BCT\_Treemap\_Chart\_15{sample}
 
 #### Display Mode
+
+
 
 ```
 // set the display mode of headers
