@@ -504,14 +504,14 @@ chart.headers().fontSize("18");
 chart.hoverHeaders().fontColor("#000099");
 ```
 
-The height of headers adjusts according to the height of their text. However, by default the maximum height is 25 pixels, and the text is cropped if it occupies an area bigger than this value. To change the maximum height of headers, call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method:
+You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
 
 ```
-// set the maximum height of headers
-chart.maxHeadersHeight("30");
+//set the maximum height of headers
+chart.maxHeadersHeight("20%");
 ```
 
-The following sample demonstrates how to change the default text and font settings as well as maximum height of headers and disable/enable them:
+The following sample demonstrates how to disable/enable headers and change their font settings and text:
 
 {sample :height 600}BCT\_Treemap\_Chart\_14{sample}
 
