@@ -494,7 +494,7 @@ To configure the text of headers, combine the {api:anychart.charts.TreeMap#heade
 chart.hoverHeaders().format("{%value}");
 ```
 
-To configure the font of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed in {api:http://api.anychart.stg/develop/anychart.core.ui.LabelsFactoryhttp://api.anychart.stg/develop/anychart.core.ui.LabelsFactory}http://api.anychart.stg/develop/anychart.core.ui.LabelsFactory{api}:
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed in {api:http://api.anychart.stg/develop/anychart.core.ui.LabelsFactoryhttp://api.anychart.stg/develop/anychart.core.ui.LabelsFactory}http://api.anychart.stg/develop/anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
