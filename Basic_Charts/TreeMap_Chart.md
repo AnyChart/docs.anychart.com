@@ -462,7 +462,7 @@ chart.tooltip().format(function(){
 
 #### Adjusting Font Size
 
-The font size of labels can be automatically adjusted according to the size of tiles — use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}{api} and `true` as a parameter to enable this mode:
+The font size of labels can be automatically adjusted according to the size of tiles — use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
 /* ajust the font size of labels
@@ -487,14 +487,14 @@ chart.headers(false);
 chart.hoverHeaders(false);
 ```
 
-To configure the text of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions), like for configuring [labels and tooltips](#labels_and_tooltips):
+Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
 
 ```
 // configure the text of headers on hover
 chart.hoverHeaders().format("{%value}");
 ```
 
-To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed on {api:http://api.anychart.stg/develop/anychart.core.ui.LabelsFactoryhttp://api.anychart.stg/develop/anychart.core.ui.LabelsFactory}http://api.anychart.stg/develop/anychart.core.ui.LabelsFactory{api}:
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
