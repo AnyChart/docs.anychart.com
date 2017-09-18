@@ -554,7 +554,14 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
+You can also configure the display mode of labels – call the labelsDisplayMode() method with one of the three parameters:
 
+"alwaysShow" – labels are always shown
+"clip" – labels are cropped to fit cells
+"drop" – too long labels are hidden
+The default display mode is "drop": a label is not shown if it does not fit the width of a cell.
+
+The following sample shows how these modes work:
 
 ```
 // set the display mode of headers
@@ -565,7 +572,28 @@ chart.headersDisplayMode("alwaysShow");
 
 ### Interactivity
 
-[создать instance of the anychart.data.Tree class, используя метод anychart.data.tree()]
+* [event listeners](../Common_Settings/Event_Listeners)
+* [context menu](../Common_Settings/UI_Controls/Context_Menu)
+* [Using Data Tree Model](Working_with_Data/Using_Data_Tree_Model)
+
+... You should create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class by using the {api:anychart.data#tree}anychart.data.tree(){api} method:
+
+```
+// get data
+var data = getData(); 
+
+// create a storage for the data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart and set the data
+chart = anychart.treeMap(treeData);
+```
+
+... Use the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method for drilling down to a particular item in the data tree, and {api:anychart.charts.TreeMap#drillUp}drillUp{api} for drilling up.
+
+You can also call {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drill-down path.
+
+The following sample shows how to drill up, drill down to a particular item, and add the drill-down path is to the title of the chart:
 
 ```
 /* locate an item in the data tree,
@@ -576,9 +604,7 @@ chart.drillTo(item);
 
 // drill up
 chart.drillUp();
-```
 
-```
 /* listen to the chartDraw event
 and add the drill-down path to the chart title */
 chart.listen("chartDraw",function(){
@@ -605,6 +631,10 @@ function printPath(path){
 ```
 
 {sample}BCT\_Treemap\_Chart\_17{sample}
+
+```
+drillchange
+```
 
 ```
 // disable the drill-down option
