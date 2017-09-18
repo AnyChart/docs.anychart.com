@@ -413,7 +413,7 @@ chart.tooltip().format(function(){
 
 ### Interactivity
 
-You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../Common_Settings/Event_Listeners) to your chart and make sure that links open on an event of your choice.
+You might want to link elements of a Tag Cloud to web pages. In this case, use the {api:anychart.core.Base#listen}listen(){api} method to add an [event listener](../Common_Settings/Event_Listeners) to your chart. Specify the event type you want to trigger the action and the action itself (opening a web page).
 
 For example, here clicking on a word leads to its page opening in Wiktionary:
 

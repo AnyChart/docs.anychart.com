@@ -29,9 +29,9 @@
     chart.tooltip(false);
 
     /* listen to the chartDraw event
-    and add the drill-down path to the chart title */
+    and add the drilldown path to the chart title */
     chart.listen("chartDraw",function(){
-      // get the drill-down path and convert it to a string
+      // get the drilldown path and convert it to a string
       var text = printPath(chart.getDrilldownPath());
       // set the chart title
       chart.title().useHtml(true);
@@ -119,7 +119,7 @@ function getData(){
 };
 
 /* a function for converting the current
-drill-down path to a string */
+drilldown path to a string */
 function printPath(path){
   /* go through the array of the data tree items
   and use the get() method to obtain the "name" field */

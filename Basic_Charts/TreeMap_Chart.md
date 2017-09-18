@@ -562,7 +562,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of headers is always shown. However, in case the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
 * `"alwaysShow"` (default)
 * `"clip"`
@@ -579,13 +579,11 @@ chart.headersDisplayMode("drop");
 
 ### Interactivity
 
-#### Drilling Down
+#### Drilldown
 
-* [event listeners](../Common_Settings/Event_Listeners)
-* [context menu](../Common_Settings/UI_Controls/Context_Menu)
-* [Using Data Tree Model](Working_with_Data/Using_Data_Tree_Model)
+The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click an element, you drill down to its children, and if you click a header, you drill up a level. This behavior can be modified.
 
-... You should create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class by using the {api:anychart.data#tree}anychart.data.tree(){api} method:
+When you work with interactivity, sometimes the {api: anychart.data.Tree#search}search(){api} method might be helpful. It requires your data to be organized in a particular way: use the [data tree model](Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
 ```
 // get data
@@ -598,11 +596,7 @@ var treeData = anychart.data.tree(data, "as-tree");
 chart = anychart.treeMap(treeData);
 ```
 
-... Use the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method for drilling down to a particular item in the data tree, and {api:anychart.charts.TreeMap#drillUp}drillUp{api} for drilling up.
-
-You can also call {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drill-down path.
-
-The following sample shows how to drill up, drill down to a particular item, and add the drill-down path is to the title of the chart:
+If you want to drill down to a particular item in the data tree, call the anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
 
 ```
 /* locate an item in the data tree,
@@ -613,31 +607,13 @@ chart.drillTo(item);
 
 // drill up
 chart.drillUp();
-
-/* listen to the chartDraw event
-and add the drill-down path to the chart title */
-chart.listen("chartDraw",function(){
-  // get the drill-down path and convert it to a string
-  var text = printPath(chart.getDrilldownPath());
-  // set the chart title
-  chart.title().useHtml(true);
-  chart.title("Treemap: Interactivity (Drilling Up and Down)<br>Path: " +
-              "<span style = 'color:#990000; font-style:italic'>"
-              + text + "</span>");
-});
-
-/* a function for converting the current
-drill-down path to a string */
-function printPath(path){
-  /* go through the array of the data tree items
-  and use the get() method to obtain the "name" field */
-  var text = "";
-  for (i = 0; i <  path.length; i++){ 
-    text += path[i].get("name") + "\\";
-  }
-  return text;
-};
 ```
+
+You can also call {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path.
+
+The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function).
+
+**Note**: [context menu](../Common_Settings/UI_Controls/Context_Menu)...
 
 {sample}BCT\_Treemap\_Chart\_17{sample}
 
@@ -645,7 +621,9 @@ function printPath(path){
 drillchange
 ```
 
-#### Disabling
+#### Disabling Drilldown
+
+To disable the drill-down option, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type – `drillchange`:
 
 ```
 // disable the drill-down option
