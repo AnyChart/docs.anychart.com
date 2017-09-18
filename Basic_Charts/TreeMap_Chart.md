@@ -488,7 +488,7 @@ chart.labels().adjustFontSize(true);
 
 By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states by using the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods. Plus, you can set the maximum height of headers.
 
-To disable headers, call {api:anychart.charts.TreeMap#headers}headers(){api} and / or {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with `false` or `null` as parameters. To enable headers, use the same methods with `true`. Note that {api:anychart.charts.TreeMap#headers}headers(){api} affects only the normal state, so you have to use both methods if you want to disable headers completely:
+To disable headers, use {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with `false` or `null` as parameters. To enable headers, use the same methods with `true`. Note that {api:anychart.charts.TreeMap#headers}headers(){api} affects only the normal state, so you have to use both methods if you want to disable headers completely:
 
 ```
 // disable headers in the normal state
