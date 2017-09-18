@@ -96,11 +96,11 @@ Use the following data fields:
 
 The "isTotal" field is boolean, used optionally for showing/hiding a total value. By default, a total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
-The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either "diff" or "absolute" as a parameter.
+The "value" field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either *"diff"* or *"absolute"* as a parameter.
 
 The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 
-In **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
+In the **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
 The sample below shows how to set the data mode:
 
@@ -315,7 +315,7 @@ chart.tooltip().titleFormat(function(){
 
 ### Legend
 
-The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use "default" as a parameter:
+The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use *"default"* as a parameter:
 
 ```
 // add hatch fills

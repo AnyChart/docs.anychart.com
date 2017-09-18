@@ -14,47 +14,45 @@
 
     // create data
     var data = [
-      {x: "2010", y: "A", heat: 15},
-      {x: "2011", y: "A", heat: 17},
-      {x: "2012", y: "A", heat: 21},
-      {x: "2013", y: "A", heat: 23},
-      {x: "2010", y: "B", heat: 34},
-      {x: "2011", y: "B", heat: 33},
-      {x: "2012", y: "B", heat: 32},
-      {x: "2013", y: "B", heat: 30},
-      {x: "2010", y: "C", heat: 43},
-      {x: "2011", y: "C", heat: 42},
-      {x: "2012", y: "C", heat: 40},
-      {x: "2013", y: "C", heat: 38},
-      {x: "2010", y: "D", heat: 8},
-      {x: "2011", y: "D", heat: 8},
-      {x: "2012", y: "D", heat: 7},
-      {x: "2013", y: "D", heat: 8}
+      {name:     "Slavic Languages", children: [
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
+        ]},
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
+      ]} 
     ];
 
     // create a chart and set the data
-    chart = anychart.heatMap(data);
+    chart = anychart.treeMap(data, "as-tree");
 
-    // enable HTML for labels
-    chart.labels().useHtml(true);
+    // set the maximum depth of levels shown
+    chart.maxDepth(3);
 
-    // configure labels
-    chart.labels().format(function(){
-      var heat = (this.heat);
-      if (heat < 20)
-        return "<span style='font-size:22'>Low</span>";
-      if (heat < 40)
-        return "<span style='font-size:22'>Medium</span>";
-      if (heat >= 40)
-        return "<span style='font-weight:bold;font-size:22'>High</span>";
-    });
+    // configure the font of headers
+    chart.headers().fontSize("30");
 
-    // set the chart position, size, and title
+    // set the display mode of headers
+    chart.headersDisplayMode("drop");
+
+    // set the chart position and title
     chart.top(35);
-    chart.width(320);
-    chart.height(320);
-    chart.title("Heat Map: Labels (Display Mode)");
-    
+    chart.title().useHtml(true);
+    chart.title("Treemap: Headers (Display Mode)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Slavic Languages by Number of Speakers</span>");
+
     // set the container
     chart.container(stage);
 
@@ -64,22 +62,22 @@
     /* create a label for setting the display mode
     of labels to "always show" */
     createLabel("Always Show", 10, function() {
-      // set the display mode of labels
-      chart.labelsDisplayMode("alwaysShow");
+      // set the display mode of headers
+      chart.headersDisplayMode("alwaysShow");
     });
 
     /* create a label for setting the display mode
     of labels to "clip" */
     createLabel("Clip", 118, function() {
-      // set the display mode of labels
-      chart.labelsDisplayMode("clip");
+      // set the display mode of headers
+      chart.headersDisplayMode("clip");
     });
 
     /* create a label for setting the display mode
     of labels to "drop" */
     createLabel("Drop", 162, function() {
-      // set the display mode of labels
-      chart.labelsDisplayMode("drop");
+      // set the display mode of headers
+      chart.headersDisplayMode("drop");
     });
 });
     

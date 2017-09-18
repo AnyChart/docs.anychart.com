@@ -9,7 +9,7 @@ This article explains how to create a basic Heat Map chart in AnyChart as well a
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.core.cartesian.series.Area{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value, heat](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
@@ -67,7 +67,7 @@ In AnyChart there are many settings that are configured in the same way for all 
 
 Read the overview of general settings: [General Settings](General_Settings).
 
-### Special Settings
+## Special Settings
 
 ### Data
 
@@ -134,11 +134,7 @@ chart.selectStroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-It is also possible to configure the appearance of each cell individually — add extra fields (corresponding with the methods mentioned above) to your data. In this case the "heat" field can be omitted.
-
-**Note**: With "stroke", "hoverStroke", and "selectStroke", you can use only objects as values. In other cases, you can use either objects or strings.
-
-In the sample below, the visual settings of each item are configured individually, and heats are not set:
+It is also possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
 
 ```
 // create data
@@ -158,15 +154,14 @@ var data = [
   {x: "4", y: "A", fill: "#ff9933"},
   {x: "4", y: "B", fill: "#ff9933"},
   {x: "4", y: "C", fill: "#ff6600"},
-  {
-    x: "4",
-    y: "D",
-    fill: "#ff0000",
-    hoverFill: "#ff0000",
-    selectFill: "#b30059",
-    stroke: {color: "#b30059", thickness: 4},
-    hoverStroke: {color: "white", thickness: 5},
-    selectStroke: {color: "white", thickness: 5}
+  {x: "4",
+   y: "D",
+   fill: "#ff0000",
+   hoverFill: "#ff0000",
+   selectFill: "#b30059",
+   stroke: "4 #b30059",
+   hoverStroke: "5 white",
+   selectStroke: "5 white"
   }
 ];
 
@@ -184,7 +179,7 @@ To customize the **ordinal color scale**, you should create it explicitly by usi
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
-Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
+To set your scale as the color scale of the chart, use the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method.
 
 This sample shows a Heat Map with an ordinal color scale:
 
@@ -208,7 +203,7 @@ To create a **linear color scale**, use the {api:anychart.scales#linearColor}lin
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
-To set your scale as the color scale of the chart, use the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method.
+Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 
 In the following sample, there is a Heat Map with a linear color scale:
 
@@ -268,7 +263,7 @@ The default display mode is "drop": a label is not shown if it does not fit the 
 The following sample shows how these modes work:
 
 ```
-// change the display mode
+// set the display mode of labels
 chart.labelsDisplayMode("alwaysShow");
 ```
   

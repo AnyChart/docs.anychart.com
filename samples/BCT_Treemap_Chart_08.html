@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {name:   "European Union", children: [
+        {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
+        {name: "France",         value: 64938716, fill: "#ff6600"},
+        {name: "Greece",         value: 10892931, fill: "#ffcc00"},
+        {name: "Italy",          value: 59797978, fill: "#ff6600"},
+        {name: "Netherlands",    value: 17032845, fill: "#ffcc00"},
+        {name: "Poland",         value: 38563573, fill: "#ff9933"},
+        {name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
+        {name: "Spain",          value: 46070146, fill: "#ff9933"},
+        {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
+        {name: "Germany",
+         value: 80636124,
+         fill: "#ff0000",
+         hoverFill: "#ff0000",
+         selectFill: "#b30059",
+         stroke: "4 #b30059",
+         hoverStroke: "5 white",
+         selectStroke: "5 white"
+        }  
+      ]} 
+    ];
+
+    // create a chart and set the data
+    chart = anychart.treeMap(data, "as-tree");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Treemap: Appearance<br>(Configuring Each Cell Individually)" +
+                "<br><br><span style='font-size:12; font-style:italic'>" +
+                "Top 10 European Union Countries by Population</span>");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

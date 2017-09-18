@@ -56,7 +56,7 @@ In addition, see the full list of methods available for the Pie chart: {api:anyc
 
 #### Outer Labels
 
-By default, labels are placed on the Doughnut chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the **"outside"** parameter:
+By default, labels are placed on the Doughnut chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the *"outside"* parameter:
 
 ```
 // set the position of labels

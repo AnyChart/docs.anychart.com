@@ -26,7 +26,7 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[TreeMap](TreeMap_Chart)</td></tr>
+<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/venn-diagram/" target="_blank">Chartopedia: Venn Diagram</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -77,7 +77,9 @@ When you create data, you should use these data fields for both circles and inte
 * **value** to set sizes
 * **name** to set names
 
-The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**. Read more in the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**.
+
+Please note that it is possible to add custom fields to your data – see the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
 The sample below shows two circles with their names set:
 

@@ -60,15 +60,17 @@
     // initiate drawing the chart
     chart.draw();
 
-    // create a label for changing the mode of the tag cloud
+    /* create a label for setting
+    the mode of the tag cloud to "rectangle" */
     createLabel("Rectangle Mode", 10, function() {
-        // change the mode
+        // set the mode of the tag cloud
         chart.mode("rect");
     });
 
-    // create a label for changing the mode of the tag cloud
+    /* create a label for setting
+    the mode of the tag cloud to "spiral" */
     createLabel("Spiral Mode", 135, function() {
-        // change the mode
+        // set the mode of the tag cloud
         chart.mode("spiral");
     });
 });
