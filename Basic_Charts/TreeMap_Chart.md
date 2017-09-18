@@ -564,16 +564,15 @@ chart = anychart.treeMap(data, "as-tree");
 
 You can also set the display mode of headers – call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
-* `"alwaysShow"` – the text of headers is always shown
+* `"alwaysShow"` – the text of headers is always shown (default)
 * `"clip"`       – the text is cropped to fit the height of headers
 * `"drop"`       – the text is hidden if it does not fit the height
 
-The default mode is...
-In the following sample the display mode is set to "drop"...
+The sample below shows how to change the display mode, which is initially set to "drop":
 
 ```
 // set the display mode of headers
-chart.headersDisplayMode("alwaysShow");
+chart.headersDisplayMode("drop");
 ```
 
 {sample :height 600}BCT\_Treemap\_Chart\_16{sample}
