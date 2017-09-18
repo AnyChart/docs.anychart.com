@@ -562,11 +562,11 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-You can also set the display mode of headers – call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of headers is always shown. However, in case the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
-* `"alwaysShow"` – the text of headers is always shown (default)
-* `"clip"`       – the text is cropped to fit the height of headers
-* `"drop"`       – the text is hidden if it does not fit the height
+* `"alwaysShow"` (default)
+* `"clip"`
+* `"drop"`
 
 The sample below shows how to change the display mode, which is initially set to "drop":
 
