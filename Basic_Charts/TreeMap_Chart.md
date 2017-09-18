@@ -581,9 +581,11 @@ chart.headersDisplayMode("drop");
 
 #### Drilldown
 
-The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click an element, you drill down to its children, and if you click a header, you drill up a level. This behavior can be modified.
+The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified.
 
-When you work with interactivity, sometimes the {api: anychart.data.Tree#search}search(){api} method might be helpful. It requires your data to be organized in a particular way: use the [data tree model](Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
+**Note** It is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, either of these options is available for the element).
+
+When you work with interactivity, sometimes the {api: anychart.data.Tree#search}search(){api} method might be helpful. It requires your data to be organized in a special way: use the [data tree model](Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
 ```
 // get data
@@ -611,22 +613,16 @@ chart.drillUp();
 
 You can also call {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path.
 
-The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function).
-
-**Note**: [context menu](../Common_Settings/UI_Controls/Context_Menu)...
+The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
 
 {sample}BCT\_Treemap\_Chart\_17{sample}
 
-```
-drillchange
-```
-
 #### Disabling Drilldown
 
-To disable the drill-down option, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type – `drillchange`:
+To disable the drilldown feature, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type – `drillchange`:
 
 ```
-// disable the drill-down option
+// disable the drilldown feature
 chart.listen("drillchange", function(e){
   return false;
 });
