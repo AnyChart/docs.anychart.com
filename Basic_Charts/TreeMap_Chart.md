@@ -521,7 +521,7 @@ You can limit the maximum height of headers, which might be necessary in case yo
 chart.maxHeadersHeight("20%");
 ```
 
-The following sample demonstrates how to disable/enable headers and change their font settings and text:
+The following sample demonstrates how to disable/enable headers and change their font settings and text on hover:
 
 {sample :height 600}BCT\_Treemap\_Chart\_14{sample}
 
@@ -570,7 +570,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
-* `"alwaysShow"` (default)
+* `"alwaysShow"`
 * `"clip"`
 * `"drop"`
 
