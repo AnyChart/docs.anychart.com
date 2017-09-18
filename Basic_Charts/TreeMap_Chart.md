@@ -331,7 +331,7 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().colorLineSize(10);
+chart.colorRange().length("100%");
 ```
 
 {sample}BCT\_Treemap\_Chart\_09{sample}
@@ -356,7 +356,7 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().colorLineSize(10);
+chart.colorRange().length("100%");
 ```
 
 {sample}BCT\_Treemap\_Chart\_10{sample}
@@ -475,7 +475,7 @@ chart.tooltip().format(function(){
 The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
-/* ajust the font size of labels
+/* adjust the font size of labels
 according to the size of tiles */
 chart.labels().adjustFontSize(true);
 ```
@@ -488,13 +488,11 @@ chart.labels().adjustFontSize(true);
 
 By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states by using the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods. Plus, you can set the maximum height of headers.
 
-To disable headers, use {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with `false` or `null` as parameters. To enable headers, use the same methods with `true`. Note that {api:anychart.charts.TreeMap#headers}headers(){api} affects only the normal state, so you have to use both methods if you want to disable headers completely:
+To disable headers, use {api:anychart.charts.TreeMap#headers}headers(){api} with `false` as parameter. To enable headers, use the same methods with `true`.
 
 ```
-// disable headers in the normal state
+// disable headers
 chart.headers(false);
-// disable headers in the hover state
-chart.hoverHeaders(false);
 ```
 
 Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
@@ -604,7 +602,7 @@ var treeData = anychart.data.tree(data, "as-tree");
 chart = anychart.treeMap(treeData);
 ```
 
-If you want to drill down to a particular item in the data tree, call the anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
+If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
 
 ```
 /* locate an item in the data tree,

@@ -253,7 +253,6 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().colorLineSize(10);
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
@@ -281,7 +280,6 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().colorLineSize(10);
 ```
 {sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
 
@@ -311,7 +309,6 @@ chart.colorScale(customColorScale);
 
 // add a color range
 chart.colorRange().enabled(true);
-chart.colorRange().colorLineSize(10);
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_08{sample}
