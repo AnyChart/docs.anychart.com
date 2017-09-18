@@ -233,6 +233,8 @@ chart.sort("asc");
 
 ### Appearance
 
+#### All Tiles
+
 Here is a full list of methods used to configure visual settings that are available for the Treemap chart:
 
 *  {api:anychart.charts.Treemap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.Treemap#stroke}stroke(){api} set the fill, hatch fill, and stroke
@@ -241,7 +243,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
-In the followoing sample, there is a Treemap chart with some of the appearance settings configured:
+In the following sample, there is a Treemap chart with some of the appearance settings configured:
 
 ```
 // configure visual settings
@@ -253,6 +255,8 @@ chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
 {sample}BCT\_Treemap\_Chart\_07{sample}
+
+#### Individual Tiles
 
 It is also possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above:
 
@@ -474,6 +478,8 @@ chart.labels().adjustFontSize(true);
 
 ### Headers
 
+#### All Headers
+
 By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states by using the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods. Plus, you can set the maximum height of headers.
 
 To disable headers, call {api:anychart.charts.TreeMap#headers}headers(){api} and / or {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with `false` or `null` as parameters. To enable headers, use the same methods with `true`. Note that {api:anychart.charts.TreeMap#headers}headers(){api} affects only the normal state, so you have to use both methods if you want to disable headers completely:
@@ -512,6 +518,8 @@ chart.maxHeadersHeight("20%");
 The following sample demonstrates how to disable/enable headers and change their font settings and text:
 
 {sample :height 600}BCT\_Treemap\_Chart\_14{sample}
+
+#### Individual Headers
 
 Each header can be configured individually by adding the `header` field to the data:
 
@@ -571,6 +579,8 @@ chart.headersDisplayMode("alwaysShow");
 {sample :height 600}BCT\_Treemap\_Chart\_16{sample}
 
 ### Interactivity
+
+#### Drilling Down
 
 * [event listeners](../Common_Settings/Event_Listeners)
 * [context menu](../Common_Settings/UI_Controls/Context_Menu)
@@ -635,6 +645,8 @@ function printPath(path){
 ```
 drillchange
 ```
+
+#### Disabling
 
 ```
 // disable the drill-down option
