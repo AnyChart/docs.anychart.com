@@ -218,9 +218,15 @@ chart.hintOpacity(0.7);
 
 ### Sorting Order
 
-You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with `"asc"`, `"desc"`, or `"none"` as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
+By default, tiles of Treemaps are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
 
-Please note: if you add the `size` data field, tiles are sorted by size, not value.
+To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the three parameters:
+
+* `"asc"`
+* `"desc"`
+* `"none"`
+
+**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order of their listing in data.
 
 The sample below shows how to set the sorting mode:
 
