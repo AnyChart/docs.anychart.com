@@ -24,14 +24,16 @@
   // create custom context menu
   var menu = anychart.ui.contextMenu();
   menu.itemsProvider(function(){
+    var items = {'menu-item-1': {}, 'menu-item-2': {}, 'menu-item-3': {}}
+
     items['menu-item-1'].text = "Print chart";
     items['menu-item-1'].action = function(){
-      this.print();
+      this.chart.print();
     };
 
     items['menu-item-2'].text = "Save chart as image";
     items['menu-item-2'].action = function(){
-      this.saveAsPng();
+      this.chart.saveAsPng();
     };
 
     items['menu-item-3'].text = "Go to my page";
@@ -40,6 +42,12 @@
 
     return items;
   });
+
+  // hide default menu
+  chart.contextMenu(false);
+
+  // attach the new context menu to a chart
+  menu.attach(chart);  
 
   // set title
   chart.title("Basic Custom Context Menu");
