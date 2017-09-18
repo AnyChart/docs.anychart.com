@@ -129,8 +129,19 @@ The custom menu has no items by default, {api:anychart.ui.ContextMenu#itemsProvi
 // create custom context menu
 var menu = anychart.ui.contextMenu();
 menu.itemsProvider(function(){
-  items['my-menu-item-1'].text = "Print chart";
-  items['my-menu-item-2'].text = "Save chart as SVG";
+  items['menu-item-1'].text = "Print chart";
+  items['menu-item-1'].action = function(){
+    this.print();
+  };
+
+  items['menu-item-2'].text = "Save chart as image";
+  items['menu-item-2'].action = function(){
+    this.saveAsPng();
+  };
+
+  items['menu-item-3'].text = "Go to my page";
+  items['menu-item-3'].href = "http://docs.anychart.com";
+  items['menu-item-3'].target = "_blank";
 
   return items;
 });
@@ -163,6 +174,62 @@ Context Menu passes context (additional information) into the formatting functio
 
 If you want to tune the visual appearance of the Context Menu you can define desirable appearance in your CSS file for custom CSS class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}addClassName(){api} method.
 
-Here is a sample 
+## Menu items keys
 
-{sample}CS\_ContextMenu\_05{sample}
+The default context menu contains different set of items for different charts and depending on the state of a chart. 
+
+This section lists all keys and describes when the elements with such keys can appear, along with the default text:
+
+### Every chart
+
+- 'start-select-marquee'
+- 'select-marquee-separator'
+- 'export-as'
+  - 'export-as-png'
+  - 'export-as-jpg'
+  - 'export-as-pdf'
+  - 'export-as-svg'
+- 'exporting-separator'
+- 'save-data-as'
+  - 'save-as-text'
+  - 'save-as-xlsx'
+- 'share-with'меню)
+  - 'share-with-facebook'
+  - 'share-with-twitter'
+  - 'share-with-linkedin'
+  - 'share-with-pinterest'
+- 'print-chart'
+- 'about'
+
+### anychart.core.ChartWithOrthogonalScales:
+
+- 'excluded-point- {INDEX_OF_POINT} 
+ - 'excluded-point-10'
+ - 'excluded-points-separator'
+- 'include-all-points'
+- 'exclude-point'
+- 'excluded-points'
+- 'keep-only'
+- 'chart-with-series-point-separator'
+
+### Stock Charts
+
+- 'start-zoom-marquee'
+- 'start-select-marquee'
+- 'stock-specific-separator'
+
+### Treemap
+
+- 'drilldown-to'
+- 'drill-up'
+- 'drill-separator'
+
+## Localize the context menu
+
+You can change the text of context menu items using [Localization]() option.
+
+At the moment the following localization files localize context menu out-of-the-box:
+
+- ?
+
+If you want to do this yourself you can either do this from the code or by adding the messages with the keys listed in [Menu items keys](#menu_items_keys)

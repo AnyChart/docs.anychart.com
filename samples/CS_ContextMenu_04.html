@@ -24,8 +24,19 @@
   // create custom context menu
   var menu = anychart.ui.contextMenu();
   menu.itemsProvider(function(){
-    items['my-menu-item-1'].text = "Print chart";
-    items['my-menu-item-2'].text = "Save chart as SVG";
+    items['menu-item-1'].text = "Print chart";
+    items['menu-item-1'].action = function(){
+      this.print();
+    };
+
+    items['menu-item-2'].text = "Save chart as image";
+    items['menu-item-2'].action = function(){
+      this.saveAsPng();
+    };
+
+    items['menu-item-3'].text = "Go to my page";
+    items['menu-item-3'].href = "http://docs.anychart.com";
+    items['menu-item-3'].target = "_blank";
 
     return items;
   });

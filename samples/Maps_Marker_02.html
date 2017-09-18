@@ -19,7 +19,7 @@ anychart.onDocumentReady(function () {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
-    var dataSet_lat_long = anychart.data.set([
+    var data_lat_long = [
         {lat: -25.75, long: 122.18, name: "ACME Corp. branch #1", value: 321},
         {lat: -18.50, long: 135.24, name: "ACME Corp. branch #2", value: 293},
         {lat: -23.12, long: 148.62, name: "ACME Corp. branch #3", value: 312},
@@ -28,13 +28,13 @@ anychart.onDocumentReady(function () {
         {lat: -31.21, long: 116.44, name: "ACME Corp. branch #6", value: 215},
         {lat: -32.26, long: 151.44, name: "ACME Corp. branch #7", value: 219},
         {lat: -25.63, long: 152.37, name: "ACME Corp. branch #8", value: 179}
-    ]);
+    ];
 
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
     // Creates the marker series
-    var series_lat_long = australiaMap.marker(dataSet_lat_long);
+    var series_lat_long = australiaMap.marker(data_lat_long);
 
     // format the tooltips of the lat_long series    
     series_lat_long.tooltip().titleFormat("{%Name}");
