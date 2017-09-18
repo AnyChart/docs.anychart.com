@@ -218,7 +218,7 @@ chart.hintOpacity(0.7);
 
 ### Sorting Order
 
-You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with `"desc"`, `"asc"`, or `"none"` as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
+You can sort the tiles of a Treemap chart by their values in descending (default) or ascending order or disable sorting. Use the {api:anychart.charts.TreeMap#sort}sort(){api} method with `"asc"`, `"desc"`, or `"none"` as a parameter. When there is no sorting, tiles are arranged according to the order of their listing in data.
 
 Please note: if you add the `size` data field, tiles are sorted by size, not value.
 
@@ -527,7 +527,7 @@ Each header can be configured individually by adding the `header` field to the d
 // create data
 var data = [
   {name:     "Slavic Languages – Number of Speakers",
-   header: {
+   header: { 
      format: "{%name} ({%value} Total)",
      fontColor: "#990000",
      fontWeight: "bold",
@@ -562,14 +562,14 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-You can also configure the display mode of labels – call the labelsDisplayMode() method with one of the three parameters:
+You can also set the display mode of headers – call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
-"alwaysShow" – labels are always shown
-"clip" – labels are cropped to fit cells
-"drop" – too long labels are hidden
-The default display mode is "drop": a label is not shown if it does not fit the width of a cell.
+* `"alwaysShow"` – the text of headers is always shown
+* `"clip"`       – the text is cropped to fit the height of headers
+* `"drop"`       – the text is hidden if it does not fit the height
 
-The following sample shows how these modes work:
+The default mode is...
+In the following sample the display mode is set to "drop"...
 
 ```
 // set the display mode of headers

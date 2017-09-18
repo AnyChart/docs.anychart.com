@@ -137,7 +137,7 @@ pie2.startAngle(90);
 
 ### Sorting Order
 
-In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use **"asc"**, **"desc"**, or **"none"** as a parameter (there default sorting mode is "none"):
+In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use **"asc"**, **"desc"**, or **"none"** as a parameter (the default sorting mode is "none"):
 
 ```
 // set the sorting mode
