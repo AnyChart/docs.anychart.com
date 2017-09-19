@@ -28,7 +28,7 @@
     firstPlotYScale.comparisonMode("percent");
 
     // Set date for the changes zero of the series.
-    firstPlotYScale.compareWith(anychart.enums.ScaleCompareWithMode.SERIES_START);
+    firstPlotYScale.compareWith("series-start");
 
     var secondPlot = chart.plot(1);
     secondPlot.legend().titleFormat(function(){return "Compare With FIRST_VISIBLE"});    
@@ -39,7 +39,7 @@
     secondPlotYScale.comparisonMode("percent");
 
     // Set date for first visible point.
-    secondPlotYScale.compareWith(anychart.enums.ScaleCompareWithMode.FIRST_VISIBLE);
+    secondPlotYScale.compareWith("first-visible");
 
     var thirdPlot = chart.plot(2);
     thirdPlot.legend().titleFormat(function(){return "Compare With 24 of April 2008"});        

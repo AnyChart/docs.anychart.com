@@ -41,7 +41,7 @@ function createSeatMap(svg){
     // set the filling color
     seatMapSeries.fill("white");
     // allow labels to overlap each other
-    seatMapSeries.overlapMode("allowOverlap");
+    seatMapSeries.overlapMode("allow-overlap");
     seatMapSeries.tooltip(false);
 
     labels = seatMapSeries.labels();
@@ -52,7 +52,7 @@ function createSeatMap(svg){
     labels.offsetY(-13);
 
     // load svg-file without elements with no values
-    chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
+    chart.unboundRegions("hide");
 
     // set container id for the chart
     chart.container("container");

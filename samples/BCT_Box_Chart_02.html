@@ -45,9 +45,9 @@
   series1.selectStroke("#00cc99", 4, "10 5", "round");
 
   // configure the visual settings of the second series
-  series2.hatchFill("forwardDiagonal");
-  series2.hoverHatchFill("backwardDiagonal");
-  series2.selectHatchFill("diagonalCross");
+  series2.hatchFill("forward-diagonal");
+  series2.hoverHatchFill("backward-diagonal");
+  series2.selectHatchFill("diagonal-cross");
   series2.stroke("#000");
   series2.hoverStroke("#000", 2);
   series2.selectStroke("#000", 4);
@@ -56,7 +56,7 @@
   var title = chart.title("Box Chart: Appearance");
 
   // set the interactivity mode
-  chart.interactivity("byX");
+  chart.interactivity("by-x");
 
   // enable the legend
   chart.legend(true);

@@ -13,7 +13,7 @@
   chart = anychart.financial();
 
   // set the interactivity mode
-  chart.interactivity("byX");
+  chart.interactivity("by-x");
 
   // create the first series and set the data
   var series1 = chart.candlestick([
@@ -49,10 +49,10 @@
   series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
 
   // configure the visual settings of the second series
-  series2.fallingHatchFill("forwardDiagonal");
-  series2.risingHatchFill("backwardDiagonal");
-  series2.hoverFallingHatchFill("diagonalCross");
-  series2.hoverRisingHatchFill("diagonalCross");
+  series2.fallingHatchFill("forward-diagonal");
+  series2.risingHatchFill("backward-diagonal");
+  series2.hoverFallingHatchFill("diagonal-cross");
+  series2.hoverRisingHatchFill("diagonal-cross");
   series2.selectFallingHatchFill("percent20");
   series2.selectRisingHatchFill("percent20");
 

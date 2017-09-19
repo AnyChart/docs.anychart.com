@@ -14,7 +14,7 @@
     {"name": "Node 3", "id": "3", "value": "10000"},
     {"name": "Node 4", "id": "4", "value": "12000"},
     {"name": "Node 5", "id": "5", "value": "9000"}
-  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+  ], "as-table");
 
   stage = anychart.graphics.create("container");
 
@@ -93,7 +93,7 @@
       var currentItem = traverser.current();
 
       // get height of the item
-      var currentHeight = currentItem.get(anychart.enums.GanttDataFields.ROW_HEIGHT);
+      var currentHeight = currentItem.get("rowHeight");
 
       // if item height is undefined
       if (currentHeight !== void 0){

@@ -35,7 +35,7 @@
 
 		// ticks settings
     axis.ticks()
-        .type("trapezoid")
+        .type("trapezium")
         .length(8);
 
 		// minor ticks settings
@@ -57,7 +57,7 @@
 
 		// second ticks settings
     axis_1.ticks()
-        .type("trapezoid")
+        .type("trapezium")
         .length(8);
 
 		// second minor ticks settings
@@ -80,14 +80,14 @@
         .axisIndex(1)
         .dataIndex(1)
         .size(7)
-        .type("triangledown")
+        .type("triangle-down")
         .position("outside")
         .radius(50);
     
 		// bar
     gauge.bar(0)
         .axisIndex(1)
-        .position("i")
+        .position("inside")
         .dataIndex(1)
         .width(3)
         .radius(50)

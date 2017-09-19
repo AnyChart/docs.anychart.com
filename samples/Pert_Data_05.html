@@ -19,13 +19,13 @@
 
     // set the chart
     chart = anychart.pert();
-    chart.data(data, "asTable");
+    chart.data(data, "as-table");
 
     chart.listen("chartDraw", function(){
         // get project duration
-        var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+        var duration = chart.getStat("pertChartProjectDuration");
         // get project deviation
-        var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
+        var deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
         chart.title("Duration: " + duration.toFixed(2) + "\n Deviation: " + deviation.toFixed(2));
     })
 

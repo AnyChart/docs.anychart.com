@@ -36,7 +36,7 @@
 
 		// ticks settings
     axis.ticks()
-        .type("trapezoid")
+        .type("trapezium")
         .fill("white")
         .length(9);
 
@@ -66,7 +66,7 @@
         
 		// second ticks settings
     axis_1.ticks()
-        .type("trapezoid")
+        .type("trapezium")
         .fill("white")
         .length(15);
 
@@ -102,14 +102,14 @@
         .hatchFill({type:"verticalbrick"})
         .stroke("null")
         .size(7)
-        .type("triangledown")
+        .type("triangle-down")
         .position("outside")
         .radius(55);
     
     // bar
     gauge.bar(0)
         .axisIndex(1)
-        .position("i")
+        .position("inside")
         .fill("white")
         .hatchFill({type:"verticalbrick"})
         .stroke(null)
@@ -135,7 +135,7 @@
       from: 0,
       to: 120,
       fill: {keys: ["white", "#888888", "#333333" , "black"], angle: -90},// remove angle after resolving the ticket
-      position: "i",
+      position: "inside",
       radius: 100,
       endSize: "3%",
       startSize:"3%",

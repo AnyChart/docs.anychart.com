@@ -24,16 +24,16 @@
       "Samples"
     ],[
       "textDirection()",
-      "This text has Left to Right direction.",                 // table.getCell(1,1).content().textDirection( anychart.graphics.vector.Text.Direction.LTR );
-      "This text has Right to Left direction."                  // table.getCell(1,2).content().textDirection( anychart.graphics.vector.Text.Direction.RTL );
+      "This text has Left to Right direction.",                 // table.getCell(1,1).content().textDirection( "ltr" );
+      "This text has Right to Left direction."                  // table.getCell(1,2).content().textDirection( "rtl" );
     ],[
       "fontDecoration()",
-      "This text was decorated with the line above",            // table.getCell(2,1).content().fontDecoration( anychart.graphics.vector.Text.Decoration.OVERLINE );
-      "This text was decorated with the line below the text"    // table.getCell(2,2).content().fontDecoration( anychart.graphics.vector.Text.Decoration.UNDERLINE );
+      "This text was decorated with the line above",            // table.getCell(2,1).content().fontDecoration( "overline" );
+      "This text was decorated with the line below the text"    // table.getCell(2,2).content().fontDecoration( "underline" );
     ],[
       "fontVariant()",
-      "Text with default fontVariant",                          // table.getCell(3,1).content().fontVariant( anychart.graphics.vector.Text.FontVariant.NORMAL );
-      "This font is small cup"                                  // table.getCell(3,2).content().fontVariant( anychart.graphics.vector.Text.FontVariant.SMALL_CAP );
+      "Text with default fontVariant",                          // table.getCell(3,1).content().fontVariant( "normal" );
+      "This font is small cup"                                  // table.getCell(3,2).content().fontVariant( "small-caps" );
     ],[
       "fontWeight()",
       "this text has 700 fontWeight",                           // table.getCell(4,1).content().fontWeight(700);
@@ -54,7 +54,7 @@
         .text("This title has 25px height.")                    // set title text
         .padding(0)                                             // disable padding 
         .fontWeight(400)                                        // set font weight
-        .vAlign("center")                                       // position text at the middle of the title
+        .vAlign("middle")                                       // position text at the middle of the title
         .background({fill: null, stroke: "#ccc"})               // set border color
     ],[
       "letterSpacing()",
@@ -111,7 +111,7 @@
       "The overflowing text clips by the limits of the cell. "
       +"You can see the text reaching cell border and clips "
       +"by the cell border, if there isn\'t enough space for "
-      +"another line",                                          // table.getCell(13,1).content().textOverflow(anychart.graphics.vector.Text.TextOverflow.CLIP);
+      +"another line",                                          // table.getCell(13,1).content().textOverflow("");
       "This text has \'Ellipsis\' value for textOverflow()."
       +"Overflowing text replaced with Ellipsis just before it"
       +" reaches the cell border and there is no space for "
@@ -129,7 +129,7 @@
       +"moment it reaches the cell border"                     // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.WordBreak.NORMAL);
     ],[
       "vAlign()",
-      "This text align to the center",                          // table.getCell(15,1).content().vAlign("center");
+      "This text align to the center",                          // table.getCell(15,1).content().vAlign("middle");
       "This text align to the bottom"                           // table.getCell(15,2).content().vAlign("bottom");
     ],[
       "width()",
@@ -155,8 +155,8 @@
   table.getRow(12).height(45);
   table.getCol(0).width(100);
   table.cellBorder("#B8B8B8");
-  table.getCell(0,0).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
-  table.getCell(0,1).colSpan(2).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
+  table.getCell(0,0).hAlign("center").vAlign("middle").fill("#f0f0f0").fontWeight(900);
+  table.getCell(0,1).colSpan(2).hAlign("center").vAlign("middle").fill("#f0f0f0").fontWeight(900);
   
   table.getCell(1,1).textDirection("ltr");
   table.getCell(1,2).textDirection("rtl");
@@ -189,7 +189,7 @@
   table.getCell(14,2).wordWrap("normal");
   table.getCell(15,1).wordBreak("break-all");
   table.getCell(15,2).wordBreak("normal");
-  table.getCell(16,1).vAlign("center");
+  table.getCell(16,1).vAlign("middle");
   table.getCell(16,2).vAlign("bottom");
   
   stage.height(680);

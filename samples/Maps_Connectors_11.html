@@ -28,7 +28,7 @@
   // create data set
   var data = anychart.data.set([    
       {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
+      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"left-top"}},
       {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
   ]);
   // create map chart
@@ -64,17 +64,17 @@
   var markers = series.markers();
   markers.position("end");
   // setting the marker type
-  markers.type(anychart.enums.MarkerType.ARROWHEAD);
+  markers.type("arrowhead");
   markers.size(15);
 
   // setting the anchor
-  markers.anchor("leftCenter");
+  markers.anchor("left-center");
 
   // set the labels
   var labels = series.labels();
   labels.enabled(true);
   labels.position("end");
-  labels.anchor("leftBottom");
+  labels.anchor("left-bottom");
   labels.format("To {%to}");
 
   // set container id for the chart

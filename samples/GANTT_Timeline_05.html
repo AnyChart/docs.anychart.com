@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
     // create data tree on our data
-    var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+    var treeData = anychart.data.tree(getData(), "as-table");
 
     // create project gantt chart
     chart = anychart.ganttProject();
@@ -43,7 +43,7 @@
     thirdColumn.width(70);
     thirdColumn.cellTextSettings().hAlign('right');
     thirdColumn.format(function (item) {
-        var actStart = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
+        var actStart = item.get("actualStart");
         var date = new Date(actStart || item.meta('autoStart'));
         var month = date.getUTCMonth() + 1;
         var strMonth = (month > 9) ? month : '0' + month;
@@ -58,7 +58,7 @@
     fourthColumn.width(80);
     fourthColumn.cellTextSettings().hAlign('right');
     fourthColumn.format(function (item) {
-        var actEnd = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
+        var actEnd = item.get("actualEnd");
         var date = new Date(actEnd || item.meta('autoEnd'));
         var month = date.getUTCMonth() + 1;
         var strMonth = (month > 9) ? month : '0' + month;
@@ -74,12 +74,12 @@
 
     var tl = chart.getTimeline();
     // creating a line marker
-    tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
+    tl.lineMarker(0).value("current");
     // creating a text marker
-    tl.textMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT).text('TODAY').fontSize(20);
+    tl.textMarker(0).value("current").text('TODAY').fontSize(20);
     // creating a range marker
-    tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
-    tl.rangeMarker(1).from(now - 7 * day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
+    tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to("end");
+    tl.rangeMarker(1).from(now - 7 * day).to("current");
 
     // set colors for milestones
     tl.milestoneFill("#4A148C");

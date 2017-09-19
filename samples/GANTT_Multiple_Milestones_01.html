@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function(){
 
   // data tree settings
-  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(data, "as-table");
 
   // chart type
   chart = anychart.ganttResource();
@@ -47,7 +47,7 @@ var data = [
     'name': 'Phase 1 - Strategic Plan',
     'periods': [{"id": "1_1", "start": Date.UTC(2007, 1, 13), "end": Date.UTC(2007, 2, 1)}],
     'markers': [
-      {'value': Date.UTC(2007, 1, 14), 'type': "diagonalCross"},
+      {'value': Date.UTC(2007, 1, 14), 'type': "diagonal-cross"},
       {'value': Date.UTC(2007, 1, 20)}
     ]
   },
@@ -72,7 +72,7 @@ var data = [
     "periods": [
       {"id": "4_1", "start": Date.UTC(2007, 3, 15), "end": Date.UTC(2007, 4, 1)}],
     'markers': [
-      {'value': Date.UTC(2007, 3, 21), 'type': "diagonalCross"}
+      {'value': Date.UTC(2007, 3, 21), 'type': "diagonal-cross"}
     ]
   },
   {

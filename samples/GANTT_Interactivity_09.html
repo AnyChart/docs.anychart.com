@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function(){
 
 	// create data tree on our data
-	var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+	var treeData = anychart.data.tree(getData(), "as-table");
 
 	// create project gantt chart
 	chart = anychart.ganttProject();

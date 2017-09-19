@@ -38,17 +38,17 @@
   tooltip.positionMode("point");
 
   var tooltip1 = series1.tooltip();
-  tooltip1.anchor("bottomCenter");
+  tooltip1.anchor("center-bottom");
   tooltip1.title(false);
   tooltip1.separator(false);
 
   var tooltip2 = series2.tooltip();
-  tooltip2.anchor("bottomCenter");
+  tooltip2.anchor("center-bottom");
   tooltip2.title(false);
   tooltip2.separator(false);
 
   var interactivity = chart.interactivity();
-  interactivity.hoverMode("byX");
+  interactivity.hoverMode("by-x");
   interactivity.selectionMode("none");
 
   var crosshair = chart.crosshair();

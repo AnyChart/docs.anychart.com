@@ -81,7 +81,7 @@
       .bottom("2 #B8B8B8");
   
   // visual settings for text in table
-  table.vAlign("center").hAlign("center").fontWeight(600).fontSize(12);
+  table.vAlign("middle").hAlign("center").fontWeight(600).fontSize(12);
   
   // set table container and initiate draw
   table.container(stage).draw();
@@ -168,7 +168,7 @@
   legend.title().enabled(false);
   legend.titleSeparator().enabled(false);
   legend.paginator().enabled(false);
-  legend.fontSize("10px").itemsLayout("horizontal").iconTextSpacing(0).align("right").position("bottom").padding(0).margin(0).itemsSpacing(0);
+  legend.fontSize("10px").itemsLayout("horizontal").iconTextSpacing(0).align("right").position("center-bottom").padding(0).margin(0).itemsSpacing(0);
   legend.parentBounds(anychart.math.rect(0, 15, stage.width(),15));
   legend.background().enabled(false);
   legend.container(stage).draw();

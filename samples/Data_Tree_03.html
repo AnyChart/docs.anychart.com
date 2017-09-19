@@ -15,7 +15,7 @@
     {"name": "Child Node 1", parent: 2, "id": "3"},
     {"name": "Child Node 2", parent: 2, "id": "4"},
     {"name": "Node 2", id: "5"}
-  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+  ], "as-table");
 
   // create stage
   stage = anychart.graphics.create("container");
@@ -84,7 +84,7 @@
 
   function addPoint(){
     // add data
-    tree.addData(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+    tree.addData(newData, "as-table");
     // remove button
     container.removeChild(triggerButton);
   }

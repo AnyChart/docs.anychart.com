@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   // create data tree on our data
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(getData(), "as-table");
 
   // create project gantt chart
   chart = anychart.ganttProject();
@@ -50,7 +50,7 @@
 
 
   function thirdColumnformat(item) {
-  var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
+  var field = item.get("actualStart");
 
     var actualStart = new Date(field);
     return formatDate(actualStart.getUTCMonth() + 1) + "/" +
@@ -60,7 +60,7 @@
 
 // do pretty formatting for dates in fourth column
 function fourthColumnformat(item) {
-  var field = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
+  var field = item.get("actualEnd");
     var actualEnd = new Date(field);
     return formatDate((actualEnd.getUTCMonth() + 1)) + "/" +
         formatDate(actualEnd.getUTCDate()) + "/" + actualEnd.getUTCFullYear();

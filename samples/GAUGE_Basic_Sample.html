@@ -30,7 +30,7 @@
   axis.ticks()
       .fill("white")
       .stroke("#888")
-      .type("trapezoid")
+      .type("trapezium")
       .length(20);
  
   // configure minor ticks on the axis
@@ -38,12 +38,12 @@
       .enabled(true)
       .fill("white")
       .stroke("#ccc")
-      .type("trapezoid")
+      .type("trapezium")
       .length(10);
  
   // configure the bar presenting data
   gauge.bar(0)
-      .position("i")
+      .position("inside")
       .fill("#F0673B .9")
       .stroke("#F0673B")
       .radius(80);

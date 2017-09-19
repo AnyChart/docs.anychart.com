@@ -14,7 +14,7 @@
     {"name": "Child Node 1", "parent": "2", "id": "3", "year 2004": "16000", "year 2005": "18000"},
     {"name": "Child Node 2", "parent": "2", "id": "4", "year 2004": "15000", "year 2005": "11000"},
     {"name": "Node 2", "id": "5", "year 2004": "14000", "year 2005": "9000"}
-  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+  ], "as-table");
 
   stage = anychart.graphics.create("container");
 
@@ -68,7 +68,7 @@
       var currentItem = traverser.current();
 
       // get height of the item
-      var currentHeight = currentItem.get(anychart.enums.GanttDataFields.ROW_HEIGHT);
+      var currentHeight = currentItem.get("rowHeight");
 
       // if item height is undefined
       if (currentHeight !== void 0){

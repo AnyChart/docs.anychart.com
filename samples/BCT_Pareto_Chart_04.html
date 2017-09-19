@@ -22,15 +22,15 @@
 
 	// line series enable labels
 	chart.getSeries(0).labels(true);
-	chart.getSeries(0).labels().position("Center");
-	chart.getSeries(0).labels().anchor("Center");
+	chart.getSeries(0).labels().position("center");
+	chart.getSeries(0).labels().anchor("center");
 
 	// columns series enable labels
 	chart.getSeries(1).labels(false);
 	chart.getSeries(1).selectLabels().enabled(true);
-	chart.getSeries(1).selectLabels().anchor("bottom");
+	chart.getSeries(1).selectLabels().anchor("center-bottom");
 	chart.getSeries(1).hoverLabels(true);
-	chart.getSeries(1).hoverLabels().anchor("bottom");
+	chart.getSeries(1).hoverLabels().anchor("center-bottom");
 	chart.getSeries(1).hoverLabels().format("{%Value}%");
 
 	// set chart title text settings

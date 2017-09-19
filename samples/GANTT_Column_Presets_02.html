@@ -16,17 +16,17 @@
     {"id": "3", "name": "Identify available skills, information and support", "progressValue": "0", "actualStart": 951494400000},
     {"id": "4", "name": "Decide whether to proceed", "progressValue": "0", "actualStart": 951609600000}
   ];
-  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(data, "as-table");
 
   dataGrid = anychart.standalones.dataGrid();
   dataGrid.data(treeData);
   var column0 = dataGrid.column(0);
   column0.title("Raw Data");
-  column0.setColumnFormat("actualStart", "directNumbering");
+  column0.setColumnFormat("actualStart", "direct-numbering");
   column0.width(100);
   var column1 = dataGrid.column(1);
-  column1.title("dateDmyDots");
-  column1.setColumnFormat("actualStart", "dateDmyDots");
+  column1.title("date-dmy-dots");
+  column1.setColumnFormat("actualStart", "date-dmy-dots");
   column1.width(150);
 
   dataGrid.tooltip(false);

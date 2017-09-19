@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   // create data tree on our data
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(getData(), "as-table");
 
   // create resource gantt chart
   chart = anychart.ganttResource();
@@ -32,7 +32,7 @@
 }
 
 function customformat(item) {
-  var periods = item.get(anychart.enums.GanttDataFields.PERIODS);
+  var periods = item.get("periods");
   if (periods) {
       var startTime = new Date(periods[0].start);
     return formatDate(startTime.getUTCMonth() + 1) + "/" +

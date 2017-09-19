@@ -26,13 +26,13 @@
     chart.milestones().size(50);
 
     // set chart data
-    chart.data(data, "asTable");
+    chart.data(data, "as-table");
 
     // set the title of the chart
     chart.title("PERT Chart");
     
     // sets selection mode for single selection
-    chart.interactivity().selectionMode("singleSelect");
+    chart.interactivity().selectionMode("single-select");
 
     // pointsselect event
     chart.listen("pointsselect", function(e){

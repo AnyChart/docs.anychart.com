@@ -11,7 +11,7 @@
     var newData = getNewData();
 
     //create data tree on our data
-    var treeData = anychart.data.tree(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+    var treeData = anychart.data.tree(newData, "as-table");
 
     //create project gantt chart
     chart = anychart.ganttProject();
@@ -48,7 +48,7 @@
     //--------------------------------------------------
     // External events
     //--------------------------------------------------
-    chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
+    chart.listen("rowClick", function(e) {
       e.preventDefault();
     });
 

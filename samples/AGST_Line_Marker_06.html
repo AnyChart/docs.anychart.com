@@ -158,7 +158,7 @@
   var hoverMarkers = series.hoverMarkers();
   hoverMarkers.size(3);
 
-  chart.interactivity("byX");
+  chart.interactivity("by-x");
 
   var nearFuture = chart.lineMarker();
   nearFuture.value(Date.UTC(2016, 1, 01));
@@ -174,7 +174,7 @@
   text.axis(chart.xAxis());
   text.text("Near Future");
   text.align("top");
-  text.anchor("topLeft");
+  text.anchor("left-top");
   text.offsetX(3);
   text.rotation(0);
 
@@ -183,7 +183,7 @@
   futureText.axis(chart.xAxis());
   futureText.text("Future");
   futureText.align("top");
-  futureText.anchor("topLeft");
+  futureText.anchor("left-top");
   futureText.offsetX(3);
   futureText.rotation(0);
 

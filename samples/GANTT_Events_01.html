@@ -11,7 +11,7 @@
   var newData = getNewData();
 
   //create data tree on our data
-  var treeData = anychart.data.tree(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(newData, "as-table");
 
   //create project gantt chart
   chart = anychart.ganttProject();
@@ -48,8 +48,8 @@
   //--------------------------------------------------
   // External events
   //--------------------------------------------------
-  chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
-    msg = anychart.enums.EventType.ROW_CLICK + ': ' + e['item'].get('name');   // create a string from the information got by using listeners that will be placed in the Chart Title
+  chart.listen("rowClick", function(e) {
+    msg = "rowClick" + ': ' + e['item'].get('name');   // create a string from the information got by using listeners that will be placed in the Chart Title
     chart.title(msg);
   });
 

@@ -38,7 +38,7 @@
   // ticks settings
   var axisTicks = gauge.axis().ticks();
   axisTicks.enabled(true);
-  axisTicks.type("trapezoid");
+  axisTicks.type("trapezium");
   axisTicks.length(8);
 
   // minor ticks settings
@@ -49,7 +49,7 @@
   // bar
   var bar = gauge.bar();
   bar.width(3);
-  bar.position("i");
+  bar.position("inside");
   bar.radius(100);
       
   // draw the chart
