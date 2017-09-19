@@ -6,10 +6,10 @@ AnyChart's engine calculates a great number of values, which can be obtained wit
 
 ## Basics
 
-To obtain statistical data from a chart, the {api:anychart.core.Chart#getStat}getStat(){api} method with a field name as a parameter is called. Available field names can be found in {api:anychart.enums.Statistics}anychart.enums.Statistics{api} – you can use their name or string representation:
+To obtain statistical data from a chart, the {api:anychart.core.Chart#getStat}getStat(){api} method with a field name as a parameter is called. Available field names can be found in {api:anychart.enums.Statistics}anychart.enums.Statistics{api}:
 
 ```
-var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
+var pointsCount = chart.getStat("dataPlotPointCount");
 var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
 ```
 

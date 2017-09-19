@@ -135,9 +135,9 @@ Here is a sample of a legend that can be moved around:
 
 The {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method controls how the items of a legend are placed. Possible values are listed in the {api:anychart.enums.LegendLayout}anychart.enums.LegendLayout{api} and they are:
 - "horizontal",
-- "horizontalExpandable",
+- "horizontal-expandable",
 - "vertical",
-- "verticalExpandable".
+- "vertical-expandable".
 
 The legend layout mode works in conjunction with [position](#positioning) and [size](#size) settings. 
 
@@ -256,11 +256,10 @@ Here is a sample with defaults for legend set to show series icons with markers:
 
 ### Mouse Cursor
 
-Use the {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} method to set the type of cursor that is shown when mouse moves over the legend items. You can use string values or {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
+Use the {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} method to set the type of cursor that is shown when mouse moves over the legend items. You can use string values from {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
 
 ```
 var legend = chart.legend();
-legend.hoverCursor(anychart.enums.Cursor.POINTER); // sets hover cursor using enum
 legend.hoverCursor("pointer"); // sets hover cursor using a string
 ```
 

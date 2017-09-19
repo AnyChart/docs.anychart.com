@@ -64,7 +64,7 @@ To listen an event use the code below:
 
 ```
 //choose an event type from table above:
-chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
+chart.listen("rowClick", function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
     return msg;
@@ -166,7 +166,7 @@ event.preventDefault();
 In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
 ```
-chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
+chart.listen("rowClick", function(e) {
     e.preventDefault();
 });
 ```

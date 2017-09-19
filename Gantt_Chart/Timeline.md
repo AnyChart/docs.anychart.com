@@ -36,24 +36,24 @@ First of all, let's create 2 line markers: one showing the current date and seco
 ```
 // create linemarkers
 var tl = chart.getTimeline();
-tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
+tl.lineMarker(0).value("current");
 tl.lineMarker(1).value(now + 5*day);
 ```
 
 {sample :width 825 :height 230 }GANTT\_Timeline\_01{sample}
 
-As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api:anychart.core.axisMarkers.Line#stroke}.stroke(){api} method.
+As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api:anychart.core.axisMarkers.Line#stroke}stroke(){api} method.
 It is used absolutely the same way as any other line settings with the
-{api:anychart.core.axisMarkers.Line#stroke}.stroke(){api} method.
+{api:anychart.core.axisMarkers.Line#stroke}stroke(){api} method.
 
 Now, look at the sample with a textMarker showing the planned finish date and a rangeMarker showing the remaining time.
 
 ```
 // creating a text marker
-tl.textMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
+tl.textMarker(0).value("current");
 // creating range markers
-tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
-tl.rangeMarker(1).from(now - 7*day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
+tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to("end");
+tl.rangeMarker(1).from(now - 7*day).to("current");
 ```
 
 {sample :width 825 :height 300 }GANTT\_Timeline\_02{sample}
@@ -62,27 +62,23 @@ You might have noticed, that we used values of enumerated type in those samples 
 
 ### Enums
 
-The following Enums can be used to make timeling configuration easier:
+The following strings can be used to make timeline configuration easier:
 
 <table class="dtTABLE">
 <tbody>
 <tr>
-<th><b>Enum</b></th>
 <th><b>String value</b></th>
 <th><b>Value returned</b></th>
 </tr>
 <tr>
-<td>anychart.enums.GanttDateTimeMarkers.START</td>
 <td>"start"</td>
 <td>The first time point in the Gantt diagram timeline.</td>
 </tr>
 <tr>
-<td>anychart.enums.GanttDateTimeMarkers.CURRENT</td>
 <td>"current"</td>
 <td>The current time point in the Gantt diagram timeline.</td>
 </tr>
 <tr>
-<td>anychart.enums.GanttDateTimeMarkers.END</td>
 <td>"end"</td>
 <td>The last time point in the Gantt diagram timeline.</td>
 </tr>

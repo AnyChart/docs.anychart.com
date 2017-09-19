@@ -345,7 +345,7 @@ chart.textSpacing(15);
 
 ### Mode
 
-There are two modes of positioning elements on a Tag Cloud: **spiral** (default) and **rectangle**. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either *"rect"* or *"spiral"* as a parameter – see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
+There are two modes of positioning elements on a Tag Cloud: `'spiral'` (default) and `'rectangle'`. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either `'rect'` or `'spiral'` as a parameter – see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
 
 ```
 // set the mode of the tag cloud

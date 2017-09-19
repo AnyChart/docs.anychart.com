@@ -103,8 +103,8 @@ Here is how you can put labels in the center of columns:
 ```
 // set labels position
 labels = series.labels();
-labels.position("Center");
-labels.anchor("Center");
+labels.position("center");
+labels.anchor("center");
 ```
 
 And here is a sample of rotated labels put on top of columns:
@@ -113,8 +113,8 @@ And here is a sample of rotated labels put on top of columns:
 // set labels position
 labels = chart.getSeries(0).labels();
 labels.enabled(true);
-labels.position("TopCenter");
-labels.anchor("Left");
+labels.position("center-top");
+labels.anchor("left");
 labels.offsetY(-10);
 labels.rotation(-90);
 ```

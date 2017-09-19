@@ -111,15 +111,18 @@ Some maps contain tiny regions, so it is just necessary to have an opportunity t
 
 ### Map
 
-In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "anychart.enums.LabelsOverlapMode.NO\_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW\_OVERLAP" will allow it. Look at the next sample.
+In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "no-overlap" will disable overlapping labels and "allow-overlap" will allow it. Look at the next sample.
 
 ```
 map.overlapMode(false);
 ```
 
+or
+
 ```
-map.overlapMode("noOverlap");
+map.overlapMode("no-overlap");
 ```
+
 Both code samples do the same: disable labels that overlap each other.
 
 {sample}Maps\_Labels\_04{sample}
@@ -134,7 +137,7 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 // set the overlapping mode for the map
 map.overlapMode(false);
 // enable overlapping for the series
-series_obama.overlapMode("allowOverlap");
+series_obama.overlapMode("allow-overlap");
 ```
 
 {sample}Maps\_Labels\_05{sample}

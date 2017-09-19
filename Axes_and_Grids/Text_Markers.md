@@ -31,8 +31,6 @@ Sample below shows several variants of Text Marker usage: marking up values (Hig
 
 You can configure text marker placement, font, anchor and text of any custom text using {api:anychart.core.axisMarkers.Text#value}value(){api}, {api:anychart.core.axisMarkers.Text#align}align(){api}, {api:anychart.core.axisMarkers.Text#anchor}anchor(){api}, {api:anychart.graphics.vector.Text#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, {api:anychart.core.axisMarkers.Text#text}text(){api} methods.
 
-Markers placement is controlled using {api:anychart.enums.Align}align(){api} parameter.
-
 ```
 var textMarker = chart.textMarker();
 textMarker.axis(chart.yAxis());

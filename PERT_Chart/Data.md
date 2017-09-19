@@ -111,10 +111,10 @@ Use the {api:anychart.charts.Pert#getStat}getStat(){api} method to obtain and se
 chart = anychart.pert();
 
 // get project duration
-var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+var duration = chart.getStat("pertChartProjectDuration");
 
 // get project deviation
-var deviation = chart.getStat(anychart.enums.Statistics.PERT_CHART_CRITICAL_PATH_STANDARD_DEVIATION);
+var deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
 ```
 
 {sample :width 827 :height 300}Pert\_Data\_05{sample}

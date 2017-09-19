@@ -102,7 +102,7 @@ AnyChart provides several methods for saving current chart's data. Output format
 With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you export data and file name:
 
 ```
-saveAsCsv({chartDataExportMode: anychart.enums.ChartDataExportMode.RAW, csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
+saveAsCsv({chartDataExportMode: "raw", csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
 ```
 
 ### Excel
@@ -111,7 +111,7 @@ With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you e
 
 ```
 // initiate saving chart's data in Xlsx format
-chart.saveAsXlsx({chartDataExportMode: anychart.enums.ChartDataExportMode.SPECIFIC, filename: "excel"});
+chart.saveAsXlsx({chartDataExportMode: 'specific', filename: "excel"});
 ```
 
 To launch the export you need to use these methods as shown:

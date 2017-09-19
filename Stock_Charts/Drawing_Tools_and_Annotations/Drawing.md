@@ -75,14 +75,14 @@ To forbid or allow editing an annotation, use the {api:anychart.core.annotations
 When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
 
 <table>
-<tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
-<tr><td>ANNOTATION\_DRAWING\_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
-<tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
-<tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
+<tr><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
+<tr><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 
-<tr><td>ANNOTATION\_CHANGE\_START</td><td>annotationChangeStart</td><td>Event that occurs right after the mouseDown event.</td></tr>
-<tr><td>ANNOTATION_CHANGE</td><td>annotationChange</td><td>Event that occurs while dragging.</td></tr>
-<tr><td>ANNOTATION\_CHANGE\_FINISH</td><td>annotationChangeFinish</td><td>Event that occurs right after the mouseUp event.</td></tr>
+<tr><td>annotationChangeStart</td><td>Event that occurs right after the mouseDown event.</td></tr>
+<tr><td>annotationChange</td><td>Event that occurs while dragging.</td></tr>
+<tr><td>annotationChangeFinish</td><td>Event that occurs right after the mouseUp event.</td></tr>
 </table>
 
 Please note that you should attach listeners to the chart object.

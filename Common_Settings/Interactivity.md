@@ -256,7 +256,7 @@ Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee{api} and 
 
 Use the {api:anychart.core.Chart#selectMarqueeFill}{api} and {api:anychart.core.Chart#selectMarqueeStroke}{api} methods to configure marqee appearance.
 
-Handle {api:anychart.enums.EventType}SELECT\_MARQUEE\_START{api},  {api:anychart.enums.EventType}SELECT\_MARQUEE\_CHANGE{api} and {api:anychart.enums.EventType}SELECT\_MARQUEE\_FINISH{api} events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
+Handle `"selectMarqueeStart"`, `'selectMarqueeChange'` and `'selectMarqueeFinish'` events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
 
 ### Stock 
 

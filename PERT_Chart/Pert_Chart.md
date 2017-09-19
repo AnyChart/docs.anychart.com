@@ -134,7 +134,7 @@ This method calculates the duration for each task separately, and the {api:anych
 
 ```
 // get project duration
-var duration = chart.getStat(anychart.enums.Statistics.PERT_CHART_PROJECT_DURATION);
+var duration = chart.getStat("pertChartProjectDuration");
 
 // set the chart title to show the duration
 chart.title("The duration equals " + duration);

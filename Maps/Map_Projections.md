@@ -24,14 +24,9 @@ var map = anychart.map();
 map.crs("august");
 ```
 
-Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}.crs(){api} method. Here is how the projection can be set using {api:anychart.enums.MapProjections}enum{api}:
+Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}crs(){api} method. Possible string values for the projection are listed in {api:anychart.enums.MapProjections}anychart.enums.MapProjections{api} enum.
 
-```
-var map = anychart.map();
-map.crs(anychart.enums.MapProjections.AUGUST);
-```
-
-##Available Projections
+## Available Projections
 
 As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
 

@@ -164,7 +164,7 @@ ellipse.yScale(extraYScale);
 
 ## Drawing
 
-To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. To learn more, see this article: [Drawing](Drawing).
+To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one from the {api:anychart.enums.AnnotationTypes}Annotation Types{api} enum. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations

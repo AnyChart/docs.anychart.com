@@ -38,10 +38,10 @@ AnyChart Stock supports the "Comparison Mode" scale - a very important feature f
 To enable this mode use {api:anychart.scales.Linear#comparisonMode}comparisonMode(){api} method that accepts 
 values of {api:anychart.enums.ScaleComparisonMode}anychart.enums.ScaleComparisonMode{api} enum as a parameter value. Possible values:
 
-<table><tr><th>Mode</th><th>Enum Constant</th><th>Value</th><tr>
-<tr><td>No changes, values displayed</td><td>anychart.enums.ScaleComparisonMode.NONE</td><td>"none"</td></tr>
-<tr><td>Percent Changes Displayed</td><td>anychart.enums.ScaleComparisonMode.PERCENT</td><td>"percent"</td></tr>
-<tr><td>Value Changes Displayes</td><td>anychart.enums.ScaleComparisonMode.VALUE</td><td>"value"</td></tr>
+<table><tr><th>Mode</th><th>Value</th><tr>
+<tr><td>No changes, values displayed</td><td>"none"</td></tr>
+<tr><td>Percent Changes Displayed</td><td>"percent"</td></tr>
+<tr><td>Value Changes Displayes</td><td>"value"</td></tr>
 </table>
 
 ### Values

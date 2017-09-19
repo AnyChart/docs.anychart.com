@@ -207,7 +207,7 @@ gauge.cap()
 ```
 {sample}GAUGE\_Circular\_07{sample}
 
-##Label
+## Label
 
 Like with any other chart type, we can set the chart label and adjust it. Let our speedometer be for the car of Albany brand:
 
@@ -225,11 +225,11 @@ gauge.label()
     .zIndex(10);
 ```
 
-Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}anchor(){api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}width(){api} and {api:anychart.core.ui.Label#height}height(){api} to set the bounds of the label area and add the {api:anychart.core.ui.Label#adjustFontSize}adjustFontSize(){api} method to make our label fit the defined parameters. 
+Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.core.ui.Label#anchor}anchor(){api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}width(){api} and {api:anychart.core.ui.Label#height}height(){api} to set the bounds of the label area and add the {api:anychart.core.ui.Label#adjustFontSize}adjustFontSize(){api} method to make our label fit the defined parameters. 
 
 Now let's put our label in the center of the area: use {api:anychart.graphics.vector.Text#hAlign}hAlign(){api}. To shift the label a bit up we used the {api:anychart.core.ui.Label#offsetX}offsetX{api} and {api:anychart.core.ui.Label#offsetY}offsetY{api} methods.
 
-Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}zIndex(){api} parameter.  
+Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:anychart.core.ui.Label#zIndex}zIndex(){api} parameter.  
 
 {sample}GAUGE\_Circular\_08{sample}
 

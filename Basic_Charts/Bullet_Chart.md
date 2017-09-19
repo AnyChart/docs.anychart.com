@@ -126,13 +126,13 @@ Markers are controlled through the data. You will find a plenty of examples with
 
 ### Types
 
-Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
+Bullet charts have {api:anychart.enums.BulletMarkerType}4 marker types{api}: `'bar'`, `'X'`, `'line'`, `'ellipse'`. Note that the `'bar'` type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
 
 Here is the sample with all 4 marker types:
 
 {sample :width 832 :height 500}BCT\_Bullet\_Chart\_07{sample}
 
-**Note:** This chart contains all markers in one data set. It was done for demonstration purpose. It's highly recommended to **limit markers number to two** to avoid complexity.
+**Note:** This chart contains all markers in one data set. It is done for demonstration purposes. It's highly recommended to **limit the mumber of markers to two**.
 
 ### Style
 

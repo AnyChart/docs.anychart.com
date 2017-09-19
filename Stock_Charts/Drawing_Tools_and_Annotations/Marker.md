@@ -42,7 +42,7 @@ This is how it looks like:
 
 There are two settings available only for the Marker annotation: type and size. In addition, you can configure the offset.
 
-By default, the Marker looks like a down arrow. To set another type, use the {api:anychart.core.annotations.Marker#markerType}markerType(){api} method and one of the {api:anychart.enums.MarkerType}Marker Types enums{api}. In AnyChart, you can choose from 22 types of markers. 
+By default, the Marker looks like a down arrow. To set another type, use the {api:anychart.core.annotations.Marker#markerType}markerType(){api} method and one of the {api:anychart.enums.MarkerType}Marker Types{api}. In AnyChart, you can choose from 22 types of markers. 
 
 To configure the size and offset (by X and Y), use the {api:anychart.core.annotations.Marker#size}size(){api}, {api:anychart.core.annotations.Marker#offsetX}offsetX(){api}, and {api:anychart.core.annotations.Marker#offsetY}offsetY(){api} methods.
 

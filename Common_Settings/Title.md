@@ -101,6 +101,6 @@ title.text(
 
 ## Adding Events
 
-You can make your chart title interactive by adding event listeners of a different types. Sample below shows {api:anychart.enums.EventType}pointClick{api} event that triggers alert() function.
+You can make your chart title interactive by adding event listeners of a different types. Sample below shows {api:anychart.enums.EventType}pointClick{api} event that triggers `alert()` function.
 
 {sample}CS\_Titles\_07{sample}

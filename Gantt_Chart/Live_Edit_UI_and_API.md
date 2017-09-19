@@ -121,8 +121,8 @@ When an interval on a Live Edit Chart is hovered, its controls appear. It is pos
 
 ```
 // set the connector control marker type
-timeline.editStartConnectorMarkerType("arrowLeft");
-timeline.editFinishConnectorMarkerType("arrowRight");
+timeline.editStartConnectorMarkerType("arrow-left");
+timeline.editFinishConnectorMarkerType("arrow-right");
 ```
 
 The {api:anychart.core.ui.Timeline#editStartConnectorMarkerSize}editStartConnectorMarkerSize(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerSize}editFinishConnectorMarkerSize(){api} methods manage the size of the start and finish connector controls of an interval.
@@ -169,7 +169,7 @@ Changes made in Live Edit mode lead to data changes. Events can be used to track
 
 The data tree dispatches the "move" event when the Gantt chart tree structur is changed. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
-- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_MOVE),
+- "type": the event type ("treeItemMove"),
 - "source", the data item where item is moved from,
 - "sourceIndex": the "source" item index,
 - "target": the data item where item is moved to,
@@ -178,7 +178,7 @@ The data tree dispatches the "move" event when the Gantt chart tree structur is 
 
 For example: the parent item "Part 1" is moved inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
 
-- type: anychart.enums.EventType.TREE\_ITEM\_MOVE
+- type: "treeItemMove"
 - source: null
 - sourceIndex: null
 - target: "Part 3"
@@ -186,9 +186,9 @@ For example: the parent item "Part 1" is moved inside another parent item, "Part
 - item: "Part 1"
 
 ```
-var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE, function(e){
-	chart.title.text("The "+e.itemIndex+" item was moved");
+var tree = anychart.data.tree(getData(), "as-table");
+tree.listen("treeItemMove", function(e){
+	chart.title.text("The " + e.itemIndex + " item was moved");
 });
 ```
 
@@ -198,22 +198,22 @@ tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE, function(e){
 
 Our "update" event includes the following fields:
 
-- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_UPDATE)
+- "type": the event type ("treeItemUpdate")
 - "item": a DataItem object
 - "path": path to the field with changed value, always in array format
 - "field": the field which value was changed
 - "value": the new value for the field
 
 ```
-var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE, function(e){
-	chart.title.text("The "+e.itemIndex+" item was updated");
+var tree = anychart.data.tree(getData(), "as-table");
+tree.listen("treeItemUpdate", function(e){
+	chart.title.text("The " + e.itemIndex + " item was updated");
 });
 ```
 
 For example: the second period of a tree data item "Act 1" is made longer. The start date was 02/27, end date 03/03. The end date is changed to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the "update" event will have these parameters:
 
-- "type": anychart.enums.EventType.TREE\_ITEM\_UPDATE
+- "type": "treeItemUpdate"
 - "item": "Act 1"
 - "path": ["periods", 1, "end"]
 - "field": "periods"
@@ -222,15 +222,15 @@ For example: the second period of a tree data item "Act 1" is made longer. The s
 #### create
 
 The "create" event is dispatched when a new tree data item is created. It has the following fields:
-- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_CREATE),
+- "type": the event type ("treeItemCreate"),
 - "target": the name of the target where the new object is put in,
 - "targetIndex": the index of a target,
 - "item": a DataItem object.
 
 ```
-var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE, function(e){
- 	chart.title.text("The "+e.itemIndex+" item was created");
+var tree = anychart.data.tree(getData(), "as-table");
+tree.listen("treeItemCreate", function(e){
+ 	chart.title.text("The " + e.itemIndex + " item was created");
 });
 ```
 
@@ -238,15 +238,15 @@ tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE, function(e){
 
 When an object is removed, the Gantt tree dispatches the "remove" event. Its fields are similar to those the "create" event has:
 
-- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_REMOVE),
+- "type": the event type ("treeItemRemove"),
 - "source": the name of the target where the object is removed from,
 - "sourceIndex": the index of a source,
 - "item": a DataItem object.
 
 ```
-var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-tree.listen(anychart.enums.EventType.REMOVE, function(e){
-	chart.title.text("The "+e.itemIndex+" item was removed");
+var tree = anychart.data.tree(getData(), "as-table");
+tree.listen("treeItemRemove", function(e){
+	chart.title.text("The " + e.itemIndex  " item was removed");
 });
 ```
 
@@ -256,7 +256,7 @@ tree.listen(anychart.enums.EventType.REMOVE, function(e){
 
 The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and it is dispatched before the action itself, so it will not have any information about the source. To get this information one has to listen to the "update" event. The fields of the "beforeCreateConnector" event are:
 
-- "type": the event type (e.g. anychart.enums.EventType.BEFORE\_CREATE\_CONNECTOR),
+- "type": the event type (e.g. "beforeCreateConnector"),
 - "source": which data item the connector starts from,
 - "target": which data item the connector ends at (is connected to),
 - "connectorType": the connector type.
