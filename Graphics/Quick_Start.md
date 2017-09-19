@@ -57,7 +57,7 @@ stage.path()
   
 ## See the Result
 
-After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](https://playground.anychart.com/docs/{{branch-name}}/samples/GFX_quick_start-plain).
+After all these steps you should have the following result. You can launch and explore this {pg:docs/samples/GFX_quick_start-plain}GraphicsJS Drawing Sample in the Playground{pg}.
 
 {sample}GFX\_quick\_start{sample}
 
