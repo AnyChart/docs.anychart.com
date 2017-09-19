@@ -126,18 +126,20 @@ The sample below demonstrates removing first element from the data tree.
 
 When you work with tree data sets you may need to look for an element of the tree to navigate or highlight, or use other CRUD operations. There are two methods for this: {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api}.
 
-Here is a sample of using {api:anychart.data.Tree#search}search(){api} method with [Treemap Chart](../Basic_Charts/TreeMap_Chart) and its {api:anychart.charts.TreeMap#drillTo}drillTo(){api} method:
+Here is a sample of using {api:anychart.data.Tree#search}search(){api} method with [TreeMap Chart](../Basic_Charts/TreeMap_Chart) and its {api:anychart.charts.TreeMap#drillTo}drillTo(){api} method:
 
 ```
-// locate an item in a tree data and get it as an object
-// that can be used in drillTo method
-var item = treeData.search("id", "Finland");
-    
-// Drill down to the specified item.
+/* locate an item in the data tree,
+get the item as an object*/
+var item = treeData.search("name", "Lvl 3-4");
+// drill down to the item
 chart.drillTo(item);
+
+// drill up
+chart.drillUp();
 ```
 
-{sample :height 600}BCT\_TreeMap\_08\_1{sample}
+{sample :height 600}BCT\_TreeMap\_17{sample}
 
 ### Traverse
 

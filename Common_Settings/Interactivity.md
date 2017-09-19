@@ -95,7 +95,7 @@ interactivity.selectionMode("none");
 
 {sample}CS\_Interactivity\_05{sample} 
 
-##### Multi-select
+#### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -107,7 +107,7 @@ interactivity.selectionMode("multiSelect");
 
 {sample}CS\_Interactivity\_06{sample} 
 
-##### Single-select
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
