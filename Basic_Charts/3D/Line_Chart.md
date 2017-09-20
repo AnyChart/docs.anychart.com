@@ -28,4 +28,4 @@ chart.zDistribution(false);
 
 ## Special Settings
 
-Unlike the ordinary [Line](../Line_Chart), the 3D Line chart is colored with the {api:anychart.core.cartesian.series.Line3d#fill}fill(){api} method. The stroke cannot be configured.
+Unlike the ordinary [Line](../Line_Chart), the 3D Line series is colored with the {api:anychart.core.cartesian.series.Line3d#fill}fill(){api} method. The stroke cannot be configured.
