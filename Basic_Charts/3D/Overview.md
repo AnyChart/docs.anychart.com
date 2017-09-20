@@ -50,7 +50,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_3D\_01{sample}
+{sample}BCT\_3B\_01{sample}
 
 ## Z-Angle
 
@@ -65,7 +65,7 @@ In the following sample, there is a 3D Column chart with the Z-angle set to 20°
 chart.zAngle(20);
 ```
 
-{sample}BCT\_3D\_02{sample}
+{sample}BCT\_3B\_02{sample}
 
 ## Z-Aspect
 
@@ -80,7 +80,7 @@ In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (t
 chart.zAspect("100%"");
 ```
 
-{sample}BCT\_3D\_03{sample}
+{sample}BCT\_3B\_03{sample}
 
 ## Z-Distribution
 
@@ -93,7 +93,7 @@ Here is a sample 3D Column chart with the Z-axis distribution enabled:
 chart.zDistribution(true);
 ```
 
-{sample}BCT\_3D\_04{sample}
+{sample}BCT\_3B\_04{sample}
 
 ##Supported Types
 
