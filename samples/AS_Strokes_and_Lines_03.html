@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
+  // create chart
   chart = anychart.line();
 
   // title
@@ -25,14 +25,14 @@
   ]);
 
   // set first series data
-  var column = chart.column(data.mapAs({x: [0], value: [1]}));
+  var column = chart.column(data.mapAs({x: 0, value: 1}));
   // set stroke thickness 5px and stroke color as red
   column.stroke("5 red");
   // set series name
   column.hoverStroke("5 red");
 
   // set data into second series
-  var spline = chart.spline(data.mapAs({x: [0], value: [2]}));
+  var spline = chart.spline(data.mapAs({x: 0, value: 2}));
   // set stroke thickness 5px, stroke color green and stroke opacity 0.4
   spline.stroke("5 green 0.4");
   // stroke settings for mouse over the series 
@@ -43,7 +43,7 @@
   spline.name("Solid Color with Opacity");
 
   // set data into third series
-  var step = chart.stepLine(data.mapAs({x: [0], value: [3]}));
+  var step = chart.stepLine(data.mapAs({x: 0, value: 3}));
   // set stroke thickness 5px and apply gradient colors
   step.stroke({
     keys: [".1 red", ".5 blue", ".9 green"],
@@ -55,7 +55,7 @@
   step.name("Gradient Color");
 
   // set data into forth series
-  var area = chart.splineArea(data.mapAs({x: [0], value: [4]}));
+  var area = chart.splineArea(data.mapAs({x: 0, value: 4}));
   area.stroke({
     // stroke color
     color: "darkblue",

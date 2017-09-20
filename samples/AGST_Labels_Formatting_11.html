@@ -7,28 +7,10 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-  stage = anychart.graphics.create("container");
-
-  // chart with stagger mode
-  staggerLabels = anychart.column();
-  staggerLabels.title("Hiding the First and the Last labels");
-  staggerBackground = staggerLabels.background();
-  staggerBackground.stroke("#CCCCCC");
-
-  // enabling stagger mode
-  staggerxAxis = staggerLabels.xAxis();
-  staggerxAxis.staggerMode(true);
-  // adjusting settings for stagger mode
-  staggerxAxis.staggerLines(2);
-
-  // set scale minimum
-  staggerYScale = staggerLabels.yScale();
-  staggerYScale.minimum(0);
-
-  // data set for stagger mode sample
-  staggerData = anychart.data.set([
+  // data
+  data = [
     ["Category1", 16, 20],
     ["Category2", 12, 18],
     ["Category3", 9, 14],
@@ -38,22 +20,24 @@
     ["Category7", 11, 22],
     ["Category8", 17, 11],
     ["Category9", 9, 14]
-  ]);
+  ];
 
-  // data remapping for stagger sample
-  staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
-  staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
+  // chart with stagger mode
+  chart = anychart.column();
+  chart.title("Hiding the First and the Last labels");
+  chart.data(data);
 
-  staggerLabels.column(staggerSeriesData_1);
-  staggerLabels.column(staggerSeriesData_2);
+  // enabling stagger mode
+  chart.xAxis().staggerMode(true);
+  // adjusting settings for stagger mode
+  chart.xAxis().staggerLines(2);
 
   // disabling first and last labels
-  staggerAxis = staggerLabels.xAxis();
-  staggerAxis.drawFirstLabel(false);
-  staggerAxis.drawLastLabel(false);
+  chart.xAxis().drawFirstLabel(false);
+  chart.xAxis().drawLastLabel(false);
 
-  staggerLabels.container(stage);
-  staggerLabels.draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

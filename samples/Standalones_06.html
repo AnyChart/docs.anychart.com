@@ -13,29 +13,14 @@ stage = anychart.graphics.create("container", "100%", "100%");
 // create a chart
 chart = anychart.line();
 
-dataSet = anychart.data.set([
+data = [
 	["Winter", 1.1, 1, 2, 1.8, 0.1, 0.5, 1.4],
 	["Spring", 1.6, 2, 1.5, 1.9, 0.2, 1.1, 1.4],
 	["Summer", 1.4, 1.9, 0.5, 0.9, 0.3, 1.8, 1.2],
 	["Fall", 1.9, 1.3, 1.1, 0.3, 0.4, 1.7, 0.9]
-]);
+];
 
-// 
-seriesData1 = dataSet.mapAs({"x": [0], "value": [1]});
-seriesData2 = dataSet.mapAs({"x": [0], "value": [2]});
-seriesData3 = dataSet.mapAs({"x": [0], "value": [3]});
-seriesData4 = dataSet.mapAs({"x": [0], "value": [4]});
-seriesData5 = dataSet.mapAs({"x": [0], "value": [5]});
-seriesData6 = dataSet.mapAs({"x": [0], "value": [6]});
-seriesData7 = dataSet.mapAs({"x": [0], "value": [7]});
-
-series1 = chart.line(seriesData1);
-series2 = chart.line(seriesData2);
-series3 = chart.line(seriesData3);
-series4 = chart.line(seriesData4);
-series5 = chart.line(seriesData5);
-series6 = chart.line(seriesData6);
-series7 = chart.line(seriesData7);
+chart.data(data);
 
 // add a title standalone object on the chart
 title = anychart.standalones.title();

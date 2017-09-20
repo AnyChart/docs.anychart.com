@@ -7,9 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-
-  stage = anychart.graphics.create("container");
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define data
   var data = [
@@ -21,21 +19,15 @@
   ];
   // create chart
   chart = anychart.bar();
-  var seriesData = anychart.data.mapAsTable(data, "value");
+  chart.data(data);
 
+  chart.getSeries(0).hatchFill("VERTICALBRICK");
+  chart.getSeries(1).hatchFill("PERCENT60");
+  chart.getSeries(2).hatchFill("CHECKERBOARD");
+  chart.getSeries(3).hatchFill("CONFETTI");
+  chart.getSeries(4).hatchFill("SOLIDDIAMOND");
 
-  var series0 = chart.bar(seriesData[0]);
-  series0.hatchFill("VERTICALBRICK");
-  var series1 = chart.bar(seriesData[1]);
-  series1.hatchFill("PERCENT60");
-  var series2 = chart.bar(seriesData[2]);
-  series2.hatchFill("CHECKERBOARD");
-  var series3 = chart.bar(seriesData[3]);
-  series3.hatchFill("CONFETTI");
-  var series4 = chart.bar(seriesData[4]);
-  series4.hatchFill("SOLIDDIAMOND");
-
-  chart.container(stage);
+  chart.container("container");
   chart.draw();
 
 });</script>

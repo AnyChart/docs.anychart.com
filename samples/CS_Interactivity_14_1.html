@@ -25,7 +25,7 @@
     var pieSubTitle = "...";
 
     // map data for the each series
-    var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
+    var dataMapping = data.mapAs({x: 0, value: 1, fill: 2});
 
     // chart type
     chart = anychart.column();
@@ -56,35 +56,35 @@
     markerChart.padding().bottom(20);
     markerChart.yScale().minimum("-0.5");
 
-    var markerVelmaDataMapping = data.mapAs({x: [0], value: [3]}); // Velmas pizza
+    var markerVelmaDataMapping = data.mapAs({x: 0, value: 3}); // Velmas pizza
     var markerVelma = markerChart.marker(markerVelmaDataMapping);
     markerVelma.stroke("none");
     markerVelma.fill("#AB3300");
     markerVelma.size(15);
     markerVelma.enabled(false);
 
-    var markerFredDataMapping = data.mapAs({x: [0], value: [4]}); // Freds pizza
+    var markerFredDataMapping = data.mapAs({x: 0, value: 4}); // Freds pizza
     var markerFred = markerChart.marker(markerFredDataMapping);
     markerFred.stroke("none");
     markerFred.fill("#66A3FF");
     markerFred.size(15);
     markerFred.enabled(false);
 
-    var markerDaphneDataMapping = data.mapAs({x: [0], value: [5]}); // Daphnes pizza
+    var markerDaphneDataMapping = data.mapAs({x: 0, value: 5}); // Daphnes pizza
     var markerDaphne = markerChart.marker(markerDaphneDataMapping);
     markerDaphne.stroke("none");
     markerDaphne.fill("#570FBD");
     markerDaphne.size(15);
     markerDaphne.enabled(false);
 
-    var markerShaggyDataMapping = data.mapAs({x: [0], value: [6]}); // Shaggys pizza
+    var markerShaggyDataMapping = data.mapAs({x: 0, value: 6}); // Shaggys pizza
     var markerShaggy = markerChart.marker(markerShaggyDataMapping);
     markerShaggy.stroke("none");
     markerShaggy.fill("#948F45");
     markerShaggy.size(15);
     markerShaggy.enabled(false);
 
-    var markerScoobyDataMapping = data.mapAs({x: [0], value: [7]}); // Scoobys sausages
+    var markerScoobyDataMapping = data.mapAs({x: 0, value: 7}); // Scoobys sausages
     var markerScooby = markerChart.marker(markerScoobyDataMapping);
     markerScooby.stroke("none");
     markerScooby.fill("#784512");

@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // setting data
-  var data = anychart.data.set([
+  var data = [
     ["January", 200, 180],
     ["February", 289, 290],
     ["March", 197, 370],
@@ -23,23 +23,12 @@
     ["October", 218, 236],
     ["November", 289, 147],
     ["December", 266, 368]
-  ]);
-
-  // data remapping
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  ];
 
   chart = anychart.column();
 
-  // set scale minimum
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-
   chart.title("Normal labels");
-
-  // series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
+  chart.data(data);
 
   chart.container("container");
   chart.draw();

@@ -97,7 +97,7 @@ In case you need to change the border of a bar or a column series, you can use t
 
 ```
 // set first series data
-var column = chart.column(data.mapAs({x: [0], value: [1]}));
+var column = chart.column(data);
 // set stroke thickness 5px and stroke color as red
 column.stroke("5 red");
 // markers settings

@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
-    var dataSet = anychart.data.set([
+    var data = [
         ['AU.WA', 300],
         ['AU.JB', 230],
         ['AU.NS', 240],
@@ -29,35 +29,28 @@ anychart.onDocumentReady(function() {
         ['AU.CT', 100],
         ['AU.SA', 305],
         ['AU.QL', 190]
-    ]);
-
-    // mapping the data to the chart
-    var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
-    var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
+    ];
 
     stage = anychart.graphics.create("container");
-    var mapChart = anychart.map();
-    mapChart.geoData(anychart.maps.australia);
-    mapChart.container(stage);
-    mapChart.title('Australia Map');
-    // set the series
-    var series = mapChart.choropleth(mapDataSet);
 
-    // disable the labels
-    series.labels(false);
-    mapChart.bounds(0, 0, '100%', '70%');
-    mapChart.draw();
+    // create and display map
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+    map.title('Australia Map');
+    map.choropleth(data);
 
-    var areaChart = anychart.area();
-    areaChart.container(stage);
-    areaChart.title('Spline-Area Chart');
-    areaChart.bounds(0, '70%', '100%', '30%');
-    areaChart.splineArea(chartDataSet);
-    areaChart.draw();
+    map.bounds(0, 0, '100%', '70%');
+    map.container(stage);    
+    map.draw();
 
-    var yAreaScale = areaChart.yScale();
-    yAreaScale.minimum(0);
-    yAreaScale.maximum(350);
+    // create and display chart
+    var area = anychart.area();
+    area.title('Spline Area Chart');
+    area.splineArea(data);
+
+    area.bounds(0, '70%', '100%', '30%');
+    area.container(stage);    
+    area.draw();
 
 });
 </script>

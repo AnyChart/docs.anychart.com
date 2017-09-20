@@ -62,7 +62,7 @@ var data = anychart.data.set([
 chart = anychart.financial();
   
 // map the data      
-var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+var seriesData = data.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
 
 // create an OHLC series and set the data
 var series = chart.ohlc(seriesData);

@@ -20,11 +20,11 @@ var newScale = anychart.scales.ordinal();
 chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
+Note: working with extra axes is explained in details in [Additional Axes Tutorial](Additional_Axes) article.
 
 ### Linear
 
-Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable range.
+Linear scale type is a default type for Y Scale for the most of charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within a reasonable range.
 
 ```
 chart.yScale(anychart.scales.linear());
@@ -75,15 +75,13 @@ To change scale mode you need to use {api:anychart.scales.Linear#stackMode}stack
 To set *value stacking* mode use:
 
 ```
-var yScaleValue = chart.yScale();
-yScaleValue.stackMode("value");
+chart.yScale().stackMode("value");
 ```
 
 To set *percent stacking* mode use:
 
 ```
-var yScalePerent = chart.yScale();
-yScaleValue.stackMode("percent");
+chart.yScale().stackMode("percent");
 ```
 
 Here is a basic sample of a chart with a stacked scale:
@@ -96,9 +94,8 @@ Maximum and minimum values by default are calculated automatically. If you want 
 {api:anychart.scales.Linear#minimum}minimum(){api} and {api:anychart.scales.Linear#maximum}maximum(){api} methods:
 
 ```
-var yScale = chart.yScale();
-yScale.minimum(-50);
-yScale.maximum(100);
+chart.yScale().minimum(-50);
+chart.yScale().maximum(100);
 ```
 
 {sample}AGST\_Scales\_06{sample}
@@ -110,9 +107,8 @@ In some cases you may have no need to define solid minimum or maximum and need a
 To set soft maximum and soft minimum use {api:anychart.scales.Linear#softMinimum}softMinimum(){api} and {api:anychart.scales.Linear#softMaximum}softMaximum(){api} methods:
 
 ```
-var yScale = chart.yScale();
-yScale.softMinimum(-50);
-yScale.softMaximum(100);
+chart.yScale().softMinimum(-50);
+chart.yScale().softMaximum(100);
 ```
 
 Sample below shows how soft minimum and soft maximum help to show data better than simple minimum and maximum.
@@ -130,17 +126,11 @@ For any scale, but ordinal, you can set {api:anychart.scales.Linear#ticks}major{
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
-// get ticks
-var yTicks = chart.yScale().ticks();
-
 // set ticks interval
-yTicks.interval(10);
-
-// get minor ticks
-var minorTicks = chart.yScale().minorTicks();
+chart.yScale().ticks().interval(10);
 
 // set minor ticks interval
-minorTicks.interval(2);
+chart.yScale().minorTicks().interval(2);
 ```
 
 In the sample below you can see how interval settings affects grids, ticks and labels.
@@ -152,9 +142,8 @@ In the sample below you can see how interval settings affects grids, ticks and l
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
 
 ```
-var yScale = chart.yScale();
-yScale.minimumGap(0.5);
-yScale.maximumGap(0.5);
+chart.yScale().minimumGap(0.5);
+chart.yScale().maximumGap(0.5);
 ```
 
 In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
@@ -166,8 +155,7 @@ In the sample below you can see how offsets settings affects js chart. The chart
 If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with "true" parameter.
 
 ```
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.yScale().inverted(true);
 ```
 
 Sample of the chart with inverted scale:

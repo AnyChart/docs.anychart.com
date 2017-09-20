@@ -29,10 +29,8 @@
     chart.title("Events");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Manager");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
 
     // create an event listener for hovering the chart
     chart.listen("mouseOver", function(e){

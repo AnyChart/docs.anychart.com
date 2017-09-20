@@ -9,37 +9,25 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart type
-  chart = anychart.column();
+  //  data
+  var data =[
+    ["C", 5,  10, 10],
+    ["D", 25, 30, 20],
+    ["E", 15, 15, 15]
+  ];
 
-  // chart title
+  // create chart
+  chart = anychart.column();
+  chart.data(data);
   chart.title("Maximum and Minimum Scale Value");
 
-  // adjusting y scale minimum and maximum values
-  var yScale = chart.yScale();
-  yScale.minimum(-50);
-  yScale.maximum(100);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(20);
-
-  // setteing data
-  var data = anychart.data.set([
-    ["C", 5, 10],
-    ["D", 25, 20],
-    ["E", 15, 15]
-  ]);
-
-  // setting series data
-  chart.column(data.mapAs({x: [0], value: [1]}));
-  chart.column(data.mapAs({x: [0], value: [2]}));
-
-  // setting data for line chart
-  chart.line([
-    ["C", 10],
-    ["D", 30],
-    ["E", 15]
-  ]);
-
+  // adjusting y scale minimum and maximum 
+  chart.yScale().minimum(-50);
+  chart.yScale().maximum(100);
+  // adjust ticks interval
+  chart.yScale().ticks().interval(20);
+  
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>

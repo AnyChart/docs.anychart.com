@@ -9,49 +9,26 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart type
-  chart = anychart.column();
+  // data
+  var data = [
+    ["C", 5, 10, 10],
+    ["D", 25, 20, 30],
+    ["E", 15, 15, 15]
+  ];
 
-  // chart title
+  // create chart
+  chart = anychart.column();
+  chart.data(data);
   chart.title("Major and Minor Ticks");
 
-  // setteing data
-  var data = anychart.data.set([
-    ["C", 5, 10],
-    ["D", 25, 20],
-    ["E", 15, 15]
-  ]);
-
-  // mapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
-  // setting series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
-
-  // setting data for line chart
-  chart.line([
-    ["C", 10],
-    ["D", 30],
-    ["E", 15]
-  ]);
-
-  // adjusting y scale minimum and maximum values
-  var yScale = chart.yScale();
-  yScale.minimum(-50);
-  yScale.maximum(100);
-
   // setting ticks and minor ticks
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(10);
-  var yMinorTicks = chart.yScale().minorTicks();
-  yMinorTicks.interval(2);
+  chart.yScale().ticks().interval(10);
+  chart.yScale().minorTicks().interval(2);
 
   // display minor ticks
-  var minorTicks = chart.yAxis().minorTicks();
-  minorTicks.enabled(true);
+  chart.yAxis().minorTicks().enabled(true);
 
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>

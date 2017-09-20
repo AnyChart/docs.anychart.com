@@ -26,9 +26,9 @@
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
-    var seriesData_3 = data.mapAs({x: [0], value: [3]});
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
 
     // set the chart type
     chart = anychart.line();
@@ -74,10 +74,8 @@
     chart.title("Visual Settings");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Temperature, ºC");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Temperature, ºC");
 
     // set the container id
     chart.container("container");

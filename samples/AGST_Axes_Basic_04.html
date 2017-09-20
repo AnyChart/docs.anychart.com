@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
+  // data
+  var data = [
     ["January", 200, 180],
     ["February", 289, 290],
     ["March", 197, 370],
@@ -23,28 +23,22 @@
     ["October", 218, 236],
     ["November", 289, 147],
     ["December", 266, 368]
-  ]);
+  ];
 
-  // remapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
+  // create chart
   chart = anychart.column();
-
+  chart.data(data);
   chart.title("Rotated labels");
 
-  // series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
 
   // adjusting axes labels
-  var xLabels = chart.yAxis().labels();
-  xLabels.rotation(-90);
-  xLabels.padding(0,5,0,5);
-  var yLabels = chart.xAxis().labels();
-  yLabels.rotation(-90);
-  yLabels.padding(5,0,5,0);
+  chart.yAxis().labels().rotation(-90);
+  chart.yAxis().labels().padding(0,5,0,5);
 
+  chart.xAxis().labels().rotation(-90);
+  chart.xAxis().labels().padding(5,0,5,0);
+
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>

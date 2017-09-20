@@ -10,17 +10,12 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 	// create a data set
-	var data = anychart.data.set([
+	var data = [
 		["Winter", 12000, 12000, 10000],
 		["Spring", 13000, 12000, 17000],
 		["Summer", 25000, 15000, 19000],
 		["Autumn", 16000, 16000, 16000]
-	]);
-
-	// map the data
-	var seriesData_1 = data.mapAs({x: [0], value: [1]});
-	var seriesData_2 = data.mapAs({x: [0], value: [2]});
-	var seriesData_3 = data.mapAs({x: [0], value: [3]});
+	];
 
 	// create a 3d column chart
 	chart = anychart.column3d();
@@ -28,10 +23,8 @@
 	// enable the z-axis distribution mode
 	chart.zDistribution(true);
 
-	// create series (column) and set the data
-	var series1 = chart.column(seriesData_1);
-	var series2 = chart.column(seriesData_2);
-	var series3 = chart.column(seriesData_3);
+	// set the data
+	chart.data(data);
 
 	// set the chart title
 	chart.title("3D Charts: Z-Axis Distribution");

@@ -19,9 +19,9 @@
 	]);
 
 	// remapping data
-	var Sales2003 = data.mapAs({x: [0], value: [1]});
-	var Sales2004 = data.mapAs({x: [0], value: [2]});
-	var Sales2005 = data.mapAs({x: [0], value: [3]});
+	var Sales2003 = data.mapAs({x: 0, value: 1});
+	var Sales2004 = data.mapAs({x: 0, value: 2});
+	var Sales2005 = data.mapAs({x: 0, value: 3});
 
 	// define chart type
 	chart = anychart.cartesian();
@@ -55,7 +55,7 @@
 	addBg.corners(5);
 	add.listen("click",function(){
 		if (chart.getSeriesCount()<9)
-			chart.addSeries(data.mapAs({x: [0], value: [chart.getSeriesCount()+1]}));
+			chart.addSeries(data.mapAs({x: 0, value: [chart.getSeriesCount()+1]}));
 	});
 	var remove = chart.label(1);
 	remove.padding(5,5);

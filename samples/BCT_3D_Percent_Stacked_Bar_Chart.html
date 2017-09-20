@@ -10,17 +10,12 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // create a data set
-  var data = anychart.data.set([
+  var data = [
     ["Winter", 20000, 40000, 20000],
     ["Spring", 20000, 40000, 40000],
     ["Summer", 40000, 30000, 30000],
     ["Autumn", 20000, 20000, 40000]
-  ]);
-
-  // map the data
-  var seriesData_1 = data.mapAs({x: [0], value: [1]});
-  var seriesData_2 = data.mapAs({x: [0], value: [2]});
-  var seriesData_3 = data.mapAs({x: [0], value: [3]});
+  ];
 
   // create a chart
   chart = anychart.bar3d();
@@ -29,9 +24,7 @@
   chart.yScale().stackMode("percent");
 
   // create area series, set the data
-  var series1 = chart.bar(seriesData_1);
-  var series2 = chart.bar(seriesData_2);
-  var series3 = chart.bar(seriesData_3);
+  chart.data(data);
 
   // configure tooltips
   chart.tooltip().format("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");

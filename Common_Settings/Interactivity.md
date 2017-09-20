@@ -363,8 +363,8 @@ var data = anychart.data.set([
 ]);
 
 // map data for each series
-var Sales2003 = data.mapAs({x: [0], value: [1], hoverFill: [3], selectFill: [4]});
-var Sales2004 = data.mapAs({x: [0], value: [2], hoverFill: [3], selectHatchFill: [5]});
+var Sales2003 = data.mapAs({x: 0, value: 1, hoverFill: 3, selectFill: 4});
+var Sales2004 = data.mapAs({x: 0, value: 2, hoverFill: 3, selectHatchFill: 5});
 ```
 
 So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.

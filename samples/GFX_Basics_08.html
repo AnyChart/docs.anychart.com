@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">anychart.onDocumentReady(function() {
 
-// set stage
+    // set stage
     stage = acgraph.create("container");
 
-// data
+    // data
     var data = anychart.data.set([
         ["USA", 10, 8.5],
         ["Japan", 15, 18],
@@ -34,38 +34,36 @@
         ["France", 8, 10]
     ]);
 
-// map data for the each series
-    var official_holidays = data.mapAs({x: [0], value: [1]});
-    var days_off = data.mapAs({x: [0], value: [2], marker: [3], label: [4]});
+    // map data for the each series
+    var official_holidays = data.mapAs({x: 0, value: 1});
+    var days_off = data.mapAs({x: 0, value: 2, marker: 3, label: 4});
 
-// chart type
+    // chart type
     var chart = anychart.bar();
 
-// chart title
+    // chart title
     chart.title("Number of official holidays and days off in different countries (2015)");
 
-// set axes titles
-    var xAxis = chart.xAxis();
-    xAxis.title("Country");
-    var yAxis = chart.yAxis();
-    yAxis.title("Days");
-    var yScale = chart.yScale();
-    yScale.maximum(35);
+    // set axes titles
+    chart.xAxis().title("Country");
+    chart.yAxis().title("Days");
+    // set scale maximum
+    chart.yScale().maximum(35);
 
-// enable the legend
+    // enable the legend
     chart.legend(true);
 
-// set series data
+    // set series data
     var series;
     series = chart.bar(official_holidays);
 
-// set the series name which is displayed as
+    // set the series name which is displayed as
     series.name("Official holidays");
 
-// adjust series position
+    // adjust series position
     series.xPointPosition(0.5);
 
-// second series data
+    // second series data
     series = chart.bar(days_off);
     series.name("Days off");
     series.labels().format(function () {
@@ -73,10 +71,10 @@
         return this.value;
     });
 
-// draw
+    // draw
     chart.container(stage).draw();
 
-// a function that enables custom marker resizing
+    // a function that enables custom marker resizing
     function customMarkerDrawer(path, x, y, size) {
         // create a custom marker
         path.moveTo(x, y)

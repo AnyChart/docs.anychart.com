@@ -17,9 +17,9 @@
 		["Autumn", 16000, 16000, 16000]
 	]);
 
-	var dataSet1 = data.mapAs({x: [0], value: [1]});
-	var dataSet2 = data.mapAs({x: [0], value: [2]});
-	var dataSet3 = data.mapAs({x: [0], value: [3]});
+	var dataSet1 = data.mapAs({x: 0, value: 1});
+	var dataSet2 = data.mapAs({x: 0, value: 2});
+	var dataSet3 = data.mapAs({x: 0, value: 3});
 
 	// set chart type
 	chart = anychart.column3d();
@@ -32,13 +32,10 @@
     chart.grid(1).enabled(true).layout("vertical");		
 
 	// set axes titles
-	var xAxis = chart.xAxis();
-	xAxis.title("Month");
-	var yAxis = chart.yAxis();
-	yAxis.title("Sales");
+	chart.xAxis().title("Month");
+	chart.yAxis().title("Sales");
 
-	var yScale = chart.yScale();
-	yScale.stackMode("value");
+	chart.yScale().stackMode("value");
 
   	// configure tooltips
   	chart.tooltip().format("{%Value}");

@@ -15,15 +15,13 @@ Border is configured using {api:anychart.core.ui.Background#stroke}stroke(){api}
 Sample solid stroke settings:
 
 ```
-var background = chart.background();
-background.stroke("5 red");
+chart.background().stroke("5 red");
 ```
 
 Sample gradient stroke settings:
 
 ```
-var background = chart.background();
-background.stroke({
+chart.background().stroke({
   keys: [".1 red", ".5 yellow", ".9 blue"],
   angle: 45,
   thickness: 5
@@ -33,8 +31,7 @@ background.stroke({
 Sample dashed stroke settings:
 
 ```
-var background = chart.background();
-background.stroke({
+chart.background().stroke({
   color: "red",
   dash: "5 2 5",
   thickness: 5
@@ -54,8 +51,7 @@ With AnyChart it is possible to color background with a solid color, with a grad
 When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors can be defined with any of the methods described in [Color management tutorial](Color_Management).Sample solid fill:
 
 ```
-var background = chart.background();
-background.fill("gold");
+chart.background().fill("gold");
 ```
 
 In the sample below a web graph, a data plot and a chart's title backgrounds are colored with a solid fill:
@@ -67,8 +63,7 @@ In the sample below a web graph, a data plot and a chart's title backgrounds are
 AnyChart allows to create Gradient fills for any background. There are two types of gradient fills - "Linear" and "Radial". Sample gradient background:
 
 ``` 
-var background = chart.background();
-background.fill({
+chart.background().fill({
   keys: ["#fff", "#66f", "#fff"],
   angle: 130,
 });
@@ -134,7 +129,7 @@ We've got a chart a with 5 series with 5 data points in each. For every series w
 ```
 var series0 = chart.bar(series[0]);
 series0.fill(null);
-series0.hatchFill("VERTICALBRICK");
+series0.hatchFill("verticalBrick");
 ```
 
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.

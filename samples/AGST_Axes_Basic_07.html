@@ -10,15 +10,12 @@
     <script x-export="stage">anychart.onDocumentReady(function() {
 
   // setting data
-  var data = anychart.data.set([
+  var data = [
     ["P1", 16, 20],
     ["P2", 12, 18],
     ["P3", 9, 14]
-  ]);
+  ];
 
-  // remapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
   stage = anychart.graphics.create("container");
 
   // setting basic title
@@ -30,70 +27,54 @@
 
   // first chart
   var columnChart = anychart.column();
+  columnChart.data(data);
 
   columnChart.title("Tickmarks Outside");
 
   // setting chart's size and position
   columnChart.bounds(0, "10%", "48%", "85%");
 
-  var columnBackground = columnChart.background();
-  columnBackground.stroke("#CCCCCC");
+  columnChart.background().stroke("#CCCCCC");
 
   // set x ticks position
-  var xAxisTicks = columnChart.xAxis().ticks();
-  xAxisTicks.position("outside");
-  xAxisTicks.enabled(true);
+  columnChart.xAxis().ticks().enabled(true);
+  columnChart.xAxis().ticks().position("outside");
 
   // set y ticks position
-  var yAxisMinorTicks = columnChart.yAxis().minorTicks();
-  yAxisMinorTicks.position("outside");
-  yAxisMinorTicks.enabled(true);
-  var yAxisTicks = columnChart.yAxis().ticks();
-  yAxisTicks.position("outside");
+  columnChart.yAxis().minorTicks().enabled(true);
+  columnChart.yAxis().minorTicks().position("outside");
+  columnChart.yAxis().ticks().position("outside");
 
   // setting major ticks interval on y scale
-  var yScaleTicks = columnChart.yScale().ticks();
-  yScaleTicks.interval(5);
+  columnChart.yScale().ticks().interval(5);
 
-  // series data
-  columnChart.column(Sales2003);
-  columnChart.column(Sales2004);
-
+  // display chart
   columnChart.container(stage);
   columnChart.draw();
 
   // second chart
-  var lineChart = anychart.line(data);
-
+  var lineChart = anychart.line();
+  lineChart.data(data);
   lineChart.title("Tickmarks Inside");
 
   // setting chart's size and position
   lineChart.bounds("52%", "10%", "48%", "85%");
 
-  var lineBackground = lineChart.background();
-  lineBackground.stroke("#CCCCCC");
+  lineChart.background().stroke("#CCCCCC");
 
   // adjusting x axis
-  var lineXTicks = lineChart.xAxis().ticks();
-  lineXTicks.position("inside");
-  lineXTicks.enabled(true);
+  lineChart.xAxis().ticks().enabled(true);
+  lineChart.xAxis().ticks().position("inside");
 
   // adjusting y axis
-  var lineYTitle = lineChart.yAxis().title();
-  lineYTitle.enabled(false);
-  var lineYMinorTicks = lineChart.yAxis().minorTicks();
-  lineYMinorTicks.position("inside");
-  var lineYTicks = lineChart.yAxis().ticks();
-  lineYTicks.position("inside");
+  lineChart.yAxis().title().enabled(false);
+  lineChart.yAxis().minorTicks().position("inside");
+  lineChart.yAxis().ticks().position("inside");
 
   // setting major ticks interval on y scale
-  var lineYScaleTicks = lineChart.yScale().ticks();
-  lineYScaleTicks.interval(5);
+  lineChart.yScale().ticks().interval(5);
 
-  // series data
-  lineChart.spline(Sales2003);
-  lineChart.spline(Sales2004);
-
+  // display chart
   lineChart.container(stage);
   lineChart.draw();
 });</script>

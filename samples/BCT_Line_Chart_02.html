@@ -19,8 +19,8 @@
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
 
     // create a chart
     chart = anychart.line();
@@ -50,10 +50,8 @@
     chart.title("Line Chart: Appearance");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");

@@ -61,13 +61,13 @@ Now, let's look at another way of defining the points locations on a map, when t
 
 ```
 var dataSet = anychart.data.set([
-    {'id': 'AU.NS', 'size': 7565500},
-    {'id': 'AU.NT', 'size': 243700},
-    {'id': 'AU.WA', 'size': 2565600},
-    {'id': 'AU.SA', 'size': 1682600},
-    {'id': 'AU.VI', 'size': 5866300},
-    {'id': 'AU.QL', 'size': 4750500},
-    {'id': 'AU.TS', 'size': 514700}
+    {id: 'AU.NS', size: 7565500},
+    {id: 'AU.NT', size: 243700},
+    {id: 'AU.WA', size: 2565600},
+    {id: 'AU.SA', size: 1682600},
+    {id: 'AU.VI', size: 5866300},
+    {id: 'AU.QL', size: 4750500},
+    {id: 'AU.TS', size: 514700}
 ]);
 
 // create map chart
@@ -78,9 +78,6 @@ map.geoData(anychart.maps.australia);
 
 // create bubble series
 var series = map.bubble(dataSet);
-
-// set series geoIdField settings
-series.geoIdField("code_hasc");
 ```
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
@@ -213,8 +210,8 @@ var dataSet = anychart.data.set([
   ['AU.QL', 8, 3.7],
   ['AU.TS', 3.2, 7.3]
 ]);
-var series1Data = dataSet.mapAs({id:[0], size:[1]});
-var series2Data = dataSet.mapAs({id:[0], value:[2]});
+var series1Data = dataSet.mapAs({id: 0, size: 1});
+var series2Data = dataSet.mapAs({id: 0, value: 2});
 ```
 
 {sample}Maps\_Proportional\_Symbol\_12{sample}
@@ -234,12 +231,8 @@ var dataSet = anychart.data.set([
 ]);
 
 // mapping the data
-var series1Data = dataSet.mapAs({id:[0], size:[1]});
-var series2Data = dataSet.mapAs({id:[0], size:[2]});
-
-//set series geoId field settings
-series_1.geoIdField("code_hasc");
-series_2.geoIdField("code_hasc");
+var series1Data = dataSet.mapAs({id: 0, size: 1});
+var series2Data = dataSet.mapAs({id: 0, size: 2});
 ```
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}

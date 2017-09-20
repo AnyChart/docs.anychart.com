@@ -46,7 +46,7 @@
 
   function seriesFormatter(seriesNumber){
     // map data for series
-    var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
+    var seriesData = data.mapAs({x: 0, value: [seriesNumber], fill: 6});
     var series = chart.column(seriesData);
     series.stroke(null);
     var tooltip = series.tooltip();

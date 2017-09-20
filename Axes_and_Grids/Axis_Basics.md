@@ -43,10 +43,8 @@ As you can see, we've set titles both to X and Y axis.
 With AnyChart web charts you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
+chart.yAxis().orientation("right");
+chart.xAxis().orientation("top");
 ```
 
 And here is the demonstration of this feature on the Single series column chart:
@@ -58,23 +56,16 @@ And here is the demonstration of this feature on the Single series column chart:
 To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}labels().enabled(){api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
-    
-Look at the demonstration of possible label display modes: "Normal" and "Stagger".
 
-```
-var xAxis = chart.xAxis();
-xAxis.staggerMode(false);
-```
+Normal labels look like this:    
 
 {sample}AGST\_Axes\_Basic\_03{sample}
 
 Rotated labels:
 
 ```
-var xLabels = chart.yAxis().labels();
-xLabels.rotation(-90);
-var yLabels = chart.xAxis().labels();
-yLabels.rotation(-90);
+chart.yAxis().labels().rotation(-90);
+chart.xAxis().labels().rotation(-90);
 ```
 
 {sample}AGST\_Axes\_Basic\_04{sample}
@@ -82,25 +73,22 @@ yLabels.rotation(-90);
 Adaptive stagger mode and with the maximum number of lines defined:
 
 ```
-// getter of x axis
-var xAxis = chart.xAxis();
 // enables stagger mode
-xAxis.staggerMode(true);
+chart.xAxis().staggerMode(true);
 // set the maximum number lines for labels to stagger 
 // if chart is able to fit labels without staggering or staggering
 // in 2 or 3 lines - it will do so. It will not go over 4 lines:
-xAxis.staggerMaxLines(4);
+chart.xAxis().staggerMaxLines(4);
 ```
 
 Stagger always mode with the fixed number of lines:
 
 ```
 // getter of x axis
-var xAxis = chart.xAxis();
 // enables stagger mode
-xAxis.staggerMode(true);
+chart.xAxis().staggerMode(true);
 // set the number of lines for labels to stagger 
-xAxis.staggerLines(3);
+chart.xAxis().staggerLines(3);
 ```
 Here is a sample of two similar charts with adaptive and fixed stagger modes enabled, you can see that the first one uses adaptive strategy and occupies two lines, the second one always uses three lines:
 
@@ -126,20 +114,15 @@ As in any line, you can make it gradient, change opacity and thickness using {ap
 Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set "true" or "false" to the {api:anychart.core.axes.Ticks#enabled}enabled(){api} method of the {api:anychart.core.axes.Linear#ticks}ticks(){api} or {api:anychart.core.axes.Linear#minorTicks}minorTicks(){api}
 
 ```
-var minorTicks = chart.yScale().minorTicks;
-minorTicks.enabled(true);
-var majorTicks = chart.yScale().ticks();
-majorTicks.enabled(false)
+chart.yScale().minorTicks().enabled(true);
+chart.yScale().ticks().enabled(false)
 ```
 
 Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}position(){api} attributes:
 
 ```
-var yAxisTicks = chart.yAxis().ticks();
-yAxisTicks.position("outside");
-
-var xAxisTicks = chart.xAxis().ticks();
-xAxisTicks.position("outside");
+chart.yAxis().ticks().position("outside");
+chart.xAxis().ticks().position("outside");
 ```
 
 The dashboard below shows how these settings work:

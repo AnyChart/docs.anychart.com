@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var dataSet = anychart.data.set([
+  var data = [
     ["P1", 16, 20],
     ["P2", 12, 18],
     ["P3", 7, 14],
@@ -19,27 +19,22 @@
     ["P6", 10, 23],
     ["P7", 6, 17],
     ["P8", 3, 11]
-  ]);
+  ];
 
-  // map data for the each series
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-
-  // chart type
+  // create
   chart = anychart.line();
+  chart.data(data);
 
   // set title
-  var title = chart.title();
-  title.text("Image Fill");
-  title.padding(5);
-  title.enabled(true);
-  var titleBackground = chart.title().background();
-  titleBackground.enabled(true);
-  titleBackground.fill("gold");
+  chart.title("Image Fill");
+  chart.title().padding(5);
+  chart.title().enabled(true);
+
+  chart.title().background().enabled(true);
+  chart.title().background().fill("gold");
 
   // set chart background
-  var background = chart.background();
-  background.fill({
+  chart.background().fill({
     src: "//static.anychart.com/images/underwater.jpg",
     mode: "fitMax"
   });
@@ -57,20 +52,14 @@
   grid1.layout("vertical");
 
   // adjust axes labels color, ticks color, stroke color
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontColor("#fff");
-  xLabels.fontWeight(900);
-  var yLabels = chart.yAxis().labels();
-  yLabels.fontColor("white");
-  yLabels.fontWeight(900);
-  var yAxis = chart.yAxis();
-  yAxis.stroke("white");
-  var yTicks = chart.yAxis().ticks();
-  yTicks.stroke("white");
+  chart.xAxis().labels().fontColor("#fff");
+  chart.xAxis().labels().fontWeight(900);
 
-  // using data in series
-  chart.line(seriesData_1);
-  chart.spline(seriesData_2);
+  chart.yAxis().labels().fontColor("white");
+  chart.yAxis().labels().fontWeight(900);
+
+  chart.yAxis().stroke("white");
+  chart.yAxis().ticks().stroke("white");
 
   // draw chart
   chart.container("container");

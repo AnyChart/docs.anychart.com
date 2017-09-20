@@ -141,8 +141,8 @@ var data = anychart.data.set([
 ]);
 
 // map the data
-var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [5], label: [6]});
-var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [4], stroke: [5], label: [6]});
+var seriesData_1 = data.mapAs({x: 0, value: 1, fill: 3, stroke: 5, label: 6});
+var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 4, stroke: 5, label: 6});
 ```
 
 {sample}BCT\_Bar\_Chart\_04{sample}

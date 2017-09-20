@@ -7,41 +7,27 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-
-  stage = anychart.graphics.create("container");
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data set
-  data = anychart.data.set([
+  data = [
     ["P1", 16, 20],
     ["P2", 12, 18],
     ["P3", 9, 14]
-  ]);
+  ];
 
-  // data remapping
-  seriesData_1 = data.mapAs({x: [0], value: [1]});
-  seriesData_2 = data.mapAs({x: [0], value: [2]});
-  // chart with rotated labels
-  rotatedLabels = anychart.column();
-  rotatedLabels.title("Rotated labels");
-  rotatedBackground = rotatedLabels.background();
-  rotatedBackground.stroke("#CCCCCC");
+  // create chart
+  chart = anychart.column();
+  chart.data(data);
+  chart.title("Rotated labels");
 
-  // set scale minimum
-  rotatedYScale = rotatedLabels.yScale();
-  rotatedYScale.minimum(0);
+  // rotate labels
+  chart.xAxis().labels().rotation(-90);
+  chart.yAxis().labels().rotation(-90);
 
-  // rotating labels
-  rotatedXAxis = rotatedLabels.xAxis().labels();
-  rotatedXAxis.rotation(-90);
-  rotatedYAxis = rotatedLabels.yAxis().labels();
-  rotatedYAxis.rotation(-90);
-
-  rotatedLabels.column(seriesData_1);
-  rotatedLabels.column(seriesData_2);
-
-  rotatedLabels.container(stage);
-  rotatedLabels.draw();
+  // display chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

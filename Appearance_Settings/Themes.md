@@ -24,12 +24,12 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
   <script>
     anychart.onDocumentReady(function() {
       // data
-      var data = anychart.data.set([
+      var data = [
         ["Department Stores", 637166],
         ["Discount Stores", 721630],
         ["Men's/Women's Specialty Stores", 148662],
         ["All other outlets", 90000]
-      ]);
+      ];
 
       // apply coffee theme
       anychart.theme(anychart.themes.coffee);
@@ -37,8 +37,10 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
       // apply dark blue theme
       // anychart.theme(anychart.themes.darkBlue);
 
+      // create and display chart
       var chart = anychart.bar();
       chart.bar(data);
+
       chart.container("container");
       chart.draw();
     });
@@ -62,12 +64,12 @@ Suppose you want to create several bar charts, and all of them should use the sa
 
 ```
 // data
-var data = anychart.data.set([
+var data = [
   ["Department Stores", 637166],
   ["Discount Stores", 721630],
   ["Men's/Women's Specialty Stores", 148662],
   ["All other outlets", 90000]
-]);
+];
 
 // chart type
 var chart = anychart.bar();
@@ -76,10 +78,8 @@ var chart = anychart.bar();
 chart.title("Bar Chart");
 
 // set axes titles
-var xAxis = chart.xAxis();
-xAxis.title("Retail Channel");
-var yAxis = chart.yAxis();
-yAxis.title("Sales");
+chart.xAxis().title("Retail Channel");
+chart.yAxis().title("Sales");
 
 // set data
 chart.bar(data);
@@ -157,12 +157,12 @@ var customTheme = {
 };
 
 // data
-var data = anychart.data.set([
+var data = [
   ["Department Stores", 637166],
   ["Discount Stores", 721630],
   ["Men's/Women's Specialty Stores", 148662],
   ["All other outlets", 90000]
-]);
+];
 
 // apply theme
 anychart.theme(customTheme);
@@ -188,16 +188,17 @@ Next, you can create a file with several themes or several files with themes and
   <script>
     anychart.onDocumentReady(function() {
       // data
-      var data = anychart.data.set([
+      var data = [
         ["Department Stores", 637166],
         ["Discount Stores", 721630],
         ["Men's/Women's Specialty Stores", 148662],
         ["All other outlets", 90000]
-      ]);
+      ];
       
       // apply custom theme
       anychart.theme(customTheme);
 
+      // creta and display chart
       var chart = anychart.bar();
       chart.bar(data);
       chart.container("container");
@@ -291,7 +292,7 @@ The sample below shows two charts using the same theme with title settings.
 
 In the sample below a table contains several charts. Settings for these charts are predefined in the theme. It is very convenient - these charts have many similar settings. Click "Launch in playground" to examine the code of the sample.
 
-{sample :width 690 :height 680}AS\_Themes\_05{sample}
+{sample :height 680}AS\_Themes\_05{sample}
 
 ## Reset Theme
 

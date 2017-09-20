@@ -10,10 +10,10 @@
     <script x-export="stage">anychart.onDocumentReady(function() {
 
   // create a stage for two charts
-  stage = anychart.graphics.create("container",600,800);
+  stage = anychart.graphics.create("container", 600, 800);
 
   // setting data
-  var data = anychart.data.set([
+  var data = [
     ["January", 200, 180],
     ["February", 289, 290],
     ["March", 197, 370],
@@ -26,21 +26,12 @@
     ["October", 218, 236],
     ["November", 289, 147],
     ["December", 266, 368]
-  ]);
-
-  // data remapping
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  ];
 
   // create a chart
   var chart_1 = anychart.column();
-  
-  // set chart title
+  chart_1.data(data);
   chart_1.title("Adaptive Stagger Labels");
-
-  // series data
-  chart_1.column(Sales2003);
-  chart_1.column(Sales2004);
 
   // enables stagger mode
   chart_1.xAxis().staggerMode(true);
@@ -51,13 +42,8 @@
   
     // create a chart
   var chart_2 = anychart.column();
-  
-  // set chart title
+  chart_2.data(data);
   chart_2.title("Fixed Stagger Labels");
-
-  // series data
-  chart_2.column(Sales2003);
-  chart_2.column(Sales2004);
 
   // enables stagger mode
   chart_2.xAxis().staggerMode(true);

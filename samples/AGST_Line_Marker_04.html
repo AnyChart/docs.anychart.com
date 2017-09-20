@@ -30,13 +30,10 @@
     dash: "2 4"
   });
 
-  // set y scale ticks interval
-  var yScale = chart.yScale();
-  yScale.minimum(0);
+
 
   // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
     seriesFormatter(seriesNumber);
@@ -44,7 +41,7 @@
 
   function seriesFormatter(seriesNumber){
     // map data for series
-    var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
+    var seriesData = data.mapAs({x: 0, value: [seriesNumber], fill: 6});
     var series = chart.column(seriesData);
     series.stroke(null);
   }

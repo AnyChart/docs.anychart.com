@@ -24,17 +24,17 @@
   columnChart = anychart.column();
   splineChart = anychart.line();
 
-  series1 = columnChart.column(dataSet.mapAs({x: [0], value: [1]}));
-  series2 = columnChart.column(dataSet.mapAs({x: [0], value: [2]}));
-  series3 = columnChart.column(dataSet.mapAs({x: [0], value: [3]}));
-  series4 = columnChart.column(dataSet.mapAs({x: [0], value: [4]}));
+  series1 = columnChart.column(dataSet.mapAs({x: 0, value: 1}));
+  series2 = columnChart.column(dataSet.mapAs({x: 0, value: 2}));
+  series3 = columnChart.column(dataSet.mapAs({x: 0, value: 3}));
+  series4 = columnChart.column(dataSet.mapAs({x: 0, value: 4}));
 
   series1.name("Shop 1");
   series2.name("Shop 2");
   series3.name("Shop 3");
   series4.name("Shop 4");
 
-  seriesSpline = splineChart.spline(dataSet.mapAs({x: [0], value: [5]}));
+  seriesSpline = splineChart.spline(dataSet.mapAs({x: 0, value: 5}));
 
   // set bounds
   columnChart.bounds(0, 0, "100%", "50%");

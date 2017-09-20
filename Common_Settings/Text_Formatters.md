@@ -552,11 +552,11 @@ Managing additional information for chart tooltips works pretty much the same as
 // map data for series
 var seriesData = dataSet.mapAs({
     // set data row for x parameter
-    x: [0],
+    x: 0,
     // set data row for value parameter
-    value: [1],
+    value: 1,
     // set data row for custom parameter
-    yoy: [2]
+    yoy: 2
 });
 
 // set data for series
