@@ -3,22 +3,27 @@
 
 ## Overview
 
-AnyChart supports 3D versions of the following chart types: Area, Bar, Column, and Pie. Some modifications of these types can be also drawn in 3D – see the [Supported Types](#supported_types) section.
+AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D – see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure 3D charts.
 
 ## Quick Start
 
 To create a 3D chart, use one of the following chart constructors:
+
 * {api:anychart#area3d}anychart.area3d(){api}
 * {api:anychart#bar3d}anychart.bar3d(){api}
 * {api:anychart#column3d}anychart.column3d(){api}
+* {api:anychart#line3d}anychart.line3d(){api}
 * {api:anychart#pie3d}anychart.pie3d(){api}
 
-You can either pass your data to the chart constructor or create a series, using one of these methods:
-* {api:anychart.charts.Cartesian#area}area(){api}
-* {api:anychart.charts.Cartesian#bar}bar(){api}
-* {api:anychart.charts.Cartesian#column}column(){api}
+You can either pass your data to the chart constructor or create a series by using one of these methods:
+
+* {api:anychart.charts.Cartesian3d#area}area(){api}
+* {api:anychart.charts.Cartesian3d#bar}bar(){api}
+* {api:anychart.charts.Cartesian3d#column}column(){api}
+* {api:anychart.charts.Cartesian3d#line}line(){api}
+* {api:anychart.charts.Cartesian3d#line2d}line2d(){api}
 
 That is how it looks like:
 
@@ -45,7 +50,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_3d\_01{sample}
+{sample}BCT\_3D\_01{sample}
 
 ## Z-Angle
 
@@ -60,7 +65,7 @@ In the following sample, there is a 3D Column chart with the Z-angle set to 20°
 chart.zAngle(20);
 ```
 
-{sample}BCT\_3d\_02{sample}
+{sample}BCT\_3D\_02{sample}
 
 ## Z-Aspect
 
@@ -75,7 +80,7 @@ In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (t
 chart.zAspect("100%"");
 ```
 
-{sample}BCT\_3d\_03{sample}
+{sample}BCT\_3D\_03{sample}
 
 ## Z-Distribution
 
@@ -88,7 +93,7 @@ Here is a sample 3D Column chart with the Z-axis distribution enabled:
 chart.zDistribution(true);
 ```
 
-{sample}BCT\_3d\_04{sample}
+{sample}BCT\_3D\_04{sample}
 
 ##Supported Types
 
@@ -97,8 +102,9 @@ Here is the list of supported 3D charts:
 * [3D Area](Area_Chart)
 * [3D Bar](Bar_Chart)
 * [3D Column](Column_Chart)
-* [3D Pie](Pie_Chart)
 * [3D Doughnut](Doughnut_Chart)
+* [3D Line](Line_Chart) and [3D 2D Line](2D_Line_Chart)
+* [3D Pie](Pie_Chart)
 
 See also 3D [stacked](../Stacked/Overview) charts:
 

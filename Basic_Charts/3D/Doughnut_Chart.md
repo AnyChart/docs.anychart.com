@@ -9,7 +9,7 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 
 ## Quick Start
 
-To build a 3D Doughnut chart, use the {api:anychart#pie3d}anychart.bar3d(){api} chart constructor and the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
+To build a 3D Doughnut chart, use the {api:anychart#pie3d}anychart.pie3d(){api} chart constructor and the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
 
 ```
 // create a 3d pie chart

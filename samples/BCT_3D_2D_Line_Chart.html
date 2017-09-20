@@ -22,16 +22,21 @@
 	var seriesData_2 = data.mapAs({x: [0], value: [2]});
 	var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
-	// create a 3d column chart
-	chart = anychart.column3d();
+	// create a 3d line chart
+	chart = anychart.line3d();
 
-	// create series (column) and set the data
+	// create a column series and set the data
 	var series1 = chart.column(seriesData_1);
-	var series2 = chart.column(seriesData_2);
-	var series3 = chart.column(seriesData_3);
+
+	// create 2d line series and set the data
+	var series2 = chart.line2d(seriesData_2);
+	var series3 = chart.line2d(seriesData_3);
+
+	// disable the z-axis distribution mode
+	chart.zDistribution(false);
 
 	// set the chart title
-	chart.title("3D Charts: Multiple Series");
+	chart.title("3D 2D Line Chart");
 
 	// set the container id
 	chart.container("container");

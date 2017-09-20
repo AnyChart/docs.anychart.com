@@ -9,7 +9,7 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 
 ## Quick Start
 
-To build a 3D Area chart, use the {api:anychart#area3d}anychart.area3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#area}area(){api} method:
+To build a 3D Area chart, use the {api:anychart#area3d}anychart.area3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#area}area(){api} method:
 
 ```
 // create a 3d area chart

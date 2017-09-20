@@ -9,7 +9,7 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 
 ## Quick Start
 
-To build a 3D Column chart, use the {api:anychart#column3d}anychart.column3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#column}column(){api} method:
+To build a 3D Column chart, use the {api:anychart#column3d}anychart.column3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#column}column(){api} method:
 
 ```
 // create a 3d column chart
