@@ -23,7 +23,7 @@
       x: "Backward Diagonal",
       value: 1,
       hatchFill:{
-        type:"backwarddiagonal",
+        type: "backwarddiagonal",
         color: "grey"
       }
     },
@@ -31,7 +31,7 @@
       x: "Checker board",
       value: 1,
       hatchFill:{
-        hatchType:"checkerboard",
+        type:"checkerboard",
         color: "grey"
       }
     },
@@ -278,7 +278,6 @@
   ]);
   series.fill("#FFF");
   series.stroke("#CCC");
-  chart.minHeight(600);
   // draw
   chart.container("container");
   chart.draw();

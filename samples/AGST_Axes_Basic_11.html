@@ -8,36 +8,35 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  // data
+  data = [
+    ["A", 10],
+    ["B", 20],
+    ["C", 70],
+    ["D", 78],
+    ["E", 59]
+  ];
 
-  // chart type
-  chart = anychart.scatterChart();
+  // create a chart
+  chart = anychart.column();
+  chart.data(data);
+
+  // create red to green palette with 10 steps
+  var palette = anychart.palettes.rangeColors();
+  palette.items(["#ff0000", "#00ff00"]);
+  palette.count(10);
+  // set palette to grid
+  chart.yGrid().palette(palette);
+
+  // configure y scale
+  chart.yScale().minimum(0).maximum(100);
+  chart.yScale().ticks().interval(10);
 
   // chart title
-  chart.title("Binding Grids to Axes");
+  chart.title("Custom Grid Interlace");
 
-  // data for top line series
-  chart.marker([
-    [-2, -4],
-    [-1, -1],
-    [0, 0],
-    [1, 1],
-    [2, 4]
-  ]);
 
-  // create major and minor grids and bind them to X and Y axes
-  var y_grid = chart.grid(0);
-  y_grid.axis(chart.yAxis());
-
-  var x_grid = chart.grid(1);
-  x_grid.axis(chart.xAxis());
-
-  var y_minor_grid = chart.minorGrid(0);
-  y_minor_grid.axis(chart.yAxis());
-
-  var x_minor_grid = chart.minorGrid(1);
-  x_minor_grid.axis(chart.xAxis());  
-
-  // draw
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>

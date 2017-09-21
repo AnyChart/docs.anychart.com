@@ -9,22 +9,25 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
+  // data
   var data = [
     ["P1", 16, 20],
     ["P2", 12, 18],
     ["P3", 9, 14]
   ];
 
+  // create chart
   chart = anychart.column();
   chart.data(data);
   
-  // adjusting major and minor grids
-  var grid = chart.grid();
-  grid.enabled(true);
-  var minorGrid = chart.minorGrid();
-  minorGrid.enabled(true);
+  // enable major grids
+  chart.xGrid().enabled(true);
+  chart.yGrid().enabled(true);
+  // enable minor grids
+  chart.xMinorGrid().enabled(true);
+  chart.yMinorGrid().enabled(true);
 
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>

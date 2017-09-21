@@ -143,7 +143,7 @@ Also, we can make a monochromatic map using hatch fills. We use {api:anychart.co
 ```
 // making the chart monochromatic
 series.hatchFill("horizontal");
-series.hoverHatchFill("diagonal_cross");
+series.hoverHatchFill("weave");
 series.selectHatchFill("confetti");
 series.stroke("black");
 series.fill(null);

@@ -92,7 +92,7 @@ legend.positionMode("outside");
 // set position and alignment
 legend.position("bottom");
 legend.align("center");
-legend.itemsLayout("horizontalExpandable");
+legend.itemsLayout("horizontal-expandable");
 ```
 
 {sample}CS\_Legend\_04{sample}
@@ -153,7 +153,7 @@ Legend size is controlled by the following methods:
 
 ### Expandable
 
-When the legend [layout mode](#layout) is set to *"horizontalExpandable"* or *"verticalExpandable"* it makes sense to use the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and the {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which control the extent to which legend can expand to. It can be set both in pixels and percents. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
+When the legend [layout mode](#layout) is set to *"horizontal-expandable"* or *"vertical-expandable"* it makes sense to use the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and the {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which control the extent to which legend can expand to. It can be set both in pixels and percents. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
 
 ```
 // Set maximum width and height.
@@ -161,7 +161,7 @@ legend.maxWidth("30%");
 legend.maxHeight("30%");
 
 // legend mode and position
-legend.itemsLayout("verticalExpandable");
+legend.itemsLayout("vertical-expandable");
 legend.position("right");
 
 // paginator position

@@ -8,29 +8,27 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  // data
+  data = [
+    ["A", 10],
+    ["B", 20],
+    ["C", 70],
+    ["D", 78],
+    ["E", 59]
+  ];
 
-  // chart type
-  chart = anychart.radar();
-  chart.title("Circular Radar Grid");
+  // create a chart
+  chart = anychart.column();
+  chart.data(data);
 
-  chart.area([
-    ["A", 637166],
-    ["B", 721630],
-    ["C", 148662],
-    ["D", 378662],
-    ["E", 900000]
-  ]);
+  // fill chart area using 
+  chart.yGrid().palette(["#CECECE 0.4"]);
+  chart.yGrid().stroke(null);
 
-  // grid settings
-  var grid = chart.grid();
-  // set grid layout
-  grid.layout("circuit");
-  // set even fill
-  grid.evenFill("#CECECE 0.6");
+  // chart title
+  chart.title("Fill Chart Area using Grid");
 
-  chart.legend(false);
-
-  // set container and draw chart
+  // display chart
   chart.container("container");
   chart.draw();
 });</script>
