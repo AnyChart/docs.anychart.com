@@ -1,11 +1,5 @@
 {:index 11}
-Map Scales
-===========
-
-* [Overview](#overview)
-* [Ordinal ColorScale](#ordinal_colorscale)
-* [Linear ColorScale](#linear_colorscale)
-* [Palette](#palette)
+# Map Scales
 
 ## Overview
 
@@ -20,8 +14,8 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 <img src = "https://static.anychart.com/images/ord_colorrange.jpg">
 
 ```
-	// set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
+// set the colors and ranges for the scale
+series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
 ```
 
 {sample}Maps\_Scales\_01{sample}
@@ -31,9 +25,9 @@ Although, if you decide to set the colors or ranges later, you may use the {api:
 The following code does the same as the code above.
 
 ```
-	// set the colors and the ranges
-	series.colorScale().ranges([{less:200},{from:200, to:250},{greater:250}]);
-	series.colorScale().colors(['#EC6E07', '#A1958A', '#64B5F6']);
+// set the colors and the ranges
+series.colorScale().ranges([{less:200},{from:200, to:250},{greater:250}]);
+series.colorScale().colors(['#EC6E07', '#A1958A', '#64B5F6']);
 ```
 
 ## Linear ColorScale
@@ -64,11 +58,11 @@ Read the following information properly to chose the most suitable palette for y
 Single Hue progression is a fade from a light shade of a chosen color to its dark shade. Usually, the darker the shade is, the higher value it represents. 
 This palette type is usually used to show the difference in values of something common between some regions or in time.
 
-<table border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
+<th>Ordinal</th>
+<th>Linear</th>
 </tr>
 <tr>
 <td>
@@ -120,11 +114,11 @@ positive to negative values, or to show the mean value.
 Complementary hue progressions are a type of bi-polar progression. This can be done with any of the complementary colors and will fade from each 
 of the darker end point hues into a gray shade representing the middle. An example would be using blue and orange as the two end points.
 
-<table border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
+<th>Ordinal</th>
+<th>Linear</th>
 </tr>
 <tr>
 <td>
@@ -155,8 +149,8 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
+<th>Ordinal</th>
+<th>Linear</th>
 </tr>
 <tr>
 <td>
@@ -177,51 +171,3 @@ In case you haven't defined any of the colors, they will be generated automatica
 That's how the same map would look like with an ordinal Scale.
 
 {sample}Maps\_Scales\_08{sample}
-<!--
-### Coming soon
- 
-#### Partial color progression
- 
-Partial spectral hue progressions are used to map mixtures of two distinct sets of data. 
-This ColorRange type looks like a gradient between two adjacent opponent hues and shows the magnitude of the mixing data classes.
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
-</tr>
-<tr>
-<td>
-<img src = "https://static.anychart.com/images/partial\_c\_progr\_ord.png">
-</td>
-<td>
-<img src = "https://static.anychart.com/images/partial\_c\_progr\_quant.png">
-</td>
-</tr>
-</tbody>
-</table>
-
-
-#### Full-spectral color progression
-
-Full spectral progression contains all rainbow colors, from blue to red. This ColorRange type is usually used on relief maps and modern weather maps. 
-This progression is not recommended under other circumstances because some connections between a color and its meaning can seem confusing for users.
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
-</tr>
-<tr>
-<td>
-<img src = "https://static.anychart.com/images/full\_c\_ord.png">
-</td>
-<td>
-<img src = "https://static.anychart.com/images/full\_c\_quant.png">
-</td>
-</tr>
-</tbody>
-</table>
--->

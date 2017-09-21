@@ -225,7 +225,7 @@ function draw_line(layer, points, color, z_index){
 function draw_picture(layer, radius, coordinates, color, pic_name) {
 	layer.circle(radius, coordinates[0], coordinates[1])
 		.stroke(color)
-		.fill({src: "https://static.anychart.com/images/graphics_stage_demo/" + pic_name, mode: acgraph.vector.ImageFillMode.FILL});
+		.fill({src: "https://static.anychart.com/images/graphics_stage_demo/" + pic_name});
 	return layer;
 }</script>
 </head>

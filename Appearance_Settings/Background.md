@@ -84,7 +84,7 @@ Image fill allows you to set an image as a background. An image can be **stretch
 ```
 chart.background().fill({
   src: "//static.anychart.com/images/underwater.jpg",
-  mode: acgraph.vector.ImageFillMode.FILL
+  mode: "fit"
 });
 ```
 
