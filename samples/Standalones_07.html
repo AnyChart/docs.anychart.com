@@ -6,14 +6,14 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 // set the stage
 stage = anychart.graphics.create("container", "100%", "100%");
 
 // create a chart
 chart = anychart.line();
 
-dataSet = [
+data = [
 	["Winter", 1.1, 1, 2, 1.8, 0.1, 0.5, 1.4],
 	["Spring", 1.6, 2, 1.5, 1.9, 0.2, 1.1, 1.4],
 	["Summer", 1.4, 1.9, 0.5, 0.9, 0.3, 1.8, 1.2],

@@ -6,7 +6,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="https://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
+    <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
@@ -20,7 +20,7 @@
     ];
 
     // create a chart
-    var chart = anychart.pert();
+    chart = anychart.pert();
 
     // milestones size
     chart.milestones().size(50);

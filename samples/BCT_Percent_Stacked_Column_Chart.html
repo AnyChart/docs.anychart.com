@@ -17,11 +17,11 @@
     ["Autumn", 20000, 20000, 40000]
   ];
 
-  // set data
-  chart.data(data);
-
   // create a chart
   chart = anychart.column();
+
+  // set data
+  chart.data(data);  
 
   // enable the percent stacking mode
   chart.yScale().stackMode("percent");
