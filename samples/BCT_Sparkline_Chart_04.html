@@ -7,22 +7,22 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
     stage = anychart.graphics.create("container");
-  // create charts
+  // create chart
   chart1 = anychart.sparkline();
 
-  // set container id for the charts
-  chart1.container(stage);
   chart1.title("Reviews for matryoshka567");
+  chart1.seriesType("column");
 
-  // create data for both charts
+  // create data
   chart1.data([500,-100,340,200,-90,80,-70]);
 
-  // set charts dimensions and postition
+  // set chart dimensions and postition
   chart1.bounds(0, 0, 300, 50);
-  chart1.type("column");
-  
+
+  // set container id for the charts
+  chart1.container(stage);  
   // initiate chart drawing
   chart1.draw();
 });</script>

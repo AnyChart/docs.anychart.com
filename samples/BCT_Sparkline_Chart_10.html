@@ -11,11 +11,9 @@
   stage = anychart.graphics.create("container");
   // create charts
   chart1 = anychart.sparkline();
+  chart1.seriesType("column");
 
-  // set container id for the charts
-  chart1.container(stage);
-  chart1.title(true);
-  chart1.title().text("Reviews for matryoshka567");
+  chart1.title("Reviews for matryoshka567");
 
   // create data for both charts
   chart1.data([500,-100,340,200,-90,80,-70]);
@@ -24,8 +22,9 @@
 
   // set charts dimensions and postition
   chart1.bounds(0, 0, 300, 80);
-  chart1.type("column");
-  
+
+  // set container id for the charts
+  chart1.container(stage);
   // initiate chart drawing
   chart1.draw();  
 });</script>

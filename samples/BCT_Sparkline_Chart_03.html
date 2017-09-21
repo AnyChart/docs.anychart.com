@@ -13,14 +13,14 @@
   // create charts
   chart1 = anychart.sparkline();
   chart2 = anychart.sparkline();
-
-  // set container id for the charts
-  chart1.container(stage);
-  chart2.container(stage);
   
   // setting the titles
   chart1.title("EUR/USD");
   chart2.title("GBP/USD");
+
+  // set series type
+  chart1.seriesType("area");
+  chart2.seriesType("area");  
 
   // create data for both charts
   chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
@@ -30,9 +30,9 @@
   chart1.bounds(0, 0, 200, 20);
   chart2.bounds(0, 25, 200, 20);
   
-  // set series type
-  chart1.type("area");
-  chart2.type("area");
+  // set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);
   
   // initiate chart drawing
   chart1.draw();

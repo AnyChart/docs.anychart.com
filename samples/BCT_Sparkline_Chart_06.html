@@ -18,10 +18,6 @@
   chart1.title("Tuned scale");
   chart2.title("Plain scale");
 
-  // set container id for the charts
-  chart1.container(stage);
-  chart2.container(stage);
-
   // create data for both charts
   chart1.data([79,185,80,275,3009,10445,92,455,84,91]);
   chart2.data([79,185,80,275,3009,10445,92,455,84,91]);
@@ -33,7 +29,11 @@
   // change scales
   chart1.yScale(anychart.scales.log());
   chart1.yScale().minimum(79).maximum(10445);
-  
+
+  // set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);  
+
   // initiate chart drawing
   chart1.draw();
   chart2.draw();
