@@ -31,11 +31,12 @@ grids.minorStroke("Black", 0.5);
 
 ## Interlace
 
-To make grid more aesthetically pleasing or to avoid using grid lines alltogether you can use interlaced fill, which is configured using {api:anychart.core.grids.MapSettings#evenFill}evenFill(){api} and {api:anychart.core.grids.MapSettings#oddFill}oddFill(){api} methods:
+To make grid more aesthetically pleasing or to avoid using grid lines alltogether you can use interlaced fill, which is configured using {api:anychart.core.grids.MapSettings#palette}palette(){api} method:
 
 ```
-map.grids().oddFill("Blue 0.5");
-map.grids().evenFill("LightBlue 0.5");
+mapGrids = map.grids();
+mapGrids.enabled(true);
+mapGrids.vertical().palette(["LightBlue 0.2", "LightBlue 0.5"]);
 ```
 
 {sample}Maps\_Grid\_03{sample}
