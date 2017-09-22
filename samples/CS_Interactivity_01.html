@@ -33,10 +33,8 @@
   chart.legend(true);
 
   // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Sales");
-  var yAxis = chart.yAxis();
-  yAxis.title("Month");
+  chart.xAxis().title("Sales");
+  chart.yAxis().title("Month");
 
   // set data
   var series_1 = chart.line(seriesData_1);
