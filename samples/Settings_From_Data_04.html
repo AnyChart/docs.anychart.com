@@ -73,14 +73,11 @@
     scatterChart.yAxis().title().text("Enemies Amount").fontSize(10).padding(0).height(0).margin(0);
 
     // draw grid
-    scatterChart.grid().layout("horizontal");
+    scatterChart.yGrid(true);
 
     // draw minor grid and adjust
-    scatterChart.minorGrid()
-        .evenFill("none")
-        .oddFill("none")
-        .stroke("black 0.075")
-        .layout("vertical");
+    scatterChart.yMinorGrid(true);
+    scatterChart.yMinorGrid().stroke("black 0.075")
 
     // data
     data = anychart.data.set([
