@@ -9,98 +9,39 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var dataSet = anychart.data.set([
-      [1, 10],
-      [2, 12],
-      [3, 11],
-      [4, 15],
-      [5, 20],
-      [6, 22],
-      [7, 21],
-      [8, 25],
-      [9, 31],
-      [10, 32],
-      [11, 28],
-      [12, 29],
-      [13, 40],
-      [14, 41],
-      [15, 45],
-      [16, 50],
-      [17, 65],
-      [18, 45],
-      [19, 50],
-      [20, 51],
-      [21, 65],
-      [22, 60],
-      [23, 62],
-      [24, 65],
-      [25, 45],
-      [26, 55],
-      [27, 59],
-      [28, 52],
-      [29, 53],
-      [30, 40],
-      [31, 45],
-      [32, 23],
-      [33, 45],
-      [34, 40],
-      [35, 33],
-      [36, 37],
-      [37, 59],
-      [38, 30],
-      [39, 12],
-      [40, 60]
-  ]);
+  var data = [
+      [1, 0.5],
+      [2, 2],
+      [2, 1],
+      [2, 1.3],
+      [5, 5.6],
+      [6, 5.5],
+      [5.7, 7.8],
+      [8, 5],
+      [9, 13],
+      [10, 9],
+      [5, 5.8],
+      [12, 11]
+  ];
 
-  chart = anychart.cartesian();
-  // set chart margin settings
-  chart.margin(0);
-
-  var series = chart.spline(dataSet.mapAs({x: 0, value: 1}));
-
+  chart = anychart.marker(data);
+  
   // create the title
   chart.title("Multi-hovering feature");
 
   // turn on grids
-  var grid = chart.grid(0);
-  grid.enabled(true);
-  var grid1 = chart.grid(1);
-  grid1.enabled(true);
-  grid1.layout("vertical");
-  var minorGrid = chart.minorGrid();
-  minorGrid.enabled(true);
-  var minorGrid1 = chart.minorGrid(1);
-  minorGrid1.enabled(true);
-  minorGrid1.layout("vertical");
-
-  // set chart axes settings
-  var scale = anychart.scales.linear();
-  chart.xScale(scale);
-  var xAxis = chart.xAxis();
-  xAxis.minorTicks(true);
-  var yAxis = chart.yAxis();
-  yAxis.minorTicks(true);
-
-  //set chart legend settings
-  var legend = chart.legend();
-  legend.enabled(true);
-  var legendPadding= legend.padding();
-  legendPadding.bottom(30);
-  chart.background(false);
-
-  series.markers(true);
-  var hoverMarkers = series.hoverMarkers();
-  hoverMarkers.enabled(true);
-  hoverMarkers.fill("yellow");
+  // enable major grids
+  chart.xGrid(true);
+  chart.yGrid(true);
+  chart.xMinorGrid(true);
+  chart.yMinorGrid(true);
+  
+  chart.getSeries(0).hoverFill({color: "Yellow"});
 
   // multi-hover enabling 
-  var interactivity = chart.interactivity();
-  interactivity.hoverMode("by-spot");
-  interactivity.spotRadius(60);
+  chart.interactivity().hoverMode("by-spot");
+  chart.interactivity().spotRadius(70);
   
-  // disable the legend
-  chart.legend(false);
-
   chart.crosshair(true);
   chart.container("container");
   chart.draw();

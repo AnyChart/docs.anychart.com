@@ -27,13 +27,13 @@
     // create error bars
     series.error("10%");
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
+    // enable major grids
+    chart.xGrid().enabled(true);
+    chart.yGrid().enabled(true);
 
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // enable minor grids
+    chart.xMinorGrid().enabled(true);
+    chart.yMinorGrid().enabled(true);
 
     // set the chart title
     chart.title("Scatter Line Chart with Error Bars");

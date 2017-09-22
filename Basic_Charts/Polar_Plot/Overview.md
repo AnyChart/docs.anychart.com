@@ -110,30 +110,29 @@ To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) 
 
 {sample}BCT\_Polar\_Chart\_05{sample}
 
-##Grids
+## Grids
 
 This section explains how to configure the appearance and layout of grids on polar charts. You can also read about grids here: [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
-To get grids by index, call the {api:anychart.charts.Radar#grid}grid(){api} method. By default, there are two grids: a radial one with the index 0 and a circular one with the index 1.
+By default, there are two grids: {api:anychart.charts.Polar#yGrid}yGrid(){api} and {api:anychart.charts.Polar#xGrid}xGrid(){api}
 
 You can configure the appearance of any grid — here is the list of available methods:
 
 * {api:anychart.core.grids.Polar#stroke}stroke(){api} sets the stroke
-* {api:anychart.core.grids.Polar#evenFill}evenFill(){api} sets the fill of even-numbered cells
-* {api:anychart.core.grids.Polar#oddFill}oddFill(){api} sets the fill of odd-numbered cells
+* {api:anychart.core.grids.Polar#palette}palette(){api} sets the fills to create solid or interlaced effects.
 
 In the sample below, there is a polar chart with the stroke of both grids configured:
 
 ```
-// configure the stroke of the radial grid
-chart.grid(0).stroke({
+// configure the stroke of the X grid
+chart.xGrid().stroke({
   color: "green",
   thickness: 0.5,
   opacity: 0.5
 });
 
 // configure the stroke of the circular grid
-chart.grid(1).stroke({
+chart.yGrid().stroke({
   color: "green",
   thickness: 0.5,
   opacity: 0.5,
@@ -146,29 +145,11 @@ chart.grid(1).stroke({
 In this sample cells of the radial and circular grids are filled with color:
 
 ```
-// color the even-numbered cells of the radial grid
-polar1.grid(0).evenFill({
-  color: "gray",
-  opacity: 0.05
-});
+// color the even-odd cells of the x grid
+polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
 
-// color the odd-numbered cells of the radial grid
-polar1.grid(0).oddFill({
-  color: "gray",
-  opacity: 0.1
-});
-
-// color the even-numbered cells of the circular grid 
-radar2.grid(1).evenFill({
-  color: "gray",
-  opacity: 0.05
-});
-
-// color the odd-numbered cells of the circular grid  
-radar2.grid(1).oddFill({
-  color: "gray",
-  opacity: 0.1
-});
+// color the even-odd cells of the y grid 
+polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 
 {sample}BCT\_Polar\_Chart\_07{sample}

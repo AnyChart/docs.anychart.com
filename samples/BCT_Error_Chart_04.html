@@ -46,13 +46,13 @@
     error2.xLowerError(0.1);
     error2.xUpperError(0.2);
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
+    // enable major grids
+    chart.xGrid().enabled(true);
+    chart.yGrid().enabled(true);
 
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // enable minor grids
+    chart.xMinorGrid().enabled(true);
+    chart.yMinorGrid().enabled(true);
 
     // set the chart title
     chart.title("Lower and Upper Error Bars: Scatter");

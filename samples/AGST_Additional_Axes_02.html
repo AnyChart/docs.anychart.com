@@ -15,65 +15,78 @@
   // setting xScale settings
   var xScale = chart.xScale();
   xScale.minimum(-10);
-  var xScaleTicks = chart.xScale().ticks();
-  xScaleTicks.interval(10);
+  chart.xScale().ticks().interval(10);
 
   // adding and adjusting extra X scale
   var extraXScale = anychart.scales.linear();
   extraXScale.minimum(-1000);
-  var extraXScaleTicks = extraXScale.ticks();
-  extraXScaleTicks.interval(5000);
+  extraXScale.ticks().interval(5000);
 
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
 
   // setting yScale settings
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(0.5);
+  chart.yScale().ticks().interval(0.5);
 
   // set yAxis settings
-  var yAxis = chart.yAxis(0);
-  yAxis.stroke("red");
-  yAxis.staggerMode(false);
-  var yAxisTicks = chart.yAxis(0).ticks();
-  yAxisTicks.stroke("red");
-  yAxisTicks.enabled(true);
-  var yAxisLabels = chart.yAxis(0).labels();
-  yAxisLabels.fontColor("red");
-  var yAxisTitle = chart.yAxis(0).title();
-  yAxisTitle.text("Amplitude");
-  yAxisTitle.enabled(true);
-  yAxisTitle.fontColor("red");
-  var yAxis1 = chart.yAxis(1);
-  var yAxisTicks1 = chart.yAxis(1).ticks();
-  yAxisTicks1.enabled(true);
-  yAxis1.orientation("right");
-  yAxis1.scale(extraYScale);
-  yAxis1.title("Amplitude");
+  chart.yAxis(0).stroke("red");
+  chart.yAxis(0).ticks().stroke("red");
+  chart.yAxis(0).labels().fontColor("red");
+  chart.yAxis(0).title("Amplitude");
+  chart.yAxis(0).title().fontColor("red");
+
+  chart.yAxis(1).enabled(true);
+  chart.yAxis(1).stroke("Black");
+  chart.yAxis(1).ticks().enabled(true);
+  chart.yAxis(1).ticks().stroke("Black");
+  chart.yAxis(1).orientation("right");
+  chart.yAxis(1).scale(extraYScale);
+  chart.yAxis(1).title("Amplitude");
 
   // setting xAxis settings
-  var xAxis = chart.xAxis(0);
-  xAxis.stroke("red");
-  var xAxisTicks = chart.xAxis(0).ticks();
-  xAxisTicks.stroke("red");
-  xAxisTicks.enabled(true);
-  var xAxisLabels = chart.xAxis(0).labels();
-  xAxisLabels.fontColor("red");
-  var xAxisTitle = xAxis.title();
-  xAxisTitle.text("Time msec");
-  xAxisTitle.fontColor("red");
-  xAxisTitle.enabled(true);
-  var xAxis1 = chart.xAxis(1);
-  var xAxisTicks1 = chart.xAxis(1).ticks();
-  xAxisTicks1.enabled(true);
-  xAxis1.drawFirstLabel(false);
-  xAxis1.orientation("top");
-  xAxis1.staggerMode(false);
-  xAxis1.scale(extraXScale);
-  xAxis1.title("Time Sec");
+  chart.xAxis(0).stroke("red");
+  chart.xAxis(0).ticks().stroke("red");
+  chart.xAxis(0).ticks().enabled(true);
+  chart.xAxis(0).labels().fontColor("red");
+  chart.xAxis(0).title("Time msec");
+  chart.xAxis(0).title().fontColor("red");
 
-  // setting first series of data
-  var firstSeries = anychart.data.set([
+  chart.xAxis(1).enabled(true);
+  chart.xAxis(1).stroke("Black");
+  chart.xAxis(1).ticks().enabled(true);
+  chart.xAxis(1).ticks().stroke("Black");
+  chart.xAxis(1).drawFirstLabel(false);
+  chart.xAxis(1).orientation("top");
+  chart.xAxis(1).scale(extraXScale);
+  chart.xAxis(1).title("Time Sec");
+
+  // setting and adjusting data visualisation
+  series1 = chart.line(getData1());
+  series2 = chart.line(getData2());
+  series2.yScale(extraYScale);
+  series2.xScale(extraXScale);
+  
+  chart.tooltip().format("(x,y) = ({%x},{%Value})");
+  chart.palette(["Red", "Black"]);
+
+  // adding red line to emphasize zero of extra axis
+  var lineMarker = chart.lineMarker();
+  lineMarker.stroke("1 red");
+  lineMarker.layout("vertical");
+  lineMarker.scale(extraXScale);
+
+  chart.yGrid(true);
+  chart.yGrid().stroke("red 0.3");
+  chart.xGrid(true);
+  chart.xGrid().stroke("red 0.3");  
+
+  chart.container("container");
+  chart.draw();
+});
+
+// helper function to store data
+function getData1(){
+  return [
     [0, 2],
     [1, 0.720403074490853],
     [2, -0.416146836547142],
@@ -115,10 +128,11 @@
     [38, 0.0955073644047295],
     [39, 0.0260139446204817],
     [40, -0.0635179106335488]
-  ]);
+]}
 
-  // setting second series of data
-  var secondSeries = anychart.data.set([
+// helper function to store data
+function getData2(){
+  return [
     [1000, 0.00100000],
     [1500, 0.00066667],
     [2000, 0.00050000],
@@ -160,65 +174,8 @@
     [20000, 0.00005000],
     [20500, 0.00004878],
     [21000, 0.00004762]
-  ]);
-
-  // setting and adjusting data visualisation
-  var blackSeries = chart.line(secondSeries);
-  blackSeries.yScale(extraYScale);
-  blackSeries.xScale(extraXScale);
-  blackSeries.stroke("#000", 3);
-  blackSeries.hoverStroke("#000", 3);
-  var blackMarkers = blackSeries.markers();
-  blackMarkers.enabled(true);
-  blackMarkers.size(1);
-  blackMarkers.fill("black");
-  var blackHoverMarkers = blackSeries.hoverMarkers();
-  blackHoverMarkers.size(3);
-  blackHoverMarkers.fill("black");
-  blackHoverMarkers.stroke("black");
-  var blackTooltip = blackSeries.tooltip();
-  blackTooltip.title(false);
-  blackTooltip.format(function() {
-    return "(x,y) = (" + this.x + ".00," + this.value + ")";
-  });
-
-  var redSeries = chart.line(firstSeries);
-  redSeries.stroke("red", 3);
-  redSeries.hoverStroke("red", 3);
-  var redMarkers = redSeries.markers();
-  redMarkers.enabled(true);
-  redMarkers.size(1);
-  redMarkers.fill("red");
-  redMarkers.stroke("1 red");
-  var redHoverMarkers = redSeries.hoverMarkers();
-  redHoverMarkers.size(3);
-  redHoverMarkers.fill("red");
-  redHoverMarkers.stroke("red");
-  var redTooltip = redSeries.tooltip();
-  redTooltip.title(false);
-  redTooltip.format(function() {
-    var value = this.value;
-    return "(x,y) = (" + this.x + ".00," + value.toFixed(2) + ")";
-  });
-
-  // adding red ling to emphasize zero of extra axis
-  var lineMarker = chart.lineMarker();
-  lineMarker.stroke("1 red");
-  lineMarker.layout("vertical");
-  lineMarker.scale(extraXScale);
-
-  var varticalGrid = chart.grid(0);
-  varticalGrid.stroke("red 0.3");
-  varticalGrid.layout("vertical");
-  varticalGrid.enabled(true);
-  var horizontalGrid = chart.grid(2);
-  horizontalGrid.stroke("red 0.3");
-  horizontalGrid.layout("horizontal");
-  horizontalGrid.enabled(true);
-
-  chart.container("container");
-  chart.draw();
-});</script>
+]}
+  </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

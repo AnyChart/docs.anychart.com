@@ -81,15 +81,15 @@ xAxis.height(40);
 
 ## Grids
 
-Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
+Grids are added to every plot using {api:anychart.core.stock.Plot#yGrid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
 // defining the chart 
 chart = anychart.stock();
 
 // dashed horizontal grid
-chart.plot(0).grid(0).enabled(true);
-chart.plot(0).grid(0).stroke({dash: "3 5"});
+chart.plot(0).yGrid().enabled(true);
+chart.plot(0).yGrid().stroke({dash: "3 5"});
 ```
 
 {sample}STOCK\_Axes\_05{sample}

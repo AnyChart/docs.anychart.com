@@ -28,16 +28,9 @@
     var radar1 = anychart.radar(data);
     radar1.title("Cell Color: Radial Grid");
     radar1.bounds(0, 0, "50%", "100%");
-    // color the even-numbered cells of the radial grid
-    radar1.grid(0).evenFill({
-      color: "gray",
-      opacity: 0.05
-    });
-    // color the odd-numbered cells of the radial grid
-    radar1.grid(0).oddFill({
-      color: "gray",
-      opacity: 0.1
-    });
+    // color the even-odd cells of the x grid
+    radar1.xGrid().palette(["gray 0.05", "gray 0.1"]);
+
     // set the chart container
     radar1.container(stage);
     // initiate drawing the chart
@@ -47,16 +40,8 @@
     var radar2 = anychart.radar(data);
     radar2.title("Cell Color: Circular Grid");
     radar2.bounds("50%", 0, "50%", "100%");
-    // color the even-numbered cells of the circular grid 
-    radar2.grid(1).evenFill({
-      color: "gray",
-      opacity: 0.05
-    });
-    // color the odd-numbered cells of the circular grid  
-    radar2.grid(1).oddFill({
-      color: "gray",
-      opacity: 0.1
-    });
+    // color the even-odd cells of the y grid 
+    radar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
     // set the chart container
     radar2.container(stage);
     // initiate drawing the chart

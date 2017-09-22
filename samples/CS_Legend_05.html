@@ -16,11 +16,13 @@
   chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("FDH 5mg/day");
   chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
 
-  // add grid
-  chart.grid(0).enabled(true);
-  chart.grid(1).axis(chart.xAxis()).enabled(true);
-  chart.minorGrid(0).enabled(true);
-  chart.minorGrid(1).axis(chart.xAxis()).enabled(true);  
+  // enable major grids
+  chart.xGrid(true);
+  chart.yGrid(true);
+
+  // enable minor grids 
+  chart.xMinorGrid(true);
+  chart.yMinorGrid(true);
 
   // configure legend
   var legend = chart.legend();

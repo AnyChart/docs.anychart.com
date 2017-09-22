@@ -54,8 +54,8 @@ firstLineSeries.stroke('red');
 var secondPlot = chart.plot(1);
 
 // turn on second plot grids
-secondPlot.grid().enabled(true);
-secondPlot.grid(1).enabled(true).layout('vertical');
+secondPlot.xGrid().enabled(true);
+secondPlot.yGrid().enabled(true);
 
 // create column series on the second plot
 var secondSeries = secondPlot.ohlc(ohlcMapping);

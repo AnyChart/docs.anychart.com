@@ -28,21 +28,21 @@
     // create a marker series and set the data
     var series = chart.marker(data);
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
+    // enable major grids
+    chart.xGrid(true);
+    chart.yGrid(true);
 
     // configure the visual settings of major grids
-    chart.grid(0).stroke({color: "#85adad", thickness: 0.7});
-    chart.grid(1).stroke({color: "#85adad", thickness: 0.7});
+    chart.xGrid().stroke({color: "#85adad", thickness: 0.7});
+    chart.yGrid().stroke({color: "#85adad", thickness: 0.7});
 
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // enable minor grids
+    chart.xMinorGrid(true);
+    chart.yMinorGrid(true);
 
     // configure the visual settings of minor grids
-    chart.minorGrid(0).stroke({color: "#85adad", thickness: 0.3, dash: 5});
-    chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
+    chart.xMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
+    chart.yMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
 
     // set the chart title
     chart.title("Scatter Plot: Grids");

@@ -57,28 +57,30 @@ chart.draw();
 
 ## Grids
 
-As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#grid}grid(){api} and {api:anychart.charts.Scatter#minorGrid}minorGrid(){api} methods to create a major and a minor grid. The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api}, {api:anychart.core.grids.Linear#evenFill}evenFill(){api}, and {api:anychart.core.grids.Linear#oddFill}oddFill(){api} methods. 
+As a rule, scatter charts look better with grids. Use the {api:anychart.charts.Scatter#xGrid}xGgrid(){api}, {api:anychart.charts.Scatter#yGrid}yGgrid(){api}, {api:anychart.charts.Scatter#xMinorGrid}xMinorGrid(){api} and {api:anychart.charts.Scatter#yMinorGrid}yMinorGrid(){api} methods to create a major and a minor grids. 
+
+The appearance of grids is configured with the {api:anychart.core.grids.Linear#stroke}stroke(){api} and {api:anychart.core.grids.Linear#palette}palette(){api} methods. 
 
 For more information, see [Axis Basics: Grids](../../Axes_and_Grids/Axis_Basics#grids).
 
 The sample below shows how to create minor and major grids and configure their strokes:
 
 ```
-// create major grids and bind them to the X and Y axes
-chart.grid(0).axis(chart.xAxis());
-chart.grid(1).axis(chart.yAxis());
+// enable major grids
+chart.xGrid(true);
+chart.yGrid(true);
 
 // configure the visual settings of major grids
-chart.grid(0).stroke({color: "#85adad", thickness: 0.7});
-chart.grid(1).stroke({color: "#85adad", thickness: 0.7});
+chart.xGrid().stroke({color: "#85adad", thickness: 0.7});
+chart.yGrid().stroke({color: "#85adad", thickness: 0.7});
 
-// create minor grids and bind them to the X and Y axes
-chart.minorGrid(0).axis(chart.xAxis());
-chart.minorGrid(1).axis(chart.yAxis());
+// enable minor grids
+chart.xMinorGrid(true);
+chart.yMinorGrid(true);
 
 // configure the visual settings of minor grids
-chart.minorGrid(0).stroke({color: "#85adad", thickness: 0.3, dash: 5});
-chart.minorGrid(1).stroke({color: "#85adad", thickness: 0.3, dash: 5});
+chart.xMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
+chart.yMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
 ```
 
 {sample}BCT\_Scatter\_Chart\_02{sample}

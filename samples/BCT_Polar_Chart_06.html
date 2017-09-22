@@ -21,15 +21,15 @@
     // create a line series and set the data
     var series = chart.line(data);
 
-    // configure the stroke of the radial grid
-    chart.grid(0).stroke({
+    // configure the stroke of the X grid
+    chart.xGrid().stroke({
       color: "green",
       thickness: 0.5,
       opacity: 0.5
     });
 
     // configure the stroke of the circular grid
-    chart.grid(1).stroke({
+    chart.yGrid().stroke({
       color: "green",
       thickness: 0.5,
       opacity: 0.5,

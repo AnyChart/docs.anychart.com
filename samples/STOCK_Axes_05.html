@@ -7,9 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-var table, mapping, chart;
-anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
   // creating the data
   table = anychart.data.table();
   table.addData([
@@ -35,38 +33,26 @@ anychart.onDocumentReady(function() {
   ]);
   
   // mapping the data
-  mapping = table.mapAs();
-  mapping.addField('open', 1, 'first');
-  mapping.addField('high', 2, 'max');
-  mapping.addField('low', 3, 'min');
-  mapping.addField('close', 4, 'last');
-  mapping.addField('value', 4, 'last');
+  mapping = table.mapAs({open: 1, high: 2, low: 3, close: 4, value: 4});
   
   // create stock type
   chart = anychart.stock();
-  
-  // creating paddings
-  chart.padding(10, 10, 10, 50);
+
   
   // setting the series 
-  var ohlc = chart.plot(0).ohlc(mapping);
-  ohlc.name("ACME Corp.");
-
-  var line = chart.plot(1).line(mapping);
-  line.name("ACME Corp.");
+  chart.plot(0).ohlc(mapping).name("ACME Corp.");
+  chart.plot(1).line(mapping).name("ACME Corp.");
   
   // dashed horizontal grid
-  chart.plot(0).grid(0).enabled(true);
-  chart.plot(0).grid(0).stroke({dash: "3 5"});
+  chart.plot(0).yGrid().enabled(true);
+  chart.plot(0).yGrid().stroke({dash: "3 5"});
 
   // vertical minor grid bound to x scale
-  chart.plot(0).minorGrid(1).enabled(true);
-  chart.plot(0).minorGrid(1).scale(chart.xScale());
-  chart.plot(0).minorGrid(1).layout("vertical");
-  chart.plot(0).minorGrid(1).stroke({dash: "3 5"});
+  chart.plot(0).xMinorGrid().enabled(true);
+  chart.plot(0).xMinorGrid().stroke({dash: "3 5"});
 
   // minor grid with interlace set
-  chart.plot(1).minorGrid(0).evenFill("LightGrey");
+  chart.plot(1).yMinorGrid().palette(["LightGrey", null]);
   
   // remove unnecessary elements
   chart.plot(0).legend(false);

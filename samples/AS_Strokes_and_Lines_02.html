@@ -29,7 +29,7 @@
   });
 
   // data
-  var data = anychart.data.set([
+  var data =[
     ["Jan", 34],
     ["Feb", 44],
     ["Mar", 48],
@@ -42,7 +42,7 @@
     ["Oct", 45],
     ["Nov", 39],
     ["Dec", 23]
-  ]);
+  ];
 
   // set data into series
   var series = chart.line(data);
@@ -50,7 +50,7 @@
   // set chart stroke color, thickness dash
   series.stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
   series.hoverStroke({color: "#BBDA00", dash: "4 3", thickness: 3});
-   series.name("dashed stroke");
+  series.name("dashed stroke");
 
   // adjust markers of a series
   var markers = series.markers();
@@ -63,9 +63,7 @@
 
   // adjust tooltip
   var tooltip = series.tooltip();
-  tooltip.format(function(){
-    return this.x + ", " + this.value + "%";
-  });
+  tooltip.format("{%x}, {%Value}%");
   tooltip.fontColor("white");
 
   var tooltipBackground = series.tooltip().background();
@@ -73,7 +71,6 @@
   tooltipBackground.stroke("white");
   tooltipBackground.cornerType("round");
   tooltipBackground.corners(4);
-
 
   // adjust y axis
   var yAxis = chart.yAxis();
@@ -83,9 +80,7 @@
   var yLabels = chart.yAxis().labels();
   yLabels.fontColor("white");
   yLabels.fontWeight(900);
-  yLabels.format(function() {
-    return this.value + " %";
-  });
+  yLabels.format("{%Value}%");
 
   // set additional y axis hide dashed right stroke of a grid
   var yAxis1 = chart.yAxis(1);
@@ -97,30 +92,23 @@
   // adjust x axis
   var xAxis = chart.xAxis();
   xAxis.stroke("white");
-  var xLabels = chart.xAxis().labels();
+  var xLabels = xAxis.labels();
   xLabels.fontColor("white");
   xLabels.fontWeight(900);
   xLabels.height(30);
   xLabels.vAlign("middle");
 
-
   // adjust grid
-  var grid = chart.grid();
-  grid.enabled(true);
-  grid.stroke({color: "white", dash: "3 5"});
-  grid.evenFill(null);
-  grid.oddFill("black 0.1");
-  grid.layout("vertical");
-  var grid1 = chart.grid(1);
-  grid1.enabled(true);
-  grid1.stroke("white");
-  grid1.layout("horizontal");
+  chart.xGrid().enabled(true);
+  chart.xGrid().stroke({color: "white", dash: "3 5"});
+  chart.xGrid().palette([null, "black 0.1"]);
+  
+  chart.yGrid().enabled(true);
+  chart.yGrid().stroke("white");
 
   // adjust y scale
-  var yScale = chart.yScale();
-  yScale.maximum(100);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(20);
+  chart.yScale().maximum(100);
+  chart.yScale().ticks().interval(20);
 
   // draw
   chart.container("container");

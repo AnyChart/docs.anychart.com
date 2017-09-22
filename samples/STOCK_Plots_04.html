@@ -60,9 +60,9 @@ secondPlot.grid().enabled(true);
 secondPlot.width("100%");
 secondPlot.height("45%");
 secondPlot.top("50%");
-secondPlot.grid(1).enabled(true).layout('vertical');
-secondPlot.grid().enabled(true);
-secondPlot.minorGrid(1).enabled(true).layout('vertical');
+secondPlot.xGrid().enabled(true);
+secondPlot.yGrid().enabled(true);
+secondPlot.xMinorGrid().enabled(true);
 
 // create ohlc series on the second plot
 var secondSeries = secondPlot.ohlc(ohlcMapping);
@@ -76,10 +76,10 @@ var thirdPlot = chart.plot(2);
 thirdPlot.bounds("55%", 0, "45%", "45%")
 
 // turn on third plot grids and minor grids
-thirdPlot.grid().enabled(true);
-thirdPlot.grid(1).enabled(true).layout('vertical');
-thirdPlot.minorGrid().enabled(true);
-thirdPlot.minorGrid(1).enabled(true).layout('vertical');
+thirdPlot.xGrid().enabled(true);
+thirdPlot.yGrid().enabled(true);
+thirdPlot.xMinorGrid().enabled(true);
+thirdPlot.yMinorGrid().enabled(true);
 
 // create column series on the third plot
 var thirdSeries = thirdPlot.column(columnMapping);
