@@ -17,7 +17,7 @@
   // required for custom projections and grid labels formatting.
   // See https://docs.anychart.com/latest/Maps/Map_Projections
   
-  var data = anychart.data.set([
+  var data = [
     {'id': 'AU.WA', 'value': 300},
     {'id': 'AU.JB', 'value': 270},
     {'id': 'AU.NS', 'value': 240},
@@ -27,7 +27,7 @@
     {'id': 'AU.CT', 'value': 100},
     {'id': 'AU.SA', 'value': 280},
     {'id': 'AU.QL', 'value': 220} 
-  ]);
+  ];
 
   // create map
   map = anychart.map();
@@ -38,9 +38,9 @@
 
   // set the series
   var series = map.choropleth(data);
-
-  // disable the labels
-  series.labels(false);
+  
+  // disable stroke
+  series.stroke(null);
   
   // set the colors and ranges for the scale
   series.colorScale(anychart.scales.linearColor());
@@ -53,9 +53,6 @@
 
 	// enable the colorRange
   map.colorRange(true);
-
-  // stroke disable
-  series.stroke("2 white 0");
 
   // set the container
   map.container('container');

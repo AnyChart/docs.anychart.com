@@ -19,7 +19,7 @@
 
   map = anychart.map();
   // data set for the choropleth series
-var dataSet_obama = anychart.data.set([
+var data_obama = [
     {id: 'US.WA', name: "Washington", value: 12},
     {id: 'US.CA', name: "California", value: 55},
     {id: 'US.NV', name: "Nevada", value: 6},
@@ -47,9 +47,9 @@ var dataSet_obama = anychart.data.set([
     {id: 'US.NJ', name: "New Jersey", value: 14},
     {id: 'US.HI', name: "Hawaii", value: 4},
     {id: 'US.MD', name: "Maryland", value: 10},
-]);
+];
 
-var dataSet_romney = anychart.data.set([
+var data_romney = [
     {id: 'US.MT', name: "Montana", value: 3},
     {id: 'US.ND', name: "North Dakota", value: 3},
     {id: 'US.ID', name: "Idaho", value: 4},
@@ -74,7 +74,7 @@ var dataSet_romney = anychart.data.set([
     {id: 'US.AZ', name: "Arizona", value: 11},
     {id: 'US.OK', name: "Oklahoma", value: 7},
     {id: 'US.AK', name: "Alaska", value: 3}
-]);
+];
 
   map.geoData("anychart.maps.united_states_of_america");
 
@@ -87,17 +87,13 @@ var dataSet_romney = anychart.data.set([
   var series_romney = map.choropleth(dataSet_romney);
 
   // enable labels
-  series_obama.labels(true);
-  series_romney.labels(true);
+  map.labels(true);
 
   // set the overlapping mode for the map
   map.overlapMode(false);
+
   // enable overlapping for the series
   series_obama.overlapMode("allow-overlap");
-
-  // the following lines mean the same as the lines above
-  // map.overlapMode("no-overlap");
-  // series_obama.labels().overlapMode(true);
 
   // set the container
   map.container('container');

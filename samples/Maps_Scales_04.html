@@ -39,8 +39,8 @@
   // set the series
   var series = map.choropleth(data);
 
-  // disable the labels
-  series.labels(false);
+  // set the stroke
+  series.stroke("2 white 0");
   
   // set the colors and ranges for the scale
   series.colorScale(anychart.scales.linearColor());
@@ -50,9 +50,6 @@
   
   // define the colors 
   series.colorScale().colors(colors);
-
-  // set the stroke
-  series.stroke("2 white 0");
 
   // enable the colorRange
   map.colorRange(true);

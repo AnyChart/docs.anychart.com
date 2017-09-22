@@ -22,7 +22,7 @@ Using the {api:anychart.charts.Map#drillTo}.drillTo(){api} method will drill dow
 
 ```
 // Drill down to specified map
-map.drillTo("US", usaMap);
+map.drillTo("US", map);
 ```
 
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
@@ -50,7 +50,7 @@ map.interactivity().selectionMode("drillDown");
 
 // set the drillDownMaps
 map.drillDownMap({
-    "US": usaMap,        
+    "US": map,        
     "CA": canadaMap
 });
 ```

@@ -18,7 +18,7 @@
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
   map = anychart.map();
-  var dataSet = anychart.data.set([
+  var data = [
     {'id': 'US.MA', 'value': 0},
     {'id': 'US.MN', 'value': 1},
     {'id': 'US.MT', 'value': 2},
@@ -69,7 +69,7 @@
     {'id': 'US.ME', 'value': 47},
     {'id': 'US.MI', 'value': 48},
     {'id': 'US.AK', 'value': 49}
-    ]);
+    ];
 
   map.geoData("anychart.maps.united_states_of_america");
 
@@ -78,7 +78,7 @@
   map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Set the overlapping mode for the whole map</span>');
 
   // set the series
-  var series = map.choropleth(dataSet);
+  var series = map.choropleth(data);
   // enable labels
   series.labels(true);
   labels = series.labels();
@@ -96,8 +96,7 @@
   // set the container
   map.container('container');
   map.draw();
-  });
-
+});
 </script>
 
 </head>

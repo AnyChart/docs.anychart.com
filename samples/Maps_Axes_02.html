@@ -17,19 +17,16 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
-    var dataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australian"}
-    ]);
-
-
-    var dataSetForSeries = dataSet.mapAs({id: "id"});
+    var data = [
+        {id: "AU.CT", value: 15}
+        {id: "AU.VI", value: 23}
+        {id: "AU.WA", value: 86}
+        {id: "AU.QL", value: 16}
+        {id: "AU.NS", value: 32}
+        {id: "AU.NT", value: 64}
+        {id: "AU.TS", value: 28}
+        {id: "AU.SA", value: 45}
+    ];
 
     map = anychart.map();
     map.geoData(anychart.maps.australia);

@@ -33,8 +33,8 @@ After the maps are referenced in the &lt;head&gt; section, we can create the map
 
 ```
 // creating the map of the USA
-var usaMap = anychart.map();
-usaMap.geoData(anychart.maps.united_states_of_america);
+var map = anychart.map();
+map.geoData(anychart.maps.united_states_of_america);
 ```
 
 Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "https://cdn.anychart.com/#map-collection">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
@@ -78,7 +78,7 @@ In this sample we've decided to use [Choropleth Map](../Choropleth_Map), as it's
 
 ```
 // Set the series for all maps
-usaSeries = usaMap.choropleth(dataSetUSA);
+usaSeries = map.choropleth(dataSetUSA);
 txSeries = txMap.choropleth(dataSetTX);    
 flSeries = flMap.choropleth(dataSetFL);
 ```
@@ -90,13 +90,13 @@ Now, it's time to enable the drill down interactivity in our map.
 To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} method. Explore the next sample.
 
 ```
-usaMap.drillDownMap({
+map.drillDownMap({
     "US.TX": txMap,   
     "US.FL": flMap
 });
 
 // set the Selection Mode    
-usaMap.interactivity().selectionMode("drillDown");
+map.interactivity().selectionMode("drillDown");
 ```
 
 Note that using this method requires setting the {api:anychart.charts.Map#interactivity}interactivity(){api} method into drillDown mode.

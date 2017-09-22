@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="australiaMap">
-anychart.onDocumentReady(function () {
+  <script x-export="map">anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -19,7 +18,7 @@ anychart.onDocumentReady(function () {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
-    var dataSet_lat_long = anychart.data.set([
+    var dataSet_lat_long = [
         {lat: -25.75, long: 122.18, name: "ACME Corp. branch No. 1", value: 321},
         {lat: -18.50, long: 135.24, name: "ACME Corp. branch No. 2", value: 293},
         {lat: -23.12, long: 148.62, name: "ACME Corp. branch No. 3", value: 312},
@@ -28,43 +27,36 @@ anychart.onDocumentReady(function () {
         {lat: -31.21, long: 116.44, name: "ACME Corp. branch No. 6", value: 215},
         {lat: -32.26, long: 151.44, name: "ACME Corp. branch No. 7", value: 219},
         {lat: -25.63, long: 152.37, name: "ACME Corp. branch No. 8", value: 179}
-    ]);
+    ];
 
     // create the dataset of points that are defined by the region id
-    var dataSet_id = anychart.data.set([
-        {"id": "AU.NS", "farms": 240},
-        {"id": "AU.NT", "farms": 202},
-        {"id": "AU.WA", "farms": 193},
-        {"id": "AU.SA", "farms": 196},
-        {"id": "AU.VI", "farms": 48},
-        {"id": "AU.TS", "farms": 13},
-        {"id": "AU.QL", "farms": 136}
-    ]);
+    var dataSet_id = [
+        {id: "AU.NS", farms: 240},
+        {id: "AU.NT", farms: 202},
+        {id: "AU.WA", farms: 193},
+        {id: "AU.SA", farms: 196},
+        {id: "AU.VI", farms: 48},
+        {id: "AU.TS", farms: 13},
+        {id: "AU.QL", farms: 136}
+    ];
 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
 
     // Creates the marker series
-    var series_lat_long = australiaMap.marker(dataSet_lat_long);
-    var series_id = australiaMap.marker(dataSet_id);
+    var series_lat_long = map.marker(dataSet_lat_long);
+    var series_id = map.marker(dataSet_id);
 
     // format the tooltips of the lat_long series    
-    series_lat_long.tooltip().titleFormat(function(){
-        return this.getData("name");
-    });
-
+    series_lat_long.tooltip().titleFormat("{%name}");
     series_lat_long.tooltip().format("Yearly profit: ${%value}m");
 
     // format the tooltips of the id-defined series    
-    series_id.tooltip().titleFormat(function(){
-        return this.name;
-    });
+    series_id.tooltip().titleFormat("{%name}");
     series_id.tooltip().format("Sheep farms: {%farms}");
 
     //format the labels of the id-defined series
-    series_id.labels().format(function(e){
-      return this.name;
-    });
+    series_id.labels().format("{%name}");
 
     // format the labels of the series defined by latiude and longtitude
     series_lat_long.labels(false);
@@ -82,13 +74,13 @@ anychart.onDocumentReady(function () {
     series_lat_long.fill("gold");   
 
     // make the markers of the series with id bigger
-    series_id.size("10");
-    series_id.hovered().size("10");
+    series_id.size(10);
+    series_id.hovered().size(10);
 
-    australiaMap.title("Series of both types put on one map");
-    australiaMap.interactivity().zoomOnMouseWheel(false);
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.title("Series of both types on one map");
+
+    map.container("container");
+    map.draw();
 });
     </script>
 

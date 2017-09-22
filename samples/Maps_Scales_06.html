@@ -38,10 +38,7 @@
 
     // set the series
     var series = map.choropleth(data);
-	
-    // disable the labels
-    series.labels(false);
-    
+
     // set the colors and ranges for the scale
     series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
 

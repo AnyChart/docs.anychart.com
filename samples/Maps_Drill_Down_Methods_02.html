@@ -38,9 +38,9 @@ anychart.onDocumentReady(function () {
     txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
-    usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
-    usaSeries = usaMap.choropleth(usaDataSet);
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
 
     chart = anychart.map();
     chart.geoData(anychart.maps.world);
@@ -49,7 +49,7 @@ anychart.onDocumentReady(function () {
 
     // title setting
     txTitle = txMap.title("Click at the title to get one level up");
-    usaTitle = usaMap.title("Click at the title to get one level up");
+    usaTitle = map.title("Click at the title to get one level up");
 
     chart.container("container");
     chart.draw();
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     // set drill down
     worldSeries.listen("pointClick", function(e) {
         // Drill down to specified map.
-        chart.drillTo(e.point.get("id"), usaMap);
+        chart.drillTo(e.point.get("id"), map);
     });
 
     usaSeries.listen("pointClick", function(e) {
@@ -71,7 +71,7 @@ anychart.onDocumentReady(function () {
     });
 
     usaTitle.listen("click", function(e){
-        usaMap.drillUp();
+        map.drillUp();
     });
 });
     

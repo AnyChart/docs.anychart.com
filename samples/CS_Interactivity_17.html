@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     {x:1, value:990, selectFill:"Red"},
     {x:2, value:1100, selected:true, selectFill:"Blue"},
     {x:3, value:1050, selectFill:"Red"},
@@ -19,7 +19,7 @@
     {x:6, value:840, selected:true, selectFill:"Green"},
     {x:7, value:900, selectFill:"Red"},
     {x:8, value:1000, selectFill:"Red"}
-  ]);
+  ];
 
   // chart type
   chart = anychart.cartesian();
@@ -39,10 +39,8 @@
   chart.title("Interactivity through the dataSet with objects");
 
   // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
   // enable legend
   chart.legend(true);

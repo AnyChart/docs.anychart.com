@@ -10,24 +10,20 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // data
-  var data = anychart.data.set([
+  var data = [
     ["John", 10000],
     ["Jake", 12000],
     ["Peter", 18000],
     ["James", 11000],
     ["Mary", 9000]
-  ]);
+  ];
   
   // set chart type
-  chart = anychart.column();
+  chart = anychart.column(data);
   
   // enable chart title. Set .enabled(false) to disable title
   var title = chart.title();
   title.enabled(true);
-  
-  // set data
-  var series = chart.column(data);
-  series.name("Sales");
   
   // set title text
   title.text("Default Title");

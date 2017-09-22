@@ -11,51 +11,45 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function() {
 
-    // This sample uses 3rd party proj4 component
-    // that makes it possible to set coordinates
-    // for the points and labels on the map and
-    // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
-    
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB'},                // Jervis Bay Territory
-      {'id': 'AU.NS', 'value': 240},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', labels: false}, // Australian Capital Territory
-      {'id': 'AU.SA'},                // South Australia
-      {'id': 'AU.QL'}                 // Queensland
-    ]);
+  // This sample uses 3rd party proj4 component
+  // that makes it possible to set coordinates
+  // for the points and labels on the map and
+  // required for custom projections and grid labels formatting.
+  // See https://docs.anychart.com/latest/Maps/Map_Projections
+  
+  var data = [
+    {'id': 'AU.WA', 'value': 300}, 
+    {'id': 'AU.JB'}, 
+    {'id': 'AU.NS', 'value': 240},
+    {'id': 'AU.VI', 'value': 75}, 
+    {'id': 'AU.NT', 'value': 130},
+    {'id': 'AU.TS', 'value': 190},
+    {'id': 'AU.CT'},
+    {'id': 'AU.SA'},               
+    {'id': 'AU.QL'}                
+  ];
 
-    //
-    map = anychart.map();
-    map.geoData(anychart.maps.australia);
+  // create a map
+  map = anychart.map();
+  map.geoData(anychart.maps.australia);
 
-    // set the background color
-    map.background('none');
-    // set the title and its preferences
-    map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Ordinal Color Scale with a ColorRange </span>');
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Ordinal Color Scale with a ColorRange </span>');
 
-    // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-	
-	// disable the labels
-    series.labels(false);
-    
-    // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
-	
-	// create and enable the colorRange
-	var colorRange = map.colorRange(true);
-	
-    // set the container
-    map.container('container');
-    map.draw();
-  });</script>
+  // set the series
+  var series = map.choropleth(data);
+
+  // set the colors and ranges for the scale
+  series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
+
+  // create and enable the colorRange
+  map.colorRange(true);
+
+  // set the container
+  map.container('container');
+  map.draw();
+});</script>
 
 </head>
 <body>

@@ -17,34 +17,28 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB'},                // Jervis Bay Territory
-      {'id': 'AU.NS', 'value': 240},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT'}, 				  // Australian Capital Territory
-      {'id': 'AU.SA'},                // South Australia
-      {'id': 'AU.QL'}                 // Queensland
-    ]);
+    var data = [
+      {'id': 'AU.WA', 'value': 300},
+      {'id': 'AU.JB'}, 
+      {'id': 'AU.NS', 'value': 240},
+      {'id': 'AU.VI', 'value': 75}, 
+      {'id': 'AU.NT', 'value': 130},
+      {'id': 'AU.TS', 'value': 190},
+      {'id': 'AU.CT'},
+      {'id': 'AU.SA'},
+      {'id': 'AU.QL'} 
+    ];
 
-    //
+    // create a map
     map = anychart.map();
     map.geoData(anychart.maps.australia);
 
-    // set the background color
-    map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
     map.title('<span style="font-size: 18px;">Data Setting</span>');
 
     // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-	
-	// disable the labels
-    series.labels(false);
+    var series = map.choropleth(data);
 
     // set the container
     map.container('container');

@@ -17,12 +17,12 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="usaMap">
+    <script x-export="map">
 
     anychart.onDocumentReady(function () {
 
-    usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
 
     flMap = anychart.map();
     flMap.geoData(anychart.maps["florida"]);
@@ -98,22 +98,22 @@
     ];    
     
     // Set the series for all maps
-    usaSeries = usaMap.choropleth(dataSetUSA);
+    usaSeries = map.choropleth(dataSetUSA);
     txSeries = txMap.choropleth(dataSetTX);    
     flSeries = flMap.choropleth(dataSetFL); 
 
     // enable the drilldown interactivity for the USA map    
-    usaMap.drillDownMap({
+    map.drillDownMap({
         "US.TX": txMap,   
         "US.FL": flMap
     });
 
     // set the selectionMode    
-    usaMap.interactivity({selectionMode: "drill-down"});
+    map.interactivity({selectionMode: "drill-down"});
 
     // draw the chart
-    usaMap.container("container");
-    usaMap.draw();
+    map.container("container");
+    map.draw();
 });
 
     

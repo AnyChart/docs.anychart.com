@@ -18,7 +18,7 @@
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
   map = anychart.map();
-  var dataSet = anychart.data.set([
+  var data = [
     {'id': 'AU.WA'}, 
     {'id': 'AU.JB'}, 
     {'id': 'AU.NS'}, 
@@ -28,7 +28,7 @@
     {'id': 'AU.CT'},
     {'id': 'AU.SA'}, 
     {'id': 'AU.QL'}  
-  ]);
+  ];
 
   map.geoData(anychart.maps.australia);
 
@@ -36,7 +36,7 @@
   map.title('Getting data from GeoJSON');
 
   // set the series
-  var series = map.choropleth(dataSet);
+  var series = map.choropleth(data);
   // enable labels
   labels = series.labels();
   labels.enabled(true);

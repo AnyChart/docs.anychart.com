@@ -16,11 +16,11 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="usaMap">
+    <script x-export="map">
 anychart.onDocumentReady(function () {
 
     // define the map
-    usaMap = anychart.map();    
+    map = anychart.map();    
 
     // set the data for the USA map
     usaDataSet = [
@@ -96,19 +96,19 @@ anychart.onDocumentReady(function () {
     }    
 
     // set the geodata
-    usaMap.geoData(anychart.maps.united_states_of_america);
+    map.geoData(anychart.maps.united_states_of_america);
     // set the series
-    usaSeries = usaMap.choropleth(usaDataSet);
+    usaSeries = map.choropleth(usaDataSet);
 
     // draw the USA map
-    usaMap.container("container");
+    map.container("container");
 
     // load the map using AJAX
     usaSeries.listen("pointClick", function(e) {
-      loadMap(e.point.get("id"), e.point.get("url"), usaMap);     
+      loadMap(e.point.get("id"), e.point.get("url"), map);     
     });
 
-    usaMap.draw();
+    map.draw();
 });
 
 // load the map 

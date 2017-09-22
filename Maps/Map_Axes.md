@@ -75,4 +75,3 @@ map.axes().left().title().fontSize(14);
 ```
 
 {sample}Maps\_Axes\_04{sample}
-

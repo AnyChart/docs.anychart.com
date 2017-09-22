@@ -59,11 +59,8 @@ anychart.onDocumentReady(function () {
       "<span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
   title.enabled(true);
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
   // disable legend
   chart.legend(false);

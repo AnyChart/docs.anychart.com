@@ -66,13 +66,13 @@ That's how it looks like in the code:
 ```
 // create the dataset of points that are defined by the region id
 var data = [
-    {"id": "AU.NS", "farms": 240},
-    {"id": "AU.NT", "farms": 202},
-    {"id": "AU.WA", "farms": 193},
-    {"id": "AU.SA", "farms": 196},
-    {"id": "AU.VI", "farms": 48},
-    {"id": "AU.TS", "farms": 13},
-    {"id": "AU.QL", "farms": 136}
+    {id: "AU.NS", farms: 240},
+    {id: "AU.NT", farms: 202},
+    {id: "AU.WA", farms: 193},
+    {id: "AU.SA", farms: 196},
+    {id: "AU.VI", farms: 48},
+    {id: "AU.TS", farms: 13},
+    {id: "AU.QL", farms: 136}
 ];
 ```
 
@@ -170,7 +170,7 @@ return path;
 }
 ```
 
-Note that we've created a detached function to draw a marker in order not to be obliged to create this marker several times.
+Note that we've created a special function to draw a marker in order not to create a marker several times.
 
 Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}fill(){api} and {api:anychart.core.map.series.Marker#hoverFill}hoverFill(){api} methods. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
 
@@ -184,9 +184,10 @@ function customImageMarker(op){
 var image_link = 'https://static.anychart.com/images/acme.jpg';
   return {
       src: image_link,
-        mode: 'fitMax',
+        mode: 'stretch',
         opacity: op
     }  
 }
 ```
+
 {sample}Maps\_Marker\_09{sample}

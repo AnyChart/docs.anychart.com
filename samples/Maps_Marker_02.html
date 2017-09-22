@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="australiaMap">
+  <script x-export="map">
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
@@ -19,7 +19,7 @@ anychart.onDocumentReady(function () {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
-    var data_lat_long = [
+    var data = [
         {lat: -25.75, long: 122.18, name: "ACME Corp. branch #1", value: 321},
         {lat: -18.50, long: 135.24, name: "ACME Corp. branch #2", value: 293},
         {lat: -23.12, long: 148.62, name: "ACME Corp. branch #3", value: 312},
@@ -30,20 +30,20 @@ anychart.onDocumentReady(function () {
         {lat: -25.63, long: 152.37, name: "ACME Corp. branch #8", value: 179}
     ];
 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
 
     // Creates the marker series
-    var series_lat_long = australiaMap.marker(data_lat_long);
+    var series_lat_long = map.marker(data);
 
     // format the tooltips of the lat_long series    
     series_lat_long.tooltip().titleFormat("{%Name}");
     series_lat_long.tooltip().format("Yearly profit: ${%value}m");
 
-    australiaMap.title("Marker series defined by latitude and longtitude");
-    australiaMap.interactivity().zoomOnMouseWheel(false);
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.title("Marker series defined by latitude and longtitude");
+
+    map.container("container");
+    map.draw();
 });
     </script>
 

@@ -38,9 +38,9 @@ anychart.onDocumentReady(function () {
     txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
-    usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
-    usaSeries = usaMap.choropleth(usaDataSet);
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
 
     chart = anychart.map();
     chart.geoData(anychart.maps.world);
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
 
     worldSeries.listen("pointClick", function(e) {
         // Drill down to specified map
-        chart.drillTo(e.point.get("id"), usaMap);
+        chart.drillTo(e.point.get("id"), map);
 
     });
 

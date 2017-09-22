@@ -19,20 +19,20 @@
 
  map = anychart.map();
   // data set for the choropleth series
-  var dataSet_1 = anychart.data.set([
+  var data_1 = [
     {'id': 'AU.JB', 'value': 1.5},
     {'id': 'AU.NT', 'value': 2},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-  ]);
+  ];
 
-  var dataSet_2 = anychart.data.set([
+  var data_2 = [
     {'id': 'AU.CT', 'value': 1.12},
     {'id': 'AU.SA', 'value': 2.9},
     {'id': 'AU.VI', 'value': 3.86},
     {'id': 'AU.QL', 'value': 1.1},
     {'id': 'AU.TS', 'value': 1.6}
-  ]);
+  ];
 
   map.geoData("anychart.maps.australia");
 
@@ -41,12 +41,11 @@
   map.title('<span style="font-size: 14px;">Callout</span><br><span style="font-size:12px;">Set and format the callout labels</span>');
 
   // set the series
-  var series_1 = map.choropleth(dataSet_1);
-  var series_2 = map.choropleth(dataSet_2);
+  var series_1 = map.choropleth(data_1);
+  var series_2 = map.choropleth(data_2);
 
   // enable labels
-  series_1.labels(true);
-  series_2.labels(true);
+  map.labels(true);
 
   // set the overlapping mode for the map
   map.overlapMode(false);

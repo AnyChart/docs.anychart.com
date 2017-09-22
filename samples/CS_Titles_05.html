@@ -8,9 +8,18 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+  var data = [
+    ["John", 10000],
+    ["Jake", 12000],
+    ["Peter", 18000],
+    ["James", 11000],
+    ["Mary", 9000]
+  ];
   
   // set chart type
-  chart = anychart.column();
+  chart = anychart.column(data);
   
   // adjust chart settings
   var title = chart.title();
@@ -24,19 +33,9 @@
   title.fontDecoration("underline");
   // set font family
   title.fontFamily("Tahoma");
-  
-  // data
-  var data = anychart.data.set([
-    ["John", 10000],
-    ["Jake", 12000],
-    ["Peter", 18000],
-    ["James", 11000],
-    ["Mary", 9000]
-  ]);
 
-  // set data
-  var series = chart.column(data);
-  series.name("Sales");
+  // create series
+  chart.column(data);
 
   // draw chart
   chart.container("container");

@@ -17,13 +17,13 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 170},  // Western Australia
-      {'id': 'AU.NS', 'value': 260},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 210},  // Tasmania
-      {'id': 'AU.CT', labels: false} // Australian Capital Territory
+    var data = [
+      {'id': 'AU.WA', 'value': 170},
+      {'id': 'AU.NS', 'value': 260},
+      {'id': 'AU.VI', 'value': 75}, 
+      {'id': 'AU.NT', 'value': 130},
+      {'id': 'AU.TS', 'value': 210},
+      {'id': 'AU.CT'}
     ]);
 
     map = anychart.map();
@@ -43,8 +43,7 @@
     cr.ticks().stroke('rgb(216,216,216)');
     cr.ticks().position('center').length(15);
 
-    series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
+    series = map.choropleth(data);
     series.stroke('#000 .3');
     series.labels().fontColor('black');
 

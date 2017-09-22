@@ -68,7 +68,7 @@ The [Choropleth Map](../Choropleth_Map) is used in this sample, as it is one of 
 
 ```
 // create series for the USA map
-usaSeries = usaMap.choropleth(usaDataSet);
+usaSeries = map.choropleth(usaDataSet);
 ```
 
 Now, it's time to enable the drill down interactivity in the map.
@@ -98,7 +98,7 @@ anychart.data.loadJsonFile("https://cdn.anychart.com/geodata/1.2.0/usa_states/te
   var txMap = anychart.map();
   txMap.geoData(data);
   txSeries = txMap.choropleth(dataSetTX); 
-  usaMap.drillTo("US.TX", txMap);
+  map.drillTo("US.TX", txMap);
 });   
 ```
 
@@ -123,7 +123,7 @@ var usaDataSet = [
 
 // load the map using AJAX
 usaSeries.listen("pointClick", function(e) {
-    loadMap(e.point.get("id"), e.point.get("url"), usaMap);      
+    loadMap(e.point.get("id"), e.point.get("url"), map);      
 });
 
 // load the map

@@ -17,39 +17,39 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-map = anychart.map();
-// data set for the choropleth series
-var dataSet_obama = anychart.data.set([
-    {id: 'US.WA', name: "Washington", value: 12},
-    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
-    {id: 'US.OR', name: "Oregon", value: 7},
-    {id: 'US.CO', name: "Colorado", value: 9},
-    {id: 'US.NM', name: "New Mexico", value: 5},
-    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
-    {id: 'US.IL', name: "Illinois", value: 20},
-    {id: 'US.MN', name: "Minnesota", value: 10},
-    {id: 'US.IA', name: "Iowa", value: 6},
-    {id: 'US.MI', name: "Michigan", value: 16, "labelrank": 3},
-    {id: 'US.OH', name: "Ohio", value: 18},
-    {id: 'US.PA', name: "Pennsylvania", value: 20},
-    {id: 'US.NY', name: "New York", value: 29},
-    {id: 'US.CT', name: "Connecticut", value: 7},
-    {id: 'US.MA', name: "Massachusetts", value: 11},
-    {id: 'US.NH', name: "New Hampshire", value: 4},
-    {id: 'US.RI', name: "Rhode Island", value: 4},
-    {id: 'US.VT', name: "Vermont", value: 3},
-    {id: 'US.ME', name: "Maine", value: 4},
-    {id: 'US.VA', name: "Virginia", value: 13, "labelrank": 0},
-    {id: 'US.FL', name: "Florida", value: 29},
-    {id: 'US.DE', name: "Delaware", value: 3, "labelrank": 1},
-    {id: 'US.DC', name: "District of Columbia", value: 3},
-    {id: 'US.NJ', name: "New Jersey", value: 14},
-    {id: 'US.HI', name: "Hawaii", value: 4},
-    {id: 'US.MD', name: "Maryland", value: 10, "labelrank": 5},
-]);
+  map = anychart.map();
+  // data for the choropleth series
+  var data_obama = [
+      {id: 'US.WA', name: "Washington", value: 12},
+      {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+      {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
+      {id: 'US.OR', name: "Oregon", value: 7},
+      {id: 'US.CO', name: "Colorado", value: 9},
+      {id: 'US.NM', name: "New Mexico", value: 5},
+      {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
+      {id: 'US.IL', name: "Illinois", value: 20},
+      {id: 'US.MN', name: "Minnesota", value: 10},
+      {id: 'US.IA', name: "Iowa", value: 6},
+      {id: 'US.MI', name: "Michigan", value: 16, "labelrank": 3},
+      {id: 'US.OH', name: "Ohio", value: 18},
+      {id: 'US.PA', name: "Pennsylvania", value: 20},
+      {id: 'US.NY', name: "New York", value: 29},
+      {id: 'US.CT', name: "Connecticut", value: 7},
+      {id: 'US.MA', name: "Massachusetts", value: 11},
+      {id: 'US.NH', name: "New Hampshire", value: 4},
+      {id: 'US.RI', name: "Rhode Island", value: 4},
+      {id: 'US.VT', name: "Vermont", value: 3},
+      {id: 'US.ME', name: "Maine", value: 4},
+      {id: 'US.VA', name: "Virginia", value: 13, "labelrank": 0},
+      {id: 'US.FL', name: "Florida", value: 29},
+      {id: 'US.DE', name: "Delaware", value: 3, "labelrank": 1},
+      {id: 'US.DC', name: "District of Columbia", value: 3},
+      {id: 'US.NJ', name: "New Jersey", value: 14},
+      {id: 'US.HI', name: "Hawaii", value: 4},
+      {id: 'US.MD', name: "Maryland", value: 10, "labelrank": 5},
+  ];
 
-var dataSet_romney = anychart.data.set([
+  var data_romney = [
     {id: 'US.MT', name: "Montana", value: 3},
     {id: 'US.ND', name: "North Dakota", value: 3},
     {id: 'US.ID', name: "Idaho", value: 4},
@@ -74,7 +74,7 @@ var dataSet_romney = anychart.data.set([
     {id: 'US.AZ', name: "Arizona", value: 11},
     {id: 'US.OK', name: "Oklahoma", value: 7},
     {id: 'US.AK', name: "Alaska", value: 3}
-]);
+  ];
 
   map.geoData("anychart.maps.united_states_of_america");
 
@@ -83,21 +83,31 @@ var dataSet_romney = anychart.data.set([
   map.title('<span style="font-size:14px;">Presidental elections 2012</span><br><span style="font-size:10px;">Set labelranks for the series with restricted overlapping</span>');
 
   // set the series
-  var series_obama = map.choropleth(dataSet_obama);
-  var series_romney = map.choropleth(dataSet_romney);
+  var series_obama = map.choropleth(data_obama);
+  series_obama.name("Obama");
+
+  var series_romney = map.choropleth(data_romney);
+  series_romney.name("Romney");
 
   // enable labels
-  series_obama.labels(true);
-  series_romney.labels(true);
+  map.labels(true);
+  map.background().enabled(true);
+  map.background().fill("Gray 0.4");
+  
+  map.labels().fontColor("white");
+
+  
+  map.palette(["#232066 .9", "#E91D0E .9"]);
+  
 
   // set the overlapping mode for the map
   map.overlapMode(false);
+
   // enable overlapping for the series
   series_obama.overlapMode("allow-overlap");
 
   // set tooltips
-  series_obama.tooltip().format("Most voted for Obama");
-  series_romney.tooltip().format("Most voted for Romney");
+  map.tooltip().format("Most voted for {%SeriesName}");
 
   // set the container
   map.container('container');

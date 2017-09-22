@@ -40,7 +40,7 @@ anychart.onDocumentReady(function () {
     chart = anychart.map();
 
     // major maps
-    usaMap = anychart.map();
+    map = anychart.map();
 
     // canada map
     canadaMap = anychart.map();
@@ -67,8 +67,8 @@ anychart.onDocumentReady(function () {
     worldSeries = chart.choropleth(worldDataSet);
 
     // usa data and series
-    usaMap.geoData(anychart.maps.united_states_of_america);
-    usaSeries = usaMap.choropleth(usaDataSet);
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
 
     // canada data and series
     canadaMap.geoData(anychart.maps.canada);
@@ -97,11 +97,11 @@ anychart.onDocumentReady(function () {
 
     // set the drillDownMaps
     chart.drillDownMap({
-        "US": usaMap,        
+        "US": map,        
         "CA": canadaMap
     });
 
-    usaMap.drillDownMap({
+    map.drillDownMap({
         "US.LA": laMap,  
         "US.TX": txMap,   
         "US.NY": nyMap

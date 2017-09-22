@@ -120,7 +120,8 @@ To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}stroke
 ```
 // create, enable and stroke the colorRange
 var colorRange = map.colorRange();
-colorRange.enabled(true).stroke('#BBB');
+colorRange.enabled(true)
+colorRange.stroke('#BBB');
 ```
 
 {sample}Maps\_ColorRange\_08{sample}

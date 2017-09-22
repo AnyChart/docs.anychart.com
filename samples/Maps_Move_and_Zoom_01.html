@@ -17,8 +17,29 @@ anychart.onDocumentReady(function() {
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
+    // create a map
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+
+    // disable all interactivity
+    map.interactivity(false);
+
+    // set the map title
+    map.title("Disable all interactivity");
+    
+    // add choropleth series
+    map.choropleth(getData());
+
+    // set the container
+    map.container("container");
+
+    // draw the map
+    map.draw();
+})
+
+function getData(){
     // create data set
-    var data = anychart.data.set([
+    var data = [
       {'id': 'US.MA', 'value': 0},
       {'id': 'US.MN', 'value': 1},
       {'id': 'US.MT', 'value': 2},
@@ -69,27 +90,9 @@ anychart.onDocumentReady(function() {
       {'id': 'US.ME', 'value': 47},
       {'id': 'US.MI', 'value': 48},
       {'id': 'US.AK', 'value': 49}
-    ]);
-
-    // create a map
-    map = anychart.map();
-    map.geoData(anychart.maps.united_states_of_america);
-
-    // set the map title
-    map.title("Disable all interactivity");
-    
-    // set the choropleth series
-    map.choropleth(data);
-
-    // disable all interactivity
-    map.interactivity(false);
-
-    // set the container
-    map.container("container");
-
-    // draw the map
-    map.draw();
-});
+    ];
+  return data;  
+}
 
 </script>
 

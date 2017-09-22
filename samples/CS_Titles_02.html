@@ -9,26 +9,22 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  // set chart type
-  chart = anychart.column();
-  
-  // set title text
-  var title = chart.title();
-  title.text("Sales Performance");
-  title.enabled(true);
-  
   // data
-  var data = anychart.data.set([
+  var data = [
     ["John", 10000],
     ["Jake", 12000],
     ["Peter", 18000],
     ["James", 11000],
     ["Mary", 9000]
-  ]);
-
-  // set data
-  var series = chart.column(data);
-  series.name("Sales");
+  ];
+  
+  // set chart type
+  chart = anychart.column(data);
+  
+  // set title text
+  var title = chart.title();
+  title.text("Sales Performance");
+  title.enabled(true);
 
   // draw chart
   chart.container("container");
