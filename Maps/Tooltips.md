@@ -1,6 +1,5 @@
 {:index 14}
-Map Tooltips
-======================
+# Map Tooltips
 
 * [Overview](#overview)
 * [Tooltips for Map regions](#tooltips_for_map_regions)
@@ -20,7 +19,7 @@ In the sample below we've got a map of Australia, where each state data contains
 Note that we added extra fields to each data point, and one of the regions has one extra field. We use {api:anychart.core.ui.Tooltip#format}format{api} to transform our tooltips and make them show the information we need instead of what is displayed by default.
 
 ```
-var mapDataSet = anychart.data.set([
+var data = [
             {'id': 'AU.WA', 'capital': 'Perth', 'population': 1507949},
             {'id': 'AU.JB', 'capital': 'Canberra', 'population': 377},
             {'id': 'AU.NS', 'capital': 'Sydney', 'population': 4293105},
@@ -30,23 +29,22 @@ var mapDataSet = anychart.data.set([
             {'id': 'AU.CT', 'capital': 'Canberra', 'population': 374766},
             {'id': 'AU.SA', 'capital': 'Adelaide', 'population': 1138833},
             {'id': 'AU.QL', 'capital': 'Brisbane', 'population': 1820375}
-]);
-
+];
 
 // create a map
 var mapChart = anychart.map();
 mapChart.geoData(anychart.maps.australia);
 
 // set the series
-var series = mapChart.choropleth(mapDataSet);
+var series = mapChart.choropleth(data);
 
 // enable the tooltips and format them at once
 series.tooltip().format(function(e){
    return "Capital: " + e.getData("capital") +"\n"+
    "Population: " + e.getData("population")
 });
-
 ```
+
 And here is a live sample:
 
 {sample}Maps\_Tooltips\_01{sample}

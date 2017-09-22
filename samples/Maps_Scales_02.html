@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function() {
-  var dataSet = anychart.data.set([
-    {'id': 'AU.WA', 'value': 300},  // Western Australia
-    {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
-    {'id': 'AU.NS', 'value': 240},  // New South Wales
-    {'id': 'AU.VI', 'value': 75},   // Victoria
-    {'id': 'AU.NT', 'value': 130},  // Northern Territory
-    {'id': 'AU.TS', 'value': 190},  // Tasmania
-    {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
-    {'id': 'AU.SA', 'value': 280},  // South Australia
-    {'id': 'AU.QL', 'value': 220}   // Queensland
-  ]);
+  var dataSet = [
+    {'id': 'AU.WA', 'value': 300},
+    {'id': 'AU.JB', 'value': 270},
+    {'id': 'AU.NS', 'value': 240},
+    {'id': 'AU.VI', 'value': 75}, 
+    {'id': 'AU.NT', 'value': 130},
+    {'id': 'AU.TS', 'value': 190},
+    {'id': 'AU.CT', 'value': 100},
+    {'id': 'AU.SA', 'value': 280},
+    {'id': 'AU.QL', 'value': 220} 
+  ];
 
   // create map
   map = anychart.map();
@@ -29,7 +29,7 @@
   map.title('Linear Color Scale');
 
   // set the series
-  var series = map.choropleth(dataSet);
+  var series = map.choropleth(data);
   series.stroke("2 white 0");
   series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 

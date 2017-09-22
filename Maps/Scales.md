@@ -86,11 +86,11 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 
 Technically this progression is a simple single-hue progression for a shade of grey. So you should use the same method as above, but with monochromatic colors.
 
-<table border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
+<th>Ordinal</th>
+<th>Linear</th>
 </tr>
 <tr>
 <td>
@@ -164,10 +164,11 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </table>
 
 Use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api} to make a progression between two similar hues.
+
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 
 {sample}Maps\_Scales\_07{sample}
 
-That's how the same map would look like with an ordinal Scale.
+That's how the same map would look like with an ordinal scale.
 
 {sample}Maps\_Scales\_08{sample}

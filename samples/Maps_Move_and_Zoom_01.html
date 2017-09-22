@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = anychart.data.set([
       {'id': 'US.MA', 'value': 0},
       {'id': 'US.MN', 'value': 1},
       {'id': 'US.MT', 'value': 2},
@@ -71,9 +71,6 @@ anychart.onDocumentReady(function() {
       {'id': 'US.AK', 'value': 49}
     ]);
 
-    // data mapping
-    var dataSetForSeries = dataSet.mapAs({id: "id"});
-
     // create a map
     map = anychart.map();
     map.geoData(anychart.maps.united_states_of_america);
@@ -82,7 +79,7 @@ anychart.onDocumentReady(function() {
     map.title("Disable all interactivity");
     
     // set the choropleth series
-    map.choropleth(dataSetForSeries);
+    map.choropleth(data);
 
     // disable all interactivity
     map.interactivity(false);

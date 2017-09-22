@@ -17,15 +17,14 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
-      var dataSet = anychart.data.set([
-          {'id': 'AU.WA', 'value': 300},  // Western Australia
-          {'id': 'AU.NS', 'value': 240},  // New South Wales
-          {'id': 'AU.VI', 'value': 75},   // Victoria
-          {'id': 'AU.NT', 'value': 130},  // Northern Territory
-          {'id': 'AU.TS', 'value': 190},  // Tasmania
-          {'id': 'AU.CT', 'value': 150}, // Australian Capital Territory
-
-      ]);
+      var dataSet = [
+          {'id': 'AU.WA', 'value': 300},
+          {'id': 'AU.NS', 'value': 240},
+          {'id': 'AU.VI', 'value': 75}, 
+          {'id': 'AU.NT', 'value': 130},
+          {'id': 'AU.TS', 'value': 190},
+          {'id': 'AU.CT', 'value': 150},
+      ];
 
       // create map
       map = anychart.map();
@@ -35,8 +34,7 @@
       map.title('Ordinal Color Scale');
 
       // set the series
-      var series = map.choropleth(dataSet);
-      series.geoIdField('code_hasc');
+      var series = map.choropleth(data);
 
       // disable the labels
       series.labels(false);

@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
       {'id': 'US.MA', 'value': 0},
       {'id': 'US.MN', 'value': 1},
       {'id': 'US.MT', 'value': 2},
@@ -69,10 +69,7 @@ anychart.onDocumentReady(function() {
       {'id': 'US.ME', 'value': 47},
       {'id': 'US.MI', 'value': 48},
       {'id': 'US.AK', 'value': 49}
-    ]);
-
-    // set the series
-    var dataSetForSeries = dataSet.mapAs({id: "id"});
+    ];
 
     // create the map
     map = anychart.map();
@@ -82,7 +79,7 @@ anychart.onDocumentReady(function() {
     map.title("Zoom map to a selected region");
 
     // set the series
-    map.choropleth(dataSetForSeries);
+    map.choropleth(data);
 
     // zoom to a region
     map.listen('pointClick', function(e) {
@@ -95,7 +92,7 @@ anychart.onDocumentReady(function() {
     // draw the map
     map.draw();
 });
-    </script>
+</script>
 
 </head>
 <body>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-    <script x-export="australiaMap">anychart.onDocumentReady(function() {
+    <script x-export="map">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -18,33 +18,31 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-    var firstDataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australian"}
-    ]);
+    var data_1 = [
+        {id: "AU.CT", value: 15},
+        {id: "AU.VI", value: 23},
+        {id: "AU.NT", value: 64},
+        {id: "AU.TS", value: 28},
+        {id: "AU.SA", value: 45}
+    ];
 
-    var secondDataSet = anychart.data.set([
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"}
-    ]);
+    var data_2 = [
+        {id: "AU.WA", value: 86},
+        {id: "AU.QL", value: 16},
+        {id: "AU.NS", value: 32}
+    ];
 
-    var firstDataSetForSeries = firstDataSet.mapAs({id: "id"});
-    var secondDataSetForSeries = secondDataSet.mapAs({id: "id"});
 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
     // Sets palette.
-    australiaMap.palette(["#FFEB3B", "#FFC107"]);
+    map.palette(["#FFEB3B", "#FFC107"]);
 
-    australiaMap.choropleth(firstDataSetForSeries);
-    australiaMap.choropleth(secondDataSetForSeries);
+    map.choropleth(data_1);
+    map.choropleth(data_2);
 
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.container("container");
+    map.draw();
 });</script>
 
 </head>

@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
     stage = anychart.graphics.create("container");
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
       {'id': 'US.MA', 'value': 0},
       {'id': 'US.MN', 'value': 1},
       {'id': 'US.MT', 'value': 2},
@@ -73,7 +73,7 @@ anychart.onDocumentReady(function() {
       {'id': 'US.ME', 'value': 47},
       {'id': 'US.MI', 'value': 48},
       {'id': 'US.AK', 'value': 49}
-    ]);
+    ];
 
     // map the data
     var dataSetForSeries = dataSet.mapAs({id: "id"});
@@ -86,7 +86,7 @@ anychart.onDocumentReady(function() {
     map.title("Move the map");
 
     // set the choropleth series
-    map.choropleth(dataSetForSeries);
+    map.choropleth(data);
 
     // set default zoom
     map.zoom(1.2);

@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
   // set the data
-  var dataSet = anychart.data.set([
+  var data = [
       {id: "AU.CT", value: 15},
       {id: "AU.VI", value: 23},
       {id: "AU.WA", value: 86},
@@ -27,10 +27,7 @@ anychart.onDocumentReady(function() {
       {id: "AU.NT", value: 64},
       {id: "AU.TS", value: 28},
       {id: "AU.SA", value: 45}
-  ]);
-
-  // map the data
-  var dataSetForSeries = dataSet.mapAs({id: "id"});
+  ];
 
   map = anychart.map();
   map.geoData(anychart.maps.australia);
@@ -39,7 +36,7 @@ anychart.onDocumentReady(function() {
   map.title("Change the text for the clipboard");
 
   // create the series of choropleth
-  map.choropleth(dataSetForSeries);
+  map.choropleth(data);
 
   // create a variable for the interactivity
   var currentInteractivity = map.interactivity();

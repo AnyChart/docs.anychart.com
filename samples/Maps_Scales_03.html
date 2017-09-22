@@ -17,7 +17,7 @@
 // required for custom projections and grid labels formatting.
 // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-var dataSet = anychart.data.set([
+var data = [
   {'id': 'AU.WA', 'value': 300},  // Western Australia
   {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
   {'id': 'AU.NS', 'value': 240},  // New South Wales
@@ -27,7 +27,7 @@ var dataSet = anychart.data.set([
   {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
   {'id': 'AU.SA', 'value': 280},  // South Australia
   {'id': 'AU.QL', 'value': 220}   // Queensland
-]);
+];
 
 // create map
 map = anychart.map();
@@ -37,8 +37,7 @@ map.geoData(anychart.maps.australia);
 map.title("Single Hue Progression - Ordinal Scale");
 
 // set the series
-var series = map.choropleth(dataSet);
-series.geoIdField('code_hasc');
+var series = map.choropleth(data);
 
 // set the stroke
 series.stroke("2 white 0");

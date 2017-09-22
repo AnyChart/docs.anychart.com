@@ -9,27 +9,24 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var data = anychart.data.set([
+  var data = [
     ["John" , 10000, 12000],
     ["Jake" , 12000, 15000],
     ["Peter" , 18000, 16000],
     ["James" , 11000, 13000],
     ["Mary" , 9000, 19000]
-  ]);
-
-  // map data for the each series
-  var data1 = data.mapAs({x: 0, value: 1});
-  var data2 = data.mapAs({x: 0, value: 2});
+  ];
 
   // chart type
   chart = anychart.column();
+  chart.data(data);
 
   // set title
   chart.title("Tooltip Anchor");
 
-  var series1 = chart.column(data1);
+  var series1 = chart.getSeries(0);
   series1.name("Year 2008");
-  var series2 = chart.column(data2);
+  var series2 = chart.getSeries(1);
   series2.name("Year 2009");
 
   // tooltip settings

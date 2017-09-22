@@ -18,25 +18,23 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
     
-    var firstDataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australian"}
-    ]);
+    var data_1 = [
+        {id: "AU.CT", value: 15},
+        {id: "AU.VI", value: 23},
+        {id: "AU.NT", value: 64},
+        {id: "AU.TS", value: 28},
+        {id: "AU.SA", value: 45}
+    ];
 
-    var secondDataSet = anychart.data.set([
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"}
-    ]);
+    var data_2 = [
+        {id: "AU.WA", value: 86},
+        {id: "AU.QL", value: 16},
+        {id: "AU.NS", value: 32}
+    ];
 
-    var firstDataSetForSeries = firstDataSet.mapAs({id: "id"});
-    var secondDataSetForSeries = secondDataSet.mapAs({id: "id"});
     
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
     
     // create the color scale
     var currentColorScale = anychart.scales.linearColor();
@@ -44,17 +42,17 @@
     currentColorScale.colors(["#BDBDBD", "#424242"]);
 	
 	// create the first series
-    var firstSeries = australiaMap.choropleth(firstDataSetForSeries);
+    var firstSeries = map.choropleth(data_1);
 
 	// create the second series
-    var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
+    var secondSeries = map.choropleth(data_2);
     
 	// define the colorscale for both series 
     firstSeries.colorScale(currentColorScale);
     secondSeries.colorScale(currentColorScale);
 
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.container("container");
+    map.draw();
 });
      </script>
 

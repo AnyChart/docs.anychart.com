@@ -18,7 +18,7 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-    var mapDataSet = anychart.data.set([
+    var mapData = [
                 {'id': 'AU.WA', 'capital': 'Perth', 'population': 1507949},
                 {'id': 'AU.JB', 'capital': 'Canberra', 'population': 377},
                 {'id': 'AU.NS', 'capital': 'Sydney', 'population': 4293105},
@@ -28,13 +28,13 @@
                 {'id': 'AU.CT', 'capital': 'Canberra', 'population': 374766},
                 {'id': 'AU.SA', 'capital': 'Adelaide', 'population': 1138833},
                 {'id': 'AU.QL', 'capital': 'Brisbane', 'population': 1820375}
-    ]);
+    ];
 
     map = anychart.map();
     map.geoData(anychart.maps.australia);
     map.title("Move mouse over the map to see tooltip");
     // set the series
-    var series = map.choropleth(mapDataSet);
+    var series = map.choropleth(mapData);
     
     //enable the tooltips and format them at once
     series.tooltip().format(function(e){

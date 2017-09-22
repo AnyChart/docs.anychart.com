@@ -59,10 +59,7 @@
 	extraYAxis.title("Customers under 20 years old");
 	extraYAxis.orientation("right");
 	extraYAxis.scale(scale);
-	var extraYLabels = chart_1.yAxis(1).labels();
-	extraYLabels.format(function(){
-		return this.tickValue+"%";
-	});
+	extraYAxis.labels().format("{%Value}%");
 
 	// axis name
 	var yAxis_1 = chart_1.yAxis();

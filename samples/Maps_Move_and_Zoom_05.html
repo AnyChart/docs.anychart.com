@@ -9,7 +9,6 @@
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="map">
-
 anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
@@ -22,7 +21,7 @@ anychart.onDocumentReady(function() {
     stage = anychart.graphics.create("container");
 
     // set the data
-    var dataSet = anychart.data.set([
+    var data = [
         {"id": "AU.CT", value: 15},
         {"id": "AU.VI", value: 23},
         {"id": "AU.WA", value: 86},
@@ -31,10 +30,7 @@ anychart.onDocumentReady(function() {
         {"id": "AU.NT", value: 64},
         {"id": "AU.TS", value: 28},
         {"id": "AU.SA", value: 45}
-    ]);
-
-    // map the data
-    var dataSetForSeries = dataSet.mapAs({id: "id"});
+    ];
 
     // create the map
     map = anychart.map();    
@@ -47,7 +43,7 @@ anychart.onDocumentReady(function() {
     map.title("Zoom map to a point");
 
     // create the series
-    map.choropleth(dataSetForSeries);
+    map.choropleth(data);
 
     // set the container
     map.container(stage);

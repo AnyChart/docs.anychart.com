@@ -318,8 +318,7 @@ There are several methods for managing tooltips position on the chart. This sect
 AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow the cursor. Setting *point* and a parameter binds tooltip to the hovered series point. Use the *chart* parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
 
 ```
-var tooltip = chart.tooltip();
-tooltip.positionMode("point");
+chart.tooltip().positionMode("point");
 ```
 
 Here is a sample with the tooltip stuck to the hovered point:
@@ -333,11 +332,8 @@ You can bind tooltips to a certain point on the chart plot using **chart** as a 
 You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.Tooltip#anchor}anchor(){api} method defines the main part of the tooltip for further positioning.
 
 ```
-// tooltip settings
-var tooltip = chart.tooltip();
-
 // set tooltip anchor
-tooltip.anchor("bottomLeft");
+chart.tooltip().anchor("bottomLeft");
 ```
 
 Here is a sample of two series with fixed tooltip position. Tooltip settings are the same except for the the tooltip anchor.
@@ -379,24 +375,12 @@ Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes).
 ```
 var themeSettings = {
   "column":{
-    // set tooltip display mode
     "tooltip": {
-      "displayMode": "point"
-    },
-    // series hub
-    "defaultSeriesSettings":{
-      // series settings
-      "column":{
-        // tooltip settings
-        "tooltip": {
-          "anchor": "bottomCenter",
-          "position": "topCenter",
-          "offsetX": 0,
-          "hideDelay": 3000,
-          "fontFamily": "Menlo",
-          "fontSize": 14
-        }
-      }
+    "positionMode": "point",
+    "hideDelay": 3000,
+    "offsetX": 0,
+    "fontFamily": "Menlo",
+    "fontSize": 11
     }
   }
 };

@@ -54,7 +54,7 @@ Add a block-level HTML element into your page, set the `id`, `width` and `height
 Map Data should be defined as an array of objects (each represents a region) containing at least a region id and a value. The number of fields that might a data object have is unlimited. 
 
 ```
-dataSet = anychart.data.set([
+data = [
     {'id': 'AU.WA', 'value': 300},
     {'id': 'AU.JB', 'value': 230}, 
     {'id': 'AU.NS', 'value': 240}, 
@@ -64,7 +64,7 @@ dataSet = anychart.data.set([
     {'id': 'AU.CT', 'value': 100}, 				 
     {'id': 'AU.SA', 'value': 305},                
     {'id': 'AU.QL', 'value': 190}                 
-]);
+];
 ```
 
 ## Create the Map
@@ -74,17 +74,17 @@ Add the JavaScript tag `<script>` with the following code anywhere in the page.
 ```
 <script>
 anychart.onDocumentReady(function() {
-    var dataSet = anychart.data.set([
-		{'id': 'AU.WA', 'value': 300},
-		{'id': 'AU.JB', 'value': 230}, 
-		{'id': 'AU.NS', 'value': 240}, 
-		{'id': 'AU.VI', 'value': 275}, 
-		{'id': 'AU.NT', 'value': 130}, 
-		{'id': 'AU.TS', 'value': 190}, 
-		{'id': 'AU.CT', 'value': 100}, 				 
-		{'id': 'AU.SA', 'value': 305},                
-		{'id': 'AU.QL', 'value': 190}  
-    ]);
+    var data = [
+  		{'id': 'AU.WA', 'value': 300},
+  		{'id': 'AU.JB', 'value': 230}, 
+  		{'id': 'AU.NS', 'value': 240}, 
+  		{'id': 'AU.VI', 'value': 275}, 
+  		{'id': 'AU.NT', 'value': 130}, 
+  		{'id': 'AU.TS', 'value': 190}, 
+  		{'id': 'AU.CT', 'value': 100}, 				 
+  		{'id': 'AU.SA', 'value': 305},                
+  		{'id': 'AU.QL', 'value': 190}  
+    ];
 
     //
     var map = anychart.map();
@@ -93,7 +93,7 @@ anychart.onDocumentReady(function() {
     // set the series
     var series = map.choropleth(dataSet);
 	
-	// disable labels
+	  // disable labels
     series.labels(false);
 
     // set the container
@@ -133,35 +133,34 @@ You can copy this code to a file on your computer and open it in your browser to
   <body>
     <div id="container"></div>
     <script>
-	anychart.onDocumentReady(function() {
-    var dataSet = anychart.data.set([
-		{'id': 'AU.WA', 'value': 300},
-		{'id': 'AU.JB', 'value': 230}, 
-		{'id': 'AU.NS', 'value': 240}, 
-		{'id': 'AU.VI', 'value': 275}, 
-		{'id': 'AU.NT', 'value': 130}, 
-		{'id': 'AU.TS', 'value': 190}, 
-		{'id': 'AU.CT', 'value': 100}, 				 
-		{'id': 'AU.SA', 'value': 305},                
-		{'id': 'AU.QL', 'value': 190}  
-    ]);
+    	anychart.onDocumentReady(function() {
+        var dataSet = [
+    		{'id': 'AU.WA', 'value': 300},
+    		{'id': 'AU.JB', 'value': 230}, 
+    		{'id': 'AU.NS', 'value': 240}, 
+    		{'id': 'AU.VI', 'value': 275}, 
+    		{'id': 'AU.NT', 'value': 130}, 
+    		{'id': 'AU.TS', 'value': 190}, 
+    		{'id': 'AU.CT', 'value': 100}, 				 
+    		{'id': 'AU.SA', 'value': 305},                
+    		{'id': 'AU.QL', 'value': 190}  
+        ];
 
-    //
-    var map = anychart.map();
-    map.geoData(anychart.maps.australia);
+        //
+        var map = anychart.map();
+        map.geoData(anychart.maps.australia);
 
-    // set the series
-    var series = map.choropleth(dataSet);
-	
-	// disable labels
-    series.labels(false);
+        // set the series
+        var series = map.choropleth(dataSet);
+    	
+    	  // disable labels
+        series.labels(false);
 
-    // set the container
-    map.container('container');
-    map.draw();
-  });
+        // set the container
+        map.container('container');
+        map.draw();
+      });
     </script>
   </body>
 </html>
-
 ```

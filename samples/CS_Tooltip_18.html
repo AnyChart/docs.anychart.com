@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 
-  var data = anychart.data.set([
+  var data = [
     ["John", 10000],
     ["Jake", 12000],
     ["Peter", 18000],
@@ -20,11 +20,9 @@
 
   // chart type
   chart = anychart.column();
-  var series = chart.column(data);
-  series.name("Year 2008");
+  chart.column(data).name("Year 2008");
 
-  var tooltip = chart.tooltip();
-  tooltip.positionMode("point");
+  chart.tooltip().positionMode("point");
 
   // draw
   chart.container("container");

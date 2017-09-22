@@ -59,14 +59,10 @@
 	extraYAxis.title("Customers under 20 years old");
 	extraYAxis.orientation("right");
 	extraYAxis.scale(scale);
-	var extraYLabels = chart_1.yAxis().labels();
-	extraYLabels.format(function(){
-		return this.tickValue+"%";
-	});
+	extraYAxis.labels().format("{%Value}%");
 
 	// axis name
-	var yAxis = chart_1.yAxis();
-	yAxis.title("Sales (.oz)");
+	chart_1.yAxis().title("Sales (.oz)");
 
 	// set chart title
 	chart_1.title("Popular Tea Types in the Tea House");
