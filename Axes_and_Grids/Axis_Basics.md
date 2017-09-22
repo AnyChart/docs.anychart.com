@@ -17,8 +17,7 @@ In this section we will demonstrate most of the axes visualization options, whic
 If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}Axis{api} methods:
 
 ```
-var xAxis = chart.xAxis();
-xAxis.title('Sample X axis name');
+chart.xAxis().title('Sample X axis name');
 ```
 
 ## Title
@@ -84,8 +83,7 @@ chart.xAxis().staggerMaxLines(4);
 Stagger always mode with the fixed number of lines:
 
 ```
-// getter of x axis
-// enables stagger mode
+// enable stagger mode
 chart.xAxis().staggerMode(true);
 // set the number of lines for labels to stagger 
 chart.xAxis().staggerLines(3);

@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
         {'id': 'AU.NS', 'size': 7565500},
         {'id': 'AU.NT', 'size': 243700},
         {'id': 'AU.WA', 'size': 2565600},
@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
         {'id': 'AU.VI', 'size': 5866300},
         {'id': 'AU.QL', 'size': 4750500},
         {'id': 'AU.TS', 'size': 514700}
-    ]);
+    ];
 
     // create map chart
     map = anychart.map();
@@ -40,12 +40,12 @@ anychart.onDocumentReady(function() {
     map.minBubbleSize('3%');
 
     //create bubble series
-    var series = map.bubble(dataSet);
+    var series = map.bubble(data);
 
     // making the chart monochromatic
-    series.hatchFill("HORIZONTAL");
-    series.hovered().hatchFill("DIAGONAL_CROSS");
-    series.selected().hatchFill("CONFETTI");
+    series.hatchFill("horizontal");
+    series.hovered().hatchFill("diagonal-cross");
+    series.selected().hatchFill("confetti");
     series.stroke("black");
     series.fill(null);
 

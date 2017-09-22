@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">
-  anychart.onDocumentReady(function() {
+  <script x-export="map">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -18,16 +17,16 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-// create data set
-var dataSet = anychart.data.set([
-    {'id': 'AU.NS', 'size': 7565500},
-    {'id': 'AU.NT', 'size': 243700},
-    {'id': 'AU.WA', 'size': 2565600},
-    {'id': 'AU.SA', 'size': 1682600},
-    {'id': 'AU.VI', 'size': 5866300},
-    {'id': 'AU.QL', 'size': 4750500},
-    {'id': 'AU.TS', 'size': 514700}
-]);
+  // create data set
+  var data = [
+      {'id': 'AU.NS', 'size': 7565500},
+      {'id': 'AU.NT', 'size': 243700},
+      {'id': 'AU.WA', 'size': 2565600},
+      {'id': 'AU.SA', 'size': 1682600},
+      {'id': 'AU.VI', 'size': 5866300},
+      {'id': 'AU.QL', 'size': 4750500},
+      {'id': 'AU.TS', 'size': 514700}
+  ];
 
   // create map chart
   map = anychart.map();
@@ -36,7 +35,7 @@ var dataSet = anychart.data.set([
   map.geoData(anychart.maps.australia);
 
   //create bubble series
-  var series = map.bubble(dataSet);
+  var series = map.bubble(data);
 
   // set container id for the chart
   map.container('container');

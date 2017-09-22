@@ -36,17 +36,14 @@
     // set geoData using https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
     map.geoData(anychart.maps.australia);
 
-    var series1Data = dataSet.mapAs({id: 0, size: 1});
-    var series2Data = dataSet.mapAs({id: 0, value: 2});
-
     //set bubble min/max size settings
     map.maxBubbleSize(70);
     map.minBubbleSize(20);
 
     //create bubble series
-    var series_1 = map.bubble(series1Data);
+    var series_1 = map.bubble(dataSet.mapAs({id: 0, size: 1}));
     series_1.name("Employed international workers");
-    var series_2 = map.choropleth(series2Data);
+    var series_2 = map.choropleth(dataSet.mapAs({id: 0, value: 2}));
     series_2.name("Unemployed local workers");
 
     // change the fill and hoverFill colors of series_1
@@ -71,13 +68,9 @@
     series_2.labels(false);
 
     // tooltip formatting
-    series_1.tooltip().format(function(){
-        return ("Employed international workers: "+this.size+ "%");
-    });
+    series_1.tooltip().format("{%SeriesName} {%size}%");
 
-    series_2.tooltip().format(function(){
-        return ("Unemployed local workers: "+this.value+ "%");
-    });
+    series_2.tooltip().format("{%SeriesName} {%value}%");
 
     // set the colors and ranges for the scale
     series_2.colorScale(anychart.scales.linearColor());

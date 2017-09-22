@@ -46,13 +46,13 @@ The following sample demonstrates how a basic Area chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 10000],
   ["February", 12000],
   ["March", 18000],
   ["April", 11000],
   ["May", 9000]
-]);
+];
 
 // create a chart
 var chart = anychart.area();

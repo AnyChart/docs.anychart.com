@@ -9,35 +9,28 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart
+  // create chart
   chart = anychart.cartesian();
 
-  var margin = chart.margin();
-  margin.bottom(30);
-  margin.right(30);
-
-  // setting data
-  var data = anychart.data.set([
+    // data
+  var data = [
     ["A", 4],
     ["B", 3],
     ["C", 2],
     ["D", 1]
-  ]);
+  ];
 
-  // define chart type
+  // add series
   chart.column(data);
 
   // position of x axis changer. Now x is on the top
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
+  chart.xAxis().orientation("top");
 
   // inverts x scale. Now all elements has inverted (from right to left) direction
-  var xScale = chart.xScale();
-  xScale.inverted(true);
+  chart.xScale().inverted(true);
 
   // set y axis position. This position is set by default
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
+  chart.yAxis().orientation("left");
 
   chart.container("container");
   chart.draw();

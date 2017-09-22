@@ -24,26 +24,26 @@ Example datasets appropriate for choropleths:
 - map showing the percentage change in solved to unresolved cases from 1995 to 2015 in the UK;
 - world map of percentage of population over 90 years old, reported by Canada.
 
-That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field.  The value might be set as a numeric value or you may define a random value.
+That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. 
 
 ```
-var dataSet = anychart.data.set([
-                {'id': 'AU.WA', 'value': 300},  // Western Australia
-                {'id': 'AU.JB'},                // Jervis Bay Territory
-                {'id': 'AU.NS', 'value': 240},  // New South Wales
-                {'id': 'AU.VI', 'value': 75},   // Victoria
-                {'id': 'AU.NT', 'value': 130},  // Northern Territory
-                {'id': 'AU.TS', 'value': 190},  // Tasmania
-                {'id': 'AU.CT', labels: false},  // Australian Capital Territory
-                {'id': 'AU.SA'},                // South Australia
-                {'id': 'AU.QL'}                 // Queensland
-            ]);
+var data = [
+    {'id': 'AU.WA', 'value': 300}, 
+    {'id': 'AU.JB'},               
+    {'id': 'AU.NS', 'value': 240}, 
+    {'id': 'AU.VI', 'value': 75},  
+    {'id': 'AU.NT', 'value': 130}, 
+    {'id': 'AU.TS', 'value': 190}, 
+    {'id': 'AU.CT'},
+    {'id': 'AU.SA'},               
+    {'id': 'AU.QL'}                
+]);
 ```
 
 To connect the data to the map and to define its type you may use the next construction:
 
 ```
-s1 = map.choropleth(dataSet1);
+series = map.choropleth(data);
 ```
 
 {sample}Maps\_Choropleth\_01{sample}
@@ -52,14 +52,14 @@ In the data above we haven't defined the value for some regions, but those regio
 they will become of default color for undefined regions, so it's better to set the fill for them:
 
 ```
-var dataSet = anychart.data.set([
-                {'id': 'AU.WA', 'value': 300},  // Western Australia
-                {'id': 'AU.NS', 'value': 240},  // New South Wales
-                {'id': 'AU.VI', 'value': 75},   // Victoria
-                {'id': 'AU.NT', 'value': 130},  // Northern Territory
-                {'id': 'AU.TS', 'value': 190},  // Tasmania
-                {'id': 'AU.CT', labels: false}, // Australian Capital Territory
-            ]);
+var data = [
+    {'id': 'AU.WA', 'value': 300},
+    {'id': 'AU.NS', 'value': 240},
+    {'id': 'AU.VI', 'value': 75}, 
+    {'id': 'AU.NT', 'value': 130},
+    {'id': 'AU.TS', 'value': 190},
+    {'id': 'AU.CT'}
+];
 			
 // set the fill for the regions you haven't defined in the dataSet
 map.unboundRegions().fill('#eee');

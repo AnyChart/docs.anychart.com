@@ -57,13 +57,13 @@ The following sample demonstrates how a basic Range Area chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 0.7, 6.1],
   ["February", 0.6, 6.3],
   ["March", 1.9, 8.5],
   ["April", 3.1, 10.8],
   ["May", 5.7, 14.4]
-]);
+];
 
 // create a chart
 var chart = anychart.area();

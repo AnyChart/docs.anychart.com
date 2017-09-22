@@ -19,20 +19,20 @@
 
 map = anychart.map();
 // data set for the choropleth series
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"}, 
     {'id': 'AU.NT', 'value': 2, "middle-y": -20.159, "middle-x": 133.66, "middleXYMode": "absolute"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
     {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"}, 
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-y": -28.86, "middle-x": 134.678, "middleXYMode": "absolute"},
     {'id': 'AU.VI', 'value': 3.86, "middle-y": -37.68, "middle-x": 143.77, "middleXYMode": "absolute"},
     {'id': 'AU.QL', 'value': 1.1, "middle-y": -23.335, "middle-x": 143.71, "middleXYMode": "absolute"},
     {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 
 map.geoData("anychart.maps.australia");
 
@@ -45,8 +45,7 @@ var series_1 = map.choropleth(dataSet_1);
 var series_2 = map.choropleth(dataSet_2);
 
 // enable labels
-series_1.labels(true);
-series_2.labels(true);
+map.labels(true);
 
 // set the overlapping mode for the map
 map.overlapMode(false);

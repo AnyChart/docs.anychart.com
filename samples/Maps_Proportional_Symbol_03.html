@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">
-  anychart.onDocumentReady(function() {
+  <script x-export="map">anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -19,15 +18,15 @@
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
         {'id': 'Sydney', 'size': 106, "lat":  -33.51, "lon": 151.11},
-        {'id': 'Cape York', 'size': 103, "lat":  -10.41, "lon": 142.22}, //north point/
-        {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "lon": 142.22}, //south
-        {'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "lon": 153.38}, //east point/
+        {'id': 'Cape York', 'size': 103, "lat":  -10.41, "lon": 142.22},
+        {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "lon": 142.22},
+        {'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "lon": 153.38},
         {'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "lon": 113.09},
         {"id": 'Alice Springs', 'size': 100, "lat": -23.69, "long": 133.87},
         {"id": 'Adelaide', 'size': 99, "lat": -34.98, "long": 138.42}
-    ]);
+    ];
 
     // create map chart
     map = anychart.map();
@@ -36,20 +35,14 @@
     map.geoData(anychart.maps.australia);
 
     //create bubble series
-    var series = map.bubble(dataSet);
+    var series = map.bubble(data);
 
     //set series geo id field settings
-    series.labels().format(function(){
-      return (this.id);
-    });
+    series.labels().format("{%id}");
 
-    series.tooltip().format(function(){
-      return (this.size + "th of tourists");
-    });
+    series.tooltip().format("{%size} thousands of tourists");
 
-    series.tooltip().titleFormat(function(){
-      return (this.id);
-    });
+    series.tooltip().titleFormat("{%id}");
 
     map.title("Most popluar places \n of touristic interest in 2013");
 

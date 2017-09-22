@@ -14,7 +14,7 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value, isTotal](../Working_with_Data/Overview)</td></tr>
-<tr><td>Multiple Series</td><td>???</td></tr>
+<tr><td>Multiple Series</td><td>[YES](#multiple_series)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Multiple Series](#multiple_series)</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart
+  // create chart
   chart = anychart.cartesian();
 
   var margin = chart.margin();
@@ -24,16 +24,14 @@
       ["D", 1]
   ]);
 
-  // define chart type
+  // add series
   chart.column(data);
 
   // position of y axis changer. Now y is on the right
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
+  chart.yAxis().orientation("right");
       
   // set x axis position. This position is set by default
-  var xAxis = chart.xAxis();
-  xAxis.orientation("bottom");
+  chart.xAxis().orientation("bottom");
 
   chart.container("container");
   chart.draw();

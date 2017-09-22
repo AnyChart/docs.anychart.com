@@ -19,20 +19,20 @@
 
 map = anychart.map();
 // data sets for the series
-var dataSet_1 = anychart.data.set([
+var dataSet_1 =[
   {'id': 'AU.JB', 'value': 1.5, "labelrank": 0, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
   {'id': 'AU.NT', 'value': 2, "middle-y": 0.5, "middleXYMode": "relative"},
   {'id': 'AU.WA', 'value': 3.2},
   {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
   {'id': 'AU.CT', 'value': 1.12, "labelrank": 9},
   {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
   {'id': 'AU.VI', 'value': 3.86, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
   {'id': 'AU.QL', 'value': 1.1, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
   {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 
 map.geoData("anychart.maps.australia");
 
@@ -45,9 +45,7 @@ var series_1 = map.choropleth(dataSet_1);
 var series_2 = map.choropleth(dataSet_2);
 
 // enable labels
-series_1.labels(true);
-series_2.labels(true);
-
+map.labels(true);
 // set the overlapping mode for the map
 map.overlapMode(false);
 
@@ -59,7 +57,6 @@ series_2.tooltip().format("More men");
 map.container('container');
 map.draw();
 });
-
 </script>
 </head>
 <body>

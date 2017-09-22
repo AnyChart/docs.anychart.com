@@ -17,13 +17,13 @@ Here is a basic sample showing how to create a Column chart with error bars:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 10000],
   ["February", 12000],
   ["March", 13000],
   ["April", 10000],
   ["May", 9000]
-]);
+];
 
 // create a chart
 chart = anychart.column();

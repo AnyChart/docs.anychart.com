@@ -42,13 +42,13 @@ The following sample demonstrates how a basic Bar chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["John", 10000],
   ["Jake", 12000],
   ["Peter", 13000],
   ["James", 10000],
   ["Mary", 9000]
-]);
+];
 
 // create a chart
 var chart = anychart.bar();
@@ -116,19 +116,18 @@ If you use object notation to set the data, you can change the appearance (and s
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},
   {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
   {x: "James", value: 10000},
   {x: "Mary", value: 9000}
-]);
+];
 ```
 
 {sample}BCT\_Bar\_Chart\_03{sample}
 
 If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
-
 
 ```
 // create a data set

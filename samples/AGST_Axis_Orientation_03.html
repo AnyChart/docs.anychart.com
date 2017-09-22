@@ -9,32 +9,27 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart
+  // create a chart
   chart = anychart.cartesian();
 
-  var margin = chart.margin();
-  margin.bottom(30);
-  margin.right(30);
-
   // setting data
-  var data = anychart.data.set([
+  var data = [
     ["A", 4],
     ["B", 3],
     ["C", 2],
     ["D", 1]
-  ]);
+  ];
 
-  // define chart type
+  // add series
   chart.column(data);
 
   // position of x axis changer. Now x is on the top
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
+  chart.xAxis().orientation("top");
 
   // set y axis position. This position is set by default
-  var yAxis = chart.yAxis();
-  yAxis.orientation("left");
+  chart.yAxis().orientation("left");
 
+  // display chart
   chart.container("container").draw();
 });</script>
 </head>

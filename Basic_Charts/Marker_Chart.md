@@ -151,7 +151,7 @@ Sometimes it is necessary to emphasize an only item for some reasons. In this ca
 The following sample demonstrates adjusting some settings for a single item:
 
 ```
-var data = anychart.data.set([
+var data = [
     {x: "2000", value: 1100},
     {x: "2001", value: 880},
     {x: "2002", value: 1100},
@@ -159,7 +159,7 @@ var data = anychart.data.set([
     {x: "2004", value: 921},
     {x: "2005", value: 1000},
     {x: "2006", value: 1400}
-  ]);
+];
 ```
 
 {sample}BCT\_Marker\_Chart\_05{sample}

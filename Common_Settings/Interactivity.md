@@ -356,7 +356,7 @@ Here we have defined all interactivity colors (selection and hovering fills) thr
 // data
 var data = anychart.data.set([
   ["John", 10000, 12000, "#ccc", "#FF9900", "diamond"],
-  ["Jake", 12000, 15000, "#ccc", "#FF9900", "backwarddiagonal"],
+  ["Jake", 12000, 15000, "#ccc", "#FF9900", "backward-diagonal"],
   ["Peter", 18000, 16000, "#ccc", "#FF9900", "diamond"],
   ["James", 11000, 13000, "#ccc", "#FF9900", "diamond"],
   ["Mary", 9000, 19000, "#ccc", "#FF9900", "diamond"]
@@ -374,14 +374,14 @@ Another way of defining interactivity through the dataSet is setting the data as
 ```
 // data
 var data = anychart.data.set([
-  {x:1, value:990, selectFill:"Red"},
-  {x:2, value:1100, selected:true, selectFill:"Blue"},
-  {x:3, value:1050, selectFill:"Red"},
-  {x:4, value:890,  selectFill:"Red"},
-  {x:5, value:1300, selected:true, selectFill:"Red"},
-  {x:6, value:840, selected:true, selectFill:"Green"},
-  {x:7, value:900, selectFill:"Red"},
-  {x:8, value:1000, selectFill:"Red"}
+  {x:1, value:990, selectFill: "Red"},
+  {x:2, value:1100, selected: true, selectFill: "Blue"},
+  {x:3, value:1050, selectFill: "Red"},
+  {x:4, value:890, selectFill: "Red"},
+  {x:5, value:1300, selected:true, selectFill: "Red"},
+  {x:6, value:840, selected:true, selectFill: "Green"},
+  {x:7, value:900, selectFill: "Red"},
+  {x:8, value:1000, selectFill: "Red"}
 ]);
 ```
 

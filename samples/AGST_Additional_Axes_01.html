@@ -10,13 +10,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     ["A", 637166],
     ["B", 721630],
     ["C", 148662],
     ["D", 78662],
     ["E", 90000]
-  ]);
+  ];
 
   // set data and chart type
   chart = anychart.column(data);
@@ -24,24 +24,18 @@
   // title settings
   chart.title("Extra Axes Simple Sample");
 
-  // adjusting xAxis title
-  var xAxisTitle = chart.xAxis().title();
-  xAxisTitle.text("Sample X axis name");
-
-  // adjusting yAxes titles
+  // adjusting yAxes 
   var yAxis1 = chart.yAxis(1);
   yAxis1.orientation("right");
   yAxis1.title("First additional axis");
+
   var yAxis2 = chart.yAxis(2);
   yAxis2.orientation("right");
   yAxis2.title("Second additional axis");
+
   var yAxis3 = chart.yAxis(3);
   yAxis3.orientation("right");
   yAxis3.title("Third additional axis");
-
-  // adjusting major ticks' interval
-  var ticks = chart.yScale().ticks();
-  ticks.interval(100000);
 
   // draw
   chart.container("container");

@@ -39,7 +39,7 @@ That's how it looks like in the code:
 
 ```
 // create the dataset of points that are defined by latitude and longitude values
-var dataSet_lat_long = anychart.data.set([
+var data = [
     {lat: -25.75, long: 122.18, name: "ACME Corp. branch #1", value: 321},
     {lat: -18.50, long: 135.24, name: "ACME Corp. branch #2", value: 293},
     {lat: -23.12, long: 148.62, name: "ACME Corp. branch #3", value: 312},
@@ -48,7 +48,7 @@ var dataSet_lat_long = anychart.data.set([
     {lat: -31.21, long: 116.44, name: "ACME Corp. branch #6", value: 215},
     {lat: -32.26, long: 151.44, name: "ACME Corp. branch #7", value: 219},
     {lat: -25.63, long: 152.37, name: "ACME Corp. branch #8", value: 179}
-]);
+];
 ```
 
 Now look at the example below. Here we can see a Dot Map where each point contains not only the coordinates but also some extra information about the point, like the number of the ACME Corp. branch and the yearly profit this branch makes.
@@ -65,7 +65,7 @@ That's how it looks like in the code:
 
 ```
 // create the dataset of points that are defined by the region id
-var dataSet_id = anychart.data.set([
+var data = [
     {"id": "AU.NS", "farms": 240},
     {"id": "AU.NT", "farms": 202},
     {"id": "AU.WA", "farms": 193},
@@ -73,7 +73,7 @@ var dataSet_id = anychart.data.set([
     {"id": "AU.VI", "farms": 48},
     {"id": "AU.TS", "farms": 13},
     {"id": "AU.QL", "farms": 136}
-]);
+];
 ```
 
 In this sample we show how many sheep farms are in this or that region of Australia. 
@@ -112,15 +112,14 @@ It's possible to change labels and tooltips for the points in another state. To 
 
 ```
 // hovered and selected labels
-series_acme.hoverLabels().fontSize(12);
-series_acme.hoverLabels().fontColor("#660000");
-series_acme.selectLabels().fontSize(12);
-series_acme.selectLabels().fontColor("#660000");
+series_acme.hovered().labels().fontSize(12);
+series_acme.hovered().labels().fontColor("#660000");
+series_acme.selected().labels().fontSize(12);
+series_acme.selected().labels().fontColor("#660000");
 ```
 {sample}Maps\_Marker\_06{sample}
 
 You can find more information about formatting labels and tooltips in the [Labels](../Common_Settings/Labels), [Tooltips](../Common_Settings/Tooltip) and [Text Formatters](../Common_Settings/Text_Formatters) tutorials.
-
 
 ### Series colors
 
@@ -179,7 +178,7 @@ Another way to create unique markers is to set an image (or an array of images) 
 // set the images for our series defined in normal state
 series_acme.fill(customImageMarker(1));
 // set the images for dots of the ACME series in hovered state
-series_acme.hoverFill(customImageMarker(0.5));
+series_acme.hovered().fill(customImageMarker(0.5));
 
 function customImageMarker(op){
 var image_link = 'https://static.anychart.com/images/acme.jpg';

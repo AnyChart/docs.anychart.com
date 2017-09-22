@@ -55,13 +55,13 @@ The following sample demonstrates how a basic Range Bar chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 0.7, 6.1],
   ["February", 0.6, 6.3],
   ["March", 1.9, 8.5],
   ["April", 3.1, 10.8],
   ["May", 5.7, 14.4]
-]);
+];
 
 // create a chart
 var chart = anychart.bar();
@@ -128,13 +128,13 @@ If you use object notation to set the data, you can change the appearance (and s
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   {x: "January", low: 0.7, high: 6.1},
   {x: "February", low: 0.6, high: 6.3},
   {x: "March", low: 1.9, high: 8.5},
   {x: "April", low: 3.1, high: 10.8},
   {x: "May", low: 5.7, high: 14.4, fill: "#5cd65c", stroke: null, label: {enabled: true}}
-]);
+];
 ```
 
 {sample}BCT\_Range\_Bar\_Chart\_03{sample}

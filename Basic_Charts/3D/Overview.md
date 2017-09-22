@@ -24,13 +24,13 @@ That is how it looks like:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 10000],
   ["February", 12000],
   ["March", 18000],
   ["April", 11000],
   ["May", 9000]
-]);
+];
 
 // create a 3d column chart
 chart = anychart.column3d();

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="australiaMap">
+  <script x-export="map">
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
@@ -19,7 +19,7 @@ anychart.onDocumentReady(function () {
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create the dataset of points that are defined by the region id
-    var dataSet_id = anychart.data.set([
+    var data = [
         {"id": "AU.NS", "farms": 240},
         {"id": "AU.NT", "farms": 202},
         {"id": "AU.WA", "farms": 193},
@@ -27,29 +27,27 @@ anychart.onDocumentReady(function () {
         {"id": "AU.VI", "farms": 48},
         {"id": "AU.TS", "farms": 13},
         {"id": "AU.QL", "farms": 136}
-    ]);
+    ];
 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
 
     // Creates the marker series
-    var series_id = australiaMap.marker(dataSet_id);
+    var series = map.marker(data);
 
     //format the labels of the id-defined series
-    series_id.labels().format(function(e){
-      return e.name;
-    });
+    series.labels().format("{%name}");
 
-    series_id.tooltip().format("Id: {%id} \nSheep farms: {%farms}");
+    series.tooltip().format("Id: {%id} \nSheep farms: {%farms}");
 
     // hovered and selected labels
-    series_id.hovered().labels().fontColor("black");
-    series_id.selected().labels().fontColor("red");
+    series.hovered().labels().fontColor("black");
+    series.selected().labels().fontColor("red");
 
-    australiaMap.title("Marker series on a map");
-    australiaMap.interactivity().zoomOnMouseWheel(false);
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.title("Marker series on a map");
+    map.interactivity().zoomOnMouseWheel(false);
+    map.container("container");
+    map.draw();
 });
     </script>
 

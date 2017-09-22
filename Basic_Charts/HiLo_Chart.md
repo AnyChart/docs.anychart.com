@@ -49,13 +49,13 @@ The following sample demonstrates how a basic HiLo chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   ["January", 10000, 1000],
   ["February", 12000, 500],
   ["March", 18000, 3000],
   ["April", 11000, 4000],
   ["May", 9000, 6000]
-]);
+];
 
 // create a chart
 chart = anychart.hilo();

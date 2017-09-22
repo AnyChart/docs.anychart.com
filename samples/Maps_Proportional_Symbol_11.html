@@ -18,7 +18,7 @@
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
         {'id': 'AU.NS', 'size': 7565500, 'name': 'New South Wales'},
         {'id': 'AU.NT', 'size': 243700, 'name': 'Northern Territory'},
         {'id': 'AU.WA', 'size': 2565600, 'name': 'Western Australia'},
@@ -26,7 +26,7 @@
         {'id': 'AU.VI', 'size': 5866300, 'name': 'Victoria'},
         {'id': 'AU.QL', 'size': 4750500, 'name': 'Queensland'},
         {'id': 'AU.TS', 'size': 514700, 'name': 'Tasmania'}
-    ]);
+    ];
 
     // create map chart
     map = anychart.map();
@@ -35,7 +35,7 @@
     map.geoData(anychart.maps.australia);
 
     //create bubble series
-    var series = map.bubble(dataSet);
+    var series = map.bubble(data);
 
     // changes the fill and hoverFill colors
     series.fill("#90caf9");
@@ -58,20 +58,18 @@
     // set the minimum size of the bubble
     map.minBubbleSize('2%');
 
+    series.labels(true);
+
     // set the color for the text of the labels
     series.labels().fontColor('black');
     series.labels().fontSize(10);
 
     // format the labels
-    series.labels().format(function(){
-        return(this.getData("name")+"\n"+this.size);
-    });
+    series.labels().format("{%name}\n{%size}");
     series.labels().anchor('center');
     series.labels().position('center');
 
-    series.tooltip().format(function(){
-        return(this.size+' employed local workers');
-    });
+    series.tooltip().format('{%size} employed local workers');
 
     // set container id for the chart
     map.container('container');

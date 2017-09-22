@@ -48,7 +48,7 @@ The following sample demonstrates how a basic single-series Japanese Candlestick
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
   [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
   [Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44],
@@ -61,16 +61,13 @@ var data = anychart.data.set([
   [Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92],
   [Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97],
   [Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44]
-]);
+];
 
 // create a chart
 chart = anychart.financial();
- 
-// map the data    
-var seriesData = data.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
 
 // create a japanese candlestick series and set the data
-var series = chart.candlestick(seriesData);
+var series = chart.candlestick(data);
 
 // set the container id
 chart.container("container");
@@ -80,7 +77,6 @@ chart.draw();
 ```
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_01{sample}
-
 
 ## General Settings
 
@@ -138,16 +134,13 @@ series2.selectRisingHatchFill("percent20");
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_02{sample}
 
-
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (they can be enabled on a whole series or for a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
 
 ## Candlestick Patterns
 

@@ -19,7 +19,7 @@
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
-    var dataSet = anychart.data.set([
+    var data = [
         {'id': 'AU.NS', 'size': 7565500},
         {'id': 'AU.NT', 'size': 243700},
         {'id': 'AU.WA', 'size': 2565600},
@@ -27,7 +27,7 @@
         {'id': 'AU.VI', 'size': 5866300},
         {'id': 'AU.QL', 'size': 4750500},
         {'id': 'AU.TS', 'size': 514700}
-    ]);
+    ];
 
     // create map chart
     map = anychart.map();
@@ -36,19 +36,19 @@
     map.geoData(anychart.maps.australia);
 
     //create bubble series
-    var series = map.bubble(dataSet);
+    var series = map.bubble(data);
 
-    // changes the fill and hoverFill colors
+    // changes the fill and hover fill colors
     series.fill("#90caf9");
     series.hovered().fill("#b3e5fc");
     series.labels().fontColor("#0277bd");
     series.hovered().labels().fontColor("#01579b");
 
-    // changes the stroke and hoverStroke colors
+    // changes the stroke and hover stroke colors
     series.stroke("#64b5f6");
     series.hovered().stroke("#81d4fa");
 
-    // sets the select colors
+    // sets the selected colors
     series.selected().stroke("#546e7a");
     series.selected().fill("#78909c");
     series.selected().labels().fontColor("#263238");

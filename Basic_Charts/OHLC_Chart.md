@@ -43,7 +43,7 @@ The following sample demonstrates how a basic OHLC chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
+var data = [
   [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
   [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
   [Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44],
@@ -56,16 +56,13 @@ var data = anychart.data.set([
   [Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92],
   [Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97],
   [Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44],
-]);
+];
 
 // create a chart
 chart = anychart.financial();
-  
-// map the data      
-var seriesData = data.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
 
 // create an OHLC series and set the data
-var series = chart.ohlc(seriesData);
+var series = chart.ohlc(data);
 
 // set the container id
 chart.container("container");
@@ -75,7 +72,6 @@ chart.draw();
 ```
 
 {sample}BCT\_OHLC\_Chart\_01{sample}
-
 
 ## General Settings
 

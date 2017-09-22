@@ -41,8 +41,8 @@ We use this system of defining the point's location as the main one. While we us
 Let's have a look at the sample below to understand the meaning of described.
 
 ```
-// create data set
-var dataSet = anychart.data.set([
+// data
+var data = [
     {'id': 'Sydney', 'size': 106, "lat":  -33.51, "long": 151.11},
     {'id': 'Cape York', 'size': 103, "lat":  -10.41, "long": 142.22},
     {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "long": 142.22}, 
@@ -50,7 +50,7 @@ var dataSet = anychart.data.set([
     {'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "long": 113.09},
     {'id': 'Alice Springs', 'size': 100, "lat": -23.69, "long": 133.87},
     {'id': 'Adelaide', 'size': 99, "lat": -34.98, "long": 138.42}
-]);
+];
 
 ```
 {sample}Maps\_Proportional\_Symbol\_03{sample}
@@ -60,7 +60,7 @@ var dataSet = anychart.data.set([
 Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}geoIdField(){api} method. Set the necessary parameters for the map and the series:
 
 ```
-var dataSet = anychart.data.set([
+var data = [
     {id: 'AU.NS', size: 7565500},
     {id: 'AU.NT', size: 243700},
     {id: 'AU.WA', size: 2565600},
@@ -68,7 +68,7 @@ var dataSet = anychart.data.set([
     {id: 'AU.VI', size: 5866300},
     {id: 'AU.QL', size: 4750500},
     {id: 'AU.TS', size: 514700}
-]);
+];
 
 // create map chart
 map = anychart.map();
@@ -77,7 +77,7 @@ map = anychart.map();
 map.geoData(anychart.maps.australia);
 
 // create bubble series
-var series = map.bubble(dataSet);
+var series = map.bubble(data);
 ```
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
@@ -124,27 +124,26 @@ Let's create a sample using things we've learned.
 ```
 // change the fill and hoverFill colors
 series.fill("#EBD670");
-series.hoverFill("#C7FF99");
+series.hovered().fill("#C7FF99");
 
 // change the stroke and hoverStroke colors
 series.stroke("#C7FF99");
-series.hoverStroke("#EBD670");
+series.hovered().stroke("#EBD670");
 
 // set the select colors
-series.selectStroke("#66FFCC");
-series.selectFill("#879CED");
+series.selected().stroke("#66FFCC");
+series.selected().fill("#879CED");
 ```
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
 Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.map.series.Bubble#hatchFill}hatchFill{api} to add a hatch pattern to the whole series, {api:anychart.core.map.series.Bubble#hoverHatchFill}hoverHatchFill{api} to add hatch to series in hovered state and {api:anychart.core.map.series.Bubble#selectHatchFill}selectHatchFill{api} to make the selected elements hatched.
 
-
 ```
 // making the chart monochromatic
 series.hatchFill("horizontal");
-series.hoverHatchFill("weave");
-series.selectHatchFill("confetti");
+series.hovered().hatchFill("weave");
+series.selected().hatchFill("confetti");
 series.stroke("black");
 series.fill(null);
 ```
@@ -153,10 +152,10 @@ series.fill(null);
 
 Note that we should get rid of the main filling color, unless we want the hatch being added over the color.
 
-As usual, we can define the colors through the dataSet, especially if we need different color settings for some of our bubbles.
+As usual, we can define the colors through the data, especially if we need different color settings for some of our bubbles.
 
 ```
-var dataSet = anychart.data.set([
+var dataSet = [
     {'id': 'AU.NS', 'size': 7565500, 'fill': "red", hoverFill: "#FF6666", selectFill: "#800000"},
     {'id': 'AU.NT', 'size': 243700, 'fill': "green", hoverFill:"#80B280", selectFill: "#003300"},
     {'id': 'AU.WA', 'size': 2565600},
@@ -164,7 +163,7 @@ var dataSet = anychart.data.set([
     {'id': 'AU.VI', 'size': 5866300},
     {'id': 'AU.QL', 'size': 4750500},
     {'id': 'AU.TS', 'size': 514700}
-]);
+];
 ```
 
 {sample}Maps\_Proportional\_Symbol\_07{sample}
@@ -181,9 +180,7 @@ series.labels().fontColor('black');
 series.labels().fontSize(10);
 
 // format the labels
-series.labels().format(function(){
-    return(this.getData("name")+"\n"+this.size);
-});
+series.labels().format("{%name}\n{%size}");
 ```
 
 {sample}Maps\_Proportional\_Symbol\_10{sample}
@@ -210,30 +207,15 @@ var dataSet = anychart.data.set([
   ['AU.QL', 8, 3.7],
   ['AU.TS', 3.2, 7.3]
 ]);
-var series1Data = dataSet.mapAs({id: 0, size: 1});
-var series2Data = dataSet.mapAs({id: 0, value: 2});
+
+// create series
+var series_1 = map.bubble(dataSet.mapAs({id: 0, size: 1}));
+var series_2 = map.choropleth(dataSet.mapAs({id: 0, value: 2}));
 ```
 
 {sample}Maps\_Proportional\_Symbol\_12{sample}
 
 We can create a map with several bubble series as well:
-
-```
-// create the data
-var dataSet = anychart.data.set([
-    ['AU.NS', 3.5, 8.5],
-    ['AU.NT', 7.1, 12],
-    ['AU.WA', 10.4, 2.9],
-    ['AU.SA', 4.7, 28.2],
-    ['AU.VI', 7.9, 19.4],
-    ['AU.QL', 8, 3.7],
-    ['AU.TS', 3.2, 7.3]
-]);
-
-// mapping the data
-var series1Data = dataSet.mapAs({id: 0, size: 1});
-var series2Data = dataSet.mapAs({id: 0, size: 2});
-```
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}
 

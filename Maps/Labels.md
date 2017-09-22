@@ -178,20 +178,20 @@ Another property is responsible for positioning around the "middle-x" and "middl
 
 ```
 // data sets for series
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 0, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
     {'id': 'AU.NT', 'value': 2, "middle-y": 0.5, "middleXYMode": "relative"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
     {'id': 'AU.CT', 'value': 1.12, "labelrank": 9},
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
     {'id': 'AU.VI', 'value': 3.86, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
     {'id': 'AU.QL', 'value': 1.1, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
     {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 ```
 
 {sample}Maps\_Labels\_07{sample}
@@ -240,20 +240,20 @@ map.geoData(getData());
 The following sample demonstrates several region labels set with "absolute" positioning through the data set:
 
 ```
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"}, 
     {'id': 'AU.NT', 'value': 2, "middle-y": -20.159, "middle-x": 133.66, "middleXYMode": "absolute"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
     {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"}, 
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-y": -28.86, "middle-x": 134.678, "middleXYMode": "absolute"},
     {'id': 'AU.VI', 'value': 3.86, "middle-y": -37.68, "middle-x": 143.77, "middleXYMode": "absolute"},
     {'id': 'AU.QL', 'value': 1.1, "middle-y": -23.335, "middle-x": 143.71, "middleXYMode": "absolute"},
     {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 ```
 
 {sample}Maps\_Labels\_09{sample}
@@ -279,9 +279,9 @@ In the sample below there are some regions with labels set as inside (with middl
 On the previous sample you can see a connector between each outside label and its region - it is created specially for this kind of labels. The {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method helps to adjust its appearance. Also the connector color can be set through the data set. Setting the connector stroke color in "null" will disable the connector.
 
 ```
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"}
-]);
+];
 
 // set the connector stroke color
 series_2.labels().connectorStroke("green", 2, "3 3");

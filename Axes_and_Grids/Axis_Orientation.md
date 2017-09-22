@@ -9,10 +9,10 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 
 ## Column Mode
 
-<table width="700" border="1" class="dtTABLE">
+<table>
 <tbody><tr>
-<th width="420"><b>Preview</b></th>
-<th width="280"><b>JS Settings</b></th>
+<th>Preview</th>
+<th>JS Settings</th>
 </tr>
 <tr>
 <td>
@@ -20,18 +20,10 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </td>
 <td>
 ```
-// set x axis position. This position is set by default
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-
-// set y axis position. This position is set by default
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -41,14 +33,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -58,14 +46,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -75,14 +59,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -92,14 +72,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -109,14 +85,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -126,14 +98,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(false);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -143,14 +111,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -160,14 +124,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -177,14 +137,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(true);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -194,14 +150,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -211,14 +163,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(true);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -228,14 +176,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(false);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -245,14 +189,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -262,14 +202,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(false);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -279,29 +215,24 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
 </tbody>
 </table>
 
-##Bar Mode
-{api:anychart.charts.Cartesian#xAxis}x-Axis{api} isn't restricted in only by Top and Bottom orientation. It can by placed on the Left or Right sides. So can {api:anychart.charts.Cartesian#yAxis}y-Axis{api} be placed on the top or bottom. This option enabled by default in {api:anychart.core.cartesian.series.Bar}Bar{api} charts.
-  
-Here are some samples of Bar chart Axes orientation
+## Vertical Mode
 
-<table width="700" border="1" class="dtTABLE">
+Here are some samples of [Vertical charts](../Basic_Charts/Vertical/Overview) axes orientation:
+
+<table>
 <tbody><tr>
-<th width="420"><b>Preview</b></th>
-<th width="280"><b>JS Settings</b></th>
+<th>Preview</th>
+<th>JS Settings</th>
 </tr>
 <tr>
 <td>
@@ -309,14 +240,10 @@ Here are some samples of Bar chart Axes orientation
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -326,14 +253,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("bottom");
-var yAxis = chart.yAxis();
-yAxis.orientation("left");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("bottom");
+chart.yAxis().orientation("left");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>
@@ -343,14 +266,10 @@ yScale.inverted(true);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(false);
-var yScale = chart.yScale();
-yScale.inverted(false);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
@@ -360,14 +279,10 @@ yScale.inverted(false);
 </td>
 <td>
 ```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-var yAxis = chart.yAxis();
-yAxis.orientation("right");
-var xScale = chart.xScale();
-xScale.inverted(true);
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.xAxis().orientation("top");
+chart.yAxis().orientation("right");
+chart.xScale().inverted(true);
+chart.yScale().inverted(true);
 ```
 </td>
 </tr>

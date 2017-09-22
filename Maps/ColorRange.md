@@ -15,16 +15,16 @@ The first step of adjusting the colors is to set the series and data correctly. 
 
 ```
 // set the data
-var dataSet = anychart.data.set([
-    {'id': 'AU.WA', 'value': 300},  // Western Australia
-    {'id': 'AU.JB'},                // Jervis Bay Territory
-    {'id': 'AU.NS', 'value': 240},  // New South Wales
-    {'id': 'AU.VI', 'value': 75},   // Victoria
-    {'id': 'AU.NT', 'value': 130},  // Northern Territory
-    {'id': 'AU.TS', 'value': 190},  // Tasmania
-    {'id': 'AU.CT', labels: false}, // Australian Capital Territory
-    {'id': 'AU.SA'},                // South Australia
-    {'id': 'AU.QL'}                 // Queensland
+var data = [
+    {'id': 'AU.WA', 'value': 300},
+    {'id': 'AU.JB'},              
+    {'id': 'AU.NS', 'value': 240},
+    {'id': 'AU.VI', 'value': 75}, 
+    {'id': 'AU.NT', 'value': 130},
+    {'id': 'AU.TS', 'value': 190},
+    {'id': 'AU.CT'},
+    {'id': 'AU.SA'},              
+    {'id': 'AU.QL'}               
 ]);
 	
 // set the map
@@ -34,10 +34,7 @@ var map = anychart.map();
 map.geoData(anychart.maps.australia);
 	
 // set the series
-var series = map.choropleth(dataSet);
-	
-// tell the series which field should tie the colorRange and the colorScale together
-series.geoIdField('code_hasc');
+var series = map.choropleth(data);
 ```
 
 Here we took an Australia map for the example. You may notice that some regions don't have values, which makes them "unBound", but still all the regions are painted with the default color. That's because we haven't defined the ColorScale yet. If the ColorScale is defined, the unbound regions will become transparent (like in the Ordinal Scale sample).

@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">
-anychart.onDocumentReady(function() {
+  <script x-export="map">anychart.onDocumentReady(function() {
 
   // This sample uses 3rd party proj4 component
   // that makes it possible to set coordinates
@@ -18,11 +17,11 @@ anychart.onDocumentReady(function() {
   // required for custom projections and grid labels formatting.
   // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-  // create data set
-  var dataSet = anychart.data.set([
+  // data
+  var data = [
       {'id': 'GB.DU', 'size': 3},
       {'id': 'GB.HI', 'size': 1}
-  ]);
+  ];
 
   // create map chart
   map = anychart.map();
@@ -31,23 +30,18 @@ anychart.onDocumentReady(function() {
   map.geoData(anychart.maps['united_kingdom']);
 
   //create bubble series
-  var series = map.bubble(dataSet);
+  var series = map.bubble(data);
 
   // set max and min bubble sizes
   map.maxBubbleSize(35);
   map.minBubbleSize(10);
-
-  //set series geo id field settings
-  series.geoIdField("code_hasc");
 
   // set container id for the chart
   map.container('container');
 
   // initiate chart drawing
   map.draw();
-});
-
-</script>
+});</script>
 
 </head>
 <body>

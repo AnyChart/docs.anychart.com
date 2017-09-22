@@ -145,7 +145,6 @@ Note: this size setting type (in pixels) may lead to the nasty results when char
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
 
-
 ### Single Bubble Adjusting
 
 Sometimes it is necessary to emphasize an only item for some reasons. In this case, use your dataset to fix the parameters for detached bubbles instead of the whole series.
@@ -153,7 +152,7 @@ Sometimes it is necessary to emphasize an only item for some reasons. In this ca
 The following sample demonstrates adjusting some settings for a single item:
 
 ```
-var data = anychart.data.set([
+var data = [
     {x: "2000", value: 1100, size: 3},
     {x: "2001", value: 880, size: 4},
     {x: "2002", value: 1100, size: 4},
@@ -161,7 +160,7 @@ var data = anychart.data.set([
     {x: "2004", value: 921, size: 4.5},
     {x: "2005", value: 1000, size: 3},
     {x: "2006", value: 1400, size: 4}
-  ]);
+];
 ```
 
 {sample}BCT\_Bubble\_Chart\_05{sample}
