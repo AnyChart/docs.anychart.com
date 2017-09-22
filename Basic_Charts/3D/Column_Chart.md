@@ -11,7 +11,7 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 
 To build a 3D Column chart, use the {api:anychart#column3d}anychart.column3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#column}column(){api} method.
 
-**Note:** When you use the {api:anychart#area3d}anychart.column3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is disabled by default, which means that series of multi-series charts are distributed along the X-axis.
+**Note:** When you use the {api:anychart#area3d}anychart.column3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is disabled by default, which means that the series of multi-series charts are distributed along the X-axis.
 
 The following sample shows how to create a basic 3D Column chart:
 

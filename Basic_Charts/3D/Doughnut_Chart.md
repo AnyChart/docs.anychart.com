@@ -5,7 +5,7 @@
 
 This article explains how to create a 3D Doughnut chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Doughnut Chart](../Doughnut_Chart) article
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Doughnut Chart](../Doughnut_Chart) article.
 
 Please note that, unlike the ordinary Doughnut chart, 3D Doughnut does not support inner labels.
 
