@@ -14,8 +14,8 @@ To create a 3D chart, use one of the following chart constructors:
 * {api:anychart#area3d}anychart.area3d(){api}
 * {api:anychart#bar3d}anychart.bar3d(){api}
 * {api:anychart#column3d}anychart.column3d(){api}
-* {api:anychart#line3d}anychart.line3d(){api}
 * {api:anychart#pie3d}anychart.pie3d(){api}
+* {api:anychart#line3d}anychart.line3d(){api}
 
 You can either pass your data to the chart constructor or create a series by using one of these methods:
 
@@ -84,13 +84,26 @@ chart.zAspect("100%"");
 
 ## Z-Distribution
 
-In 3D multi-series charts, series are distributed along the X-axis by defalut. However, you can also distribute them along the Z-axis: call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use *true* as a parameter. The *false* paramater enables the default X-distribution.
+In 3D multi-series charts series can be distributed either along the Z-axis or along the X-axis. To enable or disable the Z-axis distribution, call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use *true* or *false* as paramater. When the Z-axis distribution is disabled, series are distributed along the X-axis.
+
+The default distribution depends on the chart constructor you use:
+
+* {api:anychart#bar3d}anychart.bar3d(){api} and {api:anychart#column3d}anychart.column3d(){api} – X-distribution
+* {api:anychart#area3d}anychart.area3d(){api} and {api:anychart#line3d}anychart.line3d(){api} – Z-distribution
 
 Here is a sample 3D Column chart with the Z-axis distribution enabled:
 
 ```
-// enable the z-axis distribution mode
+// create a 3d column chart
+chart = anychart.column3d();
+
+// enable the z-axis distribution
 chart.zDistribution(true);
+
+// create series (column) and set the data
+var series1 = chart.column(seriesData_1);
+var series2 = chart.column(seriesData_2);
+var series3 = chart.column(seriesData_3);
 ```
 
 {sample}BCT\_3D\_04{sample}
@@ -103,8 +116,9 @@ Here is the list of supported 3D charts:
 * [3D Bar](Bar_Chart)
 * [3D Column](Column_Chart)
 * [3D Doughnut](Doughnut_Chart)
-* [3D Line](Line_Chart) and [3D 2D Line](2D_Line_Chart)
 * [3D Pie](Pie_Chart)
+* [3D Line](Line_Chart)
+* [3D 2D Line](2D_Line_Chart)
 
 See also 3D [stacked](../Stacked/Overview) charts:
 

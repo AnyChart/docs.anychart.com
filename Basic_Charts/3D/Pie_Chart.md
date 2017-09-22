@@ -5,7 +5,7 @@
 
 This article explains how to create a 3D Pie chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the settings available for the [Pie Chart](../Pie_Chart), all of them shared by 3D Pie.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the [Pie Chart](../Pie_Chart) article.
 
 ## Quick Start
 

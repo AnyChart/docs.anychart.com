@@ -1,15 +1,21 @@
-{:index 2}
+{:index 2.1}
 # 3D Line Chart
 
 ## Overview
 
 This article explains how to create a 3D Line chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the settings available for the [Line Chart](../Line_Chart), most of them shared by 3D Line.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article.
+
+Please note that there is also the [3D 2D Line](2D_Line_Chart) chart type.
 
 ## Quick Start
 
-To build a 3D Line chart, use the {api:anychart#line3d}anychart.line3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#line}line(){api} method:
+To build a 3D Line chart, use the {api:anychart#line3d}anychart.line3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#line}line(){api} method.
+
+**Note:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
+
+The following sample shows how to create a basic multi-series 3D Line chart:
 
 ```
 // create a 3d line chart
@@ -19,9 +25,6 @@ chart = anychart.line3d();
 var series1 = chart.line(seriesData_1);
 var series2 = chart.line(seriesData_2);
 var series3 = chart.line(seriesData_3);
-
-// disable the z-axis distribution mode
-chart.zDistribution(false);
 ```
 
 {sample}BCT\_3D\_Line\_Chart{sample}

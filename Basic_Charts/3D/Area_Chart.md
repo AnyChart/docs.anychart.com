@@ -5,11 +5,15 @@
 
 This article explains how to create a 3D Area chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the settings available for the [Area Chart](../Area_Chart), most of them shared by 3D Area.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read the [Area](../Area_Chart) chart article.
 
 ## Quick Start
 
-To build a 3D Area chart, use the {api:anychart#area3d}anychart.area3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#area}area(){api} method:
+To build a 3D Area chart, use the {api:anychart#area3d}anychart.area3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#area}area(){api} method.
+
+**Note:** When you use the {api:anychart#area3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
+
+The following sample shows how to create a basic 3D Area chart:
 
 ```
 // create a 3d area chart
