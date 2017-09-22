@@ -60,14 +60,14 @@
   // adjusting data visualisation
   var lineSeries = chart.line(getData1());
   lineSeries.stroke("#00F");
-  lineSeries.hoverStroke("#00F");
+  lineSeries.hovered().stroke("#00F");
   lineSeries.yScale(extraYScale);
 
   var columnSeries = chart.column(getData2());
   columnSeries.fill(["#FF0000", "#880000"], -90);
   columnSeries.stroke("#000", 1);
-  columnSeries.hoverStroke("#FFF", 1);
-  columnSeries.hoverFill(["#FF0000", "#880000"], -90);
+  columnSeries.hovered().stroke("#FFF", 1);
+  columnSeries.hovered().fill(["#FF0000", "#880000"], -90);
 
   var tooltip = chart.tooltip();
   tooltip.titleFormat(function(){

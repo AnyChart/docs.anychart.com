@@ -42,12 +42,12 @@
 
     // configure the visual settings of the first series
     series1.fill("#04B4AE", 0.3);
-    series1.hoverFill("#04B4AE", 0.5);
-    series1.selectFill("#04B4AE", 0.5);
+    series1.hovered().fill("#04B4AE", 0.5);
+    series1.selected().fill("#04B4AE", 0.5);
     series1.hatchFill("zigzag", "#808080", 1, 15);
     series1.stroke("#04B4AE");
-    series1.hoverStroke("#04B4AE", 4);
-    series1.selectStroke("#04B4AE", 4);
+    series1.hovered().stroke("#04B4AE", 4);
+    series1.selected().stroke("#04B4AE", 4);
 
     // create the second series (line), set the data and name  
     var series2 = chart.line(seriesData_2);
@@ -55,8 +55,8 @@
 
     // configure the visual settings of the second series
     series2.stroke("#04B404");
-    series2.hoverStroke("#04B404", 4);
-    series2.selectStroke("#04B404", 4);
+    series2.hovered().stroke("#04B404", 4);
+    series2.selected().stroke("#04B404", 4);
 
     // create the third series (line), set the data and title  
     var series3 = chart.line(seriesData_3);
@@ -64,8 +64,8 @@
 
     // configure the visual settings of the third series
     series3.stroke("#AEB404", 1, "10 5", "round");
-    series3.hoverStroke("#AEB404", 4, "10 5", "round");
-    series3.selectStroke("#AEB404", 4, "10 5",  "round");
+    series3.hovered().stroke("#AEB404", 4, "10 5", "round");
+    series3.selected().stroke("#AEB404", 4, "10 5",  "round");
 
     // turn the legend on
     chart.legend(true);

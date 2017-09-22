@@ -33,7 +33,7 @@
   chart.legend().position("center-bottom");
   chart.legend().itemsLayout("horizontal");
   chart.overlapMode("allow-overlap");
-  chart.selectLabels().background().stroke("black");
+  chart.selected().labels().background().stroke("black");
 
   // switch palette on click and update title
   chart.listen("pointMouseDown",function(e){

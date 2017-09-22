@@ -19,11 +19,11 @@
 
   // edit appearance settings
   chart.fill("#8B4513", 0.6);
-  chart.hoverFill("#8B4513", 0.3);
-  chart.selectFill("#8B4513", 0.8);
+  chart.hovered().fill("#8B4513", 0.3);
+  chart.selected().fill("#8B4513", 0.8);
   chart.stroke("#fff", 1);
-  chart.hoverStroke("#fff", 2);
-  chart.selectStroke("#fff", 3);
+  chart.hovered().stroke("#fff", 2);
+  chart.selected().stroke("#fff", 3);
 
   // draw chart
   chart.container("container");

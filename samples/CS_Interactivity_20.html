@@ -26,7 +26,7 @@
 	for (var i=0; series.getPoint(i).exists();i++)
 		series.getPoint(i).set("fill", palette.itemAt(i));
 
-	series.selectFill("#444");
+	series.selected().fill("#444");
 	series.stroke(null);
 	series.name("Sales 2004");
 

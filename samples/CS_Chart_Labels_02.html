@@ -19,7 +19,7 @@
     {x: "Sugar Cone",           value: 5000}
   ]);
 
-  chart.getSeries(0).selectLabels({enabled: true, format: "{%x}"});
+  chart.getSeries(0).selected().labels({enabled: true, format: "{%x}"});
 
   // create a label
   var label = chart.label();

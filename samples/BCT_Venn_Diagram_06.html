@@ -26,14 +26,14 @@
     // configure visual settings of intersections
     var intersect = chart.intersections();    
     intersect.fill("white", 0.3);
-    intersect.hoverFill("white", 0.3);
-    intersect.selectFill("white", 0.5);
+    intersect.hovered().fill("white", 0.3);
+    intersect.selected().fill("white", 0.5);
     intersect.hatchFill("percent20", "#808080");
-    intersect.hoverHatchFill("percent20", "white");
-    intersect.selectHatchFill("percent20", "white");
+    intersect.hovered().hatchFill("percent20", "white");
+    intersect.selected().hatchFill("percent20", "white");
     intersect.stroke("white");
-    intersect.hoverStroke("white", 2);
-    intersect.selectStroke("white", 4);
+    intersect.hovered().stroke("white", 2);
+    intersect.selected().stroke("white", 4);
 
     // disable labels of intersections
     chart.intersections().labels(false);

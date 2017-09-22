@@ -49,7 +49,7 @@
 
   // set chart stroke color, thickness dash
   series.stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
-  series.hoverStroke({color: "#BBDA00", dash: "4 3", thickness: 3});
+  series.hovered().stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
   series.name("dashed stroke");
 
   // adjust markers of a series
@@ -57,7 +57,7 @@
   markers.enabled(true);
   markers.fill("#BBDA00");
   markers.stroke("2 white");
-  var hoverMarkers = series.hoverMarkers();
+  var hoverMarkers = series.hovered().markers();
   hoverMarkers.fill("darkred");
   hoverMarkers.stroke("2 white");
 

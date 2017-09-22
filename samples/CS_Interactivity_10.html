@@ -35,8 +35,8 @@
   var series = chart.box(data);
 
   // change the selected points look
-  series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
-  series.selectStroke("none");
+  series.selected().hatchFill("soliddiamond", "#FFF", 1, 5);
+  series.selected().stroke("none");
   series.select([2,4,9]);
 
   // set container id for the chart

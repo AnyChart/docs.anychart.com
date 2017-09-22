@@ -40,18 +40,18 @@ anychart.onDocumentReady(function() {
 
     // changes the fill and hoverFill colors
     series.fill("#90caf9");
-    series.hoverFill("#b3e5fc");
+    series.hovered().fill("#b3e5fc");
     series.labels().fontColor("#0277bd");
-    series.hoverLabels().fontColor("#01579b");
+    series.hovered().labels().fontColor("#01579b");
 
     // changes the stroke and hoverStroke colors
     series.stroke("#64b5f6");
-    series.hoverStroke("#81d4fa");
+    series.hovered().stroke("#81d4fa");
 
     // sets the select colors
-    series.selectStroke("#546e7a");
-    series.selectFill("#78909c");
-    series.selectLabels().fontColor("#263238");
+    series.selected().stroke("#546e7a");
+    series.selected().fill("#78909c");
+    series.selected().labels().fontColor("#263238");
 
     // set the maximum size of the bubble
     map.maxBubbleSize(35);

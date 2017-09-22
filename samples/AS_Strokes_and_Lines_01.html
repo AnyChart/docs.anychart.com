@@ -29,7 +29,7 @@
   // set stroke thickness 5px and stroke color as red
   line.stroke("5 red");
   // stroke settings for mouse over the series
-  line.hoverStroke("5 red");
+  line.hovered().stroke("5 red");
   // set series name
   line.name("Solid Stroke Color");
 
@@ -38,7 +38,7 @@
   // set stroke thickness 5px, stroke color green and stroke opacity 0.4
   spline.stroke("5 green 0.4");
   // stroke settings for mouse over the series 
-  spline.hoverStroke("5 #006600 0.4");
+  spline.hovered().stroke("5 #006600 0.4");
   // set series name
   spline.name("Solid Color with Opacity");
     
@@ -50,7 +50,7 @@
     thickness: 5
   });
   // disable marker on mouse over
-  step.hoverMarkers(false);
+  step.hovered().markers(false);
   // set series name
   step.name("Gradient Color");
 
@@ -64,7 +64,7 @@
     // stroke thickness
     thickness: 3}
   );
-  area.hoverStroke({
+  area.hovered().stroke({
     // stroke color
     color: "darkblue",
     // dash settings

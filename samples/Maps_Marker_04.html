@@ -70,12 +70,12 @@ anychart.onDocumentReady(function () {
     series_lat_long.labels(false);
 
     // turn off the labels of the second series for creating less chaos in a map
-    series_lat_long.hoverLabels(false);
-    series_lat_long.selectLabels(false);
+    series_lat_long.hovered().labels(false);
+    series_lat_long.selected().labels(false);
 
     // hovered and selected labels
-    series_id.hoverLabels().fontColor("black");
-    series_id.selectLabels().fontColor("red");
+    series_id.hovered().labels().fontColor("black");
+    series_id.selected().labels().fontColor("red");
 
     // change the color of the lat-long series
     series_lat_long.stroke("green");
@@ -83,7 +83,7 @@ anychart.onDocumentReady(function () {
 
     // make the markers of the series with id bigger
     series_id.size("10");
-    series_id.hoverSize("10");
+    series_id.hovered().size("10");
 
     australiaMap.title("Series of both types put on one map");
     australiaMap.interactivity().zoomOnMouseWheel(false);

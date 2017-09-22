@@ -24,10 +24,10 @@ chart = anychart.bar();
 var series = chart.bar(data);
 series
     .fill("#6698FF .6")
-    .hoverStroke("#0000A0", 4)
+    .hovered().stroke("#0000A0", 4)
     .stroke("#56561a", 4)
     .hatchFill("diagonalbrick", "#348781")
-    .hoverHatchFill("diagonalbrick", "#0000A0")
+    .hovered().hatchFill("diagonalbrick", "#0000A0")
 
     series.tooltip().enabled(true).title().enabled(true).text("Information:");
     series.labels().enabled(true).anchor("left-center").position("right-center").fontSize(13);

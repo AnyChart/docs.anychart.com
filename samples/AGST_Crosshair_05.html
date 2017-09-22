@@ -274,8 +274,8 @@
   ]);
   marker.type("triangle-up");
   marker.size(4);
-  marker.hoverSize(7);
-  marker.hoverFill("red");
+  marker.hovered().size(7);
+  marker.hovered().fill("red");
   var tooltip = marker.tooltip();
   tooltip.format(function() {
     return "Waiting Time: " + this.value + " min.\nDuration: " + this.x + " min.";

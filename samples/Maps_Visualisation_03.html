@@ -44,7 +44,7 @@
     firstSeries.fill('#FFCC99');
     
     // set the color for the hovered regions of the first series
-    firstSeries.hoverFill('#FFFF66');
+    firstSeries.hovered().fill('#FFFF66');
 
     var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
 	
@@ -52,7 +52,7 @@
     secondSeries.fill('#8CE3B0');
     
     // set the image for the hovered regions of the second series
-    secondSeries.hoverFill({
+    secondSeries.hovered().fill({
         src: "https://static.anychart.com/images/oceanic-airlines.png",
         mode: "stretch",
         opacity: 0.3

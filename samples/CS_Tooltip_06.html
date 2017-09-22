@@ -59,10 +59,10 @@
   series1.markers(false);
   series2.markers(false);
 
-  var hoverMarkers1 = series1.hoverMarkers();
+  var hoverMarkers1 = series1.hovered().markers();
   hoverMarkers1.enabled(true);
   hoverMarkers1.size(3);
-  var hoverMarkers2 = series2.hoverMarkers();
+  var hoverMarkers2 = series2.hovered().markers();
   hoverMarkers2.enabled(true);
   hoverMarkers2.size(3);
 

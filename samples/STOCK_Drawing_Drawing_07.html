@@ -73,7 +73,7 @@
     chart.listen("annotationSelect", function(e){
         var selectedAnnotation = e.annotation;
         // change the annotation stroke on selection
-        selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+        selectedAnnotation.selected().stroke("#FF0000", 3, "5 2", "round");
         // change the chart title on selection
         chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
     });

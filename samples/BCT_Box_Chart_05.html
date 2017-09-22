@@ -26,8 +26,8 @@
 
   // configure stems
   series.stemStroke("#f44336", 1, "5 2");
-  series.hoverStemStroke("#f44336", 2, "5 2", "round", "round");
-  series.selectStemStroke("#f44336", 3, "5 2");
+  series.hovered().stemStroke("#f44336", 2, "5 2", "round", "round");
+  series.selected().stemStroke("#f44336", 3, "5 2");
 
   // set the chart title
   var title = chart.title("Box Chart: Stems");

@@ -31,7 +31,7 @@ chart = anychart.column();
     // series.meta("stem", 1);
 
     // optional: configurable select fill
-    series.selectFill("white");
+    series.selected().fill("white");
 
     // call a custom function that changes series rendering
     cherryChartRendering(series);

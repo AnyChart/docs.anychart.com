@@ -27,30 +27,26 @@
 
 // create data set
 var data = [    
-    {points: [50.8, -3.6, 50.8, -1.6, 51.5, -0.16], stroke:'navy', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-    {points: [51.5,-0.16, 51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+    {points: [50.8, -3.6, 50.8, -1.6]},
+    {points: [50.8, -1.6, 51.5, -0.16], to: "New Forest National Park"},
+    {points: [51.5,-0.16, 51.7, -1.29]},
+    {points: [51.7, -1.29, 52.2, 0.27]},
+    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
     {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
-    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
+    {points: [54.5, -3.4, 57.1, -2.19], to: "Aberdeen"}
 ];
-// create map chart
-map = anychart.map()
+
+// create map
+map = anychart.map();
 
 //create connector series
 var series = map.connector(data);
 
-// changing the curvature of the series
-series.curvature(0);
-
 // set geodata
 map.geoData(anychart.maps['united_kingdom']);
 
-//set markers
-series.markers({position: '100%', size: 3, type: 'circle'});
-series.hovered().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
-series.selected().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
-
 // name of the chart
-map.title("Setting the connectors curvature");
+map.title("The touristic interest route through the UK \n");
 
 // set container id for the chart
 map.container('container');

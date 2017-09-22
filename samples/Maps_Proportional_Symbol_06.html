@@ -44,8 +44,8 @@ anychart.onDocumentReady(function() {
 
     // making the chart monochromatic
     series.hatchFill("HORIZONTAL");
-    series.hoverHatchFill("DIAGONAL_CROSS");
-    series.selectHatchFill("CONFETTI");
+    series.hovered().hatchFill("DIAGONAL_CROSS");
+    series.selected().hatchFill("CONFETTI");
     series.stroke("black");
     series.fill(null);
 

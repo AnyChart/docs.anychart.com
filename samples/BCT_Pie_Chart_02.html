@@ -23,11 +23,11 @@
 
     // configure visual settings
     chart.fill("#0066cc", 0.5);
-    chart.hoverFill("#0066cc", 0.6);
+    chart.hovered().fill("#0066cc", 0.6);
     chart.hatchFill("backwarddiagonal", "#808080");
-    chart.hoverHatchFill("backwarddiagonal", "#0066cc", 3);
+    chart.hovered().hatchFill("backwarddiagonal", "#0066cc", 3);
     chart.stroke("#808080", 3);
-    chart.hoverStroke("#0066cc", 3);
+    chart.hovered().stroke("#0066cc", 3);
 
     // set the chart title
     chart.title("Pie Chart: Appearance");

@@ -29,11 +29,11 @@
     // set colors for milestones
     milestones = chart.milestones();
     milestones.fill("#00acc1", 0.7);
-    milestones.hoverFill("#80cbc4");
-    milestones.selectFill("#00acc1");
+    milestones.hovered().fill("#80cbc4");
+    milestones.selected().fill("#00acc1");
     milestones.stroke("#90caf9", 1);
-    milestones.hoverStroke("#90caf9", 2);
-    milestones.selectStroke("#90caf9", 4);
+    milestones.hovered().stroke("#90caf9", 2);
+    milestones.selected().stroke("#90caf9", 4);
     milestones.size(40);
 
     // set the title of the chart

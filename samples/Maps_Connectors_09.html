@@ -26,13 +26,13 @@
 // See https://docs.anychart.com/latest/Maps/Map_Projections
 
   // create data set
-  var data = anychart.data.set([    
+  var data = [    
       {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
       {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
-      {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "1h 15m"}
-      ]);
+      {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
+  ];
   // create map chart
-  map = anychart.map()
+  map = anychart.map();
 
   //create connector series
   var series = map.connector(data);
@@ -47,31 +47,35 @@
   // set geodata
   map.geoData(anychart.maps['united_kingdom']);
 
-  //set markers
-  series.markers({position: '100%', size: 3, type: 'circle'});
-  series.hoverMarkers({position: '100%', size: 3, fill: '#FFCC99', stroke: '2 #E1E1E1', type: 'circle'});
-  series.selectMarkers({position: '100%', size: 3, fill: '#FFCC99', stroke: '2 #E1E1E1', type: 'circle'});
-
   // setting colors for hovered and selected
   series.fill("#FF9966");
   series.stroke("#CCCC99");
-  series.hoverFill("#996633");
-  series.selectFill("#996633");
-  series.hoverStroke("#CCCC99");
-  series.selectStroke("#CCCC99");
+  series.hovered().fill("#996633");
+  series.selected().fill("#996633");
+  series.hovered().stroke("#CCCC99");
+  series.selected().stroke("#CCCC99");
 
   // name of the chart
-  map.title("Setting the colors of the connectors");
+  map.title("Settings the markers");
 
   series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
+
+  // setting the marker position
+  var markers = series.markers();
+  markers.position("end");
+  // setting the marker type
+  markers.type("arrowhead");
+  markers.size(15);
+
+  // setting the anchor
+  markers.anchor("left-center");
 
   // set container id for the chart
   map.container('container');
 
   // initiate chart drawing
   map.draw();
-  }); 
-    
+});     
 </script>
 </body>
 </html>

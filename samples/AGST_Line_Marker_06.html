@@ -155,7 +155,7 @@
     return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
   });
 
-  var hoverMarkers = series.hoverMarkers();
+  var hoverMarkers = series.hovered().markers();
   hoverMarkers.size(3);
 
   chart.interactivity("by-x");

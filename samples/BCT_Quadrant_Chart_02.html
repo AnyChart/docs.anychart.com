@@ -42,11 +42,11 @@
 
     // configure the visual settings of the first series
     series1.fill("black", 0.3);
-    series1.hoverFill("black", 0.3);
-    series1.selectFill("black", 0.5);
+    series1.hovered().fill("black", 0.3);
+    series1.selected().fill("black", 0.5);
     series1.stroke("black", 1);
-    series1.hoverStroke("black", 2);
-    series1.selectStroke("black", 4);
+    series1.hovered().stroke("black", 2);
+    series1.selected().stroke("black", 4);
 
     // create the second series (line) and set the data
     var series2 = chart.line(data_2);
@@ -59,11 +59,11 @@
 
     // configure the visual settings of the third series
     series3.fill("#0066cc", 0.3);
-    series3.hoverFill("#0066cc", 0.3);
-    series3.selectFill("#0066cc", 0.5);
+    series3.hovered().fill("#0066cc", 0.3);
+    series3.selected().fill("#0066cc", 0.5);
     series3.stroke("#0066cc");
-    series3.hoverStroke("#0066cc", 2);
-    series3.selectStroke("#0066cc", 4);
+    series3.hovered().stroke("#0066cc", 2);
+    series3.selected().stroke("#0066cc", 4);
 
     // set the chart title
     chart.title("Quadrant Chart: Appearance");

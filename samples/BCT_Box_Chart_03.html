@@ -26,8 +26,8 @@
 
   // configure medians
   series.medianStroke("#000");
-  series.hoverMedianStroke("#000", 2);
-  series.selectMedianStroke("#000", 4);
+  series.hovered().medianStroke("#000", 2);
+  series.selected().medianStroke("#000", 4);
 
   // set the chart title
   var title = chart.title("Box Chart: Median");

@@ -4,7 +4,7 @@
   <meta name="x-cat-tags" content="anyMap"/>
   <script src="../anychart-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/france/france.js"  data-export="true"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <style>
     html, body, #container {
@@ -26,87 +26,79 @@
 // See https://docs.anychart.com/latest/Maps/Map_Projections
 
 // create data set
-var data = anychart.data.set([    
-    {points: [48.50, 2.20, 48.8, 2.13], from: "Paris", to: "Versailles", take: "bus", stroke:"green"},
-    {points: [48.8, 2.13, 47.31, 5.01], from: "Versailles", to: "Dijon", take: "train", stroke:"navy"},
-    {points: [47.31, 5.01, 45.08, 3.56], from: "Dijon", to: "Beaune", take: "train", stroke:"navy", curvature: -0.5},
-    {points: [45.08, 3.56, 46.95, 4.3], from: "Beaune", to: "Autun", take: "train", stroke:"navy"},
-    {points: [46.95, 4.3, 47.8, 3.8], from: "Autun", to: "Chablis", take: "bus", stroke:"green"},
-    {points: [47.8, 3.8, 48.50, 2.20], from: "Chablis", to: "Paris", take: "bus", stroke:"green"},
-    {points: [48.50, 2.20, 49.4, 1.08], from: "Paris", to: "Rouen, Normady capital", take: "train"},
-    {points: [49.4, 1.08, 49.2, -0.7], from: "Rouen", to: "Bayeux", take: "train", stroke:"navy"},
-    {points: [49.2, -0.7, 48.6, -1.5], from: "Bayeux", to: "Mont Saint-Michel", take: "train", stroke:"navy"},
-    ]);
+var data = [
+    {points: [-37.85, 144.79, -33.79, 150.64], from: "Melbourne", to: "Sydney", passengers: "8 322 300"},
+    {points: [-27.40, 152.44, -37.85, 144.79], from: "Brisbane", to: "Melbourne", passengers: "3 317 100"},
+    {points: [-27.98, 153.04, -33.79, 150.64], from: "Gold Coast", to: "Sydney", passengers: "2 596 400", curvature: -0.5},
+    {points: [-37.85, 144.79, -31.93, 115.96], from: "Melbourne", to: "Perth", passengers: "2 160 700", curvature: -0.5},
+    {points: [-34.98, 138.42, -33.79, 150.64], from: "Adelaide", to: "Sydney", passengers: "1 813 000"},
+    {points: [-31.93, 115.96, -33.79, 150.64], from: "Perth", to: "Sydney", passengers: "1 798 900"},
+    {points: [-37.85, 144.79, -42.88, 147.31], from: "Melbourne", to: "Hobart", passengers: "1 400 200"}
+];
 
 // create data set for the marker series
-var data_marker = anychart.data.set([
-    {lat: 48.50, long: 2.20, name: "Paris", label:{position:"center-bottom", anchor:"center-top"}, info: "The Capital of France, founded in \nthe 3rd century BC, one of the most \npopular towns in Europe"},
-    {lat: 48.8, long: 2.13, name: "Versailles", label:{position:"right", anchor:"left-bottom"}, info: "The most known showplace in France. \nFrom 1682 to 1789 it de facto \nwas a capital of France"},
-    {lat: 47.31, long: 5.01, name: "Dijon", label:{position:"right", anchor:"left-bottom"}, info: "Being world-famous for its mustard \nand its wine, the medieval city \nof Dijon has the reputation of being \nthe best-kept secret in France"},
-    {lat: 45.08, long: 3.56, name: "Beaune", label:{position:"left", anchor:"right-top"}, info: "Beanue is a wine capital of Burgundy \nin the Côte d'Or department in eastern France"},
-    {lat: 46.95, long: 4.3, name: "Autun", label:{position:"left", anchor:"right-bottom"}, info: "Augustodunum was founded during the reign \nof the first Roman emperor, Augustus, \nafter whom it was named.\nFamous for St. Lazare's cathedral, \nCouhard Pyramid and the ancient theatre"},
-    {lat: 47.8, long: 3.8, name: "Chablis", label:{position:"left", anchor:"right-center"}, info: "The village of Chablis gives its name \nto one of the most famous French \nwhite wines. Chablis is made with \nChardonnay, a grape that grows \nparticularly well in the region"},
-    {lat: 49.4, long: 1.08, name: "Rouen", info: "It is the capital of Normandy. \nFormerly one of the largest and \nmost prosperous cities of medieval \nEurope, Rouen was the seat of the \nExchequer of Normandy during the Middle Ages"},
-    {lat: 49.2, long: -0.7, name: "Bayeux", label:{position:"left", anchor:"right-bottom"}, info: "Bayeux is a major tourist attraction, \nbest known to British and French \nvisitors for the Bayeux tapestry. \nThe large Norman-Romanesque and \nGothic Cathédrale Notre-Dame de Bayeux, \nconsecrated in 1077, was arguably \nthe original home of the tapestry"},
-    {lat: 48.6, long: -1.5, name: "Mont Saint-Michel", label:{position:"center-bottom", anchor:"center-top"}, info: "It is an island commune in Normandy. \nIt is located about one kilometre \noff the country's northwestern coast,\nat the mouth of the Couesnon River \nnear Avranches. 100 hectares in size. \nAs of 2009, the island has a population of 44."}
-]);
-// create map chart
-map = anychart.map()
+var data_marker = [
+    {lat: -37.85, long: 144.79, name: "Melbourne", label:{position:"left", anchor:"right-bottom"}},
+    {lat: -33.79, long: 150.64, name: "Sydney", label:{position:"center-bottom", anchor:"left-top"}, type:"star5", fill: "gold", stroke: "#CC9900",  hoverFill: "gold", hoverStroke: "#CC9900", selectFill: "gold", selectStroke: "#CC9900"},
+    {lat: -27.40, long: 152.44, name: "Brisbane", label:{position: "center-top", anchor:"right-bottom"}},
+    {lat: -27.98, long: 153.04, name: "Gold Coast", label:{position:"right", anchor:"left-bottom"}},
+    {lat: -34.98, long: 138.42, name: "Adelaide", label:{position:"left-bottom", anchor:"right-top"}},
+    {lat: -31.93, long: 115.96, name: "Perth", label:{position:"center-top", anchor:"right-bottom"}},
+    {lat: -42.88, long: 147.31, name: "Hobart", label:{position:"center-bottom", anchor:"center-top"}}
+];
 
-//create connector series
-var series = map.connector(data);
+
+// create map chart
+map = anychart.map();
+
+// create connector series
+var series_connector = map.connector(data);
+
+// create marker series
 var series_marker = map.marker(data_marker);
 
-// changing the curvature of the series
-series.curvature(0.3);
+// set geodata
+map.geoData(anychart.maps.australia);
 
-// tooltips for the connector series
-series.tooltip().format("From: {%from} \nTo: {%to} \nThe best way to get there: by {%take}");
+// markers of connector series
+series_connector.markers(false);
 
-// changing the startSize and endSize of the connectors
-series.startSize(0);
-series.endSize(0);
+// tooltip formatter
+series_connector.tooltip().format("From: {%from} \nTo: {%to} \nPassengers (in 2013): {%passengers}");
 
-// setting colors for hovered and selected
-series.hoverFill("black");
-series.selectFill("red");                                                                       
-series.hoverStroke("black");
-series.selectStroke("red");
+// set the start and end sizes
+series_connector.startSize(15);
+series_connector.endSize(0);
 
-// setting the marker position
-var markers = series.markers();
-markers.position("center");
+// connector series colors
+series_connector.fill("#339999");
+series_connector.stroke("#336666");
+series_connector.hovered().fill("#669999");
+series_connector.hovered().stroke("#336666");
+series_connector.selected().fill("#006666");
+series_connector.selected().stroke("#336666")
 
-// tooltips of the marker series
-series_marker.tooltip().format("{%info}");
+// adjust marker series tooltips
+series_marker.tooltip().titleFormat("{%name}");
+series_marker.labels().fontColor("#000");
 
-// setting the marker type
-markers.type("arrowhead");
-markers.size(7);
+series_marker.fill("#336666");
+series_marker.hovered().fill("#336666");
+series_marker.selected().fill("#336666");
+series_marker.stroke("#336666");
+series_marker.hovered().stroke("#336666");
+series_marker.selected().stroke("#336666");
+series_marker.size(5);
 
-// setting the anchor for the markers
-markers.anchor("left-center");
-
-// setting the labels
-var labels = series.labels();
-labels.enabled(false);
-
-// set geodata 
-map.geoData(anychart.maps['france']);
-
-//set series geo id field settings
-series.markers({fill: '#000', size:10});
+series_marker.zIndex(1000);
 
 // name of the chart
-map.title("A trip through France: Burgundy and Normandy");
-
+map.title("10 most popular flights through Australia");
 // set container id for the chart
 map.container('container');
-
 // initiate chart drawing
 map.draw();
-});
-    
-    </script>
+});    
+</script>
 </body>
 </html>

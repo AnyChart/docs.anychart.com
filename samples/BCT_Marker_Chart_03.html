@@ -40,17 +40,17 @@
   // set colors
   series1.fill("#00cc99", 0.5);
   series1.stroke("#00cc99", 1, "10 5", "round");
-  series1.hoverFill("#00cc99", 0.2);
-  series1.hoverStroke("#00cc99", 2, "10 5", "round");
-  series1.selectFill("#00cc99", 0.8);
-  series1.selectStroke("#00cc99", 4, "10 5", "round");
+  series1.hovered().fill("#00cc99", 0.2);
+  series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+  series1.selected().fill("#00cc99", 0.8);
+  series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
   series2.fill("none");
-  series2.hoverFill("none");
-  series2.selectFill("none");
+  series2.hovered().fill("none");
+  series2.selected().fill("none");
   series2.hatchFill("percent10");
-  series2.hoverHatchFill("percent30");
-  series2.selectHatchFill("percent50");
+  series2.hovered().hatchFill("percent30");
+  series2.selected().hatchFill("percent50");
 
   // Sets settings for interactivity.
   chart.interactivity({hoverMode: "by-x"});
@@ -58,10 +58,10 @@
   // set marker size
   series1.size(10);
   series2.size(15);
-  series1.hoverSize(15);
-  series2.hoverSize(20);
-  series1.selectSize(15);
-  series2.selectSize(20);
+  series1.hovered().size(15);
+  series2.hovered().size(20);
+  series1.selected().size(15);
+  series2.selected().size(20);
   
   // chart title
   chart.title("Multi-Series Marker Chart with appearance settings configured");

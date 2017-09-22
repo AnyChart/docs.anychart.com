@@ -49,10 +49,10 @@ anychart.onDocumentReady(function () {
     series_acme.labels().fontFamily("Georgia");
 
     // hovered and selected labels
-    series_acme.hoverLabels().fontSize(12);
-    series_acme.hoverLabels().fontColor("#660000");
-    series_acme.selectLabels().fontSize(12);
-    series_acme.selectLabels().fontColor("#660000");
+    series_acme.hovered().labels().fontSize(12);
+    series_acme.hovered().labels().fontColor("#660000");
+    series_acme.selected().labels().fontSize(12);
+    series_acme.selected().labels().fontColor("#660000");
 
     usaMap.title("Formatting the labels and tooltips in hovered state");
     usaMap.interactivity().zoomOnMouseWheel(false);

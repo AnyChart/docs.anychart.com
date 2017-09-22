@@ -26,13 +26,13 @@
 // See https://docs.anychart.com/latest/Maps/Map_Projections
 
   // create data set
-  var data = anychart.data.set([    
+  var data = [    
       {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
+      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"left-top"}},
       {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
-  ]);
+  ];
   // create map chart
-  map = anychart.map()
+  map = anychart.map();
 
   //create connector series
   var series = map.connector(data);
@@ -50,13 +50,13 @@
   // setting colors for hovered and selected
   series.fill("#FF9966");
   series.stroke("#CCCC99");
-  series.hoverFill("#996633");
-  series.selectFill("#996633");
-  series.hoverStroke("#CCCC99");
-  series.selectStroke("#CCCC99");
+  series.hovered().fill("#996633");
+  series.selected().fill("#996633");
+  series.hovered().stroke("#CCCC99");
+  series.selected().stroke("#CCCC99");
 
   // name of the chart
-  map.title("Settings the markers");
+  map.title("Labels and tooltips adjusting");
 
   series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
 
@@ -70,9 +70,16 @@
   // setting the anchor
   markers.anchor("left-center");
 
+  // set the labels
+  var labels = series.labels();
+  labels.enabled(true);
+  labels.position("end");
+  labels.anchor("left-bottom");
+  labels.format("To {%to}");
+
   // set container id for the chart
   map.container('container');
-
+  
   // initiate chart drawing
   map.draw();
 });     

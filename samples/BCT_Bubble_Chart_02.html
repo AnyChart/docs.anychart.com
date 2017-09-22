@@ -40,17 +40,17 @@
   // set colors
   series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
   series1.stroke("#00897b", 1, "10 5", "round");
-  series1.hoverFill("#6aabcc", 0.3);
-  series1.hoverStroke("#00897b", 2, "10 5", "round");
-  series1.selectFill("#1976d2", 0.8);
-  series1.selectStroke("#00897b", 4, "10 5", "round");
+  series1.hovered().fill("#6aabcc", 0.3);
+  series1.hovered().stroke("#00897b", 2, "10 5", "round");
+  series1.selected().fill("#1976d2", 0.8);
+  series1.selected().stroke("#00897b", 4, "10 5", "round");
 
   series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series2.hoverFill("#80cbc4", 0.5);
-  series2.selectFill("#16685d");
+  series2.hovered().fill("#80cbc4", 0.5);
+  series2.selected().fill("#16685d");
   series2.hatchFill("percent10");
-  series2.hoverHatchFill("percent30");
-  series2.selectHatchFill("percent50");
+  series2.hovered().hatchFill("percent30");
+  series2.selected().hatchFill("percent50");
   
   // chart title
   chart.title("Multi-Series Bubble Chart with appearance settings configured");

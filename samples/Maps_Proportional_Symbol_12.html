@@ -51,19 +51,19 @@
 
     // change the fill and hoverFill colors of series_1
     series_1.fill("#EBD670", 0.35);
-    series_1.hoverFill("#C7FF99", 0.7);
+    series_1.hovered().fill("#C7FF99", 0.7);
 
     // change the stroke and hoverStroke colors of series_1
     series_1.stroke("#C7FF99");
-    series_1.hoverStroke("#EBD670");
+    series_1.hovered().stroke("#EBD670");
 
     // set the select colors of series_1
-    series_1.selectStroke("#66FFCC");
-    series_1.selectFill("#879CED");
+    series_1.selected().stroke("#66FFCC");
+    series_1.selected().fill("#879CED");
 
     // set the select colors of series_2
-    series_2.selectStroke("#3675BD");
-    series_2.selectFill("#734CE6");
+    series_2.selected().stroke("#3675BD");
+    series_2.selected().fill("#734CE6");
 
     // set the labels
     series_1.labels().fontColor('black');

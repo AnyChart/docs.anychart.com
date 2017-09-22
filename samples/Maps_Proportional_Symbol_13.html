@@ -90,27 +90,27 @@
 
   // change the fill and hoverFill colors of series_1
   series_1.fill("#7D00AD", 0.35);
-  series_1.hoverFill("#7D00AD", 0.7);
+  series_1.hovered().fill("#7D00AD", 0.7);
 
   // change the stroke and hoverStroke colors of series_1
   series_1.stroke("#BA005C");
-  series_1.hoverStroke("#BA005C");
+  series_1.hovered().stroke("#BA005C");
 
   // set the select colors of series_1
-  series_1.selectStroke("#BA005C");
-  series_1.selectFill("#D1003D");
+  series_1.selected().stroke("#BA005C");
+  series_1.selected().fill("#D1003D");
 
   // change the fill and hoverFill colors of series_2
   series_2.fill("#178AA8", 0.35);
-  series_2.hoverFill("#3675BD", 0.7);
+  series_2.hovered().fill("#3675BD", 0.7);
 
   // change the stroke and hoverStroke colors of series_2
   series_2.stroke("#3675BD");
-  series_2.hoverStroke("#178AA8");
+  series_2.hovered().stroke("#178AA8");
 
   // set the select colors of series_2
-  series_2.selectStroke("#3675BD");
-  series_2.selectFill("#734CE6");
+  series_2.selected().stroke("#3675BD");
+  series_2.selected().fill("#734CE6");
 
   // tooltip formatting
   series_1.tooltip().format(function(){

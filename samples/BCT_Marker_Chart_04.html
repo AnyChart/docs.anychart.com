@@ -47,10 +47,10 @@
   // set marker size
   series1.size(20);
   series2.size(25);
-  series1.hoverSize(25);
-  series2.hoverSize(30);
-  series1.selectSize(25);
-  series2.selectSize(30);
+  series1.hovered().size(25);
+  series2.hovered().size(30);
+  series1.selected().size(25);
+  series2.selected().size(30);
   
   // chart title
   chart.title("Multi-Series Marker Chart with marker types adjusted");

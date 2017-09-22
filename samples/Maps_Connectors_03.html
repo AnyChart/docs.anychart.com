@@ -4,7 +4,7 @@
   <meta name="x-cat-tags" content="anyMap"/>
   <script src="../anychart-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"  data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <style>
     html, body, #container {
@@ -25,35 +25,39 @@
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/latest/Maps/Map_Projections
 
-// create data set
-var data = anychart.data.set([    
-    [[50.8, -3.6, 50.8, -1.6]],
-    [[50.8, -1.6, 51.5, -0.16]],
-    [[51.5,-0.16, 51.7, -1.29]],
-    [[51.7, -1.29, 52.2, 0.27]],
-    [[52.2, 0.27, 53.3, -1.5]],
-    [[53.3, -1.5, 54.5,-3.4]],
-    [[54.5, -3.4, 57.1, -2.19]]
-]);
+  // create data set
+  var data = [    
+      {points: [50.8, -3.6, 50.8, -1.6]},
+      {points: [50.8, -1.6, 51.5, -0.16], stroke:'navy', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
+      {points: [51.5,-0.16, 51.7, -1.29]},
+      {points: [51.7, -1.29, 52.2, 0.27]},
+      {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+      {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
+      {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
+  ];
+  // create map chart
+  map = anychart.map();
 
-// create map chart
-map = anychart.map();
+  //create connector series
+  var series = map.connector(data);
 
-//create connector series
-var series = map.connector(data);
+  // set geodata
+  map.geoData(anychart.maps['united_kingdom']);
 
-// set geodata
-map.geoData(anychart.maps['united_kingdom']);
+  //set markers
+  series.markers({position: '100%', size: 3, type: 'circle'});
+  series.hovered().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
+  series.selected().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
 
-// name of the chart
-map.title("The touristic interest route through the UK \nObject notation");
+  // name of the chart
+  map.title("Defining some series settings through the dataSet");
 
-// set container id for the chart
-map.container('container');
+  // set container id for the chart
+  map.container('container');
 
-// initiate chart drawing
-map.draw();
-});
+  // initiate chart drawing
+  map.draw();
+  });
     
     </script>
 </body>

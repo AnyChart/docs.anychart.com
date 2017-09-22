@@ -69,15 +69,15 @@ anychart.onDocumentReady(function () {
 
     // make the markers of the CITRUS series of smaller size than default
     series_citrus.size(10);
-    series_citrus.hoverSize(10);
-    series_citrus.selectSize(10);
+    series_citrus.hovered().size(10);
+    series_citrus.selected().size(10);
     series_acme.size(14);
-    series_acme.hoverSize(14);
-    series_acme.selectSize(14);
+    series_acme.hovered().size(14);
+    series_acme.selected().size(14);
 
     // creating a custom marker for the CITRUS company series using a function
     series_citrus.type(customMarkerType);
-    series_citrus.hoverType(customMarkerType);
+    series_citrus.hovered().type(customMarkerType);
 
     // set the link for the directory with images
     var image_link = 'https://static.anychart.com/images/acme.jpg';
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
     // set the images for our series defined in normal state
     series_acme.fill(customImageMarker(1));
     // set the images for dots of the ACME series in hovered state
-    series_acme.hoverFill(customImageMarker(0.5));
+    series_acme.hovered().fill(customImageMarker(0.5));
 
     usaMap.title("Creating custom markers");
     usaMap.interactivity().zoomOnMouseWheel(false);

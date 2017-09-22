@@ -26,11 +26,11 @@
 
   // configure whiskers
   series.whiskerWidth(30);
-  series.hoverWhiskerWidth(30);
-  series.selectWhiskerWidth(30);
+  series.hovered().whiskerWidth(30);
+  series.selected().whiskerWidth(30);
   series.whiskerStroke("#c2b65d", 0.7);
-  series.hoverWhiskerStroke("#c2b65d", 0.5);
-  series.selectWhiskerStroke("#c2b65d", 1);
+  series.hovered().whiskerStroke("#c2b65d", 0.5);
+  series.selected().whiskerStroke("#c2b65d", 1);
 
   // set the chart title
   var title = chart.title("Box Chart: Whiskers");

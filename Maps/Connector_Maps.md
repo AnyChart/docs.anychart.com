@@ -14,23 +14,23 @@ It's necessary to set latitude and longitude for the start and end point of each
 Let's now create a small route map. This dataSet represents the route through the UK that connects several places of touristic interest.
 
 ```
-	// create data set
-	var data = anychart.data.set([    
-	    {points: [50.8, -3.6, 50.8, -1.6]},
-	    {points: [50.8, -1.6, 51.5, -0.16], to: "New Forest National Park"},
-	    {points: [51.5,-0.16, 51.7, -1.29]},
-	    {points: [51.7, -1.29, 52.2, 0.27]},
-	    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-	    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
-	    {points: [54.5, -3.4, 57.1, -2.19], to: "Aberdeen"}
-	]);
+// create data set
+var data = [    
+    {points: [50.8, -3.6, 50.8, -1.6]},
+    {points: [50.8, -1.6, 51.5, -0.16], to: "New Forest National Park"},
+    {points: [51.5,-0.16, 51.7, -1.29]},
+    {points: [51.7, -1.29, 52.2, 0.27]},
+    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
+    {points: [54.5, -3.4, 57.1, -2.19], to: "Aberdeen"}
+];
 ```
 
 First two values are the longitude and latitude of the start point and the second pair of values are responsible for the end point coordinates.
 
 That's how a Connector Map with this dataset will look like:
 
-{sample}Maps\_Connectors\_02{sample}
+{sample}Maps\_Connectors\_01{sample}
 
 Now let's look how the same data will look in the array notation.
 
@@ -39,61 +39,59 @@ Now let's look how the same data will look in the array notation.
 When the data is being represented in the array mode, it's not necessary to mention the names of the default adjusted parameters.
 
 ```
-	var data = anychart.data.set([    
-	    [[50.8, -3.6, 50.8, -1.6]],
-	    [[50.8, -1.6, 51.5, -0.16]],
-	    [[51.5,-0.16, 51.7, -1.29]],
-	    [[51.7, -1.29, 52.2, 0.27]],
-	    [[52.2, 0.27, 53.3, -1.5]],
-	    [[53.3, -1.5, 54.5,-3.4]],
-	    [[54.5, -3.4, 57.1, -2.19]]
-	]);
+var data = [    
+    [[50.8, -3.6, 50.8, -1.6]],
+    [[50.8, -1.6, 51.5, -0.16]],
+    [[51.5,-0.16, 51.7, -1.29]],
+    [[51.7, -1.29, 52.2, 0.27]],
+    [[52.2, 0.27, 53.3, -1.5]],
+    [[53.3, -1.5, 54.5,-3.4]],
+    [[54.5, -3.4, 57.1, -2.19]]
+];
 ```
 
 Nothing has changed in our map appearance:
 
-{sample}Maps\_Connectors\_03{sample}
-
+{sample}Maps\_Connectors\_02{sample}
 
 ### Settings
 
 There are some parameters of our series and points can be adjusted through the data: for example, colors of the connectors, the point markers and so on. Let's look at the dataSet with some parameters set through it:
 
 ```
-	var data = anychart.data.set([    
-	    {points: [50.8, -3.6, 50.8, -1.6]},
-	    {points: [50.8, -1.6, 51.5, -0.16], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-	    {points: [51.5,-0.16, 51.7, -1.29]},
-	    {points: [51.7, -1.29, 52.2, 0.27]},
-	    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-	    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
-	    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
-	]);
+var data = [    
+    {points: [50.8, -3.6, 50.8, -1.6]},
+    {points: [50.8, -1.6, 51.5, -0.16], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
+    {points: [51.5,-0.16, 51.7, -1.29]},
+    {points: [51.7, -1.29, 52.2, 0.27]},
+    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
+    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
+];
 ```
 
 That's how the appearance of our map has changed after applying some settings through the dataSet:
 
-{sample}Maps\_Connectors\_04{sample}
+{sample}Maps\_Connectors\_03{sample}
 
 ### Segments
 
 One of the Connector Maps features is the ability to create segments: several connectors are connected as one point, creating segments of the route. Look at the code and sample below.
 
 ```
-	var data = anychart.data.set([  
-	    {points: [50.8, -3.6, 50.8, -1.6, 51.5, -0.16], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-	    {points: [51.5,-0.16, 51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-	    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
-	    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
-	]);
+var data = [  
+    {points: [50.8, -3.6, 50.8, -1.6, 51.5, -0.16], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
+    {points: [51.5,-0.16, 51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
+    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
+];
 ```
 
-{sample}Maps\_Connectors\_05{sample}
+{sample}Maps\_Connectors\_04{sample}
 
 There are several connectors created that consist of a number of segments. To create a multi-segmental connector add a pair of values (representing longitude and latitude) to the data of this connector. Watch the number of values: it should stay even in each point (connector) data.
 
 Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](Map_Projections) article.
-
 
 ## Altering Connectors
 
@@ -106,29 +104,29 @@ There are several settings can be adjusted for the series.
 As you might have noticed, all connectors in the samples above look like curves of the same curvature. Let's adjust this parameter with the {api:anychart.core.map.series.Connector#curvature}.curvature(){api} method. Let's make the connectors series look as straight lines:
 
 ```
-	// changing the curvature of the series
-	series.curvature(0);
+// changing the curvature of the series
+series.curvature(0);
 ```
 
-{sample}Maps\_Connectors\_06{sample}
+{sample}Maps\_Connectors\_05{sample}
 
 It's possible to define curvature for each connector separately through the data, like in the sample below:
 
 ```
-var data = anychart.data.set([    
-    {points: [50.8, -3.6, 51.1, -2.8, 50.7, -2.4, 50.8, -1.6], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge", curvature: -0.6},
-    {points: [51.5,-0.16, 51.7, -1.29], to: "London"},
-    {points: [51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-    {points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
-    {points: [53.4, -3.02,54.1,-3.29], to: "Liverpool", curvature:-0.2},
-    {points: [54.1, -3.29,54.4,-3.18, 54.5,-3.4, 55.2, -1.9], to: "Nunnykirk Caravan Club Site"},
-    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh", curvature: 0.6},
-    {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", curvature:1}
-    ]);
+var data = [    
+	{points: [50.8, -3.6, 51.1, -2.8, 50.7, -2.4, 50.8, -1.6], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
+	{points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge", curvature: -0.6},
+	{points: [51.5,-0.16, 51.7, -1.29], to: "London"},
+	{points: [51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+	{points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
+	{points: [53.4, -3.02,54.1,-3.29], to: "Liverpool", curvature:-0.2},
+	{points: [54.1, -3.29,54.4,-3.18, 54.5,-3.4, 55.2, -1.9], to: "Nunnykirk Caravan Club Site"},
+	{points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh", curvature: 0.6},
+	{points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", curvature:1}
+];
 ```
 
-{sample}Maps\_Connectors\_07{sample}
+{sample}Maps\_Connectors\_06{sample}
 
 Note that curvature may be negative. Negative value make the segment's curve go in the other direction.
 
@@ -142,7 +140,7 @@ series.startSize(10);
 series.endSize(0);
 ```
 
-{sample}Maps\_Connectors\_08{sample}
+{sample}Maps\_Connectors\_07{sample}
 
 ### Series colors
 
@@ -150,15 +148,15 @@ As soon as our connectors acquire some width, we can set the filling color for t
 
 ```
 // setting colors for hovered and selected
-	series.fill("#FF9966");
-	series.stroke("#CCCC99");
-	series.hoverFill("#996633");
-	series.selectFill("#996633");
-	series.hoverStroke("#CCCC99");
-	series.selectStroke("#CCCC99");
+series.fill("#FF9966");
+series.stroke("#CCCC99");
+series.hovered().fill("#996633");
+series.selected().fill("#996633");
+series.hovered().stroke("#CCCC99");
+series.hovered().stroke("#CCCC99");
 ```
 
-{sample}Maps\_Connectors\_09{sample}
+{sample}Maps\_Connectors\_08{sample}
 
 Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
 
@@ -169,25 +167,25 @@ To change the position of a marker on a connector use {api:anychart.core.ui.Mark
 The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}type(){api} method. All default marker types can be found on the {api:anychart.enums.MarkerType}Marker Type list{api}.
 
 ```
-	// create data set
-	var data = anychart.data.set([    
-	    {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-	    {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
-	    {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "1h 15m"}
-	]);
-	// setting the marker position
-	var markers = series.markers();
-	markers.position("end");
+// create data set
+var data = [    
+    {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
+    {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
+    {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "1h 15m"}
+];
+// setting the marker position
+var markers = series.markers();
+markers.position("end");
 
-	// setting the marker type
-	markers.type("arrowhead");
-	markers.size(15);
+// setting the marker type
+markers.type("arrowhead");
+markers.size(15);
 
-	// setting the anchor
-	markers.anchor("left-center");
+// setting the anchor
+markers.anchor("left-center");
 ```
 
-{sample}Maps\_Connectors\_10{sample}
+{sample}Maps\_Connectors\_09{sample}
 
 The size of markers were changed as well using the {api:anychart.core.ui.MarkersFactory.Marker#}.size(){api} method.
 
@@ -209,11 +207,11 @@ All label settings can be also defined through the dataSet as well.
 
 ```
 // create data set
-var data = anychart.data.set([    
+var data = [    
 	{points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
 	{points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
 	{points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
-]);
+];
 
 // set the labels
 var labels = series.labels();
@@ -226,7 +224,7 @@ labels.format("To {%to}");
 series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
 ```
 
-{sample}Maps\_Connectors\_11{sample}
+{sample}Maps\_Connectors\_10{sample}
 
 ## Maps Usage
 
@@ -238,7 +236,7 @@ This Map type is intended to show some route that can be useful for a traveler o
 
 Let's create a map showing the touristic route through France.
 
-{sample}Maps\_Connectors\_12{sample}
+{sample}Maps\_Connectors\_11{sample}
 
 ### Flight Map
 
@@ -248,10 +246,10 @@ This Map type can be found almost on all airlines' sites as it is used to show c
 
 Let's create a sample showing 7 most popular flights through Australia.
 
-{sample}Maps\_Connectors\_13{sample}
+{sample}Maps\_Connectors\_12{sample}
 
 ### Areas and Landscape
 
 This Map can be used for showing some borders between countries, landscapes on topographic maps, war borders. Let's create a map representing the border separating the United States and Confederate States in the American Civil War.
 
-{sample}Maps\_Connectors\_14{sample}
+{sample}Maps\_Connectors\_13{sample}

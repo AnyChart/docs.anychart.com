@@ -25,8 +25,8 @@
   // enable labels for a series
   // in any state
   series.labels(true);
-  series.selectLabels(true);
-  series.hoverLabels(true);
+  series.selected().labels(true);
+  series.hovered().labels(true);
 
   // draw
   chart.container("container");

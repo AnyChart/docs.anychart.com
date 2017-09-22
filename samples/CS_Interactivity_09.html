@@ -62,10 +62,10 @@
   series_1.select();
   series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
   
-  series_1.selectStroke(null);
-  series_1.selectHatchFill("diagonal", "#ddd", 1, 5);
-  series_2.selectHatchFill("confetti", "#fff", 1, 5);
-  series_2.selectStroke(null);
+  series_1.selected().stroke(null);
+  series_1.selected().hatchFill("diagonal", "#ddd", 1, 5);
+  series_2.selected().hatchFill("confetti", "#fff", 1, 5);
+  series_2.selected().stroke(null);
 
   // set container id for the chart
   chart.container("container");

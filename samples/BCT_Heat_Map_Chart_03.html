@@ -33,12 +33,12 @@
     chart = anychart.heatMap(data);
 
     // configure visual settings
-    chart.hoverFill("gray", 0.4);
-    chart.selectFill("gray", 0.6);
-    chart.selectHatchFill("backward-diagonal", "gray", 2, 20);
+    chart.hovered().fill("gray", 0.4);
+    chart.selected().fill("gray", 0.6);
+    chart.selected().hatchFill("backward-diagonal", "gray", 2, 20);
     chart.stroke("gray");
-    chart.hoverStroke("gray");
-    chart.selectStroke("gray", 2);
+    chart.hovered().stroke("gray");
+    chart.selected().stroke("gray", 2);
 
     // set the chart title
     chart.title("Heat Map: Appearance");

@@ -119,7 +119,7 @@
   ]);
   series.tooltip(false);
 
-  var hoverMarkers = series.hoverMarkers();
+  var hoverMarkers = series.hovered().markers();
   hoverMarkers.size(4);
 
   chart.interactivity("by-x");

@@ -43,8 +43,8 @@ anychart.onDocumentReady(function () {
     series_id.tooltip().format("Id: {%id} \nSheep farms: {%farms}");
 
     // hovered and selected labels
-    series_id.hoverLabels().fontColor("black");
-    series_id.selectLabels().fontColor("red");
+    series_id.hovered().labels().fontColor("black");
+    series_id.selected().labels().fontColor("red");
 
     australiaMap.title("Marker series on a map");
     australiaMap.interactivity().zoomOnMouseWheel(false);
