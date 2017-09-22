@@ -13,8 +13,6 @@ Please note that there is also the [3D 2D Line](2D_Line_Chart) chart type.
 
 To build a 3D Line chart, use the {api:anychart#line3d}anychart.line3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series by using the {api:anychart.charts.Cartesian3d#line}line(){api} method.
 
-**Note:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
-
 The following sample shows how to create a basic multi-series 3D Line chart:
 
 ```
@@ -31,4 +29,6 @@ var series3 = chart.line(seriesData_3);
 
 ## Special Settings
 
-Unlike the ordinary [Line](../Line_Chart), the 3D Line series is colored with the {api:anychart.core.cartesian.series.Line3d#fill}fill(){api} method. The stroke cannot be configured.
+**Note 1**: Unlike the ordinary Line series, the 3D Line series is colored with the {api:anychart.core.cartesian.series.Line3d#fill}fill(){api} method. The stroke cannot be configured.
+
+**Note 2:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
