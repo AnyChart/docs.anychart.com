@@ -84,12 +84,11 @@ chart.zAspect("100%"");
 
 ## Z-Distribution
 
-In 3D multi-series charts series can be distributed either along the Z-axis or along the X-axis. To enable or disable the Z-axis distribution, call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use *true* or *false* as paramater. When the Z-axis distribution is disabled, series are distributed along the X-axis.
+In multi-series 3D charts series can be distributed either along the Z-axis or along the X-axis.
 
-The default distribution depends on the chart constructor you use:
+To enable or disable the Z-axis distribution, call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use `true` or `false` as paramater (when the Z-axis distribution is disabled, series are distributed along the X-axis).
 
-* {api:anychart#bar3d}anychart.bar3d(){api} and {api:anychart#column3d}anychart.column3d(){api} – X-distribution
-* {api:anychart#area3d}anychart.area3d(){api} and {api:anychart#line3d}anychart.line3d(){api} – Z-distribution
+The default distribution depends on the chart constructor you use. For {api:anychart#bar3d}anychart.bar3d(){api} and {api:anychart#column3d}anychart.column3d(){api}, it is X-distribution. For {api:anychart#area3d}anychart.area3d(){api} and {api:anychart#line3d}anychart.line3d(){api}, it is Z-distribution.
 
 Here is a sample 3D Column chart with the Z-axis distribution enabled:
 
