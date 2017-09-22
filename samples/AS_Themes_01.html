@@ -37,20 +37,18 @@
   };
 
   // data
-  var data = anychart.data.set([
+  var data = [
     ["Department Stores", 637166],
     ["Discount Stores", 721630],
     ["Men's/Women's Specialty Stores", 148662],
     ["All other outlets", 90000]
-  ]);
+  ];
 
   // apply custom theme
   anychart.theme(customTheme);
 
-  // set chart type
-  chart = anychart.bar();
-  // set data
-  chart.bar(data);
+  // create chart
+  chart = anychart.bar(data);
 
   // set container and draw chart
   chart.container("container");

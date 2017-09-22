@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data and fill color settings
-  var data = anychart.data.set([
+  var data = [
     {x: "earth", value: 1, palette: anychart.palettes.earth},
     {x: "monochrome", value: 1, palette: anychart.palettes.monochrome},
     {x: "provence", value: 1, palette: anychart.palettes.provence},
@@ -22,7 +22,7 @@
     {x: "glamour", value: 1, palette: anychart.palettes.glamour},
     {x: "sea", value: 1, palette: anychart.palettes.sea},
     {x: "default", value: 1, palette: anychart.palettes.defaultPalette}
-  ]);
+  ];
 
   // chart type
   chart = anychart.funnel(data);

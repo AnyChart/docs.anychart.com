@@ -10,32 +10,25 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [2005, 10000],
     [2006, 12000],
     [2007, 18000],
     [2008, 19000],
     [2009, 29000]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.line();
-
-  // set data
-  var series = chart.line(data);
-  var tooltip = series.tooltip();
-  tooltip.format("Year: {%x}\nSales: {%Value}");
+  // create a chart
+  chart = anychart.line(data);
+  chart.tooltip().format("Year: {%x}\nSales: {%Value}");
 
   // set y scale ticks interval
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-  yScale.maximum(30000);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(5000);
+  chart.yScale().minimum(0);
+  chart.yScale().maximum(30000);
+  chart.yScale().ticks().interval(5000);
 
   // adjust y axis labels
-  var yLabels = chart.yAxis().labels();
-  yLabels.format("${%Value}");
+  chart.yAxis().labels().format("${%Value}");
 
   // set green
   var rangeMarker = chart.rangeMarker();

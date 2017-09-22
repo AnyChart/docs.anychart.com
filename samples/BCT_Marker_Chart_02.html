@@ -13,7 +13,7 @@
   chart = anychart.cartesian();
 
   // all data
-  var data = anychart.data.set([
+  var data = [
     [2000, 1100],
     [2001, 880],
     [2002, 1100],
@@ -21,10 +21,10 @@
     [2004, 921],
     [2005, 1000],
     [2006, 1400]
-  ]);
+  ];
 
   // set data for each series
-  series = chart.marker(data.mapAs({x: 0, value: 1}));
+  series = chart.marker(data);
 
   // Sets settings for interactivity.
   chart.interactivity({hoverMode: "by-x"});

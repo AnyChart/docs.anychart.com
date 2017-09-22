@@ -12,17 +12,13 @@
   // create chart
   chart = anychart.cartesian();
 
-  var margin = chart.margin();
-  margin.top(30);
-  margin.left(30);
-
   // setting data
-  var data = anychart.data.set([
+  var data = [
       ["A", 4],
       ["B", 3],
       ["C", 2],
       ["D", 1]
-  ]);
+  ];
 
   // add series
   chart.column(data);

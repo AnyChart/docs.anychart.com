@@ -10,20 +10,17 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [1990, 20],
     [1991, 12],
     [1992, 8],
     [1993, 7],
     [1994, 11]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.line();
+  // create a chart
+  chart = anychart.line(data);
   chart.padding(20, 50, 0, 100);
-
-  // set data
-  chart.line(data);
 
   // first marker
   var marker = chart.textMarker(0);
@@ -49,7 +46,6 @@
   marker1.offsetX(5);
   marker1.fontColor("#212121");
   marker1.anchor("left-center");
-
 
   // third marker
   var marker2 = chart.textMarker(2);

@@ -9,34 +9,28 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  chart = anychart.line();
-
-  // chart title
-  chart.title("Enable/Disable Axes Labels");
-
-  // disable x axis labels and title adjusting
-  var xAxis = chart.xAxis();
-  xAxis.labels(false);
-  xAxis.title("X-Axis without labels");
-
-  // adjusting y axis title and setting additional axis
-  var yAxis = chart.yAxis(0);
-  yAxis.title("Y-Axis with labels");
-  var yAxis1 = chart.yAxis(1);
-  yAxis1.orientation("right");
-  yAxis1.title("Secondary Y-Axis with labels");
-
   // data
-  var data = anychart.data.set([
+  var data = [
     ["January", 10000],
     ["February", 12000],
     ["March", 10000],
     ["April", 11000],
     ["May", 19000]
-  ]);
+  ];
 
-  // set data
-  chart.line(data);
+  chart = anychart.line(data);
+
+  // chart title
+  chart.title("Enable/Disable Axes Labels");
+
+  // disable x axis labels and title adjusting
+  chart.xAxis().labels(false);
+  chart.xAxis().title("X-Axis without labels");
+
+  // adjusting y axis title and setting additional axis
+  chart.yAxis(0).title("Y-Axis with labels");
+  chart.yAxis(1).orientation("right");
+  chart.yAxis(1).title("Secondary Y-Axis with labels");
 
   // draw chart
   chart.container("container");

@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [Date.UTC(2010, 0, 01), 10000],
     [Date.UTC(2010, 1, 01), 12000],
     [Date.UTC(2010, 2, 01), 18000],
@@ -24,20 +24,18 @@
     [Date.UTC(2010, 10, 01), 12000],
     [Date.UTC(2010, 11, 01), 14000],
     [Date.UTC(2010, 11, 31), 13000]
-  ]);
+  ];
 
   // chart type
   chart = anychart.financial();
 
-  var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2009, 11, 31));
-  xScale.maximum(Date.UTC(2011, 0, 01));
+  chart.xScale().minimum(Date.UTC(2009, 11, 31));
+  chart.xScale().maximum(Date.UTC(2011, 0, 01));
 
   chart.yScale().minimum(0);
 
   // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   // set lowest line marker
   var lineMarker = chart.lineMarker();

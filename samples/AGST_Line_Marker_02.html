@@ -10,19 +10,16 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [1990, 10000],
     [1991, 12000],
     [1992, 18000],
     [1993, 11000],
     [1994, 9000]
-  ]);
+  ];
 
   // chart type
-  chart = anychart.line();
-
-  // set data
-  chart.line(data);
+  chart = anychart.line(data);
 
   // set y scale ticks interval
   var yScale = chart.yScale();
@@ -30,8 +27,7 @@
   yScale.maximum(20000);
 
   // y scale title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   // set highest text marker
   var textMarker = chart.textMarker(0);

@@ -9,30 +9,25 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // dataset
-  var data = anychart.data.set([
+  // data
+  var data = [
     ["Winter", 16, 20],
     ["Spring", 12, 18],
     ["Summer", 9, 14],
     ["Fall", 9, 14]
-  ]);
-
-  // mapping data
-  var Sales2003 = data.mapAs({x: 0, value: 1});
-  var Sales2004 = data.mapAs({x: 0, value: 2});
+  ];
 
   // create a chart
   chart = anychart.column();
+
+  // set data
+  chart.data(data);
 
   // set chart title
   chart.title("Stacked Chart Sample");
 
   // set primary value scale mode to stacked
   chart.yScale().stackMode("value");
-
-  // series create series
-  chart.column(Sales2003);
-  chart.column(Sales2004);
 
   // set containet and draw a chart
   chart.container("container");

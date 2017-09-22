@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
+  // data
+  var data = [
     ["January", 200],
     ["February", 289],
     ["March", 297],
@@ -23,14 +23,11 @@
     ["October", 218],
     ["November", 289],
     ["December", 266]
-  ]);
+  ];
 
-  chart = anychart.column();
-
+  // create a chart
+  chart = anychart.column(data);
   chart.title("Rotated Marker");
-
-  // series data
-  chart.column(data);
 
   // create range marker
   var marker = chart.rangeMarker();

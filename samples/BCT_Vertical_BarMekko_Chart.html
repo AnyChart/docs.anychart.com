@@ -10,15 +10,12 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
+    var data = [
       ["QTR1", 10000],
       ["QTR2", 12000],
       ["QTR3", 13000],
       ["QTR4", 10000],
-    ]);
-
-    // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    ];
 
     // create a chart
     chart = anychart.barmekko();
@@ -28,7 +25,7 @@
     chart.yAxis().orientation("bottom");    
 
     // add series
-    var series = chart.mekko(seriesData_1);
+    var series = chart.mekko(data);
     series.isVertical(true);
 
     // set the chart title

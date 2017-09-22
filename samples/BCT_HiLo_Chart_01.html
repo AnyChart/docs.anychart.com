@@ -10,13 +10,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
+    var data = [
       ["January", 10000, 1000],
       ["February", 12000, 500],
       ["March", 18000, 3000],
       ["April", 11000, 4000],
       ["May", 9000, 6000]
-    ]);
+    ];
 
     // create a chart
     chart = anychart.hilo();
@@ -31,10 +31,8 @@
     chart.title("HiLo Chart: Basic Sample");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Price, $");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Price, $");
 
     // set the container id
     chart.container("container");

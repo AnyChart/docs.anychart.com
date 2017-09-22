@@ -10,13 +10,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
+    var data = [
       ["January", 0.7, 6.1],
       ["February", 0.6, 6.3],
       ["March", 1.9, 8.5],
       ["April", 3.1, 10.8],
       ["May", 5.7, 14.4]
-    ]);
+    ];
 
     // create a chart
     chart = anychart.bar();
@@ -28,10 +28,8 @@
     chart.title("Range Bar Chart: Basic Sample");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Temperature, °C");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Temperature, °C");
 
     // set the container id
     chart.container("container");

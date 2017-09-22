@@ -10,31 +10,26 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [2000, 10000],
     [2001, 12000],
     [2002, 18000],
     [2003, 11000],
     [2004, 9000]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.area();
-
-  // set data
-  chart.area(data);
+  // create chart
+  chart = anychart.area(data);
 
   // custom scale
   var additionalScale = anychart.scales.linear();
   // set ticks interval
   additionalScale.minimum(0);
   additionalScale.maximum(10);
-  var additionalTicks = additionalScale.ticks();
-  additionalTicks.interval(1);
+  additionalScale.ticks().interval(1);
 
   // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   // apply custom scale
   var yAxis1 = chart.yAxis(1);
@@ -46,7 +41,7 @@
   // set marker
   var textMarker = chart.textMarker(0);
   // bind marker to the scale
-  textMarker.axis(yAxis);
+  textMarker.axis(chart.yAxis());
   // set marker position
   textMarker.value(18000);
   // set marker alignment

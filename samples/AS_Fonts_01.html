@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data and fill color settings
-  var data = anychart.data.set([
+  // data
+  var data = [
     {x: "English", value: 2022776},
     {x: "Français", value: 561753},
     {x: "Português", value: 287318},
@@ -18,46 +18,13 @@
     {x: "Русский", value: 204379},
     {x: "中文", value: 146215},
     {x: "Norsk (bokmål)", value: 133410}
-  ]);
+  ];
   
-  
-  // create color palette
-  var palette = anychart.palettes.distinctColors().items();
-  var mappedData = data.mapAs();
-      
-  // coloring elements
-  for (var i=0;i<mappedData.getRowsCount();i++){
-    mappedData.set(i,"fill",palette[i]);
-  }
-
-  // chart type
-  chart = anychart.column();
-
-  // title
+  // create chart
+  chart = anychart.column(data);
   chart.title("International Symbols Support");
-
-  // set data
-  var series = chart.column(data);
-
-  // adjust tooltip text
-  series.stroke(null);
-  var tooltip = series.tooltip();
-  tooltip.format(function(){
-    return "Language: " + this.x + "\nArticles: " + this.value;
-  });
-
-  // adjust tooltip font
-  tooltip.fontWeight(400);
-  tooltip.fontFamily("Tahoma");
-  tooltip.fontSize(12);
-
-  // adjust labels
-  var labels = series.labels();
-  labels.enabled(true);
-  labels.position("center-top");
-  labels.anchor("center");
-  labels.offsetY(-15);
-  labels.format(function(){return this.x});
+  chart.tooltip().format("Language: {%x}\nArticles: {%Value}");
+  chart.labels().enabled(true).format("{%x}");
 
   // draw
   chart.container("container");

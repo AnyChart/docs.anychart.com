@@ -10,13 +10,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
+    var data = [
       {x: "John", value: 10000},
       {x: "Jake", value: 12000},
       {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
       {x: "James", value: 10000},
       {x: "Mary", value: 9000}
-    ]);
+    ];
 
     // create a chart
     chart = anychart.column();

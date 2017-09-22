@@ -124,15 +124,12 @@
       anychart.column(secondHalf.mapAs({x: 0, value: 2}))
     ]
   ]);
-  var firstTitle = table.getRow(0);
-  firstTitle.height(30);
-  var firstTitleCell = table.getCell(0,0);
-  firstTitleCell.colSpan(2);
 
-  var secondTitle = table.getRow(2);
-  secondTitle.height(30);
-  var secondTitleCell = table.getCell(2,0);
-  secondTitleCell.colSpan(2);
+  table.getRow(0).height(30);
+  table.getCell(0,0).colSpan(2);
+
+  table.getRow(2).height(30);
+  table.getCell(2,0).colSpan(2);
 
   table.vAlign("middle");
   table.hAlign("center");

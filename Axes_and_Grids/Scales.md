@@ -142,8 +142,8 @@ In the sample below you can see how interval settings affects grids, ticks and l
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
 
 ```
-chart.yScale().minimumGap(0.5);
-chart.yScale().maximumGap(0.5);
+chart.yScale().minimumGap(1);
+chart.yScale().maximumGap(1);
 ```
 
 In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.

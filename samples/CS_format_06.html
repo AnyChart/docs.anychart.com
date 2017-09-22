@@ -29,10 +29,8 @@
   chart.title("Multi-series Bar Chart");
   
   // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
   // set data series
   var series_winter = chart.bar(SalesWinter);

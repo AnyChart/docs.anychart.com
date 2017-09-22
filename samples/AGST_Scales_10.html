@@ -9,27 +9,24 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
+  // setting data
+  var data = [
+    ["C", 15],
+    ["D", 45],
+    ["E", 25]
+  ];
+
   // define chart type
-  chart = anychart.column();
+  chart = anychart.column(data);
 
   // chart title
   chart.title("Inverted Scale");
 
   // set scale minimum
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-
-  // setting data
-  var data = anychart.data.set([
-    ["C", 15],
-    ["D", 45],
-    ["E", 25]
-  ]);
-
-  chart.column(data);
+  chart.yScale().minimum(0);
 
   // setting yScale inversion
-  yScale.inverted(true);
+  chart.yScale().inverted(true);
 
   chart.container("container");
   chart.draw();

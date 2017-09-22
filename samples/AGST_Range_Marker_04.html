@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
+  // data
+  var data = [
     ["January", 200],
     ["February", 289],
     ["March", 297],
@@ -23,17 +23,11 @@
     ["October", 218],
     ["November", 289],
     ["December", 266]
-  ]);
+  ];
 
-  chart = anychart.column();
-
+  // create a chart
+  chart = anychart.column(data);
   chart.title("Range Marker");
-
-  // series data
-  chart.column(data);
-
-  // y axis getter
-  var yAxis = chart.yAxis();
 
   // create range marker
   var marker = chart.rangeMarker(0);
@@ -44,10 +38,7 @@
   // set marker inner color
   marker.fill("#fcd8d7");
   // set axis
-  marker.axis(yAxis);
-
-  var scale = chart.yScale();
-  scale.minimum(0);
+  marker.axis(chart.yAxis());
 
   var vMarker = chart.rangeMarker(1);
   vMarker.from("June");
