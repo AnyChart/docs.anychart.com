@@ -12,8 +12,8 @@ To learn more about 3D charts in general and how to customize them, see [3D Char
 To build a 3D Pie chart, use the {api:anychart#pie3d}anychart.pie3d(){api} chart constructor:
 
 ```
-// create a 3d pie chart
-chart = anychart.pie3d();
+// create a 3d pie chart and set the data
+chart = anychart.pie3d(data);
 ```
 
 {sample}BCT\_3D\_Pie\_Chart{sample}

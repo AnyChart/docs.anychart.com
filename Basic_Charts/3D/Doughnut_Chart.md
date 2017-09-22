@@ -14,11 +14,11 @@ To build a 3D Doughnut chart, use the {api:anychart#pie3d}anychart.pie3d(){api} 
 This sample shows how to create a basic 3D Doughnut chart:
 
 ```
-// create a 3d pie chart
-chart = anychart.pie3d();
+// create a 3d pie chart and set the data
+chart = anychart.pie3d(data);
 
-// set the inner radius
-// (to turn the pie chart into a doughnut chart)
+/* set the inner radius
+(to turn the pie chart into a doughnut chart)*/
 chart.innerRadius("30%");
 ```
 
