@@ -7,7 +7,7 @@ This article explains how to create a 3D 2D Line chart in AnyChart.
 
 To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article.
 
-Please note that there is also the [3D Line](3D_Line_Chart) chart type.
+Please note that there is also the [3D Line](Line_Chart) chart type.
 
 ## Quick Start
 
