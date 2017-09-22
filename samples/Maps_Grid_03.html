@@ -36,8 +36,7 @@
 
     map.grids(true)
     // configure interlace fills
-    map.grids().vertical().oddFill("LightBlue 0.2");
-    map.grids().vertical().evenFill("LightBlue 0.4");
+    map.grids().vertical().palette(["LightBlue 0.2", "LightBlue 0.4"]);
 
     map.title("Map Parallels and Meridians Interlace Grid");
     map.container("container");
