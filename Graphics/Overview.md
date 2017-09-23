@@ -25,7 +25,7 @@ GraphicsJS provides a convenient [Transformations](Transformations) API that all
 
 GraphicsJS [supports legacy browsers including IE6+](Browser_Support). 
 
-GraphicsJS API is very convenient to use. Our [API](https://api.anychart.com/{{branch-name}}/anychart.graphics) is very concise and provides chaining support, which makes it possible to use a dozen lines of code where other libraries require a hundred.
+GraphicsJS API is very convenient to use. {api:anychart.graphics}GraphicsJS API{api} is very neat and provides chaining support, which makes it possible to use a dozen lines of code where other libraries require a hundred.
 
 GraphicsJS is built on a very reliable technology, Google Closure, just like Google Mail, Google Calendar, Google Drive, and so on.
 
@@ -45,6 +45,6 @@ If you it is your first experience with JavaScript drawing libraries, we suggest
 
 If you are done with articles listed above, or you are an experienced user of [AnyChart 7](https://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
 
-* [GraphicsJS API](https://api.anychart.com/{{branch-name}}/anychart.graphics)
+* {api:anychart.graphics}GraphicsJS API{api}
 * [GraphicsJS Samples](http://www.graphicsjs.org/)
 * and [Virtual DOM](Virtual_DOM) and [Performance](Performance) articles.
