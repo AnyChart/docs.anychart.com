@@ -20,7 +20,7 @@
 
   // create chart
   chart = anychart.column(data);
-  chart.tooltip.format("Year: {%x}\nSales: {%Value}");
+  chart.tooltip().format("Year: {%x}\nSales: {%Value}");
 
   // set y scale ticks interval
   chart.yScale().minimum(0);
