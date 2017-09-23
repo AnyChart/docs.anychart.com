@@ -7,7 +7,7 @@ This article explains how to create a Scatter Line chart in AnyChart.
 
 To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings.
 
-Please note that there are also [Cartesian Line charts](../Line_Chart).
+Please note that there are also [Cartesian Line](../Line_Chart) charts.
 
 ## Quick Start
 
