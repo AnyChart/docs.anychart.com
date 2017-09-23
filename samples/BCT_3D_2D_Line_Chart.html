@@ -6,6 +6,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/js/RC-8.0.0/anychart-cartesian-3d.min.js" data-export="true"></script>    
 	<script src="https://cdn.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <link href="https://cdn.anychart.com/css/RC-8.0.0/anychart-ui.min.css">
@@ -20,9 +21,9 @@
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
-    var seriesData_3 = data.mapAs({x: [0], value: [3]});
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
 
     // create a 3d line chart
     chart = anychart.line3d();
