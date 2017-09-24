@@ -243,9 +243,9 @@ chart.sort("asc");
 
 Here is a full list of methods used to configure visual settings that are available for the Treemap chart:
 
-*  {api:anychart.charts.Treemap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.Treemap#stroke}stroke(){api} set the fill, hatch fill, and stroke
-*  {api:anychart.charts.Treemap#hoverFill}hoverFill(){api}, {api:anychart.charts.Treemap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Treemap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-*  {api:anychart.charts.Treemap#selectFill}selectFill(){api}, {api:anychart.charts.Treemap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Treemap#selectStroke()}selectStroke(){api} configure the visual settings on select
+*  {api:anychart.charts.TreeMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.TreeMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
+*  {api:anychart.charts.TreeMap#hoverFill}hoverFill(){api}, {api:anychart.charts.TreeMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.TreeMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+*  {api:anychart.charts.TreeMap#selectFill}selectFill(){api}, {api:anychart.charts.TreeMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.TreeMap#selectStroke()}selectStroke(){api} configure the visual settings on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 
@@ -307,9 +307,9 @@ To customize the **ordinal color scale**, you should create it explicitly by usi
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
 
-To set your scale as the color scale of the chart, use the {api:anychart.charts.Treemap#colorScale}colorScale(){api} method.
+To set your scale as the color scale of the chart, use the {api:anychart.charts.TreeMap#colorScale}colorScale(){api} method.
 
-Optionally, you can use {api:anychart.charts.Treemap#colorRange}colorRange(){api} to enable a **color range** – a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
+Optionally, you can use {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to enable a **color range** – a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
 
 The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
@@ -342,7 +342,7 @@ To create a **linear color scale**, use the {api:anychart.scales#linearColor}lin
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
-Finally, call {api:anychart.charts.Treemap#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.Treemap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
+Finally, call {api:anychart.charts.TreeMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
 
 In the following sample, there is a Treemap with a linear color scale and a color range:
 
@@ -369,9 +369,9 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.Treemap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+To change the text of labels, combine the {api:anychart.charts.TreeMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips, do the same with the {api:anychart.charts.Treemap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+To configure tooltips, do the same with the {api:anychart.charts.TreeMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
 Here is the list of tokens that work with the Treemap chart:
 
@@ -472,7 +472,7 @@ chart.tooltip().format(function(){
 
 #### Adjusting Font Size
 
-The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.Treemap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
+The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.TreeMap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
 /* adjust the font size of labels
