@@ -139,9 +139,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 Use {api:anychart.core.stock.series.RangeArea#fill}fill(){api} to changing the fill color:
 

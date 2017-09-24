@@ -141,9 +141,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+## Appearance
 
 Use {api:anychart.core.stock.series.RangeSplineArea#fill}fill(){api} to change fill color, {api:anychart.core.stock.series.RangeSplineArea#highStroke}highStroke(){api} and {api:anychart.core.stock.series.RangeSplineArea#lowStroke}lowStroke(){api} to color lines:
 

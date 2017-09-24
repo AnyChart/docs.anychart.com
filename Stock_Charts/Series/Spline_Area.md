@@ -99,9 +99,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the default colors of the area fill and stroke use {api:anychart.core.stock.series.SplineArea#fill}fill(){api} and {apianychart.core.stock.series.SplineArea#stroke}stroke(){api}. 
 

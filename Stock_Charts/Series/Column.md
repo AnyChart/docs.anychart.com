@@ -79,9 +79,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the default colors of the columns fill and stroke use {api:anychart.core.stock.series.Column#fill}fill(){api} and {api:anychart.core.stock.series.Column#stroke}stroke(){api}. 
 

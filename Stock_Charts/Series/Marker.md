@@ -122,9 +122,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 Use {api:anychart.core.stock.series.Marker#fill}fill(){api} and {api:anychart.core.stock.series.Marker#stroke}stroke(){api} to change fill and stroke. 
 
@@ -143,7 +141,7 @@ series_uk.stroke("#000");
 
 {sample}STOCK\_Marker\_05{sample}
 
-### Marker type 
+## Marker type 
 
 Us the {api:anychart.core.stock.series.Marker#type}type(){api} method to change series marker type.
 
