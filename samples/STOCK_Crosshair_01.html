@@ -6,26 +6,44 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-stock.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-annotations.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-stock.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-annotations.min.js" data-export="true"></script>
 
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css">
     <script x-export="stage">anychart.onDocumentReady(function() {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
-   
-    // the data used in this sample can be obtained from the CDN
-    // https://cdn.anychart.com/csv-data/csco-daily.js
-    // create a data table using this data
+
+    // create a data table
     var dataTable = anychart.data.table();
-    dataTable.addData(get_csco_daily_short_data());
+    dataTable.addData([
+      ['2008-12-24', 19.87],
+      ['2008-12-25', 20.08],
+      ['2008-12-26', 19.95],
+      ['2008-12-27', 20.1],
+      ['2008-12-28', 19.91],
+      ['2008-12-29', 20.1],
+      ['2008-12-30', 19.91],
+      ['2008-12-31', 19.36],
+      ['2009-01-01', 19.08],
+      ['2009-01-02', 19.2],
+      ['2009-01-03', 18.99],
+      ['2009-01-04', 18.92],
+      ['2009-01-05', 18.41],
+      ['2009-01-06', 18.57],
+      ['2009-01-07', 18.61],
+      ['2009-01-08', 19.03],
+      ['2009-01-09', 18.91],
+      ['2009-01-10', 18.99],
+      ['2009-01-11', 18.65]  
+      ]);
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    mapping = dataTable.mapAs();
+    mapping.addField("value", 1);
 
     // create a stock chart
     chart = anychart.stock();
@@ -37,39 +55,28 @@
     var lineSeries = plot.line(mapping);
     lineSeries.name("CSCO");
 
-    // an auxiliary variable for working with annotations
-    var controller = plot.annotations();
-
     // set the chart position and title
     chart.top(15);
-    chart.title("Initiating Drawing");
+    chart.title("Crosshair: Display Mode");
 
-    // set the chart container and initiate drawing the chart
+    // set the chart container
     chart.container(stage);
+
+    // initiate drawing the chart
     chart.draw();
 
-    // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 10, function() {
+    /* create a label for setting the display mode
+    of the crosshair to "float" */
+    createLabel("Float", 10, function() {
         // start drawing the annotation
-        controller.startDrawing("andrewsPitchfork");
+        chart.crosshair().displayMode("float");
     });
 
-    // create a label for the Triangle annotation
-    createLabel("Triangle", 150, function() {
+    /* create a label for setting the display mode
+    of the crosshair to "sticky" */
+    createLabel("Sticky", 65, function() {
         // start drawing the annotation
-        controller.startDrawing("triangle");
-    });
-
-    // create a label for the Ellipse annotation
-    createLabel("Ellipse", 219, function() {
-        // start drawing the annotation
-        controller.startDrawing("ellipse");
-    });
-
-    // create a label for removing annotations
-    createLabel("Remove All", 300, function() {
-        // remove all annotations
-        controller.removeAllAnnotations();
+        chart.crosshair().displayMode("sticky");
     });
 });
 
