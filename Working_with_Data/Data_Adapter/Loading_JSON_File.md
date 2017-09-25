@@ -28,7 +28,7 @@ Using {api:anychart.data#loadJsonFile}loadJsonFile(){api} method is as easy as t
   ["Eyeliner", 213210],
   ["Eyebrow pencil", 170670],
   ["Nail polish", 143760],
-  ["Pomade", 128000],
+  ["Lipstick", 128000],
   ["Lip gloss", 110430],
   ["Mascara", 102610],
   ["Foundation", 94190],

@@ -30,7 +30,7 @@ Using {api:anychart.data#loadXmlFile}loadXmlFile(){api} method is as easy as thi
         <point name="Eyeliner" value="213210"/>
         <point name="Eyebrow pencil" value="170670"/>
         <point name="Nail polish" value="143760"/>
-        <point name="Pomade" value="128000"/>
+        <point name="Lipstick" value="128000"/>
         <point name="Lip gloss" value="110430"/>
         <point name="Mascara" value="102610"/>
         <point name="Foundation" value="94190"/>
