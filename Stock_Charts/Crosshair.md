@@ -1,4 +1,4 @@
-{:index 6}
+{:index 6.5}
 
 # Crosshair
 
