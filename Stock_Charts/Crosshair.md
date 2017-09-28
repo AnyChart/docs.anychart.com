@@ -8,7 +8,7 @@
 
 You can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api} method. Both of them return and instance {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
-For example, in the [Display Mode](display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](disabling) section, the crosshair is disabled only on the first plot of the sample chart.
+For example, in the [Display Mode](#display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](#disabling) section, the crosshair is disabled only on the first plot of the sample chart.
 
 ## Display Mode
 
@@ -27,7 +27,7 @@ chart.crosshair().displayMode("float");
 
 You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
 
-**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Disabling](disabling) section of this article.
+**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Disabling](#disabling) section of this article.
 
 In the following sample there is a Stock chart with two plots. The X- and Y-strokes of the crosshair have different visual settings, and on the second plot the X-stroke is not displayed:
 
