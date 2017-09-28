@@ -14,7 +14,7 @@ For example, in the [Display Mode](display_mode) section of this article, the di
 
 The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series. You can make it move more smoothly ("float") by changing the display mode to **float**.
 
-To set the display mode, use the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
+To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
 
 ```
 // set the display mode of the crosshair
@@ -25,9 +25,11 @@ chart.crosshair().displayMode("float");
 
 ## Appearance
 
-* {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api}
-* {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api}
-* `null`
+You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
+
+**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Disabling](disabling) section of this article.
+
+In the following sample there is a Stock chart with two plots. The X- and Y-strokes of the crosshair have different visual settings, and on the second plot the X-stroke is not displayed:
 
 ```
 // create two plots
