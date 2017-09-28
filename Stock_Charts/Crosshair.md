@@ -34,11 +34,11 @@ var plot_1 = chart.plot(0);
 var plot_2 = chart.plot(1);
 
 // configure the crosshair strokes on the first plot
-plot_1.crosshair().yStroke("black", 2);
-plot_1.crosshair().xStroke("black", 2, "10 5", "round");
+plot_1.crosshair().yStroke("#00bfa5", 1.5);
+plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
 
 // configure the crosshair strokes on the second plot
-plot_2.crosshair().yStroke("black", 2);
+plot_2.crosshair().yStroke("#00bfa5", 1.5);
 plot_2.crosshair().xStroke(null);
 ```
 
