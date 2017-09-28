@@ -4,11 +4,11 @@
 
 ## Overview
 
-## Chart and plot
+...
 
-* {api:anychart.charts.Stock#crosshair}charts.Stock#crosshair(){api}
-* {api:anychart.core.stock.Plot#crosshair}core.stock.Plot#crosshair(){api}
-* {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api}
+You can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api} method. Both of them return and instance {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
+
+For example, in the [Display Mode](display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](disabling) section, the crosshair is disabled only on the first plot of the sample chart.
 
 ## Display Mode
 
@@ -110,8 +110,8 @@ crosshair_2.yLabel().background({
 
 ## Disabling
 
-* {api:anychart.charts.Stock#crosshair}charts.Stock#crosshair(){api}
-* {api:anychart.core.stock.Plot#crosshair}core.stock.Plot#crosshair(){api}
+* {api:anychart.charts.Stock#crosshair}chart.crosshair(){api}
+* {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api}
 * `false`
 
 ```
