@@ -4,15 +4,17 @@
 
 ## Overview
 
-...
+A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
-You can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api} method. Both of them return and instance {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
+In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return and instance {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
 For example, in the [Display Mode](#display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](#disabling) section, the crosshair is disabled only on the first plot of the sample chart.
 
+The crosshair in AnyStock is similar to the crosshair in basic charts] – see the basic [Crosshair](../Axes_and_Grids/Crosshair#labels) article to learn more.
+
 ## Display Mode
 
-The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series. You can make it move more smoothly ("float") by changing the display mode to **float**.
+The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
 
 To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
 
@@ -111,7 +113,7 @@ In the sample below there is a Stock chart with two plots. Both plots have X-lab
 
 ## Disabling
 
-To disable the crosshair on your chart or on a plor, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api} method with the `false` parameter.
+To disable the crosshair on your chart or on a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` parameter.
 
 **Note** You can also hide just a line of a crosshair – see the [Appearance](#appearance) section.
 
