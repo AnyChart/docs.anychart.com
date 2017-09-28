@@ -6,11 +6,11 @@
 
 A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
-In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return and instance {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
+In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return an instance of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
 For example, in the [Display Mode](#display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](#disabling) section, the crosshair is disabled only on the first plot of the sample chart.
 
-The crosshair in AnyStock is similar to the crosshair in basic charts] – see the basic [Crosshair](../Axes_and_Grids/Crosshair#labels) article to learn more.
+The crosshair in AnyStock is similar to the crosshair in basic charts – see the basic [Crosshair](../Axes_and_Grids/Crosshair#labels) article to learn more.
 
 ## Display Mode
 
