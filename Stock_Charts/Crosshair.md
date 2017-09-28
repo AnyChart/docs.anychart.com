@@ -12,11 +12,12 @@ For example, in the [Display Mode](display_mode) section of this article, the di
 
 ## Display Mode
 
-* {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api}
-* sticky (default)
-* float
+The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series. You can make it move more smoothly ("float") by changing the display mode to **float**.
+
+To set the display mode, use the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
 
 ```
+// set the display mode of the crosshair
 chart.crosshair().displayMode("float");
 ```
 
