@@ -54,17 +54,17 @@
     plot_1.line(mapping);
     plot_2.ohlc(mapping);
 
-    /* enable the crosshair labels
+    /* enable the crosshair label
     on the x-axis of the first plot */
     plot_1.crosshair().xLabel(true);
   
-    /* configure the text of the crosshair labels
+    /* configure the text of crosshair labels
     on the y-axis */
     chart.crosshair().yLabel().format(function(){
       return this.value + " $";
     });
 
-    /* configure the appearance of the crosshair labels
+    /* configure the appearance of crosshair labels
     on the first plot */
     var crosshair_1 = plot_1.crosshair();
     crosshair_1.xLabel().fontColor("#64b5f6");
@@ -78,7 +78,7 @@
       stroke: "#64b5f6"
     });
 
-    /* configure the appearance of the crosshair labels
+    /* configure the appearance of crosshair labels
     on the second plot */
     var crosshair_2 = plot_2.crosshair();
     crosshair_2.xLabel().fontColor("#ffa000");

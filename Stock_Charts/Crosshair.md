@@ -36,11 +36,11 @@ In the following sample there is a Stock chart with two plots. The X- and Y-stro
 var plot_1 = chart.plot(0);
 var plot_2 = chart.plot(1);
 
-// configure the crosshair strokes on the first plot
+// configure crosshair strokes on the first plot
 plot_1.crosshair().yStroke("#00bfa5", 1.5);
 plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
 
-// configure the crosshair strokes on the second plot
+// configure crosshair strokes on the second plot
 plot_2.crosshair().yStroke("#00bfa5", 1.5);
 plot_2.crosshair().xStroke(null);
 ```
@@ -49,38 +49,34 @@ plot_2.crosshair().xStroke(null);
 
 ## Labels
 
-* {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api}
-* {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}
-* {api:}{api}
-* {api:}{api}
-* {api:}{api}
-* {api:}{api}
-* {api:}{api}
-* {api:}{api}
+The crosshair has two labels, which are shown on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. To configure these labels, use the {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api} and {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api} methods.
+
+See the full list of the available settings: {api:anychart.core.ui.CrosshairLabel}anychart.core.ui.CrosshairLabel{api}
+
+You can disable or enable crosshair labels by using the `false` or `true` parameter:
 
 ```
-/* enable the crosshair labels
+/* enable the crosshair label
 on the x-axis of the first plot */
 plot_1.crosshair().xLabel(true);
 ```
 
-* {api:anychart.core.ui.CrosshairLabel}anychart.core.ui.CrosshairLabel{api}
-* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
-* {api:anychart.core.ui.CrosshairLabel#format}format(){api}
+**Note:** By default, if a chart has multiple plots, only the last plot has an X-label.
+
+The text of labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
 
 ```
-/* configure the text of the crosshair labels
+/* configure the text of crosshair labels
 on the y-axis */
 chart.crosshair().yLabel().format(function(){
   return this.value + " $";
 });
 ```
 
-* {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api}
-* {api:anychart.core.ui.CrosshairLabel#background}background(){api}
+It is also possible to configure the appearance of labels. For example, you can use {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api} and {api:anychart.core.ui.CrosshairLabel#background}background(){api} to adjust the font color and background:
 
 ```
-/* configure the appearance of the crosshair labels
+/* configure the appearance of crosshair labels
 on the first plot */
 var crosshair_1 = plot_1.crosshair();
 crosshair_1.xLabel().fontColor("#64b5f6");
@@ -94,7 +90,7 @@ crosshair_1.yLabel().background({
   stroke: "#64b5f6"
 });
 
-/* configure the appearance of the crosshair labels
+/* configure the appearance of crosshair labels
 on the second plot */
 var crosshair_2 = plot_2.crosshair();
 crosshair_2.xLabel().fontColor("#ffa000");
@@ -109,13 +105,17 @@ crosshair_2.yLabel().background({
 });
 ```
 
+In the sample below there is a Stock chart with two plots. Both plots have X-labels, the default text of Y-labels is changed on the whole chart, and all labels are colored to match the colors of their plots:
+
 {sample}STOCK\_Crosshair\_03{sample}
 
 ## Disabling
 
-* {api:anychart.charts.Stock#crosshair}chart.crosshair(){api}
-* {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api}
-* `false`
+To disable the crosshair on your chart or on a plor, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}stock.crosshair(){api} method with the `false` parameter.
+
+**Note** You can also hide just a line of a crosshair – see the [Appearance](#appearance) section.
+
+In this sample the crosshair is disabled on the first plot of the chart:
 
 ```
 // disable the crosshair on the first plot
