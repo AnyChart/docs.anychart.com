@@ -6,7 +6,15 @@
 
 ## Chart and plot
 
+* {api:anychart.charts.Stock#crosshair}charts.Stock#crosshair(){api}
+* {api:anychart.core.stock.Plot#crosshair}core.stock.Plot#crosshair(){api}
+* {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api}
+
 ## Display Mode
+
+* {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api}
+* sticky (default)
+* float
 
 ```
 chart.crosshair().displayMode("float");
@@ -15,6 +23,10 @@ chart.crosshair().displayMode("float");
 {sample}STOCK\_Crosshair\_01{sample}
 
 ## Appearance
+
+* {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api}
+* {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api}
+* `null`
 
 ```
 // create two plots
@@ -34,11 +46,24 @@ plot_2.crosshair().xStroke(null);
 
 ## Labels
 
+* {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api}
+* {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}
+* {api:}{api}
+* {api:}{api}
+* {api:}{api}
+* {api:}{api}
+* {api:}{api}
+* {api:}{api}
+
 ```
 /* enable the crosshair labels
 on the x-axis of the first plot */
 plot_1.crosshair().xLabel(true);
 ```
+
+* {api:anychart.core.ui.CrosshairLabel}anychart.core.ui.CrosshairLabel{api}
+* [formatting functions](../Common_Settings/Text_Formatters#formatting_functions)
+* {api:anychart.core.ui.CrosshairLabel#format}format(){api}
 
 ```
 /* configure the text of the crosshair labels
@@ -47,6 +72,9 @@ chart.crosshair().yLabel().format(function(){
   return this.value + " $";
 });
 ```
+
+* {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api}
+* {api:anychart.core.ui.CrosshairLabel#background}background(){api}
 
 ```
 /* configure the appearance of the crosshair labels
@@ -81,6 +109,10 @@ crosshair_2.yLabel().background({
 {sample}STOCK\_Crosshair\_03{sample}
 
 ## Disabling
+
+* {api:anychart.charts.Stock#crosshair}charts.Stock#crosshair(){api}
+* {api:anychart.core.stock.Plot#crosshair}core.stock.Plot#crosshair(){api}
+* `false`
 
 ```
 // disable the crosshair on the first plot
