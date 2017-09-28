@@ -115,7 +115,7 @@ In the sample below there is a Stock chart with two plots. Both plots have X-lab
 
 To disable the crosshair on your chart or on a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` parameter.
 
-**Note** You can also hide just a line of a crosshair – see the [Appearance](#appearance) section.
+**Note** You can also hide a line of a crosshair – see the [Appearance](#appearance) section.
 
 In this sample the crosshair is disabled on the first plot of the chart:
 
