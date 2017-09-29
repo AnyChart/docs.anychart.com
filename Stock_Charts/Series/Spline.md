@@ -89,9 +89,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the stroke color use the {api:anychart.core.stock.series.Spline#stroke}stroke(){api} method.
 

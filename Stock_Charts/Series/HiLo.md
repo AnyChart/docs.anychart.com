@@ -103,10 +103,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-
-### Coloring
+##  Appearance
 
 To change the default colors of the HiLo stroke use {api:anychart.core.stock.series.Hilo#stroke}stroke(){api} method.
 

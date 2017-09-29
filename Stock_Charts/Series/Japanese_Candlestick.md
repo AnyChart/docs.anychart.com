@@ -104,9 +104,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 There are "falling" and "rising" candlesticks, fill and stroke for them is set using these methods:
 - {api:anychart.core.stock.series.Candlestick#fallingStroke}fallingStroke(){api},

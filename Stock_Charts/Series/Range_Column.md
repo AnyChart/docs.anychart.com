@@ -76,9 +76,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the fill and stroke use {api:anychart.core.stock.series.RangeColumn#fill}fill(){api} and {api:anychart.core.stock.series.RangeColumn#stroke}stroke(){api}. Also it's possible to highlight a series not with a color but with a hatch fill using {api:anychart.core.stock.series.RangeColumn#hatchFill}hatchFill(){api} method. 
 

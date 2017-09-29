@@ -90,9 +90,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the fill color use the {api:anychart.core.stock.series.StepArea#fill}fill(){api} method and to change the stroke color use the {api:anychart.core.stock.series.StepArea#stroke}stroke(){api} method.
 
