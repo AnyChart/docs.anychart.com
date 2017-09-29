@@ -14,7 +14,7 @@ var chart = anychart.stock();
 var indicator = chart.plot(0).priceIndicator();
 ```
 
-{sample}STOCK\_Price_Indicator\_01{sample}
+{sample}STOCK\_Price\_Indicator\_01{sample}
 
 ## Settings
 
@@ -90,4 +90,4 @@ var indicator = chart.plot(0).priceIndicator();
 indicator.value('first-visible');
 ```
 
-{sample}STOCK\_Price_Indicator\_02{sample}
+{sample}STOCK\_Price\_Indicator\_02{sample}

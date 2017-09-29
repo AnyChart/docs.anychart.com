@@ -14,6 +14,8 @@ Use {api:anychart.core.Chart#noData}noData(){} method to enable "No data" label:
 chart.noData(true);
 ```
 
+{sample}WD\_No\_Data\_01{sample}
+
 ## Appearance
 
 {api:anychart.core.NoDataSettings}anychart.core.NoDataSettings{api} object had a label which is an instance of {api:anychart.core.ui.Label}anychart.core.ui.Label{api} class. This label can be tuned as any other label in AnyChart.
@@ -24,6 +26,8 @@ noDataLabel.text("Error: could not connect to data server");
 noDataLabel.background().enabled(true);
 noDataLabel.background().fill("White 0.5");
 ```
+
+{sample}WD\_No\_Data\_02{sample}
 
 ## Events
 
@@ -49,6 +53,8 @@ chart.listen("dataChanged", function(event){
 });
 ```
 
+{sample}WD\_No\_Data\_03{sample}
+
 ### Label
 
 You can attach listeners to "No data" label, this may be handy to use it as a button that restarts the process of loading data:
@@ -58,3 +64,5 @@ chart.noData().label().listen('click', function() {
     console.log('attempt to load data');
 });
 ```
+
+{sample}WD\_No\_Data\_04{sample}
