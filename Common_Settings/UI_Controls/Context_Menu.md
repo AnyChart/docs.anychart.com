@@ -10,8 +10,8 @@ To enable AnyChart Context Menu feature you need to reference the UI module and 
  
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart-ui.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">
+  <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">
 </head>
 ```
 
@@ -61,7 +61,7 @@ menu.itemsFormatter(function(items){
   
   // some code to modify elements goes here
 
-  // 
+  // return modified array
   return items;
 });
 ```
@@ -79,12 +79,13 @@ var chart = anychart.column();
 
 // remove two element from the menu
 chart.contextMenu().itemsFormatter(function(items){
-  // Disable save as image option
-  delete items["export-as"];
-
-  // delete item with AnyChart version
-  delete items["version-history"];
-
+    // Disable save as image option
+   delete items["save-chart-as"];
+   
+   // delete about and separator 
+   delete items["full-screen-separator"];
+   delete items["about"];
+   
   // return modified array
   return items;
 });
@@ -96,17 +97,17 @@ Here is a sample with adjusted text of the default item and hidden last item:
 
 ## Adjust Text
 
-You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using localization strings. 
+You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using [localization strings](localize-the-context-menu). 
 
-In the next sample captions of the "Save chart as..." and the "Save data as..." items are modified.
+In the next sample captions of the "Save chart as..." and the "Save data as..." items are modified using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api}.
 
 ```
 var chart = anychart.column();
-var menu = chart.contextMenu();
-menu.itemsFormatter(function(items){
+
+chart.contextMenu().itemsFormatter(function(items){
 
   // change text of "Save chart as..."
-  items["export-as"].text = "Export as image...";
+  items["save-chart-as"].text = "Export as image...";
 
   // change text of "Save chart as..."
   items["save-data-as"].text = "Export chart data as...";
@@ -115,9 +116,61 @@ menu.itemsFormatter(function(items){
 });
 ```
 
+Right click to see modified menu:
+
+{sample}CS\_ContextMenu\_04{sample}
+
 ## Change behaviour
 
+You can adjust behavior of any element in {api:anychart.ui.
+ContextMenu#itemsFormatter}itemsFormatter(){api}. 
+
+```
+chart.contextMenu().itemsFormatter(function(items){
+
+  // modify print item action
+  items["print"].action = function(){
+    alert('Custom action');
+  };
+
+  return items;
+});
+```
+
+{sample}CS\_ContextMenu\_05{sample}
+
 ## Add Item
+
+You can add item in {api:anychart.ui.
+ContextMenu#itemsFormatter}itemsFormatter(){api}, use index to put it in proper place. 
+
+```
+// add items
+chart.contextMenu().itemsFormatter(function(items){
+  // starting index
+  index = items['full-sc'].index;
+
+  // add item with custom action
+  items['my-item'] = {
+      'text': 'Custom item with alert action',
+      'action': function(){
+          alert('Custom action');
+        },
+       'index': index + 0.01
+      };
+
+  // add item with custom url
+  items['my-url'] = {
+      'text': 'Go to AnyChart Blog',
+      'url': 'https://anychart.com/blog/',
+      'index': index + 0.02
+    };
+
+  return items;
+});
+```
+
+{sample}CS\_ContextMenu\_06{sample}
 
 ## Custom Context Menu
 
@@ -162,17 +215,19 @@ menu.attach(chart);
 
 Here is a sample of a chart with the custom context menu:
 
-{sample}CS\_ContextMenu\_04{sample}
+{sample}CS\_ContextMenu\_07{sample}
 
 ## Context
 
 Context Menu passes context (additional information) into the formatting function depending on a point. The information on context can be found in {api:anychart.ui.ContextMenu.PrepareItemsContext}api{api}. It helps to make the Context Menu more flexible and provides additional functionality.
 
-{sample}CS\_ContextMenu\_05{sample}
+{ssample}CS\_ContextMenu\_07{ssample}
 
 ## Change the Look
 
 If you want to tune the visual appearance of the Context Menu you can define desirable appearance in your CSS file for custom CSS class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}addClassName(){api} method.
+
+{ssample}CS\_ContextMenu\_08{ssample}
 
 ## Menu items keys
 
@@ -181,7 +236,6 @@ The default context menu contains different set of items for different charts an
 This section lists all keys and describes when the elements with such keys can appear, along with the default text:
 
 ### Every chart
-
 
 - select-marquee-start
 - select-marquee-separator

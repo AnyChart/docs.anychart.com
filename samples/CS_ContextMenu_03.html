@@ -18,7 +18,7 @@
   chart = anychart.column();
 
   // set chart data
-  chart.data ([
+  chart.data([
     ["John" , 10000, 12000],
     ["Jake" , 12000, 15000],
     ["Peter", 18000, 16000],
@@ -26,18 +26,21 @@
     ["Mary", 9000, 19000]
   ]);  
 
-  // change context menu
+  // remove two element from the menu
   chart.contextMenu().itemsFormatter(function(items){
-    // Disable save as image option
-    delete items["export-as"];
-
-    // delete item with AnyChart version
-    delete items["version-history"];
+      // Disable save as image option
+     delete items["save-chart-as"];
+     
+     // delete about and separator 
+     delete items["full-screen-separator"];
+     delete items["about"];
+     
+    // return modified array
     return items;
   });
 
   // set title
-  chart.title("Context Menu Disabled");
+  chart.title("Context Menu: Remove Items");
 
   // draw
   chart.container("container");

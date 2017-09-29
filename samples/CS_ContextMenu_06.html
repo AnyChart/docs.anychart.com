@@ -14,11 +14,46 @@
   // create a chart
   chart = anychart.column();
 
+  // set chart data
+  chart.data([
+    ["John" , 10000, 12000],
+    ["Jake" , 12000, 15000],
+    ["Peter", 18000, 16000],
+    ["James", 11000, 13000],
+    ["Mary", 9000, 19000]
+  ]);  
+
+  // add items
+  chart.contextMenu().itemsFormatter(function(items){
+    // starting index
+    index = items['full-sc'].index;
+
+    // add item with custom action
+    items['my-item'] ={
+        'text': 'Custom item with alert action',
+        'action': function(){
+            alert('Custom action');
+          },
+         'index': index + 0.01
+        };
+
+    // add item with custom url
+    items['my-url'] = {
+        'text': 'Go to AnyChart Blog',
+        'url': 'https://anychart.com/blog/',
+        'index': index + 0.02
+      };
+
+    return items;
+  });
+
+  // set title
+  chart.title("Context Menu: Items Text Changed");
+
+  // draw
   chart.container("container");
   chart.draw();
-
-});
-    </script>
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

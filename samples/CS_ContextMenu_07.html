@@ -8,7 +8,6 @@
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
 	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
-    <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
     <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
@@ -17,15 +16,42 @@
 
   // set chart data
   chart.data([
-    ["John", 10000, 12000],
-    ["Jake", 12000, 15000],
+    ["John" , 10000, 12000],
+    ["Jake" , 12000, 15000],
     ["Peter", 18000, 16000],
     ["James", 11000, 13000],
     ["Mary", 9000, 19000]
   ]);  
 
+
+  // replace menu items provider
+  chart.contextMenu().itemsProvider(function(){
+    var items = {
+      'menu-item-1': {
+        'text': 'Print chart',
+        'action': function(){
+          this.chart.print();
+        }
+      }, 
+      'menu-item-2': {
+        'text': 'Save chart as image',
+        'action': function(){
+          this.chart.saveAsPng();
+        }
+      }, 
+      'menu-item-3': {
+        'text': 'Go to my page',
+        'href': 'http://docs.anychart.com',
+        'target': '_blank'
+      }
+    }
+
+    return items;
+  });;
+
+
   // set title
-  chart.title("Context Menu: Default");
+  chart.title("Basic Custom Context Menu");
 
   // draw
   chart.container("container");
