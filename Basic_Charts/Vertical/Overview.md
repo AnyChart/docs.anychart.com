@@ -84,28 +84,19 @@ chart.getSeriesAt(2).isVertical(true);
 
 ### Chart
 
-To switch the orientation of the whole chart on-the-fly, you should change the orientation of both the series and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical** and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods:
+To switch the orientation of the whole chart on-the-fly, with the basic cartesian charts you can simply use the {api:anychart.charts.Cartesian#isVertical}isVertical(){api} method.
 
 ```
 // create a chart
-var chart = anychart.column();
+var chart = anychart.line();
 
-// create the first series
-var series1 = chart.column(seriesData_1);
-
-// create the second series
-var series2 = chart.column(seriesData_2);
-
-// change the orientation of the series
-chart.getSeriesAt(0).isVertical(true);
-chart.getSeriesAt(1).isVertical(true);
-
-// change the orientation of the axes
-chart.xAxis().orientation('left');
-chart.yAxis().orientation('bottom');
+// change the orientation of the chart
+chart.isVertical(true);
 ```
 
 {sample}BCT\_Vertical\_03{sample}
+
+**Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical()** method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
 
 ## Supported Types
 
