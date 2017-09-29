@@ -11,15 +11,33 @@
         
     <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
-    chart = anychart.column();
+    chart = anychart.column([["A", 2]]);
 
-    // Get noData.
-    var noData = chart.noData(true);
+    // enable no data label
+    chart.noData(true);
 
-    chart.title("Get and modify noData object");
+    chart.listen("dataChanged", function(event){
+        if (event.hasData) {
+            chart.title("data added event");
+        } else {
+            chart.title("no data event");
+            
+            // prevents no data label from showing when 
+            // there are series on the chart
+            // ie series are hidden using legend
+
+            if (chart.getSeriesCount() > 0) {
+                event.preventDefault();
+            }
+        }
+    });    
+
+    chart.title("No Data: Modify Event");
+    
     chart.container("container");
     chart.draw();
-});</script>
+});
+    </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

@@ -13,13 +13,18 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     chart = anychart.column();
 
-    // Get noData.
-    var noData = chart.noData(true);
+    // configure no data label
+    noDataLabel = chart.noData().label();
+    noDataLabel.text("Error: could not connect to data server");
+    noDataLabel.background().enabled(true);
+    noDataLabel.background().fill("White 0.5");
 
-    chart.title("Get and modify noData object");
+    chart.title("No Data: Configure Label");
+    
     chart.container("container");
     chart.draw();
-});</script>
+});
+    </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
