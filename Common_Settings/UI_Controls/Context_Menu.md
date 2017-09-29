@@ -6,7 +6,7 @@ A context menu (also called contextual, shortcut, and popup or pop-up menu) is a
 
 ## Enable
 
-To enable AnyChart Context Menu feature you need to reference the UI module and the CSS file in the `<head>` section of a web page, along with other [required modules](../Quick_Start/Modules).
+To enable AnyChart Context Menu feature you need to reference the UI module and the CSS file in the `<head>` section of a web page, along with other [required modules](../../Quick_Start/Modules).
  
 ```
 <head>
@@ -42,7 +42,7 @@ The default context menu in all charts consists of at least the following elemen
 * [Print](../Printing)
 * AnyChart vX.XX.X
 
-The exact list of the elements above varies in different types of charts and the state chart is on. For instance the Context Menu of a categorized chart contains "Include/Exclude" functionality, [Treemap charts](../Basic_Charts/TreeMap_Chart) provide "Drill up" option when available. See the [Menu items keys](#menu_items_keys) list to learn more.
+The exact list of the elements above varies in different types of charts and the state chart is on. For instance the Context Menu of a categorized chart contains "Include/Exclude" functionality, [Treemap charts](../../Basic_Charts/Treemap_Chart) provide "Drill up" option when available. See the [Menu items keys](#menu_items_keys) list to learn more.
   
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} method. This method uses function as a parameter:
 

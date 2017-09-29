@@ -5,7 +5,7 @@
 
 This article explains how to create a Polar Polygon chart in AnyChart.
 
-To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Polygon Chart](../Polygon_Chart) article to learn about other available settings.
+To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Area Chart](../Area_Chart) article to learn about other available settings, these series have similar settings.
 
 ## Quick Start
 
