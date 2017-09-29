@@ -20,7 +20,7 @@ AnyChart [Data Sets](Using_Data_Sets) mechanism allows you to solve a number of 
 ## Data Models
 
 AnyChart Data engine is very flexible and it has several data models inside, these models are used in different chart types for the purpose of being as robust and comfortable to use as possible, please see:
-- [Using Data Tree Model](Using_Data_Tree_Model) to learn how hierarchical data is used in [Gantt Charts](../Gantt_Chart/Quick_Start) and [Tree Maps](../Basic_Charts/TreeMap_Chart),
+- [Using Data Tree Model](Using_Data_Tree_Model) to learn how hierarchical data is used in [Gantt Charts](../Gantt_Chart/Quick_Start) and [Treemaps](../Basic_Charts/Treemap_Chart),
 - [Using Table Data Model](Using_Table_Data_Model) to learn how to work with big date time based datasets in [Stock Charts](../Stock_Charts/Overview),
 - [Using Data Sets](Using_Data_Sets) and [AnyChart Data Streaming and Manipulation (CRUD)](Data_Manipulation) to learn how [most of AnyChart Charts](../Quick_Start/Supported_Charts_Types) work with the data.
 

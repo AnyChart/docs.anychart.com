@@ -4,6 +4,8 @@ http-ignore = ["http://support.anychart.com", "http://phantomjs.org", "http://ww
 [redirect]
 redirects = """
 /7.1.1/Axes_Grid_Scales_Trends_etc/Axis_Scale >> /7.1.1/Axes_Grid_Scales_Trends_etc/Scales
+/Basic_Charts/TreeMap_Chart >> /Basic_Charts/Treemap_Chart
+/Basic_Charts_Types/TreeMap_Chart >> /Basic_Charts/Treemap_Chart
 /Basic_Charts_Types/Area_Chart >> /Basic_Charts/Area_Chart
 /Basic_Charts_Types/Bar_Chart >> /Basic_Charts/Bar_Chart
 /Basic_Charts_Types/Box_Chart >> /Basic_Charts/Box_Chart
