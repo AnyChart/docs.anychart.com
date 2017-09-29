@@ -139,7 +139,7 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-{sample :height 600}BCT\_Treemap\_17{sample}
+{sample :height 600}BCT\_Treemap\_Chart\_17{sample}
 
 ### Traverse
 
