@@ -472,7 +472,7 @@ chart.tooltip().format(function(){
 
 #### Adjusting Font Size
 
-The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.TreeMap#labels}labels(){api} with {api: anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
+The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.TreeMap#labels}labels(){api} with {api:anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
 /* adjust the font size of labels
