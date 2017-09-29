@@ -7,25 +7,54 @@
 <meta name="is-new" content="false"/>
 <script src="https://static.anychart.com/js/RC-8.0.0/graphics.min.js" data-export="true"></script>
 <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
-<script x-export="stage">
-stage = acgraph.create("container");
+<script x-export="stage">stage = acgraph.create("container");
 
-// create the text element as html
-text1  = stage.text(0, 0, "By Letter Text Wrap Mode. This is another custom text element, which is made multiline with the help of AnyChart Graphics methods. It shows how the natural text behaves.");
-// text settings
-text1.width(150);
-text1.height(150);
-text1.wordWrap("break-word");
-text1.wordBreak("break-all");
+// circle path
+var circlePath = stage.path();
+circlePath.circularArc(100, 100, 50, 50, 0, 360);
 
-// create second text 
-text2 = stage.text(170, 0, "By Word Text Wrap Mode. This is another custom text element, which is made multiline with the help of AnyChart Graphics methods. It shows how the natural text behaves.");
-// text settings
-text2.width(150);
-text2.height(150);
-text2.wordWrap("break-word");
-text2.wordBreak("normal");
-</script>
+// set the text
+text = stage.text(0,0,"This is my custom text nicely curved along the circle.");
+// set path
+text.path(circlePath);
+text.fontSize("11px");
+
+// create a complex Spiral
+var curvePath = stage.path();
+
+var radius = 0;
+var angle = 0;
+cx = 280;
+cy = 100;
+curvePath.moveTo(cx, cy);
+
+for (var n = 0; n < 150; n++) {
+radius += 0.55;
+angle += (Math.PI * 2) / 50;
+x = cx + radius * Math.cos(angle);
+y = cy + radius * Math.sin(angle);
+curvePath.lineTo(x, y);
+}
+
+// set the text
+text1 = stage.text(0,0,"This is my custom text nicely curved along the curve named spiral, it resembles a snail.");
+// set path
+text1.path(curvePath);
+text1.fontSize("11px");
+
+// circle path
+var rectPath = stage.path();
+rectPath.moveTo(420, 50)
+        .lineTo(585, 50)
+        .lineTo(585, 150)
+        .lineTo(420, 150)
+        .lineTo(420, 50);
+
+// set the text
+text = stage.text(0,0,"This is my custom text put around a rectangle. Can something be around a rectangle?");
+// set path
+text.path(rectPath);
+text.fontSize("12px");</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

@@ -119,6 +119,19 @@ text2.lineHeight(20);
 
 {sample :width 832 :height 255}GFX\_Basic\_Text\_07{sample}
 
+## Curved Text Along the Path
+
+You can easily create a curved text using the {api:anychart.graphics.vector.Text#path}path(){api} method of the text object. 
+
+```
+var circlePath = stage.path();
+circlePath.circularArc(100, 100, 50, 50, 0, 360);
+```
+
+Path can be anything, here is a sample with several curved texts:
+
+{sample :height 255}GFX\_Basic\_Text\_08{sample}
+
 ## Wrap
 
 There are two modes of the {api:anychart.core.Text#wordWrap}wordWrap(){api} method: 
@@ -144,7 +157,7 @@ text2.wordWrap("break-word");
 text2.wordBreak("normal");
 ```
 
-{sample :width 832 :height 255}GFX\_Basic\_Text\_08{sample}
+{sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
 
 ### Wrap by Letter
 
@@ -160,4 +173,4 @@ text2.wordWrap("normal");
 text2.wordBreak("keep-all");
 ```
 
-{sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
+{sample :width 832 :height 255}GFX\_Basic\_Text\_10{sample}
