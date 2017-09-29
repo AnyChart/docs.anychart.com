@@ -15,12 +15,14 @@
 
     // configure no data label
     noDataLabel = chart.noData().label();
+    noDataLabel.enabled(true);    
     noDataLabel.text("Error: could not connect to data server");
     noDataLabel.background().enabled(true);
     noDataLabel.background().fill("White 0.5");
+    noDataLabel.background().stroke("2 Black");
 
     chart.title("No Data: Configure Label");
-    
+
     chart.container("container");
     chart.draw();
 });

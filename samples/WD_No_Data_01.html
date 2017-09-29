@@ -13,8 +13,8 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     chart = anychart.column();
 
-    // Get noData.
-    var noData = chart.noData(true);
+    // enable default no data label
+    chart.noData().label(true);
 
     chart.title("Get and modify noData object");
     chart.container("container");

@@ -11,7 +11,7 @@
 Use {api:anychart.core.Chart#noData}noData(){} method to enable "No data" label:
 
 ```
-chart.noData(true);
+chart.noData().label().enabled(true);
 ```
 
 {sample}WD\_No\_Data\_01{sample}
@@ -22,6 +22,7 @@ chart.noData(true);
 
 ```
 noDataLabel = chart.noData().label();
+noDataLabel.enabled(true);
 noDataLabel.text("Error: could not connect to data server");
 noDataLabel.background().enabled(true);
 noDataLabel.background().fill("White 0.5");

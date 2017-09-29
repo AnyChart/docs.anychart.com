@@ -14,7 +14,7 @@
     chart = anychart.column([["A", 2]]);
 
     // enable no data label
-    chart.noData(true);
+    chart.noData().label(true);
 
     chart.listen("dataChanged", function(event){
         if (event.hasData) {
