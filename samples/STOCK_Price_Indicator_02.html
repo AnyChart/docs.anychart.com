@@ -48,7 +48,7 @@
     series = chart.plot(0).line(mapping);
 
     // add price indicator
-    var indicator = chart.plot(0).priceIndicator();
+    var indicator = chart.plot(0).priceIndicator({value: 'last-visible'});
 
     // set the chart position and title
     chart.title("Price Indicator");
