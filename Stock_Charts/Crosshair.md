@@ -6,11 +6,24 @@
 
 A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
+The crosshair in AnyStock is similar to the [crosshair in basic charts](../Axes_and_Grids/Crosshair#labels).
+
+## Enabling
+
 In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return an instance of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
-For example, in the [Display Mode](#display_mode) section of this article, the display mode is set on the whole sample chart, and in the [Disabling](#disabling) section, the crosshair is disabled only on the first plot of the sample chart.
+By default the crosshair is enabled. To disable it on a chart or a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` parameter:
 
-The crosshair in AnyStock is similar to the crosshair in basic charts – see the basic [Crosshair](../Axes_and_Grids/Crosshair#labels) article to learn more.
+```
+// disable the crosshair
+chart.crosshair(false);
+```
+
+**Note** You can also hide a line of the crosshair – see the [Appearance](#appearance) section.
+
+This sample shows how to disable / enable the crosshair:
+
+{sample}STOCK\_Crosshair\_01{sample}
 
 ## Display Mode
 
@@ -23,13 +36,13 @@ To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}di
 chart.crosshair().displayMode("float");
 ```
 
-{sample}STOCK\_Crosshair\_01{sample}
+{sample}STOCK\_Crosshair\_02{sample}
 
 ## Appearance
 
 You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
 
-**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Disabling](#disabling) section of this article.
+**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Enabling](#enabling) section of this article.
 
 In the following sample there is a Stock chart with two plots. The X- and Y-strokes of the crosshair have different visual settings, and on the second plot the X-stroke is not displayed:
 
@@ -47,7 +60,7 @@ plot_2.crosshair().yStroke("#00bfa5", 1.5);
 plot_2.crosshair().xStroke(null);
 ```
 
-{sample}STOCK\_Crosshair\_02{sample}
+{sample}STOCK\_Crosshair\_03{sample}
 
 ## Labels
 
@@ -108,20 +121,5 @@ crosshair_2.yLabel().background({
 ```
 
 In the sample below there is a Stock chart with two plots. Both plots have X-labels, the default text of Y-labels is changed on the whole chart, and all labels are colored to match the colors of their plots:
-
-{sample}STOCK\_Crosshair\_03{sample}
-
-## Disabling
-
-To disable the crosshair on your chart or on a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` parameter.
-
-**Note** You can also hide a line of a crosshair – see the [Appearance](#appearance) section.
-
-In this sample the crosshair is disabled on the first plot of the chart:
-
-```
-// disable the crosshair on the first plot
-plot_1.crosshair(false);
-```
 
 {sample}STOCK\_Crosshair\_04{sample}

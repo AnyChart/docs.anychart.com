@@ -52,8 +52,7 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Crosshair: Display Mode — " +
-                chart.crosshair().displayMode());
+    chart.title("Crosshair: Enabling");
 
     // set the chart container
     chart.container(stage);
@@ -61,24 +60,16 @@
     // initiate drawing the chart
     chart.draw();
 
-    /* create a label for setting the display mode
-    of the crosshair to "float" */
-    createLabel("Float", 10, function() {
-      // set the display mode of the crosshair
-      chart.crosshair().displayMode("float");
-      // update the title
-      chart.title("Crosshair: Display Mode — " +
-                  chart.crosshair().displayMode());
+    // create a label for disabling the crosshair
+    createLabel("Disable", 10, function() {
+      // disable the crosshair
+      chart.crosshair(false);
     });
 
-    /* create a label for setting the display mode
-    of the crosshair to "sticky" */
-    createLabel("Sticky", 60, function() {
-      // set the display mode of the crosshair
-      chart.crosshair().displayMode("sticky");
-      // update the title
-      chart.title("Crosshair: Display Mode — " +
-                  chart.crosshair().displayMode());
+    // create a label for enabling the crosshair
+    createLabel("Enable", 75, function() {
+      // enable the crosshair
+      chart.crosshair(true);
     });
 });
 

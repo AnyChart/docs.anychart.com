@@ -39,9 +39,9 @@
       ]);
   
     // map the data
-    mapping = dataTable.mapAs({
-      open: 1, high: 2, low: 3, close: 4, value: 4
-    });
+    mapping = dataTable.mapAs(
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
+    );
 
     // create a stock chart
     chart = anychart.stock();
@@ -53,48 +53,17 @@
     // create two series: line and ohlc
     plot_1.line(mapping);
     plot_2.ohlc(mapping);
+   
+    // configure crosshair strokes on the first plot
+    plot_1.crosshair().yStroke("#00bfa5", 1.5);
+    plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
 
-    /* enable the crosshair label
-    on the x-axis of the first plot */
-    plot_1.crosshair().xLabel(true);
-  
-    /* configure the text of crosshair labels
-    on the y-axis */
-    chart.crosshair().yLabel().format(function(){
-      return this.value + " $";
-    });
+    // configure crosshair strokes on the second plot
+    plot_2.crosshair().yStroke("#00bfa5", 1.5);
+    plot_2.crosshair().xStroke(null);
 
-    /* configure the appearance of crosshair labels
-    on the first plot */
-    var crosshair_1 = plot_1.crosshair();
-    crosshair_1.xLabel().fontColor("#64b5f6");
-    crosshair_1.xLabel().background({
-      fill: "white",
-      stroke: "#64b5f6"
-    });
-    crosshair_1.yLabel().fontColor("#64b5f6");
-    crosshair_1.yLabel().background({
-      fill: "white",
-      stroke: "#64b5f6"
-    });
-
-    /* configure the appearance of crosshair labels
-    on the second plot */
-    var crosshair_2 = plot_2.crosshair();
-    crosshair_2.xLabel().fontColor("#ffa000");
-    crosshair_2.xLabel().background({
-      fill: "white",
-      stroke: "#ffa000"
-    });
-    crosshair_2.yLabel().fontColor("#ffa000");
-    crosshair_2.yLabel().background({
-      fill: "white",
-      stroke: "#ffa000"
-    });
-
-    // set the chart padding and title
-    chart.padding().left(75);
-    chart.title("Crosshair: Labels");
+    // set the chart title
+    chart.title("Crosshair: Appearance");
 
     // set the container id
     chart.container("container");
