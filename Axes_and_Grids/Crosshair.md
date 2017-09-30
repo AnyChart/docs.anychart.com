@@ -26,19 +26,6 @@ In this sample the crosshair is enabled, and there are also buttons to disable a
 
 {sample}STOCK\_Crosshair\_01{sample}
 
-## Display Mode
-
-[The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.]
-
-To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `float` or `sticky` as a parameter:
-
-```
-// set the display mode of the crosshair
-chart.crosshair().displayMode("sticky");
-```
-
-{sample}AGST\_Crosshair\_02{sample}
-
 ## Binding to Axes
 
 [In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method for this.
@@ -52,7 +39,7 @@ xLabel.axisIndex(0);
 ```
 Look at the sample below, there are three axes and the crosshair is on.]
 
-{sample}AGST\_Crosshair\_03{sample}
+{sample}AGST\_Crosshair\_02{sample}
 
 ## Appearance
 
@@ -60,13 +47,15 @@ You can configure the appearance of the crosshair by adjusting its X- and Y-stro
 
 **Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Enabling](#enabling) section of this article.
 
-In the following sample there is... the X-stroke is not displayed:
+In the following sample the appearance of the Y-Stroke is configured, and the X-stroke is not displayed:
 
 ```
-
+// configure crosshair strokes
+chart.crosshair().xStroke(null);
+chart.crosshair().yStroke("#dd2c00", 1.5, "10 5", "round");
 ```
 
-{sample}AGST\_Crosshair\_04{sample}
+{sample}AGST\_Crosshair\_03{sample}
 
 ## Labels
 
@@ -100,4 +89,4 @@ It is also possible to configure the appearance of labels. For example, you can 
 
 In the sample below there is... the default text of Y-labels is changed... labels are colored to match the colors of their plots:
 
-{sample}AGST\_Crosshair\_05{sample}
+{sample}AGST\_Crosshair\_04{sample}

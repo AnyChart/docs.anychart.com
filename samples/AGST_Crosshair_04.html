@@ -6,40 +6,56 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
-    <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-stock.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-annotations.min.js" data-export="true"></script>
 
-  // data
-  var data = [
-    ["P1" , 3.6 , 2.3],
-    ["P2" , 7.1 , 4.0],
-    ["P3" , 8.5 , 6.2],
-    ["P4" , 9.2 , 11.8],
-    ["P5" , 10.1, 13.0],
-    ["P6" , 11.6, 13.9],
-    ["P7" , 16.4, 18.0],
-    ["P8" , 18.0, 23.3],
-    ["P9" , 13.2, 24.7],
-    ["P10", 12.0, 18.0]
-  ];
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
+    // create a data set
+    var data = [
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ];
 
-  // create line chart
-  chart = anychart.column();
-  chart.data(data);
-  chart.title("Column Chart with a Crosshair");
+    // create a column chart
+    chart = anychart.column();
 
-  // enable crosshair
-  chart.crosshair().enabled(true);      
-  // remove the x-axis line
-  chart.crosshair().xStroke(null); 
-      
-  // set container id for the chart
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
+    // set the data
+    chart.data(data);
+
+    // enable the crosshair
+    chart.crosshair(true);
+
+    // disable X-labels
+    chart.crosshair().xLabel(false);
+
+    // configure the text of Y-labels
+    chart.crosshair().yLabel().format(function(){
+      return this.value + " $";
+    });
+
+    // configure the appearance of crosshair labels
+    chart.crosshair().yLabel().fontColor("#ffa000");
+    chart.crosshair().yLabel().background({
+      fill: "white",
+      stroke: "#ffa000"
+    });
+
+    // set the chart padding and title
+    chart.padding().left(75);
+    chart.title("Crosshair: Labels");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
