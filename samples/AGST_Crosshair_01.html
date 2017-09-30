@@ -6,47 +6,78 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
-    <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
-  // create data set on our data
-  var data = [
-    ["P1" , 3.6 , 2.3],
-    ["P2" , 7.1 , 4.0],
-    ["P3" , 8.5 , 6.2],
-    ["P4" , 9.2 , 11.8],
-    ["P5" , 10.1, 13.0],
-    ["P6" , 11.6, 13.9],
-    ["P7" , 16.4, 18.0],
-    ["P8" , 18.0, 23.3],
-    ["P9" , 13.2, 24.7],
-    ["P10", 12.0, 18.0],
-    ["P11", 3.2 , 15.1],
-    ["P12", 4.1 , 11.3],
-    ["P13", 6.3 , 14.2],
-    ["P14", 9.4 , 13.7],
-    ["P15", 11.5, 9.9],
-    ["P16", 13.5, 12.1],
-    ["P17", 14.8, 13.5],
-    ["P18", 16.6, 15.1],
-    ["P19", 18.1, 17.9],
-    ["P20", 17.0, 18.9]
-  ];
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-stock.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-annotations.min.js" data-export="true"></script>
 
-  // create line chart
-  chart = anychart.line();
-  chart.data(data);
-  chart.title("Line Chart with a Crosshair");
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
-  // enable crosshair
-  chart.crosshair().enabled(true);
-      
-  // set container id for the chart
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
-});</script>
+    // create a stage    
+    stage = anychart.graphics.create("container");  
+
+    // create data
+    var data = [
+      {x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}
+    ];
+
+    // create a line chart and set the data
+    chart = anychart.line(data);
+
+    // enable the crosshair
+    chart.crosshair(true);
+
+    // set the chart position and title
+    chart.top(15);
+    chart.title("Crosshair: Enabling");
+
+    // set the chart container
+    chart.container(stage);
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // create a label for disabling the crosshair
+    createLabel("Disable", 10, function() {
+      // disable the crosshair
+      chart.crosshair(false);
+    });
+
+    // create a label for enabling the crosshair
+    createLabel("Enable", 75, function() {
+      // enable the crosshair
+      chart.crosshair(true);
+    });
+});
+
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+  var label = anychart.standalones.label();
+  label.background({fill: "#1976d2"});
+  label.text(text);
+  label.fontColor("#fff");
+  label.padding(5);
+  label.parentBounds(offset, 5, 130, 100);    
+  label.listen("click", action);
+  label.container(stage);
+  label.draw();
+  label.listen("mouseOver", function(){
+      label.background().fill("#1976d2 0.5");
+      document.body.style.cursor = "pointer";
+      label.draw();
+  });
+  label.listen("mouseOut", function(){
+      label.background().fill("#1976d2");
+      document.body.style.cursor = "auto";
+      label.draw();
+  });    
+  return label;
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

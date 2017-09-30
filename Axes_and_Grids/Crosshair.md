@@ -13,7 +13,7 @@ A crosshair is a pair of perpendicular lines (horizontal and vertical) that move
 
 To configure the crosshair...
 
-By default the crosshair is disabled. To enable / disable it... with the `true` or `false` parameter:
+By default the crosshair is disabled. To enable or disable it... with the `true` or `false` parameter:
 
 ```
 // enable the crosshair
@@ -22,7 +22,7 @@ chart.crosshair(true);
 
 **Note** You can also hide a line of the crosshair – see the [Appearance](#appearance) section.
 
-This sample shows how to enable / disable the crosshair:
+In this sample the crosshair is enabled, and there are also buttons to disable and enable it:
 
 {sample}STOCK\_Crosshair\_01{sample}
 
@@ -66,7 +66,7 @@ In the following sample there is... the X-stroke is not displayed:
 
 ```
 
-{sample}AGST\_Crosshair\_03{sample}
+{sample}AGST\_Crosshair\_04{sample}
 
 ## Labels
 
