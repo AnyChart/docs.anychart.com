@@ -6,41 +6,75 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = [
-    ["P1" , 3.6 , 2.3],
-    ["P2" , 7.1 , 4.0],
-    ["P3" , 8.5 , 6.2],
-    ["P4" , 9.2 , 11.8],
-    ["P5" , 10.1, 13.0],
-    ["P6" , 11.6, 13.9],
-    ["P7" , 16.4, 18.0],
-    ["P8" , 18.0, 23.3],
-    ["P9" , 13.2, 24.7],
-    ["P10", 12.0, 18.0]
-  ];
-
-
   // create line chart
-  chart = anychart.column();
-  chart.data(data);
-  chart.title("Column Chart with a Crosshair");
+  chart = anychart.area();
 
-  // enable crosshair
-  chart.crosshair().enabled(true);      
-  // remove the x-axis line
-  chart.crosshair().xStroke(null); 
+  var crosshair = chart.crosshair();
+  crosshair.enabled(true);
+  // set the indexes of the axes used
+  var crossXLabels = chart.crosshair().xLabel();
+  crossXLabels.axisIndex(0);
+  var crossYLabels = chart.crosshair().yLabel();
+  crossYLabels.axisIndex(1);
+  // set formatter for crosshair y labels
+  crossYLabels.format(function(){
+    return this.value+"%";
+  });
+
+  // adding and adjusting extra Y scale
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(0);
+  extraYScale.maximum(100);
+  var extraTicks = extraYScale.ticks();
+  extraTicks.interval(10);
+
+  // adding and adjusting extra X axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
+  var extraLabels = extraYAxis.labels();
+  extraLabels.format(function(){
+    return this.value+"%";
+  });
+
+  // set chart title text settings
+  chart.title("Area Chart with a crosshair");
+
+  // create first series with mapped data
+  chart.area([
+    ["P1", 3.6],
+    ["P2", 7.1],
+    ["P3", 8.5],
+    ["P4", 9.2],
+    ["P5", 10.1],
+    ["P6", 11.6],
+    ["P7", 16.4],
+    ["P8", 18.0],
+    ["P9", 13.2],
+    ["P10", 12.0],
+    ["P11", 3.2],
+    ["P12", 4.1],
+    ["P13", 6.3],
+    ["P14", 9.4],
+    ["P15", 11.5],
+    ["P16", 13.5],
+    ["P17", 14.8],
+    ["P18", 16.6],
+    ["P19", 18.1],
+    ["P20", 17.0]
+  ]);
       
   // set container id for the chart
   chart.container("container");
   // initiate chart drawing
   chart.draw();
-});</script>
+});
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

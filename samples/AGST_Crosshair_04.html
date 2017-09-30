@@ -6,56 +6,36 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
-      
-  // create data set on our data
+
+  // data
   var data = [
-    ["P1",  3.6,  2.3],
-    ["P2",  7.1,  4.0],
-    ["P3",  8.5,  6.2],
-    ["P4",  9.2,  11.8],
-    ["P5",  10.1, 13.0],
-    ["P6",  11.6, 13.9],
-    ["P7",  16.4, 18.0],
-    ["P8",  18.0, 23.3],
-    ["P9",  13.2, 24.7],
-    ["P10", 12.0, 18.0],
-    ["P11", 3.2,  15.1],
-    ["P12", 4.1,  11.3],
-    ["P13", 6.3,  14.2],
-    ["P14", 9.4,  13.7],
-    ["P15", 11.5, 9.9],
-    ["P16", 13.5, 12.1],
-    ["P17", 14.8, 13.5],
-    ["P18", 16.6, 15.1],
-    ["P19", 18.1, 17.9],
-    ["P20", 17.0, 18.9]
+    ["P1" , 3.6 , 2.3],
+    ["P2" , 7.1 , 4.0],
+    ["P3" , 8.5 , 6.2],
+    ["P4" , 9.2 , 11.8],
+    ["P5" , 10.1, 13.0],
+    ["P6" , 11.6, 13.9],
+    ["P7" , 16.4, 18.0],
+    ["P8" , 18.0, 23.3],
+    ["P9" , 13.2, 24.7],
+    ["P10", 12.0, 18.0]
   ];
+
 
   // create line chart
   chart = anychart.column();
   chart.data(data);
   chart.title("Column Chart with a Crosshair");
 
-  // tune crosshair
-  chart.crosshair().enabled(true);
-  chart.crosshair().yLabel(false);
-
-  // adding and adjusting extra Y scale
-  var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(0);
-  extraYScale.maximum(100);
-  extraYScale.ticks().interval(10);
-
-  // adding and adjusting extra X axis
-  var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation("right");
-  extraYAxis.scale(extraYScale);
-  extraYAxis.labels().format("{%Value}%");
-
+  // enable crosshair
+  chart.crosshair().enabled(true);      
+  // remove the x-axis line
+  chart.crosshair().xStroke(null); 
+      
   // set container id for the chart
   chart.container("container");
   // initiate chart drawing
