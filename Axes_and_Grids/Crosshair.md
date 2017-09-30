@@ -9,19 +9,39 @@ A crosshair is a pair of perpendicular lines (horizontal and vertical) that move
 
 [Crosshairs can be used on all Cartesians ([Area](../Basic_Charts/Area_Chart), [Line](../Basic_Charts/Line_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Bar](../Basic_Charts/Bar_Chart), [Column](../Basic_Charts/Column_Chart), etc.) and [Scatter Charts](../Basic_Charts/Scatter_Plot/Overview).]
 
-## Enabling          
- 
-If you want to switch the Crosshair on, set the {api:anychart.core.ui.Crosshair}crosshair(){api} as true:
+## Enabling
+
+To configure the crosshair...
+
+By default the crosshair is disabled. To enable / disable it... with the `true` or `false` parameter:
 
 ```
-// turn the crosshair on
+// enable the crosshair
 chart.crosshair(true);
 ```
-{sample}AGST\_Crosshair\_01{sample}
 
-## Binding to axes
+**Note** You can also hide a line of the crosshair – see the [Appearance](#appearance) section.
 
-In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method for this.
+This sample shows how to enable / disable the crosshair:
+
+{sample}STOCK\_Crosshair\_01{sample}
+
+## Display Mode
+
+The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
+
+To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
+
+```
+// set the display mode of the crosshair
+chart.crosshair().displayMode("float");
+```
+
+{sample}AGST\_Crosshair\_02{sample}
+
+## Binding to Axes
+
+[In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method for this.
 
 ```
 // set the indexes of the axes used
@@ -30,13 +50,31 @@ yLabel.axisIndex(1);
 var xLabel = chart.crosshair().xLabel();
 xLabel.axisIndex(0);
 ```
-Look at the sample below, there are three axes and the crosshair is on.
+Look at the sample below, there are three axes and the crosshair is on.]
 
-{sample}AGST\_Crosshair\_02{sample}
+{sample}AGST\_Crosshair\_03{sample}
 
 ## Appearance
 
-### Lines
+You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
+
+**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Enabling](#enabling) section of this article.
+
+In the following sample there is a Stock chart with two plots. The X- and Y-strokes of the crosshair have different visual settings, and on the second plot the X-stroke is not displayed:
+
+```
+// create two plots
+var plot_1 = chart.plot(0);
+var plot_2 = chart.plot(1);
+
+// configure crosshair strokes on the first plot
+plot_1.crosshair().yStroke("#00bfa5", 1.5);
+plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
+
+// configure crosshair strokes on the second plot
+plot_2.crosshair().yStroke("#00bfa5", 1.5);
+plot_2.crosshair().xStroke(null);
+```
 
 In some situations you may not need one or both lines but highlighted labels are still necessary. Write {api:anychart.core.ui.Crosshair#xStroke}xStroke(null){api} to remove the x-axis line (or {api:anychart.core.ui.Crosshair#yStroke}yStroke(null){api} to remove the y-axis):
 
