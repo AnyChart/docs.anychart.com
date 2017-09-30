@@ -5,7 +5,7 @@ The Live Edit mode allows you to edit any part of your Gantt chart without touch
 
 In the following sample you can disable or enable editing mode and try to change whatever you like:
 
-{sample :height 300 }GANTT\_Interactivity\_08{sample}
+{sample :height 300}GANTT\_Interactivity\_05{sample}
 
 ## Defaults
 

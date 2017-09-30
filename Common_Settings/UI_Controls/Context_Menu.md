@@ -97,7 +97,7 @@ Here is a sample with adjusted text of the default item and hidden last item:
 
 ## Adjust Text
 
-You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using [localization strings](localize-the-context-menu). 
+You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using [localization strings](#localize-the-context-menu). 
 
 In the next sample captions of the "Save chart as..." and the "Save data as..." items are modified using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api}.
 
@@ -122,8 +122,7 @@ Right click to see modified menu:
 
 ## Change behaviour
 
-You can adjust behavior of any element in {api:anychart.ui.
-ContextMenu#itemsFormatter}itemsFormatter(){api}. 
+You can adjust behavior of any element in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api}. 
 
 ```
 chart.contextMenu().itemsFormatter(function(items){
@@ -141,8 +140,7 @@ chart.contextMenu().itemsFormatter(function(items){
 
 ## Add Item
 
-You can add item in {api:anychart.ui.
-ContextMenu#itemsFormatter}itemsFormatter(){api}, use index to put it in proper place. 
+You can add item in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api}, use index to put it in proper place. 
 
 ```
 // add items
