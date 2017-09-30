@@ -17,7 +17,7 @@ To enable AnyChart Context Menu feature you need to reference the UI module and 
 
 Here is a sample with the default context menu: 
 
-{sample}CS\_ContextMenu\_01{sample}
+{sample}CS\_Context\_Menu\_01{sample}
 
 ## Disable
 
@@ -28,9 +28,17 @@ var chart = anychart.column();
 chart.contextMenu(false);
 ```
 
+**Note:** Removing reference to UI JavaScript or CSS file may lead to the same result.
+
 Here is a sample of two charts on the stage, one with disabled context menu:
 
-{sample}CS\_ContextMenu\_02{sample}
+{sample}CS\_Context\_Menu\_02{sample}
+
+**Note:** When you remove AnyChart Context Menu - default browser appears, you can remove browser context menu like this:
+
+```
+document.addEventListener('contextmenu', event => event.preventDefault());
+```
 
 ## Adjust Items
 
@@ -93,7 +101,7 @@ chart.contextMenu().itemsFormatter(function(items){
 
 Here is a sample with adjusted text of the default item and hidden last item:
 
-{sample}CS\_ContextMenu\_03{sample}
+{sample}CS\_Context\_Menu\_03{sample}
 
 ## Adjust Text
 
@@ -118,7 +126,7 @@ chart.contextMenu().itemsFormatter(function(items){
 
 Right click to see modified menu:
 
-{sample}CS\_ContextMenu\_04{sample}
+{sample}CS\_Context\_Menu\_04{sample}
 
 ## Change behaviour
 
@@ -136,7 +144,7 @@ chart.contextMenu().itemsFormatter(function(items){
 });
 ```
 
-{sample}CS\_ContextMenu\_05{sample}
+{sample}CS\_Context\_Menu\_05{sample}
 
 ## Add Item
 
@@ -168,7 +176,7 @@ chart.contextMenu().itemsFormatter(function(items){
 });
 ```
 
-{sample}CS\_ContextMenu\_06{sample}
+{sample}CS\_Context\_Menu\_06{sample}
 
 ## Custom Context Menu
 
@@ -213,7 +221,7 @@ menu.attach(chart);
 
 Here is a sample of a chart with the custom context menu:
 
-{sample}CS\_ContextMenu\_07{sample}
+{sample}CS\_Context\_Menu\_07{sample}
 
 ## Context
 

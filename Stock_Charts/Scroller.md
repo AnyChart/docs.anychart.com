@@ -118,3 +118,11 @@ chart.listen("selectedrangechangestart", function(e){
 Here is a live sample:
 
 {sample}STOCK\_Scroller\_06{sample}
+
+## Preserve Selected Range
+
+The {api:anychart.charts.Stock#preserveSelectedRangeOnDataUpdate}preserveSelectedRangeOnDataUpdate(){api} method is used to define the behavior of Scroller when data is streamed. By default the selected range is visually the same, if set to 'true' - it stays the same logically. 
+
+```
+chart.preserveSelectedRangeOnDataUpdate(true);
+```
