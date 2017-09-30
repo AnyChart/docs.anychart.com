@@ -72,7 +72,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
 <tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
-<tr><td>[Treemap Chart](../Basic_Charts/TreeMap_Chart)</td></tr>
+<tr><td>[Treemap Chart](../Basic_Charts/Treemap_Chart)</td></tr>
 <tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
 <tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>

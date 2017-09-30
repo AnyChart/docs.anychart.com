@@ -182,8 +182,9 @@ This section lists all keys and describes when the elements with such keys can a
 
 ### Every chart
 
-- 'start-select-marquee'
-- 'select-marquee-separator'
+
+- select-marquee-start
+- select-marquee-separator
 - 'export-as'
   - 'export-as-png'
   - 'export-as-jpg'
@@ -203,26 +204,25 @@ This section lists all keys and describes when the elements with such keys can a
 
 ### anychart.core.ChartWithOrthogonalScales:
 
-- 'excluded-point- {INDEX_OF_POINT} 
- - 'excluded-point-10'
- - 'excluded-points-separator'
-- 'include-all-points'
-- 'exclude-point'
-- 'excluded-points'
-- 'keep-only'
-- 'chart-with-series-point-separator'
+- exclude-points-list
+- exclude-points-point*
+- exclude-points-point
+- exclude-points-keep-only
+- exclude-points-include-all
+- excluded-points-separator
+- chart-with-series-point-separator
 
 ### Stock Charts
 
-- 'start-zoom-marquee'
-- 'start-select-marquee'
-- 'stock-specific-separator'
+- select-marquee-start
+- zoom-marquee-start
+- stock-specific-separator
 
 ### Treemap
 
-- 'drilldown-to'
-- 'drill-up'
-- 'drill-separator'
+- drill-down-to
+- drill-down-up
+- drill-down-separator
 
 ## Localize the context menu
 

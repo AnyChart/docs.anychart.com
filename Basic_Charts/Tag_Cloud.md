@@ -158,14 +158,13 @@ chart.data(text, {
         mode: "byWord",
         maxItems: 16,
         ignoreItems: [
-
-                         "the",
-                         "and",
-                         "he",
-                         "or",
-                         "of",
-                         "in",
-                         "thy",
+                     "the",
+                     "and",
+                     "he",
+                     "or",
+                     "of",
+                     "in",
+                     "thy"
         ]
 });
 ```
@@ -180,14 +179,14 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-Combine them with methods listed in {api:anychart.core.TagCloudStateSettings}anychart.core.TagCloudStateSettings{api}:
+Combine them with methods listed in {api:anychart.core.StateSettings}http://api.anychart.stg/RC-8.0.0/anychart.core.StateSettings{api}:
 
-* {api:anychart.core.TagCloudStateSettings#fill}fill(){api} sets the color and opacity of the fill
-* {api:anychart.core.TagCloudStateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.
-* {api:anychart.core.TagCloudStateSettings#fontSize}fontSize(){api} sets the font size
-* {api:anychart.core.TagCloudStateSettings#fontStyle}fontStyle(){api} sets the font style – normal, italic, oblique
-* {api:anychart.core.TagCloudStateSettings#fontVariant}fontVariant(){api} sets the font variant – normal or small caps
-* {api:anychart.core.TagCloudStateSettings#fontWeight}fontWeight(){api} sets the font weight 
+* {api:anychart.core.StateSettings#fill}fill(){api} sets the color and opacity of the fill
+* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.core.StateSettings#fontSize}fontSize(){api} sets the font size
+* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} sets the font style – normal, italic, oblique
+* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} sets the font variant – normal or small caps
+* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} sets the font weight 
 
 For example:
 
@@ -401,11 +400,11 @@ You might want to link elements of a Tag Cloud to web pages. In this case, use t
 For example, here clicking on a word leads to its page opening in Wiktionary:
 
 ```
-  //add an event listener
-  chart.listen("pointClick", function(e){
-      var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
-      window.open(url, "_blank");
-  });
+// add an event listener
+chart.listen("pointClick", function(e){
+  var url = "//en.wiktionary.org/wiki/" + e.point.get("x");
+  window.open(url, "_blank");
+});
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_16{sample}
