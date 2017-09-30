@@ -28,13 +28,13 @@ In this sample the crosshair is enabled, and there are also buttons to disable a
 
 ## Display Mode
 
-The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
+[The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.]
 
-To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `sticky` or `float` as a parameter:
+To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `float` or `sticky` as a parameter:
 
 ```
 // set the display mode of the crosshair
-chart.crosshair().displayMode("float");
+chart.crosshair().displayMode("sticky");
 ```
 
 {sample}AGST\_Crosshair\_02{sample}

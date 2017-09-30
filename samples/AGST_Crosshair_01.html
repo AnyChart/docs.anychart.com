@@ -17,17 +17,20 @@
     // create a stage    
     stage = anychart.graphics.create("container");  
 
-    // create data
+    // create a data set
     var data = [
-      {x: "January", value: 10000},
-      {x: "February", value: 12000},
-      {x: "March", value: 18000},
-      {x: "April", value: 11000},
-      {x: "May", value: 9000}
+      ["January", 12000, 10000],
+      ["February", 15000, 12000],
+      ["March", 16000, 18000],
+      ["April", 15000, 11000],
+      ["May", 14000, 9000]
     ];
 
-    // create a line chart and set the data
-    chart = anychart.line(data);
+    // create a chart
+    chart = anychart.line();
+
+    // set the data
+    chart.data(data);
 
     // enable the crosshair
     chart.crosshair(true);
