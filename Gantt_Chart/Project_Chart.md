@@ -235,7 +235,7 @@ This is how it works:
 
 If there is a need to add an additional connection between tasks, you can define connectors with these settings:
 
-{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}connectorType{api}. It can belong to one of four types: "StartStart", "StartFinish", "FinishStart", "FinishFinish"
+{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}connectorType{api}. It can belong to one of four types: "start-start", "start-finish", "finish-start", "finish-finish"
 (taskID
 {api:anychart.enums.GanttDataFields#CONNECT_TO}connectTo){api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
 
@@ -248,19 +248,19 @@ Types of task connectors:
 <th>Description</th>
 </tr>
 <tr>
-<td>StartStart</td>
+<td>start-start</td>
 <td>The second can’t start until the first task starts</td>
 </tr>
 <tr>
-<td>StartFinish</td>
+<td>start-finish</td>
 <td>The second task can’t finish until the first begins. </td>
 </tr>
 <tr>
-<td>FinishStart</td>
+<td>finish-start</td>
 <td>The second task can’t start until the first is done. </td>
 </tr>
 <tr>
-<td>FinishFinish</td>
+<td>finish-finish</td>
 <td>The second task can’t finish until the first task is done.</td>
 </tr>
 </tbody>
@@ -275,7 +275,7 @@ Types of task connectors:
     "actualStart": Date.UTC(2010, 4, 29, 9),
     "actualEnd": Date.UTC(2010, 5, 12, 11),
     "connectTo": "5",
-    "connectorType": "FinishStart"
+    "connectorType": "finish-start"
 }
 ```
 

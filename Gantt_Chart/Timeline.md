@@ -288,7 +288,7 @@ function getData() {
                 "opacity": 0.3
             }  
         },
-        "connectorType": "FinishStart"
+        "connectorType": "finish-start"
     }}
 ```
 
