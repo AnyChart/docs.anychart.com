@@ -219,13 +219,9 @@ Here is a sample of a chart with the custom context menu:
 
 Context Menu passes context (additional information) into the formatting function depending on a point. The information on context can be found in {api:anychart.ui.ContextMenu.PrepareItemsContext}api{api}. It helps to make the Context Menu more flexible and provides additional functionality.
 
-{ssample}CS\_ContextMenu\_07{ssample}
-
 ## Change the Look
 
 If you want to tune the visual appearance of the Context Menu you can define desirable appearance in your CSS file for custom CSS class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}addClassName(){api} method.
-
-{ssample}CS\_ContextMenu\_08{ssample}
 
 ## Menu items keys
 
@@ -233,15 +229,15 @@ The default context menu contains different set of items for different charts an
 
 This section lists all keys and describes when the elements with such keys can appear, along with the default text:
 
-### Every chart
+### All charts
 
 - select-marquee-start
 - select-marquee-separator
-- 'export-as'
-  - 'export-as-png'
-  - 'export-as-jpg'
-  - 'export-as-pdf'
-  - 'export-as-svg'
+- save-chart-as'
+  - save-chart-as-png'
+  - save-chart-as-jpg'
+  - save-chart-as-pdf'
+  - save-chart-as-svg'
 - 'exporting-separator'
 - 'save-data-as'
   - 'save-as-text'
@@ -254,7 +250,7 @@ This section lists all keys and describes when the elements with such keys can a
 - 'print-chart'
 - 'about'
 
-### anychart.core.ChartWithOrthogonalScales:
+### Basic Cartesian Charts
 
 - exclude-points-list
 - exclude-points-point*

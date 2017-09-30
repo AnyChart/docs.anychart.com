@@ -5,13 +5,9 @@
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack_mode) set by {api:?entry=stackMode}stackMode(){} method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
+In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack_mode) set by {api:?entry=stackMode}stackMode(){api} method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
-
-## Marimekko Charts
-
-Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Mekko_Chart) articles to learn how to build them with AnyChart.
 
 ## Value Stacking
 
@@ -190,6 +186,21 @@ chart.line(seriesData_3);
 
 {sample}BCT\_Stacking\_06{sample}
 
+## Stacking Order
+
+You can change the order of stacking using the {api:anychart.scales.Linear#stackDirection}stackDirection(){api} method:
+
+```
+yScale().stackMode("value");
+
+// Set the stacking direction.
+yScale().stackDirection("reverse")
+```
+
+Here is a sample that shows both stacking order directions"
+
+{sample}BCT\_Stacking\_07{sample}
+
 ## Supported Types
 
 Here is the list of supported stacked charts:
@@ -223,7 +234,9 @@ Here is the list of supported stacked charts:
 * [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
 * [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
 
-Marimekko charts are a special case of stacked charts:
+## Marimekko Charts
+
+Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Mekko_Chart) articles to learn how to build them with AnyChart.
 
 * [Mekko Chart](../Marimekko_Chart/Mekko_Chart)
 * [BarMekko Chart](../Marimekko_Chart/BarMekko_Chart)
