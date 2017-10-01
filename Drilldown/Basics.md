@@ -1,14 +1,5 @@
 # Drilldown Chart
 
-* [Overview](#overview)
-* [Step by Step Guide](#step-by-step-guide)
- * [Create a Chart](#create-a-chart)
- * [Prepare Data](#prepare-data)
- * [Implement Drilldown](#implement-drilldown)
- * [Tune the Chart](#tune-the-chart)
- * [Drill-Up Button](#drillup-button)
-* [Multilevel Drilldown](#multilevel-drilldown)
-
 ## Overview
 
 Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](../Common_Settings/Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](../Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked.
@@ -52,7 +43,7 @@ var data = [
 
 Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../Working_with_Data/Using_Data_Sets).
 
-# Create a Chart
+### Create a Chart
 
 Now we have our data, now we simply feed this data set to a constructor that creates a chart and displays a chart on the page in some block-based element. You may be familiar with the basics, if not - please see [AnyChart Quick Start](../Quick_Start/Quick_Start).
 
@@ -97,7 +88,7 @@ Basically the work is done, this foundation provides us with all we need and we 
 The basic chart is nice but we obviously need to tune it so it looks nice in this particular case. We will add three easy settings:
 - Format [Axis Labels](../Axes_and_Grids/Axes_Labels_Formatting) so they show 'k' or 'm' for thousands and millions;
 - Tune [tooltips](../Common_Settings/Tooltip) to show '$' sign;
-- Change [interactivity](../Interactivity) settings so the elements can't be selected.
+- Change [interactivity](../Common_Settings/Interactivity) settings so the elements can't be selected.
 
 We can do all this using this simple code:
 
@@ -114,7 +105,7 @@ And now the chart looks and feels better:
 
 {sample}CS\_Drilldown\_Chart\_02{sample}
 
-## Drill-Up Button
+## Drill Up Button
 
 One thing you may want is to have a button on a chart that will take an end user a level up, this button may be implemented in several ways, we will show three of them.
 
@@ -143,23 +134,23 @@ That's it, with a miniscule amount of coding you have a drilldown column chart:
 
 {sample}CS\_Drilldown\_Chart\_03{sample}
 
-### jQuery Option
+### jQuery Button
 
 With jQuery you need to create an element, assign proper styles and code reactions.
 
-Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](http://jsfiddle.net/rnug0bxb/).
+Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rnug0bxb/).
 
-### Pure HTML Option
+### Pure HTML Button
 
 You can go and create a button without use of anything, just pure HTML and JavaScript:
 
-Here is the same sample as above but with a button created using pure HTML and JavaScript: [AnyChart Drilldown Chart sample with HTML Button](http://jsfiddle.net/1jum7L4j/).
+Here is the same sample as above but with a button created using pure HTML and JavaScript: [AnyChart Drilldown Chart sample with HTML Button](https://jsfiddle.net/1jum7L4j/).
 
 ## Improvements
 
 The sample shown above is an illustration of idea and you can make tons of improvements depending on the nature of your task. We will showcase several of them below.
 
-## Multilevel Drilldown
+### Multilevel Drilldown
 
 The first modification is not a modification at all, it is a demonstration of the flexibility of concept shown in the basic sample: without changing anything in the code you can have multilevel drilldown chart. All you need to do is actually add multilevel data. Here is how the data will look like:
 
