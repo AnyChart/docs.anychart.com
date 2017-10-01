@@ -105,7 +105,7 @@ And now the chart looks and feels better:
 
 {sample}CS\_Drilldown\_Chart\_02{sample}
 
-## Drill-Up Button
+## Drill Up Button
 
 One thing you may want is to have a button on a chart that will take an end user a level up, this button may be implemented in several ways, we will show three of them.
 
@@ -134,13 +134,13 @@ That's it, with a miniscule amount of coding you have a drilldown column chart:
 
 {sample}CS\_Drilldown\_Chart\_03{sample}
 
-### jQuery Option
+### jQuery Button
 
 With jQuery you need to create an element, assign proper styles and code reactions.
 
 Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rnug0bxb/).
 
-### Pure HTML Option
+### Pure HTML Button
 
 You can go and create a button without use of anything, just pure HTML and JavaScript:
 
