@@ -122,10 +122,8 @@ indicator2 = chart.plot(0).priceIndicator({axis: chart.plot(0).yAxis(1)});
 The following set of methods give provide you with ability to define how price indicator label and line looks like.
 
 - {api:anychart.core.axisMarkers.CurrentPriceIndicator#label}label(){api} and {api:anychart.core.axisMarkers.CurrentPriceIndicator#stroke}stroke(){api} methods are basic settings if you want stroke and label always remain the same,
-- {api:anychart.core.axisMarkers.CurrentPriceIndicator#fallingLabel}fallingLabel(){api} and
-{api:anychart.core.axisMarkers.CurrentPriceIndicator#fallingStroke}fallingStroke(){api} methods are used to define how label and line look like for falling values,
-- {api:anychart.core.axisMarkers.CurrentPriceIndicator#risingLabel}risingLabel(){api} and 
-{api:anychart.core.axisMarkers.CurrentPriceIndicator#risingStroke}risingStroke{}{api} methods are used to define how label and line looke like for rising values,
+- {api:anychart.core.axisMarkers.CurrentPriceIndicator#fallingLabel}fallingLabel(){api} and {api:anychart.core.axisMarkers.CurrentPriceIndicator#fallingStroke}fallingStroke(){api} methods are used to define how label and line look like for falling values,
+- {api:anychart.core.axisMarkers.CurrentPriceIndicator#risingLabel}risingLabel(){api} and {api:anychart.core.axisMarkers.CurrentPriceIndicator#risingStroke}risingStroke(){api} methods are used to define how label and line looke like for rising values,
 
 ```
 var indicator = chart.plot(0).priceIndicator();
