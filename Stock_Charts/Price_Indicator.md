@@ -15,17 +15,15 @@ var indicator = chart.plot(0).priceIndicator({value: "last-visible"});
 ```
 
 {sample}STOCK\_Price\_Indicator\_01{sample}
-
-## Settings
  
-### Binding
+## Binding
 
 There are three main things you need to set to make price indicatot work correctly:
 - the [series and the value](#series_and_field) field in this series price indicator binds to,
 - the [date it takes value](#source_value) from,
 - the [axis it is shown on](#axis).
 
-#### Series and Field
+### Series and Field
 
 Two methods, the {api:anychart.core.axisMarkers.CurrentPriceIndicator#valueField}valueField(){api} and the {api:anychart.core.axisMarkers.CurrentPriceIndicator#series}series(){api} are used to define a series and a value field.
 
@@ -72,7 +70,7 @@ Here is a sample showcasing both ways:
 
 {sample}STOCK\_Price\_Indicator\_02{sample}
 
-#### Source Value
+### Source Value
 
 The parameter set by {api:anychart.core.axisMarkers.CurrentPriceIndicator#value}value(){api} defines which date price indicator bind to.
 
@@ -101,7 +99,7 @@ indicator3 = chart.plot(0).priceIndicator(2, {value: '2005-11-13'});
 
 {sample}STOCK\_Price\_Indicator\_03{sample}
 
-#### Axis
+### Axis
 
 If plot has several axis you can choose an axis where to show indicator, use the {api:anychart.core.axisMarkers.CurrentPriceIndicator#axis}axis(){api} method or define axis in initial object config:
 
@@ -116,7 +114,7 @@ indicator2 = chart.plot(0).priceIndicator(1, {axis: chart.plot(0).yAxis(1)});
 
 {sample}STOCK\_Price\_Indicator\_04{sample}
 
-### Appearance
+## Appearance
 
 The following set of methods give provide you with ability to define how price indicator label and line looks like.
 
