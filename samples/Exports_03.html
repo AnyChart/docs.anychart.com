@@ -6,17 +6,20 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+	  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+	  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+  // create a stage
+  stage = anychart.graphics.create("container");
 
   // data
   var data = [
-    {x: "Chocolate paste", value: 5},
-    {x: "White honey", value: 2},
-    {x: "Strawberry jam", value: 2},
-    {x: "Condensed milk", value: 1}
+    ["Chocolate paste", 5],
+    ["White honey", 2],
+    ["Strawberry jam", 2],
+    ["Condensed milk", 1]
   ];
 
   // set chart type
@@ -25,58 +28,43 @@
   // set chart title
   chart.title("Export data sample");
 
-  // set chart container
-  chart.container("container");
+  // display a chart
+  chart.container(stage).draw();
 
-  // set chart bounds
-  chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
-
-  // initiate chart drawing
-  chart.draw();
-
-  // create new buttons
-  var csvButton = document.createElement("div");
-  var xlsxButton = document.createElement("div");
-
-  csvButton.className = "custombutton";
-  xlsxButton.className = "custombutton";
-
-  csvButton.innerHTML = "CSV";
-  xlsxButton.innerHTML = "XLSX";
-
-  csvButton.onclick = function() {
+  // create buttons
+  createLabel("CSV", 10, function() {
     chart.saveAsCsv();
-  };
-  xlsxButton.onclick = function() {
+  });
+
+  createLabel("XLSX", 50, function() {
     chart.saveAsXlsx();
-  };
+  });
 
-  // append button to container
-  container.appendChild(csvButton);
-  container.appendChild(xlsxButton);
+});
 
-  var custombuttons = document.getElementsByClassName("custombutton");
-
-  // set style for all buttons
-  for (var i = 0; i<custombuttons.length; i++){
-    // set button style
-    custombuttons[i].style.top = 45*i + "px";
-    custombuttons[i].style.right = "5px";
-    custombuttons[i].style.width = "50px";
-    custombuttons[i].style.height = "auto";
-    custombuttons[i].style.backgroundColor = "#444444";
-    custombuttons[i].style.color = "white";
-    custombuttons[i].style.fontFamily = chart.title().fontFamily();
-    custombuttons[i].style.position = "absolute";
-    custombuttons[i].style.zIndex = 2;
-    custombuttons[i].style.transition = "0.5s";
-    custombuttons[i].style.textAlign = "center";
-    custombuttons[i].style.border = "3px solid #444444";
-    custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
-    custombuttons[i].style.fontSize = "18px";
-    custombuttons[i].style.cursor = "pointer";
-  }
-});</script>
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#1976d2"});
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    label.listen("mouseOver", function(){
+      label.background().fill("#1976d2 0.5")
+      document.body.style.cursor = "pointer";
+      label.draw();
+    });
+    label.listen("mouseOut", function(){
+      label.background().fill("#1976d2")
+      document.body.style.cursor = "auto";
+      label.draw();
+    });    
+return label;
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

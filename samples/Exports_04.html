@@ -9,14 +9,17 @@
 	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+  // create a stage
+  stage = anychart.graphics.create("container");
 
   // data
   var data = [
-    {x: "Winter", value: 5},
-    {x: "Spring", value: 2},
-    {x: "Summer", value: 2},
-    {x: "Autumn", value: 1}
+    ["Winter", 5],
+    ["Spring", 2],
+    ["Summer", 2],
+    ["Autumn", 1]
   ];
 
   // set chart type
@@ -25,58 +28,41 @@
   // set chart title
   chart.title("Export configuration sample");
 
-  // set chart container
-  chart.container("container");
+  // set chart container and draw
+  chart.container(stage).draw();
 
-  // set chart bounds
-  chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
+  createLabel("XML", 10, function() {
+    chart.saveAsXml("pancakes_chart_xml");
+  });
+  createLabel("JSON", 50, function() {
+    chart.saveAsJson("pancakes_chart_json");
+  });
 
-  // initiate chart drawing
-  chart.draw();
+});
 
-  // create new buttons
-  var xmlButton = document.createElement("div");
-  var jsonButton = document.createElement("div");
-
-  xmlButton.className = "custombutton";
-  jsonButton.className = "custombutton";
-
-  xmlButton.innerHTML = "XML";
-  jsonButton.innerHTML = "JSON";
-
-  xmlButton.onclick = function() {
-    chart.saveAsXml(true, "pancakes_data");
-  };
-  jsonButton.onclick = function() {
-    chart.saveAsJson(true, "pancakes_data");
-  };
-
-  // append button to container
-  container.appendChild(xmlButton);
-  container.appendChild(jsonButton);
-
-  var custombuttons = document.getElementsByClassName("custombutton");
-
-  // set style for all buttons
-  for (var i = 0; i<custombuttons.length; i++){
-    // set button style
-    custombuttons[i].style.top = 45*i + "px";
-    custombuttons[i].style.right = "5px";
-    custombuttons[i].style.width = "50px";
-    custombuttons[i].style.height = "auto";
-    custombuttons[i].style.backgroundColor = "#444444";
-    custombuttons[i].style.color = "white";
-    custombuttons[i].style.fontFamily = chart.title().fontFamily();
-    custombuttons[i].style.position = "absolute";
-    custombuttons[i].style.zIndex = 2;
-    custombuttons[i].style.transition = "0.5s";
-    custombuttons[i].style.textAlign = "center";
-    custombuttons[i].style.border = "3px solid #444444";
-    custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
-    custombuttons[i].style.fontSize = "18px";
-    custombuttons[i].style.cursor = "pointer";
-  }
-});</script>
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#1976d2"});
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    label.listen("mouseOver", function(){
+      label.background().fill("#1976d2 0.5")
+      document.body.style.cursor = "pointer";
+      label.draw();
+    });
+    label.listen("mouseOut", function(){
+      label.background().fill("#1976d2")
+      document.body.style.cursor = "auto";
+      label.draw();
+    });    
+return label;
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

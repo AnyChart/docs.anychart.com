@@ -27,26 +27,28 @@ If you want to change default file name for all exports at once you can use {api
 anychart.exports.filename('custom_name');
 ```
 
-After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods as shown below.
+After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods or for the specific chart.
 
 ## Image
 
-AnyChart js charting library allows to save charts in 3 different image formats: SVG, PNG and JPG, using {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api}, {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} and {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} methods.
+AnyChart js charting library allows to save charts in 3 different image formats: SVG, PNG and JPG:
 
-Each method has common parameter: filename, and special parameters depending on format.
+- {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api}, 
+- {api:anychart.core.Chart#saveAsPng}saveAsPng(){api},
+- {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api}.
 
 ### SVG
 
 {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api} can be launched in two modes, one with width and height passed:
 
 ```
-saveAsSvg({width: 360, height: 500, filename: 'custom_name'})
+saveAsSvg({"width": 360, "height": 500, "filename": 'My Chart SVG'})
 ```
 
 And another one with paper size and page orientation set:
 
 ```
-saveAsSvg({paperSize: "A4", "landscape": false, "filename": "custom_name"});  
+saveAsSvg({"paperSize": "A4", "landscape": false, "filename": "My Chart SVG"});  
 ```
 
 ### PNG
@@ -54,7 +56,7 @@ saveAsSvg({paperSize: "A4", "landscape": false, "filename": "custom_name"});
 With {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} you can set width, height and quality in addition to file name:
 
 ```
-saveAsPng({width: 360, height: 500, quality: 0.3, filename: "custom_name"});
+saveAsPng({"width": 360, "height": 500, "quality": 0.3, "filename": "My Chart PNG"});
 ```
 
 ### JPG
@@ -62,7 +64,7 @@ saveAsPng({width: 360, height: 500, quality: 0.3, filename: "custom_name"});
 With {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} you can set width, height, quality and forceTransparentWhite flag and in addition to file name:
 
 ```
-saveAsJpg({width: 360, height: 500, quality: 0.3, forceTransparentWhite: "false", filename: "custom_name"});
+saveAsJpg({"width": 360, "height": 500, "quality": 0.3, "forceTransparentWhite": false, "filename": "My Chart JPG"});
 ```
 
 To launch the export you need to use these methods as shown:
@@ -102,8 +104,10 @@ AnyChart provides several methods for saving current chart's data. Output format
 With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you export data and file name:
 
 ```
-saveAsCsv({chartDataExportMode: "raw", csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
+saveAsCsv("raw", {"rowsSeparator": "\n", "columnsSeparator": ","}, filename: "csv_file");
 ```
+
+CSV has several export modes that depend on chart type, see {api:anychart.enums.ChartDataExportMode}anychart.enums.ChartDataExportMode{api} to learn more.
 
 ### Excel
 
@@ -111,8 +115,10 @@ With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you e
 
 ```
 // initiate saving chart's data in Xlsx format
-chart.saveAsXlsx({chartDataExportMode: 'specific', filename: "excel"});
+chart.saveAsXlsx('specific', "excel");
 ```
+
+Excel has several export modes that depend on chart type, see {api:anychart.enums.ChartDataExportMode}anychart.enums.ChartDataExportMode{api} to learn more.
 
 To launch the export you need to use these methods as shown:
 
@@ -133,14 +139,14 @@ Chart config may be saved using {api:anychart.core.Chart#saveAsXml}XML{api} and 
 
 ```
 // save chart data and configuration in XML format
-chart.saveAsXml({includeTheme: "false", filename: "chart_xml"});
+chart.saveAsXml("chart_xml", false);
 ```
 
 ### JSON
 
 ```
 // save chart data and configuration in Json format
-chart.saveAsJson({includeTheme: "false", filename: "chart_json"});
+chart.saveAsJson("json_config", false);
 ```
 
 Here is a sample of chart save as XML and save as JSON methods:
