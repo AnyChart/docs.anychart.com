@@ -50,23 +50,22 @@ chart = anychart.stock();
 
 // add two series
 ohlcSeries = chart.plot(0).ohlc(mapping);
-lineSeries = chart.plot(0).line(mapping);
+lineSeries = chart.plot(1).line(mapping);
 
 // add indicator to OHLC series
 var indicator1 = chart.plot(0).priceIndicator();
-indicator1.series(ohlc);
+indicator1.series(ohlcSeries);
 indicator1.valueField('high');
 
 // add indicator to line series
-var indicator2 = chart.plot(0).priceIndicator();
-indicator2.series(line);
+var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
 ```
 
 There is a shorter way to set this, using object overload:
 
 ```
 var indicator1 = chart.plot(0).priceIndicator({'series': ohlcSeries, valueField: 'high')
-var indicator2 = chart.plot(0).priceIndicator({'series': lineSeries});
+var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
 ```
 
 Here is a sample showcasing both ways:
@@ -95,9 +94,9 @@ indicator.value('first-visible');
 Here is a sample of a chart with three price indicators, each tracks the same series but the source of the value is different:
 
 ```
-indicator1 = chart.plot(0).priceIndicator({value: 'first-visible'});
-indicator2 = chart.plot(0).priceIndicator({value: 'series-end'});
-indicator3 = chart.plot(0).priceIndicator({value: '2008-08-24'});
+indicator1 = chart.plot(0).priceIndicator(0, {value: 'first-visible'});
+indicator2 = chart.plot(0).priceIndicator(1, {value: 'series-end'});
+indicator3 = chart.plot(0).priceIndicator(2, {value: '2008-08-24'});
 ```
 
 {sample}STOCK\_Price\_Indicator\_03{sample}
@@ -108,11 +107,11 @@ If plot has several axis you can choose an axis where to show indicator, use the
 
 ```
 // set axis using the method and axis index
-indicator1 = chart.plot(0).priceIndicator();
+indicator1 = chart.plot(0).priceIndicator(0);
 indicator1.axis(0);
 
 // set axis using object and link to axis
-indicator2 = chart.plot(0).priceIndicator({axis: chart.plot(0).yAxis(1)});
+indicator2 = chart.plot(0).priceIndicator(1, {axis: chart.plot(0).yAxis(1)});
 ```
 
 {sample}STOCK\_Price\_Indicator\_04{sample}

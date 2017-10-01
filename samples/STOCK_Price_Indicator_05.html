@@ -27,14 +27,14 @@
     lineSeries = chart.plot(1).line(mapping);
 
     // add indicator to OHLC series
-    var indicator1 = chart.plot(0).priceIndicator({'series': ohlcSeries});
+    var indicator1 = chart.plot(0).priceIndicator();
     indicator1.fallingStroke("#EF9A9A");
     indicator1.fallingLabel({background: "#F44336"});
     indicator1.risingStroke("#4CAF50");
     indicator1.risingLabel({background: "#A5D6A7"});
 
     // add indicator to line series
-    var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
+    var indicator2 = chart.plot(1).priceIndicator();
     // set line settings
     indicator2.stroke("Black", 2, "2 2");
     // configure label
@@ -46,6 +46,9 @@
 
     // set the chart container
     chart.container("container");
+   
+    // set padding
+    chart.padding().left(75);
 
     // initiate drawing the chart
     chart.draw();

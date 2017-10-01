@@ -30,12 +30,12 @@
     lineSeries = chart.plot(0).line(mapping);
 
     // create indicator and put it on the first axis
-    indicator1 = chart.plot(0).priceIndicator();
+    indicator1 = chart.plot(0).priceIndicator(0);
     // this actually is the default value
     indicator1.axis(0);
 
     // create another indicator and set the second axis
-    indicator2 = chart.plot(0).priceIndicator({axis: chart.plot(0).yAxis(1)});
+    indicator2 = chart.plot(0).priceIndicator(1, {axis: chart.plot(0).yAxis(1), value: 'last-visible'});
 
     // set the chart position and title
     chart.title("Price Indicator: Axis to Show On");

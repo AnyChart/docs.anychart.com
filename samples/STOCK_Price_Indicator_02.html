@@ -24,7 +24,7 @@
 
     // add two series
     ohlcSeries = chart.plot(0).ohlc(mapping);
-    lineSeries = chart.plot(0).line(mapping);
+    lineSeries = chart.plot(1).line(mapping);
 
     // add indicator to OHLC series
     var indicator1 = chart.plot(0).priceIndicator();
@@ -32,11 +32,13 @@
     indicator1.valueField('high');
 
     // add indicator to line series
-    var indicator2 = chart.plot(0).priceIndicator({'series': lineSeries});
-
+    var indicator2 = chart.plot(1).priceIndicator({'series': lineSeries});
 
     // set the chart position and title
     chart.title("Price Indicator: Series and Value Field");
+
+    // alter padding
+    chart.padding().left(75);
 
     // set the chart container
     chart.container("container");

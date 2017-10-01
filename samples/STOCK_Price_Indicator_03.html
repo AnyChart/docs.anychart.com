@@ -25,9 +25,9 @@
     // add two series
     lineSeries = chart.plot(0).line(mapping);
 
-    indicator1 = chart.plot(0).priceIndicator({value: 'first-visible'});
-    indicator2 = chart.plot(0).priceIndicator({value: 'series-end'});
-    indicator3 = chart.plot(0).priceIndicator({value: '2008-08-24'});
+    indicator1 = chart.plot(0).priceIndicator(0, {value: 'first-visible'});
+    indicator2 = chart.plot(0).priceIndicator(1, {value: 'series-end'});
+    indicator3 = chart.plot(0).priceIndicator(2, {value: '2008-08-24'});
 
     // set the chart position and title
     chart.title("Price Indicator: Series and Value Field");
