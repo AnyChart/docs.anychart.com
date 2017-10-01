@@ -28,10 +28,11 @@
 
     // add indicator to OHLC series
     var indicator1 = chart.plot(0).priceIndicator();
-    indicator1.fallingStroke("#EF9A9A");
-    indicator1.fallingLabel({background: "#F44336"});
-    indicator1.risingStroke("#4CAF50");
-    indicator1.risingLabel({background: "#A5D6A7"});
+    indicator1.value('last-visible');
+    indicator1.fallingStroke('#EF9A9A');
+    indicator1.fallingLabel({background: '#F44336'});
+    indicator1.risingStroke('#4CAF50');
+    indicator1.risingLabel({background: '#A5D6A7'});
 
     // add indicator to line series
     var indicator2 = chart.plot(1).priceIndicator();
