@@ -28,7 +28,7 @@
     noDataLabel.listen('click', function() {
       noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
     });
-    noDataLabel.listen('mousemove', function() {
+    noDataLabel.listen('mouseover', function() {
       document.body.style.cursor = "pointer";           
     });    
     noDataLabel.listen('mouseout', function() {
