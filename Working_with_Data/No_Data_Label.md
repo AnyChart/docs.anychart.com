@@ -38,11 +38,7 @@ To handle "No data" event manually add `'dataChanged'` event handler, `hasData` 
 
 ```
 chart.listen("dataChanged", function(event){
-    if (event.hasData) {
-        console.log("data added event");
-    } else {
-        console.log("no data event");
-        
+    if (!event.hasData) {
         // prevents no data label from showing when 
         // there are series on the chart
         // ie series are hidden using legend
@@ -61,8 +57,9 @@ chart.listen("dataChanged", function(event){
 You can attach listeners to "No data" label, this may be handy to use it as a button that restarts the process of loading data:
 
 ```
-chart.noData().label().listen('click', function() {
-    console.log('attempt to load data');
+attemp = 0;
+noDataLabel.listen('click', function() {
+    noDataLabel.text("Error: could not connect to data server. \n Attemp" + attemp++);
 });
 ```
 

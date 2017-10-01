@@ -94,7 +94,7 @@ Here is a sample of a chart with three price indicators, each tracks the same se
 ```
 indicator1 = chart.plot(0).priceIndicator(0, {value: 'first-visible'});
 indicator2 = chart.plot(0).priceIndicator(1, {value: 'series-end'});
-indicator3 = chart.plot(0).priceIndicator(2, {value: '2005-11-13'});
+indicator3 = chart.plot(0).priceIndicator(2, {value: '2006-08-09'});
 ```
 
 {sample}STOCK\_Price\_Indicator\_03{sample}

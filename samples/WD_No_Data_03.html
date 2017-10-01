@@ -17,11 +17,7 @@
     chart.noData().label(true);
 
     chart.listen("dataChanged", function(event){
-        if (event.hasData) {
-            chart.title("data added event");
-        } else {
-            chart.title("no data event");
-            
+        if (!event.hasData) {
             // prevents no data label from showing when 
             // there are series on the chart
             // ie series are hidden using legend
