@@ -27,7 +27,11 @@ If you want to change default file name for all exports at once you can use {api
 anychart.exports.filename('custom_name');
 ```
 
-After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods or for the specific chart.
+After you do so, all files, images, pdf and data, will be saved under this name, unless you override it when calling specific methods or for the specific chart. To set how a specific chart should be named when exporting set:
+
+```
+chart.exports.filename('custom_name');
+```
 
 ## Image
 

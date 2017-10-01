@@ -17,23 +17,17 @@
     dataTable.addData(get_dji_daily_short_data());
 
     // map the data
-    mapping = table.mapAs({'open': 1, 'high': 2,'low': 3,'close':4, 'value': 5});
+    mapping = table.mapAs({'value': 5});
 
     // create a chart
     chart = anychart.stock();
 
     // add two series
-    ohlcSeries = chart.plot(0).ohlc(mapping);
     lineSeries = chart.plot(0).line(mapping);
 
-    // add indicator to OHLC series
-    var indicator1 = chart.plot(0).priceIndicator();
-    indicator1.series(ohlcSeries);
-    indicator1.valueField('high');
-
-    // add indicator to line series
-    var indicator2 = chart.plot(0).priceIndicator({'series': lineSeries});
-
+    indicator1 = chart.plot(0).priceIndicator({value: 'first-visible'});
+    indicator2 = chart.plot(0).priceIndicator({value: 'series-end'});
+    indicator3 = chart.plot(0).priceIndicator({value: '2008-08-24'});
 
     // set the chart position and title
     chart.title("Price Indicator: Series and Value Field");
