@@ -48,6 +48,7 @@ The default context menu in all charts consists of at least the following elemen
 * [Save data as](../Exports#data)
 * [Share with](../Sharing)
 * [Print](../Printing)
+* [Enter full screen](../Printing)
 * AnyChart vX.XX.X
 
 The exact list of the elements above varies in different types of charts and the state chart is on. For instance the Context Menu of a categorized chart contains "Include/Exclude" functionality, [Treemap charts](../../Basic_Charts/Treemap_Chart) provide "Drill up" option when available. See the [Menu items keys](#menu_items_keys) list to learn more.
