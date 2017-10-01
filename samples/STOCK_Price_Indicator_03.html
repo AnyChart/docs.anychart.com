@@ -27,10 +27,13 @@
 
     indicator1 = chart.plot(0).priceIndicator(0, {value: 'first-visible'});
     indicator2 = chart.plot(0).priceIndicator(1, {value: 'series-end'});
-    indicator3 = chart.plot(0).priceIndicator(2, {value: '2008-08-24'});
+    indicator3 = chart.plot(0).priceIndicator(2, {value: '2005-06-10'});
 
     // set the chart position and title
     chart.title("Price Indicator: Series and Value Field");
+
+    // chart padding
+    chart.padding().left(75);
 
     // set the chart container
     chart.container("container");
