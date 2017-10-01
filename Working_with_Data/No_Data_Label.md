@@ -5,7 +5,6 @@
 
 "No data label" feature allows you to show a message or modify the look of the chart in cases when there is nothing to show. There are a lot of cases when there is nothing to show: the data set is empty or not set, the series are hidden, the series are there but there are no point to show. By default "No Data Label" appears when AnyChart can't find any element to be put on a chart. Series with empty values are still considered as "Data has been set" event.
 
-
 ## Enable
 
 Use {api:anychart.core.Chart#noData}noData(){} method to enable "No data" label:
@@ -26,6 +25,7 @@ noDataLabel.enabled(true);
 noDataLabel.text("Error: could not connect to data server");
 noDataLabel.background().enabled(true);
 noDataLabel.background().fill("White 0.5");
+noDataLabel.padding(40);
 ```
 
 {sample}WD\_No\_Data\_02{sample}
@@ -58,8 +58,9 @@ You can attach listeners to "No data" label, this may be handy to use it as a bu
 
 ```
 attemp = 0;
+// attach events to no data label
 noDataLabel.listen('click', function() {
-    noDataLabel.text("Error: could not connect to data server. \n Attemp" + attemp++);
+  noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
 });
 ```
 

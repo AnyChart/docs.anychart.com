@@ -17,13 +17,23 @@
     noDataLabel = chart.noData().label();
     noDataLabel.enabled(true);
     noDataLabel.text("Error: could not connect to data server");
+    noDataLabel.hAlign('center');
     noDataLabel.background().enabled(true);
-    noDataLabel.background().fill("White").stroke("2 Black");
+    noDataLabel.background().fill("Red 1").stroke("2 Black");
+    noDataLabel.padding(40);
 
     attemp = 0;
+
+    // attach events to no data label
     noDataLabel.listen('click', function() {
-        noDataLabel.text("Error: could not connect to data server. \n Attemp" + attemp++);
+      noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
     });
+    noDataLabel.listen('mousemove', function() {
+      document.body.style.cursor = "pointer";           
+    });    
+    noDataLabel.listen('mouseout', function() {
+      document.body.style.cursor = "auto";          
+    });   
 
     chart.title("No Data: Configure Label Event");
     

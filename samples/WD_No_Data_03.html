@@ -11,13 +11,14 @@
         
     <link rel="stylesheet" href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
-    chart = anychart.column([["A", 2]]);
+    // create chart
+    chart = anychart.column([["A", 1], ["B", 2], ["C", 3],]);
 
     // enable no data label
     chart.noData().label(true);
 
+        // handle event and prevent showing on showing legend
     chart.listen("dataChanged", function(event){
-        if (!event.hasData) {
             // prevents no data label from showing when 
             // there are series on the chart
             // ie series are hidden using legend
@@ -25,15 +26,13 @@
             if (chart.getSeriesCount() > 0) {
                 event.preventDefault();
             }
-        }
-    });    
+    }); 
 
-    chart.title("No Data: Modify Event");
-    
-    chart.container("container");
-    chart.draw();
-});
-    </script>
+    // enable legend
+    chart.legend(true);
+    // display chart
+    chart.container("container").draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
