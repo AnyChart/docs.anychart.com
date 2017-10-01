@@ -7,7 +7,7 @@
 
 ## Enable
 
-Use {api:anychart.core.Chart#noData}noData(){} method to enable "No data" label:
+Use {api:anychart.core.Chart#noData}noData(){api} method to enable "No data" label:
 
 ```
 chart.noData().label().enabled(true);
@@ -17,7 +17,7 @@ chart.noData().label().enabled(true);
 
 ## Appearance
 
-{api:anychart.core.NoDataSettings}anychart.core.NoDataSettings{api} object had a label which is an instance of {api:anychart.core.ui.Label}anychart.core.ui.Label{api} class. This label can be tuned as any other label in AnyChart.
+{api:anychart.core.NoDataSettings}anychart.core.NoDataSettings{api} object had a label which is an instance of {api:anychart.core.ui.Label}anychart.core.ui.Label{api} class. This label can be tuned as any other label in AnyChart (like [Chart Labels](../Common_Settings/Chart_Labels)).
 
 ```
 noDataLabel = chart.noData().label();
@@ -32,20 +32,20 @@ noDataLabel.padding(40);
 
 ## Events
 
+Events in general are described in [Event Listeners](../Common_Settings/Event_Listeners) article. Particular events applicable to "No data" feature are described below:
+
 ### Data Change
 
 To handle "No data" event manually add `'dataChanged'` event handler, `hasData` property of the event context can be used to distinguish between data arrival and data removal cases.
 
 ```
 chart.listen("dataChanged", function(event){
-    if (!event.hasData) {
-        // prevents no data label from showing when 
-        // there are series on the chart
-        // ie series are hidden using legend
+    // prevents no data label from showing when 
+    // there are series on the chart
+    // ie series are hidden using legend
 
-        if (chart.getSeriesCount() > 0) {
-            event.preventDefault();
-        }
+    if (chart.getSeriesCount() > 0) {
+        event.preventDefault();
     }
 });
 ```
