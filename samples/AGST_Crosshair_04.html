@@ -12,7 +12,7 @@
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
     var data = [
@@ -32,19 +32,21 @@
     // enable the crosshair
     chart.crosshair(true);
 
-    // disable X-labels
+    // configure the crosshair
+
+    // disable the x-label
     chart.crosshair().xLabel(false);
 
-    // configure the text of Y-labels
+    // set the text of the y-label
     chart.crosshair().yLabel().format(function(){
       return this.value + " $";
     });
 
-    // configure the appearance of crosshair labels
-    chart.crosshair().yLabel().fontColor("#ffa000");
+    // configure the appearance of the y-label
+    chart.crosshair().yLabel().fontColor("#64b5f6");
     chart.crosshair().yLabel().background({
       fill: "white",
-      stroke: "#ffa000"
+      stroke: "#64b5f6"
     });
 
     // set the chart padding and title

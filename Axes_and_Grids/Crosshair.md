@@ -20,42 +20,27 @@ By default the crosshair is disabled. To enable or disable it... with the `true`
 chart.crosshair(true);
 ```
 
-**Note** You can also hide a line of the crosshair – see the [Appearance](#appearance) section.
+**Note:** You can also hide a line or a label of the crosshair – see the [Appearance](#appearance) and [Labels](#labels) sections.
 
 In this sample the crosshair is enabled, and there are also buttons to disable and enable it:
 
-{sample}STOCK\_Crosshair\_01{sample}
-
-## Binding to Axes
-
-[In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method for this.
-
-```
-// set the indexes of the axes used
-var yLabel = chart.crosshair().yLabel();
-yLabel.axisIndex(1);
-var xLabel = chart.crosshair().xLabel();
-xLabel.axisIndex(0);
-```
-Look at the sample below, there are three axes and the crosshair is on.]
-
-{sample}AGST\_Crosshair\_02{sample}
+{sample}AGST\_Crosshair\_01{sample}
 
 ## Appearance
 
 You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
 
-**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Enabling](#enabling) section of this article.
+**Note:** The `null` parameter allows you to hide a line or both lines of the crosshair (labels are still shown).
 
-In the following sample the appearance of the Y-Stroke is configured, and the X-stroke is not displayed:
+In the following sample the X-stroke is not displayed; the appearance of the Y-stroke is configured:
 
 ```
-// configure crosshair strokes
+// configure the strokes of the crosshair
 chart.crosshair().xStroke(null);
 chart.crosshair().yStroke("#dd2c00", 1.5, "10 5", "round");
 ```
 
-{sample}AGST\_Crosshair\_03{sample}
+{sample}AGST\_Crosshair\_02{sample}
 
 ## Labels
 
@@ -63,30 +48,49 @@ The crosshair has two labels, which are shown on the X- and Y-axes in the points
 
 See the full list of the available settings: {api:anychart.core.ui.CrosshairLabel}anychart.core.ui.CrosshairLabel{api}
 
-You can disable or enable crosshair labels by using the `false` or `true` parameter:
+You can disable or enable a label or both labels by using the `false` or `true` parameter:
 
 ```
-
+// disable the x-label
+chart.crosshair().xLabel(false);
 ```
 
-[**Note:** By default, if a chart has multiple plots, only the last plot has an X-label.]
-
-The text of labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
+The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
 
 ```
-/* configure the text of crosshair labels
-on the y-axis */
+// set the text of the y-label
 chart.crosshair().yLabel().format(function(){
   return this.value + " $";
 });
 ```
 
-It is also possible to configure the appearance of labels. For example, you can use {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api} and {api:anychart.core.ui.CrosshairLabel#background}background(){api} to adjust the font color and background:
+It is also possible to configure the appearance of the labels. For example, you can use {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api} and {api:anychart.core.ui.CrosshairLabel#background}background(){api} to adjust the font color and background:
 
 ```
-
+// configure the appearance of the y-label
+chart.crosshair().yLabel().fontColor("#64b5f6");
+chart.crosshair().yLabel().background({
+  fill: "white",
+  stroke: "#64b5f6"
+});
 ```
 
 In the sample below there is... the default text of Y-labels is changed... labels are colored to match the colors of their plots:
+
+{sample}AGST\_Crosshair\_03{sample}
+
+## Binding to Axes
+
+If your chart has two or more Y-axes, by default the Y-label of the crosshair is shown on the first one (with the 0 index), and the same rule works with the X-label and multiple X-axes.
+
+To bind the crosshair to an axis of your choice, specify the index of the axis by using the {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method. Combine it with {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api} or {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}.
+
+For example, in the sample below there are two Y-axes, and the Y-label of the crosshair is bound to the second one, which is on the left:
+
+```
+/* bind the y-label of the crosshair
+to the second y-axis */
+chart.crosshair().yLabel().axisIndex(1);
+```
 
 {sample}AGST\_Crosshair\_04{sample}

@@ -12,7 +12,7 @@
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data table
     var dataTable = anychart.data.table();
@@ -54,13 +54,15 @@
     plot_1.line(mapping);
     plot_2.ohlc(mapping);
    
-    // configure crosshair strokes on the first plot
-    plot_1.crosshair().yStroke("#00bfa5", 1.5);
+    /* configure the strokes of the crosshair
+    on the first plot */
     plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
+    plot_1.crosshair().yStroke("#00bfa5", 1.5);
 
-    // configure crosshair strokes on the second plot
-    plot_2.crosshair().yStroke("#00bfa5", 1.5);
+    /* configure the strokes of the crosshair
+    on the second plot */
     plot_2.crosshair().xStroke(null);
+    plot_2.crosshair().yStroke("#00bfa5", 1.5);
 
     // set the chart title
     chart.title("Crosshair: Appearance");

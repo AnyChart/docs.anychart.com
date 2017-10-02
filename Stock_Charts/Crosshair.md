@@ -19,7 +19,7 @@ By default the crosshair is enabled. To disable or enable it on a chart or a plo
 chart.crosshair(false);
 ```
 
-**Note** You can also hide a line of the crosshair – see the [Appearance](#appearance) section.
+**Note:** You can also hide a line or a label of the crosshair – see the [Appearance](#appearance) and [Labels](#labels) sections.
 
 This sample shows how to disable and enable the crosshair:
 
@@ -42,7 +42,7 @@ chart.crosshair().displayMode("float");
 
 You can configure the appearance of the crosshair by adjusting its X- and Y-strokes: use the {api:anychart.core.ui.Crosshair#xStroke}xStroke(){api} and {api:anychart.core.ui.Crosshair#yStroke}yStroke(){api} methods.
 
-**Note:** The `null` parameter allows you to hide a line of the crosshair. To learn how to disable the crosshair completely, see the [Enabling](#enabling) section of this article.
+**Note:** The `null` parameter allows you to hide a line or both lines of the crosshair (labels are still shown).
 
 In the following sample there is a Stock chart with two plots. The X- and Y-strokes of the crosshair have different visual settings, and on the second plot the X-stroke is not displayed:
 
@@ -51,13 +51,13 @@ In the following sample there is a Stock chart with two plots. The X- and Y-stro
 var plot_1 = chart.plot(0);
 var plot_2 = chart.plot(1);
 
-// configure crosshair strokes on the first plot
-plot_1.crosshair().yStroke("#00bfa5", 1.5);
+// configure the strokes of the crosshair on the first plot
 plot_1.crosshair().xStroke("#00bfa5", 1.5, "10 5", "round");
+plot_1.crosshair().yStroke("#00bfa5", 1.5);
 
-// configure crosshair strokes on the second plot
-plot_2.crosshair().yStroke("#00bfa5", 1.5);
+// configure the strokes of the crosshair on the second plot
 plot_2.crosshair().xStroke(null);
+plot_2.crosshair().yStroke("#00bfa5", 1.5);
 ```
 
 {sample}STOCK\_Crosshair\_03{sample}
@@ -68,30 +68,28 @@ The crosshair has two labels, which are shown on the X- and Y-axes in the points
 
 See the full list of the available settings: {api:anychart.core.ui.CrosshairLabel}anychart.core.ui.CrosshairLabel{api}
 
-You can disable or enable crosshair labels by using the `false` or `true` parameter:
+You can disable or enable a label or both labels by using the `false` or `true` parameter:
 
 ```
-/* enable the crosshair label
-on the x-axis of the first plot */
+// enable the x-label on the first plot
 plot_1.crosshair().xLabel(true);
 ```
 
-**Note:** By default, if a chart has multiple plots, only the last plot has an X-label.
+**Note:** By default, if a chart has multiple plots, only the last plot has the X-label.
 
-The text of labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
+The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
 
 ```
-/* configure the text of crosshair labels
-on the y-axis */
+// set the text of the y-label
 chart.crosshair().yLabel().format(function(){
   return this.value + " $";
 });
 ```
 
-It is also possible to configure the appearance of labels. For example, you can use {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api} and {api:anychart.core.ui.CrosshairLabel#background}background(){api} to adjust the font color and background:
+It is also possible to configure the appearance of the labels. For example, you can use {api:anychart.core.ui.CrosshairLabel#fontColor}fontColor(){api} and {api:anychart.core.ui.CrosshairLabel#background}background(){api} to adjust the font color and background:
 
 ```
-/* configure the appearance of crosshair labels
+/* configure the appearance of the labels
 on the first plot */
 var crosshair_1 = plot_1.crosshair();
 crosshair_1.xLabel().fontColor("#64b5f6");
@@ -105,7 +103,7 @@ crosshair_1.yLabel().background({
   stroke: "#64b5f6"
 });
 
-/* configure the appearance of crosshair labels
+/* configure the appearance of the labels
 on the second plot */
 var crosshair_2 = plot_2.crosshair();
 crosshair_2.xLabel().fontColor("#ffa000");
@@ -120,6 +118,6 @@ crosshair_2.yLabel().background({
 });
 ```
 
-In the sample below there is a Stock chart with two plots. Both plots have X-labels, the default text of Y-labels is changed on the whole chart, and all labels are colored to match the colors of their plots:
+In the sample below there is a Stock chart with two plots. All labels are colored to match the colors of their plots; on both plots there are the X-labels, and the text of the Y-labels is changed:
 
 {sample}STOCK\_Crosshair\_04{sample}
