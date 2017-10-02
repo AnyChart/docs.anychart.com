@@ -1,6 +1,6 @@
 {:index 1}
 # PERT Chart Quick Start
- 
+
 ## Getting Started
 
 To get started with PERT Chart follow these simple steps and you will get your first web PERT chart in a minute.

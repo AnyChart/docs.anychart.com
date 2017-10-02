@@ -1,6 +1,6 @@
 {:index 1 :title "Quick Start | AnyMap"}
 # Quick Start
-  
+
 ## Getting Started
 
 To get started with AnyMap follow these simple steps and you will get your first web html5 ready geo map in a minute.

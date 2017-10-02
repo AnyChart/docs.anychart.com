@@ -1,6 +1,6 @@
 {:index 1}
 # Gantt Chart Quick Start
-  
+
 ## Getting Started
 
 To get started with AnyGantt follow these simple steps and you will get your first web Gantt chart in a minute.

@@ -1,5 +1,4 @@
 {:index 2}
-
 # AnyStock Quick Start
 
 ## Getting Started
