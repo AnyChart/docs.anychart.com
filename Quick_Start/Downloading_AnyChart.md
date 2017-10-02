@@ -30,16 +30,16 @@ To use AnyChart CDN simply reference any of the required [modules](Modules) usin
 For example, this is how you reference the bundle package:
 
 ```
-<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
 And this is how you link basic chart and add UI module to access context menu feature and exports:
 
 ```
-<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-base.min.js"></script>
-<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/css/{{branch-name}}/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
 ```
   
 ## Custom Build
