@@ -1,6 +1,6 @@
 {:index 1 :title "Quick Start | AnyChart"}
 # Quick Start
-  
+
 ## Getting Started
 
 To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
@@ -14,7 +14,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
   <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">
 </head>
 ```
@@ -70,7 +70,7 @@ Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
-    <script src="https://cdn.anychart.com/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.css">    
     <script>
       anychart.onDocumentLoad(function() {

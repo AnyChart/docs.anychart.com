@@ -8,11 +8,12 @@ To get started with AnyStock follow these simple steps and you will get your fir
 
 ## Include AnyStock
 
-Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
+Include the JavaScript files in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/js/{{branch-name}}/anystock.min.js" type="text/javascript"></script>
+	<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>  	
+	<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anystock.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -159,7 +160,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <script src="https://cdn.anychart.com/js/{{branch-name}}/anystock.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>    
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-stock.min.js" type="text/javascript"></script>
     <script>
 	var table, mapping, chart;
 	anychart.onDocumentReady(function() {

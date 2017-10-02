@@ -11,7 +11,8 @@ Include the JavaScript file in the `<head>` section of your web page – visit t
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/{{branch-name}}/anygantt.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>    
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-pert.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -94,7 +95,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 <!doctype html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/js/{{branch-name}}/anygantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>    
+    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-pert.min.js" type="text/javascript"></script>
     <style>
       html, body, #container {
         width: 100%;

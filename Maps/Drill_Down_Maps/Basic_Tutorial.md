@@ -7,7 +7,8 @@ First of all, you need the Anymap component, which can be found on the [download
 
 ```
 <head>
-<script src="https://cdn.anychart.com/js/{{branch-name}}/anymap.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-map.min.js" type="text/javascript"></script>
 </head>
 ```
 
