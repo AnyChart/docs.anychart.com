@@ -81,7 +81,7 @@ The crosshair can have only one Y- and one X-label. If your chart has two or mor
 
 To bind the crosshair to an axis of your choice, specify the index of the axis by using the {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method. Combine it with {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api} or {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}.
 
-In the sample below there are two Y-axes, and the Y-label of the crosshair is bound to the second one, which is on the left:
+In this sample there are two Y-axes, and the Y-label of the crosshair is bound to the second one, which is on the left:
 
 ```
 /* bind the y-label of the crosshair
