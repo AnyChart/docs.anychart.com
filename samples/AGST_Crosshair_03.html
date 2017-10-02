@@ -6,58 +6,52 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://static.anychart.com/js/RC-8.0.0/anychart-base.min.js" data-export="true"></script>
-  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
-  <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
-    <link href="https://static.anychart.com/css/RC-8.0.0/anychart-ui.min.css" data-export="true">
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-stock.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-annotations.min.js" data-export="true"></script>
+
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-exports.min.js" data-export="true"></script>
+    <script src="https://static.anychart.com/js/RC-8.0.0/anychart-ui.min.js" data-export="true"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create data
+    // create a data set
     var data = [
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
     ];
 
-    // create an area chart
-    chart = anychart.area(data);
+    // create a column chart
+    chart = anychart.column();
 
     // set the data
     chart.data(data);
-
-    // add and configure a second y-scale
-    var YScale_2 = anychart.scales.linear();
-    YScale_2.minimum(0);
-    YScale_2.maximum(100);
-    YScale_2.ticks().interval(10);
-
-    // add and configure a second y-axis
-    var YAxis_2 = chart.yAxis(1);
-    YAxis_2.orientation("right");
-    YAxis_2.labels().format(function(){
-      return this.value + "%";
-    });
-
-    // bind the second y-axis to the second y-scale
-    YAxis_2.scale(YScale_2);
 
     // enable the crosshair
     chart.crosshair(true);
 
     // configure the crosshair
 
-    /* bind the y-label of the crosshair
-    to the second y-axis */
-    chart.crosshair().yLabel().axisIndex(1);
+    // disable the x-label
+    chart.crosshair().xLabel(false);
 
     // set the text of the y-label
     chart.crosshair().yLabel().format(function(){
-      return this.value + "%";
+      return this.value + " $";
     });
 
-    // set the chart title
-    chart.title("Crosshair: Binding to Axes")
+    // configure the appearance of the y-label
+    chart.crosshair().yLabel().fontColor("#64b5f6");
+    chart.crosshair().yLabel().background({
+      fill: "white",
+      stroke: "#64b5f6"
+    });
+
+    // set the chart padding and title
+    chart.padding().left(75);
+    chart.title("Crosshair: Labels");
 
     // set the container id
     chart.container("container");
