@@ -154,23 +154,24 @@ You can add item in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter()
 ```
 // add items
 chart.contextMenu().itemsFormatter(function(items){
+    console.log(items);
   // starting index
-  index = items['full-sc'].index;
+  index = items['full-screen-enter'].index;
 
   // add item with custom action
-  items['my-item'] = {
-      'text': 'Custom item with alert action',
-      'action': function(){
-          alert('Custom action');
-        },
-       'index': index + 0.01
-      };
+  items['my-item'] ={
+  'text': 'Custom item with alert action',
+  'action': function(){
+      alert('Custom action');
+    },
+   'index': index + 0.01
+  };
 
   // add item with custom url
   items['my-url'] = {
-      'text': 'Go to AnyChart Blog',
-      'url': 'https://anychart.com/blog/',
-      'index': index + 0.02
+  'text': 'Go to AnyChart Blog',
+  'href': 'https://anychart.com/blog/',
+  'index': index + 0.02
     };
 
   return items;
@@ -181,43 +182,35 @@ chart.contextMenu().itemsFormatter(function(items){
 
 ## Custom Context Menu
 
-The Context Menu is very flexible it may serve a variety of purposes. In some cases it makes much more sense to create a new Context Menu from the scratch rather than tune and remove items from the default context menu. Use {api:anychart.ui.ContextMenu}anychart.ui.contextMenu(){api} to create custom Context Menu.
+The Context Menu is very flexible it may serve a variety of purposes. In some cases it makes much more sense to create a new Context Menu from the scratch rather than tune and remove items from the default context menu. Use {api:anychart.ui.ContextMenu#itemsProvider}itemsProvider(){api} to create custom Context Menu. This method overrides whatever is set in default formatter, you need to create all items yourself.
 
 The custom menu has no items by default, {api:anychart.ui.ContextMenu#itemsProvider}itemsProvider(){api} method to set a function for creating custom items array:
 
 ```
-// create custom context menu
-var menu = anychart.ui.contextMenu();
-menu.itemsProvider(function(){
-  items['menu-item-1'].text = "Print chart";
-  items['menu-item-1'].action = function(){
-    this.print();
-  };
-
-  items['menu-item-2'].text = "Save chart as image";
-  items['menu-item-2'].action = function(){
-    this.saveAsPng();
-  };
-
-  items['menu-item-3'].text = "Go to my page";
-  items['menu-item-3'].href = "http://docs.anychart.com";
-  items['menu-item-3'].target = "_blank";
+// replace menu items provider
+chart.contextMenu().itemsProvider(function(){
+  var items = {
+    'menu-item-1': {
+      'text': 'Print chart',
+      'action': function(){
+        this.chart.print();
+      }
+    }, 
+    'menu-item-2': {
+      'text': 'Save chart as image',
+      'action': function(){
+        this.chart.saveAsPng();
+      }
+    }, 
+    'menu-item-3': {
+      'text': 'Go to my page',
+      'href': 'http://docs.anychart.com',
+      'target': '_blank'
+    }
+  }
 
   return items;
 });
-```
-
-When the custom context menu is ready you need to attach it to a chart.
-
-```
-// create a chart
-var chart = anychart.column();
-
-// hide default menu
-chart.contextMenu(false);
-
-// attach the new context menu to a chart
-menu.attach(chart);
 ```
 
 Here is a sample of a chart with the custom context menu:
@@ -240,53 +233,49 @@ This section lists all keys and describes when the elements with such keys can a
 
 ### All charts
 
-- select-marquee-start
-- select-marquee-separator
-- save-chart-as'
-  - save-chart-as-png'
-  - save-chart-as-jpg'
-  - save-chart-as-pdf'
-  - save-chart-as-svg'
-- 'exporting-separator'
-- 'save-data-as'
-  - 'save-as-text'
-  - 'save-as-xlsx'
-- 'share-with'меню)
-  - 'share-with-facebook'
-  - 'share-with-twitter'
-  - 'share-with-linkedin'
-  - 'share-with-pinterest'
-- 'print-chart'
-- 'about'
+- `'select-marquee-start'`
+- `'select-marquee-separator'`
+- `'save-chart-as'`
+  - `'save-chart-as-png'`
+  - `'save-chart-as-jpg'`
+  - `'save-chart-as-pdf'`
+  - `'save-chart-as-svg'`
+- `'exporting-separator'`
+- `'save-data-as'`
+  - `'save-as-text'`
+  - `'save-as-xlsx'`
+- `'share-with'`
+  - `'share-with-facebook'`
+  - `'share-with-twitter'`
+  - `'share-with-linkedin'`
+  - `'share-with-pinterest'`
+- `'print-chart'`
+- `'about'`
 
 ### Basic Cartesian Charts
 
-- exclude-points-list
-- exclude-points-point*
-- exclude-points-point
-- exclude-points-keep-only
-- exclude-points-include-all
-- excluded-points-separator
-- chart-with-series-point-separator
+- `'exclude-points-list'`
+- `'exclude-points-point*'`
+- `'exclude-points-point'`
+- `'exclude-points-keep-only'`
+- `'exclude-points-include-all'`
+- `'excluded-points-separator'`
+- `'chart-with-series-point-separator'`
 
 ### Stock Charts
 
-- select-marquee-start
-- zoom-marquee-start
-- stock-specific-separator
+- `'select-marquee-start'`
+- `'zoom-marquee-start'`
+- `'stock-specific-separator'`
 
 ### Treemap
 
-- drill-down-to
-- drill-down-up
-- drill-down-separator
+- `'drill-down-to'`
+- `'drill-down-up'`
+- `'drill-down-separator'`
 
 ## Localize the context menu
 
 You can change the text of context menu items using [Localization]() option.
-
-At the moment the following localization files localize context menu out-of-the-box:
-
-- ?
 
 If you want to do this yourself you can either do this from the code or by adding the messages with the keys listed in [Menu items keys](#menu_items_keys)

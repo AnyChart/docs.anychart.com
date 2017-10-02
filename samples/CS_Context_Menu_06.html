@@ -25,23 +25,24 @@
 
   // add items
   chart.contextMenu().itemsFormatter(function(items){
+      console.log(items);
     // starting index
-    index = items['full-sc'].index;
+    index = items['full-screen-enter'].index;
 
     // add item with custom action
     items['my-item'] ={
-        'text': 'Custom item with alert action',
-        'action': function(){
-            alert('Custom action');
-          },
-         'index': index + 0.01
-        };
+    'text': 'Custom item with alert action',
+    'action': function(){
+        alert('Custom action');
+      },
+     'index': index + 0.01
+    };
 
     // add item with custom url
     items['my-url'] = {
-        'text': 'Go to AnyChart Blog',
-        'url': 'https://anychart.com/blog/',
-        'index': index + 0.02
+    'text': 'Go to AnyChart Blog',
+    'href': 'https://anychart.com/blog/',
+    'index': index + 0.02
       };
 
     return items;
