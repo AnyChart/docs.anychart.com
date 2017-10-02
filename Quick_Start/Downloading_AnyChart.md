@@ -15,7 +15,7 @@ Downloadable Installation Package contains everything you need to start evaluati
 - Geo Map Collection
 - Offline documentation
 
-Download the latest installation package at [https://cdn.anychart.com/releases/{{branch-name}}/installation-package.zip](https://cdn.anychart.com/releases/{{branch-name}} /installation-package.zip)
+Download the latest installation package at [https://cdn.anychart.com/releases/{{branch-name}}/installation-package.zip](https://cdn.anychart.com/releases/{{branch-name}}/installation-package.zip)
 
 ### Themes
 
