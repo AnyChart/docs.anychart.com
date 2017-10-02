@@ -11,35 +11,50 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = [
-    ["P1" , 3.6 , 2.3],
-    ["P2" , 7.1 , 4.0],
-    ["P3" , 8.5 , 6.2],
-    ["P4" , 9.2 , 11.8],
-    ["P5" , 10.1, 13.0],
-    ["P6" , 11.6, 13.9],
-    ["P7" , 16.4, 18.0],
-    ["P8" , 18.0, 23.3],
-    ["P9" , 13.2, 24.7],
-    ["P10", 12.0, 18.0]
-  ];
+    // create a data set
+    var data = [
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ];
 
+    // create a column chart
+    chart = anychart.column();
 
-  // create line chart
-  chart = anychart.column();
-  chart.data(data);
-  chart.title("Column Chart with a Crosshair");
+    // set the data
+    chart.data(data);
 
-  // enable crosshair
-  chart.crosshair().enabled(true);      
-  // remove the x-axis line
-  chart.crosshair().xStroke(null); 
-      
-  // set container id for the chart
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
+    // enable the crosshair
+    chart.crosshair(true);
+
+    // configure the crosshair
+
+    // disable the x-label
+    chart.crosshair().xLabel(false);
+
+    // set the text of the y-label
+    chart.crosshair().yLabel().format(function(){
+      return this.value + " $";
+    });
+
+    // configure the appearance of the y-label
+    chart.crosshair().yLabel().fontColor("#64b5f6");
+    chart.crosshair().yLabel().background({
+      fill: "white",
+      stroke: "#64b5f6"
+    });
+
+    // set the chart padding and title
+    chart.padding().left(75);
+    chart.title("Crosshair: Labels");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

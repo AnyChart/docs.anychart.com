@@ -12,7 +12,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data table
     var dataTable = anychart.data.table();
@@ -39,9 +39,9 @@
       ]);
   
     // map the data
-    mapping = dataTable.mapAs(
-      {open: 1, high: 2, low: 3, close: 4, value: 4}
-    );
+    mapping = dataTable.mapAs({
+      open: 1, high: 2, low: 3, close: 4, value: 4
+    });
 
     // create a stock chart
     chart = anychart.stock();
@@ -53,12 +53,48 @@
     // create two series: line and ohlc
     plot_1.line(mapping);
     plot_2.ohlc(mapping);
-   
-    // disable the crosshair on the first plot
-    plot_1.crosshair(false);
 
-    // set the chart title
-    chart.title("Crosshair: Disabling");
+    // configure the crosshair
+
+    // enable the x-label on the first plot
+    plot_1.crosshair().xLabel(true);
+  
+    // set the text of the y-labels on both plots
+    chart.crosshair().yLabel().format(function(){
+      return this.value + " $";
+    });
+
+    /* configure the appearance of the labels
+    on the first plot */
+    var crosshair_1 = plot_1.crosshair();
+    crosshair_1.xLabel().fontColor("#64b5f6");
+    crosshair_1.xLabel().background({
+      fill: "white",
+      stroke: "#64b5f6"
+    });
+    crosshair_1.yLabel().fontColor("#64b5f6");
+    crosshair_1.yLabel().background({
+      fill: "white",
+      stroke: "#64b5f6"
+    });
+
+    /* configure the appearance of the labels
+    on the second plot */
+    var crosshair_2 = plot_2.crosshair();
+    crosshair_2.xLabel().fontColor("#ffa000");
+    crosshair_2.xLabel().background({
+      fill: "white",
+      stroke: "#ffa000"
+    });
+    crosshair_2.yLabel().fontColor("#ffa000");
+    crosshair_2.yLabel().background({
+      fill: "white",
+      stroke: "#ffa000"
+    });
+
+    // set the chart padding and title
+    chart.padding().left(75);
+    chart.title("Crosshair: Labels");
 
     // set the container id
     chart.container("container");
