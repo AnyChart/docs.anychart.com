@@ -118,6 +118,6 @@ crosshair_2.yLabel().background({
 });
 ```
 
-In the sample below there is a Stock chart with two plots. All labels are colored to match the colors of their plots; on both plots there are the X-labels, and the text of the Y-labels is changed:
+In the sample below there is a Stock chart with two plots. On both plots there are the X-labels, the text of the Y-labels is changed, and all labels are colored to match the colors of their plots:
 
 {sample}STOCK\_Crosshair\_04{sample}

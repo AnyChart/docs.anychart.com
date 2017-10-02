@@ -5,15 +5,11 @@
 
 A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
-[Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside the DataPlot box, Crosshair appears. Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).]
-
-[Crosshairs can be used on all Cartesians ([Area](../Basic_Charts/Area_Chart), [Line](../Basic_Charts/Line_Chart), [Spline](../Basic_Charts/Spline_Chart), [Step Line](../Basic_Charts/Step_Line_Chart), [Bar](../Basic_Charts/Bar_Chart), [Column](../Basic_Charts/Column_Chart), etc.) and [Scatter Charts](../Basic_Charts/Scatter_Plot/Overview).]
-
 ## Enabling
 
-To configure the crosshair...
+The crosshair can be configured with the help of the {api:anychart.charts.Cartesian#crosshair}crosshair(){api} method.
 
-By default the crosshair is disabled. To enable or disable it... with the `true` or `false` parameter:
+By default the crosshair is disabled. To enable or disable it, use {api:anychart.charts.Cartesian#crosshair}crosshair(){api} with the `true` or `false` parameter:
 
 ```
 // enable the crosshair
@@ -75,17 +71,17 @@ chart.crosshair().yLabel().background({
 });
 ```
 
-In the sample below there is... the default text of Y-labels is changed... labels are colored to match the colors of their plots:
+In the sample below the Y-label is colored, its text changed, and the X-label is not displayed:
 
 {sample}AGST\_Crosshair\_03{sample}
 
 ## Binding to Axes
 
-If your chart has two or more Y-axes, by default the Y-label of the crosshair is shown on the first one (with the 0 index), and the same rule works with the X-label and multiple X-axes.
+The crosshair can have only one Y- and one X-label. If your chart has two or more Y-axes, by default the Y-label of the crosshair is shown on the first one (with the 0 index), and the same rule works with the X-label and multiple X-axes.
 
 To bind the crosshair to an axis of your choice, specify the index of the axis by using the {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method. Combine it with {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api} or {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}.
 
-For example, in the sample below there are two Y-axes, and the Y-label of the crosshair is bound to the second one, which is on the left:
+In the sample below there are two Y-axes, and the Y-label of the crosshair is bound to the second one, which is on the left:
 
 ```
 /* bind the y-label of the crosshair
