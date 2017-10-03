@@ -163,10 +163,10 @@ Visual settings can be vital for a chart. XML can contain any method and paramet
 
 ```xml
 <!-- series settings -->
-<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
+<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonal-brick">
 
   <!-- customize hover hatch fill -->
-  <hover_hatch_fill type="diagonalbrick" color="darkred"/>
+  <hover_hatch_fill type="diagonal-brick" color="darkred"/>
 
 </series>
 ```
