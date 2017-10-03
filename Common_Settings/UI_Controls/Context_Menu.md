@@ -276,6 +276,6 @@ This section lists all keys and describes when the elements with such keys can a
 
 ## Localize the context menu
 
-You can change the text of context menu items using [Localization]() option.
+You can change the text of context menu items using [Localization](../Localization) option.
 
 If you want to do this yourself you can either do this from the code or by adding the messages with the keys listed in [Menu items keys](#menu_items_keys)

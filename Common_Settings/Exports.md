@@ -119,7 +119,7 @@ With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you e
 
 ```
 // initiate saving chart's data in Xlsx format
-chart.saveAsXlsx('specific', "excel");
+chart.saveAsXlsx('default', "excel");
 ```
 
 Excel has several export modes that depend on chart type, see {api:anychart.enums.ChartDataExportMode}anychart.enums.ChartDataExportMode{api} to learn more.
