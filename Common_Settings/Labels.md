@@ -142,16 +142,18 @@ Labels can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). T
 ```
 var themeSettings = {
   "column":{
-    // series hub
     "defaultSeriesSettings":{
-      // series settings
       "column":{
-        // label settings
-        "labels": {
-          "anchor": "bottomCenter",
-          "position": "topCenter",
-          "fontFamily": "Menlo",
-          "fontSize": 14
+        "normal":{
+            "labels": {
+              "enabled": true,
+              "anchor": "center",
+              "position": "center",
+              "fontFamily": "Courier",
+              "fontSize": 18,
+              "fontColor": "#ffffff",
+              "format": "${%Value}"
+          }
         }
       }
     }

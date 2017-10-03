@@ -177,11 +177,11 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 "stroke": "gray",
 "hoverStroke": "darkred",
 "hatchFill": {
-  "type": "diagonalbrick",
+  "type": "diagonal-brick",
   "color": "gray"
 },
 "hoverHatchFill":{
-  "type:": "diagonalbrick",
+  "type:": "diagonal-brick",
   "color": "darkred"
 }
 ```
