@@ -13,14 +13,14 @@
 
   // data
   var data = [
-    {x:1, value:990, selectFill:"Red"},
-    {x:2, value:1100, selected:true, selectFill:"Blue"},
-    {x:3, value:1050, selectFill:"Red"},
-    {x:4, value:890,  selectFill:"Red"},
-    {x:5, value:1300, selected:true, selectFill:"Red"},
-    {x:6, value:840, selected:true, selectFill:"Green"},
-    {x:7, value:900, selectFill:"Red"},
-    {x:8, value:1000, selectFill:"Red"}
+    {x:1, value:990, state: "selected", selected: {fill:"Green"}},
+    {x:2, value:1100, state: "selected", selected: {fill:"Blue"}},
+    {x:3, value:1050, selected: {fill:"Red"}},
+    {x:4, value:890, selected: {fill:"Red"}},
+    {x:5, value:1300, state: "selected", selected: {fill:"Red"}},
+    {x:6, value:840, state: "selected", selected: {fill:"Green"}},
+    {x:7, value:900, selected: {fill:"Red"}},
+    {x:8, value:1000, selected: {fill:"Red"}}
   ];
 
   // chart type
