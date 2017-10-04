@@ -495,23 +495,11 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 First of all, enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#format}format(){api} function according to the table above.
 
 ```
-//set data series
-var series_1 = chart.bar(Sales2003);
-var series_2 = chart.bar(Sales2004);
+// enable chart labels
+chart.labels(true);
 
-//set series name
-series_1.name("Winter");
-series_2.name("Summer");
-
-var labels_winter = series_winter.labels();
-labels_winter.enabled(true);
-labels_winter.format(function(){
-    return(this.seriesName + ": $" + this.value);
-});
-
-var labels_summer = series_summer.labels();
-labels_summer.enabled(true);
-labels_summer.format(function(){
+// format labels
+chart.labels().format(function(){
     return(this.seriesName + ": $" + this.value);
 });
 ```
