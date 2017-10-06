@@ -40,24 +40,29 @@ controller.ellipse({
 
 ## Visual Settings
 
-In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} or {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api}. These two are for the Triangle annotation, but you can find similar methods for other types: see our {api:anychart.core.annotations}API{api} or the articles on [annotation types](Overview#annotation_types) in this section. Please note that the list of the available settings may vary depending on the annotation type.
+In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use states methods:
+- {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} 
+- {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api}. 
+
+Please note that the list of the available settings varies depending on the [annotation type](Overview#annotation_types).
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
 ```
-// an auxiliary variable for working with annotations
-var controller = plot.annotations();
-
 // create an Ellipse annotation and configure its visual settings
-controller.ellipse({
+plot.annotations().ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectStroke: "5 #FF0000"
+    hovered: {
+        fill: {"#398CAE 0.3"},
+        stroke: "2 #FF0000"
+    },
+    selected: {
+        {"#398CAE 0.3",
+        stroke: "5 #FF0000"
+    }
 });
 ```
 
