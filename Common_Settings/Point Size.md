@@ -34,7 +34,7 @@ column1.maxPointWidth(20);
 
 The default minimum length of a point is 1: when the value of a point is 0, it is still visualized as if its value were 1.
 
-If you want points with zero values to be visualized as longer bars, use the **minPointLengthe** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}.
+If you want points with zero values to be visualized as longer bars, use the **minPointLength()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}.
 
 ```
 // set the minimum length of points
