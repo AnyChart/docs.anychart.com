@@ -12,7 +12,7 @@ You can use the link as shown below or download graphics.min.js from the [Graphi
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/graphics.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/graphics.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -70,7 +70,7 @@ Below you can see how your full web page code should look like:
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/graphics.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/graphics.min.js"></script>
 </head>
 <body>
     <div id="container" style="width: 100%; height: 100%"></div>
