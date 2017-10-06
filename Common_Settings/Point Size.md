@@ -2,7 +2,7 @@
 
 ## Overview
 
-Some chart types allow setting the width, maximum width, and mimimum length of points. These settings are available for all charts with points looking like bars: Bar, Column, and related types.
+All charts with points looking like bars (Bar, Column, and related types) allow setting the width, maximum width, and mimimum length of points.
 
 Please note that you can configure either the whole chart or an individual series.
 
@@ -21,7 +21,7 @@ column1.pointWidth(20);
 
 ## Maximum Width
 
-You can set a limit to the width of points by using the **maxPointWidth()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#maxPointWidth}maxPointWidth(){api}.
+You can set a limit to the width of points (calculated automatically) by using the **maxPointWidth()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#maxPointWidth}maxPointWidth(){api}.
 
 ```
 // set the maximum width of points
