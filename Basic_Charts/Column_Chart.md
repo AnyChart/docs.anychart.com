@@ -186,6 +186,11 @@ chart.barGroupsPadding(2);
 
 {sample}BCT\_Column\_Chart\_06{sample}
 
+### Point Size
+
+[Point Size](../Common_Settings/Point_Size)
+
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.

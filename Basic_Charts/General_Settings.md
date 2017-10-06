@@ -216,6 +216,10 @@ series2.yScale(yScale2);
 
 {sample}BCT\_General\_Settings\_10{sample}
 
+### Point Size
+
+[Point Size](../Common_Settings/Point_Size)
+
 ### Stacking
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
