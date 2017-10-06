@@ -1,6 +1,6 @@
 {:index 1}
 # Gantt Chart Quick Start
-  
+
 ## Getting Started
 
 To get started with AnyGantt follow these simple steps and you will get your first web Gantt chart in a minute.
@@ -11,8 +11,8 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-gantt.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -119,8 +119,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 ```
 <!doctype html>
 <head>
-  <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-gantt.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
   <script>
 	anychart.onDocumentReady(function(){
 	

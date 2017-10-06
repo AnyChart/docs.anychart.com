@@ -1,6 +1,6 @@
 {:index 1}
 # PERT Chart Quick Start
- 
+
 ## Getting Started
 
 To get started with PERT Chart follow these simple steps and you will get your first web PERT chart in a minute.
@@ -11,8 +11,8 @@ Include the JavaScript file in the `<head>` section of your web page – visit t
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>    
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-pert.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -95,8 +95,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 <!doctype html>
 <html>
   <head>
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-core.min.js" type="text/javascript"></script>    
-    <script src="https://cdn.anychart.com/releases/js/{{branch-name}}/anychart-pert.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js" type="text/javascript"></script>
     <style>
       html, body, #container {
         width: 100%;
