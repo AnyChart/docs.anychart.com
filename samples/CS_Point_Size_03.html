@@ -6,38 +6,39 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
+  <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
+  <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
-      ["John", 10000],
-      ["Jake", 12000],
-      ["Peter", 13000],
-      ["James", 10000],
-      ["Mary", 9000]
+      ["A", 10000],
+      ["B", 0]
     ];
 
-    // create a chart
-    chart = anychart.column();
+    // create a stage
+    stage = anychart.graphics.create("container");
 
-    // create a column series and set the data
-    var series = chart.column(data);
-
-    // set the chart title
-    chart.title("Column Chart: Basic Sample");
-
-    // set the titles of the axes
-    chart.xAxis().title("Manager");
-    chart.yAxis().title("Sales, $");
-
-    // set the container id
-    chart.container("container");
-
+    // create and configure the first column chart
+    var column1 = anychart.column(data);
+    column1.title("Minimum Point Length = 10");
+    column1.bounds(0, 0, "50%", "100%");
+    // set the minimum length of points
+    column1.minPointLength(10);
+    // set the chart container
+    column1.container(stage);
     // initiate drawing the chart
-    chart.draw();
+    column1.draw();   
+
+    // create and configure the second column chart
+    var column2 = anychart.column(data);
+    column2.title("Not Set");
+    column2.bounds("50%", 0, "50%", "100%");
+    // set the chart container
+    column2.container(stage);
+    // initiate drawing the chart
+    column2.draw();     
 });</script>
 </head>
 <body>

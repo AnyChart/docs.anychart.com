@@ -28,7 +28,7 @@
 
 {sample}CS\_Point\_Size\_02{sample}
 
-## Maximum Length
+## Minimum Length
 
 * {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}
 
