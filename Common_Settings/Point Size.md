@@ -6,6 +6,8 @@
 
 ## XXX 1
 
+* {api:anychart.charts.Cartesian#pointWidth}pointWidth(){api}
+
 ...
 
 ```
@@ -16,6 +18,8 @@
 
 ## XXX 2
 
+* {api:anychart.charts.Cartesian#maxPointWidth}maxPointWidth(){api}
+
 ...
 
 ```
@@ -25,6 +29,8 @@
 {sample}CS\_Point\_Size\_02{sample}
 
 ## XXX 3
+
+* {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}
 
 ...
 
