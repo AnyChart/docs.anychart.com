@@ -4,7 +4,7 @@
 
 ...
 
-## XXX 1
+## Width
 
 * {api:anychart.charts.Cartesian#pointWidth}pointWidth(){api}
 
@@ -16,7 +16,7 @@
 
 {sample}CS\_Point\_Size\_01{sample}
 
-## XXX 2
+## Maximum Width
 
 * {api:anychart.charts.Cartesian#maxPointWidth}maxPointWidth(){api}
 
@@ -28,7 +28,7 @@
 
 {sample}CS\_Point\_Size\_02{sample}
 
-## XXX 3
+## Maximum Length
 
 * {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}
 
