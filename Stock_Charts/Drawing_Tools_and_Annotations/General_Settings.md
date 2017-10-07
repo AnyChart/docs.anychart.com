@@ -40,11 +40,13 @@ controller.ellipse({
 
 ## Visual Settings
 
-In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use states methods:
-- {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} 
-- {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api}. 
+In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use states configuration methods:
 
-Please note that the list of the available settings varies depending on the [annotation type](Overview#annotation_types).
+- {api:anychart.core.annotations.Base#normal}hoverFill(){api} 
+- {api:anychart.core.annotations.Base#selected}hoverFill(){api} 
+- {api:anychart.core.annotations.Base#hovered}selectStroke(){api}. 
+
+Please note that the list of the available settings in states varies depending on the [annotation type](Overview#annotation_types).
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
@@ -57,10 +59,12 @@ plot.annotations().ellipse({
     secondValueAnchor: 31.92,
     hovered: {
         fill: {"#398CAE 0.3"},
-        stroke: "2 #FF0000"
+        stroke: "2 #FF0000",
+
     },
     selected: {
-        {"#398CAE 0.3",
+        {
+        "#398CAE 0.3",
         stroke: "5 #FF0000"
     }
 });
@@ -68,15 +72,15 @@ plot.annotations().ellipse({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
+You can also configure the visual settings use the methods.
 
 In this sample, the hover and select colors of the Ellipse markers are set to green, and the Infinite Line markers are disabled on select:
 
 ```
 // configure the markers
-ellipse.hoverMarkers({size: 6, fill: "#8BC34A"});
-ellipse.selectMarkers({size: 6, fill: "#8BC34A"});
-infiniteLine.selectMarkers(false);
+ellipse.hovered().markers({size: 6, fill: "#8BC34A"});
+ellipse.selected().markers({size: 6, fill: "#8BC34A"});
+infiniteLine.selected().markers(false);
 ```
 
 {sample}STOCK\_Drawing\_General\_03{sample}
