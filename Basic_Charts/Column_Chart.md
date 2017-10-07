@@ -188,8 +188,7 @@ chart.barGroupsPadding(2);
 
 ### Point Size
 
-[Point Size](../Common_Settings/Point_Size)
-
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 

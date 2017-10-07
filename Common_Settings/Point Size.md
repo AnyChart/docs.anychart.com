@@ -2,7 +2,7 @@
 
 ## Overview
 
-All charts with points looking like bars (Bar, Column, and related types) allow setting the width, maximum width, and minimum length of points.
+All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length.
 
 Please note that you can configure either the whole chart or an individual series.
 
