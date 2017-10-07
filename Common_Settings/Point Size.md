@@ -2,15 +2,13 @@
 
 ## Overview
 
-All charts with points looking like bars (Bar, Column, and related types) allow setting the width, maximum width, and mimimum length of points.
+All charts with points looking like bars (Bar, Column, and related types) allow setting the width, maximum width, and minimum length of points.
 
 Please note that you can configure either the whole chart or an individual series.
 
 ## Width
 
-In Bar, Column, and related chart types the width of points (bars) is calculated automatically: it depends on the size of the chart and the number of points.
-
-You can set a fixed width by using the **pointWidth()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#pointWidth}pointWidth(){api}.
+In Bar, Column, and related chart types the width of points (bars) is calculated automatically: it depends on the size of the chart and the number of points. However, you can set a fixed width by using the {api:?entry=pointWidth}pointWidth(){api} method of the class your chart or series belongs to:
 
 ```
 // set the width of points
@@ -21,20 +19,18 @@ column1.pointWidth(20);
 
 ## Maximum Width
 
-You can set a limit to the width of points (calculated automatically) by using the **maxPointWidth()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#maxPointWidth}maxPointWidth(){api}.
+You can set a limit to the width of points by using the {api:?entry=maxPointWidth}maxPointWidth(){api} method of the class your chart or series belongs to:
 
 ```
 // set the maximum width of points
-column1.maxPointWidth(20);
+column1.maxPointWidth(40);
 ```
 
 {sample}CS\_Point\_Size\_02{sample}
 
 ## Minimum Length
 
-The default minimum length of a point is 1: when the value of a point is 0, it is still visualized as if its value were 1.
-
-If you want points with zero values to be visualized as longer bars, use the **minPointLength()** method of the class your chart or series belongs to. For example, in the case of Cartesian charts it is {api:anychart.charts.Cartesian#minPointLength}minPointLength(){api}.
+When the magnitude of difference between values is too high, some elements with low values might look too small and be difficult to interact with. In this case you can make them bigger by using the {api:?entry=minPointLength}minPointLength(){api} method of the class your chart or series belongs to:
 
 ```
 // set the minimum length of points
