@@ -218,7 +218,7 @@ series2.yScale(yScale2);
 
 ### Point Size
 
-All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length. Read more: [Point Size](../Common_Settings/Point_Size)
+All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Stacking
 
