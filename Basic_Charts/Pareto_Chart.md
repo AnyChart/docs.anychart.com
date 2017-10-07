@@ -158,6 +158,10 @@ Here is a live sample of such chart:
 
 {sample}BCT\_Pareto\_Chart\_03{sample}
 
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+
 ### Labels
 
 To configure Pareto series labels settings please study general [Labels Tutorial](../Common_Settings/Labels) first. Configuring labels for series in a Pareto chart is just the same, you can do whatever you want with any of them:

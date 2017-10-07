@@ -113,6 +113,10 @@ series2.selectFallingStroke("#ff33cc", 3, "10 5", "round");
 
 {sample}BCT\_OHLC\_Chart\_02{sample}
 
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (they can be enabled on a whole series or for a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
