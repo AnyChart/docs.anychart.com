@@ -42,9 +42,9 @@ controller.ellipse({
 
 In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use states configuration methods:
 
-- {api:anychart.core.annotations.Base#normal}hoverFill(){api} 
-- {api:anychart.core.annotations.Base#selected}hoverFill(){api} 
-- {api:anychart.core.annotations.Base#hovered}selectStroke(){api}. 
+- {api:anychart.core.annotations.Base#normal}normal(){api} 
+- {api:anychart.core.annotations.Base#selected}selected(){api} 
+- {api:anychart.core.annotations.Base#hovered}hovered(){api}. 
 
 Please note that the list of the available settings in states varies depending on the [annotation type](Overview#annotation_types).
 
