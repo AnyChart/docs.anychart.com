@@ -43,14 +43,19 @@
         valueAnchor: 28.92,
         secondXAnchor: "2009-03-01",
         secondValueAnchor: 14.18,
+        normal: {
+            labels: {fontColor: "#FF0000"}
+        },
         hovered: {
+            stroke: "#FF0000",
             trend: "#0000FF",
             grid: "#0000FF",
-            stroke: "#FF0000"
+            labels: {fontColor: "#FF0000"}
         },
         selected: {
+            stroke: "2 #FF0000",
             trend: "2 #0000FF",
-            stroke: "2 #FF0000" 
+            labels: {fontColor: "#FF0000"} 
         }       
     });
 
@@ -64,7 +69,8 @@
     fibonacciFan2.secondValueAnchor(29.13);
      
     // configure the visual settings of the second annotation
-    fibonacciFan2.stroke("#2196F3", 2, "10 2");
+    fibonacciFan2.normal().stroke("#2196F3", 3, "10 2");
+    fibonacciFan2.normal().labels().fontColor("#2196F3");
 
     // set the chart title
     chart.title("Fibonacci Fan: Appearance");

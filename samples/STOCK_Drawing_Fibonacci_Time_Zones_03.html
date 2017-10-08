@@ -43,13 +43,18 @@
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92,
+        normal: {
+            labels: {fontColor: "#FF0000"}
+        },
         hovered: {
+            stroke: "2 #FF0000",
             trend: "2 #0000FF",
-            stroke: "2 #FF0000"
+            labels: {fontColor: "#FF0000"}
         },
         selected: {
+            stroke: "2 #FF0000", 
             trend: "2 #0000FF",
-            stroke: "2 #FF0000" 
+            labels: {fontColor: "#FF0000"}
         }     
     });
 
@@ -63,7 +68,8 @@
     fibonacciTimezones2.secondValueAnchor(23.82);
      
     // configure the visual settings of the second annotation
-    fibonacciTimezones2.stroke("#2196F3", 2, "10 2");
+    fibonacciTimezones2.normal().stroke("#2196F3", 3, "10 2");
+    fibonacciTimezones2.normal().labels().fontColor("#2196F3");
 
     // set the chart title
     chart.title("Fibonacci Time Zones: Appearance");
