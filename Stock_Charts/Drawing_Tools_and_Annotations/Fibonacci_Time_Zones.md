@@ -59,7 +59,7 @@ controller.fibonacciTimezones({
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of a Fibonacci Time Zones annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Time Zones annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -149,9 +149,9 @@ function colorLevels(){
 
 ## Labels
 
-You can change the text of Fibonacci Time Zones [labels](../Common_Settings/Labels) with the help of [text formatters](../Common_Settings/Text_Formatters).
+You can change the text of Fibonacci Time Zones [labels](../../Common_Settings/Labels) with the help of [text formatters](../Common_Settings/Text_Formatters).
 
-Combine the {api:anychart.core.annotations.FibonacciTimeZones#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../Common_Settings/Text_Formatters#string_tokens):
+Combine the {api:anychart.core.annotations.FibonacciTimeZones#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../../Common_Settings/Text_Formatters#string_tokens):
 
 * `{%level}` (shown by default)
 * `{%levelValue}`

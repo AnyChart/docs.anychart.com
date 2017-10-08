@@ -60,7 +60,7 @@ controller.fibonacciFan({
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -163,9 +163,9 @@ function colorLevels(){
 
 ## Labels
 
-You can change the text of Fibonacci Fan [labels](../Common_Settings/Labels) with the help of [text formatters](../Common_Settings/Text_Formatters).
+You can change the text of Fibonacci Fan [labels](../../Common_Settings/Labels) with the help of [text formatters](../Common_Settings/Text_Formatters).
 
-Combine the {api:anychart.core.annotations.FibonacciFan#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../Common_Settings/Text_Formatters#string_tokens):
+Combine the {api:anychart.core.annotations.FibonacciFan#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../../Common_Settings/Text_Formatters#string_tokens):
 
 * `{%level}` (shown by default)
 * `{%levelValue}`
@@ -175,7 +175,7 @@ Combine the {api:anychart.core.annotations.FibonacciFan#labels}labels(){api} and
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_05{sample}
 
-Instead of tokens, you can also use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*.
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*.
 
 ```
 ```
