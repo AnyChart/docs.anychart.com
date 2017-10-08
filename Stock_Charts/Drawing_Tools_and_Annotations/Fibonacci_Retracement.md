@@ -57,13 +57,22 @@ controller.fibonacciRetracement({
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_02{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Fibonacci Retracement annotation:
+The [appearance settings](../../../Appearance_Settings) of a Fibonacci Retracement annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.FibonacciRetracement#color}color(){api}, {api:anychart.core.annotations.FibonacciRetracement#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciRetracement#trend}trend(){api} set the color and stroke of the annotation and its trend
-* {api:anychart.core.annotations.FibonacciRetracement#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciRetracement#hoverTrend}hoverTrend(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciRetracement#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciRetracement#selectTrend}selectTrend(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#trend}trend(){api}
+* {api:anychart.core.StateSettings#labels}labels(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Fibonacci Retracement annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -74,28 +83,38 @@ fibonacciRetracement1 = controller.fibonacciRetracement({
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    hoverTrend: "#0000FF",
-    hoverStroke: "#FF0000",
-    selectTrend: "2 #0000FF",
-    selectStroke: "2 #FF0000"        
+    normal: {
+            labels: {fontColor: "#FF0000"}
+    },
+    hovered: {
+        stroke: "#FF0000",
+        trend: "#0000FF",
+        labels: {fontColor: "#FF0000"}
+    },
+    selected: {
+        stroke: "2 #FF0000",
+        trend: "2 #0000FF",
+        labels: {fontColor: "#FF0000"} 
+    }       
 });
 
 // create the second Fibonacci Retracement annotation
 fibonacciRetracement2 = controller.fibonacciRetracement();
 
 // set the position of the second annotation
-fibonacciRetracement2.xAnchor("2004-01-11");
-fibonacciRetracement2.valueAnchor(29.13);
+fibonacciRetracement2.xAnchor("2007-09-23");
+fibonacciRetracement2.valueAnchor(33.1);
 fibonacciRetracement2.secondXAnchor("2004-08-08");
 fibonacciRetracement2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciRetracement2.stroke("#2196F3", 2, "10 2");
+fibonacciRetracement2.normal().stroke("#2196F3", 3, "10 2");
+fibonacciRetracement2.normal().labels().fontColor("#2196F3");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_03{sample}
 
-To configure the visual settings of a certain level, use the {api:anychart.core.annotations.FibonacciRetracement#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciRetracement#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciRetracement#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level values from the context:
+To configure the visual settings of a certain level, use the {api:anychart.core.annotations.Base#normal}normal(){api}, {api:anychart.core.annotations.Base#selected}selected(){api}, and {api:anychart.core.annotations.Base#hovered}hovered(){api} methods combined with {api:anychart.core.StateSettings#stroke}stroke(){api} and a function as a parameter. In this function, get level values from the context:
 
 ```
 // create a Fibonacci Retracement annotation
@@ -104,11 +123,10 @@ controller.fibonacciRetracement({
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    stroke: colorLevels,
-    hoverStroke: colorLevels,
-    selectStroke: colorLevels
+    normal: {stroke: colorLevels},
+    hovered: {stroke: colorLevels},
+    selected: {stroke: colorLevels}
 });
-
 
 function colorLevels(){
   if (this.level!==undefined)

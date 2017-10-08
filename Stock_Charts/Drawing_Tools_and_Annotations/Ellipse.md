@@ -48,7 +48,12 @@ The [appearance settings](../../../Appearance_Settings) of an Ellipse annotation
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
 * {api:anychart.core.annotations.Base#hovered}hovered(){api}
 
-Combine them with...
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
 
 You can also use object notation to specify the settings.
 
@@ -82,8 +87,8 @@ ellipse2.secondXAnchor("2007-02-25");
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-ellipse2.stroke("#2196F3", 3, "10 2");
-ellipse2.fill(null);
+ellipse2.normal().fill(null);
+ellipse2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Ellipse\_02{sample}

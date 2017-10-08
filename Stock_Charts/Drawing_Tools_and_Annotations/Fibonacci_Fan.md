@@ -58,13 +58,23 @@ controller.fibonacciFan({
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_02{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Fibonacci Fan annotation:
+The [appearance settings](../../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.FibonacciFan#color}color(){api}, {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api}, {api:anychart.core.annotations.FibonacciFan#trend}trend(){api}, and {api:anychart.core.annotations.FibonacciFan#grid}grid(){api} set the color and stroke of the annotation, its trend, and grid
-* {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, {api:anychart.core.annotations.FibonacciFan#hoverTrend}hoverTrend(){api}, and {api:anychart.core.annotations.FibonacciFan#hoverGrid}hoverGrid(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api}, {api:anychart.core.annotations.FibonacciFan#selectTrend}selectTrend(){api} and {api:anychart.core.annotations.FibonacciFan#selectGrid}selectGrid(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#trend}trend(){api}
+* {api:anychart.core.StateSettings#grid}grid(){api}
+* {api:anychart.core.StateSettings#labels}labels(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Fibonacci Fan annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -75,11 +85,20 @@ In the sample below, there are two Fibonacci Fan annotations with some of the vi
     valueAnchor: 28.92,
     secondXAnchor: "2009-03-01",
     secondValueAnchor: 14.18,
-    hoverTrend: "#0000FF",
-    hoverGrid: "#0000FF",
-    hoverStroke: "#FF0000",
-    selectTrend: "2 #0000FF",
-    selectStroke: "2 #FF0000"     
+    normal: {
+        labels: {fontColor: "#FF0000"}
+    },
+    hovered: {
+        stroke: "#FF0000",
+        trend: "#0000FF",
+        grid: "#0000FF",
+        labels: {fontColor: "#FF0000"}
+    },
+    selected: {
+        stroke: "2 #FF0000",
+        trend: "2 #0000FF",
+        labels: {fontColor: "#FF0000"} 
+    }       
 });
 
 // create the second Fibonacci Fan annotation
@@ -92,12 +111,13 @@ fibonacciFan2.secondXAnchor("2004-01-11");
 fibonacciFan2.secondValueAnchor(29.13);
  
 // configure the visual settings of the second annotation
-fibonacciFan2.stroke("#2196F3", 2, "10 2");
+fibonacciFan2.normal().stroke("#2196F3", 3, "10 2");
+fibonacciFan2.normal().labels().fontColor("#2196F3");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_03{sample}
 
-To configure the visual settings of a certain level or time level, use the {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level and time level values from the context:
+To configure the visual settings of a certain level or time level, use the {api:anychart.core.annotations.Base#normal}normal(){api}, {api:anychart.core.annotations.Base#selected}selected(){api}, and {api:anychart.core.annotations.Base#hovered}hovered(){api} methods combined with {api:anychart.core.StateSettings#stroke}stroke(){api} and a function as a parameter. In this function, get level values from the context:
 
 ```
 // create a Fibonacci Fan annotation
@@ -106,11 +126,10 @@ controller.fibonacciFan({
     valueAnchor: 28.92,
     secondXAnchor: "2009-03-01",
     secondValueAnchor: 14.18,
-    stroke: colorLevels,
-    hoverStroke: colorLevels,
-    selectStroke: colorLevels
+    normal: {stroke: colorLevels},
+    hovered: {stroke: colorLevels},
+    selected: {stroke: colorLevels}
 });
-
 
 function colorLevels(){
   if (this.level!==undefined)
