@@ -46,7 +46,7 @@ The [appearance settings](../../../Appearance_Settings) of annotations can be co
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
 * {api:anychart.core.annotations.Base#hovered}hovered(){api} 
 
-Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
+Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers over or selects them. Like in the previous sample, object notation is used to configure the properties:
 
