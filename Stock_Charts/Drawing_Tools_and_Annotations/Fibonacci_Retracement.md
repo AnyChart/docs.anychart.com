@@ -146,3 +146,24 @@ function colorLevels(){
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_04{sample}
+
+## Labels
+
+You can change the text of Fibonacci Retracement [labels](../Common_Settings/Labels) with the help of [text formatters](../Common_Settings/Text_Formatters).
+
+Combine the {api:anychart.core.annotations.FibonacciRetracement#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../Common_Settings/Text_Formatters#string_tokens):
+
+* `{%level}` (shown by default)
+* `{%levelValue}`
+
+```
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_05{sample}
+
+Instead of tokens, you can also use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*.
+
+```
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_06{sample}
