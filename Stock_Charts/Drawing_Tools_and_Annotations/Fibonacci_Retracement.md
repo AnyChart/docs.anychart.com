@@ -156,6 +156,8 @@ Combine the {api:anychart.core.annotations.FibonacciRetracement#labels}labels(){
 * `{%level}` (shown by default)
 * `{%levelValue}`
 
+The following sample shows how it works:
+
 ```
 // create a Fibonacci Retracement annotation
 var fibonacciRetracement = controller.fibonacciRetracement({
@@ -171,7 +173,7 @@ fibonacciRetracement.labels().format("{%level} ({%levelValue})");
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_05{sample}
 
-Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*.
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
 
 ```
 ```

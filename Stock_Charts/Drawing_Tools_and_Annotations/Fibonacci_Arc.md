@@ -156,6 +156,8 @@ Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and
 * `{%level}` (shown by default)
 * `{%levelValue}`
 
+The following sample shows how it works:
+
 ```
 // create a Fibonacci Arc annotation
 var fibonacciArc = controller.fibonacciArc({
@@ -171,7 +173,7 @@ fibonacciArc.labels().format("{%level} ({%levelValue})");
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_05{sample}
 
-Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*.
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
 
 ```
 ```
