@@ -43,13 +43,19 @@
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92,
-        stroke: colorLevels,
-        hoverStroke: colorLevels,
-        selectStroke: colorLevels
+        normal: {
+            stroke: colorLevels
+        },
+        hovered: {
+            stroke: colorLevels,
+        },
+        selected: {
+            stroke: colorLevels
+        }
     });
 
     // set the chart title
-    chart.title("Fibonacci Retracement: Visual Settings (Levels)");
+    chart.title("Fibonacci Retracement: Appearance (Levels)");
 
     // set the container id
     chart.container("container");

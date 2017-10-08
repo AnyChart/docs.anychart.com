@@ -43,11 +43,15 @@
         valueAnchor: 28.92,
         secondXAnchor: "2009-03-01",
         secondValueAnchor: 14.18,
-        hoverTrend: "#0000FF",
-        hoverGrid: "#0000FF",
-        hoverStroke: "#FF0000",
-        selectTrend: "2 #0000FF",
-        selectStroke: "2 #FF0000"        
+        hovered: {
+            trend: "#0000FF",
+            grid: "#0000FF",
+            stroke: "#FF0000"
+        },
+        selected: {
+            trend: "2 #0000FF",
+            stroke: "2 #FF0000" 
+        }       
     });
 
     // create the second Fibonacci Fan annotation
@@ -63,7 +67,7 @@
     fibonacciFan2.stroke("#2196F3", 2, "10 2");
 
     // set the chart title
-    chart.title("Fibonacci Fan: Visual Settings");
+    chart.title("Fibonacci Fan: Appearance");
 
     // set the container id
     chart.container("container");

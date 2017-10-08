@@ -46,9 +46,9 @@ The [appearance settings](../Appearance_Settings) of annotations can be configur
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
 * {api:anychart.core.annotations.Base#hovered}hovered(){api} 
 
-Please note that  the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
+Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
 
-In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or selects them. Like in the previous sample, object notation is used to configure the properties:
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers over or selects them. Like in the previous sample, object notation is used to configure the properties:
 
 ```
 // create an Ellipse annotation and configure its visual settings
@@ -58,7 +58,7 @@ plot.annotations().ellipse({
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hovered: {
-        fill: {"#398CAE 0.3"},
+        fill: "#398CAE 0.3",
         stroke: "2 #FF0000",
     },
     selected: {

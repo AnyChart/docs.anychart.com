@@ -40,8 +40,8 @@
     // create the first Horizontal Line annotation and configure its visual settings
     horizontalLine1 = controller.horizontalLine({
         valueAnchor: 33.13,
-        hoverStroke: "2 #FF0000",
-        selectStroke: "5 #FF0000"
+        hovered: {stroke: "2 #FF0000"},
+        selected: {stroke: "5 #FF0000"}
     });
 
     // create the second Horizontal Line annotation
@@ -54,7 +54,7 @@
     horizontalLine2.stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Horizontal Line: Visual Settings");
+    chart.title("Horizontal Line: Appearance");
 
     // set the container id
     chart.container("container");

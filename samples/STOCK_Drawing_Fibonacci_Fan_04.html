@@ -43,13 +43,19 @@
         valueAnchor: 28.92,
         secondXAnchor: "2009-03-01",
         secondValueAnchor: 14.18,
-        stroke: colorLevels,
-        hoverStroke: colorLevels,
-        selectStroke: colorLevels
+        normal: {
+            stroke: colorLevels
+        },
+        hovered: {
+            stroke: colorLevels,
+        },
+        selected: {
+            stroke: colorLevels
+        }
     });
 
     // set the chart title
-    chart.title("Fibonacci Fan: Visual Settings (Levels and Time Levels)");
+    chart.title("Fibonacci Fan: Appearance (Levels and Time Levels)");
 
     // set the container id
     chart.container("container");
