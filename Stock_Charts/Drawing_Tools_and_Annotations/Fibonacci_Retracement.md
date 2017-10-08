@@ -157,6 +157,16 @@ Combine the {api:anychart.core.annotations.FibonacciRetracement#labels}labels(){
 * `{%levelValue}`
 
 ```
+// create a Fibonacci Retracement annotation
+var fibonacciRetracement = controller.fibonacciRetracement({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92
+});
+
+// configure annotation labels
+fibonacciRetracement.labels().format("{%level} ({%levelValue})");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_05{sample}

@@ -38,12 +38,15 @@
     var controller = plot.annotations();
 
     // create a Fibonacci Fan annotation
-    controller.fibonacciFan({
+    var fibonacciFan = controller.fibonacciFan({
         xAnchor: "2007-01-07",
         valueAnchor: 28.92,
         secondXAnchor: "2009-03-01",
         secondValueAnchor: 14.18
     });
+
+    // configure annotation labels
+    fibonacciFan.labels().format("{%level} ({%levelValue})");
 
     // set the chart title
     chart.title("Fibonacci Fan: Labels (Tokens)");

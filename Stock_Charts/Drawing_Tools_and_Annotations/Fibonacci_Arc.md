@@ -157,6 +157,16 @@ Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and
 * `{%levelValue}`
 
 ```
+// create a Fibonacci Arc annotation
+var fibonacciArc = controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92
+});
+
+// configure annotation labels
+fibonacciArc.labels().format("{%level} ({%levelValue})");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_05{sample}

@@ -38,12 +38,15 @@
     var controller = plot.annotations();
 
     // create a Fibonacci Retracement annotation
-    controller.fibonacciRetracement({
+    var fibonacciRetracement = controller.fibonacciRetracement({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92
     });
+
+    // configure annotation labels
+    fibonacciRetracement.labels().format("{%level} ({%levelValue})");
 
     // set the chart title
     chart.title("Fibonacci Retracement: Labels (Tokens)");

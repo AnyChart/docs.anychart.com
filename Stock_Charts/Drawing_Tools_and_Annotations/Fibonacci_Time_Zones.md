@@ -157,6 +157,16 @@ Combine the {api:anychart.core.annotations.FibonacciTimeZones#labels}labels(){ap
 * `{%levelValue}`
 
 ```
+// create a Fibonacci Time Zones annotation
+var fibonacciTimezones = controller.fibonacciTimezones({
+    xAnchor: "2004-08-08",
+    valueAnchor: 17.9,
+    secondXAnchor: "2006-10-08",
+    secondValueAnchor: 24.5
+});
+
+// configure annotation labels
+fibonacciTimezones.labels().format("{%level} ({%levelValue})");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_05{sample}
