@@ -208,10 +208,13 @@ For some reasons you may need to make your columns look thiner or wider. It is p
 chart1.pointWidth('50%');
 chart2.pointWidth(25);
 ```
+
 Note that you can define pointWidth values as percent or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}
+
+See also: [Point Size](../Common_Settings/Point_Size).
 
 ##Labels
 

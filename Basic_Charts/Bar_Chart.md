@@ -187,6 +187,10 @@ chart.barGroupsPadding(2);
 
 {sample}BCT\_Bar\_Chart\_06{sample}
 
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.

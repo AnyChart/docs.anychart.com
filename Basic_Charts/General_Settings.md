@@ -222,6 +222,10 @@ Stacked and percent stacked charts are multi-series charts where related values 
 
 In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked/Overview).
 
+### Point Size
+
+All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+
 ## Interactivity
 
 You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity) article explains how to change the defaults and create custom interactivity settings.

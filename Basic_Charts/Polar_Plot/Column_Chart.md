@@ -20,3 +20,9 @@ var series = chart.column(data);
 ```
 
 {sample}BCT\_Polar\_Column\_Chart{sample}
+
+## Special Settings
+
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.

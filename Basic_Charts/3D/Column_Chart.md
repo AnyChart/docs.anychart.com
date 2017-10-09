@@ -23,4 +23,10 @@ var series = chart.column(data);
 
 ## Special Settings
 
-**Note:** When you use the {api:anychart#area3d}anychart.bar3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is disabled by default, which means that the series of multi-series charts are distributed along the X-axis.
+### Z-Distribution
+
+When you use the {api:anychart#area3d}anychart.bar3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is disabled by default, which means that the series of multi-series charts are distributed along the X-axis.
+
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
