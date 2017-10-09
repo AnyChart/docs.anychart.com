@@ -25,4 +25,4 @@ var series = chart.column(data);
 
 ### Point Size
 
-This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
+This chart type allows you to set the size of its points. Read more in the [Point Size](../../Common_Settings/Point_Size) article.
