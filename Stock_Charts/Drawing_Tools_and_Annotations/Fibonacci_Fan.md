@@ -177,7 +177,10 @@ fibonacciFan.labels().format("{%level} ({%levelValue})");
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_05{sample}
 
-Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+
+* `level` (shown by default)
+* `levelValue`
 
 ```
 // create a Fibonacci Fan annotation
