@@ -38,7 +38,7 @@
     var controller = plot.annotations();
 
     // create the first Fibonacci Retracement annotation and configure its visual settings
-    fibonacciRetracement1 = controller.fibonacciRetracement({
+    var fibonacciRetracement1 = controller.fibonacciRetracement({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
@@ -59,7 +59,7 @@
     });
 
     // create the second Fibonacci Retracement annotation
-    fibonacciRetracement2 = controller.fibonacciRetracement();
+    var fibonacciRetracement2 = controller.fibonacciRetracement();
 
     // set the position of the second annotation
     fibonacciRetracement2.xAnchor("2007-09-23");

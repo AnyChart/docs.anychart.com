@@ -61,7 +61,7 @@ In the sample below, there are two Andrews' Pitchfork annotations with some of t
 
 ```
 // create the first Andrews' Pitchfork annotation and configure its visual settings
-andrewsPitchfork1 = controller.andrewsPitchfork({
+var andrewsPitchfork1 = controller.andrewsPitchfork({
     xAnchor: "2006-10-15",
     valueAnchor: 24.55,
     secondXAnchor: "2007-01-07",
@@ -73,7 +73,7 @@ andrewsPitchfork1 = controller.andrewsPitchfork({
 });
 
 // create the second Andrews' Pitchfork annotation
-andrewsPitchfork2 = controller.andrewsPitchfork();
+var andrewsPitchfork2 = controller.andrewsPitchfork();
 
 // set the position of the second annotation
 andrewsPitchfork2.xAnchor("2007-12-16");

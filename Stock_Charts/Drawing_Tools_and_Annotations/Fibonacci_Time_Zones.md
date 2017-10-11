@@ -40,7 +40,7 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_01{sample}
 
-## Configuring Levels
+## Levels
 
 You can set the levels of a Fibonacci Time Zones annotation by using the {api:anychart.core.annotations.FibonacciTimezones#levels}levels(){api} method and passing an array of values as a parameter:
 
@@ -78,7 +78,7 @@ In the sample below, there are two Fibonacci Timezones annotations with some of 
 
 ```
 // create the first Fibonacci Time Zones annotation and configure its visual settings
-fibonacciTimezones1 = controller.fibonacciTimezones({
+var fibonacciTimezones1 = controller.fibonacciTimezones({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -99,7 +99,7 @@ fibonacciTimezones1 = controller.fibonacciTimezones({
 });
 
 // create the second Fibonacci Time Zones annotation
-fibonacciTimezones2 = controller.fibonacciTimezones();
+var fibonacciTimezones2 = controller.fibonacciTimezones();
 
 // set the position of the second annotation
 fibonacciTimezones2.xAnchor("2004-01-11");
@@ -129,18 +129,17 @@ controller.fibonacciTimezones({
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 1:
-            return "Red";
+            return "red";
             break;
         case 2:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
+                return "black";
+    }
   }
 };
 ```
@@ -165,7 +164,7 @@ var fibonacciTimezones = controller.fibonacciTimezones({
     secondValueAnchor: 24.5
 });
 
-// configure annotation labels
+// configure the annotation labels
 fibonacciTimezones.labels().format("{%level} ({%levelValue})");
 ```
 
@@ -174,7 +173,18 @@ fibonacciTimezones.labels().format("{%level} ({%levelValue})");
 Instead of tokens, you can also use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
 
 ```
-
+// configure the annotation labels
+fibonacciTimezones.labels().format(function(){
+  // convert the level value (timestamp) to a string (date)
+  var levelValue = anychart.format.dateTime(this.levelValue);
+  switch (this.level) {
+      case 0:
+          return this.level + " (" + levelValue + ")";
+          break;
+      default:
+              return this.level;
+  }
+});
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_06{sample}

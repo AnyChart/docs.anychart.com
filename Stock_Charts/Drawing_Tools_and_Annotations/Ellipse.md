@@ -61,7 +61,7 @@ In the sample below, there are two Ellipse annotations with some of the visual s
 
 ```
 // create the first Ellipse annotation and configure its visual settings
-ellipse1 = controller.ellipse({
+var ellipse1 = controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
     secondXAnchor: "2007-02-24",
@@ -78,7 +78,7 @@ ellipse1 = controller.ellipse({
 });
 
 // create the second Ellipse annotation
-ellipse2 = controller.ellipse();
+var ellipse2 = controller.ellipse();
 
 // set the position of the second annotation
 ellipse2.xAnchor("2005-11-20");

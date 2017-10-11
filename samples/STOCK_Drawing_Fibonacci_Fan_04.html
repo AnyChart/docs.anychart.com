@@ -59,30 +59,30 @@
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
-            return "Red";
+            return "red";
             break;
         case 0.618:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
-  } else {
+                return "black";
+    }
+  }
+  else {
     switch (this.timeLevel) {
         case 0.618:
-            return "Red";
+            return "red";
             break;
         case 0.5:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black";
-     }
+                return "black";
     }
+  }
 };</script>
 </head>
 <body>

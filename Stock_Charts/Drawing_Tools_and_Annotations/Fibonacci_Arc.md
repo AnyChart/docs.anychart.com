@@ -40,7 +40,7 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
 
-## Configuring Levels
+## Levels
 
 You can set the levels of a Fibonacci Arc annotation by using the {api:anychart.core.annotations.FibonacciArc#levels}levels(){api} method and passing an array of values as a parameter:
 
@@ -78,7 +78,7 @@ In the sample below, there are two Fibonacci Arc annotations with some of the vi
 
 ```
 // create the first Fibonacci Arc annotation and configure its visual settings
-fibonacciArc1 = controller.fibonacciArc({
+var fibonacciArc1 = controller.fibonacciArc({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -99,7 +99,7 @@ fibonacciArc1 = controller.fibonacciArc({
 });
 
 // create the second Fibonacci Arc annotation
-fibonacciArc2 = controller.fibonacciArc();
+var fibonacciArc2 = controller.fibonacciArc();
 
 // set the position of the second annotation
 fibonacciArc2.xAnchor("2004-01-11");
@@ -129,18 +129,17 @@ controller.fibonacciArc({
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
-            return "Red";
+            return "red";
             break;
         case 0.618:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
+                return "black";
+    }
   }
 };
 ```
@@ -165,7 +164,7 @@ var fibonacciArc = controller.fibonacciArc({
     secondValueAnchor: 28.92
 });
 
-// configure annotation labels
+// configure the annotation labels
 fibonacciArc.labels().format("{%level} ({%levelValue})");
 ```
 
@@ -174,7 +173,17 @@ fibonacciArc.labels().format("{%level} ({%levelValue})");
 Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
 
 ```
-
+// configure the annotation labels
+fibonacciArc.labels().format(function(){
+  var levelValue = this.levelValue.toFixed(1);
+  switch (this.level) {
+      case 1:
+          return this.level + " (" + levelValue + ")";
+          break;
+      default:
+              return this.level;
+  }
+});
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_06{sample}

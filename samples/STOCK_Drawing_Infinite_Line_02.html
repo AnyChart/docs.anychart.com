@@ -38,7 +38,7 @@
     var controller = plot.annotations();
 
     // create the first Infinite Line annotation and configure its visual settings
-    infiniteLine1 = controller.infiniteLine({
+    var infiniteLine1 = controller.infiniteLine({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2008-04-27",
@@ -48,7 +48,7 @@
     });
 
     // create the second Infinite Line annotation
-    infiniteLine2 = controller.infiniteLine();
+    var infiniteLine2 = controller.infiniteLine();
 
     // set the position of the second annotation
     infiniteLine2.xAnchor("2004-06-06");

@@ -62,7 +62,7 @@ In the sample below, there are two Trend Channel annotations with some of the vi
 
 ```
 // create the first Trend Channel annotation and configure its visual settings
-trendChannel1 = controller.trendChannel({
+var trendChannel1 = controller.trendChannel({
     xAnchor: "2007-01-07",
     valueAnchor: 28.92,
     secondXAnchor: "2007-09-23",
@@ -81,7 +81,7 @@ trendChannel1 = controller.trendChannel({
 });
 
 // create the second Trend Channel annotation
-trendChannel2 = controller.trendChannel();
+var trendChannel2 = controller.trendChannel();
 
 // set the position of the second annotation
 trendChannel2.xAnchor("2004-01-11");

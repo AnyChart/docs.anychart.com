@@ -40,7 +40,7 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_01{sample}
 
-## Configuring Levels
+## Levels
 
 You can set the levels of a Fibonacci Retracement annotation by using the {api:anychart.core.annotations.FibonacciRetracement#levels}levels(){api} method and passing an array of values as a parameter:
 
@@ -78,7 +78,7 @@ In the sample below, there are two Fibonacci Retracement annotations with some o
 
 ```
 // create the first Fibonacci Retracement annotation and configure its visual settings
-fibonacciRetracement1 = controller.fibonacciRetracement({
+var fibonacciRetracement1 = controller.fibonacciRetracement({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -99,7 +99,7 @@ fibonacciRetracement1 = controller.fibonacciRetracement({
 });
 
 // create the second Fibonacci Retracement annotation
-fibonacciRetracement2 = controller.fibonacciRetracement();
+var fibonacciRetracement2 = controller.fibonacciRetracement();
 
 // set the position of the second annotation
 fibonacciRetracement2.xAnchor("2007-09-23");
@@ -129,18 +129,17 @@ controller.fibonacciRetracement({
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
-            return "Red";
+            return "red";
             break;
         case 0.618:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
+                return "black";
+    }
   }
 };
 ```
@@ -165,7 +164,7 @@ var fibonacciRetracement = controller.fibonacciRetracement({
     secondValueAnchor: 28.92
 });
 
-// configure annotation labels
+// configure the annotation labels
 fibonacciRetracement.labels().format("{%level} ({%levelValue})");
 ```
 
@@ -174,7 +173,17 @@ fibonacciRetracement.labels().format("{%level} ({%levelValue})");
 Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
 
 ```
-
+// configure the annotation labels
+fibonacciRetracement.labels().format(function(){
+  var levelValue = this.levelValue.toFixed(1);
+  switch (this.level) {
+      case 0:
+          return this.level + " (" + levelValue + ")";
+          break;
+      default:
+              return this.level;
+  }
+});
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_06{sample}

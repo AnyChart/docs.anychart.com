@@ -38,7 +38,7 @@
     var controller = plot.annotations();
 
     // create the first Fibonacci Arc annotation and configure its visual settings
-    fibonacciArc1 = controller.fibonacciArc({
+    var fibonacciArc1 = controller.fibonacciArc({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
@@ -59,7 +59,7 @@
     });
 
     // create the second Fibonacci Arc annotation
-    fibonacciArc2 = controller.fibonacciArc();
+    var fibonacciArc2 = controller.fibonacciArc();
 
     // set the position of the second annotation
     fibonacciArc2.xAnchor("2004-01-11");

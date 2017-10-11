@@ -61,7 +61,7 @@ In the sample below, there are two Rectangle annotations with some of the visual
 
 ```
 // create the first Rectangle annotation and configure its visual settings
-rectangle1 = controller.rectangle({
+var rectangle1 = controller.rectangle({
     xAnchor: "2006-11-19",
     valueAnchor: 29.84,
     secondXAnchor: "2007-03-25",
@@ -78,7 +78,7 @@ rectangle1 = controller.rectangle({
 });
 
 // create the second Rectangle annotation
-rectangle2 = controller.rectangle();
+var rectangle2 = controller.rectangle();
 
 // set the position of the second annotation
 rectangle2.xAnchor("2005-11-20");

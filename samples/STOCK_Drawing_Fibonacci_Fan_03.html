@@ -38,7 +38,7 @@
     var controller = plot.annotations();
 
     // create the first Fibonacci Fan annotation and configure its visual settings
-        fibonacciFan1 = controller.fibonacciFan({
+    var fibonacciFan1 = controller.fibonacciFan({
         xAnchor: "2007-01-07",
         valueAnchor: 28.92,
         secondXAnchor: "2009-03-01",
@@ -60,7 +60,7 @@
     });
 
     // create the second Fibonacci Fan annotation
-    fibonacciFan2 = controller.fibonacciFan();
+    var fibonacciFan2 = controller.fibonacciFan();
 
     // set the position of the second annotation
     fibonacciFan2.xAnchor("2006-07-30");

@@ -38,7 +38,7 @@
     var controller = plot.annotations();
 
     // create the first Fibonacci Time Zones annotation and configure its visual settings
-    fibonacciTimezones1 = controller.fibonacciTimezones({
+    var fibonacciTimezones1 = controller.fibonacciTimezones({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
@@ -59,7 +59,7 @@
     });
 
     // create the second Fibonacci Time Zones annotation
-    fibonacciTimezones2 = controller.fibonacciTimezones();
+    var fibonacciTimezones2 = controller.fibonacciTimezones();
 
     // set the position of the second annotation
     fibonacciTimezones2.xAnchor("2004-01-11");

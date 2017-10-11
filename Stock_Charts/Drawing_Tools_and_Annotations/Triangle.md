@@ -63,7 +63,7 @@ In the sample below, there are two Triangle annotations with some of the visual 
 
 ```
 // create the first Triangle annotation and configure its visual settings
-triangle1 = controller.triangle({
+var triangle1 = controller.triangle({
     xAnchor: "2006-03-14",
     valueAnchor: 25.14,
     secondXAnchor: "2007-02-25",
@@ -82,7 +82,7 @@ triangle1 = controller.triangle({
 });
 
 // create the second Triangle annotation
-triangle2 = controller.triangle();
+var triangle2 = controller.triangle();
 
 // set the position of the second annotation
 triangle2.xAnchor("2004-09-15");
