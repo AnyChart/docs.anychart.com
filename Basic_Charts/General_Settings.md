@@ -19,40 +19,47 @@ To learn how to prepare your data for using it in AnyChart, see this article: [W
 
 ## Appearance Settings
 
-You can configure some visual settings of your chart: for example, stroke and fill color, fill or hatch fill pattern, and so on. For different chart types different settings are available.
+You can specify some visual settings of your chart: for example, stroke and fill color, hatch fill pattern, and so on. All these settings can be configured in three states: **normal**, **hover**, and **selected**.
 
-More information can be found in the [Appearance Settings](../Appearance_Settings) article and articles about particular chart types.
+Please note that the set of available options depends on the chart type.
+
+More information can be found in the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) aticles as well as articles about particular chart types.
 
 In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, select fill, and hatch fill are set:
 
 ```
-// create the first series (area)
+// create the first series (area), set the data and name
 var series1 = chart.area(seriesData_1);
+series1.name("Average for 20 Years");
 
 // configure the visual settings of the first series
-series1.fill("#04B4AE", 0.3);
-series1.hoverFill("#04B4AE", 0.5);
-series1.selectFill("#04B4AE", 0.5);
-series1.hatchFill("zigzag", "#808080", 1, 15);
-series1.stroke("#04B4AE");
-series1.hoverStroke("#04B4AE", 4);
-series1.selectStroke("#04B4AE", 4);
+series1.normal().fill("#04B4AE", 0.3);
+series1.hovered().fill("#04B4AE", 0.3);
+series1.selected().fill("#04B4AE", 0.5);
+series1.normal().hatchFill("zigzag", "#808080", 1, 15);
+series1.hovered().hatchFill("zigzag", "#808080", 1, 15);
+series1.selected().hatchFill("zigzag", "#808080", 1, 15);
+series1.normal().stroke("#04B4AE");
+series1.hovered().stroke("#04B4AE", 2);
+series1.selected().stroke("#04B4AE", 4);
 
-// create the second series (line)  
+// create the second series (line), set the data and name  
 var series2 = chart.line(seriesData_2);
+series2.name("2016");
 
 // configure the visual settings of the second series
-series2.stroke("#04B404");
-series2.hoverStroke("#04B404", 4);
-series2.selectStroke("#04B404", 4);
+series2.normal().stroke("#04B404");
+series2.hovered().stroke("#04B404", 2);
+series2.selected().stroke("#04B404", 4);
 
-// create the third series (line)  
+// create the third series (line), set the data and title  
 var series3 = chart.line(seriesData_3);
+series3.name("2017 (Forecast)");
 
 // configure the visual settings of the third series
-series3.stroke("#AEB404", 1, "10 5", "round");
-series3.hoverStroke("#AEB404", 4, "10 5", "round");
-series3.selectStroke("#AEB404", 4, "10 5",  "round");
+series3.normal().stroke("#AEB404", 1, "10 5", "round");
+series3.hovered().stroke("#AEB404", 2, "10 5", "round");
+series3.selected().stroke("#AEB404", 4, "10 5",  "round");
 ```
 
 {sample}BCT\_General\_Settings\_01{sample}

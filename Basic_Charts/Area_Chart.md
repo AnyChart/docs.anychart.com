@@ -79,13 +79,24 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Area series:
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use these methods:
 
-* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.cartesian.series.Area#normal}normal(){api}
+* {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}
+* {api:anychart.core.cartesian.series.Area#selected}selected(){api}
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the color and opacity of the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the color, opacity, pattern and pattern size of the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the color, thickness, dashes, and gaps of the stroke
+
+Alternatively, you can use the methods below to adjust the appearance of your chart in the normal state:
+
+* {api:anychart.core.cartesian.series.Area#color}color(){api}
+* {api:anychart.core.cartesian.series.Area#fill}fill(){api}
+* {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}
+* {api:anychart.core.cartesian.series.Area#stroke}stroke(){api}
 
 In the sample below, there are two Area series with some of the appearance settings configured:
 
