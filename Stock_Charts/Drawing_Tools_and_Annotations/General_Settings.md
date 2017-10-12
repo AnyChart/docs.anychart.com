@@ -73,7 +73,23 @@ plot.annotations().ellipse({
 You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green on hover and select, and the markers of the Infinite Line are disabled on select:
 
 ```
-// configure the markers
+// create an Ellipse annotation
+var ellipse = controller.ellipse({
+    xAnchor: "2006-11-20",
+    valueAnchor: 25.92,
+    secondXAnchor: "2007-02-24",
+    secondValueAnchor: 31.92,
+});
+
+// create an Infinite Line annotation
+var infiniteLine = controller.infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+});
+
+// configure the annotation markers
 ellipse.hovered().markers({size: 6, fill: "#8BC34A"});
 ellipse.selected().markers({size: 6, fill: "#8BC34A"});
 infiniteLine.selected().markers(false);

@@ -59,7 +59,7 @@ In the sample below, there are two Line annotations with some of the visual sett
 
 ```
 // create the first Line annotation and configure its visual settings
-line1 = controller.line({
+var line1 = controller.line({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-06",
@@ -69,7 +69,7 @@ line1 = controller.line({
 });
 
 // create the second Line annotation
-line2 = controller.line();
+var line2 = controller.line();
 
 // set the position of the second annotation
 line2.xAnchor("2004-06-06");

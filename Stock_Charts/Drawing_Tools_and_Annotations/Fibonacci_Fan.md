@@ -40,7 +40,7 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_01{sample}
 
-## Configuring Levels and Time Levels
+## Levels and Time Levels
 
 You can set the levels and time levels of a Fibonacci Fan annotation by using the {api:anychart.core.annotations.FibonacciFan#levels}levels(){api} and {api:anychart.core.annotations.FibonacciFan#timeLevels}timeLevels(){api} methods and passing arrays of values as parameters:
 
@@ -80,7 +80,7 @@ In the sample below, there are two Fibonacci Fan annotations with some of the vi
 
 ```
 // create the first Fibonacci Fan annotation and configure its visual settings
-    fibonacciFan1 = controller.fibonacciFan({
+var fibonacciFan1 = controller.fibonacciFan({
     xAnchor: "2007-01-07",
     valueAnchor: 28.92,
     secondXAnchor: "2009-03-01",
@@ -102,7 +102,7 @@ In the sample below, there are two Fibonacci Fan annotations with some of the vi
 });
 
 // create the second Fibonacci Fan annotation
-fibonacciFan2 = controller.fibonacciFan();
+var fibonacciFan2 = controller.fibonacciFan();
 
 // set the position of the second annotation
 fibonacciFan2.xAnchor("2006-07-30");
@@ -132,30 +132,30 @@ controller.fibonacciFan({
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
-            return "Red";
+            return "red";
             break;
         case 0.618:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
-  } else {
+                return "black";
+    }
+  }
+  else {
     switch (this.timeLevel) {
         case 0.618:
-            return "Red";
+            return "red";
             break;
         case 0.5:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black";
-     }
+                return "black";
     }
+  }
 };
 ```
 
@@ -171,6 +171,18 @@ Combine the {api:anychart.core.annotations.FibonacciFan#labels}labels(){api} and
 * `{%levelValue}`
 
 ```
+// configure the annotation labels
+fibonacciFan.labels().format("{%level} ({%levelValue})");
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_05{sample}
+
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+
+* `level` (shown by default)
+* `levelValue`
+
+```
 // create a Fibonacci Fan annotation
 var fibonacciFan = controller.fibonacciFan({
     xAnchor: "2007-01-07",
@@ -179,16 +191,16 @@ var fibonacciFan = controller.fibonacciFan({
     secondValueAnchor: 14.18
 });
 
-// configure annotation labels
-fibonacciFan.labels().format("{%level} ({%levelValue})");
-```
-
-{sample}STOCK\_Drawing\_Fibonacci\_Fan\_05{sample}
-
-Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields: *level*, *levelValue*:
-
-```
-
+// configure the annotation labels
+fibonacciFan.labels().format(function(){
+  var levelValue = this.levelValue.toFixed(1);
+  if (this.level!==undefined) {
+    return this.level + " (" + levelValue + ")";
+  }
+  else {
+    return this.timeLevel;
+  }
+});
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_06{sample}

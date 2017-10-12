@@ -50,7 +50,7 @@ The first annotation in the following sample is of the default type (down arrow)
 
 ```
 // create the first Marker annotation and configure its size and offset
-marker1 = controller.marker({
+var marker1 = controller.marker({
     xAnchor: "2008-07-13",
     valueAnchor: 21.66,
     size: 30,
@@ -58,7 +58,7 @@ marker1 = controller.marker({
 });
 
 // create the second Marker annotation
-marker2 = controller.marker();
+var marker2 = controller.marker();
 
 // set the position of the second annotation
 marker2.xAnchor("2007-01-07");
@@ -95,7 +95,7 @@ In the sample below, there are two Marker annotations with some of the visual se
 
 ```
 // create the first Marker annotation and configure its size, offset and visual settings
-marker1 = controller.marker({
+var marker1 = controller.marker({
     xAnchor: "2008-07-13",
     valueAnchor: 21.66,
     size: 30,
@@ -112,7 +112,7 @@ marker1 = controller.marker({
 });
 
 // create the second Marker annotation
-marker2 = controller.marker();
+var marker2 = controller.marker();
 
 // set the position of the second annotation
 marker2.xAnchor("2007-01-07");

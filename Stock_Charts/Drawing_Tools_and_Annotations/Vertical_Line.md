@@ -56,14 +56,14 @@ In the sample below, there are two Vertical Line annotations with some of the vi
 
 ```
 // create the first Vertical Line annotation and configure its visual settings
-verticalLine1 = controller.verticalLine({
+var verticalLine1 = controller.verticalLine({
     xAnchor: "2007-09-23",
     hovered: {stroke: "2 #FF0000"},
     selected: {stroke: "5 #FF0000"}
 });
 
 // create the second Vertical Line annotation
-verticalLine2 = controller.verticalLine();
+var verticalLine2 = controller.verticalLine();
 
 // set the position of the second annotation
 verticalLine2.xAnchor("2005-05-22");
