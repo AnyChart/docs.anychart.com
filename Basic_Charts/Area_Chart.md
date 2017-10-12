@@ -101,28 +101,32 @@ Alternatively, you can use the methods below to adjust the appearance of your ch
 In the sample below, there are two Area series with some of the appearance settings configured:
 
 ```
-// create the first series
+// create the first series, set the data and name
 var series1 = chart.area(seriesData_1);
+series1.name("2004");
 
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.3);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
-// create the second series
+// create the second series, set the data and name  
 var series2 = chart.area(seriesData_2);
+series2.name("2005");
 
 // configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.3);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("zigzag", "#808080", 1, 15);
+series2.hovered().hatchFill("zigzag", "#808080", 1, 15);
+series2.selected().hatchFill("zigzag", "#808080", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Area\_Chart\_02{sample}
