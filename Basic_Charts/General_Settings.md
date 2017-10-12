@@ -19,13 +19,11 @@ To learn how to prepare your data for using it in AnyChart, see this article: [W
 
 ## Appearance Settings
 
-You can specify some visual settings of your chart: for example, stroke and fill color, hatch fill pattern, and so on. All these settings can be configured in three states: **normal**, **hover**, and **selected**.
+AnyChart allows you to specify some visual settings of your chart: for example, the stroke and fill color, hatch fill pattern, and so on. All these settings can be configured in three states: **normal**, **hover**, and **selected**. Also, please note that the set of available options depends on the chart type.
 
-Please note that the set of available options depends on the chart type.
+You can find more information in the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) aticles as well as articles about particular chart types.
 
-More information can be found in the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) aticles as well as articles about particular chart types.
-
-In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, select fill, and hatch fill are set:
+The following sample shows how to set (in all states) the fill, hatch fill, and stroke of an Area series and the stroke of a Line series:
 
 ```
 // create the first series (area), set the data and name
