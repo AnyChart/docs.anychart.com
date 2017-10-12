@@ -173,20 +173,16 @@ chart.data(text, {
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use these methods: 
 
-* {api:anychart.charts.TagCloud#normal}normal(){api}
-* {api:anychart.charts.TagCloud#hovered}hovered(){api}
-* {api:anychart.charts.TagCloud#selected}selected(){api}
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-Combine them with methods listed in {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
-
-* {api:anychart.core.StateSettings#fill}fill(){api} sets the color and opacity of the fill
-* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.
-* {api:anychart.core.StateSettings#fontSize}fontSize(){api} sets the font size
-* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} sets the font style – normal, italic, oblique
-* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} sets the font variant – normal or small caps
-* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} sets the font weight 
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.core.StateSettings#fontSize}fontSize(){api} to set the font size
+* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
+* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant – normal or small caps
+* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
 
 For example:
 
