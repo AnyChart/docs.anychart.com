@@ -45,11 +45,15 @@
         secondValueAnchor: 34.5,
         thirdXAnchor: "2007-02-04",
         thirdValueAnchor: 20.65,
-        hoverFill: "#398CAE 0.3",
-        hoverStroke: "2 #FF0000",
-        selectFill: "#398CAE 0.3",
-        selectHatchFill: "brick",
-        selectStroke: "5 #FF0000"
+        hovered: {
+            fill: "#398CAE 0.3",
+            stroke: "2 #FF0000"
+        },
+        selected: {
+            fill: "#398CAE 0.3",
+            hatchFill: "brick",
+            stroke: "5 #FF0000"
+        }
     });
 
     // create the second Triangle annotation
@@ -64,11 +68,11 @@
     triangle2.thirdValueAnchor(15);
  
     // configure the visual settings of the second annotation
-    triangle2.stroke("#2196F3", 3, "10 2");
-    triangle2.fill(null);
+    riangle2.normal().fill(null);
+    triangle2.normal().stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Triangle: Visual Settings");
+    chart.title("Triangle: Appearance");
 
     // set the container id
     chart.container("container");

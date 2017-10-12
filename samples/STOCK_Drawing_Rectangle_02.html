@@ -43,11 +43,15 @@
         valueAnchor: 29.84,
         secondXAnchor: "2007-03-25",
         secondValueAnchor: 25.11,
-        hoverFill: "#398CAE 0.3",
-        hoverStroke: "2 #FF0000",
-        selectFill: "#398CAE 0.3",
-        selectHatchFill: "brick",
-        selectStroke: "5 #FF0000"
+        hovered: {
+            fill: "#398CAE 0.3",
+            stroke: "2 #FF0000"
+        },
+        selected: {
+            fill: "#398CAE 0.3",
+            hatchFill: "brick",
+            stroke: "5 #FF0000"
+        }
     });
 
     // create the second Rectangle annotation
@@ -60,11 +64,11 @@
     rectangle2.secondValueAnchor(23.30);
      
     // configure the visual settings of the second annotation
-    rectangle2.stroke("#2196F3", 3, "10 2");
-    rectangle2.fill(null);
+    rectangle2.normal().fill(null);
+    rectangle2.normal().stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Rectangle: Visual Settings");
+    chart.title("Rectangle: Appearance");
 
     // set the container id
     chart.container("container");

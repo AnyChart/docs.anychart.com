@@ -40,13 +40,20 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Line\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Line annotation:
+The [appearance settings](../../../Appearance_Settings) of a Line annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Line#color}color(){api} and {api:anychart.core.annotations.Line#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.Line#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -57,8 +64,8 @@ line1 = controller.line({
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-06",
     secondValueAnchor: 23.38,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
+    hovered: {stroke: "2 #FF0000"},
+    selected: {stroke: "5 #FF0000"}
 });
 
 // create the second Line annotation
@@ -71,7 +78,7 @@ line2.secondXAnchor("2007-01-07");
 line2.secondValueAnchor(28.92);
  
 // configure the visual settings of the second annotation
-line2.stroke("#2196F3", 3, "10 2");
+line2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Line\_02{sample}

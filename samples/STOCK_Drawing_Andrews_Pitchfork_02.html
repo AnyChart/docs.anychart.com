@@ -45,9 +45,9 @@
         secondValueAnchor: 28.92,
         thirdXAnchor: "2007-05-20",
         thirdValueAnchor: 25.52,
-        hoverStroke: "2 #FF0000",
-        selectStroke: "5 #FF0000"
-        });
+        hovered: {stroke: "2 #FF0000"},
+        selected: {stroke: "5 #FF0000"}
+    });
 
     // create the second Andrews' Pitchfork annotation
     andrewsPitchfork2 = controller.andrewsPitchfork();
@@ -61,10 +61,10 @@
     andrewsPitchfork2.thirdValueAnchor(23.30);
  
     // configure the visual settings of the second annotation
-    andrewsPitchfork2.stroke("#2196F3", 3, "10 2");
+    andrewsPitchfork2.normal().stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Andrews' Pitchfork: Visual Settings");
+    chart.title("Andrews' Pitchfork: Appearance");
 
     // set the container id
     chart.container("container");

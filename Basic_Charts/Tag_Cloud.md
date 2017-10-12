@@ -179,7 +179,7 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be co
 * {api:anychart.charts.TagCloud#hovered}hovered(){api}
 * {api:anychart.charts.TagCloud#selected}selected(){api}
 
-Combine them with methods listed in {api:anychart.core.StateSettings}http://api.anychart.stg/RC-8.0.0/anychart.core.StateSettings{api}:
+Combine them with methods listed in {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} sets the color and opacity of the fill
 * {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.

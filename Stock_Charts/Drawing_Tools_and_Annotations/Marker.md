@@ -74,24 +74,41 @@ marker2.offsetY(-40);
 
 {sample}STOCK\_Drawing\_Marker\_02{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Marker annotation:
+The [appearance settings](../../../Appearance_Settings) of a Marker annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Marker#color}color(){api}, {api:anychart.core.annotations.Marker#fill}fill(){api}, {api:anychart.core.annotations.Marker#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Marker#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Marker#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Marker#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Marker#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.Marker#selectFill}selectFill(){api}, {api:anychart.core.annotations.Marker#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Marker#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Marker annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first Marker annotation and configure its visual settings
+// create the first Marker annotation and configure its size, offset and visual settings
 marker1 = controller.marker({
     xAnchor: "2008-07-13",
     valueAnchor: 21.66,
-    selectFill: "#398CAE 0.3",
-    selectHatchFill: "brick",
-    selectStroke: "5 #FF0000"
+    size: 30,
+    offsetY: 10,
+    hovered: {
+       fill: "#398CAE 0.3",
+       stroke: "2 #FF0000",
+    },
+    selected: {
+        fill: "#398CAE 0.3",
+        hatchFill: "brick",
+        stroke: "5 #FF0000"
+    }
 });
 
 // create the second Marker annotation
@@ -102,11 +119,11 @@ marker2.xAnchor("2007-01-07");
 marker2.valueAnchor(28.92);
 
 // set the type of the second annotation
-marker2.markerType("arrowDown");
+marker2.markerType("arrow-down");
 
 // configure the visual settings of the second annotation
-marker2.stroke("#2196F3", 3, "10 2");
-marker2.fill(null);
+marker2.normal().fill(null);
+marker2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Marker\_03{sample}

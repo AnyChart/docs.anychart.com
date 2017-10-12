@@ -37,43 +37,16 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first Marker annotation and configure its size, offset and visual settings
-    marker1 = controller.marker({
-        xAnchor: "2008-07-13",
-        valueAnchor: 21.66,
-        size: 30,
-        offsetY: 10,
-        hovered: {
-           fill: "#398CAE 0.3",
-           stroke: "2 #FF0000",
-        },
-        selected: {
-            fill: "#398CAE 0.3",
-            hatchFill: "brick",
-            stroke: "5 #FF0000"
-        }
+    // create a Fibonacci Time Zones annotation
+    controller.fibonacciTimezones({
+        xAnchor: "2006-07-30",
+        valueAnchor: 17.24,
+        secondXAnchor: "2007-01-07",
+        secondValueAnchor: 28.92
     });
 
-    // create the second Marker annotation
-    marker2 = controller.marker();
-
-    // set the position of the second annotation
-    marker2.xAnchor("2007-01-07");
-    marker2.valueAnchor(28.92);
-
-    // set the type of the second annotation
-    marker2.markerType("arrow-down");
-
-    // configure the size and offset of the second annotation
-    marker2.size(30);
-    marker2.offsetY(-40);
-     
-    // configure the visual settings of the second annotation
-    marker2.normal().fill(null);
-    marker2.normal().stroke("#2196F3", 3, "10 2");
-
     // set the chart title
-    chart.title("Marker: Appearance");
+    chart.title("Fibonacci Time Zones: Labels (Formatting Functions)");
 
     // set the container id
     chart.container("container");

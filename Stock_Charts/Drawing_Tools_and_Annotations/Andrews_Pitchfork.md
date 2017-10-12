@@ -42,13 +42,20 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of an Andrews' Pitchfork annotation:
+The [appearance settings](../../../Appearance_Settings) of an Andrews' Pitchfork annotationcan be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.AndrewsPitchfork#color}color(){api} and {api:anychart.core.annotations.AndrewsPitchfork#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.AndrewsPitchfork#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.AndrewsPitchfork#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Andrews' Pitchfork annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -61,9 +68,9 @@ andrewsPitchfork1 = controller.andrewsPitchfork({
     secondValueAnchor: 28.92,
     thirdXAnchor: "2007-05-20",
     thirdValueAnchor: 25.52,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
-    });
+    hovered: {stroke: "2 #FF0000"},
+    selected: {stroke: "5 #FF0000"}
+});
 
 // create the second Andrews' Pitchfork annotation
 andrewsPitchfork2 = controller.andrewsPitchfork();
@@ -77,7 +84,7 @@ andrewsPitchfork2.thirdXAnchor("2008-02-10");
 andrewsPitchfork2.thirdValueAnchor(23.30);
 
 // configure the visual settings of the second annotation
-andrewsPitchfork2.stroke("#2196F3", 3, "10 2");
+andrewsPitchfork2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_02{sample}

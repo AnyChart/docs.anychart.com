@@ -40,13 +40,22 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Ellipse\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of an Ellipse annotation:
+The [appearance settings](../../../Appearance_Settings) of an Ellipse annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Ellipse#color}color(){api}, {api:anychart.core.annotations.Ellipse#fill}fill(){api}, {api:anychart.core.annotations.Ellipse#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Ellipse#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Ellipse annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -57,11 +66,15 @@ ellipse1 = controller.ellipse({
     valueAnchor: 25.92,
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectHatchFill: "brick",
-    selectStroke: "5 #FF0000"
+    hovered: {
+        fill: "#398CAE 0.3",
+        stroke: "2 #FF0000"
+    },
+    selected: {
+        fill: "#398CAE 0.3",
+        hatchFill: "brick",
+        stroke: "5 #FF0000"
+    }
 });
 
 // create the second Ellipse annotation
@@ -74,8 +87,8 @@ ellipse2.secondXAnchor("2007-02-25");
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-ellipse2.stroke("#2196F3", 3, "10 2");
-ellipse2.fill(null);
+ellipse2.normal().fill(null);
+ellipse2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Ellipse\_02{sample}

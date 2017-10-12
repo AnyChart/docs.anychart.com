@@ -43,26 +43,36 @@
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92,
-        hoverTrend: "#0000FF",
-        hoverStroke: "#FF0000",
-        selectTrend: "2 #0000FF",
-        selectStroke: "2 #FF0000"        
+        normal: {
+                labels: {fontColor: "#FF0000"}
+        },
+        hovered: {
+            stroke: "#FF0000",
+            trend: "#0000FF",
+            labels: {fontColor: "#FF0000"}
+        },
+        selected: {
+            stroke: "2 #FF0000",
+            trend: "2 #0000FF",
+            labels: {fontColor: "#FF0000"} 
+        }       
     });
 
     // create the second Fibonacci Retracement annotation
     fibonacciRetracement2 = controller.fibonacciRetracement();
 
     // set the position of the second annotation
-    fibonacciRetracement2.xAnchor("2004-01-11");
-    fibonacciRetracement2.valueAnchor(29.13);
+    fibonacciRetracement2.xAnchor("2007-09-23");
+    fibonacciRetracement2.valueAnchor(33.1);
     fibonacciRetracement2.secondXAnchor("2004-08-08");
     fibonacciRetracement2.secondValueAnchor(17.86);
      
     // configure the visual settings of the second annotation
-    fibonacciRetracement2.stroke("#2196F3", 2, "10 2");
+    fibonacciRetracement2.normal().stroke("#2196F3", 3, "10 2");
+    fibonacciRetracement2.normal().labels().fontColor("#2196F3");
 
     // set the chart title
-    chart.title("Fibonacci Retracement: Visual Settings");
+    chart.title("Fibonacci Retracement: Appearance");
 
     // set the container id
     chart.container("container");

@@ -40,8 +40,8 @@
     // create the first Vertical Line annotation and configure its visual settings
     verticalLine1 = controller.verticalLine({
         xAnchor: "2007-09-23",
-        hoverStroke: "2 #FF0000",
-        selectStroke: "5 #FF0000"
+        hovered: {stroke: "2 #FF0000"},
+        selected: {stroke: "5 #FF0000"}
     });
 
     // create the second Vertical Line annotation
@@ -51,10 +51,10 @@
     verticalLine2.xAnchor("2005-05-22");
      
     // configure the visual settings of the second annotation
-    verticalLine2.stroke("#2196F3", 3, "10 2");
+    verticalLine2.normal().stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Vertical Line: Visual Settings");
+    chart.title("Vertical Line: Appearance");
 
     // set the container id
     chart.container("container");

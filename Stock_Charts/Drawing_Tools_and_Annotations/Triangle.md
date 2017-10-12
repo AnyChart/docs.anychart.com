@@ -42,13 +42,22 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Triangle\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Triangle annotation:
+The [appearance settings](../../../Appearance_Settings) of a Triangle annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Triangle#color}color(){api}, {api:anychart.core.annotations.Triangle#fill}fill(){api}, {api:anychart.core.annotations.Triangle#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Triangle#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Triangle#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Triangle#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.Triangle#selectFill}selectFill(){api}, {api:anychart.core.annotations.Triangle#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Triangle annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -61,11 +70,15 @@ triangle1 = controller.triangle({
     secondValueAnchor: 34.5,
     thirdXAnchor: "2007-02-04",
     thirdValueAnchor: 20.65,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectHatchFill: "brick",
-    selectStroke: "5 #FF0000"
+    hovered: {
+        fill: "#398CAE 0.3",
+        stroke: "2 #FF0000"
+    },
+    selected: {
+        fill: "#398CAE 0.3",
+        hatchFill: "brick",
+        stroke: "5 #FF0000"
+    }
 });
 
 // create the second Triangle annotation
@@ -80,8 +93,8 @@ triangle2.thirdXAnchor("2005-10-02");
 triangle2.thirdValueAnchor(15);
 
 // configure the visual settings of the second annotation
-triangle2.stroke("#2196F3", 3, "10 2");
-triangle2.fill(null);
+riangle2.normal().fill(null);
+triangle2.normal().stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Triangle\_02{sample}
