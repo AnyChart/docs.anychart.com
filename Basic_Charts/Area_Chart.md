@@ -87,9 +87,9 @@ The [appearance settings](../Appearance_Settings) of an Area chart can be config
 
 Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-* {api:anychart.core.StateSettings#fill}fill(){api} – color and opacity of the fill
-* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} – color, opacity, pattern and pattern size of the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} – color, thickness, dashes, gaps, joins, and caps of the stroke
+* {api:anychart.core.StateSettings#fill}fill(){api} – the color and opacity of the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} – the color, opacity, pattern, and pattern size of the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} – the color, thickness, dashes, gaps, joins, and caps of the stroke
 
 Alternatively, you can use the methods below to adjust the appearance of your chart in the normal state:
 
