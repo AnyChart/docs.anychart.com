@@ -79,24 +79,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use these methods:
-
-* {api:anychart.core.cartesian.series.Area#normal}normal(){api}
-* {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}
-* {api:anychart.core.cartesian.series.Area#selected}selected(){api}
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use these methods: {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, {api:anychart.core.cartesian.series.Area#selected}selected(){api}
 
 Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the color and opacity of the fill
-* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the color, opacity, pattern, and pattern size of the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the color, thickness, dashes, gaps, joins, and caps of the stroke
-
-Alternatively, you can use the methods below to adjust the appearance of your chart in the normal state:
-
-* {api:anychart.core.cartesian.series.Area#color}color(){api}
-* {api:anychart.core.cartesian.series.Area#fill}fill(){api}
-* {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}
-* {api:anychart.core.cartesian.series.Area#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the sample below, there are two Area series with some of the appearance settings configured:
 
