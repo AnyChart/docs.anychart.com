@@ -112,24 +112,24 @@ chart = anychart.heatMap(data);
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Heat Map chart:
+The [appearance settings](../Appearance_Settings) of a Heat Map chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap.#normal}normal(){api}, {api:anychart.charts.HeatMap.#hovered}hovered(){api}, and {api:anychart.charts.HeatMap.#selected}selected(){api} methods.
 
-* {api:anychart.charts.HeatMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.HeatMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.charts.HeatMap#hoverFill}hoverFill(){api}, {api:anychart.charts.HeatMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.HeatMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.HeatMap#selectFill}selectFill(){api}, {api:anychart.charts.HeatMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.HeatMap#selectStroke()}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-In the followoing sample, there is a Heat Map chart with some of the appearance settings configured:
+In the sample below, there is a Heat Map chart with some of the appearance settings configured:
 
 ```
-// configure visual settings
-chart.hoverFill("gray", 0.4);
-chart.selectFill("gray", 0.6);
-chart.selectHatchFill("backwardDiagonal", "gray", 2, 20);
-chart.stroke("gray");
-chart.hoverStroke("gray");
-chart.selectStroke("gray", 2);
+// configure the visual settings of the chart
+chart.hovered().fill("gray", 0.4);
+chart.selected().fill("gray", 0.6);
+chart.selected().hatchFill("backward-diagonal", "gray", 2, 20);
+chart.normal().stroke("gray");
+chart.hovered().stroke("gray");
+chart.selected().stroke("gray", 2);
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}

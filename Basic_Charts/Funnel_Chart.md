@@ -93,27 +93,27 @@ chart.neckHeight("35%");
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Funnel Chart:
+The [appearance settings](../Appearance_Settings) of a Funnel chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Funnel.#normal}normal(){api}, {api:anychart.charts.Funnel.#hovered}hovered(){api}, and {api:anychart.charts.Funnel.#selected}selected(){api} methods.
 
-* {api:anychart.charts.Funnel#fill}fill(){api}, {api:anychart.charts.Funnel#hatchFill}hatchFill(){api}, {api:anychart.charts.Funnel#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.charts.Funnel#hoverFill}hoverFill(){api}, {api:anychart.charts.Funnel#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Funnel#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.Funnel#selectFill}selectFill(){api}, {api:anychart.charts.Funnel#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Funnel#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-In the sample below, there is a Funnel Chart with some of the appearance settings configured:
+In the sample below, there is a Funnel chart with some of the appearance settings configured:
 
 ```
-// adjust appearance
-chart.fill("#DEB887");
-chart.hoverFill("#FFEBCD");
-chart.selectFill("#A0522D");
-chart.hatchFill("forwardDiagonal");
-chart.hoverHatchFill("#backwardDiagonal");
-chart.selectHatchFill("diagonalCross");
-chart.stroke("#fff");
-chart.hoverStroke("#fff", 2);
-chart.selectStroke("fff", 4);
+// configure the visual settings of the chart
+chart.normal().fill("#deb887");
+chart.hovered().fill("#ffebcd");
+chart.selected().fill("#a0522d");
+chart.normal().hatchFill("forward-diagonal");
+chart.hovered().hatchFill("#backward-diagonal");
+chart.selected().hatchFill("diagonal-cross");
+chart.normal().stroke("#fff");
+chart.hovered().stroke("#fff", 2);
+chart.selected().stroke("#fff", 2);
 ```
 
 {sample}BCT\_Funnel\_Chart\_04{sample}

@@ -22,16 +22,16 @@ var data = [
 
 chart = anychart.funnel(data);
 
-// adjust colors
-chart.fill("#DEB887");
-chart.hovered().fill("#FFEBCD");
-chart.selected().fill("#A0522D");
-chart.hatchFill("forward-diagonal");
-chart.hovered().hatchFill("#backwardDiagonal");
+// configure the visual settings of the chart
+chart.normal().fill("#deb887");
+chart.hovered().fill("#ffebcd");
+chart.selected().fill("#a0522d");
+chart.normal().hatchFill("forward-diagonal");
+chart.hovered().hatchFill("#backward-diagonal");
 chart.selected().hatchFill("diagonal-cross");
-chart.stroke("#fff");
+chart.normal().stroke("#fff");
 chart.hovered().stroke("#fff", 2);
-chart.selected().stroke("fff", 4);
+chart.selected().stroke("#fff", 2);
 
 // set the container id
 chart.container("container");
