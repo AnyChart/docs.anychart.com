@@ -35,24 +35,30 @@
     {x: 2006, value: 800, size: 2}
   ];
 
-  // set data for each series
-  series1 = chart.bubble(data1);
-  series2 = chart.bubble(data2);
+  // create the first series
+  var series1 = chart.bubble(data1);
 
-  // set colors
-  series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series1.stroke("#00897b", 1, "10 5", "round");
-  series1.hovered().fill("#6aabcc", 0.3);
-  series1.hovered().stroke("#00897b", 2, "10 5", "round");
-  series1.selected().fill("#1976d2", 0.8);
-  series1.selected().stroke("#00897b", 4, "10 5", "round");
+  // configure the visual settings of the first series
+  series1.normal().fill("#00cc99", 0.3);
+  series1.hovered().fill("#00cc99", 0.3);
+  series1.selected().fill("#00cc99", 0.5);
+  series1.normal().stroke("#00cc99", 1, "10 5", "round");
+  series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+  series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
-  series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series2.hovered().fill("#80cbc4", 0.5);
-  series2.selected().fill("#16685d");
-  series2.hatchFill("percent10");
-  series2.hovered().hatchFill("percent30");
-  series2.selected().hatchFill("percent50");
+  // create the second series
+  var series2 = chart.bubble(data2);
+
+  // configure the visual settings of the second series
+  series2.normal().fill("#0066cc", 0.3);
+  series2.hovered().fill("#0066cc", 0.3);
+  series2.selected().fill("#0066cc", 0.5);
+  series2.normal().hatchFill("percent30", "#808080", 1, 15);
+  series2.hovered().hatchFill("percent30", "#808080", 1, 15);
+  series2.selected().hatchFill("percent30", "#808080", 1, 15);
+  series2.normal().stroke("#0066cc");
+  series2.hovered().stroke("#0066cc", 2);
+  series2.selected().stroke("#0066cc", 4);
   
   // chart title
   chart.title("Multi-Series Bubble Chart with appearance settings configured");

@@ -79,33 +79,41 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Box series:
+The [appearance settings](../Appearance_Settings) of a Box chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Box#normal}normal(){api}, {api:anychart.core.cartesian.series.Box#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Box#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Box#color}color(){api}, {api:anychart.core.cartesian.series.Box#fill}fill(){api}, {api:anychart.core.cartesian.series.Box#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Box#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Box#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Box#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Box#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Box#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Box#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Box#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the sample below, there are two Box series with some of the appearance settings configured:
 
 ```
+// create the first series
+series1 = chart.box(data1);
+
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.4);
-series1.hoverFill("#00cc99", 0.2);
-series1.selectFill("#00cc99", 0.6);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.4);
+series1.hovered().fill("#00cc99", 0.2);
+series1.selected().fill("#00cc99", 0.6);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+series2 = chart.box(data2);
 
 // configure the visual settings of the second series
-series2.color("none");
-series2.hatchFill("forwardDiagonal");
-series2.hoverHatchFill("backwardDiagonal");
-series2.selectHatchFill("diagonalCross");
-series2.stroke("#000");
-series2.hoverStroke("#000", 2);
-series2.selectStroke("#000", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.3);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("backwardDiagonal", "#808080", 1, 15);
+series2.hovered().hatchFill("backwardDiagonal", "#808080", 1, 15);
+series2.selected().hatchFill("backwardDiagonal", "#808080", 1, 15);
+series2.normal().stroke("#000");
+series2.hovered().stroke("#000", 2);
+series2.selected().stroke("#000", 4);
 ```
 
 {sample}BCT\_Box\_Chart\_02{sample}
