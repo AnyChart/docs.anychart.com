@@ -23,7 +23,7 @@ AnyChart allows you to specify some visual settings of your chart: for example, 
 
 You can find more information in the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) aticles as well as articles about particular chart types.
 
-The following sample shows how to set (in all states) the fill, hatch fill, and stroke of an Area series and the stroke of a Line series:
+In the sample below, there is an Area and two Line series with some appearance settings (fill, hatch fill, stroke) configured in all states :
 
 ```
 // create the first series (area), set the data and name

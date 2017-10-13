@@ -42,30 +42,8 @@
     var series1 = chart.area(seriesData_1);
     series1.name("Average for 20 Years");
 
-    var normal1 = {
-      fill: "#04B4AE" 0.3,
-      hatchFill: "zigzag" "#808080" 1 15,
-      stroke: "#04B4AE"
-    };
-
-    var hovered1 = {
-      fill: "#04B4AE" 0.3,
-      hatchFill: "zigzag" "#808080" 1 15,
-      stroke: "#04B4AE" 2
-    };
-
-    var selected1 = {
-      fill: "#04B4AE" 0.5,
-      hatchFill: "zigzag" "#808080" 1 15,
-      stroke: "#04B4AE" 4
-    };
-
-    series1.normal(normal1);
-    series1.selected(selected1);
-    series1.hovered(hovered1);
-
     // configure the visual settings of the first series
-    /*series1.normal().fill("#04B4AE", 0.3);
+    series1.normal().fill("#04B4AE", 0.3);
     series1.hovered().fill("#04B4AE", 0.3);
     series1.selected().fill("#04B4AE", 0.5);
     series1.normal().hatchFill("zigzag", "#808080", 1, 15);
@@ -73,25 +51,25 @@
     series1.selected().hatchFill("zigzag", "#808080", 1, 15);
     series1.normal().stroke("#04B4AE");
     series1.hovered().stroke("#04B4AE", 2);
-    series1.selected().stroke("#04B4AE", 4);*/
+    series1.selected().stroke("#04B4AE", 4);
 
     // create the second series (line), set the data and name  
     var series2 = chart.line(seriesData_2);
     series2.name("2016");
 
     // configure the visual settings of the second series
-    /*series2.normal().stroke("#04B404");
+    series2.normal().stroke("#04B404");
     series2.hovered().stroke("#04B404", 2);
-    series2.selected().stroke("#04B404", 4);*/
+    series2.selected().stroke("#04B404", 4);
 
     // create the third series (line), set the data and title  
     var series3 = chart.line(seriesData_3);
     series3.name("2017 (Forecast)");
 
     // configure the visual settings of the third series
-    /*series3.normal().stroke("#AEB404", 1, "10 5", "round");
+    series3.normal().stroke("#AEB404", 1, "10 5", "round");
     series3.hovered().stroke("#AEB404", 2, "10 5", "round");
-    series3.selected().stroke("#AEB404", 4, "10 5",  "round");*/
+    series3.selected().stroke("#AEB404", 4, "10 5",  "round");
 
     // turn the legend on
     chart.legend(true);
