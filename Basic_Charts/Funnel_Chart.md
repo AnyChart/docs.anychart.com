@@ -93,7 +93,7 @@ chart.neckHeight("35%");
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Funnel chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Funnel.#normal}normal(){api}, {api:anychart.charts.Funnel.#hovered}hovered(){api}, and {api:anychart.charts.Funnel.#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Funnel chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Funnel#normal}normal(){api}, {api:anychart.charts.Funnel#hovered}hovered(){api}, and {api:anychart.charts.Funnel#selected}selected(){api} methods.
 
 Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
