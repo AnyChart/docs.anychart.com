@@ -26,9 +26,8 @@ You can find more information in the [Appearance Settings](../Appearance_Setting
 In the sample below, there is an Area and two Line series with some appearance settings (fill, hatch fill, stroke) configured in all states :
 
 ```
-// create the first series (area), set the data and name
+// create the first series (area)
 var series1 = chart.area(seriesData_1);
-series1.name("Average for 20 Years");
 
 // configure the visual settings of the first series
 series1.normal().fill("#04B4AE", 0.3);
@@ -41,18 +40,16 @@ series1.normal().stroke("#04B4AE");
 series1.hovered().stroke("#04B4AE", 2);
 series1.selected().stroke("#04B4AE", 4);
 
-// create the second series (line), set the data and name  
+// create the second series (line)e  
 var series2 = chart.line(seriesData_2);
-series2.name("2016");
 
 // configure the visual settings of the second series
 series2.normal().stroke("#04B404");
 series2.hovered().stroke("#04B404", 2);
 series2.selected().stroke("#04B404", 4);
 
-// create the third series (line), set the data and title  
+// create the third series (line)
 var series3 = chart.line(seriesData_3);
-series3.name("2017 (Forecast)");
 
 // configure the visual settings of the third series
 series3.normal().stroke("#AEB404", 1, "10 5", "round");

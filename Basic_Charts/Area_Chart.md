@@ -90,9 +90,8 @@ Combine them with the following methods from {api:anychart.core.StateSettings}an
 In the sample below, there are two Area series with some of the appearance settings configured:
 
 ```
-// create the first series, set the data and name
+// create the first series
 var series1 = chart.area(seriesData_1);
-series1.name("2004");
 
 // configure the visual settings of the first series
 series1.normal().fill("#00cc99", 0.3);
@@ -102,9 +101,8 @@ series1.normal().stroke("#00cc99", 1, "10 5", "round");
 series1.hovered().stroke("#00cc99", 2, "10 5", "round");
 series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
-// create the second series, set the data and name  
+// create the second series
 var series2 = chart.area(seriesData_2);
-series2.name("2005");
 
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);

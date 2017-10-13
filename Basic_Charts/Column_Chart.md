@@ -75,13 +75,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Column series:
+The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Column#color}color(){api}, {api:anychart.core.cartesian.series.Column#fill}fill(){api}, {api:anychart.core.cartesian.series.Column#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Column#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Column#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Column#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Column#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Column#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Column#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Column#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the sample below, there are two Column series with some of the appearance settings configured:
 
@@ -90,24 +90,26 @@ In the sample below, there are two Column series with some of the appearance set
 var series1 = chart.column(seriesData_1);
 
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.3);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.column(seriesData_2);
 
 // configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.3);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("zigzag", "#808080", 1, 15);
+series2.hovered().hatchFill("zigzag", "#808080", 1, 15);
+series2.selected().hatchFill("zigzag", "#808080", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 {sample}BCT\_Column\_Chart\_02{sample}
 
