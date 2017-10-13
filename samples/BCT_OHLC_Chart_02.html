@@ -36,18 +36,18 @@
     ]);
       
     // configure the visual settings of the first series
-    series1.risingStroke("#33ccff");
+    series1.normal().risingStroke("#33ccff");
     series1.hovered().risingStroke("#33ccff", 1.5);
     series1.selected().risingStroke("#33ccff", 3);
-    series1.fallingStroke("#ff33cc");
+    series1.normal().fallingStroke("#ff33cc");
     series1.hovered().fallingStroke("#ff33cc", 1.5);
     series1.selected().fallingStroke("#ff33cc", 3);
 
     // configure the visual settings of the second series
-    series2.risingStroke("#33ccff", 1, "10 5", "round");
+    series2.normal().risingStroke("#33ccff", 1, "10 5", "round");
     series2.hovered().risingStroke("#33ccff", 1.5, "10 5", "round");
     series2.selected().risingStroke("#33ccff", 3, "10 5", "round");
-    series2.fallingStroke("#ff33cc", 1, "10 5", "round");
+    series2.normal().fallingStroke("#ff33cc", 1, "10 5", "round");
     series2.hovered().fallingStroke("#ff33cc", 1.5, "10 5", "round");
     series2.selected().fallingStroke("#ff33cc", 3, "10 5", "round");
 

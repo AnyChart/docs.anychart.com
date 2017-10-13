@@ -88,9 +88,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Japanese Candlestick chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Japanese Candlestick series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} to configure falling and rising candlesticks:
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} to adjust falling and rising candlesticks:
 
 * {api:anychart.core.StateSettings#fallingFill}fallingFill(){api} and {api:anychart.core.StateSettings#risingFill}risingFill(){api} to set the fill
 * {api:anychart.core.StateSettings#fallingHatchFill}fallingHatchFill(){api} and {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api} to set the hatch fill
