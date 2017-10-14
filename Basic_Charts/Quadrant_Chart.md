@@ -72,38 +72,38 @@ Each of the supported series types has its own visual settings – see the follo
 * [Bubble Chart](Bubble_Chart#appearance)
 * [Line Chart](Line_Chart#appearance)
 
-Also, you can learn more from the [Appearance Settings](../Appearance_Settings) section.
+Also, you can learn more from the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) sections.
 
 In this sample there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
 
 ```
-// create the first series (marker) and set the data
+// create the first series (marker)
 var series1 = chart.marker(data_1);
 
 // configure the visual settings of the first series
-series1.fill("black", 0.3);
-series1.hoverFill("black", 0.3);
-series1.selectFill("black", 0.5);
-series1.stroke("black", 1);
-series1.hoverStroke("black", 2);
-series1.selectStroke("black", 4);
+series1.normal().fill("black", 0.3);
+series1.hovered().fill("black", 0.3);
+series1.selected().fill("black", 0.5);
+series1.normal().stroke("black", 1);
+series1.hovered().stroke("black", 2);
+series1.selected().stroke("black", 4);
 
-// create the second series (line) and set the data
+// create the second series (line)
 var series2 = chart.line(data_2);
 
 // configure the visual settings of the second series
-series2.stroke("#00cc99", 3, "10 5", "round");
+series2.normal().stroke("#00cc99", 3, "10 5", "round");
 
-// create the third series (bubble) and set the data
+// create the third series (bubble)
 var series3 = chart.bubble(data_3);
 
 // configure the visual settings of the third series
-series3.fill("#0066cc", 0.3);
-series3.hoverFill("#0066cc", 0.3);
-series3.selectFill("#0066cc", 0.5);
-series3.stroke("#0066cc");
-series3.hoverStroke("#0066cc", 2);
-series3.selectStroke("#0066cc", 4);
+series3.normal().fill("#0066cc", 0.3);
+series3.hovered().fill("#0066cc", 0.3);
+series3.selected().fill("#0066cc", 0.5);
+series3.normal().stroke("#0066cc");
+series3.hovered().stroke("#0066cc", 2);
+series3.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Quadrant\_Chart\_02{sample}

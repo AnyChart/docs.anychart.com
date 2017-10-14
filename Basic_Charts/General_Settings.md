@@ -40,7 +40,7 @@ series1.normal().stroke("#04B4AE");
 series1.hovered().stroke("#04B4AE", 2);
 series1.selected().stroke("#04B4AE", 4);
 
-// create the second series (line)e  
+// create the second series (line)  
 var series2 = chart.line(seriesData_2);
 
 // configure the visual settings of the second series

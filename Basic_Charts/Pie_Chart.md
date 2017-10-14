@@ -68,23 +68,24 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Pie chart:
+The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
 
-* {api:anychart.charts.Pie#fill}fill(){api}, {api:anychart.charts.Pie#hatchFill}hatchFill(){api}, {api:anychart.charts.Pie#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.charts.Pie#hoverFill}hoverFill(){api}, {api:anychart.charts.Pie#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pie#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the sample below, there a Pie chart with some of the appearance settings configured:
 
 ```
-// configure visual settings
-chart.fill("#0066cc", 0.5);
-chart.hoverFill("#0066cc", 0.6);
-chart.hatchFill("backwarddiagonal", "#808080");
-chart.hoverHatchFill("backwarddiagonal", "#0066cc", 3);
-chart.stroke("#808080", 3);
-chart.hoverStroke("#0066cc", 3);
+// configure the visual settings of the chart
+chart.normal().fill("#0066cc", 0.5);
+chart.hovered().fill("#0066cc", 0.6);
+chart.normal().hatchFill("backward-diagonal", "#808080");
+chart.hovered().hatchFill("backward-diagonal", "#0066cc", 3);
+chart.normal().stroke("#808080", 3);
+chart.hovered().stroke("#0066cc", 3);
 ```
 
 {sample}BCT\_Pie\_Chart\_02{sample}

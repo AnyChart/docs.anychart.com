@@ -23,12 +23,12 @@
     // create a chart and set the data
     chart = anychart.pie(data);
 
-    // configure visual settings
-    chart.fill("#0066cc", 0.5);
+    // configure the visual settings of the chart
+    chart.normal().fill("#0066cc", 0.5);
     chart.hovered().fill("#0066cc", 0.6);
-    chart.hatchFill("backwarddiagonal", "#808080");
-    chart.hovered().hatchFill("backwarddiagonal", "#0066cc", 3);
-    chart.stroke("#808080", 3);
+    chart.normal().hatchFill("backward-diagonal", "#808080");
+    chart.hovered().hatchFill("backward-diagonal", "#0066cc", 3);
+    chart.normal().stroke("#808080", 3);
     chart.hovered().stroke("#0066cc", 3);
 
     // set the chart title
