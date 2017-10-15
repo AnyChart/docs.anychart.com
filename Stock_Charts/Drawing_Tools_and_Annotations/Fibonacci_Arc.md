@@ -84,17 +84,17 @@ var fibonacciArc1 = controller.fibonacciArc({
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {
-        labels: {fontColor: "#FF0000"}
+        labels: {fontColor: "#ff0000"}
     },
     hovered: {
-        stroke: "2 #FF0000",
-        trend: "2 #0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "2 #ff0000",
+        trend: "2 #0000ff",
+        labels: {fontColor: "#ff0000"}
     },
     selected: {
-        stroke: "5 #FF0000", 
-        trend: "5 #0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "4 #ff0000", 
+        trend: "4 #0000ff",
+        labels: {fontColor: "#ff0000"}
     }       
 });
 
@@ -108,8 +108,10 @@ fibonacciArc2.secondXAnchor("2004-08-08");
 fibonacciArc2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciArc2.normal().stroke("#2196F3", 3, "10 2");
-fibonacciArc2.normal().labels().fontColor("#2196F3");
+fibonacciArc2.normal().labels().fontColor("#00b300");
+fibonacciArc2.normal().stroke("#006600", 1, "10 2");
+fibonacciArc2.hovered().stroke("#00b300", 2, "10 2");
+fibonacciArc2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_03{sample}

@@ -71,13 +71,13 @@ var triangle1 = controller.triangle({
     thirdXAnchor: "2007-02-04",
     thirdValueAnchor: 20.65,
     hovered: {
-        fill: "#398CAE 0.3",
-        stroke: "2 #FF0000"
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000"
     },
     selected: {
-        fill: "#398CAE 0.3",
-        hatchFill: "brick",
-        stroke: "5 #FF0000"
+        fill: "#398cae 0.3",
+        hatchFill: "forward-diagonal",
+        stroke: "4 #ff0000"
     }
 });
 
@@ -94,7 +94,9 @@ triangle2.thirdValueAnchor(15);
 
 // configure the visual settings of the second annotation
 riangle2.normal().fill(null);
-triangle2.normal().stroke("#2196F3", 3, "10 2");
+triangle2.normal().stroke("#006600", 1, "10 2");
+triangle2.hovered().stroke("#00b300", 2, "10 2");
+triangle2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Triangle\_02{sample}

@@ -46,13 +46,13 @@
         thirdXAnchor: "2006-07-30",
         thirdValueAnchor: 17.24,
         hovered: {
-            fill: "#398CAE 0.3",
-            stroke: "2 #FF0000"
+            fill: "#398cae 0.3",
+            stroke: "2 #ff0000"
         },
         selected: {
-            fill: "#398CAE 0.3",
-            hatchFill: "brick",
-            stroke: "5 #FF0000"
+            fill: "#398cae 0.3",
+            hatchFill: "forward-diagonal",
+            stroke: "4 #ff0000"
         }
     });
 
@@ -69,7 +69,9 @@
  
     // configure the visual settings of the second annotation
     trendChannel2.normal().fill(null);
-    trendChannel2.normal().stroke("#2196F3", 3, "10 2");
+    trendChannel2.normal().stroke("#006600", 1, "10 2");
+    trendChannel2.hovered().stroke("#00b300", 2, "10 2");
+    trendChannel2.selected().stroke("#00b300", 4, "10 2");
 
     // set the chart title
     chart.title("Trend Channel: Visual Settings");

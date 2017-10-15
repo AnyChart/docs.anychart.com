@@ -68,8 +68,8 @@ var andrewsPitchfork1 = controller.andrewsPitchfork({
     secondValueAnchor: 28.92,
     thirdXAnchor: "2007-05-20",
     thirdValueAnchor: 25.52,
-    hovered: {stroke: "2 #FF0000"},
-    selected: {stroke: "5 #FF0000"}
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Andrews' Pitchfork annotation
@@ -84,7 +84,9 @@ andrewsPitchfork2.thirdXAnchor("2008-02-10");
 andrewsPitchfork2.thirdValueAnchor(23.30);
 
 // configure the visual settings of the second annotation
-andrewsPitchfork2.normal().stroke("#2196F3", 3, "10 2");
+andrewsPitchfork2.normal().stroke("#006600", 1, "10 2");
+andrewsPitchfork2.hovered().stroke("#00b300", 2, "10 2");
+andrewsPitchfork2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_02{sample}

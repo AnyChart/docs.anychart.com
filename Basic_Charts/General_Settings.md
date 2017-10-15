@@ -30,31 +30,32 @@ In the sample below, there is an Area and two Line series with some appearance s
 var series1 = chart.area(seriesData_1);
 
 // configure the visual settings of the first series
-series1.normal().fill("#04B4AE", 0.3);
-series1.hovered().fill("#04B4AE", 0.3);
-series1.selected().fill("#04B4AE", 0.5);
-series1.normal().hatchFill("zigzag", "#808080", 1, 15);
-series1.hovered().hatchFill("zigzag", "#808080", 1, 15);
-series1.selected().hatchFill("zigzag", "#808080", 1, 15);
-series1.normal().stroke("#04B4AE");
-series1.hovered().stroke("#04B4AE", 2);
-series1.selected().stroke("#04B4AE", 4);
+series1.normal().fill("#04b4ae", 0.3);
+series1.hovered().fill("#04b4ae", 0.1);
+series1.selected().fill("#04b4ae", 0.5);
+series1.normal().hatchFill("zig-zag", "#808080", 1, 15);
+series1.hovered().hatchFill("zig-zag", "#808080", 1, 15);
+series1.selected().hatchFill("zig-zag", "#808080", 1, 15);
+series1.normal().stroke("#04b4ae");
+series1.hovered().stroke("#04b4ae", 2);
+series1.selected().stroke("#04b4ae", 4);
 
 // create the second series (line)  
 var series2 = chart.line(seriesData_2);
 
 // configure the visual settings of the second series
-series2.normal().stroke("#04B404");
-series2.hovered().stroke("#04B404", 2);
-series2.selected().stroke("#04B404", 4);
+series2.normal().stroke("#04b404");
+series2.hovered().stroke("#04b404", 2);
+series2.selected().stroke("#04b404", 4);
 
 // create the third series (line)
 var series3 = chart.line(seriesData_3);
 
 // configure the visual settings of the third series
-series3.normal().stroke("#AEB404", 1, "10 5", "round");
-series3.hovered().stroke("#AEB404", 2, "10 5", "round");
-series3.selected().stroke("#AEB404", 4, "10 5",  "round");
+series3.normal().stroke("#aeb404", 1, "10 5", "round");
+series3.hovered().stroke("#aeb404", 2, "10 5", "round");
+series3.selected().stroke("#aeb404", 4, "10 5",  "round");
+
 ```
 
 {sample}BCT\_General\_Settings\_01{sample}

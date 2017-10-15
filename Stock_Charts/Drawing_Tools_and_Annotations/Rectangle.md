@@ -67,13 +67,13 @@ var rectangle1 = controller.rectangle({
     secondXAnchor: "2007-03-25",
     secondValueAnchor: 25.11,
     hovered: {
-        fill: "#398CAE 0.3",
-        stroke: "2 #FF0000"
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000"
     },
     selected: {
-        fill: "#398CAE 0.3",
-        hatchFill: "brick",
-        stroke: "5 #FF0000"
+        fill: "#398cae 0.3",
+        hatchFill: "forward-diagonal",
+        stroke: "4 #ff0000"
     }
 });
 
@@ -88,7 +88,9 @@ rectangle2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
 rectangle2.normal().fill(null);
-rectangle2.normal().stroke("#2196F3", 3, "10 2");
+rectangle2.normal().stroke("#006600", 1, "10 2");
+rectangle2.hovered().stroke("#00b300", 2, "10 2");
+rectangle2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Rectangle\_02{sample}

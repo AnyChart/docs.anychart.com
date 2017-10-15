@@ -64,8 +64,8 @@ var ray1 = controller.ray({
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-27",
     secondValueAnchor: 26.75,
-    hovered: {stroke: "2 #FF0000"},
-    selected: {stroke: "5 #FF0000"}
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Ray annotation
@@ -78,7 +78,9 @@ ray2.secondXAnchor("2007-09-23");
 ray2.secondValueAnchor(33.13);
  
 // configure the visual settings of the second annotation
-ray2.normal().stroke("#2196F3", 3, "10 2");
+ray2.normal().stroke("#006600", 1, "10 2");
+ray2.hovered().stroke("#00b300", 2, "10 2");
+ray2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Ray\_02{sample}

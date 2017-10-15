@@ -58,13 +58,23 @@ plot.annotations().ellipse({
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hovered: {
-        fill: "#398CAE 0.3",
-        stroke: "2 #FF0000",
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000",
     },
     selected: {
-        fill: "#398CAE 0.3",
-        stroke: "5 #FF0000"
+        fill: "#398cae 0.3",
+        stroke: "4 #FF0000"
     }
+});
+
+// create an Infinite Line annotation and configure its visual settings
+controller.infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 ```
 
@@ -90,8 +100,8 @@ var infiniteLine = controller.infiniteLine({
 });
 
 // configure the annotation markers
-ellipse.hovered().markers({size: 6, fill: "#8BC34A"});
-ellipse.selected().markers({size: 6, fill: "#8BC34A"});
+ellipse.hovered().markers({size: 6, fill: "#00b300"});
+ellipse.selected().markers({size: 6, fill: "#00b300"});
 infiniteLine.selected().markers(false);
 ```
 

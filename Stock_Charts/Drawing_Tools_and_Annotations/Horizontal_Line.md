@@ -58,8 +58,8 @@ In the sample below, there are two Horizontal Line annotations with some of the 
 // create the first Horizontal Line annotation and configure its visual settings
 var horizontalLine1 = controller.horizontalLine({
     valueAnchor: 33.13,
-    hovered: {stroke: "2 #FF0000"},
-    selected: {stroke: "5 #FF0000"}
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Horizontal Line annotation
@@ -69,7 +69,9 @@ var horizontalLine2 = controller.horizontalLine();
 horizontalLine2.valueAnchor(14.18);
  
 // configure the visual settings of the second annotation
-horizontalLine2.normal().stroke("#2196F3", 3, "10 2");
+horizontalLine2.normal().stroke("#006600", 1, "10 2");
+horizontalLine2.hovered().stroke("#00b300", 2, "10 2");
+horizontalLine2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Horizontal\_Line\_02{sample}

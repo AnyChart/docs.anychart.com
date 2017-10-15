@@ -101,13 +101,13 @@ var marker1 = controller.marker({
     size: 30,
     offsetY: 10,
     hovered: {
-       fill: "#398CAE 0.3",
-       stroke: "2 #FF0000",
+       fill: "#398cae 0.3",
+       stroke: "2 #ff0000",
     },
     selected: {
-        fill: "#398CAE 0.3",
-        hatchFill: "brick",
-        stroke: "5 #FF0000"
+        fill: "#398cae 0.3",
+        hatchFill: "forward-diagonal",
+        stroke: "4 #ff0000"
     }
 });
 
@@ -123,7 +123,9 @@ marker2.markerType("arrow-down");
 
 // configure the visual settings of the second annotation
 marker2.normal().fill(null);
-marker2.normal().stroke("#2196F3", 3, "10 2");
+marker2.normal().stroke("#006600", 1, "10 2");
+marker2.hovered().stroke("#00b300", 2, "10 2");
+marker2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Marker\_03{sample}
