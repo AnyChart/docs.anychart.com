@@ -22,14 +22,14 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure visual settings
-    chart.fill("#00cc99", 0.3);
-    chart.hovered().fill("#00cc99", 0.3);
+    // configure the visual settings of the chart
+    chart.normal().fill("#00cc99", 0.3);
+    chart.hovered().fill("#00cc99", 0.1);
     chart.selected().fill("#00cc99", 0.5);
-    chart.hatchFill("percent20", "#808080");
+    chart.normal().hatchFill("percent20", "#808080");
     chart.hovered().hatchFill("percent20", "#808080");
     chart.selected().hatchFill("percent20", "#808080");
-    chart.stroke("#00cc99");
+    chart.normal().stroke("#00cc99");
     chart.hovered().stroke("#00cc99", 2);
     chart.selected().stroke("#00cc99", 4);
 

@@ -77,7 +77,7 @@ When you create data, you should use these data fields for both circles and inte
 * **value** to set sizes
 * **name** to set names
 
-The **name** field is optional, and names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**.
+The **name** field is optional, and the names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**.
 
 Please note that it is possible to add custom fields to your data – see the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
@@ -157,51 +157,53 @@ chart.dataSeparator("+");
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Venn diagram:
+The [appearance settings](../Appearance_Settings) of a Venn diagram can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Venn#normal}normal(){api}, {api:anychart.charts.Venn#hovered}hovered(){api}, and {api:anychart.charts.Venn#selected}selected(){api} methods.
 
-* {api:anychart.charts.Venn#fill}fill(){api}, {api:anychart.charts.Venn#hatchFill}hatchFill(){api}, {api:anychart.charts.Venn#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.charts.Venn#hoverFill}hoverFill(){api}, {api:anychart.charts.Venn#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Venn#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.Venn#selectFill}selectFill(){api}, {api:anychart.charts.Venn#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Venn#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the sample below, there is a Venn diagram with some of the appearance settings configured:
 
 ```
-// configure visual settings
-chart.fill("#00cc99", 0.3);
-chart.hoverFill("#00cc99", 0.3);
-chart.selectFill("#00cc99", 0.5);
-chart.hatchFill("percent20", "#808080");
-chart.hoverHatchFill("percent20", "#808080");
-chart.selectHatchFill("percent20", "#808080");
-chart.stroke("#00cc99");
-chart.hoverStroke("#00cc99", 2);
-chart.selectStroke("#00cc99", 4);
+// configure the visual settings of the chart
+chart.normal().fill("#00cc99", 0.3);
+chart.hovered().fill("#00cc99", 0.1);
+chart.selected().fill("#00cc99", 0.5);
+chart.normal().hatchFill("percent20", "#808080");
+chart.hovered().hatchFill("percent20", "#808080");
+chart.selected().hatchFill("percent20", "#808080");
+chart.normal().stroke("#00cc99");
+chart.hovered().stroke("#00cc99", 2);
+chart.selected().stroke("#00cc99", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-Here are methods that configure visual settings of intersection areas:
+Intersection areas can also be configured in three states. Use the {anychart.core.venn.Intersections#normal}normal(){api}, {anychart.core.venn.Intersections#hovered}hovered(){api}, and {anychart.core.venn.Intersections#selected}selected(){api} methods.
 
-* {api:anychart.core.venn.Intersections#fill}fill(){api}, {api:anychart.core.venn.Intersections#hatchFill}hatchFill(){api}, {api:anychart.core.venn.Intersections#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.core.venn.Intersections#hoverFill}hoverFill(){api}, {api:anychart.core.venn.Intersections#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.venn.Intersections#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.venn.Intersections#selectFill}selectFill(){api}, {api:anychart.core.venn.Intersections#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.venn.Intersections#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 This sample shows a Venn diagram with the appearance of intersections configured:
 
 ```
-// configure visual settings of intersections
+// configure the visual settings of intersections
 var intersect = chart.intersections();    
-intersect.fill("white", 0.3);
-intersect.hoverFill("white", 0.3);
-intersect.selectFill("white", 0.5);
-intersect.hatchFill("percent20", "#808080");
-intersect.hoverHatchFill("percent20", "white");
-intersect.selectHatchFill("percent20", "white");
-intersect.stroke("white");
-intersect.hoverStroke("white", 2);
-intersect.selectStroke("white", 4);
+intersect.normal().fill("white", 0.1);
+intersect.hovered().fill("white", 0.1);
+intersect.selected().fill("white", 0.5);
+intersect.normal().hatchFill("percent20", "#808080");
+intersect.hovered().hatchFill("percent20", "white");
+intersect.selected().hatchFill("percent20", "white");
+intersect.normal().stroke("white");
+intersect.hovered().stroke("white", 2);
+intersect.selected().stroke("white", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_06{sample}
@@ -212,11 +214,11 @@ intersect.selectStroke("white", 4);
 
 Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
 
-This chart type supports an optional data field – **name**. Names of circles are shown in their labels by default, but in the case of intersections the default choice is **value**. If you want some other field to be displayed in labels of intersections, you should configure them manually.
+This chart type supports an optional data field – **name**. The names of circles are shown in their labels by default, but in the case of intersections the default choice is **value**. If you want some other field to be displayed in the labels of intersections, you should configure them manually.
 
 You can also add a custom data field and use it for configuring labels.
 
-In the sample below, there is a Venn diagram with customized labels of circles and intersections:
+The sample below shows how to customize the labels of circles and intersections:
 
 ```
 //create data
@@ -240,10 +242,10 @@ var data = [
     }
 ];
 
-// configure labels of circles
+// configure the labels of circles
 chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
-// configure labels of intersections
+// configure the labels of intersections
 chart.intersections().labels().format("{%name}\n\n{%value}");
 ```
 
@@ -255,9 +257,9 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 Please note: when you create a Venn diagram, you can set tooltips both for circles and intersections.
 
-This chart type supports an optional data field – **name**, which is shown in tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
+This chart type supports an optional data field – **name**, which is shown in the tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
 
-In the sample below, there is a Venn diagram with customized tooltips of circles and intersections:
+The sample below shows how to customize the tooltips of circles and intersections:
 
 ```
 //create data
@@ -282,12 +284,12 @@ var data = [
     }
 ];
 
-// configure tooltips of circles
+// configure the tooltips of circles
 chart.tooltip().format(
     "Set Info: {%custom_field}\n_Cardinality: {%value}"
 );
 
-// configure tooltips of intersections
+// configure the tooltips of intersections
 chart.intersections().tooltip().format(
     "Intersection Info: {%custom_field}\nCardinality: {%value}"
 );

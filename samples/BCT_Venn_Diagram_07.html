@@ -36,10 +36,10 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure labels of circles
+    // configure the labels of circles
     chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
-    // configure labels of intersections
+    // configure the labels of intersections
     chart.intersections().labels().format("{%name}\n\n{%value}");
 
     // set the chart title

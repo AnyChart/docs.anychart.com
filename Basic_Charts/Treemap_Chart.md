@@ -241,25 +241,26 @@ chart.sort("asc");
 
 #### All Tiles
 
-Here is a full list of methods used to configure visual settings that are available for the Treemap chart:
+The [appearance settings](../Appearance_Settings) of a Treemap chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TreeMap#normal}normal(){api}, {api:anychart.charts.TreeMap#hovered}hovered(){api}, and {api:anychart.charts.TreeMap#selected}selected(){api} methods.
 
-*  {api:anychart.charts.TreeMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.TreeMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
-*  {api:anychart.charts.TreeMap#hoverFill}hoverFill(){api}, {api:anychart.charts.TreeMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.TreeMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-*  {api:anychart.charts.TreeMap#selectFill}selectFill(){api}, {api:anychart.charts.TreeMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.TreeMap#selectStroke()}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 In the following sample, there is a Treemap chart with some of the appearance settings configured:
 
 ```
-// configure visual settings
+// configure the visual settings of the chart
 chart.hoverFill("gray", 0.4);
 chart.selectFill("gray", 0.6);
-chart.selectHatchFill("backwardDiagonal", "gray", 2, 20);
+chart.selectHatchFill("forward-diagonal", "gray", 2, 20);
 chart.stroke("gray");
 chart.hoverStroke("gray");
 chart.selectStroke("gray", 2);
 ```
+
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
 #### Individual Tiles

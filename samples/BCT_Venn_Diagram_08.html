@@ -37,12 +37,12 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure tooltips of circles
+    // configure the tooltips of circles
     chart.tooltip().format(
         "Set Info: {%custom_field}\nCardinality: {%value}"
     );
 
-    // configure tooltips of intersections
+    // configure the tooltips of intersections
     chart.intersections().tooltip().format(
         "Intersection Info: {%custom_field}\nCardinality: {%value}"
     );

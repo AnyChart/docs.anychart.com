@@ -26,15 +26,15 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure visual settings of intersections
+    // configure the visual settings of intersections
     var intersect = chart.intersections();    
-    intersect.fill("white", 0.3);
-    intersect.hovered().fill("white", 0.3);
+    intersect.normal().fill("white", 0.1);
+    intersect.hovered().fill("white", 0.1);
     intersect.selected().fill("white", 0.5);
-    intersect.hatchFill("percent20", "#808080");
+    intersect.normal().hatchFill("percent20", "#808080");
     intersect.hovered().hatchFill("percent20", "white");
     intersect.selected().hatchFill("percent20", "white");
-    intersect.stroke("white");
+    intersect.normal().stroke("white");
     intersect.hovered().stroke("white", 2);
     intersect.selected().stroke("white", 4);
 

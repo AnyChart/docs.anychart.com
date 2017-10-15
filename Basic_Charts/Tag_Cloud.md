@@ -173,7 +173,7 @@ chart.data(text, {
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods.
 
 Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
 
@@ -187,7 +187,7 @@ Combine them with the following methods from {api:anychart.core.StateSettings}an
 For example:
 
 ```
-// configure visual settings in the normal state
+// configure the visual settings of the chart
 chart.normal().fill("#009999", 0.7);
 ```
 
@@ -196,13 +196,9 @@ chart.normal().fill("#009999", 0.7);
 The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods also allow you to specify settings as an object. See the sample below:
 
 ```
-// configure visual settings in the normal state
+// configure the visual settings of the chart
 chart.normal({fill: "#009999 0.7", fontWeight: 600});
-
-// configure visual settings in the hover state
-chart.hovered({fill: "#003366 0.5"});
-
-// configure visual settings in the selected state
+chart.hovered({fill: "#003366 0.3"});
 chart.selected({fill: "#003366 0.7"});
 ```
 

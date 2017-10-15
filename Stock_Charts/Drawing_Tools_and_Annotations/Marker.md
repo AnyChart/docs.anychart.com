@@ -106,7 +106,7 @@ var marker1 = controller.marker({
     },
     selected: {
         fill: "#398cae 0.3",
-        hatchFill: "forward-diagonal",
+        hatchFill: "percent75",
         stroke: "4 #ff0000"
     }
 });
