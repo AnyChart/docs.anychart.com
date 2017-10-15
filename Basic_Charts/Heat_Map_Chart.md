@@ -126,7 +126,7 @@ In the sample below, there is a Heat Map chart with some of the appearance setti
 // configure the visual settings of the chart
 chart.hovered().fill("gray", 0.4);
 chart.selected().fill("gray", 0.6);
-chart.selected().hatchFill("backward-diagonal", "gray", 2, 20);
+chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
 chart.normal().stroke("gray");
 chart.hovered().stroke("gray");
 chart.selected().stroke("gray", 2);

@@ -104,16 +104,15 @@ Combine them with the following methods from {api:anychart.core.StateSettings}an
 In the sample below, there is a Funnel chart with some of the appearance settings configured:
 
 ```
-// configure the visual settings of the chart
-chart.normal().fill("#deb887");
-chart.hovered().fill("#ffebcd");
-chart.selected().fill("#a0522d");
+chart.normal().fill("#00cc99", 0.3);
+chart.hovered().fill("#00cc99", 0.1);
+chart.selected().fill("#00cc99", 0.5);
 chart.normal().hatchFill("forward-diagonal");
-chart.hovered().hatchFill("#backward-diagonal");
-chart.selected().hatchFill("diagonal-cross");
-chart.normal().stroke("#fff");
-chart.hovered().stroke("#fff", 2);
-chart.selected().stroke("#fff", 2);
+chart.hovered().hatchFill("forward-diagonal");
+chart.selected().hatchFill("forward-diagonal");
+chart.normal().stroke("white");
+chart.hovered().stroke("white", 2);
+chart.selected().stroke("white", 2);
 ```
 
 {sample}BCT\_Funnel\_Chart\_04{sample}

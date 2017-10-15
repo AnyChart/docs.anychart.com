@@ -82,7 +82,7 @@ var series1 = chart.marker(data_1);
 
 // configure the visual settings of the first series
 series1.normal().fill("black", 0.3);
-series1.hovered().fill("black", 0.3);
+series1.hovered().fill("black", 0.1);
 series1.selected().fill("black", 0.5);
 series1.normal().stroke("black", 1);
 series1.hovered().stroke("black", 2);
@@ -99,7 +99,7 @@ var series3 = chart.bubble(data_3);
 
 // configure the visual settings of the third series
 series3.normal().fill("#0066cc", 0.3);
-series3.hovered().fill("#0066cc", 0.3);
+series3.hovered().fill("#0066cc", 0.1);
 series3.selected().fill("#0066cc", 0.5);
 series3.normal().stroke("#0066cc");
 series3.hovered().stroke("#0066cc", 2);

@@ -79,13 +79,12 @@ Combine them with the following methods from {api:anychart.core.StateSettings}an
 In the sample below, there a Pie chart with some of the appearance settings configured:
 
 ```
-// configure the visual settings of the chart
-chart.normal().fill("#0066cc", 0.5);
-chart.hovered().fill("#0066cc", 0.6);
-chart.normal().hatchFill("backward-diagonal", "#808080");
-chart.hovered().hatchFill("backward-diagonal", "#0066cc", 3);
+chart.normal().fill("#669999", 0.5);
+chart.hovered().fill("#669999", 0.3);
+chart.normal().hatchFill("forward-diagonal", "#808080");
+chart.hovered().hatchFill("forward-diagonal", "#669999", 3);
 chart.normal().stroke("#808080", 3);
-chart.hovered().stroke("#0066cc", 3);
+chart.hovered().stroke("#669999", 3);
 ```
 
 {sample}BCT\_Pie\_Chart\_02{sample}
