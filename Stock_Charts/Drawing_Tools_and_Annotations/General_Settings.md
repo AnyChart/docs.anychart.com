@@ -63,7 +63,7 @@ plot.annotations().ellipse({
     },
     selected: {
         fill: "#398cae 0.3",
-        stroke: "4 #FF0000"
+        stroke: "4 #ff0000"
     }
 });
 
