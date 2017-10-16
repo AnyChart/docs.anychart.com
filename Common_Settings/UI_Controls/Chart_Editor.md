@@ -10,7 +10,7 @@ Chart editor works only if `anychart.css` and `anychart-ui.min.css` and `anychar
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css">
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/fonts/css/anychart.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css">
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-editor.min.js"></script>
 ```
 
