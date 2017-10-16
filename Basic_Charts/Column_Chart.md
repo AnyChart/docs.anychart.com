@@ -75,11 +75,11 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
-
 #### All Columns
 
-Combine {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} with the following methods:
+The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
+
+Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
