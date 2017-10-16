@@ -40,7 +40,7 @@ controller.ellipse({
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -48,7 +48,7 @@ The [appearance settings](../../../Appearance_Settings) of annotations can be co
 
 Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
 
-In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers over or selects them. Like in the previous sample, object notation is used to configure the properties:
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, with appearance configured. Like in the previous sample, object notation is used:
 
 ```
 // create an Ellipse annotation and configure its visual settings
