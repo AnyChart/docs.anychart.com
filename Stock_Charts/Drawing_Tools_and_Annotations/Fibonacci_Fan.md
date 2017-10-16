@@ -60,7 +60,7 @@ controller.fibonacciFan({
 
 ## Appearance
 
-The [appearance settings](../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
