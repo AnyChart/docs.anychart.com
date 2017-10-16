@@ -183,7 +183,7 @@ var series3 = chart.waterfall(seriesData_3);
 
 The [appearance settings](../Appearance_Settings) of a Waterfall chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} to adjust columns indicating total values:
+Combine them with the following methods to adjust columns indicating total values:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
@@ -201,7 +201,9 @@ To adjust rising columns, use:
 * {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api}
 * {api:anychart.core.StateSettings#risingStroke}risingStroke(){api} 
 
-In the followoing sample, there is a Waterfall chart with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the followoing sample, there is a Waterfall chart with appearance settings configured:
 
 ```
 // configure the visual settings of the series

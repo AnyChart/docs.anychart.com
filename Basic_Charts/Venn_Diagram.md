@@ -159,13 +159,15 @@ chart.dataSeparator("+");
 
 The [appearance settings](../Appearance_Settings) of a Venn diagram can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Venn#normal}normal(){api}, {api:anychart.charts.Venn#hovered}hovered(){api}, and {api:anychart.charts.Venn#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-In the sample below, there is a Venn diagram with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there is a Venn diagram with appearance settings configured:
 
 ```
 // configure the visual settings of the chart

@@ -85,9 +85,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of an OHLC series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.OHLC#normal}normal(){api}, {api:anychart.core.cartesian.series.OHLC#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.OHLC#selected}selected(){api} methods.
 
-Combine them with {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api} and {api:anychart.core.StateSettings#risingStroke}risingStroke(){api} to adjust the stroke of falling and rising candlesticks.
+Combine them with {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api} and {api:anychart.core.StateSettings#risingStroke}risingStroke(){api} to adjust the stroke of falling and rising candlesticks. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-In the sample below, there are two OHLC series with some of the appearance settings configured:
+In the sample below, there are two OHLC series with appearance settings configured:
 
 ```
 // configure the visual settings of the first series

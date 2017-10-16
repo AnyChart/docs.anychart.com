@@ -90,13 +90,15 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of a Range Column can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeColumn#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeColumn#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeColumn#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-In the sample below, there are two Range Column series with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Range Column series with appearance settings configured:
 
 ```
 // create the first series

@@ -74,7 +74,7 @@ Each of the supported series types has its own visual settings – see the follo
 
 Also, you can learn more from the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) sections.
 
-In this sample there are three series (Marker, Line, and Bubble) with some of the appearance settings configured:
+In this sample there are three series (Marker, Line, and Bubble) with appearance settings configured:
 
 ```
 // create the first series (marker)

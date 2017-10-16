@@ -92,14 +92,16 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of a Range Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeArea#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeArea#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeArea#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#fill}lowStroke(){api} to set the low stroke
 * {api:anychart.core.StateSettings#fill}highStroke(){api} to set the high stroke
 
-In the sample below, there are two Range Area series with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Range Area series with appearance settings configured:
 
 ```
 // create the first series

@@ -175,7 +175,7 @@ chart.data(text, {
 
 The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods.
 
-Combine them with the following methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
@@ -184,22 +184,18 @@ Combine them with the following methods from {api:anychart.core.StateSettings}an
 * {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant – normal or small caps
 * {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
 
-For example:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+**Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
+
+In this sample, there is a Tag Cloud with appearance settings configured:
 
 ```
 // configure the visual settings of the chart
 chart.normal().fill("#009999", 0.7);
-```
-
-**Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
-
-The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods also allow you to specify settings as an object. See the sample below:
-
-```
-// configure the visual settings of the chart
-chart.normal({fill: "#009999 0.7", fontWeight: 600});
-chart.hovered({fill: "#003366 0.3"});
-chart.selected({fill: "#003366 0.7"});
+chart.hovered().fill("#003366", 0.3);
+chart.selected().fill("#003366", 0.7);
+chart.normal().fontWeight(600);
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
