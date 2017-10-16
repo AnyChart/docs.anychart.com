@@ -77,7 +77,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
 
-Combine them with the following methods:
+#### All Columns
+
+Combine {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
@@ -113,24 +115,49 @@ series2.normal().stroke("#0066cc");
 series2.hovered().stroke("#0066cc", 2);
 series2.selected().stroke("#0066cc", 4);
 ```
+
 {sample}BCT\_Column\_Chart\_02{sample}
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of particular columns by adding special fields to the data set:
+#### Individual Columns
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual columns by adding special fields to the data set:
 
 ```
 // create a data set
 var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},
-  {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
+  {x: "Peter", value: 13000,
+   normal:   {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true}
+             },
+   hovered:  {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true},
+             },
+   selected: {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true},
+             }
+  },
   {x: "James", value: 10000},
   {x: "Mary", value: 9000}
 ];
+
+// create a chart
+chart = anychart.column();
+
+// create a column series and set the data
+var series = chart.column(data);
 ```
 
 {sample}BCT\_Column\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of each column separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
+If you use an array to set the data, you can also configure the appearance of each column individually, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
 
 ```
 // create a data set
@@ -145,6 +172,13 @@ var data = anychart.data.set([
 // map the data
 var seriesData_1 = data.mapAs({x: 0, value: 1, fill: 3, stroke: 5, label: 6});
 var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 4, stroke: 5, label: 6});
+
+// create a chart
+chart = anychart.column();
+
+// create series and set the data
+var series1 = chart.column(seriesData_1);
+var series2 = chart.column(seriesData_2);
 ```
 
 {sample}BCT\_Column\_Chart\_04{sample}
@@ -158,6 +192,8 @@ To set the padding between columns and column groups, use these methods:
 
 Padding is measured as a ratio to the width of columns (the width is calculated automatically). So, if it is < 1, the space between columns or column groups is less than the width of columns, and vice versa. If padding is set to 0, there is no space between columns/groups, and a negative parameter makes columns overlap each other.
 
+#### Single Series
+
 Please note that in AnyChart single-series column charts are, technically speaking, composed of one-element column groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between columns. In the following sample it is set to 0:
 
 ```
@@ -169,6 +205,8 @@ chart.barGroupsPadding(0);
 ```
 
 {sample}BCT\_Column\_Chart\_05{sample}
+
+#### Multiple Series
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 

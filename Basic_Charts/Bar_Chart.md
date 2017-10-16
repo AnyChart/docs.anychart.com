@@ -77,7 +77,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of a Bar chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bar#normal}normal(){api}, {api:anychart.core.cartesian.series.Bar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bar#selected}selected(){api} methods.
 
-Combine them with the following methods:
+#### All Bars
+
+Combine the {api:anychart.core.cartesian.series.Bar#normal}normal(){api}, {api:anychart.core.cartesian.series.Bar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bar#selected}selected(){api} with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
@@ -116,22 +118,46 @@ In the sample below, there are two Bar series with appearance settings configure
 
 {sample}BCT\_Bar\_Chart\_02{sample}
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of particular bars by adding special fields to the data set:
+#### Individual Bars
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to the data set:
 
 ```
 // create a data set
 var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},
-  {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
+  {x: "Peter", value: 13000,
+   normal:   {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true}
+             },
+   hovered:  {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true},
+             },
+   selected: {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true},
+             }
+  },
   {x: "James", value: 10000},
   {x: "Mary", value: 9000}
 ];
+
+// create a chart
+chart = anychart.bar();
+
+// create a bar series and set the data
+var series = chart.bar(data);
 ```
 
 {sample}BCT\_Bar\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
+If you use an array to set the data, you can also configure the appearance of each bar individually, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
 
 ```
 // create a data set
@@ -146,6 +172,13 @@ var data = anychart.data.set([
 // map the data
 var seriesData_1 = data.mapAs({x: 0, value: 1, fill: 3, stroke: 5, label: 6});
 var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 4, stroke: 5, label: 6});
+
+// create a chart
+chart = anychart.bar();
+
+// create series and set the data
+var series1 = chart.bar(seriesData_1);
+var series2 = chart.bar(seriesData_2);
 ```
 
 {sample}BCT\_Bar\_Chart\_04{sample}
@@ -159,6 +192,8 @@ To set the padding between bars and bar groups, use these methods:
 
 Padding is measured as a ratio to the width of bars (the width is calculated automatically). So, if it is < 1, the space between bars or bar groups is less than the width of bars, and vice versa. If padding is set to 0, there is no space between bars/groups, and a negative parameter makes bars overlap each other.
 
+#### Single Series
+
 Please note that in AnyChart single-series bar charts are, technically speaking, composed of one-element bar groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between bars. In the following sample it is set to 0:
 
 ```
@@ -170,6 +205,8 @@ chart.barGroupsPadding(0);
 ```
 
 {sample}BCT\_Bar\_Chart\_05{sample}
+
+#### Multiple Series
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
