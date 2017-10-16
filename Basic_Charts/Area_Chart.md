@@ -87,7 +87,7 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-Please note that you can also use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 In the sample below, there are two Area series with appearance settings configured:
 
