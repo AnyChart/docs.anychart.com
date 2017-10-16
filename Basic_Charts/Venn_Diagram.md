@@ -182,7 +182,7 @@ chart.selected().stroke("#00cc99", 4);
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-Intersection areas can also be configured in three states. Use the {anychart.core.venn.Intersections#normal}normal(){api}, {anychart.core.venn.Intersections#hovered}hovered(){api}, and {anychart.core.venn.Intersections#selected}selected(){api} methods.
+Intersection areas can also be configured in three states. Use the {api:anychart.core.venn.Intersections#normal}normal(){api}, {api:anychart.core.venn.Intersections#hovered}hovered(){api}, and {api:anychart.core.venn.Intersections#selected}selected(){api} methods.
 
 Combine them with these methods:
 
