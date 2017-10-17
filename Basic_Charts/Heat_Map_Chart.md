@@ -140,7 +140,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Cells
 
-It is possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
+It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
 
 ```
 // create data
