@@ -172,7 +172,7 @@ var data = [
    selected: {
                fill: "#b30059",
                stroke: "5 white"
-   }
+             }
   }
 ];
 
@@ -184,9 +184,9 @@ chart = anychart.heatMap(data);
 
 ### Color Scale
 
-#### Ordinal
-
 By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+
+#### Ordinal
 
 To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
