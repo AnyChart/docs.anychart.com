@@ -571,7 +571,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_15{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_15{sample}
 
 #### Display Mode
 
