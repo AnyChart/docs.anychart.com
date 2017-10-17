@@ -272,7 +272,7 @@ It is possible to configure the appearance of each tile individually – use ext
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries", children: [
+  {name:   "European Union", children: [
     {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
     {name: "France",         value: 64938716, fill: "#ff6600"},
     {name: "Greece",         value: 10892931, fill: "#ffcc00"},
@@ -282,14 +282,19 @@ var data = [
     {name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
-    {name: "Germany",
-     value: 80636124,
-     fill: "#ff0000",
-     hoverFill: "#ff0000",
-     selectFill: "#b30059",
-     stroke: "4 #b30059",
-     hoverStroke: "5 white",
-     selectStroke: "5 white"
+    {name: "Germany",        value: 80636124,
+     normal:   {
+                 fill: "#ff0000",
+                 stroke: "4 #b30059",
+               },
+     hovered:  {
+                 fill: "#ff0000",
+                 stroke: "5 white"
+               },
+     selected: {
+                 fill: "#b30059",
+                 stroke: "5 white"
+               }
     }  
   ]} 
 ];
