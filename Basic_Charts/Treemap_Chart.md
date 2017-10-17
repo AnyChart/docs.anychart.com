@@ -255,12 +255,12 @@ In this sample, there is a Treemap chart with appearance settings configured:
 
 ```
 // configure the visual settings of the chart
-chart.hoverFill("gray", 0.4);
-chart.selectFill("gray", 0.6);
-chart.selectHatchFill("forward-diagonal", "gray", 2, 20);
+chart.hovered().fill("gray", 0.4);
+chart.selected().fill("gray", 0.6);
+chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
 chart.stroke("gray");
-chart.hoverStroke("gray");
-chart.selectStroke("gray", 2);
+chart.hovered().stroke("gray");
+chart.selected().stroke("gray", 2);
 ```
 
 {sample}BCT\_Treemap\_Chart\_07{sample}
@@ -576,7 +576,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can be cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
 * `"alwaysShow"`
 * `"clip"`
