@@ -79,7 +79,7 @@ Use the following data fields:
 * **y** to set the names of rows
 * **heat** to set values
 
-By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the "heat" field can be omitted. See the [Appearance](#appearance) section to learn more.
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the "heat" field can be omitted. See the [Appearance](#individual_cells) section to learn more.
 
 This is how working with data fields of the Heat Map chart looks like:
 
@@ -112,6 +112,8 @@ chart = anychart.heatMap(data);
 
 ### Appearance
 
+#### All Cells
+
 The [appearance settings](../Appearance_Settings) of a Heat Map chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap#normal}normal(){api}, {api:anychart.charts.HeatMap#hovered}hovered(){api}, and {api:anychart.charts.HeatMap#selected}selected(){api} methods.
 
 Combine them with the following methods:
@@ -136,6 +138,8 @@ chart.selected().stroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
+#### Individual Cells
+
 It is possible to configure the appearance of each cell individually — use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
 
 ```
@@ -156,14 +160,19 @@ var data = [
   {x: "4", y: "A", fill: "#ff9933"},
   {x: "4", y: "B", fill: "#ff9933"},
   {x: "4", y: "C", fill: "#ff6600"},
-  {x: "4",
-   y: "D",
-   fill: "#ff0000",
-   hoverFill: "#ff0000",
-   selectFill: "#b30059",
-   stroke: "4 #b30059",
-   hoverStroke: "5 white",
-   selectStroke: "5 white"
+  {x: "4", y: "D",
+   normal:   {
+               fill: "#ff0000",
+               stroke: "4 #b30059",
+             },
+   hovered:  {
+               fill: "#ff0000",
+               stroke: "5 white"
+             },
+   selected: {
+               fill: "#b30059",
+               stroke: "5 white"
+   }
   }
 ];
 
@@ -174,6 +183,8 @@ chart = anychart.heatMap(data);
 {sample}BCT\_Heat\_Map\_Chart\_04{sample}
 
 ### Color Scale
+
+#### Ordinal
 
 By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
 
@@ -201,6 +212,8 @@ chart.colorScale(customColorScale);
 
 {sample}BCT\_Heat\_Map\_Chart\_05{sample}
 
+#### Linear
+
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
@@ -224,6 +237,8 @@ chart.colorScale(customColorScale);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+#### Tokens
+
 To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
@@ -234,6 +249,8 @@ chart.labels().format("{%Heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
+
+#### Formatting Functions
 
 Labels are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
 
@@ -253,6 +270,8 @@ chart.labels().format(function(){
 });
 ```
 {sample}BCT\_Heat\_Map\_Chart\_08{sample}
+
+#### Display Mode
 
 You can also configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
 
@@ -275,6 +294,8 @@ chart.labelsDisplayMode("alwaysShow");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
 To change the text of tooltips, combine the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
@@ -285,6 +306,8 @@ chart.tooltip().format("{%Y}: {%Heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_10{sample}
+
+#### Formatting Functions
 
 Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
 
