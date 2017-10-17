@@ -304,7 +304,7 @@ chart.angles([0, 30, 90]);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_09{sample}
 
-There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
+There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#toAngle}toAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
 In this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
 
