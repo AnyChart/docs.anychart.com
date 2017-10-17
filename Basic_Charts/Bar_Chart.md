@@ -90,30 +90,30 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 In the sample below, there are two Bar series with appearance settings configured:
 
 ```
-  // create the first series
-  var series1 = chart.bar(seriesData_1);
+// create the first series
+var series1 = chart.bar(seriesData_1);
 
-  // configure the visual settings of the first series
-  series1.normal().fill("#00cc99", 0.3);
-  series1.hovered().fill("#00cc99", 0.1);
-  series1.selected().fill("#00cc99", 0.5);
-  series1.normal().stroke("#00cc99", 1, "10 5", "round");
-  series1.hovered().stroke("#00cc99", 2, "10 5", "round");
-  series1.selected().stroke("#00cc99", 4, "10 5", "round");
+// configure the visual settings of the first series
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
-  // create the second series
-  var series2 = chart.bar(seriesData_2);
+// create the second series
+var series2 = chart.bar(seriesData_2);
 
-  // configure the visual settings of the second series
-  series2.normal().fill("#0066cc", 0.3);
-  series2.hovered().fill("#0066cc", 0.1);
-  series2.selected().fill("#0066cc", 0.5);
-  series2.normal().hatchFill("forward-diagonal", "#808080", 1, 15);
-  series2.hovered().hatchFill("forward-diagonal", "#808080", 1, 15);
-  series2.selected().hatchFill("forward-diagonal", "#808080", 1, 15);
-  series2.normal().stroke("#0066cc");
-  series2.hovered().stroke("#0066cc", 2);
-  series2.selected().stroke("#0066cc", 4);
+// configure the visual settings of the second series
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.1);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("forward-diagonal", "#808080", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#808080", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#808080", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Bar\_Chart\_02{sample}
@@ -197,7 +197,7 @@ Padding is measured as a ratio to the width of bars (the width is calculated aut
 Please note that in AnyChart single-series bar charts are, technically speaking, composed of one-element bar groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between bars. In the following sample it is set to 0:
 
 ```
-// create a bar series and set the data
+// create a bar series
 var series = chart.bar(data);
 
 // set the padding between bar groups

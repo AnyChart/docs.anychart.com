@@ -197,7 +197,7 @@ Padding is measured as a ratio to the width of columns (the width is calculated 
 Please note that in AnyChart single-series column charts are, technically speaking, composed of one-element column groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between columns. In the following sample it is set to 0:
 
 ```
-// create a column series and set the data
+// create a column series
 var series = chart.column(data);
 
 // set the padding between column groups
