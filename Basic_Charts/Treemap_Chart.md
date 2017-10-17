@@ -538,14 +538,15 @@ Each header can be configured individually by adding the `header` field to the d
 ```
 // create data
 var data = [
-  {name:     "Slavic Languages – Number of Speakers",
-   header: { 
-     format: "{%name} ({%value} Total)",
-     fontColor: "#990000",
-     fontWeight: "bold",
-     fontSize: "14"
-   },
-   hoverHeader: {fontColor: "#000099"},
+  {name:     "Slavic Languages",
+   normal:  {header: {
+                      format: "{%name} ({%value} Total)",
+                      fontColor: "#990000",
+                      fontWeight: "bold",
+                      fontSize: "14",
+                     }
+            },
+   hovered: {header: {fontColor: "#000099"}},
    children: [
     {name:   "East Slavic", header: null, children: [
       {name: "Russian",        value: 150000000},
