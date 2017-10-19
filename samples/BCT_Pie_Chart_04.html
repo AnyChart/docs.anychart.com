@@ -13,8 +13,20 @@
 
     // create data
     var data = [
-      {x: "Pacman", value: 400, fill: "#ffff00", hatchFill: "percent50"},
-      {x: "Not Pacman", value: 130, fill: "#404040"},
+      {x: "Pacman", value: 400,
+       normal:  {
+                  fill: "#ffff00",
+                  hatchFill: "percent50"        
+                },
+       hovered: {
+                  fill: "#ffff00",
+                  hatchFill: "percent50"
+                }
+      },
+      {x: "Not Pacman", value: 130,
+       normal:  {fill: "#404040"},
+       hovered: {fill: "#404040"}
+      }
     ];
 
     // create a chart and set the data
@@ -24,7 +36,7 @@
     chart.startAngle(130);
 
     // set the chart title
-    chart.title("Pie Chart: Appearance (Particular Slices)");
+    chart.title("Pie Chart: Appearance (Individual Slices)");
 
     // disable labels
     chart.labels(false);

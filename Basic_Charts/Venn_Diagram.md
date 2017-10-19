@@ -65,8 +65,6 @@ In AnyChart there are many settings that are configured in the same way for all 
 
 Read the overview of general settings: [General Settings](General_Settings).
 
-## Special Settings
-
 ### Data
 
 Data for a Venn diagram can be passed to the chart constructor {api:anychart#venn}anychart.venn(){api} or to the {api:anychart.charts.Venn#data}data(){api} method.
@@ -157,6 +155,8 @@ chart.dataSeparator("+");
 
 ### Appearance
 
+#### Sets
+
 The [appearance settings](../Appearance_Settings) of a Venn diagram can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Venn#normal}normal(){api}, {api:anychart.charts.Venn#hovered}hovered(){api}, and {api:anychart.charts.Venn#selected}selected(){api} methods.
 
 Combine them with the following methods:
@@ -166,6 +166,8 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+Please note that these settings affect only circles. To learn how to adjust intersection areas, see the [next section](#intersections).
 
 In the sample below, there is a Venn diagram with appearance settings configured:
 
@@ -184,7 +186,9 @@ chart.selected().stroke("#00cc99", 4);
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
 
-Intersection areas can also be configured in three states. Use the {api:anychart.core.venn.Intersections#normal}normal(){api}, {api:anychart.core.venn.Intersections#hovered}hovered(){api}, and {api:anychart.core.venn.Intersections#selected}selected(){api} methods.
+#### Intersections
+
+Intersection areas can be configured in three [states](../Common_Settings/Interactivity/States). Use the {api: anychart.charts.Venn#intersections}intersections(){api} method with {api:anychart.core.venn.Intersections#normal}normal(){api}, {api:anychart.core.venn.Intersections#hovered}hovered(){api}, and {api:anychart.core.venn.Intersections#selected}selected(){api}.
 
 Combine them with these methods:
 
@@ -196,16 +200,16 @@ This sample shows a Venn diagram with the appearance of intersections configured
 
 ```
 // configure the visual settings of intersections
-var intersect = chart.intersections();    
-intersect.normal().fill("white", 0.1);
-intersect.hovered().fill("white", 0.1);
-intersect.selected().fill("white", 0.5);
-intersect.normal().hatchFill("percent20", "#808080");
-intersect.hovered().hatchFill("percent20", "white");
-intersect.selected().hatchFill("percent20", "white");
-intersect.normal().stroke("white");
-intersect.hovered().stroke("white", 2);
-intersect.selected().stroke("white", 4);
+var intersections = chart.intersections();    
+intersections.normal().fill("white", 0.1);
+intersections.hovered().fill("white", 0.1);
+intersections.selected().fill("white", 0.5);
+intersections.normal().hatchFill("percent20", "#808080");
+intersections.hovered().hatchFill("percent20", "white");
+intersections.selected().hatchFill("percent20", "white");
+intersections.normal().stroke("white");
+intersections.hovered().stroke("white", 2);
+intersections.selected().stroke("white", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_06{sample}

@@ -15,8 +15,7 @@
     //create data
     var data = [
         {x: "A", value: 400},
-        {x: "B", value: 200},
-        {x: ["A", "B"], value: 200}
+        {x: "B", value: 200}
     ];
 
     // create a chart and set the data
@@ -33,7 +32,7 @@
     chart.hovered().stroke("#00cc99", 2);
     chart.selected().stroke("#00cc99", 4);
 
-    // disable labels of intersections
+    // disable the labels of intersections
     chart.intersections().labels(false);
 
     // disable the legend

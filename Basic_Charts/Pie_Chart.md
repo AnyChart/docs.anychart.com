@@ -68,6 +68,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
+#### All Slices
+
 The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
 
 Combine them with the following methods:
@@ -91,7 +93,9 @@ chart.hovered().stroke("#669999", 3);
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
-There is also a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
+#### Aqua Style
+
+There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
 
 ```
 // enable aqua style
@@ -99,14 +103,31 @@ chart.fill("aquastyle");
 ```
 {sample}BCT\_Pie\_Chart\_03{sample}
 
-Please note that the methods listed above affect the whole chart. The appearance of particular slices can be configured by adding special fields to the data, which should be set in object notation:
+#### Individual Slices
+
+It is possible to configure the appearance of each slice individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
 var data = [
-  {x: "Pacman", value: 400, fill: "#ffff00", hatchFill: "percent50"},
-  {x: "Not Pacman", value: 130, fill: "#404040"},
+  {x: "Pacman", value: 400,
+   normal:  {
+              fill: "#ffff00",
+              hatchFill: "percent50"        
+            },
+   hovered: {
+              fill: "#ffff00",
+              hatchFill: "percent50"
+            }
+  },
+  {x: "Not Pacman", value: 130,
+   normal:  {fill: "#404040"},
+   hovered: {fill: "#404040"}
+  }
 ];
+
+// create a chart and set the data
+chart = anychart.pie(data);
 ```
 
 {sample}BCT\_Pie\_Chart\_04{sample}
