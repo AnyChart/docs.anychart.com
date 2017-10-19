@@ -47,7 +47,7 @@ var data = [
 // create a chart and set the data
 chart = anychart.venn(data);
 
-// configure labels of intersections
+// configure the labels of intersections
 chart.intersections().labels().format("{%X}");
 
 // set the container id
@@ -188,7 +188,7 @@ chart.selected().stroke("#00cc99", 4);
 
 #### Intersections
 
-Intersection areas can be configured in three [states](../Common_Settings/Interactivity/States). Use the {api: anychart.charts.Venn#intersections}intersections(){api} method with {api:anychart.core.venn.Intersections#normal}normal(){api}, {api:anychart.core.venn.Intersections#hovered}hovered(){api}, and {api:anychart.core.venn.Intersections#selected}selected(){api}.
+Intersection areas can be configured in three [states](../Common_Settings/Interactivity/States). Use the {api:anychart.charts.Venn#intersections}intersections(){api} method with the {api:anychart.core.venn.Intersections#normal}normal(){api}, {api:anychart.core.venn.Intersections#hovered}hovered(){api}, and {api:anychart.core.venn.Intersections#selected}selected(){api} methods.
 
 Combine them with these methods:
 

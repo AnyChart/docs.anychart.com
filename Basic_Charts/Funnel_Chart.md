@@ -93,6 +93,8 @@ chart.neckHeight("35%");
 
 ### Appearance
 
+#### All Points
+
 The [appearance settings](../Appearance_Settings) of a Funnel chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Funnel#normal}normal(){api}, {api:anychart.charts.Funnel#hovered}hovered(){api}, and {api:anychart.charts.Funnel#selected}selected(){api} methods.
 
 Combine them with the following methods:
@@ -119,19 +121,38 @@ chart.selected().stroke("white", 2);
 
 {sample}BCT\_Funnel\_Chart\_04{sample}
 
-Note that when you set colors through the methods, it is not possible to set different colors to the points. In this case, use the dataset, so you can adjust any settings you need for each point particularly.
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
 
 ```
+// create a data set
 var data = [
   {name: "Total Market", value: 232000},
-  {name: "Prospects", value: 94480, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
-  {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
-  {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
+  {name: "Prospects", value: 94480,
+   normal:   {
+               hatchFill: "backward-diagonal",
+               stroke: "black",
+             },
+   hovered:  {
+               hatchFill: "backward-diagonal",
+               stroke: "black",
+             },
+   selected: {
+               fill: "lightGray",
+               hatchFill: "backward-diagonal",
+               stroke: "black",
+             }
+  },
+  {name: "Leads", value: 47390},
+  {name: "Sales", value: 22181}
 ];
+
+// create a chart and set the data
+chart = anychart.funnel(data);
 ```
 
 {sample}BCT\_Funnel\_Chart\_05{sample}
-
 
 ### Labels
 
