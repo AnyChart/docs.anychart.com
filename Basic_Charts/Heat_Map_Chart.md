@@ -145,35 +145,32 @@ It is possible to configure the appearance of each cell individually – use ext
 ```
 // create data
 var data = [
-  {x: "1", y: "A", fill: "#ffcc00"},
-  {x: "1", y: "B", fill: "#ffcc00"},
-  {x: "1", y: "C", fill: "#ff9933"},
-  {x: "1", y: "D", fill: "#ff9933"},
-  {x: "2", y: "A", fill: "#ffcc00"},
-  {x: "2", y: "B", fill: "#ff9933"},
-  {x: "2", y: "C", fill: "#ff9933"},
-  {x: "2", y: "D", fill: "#ff9933"},
-  {x: "3", y: "A", fill: "#ff9933"},
-  {x: "3", y: "B", fill: "#ff9933"},
-  {x: "3", y: "C", fill: "#ff6600"},
-  {x: "3", y: "D", fill: "#ff6600"},
-  {x: "4", y: "A", fill: "#ff9933"},
-  {x: "4", y: "B", fill: "#ff9933"},
-  {x: "4", y: "C", fill: "#ff6600"},
-  {x: "4", y: "D",
+  {x: "2000", value: 1100},
+  {x: "2001", value: 880},
+  {x: "2002", value: 1100},
+  {x: "2003", value: 1500,
    normal:   {
-               fill: "#ff0000",
-               stroke: "4 #b30059",
+               fill: "#b30059 0.3",
+               stroke: "#b30059",
+               markerSize: 15,
+               type: "star4"
              },
    hovered:  {
-               fill: "#ff0000",
-               stroke: "5 white"
+               fill: "#b30059 0.1",
+               stroke: "2 #b30059",
+               markerSize: 20,
+               type: "star5"
              },
    selected: {
-               fill: "#b30059",
-               stroke: "5 white"
+               fill: "#b30059 0.5",
+               stroke: "4 #b30059",
+               markerSize: 20,
+               type: "star6"
              }
-  }
+  },
+  {x: "2004", value: 921},
+  {x: "2005", value: 1000},
+  {x: "2006", value: 1400}
 ];
 
 // create a chart and set the data

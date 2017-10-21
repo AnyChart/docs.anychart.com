@@ -11,39 +11,42 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
-  chart = anychart.cartesian();
-
-  // all data
-  var data = [
-    [2000, 1100],
-    [2001, 880],
-    [2002, 1100],
-    [2003, 1500],
-    [2004, 921],
-    [2005, 1000],
-    [2006, 1400]
+  // create data
+  var data = [  
+      ["2000", 1100],
+      ["2001", 880],
+      ["2002", 1100],
+      ["2003", 1500],
+      ["2004", 921],
+      ["2005", 1000],
+      ["2006", 1400]
   ];
 
-  // set data for each series
-  series = chart.marker(data);
+  // create a chart
+  chart = anychart.cartesian();
 
-  // Sets settings for interactivity.
-  chart.interactivity({hoverMode: "by-x"});
+  // set the interactivity mode
+  chart.interactivity().hoverMode("by-x");
 
-  // set marker size
-  series.size(10);
+  // create a marker series and set the data
+  var series = chart.marker(data);
+
+  // set the size of markers
+  series.normal().size(10);
   series.hovered().size(15);
   series.selected().size(15);
 
-  // set axes titles 
-  chart.xAxis().title("Years");
-  chart.yAxis().title("Sales");
-  
-  // chart title
-  chart.title("Marker Chart with marker size adjusted");
-  // draw
+  // set the chart title
+  chart.title("Marker Chart: Size");
+
+  // set the titles of the axes 
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
+
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

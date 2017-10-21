@@ -11,11 +11,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // create a categorized chart
-  chart = anychart.cartesian();
-  
-  // data
-  data= [  
+  // create data
+  var data = [  
       ["2000", 1100],
       ["2001", 880],
       ["2002", 1100],
@@ -24,19 +21,24 @@
       ["2005", 1000],
       ["2006", 1400]
   ];
+
+  // create a chart
+  chart = anychart.cartesian();
   
-  // add a marker seris
+  // create a marker series and set the data
   chart.marker(data);
   
-  // set chart title
-  chart.title("Marker Chart");
+  // set the chart title
+  chart.title("Marker Chart: Basic Sample");
   
-  // set axes titles 
-  chart.xAxis().title("Years");
-  chart.yAxis().title("Sales");
+  // set the titles of the axes 
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
   
-  // draw
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>
