@@ -85,9 +85,9 @@ In the sample below, there a Pie chart with appearance settings configured:
 ```
 chart.normal().fill("#669999", 0.5);
 chart.hovered().fill("#669999", 0.3);
-chart.normal().hatchFill("forward-diagonal", "#808080");
+chart.normal().hatchFill("forward-diagonal", "#669999");
 chart.hovered().hatchFill("forward-diagonal", "#669999", 3);
-chart.normal().stroke("#808080", 3);
+chart.normal().stroke("#669999", 3);
 chart.hovered().stroke("#669999", 3);
 ```
 

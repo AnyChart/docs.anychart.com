@@ -119,24 +119,24 @@ series1.selected().risingStroke("#0066cc", 4);
 
 // configure the visual settings of the second series
 series2.normal().fallingFill("#00cc99", 0.3);
-series2.normal().fallingHatchFill("forward-diagonal");
+series2.normal().fallingHatchFill("forward-diagonal", "#00cc99");
 series2.normal().fallingStroke("#00cc99", 1, "10 5", "round");
 series2.hovered().fallingFill("#00cc99", 0.1);
-series2.hovered().fallingHatchFill("forward-diagonal");
+series2.hovered().fallingHatchFill("forward-diagonal", "#00cc99");
 series2.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
 series2.selected().fallingFill("#00cc99", 0.5);
 series2.selected().fallingStroke("#00cc99", 4, "10 5", "round");
-series2.selected().fallingHatchFill("forward-diagonal");
+series2.selected().fallingHatchFill("forward-diagonal", "#00cc99");
 
 series2.normal().risingFill("#0066cc", 0.3);
-series2.normal().risingHatchFill("forward-diagonal");
+series2.normal().risingHatchFill("forward-diagonal", "#0066cc");
 series2.normal().risingStroke("#0066cc");
 series2.hovered().risingFill("#0066cc", 0.1);
-series2.hovered().risingHatchFill("forward-diagonal");
+series2.hovered().risingHatchFill("forward-diagonal", "#0066cc");
 series2.hovered().risingStroke("#0066cc", 2);
 series2.selected().risingFill("#0066cc", 0.5);
 series2.selected().risingStroke("#0066cc", 4);
-series2.selected().risingHatchFill("forward-diagonal");
+series2.selected().risingHatchFill("forward-diagonal", "#0066cc");
 ```
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_02{sample}

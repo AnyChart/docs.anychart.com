@@ -176,12 +176,12 @@ In the sample below, there is a Venn diagram with appearance settings configured
 chart.normal().fill("#00cc99", 0.3);
 chart.hovered().fill("#00cc99", 0.1);
 chart.selected().fill("#00cc99", 0.5);
-chart.normal().hatchFill("percent20", "#808080");
-chart.hovered().hatchFill("percent20", "#808080");
-chart.selected().hatchFill("percent20", "#808080");
-chart.normal().stroke("#00cc99");
-chart.hovered().stroke("#00cc99", 2);
-chart.selected().stroke("#00cc99", 4);
+chart.normal().hatchFill("percent50", "#004d39");
+chart.hovered().hatchFill("percent50", "#004d39");
+chart.selected().hatchFill("percent50", "#004d39");
+chart.normal().stroke("#004d39");
+chart.hovered().stroke("#004d39", 2);
+chart.selected().stroke("#004d39", 4);
 ```
 
 {sample}BCT\_Venn\_Diagram\_05{sample}
@@ -201,12 +201,12 @@ This sample shows a Venn diagram with the appearance of intersections configured
 ```
 // configure the visual settings of intersections
 var intersections = chart.intersections();    
-intersections.normal().fill("white", 0.1);
-intersections.hovered().fill("white", 0.1);
-intersections.selected().fill("white", 0.5);
-intersections.normal().hatchFill("percent20", "#808080");
-intersections.hovered().hatchFill("percent20", "white");
-intersections.selected().hatchFill("percent20", "white");
+intersections.normal().fill("green", 0.3);
+intersections.hovered().fill("green", 0.1);
+intersections.selected().fill("green", 0.5);
+intersections.normal().hatchFill("percent50", "white");
+intersections.hovered().hatchFill("percent50", "white");
+intersections.selected().hatchFill("percent50", "white");
 intersections.normal().stroke("white");
 intersections.hovered().stroke("white", 2);
 intersections.selected().stroke("white", 4);

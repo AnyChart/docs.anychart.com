@@ -111,9 +111,9 @@ In the sample below, there is a Funnel chart with appearance settings configured
 chart.normal().fill("#00cc99", 0.3);
 chart.hovered().fill("#00cc99", 0.1);
 chart.selected().fill("#00cc99", 0.5);
-chart.normal().hatchFill("forward-diagonal");
-chart.hovered().hatchFill("forward-diagonal");
-chart.selected().hatchFill("forward-diagonal");
+chart.normal().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
 chart.normal().stroke("white");
 chart.hovered().stroke("white", 2);
 chart.selected().stroke("white", 2);

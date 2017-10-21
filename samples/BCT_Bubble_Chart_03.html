@@ -11,67 +11,53 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
+  // create data
+  var data = [
+    {x: "2000", value: 1100, size: 3},
+    {x: "2001", value: 880, size: 4},
+    {x: "2002", value: 1100, size: 4},
+    {x: "2003", value: 1300, size: 5,
+     normal:   {
+                 fill: "#b30059 0.3",
+                 stroke: "#b30059"
+               },
+     hovered:  {
+                 fill: "#b30059 0.1",
+                 stroke: "2 #b30059"
+               },
+     selected: {
+                 fill: "#b30059 0.5",
+                 stroke: "4 #b30059"
+               }
+    },
+    {x: "2004", value: 921, size: 4.5},
+    {x: "2005", value: 1000, size: 3},
+    {x: "2006", value: 1400, size: 4}
+  ];
+
+  // create a chart
   chart = anychart.cartesian();
 
-  // all data
-  var data1 = [
-    {x: 2000, value: 1100, size: 3},
-    {x: 2001, value: 800, size: 3},
-    {x: 2002, value: 1100, size: 3},
-    {x: 2003, value: 1500, size: 2},
-    {x: 2004, value: 921, size: 4},
-    {x: 2005, value: 1000, size: 3},
-    {x: 2006, value: 1400, size: 2}
-  ];
+  // set the interactivity mode
+  chart.interactivity().hoverMode("by-x");
 
-  var data2 = [
-    {x: 2000, value: 900, size: 1},
-    {x: 2001, value: 950, size: 4},
-    {x: 2002, value: 800, size: 2},
-    {x: 2003, value: 1000, size: 3},
-    {x: 2004, value: 800, size: 3},
-    {x: 2005, value: 750, size: 1},
-    {x: 2006, value: 800, size: 2}
-  ];
-
-  // set data for each series
-  series1 = chart.bubble(data1);
-  series2 = chart.bubble(data2);
-
-  // set colors
-  series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series1.stroke("#00897b", 1, "10 5", "round");
-  series1.hovered().fill("#6aabcc", 0.3);
-  series1.hovered().stroke("#00897b", 2, "10 5", "round");
-  series1.selected().fill("#1976d2", 0.8);
-  series1.selected().stroke("#00897b", 4, "10 5", "round");
-
-  series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series2.hovered().fill("#80cbc4", 0.5);
-  series2.selected().fill("#16685d");
-  series2.hatchFill("percent10");
-  series2.hovered().hatchFill("percent30");
-  series2.selected().hatchFill("percent50");
-
-  // limit bubbles size
-  chart.minBubbleSize("3%");
-  chart.maxBubbleSize("10%");
+  // create a bubble series and set the data
+  series = chart.bubble(data);
   
-  // chart title
-  chart.title("Multi-Series Bubble Chart with bubbles size limits set");
+  // set the chart title
+  chart.title("Bubble Chart: Appearance (Individual Bubbles)");
 
+  // enable the legend
   chart.legend(true);
 
-  // Sets settings for interactivity.
-  chart.interactivity({hoverMode: "by-x"});
-
-  // set axes titles 
-  chart.xAxis().title("Years");
-  chart.yAxis().title("Sales");
+  // set the titles of the axes
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
   
-  // draw
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>
