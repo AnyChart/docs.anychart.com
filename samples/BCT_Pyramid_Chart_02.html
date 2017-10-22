@@ -20,13 +20,15 @@
     {name: "Textbooks", value: 90000}
   ]);
 
-  // edit appearance settings
-  chart.fill("#8B4513", 0.6);
-  chart.hovered().fill("#8B4513", 0.3);
-  chart.selected().fill("#8B4513", 0.8);
-  chart.stroke("#fff", 1);
-  chart.hovered().stroke("#fff", 2);
-  chart.selected().stroke("#fff", 3);
+  // configure the visual settings of the chart
+  chart.normal().fill("#004d39", 0.3);
+  chart.hovered().fill("#004d39", 0.1);
+  chart.selected().fill("#004d39", 0.5);
+  chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
+  chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
+  chart.normal().stroke("white");
+  chart.hovered().stroke("white", 2);
+  chart.selected().stroke("white", 2);
 
   // draw chart
   chart.container("container");

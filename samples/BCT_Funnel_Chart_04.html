@@ -23,10 +23,9 @@ var data = [
 chart = anychart.funnel(data);
 
 // configure the visual settings of the chart
-chart.normal().fill("#00cc99", 0.3);
-chart.hovered().fill("#00cc99", 0.1);
-chart.selected().fill("#00cc99", 0.5);
-chart.normal().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.normal().fill("#004d39", 0.3);
+chart.hovered().fill("#004d39", 0.1);
+chart.selected().fill("#004d39", 0.5);
 chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
 chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
 chart.normal().stroke("white");

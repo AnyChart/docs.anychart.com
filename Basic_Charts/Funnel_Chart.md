@@ -108,10 +108,10 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 In the sample below, there is a Funnel chart with appearance settings configured:
 
 ```
-chart.normal().fill("#00cc99", 0.3);
-chart.hovered().fill("#00cc99", 0.1);
-chart.selected().fill("#00cc99", 0.5);
-chart.normal().hatchFill("forward-diagonal", "#004d39", 1, 15);
+// configure the visual settings of the chart
+chart.normal().fill("#004d39", 0.3);
+chart.hovered().fill("#004d39", 0.1);
+chart.selected().fill("#004d39", 0.5);
 chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
 chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
 chart.normal().stroke("white");
@@ -126,22 +126,23 @@ chart.selected().stroke("white", 2);
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
 
 ```
-// create a data set
+// create data
 var data = [
   {name: "Total Market", value: 232000},
   {name: "Prospects", value: 94480,
    normal:   {
-               hatchFill: "backward-diagonal",
-               stroke: "black",
+             hatchFill: "backward-diagonal",
+             stroke: "black"
              },
    hovered:  {
-               hatchFill: "backward-diagonal",
-               stroke: "black",
-             },
-   selected: {
                fill: "lightGray",
                hatchFill: "backward-diagonal",
-               stroke: "black",
+               stroke: "black"
+             },
+   selected: {
+               fill: "white",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
              }
   },
   {name: "Leads", value: 47390},

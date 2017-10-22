@@ -11,16 +11,33 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
-  chart = anychart.pyramid([
+
+  // create data
+  var data = [
     {name: "Fantasy", value: 637166},
-    {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backward-diagonal", hoverHatchFill:"forward-diagonal", selectHatchFill: "diagonal-cross", stroke: "#455a64"},
+    {name: "Science Fiction", value: 721630,
+     normal:   {
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+               },
+     hovered:  {
+                 fill: "lightGray",
+                 hatchFill: "backward-diagonal",
+                 stroke: "black"
+               },
+     selected: {
+                 fill: "white",
+                 hatchFill: "backward-diagonal",
+                 stroke: "black"
+               }
+    },
     {name: "Detective", value: 148662},
     {name: "Classics", value: 78662},
     {name: "Textbooks", value: 90000}
-  ]);
+  ];
 
-  chart.fill("#64b5f6 0.9");
+  // create a chart and set the data  
+  chart = anychart.pyramid(data);
 
   // draw chart
   chart.container("container");
