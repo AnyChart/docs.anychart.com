@@ -204,6 +204,8 @@ chart.normal().fontWeight(600);
 
 By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a color scale, linear or ordinal, and add a color range.
 
+#### Linear
+
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
 Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors: the second one is applied to the most frequent element, and the first one indicates 0. Elements of frequencies that lie within this range are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
@@ -230,6 +232,8 @@ chart.colorRange().enabled(true);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
 
+#### Ordinal
+
 To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
@@ -254,7 +258,10 @@ chart.colorScale(customColorScale);
 // add a color range
 chart.colorRange().enabled(true);
 ```
+
 {sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
+
+#### Categories
 
 Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
 
@@ -361,13 +368,18 @@ tagCloud2.scale(anychart.scales.log());
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
 In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
+
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
+
+#### Formatting Functions
 
 You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 

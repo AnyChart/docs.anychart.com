@@ -253,6 +253,8 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+#### Tokens
+
 To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
@@ -265,6 +267,8 @@ chart.labels().format("{%Absolute}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
+
+#### Formatting Functions
 
 You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
 
@@ -292,6 +296,8 @@ chart.labels().format(function(){
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
 To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
@@ -304,6 +310,8 @@ chart.tooltip().titleFormat("Absolute | Difference");
 chart.tooltip().format("{%Absolute}\n{%Diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
+
+#### Formatting Functions
 
 You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
 

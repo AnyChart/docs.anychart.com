@@ -144,6 +144,8 @@ chart.quarters(
 
 {sample}BCT\_Quadrant\_Chart\_03{sample}
 
+#### Titles, Margins, Paddings
+
 You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
 
 * {api:anychart.core.utils.Quarter#title}title(){api}
