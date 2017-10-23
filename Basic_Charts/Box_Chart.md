@@ -124,7 +124,9 @@ series2.selected().stroke("#0066cc", 4);
 
 #### Medians
 
-A median is a special line across a box. To configure the stroke of medians, use the {api:anychart.core.StateSettings#medianStroke}medianStroke(){api} method:
+A median is a special line across a box.
+
+To configure the stroke of medians, use the {api:anychart.core.StateSettings#medianStroke}medianStroke(){api} method:
 
 ```
 // configure medians
