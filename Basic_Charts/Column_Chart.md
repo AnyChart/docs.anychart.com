@@ -51,7 +51,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 // create a column series and set the data
 var series = chart.column(data);

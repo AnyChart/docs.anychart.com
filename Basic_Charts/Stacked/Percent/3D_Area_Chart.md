@@ -13,7 +13,7 @@ To build a 3D Precent Stacked Area Chart, create a multi-series [3D Area Chart](
 
 ```
 // create a 3D area chart
-var chart = chart.area3d();
+chart = chart.area3d();
 
 // enable the value stacking mode
 chart.yScale().stackMode("percent");

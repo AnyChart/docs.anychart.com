@@ -13,7 +13,7 @@ To build a Vertical Stacked Stick Chart, create a multi-series [Vertical Stick C
 
 ```
 // create a chart
-var chart = chart.bar();
+chart = chart.bar();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

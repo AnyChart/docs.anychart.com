@@ -13,7 +13,7 @@ To build a Percent Stacked Bar Chart, you should create a multi-series [Bar Char
 
 ```
 // create a chart
-var chart = chart.bar();
+chart = chart.bar();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

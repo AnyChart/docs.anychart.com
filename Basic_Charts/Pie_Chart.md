@@ -47,7 +47,7 @@ var data = [
 ];
 
 // create a chart and set the data
-var chart = anychart.pie(data);
+chart = anychart.pie(data);
 
 // set the container id
 chart.container("container");

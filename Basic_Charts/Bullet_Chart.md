@@ -29,7 +29,7 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
 
 ```
 // Create bullet chart
-var chart = anychart.bullet([
+chart = anychart.bullet([
   {value: 637.166}                  //2005 revenue
 ]);
 chart.range().from(0).to(750);      //maximum annual income ever 
@@ -141,7 +141,7 @@ For clearer distinction between markers it is very useful to adjust style settin
 Here is the sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart.
 
 ```
-var chart = anychart.bulletChart([
+chart = anychart.bulletChart([
   {value: 225},
   {value: 290,          // set marker position
     type: 'ellipse',    // set ellipse as marker type

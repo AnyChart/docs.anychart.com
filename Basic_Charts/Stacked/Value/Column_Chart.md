@@ -13,7 +13,7 @@ To build a Stacked Column Chart, create a multi-series [Column Chart](../../Colu
 
 ```
 // create a chart
-var chart = chart.column();
+chart = chart.column();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

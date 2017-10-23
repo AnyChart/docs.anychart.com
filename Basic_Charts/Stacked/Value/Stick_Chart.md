@@ -13,7 +13,7 @@ To build a Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_
 
 ```
 // create a chart
-var chart = chart.column();
+chart = chart.column();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

@@ -13,7 +13,7 @@ To build a 3D Percent Stacked Column Chart, create a multi-series [3D Column Cha
 
 ```
 // create a chart
-var chart = chart.column3d();
+chart = chart.column3d();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

@@ -48,7 +48,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // create a spline series and set the data
 var series = chart.spline(data);

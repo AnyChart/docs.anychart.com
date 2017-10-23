@@ -13,7 +13,7 @@ To build a 3D Stacked Bar Chart, create a multi-series [3D Bar Chart](../../3D/O
 
 ```
 // create a chart
-var chart = chart.bar3d();
+chart = chart.bar3d();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

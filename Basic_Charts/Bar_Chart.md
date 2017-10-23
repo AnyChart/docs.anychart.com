@@ -51,7 +51,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.bar();
+chart = anychart.bar();
 
 // create a bar series and set the data
 var series = chart.bar(data);

@@ -52,7 +52,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // create a line series and set the data
 var series = chart.line(data);

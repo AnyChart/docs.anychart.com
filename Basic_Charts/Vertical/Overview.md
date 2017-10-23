@@ -65,7 +65,7 @@ In the following sample, this method is used to draw two horizontal (area) and a
 
 ```
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create the first series
 var series1 = chart.area(seriesData_1);
@@ -88,7 +88,7 @@ To switch the orientation of the whole chart on-the-fly, with the basic cartesia
 
 ```
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // change the orientation of the chart
 chart.isVertical(true);

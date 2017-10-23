@@ -13,7 +13,7 @@ To build a 3D Percent Stacked Bar Chart, create a multi-series [3D Bar Chart](..
 
 ```
 // create a chart
-var chart = chart.bar3d();
+chart = chart.bar3d();
 
 // enable the value stacking mode
 chart.yScale().stackMode("percent");
