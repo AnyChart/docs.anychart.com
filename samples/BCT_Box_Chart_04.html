@@ -27,19 +27,19 @@
   series = chart.box(data);
 
   // configure outliers
-  series.outlierMarkers(
-    {fill: "#dc143c 0.7",
-    stroke: {color: "#dc143c", thickness: 0.5, dash: "5 1", lineJoin: "round"},
+  series.normal().outlierMarkers(
+    {fill: "#dd2c00 0.3",
+    stroke: {color: "#dd2c00", thickness: 0.5},
     size: 10,
     type: "star5"});
   series.hovered().outlierMarkers(
-    {fill: "#dc143c 0.5",
-    stroke: {color: "#dc143c", thickness: 1, dash: "5 1", lineJoin: "round"},
+    {fill: "#dd2c00 0.1",
+    stroke: {color: "#dd2c00", thickness: 1},
     size: 10,
     type: "star5"});
   series.selected().outlierMarkers(
-    {fill: "#dc143c",
-    stroke: {color: "#dc143c", thickness: 2, dash: "5 1", lineJoin: "round"},
+    {fill: "#dd2c00 0.5",
+    stroke: {color: "#dd2c00", thickness: 2},
     size: 10,
     type: "star5"});
 
