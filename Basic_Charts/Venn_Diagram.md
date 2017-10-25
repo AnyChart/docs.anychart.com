@@ -214,6 +214,34 @@ intersections.selected().stroke("white", 4);
 
 {sample}BCT\_Venn\_Diagram\_06{sample}
 
+#### Individual Points
+
+You can change the appearance of individual points, both sets and intersections, by adding special fields to the data set:
+
+```
+//create data
+var data = [
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: "C", value: 200,
+     normal:   {fill: "#00bfa5 0.5"},
+     hovered:  {fill: "#00bfa5 0.5"},
+     selected: {fill: "#00bfa5 0.5"}
+     },
+    {x: ["A", "B"], value: 10},
+    {x: ["B", "C"], value: 10,
+     normal:   {stroke: "white"},
+     hovered:  {stroke: "2 white"},
+     selected: {stroke: "4 white"}
+    }
+];
+
+// create a chart and set the data
+chart = anychart.venn(data);
+```
+
+{sample}BCT\_Venn\_Diagram\_07{sample}
+
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -255,7 +283,7 @@ chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 chart.intersections().labels().format("{%name}\n\n{%value}");
 ```
 
-{sample}BCT\_Venn\_Diagram\_07{sample}
+{sample}BCT\_Venn\_Diagram\_08{sample}
 
 ### Tooltips
 
@@ -301,4 +329,4 @@ chart.intersections().tooltip().format(
 );
 ```
 
-{sample}BCT\_Venn\_Diagram\_08{sample}
+{sample}BCT\_Venn\_Diagram\_09{sample}

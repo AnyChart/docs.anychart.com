@@ -14,32 +14,44 @@
 
     //create data
     var data = [
-        {x: "A", value: 100},
-        {x: "B", value: 100},
-        {x: "C", value: 200,
-         normal:   {fill: "#00bfa5 0.5"},
-         hovered:  {fill: "#00bfa5 0.5"},
-         selected: {fill: "#00bfa5 0.5"}
-         },
-        {x: ["A", "B"], value: 10},
-        {x: ["B", "C"], value: 10,
-         normal:   {stroke: "white"},
-         hovered:  {stroke: "2 white"},
-         selected: {stroke: "4 white"}
+        {
+            x: "A",
+            name: "Set A",
+            custom_field: "info 1",
+            value: 100
+        },
+        {
+            x: "B",
+            name: "Set A",
+            custom_field: "info 2",
+            value: 100
+        },
+        {
+            x: ["A", "B"],
+            name: "Set A + Set B",
+            custom_field: "info 3",
+            value: 25
         }
     ];
 
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // disable the labels of intersections
-    chart.intersections().labels(false);
+    // configure the tooltips of circles
+    chart.tooltip().format(
+        "Set Info: {%custom_field}\nCardinality: {%value}"
+    );
 
-    // disable the legend
-    chart.legend(false);
+    // configure the tooltips of intersections
+    chart.intersections().tooltip().format(
+        "Intersection Info: {%custom_field}\nCardinality: {%value}"
+    );
+
+    // disable labels
+    chart.labels(false);
 
     // set the chart title
-    chart.title("Venn Diagram: Appearance (Individual Points)");
+    chart.title("Venn Diagram: Tooltips");
 
     // set the container id
     chart.container('container');
