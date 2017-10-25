@@ -130,7 +130,7 @@ To set the fype and radius of corners, call:
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api}
 * {api:anychart.core.utils.Quarter#corner}corner(){api}.
 
-You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
+You can also configure titles, margins, paddings, and labels of quarters (see [Labels](#labels) to learn more):
 
 * {api:anychart.core.utils.Quarter#title}title(){api}
 * {api:anychart.core.utils.Quarter#margin}margin(){api}
