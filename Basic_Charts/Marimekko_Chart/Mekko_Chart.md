@@ -106,7 +106,7 @@ Points padding is a special setting in Mekko charts, it is controlled with {api:
 
 #### All Points
 
-The [appearance settings](../Appearance_Settings) of a Mekko chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.mekko.series.Mekko#normal}normal(){api}, {api:anychart.core.mekko.series.Mekko#hovered}hovered(){api}, and {api:anychart.core.mekko.series.Mekko#selected}selected(){api} methods.
+The [appearance settings](../../Appearance_Settings) of a Mekko chart can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.mekko.series.Mekko#normal}normal(){api}, {api:anychart.core.mekko.series.Mekko#hovered}hovered(){api}, and {api:anychart.core.mekko.series.Mekko#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
