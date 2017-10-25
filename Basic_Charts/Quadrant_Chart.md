@@ -117,7 +117,7 @@ Each Quadrant chart has four quarters (quadrants), which can be configured separ
 * {api:anychart.core.utils.QuarterSettings#rightBottom}rightBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#rightTop}rightTop(){api}
 
-To set the fill and stroke of quarters, combine these methods with these ones:
+To set the fill and stroke of quarters, combine these methods mentioned above with:
 
 * {api:anychart.core.utils.Quarter#fill}fill(){api}
 * {api:anychart.core.utils.Quarter#stroke}stroke(){api}
