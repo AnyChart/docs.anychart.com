@@ -97,7 +97,7 @@ chart.data(extra_data);
 
 AnyChart Pareto charts [sorts data, calculates cumulative and relative frequency](#data) and automatically creates two series: line and column, the instances of {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes. You can access these series using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods.
 
-The column series has the index that equals "0" and the line series the index that eqauls "1":
+The column series has the index that equals "0" and the line series the index that equals "1":
 
 ```
 // make column series white with black border and hatch fill
