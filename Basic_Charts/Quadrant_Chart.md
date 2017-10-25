@@ -117,11 +117,23 @@ Each Quadrant chart has four quarters (quadrants), which can be configured separ
 * {api:anychart.core.utils.QuarterSettings#rightBottom}rightBottom(){api}
 * {api:anychart.core.utils.QuarterSettings#rightTop}rightTop(){api}
 
-The following methods configure visual settings of quartes:
+To set the fill and stroke of quarters, combine these methods with these ones:
 
-* {api:anychart.core.utils.Quarter#fill}fill(){api} and {api:anychart.core.utils.Quarter#stroke}stroke(){api} set the fill and stroke
-* {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} set strokes on particular sides
-* {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
+* {api:anychart.core.utils.Quarter#fill}fill(){api}
+* {api:anychart.core.utils.Quarter#stroke}stroke(){api}
+* {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}
+* {api:anychart.core.utils.Quarter#topStroke}topStroke(){api
+* {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}
+* {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}
+
+To set the fype and radius of corners, call {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api}.
+
+You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
+
+* {api:anychart.core.utils.Quarter#title}title(){api}
+* {api:anychart.core.utils.Quarter#margin}margin(){api}
+* {api:anychart.core.utils.Quarter#padding}padding(){api}
+* {api:anychart.core.utils.Quarter#label}label(){api}
 
 The sample below shows how to set the fill and corners:
 
@@ -143,15 +155,6 @@ chart.quarters(
 ```
 
 {sample}BCT\_Quadrant\_Chart\_03{sample}
-
-#### Titles, Margins, Paddings
-
-You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
-
-* {api:anychart.core.utils.Quarter#title}title(){api}
-* {api:anychart.core.utils.Quarter#margin}margin(){api}
-* {api:anychart.core.utils.Quarter#padding}padding(){api}
-* {api:anychart.core.utils.Quarter#label}label(){api}
 
 The following sample shows how to set titles:
 
