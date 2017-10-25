@@ -31,6 +31,12 @@ Here is a basic Pareto chart, you can see that AnyChart automatically creates tw
 
 {sample}BCT\_Pareto\_Chart\_01{sample}
 
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Pareto chart (for example, legend and interactivity settings).
+
+Read the overview of general settings: [General Settings](General_Settings).
+
 ## Special Settings
 
 ### Data
@@ -95,30 +101,13 @@ chart.data(extra_data);
 
 ### Series
 
-AnyChart Pareto charts [sorts data, calculates cumulative and relative frequency](#data) and automatically creates two series: line and column, the instances of {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes. You can access these series using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods.
+The Pareto chart in AnyChart [sorts data, calculates cumulative and relative frequency](#data), and automatically creates two series: a [Line](Line_Chart) and a [Column](Column_Chart) – the instances of the {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes.
 
-The column series has the index that equals "0" and the line series the index that equals "1":
+To access these series, call the {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods. In the sections below there are some samples showing how to use them for configuring the chart.
 
-```
-// make column series white with black border and hatch fill
-chart.getSeriesAt(0).fill(null);
-chart.getSeriesAt(0).stroke("#000000");
-chart.getSeriesAt(0).hatchFill("forward-diagonal");
+### Pareto Tokens
 
-// make line series black and dashed
-chart.getSeriesAt(1).stroke("#000000", "2", "2 2");
-```
-
-{sample}BCT\_Pareto\_Chart\_02{sample}
-
-If you need more information about configuring series, please see:
-- [General Settings](General_Settings)
-- [Line Chart](Line_Chart)
-- [Column Chart](Column_Chart)
-
-### Pareto tokens
-
-When AnyChart creates a Pareto chart cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_condition) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
+When AnyChart creates a Pareto chart, cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_condition) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
 
 As string tokens these values are a part of {api:anychart.enums.StringToken}StringToken{api} enum:
 
@@ -127,6 +116,33 @@ tooltip.format("Cumulative frequency: {%CF} \n Relative frequency: {%RF}");
 ```
 
 See below to learn more about using these values in chart's configuration.
+
+### Appearance
+
+- [Line Chart](Line_Chart)
+- [Column Chart](Column_Chart)
+
+The Line and Column series have their own visual settings – see the [Line Chart](Line_Chart) and [Column Chart](Column_Chart) articles.
+
+In this sample there is a Pareto chart with the appearance settings of its series configured:
+
+```
+// configure the visual settings of the first series
+chart.getSeries(0).normal().fill("#0066cc", 0.3);
+chart.getSeries(0).hovered().fill("#0066cc", 0.1);
+chart.getSeries(0).selected().fill("#0066cc", 0.5);
+chart.getSeries(0).normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).normal().stroke("#0066cc");
+chart.getSeries(0).hovered().stroke("#0066cc", 2);
+chart.getSeries(0).selected().stroke("#0066cc", 4);
+
+// configure the visual settings of the second series
+chart.getSeries(1).normal().stroke("#0066cc", 4, "4 4", "round");
+```
+
+{sample}BCT\_Pareto\_Chart\_02{sample}
 
 ### Coloring conditions
 
