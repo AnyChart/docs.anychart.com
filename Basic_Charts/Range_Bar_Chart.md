@@ -88,7 +88,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Bars
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Range Bar can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.RangeBar#normal}normal(){api}, {api:anychart.core.cartesian.series.RangeBar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.RangeBar#selected}selected(){api} methods.
 
@@ -131,7 +131,7 @@ series2.selected().stroke("#0066cc", 4);
 
 {sample}BCT\_Range\_Bar\_Chart\_02{sample}
 
-#### Individual Bars
+#### Individual Points
 
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to the data set:
 

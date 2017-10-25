@@ -27,9 +27,7 @@
   series = chart.box(data);
 
   // configure whiskers
-  series.normal().whiskerWidth(30);
-  series.hovered().whiskerWidth(30);
-  series.selected().whiskerWidth(30);
+  series.whiskerWidth(30);
   series.normal().whiskerStroke("#dd2c00", 0.5);
   series.hovered().whiskerStroke("#dd2c00", 1);
   series.selected().whiskerStroke("#dd2c00", 2);

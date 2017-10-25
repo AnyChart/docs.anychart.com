@@ -87,7 +87,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Bubbles
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Bubble chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bubble#normal}normal(){api}, {api:anychart.core.cartesian.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bubble#selected}selected(){api} methods.
 
@@ -130,7 +130,7 @@ series2.selected().stroke("#0066cc", 4);
 
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
-#### Individual Bubbles
+#### Individual Points
 
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual bubbles by adding special fields to the data set:
 

@@ -112,7 +112,7 @@ chart = anychart.heatMap(data);
 
 ### Appearance
 
-#### All Cells
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Heat Map chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap#normal}normal(){api}, {api:anychart.charts.HeatMap#hovered}hovered(){api}, and {api:anychart.charts.HeatMap#selected}selected(){api} methods.
 
@@ -138,7 +138,7 @@ chart.selected().stroke("gray", 2);
 
 {sample}BCT\_Heat\_Map\_Chart\_03{sample}
 
-#### Individual Cells
+#### Individual Points
 
 It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
 

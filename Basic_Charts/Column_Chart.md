@@ -75,7 +75,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Columns
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Column chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods.
 
@@ -118,7 +118,7 @@ series2.selected().stroke("#0066cc", 4);
 
 {sample}BCT\_Column\_Chart\_02{sample}
 
-#### Individual Columns
+#### Individual Points
 
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual columns by adding special fields to the data set:
 

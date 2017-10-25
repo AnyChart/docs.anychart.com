@@ -194,9 +194,7 @@ That is how it looks like:
 
 ```
 // configure whiskers
-series.normal().whiskerWidth(30);
-series.hovered().whiskerWidth(30);
-series.selected().whiskerWidth(30);
+series.whiskerWidth(30);
 series.normal().whiskerStroke("#dd2c00", 0.5);
 series.hovered().whiskerStroke("#dd2c00", 1);
 series.selected().whiskerStroke("#dd2c00", 2);
@@ -219,25 +217,19 @@ var data = [
                fill: "#00bfa5 0.3",
                stroke: "#00bfa5",
                medianStroke: "0.5 #00bfa5",
-               stemStroke: "0.5 #00bfa5",
-               whiskerStroke:  "0.5 #00bfa5",
-               whiskerWidth: 30
+               stemStroke: "0.5 #00bfa5"
              },
    hovered:  {
                fill: "#00bfa5 0.1",
                stroke: "2 #00bfa5",
                medianStroke: "1 #00bfa5",
-               stemStroke: "1 #00bfa5",
-               whiskerStroke:  "1 #00bfa5",
-               whiskerWidth: 30
+               stemStroke: "1 #00bfa5"
              },
    selected: {
                fill: "#00bfa5 0.5",
                stroke: "4 #00bfa5",
                medianStroke: "2 #00bfa5",
-               stemStroke: "2 #00bfa5",
-               whiskerStroke:  "2 #00bfa5",
-               whiskerWidth: 30
+               stemStroke: "2 #00bfa5"
              } 
   },
   {x: "May", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}

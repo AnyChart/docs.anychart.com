@@ -108,30 +108,29 @@ In the sample below, there are two Range Area series with appearance settings co
 var series1 = chart.rangeArea(seriesData_1);
 
 // configure the visual settings of the first series
-  series1.normal().fill("#00cc99", 0.3);
-  series1.hovered().fill("#00cc99", 0.1);
-  series1.selected().fill("#00cc99", 0.5);
-  series1.normal().lowStroke("#00cc99", 1, "10 5", "round");
-  series1.hovered().lowStroke("#00cc99", 2, "10 5", "round");
-  series1.selected().lowStroke("#00cc99", 4, "10 5", "round");
-  series1.normal().highStroke("#ff6666", 1, "10 5", "round");
-  series1.hovered().highStroke("#ff6666", 2, "10 5", "round");
-  series1.selected().highStroke("#ff6666", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().lowStroke("#00cc99", 1, "10 5", "round");
+series1.hovered().lowStroke("#00cc99", 2, "10 5", "round");
+series1.selected().lowStroke("#00cc99", 4, "10 5", "round");
+series1.normal().highStroke("#ff6666", 1, "10 5", "round");
+series1.hovered().highStroke("#ff6666", 2, "10 5", "round");
+series1.selected().highStroke("#ff6666", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.rangeAarea(seriesData_2);
-
 // configure the visual settings of the second series
 series2.normal().fill("#0066cc", 0.3);
 series2.hovered().fill("#0066cc", 0.1);
 series2.selected().fill("#0066cc", 0.5);
-series2.normal().hatchFill("zig-zag", "#0066cc", 1, 15);
-series2.hovered().hatchFill("zig-zag", "#0066cc", 1, 15);
-series2.selected().hatchFill("zig-zag", "#0066cc", 1, 15);
+series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
 series2.normal().lowStroke("#0066cc", 1);
 series2.hovered().lowStroke("#0066cc", 2);
 series2.selected().lowStroke("#0066cc", 4);
-series2.normal().highStroke("#ff6666", 1);
+series2.normal().highStroke("#ff6666");
 series2.hovered().highStroke("#ff6666", 2);
 series2.selected().highStroke("#ff6666", 4);
 ```

@@ -239,7 +239,7 @@ chart.sort("asc");
 
 ### Appearance
 
-#### All Tiles
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Treemap chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TreeMap#normal}normal(){api}, {api:anychart.charts.TreeMap#hovered}hovered(){api}, and {api:anychart.charts.TreeMap#selected}selected(){api} methods.
 
@@ -265,7 +265,7 @@ chart.selected().stroke("gray", 2);
 
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
-#### Individual Tiles
+#### Individual Points
 
 It is possible to configure the appearance of each tile individually – use extra data fields corresponding with the methods mentioned above:
 

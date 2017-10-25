@@ -68,7 +68,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Slices
+#### All Points
 
 The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
 
@@ -93,17 +93,7 @@ chart.hovered().stroke("#669999", 3);
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
-#### Aqua Style
-
-There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
-
-```
-// enable aqua style
-chart.fill("aquastyle");
-```
-{sample}BCT\_Pie\_Chart\_03{sample}
-
-#### Individual Slices
+#### Individual Points
 
 It is possible to configure the appearance of each slice individually – use extra data fields corresponding with the methods mentioned above:
 
@@ -128,6 +118,17 @@ var data = [
 
 // create a chart and set the data
 chart = anychart.pie(data);
+```
+
+{sample}BCT\_Pie\_Chart\_03{sample}
+
+#### Aqua Style
+
+There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
+
+```
+// enable aqua style
+chart.fill("aquastyle");
 ```
 
 {sample}BCT\_Pie\_Chart\_04{sample}
