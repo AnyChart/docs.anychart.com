@@ -104,40 +104,75 @@ Points padding is a special setting in Mekko charts, it is controlled with {api:
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Mekko series:
+#### All Points
 
-* {api:anychart.core.mekko.series.Mekko#color}color(){api}, {api:anychart.core.mekko.series.Mekko#fill}fill(){api}, {api:anychart.core.mekko.series.Mekko#hatchFill}hatchFill(){api}, {api:anychart.core.mekko.series.Mekko#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.mekko.series.Mekko#hoverFill}hoverFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.mekko.series.Mekko#selectFill}selectFill(){api}, {api:anychart.core.mekko.series.Mekko#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.mekko.series.Mekko#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Mekko chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.mekko.series.Mekko#normal}normal(){api}, {api:anychart.core.mekko.series.Mekko#hovered}hovered(){api}, and {api:anychart.core.mekko.series.Mekko#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../../Appearance_Settings) section.
+Combine them with the following methods:
 
-In the sample below, there are two mekko series with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Mekko series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.mekko(seriesData_1);
 
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1);
+series1.hovered().stroke("#00cc99", 2);
+series1.selected().stroke("#00cc99", 4);
 
 // create the second series
 var series2 = chart.mekko(seriesData_2);
 
 // configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.1);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Mekko\_Chart\_02{sample}
+
+#### Individual Points
+
+You can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+
+```
+// create a data set
+var data = anychart.data.set([
+  ["QTR1", 10000, 12500],
+  ["QTR2", 12000, 15000],
+  ["QTR3", 13000, 16500,  "#ef6c00", null],
+  ["QTR4", 10000, 13000],
+]);
+
+// map the data
+var seriesData_1 = data.mapAs({x: 0, value: 1});
+var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 3, stroke: 4});
+
+// create a chart
+chart = anychart.mekko();
+
+// create series and set the data
+var series1 = chart.mekko(seriesData_1);
+var series2 = chart.mekko(seriesData_2);
+```
+
+{sample}BCT\_Mekko\_Chart\_03{sample}
 
 ### Labels
 
