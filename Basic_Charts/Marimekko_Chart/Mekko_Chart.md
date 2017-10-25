@@ -24,14 +24,14 @@ The Marimekko name has been adopted within business and the management consultan
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[BarMekko](BarMekko_Chart)</td></tr>
+<tr><td></td><td>[Bar Mekko](Bar_Mekko_Chart)</td></tr>
 <tr><td></td><td>[Mosaic Chart](Mosaic_Chart)</td></tr>
 <tr><td></td><td>[Column Chart](../Column_Chart)</td></tr>
 <tr><td></td><td>[Bar Chart](../Bar_Chart)</td></tr>
 <tr><td></td><td>[Stacked Charts](../Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mekko-chart/" target="_blank">Chartopedia: Marimekko Mekko Chart</a></td></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/barmekko-chart/" target="_blank">Chartopedia: Marimekko BarMekko Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/barmekko-chart/" target="_blank">Chartopedia: Marimekko Bar Mekko Chart</a></td></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mosaic-chart/" target="_blank">Chartopedia: Marimekko Mosaic Chart</a></td></tr>
 <tr><td></td><td>[General Settings](../General_Settings)</td></tr>
 </table>
@@ -54,7 +54,7 @@ See the basic sample and read more in [later in this article](#special_settings)
 
 {sample}BCT\_Mekko\_Chart\_01{sample}
 
-## BarMekko
+## Bar Mekko
 
 A Mekko chart with units (sometimes also called *submarine chart* or *olympic chart*) is a two-dimensional stacked chart. As in the [regular stacked chart](../Stacked/Overview), the value axis and the datasheet of this chart are based on absolute values.
 
@@ -64,9 +64,9 @@ This type of marimekko chart is created with {api:anychart#barmekko}barmekko(){a
 chart = anychart.barmekko();
 ```
 
-See the basic sample and read more in [Barmekko Chart](BarMekko_Chart) article.
+See the basic sample and read more in [Bar Mekko Chart](Bar_Mekko_Chart) article.
 
-{sample}BCT\_BarMekko\_Chart\_01{sample}
+{sample}BCT\_Bar\_Mekko\_Chart\_01{sample}
 
 ## Mosaic
 
@@ -94,13 +94,13 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 When Mekko chart is created both its scales are put into stacked mode: Y scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X scale to value stacking mode.
 
-Changing Y scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using [Barmekko Chart](BarMekko_Chart) in such cases.
+Changing Y scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
 
 Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
 ### Points padding
 
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [BarMekko](BarMekko_Chart) and [Mosaic](Mosaic_Chart) constructors.
+Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
 
 ### Appearance
 
@@ -190,4 +190,4 @@ Here is the information about creating Vertical Mekko Chart:
 
 * [Vertical Mekko](../Vertical/Mekko_Chart)
 * [Vertical Mosaic](../Vertical/Mosaic_Chart)
-* [Vertical BarMekko](../Vertical/BarMekko_Chart)
+* [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart)

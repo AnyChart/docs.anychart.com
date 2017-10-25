@@ -52,19 +52,15 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ## Special Settings
 
-### Points Padding
-
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [BarMekko](BarMekko_Chart) constructors.
-
 ### Appearance
 
-Mosaic chart appearance is tuned similar to basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
+Configuring the appearance of the Mosaic chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
-Here is a sample of a mosaic chart with visual settings configured:
+### Points Padding
 
-{sample}BCT\_Mosaic\_Chart\_02{sample}
+Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [Bar Mekko](Bar_Mekko_Chart) constructors.
 
-### Vertical Mosaic Chart
+### Vertical Mosaic
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 

@@ -14,17 +14,25 @@
 
     // create a data set
     var data = [
-        {x: "Spring", value: 20},
-        {x: "Summer", value: 30},
-        {x: "Autumn", value: 100},
-        {x: "Winter", value: 40}
+      ["QTR1", 10000],
+      ["QTR2", 12000],
+      ["QTR3", 13000],
+      ["QTR4", 10000],
     ];
 
     // create a chart
     chart = anychart.barmekko();
 
-    // create a mekko series and set the data
+    // swap axes
+    chart.xAxis().orientation("left");
+    chart.yAxis().orientation("bottom");    
+
+    // add series
     var series = chart.mekko(data);
+    series.isVertical(true);
+
+    // set the chart title
+    chart.title("Vertical Charts: Bar Mekko Chart");
 
     // set the container id
     chart.container("container");
