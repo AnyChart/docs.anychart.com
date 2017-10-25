@@ -13,42 +13,35 @@
 
     // create a data set
     var data = [
-      {x: "John", value: 10000},
-      {x: "Jake", value: 12000},
-      {x: "Peter", value: 13000,
-       normal:   {
-                   fill: "#5cd65c",
-                   stroke: null,
-                   label: {enabled: true}
-                 },
-       hovered:  {
-                   fill: "#5cd65c",
-                   stroke: null,
-                   label: {enabled: true}
-                 },
-       selected: {
-                   fill: "#5cd65c",
-                   stroke: null,
-                   label: {enabled: true}
-                 }
+      {x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000,
+       normal:   {stroke: "3 #5cd65c"},
+       hovered:  {stroke: "4 #5cd65c"},
+       selected: {stroke: "4 #5cd65c"}
       },
-      {x: "James", value: 10000},
-      {x: "Mary", value: 9000}
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}
     ];
 
     // create a chart
-    chart = anychart.bar();
+    chart = anychart.column();
 
-    // create a bar series and set the data
-    var series = chart.bar(data);
+    // set the interactivity mode
+    chart.interactivity("by-x");
 
+    // create a stick series and set the data
+    var series = chart.stick(data);
+    
     // set the chart title
-    chart.title("Bar Chart: Appearance (Individual Points)");
+    chart.title("Stick Chart: Basic Sample");
 
     // set the titles of the axes
-    chart.xAxis().title("Manager");
-    chart.yAxis().title("Sales, $");
-
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales, $");
+ 
     // set the container id
     chart.container("container");
 

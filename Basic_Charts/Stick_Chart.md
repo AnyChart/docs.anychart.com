@@ -95,6 +95,33 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Stick\_Chart\_02{sample}
 
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+
+```
+// create a data set
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000,
+   normal:   {stroke: "3 #5cd65c"},
+   hovered:  {stroke: "4 #5cd65c"},
+   selected: {stroke: "4 #5cd65c"}
+  },
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
+
+// create a chart
+chart = anychart.column();
+
+// create a stick series and set the data
+var series = chart.stick(data);
+```
+
+{sample}BCT\_Stick\_Chart\_03{sample}
+
 ### Point Size
 
 This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.

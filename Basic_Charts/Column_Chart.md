@@ -136,12 +136,12 @@ var data = [
    hovered:  {
                fill: "#5cd65c",
                stroke: null,
-               label: {enabled: true},
+               label: {enabled: true}
              },
    selected: {
                fill: "#5cd65c",
                stroke: null,
-               label: {enabled: true},
+               label: {enabled: true}
              }
   },
   {x: "James", value: 10000},
