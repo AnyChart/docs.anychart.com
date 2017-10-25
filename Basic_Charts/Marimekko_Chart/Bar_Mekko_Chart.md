@@ -67,6 +67,4 @@ Configuring the appearance of the Bar Mekko chart is similar to configuring the 
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is the information about creating the Vertical Bar Mekko Chart:
-
-* [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart)
+Here is the information about creating the Vertical Bar Mekko Chart: [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart).

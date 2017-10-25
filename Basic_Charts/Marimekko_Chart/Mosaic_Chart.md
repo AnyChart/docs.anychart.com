@@ -64,6 +64,4 @@ Points padding is a special setting in Mekko charts, it is controlled with {api:
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is the information about creating Vertical Mosaic Chart:
-
-* [Vertical Mosaic](../Vertical/Mosaic_Chart)
+Here is the information about creating the Vertical Mosaic Chart: [Vertical Mosaic](../Vertical/Mosaic_Chart).

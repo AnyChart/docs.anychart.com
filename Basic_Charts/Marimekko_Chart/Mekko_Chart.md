@@ -186,7 +186,7 @@ A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point 
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is the information about creating Vertical Mekko Chart:
+Here is the information about creating Vertical Mekko Charts:
 
 * [Vertical Mekko](../Vertical/Mekko_Chart)
 * [Vertical Mosaic](../Vertical/Mosaic_Chart)
