@@ -63,7 +63,7 @@ You can create a multiseries Bar Mekko chart in the same way you always do:
 
 Configuring the appearance of the Bar Mekko chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
-### Vertical BarMekko
+### Vertical Bar Mekko
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
