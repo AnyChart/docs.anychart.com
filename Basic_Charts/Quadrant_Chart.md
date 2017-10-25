@@ -122,11 +122,13 @@ To set the fill and stroke of quarters, combine these methods with these ones:
 * {api:anychart.core.utils.Quarter#fill}fill(){api}
 * {api:anychart.core.utils.Quarter#stroke}stroke(){api}
 * {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}
-* {api:anychart.core.utils.Quarter#topStroke}topStroke(){api
+* {api:anychart.core.utils.Quarter#topStroke}topStroke(){api}
 * {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}
 * {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}
 
-To set the fype and radius of corners, call {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api}.
+To set the fype and radius of corners, call:
+* {api:anychart.core.utils.Quarter#cornerType}cornerType(){api}
+* {api:anychart.core.utils.Quarter#corner}corner(){api}.
 
 You can also configure titles, margins, paddings, and labels of quarters (see the [Labels](#labels) section of this article to find more information about configuring lables):
 
