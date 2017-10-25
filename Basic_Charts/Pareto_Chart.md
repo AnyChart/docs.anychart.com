@@ -103,7 +103,7 @@ The column series has the index that equals "0" and the line series the index th
 // make column series white with black border and hatch fill
 chart.getSeriesAt(0).fill(null);
 chart.getSeriesAt(0).stroke("#000000");
-chart.getSeriesAt(0).hatchFill("#zigzag");
+chart.getSeriesAt(0).hatchFill("#forward-diagonal");
 
 // make line series black and dashed
 chart.getSeriesAt(1).stroke("#000000", "2", "2 2");
