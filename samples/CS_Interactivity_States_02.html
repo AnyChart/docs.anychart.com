@@ -11,46 +11,44 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var dataSet = anychart.data.set([
-    ["January", 10000, 12000, 15000],
-    ["February", 12000, 12000, 14000],
-    ["March", 18000, 15000, 15000],
-    ["April", 11000, 10000, 19000],
-    ["May", 9000, 13000, 19000]
-  ]);
-  
-  // mapping the data
-  var seriesData_1 = dataSet.mapAs({x: 0, value: 1});
-  var seriesData_2 = dataSet.mapAs({x: 0, value: 2});
-  var seriesData_3 = dataSet.mapAs({x: 0, value: 3});
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ]);
 
-  // chart type
-  chart = anychart.line();
-  
-  // title
-  chart.title("Default Interactivity - Line Chart");
-  
-  // enable the legend
-  chart.legend(true);
+    // create a chart
+    chart = anychart.column();
 
-  // set axes titles
-  chart.xAxis().title("Sales");
-  chart.yAxis().title("Month");
+    // create a column series and set the data
+    var series = chart.column(data);
 
-  // set data
-  var series_1 = chart.line(seriesData_1);
-  var series_2 = chart.line(seriesData_2);
-  var series_3 = chart.line(seriesData_3);
-  
-  // setting series names
-  series_1.name("Tea");
-  series_2.name("Coffee");
-  series_3.name("Hot chocolate");
-  
-  // draw
-  chart.container("container");
-  chart.draw();
+    // configure the visual settings of the series
+    series.fill("#0066cc", 0.3);
+    series.fill("#0066cc", 0.1);
+    series.fill("#0066cc", 0.5);
+    series.stroke("#0066cc", 1);
+    series.stroke("#0066cc", 2);
+    series.stroke("#0066cc", 4);
+    series.markers(true);
+    series.markers(true);
+    series.labels(true);
+
+    // set the chart title
+    chart.title("States: XXX");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

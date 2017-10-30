@@ -11,46 +11,64 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var dataSet = anychart.data.set([
-    ["January", 10000, 12000, 15000],
-    ["February", 12000, 12000, 14000],
-    ["March", 18000, 15000, 15000],
-    ["April", 11000, 10000, 19000],
-    ["May", 9000, 13000, 19000]
-  ]);
-  
-  // mapping the data
-  var seriesData_1 = dataSet.mapAs({x: 0, value: 1});
-  var seriesData_2 = dataSet.mapAs({x: 0, value: 2});
-  var seriesData_3 = dataSet.mapAs({x: 0, value: 3});
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
+    ]);
 
-  // chart type
-  chart = anychart.line();
-  
-  // title
-  chart.title("Default Interactivity - Line Chart");
-  
-  // enable the legend
-  chart.legend(true);
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
 
-  // set axes titles
-  chart.xAxis().title("Sales");
-  chart.yAxis().title("Month");
+    // create a chart
+    chart = anychart.column();
 
-  // set data
-  var series_1 = chart.line(seriesData_1);
-  var series_2 = chart.line(seriesData_2);
-  var series_3 = chart.line(seriesData_3);
-  
-  // setting series names
-  series_1.name("Tea");
-  series_2.name("Coffee");
-  series_3.name("Hot chocolate");
-  
-  // draw
-  chart.container("container");
-  chart.draw();
+    // create the first series, set the data and name
+    var series1 = chart.column(seriesData_1);
+    series1.name("Sales in 2015");
+
+    // configure the visual settings of the first series
+    series1.normal().fill("#00cc99", 0.3);
+    series1.hovered().fill("#00cc99", 0.1);
+    series1.selected().fill("#00cc99", 0.5);
+    series1.normal().stroke("#00cc99", 1);
+    series1.hovered().stroke("#00cc99", 2);
+    series1.selected().stroke("#00cc99", 4);
+    series1.hovered().markers(true);
+    series1.selected().markers(true);
+    series1.selected().labels(true);
+
+    // create the second series, set the data and name
+    var series2 = chart.column(seriesData_2);
+    series2.name("Sales in 2016");
+
+    // configure the visual settings of the second series
+    series2.normal().fill("#0066cc", 0.3);
+    series2.hovered().fill("#0066cc", 0.1);
+    series2.selected().fill("#0066cc", 0.5);
+    series2.normal().stroke("#0066cc");
+    series2.hovered().stroke("#0066cc", 2);
+    series2.selected().stroke("#0066cc", 4);
+    series2.hovered().markers(true);
+    series2.selected().markers(true);
+    series2.selected().labels(true);
+
+    // set the chart title
+    chart.title("States: XXX");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
