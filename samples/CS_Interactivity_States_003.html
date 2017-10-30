@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create data
+    var data = [
+      {x: "John", value: 10000},
+      {x: "Jake", value: 12000},
+      {x: "Peter", value: 13000,
+       normal:   {
+                  fill: "#5cd65c",
+                  stroke: "#5cd65c"
+                 },
+       hovered:  {
+                  hatchFill: "forward-diagonal",
+                  marker: {
+                           enabled: true,
+                           size: 20,
+                           type: "star5",
+                           fill: "gold"
+                          }
+                 },
+       selected: {
+                  hatchFill: "forward-diagonal",
+                  marker: {
+                           enabled: true,
+                           size: 20,
+                           type: "star5",
+                           fill: "gold"
+                          }
+                 }
+      },
+      {x: "James", value: 10000},
+      {x: "Mary", value: 9000}
+    ];
+
+    // create a chart
+    chart = anychart.column();
+
+    // create a column series and set the data
+    var series = chart.column(data);
+
+    // set the chart title
+    chart.title("States: Points (Object Notation)");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
