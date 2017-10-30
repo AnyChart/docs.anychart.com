@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["John", 10000],
-      ["Jake", 12000],
-      ["Peter", 13000],
-      ["James", 10000],
-      ["Mary", 9000]
-    ]);
+    // create data
+    var data = [
+      {x: "John", value: 10000},
+      {x: "Jake", value: 12000},
+      {x: "Peter", value: 13000, hatchFill: "forward-diagonal"},
+      {x: "James", value: 10000},
+      {x: "Mary", value: 9000}
+    ];
 
     // create a chart
     chart = anychart.column();
@@ -27,18 +27,13 @@
     var series = chart.column(data);
 
     // configure the visual settings of the series
-    series.fill("#0066cc", 0.3);
-    series.fill("#0066cc", 0.1);
     series.fill("#0066cc", 0.5);
-    series.stroke("#0066cc", 1);
     series.stroke("#0066cc", 2);
-    series.stroke("#0066cc", 4);
-    series.markers(true);
     series.markers(true);
     series.labels(true);
 
     // set the chart title
-    chart.title("States: XXX");
+    chart.title("States: Shortcuts");
 
     // set the titles of the axes
     chart.xAxis().title("Manager");

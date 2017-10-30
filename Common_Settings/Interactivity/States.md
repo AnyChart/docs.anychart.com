@@ -5,21 +5,15 @@
 <a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>
 
 
-? методы normal, hovered, selected:
-- обзор доступных настроек
-- настройка чартов методами
-- настройка серий методами
-- альт. способ настроить normal
-- настройка точек ч/getPoint
-- настройка точек ч/данные: массив
-- настройка точек ч/данные: объект
-
-? режимы интерактивности:
-
-- режимы hovered    (1 пример?)
-- режимы select     (1 пример?)
-
-? методы hover, unhover, select:
-
-- серия
-- точка
+Overview
+Chart					
+	Single Series		1 пример? только ссылки?
+	Multiple Series		1 пример?
+Series
+	Methods				1 пример
+	Object Notation		1 пример
+Point
+	Object Notation		1 пример
+	Mapping				1 пример
+	getPoint()			1 пример
+Shortcuts				1 пример: серия и точка

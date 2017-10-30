@@ -16,11 +16,9 @@
       ["John", 10000, 12500],
       ["Jake", 12000, 15000],
       ["Peter", 13000, 16500,
-       {fill: "#5cd65c"},
-       {fill: "#009933"},
-       {fill: "#5cd65c 0.5"},
-       {fill: "#009933 0.5"}
-      ],
+       {fill: "#5cd65c", stroke: "#5cd65c"},
+       {fill: "#009933", stroke: "#009933"},
+       {hatchFill: "forward-diagonal"}],
       ["James", 10000, 13000],
       ["Mary", 9000, 11000]
     ]);
@@ -29,11 +27,13 @@
     var seriesData_1 = data.mapAs({x: 0,
                                    value: 1,
                                    normal: 3,
-                                   hovered: 5});
+                                   hovered: 5,
+                                   selected: 5});
     var seriesData_2 = data.mapAs({x: 0,
                                    value: 2,
                                    normal: 4,
-                                   hovered: 6});
+                                   hovered: 5,
+                                   selected: 5});
 
     // create a chart
     chart = anychart.column();
@@ -47,7 +47,7 @@
     series2.name("Sales in 2016");
 
     // set the chart title
-    chart.title("States: XXX");
+    chart.title("States: Points (Mapping)");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
