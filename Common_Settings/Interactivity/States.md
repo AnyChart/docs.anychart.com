@@ -52,6 +52,9 @@ chart.hovered().stroke("#669999", 3);
 ### Methods
 
 ```
+// create a chart
+chart = anychart.column();
+
 // create the first series and set the data
 var series1 = chart.column(seriesData_1);
 
@@ -86,22 +89,31 @@ series2.selected().labels(true);
 ### Object Notation
 
 ```
+// create a chart
+chart = anychart.column();
+
 // create two series and set the data
 var series1 = chart.column(seriesData_1);
 var series2 = chart.column(seriesData_2);
 
 // create objects with settings
-normal   = {fill: {color:"#0066cc", opacity: 0.3},
-            stroke: {color: "#0066cc"}};
+var normal   = {
+  fill: {color:"#0066cc", opacity: 0.3},
+  stroke: {color: "#0066cc"}
+};
 
-hovered  = {fill: {color:"#0066cc", opacity: 0.1},
-            stroke: {color: "#0066cc", thickness: 2},
-            markers: {enabled: true}};
+var hovered  = {
+  fill: {color:"#0066cc", opacity: 0.1},
+  stroke: {color: "#0066cc", thickness: 2},
+  markers: {enabled: true}
+};
 
-selected = {fill: {color:"#0066cc", opacity: 0.5},
-            stroke: {color: "#0066cc", thickness: 4},
-            markers: {enabled: true},
-            labels: {enabled: true}};
+var selected = {
+  fill: {color:"#0066cc", opacity: 0.5},
+  stroke: {color: "#0066cc", thickness: 4},
+  markers: {enabled: true},
+  labels: {enabled: true}
+};
 
 // configure the first series
 series1.normal(normal);
