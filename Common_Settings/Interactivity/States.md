@@ -169,18 +169,12 @@ var data = anychart.data.set([
   ["John", 10000, 12500],
   ["Jake", 12000, 15000],
   ["Peter", 13000, 16500,
-   {
-    fill: "#5cd65c",
-    stroke: "#5cd65c"
-   },
-   {
-    fill: "#009933",
-    stroke: "#009933",
+   {fill: "#5cd65c", stroke: "#5cd65c"},
+   {fill: "#009933", stroke: "#009933",
     marker: {enabled: true},
     label: {enabled: true}
    },
-   {
-    hatchFill: "forward-diagonal",
+   {hatchFill: "forward-diagonal",
     marker: {enabled: true},
     label: {enabled: true}
    }
