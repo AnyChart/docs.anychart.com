@@ -14,19 +14,17 @@
 var data = [
   {x: "A", value: 637166},
   {x: "B", value: 721630,
-   normal:   {
-              hatchFill: {
-                          type: "forward-diagonal",
-                          color: "#669999"
-                         }
-             },
-   hovered:  {
-              hatchFill: {
-                          type: "forward-diagonal",
-                          color: "#669999",
-                          thickness: 3
-                         }
-             }
+   normal:  { hatchFill: {
+                type: "forward-diagonal",
+                color: "#669999"
+            }
+   },
+   hovered: { hatchFill: {
+                 type: "forward-diagonal",
+                 color: "#669999",
+                 thickness: 3
+            }
+   }
   },
   {x: "C", value: 148662},
   {x: "D", value: 78662},
@@ -52,10 +50,7 @@ chart.hovered().stroke("#669999", 3);
 ### Methods
 
 ```
-// create a chart
-chart = anychart.column();
-
-// create the first series and set the data
+// create the first series
 var series1 = chart.column(seriesData_1);
 
 // configure the visual settings of the first series
@@ -69,7 +64,7 @@ series1.hovered().markers(true);
 series1.selected().markers(true);
 series1.selected().labels(true);
 
-// create the second series and set the data
+// create the second series
 var series2 = chart.column(seriesData_2);
 
 // configure the visual settings of the second series
@@ -89,10 +84,7 @@ series2.selected().labels(true);
 ### Object Notation
 
 ```
-// create a chart
-chart = anychart.column();
-
-// create two series and set the data
+// create two series
 var series1 = chart.column(seriesData_1);
 var series2 = chart.column(seriesData_2);
 
@@ -138,27 +130,22 @@ var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},
   {x: "Peter", value: 13000,
-   normal:   {
-              fill: "#5cd65c",
-              stroke: "#5cd65c"
+   normal:   { fill: "#5cd65c",
+               stroke: "#5cd65c"
              },
-   hovered:  {
-              hatchFill: "forward-diagonal",
-              marker: {
-                       enabled: true,
-                       size: 20,
-                       type: "star5",
-                       fill: "gold"
-                      }
+   hovered:  { hatchFill: "forward-diagonal",
+               marker: { enabled: true,
+                         size: 20,
+                         type: "star5",
+                         fill: "gold"
+                       }
              },
-   selected: {
-              hatchFill: "forward-diagonal",
-              marker: {
-                       enabled: true,
-                       size: 20,
-                       type: "star5",
-                       fill: "gold"
-                      }
+   selected: { hatchFill: "forward-diagonal",
+               marker: { enabled: true,
+                         size: 20,
+                         type: "star5",
+                         fill: "gold"
+                       }
              }
   },
   {x: "James", value: 10000},
@@ -204,19 +191,13 @@ var data = anychart.data.set([
 
 // map the data
 var seriesData_1 = data.mapAs({
-  x: 0,
-  value: 1,
-  normal: 3,
-  hovered: 5,
-  selected: 5
+  x: 0, value: 1,
+  normal: 3, hovered: 5, selected: 5
 });
 
 var seriesData_2 = data.mapAs({
-  x: 0,
-  value: 2,
-  normal: 4,
-  hovered: 5,
-  selected: 5
+  x: 0, value: 2,
+  normal: 4, hovered: 5, selected: 5
 });
 
 // create a chart
