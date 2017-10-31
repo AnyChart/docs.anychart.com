@@ -41,7 +41,7 @@ To create a Bar series explicitly, call the {api:anychart.charts.Cartesian#bar}b
 The following sample demonstrates how a basic Bar chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["John", 10000],
   ["Jake", 12000],
@@ -123,7 +123,7 @@ series2.selected().stroke("#0066cc", 4);
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to the data set:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},

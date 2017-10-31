@@ -42,7 +42,7 @@ To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}ju
 The following sample demonstrates how a basic Jump Line chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},

@@ -48,7 +48,7 @@ To create a HiLo series explicitly, call the {api:anychart.charts.Cartesian#hilo
 The following sample demonstrates how a basic HiLo chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 10000, 1000],
   ["February", 12000, 500],

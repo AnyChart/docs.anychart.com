@@ -56,7 +56,7 @@ var data = [
 The following sample demonstrates how a basic Range Area chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 0.7, 6.1],
   ["February", 0.6, 6.3],

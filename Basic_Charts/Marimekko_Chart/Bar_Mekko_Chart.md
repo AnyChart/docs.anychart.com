@@ -20,7 +20,7 @@ To add a series call the {api:anychart.charts.Mekko#mekko}mekko(){api} method.
 The following sample demonstrates how a basic Bar Mekko  chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
 	{x: "Spring", value: 20},
 	{x: "Summer", value: 30},

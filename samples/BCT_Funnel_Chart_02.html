@@ -11,24 +11,25 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
-// create a data set
-var data = [
-  ["Total Market", 232000],
-  ["Prospects", 94480],
-  ["Leads", 47390],
-  ["Sales", 22181]
-];
 
-chart = anychart.funnel(data);
+    // create data
+    var data = [
+      ["Total Market", 232000],
+      ["Prospects", 94480],
+      ["Leads", 47390],
+      ["Sales", 22181]
+    ];
 
-// set the base width
-chart.baseWidth("50%");
+    chart = anychart.funnel(data);
 
-// set the container id
-chart.container("container");
+    // set the base width
+    chart.baseWidth("50%");
 
-// initiate drawing the chart
-chart.draw();
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

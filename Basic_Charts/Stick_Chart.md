@@ -41,7 +41,7 @@ To create a Stick chart, use the {api:anychart#column}anychart.column(){api} cha
 After you created a column chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -100,7 +100,7 @@ series2.selectStroke("#0066cc", 4);
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},

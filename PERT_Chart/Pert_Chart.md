@@ -18,7 +18,7 @@ To create a new Pert Chart, use the {api:anychart#pert}anychart.pert(){api} char
 The following sample demonstrates how a basic Pert Chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {id: "1", duration: 1, name: "Task A"},
   {id: "2", duration: 3, name: "Task B"},

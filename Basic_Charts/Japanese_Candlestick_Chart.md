@@ -47,7 +47,7 @@ To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesi
 The following sample demonstrates how a basic single-series Japanese Candlestick chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
   [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],

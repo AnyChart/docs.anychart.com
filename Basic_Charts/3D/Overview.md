@@ -28,7 +28,7 @@ You can either pass your data to the chart constructor or create a series by usi
 That is how it looks like:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 10000],
   ["February", 12000],

@@ -54,7 +54,7 @@ var data = [
 The following sample demonstrates how a basic Range Column chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 0.7, 6.1],
   ["February", 0.6, 6.3],
@@ -136,7 +136,7 @@ series2.selected().stroke("#0066cc", 4);
 If you use object notation to set the data, you can change the appearance (and some other settings) of individual columns by adding special fields to the data set:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", low: 0.7, high: 6.1},
   {x: "February", low: 0.6, high: 6.3},

@@ -45,7 +45,7 @@ To create an Area series explicitly, call the {api:anychart.charts.Cartesian#are
 The following sample demonstrates how a basic Area chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 10000],
   ["February", 12000],
