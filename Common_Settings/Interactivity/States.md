@@ -23,7 +23,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_001{sample}
 
 ### Object Notation
 
@@ -31,7 +31,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_002{sample}
 
 ## Points
 
@@ -41,7 +41,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_003{sample}
 
 ### Mapping
 
@@ -49,7 +49,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_004{sample}
 
 ### Gettin by Index
 
@@ -57,7 +57,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_005{sample}
 
 ## Shortcuts
 
@@ -65,4 +65,4 @@
 
 ```
 
-{sample}CS\_Interactivity\_001{sample}
+{sample}CS\_Interactivity\_States\_006{sample}
