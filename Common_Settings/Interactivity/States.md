@@ -2,12 +2,19 @@
 
 ## Overview
 
-<a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>
+A number settings of a chart, series, or point can be configured in three states: **normal**, **hover**, and **selected**. For example, you can adjust their appearance, enable and adjust labels and markers.
 
+Here is the full list of available settings: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that many of them work only with certain series or chart types.
+
+[<a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>]
 
 ## Chart
 
 ### Single Series
+
+Some chart types have only one series...
+
+For example, here is a Pie chart with some settings configured:
 
 ```
 // create data
@@ -34,7 +41,7 @@ var data = [
 // create a chart and set the data
 chart = anychart.pie(data);
 
-// configure the visual settings of the chart
+// configure the states of the chart
 chart.normal().fill("#669999", 0.5);
 chart.hovered().fill("#669999", 0.3);
 chart.normal().stroke("#669999", 3);
@@ -45,15 +52,23 @@ chart.hovered().stroke("#669999", 3);
 
 ### Multiple Series
 
+If a chart has multiple series, you can configure either the whole chart or each series individually. See the [Series](#series) section of this article to learn more.
+
 ## Series
 
 ### Methods
+
+The states of a series can be configured with the help of its **normal()**, **hovered()**, and **selected()** methods. 
+
+For example, here are these methods of a [Column](../../Basic_Charts/Column_Chart) series: {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, {api:anychart.core.cartesian.series.Column#selected}selected(){api}.
+
+In the following sample, there is a Column chart with its visual settings, markers, and labels adjusted:
 
 ```
 // create the first series
 var series1 = chart.column(seriesData_1);
 
-// configure the visual settings of the first series
+// configure the states of the first series
 series1.normal().fill("#00cc99", 0.3);
 series1.hovered().fill("#00cc99", 0.1);
 series1.selected().fill("#00cc99", 0.5);
@@ -67,7 +82,7 @@ series1.selected().labels(true);
 // create the second series
 var series2 = chart.column(seriesData_2);
 
-// configure the visual settings of the second series
+// configure the states of the second series
 series2.normal().fill("#0066cc", 0.3);
 series2.hovered().fill("#0066cc", 0.1);
 series2.selected().fill("#0066cc", 0.5);
@@ -82,6 +97,9 @@ series2.selected().labels(true);
 {sample}CS\_Interactivity\_States\_02{sample}
 
 ### Object Notation
+
+Another way to configure the states of a series is using object notation...
+
 
 ```
 // create two series
@@ -107,12 +125,12 @@ var selected = {
   labels: {enabled: true}
 };
 
-// configure the first series
+// configure the states of the first series
 series1.normal(normal);
 series1.hovered(hovered);
 series1.selected(selected);
 
-// configure the second series
+// configure the states of the second series
 series2.normal(normal);
 series2.hovered(hovered);
 series2.selected(selected);
@@ -222,7 +240,7 @@ chart = anychart.column();
 // create a column series and set the data
 var series = chart.column(data);
 
-// configure the visual settings of the series
+// configure the states of the series
 series.fill("#0066cc", 0.5);
 series.stroke("#0066cc", 2);
 series.markers(true);
