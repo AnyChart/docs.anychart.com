@@ -9,7 +9,11 @@
 
 ### Single Series
 
-1 пример? только ссылки?
+```
+
+```
+
+{sample}CS\_Interactivity\_States\_01{sample}
 
 ### Multiple Series
 
@@ -23,7 +27,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_States\_001{sample}
+{sample}CS\_Interactivity\_States\_02{sample}
 
 ### Object Notation
 
@@ -31,7 +35,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_States\_002{sample}
+{sample}CS\_Interactivity\_States\_03{sample}
 
 ## Points
 
@@ -41,7 +45,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_States\_003{sample}
+{sample}CS\_Interactivity\_States\_04{sample}
 
 ### Mapping
 
@@ -49,15 +53,7 @@
 
 ```
 
-{sample}CS\_Interactivity\_States\_004{sample}
-
-### Gettin by Index
-
-```
-
-```
-
-{sample}CS\_Interactivity\_States\_005{sample}
+{sample}CS\_Interactivity\_States\_05{sample}
 
 ## Shortcuts
 
@@ -65,4 +61,4 @@
 
 ```
 
-{sample}CS\_Interactivity\_States\_006{sample}
+{sample}CS\_Interactivity\_States\_06{sample}
