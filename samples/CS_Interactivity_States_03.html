@@ -27,13 +27,9 @@
     // create a chart
     chart = anychart.column();
 
-    // create the first series, set the data and name
+    // create two series
     var series1 = chart.column(seriesData_1);
-    series1.name("Sales in 2015");
-
-    // create the second series, set the data and name
     var series2 = chart.column(seriesData_2);
-    series2.name("Sales in 2016");
 
     // create objects with settings
     normal   = {fill: {color:"#0066cc", opacity: 0.3},
@@ -60,10 +56,6 @@
 
     // set the chart title
     chart.title("States: Series (Object Notation)");
-
-    // set the titles of the axes
-    chart.xAxis().title("Manager");
-    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");

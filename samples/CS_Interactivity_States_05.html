@@ -56,22 +56,12 @@
     // create a chart
     chart = anychart.column();
 
-    // create the first series, set the data and name
+    // create two series
     var series1 = chart.column(seriesData_1);
-    series1.name("Sales in 2015");
-
-    // create the second series, set the data and name
     var series2 = chart.column(seriesData_2);
-    series2.name("Sales in 2016");
 
     // set the chart title
     chart.title("States: Points (Mapping)");
-
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Manager");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
 
     // set the container id
     chart.container("container");

@@ -27,9 +27,8 @@
     // create a chart
     chart = anychart.column();
 
-    // create the first series, set the data and name
+    // create the first series
     var series1 = chart.column(seriesData_1);
-    series1.name("Sales in 2015");
 
     // configure the visual settings of the first series
     series1.normal().fill("#00cc99", 0.3);
@@ -42,9 +41,8 @@
     series1.selected().markers(true);
     series1.selected().labels(true);
 
-    // create the second series, set the data and name
+    // create the second series
     var series2 = chart.column(seriesData_2);
-    series2.name("Sales in 2016");
 
     // configure the visual settings of the second series
     series2.normal().fill("#0066cc", 0.3);
@@ -59,10 +57,6 @@
 
     // set the chart title
     chart.title("States: Series (Methods)");
-
-    // set the titles of the axes
-    chart.xAxis().title("Manager");
-    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");

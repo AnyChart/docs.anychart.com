@@ -17,8 +17,6 @@
 
 ### Multiple Series
 
-1 пример?
-
 ## Series
 
 ### Methods
