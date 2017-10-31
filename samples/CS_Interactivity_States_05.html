@@ -16,24 +16,42 @@
       ["John", 10000, 12500],
       ["Jake", 12000, 15000],
       ["Peter", 13000, 16500,
-       {fill: "#5cd65c", stroke: "#5cd65c"},
-       {fill: "#009933", stroke: "#009933"},
-       {hatchFill: "forward-diagonal"}],
+       {
+        fill: "#5cd65c",
+        stroke: "#5cd65c"
+       },
+       {
+        fill: "#009933",
+        stroke: "#009933",
+        marker: {enabled: true},
+        label: {enabled: true}
+       },
+       {
+        hatchFill: "forward-diagonal",
+        marker: {enabled: true},
+        label: {enabled: true}
+       }
+      ],
       ["James", 10000, 13000],
       ["Mary", 9000, 11000]
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: 0,
-                                   value: 1,
-                                   normal: 3,
-                                   hovered: 5,
-                                   selected: 5});
-    var seriesData_2 = data.mapAs({x: 0,
-                                   value: 2,
-                                   normal: 4,
-                                   hovered: 5,
-                                   selected: 5});
+    var seriesData_1 = data.mapAs({
+      x: 0,
+      value: 1,
+      normal: 3,
+      hovered: 5,
+      selected: 5
+    });
+
+    var seriesData_2 = data.mapAs({
+      x: 0,
+      value: 2,
+      normal: 4,
+      hovered: 5,
+      selected: 5
+    });
 
     // create a chart
     chart = anychart.column();
