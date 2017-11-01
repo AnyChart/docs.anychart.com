@@ -4,7 +4,7 @@
 
 A number settings of a chart, series, or point can be configured in three states: **normal**, **hover**, and **selected**. For example, you can adjust their appearance, enable and adjust labels and markers.
 
-Here is the full list of available settings: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that many of them work only with certain series or chart types.
+Here is the full list of available settings: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that many of them work only with certain types of charts or series.
 
 [<a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>]
 
@@ -12,13 +12,13 @@ Here is the full list of available settings: {api:anychart.core.StateSettings}an
 
 ### Single Series
 
-Some chart types can have only one series. To configure their states, use the **normal()**, **hovered()**, and **selected()** methods of the chart. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} that work with the type.
+Some chart types can have only one series. To configure their states, use the **normal()**, **hovered()**, and **selected()** methods of the chart. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} – choose ones that work with your chart type.
 
-You can also use object notation to configure an individual point of a chart: add to your data extra fields corresponding with the methods mentioned above.
+**Note 1:** To configure an individual point of a chart, add to your data extra fields corresponding with the methods mentioned above.
 
-There is also an alternative way to set the normal state of a chart: see the [Shortcuts (Normal)](#shortcuts) section.
+**Note 2:** There is also an alternative way to set the normal state of a chart: see the [Shortcuts (Normal)](#shortcuts) section.
 
-In the sample below, there is a Pie chart with visual settings adjusted with the help of the {anychart.charts.Pie#normal}normal(){api} and {anychart.charts.Pie#hovered}hovered(){api} methods. One slice is configured individually in object notation:
+In the sample below, there is a Pie chart with visual settings adjusted with the help of the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods. One slice is configured individually though data:
 
 ```
 // create data
@@ -64,7 +64,7 @@ See the [Series](#series) section of this article to learn more. Some additional
 
 ### Methods
 
-To configure the states of a series, use its **normal()**, **hovered()**, and **selected()** methods. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} that work with your series.
+To configure the states of a series, use its **normal()**, **hovered()**, and **selected()** methods. The next step is to combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} – choose ones that work with your series type.
 
 In the following sample, there is a Column chart with its visual settings, markers, and labels adjusted with the help of {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods:
 
@@ -147,11 +147,11 @@ series2.selected(selected);
 
 ## Points
 
-You can configure individual points of a series by adding to your data extra fields corresponding with the methods [methods](#methods) used to configure the states of series.
+You can configure the states of individual points of a series: use special data fields corresponding with the [methods](#methods) of series.
 
-### Object Notation
+### Data Fields
 
-If you use object notation to set the data, the states of individual points are configured like in this sample:
+If you use object notation to set the data, just add extra fields to your data:
 
 ```
 // create data
@@ -190,7 +190,7 @@ var series = chart.column(data);
 
 {sample}CS\_Interactivity\_States\_04{sample}
 
-### Mapping
+### Data Mapping
 
 If you use an array to set the data, you should add settings to the data set and then map fields for them so that they can be interpreted by the component:
 
@@ -242,7 +242,7 @@ There are shortcuts that allow you to configure the **normal** state of a chart,
 
 Each series or chart has methods that affect its settings in the normal state. For example, the Column series has {api:anychart.core.StateSettings#fill}fill(){api}, {api:anychart.core.StateSettings#stroke}stroke(){api}, {api:anychart.core.StateSettings#labels}labels(){api}, {api:anychart.core.StateSettings#markers}markers(){api}, and so on.
 
-In the sample below, there is a single-series Column chart with the normal state of its series adjusted. One column is configured individually in object notation:
+In the sample below, there is a single-series Column chart with the normal state of its series adjusted. One column is configured individually through data:
 
 ```
 // create data
