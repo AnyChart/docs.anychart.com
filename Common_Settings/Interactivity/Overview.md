@@ -246,7 +246,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
 
 ## Rectangle Marquee Select
 
