@@ -44,13 +44,13 @@
         secondXAnchor: "2007-03-25",
         secondValueAnchor: 25.11,
         hovered: {
-            fill: "#398CAE 0.3",
-            stroke: "2 #FF0000"
+            fill: "#398cae 0.3",
+            stroke: "2 #ff0000"
         },
         selected: {
-            fill: "#398CAE 0.3",
-            hatchFill: "brick",
-            stroke: "5 #FF0000"
+            fill: "#398cae 0.3",
+            hatchFill: "forward-diagonal",
+            stroke: "4 #ff0000"
         }
     });
 
@@ -65,7 +65,24 @@
      
     // configure the visual settings of the second annotation
     rectangle2.normal().fill(null);
-    rectangle2.normal().stroke("#2196F3", 3, "10 2");
+    rectangle2.normal().stroke("#006600", 1, "10 2");
+    rectangle2.hovered().stroke("#00b300", 2, "10 2");
+    rectangle2.selected().stroke("#00b300", 4, "10 2");
+
+    // create the third Rectangle annotation
+    rectangle3 = controller.rectangle();
+
+    // set the position of the third annotation
+    rectangle3.xAnchor("2005-12-20");
+    rectangle3.valueAnchor(15.55);
+    rectangle3.secondXAnchor("2007-03-25");
+    rectangle3.secondValueAnchor(23.30);
+
+    // configure the visual settings of the third annotation
+    rectangle3.normal().fill(null);
+    rectangle3.normal().stroke("#006600", 1, "10 2");
+    rectangle3.hovered().stroke("#00b300", 2, "10 2");
+    rectangle3.selected().stroke("#00b300", 4, "10 2");
 
     // set the chart title
     chart.title("Rectangle: Appearance");

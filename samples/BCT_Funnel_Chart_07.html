@@ -12,27 +12,27 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// create a data set
-var data = [
-  ["Total Market", 232000],
-  ["Prospects", 94480],
-  ["Leads", 47390],
-  ["Sales", 22181]
-];
+    // create data
+    var data = [
+      ["Total Market", 232000],
+      ["Prospects", 94480],
+      ["Leads", 47390],
+      ["Sales", 22181]
+    ];
 
-chart = anychart.funnel(data);
+    chart = anychart.funnel(data);
 
-// place labels to the right
-var labels = chart.labels();
-labels.position("outside-right");
-// set 45px connectors length
-chart.connectorLength(45);
+    // place labels to the right
+    var labels = chart.labels();
+    labels.position("outside-right");
+    // set 45px connectors length
+    chart.connectorLength(45);
 
-// set the container id
-chart.container("container");
+    // set the container id
+    chart.container("container");
 
-// initiate drawing the chart
-chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

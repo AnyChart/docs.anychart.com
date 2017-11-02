@@ -27,7 +27,7 @@ var data = [
 ];
 
 // create a pie chart and set the data
-var chart = anychart.pie(data);
+chart = anychart.pie(data);
 
 /* set the inner radius
 (to turn the pie chart into a doughnut chart)*/

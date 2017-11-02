@@ -6,25 +6,34 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-mekko.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
-        {x: "Spring", value: 20},
-        {x: "Summer", value: 30},
-        {x: "Autumn", value: 100},
-        {x: "Winter", value: 40}
+      {x: "John", value: 10000},
+      {x: "Jake", value: 12000},
+      {x: "Peter", value: 13000, hatchFill: "forward-diagonal"},
+      {x: "James", value: 10000},
+      {x: "Mary", value: 9000}
     ];
 
     // create a chart
-    chart = anychart.barmekko();
+    chart = anychart.column();
 
-    // create a mekko series and set the data
-    var series = chart.mekko(data);
+    // create a column series and set the data
+    var series = chart.column(data);
+
+    // configure the states of the series
+    series.fill("#0066cc", 0.5);
+    series.stroke("#0066cc", 2);
+    series.markers(true);
+    series.labels(true);
+
+    // set the chart title
+    chart.title("States: Shortcuts (Normal State)");
 
     // set the container id
     chart.container("container");

@@ -64,38 +64,65 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Area series:
+#### All Points
 
-* {api:anychart.charts.Pyramid#fill}fill(){api}, {api:anychart.charts.Pyramid#hatchFill}hatchFill(){api}, {api:anychart.charts.Pyramid#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.charts.Pyramid#hoverFill}hoverFill(){api}, {api:anychart.charts.Pyramid#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pyramid#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.Pyramid#selectFill}selectFill(){api}, {api:anychart.charts.Pyramid#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Pyramid#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Pyramid chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pyramid#normal}normal(){api}, {api:anychart.charts.Pyramid#hovered}hovered(){api}, and {api:anychart.charts.Pyramid#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+Combine them with the following methods:
 
-In the sample below, there is a Pyramid Chart with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there is a Pyramid chart with appearance settings configured:
 
 ```
-// edit appearance settings
-chart.fill("#8B4513", 0.6);
-chart.hoverFill("#8B4513", 0.3);
-chart.selectFill("#8B4513", 0.8);
-chart.stroke("#fff", 1);
-chart.hoverStroke("#fff", 2);
-chart.selectStroke("#fff", 3);
+// configure the visual settings of the chart
+chart.normal().fill("#004d39", 0.3);
+chart.hovered().fill("#004d39", 0.1);
+chart.selected().fill("#004d39", 0.5);
+chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.normal().stroke("white");
+chart.hovered().stroke("white", 2);
+chart.selected().stroke("white", 2);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_02{sample}
 
-**Note**: setting colors for the chart does not visually separate blocks between each other. So, there is another way to set colors for the pyramid blocks: use the dataset and set the filling and stroking colors directly to each block. Notice that it is not necessary to adjust all appearance settings for a point.
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
 
 ```
-chart = anychart.pyramid([
+// create data
+var data = [
   {name: "Fantasy", value: 637166},
-  {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
+  {name: "Science Fiction", value: 721630,
+   normal:   {
+             hatchFill: "backward-diagonal",
+             stroke: "black"
+             },
+   hovered:  {
+               fill: "lightGray",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             },
+   selected: {
+               fill: "white",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             }
+  },
   {name: "Detective", value: 148662},
   {name: "Classics", value: 78662},
   {name: "Textbooks", value: 90000}
-]);
+];
+
+// create a chart and set the data  
+chart = anychart.pyramid(data);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_03{sample}

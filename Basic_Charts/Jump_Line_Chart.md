@@ -42,7 +42,7 @@ To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}ju
 The following sample demonstrates how a basic Jump Line chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -52,7 +52,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // create a jump line series and set the data
 var series = chart.jumpLine(data);
@@ -76,32 +76,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Jump Line series:
+The [appearance settings](../Appearance_Settings) of a Jump Line chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.JumpLine#normal}normal(){api}, {api:anychart.core.cartesian.series.JumpLine#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.JumpLine#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.JumpLine#color}color(){api} and {api:anychart.core.cartesian.series.JumpLine#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.JumpLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.JumpLine#selectStroke}selectStroke(){api} configures the stroke on select
+Combine them with the {api:anychart.core.StateSettings#fill}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Jump Line series with some of the appearance settings configured:
+In the sample below, there are two Jump Line series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.jumpLine(seriesData_1);
 
 // configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.jumpLine(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Jump\_Line\_Chart\_02{sample}

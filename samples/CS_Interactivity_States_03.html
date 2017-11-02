@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // create a chart
+    chart = anychart.column();
+
+    // create two series and set the data
+    var series1 = chart.column(seriesData_1);
+    var series2 = chart.column(seriesData_2);
+
+    // create objects with settings
+    var normal   = {
+      fill: {color:"#0066cc", opacity: 0.3},
+      stroke: {color: "#0066cc"}
+    };
+
+    var hovered  = {
+      fill: {color:"#0066cc", opacity: 0.1},
+      stroke: {color: "#0066cc", thickness: 2},
+      markers: {enabled: true}
+    };
+
+    var selected = {
+      fill: {color:"#0066cc", opacity: 0.5},
+      stroke: {color: "#0066cc", thickness: 4},
+      markers: {enabled: true},
+      labels: {enabled: true}
+    };
+
+    // configure the states of the first series
+    series1.normal(normal);
+    series1.hovered(hovered);
+    series1.selected(selected);
+
+    // configure the states of the second series
+    series2.normal(normal);
+    series2.hovered(hovered);
+    series2.selected(selected);
+
+    // set the chart title
+    chart.title("States: Series (Object Notation)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

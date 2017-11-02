@@ -59,7 +59,7 @@ controller.fibonacciTimezones({
 
 ## Appearance
 
-The [appearance settings](../../Appearance_Settings) of a Fibonacci Time Zones annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Time Zones annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -84,17 +84,17 @@ var fibonacciTimezones1 = controller.fibonacciTimezones({
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     normal: {
-        labels: {fontColor: "#FF0000"}
+        labels: {fontColor: "#ff0000"}
     },
     hovered: {
-        stroke: "2 #FF0000",
-        trend: "2 #0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "2 #ff0000",
+        trend: "2 #0000ff",
+        labels: {fontColor: "#ff0000"}
     },
     selected: {
-        stroke: "2 #FF0000", 
-        trend: "2 #0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "4 #ff0000", 
+        trend: "4 #0000ff",
+        labels: {fontColor: "#ff0000"}
     }     
 });
 
@@ -108,8 +108,10 @@ fibonacciTimezones2.secondXAnchor("2004-06-06");
 fibonacciTimezones2.secondValueAnchor(23.82);
  
 // configure the visual settings of the second annotation
-fibonacciTimezones2.normal().stroke("#2196F3", 3, "10 2");
-fibonacciTimezones2.normal().labels().fontColor("#2196F3");
+fibonacciTimezones2.normal().labels().fontColor("#00b300");
+fibonacciTimezones2.normal().stroke("#006600", 1, "10 2");
+fibonacciTimezones2.hovered().stroke("#00b300", 2, "10 2");
+fibonacciTimezones2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_03{sample}

@@ -11,13 +11,29 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
       {x: "January", low: 0.7, high: 6.1},
       {x: "February", low: 0.6, high: 6.3},
       {x: "March", low: 1.9, high: 8.5},
       {x: "April", low: 3.1, high: 10.8},
-      {x: "May", low: 5.7, high: 14.4, fill: "#5cd65c", stroke: null, label: {enabled: true}}
+      {x: "May", low: 5.7, high: 14.4,
+       normal:   {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true}
+                 },
+       hovered:  {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true},
+                 },
+       selected: {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true},
+                 }
+      }
     ];
 
     // create a chart
@@ -27,7 +43,7 @@
     var series = chart.rangeBar(data);
 
     // set the chart title
-    chart.title("Range Bar Chart: Appearance (Particular Columns)");
+    chart.title("Range Bar Chart: Appearance (Individual Points)");
 
     // set the titles of the axes
     chart.xAxis().title("Month");

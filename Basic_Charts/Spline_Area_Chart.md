@@ -51,7 +51,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a spline area series and set the data
 var series = chart.splineArea(data);

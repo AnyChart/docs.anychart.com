@@ -39,7 +39,7 @@ This is how it looks like:
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of a Vertical Line annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../../Appearance_Settings) of a Vertical Line annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -58,8 +58,8 @@ In the sample below, there are two Vertical Line annotations with some of the vi
 // create the first Vertical Line annotation and configure its visual settings
 var verticalLine1 = controller.verticalLine({
     xAnchor: "2007-09-23",
-    hovered: {stroke: "2 #FF0000"},
-    selected: {stroke: "5 #FF0000"}
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Vertical Line annotation
@@ -69,7 +69,9 @@ var verticalLine2 = controller.verticalLine();
 verticalLine2.xAnchor("2005-05-22");
  
 // configure the visual settings of the second annotation
-verticalLine2.normal().stroke("#2196F3", 3, "10 2");
+verticalLine2.normal().stroke("#006600", 1, "10 2");
+verticalLine2.hovered().stroke("#00b300", 2, "10 2");
+verticalLine2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Vertical\_Line\_02{sample}

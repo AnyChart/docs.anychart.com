@@ -239,37 +239,40 @@ chart.sort("asc");
 
 ### Appearance
 
-#### All Tiles
+#### All Points
 
-Here is a full list of methods used to configure visual settings that are available for the Treemap chart:
+The [appearance settings](../Appearance_Settings) of a Treemap chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TreeMap#normal}normal(){api}, {api:anychart.charts.TreeMap#hovered}hovered(){api}, and {api:anychart.charts.TreeMap#selected}selected(){api} methods.
 
-*  {api:anychart.charts.TreeMap#fill}fill(){api}, {api:anychart.charts.HeatMap#hatchFill}hatchFill(){api}, {api:anychart.charts.TreeMap#stroke}stroke(){api} set the fill, hatch fill, and stroke
-*  {api:anychart.charts.TreeMap#hoverFill}hoverFill(){api}, {api:anychart.charts.TreeMap#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.TreeMap#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-*  {api:anychart.charts.TreeMap#selectFill}selectFill(){api}, {api:anychart.charts.TreeMap#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.TreeMap#selectStroke()}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-In the following sample, there is a Treemap chart with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In this sample, there is a Treemap chart with appearance settings configured:
 
 ```
-// configure visual settings
-chart.hoverFill("gray", 0.4);
-chart.selectFill("gray", 0.6);
-chart.selectHatchFill("backwardDiagonal", "gray", 2, 20);
+// configure the visual settings of the chart
+chart.hovered().fill("gray", 0.4);
+chart.selected().fill("gray", 0.6);
+chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
 chart.stroke("gray");
-chart.hoverStroke("gray");
-chart.selectStroke("gray", 2);
+chart.hovered().stroke("gray");
+chart.selected().stroke("gray", 2);
 ```
+
 {sample}BCT\_Treemap\_Chart\_07{sample}
 
-#### Individual Tiles
+#### Individual Points
 
-It is also possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each tile individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries", children: [
+  {name:   "European Union", children: [
     {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
     {name: "France",         value: 64938716, fill: "#ff6600"},
     {name: "Greece",         value: 10892931, fill: "#ffcc00"},
@@ -279,14 +282,19 @@ var data = [
     {name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
-    {name: "Germany",
-     value: 80636124,
-     fill: "#ff0000",
-     hoverFill: "#ff0000",
-     selectFill: "#b30059",
-     stroke: "4 #b30059",
-     hoverStroke: "5 white",
-     selectStroke: "5 white"
+    {name: "Germany",        value: 80636124,
+     normal:   {
+                 fill: "#ff0000",
+                 stroke: "4 #b30059",
+               },
+     hovered:  {
+                 fill: "#ff0000",
+                 stroke: "5 white"
+               },
+     selected: {
+                 fill: "#b30059",
+                 stroke: "5 white"
+               }
     }  
   ]} 
 ];
@@ -299,7 +307,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 ### Color Scale
 
-By default, the color scale of a Treemap chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+By default, the color scale of a Treemap chart is ordinal, and tiles are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
 
 #### Ordinal
 
@@ -340,7 +348,7 @@ chart.colorRange().length("100%");
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Tiles are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
 Finally, call {api:anychart.charts.TreeMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart, and {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to add a **color range**. With the linear color scale, it looks like a gradient from the first to the second color.
 
@@ -486,30 +494,31 @@ chart.labels().adjustFontSize(true);
 
 #### All Headers
 
-By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** states by using the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods. Plus, you can set the maximum height of headers.
+By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** [states](../Common_Settings/Interactivity/States) by using the {api:anychart.charts.TreeMap#normal}normal(){api} and {api:anychart.charts.TreeMap#hovered}hovered(){api} methods with {api:anychart.core.StateSettings#headers}headers(){api}.
 
-To disable headers, use {api:anychart.charts.TreeMap#headers}headers(){api} with `false` as parameter. To enable headers, use the same methods with `true`.
-
-```
-// disable headers
-chart.headers(false);
-```
-
-Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} methods with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
+To disable or enable headers, call {api:anychart.core.StateSettings#headers}headers(){api} with `false` or `true` as parameter:
 
 ```
-// configure the text of headers on hover
-chart.hoverHeaders().format("{%value}");
+// disable headers in the normal and hovered states
+chart.normal().headers(false);
+chart.hovered().headers(false);
 ```
 
-To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine the {api:anychart.charts.TreeMap#headers}headers(){api} and {api:anychart.charts.TreeMap#hoverHeaders}hoverHeaders(){api} with methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
+Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should use {api:anychart.core.StateSettings#headers}headers(){api} with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
+
+```
+// configure the text of headers in the hovered state
+chart.hovered().headers().format("{%value}");
+```
+
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine {api:anychart.core.StateSettings#headers}headers(){api} with methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
 
 ```
 // configure the font of headers
-chart.headers().fontColor("#990000");
-chart.headers().fontWeight('bold');
-chart.headers().fontSize("14");
-chart.hoverHeaders().fontColor("#000099");
+chart.normal().headers().fontColor("#990000");
+chart.normal().headers().fontWeight('bold');
+chart.normal().headers().fontSize("14");
+chart.hovered().headers().fontColor("#000099");
 ```
 
 You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
@@ -519,9 +528,9 @@ You can limit the maximum height of headers, which might be necessary in case yo
 chart.maxHeadersHeight("20%");
 ```
 
-The following sample demonstrates how to disable/enable headers and change their font settings and text on hover:
+The following sample demonstrates how to disable/enable headers; their text is customized in the hovered state, and font settings are changed in all states:
 
-{sample :height 600}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_14{sample}
 
 #### Individual Headers
 
@@ -530,14 +539,15 @@ Each header can be configured individually by adding the `header` field to the d
 ```
 // create data
 var data = [
-  {name:     "Slavic Languages – Number of Speakers",
-   header: { 
-     format: "{%name} ({%value} Total)",
-     fontColor: "#990000",
-     fontWeight: "bold",
-     fontSize: "14"
-   },
-   hoverHeader: {fontColor: "#000099"},
+  {name:     "Slavic Languages",
+   normal:  {header: {
+                      format: "{%name} ({%value} Total)",
+                      fontColor: "#990000",
+                      fontWeight: "bold",
+                      fontSize: "14",
+                     }
+            },
+   hovered: {header: {fontColor: "#000099"}},
    children: [
     {name:   "East Slavic", header: null, children: [
       {name: "Russian",        value: 150000000},
@@ -566,7 +576,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can be cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
 * `"alwaysShow"`
 * `"clip"`

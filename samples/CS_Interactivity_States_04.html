@@ -6,33 +6,46 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-mekko.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
-      ["QTR1", 10000],
-      ["QTR2", 12000],
-      ["QTR3", 13000],
-      ["QTR4", 10000],
+      {x: "John", value: 10000},
+      {x: "Jake", value: 12000},
+      {x: "Peter", value: 13000,
+       normal:   { fill: "#5cd65c",
+                   stroke: "#5cd65c"
+                 },
+       hovered:  { hatchFill: "forward-diagonal",
+                   marker: { enabled: true,
+                             size: 20,
+                             type: "star5",
+                             fill: "gold"
+                           }
+                 },
+       selected: { hatchFill: "forward-diagonal",
+                   marker: { enabled: true,
+                             size: 20,
+                             type: "star5",
+                             fill: "gold"
+                           }
+                 }
+      },
+      {x: "James", value: 10000},
+      {x: "Mary", value: 9000}
     ];
 
     // create a chart
-    chart = anychart.barmekko();
+    chart = anychart.column();
 
-    // swap axes
-    chart.xAxis().orientation("left");
-    chart.yAxis().orientation("bottom");    
-
-    // add series
-    var series = chart.mekko(data);
-    series.isVertical(true);
+    // create a column series and set the data
+    var series = chart.column(data);
 
     // set the chart title
-    chart.title("Vertical Charts: BarMekko Chart");
+    chart.title("States: Points (Object Notation)");
 
     // set the container id
     chart.container("container");

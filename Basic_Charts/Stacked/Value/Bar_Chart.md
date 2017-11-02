@@ -13,7 +13,7 @@ To build a Stacked Bar Chart, create a multi-series [Bar Chart](../../Bar_Chart)
 
 ```
 // create a chart
-var chart = chart.bar();
+chart = chart.bar();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

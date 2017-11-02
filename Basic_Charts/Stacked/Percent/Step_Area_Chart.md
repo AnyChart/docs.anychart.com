@@ -13,7 +13,7 @@ To build a Percent Stacked Step Area Chart, you should create a multi-series [St
 
 ```
 // create a chart
-var chart = chart.area();
+chart = chart.area();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

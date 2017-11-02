@@ -60,7 +60,7 @@ controller.fibonacciFan({
 
 ## Appearance
 
-The [appearance settings](../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Fan annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -79,25 +79,25 @@ You can also use object notation to specify the settings.
 In the sample below, there are two Fibonacci Fan annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first Fibonacci Fan annotation and configure its visual settings
 var fibonacciFan1 = controller.fibonacciFan({
     xAnchor: "2007-01-07",
     valueAnchor: 28.92,
     secondXAnchor: "2009-03-01",
     secondValueAnchor: 14.18,
     normal: {
-        labels: {fontColor: "#FF0000"}
+        labels: {fontColor: "#ff0000"},
+        grid: null
     },
     hovered: {
-        stroke: "#FF0000",
-        trend: "#0000FF",
-        grid: "#0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "#ff0000",
+        trend: "#0000ff",
+        labels: {fontColor: "#ff0000"}
     },
     selected: {
-        stroke: "2 #FF0000",
-        trend: "2 #0000FF",
-        labels: {fontColor: "#FF0000"} 
+        stroke: "#ff0000",
+        trend: "#0000ff",
+        grid: "#a9a9a9",
+        labels: {fontColor: "#ff0000"} 
     }       
 });
 
@@ -105,14 +105,18 @@ var fibonacciFan1 = controller.fibonacciFan({
 var fibonacciFan2 = controller.fibonacciFan();
 
 // set the position of the second annotation
-fibonacciFan2.xAnchor("2006-07-30");
-fibonacciFan2.valueAnchor(17.24);
+fibonacciFan2.xAnchor("2006-01-29");
+fibonacciFan2.valueAnchor(18.2);
 fibonacciFan2.secondXAnchor("2004-01-11");
 fibonacciFan2.secondValueAnchor(29.13);
  
 // configure the visual settings of the second annotation
-fibonacciFan2.normal().stroke("#2196F3", 3, "10 2");
-fibonacciFan2.normal().labels().fontColor("#2196F3");
+fibonacciFan2.normal().labels().fontColor("#00b300");
+fibonacciFan2.normal().grid(null);
+fibonacciFan2.normal().stroke("#006600", 1, "10 2");
+fibonacciFan2.hovered().stroke("#00b300", 1, "10 2");
+fibonacciFan2.selected().stroke("#00b300", 1, "10 2");
+fibonacciFan2.selected().grid("#a9a9a9");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_03{sample}

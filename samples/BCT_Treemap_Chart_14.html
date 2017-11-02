@@ -43,13 +43,13 @@
     // set the maximum depth of levels shown
     chart.maxDepth(3);
 
-    // configure the text of headers on hover
+    // configure the text of headers in the hovered state
     chart.hovered().headers().format("{%value}");
 
     // configure the font of headers
-    chart.headers().fontColor("#990000");
-    chart.headers().fontWeight('bold');
-    chart.headers().fontSize("14");
+    chart.normal().headers().fontColor("#990000");
+    chart.normal().headers().fontWeight('bold');
+    chart.normal().headers().fontSize("14");
     chart.hovered().headers().fontColor("#000099");
 
     // set the chart position and title
@@ -68,14 +68,16 @@
 
     // create a label for disabling headers
     createLabel("Disable Headers", 10, function() {
-      // disable headers in the normal state
-      chart.headers(false);
+      // disable headers in the normal and hovered states
+      chart.normal().headers(false);
+      chart.hovered().headers(false);
     });
 
     // create a label for enabling headers
     createLabel("Enable Headers", 136, function() {
-      // enable headers in the normal state
-      chart.headers(true);
+      // enable headers in the normal and hovered states
+      chart.normal().headers(true);
+      chart.hovered().headers(true);
     });
 });
     

@@ -40,7 +40,7 @@ controller.ellipse({
 
 ## Appearance
 
-The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -48,7 +48,7 @@ The [appearance settings](../../../Appearance_Settings) of annotations can be co
 
 Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
 
-In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers over or selects them. Like in the previous sample, object notation is used to configure the properties:
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, with appearance configured. Like in the previous sample, object notation is used:
 
 ```
 // create an Ellipse annotation and configure its visual settings
@@ -58,13 +58,23 @@ plot.annotations().ellipse({
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hovered: {
-        fill: "#398CAE 0.3",
-        stroke: "2 #FF0000",
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000",
     },
     selected: {
-        fill: "#398CAE 0.3",
-        stroke: "5 #FF0000"
+        fill: "#398cae 0.3",
+        stroke: "4 #ff0000"
     }
+});
+
+// create an Infinite Line annotation and configure its visual settings
+controller.infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 ```
 
@@ -90,8 +100,8 @@ var infiniteLine = controller.infiniteLine({
 });
 
 // configure the annotation markers
-ellipse.hovered().markers({size: 6, fill: "#8BC34A"});
-ellipse.selected().markers({size: 6, fill: "#8BC34A"});
+ellipse.hovered().markers({size: 6, fill: "#00b300"});
+ellipse.selected().markers({size: 6, fill: "#00b300"});
 infiniteLine.selected().markers(false);
 ```
 

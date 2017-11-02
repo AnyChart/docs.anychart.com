@@ -51,8 +51,8 @@
         },
         selected: {
             fill: "#398CAE 0.3",
-            hatchFill: "brick",
-            stroke: "5 #FF0000"
+            hatchFill: "forward-diagonal",
+            stroke: "4 #FF0000"
         }
     });
 
@@ -69,7 +69,9 @@
  
     // configure the visual settings of the second annotation
     triangle2.normal().fill(null);
-    triangle2.normal().stroke("#2196F3", 3, "10 2");
+    triangle2.normal().stroke("#006600", 1, "10 2");
+    triangle2.hovered().stroke("#00b300", 2, "10 2");
+    triangle2.selected().stroke("#00b300", 4, "10 2");
 
     // set the chart title
     chart.title("Triangle: Appearance");

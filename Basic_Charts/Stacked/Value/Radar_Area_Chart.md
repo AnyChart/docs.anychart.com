@@ -13,7 +13,7 @@ To build a Radar Stacked Area Chart, create a multi-series [Radar Area Chart](..
 
 ```
 // create a chart
-var chart = chart.radar();
+chart = chart.radar();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

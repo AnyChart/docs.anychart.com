@@ -13,7 +13,7 @@ To build a 3D Stacked Area Chart, create a multi-series [3D Area Chart](../../3D
 
 ```
 // create a chart
-var chart = chart.area3d();
+chart = chart.area3d();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

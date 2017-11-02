@@ -12,23 +12,37 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// create a data set
-var data = [
-  {name: "Total Market", value: 232000},
-  {name: "Prospects", value: 94480, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backward-diagonal", hoverHatchFill:"forward-diagonal", selectHatchFill: "diagonal-cross", stroke: "#455a64"},
-  {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
-  {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
-];
+    // create data
+    var data = [
+      {name: "Total Market", value: 232000},
+      {name: "Prospects", value: 94480,
+       normal:   {
+                 hatchFill: "backward-diagonal",
+                 stroke: "black"
+                 },
+       hovered:  {
+                   fill: "lightGray",
+                   hatchFill: "backward-diagonal",
+                   stroke: "black"
+                 },
+       selected: {
+                   fill: "white",
+                   hatchFill: "backward-diagonal",
+                   stroke: "black"
+                 }
+      },
+      {name: "Leads", value: 47390},
+      {name: "Sales", value: 22181}
+    ];
 
-chart = anychart.funnel(data);
+    // create a chart and set the data
+    chart = anychart.funnel(data);
 
-chart.fill("#64b5f6 0.9");
+    // set the container id
+    chart.container("container");
 
-// set the container id
-chart.container("container");
-
-// initiate drawing the chart
-chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

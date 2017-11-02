@@ -27,12 +27,12 @@
   series = chart.box(data);
 
   // configure medians
-  series.medianStroke("#000");
-  series.hovered().medianStroke("#000", 2);
-  series.selected().medianStroke("#000", 4);
+  series.normal().medianStroke("#dd2c00", 0.5, "10 5", "round");
+  series.hovered().medianStroke("#dd2c00", 1, "10 5", "round");
+  series.selected().medianStroke("#dd2c00", 2, "10 5", "round");
 
   // set the chart title
-  var title = chart.title("Box Chart: Median");
+  var title = chart.title("Box Chart: Medians");
 
   // set the interactivity mode
   chart.interactivity("by-x");

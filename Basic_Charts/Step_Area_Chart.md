@@ -55,7 +55,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a step area series and set the data
 var series = chart.stepArea(data);

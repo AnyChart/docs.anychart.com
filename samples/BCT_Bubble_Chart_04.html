@@ -39,36 +39,21 @@
   series1 = chart.bubble(data1);
   series2 = chart.bubble(data2);
 
-  // set colors
-  series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series1.stroke("#00897b", 1, "10 5", "round");
-  series1.hovered().fill("#6aabcc", 0.3);
-  series1.hovered().stroke("#00897b", 2, "10 5", "round");
-  series1.selected().fill("#1976d2", 0.8);
-  series1.selected().stroke("#00897b", 4, "10 5", "round");
-
-  series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-  series2.hovered().fill("#80cbc4", 0.5);
-  series2.selected().fill("#16685d");
-  series2.hatchFill("percent10");
-  series2.hovered().hatchFill("percent30");
-  series2.selected().hatchFill("percent50");
-
   // limit bubbles size
-  chart.minBubbleSize(10);
-  chart.maxBubbleSize(100);
+  chart.minBubbleSize("3%");
+  chart.maxBubbleSize("10%");
   
   // chart title
-  chart.title("Multi-Series Bubble Chart with bubbles size limits set");
+  chart.title("Bubble Chart: Size (Percent)");
 
   chart.legend(true);
 
   // Sets settings for interactivity.
   chart.interactivity({hoverMode: "by-x"});
 
-  // set axes titles 
-  chart.xAxis().title("Years");
-  chart.yAxis().title("Sales");
+  // set the titles of the axes
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
   
   // draw
   chart.container("container");

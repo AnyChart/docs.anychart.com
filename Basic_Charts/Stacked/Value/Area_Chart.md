@@ -13,7 +13,7 @@ To build a Stacked Area Chart, create a multi-series [Area Chart](../../Area_Cha
 
 ```
 // create a chart
-var chart = chart.area();
+chart = chart.area();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

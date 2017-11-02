@@ -11,10 +11,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
-  chart = anychart.cartesian();
-
-  // all data
+  // create data
   var data1 = [
     {x: 2000, value: 1100},
     {x: 2001, value: 800},
@@ -35,45 +32,43 @@
     {x: 2006, value: 800}
   ];
 
-  // set data for each series
-  series1 = chart.marker(data1);
-  series2 = chart.marker(data2);
+  // create a chart
+  chart = anychart.cartesian();
 
-  // set colors
-  series1.fill("#00cc99", 0.5);
-  series1.stroke("#00cc99", 1, "10 5", "round");
-  series1.hovered().fill("#00cc99", 0.2);
-  series1.hovered().stroke("#00cc99", 2, "10 5", "round");
-  series1.selected().fill("#00cc99", 0.8);
-  series1.selected().stroke("#00cc99", 4, "10 5", "round");
+  // set the interactivity mode
+  chart.interactivity().hoverMode("by-x");
 
-  series2.fill("none");
-  series2.hovered().fill("none");
-  series2.selected().fill("none");
-  series2.hatchFill("percent10");
-  series2.hovered().hatchFill("percent30");
-  series2.selected().hatchFill("percent50");
+  // create series and set the data
+  var series1 = chart.marker(data1);
+  var series2 = chart.marker(data2);
 
-  // Sets settings for interactivity.
-  chart.interactivity({hoverMode: "by-x"});
+  // set the type of markers
+  series1.normal().type("star4");
+  series1.selected().type("star5");
+  series1.hovered().type("star6");
+  series2.normal().type("star4");
+  series2.selected().type("star5");
+  series2.hovered().type("star6");
 
-  // set marker size
-  series1.size(10);
-  series2.size(15);
-  series1.hovered().size(15);
-  series2.hovered().size(20);
-  series1.selected().size(15);
-  series2.selected().size(20);
+  // set the size of markers
+  series1.normal().size(20);
+  series2.normal().size(25);
+  series1.hovered().size(25);
+  series2.hovered().size(30);
+  series1.selected().size(25);
+  series2.selected().size(30);
   
-  // chart title
-  chart.title("Multi-Series Marker Chart with appearance settings configured");
-
-  // set axes titles 
-  chart.xAxis().title("Years");
-  chart.yAxis().title("Sales");
+  // set the chart title
+  chart.title("Marker Chart: Type");
   
-  // draw
+  // set the titles of the axes 
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
+  
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

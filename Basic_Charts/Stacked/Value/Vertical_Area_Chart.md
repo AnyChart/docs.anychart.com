@@ -13,7 +13,7 @@ To build a Vertical Stacked Area Chart, create a multi-series [Vertical Area Cha
 
 ```
 // create a chart
-var chart = chart.verticalArea();
+chart = chart.verticalArea();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

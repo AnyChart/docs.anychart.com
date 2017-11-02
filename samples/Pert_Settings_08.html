@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
-{id: "A", duration: 1, name: "A"},
-{id: "B", duration: 3, name: "B"},
-{id: "C", duration: 2, name: "C"},
-{id: "D", duration: 1, name: "D", dependsOn: ["A"]},
-{id: "E", duration: 2, name: "E", dependsOn: ["B"]},
-{id: "F", duration: 2, name: "F", dependsOn: ["C"]},
-{id: "G", duration: 2, name: "G", dependsOn: ["D", "E", "F"]}
+      {id: "A", duration: 1, name: "A"},
+      {id: "B", duration: 3, name: "B"},
+      {id: "C", duration: 2, name: "C"},
+      {id: "D", duration: 1, name: "D", dependsOn: ["A"]},
+      {id: "E", duration: 2, name: "E", dependsOn: ["B"]},
+      {id: "F", duration: 2, name: "F", dependsOn: ["C"]},
+      {id: "G", duration: 2, name: "G", dependsOn: ["D", "E", "F"]}
     ];
 
     // create a chart

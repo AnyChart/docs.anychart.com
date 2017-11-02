@@ -59,7 +59,7 @@ controller.fibonacciRetracement({
 
 ## Appearance
 
-The [appearance settings](../../Appearance_Settings) of a Fibonacci Retracement annotation can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Retracement annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
 * {api:anychart.core.annotations.Base#normal}normal(){api} 
 * {api:anychart.core.annotations.Base#selected}selected(){api} 
@@ -87,14 +87,14 @@ var fibonacciRetracement1 = controller.fibonacciRetracement({
             labels: {fontColor: "#FF0000"}
     },
     hovered: {
-        stroke: "#FF0000",
-        trend: "#0000FF",
-        labels: {fontColor: "#FF0000"}
+        stroke: "#ff0000",
+        trend: "#0000ff",
+        labels: {fontColor: "#ff0000"}
     },
     selected: {
-        stroke: "2 #FF0000",
-        trend: "2 #0000FF",
-        labels: {fontColor: "#FF0000"} 
+        stroke: "2 #ff0000",
+        trend: "2 #0000ff",
+        labels: {fontColor: "#ff0000"} 
     }       
 });
 
@@ -108,8 +108,10 @@ fibonacciRetracement2.secondXAnchor("2004-08-08");
 fibonacciRetracement2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciRetracement2.normal().stroke("#2196F3", 3, "10 2");
-fibonacciRetracement2.normal().labels().fontColor("#2196F3");
+fibonacciRetracement2.normal().labels().fontColor("#00b300");
+fibonacciRetracement2.normal().stroke("#006600", 1, "10 2");
+fibonacciRetracement2.hovered().stroke("#00b300", 1, "10 2");
+fibonacciRetracement2.selected().stroke("#00b300", 1, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_03{sample}

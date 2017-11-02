@@ -13,7 +13,7 @@ To build a Percent Stacked Column Chart, you should create a multi-series [Colum
 
 ```
 // create a chart
-var chart = chart.column();
+chart = chart.column();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

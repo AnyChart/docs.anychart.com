@@ -13,7 +13,7 @@ To build a Stacked Step Area Chart, create a multi-series [Step Area Chart](../.
 
 ```
 // create a chart
-var chart = chart.area();
+chart = chart.area();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

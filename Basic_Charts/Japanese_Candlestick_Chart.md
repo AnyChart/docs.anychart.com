@@ -47,7 +47,7 @@ To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesi
 The following sample demonstrates how a basic single-series Japanese Candlestick chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
   [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
@@ -88,48 +88,55 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-You can set the stroke, fill, and hatch fill of falling and rising candlesticks. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Japanese Candlestick series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}
-* {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}
+Combine them with the following methods to adjust falling and rising candlesticks:
 
-To configure these settings on hover, use:
+* {api:anychart.core.StateSettings#fallingFill}fallingFill(){api} and {api:anychart.core.StateSettings#risingFill}risingFill(){api} to set the fill
+* {api:anychart.core.StateSettings#fallingHatchFill}fallingHatchFill(){api} and {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api} and {api:anychart.core.StateSettings#risingStroke}risingStroke(){api}to set the stroke
 
-* {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api}
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. 
 
-To configure these settings on select, use:
-
-* {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api}
-
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Japanese Candlestick series with some of the appearance settings configured:
+In the sample below, there are two Japanese Candlestick series with appearance settings configured:
 
 ```
 // configure the visual settings of the first series
-series1.risingFill("#0066cc", 0.3);
-series1.risingStroke("#0066cc");
-series1.hoverRisingFill("#0066cc", 0.1);
-series1.hoverRisingStroke("#0066cc", 2);
-series1.selectRisingFill("#0066cc", 0.5);
-series1.selectRisingStroke("#0066cc", 4);
+series1.normal().fallingFill("#00cc99", 0.3);
+series1.normal().fallingStroke("#00cc99", 1, "10 5", "round");
+series1.hovered().fallingFill("#00cc99", 0.1);
+series1.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
+series1.selected().fallingFill("#00cc99", 0.5);
+series1.selected().fallingStroke("#00cc99", 4, "10 5", "round");
 
-series1.fallingFill("#00cc99", 0.3);
-series1.fallingStroke("#00cc99", 1, "10 5", "round");
-series1.hoverFallingFill("#00cc99", 0.1);
-series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
-series1.selectFallingFill("#00cc99", 0.5);
-series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
+series1.normal().risingFill("#0066cc", 0.3);
+series1.normal().risingStroke("#0066cc");
+series1.hovered().risingFill("#0066cc", 0.1);
+series1.hovered().risingStroke("#0066cc", 2);
+series1.selected().risingFill("#0066cc", 0.5);
+series1.selected().risingStroke("#0066cc", 4);
+
 
 // configure the visual settings of the second series
-series2.fallingHatchFill("forwardDiagonal");
-series2.risingHatchFill("backwardDiagonal");
-series2.hoverFallingHatchFill("diagonalCross");
-series2.hoverRisingHatchFill("diagonalCross");
-series2.selectFallingHatchFill("percent20");
-series2.selectRisingHatchFill("percent20");
+series2.normal().fallingFill("#00cc99", 0.3);
+series2.normal().fallingHatchFill("forward-diagonal", "#00cc99");
+series2.normal().fallingStroke("#00cc99", 1, "10 5", "round");
+series2.hovered().fallingFill("#00cc99", 0.1);
+series2.hovered().fallingHatchFill("forward-diagonal", "#00cc99");
+series2.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
+series2.selected().fallingFill("#00cc99", 0.5);
+series2.selected().fallingStroke("#00cc99", 4, "10 5", "round");
+series2.selected().fallingHatchFill("forward-diagonal", "#00cc99");
+
+series2.normal().risingFill("#0066cc", 0.3);
+series2.normal().risingHatchFill("forward-diagonal", "#0066cc");
+series2.normal().risingStroke("#0066cc");
+series2.hovered().risingFill("#0066cc", 0.1);
+series2.hovered().risingHatchFill("forward-diagonal", "#0066cc");
+series2.hovered().risingStroke("#0066cc", 2);
+series2.selected().risingFill("#0066cc", 0.5);
+series2.selected().risingStroke("#0066cc", 4);
+series2.selected().risingHatchFill("forward-diagonal", "#0066cc");
 ```
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_02{sample}

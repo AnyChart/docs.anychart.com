@@ -87,37 +87,89 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Bubble series:
+#### All Points
 
-* {api:anychart.core.cartesian.series.Bubble#color}color(){api}, {api:anychart.core.cartesian.series.Bubble#fill}fill(){api}, {api:anychart.core.cartesian.series.Bubble#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Bubble#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Bubble#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Bubble#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Bubble#hoverStroke}hoverStroke(){api} methods configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Bubble#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Bubble#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Bubble#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Bubble chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bubble#normal}normal(){api}, {api:anychart.core.cartesian.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bubble#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+Combine them with the following methods:
 
-In the sample below, there are two Bubble series with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Bubble series with appearance settings configured:
 
 ```
-// set colors
-series1.color(["#90caf9", "#6aabcc"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-series1.stroke("#00897b", 1, "10 5", "round");
-series1.hoverFill("#6aabcc", 0.3);
-series1.hoverStroke("#00897b", 2, "10 5", "round");
-series1.selectFill("#1976d2", 0.8);
-series1.selectStroke("#00897b", 4, "10 5", "round");
+// create the first series
+var series1 = chart.bubble(data1);
 
-series2.fill(["#80cbc4", "#519790"], 0.69, 0.59, anychart.math.rect(200, 200, 400, 400), 0.8, 0.7, 0.84);
-series2.hoverFill("#80cbc4", 0.5);
-series2.selectFill("#16685d");
-series2.hatchFill("percent10");
-series2.hoverHatchFill("percent30");
-series2.selectHatchFill("percent50");
+// configure the visual settings of the first series
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.3);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.bubble(data2);
+
+// configure the visual settings of the second series
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.3);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("percent30", "#0066cc", 1, 15);
+series2.hovered().hatchFill("percent30", "#0066cc", 1, 15);
+series2.selected().hatchFill("percent30", "#0066cc", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
-**Note:** settings adjusted in the dataset override those which are adjusted through the methods. Read more about setting the data and data formats in the [Working with Data article](../Working_with_Data/Overview).
+#### Individual Points
 
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual bubbles by adding special fields to the data set:
+
+```
+// create data
+var data = [
+  {x: "2000", value: 1100, size: 3},
+  {x: "2001", value: 880, size: 4},
+  {x: "2002", value: 1100, size: 4},
+  {x: "2003", value: 1300, size: 5,
+   normal:   {
+               fill: "#b30059 0.3",
+               stroke: "#b30059"
+             },
+   hovered:  {
+               fill: "#b30059 0.1",
+               stroke: "2 #b30059"
+             },
+   selected: {
+               fill: "#b30059 0.5",
+               stroke: "4 #b30059"
+             }
+  },
+  {x: "2004", value: 921, size: 4.5},
+  {x: "2005", value: 1000, size: 3},
+  {x: "2006", value: 1400, size: 4}
+];
+
+// create a chart
+chart = anychart.cartesian();
+
+// set the interactivity mode
+chart.interactivity().hoverMode("by-x");
+
+// create a bubble series and set the data
+series = chart.bubble(data);
+```
+
+{sample}BCT\_Bubble\_Chart\_03{sample}
 
 ### Size
 
@@ -130,10 +182,9 @@ chart.minBubbleSize("5%");
 
 When you set {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize("15%"){api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
   
-  
 Here is the sample where bubbles are sized in percents, as specified above:
 
-{sample}BCT\_Bubble\_Chart\_03{sample}
+{sample}BCT\_Bubble\_Chart\_04{sample}
 
 And there is a sample when bubbles are sized in pixels:
 
@@ -141,27 +192,8 @@ And there is a sample when bubbles are sized in pixels:
 chart.maxBubbleSize(100);
 chart.minBubbleSize(10);
 ```
+
 Note: this size setting type (in pixels) may lead to the nasty results when chart is resized.
-
-{sample}BCT\_Bubble\_Chart\_04{sample}
-
-### Single Bubble Adjusting
-
-Sometimes it is necessary to emphasize an only item for some reasons. In this case, use your dataset to fix the parameters for detached bubbles instead of the whole series.
-
-The following sample demonstrates adjusting some settings for a single item:
-
-```
-var data = [
-    {x: "2000", value: 1100, size: 3},
-    {x: "2001", value: 880, size: 4},
-    {x: "2002", value: 1100, size: 4},
-    {x: "2003", value: 1300, size: 5, fill: "gold", stroke: "#663399", type: "star5"},
-    {x: "2004", value: 921, size: 4.5},
-    {x: "2005", value: 1000, size: 3},
-    {x: "2006", value: 1400, size: 4}
-];
-```
 
 {sample}BCT\_Bubble\_Chart\_05{sample}
 

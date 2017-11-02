@@ -13,7 +13,7 @@ To build a 3D Stacked Column Chart, create a multi-series [3D Column Chart](../.
 
 ```
 // create a chart
-var chart = chart.column3d();
+chart = chart.column3d();
 
 // enable the value stacking mode
 chart.yScale().stackMode("value");

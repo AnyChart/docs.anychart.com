@@ -16,7 +16,7 @@ To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#
 Here is a basic sample showing how to create a Column chart with error bars:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 10000],
   ["February", 12000],

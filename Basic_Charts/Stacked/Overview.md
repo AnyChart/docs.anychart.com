@@ -15,7 +15,7 @@ To create a **value stacked** chart you need to set scale stackMode to "value":
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 /* enable the value stacking mode
 on the default primary value scale*/
@@ -32,7 +32,7 @@ To create a **percent stacked** chart you need to set scale stackMode to "percen
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 /* enable the percent stacking mode
 on the default primary value scale*/
@@ -149,7 +149,7 @@ If you want to display several stacks of different type at once you have to crea
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 // create scales and set stacking modes
 yScale1 = anychart.scales.linear();

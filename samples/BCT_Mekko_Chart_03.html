@@ -16,36 +16,25 @@
     var data = anychart.data.set([
       ["QTR1", 10000, 12500],
       ["QTR2", 12000, 15000],
-      ["QTR3", 13000, 16500],
+      ["QTR3", 13000, 16500,  "#ef6c00", null],
       ["QTR4", 10000, 13000],
     ]);
 
     // map the data
     var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 3, stroke: 4});
 
     // create a chart
-    chart = anychart.barmekko();
+    chart = anychart.mekko();
 
-    // create the first series
+    // create the first series and set the data
     var series1 = chart.mekko(seriesData_1);
 
-    // configure the visual settings of the first series
-    series1.fill("#00cc99", 0.3);
-    series1.hovered().fill("#00cc99", 0.3);
-    series1.selected().fill("#00cc99", 0.5);
-
-    // create the second series
+    // create the second series and set the data
     var series2 = chart.mekko(seriesData_2);
 
-    // configure the visual settings of the second series
-    series2.fill("#0066cc", 0.3);
-    series2.hovered().fill("#0066cc", 0.3);
-    series2.selected().fill("#0066cc", 0.5);
-    series2.hatchFill("zigzag", "#808080", 1, 15);
-    series2.stroke("#0066cc");
-    series2.hovered().stroke("#0066cc", 2);
-    series2.selected().stroke("#0066cc", 4);
+    // set the chart title
+    chart.title("Mekko Chart: Appearance (Individual Points)");
 
     // set the container id
     chart.container("container");

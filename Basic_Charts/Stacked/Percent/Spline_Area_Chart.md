@@ -13,7 +13,7 @@ To build a Percent Stacked Spline Area Chart, you should create a multi-series [
 
 ```
 // create a chart
-var chart = chart.area();
+chart = chart.area();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

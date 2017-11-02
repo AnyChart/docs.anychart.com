@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
 <script x-export="chart">anychart.onDocumentReady(function() {
 
-// create a Pareto chart
+// create a chart
 chart = anychart.pareto([
   {x: "Defect 1", value: 19},
   {x: "Defect 2", value: 9},
@@ -22,15 +22,21 @@ chart = anychart.pareto([
 ]);
 
 // set the chart title
-chart.title("Pareto Chart: Configure Series");
+chart.title("Pareto Chart: Appearance");
 
-// make column series white with black border and hatch fill
-chart.getSeries(0).fill(null);
-chart.getSeries(0).stroke("#000000");
-chart.getSeries(0).hatchFill("#zigzag");
+// configure the visual settings of the first series
+chart.getSeries(0).normal().fill("#0066cc", 0.3);
+chart.getSeries(0).hovered().fill("#0066cc", 0.1);
+chart.getSeries(0).selected().fill("#0066cc", 0.5);
+chart.getSeries(0).normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).normal().stroke("#0066cc");
+chart.getSeries(0).hovered().stroke("#0066cc", 2);
+chart.getSeries(0).selected().stroke("#0066cc", 4);
 
-// make line series black and dashed
-chart.getSeries(1).stroke("#000000", "2", "2 2");
+// configure the visual settings of the second series
+chart.getSeries(1).normal().stroke("#0066cc", 4, "4 4", "round");
 
 // set the container id
 chart.container("container");

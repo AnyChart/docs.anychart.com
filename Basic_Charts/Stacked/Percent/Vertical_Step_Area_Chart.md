@@ -13,7 +13,7 @@ To build a Vertical Percent Stacked Step Area Chart, create a multi-series [Vert
 
 ```
 // create a vertical area chart
-var chart = chart.verticalArea();
+chart = chart.verticalArea();
 
 // enable the value stacking mode
 chart.yScale().stackMode("percent");

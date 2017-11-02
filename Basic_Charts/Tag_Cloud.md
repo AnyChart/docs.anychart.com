@@ -173,41 +173,29 @@ chart.data(text, {
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Tag Cloud chart can be configured in three states: **normal**, **hover**, and **selected**. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods.
 
-* {api:anychart.charts.TagCloud#normal}normal(){api}
-* {api:anychart.charts.TagCloud#hovered}hovered(){api}
-* {api:anychart.charts.TagCloud#selected}selected(){api}
+Combine them with the following methods:
 
-Combine them with methods listed in {api:anychart.core.StateSettings}anychart.core.StateSettings{api}:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.core.StateSettings#fontSize}fontSize(){api} to set the font size
+* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
+* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant – normal or small caps
+* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
 
-* {api:anychart.core.StateSettings#fill}fill(){api} sets the color and opacity of the fill
-* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} sets the font family – Verdana, Helvetica, Arial, etc.
-* {api:anychart.core.StateSettings#fontSize}fontSize(){api} sets the font size
-* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} sets the font style – normal, italic, oblique
-* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} sets the font variant – normal or small caps
-* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} sets the font weight 
-
-For example:
-
-```
-// configure visual settings in the normal state
-chart.normal().fill("#009999", 0.7);
-```
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 **Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
 
-The {api:anychart.charts.TagCloud#normal}normal(){api}, {api:anychart.charts.TagCloud#hovered}hovered(){api}, and {api:anychart.charts.TagCloud#selected}selected(){api} methods also allow you to specify settings as an object. See the sample below:
+In this sample, there is a Tag Cloud with appearance settings configured:
 
 ```
-// configure visual settings in the normal state
-chart.normal({fill: "#009999 0.7", fontWeight: 600});
-
-// configure visual settings in the hover state
-chart.hovered({fill: "#003366 0.5"});
-
-// configure visual settings in the selected state
-chart.selected({fill: "#003366 0.7"});
+// configure the visual settings of the chart
+chart.normal().fill("#1fadad");
+chart.hovered().fill("#93bfec");
+chart.selected().fill("#1f66ad");
+chart.normal().fontWeight(600);
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
@@ -215,6 +203,8 @@ chart.selected({fill: "#003366 0.7"});
 ### Color Scale
 
 By default, elements are colored in the colors of the default [palette](../Appearance_Settings/Palettes). You can also create a color scale, linear or ordinal, and add a color range.
+
+#### Linear
 
 To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
@@ -242,6 +232,8 @@ chart.colorRange().enabled(true);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
 
+#### Ordinal
+
 To create an **ordinal color scale**, you should use the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
 
 Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set frequency ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
@@ -266,7 +258,10 @@ chart.colorScale(customColorScale);
 // add a color range
 chart.colorRange().enabled(true);
 ```
+
 {sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
+
+#### Categories
 
 Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
 
@@ -316,7 +311,7 @@ chart.angles([0, 30, 90]);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_09{sample}
 
-There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
+There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#toAngle}toAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
 In this sample the number of angles is 5, the first angle is 10&deg;, the last is 100&deg;, and 3 angles lying between them are calculated automatically:
 
@@ -373,13 +368,18 @@ tagCloud2.scale(anychart.scales.log());
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
 In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
 chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
 ```
+
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
+
+#### Formatting Functions
 
 You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
 

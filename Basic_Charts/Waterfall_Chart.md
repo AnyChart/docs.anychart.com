@@ -181,54 +181,55 @@ var series3 = chart.waterfall(seriesData_3);
 
 ### Appearance
 
-You can set the stroke, fill, and hatch fill of falling and rising columns. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Waterfall chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
-* {api:anychart.core.waterfall.series.Waterfall#fallingFill}fallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingHatchFill}fallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#fallingStroke}fallingStroke(){api}
-* {api:anychart.core.waterfall.series.Waterfall#risingFill}risingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingStroke}risingStroke(){api}
+Combine them with the following methods to adjust columns indicating total values:
 
-To configure these settings on hover, use:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
 
-* {api:anychart.core.waterfall.series.Waterfall#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingHatchFill}hoverFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverFallingStroke}hoverFallingStroke(){api}
-* {api:anychart.core.waterfall.series.Waterfall#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#risingHatchFill}hoverRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverRisingStroke}hoverRisingStroke(){api}
+To adjust falling columns, use:
 
-To configure these settings on select, use:
+* {api:anychart.core.StateSettings#fallingFill}fallingFill(){api}
+* {api:anychart.core.StateSettings#fallingHatchFill}fallingHatchFill(){api}
+* {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api}
 
-* {api:anychart.core.waterfall.series.Waterfall#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingHatchFill}selectFallingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectFallingStroke}selectFallingStroke(){api}
-* {api:anychart.core.waterfall.series.Waterfall#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingHatchFill}selectRisingHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectRisingStroke}selectRisingStroke(){api}
+To adjust rising columns, use:
 
-You can also set fill, hatch fill, and stroke of columns indicating total values:
+* {api:anychart.core.StateSettings#risingFill}risingFill(){api}
+* {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api}
+* {api:anychart.core.StateSettings#risingStroke}risingStroke(){api} 
 
-* {api:anychart.core.waterfall.series.Waterfall#fill}fill(){api}, {api:anychart.core.waterfall.series.Waterfall#hatchFill}hatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#stroke}stroke(){api}
-* {api:anychart.core.waterfall.series.Waterfall#hoverFill}hoverFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#hoverStroke}hoverStroke(){api}
-* {api:anychart.core.waterfall.series.Waterfall#selectFill}selectFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.waterfall.series.Waterfall#selectStroke}selectStroke(){api}
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-Learn more: [Appearance Settings](../Appearance_Settings) section.
-
-In the followoing sample, there is a Waterfall chart with some of the appearance settings configured:
+In the followoing sample, there is a Waterfall chart with appearance settings configured:
 
 ```
-// configure visual settings
-series.fill("#ff6666", 0.3);
-series.hatchFill("forwardDiagonal", "#ff6666", 0.5, 10);
-series.stroke("#ff6666");
-series.hoverFill("#ff6666", 0.1);
-series.hoverStroke("#ff6666", 2);
-series.selectFill("#ff6666", 0.5);
-series.selectStroke("#ff6666", 4);
+// configure the visual settings of the series
+series.normal().fill("#ff6666", 0.3);
+series.normal().hatchFill("forward-diagonal", "#ff6666", 0.5, 10);
+series.normal().stroke("#ff6666");
+series.hovered().fill("#ff6666", 0.1);
+series.hovered().hatchFill("forward-diagonal", "#ff6666", 0.5, 10);
+series.hovered().stroke("#ff6666", 2);
+series.selected().fill("#ff6666", 0.5);
+series.selected().hatchFill("forward-diagonal", "#ff6666", 0.5, 10);
+series.selected().stroke("#ff6666", 4);
 
-series.risingFill("#0066cc", 0.3);
-series.risingStroke("#0066cc");
-series.hoverRisingFill("#0066cc", 0.1);
-series.hoverRisingStroke("#0066cc", 2);
-series.selectRisingFill("#0066cc", 0.5);
-series.selectRisingStroke("#0066cc", 4);
+series.normal().fallingFill("#00cc99", 0.3);
+series.normal().fallingStroke("#00cc99", 1, "10 5", "round");
+series.hovered().fallingFill("#00cc99", 0.1);
+series.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
+series.selected().fallingFill("#00cc99", 0.5);
+series.selected().fallingStroke("#00cc99", 4, "10 5", "round");
 
-series.fallingFill("#00cc99", 0.3);
-series.fallingStroke("#00cc99", 1, "10 5", "round");
-series.hoverFallingFill("#00cc99", 0.1);
-series.hoverFallingStroke("#00cc99", 2, "10 5", "round");
-series.selectFallingFill("#00cc99", 0.5);
-series.selectFallingStroke("#00cc99", 4, "10 5", "round");
+series.normal().risingFill("#0066cc", 0.3);
+series.normal().risingStroke("#0066cc");
+series.hovered().risingFill("#0066cc", 0.1);
+series.hovered().risingStroke("#0066cc", 2);
+series.selected().risingFill("#0066cc", 0.5);
+series.selected().risingStroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Waterfall\_Chart\_04{sample}
@@ -252,6 +253,8 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
+#### Tokens
+
 To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
@@ -264,6 +267,8 @@ chart.labels().format("{%Absolute}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
+
+#### Formatting Functions
 
 You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
 
@@ -291,6 +296,8 @@ chart.labels().format(function(){
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
 To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
@@ -303,6 +310,8 @@ chart.tooltip().titleFormat("Absolute | Difference");
 chart.tooltip().format("{%Absolute}\n{%Diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
+
+#### Formatting Functions
 
 You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
 

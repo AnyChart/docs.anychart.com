@@ -93,44 +93,67 @@ chart.neckHeight("35%");
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Funnel Chart:
+#### All Points
 
-* {api:anychart.charts.Funnel#fill}fill(){api}, {api:anychart.charts.Funnel#hatchFill}hatchFill(){api}, {api:anychart.charts.Funnel#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.charts.Funnel#hoverFill}hoverFill(){api}, {api:anychart.charts.Funnel#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Funnel#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.Funnel#selectFill}selectFill(){api}, {api:anychart.charts.Funnel#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Funnel#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Funnel chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Funnel#normal}normal(){api}, {api:anychart.charts.Funnel#hovered}hovered(){api}, and {api:anychart.charts.Funnel#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+Combine them with the following methods:
 
-In the sample below, there is a Funnel Chart with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there is a Funnel chart with appearance settings configured:
 
 ```
-// adjust appearance
-chart.fill("#DEB887");
-chart.hoverFill("#FFEBCD");
-chart.selectFill("#A0522D");
-chart.hatchFill("forwardDiagonal");
-chart.hoverHatchFill("#backwardDiagonal");
-chart.selectHatchFill("diagonalCross");
-chart.stroke("#fff");
-chart.hoverStroke("#fff", 2);
-chart.selectStroke("fff", 4);
+// configure the visual settings of the chart
+chart.normal().fill("#004d39", 0.3);
+chart.hovered().fill("#004d39", 0.1);
+chart.selected().fill("#004d39", 0.5);
+chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.normal().stroke("white");
+chart.hovered().stroke("white", 2);
+chart.selected().stroke("white", 2);
 ```
 
 {sample}BCT\_Funnel\_Chart\_04{sample}
 
-Note that when you set colors through the methods, it is not possible to set different colors to the points. In this case, use the dataset, so you can adjust any settings you need for each point particularly.
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
 
 ```
+// create data
 var data = [
   {name: "Total Market", value: 232000},
-  {name: "Prospects", value: 94480, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
-  {name: "Leads", value: 47390, fill: "#87CEFA", selectFill: "#00BFFF"},
-  {name: "Sales", value: 22181, fill: "#B0E0E6", selectFill: "#87CEFA"}
+  {name: "Prospects", value: 94480,
+   normal:   {
+             hatchFill: "backward-diagonal",
+             stroke: "black"
+             },
+   hovered:  {
+               fill: "lightGray",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             },
+   selected: {
+               fill: "white",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             }
+  },
+  {name: "Leads", value: 47390},
+  {name: "Sales", value: 22181}
 ];
+
+// create a chart and set the data
+chart = anychart.funnel(data);
 ```
 
 {sample}BCT\_Funnel\_Chart\_05{sample}
-
 
 ### Labels
 

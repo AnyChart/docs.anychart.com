@@ -26,20 +26,20 @@
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure visual settings of intersections
-    var intersect = chart.intersections();    
-    intersect.fill("white", 0.3);
-    intersect.hovered().fill("white", 0.3);
-    intersect.selected().fill("white", 0.5);
-    intersect.hatchFill("percent20", "#808080");
-    intersect.hovered().hatchFill("percent20", "white");
-    intersect.selected().hatchFill("percent20", "white");
-    intersect.stroke("white");
-    intersect.hovered().stroke("white", 2);
-    intersect.selected().stroke("white", 4);
+    // configure the visual settings of intersections
+    var intersections = chart.intersections();    
+    intersections.normal().fill("green", 0.3);
+    intersections.hovered().fill("green", 0.1);
+    intersections.selected().fill("green", 0.5);
+    intersections.normal().hatchFill("percent50", "white");
+    intersections.hovered().hatchFill("percent50", "white");
+    intersections.selected().hatchFill("percent50", "white");
+    intersections.normal().stroke("white");
+    intersections.hovered().stroke("white", 2);
+    intersections.selected().stroke("white", 4);
 
-    // disable labels of intersections
-    chart.intersections().labels(false);
+    // disable the labels of intersections
+    intersections.labels(false);
 
     // disable the legend
     chart.legend(false);

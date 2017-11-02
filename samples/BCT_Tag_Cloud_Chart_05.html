@@ -32,14 +32,11 @@
     // set the chart title
     chart.title("Tag Cloud Chart: Appearance");
 
-    // configure visual settings in the normal state
-    chart.normal({fill: "#009999 0.7", fontWeight: 600});
-
-    // configure visual settings in the hover state
-    chart.hovered({fill: "#003366 0.5"});
-
-    // configure visual settings in the selected state
-    chart.selected({fill: "#003366 0.7"});
+    // configure the visual settings of the chart
+    chart.normal().fill("#1fadad");
+    chart.hovered().fill("#93bfec");
+    chart.selected().fill("#1f66ad");
+    chart.normal().fontWeight(600);
 
     // set the container id
     chart.container("container");

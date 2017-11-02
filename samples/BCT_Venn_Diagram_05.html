@@ -15,25 +15,24 @@
     //create data
     var data = [
         {x: "A", value: 400},
-        {x: "B", value: 200},
-        {x: ["A", "B"], value: 200}
+        {x: "B", value: 200}
     ];
 
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure visual settings
-    chart.fill("#00cc99", 0.3);
-    chart.hovered().fill("#00cc99", 0.3);
+    // configure the visual settings of the chart
+    chart.normal().fill("#00cc99", 0.3);
+    chart.hovered().fill("#00cc99", 0.1);
     chart.selected().fill("#00cc99", 0.5);
-    chart.hatchFill("percent20", "#808080");
-    chart.hovered().hatchFill("percent20", "#808080");
-    chart.selected().hatchFill("percent20", "#808080");
-    chart.stroke("#00cc99");
-    chart.hovered().stroke("#00cc99", 2);
-    chart.selected().stroke("#00cc99", 4);
+    chart.normal().hatchFill("percent50", "#004d39");
+    chart.hovered().hatchFill("percent50", "#004d39");
+    chart.selected().hatchFill("percent50", "#004d39");
+    chart.normal().stroke("#004d39");
+    chart.hovered().stroke("#004d39", 2);
+    chart.selected().stroke("#004d39", 4);
 
-    // disable labels of intersections
+    // disable the labels of intersections
     chart.intersections().labels(false);
 
     // disable the legend

@@ -47,7 +47,7 @@ var data = [
 ];
 
 // create a chart and set the data
-var chart = anychart.pie(data);
+chart = anychart.pie(data);
 
 // set the container id
 chart.container("container");
@@ -68,43 +68,67 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Pie chart:
+#### All Points
 
-* {api:anychart.charts.Pie#fill}fill(){api}, {api:anychart.charts.Pie#hatchFill}hatchFill(){api}, {api:anychart.charts.Pie#stroke}stroke(){api} set the fill, hatch fill, and stroke
-* {api:anychart.charts.Pie#hoverFill}hoverFill(){api}, {api:anychart.charts.Pie#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pie#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+Combine them with the following methods:
 
-In the sample below, there a Pie chart with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there a Pie chart with appearance settings configured:
 
 ```
-// configure visual settings
-chart.fill("#0066cc", 0.5);
-chart.hoverFill("#0066cc", 0.6);
-chart.hatchFill("backwarddiagonal", "#808080");
-chart.hoverHatchFill("backwarddiagonal", "#0066cc", 3);
-chart.stroke("#808080", 3);
-chart.hoverStroke("#0066cc", 3);
+chart.normal().fill("#669999", 0.5);
+chart.hovered().fill("#669999", 0.3);
+chart.normal().hatchFill("forward-diagonal", "#669999");
+chart.hovered().hatchFill("forward-diagonal", "#669999", 3);
+chart.normal().stroke("#669999", 3);
+chart.hovered().stroke("#669999", 3);
 ```
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
-There is also a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
+#### Individual Points
 
-```
-// enable aqua style
-chart.fill("aquastyle");
-```
-{sample}BCT\_Pie\_Chart\_03{sample}
-
-Please note that the methods listed above affect the whole chart. The appearance of particular slices can be configured by adding special fields to the data, which should be set in object notation:
+It is possible to configure the appearance of each slice individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
 var data = [
-  {x: "Pacman", value: 400, fill: "#ffff00", hatchFill: "percent50"},
-  {x: "Not Pacman", value: 130, fill: "#404040"},
+  {x: "Pacman", value: 400,
+   normal:  {
+              fill: "#ffff00",
+              hatchFill: "percent50"        
+            },
+   hovered: {
+              fill: "#ffff00",
+              hatchFill: "percent50"
+            }
+  },
+  {x: "Not Pacman", value: 130,
+   normal:  {fill: "#404040"},
+   hovered: {fill: "#404040"}
+  }
 ];
+
+// create a chart and set the data
+chart = anychart.pie(data);
+```
+
+{sample}BCT\_Pie\_Chart\_03{sample}
+
+#### Aqua Style
+
+There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
+
+```
+// enable aqua style
+chart.fill("aquastyle");
 ```
 
 {sample}BCT\_Pie\_Chart\_04{sample}

@@ -11,11 +11,27 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
+    // create data
     var data = [
       {x: "John", value: 10000},
       {x: "Jake", value: 12000},
-      {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
+      {x: "Peter", value: 13000,
+       normal:   {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true}
+                 },
+       hovered:  {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true}
+                 },
+       selected: {
+                   fill: "#5cd65c",
+                   stroke: null,
+                   label: {enabled: true}
+                 }
+      },
       {x: "James", value: 10000},
       {x: "Mary", value: 9000}
     ];
@@ -27,7 +43,7 @@
     var series = chart.bar(data);
 
     // set the chart title
-    chart.title("Bar Chart: Appearance (Particular Bars)");
+    chart.title("Bar Chart: Appearance (Individual Points)");
 
     // set the titles of the axes
     chart.xAxis().title("Manager");

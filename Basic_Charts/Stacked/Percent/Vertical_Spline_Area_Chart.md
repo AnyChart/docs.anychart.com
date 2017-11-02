@@ -13,7 +13,7 @@ To build a Vertical Percent Stacked Spline Area Chart, create a multi-series [Ve
 
 ```
 // create a vertical area chart
-var chart = chart.verticalArea();
+chart = chart.verticalArea();
 
 // enable the value stacking mode
 chart.yScale().stackMode("percent");

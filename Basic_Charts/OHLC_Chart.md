@@ -42,7 +42,7 @@ To create an OHLC chart, use the {api:anychart#financial}anychart.financial(){ap
 The following sample demonstrates how a basic OHLC chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
   [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
@@ -83,32 +83,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the OHLC series::
+The [appearance settings](../Appearance_Settings) of an OHLC series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.OHLC#normal}normal(){api}, {api:anychart.core.cartesian.series.OHLC#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.OHLC#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.OHLC#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api} set the stroke of rising and falling bars 
-* {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#hoverRisingStroke}hoverRisingStroke(){api} set the stroke of rising and falling bars on hover
-* {api:anychart.core.cartesian.series.OHLC#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectRisingStroke}selectRisingStroke(){api} set the stroke of rising and falling bars on select
+Combine them with {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api} and {api:anychart.core.StateSettings#risingStroke}risingStroke(){api} to adjust the stroke of falling and rising candlesticks. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two OHLC series with some of the appearance settings configured::
+In the sample below, there are two OHLC series with appearance settings configured:
 
 ```
 // configure the visual settings of the first series
-series1.risingStroke("#33ccff");
-series1.hoverRisingStroke("#33ccff", 1.5);
-series1.selectRisingStroke("#33ccff", 3);
-series1.fallingStroke("#ff33cc");
-series1.hoverFallingStroke("#ff33cc", 1.5);
-series1.selectFallingStroke("#ff33cc", 3);
+series1.normal().risingStroke("#33ccff");
+series1.hovered().risingStroke("#33ccff", 1.5);
+series1.selected().risingStroke("#33ccff", 3);
+series1.normal().fallingStroke("#ff33cc");
+series1.hovered().fallingStroke("#ff33cc", 1.5);
+series1.selected().fallingStroke("#ff33cc", 3);
 
 // configure the visual settings of the second series
-series2.risingStroke("#33ccff", 1, "10 5", "round");
-series2.hoverRisingStroke("#33ccff", 1.5, "10 5", "round");
-series2.selectRisingStroke("#33ccff", 3, "10 5", "round");
-series2.fallingStroke("#ff33cc", 1, "10 5", "round");
-series2.hoverFallingStroke("#ff33cc", 1.5, "10 5", "round");
-series2.selectFallingStroke("#ff33cc", 3, "10 5", "round");
+series2.normal().risingStroke("#33ccff", 1, "10 5", "round");
+series2.hovered().risingStroke("#33ccff", 1.5, "10 5", "round");
+series2.selected().risingStroke("#33ccff", 3, "10 5", "round");
+series2.normal().fallingStroke("#ff33cc", 1, "10 5", "round");
+series2.hovered().fallingStroke("#ff33cc", 1.5, "10 5", "round");
+series2.selected().fallingStroke("#ff33cc", 3, "10 5", "round");
 ```
 
 {sample}BCT\_OHLC\_Chart\_02{sample}

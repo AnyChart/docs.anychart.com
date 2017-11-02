@@ -41,7 +41,7 @@ To create a Stick chart, use the {api:anychart#column}anychart.column(){api} cha
 After you created a column chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -69,22 +69,18 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Stick series:
+The [appearance settings](../Appearance_Settings) of a Stick chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Stick#normal}normal(){api}, {api:anychart.core.cartesian.series.Stick#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Stick#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Stick#color}color(){api} and {api:anychart.core.cartesian.series.Stick#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Stick#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Stick#selectStroke}selectStroke(){api} configures the stroke on select
+Combine them with the {api:anychart.core.StateSettings#fill}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Stick series with some of the appearance settings configured:
+In the sample below, there are two Stick series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.stick(seriesData_1);
 
 // configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
 series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
@@ -92,12 +88,39 @@ series1.selectStroke("#00cc99", 4, "10 5", "round");
 var series2 = chart.stick(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#0066cc");
+series2.normal().stroke("#0066cc");
 series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Stick\_Chart\_02{sample}
+
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+
+```
+// create data
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000,
+   normal:   {stroke: "3 #5cd65c"},
+   hovered:  {stroke: "4 #5cd65c"},
+   selected: {stroke: "4 #5cd65c"}
+  },
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
+
+// create a chart
+chart = anychart.column();
+
+// create a stick series and set the data
+var series = chart.stick(data);
+```
+
+{sample}BCT\_Stick\_Chart\_03{sample}
 
 ### Point Size
 

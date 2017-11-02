@@ -48,7 +48,7 @@ To create a HiLo series explicitly, call the {api:anychart.charts.Cartesian#hilo
 The following sample demonstrates how a basic HiLo chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["January", 10000, 1000],
   ["February", 12000, 500],
@@ -85,32 +85,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the HiLo series:
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Hilo#color}color(){api} and {api:anychart.core.cartesian.series.Hilo#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Hilo#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Hilo#selectStroke}selectStroke(){api} configures the stroke on select
+Combine them with the {api:anychart.core.StateSettings#fill}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two HiLo series with some of the appearance settings configured:
+In the sample below, there are two HiLo series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.hilo(seriesData_1);
 
 // configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.hilo(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_HiLo\_Chart\_02{sample}

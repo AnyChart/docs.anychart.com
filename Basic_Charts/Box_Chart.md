@@ -79,52 +79,60 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Box series:
+All [appearance settings](../Appearance_Settings) of a Box chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Box#normal}normal(){api}, {api:anychart.core.cartesian.series.Box#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Box#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Box#color}color(){api}, {api:anychart.core.cartesian.series.Box#fill}fill(){api}, {api:anychart.core.cartesian.series.Box#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Box#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Box#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Box#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Box#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Box#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Box#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Box#selectStroke}selectStroke(){api} configure the visual settings on select
+These methods should be combined with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} that are listed in the sections below. They allow you to adjust boxes, medians, outliers, stems, and whiskers.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+#### Boxes
 
-In the sample below, there are two Box series with some of the appearance settings configured:
+To configure boxes, use the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+In the sample below, there are two Box series with the appearance settings of their boxes configured:
 
 ```
+// create the first series
+series1 = chart.box(data1);
+
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.4);
-series1.hoverFill("#00cc99", 0.2);
-series1.selectFill("#00cc99", 0.6);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+series2 = chart.box(data2);
 
 // configure the visual settings of the second series
-series2.color("none");
-series2.hatchFill("forwardDiagonal");
-series2.hoverHatchFill("backwardDiagonal");
-series2.selectHatchFill("diagonalCross");
-series2.stroke("#000");
-series2.hoverStroke("#000", 2);
-series2.selectStroke("#000", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.1);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Box\_Chart\_02{sample}
 
-#### Median
+#### Medians
 
 A median is a special line across a box.
 
-Here are methods that allow you to configure the stroke of medians in the normal state, on hover, and on select:
-
-* {api:anychart.core.cartesian.series.Box#medianStroke}medianStroke(){api}
-* {api:anychart.core.cartesian.series.Box#hoverMedianStroke}hoverMedianStroke(){api}
-* {api:anychart.core.cartesian.series.Box#selectMedianStroke}selectMedianStroke(){api}
+To configure the stroke of medians, use the {api:anychart.core.StateSettings#medianStroke}medianStroke(){api} method:
 
 ```
 // configure medians
-series.medianStroke("#000");
-series.hoverMedianStroke("#000", 2);
-series.selectMedianStroke("#000", 4);
+series.normal().medianStroke("#dd2c00", 0.5, "10 5", "round");
+series.hovered().medianStroke("#dd2c00", 1, "10 5", "round");
+series.selected().medianStroke("#dd2c00", 2, "10 5", "round");
 ```
 
 {sample}BCT\_Box\_Chart\_03{sample}
@@ -133,27 +141,23 @@ series.selectMedianStroke("#000", 4);
 
 Not every box has outliers: they are optional values that belong to a category, but do not fit the range between the low and the high values.
 
-You can adjust the appearance, type, and size of outliers (in the normal state, on hover, and on select) by using the following methods:
-
-* {api:anychart.core.cartesian.series.Box#outlierMarkers}outlierMarkers(){api}
-* {api:anychart.core.cartesian.series.Box#hoverOutlierMarkers}hoverOutlierMarkers(){api}
-* {api:anychart.core.cartesian.series.Box#selectOutlierMarkers}selectOutlierMarkers(){api}
+You can adjust the appearance, type, and size of outliers by using the {api:anychart.core.StateSettings#outlierMarkers}outlierMarkers(){api} method:
 
 ```
 // configure outliers
-series.outlierMarkers(
-  {fill: "#DC143C 0.7",
-  stroke: {color: "#dc143c", thickness: 0.5, dash: "5 1", lineJoin: "round"},
+series.normal().outlierMarkers(
+  {fill: "#dd2c00 0.3",
+  stroke: {color: "#dd2c00", thickness: 0.5},
   size: 10,
   type: "star5"});
-series.hoverOutlierMarkers(
-  {fill: "#dc143c 0.5",
-  stroke: {color: "#dc143c", thickness: 1, dash: "5 1", lineJoin: "round"},
+series.hovered().outlierMarkers(
+  {fill: "#dd2c00 0.1",
+  stroke: {color: "#dd2c00", thickness: 1},
   size: 10,
   type: "star5"});
-series.selectOutlierMarkers(
-  {fill: "#dc143c",
-  stroke: {color: "#dc143c", thickness: 2, dash: "5 1", lineJoin: "round"},
+series.selected().outlierMarkers(
+  {fill: "#dd2c00 0.5",
+  stroke: {color: "#dd2c00", thickness: 2},
   size: 10,
   type: "star5"});
 ```
@@ -162,46 +166,83 @@ series.selectOutlierMarkers(
 
 {sample}BCT\_Box\_Chart\_04{sample}
 
-
 #### Stems
 
 Stems are vertical sticks that go beyond boxes and show the difference between the low value and the first quartile and between the third quartile and the high value.
 
-Use these methods to configure the stroke of stems in the normal state, on hover, and on select:
-
-* {api:anychart.core.cartesian.series.Box#stemStroke}stemStroke(){api}
-* {api:anychart.core.cartesian.series.Box#hoverStemStroke}hoverStemStroke(){api}
-* {api:anychart.core.cartesian.series.Box#selectStemStroke}selectStemStroke(){api}
+Use the {api:anychart.core.StateSettings#stemStroke}stemStroke(){api} method to configure the stroke of stems:
 
 ```
 // configure stems
-series.stemStroke("#f44336", 1, "5 2");
-series.hoverStemStroke("#f44336", 2, "5 2", "round", "round");
-series.selectStemStroke("#f44336", 3, "5 2");
+series.normal().stemStroke("#dd2c00", 0.5);
+series.hovered().stemStroke("#dd2c00", 1);
+series.selected().stemStroke("#dd2c00", 2);
 ```
-{sample}BCT\_Box\_Chart\_05{sample}
 
+{sample}BCT\_Box\_Chart\_05{sample}
 
 #### Whiskers
 
-Whiskers are horizontal line segments on the tops of stems. Here are methods that allow you to configure their appearance:
+Whiskers are horizontal line segments on the tops of stems. Call these methods to configure their width and stroke:
 
-* {api:anychart.core.cartesian.series.Box#whiskerWidth}whiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#whiskerStroke){api} set the width and stroke
-* {api:anychart.core.cartesian.series.Box#hoverWhiskerWidth}hoverWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#hoverWhiskerStroke}hoverWhiskerStroke(){api} set the width and stroke on hover
-* {api:anychart.core.cartesian.series.Box#selectWhiskerWidth}selectWhiskerWidth(){api} and {api:anychart.core.cartesian.series.Box#selectWhiskerStroke}selectWhiskerStroke(){api} set the width and stroke on select
+* {api:anychart.core.StateSettings#whiskerWidth}whiskerWidth(){api}
+* {api:anychart.core.StateSettings#whiskerStroke}whiskerStroke(){api}
 
 **Note:** By default the width is 0.
+
+That is how it looks like:
 
 ```
 // configure whiskers
 series.whiskerWidth(30);
-series.hoverWhiskerWidth(30);
-series.selectWhiskerWidth(30);
-series.whiskerStroke("#c2b65d", 0.7);
-series.hoverWhiskerStroke("#c2b65d", 0.5);
-series.selectWhiskerStroke("#c2b65d", 1);
+series.normal().whiskerStroke("#dd2c00", 0.5);
+series.hovered().whiskerStroke("#dd2c00", 1);
+series.selected().whiskerStroke("#dd2c00", 2);
 ```
+
 {sample}BCT\_Box\_Chart\_06{sample}
+
+#### Individual Points
+
+If you use object notation to set the data, you can configure the appearance settings of each point individually – use extra data fields corresponding with the methods mentioned in the previous sections of the article:
+
+```
+// create data
+var data = [
+  {x: "Jan", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
+  {x: "Feb", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+  {x: "Mar", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+  {x: "Apr", low: 4000, q1: 5000, median: 6500, q3: 6900, high: 7200, outliers: [8930],
+   normal:   {
+               fill: "#00bfa5 0.3",
+               stroke: "#00bfa5",
+               medianStroke: "0.5 #00bfa5",
+               stemStroke: "0.5 #00bfa5"
+             },
+   hovered:  {
+               fill: "#00bfa5 0.1",
+               stroke: "2 #00bfa5",
+               medianStroke: "1 #00bfa5",
+               stemStroke: "1 #00bfa5"
+             },
+   selected: {
+               fill: "#00bfa5 0.5",
+               stroke: "4 #00bfa5",
+               medianStroke: "2 #00bfa5",
+               stemStroke: "2 #00bfa5"
+             } 
+  },
+  {x: "May", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
+];
+
+// create a chart
+chart = anychart.box();
+
+// create a series and set the data
+series = chart.box(data);
+```
+
+{sample}BCT\_Box\_Chart\_07{sample}
 
 ### Point Size
 

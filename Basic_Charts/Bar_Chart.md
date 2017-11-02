@@ -41,7 +41,7 @@ To create a Bar series explicitly, call the {api:anychart.charts.Cartesian#bar}b
 The following sample demonstrates how a basic Bar chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   ["John", 10000],
   ["Jake", 12000],
@@ -51,7 +51,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.bar();
+chart = anychart.bar();
 
 // create a bar series and set the data
 var series = chart.bar(data);
@@ -75,59 +75,89 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Bar series:
+#### All Points
 
-* {api:anychart.core.cartesian.series.Bar#color}color(){api}, {api:anychart.core.cartesian.series.Bar#fill}fill(){api}, {api:anychart.core.cartesian.series.Bar#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Bar#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Bar#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Bar#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Bar#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Bar#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Bar#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Bar#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Bar chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Bar#normal}normal(){api}, {api:anychart.core.cartesian.series.Bar#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Bar#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+Combine them with the following methods:
 
-In the sample below, there are two Bar series with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Bar series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.bar(seriesData_1);
 
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.bar(seriesData_2);
 
 // configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.1);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Bar\_Chart\_02{sample}
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of particular bars by adding special fields to the data set:
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to the data set:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "John", value: 10000},
   {x: "Jake", value: 12000},
-  {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
+  {x: "Peter", value: 13000,
+   normal:   {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true}
+             },
+   hovered:  {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true}
+             },
+   selected: {
+               fill: "#5cd65c",
+               stroke: null,
+               label: {enabled: true}
+             }
+  },
   {x: "James", value: 10000},
   {x: "Mary", value: 9000}
 ];
+
+// create a chart
+chart = anychart.bar();
+
+// create a bar series and set the data
+var series = chart.bar(data);
 ```
 
 {sample}BCT\_Bar\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
+If you use an array to set the data, you can also configure the appearance of each bar individually, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
 
 ```
 // create a data set
@@ -142,6 +172,13 @@ var data = anychart.data.set([
 // map the data
 var seriesData_1 = data.mapAs({x: 0, value: 1, fill: 3, stroke: 5, label: 6});
 var seriesData_2 = data.mapAs({x: 0, value: 2, fill: 4, stroke: 5, label: 6});
+
+// create a chart
+chart = anychart.bar();
+
+// create series and set the data
+var series1 = chart.bar(seriesData_1);
+var series2 = chart.bar(seriesData_2);
 ```
 
 {sample}BCT\_Bar\_Chart\_04{sample}
@@ -155,10 +192,12 @@ To set the padding between bars and bar groups, use these methods:
 
 Padding is measured as a ratio to the width of bars (the width is calculated automatically). So, if it is < 1, the space between bars or bar groups is less than the width of bars, and vice versa. If padding is set to 0, there is no space between bars/groups, and a negative parameter makes bars overlap each other.
 
+#### Single Series
+
 Please note that in AnyChart single-series bar charts are, technically speaking, composed of one-element bar groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between bars. In the following sample it is set to 0:
 
 ```
-// create a bar series and set the data
+// create a bar series
 var series = chart.bar(data);
 
 // set the padding between bar groups
@@ -166,6 +205,8 @@ chart.barGroupsPadding(0);
 ```
 
 {sample}BCT\_Bar\_Chart\_05{sample}
+
+#### Multiple Series
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 

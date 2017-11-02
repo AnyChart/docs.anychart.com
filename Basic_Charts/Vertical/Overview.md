@@ -65,7 +65,7 @@ In the following sample, this method is used to draw two horizontal (area) and a
 
 ```
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create the first series
 var series1 = chart.area(seriesData_1);
@@ -88,7 +88,7 @@ To switch the orientation of the whole chart on-the-fly, with the basic cartesia
 
 ```
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // change the orientation of the chart
 chart.isVertical(true);
@@ -105,6 +105,7 @@ Here is the list of supported vertical charts:
 * [Bar (Vertical Column)](../Bar_Chart)
 * [Range Bar (Vertical Column)](../Range_Bar_Chart)
 * [Vertical Area](Area_Chart)
+* [Vertical Bar Mekko](Bar_Mekko_Chart)
 * [Vertical Box](Box_Chart)
 * [Vertical Bubble](Bubble_Chart)
 * [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
@@ -112,6 +113,8 @@ Here is the list of supported vertical charts:
 * [Vertical HiLo](HiLo_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
+* [Vertical Mekko](Mekko_Chart)
+* [Vertical Mosaic](Mosaic_Chart)
 * [Vertical OHLC](OHLC_Chart)
 * [Vertical Range Area](Range_Area_Chart) 
 * [Vertical Range Spline Area](Range_Spline_Area_Chart)

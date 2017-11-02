@@ -1,9 +1,9 @@
 {:index 1}
-# BarMekko Chart
+# Bar Mekko Chart
 
 ## Overview
 
-A [Mekko chart](Mekko_Chart) with a single series and units is called BarMekko in AnyChart, it is often used with one series only. 
+A [Mekko chart](Mekko_Chart) with a single series and units is called Bar Mekko in AnyChart. It is often used with one series only. 
 
 The difference between this constructor and other variations are:
 - [Palette](../../Appearance_Settings/Palettes) applies to elements of a single series if there is only one series, similar to [Pie Chart](../Pie_Chart) or [Donut Chart](../Doughnut_Chart),
@@ -13,14 +13,14 @@ The difference between this constructor and other variations are:
 
 ## Quick Start
 
-To create a chart, use the {api:anychart#barmekko}anychart.barmekko(){api} chart constructor. 
+To create a Bar Mekko chart, use the {api:anychart#barmekko}anychart.barmekko(){api} chart constructor. 
 
 To add a series call the {api:anychart.charts.Mekko#mekko}mekko(){api} method.
 
-The following sample demonstrates how a basic BarMekko  chart is created:
+The following sample demonstrates how a basic Bar Mekko  chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
 	{x: "Spring", value: 20},
 	{x: "Summer", value: 30},
@@ -41,32 +41,30 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_BarMekko\_Chart\_01{sample}
+{sample}BCT\_Bar\_Mekko\_Chart\_01{sample}
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the BarMekko chart (for example, legend and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Bar Mekko chart (for example, legend and interactivity settings).
 
 Read the overview of general settings: [General Settings](../General_Settings).
 
 ## Special Settings
 
-### Apperance
-
-Barmekko appearance is tuned similar to basic [Mekko chart](Mekko_Chart) or [Column chart](../Column_Chart).
-
-### Multi Series
+### Multiple Series
 
 A Mekko chart with units (sometimes also called submarine chart or olympic chart) is a two-dimensional stacked chart. It is often used with one series only. As in the [regular stacked chart](../Stacked/Overview#value_stacking), the value axis and the datasheet of this chart are based on absolute values.
 
-You can create multiseries barmekko chart the same way you always do:
+You can create a multiseries Bar Mekko chart in the same way you always do:
 
-{sample}BCT\_BarMekko\_Chart\_02{sample}
+{sample}BCT\_Bar\_Mekko\_Chart\_02{sample}
 
-### Vertical BarMekko Chart
+### Apperance
+
+Configuring the appearance of the Bar Mekko chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
+
+### Vertical Bar Mekko
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 
-Here is the information about creating Vertical BarMekko Chart:
-
-* [Vertical BarMekko](../Vertical/BarMekko_Chart)
+Here is the information about creating the Vertical Bar Mekko Chart: [Vertical Bar Mekko](../Vertical/Bar_Mekko_Chart).
