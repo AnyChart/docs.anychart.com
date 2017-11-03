@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //data
+    var data = anychart.data.set([
+        ['A', 637166],
+        ['B', 721630],
+        ['C', 148662],
+        ['D', 78662],
+        ['E', 90000]
+    ]);
+
+    //set data and chart type
+    var chart = anychart.columnChart(data);
+
+    //title settings
+    chart.title().text('Extra Axes Simple Sample');
+
+    //adjusting xAxis title
+    chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+
+    //adjusting yAxes titles
+    chart.yAxis(1).orientation('right').title().text('Axis title');
+    chart.yAxis(2).orientation('right').title().text('Axis title');
+    chart.yAxis(3).orientation('right').title().text('Axis title');
+
+    //adjusting major ticks' interval
+    chart.yScale().ticks().interval(100000);
+
+    //draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

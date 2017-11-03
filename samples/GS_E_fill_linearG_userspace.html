@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GS E fill linearG userspace"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    var stage = acgraph.create('container');
+
+    var fillSettings = {
+        keys: ['.1 red', '.5 green', '.9 blue'],
+        angle: -45,
+        mode: anychart.math.rect(150, 70, 100, 50),
+        opacity: .2
+    };
+    stage
+            .rect(0, 0, stage.width(), stage.height())
+            .fill(fillSettings);
+    fillSettings.opacity = 1;
+    stage.text(20, 3, 'shape 1');
+    anychart.elements.background()
+            .fill(fillSettings)
+            .bounds(anychart.math.rect(20, 20, 100, 70))
+            .container(stage).draw();
+    stage.text(20, 3, 'shape 2');
+    anychart.elements.background()
+            .fill(fillSettings)
+            .bounds(anychart.math.rect(60, 140, 70, 50))
+            .container(stage).draw();
+    stage.text(270, 73, 'shape 3');
+    anychart.elements.background()
+            .fill(fillSettings)
+            .bounds(anychart.math.rect(270, 93, 100, 100))
+            .container(stage).draw();
+    stage.text(150, 53, 'fill settings');
+    stage
+            .rect(150, 70, 100, 50).stroke('3 black')
+            .fill(fillSettings);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Labels Formatting 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    stage = acgraph.create('container');
+
+    //setting main title
+    var title = anychart.elements.title();
+
+    //setting position for container with main label
+    title.parentBounds(0, 0, "100%", "10%")
+        .text('Y-Axis Labels: width is set to 70 pixels')
+        .container(stage)
+        .draw();
+
+
+    //first chart
+    var firstChart = anychart.columnChart();
+
+    //disabling title
+    firstChart.title().enabled(false);
+
+    //setting stroke for chart contaoner
+    firstChart.background().stroke('#CCCCCC');
+
+    //setting position and bounds
+    firstChart.bounds(0, '10%', '100%', '45%');
+
+    //disabling titles for Axes
+    firstChart.yAxis().title().enabled(false);
+    firstChart.xAxis().title().enabled(false);
+
+    //formatting labels value using function
+    firstChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
+
+    firstChart.column([
+        ['P1', 698712],
+        ['P2', 378162],
+        ['P3', 739123],
+        ['P4', 515632],
+        ['P5', 161294]
+    ]);
+
+    //draw container
+    firstChart.container(stage);
+    firstChart.draw();
+
+
+    //second chart
+    var secondChart = anychart.columnChart();
+
+    //disabling title and adjusting chart container position
+    secondChart.title().enabled(false);
+    secondChart.bounds(0, '55%', '100%', '45%');
+    secondChart.background().stroke('#CCCCCC');
+
+    //disabling axes titles
+    secondChart.yAxis().title().enabled(false);
+    secondChart.xAxis().title().enabled(false);
+
+    //adjusting axis labels using function
+    secondChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
+
+    secondChart.column([
+        ["P1", 12],
+        ["P2", 62],
+        ["P3", 23],
+        ["P4", 32],
+        ["P5", 74]
+    ]);
+
+    secondChart.container(stage);
+    secondChart.draw();
+
+    //the function to format labels
+    function valueAdjuster() {
+        var value = this.value;
+         value = value.toFixed(2);
+            var num = value.split('.');
+        if (num[0].length> 3)
+            num[0] = num[0].substr(0, num[0].length-3) + ',' + num[0].substr(num[0].length-3, 3);
+        // decimal Separator
+        value = num.join('.');
+ return value;
+    }
+});
+</script>
+</body>
+</html>

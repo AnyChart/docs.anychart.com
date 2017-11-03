@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Axis Position 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //define chart
+    var chart = anychart.cartesianChart();
+
+    //setting data
+    var data = anychart.data.set([
+        ['A', 4],
+        ['B', 3],
+        ['C', 2],
+        ['D', 1]
+    ]);
+
+    //define chart type
+    chart.column(data);
+
+    //inverts x scale. Now all elements has inverted (from top to bottom) direction
+    chart.xScale().inverted(true);
+
+    //position of y axis changer. Now y is on the right
+    chart.yAxis().orientation('right');
+
+    //disabling all ticks
+    chart.xAxis().ticks().enabled(false);
+    chart.yAxis().minorTicks().enabled(false);
+    chart.yAxis().ticks().enabled(false);
+
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

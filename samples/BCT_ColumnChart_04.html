@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT ColumnChart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //chart type
+    var chart = anychart.columnChart();
+
+    //set title
+    chart.title().text('Scale Management');
+
+    //set axes titles
+    chart.xAxis().title().text('Manager');
+    chart.yAxis().title().text('Sales');
+
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]);
+
+    //adjust y scale
+    chart.yScale().inverted(true);
+
+    //draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>
