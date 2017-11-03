@@ -6,25 +6,27 @@ Quite often you need to use the same set of values in the different series of on
 
 For example, here is some data about a weather in three cities, and we want to see difference on the line chart:
 
-|   Date    |  New York |   San Francisco|   Los Angeles |
-|--- | --- | --- | --- |
-| 2014/6/25 |    28     |       23       |      28       |
-| 2014/6/26 |    26     |       21       |      26       |
-| 2014/6/27 |    27     |       19       |      26       |
-| 2014/6/28 |    25     |       21       |      27       |
-| 2014/6/29 |    29     |       22       |      28       |
-| 2014/6/30 |    28     |       25       |      27       |
+<table>
+<tr><th>Date</th><th>New York</th><th>San Francisco</th><th>Los Angeles</th></tr>
+<tr><td>2014/6/25</td><td>28</td><td>23</td><td>28</td></tr>
+<tr><td>2014/6/26</td><td>26</td><td>21</td><td>26</td></tr>
+<tr><td>2014/6/27</td><td>27</td><td>19</td><td>26</td></tr>
+<tr><td>2014/6/28</td><td>25</td><td>21</td><td>27</td></tr>
+<tr><td>2014/6/29</td><td>29</td><td>22</td><td>28</td></tr>
+<tr><td>2014/6/30</td><td>28</td><td>25</td><td>27</td></tr>
+</table>
 
 In many cases you are forced to create three sets to create a line chart with three series:
 
-|   Date |     New York    |    Date   |   San Francisco    |    Date   |   Los Angeles |
-|--- | --- | --- | --- | --- | --- |
-| 2014/6/25 |    28    | 2014/6/25 |      23       | 2014/6/25 |     28      |
-| 2014/6/26 |    26    | 2014/6/26 |      21       | 2014/6/26 |     26      |
-| 2014/6/27 |    27    | 2014/6/27 |      19       | 2014/6/27 |     26      |
-| 2014/6/28 |    25    | 2014/6/28 |      21       | 2014/6/28 |     27      |
-| 2014/6/29 |    29    | 2014/6/29 |      22       | 2014/6/29 |     28      |
-| 2014/6/30 |    28    | 2014/6/30 |      25       | 2014/6/30 |     27      | 
+<table>
+<tr><th>Date</th><th>New York</th><th>Date </th><th>San Francisco</th><th>Date</th><th>Los Angeles</td></tr>
+<tr><td>2014/6/25</td><td>28</td><td>2014/6/25</td><td>23</td><td>2014/6/25</td><td>28</td></tr>
+<tr><td>2014/6/26</td><td>26</td><td>2014/6/26</td><td>21</td><td>2014/6/26</td><td>26</td></tr>
+<tr><td>2014/6/27</td><td>27</td><td>2014/6/27</td><td>19</td><td>2014/6/27</td><td>26</td></tr>
+<tr><td>2014/6/28</td><td>25</td><td>2014/6/28</td><td>21</td><td>2014/6/28</td><td>27</td></tr>
+<tr><td>2014/6/29</td><td>29</td><td>2014/6/29</td><td>22</td><td>2014/6/29</td><td>28</td></tr>
+<tr><td>2014/6/30</td><td>28</td><td>2014/6/30</td><td>25</td><td>2014/6/30</td><td>27</td></tr> 
+</table>
 
 In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.  
 
