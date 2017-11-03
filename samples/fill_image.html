@@ -1,4 +1,26 @@
-    var stage = acgraph.create(400, 200).container('container');
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="fill image"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.0.0/anychart-bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.0.0/anychart-ui.min.css"/>
+
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var stagevar = acgraph.create(400, 200).container('container');
     stage.path()
             .moveTo(stage.width() / 2, 0)
             .lineTo(stage.width() / 2, stage.height());
@@ -22,3 +44,6 @@
             .bounds(anychart.math.rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
             .container(stage)
             .draw();
+</script>
+</body>
+</html>
