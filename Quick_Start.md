@@ -6,7 +6,7 @@ To start working with AnyChart framework, you should do just three things:
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
 

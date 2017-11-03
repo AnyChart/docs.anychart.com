@@ -10,15 +10,13 @@ To download these files, right-click the links below and select "Save as..." fro
 
 ## Using AnyChart with a CDN
 
-<a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDNs</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe. This also offers an advantage that if the visitor to your web page has already downloaded a copy of AnyChart from the same CDN, it won't have to be re-downloaded.  
+<a href="https://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDNs</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe. This also offers an advantage that if the visitor to your web page has already downloaded a copy of AnyChart from the same CDN, it won't have to be re-downloaded.  
   
 To use AnyChart CDN, simply reference the file directly from http://cdn.anychart.com/ in the script tag:
 
 ```
-<script>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
-</script>
+<script src="https://cdn.anychart.com/js/latest/anychart.min.js"></script>
 ```
 
 ## Past Releases
-Previous versions of AnyChart 7.x can be found and downloaded from <a href="http://cdn.anychart.com/" target="_blank">AnyChart CDN</a>.
+Previous versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a>.
