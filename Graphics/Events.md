@@ -97,7 +97,7 @@ Besides all mentioned, there are also {apy:anychart.graphics.vector.Stage.EventT
 In the following sample there is a text element of some width and height. Each time the stage is resized, width and height of this element is recounted
 
 ```
-stage.listen("stageresize", function(){
+stage.listen("stageresize", function (){
     var w = stage.width()-300;
     textObject.width(w);
     var h = textObject.height();
@@ -111,11 +111,11 @@ stage.listen("stageresize", function(){
 The following samples demonstrates the time between rendering start and finish. The "renderstart" and "renderfinish" methods are listened to:
 
 ```
-stage.listen("renderstart", function(){
+stage.listen("renderstart", function (){
     start = (new Date()).getTime();
 });
 
-stage.listenOnce("renderfinish", function(){
+stage.listenOnce("renderfinish", function (){
     finish = (new Date()).getTime();
     var labelBg = stage.rect();
     label = stage.text(130,130);

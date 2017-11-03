@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
   // chart data
   var data_0 = [
     {x: 1, low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
@@ -40,7 +40,7 @@
   series1.labels().enabled(true);
    
   // use the text format
-  series1.labels().format(function(){
+  series1.labels().format(function (){
     return(this.getData("extra_inf"));
   });
 

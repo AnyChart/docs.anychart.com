@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
   
   // set stage
   stage = anychart.graphics.create("container");
@@ -85,12 +85,12 @@
   // settings for legend tooltips
   legend.tooltip().useHtml(true).fontWeight(400);
   // set source of content for legend tooltips
-  legend.tooltip().format(function(){
+  legend.tooltip().format(function (){
     return this.meta.legendText;
   });
   
   // set legend items from array
-  legend.itemsFormatter(function(){return legendsItemsArray});
+  legend.itemsFormatter(function (){return legendsItemsArray});
   
   // set legend events
   legend.listen("legendItemMouseOver", function(event) {
@@ -119,14 +119,14 @@
       legendsItemsArray[index].iconStroke = palette[index];
       legendsItemsArray[index].iconMarkerStroke= anychart.color.darken(palette[index], 0.2);
       legendsItemsArray[index].iconMarkerFill= palette[index];
-      legend.itemsFormatter(function(){return legendsItemsArray});
+      legend.itemsFormatter(function (){return legendsItemsArray});
     }
     else{
       legendsItemsArray[index].fontColor = "#999";
       legendsItemsArray[index].iconStroke = "#999";
       legendsItemsArray[index].iconMarkerStroke= "#999";
       legendsItemsArray[index].iconMarkerFill= "#999";
-      legend.itemsFormatter(function(){return legendsItemsArray});
+      legend.itemsFormatter(function (){return legendsItemsArray});
     }
   });
   

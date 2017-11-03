@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
   stage = anychart.graphics.create("container");
 
@@ -37,7 +37,7 @@
   });  
 
   // listen for the "complete" button clicked in the editor
-  editor.listen('complete', function(){
+  editor.listen('complete', function (){
     var chartFromXml;
     // get result as XML
     var resultXml = editor.getResultXml();  
@@ -61,9 +61,9 @@ function createLabel(text, offset, action) {
     customLabel.text(text);
     customLabel.parentBounds(offset, 30, 100, 100);
     customLabel.listen("click", action);
-    customLabel.listen("mouseOver", function(){document.body.style.cursor = "pointer";
+    customLabel.listen("mouseOver", function (){document.body.style.cursor = "pointer";
 });
-    customLabel.listen("mouseOut", function(){document.body.style.cursor = "auto";
+    customLabel.listen("mouseOut", function (){document.body.style.cursor = "auto";
 });
     customLabel.background({fill: "#9E9E9E"});
     customLabel.fontColor("#fff");

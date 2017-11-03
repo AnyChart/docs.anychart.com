@@ -36,13 +36,13 @@ To change the interactivity colors (colors of elements or groups on hover and se
 
 ```
 // set the hoverFill color 
-series.hoverFill(function(){
+series.hoverFill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.lighten(attrs.fill, 0.5) : this.sourceColor;
 });
 
 // set the selectFill color
-series.selectFill(function(){
+series.selectFill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
 });
@@ -78,7 +78,7 @@ It is also possible to change the colors of separate elements or of parts of a g
 
 ```
 // set the hoverFill color 
-series.hoverFill(function(){
+series.hoverFill(function (){
     var attrs = this.attributes;
     if (attrs) {
         // get the class

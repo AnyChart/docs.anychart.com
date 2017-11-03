@@ -84,7 +84,7 @@ stage.suspend();
 How you can listen to [Events](Events) and resume rendering of needed:
 
 ```
-anychart.graphics.events.listen(rectangle, "click", function() {
+anychart.graphics.events.listen(rectangle, "click", function () {
     if (stage.isSuspended()){
         stage.resume();
         // remove objects

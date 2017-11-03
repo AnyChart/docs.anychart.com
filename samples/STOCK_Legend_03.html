@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data table on loaded data
     var dataTable = anychart.data.table();
@@ -95,7 +95,7 @@
     // set legend position and items layout
     firstPlot.legend().itemsLayout('horizontal');
     firstPlot.legend().position('center-top');
-    firstPlot.legend().itemsFormatter(function(){
+    firstPlot.legend().itemsFormatter(function (){
         return [
             {text: "High", iconType: "circle", iconFill:"#558B2F"},
             {text: "Low", iconFill:"#D84315"},

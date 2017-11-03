@@ -30,7 +30,7 @@
     chart = anychart.tagCloud(data);
 
     // configure tooltips
-    chart.tooltip().format(function(){
+    chart.tooltip().format(function (){
         var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
         return percentOfTotal.toFixed(1) + "%";
     });

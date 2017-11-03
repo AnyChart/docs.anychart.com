@@ -30,7 +30,7 @@ If it is necessary to get rid of the Zoom Control Panel, call the {api:anychart.
 
 ```
 // dispose the zoom controlling panel on click
-map.listen("click", function(){
+map.listen("click", function (){
   zoomController.dispose();
 });
 ```

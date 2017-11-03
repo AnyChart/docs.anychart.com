@@ -137,7 +137,7 @@ You can adjust behavior of any element in {api:anychart.ui.ContextMenu#itemsForm
 chart.contextMenu().itemsFormatter(function(items){
 
   // modify print item action
-  items["print"].action = function(){
+  items["print"].action = function (){
     alert('Custom action');
   };
 
@@ -161,7 +161,7 @@ chart.contextMenu().itemsFormatter(function(items){
   // add item with custom action
   items['my-item'] ={
   'text': 'Custom item with alert action',
-  'action': function(){
+  'action': function (){
       alert('Custom action');
     },
    'index': index + 0.01
@@ -188,17 +188,17 @@ The custom menu has no items by default, {api:anychart.ui.ContextMenu#itemsProvi
 
 ```
 // replace menu items provider
-chart.contextMenu().itemsProvider(function(){
+chart.contextMenu().itemsProvider(function (){
   var items = {
     'menu-item-1': {
       'text': 'Print chart',
-      'action': function(){
+      'action': function (){
         this.chart.print();
       }
     }, 
     'menu-item-2': {
       'text': 'Save chart as image',
-      'action': function(){
+      'action': function (){
         this.chart.saveAsPng();
       }
     }, 

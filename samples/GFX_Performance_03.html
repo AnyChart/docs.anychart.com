@@ -30,11 +30,11 @@ label.zIndex(1000000);
 label.disablePointerEvents(true);
 labelBg.zIndex(1000000);
 
-stage.listen("renderstart", function(){
+stage.listen("renderstart", function (){
     start = (new Date()).getTime();
 });
 
-stage.listen("renderfinish", function(){
+stage.listen("renderfinish", function (){
     finish = (new Date()).getTime();
     label.text((finish - start) + "ms");
     var labelBounds = label.getBounds();
@@ -46,7 +46,7 @@ stage.listen("renderfinish", function(){
 });
 
 // this is to be performed on a click
-labelBg.listen("click", function(){
+labelBg.listen("click", function (){
     // clear the layer
     rectLayer.removeChildren();
 

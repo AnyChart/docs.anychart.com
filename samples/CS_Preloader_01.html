@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
       // create a preloader
       preloader = anychart.ui.preloader();
       // cover only chart container
@@ -29,7 +29,7 @@
       chart.container("container");
       chart.draw();
 
-      setTimeout(function(){ 
+      setTimeout(function (){ 
         // hide preloader after 20 seconds
         preloader.visible(false);
       }, 20000)

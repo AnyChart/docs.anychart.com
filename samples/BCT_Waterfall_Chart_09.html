@@ -37,7 +37,7 @@
     var series = chart.waterfall(data);
 
     // configure tooltips
-    chart.tooltip().titleFormat(function(){
+    chart.tooltip().titleFormat(function (){
         if (this.isTotal) return "Total";
         return this.x;
     });

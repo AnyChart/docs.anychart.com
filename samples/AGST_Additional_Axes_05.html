@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
   chart = anychart.vertical();
 
   chart.title("Extra Axes Units Comparison Sample");
@@ -71,7 +71,7 @@
   var markerSeries = chart.marker(data);
   markerSeries.clip(false);
   markerSeries.zIndex(chart.xAxis().zIndex()+1);
-  markerSeries.tooltip().format(function(){
+  markerSeries.tooltip().format(function (){
     return "Kelvin: "+ this.value.toFixed(2) +
       "\nCelsius: "+ (this.value - 273.15).toFixed(2) +
       "\nFahrenheit: " + ((this.value - 273.15)*1.8000 + 32).toFixed(2);

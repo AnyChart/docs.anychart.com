@@ -36,7 +36,7 @@ Add the `<script>` tag with the following code to any place in the page (in this
 
 ```
 <script>
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
  
   //create data set on our data
   dataSet = anychart.data.set([81, 34.5]);
@@ -112,7 +112,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
 <body>
     <div id="container"></div>
     <script type="text/javascript">
-      anychart.onDocumentReady(function() {
+      anychart.onDocumentReady(function () {
        
         //create data set on our data
         dataSet = anychart.data.set([81, 34.5]);

@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
   
   // set data and define chart type
   var dataSet = anychart.data.set([
@@ -57,7 +57,7 @@
   // configure tooltip considering new item 
   var tooltip = chart.legend().tooltip();
   tooltip.enabled(true);
-  tooltip.format(function(){
+  tooltip.format(function (){
     // to avoid failing on "total" item
     if(this.meta.pointValue === undefined)
       return this.value;

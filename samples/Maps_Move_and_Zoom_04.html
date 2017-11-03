@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="map">
 
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
     map.title("Zoom map \n Click here to zoom map two times");
 
     // listen to the click
-    map.title().listen("click", function() {
+    map.title().listen("click", function () {
         // Zoom map in 2 times.
         map.zoom(2);
     });

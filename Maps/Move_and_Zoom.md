@@ -61,7 +61,7 @@ It is possible to put information about the points directly in computer clipboar
 currentInteractivity = map.interactivity();
 
 // Adjust the text
-currentInteractivity.copyFormat(function() {
+currentInteractivity.copyFormat(function () {
     return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
 });
 ```

@@ -7,7 +7,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -34,21 +34,21 @@
     chart.draw();
 
     // create a label for switching to the line series
-    createLabel("Switch to OHLC", 10, function() {
+    createLabel("Switch to OHLC", 10, function () {
         // change the series type
         series.seriesType("ohlc");
         chart.title("Switching the Series Type \n OHLC");
     });    
 
     // create a label for switching to the column series
-    createLabel("Switch to Japanese Candlestick", 140, function() {
+    createLabel("Switch to Japanese Candlestick", 140, function () {
         // change the series type
         series.seriesType("candlestick");
         chart.title("Switching the Series Type \n Japanese Candlestick");
     });    
 
     // create a label for switching to the area series
-    createLabel("Switch to Range Area", 375, function() {
+    createLabel("Switch to Range Area", 375, function () {
         // change the series type
         series.seriesType("range-area");
         chart.title("Switching the Series Type \n Range Area");
@@ -67,12 +67,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5")
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2")
         document.body.style.cursor = "auto";
         label.draw();

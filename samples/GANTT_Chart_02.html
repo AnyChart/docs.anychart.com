@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function(){
+    <script x-export="chart">anychart.onDocumentReady(function (){
 
   // data tree settings
   var treeData = anychart.data.tree(getData(), "as-tree");
@@ -61,16 +61,16 @@
   expandLast.innerHTML = "expand 5";
   collapseLast.innerHTML = "collapse 5";
 
-  expandAllButton.onclick = function() {
+  expandAllButton.onclick = function () {
       chart.expandAll();
   };
-  collapseAllButton.onclick = function() {
+  collapseAllButton.onclick = function () {
       chart.collapseAll();
   };
-  expandLast.onclick = function() {
+  expandLast.onclick = function () {
       chart.expandTask("5");
   };
-  collapseLast.onclick = function() {
+  collapseLast.onclick = function () {
       chart.collapseTask("5");
   };
 

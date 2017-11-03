@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
   // set the data
   table = anychart.data.table();
@@ -93,7 +93,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     // put the current data interval in the chart title
-    chart.listen("selectedrangechange", function(){
+    chart.listen("selectedrangechange", function (){
         // Get the current data interval and use the title.
         chart.title("The current level is " + grouping.getCurrentDataInterval().count + " " + grouping.getCurrentDataInterval().unit + "s");
     });

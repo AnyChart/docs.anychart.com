@@ -279,7 +279,7 @@ For example, in the sample below labels show absolute values, and the labels of 
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function(){
+chart.labels().format(function (){
     if (this.isTotal)
         return "<span style='color:red;font-weight:bold'>" + this.absolute + "</span>";
     return this.absolute;
@@ -319,7 +319,7 @@ The function in the sample below modifies the tooltips of columns indicating tot
 
 ```
 // configure tooltips
-chart.tooltip().titleFormat(function(){
+chart.tooltip().titleFormat(function (){
     if (this.isTotal) return "Total";
     return this.x;
 });

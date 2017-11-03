@@ -96,7 +96,7 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 ```
 <script>
 var table, mapping, chart;
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
 table = anychart.data.table();
 table.addData([
@@ -163,7 +163,7 @@ You can copy this to a file on your computer and open it in your browser to disp
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js" type="text/javascript"></script>
     <script>
 	var table, mapping, chart;
-	anychart.onDocumentReady(function() {
+	anychart.onDocumentReady(function () {
 
 	table = anychart.data.table();
 	table.addData([

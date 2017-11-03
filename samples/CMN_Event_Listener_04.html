@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   var dataSet = anychart.data.set([
     {x: "P1", value: 100},
@@ -48,7 +48,7 @@
   var indexSetter = 16;
   
   // create a function what to listen and then unlisten
-  var func_listen = function(){
+  var func_listen = function (){
     dataSet.append({
       // x value
       x: "P" + indexSetter,
@@ -63,7 +63,7 @@
   // add a listener
   chart.listen("mouseMove", func_listen);
   
-  chart.listenOnce("click",function(){
+  chart.listenOnce("click",function (){
     // adding an unlistener 
     chart.unlisten("mouseMove", func_listen);
   });

@@ -18,7 +18,7 @@ This listener type adds an event listener to an implementing object. You can add
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
-chart.listen("click", function(){
+chart.listen("click", function (){
 	dataSet.append({
 		// x value
 		x: "P" + indexSetter,
@@ -43,7 +43,7 @@ It's necessary to define the event type and the action to perform to get any rea
 // click twice on any range bar to see the result
 
 range.listenOnce("dblClick",
-  function(){
+  function (){
     range.fill("red");
   });
 ```
@@ -57,7 +57,7 @@ You can add the {api:anychart.core.Base#removeAllListeners}removeAllListeners(){
 
 ```
 // remove all listeners
-chart.listen("dblClick", function(){
+chart.listen("dblClick", function (){
   chart.removeAllListeners();
 });
 ```
@@ -74,7 +74,7 @@ To stop listen to the particular action, place an {api:anychart.core.Base#unlist
 
 ```
 // create a function for what to listen and then unlisten
-var func_listen = function(){
+var func_listen = function (){
   dataSet.append({
     // x value
     x: "P" + indexSetter,
@@ -88,7 +88,7 @@ var func_listen = function(){
 // add a listener
 chart.listen("mouseMove", func_listen);
 
-chart.listenOnce("click",function(){
+chart.listenOnce("click",function (){
   // adding an unlistener 
   chart.unlisten("mouseMove", func_listen);
 });
@@ -109,7 +109,7 @@ var key = chart.listen("mouseMove", func_listen);
 // unlisten this
 // click twice on the chart to see the result
 chart.listen("dblclick",
-  function(){
+  function (){
     chart.unlistenByKey(key);
   }
 );
@@ -193,7 +193,7 @@ For further information, see the example below.
 
 ```
 //add a listener
-chart.listen("mouseDown", function(){
+chart.listen("mouseDown", function (){
   // this will open a new page in a new tab
   window.open("https://google.com","_blank");
 });

@@ -76,14 +76,14 @@ labels = chart.scroller().xAxis().labels();
 minorLabels = chart.scroller().xAxis().minorLabels();
 
 // set major labels text format
-labels.format(function() {
+labels.format(function () {
   return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
 // set labels color
 labels.fontColor('#000000');
 
 // set minor labels text format
-minorLabels.format(function(){
+minorLabels.format(function (){
   return anychart.format.dateTime(this.tickValue, 'MMM, d');
 });
 

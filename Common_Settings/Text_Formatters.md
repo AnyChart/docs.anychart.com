@@ -11,7 +11,7 @@ String tokens are special string values you can use in text formatters instead o
 Here is how tokens can be used in tooltips, series labels or axes labels:
 
 ```
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
   // chart type
   var chart = anychart.column([
   {x: 'January', value: -10, season:"Winter"},
@@ -426,7 +426,7 @@ For complex formatting use formatting function instead of token strings. Formatt
 ```
 // formatting using a function
 var lineTooltip = lineSeries.tooltip();
-lineTooltip.format(function(){
+lineTooltip.format(function (){
   return "Income: " + this.value/100 + "%";
 });
 ```
@@ -440,7 +440,7 @@ Here is a live sample with such settings:
 ```
 var currentLabels = chart.labels();
 // format the number
-currentLabels.format(function() {
+currentLabels.format(function () {
     return anychart.format.number(this.value, 3, ".", ",")
 });
 ```
@@ -499,7 +499,7 @@ First of all, enable the labels. Then set the fields of values you want those la
 chart.labels(true);
 
 // format labels
-chart.labels().format(function(){
+chart.labels().format(function (){
     return(this.seriesName + ": $" + this.value);
 });
 ```
@@ -525,7 +525,7 @@ var labels = series_2.labels();
 labels.enabled(true);
 
 // use format
-labels.format(function(){
+labels.format(function (){
     return(this.getData("extra_inf"));
 });
 ```
@@ -555,7 +555,7 @@ series.name("Unique users in 2013");
 var tooltip = series.tooltip();
 
 // adjust tooltip text
-tooltip.format(function(){
+tooltip.format(function (){
     return 
         this.seriesName + ": " + this.value + " millions" +
         "\nYear over year: " + this.getData("yoy") + "%";
@@ -594,12 +594,12 @@ series_2.meta("company", "Duff B. Corp.");
 // format
 
 var labels_1 = series_1.labels();
-labels_1.format(function(){
+labels_1.format(function (){
     return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
 });
 
 var labels_2 = series_2.labels();
-labels_2.format(function(){
+labels_2.format(function (){
     return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
 });
 ```
@@ -615,7 +615,7 @@ Here is a sample of the {api:anychart.format.Context#getStat}getStat(){api} meth
 ```
 // format
 var labels = chart.labels();
-labels.format(function(){
+labels.format(function (){
     return((this.getData("value"))+"(of "+this.getStat("sum")) + ")";
 });
 ```

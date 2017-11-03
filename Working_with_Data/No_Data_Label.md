@@ -59,7 +59,7 @@ You can attach listeners to "No data" label, this may be handy to use it as a bu
 ```
 attemp = 0;
 // attach events to no data label
-noDataLabel.listen('click', function() {
+noDataLabel.listen('click', function () {
   noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
 });
 ```

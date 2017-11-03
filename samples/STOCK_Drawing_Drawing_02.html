@@ -13,7 +13,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -49,28 +49,28 @@
     chart.draw();
 
     // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 10, function() {
+    createLabel("Andrews' Pitchfork", 10, function () {
         // start drawing the annotation
         controller.cancelDrawing();
         controller.startDrawing("andrewsPitchfork");
     });
 
     // create a label for the Triangle annotation
-    createLabel("Triangle", 150, function() {
+    createLabel("Triangle", 150, function () {
         // start drawing the annotation
         controller.cancelDrawing();
         controller.startDrawing("triangle");
     });
 
     // create a label for the Ellipse annotation
-    createLabel("Ellipse", 219, function() {
+    createLabel("Ellipse", 219, function () {
         // start drawing the annotation
         controller.cancelDrawing();
         controller.startDrawing("ellipse");
     });
 
     // create a label for removing annotations
-    createLabel("Remove All", 300, function() {
+    createLabel("Remove All", 300, function () {
         // remove all annotations
         controller.removeAllAnnotations();
     });
@@ -87,12 +87,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

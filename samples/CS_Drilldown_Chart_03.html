@@ -53,7 +53,7 @@
   chart.label(0, {enabled: false, position: 'rightTop', anchor: 'rightTop', padding: 5, offsetX: 5, offsetY: 5, text: "Back", background: {stroke: "1 black", enabled: true}});
 
   // load initial data on label click
-  chart.label(0).listen('click', function() {
+  chart.label(0).listen('click', function () {
       chart.getSeries(0).data(data);
       chart.label(0).enabled(false);
   });  

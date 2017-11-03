@@ -256,7 +256,7 @@ Labels are also configured with the help of [formatting functions](../Common_Set
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function(){
+chart.labels().format(function (){
   var heat = (this.heat);
   if (heat < 20)
     return "Low<br/>" + heat + "%";
@@ -310,7 +310,7 @@ Tooltips are also configured with the help of [formatting functions](../Common_S
 
 ```
 // configure tooltips
-chart.tooltip().format(function(){
+chart.tooltip().format(function (){
   var heat = (this.heat);
   if (heat < 20)
     return this.y + ": Low (" + heat + "%)";

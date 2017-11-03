@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
         
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
     chart = anychart.column();
 
     // configure no data label
@@ -25,13 +25,13 @@
     attemp = 0;
 
     // attach events to no data label
-    noDataLabel.listen('click', function() {
+    noDataLabel.listen('click', function () {
       noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
     });
-    noDataLabel.listen('mouseover', function() {
+    noDataLabel.listen('mouseover', function () {
       document.body.style.cursor = "pointer";           
     });    
-    noDataLabel.listen('mouseout', function() {
+    noDataLabel.listen('mouseout', function () {
       document.body.style.cursor = "auto";          
     });   
 

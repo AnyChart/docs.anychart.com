@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   chart = anychart.line();
 
@@ -72,10 +72,10 @@
   columnSeries.hovered().fill(["#FF0000", "#880000"], -90);
 
   var tooltip = chart.tooltip();
-  tooltip.titleFormat(function(){
+  tooltip.titleFormat(function (){
     return "Year: " + this.points[0].x;
   });
-  tooltip.unionFormat(function(){
+  tooltip.unionFormat(function (){
     var gdp = "GDP - " + this.points[0].value + "%";
     var debt = (this.points[1].value / 1000000000).toFixed(0);
     if (debt > 999)

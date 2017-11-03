@@ -34,7 +34,7 @@ It is necessary to define the chart type, container (or as in the example) and d
 ```
 var chart;
 
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
 var json = {
     "gantt": {
@@ -114,7 +114,7 @@ XML or Extensible Markup Language, is a markup language that defines a set of ru
 You can use XML to define the chart configuration as a string. Let's take the sample above as an example. The code converted to XML will look like:
 
 ```
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
 var xml =
         '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">'+

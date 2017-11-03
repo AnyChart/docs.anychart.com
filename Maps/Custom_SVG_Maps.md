@@ -22,7 +22,7 @@ You can dynamically load SVG image somehow, for example using jQuery:
 
 ```
 var stage, chart;
-$(document).ready(function() {
+$(document).ready(function () {
   stage = anychart.graphics.create('container');
   $.ajax({
     type: 'GET',

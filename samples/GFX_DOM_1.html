@@ -29,7 +29,7 @@ stage.suspend();
 stage.text(10, 30, "Rendering resumed");
 stage.circle(100, 100, 50).fill("red 0.2").stroke("2 blue");
 
-rectangle.listen("click", function() {
+rectangle.listen("click", function () {
     if (stage.isSuspended()){
         stage.resume();
         // remove objects

@@ -12,7 +12,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -63,7 +63,7 @@
 
     /* create a label for setting the display mode
     of the crosshair to "float" */
-    createLabel("Float", 10, function() {
+    createLabel("Float", 10, function () {
       // set the display mode of the crosshair
       chart.crosshair().displayMode("float");
       // update the title
@@ -73,7 +73,7 @@
 
     /* create a label for setting the display mode
     of the crosshair to "sticky" */
-    createLabel("Sticky", 60, function() {
+    createLabel("Sticky", 60, function () {
       // set the display mode of the crosshair
       chart.crosshair().displayMode("sticky");
       // update the title
@@ -93,12 +93,12 @@ function createLabel(text, offset, action){
   label.listen("click", action);
   label.container(stage);
   label.draw();
-  label.listen("mouseOver", function(){
+  label.listen("mouseOver", function (){
       label.background().fill("#1976d2 0.5");
       document.body.style.cursor = "pointer";
       label.draw();
   });
-  label.listen("mouseOut", function(){
+  label.listen("mouseOut", function (){
       label.background().fill("#1976d2");
       document.body.style.cursor = "auto";
       label.draw();

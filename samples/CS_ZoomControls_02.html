@@ -15,7 +15,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-    <script x-export="map">anychart.onDocumentReady(function() {
+    <script x-export="map">anychart.onDocumentReady(function () {
   map = anychart.map();
   map.geoData('anychart.maps.united_kingdom');
   map.axes(true);
@@ -26,7 +26,7 @@
   zoomController.render();
 
   // dispose the zoom controlling panel on click
-  map.listen("click", function(){
+  map.listen("click", function (){
     zoomController.dispose();
   });
 
