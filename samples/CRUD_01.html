@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CRUD 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  //data
+  var dataSet = anychart.data.set([
+    {x: 'P1', value: 10},
+    {x: 'P2', value: 2},
+    {x: 'P3', value: 15},
+    {x: 'P4', value: 10},
+    {x: 'P5', value: 15}
+  ]);
+
+  //set chart type
+  var chart = anychart.areaChart();
+
+  chart.title().text('Click on the Button to Append a Point ');
+
+  //set data
+  var area = chart.splineArea(dataSet);
+
+  //first index for new point
+  var indexSetter = 6;
+
+  //create new button
+  var triggerButton = document.createElement('div');
+
+  //set button style
+  triggerButton.style.top = '5px';
+  triggerButton.style.right = '5px';
+  triggerButton.style.width = 'auto';
+  triggerButton.style.height = 'auto';
+  triggerButton.style.backgroundColor = '#444444';
+  triggerButton.style.color = 'white';
+  triggerButton.style.position = 'absolute';
+  triggerButton.style.zIndex = 2;
+  triggerButton.style.transition = '0.5s';
+  triggerButton.style.textAlign = 'center';
+  triggerButton.style.border = '3px solid #444444';
+  triggerButton.style.borderRadius = '7px 7px 7px 7px';
+  triggerButton.style.fontSize = '18px';
+  triggerButton.innerHTML = 'Append Point';
+  triggerButton.onclick = function() {
+    addPoint();
+  };
+
+  //append button to container
+  container.appendChild(triggerButton);
+
+  //function, if listener triggers
+  function addPoint(e) {
+    //append data
+    dataSet.append({
+
+      //x value
+      x: 'new P' + indexSetter,
+
+      //random value from 1 to 100
+      value : Math.floor((Math.random() * 100)+ 1)
+    });
+    indexSetter++;
+  }
+
+  //set container and draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

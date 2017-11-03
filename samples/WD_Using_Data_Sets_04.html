@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="WD Using Data Sets 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var data = [
+    // column 0    1    2    3
+    ["2014/6/25",  28,  23,  28], // row 0
+    ["2014/6/26",  26,  21,  26], //     1
+    ["2014/6/27",  27,  19,  26], //     2
+    ["2014/6/28",  25,  21,  27], //     3
+    ["2014/6/29",  29,  22,  28], //     4
+    ["2014/6/30",  28,  25,  27]  //     5
+  ];
+
+  // create a data set
+  var dataSet = anychart.data.set(data);
+
+  //set stage
+  stage = acgraph.create('container');
+
+  // create a line chart using the data set
+  var lineChart = anychart.lineChart.apply(null, anychart.data.mapAsTable(data));
+
+  //set container and position
+  lineChart.container(stage);
+  lineChart.bounds(0, 0, '50%', '90%');
+
+  //current stage stroke
+  lineChart.background().stroke('white').fill('white');
+
+  //axes titles setter
+  lineChart.xAxis().title().text('Date');
+  lineChart.yAxis().title().text('Temperature');
+  lineChart.yAxis().labels().textFormatter(function(){
+      return this.value + ' ?C';
+  });
+
+  //apply tooltip settings
+  lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
+  lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
+  lineChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
+
+  //disable pie title
+  lineChart.title().enabled(false);
+
+  // initiate chart drawing
+  lineChart.draw();
+
+  // map x and value from the data set
+  var dataView = dataSet.mapAs({x: [0], value: [1]});
+
+  // create a pie chart using mapped data set
+  var pieChart = anychart.pieChart(dataView);
+
+  //set pie chart container and position
+  pieChart.container(stage);
+  pieChart.bounds('50%', 0, '50%', '90%');
+
+  //apply tooltip settings
+  pieChart.tooltip().contentFormatter(tooltipSetter);
+  pieChart.tooltip().content().useHtml(false);
+
+
+  //current stage stroke
+  pieChart.background().stroke('white').fill('white');
+
+  //disable pie title
+  pieChart.title().enabled(false);
+
+  // initiate chart drawing
+  pieChart.draw();
+});
+
+//tooltip series settings
+function tooltipSetter(){
+  return 'Date: ' + this.x + '\nTemperature: ' + this.value + '?C';
+}
+</script>
+</body>
+</html>

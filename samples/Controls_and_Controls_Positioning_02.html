@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Controls and Controls Positioning 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+          var data = [
+        {x: '1995', value: 41},
+        {x: '1996', value: 12},
+        {x: '1998', value: 17},
+        {x: '1999', value: 6},
+        {x: '2000', value: 7},
+        {x: '2001', value: 5.5},
+        {x: '2002', value: 5},
+        {x: '2003', value: 3},
+        {x: '2004', value: 4.5},
+        //{x: '2005', value: 4},
+    ];
+
+    //chart type
+    var chart = anychart.lineChart();
+
+    //title
+    chart.title().enabled(false)
+
+    customTitle = anychart.elements.title();
+    customTitle.enabled(true);
+    customTitle.orientation('bottom').align('left');
+    customTitle.zIndex(1);
+    customTitle.text('LeftBottom');
+
+    customTitle1 = anychart.elements.title();
+    customTitle1.enabled(true);
+    customTitle1.orientation('bottom').align('right');
+    customTitle1.zIndex(1);
+    customTitle1.text('RightBottom');
+
+    customTitle2 = anychart.elements.title();
+    customTitle2.enabled(true);
+    customTitle2.orientation('top').align('left');
+    customTitle2.zIndex(1);
+    customTitle2.text('LeftTop');
+
+    customTitle3 = anychart.elements.title();
+    customTitle3.enabled(true);
+    customTitle3.orientation('top').align('right');
+    customTitle3.zIndex(1);
+    customTitle3.text('RightTop');
+
+    customTitle4 = anychart.elements.title();
+    customTitle4.enabled(true);
+    customTitle4.orientation('bottom').align('right');
+    customTitle4.zIndex(1);
+    customTitle4.text('RightBottom');
+
+    customTitle5 = anychart.elements.title();
+    customTitle5.enabled(true);
+    customTitle5.orientation('top').align('center');
+    customTitle5.zIndex(1);
+    customTitle5.text('CenterTop');
+
+    customTitle6 = anychart.elements.title();
+    customTitle6.enabled(true);
+    customTitle6.orientation('bottom').align('center');
+    customTitle6.zIndex(1);
+    customTitle6.text('CenterBottom');
+
+    customTitle7 = anychart.elements.title();
+    customTitle7.enabled(true);
+    customTitle7./*orientation('bottom')*/align('left');
+    customTitle7.zIndex(1);
+    customTitle7.text('LeftCenter');
+
+    customTitle8 = anychart.elements.title();
+    customTitle8.enabled(true);
+    customTitle8./*orientation('bottom')*/align('right');
+    customTitle8.zIndex(1);
+    customTitle8.text('RightCenter');
+
+    // Axes settings
+    chart.yAxis()
+        .orientation("left")
+        .scale(
+            chart.yAxis().scale()
+        );
+     chart.title().enabled(false);
+
+    chart.yAxis(1)
+        .orientation("right")
+        .scale(
+            chart.yAxis().scale()
+        );
+    chart.title().enabled(false);
+
+    chart.yAxis().labels().textFormatter(function(){
+        return this.value.toFixed(2);
+    });
+
+     //adjust y scale direction
+    chart.yScale().inverted(false).ticks().interval(10);
+
+    chart.listen(
+        'chartDraw',
+        function (e){
+
+            customTitle.parentBounds(anychart.math.rect(
+                   0,
+                   0,
+                   chart.container().width(),
+                   chart.container().height()-20
+                )
+            );
+            customTitle.container(chart.container());
+            customTitle.draw();
+        });
+
+    chart.listen(
+        'chartDraw',
+        function (e){
+
+            customTitle.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle.container(chart.container());
+            customTitle.draw();
+
+            customTitle1.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle2.container(chart.container());
+            customTitle2.draw();
+
+            customTitle3.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle3.container(chart.container());
+            customTitle3.draw();
+
+
+            customTitle4.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle4.container(chart.container());
+            customTitle4.draw();
+
+             customTitle5.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle5.container(chart.container());
+            customTitle5.draw();
+
+           customTitle6.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle6.container(chart.container());
+            customTitle6.draw();
+
+            customTitle7.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle7.container(chart.container());
+            customTitle7.padding().top((chart.container().height() -16) / 2);
+            customTitle7.draw();
+
+
+            customTitle8.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle8.container(chart.container());
+            customTitle8.padding().top((chart.container().height() -16) / 2);
+            customTitle8.draw();
+        });
+
+    //set margin
+    chart.margin('5px');
+
+    //set padding
+    chart.padding('30px');
+
+    //set chart background
+    chart.background(null);
+
+    //set data
+    chart.line(data);
+
+    //draw
+    chart.container('container').draw();
+
+    //set TextMarker
+    chart.textMarker(1)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('CenterBottom')
+        .align('center')
+        .anchor('centerbottom')
+        .fontSize(11)
+        .offsetX(1)
+        .fontColor('black');
+
+    chart.textMarker(2)
+        .scale(chart.yScale())
+        .value(9000)
+        .text('CenterTop')
+        .align('center')
+        .anchor('centertop')
+        .fontSize(11)
+        .offsetX(2)
+        .fontColor('black');
+
+     chart.textMarker(3)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('CenterDataPlot')
+        .align('center')
+        .anchor('center')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(4)
+        //.scale(chart.yScale())
+        .value(9000)
+        .text('LeftTop')
+        .align('left')
+        .anchor('lefttop')
+        .fontSize(11)
+        .offsetX(3)
+        .fontColor('black');
+
+    chart.textMarker(5)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('LeftBottom')
+        .align('left')
+        .anchor('leftbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(6)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('LeftCenter')
+        .align('left')
+        .anchor('leftbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+     chart.textMarker(7)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('RightBottom')
+        .align('right')
+        .anchor('rightbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(8)
+        //.scale(chart.yScale())
+        .value(9000)
+        .text('RightTop')
+        .align('right')
+        .anchor('righttop')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(9)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('RightCenter')
+        .align('right')
+        .anchor('rightcenter')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+});
+</script>
+</body>
+</html>

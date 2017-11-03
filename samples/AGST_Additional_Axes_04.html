@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var chart = anychart.lineChart();
+
+    chart.container('container');
+
+    chart.title().text('Extra Axes Binding Sample');
+
+    //setting yScale settings
+    chart.yScale().ticks().interval(100000);
+    chart.yScale().minorTicks().interval(20000);
+
+    //setting yAxis settings
+    chart.yAxis().title().text('Basic Y Axis');
+    chart.yAxis(1).title().text('Extra Y Axis');
+
+    //setting Grid settings
+    chart.grid(0).stroke('gray 0.8').layout('vertical');
+    chart.grid(1).stroke('gray 0.8').layout('horizontal');
+
+    //setting minorGrid settings
+    chart.minorGrid(0)
+        .layout('vertical')
+        .oddFill(null)
+        .evenFill(null)
+        .stroke('gray 0.3');
+    chart.minorGrid(1)
+        .layout('horizontal')
+        .oddFill(null)
+        .evenFill(null)
+        .stroke('gray 0.3');
+
+    //adding extra Y scale
+    var extraYScale = anychart.scales.linear();
+    extraYScale.ticks().interval(10);
+    extraYScale.minorTicks().interval(2);
+    extraYScale.minimum(0).maximum(100);
+
+    //adding and adjust extra Y axis
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale);
+
+    //setting first series of data
+    var firstSeries = anychart.data.set([
+        ["A", 637166],
+        ["B", 721630],
+        ["C", 148662],
+        ["D", 78662],
+        ["E", 90000]
+    ]);
+
+    //setting second series of data
+    var secondSeries = anychart.data.set([
+        ["A", 95],
+        ["B", 97],
+        ["C", 96],
+        ["D", 70],
+        ["E", 35]
+    ]);
+
+    //setting and adjusting data visualisation
+    var columnSeries = chart.column(firstSeries);
+    var lineSeries = chart.line(secondSeries);
+
+    lineSeries.yScale(extraYScale);
+    lineSeries.tooltip().enabled(false);
+    lineSeries.markers().size(2);
+    lineSeries.hoverMarkers().size(4);
+
+    columnSeries.tooltip().enabled(false);
+    columnSeries.hoverFill('#444444');
+
+    chart.draw();
+});
+</script>
+</body>
+</html>

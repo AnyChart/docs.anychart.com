@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PieDoughnutChart 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //set data and chart type
+    var chart = anychart.pieChart([
+        {x: 'P1', value: 232, hatchFill: 'diagonalcross', fill: '#EEEEEE'},
+        {x: 'P2', value: 224, hatchFill: 'zigzag', fill: '#EEEEEE'},
+        {x: 'P3', value: 252, hatchFill: 'horizontal', fill: '#EEEEEE'},
+        {x: 'P4', value: 219, hatchFill: 'vertical', fill: '#EEEEEE'},
+        {x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal', fill: '#EEEEEE'},
+        {x: 'P6', value: 217, hatchFill: 'grid', fill: '#EEEEEE'},
+        {x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal', fill: '#EEEEEE'},
+        {x: 'P8', value: 199, hatchFill: 'dashedhorizontal', fill: '#EEEEEE'},
+        {x: 'P9', value: 297, hatchFill: 'plaid', fill: '#EEEEEE'},
+        {x: 'P10', value: 317, hatchFill: 'weave', fill: '#EEEEEE'}
+    ]);
+
+    //chart title
+    chart.title().text('Hatches');
+
+    //disable labels
+    chart.labels().enabled(false);
+
+    //draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

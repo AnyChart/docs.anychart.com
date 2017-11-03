@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Labels Formatting 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    var chart = anychart.lineChart();
+
+    //chart title
+    chart.title().text('Enable/Disable Axes Labels');
+
+    //disable x axis labels and title adjusting
+    chart.xAxis().labels().enabled(false);
+    chart.xAxis().title().text('X-Axis without labels');
+
+    //adjusting y axis title and setting additional axis
+    chart.yAxis().title().text('Y-Axis with labels');
+    chart.yAxis(1)
+        .orientation('right')
+        .title()
+            .text('Secondary Y-Axis with labels');
+
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 10000],
+        ['April', 11000],
+        ['May', 19000]
+    ]);
+
+    //set data
+    chart.line(data);
+
+    //draw chart
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

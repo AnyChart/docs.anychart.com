@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAS Background 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.2.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.2.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //data set
+    var data = anychart.data.set([
+        ['P1', 16, 20],
+        ['P2', 12, 18],
+        ['P3', 9, 14]
+    ]);
+
+    //map data for series
+    var seriesData_1 = data.mapAs({x: [0], value: [1]});
+    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+
+    stage = acgraph.create('container');
+
+    //setting main title
+    var title = anychart.elements.title();
+
+    //setting position for container with main label
+    title.parentBounds(0, 0, "100%", "10%")
+        .text('Background Corners Types')
+        .container(stage)
+        .draw();
+
+
+    //Chart without background corners adjusting
+    var defaultCornersChart = anychart.columnChart();
+
+    //setting title
+    defaultCornersChart.title().text('Default Background Corners');
+
+    //setting stroke for chart container
+    defaultCornersChart.background().stroke('3 red')
+        //set corner type
+        .cornerType('none')
+        //set corner radius
+        .corners(10);
+
+    //setting position and bounds
+    defaultCornersChart.bounds('1%', '10%', '48%', '44%');
+
+    //disabling titles for Axes
+    defaultCornersChart.yAxis().title().enabled(false);
+    defaultCornersChart.xAxis().title().enabled(false);
+
+    //set scale minimum
+    defaultCornersChart.yScale().minimum(0);
+
+    //setting data into series
+    firstNormalSeries = defaultCornersChart.column(seriesData_1);
+    secondNormalSeries = defaultCornersChart.column(seriesData_2);
+
+    //draw container
+    defaultCornersChart.container(stage);
+    defaultCornersChart.draw();
+
+
+    //chart with round corners
+    var roundCornersChart = anychart.columnChart();
+    roundCornersChart.title().text('Round Background Corners');
+    roundCornersChart.bounds('51%', '10%', '48%', '44%');
+    roundCornersChart.background().stroke('3 red')
+        //set corner type
+        .cornerType('round')
+        //apply corner type only for top-left (set 10px radius) and bottom-right (set 30px radius) corners.
+        .corners(10, 0, 10, 0);
+
+    //disable axes titles
+    roundCornersChart.yAxis().title().enabled(false);
+    roundCornersChart.xAxis().title().enabled(false);
+
+    //set data
+    firstNormalSeries = roundCornersChart.column(seriesData_1);
+    secondNormalSeries = roundCornersChart.column(seriesData_2);
+
+    //set scale minimum
+    roundCornersChart.yScale().minimum(0);
+
+    //draw chart
+    roundCornersChart.container(stage);
+    roundCornersChart.draw();
+
+
+    //chart with round inner background corners
+    var roundInnerCornersChart = anychart.columnChart();
+
+    //chart title
+    roundInnerCornersChart.title().text('Round Inner Background Corners');
+
+    //chart size and position
+    roundInnerCornersChart.bounds('1%', '55%', '48%', '44%');
+
+    //adjust chart background
+    roundInnerCornersChart.background()
+        //set stroke color and thickness
+        .stroke('3 red')
+        //corner type
+        .cornerType('roundInner')
+        //corner radius
+        .corners(10);
+
+    //disable axes titles
+    roundInnerCornersChart.xAxis().title().enabled(false);
+    roundInnerCornersChart.yAxis().title().enabled(false);
+
+    //set data
+    firstNormalSeries = roundInnerCornersChart.column(seriesData_1);
+    secondNormalSeries = roundInnerCornersChart.column(seriesData_2);
+
+    //set scale minimum
+    roundInnerCornersChart.yScale().minimum(0);
+
+    //draw chart
+    roundInnerCornersChart.container(stage);
+    roundInnerCornersChart.draw();
+
+
+    //chat with labels inside
+    var cutCornerChart = anychart.columnChart();
+
+    //chart title
+    cutCornerChart.title().text('Cut background Corner');
+
+    //chart size and posiition
+    cutCornerChart.bounds('51%', '55%', '48%', '44%');
+
+    //adjust background
+    cutCornerChart.background()
+        //set background stroke color and thickness
+        .stroke('3 red')
+        //set corner type
+        .cornerType('cut')
+        //set corner radius and apply it only to top corners
+        .corners(10, 10, 0, 0);
+
+    //disable axes title
+    cutCornerChart.xAxis().title().enabled(false);
+    cutCornerChart.yAxis().title().enabled(false);
+
+    //set scale minimum
+    cutCornerChart.yScale().minimum(0);
+
+    //setting data
+    firstlineSeries = cutCornerChart.column(seriesData_1);
+    secondlineSeries = cutCornerChart.column(seriesData_2);
+
+    //draw chart
+    cutCornerChart.container(stage);
+    cutCornerChart.draw();
+});
+</script>
+</body>
+</html>
