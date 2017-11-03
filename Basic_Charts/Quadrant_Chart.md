@@ -14,7 +14,7 @@ This article explains how to create a basic Quadrant chart as well as configure 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
 This constructor creates a [Scatter chart](Scatter_Plot/Overview) with some predefined settings:
-* The chart is framed with two X and Y axes.
+* The chart is framed with two X- and Y-axes.
 * Ticks and labels on the axes are disabled.
 * There are no grids.
 * The minimum and maximum values of the scales are 0 and 100.
@@ -201,7 +201,7 @@ chart.crossing().stroke("gray", 3, "7 3", "round");
 
 In Quadrant charts data do not affect scales: the data falling outside scales just are not displayed.
 
-By default, the minimum and maximum values of the X and Y scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
+By default, the minimum and maximum values of the X- and Y-scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
 
 ```
 // configure scales
@@ -215,7 +215,7 @@ Please note that quarters always divide scales into two parts, no matter what th
 
 ### Axes
 
-The Quadrant chart is framed by two X and Y axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
+The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
 
 ```
 // configure axes

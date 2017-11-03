@@ -7,15 +7,15 @@ You can use Date/Time values as input data for chart using Date Time Axes. In th
 
 ## Declare
 
-You can make both X and/or Y axis a DateTime axis, to do that, set scale type to {api:anychart.scales.DateTime}DateTime{api}:
+You can make both X- and/or Y-axis a DateTime axis, to do that, set scale type to {api:anychart.scales.DateTime}DateTime{api}:
 
 ```
 var dateScale = anychart.scales.dateTime();
 ```
 
-### Sample Range Bar With Y DateTime Axis
+### Sample Range Bar With DateTime Y-Axis
 
-Lets create a simple Range Bar chart with DateTime Y Axis. For the first we have to choose data to be shown:
+Lets create a simple Range Bar chart with DateTime Y-axis. For the first we have to choose data to be shown:
 
 <table class="dtTABLE" width="700">
 <tbody>
@@ -68,7 +68,7 @@ chart.rangeBar([
 ]);
 ```
 
-Now we will set DateTime scale as y scale of the chart:
+Now we will set DateTime scale as the Y-scale of the chart:
 
 ```
 chart.yScale(dateScale);
@@ -110,7 +110,8 @@ var xAxis = chart.xAxis();
 // set x axis title
 xAxis.title("Tasks");
 ```
-That's it - chart with DateTime Y Axis is ready:
+
+That's it - chart with DateTime Y-axis is ready:
 
 {sample}AGST\_DateTime\_Axes\_01{sample}
 
@@ -127,8 +128,8 @@ minorTicks.interval(0, 2);
 
 Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
 
-## Sample Line Chart with Y DateTime Axis
+## Sample Line Chart with DateTime X-Axis
 
-In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
+In this sample we will create a Line Chart with DateTime X-axis and set major and minor interval ticks and intervals. The Y-axis will be Logarithmic - to show small values in the first years and big values in last year.
 
 {sample}AGST\_DateTime\_Axes\_02{sample}

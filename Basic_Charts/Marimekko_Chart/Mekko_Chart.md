@@ -70,7 +70,7 @@ See the basic sample and read more in [Bar Mekko Chart](Bar_Mekko_Chart) article
 
 ## Mosaic
 
-Mosaic chart is pretty much the same as the [basic Mekko chart](#mekko) but with one important difference: Y scale is ordinal and contains series names instead of numbers.
+Mosaic chart is pretty much the same as the [basic Mekko chart](#mekko) but with one important difference: the Y-scale is ordinal and contains series names instead of numbers.
 
 This type of marimekko chart is created with {api:anychart#mosaic}mosaic(){api} constructor:
 
@@ -92,11 +92,11 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ### Stacked Mode
 
-When Mekko chart is created both its scales are put into stacked mode: Y scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X scale to value stacking mode.
+When Mekko chart is created, both its scales are put into stacked mode: the Y-scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X-scale to value stacking mode.
 
-Changing Y scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
+Changing the Y-scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
 
-Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
+Changing the X-scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
 ### Points padding
 

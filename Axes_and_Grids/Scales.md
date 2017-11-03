@@ -24,7 +24,7 @@ Note: working with extra axes is explained in details in [Additional Axes Tutori
 
 ### Linear
 
-Linear scale type is a default type for Y Scale for the most of charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within a reasonable range.
+Linear scale type is a default type of the Y-scale for the most of charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within a reasonable range.
 
 ```
 chart.yScale(anychart.scales.linear());
@@ -192,7 +192,7 @@ Here is a live sampe:
 
 {sample}AGST\_Scales\_12{sample}
 
-The same can be done with X Scales if needed:
+The same can be done with X-scales if needed:
 
 ```
 // sync minimums and maximums of the scales

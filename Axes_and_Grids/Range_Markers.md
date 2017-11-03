@@ -3,11 +3,11 @@
 
 ## Overview
 
-Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis, both x axis, y axis and additional axis. You can add text markers to any place of a chart. You can also place [Text Markers](../Axes_and_Grids/Text_Markers) to show Text and [Line Markers](../Axes_and_Grids/Line_Markers) to show Lines.
+Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis: the X- and Y-axes as well as additional axes. You can add text markers to any place of a chart. You can also place [Text Markers](../Axes_and_Grids/Text_Markers) to show Text and [Line Markers](../Axes_and_Grids/Line_Markers) to show Lines.
 
 ## Declare
 
-To add range marker you need to use {api:anychart.core.axisMarkers.Range}rangeMarker(){api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Range#axis}axis(){api} method. The basic range marker's properties can be set using {api:anychart.core.axisMarkers.Range#from}from(){api}, {api:anychart.core.axisMarkers.Range#to}to(){api} and {api:anychart.core.axisMarkers.Range#fill}fill(){api} methods.
+To add range marker you need to use {api:anychart.core.axisMarkers.Range}rangeMarker(){api} method. By default this method creates a marker on a primary Y-axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Range#axis}axis(){api} method. The basic range marker's properties can be set using {api:anychart.core.axisMarkers.Range#from}from(){api}, {api:anychart.core.axisMarkers.Range#to}to(){api} and {api:anychart.core.axisMarkers.Range#fill}fill(){api} methods.
 
 ```
 // y axis getter
@@ -37,7 +37,7 @@ In some cases you may need to customize your marker's emplacement. The {api:anyc
 
 Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.core.axisMarkers.Range#scale}scale(){api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.core.axisMarkers.Range#layout}layout(){api} method.  
   
-**Note**: if you define neither {api:anychart.core.axisMarkers.Range#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary y axis.
+**Note**: if you define neither {api:anychart.core.axisMarkers.Range#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary Y-axis.
 
 
 ```

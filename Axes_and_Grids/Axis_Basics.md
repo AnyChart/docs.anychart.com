@@ -10,14 +10,14 @@ In AnyChart axes are used to control grids, axes labels, lines and tick marks, a
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
 * To learn more about Date/Time Scale - [Date/Time Axes](Date_Time_Axes)
 
-In this section we will demonstrate most of the axes visualization options, which are the same for Y and X axes.
+In this section we will demonstrate most of the axes visualization options, which are the same for the Y- and X-axes.
 
 ## Declaration
 
 If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}Axis{api} methods:
 
 ```
-chart.xAxis().title('Sample X axis name');
+chart.xAxis().title('Sample X-Axis Name');
 ```
 
 ## Title
@@ -30,10 +30,10 @@ yTitle.enabled(true);
 yTitle.text("Units");
 yTitle.align("bottom");
 
-chart.xAxis().title("Sample X axis name");
+chart.xAxis().title("Sample X-Axis Name");
 ```
 
-As you can see, we've set titles both to X and Y axis.
+As you can see, we've set titles both to the X- and Y-axes.
 
 {sample}AGST\_Axes\_Basic\_01{sample}
 

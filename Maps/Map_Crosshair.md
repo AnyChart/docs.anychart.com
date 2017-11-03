@@ -55,6 +55,6 @@ yLabel.format(function() {
 });
 ```
 
-Here is the sample with customized both x and y crosshair labels.
+Here is the sample with both X- and Y-crosshair labels customized.
 
 {sample}Maps\_Crosshair\_04{sample}

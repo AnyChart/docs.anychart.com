@@ -59,7 +59,7 @@ Visit [Supported series](Series/Supported_Series) article to know more about ser
 
 ### Scroller Axis
 
-Stock scroller has an extra X axis inside, it can be disabled or configured using the {api:anychart.core.stock.Scroller#xAxis}xAxis(){api} method:
+Stock scroller has an extra X-axis inside, it can be disabled or configured using the {api:anychart.core.stock.Scroller#xAxis}xAxis(){api} method:
 
 ```
 // disable the scroller axis

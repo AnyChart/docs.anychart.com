@@ -162,11 +162,11 @@ chart1.type('wl');
 
 Note that there's no difference for a WinLoss chart how big the value is - only sign of the value means.
 
-##Axes
+## Axes
 
 Axes in Sparklines are invisible, but still you can control the scales as you can do it with other chart types. You can invert any scale, change its orientation, change the scale type or define the minimum and the maximum values on a scale. For more information about scales look up the [Scales tutorial](../Axes_and_Grids/Scales). 
 
-Let's change the Y scale type to logarithmic and define the min and the max values for one chart and show the sparkline with the default scale below to make the  difference between the plain and the tuned charts clear:
+Let's change the Y-scale type to logarithmic and define the min and the max values for one chart and show the sparkline with the default scale below to make the  difference between the plain and the tuned charts clear:
 
 ```
 //change scales
@@ -177,7 +177,7 @@ chart1.yScale().minimum('79').maximum('10445');
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_06{sample}
  
 
-##Missing Points
+## Missing Points
 
 Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
 
@@ -196,11 +196,11 @@ In this sample you can see how it looks with a missing point and compare with a 
 
 {sample :width 688 :height 200}BCT\_Sparkline\_Chart\_07{sample}
 
-##Visualisation
+## Visualisation
 
 Here you will find some information about main parts of the sparkline chart style and see the demonstration of style applying.
 
-###Point width
+### Point width
 
 For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
 
@@ -216,7 +216,7 @@ This feature can be applied to Column and WinLoss Sparklines. Let's adjust colum
 
 See also: [Point Size](../Common_Settings/Point_Size).
 
-##Labels
+## Labels
 
 In this section we will explain how to add and configure data labels. 
 
@@ -238,9 +238,9 @@ That's how it looks when we adjust the previous code for our sample:
 
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_10{sample}
 
-##Axes Markers
+## Axes Markers
 
-###Range Marker
+### Range Marker
 
 Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Range}rangeMarker(){api} method.
 
@@ -257,7 +257,7 @@ This is an example where we use the data about the Ebay seller. Let's define +25
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_11{sample}
 
 
-###Line Marker
+### Line Marker
 
 Line Marker is similar to Range Marker, but there's no area to be shown with Line Markers - only single lines, which can represent some limits. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Line}lineMarker(){api} method.
 
@@ -274,7 +274,7 @@ That's how it all looks in the example:
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_12{sample}                                   
  
 
-##Colorizing elements
+## Colorizing elements
 
 AnyChart charting framework uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
@@ -296,7 +296,7 @@ chart3.minFill('red');
 chart4.negativeFill('darkred');
 ```
 
-###Special points 
+### Special points 
 
 Actually, the main purpose of colorizing Sparklines is to put your customers' attention to some facts, using charts of the same type. You can emphasize the special points - this will make the comparison much easier.
 
@@ -398,7 +398,7 @@ chart2.minLabels().enabled(true);
 
 Note that the min and the max values are counted by themselves.
 
-###Any point
+### Any point
 
 It's also possible to emphasize any other point besides the special ones. To colorize any normal point, define the color for this point while setting the data:
 
@@ -410,7 +410,7 @@ chart2.data([20, 30, -10, 20, {value:'-25', fill:'green'}, -5, -30, 50]);
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_20{sample}
 
-###HatchFill
+### HatchFill
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Graphics/Hatch_Fill_Settings).
 Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}negativeFill(){api}, {api:anychart.charts.Sparkline#negativeHatchFill}negativeHatchFill{api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in light grey color.
@@ -437,7 +437,7 @@ chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20
 
 To learn more about hatch fills visit the [Hatch Tutorial](../Graphics/Hatch_Fill_Settings) page.
 
-##Layout
+## Layout
 
 Sparklines are designed to fit a lot of them in tiny space. We can do it through the stage using bounds (as done with the samples above):
 

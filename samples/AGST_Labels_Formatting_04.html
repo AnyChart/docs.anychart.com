@@ -29,7 +29,7 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  // set function to format y axis labels
+  // set function to format the y-axis labels
   var yLabels = chart.yAxis(0).labels();
   yLabels.format("${%Value}{groupsSeparator: }");
   // set y axis title
@@ -53,7 +53,7 @@
   var xAxis = chart.xAxis();
   xAxis.title("Month");
 
-  // limits length of x axis labels to 3 or less
+  // limits length of the x-axis labels to 3 or less
   chart.xAxis().labels().format(function(){
     var value = this.value;
     value = value.substr(0, 3);

@@ -99,7 +99,7 @@ var dateScale = anychart.scales.dateTime();
 dateScale.ticks().interval(1);
 dateScale.minorTicks().interval(0, 2);
 
-// set the date/time as the X-scale
+// set the date/time as the x-scale
 chart.xScale(dateScale);
 ```
 
@@ -111,7 +111,7 @@ In AnyChart, you can create charts with error bars (see [Error Chart](../Error_C
 
 Error bars are created with the {api:anychart.core.scatter.series.Base#error}error(){api} method.
 
-**Note:** The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes. Also, lower/upper and right/left errors can be different.
+**Note:** The key feature of error bars on scatter charts is that errors can be set both along the X- and Y-axes. Also, lower/upper and right/left errors can be different.
 
 Here are the methods configuring error bars along the Y-axis:
 
@@ -127,7 +127,7 @@ And these methods configure error bars along the X-axis:
 
 **Note:** The {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}, {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}, {api:anychart.core.utils.Error#xLowerError}xLowerError(){api}, and {api:anychart.core.utils.Error#xUpperError}xUpperError(){api} methods have priority over {api:anychart.core.utils.Error#valueError}valueError(){api} and {api:anychart.core.utils.Error#xError}xError(){api}.
 
-In the sample below, there is a Scatter Marker chart with X and Y error bars:
+In the sample below, there is a Scatter Marker chart with X- and Y-error bars:
 
 ```
 // create and configure error bars

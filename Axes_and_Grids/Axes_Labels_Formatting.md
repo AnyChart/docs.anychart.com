@@ -15,7 +15,7 @@ var labels = chart.xAxis().labels();
 labels.enabled(false);
 ```
 
-A line chart with labels enabled for both Y-Axes and disabled for X-Axis is shown in the sample below.
+A line chart with labels enabled for both Y-axes and disabled for the X-axis is shown in the sample below.
 
 {sample}AGST\_Labels\_Formatting\_01{sample}
 
@@ -75,7 +75,7 @@ chart.yAxis(1).labels().format(function(){
 
 It might be necessary to format the value that corresponds to the label, e.g. do scaling or some mathematical operations using tokens, format or any other javascript functions.
   
-Here is a sample of financial chart with euro and dollar axes. Axis that represents dollar rate is set as main and the additional euro axis gets value from the dollar axis and transforms it into euro according to the exchange rate. Some separators are added to adjust X-axis labels visual appearance.
+Here is a sample of financial chart with euro and dollar axes. Axis that represents dollar rate is set as main and the additional euro axis gets value from the dollar axis and transforms it into euro according to the exchange rate. Some separators are added to adjust the X-axis labels appearance.
 
 ```
 // formats labels of additional axis
@@ -92,7 +92,7 @@ Find more about text formatting parameters in the [Text Formatters article](../C
 If the label value is too long, it's possible to limit the number of characters using standard javascript method **substr()**: 
 
 ```
-// limits length of x axis labels to 3 or less
+// limits length of the x-axis labels to 3 or less
 chart.xAxis().labels().format(function(){
   var value = this.value;
   // limit the number of symbols to 3
@@ -230,7 +230,7 @@ staggerAxis.drawLastLabel(false);
 
 ## Y-Axis Labels: Fixed Width
 
-It's possible to set fixed custom width for Y axis labels. This function may be of great use in dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X axis arguments.
+It's possible to set fixed custom width for the Y-axis labels. This function may be of great use in dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X-axis arguments.
 
 To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribute for {api:anychart.core.ui.Label}labels(){api}, which accepts positive integer values in pixels:
 
@@ -240,7 +240,7 @@ labels.width(50);
 ```
 
 Sample dashboard shows two charts with values in completely different ranges: the upper chart shows up to hundreds of 
-thousands and the one beneath shows only hundreds. As the result, the charts' Y axes aren't synced to the left:
+thousands and the one beneath shows only hundreds. As the result, the charts' Y-axes aren't synced to the left:
 
 {sample}AGST\_Labels\_Formatting\_12{sample}
 
@@ -249,7 +249,7 @@ var labels = chart.yAxis().labels();
 labels.width(70);
 ```
 
-There is the same data with Y axis label width set to 70 pixels, which results in synced left border:
+There is the same data with the Y-axis label width set to 70 pixels, which results in synced left border:
 
 {sample}AGST\_Labels\_Formatting\_13{sample}
 
@@ -257,9 +257,9 @@ Please note that width restriction can lead to wrapping the labels' content, so 
 
 ## X-Axis Labels: Fixed Width and Text Wrapping
 
-Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in X axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use standard javascript **textOverflow()** method), or set fixed width to the labels and make them wrap their content.
+Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in the X-axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use standard javascript **textOverflow()** method), or set fixed width to the labels and make them wrap their content.
 
-The following example demonstrates standard behavior of the X axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
+The following example demonstrates standard behavior of the X-axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
 
 {sample}AGST\_Labels\_Formatting\_14{sample}
 
@@ -287,7 +287,7 @@ This works as well for other plot types. The following example demonstrates the 
 As far as your labels can be unlimited in width AnyChart provides some tools to make axis labels more manageable. You can define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode(){api} of a chart's {api:anychart.core.axes.Linear}axis{api} uses **noOverlap** and **allowOverlap** parameters to control overlapping labels:
 
 ```
-// x axis getter
+// x-axis getter
 var xAxis = chart.xAxis();
 // allow labels overlapping
 xAxis.overlapMode("allowOverlap");

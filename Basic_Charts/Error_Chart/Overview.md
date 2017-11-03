@@ -85,7 +85,7 @@ var data = [
 
 ### On Scatter Charts
 
-The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes.
+The key feature of error bars on scatter charts is that errors can be set both along the X- and Y-axes.
 
 The {api:anychart.core.cartesian.series.Base#error}error(){api} method adds error bars to all points of a series and sets lower/upper and right/left bars as equal, but you can also use the methods below to fine-tune them.
 
@@ -142,7 +142,7 @@ var data = [
 
 The {api:anychart.core.utils.Error#mode}mode(){api} method allows you to change the error mode of a series (to enable or disable error bars on it). There are four possible error modes that are set by these parameters:
 
-* "both" enables both X and Y error bars
+* "both" enables both X- and Y-error bars
 * "none" disables all error bars
 * "value" shows only Y-bars
 * "x" shows only X-bars

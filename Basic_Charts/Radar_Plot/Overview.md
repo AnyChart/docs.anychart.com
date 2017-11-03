@@ -81,17 +81,17 @@ radar2.startAngle(90);
 
 In this section you can find some settings of axes and scales that are often used with radar charts. To learn about all the available settings, see [Axes and Grids](../../Axes_and_Grids).
 
-If you want to configure the stroke of the X and Y axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
+If you want to configure the stroke of the X- and Y-axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
-// configure the appearance of the Y-Axis
+// configure the appearance of the Y-axis
 chart.yAxis().stroke({
   color: "gray",
   thickness: 2,
   dash: "10 5"
 });  
 
-// configure the appearance of the X-Axis
+// configure the appearance of the X-axis
 chart.xAxis().stroke({
   color: "#00cc99",
   thickness: 4,
@@ -115,11 +115,11 @@ var logScale = anychart.scales.log();
 logScale.minimum(10);
 logScale.maximum(10000); 
 
-// set the logarithmic scale as the Y-scale
+// set the logarithmic scale as the y-scale
 chart.yScale(logScale); 
 ```
 
-The following sample shows how to configure the appearance of the X and Y axes and invert the Y-scale:
+The following sample shows how to configure the appearance of the X- and Y-axes and invert the Y-scale:
 
 {sample}BCT\_Radar\_Chart\_03{sample}
 
@@ -139,7 +139,7 @@ In the sample below, there is a radar chart with the stroke of both grids config
 Here is a polar chart with the stroke of both grids configured:
 
 ```
-// configure the stroke of the X grid
+// configure the stroke of the x-grid
 chart.xGrid().stroke({
   color: "green",
   thickness: 0.5,
@@ -160,10 +160,10 @@ chart.yGrid().stroke({
 In this sample cells of the radial and circular grids are filled with color:
 
 ```
-// color the even-odd cells of the x grid
+// color the even-odd cells of the x-grid
 radar1.xGrid().palette(["gray 0.05", "gray 0.1"]);
 
-// color the even-odd cells of the y grid 
+// color the even-odd cells of the y-grid 
 radar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 
