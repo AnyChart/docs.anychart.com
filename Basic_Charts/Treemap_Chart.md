@@ -494,31 +494,11 @@ chart.labels().adjustFontSize(true);
 
 #### All Headers
 
-By default, parent elements of the currently shown levels are visualized as headers. You can disable them or configure their text and font in the **normal** and **hover** [states](../Common_Settings/Interactivity/States) by using the {api:anychart.charts.TreeMap#normal}normal(){api} and {api:anychart.charts.TreeMap#hovered}hovered(){api} methods with {api:anychart.core.StateSettings#headers}headers(){api}.
-
-To disable or enable headers, call {api:anychart.core.StateSettings#headers}headers(){api} with `false` or `true` as parameter:
+By default, parent elements of the currently shown levels are visualized as headers. To disable or enable them, call the {api:anychart.core.StateSettings#headers}headers(){api} method with `false` or `true` as a parameter:
 
 ```
-// disable headers in the normal and hovered states
-chart.normal().headers(false);
-chart.hovered().headers(false);
-```
-
-Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should use {api:anychart.core.StateSettings#headers}headers(){api} with {api:anychart.core.ui.LabelsFactory#format}format(){api} and [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
-
-```
-// configure the text of headers in the hovered state
-chart.hovered().headers().format("{%value}");
-```
-
-To [configure the font](../Appearance_Settings/Text_Settings) of headers, combine {api:anychart.core.StateSettings#headers}headers(){api} with methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
-
-```
-// configure the font of headers
-chart.normal().headers().fontColor("#990000");
-chart.normal().headers().fontWeight('bold');
-chart.normal().headers().fontSize("14");
-chart.hovered().headers().fontColor("#000099");
+// disable headers
+chart.headers(false);
 ```
 
 You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
@@ -526,6 +506,25 @@ You can limit the maximum height of headers, which might be necessary in case yo
 ```
 //set the maximum height of headers
 chart.maxHeadersHeight("20%");
+```
+
+The text and font of headers can be configured in the **normal** and **hover** [states](../Common_Settings/Interactivity/States): combine the {api:anychart.charts.TreeMap#normal}normal(){api} and {api:anychart.charts.TreeMap#hovered}hovered(){api} methods with {api:anychart.core.StateSettings#headers}headers(){api}.
+
+Changing the default text of headers is similar to configuring [labels and tooltips](#labels_and_tooltips). You should use the {api:anychart.core.ui.LabelsFactory#format}format(){api} method with [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
+
+```
+// configure the text of headers in the hovered state
+chart.hovered().headers().format("{%value}");
+```
+
+To [configure the font](../Appearance_Settings/Text_Settings) of headers, use methods listed on {api:anychart.core.ui.LabelsFactory}anychart.core.ui.LabelsFactory{api}:
+
+```
+// configure the font of headers
+chart.normal().headers().fontColor("#990000");
+chart.normal().headers().fontWeight('bold');
+chart.normal().headers().fontSize("14");
+chart.hovered().headers().fontColor("#000099");
 ```
 
 The following sample demonstrates how to disable/enable headers; their text is customized in the hovered state, and font settings are changed in all states:
