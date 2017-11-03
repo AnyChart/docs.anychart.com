@@ -68,7 +68,7 @@ Max Eckert (-Greifendorff) in 1906.</td>
 </tr>
 <tr>
 <td>[Hammer](#hammer)</td>
-<td>Hammer projection (also known as Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
+<td>The Hammer projection (also known as the Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
 </tr>
 <tr>
 <td>[Mercator](#mercator)</td>
