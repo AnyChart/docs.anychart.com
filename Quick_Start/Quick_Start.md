@@ -3,6 +3,8 @@
 
 ## Getting Started
 
+My broken ref link [my test ref link](./Downloading_AnyChart#abracadabra)
+
 To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
 
 Create an HTML file and give it the *index.htm* name if you want to make a new web page, or open your HTML file where the chart should be.
