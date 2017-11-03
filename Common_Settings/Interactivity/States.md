@@ -1,14 +1,10 @@
 # States
 
-YO BRO
-
 ## Overview
 
 A number settings of a chart, series, or point can be configured in three states: **normal**, **hover**, and **selected**. For example, you can adjust their appearance, enable and adjust labels and markers.
 
 Here is the full list of available settings: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that many of them work only with certain types of charts or series.
-
-[<a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>]
 
 ## Chart
 
