@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.polar();
+
+  // chart title
+  chart.title().text('Inverted Y Scale');
+
+  // series type and data set
+  chart.line([
+    {x: 0, value: 0},
+    {x: 10, value: 1},
+    {x: 20, value: 2},
+    {x: 30, value: 3},
+    {x: 40, value: 4},
+    {x: 50, value: 5},
+    {x: 60, value: 6},
+    {x: 70, value: 7},
+    {x: 80, value: 8},
+    {x: 90, value: 9},
+    {x: 100, value: 10}
+  ]).tooltip().enabled(false);
+
+  chart.xScale()        // settings for x scale
+    .maximum(100)       // set maximum value of x scale
+    .ticks()            // settings for x scale ticks
+        .interval(10);  // x scale ticks interval
+
+  // set ticks interval for y scale
+  chart.yScale().inverted(true).ticks().interval(2);
+
+  // adjust content and visualisation of labels
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

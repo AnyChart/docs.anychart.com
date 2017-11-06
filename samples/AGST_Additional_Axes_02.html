@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    var chart = anychart.lineChart();
+
+    chart.title().text('Extra X and Y Axes Simple Sample');
+
+    // setting xScale settings
+    chart.xScale(anychart.scales.linear());
+    chart.xScale().minimum(-10);
+    chart.xScale().ticks().interval(10);
+    chart.xScale().minorTicks().interval(2);
+
+    // setting yScale settings
+    chart.yScale().ticks().interval(0.5);
+
+    // set yAxis settings
+    chart.yAxis().stroke('red').staggerMode(false);
+    chart.yAxis().ticks().stroke('red');
+    chart.yAxis().minorTicks().stroke('red');
+    chart.yAxis().labels().fontColor('red');
+    chart.yAxis().title().text('Amplitude').fontColor('red');
+    chart.yAxis(1).title().text('Amplitude');
+
+    // setting xAxis settings
+    chart.xAxis().stroke('red');
+    chart.xAxis().ticks().stroke('red');
+    chart.xAxis().minorTicks().stroke('red');
+    chart.xAxis().labels().fontColor('red');
+    chart.xAxis().title().text('Time msec').fontColor('red');
+    chart.xAxis(1).title().text('Time Sec');
+
+    // setting Grid settings
+    chart.grid(0).stroke('gray 0.8').layout('vertical');
+    chart.grid(1).stroke('gray 0.8').layout('horizontal');
+
+    // setting minorGrid settings
+    chart.minorGrid(0).layout('vertical')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+    chart.minorGrid(1).layout('horizontal')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+
+    // adding and adjusting extra X scale
+    var extraXScale = anychart.scales.linear();
+    extraXScale.minimum(-1000);
+    extraXScale.ticks().interval(5000);
+
+    // adding and adjusting extra X axis
+    var extraXAxis = chart.xAxis(1);
+    extraXAxis.orientation('top').staggerMode(false).scale(extraXScale);
+
+    // adding extra Y scale
+    var extraYScale = anychart.scales.linear();
+
+    // adding and adjusting extra Y axis
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale);
+
+    // setting first series of data
+    var firstSeries = anychart.data.set([
+        [0, 2],
+        [1, 0.720403074490853],
+        [2, -0.416146836547142],
+        [3, -0.791993997280356],
+        [4, -0.435762413909075],
+        [5, 0.162092677407558],
+        [6, 0.480085143325183],
+        [7, 0.335067668597024],
+        [8, -0.0582000135234454],
+        [9, -0.331320095230792],
+        [10, -0.279690509692151],
+        [11, 0.00136175322709255],
+        [12, 0.241101131066426],
+        [13, 0.241985808386719],
+        [14, 0.0341843045519584],
+        [15, -0.178750097143252],
+        [16, -0.212813217849641],
+        [17, -0.0579291238003362],
+        [18, 0.132063341648816],
+        [19, 0.188324689178413],
+        [20, 0.0741967385115258],
+        [21, -0.0952572626476988],
+        [22, -0.16666013773244],
+        [23, -0.0852532832533436],
+        [24, 0.0652583088210765],
+        [25, 0.146844861016811],
+        [26, 0.0924170460469486],
+        [27, -0.0402950081012188],
+        [28, -0.128347448841809],
+        [29, -0.0965235522179355],
+        [30, 0.019281431235948],
+        [31, 0.110877861552064],
+        [32, 0.0981439247654718],
+        [33, -0.00151734253977823],
+        [34, -0.0942855860871784],
+        [35, -0.0976964546044872],
+        [36, -0.0134698620660426],
+        [37, 0.0785040053277275],
+        [38, 0.0955073644047295],
+        [39, 0.0260139446204817],
+        [40, -0.0635179106335488]
+    ]);
+
+    // setting second series of data
+    var secondSeries = anychart.data.set([
+        [1000, 0.00100000],
+        [1500, 0.00066667],
+        [2000, 0.00050000],
+        [2500, 0.00040000],
+        [3000, 0.00033333],
+        [3500, 0.00028571],
+        [4000, 0.00025000],
+        [4500, 0.00022222],
+        [5000, 0.00020000],
+        [5500, 0.00018182],
+        [6000, 0.00016667],
+        [6500, 0.00015385],
+        [7000, 0.00014286],
+        [7500, 0.00013333],
+        [8000, 0.00012500],
+        [8500, 0.00011765],
+        [9000, 0.00011111],
+        [9500, 0.00010526],
+        [10000, 0.00010000],
+        [10500, 0.00009524],
+        [11000, 0.00009091],
+        [11500, 0.00008696],
+        [12000, 0.00008333],
+        [12500, 0.00008000],
+        [13000, 0.00007692],
+        [13500, 0.00007407],
+        [14000, 0.00007143],
+        [14500, 0.00006897],
+        [15000, 0.00006667],
+        [15500, 0.00006452],
+        [16000, 0.00006250],
+        [16500, 0.00006061],
+        [17000, 0.00005882],
+        [17500, 0.00005714],
+        [18000, 0.00005556],
+        [18500, 0.00005405],
+        [19000, 0.00005263],
+        [19500, 0.00005128],
+        [20000, 0.00005000],
+        [20500, 0.00004878],
+        [21000, 0.00004762]
+    ]);
+
+    // setting and adjusting data visualisation
+
+    var blackSeries = chart.line(secondSeries);
+    blackSeries.yScale(extraYScale).xScale(extraXScale);
+    blackSeries.markers().size(1).fill('black').stroke(null);
+    blackSeries.hoverMarkers().size(3).fill('black').stroke('black');
+    blackSeries.stroke('#000', 3);
+    blackSeries.tooltip().enabled(true).contentFormatter(function() {
+        return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+    });
+
+    var redSeries = chart.line(firstSeries);
+    redSeries.markers().size(1).fill('red').stroke(null);
+    redSeries.hoverMarkers().size(3).fill('red').stroke('red');
+    redSeries.stroke('red', 3);
+    redSeries.tooltip().content().fontColor('red');
+    redSeries.tooltip().enabled(true).contentFormatter(function() {
+        var value = this.value;
+        return '(x,y) = (' + this.x + '.00,' + value.toFixed(2) + ')';
+    });
+
+    // adding red ling to emphasize zero of extra axis
+    chart.lineMarker(1).stroke('1 red').layout('vertical').scale(extraXScale);
+
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

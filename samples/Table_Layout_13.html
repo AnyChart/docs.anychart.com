@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Table Layout 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+
+    // set stage
+    stage = anychart.graphics.create('container');
+
+    // data
+    var dataSet = anychart.data.set([
+    ['2014/10', 100, 100, 100, 100, 100, 100, 100],
+    ['2014/09', 97, 97, 97, 97, 97, 97, 97],
+    ['2014/08', 98, 98, 70, 98, 98, 98, 98],
+    ['2014/07', 98, 98, 98, 98, 98, 98, 98],
+    ['2014/06', 99, 99, 99, 99, 99, 99, 99],
+    ['2014/05', 100, 100, 100, 100, 100, 100, 100],
+    ['2014/04', 99, 99, 99, 99, 99, 99, 99],
+    ['2014/03', 98, 98, 98, 98, 98, 98, 98],
+    ['2014/02', 98, 98, 98, 98, 98, 98, 98],
+    ['2014/01', 97, 97, 97, 97, 97, 97, 97],
+    ['2013/12', 99, 99, 99, 99, 99, 99, 99],
+    ['2013/11', 100, 100, 100, 100, 100, 100, 100]
+    ]);
+
+    // map data for the each series
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+    var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
+    var seriesData_5 = dataSet.mapAs({x: [0], value: [5]});
+    var seriesData_6 = dataSet.mapAs({x: [0], value: [6]});
+    var seriesData_7 = dataSet.mapAs({x: [0], value: [7]});
+
+    // chat type
+    chart1 = anychart.lineChart();
+    chart2 = anychart.lineChart();
+    chart3 = anychart.lineChart();
+    chart4 = anychart.lineChart();
+    chart5 = anychart.lineChart();
+    chart6 = anychart.lineChart();
+    chart7 = anychart.lineChart();
+
+    series1 = chart1.line(seriesData_1).markers(null).stroke('black');
+    series2 = chart2.line(seriesData_2).markers(null).stroke('black');
+    series3 = chart3.line(seriesData_3).markers(null).stroke('black');
+    series4 = chart4.line(seriesData_4).markers(null).stroke('black');
+    series5 = chart5.line(seriesData_5).markers(null).stroke('black');
+    series6 = chart6.line(seriesData_6).markers(null).stroke('black');
+    series7 = chart7.line(seriesData_7).markers(null).stroke('black');
+
+    // title
+    chart1.title().text('Network').enabled(false);
+    chart2.title().text('ERP').enabled(false);
+    chart3.title().text('Data Warehouse').enabled(false);
+    chart4.title().text('Web Site').enabled(false);
+    chart5.title().text('Email').enabled(false);
+    chart6.title().text('HR').enabled(false);
+    chart7.title().text('Problem Tracking').enabled(false);
+
+    chart1.background().enabled(false);
+    chart2.background().enabled(false);
+    chart3.background().enabled(false);
+    chart4.background().enabled(false);
+    chart5.background().enabled(false);
+    chart6.background().enabled(false);
+    chart7.background().enabled(false);
+
+    chart1.grid().enabled(false);
+    chart2.grid().enabled(false);
+    chart3.grid().enabled(false);
+    chart4.grid().enabled(false);
+    chart5.grid().enabled(false);
+    chart6.grid().enabled(false);
+    chart7.grid().enabled(false);
+
+    chart1.grid(1).enabled(false);
+    chart2.grid(1).enabled(false);
+    chart3.grid(1).enabled(false);
+    chart4.grid(1).enabled(false);
+    chart5.grid(1).enabled(false);
+    chart6.grid(1).enabled(false);
+    chart7.grid(1).enabled(false);
+
+    chart1.minorGrid().enabled(false);
+    chart2.minorGrid().enabled(false);
+    chart3.minorGrid().enabled(false);
+    chart4.minorGrid().enabled(false);
+    chart5.minorGrid().enabled(false);
+    chart6.minorGrid().enabled(false);
+    chart7.minorGrid().enabled(false);
+
+    chart1.xAxis().enabled(false);
+    chart1.yAxis().enabled(false);
+    chart2.xAxis().enabled(false);
+    chart2.yAxis().enabled(false);
+    chart3.xAxis().enabled(false);
+    chart3.yAxis().enabled(false);
+    chart4.xAxis().enabled(false);
+    chart4.yAxis().enabled(false);
+    chart5.xAxis().enabled(false);
+    chart5.yAxis().enabled(false);
+    chart6.xAxis().enabled(false);
+    chart6.yAxis().enabled(false);
+    chart7.xAxis().enabled(false);
+    chart7.yAxis().enabled(false);
+
+
+    // create table
+    var table = anychart.ui.table();
+
+    // set table content
+    table.contents([
+        [chart1, chart1.title().text()],
+        [chart2, chart2.title().text()],
+        [chart3, chart3.title().text()],
+        [chart4, chart4.title().text()],
+        [chart5, chart5.title().text()],
+        [chart6, chart6.title().text()],
+        [chart7, chart7.title().text()]
+    ]);
+
+    var textSettings = anychart.ui.labelsFactory();
+    textSettings.vAlign('center');
+    textSettings.hAlign('left');
+    textSettings.fontSize(18);
+    textSettings.fontWeight(600);
+    table.cellTextFactory(textSettings);
+
+    customTitle = anychart.ui.title();
+    customTitle.enabled(true);
+    customTitle.orientation('top').align('left');
+    customTitle.zIndex(1);
+    customTitle.fontColor('#86cf38');
+    customTitle.fontSize(25);
+    customTitle.fontWeight(400);
+    customTitle.text('System Availability');
+    customTitle.container(stage);
+    customTitle.draw();
+
+    // get title borders and place table at the left space
+    table.bounds(customTitle.getRemainingBounds());
+
+    // adjust tables border visualisation
+    table.cellBorder('gray 0.3', 2)
+
+    // set table container and initiate draw
+    table.container(stage).draw();
+
+});
+</script>
+</body>
+</html>

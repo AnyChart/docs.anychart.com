@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAS Background 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var dataSet = anychart.data.set([
+        ["P1", 16, 20],
+        ["P2", 12, 18],
+        ["P3", 7, 14],
+        ["P4", 8, 16],
+        ["P5", 11, 19],
+        ["P6", 10, 23],
+        ["P7", 6, 17],
+        ["P8", 3, 11]
+    ]);
+
+    // map data for the each series
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+
+    // chart type
+    var chart = anychart.lineChart();
+
+    // set title
+    chart.title().text('Image Fill of Background').background().enabled(true).fill('gold');
+
+    // set chart background
+    chart.background().fill({
+        src: 'http://static.anychart.com/underwater.jpg',
+        mode: acgraph.vector.ImageFillMode.FIT_MAX
+    });
+
+    // adjust grid
+    chart.grid()
+        .stroke('gray')
+        .evenFill('white 0.6')
+        .oddFill('white 0.6')
+        .layout('horizontal');
+    chart.minorGrid(null);
+    chart.grid(1)
+        .stroke('gray')
+        .layout('vertical');
+
+
+    // set axes titles
+    chart.xAxis().title()
+        .text('Month')
+        .hAlign('center')
+        .background()
+            .enabled(true)
+            .fill('gold');
+    chart.yAxis().title()
+        .text('Sales')
+        .hAlign('center')
+        .background()
+            .enabled(true)
+            .fill('gold');
+
+    // adjust axes labels color, ticks color, stroke color
+    chart.xAxis().labels().fontColor('white').fontWeight(900);
+    chart.xAxis().stroke('white').ticks().stroke('white');
+    chart.yAxis().labels().fontColor('white').fontWeight(900);
+    chart.yAxis().stroke('white').ticks().stroke('white');
+    chart.yAxis().minorTicks(null);
+
+    // using data in series
+    chart.line(seriesData_1).name('2004');
+    chart.spline(seriesData_2).name('2005');
+
+    // draw chart
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

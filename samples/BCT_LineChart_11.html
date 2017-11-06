@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT LineChart 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var dataSet = anychart.data.set([
+        ['P1', '178', '165', '154', '143', '132'],
+        ['P2', '167', '153', '144', '133', '122']
+    ]);
+
+    // map data for each series
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+    var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
+    var seriesData_5 = dataSet.mapAs({x: [0], value: [5]});
+
+    // chart type
+    var chart = anychart.lineChart();
+
+    // title
+    chart.title().text('Visualization');
+
+    // set stroke color and markers for each series
+    chart.line(seriesData_1)
+        .stroke('#bcbd46')
+        .markers().fill('#bcbd46').stroke('#bcbd46');
+    chart.line(seriesData_2)
+        .stroke('#c7894a')
+        .markers().fill('#c7894a').stroke('#c7894a');
+    chart.line(seriesData_3)
+        .stroke('#b04a8a')
+        .markers().fill('#b04a8a').stroke('#b04a8a');
+    chart.line(seriesData_4)
+        .stroke('#5ebd9b')
+        .markers().fill('#5ebd9b').stroke('#5ebd9b');
+    chart.line(seriesData_5)
+        .stroke('#4a55c7')
+        .markers().fill('#4a55c7').stroke('#4a55c7');
+
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

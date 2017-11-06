@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT RadarChart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    ['Product A', 90],
+    ['Product B', 65],
+    ['Product C', 73],
+    ['Product D', 88],
+    ['Product E', 75],
+    ['Product F', 100]
+  ]);
+
+  // chart type
+  var chart = anychart.radar();
+
+  // chart title
+  chart.title().text('Custom Radius size');
+
+  // set chart radius
+  chart.yScale()
+    .minimum(50)        // minimum radius value
+    .maximum(120)       // maximum radius value
+    .ticks()
+      .interval(10);  // set ticks interval
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  // set data and adjust visualisation
+  chart.area(dataSet).fill('red 0.4').stroke('darkred');
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

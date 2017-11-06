@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT BarChart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+        ['Department Stores', 637166, 737166],
+        ['Discount Stores', 721630, 537166],
+        ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
+        ['Juvenile Specialty Stores', 78662, 178662],
+        ['All other outlets', 90000, 89000]
+    ]);
+
+    // remapping data
+    var Sales2003 = data.mapAs({x: [0], value: [1]});
+    var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+    // define chart type
+    var chart = anychart.barChart();
+
+    // set title
+    chart.title().text('Multi-series Bar Chart');
+
+
+    // set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+    // set data series
+    var series;
+    series = chart.bar(Sales2003);
+    series = chart.bar(Sales2004);
+
+    // draw chart
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>
