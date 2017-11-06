@@ -81,4 +81,4 @@ When you purchase a license to AnyChart 7 you receive an access to your customer
 ```
     anychart.licenseKey('YOUR-LICENSE-KEY');
 ```
-To purchase a license proceed to [Buy AnyChart](http://www.anychart.com/buy/) page.
+To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.
