@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PieDoughnutChart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+        ['Department Stores', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+
+    // set stage
+    stage = anychart.graphics.create('container');
+
+    // set title and it's position
+    var title = anychart.ui.title();
+    title.parentBounds(0, 0, "100%", "10%")
+        .text('Slices Sorting Sample')
+        .container(stage)
+        .draw();
+
+    // set position and data for the first pie
+    var pie = anychart.pieChart(data);
+    pie.title().text('No sorting');
+    pie.bounds(0, '10%', '33.3%', '50%');
+    pie.legend().enabled(false);
+    pie.background().stroke('#CCCCCC');
+    pie.labels().fontSize(9);
+    pie.container(stage);
+    pie.draw();
+
+    // set position and data for the second pie
+    var pie_asc = anychart.pieChart(data);
+    pie_asc.title().text('Ascendian');
+    // set sorting mode
+    pie_asc.sort('asc');
+    pie_asc.bounds('33.3%', '10%', '33.3%', '50%');
+    pie_asc.legend().enabled(false);
+    pie_asc.background().stroke('#CCCCCC');
+    pie_asc.labels().fontSize(9);
+    pie_asc.container(stage);
+    pie_asc.draw();
+
+    // set position and data for the third pie
+    var pie_desc = anychart.pieChart(data);
+    pie_desc.title().text('Descending');
+    // set sorting mode
+    pie_desc.sort('desc');
+    pie_desc.bounds('66.6%', '10%', '33.3%', '50%');
+    pie_desc.legend().enabled(false);
+    pie_desc.background().stroke('#CCCCCC');
+    pie_desc.labels().fontSize(9);
+    pie_desc.container(stage);
+    pie_desc.draw();
+});
+</script>
+</body>
+</html>

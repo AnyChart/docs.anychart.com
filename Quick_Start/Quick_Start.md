@@ -1,7 +1,6 @@
 {:index 1}
-Quick Start
-===========
-  
+# Quick Start
+
 ## 3 simple steps to start using AnyChart
 ###1. Include AnyChart into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
@@ -71,12 +70,12 @@ You can copy this to a file on your computer and open it in your browser to disp
   
 ## Further Steps
 ### Learn more
-* Explore [JavaScript API Reference](http://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)
+* Explore [JavaScript API Reference](https://api.anychart.com/)
+* See [Playground demos](https://playground.anychart.com/)
 
 ### Subscribe
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
+* Read the [blog](https://www.anychart.com/blog/)
 
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Range Area-SplineArea Charts 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // chart type
+    var chart = anychart.areaChart();
+
+    // chart title
+    chart.title().text('Range Spline Area Chart');
+
+    // set axes title
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
+
+    // set data and define chart type
+    chart.rangeSplineArea([
+        {x: "A", low:0, high: 100},
+        {x: "B", low:100, high: 200},
+        {x: "C", low:60, high: 200},
+        {x: "D", low:0, high: 60}
+    ]).markers().enabled(true);
+
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

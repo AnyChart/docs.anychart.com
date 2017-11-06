@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  stage = acgraph.create('container');
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    [0, 80],
+    [3, 0],
+    [6, 80],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
+    [3, 80],
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
+  ]);
+
+  // chart type
+  var chart = anychart.polar();
+
+  // chart title
+  chart.title().text('Polar Chart Plot Background Sample');
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  // set ticks interval for y scale
+  chart.xScale().maximum(24).ticks().interval(4);
+
+  // adjust content and visualisation of labels
+  chart.xAxis()
+    .labels()
+    .fontWeight(900)
+    .textFormatter(
+      function(){
+        return this.value + '.00';
+      });
+
+  // set background color
+  chart.background().enabled(true).fill('white');
+
+  // fill set
+  var fillSettings = {
+    keys: ['.35 white', '.9 gray'],
+    angle: -135,
+    mode: chart.bounds()
+  };
+
+  // apply fill set
+  chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
+  chart.grid(1).oddFill(null).evenFill(null).stroke('black');
+
+  // set data
+  var series = chart.line(dataSet).tooltip().enabled(false);
+  
+  // draw chart
+  chart.container(stage).draw();
+});
+</script>
+</body>
+</html>

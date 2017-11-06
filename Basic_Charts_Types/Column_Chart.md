@@ -1,32 +1,10 @@
 # Column Chart
 
-* [Overview](#overview)
-* [Chart](#chart)
-  * [Single Series](#single_series)
-  * [Multi-series](#multi-series)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
-* [Padding](#padding)
-* [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
-* [Hatch Fills](#hatch_fills)
-
 ## Overview
 
-A column chart, also known as a bar chart, is a chart with rectangular bars of lengths usually proportional to the 
-magnitudes or frequencies of what they represent. The bars can be horizontally or vertically oriented. The column chart 
-is vertically oriented bars. If you want to build horizontally oriented bar charts, please go to: [Bar Chart](Bar_Chart)
- section.
-  
-  
-Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In 
-column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
+A column chart, also known as a bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. The bars can be horizontally or vertically oriented. The column chart is vertically oriented bars. If you want to build horizontally oriented bar charts, please go to: [Bar Chart](Bar_Chart) section.
+
+Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
 
 ## Chart
 
@@ -39,10 +17,10 @@ quarter:
 
 <table width="260px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
 <tr>
-<th width="170px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
+<th width="170px" style="background: url('https://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
 Name
 </th>
-<th width="90px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
+<th width="90px" style="background: url('https://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
 Sales
 </th>
 </tr>
@@ -243,7 +221,7 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts), on 
 the picture below you can see what are these paddings:
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![](https://anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** parameters in 
 **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For 
@@ -270,7 +248,7 @@ using certain styles. Style can be applied to all column charts or single column
 On the image below you can see what **Chart** can be decorated with: fill (including solid color fill, hatch fill, 
 image fill and gradient fill), border and effects applied to whole column.
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
+![](https://anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
 Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user 
 moves cursor over an element.
@@ -306,18 +284,11 @@ Now we will take a sample single series chart described above and apply it to al
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips.<!--  Full explanation of formatting 
-and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->
-  
-  
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and 
-**.tooltip()** methods of **series**. You can tune their visual appearance, positioning and format. Let's do 
-that in the following example: we will make data labels appear in the center of the columns, format labels so they show 
-only the value corresponding to the column and tooltip will show detailed description.
-  
-  
-When formatting data labels text we will use adjusted **.textFormatter()** to show Y Axis value. Otherwise label 
-displays  X Axis value.
+In this section we will explain how to add and configure data labels and tooltips.
+
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods of **series**. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear in the center of the columns, format labels so they show only the value corresponding to the column and tooltip will show detailed description.
+
+When formatting data labels text we will use adjusted **.textFormatter()** to show Y Axis value. Otherwise label displays  X Axis value.
 
 {sample}BCT\_ColumnChart\_08{sample}
 
@@ -325,11 +296,8 @@ displays  X Axis value.
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
 AnyChart allows to add markers to any data element including columns.
-  
-  
-In the sample below we will take single-series data described above and mark the highest column in series with a "Star5"
- of the "Gold" color.
-  
+
+In the sample below we will take single-series data described above and mark the highest column in series with a "Star5" of the "Gold" color.
   
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in 
 normal state, and make it bigger (12 pixels) when user moves cursor over an element.
@@ -361,24 +329,14 @@ As you see it is very easy to do by setting **".fill()"** method for a **point**
 {sample}BCT\_ColumnChart\_11{sample}
 
  **Important Note:**
-AnyChart seriously takes care of visualization and users convenience - that is why we have a number of ways to set 
-colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will 
-be the same. Depending on your system/site/application design you may need - and use - any of this color setting 
-methods. But even this it is not all about colors in AnyChart. Read more about setting colors below and in the 
-following Help Sections:
+AnyChart seriously takes care of visualization and users convenience - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting 
+methods. But even this it is not all about colors in AnyChart. Read more about setting colors below and in the following Help Sections:
   * [Color management](../Appearance_Settings/Color_Management)
 
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard 
-to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart 
-has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who 
-are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To
- see the whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
-  
-  
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
-chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchType()** parameter for series.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To see the whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
+
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **.hatchType()** parameter for series.
 
 {sample}BCT\_ColumnChart\_12{sample}

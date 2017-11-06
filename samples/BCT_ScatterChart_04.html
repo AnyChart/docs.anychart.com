@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT ScatterChart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.3.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.3.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.scatterChart();
+
+  // chart title
+  chart.title().text('Sample Scatter Line and Spline Chart');
+
+  // Horizontal grid settings
+  chart.grid(0)
+    .oddFill('#F9F9F9')
+    .evenFill('#FFFFFF')
+    .layout(anychart.enums.Layout.HORIZONTAL);
+
+  // Horizontal minor grid settings
+  chart.minorGrid(0)
+    .evenFill('none')
+    .oddFill('none')
+    .stroke('black 0.1')
+    .layout(anychart.enums.Layout.HORIZONTAL);
+
+  // Vertical grid settings
+  chart.grid(1)
+    .evenFill('none')
+    .oddFill('none')
+    .layout(anychart.enums.Layout.VERTICAL);
+
+  // Vertical minor grid settings
+  chart.minorGrid(1)
+    .evenFill('none')
+    .oddFill('none')
+    .stroke('black 0.1')
+    .layout(anychart.enums.Layout.VERTICAL);
+
+
+  // adjust position of axes
+  chart.xAxis().orientation('top');
+  chart.yAxis().orientation('right');
+
+  // data for top line series
+  chart.line([
+    [-2, 4],
+    [-1, 1],
+    [0, 0],
+    [1, 1],
+    [2, 4]
+  ]);
+
+  // data for bottom line series
+  chart.line([
+    [-2, -4],
+    [-1, -1],
+    [0, 0],
+    [1, -1],
+    [2, -4]
+  ]);
+
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>
