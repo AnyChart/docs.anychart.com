@@ -198,7 +198,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 The special thing about bar charts are the paddings between bars and bar groups (in multi-series charts), on the picture below you can see what are these paddings:
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
+![](https://anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
 
 If you want to set these paddings you need to set **PointPosition** in **bar_series**. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars **xPointPosition** to 0.
 
@@ -215,7 +215,7 @@ The main idea of styles is to segregate visualization and data definition. Visua
 
 On the image below you can see what bar_style consists of: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole bar.
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
+![](https://anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc.
 

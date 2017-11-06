@@ -4,9 +4,9 @@ Downloading AnyChart
   
 ###Downloading
 Latest AnyChart 7.x files can be downloaded from these locations. To download these files, right-click the links below and select "Save as..." from the context menu.
-* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.1.0) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.1.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.1.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - anychart.min.js <span style="color:#898989;">(145Kb gzip)</span>
+* Development edition - anychart.dev.min.js <span style="color:#898989;">(147Kb gzip)</span> 
+* Binaries package - anychart.zip <span style="color:#898989;">(360Kb)</span>  
 
 
 ###Using AnyChart with a CDN
@@ -15,9 +15,7 @@ Latest AnyChart 7.x files can be downloaded from these locations. To download th
  
 To use AnyChart CDN, simply reference the file directly from http://cdn.anychart.com/ in the script tag:
 ```
-    <script>
-        <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
-    </script>
+<script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
 ```
 
 ### Differences between production and developers editions
@@ -32,7 +30,7 @@ Binaries package contains all resources you may need to work with AnyChary:
 * _index.html_ - binaries package index.
 
 ### Past Releases
-Past versions of AnyChart 7.x can be found and downloaded from <a href="http://cdn.anychart.com/" target="_blank">AnyChart CDN</a>.
+Past versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a>.
 
 
 

@@ -227,7 +227,7 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts), on the picture below you can see what are these paddings:
 
-![Column Chart Padding | AnyChart](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![Column Chart Padding | AnyChart](https://anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** attributes in **.chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column width. If you want to have no padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
 
@@ -244,7 +244,7 @@ The main idea of styles is to segregate visualization and data definition. Visua
 
 On the image below you can see what **Chart** can be decorated with: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole column.
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
+![](https://anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
 Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user moves cursor over an element.
 
