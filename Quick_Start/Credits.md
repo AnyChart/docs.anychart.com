@@ -11,7 +11,7 @@
 
 ## Overview
 
-Credits is a watermark in the bottom right corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. By default credits are placed at the bottom right corner of any chart. Any part of credits can be customized if you have a license. You can purchase a license at [AnyChart Website](http://www.anychart.com/buy/)
+Credits is a watermark in the bottom right corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. By default credits are placed at the bottom right corner of any chart. Any part of credits can be customized if you have a license. You can purchase a license at [AnyChart Website](https://www.anychart.com/buy/)
 
 ### Text
 
@@ -33,10 +33,11 @@ Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** 
 
 ### URL
 
-Credits act as a link. By default it is linked to [AnyChart Site](http://www.anychart.com/). You can change it this using **.url()** method.
+Credits act as a link. By default it is linked to [AnyChart Site](http-links	
+https://www.anychart.com/). You can change it this using **.url()** method.
 
 ```
-    chart.credits().url('http://www.anychart.com/buy/');
+    chart.credits().url('https://www.anychart.com/buy/');
 ```
 {sample}Credits\_03{sample}
 
@@ -81,4 +82,4 @@ When you purchase a license to AnyChart 7 you receive an access to your customer
 ```
     anychart.licenseKey('YOUR-LICENSE-KEY');
 ```
-To purchase a license proceed to [Buy AnyChart](http://www.anychart.com/buy/) page.
+To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.
