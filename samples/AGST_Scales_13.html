@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Scales 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //set stage
+    stage = acgraph.create('container');
+
+    //custom scale
+    var customScale = anychart.scales.linear();
+    customScale.minimum(8000).maximum(20000).ticks().interval(1000);
+
+    //set position and data for the first chart
+    var Series_2003 = anychart.columnChart([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]);
+    Series_2003.bounds(0, 0, '50%', '100%');
+    Series_2003.title().enabled(false);
+
+    //set custom scale as y scale for the chart
+    Series_2003.yScale(customScale);
+
+    //adjust axes settings
+    Series_2003.yAxis().orientation('right').title().enabled(false);
+    Series_2003.xAxis().title().text('Year 2003');
+
+    //set stage
+    Series_2003.container(stage);
+
+    //draw chart
+    Series_2003.draw();
+
+
+    //set position and data for the second chart
+    var Series_2004 = anychart.columnChart([
+        ['John' ,  12000],
+        ['Jake' ,  15000],
+        ['Peter' ,  16000],
+        ['James' ,  13000],
+        ['Mary' ,  19000]
+        ]);
+    Series_2004.title().enabled(false);
+    Series_2004.bounds('50%', 0, '50%', '100%');
+
+    //set custom scale as y scale for the chart
+    Series_2004.yScale(customScale);
+
+    //adjust axes settings
+    Series_2004.yAxis().title().text('Sales');
+    Series_2004.xAxis().title().text('Year 2004');
+
+    //set container
+    Series_2004.container(stage);
+
+    //draw chart
+    Series_2004.draw();
+});
+</script>
+</body>
+</html>

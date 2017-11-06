@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT OHLC Chart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.1.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.1.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    //data
+    var data = [
+        {x: '28-Aug-07', open: 511.53, high: 514.98, low: 505.79, close: 506.40},
+        {x: '29-Aug-07', open: 507.84, high: 513.30, low: 507.23, close: 512.88},
+        {x: '30-Aug-07', open: 512.36, high: 515.40, low: 510.58, close: 511.40, fallingFill: 'Rgb(77,180,77)'},
+        {x: '31-Aug-07', open: 513.10, high: 516.50, low: 511.47, close: 515.25},
+        {x: '4-Sep-07', open: 515.02, high: 528.00, low: 514.62, close: 525.15, risingFill: 'Rgb(180,77,77)'}
+    ];
+
+    //chart type
+    var chart = anychart.financialChart();
+
+    //chart title
+    chart.title().text('Minimum and Maximum Colors');
+
+    //set axes title
+    chart.xAxis().title().text('Day');
+    chart.yAxis().title().text('Price');
+
+    //adjust x scale type
+    chart.xScale(anychart.scales.ordinal());
+
+    //set color and data
+    chart.ohlc(data).color('#C6D1A5');
+
+    //draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>
