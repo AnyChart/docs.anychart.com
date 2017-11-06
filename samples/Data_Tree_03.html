@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Data Tree 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data tree
+  var tree = anychart.data.tree([
+    {'name': 'Node 1',      'id': '1'},
+    {'name': 'Parent Node', 'id': '2'},
+    {'name': 'Child Node 1', parent: 2, 'id': '3'},
+    {'name': 'Child Node 2', parent: 2, 'id': '4', meta: 'MyMeta'},
+    {'name': 'Node 2', id: '5'}
+  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  // create stage
+  stage = anychart.graphics.create('container');
+
+  // create Data Grid
+  treeDataGrid = anychart.ui.dataGrid();
+
+  // set Data Tree
+  treeDataGrid.data(tree).titleHeight(20);
+
+  // create button for Parent node
+  treeDataGrid.listen('signal', treeDataGrid.draw, false, treeDataGrid);
+
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+
+  // create new button
+  var triggerButton = document.createElement('div');
+
+  // set button style
+  triggerButton.style.top = '5px';
+  triggerButton.style.right = '5px';
+  triggerButton.style.width = 'auto';
+  triggerButton.style.height = 'auto';
+  triggerButton.style.backgroundColor = '#444444';
+  triggerButton.style.color = 'white';
+  triggerButton.style.position = 'absolute';
+  triggerButton.style.zIndex = 2;
+  triggerButton.style.transition = '0.5s';
+  triggerButton.style.textAlign = 'center';
+  triggerButton.style.border = '3px solid #444444';
+  triggerButton.style.borderRadius = '7px 7px 7px 7px';
+  triggerButton.style.fontSize = '18px';
+  triggerButton.style.cursor = 'pointer';
+  triggerButton.innerHTML = 'Add Data';
+  triggerButton.onclick = function() {
+    addPoint();
+  };
+
+  // append button to container
+  container.appendChild(triggerButton);
+
+  // draw chart
+  treeDataGrid
+  .container(stage)
+  .top(triggerButton.offsetHeight + 7).width('100%').draw();
+  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
+
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, "100%", 30)
+    .text('Click on button to add Data into Data Tree')
+    .container(stage)
+    .draw();
+
+  // data to add
+  var newData = [
+    {name: 'new Node 1', id: '6'},
+    {name: 'new Parent Node', id: '7'},
+    {name: 'new Node 3', id: '8'},
+    {name: 'new Child Node', parent: 7, id: '9'}
+  ];
+
+  function fullChildrenHeight () {
+    var height = 0;
+    var traverser = tree.getTraverser();
+    traverser.reset();
+    while(traverser.advance()){
+
+      // get an item
+      var currentItem = traverser.current();
+
+      // get height of the item
+      var currentHeight = currentItem.get(anychart.enums.GanttDataFields.ROW_HEIGHT);
+
+      // if item height is undefined
+      if (currentHeight !== void 0){
+        height += (currentHeight + 1);
+      } else {
+        // if height of current item is undefined, default height is 20px + 1px row space
+        height +=21;
+      }
+    }
+    return height;
+  }
+
+  function addPoint(){
+    // add data
+    tree.addData(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+    // remove button
+    container.removeChild(triggerButton);
+    // resize container
+    treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
+  }
+});
+
+// style setter
+function labelTextSettingsOverrider(label, dataItem) {
+  if (!dataItem.getParent()) {
+    label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+  } else {
+    if (dataItem.numChildren()) {
+      label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+    }
+  }
+}
+</script>
+</body>
+</html>

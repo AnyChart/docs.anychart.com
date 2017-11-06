@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Error Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var chart = anychart.scatter();
+
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.marker([
+    [1, 177],
+    [2, 174],
+    [3, 165],
+    [4, 159],
+    [5, 140]
+  ]);
+
+
+  series.error({
+            xLowerError: '2%',
+            xUpperError: '2%',
+            valueUpperError: 8,
+            valueLowerError: '4%',
+            mode: 'value'
+        });
+
+  series.size(4).hoverSize(5);
+
+  chart.yScale().minimum(50);
+  chart.xScale().maximum(6);
+
+  chart.title('Scatter Marker Chart With Error Bars');
+  chart.xAxis().title('Hours After Treatment');
+  chart.yAxis().title('Mean Blood Pressure');
+
+  //initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

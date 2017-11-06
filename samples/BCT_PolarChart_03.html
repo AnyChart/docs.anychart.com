@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    [0, 80],
+    [3, 40],
+    [6, 80],
+    [9, 40],
+    [3, 80],
+    [6, 40],
+    [9, 80]
+  ]);
+
+  // chart type
+  var chart = anychart.polar();
+
+  // chart title
+  chart.title().text('Polar Chart Start Angle Sample');
+
+  // set start angle of the chart
+  chart.startAngle(90);
+
+  // set data and adjust visualisation
+  var series = chart.line(dataSet);
+
+  // disable tooltips
+  series.tooltip().enabled(false);
+
+  // x scale interval settings
+  chart.xScale().maximum(9).ticks().interval(1);
+
+  // adjust content and visualisation of labels
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+
+  // grid settings
+  chart.grid(0).evenFill(null).oddFill(null);
+  chart.grid(1).evenFill(null).oddFill(null);
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Circular 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    
+		//create data set on our data
+    dataSet = anychart.data.set([50,400]);
+    
+		//set the gauge type
+    gauge = anychart.circularGauge();
+
+		//gauge settings
+    gauge.data(dataSet);
+    gauge.padding('10%');
+    gauge.startAngle(270);
+    gauge.sweepAngle(180);
+    gauge.fill('black');
+   
+		//axis settings
+    var axis = gauge.axis()
+        .radius(95)
+        .width(0);
+
+		//scale settings
+    axis.scale()
+        .minimum(0)
+        .maximum(120)
+        .ticks({interval: 10})
+        .minorTicks({interval: 1});
+
+		//ticks settings
+    axis.ticks()
+        .type('trapezoid')
+        .fill('white')
+        .length('9');
+
+		//minor ticks settings
+    axis.minorTicks()
+        .enabled(true)
+        .fill('#999999')
+        .length('1.5');
+        
+        //labels settings
+    axis.labels()
+        .fontSize('24px')
+        .fontColor('white');
+        
+        //second axis settings
+    var axis_1 = gauge.axis(1)
+        .radius(55)
+        .fill('white')
+        .width(0);
+
+		//second scale settings
+    axis_1.scale()
+        .minimum(0)
+        .maximum(600)
+        .ticks({interval: 100})
+        .minorTicks({interval: 20});
+        
+		//second ticks settings
+    axis_1.ticks()
+        .type('trapezoid')
+        .fill('white')
+        .length('15');
+
+		//second minor ticks settings
+    axis_1.minorTicks()
+        .enabled(true)
+        .fill('#999999')
+        .length('5');
+        
+        //labels 2 settings
+    axis_1.labels()
+        .fontSize('18px')
+        .fontColor('white');
+        
+        //needle
+    gauge.needle(0)
+        .enabled(true)
+        .startRadius('0%')
+        .endRadius('80%')
+        .middleRadius(0)
+        .startWidth('1%')
+        .endWidth('1%')
+        .fill('white')
+        .hatchFill({type:'percent60'})
+        .stroke('none')
+        .middleWidth('1%');
+        
+        //marker
+    gauge.marker(0)
+        .axisIndex(1)
+        .dataIndex(1)
+        .fill('white')
+        .hatchFill({type:'verticalbrick'})
+        .stroke('null')
+        .size(7)
+        .type('triangledown')
+        .position('outside')
+        .radius(55);
+    
+    //bar
+    gauge.bar(0)
+        .axisIndex(1)
+        .position('i')
+        .fill('white')
+        .hatchFill({type:'verticalbrick'})
+        .stroke('null')
+        .dataIndex(1)
+        .width(3)
+        .radius(60)
+        .zIndex(10);
+        
+    //gap
+    gauge.cap()
+        .radius('3%');
+        
+    //gauge label
+    gauge.label()
+        .text('ALBANY')
+        .fontColor('white')
+        .anchor('center') //set the position of the label
+        .fontSize(45)
+        .zIndex(10);
+        
+    //range
+    gauge.range({
+      from: 0,
+      to: 120,
+      fill: {keys: ['white', '#888888', '#333333' , 'black'], angle: -90},//remove angle after resolving the ticket
+      position: 'i',
+      radius: 100,
+      endSize: '3%',
+      startSize:'3%',
+      zIndex: 10
+  });
+
+		//draw the chart
+    gauge.container('container').draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var chart = anychart.lineChart();
+
+    chart.container('container');
+
+    // setting title
+    chart.title().text('Extra Axes Simple Sample');
+
+    chart.yScale().minimum(0).maximum(800000);
+    chart.yScale().ticks().interval(100000);
+    chart.yScale().minorTicks().interval(20000);
+
+    // adding extra Y scale
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(800000).maximum(1600000);
+    extraYScale.ticks().interval(100000);
+    extraYScale.minorTicks().interval(20000);
+
+    // adding and adjust extra Y axis
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right')
+        .scale(extraYScale)
+        .title()
+            .text('Extra Y Axis');
+
+    // setting Axis title
+    chart.yAxis().title().text('Basic Y Axes');
+
+    // adjusting Grid
+    chart.grid(0).stroke('gray 0.8').layout('vertical');
+    chart.grid(1).stroke('gray 0.8').layout('horizontal');
+
+    // setting minorGrid settings
+    chart.minorGrid(0).layout('horizontal')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+    chart.minorGrid(1).layout('vertical')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+
+    // setting first series of data
+    var data = anychart.data.set([
+        ["A", 637166],
+        ["B", 721630],
+        ["C", 148662],
+        ["D", 78662],
+        ["E", 90000]
+    ]);
+
+    var columnChart = chart.column(data);
+
+    columnChart.tooltip().enabled(false);
+
+    columnChart.hoverFill('#444444');
+
+    chart.draw();
+});
+</script>
+</body>
+</html>

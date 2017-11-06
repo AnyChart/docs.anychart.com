@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT OHLC Chart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data
+  var data = [
+    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+    {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
+    {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
+    {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
+    {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
+  ];
+
+  // chart type
+  var chart = anychart.financialChart();
+
+  // set axes title
+  chart.xAxis().title().text('Day');
+  chart.yAxis().title().text('Price');
+
+  // chart title
+  chart.title().text('Open High Low Close (OHLC) Chart');
+
+  // adjust x scale type
+  chart.xScale()
+    .minimum(Date.UTC(2007, 7, 27))
+    .maximum(Date.UTC(2007, 8, 5))
+    .ticks()
+      .interval(0,0,1);
+
+  // set data and define chart type
+  var series = chart.ohlc(data);
+
+  // set x axis lables width for the better outlook
+  chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
+    var date = new Date(value['tickValue']);
+    var options = {
+      day: 'numeric',
+      month: 'short'
+    };
+    return date.toLocaleDateString('en-US', options);
+  });
+
+  // set container
+  chart.container('container');
+
+  // limit width of each point in series
+  series.pointWidth(chart.container().width()/15);
+
+  //draw chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

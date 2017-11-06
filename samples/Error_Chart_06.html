@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Error Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var chart = anychart.scatter();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.marker([
+    {'x': 192, 'y': 9, 'xUpperError': '2%', 'xLowerError': '1%'},
+    {'x': 168, 'y': 24, 'xUpperError': '3%', 'xLowerError': '3%', 'valueUpperError': '3'},
+    {'x': 154, 'y': 30, 'xError': '6'},
+    {'x': 132, 'y': 41, 'xUpperError': '3%', 'xLowerError': '3%'},
+    {'x': 114, 'y': 53, 'xUpperError': '2', 'xLowerError': '3%', 'valueLowerError': '7%'},
+    {'x': 94, 'y': 74, 'xError': '4%', 'valueError': '6%'},
+    {'x': 83, 'y': 85, 'xUpperError': '3%', 'xLowerError': '5%', 'valueUpperError': '5%', 'valueLowerError': '2%'},
+  ]);
+
+  chart.title('Market Demand Curve Without Error Bars');
+  chart.xAxis().title('Price');
+  chart.yAxis().title('Sales');
+
+  series.size(7);
+
+  series.error().mode('none');
+
+  //initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

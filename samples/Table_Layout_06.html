@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Table Layout 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // set stage
+  stage = anychart.graphics.create('container');
+
+  // create table
+  var table = anychart.ui.table();
+
+  // set table content
+  table.contents([
+    [
+      null,
+      null,
+      '2003 Sales',
+      '2004 Sales'
+    ],[
+      'Winter',
+      'January',
+      '$10000',
+      '$12000'
+    ],[
+      null,
+      'February',
+      '$12000',
+      '$15000'
+    ],[
+      'Spring',
+      'March',
+      '$18000',
+      '$16000'
+    ],[
+      null,
+      'April',
+      '$11000',
+      '$15000'
+    ],[
+      null,
+      'May',
+      '$9000',
+      '$14000'
+    ]
+  ]);
+
+  // span cells
+  table.getCell(1,0).rowSpan(2);
+  table.getCell(3,0).rowSpan(3);
+  table.getCell(0,0).colSpan(2);
+
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
+  table.colWidth(1, 70);    // Get second column and set width 70 px
+
+  //set border style
+  table.cellBorder('#B8B8B8');
+
+  table.cellTextFactory()
+    .vAlign('center')
+    .hAlign('center')
+    .fontSize(12);
+
+  // bold months and years in table
+  table.getCell(0, 2).content().fontWeight(900);
+  table.getCell(0, 3).content().fontWeight(900);
+  table.getCell(1, 1).content().fontWeight(900);
+  table.getCell(2, 1).content().fontWeight(900);
+  table.getCell(3, 1).content().fontWeight(900);
+  table.getCell(4, 1).content().fontWeight(900);
+  table.getCell(5, 1).content().fontWeight(900);
+  table.getCell(1, 0).content().fontWeight(900);
+  table.getCell(3, 0).content().fontWeight(900);
+
+  // set table container and initiate draw
+  table.container(stage).draw();
+});
+</script>
+</body>
+</html>

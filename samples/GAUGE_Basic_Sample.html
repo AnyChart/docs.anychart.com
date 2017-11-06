@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Basic Sample"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+ 
+  //create data set on our data
+  dataSetvar  = anychart.data.set([81, 34.5]);
+ 
+  // chart type
+  gaugevar  = anychart.circularGauge();
+ 
+  //set series padding
+  gauge.data(dataSet).padding('4%');
+ 
+  //set axis scale settings
+  var scalevar  = gauge.axis().scale();
+  scale.minimum(0)
+      .maximum(100)
+      .ticks()
+      .interval(10);
+ 
+  //set major axis ticks
+  var axisvar  = gauge.axis();
+  axis.ticks()
+      .fill('white')
+      .stroke('#888')
+      .type('trapezoid')
+      .length(20);
+ 
+  //set minor axis ticks
+  axis.minorTicks()
+      .enabled(true)
+      .fill('white')
+      .stroke('#ccc')
+      .type('trapezoid')
+      .length(10);
+ 
+  //set the look of the bar that presents data
+  gauge.bar(0)
+      .position('i')
+      .fill('#F0673B .9')
+      .stroke('#F0673B')
+      .radius(80);
+ 
+  // draw chart
+  gauge.container('container').draw();
+});
+</script>
+</body>
+</html>

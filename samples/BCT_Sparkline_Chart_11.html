@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Sparkline Chart 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var stage = anychart.graphics.create('container');
+  //create charts
+  chart1 = anychart.sparkline();
+
+  //set container id for the charts
+  chart1.container(stage);
+  chart1.title(true);
+  chart1.title().text('Reviews for matryoshka567');
+
+  //create data for both charts
+  chart1.data([500,-100,340,200,-90,80,-70]);
+    
+  chart1.rangeMarker()
+    .scale(chart1.yScale()) //you may change the scale
+    .from(-50)
+    .to(250)
+    .fill('green 0.1');
+    
+  //set charts dimensions and position
+  chart1.bounds(0, 0, 300, 80);
+    chart1.type('column');
+  
+  //initiate chart drawing
+  chart1.draw();
+  
+  
+});
+</script>
+</body>
+</html>

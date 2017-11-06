@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Line Marker 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+        [1990, 10000],
+        [1991, 12000],
+        [1992, 18000],
+        [1993, 11000],
+        [1994, 9000]
+    ]);
+
+    // chart type
+    var chart = anychart.lineChart();
+
+    // set data
+    chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
+        return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+    });
+
+    // disable title
+    chart.title().enabled(false);
+
+    // set y scale ticks interval
+    chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
+
+    // disable x axis title
+    chart.xAxis().title().enabled(false);
+
+    // adjust y axis labels
+    chart.yAxis().labels().textFormatter(function(){
+        return '$' + this.value/1000 + ',000';
+    });
+
+    // y scale title
+    chart.yAxis().title().text('Sales');
+
+    // set highest text marker
+    chart.textMarker()
+        .scale(chart.yScale())
+        .align('near')
+        .anchor('leftcenter')
+        .value(18000)
+        .fontColor('red')
+        .text('Maximum')
+        .offsetY(-20)
+        .offsetX(5)
+        .fontSize(17);
+
+    // set highest line marker
+    chart.lineMarker()
+        .scale(chart.yScale())
+        .layout('horizontal')
+        .stroke('2 red')
+        .value(18000);
+
+    // set text marker at the center
+    chart.textMarker(1)
+        .scale(chart.yScale())
+        .align('center')
+        .anchor('center')
+        .value(14000)
+        .offsetY(-20)
+        .fontColor('blue')
+        .text('Center')
+        .fontSize(17);
+
+    // set center line marker
+    chart.lineMarker(1)
+        .scale(chart.yScale())
+        .layout('horizontal')
+        .stroke('2 blue')
+        .value(14000);
+
+    // set lowest text marker
+    chart.textMarker(2)
+        .scale(chart.yScale())
+        .align('far')
+        .anchor('rightcenter')
+        .offsetY(-20)
+        .offsetX(5)
+        .value(9000)
+        .fontColor('green')
+        .fontWeight(400)
+        .text('Minimum')
+        .fontSize(17);
+
+    // set lowest line marker
+    chart.lineMarker(2)
+        .scale(chart.yScale())
+        .layout('horizontal')
+        .stroke('2 green')
+        .value(9000);
+
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

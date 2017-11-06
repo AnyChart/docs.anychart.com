@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Table Layout 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // set stage
+  stage = anychart.graphics.create('container');
+
+  // create table
+  var table = anychart.ui.table();
+
+  // set table content
+  table.contents([
+    [
+      null,
+      '2003 Sales',
+      '2004 Sales'
+    ],[
+      'January',
+      '$10000',
+      '$12000'
+    ],[
+      'February',
+      '$12000',
+      '$15000'
+    ],[
+      'March',
+      '$18000',
+      '$16000'
+    ],[
+      'April',
+      '$11000',
+      '$15000'
+    ],
+    [
+      'May',
+      '$9000',
+      '14000'
+    ]
+  ]);
+
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
+
+  // set table background color
+  table.cellFill('#FFFFE0');
+
+  // set style for table borders
+  table.cellBorder(
+    'gray',     // Border color
+    2,          // Border thickness
+    '5 2'       // Dash and gap length
+  );
+
+  // adjust border of the cell from the second column and second row
+  table.getCell(1,1).border({
+    keys: ['red'],  // Set color
+    thickness: 3    // Set border thickness
+  });
+
+  // adjust border of the cell from second column and fourth row
+  table.getCell(3, 1).border({
+    keys: ['red'],  // Set leaner color
+    thickness: 3    // Set thickness
+  });
+
+  // position text in the center of each cell
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
+  // set table container and initiate draw
+  table.container(stage).draw();
+});
+</script>
+</body>
+</html>

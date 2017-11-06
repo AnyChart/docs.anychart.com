@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Scales 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // setting data
+    var data = anychart.data.set([
+        ['P1', 16, 20],
+        ['P2', 12, 18],
+        ['P3', 9, 14]
+    ]);
+
+    // remapping data
+    var Sales2003 = data.mapAs({x: [0], value: [1]});
+    var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+    var chart = anychart.columnChart();
+
+    var series;
+    series = chart.column(Sales2003);
+    series = chart.column(Sales2004);
+
+    // adjusting major and minor grids
+    chart.grid(0).stroke('black').layout('vertical');
+    chart.grid(1).stroke('black').layout('horizontal');
+    chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+
+    // setting major ticks interval on y scale
+    chart.yScale().ticks().interval(2);
+
+    // set scale minimum
+    chart.yScale().minimum(0);
+
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

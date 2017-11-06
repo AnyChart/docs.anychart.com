@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GS E stroke dashed"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    stage = anychart.graphics.create('container');
+
+    anychart.ui.background()
+        .fill('none')
+        .stroke('orange', 5, '5 5')
+        .bounds(anychart.math.rect(22, 2*stage.height() / 3 - 20, stage.width() - 44, stage.height() / 3 - 22))
+        .container(stage)
+        .draw();
+
+    var step = 30;
+    stage.path()
+        .moveTo(20, 20)
+        .lineTo(20 + step, 20)
+        .moveTo(20 + 2 * step, 20)
+        .lineTo(20 + 3 * step, 20)
+        .moveTo(20 + 4 * step, 20)
+        .lineTo(20 + 5 * step, 20)
+        .moveTo(20 + 6 * step, 20)
+        .lineTo(20 + 7 * step, 20)
+        .moveTo(20 + 8 * step, 20)
+        .lineTo(20 + 9 * step, 20)
+        .moveTo(20 + 10 * step, 20)
+        .lineTo(20 + 11 * step, 20)
+        .moveTo(20 + 12 * step, 20)
+        .lineTo(20 + 13 * step, 20)
+        .moveTo(20, 80)
+        .lineTo(20 + step, 80)
+        .moveTo(20 + 2 * step, 80)
+        .lineTo(20 + 4 * step, 80)
+        .moveTo(20 + 5 * step, 80)
+        .lineTo(20 + 6 * step, 80)
+        .moveTo(20 + 8 * step, 80)
+        .lineTo(20 + 9 * step, 80)
+        .moveTo(20 + 10 * step, 80)
+        .lineTo(20 + 12 * step, 80)
+        .stroke('15 orange');
+    stage.text(20 + step / 2 - 5, 30, '5');
+    stage.text(20 + 3 * step / 2 - 5, 30, '5');
+    stage.text(20 + 5 * step / 2 - 5, 30, '5');
+    stage.text(20 + 7 * step / 2 - 5, 30, '5');
+    stage.text(20 + 9 * step / 2 - 5, 30, '...');
+    stage.text(20 + step / 2 - 5, 55, '5');
+    stage.text(20 + 3 * step / 2 - 5, 55, '5');
+    stage.text(20 + 6 * step / 2 - 5, 55, '10');
+    stage.text(20 + 9 * step / 2 - 5, 55, '5');
+    stage.text(20 + 11 * step / 2 - 5, 55, '5');
+    stage.text(20 + 14 * step / 2 - 5, 55, '10');
+    stage.text(20 + 17 * step / 2 - 5, 55, '5');
+    stage.text(20 + 19 * step / 2 - 5, 55, '...');
+
+});
+</script>
+</body>
+</html>

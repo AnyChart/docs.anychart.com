@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    [0, 80],
+    [3, 0],
+    [6, 80],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
+    [3, 80],
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
+  ]);
+
+  // chart type
+  var chart = anychart.polar();
+
+  // chart title
+  chart.title().text('Polar Chart Plot Background Sample');
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  // background fill
+  chart.background().enabled(true).fill('#EEEEEE');
+
+  chart.xAxis()
+    .labels()
+      .padding(5)                 // set paddings for labels
+      .fontWeight(900)            // set font weight for labels
+      .background()               // axes background settings
+        .enabled(true)            // enable background
+        .fill('lightblue')        // background fill
+        .stroke('blue')           // stroke color
+        .cornerType('round')      // corner type
+        .corners(5);              // corner size
+
+  // set ticks interval for y scale
+  chart.xScale().maximum(24).ticks().interval(4);
+
+  // set data and adjust visualisation
+  var series = chart.area(dataSet);
+  series
+    .stroke('2 #11aaff')            // area border color
+    .fill('lightblue 0.5')          // area fill color
+    .markers()                      // marker settings
+      .enabled(true)                // enables markers
+      .fill('#11aaff');             // markers color
+
+  // grid settings
+  chart.grid(0).evenFill('white').oddFill('white');
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

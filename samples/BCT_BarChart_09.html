@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT BarChart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+        ['P1', 132, 102, 72, 65, 68],
+        ['P2', 124, 89, 44, 38, 57]
+    ]);
+
+    // map data for the each series
+    var data1 = data.mapAs({x: [0], value: [1]});
+    var data2 = data.mapAs({x: [0], value: [2]});
+    var data3 = data.mapAs({x: [0], value: [3]});
+    var data4 = data.mapAs({x: [0], value: [4]});
+    var data5 = data.mapAs({x: [0], value: [5]});
+
+    // chart type
+    var chart = anychart.barChart();
+
+    // set title
+    chart.title().text('Color');
+
+    // set series data and adjust color
+    var series;
+    series = chart.bar(data1);
+    series.fill('#3333FF');
+    series = chart.bar(data2);
+    series.fill('#660099');
+    series = chart.bar(data3);
+    series.fill('#CC6600');
+    series = chart.bar(data4);
+    series.fill('#FFCC33');
+    series = chart.bar(data5);
+    series.fill('#00aa00');
+  
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

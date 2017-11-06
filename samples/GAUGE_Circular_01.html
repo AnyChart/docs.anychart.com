@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Circular 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  //create data set on our data
+  dataSet = anychart.data.set([50]);
+
+  //set the gauge type
+  gauge = anychart.circularGauge();
+  
+  //link the data with the gauge
+  gauge.data(dataSet);
+  
+  //draw the chart
+  gauge.container('container').draw();
+
+});
+</script>
+</body>
+</html>

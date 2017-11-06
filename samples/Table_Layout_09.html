@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Table Layout 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // set stage
+  stage = anychart.graphics.create('container');
+
+  // Title settings
+  var title = anychart.ui.title();
+  title.fontFamily('verdana, helvetica, arial, sans-serif').fontWeight('normal');
+  title.text('<span style="color:#86cf38; font-size: 16px;">System Availability</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(last 30 days)</span>');
+  title.orientation('top').align('left').vAlign('bottom').margin(10).padding(0).height(20).useHtml(true);
+  title.container(stage).draw();
+
+  // Data for charts in table
+  var Availability = anychart.data.set([
+    [Date.UTC(2013, 10), 98.6, 98.6, 95.3, 97.9, 99.0, 97.0, 96.1],
+    [Date.UTC(2013, 11), 98.5, 98.9, 95.9, 98.4, 98.4, 97.9, 96.1],
+    [Date.UTC(2014, 0),  98.5, 98.8, 96.7, 98.5, 99.1, 98.2, 96.0],
+    [Date.UTC(2014, 1),  99.0, 98.3, 95.6, 98.8, 98.2, 98.9, 95.9],
+    [Date.UTC(2014, 2),  99.2, 98.6, 96.8, 99.0, 98.2, 98.2, 95.7],
+    [Date.UTC(2014, 3),  99.0, 98.7, 95.8, 99.3, 97.9, 98.7, 95.5],
+    [Date.UTC(2014, 4),  99.3, 98.9, 96.3, 99.2, 98.6, 98.4, 95.0],
+    [Date.UTC(2014, 5),  99.1, 98.3, 95.6, 99.4, 99.1, 98.5, 94.9],
+    [Date.UTC(2014, 6),  99.0, 98.1, 95.4, 99.4, 98.4, 98.6, 94.8],
+    [Date.UTC(2014, 7),  99.3, 99.0, 95.5, 99.5, 99.2, 98.5, 95.0],
+    [Date.UTC(2014, 8),  99.5, 98.9, 96.7, 99.6, 99.2, 98.7, 94.8],
+    [Date.UTC(2014, 9),  99.7, 99.3, 96.9, 99.7, 99.3, 98.8, 94.4]
+  ]);
+  var AcceptedAvailability = anychart.data.set([
+    ['Network', 99],
+    ['ERP', 98],
+    ['Data Warehouse', 98],
+    ['Web Site', 98],
+    ['Email', 98],
+    ['HR', 96],
+    ['Problem Tracking', 93]
+  ]);
+
+  // content for first row
+  var contents = [['Last 12 Month', 'System', 'Availability %', null]];
+
+  // create one scale for all bullet charts and additional axis
+  var bulletScale = anychart.scales.linear().minimum(85).maximum(100);
+
+
+  // Table settings
+
+  // create table
+  var table = anychart.ui.table();
+
+  table.top(title.getRemainingBounds().getTop());
+
+  for(var i= 0; i<7; i++){
+    contents.push([
+      newLine(i),                           // create line charts in the first column
+      AcceptedAvailability.row(i)[0],       // get names for second column
+      newBullet(i),                         // create bullet charts for third column
+      AcceptedAvailability.row(i)[1] + '%'  // get values for fourth column
+    ]);
+  }
+
+  var axis = anychart.axes.linear();
+  axis.scale(bulletScale);
+  axis.orientation('bottom').staggerMode(false).stroke('#ccc');
+  axis.minorTicks().enabled(false);
+  axis.title().enabled(false);
+  axis.labels()
+    .fontSize('9px')
+    .textFormatter(function(value) {
+      return value['tickValue'] + '%';
+    });
+  axis.ticks().stroke('#ccc');
+
+  contents.push([null, null, axis, null]);
+
+  // set table content
+  table.contents(contents);
+
+  // disable borders and adjust width of second and fourth column
+  table.cellBorder(null).colWidth(1, 130).colWidth(3, 50).rowHeight(0, 20).rowHeight(8, 25);
+
+  // visual settings for the first row
+  table.getCell(0,0).fill('#444444').content().fontColor('#FFF');
+  table.getCell(0,1).fill('#444444').content().fontColor('#FFF');
+  table.getCell(0,2).fill('#444444').colSpan(2).content().fontColor('#FFF').hAlign('right');
+  table.getCell(8,2).padding().right(9).left(9);
+
+  // visual settings for text in table
+  table.cellTextFactory().vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
+
+  // set table container and initiate draw
+  table.container(stage).draw();
+
+
+  // Settings for table content
+
+  // create new sparkline chart
+  function newLine(i){
+    var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
+
+    // adjust visualization
+    // adjust visualization
+    line
+      .stroke('2 #000')
+      .height('100%')
+      .xScale(
+      anychart.scales.dateTime()
+        .minimumGap(0)
+        .maximumGap(0)
+        .ticks([])
+      );
+
+    return line;
+  }
+
+  // create new bullet chart
+  function newBullet (i) {
+    var bulletData = 0;
+    for (var rowCounter = 0; rowCounter<(Availability.getRowsCount() - 1);rowCounter++){
+      bulletData += Availability.row(rowCounter)[i+1];
+    }
+    var bullet = anychart.bullet([{'value': bulletData/(Availability.getRowsCount() - 1), 'type': 'line', gap: 0.4}]);
+    bullet.range(0).from(AcceptedAvailability.row(i)[1]).to(100).fill('#ccc');
+    bullet.title().enabled(false);
+    bullet.axis().enabled(false);
+    bullet.background().enabled(true).stroke('#ccc').fill('#fff');
+    bullet.scale(bulletScale).padding(0).margin(10);
+    return bullet;
+  }
+
+  // create legend
+  var legend = anychart.ui.legend();
+  legend.itemsProvider([
+    {
+      'index': 0,
+      'text': 'Actual',
+      'iconType': function(path, size) {
+        path.clear();
+        var x = Math.round(size / 2);
+        var y = Math.round(size / 2);
+        var height = size * 0.6;
+        path.clear()
+            .moveTo(x, y - height / 2)
+            .lineTo(x, y + height / 2)
+            .lineTo(x + 2, y + height / 2)
+            .lineTo(x + 2, y - height / 2)
+            .close();
+      },
+      'iconStroke': 'none',
+      'iconFill': '#000'
+    },
+    {
+      'index': 1,
+      'text': 'Acceptable',
+      'iconType': function(path, size) {
+        path.clear();
+        var x = Math.round(size / 2);
+        var y = Math.round(size / 2);
+        var height = size * 0.8;
+        path.clear()
+            .moveTo(x - 2, y - height / 2)
+            .lineTo(x - 2, y + height / 2)
+            .lineTo(x + 3, y + height / 2)
+            .lineTo(x + 3, y - height / 2)
+            .close();
+      },
+      'iconStroke': 'none',
+      'iconFill': '#ccc'
+    }
+  ]);
+  legend.title().enabled(false);
+  legend.titleSeparator().enabled(false);
+  legend.paginator().enabled(false);
+  legend.fontSize('10px').itemsLayout('horizontal').iconTextSpacing(0).align('right').position('bottom').padding(0).margin(0).itemsSpacing(0);
+  legend.parentBounds(anychart.math.rect(0, 15, stage.width(),15));
+  legend.background().enabled(false);
+  legend.container(stage).draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="WD Data from XML 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // xml data                                         // JS equivalent
+  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+      // set chart type, title and chart container
+      '<chart type="column" '+// set chart container  // var chart = anychart.column();
+      'container="container">'+                       // chart.container('container');
+
+        // title settings
+        '<title '+                                    // chart.title()
+        // set title text                             //   // set title text
+        'text="Sales Performance">'+                  //   .text('Sales Performance')
+          // settings for title background            //   // settings for title background
+          '<background '+                             //   .background()
+          // enable background                        //     // enable background
+          'enabled="true" '+                          //     .enabled(true)
+          // set background inner color               //     // set background inner color
+          'fill="#FFD700" '+                          //     .fill('#FFD700')
+          // set background border                    //     // set background border
+          'stroke="#D8D8D8" '+                        //     .stroke('#D8D8D8')
+          // set type of background corners           //     // set type of background corners
+          'cornerType="round" '+                      //     .cornerType('round')
+          // set corners size                         //     // set corners size
+          'corners="10"/></title>'+                   //     .corners(10);
+
+        // set series type
+        '<series_list><series series_type="column">'+ // chart.column([
+        '<data><point x="January" value="10000"/>'+   //   ['John', 10000],
+    '<point x="February" value="12000"/>'+            //   ['Jake', 12000],
+    '<point x="March" value="18000"/>'+               //   ['Peter', 18000],
+    '<point x="April" value="11000"/>'+               //   ['James', 11000],
+    '<point x="May" value="9000"/></data>'+           //   ['Mary', 9000]
+    '</series></series_list></chart>'+                // ]);
+    '</anychart>';
+  
+  // get XML data
+  var chart = anychart.fromXml(xml);
+  
+  // draw chart
+  chart.draw();
+});
+</script>
+</body>
+</html>
