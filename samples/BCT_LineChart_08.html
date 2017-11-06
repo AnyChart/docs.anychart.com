@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT LineChart 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // data
+  var data = anychart.data.set([
+    ['January', 10000],
+    ['February', 12000],
+    ['March', 18000],
+    ['April', 11000],
+    ['May', 9000]
+  ]);
+  
+  // chart type
+  var chart = anychart.lineChart();
+  
+  // set series data
+  var series = chart.line(data);
+    
+  series.stroke(
+    'Rgb(86,86,26)',    // set line color
+    4                   // set line size
+  );
+    
+  series.markers()
+    .enabled(true)      // enables markers
+    .type('star5')      // set marker type
+    .fill('gold')       // set marker inner color
+    .stroke('darkred')  // set marker border
+    .size(7);           // set marker size
+  
+  // settings for hovered marker
+  series.hoverMarkers()
+    .size(7)            // marker size
+    .fill('darkred')    // marker inner color
+    .stroke('gold');    // marker border
+    
+    // title
+    chart.title().text('Visualization');
+    
+    // set axes titles
+    chart.xAxis().title().text('Sales');
+    chart.yAxis().title().text('Month');
+    
+    // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

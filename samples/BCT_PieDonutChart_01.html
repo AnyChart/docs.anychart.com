@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PieDonutChart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // set data and define chart type
+  var chart = anychart.pieChart([
+    ['Department Stores', 637166],
+    ['Discount Stores', 721630],
+    ['Men\'s/Women\'s Stores', 148662],
+    ['Juvenile Specialty Stores', 78662],
+    ['All other outlets', 90000]
+  ]);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

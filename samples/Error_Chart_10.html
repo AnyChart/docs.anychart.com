@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Error Chart 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var chart = anychart.line();
+
+
+  //set container id for the chart
+  chart.container('container');
+  chart.line([
+    {x: '2005', value: 20, valueError:'3%'},
+    {x: '2006', value: 23, valueError: '4%'},
+    {x: '2007', value: 22, valueError: '3%'},
+    {x: '2008', value: 19, valueError: 1},
+    {x: '2009', value: 23, valueError: 1},
+  ]);
+
+  chart.title('Daily Temperature Averages By City');
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Daily Temperature');
+
+  //initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

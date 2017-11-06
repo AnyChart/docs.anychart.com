@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Legend 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // set data
+  var data = anychart.data.set([
+    ['John',  10000, 12000, 20000, 16000],
+    ['Jake',  12000, 15000, 19000, 21000],
+    ['Peter', 16000, 17000, 21000, 22000]
+  ]);
+  
+  // map data
+  var Quarter1 = data.mapAs({x: [0], value: [1]});
+  var Quarter2 = data.mapAs({x: [0], value: [2]});
+  var Quarter3 = data.mapAs({x: [0], value: [3]});
+  var Quarter4 = data.mapAs({x: [0], value: [4]});
+  
+  // chart type
+  var chart = anychart.column();
+  
+  // legend settings
+  chart.legend()
+    .tooltip()                // settings for legend tooltip
+      .content()              // tune tooltip content appearance
+        .useHtml(true)        // enable HTML
+        .fontWeight(400);     // set font weight
+  
+  chart.legend()
+    .tooltip()
+      .contentFormatter(function(){
+        return this.meta.legendTooltipText;
+      });
+  
+  chart.legend()
+    .enabled(true)            // enable title separator
+    .position('right')        // enable legend
+    .align('top')             // set legend position
+    .itemsLayout('vertical')  // set legend align
+    .titleSeparator(true)     // set items layout
+    .title()                  // settings for legend title
+      .useHtml(true)          // enable HTML
+      .enabled(true)          // enable title
+      .fontSize(14)           // set title text size
+      .hAlign('center')       // set text align
+      .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>');
+      
+  
+  // set title
+  chart.title().text('Legend Title Configuration');
+  
+  // set data
+  chart.column(Quarter1)
+    .name('Quarter 1')
+    .meta({
+      // set text for the legend tooltip
+      legendTooltipText:'<b>Year:</b> 2004'+
+      '<br><b>Quarter:</b> first'+
+      '<br><b>Total sales: </b>'+(Quarter1.get(0,'value') + Quarter1.get(1,'value') + Quarter1.get(2,'value'))+
+      '<br><b>Best result</b>: '+
+        Quarter1.get(
+          // get the row with the best seller
+          Quarter1.find(
+            // get the row with the biggest value
+            'value',
+            // get the biggest sales value of the first quarter
+            Math.max(
+              Quarter1.get(0,'value'),
+              Quarter1.get(1,'value'),
+              Quarter1.get(2,'value')
+            )
+          ),
+        // get the name of the best seller
+        'x')
+    });
+  chart.column(Quarter2)
+    .name('Quarter 2')
+    .meta({
+      legendTooltipText:'<b>Year:</b> 2004'+
+      '<br><b>Quarter:</b> second'+
+      '<br><b>Total sales: </b>'+(Quarter2.get(0,'value')+Quarter2.get(1,'value')+Quarter2.get(2,'value'))+
+      '<br><b>Best result</b>: '+Quarter2.get(Quarter2.find('value',Math.max(Quarter2.get(0,'value'),Quarter2.get(1,'value'),Quarter2.get(2,'value'))),'x')
+    });
+  chart.column(Quarter3)
+    .name('Quarter 3')
+    .meta({
+      legendTooltipText:'<b>Year:</b> 2004'+
+      '<br><b>Quarter:</b> third'+
+      '<br><b>Total sales: </b>'+(Quarter3.get(0,'value')+Quarter3.get(1,'value')+Quarter3.get(2,'value'))+
+      '<br><b>Best result</b>: '+Quarter3.get(Quarter3.find('value',Math.max(Quarter3.get(0,'value'),Quarter3.get(1,'value'),Quarter3.get(2,'value'))),'x')
+    });
+  chart.column(Quarter4)
+    .name('Quarter 4')
+    .meta({
+      legendTooltipText:'<b>Year:</b> 2004'+
+      '<br><b>Quarter:</b> fourth'+
+      '<br><b>Total sales: </b>'+(Quarter4.get(0,'value')+Quarter4.get(1,'value')+Quarter4.get(2,'value'))+
+      '<br><b>Best result</b>: '+Quarter4.get(Quarter4.find('value',Math.max(Quarter4.get(0,'value'),Quarter4.get(1,'value'),Quarter4.get(2,'value'))),'x')
+    });
+  
+  chart.xAxis().title('Manager');
+  chart.yAxis().title('Sales');
+  
+  // set container and draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

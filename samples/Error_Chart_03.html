@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Error Chart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  //create bar chart
+  var chart = anychart.bar();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.stepArea([
+    ['P1', 189],
+    ['P2', 140],
+    ['P3', 177],
+    ['P4', 165],
+    ['P5', 154],
+    ['P6', 191],
+  ]);
+
+  
+  series.error().valueUpperError(2).valueLowerError(6).valueError(6);
+  
+  series.error().valueErrorStroke('2px #146192');
+
+  chart.yScale().minimum(0);
+
+  //initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

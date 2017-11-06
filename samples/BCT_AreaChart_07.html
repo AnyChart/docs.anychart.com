@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT AreaChart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
+    ]);
+
+    // chart type
+    var chart = anychart.areaChart();
+
+    // set title
+    chart.title().text('Visualization');
+
+    // set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
+
+    // setting data and adjusting chart visual appearance
+    chart.area(data)
+        .fill('Gold')
+        .hoverFill("darkred")
+        .stroke('#56561a', 4, 0.4)
+        .hatchFill('diagonalbrick', 'gray')
+        .hoverHatchFill('diagonalbrick', 'black');
+
+    chart.yScale().minimum(8000).maximum(20001);
+
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

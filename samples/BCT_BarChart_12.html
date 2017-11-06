@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT BarChart 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+      ['P1', 14, 24, 34, 42, 50],
+      ['P2', 19, 26, 39, 45, 61],
+      ['P3', 27, 38, 35, 41, 58]
+    ]);
+
+    // map data for the each series
+    var data_1 = data.mapAs({x: [0], value: [1]});
+    var data_2 = data.mapAs({x: [0], value: [2]});
+    var data_3 = data.mapAs({x: [0], value: [3]});
+    var data_4 = data.mapAs({x: [0], value: [4]});
+    var data_5 = data.mapAs({x: [0], value: [5]});
+
+    // chart type
+    var chart = anychart.barChart();
+
+    // set title
+    chart.title().text('Hatch Sample');
+
+    // set data and adjust color/hatch
+    chart.bar(data_1)
+      .fill('#EEEEEE')
+      .hatchFill('diagonalcross');
+    chart.bar(data_2)
+      .fill('#EEEEEE')
+      .hatchFill('diagonalbrick');
+    chart.bar(data_3)
+      .fill('#EEEEEE')
+      .hatchFill('zigzag');
+    chart.bar(data_4)
+      .fill('#EEEEEE')
+      .hatchFill('checkerboard');
+    chart.bar(data_5)
+      .fill('#EEEEEE')
+      .hatchFill('percent30');
+  
+    chart.yScale().maximum(65);
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Labels 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var chart = anychart.column();
+
+  chart.label()
+    .padding(10,0)
+    .position('topright')
+    .anchor('topright')
+    .offsetY(15)
+    .offsetX(25)
+    .width(200)
+    .hAlign('center')
+    .text('The chart shows different\nice cream cones (with a\ndelicious crispy  taste) sales\nvolume.')
+    .background()
+      .enabled(true)
+      .fill(null)
+      .stroke('2 gold')
+      .cornerType('roundInner')
+      .corners(15);
+
+  chart.column([
+    {x: "Waffle Bowl",          value: 10000, fill: '#1D8BD1'},
+    {x: "Kids Cone",            value: 13000, fill: '#F1683C'},
+    {x: "Cake Cup",             value: 14000, fill: '#2AD62A'},
+    {x: "Color Cup",            value: 11000, fill: '#DBDC25'},
+    {x: "Jumbo Cup",            value: 9000,  fill: '#8FBC8B'},
+    {x: "Jacketed Waffle Cone", value: 10000, fill: '#D2B48C'},
+    {x: "Sugar Cone",           value: 5000,  fill: '#FAF0E6'}
+  ]).stroke(null)
+    .tooltip().contentFormatter(function(){
+      return this.x;
+    });
+
+  chart.xAxis().enabled(false);
+  chart.yAxis().enabled(false);
+  chart.title().enabled(false);
+
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Legend 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // set data and define chart type
+  var dataSet = anychart.data.set([
+    {name: "John", value: 10000},
+    {name: "Jake", value: 12000},
+    {name: "Peter", value: 16000},
+    {name: "Alex", value: 11000},
+    {name: "Tom", value: 13000},
+    {name: "Julia", value: 18000},
+    {name: "Mary", value: 9000}
+  ]);
+  
+  // variable for total sales
+  var total = 0;
+  
+  for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
+    total+=dataSet.mapAs().get(i,'value');
+  
+  var chart = anychart.pieChart(dataSet);
+  
+  // legend settings
+  chart.legend()
+    .enabled(true)                          // enables legend
+    .position('left')                       // set legend position
+    .align('top')                           // set legend align
+    .itemsLayout('vertical')                // legend items layout
+    .itemsFormatter(function(items){        // adjust legend items
+      items.push({                          // push into items array
+        text: 'Total: '+total.toString(),   // set item text
+        iconEnabled: false,                 // disable icon for a new item
+        fontWeight: 900                     // bold text of the item
+      });
+      return items;                         // return items array
+    });
+  
+  // configure tooltip considering new item 
+  chart.legend().tooltip().contentFormatter(function(){
+    if(this.meta.pointValue === undefined)
+      return this.value;
+    return this.value+'\n'+this.meta.pointValue.toString();
+  });
+  
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

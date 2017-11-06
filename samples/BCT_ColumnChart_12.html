@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT ColumnChart 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+      ['First quarter', 10000, 12000, 18000, 11000, 9000],
+      ['Second quarter', 12000, 15000, 16000, 13000, 19000]
+  ]);
+
+  // map data for the each series
+  var dataMap1 = data.mapAs({x: [0], value: [1]});
+  var dataMap2 = data.mapAs({x: [0], value: [2]});
+  var dataMap3 = data.mapAs({x: [0], value: [3]});
+  var dataMap4 = data.mapAs({x: [0], value: [4]});
+  var dataMap5 = data.mapAs({x: [0], value: [5]});
+
+  // chart type
+  var chart = anychart.columnChart();
+
+  // set first series data and color
+  chart.column(dataMap1)
+    .color('#EEEEEE')
+    .hatchFill('diagonalcross')
+    .name('John');
+
+  // set second series data and color
+  chart.column(dataMap2)
+    .color('#EEEEEE')
+    .hatchFill('diagonalbrick')
+    .name('Jake');
+
+  // set third series data and color
+  chart.column(dataMap3)
+    .color('#EEEEEE')
+    .hatchFill('zigzag')
+    .name('Peter');
+
+  // set forth series data and color
+  chart.column(dataMap4)
+    .color('#EEEEEE')
+    .hatchFill('checkerboard')
+    .name('James');
+
+  // set fifth series data and color    
+  chart.column(dataMap5)
+    .color('#EEEEEE')
+    .hatchFill('percent30')
+    .name('Mary');
+  
+  // set title
+  chart.title().text('Hatches');
+  
+  //set chart legend settings
+  chart.legend().enabled(true);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

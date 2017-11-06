@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Japaneese-Candlestick Chart 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    [Date.UTC(2003, 01, 01), 511.53, 514.98, 505.79, 406.40, 611.53, 614.98, 605.79, 506.40, 711.53, 714.98, 705.79, 606.40, 811.53, 814.98, 805.79, 706.40, 911.53, 914.98, 905.79, 806.40],
+    [Date.UTC(2004, 01, 01), 507.84, 513.30, 507.23, 412.88, 607.84, 613.30, 607.23, 512.88, 707.84, 713.30, 707.23, 612.88, 807.84, 813.30, 807.23, 712.88, 907.84, 913.30, 907.23, 812.88]
+  ]);
+
+  // map data for the each series
+  var seriesData_1 = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+  var seriesData_2 = data.mapAs({x: [0], open: [5], high: [6], low: [7], close: [8]});
+  var seriesData_3 = data.mapAs({x: [0], open: [9], high: [10], low: [11], close: [12]});
+  var seriesData_4 = data.mapAs({x: [0], open: [13], high: [14], low: [15], close: [16]});
+  var seriesData_5 = data.mapAs({x: [0], open: [17], high: [18], low: [19], close: [20]});
+
+  // chart type
+  var chart = anychart.financialChart();
+
+  // chart title
+  chart.title().text('Set Colors');
+
+  // adjust x scale type
+  chart.xScale()
+    .minimum(Date.UTC(2002, 01, 01))
+    .maximum(Date.UTC(2005, 01, 01))
+    .ticks()
+      .interval(1);
+
+  // set series data, adjust color and position
+  chart.candlestick(seriesData_1).xPointPosition(0.5).pointWidth('60%').color('#3333FF');
+  chart.candlestick(seriesData_2).xPointPosition(0.5).pointWidth('60%').color('#660099');
+  chart.candlestick(seriesData_3).xPointPosition(0.5).pointWidth('60%').color('#CC6600');
+  chart.candlestick(seriesData_4).xPointPosition(0.5).pointWidth('60%').color('#FF0033');
+  chart.candlestick(seriesData_5).xPointPosition(0.5).pointWidth('60%').color('#00aa00');
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Marker Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.4.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.4.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.scatter();
+
+  // set title
+  chart.title().text('Axes Management');
+
+  // draw axes and set titles and adjust position
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Box office');
+  chart.xAxis().orientation('top');
+  chart.yAxis().orientation('right');
+  
+  // define chart and set data
+  chart.marker([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]);
+    
+  chart.xScale()
+    .minimum(1999)
+    .maximum(2007)
+    .ticks().interval(1);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>
