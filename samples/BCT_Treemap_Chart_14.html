@@ -68,16 +68,14 @@
 
     // create a label for disabling headers
     createLabel("Disable Headers", 10, function() {
-      // disable headers in the normal and hovered states
-      chart.normal().headers(false);
-      chart.hovered().headers(false);
+      // disable headers
+      chart.headers(false);
     });
 
     // create a label for enabling headers
     createLabel("Enable Headers", 136, function() {
-      // enable headers in the normal and hovered states
-      chart.normal().headers(true);
-      chart.hovered().headers(true);
+      // enable headers
+      chart.headers(true);
     });
 });
     

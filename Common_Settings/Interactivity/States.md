@@ -6,8 +6,6 @@ A number settings of a chart, series, or point can be configured in three states
 
 Here is the full list of available settings: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that many of them work only with certain types of charts or series.
 
-[<a href="http://jsfiddle.net/6rwsqmbc/" target="_blank">http://jsfiddle.net/6rwsqmbc/</a>]
-
 ## Chart
 
 ### Single Series
@@ -16,7 +14,7 @@ Some chart types can have only one series. To configure their states, use the **
 
 **Note 1:** To configure an individual point of a chart, add to your data extra fields corresponding with the methods mentioned above.
 
-**Note 2:** There is also an alternative way to set the normal state of a chart: see the [Shortcuts](#shortcuts) section.
+**Note 2:** There is also an alternative way to set the normal state of a chart: see the [Shortcuts](#shortcuts_\(normal\)) section.
 
 In the sample below, there is a Pie chart with visual settings adjusted with the help of the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods. One slice is configured individually though data:
 
@@ -58,7 +56,7 @@ chart.hovered().stroke("#669999", 3);
 
 Most chart types in AynChart allow creating multiple series. Such charts do not have the **normal()**, **hovered()**, and **selected()** methods, but their series do, so you should configure the states of series.
 
-See the [Series](#series) section of this article to learn more. Some additional information can be found in the [Points](#series) and [Shortcuts](#shortcuts) sections.
+See the [Series](#series) section of this article to learn more. Some additional information can be found in the [Points](#series) and [Shortcuts](#shortcuts_\(normal\)) sections.
 
 ## Series
 
@@ -235,7 +233,6 @@ var series2 = chart.column(seriesData_2);
 
 {sample}CS\_Interactivity\_States\_05{sample}
 
-<a name='shortcuts'></a>
 ## Shortcuts (Normal) 
 
 There are shortcuts that allow you to configure the **normal** state of a chart, series, or point without using the **normal()** method.
