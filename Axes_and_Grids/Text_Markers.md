@@ -1,6 +1,5 @@
 {:index 9}
 # Text Markers
-
               
 * [Overview](#overview)
 * [Declare](#declare)
