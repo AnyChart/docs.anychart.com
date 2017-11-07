@@ -4,7 +4,6 @@
  * [Chart](#chart)
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
-<!--  * [Scatter Marker chart](#marker_scatterplot) -->
  * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)

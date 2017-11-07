@@ -16,7 +16,7 @@ Error Charts are defined as part of the series and are used on graphs to indicat
 ## Supported Chart Types
 
 Here is the list of series compatible with error bars:
-<br><b>Cartesian</b>: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); [Scatter](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
+<br><b>Cartesian</b>: [Area](Area_Chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts), [Marker](Marker_Chart), [Spline](Line-Spline-StepLine_Charts), [SplineArea](Area_Chart), [StepArea](Stacked_Area-SplineArea_Charts), [StepLine](Line-Spline-StepLine_Charts); [Scatter](Scatter_Chart): [Line](Scatter_Chart), [Marker](Scatter_Chart).
 
 ## Chart
 
