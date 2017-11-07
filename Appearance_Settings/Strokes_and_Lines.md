@@ -99,15 +99,3 @@ Opacity through object:
     opacity: 0.8
   });
 ```
-<!--
-## Caps and Joints
-
-Caps and joints are special parameters that define how line endings and bends are drawn.
-
-The caps attribute specifies the caps style to use in drawing lines. You can specify the following three types of caps: {api:anychart.graphics.vector.StrokeLineCap#BUTT}**"none"**{api} (or "butt"), {api:anychart.graphics.vector.StrokeLineCap#ROUND}**"round"**{api} and {api:anychart.graphics.vector.StrokeLineCap#SQUARE}**"square"**{api}, as the following example shows:
-
-![](http://static.anychart.com/images/linecap.jpeg)
-
-The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: {api:anychart.graphics.vector.StrokeLineJoin#MITER}**"miter"**{api}, {api:anychart.graphics.vector.StrokeLineJoin#ROUND}**"round"**{api}, and {api:anychart.graphics.vector.StrokeLineJoin#BEVEL}**"bevel"**{api}, as the following example shows:
-
-![](http://static.anychart.com/images/linejoin.png)-->

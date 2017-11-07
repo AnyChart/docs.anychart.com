@@ -223,7 +223,7 @@ Look at the demonstration of the maximum and the minimum values in the Single-se
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts). The picture below shows what are these paddings:
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![](https://anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in the **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
@@ -240,7 +240,7 @@ The main idea of styles is to segregate visualization and data definition. Visua
 
 On the image below you can see which elements the **Chart** can be decorated with: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole column.
 
-![](http://6.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
+![](https://anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
 Styles are also used to make charts interactive: you can define how elements will be displayed by default and when hovered.
 
@@ -272,8 +272,6 @@ Now we will take a sample single series chart described above and apply it to al
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-
-<!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->   
 
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods of **series**. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
 

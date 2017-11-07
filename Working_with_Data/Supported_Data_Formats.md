@@ -1,14 +1,7 @@
 {:index 1}
+# Supported Data Formats
 
-Supported Data Formats
-=================
- * [Introduction](#introduction)
-   * [JavaScript API](#JavaScript)
-   * [XML](#XML)
-   * [JSON](#JSON)
-   * [CSV](#CSV)
-
-###Introduction
+## Introduction
 AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
 * JavaScript API
 * XML
@@ -18,7 +11,7 @@ AnyChart supports 4 ways to set data to your charts. You can choose which one su
 Each way has some strengths and weaknesses, but we recommend JavaScript API – this option is generally the most flexible.
 
 
-###JavaScript API
+## JavaScript API
 JavaScript API helps you the best when you need to Create, Read, Update, and Delete data points dynamically. 
 
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with JS API, but you can also pass data directly to a chart by creating a function:
@@ -39,10 +32,10 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[JavaScript API Reference](http://api.anychart.com)  
+[JavaScript API Reference](https://api.anychart.com)  
 [Using Data Sets](./Using_Data_Sets)
 
-###XML
+## XML
 XML format is your choice if you prefer the declarative style for chart configurations.  
 Also, all previous versions of AnyChart were XML-based, so this way of setting data may be the one you've got used to.  
 XML format has a little bit less perfect performance and is not as flexible in terms of customization as JS API.
@@ -72,7 +65,7 @@ chart.draw();
 See also:  
 [Using Data Sets](./Using_Data_Sets)
 
-###JSON
+## JSON
 JSON basically has the same purpose and drawbacks as the XML format. JSON doesn't have as perfect performance as JS API and is less flexible also.
 ```
 // create json data
@@ -101,7 +94,7 @@ chart.draw();
 See also:  
 [Using Data Sets](./Using_Data_Sets)
 
-###CSV  
+## CSV  
 CSV is obviously the best solution when you need to minimize the size of data input. It is as easy in use as any other format, but CSV also lacks flexibility of JS API.
 ```
 // create CSV string
