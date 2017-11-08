@@ -41,7 +41,7 @@ Put the JavaScript tag `<script>` with the following code anywhere in the “hea
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](https://playground.anychart.com/acdvf-docs/7.3.1/samples/quick_start_pie-plain).
+After all these steps you should have the following result. 
 
 {sample}quick\_start\_pie{sample}
 ###Full source code
