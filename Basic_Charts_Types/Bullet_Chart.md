@@ -129,7 +129,7 @@ Markers are controlled through the data. You will find a plenty of examples with
 
 ### Types
 
-Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
+Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType}*bar*{api}, {api:anychart.enums.BulletMarkerType}*X*{api}, {api:anychart.enums.BulletMarkerType}*line*{api}, {api:anychart.enums.BulletMarkerType}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
 
 Here is the sample with all 4 marker types:
 
@@ -175,7 +175,3 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 ```
 
 {sample :width 690 :height 130}BCT\_Bullet\_Chart\_09{sample}
-
-## Samples
-
-You can see a lot of other samples in [AnyChart Web Bullet Charts Gallery](http://anychart.com/products/anychart/gallery/Bullet_Charts/).

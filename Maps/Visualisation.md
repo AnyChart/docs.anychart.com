@@ -1,6 +1,5 @@
 {:index 14}
-Map Visualisation
-======================
+# Map Visualisation
 
 * [Overview](#overview)
 * [Coloring the Map regions](#coloring_the_map_regions)
@@ -11,13 +10,11 @@ Map Visualisation
  * [Apply palette to all series in a map](#apply_palette_to_all_series_in_a_map)
   * [Using RangeColors](#using_rangecolors)
   * [Using DistinctColors](#using_distinctcolors)
- <!--* [Apply palette to the given series] -->
 * [LinearColorScale](#linearcolorscale)
 
 ## Overview 
 
 In some cases you might need to color a region (or a number of regions) specifically, or stroke it, or make it noticeable in some way. Also, it looks nice when a region is highlighted when hovered. Sometimes you don't need to use a colorScale, but you've got different series on a map which you'd like to color differently.                                                                                
-
 This article will help you to understand how to work with colors and palettes which can help you to make your map more attractive.
 
 ## Coloring the Map regions
@@ -125,19 +122,7 @@ You may define the colors you want to use in your map as an array using {api}**.
 {sample}Maps\_Visualisation\_05{sample}
 
 Note that you should define as many colors as there are regions you've got on the map, i.e. each color refers to one series.
-<!--
-#### Using object 
 
-You may define the colors you want to use in your map as an object using {api}**.palette()**{api} method.
-
-```
-	// set the palette
-    australiaMap.palette({colors: ["#B2DFDB", "#00796B"], count: 3, type: "range"});
-```
-{sample}Maps\_Visualisation\_06{sample}
-
-When setting colors through object, you may define only the first and the last colors, the final number of colors (series) you need and the palette type (which can be "range" or "distinct").
--->
 #### Using RangeColors
 
 For using rangeColors you should create a new palette and set colors and number of them to it. Use method {api:anychart.palettes.RangeColors}**.anychart.palettes.rangeColors()**{api} to create the palette.
@@ -203,25 +188,3 @@ Besides those mentioned options, you may use scale to color the Map with multipl
     secondSeries.colorScale(currentColorScale);
 ```
 {sample}Maps\_Visualisation\_09{sample}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

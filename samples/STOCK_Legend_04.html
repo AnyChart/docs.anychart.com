@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Legend 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -62,7 +76,7 @@ dataTable.addData([
 var ohlc_mapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4, 'volume': 5});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
 // create first plot on the chart with column series
 var plot = chart.plot(0);
@@ -82,7 +96,7 @@ plot.legend().itemsLayout('horizontal');
 plot.legend().position('top');
 plot.legend().itemsTextFormatter(function(){
     if (this.open !== undefined){
-        return "Open: " + this.open.toFixed(2) + " High: " + this.high.toFixed(2) + " Low: " + this.low.toFixed(2) + " Close: " + this.close.toFixed(2)
+return "Open: " + this.open.toFixed(2) + " High: " + this.high.toFixed(2) + " Low: " + this.low.toFixed(2) + " Close: " + this.close.toFixed(2)
     }
 });
 
@@ -105,9 +119,7 @@ var minorLabels = chart.scroller().xAxis().minorLabels();
 
 // initiate chart drawing
 chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

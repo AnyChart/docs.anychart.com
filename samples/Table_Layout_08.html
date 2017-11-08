@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Table Layout 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   
   // set stage
   var stage = anychart.graphics.create("container");
@@ -88,9 +102,9 @@
       .height("100%")
       .xScale(
       anychart.scales.dateTime()
-        .minimumGap(0)
-        .maximumGap(0)
-        .ticks([])
+.minimumGap(0)
+.maximumGap(0)
+.ticks([])
     );
     
     return line;
@@ -117,40 +131,40 @@
   legend.itemsFormatter(function(){
     var items = [
       {
-        "index": 0,
-        "text": "Actual",
-        "iconType": function(path, size) {
-          path.clear();
-          var x = Math.round(size / 2);
-          var y = Math.round(size / 2);
-          var height = size * 0.6;
-          path.clear()
-            .moveTo(x, y - height / 2)
-            .lineTo(x, y + height / 2)
-            .lineTo(x + 2, y + height / 2)
-            .lineTo(x + 2, y - height / 2)
-            .close();
-        },
-        "iconStroke": "none",
-        "iconFill": "#000"
+"index": 0,
+"text": "Actual",
+"iconType": function(path, size) {
+  path.clear();
+  var x = Math.round(size / 2);
+  var y = Math.round(size / 2);
+  var height = size * 0.6;
+  path.clear()
+    .moveTo(x, y - height / 2)
+    .lineTo(x, y + height / 2)
+    .lineTo(x + 2, y + height / 2)
+    .lineTo(x + 2, y - height / 2)
+    .close();
+},
+"iconStroke": "none",
+"iconFill": "#000"
       },
       {
-        "index": 1,
-        "text": "Acceptable",
-        "iconType": function(path, size) {
-          path.clear();
-          var x = Math.round(size / 2);
-          var y = Math.round(size / 2);
-          var height = size * 0.8;
-          path.clear()
-            .moveTo(x - 2, y - height / 2)
-            .lineTo(x - 2, y + height / 2)
-            .lineTo(x + 3, y + height / 2)
-            .lineTo(x + 3, y - height / 2)
-            .close();
-        },
-        "iconStroke": "none",
-        "iconFill": "#ccc"
+"index": 1,
+"text": "Acceptable",
+"iconType": function(path, size) {
+  path.clear();
+  var x = Math.round(size / 2);
+  var y = Math.round(size / 2);
+  var height = size * 0.8;
+  path.clear()
+    .moveTo(x - 2, y - height / 2)
+    .lineTo(x - 2, y + height / 2)
+    .lineTo(x + 3, y + height / 2)
+    .lineTo(x + 3, y - height / 2)
+    .close();
+},
+"iconStroke": "none",
+"iconFill": "#ccc"
       }
     ];
     return items;
@@ -162,9 +176,7 @@
   legend.parentBounds(anychart.math.rect(0, 15, stage.width(),15));
   legend.background().enabled(false);
   legend.container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,86 +1,98 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from XML 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   var xml = '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">'+
     // set chart type, chart container and chart titile
     '<chart container="container" type="column" title="Combination of Column, Spline-Area and Spline Chart">'+
       // additional scales
       '<scales>'+
-        // create custom scale
-        '<scale minimum="0"/>'+
+// create custom scale
+'<scale minimum="0"/>'+
       '</scales>'+
       // y scale settings
       '<y_scale minimum="0"/>'+
       // y axes settings
       '<y_axes>'+
-        '<axis title="Basic axis"/>'+ // default axis
-        // additional y axis settings
-        '<axis title="Secondary Y-Axis" orientation="right" scale="0"/>'+
+'<axis title="Basic axis"/>'+ // default axis
+// additional y axis settings
+'<axis title="Secondary Y-Axis" orientation="right" scale="0"/>'+
       '</y_axes>'+
       // list of chart series
       '<series_list>'+
-        // series settings
-        '<series series_type="spline" y_scale="0">'+
-          // series data
-          '<data>'+
-            '<point x="P1" value="174"/>'+
-            '<point x="P2" value="197"/>'+
-            '<point x="P3" value="155"/>'+
-            '<point x="P4" value="15"/>'+
-            '<point x="P5" value="66"/>'+
-            '<point x="P6" value="85"/>'+
-            '<point x="P7" value="37"/>'+
-            '<point x="P8" value="10"/>'+
-            '<point x="P9" value="44"/>'+
-            '<point x="P10" value="322"/>'+
-          '</data>'+
-        '</series>'+
-        // series settings
-        '<series series_type="column">'+
-          // series data
-          '<data>'+
-            '<point x="P1" value="5854"/>'+
-            '<point x="P2" value="4171"/>'+
-            '<point x="P3" value="1375"/>'+
-            '<point x="P4" value="1875"/>'+
-            '<point x="P5" value="2246"/>'+
-            '<point x="P6" value="2696"/>'+
-            '<point x="P7" value="1287"/>'+
-            '<point x="P8" value="2140"/>'+
-            '<point x="P9" value="1603"/>'+
-            '<point x="P10" value="1628"/>'+
-          '</data>'+
-        '</series>'+
-        // series settings
-        '<series series_type="splineArea" fill="#2AD62A 0.7" hover_fill="#2AD62A 0.7">'+
-          // series data
-          '<data>'+
-            '<point x="P1" value="3242"/>'+
-            '<point x="P2" value="3171"/>'+
-            '<point x="P3" value="700"/>'+
-            '<point x="P4" value="1287"/>'+
-            '<point x="P5" value="1856"/>'+
-            '<point x="P6" value="1126"/>'+
-            '<point x="P7" value="987"/>'+
-            '<point x="P8" value="1610"/>'+
-            '<point x="P9" value="903"/>'+
-            '<point x="P10" value="928"/>'+
-          '</data>'+
-        '</series>'+
+// series settings
+'<series series_type="spline" y_scale="0">'+
+  // series data
+  '<data>'+
+    '<point x="P1" value="174"/>'+
+    '<point x="P2" value="197"/>'+
+    '<point x="P3" value="155"/>'+
+    '<point x="P4" value="15"/>'+
+    '<point x="P5" value="66"/>'+
+    '<point x="P6" value="85"/>'+
+    '<point x="P7" value="37"/>'+
+    '<point x="P8" value="10"/>'+
+    '<point x="P9" value="44"/>'+
+    '<point x="P10" value="322"/>'+
+  '</data>'+
+'</series>'+
+// series settings
+'<series series_type="column">'+
+  // series data
+  '<data>'+
+    '<point x="P1" value="5854"/>'+
+    '<point x="P2" value="4171"/>'+
+    '<point x="P3" value="1375"/>'+
+    '<point x="P4" value="1875"/>'+
+    '<point x="P5" value="2246"/>'+
+    '<point x="P6" value="2696"/>'+
+    '<point x="P7" value="1287"/>'+
+    '<point x="P8" value="2140"/>'+
+    '<point x="P9" value="1603"/>'+
+    '<point x="P10" value="1628"/>'+
+  '</data>'+
+'</series>'+
+// series settings
+'<series series_type="splineArea" fill="#2AD62A 0.7" hover_fill="#2AD62A 0.7">'+
+  // series data
+  '<data>'+
+    '<point x="P1" value="3242"/>'+
+    '<point x="P2" value="3171"/>'+
+    '<point x="P3" value="700"/>'+
+    '<point x="P4" value="1287"/>'+
+    '<point x="P5" value="1856"/>'+
+    '<point x="P6" value="1126"/>'+
+    '<point x="P7" value="987"/>'+
+    '<point x="P8" value="1610"/>'+
+    '<point x="P9" value="903"/>'+
+    '<point x="P10" value="928"/>'+
+  '</data>'+
+'</series>'+
       '</series_list>'+
     '</chart>'+
   '</anychart>';
   var chart = anychart.fromXml(xml);
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

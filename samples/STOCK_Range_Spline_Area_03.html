@@ -1,80 +1,94 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Range Spline Area 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // set the data
     table = anychart.data.table();
     table.addData([
-        ["January 2000", 2, 6, -3, 4],
-        ["February 2000", 2, 7, -2, 5],
-        ["March 2000", 3, 10, 2, 10],
-        ["April 2000", 5, 13, 7, 16],
-        ["May 2000", 8, 17, 12, 22],
-        ["June 2000", 11, 20, 18, 26],
-        ["July 2000", 13, 22, 20, 29],
-        ["August 2000", 13, 21, 20, 28],
-        ["September 2000", 11, 19, 16, 24],
-        ["October 2000", 8, 14, 10, 18],
-        ["November 2000", 5, 10, 5, 12],
-        ["December 2000", 5, 7, 0, 6],
+["January 2000", 2, 6, -3, 4],
+["February 2000", 2, 7, -2, 5],
+["March 2000", 3, 10, 2, 10],
+["April 2000", 5, 13, 7, 16],
+["May 2000", 8, 17, 12, 22],
+["June 2000", 11, 20, 18, 26],
+["July 2000", 13, 22, 20, 29],
+["August 2000", 13, 21, 20, 28],
+["September 2000", 11, 19, 16, 24],
+["October 2000", 8, 14, 10, 18],
+["November 2000", 5, 10, 5, 12],
+["December 2000", 5, 7, 0, 6],
 
-        ["January 2001", 3, 7, -5, 5],
-        ["February 2001", 4, 7, -3, 5],
-        ["March 2001", 5, 8, 0, 12],
-        ["April 2001", 7, 12, 5, 14],
-        ["May 2001", 7, 14, 9, 19],
-        ["June 2001", 13, 23, 15, 23],
-        ["July 2001", 15, 24, 19, 24],
-        ["August 2001", 11, 20, 21, 25],
-        ["September 2001", 10, 20, 15, 25],
-        ["October 2001", 7, 15, 10, 20],
-        ["November 2001", 5, 11, 4, 15],
-        ["December 2001", 1, 9, -3, 10],
+["January 2001", 3, 7, -5, 5],
+["February 2001", 4, 7, -3, 5],
+["March 2001", 5, 8, 0, 12],
+["April 2001", 7, 12, 5, 14],
+["May 2001", 7, 14, 9, 19],
+["June 2001", 13, 23, 15, 23],
+["July 2001", 15, 24, 19, 24],
+["August 2001", 11, 20, 21, 25],
+["September 2001", 10, 20, 15, 25],
+["October 2001", 7, 15, 10, 20],
+["November 2001", 5, 11, 4, 15],
+["December 2001", 1, 9, -3, 10],
 
-        ["January 2002", 2, 6, -2, 6],
-        ["February 2002", 6, 9, 0, 7],
-        ["March 2002", 7, 11, 3, 14],
-        ["April 2002", 9, 14, 5, 21],
-        ["May 2002", 11, 17, 7, 23],
-        ["June 2002", 18, 19, 17, 28],
-        ["July 2002", 19, 22, 20, 30],
-        ["August 2002", 15, 25, 19, 28],
-        ["September 2002", 10, 22, 17, 23],
-        ["October 2002", 8, 18, 11, 19],
-        ["November 2002", 6, 15, 7, 12],
-        ["December 2002", 4, 12, 1, 9],
+["January 2002", 2, 6, -2, 6],
+["February 2002", 6, 9, 0, 7],
+["March 2002", 7, 11, 3, 14],
+["April 2002", 9, 14, 5, 21],
+["May 2002", 11, 17, 7, 23],
+["June 2002", 18, 19, 17, 28],
+["July 2002", 19, 22, 20, 30],
+["August 2002", 15, 25, 19, 28],
+["September 2002", 10, 22, 17, 23],
+["October 2002", 8, 18, 11, 19],
+["November 2002", 6, 15, 7, 12],
+["December 2002", 4, 12, 1, 9],
 
-        ["January 2003", 3, 6, -1, 8],
-        ["February 2003", 6, 9, 3, 10],
-        ["March 2003", 7, 8, 5, 14],
-        ["April 2003", 11, 13, 10, 20],
-        ["May 2003", 13, 17, 12, 22],
-        ["June 2003", 16, 26, 18, 27],
-        ["July 2003", 12, 24, 21, 28],
-        ["August 2003", 15, 24, 19, 24],
-        ["September 2003", 10, 20, 15, 22],
-        ["October 2003", 9, 19, 12, 17],
-        ["November 2003", 5, 18, 6, 11],
-        ["December 2003", 5, 15, -2, 7],
+["January 2003", 3, 6, -1, 8],
+["February 2003", 6, 9, 3, 10],
+["March 2003", 7, 8, 5, 14],
+["April 2003", 11, 13, 10, 20],
+["May 2003", 13, 17, 12, 22],
+["June 2003", 16, 26, 18, 27],
+["July 2003", 12, 24, 21, 28],
+["August 2003", 15, 24, 19, 24],
+["September 2003", 10, 20, 15, 22],
+["October 2003", 9, 19, 12, 17],
+["November 2003", 5, 18, 6, 11],
+["December 2003", 5, 15, -2, 7],
 
-        ["January 2004", 4, 9, -7, 9],
-        ["February 2004", 7, 10, -4, 12],
-        ["March 2004", 9, 10 , -1, 12],
-        ["April 2004", 10, 15, 5, 18],
-        ["May 2004", 14, 19, 11, 21],
-        ["June 2004", 15, 24, 17, 26],
-        ["July 2004", 16, 29, 19, 28],
-        ["August 2004", 12, 25, 19, 25],
-        ["September 2004", 12, 20, 17, 19],
-        ["October 2004", 8, 21, 13, 18],
-        ["November 2004", 8, 15, 9, 11],
-        ["December 2004", 6, 9, 0, 6]
+["January 2004", 4, 9, -7, 9],
+["February 2004", 7, 10, -4, 12],
+["March 2004", 9, 10 , -1, 12],
+["April 2004", 10, 15, 5, 18],
+["May 2004", 14, 19, 11, 21],
+["June 2004", 15, 24, 17, 26],
+["July 2004", 16, 29, 19, 28],
+["August 2004", 12, 25, 19, 25],
+["September 2004", 12, 20, 17, 19],
+["October 2004", 8, 21, 13, 18],
+["November 2004", 8, 15, 9, 11],
+["December 2004", 6, 9, 0, 6]
     ]);
   
     // map the data
@@ -86,7 +100,7 @@ anychart.onDocumentReady(function() {
     mapping_ny.addField('high', 4);
 
     // chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series
     var series_lon = chart.plot(0).rangeSplineArea(mapping_lon);
@@ -102,8 +116,5 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

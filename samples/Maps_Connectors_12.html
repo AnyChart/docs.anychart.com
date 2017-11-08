@@ -1,21 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/france/france.js"  data-export="true"></script>
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta name="ac:name" content="Maps Connectors 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.0/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/france/france.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
-  <script x-export="map">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data set
 var data = anychart.data.set([    
@@ -35,11 +41,11 @@ var data_marker = anychart.data.set([
     {lat: 48.50, long: 2.20, name: "Paris", label:{position:"bottom", anchor:"top"}, info: "The Capital of France, founded in \nthe 3rd century BC, one of the most \npopular towns in Europe"},
     {lat: 48.8, long: 2.13, name: "Versailles", label:{position:"right", anchor:"leftBottom"}, info: "The most known showplace in France. \nFrom 1682 to 1789 it de facto \nwas a capital of France"},
     {lat: 47.31, long: 5.01, name: "Dijon", label:{position:"right", anchor:"leftBottom"}, info: "Being world-famous for its mustard \nand its wine, the medieval city \nof Dijon has the reputation of being \nthe best-kept secret in France"},
-    {lat: 45.08, long: 3.56, name: "Beaune", label:{position:"left", anchor:"rightTop"}, info: "Beanue is a wine capital of Burgundy \nin the Côte d'Or department in eastern France"},
+    {lat: 45.08, long: 3.56, name: "Beaune", label:{position:"left", anchor:"rightTop"}, info: "Beanue is a wine capital of Burgundy \nin the C?te d'Or department in eastern France"},
     {lat: 46.95, long: 4.3, name: "Autun", label:{position:"left", anchor:"rightBottom"}, info: "Augustodunum was founded during the reign \nof the first Roman emperor, Augustus, \nafter whom it was named.\nFamous for St. Lazare's cathedral, \nCouhard Pyramid and the ancient theatre"},
     {lat: 47.8, long: 3.8, name: "Chablis", label:{position:"left", anchor:"right"}, info: "The village of Chablis gives its name \nto one of the most famous French \nwhite wines. Chablis is made with \nChardonnay, a grape that grows \nparticularly well in the region"},
     {lat: 49.4, long: 1.08, name: "Rouen", info: "It is the capital of Normandy. \nFormerly one of the largest and \nmost prosperous cities of medieval \nEurope, Rouen was the seat of the \nExchequer of Normandy during the Middle Ages"},
-    {lat: 49.2, long: -0.7, name: "Bayeux", label:{position:"left", anchor:"rightBottom"}, info: "Bayeux is a major tourist attraction, \nbest known to British and French \nvisitors for the Bayeux tapestry. \nThe large Norman-Romanesque and \nGothic Cathédrale Notre-Dame de Bayeux, \nconsecrated in 1077, was arguably \nthe original home of the tapestry"},
+    {lat: 49.2, long: -0.7, name: "Bayeux", label:{position:"left", anchor:"rightBottom"}, info: "Bayeux is a major tourist attraction, \nbest known to British and French \nvisitors for the Bayeux tapestry. \nThe large Norman-Romanesque and \nGothic Cath?drale Notre-Dame de Bayeux, \nconsecrated in 1077, was arguably \nthe original home of the tapestry"},
     {lat: 48.6, long: -1.5, name: "Mont Saint-Michel", label:{position:"bottom", anchor:"top"}, info: "It is an island commune in Normandy. \nIt is located about one kilometre \noff the country's northwestern coast,\nat the mouth of the Couesnon River \nnear Avranches. 100 hectares in size. \nAs of 2009, the island has a population of 44."}
 ]);
 // create map chart
@@ -98,7 +104,6 @@ map.container('container');
 // initiate chart drawing
 map.draw();
 });
-    
-    </script>
+</script>
 </body>
 </html>

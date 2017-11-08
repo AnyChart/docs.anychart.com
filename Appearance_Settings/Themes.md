@@ -415,7 +415,7 @@ Themes are introduced in AnyChart 7.6, along with new color scheme and changed d
 If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
   
 
-* use special **anychart.theme_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package or you can get this js from anychart cdn server using the link [cdn.anychart.com/themes/latest/v6.min.js](http://cdn.anychart.com/themes/latest/v6.min.js)).
+* use special **anychart.theme_v6.min.js** with the old theme to your charts as default one.
 * or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
   
 
