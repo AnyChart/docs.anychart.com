@@ -249,7 +249,7 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 ```
     chart.area(data).fill({
-        src: 'http://static.anychart.com/anychart_site_header.png',
+        src: 'https://static.anychart.com/anychart_site_header.png',
         mode: acgraph.vector.ImageFillMode.STRETCH
     })
 ```

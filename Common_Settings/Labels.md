@@ -10,8 +10,6 @@
 
 Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
   
-  
-<!--This article describes labels visualisation and interactivity settings - if you need to know about custom labels positioning, please study Controls and Controls Positioning.-->
 
 
 ## Text Labels
@@ -41,7 +39,7 @@ The sample below shows a revenue chart with AnyChart logo in the left top corner
   
   // create image label
   var image = stage.image();
-  image.src("http://static.anychart.com/images/logo_anychart.gif"); // set image source
+  image.src("https://static.anychart.com/images/logo_anychart.gif"); // set image source
   image.y(15);                                                      // set spacing from the top
   image.x(25);                                                      // set spacing from the left
   image.width(50);                                                  // set width of the image
@@ -63,7 +61,7 @@ Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api}
 
 ```
   var image = stage.image();
-  image.src('http://static.anychart.com/images/column.png')  // source of the image
+  image.src('https://static.anychart.com/images/column.png')  // source of the image
   image.width(25)                                            // set width of the image
   image.height(25)                                           // set height of the image
   image.y(20)                                                // set spacing from the top
@@ -71,11 +69,11 @@ Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api}
   image.x(35);                                               // set spacing from the left
 ```
 
-To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**.<!-- Full list of available actions is described in Interactivity Article.-->
+To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**.
 
 ```
   var myImage = stage.image();
-  myImage.src('http://static.anychart.com/images/column.png');
+  myImage.src('https://static.anychart.com/images/column.png');
   myImage.align('topleft');
   
   myImage.listen(

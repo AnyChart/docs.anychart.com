@@ -200,7 +200,7 @@ For further information, see the example below.
 ```
 	//add a listener
     chart.listen('mouseDown', function(){
-      window.open("http://google.com","_blank");  // this will open a new page in a new tab
+      window.open("https://google.com","_blank");  // this will open a new page in a new tab
 	});
 	
 ```

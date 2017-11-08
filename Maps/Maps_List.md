@@ -9,44 +9,44 @@ SHP-files that are the source of our maps.
 
 ## World Map
 
-World Map is a general map of all countries and continents. It can be downloaded from [here](http://cdn.anychart.com/geodata/world/world.js) as the *.js file. 
+World Map is a general map of all countries and continents. It can be downloaded from [here](https://cdn.anychart.com/geodata/world/world.js) as the *.js file. 
 <br>
 To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
-<script src="http://cdn.anychart.com/geodata/countries/world/world.js"></script>
+<script src="https://cdn.anychart.com/geodata/countries/world/world.js"></script>
 ```
 
- - [Download the world.geojson](http://cdn.anychart.com/geodata/world/world.geojson)
+ - [Download the world.geojson](https://cdn.anychart.com/geodata/world/world.geojson)
  
- - [Download the world.zip archive](http://cdn.anychart.com/geodata/world/world.zip)
+ - [Download the world.zip archive](https://cdn.anychart.com/geodata/world/world.zip)
  
  
 ## USA Map
 
-[Here](http://cdn.anychart.com/geodata/countries/usa/usa_mainland.js) we've got a map of the whole United States.
+[Here](https://cdn.anychart.com/geodata/countries/usa/usa_mainland.js) we've got a map of the whole United States.
 <br>
 To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
-<script src="http://cdn.anychart.com/geodata/countries/usa/usa_mainland.js"></script>
+<script src="https://cdn.anychart.com/geodata/countries/usa/usa_mainland.js"></script>
 ```
 
- - [Download the usa_mainland.geojson](http://cdn.anychart.com/geodata/countries/usa/usa_mainland.geojson)
- - [Download the usa_mainland.zip archive](http://cdn.anychart.com/geodata/countries/usa/usa_mainland.zip)
+ - [Download the usa_mainland.geojson](https://cdn.anychart.com/geodata/countries/usa/usa_mainland.geojson)
+ - [Download the usa_mainland.zip archive](https://cdn.anychart.com/geodata/countries/usa/usa_mainland.zip)
  
  
 ## AUS Map
 
-Find the JavaScript of the Australia Map [here](http://cdn.anychart.com/geodata/countries/aus/australia.js)
+Find the JavaScript of the Australia Map [here](https://cdn.anychart.com/geodata/countries/aus/australia.js)
 <br>
 To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
-<script src="http://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
+<script src="https://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
 ```
 
- - [Download the australia.geojson](http://cdn.anychart.com/geodata/countries/aus/australia.geojson)
+ - [Download the australia.geojson](https://cdn.anychart.com/geodata/countries/aus/australia.geojson)
  
- - [Download the australia.zip archive](http://cdn.anychart.com/geodata/countries/aus/australia.zip)
+ - [Download the australia.zip archive](https://cdn.anychart.com/geodata/countries/aus/australia.zip)
  
