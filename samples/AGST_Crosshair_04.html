@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AGST Crosshair 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   // create data set on our data
   var dataSet = anychart.data.set([
     ['P1' , '3.6', '2.3'],
@@ -34,7 +49,7 @@
   var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
   // create line chart
-  chart = anychart.column();
+  var chart = anychart.column();
   
   chart.crosshair(true);
   // the same as above
@@ -50,7 +65,7 @@
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').staggerMode(false).scale(extraYScale);
     extraYAxis.labels().textFormatter(function(){
-        return (this.value+'%');
+return (this.value+'%');
     });
 
   chart.yAxis(1).orientation('right');
@@ -76,9 +91,7 @@
 
   // initiate chart drawing
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

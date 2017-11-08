@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="BCT OHLC Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // data
   var data = ([
@@ -41,9 +56,9 @@
     .textFormatter(function(){
       var date = new Date(this.x);
       var options = {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
+year: 'numeric',
+month: 'numeric',
+day: 'numeric'
       };
       var transformedDate =  date.toLocaleDateString('en-US', options);
       return transformedDate;
@@ -53,16 +68,16 @@
     .contentFormatter(function() {
       var date = new Date(this.x);
       var options = {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric'
+year: 'numeric',
+month: 'numeric',
+day: 'numeric'
       };
       var transformedDate =  date.toLocaleDateString('en-US', options);
       return 'ACME Corporation \nDate: ' + transformedDate + 
-        '\nOpen: ' + this.open + 
-        '\nHigh: ' + this.high + 
-        '\nLow: ' + this.low + 
-        '\nClose: ' + this.close;
+'\nOpen: ' + this.open + 
+'\nHigh: ' + this.high + 
+'\nLow: ' + this.low + 
+'\nClose: ' + this.close;
     });
 
   // set axes title
@@ -85,9 +100,7 @@
   series.pointWidth(chart.container().width()/15);
 
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

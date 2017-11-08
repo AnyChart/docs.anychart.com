@@ -1,26 +1,40 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['sparkline']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">	 
+    <meta name="ac:name" content="BCT BoxChart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
       //chart data
       var data = [
-        {x: '1', low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
-        {x: '2', low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
-        {x: '3', low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
-        {x: '4', low: 4000, q1: 5000, median: 6500, q3: 6500, high: 7000},
-        {x: '5', low: 8000, q1:8400 , median: 8500, q3: 8800, high: 9000, outliers:[6200,9200]},
+{x: '1', low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
+{x: '2', low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+{x: '3', low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+{x: '4', low: 4000, q1: 5000, median: 6500, q3: 6500, high: 7000},
+{x: '5', low: 8000, q1:8400 , median: 8500, q3: 8800, high: 9000, outliers:[6200,9200]},
       ];
       
       var colorTitle = '#929292';
       var colorAxis = '#bebebe';
       
       //create box chart
-      chart = anychart.box();
+      var chart = anychart.box();
       chart.background(null);
 
       //set container id for the chart
@@ -39,10 +53,10 @@ anychart.onDocumentReady(function() {
       
       //set axes titles settings
       chart.xAxis()
-         .title(false)
-         .stroke(colorAxis)
-         .stroke(colorAxis)
-         .labels().fontColor(colorAxis);
+ .title(false)
+ .stroke(colorAxis)
+ .stroke(colorAxis)
+ .labels().fontColor(colorAxis);
       
       chart.yAxis()
       .title('$ per month')
@@ -56,10 +70,10 @@ anychart.onDocumentReady(function() {
       //create box chart series with our data
       var series = chart.box(data);
       series
-        .fill('#82BECA')
-        .stroke(null)
-        .stemStroke('#474747')
-        .medianStroke('2 #000');
+.fill('#82BECA')
+.stroke(null)
+.stemStroke('#474747')
+.medianStroke('2 #000');
 
       //hide whisker
       series.whiskerWidth(0);
@@ -67,9 +81,7 @@ anychart.onDocumentReady(function() {
 
       //initiate chart drawing
       chart.draw();
-    });</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+    });
+</script>
 </body>
 </html>

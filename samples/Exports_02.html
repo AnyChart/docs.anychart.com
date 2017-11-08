@@ -1,73 +1,86 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-        // data
-        var data = [
-            {x: "Chocolate paste", value: 5},
-            {x: "White honey", value: 2},
-            {x: "Strawberry jam", value: 2},
-            {x: "Сondensed milk", value: 1}
-        ];
-
-        // create default palette
-        var palette = anychart.palettes.distinctColors().colors();
-
-        // color elements
-        for (var index in data)
-            data[index].fill = palette[index];
-
-        //set chart type
-        var chart = anychart.bar();
-
-        // set data
-        var series = chart.bar(data);
-        series.stroke(null);
-        var title = chart.title();
-        title.enabled(true);
-        title.fontSize(13);
-        title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
-        chart.container("container");
-        chart.draw();
-
-        // create new buttons
-        var printButton = document.createElement("div");
-
-        // set action on button click
-        printButton.onclick = function() {
-            chart.print();
-        };
-
-        printButton.innerHTML = "Print<br>Chart";
-        container.appendChild(printButton);
-
-        // set button style
-        printButton.style.top = "15px";
-        printButton.style.right = "5px";
-        printButton.style.padding = "5px 10px";
-        printButton.style.backgroundColor = "#444444";
-        printButton.style.color = "#fff";
-        printButton.style.fontFamily = chart.title().fontFamily();
-        printButton.style.position = "absolute";
-        printButton.style.zIndex = 2;
-        printButton.style.transition = "0.5s";
-        printButton.style.textAlign = "center";
-        printButton.style.border = "1px solid #444444";
-        printButton.style.borderRadius = "7px 7px 7px 7px";
-        printButton.style.fontSize = "15px";
-        printButton.style.cursor = "pointer";
-        printButton.style.MozUserSelect= "none";
-        printButton.style.KhtmlUserSelect= "none";
-        printButton.style.WebkitUserSelect= "none";
-        printButton.style.userSelect= "none";
-    })</script>
+    <meta name="ac:name" content="Exports 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+// data
+var data = [
+    {x: "Chocolate paste", value: 5},
+    {x: "White honey", value: 2},
+    {x: "Strawberry jam", value: 2},
+    {x: "?ondensed milk", value: 1}
+];
+
+// create default palette
+var palette = anychart.palettes.distinctColors().colors();
+
+// color elements
+for (var index in data)
+    data[index].fill = palette[index];
+
+//set chart type
+var chart = anychart.bar();
+
+// set data
+var series = chart.bar(data);
+series.stroke(null);
+var title = chart.title();
+title.enabled(true);
+title.fontSize(13);
+title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
+chart.container("container");
+chart.draw();
+
+// create new buttons
+var printButton = document.createElement("div");
+
+// set action on button click
+printButton.onclick = function() {
+    chart.print();
+};
+
+printButton.innerHTML = "Print<br>Chart";
+container.appendChild(printButton);
+
+// set button style
+printButton.style.top = "15px";
+printButton.style.right = "5px";
+printButton.style.padding = "5px 10px";
+printButton.style.backgroundColor = "#444444";
+printButton.style.color = "#fff";
+printButton.style.fontFamily = chart.title().fontFamily();
+printButton.style.position = "absolute";
+printButton.style.zIndex = 2;
+printButton.style.transition = "0.5s";
+printButton.style.textAlign = "center";
+printButton.style.border = "1px solid #444444";
+printButton.style.borderRadius = "7px 7px 7px 7px";
+printButton.style.fontSize = "15px";
+printButton.style.cursor = "pointer";
+printButton.style.MozUserSelect= "none";
+printButton.style.KhtmlUserSelect= "none";
+printButton.style.WebkitUserSelect= "none";
+printButton.style.userSelect= "none";
+    })
+</script>
 </body>
 </html>

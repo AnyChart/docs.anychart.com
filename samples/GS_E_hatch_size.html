@@ -1,27 +1,40 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-            stage = anychart.graphics.create('container');
-
-            // create figures
-            var circle = stage.circle(200,200,100);
-            var rect = stage.rect(100,100,400,200);
-            var ellipse = stage.ellipse(400,200,100,50);
-
-            //fill them with hatch
-            circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01, 30));
-            rect.fill(acgraph.hatchFill('weave', 'green', 0.5));
-            ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
-
-});</script>
+    <meta name="ac:name" content="GS E hatch size"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    stage = anychart.graphics.create('container');
+
+    // create figures
+    var circle = stage.circle(200,200,100);
+    var rect = stage.rect(100,100,400,200);
+    var ellipse = stage.ellipse(400,200,100,50);
+
+    //fill them with hatch
+    circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01, 30));
+    rect.fill(acgraph.hatchFill('weave', 'green', 0.5));
+    ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
+
+});
+</script>
 </body>
 </html>

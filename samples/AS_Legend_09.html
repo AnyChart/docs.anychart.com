@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Legend 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   
   // set data
   var data = anychart.data.set([
@@ -27,13 +42,13 @@
   chart.legend()
     .tooltip()                // settings for legend tooltip
       .content()              // tune tooltip content appearance
-        .useHtml(true)        // enable HTML
-        .fontWeight(400);     // set font weight
+.useHtml(true)        // enable HTML
+.fontWeight(400);     // set font weight
   
   chart.legend()
     .tooltip()
       .contentFormatter(function(){
-        return this.meta.legendTooltipText;
+return this.meta.legendTooltipText;
       });
   
   chart.legend()
@@ -64,20 +79,20 @@
       '<br><b>Quarter:</b> first'+
       '<br><b>Total sales: </b>'+(Quarter1.get(0,'value') + Quarter1.get(1,'value') + Quarter1.get(2,'value'))+
       '<br><b>Best result</b>: '+
-        Quarter1.get(
-          // get the row with the best seller
-          Quarter1.find(
-            // get the row with the biggest value
-            'value',
-            // get the biggest sales value of the first quarter
-            Math.max(
-              Quarter1.get(0,'value'),
-              Quarter1.get(1,'value'),
-              Quarter1.get(2,'value')
-            )
-          ),
-        // get the name of the best seller
-        'x')
+Quarter1.get(
+  // get the row with the best seller
+  Quarter1.find(
+    // get the row with the biggest value
+    'value',
+    // get the biggest sales value of the first quarter
+    Math.max(
+      Quarter1.get(0,'value'),
+      Quarter1.get(1,'value'),
+      Quarter1.get(2,'value')
+    )
+  ),
+// get the name of the best seller
+'x')
     });
   chart.column(Quarter2)
     .name('Quarter 2')
@@ -109,9 +124,7 @@
   
   // set container and draw chart
   chart.container('container').draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

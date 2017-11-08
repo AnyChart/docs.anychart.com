@@ -1,116 +1,127 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="stage">
-    anychart.onDocumentReady(function () {
-
-        //create stage for all charts
-        stage = acgraph.create('container');
-
-        var pieChart = anychart.pieChart([
-            {'name': ' Iron Hills - Dwarves', 'value': 513, fill: {color: '#4b213a'}},
-            {'name': 'Mirkwood - Elves', 'value': 1015, fill: {color: '#f1a122'}},
-            {'name': 'Esgaroth - Men', 'value': 2709, fill: {color: '#6f0d1a'}},
-            {'name': 'Orcs', 'value': 6232, fill: {color: '#857600'}},
-            {'name': 'Wargs', 'value': 4707, fill: {color: '#86614e'}}
-        ]);
-
-        // set chart title text settings
-        pieChart.title().enabled(true).text('The Main\nArmed Forces').fontSize(13);
-
-        // disabling legend title and title separator
-        pieChart.legend().enabled(false);
-        pieChart.bounds('2.5%', 0, '22.5%', '50%');
-        pieChart.container(stage);
-        pieChart.margin(-10, -10, -10, -10);
-        pieChart.draw();
-
-
-        var scatterChart = anychart.scatterChart();
-        scatterChart.margin(0);
-        // set title
-        scatterChart.title().enabled(true).text('Key Points Of The Battle').margin(0, 0, 10, 0).fontSize(13);
-
-        // draw axes and set titles
-        scatterChart.xAxis().title().enabled(true).text('The Battle Duration (Minutes)').padding(0).margin(0).fontSize(12);
-        scatterChart.yAxis().title().enabled(true).text('Enemies\nAmount').padding(0).margin(0).fontSize(12);
-        scatterChart.xAxis().labels().fontSize(11);
-        scatterChart.xAxis().ticks(true);
-        scatterChart.yAxis().labels().fontSize(11);
-        scatterChart.yAxis().ticks(true);
-
-        // data
-        data = anychart.data.set([
-            {x: '147', value: 10005, point: 'Appearance \nOf The Eagles'},
-            {x: '170', value: 8000, point: 'Thorin Makes\nBlade Rush', label: {anchor: 'topRight', align: 'right'}},
-            {x: '236', value: 5011, point: "Gandalf's \nMighty Fireball"},
-            {x: '277', value: 237, point: "Thranduil's \nPowerful Attack"}
-        ]);
-
-        var view = data.mapAs();
-        // set data
-        var scatterSeries = scatterChart.line(data).stroke('2 #4b213a');
-        scatterSeries.tooltip().enabled(false);
-        scatterSeries.labels().anchor('bottomLeft').enabled(true).fontSize(10).textFormatter(function () {
-            return view.get(
-                    this.index, 'point'
-            )
-        });
-        scatterSeries.markers(true);
-        scatterSeries.clip(false);
-        scatterChart.bounds('25%', 0, '67.5%', '50%');
-        scatterChart.container(stage);
-        scatterChart.margin(-10, -15, -10, -15);
-        scatterChart.draw();
-
-        var columnChart = anychart.columnChart();
-        // set title
-        columnChart.title().enabled(true).text('The Forces Of Light').fontSize(13);
-
-        // set axes titles
-        columnChart.xAxis().title().enabled(true).text('Military Units').fontSize(12).padding(0).margin(0);
-
-        // set scale minimum
-        columnChart.yScale().minimum(0);
-
-        // set data
-        var series = columnChart.column([
-            {'x': 'Men of Esgaroth', value: 2709, stroke: {color: '#4b213a', thickness: '2'}},
-            {'x': 'Eagles', value: 1067, stroke: {color: '#f1a122', thickness: '2'}},
-            {'x': 'Elves', value: 1015, stroke: {color: '#6f0d1a', thickness: '2'}},
-            {'x': 'Dwarves Of The Iron Hills', value: '500', stroke: {color: '#857600', thickness: '2'}},
-            {'x': "Thirteen Lions of Erebor", value: 13, stroke: {color: '#86614e', thickness: '2'}},
-
-            {'x': 'Beorn', value: 1,
-                marker: {type: 'star4', fill: '#a50b01', size: 10, stroke: null, enabled: true}
-            },
-            {'x': 'Gandalf the Grey', fill: {color: '#726E6D'},  value: 1,
-                marker: {type: 'star5', fill: '#a50b01', stroke: null, size: 10, enabled: true},
-                hoverMarker: {size: 12}
-            },
-            {'x': 'Bilbo Baggins', value: 1, marker: {type: 'diamond', fill: '#a50b01', stroke: null, size: 10, enabled: true}}
-        ]);
-
-        series.fill('#fff');
-        series.name('Military Unit');
-        series.stroke('#726E6D');
-        series.tooltip().titleFormatter(function(){return this.x});
-        series.tooltip().contentFormatter(function(){return 'Amount: ' + this.value});
-
-        columnChart.xAxis().labels(null);
-        columnChart.yScale(anychart.scales.log());
-        columnChart.bounds('0%', '50%', '100%', '50%');
-        columnChart.container(stage);
-        columnChart.margin(-10, -10, -10, -10);
-        columnChart.draw();
-    });
-</script>
+    <meta name="ac:name" content="Settings From Data 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.6.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.6.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+//create stage for all charts
+var stage = acgraph.create('container');
+
+var pieChart = anychart.pieChart([
+    {'name': ' Iron Hills - Dwarves', 'value': 513, fill: {color: '#4b213a'}},
+    {'name': 'Mirkwood - Elves', 'value': 1015, fill: {color: '#f1a122'}},
+    {'name': 'Esgaroth - Men', 'value': 2709, fill: {color: '#6f0d1a'}},
+    {'name': 'Orcs', 'value': 6232, fill: {color: '#857600'}},
+    {'name': 'Wargs', 'value': 4707, fill: {color: '#86614e'}}
+]);
+
+// set chart title text settings
+pieChart.title().enabled(true).text('The Main\nArmed Forces').fontSize(13);
+
+// disabling legend title and title separator
+pieChart.legend().enabled(false);
+pieChart.bounds('2.5%', 0, '22.5%', '50%');
+pieChart.container(stage);
+pieChart.margin(-10, -10, -10, -10);
+pieChart.draw();
+
+
+var scatterChart = anychart.scatterChart();
+scatterChart.margin(0);
+// set title
+scatterChart.title().enabled(true).text('Key Points Of The Battle').margin(0, 0, 10, 0).fontSize(13);
+
+// draw axes and set titles
+scatterChart.xAxis().title().enabled(true).text('The Battle Duration (Minutes)').padding(0).margin(0).fontSize(12);
+scatterChart.yAxis().title().enabled(true).text('Enemies\nAmount').padding(0).margin(0).fontSize(12);
+scatterChart.xAxis().labels().fontSize(11);
+scatterChart.xAxis().ticks(true);
+scatterChart.yAxis().labels().fontSize(11);
+scatterChart.yAxis().ticks(true);
+
+// data
+data = anychart.data.set([
+    {x: '147', value: 10005, point: 'Appearance \nOf The Eagles'},
+    {x: '170', value: 8000, point: 'Thorin Makes\nBlade Rush', label: {anchor: 'topRight', align: 'right'}},
+    {x: '236', value: 5011, point: "Gandalf's \nMighty Fireball"},
+    {x: '277', value: 237, point: "Thranduil's \nPowerful Attack"}
+]);
+
+var view = data.mapAs();
+// set data
+var scatterSeries = scatterChart.line(data).stroke('2 #4b213a');
+scatterSeries.tooltip().enabled(false);
+scatterSeries.labels().anchor('bottomLeft').enabled(true).fontSize(10).textFormatter(function () {
+    return view.get(
+            this.index, 'point'
+    )
+});
+scatterSeries.markers(true);
+scatterSeries.clip(false);
+scatterChart.bounds('25%', 0, '67.5%', '50%');
+scatterChart.container(stage);
+scatterChart.margin(-10, -15, -10, -15);
+scatterChart.draw();
+
+var columnChart = anychart.columnChart();
+// set title
+columnChart.title().enabled(true).text('The Forces Of Light').fontSize(13);
+
+// set axes titles
+columnChart.xAxis().title().enabled(true).text('Military Units').fontSize(12).padding(0).margin(0);
+
+// set scale minimum
+columnChart.yScale().minimum(0);
+
+// set data
+var series = columnChart.column([
+    {'x': 'Men of Esgaroth', value: 2709, stroke: {color: '#4b213a', thickness: '2'}},
+    {'x': 'Eagles', value: 1067, stroke: {color: '#f1a122', thickness: '2'}},
+    {'x': 'Elves', value: 1015, stroke: {color: '#6f0d1a', thickness: '2'}},
+    {'x': 'Dwarves Of The Iron Hills', value: '500', stroke: {color: '#857600', thickness: '2'}},
+    {'x': "Thirteen Lions of Erebor", value: 13, stroke: {color: '#86614e', thickness: '2'}},
+
+    {'x': 'Beorn', value: 1,
+        marker: {type: 'star4', fill: '#a50b01', size: 10, stroke: null, enabled: true}
+    },
+    {'x': 'Gandalf the Grey', fill: {color: '#726E6D'},  value: 1,
+        marker: {type: 'star5', fill: '#a50b01', stroke: null, size: 10, enabled: true},
+        hoverMarker: {size: 12}
+    },
+    {'x': 'Bilbo Baggins', value: 1, marker: {type: 'diamond', fill: '#a50b01', stroke: null, size: 10, enabled: true}}
+]);
+
+series.fill('#fff');
+series.name('Military Unit');
+series.stroke('#726E6D');
+series.tooltip().titleFormatter(function(){return this.x});
+series.tooltip().contentFormatter(function(){return 'Amount: ' + this.value});
+
+columnChart.xAxis().labels(null);
+columnChart.yScale(anychart.scales.log());
+columnChart.bounds('0%', '50%', '100%', '50%');
+columnChart.container(stage);
+columnChart.margin(-10, -10, -10, -10);
+columnChart.draw();
+    });
+</script>
 </body>
 </html>
