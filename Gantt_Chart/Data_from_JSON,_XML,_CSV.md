@@ -19,7 +19,7 @@ some extra information, such as color and size settings or other design features
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting 
 of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. 
-For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikipedia.org/wiki/JSON)
+For more information visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
 
 You can use JSON to define the chart configuration with functions and other complicated structures. Look at the sample below:
 
@@ -112,17 +112,15 @@ Note that you can set the date in UTC in JSON. In XML you still have to use nume
 ### JSON Schema
 
 JSON Schema specifies a JSON-based format to define the structure of JSON data 
-(visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) 
+(visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON) 
 for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.3.1 version is located at 
-[http://anychart.com/schemas/7.3.1/json-schema.json](http://anychart.com/schemas/7.3.1/json-schema.json). 
+[https://cdn.anychart.com/schemas/7.3.1/json-schema.json](https://cdn.anychart.com/schemas/7.3.1/json-schema.json). 
 Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 
-The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json) 
-
 
 ## XML
 
-XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing,  XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere.  More information on XML can be found on [http://en.wikipedia.org/wiki/XML](http://en.wikipedia.org/wiki/XML)
+XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing,  XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere.  More information on XML can be found on [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)
 
 You can use XML to define the chart configuration as a string. Let's take the sample above as an example. The code converted to XML will look like:
 
@@ -130,7 +128,7 @@ You can use XML to define the chart configuration as a string. Let's take the sa
 anychart.onDocumentReady(function() {
 
             var xml =
-                    '<anychart xmlns="http://anychart.com/schemas/7.5.0/xml-schema.xsd">'+
+                    '<anychart xmlns="https://anychart.com/schemas/7.5.0/xml-schema.xsd">'+
                     '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
                     '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
                     '<tree_data>'+
@@ -189,11 +187,11 @@ The sample looks completely the same as the JSON-converted one.
 ## XML Schema
 
 XML Schema specifies a XML-based format to define the structure of XML data 
-(visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). 
+(visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). 
 All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 (for instance, XML schema for AnyChart 7.3.1 version is located at 
-[http://anychart.com/schemas/7.3.1/xml-schema.xsd](http://anychart.com/schemas/7.3.1/xml-schema.xsd)). 
-Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xml](http://anychart.com/schemas/latest/xml-schema.xml) 
+[https://anychart.com/schemas/7.3.1/xml-schema.xsd](https://anychart.com/schemas/7.3.1/xml-schema.xsd)). 
+Latest version of XML schema can be found at [https://anychart.com/schemas/latest/xml-schema.xml](https://anychart.com/schemas/latest/xml-schema.xml) 
 This file can also be used to validate your own XML structure. 
 
 
@@ -205,7 +203,7 @@ operate on incompatible (often proprietary and/or undocumented) formats. This wo
 to RFC 4180 (or any other standard), because so many programs support variations on the CSV format for data import.
 
 For example, a user may need to transfer information from a database program that stores data in a proprietary format, to a spreadsheet that uses a completely different format. The database program most likely can export its data as "CSV"; the exported CSV file can then be imported by the spreadsheet program.
-For more information visit [http://en.wikipedia.org/wiki/Comma-separated_values](http://en.wikipedia.org/wiki/CSV)
+For more information visit [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/CSV)
 
 If we take the above sample as an example, that's how the part of code for the Gantt Project chart will look like: 
 

@@ -177,4 +177,4 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Bullet Charts Gallery](http://anychart.com/products/anychart/gallery/Bullet_Charts/).
+You can see a lot of other samples in [AnyChart Web Bullet Charts Gallery](https://anychart.com/products/anychart/gallery/Bullet_Charts/).

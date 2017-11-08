@@ -337,11 +337,6 @@ And here is a result - March is the most profitable month and we are showing thi
 
 {sample}BCT\_LineChart\_10{sample}
 
-<!--
-Related help topics:
-You can read more about working with markers in Markers tutorial.
-Full reference of marker style can be found in XML Reference, particularly <marker_style> node.
--->
 
 ## Colors
 
@@ -357,4 +352,4 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
+You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](https://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).

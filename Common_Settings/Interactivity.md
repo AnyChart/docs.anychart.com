@@ -1,5 +1,5 @@
-Interactivity
-======================
+# Interactivity
+
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
@@ -17,11 +17,11 @@ Interactivity
  * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
-# Overview 
+## Overview 
 
 Our charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
-# Default interactivity
+## Default interactivity
 
 That's what happens by default when users interact with charts:
  - series and points are highlighted when hovered
@@ -43,7 +43,7 @@ The following sample shows a scatter chart with marker series, you can hover and
 
 {sample}CS\_Interactivity\_02{sample}
 
-# Altering interactivity
+## Altering interactivity
 
 And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series interactivity level.
 
@@ -223,75 +223,13 @@ Using all these features, it's possible to create a drilldown chart. You can eas
 
 {sample}CS\_Interactivity\_13{sample} 
 
-<!--
-```
-chart.listen('pointSelect', function(evt){
-        var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
-                pieSubTitle = "\nto eat Velma's pizza";
-                break;
-            case 1:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
-                pieSubTitle = "\nto eat Fred's pizza";
-                break;
-            case 2:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
-                pieSubTitle = "\nto eat Daphne's pizza";
-                break;
-            case 3:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
-                pieSubTitle = "\nto eat Shaggy's pizza";
-                break;
-            case 4:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
-                pieSubTitle = "... No one shared Scooby's sausages :(";
-                break;
-        }
-        pie.data(pieDataMapping);
-        pie.title(pieTitle + pieSubTitle);
-    });
-```
 
-
-Here we can see the column chart accompanied by a pie chart showing the amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
-
-If you need the similar drilldown chart with multi-selection, you may do the following:
-
-{sample}CS\_Interactivity\_14{sample} 
-
-In this sample not the data but the series are added and removed depending on selections made:
-
-```
-chart.listen('click', function (evt) {
-        var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                markerVelma.enabled(!markerVelma.enabled());
-                break;
-            case 1:
-                markerFred.enabled(!markerFred.enabled());
-                break;
-            case 2:
-                markerDaphne.enabled(!markerDaphne.enabled());
-                break;
-            case 3:
-                markerShaggy.enabled(!markerShaggy.enabled());
-                break;
-            case 4:
-                markerScooby.enabled(!markerScooby.enabled());
-                break;
-        }
-    });
-```
--->
 Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
+ - [Dashboard with the US Map and Multiselect](https://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
+ - [World Temperature Map](https://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
+ - [Wine Sales in Australia](https://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
+ - [Software Sales Dashboard](https://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
+ - [ACME Corp. Sales Dashboard](https://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 

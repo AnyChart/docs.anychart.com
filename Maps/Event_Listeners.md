@@ -1,6 +1,5 @@
 {:index 7}
-Event Listeners in Maps
-======================
+# Event Listeners in Maps
 
 * [Overview](#overview)
 * [Action types](#action_types)
@@ -33,7 +32,7 @@ You can find everything about listeners in [Event Listeners](../Common_Settings/
 ```
 	// create a function to listen and then unlisten
     var func_listen = function(e){
-        window.open('http://www.google.com/search?q=Australia');
+        window.open('https://www.google.com/search?q=Australia');
     };
   
     //add a listener

@@ -20,7 +20,7 @@ AnyChart Export Server itself is a jar-file that runs using Java so it works Win
 To run the AnyChart Export Server, do the following:
 * Install PhantomJS: instructions and downloads at [http://phantomjs.org/](http://phantomjs.org/))
 * Install Java: version above 6.0 - [https://java.com/en/download/](https://java.com/en/download/) )
-* Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar)
+* Download AnyChart Export Server 
 
 ## Command Line Usage
 
@@ -148,7 +148,7 @@ Full list of the parameters available:
 
 ## Web Server Usage 
 
-AnyChart Export Server is also used when you use AnyChart [Export] methods and by default AnyChart component uses server hosted at http://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
+AnyChart Export Server is also used when you use AnyChart [Export] methods and by default AnyChart component uses server hosted at https://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
 If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 
 To run Export server in server mode set "server" as the first parameter. Host and port params are optional.
@@ -190,7 +190,7 @@ Full list of server parameters that can be set:
 <tr>
 <td>--allow-scripts-executing</td>
 <td>y (yes), n (no)</td>
-<td>A boolean parameter. If set in Y (e.g. as we do with http://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
+<td>A boolean parameter. If set in Y (e.g. as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
 </tr>
 </tbody>
 </table>
@@ -226,10 +226,10 @@ java -D phantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## How to Set the Path to Export Server 
-If you have decided to use your own server, use the **[anychart.server()](http://api.anychart.com/7.5.0/anychart.graphics#server)** method and set the address of your server as a parameter:
+If you have decided to use your own server, use the **[anychart.server()](https://api.anychart.com/7.5.0/anychart.graphics#server)** method and set the address of your server as a parameter:
 
 ```
-anychart.graphics.server('http://localhost:2000')
+anychart.graphics.server('https://localhost:2000')
 ```
 
 ## Contribution 
