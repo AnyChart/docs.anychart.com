@@ -49,7 +49,7 @@ chart.listen("click", function(){
 ###listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
-You can add the {api:anychart.core.Chart##listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
+You can add the {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
 ```
@@ -79,7 +79,7 @@ chart.listen("dblClick", function(){
 
 {sample}CMN\_Event\_Listener\_03{sample}
 
-Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Chart##unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Chart#listen}**.listen()**{api} one.
+Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Chart#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Chart#listen}**.listen()**{api} one.
 
 <a name="unlisten">
 ###unlisten()
