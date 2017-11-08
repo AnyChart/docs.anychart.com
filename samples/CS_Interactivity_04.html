@@ -4,9 +4,9 @@
     <meta name="ac:name" content="CS Interactivity 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/7.8.0/anychart-bundle.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.8.0/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -22,84 +22,41 @@
 <script>
 anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-<<<<<<< HEAD
-        [1980, 20],
-        [1981, 22],
-        [1982, 21],
-        [1983, 25],
-        [1984, 19],
-        [1985, 28],
-        [1986, 27],
-        [1987, 18],
-        [1988, 23],
-        [1989, 15],
-        [1990, 10],
-        [1991, 12],
-        [1992, 11],
-        [1993, 15],
-        [1994, 20],
-        [1995, 22],
-        [1996, 21],
-        [1997, 25],
-        [1998, 31],
-        [1999, 32],
-        [2000, 28],
-        [2001, 29],
-        [2002, 40],
-        [2003, 41],
-        [2004, 45],
-        [2005, 50],
-        [2006, 65],
-        [2007, 45],
-        [2008, 50],
-        [2009, 51],
-        [2010, 65],
-        [2011, 60],
-        [2012, 62],
-        [2013, 65],
-        [2014, 45]
-=======
-[1, 10],
-[2, 12],
-[3, 11],
-[4, 15],
-[5, 20],
-[6, 22],
-[7, 21],
-[8, 25],
-[9, 31],
-[10, 32],
-[11, 28],
-[12, 29],
-[13, 40],
-[14, 41],
-[15, 45],
-[16, 50],
-[17, 65],
-[18, 45],
-[19, 50],
-[20, 51],
-[21, 65],
-[22, 60],
-[23, 62],
-[24, 65],
-[25, 45],
-[26, 55],
-[27, 59],
-[28, 52],
-[29, 53],
-[30, 40],
-[31, 45],
-[32, 23],
-[33, 45],
-[34, 40],
-[35, 33],
-[36, 37],
-[37, 59],
-[38, 30],
-[39, 12],
-[40, 60]
->>>>>>> 7.7.0
+[1980, 20],
+[1981, 22],
+[1982, 21],
+[1983, 25],
+[1984, 19],
+[1985, 28],
+[1986, 27],
+[1987, 18],
+[1988, 23],
+[1989, 15],
+[1990, 10],
+[1991, 12],
+[1992, 11],
+[1993, 15],
+[1994, 20],
+[1995, 22],
+[1996, 21],
+[1997, 25],
+[1998, 31],
+[1999, 32],
+[2000, 28],
+[2001, 29],
+[2002, 40],
+[2003, 41],
+[2004, 45],
+[2005, 50],
+[2006, 65],
+[2007, 45],
+[2008, 50],
+[2009, 51],
+[2010, 65],
+[2011, 60],
+[2012, 62],
+[2013, 65],
+[2014, 45]
     ]);
 
   var chart = anychart.cartesian();
@@ -107,10 +64,10 @@ anychart.onDocumentReady(function() {
   chart.margin(0);
 
   var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
-        series.name("Youth unemployment ratio in Nevada");
-        series.tooltip().textFormatter(function(){
-            return ("Ratio: "+this.value+"%");
-        });
+series.name("Youth unemployment ratio in Nevada");
+series.tooltip().textFormatter(function(){
+    return ("Ratio: "+this.value+"%");
+});
 
   // create the title
   chart.title("Single-hovering feature");
@@ -150,23 +107,10 @@ anychart.onDocumentReady(function() {
   // multi-hover enabling 
   chart.interactivity("byX");
 
-<<<<<<< HEAD
   chart.crosshair(true);
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
-=======
-    // multi-hover enabling 
-    chart.interactivity("byX");
-
-    chart.crosshair(true);
-    chart.container("container");
-    chart.draw();
 });
 </script>
->>>>>>> 7.7.0
 </body>
 </html>

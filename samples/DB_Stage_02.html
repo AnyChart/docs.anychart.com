@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="DB Stage 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.8.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.8.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 	// set stage
 	stage = anychart.graphics.create("container");
@@ -25,45 +38,6 @@
 
 	// apply custom theme
 	anychart.theme(customTheme);
-=======
-    <meta name="ac:name" content="DB Stage 02"/>
-    <meta name="ac:short-desc" content=""/>
-    <meta name="ac:desc" content=""/>
-    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
-    
-    <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-<body>
-<div id="container"></div>
-<script>
-anychart.onDocumentReady(function() {
-
-    // set stage
-    stage = anychart.graphics.create('container');
-
-    // create variable for custom theme
-    var customTheme = {
-"defaultFontSettings": {
-  "fontSize": 9,
-},
-"chart": {
-  "title": false,
-  "legend": false
-}
-    };
-    
-    // apply custom theme
-    anychart.theme(customTheme);    
->>>>>>> 7.7.0
 
 	// set data
 	var data_1 = anychart.data.set([
@@ -79,15 +53,10 @@ anychart.onDocumentReady(function() {
 	var seriesData_2 = data_1.mapAs({x: [0], value: [2]});
 
 	// set chart_1
-<<<<<<< HEAD
-	var chart_1 = anychart.column();
-=======
-    chart_1 = anychart.column();
->>>>>>> 7.7.0
+	chart_1 = anychart.column();
 	
 	chart_1.column(seriesData_1);
 	
-<<<<<<< HEAD
 	//create scale for line series and extraYAxis
 	//it force line series to not stuck values with over series
 	var scale = anychart.scales.linear();
@@ -114,28 +83,6 @@ anychart.onDocumentReady(function() {
 
 	// set chart title
 	chart_1.title("Popular Tea Types in the Tea House");
-=======
-    //create scale for line series and extraYAxis
-    //it force line series to not stuck values with over series
-    var scale = anychart.scales.linear();
-    
-    //create line series and set scale for it
-    var lineSeries = chart_1.spline(seriesData_2);
-    lineSeries.yScale(scale);
-    lineSeries.yScale().minimum(0).maximum(100);
-
-    //create extra axis on the right side of chart
-    var extraYAxis = chart_1.yAxis(1);
-    extraYAxis.title('Customers under 20 years old');
-    extraYAxis.orientation('right');
-    extraYAxis.scale(scale);
-    extraYAxis.labels().textFormatter(function(){
- return this.tickValue+'%';
-     });
-    
-    // set chart title
-	chart_1.title('Popular Tea Types in the Tea House');
->>>>>>> 7.7.0
 
 	// chart size and position
 	chart_1.bounds(0, 0, "60%", "100%");
@@ -157,13 +104,8 @@ anychart.onDocumentReady(function() {
 	];
 
 	// set chart_2
-<<<<<<< HEAD
-	var chart_2 = anychart.pie(data_2);
-	chart_2.innerRadius("30%");
-=======
 	chart_2 = anychart.pie(data_2);
-	chart_2.innerRadius('30%');
->>>>>>> 7.7.0
+	chart_2.innerRadius("30%");
 
 	var labels_2 = chart_2.labels();
 	labels_2.fontColor("White");
@@ -188,29 +130,16 @@ anychart.onDocumentReady(function() {
 	];
 
 	// set chart_2
-<<<<<<< HEAD
-	var chart_3 = anychart.bar(data_3);
-	chart_3.title("Popular hours");
-=======
 	chart_3 = anychart.bar(data_3);
-	chart_3.title('Popular hours');
->>>>>>> 7.7.0
+	chart_3.title("Popular hours");
 
 	// chart size and position
 	chart_3.bounds("60%", "40%", "35%", "60%");
 
 	// draw
-<<<<<<< HEAD
 	chart_3.container(stage);
 	chart_3.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
-=======
-	chart_3.container(stage).draw();
 });
 </script>
->>>>>>> 7.7.0
 </body>
 </html>

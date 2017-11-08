@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-  var dataSet = anychart.data.set([
-=======
     <meta name="ac:name" content="CMN Event Listener 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/7.8.0/anychart-bundle.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.8.0/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -31,9 +21,8 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function() {
-    
-    var dataSet = anychart.data.set([
->>>>>>> 7.7.0
+
+  var dataSet = anychart.data.set([
     {x: "P1", value: 100},
     {x: "P2", value: 200},
     {x: "P3", value: 15},
@@ -68,7 +57,6 @@ anychart.onDocumentReady(function() {
   
   // create a function what to listen and then unlisten
   var func_listen = function(){
-<<<<<<< HEAD
     dataSet.append({
       // x value
       x: "P" + indexSetter,
@@ -100,39 +88,7 @@ anychart.onDocumentReady(function() {
   chart.container("container");
   chart.draw();
 
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
-=======
-      dataSet.append({
-  // x value
-  x: "P" + indexSetter,
-
-  // random value from 1 to 500
-  value : Math.floor((Math.random() * 500)+ 1)
-});
-indexSetter++;
-dataSet.remove(0);
-  };
-  
-    // add a listener
-    var listener = chart.listen("mouseMove", func_listen);
-    
-    var counter = 0;
-    
-    // add a listener
-    chart.listen("click", function(){
-counter++;
-chart.title("Clicks: "+ counter);
-    });
-    
-    // remove all listeners
-    chart.listen("dblclick", function(){
-chart.removeAllListeners();     // click twice on any range bar to see the result
-    });
 });
 </script>
->>>>>>> 7.7.0
 </body>
 </html>

@@ -4,9 +4,9 @@
     <meta name="ac:name" content="Data Tree 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/7.8.0/anychart-bundle.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.8.0/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -95,31 +95,6 @@ anychart.onDocumentReady(function() {
     {name: "new Child Node", parent: 7, id: "9"}
   ];
 
-<<<<<<< HEAD
-=======
-  function fullChildrenHeight () {
-    var height = 0;
-    var traverser = tree.getTraverser();
-    traverser.reset();
-    while(traverser.advance()){
-
-      // get an item
-      var currentItem = traverser.current();
-
-      // get height of the item
-      var currentHeight = currentItem.get(anychart.enums.GanttDataFields.ROW_HEIGHT);
-
-      // if item height is undefined
-      if (currentHeight !== void 0){
-height += (currentHeight + 1);
-      } else {
-// if height of current item is undefined, default height is 20px + 1px row space
-height +=21;
-      }
-    }
-    return height;
-  }
->>>>>>> 7.7.0
 
   function addPoint(){
     // add data

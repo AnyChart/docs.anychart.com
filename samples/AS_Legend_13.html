@@ -4,9 +4,9 @@
     <meta name="ac:name" content="AS Legend 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/7.8.0/anychart-bundle.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.8.0/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -68,13 +68,8 @@ bestResult2006 = data2006.data()[r][0];
   }
   
   // set charts
-<<<<<<< HEAD
-  var chart2005 = anychart.column();
-  chart2005.title("2005 Sales");
-=======
   chart2005 = anychart.column();
-  chart2005.title().text('2005 Sales');
->>>>>>> 7.7.0
+  chart2005.title("2005 Sales");
   
   // set data
   chart2005.column(data2005.mapAs({x: [0], value: [1]}))
@@ -193,17 +188,10 @@ bestResult2006 = data2006.data()[r][0];
     function (){
       // define legend bounds
       var legendBounds = anychart.math.rect(
-<<<<<<< HEAD
-        0,
-        legend.getRemainingBounds().getHeight(),
-        chart2005.container().width(),
-        chart2005.container().height()
-=======
 0,
-0,
+legend.getRemainingBounds().getHeight(),
 chart2005.container().width(),
 chart2005.container().height()
->>>>>>> 7.7.0
       );
       
       // set bounds and draw legend
