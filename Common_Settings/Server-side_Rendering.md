@@ -20,7 +20,7 @@ AnyChart Export Server itself is a jar-file that runs using Java so it works Win
 To run the AnyChart Export Server, do the following:
 * Install PhantomJS: instructions and downloads at [http://phantomjs.org/](http://phantomjs.org/)
 * Install Java: version above 6.0 - [https://java.com/en/download/](https://java.com/en/download/)
-* Download AnyChart Export Server [binary file](//anychart.com/products/export_server/download/export-server.jar)
+* Download AnyChart Export Server 
 
 ## Command Line Usage
 
