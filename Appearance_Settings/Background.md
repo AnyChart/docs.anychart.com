@@ -89,7 +89,7 @@ Image fill allows you to set an image as a background. An image can be **stretch
 
 ```
     chart.background().fill({
-        src: 'http://static.anychart.com/underwater.jpg',
+        src: 'https://static.anychart.com/underwater.jpg',
         mode: acgraph.vector.ImageFillMode.FILL
     });
 ```
@@ -100,7 +100,7 @@ Image fill allows you to set an image as a background. An image can be **stretch
 
 You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**, **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
 
-![](http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
+![](https://anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
 
 For "Rounded", "Cut" and "RoundedInner" types you can control not only the shape, but also a radius of "rounding" or "cutting" for all corners, or given corners. Sample settings for "rounding" all corners:
 

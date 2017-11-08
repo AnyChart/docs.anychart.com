@@ -11,7 +11,7 @@
 
 ## Overview
 
-Credits is a single object shown as a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credits placed in your chart, you can purchase a license at [AnyChart Website](http://www.anychart.com/buy/).
+Credits is a single object shown as a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credits placed in your chart, you can purchase a license at [AnyChart Website](https://www.anychart.com/buy/).
 
 ### Text
 
@@ -33,10 +33,10 @@ Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychar
 
 ### URL
 
-Credits acts as a link. By default it links to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
+Credits acts as a link. By default it links to [AnyChart Site](https://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
 
 ```
-    chart.credits().url('http://www.anychart.com/buy/');
+    chart.credits().url('https://www.anychart.com/buy/');
 ```
 {sample}Credits\_03{sample}
 
@@ -44,7 +44,7 @@ Credits acts as a link. By default it links to [AnyChart Site](http://www.anycha
 Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoSrc}**.logoScr()**{api} method to set custom image.
 
 ```
-    chart.credits().logoSrc('http://static.anychart.com/github.png');
+    chart.credits().logoSrc('https://static.anychart.com/github.png');
 ```
 {sample}Credits\_04{sample}
 
@@ -81,4 +81,4 @@ When you purchase a license to AnyChart 7 you receive an access to your customer
 ```
     anychart.licenseKey('YOUR-LICENSE-KEY');
 ```
-To purchase a license proceed to [Buy AnyChart](http://www.anychart.com/buy/) page.
+To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.

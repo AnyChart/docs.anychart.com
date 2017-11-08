@@ -1,8 +1,4 @@
 # Fill Settings
-* [Solid Color](#solid_color)
-* [Linear Gradient](#linear_gradient)
-* [Radial Gradient](#radial_gradient)
-* [Image Fill](#image_fill)
 
 ## Solid color
 The most simple fill is solid color fill.  Color can be set in the following formats:
@@ -151,7 +147,7 @@ To fill an element with an image you need to pass the following settings: object
 
 ```
 .fill({
-    src: 'http://static.anychart.com/kitty.png',
+    src: 'https://static.anychart.com/kitty.png',
     mode: acgraph.vector.ImageFillMode.TILE
 })
 ```

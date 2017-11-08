@@ -1,14 +1,13 @@
 {:index 1}
-Gantt Chart Quick Start
-===========
-  
+# Gantt Chart Quick Start
+
 ## Getting started with Gantt Chart
 ###1. Include Gantt Chart into Your Web Page
 Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
 
 ```
 <head>
-    <script src="http://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script> 
 </head>
 ```
 

@@ -1,16 +1,4 @@
-#Event Listeners
-
-* [Overview](#overview)
-* [Listener Types](#listener_types)
-  * [listen](#listen)
-  * [listenOnce](#listenOnce)
-  * [removeAllListeners](#removeAllListeners)
-  * [unlisten](#unlisten)
-  * [unlistenByKey](#unlistenByKey)
-* [Event types](#event_types)
-  * [Mouse-related](#mouse-related)
-  * [Point-related](#point-related)
-  
+# Event Listeners
 
 ## Overview
 
@@ -200,7 +188,7 @@ For further information, see the example below.
 ```
 	//add a listener
     chart.listen('mouseDown', function(){
-      window.open("http://google.com","_blank");  // this will open a new page in a new tab
+      window.open("https://google.com","_blank");  // this will open a new page in a new tab
 	});
 	
 ```
