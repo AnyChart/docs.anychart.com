@@ -1,19 +1,34 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS TextFormatter 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ["Department Stores", 637166, 737166],
-        ["Discount Stores", 721630, 537166],
-        ["Men\'s/Women\'s Specialty Stores", 148662, 188662],
-        ["Juvenile Specialty Stores", 78662, 178662],
-        ["All other outlets", 90000, 89000]
+["Department Stores", 637166, 737166],
+["Discount Stores", 721630, 537166],
+["Men\'s/Women\'s Specialty Stores", 148662, 188662],
+["Juvenile Specialty Stores", 78662, 178662],
+["All other outlets", 90000, 89000]
     ]);
 
     // remapping data
@@ -41,11 +56,11 @@
     // set textFormatter
     series_1.labels().enabled(true);
     series_1.labels().textFormatter(function(){
-        return(this.seriesName);
+return(this.seriesName);
     });
     series_2.labels().enabled(true);
     series_2.labels().textFormatter(function(){
-        return(this.seriesName);
+return(this.seriesName);
     });	
     
     // set the labels position
@@ -56,9 +71,7 @@
 
     // draw chart
     chart.container("container").draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

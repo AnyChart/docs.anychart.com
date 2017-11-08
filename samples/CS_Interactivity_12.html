@@ -1,13 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Interactivity 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
     
-        var dataSet = anychart.data.set([
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    
+var dataSet = anychart.data.set([
 		{x: "Twix", value: 100, url:"//www.google.com/search?q=Twix", fill:"#F75208"},
 		{x: "Bounty", value: 200, url:"//www.google.com/search?q=Bounty", fill:"#F0700F"},
 		{x: "Picnic", value: 15, url:"//www.google.com/search?q=Picnic", fill:"#E88F17"},
@@ -18,7 +33,7 @@
 	]);
 
 	// set chart type
-	chart = anychart.columnChart();
+	var chart = anychart.columnChart();
 
 	chart.title().enabled(true).text("Double-click on a bar");
 
@@ -39,9 +54,7 @@
 		window.open(new_value,"_blank");
 	});
     
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

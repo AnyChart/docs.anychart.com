@@ -1,141 +1,153 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="DB Stage 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-        // set stage
-        var stage = anychart.graphics.create('container');
+// set stage
+var stage = anychart.graphics.create('container');
 
-        var layer = stage.layer();
-        // set data
-        var data_1 = anychart.data.set([
-            {x: 'Ice-Cream', value: 5000, fill:'#00FFFF'},
-            {x: 'Sweets', value: 10000, fill:'#0DD9E6'},
-            {x: 'Chocolates', value: 19000, fill:'#1AB2CC'},
-            {x: 'Hot chocolate', value: 16000, fill:'#268CB2'},
-            {x: 'Cookies', value: 9000, fill:'#336699'}
-        ]);
+var layer = stage.layer();
+// set data
+var data_1 = anychart.data.set([
+    {x: 'Ice-Cream', value: 5000, fill:'#00FFFF'},
+    {x: 'Sweets', value: 10000, fill:'#0DD9E6'},
+    {x: 'Chocolates', value: 19000, fill:'#1AB2CC'},
+    {x: 'Hot chocolate', value: 16000, fill:'#268CB2'},
+    {x: 'Cookies', value: 9000, fill:'#336699'}
+]);
 
-        // chart type
-        var chart_1 = anychart.column();
-        chart_1.width(550);
-        chart_1.height(420);
-        chart_1.title('Sales');
-        chart_1.padding(40, 0, 0, 75);
-        var series_1 = chart_1.column(data_1);
-        series_1.stroke(null);
+// chart type
+chart_1 = anychart.column();
+chart_1.width(550);
+chart_1.height(420);
+chart_1.title('Sales');
+chart_1.padding(40, 0, 0, 75);
+var series_1 = chart_1.column(data_1);
+series_1.stroke(null);
 
-        // draw
-        chart_1.container(layer).draw();
+// draw
+chart_1.container(layer).draw();
 
-        //buttons
-        var container = document.getElementById('container');
-        b1 = document.createElement('button');   // scale
-        container.appendChild(b1);
+//buttons
+var container = document.getElementById('container');
+b1 = document.createElement('button');   // scale
+container.appendChild(b1);
+b1.innerHTML = '+';
+b1.style.padding = 0;
+
+b1.style.position = 'absolute';
+b1.style.left = '320px';
+b1.style.top = '455px';
+b1.style.width = '30px';
+b1.style.height = '30px';
+
+var ifScaled = false;
+
+b1.onclick = function() {
+    if (ifScaled) {
+        ifScaled = false;
+        layer.scale(0.8333, 0.8333, 0.9, 0.9);
         b1.innerHTML = '+';
-        b1.style.padding = 0;
+    } else {
+        b1.innerHTML = '-';
+        layer.scale(1.2, 1.2, 0.9, 0.9);
+        ifScaled = true;
+    }
+    stage.suspend();
+    stage.resume();
+};
 
-        b1.style.position = 'absolute';
-        b1.style.left = '320px';
-        b1.style.top = '455px';
-        b1.style.width = '30px';
-        b1.style.height = '30px';
-        
-        var ifScaled = false;
-        
-        b1.onclick = function() {
-            if (ifScaled) {
-                ifScaled = false;
-                layer.scale(0.8333, 0.8333, 0.9, 0.9);
-                b1.innerHTML = '+';
-            } else {
-                b1.innerHTML = '-';
-                layer.scale(1.2, 1.2, 0.9, 0.9);
-                ifScaled = true;
-            }
-            stage.suspend();
-            stage.resume();
-        };
+b2 = document.createElement('button');   // turn right
+container.appendChild(b2);
 
-        b2 = document.createElement('button');   // turn right
-        container.appendChild(b2);
+b2.innerHTML = "Clockwise";
+b2.style.padding = 0;
 
-        b2.innerHTML = "Clockwise";
-        b2.style.padding = 0;
+b2.style.position = 'absolute';
+b2.style.left = '355px';
+b2.style.top = '455px';
+b2.style.width = '100px';
+b2.style.height = '30px';
+b2.onclick = function() {
+    stage.suspend();
+    layer.rotate(90, 325, 250);
+    stage.resume();
+};
 
-        b2.style.position = 'absolute';
-        b2.style.left = '355px';
-        b2.style.top = '455px';
-        b2.style.width = '100px';
-        b2.style.height = '30px';
-        b2.onclick = function() {
-            stage.suspend();
-            layer.rotate(90, 325, 250);
-            stage.resume();
-        };
+b3 = document.createElement('button');   // turn left
+container.appendChild(b3);
+b3.innerHTML = 'Counterclockwise';
 
-        b3 = document.createElement('button');   // turn left
-        container.appendChild(b3);
-        b3.innerHTML = 'Counterclockwise';
-        
-        b3.style.padding = 0;
+b3.style.padding = 0;
 
-        b3.style.position = 'absolute';
-        b3.style.left = '215px';
-        b3.style.top = '455px';
-        b3.style.width = '100px';
-        b3.style.height = '30px';
-        b3.onclick = function() {
-            stage.suspend();
-            layer.rotate(-90, 325, 250);
-            stage.resume();
-        };
+b3.style.position = 'absolute';
+b3.style.left = '215px';
+b3.style.top = '455px';
+b3.style.width = '100px';
+b3.style.height = '30px';
+b3.onclick = function() {
+    stage.suspend();
+    layer.rotate(-90, 325, 250);
+    stage.resume();
+};
 
-        b4 = document.createElement('button');   // move to the right
-        b4.innerHTML = 'Right';
-        
-        container.appendChild(b4);
-        b4.style.position = 'absolute';
-        b4.style.left = '460px';
-        b4.style.top = '455px';
-        b4.style.width = '60px';
-        b4.style.height = '30px';
-        b4.style.padding = 0;
+b4 = document.createElement('button');   // move to the right
+b4.innerHTML = 'Right';
 
-        b4.onclick = function() {
-            stage.suspend();
-            layer.translate(5, 0);
-            stage.resume();
-        };
+container.appendChild(b4);
+b4.style.position = 'absolute';
+b4.style.left = '460px';
+b4.style.top = '455px';
+b4.style.width = '60px';
+b4.style.height = '30px';
+b4.style.padding = 0;
+
+b4.onclick = function() {
+    stage.suspend();
+    layer.translate(5, 0);
+    stage.resume();
+};
 
 
-        b5 = document.createElement('button');   // move to the left
-        b5.innerHTML = 'Left';
-        
-        container.appendChild(b5);
+b5 = document.createElement('button');   // move to the left
+b5.innerHTML = 'Left';
 
-        b5.style.position = 'absolute';
-        b5.style.left = '150px';
-        b5.style.top = '455px';
-        b5.style.width = '60px';
-        b5.style.height = '30px';
-        b5.style.padding = 0;
+container.appendChild(b5);
 
-        b5.onclick = function() {
-            stage.suspend();
-            layer.translate(-5, 0);
-            stage.resume();
-        };
+b5.style.position = 'absolute';
+b5.style.left = '150px';
+b5.style.top = '455px';
+b5.style.width = '60px';
+b5.style.height = '30px';
+b5.style.padding = 0;
+
+b5.onclick = function() {
+    stage.suspend();
+    layer.translate(-5, 0);
+    stage.resume();
+};
 
 
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

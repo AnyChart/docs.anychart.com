@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart, pie, stage;
+    <meta name="ac:name" content="CS Interactivity 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+chart, pie, stage;
     anychart.onDocumentReady(function() {
 
     // set stage
@@ -38,7 +53,7 @@
     var pieTitle = "Sales Persons Share";
 
     // chart type
-    chart = anychart.column();
+    var chart = anychart.column();
 
     // set data
     var series = chart.column(dataMapping); 
@@ -78,19 +93,19 @@ var pieSubTitle;
 
 
     chart.listen("pointClick", function(evt){
-        var ind = evt.pointIndex;
+var ind = evt.pointIndex;
 
-        dataRow = data.row(ind);
-        pieDataSet.data([
-                {x: "John", value: dataRow[2]},
-                {x: "James", value: dataRow[3]},
-                {x: "Peter", value: dataRow[4]},
-                {x: "Mattew", value: dataRow[5]}
-        ]);
-        pieSubTitle = "\nYear: "+ dataRow[0];
+dataRow = data.row(ind);
+pieDataSet.data([
+        {x: "John", value: dataRow[2]},
+        {x: "James", value: dataRow[3]},
+        {x: "Peter", value: dataRow[4]},
+        {x: "Mattew", value: dataRow[5]}
+]);
+pieSubTitle = "\nYear: "+ dataRow[0];
 
-        pie.data(pieDataSet);
-        pie.title(pieTitle + pieSubTitle);
+pie.data(pieDataSet);
+pie.title(pieTitle + pieSubTitle);
     });
 
     pie.bounds("50%", 0, "50%", "100%");
@@ -99,9 +114,7 @@ var pieSubTitle;
     // draw
     chart.container(stage).draw();
     pie.container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

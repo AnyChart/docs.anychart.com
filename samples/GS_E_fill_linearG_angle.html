@@ -1,26 +1,39 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="GS E fill linearG angle"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     stage = anychart.graphics.create("container");
     stage.text(stage.width() / 12, 3, "no angle preservation (45\u00b0)");
     anychart.ui.background()
-            .fill(["0.4 black", ".6 white"], 45)
-            .bounds(anychart.math.rect(stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
-            .container(stage).draw();
+    .fill(["0.4 black", ".6 white"], 45)
+    .bounds(anychart.math.rect(stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
+    .container(stage).draw();
     stage.text(7 * stage.width() / 12, 3, "angle preservation (45\u00b0)");
     anychart.ui.background()
-            .fill(["0.4 black", ".6 white"], 45, true)
-            .bounds(anychart.math.rect(7 * stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
-            .container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+    .fill(["0.4 black", ".6 white"], 45, true)
+    .bounds(anychart.math.rect(7 * stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
+    .container(stage).draw();
+});
+</script>
 </body>
 </html>

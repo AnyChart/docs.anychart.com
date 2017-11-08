@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="x-cat-tags" content="actualBug"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from XML 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   // chart type
   var chart = anychart.polar();
   
@@ -33,7 +47,7 @@
   chart.xAxis().labels().fontWeight(900);
   chart.container("container").draw();
   
-  var chartXml = chart.toXml();
+  chartXml = chart.toXml();
   
   var body = document.getElementsByTagName("body")[0];
   
@@ -56,9 +70,7 @@
   button.innerHTML = "Show<br/>XML config";
   button.onclick = function(){alert(chartXml)};
   body.appendChild(button);
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

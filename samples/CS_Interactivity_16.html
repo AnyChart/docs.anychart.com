@@ -1,22 +1,35 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="CS Interactivity 16"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
     
-    var chart;
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+chart;
 anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ["John", 10000, 12000, '#ccc', '#FF9900', 'diamond'],
-        ["Jake", 12000, 15000, '#ccc', '#FF9900', 'backwarddiagonal'],
-        ["Peter", 18000, 16000, '#ccc', '#FF9900', 'diamond'],
-        ["James", 11000, 13000, '#ccc', '#FF9900', 'diamond'],
-        ["Mary", 9000, 19000, '#ccc', '#FF9900', 'diamond']                                                          
+["John", 10000, 12000, '#ccc', '#FF9900', 'diamond'],
+["Jake", 12000, 15000, '#ccc', '#FF9900', 'backwarddiagonal'],
+["Peter", 18000, 16000, '#ccc', '#FF9900', 'diamond'],
+["James", 11000, 13000, '#ccc', '#FF9900', 'diamond'],
+["Mary", 9000, 19000, '#ccc', '#FF9900', 'diamond']                                                          
     ]);
 
     // map data for the each series
@@ -24,7 +37,7 @@ anychart.onDocumentReady(function() {
     var Sales2004 = data.mapAs({x: [0], value: [2], hoverFill: [3], selectHatchFill: [5]});
 
     // chart type
-    chart = anychart.column();
+    var chart = anychart.column();
 
     // set data
     var series_1 = chart.column(Sales2003); 
@@ -56,10 +69,6 @@ anychart.onDocumentReady(function() {
     chart.container("container");
     chart.draw();
 });
-    
-    </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>
