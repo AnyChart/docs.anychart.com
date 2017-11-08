@@ -1,44 +1,59 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from XML 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.9.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.9.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
       // set chart type, title and chart container
       '<chart type="column" container="container" title="XML Visual Settings">' +
-        // chart series
-        '<series_list>'+
-          // series settings
-          '<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">' +
-            // customize hatch fill on mouse over
-            '<hover_hatch_fill type="diagonalbrick" color="darkred"/>'+
-            // data set
-            '<data>' +
-              '<point x="P1" value="128.14"/>'+
-              '<point x="P2" value="112.61"/>'+
-              '<point x="P3" value="163.21"/>'+
-              '<point x="P4" value="229.98"/>'+
-              '<point x="P5" value="90.54"/>'+
-              '<point x="P6" value="104.19"/>'+
-              '<point x="P7" value="150.67"/>'+
-              '<point x="P8" value="120.43"/>'+
-              '<point x="P9" value="143.76"/>'+
-              '<point x="P10" value="191.34"/>'+
-              '<point x="P11" value="134.17"/>'+
-              '<point x="P12" value="145.72"/>'+
-              '<point x="P13" value="222.56"/>'+
-              '<point x="P14" value="187.12"/>'+
-              '<point x="P15" value="154.32"/>'+
-              '<point x="P16" value="133.08"/>'+
-            '</data>'+
-          '</series>'+
-        '</series_list>'+
+// chart series
+'<series_list>'+
+  // series settings
+  '<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">' +
+    // customize hatch fill on mouse over
+    '<hover_hatch_fill type="diagonalbrick" color="darkred"/>'+
+    // data set
+    '<data>' +
+      '<point x="P1" value="128.14"/>'+
+      '<point x="P2" value="112.61"/>'+
+      '<point x="P3" value="163.21"/>'+
+      '<point x="P4" value="229.98"/>'+
+      '<point x="P5" value="90.54"/>'+
+      '<point x="P6" value="104.19"/>'+
+      '<point x="P7" value="150.67"/>'+
+      '<point x="P8" value="120.43"/>'+
+      '<point x="P9" value="143.76"/>'+
+      '<point x="P10" value="191.34"/>'+
+      '<point x="P11" value="134.17"/>'+
+      '<point x="P12" value="145.72"/>'+
+      '<point x="P13" value="222.56"/>'+
+      '<point x="P14" value="187.12"/>'+
+      '<point x="P15" value="154.32"/>'+
+      '<point x="P16" value="133.08"/>'+
+    '</data>'+
+  '</series>'+
+'</series_list>'+
       '</chart>'+
     '</anychart>';
 
@@ -47,9 +62,7 @@
 
   // draw chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -9,10 +9,6 @@
 ## Overview
 
 Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
-  
-  
-<!--This article describes labels visualisation and interactivity settings - if you need to know about custom labels positioning, please study Controls and Controls Positioning.-->
-
 
 ## Text Labels
 
@@ -43,7 +39,7 @@ The sample below shows a revenue chart with AnyChart logo in the left top corner
   // create image label
   var image = stage.image();
   // set image source
-  image.src("//static.anychart.com/images/logo_anychart.gif");
+  image.src("https://static.anychart.com/images/logo_anychart.gif");
   // set spacing from the top
   image.y(15);
   // set spacing from the left
@@ -71,7 +67,7 @@ Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api}
 ```
   var image = stage.image();
   // source of the image
-  image.src("//static.anychart.com/images/column.png")
+  image.src("https://static.anychart.com/images/column.png")
   // set width of the image
   image.width(25)
   // set height of the image
@@ -88,7 +84,7 @@ To attach an action to the image you have to set **{api:anychart.graphics.vector
 
 ```
   var myImage = stage.image();
-  myImage.src("//static.anychart.com/images/column.png");
+  myImage.src("https://static.anychart.com/images/column.png");
   myImage.align("topleft");
   
   myImage.listen(

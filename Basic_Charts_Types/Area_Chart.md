@@ -277,7 +277,7 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 ```
     chart.area(data).fill({
-        src: 'http://static.anychart.com/anychart_site_header.png',
+        src: 'https://static.anychart.com/anychart_site_header.png',
         mode: acgraph.vector.ImageFillMode.STRETCH
     })
 ```
@@ -332,7 +332,3 @@ To demonstrate hatch fill feature we've prepared the following sample. As you ca
 ```
 
 {sample}BCT\_AreaChart\_11{sample}
-
-## Samples
-
- You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts).

@@ -175,7 +175,3 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 ```
 
 {sample :width 690 :height 130}BCT\_Bullet\_Chart\_09{sample}
-
-## Samples
-
-You can see a lot of other samples in [AnyChart Web Bullet Charts Gallery](http://anychart.com/products/anychart/gallery/Bullet_Charts/).

@@ -1,16 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="GANTT Interactivity 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.9.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.9.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     // create data tree on our data
     var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // create resource gantt chart
-    chart = anychart.ganttResource();
+    var chart = anychart.ganttResource();
 
     // set container id for the chart
     chart.container('container');
@@ -67,41 +82,39 @@ function getData() {
     "id": "1",
     "name": "Alex Exler",
     "periods": [
-        {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
-        {"id": "1_2", "start": 1174921200000, "end": 1175612400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+{"id": "1_1", "start": 1171468800000, "end": 1171987200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
+{"id": "1_2", "start": 1174921200000, "end": 1175612400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 },
 {
     "id": "2",
     "name": "Philip Kineyko",
     "periods": [
-        {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "stroke": rosybrown_border, "fill": {"angle": 90, "keys": [{"color": rosybrown_bottom, "position": 0}, {"color": rosybrown_middle, "position": 0.38}, {"color": rosybrown_top, "position": 1}]}},
-        {"id": "2_2", "start": 1173888000000, "end": 1174406400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+{"id": "2_1", "start": 1173024000000, "end": 1173715200000, "stroke": rosybrown_border, "fill": {"angle": 90, "keys": [{"color": rosybrown_bottom, "position": 0}, {"color": rosybrown_middle, "position": 0.38}, {"color": rosybrown_top, "position": 1}]}},
+{"id": "2_2", "start": 1173888000000, "end": 1174406400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 },
 {
     "id": "3",
     "name": "Luke Liakos",
     "periods": [
-        {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
-        {"id": "3_2", "start": 1171987200000, "end": 1172505600000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+{"id": "3_1", "start": 1169740800000, "end": 1170172800000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
+{"id": "3_2", "start": 1171987200000, "end": 1172505600000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 },
 {
     "id": "4",
     "name": "Judy Penfold",
     "periods": [
-        {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
-        {"id": "4_2", "start": 1173628800000, "end": 1174320000000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+{"id": "4_1", "start": 1171814400000, "end": 1172419200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
+{"id": "4_2", "start": 1173628800000, "end": 1174320000000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 },
 {
     "id": "5",
     "name": "Patricia Darmon",
     "periods": [
-        {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
-        {"id": "5_2", "start": 1174233600000, "end": 1174579200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+{"id": "5_1", "start": 1171296000000, "end": 1171382400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
+{"id": "5_2", "start": 1174233600000, "end": 1174579200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 }
     ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

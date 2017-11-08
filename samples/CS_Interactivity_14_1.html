@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart, markerChart, stage;
+    <meta name="ac:name" content="CS Interactivity 14 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.9.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.9.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+chart, markerChart, stage;
     anychart.onDocumentReady(function () {
 
     // set stage
@@ -13,11 +28,11 @@
 
     // data
     var data = anychart.data.set([
-        ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
-        ["Fred", 12, "#66A3FF", 2, 4, 3, 0, 0],
-        ["Daphne", 18, "#570FBD", 2, 2, 3, 0, 0],
-        ["Shaggy", 6, "#948F45", 1, 1, 4, 4, 0],
-        ["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
+["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
+["Fred", 12, "#66A3FF", 2, 4, 3, 0, 0],
+["Daphne", 18, "#570FBD", 2, 2, 3, 0, 0],
+["Shaggy", 6, "#948F45", 1, 1, 4, 4, 0],
+["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
     ]);
 
     var pieTitle = "And who helped them";
@@ -27,7 +42,7 @@
     var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
 
     // chart type
-    chart = anychart.column();
+    var chart = anychart.column();
     markerChart = anychart.cartesian();
     markerChart.yAxis().enabled(true);
     markerChart.xAxis().enabled(true);
@@ -91,29 +106,29 @@
     markerScooby.enabled(false);
 
     chart.listenOnce("click", function () {
-        markerChart.enabled(true);
+markerChart.enabled(true);
     });
 
     chart.listen("click", function (evt) {
-        var ind = evt.pointIndex;
-        console.log(evt.pointIndex);
-        switch (ind) {
-            case 0:
-                markerVelma.enabled(!markerVelma.enabled());
-                break;
-            case 1:
-                markerFred.enabled(!markerFred.enabled());
-                break;
-            case 2:
-                markerDaphne.enabled(!markerDaphne.enabled());
-                break;
-            case 3:
-                markerShaggy.enabled(!markerShaggy.enabled());
-                break;
-            case 4:
-                markerScooby.enabled(!markerScooby.enabled());
-                break;
-        }
+var ind = evt.pointIndex;
+console.log(evt.pointIndex);
+switch (ind) {
+    case 0:
+        markerVelma.enabled(!markerVelma.enabled());
+        break;
+    case 1:
+        markerFred.enabled(!markerFred.enabled());
+        break;
+    case 2:
+        markerDaphne.enabled(!markerDaphne.enabled());
+        break;
+    case 3:
+        markerShaggy.enabled(!markerShaggy.enabled());
+        break;
+    case 4:
+        markerScooby.enabled(!markerScooby.enabled());
+        break;
+}
     });
     markerChart.container(stage);
     markerChart.draw();
@@ -121,9 +136,7 @@
     // draw
     chart.container(stage);
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

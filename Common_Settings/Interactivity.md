@@ -1,24 +1,6 @@
-#Interactivity
+# Interactivity
 
-* [Overview](#overview)
-* [Default interactivity](#default_interactivity)
-* [Altering interactivity](#altering_interactivity)
-* [Charts behaviour](#charts_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
-* [Series behaviour](#series_behaviour)
-  * [Hover](#series_hover)
-  * [Select](#series_select)
-  * [Single Point](#single_point)
-* [Single Series Chart](#single_series_chart)
-* [Handling chart events](#handling_chart_events)
-  * [Navigating to URL](#interactivity_settings_in_data_sets)
-  * [DrillDown](#drilldown)
-* [Creating Custom Tooltip](#creating_custom_tooltip)
-  * [Chart as Tooltip](#chart_as_tooltip)
-* [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
-
-## Overview
+## Overview 
 
 Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
@@ -110,9 +92,7 @@ interactivity.selectionMode("none");
 
 {sample}CS\_Interactivity\_05{sample} 
 
-<a name="multiselect"></a>
-
-##### Multi-select
+#### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -126,7 +106,7 @@ interactivity.selectionMode("multiSelect");
 
 <a name="singleselect"></a>
 
-##### Single-select
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
@@ -165,7 +145,6 @@ chart.title().listen("mouseOut", function(){
 
 {sample}CS\_Interactivity\_08{sample}
 
-<a name="series_select"> </a>
 #### Select
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
@@ -381,13 +360,6 @@ lineChart.tooltip().textFormatter(function() {
     return text;
 });
 ```
-
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 
