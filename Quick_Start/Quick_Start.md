@@ -1,6 +1,5 @@
 {:index 1}
-Quick Start
-===========
+# Quick Start
   
 ## Getting started with AnyChart
 Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be put.
@@ -10,7 +9,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="http://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
 ###2. Create a container for the chart
@@ -42,7 +41,7 @@ Put the JavaScript tag `<script>` with the following code anywhere in the “hea
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/acdvf-docs/7.3.1/samples/quick_start_pie-plain).
+After all these steps you should have the following result. 
 
 {sample}quick\_start\_pie{sample}
 ###Full source code
@@ -76,12 +75,12 @@ Also, you can copy and paste this code to a file on your computer and run it in 
   
 ## Further Steps
 ### Learn more
-* Explore [JavaScript API Reference](http://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)
+* Explore [JavaScript API Reference](https://api.anychart.com/)
+* See [Playground demos](https://playground.anychart.com/)
 
 ### Subscribe
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
+* Read the [blog](https://www.anychart.com/blog/)
 
 
 

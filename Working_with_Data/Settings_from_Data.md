@@ -1,14 +1,10 @@
-#Settings from Data
+# Settings from Data
 
-* [Overview](#overview)
-* [Supported Functionality](#supported_functionality)
-
-
-# Overview
+## Overview
 
 AnyChart allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of [Bar Chart](../Basic_Charts_Types/Bar_Chart).
 
-<br>As you know you can use a data set to create charts with the following code:
+As you know you can use a data set to create charts with the following code:
 
 ```
 //create data set
@@ -77,7 +73,6 @@ var data = [
 <br>It was a simple demonstration of this feature, we've created the sample below to illustrate more opportunities:
 
 {sample :width 690 :height 350}Settings\_From\_Data\_04{sample}
-
 
 ## Supported Functionality
 

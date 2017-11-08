@@ -9,8 +9,6 @@
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-<!--  * [Working with labels connectors](#label_connectors)-->
-<!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
@@ -285,9 +283,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Color_Management) tutorial tutorial.
 
-
 To demonstrate hatch fill feature we've prepared the following sample. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter.
-
 
 That’s how we did it in our code:
 
