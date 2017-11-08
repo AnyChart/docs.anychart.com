@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Scales 06 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // set stage
+  stage = anychart.graphics.create('container');
+  
+  // create table
+  var table = anychart.ui.table();
+  table.getRow(0).height('10%');
+  
+  // setting data
+  var data_1 = anychart.data.set([
+    ['C', 5],
+    ['D', 21],
+    ['E', 34]
+  ]);
+  
+  var data_2 = anychart.data.set([
+    ['C', 5],
+    ['D', 1],
+    ['E', 4]
+  ]);
+  
+  // create charts
+  chart_1 = anychart.columnChart(data_1);
+  chart_2 = anychart.columnChart(data_1);
+  chart_3 = anychart.columnChart(data_1);
+  chart_4 = anychart.columnChart(data_2);
+  chart_5 = anychart.columnChart(data_2);
+  chart_6 = anychart.columnChart(data_2);
+  
+  chart_2.yScale().maximum(10);
+  chart_3.yScale().softMaximum(10);
+  
+  chart_5.yScale().maximum(10);
+  chart_6.yScale().softMaximum(10);
+  
+  formatChart(chart_1);
+  formatChart(chart_2);
+  formatChart(chart_3);
+  formatChart(chart_4);
+  formatChart(chart_5);
+  formatChart(chart_6);
+  
+  // set table content
+  table.contents([
+    ["Auto Calculation", ".maximum(10)","softMaximum(10)"],
+    [
+      chart_1,
+      chart_2,
+      chart_3
+    ],
+    [
+      chart_4,
+      chart_5,
+      chart_6
+    ]
+  ]);
+  
+  
+  // position text in the center of each cell
+  table.vAlign('center').hAlign('center');
+  
+  // set table container and initiate draw
+  table.container(stage).draw();
+});
+function formatChart(chart){
+  chart.title(false);
+  chart.xAxis().title(false);
+  chart.yAxis().title(false);
+}
+</script>
+</body>
+</html>

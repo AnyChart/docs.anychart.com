@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Scales 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // define chart
+  var chart = anychart.columnChart();
+
+  // setting chart title
+  chart.title().text('Date/Time scale sample');
+
+  // setting y scale type as dateTime and adjusting minimum and maximum values
+  chart.yScale(
+    anychart.scales.dateTime()
+      .minimum(Date.UTC(1999, 00, 01))
+      .maximum(Date.UTC(2005, 00, 01))
+  );
+  chart.yScale().ticks().interval(1);
+  chart.yScale().minorTicks().interval(0, 2);
+
+  // setting data
+  chart.rangeColumn([
+    {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+    {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: 'red'},
+    {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: 'green'},
+    {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: 'yellow'}
+  ]).hoverFill('#444444').stroke('gray 0.8').tooltip().enabled(false);
+
+  // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
+  chart.yAxis().labels()
+    .textFormatter(function(value) {
+      var date = new Date(value['value']);
+      var options = {year: 'numeric'};
+      return date.toLocaleDateString('en-US', options);
+    });
+
+  // setting axis title
+  chart.yAxis().title().text('Date/Time Scale');
+
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

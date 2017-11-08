@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Table Layout 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // set stage
+  var stage = anychart.graphics.create('container');
+  
+  // create table
+  var table = anychart.ui.table();
+  
+  // set table content
+  table.contents([
+    [
+      null,
+      '2003 Sales',
+      '2004 Sales'
+    ],[
+      'January',
+      '$10000',
+      '$12000'
+    ],[
+      'February',
+      '$12000',
+      '$15000'
+    ],[
+      'March',
+      '$18000',
+      '$16000'
+    ],[
+      'April',
+      '$11000',
+      '$15000'
+    ],
+    [
+      'May',
+      '$9000',
+      '$14000'
+    ]
+  ]);
+  
+  table.getRow(0).height(40).fontWeight(900);       // Set first row height 40px and bold the text
+  table.getCol(0).width(70).fontWeight(900);        // Set first column width 70 px and bold the text
+  
+  // set colors for ever and odd rows
+  table.rowOddFill('#F5F5F5');  // color for odd rows
+  table.rowEvenFill('#FFFFFF'); // color for even rows
+  
+  // adjust table border and position text in each cell into center
+  table.cellBorder('#B8B8B8').vAlign('center').hAlign('center');
+  
+  // set table container and initiate draw
+  table.container(stage).draw();
+});
+</script>
+</body>
+</html>

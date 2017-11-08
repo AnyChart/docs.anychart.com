@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT FunnelChart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  var data = [
+    {name: 'Fantasy', value: 637166},
+    {name: 'Science Fiction', value: 721630},
+    {name: 'Detective', value: 148662},
+    {name: 'Classics', value: 78662},
+    {name: 'Textbooks', value: 90000}
+  ];
+  
+  var chart = anychart.funnel(data);
+  
+  chart
+    .height('100%')     // set 100 percents height of the funnel
+    .width('100%')      // set 100 percents width of the funnel
+    .neckWidth(70)      // set neck width 70px
+    .neckHeight('50%')  // set neck height equal to half of the funnel's height
+    .baseWidth(300);    // set head width 300px
+  
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

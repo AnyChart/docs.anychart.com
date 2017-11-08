@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    [0, 49],
+    [1, 0],
+    [2, 48],
+    [3, 2],
+    [4, 47],
+    [5, 1],
+    [6, 45],
+    [7, 2],
+    [8, 48],
+    [9, 1]
+  ]);
+
+  // chart type
+  var chart = anychart.polar();
+
+  // chart title
+  chart.title().text('Custom Radius size');
+
+  // set chart radius
+  chart.yScale()
+    .minimum(0)        // minimum radius value
+    .maximum(120)      // maximum radius value
+    .ticks()
+        .interval(10);  // set ticks interval
+
+  // x scale interval settings
+  chart.xScale().ticks().interval(1);
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  // set data
+  chart.line(dataSet).tooltip().enabled(false);
+
+  // adjust content and visualisation of labels
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+
+  // grid settings
+  chart.grid(0).evenFill(null).oddFill(null);
+  chart.grid(1).evenFill(null).oddFill(null);
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

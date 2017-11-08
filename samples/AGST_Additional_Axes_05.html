@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  var chart = anychart.cartesianChart();
+  
+  chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
+  
+  // additional axes settings
+  var FahrenheitScale = anychart.scales.linear();
+  FahrenheitScale.minimum(-260).maximum(3000);
+  FahrenheitScale.ticks().interval(500);
+  
+  var CelsiumScale = anychart.scales.linear();
+  CelsiumScale.minimum(-274)
+    .maximum(1500)
+    .ticks()
+    .interval(500);
+  CelsiumScale.minorTicks().interval(100);
+  
+  var KelvinScale = anychart.scales.linear();
+  KelvinScale.minimum(0)
+    .maximum(2000)
+    .ticks()
+    .interval(500);
+  KelvinScale.minorTicks().interval(100);
+  
+  chart.xAxis()
+    .scale(FahrenheitScale)
+    .title()
+    .text('Fahrenheit');
+  
+  // adjusting axes
+  chart.xAxis(1).title().text('Celsium');
+  chart.xAxis(1)
+    .orientation('top')
+    .scale(CelsiumScale);
+  
+  chart.xAxis(2)
+    .scale(KelvinScale)
+    .orientation('top')
+    .title()
+    .text('Kelvin');
+  
+  
+  // adding grid
+  chart.grid()
+    .stroke('black')
+    .layout('horizontal')
+    .evenFill(null)
+    .oddFill(null);
+  
+  // setting data
+  var data = anychart.data.set([
+    ["Absolute Zero", 0],
+    ["Lowest recorded surface temperature on Earth", 184],
+    ["Celsius / Fahrenheit's 'cross-over' temperature", 233.15],
+    ["Ice melts", 273.15],
+    ["Average human body temperature", 309.95],
+    ["Highest recorded surface temperature on Earth", 331],
+    ["Water boils", 373.1339],
+    ["Titanium melts", 1941]
+  ]);
+  chart.yScale(anychart.scales.ordinal());
+  chart.yScale().inverted(true);
+  chart.yAxis().title().enabled(false);
+  
+  // setting and adjusting data visualisation
+  var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
+  markerSeries.tooltip().contentFormatter(function(){
+    return this.value+
+      '\nKelvin: '+ (this.x).toFixed(2) +
+      '\nCelsium: '+ (this.x - 273.15).toFixed(2) +
+      '\nFahrenheit: ' + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
+  });
+  markerSeries.xScale(KelvinScale).yScale(chart.yScale());
+  markerSeries.size(5).hoverSize(7);
+  
+  chart.lineMarker()
+    .stroke('1 red')
+    .layout('vertical')
+    .scale(CelsiumScale);
+  chart.lineMarker(1)
+    .stroke('1 green')
+    .layout('vertical')
+    .scale(FahrenheitScale);
+  
+  chart.container('container');
+  chart.padding(0,20,0,0).draw();
+});
+</script>
+</body>
+</html>

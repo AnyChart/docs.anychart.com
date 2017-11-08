@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Labels 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  var data = anychart.data.set([
+    {x: "Metallcutting",              value: 41,  fill: '#1D8BD1'},
+    {x: "Metal Forming",              value: 12,  fill: '#F1683C'},
+    {x: "Assembly",                   value: 17,  fill: '#2AD62A'},
+    {x: "Material Handling",          value: 6,   fill: '#DBDC25'},
+    {x: "Gaging/Inspection/testing",  value: 7,   fill: '#8FBC8B'},
+    {x: "Finishing Equipment",        value: 5.5, fill: '#D2B48C'},
+    {x: "Welding Equipment",          value: 5,   fill: '#FAF0E6'},
+    {x: "Heat Processing",            value: 3,   fill: '#20B2AA'},
+    {x: "Plastic Molding",            value: 4.5, fill: '#B0C4DE'},
+    {x: "Other",                      value: 4,   fill: '#DDA0DD'}
+  ]);
+  
+  var stage = anychart.graphics.create('container');
+
+  var titleText = '<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>';
+  
+  // default chart
+  var chart;
+
+  drawBar();
+
+
+  // label for bar chart
+  var barlabel = stage.image('http://static.anychart.com/images/bar.gif');
+
+  barlabel
+    .width(25)
+    .height(25)
+    .zIndex(chart.zIndex() + 1)
+    .y(20);
+
+  barlabel.listen('click', drawBar);
+
+  // label for column chart
+  var columnLabel = stage.image('http://static.anychart.com/images/column.png');
+  columnLabel
+    .width(25)
+    .height(25)
+    .y(20)
+    .zIndex(chart.zIndex() + 1)
+    .x(35);
+
+  columnLabel.listen('click', drawColumn);
+  
+  // label for pie chart
+  var pieLabel = stage.image('http://static.anychart.com/images/donut.gif');
+  pieLabel
+    .width(25)
+    .height(25)
+    .y(20)
+    .zIndex(chart.zIndex() + 1)
+    .x(70);
+
+  pieLabel.listen('click', drawPie);
+  
+  
+  function drawBar () {
+    if (chart!==null&&undefined&&'') 
+      chart.dispose();
+    
+    chart = anychart.bar();
+    chart.bar(data).stroke(null);
+    chart.title()
+      .useHtml(true)
+      .text(titleText)
+      .fontWeight(900)
+      .hAlign('center');
+
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
+
+    chart.container(stage).draw();
+  }
+  
+  function drawColumn(){
+    chart.dispose();
+    chart = anychart.column();
+    chart.column(data).stroke(null);
+    chart.title()
+      .useHtml(true)
+      .text(titleText)
+      .fontWeight(900)
+      .hAlign('center');
+    
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
+    
+    chart.container(stage).draw();
+  }
+  
+  function drawPie(){
+    chart.dispose();
+    chart = anychart.pie(data);
+    chart.title()
+      .useHtml(true)
+      .text(titleText)
+      .fontWeight(900)
+      .hAlign('center');
+    
+    chart.container(stage).draw();
+  }
+});
+</script>
+</body>
+</html>

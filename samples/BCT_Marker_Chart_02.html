@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Marker Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.scatter();
+  
+  // set data for each series
+  chart.marker([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]);
+  chart.marker([
+    [2000, 1000],
+    [2001, 950],
+    [2002, 800],
+    [2003, 1000],
+    [2004, 890],
+    [2005, 1000],
+    [2006, 800]
+  ]);
+  chart.marker([
+    [2000, 1500],
+    [2001, 1300],
+    [2002, 1000],
+    [2003, 1050],
+    [2004, 1500],
+    [2005, 1330],
+    [2006, 950]
+  ]);
+  chart.marker([
+    [2000, 700],
+    [2001, 800],
+    [2002, 900],
+    [2003, 770],
+    [2004, 930],
+    [2005, 1350],
+    [2006, 1200]
+  ]);
+  chart.marker([
+    [2000, 600],
+    [2001, 700],
+    [2002, 1500],
+    [2003, 1200],
+    [2004, 1300],
+    [2005, 900],
+    [2006, 1700]
+  ]);
+  chart.marker([
+    [2000, 900],
+    [2001, 1200],
+    [2002, 1000],
+    [2003, 1100],
+    [2004, 1200],
+    [2005, 1370],
+    [2006, 1050]
+  ]);
+  
+  // chart title
+  chart.title().text('Multi-Series Marker Chart');
+  
+  // draw axes and set titles
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Box office');
+  
+  chart.xScale()
+    .minimum(1999)
+    .maximum(2007)
+    .ticks().interval(1);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

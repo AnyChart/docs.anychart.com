@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT RadarChart 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    ["Australia", 16, 25, 17],
+    ["Cuba", 11, 11, 7],
+    ["Russia", 32, 28, 28],
+    ["France", 13, 14, 11],
+    ["Germany", 13, 17, 26],
+    ["Italy", 13, 13, 13],
+    ["Netherlands", 12, 9, 4],
+    ["UK", 11, 10, 7],
+    ["USA", 40, 24, 7],
+    ["Romania", 11, 6, 9]
+  ]);
+
+  // map data
+  var gold = dataSet.mapAs({x: [0], value: [1]});
+  var silver = dataSet.mapAs({x: [0], value: [2]});
+  var bronze = dataSet.mapAs({x: [0], value: [3]});
+
+  // chart type
+  var chart = anychart.radar();
+
+  // chart title
+  chart.title().text('Olympic medals Sydney 2000 (most recent) by country');
+
+  // set background
+  chart.background().enabled(true).fill('#EEEEEE');
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+
+  chart.xAxis().labels()
+    .fontWeight(900)              // set labels font
+    .textFormatter(function(){    // set labels content
+      var longValue = this.value;
+
+      // check label width
+      if (longValue.length > 3){
+        myValue = longValue.substr(0, 3) + '...';
+      }
+      else{
+        myValue = longValue;
+      }
+
+      // return adjuster value
+      return myValue;
+    });
+
+  // set series data
+  var goldSeries = chart.line(gold);
+
+  // series visual settings
+  goldSeries
+    .stroke('3 gold')
+    .tooltip()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
+        .fill('gold 0.7');
+  goldSeries
+    .tooltip()
+      .content()
+      .fontColor('black');
+
+  silverSeries = chart.line(silver);
+  silverSeries
+    .stroke('3 silver')
+    .tooltip()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
+        .fill('silver 0.7');
+  goldSeries
+    .tooltip()
+      .content()
+        .fontColor('black');
+
+  bronzeSeries = chart.line(bronze);
+  bronzeSeries
+    .stroke('3 #cc8800')
+    .tooltip()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
+        .fill('#cc8800 0.7');
+  bronzeSeries
+    .tooltip()
+      .content()
+        .fontColor('black');
+
+  // grid settings
+  chart.grid(0).evenFill('white').oddFill('white');
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

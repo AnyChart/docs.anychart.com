@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Bubble Chart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    [1, 437, 6, 637, 6],
+    [2, 172, 14, 472, 17],
+    [3, 548, 10, 48, 10]
+  ]);
+
+  // map data for the each series
+  var seriesData_1 = data.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
+
+  // chart type
+  var chart = anychart.scatter();
+
+  // set title
+  chart.title().text('Labels and Tooltips');
+
+  // set series data
+  var series1 = chart.bubble(seriesData_1);
+
+  // set minimum and maximum bubble size
+  series1.minimumSize(10).maximumSize(30);
+
+  // set and adjust labels
+  series1.labels()
+    .enabled(true)
+    .anchor('bottom')
+    .position('top')
+    .fontSize(15)
+    .fontWeight('bold')
+    .textFormatter(function(point){
+      return point.value + '.00';
+    });
+
+  // set tooltip title
+  series1.tooltip().enabled(true).title().enabled(true).text('Information');
+
+  // set and adjust tooltip content
+  series1.tooltip().enabled(true).contentFormatter(function() {
+    return 'Sales: Product ' + this.x.toString() +
+      '\nUnit: ' + this.value + '.00' +
+      '\nYear: 2003' +
+      '\nProfit: ' + '$' + this.size + '.00';
+  });
+
+  // set series data
+  var series2 = chart.bubble(seriesData_2);
+
+  // set minimum and maximum bubble size
+  series2.minimumSize(10).maximumSize(30);
+
+  // set and adjust labels
+  series2.labels()
+    .enabled(true)
+    .anchor('bottom')
+    .position('top')
+    .fontSize(15)
+    .fontWeight('bold')
+    .textFormatter(function(point){
+      return point.value + '.00';
+    });
+
+  // set tooltip title
+  series2.tooltip().enabled(true).title().enabled(true).text('Information');
+
+  // set and adjust tooltip content
+  series2.tooltip().enabled(true).contentFormatter(function() {
+     return 'Sales: Product ' + this.x.toString() + 
+       '\nUnit: ' + this.value + '.00' + 
+       '\nYear: 2004' + 
+       '\nProfit: $' + this.size + '.00';
+  });
+  
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
+  
+  // adjust axes settings
+  chart.xAxis()
+    .drawFirstLabel(false)
+    .drawLastLabel(false)
+    .title().text('Products');
+  chart.yAxis().title().text('Sales');
+  
+  // format x axis labels
+  chart.xAxis().labels().textFormatter(function(){
+    return 'Product ' + this.value.toString();
+  });
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

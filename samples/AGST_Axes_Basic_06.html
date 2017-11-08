@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Axes Basic 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // setting data
+  var data = anychart.data.set([
+    ['P1', 16, -16],
+    ['P2', 12, -13],
+    ['P3', 9, 14]
+  ]);
+
+  // remapping data
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+  var chart = anychart.columnChart();
+
+  chart.title().enabled(true).text('Axis Line and Zero Line Sample');
+
+  // setting line to emphasize zero point
+  chart.lineMarker().stroke('2 red');
+
+  // series data
+  chart.column(Sales2003);
+  chart.column(Sales2004);
+
+  // disabling axes titles
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().enabled(false);
+
+  // adjusting grid
+  chart.minorGrid(null, null);
+  chart.grid(null, null);
+
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>
