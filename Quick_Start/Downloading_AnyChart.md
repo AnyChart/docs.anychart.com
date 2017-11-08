@@ -18,32 +18,32 @@
 ### AnyChart
 
 To download the latest version of AnyChart charting library, which contains the basic chart types, choose the most suitable option and click the link below.
-* Production edition - [anychart.min.js](//anychart.com/products/anychart/download/?file=anychart.min.js&version=latest) <span style="color:#898989;">(230Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](//anychart.com/products/anychart/download/?file=anychart.dev.min.js&version=latest) <span style="color:#898989;">(275Kb gzip)</span>
+* Production edition - anychart.min.js <span style="color:#898989;">(230Kb gzip)</span>
+* Development edition - anychart.dev.min.js <span style="color:#898989;">(275Kb gzip)</span>
 
 ### AnyStock
 
 To download the latest version of AnyStock, which contains **only** the stock chart, choose the most suitable option and click the link below.
-* Production edition - [anystock.min.js](//anychart.com/products/anystock/download/?file=anystock.min.js&version=latest) <span style="color:#898989;">(201Kb gzip)</span>
-* Development edition - [anystock.dev.min.js](//anychart.com/products/anystock/download/?file=anystock.dev.min.js&version=latest) <span style="color:#898989;">(204Kb gzip)</span>
+* Production edition - anystock.min.js <span style="color:#898989;">(201Kb gzip)</span>
+* Development edition - anystock.dev.min.js <span style="color:#898989;">(204Kb gzip)</span>
 
 ### AnyGantt
 
 To download the latest version of AnyGantt, which contains **only** the gantt chart, choose the most suitable option and click the link below.
-* Production edition - [anygantt.min.js](//anychart.com/products/anygantt/download/?file=anygantt.min.js&version=latest) <span style="color:#898989;">(185Kb gzip)</span>
-* Development edition - [anygantt.dev.min.js](//anychart.com/products/anygantt/download/?file=anygantt.dev.min.js&version=latest) <span style="color:#898989;">(189Kb gzip)</span>  
+* Production edition - anygantt.min.js <span style="color:#898989;">(185Kb gzip)</span>
+* Development edition - anygantt.dev.min.js <span style="color:#898989;">(189Kb gzip)</span>  
 
 ### AnyMap
 
 To download the latest version of AnyMap, which contains **only** the map charts, choose the most suitable option and click the link below.
-* Production edition - [anymap.min.js](//anychart.com/products/anymap/download/?file=anymap.min.js&version=latest) <span style="color:#898989;">(185Kb gzip)</span>
-* Development edition - [anymap.dev.min.js](//anychart.com/products/anymap/download/?file=anymap.dev.min.js&version=latest) <span style="color:#898989;">(189Kb gzip)</span>
+* Production edition - anymap.min.js <span style="color:#898989;">(185Kb gzip)</span>
+* Development edition - anymap.dev.min.js <span style="color:#898989;">(189Kb gzip)</span>
 
 ### Bundle
 
 To download the latest version of AnyChart Bundle, which contains **all** products we have at the moment, choose the most suitable option and click the link below.
-* Production edition - [anychart-bundle.min.js](//cdn.anychart.com/js/latest/anychart-bundle.min.js) <span style="color:#898989;">(259Kb gzip)</span>
-* Development edition - [anychart-bundle.dev.min.js](//cdn.anychart.com/js/latest/anychart-bundle.dev.min.js) <span style="color:#898989;">(264Kb gzip)</span>  
+* Production edition - anychart-bundle.min.js <span style="color:#898989;">(259Kb gzip)</span>
+* Development edition - anychart-bundle.dev.min.js <span style="color:#898989;">(264Kb gzip)</span>  
 
 ## AnyChart CDN
 <a href="//en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
