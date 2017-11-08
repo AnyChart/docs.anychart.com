@@ -235,9 +235,6 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
   grid.stroke("white");    
 ```
 
-**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids).
-
-
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
 {sample}BCT\_PolarChart\_10{sample}
@@ -245,7 +242,7 @@ This sample below demonstrates two polar charts with adjusted visualisation of t
 ### Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-<!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
+
 To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
 Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.

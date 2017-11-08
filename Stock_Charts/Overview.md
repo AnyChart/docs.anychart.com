@@ -1,17 +1,11 @@
 {:index 1}
 #AnyStock
 
-* [Overview](#overview)
-* [Useful Links](#useful_links)
-* [Technical Indicators](#technical_indicators) 
-* [Working with Data in AnyStock](#working_with_data_in_anystock)
-
-
 ## Overview
 
 Stock Chart is a special type of charts that can effectively visualize great amount of date time based data. It has lots of special features such as zoom with Scroller UI, synchronized plots, data grouping and so on. Moreover, Stock Charts are very useful for real-time data visualization. Use them when you have a large amount of date time based data; so it's quite logical to use them, for example, not only for showing the company assets and earnings, but also such things as changes of gage height and water discharge in a Water Supply District for the last decade. That's what makes AnyStock are this popular: it can show large amounts of data and keep it clear to the audience.
 
-AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other AnyChart products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of [technical indicators](#technical_indicators). AnyChart JavaScript Stock Chart Component supports automatic building of several types of technical indicators and allows to add custom indicators as well. AnyStock is a native Javascript, which makes it very flexible and easy to use.
+AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other AnyChart products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of technical indicators. AnyChart JavaScript Stock Chart Component supports automatic building of several types of technical indicators and allows to add custom indicators as well. AnyStock is a native Javascript, which makes it very flexible and easy to use.
 
 Stocks are so special because of three main features:
 
