@@ -45,7 +45,7 @@ We need to get rid of the rest now - for that go the menu, click on the "Layer" 
 
 Don't forget to match the box with "Save only selected features" - unless you do it, you'll get the file with the whole map. To see the selected territory separately, uncheck the layer in the list of layers.
 
-<a href="https://static.anychart.com/images/creating\_maps\_06.jpg" target="_blank"><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_06.jpg"></a>
+<a href="https://static.anychart.com/images/creating\_maps\_06.jpg" target="_blank"><img width = "700" src = "http:s//static.anychart.com/images/creating\_maps\_06.jpg"></a>
 
 4) Now, we're ready to go on. Let's change the projection now.
 
@@ -59,11 +59,11 @@ In the top of the window there is a checkbox "Enable 'on the fly' CRS transforma
 
 Now, let's change the projection of our map part. For that check the "Enable 'on the fly' CRS transformation" box and use "Filter" field to find the appropriate projection.
 
-<a href="httpw://static.anychart.com/images/creating\_maps\_09.jpg" target="_blank"><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_07.jpg"></a>
+<a href="httpw://static.anychart.com/images/creating\_maps\_09.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_07.jpg"></a>
 
 As you can see above, we've got several projections for the "usa" search tag. Let's choose the first one, USA\_Contiguous\_Albers\_Equal\_Area\_Conic (102003 EPSG code). Apply the projection.
 
-<a href="https://static.anychart.com/images/creating\_maps\_08.jpg" target="_blank"><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_08.jpg"></a>
+<a href="https://static.anychart.com/images/creating\_maps\_08.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_08.jpg"></a>
 
 5) Now, let's simplify the geometry. The less details are in a map, the faster AnyChart works, and the faster your page loads. 
 
@@ -93,5 +93,5 @@ Don't forget to choose the CRS that you've used in the project, as the default o
 
 8) Try your GeoJSON map by pasting the code into [jsFiddle](http://jsfiddle.net/xbzxfx2L/130/). Your result should look something like this:
 
-<a href="https://static.anychart.com/images/creating\_maps\_14.jpg" target="_blank"><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_14.jpg"></a>
+<a href="https://static.anychart.com/images/creating\_maps\_14.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 Now you know how to use GeoJSON maps in AnyChart. Enjoy!

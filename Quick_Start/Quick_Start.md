@@ -9,8 +9,8 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.css">
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
 

@@ -20,7 +20,7 @@ AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](http
   
 Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.json) and SHP (.shp, .shx and .dbf) formats in the specified output folder.  
   
-After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](http://docs.anychart.com/7.9.1/Maps/Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](http://docs.anychart.com/7.9.1/Maps/Custom_GeoJson_Maps).
+After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](https://docs.anychart.com/7.9.1/Maps/Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](http://docs.anychart.com/7.9.1/Maps/Custom_GeoJson_Maps).
 
 ## Installation
 <a name="windows_install">
@@ -32,7 +32,7 @@ As far as this is a Python-based converter, you need to install Python version 2
   
 **Note**: it is strongly recommended to add python.exe to Path during the installation:
   
-<a href="http://static.anychart.com/images/amap-converter/python-install.jpg" target=_blank><img width = "400" src = "http://static.anychart.com/images/amap-converter/python-install.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/python-install.jpg" target=_blank><img width = "400" src = "https://static.anychart.com/images/amap-converter/python-install.jpg"></a>
 
 Reboot your system to finish Python installation.  
   
@@ -44,7 +44,7 @@ After you've installed Python on your PC you need to install all requirements fo
 
 Here is a sample of switching to another folder in Command Prompt:
 
-<a href="http://static.anychart.com/images/amap-converter/change-directory.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/change-directory.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/change-directory.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/change-directory.jpg"></a>
 
 Then launch the process of installing requirements, run the following command:
 
@@ -54,7 +54,7 @@ Then launch the process of installing requirements, run the following command:
 
 After all the requirements are installed you will see the message as the screenshot below shows:
 
-<a href="http://static.anychart.com/images/amap-converter/pip-install.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/pip-install.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/pip-install.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/pip-install.jpg"></a>
 
 <a name="unix_install">
 ### Unix
@@ -85,11 +85,11 @@ Conversion of .amap files works the same in all the systems: you need to switch 
   python converter.py PATH\TO\YOUR\MAP\sample.amap OUTPUT_PATH\FILE_NAME
 ```
 
-<a href="http://static.anychart.com/images/amap-converter/single-file-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/single-file-windows.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/single-file-windows.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/single-file-windows.jpg"></a>
 
 Here is a screenshot of a converted **.amap** file:
 
-<a href="http://static.anychart.com/images/amap-converter/single-file-result-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/single-file-result-windows.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/single-file-result-windows.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/single-file-result-windows.jpg"></a>
 
 ### Multiple Files
 
@@ -106,15 +106,15 @@ The way of converting multiple files in both systems is pretty much the same: la
 
 Converting a folder with **amap** files in UNIX:
 
-<a href="http://static.anychart.com/images/amap-converter/batch-convert.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/batch-convert.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/batch-convert.jpg"></a>
 
 If the source folder for the conversion is:
 
-<a href="http://static.anychart.com/images/amap-converter/batch-convert-source.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-source.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/batch-convert-source.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/batch-convert-source.jpg"></a>
 
 The output folder will contain several folders with files like these:
 
-<a href="http://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg"></a>
 
 ####Windows
 
@@ -123,4 +123,4 @@ The output folder will contain several folders with files like these:
 ```
 The result folder in Windows may look like this:
 
-<a href="http://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg"></a>
+<a href="https://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg" target=_blank><img width = "700" src = "https://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg"></a>

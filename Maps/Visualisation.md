@@ -75,7 +75,7 @@ By default there's no color for the hovered points but the settings, which make 
 	
 	// set the image for the hovered regions of the second series
     secondSeries.hoverFill({
-        src: "http://static.anychart.com/logo/oceanic-airlines.png",
+        src: "https://static.anychart.com/logo/oceanic-airlines.png",
         mode: "stretch",
         opacity: 0.3
     });
