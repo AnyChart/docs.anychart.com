@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PolarChart 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // data for chart
+  var dataSet = anychart.data.set([
+    {x:3.7, value:93},
+    {x:3.701, value:67},
+    {x:4.8, value:85},
+    {x:5.7, value:93},
+    {x:5.701, value:67},
+    {x:6.8, value:85}
+  ]);
+  
+  // chart type
+  var chart = anychart.polar();
+  
+  // chart title
+  chart.title().text('Labels and Tooltips');
+  
+  // disable minor ticks
+  chart.yAxis().enabled(true).drawFirstLabel(false).minorTicks().enabled(false);
+  
+  // set series data
+  var series = chart.area(dataSet);
+  
+  // adjust series visual settings
+  series
+    .stroke('darkblue')                             // stroke color
+    .fill('lightblue 0.8')                          // fill color
+    .labels()                                       // labels settings
+      .enabled(true)                                // enable labels
+      .fontWeight(900);                             // labels font weight
+  
+  // visual setting for tooltips
+  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
+  
+  // format tooltip content
+  series.tooltip().contentFormatter(function(){
+    
+    // summarize all values
+    var sum = 0;
+    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
+      sum +=dataSet.mapAs().get(i, 'value');
+    
+    // setting tooltip content
+    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
+  });
+  
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

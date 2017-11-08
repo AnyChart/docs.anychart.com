@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAS Fonts 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    
+    // variable of additional information in labeles
+    var customAttributes = {
+        Men: "<br><i>For every 100<br/>girls, 105 boys are<br/>born, but males<br/>have a higher risk<br/>of dying than<br/>females, both in<br/>childhood and at<br/>adult ages.</i>",
+        Women: "<br>The number of<br/>men and women<br/>in the world is<br/>roughly equal,<br/>though men hold<br/>a slight lead with<br/>101 men for 100<br/>women."
+    };
+    
+    // data
+    var data = anychart.data.set([
+        {x: 'Men', value: 50.3},
+        {x: 'Women', value: 49.7}
+    ]);
+    
+    // set data
+    var chart = anychart.pieChart(data);
+    
+    // set chart labels
+    chart.labels()
+      .enabled(true)
+      .fontColor('black')
+      .fontWeight(400)
+      .width(110)
+      .hAlign('center')
+      .position('outside')
+      .useHtml(true)
+      .textFormatter(function() {
+          return '<a style="text-decoration: underline; font-weight: 900;">' + this.x + ' ? ' + this.value + '%</a>' + customAttributes[this.x];
+      });
+    
+    // set title
+    chart.title().text('HTML Text Formatting Sample').fontSize(13);
+    
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

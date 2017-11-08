@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT PyramidChart 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // define chart type and set data
+  var chart = anychart.pyramid([
+    {value: 232, hatchFill: 'diagonalcross', name: 'diagonalcross'},
+    {value: 224, hatchFill: 'zigzag', name: 'zigzag'},
+    {value: 252, hatchFill: 'horizontal', name: 'horizontal'},
+    {value: 219, hatchFill: 'vertical', name: 'vertical'},
+    {value: 169, hatchFill: 'dashedbackwarddiagonal', name: 'dashedbackwarddiagonal'},
+    {value: 217, hatchFill: 'grid', name: 'grid'},
+    {value: 175, hatchFill: 'dashedforwarddiagonal', name: 'dashedforwarddiagonal'},
+    {value: 199, hatchFill: 'dashedhorizontal', name: 'dashedhorizontal'},
+    {value: 297, hatchFill: 'plaid', name: 'plaid'},
+    {value: 317, hatchFill: 'weave', name: 'weave'}
+  ]).stroke('#888').fill('#EEE');
+  
+  chart.labels().enabled(false);
+  
+  chart.tooltip().contentFormatter(function(){
+    return 'Hatch fill type\n'+this.name;
+  });
+  
+  chart.title().text('HatchFill Settings');
+  
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

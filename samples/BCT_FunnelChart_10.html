@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT FunnelChart 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  
+  // define chart type and set data
+  var chart = anychart.funnel([
+    {value: 63166, fill: 'Rgb(77,180,77)'},
+    {value: 21630, fill:'Rgb(180,77,77)'},
+    {value: 18662, fill:'#C6D1A5'}
+  ]).stroke(null);
+  
+  // disable labels and tooltip
+  chart.labels().enabled(false);
+  chart.tooltip().enabled(false);
+  
+  chart.title().text('Colors');
+  
+  // set fixed width for the funnel
+  chart.baseWidth(300).neckWidth(75);
+  
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

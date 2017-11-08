@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="DB Stage 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // set stage
+    stage = anychart.graphics.create('container');
+    
+    // set layers
+    var layer_1 = anychart.graphics.layer();
+    stage.addChild(layer_1); //for the first chart
+    var layer_2 = stage.layer(); //for the second chart
+
+	// set data
+	var data_1 = [
+		['John' , 10000],
+		['Jake' , 12000],
+		['Peter' , 18000],
+		['James' , 11000],
+		['Mary' , 9000]
+	];
+
+	// set series data
+	chart_1 = anychart.column(data_1);
+	chart_1.title('Sales in March');
+
+	// chart size and position
+	chart_1.bounds(0, 0, '50%', '70%');
+
+	// draw
+	chart_1.container(layer_1).draw();
+
+	// set data
+	var data_2 = [
+		['John' , 9000],
+		['Jake' , 15000],
+		['Peter' , 8000],
+		['James' , 11000],
+		['Mary' , 9500]
+	];
+
+	// set series data
+	chart_2 = anychart.column(data_2);
+	chart_2.title('Sales in April');
+
+	// chart size and position
+	chart_2.bounds(0, 0, '50%', '70%');
+
+	// draw
+	chart_2.container(layer_2).draw();
+  
+	layer_2.translate(530,0);
+	
+	// remove the first layer
+	layer_1.remove();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Data Tree 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  var tree = anychart.data.tree([
+    {'name': 'January', 'id': '1', 'year 2004': '12000', 'year 2005': '18000'},
+    {'name': 'Parent Node', 'id': '2', 'year 2004': '15000', 'year 2005': '10000'},
+    {'name': 'Child Node 1', 'parent': '2', 'id': '3', 'year 2004': '16000', 'year 2005': '18000'},
+    {'name': 'Child Node 2', 'parent': '2', 'id': '4', 'year 2004': '15000', 'year 2005': '11000'},
+    {'name': 'Node 2', 'id': '5', 'year 2004': '14000', 'year 2005': '9000'}
+  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  stage = anychart.graphics.create('container');
+
+  // create Data Grid
+  treeDataGrid = anychart.ui.dataGrid();
+
+  // set Data Tree
+  treeDataGrid.data(tree).titleHeight(20);
+
+  // create button for Parent node
+  treeDataGrid.listen('signal', treeDataGrid.draw, false, treeDataGrid);
+
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2004 = treeDataGrid.column(2);
+  column2004.title().text('Year 2004');         // set title for the second column
+  column2004.width(100);                        // set width for the second column
+  column2004.textFormatter(function(item) {     // format data
+    return item.get('year 2004');               // set name of the field with required data
+  });
+
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2005 = treeDataGrid.column(3);
+  column2005.title().text('Year 2005');         // set title for the third column
+  column2005.width(100);                        // set width for the third column
+  column2005.textFormatter(function(item) {     // format data
+    return item.get('year 2005');               // set name of the field with required data
+  });
+
+  // draw chart
+  treeDataGrid.container(stage).height(127).top(37).draw();
+
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, "100%", 30)
+    .text('Data from Custom Columns')
+    .container(stage)
+    .draw();
+
+  // set container height
+  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
+
+  // get height of all items in the tree
+  function fullChildrenHeight () {
+    var height = 0;
+    var traverser = tree.getTraverser();
+    traverser.reset();
+    while(traverser.advance()){
+
+      // get an item
+      var currentItem = traverser.current();
+
+      // get height of the item
+      var currentHeight = currentItem.get(anychart.enums.GanttDataFields.ROW_HEIGHT);
+
+      // if item height is undefined
+      if (currentHeight !== void 0){
+        height += (currentHeight + 1);
+      } else {
+        // if height of current item is undefined, default height is 20px + 1px row space
+        height +=21;
+      }
+    }
+    return height;
+  }
+});
+
+// style setter
+function labelTextSettingsOverrider(label, dataItem) {
+  if (!dataItem.getParent()) {
+    label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+  } else {
+    if (dataItem.numChildren()) {
+      label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+    }
+  }
+}
+</script>
+</body>
+</html>

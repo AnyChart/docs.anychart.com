@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Bullet Chart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // Create bullet chart
+  var chart = anychart.bulletChart([{value: 225}]);
+  
+  // Set chart ranges
+  chart.range().from(0).to(100);
+  chart.range(1).from(100).to(150);
+  chart.range(2).from(150).to(200);
+  chart.range(3).from(200).to(250);
+  chart.range(4).from(250).to(300);
+  
+  // set ranges colors
+  chart.rangePalette(['#ffa058', '#ffb082', '#ffc0a8', '#ffd0c2', '#ffe0e6']);
+
+  // Set chart size and position settings
+  chart.bounds(0, 0, '100%', 125);
+
+  // Set title
+  chart.title().text('Colors');
+  
+  // Set chart container
+  chart.container('container');
+
+  // Initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

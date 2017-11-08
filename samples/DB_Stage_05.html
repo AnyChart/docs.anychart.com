@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="DB Stage 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // set stage
+    stage = anychart.graphics.create('container');
+    
+    // set layers
+    var layer_1 = anychart.graphics.layer();
+    stage.addChild(layer_1); //for the bullet chart
+    var layer_2 = stage.layer(); //for the column chart
+    var layer_3 = stage.layer(); //for the pie chart
+
+    // set data_1
+    var data_1 = [
+        ['Class A' , 16000],
+        ['Class B' , 12000],
+        ['Class C' , 17000],
+        ['Class D' , 11000],
+        ['Class E' , 13000],
+        ['Class F' , 13000],
+        ['Class G' , 12000]
+    ];
+
+    // set series data
+    chart_1 = anychart.bullet([{value: 13800}]);
+    chart_1.title(false);
+  
+  
+    // Create chart ranges
+    chart_1.range().from(10000).to(11000);
+    chart_1.range(1).from(11000).to(12000);
+    chart_1.range(2).from(12000).to(13000);
+    chart_1.range(3).from(13000).to(16000);
+    chart_1.range(4).from(16000).to(17000);
+      
+    chart_1.scale().minimum(10000).maximum(17000);
+    chart_1.axis(false);
+     
+
+    // chart size and position
+    chart_1.bounds(0, 0, '23.5%', '17%');
+
+    // draw
+    chart_1.container(layer_1).draw();
+  
+    // rotate the bullet chart
+    layer_1.rotate(270,0,0);
+    layer_1.setPosition(10,80);
+
+    // set series data
+    chart_2 = anychart.column(data_1);
+    chart_2.title('Sales in April');
+    chart_2.xAxis().title(' ');
+    chart_2.yAxis().title(null);
+    
+    chart_2.yAxis().minorTicks(false);
+    chart_2.minorGrid(false);
+    
+    chart_2.background(null);
+
+    // chart size and position
+    chart_2.bounds(0, 0, '50%', '70%');
+
+    // draw
+    chart_2.container(layer_2).draw();
+  
+    layer_2.translate(50,0);
+  
+    //set the pie chart
+    chart_3 = anychart.pie(data_1);
+    chart_3.legend(false);
+    chart_3.title(false);
+    chart_3.labels(false);
+    chart_3.background(null);
+    layer_3.translate(1800,300);
+    layer_3.scale(0.2,0.2,0,0);
+    chart_3.container(layer_3).draw();
+    
+});
+</script>
+</body>
+</html>

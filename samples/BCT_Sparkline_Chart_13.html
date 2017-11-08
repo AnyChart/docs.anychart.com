@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Sparkline Chart 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var stage = anychart.graphics.create('container');
+  //create charts
+  chart1 = anychart.sparkline();
+  chart2 = anychart.sparkline();
+  chart3 = anychart.sparkline();
+  chart4 = anychart.sparkline();
+
+  //set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);
+  chart3.container(stage);
+  chart4.container(stage);
+  chart1.title(true);
+  chart2.title(true);
+  chart3.title(true);
+  chart4.title(true);
+  //chart1.title().width(155);
+ // chart3.title().width(155);
+  chart1.title().text('EUR/USD - line');
+  chart2.title().text('GBP/USD - area');
+  chart3.title().text('Reviews - column');
+  chart4.title().text('Reviews - winloss');
+
+  //create data for both charts
+  chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
+  chart2.data([1.5500,1.5458,1.5463,1.5397,1.5385]);
+  chart3.data([500,-100,340,200,-90,80,-70]);
+  chart4.data([500,-100,340,200,-90,80,-70]);
+  
+  
+  //set charts dimensions and position
+  chart1.bounds(0, 0, 300, 40);
+    chart1.type('line');    
+  chart2.bounds(0, 50, 300, 40);
+    chart2.type('area');
+  chart3.bounds(0, 100, 300, 40);
+    chart3.type('column');    
+  chart4.bounds(0, 150, 300, 40);
+    chart4.type('wl');
+	
+	//colorize our charts
+	chart1.stroke('red');
+	chart2.stroke('yellow');
+	chart2.fill('#996633');
+	chart3.maxFill('green');
+	chart3.minFill('red');
+	chart4.negativeFill('darkred');
+  
+  //initiate chart drawing
+  chart1.draw();
+  chart2.draw();
+  chart3.draw();
+  chart4.draw();
+  
+});
+</script>
+</body>
+</html>

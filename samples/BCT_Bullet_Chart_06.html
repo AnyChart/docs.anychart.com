@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Bullet Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // Create bullet chart
+  var chart = anychart.bulletChart([{value: 7}]);
+  
+  // Create chart ranges
+  chart.range().from(0).to(5);
+  chart.range(1).from(5).to(10);
+  chart.range(2).from(10).to(15);
+  
+  // Minimum and maximum scale settings
+  chart.scale().minimum(-5).maximum(20);
+
+  // Chart title
+  chart.title().text('Minimum and Maximum\nValue').hAlign('center');
+
+  // Set chart size and position settings
+  chart.bounds(0, 0, '100%', 125);
+  
+  // Set chart container
+  chart.container('container');
+
+  // Initiate chart drawing
+  chart.draw();
+
+});
+</script>
+</body>
+</html>

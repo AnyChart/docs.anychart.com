@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Marker Chart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.scatter();
+
+  // data
+  data = anychart.data.set([
+    [1, 178, 165, 154, 143, 132],
+    [2, 167, 153, 144, 133, 122]
+  ]);
+
+  // map data for each series
+  var data1 = data.mapAs({x: [0], value: [1]});
+  var data2 = data.mapAs({x: [0], value: [2]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [4]});
+  var data5 = data.mapAs({x: [0], value: [5]});
+
+  // set data and color for each series
+  chart.marker(data1)
+    .fill('#4A55C7');
+  chart.marker(data2)
+    .fill('#5EBD9B');
+  chart.marker(data3)
+    .fill('#B04A8A');
+  chart.marker(data4)
+    .fill('#C7894A');
+  chart.marker(data5)
+    .fill('#BCBD46');
+  
+  // set title
+  chart.title().text('Colors');
+  
+  // draw axes and set titles
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Box office');
+
+  chart.xScale()
+    .minimum(0)
+    .maximum(3)
+    .ticks().interval(1);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

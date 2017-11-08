@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Range Area-SplineArea Charts 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.areaChart();
+
+  // chart title
+  chart.title().text('Range Area Chart');
+
+  // set axes title
+  chart.xAxis().title().text('Month');
+  chart.yAxis().title().text('Temperature');
+
+  // set data and define chart type
+  chart.rangeArea([
+    {x: 'January', low: 0.7, high: 6.1},
+    {x: 'February', low: 0.6, high: 6.3},
+    {x: 'March', low: 1.9, high: 8.5},
+    {x: 'April', low: 3.1, high: 10.8},
+    {x: 'May', low: 5.7, high: 14.4},
+    {x: 'June', low: 8.4, high: 16.9},
+    {x: 'July', low: 10.6, high: 19.2},
+    {x: 'August', low: 10.5, high: 18.9},
+    {x: 'September', low: 8.5, high: 16.1},
+    {x: 'October', low: 6.0, high: 12.5},
+    {x: 'November', low: 3.0, high: 8.8},
+    {x: 'December', low: 1.5, high: 6.9}
+  ]);
+
+  // draw
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

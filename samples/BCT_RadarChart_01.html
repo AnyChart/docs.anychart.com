@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT RadarChart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.radar();
+
+  // chart title
+  chart.title().text('Spending');
+
+  // series type and data set
+  chart.line([
+    {x: "Administration", value:"22"},
+    {x: "Sales", value:"34"},
+    {x: "Marketing", value:"16"},
+    {x: "Research", value:"12"},
+    {x: "Support", value:"38"},
+    {x: "Development", value:"47"}
+  ]);
+
+  // draw chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

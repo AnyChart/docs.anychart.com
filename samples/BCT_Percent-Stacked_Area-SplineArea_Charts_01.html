@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Percent-Stacked Area-SplineArea Charts 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  // create data set on our data
+    var dataSet = anychart.data.set([
+        ["Winter", 12000, 12000, 10000],
+        ["Spring", 13000, 12000, 17000],
+        ["Summer", 25000, 15000, 19000],
+        ["Autumn", 16000, 16000, 16000]
+    ]);
+
+    // map data for the first series, take x from the zero column and value from the first column of data set
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+
+    // map data for the second series, take x from the zero column and value from the second column of data set
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+
+    // map data for the second series, take x from the zero column and value from the third column of data set
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+
+    // chart type
+    var chart = anychart.areaChart();
+
+    // chart title
+    chart.title().text('Percent Stacked Area Chart');
+
+    // set axes title
+    chart.xAxis().title().text('Season');
+    chart.yAxis().title().text('Percent');
+
+    // set chart Y scale settings
+    chart.yScale().stackMode('percent');
+
+    // set yAxis labels formatting, force it to add % to values
+    chart.yAxis().labels().textFormatter(function(info) {
+      return info.value + '%';
+    });
+
+    // create first area series on mapped data and specify series fill function
+    chart.area(seriesData_1);
+
+    // create second area series on mapped data and specify series fill function
+    chart.area(seriesData_2);
+
+    // create third area series on mapped data, specify series fill function and color
+    chart.area(seriesData_3);
+
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

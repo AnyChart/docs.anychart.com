@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Settings From Data 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+    // chart type
+    var chart = anychart.barChart();
+
+    // set title
+    chart.title().text('Bar Chart With A Point View Defined From Data Set');
+
+    // set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+    // set data
+    chart.bar([
+        ['Discount Stores', 721630],
+        {x: 'Department Stores', value: 737166, fill:{color: 'red', opacity: '.7'}, hatchFill:{hatchType:'diagonalbrick',color: 'gray'}, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+
+    // draw
+    chart.container('container').draw();
+});
+</script>
+</body>
+</html>

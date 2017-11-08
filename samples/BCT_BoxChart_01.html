@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT BoxChart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  //chart data
+  var data = [
+    {x: '1', low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
+    {x: '2', low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+    {x: '3', low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+    {x: '4', low: 4000, q1: 5000, median: 6500, q3: 6500, high: 7000},
+    {x: '5', low: 8000, q1:8400 , median: 8500, q3: 8800, high: 9000},
+  ];
+
+  //create box chart
+  var chart = anychart.box();
+
+  //set container id for the chart
+  chart.container('container');
+
+  //set chart title text settings
+  chart.title().text('ACME Corp. Salaries\nFebruary, 2015');
+  chart.title().hAlign('center');
+
+  //set axes titles settings
+  chart.xAxis().title(false);
+  chart.yAxis().title('$ per month');
+
+  //set chart yScale settings
+  chart.yScale().maximumGap(0);
+
+  //create box chart series with our data
+  var series = chart.box(data);
+
+  //initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

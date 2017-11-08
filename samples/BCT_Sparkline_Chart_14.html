@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Sparkline Chart 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.5.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.5.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var stage = anychart.graphics.create('container');
+  //create charts
+  chart1 = anychart.sparkline();
+  chart2 = anychart.sparkline();
+
+  //set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);
+  chart1.title(true);
+  chart2.title(true);
+  chart1.title().text('Line 1');
+  chart2.title().text('Line 2');
+
+  //create data for both charts
+  chart1.data([-20, 30, 50, -10, 25, -50, 70, 10]);
+  chart2.data([20, 30, 0, 20, -25, -5, -30, 50]);
+  
+  
+  //set charts dimensions and position
+  chart1.bounds(0, 0, 300, 40);
+    chart1.type('line');  
+  chart2.bounds(0, 50, 300, 40);
+    chart2.type('line');  
+	
+	//colorize our charts
+	chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+	chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+	
+  
+  //initiate chart drawing
+  chart1.draw();
+  chart2.draw();
+  
+});
+</script>
+</body>
+</html>
