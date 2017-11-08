@@ -39,7 +39,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[JavaScript API Reference](http://api.anychart.com)  
+[JavaScript API Reference](https://api.anychart.com)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###XML

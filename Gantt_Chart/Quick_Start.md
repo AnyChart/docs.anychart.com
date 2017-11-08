@@ -8,7 +8,7 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 
 ```
 <head>
-    <script src="http://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script> 
 </head>
 ```
 

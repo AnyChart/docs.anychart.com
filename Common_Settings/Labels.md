@@ -41,7 +41,7 @@ The sample below shows a revenue chart with AnyChart logo in the left top corner
   
   // create image label
   stage.image()
-    .src('http://static.anychart.com/images/logo_anychart.gif') // set image source
+    .src('https://static.anychart.com/images/logo_anychart.gif') // set image source
     .y(15)                                                      // set spacing from the top
     .x(25)                                                      // set spacing from the left
     .width(50)                                                  // set width of the image
@@ -63,7 +63,7 @@ Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api}
 
 ```
   stage.image()
-    .src('http://static.anychart.com/images/column.png')  // source of the image
+    .src('https://static.anychart.com/images/column.png')  // source of the image
     .width(25)                                            // set width of the image
     .height(25)                                           // set height of the image
     .y(20)                                                // set spacing from the top
@@ -71,11 +71,11 @@ Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api}
     .x(35);                                               // set spacing from the left
 ```
 
-To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**.<!-- Full list of available actions is described in Interactivity Article.-->
+To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**.
 
 ```
   var myImage = stage.image()
-    .src('http://static.anychart.com/images/column.png')
+    .src('https://static.anychart.com/images/column.png')
     .align('topleft');
   
   myImage.listen(
