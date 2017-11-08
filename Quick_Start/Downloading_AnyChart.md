@@ -18,21 +18,18 @@
 To download the latest version of AnyChart, which contains the basic chart types, choose the most suitable option and click the link below.
 * Production edition - [anychart.min.js](//anychart.com/products/anychart/download/?file=anychart.min.js&version=latest) <span style="color:#898989;">(230Kb gzip)</span>
 * Development edition - [anychart.dev.min.js](//anychart.com/products/anychart/download/?file=anychart.dev.min.js&version=latest) <span style="color:#898989;">(2.1Mb gzip)</span>  
-* Binaries package - [anychart.zip](//anychart.com/products/anychart/download/latest/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
 ### AnyGantt
 
 To download the latest version of AnyGantt, which contains **only** the gantt chart, choose the most suitable option and click the link below.
 * Production edition - [anygantt.min.js](//anychart.com/products/anygantt/download/?file=anygantt.min.js&version=latest) <span style="color:#898989;">(185Kb gzip)</span>
 * Development edition - [anygantt.dev.min.js](//anychart.com/products/anygantt/download/?file=anygantt.dev.min.js&version=latest) <span style="color:#898989;">(189Kb gzip)</span>  
-* Binaries package - [anygantt.zip](//anychart.com/products/anygantt/download/latest/anygantt.zip) <span style="color:#898989;">(1.1Mb)</span>  
 
 ### AnyMap
 
 To download the latest version of AnyMap, which contains **only** the map charts, choose the most suitable option and click the link below.
 * Production edition - [anygantt.min.js](//anychart.com/products/anymap/download/?file=anymap.min.js&version=latest) <span style="color:#898989;">(185Kb gzip)</span>
 * Development edition - [anygantt.dev.min.js](//anychart.com/products/anymap/download/?file=anymap.dev.min.js&version=latest) <span style="color:#898989;">(189Kb gzip)</span>  
-* Binaries package - [anygantt.zip](//anychart.com/products/anymap/download/latest/anymap.zip) <span style="color:#898989;">(1.1Mb)</span>
 
 ### Bundle
 
@@ -42,8 +39,8 @@ To download the latest version of AnyChart Bundle, which contains **all** produc
 
 ### Themes
 To download one of our predefined themes, choose the theme and click on the according link.
-* AnyChart 7 Default Theme - [defaultTheme.min.js](//cdn.anychart.com/themes/latest/defaultTheme.min.js) <span style="color:#898989;">(259Kb gzip)</span>
-* AnyChart 6 Theme - [v6.min.js](//cdn.anychart.com/themes/latest/v6.min.js) <span style="color:#898989;">(264Kb gzip)</span>
+* AnyChart 7 Default Theme - defaultTheme.min.js <span style="color:#898989;">(259Kb gzip)</span>
+* AnyChart 6 Theme - v6.min.js <span style="color:#898989;">(264Kb gzip)</span>
 
 ## AnyChart CDN
 <a href="//en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
