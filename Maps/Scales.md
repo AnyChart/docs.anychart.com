@@ -15,7 +15,6 @@ There are two types of ColorScale: Ordinal and Linear (Quantitative). The type o
 ## Ordinal ColorScale
  
 This type of ColorScale looks like a number of boxes with different colors. Colors of these boxes depend on the palette chosen according to the type of map and its data, but they also may be defined independent from any of color progressions using the following method.
-<<<<<<< HEAD
 
 <img src = "https://static.anychart.com/images/ord_colorrange.jpg">
 
