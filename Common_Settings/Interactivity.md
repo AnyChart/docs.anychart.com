@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Interactivity
-=======
 # Interactivity
-
->>>>>>> 7.7.0
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
