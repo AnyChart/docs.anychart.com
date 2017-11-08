@@ -8,7 +8,7 @@
 
 ## Overview
 
-AnyStock supports a lot of different series types. For the general information on working with them see [Overview](Overview), the table below shows all series supported in the current version of AnyStock and planned to be released soon. Please [contact us](http://support.anychart.com/) if you are interested in receiving early adopter version prior to the official release.
+AnyStock supports a lot of different series types. For the general information on working with them see [Overview](Overview), the table below shows all series supported in the current version of AnyStock and planned to be released soon. Please [contact us](https://support.anychart.com/) if you are interested in receiving early adopter version prior to the official release.
 
 ## List of supported series
 
