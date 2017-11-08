@@ -1,15 +1,19 @@
 {:index 1}
+# Supported Data Formats
 
-Supported Data Formats
-=================
  * [Introduction](#introduction)
    * [JavaScript API](#javascript_api)
    * [XML](#xml)
    * [JSON](#json)
    * [CSV](#csv)
 
+<<<<<<< HEAD
 ###Introduction
 AnyChart charting library supports 4 ways to set data to your charts. You can choose which one suits your task the best:
+=======
+## Introduction
+AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
+>>>>>>> 7.7.0
 * JavaScript API
 * XML
 * JSON
@@ -18,7 +22,7 @@ AnyChart charting library supports 4 ways to set data to your charts. You can ch
 Each way has some strengths and weaknesses, but we recommend JavaScript API – this option is generally the most flexible.
 
 
-###JavaScript API
+## JavaScript API
 JavaScript API helps you the best when you need to Create, Read, Update, and Delete data points dynamically. 
 
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with JS API, but you can also pass data directly to a chart by creating a function:
@@ -39,7 +43,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[JavaScript API Reference](http://api.anychart.com)  
+[JavaScript API Reference](https://api.anychart.com)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###XML

@@ -1,12 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Interactivity 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
+<<<<<<< HEAD
         [1980, 20],
         [1981, 22],
         [1982, 21],
@@ -42,6 +58,48 @@
         [2012, 62],
         [2013, 65],
         [2014, 45]
+=======
+[1, 10],
+[2, 12],
+[3, 11],
+[4, 15],
+[5, 20],
+[6, 22],
+[7, 21],
+[8, 25],
+[9, 31],
+[10, 32],
+[11, 28],
+[12, 29],
+[13, 40],
+[14, 41],
+[15, 45],
+[16, 50],
+[17, 65],
+[18, 45],
+[19, 50],
+[20, 51],
+[21, 65],
+[22, 60],
+[23, 62],
+[24, 65],
+[25, 45],
+[26, 55],
+[27, 59],
+[28, 52],
+[29, 53],
+[30, 40],
+[31, 45],
+[32, 23],
+[33, 45],
+[34, 40],
+[35, 33],
+[36, 37],
+[37, 59],
+[38, 30],
+[39, 12],
+[40, 60]
+>>>>>>> 7.7.0
     ]);
 
   var chart = anychart.cartesian();
@@ -92,6 +150,7 @@
   // multi-hover enabling 
   chart.interactivity("byX");
 
+<<<<<<< HEAD
   chart.crosshair(true);
   chart.container("container");
   chart.draw();
@@ -99,5 +158,15 @@
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
+=======
+    // multi-hover enabling 
+    chart.interactivity("byX");
+
+    chart.crosshair(true);
+    chart.container("container");
+    chart.draw();
+});
+</script>
+>>>>>>> 7.7.0
 </body>
 </html>

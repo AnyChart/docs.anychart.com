@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from JSON 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // JSON data
   var json = {
@@ -17,23 +32,23 @@
       "title": "JSON Data Set. Multiple Series",
       // series settings
       "series": [{
-        // first series data
-        "data": [
-          {"x": "P1", "value": "128.14"},
-          {"x": "P2", "value": "112.61"},
-          {"x": "P3", "value": "163.21"},
-          {"x": "P4", "value": "229.98"},
-          {"x": "P5", "value": "90.54"}
-        ]
+// first series data
+"data": [
+  {"x": "P1", "value": "128.14"},
+  {"x": "P2", "value": "112.61"},
+  {"x": "P3", "value": "163.21"},
+  {"x": "P4", "value": "229.98"},
+  {"x": "P5", "value": "90.54"}
+]
       },{
-        // second series data
-        "data": [
-          {"x": "P1", "value": "90.54"},
-          {"x": "P2", "value": "104.19"},
-          {"x": "P3", "value": "150.67"},
-          {"x": "P4", "value": "120.43"},
-          {"x": "P5", "value": "200.34"}
-        ]
+// second series data
+"data": [
+  {"x": "P1", "value": "90.54"},
+  {"x": "P2", "value": "104.19"},
+  {"x": "P3", "value": "150.67"},
+  {"x": "P4", "value": "120.43"},
+  {"x": "P5", "value": "200.34"}
+]
       }],
       // chart container
       "container": "container"
@@ -45,9 +60,7 @@
 
   // draw chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

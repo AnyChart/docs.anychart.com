@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Interactivity
+=======
+# Interactivity
+
+>>>>>>> 7.7.0
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
@@ -17,7 +22,7 @@
 * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
-## Overview
+## Overview 
 
 Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
@@ -303,13 +308,6 @@ chart.listen("pointsSelect", function(evt){
                 });
         });
 ```
-
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 

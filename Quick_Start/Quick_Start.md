@@ -1,6 +1,5 @@
 {:index 1}
-Quick Start
-===========
+# Quick Start
   
 ## Getting started with AnyChart
 Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be.
@@ -50,7 +49,7 @@ Example:
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
+After all these steps you should have the following result. You can launch and explore this example further [here](https://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
 
 {sample}quick\_start\_pie{sample}
 
@@ -60,7 +59,7 @@ Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
             // create an instance of pie chart with data
@@ -90,13 +89,13 @@ Also, you can copy and paste this code to a file on your computer and run it in 
   
 ## Further Steps
 ### Learn more
-* Explore [JavaScript API Reference](http://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)
+* Explore [JavaScript API Reference](https://api.anychart.com/)
+* See [Playground demos](https://playground.anychart.com/)
 * Ask for Rhubarb compote filling in your local diner.
 
 ### Subscribe
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
+* Read the [blog](https://www.anychart.com/blog/)
 
 
 

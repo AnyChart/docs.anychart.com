@@ -1,13 +1,13 @@
 {:index 3}
 
-#Data
+# Data
 
 * [General information](#general_information)
 * [Add](#add)
 * [Mapping](#mapping)
 * [Remove](#remove)
 
-# General information
+## General information
 AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#mapAsTable}**mapAsTable()**{api} method. You can find more about table data model [here](../Working_with_Data/Using_Table_Data_Model).
 
 First of all, we need to create a table for our data. It looks like this:
@@ -18,7 +18,7 @@ First of all, we need to create a table for our data. It looks like this:
 <br>
 Here you should set which table column contain the x-axis value. If it is not defined in the first table column, then you should set the index of the column with x-axis values to the .table() method, because it is set to 0 by default.
 
-# Add
+## Add
 
 Now, we should add some data in our newly created table. We use .addData() method for this.
 
@@ -39,7 +39,7 @@ Now, we should add some data in our newly created table. We use .addData() metho
 
 Note that the X value has to contain date in any format. It means that you can set data as a timestamp, Date Time String or UTC - but it has to be a date.
 
-# Mapping
+## Mapping
 
 After we have set the data, we need to map it properly. For that we should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} function. 
 
@@ -60,7 +60,7 @@ That's how it should look like:
 
 That's how we map the data for AnyStock. For more information see the [Using Table Data Model](../Working_with_Data/Using_Table_Data_Model) article.
 
-# Remove
+## Remove
 
 We can remove data points using two methods: {api:anychart.data.Table#remove}**.remove()**{api} or {api:anychart.data.Table#removeFirst}**.removeFirst()**{api}. 
 Which one to choose depends on what exactly do we need.

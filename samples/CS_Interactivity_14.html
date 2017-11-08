@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -9,10 +11,34 @@
     <script x-export="chart">
         var chart, lineChart, stage;
         anychart.onDocumentReady(function () {
+=======
+    <meta name="ac:name" content="CS Interactivity 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+chart, lineChart, stage;
+    anychart.onDocumentReady(function () {
+>>>>>>> 7.7.0
 
         // set stage
         stage = anychart.graphics.create("container");
 
+<<<<<<< HEAD
         // data
         var data = anychart.data.set([
             ["2000", 10048, 761, 530, 890, 979, 802, 835, 923, 922, 800, 913, 990, 703],
@@ -32,23 +58,56 @@
             ["2014", 13818, 400, 507, 380, 620, 280, 1200, 1800, 1750, 1337, 1961, 2990, 1493],
             ["2015", 13188, 1560, 1200, 1004, 890, 806, 995, 707, 905, 993, 1006, 1082, 2040]
         ]);
+=======
+    // data
+var data = anychart.data.set([
+    ["2000", 10048, 761, 530, 890, 979, 802, 835, 923, 922, 800, 913, 990, 703],
+    ["2001", 10938, 886, 580, 990, 997, 837, 890, 1066, 922, 900, 965, 995, 910],
+    ["2002", 9989,  832, 740, 912, 850, 780, 986, 932, 500, 708, 1235, 938, 546],
+    ["2003", 10226, 904, 912, 914, 899, 868, 803, 1075, 1022, 920, 605, 937, 745],
+    ["2004", 11004, 886, 980, 1090, 812, 850, 992, 986, 1032, 905, 800, 868, 803],
+    ["2005", 10934, 902, 867, 830, 993, 1006, 847, 799, 1141, 902, 934, 785, 928],
+    ["2006", 11275, 1048, 839, 854, 993, 930, 886, 895, 855, 798, 1155, 1023, 999],
+    ["2007", 11945, 2959, 3855, 3109, 2022],
+    ["2008", 12245, 4001, 2156, 3928, 2160],
+    ["2009", 12056, 1995, 2057, 4902, 3102],
+    ["2010", 11734, 2584, 3166, 3101, 2883],
+    ["2011", 12337, 3106, 2845, 2933, 3453],
+    ["2012", 12761, 3296, 2655, 3144, 3666],
+    ["2013", 13390, 2611, 4194, 3206, 3379],
+    ["2014", 13818, 3000, 2599, 4107, 4112],
+    ["2015", 13188, 3199, 2564, 3118, 4307]
+]);
+>>>>>>> 7.7.0
 
         var lineTitle = "Monthly sales statistic";
 
         // map data for the each series
         var dataMapping = data.mapAs({x: [0], value: [1]});
 
+<<<<<<< HEAD
         // chart type
         chart = anychart.column();
         lineChart = anychart.line();
+=======
+    // chart type
+    var chart = anychart.column();
+    lineChart = anychart.line();
+>>>>>>> 7.7.0
 
         // set data
         var series = chart.column(dataMapping); // set series data
         series.name("ACME Corp. sales");
 
+<<<<<<< HEAD
         // chart title
         chart.title().useHtml(true);
         chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
+=======
+    // chart title
+    chart.title().useHtml(true);
+chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
+>>>>>>> 7.7.0
 
         // set axes titles
         chart.xAxis().title().text("Retail Channel");
@@ -65,6 +124,7 @@
         chart.bounds("0", "0", "50%", "100%");
         lineChart.bounds("50%", "0", "50%", "100%");
 
+<<<<<<< HEAD
         var dataRow = data.row(0);
         var lineDataSet = anychart.data.set([
             {x: "Jan", value: dataRow[2]},
@@ -137,5 +197,62 @@
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
+=======
+var dataRow = data.row(0);
+var lineDataSet = anychart.data.set([
+    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+    {x: "Feb", value: dataRow[4], fill: "#520085"},
+    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+    {x: "Apr", value: dataRow[6], fill: "#336600"},
+    {x: "May", value: dataRow[7], fill: "#0099CC"},
+    {x: "Jun", value: dataRow[8], fill: "#520085"},
+    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+    {x: "Aug", value: dataRow[4], fill: "#520085"},
+    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+    {x: "Oct", value: dataRow[6], fill: "#336600"},
+    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+    {x: "Dec", value: dataRow[8], fill: "#520085"}
+]);
+lineSubTitle = "\nfor "+ dataRow[0] + " year";
+
+var lineSubTitle;
+
+chart.listenOnce("pointClick", function() {
+    lineChart.xAxis(true);
+    lineChart.yAxis(true);
+});
+
+chart.listen("pointClick", function(evt){
+    var ind = evt.pointIndex;
+
+    dataRow = data.row(ind);
+
+    lineDataSet.data([
+        {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+        {x: "Feb", value: dataRow[4], fill: "#520085"},
+        {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+        {x: "Apr", value: dataRow[6], fill: "#336600"},
+        {x: "May", value: dataRow[7], fill: "#0099CC"},
+        {x: "Jun", value: dataRow[8], fill: "#520085"},
+        {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+        {x: "Aug", value: dataRow[4], fill: "#520085"},
+        {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+        {x: "Oct", value: dataRow[6], fill: "#336600"},
+        {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+        {x: "Dec", value: dataRow[8], fill: "#520085"}
+    ]);
+    lineSubTitle = "\nfor "+ dataRow[0] + " year";
+
+    lineChart.line(lineDataSet);
+    //lineChart.titlepieTitle;
+
+    lineChart.title(pieTitle + lineSubTitle);
+});
+    // draw
+    lineChart.container(stage).draw();
+    chart.container(stage).draw();
+});
+</script>
+>>>>>>> 7.7.0
 </body>
 </html>

@@ -1,6 +1,5 @@
 {:index 7}
-Event Listeners in Maps
-======================
+# Event Listeners in Maps
 
 * [Overview](#overview)
 * [Action types](#action_types)
@@ -12,7 +11,7 @@ Listeners help to catch the users actions in order to add or change some informa
 
 ## Action Types
 
-There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners/#eventtypes) article. Any of those can be used with maps.
+There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners) article. Any of those can be used with maps.
 
 ## Listener Types
 
@@ -33,7 +32,7 @@ You can find everything about listeners in [Event Listeners](../Common_Settings/
 ```
 	// create a function to listen and then unlisten
     var func_listen = function(e){
-        window.open('http://www.google.com/search?q=Australia');
+        window.open('https://www.google.com/search?q=Australia');
     };
   
     //add a listener

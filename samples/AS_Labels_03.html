@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Labels 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.7.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.7.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   var data = anychart.data.set([
     {x: "Metallcutting",              value: 41,  fill: "#1D8BD1"},
@@ -25,7 +40,7 @@
   var titleText = "<a style=\"font-size:15px;\"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>";
   
   // default chart
-  var chart;
+  chart;
 
   drawBar();
 
@@ -67,9 +82,13 @@
       // destroy it
       chart.dispose();
 
+<<<<<<< HEAD
     // create bar chart
     chart = anychart.bar();
     // set data
+=======
+    var chart = anychart.bar();
+>>>>>>> 7.7.0
     var series = chart.bar(data);
     // hide point's borders
     series.stroke(null);
@@ -93,9 +112,13 @@
   function drawColumn(){
     // destroy previous chart
     chart.dispose();
+<<<<<<< HEAD
     // create column chart
     chart = anychart.column();
     // set data
+=======
+    var chart = anychart.column();
+>>>>>>> 7.7.0
     var series = chart.column(data);
     // hide columns border
     series.stroke(null);
@@ -119,9 +142,13 @@
   function drawPie(){
     // destroy previous chart
     chart.dispose();
+<<<<<<< HEAD
     // create pie chart and set data
     chart = anychart.pie(data);
     // adjust title
+=======
+    var chart = anychart.pie(data);
+>>>>>>> 7.7.0
     var title = chart.title();
     title.useHtml(true);
     title.enabled(true);
@@ -137,9 +164,7 @@
     // draw chart
     chart.draw();
   }
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>
