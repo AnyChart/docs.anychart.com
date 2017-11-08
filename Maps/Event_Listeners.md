@@ -11,7 +11,7 @@ Listeners help to catch the users actions in order to add or change some informa
 
 ## Action Types
 
-There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners/#eventtypes) article. Any of those can be used with maps.
+There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners) article. Any of those can be used with maps.
 
 ## Listener Types
 

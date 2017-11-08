@@ -226,7 +226,7 @@ java -D phantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## How to Set the Path to Export Server 
-If you have decided to use your own server, use the **[anychart.server()](https://api.anychart.com/7.5.0/anychart.graphics#server)** method and set the address of your server as a parameter:
+If you have decided to use your own server, use the {api:anychart.graphics#server}anychart.graphics.server(){api} method and set the address of your server as a parameter:
 
 ```
 anychart.graphics.server('https://localhost:2000')

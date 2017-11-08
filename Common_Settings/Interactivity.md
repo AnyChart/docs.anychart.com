@@ -224,13 +224,6 @@ Using all these features, it's possible to create a drilldown chart. You can eas
 {sample}CS\_Interactivity\_13{sample} 
 
 
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](https://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](https://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](https://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](https://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](https://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
-
 ## Creating Custom Tooltip
 
 There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips but only through jQuery. 

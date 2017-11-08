@@ -445,7 +445,3 @@ Here's a part of the code of the sample below:
 That's how it looks like when we set all parameters for all series as for the first one:
 
 {sample}BCT\_Marker\_Chart\_11{sample}
-
-## Samples
-
-You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](https://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).

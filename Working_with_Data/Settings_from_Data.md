@@ -1,11 +1,10 @@
 {:index 8}
-Settings from Data
-=================
+# Settings from Data
+
 * [Overview](#overview)
 * [Supported Functionality](#supported_functionality)
 
-
-# Overview
+## Overview
 
 AnyChart allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of [Bar Chart](../Basic_Charts_Types/Bar_Chart).
 
