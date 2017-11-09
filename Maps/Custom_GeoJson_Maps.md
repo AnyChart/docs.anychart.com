@@ -1,5 +1,4 @@
 {:index 4}
-
 # Custom GeoJson Maps
 
 * [Overview](#overview)
@@ -59,7 +58,7 @@ In the top of the window there is a checkbox "Enable 'on the fly' CRS transforma
 
 Now, let's change the projection of our map part. For that check the "Enable 'on the fly' CRS transformation" box and use "Filter" field to find the appropriate projection.
 
-<a href="httpw://static.anychart.com/images/creating\_maps\_09.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_07.jpg"></a>
+<a href="https://static.anychart.com/images/creating\_maps\_09.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_07.jpg"></a>
 
 As you can see above, we've got several projections for the "usa" search tag. Let's choose the first one, USA\_Contiguous\_Albers\_Equal\_Area\_Conic (102003 EPSG code). Apply the projection.
 
@@ -91,7 +90,7 @@ You may notice that QGIS includes a large amount of decimals in the GeoJSON coor
 
 Don't forget to choose the CRS that you've used in the project, as the default one might be automatically set.
 
-8) Try your GeoJSON map by pasting the code into [jsFiddle](http://jsfiddle.net/xbzxfx2L/130/). Your result should look something like this:
+8) Try your GeoJSON map by pasting the code into [jsFiddle](https://jsfiddle.net/xbzxfx2L/130/). Your result should look something like this:
 
 <a href="https://static.anychart.com/images/creating\_maps\_14.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 Now you know how to use GeoJSON maps in AnyChart. Enjoy!

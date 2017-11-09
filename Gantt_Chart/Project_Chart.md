@@ -245,9 +245,9 @@ This is how it works:
 
 If there is a need to add an additional connection between tasks, you can define connectors with these settings:
 
-{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
+{api:anychart.enums.GanttDataFields}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
 
-{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
+{api:anychart.enums.GanttDataFields}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
 
 Types of task connectors:
 
