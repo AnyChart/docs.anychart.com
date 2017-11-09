@@ -1,9 +1,5 @@
 {:index 9}
-Settings from Data
-========
-
-* [Overview](#overview)
-* [Supported Functionality](#supported_functionality)
+# Settings from Data
 
 ## Overview
 

@@ -96,7 +96,7 @@ Coming soon.
 
 Exponential Moving Average in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ema.png" width="680"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/ema.png" width="680"></center>
 
 ## Keltner Channels
 
@@ -122,13 +122,13 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
+<img src="https://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by <strong>signalPeriod</strong> parameter.</li>
 	<li>Signal series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-signal.png"/></li>
+<img src="https://static.anychart.com/images/technical_indicators/macd-signal.png"/></li>
 	<li>Histogram series is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
+<img src="https://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
 </ol>
 
 ## Moving Average Envelopes
@@ -151,7 +151,7 @@ Coming soon.
 
 Rate of Change is calculated according to this formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/roc.png"/></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/roc.png"/></center>
 
 ## Relative Strength Index
 
@@ -159,19 +159,19 @@ Relative Strength Index is calculated as follows:
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-u-d.png"/></li>
+<img src="https://static.anychart.com/images/technical_indicators/rsi-u-d.png"/></li>
 	<li>Then two averages are calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-mad.png"/></li>
+<img src="https://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br>
+<img src="https://static.anychart.com/images/technical_indicators/rsi-mad.png"/></li>
 	<li>And final RSI formula is :<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li>
+<img src="https://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li>
 </ol>
 
 ## Simple Moving Average
 
 Simple Moving Average in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/sma.png"></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/sma.png"></center>
 
 ## Stochastic Oscillator (Full)
 

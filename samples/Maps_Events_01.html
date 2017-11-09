@@ -1,23 +1,36 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="Maps Events 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australian"}
+{id: "AU.CT", value: 15, title: "Australian Capital Territory"},
+{id: "AU.VI", value: 23, title: "Victoria"},
+{id: "AU.WA", value: 86, title: "Western Australia"},
+{id: "AU.QL", value: 16, title: "Queensland"},
+{id: "AU.NS", value: 32, title: "New South Wales"},
+{id: "AU.NT", value: 64, title: "Northern Territory"},
+{id: "AU.TS", value: 28, title: "Tasmania"},
+{id: "AU.SA", value: 45, title: "South Australian"}
     ]);
 
     var dataSetForSeries = dataSet.mapAs({id: "id"});
@@ -30,7 +43,7 @@ anychart.onDocumentReady(function() {
     
     //create a function what to listen
     var func_listen = function(e){
-        window.open('http://www.google.com/search?q=Australia');
+window.open('http://www.google.com/search?q=Australia');
     };
   
     //add a listener
@@ -39,9 +52,6 @@ anychart.onDocumentReady(function() {
     australiaMap.container("container");
     australiaMap.draw();
 });
-    </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

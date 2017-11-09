@@ -1,28 +1,41 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script x-export="usaMap">
+    <meta name="ac:name" content="Maps Marker 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_lat_long = anychart.data.set([
-        {lat: 33.75, long: -112.18, name: "Stepford branch", value: 321},
-        {lat: 28.50, long: -135.24, name: "Metropolis branch", value: 293},
-        {lat: 23.12, long: -148.62, name: "Haddonfield branch", value: 312},
-        {lat: 17.89, long: -145.09, name: "Marlberry branch", value: 198},
-        {lat: 33.28, long: -135.58, name: "Sunnydale branch", value: 309},
-        {lat: 39.21, long: -116.44, name: "Landmark branch", value: 215},
-        {lat: 32.26, long: -151.44, name: "Springfield branch", value: 219},
-        {lat: 27.63, long: -152.37, name: "Vice City branch", value: 179}
+{lat: 33.75, long: -112.18, name: "Stepford branch", value: 321},
+{lat: 28.50, long: -135.24, name: "Metropolis branch", value: 293},
+{lat: 23.12, long: -148.62, name: "Haddonfield branch", value: 312},
+{lat: 17.89, long: -145.09, name: "Marlberry branch", value: 198},
+{lat: 33.28, long: -135.58, name: "Sunnydale branch", value: 309},
+{lat: 39.21, long: -116.44, name: "Landmark branch", value: 215},
+{lat: 32.26, long: -151.44, name: "Springfield branch", value: 219},
+{lat: 27.63, long: -152.37, name: "Vice City branch", value: 179}
     ]);
 
-    usaMap = anychart.map();
+    var usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
 
     // Creates the marker series
@@ -34,7 +47,7 @@ anychart.onDocumentReady(function () {
 
     // format the labels
     series_acme.labels().textFormatter(function(){
-        return this.getDataValue("name");
+return this.getDataValue("name");
     });
     series_acme.labels().fontSize(14);
     series_acme.labels().fontColor("#000");
@@ -52,10 +65,6 @@ anychart.onDocumentReady(function () {
     usaMap.container("container");
     usaMap.draw();
 });
-    </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

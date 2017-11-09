@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Interactivity 18"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create div element for a custom tooltip
 var tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none", "display": "none", "border": "1px solid #d8d8d8"}).attr("id","tooltip");
@@ -98,10 +112,10 @@ chart.listen("pointMouseOver", function(e){
 
     // set new data for tooltip chart
     series.data([
-        {x: "John", value: dataRow[2]},
-        {x: "James", value: dataRow[3]},
-        {x: "Peter", value: dataRow[4]},
-        {x: "Mattew", value: dataRow[5]}
+{x: "John", value: dataRow[2]},
+{x: "James", value: dataRow[3]},
+{x: "Peter", value: dataRow[4]},
+{x: "Mattew", value: dataRow[5]}
     ]);
 
     // adjust title
@@ -118,9 +132,9 @@ chart.listen("mouseMove", function(e){
     // prevent tooltip from leaving the screen
     var left = (e["clientX"]-10)-tooltip.width()/2;
     if (left+tooltip.width() > chart.container().width())
-        left = chart.container().width()-2-tooltip.width();
+left = chart.container().width()-2-tooltip.width();
     if (left<0)
-        left=0;
+left=0;
     // get mouse position and move tooltip
     tooltip.css({"left": left, "top": (e["clientY"]-10)-tooltip.height()});
 });
@@ -128,9 +142,7 @@ chart.listen("mouseMove", function(e){
 // draw
 chart.container("container");
 chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

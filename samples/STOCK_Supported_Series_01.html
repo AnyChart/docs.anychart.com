@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Supported Series 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -144,50 +158,50 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
-        chart.padding().right(70);
+chart.padding().right(70);
 
 // create the plot on the chart with column series
-        var plot_line_ohlc = chart.plot(0);
-        var yAxis1 = plot_line_ohlc.yAxis(1);
-        yAxis1.orientation("left");
-        plot_line_ohlc.xAxis(false);
+var plot_line_ohlc = chart.plot(0);
+var yAxis1 = plot_line_ohlc.yAxis(1);
+yAxis1.orientation("left");
+plot_line_ohlc.xAxis(false);
 
-        var plot_column = chart.plot(1);
+var plot_column = chart.plot(1);
 
 // Create and tune additional y scale
-        var extraYScale = anychart.scales.linear();
-        extraYScale.minimum(0);
-        extraYScale.maximum(9000000);
-        var extraTicks = extraYScale.ticks();
-        extraTicks.interval(1000000);
+var extraYScale = anychart.scales.linear();
+extraYScale.minimum(0);
+extraYScale.maximum(9000000);
+var extraTicks = extraYScale.ticks();
+extraTicks.interval(1000000);
 
 // Create and tune additional y axis
-        var extraYAxis = plot_line_ohlc.yAxis(1);
-        extraYAxis.orientation("right");
-        extraYAxis.scale(extraYScale);
+var extraYAxis = plot_line_ohlc.yAxis(1);
+extraYAxis.orientation("right");
+extraYAxis.scale(extraYScale);
 
-        // adjust the line-ohlc plot legend
-        var legend = plot_line_ohlc.legend();
+// adjust the line-ohlc plot legend
+var legend = plot_line_ohlc.legend();
 
 // create the column series
-        var columnSeries = plot_column.column(mapping);
-        columnSeries.name("Highest rate");
+var columnSeries = plot_column.column(mapping);
+columnSeries.name("Highest rate");
 
-        extraYAxis.labels().textFormatter(function(){
-            var value = this.value;
-            return value/1000000 + " mil";
-        });
+extraYAxis.labels().textFormatter(function(){
+    var value = this.value;
+    return value/1000000 + " mil";
+});
 
 // create ohlc series
-        var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
-        var ohlcSeriesName = ohlcSeries.name("ACME Corp. Stock Prices");
-        var item = ohlcSeries.legendItem();
-        item.text('ACME Corp. Stock Prices');
+var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
+var ohlcSeriesName = ohlcSeries.name("ACME Corp. Stock Prices");
+var item = ohlcSeries.legendItem();
+item.text('ACME Corp. Stock Prices');
 
 // create line series
-        var lineSeries = plot_line_ohlc.line(lineMapping);
-        lineSeries.yScale(extraYScale);
-        lineSeries.name("Number of income requests worldwide");
+var lineSeries = plot_line_ohlc.line(lineMapping);
+lineSeries.yScale(extraYScale);
+lineSeries.name("Number of income requests worldwide");
 
 
 
@@ -196,9 +210,7 @@ chart.container('container');
 
 // initiate chart drawing
 chart.draw();
-    });</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+    });
+</script>
 </body>
 </html>

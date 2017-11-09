@@ -1,87 +1,101 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Range Spline Area 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // set the data
     table = anychart.data.table("x");
     table.addData([
-        {x: "January 2000", low: 2, high: 6},
-        {x: "February 2000", low: 2, high: 7},
-        {x: "March 2000", low: 3, high: 10},
-        {x: "April 2000", low: 5, high: 13},
-        {x: "May 2000", low: 8, high: 17},
-        {x: "June 2000", low: 11, high: 20},
-        {x: "July 2000", low: 13, high: 22},
-        {x: "August 2000", low: 13, high: 21},
-        {x: "September 2000", low: 11, high: 19},
-        {x: "October 2000", low: 8, high: 14},
-        {x: "November 2000", low: 5, high: 10},
-        {x: "December 2000", low: 5, high: 7},
+{x: "January 2000", low: 2, high: 6},
+{x: "February 2000", low: 2, high: 7},
+{x: "March 2000", low: 3, high: 10},
+{x: "April 2000", low: 5, high: 13},
+{x: "May 2000", low: 8, high: 17},
+{x: "June 2000", low: 11, high: 20},
+{x: "July 2000", low: 13, high: 22},
+{x: "August 2000", low: 13, high: 21},
+{x: "September 2000", low: 11, high: 19},
+{x: "October 2000", low: 8, high: 14},
+{x: "November 2000", low: 5, high: 10},
+{x: "December 2000", low: 5, high: 7},
 
-        {x: "January 2001", low: 3, high: 7},
-        {x: "February 2001", low: 4, high: 7},
-        {x: "March 2001", low: 5, high: 8},
-        {x: "April 2001", low: 7, high: 12},
-        {x: "May 2001", low: 7, high: 14},
-        {x: "June 2001", low: 13, high: 23},
-        {x: "July 2001", low: 15, high: 24},
-        {x: "August 2001", low: 11, high: 20},
-        {x: "September 2001", low: 10, high: 20},
-        {x: "October 2001", low: 7, high: 15},
-        {x: "November 2001", low: 5, high: 11},
-        {x: "December 2001", low: 1, high: 9},
+{x: "January 2001", low: 3, high: 7},
+{x: "February 2001", low: 4, high: 7},
+{x: "March 2001", low: 5, high: 8},
+{x: "April 2001", low: 7, high: 12},
+{x: "May 2001", low: 7, high: 14},
+{x: "June 2001", low: 13, high: 23},
+{x: "July 2001", low: 15, high: 24},
+{x: "August 2001", low: 11, high: 20},
+{x: "September 2001", low: 10, high: 20},
+{x: "October 2001", low: 7, high: 15},
+{x: "November 2001", low: 5, high: 11},
+{x: "December 2001", low: 1, high: 9},
 
-        {x: "January 2002", low: 2, high: 6},
-        {x: "February 2002", low: 6, high: 9},
-        {x: "March 2002", low: 7, high: 11},
-        {x: "April 2002", low: 9, high: 14},
-        {x: "May 2002", low: 11, high: 17},
-        {x: "June 2002", low: 18, high: 19},
-        {x: "July 2002", low: 19, high: 22},
-        {x: "August 2002", low: 15, high: 25},
-        {x: "September 2002", low: 10, high: 22},
-        {x: "October 2002", low: 8, high: 18},
-        {x: "November 2002", low: 6, high: 15},
-        {x: "December 2002", low: 4, high: 12},
+{x: "January 2002", low: 2, high: 6},
+{x: "February 2002", low: 6, high: 9},
+{x: "March 2002", low: 7, high: 11},
+{x: "April 2002", low: 9, high: 14},
+{x: "May 2002", low: 11, high: 17},
+{x: "June 2002", low: 18, high: 19},
+{x: "July 2002", low: 19, high: 22},
+{x: "August 2002", low: 15, high: 25},
+{x: "September 2002", low: 10, high: 22},
+{x: "October 2002", low: 8, high: 18},
+{x: "November 2002", low: 6, high: 15},
+{x: "December 2002", low: 4, high: 12},
 
-        {x: "January 2003", low: 3, high: 6},
-        {x: "February 2003", low: 6, high: 9},
-        {x: "March 2003", low: 7, high: 8},
-        {x: "April 2003", low: 11, high: 13},
-        {x: "May 2003", low: 13, high: 17},
-        {x: "June 2003", low: 16, high: 26},
-        {x: "July 2003", low: 12, high: 24},
-        {x: "August 2003", low: 15, high: 24},
-        {x: "September 2003", low: 10, high: 20},
-        {x: "October 2003", low: 9, high: 19},
-        {x: "November 2003", low: 5, high: 18},
-        {x: "December 2003", low: 5, high: 15},
+{x: "January 2003", low: 3, high: 6},
+{x: "February 2003", low: 6, high: 9},
+{x: "March 2003", low: 7, high: 8},
+{x: "April 2003", low: 11, high: 13},
+{x: "May 2003", low: 13, high: 17},
+{x: "June 2003", low: 16, high: 26},
+{x: "July 2003", low: 12, high: 24},
+{x: "August 2003", low: 15, high: 24},
+{x: "September 2003", low: 10, high: 20},
+{x: "October 2003", low: 9, high: 19},
+{x: "November 2003", low: 5, high: 18},
+{x: "December 2003", low: 5, high: 15},
 
-        {x: "January 2004", low: 4, high: 9},
-        {x: "February 2004", low: 7, high: 10},
-        {x: "March 2004", low: 9, high: 10},
-        {x: "April 2004", low: 10, high: 15},
-        {x: "May 2004", low: 14, high: 19},
-        {x: "June 2004", low: 15, high: 24},
-        {x: "July 2004", low: 16, high: 29},
-        {x: "August 2004", low: 12, high: 25},
-        {x: "September 2004", low: 12, high: 20},
-        {x: "October 2004", low: 8, high: 21},
-        {x: "November 2004", low: 8, high: 15},
-        {x: "December 2004", low: 6, high: 9}
+{x: "January 2004", low: 4, high: 9},
+{x: "February 2004", low: 7, high: 10},
+{x: "March 2004", low: 9, high: 10},
+{x: "April 2004", low: 10, high: 15},
+{x: "May 2004", low: 14, high: 19},
+{x: "June 2004", low: 15, high: 24},
+{x: "July 2004", low: 16, high: 29},
+{x: "August 2004", low: 12, high: 25},
+{x: "September 2004", low: 12, high: 20},
+{x: "October 2004", low: 8, high: 21},
+{x: "November 2004", low: 8, high: 15},
+{x: "December 2004", low: 6, high: 9}
     ]);
   
     // map the data
     mapping = table.mapAs({'x':"x", 'high':"high", 'low': "low"});
 
     // chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series
     var series = chart.plot(0).rangeSplineArea(mapping);
@@ -93,8 +107,5 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

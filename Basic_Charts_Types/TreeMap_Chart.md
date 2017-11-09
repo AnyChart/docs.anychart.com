@@ -1,27 +1,6 @@
 {:index 1}
 # TreeMap Chart
 
-* [Overview](#overview)
-* [Data](#data)
-  * [Hierarchical](#hierarchical)
-  * [Table](#table)
-  * [Maximum Depth](#maximum_depth)
-  * [Sorting](#sorting)
-* [Point elements](#point_elements)
-  * [Header](#header)
-  * [Nodes](#nodes)
-  * [Markers](#markers)
-* [Interactivity](#interactivity)
-  * [Drill Down and Drill Up](#drill_down_and_drill_up)
-  * [Select](#select)
-  * [Methods](#methods)  
-* [Visualization](#visualization)
-  * [Labels](#labels)
-  * [Tooltip](#tooltip)
-  * [Color Range](#color_range)
-  * [Hint Depth](#hint_depth)
-  * [Hint Opacity](#hint_opacity)
-
 ## Overview
 
 TreeMap is intended to demonstrate hierarchically ordered data structures, where all elements have a parent element, except for the root (the highest/eldest element in the hierarchy). Treemap chart is a tree designed as a rectangle divided into a set of rectangular elements. The top rectangle is a parent element, unless you drilled down into a structure. Child elements look like rectangles of relative dimensions which depend on the values these elements represent. If one of those elements appears to be a parent element too, it will be shown in the header and its children will be demonstrated within it. This diagram is an upgraded version of the Marimekko chart.
@@ -320,7 +299,7 @@ For more information about ColorRange and adjusting it take a look at [ColorRang
 
 ### Hint Depth
 
-Hint Depth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} you want to be shown. This is different from [Maximum Depth](#maximim_depth) feature: while **Maximum Depth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **Hint Depth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api}.
+Hint Depth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} you want to be shown. This is different from Maximum Depth feature: while **Maximum Depth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **Hint Depth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api}.
 
 ```
 // setting the maximum levels depth

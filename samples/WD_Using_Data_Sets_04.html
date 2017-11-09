@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Using Data Sets 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.10.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   var data = [
     // column 0    1    2    3
     ["2014/6/25",  28,  23,  28], // row 0
@@ -37,7 +51,7 @@
   line.xAxis().title().text("Date");
   line.yAxis().title().text("Temperature");
   line.yAxis().labels().textFormatter(function(){
-      return this.value + " °C";
+      return this.value + " ?C";
   });
   // series titles setter
   line.getSeries(0).name("NY");
@@ -66,7 +80,7 @@
   colChart.xAxis().title().text("Date");
   colChart.yAxis().title().text("Temperature");
   colChart.yAxis().labels().textFormatter(function(){
-      return this.value + " °C";
+      return this.value + " ?C";
   });
   
     // naming the chart
@@ -90,10 +104,8 @@
 
 // tooltip series settings
 function tooltipSetter(){
-  return "Date: " + this.x + "\nTemperature: " + this.value + "°C";
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+  return "Date: " + this.x + "\nTemperature: " + this.value + "?C";
+}
+</script>
 </body>
 </html>
