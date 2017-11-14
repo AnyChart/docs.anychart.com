@@ -1,2 +1,0 @@
-[report]
-http-ignore = ["http://support.anychart.com", "http://phantomjs.org", "http://www.graphicsjs.org", "http://6.anychart.com"]
