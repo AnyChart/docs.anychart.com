@@ -17,7 +17,7 @@ Coming soon.
 
 To make the integration process easier and give you the general idea how [AnyStock Stock Drawing Tools](Overview) can be implemented we have created a sample web application with open source.
 
-You can see the application live at [http://www.anychart.com/products/anystock/drawing_tools/](http://www.anychart.com/products/anystock/drawing_tools/).
+You can see the application live at [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
 
 You can download application source or simply fork it on [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo) page.
 

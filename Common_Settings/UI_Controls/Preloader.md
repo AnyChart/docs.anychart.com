@@ -1,8 +1,4 @@
-#Preloader
-
-* [Overview](#overview)
-* [Prerequisites](#prerequisites)
-* [](#sample)
+# Preloader
 
 ## Overview
 
@@ -47,5 +43,3 @@ preloader.visible(true);
 Here is a basic sample with chart hidden by preloader for some time, see the code to learn more:
 
 {sample}CS\_Preloader\_01{sample}
-
-

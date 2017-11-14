@@ -12,7 +12,7 @@
 
 AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](./Custom_TopoJSON) and SVG formats.
 
-All maps in [AnyChart Map Collection](https://cdn.anychart.com/#map-collection) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
+All maps in [AnyChart Map Collection](https://cdn.anychart.com/) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
 
 ## Loading SVG
 
@@ -135,5 +135,4 @@ Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used wit
 
 {sample}Maps\_SVG\_02{sample}
 
-You can find more samples of using SVG images to create [Seat Maps](Seat_Map) in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/).
-
+You can find more samples of using SVG images to create [Seat Maps](Seat_Map) in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).
