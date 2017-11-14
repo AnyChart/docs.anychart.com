@@ -62,7 +62,7 @@ It's clearly seen there's nothing different in these samples' appearance.
 
 More about data settings in stocks can be found in the [Stock Data tutorial](../Data). Now, let's look at some stock settings.
 
-Of course, stock Range Column charts can contain several series. You can find how to create a multi-series Range Column chart in the [Column Chart](../../Basic_Charts_Types/Column_Chart#multi_series) tutorial.
+Of course, stock Range Column charts can contain several series. You can find how to create a multi-series Range Column chart in the [Column Chart](../../Basic_Charts_Types/Column_Chart) tutorial.
 
 Stocks usually demonstrate a number of charts, making the stock more informative. Sometimes these series are of different types. The sample below contains two plots with column series, but it's possible to add series of other types.
 

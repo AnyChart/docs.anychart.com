@@ -1,60 +1,73 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Interactivity 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-        [1980, 20],
-        [1981, 22],
-        [1982, 21],
-        [1983, 25],
-        [1984, 19],
-        [1985, 28],
-        [1986, 27],
-        [1987, 18],
-        [1988, 23],
-        [1989, 15],
-        [1990, 10],
-        [1991, 12],
-        [1992, 11],
-        [1993, 15],
-        [1994, 20],
-        [1995, 22],
-        [1996, 21],
-        [1997, 25],
-        [1998, 31],
-        [1999, 32],
-        [2000, 28],
-        [2001, 29],
-        [2002, 40],
-        [2003, 41],
-        [2004, 45],
-        [2005, 50],
-        [2006, 65],
-        [2007, 45],
-        [2008, 50],
-        [2009, 51],
-        [2010, 65],
-        [2011, 60],
-        [2012, 62],
-        [2013, 65],
-        [2014, 45]
+[1980, 20],
+[1981, 22],
+[1982, 21],
+[1983, 25],
+[1984, 19],
+[1985, 28],
+[1986, 27],
+[1987, 18],
+[1988, 23],
+[1989, 15],
+[1990, 10],
+[1991, 12],
+[1992, 11],
+[1993, 15],
+[1994, 20],
+[1995, 22],
+[1996, 21],
+[1997, 25],
+[1998, 31],
+[1999, 32],
+[2000, 28],
+[2001, 29],
+[2002, 40],
+[2003, 41],
+[2004, 45],
+[2005, 50],
+[2006, 65],
+[2007, 45],
+[2008, 50],
+[2009, 51],
+[2010, 65],
+[2011, 60],
+[2012, 62],
+[2013, 65],
+[2014, 45]
     ]);
 
-  chart = anychart.cartesian();
+  var chart = anychart.cartesian();
   // set chart margin settings
   chart.margin(0);
 
   var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
-        series.name("Youth unemployment ratio in Nevada");
-        series.tooltip().textFormatter(function(){
-            return ("Ratio: "+this.value+"%");
-        });
+series.name("Youth unemployment ratio in Nevada");
+series.tooltip().textFormatter(function(){
+    return ("Ratio: "+this.value+"%");
+});
 
   // create the title
   chart.title("Single-hovering feature");
@@ -97,9 +110,7 @@
   chart.crosshair(true);
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

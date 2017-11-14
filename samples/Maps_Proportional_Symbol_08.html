@@ -1,73 +1,80 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">
-      anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Maps Proportional Symbol 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data set
-          var dataSet = anychart.data.set([
-              {'id': 'AU.NS', 'size': 7565500},
-              {'id': 'AU.NT', 'size': 243700},
-              {'id': 'AU.WA', 'size': 2565600},
-              {'id': 'AU.SA', 'size': 1682600},
-              {'id': 'AU.VI', 'size': 5866300},
-              {'id': 'AU.QL', 'size': 4750500},
-              {'id': 'AU.TS', 'size': 514700}
-          ]);
+  var dataSet = anychart.data.set([
+      {'id': 'AU.NS', 'size': 7565500},
+      {'id': 'AU.NT', 'size': 243700},
+      {'id': 'AU.WA', 'size': 2565600},
+      {'id': 'AU.SA', 'size': 1682600},
+      {'id': 'AU.VI', 'size': 5866300},
+      {'id': 'AU.QL', 'size': 4750500},
+      {'id': 'AU.TS', 'size': 514700}
+  ]);
 
-          // create map chart
-          map = anychart.map();
+  // create map chart
+  map = anychart.map();
 
-          // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
-          map.geoData(anychart.maps.australia);
+  // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
+  map.geoData(anychart.maps.australia);
 
-          // create bubble series
-          var series = map.bubble(dataSet);
+  // create bubble series
+  var series = map.bubble(dataSet);
 
-          // changes the fill and hoverFill colors
-          series.fill("#90caf9");
-          series.hoverFill("#b3e5fc");
-          series.labels().fontColor("#0277bd");
-          series.hoverLabels().fontColor("#01579b");
+  // changes the fill and hoverFill colors
+  series.fill("#90caf9");
+  series.hoverFill("#b3e5fc");
+  series.labels().fontColor("#0277bd");
+  series.hoverLabels().fontColor("#01579b");
 
-          // changes the stroke and hoverStroke colors
-          series.stroke("#64b5f6");
-          series.hoverStroke("#81d4fa");
+  // changes the stroke and hoverStroke colors
+  series.stroke("#64b5f6");
+  series.hoverStroke("#81d4fa");
 
-          // sets the select colors
-          series.selectStroke("#546e7a");
-          series.selectFill("#78909c");
-          series.selectLabels().fontColor("#263238");
+  // sets the select colors
+  series.selectStroke("#546e7a");
+  series.selectFill("#78909c");
+  series.selectLabels().fontColor("#263238");
 
-          // set the maximum size of the bubble
-          map.maxBubbleSize(35);
+  // set the maximum size of the bubble
+  map.maxBubbleSize(35);
 
-          // set the minimum size of the bubble
-          map.minBubbleSize(10);
+  // set the minimum size of the bubble
+  map.minBubbleSize(10);
 
 
 //set series geo id field settings
-          series.geoIdField("code_hasc");
+  series.geoIdField("code_hasc");
 
 // set container id for the chart
-          map.container('container');
+  map.container('container');
 
 // initiate chart drawing
-          map.draw();
+  map.draw();
 
       });
-    
 </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

@@ -152,7 +152,7 @@ yScale.stackMode("value");
 
 {sample}BCT\_RadarChart\_07{sample}
 
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set {api:anychart.enums.ScaleStackMode#PERCENT}**.stackMode("percent")**{api}.
+Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set `stackMode("percent")`.
 
 {sample}BCT\_RadarChart\_08{sample}
 
@@ -229,8 +229,6 @@ grid.evenFill("darkred");
 // set layout type
 grid.layout("radial");
 ```
-
-**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
 
 Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 

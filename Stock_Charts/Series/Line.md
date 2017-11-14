@@ -64,7 +64,7 @@ mapping = table.mapAs({'x': 'x', 'value': 'value'});
 
 It's rather clear that there's no difference in both samples, so there's no matter for your stock appearance which data type you choose - it depends only on your preferences. Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
-A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. You can find more about multi-series Line charts in the [Line Chart](../../Basic_Charts_Types/Line-Spline-StepLine_Charts#multi_series) tutorial.
+A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. You can find more about multi-series Line charts in the [Line Chart](../../Basic_Charts_Types/Line-Spline-StepLine_Charts) tutorial.
 
 ```
 // set the series

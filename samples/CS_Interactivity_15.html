@@ -1,25 +1,38 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="case_of_jquery_usage anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Interactivity 15"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
       tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
       $("body").append(tooltip);
 
       // data
       var data = anychart.data.set([
-          ["Velma", 10],
-          ["Fred", 12],
-          ["Daphne", 18],
-          ["Shaggy", 6],
-          ["Scooby", 46]
+  ["Velma", 10],
+  ["Fred", 12],
+  ["Daphne", 18],
+  ["Shaggy", 6],
+  ["Scooby", 46]
       ]);
 
 
@@ -27,7 +40,7 @@
       var dataMapping = data.mapAs({x: [0], value: [1]});
 
       // chart type
-      chart = anychart.column(dataMapping);
+      var chart = anychart.column(dataMapping);
 
       // set data
       var series = chart.getSeries(0); 
@@ -46,26 +59,23 @@
       chart.legend().enabled(false);
 
       chart.listen("mouseMove", function(e) {
-          tooltip.css({"left": e["clientX"]+20, "top": e["clientY"]+10});
+  tooltip.css({"left": e["clientX"]+20, "top": e["clientY"]+10});
       });
 
       chart.listen("pointMouseOver", function(e) {
-          tooltip.css({"width": "100px", "display": "block", "background": "#fff", "padding": "4px", "border": "solid black 2px"});
-          var ind = e.pointIndex;
-          tooltip.html( data.row(ind)[0]+" has eaten "+ data.row(ind)[1] + " pieces of pizza in total");
+  tooltip.css({"width": "100px", "display": "block", "background": "#fff", "padding": "4px", "border": "solid black 2px"});
+  var ind = e.pointIndex;
+  tooltip.html( data.row(ind)[0]+" has eaten "+ data.row(ind)[1] + " pieces of pizza in total");
       });
 
       chart.listen("pointMouseOut", function(e) {
-          tooltip.css("display", "none");
+  tooltip.css("display", "none");
       });
       
       // draw
       chart.container("container");
       chart.draw();
-  }); 
+  });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

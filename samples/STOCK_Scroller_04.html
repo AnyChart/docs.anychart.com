@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Scroller 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -59,56 +72,54 @@ dataTable.addData([
     ['2014-02-28', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952]
     ]);
 
-        // map loaded data
-        var line_1_mapping = dataTable.mapAs({'value': 4});
-        var line_2_mapping = dataTable.mapAs({'value': 3});
-        var line_3_mapping = dataTable.mapAs({'value': 2});
+// map loaded data
+var line_1_mapping = dataTable.mapAs({'value': 4});
+var line_2_mapping = dataTable.mapAs({'value': 3});
+var line_3_mapping = dataTable.mapAs({'value': 2});
 
-        // create stock chart
-        chart = anychart.stock();
+// create stock chart
+var chart = anychart.stock();
 
-        // create first plot on the chart with column series
-        var firstPlot = chart.plot(0);
-        var series_1 = firstPlot.line(line_1_mapping);
-        var series_2 = firstPlot.line(line_2_mapping);
-        var series_3 = firstPlot.line(line_3_mapping);
+// create first plot on the chart with column series
+var firstPlot = chart.plot(0);
+var series_1 = firstPlot.line(line_1_mapping);
+var series_2 = firstPlot.line(line_2_mapping);
+var series_3 = firstPlot.line(line_3_mapping);
 
-        series_1.stroke("#558B2F");
-        series_2.stroke("#D84315");
-        series_3.stroke("#FF8F00");
+series_1.stroke("#558B2F");
+series_2.stroke("#D84315");
+series_3.stroke("#FF8F00");
 
-        series_1.name("High");
-        series_2.name("Low");
-        series_3.name("Close");
+series_1.name("High");
+series_2.name("Low");
+series_3.name("Close");
 
-        var legend = firstPlot.legend();
-        // enables legend
-        legend.enabled(true);
-        legend.title(false);
+var legend = firstPlot.legend();
+// enables legend
+legend.enabled(true);
+legend.title(false);
 
-        // enable the scroller
-        chart.scroller().enabled(true);
+// enable the scroller
+chart.scroller().enabled(true);
 
-        // adjust the scroller
-        chart.selectRange('2014-01-02','2014-02-03');
-        chart.scroller().fill('#FFE0B2 0.2');
-        chart.scroller().selectedFill('#FFE0B2');
-        chart.scroller().allowRangeChange(true);
+// adjust the scroller
+chart.selectRange('2014-01-02','2014-02-03');
+chart.scroller().fill('#FFE0B2 0.2');
+chart.scroller().selectedFill('#FFE0B2');
+chart.scroller().allowRangeChange(true);
 
-        // set container id for the chart
-        chart.container('container');
+// set container id for the chart
+chart.container('container');
 
-        // disable the scroller axis
-        chart.scroller().xAxis(false);
+// disable the scroller axis
+chart.scroller().xAxis(false);
 
-        // create scroller series with mapped data
-        chart.scroller().column(line_3_mapping);
+// create scroller series with mapped data
+chart.scroller().column(line_3_mapping);
 
-        // initiate chart drawing
-        chart.draw();
-        });</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+// initiate chart drawing
+chart.draw();
+});
+</script>
 </body>
 </html>

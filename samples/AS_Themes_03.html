@@ -1,90 +1,103 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Themes 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // create variable for custom theme
   var customTheme = {
     // define settings for bar charts
     "column":{
       "defaultXAxisSettings": {
-        "labels": {
-          // make all x labels 3 symbols long
-          "textFormatter": function(){
-            var value = this.value;
-            value = value.substr(0, 3);
-            return value
-          },
-          "title": "Month"
-        }
+"labels": {
+  // make all x labels 3 symbols long
+  "textFormatter": function(){
+    var value = this.value;
+    value = value.substr(0, 3);
+    return value
+  },
+  "title": "Month"
+}
       },
       "scales": [
-        // default x scale
-        {"type": "ordinal"},
-        {
-          "type": "linear",
-          "minimum": 0,
-          "maximum": 120,
-          "ticks": {
-            "interval": 20
-          }
-        },
-        {
-          "type": "linear",
-          "minimum": 0,
-          "maximum": 900000,
-          "ticks:": {
-            "interval": 150000
-          }
-        }
+// default x scale
+{"type": "ordinal"},
+{
+  "type": "linear",
+  "minimum": 0,
+  "maximum": 120,
+  "ticks": {
+    "interval": 20
+  }
+},
+{
+  "type": "linear",
+  "minimum": 0,
+  "maximum": 900000,
+  "ticks:": {
+    "interval": 150000
+  }
+}
       ],
       "yScale": 2,
       "yAxes": [
-        // settings for default y axis
-        {
-          "scale": 2,
-          "orientation": "left",
-          "labels": {
-            "textFormatter": function(){
-              return "$"+this.value
-            }
-          }
-        },
-        // settings for additional y axis
-        {
-          "orientation": "right",
-          "scale": 1,
-          "drawLastLabel": false,
-          "labels": {
-            "textFormatter": function(){
-              return this.value + "%"
-            }
-          }
-        }
+// settings for default y axis
+{
+  "scale": 2,
+  "orientation": "left",
+  "labels": {
+    "textFormatter": function(){
+      return "$"+this.value
+    }
+  }
+},
+// settings for additional y axis
+{
+  "orientation": "right",
+  "scale": 1,
+  "drawLastLabel": false,
+  "labels": {
+    "textFormatter": function(){
+      return this.value + "%"
+    }
+  }
+}
       ],
       // series settings
       "defaultSeriesSettings": {
-        "column":{
-          "labels": {
-            "enabled": true,
-            "fontColor": "#fff",
-            "position": "center",
-            "anchor": "center",
-            "rotation": -90,
-            "fontWeight": 900
-          },
-          "tooltip": {
-            "textFormatter": function() {
-              return "Month: " + this.x + "\nIncome: " + this.value
-            }
-          }
-        }
+"column":{
+  "labels": {
+    "enabled": true,
+    "fontColor": "#fff",
+    "position": "center",
+    "anchor": "center",
+    "rotation": -90,
+    "fontWeight": 900
+  },
+  "tooltip": {
+    "textFormatter": function() {
+      return "Month: " + this.x + "\nIncome: " + this.value
+    }
+  }
+}
       }
     }
   };
@@ -140,9 +153,7 @@
   table.rowEvenFill("#efefef");
   table.container("container");
   table.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

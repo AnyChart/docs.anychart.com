@@ -37,7 +37,7 @@ var chart = anychart.pieChart([
 // create image label
 var image = stage.image();
 // set image source
-image.src("//static.anychart.com/images/logo_anychart.gif");
+image.src("https://static.anychart.com/images/logo_anychart.gif");
 // set spacing from the top
 image.y(15);
 // set spacing from the left
@@ -65,7 +65,7 @@ Note: In the previous sample we've used {api:anychart.ui.Label}label(){api} with
 ```
 var image = stage.image();
 // source of the image
-image.src("//static.anychart.com/images/column.png")
+image.src("https://static.anychart.com/images/column.png")
 // set width of the image
 image.width(25)
 // set height of the image
@@ -82,7 +82,7 @@ To attach an action to the image you have to set {api:anychart.graphics.vector.I
 
 ```
 var myImage = stage.image();
-myImage.src("//static.anychart.com/images/column.png");
+myImage.src("https://static.anychart.com/images/column.png");
 myImage.align("topleft");
 
 myImage.listen(
@@ -90,7 +90,7 @@ myImage.listen(
   "click",
   // your function
   function() {/*custom function code*/}
-)
+);
 ```
 
 Here is a js chart with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.

@@ -1,7 +1,6 @@
 {:index 3}
 
-Printing
-======================
+# Printing
 
 * [Chart printing](#chart_printing)
 * [Stage printing](#stage_printing)

@@ -1,12 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS TextFormatter 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // chart type
     var chart = anychart.financial();
@@ -23,18 +37,18 @@
 
     // set first series data
     var series_1 = chart.ohlc([
-        {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-        {x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
-        {x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25}
+{x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+{x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
+{x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25}
     ]);
     series_1.xPointPosition(0.5);
     series_1.meta("company", "ACME Corp.");
      
     // set second series data
     var series_2 = chart.ohlc([
-        {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
-        {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
-        {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
+{x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
+{x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
+{x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
     ]);
     series_2.xPointPosition(0.5);
     series_2.meta("company", "Duff B. Corp.");
@@ -45,10 +59,10 @@
      
     // textFormatter
     labels_1.textFormatter(function(){
-        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     labels_2.textFormatter(function(){
-        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
+return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     
     // labels positioning
@@ -66,12 +80,12 @@
     xAxis.title("Day");
     var xLabels = chart.xAxis().labels();
     xLabels.textFormatter(function(value){
-        var date = new Date(value["tickValue"]);
-        var options = {
-            month: "short",
-            day: "numeric"
-        };
-        return date.toLocaleDateString("en-US", options);
+var date = new Date(value["tickValue"]);
+var options = {
+    month: "short",
+    day: "numeric"
+};
+return date.toLocaleDateString("en-US", options);
     });
     var yAxis = chart.yAxis();
     yAxis.title("Price");
@@ -79,9 +93,7 @@
     // draw
     chart.container("container");
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>
