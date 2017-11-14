@@ -42,7 +42,7 @@ var usaMap = anychart.map();
 usaMap.geoData(anychart.maps.united_states_of_america);
 ```
 
-Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
+Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "httpы://cdn.anychart.com/">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
 
 ## Data
 

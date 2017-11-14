@@ -6,7 +6,7 @@ Chart Preloader is a small animated object used when you want to show that some 
 
 ## Prerequisites
 
-Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/#ui):
+Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/):
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
