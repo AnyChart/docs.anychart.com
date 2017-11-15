@@ -1,25 +1,37 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="stage">
-
+    <meta name="ac:name" content="Maps Move and Zoom 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/7.14.0/Maps/Map_Projections
 
     // set the stage as a container
-    stage = anychart.graphics.create("container");
+    var stage = anychart.graphics.create("container");
 
     // create data set
     var dataSet = anychart.data.set([
@@ -100,25 +112,25 @@ anychart.onDocumentReady(function() {
     // up button
     upButton = createButton("Up", 0, 50);
     upButton.listen("click", function(){
-        map.move(0, 10);
+map.move(0, 10);
     });
 
     // down button
     downButton = createButton("Down", 0, 20);
     downButton.listen("click", function(){
-        map.move(0, -10);
+map.move(0, -10);
     });
 
     // left button
     leftButton = createButton("Left", -50, 20);
     leftButton.listen("click", function(){
-        map.move(10, 0);
+map.move(10, 0);
     });
 
     // right button
     rightButton = createButton("Right", 50, 20);
     rightButton.listen("click", function(){
-        map.move(-10, 0);
+map.move(-10, 0);
     });
     
     // disable all default interactivity on the map
@@ -140,21 +152,17 @@ anychart.onDocumentReady(function() {
     button.container(stage);
     button.draw();
     button.listen("mouseOver", function(){
-        button.background().fill("#1976d2 0.5")
-        document.body.style.cursor = "pointer";
-        button.draw();
+button.background().fill("#1976d2 0.5")
+document.body.style.cursor = "pointer";
+button.draw();
     });
     button.listen("mouseOut", function(){
-        button.background().fill("#1976d2")
-        document.body.style.cursor = "auto";
-        button.draw();
+button.background().fill("#1976d2")
+document.body.style.cursor = "auto";
+button.draw();
     });     
     return button;
-}   
-    </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

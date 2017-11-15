@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Series Type 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a stage    
     stage = anychart.graphics.create("container");
@@ -16,7 +31,7 @@
   
     // map the data
     mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series type and title
     var series = chart.plot(0).ohlc(mapping);
@@ -38,26 +53,26 @@
 
     // create a label for switching to the OHLC series
     ohlcLabel = createLabel("Switch to OHLC", 10, function() {
-        // change the series type
-        series.seriesType("ohlc");
-        scrollerSeries.seriesType("ohlc");
-        chart.title("Switching the Series Type in Stock Charts \n OHLC");
+// change the series type
+series.seriesType("ohlc");
+scrollerSeries.seriesType("ohlc");
+chart.title("Switching the Series Type in Stock Charts \n OHLC");
     });    
 
     // create a label for switching to the Japanese candlestick series
     jcLabel = createLabel("Switch to Japanese Candlestick", 140, function() {
-        // change the series type
-        series.seriesType("candlestick");
-        scrollerSeries.seriesType("candlestick");
-        chart.title("Switching the Series Type in Stock Charts \n Japanese Candlestick");
+// change the series type
+series.seriesType("candlestick");
+scrollerSeries.seriesType("candlestick");
+chart.title("Switching the Series Type in Stock Charts \n Japanese Candlestick");
     });    
 
     // create label switching to the range area series
     rangeAreaLabel = createLabel("Switch to Range Area", 375, function() {
-        // change the series type
-        series.seriesType("rangeArea");
-        scrollerSeries.seriesType("rangeArea");
-        chart.title("Switching the Series Type in Stock Charts \n Range Area");
+// change the series type
+series.seriesType("rangeArea");
+scrollerSeries.seriesType("rangeArea");
+chart.title("Switching the Series Type in Stock Charts \n Range Area");
     }); 
 
 });  
@@ -154,9 +169,7 @@ return[
 {'x': '2015-06-30', 'o': 23.97, 'h': 24.24, 'l': 23.63, 'c': 23.77},
 {'x': '2015-07-01', 'o': 24.05, 'h': 24.30, 'l': 23.96, 'c': 24.04},
 {'x': '2015-07-02', 'o': 23.76, 'h': 24.04, 'l': 23.21, 'c': 23.37}
-]};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+]};
+</script>
 </body>
 </html>

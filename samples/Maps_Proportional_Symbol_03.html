@@ -1,36 +1,48 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">
-  anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Maps Proportional Symbol 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/7.14.0/Maps/Map_Projections
 
     // create data set
     var dataSet = anychart.data.set([
-        {'id': 'Sydney', 'size': 106, "lat":  -33.51, "lon": 151.11},
-        {'id': 'Cape York', 'size': 103, "lat":  -10.41, "lon": 142.22}, //north point/
-        {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "lon": 142.22}, //south
-        {'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "lon": 153.38}, //east point/
-        {'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "lon": 113.09},
-        {"id": 'Alice Springs', 'size': 100, "lat": -23.69, "long": 133.87},
-        {"id": 'Adelaide', 'size': 99, "lat": -34.98, "long": 138.42}
+{'id': 'Sydney', 'size': 106, "lat":  -33.51, "lon": 151.11},
+{'id': 'Cape York', 'size': 103, "lat":  -10.41, "lon": 142.22}, //north point/
+{'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "lon": 142.22}, //south
+{'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "lon": 153.38}, //east point/
+{'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "lon": 113.09},
+{"id": 'Alice Springs', 'size': 100, "lat": -23.69, "long": 133.87},
+{"id": 'Adelaide', 'size': 99, "lat": -34.98, "long": 138.42}
     ]);
 
     // create map chart
-    map = anychart.map();
+    var map = anychart.map();
 
     // set geodata using https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
     map.geoData(anychart.maps.australia);
@@ -63,9 +75,5 @@
     map.draw();
 });
 </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

@@ -1,28 +1,41 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Tag Cloud 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     var data = [
-        {"x": "learning", "value": 80},
-        {"x": "lists", "value": 44},
-        {"x": "meaning", "value": 40},
-        {"x": "useful", "value": 36},
-        {"x": "different", "value": 32},
-        {"x": "grammar", "value": 28},
-        {"x": "teaching", "value": 24},
-        {"x": "example", "value": 20},
-        {"x": "includes", "value": 56},
-        {"x": "thing", "value": 12},
-        {"x": "vocabulary", "value": 10},
-        {"x": "frequency", "value": 10},
-        {"x": "phrases", "value": 15},
-        {"x": "content", "value": 27}
+{"x": "learning", "value": 80},
+{"x": "lists", "value": 44},
+{"x": "meaning", "value": 40},
+{"x": "useful", "value": 36},
+{"x": "different", "value": 32},
+{"x": "grammar", "value": 28},
+{"x": "teaching", "value": 24},
+{"x": "example", "value": 20},
+{"x": "includes", "value": 56},
+{"x": "thing", "value": 12},
+{"x": "vocabulary", "value": 10},
+{"x": "frequency", "value": 10},
+{"x": "phrases", "value": 15},
+{"x": "content", "value": 27}
     ];
 
     // Creates Tag Cloud chart.
@@ -33,8 +46,5 @@
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

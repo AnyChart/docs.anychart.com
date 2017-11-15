@@ -1,48 +1,61 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Jump Line 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // set the data
     table = anychart.data.table();
     table.addData([
-        ['2004-01-02', 29, 1217],
-        ['2004-01-05', 38, 3885],
-        ['2004-01-06', 43, 992],
-        ['2004-01-07', 48, 1753],
-        ['2004-01-08', 61, 2493],
-        ['2004-01-09', 68, 5672],
-        ['2004-01-12', 52, 7284],
-        ['2004-01-13', 56, 2737],
-        ['2004-01-14', 42, 8338],
-        ['2004-01-15', 46, 4829],
-        ['2004-01-16', 91, 7532],
-        ['2004-01-20', 62, 10387],
-        ['2004-01-21', 54, 3832],
-        ['2004-01-22', 43, 9248],
-        ['2004-01-23', 59, 2487],
-        ['2004-01-26', 42, 2498],
-        ['2004-01-27', 49, 7564],
-        ['2004-01-28', 49, 5764],
-        ['2004-01-29', 86, 3549],
-        ['2004-01-30', 71, 7365],
-        ['2004-02-02', 81, 2985],
-        ['2004-02-03', 81, 3573],
-        ['2004-02-04', 90, 9834],
-        ['2004-02-05', 10, 3453],
-        ['2004-02-06', 74, 7843],
-        ['2004-02-09', 52, 3820],
-        ['2004-02-10', 39, 2374],
-        ['2004-02-11', 87, 9458],
-        ['2004-02-12', 48, 8237],
-        ['2004-02-13', 43, 9283],
-        ['2004-02-17', 37, 2234]
+['2004-01-02', 29, 1217],
+['2004-01-05', 38, 3885],
+['2004-01-06', 43, 992],
+['2004-01-07', 48, 1753],
+['2004-01-08', 61, 2493],
+['2004-01-09', 68, 5672],
+['2004-01-12', 52, 7284],
+['2004-01-13', 56, 2737],
+['2004-01-14', 42, 8338],
+['2004-01-15', 46, 4829],
+['2004-01-16', 91, 7532],
+['2004-01-20', 62, 10387],
+['2004-01-21', 54, 3832],
+['2004-01-22', 43, 9248],
+['2004-01-23', 59, 2487],
+['2004-01-26', 42, 2498],
+['2004-01-27', 49, 7564],
+['2004-01-28', 49, 5764],
+['2004-01-29', 86, 3549],
+['2004-01-30', 71, 7365],
+['2004-02-02', 81, 2985],
+['2004-02-03', 81, 3573],
+['2004-02-04', 90, 9834],
+['2004-02-05', 10, 3453],
+['2004-02-06', 74, 7843],
+['2004-02-09', 52, 3820],
+['2004-02-10', 39, 2374],
+['2004-02-11', 87, 9458],
+['2004-02-12', 48, 8237],
+['2004-02-13', 43, 9283],
+['2004-02-17', 37, 2234]
     ]);
   
     // map the data
@@ -52,7 +65,7 @@ anychart.onDocumentReady(function() {
     mapping_region.addField('value', 2);
 
     // chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series
     var series_total = chart.plot(0).jumpLine(mapping_total);
@@ -66,8 +79,5 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

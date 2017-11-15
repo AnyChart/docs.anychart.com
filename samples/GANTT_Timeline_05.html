@@ -1,18 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="GANTT Timeline 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     // create data tree on our data
     var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // create project gantt chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
 
     // set container id for the chart
     chart.container('container');
@@ -43,13 +56,13 @@
     thirdColumn.width(70);
     thirdColumn.cellTextSettings().hAlign('right');
     thirdColumn.format(function (item) {
-        var actStart = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
-        var date = new Date(actStart || item.meta('autoStart'));
-        var month = date.getUTCMonth() + 1;
-        var strMonth = (month > 9) ? month : '0' + month;
-        var utcDate = date.getUTCDate();
-        var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-        return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
+var actStart = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
+var date = new Date(actStart || item.meta('autoStart'));
+var month = date.getUTCMonth() + 1;
+var strMonth = (month > 9) ? month : '0' + month;
+var utcDate = date.getUTCDate();
+var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
+return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
     });
 
     // set fourth column settings
@@ -58,13 +71,13 @@
     fourthColumn.width(80);
     fourthColumn.cellTextSettings().hAlign('right');
     fourthColumn.format(function (item) {
-        var actEnd = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
-        var date = new Date(actEnd || item.meta('autoEnd'));
-        var month = date.getUTCMonth() + 1;
-        var strMonth = (month > 9) ? month : '0' + month;
-        var utcDate = date.getUTCDate();
-        var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-        return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
+var actEnd = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
+var date = new Date(actEnd || item.meta('autoEnd'));
+var month = date.getUTCMonth() + 1;
+var strMonth = (month > 9) ? month : '0' + month;
+var utcDate = date.getUTCDate();
+var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
+return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
     });
     var now = (new Date()).getTime();
     var sec = 1000;
@@ -103,92 +116,88 @@
     var hour = 60 * min;
     var day = 24 * hour;
     return [
-        {"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%"},
-        {"id": "2", "name": "Self-Assessment", parent: "1", "progressValue": "25%"},
-        {
-            "id": "3",
-            "name": "Define business vision",
-            parent: "2",
-            "progressValue": "0%",
-            "actualStart": (now - 9 * day),
-            "actualEnd": (now - 2 * day),
-            "connectTo": "4",
-            "connectorType": "FinishStart"
-        },
-        {
-            "id": "4",
-            "name": "Identify available skills, information and support",
-            parent: "2",
-            "progressValue": "0%",
-            "actualStart": (now + 5 * day),
-            "connectTo": "5",
-            "connectorType": "FinishStart"
-        },
-        {
-            "id": "5",
-            "name": "Decide whether to proceed",
-            parent: "2",
-            "progressValue": "0%",
-            "actualStart": (now + 3*day),
-            "actualEnd": (now + 5 * day),
-            "connectTo": "7",
-            "connectorType": "FinishStart"
-        },
-        {"id": "6", "name": "Define the Opportunity", parent: "1", "progressValue": "27%"},
-        {
-            "id": "7",
-            "name": "Research the market and competition",
-            parent: "6",
-            "progressValue": "0%",
-            "actualStart": (now + 6*day),
-            "actualEnd": (now + 13 * day),
-            "connectTo": "8",
-            "connectorType": "FinishStart"
-        },
-        {
-            "id": "8",
-            "name": "Interview owners of similar businesses",
-            parent: "6",
-            "progressValue": "60%",
-            "actualStart": (now + 5 * day),
-            "actualEnd": (now + 15 * day),
-            "connectTo": "9",
-            "actual": {
-                "fill": "red"
-            },
-            "progress": {
-                "fill": {
-                    "color": "black",
-                    "opacity": 0.3
-                }
-            },
-            "connectorType": "FinishStart"
-        },
-        {
-            "id": "9",
-            "name": "Identify needed resources",
-            parent: "6",
-            "progressValue": "0%",
-            "actualStart": (now + 5 * day),
-            "connectTo": "10",
-            "connectorType": "FinishStart"
-        },
-        {
-            "id": "10",
-            "name": "Identify operating cost elements",
-            parent: "6",
-            "progressValue": "0%",
-            "actualStart": (now + 15 * day),
-            "actualEnd": (now + 29 * day),
-            "connectTo": "12",
-            "connectorType": "FinishStart"
+{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%"},
+{"id": "2", "name": "Self-Assessment", parent: "1", "progressValue": "25%"},
+{
+    "id": "3",
+    "name": "Define business vision",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now - 9 * day),
+    "actualEnd": (now - 2 * day),
+    "connectTo": "4",
+    "connectorType": "FinishStart"
+},
+{
+    "id": "4",
+    "name": "Identify available skills, information and support",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now + 5 * day),
+    "connectTo": "5",
+    "connectorType": "FinishStart"
+},
+{
+    "id": "5",
+    "name": "Decide whether to proceed",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now + 3*day),
+    "actualEnd": (now + 5 * day),
+    "connectTo": "7",
+    "connectorType": "FinishStart"
+},
+{"id": "6", "name": "Define the Opportunity", parent: "1", "progressValue": "27%"},
+{
+    "id": "7",
+    "name": "Research the market and competition",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 6*day),
+    "actualEnd": (now + 13 * day),
+    "connectTo": "8",
+    "connectorType": "FinishStart"
+},
+{
+    "id": "8",
+    "name": "Interview owners of similar businesses",
+    parent: "6",
+    "progressValue": "60%",
+    "actualStart": (now + 5 * day),
+    "actualEnd": (now + 15 * day),
+    "connectTo": "9",
+    "actual": {
+        "fill": "red"
+    },
+    "progress": {
+        "fill": {
+            "color": "black",
+            "opacity": 0.3
         }
+    },
+    "connectorType": "FinishStart"
+},
+{
+    "id": "9",
+    "name": "Identify needed resources",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 5 * day),
+    "connectTo": "10",
+    "connectorType": "FinishStart"
+},
+{
+    "id": "10",
+    "name": "Identify operating cost elements",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 15 * day),
+    "actualEnd": (now + 29 * day),
+    "connectTo": "12",
+    "connectorType": "FinishStart"
+}
     ];
     }
-
-    </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

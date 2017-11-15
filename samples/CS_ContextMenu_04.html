@@ -1,16 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS ContextMenu 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // set data and define chart type
-  chart = anychart.pie([
+  var chart = anychart.pie([
     {name: "John", value: 10000},
     {name: "Jake", value: 12000},
     {name: "Peter", value: 16000},
@@ -25,27 +39,27 @@
     var slices = [];
     for (var i=0;i<data.getRowsCount();i++)
       slices.push({text: data.get(i, "name"), action: function(){
-        var slice = data.find("name", this.item.text);
-        chart.explodeSlice(slice, !chart.getPoint(slice).selected());
+var slice = data.find("name", this.item.text);
+chart.explodeSlice(slice, !chart.getPoint(slice).selected());
       }});
     return [
       {
-        enabled: allState(true),
-        text: "Explode All",
-        action: function(){
-          chart.explodeSlices(true)
-        }
+enabled: allState(true),
+text: "Explode All",
+action: function(){
+  chart.explodeSlices(true)
+}
       },
       {
-        enabled: allState(false),
-        text: "Explode None",
-        action: function(){
-          chart.explodeSlices(false);
-        }
+enabled: allState(false),
+text: "Explode None",
+action: function(){
+  chart.explodeSlices(false);
+}
       },
       {
-        text: "Slices",
-        subMenu: slices
+text: "Slices",
+subMenu: slices
       }
     ];
   });
@@ -61,9 +75,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

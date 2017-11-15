@@ -1,33 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <script src="../anychart-bundle.min.js"></script>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" data-export = "true"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta name="ac:name" content="Maps Drill Down Basic 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
-    <script x-export="usaMap">
-
-    anychart.onDocumentReady(function () {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/7.14.0/Maps/Map_Projections
 
-    usaMap = anychart.map();
+    var usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
 
     flMap = anychart.map();
@@ -38,69 +42,69 @@
 
     // set the data for the USA map
     dataSetUSA = anychart.data.set([
-        {"id": "US.TX", "value": 26956958},
-        {"id": "US.FL", "value": 19552860}
+{"id": "US.TX", "value": 26956958},
+{"id": "US.FL", "value": 19552860}
     ]);
 
     // create data set for Texas districts
     dataSetTX = anychart.data.set([
-        {'id': 'US.TX.111', 'value': 6222},   // Dallam
-        {'id': 'US.TX.421', 'value': 3186},   // Sherman
-        {'id': 'US.TX.195', 'value': 5369},   // Hansford
-        {'id': 'US.TX.357', 'value': 9006},   // Ochiltree
-        {'id': 'US.TX.295', 'value': 3057},   // Lipscomb
-        {'id': 'US.TX.205', 'value': 5537},   // Hartley
-        {'id': 'US.TX.341', 'value': 20121},  // Moore
-        {'id': 'US.TX.233', 'value': 23857},  // Hatchinson
-        {'id': 'US.TX.393', 'value': 887},    // Roberts
-        {'id': 'US.TX.211', 'value': 3351},   // Hemphill
-        {'id': 'US.TX.359', 'value': 2185},   // Oldham
-        {'id': 'US.TX.375', 'value': 113546}, // Potter
-        {'id': 'US.TX.065', 'value': 6516},   // Carson
-        {'id': 'US.TX.179', 'value': 22744},  // Gray
-        {'id': 'US.TX.483', 'value': 5284},   // Wheeler
-        {'id': 'US.TX.117', 'value': 18561},  // Deaf Smith
-        {'id': 'US.TX.381', 'value': 104312}, // Randall
-        {'id': 'US.TX.011', 'value': 2148},   // Armstrong
-        {'id': 'US.TX.129', 'value': 3828},   // Donley
-        {'id': 'US.TX.087', 'value': 3206},   // Collingsworth
-        {'id': 'US.TX.369', 'value': 10016},  // Parmer
-        {'id': 'US.TX.069', 'value': 8285},   // Castro
-        {'id': 'US.TX.437', 'value': 8378},   // Swisher
-        {'id': 'US.TX.045', 'value': 1790},   // Briscoe
-        {'id': 'US.TX.191', 'value': 3782},   // Hall
-        {'id': 'US.TX.075', 'value': 7688},   // Childress
+{'id': 'US.TX.111', 'value': 6222},   // Dallam
+{'id': 'US.TX.421', 'value': 3186},   // Sherman
+{'id': 'US.TX.195', 'value': 5369},   // Hansford
+{'id': 'US.TX.357', 'value': 9006},   // Ochiltree
+{'id': 'US.TX.295', 'value': 3057},   // Lipscomb
+{'id': 'US.TX.205', 'value': 5537},   // Hartley
+{'id': 'US.TX.341', 'value': 20121},  // Moore
+{'id': 'US.TX.233', 'value': 23857},  // Hatchinson
+{'id': 'US.TX.393', 'value': 887},    // Roberts
+{'id': 'US.TX.211', 'value': 3351},   // Hemphill
+{'id': 'US.TX.359', 'value': 2185},   // Oldham
+{'id': 'US.TX.375', 'value': 113546}, // Potter
+{'id': 'US.TX.065', 'value': 6516},   // Carson
+{'id': 'US.TX.179', 'value': 22744},  // Gray
+{'id': 'US.TX.483', 'value': 5284},   // Wheeler
+{'id': 'US.TX.117', 'value': 18561},  // Deaf Smith
+{'id': 'US.TX.381', 'value': 104312}, // Randall
+{'id': 'US.TX.011', 'value': 2148},   // Armstrong
+{'id': 'US.TX.129', 'value': 3828},   // Donley
+{'id': 'US.TX.087', 'value': 3206},   // Collingsworth
+{'id': 'US.TX.369', 'value': 10016},  // Parmer
+{'id': 'US.TX.069', 'value': 8285},   // Castro
+{'id': 'US.TX.437', 'value': 8378},   // Swisher
+{'id': 'US.TX.045', 'value': 1790},   // Briscoe
+{'id': 'US.TX.191', 'value': 3782},   // Hall
+{'id': 'US.TX.075', 'value': 7688},   // Childress
     ]);
 
     // create data set for Florida districts
     dataSetFL = anychart.data.set([
-        {'id': 'US.FL.063', 'value': 46755},  // Jackson]
-        {'id': 'US.FL.091', 'value': 170498}, // Okaloosa
-        {'id': 'US.FL.077', 'value': 7021},   // Liberty County
-        {'id': 'US.FL.079', 'value': 18733},  // Madison
-        {'id': 'US.FL.039', 'value': 45087},  // Gadsden
-        {'id': 'US.FL.067', 'value': 7022},   // Lafayette
-        {'id': 'US.FL.123', 'value': 19256},  // Taylor
-        {'id': 'US.FL.113', 'value': 117743}, // Santa Rosa
-        {'id': 'US.FL.029', 'value': 13827},  // Dixie
-        {'id': 'US.FL.037', 'value': 11057},  // Franklin
-        {'id': 'US.FL.131', 'value': 40601},  // Walton
-        {'id': 'US.FL.129', 'value': 22863},  // Wakulla
-        {'id': 'US.FL.005', 'value': 159238}, // Bay
-        {'id': 'US.FL.075', 'value': 34450},  // Levy
-        {'id': 'US.FL.083', 'value': 258916}, // Marion
-        {'id': 'US.FL.121', 'value': 34844},  // Suwannee
-        {'id': 'US.FL.065', 'value': 12902},  // Jefferson
-        {'id': 'US.FL.023', 'value': 56513},  // Columbia
-        {'id': 'US.FL.003', 'value': 22259},  // Baker
-        {'id': 'US.FL.073', 'value': 239452}, // Leon
-        {'id': 'US.FL.033', 'value': 294210}, // Escambia
-        {'id': 'US.FL.041', 'value': 14437},  // Gilchrist
-        {'id': 'US.FL.047', 'value': 13327},  // Hamilton
-        {'id': 'US.FL.013', 'value': 13017},  // Calhoun
-        {'id': 'US.FL.125', 'value': 13442},  // Union
-        {'id': 'US.FL.059', 'value': 18564},  // Holmes
-        {'id': 'US.FL.133', 'value': 20973},  // Washington
+{'id': 'US.FL.063', 'value': 46755},  // Jackson]
+{'id': 'US.FL.091', 'value': 170498}, // Okaloosa
+{'id': 'US.FL.077', 'value': 7021},   // Liberty County
+{'id': 'US.FL.079', 'value': 18733},  // Madison
+{'id': 'US.FL.039', 'value': 45087},  // Gadsden
+{'id': 'US.FL.067', 'value': 7022},   // Lafayette
+{'id': 'US.FL.123', 'value': 19256},  // Taylor
+{'id': 'US.FL.113', 'value': 117743}, // Santa Rosa
+{'id': 'US.FL.029', 'value': 13827},  // Dixie
+{'id': 'US.FL.037', 'value': 11057},  // Franklin
+{'id': 'US.FL.131', 'value': 40601},  // Walton
+{'id': 'US.FL.129', 'value': 22863},  // Wakulla
+{'id': 'US.FL.005', 'value': 159238}, // Bay
+{'id': 'US.FL.075', 'value': 34450},  // Levy
+{'id': 'US.FL.083', 'value': 258916}, // Marion
+{'id': 'US.FL.121', 'value': 34844},  // Suwannee
+{'id': 'US.FL.065', 'value': 12902},  // Jefferson
+{'id': 'US.FL.023', 'value': 56513},  // Columbia
+{'id': 'US.FL.003', 'value': 22259},  // Baker
+{'id': 'US.FL.073', 'value': 239452}, // Leon
+{'id': 'US.FL.033', 'value': 294210}, // Escambia
+{'id': 'US.FL.041', 'value': 14437},  // Gilchrist
+{'id': 'US.FL.047', 'value': 13327},  // Hamilton
+{'id': 'US.FL.013', 'value': 13017},  // Calhoun
+{'id': 'US.FL.125', 'value': 13442},  // Union
+{'id': 'US.FL.059', 'value': 18564},  // Holmes
+{'id': 'US.FL.133', 'value': 20973},  // Washington
     ]);    
     
     // Set the series for all maps
@@ -110,8 +114,8 @@
 
     // enable the drilldown interactivity for the USA map    
     usaMap.drillDownMap({
-        "US.TX": txMap,   
-        "US.FL": flMap
+"US.TX": txMap,   
+"US.FL": flMap
     });
 
     // set the selectionMode    
@@ -121,8 +125,6 @@
     usaMap.container("container");
     usaMap.draw();
 });
-
-    
 </script>
 </body>
 </html>

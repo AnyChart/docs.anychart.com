@@ -1,70 +1,80 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="2"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="https://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-        // The data that used in this sample can be obtained from the CDN
-        // https://cdn.anychart.com/csv-data/csco-daily.js
-
-        // create data table on loaded data
-        var dataTable = anychart.data.table();
-        dataTable.addData(get_csco_daily_data());
-
-        // map loaded data for the ohlc series
-        var mapping = dataTable.mapAs();
-        mapping.addField('open', 1, 'first');
-        mapping.addField('high', 2, 'max');
-        mapping.addField('low', 3, 'min');
-        mapping.addField('close', 4, 'last');
-        mapping.addField('value', 4, 'close');
-
-        // create stock chart
-        chart = anychart.stock();
-
-        // create first plot on the chart
-        var plot = chart.plot(0);
-
-        // create ohlc series
-        var ohlcSeries = plot.ohlc(mapping);
-        ohlcSeries.name('CSCO');
-
-        // create second plot on the chart
-        var secondPlot = chart.plot(1);
-        secondPlot.height('25%');
-
-        // create MACD indicator fast period of 12, slow of 26 an signal of 9
-        // series types are default 
-        macd_default = secondPlot.macd(mapping, 12, 26, 9);
-
-        // create third plot on the chart
-        var thirdPlot = chart.plot(2);
-        thirdPlot.height('25%');
-
-        // create MACD indicator fast period of 12, slow of 26 an signal of 9
-        // series types are all lines, even histogram
-        var macd_all_lines = thirdPlot.macd(mapping, 14, 28, 10, "line", "line", "line");
-        macd_all_lines.macdSeries().stroke('#bf360c');
-        macd_all_lines.signalSeries().stroke('#ff6d00');
-        macd_all_lines.histogramSeries().stroke('#ffe082');       
-
-        // create scroller series with mapped data
-        chart.scroller().line(mapping);
-
-        // set container id for the chart
-        chart.container('container');
-
-        // initiate chart drawing
-        chart.draw();
-    });
-    </script>
+    <meta name="ac:name" content="STOCK Technical Indicators MACD 2"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+// The data that used in this sample can be obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// map loaded data for the ohlc series
+var mapping = dataTable.mapAs();
+mapping.addField('open', 1, 'first');
+mapping.addField('high', 2, 'max');
+mapping.addField('low', 3, 'min');
+mapping.addField('close', 4, 'last');
+mapping.addField('value', 4, 'close');
+
+// create stock chart
+var chart = anychart.stock();
+
+// create first plot on the chart
+var plot = chart.plot(0);
+
+// create ohlc series
+var ohlcSeries = plot.ohlc(mapping);
+ohlcSeries.name('CSCO');
+
+// create second plot on the chart
+var secondPlot = chart.plot(1);
+secondPlot.height('25%');
+
+// create MACD indicator fast period of 12, slow of 26 an signal of 9
+// series types are default 
+macd_default = secondPlot.macd(mapping, 12, 26, 9);
+
+// create third plot on the chart
+var thirdPlot = chart.plot(2);
+thirdPlot.height('25%');
+
+// create MACD indicator fast period of 12, slow of 26 an signal of 9
+// series types are all lines, even histogram
+var macd_all_lines = thirdPlot.macd(mapping, 14, 28, 10, "line", "line", "line");
+macd_all_lines.macdSeries().stroke('#bf360c');
+macd_all_lines.signalSeries().stroke('#ff6d00');
+macd_all_lines.histogramSeries().stroke('#ffe082');       
+
+// create scroller series with mapped data
+chart.scroller().line(mapping);
+
+// set container id for the chart
+chart.container('container');
+
+// initiate chart drawing
+chart.draw();
+    });
+</script>
 </body>
 </html>

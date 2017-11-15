@@ -1,47 +1,59 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="australiaMap">
+    <meta name="ac:name" content="Maps Marker 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/7.14.0/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_lat_long = anychart.data.set([
-        {lat: -25.75, long: 122.18, name: "ACME Corp. branch No. 1", value: 321},
-        {lat: -18.50, long: 135.24, name: "ACME Corp. branch No. 2", value: 293},
-        {lat: -23.12, long: 148.62, name: "ACME Corp. branch No. 3", value: 312},
-        {lat: -17.89, long: 145.09, name: "ACME Corp. branch No. 4", value: 198},
-        {lat: -33.28, long: 135.58, name: "ACME Corp. branch No. 5", value: 309},
-        {lat: -31.21, long: 116.44, name: "ACME Corp. branch No. 6", value: 215},
-        {lat: -32.26, long: 151.44, name: "ACME Corp. branch No. 7", value: 219},
-        {lat: -25.63, long: 152.37, name: "ACME Corp. branch No. 8", value: 179}
+{lat: -25.75, long: 122.18, name: "ACME Corp. branch No. 1", value: 321},
+{lat: -18.50, long: 135.24, name: "ACME Corp. branch No. 2", value: 293},
+{lat: -23.12, long: 148.62, name: "ACME Corp. branch No. 3", value: 312},
+{lat: -17.89, long: 145.09, name: "ACME Corp. branch No. 4", value: 198},
+{lat: -33.28, long: 135.58, name: "ACME Corp. branch No. 5", value: 309},
+{lat: -31.21, long: 116.44, name: "ACME Corp. branch No. 6", value: 215},
+{lat: -32.26, long: 151.44, name: "ACME Corp. branch No. 7", value: 219},
+{lat: -25.63, long: 152.37, name: "ACME Corp. branch No. 8", value: 179}
     ]);
 
     // create the dataset of points that are defined by the region id
     var dataSet_id = anychart.data.set([
-        {"id": "AU.NS", "farms": 240},
-        {"id": "AU.NT", "farms": 202},
-        {"id": "AU.WA", "farms": 193},
-        {"id": "AU.SA", "farms": 196},
-        {"id": "AU.VI", "farms": 48},
-        {"id": "AU.TS", "farms": 13},
-        {"id": "AU.QL", "farms": 136}
+{"id": "AU.NS", "farms": 240},
+{"id": "AU.NT", "farms": 202},
+{"id": "AU.WA", "farms": 193},
+{"id": "AU.SA", "farms": 196},
+{"id": "AU.VI", "farms": 48},
+{"id": "AU.TS", "farms": 13},
+{"id": "AU.QL", "farms": 136}
     ]);
 
-    australiaMap = anychart.map();
+    var australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
     // Creates the marker series
@@ -50,14 +62,14 @@ anychart.onDocumentReady(function () {
 
     // format the tooltips of the lat_long series    
     series_lat_long.tooltip().titleFormat(function(){
-        return this.getData("name");
+return this.getData("name");
     });
 
     series_lat_long.tooltip().format("Yearly profit: ${%value}m");
 
     // format the tooltips of the id-defined series    
     series_id.tooltip().titleFormat(function(){
-        return this.name;
+return this.name;
     });
     series_id.tooltip().format("Sheep farms: {%farms}");
 
@@ -90,10 +102,6 @@ anychart.onDocumentReady(function () {
     australiaMap.container("container");
     australiaMap.draw();
 });
-    </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

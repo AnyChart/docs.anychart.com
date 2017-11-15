@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AGST Line Marker 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // define chart
-  chart = anychart.financial();
+  var chart = anychart.financial();
 
   chart.title("Monthly Iranian crudle oil production");
 
@@ -146,12 +159,12 @@
      {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
    ]);
 
-  series.name("Сrudle oil forecast and range of uncertainty");
+  series.name("?rudle oil forecast and range of uncertainty");
 
   series.tooltip().title(false).separator(false).format(function(){
     var value = this.value.toFixed(3);
     if (this.valueLowerError !==0)
-      value = this.value.toFixed(3) + "±" + this.valueLowerError.toFixed(3);
+      value = this.value.toFixed(3) + "?" + this.valueLowerError.toFixed(3);
     return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
   });
 
@@ -194,9 +207,7 @@
   // draw chart
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,29 +1,42 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Pert UseCase 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a data set
     var data = [
-        {id: "A", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
-        {id: "AB", optimistic: 2, pessimistic: 4, mostLikely: 3, name: "AB", dependsOn: ["A"]},
-        {id: "AC", optimistic: 3, pessimistic: 8, mostLikely: 6, name: "AC", dependsOn: ["A"]},
-        {id: "BD", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "BD", dependsOn: ["AB"]},
-        {id: "CE", optimistic: 2, pessimistic: 12, mostLikely: 6, name: "CE", dependsOn: ["AC"]},
+{id: "A", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
+{id: "AB", optimistic: 2, pessimistic: 4, mostLikely: 3, name: "AB", dependsOn: ["A"]},
+{id: "AC", optimistic: 3, pessimistic: 8, mostLikely: 6, name: "AC", dependsOn: ["A"]},
+{id: "BD", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "BD", dependsOn: ["AB"]},
+{id: "CE", optimistic: 2, pessimistic: 12, mostLikely: 6, name: "CE", dependsOn: ["AC"]},
 
-        {id: "DF", optimistic: 4, pessimistic: 18, mostLikely: 12, name: "DF", dependsOn: ["BD"]},
-        {id: "EF", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "EF", dependsOn: ["CE"]},
-        {id: "F", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "F", dependsOn: ["BD", "CE"]}
+{id: "DF", optimistic: 4, pessimistic: 18, mostLikely: 12, name: "DF", dependsOn: ["BD"]},
+{id: "EF", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "EF", dependsOn: ["CE"]},
+{id: "F", optimistic: 3, pessimistic: 10, mostLikely: 5, name: "F", dependsOn: ["BD", "CE"]}
     ];
 
     // create a chart
-    chart = anychart.pert();
+    var chart = anychart.pert();
 
     // set chart data
     chart.data(data, "asTable");
@@ -44,9 +57,7 @@
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

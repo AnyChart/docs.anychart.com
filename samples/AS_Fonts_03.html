@@ -1,18 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Fonts 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   anychart.theme({defaultFontSettings: {fontColor: "#000"}});
 
   // set stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   
   // create table
   var table = anychart.standalones.table();
@@ -45,17 +58,17 @@
     ],[
       "height()",
       anychart.standalones.label()                                       // create custom title
-        .text("This title has default height.")                 // set text for the title
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"}),              // set border color
+.text("This title has default height.")                 // set text for the title
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"}),              // set border color
       anychart.standalones.label()                                       // create custom title
-        .height(25)                                             // set custom height for the title
-        .text("This title has 25px height.")                    // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .vAlign("center")                                       // position text at the middle of the title
-        .background({fill: null, stroke: "#ccc"})               // set border color
+.height(25)                                             // set custom height for the title
+.text("This title has 25px height.")                    // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.vAlign("center")                                       // position text at the middle of the title
+.background({fill: null, stroke: "#ccc"})               // set border color
     ],[
       "letterSpacing()",
       "This text has 3px letter spacing",                       // table.getCell(7,1).content().letterSpacing(3);
@@ -74,30 +87,30 @@
     ],[
       "rotation()",
       anychart.standalones.title()                                       // create custom title
-        .rotation(5)                                            // set rotation of the title
-        .text("This title is rotated by 5")                     // set text for the title
-        .padding(0)                                             // disable padding 
-        .margin(0)                                              // disable margin
-        .fontWeight(400),                                       // set font weight
+.rotation(5)                                            // set rotation of the title
+.text("This title is rotated by 5")                     // set text for the title
+.padding(0)                                             // disable padding 
+.margin(0)                                              // disable margin
+.fontWeight(400),                                       // set font weight
       anychart.standalones.title()                                       // create custom title
-        .rotation(-7)                                           // set title rotation
-        .text("This title is rotated by -7")                    // set text for the title
-        .padding(0)                                             // disable padding 
-        .margin(0)                                              // disable margin
-        .fontWeight(400)                                        // set font weight
+.rotation(-7)                                           // set title rotation
+.text("This title is rotated by -7")                    // set text for the title
+.padding(0)                                             // disable padding 
+.margin(0)                                              // disable margin
+.fontWeight(400)                                        // set font weight
     ],[
       "selectable()",
       anychart.standalones.label()                                       // create custom title
-        .selectable(true)                                       // make text selectable
-        .text("This text is selectable.\nIt is the only "
-        +"selectable text in this table.")                      // set text for the title
-        .fontWeight(400)                                        // set font weight
-        .padding(0),                                            // disable padding
+.selectable(true)                                       // make text selectable
+.text("This text is selectable.\nIt is the only "
++"selectable text in this table.")                      // set text for the title
+.fontWeight(400)                                        // set font weight
+.padding(0),                                            // disable padding
       anychart.standalones.label()                                       // create custom title
-        .selectable(false)                                      // disable text selection
-        .text("This text can\'t be selected.")                  // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
+.selectable(false)                                      // disable text selection
+.text("This text can\'t be selected.")                  // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
     ],[
       "textIndent()",
       "Text indent is a space before the first line in the "
@@ -129,16 +142,16 @@
     ],[
       "width()",
       anychart.standalones.label()                                       // create custom title
-        .text("This title has default width.")                  // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"}),              // set title border
+.text("This title has default width.")                  // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"}),              // set title border
       anychart.standalones.label()                                       // create custom title
-        .width(175)                                             // set title width
-        .text("This title has 175px width.")                    // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"})               // set title border
+.width(175)                                             // set title width
+.text("This title has 175px width.")                    // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"})               // set title border
     ]
   ]);
   
@@ -190,9 +203,7 @@
   
   // set table container and initiate draw
   table.container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

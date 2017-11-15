@@ -1,17 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from XML 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   
   // xml data                                               // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/latest/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/7.14.0/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                                // var chart = anychart.lineChart();
       'container="container">'+                             // chart.container("container");
@@ -21,68 +34,66 @@
       'scale="1" '+                                         //   .scale(chart.yScale())
       'from="0" '+                                          //   .from(0)
       'to="30000">'+                                        //   .to(30000)
-        '<fill '+                                           //   .fill({
-        'angle="-90" '+                                     //     angle: -90,
-        'opacity="0.5">'+                                   //     opacity: 0.5,
-          '<keys>'+                                         //     keys: [
-            '<key><![CDATA[.1 green]]></key>'+              //       ".1 green", 
-            '<key><![CDATA[.5 yellow]]></key>'+             //       ".5 yellow", 
-            '<key><![CDATA[.9 red]]></key></keys>'+         //       ".9 red"
-        '</fill></range_axes_marker></range_axes_markers>'+ //     ]});
+'<fill '+                                           //   .fill({
+'angle="-90" '+                                     //     angle: -90,
+'opacity="0.5">'+                                   //     opacity: 0.5,
+  '<keys>'+                                         //     keys: [
+    '<key><![CDATA[.1 green]]></key>'+              //       ".1 green", 
+    '<key><![CDATA[.5 yellow]]></key>'+             //       ".5 yellow", 
+    '<key><![CDATA[.9 red]]></key></keys>'+         //       ".9 red"
+'</fill></range_axes_marker></range_axes_markers>'+ //     ]});
 
-        // set text marker at the top
-        '<text_axes_markers>'+                              // chart.textMarker()
-          '<text_axes_marker scale="1" '+                   //   .scale(chart.yScale())
-          'offset_x="10" '+                                 //   .offsetX(10)
-          'value="25000" '+                                 //   .value(25000)
-          'font_size="15" '+                                //   .text("Good")
-          'text="Good" '+                                   //   .fontSize(15)
-          'font_weight="600"/>'+                            //   .fontWeight(600);
+// set text marker at the top
+'<text_axes_markers>'+                              // chart.textMarker()
+  '<text_axes_marker scale="1" '+                   //   .scale(chart.yScale())
+  'offset_x="10" '+                                 //   .offsetX(10)
+  'value="25000" '+                                 //   .value(25000)
+  'font_size="15" '+                                //   .text("Good")
+  'text="Good" '+                                   //   .fontSize(15)
+  'font_weight="600"/>'+                            //   .fontWeight(600);
 
-          // set text marker at the center
-          '<text_axes_marker '+                             // chart.textMarker(1)
-          'scale="1" '+                                     //   .scale(chart.yScale())
-          'offset_x="10" '+                                 //   .offsetX(10)
-          'value="15000" '+                                 //   .value(15000)
-          'text="Average" '+                                //   .text("Average")
-          'font_size="15" '+                                //   .fontSize(15)
-          'font_weight="600"/>'+                            //   .fontWeight(600);
+  // set text marker at the center
+  '<text_axes_marker '+                             // chart.textMarker(1)
+  'scale="1" '+                                     //   .scale(chart.yScale())
+  'offset_x="10" '+                                 //   .offsetX(10)
+  'value="15000" '+                                 //   .value(15000)
+  'text="Average" '+                                //   .text("Average")
+  'font_size="15" '+                                //   .fontSize(15)
+  'font_weight="600"/>'+                            //   .fontWeight(600);
 
-          // set text marker at the bottom
-          '<text_axes_marker '+                             // chart.textMarker(2)
-          'scale="1" '+                                     //   .scale(chart.yScale())
-          'offset_x="10" '+                                 //   .offsetX(10)
-          'value="5000" '+                                  //   .value(5000)
-          'text="Severe" '+                                 //   .text("Severe")
-          'font_size="12" '+                                //   .fontSize(12)
-          'font_weight="600"/></text_axes_markers>'+        //   .fontWeight(600);
+  // set text marker at the bottom
+  '<text_axes_marker '+                             // chart.textMarker(2)
+  'scale="1" '+                                     //   .scale(chart.yScale())
+  'offset_x="10" '+                                 //   .offsetX(10)
+  'value="5000" '+                                  //   .value(5000)
+  'text="Severe" '+                                 //   .text("Severe")
+  'font_size="12" '+                                //   .fontSize(12)
+  'font_weight="600"/></text_axes_markers>'+        //   .fontWeight(600);
 
-        // data set
-        '<series_list><series series_type="line">'+         // chart.line([
-          '<data><point x="2005" value="10000"/>'+          //   [2005, 10000],
-            '<point x="2006" value="12000"/>'+              //   [2006, 12000],
-            '<point x="2007" value="18000"/>'+              //   [2007, 18000],
-            '<point x="2008" value="19000"/>'+              //   [2008, 19000],
-            '<point x="2009" value="29000"/>'+              //   [2009, 29000]
-          '</data></series></series_list>'+                 // ]);
-        '<title enabled="false"/>'+                         // chart.title().enabled(false);
-        '<y_scale '+                                        // chart.yScale()
-        'minimum="0" '+                                     //   .minimum(0)
-        'maximum="30000"/>'+                                //   .maximum(30000);
-        '<x_axes><axis>'+                                   // chart.xAxis()
-          '<title enabled="false"/>'+                       //   .title()
-        '</axis><x_axes>'+                                  //     .enabled(false);
-        '<y_axes title="Sales"/></chart>'+                  // chart.yAxis().title().text("Sales");
+// data set
+'<series_list><series series_type="line">'+         // chart.line([
+  '<data><point x="2005" value="10000"/>'+          //   [2005, 10000],
+    '<point x="2006" value="12000"/>'+              //   [2006, 12000],
+    '<point x="2007" value="18000"/>'+              //   [2007, 18000],
+    '<point x="2008" value="19000"/>'+              //   [2008, 19000],
+    '<point x="2009" value="29000"/>'+              //   [2009, 29000]
+  '</data></series></series_list>'+                 // ]);
+'<title enabled="false"/>'+                         // chart.title().enabled(false);
+'<y_scale '+                                        // chart.yScale()
+'minimum="0" '+                                     //   .minimum(0)
+'maximum="30000"/>'+                                //   .maximum(30000);
+'<x_axes><axis>'+                                   // chart.xAxis()
+  '<title enabled="false"/>'+                       //   .title()
+'</axis><x_axes>'+                                  //     .enabled(false);
+'<y_axes title="Sales"/></chart>'+                  // chart.yAxis().title().text("Sales");
     '</anychart>';
   
   // get XML data
-  chart = anychart.fromXml(xml);
+  var chart = anychart.fromXml(xml);
   
   // draw chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

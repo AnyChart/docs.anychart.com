@@ -1,19 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <!---->
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
-    <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.7.3/anychart.css" />
-    <!---->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="map">anychart.onDocumentReady(function() {
-  map = anychart.map();
+    <meta name="ac:name" content="CS ZoomControls 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.anychart.com/fonts/{{fonts-version}}/anychart.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  var map = anychart.map();
   map.geoData('anychart.maps.united_kingdom');
   map.axes(true);
   map.container('container').draw();
@@ -22,9 +33,7 @@
   var zoomController = anychart.ui.zoom();
   zoomController.target(map);
   zoomController.render();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

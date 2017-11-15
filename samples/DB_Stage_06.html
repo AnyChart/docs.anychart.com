@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="DB Stage 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
 	// create stage
-	stage = anychart.graphics.create("container");
+	var stage = anychart.graphics.create("container");
 
 	// set colors for sample
 	textColor = "#7C868E";
@@ -181,9 +194,9 @@ function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
 	img.listen("mouseOut", function (){toggle(false);});
 	// enables and disables all shadows when an element is hovered or unhovered
     function toggle(e){
-        shadow.visible(e);
-        lineShadow.visible(e);
-        imgShadow.visible(e);
+shadow.visible(e);
+lineShadow.visible(e);
+imgShadow.visible(e);
     }
 }
 
@@ -227,9 +240,7 @@ function draw_picture(layer, radius, coordinates, color, pic_name) {
 		.stroke(color)
 		.fill({src: "https://static.anychart.com/images/graphics_stage_demo/" + pic_name, mode: acgraph.vector.ImageFillMode.FILL});
 	return layer;
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

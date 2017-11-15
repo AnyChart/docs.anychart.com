@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Tooltip 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // define chart
-  chart = anychart.financial();
+  var chart = anychart.financial();
 
   chart.title("Complex Tooltip Title");
 
@@ -88,17 +101,17 @@
     var date = new Date(this.x);
     switch (true){
       case (date.toLocaleDateString("en-US", {month: "numeric"})<4):
-        time = "first quarter";
-        break;
+time = "first quarter";
+break;
       case (date.toLocaleDateString("en-US", {month: "numeric"})<7):
-        time = "second quarter";
-        break;
+time = "second quarter";
+break;
       case (date.toLocaleDateString("en-US", {month: "numeric"})<10):
-        time = "third quarter";
-        break;
+time = "third quarter";
+break;
       case (date.toLocaleDateString("en-US", {month: "numeric"})<13):
-        time = "fourth quarter";
-        break;
+time = "fourth quarter";
+break;
     }
     return "Year: " + date.toLocaleDateString("en-US", {year: "numeric"}) + "<br><a style=\"font-size: 11; font-style: italic;\">"+time+"</a>";
   });
@@ -149,9 +162,7 @@
   // draw chart
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

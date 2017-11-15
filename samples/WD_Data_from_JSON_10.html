@@ -1,15 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-                                            // this column represents JS equivalents every JSON object
-  chart = anychart.fromJson(
+    <meta name="ac:name" content="WD Data from JSON 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+                                    // this column represents JS equivalents every JSON object
+  var chart = anychart.fromJson(
     {chart:{type: "line",                   // var chart = anychart.line();
   
       // set interval of default y scale
@@ -17,41 +30,39 @@
   
       // settings for custom y scale
       scales: {"customYScale": {            // var customYScale = anychart.scales.linear();
-        type: "linear",                     // customYScale
-        minimum: 0,                         //   .minimum(0)
-        maximum: 100,                       //   .maximum(100)
-        ticks: {                            //   .ticks()
-          interval: 10},                    //     .interval(10);
-        minorTicks: {interval: 2} }},       // extraYScale.minorTicks().interval(2);
+type: "linear",                     // customYScale
+minimum: 0,                         //   .minimum(0)
+maximum: 100,                       //   .maximum(100)
+ticks: {                            //   .ticks()
+  interval: 10},                    //     .interval(10);
+minorTicks: {interval: 2} }},       // extraYScale.minorTicks().interval(2);
   
       // y axes settings
       yAxes: [{title: "Basic Y Axis"        // chart.yAxis().title().text("Basic Y Axis");
       },{                                   // chart.yAxis(1)
-        orientation: "right",               //   .orientation("right")
-        scale: "customYScale",              //   .scale(customYScale)
-        title:{                             //   .title()
-          text: "Extra Y Axis"}}],          //     .text("Extra Y Axis");
+orientation: "right",               //   .orientation("right")
+scale: "customYScale",              //   .scale(customYScale)
+title:{                             //   .title()
+  text: "Extra Y Axis"}}],          //     .text("Extra Y Axis");
   
       series:[{seriesType: "column",        // chart.column([
-        data: [{x: "A", value: 637166},     //   ["A", 637166],
-          {x: "B", value: 721630},          //   ["B", 721630],
-          {x: "C", value: 148662},          //   ["C", 148662],
-          {x: "D", value: 78662},           //   ["D", 78662],
-          {x: "E", value: 90000}            //   ["E", 90000]
-        ]},{                                // ]);
-        seriesType: "line",                 // chart.line([
-        data:[{x: "A", value: 95},          //   ["A", 95],
-          {x: "B", value: 97},              //   ["B", 97],
-          {x: "C", value: 96},              //   ["C", 96],
-          {x: "D", value: 70},              //   ["D", 70],
-          {x: "E", value: 35}],             //   ["E", 35]
-        yScale: "customYScale"}],           // ]).yScale(customYScale);
+data: [{x: "A", value: 637166},     //   ["A", 637166],
+  {x: "B", value: 721630},          //   ["B", 721630],
+  {x: "C", value: 148662},          //   ["C", 148662],
+  {x: "D", value: 78662},           //   ["D", 78662],
+  {x: "E", value: 90000}            //   ["E", 90000]
+]},{                                // ]);
+seriesType: "line",                 // chart.line([
+data:[{x: "A", value: 95},          //   ["A", 95],
+  {x: "B", value: 97},              //   ["B", 97],
+  {x: "C", value: 96},              //   ["C", 96],
+  {x: "D", value: 70},              //   ["D", 70],
+  {x: "E", value: 35}],             //   ["E", 35]
+yScale: "customYScale"}],           // ]).yScale(customYScale);
   
       container: "container"}}              // chart.container("container")
   ).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,20 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="GANTT Events 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     var newData = getNewData();
 
     //create data tree on our data
     var treeData = anychart.data.tree(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
 
     //create project gantt chart
-    chart = anychart.ganttProject();
+    var chart = anychart.ganttProject();
     chart.title('Click on the row and see that nothing changes');
 
     //set container id for the chart
@@ -60,14 +73,14 @@
   function labelTextSettingsOverrider(label, item) {
     switch (item.get('type')) {
       case 'main':
-        label.fontColor('red').fontWeight('bold');
-        break;
+label.fontColor('red').fontWeight('bold');
+break;
       case 'first':
-        label.fontColor('green').fontWeight('bold');
-        break;
+label.fontColor('green').fontWeight('bold');
+break;
       case 'second':
-        label.fontColor('orange').fontWeight('bold');
-        break;
+label.fontColor('orange').fontWeight('bold');
+break;
     }
   }
 
@@ -75,71 +88,69 @@
   function getNewData() {
     return [
       {
-        'id': '1',
-        'name': 'Project Management',
-        'rowHeight': 22,
-        'collapsed': false,
-        'type': 'main'
+'id': '1',
+'name': 'Project Management',
+'rowHeight': 22,
+'collapsed': false,
+'type': 'main'
       },
       {
-        'id': '2',
-        'name': 'Design and engineer',
-        'parent': '1',
-        'type': 'first',
-        'rowHeight': 30,
-        'progressValue': '80%',
-        'actualStart': Date.UTC(2008, 0, 30, 16, 0),
-        'actualEnd': Date.UTC(2008, 1, 4, 14, 18),
-        'connectTo': '3',
-        'connectorType': 'FinishStart'
+'id': '2',
+'name': 'Design and engineer',
+'parent': '1',
+'type': 'first',
+'rowHeight': 30,
+'progressValue': '80%',
+'actualStart': Date.UTC(2008, 0, 30, 16, 0),
+'actualEnd': Date.UTC(2008, 1, 4, 14, 18),
+'connectTo': '3',
+'connectorType': 'FinishStart'
       },
       {
-        'id': '3',
-        'name': 'Obtain permits',
-        'parent': '1',
-        'type': 'second',
-        'rowHeight': 30,
-        'progressValue': '20%',
-        'actualStart': Date.UTC(2008, 0, 31, 0, 47),
-        'actualEnd': Date.UTC(2008, 1, 5, 14, 18),
-        'connectTo': '5',
-        'connectorType': 'FinishStart'
+'id': '3',
+'name': 'Obtain permits',
+'parent': '1',
+'type': 'second',
+'rowHeight': 30,
+'progressValue': '20%',
+'actualStart': Date.UTC(2008, 0, 31, 0, 47),
+'actualEnd': Date.UTC(2008, 1, 5, 14, 18),
+'connectTo': '5',
+'connectorType': 'FinishStart'
       },
       {
-        'id': '4',
-        'name': 'Structural installation',
-        'rowHeight': 22,
-        'progressValue': '50%',
-        'collapsed': true,
-        'type': 'main'
+'id': '4',
+'name': 'Structural installation',
+'rowHeight': 22,
+'progressValue': '50%',
+'collapsed': true,
+'type': 'main'
       },
       {
-        'id': '5',
-        'name': 'Install roof attachments',
-        'parent': '4',
-        'type': 'first',
-        'rowHeight': 30,
-        'progressValue': '30%',
-        'actualStart': Date.UTC(2008, 1, 5, 14, 18),
-        'actualEnd': Date.UTC(2008, 1, 7, 14, 18),
-        'connectTo': '6',
-        'connectorType': 'FinishStart'
+'id': '5',
+'name': 'Install roof attachments',
+'parent': '4',
+'type': 'first',
+'rowHeight': 30,
+'progressValue': '30%',
+'actualStart': Date.UTC(2008, 1, 5, 14, 18),
+'actualEnd': Date.UTC(2008, 1, 7, 14, 18),
+'connectTo': '6',
+'connectorType': 'FinishStart'
       },
       {
-        'id': '6',
-        'name': 'Assemble racking',
-        'parent': '4',
-        'type': 'second',
-        'rowHeight': 30,
-        'progressValue': '10%',
-        'actualStart': Date.UTC(2008, 1, 6, 0, 47),
-        'actualEnd': Date.UTC(2008, 1, 10, 14, 18)
+'id': '6',
+'name': 'Assemble racking',
+'parent': '4',
+'type': 'second',
+'rowHeight': 30,
+'progressValue': '10%',
+'actualStart': Date.UTC(2008, 1, 6, 0, 47),
+'actualEnd': Date.UTC(2008, 1, 10, 14, 18)
       }
 
     ];
-  }</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+  }
+</script>
 </body>
 </html>

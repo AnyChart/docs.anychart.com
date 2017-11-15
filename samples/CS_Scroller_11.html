@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="x-cat-tags" content="anyChart"/>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="../anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Scroller 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a chart
-    chart = anychart.column();
+    var chart = anychart.column();
 
     // enable the scroller
     chart.xScroller(true);
@@ -42,34 +55,32 @@
 // get data function
 function getData(){
     return [
-        ["00:00", 10],
-        ["01:00", 4],
-        ["02:00", 17],
-        ["03:00", 20],
-        ["04:00", 20],
-        ["05:00", 16],
-        ["06:00", 35],
-        ["07:00", 6],
-        ["08:00", 15],
-        ["09:00", 19],
-        ["10:00", 25],
-        ["11:00", 34],
-        ["12:00", 42],
-        ["13:00", 14],
-        ["14:00", 50],
-        ["15:00", 25],
-        ["16:00", 34],
-        ["17:00", 40],
-        ["18:00", 64],
-        ["19:00", 48],
-        ["20:00", 22],
-        ["21:00", 37],
-        ["22:00", 53],
-        ["23:00", 62]
-        ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+["00:00", 10],
+["01:00", 4],
+["02:00", 17],
+["03:00", 20],
+["04:00", 20],
+["05:00", 16],
+["06:00", 35],
+["07:00", 6],
+["08:00", 15],
+["09:00", 19],
+["10:00", 25],
+["11:00", 34],
+["12:00", 42],
+["13:00", 14],
+["14:00", 50],
+["15:00", 25],
+["16:00", 34],
+["17:00", 40],
+["18:00", 64],
+["19:00", 48],
+["20:00", 22],
+["21:00", 37],
+["22:00", 53],
+["23:00", 62]
+];
+}
+</script>
 </body>
 </html>
