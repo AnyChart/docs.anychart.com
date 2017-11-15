@@ -34,30 +34,54 @@ Depending on the data model and the visualization purpose the column chart may c
 
 Let's look at the following data - sales of several managers in one quarter:
 
-<table width="260px">
+<table>
 <tr>
-<th width="170px">Name</th>
-<th width="90px">Sales</th>
+<th>
+Name
+</th>
+<th>
+Sales
+</th>
 </tr>
 <tr>
-<td>John</td>
-<td>$10000</td>
+<td >
+John
+</td>
+<td >
+	$10000
+</td>
 </tr>
 <tr>
-<td>Jake</td>
-<td>$12000</td>
+<td >
+Jake
+</td>
+<td >
+	 $12000
+</td>
 </tr>
 <tr>
-<td>Peter</td>
-<td>$18000</td>
+<td >
+Peter
+</td>
+<td >
+	 $18000
+</td>
 </tr>
 <tr>
-<td>James</td>
-<td>$11000</td>
+<td >
+James
+</td>
+<td >
+	 $11000
+</td>
 </tr>
 <tr>
-<td>Mary</td>
-<td>$9000</td>
+<td >
+Mary
+</td>
+<td >
+	 $9000
+</td>
 </tr>
 </table>
 
@@ -242,8 +266,6 @@ Now we will take a sample single series chart described above and apply it to al
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-<!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->   
-
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}labels(){api} and {api:anychart.core.cartesian.series.Base#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will lead to changes in visual appearance, position and format.
 
 With the following example let's make data labels appear in the center of the columns, format them to show only the value corresponding to the column and tooltip to show detailed description.  
@@ -345,11 +367,12 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Color_Management) tutorial.
+<<<<<<< HEAD
+
+To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
+=======
+>>>>>>> 7.11.0
 
 To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
 
 {sample}BCT\_ColumnChart\_12{sample}
-
-## Samples
-
-You can see a lot of other samples in [AnyChart Web Column Charts Gallery](http://anychart.com/products/anychart/gallery/Column_Charts/).

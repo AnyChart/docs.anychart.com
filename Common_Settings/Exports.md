@@ -1,26 +1,9 @@
 {:index 3}
-Exports
-======================
-
-* [Overview](#overview)
-* [Export server](#export_server)
-* [File name](#file_name)
-* [Image](#image)
- * [SVG](#svg)
- * [PNG](#png)
- * [JPG](#jpg)
-* [PDF](#pdf)
-* [Data](#data)
- * [CSV](#csv)
- * [Excel](#excel)
-* [Chart Configuration](#configuration)
- * [JSON](#json)
- * [XML](#xml)
+# Exports
 
 ## Overview
 
-AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#configuration) which may be used to debug charts and report issues.
-
+AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. 
 ## Export server
 
 **IMPORTANT, DO NOT SKIP THIS PART**

@@ -151,6 +151,7 @@ layer_cylinder.remove();
 {sample}GFX\_Basics\_05{sample}
 
 The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Layer#removeChild}remove(){api} method to get rid of the big shadow under all objects which is situated on the separate layer.
+
 ```
 // remove the cylinder layer
 layer_cylinder.remove();

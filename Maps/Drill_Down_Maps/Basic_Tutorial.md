@@ -12,7 +12,7 @@ First of all, you need the Anymap component, which can be found on the [download
 
 ```
 <head>
-<script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
 </head>
 ```
 
@@ -22,15 +22,15 @@ If you need any other AnyChart components, it's better to include anychart-bundl
 
 There are several ways how to include maps in your Drill Down Map: through scripts or using AJAX. The first way is described in this article; if you need the tutorial for AJAX, visit the [AJAX](AJAX_Tutorial) page.
 
-To include a map as script, reference the JavaScript file with this map in the <head> section of your web page.
-You can use the link as shown below or download all necessary maps from the <a href="http://cdn.anychart.com/#map-collection">download page</a> and then reference them locally.
+To include a map as script, reference the JavaScript file with this map in the `<head>` section of your web page.
+You can use the link as shown below or download all necessary maps from the <a href="https://cdn.anychart.com/">download page</a> and then reference them locally.
 Note that all maps that will be used should be referenced like in this code sample. In the following code sample we reference the USA map and maps of Texas and Florida, as we're not going to use any other maps.
 
 ```
 <head>
-<script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
-<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
-<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
 </head>
 ```
 
@@ -42,7 +42,7 @@ var usaMap = anychart.map();
 usaMap.geoData(anychart.maps.united_states_of_america);
 ```
 
-Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
+Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "https://cdn.anychart.com/">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
 
 ## Data
 

@@ -1,6 +1,5 @@
 {:index 15}
-Map Visualisation
-======================
+# Map Visualisation
 
 * [Overview](#overview)
 * [Coloring the Map regions](#coloring_the_map_regions)
@@ -16,7 +15,6 @@ Map Visualisation
 ## Overview 
 
 In some cases you might need to color a region (or a number of regions) specifically, or stroke it, or make it noticeable in some way. Also, it looks nice when a region is highlighted when hovered. Sometimes you don't need to use a colorScale, but you've got different series on a map which you'd like to color differently.                                                                                
-
 This article will help you to understand how to work with colors and palettes which can help you to make your map more attractive.
 
 ## Coloring the Map regions
@@ -77,7 +75,7 @@ By default there's no color for the hovered points but the settings, which make 
 	
 	// set the image for the hovered regions of the second series
     secondSeries.hoverFill({
-        src: "http://static.anychart.com/logo/oceanic-airlines.png",
+        src: "https://static.anychart.com/logo/oceanic-airlines.png",
         mode: "stretch",
         opacity: 0.3
     });

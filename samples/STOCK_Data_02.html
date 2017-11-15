@@ -1,31 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Data 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create data table on loaded data
     var table = anychart.data.table("x");
 
     table.addData([
-        {"x":"2015-12-24T12:00:00", "open": 511.53, "high": 514.98, "low": 505.79, "close": 506.40},
-        {"x":"2015-12-25T12:00:00", "open": 512.53, "high": 514.88, "low": 505.69, "close": 510.34},
-        {"x":"2015-12-26T12:00:00", "open": 511.83, "high": 514.98, "low": 505.59, "close": 507.23},
-        {"x":"2015-12-27T12:00:00", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
-        {"x":"2015-12-28T12:00:00", "open": 511.53, "high": 514.98, "low": 505.79, "close": 506.40},
-        {"x":"2015-12-29T12:00:00", "open": 512.53, "high": 513.88, "low": 505.69, "close": 510.34},
-        {"x":"2015-12-30T12:00:00", "open": 511.83, "high": 512.98, "low": 502.59, "close": 503.23},
-        {"x":"2015-12-31T12:00:00", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
-        {"x":"2016-01-01T12:00:00", "open": 510.35, "high": 515.72, "low": 505.23, "close": 508.80}
+{"x":"2015-12-24T12:00:00", "open": 511.53, "high": 514.98, "low": 505.79, "close": 506.40},
+{"x":"2015-12-25T12:00:00", "open": 512.53, "high": 514.88, "low": 505.69, "close": 510.34},
+{"x":"2015-12-26T12:00:00", "open": 511.83, "high": 514.98, "low": 505.59, "close": 507.23},
+{"x":"2015-12-27T12:00:00", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
+{"x":"2015-12-28T12:00:00", "open": 511.53, "high": 514.98, "low": 505.79, "close": 506.40},
+{"x":"2015-12-29T12:00:00", "open": 512.53, "high": 513.88, "low": 505.69, "close": 510.34},
+{"x":"2015-12-30T12:00:00", "open": 511.83, "high": 512.98, "low": 502.59, "close": 503.23},
+{"x":"2015-12-31T12:00:00", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
+{"x":"2016-01-01T12:00:00", "open": 510.35, "high": 515.72, "low": 505.23, "close": 508.80}
     ]);
 
     // create stock chart
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     var mapping = table.mapAs({'open':"open", 'high': "high", 'low': "low", 'close': "close"});
 
@@ -38,9 +51,7 @@
 
     // initiate chart drawing
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

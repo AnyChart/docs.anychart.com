@@ -15,7 +15,7 @@ First of all, you need the AnyMap component, which can be found on the [download
 
 ```
 <head>
-<script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
 </head>
 ```
 
@@ -93,7 +93,7 @@ In jQuery AJAX request should contain following fields:
 ```
 jQuery.ajax({
     type: "GET", 
-    url: "//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", 
+    url: "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", 
     dataType: "json",
     success: function(data){
     },
@@ -103,7 +103,7 @@ jQuery.ajax({
 });
 ```
 
-You can find links to all maps in <a href="http://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
+You can find links to all maps in <a href="https://cdn.anychart.com/">AnyChart Map Collection</a> page.
 
 ### Drill To
 
@@ -135,8 +135,8 @@ We need to add a field with url to both states in the dataset of the USA map:
 ```
 // set the data for the USA map
 var usaDataSet = anychart.data.set([
-    {"id": "US.TX", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
-    {"id": "US.FL", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
+    {"id": "US.TX", "value": 26956958, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
+    {"id": "US.FL", "value": 19552860, "url": "https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
 ]);
 
 // load the map using AJAX

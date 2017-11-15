@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-    <script x-export="stage">
-        anychart.onDocumentReady(function() {
-            var dataSet = anychart.data.set([
-                ['AU.WA', 300],
-                ['AU.JB', 230],
-                ['AU.NS', 240],
-                ['AU.VI', 275],
-                ['AU.NT', 130],
-                ['AU.TS', 190],
-                ['AU.CT', 100],
-                ['AU.SA', 305],
-                ['AU.QL', 190]
-            ]);
-
-            // mapping the data to the chart
-            var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
-            var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
-
-            stage = anychart.graphics.create("container");
-            var mapChart = anychart.map();
-            mapChart.geoData(anychart.maps.australia);
-            mapChart.container(stage);
-            mapChart.title('Australia Map');
-            // set the series
-            var series = mapChart.choropleth(mapDataSet);
-            series.geoIdField('code_hasc');
-
-            // disable the labels
-            series.labels(false);
-            mapChart.bounds(0, 0, '100%', '70%');
-            mapChart.draw();
-
-            var areaChart = anychart.area();
-            areaChart.container(stage);
-            areaChart.title('Spline-Area Chart');
-            areaChart.bounds(0, '70%', '100%', '30%');
-            areaChart.splineArea(chartDataSet);
-            areaChart.draw();
-
-            var yAreaScale = areaChart.yScale();
-            yAreaScale.minimum(0);
-            yAreaScale.maximum(350);
-
-        });</script>
-
+    <meta name="ac:name" content="Maps Dashboard 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.1/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var dataSet = anychart.data.set([
+        ['AU.WA', 300],
+        ['AU.JB', 230],
+        ['AU.NS', 240],
+        ['AU.VI', 275],
+        ['AU.NT', 130],
+        ['AU.TS', 190],
+        ['AU.CT', 100],
+        ['AU.SA', 305],
+        ['AU.QL', 190]
+    ]);
+
+    // mapping the data to the chart
+    var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
+    var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
+
+    var stage = anychart.graphics.create("container");
+    var mapChart = anychart.map();
+    mapChart.geoData(anychart.maps.australia);
+    mapChart.container(stage);
+    mapChart.title('Australia Map');
+    // set the series
+    var series = mapChart.choropleth(mapDataSet);
+    series.geoIdField('code_hasc');
+
+    // disable the labels
+    series.labels(false);
+    mapChart.bounds(0, 0, '100%', '70%');
+    mapChart.draw();
+
+    var areaChart = anychart.area();
+    areaChart.container(stage);
+    areaChart.title('Spline-Area Chart');
+    areaChart.bounds(0, '70%', '100%', '30%');
+    areaChart.splineArea(chartDataSet);
+    areaChart.draw();
+
+    var yAreaScale = areaChart.yScale();
+    yAreaScale.minimum(0);
+    yAreaScale.maximum(350);
+
+});
+</script>
 </body>
 </html>

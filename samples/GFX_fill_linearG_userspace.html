@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="stage">
-stage = acgraph.create("container");
+    <meta name="ac:name" content="GFX fill linearG userspace"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/js/7.11.1/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
 
 var fillSettings = {
     keys: [".1 red", ".5 green", ".9 blue"],
@@ -16,8 +30,8 @@ var fillSettings = {
     opacity: .2
 };
 stage
-        .rect(0, 0, stage.width(), stage.height())
-        .fill(fillSettings);
+.rect(0, 0, stage.width(), stage.height())
+.fill(fillSettings);
 fillSettings.opacity = 1;
 stage.text(20, 3, "shape 1");
 stage.rect(20, 20, 100, 70).fill(fillSettings);
@@ -27,11 +41,8 @@ stage.text(270, 73, "shape 3");
 stage.rect(270, 93, 100, 100).fill(fillSettings);
 stage.text(150, 53, "fill settings");
 stage
-        .rect(150, 70, 100, 50).stroke("3 black")
-        .fill(fillSettings);
+.rect(150, 70, 100, 50).stroke("3 black")
+.fill(fillSettings);
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

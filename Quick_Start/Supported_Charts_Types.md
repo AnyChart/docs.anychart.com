@@ -1,12 +1,11 @@
 {:index 3}
-Supported Charts Types
-======================
-AnyChart offers of chart types and their modifications and combinations,
-in the table below you can find a full list of all chart types available,
-with links to tutorials where you can find out how to create them.
+# Supported charts types
+
+AnyChart offers you a lot of chart types and their modifications and combinations, 
+in the table below you will find a full list of all basic chart types available, 
+with a links to tutorials where you can find out how to create them (with the samples).
   
-    
-####List of Supported Chart Types
+## List of AnyChart Basic Chart Types
 <table width="700px" class="dtTABLE">
 <tr><th width="315px">Name</th><th width="58px">Single Series</th> <th width="56px">Multi Series</th></tr>
 <tr><td>[Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr>

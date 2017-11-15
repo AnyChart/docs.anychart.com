@@ -1,21 +1,11 @@
 {:index 3}
-Data Grouping
-==========
-* [Overview](#overview)
-* [Settings](#settings)
- * [Default](#default)
- * [Adjusting](#adjusting)
-  * [Levels](#levels)
-  * [Set Maximum Points Number](#set_maximum_points_number)
-  * [Set Minimum Width for a Point](#set_minimum_width_for_a_point)
-  * [Disable](#disable)
-
+# Data Grouping
  
 ## Overview
 
 AnyStock Charts processes table-formatted data using [table data model](../Working_with_Data/Using_Table_Data_Model). Working with data in AnyStock is described in [AnyStock Data](Data) article.
 
-To work with large data sets and represent them successfully on the screen AnyStock is able to group data points using {api:anychart.core.stock.Grouping}Grouping{api} methods. 
+To work with large data sets and represent them successfully on the screen AnyStock is able to group data points using {api:anychart.core.stock.Grouping}Grouping{api} methods.
 
 ## Settings
 
@@ -27,7 +17,7 @@ There is a sample with the default grouping settings:
 
 {sample}STOCK\_Grouping\_01{sample}
 
-As can be clearly seen from the sample, grouping is enabled by default. The levels of grouping are chosen automatically from the [list of levels](#list_of_levels) depending of the categories defined in the data set. The maximum number of simultaneously shown points is 500, so as we have less all points are shown; the minimum width value of each point is not specified.
+As can be clearly seen from the sample, grouping is enabled by default. The levels of grouping are chosen automatically from the list of levels depending of the categories defined in the data set. The maximum number of simultaneously shown points is 500, so as we have less all points are shown; the minimum width value of each point is not specified.
 
 #### List of levels
 
@@ -65,7 +55,7 @@ Let's consider all methods that can adjust the grouping feature of a stock chart
 
 #### Levels
 
-There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}.levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}.levels(){api} method looks like an array of objects, like in the sample below:
+There is a [list of levels](#list_of_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}.levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}.levels(){api} method looks like an array of objects, like in the sample below:
 
 ```
 	// define the grouping

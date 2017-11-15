@@ -1,14 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
- <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="stage">
+    <meta name="ac:name" content="GFX Basics 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/js/7.11.1/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 // create a stage
-stage = acgraph.create("container");
+var stage = acgraph.create("container");
 
 stage.scale(0.7, 0.7, 0, 0);
 // set layers of stage
@@ -19,104 +33,104 @@ var layer_main_shadow = stage.layer(); // layer for the big shadow under the fig
 var layer_5 = stage.layer();
 
 // creating the cube
-            
+    
 var rect = acgraph.math.Rect(50, 250, 100, 200);
 var fill = {keys:["#666","#888", "#ccc"], angle:135, mode:rect}; 
 var rect_2 = acgraph.math.Rect(50, 200, 200, 100);
 var fill_2 = {keys:["#666","#666", "#ccc"], angle:185, mode:rect_2};  
 
 var cube_top = layer_cube.path().moveTo(200, 200)
-            .lineTo(300, 250)
-            .lineTo(150, 300)
-            .lineTo(50, 250)
-            .close()
-            .fill(["#888", "#f0f0f0", "#f0f0f0"],150)
-            .stroke(fill_2,1);      
-            
+    .lineTo(300, 250)
+    .lineTo(150, 300)
+    .lineTo(50, 250)
+    .close()
+    .fill(["#888", "#f0f0f0", "#f0f0f0"],150)
+    .stroke(fill_2,1);      
+    
 var cube_side = layer_cube.path().moveTo(50, 250)
-            .lineTo(150, 300)
-            .lineTo(150, 450)
-            .lineTo(50, 400)
-            .close()
-            .fill(["#999","#f0f0f0", "white"], 135)
-            .stroke(fill,1);
-            
+    .lineTo(150, 300)
+    .lineTo(150, 450)
+    .lineTo(50, 400)
+    .close()
+    .fill(["#999","#f0f0f0", "white"], 135)
+    .stroke(fill,1);
+    
 var cube_back = layer_cube.path().moveTo(150, 300)
-            .lineTo(300, 250)
-            .lineTo(300, 400)
-            .lineTo(150, 450)
-            .close()
-            .fill("#aaa")
-            .stroke("1px #666");
-            
+    .lineTo(300, 250)
+    .lineTo(300, 400)
+    .lineTo(150, 450)
+    .close()
+    .fill("#aaa")
+    .stroke("1px #666");
+    
 layer_cube.zIndex(1);
 
 // the shadow on a separate layer
 var cube_shadow_prism = layer_5.path().moveTo(231, 365)
-            .lineTo(360, 315)
-            .lineTo(390, 325)
-            .lineTo(310, 355)
-            .lineTo(258, 375)
-            .close()
-            .moveTo(230,365)
-            .lineTo(200,400)
-            .lineTo(215,460)
-            .lineTo(255,480)
-            .lineTo(255,375)
-            .close()
-            .fill("#888")
-            .stroke("none");
-            
+    .lineTo(360, 315)
+    .lineTo(390, 325)
+    .lineTo(310, 355)
+    .lineTo(258, 375)
+    .close()
+    .moveTo(230,365)
+    .lineTo(200,400)
+    .lineTo(215,460)
+    .lineTo(255,480)
+    .lineTo(255,375)
+    .close()
+    .fill("#888")
+    .stroke("none");
+    
 var prism_shadow = layer_5.path().moveTo(445,415)
-            .lineTo(850,550)
-            .lineTo(410,550)
-            .lineTo(265,485)
-            .close()
-            .fill(["#aaa","#ccc 0.5","white 0"],-90)
-            .stroke(null);
-            
+    .lineTo(850,550)
+    .lineTo(410,550)
+    .lineTo(265,485)
+    .close()
+    .fill(["#aaa","#ccc 0.5","white 0"],-90)
+    .stroke(null);
+    
 layer_5.zIndex(5);
 
 
 // creating the cylinder
 var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
-            .fill(["#f0f0f0", "#f0f0f0", "#aaa"],-30)
-            .zIndex(3);
-            
+    .fill(["#f0f0f0", "#f0f0f0", "#aaa"],-30)
+    .zIndex(3);
+    
 var ellipse_body = layer_cylinder.path().moveTo(-100, 50)
-            .lineTo(-100, 350)
-            .arcTo(150, 30, 180, -180)
-            .lineTo(200, 50)
-            .arcTo(-150, 30, 180, 180)
-            .close()
-            .fill(["white", "#aaa", "#888"],-40)
-            .stroke("1px black")
-            .zIndex(2);
-            
+    .lineTo(-100, 350)
+    .arcTo(150, 30, 180, -180)
+    .lineTo(200, 50)
+    .arcTo(-150, 30, 180, 180)
+    .close()
+    .fill(["white", "#aaa", "#888"],-40)
+    .stroke("1px black")
+    .zIndex(2);
+    
 var ellipse_shadow_cube = layer_cylinder.path().moveTo(-45,375)
-            .lineTo(110,405)
-            .lineTo(315,373)
-            .lineTo(200,350)
-            .close()
-            .stroke(null)
-            .fill("#848484");
-            
-            
+    .lineTo(110,405)
+    .lineTo(315,373)
+    .lineTo(200,350)
+    .close()
+    .stroke(null)
+    .fill("#848484");
+    
+    
 var ellipse_shadow_prism_top = layer_cylinder.path().moveTo(520,485)
-            .lineTo(680,517)
-            .lineTo(465,558)
-            .lineTo(300,523)
-            .fill("#888")
-            .stroke(null)
-            .close();
-            
+    .lineTo(680,517)
+    .lineTo(465,558)
+    .lineTo(300,523)
+    .fill("#888")
+    .stroke(null)
+    .close();
+    
 var ellipse_shadow_prism_middle = layer_cylinder.path().moveTo(680,520)
-            .lineTo(750,592)
-            .lineTo(515,640)
-            .lineTo(465,560)
-            .fill("#898989")
-            .stroke(null)
-            .close();
+    .lineTo(750,592)
+    .lineTo(515,640)
+    .lineTo(465,560)
+    .fill("#898989")
+    .stroke(null)
+    .close();
 
 // moving the cylinder
 layer_cylinder.translate(650,50);
@@ -130,57 +144,53 @@ layer_cylinder.zIndex(3);
 // creating the prism
 
 var prism_hex_edge = layer_prism.path().moveTo(200,400)
-            .lineTo(215,460)
-            .lineTo(265,485)
-            .lineTo(300,435)
-            .lineTo(285,385)
-            .lineTo(230,365)
-            .close()
-            .stroke("1px #444")
-            .fill("#aaa");
+    .lineTo(215,460)
+    .lineTo(265,485)
+    .lineTo(300,435)
+    .lineTo(285,385)
+    .lineTo(230,365)
+    .close()
+    .stroke("1px #444")
+    .fill("#aaa");
     
 var prism_top_edge = layer_prism.path().moveTo(230,365)
-            .lineTo(400,300)
-            .lineTo(455,320)
-            .lineTo(285,385)
-            .stroke("1px #666")
-            .fill("#aaa")
-            .close();
+    .lineTo(400,300)
+    .lineTo(455,320)
+    .lineTo(285,385)
+    .stroke("1px #666")
+    .fill("#aaa")
+    .close();
 
 var prism_middle_edge = layer_prism.path().moveTo(285,385)
-            .lineTo(300,435)
-            .lineTo(470,365)
-            .stroke("1px #666")
-            .lineTo(455,320)
-            .close()
-            .fill("#929292");
-               
+    .lineTo(300,435)
+    .lineTo(470,365)
+    .stroke("1px #666")
+    .lineTo(455,320)
+    .close()
+    .fill("#929292");
+       
 var prism_bottom_edge = layer_prism.path().moveTo(300,435)
-            .lineTo(470,365)
-            .lineTo(445,415)
-            .lineTo(265,485)
-            .stroke("1px #777")
-            .close()
-            .fill("#848484");
-            
+    .lineTo(470,365)
+    .lineTo(445,415)
+    .lineTo(265,485)
+    .stroke("1px #777")
+    .close()
+    .fill("#848484");
+    
 layer_prism.zIndex(1);            
 
-            
+    
 // creating the big shadow under everything
 layer_main_shadow.path().moveTo(50,400)
-            .lineTo(445,415)
-            .lineTo(850,550)
-            .lineTo(350,550)
-            .close()
-            .stroke(null)
-            .fill(["#aaa","white"],270);
+    .lineTo(445,415)
+    .lineTo(850,550)
+    .lineTo(350,550)
+    .close()
+    .stroke(null)
+    .fill(["#aaa","white"],270);
 
 // remove the cylinder layer
 layer_cylinder.remove();
-
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

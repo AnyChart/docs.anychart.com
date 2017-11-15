@@ -1,19 +1,11 @@
-{:index 1}
 # Range Column/Bar chart
-                                                                         
-* [Overview](#overview)
-* [Chart](#chart)
-* [Temperature Range Chart Sample](#temperature_range_chart_sample)
-* [Waterfall Chart Sample](#waterfall_chart_sample)
 
 ## Overview
 
 The Range Column/Bar charts displays a range of data by plotting two Y values per data point. Each Y value used is drawn as the upper, and lower bounds of a column/bar.
-  
-  
+
 Sometimes range charts are referred as "floating" column/bar charts. Some data may look very nice and are easily understood in this form, in which the column floats in the chart, spanning a region from the minimum value to the maximum value.
-  
-  
+
 Also you can create Waterfall charts - this type is a special type of Floating Column Charts. A typical waterfall chart shows how an initial value is increasing and decreasing by a series of intermediate values, leading to a final value.
 
 ## Chart

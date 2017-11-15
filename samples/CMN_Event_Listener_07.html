@@ -1,59 +1,70 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-        var dataSet = anychart.data.set([
-            {x: "Twix", value: 100, url:"//www.google.com/search?q=Twix"},
-            {x: "Bounty", value: 200, url:"//www.google.com/search?q=Bounty"},
-            {x: "Picnic", value: 15, url:"//www.google.com/search?q=Picnic"},
-            {x: "Mars", value: 130, url:"//www.google.com/search?q=Mars"},
-            {x: "Snickers", value: 153, url:"//www.google.com/search?q=Snickers"},
-            {x: "KitKat", value: 120, url:"//www.google.com/search?q=KitKat"},
-            {x: "Oreo", value: 151, url:"//www.google.com/search?q=Oreo"}
-        ]);
-
-        // set chart type
-        chart = anychart.column();
-
-        chart.title("Confectionery Sales in April");
-
-        // set data
-        chart.column(dataSet).name('Boxes');
-
-        // set container and draw chart
-        chart.container("container");
-        chart.draw();
-
-        // add a listener
-        chart.listen("pointClick", function(e){
-            var index = e.point.getIndex();
-            var row = dataSet.row(index);
-            if (row.fillOld){
-                row.fill = row.fillOld;
-                delete row.fillOld;
-            } else{
-                row.fillOld = row.fill;
-                row.fill = "green";
-            }
-            dataSet.row(index, row);
-        });
-
-        // add a listener
-        chart.listen("pointDblClick", function(e){
-            var new_value = e.point.get("url");
-            window.open(new_value,"_blank");
-        });
-
-    });</script>
+    <meta name="ac:name" content="CMN Event Listener 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.11.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.11.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+
+var dataSet = anychart.data.set([
+    {x: "Twix", value: 100, url:"//www.google.com/search?q=Twix"},
+    {x: "Bounty", value: 200, url:"//www.google.com/search?q=Bounty"},
+    {x: "Picnic", value: 15, url:"//www.google.com/search?q=Picnic"},
+    {x: "Mars", value: 130, url:"//www.google.com/search?q=Mars"},
+    {x: "Snickers", value: 153, url:"//www.google.com/search?q=Snickers"},
+    {x: "KitKat", value: 120, url:"//www.google.com/search?q=KitKat"},
+    {x: "Oreo", value: 151, url:"//www.google.com/search?q=Oreo"}
+]);
+
+// set chart type
+var chart = anychart.column();
+
+chart.title("Confectionery Sales in April");
+
+// set data
+chart.column(dataSet).name('Boxes');
+
+// set container and draw chart
+chart.container("container");
+chart.draw();
+
+// add a listener
+chart.listen("pointClick", function(e){
+    var index = e.point.getIndex();
+    var row = dataSet.row(index);
+    if (row.fillOld){
+        row.fill = row.fillOld;
+        delete row.fillOld;
+    } else{
+        row.fillOld = row.fill;
+        row.fill = "green";
+    }
+    dataSet.row(index, row);
+});
+
+// add a listener
+chart.listen("pointDblClick", function(e){
+    var new_value = e.point.get("url");
+    window.open(new_value,"_blank");
+});
+
+    });
+</script>
 </body>
 </html>
