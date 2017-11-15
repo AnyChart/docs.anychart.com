@@ -143,7 +143,7 @@ Full list of the parameters available:
 
 ## Web Server Usage 
 
-AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default AnyChart component uses server hosted at http://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default AnyChart component uses server hosted at https://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
 
 If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 

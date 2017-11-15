@@ -60,7 +60,7 @@ anychart.onDocumentReady(function(){
   
 ## The result
 
-After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](http://playground.anychart.com/docs/latest/samples/GFX_quick_start-plain).
+After all these steps you should have the following result:
 
 {sample}GFX\_quick\_start{sample}
 

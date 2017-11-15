@@ -204,5 +204,5 @@ function customMarkerDrawer(path, x, y, size) {
 }
 ```
 
-Using GraphicsJS makes it simple to create new forms and shapes which may become markers on a chart or visualize something else, e.g. it can be useful in dashboards building.  Visit [Stage-Based Layout](../Dashboards/Stage-Based_Layout) tutorial to read more about using GraphicsJS in dashboards. You can also visit [AnyChart Custom Drawings Gallery](http://www.anychart.com/products/anychart/gallery/Custom_Drawing/) to see how you can make use of custom drawing capabilities in AnyChart.
+Using GraphicsJS makes it simple to create new forms and shapes which may become markers on a chart or visualize something else, e.g. it can be useful in dashboards building.  Visit [Stage-Based Layout](../Dashboards/Stage-Based_Layout) tutorial to read more about using GraphicsJS in dashboards. You can also visit [AnyChart Custom Drawings Gallery](https://www.anychart.com/products/anychart/gallery/Custom_Drawing/) to see how you can make use of custom drawing capabilities in AnyChart.
 

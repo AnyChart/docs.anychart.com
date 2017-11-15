@@ -100,7 +100,7 @@ Here is a sample:
 ### Font
 
 The flexibility of GraphicsJS allows to create not only shapes-based patterns, but also font-based. An example of doing so with an Interdex font can be found in [AnyChart Interdex Hatch Fill Sample](
-http://playground.anychart.com/gallery/latest/Custom_Drawing/HatchFill_By_Font).
+https://playground.anychart.com/gallery/latest/Custom_Drawing/HatchFill_By_Font).
 
 Here is a simplified version of a font-based pattern fill:
 

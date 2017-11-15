@@ -86,7 +86,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 <!doctype html>
 <html>
   <head>
-    <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/js/{{branch-name}}/anychart-bundle.min.js"></script>
     <style>
       html, body, #container {
         width: 100%;

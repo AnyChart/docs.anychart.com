@@ -26,13 +26,13 @@ If you need any other AnyChart components, it's better to include anychart-bundl
 To create a sample with maps being added through AJAX request, we need to do is to include some AJAX component to our Drill Down Map sample (in the same &lt;head&gt; section). We will use jQuery.
 
 ```
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 ```
 
 It is better to add the root map the same way as the AnyMap component and jQuery:
 
 ```
-<script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+<script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
 ```
 
 ## Data
