@@ -32,7 +32,7 @@ anychart.onDocumentReady(function() {
   function colorizer(){
     var mixColor1 = anychart.color.blend(color1, color2, colorIndex);
     colorIndex = colorIndex + 0.2;
-    return "rgb(" + mixColor1.join(",") + ")";
+    return mixColor1;
   }
   
   // data and fill color settings
@@ -59,7 +59,7 @@ anychart.onDocumentReady(function() {
     return "Input Color: " + color1 +
       "\nBlend Color: " + color2 +
       "\nBlend Ratio: " + this.index * 2 / 10 +
-      "\nResult: " + mixColor2.join(",");
+      "\nResult: " + mixColor2.color;
   });
   
   // draw
