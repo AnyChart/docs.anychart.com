@@ -1,22 +1,37 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="BCT Series Type 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a stage    
     stage = anychart.graphics.create("container");	
 
     // set the data
     var data = anychart.data.set([
-        ["Spring", 10], ["Summer", 15], ["Autumn", 8], ["Winter", 23]
+["Spring", 10], ["Summer", 15], ["Autumn", 8], ["Winter", 23]
     ]);
 
     // set the chart type and title
-    chart = anychart.line();
+    var chart = anychart.line();
     chart.title("Switching the Series Type");
     chart.title().padding(25);
 
@@ -29,23 +44,23 @@
 
     // create a label for switching to the line series
     createLabel("Switch to Line", 10, function() {
-        // change the series type
-        series.seriesType("line");
-        chart.title("Switching the Series Type \n Line");
+// change the series type
+series.seriesType("line");
+chart.title("Switching the Series Type \n Line");
     });  
 
     // create a label for switching to the column series
     createLabel("Switch to Column", 127, function() {
-        // change the series type
-        series.seriesType("column");
-        chart.title("Switching the Series Type \n Column");
+// change the series type
+series.seriesType("column");
+chart.title("Switching the Series Type \n Column");
     });    
   
     // create a label for switching to the area series
     createLabel("Switch to Area", 265, function() {
-        // change the series type
-        series.seriesType("area");
-        chart.title("Switching the Series Type \n Area");
+// change the series type
+series.seriesType("area");
+chart.title("Switching the Series Type \n Area");
     });    
 
 });
@@ -62,19 +77,17 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5")
-        document.body.style.cursor = "pointer";
-        label.draw();
+label.background().fill("#1976d2 0.5")
+document.body.style.cursor = "pointer";
+label.draw();
     });
     label.listen("mouseOut", function(){
-        label.background().fill("#1976d2")
-        document.body.style.cursor = "auto";
-        label.draw();
+label.background().fill("#1976d2")
+document.body.style.cursor = "auto";
+label.draw();
     });    
     return label;
- };</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+ };
+</script>
 </body>
 </html>

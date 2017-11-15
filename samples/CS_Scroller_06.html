@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Scroller 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a chart
-    chart = anychart.bar();
+    var chart = anychart.bar();
 
     // define zoom settings
     chart.xZoom().setToPointsCount(10);
@@ -24,27 +37,27 @@
     chart.xScroller().allowRangeChange(false);    
 
     var data = [
-        ["Facebook", 9245],
-        ["Live", 7345],
-        ["MSN", 10522],
-        ["Youtube", 12034],
-        ["Yahoo", 9014],
-        ["Wikipedia", 13463],
-        ["Google", 10525],
-        ["Baidu", 6345],
-        ["Twitter", 10211],
-        ["Amazon", 8093],
-        ["Ebay", 7836],
-        ["LinkedIn", 7276],
-        ["Vk", 9463],
-        ["Instagram", 10876],
-        ["TMall", 7220],
-        ["Microsoft", 8965],
-        ["AliExpress", 9120],
-        ["AnyChart", 9246],
-        ["PayPal", 6837],
-        ["BBC", 5046],
-        ["NicoVideo", 6822]
+["Facebook", 9245],
+["Live", 7345],
+["MSN", 10522],
+["Youtube", 12034],
+["Yahoo", 9014],
+["Wikipedia", 13463],
+["Google", 10525],
+["Baidu", 6345],
+["Twitter", 10211],
+["Amazon", 8093],
+["Ebay", 7836],
+["LinkedIn", 7276],
+["Vk", 9463],
+["Instagram", 10876],
+["TMall", 7220],
+["Microsoft", 8965],
+["AliExpress", 9120],
+["AnyChart", 9246],
+["PayPal", 6837],
+["BBC", 5046],
+["NicoVideo", 6822]
     ];
 
     //create series
@@ -58,9 +71,7 @@
 
     chart.container("container");
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,37 +1,50 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Themes 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   // create variable for custom theme
   var customTheme = {
     // define settings for bar charts
     "column": {
       // set chart title
       "title": {
-        "text": "Column Chart",
-        "enabled": true
+"text": "Column Chart",
+"enabled": true
       },
       // settings for default x axis
       "defaultXAxisSettings": {
-        // set x axis title
-        "title": {
-          "text": "Retail Channel",
-          "enabled": true
-        }
+// set x axis title
+"title": {
+  "text": "Retail Channel",
+  "enabled": true
+}
       },
       // settings for default y axis
       "defaultYAxisSettings": {
-        // set axis name
-        "title": {
-          "text": "Sales",
-          "enabled": true
-        }
+// set axis name
+"title": {
+  "text": "Sales",
+  "enabled": true
+}
       }
     }
   };
@@ -51,7 +64,7 @@
   anychart.appendTheme(additional_theme);
 
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   // set data
   seriesData_1 = data.mapAs({x: [0], value: [1]});
   seriesData_2 = data.mapAs({x: [0], value: [2]});
@@ -72,22 +85,22 @@ additional_theme = {
     },
     "defaultXAxisSettings": {
       "title": {
-        "fontSize": "14px",
-        "fontColor": "#6a5d4d"        
+"fontSize": "14px",
+"fontColor": "#6a5d4d"        
       },        
       "labels": {
-        "fontSize": "14px",
-        "fontColor": "#6a5d4d"
+"fontSize": "14px",
+"fontColor": "#6a5d4d"
       }
     },
     "defaultYAxisSettings": {
       "title": {
-        "fontSize": "14px",
-        "fontColor": "#6a5d4d"        
+"fontSize": "14px",
+"fontColor": "#6a5d4d"        
       },   
       "labels": {
-        "fontSize": "14px",
-        "fontColor": "#6a5d4d"
+"fontSize": "14px",
+"fontColor": "#6a5d4d"
       }
     },
     "defaultFontSettings": {
@@ -105,8 +118,5 @@ additional_theme = {
   }
 };
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

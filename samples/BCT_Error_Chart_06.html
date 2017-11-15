@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="BCT Error Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a stage    
-    stage = anychart.graphics.create("container"); 
+    var stage = anychart.graphics.create("container"); 
 
     // create a data set
     var data = anychart.data.set([
@@ -58,22 +71,22 @@
 
     // create a label for turning error bars off
     createLabel("None", 50, function() {
-        error.mode("none");
+error.mode("none");
     });
 
     // create a label for showing only value error bars 
     createLabel("Value", 110, function() {
-        error.mode("value");
+error.mode("value");
     });
 
     // create a label for showing only X error bars
     createLabel("X", 173, function() {
-        error.mode("x");
+error.mode("x");
     });
 
     // create a label for showing all error bars
     createLabel("Both", 211, function() {
-        error.mode("both");
+error.mode("both");
     });
 });
 
@@ -89,19 +102,17 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
+label.background().fill("#1976d2 0.5");
+document.body.style.cursor = "pointer";
+label.draw();
     });
     label.listen("mouseOut", function(){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
+label.background().fill("#1976d2");
+document.body.style.cursor = "auto";
+label.draw();
     });    
     return label;
-};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+};
+</script>
 </body>
 </html>

@@ -1,13 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="stage">
-stage = acgraph.create("container");
+    <meta name="ac:name" content="GFX Performance 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/js/7.14.3/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
 
 var start;
 var finish;
@@ -39,10 +53,10 @@ stage.listen("renderfinish", function(){
     label.text((finish - start) + "ms");
     var labelBounds = label.getBounds();
     labelBg
-        .setX((labelBounds.left)-20)
-        .setY((labelBounds.top)+20)
-        .setWidth(labelBounds.width+40)
-        .setHeight(labelBounds.height-40);
+.setX((labelBounds.left)-20)
+.setY((labelBounds.top)+20)
+.setWidth(labelBounds.width+40)
+.setHeight(labelBounds.height-40);
 });
 
 // this is to be performed on a click
@@ -53,21 +67,15 @@ labelBg.listen("click", function(){
     stage.suspend();
 
     for (var i = 0; i < 500; i++) {
-        var left = Math.random() * 300;
-        var qwer = Math.random() * 300;
-        
-        var rect = rectLayer.rect(left, qwer, 10, 10);
-        rect.fill('green');
+var left = Math.random() * 300;
+var qwer = Math.random() * 300;
+
+var rect = rectLayer.rect(left, qwer, 10, 10);
+rect.fill('green');
     }
 
     stage.resume();
 });
-
-
-
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

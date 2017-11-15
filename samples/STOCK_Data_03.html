@@ -1,33 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Data 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     
     // create a data table
     var table = anychart.data.table();
     table.addData([
-        ['2015-12-24', 211, 'DarkGreen'],
-        ['2015-12-25', 512],
-        ['2015-12-26', 311],
-        ['2015-12-27', 411],
-        ['2015-12-28', 611, '#FF0000'],
-        ['2015-12-29', 512],
-        ['2015-12-30', 411],
-        ['2015-12-31', 311],
-        ['2016-01-01', 510]
+['2015-12-24', 211, 'DarkGreen'],
+['2015-12-25', 512],
+['2015-12-26', 311],
+['2015-12-27', 411],
+['2015-12-28', 611, '#FF0000'],
+['2015-12-29', 512],
+['2015-12-30', 411],
+['2015-12-31', 311],
+['2016-01-01', 510]
     ]);
 
     // map value and fill
     var mapping = table.mapAs({value: 1, fill: 2});
 
     // creates a stock chart and enable individual coloring
-    chart = anychart.stock(true);
+    var chart = anychart.stock(true);
 
     // add a column series
     chart.plot(0).column(mapping).name('Volume');
@@ -35,9 +48,7 @@
     // draw a chart
     chart.container('container');
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

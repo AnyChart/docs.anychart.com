@@ -1,171 +1,180 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
-        // create data tree on our data
-        var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+    <meta name="ac:name" content="GANTT Timeline 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+// create data tree on our data
+var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
-        // create resource gantt chart
-        chart = anychart.ganttResource();
+// create resource gantt chart
+var chart = anychart.ganttResource();
 
-        // set container id for the chart
-        chart.container('container');
+// set container id for the chart
+chart.container('container');
 
-        // set data for the chart
-        chart.data(treeData);
+// set data for the chart
+chart.data(treeData);
 
-        //set DataGrid and TimeLine visual settings
-        chart.dataGrid().rowOddFill('#fff');
-        chart.dataGrid().rowEvenFill('#fff');
-        chart.getTimeline().rowOddFill('#fff');
-        chart.getTimeline().rowEvenFill('#fff');
+//set DataGrid and TimeLine visual settings
+chart.dataGrid().rowOddFill('#fff');
+chart.dataGrid().rowEvenFill('#fff');
+chart.getTimeline().rowOddFill('#fff');
+chart.getTimeline().rowEvenFill('#fff');
 
-        chart.rowSelectedFill('#D4DFE8');
-        chart.rowHoverFill('#EAEFF3');
+chart.rowSelectedFill('#D4DFE8');
+chart.rowHoverFill('#EAEFF3');
 
-        // set start splitter position settings
-        chart.splitterPosition(150);
+// set start splitter position settings
+chart.splitterPosition(150);
 
-        // get chart data grid link to set column settings
-        var dataGrid = chart.dataGrid();
+// get chart data grid link to set column settings
+var dataGrid = chart.dataGrid();
 
 
-        var tl = chart.getTimeline();
-        // creating a line marker
-        tl.lineMarker(0).value(Date.UTC(2007, 1, 29)).stroke('2 #FFE4C4');
-        // creating a text marker
-        tl.textMarker(0).value(Date.UTC(2007, 1, 29)).text('Text Marker').fontSize(15).fontColor('blue').fontWeight('bold').fontOpacity(0.5);
-        // creating a range marker
-        tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
-        tl.rangeMarker(0).fill('#FFE4C4 0.5');
+var tl = chart.getTimeline();
+// creating a line marker
+tl.lineMarker(0).value(Date.UTC(2007, 1, 29)).stroke('2 #FFE4C4');
+// creating a text marker
+tl.textMarker(0).value(Date.UTC(2007, 1, 29)).text('Text Marker').fontSize(15).fontColor('blue').fontWeight('bold').fontOpacity(0.5);
+// creating a range marker
+tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
+tl.rangeMarker(0).fill('#FFE4C4 0.5');
 
-        // set first column settings
-        var firstColumn = dataGrid.column(0);
-        firstColumn.title('#');
-        firstColumn.width(30);
-        firstColumn.cellTextSettings().hAlign('center');
+// set first column settings
+var firstColumn = dataGrid.column(0);
+firstColumn.title('#');
+firstColumn.width(30);
+firstColumn.cellTextSettings().hAlign('center');
 
-        // set second column settings
-        var secondColumn = dataGrid.column(1);
-        secondColumn.title('Person');
-        secondColumn.width(120);
-        secondColumn.cellTextSettings().hAlign('left');
-        secondColumn.format(function (item) {
-            return item.get('name');
-        });
+// set second column settings
+var secondColumn = dataGrid.column(1);
+secondColumn.title('Person');
+secondColumn.width(120);
+secondColumn.cellTextSettings().hAlign('left');
+secondColumn.format(function (item) {
+    return item.get('name');
+});
 
-        // initiate chart drawing
-        chart.draw();
+// initiate chart drawing
+chart.draw();
 
-        // zoom chart to specified date
-        chart.zoomTo(Date.UTC(2007, 0, 13), Date.UTC(2007, 2, 25));
+// zoom chart to specified date
+chart.zoomTo(Date.UTC(2007, 0, 13), Date.UTC(2007, 2, 25));
     });
 
     function getData() {
 
-        return [
-            {
-                "id": "1",
-                "name": "Alex Exler",
-                "periods": [
-                    {"id": "1_1", "start": 1171468800000, "end": 1171987200000},
-                    {"id": "1_2", "start": 1174921200000, "end": 1175612400000},
-                    {"id": "1_3", "start": 1177599600000, "end": 1178550000000},
-                    {"id": "1_4", "start": 1182092400000, "end": 1182697200000},
-                    {"id": "1_5", "start": 1183647600000, "end": 1183906800000}]
-            },
-            {
-                "id": "2",
-                "name": "Philip Kineyko",
-                "periods": [
-                    {"id": "2_1", "start": 1173024000000, "end": 1173715200000},
-                    {"id": "2_2", "start": 1173888000000, "end": 1174406400000},
-                    {"id": "2_3", "start": 1176994800000, "end": 1177945200000},
-                    {"id": "2_4", "start": 1180364400000, "end": 1180882800000},
-                    {"id": "2_5", "start": 1182956400000, "end": 1183647600000}]
-            },
-            {
-                "id": "3",
-                "name": "Luke Liakos",
-                "periods": [
-                    {"id": "3_1", "start": 1169740800000, "end": 1170172800000},
-                    {"id": "3_2", "start": 1171987200000, "end": 1172505600000},
-                    {"id": "3_3", "start": 1175439600000, "end": 1176217200000},
-                    {"id": "3_4", "start": 1176908400000, "end": 1178463600000},
-                    {"id": "3_5", "start": 1180364400000, "end": 1180537200000}]                    
-            },
-            {
-                "id": "4",
-                "name": "Judy Penfold",
-                "periods": [
-                    {"id": "4_1", "start": 1171814400000, "end": 1172419200000},
-                    {"id": "4_2", "start": 1173628800000, "end": 1174320000000},
-                    {"id": "4_3", "start": 1177945200000, "end": 1178463600000}]
-            },
-            {
-                "id": "5",
-                "name": "Patricia Darmon",
-                "periods": [
-                    {"id": "5_1", "start": 1171296000000, "end": 1171382400000},
-                    {"id": "5_2", "start": 1174233600000, "end": 1174579200000},
-                    {"id": "5_3", "start": 1176303600000, "end": 1176822000000},
-                    {"id": "5_4", "start": 1177858800000, "end": 1178031600000},
-                    {"id": "5_5", "start": 1181574000000, "end": 1182265200000},
-                    {"id": "5_6", "start": 1185462000000, "end": 1186066800000}]
-            },
-            {
-                "id": "6",
-                "name": "Jong Park",
-                "periods": [
-                    {"id": "6_1", "start": 1171814400000, "end": 1172505600000},
-                    {"id": "6_2", "start": 1173628800000, "end": 1174233600000},
-                    {"id": "6_3", "start": 1178636400000, "end": 1179154800000}]
-            },
-            {
-                "id": "7",
-                "name": "Trevor Moore",
-                "periods": [
-                    {"id": "7_1", "start": 1170691200000, "end": 1170777600000},
-                    {"id": "7_2", "start": 1173110400000, "end": 1174233600000},
-                    {"id": "7_3", "start": 1178636400000, "end": 1179327600000},
-                    {"id": "7_4", "start": 1180969200000, "end": 1181660400000}]
-            },
-            {
-                "id": "8",
-                "name": "Eddie Bridges",
-                "periods": [
-                    {"id": "8_1", "start": 1170604800000, "end": 1171209600000},
-                    {"id": "8_2", "start": 1173283200000, "end": 1174233600000},
-                    {"id": "8_3", "start": 1177858800000, "end": 1178204400000},
-                    {"id": "8_4", "start": 1181487600000, "end": 1183302000000}]
-            },
-            {
-                "id": "9",
-                "name": "Douglas Gunder",
-                "periods": [
-                    {"id": "9_1", "start": 1170864000000, "end": 1171468800000},
-                    {"id": "9_2", "start": 1172505600000, "end": 1173369600000},
-                    {"id": "9_3", "start": 1176649200000, "end": 1176908400000}]
-            },
-            {
-                "id": "10",
-                "name": "Joseph Marshall",
-                "periods": [
-                    {"id": "10_1", "start": 1171555200000, "end": 1171814400000},
-                    {"id": "10_2", "start": 1177945200000, "end": 1179759600000}]
-            }
-        ];
+return [
+    {
+        "id": "1",
+        "name": "Alex Exler",
+        "periods": [
+            {"id": "1_1", "start": 1171468800000, "end": 1171987200000},
+            {"id": "1_2", "start": 1174921200000, "end": 1175612400000},
+            {"id": "1_3", "start": 1177599600000, "end": 1178550000000},
+            {"id": "1_4", "start": 1182092400000, "end": 1182697200000},
+            {"id": "1_5", "start": 1183647600000, "end": 1183906800000}]
+    },
+    {
+        "id": "2",
+        "name": "Philip Kineyko",
+        "periods": [
+            {"id": "2_1", "start": 1173024000000, "end": 1173715200000},
+            {"id": "2_2", "start": 1173888000000, "end": 1174406400000},
+            {"id": "2_3", "start": 1176994800000, "end": 1177945200000},
+            {"id": "2_4", "start": 1180364400000, "end": 1180882800000},
+            {"id": "2_5", "start": 1182956400000, "end": 1183647600000}]
+    },
+    {
+        "id": "3",
+        "name": "Luke Liakos",
+        "periods": [
+            {"id": "3_1", "start": 1169740800000, "end": 1170172800000},
+            {"id": "3_2", "start": 1171987200000, "end": 1172505600000},
+            {"id": "3_3", "start": 1175439600000, "end": 1176217200000},
+            {"id": "3_4", "start": 1176908400000, "end": 1178463600000},
+            {"id": "3_5", "start": 1180364400000, "end": 1180537200000}]                    
+    },
+    {
+        "id": "4",
+        "name": "Judy Penfold",
+        "periods": [
+            {"id": "4_1", "start": 1171814400000, "end": 1172419200000},
+            {"id": "4_2", "start": 1173628800000, "end": 1174320000000},
+            {"id": "4_3", "start": 1177945200000, "end": 1178463600000}]
+    },
+    {
+        "id": "5",
+        "name": "Patricia Darmon",
+        "periods": [
+            {"id": "5_1", "start": 1171296000000, "end": 1171382400000},
+            {"id": "5_2", "start": 1174233600000, "end": 1174579200000},
+            {"id": "5_3", "start": 1176303600000, "end": 1176822000000},
+            {"id": "5_4", "start": 1177858800000, "end": 1178031600000},
+            {"id": "5_5", "start": 1181574000000, "end": 1182265200000},
+            {"id": "5_6", "start": 1185462000000, "end": 1186066800000}]
+    },
+    {
+        "id": "6",
+        "name": "Jong Park",
+        "periods": [
+            {"id": "6_1", "start": 1171814400000, "end": 1172505600000},
+            {"id": "6_2", "start": 1173628800000, "end": 1174233600000},
+            {"id": "6_3", "start": 1178636400000, "end": 1179154800000}]
+    },
+    {
+        "id": "7",
+        "name": "Trevor Moore",
+        "periods": [
+            {"id": "7_1", "start": 1170691200000, "end": 1170777600000},
+            {"id": "7_2", "start": 1173110400000, "end": 1174233600000},
+            {"id": "7_3", "start": 1178636400000, "end": 1179327600000},
+            {"id": "7_4", "start": 1180969200000, "end": 1181660400000}]
+    },
+    {
+        "id": "8",
+        "name": "Eddie Bridges",
+        "periods": [
+            {"id": "8_1", "start": 1170604800000, "end": 1171209600000},
+            {"id": "8_2", "start": 1173283200000, "end": 1174233600000},
+            {"id": "8_3", "start": 1177858800000, "end": 1178204400000},
+            {"id": "8_4", "start": 1181487600000, "end": 1183302000000}]
+    },
+    {
+        "id": "9",
+        "name": "Douglas Gunder",
+        "periods": [
+            {"id": "9_1", "start": 1170864000000, "end": 1171468800000},
+            {"id": "9_2", "start": 1172505600000, "end": 1173369600000},
+            {"id": "9_3", "start": 1176649200000, "end": 1176908400000}]
+    },
+    {
+        "id": "10",
+        "name": "Joseph Marshall",
+        "periods": [
+            {"id": "10_1", "start": 1171555200000, "end": 1171814400000},
+            {"id": "10_2", "start": 1177945200000, "end": 1179759600000}]
     }
-
+];
+    }
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

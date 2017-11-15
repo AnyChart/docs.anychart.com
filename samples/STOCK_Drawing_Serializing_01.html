@@ -1,17 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Drawing Serializing 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create a stage    
-    stage = anychart.graphics.create("container");  
+    var stage = anychart.graphics.create("container");  
    
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -41,18 +54,18 @@
 
     // create an Ellipse annotation
     controller1.ellipse({
-        xAnchor: "2006-11-20",
-        valueAnchor: 35.41,
-        secondXAnchor: "2007-02-24",
-        secondValueAnchor: 18.05,
+xAnchor: "2006-11-20",
+valueAnchor: 35.41,
+secondXAnchor: "2007-02-24",
+secondValueAnchor: 18.05,
     });
 
     // create a Rectangle annotation
     controller1.rectangle({
-        xAnchor: "2007-06-01",
-        valueAnchor: 35.41,
-        secondXAnchor: "2007-12-09",
-        secondValueAnchor: 18.05
+xAnchor: "2007-06-01",
+valueAnchor: 35.41,
+secondXAnchor: "2007-12-09",
+secondValueAnchor: 18.05
     });
 
     // set the chart position and title
@@ -65,28 +78,28 @@
 
     // create a label for the Ellipse annotation
     createLabel("Ellipse", 150, function() {
-        // start drawing the annotation on the first plot
-        controller1.startDrawing("ellipse");
+// start drawing the annotation on the first plot
+controller1.startDrawing("ellipse");
     });
 
     // create a label for the Rectangle annotation
     createLabel("Rectangle", 208, function() {
-        // start drawing the annotation on the first plot
-        controller1.startDrawing("rectangle");
+// start drawing the annotation on the first plot
+controller1.startDrawing("rectangle");
     });
 
     // create a label for removing annotations
     createLabel("Remove All", 312, function() {
-        // remove annotations from all plots
-        chart.annotations().removeAllAnnotations();
+// remove annotations from all plots
+chart.annotations().removeAllAnnotations();
     });
 
     // create a label for serializing annotations from the first plot and deserializing them to the second one
     createLabel("Copy to the Second Plot", 423, function() {
-        // serialize annotations from the first plot
-        var json = controller1.toJson();
-        // deserialize the annotations to the second plot
-        controller2.fromJson(json);
+// serialize annotations from the first plot
+var json = controller1.toJson();
+// deserialize the annotations to the second plot
+controller2.fromJson(json);
     });
 });
 
@@ -102,19 +115,17 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
+label.background().fill("#1976d2 0.5");
+document.body.style.cursor = "pointer";
+label.draw();
     });
     label.listen("mouseOut", function(){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
+label.background().fill("#1976d2");
+document.body.style.cursor = "auto";
+label.draw();
     });    
     return label;
-};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+};
+</script>
 </body>
 </html>

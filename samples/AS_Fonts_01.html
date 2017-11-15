@@ -1,23 +1,36 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="AS Fonts 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // data and fill color settings
   var data = anychart.data.set([
     {x: "English", value: 2022776},
-    {x: "Français", value: 561753},
-    {x: "Português", value: 287318},
-    {x: "Español", value: 281288},
-    {x: "Русский", value: 204379},
-    {x: "中文", value: 146215},
-    {x: "Norsk (bokmål)", value: 133410}
+    {x: "Fran?ais", value: 561753},
+    {x: "Portugu?s", value: 287318},
+    {x: "Espa?ol", value: 281288},
+    {x: "???????", value: 204379},
+    {x: "??", value: 146215},
+    {x: "Norsk (bokm?l)", value: 133410}
   ]);
   
   
@@ -31,7 +44,7 @@
   }
 
   // chart type
-  chart = anychart.column();
+  var chart = anychart.column();
 
   // title
   chart.title("International Symbols Support");
@@ -62,9 +75,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,64 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-
+    <meta name="ac:name" content="BCT TreeMap 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.14.3/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.14.3/anychart-ui.min.css" />
+    
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
-        }
-
-        #container {
-            width: 500px;
-            height: 500px;
-            float: left
-        }
-
-        #controls {
-            margin: 5px;
-            float: left
+            padding: 0;
         }
     </style>
 </head>
 <body>
-<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script x-export="chart">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     // create treemap chart
-    chart = anychart.treeMap(data);
+    var chart = anychart.treeMap(data);
 
     // disable drilldown
     chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
-        return false;
+return false;
     });
 
     // set title
     chart.title("2012 Export Map");
 
     var data = [
-        {id: 'Europe', parent: null},
-        {id: 'Eastern Europe', parent: 'Europe'},
-        {id: 'Western Europe', parent: 'Europe'},
-        {id: 'Southern Europe', parent: 'Europe'},
-        {id: 'Northern Europe', parent: 'Europe'},
-        {id: 'Poland', parent: 'Eastern Europe', value: 312679},
-        {id: 'Ukraine', parent: 'Eastern Europe', value: 603628},
-        {id: 'Austria', parent: 'Western Europe', value: 83879},
-        {id: 'Germany', parent: 'Western Europe', value: 357168},
-        {id: 'France', parent: 'Western Europe', value: 643801},
-        {id: 'Malta', parent: 'Southern Europe', value: 316},
-        {id: 'Greece', parent: 'Southern Europe', value: 131957},
-        {id: 'Italy', parent: 'Southern Europe', value: 301338},
-        {id: 'Finland', parent: 'Northern Europe', value: 338424},
-        {id: 'Great Britain', parent: 'Northern Europe', value: 209331},
-        {id: 'Ireland', parent: 'Northern Europe', value: 84421},
-        {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
-        {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
-        {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
-        {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'}
+{id: 'Europe', parent: null},
+{id: 'Eastern Europe', parent: 'Europe'},
+{id: 'Western Europe', parent: 'Europe'},
+{id: 'Southern Europe', parent: 'Europe'},
+{id: 'Northern Europe', parent: 'Europe'},
+{id: 'Poland', parent: 'Eastern Europe', value: 312679},
+{id: 'Ukraine', parent: 'Eastern Europe', value: 603628},
+{id: 'Austria', parent: 'Western Europe', value: 83879},
+{id: 'Germany', parent: 'Western Europe', value: 357168},
+{id: 'France', parent: 'Western Europe', value: 643801},
+{id: 'Malta', parent: 'Southern Europe', value: 316},
+{id: 'Greece', parent: 'Southern Europe', value: 131957},
+{id: 'Italy', parent: 'Southern Europe', value: 301338},
+{id: 'Finland', parent: 'Northern Europe', value: 338424},
+{id: 'Great Britain', parent: 'Northern Europe', value: 209331},
+{id: 'Ireland', parent: 'Northern Europe', value: 84421},
+{id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
+{id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
+{id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
+{id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'}
     ];
 
     // set data to chart
@@ -69,6 +63,5 @@
     chart.draw();
 });
 </script>
-
 </body>
 </html>
