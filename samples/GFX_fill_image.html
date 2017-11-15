@@ -29,14 +29,14 @@ stage.text(20, 0, "Stretch image");
 stage.rect(2, 18, stage.width() / 2 - 4, stage.height() - 22)
 .fill({
     src: "https://static.anychart.com/images/kitty.png",
-    mode: acgraph.vector.ImageFillMode.STRETCH
+    mode: "stretch"
 })
 .stroke("1 #000");
 stage.text(stage.width() / 2 + 20, 0, "Pattern image");
 stage.rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22)
 .fill({
     src: "https://static.anychart.com/images/kitty.png",
-    mode: acgraph.vector.ImageFillMode.TILE
+    mode: "tile"
 })
 .stroke("1 #000");
 </script>

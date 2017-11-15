@@ -105,37 +105,4 @@ font-family: 'Dancing Script', cursive;
 
 ## Multiline
 
-Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#textWrap}textWrap(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
-
-```
-// create the text style object
-textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
-
-// create a text element as HTML
-text1  = stage.text().htmlText("<p fontFace='Dancing Script'>This is my custom text,<br>which has several lines, separated<br>with the &lt;br&gt; tags.</p>");
-
-// create the second text 
-text2 = stage.text(20, 50, "This is my second custom text element, which is made multiline with the help of AnyChart Graphics methods", textStyle);
-
-// text settings
-text2.width(150);
-text2.height(150);
-text2.textWrap("byLetter");
-text2.textOverflow(true);
-text2.letterSpacing(3);
-text2.lineHeight(20);
-```
-
-{sample :width 832 :height 255}GFX\_Basic\_Text\_07{sample}
-
-## Wrap
-
-There are two word wrap modes: by letter and by word. Choose one depending on your visualization needs, one is more predictable, another one is more natural:
-
-### Wrap by Word
-
-{sample :width 832 :height 255}GFX\_Basic\_Text\_08{sample}
-
-### Wrap by Letter
-
-{sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
+Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#wordWrap}wordWrap(){api}, {api:anychart.graphics.vector.Text#wordWrap}wordWrap(){api}, {api:anychart.graphics.vector.Text#wordBreak}wordBreak(){api}  and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
