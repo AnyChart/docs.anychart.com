@@ -1,23 +1,36 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Settings From Data 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
   // create stage for all charts
-  stage = acgraph.create("container");
+  var stage = acgraph.create("container");
 
   var pie = anychart.pie([
-        {"name":" Iron Hills - Dwarves", "value": 513, fill: {color:"Rgb(70,100,70)"}},
-        {"name":"Mirkwood - Elves", "value": 1015, fill: {color:"Rgb(77,180,77)"}},
-        {"name":"Esgaroth - Men", "value": 2709, fill: {color:"Rgb(77,150,77)"}},
-        {"name":"Orcs", "value": 6232, fill: {color:"Rgb(190,30,27)"}},
-        {"name":"Wargs", "value": 4707, fill: {color:"Rgb(190,30,47)"}},
+{"name":" Iron Hills - Dwarves", "value": 513, fill: {color:"Rgb(70,100,70)"}},
+{"name":"Mirkwood - Elves", "value": 1015, fill: {color:"Rgb(77,180,77)"}},
+{"name":"Esgaroth - Men", "value": 2709, fill: {color:"Rgb(77,150,77)"}},
+{"name":"Orcs", "value": 6232, fill: {color:"Rgb(190,30,27)"}},
+{"name":"Wargs", "value": 4707, fill: {color:"Rgb(190,30,47)"}},
     ]);
 
     // set chart title text settings
@@ -44,14 +57,14 @@
 
     // set data
     var series = column.column([
-        {"x": "Men of Esgaroth", value: 2709, stroke:{color:"#CD7F32", thickness:"2"}},
-        {"x": "Eagles", value: 1067, stroke:{color:"#157DEC", thickness:"2"}},
-        {"x": "Elves", value: 1015, stroke:{color:"#008000", thickness:"2"}},
-        {"x": "Dwarves Of The Iron Hills", value: "500", stroke:{color:"#808080", thickness:"2"}},
-        {"x": "Thirteen Lions of Erebor", value: 13, stroke:{color:"#C0C0C0", thickness:"2"}},
-        {"x": "Beorn", value: 1, marker:{type:"star5", fill:"gold", size: 6, enabled: true}},
-        {"x": "Gandalf the Grey", fill:{color:"#726E6D"}, value: 1, marker:{type:"star5", fill:"#FDD017", size: 9, enabled: true}, hoverMarker: {size: 12}},
-        {"x":"Bilbo Baggins", value: 1, marker:{type:"star5", fill:"#EAC117", size: 6, enabled: true}}
+{"x": "Men of Esgaroth", value: 2709, stroke:{color:"#CD7F32", thickness:"2"}},
+{"x": "Eagles", value: 1067, stroke:{color:"#157DEC", thickness:"2"}},
+{"x": "Elves", value: 1015, stroke:{color:"#008000", thickness:"2"}},
+{"x": "Dwarves Of The Iron Hills", value: "500", stroke:{color:"#808080", thickness:"2"}},
+{"x": "Thirteen Lions of Erebor", value: 13, stroke:{color:"#C0C0C0", thickness:"2"}},
+{"x": "Beorn", value: 1, marker:{type:"star5", fill:"gold", size: 6, enabled: true}},
+{"x": "Gandalf the Grey", fill:{color:"#726E6D"}, value: 1, marker:{type:"star5", fill:"#FDD017", size: 9, enabled: true}, hoverMarker: {size: 12}},
+{"x":"Bilbo Baggins", value: 1, marker:{type:"star5", fill:"#EAC117", size: 6, enabled: true}}
     ]);
     
     
@@ -77,17 +90,17 @@
 
     // draw minor grid and adjust
     scatterChart.minorGrid()
-        .evenFill("none")
-        .oddFill("none")
-        .stroke("black 0.075")
-        .layout("vertical");
+.evenFill("none")
+.oddFill("none")
+.stroke("black 0.075")
+.layout("vertical");
 
     // data
     data = anychart.data.set([
-        {x: "147", value: 10005, point:"Appearance Of The Eagles"},
-        {x: "170", value: 9000, point:"Thorin Makes Blade Rush"},
-        {x: "236", value: 5011, point:"Gandalf's Mighty Fireball"},
-        {x: "277", value: 237, point:"Thranduil's Powerful Attack"}
+{x: "147", value: 10005, point:"Appearance Of The Eagles"},
+{x: "170", value: 9000, point:"Thorin Makes Blade Rush"},
+{x: "236", value: 5011, point:"Gandalf's Mighty Fireball"},
+{x: "277", value: 237, point:"Thranduil's Powerful Attack"}
     ]);
     
     var view = data.mapAs();
@@ -95,8 +108,8 @@
     var scatterSeries = scatterChart.line(data);
     scatterSeries.tooltip().enabled(false);
     scatterSeries.labels().enabled(true).fontSize(9).format(function(){
-        return view.get(
-            this.index, "point"
+return view.get(
+    this.index, "point"
   )});
 
     // set color
@@ -106,9 +119,7 @@
     scatterChart.margin(-10, -15, -10, -15);
     scatterChart.draw();
 
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

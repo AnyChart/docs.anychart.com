@@ -1,14 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="2"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-latest.min.js" data-export="true"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
-
-    <script x-export="chart">
+    <meta name="ac:name" content="Maps Seat Advanced Coloring 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 $.ajax({
     type: "GET",
@@ -21,7 +33,7 @@ $.ajax({
 
 function createSeatMap(svg){
     // create a new seat map
-    chart = anychart.seatMap();
+    var chart = anychart.seatMap();
 
     // load SVG data
     chart.geoData(svg);
@@ -32,10 +44,10 @@ function createSeatMap(svg){
     // set the ranges for the scale and corresponding colors
     colorScale = anychart.scales.ordinalColor();
     colorScale.ranges([
-        {from: 0, to: 3.5, color: "#FCEF86"},
-        {from: 4, to: 5.5, color: "#EC8A00"},
-        {from: 6, to: 7.5, color: "#1368C4"},
-        {from: 8, to: 12, color: "#9F0856"}
+{from: 0, to: 3.5, color: "#FCEF86"},
+{from: 4, to: 5.5, color: "#EC8A00"},
+{from: 6, to: 7.5, color: "#1368C4"},
+{from: 8, to: 12, color: "#9F0856"}
     ]);
 
 
@@ -139,10 +151,6 @@ function getData(){
     
     return dataSet;
 }
-
 </script>
-</head>
-<body>
-<div id="container"></div>
 </body>
 </html>

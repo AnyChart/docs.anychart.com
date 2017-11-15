@@ -1,15 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta name="x-cat-tags" content="anyChart"/>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="stage">
-stage = acgraph.create("container");
+    <meta name="ac:name" content="GFX Basic Text 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/js/7.13.1/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
 
 // create the text style object
 textStyle = {fontFamily: "Dancing Script", fontSize: "25px", color: "green", fontStyle: "italic"};
@@ -17,8 +30,5 @@ textStyle = {fontFamily: "Dancing Script", fontSize: "25px", color: "green", fon
 // create the text element
 text = stage.text(20, 20, "This is my custom font", textStyle);
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

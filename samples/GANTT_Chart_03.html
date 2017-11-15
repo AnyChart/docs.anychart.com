@@ -1,18 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="GANTT Chart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   // create data tree on our data
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // create resource gantt chart
-  chart = anychart.ganttResource();
+  var chart = anychart.ganttResource();
 
   // set container id for the chart
   chart.container("container");
@@ -48,9 +61,9 @@ function getData() {
       "name": "Server 1",
       "parent": "404",
       "periods": [
-        {"id": "1_1", "fill": "blue 0.7", "stroke": "none", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 25)},
-        {"id": "1_2", "fill": "red 0.7", "stroke": "black 0.7", "start": Date.UTC(2013, 2, 2), "end": Date.UTC(2013, 2, 15)},
-        {"id": "1_2", "start": Date.UTC(2013, 2, 20), "end": Date.UTC(2013, 3, 1)}
+{"id": "1_1", "fill": "blue 0.7", "stroke": "none", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 25)},
+{"id": "1_2", "fill": "red 0.7", "stroke": "black 0.7", "start": Date.UTC(2013, 2, 2), "end": Date.UTC(2013, 2, 15)},
+{"id": "1_2", "start": Date.UTC(2013, 2, 20), "end": Date.UTC(2013, 3, 1)}
       ]
     },
     {
@@ -58,8 +71,8 @@ function getData() {
       "name": "Server 2",
       "parent": "404",
       "periods": [
-        {"id": "2_1", "fill": "none", "stroke": {"color": "green"}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
-        {"id": "2_2" , "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
+{"id": "2_1", "fill": "none", "stroke": {"color": "green"}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
+{"id": "2_2" , "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
       ]
     },
     {
@@ -67,14 +80,12 @@ function getData() {
       "name": "Server 3",
       "parent": "409",
       "periods": [
-        {"id": "3_1", "start": Date.UTC(2013, 2, 10), "end": Date.UTC(2013, 2, 22)},
-        {"id": "3_2", "fill": {"angle": 0, "keys": [{"color": "blue", "position": 0}, {"color": "red", "position": 0.5}, {"color": "#689663", "position": 1}]}, "stroke": "black 0.7", "start": Date.UTC(2013, 2, 25), "end": Date.UTC(2013, 3, 5)}
+{"id": "3_1", "start": Date.UTC(2013, 2, 10), "end": Date.UTC(2013, 2, 22)},
+{"id": "3_2", "fill": {"angle": 0, "keys": [{"color": "blue", "position": 0}, {"color": "red", "position": 0.5}, {"color": "#689663", "position": 1}]}, "stroke": "black 0.7", "start": Date.UTC(2013, 2, 25), "end": Date.UTC(2013, 3, 5)}
       ]
     }
   ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

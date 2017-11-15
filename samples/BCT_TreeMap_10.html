@@ -1,34 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-
+    <meta name="ac:name" content="BCT TreeMap 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
-        }
-
-        #container {
-            width: 500px;
-            height: 500px;
-            float: left
-        }
-
-        #controls {
-            margin: 5px;
-            float: left
+            padding: 0;
         }
     </style>
 </head>
 <body>
-<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script x-export="chart">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
-    chart = anychart.treeMap();
+    var chart = anychart.treeMap();
 
     // tooltips settings
     chart.tooltip(true);
@@ -40,136 +34,136 @@
     chart.labels().format("{%name}");
 
     var data = [
-        {name: "Europe", id: "Europe", parent: null},
-        {name: "Eastern Europe", id: "Eastern Europe", parent: "Europe"},
-        {name: "Western Europe", id: "Western Europe", parent: "Europe"},
-        {name: "Southern Europe", id: "Southern Europe", parent: "Europe"},
-        {name: "Northern Europe", id: "Northern Europe", parent: "Europe"},
-        {name: "Poland", id: "Poland", parent: "Eastern Europe"},
-        {name: "Vehicles", id: "vehicles_pl", parent: "Poland"},
-        {name: "Tractors", id: "tractors_pl", parent: "vehicles_pl", value: 0.458},
-        {name: "Cars", id: "cars_pl", parent: "vehicles_pl", value: 5.01},                        
-        {name: "Parts and accessories of the motor vehicles", id: "parts_acc_pl", parent: "vehicles_pl", value: 7.94},
-        {name: "Motor vehicles for transporting goods", id: "motor_vehicles_pl", parent: "vehicles_pl", value: 1.2},
-        {name: "Food", id: "food_pl", parent: "Poland"},
-        {name: "Cigars", id: "cigars_pl", parent: "food_pl", value: 2.38},                        
-        {name: "Cocoa powder, sweetened", id: "cocoa_powder_pl", parent: "food_pl", value: 1.07},
-        {name: "Poultry", id: "poultry_pl", parent: "food_pl", value: 1.1},                        
-        {name: "Swine meat", id: "swine_meat_pl", parent: "food_pl", value: 0.89}, 
-        {name: "Furniture", id: "furniture_pl", parent: "Poland"},
-        {name: "Seats", id: "seats_pl", parent: "furniture_pl", value: 3.8},                        
-        {name: "Other furniture and parts thereof", id: "other_furniture_pl", parent: "furniture_pl", value: 3.14},                        
-        {name: "Mattress supports; articles of bedding", id: "bedding_articles_pl", parent: "furniture_pl", value: 0.916},
+{name: "Europe", id: "Europe", parent: null},
+{name: "Eastern Europe", id: "Eastern Europe", parent: "Europe"},
+{name: "Western Europe", id: "Western Europe", parent: "Europe"},
+{name: "Southern Europe", id: "Southern Europe", parent: "Europe"},
+{name: "Northern Europe", id: "Northern Europe", parent: "Europe"},
+{name: "Poland", id: "Poland", parent: "Eastern Europe"},
+{name: "Vehicles", id: "vehicles_pl", parent: "Poland"},
+{name: "Tractors", id: "tractors_pl", parent: "vehicles_pl", value: 0.458},
+{name: "Cars", id: "cars_pl", parent: "vehicles_pl", value: 5.01},                        
+{name: "Parts and accessories of the motor vehicles", id: "parts_acc_pl", parent: "vehicles_pl", value: 7.94},
+{name: "Motor vehicles for transporting goods", id: "motor_vehicles_pl", parent: "vehicles_pl", value: 1.2},
+{name: "Food", id: "food_pl", parent: "Poland"},
+{name: "Cigars", id: "cigars_pl", parent: "food_pl", value: 2.38},                        
+{name: "Cocoa powder, sweetened", id: "cocoa_powder_pl", parent: "food_pl", value: 1.07},
+{name: "Poultry", id: "poultry_pl", parent: "food_pl", value: 1.1},                        
+{name: "Swine meat", id: "swine_meat_pl", parent: "food_pl", value: 0.89}, 
+{name: "Furniture", id: "furniture_pl", parent: "Poland"},
+{name: "Seats", id: "seats_pl", parent: "furniture_pl", value: 3.8},                        
+{name: "Other furniture and parts thereof", id: "other_furniture_pl", parent: "furniture_pl", value: 3.14},                        
+{name: "Mattress supports; articles of bedding", id: "bedding_articles_pl", parent: "furniture_pl", value: 0.916},
 
-        {name: 'Ukraine', id: "Ukraine", parent: 'Eastern Europe'},
-        {name: "Food", id: "food_ua", parent: "Ukraine"},
-        {name: "Maize (corn) seed", id: "maize_seed_ua", parent: "food_ua", value: 4.11}, 
-        {name: "Wheat and meslin", id: "wheat_meslin_ua", parent: "food_ua", value: 2.31},
-        {name: "Sunflower-seed or sunflower oil, crude", id: "sunflower_prod_ua", parent: "food_ua", value: 3.79},  
-        {name: "Petroleum", id: "petroleum_ua", parent: "Ukraine"},
-        {name: "Iron ores and concentrates", id: "iron_ores_ua", parent: "petroleum_ua", value: 4.37},
-        {name: "Petroleum oils, refined", id: "petr_oils_ua", parent: "petroleum_ua", value: 2.27},    
-        {name: "Steel", id: "steel_ua", parent: "Ukraine"},
-        {name: "Semifinished products of iron or non-alloy steel", id: "semifinished_iron_ua", parent: "steel_ua", value: 6.75},                        
-        {name: "Hot rolled iron or non-alloy steel", id: "hot_rolled_iron_ua", parent: "steel_ua", value: 3.28},                        
-        {name: "Other bars and rods of iron or non-alloy steel", id: "other_iron_ua", parent: "steel_ua", value: 1.61},  
+{name: 'Ukraine', id: "Ukraine", parent: 'Eastern Europe'},
+{name: "Food", id: "food_ua", parent: "Ukraine"},
+{name: "Maize (corn) seed", id: "maize_seed_ua", parent: "food_ua", value: 4.11}, 
+{name: "Wheat and meslin", id: "wheat_meslin_ua", parent: "food_ua", value: 2.31},
+{name: "Sunflower-seed or sunflower oil, crude", id: "sunflower_prod_ua", parent: "food_ua", value: 3.79},  
+{name: "Petroleum", id: "petroleum_ua", parent: "Ukraine"},
+{name: "Iron ores and concentrates", id: "iron_ores_ua", parent: "petroleum_ua", value: 4.37},
+{name: "Petroleum oils, refined", id: "petr_oils_ua", parent: "petroleum_ua", value: 2.27},    
+{name: "Steel", id: "steel_ua", parent: "Ukraine"},
+{name: "Semifinished products of iron or non-alloy steel", id: "semifinished_iron_ua", parent: "steel_ua", value: 6.75},                        
+{name: "Hot rolled iron or non-alloy steel", id: "hot_rolled_iron_ua", parent: "steel_ua", value: 3.28},                        
+{name: "Other bars and rods of iron or non-alloy steel", id: "other_iron_ua", parent: "steel_ua", value: 1.61},  
 
-        {name: "Germany", id: 'Germany', parent: 'Western Europe'},
-        {name: "Food", id: "food_de", parent: "Germany"},
-        {name: "Swine meat", id: "swine_de", parent: "food_de", value: 4.52},                        
-        {name: "Fresh cheese", id: "cheese_de", parent: "food_de", value: 4.2},                        
-        {name: "Coffee, not roasted", id: "coffee_de", parent: "food_de", value: 1.89},
-        {name: "Bread, pastry, cakes, biscuits and other baked goods", id: "bakery_de", parent: "food_de", value: 3.64},
-        {name: "Medical", id: "medical_de", parent: "Germany"},
-        {name: "Blood for therapeutic uses", id: "blood_de", parent: "medical_de", value: 13.6},
-        {name: "Packaged medicaments", id: "packaged_medicaments_de", parent: "medical_de", value: 49.5},
-        {name: "Industrial monocarboxylic fatty acids, etc.", id: "fatty_acids_de", parent: "medical_de", value: 5.95},
-        {name: "Vehicles", id: "vehicles_de", parent: "Germany"},
-        {name: "Aircraft, spacecraft & launch vehicles", id: "air_vehicles_de", parent: "vehicles_de", value: 26.2},                        
-        {name: "Cars", id: "cars_de", parent: "vehicles_de", value: 141},                        
-        {name: "Parts and accessories of the motor vehicles", id: "parts_acc_de", parent: "vehicles_de", value: 53.7},
-        {name: "Motor vehicles for transporting goods", id: "motor_vehicles_de", parent: "vehicles_de", value: 11.9},
+{name: "Germany", id: 'Germany', parent: 'Western Europe'},
+{name: "Food", id: "food_de", parent: "Germany"},
+{name: "Swine meat", id: "swine_de", parent: "food_de", value: 4.52},                        
+{name: "Fresh cheese", id: "cheese_de", parent: "food_de", value: 4.2},                        
+{name: "Coffee, not roasted", id: "coffee_de", parent: "food_de", value: 1.89},
+{name: "Bread, pastry, cakes, biscuits and other baked goods", id: "bakery_de", parent: "food_de", value: 3.64},
+{name: "Medical", id: "medical_de", parent: "Germany"},
+{name: "Blood for therapeutic uses", id: "blood_de", parent: "medical_de", value: 13.6},
+{name: "Packaged medicaments", id: "packaged_medicaments_de", parent: "medical_de", value: 49.5},
+{name: "Industrial monocarboxylic fatty acids, etc.", id: "fatty_acids_de", parent: "medical_de", value: 5.95},
+{name: "Vehicles", id: "vehicles_de", parent: "Germany"},
+{name: "Aircraft, spacecraft & launch vehicles", id: "air_vehicles_de", parent: "vehicles_de", value: 26.2},                        
+{name: "Cars", id: "cars_de", parent: "vehicles_de", value: 141},                        
+{name: "Parts and accessories of the motor vehicles", id: "parts_acc_de", parent: "vehicles_de", value: 53.7},
+{name: "Motor vehicles for transporting goods", id: "motor_vehicles_de", parent: "vehicles_de", value: 11.9},
 
-        {name: "France", id: "France", parent: 'Western Europe'},
-        {name: "Medical", id: "medical_fr", parent: "France"},
-        {name: "Blood for therapeutic uses", id: "blood_fr", parent: "medical_fr", value: 5.22},
-        {name: "Packaged medicaments", id: "packaged_medicaments_fr", parent: "medical_fr", value: 26.8},
-        {name: "Make-up products",id: "makeup_fr", parent: "medical_fr", value: 6.6},
-        {name: "Vehicles", id: "vehicles_fr", parent: "France"},
-        {name: "Aircraft, spacecraft & launch vehicles", id: "air_vehicles_fr", parent: "vehicles_fr", value: 38.4},
-        {name: "Cars", id: "cars_fr", parent: "vehicles_fr", value: 23.4},                        
-        {name: "Parts and accessories of the motor vehicles", id: "parts_acc_fr", parent: "vehicles_fr", value: 19},
-        {name: "Food", id: "food_fr", parent: "France"},
-        {name: "Wine of fresh grapes", id: "wine_fr", parent: "food_fr", value: 10.4},
-        {name: "Fresh cheese", id: "cheese_fr", parent: "food_fr", value: 3.56},                        
-        {name: "Wheat and meslin, virgin", id: "wheat_meslin_fr", parent: "food_fr", value: 4.93},
-        {name: "Maize (corn) seed", id: "maize_seed_fr", parent: "food_fr", value: 2.16},
+{name: "France", id: "France", parent: 'Western Europe'},
+{name: "Medical", id: "medical_fr", parent: "France"},
+{name: "Blood for therapeutic uses", id: "blood_fr", parent: "medical_fr", value: 5.22},
+{name: "Packaged medicaments", id: "packaged_medicaments_fr", parent: "medical_fr", value: 26.8},
+{name: "Make-up products",id: "makeup_fr", parent: "medical_fr", value: 6.6},
+{name: "Vehicles", id: "vehicles_fr", parent: "France"},
+{name: "Aircraft, spacecraft & launch vehicles", id: "air_vehicles_fr", parent: "vehicles_fr", value: 38.4},
+{name: "Cars", id: "cars_fr", parent: "vehicles_fr", value: 23.4},                        
+{name: "Parts and accessories of the motor vehicles", id: "parts_acc_fr", parent: "vehicles_fr", value: 19},
+{name: "Food", id: "food_fr", parent: "France"},
+{name: "Wine of fresh grapes", id: "wine_fr", parent: "food_fr", value: 10.4},
+{name: "Fresh cheese", id: "cheese_fr", parent: "food_fr", value: 3.56},                        
+{name: "Wheat and meslin, virgin", id: "wheat_meslin_fr", parent: "food_fr", value: 4.93},
+{name: "Maize (corn) seed", id: "maize_seed_fr", parent: "food_fr", value: 2.16},
 
-        {name: "Greece", id: "Greece", parent: 'Southern Europe'},
-        {name: "Petroleum", id: "petroleum_gr", parent: "Greece"},
-        {name: "Petroleum oils, refined", id: "petr_oils_gr", parent: "petroleum_gr", value: 8.92},
-        {name: "Petroleum gases", id: "petr_gases_gr", parent: "petroleum_gr", value: 1.08},
-        {name: "Food", id: "food_gr", parent: "Greece"},
-        {name: "Fruit, nuts and edible plants preserved with sugar", id: "sugar_plants_gr", parent: "food_gr", value: 0.403},                        
-        {name: "Apricots", id: "apricots_gr", parent: "food_gr", value: 0.229},                        
-        {name: "Olive oil, virgin", id: "olive_oil_gr", parent: "food_gr", value: 0.410},
-        {name: "Fish", id: "fish_gr", parent: "food_gr", value: 0.544},
+{name: "Greece", id: "Greece", parent: 'Southern Europe'},
+{name: "Petroleum", id: "petroleum_gr", parent: "Greece"},
+{name: "Petroleum oils, refined", id: "petr_oils_gr", parent: "petroleum_gr", value: 8.92},
+{name: "Petroleum gases", id: "petr_gases_gr", parent: "petroleum_gr", value: 1.08},
+{name: "Food", id: "food_gr", parent: "Greece"},
+{name: "Fruit, nuts and edible plants preserved with sugar", id: "sugar_plants_gr", parent: "food_gr", value: 0.403},                        
+{name: "Apricots", id: "apricots_gr", parent: "food_gr", value: 0.229},                        
+{name: "Olive oil, virgin", id: "olive_oil_gr", parent: "food_gr", value: 0.410},
+{name: "Fish", id: "fish_gr", parent: "food_gr", value: 0.544},
 
-        {name: "Italy", id: "Italy", parent: 'Southern Europe'},
-        {name: "Petroleum", id: "petroleum_it", parent: "Italy"},
-        {name: "Petroleum oils, refined", id: "petr_oils_it", parent: "petroleum_it", value: 23.2},
-        {name: "Petroleum gases", id: "petr_gases_it", parent: "petroleum_it", value: 1.08},
-        {name: "Medical", id: "medical_it", parent: "Italy"},
-        {name: "Blood for therapeutic uses", id: "blood_it", parent: "medical_it", value: 2.51},
-        {name: "Packages medicaments", id: "packaged_medicaments_it", parent: "medical_it", value: 20.7},
-        {name: "Make-up products", id: "makeup_it", parent: "medical_it", value: 1.47},
-        {name: "Vehicles", id: "vehicles_it", parent: "Italy"},
-        {name: "Parts and accessories of the motor vehicles", id: "parts_acc_it", parent: "vehicles_it", value: 11.8},                        
-        {name: "Cars", id: "cars_it", parent: "vehicles_it", value: 9.7},                        
-        {name: "Motor vehicles for transporting goods", id: "motor_vehicles_it", parent: "vehicles_it", value: 4.32},
-        {name: "Food", id: "food_it", parent: "Italy"},
-        {name: "Fresh cheese", id: "cheese_it", parent: "food_it", value: 2.34},                        
-        {name: "Apples", id: "apples_it", parent: "food_it", value: 1.07},                        
-        {name: "Pasta", id: "pasta_it", parent: "food_it", value: 2.53},                        
-        {name: "Wine of fresh grapes", id: "wine_it", parent: "food_it", value: 6},
+{name: "Italy", id: "Italy", parent: 'Southern Europe'},
+{name: "Petroleum", id: "petroleum_it", parent: "Italy"},
+{name: "Petroleum oils, refined", id: "petr_oils_it", parent: "petroleum_it", value: 23.2},
+{name: "Petroleum gases", id: "petr_gases_it", parent: "petroleum_it", value: 1.08},
+{name: "Medical", id: "medical_it", parent: "Italy"},
+{name: "Blood for therapeutic uses", id: "blood_it", parent: "medical_it", value: 2.51},
+{name: "Packages medicaments", id: "packaged_medicaments_it", parent: "medical_it", value: 20.7},
+{name: "Make-up products", id: "makeup_it", parent: "medical_it", value: 1.47},
+{name: "Vehicles", id: "vehicles_it", parent: "Italy"},
+{name: "Parts and accessories of the motor vehicles", id: "parts_acc_it", parent: "vehicles_it", value: 11.8},                        
+{name: "Cars", id: "cars_it", parent: "vehicles_it", value: 9.7},                        
+{name: "Motor vehicles for transporting goods", id: "motor_vehicles_it", parent: "vehicles_it", value: 4.32},
+{name: "Food", id: "food_it", parent: "Italy"},
+{name: "Fresh cheese", id: "cheese_it", parent: "food_it", value: 2.34},                        
+{name: "Apples", id: "apples_it", parent: "food_it", value: 1.07},                        
+{name: "Pasta", id: "pasta_it", parent: "food_it", value: 2.53},                        
+{name: "Wine of fresh grapes", id: "wine_it", parent: "food_it", value: 6},
 
-        {name: "Finland", id: "Finland", parent: 'Northern Europe'},     
-        {name: "Paper", id: "paper_fin", parent: "Finland"},
-        {name: "Paper and paperboard, coated on one or both sides with kaolin", id: "paper_coated_kaolin_fin", parent: "paper_fin", value: 5.33},
-        {name: "Paper, uncoated, for writing etc, rolls, handmade paper", id: "paper_uncoated_fin", parent: "paper_fin", value: 1.99},
-        {name: "Petroleum", id: "petroleum_fin", parent: "Finland"},
-        {name: "Petroleum oils, refined", id: "petr_oils_fin", parent: "petroleum_fin", value: 7.29},
-        {name: "Iron ores and concentrates", id: "iron_ores_fin", parent: "petroleum_fin", value: 0.145},
-        {name: "Petroleum gases", id: "petr_gases_fin", parent: "petroleum_fin", value: 5.6},
-        {name: "Machinery", id: "machinery_fin", parent: "Finland"},
-        {name: "Electrical transformers", id: "electrical_tranformers_fin", parent: "machinery_fin", value: 1.29},
-        {name: "Transmission apparatus for radio, TV, telephone", id: "transmission_fin", parent: "machinery_fin", value: 0.845},
-        {name: "Telephones", id: "telephones_fin", parent: "machinery_fin", value: 1.23},
+{name: "Finland", id: "Finland", parent: 'Northern Europe'},     
+{name: "Paper", id: "paper_fin", parent: "Finland"},
+{name: "Paper and paperboard, coated on one or both sides with kaolin", id: "paper_coated_kaolin_fin", parent: "paper_fin", value: 5.33},
+{name: "Paper, uncoated, for writing etc, rolls, handmade paper", id: "paper_uncoated_fin", parent: "paper_fin", value: 1.99},
+{name: "Petroleum", id: "petroleum_fin", parent: "Finland"},
+{name: "Petroleum oils, refined", id: "petr_oils_fin", parent: "petroleum_fin", value: 7.29},
+{name: "Iron ores and concentrates", id: "iron_ores_fin", parent: "petroleum_fin", value: 0.145},
+{name: "Petroleum gases", id: "petr_gases_fin", parent: "petroleum_fin", value: 5.6},
+{name: "Machinery", id: "machinery_fin", parent: "Finland"},
+{name: "Electrical transformers", id: "electrical_tranformers_fin", parent: "machinery_fin", value: 1.29},
+{name: "Transmission apparatus for radio, TV, telephone", id: "transmission_fin", parent: "machinery_fin", value: 0.845},
+{name: "Telephones", id: "telephones_fin", parent: "machinery_fin", value: 1.23},
 
-        {name: "Great Britain", id: "Great Britain", parent: 'Northern Europe', value: 409},
-        {name: "Medical", id: "medical_gb", parent: "Great Britain"},
-        {name: "Blood for therapeutic uses", id: "blood_gb", parent: "medical_gb", value: 3.19},
-        {name: "Packaged medicaments", id: "packaged_medicaments_gb", parent: "medical_gb", value: 20.3},
-        {name: "Antibiotics", id: "antibiotics_gb", parent: "medical_gb", value: 0.268},
-        {name: "Machinery", id: "machinery_gb", parent: "Great Britain"},
-        {name: "Turbo jets and other gas turbines", id: "gas_turbines_gb", parent: "machinery_gb", value: 11.3},                        
-        {name: "Parts for use in excavation machinery", id: "parts_for_excavation_gb", parent: "machinery_gb", value: 2.72},
-        {name: "Automated data processing machines", id: "automated_data_proc_machinery_gb", parent: "machinery_gb", value: 3.67},                 
-        {name: "Telephones", id: "telephone", parent: "machinery_gb", value: 3.47},
-        {name: "Petroleum", id: "petroleum_gb", parent: "Great Britain"},
-        {name: "Petroleum oils, refined", id: "petr_oils_ref_gb", parent: "petroleum_gb", value: 31.2},
-        {name: "Petroleum oils, crude", id: "petr_oils_crude_gb", parent: "petroleum_gb", value: 25.7},
-        {name: "Petroleum gases", id: "petr_gases_gb", parent: "petroleum_gb", value: 5.6},
-        
-        {name: "Ireland", id: "Ireland", parent: 'Northern Europe'},
-        {name: "Medical", id: "medical_irl", parent: "Ireland"},
-        {name: "Instruments (surgery, vet, dental)", id: "instruments_med_irl", parent: "medical_irl", value: 4.05},
-        {name: "Packaged medicaments", id: "packaged_medicaments_irl", parent: "medical_irl", value: 20.1},
-        {name: "Antibiotics", id: "antibiotics_irl", parent: "medical_irl", value: 0.817},
-        {name: "Machinery", id: "machinery_irl", parent: "Ireland"},
-        {name: "Automated data processing machines", id: "automated_data_proc_machinery_irl", parent: "machinery_irl", value: 5.21},
-        {name: "Transmission apparatus for radio, TV, telephone", id: "transmission_irl", parent: "machinery_irl", value: 1.86},
-        {name: "Printers and copying machines", id: "printers_irl", parent: "machinery_irl", value: 1.17}
+{name: "Great Britain", id: "Great Britain", parent: 'Northern Europe', value: 409},
+{name: "Medical", id: "medical_gb", parent: "Great Britain"},
+{name: "Blood for therapeutic uses", id: "blood_gb", parent: "medical_gb", value: 3.19},
+{name: "Packaged medicaments", id: "packaged_medicaments_gb", parent: "medical_gb", value: 20.3},
+{name: "Antibiotics", id: "antibiotics_gb", parent: "medical_gb", value: 0.268},
+{name: "Machinery", id: "machinery_gb", parent: "Great Britain"},
+{name: "Turbo jets and other gas turbines", id: "gas_turbines_gb", parent: "machinery_gb", value: 11.3},                        
+{name: "Parts for use in excavation machinery", id: "parts_for_excavation_gb", parent: "machinery_gb", value: 2.72},
+{name: "Automated data processing machines", id: "automated_data_proc_machinery_gb", parent: "machinery_gb", value: 3.67},                 
+{name: "Telephones", id: "telephone", parent: "machinery_gb", value: 3.47},
+{name: "Petroleum", id: "petroleum_gb", parent: "Great Britain"},
+{name: "Petroleum oils, refined", id: "petr_oils_ref_gb", parent: "petroleum_gb", value: 31.2},
+{name: "Petroleum oils, crude", id: "petr_oils_crude_gb", parent: "petroleum_gb", value: 25.7},
+{name: "Petroleum gases", id: "petr_gases_gb", parent: "petroleum_gb", value: 5.6},
+
+{name: "Ireland", id: "Ireland", parent: 'Northern Europe'},
+{name: "Medical", id: "medical_irl", parent: "Ireland"},
+{name: "Instruments (surgery, vet, dental)", id: "instruments_med_irl", parent: "medical_irl", value: 4.05},
+{name: "Packaged medicaments", id: "packaged_medicaments_irl", parent: "medical_irl", value: 20.1},
+{name: "Antibiotics", id: "antibiotics_irl", parent: "medical_irl", value: 0.817},
+{name: "Machinery", id: "machinery_irl", parent: "Ireland"},
+{name: "Automated data processing machines", id: "automated_data_proc_machinery_irl", parent: "machinery_irl", value: 5.21},
+{name: "Transmission apparatus for radio, TV, telephone", id: "transmission_irl", parent: "machinery_irl", value: 1.86},
+{name: "Printers and copying machines", id: "printers_irl", parent: "machinery_irl", value: 1.17}
     ];
 
     // set data
@@ -180,6 +174,5 @@
     chart.draw();
 });
 </script>
-
 </body>
 </html>

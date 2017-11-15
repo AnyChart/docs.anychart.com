@@ -1,71 +1,83 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Area 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // set the data
     table = anychart.data.table('x');
     table.addData([
-        {x:'1790-01-01', value:3},
-        {x:'1795-01-01', value:4},
-        {x:'1800-01-01', value:5},
-        {x:'1805-01-01', value:5},
-        {x:'1810-01-01', value:7},
-        {x:'1815-01-01', value:8},
-        {x:'1820-01-01', value:9},
-        {x:'1825-01-01', value:10},
-        {x:'1830-01-01', value:12},
-        {x:'1835-01-01', value:15},
-        {x:'1840-01-01', value:17},
-        {x:'1845-01-01', value:19},
-        {x:'1850-01-01', value:23},
-        {x:'1855-01-01', value:28},
-        {x:'1860-01-01', value:31},
-        {x:'1865-01-01', value:34},
-        {x:'1870-01-01', value:38},
-        {x:'1875-01-01', value:44},
-        {x:'1880-01-01', value:49},
-        {x:'1885-01-01', value:53},
-        {x:'1890-01-01', value:62},
-        {x:'1895-01-01', value:71},
-        {x:'1900-01-01', value:76},
-        {x:'1905-01-01', value:85},
-        {x:'1910-01-01', value:92},
-        {x:'1915-01-01', value:100},
-        {x:'1920-01-01', value:106},
-        {x:'1925-01-01', value:118},
-        {x:'1930-01-01', value:123},
-        {x:'1935-01-01', value:126},
-        {x:'1940-01-01', value:132},
-        {x:'1945-01-01', value:144},
-        {x:'1950-01-01', value:151},
-        {x:'1955-01-01', value:160},
-        {x:'1960-01-01', value:179},
-        {x:'1965-01-01', value:188},
-        {x:'1970-01-01', value:203},
-        {x:'1975-01-01', value:215},
-        {x:'1980-01-01', value:226},
-        {x:'1985-01-01', value:239},
-        {x:'1990-01-01', value:248},
-        {x:'1995-01-01', value:272},
-        {x:'2000-01-01', value:281},
-        {x:'2005-01-01', value:299},
-        {x:'2010-01-01', value:308},
-        {x:'2015-01-01', value:318}
+{x:'1790-01-01', value:3},
+{x:'1795-01-01', value:4},
+{x:'1800-01-01', value:5},
+{x:'1805-01-01', value:5},
+{x:'1810-01-01', value:7},
+{x:'1815-01-01', value:8},
+{x:'1820-01-01', value:9},
+{x:'1825-01-01', value:10},
+{x:'1830-01-01', value:12},
+{x:'1835-01-01', value:15},
+{x:'1840-01-01', value:17},
+{x:'1845-01-01', value:19},
+{x:'1850-01-01', value:23},
+{x:'1855-01-01', value:28},
+{x:'1860-01-01', value:31},
+{x:'1865-01-01', value:34},
+{x:'1870-01-01', value:38},
+{x:'1875-01-01', value:44},
+{x:'1880-01-01', value:49},
+{x:'1885-01-01', value:53},
+{x:'1890-01-01', value:62},
+{x:'1895-01-01', value:71},
+{x:'1900-01-01', value:76},
+{x:'1905-01-01', value:85},
+{x:'1910-01-01', value:92},
+{x:'1915-01-01', value:100},
+{x:'1920-01-01', value:106},
+{x:'1925-01-01', value:118},
+{x:'1930-01-01', value:123},
+{x:'1935-01-01', value:126},
+{x:'1940-01-01', value:132},
+{x:'1945-01-01', value:144},
+{x:'1950-01-01', value:151},
+{x:'1955-01-01', value:160},
+{x:'1960-01-01', value:179},
+{x:'1965-01-01', value:188},
+{x:'1970-01-01', value:203},
+{x:'1975-01-01', value:215},
+{x:'1980-01-01', value:226},
+{x:'1985-01-01', value:239},
+{x:'1990-01-01', value:248},
+{x:'1995-01-01', value:272},
+{x:'2000-01-01', value:281},
+{x:'2005-01-01', value:299},
+{x:'2010-01-01', value:308},
+{x:'2015-01-01', value:318}
     ]);
       
     // map the data
     mapping = table.mapAs({x:'x', value:'value'});
 
     // chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series
     var series = chart.plot(0).area(mapping);
@@ -77,8 +89,5 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

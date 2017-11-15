@@ -1,72 +1,82 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['ohlc' 'stock']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-        // The data that used in this sample obtained from the CDN
-        // https://cdn.anychart.com/csv-data/csco-daily.js
-
-        // create data table on loaded data
-        var dataTable = anychart.data.table();
-        dataTable.addData(get_csco_daily_data());
-
-        // map loaded data
-        var mapping = dataTable.mapAs({'value': 4});
-
-        // create stock chart
-        chart = anychart.stock();
-
-        // create plot on the chart
-        var plot = chart.plot(0);
-
-        // create line series
-        var lineSeries = plot.line(mapping);
-        lineSeries.name('CSCO');
-        lineSeries.stroke('2px #64b5f6');
-
-        // create computer
-        var computer = dataTable.createComputer(mapping);
-
-        // set computer output field
-        computer.addOutputField('myValue', 'myColumn');
-
-        // set calculation function to produce values with random increment
-        computer.setCalculationFunction(function(row) {
-            var value = row.get('value');
-            var myValue = value + Math.floor((Math.random() * 100) + 1);
-            row.set('myValue', myValue);
-        });
-
-        // map computed column 'myColumn' as value
-        var computedMapping = dataTable.mapAs({'value': 'myColumn'});
-
-        // create line series with mapping
-        var computedLine = plot.line(computedMapping);
-        computedLine.name('Custom Indicator');
-        computedLine.stroke('#ffa000 0.6');
-
-        // set Y Axis settings
-        var yAxis = plot.yAxis();
-        yAxis.orientation('right');
-
-        // create scroller series with mapped data
-        chart.scroller().line(mapping);
-
-        // set container id for the chart
-        chart.container('container');
-
-        // initiate chart drawing
-        chart.draw();
-    });
-    </script>
+    <meta name="ac:name" content="STOCK Technical Indicators Custom Indicator"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+// The data that used in this sample obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({'value': 4});
+
+// create stock chart
+var chart = anychart.stock();
+
+// create plot on the chart
+var plot = chart.plot(0);
+
+// create line series
+var lineSeries = plot.line(mapping);
+lineSeries.name('CSCO');
+lineSeries.stroke('2px #64b5f6');
+
+// create computer
+var computer = dataTable.createComputer(mapping);
+
+// set computer output field
+computer.addOutputField('myValue', 'myColumn');
+
+// set calculation function to produce values with random increment
+computer.setCalculationFunction(function(row) {
+    var value = row.get('value');
+    var myValue = value + Math.floor((Math.random() * 100) + 1);
+    row.set('myValue', myValue);
+});
+
+// map computed column 'myColumn' as value
+var computedMapping = dataTable.mapAs({'value': 'myColumn'});
+
+// create line series with mapping
+var computedLine = plot.line(computedMapping);
+computedLine.name('Custom Indicator');
+computedLine.stroke('#ffa000 0.6');
+
+// set Y Axis settings
+var yAxis = plot.yAxis();
+yAxis.orientation('right');
+
+// create scroller series with mapped data
+chart.scroller().line(mapping);
+
+// set container id for the chart
+chart.container('container');
+
+// initiate chart drawing
+chart.draw();
+    });
+</script>
 </body>
 </html>

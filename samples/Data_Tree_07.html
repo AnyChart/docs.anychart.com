@@ -1,19 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Data Tree 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.1/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.1/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create stage to put sort buttons along the chart
     stage = anychart.graphics.create("container");
 
     // create treemap
-    chart = anychart.treeMap();
+    var chart = anychart.treeMap();
     
     // setting the maximum levels depth
     chart.maxDepth(4);
@@ -25,35 +38,35 @@
     nextOne = createLabel("Get next node and drill to it", 10, function() {
       // try to go to the next node in a tree
       if (traverser.advance()) {
-        // if successuful - get current node as a data item instance
-        var dataItem = traverser.current();
-        // drill down to this item
-        chart.drillTo(dataItem);
-              } 
-              else
-              {
-        // if we can't advance any more - reset the traverser
-        traverser.reset();
-              }
+// if successuful - get current node as a data item instance
+var dataItem = traverser.current();
+// drill down to this item
+chart.drillTo(dataItem);
+      } 
+      else
+      {
+// if we can't advance any more - reset the traverser
+traverser.reset();
+      }
     });    
  
     // data
     var rawData = [
     {name: 'Eurasia',
     children:[
-        {name: "Asia", children:[
-            {name: "Eastern Asia", value: "7"},
-            {name: "Western Asia", value: "19"},
-            {name: "Southern Asia", value: "8"},
-            {name: "South-Eastern Asia", value: "11"},
-            {name: "Central Asia", value: "5"}
-        ]},
-        {name: "Europe", children: [
-            {name: "Eastern Europe", value: "10"},
-            {name: "Western Europe", value: "18"},
-            {name: "Southern Europe", value: "5"},
-            {name: "Northern Europe", value: "10"},                        
-        ]}
+{name: "Asia", children:[
+    {name: "Eastern Asia", value: "7"},
+    {name: "Western Asia", value: "19"},
+    {name: "Southern Asia", value: "8"},
+    {name: "South-Eastern Asia", value: "11"},
+    {name: "Central Asia", value: "5"}
+]},
+{name: "Europe", children: [
+    {name: "Eastern Europe", value: "10"},
+    {name: "Western Europe", value: "18"},
+    {name: "Southern Europe", value: "5"},
+    {name: "Northern Europe", value: "10"},                        
+]}
      ]}];
 
     data =  anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.TREE);
@@ -97,9 +110,7 @@ function createLabel(text, offset, action){
       label.draw();
     });    
     return label;
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>
