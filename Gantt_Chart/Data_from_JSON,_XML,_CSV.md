@@ -115,7 +115,6 @@ for more information). All objects of this schema correspond to JavaScript metho
 AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.3.1 version is located at 
 [https://cdn.anychart.com/schemas/7.3.1/json-schema.json](https://cdn.anychart.com/schemas/7.3.1/json-schema.json).
 
-
 ## XML
 
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing,  XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere.  More information on XML can be found on [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)
