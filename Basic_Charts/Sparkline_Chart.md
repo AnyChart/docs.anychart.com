@@ -382,7 +382,7 @@ That's how it looks like on the board:
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 You may notice that other points are now in one color. We've colored them in one low-opacity color to make the special points of the data more noticeable.
 
-You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLables}maxLabels(){api} and {api:anychart.charts.Sparkline#minLables}minLabels(){api} methods:
+You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLabels}maxLabels(){api} and {api:anychart.charts.Sparkline#minLabels}minLabels(){api} methods:
 
 ```
 chart1.maxLabels().enabled(true);
@@ -491,4 +491,3 @@ table.container('container').draw();
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}
-

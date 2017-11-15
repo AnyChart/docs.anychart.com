@@ -81,7 +81,3 @@ var data = [
 It was a simple demonstration of this feature, we've created the sample below to illustrate more opportunities:
 
 {sample :width 690 :height 450}Settings\_From\_Data\_04{sample}
-
-## Supported Functionality
-
-In this way you can configure all main series settings like {api:anychart.core.cartesian.series.Base#labels}labels(){api}, {api:anychart.core.polar.series.Marker#fill}fill(){api}, {api:anychart.core.polar.series.Marker#stroke}stroke(){api}, {api:anychart.core.cartesian.series.Line#markers}markers(){api}.
