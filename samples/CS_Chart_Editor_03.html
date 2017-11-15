@@ -1,16 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css" data-export="true">        
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="CS Chart Editor 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.12.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.12.0/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.anychart.com/fonts/{{fonts-version}}/anychart.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   // sample data set
   data = [
     ['Category A', 12814, 3054, 4376, 4229],
@@ -65,9 +78,7 @@ function createLabel(text, offset, action) {
     customLabel.padding(5);
     customLabel.container(stage);
     customLabel.draw();
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

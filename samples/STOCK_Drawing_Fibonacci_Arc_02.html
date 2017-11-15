@@ -1,14 +1,27 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Drawing Fibonacci Arc 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.12.0/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.12.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
    
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -20,7 +33,7 @@
     var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // create a plot on the chart
     var plot = chart.plot(0);
@@ -34,11 +47,11 @@
 
     // create a Fibonacci Arc annotation
     controller.fibonacciArc({
-        xAnchor: "2006-07-30",
-        valueAnchor: 17.24,
-        secondXAnchor: "2007-01-07",
-        secondValueAnchor: 28.92,
-        levels: [0, 0.2, 0.4, 0.7, 1]
+xAnchor: "2006-07-30",
+valueAnchor: 17.24,
+secondXAnchor: "2007-01-07",
+secondValueAnchor: 28.92,
+levels: [0, 0.2, 0.4, 0.7, 1]
     });
 
     // set the chart title
@@ -49,9 +62,7 @@
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

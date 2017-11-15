@@ -1,40 +1,53 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    chart = anychart.line();
+    <meta name="ac:name" content="CS Scroller 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.12.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.12.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+    var chart = anychart.line();
 
     var dataSet = anychart.data.set([
-        ["Jan 15", 2094],
-        ["Feb 15", 1865],
-        ["Mar 15", 2051],
-        ["Apr 15", 2301],
-        ["May 15", 1509],
-        ["Jun 15", 1044],
-        ["Jul 15", 1935],
-        ["Aug 15", 2109],
-        ["Sept 15", 2002],
-        ["Oct 15", 1609],
-        ["Nov 15", 1634],
-        ["Dec 15", 2403],
-        ["Jan 16", 2105],
-        ["Feb 16", 2844],
-        ["Mar 16", 2523],
-        ["Apr 16", 2766],
-        ["May 16", 1985],
-        ["Jun 16", 1646],
-        ["Jul 16", 934],
-        ["Aug 16", 1104],
-        ["Sep 16", 1824],
-        ["Oct 16", 1534],
-        ["Nov 16", 1911],
-        ["Dec 16", 2323]
+["Jan 15", 2094],
+["Feb 15", 1865],
+["Mar 15", 2051],
+["Apr 15", 2301],
+["May 15", 1509],
+["Jun 15", 1044],
+["Jul 15", 1935],
+["Aug 15", 2109],
+["Sept 15", 2002],
+["Oct 15", 1609],
+["Nov 15", 1634],
+["Dec 15", 2403],
+["Jan 16", 2105],
+["Feb 16", 2844],
+["Mar 16", 2523],
+["Apr 16", 2766],
+["May 16", 1985],
+["Jun 16", 1646],
+["Jul 16", 934],
+["Aug 16", 1104],
+["Sep 16", 1824],
+["Oct 16", 1534],
+["Nov 16", 1911],
+["Dec 16", 2323]
     ]);
 
     //create series
@@ -58,9 +71,7 @@
 
     chart.container("container");
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

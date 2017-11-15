@@ -1,24 +1,37 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="Maps AD 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.12.0/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.12.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-        {'id': 'AU.WA', 'value': 300, 'capital': 'Perth'},
-        {'id': 'AU.JB', 'value': 230, 'capital': 'Canberra'},
-        {'id': 'AU.NS', 'value': 240, 'capital': 'Sydney'},
-        {'id': 'AU.VI', 'value': 275, 'capital': 'Melbourne'},
-        {'id': 'AU.NT', 'value': 130, 'capital': 'Darwin'},
-        {'id': 'AU.TS', 'value': 190, 'capital': 'Hobart'},
-        {'id': 'AU.CT', 'value': 100, 'capital': 'Canberra'},
-        {'id': 'AU.SA', 'value': 305, 'capital': 'Adelaide'},
-        {'id': 'AU.QL', 'value': 190, 'capital': 'Brisbane'}
+{'id': 'AU.WA', 'value': 300, 'capital': 'Perth'},
+{'id': 'AU.JB', 'value': 230, 'capital': 'Canberra'},
+{'id': 'AU.NS', 'value': 240, 'capital': 'Sydney'},
+{'id': 'AU.VI', 'value': 275, 'capital': 'Melbourne'},
+{'id': 'AU.NT', 'value': 130, 'capital': 'Darwin'},
+{'id': 'AU.TS', 'value': 190, 'capital': 'Hobart'},
+{'id': 'AU.CT', 'value': 100, 'capital': 'Canberra'},
+{'id': 'AU.SA', 'value': 305, 'capital': 'Adelaide'},
+{'id': 'AU.QL', 'value': 190, 'capital': 'Brisbane'}
     ]);
 
     var mapChart = anychart.map();
@@ -34,9 +47,7 @@
     // disable the labels
     series.labels(false);
     mapChart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

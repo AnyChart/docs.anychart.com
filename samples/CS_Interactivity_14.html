@@ -1,71 +1,120 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="this_sample_is_hidden anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="CS Interactivity 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.12.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.12.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-        // set stage
-        stage = anychart.graphics.create("container");
+// set stage
+var stage = anychart.graphics.create("container");
 
-        // data
-        var data = anychart.data.set([
-            ["2000", 10048, 761, 530, 890, 979, 802, 835, 923, 922, 800, 913, 990, 703],
-            ["2001", 10938, 886, 580, 990, 997, 837, 890, 1066, 922, 900, 965, 995, 910],
-            ["2002", 9989, 832, 740, 912, 850, 780, 986, 932, 500, 708, 1235, 938, 546],
-            ["2003", 10226, 904, 912, 914, 899, 868, 803, 1075, 1022, 920, 605, 937, 745],
-            ["2004", 11004, 886, 980, 1090, 812, 850, 992, 986, 1032, 905, 800, 868, 803],
-            ["2005", 10934, 902, 867, 830, 993, 1006, 847, 799, 1141, 902, 934, 785, 928],
-            ["2006", 11275, 1048, 839, 854, 993, 930, 886, 895, 855, 798, 1155, 1023, 999],
-            ["2007", 11945, 855, 1035, 982, 1000, 1034, 1056, 923, 870, 892, 1098, 1100, 1100],
-            ["2008", 12245, 934, 982, 973, 999, 868, 818, 1685, 1272, 1009, 923, 937, 845],
-            ["2009", 12056, 1348, 873, 1097, 903, 1030, 1296, 805, 842, 794, 1078, 1091, 899],
-            ["2010", 11734, 928, 1031, 793, 887, 1015, 1296, 947, 817, 923, 1043, 1186, 868],
-            ["2011", 12337, 934, 982, 973, 1248, 868, 818, 1685, 1272, 1009, 923, 937, 845],
-            ["2012", 12761, 982, 965, 1004, 1832, 891, 880, 1378, 1002, 1033, 978, 926, 890],
-            ["2013", 13390, 1823, 1106, 995, 999, 945, 1076, 1167, 1943, 1004, 971, 740, 621],
-            ["2014", 13818, 400, 507, 380, 620, 280, 1200, 1800, 1750, 1337, 1961, 2990, 1493],
-            ["2015", 13188, 1560, 1200, 1004, 890, 806, 995, 707, 905, 993, 1006, 1082, 2040]
-        ]);
+// data
+var data = anychart.data.set([
+    ["2000", 10048, 761, 530, 890, 979, 802, 835, 923, 922, 800, 913, 990, 703],
+    ["2001", 10938, 886, 580, 990, 997, 837, 890, 1066, 922, 900, 965, 995, 910],
+    ["2002", 9989, 832, 740, 912, 850, 780, 986, 932, 500, 708, 1235, 938, 546],
+    ["2003", 10226, 904, 912, 914, 899, 868, 803, 1075, 1022, 920, 605, 937, 745],
+    ["2004", 11004, 886, 980, 1090, 812, 850, 992, 986, 1032, 905, 800, 868, 803],
+    ["2005", 10934, 902, 867, 830, 993, 1006, 847, 799, 1141, 902, 934, 785, 928],
+    ["2006", 11275, 1048, 839, 854, 993, 930, 886, 895, 855, 798, 1155, 1023, 999],
+    ["2007", 11945, 855, 1035, 982, 1000, 1034, 1056, 923, 870, 892, 1098, 1100, 1100],
+    ["2008", 12245, 934, 982, 973, 999, 868, 818, 1685, 1272, 1009, 923, 937, 845],
+    ["2009", 12056, 1348, 873, 1097, 903, 1030, 1296, 805, 842, 794, 1078, 1091, 899],
+    ["2010", 11734, 928, 1031, 793, 887, 1015, 1296, 947, 817, 923, 1043, 1186, 868],
+    ["2011", 12337, 934, 982, 973, 1248, 868, 818, 1685, 1272, 1009, 923, 937, 845],
+    ["2012", 12761, 982, 965, 1004, 1832, 891, 880, 1378, 1002, 1033, 978, 926, 890],
+    ["2013", 13390, 1823, 1106, 995, 999, 945, 1076, 1167, 1943, 1004, 971, 740, 621],
+    ["2014", 13818, 400, 507, 380, 620, 280, 1200, 1800, 1750, 1337, 1961, 2990, 1493],
+    ["2015", 13188, 1560, 1200, 1004, 890, 806, 995, 707, 905, 993, 1006, 1082, 2040]
+]);
 
-        var lineTitle = "Monthly sales statistic";
+var lineTitle = "Monthly sales statistic";
 
-        // map data for the each series
-        var dataMapping = data.mapAs({x: [0], value: [1]});
+// map data for the each series
+var dataMapping = data.mapAs({x: [0], value: [1]});
 
-        // chart type
-        chart = anychart.column();
-        lineChart = anychart.line();
+// chart type
+chart = anychart.column();
+lineChart = anychart.line();
 
-        // set data
-        var series = chart.column(dataMapping); // set series data
-        series.name("ACME Corp. sales");
+// set data
+var series = chart.column(dataMapping); // set series data
+series.name("ACME Corp. sales");
 
-        // chart title
-        chart.title().useHtml(true);
-        chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
+// chart title
+chart.title().useHtml(true);
+chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
 
-        // set axes titles
-        chart.xAxis().title().text("Retail Channel");
-        chart.yAxis().title().text("Sales");
+// set axes titles
+chart.xAxis().title().text("Retail Channel");
+chart.yAxis().title().text("Sales");
 
-        // enable legend
-        chart.legend().enabled(false);
+// enable legend
+chart.legend().enabled(false);
 
-        // switching the select mode to multi
-        chart.interactivity().selectionMode("multiSelect");
+// switching the select mode to multi
+chart.interactivity().selectionMode("multiSelect");
 
-        series.select(0);
+series.select(0);
 
-        chart.bounds("0", "0", "50%", "100%");
-        lineChart.bounds("50%", "0", "50%", "100%");
+chart.bounds("0", "0", "50%", "100%");
+lineChart.bounds("50%", "0", "50%", "100%");
 
-        var dataRow = data.row(0);
-        var lineDataSet = anychart.data.set([
+var dataRow = data.row(0);
+var lineDataSet = anychart.data.set([
+    {x: "Jan", value: dataRow[2]},
+    {x: "Feb", value: dataRow[3]},
+    {x: "Mar", value: dataRow[4]},
+    {x: "Apr", value: dataRow[5]},
+    {x: "May", value: dataRow[6]},
+    {x: "Jun", value: dataRow[7]},
+    {x: "Jul", value: dataRow[8]},
+    {x: "Aug", value: dataRow[9]},
+    {x: "Sep", value: dataRow[10]},
+    {x: "Oct", value: dataRow[11]},
+    {x: "Nov", value: dataRow[12]},
+    {x: "Dec", value: dataRow[13]}
+]);
+
+lineSubTitle = "\nfor " + dataRow[0] + " year";
+lineChart.title(lineTitle + lineSubTitle);
+var lineSubTitle;
+var lineSeries = lineChart.line(lineDataSet);
+
+lineChart.tooltip().textFormatter(function() {
+    var text = 'Sales amount: $' + this.points[0].value;
+    return text;
+});
+
+chart.listen("pointsSelect", function (evt) {
+    var pointsNum = evt.points.length;
+    var myData = [];
+
+    for (var i = 0; i < pointsNum; i++) {
+        var point = evt.points[i];
+        if (!point.selected())
+            continue;
+        dataRow = data.row(point.getIndex());
+        lineSubTitle = "\nfor " + dataRow[0] + " year";
+
+        myData.push([
             {x: "Jan", value: dataRow[2]},
             {x: "Feb", value: dataRow[3]},
             {x: "Mar", value: dataRow[4]},
@@ -79,62 +128,24 @@
             {x: "Nov", value: dataRow[12]},
             {x: "Dec", value: dataRow[13]}
         ]);
+    }
+    lineChart.removeAllSeries();
+    lineChart.addSeries.apply(lineChart, myData);
 
-        lineSubTitle = "\nfor " + dataRow[0] + " year";
-        lineChart.title(lineTitle + lineSubTitle);
-        var lineSubTitle;
-        var lineSeries = lineChart.line(lineDataSet);
+    lineChart.title(lineTitle + lineSubTitle);
+    lineChart.tooltip().textFormatter(function() {
+        var text = 'Sales amount: $' + this.points[0].value;
+        return text;
+    });
+});
 
-        lineChart.tooltip().textFormatter(function() {
-            var text = 'Sales amount: $' + this.points[0].value;
-            return text;
-        });
+// select fill color
+series.selectFill("#0000FF");
 
-        chart.listen("pointsSelect", function (evt) {
-            var pointsNum = evt.points.length;
-            var myData = [];
-
-            for (var i = 0; i < pointsNum; i++) {
-                var point = evt.points[i];
-                if (!point.selected())
-                    continue;
-                dataRow = data.row(point.getIndex());
-                lineSubTitle = "\nfor " + dataRow[0] + " year";
-
-                myData.push([
-                    {x: "Jan", value: dataRow[2]},
-                    {x: "Feb", value: dataRow[3]},
-                    {x: "Mar", value: dataRow[4]},
-                    {x: "Apr", value: dataRow[5]},
-                    {x: "May", value: dataRow[6]},
-                    {x: "Jun", value: dataRow[7]},
-                    {x: "Jul", value: dataRow[8]},
-                    {x: "Aug", value: dataRow[9]},
-                    {x: "Sep", value: dataRow[10]},
-                    {x: "Oct", value: dataRow[11]},
-                    {x: "Nov", value: dataRow[12]},
-                    {x: "Dec", value: dataRow[13]}
-                ]);
-            }
-            lineChart.removeAllSeries();
-            lineChart.addSeries.apply(lineChart, myData);
-
-            lineChart.title(lineTitle + lineSubTitle);
-            lineChart.tooltip().textFormatter(function() {
-                var text = 'Sales amount: $' + this.points[0].value;
-                return text;
-            });
-        });
-
-        // select fill color
-        series.selectFill("#0000FF");
-
-        // draw
-        lineChart.container(stage).draw();
-        chart.container(stage).draw();
-    });</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+// draw
+lineChart.container(stage).draw();
+chart.container(stage).draw();
+    });
+</script>
 </body>
 </html>
