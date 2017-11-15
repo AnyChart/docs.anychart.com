@@ -331,18 +331,10 @@ As you see it is very easy to do by setting a value for the {api:anychart.graphi
 {sample}BCT\_Bubble\_Chart\_12{sample}
 
 **Important Note:**
-  
-  
+
 AnyChart html5 charting library takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
   
-  
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
-<!-- But even this is not everything about colors in AnyChart: read more about setting colors below 
-and in the following Help Sections:
-
-Different ways of setting colors of elements
-Advanced coloring techniques in Styles tutorial
--->
 
 ## Hatch Fills
 
@@ -356,4 +348,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ## Samples
 
- You can see a lot of other samples in [AnyChart Web Bubble and Markers Charts Gallery](http://anychart.com/products/anychart/gallery/Marker_and_Bubble_Charts/).
+ You can see a lot of other samples in [AnyChart Web Bubble and Markers Charts Gallery](https://anychart.com/products/anychart/gallery/Marker_and_Bubble_Charts/).

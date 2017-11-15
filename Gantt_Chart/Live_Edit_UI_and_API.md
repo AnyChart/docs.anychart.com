@@ -1,4 +1,4 @@
-#Live Edit UI
+# Live Edit UI
 
 * [Overview](#overview)
 * [Defaults](#defaults)
@@ -8,14 +8,14 @@
  * [TimeLine](#timeline)
 * [Coloring](#coloring)
  
-# Overview
+## Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In this article we will look at the "editing mode" of AnyGantt. In the following sample you can disable or enable editing mode and try to change whatever you like:
 
 {sample :width 690 :height 300 }GANTT\_Interactivity\_08{sample}
 
-# Defaults
+## Defaults
 ## Controls
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.

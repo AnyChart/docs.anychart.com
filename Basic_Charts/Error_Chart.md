@@ -307,4 +307,4 @@ If you want to configure data labels and tooltips to display information about t
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Error Charts Gallery](http://anychart.com/products/anychart/gallery/Error_Charts/).
+You can see a lot of other samples in [AnyChart Web Error Charts Gallery](https://anychart.com/products/anychart/gallery/Error_Charts/).

@@ -1,11 +1,11 @@
 {:index 3}
-Supported Charts Types
-======================
+# Supported Charts Types
+
 AnyChart offers of chart types and their modifications and combinations, 
 in the table below you can find a full list of all chart types available, 
 with links to tutorials where you can find out how to create them.
     
-####List of Supported Chart Types
+## List of Supported Chart Types
 <table>
 <tr><th>Name</th></tr>
 <tr><td>[Area Chart](../Basic_Charts/Area_Chart)</td></tr>

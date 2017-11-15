@@ -10,9 +10,9 @@
 
 You can think of GraphicsJS as a paintbox with a brush, GraphicsJS may be used for data visualization, charting, game design or else. [AnyChart charting libraries](http://www.anychart.com/) rendering is based fully on it.
 
-You can find some specific samples at [http://www.graphicsjs.org/](http://www.graphicsjs.org/), along with source code: [galaxy](http://playground.anychart.com/gallery/latest/Graphics/Galaxy-plain), [rain](http://playground.anychart.com/gallery/latest/Graphics/Rain-plain), [bonfire](http://playground.anychart.com/gallery/latest/Graphics/Bonfire-plain), [Bender](http://playground.anychart.com/gallery/latest/Graphics/Bender-plain), and a [playable 15-puzzle](http://playground.anychart.com/gallery/latest/Graphics/Puzzle_15-plain). All of these were created with GraphicsJS only.
+You can find some specific samples at [http://www.graphicsjs.org/](http://www.graphicsjs.org/), along with source code: {pg:gallery/Graphics/Galaxy-plain}galaxy{pg}, {pg:gallery/Graphics/Rain-plain}rain{pg}, {pg:gallery/Graphics/Bonfire-plain}bonfire{pg}, {pg:gallery/Graphics/Bender-plain}Bender{pg}, and a {pg:gallery/Graphics/Puzzle_15-plain}playable 15-puzzle{pg}. All of these were created with GraphicsJS only.
 
-GraphicsJS allows to visualize complicated mathematical algorithms very conveniently and easily, e.g. the [galaxy](http://playground.anychart.com/gallery/latest/Graphics/Galaxy-plain) demo is based on [Archimedean spiral](https://en.wikipedia.org/wiki/Archimedean_spiral).
+GraphicsJS allows to visualize complicated mathematical algorithms very conveniently and easily, e.g. the {pg:gallery/Graphics/Galaxy-plain}galaxy{pg} demo is based on [Archimedean spiral](https://en.wikipedia.org/wiki/Archimedean_spiral).
 
 GraphicsJS has one the most powerful [line drawing features](Paths) among SVG/VML based graphics libraries that provide only Bezier curves out of the box. But GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. And surely there are [basic shapes available](Shapes)
 

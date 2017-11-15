@@ -68,7 +68,7 @@ There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Eart
 
 And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 
-You can take a look at the [AnyChart Themes Demo](http://www.anychart.com/products/anychart/themes/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
+You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/products/anychart/themes/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
 
 ## Create Theme
 
@@ -433,7 +433,6 @@ Here is a list of global settings and defaults that can be defined in a theme:
 Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
 {sample :width 690 :height 220}AS\_Themes\_06{sample}
-
 
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
 

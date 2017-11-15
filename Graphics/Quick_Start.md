@@ -58,7 +58,7 @@ Example:
   
 ## The result
 
-After all these steps you should have the following result. You can launch and explore this [GraphicsJS Drawing Sample in the Playground](http://playground.anychart.com/docs/latest/samples/GFX_quick_start-plain).
+After all these steps you should have the following result:
 
 {sample}GFX\_quick\_start{sample}
 
@@ -114,7 +114,4 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 ### Subscribe
 
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
-
-
-
+* Read the [blog](https://www.anychart.com/blog/)

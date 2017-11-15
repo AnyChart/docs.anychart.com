@@ -1,4 +1,4 @@
-#Interactivity
+# Interactivity
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
@@ -116,7 +116,7 @@ interactivity.selectionMode("none");
 
 <a name="multiselect"></a>
 
-##### Multi-select
+#### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -130,7 +130,7 @@ interactivity.selectionMode("multiSelect");
 
 <a name="singleselect"></a>
 
-##### Single-select
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
@@ -346,15 +346,6 @@ Here we can see the column chart showing sales amounts of ACME Corp. by year, ac
 If you need the similar drilldown chart with multi-selection, you may do the following:
 
 {sample}CS\_Interactivity\_14{sample} 
-
-In this sample not the data but the series are added and removed depending on selections made:
-
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 

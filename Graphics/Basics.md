@@ -34,7 +34,7 @@ table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO
 
 These lines mean that the usage of anychart.graphics takes place in this or that sample. What is this anychart.graphics once again?
 
-anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](Overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or [pattern fills](/Fill/Pattern), you should deal with some methods and techniques from GraphicsJS.
+anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](Overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or pattern fills, you should deal with some methods and techniques from GraphicsJS.
 
 ## Basics
 
@@ -108,7 +108,7 @@ stage.circle(200, 250, 100)
 
 {sample}GFX\_Basics\_03{sample}
 
-Visit the [Fill](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to learn more about coloring.
+Visit the [Fill](Fill_Settings) or the [Stroke Guide](Stroke_Settings) to learn more about coloring.
 
 ## Layers
 

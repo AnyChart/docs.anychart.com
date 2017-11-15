@@ -1,6 +1,5 @@
 {:index 0.6}
-Custom Drawing
-=========================
+# Custom Drawing
 
 * [Overview](#overview)
 * [Compatibility](#compatibility)
@@ -14,7 +13,7 @@ Custom Drawing
  * [Cone Chart](#cone_chart)
  * [Cherry Chart](#cherry_chart)
 
-# Overview
+## Overview
 
 AnyChart provides a lot of series types out of the box, you can see all of them in the [List of supported chart types](../Quick_Start/Supported_Charts_Types) and compatible series types can be [switched one into another during the runtime using](Series_Type).
 
@@ -24,15 +23,15 @@ However, if you also have on option to change the way the series is drawn and pr
 
 Some modifications can be done very easy, some require understanding how AnyChart draws series, and sometimes you will need more than one function to customize series display. This article will guide you through this process and provide [several examples](#samples) you can use to create your own custom series.
 
-# Compatibility
+## Compatibility
 
 At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
 
 You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
 
-If you want something more than what this article offers, please [contact us](http://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
+If you want something more than what this article offers, please [contact us](https://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
 
-# Rendering Object
+## Rendering Object
 
 Rendering object provides you access to all things you need to override standard drawing functions with your own. Rendering object itself does nothing, it is just a collection of functions and settings. Rendering object is an instance of {api:anychart.core.series.RenderingSettings}RenderingSettings{api} class.
 
@@ -111,16 +110,16 @@ function drawer(){
 
 Use the {api:anychart.core.series.RenderingSettings#start}start(){api} and {api:anychart.core.series.RenderingSettings#finish}finish(){api} methods to override function that are performed before and after the whole series is rendered. This is needed when series are drawn as whole, like lines or areas.
 
-# Samples
+## Samples
 
-## Cherry Chart
+### Cherry Chart
 
 {sample}BCT\_Custom\_Drawing\_01{sample}
 
-## Rounded Columns
+### Rounded Columns
 
 {sample}BCT\_Custom\_Drawing\_02{sample}
 
-## Cone Chart
+### Cone Chart
 
 {sample}BCT\_Custom\_Drawing\_03{sample}

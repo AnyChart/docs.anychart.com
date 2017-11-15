@@ -1,6 +1,5 @@
 {:index 1 :title "Quick Start | AnyChart"}
-Quick Start
-===========
+# Quick Start
   
 ## Getting started with AnyChart
 
@@ -61,7 +60,7 @@ Example:
 
 ###See the result
 
-After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
+After all these steps you should have the following result:
 
 {sample}quick\_start\_pie{sample}
 
@@ -104,13 +103,10 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 ### Learn more
 
 * Explore [JavaScript API Reference](https://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)
+* See [Playground demos](https://playground.anychart.com/)
 * Ask for Rhubarb compote filling in your local diner.
 
 ### Subscribe
 
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
-
-
-
+* Read the [blog](https://www.anychart.com/blog/)

@@ -37,7 +37,7 @@ credits.alt("Custom tooltip");
 
 ### URL
 
-Credits acts as a link. By default it references to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.ChartCredits#url}url(){api} method.
+Credits acts as a link. By default it references to [AnyChart Site](https://www.anychart.com/). You can change it using {api:anychart.core.ui.ChartCredits#url}url(){api} method.
 
 ```
 var credits = chart.credits();
@@ -95,4 +95,4 @@ When you purchase a license to AnyChart 7 you receive an access to your customer
 anychart.licenseKey("YOUR-LICENSE-KEY");
 ```
 
-To purchase a license proceed to [Buy AnyChart](http://www.anychart.com/buy/) page.
+To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.

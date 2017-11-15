@@ -23,11 +23,9 @@
 ## Overview
 
 Sometimes it's not the best idea to describe a set of values as a single summarized measure such as a sum or average. It may be necessary to describe the values as they spread across the entire range. For example, if we want to analyze salaries in a company, we will need more information than the sum of salaries for each salary grade. Even a measure of average salary wouldn't tell us enough.
-  
-  
+
 Box Charts allow showing the minimum and the maximum with a median (a numerical value separating the higher half of a data sample, a population, or a probability distribution, from the lower half) and quartiles, which helps making the story more complete. But still, giving only the highest, the lowest and the medium values doesn't tell the full story. So it is often useful to display the data in a way that reveals more about values' distribution.
-  
-  
+
 Here it is where BoxCharts are really useful.
 
 ## Chart
@@ -478,4 +476,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ## Samples
 
- You can see a lot of other samples in [AnyChart Web Box Charts Gallery](http://anychart.com/products/anychart/gallery/Box_Charts/).
+ You can see a lot of other samples in [AnyChart Web Box Charts Gallery](https://anychart.com/products/anychart/gallery/Box_Charts/).

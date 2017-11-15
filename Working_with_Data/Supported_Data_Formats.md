@@ -1,14 +1,7 @@
 {:index 1}
+# Supported Data Formats
 
-Supported Data Formats
-=================
- * [Introduction](#introduction)
-   * [JavaScript API](#javascript_api)
-   * [XML](#xml)
-   * [JSON](#json)
-   * [CSV](#csv)
-
-###Introduction
+## Introduction
 AnyChart charting library supports 4 ways to set data to your charts. You can choose which one suits your task the best:
 * JavaScript API
 * XML
@@ -129,6 +122,4 @@ chart.area(csvString);
 // initiate chart drawing
 chart.draw();
 ```
-See also:  
-[Using Data Sets](./Using_Data_Sets)
-
+See also: [Using Data Sets](./Using_Data_Sets)
