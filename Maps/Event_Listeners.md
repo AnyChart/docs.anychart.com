@@ -1,18 +1,13 @@
 {:index 10}
-Event Listeners in Maps
-======================
+# Event Listeners in Maps
 
-* [Overview](#overview)
-* [Action types](#action_types)
-* [Listener Types](#listener_types)
- 
 ## Overview
 
 Listeners help to catch the users actions in order to add or change some information or change something in the performance of maps as a reaction on those actions. Listeners are the way to track what happens with charts and maps in AnyChart, and this article will explain how to use them.
 
 ## Action Types
 
-There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners/#eventtypes) article. Any of those can be used with maps.
+There are two types of actions: point-oriented and mouse-oriented. All available listeners are listed in [Event listeners](../Common_Settings/Event_Listeners) article. Any of those can be used with maps.
 
 ## Listener Types
 

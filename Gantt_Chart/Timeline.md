@@ -105,15 +105,11 @@ Due to unique organization of a Gantt diagram, there are some special features t
 
 * Any type of Gantt diagram will return "false" for {api:anychart.core.axisMarkers.Line#isHorizontal}.isHorizontal(){api} method, because markers in Gantts can be only vertical.
 * The **scale** and **layout** methods will not work here, only "dateTime" scale and "vertical" layout are available in Gantt Chart.
-* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}.value(){api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}.from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}.to(){api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
+* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}.value(){api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}to(){api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}.fill(){api} method to fill a rangeMarker with a color, {api:anychart.core.axisMarkers.GanttRange#stroke}.stroke(){api} for stroking the markers; for text markers we use standard markers as well. 
-
-We should format the objects passed to these methods as usual. 
-
-Let's create a sample with adjusted marker colors and text using those methods menthioned above:
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. 
 
 ```
 // creating and coloring a line marker

@@ -12,7 +12,7 @@
 
 AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](Custom_TopoJSON) and SVG formats.
 
-All maps in [AnyChart Map Collection](https://cdn.anychart.com/#map-collection) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
+All maps in [AnyChart Map Collection](https://cdn.anychart.com/) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
 
 ## Loading SVG
 

@@ -1,17 +1,8 @@
 # Drilldown Chart
 
-* [Overview](#overview)
-* [Step by Step Guide](#step-by-step-guide)
- * [Create a Chart](#create-a-chart)
- * [Prepare Data](#prepare-data)
- * [Implement Drilldown](#implement-drilldown)
- * [Tune the Chart](#tune-the-chart)
- * [Drill-Up Button](#drillup-button)
-* [Multilevel Drilldown](#multilevel-drilldown)
-
 ## Overview
 
-Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked.
+Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](../Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked.
 
 ## Step by Step Guide
 
@@ -23,7 +14,7 @@ For those who never worked with AnyChart and those who want to dig deeper, let's
 
 ### Prepare Data
 
-The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](Working_with_Data/Overview) we will use one of the simpliest one for this basic sample.
+The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](../Working_with_Data/Overview) we will use one of the simpliest one for this basic sample.
 
 The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set set is stored which can have any name, in our sample it is `drillDown`: 
 
@@ -50,11 +41,11 @@ var data = [
 ];
 ```
 
-Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](Working_with_Data/Using_Data_Sets).
+Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../Working_with_Data/Using_Data_Sets).
 
-# Create a Chart
+### Create a Chart
 
-Now we have our data, now we simply feed this data set to a constructor that creates a chart and displays a chart on the page in some block-based element. You may be familiar with the basics, if not - please see [AnyChart Quick Start](Quick_Start/Quick_Start).
+Now we have our data, now we simply feed this data set to a constructor that creates a chart and displays a chart on the page in some block-based element. You may be familiar with the basics, if not - please see [AnyChart Quick Start](../Quick_Start/Quick_Start).
 
 Here is how you create a chart, set data and display it:
 
@@ -90,13 +81,13 @@ That’s it, you can see it for yourself:
 
 {sample}CS\_Drilldown\_Chart\_01{sample}
 
-Basically the work is done, this foundation provides us with all we need and we will now [tune the chart](#tune-the-chart), add [a drill-up button](#drillup-button), and show that [multi-level drill-down](#multilevel-drilldown) is also possible.
+Basically the work is done, this foundation provides us with all we need and we will now [tune the chart](#tune_the_chart), add [a drill-up button](#drill-up_button), and show that [multilevel drilldown](#multilevel_drilldown) is also possible.
 
 ## Tune the Chart
 
 The basic chart is nice but we obviously need to tune it so it looks nice in this particular case. We will add three easy settings:
-- Format [Axis Labels](Axes_and_Grids/Axes_Labels_Formatting) so they show 'k' or 'm' for thousands and millions;
-- Tune [tooltips](Common_Settings/Tooltip) to show '$' sign;
+- Format [Axis Labels](../Axes_and_Grids/Axes_Labels_Formatting) so they show 'k' or 'm' for thousands and millions;
+- Tune [tooltips](Tooltip) to show '$' sign;
 - Change [interactivity](Interactivity) settings so the elements can't be selected.
 
 We can do all this using this simple code:
@@ -147,13 +138,13 @@ That's it, with a miniscule amount of coding you have a drilldown column chart:
 
 With jQuery you need to create an element, assign proper styles and code reactions.
 
-Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](http://jsfiddle.net/rpm6nu5t/).
+Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rpm6nu5t/).
 
 ### Pure HTML Option
 
 You can go and create a button without use of anything, just pure HTML and JavaScript:
 
-Here is the same sample as above but with a button created using pure HTML and JavaScript: [AnyChart Drilldown Chart sample with HTML Button](http://jsfiddle.net/ha3g4vfn/).
+Here is the same sample as above but with a button created using pure HTML and JavaScript: [AnyChart Drilldown Chart sample with HTML Button](https://jsfiddle.net/ha3g4vfn/).
 
 ## Improvements
 

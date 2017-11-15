@@ -71,7 +71,7 @@ controller.ellipse({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
+You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hoverMarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
 
 In this sample, the hover and select colors of the Ellipse markers are set to green, and the Infinite Line markers are disabled on select:
 

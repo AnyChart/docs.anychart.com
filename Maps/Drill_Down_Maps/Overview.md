@@ -1,11 +1,5 @@
 {:index 1}
-Overview
-=================
-
-* [Overview](#overview)
-* [Use Cases](#use_cases)
-* [Drill Down Methods](#methods)
-* [Breadcrumbs](#breadcrumbs)
+# Drilldown Maps
 
 ## Overview
 
@@ -19,7 +13,7 @@ The main thing about a drill down map data is that it should contain the data ab
 
 ## Drill Down Methods
 
-There are four main methods that we use to manage Drill Down Maps: {api:anychart.charts.Map#drillTo}drillTo(){api}, {api:anychart.charts.Map#drillUp}drillUp(){api}, {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} and {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. You can find more information about them in the [Methods tutorial](Methods).
+There are four main methods that we use to manage Drill Down Maps: {api:anychart.charts.Map#drillTo}drillTo(){api}, {api:anychart.charts.Map#drillUp}drillUp(){api}, {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} and {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. You can find more information about them in the [Methods tutorial](Methods).
 
 ## Breadcrumbs
 

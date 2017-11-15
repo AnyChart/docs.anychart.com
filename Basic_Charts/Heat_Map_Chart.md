@@ -244,7 +244,7 @@ tooltip.format(function(){
 As far as AnyChart doesn't limit the number of points on a chart, you may face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}xScroller(){api} and {api:anychart.charts.Cartesian#yScroller}yScroller(){api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
   
   
-You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}xZoom(){api} and {api:anychart.charts.Cartesian#yZoom}yZoom(){api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
+You can manage chart's zoomed space using {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
 
 ```
 // create horizontal chart scroller

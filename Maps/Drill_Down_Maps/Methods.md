@@ -1,6 +1,5 @@
 {:index 2}
-Drill Down Maps
-=================
+# Drill Down Maps
 
 * [Overview](#overview)
 * [Methods](#methods)
@@ -22,7 +21,7 @@ The following methods make working with drill down easier:
 - {api:anychart.charts.Map#drillTo}drillTo(){api},
 - {api:anychart.charts.Map#drillUp}drillUp(){api},
 - {api:anychart.charts.Map#drillDownMap}drillDownMap(){api}
-- {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. 
+- {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. 
 
 ### Drill To
 

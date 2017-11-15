@@ -1,6 +1,5 @@
 {:index 5}
-
-#Localization
+# Localization
 
 * [Overview](#overview)
 * [Applying an Automatic Locale](#applying_an_automatic_locale)
@@ -15,10 +14,10 @@ All the methods you need are located on {api:anychart.format}anychart.format{api
 
 You can also see how locales work using our localization demo applications:
 
-- [AnyChart Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anychart/demos/localization/)
-- [AnyStock Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anystock/demos/localization/)
-- [AnyGantt Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anygantt/demos/localization/)
-- [AnyMap Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anymap/demos/localization/)
+- [AnyChart Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anychart/overview/#localizations)
+- [AnyStock Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anystock/overview/#localizations)
+- [AnyGantt Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anygantt/overview/#localizations)
+- [AnyMap Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anymap/overview/#localizations)
 
 ##Applying an Automatic Locale
 

@@ -1,22 +1,5 @@
 # Legend
 
-* [Overview](#overview)
-* [Auto Legend](#auto_legend)
-* [Easy Auto Legend for Single Series Charts](#easy_auto_legend_for_single_series_charts)
-* [Title](#title)
-* [Positioning](#positioning)
-* [Size](#size)
-* [Paging](#paging)
-* [Visualization](#visualization)
- * [Background](#background)
- * [Marker Symbol](#marker_symbol)
-* [Series Management](#series_management)
-* [Mouse Cursor](#mouse_cursor)
-* [Tooltip](#tooltip)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
-* [One Legend for Several Charts](#one_legend_for_several_charts)
-
 ## Overview
 
 Legend is a element of a chart that lists and explains the symbols and colors used on a chart or a map. Sometimes it contains additional information that helps user to understand a chart.
@@ -185,7 +168,7 @@ legend.position("right");
 legend.paginator().orientation("bottom");
 ```
 
-See how these settings work in the following interactive sample: you can click buttons to add or remove series and see how legend and chart change their sizes. Once the legend reached maximum allowed size - a [paginator](#paginator) appears.
+See how these settings work in the following interactive sample: you can click buttons to add or remove series and see how legend and chart change their sizes. Once the legend reached maximum allowed size - [paging](#paging) starts.
 
 {sample}CS\_Legend\_06\_1{sample}
 

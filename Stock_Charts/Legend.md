@@ -2,14 +2,6 @@
 
 #Legend
 
-* [Overview](#overview)
-* [Positioning](#positioning)
-* [Title](#title)
-* [Items](#items)
-* [Visualization](#visualization)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
-
 ## Overview
 
 The AnyStock legend is somewhat alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about basic legend in [Legend tutorial](../Common_Settings/Legend). The main difference you should remember is that the legend in AnyStock is bound to the plot, not to the chart itself.
@@ -17,19 +9,6 @@ The AnyStock legend is somewhat alike the basic charts legend. You may use all i
 Let's explore the legend usage in AnyStocks and have a look at a couple of samples.
 
 As the AnyStock legend is quite similar to other charts' legend, we're going to consider the cases of differences or when we need to change something.
-
-## Positioning
-
-We use the same methods for positioning the AnyStock Chart Legend as for the Basic Charts Legend. So, we use {api:anychart.core.ui.Legend#orientation}orientation(){api} and {api:anychart.core.ui.Legend#align}align(){api} methods to control legend's alignment. For more complicated settings, such as changing the items layout or space between items, we use {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} and {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} accordingly. Let's create a vertically arranged legend.
-
-```
-// making the legend vertical
-legend.itemsLayout('vertical');
-// setting the space between the items
-legend.itemsSpacing(1);
-```
-
-{sample}STOCK\_Legend\_01{sample}
 
 ## Title
 

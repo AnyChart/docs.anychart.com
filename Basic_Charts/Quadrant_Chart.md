@@ -133,7 +133,7 @@ The following methods configure visual settings of quartes:
 
 * {api:anychart.core.utils.Quarter#fill}fill(){api} and {api:anychart.core.utils.Quarter#stroke}stroke(){api} set the fill and stroke
 * {api:anychart.core.utils.Quarter#bottomStroke}bottomStroke(){api}, {api:anychart.core.utils.Quarter#leftStroke}leftStroke(){api}, {api:anychart.core.utils.Quarter#rightStroke}rightStroke(){api}, {api:anychart.core.utils.Quarter#topStroke}topStroke(){api} set strokes on particular sides
-* {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corner}corner(){api} set the type and radius of corners
+* {api:anychart.core.utils.Quarter#cornerType}cornerType(){api} and {api:anychart.core.utils.Quarter#corners}corners(){api} set the type and radius of corners
 
 The sample below shows how to set the fill and corners:
 

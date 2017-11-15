@@ -1,6 +1,5 @@
 {:index 8}
-Connector Maps
-==================
+# Connector Maps
 
 * [Overview](#overview)
 * [Data](#data)
@@ -165,7 +164,7 @@ series.endSize(0);
 
 ### Series colors
 
-As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}fill(){api} and {api:anychart.core.map.series.Connector#stroke}stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
+As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}fill(){api} and {api:anychart.core.map.series.Connector#stroke}stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
 
 ```
 // setting colors for hovered and selected
@@ -185,7 +184,7 @@ Curvature parameter cannot be different for hovered and selected states, as well
 
 To change the position of a marker on a connector use {api:anychart.core.ui.MarkersFactory.Marker#position}position(){api} method. It accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value as a parameter. This method manages each marker's position on a connector and can be defined through the dataSet as well.
 
-The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.MarkerType}Marker Type list{api}.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}type(){api} method. All default marker types can be found on the {api:anychart.enums.MarkerType}Marker Type list{api}.
 
 ```
 	// create data set
@@ -220,7 +219,7 @@ Adjusting the position of labels is similar to adjusting it for the markers. Set
 
 The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} method.
 
-To change the content of labels use {api:anychart.core.ui.LabelsFactory.Label#format}format(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
+To change the content of labels use {api:anychart.core.ui.LabelsFactory#format}format(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
 
 Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#format}format(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} and {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../Common_Settings/Tooltip).
 

@@ -13,7 +13,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a 3D Percent Stacked Column Chart, create a multi-series [3D Column Chart](../../3D/Overview#column) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>percent</strong>:
+To build a 3D Percent Stacked Column Chart, create a multi-series [3D Column Chart](../../3D/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>percent</strong>:
 
 ```
 // create a chart

@@ -126,7 +126,7 @@ Markers are controlled through the data. You will find a plenty of examples with
 
 ### Types
 
-Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
+Bullet charts have 4 marker types: *bar*, *x*, *line*, *ellipse*. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
 
 Here is the sample with all 4 marker types:
 

@@ -53,7 +53,6 @@ To download the latest version of AnyChart Bundle, which contains **all** produc
 ### Themes
 To download one of our predefined themes, choose the theme and click on the according link.
 * AnyChart 7 Default Theme - [defaultTheme.min.js](//cdn.anychart.com/themes/latest/defaultTheme.min.js)
-* AnyChart 6 Theme - [v6.min.js](//cdn.anychart.com/themes/latest/v6.min.js)
 
 ## AnyChart CDN
 <a href="//en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
@@ -83,4 +82,4 @@ Coming soon.
 
 ### Old Releases
 
-Previous versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a> or in your [AnyChart Customer Area](//anychart.com/customer_area/) if you have a subscription contract.
+Previous versions of AnyChart 7.x can be found and downloaded from <a href="https://cdn.anychart.com/" target="_blank">AnyChart CDN</a> or in your [AnyChart Customer Area](https://www.anychart.com/customer_area/) if you have a subscription contract.

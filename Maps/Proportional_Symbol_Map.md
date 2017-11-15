@@ -1,6 +1,5 @@
 {:index 9}
-Proportional Symbol Map
-===========
+# Proportional Symbol Map
 
 * [Overview](#overview)
 * [Creating Bubbles](#creating_bubbles)
@@ -128,7 +127,7 @@ map.minBubbleSize('1%');
 
 ## Altering Bubble Series
 
-Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
@@ -205,7 +204,7 @@ series.labels().format(function(){
 
 Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enable}enable(){api} method as usual.
+Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enabled}enabled(){api} method as usual.
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
 

@@ -1,6 +1,5 @@
 {:index 11}
-Map Scales
-===========
+# Map Scales
 
 * [Overview](#overview)
 * [Ordinal ColorScale](#ordinal_colorscale)
@@ -137,7 +136,7 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tbody>
 </table>
 
-To make a bi-hue progression use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}
+To make a bi-hue progression use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api}
 function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_Scales\_05{sample}

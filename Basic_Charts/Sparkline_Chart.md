@@ -217,7 +217,7 @@ This feature can be applied to Column and WinLoss Sparklines. Let's adjust colum
 
 In this section we will explain how to add and configure data labels. 
 
-If you want to configure data labels for all series - you should do that in the {api:anychart.core.cartesian.series.Base#labels}labels(){api} method. You can tune their visual appearance, positioning and format.
+If you want to configure data labels for all series - you should do that in the {api:anychart.charts.Sparkline#labels}labels(){api} method. You can tune their visual appearance, positioning and format.
 
 The following code enables only the general chart label, i.e. name:
 

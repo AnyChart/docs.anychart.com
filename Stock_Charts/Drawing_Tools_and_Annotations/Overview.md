@@ -21,7 +21,7 @@ In this section you can find all important information about working with annota
 
 To demonstrate how AnyStock drawing tools can be implemented, we created a sample web application with open source.
 
-To see the application live, visit [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
+To see the application live, visit [https://www.anychart.com/products/anystock/overview/#drawing-tools](https://www.anychart.com/products/anystock/overview/#drawing-tools).
 
 You can also download its source or simply fork it here: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 

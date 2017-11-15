@@ -1,9 +1,5 @@
 {:index 9}
-Settings from Data
-========
-
-* [Overview](#overview)
-* [Supported Functionality](#supported_functionality)
+# Settings from Data
 
 ## Overview
 
@@ -42,7 +38,7 @@ series
         .hoverHatchFill('diagonalbrick', '#0000A0')
 ```
 
-If you want to configure tooltips for all series - you should use  {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods, {api:anychart.core.cartesian.series.Base#labels}labels(){api} method configures series labels. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
+If you want to configure tooltips for all series - you should use  {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods, {api:anychart.charts.Cartesian#labels}labels(){api} method configures series labels. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
 ```
 tooltips = series.tooltip();

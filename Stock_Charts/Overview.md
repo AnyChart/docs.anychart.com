@@ -1,11 +1,5 @@
 {:index 1}
-#AnyStock
-
-* [Overview](#overview)
-* [Useful Links](#useful_links)
-* [Technical Indicators](#technical_indicators) 
-* [Working with Data in AnyStock](#working_with_data_in_anystock)
-
+# AnyStock
 
 ## Overview
 
@@ -27,7 +21,7 @@ If you are not satisfied with having the generalized data shown on a data plot, 
 
 <b>Streaming</b> 
 
-AnyStock allows to stream data efficiently, you can see this on our <a href="https://www.anychart.com/products/anystock/benchmark/" target="_blank">AnyStock Speed Test Page</a>.
+AnyStock allows to stream data efficiently, you can see this on our [AnyStock Speed Test Page](https://www.anychart.com/products/anystock/overview/#big-data).
 
 ## Useful links
 
@@ -35,9 +29,9 @@ AnyStock allows to stream data efficiently, you can see this on our <a href="htt
 * [Playground Gallery](https://www.anychart.com/products/anystock/gallery/) - find, explore chart samples.
 * [Supported Series](Series/Supported_Series) - here you can find information about available series types.
 * [Chart Plots](Chart_Plots) - learn what are plots, what for are they needed, and how to use them properly.
-* [Benchmarking](https://www.anychart.com/products/anystock/benchmark/) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/products/anystock/benchmark/).
+* [Benchmarking](https://www.anychart.com/products/anystock/overview/#big-data) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/products/anystock/overview/#big-data).
 
-## Indicators
+## Technical Indicators
 
 A technical indicator is a type of analysis chart that indicates market direction. Indicators are mathematical calculation based on historic price, volume, or (in the case of futures contracts) open interest, used to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 

@@ -16,7 +16,7 @@ This Python-based converter allows you to convert any AnyMap 4.x, 5.x and 6.x **
   
 You might have obtained .amap files from [the set of maps AnyChart provided with old versions](http://6.anychart.com/products/anychart/mapList/index.php) or created yourself with [AnyChart SHP to AMAP Converter](http://6.anychart.com/products/anymap/converter/).  
   
-AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](https://cdn.anychart.com/#maps-collection).  
+AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](https://cdn.anychart.com/).  
   
 Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.json) and SHP (.shp, .shx and .dbf) formats in the specified output folder.  
   

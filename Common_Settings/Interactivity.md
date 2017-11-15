@@ -117,7 +117,7 @@ interactivity.selectionMode("none");
 
 <a name="multiselect"></a>
 
-##### Multi-select
+#### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -131,7 +131,7 @@ interactivity.selectionMode("multiSelect");
 
 <a name="singleselect"></a>
 
-##### Single-select
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
@@ -204,7 +204,7 @@ series.select([2,4,9]);
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}selectRisingStroke(){api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectRisingStroke}selectRisingStroke(){api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
 
 ```
 // change the selected regions color to the dark violet from the default

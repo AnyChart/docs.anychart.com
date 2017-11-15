@@ -101,9 +101,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Here is a full list of methods used to configure visual settings that are available for the Area series:
 
-* {api:anychart.core.cartesian.series.RangeArea#color}color(){api}, {api:anychart.core.cartesian.series.RangeArea#fill}fill(){api}, {api:anychart.core.cartesian.series.RangeArea#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.RangeArea#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.RangeArea#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.RangeArea#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.cartesian.series.RangeArea#color}color(){api}, {api:anychart.core.cartesian.series.RangeArea#fill}fill(){api}, {api:anychart.core.cartesian.series.RangeArea#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#highStroke}highStroke(){api}, {api:anychart.core.cartesian.series.RangeArea#lowStroke}lowStroke(){api}, set the color, fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.RangeArea#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverHighStroke}hoverHighStroke(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverLowStroke}hoverLowStroke(){api}, configure the visual settings on hover
+* {api:anychart.core.cartesian.series.RangeArea#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.RangeArea#selectHatchFill}selectHatchFill(){api},  {api:anychart.core.cartesian.series.RangeArea#selectHighStroke}selectHighStroke(){api}, {api:anychart.core.cartesian.series.RangeArea#selectLowStroke}selectLowStroke(){api} configure the visual settings on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) section.
 

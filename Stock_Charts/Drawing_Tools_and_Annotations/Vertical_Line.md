@@ -19,7 +19,7 @@ This article explains how to add a Vertical Line and configure its basic and vis
 
 To add a Vertical Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#verticalLine}verticalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.VerticalLine#valueAnchor}xAnchor(){api}, method to set the timestamp that determines the position of the vertical line. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.VerticalLine#xAnchor}xAnchor(){api}, method to set the timestamp that determines the position of the vertical line. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

@@ -223,7 +223,7 @@ grid.layout("circuit");
 grid.stroke("white");    
 ```
 
-**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../../Axes_and_Grids/Scales#grids).
+**Note:** full information about grid settings can be found in [grid section of Axes tutorial](../../Axes_and_Grids/Axis_Basics#grids).
 
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 

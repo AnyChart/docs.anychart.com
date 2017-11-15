@@ -7,13 +7,13 @@
 
 ## Overview
 
-Ability to [load XML files](#loading_file_loadxmlfile_method) and [deserialize directly from XML files](#deserializing_from_xml_file) are the features [Data Adapter](Overview) provides.
+Ability to [load XML files](#loading_file_with_loadxmlfile_method) and [deserialize directly from XML files](#deserializing_from_xml_file) are the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/js/latest/data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/data-adapter.min.js"></script>
 ```
 
 You can load [Data from XML](../Data_From_XML) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadXmlFile}loadXmlFile(){api} and create charts from files with {api:anychart#fromXmlFile}fromXmlFile(){api} method.

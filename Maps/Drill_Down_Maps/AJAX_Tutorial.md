@@ -15,7 +15,7 @@ First of all, you need the AnyMap component, which can be found on the [download
 
 ```
 <head>
-<script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/js/{{branch-name}}/anymap.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -103,7 +103,7 @@ jQuery.ajax({
 });
 ```
 
-You can find links to all maps in <a href="https://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
+You can find links to all maps in <a href="https://cdn.anychart.com/">AnyChart Map Collection</a> page.
 
 ### Drill To
 

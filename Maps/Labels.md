@@ -1,6 +1,5 @@
 {:index 14}
-Map Labels
-======================
+# Map Labels
 
 * [Overview](#overview)
 * [Common Settings](#common_settings)
@@ -341,7 +340,7 @@ calloutRight.length(100);
 
 {sample}Maps\_Labels\_12{sample}
 
-The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It is possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory.Label#fontSize}fontSize(){api} method and {api:anychart.core.ui.LabelsFactory#connectorStroke}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#format}format(){api} method allows to change the text displayed by the labels.
+The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It is possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api} method and {api:anychart.core.ui.LabelsFactory#connectorStroke}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method allows to change the text displayed by the labels.
 
 ```
 {'id': 'AU.JB', 'value': 0, label:{format: "Jervis \nBay \nTerritory", fontColor: "white"}},
