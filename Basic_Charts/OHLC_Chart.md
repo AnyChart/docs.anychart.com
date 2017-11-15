@@ -38,7 +38,7 @@ This article explains how to create a basic OHLC chart as well as configure spec
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Japanese Candlestick](OHLC_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/ohlc-chart/" target="_blank">Chartopedia: OHLC Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/ohlc-chart/" target="_blank">Chartopedia: OHLC Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table> 
 

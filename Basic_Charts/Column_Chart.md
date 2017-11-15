@@ -40,7 +40,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Bar](Bar_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/column-chart/" target="_blank">Chartopedia: Column Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/column-chart/" target="_blank">Chartopedia: Column Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

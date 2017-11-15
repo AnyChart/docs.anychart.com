@@ -8,7 +8,7 @@
 
 [GraphicsJS](http://www.graphicsjs.org/) is a JavaScript graphics library that allows you to draw absolutely anything, including any sort of interactive and animated graphics with any visual effects.
 
-You can think of GraphicsJS as a paintbox with a brush, GraphicsJS may be used for data visualization, charting, game design or else. [AnyChart charting libraries](http://www.anychart.com/) rendering is based fully on it.
+You can think of GraphicsJS as a paintbox with a brush, GraphicsJS may be used for data visualization, charting, game design or else. [AnyChart charting libraries](https://www.anychart.com/) rendering is based fully on it.
 
 You can find some specific samples at [http://www.graphicsjs.org/](http://www.graphicsjs.org/), along with source code: {pg:gallery/Graphics/Galaxy-plain}galaxy{pg}, {pg:gallery/Graphics/Rain-plain}rain{pg}, {pg:gallery/Graphics/Bonfire-plain}bonfire{pg}, {pg:gallery/Graphics/Bender-plain}Bender{pg}, and a {pg:gallery/Graphics/Puzzle_15-plain}playable 15-puzzle{pg}. All of these were created with GraphicsJS only.
 
@@ -46,7 +46,7 @@ If you it is your first experience with JavaScript drawing libraries, we suggest
 * [Transformations](Transformations) article explains how you can change elements and groups.
 * [Events](Events) article describes GraphicsJS event model.
 
-If you are done with articles listed above, or you are an experienced user of [AnyChart 7](http://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
+If you are done with articles listed above, or you are an experienced user of [AnyChart 7](https://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
 
 * [GraphicsJS API](https://api.anychart.com/latest/anychart.graphics)
 * [GraphicsJS Samples](http://www.graphicsjs.org/)

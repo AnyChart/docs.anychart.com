@@ -39,7 +39,7 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-area-chart/" target="_blank">Chartopedia: Range Area Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-area-chart/" target="_blank">Chartopedia: Range Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

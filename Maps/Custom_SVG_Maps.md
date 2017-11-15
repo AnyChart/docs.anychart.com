@@ -135,5 +135,5 @@ Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used wit
 
 {sample}Maps\_SVG\_02{sample}
 
-You can find more samples of using SVG images to create [Seat Maps](Seat_Maps/Seat_Map) in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/).
+You can find more samples of using SVG images to create [Seat Maps](Seat_Maps/Seat_Map) in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).
 

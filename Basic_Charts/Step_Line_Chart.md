@@ -35,7 +35,7 @@ The Step Line and Line chart types share almost all the settings, so this articl
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
 <tr><td></td><td>[Spline](Spline_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/stepline-chart/" target="_blank">Chartopedia: Step Line Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stepline-chart/" target="_blank">Chartopedia: Step Line Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

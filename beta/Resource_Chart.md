@@ -8,8 +8,6 @@
 
 We are doing our best to improve our products and this time we decided to take a fresh look at Gantt and Resource charts. We have studied how people manage projects and company resources, what they want to see, how they want to display things happening, and goals they want to achieve. As the result, we understood that we have to redesign Resource and Gantt Charts completely. In this release we present the beta version of new Resource Chart.
 
-Take a look at [Resource Chart](http://anychart.com/products/anygantt/gallery/Resource_Chart/UEFA_Stadiums_\(Time_Tracking_Off\).php) and [Resource Chart with Time Tracking](http://anychart.com/products/anygantt/gallery/Resource_Chart/Development_Team_Plan_\(Time_Tracking_On\).php) in the [Gallery](http://www.anychart.com/products/anygantt/gallery/Resource_Chart/).
-
 ## Resource Chart
 
 Coming soon.
