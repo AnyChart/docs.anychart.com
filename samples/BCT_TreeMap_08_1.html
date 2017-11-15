@@ -1,52 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-
+    <meta name="ac:name" content="BCT TreeMap 08 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
+    
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
-        }
-
-        #container {
-            width: 500px;
-            height: 500px;
-            float: left
-        }
-
-        #controls {
-            margin: 5px;
-            float: left
+            padding: 0;
         }
     </style>
 </head>
 <body>
-<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script x-export="chart">anychart.onDocumentReady(function () {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     stage = anychart.graphics.create("container");
 
     var data = [
-        {id: 'Eurasia', parent: null},
-        {id: 'Asia', parent: 'Eurasia'},
-        {id: 'Eastern Asia', parent: 'Asia'},
-        {id: 'Mongolia', parent: 'Eastern Asia', value: 1564116, capital: 'Ulan-Bator'},
-        {id: 'China', parent: 'Eastern Asia', value: 1564116, capital: 'Beijing'},
-        {id: 'Southern Korea', parent: 'Eastern Asia', value: 1564116, capital: 'Seoul'},
-        {id: 'Northern Korea', parent: 'Eastern Asia', value: 120540, capital: 'Pyongyang'},
-        {id: 'Japan', parent: 'Eastern Asia', value: 1564116, capital: 'Tokio'},
-        {id: 'Europe', parent: 'Eurasia'},
-        {id: 'Northern Europe', parent: 'Europe'},
-        {id: 'Finland', parent: 'Northern Europe', value: 338424, capital: 'Helsinki'},
-        {id: 'Great Britain', parent: 'Northern Europe', value: 209331, capital: 'London'},
-        {id: 'Ireland', parent: 'Northern Europe', value: 84421, capital: 'Dublin'},
-        {id: 'Scandinavia', parent: 'Northern Europe', value: 928057}];
+{id: 'Eurasia', parent: null},
+{id: 'Asia', parent: 'Eurasia'},
+{id: 'Eastern Asia', parent: 'Asia'},
+{id: 'Mongolia', parent: 'Eastern Asia', value: 1564116, capital: 'Ulan-Bator'},
+{id: 'China', parent: 'Eastern Asia', value: 1564116, capital: 'Beijing'},
+{id: 'Southern Korea', parent: 'Eastern Asia', value: 1564116, capital: 'Seoul'},
+{id: 'Northern Korea', parent: 'Eastern Asia', value: 120540, capital: 'Pyongyang'},
+{id: 'Japan', parent: 'Eastern Asia', value: 1564116, capital: 'Tokio'},
+{id: 'Europe', parent: 'Eurasia'},
+{id: 'Northern Europe', parent: 'Europe'},
+{id: 'Finland', parent: 'Northern Europe', value: 338424, capital: 'Helsinki'},
+{id: 'Great Britain', parent: 'Northern Europe', value: 209331, capital: 'London'},
+{id: 'Ireland', parent: 'Northern Europe', value: 84421, capital: 'Dublin'},
+{id: 'Scandinavia', parent: 'Northern Europe', value: 928057}];
 
     // create treemap chart
-    chart = anychart.treeMap();
+    var chart = anychart.treeMap();
 
     // create storage for tree data
     var treeData = anychart.data.tree(data, "asTable");
@@ -60,18 +54,18 @@
     
     // create drill to label
     drillToLabel = createLabel("Drill To Finland.", 10, function() {
-        // Drill down to the specified item.
-        chart.drillTo(item);
+// Drill down to the specified item.
+chart.drillTo(item);
     });
     
     // create drill up label
     drillUpLabel = createLabel("Drill Up a Level", 130, function() {
-        chart.drillUp();
+chart.drillUp();
     });
 
     // listen for draw event and update path in a title
     chart.listen("chartDraw",function(){
-        chart.title(printPath(chart.getDrilldownPath()))
+chart.title(printPath(chart.getDrilldownPath()))
     });
 
     // put title with path to the bottom of the chart
@@ -87,11 +81,11 @@
 
 // function to turn current drill down path structure to string
 function printPath(path){
-    // simply go through the array of Tree Data Items (https://api.anychart.com/latest/anychart.data.Tree.DataItem)
+    // simply go through the array of Tree Data Items (https://api.anychart.com/7.13.0/anychart.data.Tree.DataItem)
     // and use get() method to obtain id field which stores region names in this case
     var text = "";
     for (i = 0; i <  path.length; i++) { 
-        text += path[i].get("id") + "\\";
+text += path[i].get("id") + "\\";
     }
     return text;
 }
@@ -108,7 +102,7 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     return label;
-}</script>
-
+}
+</script>
 </body>
 </html>

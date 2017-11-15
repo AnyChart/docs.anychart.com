@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="STOCK Plots 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -40,7 +53,7 @@ var ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
 var lineMapping = dataTable.mapAs({'value': 3});
   
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
 // create first plot on the chart with column series
 var firstPlot = chart.plot(0);
@@ -67,9 +80,6 @@ chart.container('container');
 // initiate chart drawing
 chart.draw();
     });
-    </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

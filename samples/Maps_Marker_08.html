@@ -1,51 +1,63 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="usaMap">
+    <meta name="ac:name" content="Maps Marker 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/7.13.0/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_ACME = anychart.data.set([
-        {lat: 33.75, long: -112.18, name: "Stepford ACME Corp. branch", value: 321},
-        {lat: 33.79, long: -101.52, name: "Metropolis ACME Corp. branch", value: 293},
-        {lat: 26.12, long: -113.62, name: "Haddonfield ACME Corp. branch", value: 312},
-        {lat: 37.89, long: -105.09, name: "Marlberry ACME Corp. branch", value: 198},
-        {lat: 40.20, long: -84.28, name: "Sunnydale ACME Corp. branch", value: 309},
-        {lat: 39.44, long: -116.04, name: "Landmark ACME Corp. branch", value: 215},
-        {lat: 46.31, long: -99.88, name: "Springfield ACME Corp. branch", value: 219},
-        {lat: 27.63, long: -82.37, name: "Vice City ACME Corp. branch", value: 179}
+{lat: 33.75, long: -112.18, name: "Stepford ACME Corp. branch", value: 321},
+{lat: 33.79, long: -101.52, name: "Metropolis ACME Corp. branch", value: 293},
+{lat: 26.12, long: -113.62, name: "Haddonfield ACME Corp. branch", value: 312},
+{lat: 37.89, long: -105.09, name: "Marlberry ACME Corp. branch", value: 198},
+{lat: 40.20, long: -84.28, name: "Sunnydale ACME Corp. branch", value: 309},
+{lat: 39.44, long: -116.04, name: "Landmark ACME Corp. branch", value: 215},
+{lat: 46.31, long: -99.88, name: "Springfield ACME Corp. branch", value: 219},
+{lat: 27.63, long: -82.37, name: "Vice City ACME Corp. branch", value: 179}
     ]);
 
     var dataSet_CITRUS = anychart.data.set([
-        {lat: 45.75, long: -88.18, name: "Bas CITRUS Corp. branch", value: 221},
-        {lat: 43.44, long: -70.85, name: "Hillwood CITRUS Corp. branch", value: 203},
-        {lat: 41.46, long: -99.61, name: "Shermer CITRUS Corp. branch", value: 162},
-        {lat: 38.14, long: -90.40, name: "Venusville CITRUS Corp. branch", value: 98},
-        {lat: 29.28, long: -100.58, name: "South Park CITRUS Corp. branch", value: 109},
-        {lat: 47.38, long: -120.06, name: "Heavensent CITRUS Corp. branch", value: 215},
-        {lat: 44.50, long: -106.8, name: "Wellsville CITRUS Corp. branch", value: 201},
-        {lat: 44.63, long: -122.37, name: "Whoville CITRUS Corp. branch", value: 138},
-        {lat: 30.66, long: -88.15, name: "Bedrock CITRUS Corp. branch", value: 210},
-        {lat: 35.21, long: -116.44, name: "Bluffington CITRUS Corp. branch", value: 195},
-        {lat: 24.76, long: -151.44, name: "Primwille CITRUS Corp. branch", value: 112},
-        {lat: 34.51, long: -96.65, name: "Hillywood CITRUS Corp. branch", value: 89}
+{lat: 45.75, long: -88.18, name: "Bas CITRUS Corp. branch", value: 221},
+{lat: 43.44, long: -70.85, name: "Hillwood CITRUS Corp. branch", value: 203},
+{lat: 41.46, long: -99.61, name: "Shermer CITRUS Corp. branch", value: 162},
+{lat: 38.14, long: -90.40, name: "Venusville CITRUS Corp. branch", value: 98},
+{lat: 29.28, long: -100.58, name: "South Park CITRUS Corp. branch", value: 109},
+{lat: 47.38, long: -120.06, name: "Heavensent CITRUS Corp. branch", value: 215},
+{lat: 44.50, long: -106.8, name: "Wellsville CITRUS Corp. branch", value: 201},
+{lat: 44.63, long: -122.37, name: "Whoville CITRUS Corp. branch", value: 138},
+{lat: 30.66, long: -88.15, name: "Bedrock CITRUS Corp. branch", value: 210},
+{lat: 35.21, long: -116.44, name: "Bluffington CITRUS Corp. branch", value: 195},
+{lat: 24.76, long: -151.44, name: "Primwille CITRUS Corp. branch", value: 112},
+{lat: 34.51, long: -96.65, name: "Hillywood CITRUS Corp. branch", value: 89}
     ]);
 
-    usaMap = anychart.map();
+    var usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
 
     // Creates the marker series
@@ -80,10 +92,6 @@ anychart.onDocumentReady(function () {
     usaMap.container("container");
     usaMap.draw();
 });
-    </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>
