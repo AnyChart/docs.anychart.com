@@ -1,16 +1,4 @@
-#Event Listeners
-
-* [Overview](#overview)
-* [Listener Types](#listener_types)
-  * [listen](#listen)
-  * [listenOnce](#listenonce)
-  * [removeAllListeners](#removealllisteners)
-  * [unlisten](#unlisten)
-  * [unlistenByKey](#unlistenbykey)
-* [Event types](#event_types)
-  * [Mouse-related](#mouse-related)
-  * [Point-related](#point-related)
-* [Manage Single Point](#manage_single_point)
+# Event Listeners
 
 ## Overview
 
@@ -24,7 +12,6 @@ There are 5 listener methods ({api:anychart.core.Chart#listen}**.listen()**{api}
 
 There are five listener methods in Anychart, each type for a special case. Read the following information to find out how to use listeners.
 
-<a name="listen"></a>
 ###listen()
 
 This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Chart#listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
@@ -45,7 +32,6 @@ chart.listen("click", function(){
 
 {sample}CMN\_Event\_Listener\_01{sample}
 
-<a name="listenonce"></a>
 ###listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
@@ -66,7 +52,6 @@ range.listenOnce("dblClick",
 
 {sample}CMN\_Event\_Listener\_02{sample}
 
-<a name="removealllisteners"></a>
 ###removeAllListeners()
 
 This listener type removes all event listeners from the object, unless you define the particular type.
@@ -81,13 +66,8 @@ chart.listen("dblClick", function(){
 
 {sample}CMN\_Event\_Listener\_03{sample}
 
-<<<<<<< HEAD
-Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Chart##unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Chart#listen}**.listen()**{api} one.
-=======
 Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Chart#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Chart#listen}**.listen()**{api} one.
->>>>>>> 7.11.0
 
-<a name="unlisten">
 ###unlisten()
 
 This listener type disables the particular listener added using the {api:anychart.core.Chart#listen}**.listen()**{api} or {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api} methods.
@@ -118,7 +98,6 @@ chart.listenOnce("click",function(){
 
 {sample}CMN\_Event\_Listener\_04{sample}
 
-<a name="unlistenbykey">
 ###unlistenByKey()
 
 This listener type removes an event listener which was added with {api:anychart.core.Chart#listen}**.listen()**{api} by the key returned by {api:anychart.core.Chart#listen}**.listen()**{api} or {api:anychart.core.Chart#listenOnce}**.listenOnce()**{api}. The only parameter of this method is the key to be listened to.
@@ -316,41 +295,7 @@ function getQuarterMonths(month) {
   return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
 }
 ```
-<!--
-Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
 
-```
-	var tooltip = series.tooltip();
-	tooltip.titleFormatter(function(point){
-		var index = point.index;
-		switch (true){
-			case (index<3): return "First Quarter";
-			case (index<6): return "Second Quarter";
-			case (index<9): return "Third Quarter";
-			case (index<12): return "Fourth Quarter";
-		}
-	});
-
-	tooltip.textFormatter(function(point){
-		var index = point.index;
-		var prefix = "Income: $";
-		switch (true){
-			case (index<3): return prefix+sumValues([0,1,2]);
-			case (index<6): return prefix+sumValues([3,4,5]);
-			case (index<9): return prefix+sumValues([6,7,8]);
-			case (index<12): return prefix+sumValues([9,10,11]);
-		}
-
-		function sumValues(array){
-			var value = 0;
-			for (var i=0;i<array.length;i++)
-				value+=chart.getSeries(0).getPoint(array[i]).get("value");
-			return value;
-		}
-	});
-```
--->
 And here is a sample with these settings:
 
 {sample}CMN\_Event\_Listener\_08{sample}
-

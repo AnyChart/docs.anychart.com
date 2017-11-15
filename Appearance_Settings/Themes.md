@@ -68,7 +68,7 @@ There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Eart
 
 And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 
-You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/products/anychart/themes/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
+You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/products/anychart/overview/#chart-design) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
 
 ##Create Theme
 

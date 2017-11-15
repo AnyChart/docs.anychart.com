@@ -46,7 +46,7 @@ If you it is your first experience with JavaScript drawing libraries, we suggest
 * [Transformations](Transformations) article explains how you can change elements and groups.
 * [Events](Events) article describes GraphicsJS event model.
 
-If you are done with articles listed above, or you are an experienced user of [AnyChart 7](http://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
+If you are done with articles listed above, or you are an experienced user of [AnyChart 7](https://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
 
 * [GraphicsJS API](https://api.anychart.com/latest/anychart.graphics)
 * [GraphicsJS Samples](http://www.graphicsjs.org/)

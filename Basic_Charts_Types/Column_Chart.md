@@ -1,25 +1,6 @@
 {:index 1}
 # Column Chart
 
-* [Overview](#overview)
-* [Chart](#chart)
-  * [Single Series](#single_series)
-  * [Multi-series](#multi-series)
-  * [3D Series](#3d_series)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
-* [Padding](#padding)
-* [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
-* [Hatch Fills](#hatch_fills)
-* [Samples](#samples)
-
 ## Overview
 
 A column chart is a modification of a bar chart, the only difference is its orientation: instead of horizontal bars and categories usually kept along the Y-axis, a Column Chart has vertical rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. If you want to build a horizontally oriented bar chart, please go to the [Bar Chart](Bar_Chart) section.
@@ -367,11 +348,6 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Color_Management) tutorial.
-<<<<<<< HEAD
-
-To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
-=======
->>>>>>> 7.11.0
 
 To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
 
