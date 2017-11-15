@@ -113,7 +113,7 @@ JSON Schema specifies a JSON-based format to define the structure of JSON data
 (visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON) 
 for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart {{branch-name}} version is located at 
-[http://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](http://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json). 
+[https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json). 
 Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 
 
 ## XML
@@ -126,7 +126,7 @@ You can use XML to define the chart configuration as a string. Let's take the sa
 anychart.onDocumentReady(function() {
 
             var xml =
-                    '<anychart xmlns="http://anychart.com/schemas/{{branch-name}}/xml-schema.xsd">'+
+                    '<anychart xmlns="https://anychart.com/schemas/{{branch-name}}/xml-schema.xsd">'+
                     '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
                     '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
                     '<tree_data>'+
@@ -188,7 +188,7 @@ XML Schema specifies a XML-based format to define the structure of XML data
 (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). 
 All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 (for instance, XML schema for AnyChart {{branch-name}} version is located at 
-[http://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd](http:/cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd)). 
+[https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd](https:/cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd)). 
 
 This file can also be used to validate your own XML structure. 
 
