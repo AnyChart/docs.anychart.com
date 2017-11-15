@@ -207,7 +207,7 @@ The anchor of the marker depends on its position and its connector's curvature, 
 
 {sample}Maps\_Connectors\_10{sample}
 
-The size of markers were changed as well using the {api:anychart.core.ui.MarkersFactory.Marker#}.size(){api} method.
+The size of markers were changed as well using the {api:anychart.core.ui.MarkersFactory.Marker#size}.size(){api} method.
 
 Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Map Marker series tutorial](Dot_\(Point\)_Map).
 

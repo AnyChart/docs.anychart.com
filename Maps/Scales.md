@@ -168,7 +168,7 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tbody>
 </table>
 
-Use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api} to make a progression between two similar hues.
+Use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api} to make a progression between two similar hues.
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 
 {sample}Maps\_Scales\_07{sample}
@@ -176,51 +176,3 @@ In case you haven't defined any of the colors, they will be generated automatica
 That's how the same map would look like with an ordinal Scale.
 
 {sample}Maps\_Scales\_08{sample}
-<!--
-### Coming soon
- 
-#### Partial color progression
- 
-Partial spectral hue progressions are used to map mixtures of two distinct sets of data. 
-This ColorRange type looks like a gradient between two adjacent opponent hues and shows the magnitude of the mixing data classes.
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
-</tr>
-<tr>
-<td>
-<img src = "https://static.anychart.com/images/partial\_c\_progr\_ord.png">
-</td>
-<td>
-<img src = "https://static.anychart.com/images/partial\_c\_progr\_quant.png">
-</td>
-</tr>
-</tbody>
-</table>
-
-
-#### Full-spectral color progression
-
-Full spectral progression contains all rainbow colors, from blue to red. This ColorRange type is usually used on relief maps and modern weather maps. 
-This progression is not recommended under other circumstances because some connections between a color and its meaning can seem confusing for users.
-
-<table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th><b>Ordinal</b></th>
-<th><b>Linear</b></th>
-</tr>
-<tr>
-<td>
-<img src = "https://static.anychart.com/images/full\_c\_ord.png">
-</td>
-<td>
-<img src = "https://static.anychart.com/images/full\_c\_quant.png">
-</td>
-</tr>
-</tbody>
-</table>
--->
