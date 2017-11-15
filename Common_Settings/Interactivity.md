@@ -1,23 +1,4 @@
-#Interactivity
-
-* [Overview](#overview)
-* [Default interactivity](#default_interactivity)
-  * [Include and Exclude Points](#include_and_exclude_points)
-* [Altering interactivity](#altering_interactivity)
-* [Charts behaviour](#charts_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
-* [Series behaviour](#series_behaviour)
-  * [Hover](#series_hover)
-  * [Select](#series_select)
-  * [Single Point](#single_point)
-* [Single Series Chart](#single_series_chart)
-* [Handling chart events](#handling_chart_events)
-  * [Navigating to URL](#interactivity_settings_in_data_sets)
-  * [DrillDown](#drilldown)
-* [Creating Custom Tooltip](#creating_custom_tooltip)
-  * [Chart as Tooltip](#chart_as_tooltip)
-* [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
+# Interactivity
 
 ## Overview
 
@@ -126,7 +107,7 @@ interactivity.selectionMode("none");
 
 <a name="multiselect"></a>
 
-##### Multi-select
+#### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -140,7 +121,7 @@ interactivity.selectionMode("multiSelect");
 
 <a name="singleselect"></a>
 
-##### Single-select
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
@@ -394,13 +375,6 @@ lineChart.tooltip().textFormatter(function() {
     return text;
 });
 ```
-
-Check out some other drilldown samples we've got in our gallery:
- - [Dashboard with the US Map and Multiselect](https://www.anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
- - [World Temperature Map](https://www.anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
- - [Wine Sales in Australia](https://www.anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
- - [Software Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
- - [ACME Corp. Sales Dashboard](https://www.anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Creating Custom Tooltip
 

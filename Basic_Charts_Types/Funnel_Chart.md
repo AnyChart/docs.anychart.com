@@ -283,7 +283,3 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 ```
 
 {sample}BCT\_FunnelChart\_11{sample}
-
-## Samples
-
-You can see a lot of other samples in [AnyChart Web Accumulation Charts Gallery](https://www.anychart.com/products/anychart/gallery/Accumulation_Charts/).

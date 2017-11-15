@@ -7,7 +7,7 @@
 
 ## Overview
 
-{api:anychart.graphics.vector.Path}Path{api} is sequence of segments of different type, it can be opened or closed. To define the how to fill the shape created by a path the [EVEN-ODD](http://www.w3.org/TR/SVG/painting.html#FillProperties) rule is used. Path always starts with {api:anychart.graphics.vector.Path#moveTo}moveTo(){api} command.
+{api:anychart.graphics.vector.Path}Path{api} is sequence of segments of different type, it can be opened or closed. To define the how to fill the shape created by a path the [EVEN-ODD](https://www.w3.org/TR/SVG/painting.html#FillProperties) rule is used. Path always starts with {api:anychart.graphics.vector.Path#moveTo}moveTo(){api} command.
 
 GraphicsJS has one the most powerful line drawing features among SVG/VML based graphics libraries that provide only Bezier curves out of the box. GraphicsJS is great at working with mathematical functions. As a result, GraphicsJS allows you to draw not only Bezier curves out of the box, but literally anything; for example, you can draw some arc very quickly, whereas other graphics libraries will make you arrange it through numerous different curves. There are also [basic shapes available](Shapes).
 

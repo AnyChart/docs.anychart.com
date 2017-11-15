@@ -13,13 +13,6 @@ All AnyChart products support full localization of input and output date/time an
 
 All the methods you need are located on {api:anychart.format}anychart.format{api} namespace.
 
-You can also see how locales work using our localization demo applications:
-
-- [AnyChart Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anychart/demos/localization/)
-- [AnyStock Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anystock/demos/localization/)
-- [AnyGantt Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anygantt/demos/localization/)
-- [AnyMap Localization and Date-Time Formatting Demo Application](https://www.anychart.com/products/anymap/demos/localization/)
-
 ##Applying an Automatic Locale
 
 AnyChart provides built-in locales covering most regions and cultures. To use an automatic locale, first link a file from [AnyChart CDN](https://cdn.anychart.com/#locales) or download it to your server and link it from there.

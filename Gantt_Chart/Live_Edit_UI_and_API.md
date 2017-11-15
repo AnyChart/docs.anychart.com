@@ -1,22 +1,14 @@
-#Live Edit UI
+# Live Edit UI
 
-* [Overview](#overview)
-* [Defaults](#defaults)
- * [Controls](#controls) 
- * [Events](#events) 
- * [Data Grid](#data_grid)
- * [TimeLine](#timeline)
-* [Coloring](#coloring)
- 
-# Overview
+## Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In this article we will look at the "editing mode" of AnyGantt. In the following sample you can disable or enable editing mode and try to change whatever you like:
 
 {sample :width 690 :height 300 }GANTT\_Interactivity\_08{sample}
 
-# Defaults
-## Controls
+## Defaults
+### Controls
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
 
@@ -104,27 +96,9 @@ Progress slider
 <td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
 <td>Changes the Gantt chart tree structure visually and logically.</td>
 <td>
-<!--
-<img src ="https://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
-<br>
-The cursor becomes of this type when we hover and press the button on the item.
-<br>
-
-<img src ="https://static.anychart.com/images/progress_slider.png" alt="Forbid the operation" />
-<br>
-We see this symbol when we hover the item we cannot drop the dragged one into.
-<br>
-
-<img src ="https://static.anychart.com/images/progress_slider.png" alt="A between stroke and cursor" />
-<br>
-The cursor becomes of this type when we hover and press the button on the item.
-<br>
--->
 </td>
 </tr>
 </tbody></table>
-
-
 
 ## Events
 

@@ -205,7 +205,7 @@ As you can see from the snippet above, you need to use the {api:anychart.core.ca
 
 {sample}BCT\_AreaChart\_12{sample}
 
-**Note**: more information about 3D charts can be found in [3D Charts article](#../Basic_Charts_Types/3D_Charts).
+**Note**: more information about 3D charts can be found in [3D Charts article](3D_Charts).
 
 ## Axes
 
@@ -335,7 +335,3 @@ To demonstrate hatch fill feature we've prepared the following sample. As you ca
 ```
 
 {sample}BCT\_AreaChart\_11{sample}
-
-## Samples
-
- You can see a lot of other samples in [AnyChart Web Area Charts Gallery](https://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts).
