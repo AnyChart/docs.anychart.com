@@ -7,7 +7,7 @@ AnyChart provides a method allowing to change the series type if the current typ
 
 ## seriesType()
 
-To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used to create series of this type, e.g. *bar()* method turns into *"bar"*, *line()* turns into *"line"* and so on.
+To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used to create series of this type, e.g. **bar()**method turns into `bar`, **line()** turns into `line` and so on.
 
 The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
 

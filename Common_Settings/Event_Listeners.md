@@ -186,9 +186,9 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 </tbody>
 </table>
 
-### Mouse-related
+### Mouse-Related
 
-As mentioned above, these event types provides no information about the point any event is committed on. 
+As mentioned above, these event types provide no information about the point any event is committed on. 
 For further information, see the example below.
 
 ```
@@ -203,7 +203,7 @@ chart.listen("mouseDown", function (){
 
 Here we have made a chart that opens a new page when the mouse is pressed. Look through the next paragraph to understand the difference between the mouse-related and point-related events.
 
-### Point-related
+### Point-Related
 
 Opposite to mouse-related methods, these event types are able to tell some extra information about the point any of those events are committed on. See and explore the example below.
 

@@ -102,7 +102,7 @@ chart.yScale().maximum(100);
 
 ## Soft Minimum and Soft Maximum
 
-In some cases you may have no need to define solid minimum or maximum and need a scale to be autocalculated, but at the same time you may want a scale to remain in a certain range (i.e. "never go below zero" or "never go above 100"): that's the case when soft maximum and soft_minimum parameters help you.
+In some cases you may have no need to define solid minimum or maximum and need a scale to be autocalculated, but at the same time you may want a scale to remain in a certain range (i.e. "never go below zero" or "never go above 100"): that's the case when soft maximum and soft minimum parameters help you.
 
 To set soft maximum and soft minimum use {api:anychart.scales.Linear#softMinimum}softMinimum(){api} and {api:anychart.scales.Linear#softMaximum}softMaximum(){api} methods:
 
@@ -152,7 +152,7 @@ In the sample below you can see how offsets settings affects js chart. The chart
 
 ## Inversion
 
-If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with "true" parameter.
+If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with `true` parameter.
 
 ```
 chart.yScale().inverted(true);

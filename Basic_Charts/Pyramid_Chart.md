@@ -199,13 +199,13 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 #### Position
 
 The position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
-* **inside** - place labels inside each pyramid point.
-* **outsideLeftInColumn** - place labels to the left of the pyramid and align them in a column.
-* **outsideRightInColumn** - place labels to the right of the pyramid and align them in a column.
-* **outsideLeft** - place labels to the left of the pyramid.
-* **outsideRight** - place labels to the right of the pyramid.
+* `"inside"` - place labels inside each pyramid point.
+* `"outsideLeftInColumn"` - place labels to the left of the pyramid and align them in a column.
+* `"outsideRightInColumn"` - place labels to the right of the pyramid and align them in a column.
+* `"outsideLeft"` - place labels to the left of the pyramid.
+* `"outsideRight"` - place labels to the right of the pyramid.
 
-If you use **outsideLeft** or **outsideRight** it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
+If you use `"outsideLeft"` or `"outsideRight"`, it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
 
 ```
 // change the labels position

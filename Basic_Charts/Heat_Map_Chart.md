@@ -272,9 +272,9 @@ chart.labels().format(function (){
 
 You can also configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
 
-* **"alwaysShow"** – labels are always shown
-* **"clip"** – labels are cropped to fit cells
-* **"drop"** – too long labels are hidden
+* `"alwaysShow"` – labels are always shown
+* `"clip"` – labels are cropped to fit cells
+* `"drop"` – too long labels are hidden
 
 The default display mode is "drop": a label is not shown if it does not fit the width of a cell.
 
