@@ -5,12 +5,7 @@ AnyChart UI is a set of utility components that may help you with integration an
 The following UI components are available and supported:
 
 * [Context Menu](Context_Menu)
-* [Chart Editor](Chart_Editor)
 * [Preloader](Preloader)
-
-The following UI components are present in the Framework but are in beta:
-
-* [Gantt Toolbar](Gantt_Toolbar)
 
 In the upcoming releases we plan to add:
 
