@@ -1,52 +1,64 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
-                                              // this column represents JS equivalents every JSON object
-  chart = anychart.fromJson(
+    <meta name="ac:name" content="WD Data from JSON 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+                                      // this column represents JS equivalents every JSON object
+  var chart = anychart.fromJson(
     // set chart type
     {chart: {type: "line",                    // var chart = anychart.column();
 
       // title settings
       title: {                                // chart.title()
-        // set title text
-        text: "Sales Performance",            //   .text("Sales Performance")
-        // settings for title background
-        background: {                         //   .background()
-          // enable background
-          enabled: "true",                    //     .enabled(true)
-          // set background inner color
-          fill: "#FFD700",                    //     .fill("#FFD700")
-          // set background border
-          stroke: "#D8D8D8",                  //     .stroke("#D8D8D8")
-          // set type of background corners
-          cornerType: "round",                //     .cornerType("round")
-          // set corners size
-          corners: 10}},                      //     .corners(10);
+// set title text
+text: "Sales Performance",            //   .text("Sales Performance")
+// settings for title background
+background: {                         //   .background()
+  // enable background
+  enabled: "true",                    //     .enabled(true)
+  // set background inner color
+  fill: "#FFD700",                    //     .fill("#FFD700")
+  // set background border
+  stroke: "#D8D8D8",                  //     .stroke("#D8D8D8")
+  // set type of background corners
+  cornerType: "round",                //     .cornerType("round")
+  // set corners size
+  corners: 10}},                      //     .corners(10);
 
       // set series type
       series:[{seriesType: "column",          // chart.column([
-        data: [{x: "January", value: 10000},  //   ["John", 10000],
-          {x: "February", value: 12000},      //   ["Jake", 12000],
-          {x: "March", value: 18000},         //   ["Peter", 18000],
-          {x: "April", value: 11000},         //   ["James", 11000],
-          {x: "May", value: 9000}]            //   ["Mary", 9000]
+data: [{x: "January", value: 10000},  //   ["John", 10000],
+  {x: "February", value: 12000},      //   ["Jake", 12000],
+  {x: "March", value: 18000},         //   ["Peter", 18000],
+  {x: "April", value: 11000},         //   ["James", 11000],
+  {x: "May", value: 9000}]            //   ["Mary", 9000]
       }],                                     // ])
 
       // set chart container
       container: "container"}}                // chart.container("container");
   ).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,56 +1,68 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-treemap.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="BCT Treemap Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
 
     // create data
     var data = [
       {name:     "Slavic Languages", children: [
-        {name:   "East Slavic", children: [
-          {name: "Russian",        value: 150000000},
-          {name: "Ukrainian",      value:  45000000},
-          {name: "Belarusian",     value:   3200000}
-        ]},
-        {name:   "West Slavic", children: [
-          {name: "Polish",         value:  55000000},
-          {name: "Czech",          value:  10600000},
-          {name: "Slovak",         value:   5200000}
-        ]},
-        {name:   "South Slavic", children: [
-          {name: "Serbo-Croatian", value:  21000000},
-          {name: "Bulgarian",      value:   9000000},
-          {name: "Slovene",        value:   2500000},
-          {name: "Macedonian",     value:   1400000}
-        ]}  
+{name:   "East Slavic", children: [
+  {name: "Russian",        value: 150000000},
+  {name: "Ukrainian",      value:  45000000},
+  {name: "Belarusian",     value:   3200000}
+]},
+{name:   "West Slavic", children: [
+  {name: "Polish",         value:  55000000},
+  {name: "Czech",          value:  10600000},
+  {name: "Slovak",         value:   5200000}
+]},
+{name:   "South Slavic", children: [
+  {name: "Serbo-Croatian", value:  21000000},
+  {name: "Bulgarian",      value:   9000000},
+  {name: "Slovene",        value:   2500000},
+  {name: "Macedonian",     value:   1400000}
+]}  
       ]} 
     ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data, "as-tree");
+    var chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Data (Tree)<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Slavic Languages by Number of Speakers");
+        "<span style='font-size:12; font-style:italic'>" +
+        "Slavic Languages by Number of Speakers");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

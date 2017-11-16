@@ -1,70 +1,82 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta name="ac:name" content="WD Data from XML 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
   
   // xml data                                             // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/latest/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/8.0.0/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                              // var chart = anychart.line();
       'container="container">'+                           // chart.container("container");
 
-        // set intervals
-        '<y_scale><ticks '+                               // chart.yScale().ticks()
-        'interval="100000"/></y_scale>'+                  //   .interval(100000);
+// set intervals
+'<y_scale><ticks '+                               // chart.yScale().ticks()
+'interval="100000"/></y_scale>'+                  //   .interval(100000);
 
-        // custom y scale
-        '<scales><scale type="linear" '+                  // var newScale = anychart.scales.linear();
-        'minimum="0" '+                                   // newScale.minimum(0)
-        'maximum="100">'+                                 //     .maximum(100)
-          '<ticks '+                                      //     .ticks()
-          'interval="10"/>'+                              //         .interval(10);
-          '<minorTicks interval="2"/></scale></scales>'+  // extraYScale.minorTicks().interval(2);
+// custom y scale
+'<scales><scale type="linear" '+                  // var newScale = anychart.scales.linear();
+'minimum="0" '+                                   // newScale.minimum(0)
+'maximum="100">'+                                 //     .maximum(100)
+  '<ticks '+                                      //     .ticks()
+  'interval="10"/>'+                              //         .interval(10);
+  '<minorTicks interval="2"/></scale></scales>'+  // extraYScale.minorTicks().interval(2);
 
-        // y axes settings
-        '<y_axes>'+                                       // chart.yAxis().title()
-        '<axis title="Basic Y Axis"/>'+                   //   .text("Basic Y Axis");
-        '<axis '+                                         // chart.yAxis(1)
-        'orientation="right" '+                           //   .orientation("right")
-        'scale="0">'+                                     //   .scale(newScale)
-        '<title '+                                        //   .title()
-        'text="Extra Y Axis"/></axis></y_axes>'+          //     .text("Extra Y Axis");
+// y axes settings
+'<y_axes>'+                                       // chart.yAxis().title()
+'<axis title="Basic Y Axis"/>'+                   //   .text("Basic Y Axis");
+'<axis '+                                         // chart.yAxis(1)
+'orientation="right" '+                           //   .orientation("right")
+'scale="0">'+                                     //   .scale(newScale)
+'<title '+                                        //   .title()
+'text="Extra Y Axis"/></axis></y_axes>'+          //     .text("Extra Y Axis");
 
-        '<series_list><series series_type="column">'+     // chart.column([
-          '<data><point x="A" value="637166"/>'+          //     ["A", 637166],
-            '<point x="B" value="721630"/>'+              //     ["B", 721630],
-            '<point x="C" value="148662"/>'+              //     ["C", 148662],
-            '<point x="D" value="78662"/>'+               //     ["D", 78662],
-            '<point x="E" value="90000"/>'+               //     ["E", 90000]
-          '</data></series>'+                             // ]);
-        '<series series_type="line" '+                    // var line = chart.line();
-        'y_scale="0">'+                                   // line.yScale(newScale);
-          '<data>'+                                       // line.data([
-            '<point x="A" value="95"/>'+                  //     ["A", 95],
-            '<point x="B" value="97"/>'+                  //     ["B", 97],
-            '<point x="C" value="96"/>'+                  //     ["C", 96],
-            '<point x="D" value="70"/>'+                  //     ["D", 70],
-            '<point x="E" value="35"/>'+                  //     ["E", 35]
-          '</data></series></series_list></chart>'+       // ]);
+'<series_list><series series_type="column">'+     // chart.column([
+  '<data><point x="A" value="637166"/>'+          //     ["A", 637166],
+    '<point x="B" value="721630"/>'+              //     ["B", 721630],
+    '<point x="C" value="148662"/>'+              //     ["C", 148662],
+    '<point x="D" value="78662"/>'+               //     ["D", 78662],
+    '<point x="E" value="90000"/>'+               //     ["E", 90000]
+  '</data></series>'+                             // ]);
+'<series series_type="line" '+                    // var line = chart.line();
+'y_scale="0">'+                                   // line.yScale(newScale);
+  '<data>'+                                       // line.data([
+    '<point x="A" value="95"/>'+                  //     ["A", 95],
+    '<point x="B" value="97"/>'+                  //     ["B", 97],
+    '<point x="C" value="96"/>'+                  //     ["C", 96],
+    '<point x="D" value="70"/>'+                  //     ["D", 70],
+    '<point x="E" value="35"/>'+                  //     ["E", 35]
+  '</data></series></series_list></chart>'+       // ]);
     '</anychart>';
   
   // get XML data
-  chart = anychart.fromXml(xml);
+  var chart = anychart.fromXml(xml);
   
   // draw chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

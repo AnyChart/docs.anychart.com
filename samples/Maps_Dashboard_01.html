@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="x-cat-tags" content="anyMap"/>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-map.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-<script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-<script x-export="stage">
+    <meta name="ac:name" content="Maps Dashboard 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/8.0.0/Maps/Map_Projections
     
     var data = [
-        ['AU.WA', 300],
-        ['AU.JB', 230],
-        ['AU.NS', 240],
-        ['AU.VI', 275],
-        ['AU.NT', 130],
-        ['AU.TS', 190],
-        ['AU.CT', 100],
-        ['AU.SA', 305],
-        ['AU.QL', 190]
+['AU.WA', 300],
+['AU.JB', 230],
+['AU.NS', 240],
+['AU.VI', 275],
+['AU.NT', 130],
+['AU.TS', 190],
+['AU.CT', 100],
+['AU.SA', 305],
+['AU.QL', 190]
     ];
 
-    stage = anychart.graphics.create("container");
+    var stage = anychart.graphics.create("container");
 
     // create and display map
     var map = anychart.map();
@@ -57,8 +69,5 @@ anychart.onDocumentReady(function() {
 
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>
 </body>
 </html>

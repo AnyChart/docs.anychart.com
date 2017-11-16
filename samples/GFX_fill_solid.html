@@ -1,40 +1,51 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/graphics.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">
-        stage = acgraph.create("container");
-
-        stage.rect(0, stage.height() / 3, stage.width(), stage.height() / 3)
-                .fill("#FF6666")
-                .stroke("#FF6666");
-
-        for (var i = 1; i < 11; i = i + 3) {
-            var rect = stage.rect(
-                    (stage.width() / 12) * (i - 1) + (stage.width() / 36),
-                    stage.height() / 9,
-                    stage.width() / 12,
-                    stage.height() / 1);
-            var text = stage.text(
-                    (stage.width() / 12) * (i - 1) + (stage.width() / 36),
-                    stage.height() / 9,
-                    ''
-            );
-            if (i > 9) {
-                rect.fill("#b9b9b9").stroke("#bbb");
-                text.text("opacity: 1");
-            } else {
-                rect.fill("#b9b9b9 0." + i).stroke("#bbb");
-                text.text("opacity: 0." + (i));
-            }
+    <meta name="ac:name" content="GFX fill solid"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-    </script>
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
+
+stage.rect(0, stage.height() / 3, stage.width(), stage.height() / 3)
+        .fill("#FF6666")
+        .stroke("#FF6666");
+
+for (var i = 1; i < 11; i = i + 3) {
+    var rect = stage.rect(
+            (stage.width() / 12) * (i - 1) + (stage.width() / 36),
+            stage.height() / 9,
+            stage.width() / 12,
+            stage.height() / 1);
+    var text = stage.text(
+            (stage.width() / 12) * (i - 1) + (stage.width() / 36),
+            stage.height() / 9,
+            ''
+    );
+    if (i > 9) {
+        rect.fill("#b9b9b9").stroke("#bbb");
+        text.text("opacity: 1");
+    } else {
+        rect.fill("#b9b9b9 0." + i).stroke("#bbb");
+        text.text("opacity: 0." + (i));
+    }
+}
+</script>
 </body>
 </html>

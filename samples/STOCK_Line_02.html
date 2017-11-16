@@ -1,59 +1,71 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-stock.min.js" data-export="true"></script>
-
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Line 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function() {
 
   // set the data
   table = anychart.data.table('x');
   table.addData([
-        {'x':"2016-01-01", 'value': 1.0860},
-        {'x':"2016-01-04", 'value': 1.0832},
-        {'x':"2016-01-05", 'value': 1.0780},
-        {'x':"2016-01-06", 'value': 1.0781},
-        {'x':"2016-01-07", 'value': 1.0936},
-        {'x':"2016-01-08", 'value': 1.0932},
-        {'x':"2016-01-11", 'value': 1.0860},
-        {'x':"2016-01-12", 'value': 1.0857},
-        {'x':"2016-01-13", 'value': 1.0877},
-        {'x':"2016-01-14", 'value': 1.0865},
-        {'x':"2016-01-15", 'value': 1.0917},
-        {'x':"2016-01-18", 'value': 1.0893},
-        {'x':"2016-01-19", 'value': 1.0909},
-        {'x':"2016-01-20", 'value': 1.0891},
-        {'x':"2016-01-21", 'value': 1.0874},
-        {'x':"2016-01-22", 'value': 1.0797},
-        {'x':"2016-01-25", 'value': 1.0849},
-        {'x':"2016-01-26", 'value': 1.0872},
-        {'x':"2016-01-27", 'value': 1.0893},
-        {'x':"2016-01-28", 'value': 1.0939},
-        {'x':"2016-01-29", 'value': 1.0837},
-        {'x':"2016-02-01", 'value': 1.0889},
-        {'x':"2016-02-02", 'value': 1.0919},
-        {'x':"2016-02-03", 'value': 1.1104},
-        {'x':"2016-02-04", 'value': 1.1208},
-        {'x':"2016-02-05", 'value': 1.1159},
-        {'x':'2016-02-08', 'value': 1.1198},
-        {'x':'2016-02-09', 'value': 1.1293},
-        {'x':'2016-02-10', 'value': 1.1290},
-        {'x':'2016-02-11', 'value': 1.1324},
-        {'x':'2016-02-12', 'value': 1.1260}
+{'x':"2016-01-01", 'value': 1.0860},
+{'x':"2016-01-04", 'value': 1.0832},
+{'x':"2016-01-05", 'value': 1.0780},
+{'x':"2016-01-06", 'value': 1.0781},
+{'x':"2016-01-07", 'value': 1.0936},
+{'x':"2016-01-08", 'value': 1.0932},
+{'x':"2016-01-11", 'value': 1.0860},
+{'x':"2016-01-12", 'value': 1.0857},
+{'x':"2016-01-13", 'value': 1.0877},
+{'x':"2016-01-14", 'value': 1.0865},
+{'x':"2016-01-15", 'value': 1.0917},
+{'x':"2016-01-18", 'value': 1.0893},
+{'x':"2016-01-19", 'value': 1.0909},
+{'x':"2016-01-20", 'value': 1.0891},
+{'x':"2016-01-21", 'value': 1.0874},
+{'x':"2016-01-22", 'value': 1.0797},
+{'x':"2016-01-25", 'value': 1.0849},
+{'x':"2016-01-26", 'value': 1.0872},
+{'x':"2016-01-27", 'value': 1.0893},
+{'x':"2016-01-28", 'value': 1.0939},
+{'x':"2016-01-29", 'value': 1.0837},
+{'x':"2016-02-01", 'value': 1.0889},
+{'x':"2016-02-02", 'value': 1.0919},
+{'x':"2016-02-03", 'value': 1.1104},
+{'x':"2016-02-04", 'value': 1.1208},
+{'x':"2016-02-05", 'value': 1.1159},
+{'x':'2016-02-08', 'value': 1.1198},
+{'x':'2016-02-09', 'value': 1.1293},
+{'x':'2016-02-10', 'value': 1.1290},
+{'x':'2016-02-11', 'value': 1.1324},
+{'x':'2016-02-12', 'value': 1.1260}
   ]);
   
   // map the data
   mapping = table.mapAs({x: 'x', value: 'value'});
 
   // chart type
-  chart = anychart.stock();
+  var chart = anychart.stock();
 
   // set the series
   var series = chart.plot(0).line(mapping);
@@ -65,8 +77,5 @@ anychart.onDocumentReady(function() {
   chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

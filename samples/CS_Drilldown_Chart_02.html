@@ -1,15 +1,29 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js" data-export="true"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js" data-export="true"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="CS Drilldown Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   var data = [
     {"x": 2015, "value": 2195081, "drillDown": [
       {"x": "Q1", "value": 792026},
@@ -32,7 +46,7 @@
   ];
 
   // create column chart
-  chart = anychart.column(data);
+  var chart = anychart.column(data);
 
   // configure axis labels
   chart.yAxis().labels().format('${%Value}{scale:(1000)(1000)|(k)(m)}');
@@ -44,18 +58,16 @@
   // configire drilldown
   chart.listen('pointClick', function (e) {
       if (e.point.get('drillDown')) {
-            chart.getSeries(0).data(e.point.get('drillDown'));
-          }
+    chart.getSeries(0).data(e.point.get('drillDown'));
+  }
       else {
-            chart.getSeries(0).data(data);
+    chart.getSeries(0).data(data);
       }
   });
 
   // set container id and display chart
   chart.container('container').draw();
-  });</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+  });
+</script>
 </body>
 </html>
