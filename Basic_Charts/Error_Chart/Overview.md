@@ -210,7 +210,7 @@ The following sample shows how to customize labels on a chart with error bars:
 //configure labels
 var labels = series.labels();
 labels.enabled(true);
-series.labels().format("{%Value}(±{%ValueUpperError})");
+series.labels().format("{%value}(±{%valueUpperError})");
 series.labels().offsetY(+50);
 ```
 

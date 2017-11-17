@@ -48,7 +48,7 @@ var data = [
 chart = anychart.venn(data);
 
 // configure the labels of intersections
-chart.intersections().labels().format("{%X}");
+chart.intersections().labels().format("{%x}");
 
 // set the container id
 chart.container('container');
