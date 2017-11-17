@@ -72,11 +72,11 @@ There are two ways to create data: you can add either a list of words or a text.
 
 When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
-* **x** to set words
-* **value** to set frequencies
-* **category** to set categories
+* `x` to set words
+* `value` to set frequencies
+* `category` to set categories
 
-This is how working with "x" and "value" looks like:
+This is how working with `x` and `value` looks like:
 
 ```
 // create data
@@ -99,7 +99,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The "category" field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
+The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
 
 ```
 // create data   
@@ -263,7 +263,7 @@ chart.colorRange().enabled(true);
 
 #### Categories
 
-Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
+Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the `category` field to your data to set categories, then specify colors for the scale:
 
 ```
 // create data   

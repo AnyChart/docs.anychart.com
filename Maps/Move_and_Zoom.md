@@ -19,7 +19,7 @@ When there is a point selected or a couple of them, it's possible to copy some i
 
 ### Enable/Disable
 
-To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable. 
+To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
 
 **NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 

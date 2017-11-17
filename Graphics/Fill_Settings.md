@@ -23,7 +23,7 @@ Color opacity can be set in two ways:
 
 ### Gradient key
 
-Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color** and **opacity** as an option. If you have only one key the fill will be solid.
+Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color**, and **opacity** as an option. If you have only one key the fill will be solid.
 
 Gradient position is set by a number from 0 to 1, where 0 and 1 are gradient borders. If gradient position is not set manually, it will be calculated automatically depending on the number of keys. 
 

@@ -98,9 +98,9 @@ The `isTotal` field is boolean, used optionally for showing/hiding a total value
 
 The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter.
 
-The default data mode is **difference**. It means that the "value" data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
+The default data mode is **difference**. It means that the `value` data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 
-In the **absolute** data mode, the "value" field is interpreted as the absolute value of a point, and the difference is calculated automatically.
+In the **absolute** data mode, the `value` field is interpreted as the absolute value of a point, and the difference is calculated automatically.
 
 The sample below shows how to set the data mode:
 
@@ -270,7 +270,7 @@ chart.labels().format("{%Absolute}");
 
 #### Formatting Functions
 
-You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column indicates a total value or not.
+You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
 
 For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored:
 
@@ -313,7 +313,7 @@ chart.tooltip().format("{%Absolute}\n{%Diff}");
 
 #### Formatting Functions
 
-You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): *diff*, *absolute*, *isTotal*. The last field allows to find out whether a column shows a total value or not.
+You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column shows a total value or not.
 
 The function in the sample below modifies the tooltips of columns indicating total values:
 

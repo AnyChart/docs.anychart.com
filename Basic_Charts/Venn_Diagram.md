@@ -71,11 +71,11 @@ Data for a Venn diagram can be passed to the chart constructor {api:anychart#ven
 
 When you create data, you should use these data fields for both circles and intersection areas:
 
-* **x** to set unique identifiers
-* **value** to set sizes
-* **name** to set names
+* `x` to set unique identifiers
+* `value` to set sizes
+* `name` to set names
 
-The **name** field is optional, and the names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is **value**.
+The `name` field is optional, and the names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is `value`.
 
 Please note that it is possible to add custom fields to your data – see the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
 
@@ -102,7 +102,7 @@ chart = anychart.venn(data);
 
 {sample}BCT\_Venn\_Diagram\_02{sample}
 
-To set the identifier of an intersection (in its **x** field), combine the identifiers of intersecting circles. You can use an array:
+To set the identifier of an intersection (in its `x` field), combine the identifiers of intersecting circles. You can use an array:
 
 ```
 // create data
@@ -248,7 +248,7 @@ chart = anychart.venn(data);
 
 Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
 
-This chart type supports an optional data field – **name**. The names of circles are shown in their labels by default, but in the case of intersections the default choice is **value**. If you want some other field to be displayed in the labels of intersections, you should configure them manually.
+This chart type supports an optional data field – `name`. The names of circles are shown in their labels by default, but in the case of intersections the default choice is `value`. If you want some other field to be displayed in the labels of intersections, you should configure them manually.
 
 You can also add a custom data field and use it for configuring labels.
 
@@ -291,7 +291,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 Please note: when you create a Venn diagram, you can set tooltips both for circles and intersections.
 
-This chart type supports an optional data field – **name**, which is shown in the tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
+This chart type supports an optional data field – `name`, which is shown in the tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
 
 The sample below shows how to customize the tooltips of circles and intersections:
 

@@ -172,7 +172,7 @@ tasks.lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
 ### Slacks
 
-There is a parameter all tasks have called "slack". Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
+There is a parameter all tasks named *slack*. Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
 
 The following example demonstrates the efficiency of the resources distribution due to the slacks existence.
 

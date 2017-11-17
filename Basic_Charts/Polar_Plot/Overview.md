@@ -64,7 +64,7 @@ polar2.startAngle(90);
 
 ## Missing Points
 
-It is possible to skip a point or several points in a data set of a polar chart. Just write "missing" in the "value" field of a point you want to skip:
+It is possible to skip a point or several points in a data set of a polar chart. Just write `"missing"` in the `value` field of a point you want to skip:
 
 ```
 // create data

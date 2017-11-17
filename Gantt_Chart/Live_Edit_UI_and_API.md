@@ -167,7 +167,7 @@ Changes made in Live Edit mode lead to data changes. Events can be used to track
 
 #### move
 
-The data tree dispatches the "move" event when the Gantt chart tree structur is changed. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
+The data tree dispatches the "move" event when the Gantt chart tree structure is changed. Gantt chart dispatches this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
 - "type": the event type ("treeItemMove"),
 - "source", the data item where item is moved from,

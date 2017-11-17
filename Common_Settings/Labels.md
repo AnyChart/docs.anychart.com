@@ -10,7 +10,7 @@ You can configure different settings for labels on select and hover.
 
 ### Enable
 
-In most of the cases, series labels are disabled by default. To enable them set "true" using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
+In most of the cases, series labels are disabled by default. To enable them set `true` using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
 
 ```
 // create a chart

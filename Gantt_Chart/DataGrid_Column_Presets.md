@@ -133,7 +133,7 @@ If your data requires more complex customization you can use your own object wit
   );
 ```
 
-The object for column customization may contain three parameters: **width**, **textStyle** and **formatter**. The **width** parameter sets custom column width, **textStyle** adjusts visual appearance of the text in the column and **formatter** is a function for adjusting the data in each cell of the column.  
+The object for column customization can contain three parameters: **width**, **textStyle** and **formatter**. The **width** parameter sets custom column width, **textStyle** adjusts visual appearance of the text in the column and **formatter** is a function for adjusting the data in each cell of the column.  
 **Note**: If you want to use same formatter for several columns you can create custom function beyond the chart dataGrid scope and use it wherever you want.
 
 ```

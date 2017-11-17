@@ -101,7 +101,7 @@ grouping.minPixPerPoint(10);
 
 #### Force settings
 
-There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}forced(){api} with "true" parameter to force a stock chart to group points even when it's not necessary.
+There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}forced(){api} with `true` parameter to force a stock chart to group points even when it's not necessary.
 
 ```
 // force the series to group always

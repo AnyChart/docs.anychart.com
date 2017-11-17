@@ -2,7 +2,7 @@
 
 ## Overview
 
-Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts/Line_Chart).
+Line Series is usually used to show some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts/Line_Chart).
 
 ## AnyStock Line Series Adjustment
  

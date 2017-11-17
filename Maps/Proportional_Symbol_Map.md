@@ -57,7 +57,7 @@ var data = [
 
 ### Region ID
 
-Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}geoIdField(){api} method. Set the necessary parameters for the map and the series:
+Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: `id`, which binds by the field defined by {api:anychart.charts.Map#geoIdField}geoIdField(){api} method. Set the necessary parameters for the map and the series:
 
 ```
 var data = [

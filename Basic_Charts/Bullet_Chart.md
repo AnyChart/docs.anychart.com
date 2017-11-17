@@ -85,7 +85,7 @@ In this section we will quickly demonstrate how we can adjust axis orientation, 
 
 With AnyChart you can place axis to any side of the chart, all you need to do is to adjust the {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Bullet#axis}axis(){api}.
 
-Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set either *top* or *bottom*. As for vertical layout, axis orientation parameter may be set in *left* or *right*.
+Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set to either `"top'`' or `"bottom"`". As for vertical layout, axis orientation parameter can be set to `"left"` or `"right"`.
 
 ```
 chart.axis().orientation('top');

@@ -137,7 +137,7 @@ Stock Charts are built to handle big data sets and by default there is no way to
 
 **NOTE:** enabling individual points coloring significantly slows stock charts rendering engine.
 
-To enable individual settings you need to pass *true* to the stock charts constructor:
+To enable individual settings you need to pass `true` to the stock charts constructor:
 
 ```
 chart = anychart.stock(true);

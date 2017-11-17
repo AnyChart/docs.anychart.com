@@ -75,11 +75,11 @@ Data for a Heat Map chart can be passed to the chart constructor {api:anychart#h
 
 Use the following data fields:
 
-* **x** to set the names of columns
-* **y** to set the names of rows
-* **heat** to set values
+* `x` to set the names of columns
+* `y` to set the names of rows
+* `heat` to set values
 
-By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the "heat" field can be omitted. See the [Appearance](#individual_cells) section to learn more.
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_cells) section to learn more.
 
 This is how working with data fields of the Heat Map chart looks like:
 
@@ -140,7 +140,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
+It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
 
 ```
 // create data
@@ -249,7 +249,7 @@ chart.labels().format("{%Heat}%");
 
 #### Formatting Functions
 
-Labels are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
+Labels are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
 
 ```
 // enable HTML for labels
@@ -306,7 +306,7 @@ chart.tooltip().format("{%Y}: {%Heat}%");
 
 #### Formatting Functions
 
-Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
+Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
 
 ```
 // configure tooltips

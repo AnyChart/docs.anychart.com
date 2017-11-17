@@ -24,7 +24,7 @@ Example datasets appropriate for choropleths:
 - map showing the percentage change in solved to unresolved cases from 1995 to 2015 in the UK;
 - world map of percentage of population over 90 years old, reported by Canada.
 
-That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. 
+That's the code sample of a dataset. All points are set as objects, each has an `id` field and a `value` field. 
 
 ```
 var data = [
