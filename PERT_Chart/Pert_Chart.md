@@ -56,7 +56,7 @@ Read the overview of general settings: [General Settings](../Basic_Charts/Genera
 
 ### Interactivity
 
-Besides interactivity settings common for all charts, there is something special about PERT Charts events. The "pointsSelect" event returns such fields as "selectedMilestones" and "selectedTasks", both fields contain all information about the milestones and tasks selected. 
+Besides interactivity settings common for all charts, there is something special about PERT Charts events. The **pointsSelect** event returns such fields as `selectedMilestones` and `selectedTasks`, both fields contain all information about the milestones and tasks selected. 
 
 The following sample uses this event. Select milestones or tasks and watch the chart title.
 

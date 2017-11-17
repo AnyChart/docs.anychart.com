@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Aroon Mathematical Description](Math
 
 ## Adding indicator
 
-Aroon indicator is added using {api:anychart.core.stock.Plot#aroon}aroon(){api} method, it requires a mapping with high and low fields in it:
+Aroon indicator is added using {api:anychart.core.stock.Plot#aroon}aroon(){api} method, it requires a mapping with the `"high"` and `"low"` fields in it:
 
 ```
 // create data table on loaded data
@@ -41,7 +41,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-Aroon indicator has only one type specific parameter - period: mapping with value field in it, period and types of Up and Down series to be displayed as:
+Aroon indicator has only one type specific parameter - period: mapping with the `"value"` field in it, period and types of Up and Down series to be displayed as:
 
 ```
 var aroon25 = plot.aroon(mapping, 25, "line", "line");

@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Mathematical Description of Bollinge
 
 ## Adding indicator
 
-Bollinger Bands Width indicator is added using the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method. It requires a mapping with the value field in it:
+Bollinger Bands Width indicator is added using the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method. It requires a mapping with the `"value"` field in it:
 
 ```
 var dataTable = anychart.data.table();

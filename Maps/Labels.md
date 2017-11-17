@@ -144,7 +144,7 @@ series_obama.overlapMode("allow-overlap");
 
 Note that this setting isn't being changed if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other even if it is restricted. This is made on purpose to make the process of zooming more graphic.
 
-It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, the "index" parameter set to the series will solve the problem.
+It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the `"labelrank"` property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible.
 
 Those properties can be set through the GeoJSON code or through the data set.
 

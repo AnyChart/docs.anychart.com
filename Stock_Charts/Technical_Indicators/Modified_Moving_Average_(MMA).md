@@ -12,7 +12,7 @@ Find the mathematical description of the indicator on the [Modified moving avera
 
 ## Adding indicator
 
-MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with a value field in it:
+MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -41,7 +41,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-MMA indicator needs three parameters, as SMA and EMA: mapping with value field in it, period and a type of series to be displayed as:
+MMA indicator needs three parameters, as SMA and EMA: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var mma10 = plot.mma(mapping, 10, "column");

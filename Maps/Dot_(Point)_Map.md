@@ -29,11 +29,11 @@ Depending on the purpose of the map, it can contain a number of series. In the s
 
 ### Data
 
-You can create points on a map by defining longitude and latitude or by setting the region id. In the second case you'll get a point in the center of the defined region, and if you set long and lat params it means that you define the exact placement for each point.
+You can create points on a map by defining longitude and latitude or by setting the region id. In the second case you'll get a point in the center of the defined region, and if you set long and lat parameters it means that you define the exact placement for each point.
 
 #### Latitude and Longitude
 
-Latitude and longitude are two parameters that define the position of any point on our planet. If you need to show something located in a certain point, it's better to define latitude and longitude params.
+Latitude and longitude are two parameters that define the position of any point on our planet. If you need to show something located in a certain point, it's better to define latitude and longitude parameters.
 
 That's how it looks like in the code:
 

@@ -11,13 +11,14 @@ Stroke settings define how a path (line), or a border of a shape is drawn. All [
 Stroke color can be set in several ways:
 
 * using a parameter:  `stroke(colorSettings, otherParams...)`
-* as a String: `'thickness colorSetting'`
-* using an Object:
+* as a string: `'thickness colorSetting'`
+* using an object:
+
 ```
  {
     color: value,
     opacity: value,
-    otherParams ...
+    ...
  }
 ```
 
@@ -55,12 +56,12 @@ For example, that's how you do stroke color fill:
 Stroke thickness can be set in several ways:
 
 * using a parameter:  `stroke(colorSettings, thickness, otherParams...)`
-* as a String:  `'thickness colorSetting'`
-* as an Object:
+* as a string:  `'thickness colorSetting'`
+* as an object:
 ```
 {
   thickness: value,
-  otherParams ...
+  ...
 }
 ```
 
@@ -71,11 +72,11 @@ Stroke thickness can be set in several ways:
 Dash settings can be set in two ways:
 
 * using a parameter: `stroke(colorSettings, thickness, dashSetting, otherParams...)`
-* as an Object:
+* as an object:
 ```
 {
   dash: value,
-  otherParams ...
+  ...
 }
 ```
 
@@ -93,12 +94,12 @@ Every number in an odd position is a dash length, and every number in an even po
 
 {api:anychart.graphics.vector.SolidStroke}Join and cap{api} settings are set in two ways:
 * using a parameter: `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
-* as an Object:
+* as an object:
 ```
 {
   lineJoin: value,
   lineCap: value,
-  otherParams ...
+  ...
 }
 ```
 

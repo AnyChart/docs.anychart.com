@@ -8,7 +8,7 @@ Mathematical description: [Average True Range (ATR) Mathematical Description](Ma
 
 ## Adding indicator
 
-ATR indicator is added using the {api:anychart.core.stock.Plot#atr}atr(){api} method. It requires three data fields: High, Low and Close:
+ATR indicator is added using the {api:anychart.core.stock.Plot#atr}atr(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data

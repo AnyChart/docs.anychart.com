@@ -17,7 +17,7 @@ Mathematical description of the indicator can be found on the following page: [M
 
 ## Adding indicator
 
-Bollinger Bands %B indicator is added using the {api:anychart.core.stock.Plot#bbandsB}bbandsB(){api} method. It requires a mapping with the value field in it:
+Bollinger Bands %B indicator is added using the {api:anychart.core.stock.Plot#bbandsB}bbandsB(){api} method. It requires a mapping with the `"value"` field in it:
 
 ```
 var dataTable = anychart.data.table();

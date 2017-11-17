@@ -87,11 +87,7 @@ The following strings can be used to make timeline configuration easier:
 
 ### Special Features
 
-Due to unique organization of a Gantt diagram, there are some special features that should be mentioned.
-
-* Any type of Gantt diagram will return "false" for {api:anychart.core.axisMarkers.Line#isHorizontal}.isHorizontal(){api} method, because markers in Gantts can be only vertical.
-* The **scale** and **layout** methods will not work here, only "dateTime" scale and "vertical" layout are available in Gantt Chart.
-* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}.value(){api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}.from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}.to(){api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
+There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}value(){api} method: `"start"` and `"end"` to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}from(){api} and {api:anychart.core.axisMarkers.GanttRange#to}to(){api}. The `value` returns the current date, `start` - the start date of the gantt chart timeline and `end` return the end date of the whole Gantt diagram.
 
 ## Visualisation
 
@@ -99,7 +95,7 @@ Despite being quite different in usage and purposes, markers behave identically 
 
 We should format the objects passed to these methods as usual. 
 
-Let's create a sample with adjusted marker colors and text using those methods menthioned above:
+Let's create a sample with adjusted marker colors and text using those methods mentioned above:
 
 ```
 // creating and coloring a line marker
@@ -225,7 +221,7 @@ There are some methods inherent to the timeline only. You can see a table below 
 </tbody>
 </table>
 
-There are two ways of defining colors and other visualization params: through those methods as usual or through the data while setting it. Using dataset to define some visualization settings gives you more flexibility as you can affect each data point separately, while methods act on all elements of each type together; also, we can affect only data points when we use the dataset. Let's try to create a couple of samples using both these ways.
+There are two ways of defining colors and other visualization parameters: through those methods as usual or through the data while setting it. Using dataset to define some visualization settings gives you more flexibility as you can affect each data point separately, while methods act on all elements of each type together; also, we can affect only data points when we use the dataset. Let's try to create a couple of samples using both these ways.
 
 Below you can find a sample of a Resource Gantt Chart where we set the rows' colors using {api:anychart.core.ui.Timeline#rowEvenFill}.rowEvenFill(){api}, {api:anychart.core.ui.Timeline#rowOddFill}.rowOddFill(){api}, {api:anychart.core.ui.Timeline#rowHoverFill}.rowHoverFill(){api}, {api:anychart.core.ui.Timeline#rowSelectedFill}.rowSelectedFill(){api} methods, the selected elements' colors using {api:anychart.core.ui.Timeline#selectedElementFill}.selectedElementFill(){api} and {api:anychart.core.ui.Timeline#selectedElementStroke}.selectedElementStroke(){api} and change some data points' colors through the dataset.
 

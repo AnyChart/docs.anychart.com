@@ -7,7 +7,7 @@ AnyChart provides a method allowing to change the series type if the current typ
 
 ## seriesType()
 
-To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used to create series of this type, e.g. **bar()**method turns into `bar`, **line()** turns into `line` and so on.
+To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used to create series of this type, e.g. **bar()** method turns into `"bar"`, **line()** turns into `"line"` and so on.
 
 The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
 
@@ -20,7 +20,7 @@ var data = [
     ["Winter", 23]
 ];
 
-// creaate a series
+// create a series
 var series = chart.line(data);
 
 // change the series type to area
@@ -50,7 +50,7 @@ series.seriesType("rangeArea");
 
 {sample}BCT\_Series\_Type\_02{sample}
 
-Please note that the range area series uses only two values from the data set, but it works because it shares the default names of data fields ("low" and "high") with Japanese candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
+Please note that the range area series uses only two values from the data set, but it works because it shares the default names of data fields (`low` and `high`) with Japanese candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
 
 ## defaultSeriesType()
 

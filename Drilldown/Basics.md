@@ -16,7 +16,7 @@ For those who never worked with AnyChart and those who want to dig deeper, let's
 
 The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](../Working_with_Data/Overview) we will use one of the simpliest one for this basic sample.
 
-The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set set is stored which can have any name, in our sample it is `drillDown`: 
+The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set is stored which can have any name, in our sample it is `drillDown`: 
 
 ```
 var data = [

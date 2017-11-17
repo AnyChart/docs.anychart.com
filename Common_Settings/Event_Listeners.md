@@ -131,57 +131,57 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 </tr>
 <tr>
 <td>mouseOver</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseOver</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseMove</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseMove</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseOut</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseOut</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseDown</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseDown</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseUp</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseUp</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>click</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointClick</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>dblСlick</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointDblСlick</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>draw</td>
 <td>target</td>
 <td>pointsHover</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>boundsChange</td>
 <td>target, x, y, width, height</td>
 <td>pointsSelect</td>
-<td>All browser params + point params + array of selected points</td>
+<td>All browser parameters + point parameters + array of selected points</td>
 </tr>
 </tbody>
 </table>

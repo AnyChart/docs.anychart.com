@@ -165,9 +165,9 @@ Changes made in Live Edit mode lead to data changes. Events can be used to track
 
 ### Data Tree Events
 
-#### move
+#### Move
 
-The data tree dispatches the "move" event when the Gantt chart tree structure is changed. Gantt chart dispatches this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
+The data tree dispatches the **treeItemMove** event when the Gantt chart tree structure is changed. Gantt chart dispatches this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
 - "type": the event type ("treeItemMove"),
 - "source", the data item where item is moved from,
@@ -176,7 +176,7 @@ The data tree dispatches the "move" event when the Gantt chart tree structure is
 - "targetIndex": the target item index,
 - "item": the item moved (dragged and dropped).
 
-For example: the parent item "Part 1" is moved inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+For example: the parent item "Part 1" is moved inside another parent item, "Part 3", making the Gantt tree arborize. Then the **treeItemMove** event will be dispatched with these parameters:
 
 - type: "treeItemMove"
 - source: null
@@ -192,9 +192,9 @@ tree.listen("treeItemMove", function(e){
 });
 ```
 
-#### update
+#### Update
 
-"Update" event will be dispatched by the data tree when anything is changed. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched by the Gantt chart data tree because of changing the fields' values.
+The **treeItemUpdate** event will be dispatched by the data tree when anything is changed. For example, if you move an actual time bar of any task or process, there will be the **treeItemUpdate** event dispatched by the Gantt chart data tree because of changing the fields' values.
 
 Our "update" event includes the following fields:
 
@@ -211,7 +211,7 @@ tree.listen("treeItemUpdate", function(e){
 });
 ```
 
-For example: the second period of a tree data item "Act 1" is made longer. The start date was 02/27, end date 03/03. The end date is changed to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the "update" event will have these parameters:
+For example: the second period of a tree data item "Act 1" is made longer. The start date was 02/27, end date 03/03. The end date is changed to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the **treeItemUpdate** event will have these parameters:
 
 - "type": "treeItemUpdate"
 - "item": "Act 1"
@@ -219,9 +219,9 @@ For example: the second period of a tree data item "Act 1" is made longer. The s
 - "field": "periods"
 - "value": 1425772800000
 
-#### create
+#### Create
 
-The "create" event is dispatched when a new tree data item is created. It has the following fields:
+The **treeItemCreate** event is dispatched when a new tree data item is created. It has the following fields:
 - "type": the event type ("treeItemCreate"),
 - "target": the name of the target where the new object is put in,
 - "targetIndex": the index of a target,
@@ -234,9 +234,9 @@ tree.listen("treeItemCreate", function(e){
 });
 ```
 
-#### remove
+#### rRemove
 
-When an object is removed, the Gantt tree dispatches the "remove" event. Its fields are similar to those the "create" event has:
+When an object is removed, the Gantt tree dispatches the **treeItemRemove** event. Its fields are similar to those the "create" event has:
 
 - "type": the event type ("treeItemRemove"),
 - "source": the name of the target where the object is removed from,
@@ -254,7 +254,7 @@ tree.listen("treeItemRemove", function(e){
 
 #### beforeCreateConnector
 
-The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and it is dispatched before the action itself, so it will not have any information about the source. To get this information one has to listen to the "update" event. The fields of the "beforeCreateConnector" event are:
+The **beforeCreateConnector** event is similar to **treeItemCreate**, but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and it is dispatched before the action itself, so it will not have any information about the source. To get this information one has to listen to the "update" event. The fields of the **beforeCreateConnector** event are:
 
 - "type": the event type (e.g. "beforeCreateConnector"),
 - "source": which data item the connector starts from,

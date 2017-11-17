@@ -88,7 +88,7 @@ You can see how it works on the sample below.
 
 ### Read
 
-Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
+Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates a data grid with custom columns. Each column reads data from custom fields of the data grid (`"year 2004"`, `"year 2005"`). The code below shows how to use this method.
 
 ```
 // get the value in a field "year2004" of an item
