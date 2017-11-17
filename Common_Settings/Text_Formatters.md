@@ -25,7 +25,7 @@ anychart.onDocumentReady(function () {
   // set tooltip text template
   var tooltip = chart.getSeries(0).tooltip();
   tooltip.title().text("Content");
-  tooltip.format("{%x} is a {%season} month\nLowest temp: {%Value}°C");
+  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}°C");
 
   // set series labels text template
   var seriesLabels = chart.getSeries(0).labels().enabled(true);
@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
   // format axis labels
   var axisLabels = chart.xAxis().labels();
   axisLabels.useHtml(true);
-  axisLabels.format("<b style='color:black;'>{%Value}</b>");
+  axisLabels.format("<b style='color:black;'>{%value}</b>");
 
   // draw
   chart.container("container");
@@ -58,274 +58,274 @@ The full list of tokens is available in API: {api:anychart.enums.Statistics}anyc
 <th>Description</th>
 </tr>
 <tr>
-<td>{%Average}</td><td>Average value.</td>
+<td>{%average}</td><td>Average value.</td>
 </tr>
 <tr>
-<td>{%Value}</td><td>The y value of this point.</td>
+<td>{%value}</td><td>The y value of this point.</td>
 </tr>
 <tr>
-<td>{%YValue}</td><td>The y value of this point.</td>
+<td>{%yValue}</td><td>The y value of this point.</td>
 </tr>
 <tr>
-<td>{%YPercentOfSeries}</td><td>The percentage of the series this point represents.</td>
+<td>{%yPercentOfSeries}</td><td>The percentage of the series this point represents.</td>
 </tr>
 <tr>
-<td>{%YPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+<td>{%yPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
 </tr>
 <tr>
-<td>{%XValue}</td><td>The x value of this point (Scatter Plot charts).</td>
+<td>{%xValue}</td><td>The x value of this point (Scatter Plot charts).</td>
 </tr>
 <tr>
-<td>{%BubbleSize}</td><td>The bubble size value of this point (Bubble chart).</td>
+<td>{%bubbleSize}</td><td>The bubble size value of this point (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%BubbleSizePercentOfCategory}</td><td>The percentage of all the points with the same name this point represents (Categorized charts).</td>
+<td>{%bubbleSizePercentOfCategory}</td><td>The percentage of all the points with the same name this point represents (Categorized charts).</td>
 </tr>
 <tr>
-<td>{%BubbleSizePercentOfSeries}</td><td>The percentage of the series this point represents.</td>
+<td>{%bubbleSizePercentOfSeries}</td><td>The percentage of the series this point represents.</td>
 </tr>
 <tr>
-<td>{%BubbleSizePercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+<td>{%bubbleSizePercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
 </tr>
 <tr>
-<td>{%Index}</td><td>The index of this point in the series this point represents (zero-based).</td>
+<td>{%index}</td><td>The index of this point in the series this point represents (zero-based).</td>
 </tr>
 <tr>
-<td>{%SeriesName}</td><td>The name of this series.</td>
+<td>{%seriesName}</td><td>The name of this series.</td>
 </tr>
 <tr>
-<td>{%SeriesYSum}</td><td>The sum of all the points y values.</td>
+<td>{%seriesYSum}</td><td>The sum of all the points y values.</td>
 </tr>
 <tr>
-<td>{%SeriesYAverage}</td><td>The average y value of all the points within this series.</td>
+<td>{%seriesYAverage}</td><td>The average y value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesPointCount}</td><td>The number of points in this series.</td>
+<td>{%seriesPointCount}</td><td>The number of points in this series.</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleMaxSize}</td><td>The maximal bubble size value of all the points within this series (Bubble chart).</td>
+<td>{%seriesBubbleMaxSize}</td><td>The maximal bubble size value of all the points within this series (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleMinSize}</td><td>The minimal bubble size value of all the points within this series (Bubble chart).</td>
+<td>{%seriesBubbleMinSize}</td><td>The minimal bubble size value of all the points within this series (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleSizeAverage}</td><td>The average bubble size value of all the points within this series (Bubble chart).</td>
+<td>{%seriesBubbleSizeAverage}</td><td>The average bubble size value of all the points within this series (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleSizeMedian}</td><td>The median bubble size value of all the points within this series (Bubble chart).</td>
+<td>{%seriesBubbleSizeMedian}</td><td>The median bubble size value of all the points within this series (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleSizeMode}</td><td>The mode bubble size value of all the points within this series (Bubble chart).</td>
+<td>{%seriesBubbleSizeMode}</td><td>The mode bubble size value of all the points within this series (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%SeriesBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
+<td>{%seriesBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
 </tr>
 <tr>
 <td>{%SeriesFirstXValue}</td><td>The x value of the first point in this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesFirstYValue}</td><td>The y value of the first point in this series.</td>
+<td>{%seriesFirstYValue}</td><td>The y value of the first point in this series.</td>
 </tr>
 <tr>
-<td>{%SeriesLastXValue}</td><td>The x value of the last point in this series (Scatter plot charts).</td>
+<td>{%seriesLastXValue}</td><td>The x value of the last point in this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesLastYValue}</td><td>The y value of the first point in this series.</td>
+<td>{%seriesLastYValue}</td><td>The y value of the first point in this series.</td>
 </tr>
 <tr>
-<td>{%SeriesXAverage}</td><td>The average x value of all the points within this series.</td>
+<td>{%seriesXAverage}</td><td>The average x value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesXAxisName}</td><td>The title text of the X Axis.</td>
+<td>{%seriesXAxisName}</td><td>The title text of the X Axis.</td>
 </tr>
 <tr>
-<td>{%SeriesXMax}</td><td>The maximal x value of all the elements within this series (Scatter plot charts).</td>
+<td>{%seriesXMax}</td><td>The maximal x value of all the elements within this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesXMedian}</td><td>The median x value of all the points within this series (Scatter plot charts).</td>
+<td>{%seriesXMedian}</td><td>The median x value of all the points within this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesXMin}</td><td>The minimal x value of all the elements within this series (Scatter plot charts).</td>
+<td>{%seriesXMin}</td><td>The minimal x value of all the elements within this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesXMode}</td><td>The mode x value of all the points within this series (Scatter plot charts).</td>
+<td>{%seriesXMode}</td><td>The mode x value of all the points within this series (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
+<td>{%seriesXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%SeriesYAxisName}</td><td>The title text of the Y Axis.</td>
+<td>{%seriesYAxisName}</td><td>The title text of the Y Axis.</td>
 </tr>
 <tr>
-<td>{%Name}</td><td>The name of this point.</td>
+<td>{%name}</td><td>The name of this point.</td>
 </tr>
 <tr>
-<td>{%High}</td><td>The high value of this point (OHLC, Candlestick).</td>
+<td>{%high}</td><td>The high value of this point (OHLC, Candlestick).</td>
 </tr>
 <tr>
-<td>{%Low}</td><td>The low value of this point (OHLC, Candlestick).</td>
+<td>{%low}</td><td>The low value of this point (OHLC, Candlestick).</td>
 </tr>
 <tr>
-<td>{%Open}</td><td>The open value of this point (OHLC, Candlestick).</td>
+<td>{%open}</td><td>The open value of this point (OHLC, Candlestick).</td>
 </tr>
 <tr>
-<td>{%Close}</td><td>The close value of this point (OHLC, Candlestick).</td>
+<td>{%close}</td><td>The close value of this point (OHLC, Candlestick).</td>
 </tr>
 <tr>
-<td>{%SeriesYMax}</td><td>The maximal y value of all the elements within this series.</td>
+<td>{%seriesYMax}</td><td>The maximal y value of all the elements within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesYMin}</td><td>The minimal y value of all the elements within this series.</td>
+<td>{%seriesYMin}</td><td>The minimal y value of all the elements within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesYMedian}</td><td>The median y value of all the points within this series.</td>
+<td>{%seriesYMedian}</td><td>The median y value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesYMode}</td><td>The mode y value of all the points within this series.</td>
+<td>{%seriesYMode}</td><td>The mode y value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%RangeStart}</td><td>The starting value of this point (Range charts).</td>
+<td>{%rangeStart}</td><td>The starting value of this point (Range charts).</td>
 </tr>
 <tr>
-<td>{%RangeEnd}</td><td>The ending value of this point (Range charts).</td>
+<td>{%rangeEnd}</td><td>The ending value of this point (Range charts).</td>
 </tr>
 <tr>
-<td>{%SeriesYRangeMax}</td><td>The maximal range in this series (Range charts).</td>
+<td>{%seriesYRangeMax}</td><td>The maximal range in this series (Range charts).</td>
 </tr>
 <tr>
-<td>{%SeriesYRangeMin}</td><td>The minimal range in this series (Range charts).</td>
+<td>{%seriesYRangeMin}</td><td>The minimal range in this series (Range charts).</td>
 </tr>
 <tr>
-<td>{%SeriesYRangeSum}</td><td>The sum of all ranges in this series (Range charts).</td>
+<td>{%seriesYRangeSum}</td><td>The sum of all ranges in this series (Range charts).</td>
 </tr>
 <tr>
-<td>{%Range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
+<td>{%range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
 </tr>
 <tr>
-<td>{%DataPlotYSum}</td><td>The sum of all the points y values.</td>
+<td>{%dataPlotYSum}</td><td>The sum of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotYMax}</td><td>The maximal of all the points y values.</td>
+<td>{%dataPlotYMax}</td><td>The maximal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotYMin}</td><td>The minimal of all the points y values.</td>
+<td>{%dataPlotYMin}</td><td>The minimal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotYAverage}</td><td>The average y value of all the points.</td>
+<td>{%dataPlotYAverage}</td><td>The average y value of all the points.</td>
 </tr>
 <tr>
-<td>{%DataPlotPointCount}</td><td>The number of the points within the chart.</td>
+<td>{%dataPlotPointCount}</td><td>The number of the points within the chart.</td>
 </tr>
 <tr>
-<td>{%DataPlotBubbleMaxSize}</td><td>The maximal of all the points bubble sizes (Bubble chart).</td>
+<td>{%dataPlotBubbleMaxSize}</td><td>The maximal of all the points bubble sizes (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%DataPlotBubbleMinSize}</td><td>The minimal of all the points bubble sizes (Bubble chart).</td>
+<td>{%dataPlotBubbleMinSize}</td><td>The minimal of all the points bubble sizes (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%DataPlotBubbleSizeAverage}</td><td>The average bubble size of all the points (Scatter plot charts).</td>
+<td>{%dataPlotBubbleSizeAverage}</td><td>The average bubble size of all the points (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%DataPlotBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
+<td>{%dataPlotBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
 </tr>
 <tr>
-<td>{%DataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
+<td>{%dataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
 </tr>
 <tr>
-<td>{%DataPlotXAverage}</td><td>The average x value of all the points (Scatter plot charts).</td>
+<td>{%dataPlotXAverage}</td><td>The average x value of all the points (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%DataPlotXMax}</td><td>The maximal of all the points x values (Scatter plot chart).</td>
+<td>{%dataPlotXMax}</td><td>The maximal of all the points x values (Scatter plot chart).</td>
 </tr>
 <tr>
-<td>{%DataPlotXMin}</td><td>The minimal of all the points x values (Scatter plot chart).</td>
+<td>{%dataPlotXMin}</td><td>The minimal of all the points x values (Scatter plot chart).</td>
 </tr>
 <tr>
-<td>{%DataPlotXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
+<td>{%dataPlotXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
 </tr>
 <tr>
-<td>{%DataPlotYRangeMax}</td><td>The maximal of the ranges of the points within the chart.</td>
+<td>{%dataPlotYRangeMax}</td><td>The maximal of the ranges of the points within the chart.</td>
 </tr>
 <tr>
-<td>{%DataPlotYRangeMin}</td><td>The minimal of the ranges of the points within the chart.</td>
+<td>{%dataPlotYRangeMin}</td><td>The minimal of the ranges of the points within the chart.</td>
 </tr>
 <tr>
-<td>{%DataPlotYRangeSum}</td><td>The sum of the ranges of the points within the chart.</td>
+<td>{%dataPlotYRangeSum}</td><td>The sum of the ranges of the points within the chart.</td>
 </tr>
 <tr>
-<td>{%AxisName}</td><td>The name of the axis.</td>
+<td>{%axisName}</td><td>The name of the axis.</td>
 </tr>
 <tr>
-<td>{%AxisScaleMax}</td><td>The maximum value on the axis.</td>
+<td>{%axisScaleMax}</td><td>The maximum value on the axis.</td>
 </tr>
 <tr>
-<td>{%AxisScaleMin}</td><td>The minimum value on the axis.</td>
+<td>{%axisScaleMin}</td><td>The minimum value on the axis.</td>
 </tr>
 <tr>
-<td>{%CategoryName}</td><td>The name of the category.</td>
+<td>{%categoryName}</td><td>The name of the category.</td>
 </tr>
 <tr>
-<td>{%CategoryYAverage}</td><td>The name of the category.</td>
+<td>{%categoryYAverage}</td><td>The name of the category.</td>
 </tr>
 <tr>
-<td>{%CategoryYMedian}</td><td>The median of all the points within this category.</td>
+<td>{%categoryYMedian}</td><td>The median of all the points within this category.</td>
 </tr>
 <tr>
-<td>{%CategoryYMode}</td><td>The mode of all the points within this category.</td>
+<td>{%categoryYMode}</td><td>The mode of all the points within this category.</td>
 </tr>
 <tr>
-<td>{%CategoryYPercentOfTotal}</td><td>The percent of all the data on the chart this category represents.</td>
+<td>{%categoryYPercentOfTotal}</td><td>The percent of all the data on the chart this category represents.</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeAverage}</td><td>The average range in this category (Range charts).</td>
+<td>{%categoryYRangeAverage}</td><td>The average range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeMax}</td><td>The maximal range in this category (Range charts).</td>
+<td>{%categoryYRangeMax}</td><td>The maximal range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeMedian}</td><td>The median range in this category (Range charts).</td>
+<td>{%categoryYRangeMedian}</td><td>The median range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeMin}</td><td>The minimal range in this category (Range charts).</td>
+<td>{%categoryYRangeMin}</td><td>The minimal range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeMode}</td><td>The mode range in this category (Range charts).</td>
+<td>{%categoryYRangeMode}</td><td>The mode range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangePercentOfTotal}</td><td>Category Y range percent of total (Range charts).</td>
+<td>{%categoryYRangePercentOfTotal}</td><td>Category Y range percent of total (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYRangeSum}</td><td>The sum of all ranges in this category (Range charts).</td>
+<td>{%categoryYRangeSum}</td><td>The sum of all ranges in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%CategoryYSum}</td><td>The sum of all the points within this category.</td>
+<td>{%categoryYSum}</td><td>The sum of all the points within this category.</td>
 </tr>
 <tr>
-<td>{%DataPlotMaxYSumSeriesName}</td><td>The name of the series with a maximal sum of the points y values.</td>
+<td>{%dataPlotMaxYSumSeriesName}</td><td>The name of the series with a maximal sum of the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotMaxYValuePointName}</td><td>The name of the point with a maximal of all the points y values.</td>
+<td>{%dataPlotMaxYValuePointName}</td><td>The name of the point with a maximal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotMaxYValuePointSeriesName}</td><td>The name of the series with a maximal of all the points y values.</td>
+<td>{%dataPlotMaxYValuePointSeriesName}</td><td>The name of the series with a maximal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotMinYSumSeriesName}</td><td>The name of the series with a minimal sum of the points y values.</td>
+<td>{%dataPlotMinYSumSeriesName}</td><td>The name of the series with a minimal sum of the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotMinYValuePointName}</td><td>The name of the point with a minimal of all the points y values.</td>
+<td>{%dataPlotMinYValuePointName}</td><td>The name of the point with a minimal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%DataPlotMinYValuePointSeriesName}</td><td>The name of the series with a minimal of all the points y values.</td>
+<td>{%dataPlotMinYValuePointSeriesName}</td><td>The name of the series with a minimal of all the points y values.</td>
 </tr>
 <tr>
-<td>{%XPercentOfSeries}</td><td>The percentage of the series this point represents (Scatter Plot charts).</td>
+<td>{%xPercentOfSeries}</td><td>The percentage of the series this point represents (Scatter Plot charts).</td>
 </tr>
 <tr>
-<td>{%XPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+<td>{%xPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
 </tr>
 <tr>
-<td>{%YPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
+<td>{%yPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
 </tr>
 </table>
 
@@ -338,10 +338,10 @@ Here is a simple code with tokens:
 ```
 // setting the tooltips with formatting
 var columnTooltip = columnSeries.tooltip();
-columnTooltip.format("{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}");
+columnTooltip.format("{%seriesName}: {%value}{groupsSeparator:', decimalsCount:3}");
 
 var lineTooltip = lineSeries.tooltip();
-lineTooltip.format("{%SeriesName}: {%Value}{decimalsCount:1}%");
+lineTooltip.format("{%seriesName}: {%value}{decimalsCount:1}%");
 ```
 
 Here is a chart with a tooltip configured using tokens with options:
@@ -384,7 +384,7 @@ In the next sample we have formatted the scale according to the Old British curr
 var columnTooltip = columnSeries.tooltip();
 
 // scaling value
-columnTooltip.format("{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}");
+columnTooltip.format("{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( £)}");
 ```  
 
 Here is a live sample with such settings:
@@ -397,7 +397,7 @@ On the sample below there is another popular case of scale formatting shown: a t
 
 ```
 // string for formatting tooltips
-var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
+var formatter = "{%seriesName}: {%value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
 ```  
 
 Here is a live sample with such settings:
@@ -412,7 +412,7 @@ If you want to use a symbol which is already reserved in token's parser, you nee
 var tooltip = series.tooltip();
 
 // use coma as the thousands separator
-tooltip.format("{%Value}{groupsSeparator:\\,}");
+tooltip.format("{%value}{groupsSeparator:\\,}");
 ```  
 
 Here is a live sample with such settings:
@@ -532,7 +532,7 @@ labels.format(function (){
 
 {sample}CS\_format\_07{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.format.Context#getData}getData(){api}.
+In this sample we have added some extra information to the data: we defined the `"extra\_inf"` parameter of the "redundant" value for the second point of the second series and displayed it, using {api:anychart.format.Context#getData}getData(){api}.
 
 Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.format.Context#getData}getData(){api} method.
 

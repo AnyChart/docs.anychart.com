@@ -23,7 +23,7 @@
   // set tooltip text template
   var tooltip = chart.getSeries(0).tooltip();
   tooltip.title().text("Content");
-  tooltip.format("{%x} is a {%season} month\nLowest temp: {%Value}°C");
+  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}°C");
 
   // set series labels text template
   var seriesLabels = chart.getSeries(0).labels().enabled(true);
@@ -32,7 +32,7 @@
   // format axis labels
   var axisLabels = chart.xAxis().labels();
   axisLabels.useHtml(true);
-  axisLabels.format("<b style='color:black;'>{%Value}</b>");
+  axisLabels.format("<b style='color:black;'>{%value}</b>");
 
   // draw
   chart.container("container");

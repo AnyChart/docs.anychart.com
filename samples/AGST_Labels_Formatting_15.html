@@ -29,7 +29,7 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(200000000);
   var yLabels = chart.yAxis().labels();
-  yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
+  yLabels.format("${%value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
 
   // allows to break words at random points

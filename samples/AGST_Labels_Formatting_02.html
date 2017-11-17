@@ -31,7 +31,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.format("${%Value}");
+  yLabels.format("${%value}");
   // set y axis title
   var yTitle = chart.yAxis(0).title();
   yTitle.text("Revenue in US Dollars");
@@ -47,7 +47,7 @@
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*0.7094716);
-    return "€ " + value;
+    return "€" + value;
   });
 
   var xAxis = chart.xAxis();

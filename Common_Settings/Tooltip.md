@@ -192,7 +192,7 @@ The following sample demonstrates using tokens for formatting tooltips:
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
-tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%value}</b>");
 ```
 
 {sample}CS\_Tooltip\_15{sample}
@@ -201,8 +201,8 @@ Use several formatting ways if there are some series on your chart or charts on 
 
 ```
 // set the tooltip title and text for the Column Chart
-columnChart.tooltip().titleFormat("{%SeriesName}");
-columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
+columnChart.tooltip().titleFormat("{%seriesName}");
+columnChart.tooltip().format("Department: {%x} \nSum: {%value}");
 
 // set the tooltip content
 seriesSpline.tooltip().format(function(e){
@@ -327,7 +327,7 @@ Here is a sample with the tooltip stuck to the hovered point:
 
 ### Fixed Tooltip Position
 
-You can bind tooltips to a certain point on the chart plot using **chart** as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
+You can bind tooltips to a certain point on the chart plot using `"chart"` as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
 
 You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.Tooltip#anchor}anchor(){api} method defines the main part of the tooltip for further positioning.
 

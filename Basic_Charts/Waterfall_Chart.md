@@ -257,13 +257,13 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
+In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-By default, labels show the difference, and in this sample the *{%Absolute}* token is used to show absolute values:
+By default, labels show the difference, and in this sample the `{%absolute}` token is used to show absolute values:
 
 ```
 // configure labels
-chart.labels().format("{%Absolute}");
+chart.labels().format("{%absolute}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
@@ -300,14 +300,14 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: *{%Diff}* and *{%Absolute}*. The first one returns the difference between points and the second one returns the absolute value of a point.
+In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: `{%Diff}` and `{%Absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
 In the following sample, these tokens are used to change the text of tooltips, including the titles:
 
 ```
 // configure tooltips
 chart.tooltip().titleFormat("Absolute | Difference");
-chart.tooltip().format("{%Absolute}\n{%Diff}");
+chart.tooltip().format("{%absolute}\n{%diff}");
 ```
 {sample}BCT\_Waterfall\_Chart\_08{sample}
 
@@ -336,13 +336,13 @@ series1.hatchFill("percent05", "white", 1, 9);
 series1.fallingHatchFill("percent05", "white", 1, 9);
 series1.risingHatchFill("percent05", "white", 1, 9);
 
-series2.hatchFill("dashedBackwardDiagonal", "white", 1, 9);
-series2.fallingHatchFill("dashedBackwardDiagonal", "white", 1, 9);
-series2.risingHatchFill("dashedBackwardDiagonal", "white", 1, 9);
+series2.hatchFill("dashed-backward-diagonal", "white", 1, 9);
+series2.fallingHatchFill("dashed-backward-diagonal", "white", 1, 9);
+series2.risingHatchFill("dashed-backward-diagonal", "white", 1, 9);
 
-series3.hatchFill("forwardDiagonal", "white", 1, 6);
-series3.fallingHatchFill("forwardDiagonal", "white", 1, 6);
-series3.risingHatchFill("forwardDiagonal", "white", 1, 6);
+series3.hatchFill("forward-diagonal", "white", 1, 6);
+series3.fallingHatchFill("forward-diagonal", "white", 1, 6);
+series3.risingHatchFill("forward-diagonal", "white", 1, 6);
 
 // configure the legend
 chart.legend().itemsSourceMode("default");

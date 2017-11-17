@@ -370,11 +370,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
+In the case of Tag Clouds, you need to know that the `{%value}` [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and `{%yPercentOfTotal}` returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
-chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
+chart.tooltip().format("Value: {%value}\n Percent: {%ePercentOfTotal}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}

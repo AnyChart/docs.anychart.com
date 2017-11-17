@@ -238,11 +238,11 @@ chart.colorScale(customColorScale);
 
 To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
+In addition to tokens that work universally, you can use the `{%heat}` token that works only with the Heat Map chart. This token returns the value (heat) of an element:
 
 ```
 // configure labels
-chart.labels().format("{%Heat}%");
+chart.labels().format("{%heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
@@ -266,6 +266,7 @@ chart.labels().format(function (){
     return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
 });
 ```
+
 {sample}BCT\_Heat\_Map\_Chart\_08{sample}
 
 #### Display Mode
@@ -295,11 +296,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of tooltips, combine the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
+In addition to tokens that work universally, you can use the `{%heat}` token that works only with the Heat Map chart. This token returns the value (heat) of an element:
 
 ```
 // configure tooltips
-chart.tooltip().format("{%Y}: {%Heat}%");
+chart.tooltip().format("{%y}: {%heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_10{sample}

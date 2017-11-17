@@ -36,9 +36,9 @@
 
   // setting the tooltips with formatting
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.format("{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}");
+  columnTooltip.format("{%seriesName}: {%value}{groupsSeparator:', decimalsCount:3}");
   var lineTooltip = lineSeries.tooltip();
-  lineTooltip.format("{%SeriesName}: {%Value}{decimalsCount:1}%");
+  lineTooltip.format("{%seriesName}: {%value}{decimalsCount:1}%");
   
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0).maximum(100);

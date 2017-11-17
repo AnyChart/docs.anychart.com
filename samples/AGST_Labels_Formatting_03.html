@@ -31,7 +31,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.format("$ {%Value}{groupsSeparator: }");
+  yLabels.format("${%value}{groupsSeparator: }");
   // set y axis title
   var yTitle = chart.yAxis(0).title();
   yTitle.text("Revenue in US Dollars");
@@ -43,7 +43,7 @@
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.format("€ {%Value}{scale:(113e-2)|( )}");
+  yLabels1.format("€{%value}{scale:(113e-2)|( )}");
 
   var xAxis = chart.xAxis();
   xAxis.title("Month");

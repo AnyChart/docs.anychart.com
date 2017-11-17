@@ -25,7 +25,7 @@ In order to make a chart readable and understandable it is very important to for
   
 You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
-It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find a list of available tokens.
+It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find a list of available tokens.
 
 format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 
@@ -38,7 +38,7 @@ chart.axis().format(function (){
 The following code sample demonstrates setting the same parameter to show using tokens:
 
 ```
-chart.axis().format("{%Value}");
+chart.axis().format("{%value}");
 ```
 
 Tokens can be also used in xml and json, unlike other formatting methods. Setting tokens through the json format looks like the following:
@@ -46,7 +46,7 @@ Tokens can be also used in xml and json, unlike other formatting methods. Settin
 ```
 "labels":{
   "enabled":true,
-  "format":"$ {%Value}{groupsSeparator: }"
+  "format":"${%value}{groupsSeparator: }"
 }
 ```
 
@@ -55,7 +55,7 @@ Tokens can be also used in xml and json, unlike other formatting methods. Settin
 There are several ways how to edit prefix or postfix of the label. The easiest way is to use tokens through the {api:anychart.core.ui.LabelsFactory#format}format(){api} method:
 
 ```
-chart.yAxis().labels().format("${%Value}");
+chart.yAxis().labels().format("${%value}");
 ```
 
 The code above shows the axis value with the dollar sign as prefix. Also, it's possible to set a formatting function. This code recalculates the dollar-axis values into euro and sets the euro sign as a prefix:
@@ -65,7 +65,7 @@ chart.yAxis(1).labels().format(function (){
   var value = this.value;
   // scale USD to EUR and rouns the result
   value = Math.round(value*0.7094716);
-  return "€ " + value;
+  return "€" + value;
 });
 ```
 
@@ -80,7 +80,7 @@ Here is a sample of financial chart with euro and dollar axes. Axis that represe
 ```
 // formats labels of additional axis
 var yLabels1 = chart.yAxis(1).labels();
-yLabels1.format("€ {%Value}{scale:(113e-2)|()}");
+yLabels1.format("€{%value}{scale:(113e-2)|()}");
 ```
 
 {sample}AGST\_Labels\_Formatting\_03{sample}
