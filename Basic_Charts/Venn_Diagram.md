@@ -77,7 +77,7 @@ When you create data, you should use these data fields for both circles and inte
 
 The `name` field is optional, and the names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is `value`.
 
-Please note that it is possible to add custom fields to your data – see the [Labels](#labels) and [Tooltips](#tooltips) sections of this article.
+**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 The sample below shows two circles with their names set:
 
@@ -242,17 +242,31 @@ chart = anychart.venn(data);
 
 {sample}BCT\_Venn\_Diagram\_07{sample}
 
-### Labels
+### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Please note: when you create a Venn diagram, you can set labels both for circles and intersections.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-This chart type supports an optional data field – `name`. The names of circles are shown in their labels by default, but in the case of intersections the default choice is `value`. If you want some other field to be displayed in the labels of intersections, you should configure them manually.
+#### Tokens
 
-You can also add a custom data field and use it for configuring labels.
+When you create a Venn diagram, you can set labels and tooltips both for circles and intersections.
 
-The sample below shows how to customize the labels of circles and intersections:
+To change the text of labels, combine the {api:anychart.charts.Venn#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the {api:anychart.charts.Venn#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Use the {api:anychart.charts.Venn#intersections}intersections(){api} method to set the labels and tooltips of intersections.
+
+Here are tokens that work with the Venn diagram:
+
+* `{%x}`
+* `{%value}`
+* `{%name}`
+
+Please note: the names of circles are shown in their labels and tooltips by default. However, the labels of intersections display values (tooltips still displaying names).
+
+Also, you can add a custom field to your data and use it as a token, like in the sample below.
 
 ```
 //create data
@@ -281,52 +295,42 @@ chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
 
 // configure the labels of intersections
 chart.intersections().labels().format("{%name}\n\n{%value}");
-```
-
-{sample}BCT\_Venn\_Diagram\_08{sample}
-
-### Tooltips
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-Please note: when you create a Venn diagram, you can set tooltips both for circles and intersections.
-
-This chart type supports an optional data field – `name`, which is shown in the tooltips of circles and intersections by default. You can also add a custom data field and use it for configuring tooltips.
-
-The sample below shows how to customize the tooltips of circles and intersections:
-
-```
-//create data
-var data = [
-    {
-        x: "A",
-        name: "Set A",
-        custom_field: "info 1",
-        value: 100
-    },
-    {
-        x: "B",
-        name: "Set A",
-        custom_field: "info 2",
-        value: 100
-    },
-    {
-        x: ["A", "B"],
-        name: "Set A + Set B",
-        custom_field: "info 3",
-        value: 25
-    }
-];
 
 // configure the tooltips of circles
 chart.tooltip().format(
-    "Set Info: {%custom_field}\n_Cardinality: {%value}"
+    "Set Info: {%custom_field}\nCardinality: {%value}"
 );
 
 // configure the tooltips of intersections
 chart.intersections().tooltip().format(
     "Intersection Info: {%custom_field}\nCardinality: {%value}"
 );
+```
+
+{sample}BCT\_Venn\_Diagram\_08{sample}
+
+#### Formatting Functions
+
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields: 
+
+* `x`
+* `value`
+* `name`
+
+That is how it looks like:
+
+```
+// configure the labels of intersections
+chart.intersections().labels().format(function (){
+  if (this.x.length>2)
+      return this.x; 
+});
+
+// configure the tooltips of intersections
+chart.intersections().tooltip().format(function (){
+  return "Value: " + this.value + "\n(" +
+         this.x.length + " sets intersecting)"; 
+});
 ```
 
 {sample}BCT\_Venn\_Diagram\_09{sample}
