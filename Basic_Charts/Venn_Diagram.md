@@ -252,9 +252,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 When you create a Venn diagram, you can set labels and tooltips both for circles and intersections.
 
-To change the text of labels, combine the {api:anychart.charts.Venn#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
-
-To configure tooltips, do the same with the {api:anychart.charts.Venn#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+To change the text of labels, combine the {api:anychart.charts.Venn#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens), and to configure tooltips, do the same with the {api:anychart.charts.Venn#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
 Use the {api:anychart.charts.Venn#intersections}intersections(){api} method to set the labels and tooltips of intersections.
 
