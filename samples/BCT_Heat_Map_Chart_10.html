@@ -12,41 +12,43 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-    // create data
-    var data = [
-      {x: "2010", y: "A", heat: 15},
-      {x: "2011", y: "A", heat: 17},
-      {x: "2012", y: "A", heat: 21},
-      {x: "2013", y: "A", heat: 23},
-      {x: "2010", y: "B", heat: 34},
-      {x: "2011", y: "B", heat: 33},
-      {x: "2012", y: "B", heat: 32},
-      {x: "2013", y: "B", heat: 30},
-      {x: "2010", y: "C", heat: 43},
-      {x: "2011", y: "C", heat: 42},
-      {x: "2012", y: "C", heat: 40},
-      {x: "2013", y: "C", heat: 38},
-      {x: "2010", y: "D", heat: 8},
-      {x: "2011", y: "D", heat: 8},
-      {x: "2012", y: "D", heat: 7},
-      {x: "2013", y: "D", heat: 8}
-    ];
-
     // create a chart and set the data
-    chart = anychart.heatMap(data);
+    chart = anychart.heatMap(getData());
+   
+    // enable and configure scrollers
+    chart.xScroller().enabled(true);
+    chart.xZoom().setToPointsCount(8);
+    chart.yScroller().enabled(true);
+    chart.yZoom().setToPointsCount(4);
 
-    // configure tooltips
-    chart.tooltip().format("{%y}: {%heat}%");
+    // disable labels
+    chart.labels(false);
 
     // set the chart title
-    chart.title("Heat Map: Tooltips (Tokens)");
+    chart.title("Heat Map: Scrollers");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
+});
+
+// a function for generating data
+function getData(){
+  // generate data
+  var data = [];
+  for (var x = 2000; x < 2018; x++){
+    for (var y = 1; y < 13; y++){
+      var obj = {};
+      obj.x = x;
+      obj.y = y;
+      obj.heat = Math.floor(Math.random()*10000) + 1; 
+      data.push(obj);
+    }
+  }
+  return data;
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

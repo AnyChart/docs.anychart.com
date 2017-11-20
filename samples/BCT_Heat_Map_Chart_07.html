@@ -38,8 +38,11 @@
     // configure labels
     chart.labels().format("{%heat}%");
 
+    // configure tooltips
+    chart.tooltip().format("{%y}: {%heat}%");
+
     // set the chart title
-    chart.title("Heat Map: Labels (Tokens)");
+    chart.title("Heat Map: Labels and Tooltips (Tokens)");
 
     // set the container id
     chart.container("container");
