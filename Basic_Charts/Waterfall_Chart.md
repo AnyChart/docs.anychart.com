@@ -203,7 +203,7 @@ To adjust rising columns, use:
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-In the followoing sample, there is a Waterfall chart with appearance settings configured:
+In the following sample, there is a Waterfall chart with appearance settings configured:
 
 ```
 // configure the visual settings of the series
@@ -249,30 +249,38 @@ chart.connectorStroke("#ff6666", 2, "2 2", "round");
 
 This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
-### Labels
+### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
 To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
+To configure tooltips, do the same with the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+
 In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-By default, labels show the difference, and in this sample the `{%absolute}` token is used to show absolute values:
+By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including the titles, is modified too:
 
 ```
 // configure labels
 chart.labels().format("{%absolute}");
+
+// configure tooltips
+chart.tooltip().titleFormat("Absolute | Difference");
+chart.tooltip().format("{%absolute}\n{%diff}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
 
 #### Formatting Functions
 
-You can also configure labels with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and  and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
 
-For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored:
+For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too:
 
 ```
 // enable HTML for labels
@@ -284,47 +292,15 @@ chart.labels().format(function (){
         return "<span style='color:red;font-weight:bold'>" + this.absolute + "</span>";
     return this.absolute;
 });
-```
 
-{sample}BCT\_Waterfall\_Chart\_07{sample}
-
-### Tooltips
-
-* {api:anychart.charts.Waterfall#tooltip}tooltip(){api}
-* {api:anychart.core.ui.Tooltip#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-#### Tokens
-
-To change the text of tooltips, combine the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens). It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
-
-In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: `{%Diff}` and `{%Absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
-
-In the following sample, these tokens are used to change the text of tooltips, including the titles:
-
-```
-// configure tooltips
-chart.tooltip().titleFormat("Absolute | Difference");
-chart.tooltip().format("{%absolute}\n{%diff}");
-```
-{sample}BCT\_Waterfall\_Chart\_08{sample}
-
-#### Formatting Functions
-
-You can also configure tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column shows a total value or not.
-
-The function in the sample below modifies the tooltips of columns indicating total values:
-
-```
 // configure tooltips
 chart.tooltip().titleFormat(function (){
-    if (this.isTotal) return "Total";
+    if (this.isTotal) return "TOTAL";
     return this.x;
 });
 ```
-{sample}BCT\_Waterfall\_Chart\_09{sample}
+
+{sample}BCT\_Waterfall\_Chart\_07{sample}
 
 ### Legend
 
@@ -348,5 +324,4 @@ series3.risingHatchFill("forward-diagonal", "white", 1, 6);
 chart.legend().itemsSourceMode("default");
 ```
 
-{sample}BCT\_Waterfall\_Chart\_10{sample}
-
+{sample}BCT\_Waterfall\_Chart\_08{sample}

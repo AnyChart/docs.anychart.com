@@ -46,8 +46,14 @@
         return this.absolute;
     });
 
+    // configure tooltips
+    chart.tooltip().titleFormat(function (){
+        if (this.isTotal) return "TOTAL";
+        return this.x;
+    });
+
     // set the chart title
-    chart.title("Waterfall Chart: Labels (Formatting Functions)");
+    chart.title("Waterfall Chart: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

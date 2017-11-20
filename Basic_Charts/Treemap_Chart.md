@@ -430,7 +430,7 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `name`
 * `size`

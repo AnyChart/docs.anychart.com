@@ -256,7 +256,7 @@ chart.tooltip().format("{%y}: {%heat}%");
 
 #### Formatting Functions
 
-Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
 
 ```
 // enable HTML for labels
