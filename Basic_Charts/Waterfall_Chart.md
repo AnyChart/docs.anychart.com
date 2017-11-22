@@ -259,11 +259,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips, do the same with the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. It is also possible to change the titles of tooltips: call {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+To configure tooltips, do the same with the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-In addition to tokens that work universally, you can use two tokens that work only with the Waterfall chart: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
+Besides tokens that work with all chart types, there are two tokens working only with the Waterfall: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including the titles, is modified too:
+By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including their titles, is modified too:
 
 ```
 // configure labels
@@ -278,9 +278,9 @@ chart.tooltip().format("{%absolute}\n{%diff}");
 
 #### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and  and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
 
-For example, in the sample below labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too:
+For example, in the sample below all labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too:
 
 ```
 // enable HTML for labels
