@@ -262,8 +262,6 @@ Here are tokens that work with the Venn diagram:
 * `{%value}`
 * `{%name}`
 
-Please note: the names of circles are shown in their labels and tooltips by default. However, the labels of intersections display values (tooltips still displaying names).
-
 Also, you can add a custom field to your data and use it as a token, like in the sample below.
 
 ```
