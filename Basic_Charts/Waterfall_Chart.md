@@ -278,7 +278,7 @@ chart.tooltip().format("{%absolute}\n{%diff}");
 
 #### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last field allows to find out whether a column indicates a total value or not.
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last one allows to find out whether a column indicates a total value or not.
 
 For example, in the sample below all labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too:
 
