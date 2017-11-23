@@ -249,15 +249,17 @@ In the sample below they are used to customize tooltips:
 ```
 // configure tooltips
 chart.tooltip().format(function (){
-  if (this.xUpperError == 0 &&
-      this.xLowerError == 0 &&
-      this.valueLowerError == 0 &&
-      this.valueUpperError == 0)
-      return "NO ERRORS";
-  return "xUpperError: " + this.xUpperError +
-         "\nxLowerError: " + this.xLowerError +
-         "\nvalueLowerError: " + this.valueLowerError +
-         "\nvalueUpperError: " + this.valueUpperError;
+  var output = "";
+  if (this.xUpperError != 0)
+     output = "xUpperError: " + this.xUpperError;
+  if (this.xLowerError != 0)
+     output = output + "\nxUpperError: " + this.xLowerError;
+  if (this.valueLowerError != 0)
+     output = output + "\nxUpperError: " + this.valueLowerError;
+  if (this.valueUpperError != 0)
+     output = output + "\nxUpperError: " + this.valueUpperError;
+  if (output == "") return "NO ERRORS";
+  return output;
 });
 ```
 
