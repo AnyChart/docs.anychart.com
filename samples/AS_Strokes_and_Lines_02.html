@@ -65,7 +65,7 @@
 
   // adjust tooltip
   var tooltip = series.tooltip();
-  tooltip.format("{%x}, {%Value}%");
+  tooltip.format("{%x}, {%value}%");
   tooltip.fontColor("white");
 
   var tooltipBackground = series.tooltip().background();
@@ -82,7 +82,7 @@
   var yLabels = chart.yAxis().labels();
   yLabels.fontColor("white");
   yLabels.fontWeight(900);
-  yLabels.format("{%Value}%");
+  yLabels.format("{%value}%");
 
   // set additional y axis hide dashed right stroke of a grid
   var yAxis1 = chart.yAxis(1);

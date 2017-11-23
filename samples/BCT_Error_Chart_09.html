@@ -31,12 +31,16 @@
     var series = chart.marker(data);
 
     // configure tooltips
-    var tooltip = series.tooltip();
-    tooltip.format(function(point){
-      return "\nxUpperError – " + point.xUpperError
-      + "\nxLowerError – " + point.xLowerError
-      + "\nvalueLowerError – " + point.valueLowerError
-      + "\nvalueUpperError – " + point.valueUpperError
+    chart.tooltip().format(function (){
+      if (this.xUpperError == 0 &&
+          this.xLowerError == 0 &&
+          this.valueLowerError == 0 &&
+          this.valueUpperError == 0)
+          return "NO ERRORS";
+      return "xUpperError: " + this.xUpperError +
+             "\nxLowerError: " + this.xLowerError +
+             "\nvalueLowerError: " + this.valueLowerError +
+             "\nvalueUpperError: " + this.valueUpperError;
     });
 
     // enable major grids
@@ -48,7 +52,7 @@
     chart.yMinorGrid().enabled(true);
 
     // set the chart title
-    chart.title("Error Chart: Tooltips");
+    chart.title("Error Chart: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

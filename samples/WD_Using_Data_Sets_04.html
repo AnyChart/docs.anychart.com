@@ -30,7 +30,7 @@
   var line = anychart.line.apply(null, anychart.data.mapAsTable(data));
 
   // axes labels
-  line.yAxis().labels().format("{%Value}°C");
+  line.yAxis().labels().format("{%value}°C");
   // series titles setter
   line.getSeries(0).name("NY");
   line.getSeries(1).name("SF");
@@ -55,7 +55,7 @@
   colChart.getSeries(2).name("LA");
     
   // axes labels set
-  colChart.yAxis().labels().format("{%Value}°C");
+  colChart.yAxis().labels().format("{%value}°C");
   
   // naming the chart
   colChart.title("Weather in the USA");

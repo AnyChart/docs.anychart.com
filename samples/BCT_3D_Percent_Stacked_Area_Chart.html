@@ -38,10 +38,10 @@
 	chart.yAxis().title("Sales");
 
   	// configure tooltips
-  	chart.tooltip().format("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
+  	chart.tooltip().format("{%value} ({%yPercentOfCategory}{decimalsCount:2}%)");
 
 	// configure labels on the Y-axis
-  	chart.yAxis().labels().format("{%Value}%");
+  	chart.yAxis().labels().format("{%value}%");
 
 	// set data
 	chart.data(data);

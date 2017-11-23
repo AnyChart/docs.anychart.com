@@ -142,8 +142,8 @@ chart.yAxis(0).title("Debt");
 extraYAxis.title("GDP");
 
 // yAxes labels text adjusting
-chart.yAxis(0).labels().format("${%Value}{scale:(1000000000000)|(T)}");
-chart.yAxis(1).labels().format("{%Value}%");
+chart.yAxis(0).labels().format("${%value}{scale:(1000000000000)|(T)}");
+chart.yAxis(1).labels().format("{%value}%");
 ```
 
 We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}Column{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}yAxis{api}, one series of a {api:anychart.core.cartesian.series.Line}Line{api} type to show percentage changes.

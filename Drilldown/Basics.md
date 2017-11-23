@@ -94,9 +94,9 @@ We can do all this using this simple code:
 
 ```
 // configure axis labels
-chart.yAxis().labels().format('${%Value}{scale:(1000)(1000)|(k)(m)}');
+chart.yAxis().labels().format('${%value}{scale:(1000)(1000)|(k)(m)}');
 // tune tooltips format
-chart.tooltip().format('${%Value}');
+chart.tooltip().format('${%value}');
 // tune interactivity selection mode
 chart.interactivity().selectionMode('none');
 ```

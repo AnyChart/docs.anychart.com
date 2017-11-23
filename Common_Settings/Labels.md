@@ -152,7 +152,7 @@ var themeSettings = {
               "fontFamily": "Courier",
               "fontSize": 18,
               "fontColor": "#ffffff",
-              "format": "${%Value}"
+              "format": "${%value}"
           }
         }
       }

@@ -158,6 +158,7 @@ error.valueLowerError(8);
 // show only value error bars 
 error.mode("value");
 ```
+
 {sample}BCT\_Error\_Chart\_06{sample}
 
 ## Appearance
@@ -198,38 +199,65 @@ error2.xErrorWidth(6);
 error2.valueErrorStroke("black", 0.5);
 error2.xErrorStroke("black", 0.5);
 ```
+
 {sample}BCT\_Error\_Chart\_07{sample}
 
-## Labels
+## Labels and Tooltips
 
 [Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
-The following sample shows how to customize labels on a chart with error bars:
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
+### Tokens
+
+To change the text of labels, combine the **labels()** method of the series (or the chart if it is a scatter chart) and {api:anychart.core.ui.LabelsFactory#format}format(){api} with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work everywhere, there are tokens working only with error bars:
+
+* `{%valueLowerError}`
+* `{%valueUpperError}`
+* `{%xLowerError}`
+* `{%xUpperError}`
+
+That is how they can be used to customize labels and tooltips:
 
 ```
 //configure labels
-var labels = series.labels();
-labels.enabled(true);
-series.labels().format("{%value}(±{%valueUpperError})");
-series.labels().offsetY(+50);
+series.labels().enabled(true);
+series.labels().format("{%value} (±{%valueUpperError})");
+series.labels().offsetY(+35);
+
+//configure tooltips
+series.tooltip().format("{%value} (±{%valueUpperError})");
 ```
 
 {sample}BCT\_Error\_Chart\_08{sample}
 
-## Tooltips
+### Formatting Functions
 
-A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+Labels and tooltips are also configured with the help of [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones):
 
-This sample shows how to customize tooltips on a chart with error bars:
+* `valueLowerError`
+* `valueUpperError`
+* `xLowerError`
+* `xUpperError`
+
+In the sample below they are used to customize tooltips:
 
 ```
 // configure tooltips
-var tooltip = series.tooltip();
-tooltip.format(function(point){
-  return "\nxUpperError – " + point.xUpperError
-  + "\nxLowerError – " + point.xLowerError
-  + "\nvalueLowerError – " + point.valueLowerError
-  + "\nvalueUpperError – " + point.valueUpperError
+chart.tooltip().format(function (){
+  if (this.xUpperError == 0 &&
+      this.xLowerError == 0 &&
+      this.valueLowerError == 0 &&
+      this.valueUpperError == 0)
+      return "NO ERRORS";
+  return "xUpperError: " + this.xUpperError +
+         "\nxLowerError: " + this.xLowerError +
+         "\nvalueLowerError: " + this.valueLowerError +
+         "\nvalueUpperError: " + this.valueUpperError;
 });
 ```
 

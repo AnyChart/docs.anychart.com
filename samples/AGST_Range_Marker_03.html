@@ -22,7 +22,7 @@
 
   // create chart
   chart = anychart.line(data);
-  chart.tooltip().format("Year: {%x}\nSales: {%Value}");
+  chart.tooltip().format("Year: {%x}\nSales: {%value}");
 
   // set y scale ticks interval
   chart.yScale().minimum(0);
@@ -30,7 +30,7 @@
   chart.yScale().ticks().interval(5000);
 
   // adjust y axis labels
-  chart.yAxis().labels().format("${%Value}");
+  chart.yAxis().labels().format("${%value}");
 
   // set range marker
   var range = chart.rangeMarker();

@@ -45,8 +45,8 @@
   extraYAxis.title("GDP");
 
   // yAxes labels text adjusting
-  chart.yAxis(0).labels().format("${%Value}{scale:(1000000000000)|(T)}");
-  chart.yAxis(1).labels().format("{%Value}%");
+  chart.yAxis(0).labels().format("${%value}{scale:(1000000000000)|(T)}");
+  chart.yAxis(1).labels().format("{%value}%");
 
   // disable x axis title
   var xAxis = chart.xAxis();

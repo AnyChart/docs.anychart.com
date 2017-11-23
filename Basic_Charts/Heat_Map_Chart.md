@@ -242,7 +242,7 @@ To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}la
 
 To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is the `{%heat}` token, which works only with the Heat Map. It returns the value (heat) of an element:
+Besides tokens that work with all chart types, there is a token that works only with the Heat Map – `{%heat}`. It returns the value (heat) of an element:
 
 ```
 // configure labels
