@@ -48,7 +48,7 @@ To create a list of annotations in XML format, use the {api:anychart.core.annota
 
 To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromXml}fromXml(){api} method.
 
-In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding_annotations)) on the first plot and then deserialize them to the second plot:
+In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding)) on the first plot and then deserialize them to the second plot:
 
 ```
 // create a stock chart

@@ -55,7 +55,7 @@ Let's consider all methods that can adjust the grouping feature of a stock chart
 
 #### Levels
 
-There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
+There is a [list of levels](#list_of_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
 
 ```
 // define the grouping

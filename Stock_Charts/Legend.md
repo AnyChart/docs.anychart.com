@@ -10,19 +10,6 @@ Let's explore the legend usage in AnyStocks and have a look at a couple of sampl
 
 As the AnyStock legend is quite similar to other charts' legend, we're going to consider the cases of differences or when we need to change something.
 
-## Positioning
-
-We use the same methods for positioning the AnyStock Chart Legend as for the Basic Charts Legend. So, we use {api:anychart.core.ui.Legend#orientation}orientation(){api} and {api:anychart.core.ui.Legend#align}align(){api} methods to control legend's alignment. For more complicated settings, such as changing the items layout or space between items, we use {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} and {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} accordingly. Let's create a vertically arranged legend.
-
-```
-// making the legend vertical
-legend.itemsLayout('vertical');
-// setting the space between the items
-legend.itemsSpacing(1);
-```
-
-{sample}STOCK\_Legend\_01{sample}
-
 ## Title
 
 By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.core.ui.Legend#position}position(){api}, {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.core.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive.

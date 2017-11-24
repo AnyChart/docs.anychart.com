@@ -20,7 +20,7 @@ If you are not satisfied with having the generalized data shown on a data plot, 
 
 ## Streaming
 
-AnyStock allows to stream data efficiently, you can see this on our <a href="https://www.anychart.com/products/anystock/benchmark/" target="_blank">AnyStock Speed Test Page</a>.
+AnyStock allows to stream data efficiently, you can see this on our <a href="https://www.anychart.com/solutions/big-data-speed-test/" target="_blank">AnyStock Speed Test Page</a>.
 
 ## Useful links
 
@@ -28,7 +28,7 @@ AnyStock allows to stream data efficiently, you can see this on our <a href="htt
 * [Playground Gallery](https://www.anychart.com/products/anystock/gallery/) - find, explore chart samples.
 * [Supported Series](Series/Supported_Series) - here you can find information about available series types.
 * [Chart Plots](Chart_Plots) - learn what are plots, what for are they needed, and how to use them properly.
-* [Benchmarking](https://www.anychart.com/products/anystock/benchmark/) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/products/anystock/benchmark/).
+* [Benchmarking](https://www.anychart.com/solutions/big-data-speed-test/) - you can see how fast and robust AnyStock is on this [AnyStock Benchmark Test Page](https://www.anychart.com/solutions/big-data-speed-test/).
 
 ## Technical Indicators
 
