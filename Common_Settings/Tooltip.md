@@ -25,7 +25,7 @@ Hover each of the series to see the difference.
 
 **NOTE:** Tooltips inherit settings. When settings are defined for tooltips of a whole chart, the series' tooltips  inherit them and have the same settings. You can override settings for any series.
 
-To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFace}fontFace(){api} methods.
+To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFamily}fontFamily(){api} methods.
 
 For example, let's set "gold" color to all tooltips and then override it with "green" for one of the series. 
 
@@ -144,7 +144,7 @@ Here is a sample with a title separator disabled.
 
 ### Text
 
-You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.cartesian.series.Base#tooltip}tooltip(){api} method.
+You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.Chart#tooltip}tooltip(){api} method.
 
 ```
 var tooltip = chart.tooltip();

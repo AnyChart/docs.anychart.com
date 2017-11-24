@@ -46,7 +46,7 @@ And the following methods allow you to suspend and resume rendering at any time,
 
 * {api:anychart.graphics.vector.Stage#suspend}suspend(){api}
 * {api:anychart.graphics.vector.Stage#isSuspended}isSuspended(){api}
-* {api:anychart.graphics.vector.Stage#render}render(){api}
+* {api:anychart.graphics.vector.Stage#resume}resume(){api}
 * {api:anychart.graphics.vector.Stage#isRendering}isRendering{api}
 
 More about suspend and resume methods can be found in the [Performance](Performance#suspend_and_resume) article.

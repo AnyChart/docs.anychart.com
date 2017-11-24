@@ -106,7 +106,7 @@ Here is a sample with adjusted text of the default item and hidden last item:
 
 ## Adjust Text
 
-You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using [localization strings](#localize-the-context-menu). 
+You can adjust text of any element. There are two ways to do that: overriding text in {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api} or using [localization strings](#localize_the_context_menu). 
 
 In the next sample captions of the "Save chart as..." and the "Save data as..." items are modified using {api:anychart.ui.ContextMenu#itemsFormatter}itemsFormatter(){api}.
 

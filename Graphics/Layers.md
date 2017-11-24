@@ -5,7 +5,7 @@
 
 {api:anychart.graphics.vector.Layer}Layer{api} is an object used to group elements in GraphicsJS. Elements must be grouped if you want to apply similar changes to them,  [transformation](Transformations) and alike. You can change layers in [suspended mode](Virtual_DOM), increasing performance and improving user experience.
 
-Layers are transparent, by default they have no bounds (which can be changed using {api:anychart.graphics.vector.Layer#clip}clip(){api} method) and you can create as many layers as necessary, including nested layers (using {api:anychart.graphics.vector.Layer#appendChild}appendChild(){api} method).
+Layers are transparent, by default they have no bounds (which can be changed using {api:anychart.graphics.vector.Layer#clip}clip(){api} method) and you can create as many layers as necessary, including nested layers (using {api:anychart.graphics.vector.Layer#addChild}addChild(){api} method).
 
 Some basic samples of working with layers can be found in the [Basics: Layers](Basics#layers) article.
 
@@ -20,9 +20,9 @@ To remove a layer use:
 
 * {api:anychart.graphics.vector.Layer#remove}remove(){api} method.
 
-To append new elements to a layer use:
+To add new elements to a layer use:
 
-* {api:anychart.graphics.vector.Layer#appendChild}appendChild(){api} or {api:anychart.graphics.vector.Layer#appendChild}appendChildAt(){api} methods in case of appending unbound elements,
+* {api:anychart.graphics.vector.Layer#addChild}addChild(){api} or {api:anychart.graphics.vector.Layer#addChild}addChildAt(){api} methods in case of appending unbound elements,
 * or use {api:anychart.graphics.vector.Layer#rect}layer.rect(){api}, {api:anychart.graphics.vector.Layer#circle}layer.circle(){api}, {api:anychart.graphics.vector.Layer#path}layer.path(){api}, and others to create elements directly in a layer.
 
 Do not forget you can [suspend and resume](Virtual_DOM) rendering while changing layers or elements within layers.

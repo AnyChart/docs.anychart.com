@@ -9,7 +9,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a 3D Precent Stacked Area Chart, create a multi-series [3D Area Chart](../../3D/Overview#area) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
+To build a 3D Precent Stacked Area Chart, create a multi-series [3D Area Chart](../../3D/Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a 3D area chart

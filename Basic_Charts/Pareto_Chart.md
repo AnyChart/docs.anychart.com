@@ -107,7 +107,7 @@ To access these series, call the {api:anychart.charts.Cartesian#getSeries}getSer
 
 ### Pareto Tokens
 
-When AnyChart creates a Pareto chart, cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_condition) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
+When AnyChart creates a Pareto chart, cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_conditions) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
 
 As string tokens these values are a part of {api:anychart.enums.StringToken}StringToken{api} enum:
 

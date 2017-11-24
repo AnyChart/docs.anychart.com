@@ -27,7 +27,7 @@ This article explains how to create a basic Marker chart as well as configure se
 <tr><td></td><td>[Bubble](Bubble_Chart)</td></tr>
 <tr><td></td><td>[Dot (Point) Maps](../Maps/Dot\_\(Point\)\_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/marker-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/dot-chart/" target="_blank">Chartopedia: Marker Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

@@ -168,7 +168,7 @@ legend.position("right");
 legend.paginator().orientation("bottom");
 ```
 
-See how these settings work in the following interactive sample: click buttons to add or remove series and see how the legend and the chart change their sizes. Once the legend reached maximum allowed size, a [paginator](#paginator) appears.
+See how these settings work in the following interactive sample: click buttons to add or remove series and see how the legend and the chart change their sizes. Once the legend reached maximum allowed size, a [paginator](#paging) appears.
 
 {sample}CS\_Legend\_09{sample}
 

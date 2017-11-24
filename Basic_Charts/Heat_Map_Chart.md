@@ -79,7 +79,7 @@ Use the following data fields:
 * `y` to set the names of rows
 * `heat` to set values
 
-By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_cells) section to learn more.
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
 
 This is how working with data fields of the Heat Map chart looks like:
 

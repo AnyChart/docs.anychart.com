@@ -166,32 +166,17 @@ Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
   
 Some of our html5 charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
-  
-We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}selectFill{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}selectHatchFill{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}selectStroke(){api}. 
 
 Let's change the selection settings for the box chart.
 
 ```
 // change the selected points look
-series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
-series.selectStroke("none");
+series.selected().hatchFill("soliddiamond", "#FFF", 1, 5);
+series.selected().stroke("none");
 series.select([2,4,9]);
 ```
 
 {sample}CS\_Interactivity\_10{sample} 
-
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}selectRisingStroke(){api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
-
-```
-// change the selected regions color to the dark violet from the default
-series.risingStroke("#5400BA");
-series.hoverRisingStroke("#FFF");
-
-// enabling the selection
-series.select([1,2,5,6,7,9]);
-```
-
-{sample}CS\_Interactivity\_11{sample} 
 
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} argument.
 
@@ -246,7 +231,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
 
 ## Rectangle Marquee Select
 

@@ -9,7 +9,7 @@ To learn more about polar charts in general and how to customize them, see [Pola
 
 ## Quick Start
 
-To build a Polar Polygon chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#polygon}polygon(){api} method to create a Polygon series:
+To build a Polar Polygon chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polygon}polygon(){api} method to create a Polygon series:
 
 ```
 // create a chart

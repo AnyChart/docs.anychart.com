@@ -131,7 +131,7 @@ Here is a table with all possible methods for controlling the text view.
 <td>defines transparency of the text.</td>
 </tr>
 <tr>
-<td>{api:anychart.graphics.vector.Text#rotation}rotation(){api}</td>
+<td>{api:anychart.graphics.vector.Text#rotate}rotate(){api}</td>
 <td>defines the angle of text rotation.</td>
 </tr>
 <tr>

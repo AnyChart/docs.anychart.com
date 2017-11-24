@@ -128,7 +128,7 @@ To set the fill and stroke of quarters, combine these methods mentioned above wi
 
 To set the fype and radius of corners, call:
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api}
-* {api:anychart.core.utils.Quarter#corner}corner(){api}.
+* {api:anychart.core.utils.Quarter#corners}corners(){api}.
 
 You can also configure titles, margins, paddings, and labels of quarters (see [Labels](#labels) to learn more):
 

@@ -81,7 +81,7 @@ That’s it, you can see it for yourself:
 
 {sample}CS\_Drilldown\_Chart\_01{sample}
 
-Basically the work is done, this foundation provides us with all we need and we will now [tune the chart](#tune-the-chart), add [a drill-up button](#drillup-button), and show that [multi-level drill-down](#multilevel-drilldown) is also possible.
+Basically the work is done, this foundation provides us with all we need and we will now [tune the chart](#tune_the_chart), add [a drill-up button](#drill_up_button), and show that [multilevel drilldown](#multilevel_drilldown) is also possible.
 
 ## Tune the Chart
 

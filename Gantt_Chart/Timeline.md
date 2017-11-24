@@ -91,7 +91,7 @@ There are three special values for setting to the text markers' {api:anychart.co
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}.fill(){api} method to fill a rangeMarker with a color, {api:anychart.core.axisMarkers.GanttRange#stroke}.stroke(){api} for stroking the markers; for text markers we use standard markers as well. 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}.fill(){api} method to color a range markers, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to color the line markers; for text markers we use standard markers as well. 
 
 We should format the objects passed to these methods as usual. 
 

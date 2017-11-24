@@ -1,26 +1,5 @@
 {:index 4.1}
-#Sparkline Chart
-
-* [Overview](#overview)
-* [Chart](#chart)
- * [Line](#line_sparkline_chart)
- * [Area](#area_sparkline_chart)
- * [Column](#column_sparkline_chart)
- * [WinLoss](#winloss_sparkline_chart)
-* [Axes](#axes)
-* [Missing Points](#missing_points)
-* [Visualisation](#visualisation)
- * [Point Width](#point_width)
-* [Labels](#labels)
-* [Axes Markers](#axes_markers)
- * [Range Marker](#range_marker)
- * [Line Marker](#line_marker)
-* [Colorizing elements](#colorizing_elements)
-  * [General](#general)
-  * [Special Points](#special_points)
-  * [Any Point](#any_point)
-  * [HatchFill](#hatchfill)
-* [Layout](#layout)
+# Sparkline Chart
 
 ## Overview
 
@@ -385,7 +364,7 @@ That's how it looks like on the board:
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 You may notice that other points are now in one color. We've colored them in one low-opacity color to make the special points of the data more noticeable.
 
-You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLables}maxLabels(){api} and {api:anychart.charts.Sparkline#minLables}minLabels(){api} methods:
+You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLabels}maxLabels(){api} and {api:anychart.charts.Sparkline#minLabels}minLabels(){api} methods:
 
 ```
 chart1.maxLabels().enabled(true);
