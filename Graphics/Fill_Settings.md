@@ -10,12 +10,11 @@ Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and c
 
 The most simple fill is a solid color fill. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](https://www.w3schools.com/cssref/css_colors_legal.asp).
 
-Color opacity can be set in two ways:
+Color opacity can be set as:
 
-* RGBA, HSLA modificators;
-* Dedicated parameter:
-    * Call function with the parameters <code>{api:anychart.graphics.vector.Fill}fill{api}(_color_, _**opacity**_);</code>
-    * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
+* RGBA
+* HSLA
+* {api:anychart.graphics.vector.Fill}fill{api}
 
 {sample}GFX\_fill\_solid{sample}
 
@@ -23,11 +22,11 @@ Color opacity can be set in two ways:
 
 ### Gradient key
 
-Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color** and **opacity** as an option. If you have only one key the fill will be solid.
+Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color**, and **opacity** as an option. If you have only one key the fill will be solid.
 
 Gradient position is set by a number from 0 to 1, where 0 and 1 are gradient borders. If gradient position is not set manually, it will be calculated automatically depending on the number of keys. 
 
-Gradient key settings: `'position color opacity'` or 
+Gradient key settings: `"position color opacity"` or 
 
 ```
 {
@@ -114,10 +113,10 @@ If the container size in gradient settings are larger than the filled element si
 
 ## Radial Gradient
 
-### Radial Gradient basic parameters are:
+Radial Gradient basic parameters are:
 
-1. _Gradient keys_, just like in linear gradient,
-2. _Center location_, which is set by a number from 0 to 1 as a percentage ratio from the container dimensions.
+1. **Gradient keys**, just like in linear gradient,
+2. **Center location**, which is set by a number from 0 to 1 as a percentage ratio from the container dimensions.
 
 Radial gradient fill with center location (0.5, 0.5):
 
@@ -127,7 +126,7 @@ Radial gradient fill with center location (0.5, 0.5):
 
 {sample}GFX\_fill_radialG{sample}
 
-### Additional parameters:
+Additional parameters:
 
 * **opacity** - sets an opacity value for gradient;
 * **fill area** - same as in 1.2.3.3 (UserSpaceOnUse). 

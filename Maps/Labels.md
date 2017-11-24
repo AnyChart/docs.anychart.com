@@ -49,7 +49,7 @@ image.width(150);
 image.height(150);
 image.x(stage.width()-225);
 image.y(stage.height()/2-75);
-stage.listen("stageresize", function(){
+stage.listen("stageresize", function (){
     image.x(stage.width()-200);
     image.y(stage.height()/2-50);
 });
@@ -111,7 +111,7 @@ Some maps contain tiny regions, so it is just necessary to have an opportunity t
 
 ### Map
 
-In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "no-overlap" will disable overlapping labels and "allow-overlap" will allow it. Look at the next sample.
+In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, `true` allows labels to overlap each other, `false` disables those which overlap. If use enums, "no-overlap" will disable overlapping labels and "allow-overlap" will allow it. Look at the next sample.
 
 ```
 map.overlapMode(false);
@@ -144,7 +144,7 @@ series_obama.overlapMode("allow-overlap");
 
 Note that this setting isn't being changed if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other even if it is restricted. This is made on purpose to make the process of zooming more graphic.
 
-It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, the "index" parameter set to the series will solve the problem.
+It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the `"labelrank"` property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible.
 
 Those properties can be set through the GeoJSON code or through the data set.
 
@@ -262,7 +262,7 @@ Note that if the *middleXYMode* property is absolute, it is necessary to set bot
 
 ### Out of region labels
 
-If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X and Y coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the GeoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
+If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X- and Y-coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the GeoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
 
 In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 

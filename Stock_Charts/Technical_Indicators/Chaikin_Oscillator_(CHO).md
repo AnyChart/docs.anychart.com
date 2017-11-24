@@ -9,7 +9,7 @@ Find the mathematical description of the indicator on the [Chaikin Oscillator Ma
 
 ## Adding indicator
 
-Chaikin Oscillator indicator is added through the {api:anychart.core.stock.Plot#cho}cho(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the Chaikin Oscillator indicator applied to a spline series which data values are equal to "close" values.
+Chaikin Oscillator indicator is added through the {api:anychart.core.stock.Plot#cho}cho(){api} method. It requires a mapping with four fields: `"high"`, `"low"`, `"close"`, and `"volume"`. The following sample demonstrates the Chaikin Oscillator indicator applied to a spline series which data values are equal to "close" values.
 
 ```
 // create CHO indicator

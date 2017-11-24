@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -35,14 +35,14 @@
     chart.labels().useHtml(true);
 
     // configure labels
-    chart.labels().format(function(){
+    chart.labels().format(function (){
       var population = Math.round(this.value/100000)/10;
       return "<span style='font-weight:bold'>" + this.name + 
              "</span><br/>" + population + " mln";
     });
 
     // configure tooltips
-    chart.tooltip().format(function(){
+    chart.tooltip().format(function (){
       var population = Math.round(this.value/100000)/10;
       return "population: " + population + " mln" +
              "\ncapital: " + this.getData("capital");

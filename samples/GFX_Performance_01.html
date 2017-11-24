@@ -29,14 +29,14 @@ var label = stage.text(130,130);
     labelBg.zIndex(1000000);
 
 
-stage.listen("renderstart", function(){
+stage.listen("renderstart", function (){
     start = (new Date()).getTime();
 });
 
 // this is to be performed on a click
-labelBg.listen("click", function(){
+labelBg.listen("click", function (){
 
-stage.listenOnce("renderfinish", function(){
+stage.listenOnce("renderfinish", function (){
     finish = (new Date()).getTime();
     label.text((finish - start) + "ms");
     var labelBounds = label.getBounds();

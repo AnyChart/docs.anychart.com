@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -31,14 +31,14 @@ labels = chart.scroller().xAxis().labels();
 minorLabels = chart.scroller().xAxis().minorLabels();
 
 // set major labels text format
-labels.format(function() {
+labels.format(function () {
   return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
 // set labels color
 labels.fontColor('#000');
 
 // set minor labels text format
-minorLabels.format(function(){
+minorLabels.format(function (){
   return anychart.format.dateTime(this.tickValue, 'MMM, d');
 });
 

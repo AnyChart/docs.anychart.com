@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-  <script x-export="stage">anychart.onDocumentReady(function() {
+  <script x-export="stage">anychart.onDocumentReady(function () {
   var data = [
     // column 0    1    2    3
     ["2014/6/25",  28,  23,  28], // row 0
@@ -30,7 +30,7 @@
   var line = anychart.line.apply(null, anychart.data.mapAsTable(data));
 
   // axes labels
-  line.yAxis().labels().format("{%Value}°C");
+  line.yAxis().labels().format("{%value}°C");
   // series titles setter
   line.getSeries(0).name("NY");
   line.getSeries(1).name("SF");
@@ -55,7 +55,7 @@
   colChart.getSeries(2).name("LA");
     
   // axes labels set
-  colChart.yAxis().labels().format("{%Value}°C");
+  colChart.yAxis().labels().format("{%value}°C");
   
   // naming the chart
   colChart.title("Weather in the USA");

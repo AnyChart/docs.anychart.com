@@ -134,7 +134,7 @@ In this sample, there is a Column chart with two series, and tooltips are config
 ```
 // configure tooltips on the chart
 chart.tooltip().title("Information");
-chart.tooltip().format("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
+chart.tooltip().format("Manager: {%categoryName} \n{%seriesName}: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_06{sample}
@@ -144,11 +144,11 @@ Here tooltips are configured on each series separately, and the tooltip text on 
 ```
 // configure tooltips on the first series
 series1.tooltip().title("Last Year");
-series1.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
+series1.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 
 // configure tooltips on the second series
 series2.tooltip().title("This Year");
-series2.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
+series2.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_07{sample}

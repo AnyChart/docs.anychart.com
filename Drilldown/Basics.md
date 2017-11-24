@@ -16,7 +16,7 @@ For those who never worked with AnyChart and those who want to dig deeper, let's
 
 The first thing we need to have for a chart with drill-down is the data. There [a lot of ways to load, organize and use data in AnyChart](../Working_with_Data/Overview) we will use one of the simpliest one for this basic sample.
 
-The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set set is stored which can have any name, in our sample it is `drillDown`: 
+The data for the drilldown chart can be organized in a tree-like structure, each row has `x` and `value`, and a field where the drilldown data set is stored which can have any name, in our sample it is `drillDown`: 
 
 ```
 var data = [
@@ -94,9 +94,9 @@ We can do all this using this simple code:
 
 ```
 // configure axis labels
-chart.yAxis().labels().format('${%Value}{scale:(1000)(1000)|(k)(m)}');
+chart.yAxis().labels().format('${%value}{scale:(1000)(1000)|(k)(m)}');
 // tune tooltips format
-chart.tooltip().format('${%Value}');
+chart.tooltip().format('${%value}');
 // tune interactivity selection mode
 chart.interactivity().selectionMode('none');
 ```
@@ -124,7 +124,7 @@ chart.listen('pointClick', function (e) {
 chart.label(0, {enabled: false, position: 'rightTop', anchor: 'rightTop', padding: 5, offsetX: 5, offsetY: 5, text: "Back", background: {stroke: "1 black", enabled: true}});
 
 // load initial data on label click
-chart.label(0).listen('click', function() {
+chart.label(0).listen('click', function () {
   chart.getSeries(0).data(data);
   chart.label(0).enabled(false);
 }); 

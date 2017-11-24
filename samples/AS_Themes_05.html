@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="table">anychart.onDocumentReady(function() {
+    <script x-export="table">anychart.onDocumentReady(function () {
 
   // create variable for custom theme
   var customTheme = {
@@ -19,7 +19,7 @@
       "defaultXAxisSettings": {
         "labels": {
           // make all x labels 3 symbols long
-          "format": function(){
+          "format": function (){
             var value = this.value;
             value = value.substr(0, 3);
             return value
@@ -54,7 +54,7 @@
           "scale": 2,
           "orientation": "left",
           "labels": {
-            "format": function(){
+            "format": function (){
               return "$"+this.value
             }
           }
@@ -65,7 +65,7 @@
           "scale": 1,
           "drawLastLabel": false,
           "labels": {
-            "format": function(){
+            "format": function (){
               return this.value + "%"
             }
           }
@@ -83,7 +83,7 @@
             "fontWeight": 900
           }},
           "tooltip": {
-            "format": function() {
+            "format": function () {
               return "Month: " + this.x + "\nIncome: " + this.value
             }
           }

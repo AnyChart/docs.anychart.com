@@ -72,11 +72,11 @@ There are two ways to create data: you can add either a list of words or a text.
 
 When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
-* **x** to set words
-* **value** to set frequencies
-* **category** to set categories
+* `x` to set words
+* `value` to set frequencies
+* `category` to set categories
 
-This is how working with "x" and "value" looks like:
+This is how working with `x` and `value` looks like:
 
 ```
 // create data
@@ -99,7 +99,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The "category" field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
+The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
 
 ```
 // create data   
@@ -263,7 +263,7 @@ chart.colorRange().enabled(true);
 
 #### Categories
 
-Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the **category** field to your data to set categories, then specify colors for the scale:
+Instead of frequency ranges, the ordinal color scale and the color range can indicate the categories of data. Add the `category` field to your data to set categories, then specify colors for the scale:
 
 ```
 // create data   
@@ -339,7 +339,7 @@ chart.textSpacing(15);
 
 ### Mode
 
-There are two modes of positioning elements on a Tag Cloud: `'spiral'` (default) and `'rectangle'`. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either `'rect'` or `'spiral'` as a parameter – see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
+There are two modes of positioning elements on a Tag Cloud: **spiral** (default) and **rectangle**. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either `"spiral"` or `"rect"` as a parameter – see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
 
 ```
 // set the mode of the tag cloud
@@ -370,11 +370,11 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-In the case of Tag Clouds, you need to know that the *{%Value} * [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and *{%YPercentOfTotal}* returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
+In the case of Tag Clouds, you need to know that the `{%value}` [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and `{%yPercentOfTotal}` returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
-chart.tooltip().format("Value: {%Value}\n Percent: {%YPercentOfTotal}");
+chart.tooltip().format("Value: {%value}\n Percent: {%yPercentOfTotal}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
@@ -385,7 +385,7 @@ You can also configure tooltips by using [formatting functions](../Common_Settin
 
 ```
 // configure tooltips
-chart.tooltip().format(function(){
+chart.tooltip().format(function (){
     var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
     return percentOfTotal.toFixed(1) + "%";
 });

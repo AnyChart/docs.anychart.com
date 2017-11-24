@@ -53,7 +53,7 @@ var func_listen = function(e){
 // add a listener
 map.listen('mouseOver', func_listen);
 
-map.listenOnce('click',function(){
+map.listenOnce('click',function (){
     //adding an unlistener 
     map.unlisten('mouseOver', func_listen);
 });

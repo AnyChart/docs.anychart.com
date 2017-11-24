@@ -53,7 +53,7 @@
 
     // set the chart position
     chart.top(35);
-    chart.listen("chartDraw", function() {
+    chart.listen("chartDraw", function () {
         chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
     });
 
@@ -65,14 +65,14 @@
 
     /* create a label for setting
     the mode of the tag cloud to "rectangle" */
-    createLabel("Rectangle Mode", 10, function() {
+    createLabel("Rectangle Mode", 10, function () {
         // set the mode of the tag cloud
         chart.mode("rect");
     });
 
     /* create a label for setting
     the mode of the tag cloud to "spiral" */
-    createLabel("Spiral Mode", 135, function() {
+    createLabel("Spiral Mode", 135, function () {
         // set the mode of the tag cloud
         chart.mode("spiral");
     });
@@ -89,12 +89,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

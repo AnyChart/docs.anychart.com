@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   chart = anychart.area();
 
@@ -31,7 +31,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.format("${%Value}");
+  yLabels.format("${%value}");
   // set y axis title
   var yTitle = chart.yAxis(0).title();
   yTitle.text("Revenue in US Dollars");
@@ -43,11 +43,11 @@
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.format(function(){
+  yLabels1.format(function (){
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*0.7094716);
-    return "€ " + value;
+    return "€" + value;
   });
 
   var xAxis = chart.xAxis();

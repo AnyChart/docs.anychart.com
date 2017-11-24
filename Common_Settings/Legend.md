@@ -8,7 +8,7 @@ Legend is a element of a chart that lists and explains the symbols and colors us
 
 By default legend shows all series names with a symbol that shows the color and the type of the series.
 
-To enable legend you have to pass "true" to {api:anychart.core.ui.Legend#enabled}enabled(){api} method or {api:anychart.core.ui.Legend}legend(){api} constructor:
+To enable legend you have to pass `true` to {api:anychart.core.ui.Legend#enabled}enabled(){api} method or {api:anychart.core.ui.Legend}legend(){api} constructor:
 
 Enable using the **legend()** method:
 
@@ -360,7 +360,7 @@ There are only three events the Legend has:
 legend.drag(true);
 
 // chart title changes on dragging event
-legend.listen("drag", function(){
+legend.listen("drag", function (){
   chart.title("Legend is being dragged");
 });
 ```

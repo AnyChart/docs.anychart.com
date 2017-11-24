@@ -184,13 +184,13 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 #### Position
 
 Position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for funnel labels:
-* **inside** - place labels inside each funnel point.
-* **outsideLeftInColumn** - place labels to the left of the funnel and align them in a column.
-* **outsideRightInColumn** - place labels to the right of the funnel and align them in a column.
-* **outsideLeft** - place labels to the left of the funnel.
-* **outsideRight** - place labels to the right of the funnel.
+* `inside` - place labels inside each funnel point.
+* `outsideLeftInColumn` - place labels to the left of the funnel and align them in a column.
+* `outsideRightInColumn` - place labels to the right of the funnel and align them in a column.
+* `outsideLeft` - place labels to the left of the funnel.
+* `outsideRight` - place labels to the right of the funnel.
 
-If you use **outsideLeft** or **outsideRight**, it becomes possible to adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}connectorLength(){api} parameter to set custom length for all labels connectors.
+If you use `"outsideLeft"` or `"outsideRight"`, it becomes possible to adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}connectorLength(){api} parameter to set custom length for all labels connectors.
 
 ```
 // place labels to the right

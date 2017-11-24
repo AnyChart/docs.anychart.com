@@ -9,7 +9,7 @@
 
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");
@@ -29,7 +29,7 @@
     series.name("Population");
 
     // format y-axis labels
-    chart.plot(0).yAxis().labels().format("{%Value}m");
+    chart.plot(0).yAxis().labels().format("{%value}m");
 
     // set the chart title and padding
     chart.title('Switching the Series Type in Stock Charts');
@@ -43,7 +43,7 @@
     chart.draw();
 
     // create a label for switching to the line series
-    createLabel("Switch to Line", 10, function() {
+    createLabel("Switch to Line", 10, function () {
         // change the series type
         series.seriesType("line");
         scrollerSeries.seriesType("line");
@@ -51,7 +51,7 @@
     });    
 
     // create a label for switching to the column series
-    createLabel("Switch to Column", 127, function() {
+    createLabel("Switch to Column", 127, function () {
         // change the series type
         series.seriesType("column");
         scrollerSeries.seriesType("column");
@@ -59,7 +59,7 @@
     });    
 
     // create a label for switching to the area series
-    createLabel("Switch to Area", 265, function() {
+    createLabel("Switch to Area", 265, function () {
         // change the series type
         series.seriesType("area");
         scrollerSeries.seriesType("area");
@@ -79,12 +79,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5")
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2")
         document.body.style.cursor = "auto";
         label.draw();

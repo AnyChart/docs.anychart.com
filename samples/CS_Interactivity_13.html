@@ -35,7 +35,7 @@ var data = [
 chart = anychart.column();
 chart.legend(true);
 chart.tooltip().title(false).separator(false);
-chart.tooltip().format("{%x}: {%Value}");
+chart.tooltip().format("{%x}: {%value}");
 
 // create column series on the main chart
 chart.column(data).name("ACME Corp. sales");

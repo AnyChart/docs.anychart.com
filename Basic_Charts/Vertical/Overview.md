@@ -57,7 +57,7 @@ chart.draw();
 
 ### Series
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
+After creating a series, you can change its orientation on-the-fly by calling the **isVertical()** method and setting its parameter to either `true` or `false` (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
 
 **Note:** This setting affects only the series, not the axes.
 

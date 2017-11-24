@@ -7,7 +7,7 @@ There are several methods adjusting custom text on a stage. You can find all of 
 
 ### Set the text
 
-Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X and Y coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
+Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X- and Y-coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
 
 ```
 // set the text

@@ -281,7 +281,7 @@ Types of task connectors:
 
 {sample :width 690 :height 170}GANTT\_Chart\_06{sample}
 
-AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in **connector**, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
+AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the `"fill"` and `"stroke"` parameters in `"connector"`, where "stroke" defines a color of connector line and `"fill"` defines the color of connector arrow.
 
 ```
 'connector': {

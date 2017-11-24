@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   chart = anychart.line();
 
@@ -19,7 +19,7 @@
   tooltip.positionMode("point");
 
   // string for formatting tooltips
-  var formatter = "{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}";
+  var formatter = "{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( £)}";
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column([
@@ -44,7 +44,7 @@
   lineSeries.name("Percentage");
 
   var lineTooltip = lineSeries.tooltip();
-  lineTooltip.format("{%SeriesName}: {%Value}{decimalsCount:1}%");
+  lineTooltip.format("{%seriesName}: {%value}{decimalsCount:1}%");
 
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0).maximum(100);

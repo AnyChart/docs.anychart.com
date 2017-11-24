@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create stage to put sort buttons along the chart
     stage = anychart.graphics.create("container");
@@ -25,7 +25,7 @@
     chart.title("Traversing sample: click button to get next item and drill to it");
 
     // create ascending sort label
-    nextOne = createLabel("Get next node and drill to it", 10, function() {
+    nextOne = createLabel("Get next node and drill to it", 10, function () {
       // try to go to the next node in a tree
       if (traverser.advance()) {
         // if successuful - get current node as a data item instance
@@ -89,12 +89,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
       label.background().fill("#9E9E9E 0.5")
       document.body.style.cursor = "pointer";
       label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
       label.background().fill("#9E9E9E")
       document.body.style.cursor = "auto";
       label.draw();

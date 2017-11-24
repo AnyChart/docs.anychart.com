@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
   
   chart = anychart.column([
     {x: "Waffle Bowl",          value: 1000},
@@ -47,20 +47,20 @@
   var i = 0;
 
   // listen for a click and select the next point
-  label.listen("click", function(){
+  label.listen("click", function (){
     chart.getSeries(0).getPoint(i).selected(true);
     i++;
     if (i==chart.getSeries(0).data().getRowsCount()) i=0;
   });
 
   // change cursor and label color on mouse hover
-  label.listen("mouseOver", function(){
+  label.listen("mouseOver", function (){
     this.background().fill("Gray 0.2");
     document.body.style.cursor = "hand";
   });
 
   // reset cursor and color on mouse out
-  label.listen("mouseOut", function(){
+  label.listen("mouseOut", function (){
     this.background().fill("White");
     document.body.style.cursor = "auto";    
   });

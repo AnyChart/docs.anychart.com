@@ -37,4 +37,4 @@ mapScale.maximumY(-10);
 
 ## Precision
 
-You can control map scale precision using the {api:anychart.scales.Geo#precision}precision(){api} method, it allows to change both x and y precision, if needed.
+You can control map scale precision using the {api:anychart.scales.Geo#precision}precision(){api} method, it allows to change both X- and Y-precision if needed.

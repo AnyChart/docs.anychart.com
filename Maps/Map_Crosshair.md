@@ -50,11 +50,11 @@ The crosshair label's format is the same as axis label's format by default. You 
 ```
 // set the label formatting
 var yLabel = map.crosshair().yLabel();
-yLabel.format(function() {
+yLabel.format(function () {
 	return "Lon:" + this.value;
 });
 ```
 
-Here is the sample with customized both x and y crosshair labels.
+Here is the sample with both X- and Y-crosshair labels customized.
 
 {sample}Maps\_Crosshair\_04{sample}

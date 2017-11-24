@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script x-export="chart">
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
     // create data table on loaded data
     var dataTable = anychart.data.table();
@@ -159,7 +159,7 @@ anychart.onDocumentReady(function() {
     var plot_column = chart.plot(1);
 
     // legend formatter
-    plot_line_ohlc.legend().itemsFormat("{%SeriesName}: {%Value}{trailingZeros:true}");
+    plot_line_ohlc.legend().itemsFormat("{%seriesName}: {%value}{trailingZeros:true}");
 
     // Create and tune additional y scale
     var extraYScale = anychart.scales.linear();
@@ -177,7 +177,7 @@ anychart.onDocumentReady(function() {
     var rates = plot_column.column(mapping);
     rates.name("Highest rate");
 
-    extraYAxis.labels().format("{%Value}");
+    extraYAxis.labels().format("{%value}");
 
     // set the chart width
     chart.right(55);

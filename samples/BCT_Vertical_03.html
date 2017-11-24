@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container"); 
@@ -40,13 +40,13 @@
     chart.draw();
 
     // create a label for changing the orientation of the chart to vertical
-    createLabel("Vertical Orientation", 10, function() {
+    createLabel("Vertical Orientation", 10, function () {
         // change the orientation of the chart
         chart.isVertical(true);
     });
 
     // create a label for changing the orientation of the chart to horizontal
-    createLabel("Horizontal Orientation", 155, function() {
+    createLabel("Horizontal Orientation", 155, function () {
         // change the orientation of the chart
         chart.isVertical(false);
     });
@@ -63,12 +63,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

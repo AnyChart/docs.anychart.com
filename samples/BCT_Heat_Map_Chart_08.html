@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -39,7 +39,7 @@
     chart.labels().useHtml(true);
 
     // configure labels
-    chart.labels().format(function(){
+    chart.labels().format(function (){
       var heat = (this.heat);
       if (heat < 20)
         return "Low<br/>" + heat + "%";
@@ -49,8 +49,19 @@
         return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
     });
 
+    // configure tooltips
+    chart.tooltip().format(function (){
+      var heat = (this.heat);
+      if (heat < 20)
+        return this.y + ": Low (" + heat + "%)";
+      if (heat < 40)
+        return this.y + ": Medium (" + heat + "%)";
+      if (heat >= 40)
+        return this.y + ": High (" + heat + "%)";
+    });
+
     // set the chart title
-    chart.title("Heat Map: Labels (Formatting Functions)");
+    chart.title("Heat Map: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

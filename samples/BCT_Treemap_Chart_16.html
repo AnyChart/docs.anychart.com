@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container"); 
@@ -64,21 +64,21 @@
 
     /* create a label for setting the display mode
     of headers to "always show" */
-    createLabel("Always Show", 10, function() {
+    createLabel("Always Show", 10, function () {
       // set the display mode of headers
       chart.headersDisplayMode("always-show");
     });
 
     /* create a label for setting the display mode
     of headers to "clip" */
-    createLabel("Clip", 118, function() {
+    createLabel("Clip", 118, function () {
       // set the display mode of headers
       chart.headersDisplayMode("clip");
     });
 
     /* create a label for setting the display mode
     of headers to "drop" */
-    createLabel("Drop", 162, function() {
+    createLabel("Drop", 162, function () {
       // set the display mode of headers
       chart.headersDisplayMode("drop");
     });
@@ -95,12 +95,12 @@ function createLabel(text, offset, action){
   label.listen("click", action);
   label.container(stage);
   label.draw();
-  label.listen("mouseOver", function(){
+  label.listen("mouseOver", function (){
     label.background().fill("#1976d2 0.5");
     document.body.style.cursor = "pointer";
     label.draw();
   });
-  label.listen("mouseOut", function(){
+  label.listen("mouseOut", function (){
     label.background().fill("#1976d2");
     document.body.style.cursor = "auto";
     label.draw();

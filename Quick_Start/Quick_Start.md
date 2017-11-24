@@ -36,7 +36,7 @@ Put the JavaScript tag *script* with the following code anywhere in the *head* o
 
 ```
 <script>
-  anychart.onDocumentLoad(function() {
+  anychart.onDocumentLoad(function () {
     // create an instance of a pie chart
     var chart = anychart.pie();
     // set the data
@@ -71,7 +71,7 @@ Below this you can see how your full web page code should look like.
 <head>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js" type="text/javascript"></script>
     <script>
-      anychart.onDocumentLoad(function() {
+      anychart.onDocumentLoad(function () {
         // create an instance of a pie chart
         var chart = anychart.pie();
         // set the data

@@ -13,7 +13,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -69,25 +69,25 @@
     chart.draw();
 
     // create a label for the Ellipse annotation
-    createLabel("Ellipse", 150, function() {
+    createLabel("Ellipse", 150, function () {
         // start drawing the annotation on the first plot
         controller1.startDrawing("ellipse");
     });
 
     // create a label for the Rectangle annotation
-    createLabel("Rectangle", 208, function() {
+    createLabel("Rectangle", 208, function () {
         // start drawing the annotation on the first plot
         controller1.startDrawing("rectangle");
     });
 
     // create a label for removing annotations
-    createLabel("Remove All", 312, function() {
+    createLabel("Remove All", 312, function () {
         // remove annotations from all plots
         chart.annotations().removeAllAnnotations();
     });
 
     // create a label for serializing annotations from the first plot and deserializing them to the second one
-    createLabel("Copy to the Second Plot", 423, function() {
+    createLabel("Copy to the Second Plot", 423, function () {
         // serialize annotations from the first plot
         var xml = controller1.toXml();
         // deserialize the annotations to the second plot
@@ -106,12 +106,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

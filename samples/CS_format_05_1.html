@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
     chart = anychart.pie([
         {name: 'Point 1', value: 230000},
         {name: 'Point 2', value: 204524.489354},
@@ -19,7 +19,7 @@
         {name: 'Point 6', value: 310846}
     ]);
     var currentLabels = chart.labels();
-    currentLabels.format(function() {
+    currentLabels.format(function () {
         // format the number
         return anychart.format.number(this.value, 3, ".", ",")
     });

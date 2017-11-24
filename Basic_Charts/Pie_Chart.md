@@ -124,7 +124,7 @@ chart = anychart.pie(data);
 
 #### Aqua Style
 
-There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the **"aquastyle"** parameter:
+There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the `"aquastyle"` parameter:
 
 ```
 // enable aqua style
@@ -148,7 +148,7 @@ pie2.startAngle(90);
 
 ### Sorting Order
 
-In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use **"asc"**, **"desc"**, or **"none"** as a parameter (the default sorting mode is "none"):
+In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use `"asc"`, `"desc"`, or `"none"` as a parameter (the default sorting mode is "none"):
 
 ```
 // set the sorting mode
@@ -215,7 +215,7 @@ The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to
 
 #### Outer Labels
 
-By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the **"outside"** parameter:
+By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the `"outside"` parameter:
 
 ```
 // set the position of labels

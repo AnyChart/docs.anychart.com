@@ -14,44 +14,32 @@
 
     //create data
     var data = [
-        {
-            x: "A",
-            name: "Set A",
-            custom_field: "info 1",
-            value: 100
-        },
-        {
-            x: "B",
-            name: "Set A",
-            custom_field: "info 2",
-            value: 100
-        },
-        {
-            x: ["A", "B"],
-            name: "Set A + Set B",
-            custom_field: "info 3",
-            value: 25
-        }
+        {x: "A", value: 100},
+        {x: "B", value: 100},
+        {x: "C", value: 100},
+        {x: ["A", "B"], value: 20},
+        {x: ["A", "C"], value: 20},
+        {x: ["B", "C"], value: 20},
+        {x: ["A", "B", "C"], value: 20}
     ];
 
     // create a chart and set the data
     chart = anychart.venn(data);
 
-    // configure the tooltips of circles
-    chart.tooltip().format(
-        "Set Info: {%custom_field}\nCardinality: {%value}"
-    );
+    // configure the labels of intersections
+    chart.intersections().labels().format(function (){
+      if (this.x.length>2)
+          return this.x; 
+    });
 
     // configure the tooltips of intersections
-    chart.intersections().tooltip().format(
-        "Intersection Info: {%custom_field}\nCardinality: {%value}"
-    );
-
-    // disable labels
-    chart.labels(false);
+    chart.intersections().tooltip().format(function (){
+      return "Value: " + this.value + "\n(" +
+             this.x.length + " sets intersecting)"; 
+    });
 
     // set the chart title
-    chart.title("Venn Diagram: Tooltips");
+    chart.title("Venn Diagram: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container('container');

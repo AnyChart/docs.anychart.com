@@ -47,13 +47,13 @@
     chart.container(stage);
     chart.draw();
 
-    createLabel("Click to remove 6 series", 5, function(){
+    createLabel("Click to remove 6 series", 5, function (){
         for (var i = 1; i < 7; i++){
         chart.removeSeriesAt(chart.getSeriesCount() - i)
     }
     });
 
-    createLabel("Click to add 6 series", 180, function(){
+    createLabel("Click to add 6 series", 180, function (){
         for (var i in series) {
             chart.column(series[i]);
         }

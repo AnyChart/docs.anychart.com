@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container"); 
@@ -48,19 +48,19 @@
     chart.draw();
 
     // create a label for setting the sorting mode to "ascending"
-    createLabel("Ascending", 10, function() {
+    createLabel("Ascending", 10, function () {
       // set the sorting mode
       chart.sort("asc");
     });
 
     // create a label for setting the sorting mode to "descending"
-    createLabel("Descending", 98, function() {
+    createLabel("Descending", 98, function () {
       // set the sorting mode
       chart.sort("desc");
     });
 
     // create a label for setting the sorting mode to "no sorting"
-    createLabel("No Sorting", 194, function() {
+    createLabel("No Sorting", 194, function () {
       // set the sorting mode
       chart.sort("none");
     });
@@ -77,12 +77,12 @@ function createLabel(text, offset, action){
   label.listen("click", action);
   label.container(stage);
   label.draw();
-  label.listen("mouseOver", function(){
+  label.listen("mouseOver", function (){
     label.background().fill("#1976d2 0.5");
     document.body.style.cursor = "pointer";
     label.draw();
   });
-  label.listen("mouseOut", function(){
+  label.listen("mouseOut", function (){
     label.background().fill("#1976d2");
     document.body.style.cursor = "auto";
     label.draw();

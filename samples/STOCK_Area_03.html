@@ -11,7 +11,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script x-export="chart">
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
     // set the data
     table = anychart.data.table();
@@ -105,7 +105,7 @@ anychart.onDocumentReady(function() {
     chart.title('Stock Area Demo \nPopulation growth: USA vs UK');
     
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().format(function(){
+    chart.plot(0).yAxis().labels().format(function (){
       return this.value/1000000 + "m";
     });
 

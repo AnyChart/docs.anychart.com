@@ -67,7 +67,7 @@ anychart.onDocumentReady(function () {
     });
 
     // listen for draw event and update path in a title
-    chart.listen("chartDraw",function(){
+    chart.listen("chartDraw",function (){
     // get drilldown path
     var path = chart.getDrilldownPath();
       
@@ -79,7 +79,7 @@ anychart.onDocumentReady(function () {
     });
 
     // create drill up label
-    drillToLabel = createLabel("Drill Up", 0, function() {
+    drillToLabel = createLabel("Drill Up", 0, function () {
       // Drill down to the specified item.
       chart.drillUp();
     });

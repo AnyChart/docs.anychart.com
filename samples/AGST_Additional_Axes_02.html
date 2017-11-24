@@ -9,10 +9,10 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
   chart = anychart.scatter();
 
-  chart.title("Extra X and Y Axes Simple Sample");
+  chart.title("Extra X- and Y-Axes Simple Sample");
 
   // setting xScale settings
   chart.xScale().minimum(-10);
@@ -67,7 +67,7 @@
   series2.yScale(extraYScale);
   series2.xScale(extraXScale);
   
-  chart.tooltip().format("(x,y) = ({%x},{%Value})");
+  chart.tooltip().format("(x,y) = ({%x},{%value})");
   chart.palette(["Red", "Black"]);
 
   // adding red line to emphasize zero of extra axis

@@ -194,7 +194,7 @@ chart.getSeriesAt(1).selectLabels().enabled(true);
 chart.getSeriesAt(1).selectLabels().anchor("bottom");
 chart.getSeriesAt(1).hoverLabels(true);
 chart.getSeriesAt(1).hoverLabels().anchor("bottom");
-chart.getSeriesAt(1).hoverLabels().format("{%Value}%");
+chart.getSeriesAt(1).hoverLabels().format("{%value}%");
 ```
 
 Here is a sample of a Pareto chart with a custom labels configuration:
@@ -207,7 +207,7 @@ To configure Pareto series tooltip settings please study general [Tooltips Tutor
 
 ```
 // get the column series and format tooltip
-chart.getSeriesAt(0).tooltip().format("Value: {%Value}");
+chart.getSeriesAt(0).tooltip().format("Value: {%value}");
 
 // get the line series and format tooltip
 chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");

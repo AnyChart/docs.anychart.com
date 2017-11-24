@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
     
     var dataSet = anychart.data.set([
     {x: "P1", value: 100},
@@ -44,7 +44,7 @@
   // first index for new point
   var indexSetter = 16;
 
-  chart.listen("click", function(){
+  chart.listen("click", function (){
     dataSet.append({
       // x value
       x: "P" + indexSetter,

@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -35,7 +35,7 @@
     // add and configure a second y-axis
     var YAxis_2 = chart.yAxis(1);
     YAxis_2.orientation("right");
-    YAxis_2.labels().format(function(){
+    YAxis_2.labels().format(function (){
       return this.value + "%";
     });
 
@@ -52,7 +52,7 @@
     chart.crosshair().yLabel().axisIndex(1);
 
     // set the text of the y-label
-    chart.crosshair().yLabel().format(function(){
+    chart.crosshair().yLabel().format(function (){
       return this.value + "%";
     });
 

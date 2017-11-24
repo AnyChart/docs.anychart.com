@@ -85,7 +85,7 @@ var data = [
 
 ### On Scatter Charts
 
-The key feature of error bars on scatter charts is that errors can be set both along the X and Y axes.
+The key feature of error bars on scatter charts is that errors can be set both along the X- and Y-axes.
 
 The {api:anychart.core.cartesian.series.Base#error}error(){api} method adds error bars to all points of a series and sets lower/upper and right/left bars as equal, but you can also use the methods below to fine-tune them.
 
@@ -142,10 +142,10 @@ var data = [
 
 The {api:anychart.core.utils.Error#mode}mode(){api} method allows you to change the error mode of a series (to enable or disable error bars on it). There are four possible error modes that are set by these parameters:
 
-* "both" enables both X and Y error bars
-* "none" disables all error bars
-* "value" shows only Y-bars
-* "x" shows only X-bars
+* `"both"` enables both X- and Y-error bars
+* `"none"` disables all error bars
+* `"value"` shows only Y-bars
+* `"x"` shows only X-bars
 
 ```
 // create and configure error bars
@@ -158,6 +158,7 @@ error.valueLowerError(8);
 // show only value error bars 
 error.mode("value");
 ```
+
 {sample}BCT\_Error\_Chart\_06{sample}
 
 ## Appearance
@@ -198,38 +199,67 @@ error2.xErrorWidth(6);
 error2.valueErrorStroke("black", 0.5);
 error2.xErrorStroke("black", 0.5);
 ```
+
 {sample}BCT\_Error\_Chart\_07{sample}
 
-## Labels
+## Labels and Tooltips
 
 [Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
-The following sample shows how to customize labels on a chart with error bars:
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
+### Tokens
+
+To change the text of labels, combine the **labels()** method of the series (or the chart if it is a scatter chart) and {api:anychart.core.ui.LabelsFactory#format}format(){api} with [tokens](../../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work everywhere, there are tokens working only with error bars:
+
+* `{%valueLowerError}`
+* `{%valueUpperError}`
+* `{%xLowerError}`
+* `{%xUpperError}`
+
+That is how they can be used to customize labels and tooltips:
 
 ```
 //configure labels
-var labels = series.labels();
-labels.enabled(true);
-series.labels().format("{%Value}(±{%ValueUpperError})");
-series.labels().offsetY(+50);
+series.labels().enabled(true);
+series.labels().format("{%value} (±{%valueUpperError})");
+series.labels().offsetY(+35);
+
+//configure tooltips
+series.tooltip().format("{%value} (±{%valueUpperError})");
 ```
 
 {sample}BCT\_Error\_Chart\_08{sample}
 
-## Tooltips
+### Formatting Functions
 
-A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+Labels and tooltips are also configured with the help of [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones):
 
-This sample shows how to customize tooltips on a chart with error bars:
+* `valueLowerError`
+* `valueUpperError`
+* `xLowerError`
+* `xUpperError`
+
+In the sample below they are used to customize tooltips:
 
 ```
 // configure tooltips
-var tooltip = series.tooltip();
-tooltip.format(function(point){
-  return "\nxUpperError – " + point.xUpperError
-  + "\nxLowerError – " + point.xLowerError
-  + "\nvalueLowerError – " + point.valueLowerError
-  + "\nvalueUpperError – " + point.valueUpperError
+chart.tooltip().format(function (){
+  var output = "";
+  if (this.xUpperError != 0)
+     output = "xUpperError: " + this.xUpperError;
+  if (this.xLowerError != 0)
+     output = output + "\nxUpperError: " + this.xLowerError;
+  if (this.valueLowerError != 0)
+     output = output + "\nxUpperError: " + this.valueLowerError;
+  if (this.valueUpperError != 0)
+     output = output + "\nxUpperError: " + this.valueUpperError;
+  if (output == "") return "NO ERRORS";
+  return output;
 });
 ```
 

@@ -13,11 +13,11 @@ var start;
 var finish;
 var label;
 
-stage.listen("renderstart", function(){
+stage.listen("renderstart", function (){
     start = (new Date()).getTime();
 });
 
-stage.listenOnce("renderfinish", function(){
+stage.listenOnce("renderfinish", function (){
     finish = (new Date()).getTime();
     var labelBg = stage.rect();
     label = stage.text(130,130);

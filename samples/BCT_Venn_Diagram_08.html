@@ -29,6 +29,7 @@
         {
             x: ["A", "B"],
             name: "Set A + Set B",
+            custom_field: "info 3",
             value: 25
         }
     ];
@@ -42,8 +43,18 @@
     // configure the labels of intersections
     chart.intersections().labels().format("{%name}\n\n{%value}");
 
+    // configure the tooltips of circles
+    chart.tooltip().format(
+        "Set Info: {%custom_field}\nCardinality: {%value}"
+    );
+
+    // configure the tooltips of intersections
+    chart.intersections().tooltip().format(
+        "Intersection Info: {%custom_field}\nCardinality: {%value}"
+    );
+
     // set the chart title
-    chart.title("Venn Diagram: Labels");
+    chart.title("Venn Diagram: Labels and Tooltips (Tokens)");
 
     // set the container id
     chart.container('container');

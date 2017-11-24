@@ -4,13 +4,13 @@
 
 ## Overview
 
-Sharing is a feature that allowes to share a chart made with AnyChart component to your page in a social network like Facebook, Pinterest and else. This article describes the settings and methods necessary for sharing activation, adjusting and using.
+Sharing is a feature that allows to share a chart made with AnyChart component to your page in a social network like Facebook, Pinterest and else. This article describes the settings and methods necessary for sharing activation, adjusting and using.
 
 There are two ways how to share a chart. First one is to use the context menu that provides four social networks for a chart sharing.
 
 <a href="https://static.anychart.com/images/share.jpg" target="_blank"><img width="100%" src = "https://static.anychart.com/images/share.jpg"></a>
 
-A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG image.
+A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG* image.
 
 Another way to share a chart in any social network is to use special sharing methods. There is a special sharing method for each network:
 - {api:anychart.core.Chart#shareWithFacebook}shareWithFacebook(){api}

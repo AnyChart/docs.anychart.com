@@ -75,11 +75,11 @@ Data for a Heat Map chart can be passed to the chart constructor {api:anychart#h
 
 Use the following data fields:
 
-* **x** to set the names of columns
-* **y** to set the names of rows
-* **heat** to set values
+* `x` to set the names of columns
+* `y` to set the names of rows
+* `heat` to set values
 
-By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the "heat" field can be omitted. See the [Appearance](#individual_cells) section to learn more.
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_cells) section to learn more.
 
 This is how working with data fields of the Heat Map chart looks like:
 
@@ -140,7 +140,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the "heat" field can be omitted:
+It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
 
 ```
 // create data
@@ -230,33 +230,40 @@ chart.colorScale(customColorScale);
 
 {sample}BCT\_Heat\_Map\_Chart\_06{sample}
 
-### Labels
+### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
 To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
+To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work with all chart types, there is a token that works only with the Heat Map – `{%heat}`. It returns the value (heat) of an element:
 
 ```
 // configure labels
-chart.labels().format("{%Heat}%");
+chart.labels().format("{%heat}%");
+
+// configure tooltips
+chart.tooltip().format("{%y}: {%heat}%");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
 
 #### Formatting Functions
 
-Labels are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
 
 ```
 // enable HTML for labels
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function(){
+chart.labels().format(function (){
   var heat = (this.heat);
   if (heat < 20)
     return "Low<br/>" + heat + "%";
@@ -265,16 +272,28 @@ chart.labels().format(function(){
   if (heat >= 40)
     return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
 });
+
+// configure tooltips
+chart.tooltip().format(function (){
+  var heat = (this.heat);
+  if (heat < 20)
+    return this.y + ": Low (" + heat + "%)";
+  if (heat < 40)
+    return this.y + ": Medium (" + heat + "%)";
+  if (heat >= 40)
+    return this.y + ": High (" + heat + "%)";
+});
 ```
+
 {sample}BCT\_Heat\_Map\_Chart\_08{sample}
 
 #### Display Mode
 
-You can also configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
+You can configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
 
-* **"alwaysShow"** – labels are always shown
-* **"clip"** – labels are cropped to fit cells
-* **"drop"** – too long labels are hidden
+* `"alwaysShow"` – labels are always shown
+* `"clip"` – labels are cropped to fit cells
+* `"drop"` – too long labels are hidden
 
 The default display mode is "drop": a label is not shown if it does not fit the width of a cell.
 
@@ -286,42 +305,6 @@ chart.labelsDisplayMode("alwaysShow");
 ```
   
 {sample}BCT\_Heat\_Map\_Chart\_09{sample}
-
-### Tooltips
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-#### Tokens
-
-To change the text of tooltips, combine the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
-
-In addition to tokens that work universally, you can use the *{%Heat}* token that works only with the Heat Map chart. This token returns the value (heat) of an element:
-
-```
-// configure tooltips
-chart.tooltip().format("{%Y}: {%Heat}%");
-```
-
-{sample}BCT\_Heat\_Map\_Chart\_10{sample}
-
-#### Formatting Functions
-
-Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the *heat* field (as well as the default fields):
-
-```
-// configure tooltips
-chart.tooltip().format(function(){
-  var heat = (this.heat);
-  if (heat < 20)
-    return this.y + ": Low (" + heat + "%)";
-  if (heat < 40)
-    return this.y + ": Medium (" + heat + "%)";
-  if (heat >= 40)
-    return this.y + ": High (" + heat + "%)";
-});
-```
-
-{sample}BCT\_Heat\_Map\_Chart\_11{sample}
 
 ### Scrollers
 
@@ -339,4 +322,4 @@ chart.yScroller().enabled(true);
 chart.yZoom().setToPointsCount(4);
 ```
 
-{sample}BCT\_Heat\_Map\_Chart\_12{sample}
+{sample}BCT\_Heat\_Map\_Chart\_10{sample}

@@ -22,7 +22,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
   <script src="https://cdn.anychart.com/themes/{{branch-name}}/coffee.min.js"></script>
   <script src="https://cdn.anychart.com/themes/{{branch-name}}/dark_blue.min.js"></script>
   <script>
-    anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function () {
       // data
       var data = [
         ["Department Stores", 637166],
@@ -186,7 +186,7 @@ Next, you can create a file with several themes or several files with themes and
   <!--Link to the file with the custom theme-->
   <script src="custom_theme.js"></script>
   <script>
-    anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function () {
       // data
       var data = [
         ["Department Stores", 637166],

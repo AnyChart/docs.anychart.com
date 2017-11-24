@@ -13,7 +13,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     annotationsAtServer = '{"annotationsList":[{"enabled":true,"type":"triangle"},{"enabled":true,"type":"ellipse","xAnchor":1175481606099,"valueAnchor":34.733333333333334,"secondXAnchor":1204609494282,"secondValueAnchor":26.033333333333335}]}';
 
@@ -61,31 +61,31 @@
     }
 
     // create a label for the Triangle annotation
-    createLabel("Triangle", 19, function() {
+    createLabel("Triangle", 19, function () {
         // start drawing the annotation
         chart.plot().annotations().startDrawing("triangle");
     });
 
     // create a label for the Ellipse annotation
-    createLabel("Ellipse", 90, function() {
+    createLabel("Ellipse", 90, function () {
         // start drawing the annotation
         chart.plot().annotations().startDrawing("ellipse");
     });    
 
     // create a label for removing annotations
-    createLabel("Remove All", 150, function() {
+    createLabel("Remove All", 150, function () {
         // remove all annotations
         chart.plot().annotations().removeAllAnnotations();
     });
 
     // create a label for saving annotations
-    createLabel("Save", 280, function() {
+    createLabel("Save", 280, function () {
         // save all annotations
         sendAnnotationsToServer(chart.plot().annotations().toJson(true));
     });   
 
     // create a label for loading annotations
-    createLabel("Load", 330, function() {
+    createLabel("Load", 330, function () {
         // load all saved annotations
         var annotations = getAnnotationsFromServer();
         chart.plot().annotations().fromJson(annotations);
@@ -103,12 +103,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

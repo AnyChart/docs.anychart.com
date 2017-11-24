@@ -179,7 +179,7 @@ Instead of tokens, you can also use [formatting functions](../../Common_Settings
 
 ```
 // configure the annotation labels
-fibonacciTimezones.labels().format(function(){
+fibonacciTimezones.labels().format(function (){
   // convert the level value (timestamp) to a string (date)
   var levelValue = anychart.format.dateTime(this.levelValue);
   switch (this.level) {

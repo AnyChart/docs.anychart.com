@@ -85,7 +85,7 @@ In this section we will quickly demonstrate how we can adjust axis orientation, 
 
 With AnyChart you can place axis to any side of the chart, all you need to do is to adjust the {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Bullet#axis}axis(){api}.
 
-Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set either *top* or *bottom*. As for vertical layout, axis orientation parameter may be set in *left* or *right*.
+Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set to either `"top'`' or `"bottom"`". As for vertical layout, axis orientation parameter can be set to `"left"` or `"right"`.
 
 ```
 chart.axis().orientation('top');
@@ -97,7 +97,7 @@ Here is a sample with the data from dashboard above with an only change of axis 
 
 ### Inversion
 
-AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the {api:anychart.scales.Linear#inverted}**scale().inverted(){api} method:
+AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the {api:anychart.scales.Linear#inverted}scale().inverted(){api} method:
 
 ```
 chart.scale().inverted(true);
@@ -109,7 +109,7 @@ Below this you can see a demonstration of a horizontal bullet chart with inverte
 
 ### Minimum and Maximum
 
-By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters:
+By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y-Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters:
 
 ```
 chart.yScale().minimum(-5).maximum(20);

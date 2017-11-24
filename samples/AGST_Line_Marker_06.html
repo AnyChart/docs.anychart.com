@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   // define chart
   chart = anychart.financial();
@@ -22,7 +22,7 @@
   crosshair.enabled(true);
   // set custom function for formatting x crossshair label
   var xCrossLabel = crosshair.xLabel();
-  xCrossLabel.format(function(){
+  xCrossLabel.format(function (){
     // get label data
     var date = new Date(this.rawValue);
     // get month from date
@@ -46,7 +46,7 @@
   var xTicks = chart.xScale().ticks();
   xTicks.interval(0,4);
   var xLabels = chart.xAxis().labels();
-  xLabels.format(function(){
+  xLabels.format(function (){
     var date = new Date(this["tickValue"]);
     var options = {month: "short", year: "numeric"};
     return date.toLocaleDateString("en-US", options);
@@ -150,7 +150,7 @@
 
   series.name("Сrudle oil forecast and range of uncertainty");
 
-  series.tooltip().title(false).separator(false).format(function(){
+  series.tooltip().title(false).separator(false).format(function (){
     var value = this.value.toFixed(3);
     if (this.valueLowerError !==0)
       value = this.value.toFixed(3) + "±" + this.valueLowerError.toFixed(3);

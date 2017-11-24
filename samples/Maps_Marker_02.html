@@ -40,10 +40,10 @@ anychart.onDocumentReady(function () {
     var series_lat_long = map.marker(data);
 
     // format the tooltips of the lat_long series    
-    series_lat_long.tooltip().titleFormat("{%Name}");
+    series_lat_long.tooltip().titleFormat("{%name}");
     series_lat_long.tooltip().format("Yearly profit: ${%value}m");
 
-    map.title("Marker series defined by latitude and longtitude");
+    map.title("Marker series defined by latitude and longitude");
 
     map.container("container");
     map.draw();

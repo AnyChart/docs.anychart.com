@@ -44,7 +44,7 @@ You can easily watch the difference between the next sample, where a special lay
 var rectLayer = stage.layer();
 
 // this is to be performed on a click
-labelBg.listen("click", function(){
+labelBg.listen("click", function (){
 rectLayer.removeChildren();
 ```
 

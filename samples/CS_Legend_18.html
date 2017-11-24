@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
   // data
   data = [
       ["John",  10000, 12000, 20000, 16000],
@@ -52,7 +52,7 @@
   chart.title("Legend Items events");
  
   // reset legend items
-  chart.listen("click", function(){
+  chart.listen("click", function (){
     for (i=0;i<chart.getSeriesCount();i++){
       chart.getSeries(i).legendItem().disabled(false);
     }

@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-  <script x-export="chart">anychart.onDocumentReady(function() {
+  <script x-export="chart">anychart.onDocumentReady(function () {
 
 	// data
 	var data = anychart.data.set([
@@ -55,7 +55,7 @@
 	addBg.stroke("2 #BCBCBC");
 	addBg.cornerType("round");
 	addBg.corners(5);
-	add.listen("click",function(){
+	add.listen("click",function (){
 		if (chart.getSeriesCount()<9)
 			chart.addSeries(data.mapAs({x: 0, value: [chart.getSeriesCount()+1]}));
 	});
@@ -71,7 +71,7 @@
 	removeBg.stroke("2 #BCBCBC");
 	removeBg.cornerType("round");
 	removeBg.corners(5);
-	remove.listen("click",function(){
+	remove.listen("click",function (){
 		if (chart.getSeriesCount()>0)
 			chart.removeSeriesAt(chart.getSeriesCount()-1);
 	});
@@ -87,7 +87,7 @@
 	removeAllBg.stroke("2 #BCBCBC");
 	removeAllBg.cornerType("round");
 	removeAllBg.corners(5);
-	removeAll.listen("click",function(){
+	removeAll.listen("click",function (){
 		chart.removeAllSeries();
 	});
 

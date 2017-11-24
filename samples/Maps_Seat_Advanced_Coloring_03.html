@@ -69,7 +69,7 @@ function createSeatMap(svg){
     });
 
     // set the hoverFill color 
-    seatMapSeries.hovered().fill(function(){
+    seatMapSeries.hovered().fill(function (){
         var attrs = this.attributes;
         if (attrs) {
             // get the class
@@ -86,7 +86,7 @@ function createSeatMap(svg){
     });
 
     // set the selectFill color
-    seatMapSeries.selected().fill(function(){
+    seatMapSeries.selected().fill(function (){
         var attrs = this.attributes;
         return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
     });

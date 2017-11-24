@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Rate of change (ROC) Mathematical De
 
 ## Adding indicator
 
-ROC indicator is added using {api:anychart.core.stock.Plot#roc}roc(){api} method, it requires a mapping with value field in it:
+ROC indicator is added using {api:anychart.core.stock.Plot#roc}roc(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -42,7 +42,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-ROC indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
+ROC indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var roc30 = plot.roc(mapping, 30, "column");

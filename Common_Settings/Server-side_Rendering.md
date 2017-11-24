@@ -19,8 +19,7 @@ To run the AnyChart Export Server, do the following:
 
 ## Command Line Usage
 
-If you want to use the AnyChart Export Server from the Command Line mode you have to set "cmd" (Command Line) as the first parameter, then define the path to the chart or insert the chart code as a string 
-and then set the parameters of the image (dimensions, quality, extension and so on). You'll find the full list of  parameters below.
+If you want to use the AnyChart Export Server from the Command Line mode you have to set `cmd` (Command Line) as the first parameter, then define the path to the chart or insert the chart code as a string and then set the parameters of the image (dimensions, quality, extension and so on). You'll find the full list of  parameters below.
 
 Sample command line:
 ```
@@ -138,8 +137,8 @@ Full list of the parameters available:
 AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default AnyChart component uses server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability.
 If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 
-To run Export server in server mode set "server" as the first parameter. Host and port params are optional.
-The usual http web server is run, it recieves POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
+To run Export server in server mode set `server` as the first parameter. Host and port parameters are optional.
+The usual http web server is run, it receives POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
 
 *When you stop the server, you must stop the PhantomJS process too.*
 

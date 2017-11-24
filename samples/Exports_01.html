@@ -9,7 +9,7 @@
 	  <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	  <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
   stage = anychart.graphics.create("container");  
 
@@ -32,19 +32,19 @@
 
   // create labels
   // create labels
-  lbl1 = createLabel("PNG", 10, function() {
+  lbl1 = createLabel("PNG", 10, function () {
     hideShowLabels(false);
     chart.saveAsPng({"width": 360, "height": 500, "quality": 0.3, "filename": "My Chart PNG"});
     hideShowLabels(true);
   });
 
-  lbl2 = createLabel("SVG", 50, function() {
+  lbl2 = createLabel("SVG", 50, function () {
     hideShowLabels(false);  
     chart.saveAsSvg({"paperSize": "A4", "landscape": false, "filename": "My Chart SVG"});   
     hideShowLabels(true);    
   });
 
-  lbl3 = createLabel("JPG", 90, function() {
+  lbl3 = createLabel("JPG", 90, function () {
     hideShowLabels(false);  
     chart.saveAsJpg({"width": 360, "height": 500, "quality": 0.3, "forceTransparentWhite": false, "filename": "My Chart JPG"});
     hideShowLabels(true);    
@@ -69,12 +69,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
       label.background().fill("#1976d2 0.5")
       document.body.style.cursor = "pointer";
       label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
       label.background().fill("#1976d2")
       document.body.style.cursor = "auto";
       label.draw();

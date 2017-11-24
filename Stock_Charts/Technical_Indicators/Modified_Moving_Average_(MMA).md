@@ -2,7 +2,7 @@
 
 ## Overview
 
-A Modified Moving Average (MMA) (**also known as Running Moving Average (RMA), or SMoothed Moving Average (SMMA)**) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
+A Modified Moving Average (MMA) (**also known as the Running Moving Average (RMA), or SMoothed Moving Average (SMMA)**) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
 
 MMA is partly calculated like SMA: the first point of the MMA is calculated the same way it is done for SMA. However, other points are calculated differently:the new price is added first and then the last average is subtracted from the resulting sum. 
 
@@ -12,7 +12,7 @@ Find the mathematical description of the indicator on the [Modified moving avera
 
 ## Adding indicator
 
-MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with a value field in it:
+MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -41,7 +41,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-MMA indicator needs three parameters, as SMA and EMA: mapping with value field in it, period and a type of series to be displayed as:
+MMA indicator needs three parameters, as SMA and EMA: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var mma10 = plot.mma(mapping, 10, "column");

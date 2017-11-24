@@ -29,7 +29,7 @@ label.listen(
   // event type
   "click",
   // your function
-  function() {/*custom function code*/}
+  function () {/*custom function code*/}
 );
 ```
 

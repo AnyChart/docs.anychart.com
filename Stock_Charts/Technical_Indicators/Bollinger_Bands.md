@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Bollinger Bands](Mathematical_Descri
 
 ## Adding indicator
 
-Bollinger Bands indicator is added using {api:anychart.core.stock.Plot#bbands}bbands(){api} method. It requires a mapping with the value field in it:
+Bollinger Bands indicator is added using {api:anychart.core.stock.Plot#bbands}bbands(){api} method. It requires a mapping with the `"value"` field in it:
 
 ```
 var dataTable = anychart.data.table();
@@ -33,7 +33,7 @@ var bbands = plot.bbands(mapping);
 
 ## Indicator parameters
 
-Bollinger Bands indicator only required parameter is the "mapping". Optional parameters are: "period", "deviation", "middle", "upper" and "lower" series types.
+Bollinger Bands indicator only required parameter is "mapping". Optional parameters are: "period", "deviation", "middle", "upper" and "lower" series types.
 
 ```
 var bbands = plot.bbands(mapping, 10, 3, "spline", "spline", "spline");

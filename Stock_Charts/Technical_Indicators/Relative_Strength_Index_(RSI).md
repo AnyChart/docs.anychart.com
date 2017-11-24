@@ -10,7 +10,7 @@ Mathematical description of the indicator: [The Relative Strength Index (RSI) Ma
 
 ## Adding indicator
 
-RSI indicator is added using {api:anychart.core.stock.Plot#rsi}rsi(){api} method, it requires a mapping with value field in it:
+RSI indicator is added using {api:anychart.core.stock.Plot#rsi}rsi(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -42,7 +42,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-RSI indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
+RSI indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var rsi30 = plot.rsi(mapping, 30, "column");

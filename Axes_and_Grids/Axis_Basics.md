@@ -10,14 +10,14 @@ In AnyChart axes are used to control grids, axes labels, lines and tick marks, a
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
 * To learn more about Date/Time Scale - [Date/Time Axes](Date_Time_Axes)
 
-In this section we will demonstrate most of the axes visualization options, which are the same for Y and X axes.
+In this section we will demonstrate most of the axes visualization options, which are the same for the Y- and X-axes.
 
 ## Declaration
 
 If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}Axis{api} methods:
 
 ```
-chart.xAxis().title('Sample X axis name');
+chart.xAxis().title('Sample X-Axis Name');
 ```
 
 ## Title
@@ -30,10 +30,10 @@ yTitle.enabled(true);
 yTitle.text("Units");
 yTitle.align("bottom");
 
-chart.xAxis().title("Sample X axis name");
+chart.xAxis().title("Sample X-Axis Name");
 ```
 
-As you can see, we've set titles both to X and Y axis.
+As you can see, we've set titles both to the X- and Y-axes.
 
 {sample}AGST\_Axes\_Basic\_01{sample}
 
@@ -109,7 +109,7 @@ As in any line, you can make it gradient, change opacity and thickness using {ap
 
 ## Tickmarks
 
-Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set "true" or "false" to the {api:anychart.core.axes.Ticks#enabled}enabled(){api} method of the {api:anychart.core.axes.Linear#ticks}ticks(){api} or {api:anychart.core.axes.Linear#minorTicks}minorTicks(){api}
+Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set `true` or `false` to the {api:anychart.core.axes.Ticks#enabled}enabled(){api} method of the {api:anychart.core.axes.Linear#ticks}ticks(){api} or {api:anychart.core.axes.Linear#minorTicks}minorTicks(){api}
 
 ```
 chart.yScale().minorTicks().enabled(true);

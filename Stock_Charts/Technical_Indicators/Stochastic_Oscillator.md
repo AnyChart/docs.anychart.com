@@ -10,7 +10,7 @@ Mathematical description: [Stochastic Oscillator Mathematical Description](Mathe
 
 ## Adding indicator
 
-Stochastic Oscillator indicator is added using the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method. It requires three data fields: High, Low and Close:
+Stochastic Oscillator indicator is added using the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data

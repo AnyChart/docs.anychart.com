@@ -9,7 +9,7 @@ Find the mathematical description of the indicator on the [Accumulation Distribu
 
 ## Adding indicator
 
-ADL indicator is added through the {api:anychart.core.stock.Plot#adl}adl(){api} method. It requires a mapping with five fields in it: "open", "high", "low", "close" and "volume".
+ADL indicator is added through the {api:anychart.core.stock.Plot#adl}adl(){api} method. It requires a mapping with five fields in it: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
 
 ```
 // create data table on loaded data

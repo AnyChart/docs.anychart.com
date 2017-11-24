@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
   stage = anychart.graphics.create("container");
 
@@ -43,8 +43,8 @@
   splineChart.bounds(0, "50%", "100%", "50%");
 
   // set the tooltip title and text for the Column Chart
-  columnChart.tooltip().titleFormat("{%SeriesName}");
-  columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
+  columnChart.tooltip().titleFormat("{%seriesName}");
+  columnChart.tooltip().format("Department: {%x} \nSum: {%value}");
 
   // set the tooltip content
   seriesSpline.tooltip().format(function(e){

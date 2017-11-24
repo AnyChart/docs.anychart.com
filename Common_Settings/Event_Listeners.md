@@ -18,7 +18,7 @@ This listener type adds an event listener to an implementing object. You can add
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
-chart.listen("click", function(){
+chart.listen("click", function (){
 	dataSet.append({
 		// x value
 		x: "P" + indexSetter,
@@ -43,7 +43,7 @@ It's necessary to define the event type and the action to perform to get any rea
 // click twice on any range bar to see the result
 
 range.listenOnce("dblClick",
-  function(){
+  function (){
     range.fill("red");
   });
 ```
@@ -57,7 +57,7 @@ You can add the {api:anychart.core.Base#removeAllListeners}removeAllListeners(){
 
 ```
 // remove all listeners
-chart.listen("dblClick", function(){
+chart.listen("dblClick", function (){
   chart.removeAllListeners();
 });
 ```
@@ -74,7 +74,7 @@ To stop listen to the particular action, place an {api:anychart.core.Base#unlist
 
 ```
 // create a function for what to listen and then unlisten
-var func_listen = function(){
+var func_listen = function (){
   dataSet.append({
     // x value
     x: "P" + indexSetter,
@@ -88,7 +88,7 @@ var func_listen = function(){
 // add a listener
 chart.listen("mouseMove", func_listen);
 
-chart.listenOnce("click",function(){
+chart.listenOnce("click",function (){
   // adding an unlistener 
   chart.unlisten("mouseMove", func_listen);
 });
@@ -109,7 +109,7 @@ var key = chart.listen("mouseMove", func_listen);
 // unlisten this
 // click twice on the chart to see the result
 chart.listen("dblclick",
-  function(){
+  function (){
     chart.unlistenByKey(key);
   }
 );
@@ -131,69 +131,69 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 </tr>
 <tr>
 <td>mouseOver</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseOver</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseMove</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseMove</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseOut</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseOut</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseDown</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseDown</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>mouseUp</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointMouseUp</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>click</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointClick</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>dblСlick</td>
-<td>All browser params</td>
+<td>All browser parameters</td>
 <td>pointDblСlick</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>draw</td>
 <td>target</td>
 <td>pointsHover</td>
-<td>All browser params + point params</td>
+<td>All browser parameters + point parameters</td>
 </tr>
 <tr>
 <td>boundsChange</td>
 <td>target, x, y, width, height</td>
 <td>pointsSelect</td>
-<td>All browser params + point params + array of selected points</td>
+<td>All browser parameters + point parameters + array of selected points</td>
 </tr>
 </tbody>
 </table>
 
-### Mouse-related
+### Mouse-Related
 
-As mentioned above, these event types provides no information about the point any event is committed on. 
+As mentioned above, these event types provide no information about the point any event is committed on. 
 For further information, see the example below.
 
 ```
 //add a listener
-chart.listen("mouseDown", function(){
+chart.listen("mouseDown", function (){
   // this will open a new page in a new tab
   window.open("https://google.com","_blank");
 });
@@ -203,7 +203,7 @@ chart.listen("mouseDown", function(){
 
 Here we have made a chart that opens a new page when the mouse is pressed. Look through the next paragraph to understand the difference between the mouse-related and point-related events.
 
-### Point-related
+### Point-Related
 
 Opposite to mouse-related methods, these event types are able to tell some extra information about the point any of those events are committed on. See and explore the example below.
 
@@ -236,7 +236,7 @@ chart.listen("pointDblClick", function(e){
 
 To make your chart more flexible, AnyChart js charting framework provides several ways of managing states of a single point. Event's parameter contains a number of properties that can ease interactivity managing.
 
-For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method does. All methods of a {api:anychart.core.SeriesPoint}series point{api} can be invoked upon this property.
+For instance, `point` property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method does. All methods of a {api:anychart.core.SeriesPoint}series point{api} can be invoked upon this property.
 
 As an example, let's use **pointsHover** event to find out the index of the hovered point and set hovered state for adjacent points.
 
