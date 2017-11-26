@@ -374,7 +374,7 @@ In the case of Tag Clouds, you need to know that the `{%value}` [token](../Commo
 
 ```
 // configure tooltips
-chart.tooltip().format("Value: {%value}\n Percentage: {%yPercentOfTotal}");
+chart.tooltip().format("Value: {%value}\nPercent Value: {%yPercentOfTotal}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
@@ -384,10 +384,19 @@ chart.tooltip().format("Value: {%value}\n Percentage: {%yPercentOfTotal}");
 You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percentage of the total frequency:
 
 ```
+// enable HTML for tooltips
+chart.tooltip().useHtml(true);
+
 // configure tooltips
 chart.tooltip().format(function (){
-    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-    return percentOfTotal.toFixed(1) + "%";
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal < 7)
+    return percentOfTotal.toFixed(1) +  "%";
+  if (percentOfTotal > 15)
+    return "<span style='font-size:26'>" +
+           percentOfTotal.toFixed(1) +  "%</span>";
+  return "<span style='font-size:18'>" +
+         percentOfTotal.toFixed(1) +  "%</span>";
 });
 ```
 
