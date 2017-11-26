@@ -5,7 +5,7 @@
 
 Mosaic chart is similar to the [basic Mekko chart](Mekko_Chart), with the following differences:
 - The Y-scale is ordinal, and axes labels contain series names instead of numbers.
-- [Points padding](#points_padding) is increased.
+- [Points padding](#padding) is increased.
 
 ## Quick Start
 
