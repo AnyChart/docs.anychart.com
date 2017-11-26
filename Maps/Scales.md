@@ -163,7 +163,7 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tbody>
 </table>
 
-Use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api} to make a progression between two similar hues.
+Use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api} to make a progression between two similar hues.
 
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 

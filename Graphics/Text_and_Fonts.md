@@ -138,7 +138,7 @@ There are two modes of the {api:anychart.core.Text#wordWrap}wordWrap(){api} meth
 - "break-word" allows to break the word in any point if there are no acceptable points in the text line to break the text in there;
 - "normal" allows to break at normal word break points only. 
 
-There are three modes of the {api:anychart.core.Text#wordbreak}wordBreak(){api} method:
+There are three modes of the {api:anychart.core.Text#wordBreak}wordBreak(){api} method:
 - "break-all" means that the text can is allowed to be broken in any point of the text, even between the characters of one word;
 - "keep-all" means that the text will be broken in any place, except for the CJK texts;
 - "normal" means that words would be broken according to their usual rules.

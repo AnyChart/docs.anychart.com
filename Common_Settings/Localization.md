@@ -14,23 +14,23 @@ You can also see how locales work using our localization demo applications:
 
 ##Applying an Automatic Locale
 
-AnyChart provides built-in locales covering most regions and cultures. To use an automatic locale, first link a file from [AnyChart CDN](https://cdn.anychart.com/#locales) or download it to your server and link it from there.
+AnyChart provides built-in locales covering most regions and cultures. To use an automatic locale, first link a file from [AnyChart CDN](https://cdn.anychart.com/) or download it to your server and link it from there.
 
 Linking from CDN looks like this:
 
 ```
-<script src="https://cdn.anychart.com/locale/1.1.0/en-gb.js">
-<script src="https://cdn.anychart.com/locale/1.1.0/en-us.js">
+<script src="https://cdn.anychart.com/locale/1.1.0/en-gb.js"></script>
+<script src="https://cdn.anychart.com/locale/1.1.0/en-us.js"></script>
 ```
 
 Linking from your server may look like this:
 
 ```
-<script src="./locales/en-gb.js">
-<script src="http://mydomain.com/anychart-locales/en-us.js">
+<script src="./locales/en-gb.js"></script>
+<script src="http://mydomain.com/anychart-locales/en-us.js"></script>
 ```
 
-After the file is linked, AnyChart engine knows about it, and you can start applying the locale in your charts: just set the code of the locale using the {api:anychart.format#inputLocale}inputLocale(){api} or {api:anychart.format#outputLocale}outputLocale(){api} methods. Codes of locales are listed in the CODE column on [AnyChart CDN](https://cdn.anychart.com/#locales).
+After the file is linked, AnyChart engine knows about it, and you can start applying the locale in your charts: just set the code of the locale using the {api:anychart.format#inputLocale}inputLocale(){api} or {api:anychart.format#outputLocale}outputLocale(){api} methods. Codes of locales are listed in the CODE column on [AnyChart CDN](https://cdn.anychart.com/).
 
 Setting input and output locales looks like this:
 
@@ -66,4 +66,4 @@ chart.tooltip().titleFormat(function () {
 
 ##Locales in AnyChart CDN
 
-You can get all available locales from [AnyChart CDN](https://cdn.anychart.com/#locales) and either download them to your server or link directly from the CDN.
+You can get all available locales from [AnyChart CDN](https://cdn.anychart.com/) and either download them to your server or link directly from the CDN.

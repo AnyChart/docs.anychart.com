@@ -14,7 +14,7 @@ Custom JavaScript Builder is designed for assembling a JavaScript file that cont
 
 ## Bundle
 
-AnyChart Bundle build contains all [chart modules](#chart-modules) and [features](#features), it is the biggest file, use it cautiously.
+AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features), it is the biggest file, use it cautiously.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>

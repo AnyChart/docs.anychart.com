@@ -4,7 +4,7 @@
 
 Developed by J. Welles Wilder, the Average True Range (ATR) is an indicator that measures volatility. As with most of his indicators, Wilder designed ATR with commodities and daily prices in mind. Commodities are frequently more volatile than stocks. They were are often subject to gaps and limit moves, which occur when a commodity opens up or down its maximum allowed move for the session. A volatility formula based only on the high-low range would fail to capture volatility from gap or limit moves. Wilder created Average True Range to capture this "missing" volatility. It is important to remember that ATR does not provide an indication of price direction, just volatility.
 
-Mathematical description: [Average True Range (ATR) Mathematical Description](Mathematical_Description#ama).
+Mathematical description: [Average True Range (ATR) Mathematical Description](Mathematical_Description#average_true_range).
 
 ## Adding indicator
 
