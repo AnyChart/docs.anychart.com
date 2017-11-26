@@ -153,7 +153,7 @@ Legend size is controlled by the following methods:
 
 ### Expandable
 
-When the legend [layout mode](#layout) is set to *"horizontal-expandable"* or *"vertical-expandable"* it makes sense to use the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and the {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which control the extent to which legend can expand to. It can be set both in pixels and percents. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
+When the legend [layout mode](#layout) is set to *"horizontal-expandable"* or *"vertical-expandable"* it makes sense to use the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and the {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which control the extent to which legend can expand to. It can be set both in pixels and in percent. This way you can ensure that a legend does not grab to much space when there are a few elements and that it will not squeeze the chart into nothingness if there are to many elements.
 
 ```
 // Set maximum width and height.
@@ -174,7 +174,7 @@ See how these settings work in the following interactive sample: click buttons t
 
 ### Fixed
 
-The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} methods are used to set the fixed size of a legend in pixels or percents. They override {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} if both are set simultaneously.
+The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} methods are used to set the fixed size of a legend in pixels or in percent. They override {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} if both are set simultaneously.
 
 A Pie Chart Sample with a legend of a fixed (75px - width, 140px height) size positioned to the *"Left"* of the chart, aligned to *"Top"*, with padding of 10 pixels:
 

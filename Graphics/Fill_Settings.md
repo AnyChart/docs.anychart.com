@@ -116,7 +116,7 @@ If the container size in gradient settings are larger than the filled element si
 Radial Gradient basic parameters are:
 
 1. **Gradient keys**, just like in linear gradient,
-2. **Center location**, which is set by a number from 0 to 1 as a percentage ratio from the container dimensions.
+2. **Center location**, which is set by a number from 0 to 1 as a percentage of the container dimensions.
 
 Radial gradient fill with center location (0.5, 0.5):
 
@@ -132,7 +132,7 @@ Additional parameters:
 * **fill area** - same as in 1.2.3.3 (UserSpaceOnUse). 
  If fill area is not set, whole container is filled in.
  If the resulting proportions ratio is not 1:1, the fill will stretch to fill all area (resulting in an ellipse).
-* **focal spot location** - sets a focal point location as a percentage ratio from container dimensions (0, 1). Focal spot location must not overrun the ellipse borders.
+* **focal spot location** - sets a focal point location as a percentage of container dimensions (0, 1). Focal spot location must not overrun the ellipse borders.
 
 An example of focal spot shape. Focal spot must lay within ellipse borders.
 

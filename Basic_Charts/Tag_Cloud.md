@@ -370,24 +370,33 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-In the case of Tag Clouds, you need to know that the `{%value}` [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and `{%yPercentOfTotal}` returns the percent of total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
+In the case of Tag Clouds, you need to know that the `{%value}` [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage of the total frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
 
 ```
 // configure tooltips
-chart.tooltip().format("Value: {%value}\n Percent: {%yPercentOfTotal}");
+chart.tooltip().format("Value: {%value}\nPercent Value: {%yPercentOfTotal}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
 
 #### Formatting Functions
 
-You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percent of total frequency:
+You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below returns the percentage of the total frequency:
 
 ```
+// enable HTML for tooltips
+chart.tooltip().useHtml(true);
+
 // configure tooltips
 chart.tooltip().format(function (){
-    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-    return percentOfTotal.toFixed(1) + "%";
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal < 7)
+    return percentOfTotal.toFixed(1) +  "%";
+  if (percentOfTotal > 15)
+    return "<span style='font-size:26'>" +
+           percentOfTotal.toFixed(1) +  "%</span>";
+  return "<span style='font-size:18'>" +
+         percentOfTotal.toFixed(1) +  "%</span>";
 });
 ```
 

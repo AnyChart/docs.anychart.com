@@ -12,7 +12,7 @@ Consider using multiple axes when you need:
   
 * Show data from the different ranges on the same plot, for example: absolute stock price changes and sales volume (price will be in dollars and volume in millions of dollars)
   
-* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
+* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percent)
 
 ## Declaration
 
@@ -117,7 +117,7 @@ Here it is - a sample that shows different important temperatures:
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 
 Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in 
-dollars and in percents of GDP. We need to create one additional axis adjust both basic and additional axes:
+dollars and as a percentage of GDP. We need to create one additional axis adjust both basic and additional axes:
 
 ```
 // setting yScale settings
@@ -148,6 +148,6 @@ chart.yAxis(1).labels().format("{%value}%");
 
 We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}Column{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}yAxis{api}, one series of a {api:anychart.core.cartesian.series.Line}Line{api} type to show percentage changes.
 
-Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
+Here it is - a sample chart comparing the US debt, in dark red, to the debt as percentage of GDP, in blue.
 
 {sample}AGST\_Additional\_Axes\_06{sample}

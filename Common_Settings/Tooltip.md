@@ -189,6 +189,9 @@ There are several possible ways of formatting the tooltip text: tokens, external
 The following sample demonstrates using tokens for formatting tooltips:
 
 ```
+// enable HTML for tooltips
+chart.tooltip().useHtml(true);
+
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");

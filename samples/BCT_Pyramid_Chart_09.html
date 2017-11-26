@@ -6,40 +6,29 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pyramid-funnel.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function () {
+  
+  chart = anychart.pyramid([
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
+  ]);
 
-    // create data, enable and configure markers
-    var data = [
-      {x: "January", value:10000},
-      {x: "February", value:12000, marker:{enabled:true, type:"star5", fill:"gold", size:10}},
-      {x: "March", value:13000, marker:{enabled:true, type:"star5", fill:"red", size:15}},
-      {x: "April", value:10000},
-      {x: "May", value:9000}
-    ];
+  // configure labels
+  chart.labels().format("{%name}: {%yPercentOfTotal}%");
 
-    // set the chart type
-    chart = anychart.line();
+  // configure tooltips
+  chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
 
-    // create a series and set the data
-    var series = chart.line(data);
-    // set the chart title
-    
-    chart.title("Markers (Points)");
-    // set the titles of the axes
-
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
-
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
-    chart.draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

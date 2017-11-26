@@ -64,9 +64,9 @@ series3.selected().stroke("#aeb404", 4, "10 5",  "round");
 
 {api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
 
-All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
+All chart types allow configuring markers: both on a whole series and in individual points. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
+In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only on hover and select). On the other series a few custom settings are added:
 
 ```
 // enable and configure markers on the first series
@@ -76,9 +76,9 @@ series1.markers().fill("gold");
 series1.markers().size(10);
 ```
 
-This sample shows how you can configure markers in particular points:
-
 {sample}BCT\_General\_Settings\_02{sample}
+
+This sample shows how you can configure markers in individual points:
 
 ```
 // create data, enable and configure markers
@@ -90,11 +90,12 @@ var data = [
   {x: "May", value:9000}
 ];
 ```
+
 {sample}BCT\_General\_Settings\_03{sample}
 
 ## Labels
 
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in individual points). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 In the sample below, there is a Column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
@@ -106,7 +107,7 @@ series.labels().fontWeight(900);
 series.labels().format("${%value}");
 ```
 
-The next sample shows how to configure labels in particular points:
+The next sample shows how to configure labels in individual points:
 
 {sample}BCT\_General\_Settings\_04{sample}
 
@@ -125,7 +126,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart separately.
+A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart individually.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -225,7 +226,7 @@ Stacked and percent stacked charts are multi-series charts where related values 
 
 In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked/Overview).
 
-### Point Size
+## Point Size
 
 All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 

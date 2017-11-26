@@ -6,46 +6,44 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-tag-cloud.min.js" data-export="true"></script>
+	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pyramid-funnel.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">anychart.onDocumentReady(function () {
-
-    // create data   
+      
+    // create data
     var data = [
-        {x: "learning", value: 80},
-        {x: "includes", value: 56},
-        {x: "lists", value: 44},
-        {x: "meaning", value: 40},
-        {x: "useful", value: 36},
-        {x: "different", value: 32},
-        {x: "grammar", value: 28},
-        {x: "teaching", value: 24},
-        {x: "example", value: 20},
-        {x: "thing", value: 12}
+      ["Total Market", 232000],
+      ["Prospects", 94480],
+      ["Leads", 47390],
+      ["Sales", 22181]
     ];
 
-    // create a chart and set the data
-    chart = anychart.tagCloud(data);
+    chart = anychart.funnel(data);
 
-    // enable HTML for tooltips
+    // enable HTML for labels and tooltips
+    chart.labels().useHtml(true);
     chart.tooltip().useHtml(true);
+
+    // configure labels
+    chart.labels().format(function (){
+    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+    if (percentOfTotal > 50)
+        return "<span style='color:#dd2c00;font-weight:bold'>" +
+               this.x + ": " + percentOfTotal.toFixed(1) + "%</span>";
+    return this.x + ": " + percentOfTotal.toFixed(1) + "%";
+    });
 
     // configure tooltips
     chart.tooltip().format(function (){
-      var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-      if (percentOfTotal < 7)
-        return percentOfTotal.toFixed(1) +  "%";
-      if (percentOfTotal > 15)
-        return "<span style='font-size:26'>" +
-               percentOfTotal.toFixed(1) +  "%</span>";
-      return "<span style='font-size:18'>" +
-             percentOfTotal.toFixed(1) +  "%</span>";
+    var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+    if (percentOfTotal > 50)
+        return "<span style='font-size:18'>" +
+               percentOfTotal.toFixed(1) + "% (" +
+               this.value +")</span>";
+    return percentOfTotal.toFixed(1) + "% (" + this.value +")";
     });
-
-    // set the chart title
-    chart.title("Tag Cloud Chart: Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

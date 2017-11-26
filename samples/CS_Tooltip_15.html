@@ -44,6 +44,9 @@
   // set title
   chart.title("Managing Tooltip Content");
 
+  // enable HTML for tooltips
+  chart.tooltip().useHtml(true);
+
   // tooltip settings
   var tooltip = chart.tooltip();
   tooltip.positionMode("point");

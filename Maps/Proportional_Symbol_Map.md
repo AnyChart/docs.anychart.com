@@ -99,7 +99,7 @@ map.minBubbleSize(10);
 
 {sample}Maps\_Proportional\_Symbol\_08{sample}
 
-You can set the size in percents of map size as well:
+You can set the size as a percentage of the map size as well:
 
 ```
 // set the maximum size of the bubble

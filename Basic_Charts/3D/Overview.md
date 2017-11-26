@@ -71,7 +71,7 @@ chart.zAngle(20);
 
 3D charts can vary in depth: to set it, use the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
-**Note:** You can set the depth either in pixels (numeric value) or in percentage (string value).
+**Note:** You can set the depth either in pixels (numeric value) or in percent (string value).
 
 In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (the Z-angle is also configured):
 

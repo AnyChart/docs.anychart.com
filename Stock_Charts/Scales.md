@@ -55,7 +55,7 @@ chart.plot(0).yScale().comparisonMode("value");
 
 ### Percents
 
-In "percent" mode the changes are displayed in percents.
+In the "percent" mode the changes are displayed in percent.
 
 ```
 chart = anychart.stock();

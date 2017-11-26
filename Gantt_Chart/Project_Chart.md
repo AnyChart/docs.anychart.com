@@ -149,7 +149,7 @@ You can control if the summary task is expanded or collapsed using these methods
 
 ## Task Progress
 
-Tracking progress can be complicated, but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue".
+Tracking progress can be complicated, but you can show the percent complete using a progress bar. To use it you need to provide the required value of the "progressValue".
 
 ```
 // progress in data

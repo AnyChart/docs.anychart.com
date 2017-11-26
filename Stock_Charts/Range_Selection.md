@@ -59,7 +59,7 @@ chart.container("container");
 chart.draw();
 
 // Render the range selection controls into some containers on a page
-rangeSelector.render("rangeselectorContainer");
+rangeSelector.render(document.getElementById("rangeselectorContainer"));
 rangePicker.render("rangepickerContainer");
 ```
 
