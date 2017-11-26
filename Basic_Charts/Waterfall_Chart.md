@@ -261,7 +261,7 @@ To change the text of labels, combine the {api:anychart.charts.Waterfall#labels}
 
 To configure tooltips, do the same with the {api:anychart.charts.Waterfall#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-Besides tokens that work with all chart types, there are two tokens working only with the Waterfall: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
+Besides tokens that work with all chart types, there are two tokens that are specific to the Waterfall: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
 By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including their titles, is modified too:
 

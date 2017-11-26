@@ -214,7 +214,7 @@ To change the text of labels, combine the **labels()** method of the series (or 
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work everywhere, there are tokens working only with error bars:
+Besides tokens that work everywhere, there are tokens that are specific to error bars:
 
 * `{%valueLowerError}`
 * `{%valueUpperError}`
