@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -36,10 +36,13 @@
     chart = anychart.heatMap(data);
 
     // configure labels
-    chart.labels().format("{%Heat}%");
+    chart.labels().format("{%heat}%");
+
+    // configure tooltips
+    chart.tooltip().format("{%y}: {%heat}%");
 
     // set the chart title
-    chart.title("Heat Map: Labels (Tokens)");
+    chart.title("Heat Map: Labels and Tooltips (Tokens)");
 
     // set the container id
     chart.container("container");

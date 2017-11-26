@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#configuration) which may be used to debug charts and report issues.
+AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#chart_configuration) which may be used to debug charts and report issues.
 
 ## Export server
 
@@ -101,7 +101,7 @@ chart.saveAsPdf();
 
 AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} (Excel file).
 
-{api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (SPECIFIC), all data in the data set (RAW) and a special mode for stock charts allows to export grouped data (GROUPED).
+{api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (`"specific"`), all data in the data set (`"raw"`) and a special mode for stock charts allows to export grouped data (`"grouped"`).
 
 ### CSV
 

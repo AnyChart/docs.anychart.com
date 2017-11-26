@@ -86,7 +86,7 @@ The request of the JSON file with the Data Adapter should be done through the {a
 anychart.data.loadJsonFile(URL, function (data){}); 
 ```
 
-Find all links to AnyChart Maps on the <a href="https://cdn.anychart.com/#map-collection">AnyChart Map Collection</a> page.
+Find all links to AnyChart Maps on the <a href="https://cdn.anychart.com/">AnyChart Map Collection</a> page.
 
 ### Drill To
 

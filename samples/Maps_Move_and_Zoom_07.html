@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="stage">
 
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
@@ -99,25 +99,25 @@ anychart.onDocumentReady(function() {
 
     // up button
     upButton = createButton("Up", 0, 50);
-    upButton.listen("click", function(){
+    upButton.listen("click", function (){
         map.move(0, 10);
     });
 
     // down button
     downButton = createButton("Down", 0, 20);
-    downButton.listen("click", function(){
+    downButton.listen("click", function (){
         map.move(0, -10);
     });
 
     // left button
     leftButton = createButton("Left", -50, 20);
-    leftButton.listen("click", function(){
+    leftButton.listen("click", function (){
         map.move(10, 0);
     });
 
     // right button
     rightButton = createButton("Right", 50, 20);
-    rightButton.listen("click", function(){
+    rightButton.listen("click", function (){
         map.move(-10, 0);
     });
     
@@ -139,12 +139,12 @@ anychart.onDocumentReady(function() {
     button.offsetY(offsetY);
     button.container(stage);
     button.draw();
-    button.listen("mouseOver", function(){
+    button.listen("mouseOver", function (){
         button.background().fill("#1976d2 0.5")
         document.body.style.cursor = "pointer";
         button.draw();
     });
-    button.listen("mouseOut", function(){
+    button.listen("mouseOut", function (){
         button.background().fill("#1976d2")
         document.body.style.cursor = "auto";
         button.draw();

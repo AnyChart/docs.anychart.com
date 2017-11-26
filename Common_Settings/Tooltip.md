@@ -6,7 +6,7 @@ Tooltip is a text box that is hidden by default and can be displayed when a poin
 
 ## Default Tooltip
 
-By default, the tooltip is being shown when a point on a chart is hovered. To disable them from showing at all set "false" to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
+By default, the tooltip is being shown when a point on a chart is hovered. To disable them from showing at all, set `false` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
 
 ```
 // enable tooltip for all series
@@ -25,7 +25,7 @@ Hover each of the series to see the difference.
 
 **NOTE:** Tooltips inherit settings. When settings are defined for tooltips of a whole chart, the series' tooltips  inherit them and have the same settings. You can override settings for any series.
 
-To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFace}fontFace(){api} methods.
+To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFamily}fontFamily(){api} methods.
 
 For example, let's set "gold" color to all tooltips and then override it with "green" for one of the series. 
 
@@ -144,7 +144,7 @@ Here is a sample with a title separator disabled.
 
 ### Text
 
-You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.cartesian.series.Base#tooltip}tooltip(){api} method.
+You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.Chart#tooltip}tooltip(){api} method.
 
 ```
 var tooltip = chart.tooltip();
@@ -179,7 +179,7 @@ In case you need more complex content formatting there is the {api:anychart.core
 
 ```
 var tooltip = chart.tooltip();
-tooltip.format(function(){
+tooltip.format(function (){
   /* code of your function */
 });
 ```
@@ -189,10 +189,13 @@ There are several possible ways of formatting the tooltip text: tokens, external
 The following sample demonstrates using tokens for formatting tooltips:
 
 ```
+// enable HTML for tooltips
+chart.tooltip().useHtml(true);
+
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
-tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%value}</b>");
 ```
 
 {sample}CS\_Tooltip\_15{sample}
@@ -201,8 +204,8 @@ Use several formatting ways if there are some series on your chart or charts on 
 
 ```
 // set the tooltip title and text for the Column Chart
-columnChart.tooltip().titleFormat("{%SeriesName}");
-columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
+columnChart.tooltip().titleFormat("{%seriesName}");
+columnChart.tooltip().format("Department: {%x} \nSum: {%value}");
 
 // set the tooltip content
 seriesSpline.tooltip().format(function(e){
@@ -251,7 +254,7 @@ That is how tooltip background with the settings from above looks like:
 
 ## Out of chart
 
-In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
+In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set `true` to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
 // applies to all series
@@ -270,7 +273,7 @@ series2.tooltip().allowLeaveChart(false);
 
 Note that series' individual tooltip settings override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting "true" to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting `true` to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
 
 ## Out of stage
 
@@ -295,11 +298,11 @@ Note: that stage the chart belongs to is considered as the stage of the tooltip 
 
 *IMPORTANT NOTE:*
 
-When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get "true" as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
+When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get `true` as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
 
 ## Out of screen
 
-If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting "true" will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
+If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting `true` will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
 
 ```
 // adjust series tooltips
@@ -315,7 +318,7 @@ The third series inherits the chart's defaults in this sample.
 
 There are several methods for managing tooltips position on the chart. This section contains information on most of these methods.
   
-AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow the cursor. Setting *point* and a parameter binds tooltip to the hovered series point. Use the *chart* parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
+AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. The `"float"` parameter is the default one for this method and makes tooltip to follow the cursor. Setting `"point"` and a parameter binds tooltip to the hovered series point. Use the `"chart"` parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
 
 ```
 chart.tooltip().positionMode("point");
@@ -327,7 +330,7 @@ Here is a sample with the tooltip stuck to the hovered point:
 
 ### Fixed Tooltip Position
 
-You can bind tooltips to a certain point on the chart plot using **chart** as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
+You can bind tooltips to a certain point on the chart plot using `"chart"` as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
 
 You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.Tooltip#anchor}anchor(){api} method defines the main part of the tooltip for further positioning.
 

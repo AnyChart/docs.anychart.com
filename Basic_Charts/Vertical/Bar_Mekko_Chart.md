@@ -11,7 +11,7 @@ To learn more about vertical charts in general and how to customize them, see [V
 
 To build a Vertical Bar Mekko chart, use the {api:anychart#barmekko}anychart.barmekko(){api} chart constructor. Then you need to make some adjustments to make it vertical:
 - set vertical orientation as default for mekko series,
-- swap X and Y axes positions.
+- swap the X- and Y-axes positions.
 
 ```
 // create a chart

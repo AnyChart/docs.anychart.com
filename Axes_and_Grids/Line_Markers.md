@@ -7,7 +7,7 @@ Line marker is a line that is drawn on chart plot and bound to some value on an 
 
 ## Declare
 
-To create a line marker use the {api:anychart.charts.Cartesian#lineMarker}anychart.charts.Cartesian#lineMarker} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.core.axisMarkers.Line#value}value(){api} method.
+To create a line marker use the {api:anychart.charts.Cartesian#lineMarker}anychart.charts.Cartesian#lineMarker} method. By default this method creates a marker on a primary Y-axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}axis(){api} method. To set a position for a marker use {api:anychart.core.axisMarkers.Line#value}value(){api} method.
 
 ```
 var yAxis = chart.yAxis();
@@ -17,7 +17,7 @@ marker.axis(yAxis);
 marker.value(9000);
 ```
 
-Here is a sample with a line marker on Y Axis:
+Here is a sample with a line marker on the Y-axis:
 
 {sample}AGST\_Line\_Marker\_03{sample}
 
@@ -47,7 +47,7 @@ In some cases you may need to customize your marker's emplacement. The {api:anyc
 
 Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.core.axisMarkers.Line#scale}scale(){api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.core.axisMarkers.Line#layout}layout(){api} method.  
   
-**Note**: if you define neither {api:anychart.core.axisMarkers.Line#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary y axis.
+**Note**: if you define neither {api:anychart.core.axisMarkers.Line#scale}scale(){api} nor {api:anychart.core.axisMarkers.Line#axis}axis(){api} the marker will be bound to the primary Y-axis.
 
 ```
 var marker = chart.lineMarker();
@@ -79,7 +79,7 @@ var marker1 = chart.lineMarker(0);
 var marker2 = chart.lineMarker(1);
 ```
 
-After defining a marker it is vital **to bind a marker to an axis or bind it to a scale and set markers layout**. Otherwise, you will get a horizontal marker that is bound to the primary y axis.
+After defining a marker it is vital **to bind a marker to an axis or bind it to a scale and set markers layout**. Otherwise, you will get a horizontal marker that is bound to the primary Y-axis.
   
 ```
 var marker1 = chart.lineMarker(0);

@@ -66,7 +66,7 @@ Put an `<object>` with the link to the SVG file into the `<body>` section of the
 Use the {api:anychart#onDocumentLoad}onDocumentLoad(){api} method to let the code run after the page is loaded with all external files.
 
 ```
-anychart.onDocumentLoad(function() {
+anychart.onDocumentLoad(function () {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```

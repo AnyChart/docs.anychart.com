@@ -4,8 +4,8 @@
 ## Overview
 
 Mosaic chart is similar to the [basic Mekko chart](Mekko_Chart), with the following differences:
-- Y scale is ordinal and axes labels contain series names instead of numbers,
-- [Points padding](#points_padding) is increased.
+- The Y-scale is ordinal, and axes labels contain series names instead of numbers.
+- [Points padding](#padding) is increased.
 
 ## Quick Start
 
@@ -56,9 +56,9 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 Configuring the appearance of the Mosaic chart is similar to configuring the basic [Mekko chart](Mekko_Chart#appearance) or [Column chart](../Column_Chart).
 
-### Points Padding
+### Padding
 
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [Bar Mekko](Bar_Mekko_Chart) constructors.
+Padding between points  is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](Mekko_Chart) and [Bar Mekko](Bar_Mekko_Chart) constructors.
 
 ### Vertical Mosaic
 

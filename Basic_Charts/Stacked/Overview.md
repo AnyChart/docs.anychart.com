@@ -56,16 +56,16 @@ chart.yScale().ticks().interval(20);
 
 ### Axis Percent Labels
 
-To add percent symbol to axis labels use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
+To add the percent symbol to axis labels use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
 // configure labels on the Y-axis
-chart.yAxis().labels().format("{%Value}%");
+chart.yAxis().labels().format("{%value}%");
 ```
 
 ### Tooltips and Labels
 
-To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](../../Common_Settings/Text_Formatters):
+To add the percent symbol and show a percentage instead (or in addition to) in tooltips and labels use [Text Formatters](../../Common_Settings/Text_Formatters):
 
 ```
 // configure tooltips
@@ -169,7 +169,7 @@ chart.column(seriesData_4).yScale(yScale2);
 
 {sample}BCT\_Stacking\_05{sample}
 
-### With unstackable series
+### With Unstackable Series
 
 When you combine a set of stackable series with any number of series if unstackable type the stackable series form a stack and unstackable series are displayed as always. This way you can show a trend over a stack without creating any extra scales. Please see a sample below:
 

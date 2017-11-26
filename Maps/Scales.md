@@ -131,7 +131,7 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tbody>
 </table>
 
-To make a bi-hue progression use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}
+To make a bi-hue progression use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api}
 function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_Scales\_05{sample}
@@ -163,7 +163,7 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tbody>
 </table>
 
-Use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api} to make a progression between two similar hues.
+Use the {api:anychart.color#bipolarHueProgression}anychart.color.bipolarHueProgression(){api} to make a progression between two similar hues.
 
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 

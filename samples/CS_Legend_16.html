@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
   
   // set stage
   stage = anychart.graphics.create("container");
@@ -73,9 +73,9 @@
   peterTitle.hAlign("center");
   
   // set legend items
-  johnLegend.itemsFormatter(function(){return johnLegendItems});
-  jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-  peterLegend.itemsFormatter(function(){return peterLegendItems});
+  johnLegend.itemsFormatter(function (){return johnLegendItems});
+  jakeLegend.itemsFormatter(function (){return jakeLegendItems});
+  peterLegend.itemsFormatter(function (){return peterLegendItems});
   
   // legends settings
   johnLegend.position("center-bottom");
@@ -91,14 +91,14 @@
       johnLegendItems[index].fontColor = "#000";
       johnLegendItems[index].iconFill = palette[index];
       johnLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-      johnLegend.itemsFormatter(function(){return johnLegendItems});
+      johnLegend.itemsFormatter(function (){return johnLegendItems});
     }
     else{
       chart.getSeries(index).data().set(0, "value", "missing");
       johnLegendItems[index].fontColor = "#999";
       johnLegendItems[index].iconFill = "#999";
       johnLegendItems[index].iconStroke = "#999";
-      johnLegend.itemsFormatter(function(){return johnLegendItems});
+      johnLegend.itemsFormatter(function (){return johnLegendItems});
     }
   });
   johnLegend.listen("legendItemMouseOver", function(event) {
@@ -121,14 +121,14 @@
       jakeLegendItems[index].fontColor = "#000";
       jakeLegendItems[index].iconFill = palette[index];
       jakeLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-      jakeLegend.itemsFormatter(function(){return jakeLegendItems});
+      jakeLegend.itemsFormatter(function (){return jakeLegendItems});
     }
     else{
       chart.getSeries(index).data().set(1, "value", "missing");
       jakeLegendItems[index].fontColor = "#999";
       jakeLegendItems[index].iconFill = "#999";
       jakeLegendItems[index].iconStroke = "#999";
-      jakeLegend.itemsFormatter(function(){return jakeLegendItems});
+      jakeLegend.itemsFormatter(function (){return jakeLegendItems});
     }
   });
   jakeLegend.listen("legendItemMouseOver", function(event) {
@@ -151,14 +151,14 @@
       peterLegendItems[index].fontColor = "#000";
       peterLegendItems[index].iconFill = palette[index];
       peterLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-      peterLegend.itemsFormatter(function(){return peterLegendItems});
+      peterLegend.itemsFormatter(function (){return peterLegendItems});
     }
     else{
       chart.getSeries(index).data().set(2, "value", "missing");
       peterLegendItems[index].fontColor = "#999";
       peterLegendItems[index].iconFill = "#999";
       peterLegendItems[index].iconStroke = "#999";
-      peterLegend.itemsFormatter(function(){return peterLegendItems});
+      peterLegend.itemsFormatter(function (){return peterLegendItems});
     }
   });
   peterLegend.listen("legendItemMouseOver", function(event) {

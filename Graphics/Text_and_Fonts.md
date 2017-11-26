@@ -7,7 +7,7 @@ There are several methods adjusting custom text on a stage. You can find all of 
 
 ### Set the text
 
-Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X and Y coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
+Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X- and Y-coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
 
 ```
 // set the text
@@ -95,7 +95,7 @@ font-family: 'Dancing Script', cursive;
 
 ## Multiline
 
-Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#wordWrap}wordWrap(){api}, {api:anychart.graphics.vector.Text#wordBreak}wordBreak(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
+Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.core.Text#wordWrap}wordWrap(){api}, {api:anychart.core.Text#wordBreak}wordBreak(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
 
 ```
 // create the text style object
@@ -138,7 +138,7 @@ There are two modes of the {api:anychart.core.Text#wordWrap}wordWrap(){api} meth
 - "break-word" allows to break the word in any point if there are no acceptable points in the text line to break the text in there;
 - "normal" allows to break at normal word break points only. 
 
-There are three modes of the {api:anychart.core.Text#wordbreak}wordBreak(){api} method:
+There are three modes of the {api:anychart.core.Text#wordBreak}wordBreak(){api} method:
 - "break-all" means that the text can is allowed to be broken in any point of the text, even between the characters of one word;
 - "keep-all" means that the text will be broken in any place, except for the CJK texts;
 - "normal" means that words would be broken according to their usual rules.

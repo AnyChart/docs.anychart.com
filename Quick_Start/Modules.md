@@ -14,7 +14,7 @@ Custom JavaScript Builder is designed for assembling a JavaScript file that cont
 
 ## Bundle
 
-AnyChart Bundle build contains all [chart modules](#chart-modules) and [features](#features-modules), it is the biggest file, use it cautiously.
+AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features), it is the biggest file, use it cautiously.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
@@ -28,8 +28,8 @@ The following modules are available:
 
 AnyChart Base is a handy module that contains:
 - [Core](#core)
-- [Pie and donut](#pie-and-donut)
-- [Basic cartesian charts](#basic-cartesian-charts)
+- [Pie and donut](#pie_and_donut)
+- [Basic cartesian charts](#basic_cartesian_charts)
 - [Scatter](../Basic_Charts/Scatter_Plot)
 
 ```

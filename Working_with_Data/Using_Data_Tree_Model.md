@@ -88,7 +88,7 @@ You can see how it works on the sample below.
 
 ### Read
 
-Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
+Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates a data grid with custom columns. Each column reads data from custom fields of the data grid (`"year 2004"`, `"year 2005"`). The code below shows how to use this method.
 
 ```
 // get the value in a field "year2004" of an item
@@ -146,6 +146,6 @@ chart.drillUp();
 Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with
 {api:anychart.data.Tree#getTraverser}getTraverser(){api} method that obtains an instance of {api:anychart.data.Traverser}Traverser{api} object, which has everything you need to go over the tree in an efficient way.
 
-In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts/Treemap_Chart#drill_down_and_drill_up) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
+In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts/Treemap_Chart#interactivity) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
 
 {sample :height 600}Data\_Tree\_07{sample}

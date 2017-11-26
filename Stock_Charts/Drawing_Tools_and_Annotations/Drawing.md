@@ -11,7 +11,7 @@ Please note: when working with annotations, you can use methods of either the pl
 
 To make the integration process easier, there is a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
-You can see the application live at [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
+You can see the application live at [https://www.anychart.com/solutions/drawing-tools/](https://www.anychart.com/solutions/drawing-tools/).
 
 To download its source (or simply fork it), visit this page: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 

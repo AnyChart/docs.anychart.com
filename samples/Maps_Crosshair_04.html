@@ -27,11 +27,11 @@
     map.crosshair(true);
     // set the label formatting
     var yLabel = map.crosshair().yLabel();
-    yLabel.format(function() {
+    yLabel.format(function () {
       return "Lat: " + this.value;
     });
     var xLabel = map.crosshair().xLabel();
-    xLabel.format(function() {
+    xLabel.format(function () {
       return "Lon: " + this.value;
     });
     map.axes(true);

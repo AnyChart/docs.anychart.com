@@ -55,7 +55,7 @@ Let's consider all methods that can adjust the grouping feature of a stock chart
 
 #### Levels
 
-There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
+There is a [list of levels](#list_of_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
 
 ```
 // define the grouping
@@ -101,7 +101,7 @@ grouping.minPixPerPoint(10);
 
 #### Force settings
 
-There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}forced(){api} with "true" parameter to force a stock chart to group points even when it's not necessary.
+There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}forced(){api} with `true` parameter to force a stock chart to group points even when it's not necessary.
 
 ```
 // force the series to group always

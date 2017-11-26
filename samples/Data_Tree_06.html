@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
   var tree = anychart.data.tree([
     {name: "Node 1", id: "1"},
@@ -33,38 +33,14 @@
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-  // create new button
-  var triggerButton = document.createElement("div");
-
-  // set button style
-  triggerButton.style.top = "5px";
-  triggerButton.style.right = "5px";
-  triggerButton.style.width = "auto";
-  triggerButton.style.height = "auto";
-  triggerButton.style.backgroundColor = "#444444";
-  triggerButton.style.color = "white";
-  triggerButton.style.position = "absolute";
-  triggerButton.style.zIndex = 2;
-  triggerButton.style.transition = "0.5s";
-  triggerButton.style.textAlign = "center";
-  triggerButton.style.border = "3px solid #444444";
-  triggerButton.style.borderRadius = "7px 7px 7px 7px";
-  triggerButton.style.fontSize = "18px";
-  triggerButton.style.cursor = "pointer";
-  triggerButton.style.MozUserSelect= "none";
-  triggerButton.style.KhtmlUserSelect= "none";
-  triggerButton.style.WebkitUserSelect= "none";
-  triggerButton.style.userSelect= "none";
-  triggerButton.innerHTML = "Remove";
-  triggerButton.onclick = function() {
-    removePoint();
-  };
-
-  // append button to container
-  container.appendChild(triggerButton);
+  // create a label 
+  createLabel("Remove", 10, function () {
+      // remove point
+      removePoint();
+  });  
 
   // draw chart
-  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).width("100%").draw();
+  treeDataGrid.container(stage).top(40).width("100%").draw();
 
   // set container height
   treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
@@ -123,7 +99,34 @@ function labelTextSettingsOverrider(label, dataItem) {
       label.fontColor("#559955").fontWeight("bold").fontStyle("italic");
     }
   }
-}</script>
+}
+
+
+
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#1976d2"});
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    label.listen("mouseOver", function (){
+        label.background().fill("#1976d2 0.5")
+        document.body.style.cursor = "pointer";
+        label.draw();
+    });
+    label.listen("mouseOut", function (){
+        label.background().fill("#1976d2")
+        document.body.style.cursor = "auto";
+        label.draw();
+    });    
+    return label;
+ };
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

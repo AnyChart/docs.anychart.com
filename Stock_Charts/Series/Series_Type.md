@@ -32,7 +32,7 @@ scrollerSeries.seriesType("column");
 
 {sample}STOCK\_Series\_Type\_01{sample}
 
-In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which require four values, as well as to a range area series:
+In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which requires four values, as well as to a range area series:
 
 ```
 table = anychart.data.table('x');
@@ -59,4 +59,4 @@ scrollerSeries.seriesType("rangeArea");
 
 {sample}STOCK\_Series\_Type\_02{sample}
 
-Please note that the range area series uses only two values from the data set, but it works because it shares the default names of data fields ("low" and "high") with Japanese candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
+Please note that the range area series uses only two values from the data set, but it works because it shares the default names of data fields (`"low"` and `"high"`) with Japanese candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.

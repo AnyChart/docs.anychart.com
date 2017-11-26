@@ -430,7 +430,7 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-Labels and Tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `name`
 * `size`
@@ -462,14 +462,14 @@ chart = anychart.treeMap(data, "as-tree");
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function(){
+chart.labels().format(function (){
   var population = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + population + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function(){
+chart.tooltip().format(function (){
   var population = Math.round(this.value/100000)/10;
   return "population: " + population + " mln" +
          "\ncapital: " + this.getData("capital");
@@ -478,7 +478,7 @@ chart.tooltip().format(function(){
 
 {sample}BCT\_Treemap\_Chart\_12{sample}
 
-#### Adjusting Font Size
+#### Font Size
 
 The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.TreeMap#labels}labels(){api} with {api:anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 

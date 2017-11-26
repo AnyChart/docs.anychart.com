@@ -8,7 +8,7 @@ Find the mathematical description of the indicator on the [Commodity Channel Ind
 
 ## Adding indicator
 
-CCI indicator is added through the {api:anychart.core.stock.Plot#cci}cci(){api} method. It requires a mapping with three fields: "high", "low" and "close". The following sample demonstrates the CCI indicator applied to a spline series which data values are equal to "close" values.
+CCI indicator is added through the {api:anychart.core.stock.Plot#cci}cci(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`. The following sample demonstrates the CCI indicator applied to a spline series which data values are equal to "close" values.
 
 ```
 // create data table on loaded data

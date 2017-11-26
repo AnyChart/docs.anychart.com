@@ -131,7 +131,7 @@ chart = anychart.pyramid(data);
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define flexible base size in percentage ratio.
+You can set base size in pixels or in percent. Use a string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define the flexible base size in percent.
 
 ```
 // set base width to 50% of the container width
@@ -199,13 +199,13 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 #### Position
 
 The position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
-* **inside** - place labels inside each pyramid point.
-* **outsideLeftInColumn** - place labels to the left of the pyramid and align them in a column.
-* **outsideRightInColumn** - place labels to the right of the pyramid and align them in a column.
-* **outsideLeft** - place labels to the left of the pyramid.
-* **outsideRight** - place labels to the right of the pyramid.
+* `"inside"` - place labels inside each pyramid point.
+* `"outsideLeftInColumn"` - place labels to the left of the pyramid and align them in a column.
+* `"outsideRightInColumn"` - place labels to the right of the pyramid and align them in a column.
+* `"outsideLeft"` - place labels to the left of the pyramid.
+* `"outsideRight"` - place labels to the right of the pyramid.
 
-If you use **outsideLeft** or **outsideRight** it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
+If you use `"outsideLeft"` or `"outsideRight"`, it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
 
 ```
 // change the labels position

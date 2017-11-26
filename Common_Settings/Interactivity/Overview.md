@@ -138,7 +138,7 @@ series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
 If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}unhover(){api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
 
 ```
-chart.title().listen("mouseOut", function(){
+chart.title().listen("mouseOut", function (){
   series_1.unhover();
   series_2.unhover([0, 1, 5, 16, 17]);
 });
@@ -166,32 +166,17 @@ Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
   
 Some of our html5 charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
-  
-We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}selectFill{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}selectHatchFill{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}selectStroke(){api}. 
 
 Let's change the selection settings for the box chart.
 
 ```
 // change the selected points look
-series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
-series.selectStroke("none");
+series.selected().hatchFill("soliddiamond", "#FFF", 1, 5);
+series.selected().stroke("none");
 series.select([2,4,9]);
 ```
 
 {sample}CS\_Interactivity\_10{sample} 
-
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}selectRisingStroke(){api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
-
-```
-// change the selected regions color to the dark violet from the default
-series.risingStroke("#5400BA");
-series.hoverRisingStroke("#FFF");
-
-// enabling the selection
-series.select([1,2,5,6,7,9]);
-```
-
-{sample}CS\_Interactivity\_11{sample} 
 
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} argument.
 
@@ -246,7 +231,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Event_Listeners). Information about legend is contained in the [Legend article](../../Common_Settings/Legend).
 
 ## Rectangle Marquee Select
 
@@ -296,7 +281,7 @@ In some cases you might need a custom chart reaction on some user's actions whic
 
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
-You can find more about listeners [here](../../Common_Settings/Event_Listeners).
+You can find more about listeners [here](../Event_Listeners).
 
 **Note**: Points of a pie chart can't be selected. Use {api:anychart.charts.Pie#explode}exploded(){api} method to adjust current state of pie's slice.
 
@@ -336,7 +321,7 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 ### Chart as Tooltip
 
-Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on management of mouse events.
+Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Event_Listeners) to get information on management of mouse events.
 
 {sample}CS\_Interactivity\_18{sample}
 

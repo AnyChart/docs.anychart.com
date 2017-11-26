@@ -37,7 +37,7 @@ var series1 = chart.line(data_1);
 // create the second series (marker) and set the data
 var series2 = chart.area(data_2);
 
-// set the maximum value of the X-scale
+// set the maximum value of the x-scale
 chart.xScale().maximum(360);
 
 // set the container id
@@ -64,7 +64,7 @@ polar2.startAngle(90);
 
 ## Missing Points
 
-It is possible to skip a point or several points in a data set of a polar chart. Just write "missing" in the "value" field of a point you want to skip:
+It is possible to skip a point or several points in a data set of a polar chart. Just write `"missing"` in the `value` field of a point you want to skip:
 
 ```
 // create data
@@ -81,17 +81,17 @@ var data = [
 
 To learn about axes in general, see the [Axes and Grids](../../Axes_and_Grids) section.
 
-If you want to configure the stroke of the X and Y axes, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
+If you want to configure the stroke of the X- and Y-axes, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
-// configure the appearance of the Y-Axis
+// configure the appearance of the y-axis
 chart.yAxis().stroke({
   color: "gray",
   thickness: 2,
   dash: "10 5"
 });  
 
-// configure the appearance of the X-Axis
+// configure the appearance of the x-axis
 chart.xAxis().stroke({
   color: "#00cc99",
   thickness: 4,
@@ -121,10 +121,12 @@ You can configure the appearance of any grid — here is the list of available m
 * {api:anychart.core.grids.Polar#stroke}stroke(){api} sets the stroke
 * {api:anychart.core.grids.Polar#palette}palette(){api} sets the fills to create solid or interlaced effects.
 
+### Stroke
+
 In the sample below, there is a polar chart with the stroke of both grids configured:
 
 ```
-// configure the stroke of the X grid
+// configure the stroke of the x-grid
 chart.xGrid().stroke({
   color: "green",
   thickness: 0.5,
@@ -142,13 +144,15 @@ chart.yGrid().stroke({
 
 {sample}BCT\_Polar\_Chart\_06{sample}
 
+### Cell Color
+
 In this sample cells of the radial and circular grids are filled with color:
 
 ```
-// color the even-odd cells of the x grid
+// color the even-odd cells of the x-grid
 polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
 
-// color the even-odd cells of the y grid 
+// color the even-odd cells of the y-grid 
 polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 

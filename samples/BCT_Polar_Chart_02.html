@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -27,7 +27,7 @@
     polar1.bounds(0, 0, "50%", "100%");
     // create a line series
     polar1.line(data);
-    // set the maximum value of the X-scale
+    // set the maximum value of the x-scale
     polar1.xScale().maximum(360);
     // set the chart container
     polar1.container(stage);
@@ -42,7 +42,7 @@
     polar2.line(data);
     // set the start angle
     polar2.startAngle(90);
-    // set the maximum value of the X-scale
+    // set the maximum value of the x-scale
     polar2.xScale().maximum(360);
     // set the chart container
     polar2.container(stage);

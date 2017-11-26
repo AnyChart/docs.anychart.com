@@ -10,7 +10,7 @@ Mathematical description: [KDJ Mathematical Description](Mathematical_Descriptio
 
 ## Adding indicator
 
-KDJ indicator is added using the {api:anychart.core.stock.Plot#kdj}kdj(){api} method. It requires three data fields: High, Low and Close:
+KDJ indicator is added using the {api:anychart.core.stock.Plot#kdj}kdj(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data

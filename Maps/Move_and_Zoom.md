@@ -19,7 +19,7 @@ When there is a point selected or a couple of them, it's possible to copy some i
 
 ### Enable/Disable
 
-To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable. 
+To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
 
 **NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 
@@ -61,7 +61,7 @@ It is possible to put information about the points directly in computer clipboar
 currentInteractivity = map.interactivity();
 
 // Adjust the text
-currentInteractivity.copyFormat(function() {
+currentInteractivity.copyFormat(function () {
     return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
 });
 ```
@@ -70,7 +70,7 @@ currentInteractivity.copyFormat(function() {
 
 ### Zoom
 
-You can control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X and Y coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
+You can control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more parameters – X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
 
 ```
 // Zoom map in 2 times.
@@ -79,7 +79,7 @@ map.zoom(2);
 
 {sample}Maps\_Move\_and\_Zoom\_04{sample}
 
-Another way to zoom a map is using {api:anychart.charts.Map#zoomTo}.zoomTo(){api}. This method also uses three parameters: zooming factor, X and Y coordinates. In the next sample, click any point you prefer; the map will be zoomed in this point's direction.
+Another way to zoom a map is using {api:anychart.charts.Map#zoomTo}.zoomTo(){api}. This method also uses three parameters: zooming factor, X- and Y-coordinates. In the next sample, click any point you prefer; the map will be zoomed in this point's direction.
 
 ```
 // set zoom
@@ -122,7 +122,7 @@ Read more about this feature in the [Zoom Control Panel](../Common_Settings/UI_C
 
 ### Move
 
-Use the {api:anychart.charts.Map#move}.move(){api} method to the map with X and Y shifts as arguments, if you need to move the map on the defined distance.
+Use the {api:anychart.charts.Map#move}.move(){api} method to the map with X- and Y-shifts as arguments, if you need to move the map on the defined distance.
 
 In this sample there are arrow buttons created that are intended to move the map.
 

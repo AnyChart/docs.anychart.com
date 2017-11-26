@@ -13,7 +13,7 @@ See [https://github.com/mbostock/topojson](https://github.com/mbostock/topojson)
 
 Working with TopoJSON in AnyMap is identical to working with GeoJSON in every way. Take a look at the sample of a custom map created from TopoJSON source below. 
 
-All maps in [AnyChart Map Collection](https://cdn.anychart.com/#map-collection) have both GeoJSON and TopoJSON versions, you can use whichever you like most.
+All maps in [AnyChart Map Collection](https://cdn.anychart.com/) have both GeoJSON and TopoJSON versions, you can use whichever you like most.
 
 ## Sample
 

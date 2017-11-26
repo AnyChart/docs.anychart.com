@@ -41,7 +41,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 
 To create a Range Step Area series, use the {api:anychart.charts.Cartesian#rangeStepArea}rangeStepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the **"low"** and **"high"** parameters.
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the `low` and `high` parameters.
 
 ```
 // create data

@@ -23,7 +23,7 @@ chart.plot(0).sma(mapping, 10, "line");
 Full code goes as follows:
 
 ```
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 var table, mapping, chart;
 
 table = anychart.data.table();

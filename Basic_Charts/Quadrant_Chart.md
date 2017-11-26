@@ -14,7 +14,7 @@ This article explains how to create a basic Quadrant chart as well as configure 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
 
 This constructor creates a [Scatter chart](Scatter_Plot/Overview) with some predefined settings:
-* The chart is framed with two X and Y axes.
+* The chart is framed with two X- and Y-axes.
 * Ticks and labels on the axes are disabled.
 * There are no grids.
 * The minimum and maximum values of the scales are 0 and 100.
@@ -128,7 +128,7 @@ To set the fill and stroke of quarters, combine these methods mentioned above wi
 
 To set the fype and radius of corners, call:
 * {api:anychart.core.utils.Quarter#cornerType}cornerType(){api}
-* {api:anychart.core.utils.Quarter#corner}corner(){api}.
+* {api:anychart.core.utils.Quarter#corners}corners(){api}.
 
 You can also configure titles, margins, paddings, and labels of quarters (see [Labels](#labels) to learn more):
 
@@ -201,7 +201,7 @@ chart.crossing().stroke("gray", 3, "7 3", "round");
 
 In Quadrant charts data do not affect scales: the data falling outside scales just are not displayed.
 
-By default, the minimum and maximum values of the X and Y scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
+By default, the minimum and maximum values of the X- and Y-scales are 0 and 100, but you can change these settings (read more in the [Scales](../Axes_and_Grids/Scales) article):
 
 ```
 // configure scales
@@ -215,7 +215,7 @@ Please note that quarters always divide scales into two parts, no matter what th
 
 ### Axes
 
-The Quadrant chart is framed by two X and Y axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
+The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
 
 ```
 // configure axes
@@ -260,3 +260,5 @@ labelLBottom2.rotation(-90);
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+Labels of series are configured according to the rules of the series type – for example, see the [Marker Chart](Marker_Chart#labels) article.

@@ -149,7 +149,7 @@ You can control if the summary task is expanded or collapsed using these methods
 
 ## Task Progress
 
-Tracking progress can be complicated, but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue".
+Tracking progress can be complicated, but you can show the percent complete using a progress bar. To use it you need to provide the required value of the "progressValue".
 
 ```
 // progress in data
@@ -233,11 +233,10 @@ This is how it works:
 
 ## Connectors
 
-If there is a need to add an additional connection between tasks, you can define connectors with these settings:
+If there is a need to add an additional connection between tasks, you can define connectors with these settings: {api:anychart.enums.ConnectorType}connectorType{api}. It can belong be one of four types: "start-start", "start-finish", "finish-start", "finish-finish".
 
-{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}connectorType{api}. It can belong to one of four types: "start-start", "start-finish", "finish-start", "finish-finish"
 (taskID
-{api:anychart.enums.GanttDataFields#CONNECT_TO}connectTo){api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
+{api:anychart.enums.GanttDataFields}connectTo){api} defines another node which will be connected with the first.
 
 Types of task connectors:
 
@@ -281,7 +280,7 @@ Types of task connectors:
 
 {sample :width 690 :height 170}GANTT\_Chart\_06{sample}
 
-AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in **connector**, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
+AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the `"fill"` and `"stroke"` parameters in `"connector"`, where "stroke" defines a color of connector line and `"fill"` defines the color of connector arrow.
 
 ```
 'connector': {

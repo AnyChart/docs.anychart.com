@@ -19,7 +19,7 @@ Download the latest installation package at [https://cdn.anychart.com/releases/{
 
 ### Themes
 
-To download one of our predefined themes, proceed to [https://cdn.anychart.com/#themes](https://cdn.anychart.com/#themes) or get them from the downloadable [Installation Package](#installation-package)
+To download one of our predefined themes, proceed to [https://cdn.anychart.com/#themes](https://cdn.anychart.com/#themes) or get them from the downloadable [Installation Package](#installation_package)
 
 ## AnyChart CDN
 

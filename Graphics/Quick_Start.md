@@ -8,7 +8,7 @@ Create an HTML file and give it the “index.html” name if you want to make a 
 ## Include GraphicsJS
 
 Reference the JavaScript file in the `<head>` section of your web page.  
-You can use the link as shown below or download graphics.min.js from the [GraphicsJS CDN page](https://cdn.anychart.com/#graphics) and then put it into any folder of your site (you’ll have to use your own link in this case). 
+You can use the link as shown below or download graphics.min.js from the [GraphicsJS CDN page](https://cdn.anychart.com/) and then put it into any folder of your site (you’ll have to use your own link in this case). 
 
 ```
 <head>

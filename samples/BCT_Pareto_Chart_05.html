@@ -24,7 +24,7 @@
 	chart = anychart.pareto(data);
 
 	// get the column series and format tooltip
-	chart.getSeriesAt(0).tooltip().format("Value: {%Value}");
+	chart.getSeriesAt(0).tooltip().format("Value: {%value}");
 
 	// get the line series and format tooltip
 	chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");

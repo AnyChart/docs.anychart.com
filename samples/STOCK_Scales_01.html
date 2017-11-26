@@ -12,7 +12,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script x-export="chart">
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
   // set the data
   table = anychart.data.table();
@@ -83,7 +83,7 @@ anychart.onDocumentReady(function() {
     series.name("USA Upside Down");    
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().format(function(){
+    chart.plot(0).yAxis().labels().format(function (){
       return this.value/1000000 + "m";
     });
 

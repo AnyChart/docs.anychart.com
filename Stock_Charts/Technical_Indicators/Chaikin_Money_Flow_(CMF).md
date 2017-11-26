@@ -8,7 +8,7 @@ Find the mathematical description of the indicator on the [Chaikin Money Flow (C
 
 ## Adding indicator
 
-CMF indicator is added through the {api:anychart.core.stock.Plot#cmf}cmf(){api} method. It requires a mapping with four fields: "high", "low", "close" and "volume". The following sample demonstrates the CMF indicator applied to a spline series which data values are equal to "close" values.
+CMF indicator is added through the {api:anychart.core.stock.Plot#cmf}cmf(){api} method. It requires a mapping with four fields: `"high"`, `"low"`, `"close"`, and `"volume"`. The following sample demonstrates the CMF indicator applied to a spline series which data values are equal to "close" values.
 
 The indicator values differ too much from the series values, so it is reasonable to build the indicator on a separate plot.
 

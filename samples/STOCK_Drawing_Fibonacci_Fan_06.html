@@ -13,7 +13,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
    
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -46,7 +46,7 @@
     });
 
     // configure the annotation labels
-    fibonacciFan.labels().format(function(){
+    fibonacciFan.labels().format(function (){
       var levelValue = this.levelValue.toFixed(1);
       if (this.level!==undefined) {
         return this.level + " (" + levelValue + ")";

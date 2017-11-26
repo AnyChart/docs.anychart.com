@@ -14,16 +14,24 @@
 
     //create data
     var data = [
-        {x: "A", value: 100},
-        {x: "B", value: 100},
-        {x: "C", value: 200,
+        {x: "A", value: 100,
+         normal:   {fill: "#455a64 0.5"},
+         hovered:  {fill: "#455a64 0.5"},
+         selected: {fill: "#455a64 0.5"}
+        },
+        {x: "B", value: 100,
          normal:   {fill: "#00bfa5 0.5"},
          hovered:  {fill: "#00bfa5 0.5"},
          selected: {fill: "#00bfa5 0.5"}
-         },
+        },
+        {x: "C", value: 200,
+         normal:   {fill: "#1976d2 0.5"},
+         hovered:  {fill: "#1976d2 0.5"},
+         selected: {fill: "#1976d2 0.5"}
+        },
         {x: ["A", "B"], value: 10},
         {x: ["B", "C"], value: 10,
-         normal:   {stroke: "white"},
+         normal:   {stroke: "2 white"},
          hovered:  {stroke: "2 white"},
          selected: {stroke: "4 white"}
         }

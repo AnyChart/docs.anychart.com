@@ -10,7 +10,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -42,7 +42,7 @@
     chart.tasks().lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
     // expected time calculation
-    chart.expectedTimeCalculator(function() {
+    chart.expectedTimeCalculator(function () {
         return (2*this.optimistic + 6*this.mostLikely + 6*this.pessimistic)/14;
     });
 

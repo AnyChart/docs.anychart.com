@@ -5,7 +5,7 @@
 
 <a href="http://www.marimekko.com/" target="_blank">Marimekko</a> is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
 
-The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as percentage of sales and market share).
+The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -70,7 +70,7 @@ See the basic sample and read more in [Bar Mekko Chart](Bar_Mekko_Chart) article
 
 ## Mosaic
 
-Mosaic chart is pretty much the same as the [basic Mekko chart](#mekko) but with one important difference: Y scale is ordinal and contains series names instead of numbers.
+Mosaic chart is pretty much the same as the [basic Mekko chart](#mekko) but with one important difference: the Y-scale is ordinal and contains series names instead of numbers.
 
 This type of marimekko chart is created with {api:anychart#mosaic}mosaic(){api} constructor:
 
@@ -92,15 +92,15 @@ Read the overview of general settings: [General Settings](../General_Settings).
 
 ### Stacked Mode
 
-When Mekko chart is created both its scales are put into stacked mode: Y scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X scale to value stacking mode.
+When Mekko chart is created, both its scales are put into stacked mode: the Y-scale to [percent stacked mode](../Stacked/Overview#percent_stacking) and X-scale to value stacking mode.
 
-Changing Y scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
+Changing the Y-scale to [value stacked mode](../Stacked/Overview#value_stacking) but consider using the[Bar Mekko Chart](Bar_Mekko_Chart) in such cases.
 
-Changing X scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
+Changing the X-scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
-### Points padding
+### Padding
 
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
+Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
 
 ### Appearance
 
@@ -123,26 +123,26 @@ In the sample below, there are two Mekko series with appearance settings configu
 var series1 = chart.mekko(seriesData_1);
 
 // configure the visual settings of the first series
-series1.normal().fill("#00cc99", 0.3);
-series1.hovered().fill("#00cc99", 0.1);
-series1.selected().fill("#00cc99", 0.5);
-series1.normal().stroke("#00cc99", 1);
-series1.hovered().stroke("#00cc99", 2);
-series1.selected().stroke("#00cc99", 4);
+series1.normal().fill("#99004d", 0.5);
+series1.hovered().fill("#99004d", 0.3);
+series1.selected().fill("#99004d", 0.7);
+series1.normal().stroke("#99004d", 1);
+series1.hovered().stroke("#99004d", 2);
+series1.selected().stroke("#99004d", 4);
 
 // create the second series
 var series2 = chart.mekko(seriesData_2);
 
 // configure the visual settings of the second series
-series2.normal().fill("#0066cc", 0.3);
-series2.hovered().fill("#0066cc", 0.1);
-series2.selected().fill("#0066cc", 0.5);
-series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
-series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
-series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
-series2.normal().stroke("#0066cc");
-series2.hovered().stroke("#0066cc", 2);
-series2.selected().stroke("#0066cc", 4);
+series2.normal().fill("#004d99", 0.5);
+series2.hovered().fill("#004d99", 0.3);
+series2.selected().fill("#004d99", 0.7);
+series2.normal().hatchFill("forward-diagonal", "#004d99", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#004d99", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#004d99", 1, 15);
+series2.normal().stroke("#004d99");
+series2.hovered().stroke("#004d99", 2);
+series2.selected().stroke("#004d99", 4);
 ```
 
 {sample}BCT\_Mekko\_Chart\_02{sample}
@@ -182,7 +182,7 @@ var series2 = chart.mekko(seriesData_2);
 
 A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-### Vertical Marimekko
+### Vertical Marimekko Chart
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](../Vertical/Overview).
 

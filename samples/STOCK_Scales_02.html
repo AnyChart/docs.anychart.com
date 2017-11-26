@@ -12,7 +12,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
     <script src="https://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
     var dataTable = anychart.data.table();
     // data comes from the function in https://cdn.anychart.com/csv-data/dji-daily-short.js
     dataTable.addData(get_dji_daily_short_data());
@@ -26,22 +26,22 @@
     var nonePlot = chart.plot(0);
     nonePlot.line(firstMapping);
     nonePlot.line(secondMapping);
-    nonePlot.legend().titleFormat(function(){return "comparisonMode='none'"});
+    nonePlot.legend().titleFormat(function (){return "comparisonMode='none'"});
     // Set comparison mode to 'none'
     nonePlot.yScale().comparisonMode("none");
 
     var valuePlot = chart.plot(1);
     valuePlot.line(firstMapping);
     valuePlot.line(secondMapping);
-    valuePlot.legend().titleFormat(function(){return "comparisonMode='value'"});
+    valuePlot.legend().titleFormat(function (){return "comparisonMode='value'"});
     // Set comparison mode 'value'
     valuePlot.yScale().comparisonMode("value");
 
     var percentPlot = chart.plot(2);
     percentPlot.line(firstMapping);
     percentPlot.line(secondMapping);
-    percentPlot.legend().titleFormat(function(){return "comparisonMode='percent'"});
-    percentPlot.yAxis().labels().format("{%Value}%");
+    percentPlot.legend().titleFormat(function (){return "comparisonMode='percent'"});
+    percentPlot.yAxis().labels().format("{%value}%");
     // Set comparison mode to 'percent'
     percentPlot.yScale().comparisonMode("percent");
 

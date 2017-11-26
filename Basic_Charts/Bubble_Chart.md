@@ -173,16 +173,16 @@ series = chart.bubble(data);
 
 ### Size
 
-The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Scatter#minBubbleSize}minBubbleSize(){api} parameters. Both of them can be set either in pixels or in percents of a less chart side:
+The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Scatter#minBubbleSize}minBubbleSize(){api} parameters. Both of them can be set either in pixels or as a percentage of the short side of the chart:
 
 ```
 chart.maxBubbleSize("15%");
 chart.minBubbleSize("5%");
 ```
 
-When you set {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize("15%"){api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
-  
-Here is the sample where bubbles are sized in percents, as specified above:
+When you set the maximum bubble size to 15%, AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
+
+Here is the sample where bubbles are sized in percent, as specified above:
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
 

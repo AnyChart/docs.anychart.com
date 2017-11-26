@@ -167,7 +167,7 @@ bar.radius(100);
 
 There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke. 
 
-Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.core.gauge.pointers.Bar#position}position(){api} method. The value is to be `"outside"`, `"inside"` or `"center"`. Let's put a bar inside the circle of the defined radius:
+Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.core.gauge.pointers.Bar#position}position(){api} method. The value is to be `"outside"`, `"inside"`, or `"center"`. Let's put a bar inside the circle of the defined radius:
 
 ```
 var bar = gauge.bar();
@@ -254,7 +254,7 @@ needle.endWidth(0);
 
 {sample}BCT\_Pointers-and-Data\_Needle\_08{sample} 
 
-As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or percents.
+As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or in percent.
 
 ```
 // needle

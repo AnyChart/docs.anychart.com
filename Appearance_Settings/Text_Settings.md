@@ -33,10 +33,10 @@ There are labels, tooltips and legend in English, French, Portuguese, Spanish, R
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}useHtml(){api} method in *true*:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}useHtml(){api} method to `true`:
 
 ```
-series.labels().useHtml(true).format(function(){
+series.labels().useHtml(true).format(function (){
 	return '<b>Name: </b>' + this.x ;
 })
 ```
@@ -131,7 +131,7 @@ Here is a table with all possible methods for controlling the text view.
 <td>defines transparency of the text.</td>
 </tr>
 <tr>
-<td>{api:anychart.graphics.vector.Text#rotation}rotation(){api}</td>
+<td>{api:anychart.graphics.vector.Text#rotate}rotate(){api}</td>
 <td>defines the angle of text rotation.</td>
 </tr>
 <tr>

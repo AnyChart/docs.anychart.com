@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   chart = anychart.area();
 
@@ -34,11 +34,11 @@
   yLabels.hAlign("center");
   var xLabels = chart.xAxis().labels();
   xLabels.offsetY(-30);
-  yLabels.format(function(){
+  yLabels.format(function (){
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*6.65);
-    return "$" + this.value + "\n¥ " + value;
+    return "$" + this.value + "\n¥" + value;
   });
 
   // set axes title

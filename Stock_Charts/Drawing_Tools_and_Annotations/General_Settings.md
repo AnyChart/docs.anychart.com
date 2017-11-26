@@ -3,7 +3,7 @@
 
 ## Overview
 
-In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#visual_settings) and [hover gap](#hover_gap).
+In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#appearance) and [hover gap](#hover_gap).
 
 ## Hardcoding
 

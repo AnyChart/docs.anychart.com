@@ -34,7 +34,7 @@ chart_3.draw();
 
 To understand better what kind of ramification of asynchronous rendering could be, please take a look at the sample code below. 
 
-First, we create *isAsync* variable and assign *false* to it. Then we create [a stage](../Dashboards/Stage-Based_Layout) and a [Pie Chart](../Basic_Charts/Pie_Chart). Then we create an [event listener](Event_Listeners) which is fired when the stage is rendered. When the stage renders we check the value of *isAsync* and change the title of the chart. If we were in synchronous mode - the variable value would be *false*, but as we are rendering asynchronously - the variable will be **true**, although it is set to this value after {api:anychart.core.Chart#draw}draw(){api} method is called.
+First, we create `isAsync` variable and assign `false` to it. Then we create [a stage](../Dashboards/Stage-Based_Layout) and a [Pie Chart](../Basic_Charts/Pie_Chart). Then we create an [event listener](Event_Listeners) which is fired when the stage is rendered. When the stage renders we check the value of `isAsync` and change the title of the chart. If we were in synchronous mode - the variable value would be `false`, but as we are rendering asynchronously - the variable will be `true`, although it is set to this value after {api:anychart.core.Chart#draw}draw(){api} method is called.
 
 ```
 isAsync = false;
@@ -43,7 +43,7 @@ stage = anychart.graphics.create("container");
 
 chart = anychart.pie([15, 16, 30]);
 
-stage.listenOnce('stagerendered', function(){
+stage.listenOnce('stagerendered', function (){
     if (isAsync) chart.title("Is Async");
 });
 

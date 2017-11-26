@@ -1,13 +1,9 @@
 {:index 3}
 # Loading JSON File
 
-* [Overview](#overview)
-* [Loading File with loadJsonFile method](#loading_file_with_loadjsonfile_method)
-* [Deserializing from JSON File](#deserializing_from_json_file)
-
 ## Overview
 
-Ability to [load JSON files](#loading_file_loadjsonfile_method) and [deserialize directly from JSON files](#deserializing_from_json_file) are the features [Data Adapter](Overview) provides.
+Ability to [load JSON files](#loading_file_with_loadjsonfile_method) and [deserialize directly from JSON files](#deserializing_from_json_file) are the features [Data Adapter](Overview) provides.
 
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 

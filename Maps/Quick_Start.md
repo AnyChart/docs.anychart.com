@@ -74,7 +74,7 @@ Add the JavaScript tag `<script>` with the following code anywhere in the page.
 
 ```
 <script>
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
     var data = [
   		{'id': 'AU.WA', 'value': 300},
   		{'id': 'AU.JB', 'value': 230}, 
@@ -135,7 +135,7 @@ You can copy this code to a file on your computer and open it in your browser to
   <body>
     <div id="container"></div>
     <script>
-    	anychart.onDocumentReady(function() {
+    	anychart.onDocumentReady(function () {
         var dataSet = [
     		{'id': 'AU.WA', 'value': 300},
     		{'id': 'AU.JB', 'value': 230}, 

@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container"); 
@@ -59,22 +59,22 @@
     chart.draw();
 
     // create a label for turning error bars off
-    createLabel("None", 50, function() {
+    createLabel("None", 50, function () {
         error.mode("none");
     });
 
     // create a label for showing only value error bars 
-    createLabel("Value", 110, function() {
+    createLabel("Value", 110, function () {
         error.mode("value");
     });
 
-    // create a label for showing only X error bars
-    createLabel("X", 173, function() {
+    // create a label for showing only x-error bars
+    createLabel("X", 173, function () {
         error.mode("x");
     });
 
     // create a label for showing all error bars
-    createLabel("Both", 211, function() {
+    createLabel("Both", 211, function () {
         error.mode("both");
     });
 });
@@ -90,12 +90,12 @@ function createLabel(text, offset, action){
     label.listen("click", action);
     label.container(stage);
     label.draw();
-    label.listen("mouseOver", function(){
+    label.listen("mouseOver", function (){
         label.background().fill("#1976d2 0.5");
         document.body.style.cursor = "pointer";
         label.draw();
     });
-    label.listen("mouseOut", function(){
+    label.listen("mouseOut", function (){
         label.background().fill("#1976d2");
         document.body.style.cursor = "auto";
         label.draw();

@@ -196,7 +196,7 @@ var fibonacciFan = controller.fibonacciFan({
 });
 
 // configure the annotation labels
-fibonacciFan.labels().format(function(){
+fibonacciFan.labels().format(function (){
   var levelValue = this.levelValue.toFixed(1);
   if (this.level!==undefined) {
     return this.level + " (" + levelValue + ")";

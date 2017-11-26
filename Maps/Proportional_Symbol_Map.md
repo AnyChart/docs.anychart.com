@@ -57,7 +57,7 @@ var data = [
 
 ### Region ID
 
-Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}geoIdField(){api} method. Set the necessary parameters for the map and the series:
+Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: `id`, which binds by the field defined by {api:anychart.charts.Map#geoIdField}geoIdField(){api} method. Set the necessary parameters for the map and the series:
 
 ```
 var data = [
@@ -99,7 +99,7 @@ map.minBubbleSize(10);
 
 {sample}Maps\_Proportional\_Symbol\_08{sample}
 
-You can set the size in percents of map size as well:
+You can set the size as a percentage of the map size as well:
 
 ```
 // set the maximum size of the bubble
@@ -113,7 +113,7 @@ map.minBubbleSize('1%');
 
 ## Altering Bubble Series
 
-Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#appearance). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
@@ -187,7 +187,7 @@ series.labels().format("{%name}\n{%size}");
 
 Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enable}enable(){api} method as usual.
+Labels are enabled by default, they can be turned on and off using the {api:anychart.core.ui.Label#enabled}enabled(){api} method as usual.
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
 

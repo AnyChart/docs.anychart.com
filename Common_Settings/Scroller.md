@@ -4,7 +4,7 @@
 
 Sometimes when there is too much data that it cannot be displayed simultaneously keeping it comfortable for understanding. In this case we can enable the scroller.
 
-Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing "true" to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
+Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing `true` to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
 
 ```
 // turn on X Scroller
@@ -45,7 +45,7 @@ chart.yZoom().setToValues("Part 1", "Part 4");
 
 ### Limits by the number of points
 
-The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as the second value.
+The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set `true` as the second value.
 
 ```
 // set limits using a number of points
@@ -145,7 +145,7 @@ The scroll bar thumbs can be adjusted too. You change their look, dimensions or 
  - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enables and disables thumbs.
  - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}fill(){api} and {api:anychart.core.ui.Scroller.Thumbs#stroke}stroke(){api} color thumbs in the default state.
- - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}hoverFill(){api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}hoverStroke(){api} color thumbs in hovered state.
+ - {api:anychart.core.ui.Scroller.Thumbs#hovered}hovered(){api} to color thumbs in hovered state.
 
 ```
 // adjusting the thumbs behavior and look

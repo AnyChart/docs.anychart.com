@@ -39,13 +39,13 @@ table.addData([
 
 {sample}STOCK\_Data\_01{sample}
 
-**Note!** Each data table has to have a key column with unique values (x axis values). If there are rows with the same value in this field, AnyStock will use only the last row with the given x axis value.
+**Note!** Each data table has to have a key column with unique values (X-axis values). If there are rows with the same value in this field, AnyStock will use only the last row with the given X-axis value.
 
 Note that the X value has to contain date in any format. It means that you can set data as a timestamp, Date Time String or UTC - but it has to be a date.
 
 ### Data as array of objects
 
-Now it's posiible to set the data not only as array of arrays, but as array of objects. Look at the following code:
+Now it's possible to set the data not only as array of arrays, but as array of objects. Look at the following code:
 
 ```
 // create data table on loaded data
@@ -77,7 +77,7 @@ var mapping = table.mapAs();
 
 This object now will be responsible for the data mapping. Here we should add fields using {api:anychart.data.TableMapping#addField}addField(){api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly.
 
-The third parameter is a [grouping/approximation mode](Data_Grouping): when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, "first" will be for "open", "last" for close, "average" for "value", etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}addField(){api} method.
+The third parameter is a [grouping/approximation mode](Data_Grouping): when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, `"first"` will be for `"open"`, `"last"` for close, `"average"` for `"value"`, etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}addField(){api} method.
 
 That's how it should look like:
 
@@ -137,7 +137,7 @@ Stock Charts are built to handle big data sets and by default there is no way to
 
 **NOTE:** enabling individual points coloring significantly slows stock charts rendering engine.
 
-To enable individual settings you need to pass *true* to the stock charts constructor:
+To enable individual settings you need to pass `true` to the stock charts constructor:
 
 ```
 chart = anychart.stock(true);

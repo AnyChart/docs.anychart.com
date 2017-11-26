@@ -2,7 +2,7 @@
 
 ## Overview
   
-In AnyChart charting library axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X and Y axes to your charts with AnyChart.
+In AnyChart charting library axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X- and Y-axes to your charts with AnyChart.
   
 This article describes how to use the multi axis feature of AnyChart js framework. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
 
@@ -12,7 +12,7 @@ Consider using multiple axes when you need:
   
 * Show data from the different ranges on the same plot, for example: absolute stock price changes and sales volume (price will be in dollars and volume in millions of dollars)
   
-* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
+* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percent)
 
 ## Declaration
 
@@ -35,17 +35,17 @@ yAxis3.orientation("right");
 yAxis3.title("Third additional axis");
 ```
 
-Here is the sample of the js chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis):
+Here is the sample of the js chart that shows three additional Y-axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y-axis):
 
 {sample}AGST\_Additional\_Axes\_01{sample}
 
-Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful on scatter plot:
+Another example of multiple axes use is multiple Y-axes along with multiple X-axes, which may be very useful on scatter plot:
 
 {sample}AGST\_Additional\_Axes\_02{sample}
 
 ## Tuning
 
-If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Scales](Scales) articles for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X- and Y-axes are configured, see [Axes basics](Axis_Basics) and [Scales](Scales) articles for the details:
 
 ```
 var yScale = chart.yScale();
@@ -71,7 +71,7 @@ extraYAxis.scale(extraYScale);
 extraYAxis.title("Extra Y Axis");
 ```
 
-In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
+In the a sample below we will add one additional axis and set value ranges and titles for both the basic Y-axis and additional Y-axis:
 
 {sample}AGST\_Additional\_Axes\_03{sample}
 
@@ -108,7 +108,7 @@ In the a sample below we add one additional axis with a range from 0 to 100 and 
 
 ## Multi Axes Sample for Comparing Units
 
-Lets see how additional axes can be used to compare data in different units, for example we measure temperature and want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin.
+Lets see how additional axes can be used to compare data in different units, for example we measure temperature and want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y-axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin.
 
 Here it is - a sample that shows different important temperatures:
 
@@ -117,7 +117,7 @@ Here it is - a sample that shows different important temperatures:
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 
 Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in 
-dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
+dollars and as a percentage of GDP. We need to create one additional axis adjust both basic and additional axes:
 
 ```
 // setting yScale settings
@@ -142,12 +142,12 @@ chart.yAxis(0).title("Debt");
 extraYAxis.title("GDP");
 
 // yAxes labels text adjusting
-chart.yAxis(0).labels().format("${%Value}{scale:(1000000000000)|(T)}");
-chart.yAxis(1).labels().format("{%Value}%");
+chart.yAxis(0).labels().format("${%value}{scale:(1000000000000)|(T)}");
+chart.yAxis(1).labels().format("{%value}%");
 ```
 
 We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}Column{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}yAxis{api}, one series of a {api:anychart.core.cartesian.series.Line}Line{api} type to show percentage changes.
 
-Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
+Here it is - a sample chart comparing the US debt, in dark red, to the debt as percentage of GDP, in blue.
 
 {sample}AGST\_Additional\_Axes\_06{sample}

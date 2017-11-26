@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   var data = anychart.data.set([
     ["John" , 10000, 12000, 15000, 20000, 19000],
@@ -44,10 +44,13 @@
   // set title
   chart.title("Managing Tooltip Content");
 
+  // enable HTML for tooltips
+  chart.tooltip().useHtml(true);
+
   // tooltip settings
   var tooltip = chart.tooltip();
   tooltip.positionMode("point");
-  tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+  tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%value}</b>");
 
   // draw
   chart.container("container");

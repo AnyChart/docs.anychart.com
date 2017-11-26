@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -31,12 +31,18 @@
     var series = chart.marker(data);
 
     // configure tooltips
-    var tooltip = series.tooltip();
-    tooltip.format(function(point){
-      return "\nxUpperError – " + point.xUpperError
-      + "\nxLowerError – " + point.xLowerError
-      + "\nvalueLowerError – " + point.valueLowerError
-      + "\nvalueUpperError – " + point.valueUpperError
+    chart.tooltip().format(function (){
+      var output = "";
+      if (this.xUpperError != 0)
+         output = "xUpperError: " + this.xUpperError;
+      if (this.xLowerError != 0)
+         output = output + "\nxUpperError: " + this.xLowerError;
+      if (this.valueLowerError != 0)
+         output = output + "\nxUpperError: " + this.valueLowerError;
+      if (this.valueUpperError != 0)
+         output = output + "\nxUpperError: " + this.valueUpperError;
+      if (output == "") return "NO ERRORS";
+      return output;
     });
 
     // enable major grids
@@ -48,7 +54,7 @@
     chart.yMinorGrid().enabled(true);
 
     // set the chart title
-    chart.title("Error Chart: Tooltips");
+    chart.title("Error Chart: Labels and Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

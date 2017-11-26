@@ -3,7 +3,7 @@
 
 ## Overview
 
-The PERT Chart (also known as PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
+A PERT Chart (also known as a PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
 
 This article explains how to create a basic Pert Chart as well as configure settings that are specific to the type. 
 
@@ -56,7 +56,7 @@ Read the overview of general settings: [General Settings](../Basic_Charts/Genera
 
 ### Interactivity
 
-Besides interactivity settings common for all charts, there is something special about PERT Charts events. The "pointsSelect" event returns such fields as "selectedMilestones" and "selectedTasks", both fields contain all information about the milestones and tasks selected. 
+Besides interactivity settings common for all charts, there is something special about PERT Charts events. The **pointsSelect** event returns such fields as `selectedMilestones` and `selectedTasks`, both fields contain all information about the milestones and tasks selected. 
 
 The following sample uses this event. Select milestones or tasks and watch the chart title.
 
@@ -125,7 +125,7 @@ When the data is arranged, it is possible to set the exact duration for each tas
 
 ```
 // Set expected time
-chart.expectedTimeCalculator(function() {
+chart.expectedTimeCalculator(function () {
   return (this.pessimistic + this.optimistic + this.mostLikely)/3;
 });
 ```
@@ -172,7 +172,7 @@ tasks.lowerLabels().format("EF: {%earliestFinish}, LF: {%latestFinish}");
 
 ### Slacks
 
-There is a parameter all tasks have called "slack". Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
+There is a parameter all tasks named *slack*. Slack is a time period, which is actually wasted due to some reasons. For example, when a task can start only after another several tasks finish, the difference between the shortest task-predecessor and others are slacks. When slacks are detected, the best decision that can be made is to redistribute the resources from the task with shorter duration to the task with longer one.
 
 The following example demonstrates the efficiency of the resources distribution due to the slacks existence.
 
@@ -245,7 +245,7 @@ chart.tasks().upperLabels().fontSize(20);
 It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
 
 ```
-chart.milestones().labels().format(function(){
+chart.milestones().labels().format(function (){
     if (this.creator) {
         var result ="";
         var comma, i;
@@ -280,7 +280,7 @@ There are two statistic values can be got from the Pert Chart: standard deviatio
 
 ```
 // get both statistic values when rendered
-chart.listen("chartdraw", function(){
+chart.listen("chartdraw", function (){
     deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
     duration = chart.getStat("pertChartProjectDuration");
     chart.title("The critical path duration makes " + duration.toFixed(2) + 

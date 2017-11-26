@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Moving Average Convergence/Divergenc
 
 ## Adding indicator
 
-MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with value field in it:
+MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -46,7 +46,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-MACD indicator needs three parameters: mapping with value field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
+MACD indicator needs three parameters: mapping with the `"value"` field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
 
 ```
 var macd_default = plot_1.macd(mapping, 12, 26, 9);

@@ -14,7 +14,7 @@ AnyChart comes with a number of Out of the box themes that can be used to change
 
 ### Out of the box Themes
 
-Out of the box Themes can be located either at [Themes Section at AnyChart CDN](https://cdn.anychart.com/#themes) or in the AnyChart Downloadable Package, these themes change the look, feel and layout of every chart, map, gauge, treemap or stock chart. You are free to use and modify these themes as you want. To use any of these themes you need, just with any [External theme](#external_themes) reference the proper file in HTML document and then apply theme by name:
+Out of the box Themes can be located either at [Themes Section at AnyChart CDN](https://cdn.anychart.com/) or in the AnyChart Downloadable Package, these themes change the look, feel and layout of every chart, map, gauge, treemap or stock chart. You are free to use and modify these themes as you want. To use any of these themes you need, just with any [External theme](#external_themes) reference the proper file in HTML document and then apply theme by name:
 
 ```
 <head>
@@ -22,7 +22,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
   <script src="https://cdn.anychart.com/themes/{{branch-name}}/coffee.min.js"></script>
   <script src="https://cdn.anychart.com/themes/{{branch-name}}/dark_blue.min.js"></script>
   <script>
-    anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function () {
       // data
       var data = [
         ["Department Stores", 637166],
@@ -54,7 +54,7 @@ There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Eart
 
 And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 
-You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/products/anychart/themes/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
+You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/solutions/themes-demo/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
 
 ## Create Theme
 
@@ -186,7 +186,7 @@ Next, you can create a file with several themes or several files with themes and
   <!--Link to the file with the custom theme-->
   <script src="custom_theme.js"></script>
   <script>
-    anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function () {
       // data
       var data = [
         ["Department Stores", 637166],

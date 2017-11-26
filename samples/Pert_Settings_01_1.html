@@ -28,7 +28,7 @@
             chart.verticalSpacing("20%");
             
             // Set expected time
-            chart.expectedTimeCalculator(function() {
+            chart.expectedTimeCalculator(function () {
               return (this.pessimistic + this.optimistic + this.mostLikely)/3;
             });
 

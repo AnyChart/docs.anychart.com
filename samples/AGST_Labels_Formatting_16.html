@@ -9,12 +9,12 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function () {
 
   chart = anychart.bar();
 
   // setting title
-  chart.title("Y axis Labels stick to the right");
+  chart.title("Y-axis labels stick to the right");
 
   // seting data
   chart.bar([
@@ -29,7 +29,7 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(200000000);
   var yLabels = chart.yAxis().labels();
-  yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
+  yLabels.format("${%value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
   xLabels.wordWrap("break-word");
   xLabels.wordBreak("break-all");

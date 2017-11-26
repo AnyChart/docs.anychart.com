@@ -9,7 +9,7 @@
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
 	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
   stage = anychart.graphics.create("container");
 
@@ -32,7 +32,7 @@
 
   // formatting labels value using function
   firstYLabels = firstChart.yAxis().labels();
-  firstYLabels.format("{%Value}{groupsSeparator:.}");
+  firstYLabels.format("{%value}{groupsSeparator:.}");
 
   firstChart.column([
     ["P1", 698712],

@@ -14,7 +14,7 @@ The following methods make working with drill down easier:
 - {api:anychart.charts.Map#drillTo}drillTo(){api},
 - {api:anychart.charts.Map#drillUp}drillUp(){api},
 - {api:anychart.charts.Map#drillDownMap}drillDownMap(){api}
-- {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. 
+- {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. 
 
 ### Drill To
 
@@ -31,7 +31,7 @@ Another way to create a map with a drill down function is not to specify all map
 
 ### Drill Up
 
-The {api:anychart.charts.Map#drillUp}drillUp(){api} method loads the map of the previous level. This method requires no params, it works only when drill down caused by {api:anychart.charts.Map#drillTo}drillTo(){api} or {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
+The {api:anychart.charts.Map#drillUp}drillUp(){api} method loads the map of the previous level. This method requires no parameters, it works only when drill down caused by {api:anychart.charts.Map#drillTo}drillTo(){api} or {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
 
 ```
 // drill up

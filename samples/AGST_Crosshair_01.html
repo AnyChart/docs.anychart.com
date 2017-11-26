@@ -9,7 +9,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
@@ -43,13 +43,13 @@
     chart.draw();
 
     // create a label for disabling the crosshair
-    createLabel("Disable", 10, function() {
+    createLabel("Disable", 10, function () {
       // disable the crosshair
       chart.crosshair(false);
     });
 
     // create a label for enabling the crosshair
-    createLabel("Enable", 75, function() {
+    createLabel("Enable", 75, function () {
       // enable the crosshair
       chart.crosshair(true);
     });
@@ -66,12 +66,12 @@ function createLabel(text, offset, action){
   label.listen("click", action);
   label.container(stage);
   label.draw();
-  label.listen("mouseOver", function(){
+  label.listen("mouseOver", function (){
       label.background().fill("#1976d2 0.5");
       document.body.style.cursor = "pointer";
       label.draw();
   });
-  label.listen("mouseOut", function(){
+  label.listen("mouseOut", function (){
       label.background().fill("#1976d2");
       document.body.style.cursor = "auto";
       label.draw();

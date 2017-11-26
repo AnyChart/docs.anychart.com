@@ -107,7 +107,7 @@ To access these series, call the {api:anychart.charts.Cartesian#getSeries}getSer
 
 ### Pareto Tokens
 
-When AnyChart creates a Pareto chart, cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_condition) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
+When AnyChart creates a Pareto chart, cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_conditions) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
 
 As string tokens these values are a part of {api:anychart.enums.StringToken}StringToken{api} enum:
 
@@ -194,7 +194,7 @@ chart.getSeriesAt(1).selectLabels().enabled(true);
 chart.getSeriesAt(1).selectLabels().anchor("bottom");
 chart.getSeriesAt(1).hoverLabels(true);
 chart.getSeriesAt(1).hoverLabels().anchor("bottom");
-chart.getSeriesAt(1).hoverLabels().format("{%Value}%");
+chart.getSeriesAt(1).hoverLabels().format("{%value}%");
 ```
 
 Here is a sample of a Pareto chart with a custom labels configuration:
@@ -207,7 +207,7 @@ To configure Pareto series tooltip settings please study general [Tooltips Tutor
 
 ```
 // get the column series and format tooltip
-chart.getSeriesAt(0).tooltip().format("Value: {%Value}");
+chart.getSeriesAt(0).tooltip().format("Value: {%value}");
 
 // get the line series and format tooltip
 chart.getSeriesAt(1).tooltip().format("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");

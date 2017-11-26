@@ -9,7 +9,7 @@ To learn more about polar charts in general and how to customize them, see [Pola
 
 ## Quick Start
 
-To build a Polar Polyline chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#polyline}polyline(){api} method to create a Polyline series:
+To build a Polar Polyline chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polyline}polyline(){api} method to create a Polyline series:
 
 ```
 // create a chart
