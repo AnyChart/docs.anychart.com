@@ -5,7 +5,7 @@
 
 <a href="http://www.marimekko.com/" target="_blank">Marimekko</a> is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
 
-The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as percentage of sales and market share).
+The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -98,9 +98,9 @@ Changing the Y-scale to [value stacked mode](../Stacked/Overview#value_stacking)
 
 Changing the X-scale will convert Mekko chart into usual [percent stacked column chart](../Stacked/Percent/Column_Chart).
 
-### Points padding
+### Padding
 
-Points padding is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
+Padding between points is a special setting in Mekko charts, it is controlled with {api:anychart.charts.Mekko#pointsPadding}pointsPadding(){api} method and sets the distance between elements (tiles), it serves only aesthetic purpose and it is set to different default values in [Mekko](#mekko), [Bar Mekko](Bar_Mekko_Chart), and [Mosaic](Mosaic_Chart) constructors.
 
 ### Appearance
 

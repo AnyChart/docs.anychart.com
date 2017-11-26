@@ -131,7 +131,7 @@ chart = anychart.pyramid(data);
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define flexible base size in percentage ratio.
+You can set base size in pixels or in percent. Use a string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define the flexible base size in percent.
 
 ```
 // set base width to 50% of the container width
