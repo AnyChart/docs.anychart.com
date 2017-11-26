@@ -374,7 +374,7 @@ In the case of Tag Clouds, you need to know that the `{%value}` [token](../Commo
 
 ```
 // configure tooltips
-chart.tooltip().format("Value: {%value}\nPercent Value: {%yPercentOfTotal}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
