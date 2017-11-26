@@ -134,9 +134,9 @@ You can configure the appearance of any grid — here is the list of available m
 * {api:anychart.core.grids.Radar#stroke}stroke(){api} sets the stroke
 * {api:anychart.core.grids.Polar#palette}palette(){api} sets the fills to create solid or interlaced effects.
 
-In the sample below, there is a radar chart with the stroke of both grids configured:
+#### Stroke
 
-Here is a polar chart with the stroke of both grids configured:
+In the sample below, there is a radar chart with the stroke of both grids configured:
 
 ```
 // configure the stroke of the x-grid
@@ -156,6 +156,8 @@ chart.yGrid().stroke({
 ```
 
 {sample}BCT\_Radar\_Chart\_04{sample}
+
+#### Cell Color
 
 In this sample cells of the radial and circular grids are filled with color:
 

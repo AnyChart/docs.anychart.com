@@ -169,7 +169,7 @@ chart.column(seriesData_4).yScale(yScale2);
 
 {sample}BCT\_Stacking\_05{sample}
 
-### With unstackable series
+### With Unstackable Series
 
 When you combine a set of stackable series with any number of series if unstackable type the stackable series form a stack and unstackable series are displayed as always. This way you can show a trend over a stack without creating any extra scales. Please see a sample below:
 

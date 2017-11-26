@@ -180,8 +180,8 @@ chart.maxBubbleSize("15%");
 chart.minBubbleSize("5%");
 ```
 
-When you set {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize("15%"){api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
-  
+When you set the maximum bubble size to 15%, AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
+
 Here is the sample where bubbles are sized in percent, as specified above:
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
