@@ -326,7 +326,7 @@ That is how it looks like:
 ```
 // configure the labels of intersections
 chart.intersections().labels().format(function (){
-  if (this.x.length>2)
+  if (this.x.length > 2)
       return this.x; 
 });
 

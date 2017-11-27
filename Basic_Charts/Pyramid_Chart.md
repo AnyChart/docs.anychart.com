@@ -173,7 +173,7 @@ Here is how the pyramid chart with a significant spacing looks like.
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart. This section explains how to adjust the connectors and position of labels and to allow or forbid overlapping. To learn how to modify the text of labels, see the [Labels and Tooltips (Text)](#labels_and_tooltips_\(text\)) section of this article.
 
 #### Connectors
 
@@ -199,38 +199,83 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 #### Position
 
 The position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
+
 * `"inside"` - place labels inside each pyramid point.
 * `"outsideLeftInColumn"` - place labels to the left of the pyramid and align them in a column.
 * `"outsideRightInColumn"` - place labels to the right of the pyramid and align them in a column.
 * `"outsideLeft"` - place labels to the left of the pyramid.
 * `"outsideRight"` - place labels to the right of the pyramid.
 
-If you use `"outsideLeft"` or `"outsideRight"`, it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
+If you use `"outsideLeft"` or `"outsideRight"`, it will be possible to adjust the length of labels connectors. Use the {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} method to set custom length for all labels connectors:
 
 ```
-// change the labels position
-chart.labels().position('outsideRight');  // place labels to the right    
-chart.connectorLength(45);    // set 45px connectors length
-```
+// place labels to the right
+chart.labels().position('outside-right');
 
-These settings set each label's position as 45px to the right from each pyramid point. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method is to be used for adjusting the labels' content.
-
-```
-// format the labels text
-chart.labels().format("{%name}: {%Value}");
+// set 45px connectors length   
+chart.connectorLength(45);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_08{sample}
 
 #### Overlapping
 
-After adjusting the content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. The code sample below demonstrates setting labels with overlapping allowed.
+Sometimes labels overlap each other. To allow or forbid overlapping, use the {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
 
-### Tooltips
+### Labels and Tooltips (Text)
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a chart point is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to tooltips – text boxes displayed when chart points are hovered.
+
+#### Tokens
+
+To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the {api:anychart.charts.Pyramid#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work with all chart types, there is a token that is specific to the Pyramid – `{%yPercentOfTotal}`. It returns an element's percentage of the total:
+
+```
+// configure labels
+chart.labels().format("{%name}: {%yPercentOfTotal}%");
+
+// configure tooltips
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
+```
+
+{sample}BCT\_Pyramid\_Chart\_09{sample}
+
+#### Formatting Functions
+
+You can also configure labels and tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). For example, functions in the sample below modify the format of labels and tooltips depending on elements' percentages of the total:
+
+```
+// enable HTML for labels and tooltips
+chart.labels().useHtml(true);
+chart.tooltip().useHtml(true);
+
+// configure labels
+chart.labels().format(function (){
+var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+if (percentOfTotal > 40)
+  return "<span style='color:#dd2c00;font-weight:bold'>" +
+         this.name + ": " + percentOfTotal.toFixed(1) + "%</span>";
+return this.name + ": " +percentOfTotal.toFixed(1) + "%";
+});
+
+// configure tooltips
+chart.tooltip().format(function (){
+var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+if (percentOfTotal > 40)
+  return "<span style='font-size:18'>" +
+         percentOfTotal.toFixed(1) + "% (" +
+         this.value +")</span>";
+return percentOfTotal.toFixed(1) + "% (" + this.value +")";
+});
+```
+
+{sample}BCT\_Pyramid\_Chart\_10{sample}

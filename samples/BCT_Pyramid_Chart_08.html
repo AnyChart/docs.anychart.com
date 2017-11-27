@@ -20,12 +20,11 @@
     {name: "Textbooks", value: 90000}
   ]);
 
-  // change the labels position
-  chart.labels().position('outside-right');  // place labels to the right    
-  chart.connectorLength(45);    // set 45px connectors length
+  // place labels to the right
+  chart.labels().position('outside-right');
 
-  // format the labels text
-  chart.labels().format("{%name}: {%value}");
+  // set 45px connectors length   
+  chart.connectorLength(45);
 
   // draw chart
   chart.container("container");

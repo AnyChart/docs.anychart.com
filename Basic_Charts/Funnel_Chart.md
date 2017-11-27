@@ -157,7 +157,7 @@ chart = anychart.funnel(data);
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart. This section explains how to adjust the connectors and position of labels and to allow or forbid overlapping. To learn how to modify the text of labels, see the [Labels and Tooltips (Text)](#labels_and_tooltips_\(text\)) section of this article.
 
 #### Connectors
 
@@ -180,17 +180,17 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 
 **Note:** to hide connectors, set **null** value for {api:anychart.charts.Funnel#connectorStroke}connectorStroke(){api} method.
 
-
 #### Position
 
 Position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for funnel labels:
+
 * `inside` - place labels inside each funnel point.
 * `outsideLeftInColumn` - place labels to the left of the funnel and align them in a column.
 * `outsideRightInColumn` - place labels to the right of the funnel and align them in a column.
 * `outsideLeft` - place labels to the left of the funnel.
 * `outsideRight` - place labels to the right of the funnel.
 
-If you use `"outsideLeft"` or `"outsideRight"`, it becomes possible to adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}connectorLength(){api} parameter to set custom length for all labels connectors.
+If you use `"outsideLeft"` or `"outsideRight"`, it becomes possible to adjust length of labels connectors. Use the {api:anychart.charts.Funnel#connectorLength}connectorLength(){api} method to set custom length for all labels connectors:
 
 ```
 // place labels to the right
@@ -203,17 +203,64 @@ chart.connectorLength(45);
 
 {sample}BCT\_Funnel\_Chart\_07{sample}
 
-The content of the labels is adjusted with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. Read more about text formatting in the [Labels Text Formatting article](../Common_Settings/Labels#format_text).
-
 #### Overlapping
 
-After adjusting content of the funnel labels some of them can overlap others. To control or prevent overlapping use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
+Sometimes labels overlap each other. To allow or forbid overlapping, use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
 
-### Tooltips
+### Labels and Tooltips (Text)
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a chart point is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to tooltips – text boxes displayed when chart points are hovered.
+
+#### Tokens
+
+To change the text of labels, combine the {api:anychart.charts.Funnel#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the {api:anychart.charts.Funnel#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work with all chart types, there is a token that is specific to the Funnel – `{%yPercentOfTotal}`. It returns an element's percentage of the total:
+
+```
+// configure labels
+chart.labels().format("{%x}: {%yPercentOfTotal}%");
+
+// configure tooltips
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
+```
+
+{sample}BCT\_Funnel\_Chart\_08{sample}
+
+#### Formatting Functions
+
+You can also configure labels and tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). For example, functions in the sample below modify the format of labels and tooltips depending on elements' percentages of the total:
+
+```
+// enable HTML for labels and tooltips
+chart.labels().useHtml(true);
+chart.tooltip().useHtml(true);
+
+// configure labels
+chart.labels().format(function (){
+var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+if (percentOfTotal > 50)
+    return "<span style='color:#dd2c00;font-weight:bold'>" +
+           this.x + ": " + percentOfTotal.toFixed(1) + "%</span>";
+return this.x + ": " + percentOfTotal.toFixed(1) + "%";
+});
+
+// configure tooltips
+chart.tooltip().format(function (){
+var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+if (percentOfTotal > 50)
+    return "<span style='font-size:18'>" +
+           percentOfTotal.toFixed(1) + "% (" +
+           this.value +")</span>";
+return percentOfTotal.toFixed(1) + "% (" + this.value +")";
+});
+```
+
+{sample}BCT\_Funnel\_Chart\_09{sample}
