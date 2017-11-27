@@ -29,6 +29,6 @@ var series3 = chart.line(seriesData_3);
 
 ## Special Settings
 
-**Note 1**: Unlike the ordinary Line series, the 3D Line series is colored with the {api:anychart.core.cartesian.series.Line3d#fill}fill(){api} method. The stroke cannot be configured.
+**Note 1**: Unlike the ordinary Line series, the 3D Line series is colored with the {api:anychart.core.StateSettings#fill}fill(){api} method. The stroke cannot be configured.
 
 **Note 2:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.

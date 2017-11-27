@@ -62,6 +62,7 @@ By default, labels are placed on the Doughnut chart. However, you can place them
 // set the position of labels
 chart.labels().position("outside");
 ```
+
 To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
 
 ```
@@ -69,7 +70,7 @@ To configure connectors (the lines connecting labels with slices), call the {api
 chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 ```
 
-Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
+Another setting available for outer labels is {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
 
 In this sample, there are outside labels with customized connectors:
 
