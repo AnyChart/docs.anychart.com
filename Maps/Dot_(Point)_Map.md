@@ -149,7 +149,7 @@ series_citrus.selected().stroke("#ef6c00", 2);
 
 ### Markers
 
-The type and size of markers can be configured in three states: normal, hover, and selected. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.scatter.series.Marker#type}type(){api} and {api:anychart.core.scatter.series.Marker#size}size(){api}:
+The type and size of markers can be configured in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.scatter.series.Marker#type}type(){api} and {api:anychart.core.scatter.series.Marker#size}size(){api}:
 
 ```
 // set the size of CITRUS markers

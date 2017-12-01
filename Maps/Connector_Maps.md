@@ -101,7 +101,7 @@ There are several settings can be adjusted for the series.
 
 #### Curvature
 
-As you might have noticed, all connectors in the samples above look like curves of the same curvature. Let's adjust this parameter with the {api:anychart.core.map.series.Connector#curvature}.curvature(){api} method. Let's make the connectors series look as straight lines:
+As you might have noticed, all connectors in the samples above look like curves of the same curvature. Let's adjust this parameter with the {api:anychart.core.map.series.Connector#curvature}curvature(){api} method. Let's make the connectors series look as straight lines:
 
 ```
 // changing the curvature of the series
@@ -132,7 +132,7 @@ Note that curvature may be negative. Negative value make the segment's curve go 
 
 #### Start/end size
 
-Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}.startSize(){api} and {api:anychart.core.map.series.Connector#endSize}.endSize(){api}. These methods can make a connector look more like an arrow, tapering or expanding its curve. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
+Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}startSize(){api} and {api:anychart.core.map.series.Connector#endSize}endSize(){api}. These methods can make a connector look more like an arrow, tapering or expanding its curve. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
 // changing the startSize and endSize of the connectors
@@ -154,7 +154,7 @@ Combine them with the following methods:
 
 **Note 1:** Only the stroke is visible by default. A fill can be added when the start or the end size is greater than zero. 
 
-**Note 2:** The curvature parameter cannot be different in the hover and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
+**Note 2:** The {api:anychart.core.map.series.Connector#curvature}curvature(){api} parameter cannot be different in the hover and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
 
 In the sample below, there is a Connector Map with colors configured:
 

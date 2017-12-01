@@ -145,7 +145,7 @@ Hatch fills can be used to create monochromatic maps:
 // set colors
 series.normal().hatchFill("percent30");
 series.hovered().hatchFill("percent20");
-series.selected().hatchFill("confetti");
+series.selected().hatchFill("percent50");
 series.normal().fill("white");
 series.hovered().fill("white");
 series.selected().fill("white");
