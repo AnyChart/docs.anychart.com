@@ -36,7 +36,11 @@ This article explains how to create a basic Waterfall chart as well as configure
 
 ## Quick Start
 
-To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(){api} chart constructor, like in the following sample:
+To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(){api}  chart constructor. If you pass the data to this chart constructor, it creates a Waterfall series.
+
+To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
+
+The following sample demonstrates how a basic Waterfall chart is created:
 
 ```
 // create data   
