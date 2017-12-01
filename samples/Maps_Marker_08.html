@@ -64,17 +64,24 @@ anychart.onDocumentReady(function () {
     // turn off labels
     map.labels(false);
 
-    // change the color of the ACME series
+    // set the colors of the CITRUS series
     series_citrus.stroke("green");
     series_citrus.fill("gold");
 
-    // make the markers of the CITRUS series of smaller size than default
-    series_citrus.size(8);
+    // set the size of CITRUS markers
+    series_citrus.normal().size(8);
     series_citrus.hovered().size(10);
+    series_citrus.selected().size(10);
 
-    // change the markers type
-    series_acme.type("square");
-    series_citrus.type("cross");
+    // set the size of ACME markers 
+    series_acme.normal().size(4);
+    series_acme.hovered().size(5);
+    series_acme.selected().size(5);
+
+    // set the type of CITRUS markers
+    series_citrus.normal().type("star4");
+    series_citrus.hovered().type("star5");
+    series_citrus.selected().type("star6");
 
     map.title("Formatting the marker types");
 

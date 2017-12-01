@@ -45,12 +45,16 @@ anychart.onDocumentReady(function () {
     //create bubble series
     var series = map.bubble(data);
 
-    // making the chart monochromatic
-    series.hatchFill("horizontal");
-    series.hovered().hatchFill("diagonal-cross");
+    // set colors
+    series.normal().hatchFill("percent30");
+    series.hovered().hatchFill("percent20");
     series.selected().hatchFill("confetti");
-    series.stroke("black");
-    series.fill(null);
+    series.normal().fill("white");
+    series.hovered().fill("white");
+    series.selected().fill("white");
+    series.normal().stroke("black");
+    series.hovered().stroke("black", 2);
+    series.selected().stroke("black", 2);
 
     // set container id for the chart
     map.container('container');

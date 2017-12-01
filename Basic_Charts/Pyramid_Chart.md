@@ -94,7 +94,7 @@ chart.selected().stroke("white", 2);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
 // create data

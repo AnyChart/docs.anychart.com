@@ -216,7 +216,7 @@ intersections.selected().stroke("white", 4);
 
 #### Individual Points
 
-You can change the appearance of individual points, both sets and intersections, by adding special fields to the data set:
+You can change the appearance of individual points, both sets and intersections, by adding special fields to your data:
 
 ```
 //create data

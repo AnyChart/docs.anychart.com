@@ -149,7 +149,7 @@ series2.selected().stroke("#004d99", 4);
 
 #### Individual Points
 
-You can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+You can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
 // create a data set

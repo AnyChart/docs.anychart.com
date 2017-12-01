@@ -98,11 +98,11 @@ This sample shows how to set the type of markers:
 ```
 // set the type of markers
 series1.normal().type("star4");
-series1.selected().type("star5");
-series1.hovered().type("star6");
+series1.hovered().type("star5");
+series1.selected().type("star6");
 series2.normal().type("star4");
-series2.selected().type("star5");
-series2.hovered().type("star6");
+series2.hovered().type("star5");
+series2.selected().type("star6");
 ```
 
 {sample}BCT\_Marker\_Chart\_03{sample}

@@ -144,21 +144,31 @@ series.endSize(0);
 
 ### Series colors
 
-As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}fill(){api} and {api:anychart.core.map.series.Connector#stroke}stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
+The colors of connectors can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Connector#normal}normal(){api}, {api:anychart.core.map.series.Connector#hovered}hovered(){api}, and {api:anychart.core.map.series.Connector#selected}selected(){api} methods.
+
+Combine them with the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+
+**Note 1:** Only the stroke is visible by default. A fill can be added when the start or the end size is greater than zero. 
+
+**Note 2:** The curvature parameter cannot be different in the hover and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
+
+In the sample below, there is a Connector Map with colors configured:
 
 ```
-// setting colors for hovered and selected
-series.fill("#FF9966");
-series.stroke("#CCCC99");
-series.hovered().fill("#996633");
-series.selected().fill("#996633");
-series.hovered().stroke("#CCCC99");
-series.hovered().stroke("#CCCC99");
+// set colors
+series.normal().fill("#ef6c00", 0.3);
+series.hovered().fill("#ef6c00", 0.1);
+series.selected().fill("#ef6c00", 0.5);
+series.normal().stroke("#ef6c00");
+series.hovered().stroke("#ef6c00", 2);
+series.selected().stroke("#ef6c00", 2);
 ```
 
 {sample}Maps\_Connectors\_08{sample}
-
-Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
 
 ### Markers
 

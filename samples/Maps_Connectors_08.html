@@ -55,13 +55,13 @@
   series.hovered().markers({position: '100%', size: 3, fill: '#FFCC99', stroke: '2 #E1E1E1', type: 'circle'});
   series.selected().markers({position: '100%', size: 3, fill: '#FFCC99', stroke: '2 #E1E1E1', type: 'circle'});
 
-  // setting colors for hovered and selected
-  series.fill("#FF9966");
-  series.stroke("#CCCC99");
-  series.hovered().fill("#996633");
-  series.selected().fill("#996633");
-  series.hovered().stroke("#CCCC99");
-  series.selected().stroke("#CCCC99");
+  // set colors
+  series.normal().fill("#ef6c00", 0.3);
+  series.hovered().fill("#ef6c00", 0.1);
+  series.selected().fill("#ef6c00", 0.5);
+  series.normal().stroke("#ef6c00");
+  series.hovered().stroke("#ef6c00", 2);
+  series.selected().stroke("#ef6c00", 2);
 
   // name of the chart
   map.title("Setting the colors of the connectors");
