@@ -17,7 +17,7 @@ Depending on your visualization task you can choose what projection to use in yo
 
 ##Setting Map Projection
 
-To set map projection you should set its type using {api:anychart.charts.Map#crs}.crs(){api} method:
+To set map projection you should set its type using the {api:anychart.charts.Map#crs}crs(){api} method:
 
 ```
 var map = anychart.map();

@@ -91,7 +91,7 @@ There are three special values for setting to the text markers' {api:anychart.co
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}.fill(){api} method to color a range markers, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to color the line markers; for text markers we use standard markers as well. 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}fill(){api} method to color a range markers, {api:anychart.core.axisMarkers.GanttLine#stroke}stroke(){api} to color the line markers; for text markers we use standard markers as well. 
 
 We should format the objects passed to these methods as usual. 
 
@@ -124,98 +124,98 @@ There are some methods inherent to the timeline only. You can see a table below 
 <tr>
 <td rowspan="5">1</td>
 <td rowspan="5">Whole timeline</td>
-<td>{api:anychart.core.ui.Timeline#rowEvenFill}.rowEvenFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api}</td>
 <td>Colors even rows in the timeline</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#rowOddFill}.rowOddFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api}</td>
 <td>Colors odd rows in the timeline</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#rowHoverFill}.rowHoverFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#rowHoverFill}rowHoverFill(){api}</td>
 <td>Colors hovered rows in the timeline</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#rowSelectedFill}.rowSelectedFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#rowSelectedFill}rowSelectedFill(){api}</td>
 <td>Colors selected rows in the timeline</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#columnStroke}.columnStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#columnStroke}columnStroke(){api}</td>
 <td>Colors ticks of the timeline</td>
 </tr>
 <tr>
 <td rowspan="3">2</td>
 <td rowspan="3">Timeline baseline</td>
-<td>{api:anychart.core.ui.Timeline#baselineAbove}.baselineAbove(){api}</td>
+<td>{api:anychart.core.ui.Timeline#baselineAbove}baselineAbove(){api}</td>
 <td>Colors the baseline
 </td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#baselineFill}.baselineFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#baselineFill}baselineFill(){api}</td>
 <td>Fills timeline baselines with a defined color</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#baselineStroke}.baselineStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#baselineStroke}baselineStroke(){api}</td>
 <td>Strokes timeline baselines with a defined color</td>
 </tr>
 <tr>
 <td rowspan="2">3</td>
 <td rowspan="2">Base coloring</td>
-<td>{api:anychart.core.ui.Timeline#baseStroke}.baseStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#baseStroke}baseStroke(){api}</td>
 <td>Colors the stroke of the base elements</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#baseFill}.baseFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#baseFill}baseFill(){api}</td>
 <td>Fills base elements with a defined color</td>
 </tr>
 <tr>
 <td rowspan="2">4</td>
 <td rowspan="2">Milestones</td>
-<td>{api:anychart.core.ui.Timeline#milestoneFill}.milestoneFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#milestoneFill}milestoneFill(){api}</td>
 <td>Sets the filling color of a milestone</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#milestoneStroke}.milestoneStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#milestoneStroke}milestoneStroke(){api}</td>
 <td>Sets the color for the milestone stroke</td>
 </tr>
 <tr>
 <td rowspan="2">5</td>
 <td rowspan="2">Parent Elements</td>
-<td>{api:anychart.core.ui.Timeline#parentFill}.parentFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#parentFill}parentFill(){api}</td>
 <td>Defines the filling for parent elements in the timeline</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#parentStroke}.parentStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#parentStroke}parentStroke(){api}</td>
 <td>Defines the stroke for parent elements in the timeline</td>
 </tr>
 <tr>
 <td rowspan="2">6</td>
 <td rowspan="2">Progress Bar</td>
-<td>{api:anychart.core.ui.Timeline#progressFill}.progressFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#progressFill}progressFill(){api}</td>
 <td>Sets the progress bar filling</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#progressStroke}.progressStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#progressStroke}progressStroke(){api}</td>
 <td>Sets the stroke for the progress bar</td>
 </tr>
 <tr>
 <td rowspan="2">7</td>
 <td rowspan="2">Connectors</td>
-<td>{api:anychart.core.ui.Timeline#progressFill}.connectorFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#progressFill}connectorFill(){api}</td>
 <td>Sets the connectors fillings</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#progressStroke}.connectorStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#progressStroke}connectorStroke(){api}</td>
 <td>Sets the stroke for the connectors</td>
 </tr>
 <tr>
 <td rowspan="2">8</td>
 <td rowspan="2">Periods</td>
-<td>{api:anychart.core.ui.Timeline#selectedElementFill}.selectedElementFill(){api}</td>
+<td>{api:anychart.core.ui.Timeline#selectedElementFill}selectedElementFill(){api}</td>
 <td>Sets the filling of the selected elements</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Timeline#selectedElementStroke}.selectedElementStroke(){api}</td>
+<td>{api:anychart.core.ui.Timeline#selectedElementStroke}selectedElementStroke(){api}</td>
 <td>Sets the stroke of the selected elements</td>
 </tr>
 </tbody>
@@ -223,7 +223,7 @@ There are some methods inherent to the timeline only. You can see a table below 
 
 There are two ways of defining colors and other visualization parameters: through those methods as usual or through the data while setting it. Using dataset to define some visualization settings gives you more flexibility as you can affect each data point separately, while methods act on all elements of each type together; also, we can affect only data points when we use the dataset. Let's try to create a couple of samples using both these ways.
 
-Below you can find a sample of a Resource Gantt Chart where we set the rows' colors using {api:anychart.core.ui.Timeline#rowEvenFill}.rowEvenFill(){api}, {api:anychart.core.ui.Timeline#rowOddFill}.rowOddFill(){api}, {api:anychart.core.ui.Timeline#rowHoverFill}.rowHoverFill(){api}, {api:anychart.core.ui.Timeline#rowSelectedFill}.rowSelectedFill(){api} methods, the selected elements' colors using {api:anychart.core.ui.Timeline#selectedElementFill}.selectedElementFill(){api} and {api:anychart.core.ui.Timeline#selectedElementStroke}.selectedElementStroke(){api} and change some data points' colors through the dataset.
+Below you can find a sample of a Resource Gantt Chart where we set the rows' colors using {api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api}, {api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api}, {api:anychart.core.ui.Timeline#rowHoverFill}rowHoverFill(){api}, {api:anychart.core.ui.Timeline#rowSelectedFill}rowSelectedFill(){api} methods, the selected elements' colors using {api:anychart.core.ui.Timeline#selectedElementFill}selectedElementFill(){api} and {api:anychart.core.ui.Timeline#selectedElementStroke}selectedElementStroke(){api} and change some data points' colors through the dataset.
 
 ```
 // set colors to the rows in the timeline section
@@ -249,7 +249,7 @@ function getData() {
 
 {sample :width 825 :height 230 }GANTT\_Timeline\_04{sample}
 
-Now, let's look at the Project Gantt Chart with parameters adjusted the same way. Here we made the milestones using {api:anychart.core.ui.Timeline#milestoneFill}.milestoneFill(){api}, {api:anychart.core.ui.Timeline#milestoneStroke}.milestoneStroke(){api} and connnectors (with {api:anychart.core.ui.Timeline#progressFill}.connectorFill(){api} and {api:anychart.core.ui.Timeline#progressStroke}.connectorStroke(){api} methods) of the custom colors, as well as some of the data points, using the dataset.
+Now, let's look at the Project Gantt Chart with parameters adjusted the same way. Here we made the milestones using {api:anychart.core.ui.Timeline#milestoneFill}milestoneFill(){api}, {api:anychart.core.ui.Timeline#milestoneStroke}milestoneStroke(){api} and connnectors (with {api:anychart.core.ui.Timeline#progressFill}connectorFill(){api} and {api:anychart.core.ui.Timeline#progressStroke}connectorStroke(){api} methods) of the custom colors, as well as some of the data points, using the dataset.
 
 ```
 // set colors for milestones
