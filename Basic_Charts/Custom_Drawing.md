@@ -89,7 +89,7 @@ console.log(shapes);
 
 ### States
 
-If you want something more than simply change color on hover and on select you need to override {api:anychart.core.series.RenderingSettings#updatePoint}updatePoint(){api} drawer and track draw/redraw things when differen states signals come:
+If you want something more than simply change color on hover and on select, you need to override the {api:anychart.core.series.RenderingSettings#updatePoint}updatePoint(){api} drawer and track draw/redraw things when different states signals come:
 
 ```
 series = chart.column([["A",1],["B",2],["C",3]])
@@ -99,8 +99,8 @@ function drawer(){
 	if (this.pointState==1) then {
 		// draw something in hover state
 	}
-	// selecte state
-	if (this.pointState==1) then {
+	// selected state
+	if (this.pointState==2) then {
 		// draw something in hover state		
 	}
 }

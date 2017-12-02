@@ -45,7 +45,7 @@ var data = [
 var series = chart.ohlc(data);
 
 // change the series type
-series.seriesType("rangeArea");
+series.seriesType("range-area");
 ```
 
 {sample}BCT\_Series\_Type\_02{sample}

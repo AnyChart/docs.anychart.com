@@ -34,7 +34,7 @@
     
     // set default color for each point
     for (var i = 0;i<view.getRowsCount();i++)
-      view.set(i,"fill","");
+      view.set(i,"fill", undefined);
     
     // get random position in range of chart length
     var randomIndex = Math.floor((Math.random() * (view.getRowsCount())) + 1);
