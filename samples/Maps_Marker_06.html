@@ -39,20 +39,16 @@ anychart.onDocumentReady(function () {
     // Creates the marker series
     var series_acme = map.marker(data);
 
-    // format the tooltips
+    // configure tooltips
     series_acme.tooltip().titleFormat("{%name} of ACME Corp.");
     series_acme.tooltip().format("Yearly profit: ${%value}m");
 
-    // format the labels
-    series_acme.labels().format("{%name} branch");
-    series_acme.labels().fontSize(14);
-    series_acme.labels().fontColor("#000");
-    series_acme.labels().fontFamily("Georgia");
-
-    // hovered and selected labels
-    series_acme.hovered().labels().fontSize(12);
+    // configure labels
+    series_acme.normal().labels().fontSize(14);
+    series_acme.normal().labels().fontColor("#000");
+    series_acme.hovered().labels().fontSize(16);
     series_acme.hovered().labels().fontColor("#660000");
-    series_acme.selected().labels().fontSize(12);
+    series_acme.selected().labels().fontSize(16);
     series_acme.selected().labels().fontColor("#660000");
 
     map.title("Formatting the labels and tooltips in hovered state");

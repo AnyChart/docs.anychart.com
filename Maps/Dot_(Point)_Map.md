@@ -97,25 +97,28 @@ We can edit the appearance of our map as we want. We can change the color of the
 We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}labels(){api} and {api:anychart.core.map.series.Marker#tooltip}tooltip(){api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
 
 ```
-// format the tooltips
-series_acme.tooltip({title: false, separator: false});
-series_acme.tooltip().format("Yearly profit: ${%value}");
+// configure tooltips
+series_acme.tooltip().titleFormat("{%name} of ACME Corp.");
+series_acme.tooltip().format("Yearly profit: ${%value}m");
 
-// format the labels
-series_acme.labels().fontSize(10)
+// configure labels
+series_acme.labels().format("{%name}");
+series_acme.labels().fontSize(14);
 series_acme.labels().fontColor("#000");
 series_acme.labels().fontFamily("Georgia");
 ```
 
 {sample}Maps\_Marker\_05{sample}
 
-It's possible to change labels and tooltips for the points in another state. To edit the behavior of the hovered points labels we use {api:anychart.core.map.series.Marker#hoverLabels}hoverLabels(){api} and for selected ones we use {api:anychart.core.map.series.Marker#selectLabels}selectLabels(){api}. Let's make our labels to become of dark red color and of bigger size when hovered and selected.
+It is also possible to change labels in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#labels}labels(){api}:
 
 ```
-// hovered and selected labels
-series_acme.hovered().labels().fontSize(12);
+// configure labels
+series_acme.normal().labels().fontSize(14);
+series_acme.normal().labels().fontColor("#000");
+series_acme.hovered().labels().fontSize(16);
 series_acme.hovered().labels().fontColor("#660000");
-series_acme.selected().labels().fontSize(12);
+series_acme.selected().labels().fontSize(16);
 series_acme.selected().labels().fontColor("#660000");
 ```
 
@@ -149,7 +152,7 @@ series_citrus.selected().stroke("#ef6c00", 2);
 
 ### Markers
 
-The type and size of markers can be configured in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.scatter.series.Marker#type}type(){api} and {api:anychart.core.scatter.series.Marker#size}size(){api}:
+The type and size of markers can be configured in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#type}type(){api} and {api:anychart.core.StateSettings#size}size(){api}:
 
 ```
 // set the size of CITRUS markers
@@ -159,8 +162,8 @@ series_citrus.selected().size(10);
 
 // set the size of ACME markers 
 series_acme.normal().size(4);
-series_acme.hovered().size(5);
-series_acme.selected().size(5);
+series_acme.hovered().size(6);
+series_acme.selected().size(6);
 
 // set the type of CITRUS markers
 series_citrus.normal().type("star4");
