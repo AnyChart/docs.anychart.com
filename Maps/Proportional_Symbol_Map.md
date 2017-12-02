@@ -53,6 +53,7 @@ var data = [
 ];
 
 ```
+
 {sample}Maps\_Proportional\_Symbol\_03{sample}
 
 ### Region ID
@@ -83,7 +84,6 @@ var series = map.bubble(data);
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
 Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see the [Map Projections](Map_Projections) article.
-
 
 ### Size
 
@@ -123,7 +123,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 In the sample below, there is a Proportional Symbol Map with colors configured:
 

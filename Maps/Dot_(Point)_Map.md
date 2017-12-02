@@ -25,6 +25,7 @@ To create Dot/Point/Marker type series in Maps we use {api:anychart.charts.Map#m
 // create marker series
 var series = map.marker(data);
 ```
+
 Depending on the purpose of the map, it can contain a number of series. In the sample above you can see an example, where the series contains the longitude and latitude coordinates of the point. It's easy to create several series more if necessary. It'd be better if your series' would be of one mapping type.
 
 ### Data
@@ -134,7 +135,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 In the sample below, there is a Dot Map with two series. The colors of one of them are configured:
 

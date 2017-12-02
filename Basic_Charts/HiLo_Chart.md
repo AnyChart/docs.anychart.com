@@ -87,7 +87,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Hilo#normal}normal(){api}, {api:anychart.core.cartesian.series.Hilo#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Hilo#selected}selected(){api} methods.
 
-Combine them with the {api:anychart.core.StateSettings#fill}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 In the sample below, there are two HiLo series with appearance settings configured:
 

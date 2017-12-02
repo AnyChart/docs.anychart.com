@@ -187,7 +187,7 @@ Combine them with the following methods to adjust columns indicating total value
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 To adjust falling columns, use:
 
