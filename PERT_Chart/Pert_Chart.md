@@ -96,9 +96,7 @@ To set the spacing between tasks, use the {api:anychart.charts.Pert#horizontalSp
 
 Other settings are configured with the help of the {api:anychart.charts.Pert#tasks}tasks(){api} method.
 
-The colors of tasks can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Tasks#normal}normal(){api}, {api:anychart.core.pert.Tasks#hovered}hovered(){api}, and {api:anychart.core.pert.Tasks#selected}selected(){api} methods.
-
-Combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
+The colors of tasks can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Tasks#normal}normal(){api}, {api:anychart.core.pert.Tasks#hovered}hovered(){api}, and {api:anychart.core.pert.Tasks#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
 In the sample below, there is a Pert chart with tasks configured:
 
@@ -188,9 +186,7 @@ chart.tasks().lowerLabels().format(function(e){
 
 To configure milestones, call the {api:anychart.charts.Pert#milestones}milestones(){api} method.
 
-The colors of milestones can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Milestones#normal}normal(){api}, {api:anychart.core.pert.Milestones#hovered}hovered(){api}, and {api:anychart.core.pert.Milestones#selected}selected(){api} methods.
-
-Combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
+The colors of milestones can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Milestones#normal}normal(){api}, {api:anychart.core.pert.Milestones#hovered}hovered(){api}, and {api:anychart.core.pert.Milestones#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
 In the sample below, there is a Pert chart with milestones configured:
 
