@@ -32,29 +32,43 @@ series.stroke(function () {
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_01{sample}
 
-To change the interactivity colors (colors of elements or groups on hover and select), use the following methods: {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
+You can also configure colors in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Choropleth#normal}normal(){api}, {api:anychart.core.map.series.Choropleth#hovered}hovered(){api}, and {api:anychart.core.map.series.Choropleth#selected}selected(){api} methods.
+
+Combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#fill}stroke(){api}:
 
 ```
-// set the hoverFill color 
-series.hoverFill(function (){
+// set the fill in the normal state
+seatMapSeries.normal().fill(function () {
+    var attrs = this.attributes;
+    if (attrs) return attrs.fill;
+});
+
+// set the fill in the hover state
+seatMapSeries.hovered().fill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.lighten(attrs.fill, 0.5) : this.sourceColor;
 });
 
-// set the selectFill color
-series.selectFill(function (){
+// set the fill in the selected state
+seatMapSeries.selected().fill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
 });
 
-// sets stroke series
-series.hoverStroke(function () {
+// set the stroke in the normal state 
+seatMapSeries.normal().stroke(function () {
     var attrs = this.attributes;
     return attrs ? attrs.stroke : this.sourceColor;
 });
 
-// sets stroke series
-series.selectStroke(function () {
+// set the stroke in the hover state
+seatMapSeries.hovered().stroke(function () {
+    var attrs = this.attributes;
+    return attrs ? attrs.stroke : this.sourceColor;
+});
+
+// set the stroke in the selected state
+seatMapSeries.selected().stroke(function () {
     var attrs = this.attributes;
     return attrs ? attrs.stroke : this.sourceColor;
 });
@@ -77,8 +91,8 @@ It is also possible to change the colors of separate elements or of parts of a g
 ```
 
 ```
-// set the hoverFill color 
-series.hoverFill(function (){
+// set the fill in the hover state
+seatMapSeries.hovered().fill(function (){
     var attrs = this.attributes;
     if (attrs) {
         // get the class
