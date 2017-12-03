@@ -72,7 +72,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -94,7 +94,7 @@ chart.selected().stroke("white", 2);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
 // create data
@@ -131,7 +131,7 @@ chart = anychart.pyramid(data);
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-You can set base size in pixels or in percent. Use a string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define the flexible base size in percent.
+Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or in percent):
 
 ```
 // set base width to 50% of the container width
@@ -229,7 +229,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to tooltips – text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) – text boxes displayed when chart points are hovered.
 
 #### Tokens
 

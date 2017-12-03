@@ -98,11 +98,11 @@ This sample shows how to set the type of markers:
 ```
 // set the type of markers
 series1.normal().type("star4");
-series1.selected().type("star5");
-series1.hovered().type("star6");
+series1.hovered().type("star5");
+series1.selected().type("star6");
 series2.normal().type("star4");
-series2.selected().type("star5");
-series2.hovered().type("star6");
+series2.hovered().type("star5");
+series2.selected().type("star6");
 ```
 
 {sample}BCT\_Marker\_Chart\_03{sample}
@@ -115,7 +115,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 In the sample below, there are two Marker series with appearance settings configured:
 

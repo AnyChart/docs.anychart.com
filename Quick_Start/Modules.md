@@ -286,7 +286,7 @@ Module that enables [Table Layout](../Dashboards/Table_Layout):
 UI Binding module is a set of utilities to bind HTML5 UI elements to chart settings.
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui-binding.min.js"></script>
 ```
 
 ### VML Renderer 

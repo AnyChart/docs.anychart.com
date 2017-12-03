@@ -102,7 +102,7 @@ Note that you can set the date in UTC in JSON. In XML you still have to use nume
 ### JSON Schema
 
 JSON Schema specifies a JSON-based format to define the structure of JSON data 
-(visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_Metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
+(visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json).
 
 Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 

@@ -23,12 +23,25 @@ anychart.onDocumentReady(function () {
 
   // data
   var data = [
-      {'id': 'AU.NS', 'size': 7565500, 'fill': "red", hoverFill: "#FF6666", selectFill: "#800000"},
-      {'id': 'AU.NT', 'size': 243700, 'fill': "green", hoverFill:"#80B280", selectFill: "#003300"},
+      {'id': 'AU.NS', 'size': 7565500},
+      {'id': 'AU.NT', 'size': 243700},
       {'id': 'AU.WA', 'size': 2565600},
       {'id': 'AU.SA', 'size': 1682600},
       {'id': 'AU.VI', 'size': 5866300},
-      {'id': 'AU.QL', 'size': 4750500},
+      {'id': 'AU.QL', 'size': 4750500,
+       normal:   {
+                   fill: "#b30059 0.3",
+                   stroke: "#b30059"
+                 },
+       hovered:  {
+                   fill: "#b30059 0.1",
+                   stroke: "2 #b30059"
+                 },
+       selected: {
+                   fill: "#b30059 0.5",
+                   stroke: "4 #b30059"
+                 }
+      },
       {'id': 'AU.TS', 'size': 514700}
   ];
 

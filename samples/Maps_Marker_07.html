@@ -65,13 +65,18 @@ anychart.onDocumentReady(function () {
     // turn off labels
     map.labels(false);
 
-    // change the color of the ACME series
-    series_citrus.stroke("green");
-    series_citrus.fill("gold");
+    // set the colors of the CITRUS series
+    series_citrus.normal().fill("#ef6c00", 0.3);
+    series_citrus.hovered().fill("#ef6c00", 0.1);
+    series_citrus.selected().fill("#ef6c00", 0.5);
+    series_citrus.normal().stroke("#ef6c00");
+    series_citrus.hovered().stroke("#ef6c00", 2);
+    series_citrus.selected().stroke("#ef6c00", 2);
 
-    // make the markers of the CITRUS series 
-    series_citrus.size(8);
+    // set the size of markers of the CITRUS series 
+    series_citrus.normal().size(8);
     series_citrus.hovered().size(10);
+    series_citrus.selected().size(10);
 
     map.title("Formatting the series colors");
 

@@ -71,7 +71,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 The [appearance settings](../Appearance_Settings) of a Stick chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Stick#normal}normal(){api}, {api:anychart.core.cartesian.series.Stick#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Stick#selected}selected(){api} methods.
 
-Combine them with the {api:anychart.core.StateSettings#fill}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 In the sample below, there are two Stick series with appearance settings configured:
 
@@ -97,7 +97,7 @@ series2.selectStroke("#0066cc", 4);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
 // create data

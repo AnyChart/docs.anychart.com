@@ -44,10 +44,10 @@
   axis.offset('-11%');
 
   // set colors for empty parts of tanks
-  tankF.emptyFill("#fbceb1");
+  tankF.normal().emptyFill("#fbceb1");
   tankF.hovered().emptyFill(anychart.color.lighten("#fbceb1"));
   tankF.selected().emptyFill(anychart.color.darken("#fbceb1"));
-  tankC.emptyHatchFill("percent05");
+  tankC.normal().emptyHatchFill("percent05");
   tankC.hovered().emptyHatchFill("percent25");
   tankC.selected().emptyHatchFill("percent50");
   

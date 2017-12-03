@@ -41,20 +41,13 @@ anychart.onDocumentReady(function () {
     //create bubble series
     var series = map.bubble(data);
 
-    // changes the fill and hoverFill colors
-    series.fill("#90caf9");
-    series.hovered().fill("#b3e5fc");
-    series.labels().fontColor("#0277bd");
-    series.hovered().labels().fontColor("#01579b");
-
-    // changes the stroke and hoverStroke colors
-    series.stroke("#64b5f6");
-    series.hovered().stroke("#81d4fa");
-
-    // sets the select colors
-    series.selected().stroke("#546e7a");
-    series.selected().fill("#78909c");
-    series.selected().labels().fontColor("#263238");
+    // set colors
+    series.normal().fill("#00cc99", 0.3);
+    series.hovered().fill("#00cc99", 0.1);
+    series.selected().fill("#00cc99", 0.5);
+    series.normal().stroke("#00cc99");
+    series.hovered().stroke("#00cc99", 2);
+    series.selected().stroke("#00cc99", 4);
 
     // set container id for the chart
     map.container('container');

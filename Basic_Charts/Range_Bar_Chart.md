@@ -96,7 +96,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -133,7 +133,7 @@ series2.selected().stroke("#0066cc", 4);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual bars by adding special fields to your data:
 
 ```
 // create data

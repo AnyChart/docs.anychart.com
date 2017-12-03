@@ -25,6 +25,7 @@ To create Dot/Point/Marker type series in Maps we use {api:anychart.charts.Map#m
 // create marker series
 var series = map.marker(data);
 ```
+
 Depending on the purpose of the map, it can contain a number of series. In the sample above you can see an example, where the series contains the longitude and latitude coordinates of the point. It's easy to create several series more if necessary. It'd be better if your series' would be of one mapping type.
 
 ### Data
@@ -97,55 +98,78 @@ We can edit the appearance of our map as we want. We can change the color of the
 We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}labels(){api} and {api:anychart.core.map.series.Marker#tooltip}tooltip(){api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
 
 ```
-// format the tooltips
-series_acme.tooltip({title: false, separator: false});
-series_acme.tooltip().format("Yearly profit: ${%value}");
+// configure tooltips
+series_acme.tooltip().titleFormat("{%name} of ACME Corp.");
+series_acme.tooltip().format("Yearly profit: ${%value}m");
 
-// format the labels
-series_acme.labels().fontSize(10)
+// configure labels
+series_acme.labels().format("{%name}");
+series_acme.labels().fontSize(14);
 series_acme.labels().fontColor("#000");
 series_acme.labels().fontFamily("Georgia");
 ```
+
 {sample}Maps\_Marker\_05{sample}
 
-It's possible to change labels and tooltips for the points in another state. To edit the behavior of the hovered points labels we use {api:anychart.core.map.series.Marker#hoverLabels}hoverLabels(){api} and for selected ones we use {api:anychart.core.map.series.Marker#selectLabels}selectLabels(){api}. Let's make our labels to become of dark red color and of bigger size when hovered and selected.
+It is also possible to change labels in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#labels}labels(){api}:
 
 ```
-// hovered and selected labels
-series_acme.hovered().labels().fontSize(12);
+// configure labels
+series_acme.normal().labels().fontSize(14);
+series_acme.normal().labels().fontColor("#000");
+series_acme.hovered().labels().fontSize(16);
 series_acme.hovered().labels().fontColor("#660000");
-series_acme.selected().labels().fontSize(12);
+series_acme.selected().labels().fontSize(16);
 series_acme.selected().labels().fontColor("#660000");
 ```
+
 {sample}Maps\_Marker\_06{sample}
 
 You can find more information about formatting labels and tooltips in the [Labels](../Common_Settings/Labels), [Tooltips](../Common_Settings/Tooltip) and [Text Formatters](../Common_Settings/Text_Formatters) tutorials.
 
 ### Series colors
 
-We can also edit the series here as in all other maps. To change the series filling and stroking colors we use {api:anychart.core.map.series.Marker#fill}fill(){api} and {api:anychart.core.map.series.Marker#stroke}stroke(){api} methods. Also we can change the markers' size with the {api:anychart.core.map.series.Marker#size}size(){api} method. For hovered state we've got {api:anychart.core.map.series.Marker#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Marker#hoverStroke}hoverStroke(){api} and {api:anychart.core.map.series.Marker#hoverSize}hoverSize(){api}.
+The colors of series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods.
 
-Let's add another series demonstrating the CITRUS company profit rates and change the ACME series's marker stroke color to green and the filling color to gold, and make the markers of the second series bigger in size. 
+Combine them with the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+In the sample below, there is a Dot Map with two series. The colors of one of them are configured:
 
 ```
-// change the color of the ACME series
-series_citrus.stroke("green");
-series_citrus.fill("gold");
-
-// make the markers of the CITRUS series 
-series_citrus.size(8);
-series_citrus.hoverSize(10);
+// change the color of the CITRUS series
+series_citrus.normal().fill("#ef6c00", 0.3);
+series_citrus.hovered().fill("#ef6c00", 0.1);
+series_citrus.selected().fill("#ef6c00", 0.5);
+series_citrus.normal().stroke("#ef6c00");
+series_citrus.hovered().stroke("#ef6c00", 2);
+series_citrus.selected().stroke("#ef6c00", 2);
 ```
+
 {sample}Maps\_Marker\_07{sample}
 
 ### Markers
 
-Also we can change the shape of the markers using the {api:anychart.core.scatter.series.Marker#type}type(){api} method (and {api:anychart.core.scatter.series.Marker#hoverType}hoverType(){api} for hovered state). Here we should set the string value, one from the {api:anychart.enums.MarkerType}marker type list{api}. Let's change the marker types for both series below.
+The type and size of markers can be configured in three states: **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Marker#normal}normal(){api}, {api:anychart.core.map.series.Marker#hovered}hovered(){api}, and {api:anychart.core.map.series.Marker#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#type}type(){api} and {api:anychart.core.StateSettings#size}size(){api}:
 
 ```
-// change the markers type
-series_acme.type("square");
-series_citrus.type("cross");
+// set the size of CITRUS markers
+series_citrus.normal().size(8);
+series_citrus.hovered().size(10);
+series_citrus.selected().size(10);
+
+// set the size of ACME markers 
+series_acme.normal().size(4);
+series_acme.hovered().size(6);
+series_acme.selected().size(6);
+
+// set the type of CITRUS markers
+series_citrus.normal().type("star4");
+series_citrus.hovered().type("star5");
+series_citrus.selected().type("star6");
 ```
 
 {sample}Maps\_Marker\_08{sample}
@@ -172,13 +196,13 @@ return path;
 
 Note that we've created a special function to draw a marker in order not to create a marker several times.
 
-Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}fill(){api} and {api:anychart.core.map.series.Marker#hoverFill}hoverFill(){api} methods. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
+Another way to create unique markers is to set an image (or an array of images) as an argument for the {api:anychart.core.StateSettings#fill}fill(){api} method. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
 
 ```
-// set the images for our series defined in normal state
-series_acme.fill(customImageMarker(1));
-// set the images for dots of the ACME series in hovered state
+// set the images for the ACME series
+series_acme.normal().fill(customImageMarker(1));
 series_acme.hovered().fill(customImageMarker(0.5));
+series_acme.selected().fill(customImageMarker(1));
 
 function customImageMarker(op){
 var image_link = 'https://static.anychart.com/images/acme.jpg';

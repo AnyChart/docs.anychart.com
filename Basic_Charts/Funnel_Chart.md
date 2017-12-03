@@ -69,7 +69,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Head
 
-Head (or base) is the upper part of a Funnel, where the difference between areas is significant (in percentage value) and is demonstrated by areas' size. To adjust the width of the Funnel Head, use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method.
+A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage value) and is demonstrated by areas' size. To set the width of the head (in pixels or in percent), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
 
 ```
 // set the base width
@@ -101,7 +101,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -123,7 +123,7 @@ chart.selected().stroke("white", 2);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
 // create data
@@ -214,7 +214,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to tooltips – text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) – text boxes displayed when chart points are hovered.
 
 #### Tokens
 

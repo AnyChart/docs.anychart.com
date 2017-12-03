@@ -39,16 +39,15 @@ anychart.onDocumentReady(function () {
     // Creates the marker series
     var series_acme = map.marker(data);
 
-    // format the tooltips
+    // configure tooltips
     series_acme.tooltip().titleFormat("{%name} of ACME Corp.");
     series_acme.tooltip().format("Yearly profit: ${%value}m");
 
-    // format the labels
+    // configure labels
     series_acme.labels().format("{%name}");
     series_acme.labels().fontSize(14);
     series_acme.labels().fontColor("#000");
     series_acme.labels().fontFamily("Georgia");
-
 
     map.title("Formatting the labels and tooltips");
 

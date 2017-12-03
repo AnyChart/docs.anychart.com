@@ -61,30 +61,34 @@ anychart.onDocumentReady(function () {
     map.tooltip().titleFormat(" {%seriesName}");
     map.tooltip().format("Yearly profit: ${%value}m");
     
-    // change the color of the ACME series
+    // set the colors of the ACME and CITRUS series
     series_citrus.stroke("green");
     series_citrus.fill("gold");
-    series_acme.stroke(null);
+    series_acme.normal().stroke(null);
+    series_acme.hovered().stroke(null);
+    series_acme.selected().stroke(null);
 
-    // make the markers of the CITRUS series of smaller size than default
-    series_citrus.size(10);
+    // set the size of CITRUS markers
+    series_citrus.normal().size(8);
     series_citrus.hovered().size(10);
     series_citrus.selected().size(10);
-    series_acme.size(14);
-    series_acme.hovered().size(14);
-    series_acme.selected().size(14);
 
-    // creating a custom marker for the CITRUS company series using a function
+    // set the size of ACME markers
+    series_acme.normal().size(14);
+    series_acme.hovered().size(18);
+    series_acme.selected().size(18);
+
+    // create a custom marker for the CITRUS series using a function
     series_citrus.type(customMarkerType);
     series_citrus.hovered().type(customMarkerType);
 
     // set the link for the directory with images
     var image_link = 'https://static.anychart.com/images/acme.jpg';
     
-    // set the images for our series defined in normal state
-    series_acme.fill(customImageMarker(1));
-    // set the images for dots of the ACME series in hovered state
+    // set the images for the ACME series
+    series_acme.normal().fill(customImageMarker(1));
     series_acme.hovered().fill(customImageMarker(0.5));
+    series_acme.selected().fill(customImageMarker(1));
 
     map.title("Creating custom markers");
 

@@ -22,18 +22,18 @@
             chart = anychart.pert();
             chart.data(data, "as-table");
 
-            tasks = chart.tasks();
-
-            // set vertical spacing between tasks
+            // set the vertical spacing between tasks
             chart.verticalSpacing("20%");
-            // set tasks colors
-            tasks.stroke("#519790");
-            tasks.fill("#519790");
-            tasks.hovered().stroke("#519790", 0.7);
-            tasks.hovered().fill("#519790", 0.7);
-            tasks.selected().stroke("#519790", 2);
-            tasks.selected().fill("#519790", 2);
 
+            // set the colors of tasks
+            tasks = chart.tasks();
+            tasks.normal().stroke("#519790");
+            tasks.hovered().fill("#519790", 0.7);
+            tasks.selected().fill("#519790", 2);
+            tasks.normal().fill("#519790");
+            tasks.hovered().stroke("#519790", 0.7);
+            tasks.selected().stroke("#519790", 2);
+            
             chart.title("Coloring tasks");
             chart.container("container");
             chart.draw();

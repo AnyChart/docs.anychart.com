@@ -95,7 +95,7 @@ Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -132,7 +132,7 @@ series2.selected().stroke("#0066cc", 4);
 
 #### Individual Points
 
-If you use object notation to set the data, you can change the appearance (and some other settings) of individual bubbles by adding special fields to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual bubbles by adding special fields to your data:
 
 ```
 // create data
@@ -176,13 +176,9 @@ series = chart.bubble(data);
 The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Scatter#minBubbleSize}minBubbleSize(){api} parameters. Both of them can be set either in pixels or as a percentage of the short side of the chart:
 
 ```
-chart.maxBubbleSize("15%");
-chart.minBubbleSize("5%");
+chart.minBubbleSize("3%");
+chart.maxBubbleSize("10%");
 ```
-
-When you set the maximum bubble size to 15%, AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
-
-Here is the sample where bubbles are sized in percent, as specified above:
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
 

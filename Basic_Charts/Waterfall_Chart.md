@@ -36,7 +36,11 @@ This article explains how to create a basic Waterfall chart as well as configure
 
 ## Quick Start
 
-To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(){api} chart constructor, like in the following sample:
+To create a Waterfall chart, use the {api:anychart#waterfall}anychart.waterfall(){api}  chart constructor. If you pass the data to this chart constructor, it creates a Waterfall series.
+
+To create a Waterfall series explicitly, call the {api:anychart.charts.Waterfall#waterfall}waterfall(){api} method.
+
+The following sample demonstrates how a basic Waterfall chart is created:
 
 ```
 // create data   
@@ -183,7 +187,7 @@ Combine them with the following methods to adjust columns indicating total value
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#fill}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 To adjust falling columns, use:
 

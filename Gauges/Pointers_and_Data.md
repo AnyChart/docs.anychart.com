@@ -358,16 +358,16 @@ tankC.emptyHatchFill("percent30");
 
 {sample}BCT\_Pointers-and-Data\_Tank\_17{sample} 
 
-It is possible to make the colors of empty parts change on hovered and selected states, the same as the main filling color. Use {api:anychart.core.linearGauge.pointers.Tank#hoverEmptyFill}hoverEmptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#hoverEmptyHatchFill}hoverEmptyHatchFill(){api} for adjusting the empty part colors in hovered state and {api:anychart.core.linearGauge.pointers.Tank#selectEmptyFill}selectEmptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#selectEmptyHatchFill}selectEmptyHatchFill(){api} for adjusting the empty part colors in selected state.
+The colors of empty parts (as well as the main colors) can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}emptyFill(){api} and {api:anychart.core.StateSettings#hatchFill}emptyHatchFill(){api}:
 
 ```
 // set colors for empty parts of tanks
-tankF.emptyFill("#fbceb1");
-tankF.hoverEmptyFill(anychart.color.lighten("#fbceb1"));
-tankF.selectEmptyFill(anychart.color.darken("#fbceb1"));
-tankC.emptyHatchFill("percent05");
-tankC.hoverEmptyHatchFill("percent25");
-tankC.selectEmptyHatchFill("percent50");
+tankF.normal().emptyFill("#fbceb1");
+tankF.hovered().emptyFill(anychart.color.lighten("#fbceb1"));
+tankF.selected().emptyFill(anychart.color.darken("#fbceb1"));
+tankC.normal().emptyHatchFill("percent05");
+tankC.hovered().emptyHatchFill("percent25");
+tankC.selected().emptyHatchFill("percent50");  
 ```
 
 {sample}BCT\_Pointers-and-Data\_Tank\_18{sample} 

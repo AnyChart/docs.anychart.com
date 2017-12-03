@@ -53,6 +53,7 @@ var data = [
 ];
 
 ```
+
 {sample}Maps\_Proportional\_Symbol\_03{sample}
 
 ### Region ID
@@ -83,7 +84,6 @@ var series = map.bubble(data);
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
 Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see the [Map Projections](Map_Projections) article.
-
 
 ### Size
 
@@ -117,51 +117,68 @@ Altering the series looks pretty much the same as in [basic Bubble Charts](../Ba
 
 ### Series colors
 
-To color all bubbles in a series we use the {api:anychart.core.map.series.Bubble#fill}fill(){api} method; to color the hovered bubbles there is a {api:anychart.core.map.series.Bubble#hoverFill}hoverFill(){api} function; for selected bubbles we've got {api:anychart.core.map.series.Bubble#selectFill}selectFill(){api}. For coloring the stroke we've got {api:anychart.core.map.series.Bubble#stroke}stroke(){api}, {api:anychart.core.map.series.Bubble#hoverStroke}hoverStroke(){api} and {api:anychart.core.map.series.Bubble#selectStroke}selectStroke(){api} accordingly. 
+The colors of bubbles can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Bubble#normal}normal(){api}, {api:anychart.core.map.series.Bubble#hovered}hovered(){api}, and {api:anychart.core.map.series.Bubble#selected}selected(){api} methods.
 
-Let's create a sample using things we've learned.
+Combine them with the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+In the sample below, there is a Proportional Symbol Map with colors configured:
 
 ```
-// change the fill and hoverFill colors
-series.fill("#EBD670");
-series.hovered().fill("#C7FF99");
-
-// change the stroke and hoverStroke colors
-series.stroke("#C7FF99");
-series.hovered().stroke("#EBD670");
-
-// set the select colors
-series.selected().stroke("#66FFCC");
-series.selected().fill("#879CED");
+// set colors
+series.normal().fill("#00cc99", 0.3);
+series.hovered().fill("#00cc99", 0.1);
+series.selected().fill("#00cc99", 0.5);
+series.normal().stroke("#00cc99");
+series.hovered().stroke("#00cc99", 2);
+series.selected().stroke("#00cc99", 4);
 ```
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.map.series.Bubble#hatchFill}hatchFill{api} to add a hatch pattern to the whole series, {api:anychart.core.map.series.Bubble#hoverHatchFill}hoverHatchFill{api} to add hatch to series in hovered state and {api:anychart.core.map.series.Bubble#selectHatchFill}selectHatchFill{api} to make the selected elements hatched.
+Hatch fills can be used to create monochromatic maps:
 
 ```
-// making the chart monochromatic
-series.hatchFill("horizontal");
-series.hovered().hatchFill("weave");
-series.selected().hatchFill("confetti");
-series.stroke("black");
-series.fill(null);
+// set colors
+series.normal().hatchFill("percent30");
+series.hovered().hatchFill("percent20");
+series.selected().hatchFill("percent50");
+series.normal().fill("white");
+series.hovered().fill("white");
+series.selected().fill("white");
+series.normal().stroke("black");
+series.hovered().stroke("black", 2);
+series.selected().stroke("black", 2);
 ```
 
 {sample}Maps\_Proportional\_Symbol\_06{sample}
 
-Note that we should get rid of the main filling color, unless we want the hatch being added over the color.
-
-As usual, we can define the colors through the data, especially if we need different color settings for some of our bubbles.
+You can change the colors of individual bubbles by adding special fields to your data:
 
 ```
-var dataSet = [
-    {'id': 'AU.NS', 'size': 7565500, 'fill': "red", hoverFill: "#FF6666", selectFill: "#800000"},
-    {'id': 'AU.NT', 'size': 243700, 'fill': "green", hoverFill:"#80B280", selectFill: "#003300"},
+var data = [
+    {'id': 'AU.NS', 'size': 7565500},
+    {'id': 'AU.NT', 'size': 243700},
     {'id': 'AU.WA', 'size': 2565600},
     {'id': 'AU.SA', 'size': 1682600},
     {'id': 'AU.VI', 'size': 5866300},
-    {'id': 'AU.QL', 'size': 4750500},
+    {'id': 'AU.QL', 'size': 4750500,
+     normal:   {
+                 fill: "#b30059 0.3",
+                 stroke: "#b30059"
+               },
+     hovered:  {
+                 fill: "#b30059 0.1",
+                 stroke: "2 #b30059"
+               },
+     selected: {
+                 fill: "#b30059 0.5",
+                 stroke: "4 #b30059"
+               }
+    },
     {'id': 'AU.TS', 'size': 514700}
 ];
 ```

@@ -13,7 +13,7 @@ The sample below demonstrates how an SVG image looks like with the default AnyCh
 
 The colors in the sample picture are different from those defined in JavaScript (check out the <a href="https://static.anychart.com/images/docs/seat_map/house.svg">source SVG image</a> to see the original colors). Setting original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors.
 
-To set the colors of the original SVG image, or to set new custom colors, use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#Stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in SVG files have the `fill` attribute. Before setting the value to the `fill` field, it is necessary to check if the element has it, and if it does, you should set the fill color to this element. Setting colors through this methods looks like the following:
+To set the colors of the original SVG image, or to set new custom colors, use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in SVG files have the `fill` attribute. Before setting the value to the `fill` field, it is necessary to check if the element has it, and if it does, you should set the fill color to this element. Setting colors through this methods looks like the following:
 
 ```
 // sets series fill 
@@ -32,29 +32,43 @@ series.stroke(function () {
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_01{sample}
 
-To change the interactivity colors (colors of elements or groups on hover and select), use the following methods: {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
+You can also configure colors in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.map.series.Choropleth#normal}normal(){api}, {api:anychart.core.map.series.Choropleth#hovered}hovered(){api}, and {api:anychart.core.map.series.Choropleth#selected}selected(){api} methods.
+
+Combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}:
 
 ```
-// set the hoverFill color 
-series.hoverFill(function (){
+// set the fill in the normal state
+seatMapSeries.normal().fill(function () {
+    var attrs = this.attributes;
+    if (attrs) return attrs.fill;
+});
+
+// set the fill in the hover state
+seatMapSeries.hovered().fill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.lighten(attrs.fill, 0.5) : this.sourceColor;
 });
 
-// set the selectFill color
-series.selectFill(function (){
+// set the fill in the selected state
+seatMapSeries.selected().fill(function (){
     var attrs = this.attributes;
     return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
 });
 
-// sets stroke series
-series.hoverStroke(function () {
+// set the stroke in the normal state 
+seatMapSeries.normal().stroke(function () {
     var attrs = this.attributes;
     return attrs ? attrs.stroke : this.sourceColor;
 });
 
-// sets stroke series
-series.selectStroke(function () {
+// set the stroke in the hover state
+seatMapSeries.hovered().stroke(function () {
+    var attrs = this.attributes;
+    return attrs ? attrs.stroke : this.sourceColor;
+});
+
+// set the stroke in the selected state
+seatMapSeries.selected().stroke(function () {
     var attrs = this.attributes;
     return attrs ? attrs.stroke : this.sourceColor;
 });
@@ -77,8 +91,8 @@ It is also possible to change the colors of separate elements or of parts of a g
 ```
 
 ```
-// set the hoverFill color 
-series.hoverFill(function (){
+// set the fill in the hover state
+seatMapSeries.hovered().fill(function (){
     var attrs = this.attributes;
     if (attrs) {
         // get the class

@@ -92,29 +92,26 @@ Learn more about colors and visual appearance of the chart from the [Appearance 
 
 ### Tasks 
 
-Tasks are controlled using the {api:anychart.charts.Pert#tasks}tasks(){api} method, spacing between tasks by the {api:anychart.charts.Pert#horizontalSpacing}horizontalSpacing(){api} and the {api:anychart.charts.Pert#verticalSpacing}verticalSpacing(){api} methods.
+To set the spacing between tasks, use the {api:anychart.charts.Pert#horizontalSpacing}horizontalSpacing(){api} and {api:anychart.charts.Pert#verticalSpacing}verticalSpacing(){api} methods.
 
-Here is a full list of methods used to configure coloring settings of the tasks in Pert Charts:
+Other settings are configured with the help of the {api:anychart.charts.Pert#tasks}tasks(){api} method.
 
-* {api:anychart.core.pert.Tasks#color}color(){api}, {api:anychart.core.pert.Tasks#fill}fill(){api}, {api:anychart.core.pert.Tasks#stroke}stroke(){api} set the color, fill and stroke
+The colors of tasks can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Tasks#normal}normal(){api}, {api:anychart.core.pert.Tasks#hovered}hovered(){api}, and {api:anychart.core.pert.Tasks#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
-* {api:anychart.core.pert.Tasks#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Tasks#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-
-* {api:anychart.core.pert.Tasks#selectFill}selectFill(){api}, {api:anychart.core.pert.Tasks#selectStroke}selectStroke(){api} configure tasks' visual settings on select
-
-In the sample below, there is a Pert Chart with some of the appearance settings configured:
-
+In the sample below, there is a Pert chart with tasks configured:
 
 ```
-// set vertical spacing between tasks
+// set the vertical spacing between tasks
 chart.verticalSpacing("20%");
-// set tasks colors
-tasks.stroke("#519790");
-tasks.fill("#519790");
-tasks.hoverStroke("#519790", 0.7);
-tasks.hoverFill("#519790", 0.7);
-tasks.selectStroke("#519790", 2);
-tasks.selectFill("#519790", 2);
+
+// set the colors of tasks
+tasks = chart.tasks();
+tasks.normal().stroke("#519790");
+tasks.hovered().fill("#519790", 0.7);
+tasks.selected().fill("#519790", 2);
+tasks.normal().fill("#519790");
+tasks.hovered().stroke("#519790", 0.7);
+tasks.selected().stroke("#519790", 2);          
 ```
 
 {sample}Pert\_Settings\_01{sample}
@@ -187,25 +184,21 @@ chart.tasks().lowerLabels().format(function(e){
 
 ### Milestones 
 
-Here is a full list of methods used to configure visual coloring settings for the milestones of a Pert Chart:
+To configure milestones, call the {api:anychart.charts.Pert#milestones}milestones(){api} method.
 
-* {api:anychart.core.pert.Milestones#color}color(){api}, {api:anychart.core.pert.Milestones#fill}fill(){api}, {api:anychart.core.pert.Milestones#stroke}stroke(){api} set the color, fill and stroke
+The colors of milestones can be set in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.pert.Milestones#normal}normal(){api}, {api:anychart.core.pert.Milestones#hovered}hovered(){api}, and {api:anychart.core.pert.Milestones#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}fill(){api} and {api:anychart.core.StateSettings#stroke}stroke(){api}.
 
-* {api:anychart.core.pert.Milestones#hoverFill}hoverFill(){api}, {api:anychart.core.pert.Milestones#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-
-* {api:anychart.core.pert.Milestones#selectFill}selectFill(){api}, {api:anychart.core.pert.Milestones#selectStroke}selectStroke(){api} configure milestones' visual settings on select
-
-In the sample below, there is a Pert Chart with some of the appearance settings configured:
+In the sample below, there is a Pert chart with milestones configured:
 
 ```
 // set colors for milestones
 milestones = chart.milestones();
-milestones.fill("#00acc1", 0.7);
-milestones.hoverFill("#80cbc4");
-milestones.selectFill("#00acc1");
-milestones.stroke("#90caf9", 1);
-milestones.hoverStroke("#90caf9", 2);
-milestones.selectStroke("#90caf9", 4);
+milestones.normal().fill("#00acc1", 0.7);
+milestones.hovered().fill("#80cbc4");
+milestones.selected().fill("#00acc1");
+milestones.normal().stroke("#90caf9", 1);
+milestones.hovered().stroke("#90caf9", 2);
+milestones.selected().stroke("#90caf9", 4);
 ```
 
 {sample}Pert\_Settings\_05{sample}
