@@ -51,7 +51,7 @@ controller.fibonacciTimezones({
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    levels: [0, 0.2, 0.4, 0.7, 1]
+    levels: [0,0.4,1]
 });
 ```
 
