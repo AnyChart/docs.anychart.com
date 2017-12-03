@@ -1,39 +1,52 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">
+    <meta name="ac:name" content="Maps Marker 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See https://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
 
     // create the dataset of points that are defined by latitude and longtitude values
     var data = [
-        {lat: 33.75, long: -112.18, name: "Stepford", value: 321},
-        {lat: 37.50, long: -101.52, name: "Metropolis", value: 293},
-        {lat: 43.12, long: -108.62, name: "Haddonfield", value: 312},
-        {lat: 28.89, long: -100.09, name: "Marlberry", value: 198},
-        {lat: 33.28, long: -84.28, name: "Sunnydale", value: 309},
-        {lat: 39.21, long: -116.44, name: "Landmark", value: 215},
-        {lat: 32.26, long: -99.88, name: "Springfield", value: 219},
-        {lat: 43.63, long: -90.37, name: "Vice City", value: 179}
+{lat: 33.75, long: -112.18, name: "Stepford", value: 321},
+{lat: 37.50, long: -101.52, name: "Metropolis", value: 293},
+{lat: 43.12, long: -108.62, name: "Haddonfield", value: 312},
+{lat: 28.89, long: -100.09, name: "Marlberry", value: 198},
+{lat: 33.28, long: -84.28, name: "Sunnydale", value: 309},
+{lat: 39.21, long: -116.44, name: "Landmark", value: 215},
+{lat: 32.26, long: -99.88, name: "Springfield", value: 219},
+{lat: 43.63, long: -90.37, name: "Vice City", value: 179}
     ];
 
-    map = anychart.map();
+    var map = anychart.map();
     map.geoData(anychart.maps.united_states_of_america);
 
     // Creates the marker series
@@ -54,10 +67,6 @@ anychart.onDocumentReady(function () {
     map.container("container");
     map.draw();
 });
-    </script>
-
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

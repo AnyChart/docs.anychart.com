@@ -1,16 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-radar.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Radar Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-radar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create data
     var data = [
@@ -25,11 +39,11 @@
     ];
     
     // create a stage
-    stage = anychart.graphics.create("container");
+    var stage = anychart.graphics.create("container");
 
     // set the position and data for the first chart
     var radar1 = anychart.radar(data);
-    radar1.title("Start Angle: Default (0°)");
+    radar1.title("Start Angle: Default (0?)");
     radar1.bounds(0, 0, "50%", "100%");
     // set the chart container
     radar1.container(stage);
@@ -38,7 +52,7 @@
 
     // set the position and data for the second chart
     var radar2 = anychart.radar(data);
-    radar2.title("Start Angle: 90°");
+    radar2.title("Start Angle: 90?");
     radar2.bounds("50%", 0, "50%", "100%");
     // set the start angle
     radar2.startAngle(90);
@@ -46,9 +60,7 @@
     radar2.container(stage);
     // initiate drawing the chart
     radar2.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

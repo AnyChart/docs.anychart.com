@@ -1,17 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['sparkline']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-sparkline.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-table.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="table">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Sparkline Chart 19"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-sparkline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // create charts and set data
   var chart1 = anychart.sparkline([1.1371,1.1341,1.1132,1.1381,1.1371]);  // eur\usd feb
@@ -22,7 +36,7 @@
   var chart6 = anychart.sparkline([0.2738,0.2723,0.2755,0.2721,0.2680]);  // cny\usd june
 
   // create table
-  table = anychart.standalones.table();
+  var table = anychart.standalones.table();
 
   // set table content
   table.contents([
@@ -58,9 +72,7 @@
 
   // set table container and initiate draw
   table.container("container").draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

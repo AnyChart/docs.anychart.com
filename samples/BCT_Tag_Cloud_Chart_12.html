@@ -1,19 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-tag-cloud.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Tag Cloud Chart 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-tag-cloud.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create a stage    
-    stage = anychart.graphics.create("container"); 
+    var stage = anychart.graphics.create("container"); 
 
     // create data
     var text =
@@ -54,7 +68,7 @@
     // set the chart position
     chart.top(35);
     chart.listen("chartDraw", function () {
-        chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
+chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
     });
 
     // set the container
@@ -66,15 +80,15 @@
     /* create a label for setting
     the mode of the tag cloud to "rectangle" */
     createLabel("Rectangle Mode", 10, function () {
-        // set the mode of the tag cloud
-        chart.mode("rect");
+// set the mode of the tag cloud
+chart.mode("rect");
     });
 
     /* create a label for setting
     the mode of the tag cloud to "spiral" */
     createLabel("Spiral Mode", 135, function () {
-        // set the mode of the tag cloud
-        chart.mode("spiral");
+// set the mode of the tag cloud
+chart.mode("spiral");
     });
 });
     
@@ -90,19 +104,17 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     label.listen("mouseOver", function (){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
+label.background().fill("#1976d2 0.5");
+document.body.style.cursor = "pointer";
+label.draw();
     });
     label.listen("mouseOut", function (){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
+label.background().fill("#1976d2");
+document.body.style.cursor = "auto";
+label.draw();
     });    
     return label;
-};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+};
+</script>
 </body>
 </html>

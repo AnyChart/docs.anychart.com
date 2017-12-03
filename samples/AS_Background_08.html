@@ -1,18 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="AS Background 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // chart type
-  chart = anychart.bar();
+  var chart = anychart.bar();
 
   // set title
   chart.title("Hatch fill types");
@@ -25,256 +39,256 @@
       x: "Backward Diagonal",
       value: 1,
       hatchFill:{
-        type: "backward-diagonal",
-        color: "grey"
+type: "backward-diagonal",
+color: "grey"
       }
     },
     {
       x: "Checker board",
       value: 1,
       hatchFill:{
-        type:"checkerboard",
-        color: "grey"
+type:"checkerboard",
+color: "grey"
       }
     },
     {
       x: "Confetti",
       value: 1,
       hatchFill:{
-        type:"confetti",
-        color: "gray"
+type:"confetti",
+color: "gray"
       }
     },
     {
       x: "Dashed Backward Diagonal",
       value: 1,
       hatchFill:{
-        type:"dashed-backward-diagonal",
-        color: "gray"
+type:"dashed-backward-diagonal",
+color: "gray"
       }
     },
     {
       x: "Dashed Forward Diagonal",
       value: 1,
       hatchFill:{
-        type:"dashed-forward-diagonal",
-        color: "gray"
+type:"dashed-forward-diagonal",
+color: "gray"
       }
     },
     {
       x: "Dashed horizontal",
       value: 1,
       hatchFill:{
-        type:"dashed-horizontal",
-        color: "gray"
+type:"dashed-horizontal",
+color: "gray"
       }
     },
     {
       x: "Dashed vertical",
       value: 1,
       hatchFill:{
-        type:"dashed-vertical",
-        color: "gray"
+type:"dashed-vertical",
+color: "gray"
       }
     },
     {
       x: "Diagonal Brick",
       value: 1,
       hatchFill:{
-        hatchType:"diagonal-brick",
-        color: "gray"
+hatchType:"diagonal-brick",
+color: "gray"
       }
     },
     {
       x: "Diagonal Cross",
       value: 1,
       hatchFill:{
-        type:"diagonal-cross",
-        color: "gray"
+type:"diagonal-cross",
+color: "gray"
       }
     },
     {
       x: "Divot",
       value: 1,
       hatchFill:{
-        type:"divot",
-        color: "gray"
+type:"divot",
+color: "gray"
       }
     },
     {
       x: "Forward Diagonal",
       value: 1,
       hatchFill:{
-        type:"forward-diagonal",
-        color: "gray"
+type:"forward-diagonal",
+color: "gray"
       }
     },
     {
       x: "Grid",
       value: 1,
       hatchFill:{
-        type:"grid",
-        color: "gray"
+type:"grid",
+color: "gray"
       }
     },
     {
       x: "Horizontal",
       value: 1,
       hatchFill:{
-        type:"horizontal",
-        color: "gray"
+type:"horizontal",
+color: "gray"
       }
     },
     {
       x: "Horizontal Brick",
       value: 1,
       hatchFill:{
-        type:"horizontal-brick",
-        color: "gray"
+type:"horizontal-brick",
+color: "gray"
       }
     },
     {
       x: "Percent 05",
       value: 1,
       hatchFill:{
-        type:"percent05",
-        color: "gray"
+type:"percent05",
+color: "gray"
       }
     },
     {
       x: "Percent 10",
       value: 1,
       hatchFill:{
-        type:"percent10",
-        color: "gray"
+type:"percent10",
+color: "gray"
       }
     },
     {
       x: "Percent 20",
       value: 1,
       hatchFill:{
-        type:"percent20",
-        color: "gray"
+type:"percent20",
+color: "gray"
       }
     },
     {
       x: "Percent 25",
       value: 1,
       hatchFill:{
-        type:"percent25",
-        color: "gray"
+type:"percent25",
+color: "gray"
       }
     },
     {
       x: "Percent 30",
       value: 1,
       hatchFill:{
-        type:"percent30",
-        color: "gray"
+type:"percent30",
+color: "gray"
       }
     },
     {
       x: "Percent 40",
       value: 1,
       hatchFill:{
-        type:"percent40",
-        color: "gray"
+type:"percent40",
+color: "gray"
       }
     },
     {
       x: "Percent 50",
       value: 1,
       hatchFill:{
-        type:"percent50",
-        color: "gray"
+type:"percent50",
+color: "gray"
       }
     },
     {
       x: "Percent 60",
       value: 1,
       hatchFill:{
-        type:"percent60",
-        color: "gray"
+type:"percent60",
+color: "gray"
       }
     },
     {
       x: "Percent 70",
       value: 1,
       hatchFill:{
-        type:"percent70",
-        color: "gray"
+type:"percent70",
+color: "gray"
       }
     },
     {
       x: "Percent 75",
       value: 1,
       hatchFill:{
-        type:"percent75",
-        color: "gray"
+type:"percent75",
+color: "gray"
       }
     },
     {
       x: "Percent 80",
       value: 1,
       hatchFill:{
-        type:"percent80",
-        color: "gray"
+type:"percent80",
+color: "gray"
       }
     },
     {
       x: "Percent 90",
       value: 1,
       hatchFill:{
-        type:"percent90",
-        color: "gray"
+type:"percent90",
+color: "gray"
       }
     },
     {
       x: "Plaid",
       value: 1,
       hatchFill:{
-        type:"plaid",
-        color: "gray"
+type:"plaid",
+color: "gray"
       }
     },
     {
       x: "Solid Diamond",
       value: 1,
       hatchFill:{
-        type:"solid-diamond",
-        color: "gray"
+type:"solid-diamond",
+color: "gray"
       }
     },
     {
       x: "Vertical",
       value: 1,
       hatchFill:{
-        type:"vertical",
-        color: "gray"
+type:"vertical",
+color: "gray"
       }
     },
     {
       x: "Vertical Brick",
       value: 1,
       hatchFill:{
-        type:"vertical-brick",
-        color: "gray"
+type:"vertical-brick",
+color: "gray"
       }
     },
     {
       x: "Weave",
       value: 1,
       hatchFill:{
-        type:"weave",
-        color: "gray"
+type:"weave",
+color: "gray"
       }
     },
     {
       x: "Zigzag",
       value: 1,
       hatchFill:{
-        type:"zigzag",
-        color: "gray"
+type:"zigzag",
+color: "gray"
       }
     }
   ]);
@@ -283,9 +297,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

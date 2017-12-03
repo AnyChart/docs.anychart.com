@@ -1,63 +1,75 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-treemap.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Treemap Chart 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create data
     var data = [
       {name:   "European Union", children: [
-        {name: "Belgium",        value: 11443830, fill: "#ffcc00"},
-        {name: "France",         value: 64938716, fill: "#ff6600"},
-        {name: "Greece",         value: 10892931, fill: "#ffcc00"},
-        {name: "Italy",          value: 59797978, fill: "#ff6600"},
-        {name: "Netherlands",    value: 17032845, fill: "#ffcc00"},
-        {name: "Poland",         value: 38563573, fill: "#ff9933"},
-        {name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
-        {name: "Spain",          value: 46070146, fill: "#ff9933"},
-        {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
-        {name: "Germany",        value: 80636124,
-         normal:   {
-                     fill: "#ff0000",
-                     stroke: "4 #b30059",
-                   },
-         hovered:  {
-                     fill: "#ff0000",
-                     stroke: "5 white"
-                   },
-         selected: {
-                     fill: "#b30059",
-                     stroke: "5 white"
-                   }
-        }  
+{name: "Belgium",        value: 11443830, fill: "#ffcc00"},
+{name: "France",         value: 64938716, fill: "#ff6600"},
+{name: "Greece",         value: 10892931, fill: "#ffcc00"},
+{name: "Italy",          value: 59797978, fill: "#ff6600"},
+{name: "Netherlands",    value: 17032845, fill: "#ffcc00"},
+{name: "Poland",         value: 38563573, fill: "#ff9933"},
+{name: "Romania",        value: 19237513, fill: "#ffcc00"}, 
+{name: "Spain",          value: 46070146, fill: "#ff9933"},
+{name: "United Kingdom", value: 65511098, fill: "#ff6600"},
+{name: "Germany",        value: 80636124,
+ normal:   {
+             fill: "#ff0000",
+             stroke: "4 #b30059",
+           },
+ hovered:  {
+             fill: "#ff0000",
+             stroke: "5 white"
+           },
+ selected: {
+             fill: "#b30059",
+             stroke: "5 white"
+           }
+}  
       ]} 
     ];
 
     // create a chart and set the data
-    chart = anychart.treeMap(data, "as-tree");
+    var chart = anychart.treeMap(data, "as-tree");
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Appearance (Individual Points)<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Top 10 European Union Countries by Population</span>");
+        "<span style='font-size:12; font-style:italic'>" +
+        "Top 10 European Union Countries by Population</span>");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

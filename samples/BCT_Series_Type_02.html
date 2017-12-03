@@ -1,28 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Series Type 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create a stage    
     stage = anychart.graphics.create("container");  
 
     // set the data
     var data = [
-        {x: Date.UTC(2015, 4, 1), open:18.23, high:19.36, low:18.18, close:19.31},
-        {x: Date.UTC(2015, 4, 2), open:19.50, high:19.89, low:19.00, close:19.29},
-        {x: Date.UTC(2015, 4, 3), open:19.13, high:19.15, low:18.43, close:18.75},
-        {x: Date.UTC(2015, 4, 6), open:18.54, high:18.76, low:18.27, close:18.76},
-        {x: Date.UTC(2015, 4, 7), open:18.76, high:19.14, low:18.63, close:18.76}
+{x: Date.UTC(2015, 4, 1), open:18.23, high:19.36, low:18.18, close:19.31},
+{x: Date.UTC(2015, 4, 2), open:19.50, high:19.89, low:19.00, close:19.29},
+{x: Date.UTC(2015, 4, 3), open:19.13, high:19.15, low:18.43, close:18.75},
+{x: Date.UTC(2015, 4, 6), open:18.54, high:18.76, low:18.27, close:18.76},
+{x: Date.UTC(2015, 4, 7), open:18.76, high:19.14, low:18.63, close:18.76}
     ];
 
     // set the chart type and title
-    chart = anychart.financial();
+    var chart = anychart.financial();
     chart.title("Switching the Series Type");
     chart.title().padding(25);
 
@@ -35,23 +50,23 @@
 
     // create a label for switching to the line series
     createLabel("Switch to OHLC", 10, function () {
-        // change the series type
-        series.seriesType("ohlc");
-        chart.title("Switching the Series Type \n OHLC");
+// change the series type
+series.seriesType("ohlc");
+chart.title("Switching the Series Type \n OHLC");
     });    
 
     // create a label for switching to the column series
     createLabel("Switch to Japanese Candlestick", 140, function () {
-        // change the series type
-        series.seriesType("candlestick");
-        chart.title("Switching the Series Type \n Japanese Candlestick");
+// change the series type
+series.seriesType("candlestick");
+chart.title("Switching the Series Type \n Japanese Candlestick");
     });    
 
     // create a label for switching to the area series
     createLabel("Switch to Range Area", 375, function () {
-        // change the series type
-        series.seriesType("range-area");
-        chart.title("Switching the Series Type \n Range Area");
+// change the series type
+series.seriesType("range-area");
+chart.title("Switching the Series Type \n Range Area");
     });    
 
 });
@@ -68,19 +83,17 @@ function createLabel(text, offset, action){
     label.container(stage);
     label.draw();
     label.listen("mouseOver", function (){
-        label.background().fill("#1976d2 0.5")
-        document.body.style.cursor = "pointer";
-        label.draw();
+label.background().fill("#1976d2 0.5")
+document.body.style.cursor = "pointer";
+label.draw();
     });
     label.listen("mouseOut", function (){
-        label.background().fill("#1976d2")
-        document.body.style.cursor = "auto";
-        label.draw();
+label.background().fill("#1976d2")
+document.body.style.cursor = "auto";
+label.draw();
     });    
     return label;
- };</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+ };
+</script>
 </body>
 </html>

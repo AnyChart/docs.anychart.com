@@ -1,63 +1,75 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js" data-export="true"></script>
-
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <script x-export="chart">
+    <meta name="ac:name" content="STOCK Spline 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
   // set the data
   table = anychart.data.table();
   table.addData([
-        ['2016-01-01', 1.0860],
-        ['2016-01-04', 1.0832],
-        ['2016-01-05', 1.078],
-        ['2016-01-06', 1.0781],
-        ['2016-01-07', 1.0936],
-        ['2016-01-08', 1.0932],
-        ['2016-01-11', 1.0860],
-        ['2016-01-12', 1.0857],
-        ['2016-01-13', 1.0877],
-        ['2016-01-14', 1.0865],
-        ['2016-01-15', 1.0917],
-        ['2016-01-18', 1.0893],
-        ['2016-01-19', 1.0909],
-        ['2016-01-20', 1.0891],
-        ['2016-01-21', 1.0874],
-        ['2016-01-22', 1.0797],
-        ['2016-01-25', 1.0849],
-        ['2016-01-26', 1.0872],
-        ['2016-01-27', 1.0893],
-        ['2016-01-28', 1.0939],
-        ['2016-01-29', 1.0837],
-        ['2016-02-01', 1.0889],
-        ['2016-02-02', 1.0919],
-        ['2016-02-03', 1.1104],
-        ['2016-02-04', 1.1208],
-        ['2016-02-05', 1.1159],
-        ['2016-02-08', 1.1198],
-        ['2016-02-09', 1.1293],
-        ['2016-02-10', 1.1290],
-        ['2016-02-11', 1.1324],
-        ['2016-02-12', 1.1260],
-        ['2016-02-15', 1.1155],
-        ['2016-02-16', 1.1144],
-        ['2016-02-17', 1.1128],
-        ['2016-02-18', 1.1107],
-        ['2016-02-19', 1.1135],
-        ['2016-02-22', 1.1029],
-        ['2016-02-23', 1.1020],
-        ['2016-02-24', 1.1013],
-        ['2016-02-25', 1.1023],
-        ['2016-02-26', 1.0934],
-        ['2016-02-29', 1.0873]
+['2016-01-01', 1.0860],
+['2016-01-04', 1.0832],
+['2016-01-05', 1.078],
+['2016-01-06', 1.0781],
+['2016-01-07', 1.0936],
+['2016-01-08', 1.0932],
+['2016-01-11', 1.0860],
+['2016-01-12', 1.0857],
+['2016-01-13', 1.0877],
+['2016-01-14', 1.0865],
+['2016-01-15', 1.0917],
+['2016-01-18', 1.0893],
+['2016-01-19', 1.0909],
+['2016-01-20', 1.0891],
+['2016-01-21', 1.0874],
+['2016-01-22', 1.0797],
+['2016-01-25', 1.0849],
+['2016-01-26', 1.0872],
+['2016-01-27', 1.0893],
+['2016-01-28', 1.0939],
+['2016-01-29', 1.0837],
+['2016-02-01', 1.0889],
+['2016-02-02', 1.0919],
+['2016-02-03', 1.1104],
+['2016-02-04', 1.1208],
+['2016-02-05', 1.1159],
+['2016-02-08', 1.1198],
+['2016-02-09', 1.1293],
+['2016-02-10', 1.1290],
+['2016-02-11', 1.1324],
+['2016-02-12', 1.1260],
+['2016-02-15', 1.1155],
+['2016-02-16', 1.1144],
+['2016-02-17', 1.1128],
+['2016-02-18', 1.1107],
+['2016-02-19', 1.1135],
+['2016-02-22', 1.1029],
+['2016-02-23', 1.1020],
+['2016-02-24', 1.1013],
+['2016-02-25', 1.1023],
+['2016-02-26', 1.0934],
+['2016-02-29', 1.0873]
   ]);
   
   // map the data
@@ -65,7 +77,7 @@ anychart.onDocumentReady(function () {
   mapping.addField('value', 1);
 
   // chart type
-  chart = anychart.stock();
+  var chart = anychart.stock();
 
   // set the series
   var series = chart.plot(0).spline(mapping);
@@ -77,8 +89,5 @@ anychart.onDocumentReady(function () {
   chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

@@ -1,32 +1,46 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-tag-cloud.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js" data-export="true"></script>
-	<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" data-export="true">
-    <script x-export="stage">anychart.onDocumentReady(function () {
+    <meta name="ac:name" content="BCT Tag Cloud Chart 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-tag-cloud.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create a stage
-    stage = anychart.graphics.create("container");
+    var stage = anychart.graphics.create("container");
 
     // create data   
     var data = [
-        {x: "learning", value: 100},
-        {x: "includes", value: 10},
-        {x: "lists", value: 10},
-        {x: "meaning", value: 1},
-        {x: "useful", value: 1},
-        {x: "different", value: 1},
-        {x: "grammar", value: 1},
-        {x: "teaching", value: 1},
-        {x: "example", value: 1},
-        {x: "thing", value: 1},
+{x: "learning", value: 100},
+{x: "includes", value: 10},
+{x: "lists", value: 10},
+{x: "meaning", value: 1},
+{x: "useful", value: 1},
+{x: "different", value: 1},
+{x: "grammar", value: 1},
+{x: "teaching", value: 1},
+{x: "example", value: 1},
+{x: "thing", value: 1},
     ];
 
     // set the position and data for the first tag cloud
@@ -49,9 +63,7 @@
     tagCloud2.container(stage)
     //initiate drawing the chart 
     tagCloud2.draw();  
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

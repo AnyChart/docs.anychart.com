@@ -1,41 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/graphics.min.js" data-export="true"></script>
+    <meta name="ac:name" content="GFX stroke color"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/graphics.min.js"></script>
+    
+    
     <style>
-      html, body, #container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>    
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
 <div id="container"></div>
-<script x-export="stage">
-
-stage = acgraph.create("container");
+<script>
+var stage = acgraph.create("container");
  stage.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22)
-         .fill("none")
-         .stroke("5 orange .7");
+ .fill("none")
+ .stroke("5 orange .7");
 
 stage.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22)
-        .fill("none")
-        .stroke(["red", "blue"], 15);
+.fill("none")
+.stroke(["red", "blue"], 15);
 
 stage.rect(22, 3 * stage.height() / 3 - 35, stage.width() - 44, 5)
-        .fill("none")
-        .stroke({
-            keys: [".1 red", "white"],
-            cx: .5,
-            cy: .5,
-            fx: .3,
-            fy: .4
-        }, 4);
-    </script>
+.fill("none")
+.stroke({
+    keys: [".1 red", "white"],
+    cx: .5,
+    cy: .5,
+    fx: .3,
+    fy: .4
+}, 4);
+</script>
 </body>
 </html>
