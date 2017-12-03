@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="WD No Data 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    var chart = anychart.column();
+
+    // configure no data label
+    noDataLabel = chart.noData().label();
+    noDataLabel.enabled(true);
+    noDataLabel.text("Error: could not connect to data server");
+    noDataLabel.hAlign('center');
+    noDataLabel.background().enabled(true);
+    noDataLabel.background().fill("Red 0.3").stroke("2 Red");
+    noDataLabel.padding(40);
+
+    attemp = 0;
+
+    // attach events to no data label
+    noDataLabel.listen('click', function () {
+      noDataLabel.text("Error: could not connect to data server... \n\n Attemp #" + attemp++);
+    });
+    noDataLabel.listen('mouseover', function () {
+      document.body.style.cursor = "pointer";           
+    });    
+    noDataLabel.listen('mouseout', function () {
+      document.body.style.cursor = "auto";          
+    });   
+
+    chart.title("No Data: Configure Label Event");
+    
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</body>
+</html>

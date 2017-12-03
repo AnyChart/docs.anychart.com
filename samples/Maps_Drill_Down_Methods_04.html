@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Drill Down Methods 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+
+    // create a container for maps and a button
+    stage = anychart.graphics.create("container");
+
+    // data sets
+    worldDataSet = [
+{id: "US"}
+    ];
+    usaDataSet = [
+{id: "US.TX"}
+    ];
+
+    // world map
+    chart = anychart.map();
+    chart.geoData(anychart.maps.world);
+    worldSeries = chart.choropleth(worldDataSet);
+    
+    // usa map
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
+
+    // texas map
+    txMap = anychart.map();
+    txMap.geoData(anychart.maps["texas"]);
+
+    // set drill down for maps
+    worldSeries.listen("pointClick", function(e) {
+    // Drill down to the specified map.
+chart.drillTo(e.point.get("id"), map);
+    });
+
+    usaSeries.listen("pointClick", function(e) {
+    // Drill down to the specified map.
+chart.drillTo(e.point.get("id"), txMap);
+    });
+
+    // listen for draw event and update path in a title
+    chart.listen("chartDraw",function (){
+    // get drilldown path
+    var path = chart.getDrilldownPath();
+      
+    // get link to the current chart
+    var cv = path[path.length - 1].getCurrentChart();
+      
+    // update path in the title of appropriate instance
+    cv.title(printPath(path))
+    });
+
+    // create drill up label
+    drillToLabel = createLabel("Drill Up", 0, function () {
+      // Drill down to the specified item.
+      chart.drillUp();
+    });
+    
+    // set chart bounds and display it
+    chart.container(stage);
+    chart.draw();
+
+});
+
+// function to turn current drill down path structure to string
+function printPath(path){
+// root element is the World in this case
+    var text = "World";
+    // go through the next levels
+    for (i = 1; i <  path.length; i++) { 
+        text +=  " -> " + path[i].getProperties().name;
+    }
+    return text;
+}
+
+// helper function to create buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#9E9E9E"});
+    label.zIndex(1000);
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    return label;
+}
+</script>
+</body>
+</html>

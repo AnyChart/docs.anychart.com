@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Vertical 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a stage    
+    stage = anychart.graphics.create("container"); 
+
+    // data
+    var data = [
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
+    ];
+
+    // create a chart
+    var chart = anychart.column();
+
+    // set data
+    chart.data(data);
+
+    // set the chart position and title
+    chart.top(35);
+    chart.title("Vertical Charts: Changing On-the-Fly (Chart)");
+
+    // set the container
+    chart.container(stage);
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // create a label for changing the orientation of the chart to vertical
+    createLabel("Vertical Orientation", 10, function () {
+// change the orientation of the chart
+chart.isVertical(true);
+    });
+
+    // create a label for changing the orientation of the chart to horizontal
+    createLabel("Horizontal Orientation", 155, function () {
+// change the orientation of the chart
+chart.isVertical(false);
+    });
+});
+    
+// a helper function for creating buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#1976d2"});
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    label.listen("mouseOver", function (){
+label.background().fill("#1976d2 0.5");
+document.body.style.cursor = "pointer";
+label.draw();
+    });
+    label.listen("mouseOut", function (){
+label.background().fill("#1976d2");
+document.body.style.cursor = "auto";
+label.draw();
+    });    
+    return label;
+};
+</script>
+</body>
+</html>

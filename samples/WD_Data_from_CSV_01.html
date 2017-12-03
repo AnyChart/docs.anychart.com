@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="WD Data from CSV 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  
+  // create CSV string
+  var csvString = '2009-02-05,6764.81\n' +
+'2009-02-07,7056.48\n' +
+'2009-02-18,7180.97\n' +
+'2009-02-26,7269.06\n' +
+'2009-02-25,7349.58\n' +
+'2009-02-24,7115.34\n' +
+'2009-02-23,7365.99\n' +
+'2009-02-20,7461.49\n' +
+'2009-02-19,7555.23';
+
+  // create an area chart      
+  var chart = anychart.area();
+
+  // create the area series based on CSV data
+  chart.area(csvString);
+
+  // display a chart
+  chart.container('container').draw();
+});
+</script>
+</body>
+</html>

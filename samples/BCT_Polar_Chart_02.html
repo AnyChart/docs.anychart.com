@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Polar Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-polar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: 0, value: 500},
+      {x: 180, value: 200}
+    ];
+    
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
+    // set the position and data for the first chart
+    var polar1 = anychart.polar();
+    polar1.title("Start Angle: Default (0?)");
+    polar1.bounds(0, 0, "50%", "100%");
+    // create a line series
+    polar1.line(data);
+    // set the maximum value of the x-scale
+    polar1.xScale().maximum(360);
+    // set the chart container
+    polar1.container(stage);
+    // initiate drawing the chart
+    polar1.draw();  
+
+    // set the position and data for the second chart
+    var polar2 = anychart.polar();
+    polar2.title("Start Angle: 90?");
+    polar2.bounds("50%", 0, "50%", "100%");
+    // create a line series
+    polar2.line(data);
+    // set the start angle
+    polar2.startAngle(90);
+    // set the maximum value of the x-scale
+    polar2.xScale().maximum(360);
+    // set the chart container
+    polar2.container(stage);
+    // initiate drawing the chart
+    polar2.draw();    
+});
+</script>
+</body>
+</html>

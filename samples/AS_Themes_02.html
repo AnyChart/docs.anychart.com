@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Themes 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  var stage = anychart.graphics.create("container");
+
+  // data
+  var dataSet = anychart.data.set([
+    ["Department Stores", 637166, 254463, 353554, 856175],
+    ["Discount Stores", 721630, 366655, 734634, 365654],
+    ["Men's/Women's Specialty Stores", 148662, 252522, 123488, 903112],
+    ["All other outlets", 90000, 61000, 72000, 94000, 83000]
+  ]);
+
+  // apply custom themes
+  anychart.theme([barTheme, columnTheme, splineTheme]);
+
+  // create charts
+  barChart = anychart.bar();
+  columnChart = anychart.column();
+  splineChart = anychart.line();
+  
+  seriesData_1 = dataSet.mapAs({x: 0, value: 1});
+  seriesData_2 = dataSet.mapAs({x: 0, value: 2});
+  seriesData_3 = dataSet.mapAs({x: 0, value: 3});
+  seriesData_4 = dataSet.mapAs({x: 0, value: 4});
+
+  seriesBar = barChart.bar(seriesData_1);
+  seriesBar.fill("#cac4b0");
+  seriesBar.stroke(null);
+
+  columnChart.column(seriesData_1);
+  columnChart.column(seriesData_3);
+
+  splineChart.spline(seriesData_1);
+  splineChart.spline(seriesData_2);
+  splineChart.spline(seriesData_3);
+  splineChart.spline(seriesData_4);
+
+  // set container and draw charts
+  barChart.container(stage);
+  barChart.draw();
+  columnChart.container(stage);
+  columnChart.draw();
+  splineChart.container(stage);
+  splineChart.draw();
+});
+
+barTheme = {
+  "bar": {
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":{
+      "fill": "#999999 .1"
+    },
+    "bounds": [0, 0, '50%', '50%']
+  },
+  "defaultTitle": {
+    "enabled": true,
+    "hAlign": "left"
+  },
+  "defaultTooltip": {
+      "enabled": true,
+      "title": false,
+      "separator": false
+  },
+  "chart": {
+    "title": {
+      "text": "Bar Chart",
+      "fontSize": 20,
+      "fontColor": "black"
+    }
+  }
+};
+
+columnTheme = {
+  "column": {
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":"#999999 .1",
+    "palette": {
+      "type": "distinct",
+      "items": ["#9f8170", "#828282"]
+    },
+    "bounds": ['50%', 0, '50%', '50%']
+  },
+  "chart": {
+    "title": {
+      "text": "Bar and Column Charts",
+      "fontSize": 18,
+      "fontColor": "red",
+      "align": "right"
+    },
+    "tooltip":{
+       "displayMode": "separated"
+    }
+  }
+};
+
+splineTheme = {
+  "line": {
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":{
+      "fill": "#999999 .1"
+    },
+    "palette": {
+      "type": "distinct",
+      "items": ["#9f8170", "#000", "#911e42", "#21421e"]
+    },
+    "bounds": [0, '50%', '100%', '50%']
+  },
+  "chart": {
+    "title": {
+      "text": "Bar, Column and Spline Charts",
+      "fontSize": 16,
+      "fontColor": "#c1876b",
+      "align": "center"
+    },
+    "tooltip":{
+       "displayMode": "union",
+       "positionMode": "point"
+    }
+  }
+};
+</script>
+</body>
+</html>

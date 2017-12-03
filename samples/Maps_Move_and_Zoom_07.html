@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Move and Zoom 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+
+    // set the stage as a container
+    stage = anychart.graphics.create("container");
+
+    // create data set
+    var data = [
+      {'id': 'US.MA', 'value': 0},
+      {'id': 'US.MN', 'value': 1},
+      {'id': 'US.MT', 'value': 2},
+      {'id': 'US.ND', 'value': 3},
+      {'id': 'US.HI', 'value': 4},
+      {'id': 'US.ID', 'value': 5},
+      {'id': 'US.WA', 'value': 6},
+      {'id': 'US.AZ', 'value': 7},
+      {'id': 'US.CA', 'value': 8},
+      {'id': 'US.CO', 'value': 9},
+      {'id': 'US.NV', 'value': 10},
+      {'id': 'US.NM', 'value': 11},
+      {'id': 'US.OR', 'value': 12},
+      {'id': 'US.UT', 'value': 13},
+      {'id': 'US.WY', 'value': 14},
+      {'id': 'US.AR', 'value': 15},
+      {'id': 'US.IA', 'value': 16},
+      {'id': 'US.KS', 'value': 17},
+      {'id': 'US.MO', 'value': 18},
+      {'id': 'US.NE', 'value': 19},
+      {'id': 'US.OK', 'value': 20},
+      {'id': 'US.SD', 'value': 21},
+      {'id': 'US.LA', 'value': 22},
+      {'id': 'US.TX', 'value': 23},
+      {'id': 'US.CT', 'value': 24},
+      {'id': 'US.NH', 'value': 25},
+      {'id': 'US.RI', 'value': 26},
+      {'id': 'US.VT', 'value': 27},
+      {'id': 'US.AL', 'value': 28},
+      {'id': 'US.FL', 'value': 29},
+      {'id': 'US.GA', 'value': 30},
+      {'id': 'US.MS', 'value': 31},
+      {'id': 'US.SC', 'value': 32},
+      {'id': 'US.IL', 'value': 33},
+      {'id': 'US.IN', 'value': 34},
+      {'id': 'US.KY', 'value': 35},
+      {'id': 'US.NC', 'value': 36},
+      {'id': 'US.OH', 'value': 37},
+      {'id': 'US.TN', 'value': 38},
+      {'id': 'US.VA', 'value': 39},
+      {'id': 'US.WI', 'value': 40},
+      {'id': 'US.WV', 'value': 41},
+      {'id': 'US.DE', 'value': 42},
+      {'id': 'US.MD', 'value': 43},
+      {'id': 'US.NJ', 'value': 44},
+      {'id': 'US.NY', 'value': 45},
+      {'id': 'US.PA', 'value': 46},
+      {'id': 'US.ME', 'value': 47},
+      {'id': 'US.MI', 'value': 48},
+      {'id': 'US.AK', 'value': 49}
+    ];
+
+    // create map
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+
+    // set the map title
+    map.title("Move the map");
+
+    // set the choropleth series
+    map.choropleth(data);
+
+    // set default zoom
+    map.zoom(1.2);
+
+    // put the map in the container 
+    map.container(stage);
+
+    // draw a map
+    map.draw();
+
+    // up button
+    upButton = createButton("Up", 0, 50);
+    upButton.listen("click", function (){
+map.move(0, 10);
+    });
+
+    // down button
+    downButton = createButton("Down", 0, 20);
+    downButton.listen("click", function (){
+map.move(0, -10);
+    });
+
+    // left button
+    leftButton = createButton("Left", -50, 20);
+    leftButton.listen("click", function (){
+map.move(10, 0);
+    });
+
+    // right button
+    rightButton = createButton("Right", 50, 20);
+    rightButton.listen("click", function (){
+map.move(-10, 0);
+    });
+    
+    // disable all default interactivity on the map
+    map.interactivity(false);
+
+});
+
+// helper function to create buttons
+    function createButton(text, offsetX, offsetY){
+    var button = anychart.standalones.label();
+    button.background({fill: "#1976d2"});
+    button.text(text);
+    button.fontColor("#fff");
+    button.padding(5); 
+    button.position('center-bottom');
+    button.anchor('center-bottom');
+    button.offsetX(offsetX);
+    button.offsetY(offsetY);
+    button.container(stage);
+    button.draw();
+    button.listen("mouseOver", function (){
+button.background().fill("#1976d2 0.5")
+document.body.style.cursor = "pointer";
+button.draw();
+    });
+    button.listen("mouseOut", function (){
+button.background().fill("#1976d2")
+document.body.style.cursor = "auto";
+button.draw();
+    });     
+    return button;
+}
+</script>
+</body>
+</html>

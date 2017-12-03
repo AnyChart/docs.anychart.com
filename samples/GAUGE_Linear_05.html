@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Linear 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-linear-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [150, 250, 300, 170];
+
+    // set the gauge type
+    var gauge = anychart.gauges.tank();
+
+    // set the data for the gauge
+    gauge.data(data);
+
+    // create the first pointer (tank)
+    var tank = gauge.tank(0);
+
+    // set the width and offset of the tank pointer (both as percentages of the gauge width)
+    tank.width('10%');
+    tank.offset('10%');
+
+    // create the second pointer (marker)
+    var marker = gauge.marker(1);
+
+    // set the marker type
+    marker.type('triangle-left');
+
+    // set the zIndex of the marker
+    marker.zIndex(10);
+
+    // set the width and offset of the marker pointer (both as percentages of the gauge width)
+    marker.width('2.5%');
+    marker.offset('23%');
+
+    // configure the third pointer (bar)
+    var bar_1 = gauge.bar(2);
+    bar_1.offset('22%');
+    bar_1.width('2%');
+
+    // configure the fourth pointer (bar)
+    var bar_2 = gauge.bar(3);
+    bar_2.offset('26%');
+    bar_2.width('2%');
+
+    // configure the axis
+    var axis = gauge.axis();
+    axis.offset('-1%');
+
+    // set the container id
+    gauge.container('container');
+
+    // initiate drawing the gauge
+    gauge.draw();
+});
+</script>
+</body>
+</html>

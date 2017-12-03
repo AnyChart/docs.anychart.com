@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Custom Drawing 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // create column chart
+    var chart = anychart.column();
+
+    var data = [
+['Eyeshadows', 16252],
+['Eyeliner', 8525],
+['Eyebrow pencil', 1451],
+['Nail polish', 10169],
+['Lipstick', 15198],
+['Lip gloss', 17489]
+    ];
+
+
+    // create first series with mapped data
+    var series = chart.column(data);
+    
+    // set rendering settings
+    series.rendering()
+    // set point function to drawing
+    .point(drawer)
+    .updatePoint(drawer);
+
+    // set container id for the chart and initiate chart drawing
+    chart.container('container').draw();
+});
+
+function drawer() {
+    // if missing (not correct data), then skipping this point drawing
+    if (this.missing) {
+return;
+    }
+
+    // get shapes group
+    var shapes = this.shapes || this.getShapesGroup(this.pointState);
+    // calculate the left value of the x-axis
+    var leftX = this.x - this.pointWidth / 2;
+    // calculate the right value of the x-axis
+    var rightX = leftX + this.pointWidth;
+    // calculate the half of point width
+    var rx = this.pointWidth / 2;
+
+    shapes['path']
+    // resets all 'path' operations
+    .clear()
+    // draw cone
+    .moveTo(leftX, this.zero)
+    .lineTo(leftX + rx, this.value)
+    .lineTo(rightX, this.zero)
+    // set fill settings, gradient
+    .fill(["0 " + anychart.color.darken(shapes['path'].fill().color, 0.35),
+        "0.40 " + anychart.color.darken(shapes['path'].fill().color, 0.35),
+        "0.85 " + anychart.color.lighten(shapes['path'].fill().color, 0.35),
+        "1 " + anychart.color.lighten(shapes['path'].fill().color, 0.35)])
+    // set stroke settings
+    .stroke('1.5 ' + anychart.color.darken(shapes['path'].fill().color, 0.5))
+    // close by connecting the last point with the first straight line
+    .close();
+}
+</script>
+</body>
+</html>

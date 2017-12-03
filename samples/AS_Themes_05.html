@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Themes 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // create variable for custom theme
+  var customTheme = {
+    // define settings for bar charts
+    "column":{
+      "defaultXAxisSettings": {
+"labels": {
+  // make all x labels 3 symbols long
+  "format": function (){
+    var value = this.value;
+    value = value.substr(0, 3);
+    return value
+  },
+  "title": "Month"
+}
+      },
+      "scales": [
+// default x scale
+{"type": "ordinal"},
+{
+  "type": "linear",
+  "minimum": 0,
+  "maximum": 120,
+  "ticks": {
+    "interval": 20
+  }
+},
+{
+  "type": "linear",
+  "minimum": 0,
+  "maximum": 900000,
+  "ticks:": {
+    "interval": 150000
+  }
+}
+      ],
+      "yScale": 2,
+      "yAxes": [
+// settings for default y axis
+{
+  "scale": 2,
+  "orientation": "left",
+  "labels": {
+    "format": function (){
+      return "$"+this.value
+    }
+  }
+},
+// settings for additional y axis
+{
+  "orientation": "right",
+  "scale": 1,
+  "drawLastLabel": false,
+  "labels": {
+    "format": function (){
+      return this.value + "%"
+    }
+  }
+}
+      ],
+      // series settings
+      "defaultSeriesSettings": {
+"column":{
+  "normal":{"labels": {
+    "enabled": true,
+    "fontColor": "#fff",
+    "position": "center",
+    "anchor": "center",
+    "rotation": -90,
+    "fontWeight": 900
+  }},
+  "tooltip": {
+    "format": function () {
+      return "Month: " + this.x + "\nIncome: " + this.value
+    }
+  }
+}
+      }
+    }
+  };
+
+  // data
+  var firstHalf = anychart.data.set([
+    ["January",   537166, 639657],
+    ["February",  421630, 385923],
+    ["March",     648662, 284603],
+    ["April",     390000, 573921],
+    ["May",       584213, 192848],
+    ["June",      491842, 492747]
+  ]);
+
+  var secondHalf = anychart.data.set([
+    ["July",      617166, 237561],
+    ["August",    721630, 495714],
+    ["September", 248662, 375691],
+    ["October",   731284, 538164],
+    ["November",  542648, 695718],
+    ["December",  299742, 617394]
+  ]);
+
+  // apply custom theme
+  anychart.theme(customTheme);
+
+  var table = anychart.standalones.table();
+  table.contents([
+    ["Year 2005", null],
+    [
+      anychart.column(firstHalf.mapAs({x: 0, value: 1})),
+      anychart.column(secondHalf.mapAs({x: 0, value: 1}))
+    ],
+    ["Year 2006", null],
+    [
+      anychart.column(firstHalf.mapAs({x: 0, value: 2})),
+      anychart.column(secondHalf.mapAs({x: 0, value: 2}))
+    ]
+  ]);
+
+  table.getRow(0).height(30);
+  table.getCell(0,0).colSpan(2);
+
+  table.getRow(2).height(30);
+  table.getCell(2,0).colSpan(2);
+
+  table.vAlign("middle");
+  table.hAlign("center");
+  table.cellBorder(null);
+  table.rowEvenFill("#efefef");
+  table.container("container");
+  table.draw();
+});
+</script>
+</body>
+</html>

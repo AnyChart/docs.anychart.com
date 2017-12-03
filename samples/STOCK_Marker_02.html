@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="STOCK Marker 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // set the data
+    table = anychart.data.table('x');
+    table.addData([
+{x:'1790-01-01', value: 3929},
+{x:'1795-01-01', value: 4390},
+{x:'1800-01-01', value: 5236},
+{x:'1805-01-01', value: 5989},
+{x:'1810-01-01', value: 7239},
+{x:'1815-01-01', value: 8722},
+{x:'1820-01-01', value: 9638},
+{x:'1825-01-01', value: 10923},
+{x:'1830-01-01', value: 12866},
+{x:'1835-01-01', value: 15454},
+{x:'1840-01-01', value: 17069},
+{x:'1845-01-01', value: 19234},
+{x:'1850-01-01', value: 23191},
+{x:'1855-01-01', value: 28347},
+{x:'1860-01-01', value: 31443},
+{x:'1865-01-01', value: 34098},
+{x:'1870-01-01', value: 38558},
+{x:'1875-01-01', value: 44728},
+{x:'1880-01-01', value: 49371},
+{x:'1885-01-01', value: 53989},
+{x:'1890-01-01', value: 62979},
+{x:'1895-01-01', value: 71883},
+{x:'1900-01-01', value: 76212},
+{x:'1905-01-01', value: 85023},
+{x:'1910-01-01', value: 92228},
+{x:'1915-01-01', value: 100378},
+{x:'1920-01-01', value: 106021},
+{x:'1925-01-01', value: 118323},
+{x:'1930-01-01', value: 123202},
+{x:'1935-01-01', value: 126232},
+{x:'1940-01-01', value: 132164}
+    ]);
+  
+    // map the data
+    mapping = table.mapAs({x:'x', value:'value'});
+
+    // chart type
+    var chart = anychart.stock();
+
+    // set the series
+    var series = chart.plot(0).marker(mapping);
+    series.name("USA");
+
+    // set chart title
+    chart.title('Stock Marker Demo: population growth \n(Object data notation)');
+
+    // display chart
+    chart.container('container');
+    chart.draw();
+});
+</script>
+</body>
+</html>

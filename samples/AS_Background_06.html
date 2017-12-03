@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Background 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // data
+  var data = [
+      ["P1", 16, 20],
+      ["P2", 12, 18],
+      ["P3", 9, 14]
+  ];
+
+  var stage = anychart.graphics.create("container");
+
+  // title
+  var title = anychart.standalones.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("Corners Types");
+  title.container(stage);
+  title.draw();
+
+
+  // Chart without background corners adjustment
+  var chart_1 = anychart.column();
+  chart_1.data(data);
+
+  // setting title
+  chart_1.title("Default Corners");
+
+  // setting stroke for chart container
+  var defaultBackground = chart_1.background();
+  defaultBackground.stroke("3 red");
+  // set corner type
+  defaultBackground.cornerType("none");
+
+  // setting position and bounds
+  chart_1.bounds("1%", "10%", "48%", "44%");
+
+  // draw chart
+  chart_1.container(stage);
+  chart_1.draw();
+
+
+  // chart with round corners
+  var chart_2 = anychart.column();
+  chart_2.data(data);
+  chart_2.title("Round Corners");
+  chart_2.bounds("51%", "10%", "48%", "44%");
+
+  // chart background
+  var roundBackground = chart_2.background();
+  roundBackground.stroke("3 red");
+  // set corner type
+  roundBackground.cornerType("round");
+  // apply corner type only for top-left and bottom-right corners.
+  roundBackground.corners(10, 0, 10, 0); 
+
+  // draw chart
+  chart_2.container(stage);
+  chart_2.draw();
+
+
+  // chart with round inner background corners
+  var chart_3 = anychart.column();
+  chart_3.data(data);
+
+  // chart title
+  chart_3.title("Round Inner Corners");
+
+  // chart size and position
+  chart_3.bounds("1%", "55%", "48%", "44%");
+
+  // adjust chart background
+  var innerBackground = chart_3.background();
+  // set stroke color and thickness
+  innerBackground.stroke("3 red");
+  // corner type
+  innerBackground.cornerType("round-inner");
+  // corner radius
+  innerBackground.corners(10);
+
+  // draw chart
+  chart_3.container(stage);
+  chart_3.draw();
+
+
+  // chat with labels inside
+  var chart_4 = anychart.column();
+  chart_4.data(data);
+
+  // chart title
+  chart_4.title("Cut background Corner");
+
+  // chart size and position
+  chart_4.bounds("51%", "55%", "48%", "44%");
+
+  // adjust background
+  var cutBackground = chart_4.background();
+  // set background stroke color and thickness
+  cutBackground.stroke("3 red");
+  // set corner type
+  cutBackground.cornerType("cut");
+  // set corner radius and apply it only to top corners
+  cutBackground.corners(10, 10, 0, 0);
+
+  // draw chart
+  chart_4.container(stage);
+  chart_4.draw();
+});
+</script>
+</body>
+</html>

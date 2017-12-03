@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Venn Diagram 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-venn.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    //create data
+    var data = [
+{x: "A", value: 100},
+{x: "B", value: 100},
+{x: ["A", "B"], value: 25}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.venn(data);
+
+    // configure the labels of intersections
+    chart.intersections().labels().format("{%x}");
+
+    // set the chart title
+    chart.title("Venn Diagram: Basic Sample");
+
+    // set the container id
+    chart.container('container');
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

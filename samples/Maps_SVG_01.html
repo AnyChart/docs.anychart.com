@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps SVG 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // svgImage as string
+
+    svgImage = '<svg xmlns="https://www.w3.org/2000/svg">' +
+    '<g data-ac-wrapper-id="3">' +
+    '<circle id="1" cx="50" cy="50" r="20" fill="#90caf9" stroke="black"></circle>' +
+    '<circle id="2" cx="150" cy="50" r="20" fill="#80cbc4" stroke="black"></circle>' +
+    '<circle id="3" cx="100" cy="100" r="20" fill="#aed581" stroke="black"></circle>' +
+    '</g></svg>';
+
+    // sample data
+    var dataSet = anychart.data.set([
+['1', 300],
+['2', 230]
+    ]);
+
+    // mapping the data to the chart
+    mapDataSet = dataSet.mapAs({id: 0, value: 1});
+
+    var map = anychart.map();
+    map.geoData(svgImage);
+    
+    map.title('SVG Sample Map');
+    
+    // set the series
+    var series = map.choropleth(mapDataSet);
+    series.geoIdField('id');
+
+    // disable the labels
+    series.labels(false);
+
+    // draw a map
+    map.container('container');    
+    map.draw();
+});
+</script>
+</body>
+</html>

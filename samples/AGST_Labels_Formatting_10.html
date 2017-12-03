@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Labels Formatting 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // data 
+  data = [
+    ["Category1", 16, 20],
+    ["Category2", 12, 18],
+    ["Category3", 9, 14],
+    ["Category4", 13, 15],
+    ["Category5", 19, 16],
+    ["Category6", 14, 10],
+    ["Category7", 11, 22],
+    ["Category8", 17, 11],
+    ["Category9", 9, 14]
+  ];
+
+  // create chart
+  var chart = anychart.column();
+  chart.data(data)
+  chart.title("Stagger Labels");
+
+  // enabling stagger mode
+  chart.xAxis().staggerMode(true);
+  // adjusting settings for stagger mode
+  chart.xAxis().staggerLines(2);
+
+  // display chart
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

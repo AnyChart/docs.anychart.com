@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Pert Settings 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pert.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    var data = [
+        {id: "1", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
+        {id: "2", optimistic: 3, pessimistic: 8, mostLikely: 5, name: "B"},
+        {id: "3", optimistic: 1, pessimistic: 4, mostLikely: 3, name: "D"},
+        {id: "4", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "AD", dependsOn: ["1", "3"]},
+        {id: "5", optimistic: 4, pessimistic: 16, mostLikely: 10, name: "BC", dependsOn: ["2", "3"]}
+    ];
+
+    var chart = anychart.pert();
+    chart.data(data, "as-table");
+
+    // set critical path milestones colors
+    milestones = chart.criticalPath().milestones();
+    milestones.fill("#ffab91");
+    milestones.hovered().fill("#ff6e40");
+    milestones.selected().fill("#ff6e40");
+    milestones.labels().fontColor("#86614e");
+    // set critical tasks stroke
+    tasks = chart.criticalPath().tasks();
+    tasks.stroke("#ffab91");
+
+    chart.title("Adjusting visual settings for the critical path");
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</body>
+</html>

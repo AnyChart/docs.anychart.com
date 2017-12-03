@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Spline Chart"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}
+    ];
+
+    // create a chart
+    var chart = anychart.line();
+
+    // create a spline series and set the data
+    var series = chart.spline(data);
+
+    // set the chart title
+    chart.title("Spline Chart");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

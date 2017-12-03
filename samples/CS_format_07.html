@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS format 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // chart data
+  var data_0 = [
+    {x: 1, low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
+    {x: 2, low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+    {x: 3, low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+    {x: 4, low: 4000, q1: 5000, median: 5500, q3: 6500, high: 7000},
+    {x: 5, low: 8000, q1: 8400 , median: 8500, q3: 8800, high: 9000}
+  ];
+  var data_1 = [
+    {x: 1, low: 1300, q1: 1400, median: 1700, q3: 2000, high: 2100, outliers:[2300,1000]},
+    {x: 2, low: 2500, q1: 3400, median: 3500, q3: 3600, high: 3700, outliers:[4000,2200], extra_inf: ["Redundancy"]},
+    {x: 3, low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000, outliers:[3450,1800]},
+    {x: 4, low: 4000, q1: 5000, median: 5500, q3: 6000, high: 7000, outliers:[7100,3700]},
+    {x: 5, low: 8100, q1: 8400, median: 8500, q3: 9000, high: 9500, outliers:[9700,7600,4500]}
+  ];
+
+  // create box chart
+  var chart = anychart.box();
+
+  // set chart title text settings
+  chart.title("Labels Format: Custom Fields");
+
+  // create box chart series
+  var series0 = chart.box(data_0);
+  var series1 = chart.box(data_1);
+   
+  // enable the labels
+  series1.labels().enabled(true);
+   
+  // use the text format
+  series1.labels().format(function (){
+    return(this.getData("extra_inf"));
+  });
+
+  // positioning the label
+  series1.labels().offsetY(20);
+
+  // set container id for the chart
+  chart.container("container");
+
+  // initiate chart drawing
+  chart.draw();
+});
+</script>
+</body>
+</html>

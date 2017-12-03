@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Strokes and Lines 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // chart type
+  var chart = anychart.line();
+
+  // title
+  chart.title("Sample Line Settings");
+
+  // data
+  var data = anychart.data.set([
+    ["P1", 1, 6, -7, -6],
+    ["P2", 3, 4, -4, -1],
+    ["P3", 2, 5, -2, 1],
+    ["P4", 4, 3.4, -4, 1],
+    ["P5", 6, 6.8, 2, 3]
+  ]);
+
+  // set first series data
+  var line = chart.line(data.mapAs({x: 0, value: 1}));
+  // set stroke thickness 5px and stroke color as red
+  line.stroke("5 red");
+  // stroke settings for mouse over the series
+  line.hovered().stroke("5 red");
+  // set series name
+  line.name("Solid Stroke Color");
+
+  // set data into second series
+  var spline = chart.spline(data.mapAs({x: 0, value: 2}));
+  // set stroke thickness 5px, stroke color green and stroke opacity 0.4
+  spline.stroke("5 green 0.4");
+  // stroke settings for mouse over the series 
+  spline.hovered().stroke("5 #006600 0.4");
+  // set series name
+  spline.name("Solid Color with Opacity");
+    
+  // set data into third series
+  var step = chart.stepLine(data.mapAs({x: 0, value: 3}));
+  // set stroke thickness 5px and apply gradient colors
+  step.stroke({
+    keys: [".1 red", ".5 blue", ".9 green"],
+    thickness: 5
+  });
+  // disable marker on mouse over
+  step.hovered().markers(false);
+  // set series name
+  step.name("Gradient Color");
+
+  // set data into forth series
+  var area = chart.splineArea(data.mapAs({x: 0, value: 4}));
+  area.stroke({
+    // stroke color
+    color: "darkblue",
+    // dash settings
+    dash: "5 2 5",
+    // stroke thickness
+    thickness: 3}
+  );
+  area.hovered().stroke({
+    // stroke color
+    color: "darkblue",
+    // dash settings
+    dash: "5 2 5",
+    // stroke thickness
+    thickness: 3
+  });
+  area.fill("gold 0.4");
+  area.name("Dashed Stroke");
+
+  // draw
+  chart.container("container").draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS Interactivity 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// create a stage
+var stage = anychart.graphics.create("container");
+
+// data set
+var data = [
+    {x:"2000", value: 10048, qtrBreakdown: [["Q1", 761], ["Q2", 530], ["Q3", 890], ["Q4", 979]]},
+    {x:"2001", value: 10938, qtrBreakdown: [["Q1", 886], ["Q2", 580], ["Q3", 990], ["Q4", 997]]},
+    {x:"2002", value: 9989,  qtrBreakdown: [["Q1", 832], ["Q2", 740], ["Q3", 912], ["Q4", 850]]},
+    {x:"2003", value: 10226, qtrBreakdown: [["Q1", 904], ["Q2", 912], ["Q3", 914], ["Q4", 899]]},
+    {x:"2004", value: 11004, qtrBreakdown: [["Q1", 886], ["Q2", 980], ["Q3", 109], ["Q4", 812]]},
+    {x:"2005", value: 10934, qtrBreakdown: [["Q1", 902], ["Q2", 867], ["Q3", 830], ["Q4", 993]]},
+    {x:"2006", value: 11275, qtrBreakdown: [["Q1", 104], ["Q2", 839], ["Q3", 854], ["Q4", 993]]},
+    {x:"2007", value: 11945, qtrBreakdown: [["Q1", 855], ["Q2", 103], ["Q3", 982], ["Q4", 100]]},
+    {x:"2008", value: 12245, qtrBreakdown: [["Q1", 934], ["Q2", 982], ["Q3", 973], ["Q4", 999]]},
+    {x:"2009", value: 12056, qtrBreakdown: [["Q1", 134], ["Q2", 873], ["Q3", 109], ["Q4", 903]]},
+    {x:"2010", value: 11734, qtrBreakdown: [["Q1", 928], ["Q2", 103], ["Q3", 793], ["Q4", 887]]},
+    {x:"2011", value: 12337, qtrBreakdown: [["Q1", 934], ["Q2", 982], ["Q3", 973], ["Q4", 124]]},
+    {x:"2012", value: 12761, qtrBreakdown: [["Q1", 982], ["Q2", 965], ["Q3", 100], ["Q4", 183]]},
+    {x:"2013", value: 13390, qtrBreakdown: [["Q1", 182], ["Q2", 110], ["Q3", 995], ["Q4", 999]]},
+    {x:"2014", value: 13818, qtrBreakdown: [["Q1", 400], ["Q2", 507], ["Q3", 380], ["Q4", 620]]},
+    {x:"2015", value: 13188, qtrBreakdown: [["Q1", 156], ["Q2", 120], ["Q3", 100], ["Q4", 890]]}
+];
+
+// ]creat]e two] charts
+mainChart = anychart.column();
+detailsChart = anychart.line();
+
+// create column series on the main chart
+mainChart.column(data).name("ACME Corp. sales");
+
+// chart titles and settings
+mainChart.title('Sales volume: ACME Corp.');
+detailsChart.title('Quarters Breakdown');
+detailsChart.legend(true);
+
+detailsChart.tooltip().titleFormat('Sales');
+
+mainChart.listen("pointsSelect", drillDownFunction);
+
+
+mainChart.bounds("0", "0", "50%", "100%");
+detailsChart.bounds("50%", "0", "50%", "100%");
+// draw charts
+mainChart.container(stage).draw();
+detailsChart.container(stage).draw();
+
+// select a point and draw for the first time
+mainChart.getSeries(0).select(0);
+drillDownFunction();
+});
+
+function drillDownFunction() {
+    // clear the chart with details    
+    detailsChart.removeAllSeries();
+    
+    // points = e.points;
+    points = mainChart.getSelectedPoints();
+    // go through selected points and add proper data
+    for (i=0;i<points.length;i++){
+        detailsChart.line(points[i].get('qtrBreakdown')).name(points[i].get('x'));
+    };
+}
+</script>
+</body>
+</html>

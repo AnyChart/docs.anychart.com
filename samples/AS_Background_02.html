@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Background 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // chart type
+  var chart = anychart.column();
+
+  // set data
+  chart.column([
+    ["P1" , 10000],
+    ["P2" , 12000],
+    ["P3" , 18000],
+    ["P4" , 11000],
+    ["P5" , 9000]
+  ]);
+
+  // adjust title
+  var title = chart.title();
+  title.text("Solid Background Fill");
+  title.enabled(true);
+  title.padding(5);
+  var titleBackground = chart.title().background();
+  titleBackground.enabled(true);
+  titleBackground.fill("gold");
+
+  // disable axes
+  chart.xAxis(false);
+  chart.yAxis(false);
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

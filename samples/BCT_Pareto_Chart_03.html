@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Pareto Chart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pareto.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// create a Pareto chart
+var chart = anychart.pareto([
+  {x: "Defect 1", value: 19},
+  {x: "Defect 2", value: 9},
+  {x: "Defect 3", value: 28},
+  {x: "Defect 4", value: 87},
+  {x: "Defect 5", value: 14},
+]);
+
+// get pareto column series and create
+// fill and stroke 
+var column = chart.getSeriesAt(0);
+column.fill(function () {
+    if (this.rf < 10) {
+return '#E24B26'
+    } else {
+return this.sourceColor;
+    }
+});
+column.stroke(function () {
+    if (this.rf < 10) {
+return anychart.color.darken('#E24B26');
+    } else {
+return this.sourceColor;
+    }
+});
+
+// format column series label to show RF
+column.labels().enabled(true).format('{%RF}%');
+
+// set the chart title
+chart.title("Pareto Chart: Conditional coloring");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+});
+</script>
+</body>
+</html>

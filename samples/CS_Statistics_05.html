@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS Statistics 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data set
+  dataSet = anychart.data.set([
+    ["1800", 170, 161],
+    ["1820", 171, 164],
+    ["1840", 174, 168],
+    ["1860", 175, 170],
+    ["1880", 175, 172],
+    ["1900", 180, 174],
+    ["1920", 181, 174],
+    ["1940", 184, 176],
+    ["1960", 185, 180],
+    ["1980", 186, 182],
+    ["2000", 188, 182]
+  ]);
+
+  // map data for the first series
+  data_maleMartians = dataSet.mapAs({x: 0, value: 1});
+
+  // map data for the second series
+  data_femaleMartians = dataSet.mapAs({x: 0, value: 2});
+
+  // create a line chart
+  var chart = anychart.line();
+
+  // create the first series with mapped data
+  maleMartians = chart.line(data_maleMartians);
+  maleMartians.name("Male Martians");
+  maleMartians.color("#398CEA");   
+
+  // create the second series with mapped data
+  femaleMartians = chart.line(data_femaleMartians);
+  femaleMartians.name("Female Martians");
+  femaleMartians.color("#E93F39"); 
+
+  // get statistical data (the average of all the Y values on the first series)
+  maleAverage = maleMartians.getStat("seriesYAverage");
+
+  // get statistical data (the average of all the Y values on the second series)
+  femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
+
+  // get the number of points in the series
+  // (in this case, the number of points is the same for the both series)
+  numberOfPoints = maleMartians.getStat("seriesPointCount");
+
+  // get links to the latest points in both series
+  latestPointMaleMartians = maleMartians.getPoint(numberOfPoints - 1);
+  latestPointFemaleMartians = femaleMartians.getPoint(numberOfPoints - 1);
+
+  // get the values of the latest points from both series and use them in the title
+  mainTitleText = "The Height of Martians Today: Males ? " + latestPointMaleMartians.getStat("value") + ", Females ? " + latestPointFemaleMartians.getStat("value");
+
+  // set the title of the chart
+  chart.title(mainTitleText);
+
+  // enable HTML in the title
+  chart.title().useHtml(true);
+
+  // listen to the pointsSelect event
+  chart.listen("pointsSelect", function(e){
+    // get categoryName of the selected points
+    selectedPointYear = e.point.getStat("categoryName");
+    // begin creating a subtitle with the information on the selected points
+    subtitleText = "<span style='font-size:12'>" + selectedPointYear + ": ";
+    // loop through the array of the selected points
+    for (var i = 0; i < e.points.length; i++) {
+      // get the name of the series a selected point belongs to and the value of the point
+      subtitleText += e.points[i].getSeries().name() + " ? " + e.points[i].getStat("value") + ", ";
+    }
+    // remove the extra comma at the end of the subtitle and close the <span> tag
+    subtitleText = subtitleText.slice(0, subtitleText.length - 2) + "</span>";
+    // update the title with the subtitle
+    chart.title(mainTitleText + "<br>" + subtitleText);
+  });
+
+  // set the title of the y-axis
+  chart.yAxis().title("Average Height (cm)");
+
+  // turn the legend on
+  chart.legend(true);
+
+  // set the container id for the chart
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS Tooltip 15"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  var data = anychart.data.set([
+    ["John" , 10000, 12000, 15000, 20000, 19000],
+    ["Jake" , 12000, 15000, 11500, 18350, 11000],
+    ["Peter" , 18000, 16000, 13000, 18000, 15000],
+    ["James" , 11000, 13000, 14000, 12500, 16000],
+    ["Mary" , 9000, 19000, 17200, 15000, 18000]
+  ]);
+
+  // map data for the each series
+  var data1 = data.mapAs({x: 0, value: 1});
+  var data2 = data.mapAs({x: 0, value: 2});
+  var data3 = data.mapAs({x: 0, value: 3});
+  var data4 = data.mapAs({x: 0, value: 4});
+  var data5 = data.mapAs({x: 0, value: 5});
+
+  // chart type
+  var chart = anychart.column();
+
+  var series1 = chart.column(data1);
+  var series2 = chart.column(data2);
+  var series3 = chart.column(data3);
+  var series4 = chart.column(data4);
+  var series5 = chart.column(data5);
+
+  series1.name("Year 2008");
+  series2.name("Year 2009");
+  series3.name("Year 2010");
+  series4.name("Year 2011");
+  series5.name("Year 2012");
+
+  // set title
+  chart.title("Managing Tooltip Content");
+
+  // enable HTML for tooltips
+  chart.tooltip().useHtml(true);
+
+  // tooltip settings
+  var tooltip = chart.tooltip();
+  tooltip.positionMode("point");
+  tooltip.format("Manager: <b>{%x}</b><br>Sales volume: <b>${%value}</b>");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

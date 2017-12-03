@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AS Fonts 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // data
+  var data = [
+    {x: "English", value: 2022776},
+    {x: "Fran?ais", value: 561753},
+    {x: "Portugu?s", value: 287318},
+    {x: "Espa?ol", value: 281288},
+    {x: "???????", value: 204379},
+    {x: "??", value: 146215},
+    {x: "Norsk (bokm?l)", value: 133410}
+  ];
+  
+  // create chart
+  var chart = anychart.column(data);
+  chart.title("International Symbols Support");
+  chart.tooltip().format("Language: {%x}\nArticles: {%value}");
+  chart.labels().enabled(true).format("{%x}");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

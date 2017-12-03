@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="STOCK Scroller 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(getData());
+
+// map loaded data
+var mapping = dataTable.mapAs({'value': 1});
+
+// create stock chart
+var chart = anychart.stock();
+
+// add a series
+chart.plot(0).line(mapping);
+
+// adjust the scroller
+chart.selectRange('2004-01-02','2004-01-15');
+chart.scroller().thumbs(false);
+chart.scroller().fill('green 0.1');
+chart.scroller().selectedFill('green 0.5');
+chart.scroller().allowRangeChange(false);
+
+// adjust the title according to scroller
+chart.title("Adjust the scroller");
+
+// set container id for the chart
+chart.container('container');
+
+// initiate chart drawing
+chart.draw();
+});
+
+function getData(){
+return [
+    ['2004-01-02', 2011.08],
+    ['2004-01-05', 2020.78],
+    ['2004-01-06', 2044.55],
+    ['2004-01-07', 2056.75],
+    ['2004-01-08', 2089.60],
+    ['2004-01-09', 2083.63],
+    ['2004-01-12', 2093.54],
+    ['2004-01-13', 2113.11],
+    ['2004-01-14', 2104.29],
+    ['2004-01-15', 2101.86],
+    ['2004-01-16', 2126.12],
+    ['2004-01-20', 2149.03],
+    ['2004-01-21', 2139.33],
+    ['2004-01-22', 2146.32],
+    ['2004-01-23', 2124.76],
+    ['2004-01-26', 2120.56],
+    ['2004-01-27', 2148.05],
+    ['2004-01-28', 2125.02],
+    ['2004-01-29', 2085.54],
+    ['2004-01-30', 2068.36]
+    ];
+}
+</script>
+</body>
+</html>

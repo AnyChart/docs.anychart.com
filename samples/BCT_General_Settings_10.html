@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT General Settings 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000, 100],
+      ["Jake", 12000, 120],
+      ["Peter", 13000, 130],
+      ["James", 10000, 100],
+      ["Mary", 9000, 90]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // set the chart type
+    var chart = anychart.column();
+
+    // configure the main Y-scale
+    var yScale1 = anychart.scales.linear();
+    yScale1.maximum(20000);
+
+    // configure an extra Y-scale
+    var yScale2 = anychart.scales.linear();
+    yScale2.maximum(150);
+
+    // set the title of the X-axis
+    var xAxis = chart.xAxis();
+    xAxis.title("Manager");
+
+    // configure the main Y-axis
+    var yAxis1 = chart.yAxis(0);
+    yAxis1.scale(yScale1);
+    yAxis1.title("Sales, $");
+
+    // configure an extra Y-axis
+    var yAxis2 = chart.yAxis(1);
+    yAxis2.orientation("right")
+    yAxis2.scale(yScale2);
+    yAxis2.title("Number of Items Sold");
+
+    // create the first series, set the data and name
+    var series1 = chart.column(seriesData_1);
+    series1.name("Sales");
+
+    // create the second series, set the data and name
+    var series2 = chart.line(seriesData_2);
+    series2.name("Number of Items Sold");
+
+    // bind the first series to the main Y-scale
+    series1.yScale(yScale1);
+
+    // bind the second series to the extra Y-scale
+    series2.yScale(yScale2);
+
+    // set the chart title
+    chart.title("Axes and Scales");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

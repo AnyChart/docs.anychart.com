@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Proportional Symbol 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+  
+  // create map
+  var map = anychart.map();
+
+  // create bubble series
+  series_1 = map.bubble(getData1());
+  series_2 = map.bubble(getData2());
+
+  //disable the labels
+  series_1.labels(false);
+  series_2.labels(false);
+
+  //set bubble min/max size settings
+  map.maxBubbleSize(9);
+  map.minBubbleSize(2);
+
+  // change the fill and hoverFill colors of series_1
+  series_1.fill("#7D00AD", 0.35);
+  series_1.hovered().fill("#7D00AD", 0.7);
+
+  // change the stroke and hoverStroke colors of series_1
+  series_1.stroke("#BA005C");
+  series_1.hovered().stroke("#BA005C");
+
+  // set the select colors of series_1
+  series_1.selected().stroke("#BA005C");
+  series_1.selected().fill("#D1003D");
+
+  // change the fill and hoverFill colors of series_2
+  series_2.fill("#178AA8", 0.35);
+  series_2.hovered().fill("#3675BD", 0.7);
+
+  // change the stroke and hoverStroke colors of series_2
+  series_2.stroke("#3675BD");
+  series_2.hovered().stroke("#178AA8");
+
+  // set the select colors of series_2
+  series_2.selected().stroke("#3675BD");
+  series_2.selected().fill("#734CE6");
+
+  // tooltip formatting
+  map.tooltip().format("{%seriesName} {%size}%");
+
+  // set geo data, you can find this map in our geo maps collection
+  // https://cdn.anychart.com/#maps-collection
+  map.geoData(anychart.maps['united_kingdom']);
+
+  //set map container id (div)
+  map.container('container');
+
+  //initiate map drawing
+  map.draw();
+});
+
+function getData1(){
+  return [
+    ['GB.WI', 2],
+    ['GB.AB', 1.5],
+    ['GB.AG', 1.8],
+    ['GB.AS', 0.8],
+    ['GB.MO', 1.3],
+    ['GB.BO', 1.4],
+    ['GB.NN', 2.7],
+    ['GB.WH', 1.8],
+    ['GB.FI', 2.5],
+    ['GB.CU', 2],
+    ['GB.ST', 1.5],
+    ['GB.PO', 1.8],
+    ['GB.SF', 0.8],
+    ['GB.KE', 1.3],
+    ['GB.WS', 1.4],
+    ['GB.DS', 2.7],
+    ['GB.CO', 1.8],
+    ['GB.DN', 2.5],
+    ['GB.NY', 1.8],
+    ['GB.EY', 0.8],
+    ['GB.CI', 1.3],
+    ['GB.PE', 1.4],
+    ['GB.RL', 2.7],
+    ['GB.LC', 1.8]
+  ];
+}
+
+function getData2(){
+  return [
+    ['GB.AR', 1.4],
+    ['GB.WD', 1.4],
+    ['GB.SL', 2.5],
+    ['GB.EL', 1.5],
+    ['GB.DG', 1.7],
+    ['GB.EA', 3.3],
+    ['GB.IC', 3.1],
+    ['GB.HI', 1.4],
+    ['GB.CR', 1.4],
+    ['GB.BU', 2.5],
+    ['GB.MK', 1.5],
+    ['GB.NA', 1.7],
+    ['GB.BW', 3.3],
+    ['GB.DA', 3.1],
+    ['GB.TF', 2.1],
+    ['GB.RT', 3.5],
+    ['GB.CH', 1.5],
+    ['GB.DW', 1.7],
+    ['GB.LM', 3.3],
+    ['GB.CM', 3.1],
+    ['GB.DO', 2.1],
+    ['GB.IW', 3.5]
+  ];
+}
+</script>
+</body>
+</html>

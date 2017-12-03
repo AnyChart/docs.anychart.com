@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CMN Event Listener 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+	// create column chart
+	var chart = anychart.column();
+
+	// set series data
+	var series = chart.column([
+		["Jan", 10],
+		["Feb", 12],
+		["Mar", 11],
+		["Apr", 15],
+		["May", 20],
+		["Jun", 22],
+		["Jul", 21],
+		["Aug", 28],
+		["Sep", 29],
+		["Oct", 40],
+		["Nov", 41],
+		["Dec", 45]
+	]);
+
+	series.selected().fill("#444");
+	series.stroke(null);
+
+	// adding dollar symbols to yAxis labels
+	var yLabels = chart.yAxis().labels();
+	yLabels.format(function (){
+		return "$" + this.value;
+	});
+
+	// event on hovering a point
+	chart.listen("pointsHover", function(event){
+		// getter for hovered point
+		var point = event.point;
+		// index of hovered point
+		var index = point.getIndex();
+		// getter for hovered point's series
+		var currentSeries = point.getSeries();
+		// if this event is triggered on points unhovering, nothing will happen
+		if (!event.currentPoint.hovered) return;
+		// get an array of months, hovered point belong to and hover it.
+		currentSeries.hover(getQuarterMonths(index));
+	});
+
+	// event on point hovering
+	chart.listen("pointsSelect", function(event){
+		// getter for selected point
+		var point = event.point;
+		// index of selected point
+		var index = point.getIndex();
+		// getter for selected point's series
+		var currentSeries = point.getSeries();
+		// if the point was unselected
+		if (!event.currentPoint.selected)
+			// unselect every point of the series
+			currentSeries.select(false);
+		// if the point was selected
+		else {
+			// get an array of months, selected point belong to
+			var months = getQuarterMonths(index);
+			// select each point from the array
+			for (var i =0; i < months.length; i ++)
+				currentSeries.getPoint(months[i]).selected(true);
+		}
+	});
+
+
+	var tooltip = series.tooltip();
+	tooltip.titleFormat(function(point){
+		// index of the current point
+		var index = point.index;
+		// adjust title depending on point's index
+		if (index<3) return "First Quarter";
+		else if (index<6) return "Second Quarter";
+		else if (index<9) return "Third Quarter";
+		else return "Fourth Quarter";
+	});
+
+	tooltip.format(function(point){
+		// get an array of months the point belong to
+		var months = getQuarterMonths(point.index);
+		// create variable for counting the income in the months
+		var value = 0;
+		// summarize the income
+		for (var i=0;i<months.length;i++)
+			value+=series.getPoint(months[i]).get("value");
+		// display the income
+		return "Income: $" + value;
+	});
+
+	// set container id for the chart
+	chart.container("container");
+
+	// initiate chart drawing
+	chart.draw();
+});
+// find out an array a month belong to
+function getQuarterMonths(month) {
+	var quarterStartMonth = 3 * Math.floor(month / 3);
+	return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+}
+</script>
+</body>
+</html>

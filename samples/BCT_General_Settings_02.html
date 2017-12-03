@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT General Settings 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 10000, 9000],
+      ["February", 12000, 10500],
+      ["March", 13000, 11000],
+      ["April", 10000, 9000],
+      ["May", 9000, 8500]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // set the chart type
+    var chart = anychart.line();
+
+    // create the first series and set the data
+    var series1 = chart.line(seriesData_1);
+
+    // create the second series and set the data
+    var series2 = chart.line(seriesData_2);
+
+    // enable and configure markers on the first series
+    series1.markers(true);
+    series1.markers().type("star5");
+    series1.markers().fill("gold");
+    series1.markers().size(10);
+
+    // set the chart title
+    chart.title("Markers (Series)");
+
+    // set the titles of the axes
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

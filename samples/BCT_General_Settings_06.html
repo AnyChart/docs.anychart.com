@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT General Settings 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // set the chart type
+    var chart = anychart.column();
+
+    // create the first series, set the data and name
+    var series1 = chart.column(seriesData_1);
+    series1.name("Sales in 2015");
+
+    // create the second series, set the data and name
+    var series2 = chart.column(seriesData_2);
+    series2.name("Sales in 2016");
+
+    // configure tooltips on the chart
+    chart.tooltip().title("Information");
+    chart.tooltip().format("Manager: {%categoryName} \n{%seriesName}: ${%value}");
+
+    // set the chart title
+    chart.title("Tooltips (Chart)");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

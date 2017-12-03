@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="STOCK Range Spline Area 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // set the data
+    table = anychart.data.table();
+    table.addData([
+["2000-01-01", 2, 6, -3, 4],
+["2000-02-01", 2, 7, -2, 5],
+["2000-03-01", 3, 10, 2, 10],
+["2000-04-01", 5, 13, 7, 16],
+["2000-05-01", 8, 17, 12, 22],
+["2000-06-01", 11, 20, 18, 26],
+["2000-07-01", 13, 22, 20, 29],
+["2000-08-01", 13, 21, 20, 28],
+["2000-09-01", 11, 19, 16, 24],
+["2000-10-01", 8, 14, 10, 18],
+["2000-11-01", 5, 10, 5, 12],
+["2000-12-01", 5, 7, 0, 6],
+
+["2001-01-01", 3, 7, -5, 5],
+["2001-02-01", 4, 7, -3, 5],
+["2001-03-01", 5, 8, 0, 12],
+["2001-04-01", 7, 12, 5, 14],
+["2001-05-01", 7, 14, 9, 19],
+["2001-06-01", 13, 23, 15, 23],
+["2001-07-01", 15, 24, 19, 24],
+["2001-08-01", 11, 20, 21, 25],
+["2001-09-01", 10, 20, 15, 25],
+["2001-10-01", 7, 15, 10, 20],
+["2001-11-01", 5, 11, 4, 15],
+["2001-12-01", 1, 9, -3, 10],
+
+["2002-01-01", 2, 6, -2, 6],
+["2002-02-01", 6, 9, 0, 7],
+["2002-03-01", 7, 11, 3, 14],
+["2002-04-01", 9, 14, 5, 21],
+["2002-05-01", 11, 17, 7, 23],
+["2002-06-01", 18, 19, 17, 28],
+["2002-07-01", 19, 22, 20, 30],
+["2002-08-01", 15, 25, 19, 28],
+["2002-09-01", 10, 22, 17, 23],
+["2002-10-01", 8, 18, 11, 19],
+["2002-11-01", 6, 15, 7, 12],
+["2002-12-01", 4, 12, 1, 9],
+
+["2003-01-01", 3, 6, -1, 8],
+["2003-02-01", 6, 9, 3, 10],
+["2003-03-01", 7, 8, 5, 14],
+["2003-04-01", 11, 13, 10, 20],
+["2003-05-01", 13, 17, 12, 22],
+["2003-06-01", 16, 26, 18, 27],
+["2003-07-01", 12, 24, 21, 28],
+["2003-08-01", 15, 24, 19, 24],
+["2003-09-01", 10, 20, 15, 22],
+["2003-10-01", 9, 19, 12, 17],
+["2003-11-01", 5, 18, 6, 11],
+["2003-12-01", 5, 15, -2, 7],
+
+["2004-01-01", 4, 9, -7, 9],
+["2004-02-01", 7, 10, -4, 12],
+["2004-03-01", 9, 10 , -1, 12],
+["2004-04-01", 10, 15, 5, 18],
+["2004-05-01", 14, 19, 11, 21],
+["2004-06-01", 15, 24, 17, 26],
+["2004-07-01", 16, 29, 19, 28],
+["2004-08-01", 12, 25, 19, 25],
+["2004-09-01", 12, 20, 17, 19],
+["2004-10-01", 8, 21, 13, 18],
+["2004-11-01", 8, 15, 9, 11],
+["2004-12-01", 6, 9, 0, 6]
+    ]);
+  
+    // map the data
+    mapping_lon = table.mapAs();
+    mapping_lon.addField('low', 1);
+    mapping_lon.addField('high', 2);
+    mapping_ny = table.mapAs();
+    mapping_ny.addField('low', 3);
+    mapping_ny.addField('high', 4);
+
+    // chart type
+    var chart = anychart.stock();
+
+    // set the series
+    var series_lon = chart.plot(0).rangeSplineArea(mapping_lon);
+    series_lon.name("London");
+
+    // set the series
+    var series_ny = chart.plot(0).rangeSplineArea(mapping_ny);
+    series_ny.name("New York");
+
+    // set the colors
+    series_lon.fill("#FFCC99 0.5");
+    series_ny.fill("#33CCCC 0.5");
+
+    chart.title('Temperature ranges \n2000-2004');
+    chart.container('container');
+
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT OHLC Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a chart
+    var chart = anychart.financial();
+
+    // set the interactivity mode
+    chart.interactivity("by-x");
+
+    // create the first series and set the data
+    var series1 = chart.ohlc([
+      {x: Date.UTC(2007, 7, 28), open: 511.53, high: 514.98, low: 505.79, close: 506.40},
+      {x: Date.UTC(2007, 7, 29), open: 507.84, high: 513.30, low: 507.23, close: 512.88},
+      {x: Date.UTC(2007, 7, 30), open: 512.36, high: 515.40, low: 510.58, close: 511.40},
+      {x: Date.UTC(2007, 7, 31), open: 513.10, high: 516.50, low: 511.47, close: 515.25},
+      {x: Date.UTC(2007, 8, 4),  open: 515.02, high: 528.00, low: 514.62, close: 525.15}
+    ]);
+
+    // create the second series and set the data
+    var series2 = chart.ohlc([
+      {x: Date.UTC(2007, 7, 28), open: 525.95, high:526.10, low:520.50, close: 522.52},
+      {x: Date.UTC(2007, 7, 29), open: 522.60, high:525.69, low:521.27, close: 524.55},
+      {x: Date.UTC(2007, 7, 30), open: 522.49, high:527.91, low:522.38, close: 526.61},
+      {x: Date.UTC(2007, 7, 31), open: 524.81, high:526.83, low:520.51, close: 521.73},
+      {x: Date.UTC(2007, 8, 4),  open: 529.30, high:530.50, low:528.20, close: 529.97}
+    ]);
+      
+    // configure the visual settings of the first series
+    series1.normal().risingStroke("#33ccff");
+    series1.hovered().risingStroke("#33ccff", 1.5);
+    series1.selected().risingStroke("#33ccff", 3);
+    series1.normal().fallingStroke("#ff33cc");
+    series1.hovered().fallingStroke("#ff33cc", 1.5);
+    series1.selected().fallingStroke("#ff33cc", 3);
+
+    // configure the visual settings of the second series
+    series2.normal().risingStroke("#33ccff", 1, "10 5", "round");
+    series2.hovered().risingStroke("#33ccff", 1.5, "10 5", "round");
+    series2.selected().risingStroke("#33ccff", 3, "10 5", "round");
+    series2.normal().fallingStroke("#ff33cc", 1, "10 5", "round");
+    series2.hovered().fallingStroke("#ff33cc", 1.5, "10 5", "round");
+    series2.selected().fallingStroke("#ff33cc", 3, "10 5", "round");
+
+    // disable markers
+    series1.hovered().markers().enabled(false);
+    series1.selected().markers().enabled(false);
+    series2.hovered().markers().enabled(false);
+    series2.selected().markers().enabled(false);
+
+    // chart title
+    chart.title("OHLC Chart: Appearance");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Date");
+    var yAxis = chart.yAxis();
+    yAxis.title("Price, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

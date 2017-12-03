@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GFX Layers 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
+
+layer1 = stage.layer();
+
+rect1 = layer1.rect(150, 150, 100, 100);
+rect1.fill("black");
+
+
+layer2 = acgraph.layer();
+rect2 = layer2.rect(150, 150, 150, 150);
+rect2.fill("green");
+
+stage.addChild(layer2);
+
+clipShape = new acgraph.vector.Circle(150, 150, 50);
+
+// Sets clipping of the layer.
+layer1.clip(clipShape);
+
+layer2.listen("click", function(e){
+    rect2.fill("red");
+    layer1.zIndex(1000);
+});
+</script>
+</body>
+</html>

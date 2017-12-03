@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Axis Orientation 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // create chart
+  var chart = anychart.cartesian();
+
+  // data
+  var data = [
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
+  ];
+
+  // add series
+  chart.column(data);
+
+  // inverts y scale. Now all elements has inverted (from right to left) direction
+  chart.yScale().inverted(true);
+
+  // position of x axis changer. Now x is on the top
+  chart.xAxis().orientation("top");
+
+  // set y axis position. This position is set by default
+  chart.yAxis().orientation("left");
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

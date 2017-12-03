@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="STOCK Drawing General 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-annotations.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a stage    
+    var stage = anychart.graphics.create("container");  
+   
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // an auxiliary variable for working with annotations
+    var controller = plot.annotations();
+
+    // create an Ellipse annotation
+    var ellipse = controller.ellipse({
+xAnchor: "2006-11-20",
+valueAnchor: 25.92,
+secondXAnchor: "2007-02-24",
+secondValueAnchor: 31.92,
+    });
+
+    // create an Infinite Line annotation
+    var infiniteLine = controller.infiniteLine({
+xAnchor: "2005-09-04",
+valueAnchor: 18.58,
+secondXAnchor: "2008-08-10",
+secondValueAnchor: 24.91,
+    });
+
+    //disable interactivity for the Ellipse annotation
+    ellipse.allowEdit(false);
+
+    // enable interactivity for the Infinite Line annotation
+    infiniteLine.allowEdit(true);
+
+
+    // set the chart position and title
+    chart.top(15);
+    chart.title("Annotations: Forbidding and Allowing Editing");
+
+    // set the chart container and initiate drawing the chart
+    chart.container(stage);
+    chart.draw();
+});
+</script>
+</body>
+</html>

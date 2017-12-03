@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Labels Formatting 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  var chart = anychart.area();
+
+  chart.title("Axes Labels Positining");
+
+  chart.area([
+    ["January" , 10000],
+    ["February" , 12000],
+    ["March" , 10000],
+    ["April" , 11000],
+    ["May" , 19000]
+  ]);
+
+  var yScale = chart.yScale();
+  yScale.minimum(8000);
+  yScale.maximum(20000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
+
+  // set function to format y axis labels
+  var yLabels = chart.yAxis().labels();
+  yLabels.hAlign("center");
+  var xLabels = chart.xAxis().labels();
+  xLabels.offsetY(-30);
+  yLabels.format(function (){
+    var value = this.value;
+    // scale USD to EUR
+    value = Math.round(value*6.65);
+    return "$" + this.value + "\n?" + value;
+  });
+
+  // set axes title
+  var yAxis = chart.yAxis();
+  yAxis.title("Revenue in US Dollars");
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
+
+  // set the font settings for the X axis labels
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontFamily("Courier");
+  xLabels.fontColor("#125393");
+  xLabels.offsetY(5);
+  xLabels.padding(3);
+  xLabels.fontWeight("bold");
+
+  // background settings
+  var xLabelsBackground = chart.xAxis().labels().background();
+  xLabelsBackground.enabled(true);
+  xLabelsBackground.stroke("#cecece");
+  xLabelsBackground.cornerType("round");
+  xLabelsBackground.corners(5);
+
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

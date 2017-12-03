@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Quadrant Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data for the first series
+    var data_1 = [
+      {x: 4, value: 42},
+      {x: 13, value: 59},
+      {x: 25, value: 68},
+      {x: 25, value: 63},
+      {x: 44, value: 54},
+      {x: 55, value: 58},
+      {x: 56, value: 46},
+      {x: 60, value: 54},
+      {x: 72, value: 73}
+    ];
+
+    // create data for the second series
+    var data_2 = [
+      {x: 42, value: 36},
+      {x: 80, value: 80}
+    ];
+
+    // create data for the third series
+    var data_3 = [
+      {x: 18, value: 74, size: 7},
+      {x: 71, value: 23, size: 14}
+    ];
+
+    // create a chart
+    var chart = anychart.quadrant();
+
+    // create the first series (marker) and set the data
+    var series1 = chart.marker(data_1);
+
+    // configure the visual settings of the first series
+    series1.normal().fill("black", 0.3);
+    series1.hovered().fill("black", 0.3);
+    series1.selected().fill("black", 0.5);
+    series1.normal().stroke("black", 1);
+    series1.hovered().stroke("black", 2);
+    series1.selected().stroke("black", 4);
+
+    // create the second series (line) and set the data
+    var series2 = chart.line(data_2);
+
+    // configure the visual settings of the second series
+    series2.normal().stroke("#00cc99", 3, "10 5", "round");
+
+    // create the third series (bubble) and set the data
+    var series3 = chart.bubble(data_3);
+
+    // configure the visual settings of the third series
+    series3.normal().fill("#0066cc", 0.3);
+    series3.hovered().fill("#0066cc", 0.1);
+    series3.selected().fill("#0066cc", 0.5);
+    series3.normal().stroke("#0066cc");
+    series3.hovered().stroke("#0066cc", 2);
+    series3.selected().stroke("#0066cc", 4);
+
+    // set the chart title
+    chart.title("Quadrant Chart: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

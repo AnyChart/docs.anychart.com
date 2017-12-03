@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GANTT Chart 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create data tree on our data
+  var treeData = anychart.data.tree(getData(), "as-table");
+
+  // create project gantt chart
+  var chart = anychart.ganttProject();
+
+  // set container id for the chart
+  chart.container("container");
+
+  // set data for the chart
+  chart.data(treeData);
+
+  // get chart data grid link to set column settings
+  var dataGrid = chart.dataGrid();
+
+  chart.splitterPosition(300);
+
+  // set first column settings
+  var firstColumn = dataGrid.column(0);
+  firstColumn.cellTextSettings().hAlign("center");
+  firstColumn.width(35);
+
+
+  var secondColumn = dataGrid.column(1);
+  secondColumn.cellTextSettings().hAlign("left");
+  secondColumn.width(50);
+  secondColumn.format(function(item) {
+    return item.get("name");
+  });
+
+  var thirdColumn = dataGrid.column(2);
+  thirdColumn.title("Actual Start");
+  thirdColumn.width(100);
+  thirdColumn.format(thirdColumnformat);
+
+  // set fourth column settings
+  var fourthColumn = dataGrid.column(3);
+  fourthColumn.title().text("Actual End");
+  fourthColumn.format(fourthColumnformat);
+
+
+  function thirdColumnformat(item) {
+  var field = item.get("actualStart");
+
+    var actualStart = new Date(field);
+    return formatDate(actualStart.getUTCMonth() + 1) + "/" +
+formatDate(actualStart.getUTCDate()) + "/" + actualStart.getUTCFullYear();
+  }
+
+
+// do pretty formatting for dates in fourth column
+function fourthColumnformat(item) {
+  var field = item.get("actualEnd");
+    var actualEnd = new Date(field);
+    return formatDate((actualEnd.getUTCMonth() + 1)) + "/" +
+formatDate(actualEnd.getUTCDate()) + "/" + actualEnd.getUTCFullYear();
+}
+
+// do pretty formatting for passed date unit
+function formatDate(dateUnit) {
+  if (dateUnit < 10) dateUnit = "0" + dateUnit;
+  return dateUnit + "";
+}
+
+  // initiate chart drawing
+  chart.draw();
+
+  chart.fitAll();
+
+});
+
+function getData() {
+  return [
+    {
+      "id": "1",
+      "name": "Task 1",
+      "actualStart": Date.UTC(2008, 7, 5),
+      "actualEnd": Date.UTC(2008, 7, 12),
+      "baselineStart": Date.UTC(2008, 7, 6),
+      "baselineEnd": Date.UTC(2008, 7, 10)
+    },
+    {
+      "id": "2",
+      "name": "Task 2",
+      "actualStart": Date.UTC(2008, 7, 9),
+      "actualEnd": Date.UTC(2008, 7, 13),
+      "baselineStart": Date.UTC(2008, 7, 6),
+      "baselineEnd": Date.UTC(2008, 7, 10)
+    },
+    {
+      "id": "3",
+      "name": "Task 3",
+      "actualStart": Date.UTC(2008, 7, 11),
+      "actualEnd": Date.UTC(2008, 7, 20),
+      "baselineStart": Date.UTC(2008, 7, 9),
+      "baselineEnd": Date.UTC(2008, 7, 19)
+    },
+    {
+      "id": "4",
+      "name": "Task 4",
+      "actualStart": Date.UTC(2008, 7, 8),
+      "actualEnd": Date.UTC(2008, 7, 15),
+      "baselineStart": Date.UTC(2008, 7, 6),
+      "baselineEnd": Date.UTC(2008, 7, 12)
+    },
+    {
+      "id": "5",
+      "name": "Task 5",
+      "actualStart": Date.UTC(2008, 7, 7),
+      "actualEnd": Date.UTC(2008, 7, 16),
+      "baselineStart": Date.UTC(2008, 7, 5),
+      "baselineEnd": Date.UTC(2008, 7, 13)
+    },
+    {
+      "id": "6",
+      "name": "Task 6",
+      "actualStart": Date.UTC(2008, 7, 13),
+      "actualEnd": Date.UTC(2008, 7, 19),
+      "baselineStart": Date.UTC(2008, 7, 11),
+      "baselineEnd": Date.UTC(2008, 7, 16)
+    },
+  ];
+}
+</script>
+</body>
+</html>

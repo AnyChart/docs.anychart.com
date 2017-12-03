@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GANTT Interactivity 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function (){
+
+	// create data tree on our data
+	var treeData = anychart.data.tree(getData(), "as-table");
+
+	// create project gantt chart
+	var chart = anychart.ganttProject();
+
+	// set data for the chart
+	chart.data(treeData);
+
+	// enable Gantt editing
+	chart.editing(true);
+
+	// set container id for the chart
+	chart.container("container");
+
+	// initiate chart drawing
+	chart.draw();
+
+	// fit all elements
+	chart.fitAll();
+
+});
+function getData() {
+	return [
+		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000},
+		{"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000},
+		{"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "finish-start"},
+		{"id": "4", "name": "Identify available skills, information and support", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "finish-start"},
+		{"id": "5", "name": "Decide whether to proceed", parent:"2", "progressValue": "0%", "actualStart": 951753600000, "actualEnd": 951786000000, "connectTo": "7", "connectorType": "finish-start"},
+		{"id": "6", "name": "Define the Opportunity", parent:"1", "progressValue": "27%", "actualStart": 951782400000, "actualEnd": 952992000000},
+		{"id": "7", "name": "Research the market and competition", parent:"6", "progressValue": "0%", "actualStart": 951840000000, "actualEnd": 951872400000, "connectTo": "8", "connectorType": "finish-start"},
+		{"id": "8", "name": "Interview owners of similar businesses", parent:"6", "progressValue": "60%", "actualStart": 951868800000, "actualEnd": 952473600000, "connectTo": "9", "connectorType": "finish-start"},
+		{"id": "9", "name": "Identify needed resources", parent:"6", "progressValue": "0%", "actualStart": 952531200000, "actualEnd": 952650000000, "connectTo": "10", "connectorType": "finish-start"},
+		{"id": "10", "name": "Identify operating cost elements", parent:"6", "progressValue": "0%", "actualStart": 952704000000, "actualEnd": 952995600000, "connectTo": "12", "connectorType": "finish-start"}
+	];
+}
+</script>
+</body>
+</html>

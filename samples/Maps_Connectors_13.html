@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Connectors 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+
+customTheme = {chart: {defaultSeriesSettings: {base: {tooltip: {format:"{%seriesName}",titleFormat:"{%name}"}}}}};
+anychart.theme(customTheme);
+
+// create map chart
+var map = anychart.map();
+// set geodata 
+map.geoData(anychart.maps.united_states_of_america);
+// name of the chart
+map.title("American Civil War Map");
+
+// create data set
+var data_border = [    
+    {points: [32, -106.8, 35, -103.5], curvature: -0.27},
+    {points: [35, -103.5, 36.5, -99.5], curvature: 0.47},
+    {points: [36.5, -99.5, 34, -97.3], curvature: 0.25},
+    {points: [34, -97.3, 32.3, -95.27], curvature: -0.3},
+    {points: [32.3,-95.27, 32.9, -92.03], curvature: -0.25},
+    {points: [32.9, -92.03, 40.4, -75.5], curvature: 0.05},
+    {points: [40.4, -75.5, 39.9, -74.1], curvature: 0.45}
+    ];
+
+// create connector series
+var series = map.connector(data_border);
+
+// set connector series settings
+series.markers(false);
+series.color("maroon");
+series.hovered().stroke("maroon", 2);
+series.name("Hostilities border");
+series.legendItem().iconType("line");
+
+// data set for the choropeth series
+var data_union =[
+    {id: 'US.MN', name: "Minnesota"},
+    {id: 'US.CA', name: "California"},
+    {id: 'US.NV', name: "Nevada"},
+    {id: 'US.OR', name: "Oregon"},
+    {id: 'US.IA', name: "Iowa"},
+    {id: 'US.KS', name: "Kansas"},
+    {id: 'US.CT', name: "Connecticut"},
+    {id: 'US.MA', name: "Massachusetts"},
+    {id: 'US.NH', name: "New Hampshire"},
+    {id: 'US.RI', name: "Rhode Island"},
+    {id: 'US.VT', name: "Vermont"},
+    {id: 'US.IL', name: "Illinois"},
+    {id: 'US.IN', name: "Indiana"},
+    {id: 'US.OH', name: "Ohio"},
+    {id: 'US.WI', name: "Wisconsin"},
+    {id: 'US.NY', name: "New York"},
+    {id: 'US.PA', name: "Pennsylvania"},
+    {id: 'US.ME', name: "Maine"},
+    {id: 'US.MI', name: "Michigan"}
+];
+
+var data_union_terr_nps = [
+    {id: 'US.MT', name: "Montana"},
+    {id: 'US.ND', name: "North Dakota"},
+    {id: 'US.ID', name: "Idaho"},
+    {id: 'US.WA', name: "Washington"},
+    {id: 'US.CO', name: "Colorado"},
+    {id: 'US.UT', name: "Utah"},
+    {id: 'US.WY', name: "Wyoming"},
+    {id: 'US.MO', name: "Missouri"},
+    {id: 'US.NE', name: "Nebraska"},
+    {id: 'US.SD', name: "South Dakota"},
+    {id: 'US.WY', name: "Wyoming"}
+];
+
+var data_confederate = [
+    {id: 'US.AR', name: "Arkansas"},
+    {id: 'US.LA', name: "Louisiana"},
+    {id: 'US.TX', name: "Texas"},
+    {id: 'US.AL', name: "Alabama"},
+    {id: 'US.FL', name: "Florida"},
+    {id: 'US.GA', name: "Georgia"},
+    {id: 'US.MS', name: "Mississippi"},
+    {id: 'US.SC', name: "South Carolina"},
+    {id: 'US.NC', name: "North Carolina"},
+    {id: 'US.TN', name: "Tennessee"},
+    {id: 'US.VA', name: "Virginia"},
+    {id: 'US.DE', name: "Delaware"},
+    {id: 'US.DC', name: "District of Columbia"},
+    {id: 'US.MD', name: "Maryland"},
+    {id: 'US.NJ', name: "New Jersey"}
+];
+
+var data_union_border_states = [
+    {id: 'US.KY', name: "Kentucky"},
+    {id: 'US.WV', name: "West Virginia"}
+];
+
+var data_union_terr_ps = [
+    {id: 'US.AZ', name: "Arizona"},
+    {id: 'US.NM', name: "New Mexico"},
+    {id: 'US.OK', name: "Oklahoma"}
+];
+
+// map setting
+var ch_series_union = map.choropleth(data_union);
+var ch_series_confederate = map.choropleth(data_confederate);
+var ch_series_union_terr_nps = map.choropleth(data_union_terr_nps);
+var ch_series_union_border_states = map.choropleth(data_union_border_states);
+var ch_series_union_terr_ps = map.choropleth(data_union_terr_ps);
+
+// names for the series a
+ch_series_union.name("Union");
+ch_series_confederate.name("Confederation");
+ch_series_union_terr_nps.name("Union territories (no slavery)");
+ch_series_union_border_states.name("Border Union states (slavery)");
+ch_series_union_terr_ps.name("Union territories claimed by Confederacy (slavery)");
+
+// setting the colors
+ch_series_union.color("#0288d1");
+ch_series_union_terr_nps.color("#40c4ff");
+ch_series_confederate.color("#8d5932");
+ch_series_union_border_states.color("#d8b597");
+ch_series_union_terr_ps.color("#f2d1be");
+ch_series_union_terr_nps.color("#6666FF");
+
+// disabling the states that were not part of USA at the time of the Civil War
+map.unboundRegions(false);
+
+// legend
+map.legend(true);
+map.legend().position("bottom");
+map.legend().maxHeight("10%");
+map.legend().itemsLayout("vertical-expandable");
+
+
+// set container id for the chart
+map.container('container');
+// initiate chart drawing
+map.draw();
+});
+</script>
+</body>
+</html>

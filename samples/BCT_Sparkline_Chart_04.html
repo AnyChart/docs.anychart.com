@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Sparkline Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-sparkline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    var stage = anychart.graphics.create("container");
+  // create chart
+  chart1 = anychart.sparkline();
+
+  chart1.title("Reviews for matryoshka567");
+  chart1.seriesType("column");
+
+  // create data
+  chart1.data([500,-100,340,200,-90,80,-70]);
+
+  // set chart dimensions and postition
+  chart1.bounds(0, 0, 300, 50);
+
+  // set container id for the charts
+  chart1.container(stage);  
+  // initiate chart drawing
+  chart1.draw();
+});
+</script>
+</body>
+</html>

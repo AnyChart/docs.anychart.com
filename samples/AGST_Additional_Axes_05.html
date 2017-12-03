@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="AGST Additional Axes 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var chart = anychart.vertical();
+
+  chart.title("Extra Axes Units Comparison Sample");
+  
+  chart.xGrid(true);
+
+  // additional axes settings
+  var kelvinScale = anychart.scales.linear();
+  kelvinScale.minimum(0);
+  kelvinScale.maximum(2000);
+  kelvinScale.ticks().interval(500);
+
+  var fahrenheitScale = anychart.scales.linear();
+  fahrenheitScale.minimum((kelvinScale.minimum() - 273.15)*1.8 + 32);
+  fahrenheitScale.maximum((kelvinScale.maximum() - 273.15)*1.8 + 32);
+  fahrenheitScale.ticks().interval(500);
+
+  var celsiusScale = anychart.scales.linear();
+  celsiusScale.minimum(kelvinScale.minimum() - 273.15);
+  celsiusScale.maximum(kelvinScale.maximum() - 273.15);
+  celsiusScale.ticks().interval(500);
+
+  var yAxis = chart.yAxis();
+  yAxis.scale(fahrenheitScale);
+  yAxis.ticks(true);
+  yAxis.drawFirstLabel(false);
+  yAxis.drawLastLabel(false);
+  yAxis.title("Fahrenheit");
+
+  // adjusting axes
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.title("Celsius");
+  yAxis1.orientation("top");
+  yAxis1.ticks(true);
+  yAxis1.drawFirstLabel(false);
+  yAxis1.drawLastLabel(false);
+  yAxis1.scale(celsiusScale);
+
+  var yAxis2 = chart.yAxis(2);
+  yAxis2.scale(kelvinScale);
+  yAxis2.ticks(true);
+  yAxis2.orientation("top");
+  yAxis2.title("Kelvin");
+
+
+  // setting data
+  var data = [
+    ["Absolute Zero", 0],
+    ["Lowest recorded surface temperature on Earth", 184],
+    ["Celsius / Fahrenheit's 'cross-over' temperature", 233.15],
+    ["Ice melts", 273.15],
+    ["Average human body temperature", 309.95],
+    ["Highest recorded surface temperature on Earth", 331],
+    ["Water boils", 373.1339],
+    ["Titanium melts", 1941]
+  ];
+  
+  // setting and adjusting data visualisation
+  var markerSeries = chart.marker(data);
+  markerSeries.clip(false);
+  markerSeries.zIndex(chart.xAxis().zIndex()+1);
+  markerSeries.tooltip().format(function (){
+    return "Kelvin: "+ this.value.toFixed(2) +
+      "\nCelsius: "+ (this.value - 273.15).toFixed(2) +
+      "\nFahrenheit: " + ((this.value - 273.15)*1.8000 + 32).toFixed(2);
+  });
+  markerSeries.yScale(kelvinScale);
+  markerSeries.size(5);
+  markerSeries.hovered().size(7);
+
+  var lineMarker = chart.lineMarker();
+  lineMarker.stroke("#FF0000");
+  lineMarker.scale(celsiusScale);
+  
+  var lineMarker1 = chart.lineMarker(1);
+  lineMarker1.stroke("#00AA00");
+  lineMarker1.scale(fahrenheitScale);
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

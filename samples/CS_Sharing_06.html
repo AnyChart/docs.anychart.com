@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS Sharing 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a chart 
+    var chart = anychart.column([
+      {x: "Facebook", y: 100},
+      {x: "Twitter", y: 120},
+      {x: "LinkedIn", y: 180},
+      {x: "Pinterest",   y: 170}
+    ]);
+
+    // set the chart title
+    chart.title("Click to Share with Custom Defaults");
+
+    // set default export settings
+    // they affect both shareWith*() methods
+    // and context menu export
+    anychart.exports.facebook({caption: "A sample shared with Facebook", link: "https://anychart.com", height: "600", appID: "1167712323282103"});
+    anychart.exports.twitter("https://export.anychart.com/sharing/twitter", "800", "600");
+    anychart.exports.linkedin("AnyChart Area Chart sample shared with LinkedIn", undefined, undefined, "400");
+    anychart.exports.pinterest("https://anychart.com", undefined, "800", undefined);
+    
+    // attach click listener
+    chart.listen("pointClick", function(e){
+switch (e.point.get("x")) {
+  case "Facebook":
+    chart.shareWithFacebook();
+    break;
+  case "Twitter":
+    chart.shareWithTwitter();
+    break;
+  case "LinkedIn":
+    chart.shareWithLinkedIn();
+    break;
+  case "Pinterest":
+    chart.shareWithPinterest();
+    break;
+}
+    });
+
+
+    // set the container id
+    chart.container("container");
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

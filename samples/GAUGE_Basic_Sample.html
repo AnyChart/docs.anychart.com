@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Basic Sample"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-circular-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+ 
+  // create data set
+  var dataSet = anychart.data.set([81, 34.5]);
+ 
+  // set the gauge type
+  var gauge = anychart.gauges.circular();
+ 
+  // set the padding
+  gauge.data(dataSet).padding("4%");
+ 
+  // configure the scale
+  var scale = gauge.axis().scale();
+  scale.minimum(0)
+      .maximum(100)
+      .ticks()
+      .interval(10);
+ 
+  // configure masjor ticks on the axis
+  var axis = gauge.axis();
+  axis.ticks()
+      .fill("white")
+      .stroke("#888")
+      .type("trapezium")
+      .length(20);
+ 
+  // configure minor ticks on the axis
+  axis.minorTicks()
+      .enabled(true)
+      .fill("white")
+      .stroke("#ccc")
+      .type("trapezium")
+      .length(10);
+ 
+  // configure the bar presenting data
+  gauge.bar(0)
+      .position("inside")
+      .fill("#F0673B .9")
+      .stroke("#F0673B")
+      .radius(80);
+ 
+  // initiate drawing the gauge
+  gauge.container("container").draw();
+});
+</script>
+</body>
+</html>

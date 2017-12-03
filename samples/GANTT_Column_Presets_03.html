@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GANTT Column Presets 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    var stage = anychart.graphics.create("container");
+
+  var data = [
+    {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000},
+    {"id": "2", "name": "Define business vision", "progressValue": "0", "actualStart": 951408000000},
+    {"id": "3", "name": "Identify available skills, information and support", "progressValue": "0", "actualStart": 951494400000},
+    {"id": "4", "name": "Decide whether to proceed", "progressValue": "0", "actualStart": 951609600000}
+  ];
+  var treeData = anychart.data.tree(data, "as-table");
+
+  dataGrid = anychart.standalones.dataGrid();
+  dataGrid.data(treeData);
+  var column0 = dataGrid.column(0);
+  column0.title("Raw Data");
+  column0.setColumnFormat("actualStart", "text");
+  column0.width(100);
+  var column1 = dataGrid.column(1);
+  column1.title("date-iso-8601");
+  column1.setColumnFormat("actualStart", "date-iso-8601");
+  column1.width(150);
+
+  dataGrid.tooltip(false);
+  dataGrid.listen("signal", dataGrid.draw);
+  dataGrid.container(stage);
+  dataGrid.draw();
+});
+</script>
+</body>
+</html>

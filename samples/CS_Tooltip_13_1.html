@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="CS Tooltip 13 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var stage = anychart.graphics.create("container");
+
+  var dataSet = anychart.data.set([
+      ["John", 10000, 13000, 15000],
+    ["Jake", 12000, 10000, 18000],
+    ["Peter", 18000, 19000, 16000],
+    ["James", 11000, 10000, 14000],
+    ["Mary", 9000, 16000, 19000]
+  ]);
+
+  var data1 = dataSet.mapAs({x: 0, value: 1});
+  var data2 = dataSet.mapAs({x: 0, value: 2});
+  var data3 = dataSet.mapAs({x: 0, value: 3});
+
+  // chart type
+  chart = anychart.bar();
+  series1 = chart.bar(data1);
+  series1.name("Year 2008");
+  series2 = chart.bar(data2);
+  series2.name("Year 2010");
+  series3 = chart.bar(data3);
+  series3.name("Year 2012");
+
+  // set title
+  chart.title("Tooltips can leave the chart and the stage bounds");
+
+  // set the padding for the chart
+  chart.bounds(10, 20, "90%", "70%");
+  chart.background("green 0.1");
+
+  // let tooltips to leave the chart bounds
+  series1.tooltip().allowLeaveChart(true);
+  series1.tooltip().allowLeaveStage(true);
+  series1.tooltip().format("This tooltip can be demonstrated out of chart and out of stage, if it becomes necessary to show it all, though it still cannot go beyond the screen");
+  series2.tooltip().allowLeaveChart(true);
+  series2.tooltip().allowLeaveStage(false);
+  series2.tooltip().format("This tooltip is not allowed to be demonstrated out of stage, though it can leave the chart bounds");
+
+  // font settings for tooltip text
+  var tooltip = series1.tooltip();
+  tooltip.fontWeight(900);
+  var title = series1.tooltip().title();
+  title.fontWeight(900);
+
+  // adjust chart tooltips for the third series
+  chart.tooltip().allowLeaveChart(false);
+  chart.tooltip().allowLeaveStage(false);
+  chart.tooltip().format("This series tooltips' settings are inherited from chart tooltip settings");
+
+  // draw
+  chart.container(stage);
+  chart.draw();
+
+  // limit the stage parameters for better illustration
+  document.getElementById("container").style.width="85%";
+  document.getElementById("container").style.background="#F0FFF0";
+});
+</script>
+</body>
+</html>

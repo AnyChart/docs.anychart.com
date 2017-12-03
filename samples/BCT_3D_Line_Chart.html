@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT 3D Line Chart"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-cartesian-3d.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+	// create a data set
+	var data = anychart.data.set([
+		["Winter", 12000, 13000, 14000],
+		["Spring", 13000, 15000, 17000],
+		["Summer", 25000, 35000, 36000],
+		["Autumn", 16000, 17000, 28000]
+	]);
+
+	// map the data
+	var seriesData_1 = data.mapAs({x: 0, value: 1});
+	var seriesData_2 = data.mapAs({x: 0, value: 2});
+	var seriesData_3 = data.mapAs({x: 0, value: 3});
+
+	// create a 3d line chart
+	var chart = anychart.line3d();
+
+	// create line series and set the data
+	var series1 = chart.line(seriesData_1);
+	var series2 = chart.line(seriesData_2);
+	var series3 = chart.line(seriesData_3);
+
+	// set the chart title
+	chart.title("3D Line Chart");
+
+	// set the container id
+	chart.container("container");
+
+	// initiate drawing the chart
+	chart.draw();
+});
+</script>
+</body>
+</html>

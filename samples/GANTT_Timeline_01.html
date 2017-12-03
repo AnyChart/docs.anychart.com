@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GANTT Timeline 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // create data tree on our data
+    var treeData = anychart.data.tree(getData(), "as-table");
+
+    // create resource gantt chart
+    var chart = anychart.ganttResource();
+
+    // set container id for the chart
+    chart.container('container');
+
+    // set data for the chart
+    chart.data(treeData);
+    // set start splitter position settings
+    chart.splitterPosition(150);
+
+var now = (new Date()).getTime();
+var sec = 1000;
+var min = 60*sec;
+var hour = 60*min;
+var day = 24*hour;
+
+// create linemarkers
+var tl = chart.getTimeline();
+tl.lineMarker(0).value("current");
+tl.lineMarker(1).value(now + 5*day);
+
+    // get chart data grid link to set column settings
+    var dataGrid = chart.dataGrid();
+
+    // set first column settings
+    var firstColumn = dataGrid.column(0);
+    firstColumn.title('#');
+    firstColumn.width(30);
+    firstColumn.cellTextSettings().hAlign('center');
+
+    // set second column settings
+    var secondColumn = dataGrid.column(1);
+    secondColumn.title('Person');
+    secondColumn.width(120);
+    secondColumn.cellTextSettings().hAlign('left');
+    secondColumn.format(function (item) {
+return item.get('name');
+    });
+
+    // initiate chart drawing
+    chart.draw();
+
+    // zoom chart to specified date
+    chart.fitAll();
+});
+
+function getData() {
+    var now = (new Date()).getTime();
+    var sec = 1000;
+    var min = 60*sec;
+    var hour = 60*min;
+    var day = 24*hour;
+
+    return [
+{
+    "id": "1",
+    "name": "Alex Exler",
+    "periods": [
+{"id": "1_1", "start": now - 10*day, "end": now + 4*day, },
+{"id": "1_2", "start": now + 20*day, "end": now + 28*day}]
+},
+{
+    "id": "2",
+    "name": "Philip Kineyko",
+    "periods": [
+{"id": "2_1", "start": now - 3*day, "end": now + 16*day},
+{"id": "2_2", "start": now + 19*day, "end": now + 25*day}]
+},
+{
+    "id": "3",
+    "name": "Luke Liakos",
+    "periods": [
+{"id": "3_1", "start": now + 5*day, "end": now + 10*day},
+{"id": "3_2", "start": now + 25*day, "end": now + 29*day}]
+},
+{
+    "id": "4",
+    "name": "Judy Penfold",
+    "periods": [
+{"id": "4_1", "start": now - 8*day, "end": now + 2*day},
+{"id": "4_2", "start": now + 14*day, "end": now + 20*day}]
+},
+{
+    "id": "5",
+    "name": "Patricia Darmon",
+    "periods": [
+{"id": "5_1", "start": now - 18*day, "end": now - 5*day},
+{"id": "5_2", "start": now, "end": now + 12*day}]
+
+}
+    ];
+}
+</script>
+</body>
+</html>

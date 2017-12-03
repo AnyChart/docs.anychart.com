@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="BCT Bubble Chart 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // chart type
+  var chart = anychart.cartesian();
+
+  // all data
+  var data1 = [
+    {x: 2000, value: 1100, size: 3},
+    {x: 2001, value: 800, size: 3},
+    {x: 2002, value: 1100, size: 3},
+    {x: 2003, value: 1500, size: 2},
+    {x: 2004, value: 921, size: 4},
+    {x: 2005, value: 1000, size: 3},
+    {x: 2006, value: 1400, size: 2}
+  ];
+
+  var data2 = [
+    {x: 2000, value: 900, size: 1},
+    {x: 2001, value: 950, size: 4},
+    {x: 2002, value: 800, size: 2},
+    {x: 2003, value: 1000, size: 3},
+    {x: 2004, value: 800, size: 3},
+    {x: 2005, value: 750, size: 1},
+    {x: 2006, value: 800, size: 2}
+  ];
+
+  // set data for each series
+  series1 = chart.bubble(data1);
+  series2 = chart.bubble(data2);
+
+  // limit bubbles size
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(100);
+  
+  // chart title
+  chart.title("Bubble Chart: Size (Pixels)");
+
+  chart.legend(true);
+
+  // Sets settings for interactivity.
+  chart.interactivity({hoverMode: "by-x"});
+
+  // set the titles of the axes
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Sales, $");
+  
+  // draw
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

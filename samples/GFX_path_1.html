@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GFX path 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var stage = acgraph.create("container");
+
+var linePath = stage.path();
+// starting point
+linePath.moveTo(200, 100);
+// Add commands to the path
+linePath.arcToByEndPoint(300, 100, 250, 50, true, true);
+linePath.lineTo(250, 50);
+// make the path a closed shape
+linePath.close();
+
+// fill with a pattern fill
+linePath.fill(stage.hatchFill("backward-diagonal", "#2196F3 0.9", 1));
+</script>
+</body>
+</html>

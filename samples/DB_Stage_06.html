@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="DB Stage 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+	// create stage
+	stage = anychart.graphics.create("container");
+
+	// set colors for sample
+	textColor = "#7C868E";
+	lineColor = "#CECECE";
+	chart_palette = anychart.palettes.distinctColors().items(["#bC7C63", "#6594AD", "#585953"]);
+
+	// layer for the text elements
+	layer_text = stage.layer();
+	
+	// legend on the chart
+	chartLegend = createLegend([
+		{index: 0, text: "Visits",  iconFill: "#bC7C63"},
+		{index: 1, text: "Feeding", iconFill: "#6594AD"},
+		{index: 2, text: "Mating",  iconFill: "#585953"}
+	]);
+
+	chartLegend.container(layer_text).draw();
+
+    // create main title
+	layer_text.text(20, 20, "Animals activitiy", {fontSize:20});
+    // create subtitle
+	layer_text.text(20, 45, "Abies sibirica, 7 days observation period", {fontSize:18, color:"#998552", opacity:20});
+
+	// jay, woodpecker, squirrel, mouse  
+	dataSet = [
+		["1", 4, 0, 0, 4, 4, 0, 3, 1, 1, 4, 10, 2],
+		["2", 2, 1, 0, 6, 5, 0, 2, 1, 0, 9, 11, 3],
+		["3", 2, 1, 0, 2, 1, 0, 4, 1, 1, 7, 8,  4],
+		["4", 2, 0, 0, 2, 2, 0, 4, 2, 0, 1, 12, 0],
+		["5", 3, 1, 1, 0, 0, 0, 1, 0, 0, 0, 10, 6],
+		["6", 1, 1, 0, 3, 2, 1, 0, 0, 0, 8, 10, 5],
+		["7", 2, 0, 1, 6, 3, 2, 2, 0, 1, 0, 7,  0]
+	];
+
+	// map all data as table into one series 
+	series = anychart.data.mapAsTable(dataSet);
+
+	// settings for the block describing jay 
+	jaySettings = {
+		// latin name of the animal
+		name: "Garrulus glandarius",
+		// position of the text
+		textX: 350,
+		textY: 175,
+		// the name of the picture of the animal in the folder with pictures
+		picture: "jay.jpg",
+		// the picture position
+		pictureY: 130,
+		// the path of the line connecting the picture with its part of the fur-tree
+		linePath: [[210, 190], [300, 130], [370, 130]],
+		// Y-position of the chart
+		chartY: 80,
+		// sets the data of this particular animal from the series
+		data: [series[0], series[1], series[2]],
+		// coordinates of the fur-tree piece where this animal lives
+		treePath: [[175, 120], [250, 240], [100, 240]],
+		// coordinates of the shadow of the fir-tree piece where this animal lives
+		shadowPath: [[175, 165], [250, 290], [100, 290]],
+		// the color of the fur-tree piece where this animal lives
+		treeColor: "#7CB342",
+		// makes this layer overlap others
+		zIndex: 10
+	};
+	// creates a
+	createSpecies(jaySettings);
+
+	// settings for the block describing woodpecker
+	woodpeckerSettings = {
+		name: "Dendrocopos analis",
+		textX: 350,
+		textY: 290,
+		picture: "woodpecker.jpg",
+		pictureY: 245,
+		linePath: [[250, 290], [300, 240], [370, 240]],
+		chartY: 195,
+		data: [series[3], series[4], series[5]],
+		treePath: [[175, 165], [280, 340], [70, 340]],
+		shadowPath: [[175, 240], [280, 395], [70, 395]],
+		treeColor: "#689F38",
+		zIndex: 8
+	};
+
+	createSpecies(woodpeckerSettings);
+
+	squirrelSettings = {
+		name: "Sciurus vulgaris",
+		textX: 360,
+		textY: 405,
+		picture: "sqirrel.jpg",
+		pictureY: 360,
+		linePath: [[260, 365], [370, 365]],
+		chartY: 310,
+		data: [series[6], series[7], series[8]],
+		treePath: [[175, 240], [310, 440], [40, 440]],
+		shadowPath: [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]],
+		treeColor: "#558B2F",
+		zIndex: 6
+	};
+
+	createSpecies(squirrelSettings);
+
+	mouseSettings = {
+		name: "Apodemus uralensis",
+		textX: 340,
+		textY: 520,
+		picture: "mouse.jpg",
+		pictureY: 475,
+		linePath: [[210, 465], [370, 465]],
+		chartY: 425,
+		data: [series[9], series[10], series[11]],
+		treePath: [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]],
+		shadowPath: [[135, 400], [215, 400], [215, 570], [135, 570], [135, 400]],
+		treeColor: "#6D4C41",
+		zIndex: 4
+	};
+
+	createSpecies(mouseSettings);
+
+});
+
+// an external function for creating legends
+function createLegend(items) {
+	var legend = anychart.standalones.legend();
+	legend.align("left");
+	legend.margin(75, 0, 20, 10);
+	legend.items(items);
+	return legend;
+}
+
+// creates everything connected to the animal
+function createSpecies(e){
+	var layer = stage.layer();
+	layer.text(e.textX, e.textY, e.name).color(textColor);
+	var pic = draw_picture(layer, 400, [e.pictureY, 40], lineColor, e.picture);
+	var pic_shadow = layer.circle(400, e.pictureY, 60);
+	pic_shadow.fill(["black 0.5","black 0"], .5, .5, null, .5, 0.5, 0.5);
+	pic_shadow.zIndex(-2);
+	pic_shadow.stroke(null);
+	var line = draw_line(layer, e.linePath, lineColor, -1);
+	var line_shadow = draw_line(layer, e.linePath, textColor, -1);
+	line_shadow.visible(false);
+	draw_chart(layer, e.data, [460, e.chartY, 250, 100]);
+	var tree_piece = draw_tree(layer, e.treePath, e.treeColor, 1, false);
+	var tree_shadow = draw_tree(layer, e.shadowPath, "#212121", -1, true);
+	tree_shadow.visible(false);
+	tree_shadow.disablePointerEvents(true);
+	on_hover(tree_piece, tree_shadow, line, line_shadow, pic, pic_shadow);
+	layer.zIndex(e.zIndex);
+}
+
+// an external function for drawing a piece of tree
+function draw_tree(layer, points, color, z_index, shadow){
+	if (shadow) fill = [color + " 0.5", color + " 0.4", color + " 0"]
+	else fill = color;	
+	var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(fill, 270).stroke(null);
+	for (var i = 0; i < points.length; i++) piece.lineTo(points[i][0], points[i][1]);
+	return piece;
+}
+
+// an external function switching the behaviour
+function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
+	toggle(false);
+	piece.listen("mouseOver", function (){toggle(true);});
+	piece.listen("mouseOut", function (){toggle(false);});
+	line.listen("mouseOver", function (){toggle(true);});
+	line.listen("mouseOut", function (){toggle(false);});
+	img.listen("mouseOver", function (){toggle(true);});
+	img.listen("mouseOut", function (){toggle(false);});
+	// enables and disables all shadows when an element is hovered or unhovered
+    function toggle(e){
+shadow.visible(e);
+lineShadow.visible(e);
+imgShadow.visible(e);
+    }
+}
+
+// draws a chart with passed parameters of the particular animal
+function draw_chart(container, data, bounds){
+	var chart = anychart.line();
+	chart.palette(chart_palette);
+
+	setupSeries("Visits", data[0], chart);
+	setupSeries("Feeding", data[1], chart);
+	setupSeries("Mating", data[2], chart);
+
+	chart.bounds(bounds);
+	chart.yScale().ticks().interval(2);
+	chart.yAxis().drawFirstLabel(true);
+	chart.xAxis(false);
+	chart.tooltip().title(false);
+	chart.tooltip().separator(false);
+	chart.container(container).draw();
+}
+
+// creates series
+function setupSeries(name, data, chart){
+	var series = chart.line(data);
+	series.name(name);
+	series.clip(false);
+}	
+
+// draws a line connecting picture of animal and the fur-tree part
+function draw_line(layer, points, color, z_index){
+	var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
+	for (var i = 0; i < points.length; i++) {
+		line.lineTo(points[i][0], points[i][1]);
+	}
+	return line;
+}
+
+// draws a picture for an animal taken from the url
+function draw_picture(layer, radius, coordinates, color, pic_name) {
+	layer.circle(radius, coordinates[0], coordinates[1])
+		.stroke(color)
+		.fill({src: "https://static.anychart.com/images/graphics_stage_demo/" + pic_name});
+	return layer;
+}
+</script>
+</body>
+</html>

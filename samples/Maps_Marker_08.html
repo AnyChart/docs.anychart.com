@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Marker 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+
+    // create the dataset of points that are defined by latitude and longtitude values
+    var data_ACME = [
+{lat: 33.75, long: -112.18, name: "Stepford", value: 321},
+{lat: 33.79, long: -101.52, name: "Metropolis", value: 293},
+{lat: 26.12, long: -113.62, name: "Haddonfield", value: 312},
+{lat: 37.89, long: -105.09, name: "Marlberry", value: 198},
+{lat: 40.20, long: -84.28, name: "Sunnydale", value: 309},
+{lat: 39.44, long: -116.04, name: "Landmark", value: 215},
+{lat: 46.31, long: -99.88, name: "Springfield", value: 219},
+{lat: 27.63, long: -82.37, name: "Vice City", value: 179}
+    ];
+
+    var data_CITRUS = [
+{lat: 45.75, long: -88.18, name: "Bas", value: 221},
+{lat: 43.44, long: -70.85, name: "Hillwood", value: 203},
+{lat: 41.46, long: -99.61, name: "Shermer", value: 162},
+{lat: 38.14, long: -90.40, name: "Venusville", value: 98},
+{lat: 29.28, long: -100.58, name: "South Park", value: 109},
+{lat: 47.38, long: -120.06, name: "Heavensent", value: 215},
+{lat: 44.50, long: -106.8, name: "Wellsville", value: 201},
+{lat: 44.63, long: -122.37, name: "Whoville", value: 138},
+{lat: 30.66, long: -88.15, name: "Bedrock", value: 210},
+{lat: 35.21, long: -116.44, name: "Bluffington", value: 195},
+{lat: 24.76, long: -151.44, name: "Primwille", value: 112},
+{lat: 34.51, long: -96.65, name: "Hillywood", value: 89}
+    ];
+
+    var map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
+
+    // Creates the marker series
+    var series_acme = map.marker(data_ACME);
+    series_acme.name("ACME Corp. branch");
+    var series_citrus = map.marker(data_CITRUS);
+    series_citrus.name("CITRUS Corp. branch");
+
+    // format the tooltips
+    map.tooltip().titleFormat("{%seriesName}");
+    map.tooltip().format("Yearly profit: ${%value}m");
+
+    // turn off labels
+    map.labels(false);
+
+    // set the colors of the CITRUS series
+    series_citrus.stroke("green");
+    series_citrus.fill("gold");
+
+    // set the size of CITRUS markers
+    series_citrus.normal().size(8);
+    series_citrus.hovered().size(10);
+    series_citrus.selected().size(10);
+
+    // set the size of ACME markers 
+    series_acme.normal().size(4);
+    series_acme.hovered().size(6);
+    series_acme.selected().size(6);
+
+    // set the type of CITRUS markers
+    series_citrus.normal().type("star4");
+    series_citrus.hovered().type("star5");
+    series_citrus.selected().type("star6");
+
+    map.title("Formatting the marker types");
+
+    map.container("container");
+    map.draw();
+});
+</script>
+</body>
+</html>

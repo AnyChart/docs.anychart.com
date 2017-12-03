@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Drill Down Methods 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/new_york/new_york.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/louisiana/louisiana.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/newfoundland_and_labrador/newfoundland_and_labrador.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/british_columbia/british_columbia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/8.0.1/Maps/Map_Projections
+    
+    // create a container for maps and a button
+    stage = anychart.graphics.create("container");
+
+    // world map
+    chart = anychart.map();
+
+    // major maps
+    map = anychart.map();
+
+    // canada map
+    canadaMap = anychart.map();
+
+    worldDataSet = [
+{id: "US", name: "USA", value: "1"},
+{id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
+    ];
+
+    usaDataSet = [
+{"id": "US.LA", "value": 22},
+{"id": "US.TX", "value": 23},
+{"id": "US.NY", "value": 45}
+    ];
+
+    canadaDataSet = [
+{"id": "CA.BC", "value": 3},
+{"id": "CA.NF", "value": 11},
+{"id": "CA.PE", "value": 12}
+    ];
+
+    // world data and series
+    chart.geoData(anychart.maps.world);
+    worldSeries = chart.choropleth(worldDataSet);
+
+    // usa data and series
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
+
+    // canada data and series
+    canadaMap.geoData(anychart.maps.canada);
+    canadaSeries = canadaMap.choropleth(canadaDataSet);
+    canadaSeries.fill("#FF9966");
+
+    // regions maps
+    txMap = anychart.map();
+    txMap.geoData(anychart.maps["texas"]);
+
+    laMap = anychart.map();
+    laMap.geoData(anychart.maps["louisiana"]);
+
+    nyMap = anychart.map();
+    nyMap.geoData(anychart.maps["new_york"]);
+
+    bcMap = anychart.map();
+    bcMap.geoData(anychart.maps["british_columbia"]);
+    
+    nfMap = anychart.map();
+    nfMap.geoData(anychart.maps["newfoundland_and_labrador"]);
+
+    peMap = anychart.map();
+    peMap.geoData(anychart.maps["prince_edward_island"]);
+
+
+    // set the drillDownMaps
+    chart.drillDownMap({
+"US": map,        
+"CA": canadaMap
+    });
+
+    map.drillDownMap({
+"US.LA": laMap,  
+"US.TX": txMap,   
+"US.NY": nyMap
+    });
+
+    canadaMap.drillDownMap({
+"CA.BC": bcMap,  
+"CA.NF": nfMap,   
+"CA.PE": peMap
+    });
+
+    // create drill up label
+    drillToLabel = createLabel("Drill Up", 0, function () {
+      // Drill down to the specified item.
+      chart.drillUp();
+    });
+
+    // set the selectionMode    
+    chart.interactivity({selectionMode: "drill-down"});
+
+    chart.container(stage);
+    chart.draw();
+    
+});
+    
+
+// helper function to create buttons
+function createLabel(text, offset, action){
+    var label = anychart.standalones.label();
+    label.background({fill: "#9E9E9E"});
+    label.zIndex(1000);
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    return label;
+}
+</script>
+</body>
+</html>

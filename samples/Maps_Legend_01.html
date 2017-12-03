@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="Maps Legend 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/countries/usa/usa_mainland.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // create a map
+  var map = anychart.map();
+
+  // data
+  var data_1 = [
+    {id: 'US-MN', name: "Minnesota", 'value': 8.4},
+    {id: 'US-MT', name: "Montana", 'value': 8.5},
+    {id: 'US-ND', name: "North Dakota", 'value': 5.1},
+    {id: 'US-ID', name: "Idaho", 'value': 8.0}
+  ];
+    
+  var data_2 = [
+    {id: 'US-WA', name: "Washington", 'value': 13.1},
+    {id: 'US-AZ', name: "Arizona", 'value': 9.7},
+    {id: 'US-CA', name: "California", 'value': 14.0},
+    {id: 'US-CO', name: "Colorado", 'value': 8.7},
+  ];
+
+
+  // set map Geo data
+  map.geoData(anychart.maps.usa_mainland);
+  
+  // create series
+  var series_1 = map.choropleth(data_1);
+  series_1.geoIdField('iso_3166_2');
+  series_1.name('Sales 2015');
+
+  var series_2 = map.choropleth(data_2);
+  series_2.geoIdField('iso_3166_2');
+  series_2.name('Sales 2015');
+  
+  // turn on the legend
+  map.legend(true);
+
+  // display a map
+  map.container('container');
+  map.draw();
+});
+</script>
+</body>
+</html>

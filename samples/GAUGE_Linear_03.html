@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ac:name" content="GAUGE Linear 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-linear-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    
+    // create data
+    var data = [92];
+    
+    // set the gauge type
+    var gauge = anychart.gauges.thermometer();
+
+    // set the data for the gauge
+    gauge.data(data);
+
+    // set the title of the gauge
+    gauge.title('Thermometer with Fahrenheit and Celsius Scales');
+
+    // add a thermometer pointer
+    gauge.addPointer(0);
+
+    // use the primary scale a Fahrenheit scale
+    var fScale = gauge.scale();
+
+    // set the minimum and maximum values of the Fahrenheit scale
+    fScale.minimum(-40);
+    fScale.maximum(122);
+
+    // set the intervals of major and minor ticks on the Fahrenheit scale
+    fScale.ticks().interval(10);
+    fScale.minorTicks().interval(2);    
+
+    // add an axis on the left side of the gauge
+    var axisLeft = gauge.axis(0);
+
+    // configure minor ticks on the left axis
+    axisLeft.minorTicks(true)
+    axisLeft.minorTicks().stroke('#cecece');
+
+    // set the width of the left axis
+    axisLeft.width('0');
+
+    // set the offset of the left axis (as a percentage of the gauge width)
+    axisLeft.offset('-0.18%');
+
+    // bind the left axis to the Fahrenheit scale
+    axisLeft.scale(fScale);
+
+    // configure a Celsius scale
+    var cScale = anychart.scales.linear();
+    cScale.minimum(-40);
+    cScale.maximum(50);
+    cScale.ticks().interval(10);
+    cScale.minorTicks().interval(1);
+
+    // configure an axis on the right side of the gauge
+    var axisRight = gauge.axis(1);
+    axisRight.minorTicks(true);
+    axisRight.minorTicks().stroke('#cecece');
+    axisRight.width('0');
+    axisRight.offset('3.15%');
+    axisRight.orientation('right');
+
+    // bind the right axis to the Celsius scale
+    axisRight.scale(cScale);
+
+    // set the container id
+    gauge.container('container');
+
+    // initiate drawing the gauge
+    gauge.draw();
+});
+</script>
+</body>
+</html>
