@@ -59,7 +59,7 @@ formatDate(startTime.getUTCDate()) + "/" + startTime.getUTCFullYear()
    return "";
 }
 
-dataGrid.column(0).title().text("?");
+dataGrid.column(0).title().text("#");
 
 dataGrid.column(1).width(100).format(function(item) {
     return item.get("name");

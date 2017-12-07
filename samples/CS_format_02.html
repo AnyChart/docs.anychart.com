@@ -27,13 +27,13 @@ anychart.onDocumentReady(function () {
 
   var chart = anychart.line();
 
-  chart.title("Tokens with Options: scaling GBP \n(?1 = 20s, 1s = 12p)");
+  chart.title("Tokens with Options: scaling GBP \n(£1 = 20s, 1s = 12p)");
   var tooltip = chart.tooltip();
   tooltip.displayMode("separated");
   tooltip.positionMode("point");
 
   // string for formatting tooltips
-  var formatter = "{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( ?)}";
+  var formatter = "{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( £)}";
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column([

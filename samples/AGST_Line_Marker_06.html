@@ -162,12 +162,12 @@ anychart.onDocumentReady(function () {
      {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
    ]);
 
-  series.name("?rudle oil forecast and range of uncertainty");
+  series.name("Сrude oil forecast and range of uncertainty");
 
   series.tooltip().title(false).separator(false).format(function (){
     var value = this.value.toFixed(3);
     if (this.valueLowerError !==0)
-      value = this.value.toFixed(3) + "?" + this.valueLowerError.toFixed(3);
+      value = this.value.toFixed(3) + "±" + this.valueLowerError.toFixed(3);
     return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
   });
 

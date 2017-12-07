@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     duration = chart.getStat("pertChartProjectDuration");
 
     // set the title of the chart
-    chart.title("The critical path duration for this project is " + duration.toFixed(2) + "?" + deviation.toFixed(2) + " units.");
+    chart.title("The critical path duration for this project is " + duration.toFixed(2) + "±" + deviation.toFixed(2) + " units.");
 
     // set the container id for the chart
     chart.container("container");
