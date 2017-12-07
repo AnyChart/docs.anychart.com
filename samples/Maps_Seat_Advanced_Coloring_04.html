@@ -156,7 +156,7 @@ function createSeatMap(svg){
 
     // set the tooltips
     chart.tooltip().titleFormat("{%seriesName}");
-    chart.tooltip().format("?{%value}");
+    chart.tooltip().format("${%value}");
     
     chart.legend().enabled(true).position("bottom").padding({top: 15});
     
