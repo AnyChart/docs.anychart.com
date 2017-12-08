@@ -9,9 +9,6 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-heatmap.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
-    <button onclick="displayMode('always-show')">Always Show</button>
-    <button onclick="displayMode('clip')">Clip</button>
-    <button onclick="displayMode('drop')">Drop</button>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
@@ -25,6 +22,9 @@
     </style>
 </head>
 <body>
+<button onclick="displayMode('always-show')">Always Show</button>
+<button onclick="displayMode('clip')">Clip</button>
+<button onclick="displayMode('drop')">Drop</button>    
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
