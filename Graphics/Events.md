@@ -63,7 +63,7 @@ Try this sample to see how it works:
 
 ## Propagation
 
-To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
+To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation()}stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
 
 The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
 
@@ -88,7 +88,7 @@ Try the sample and explore it in the Playground:
 
 ## Stage
 
-Besides all mentioned, there are also {apy:anychart.graphics.vector.Stage.EventType}events{api} managed by stage. There are four of them: 
+Besides all mentioned, there are also {api:anychart.graphics.vector.Stage.EventType}events{api} managed by stage. There are four of them: 
 - STAGE_RESIZE (stageresize) - listen to this event when you need some changes or actions done on a stage while it is being resized
 - STAGE_RENDERED (stagerendered) - listen to this event when you need some changes or actions done on a stage when it is rendered, i.e. when all images have been loaded to a stage
 - RENDER_START (renderstart) - listen to this event when you need some changes or actions done on a stage when the stage rendering process has started

@@ -9,7 +9,9 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-heatmap.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
-    
+    <button onclick="displayMode('always-show')">Always Show</button>
+    <button onclick="displayMode('clip')">Clip</button>
+    <button onclick="displayMode('drop')">Drop</button>
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
     <style>
@@ -77,51 +79,11 @@ return "<span style='font-weight:bold;font-size:22'>High</span>";
 
     // initiate drawing the chart
     chart.draw();
-
-    /* create a label for setting the display mode
-    of labels to "always show" */
-    createLabel("Always Show", 10, function () {
-      // set the display mode of labels
-      chart.labelsDisplayMode("always-show");
-    });
-
-    /* create a label for setting the display mode
-    of labels to "clip" */
-    createLabel("Clip", 118, function () {
-      // set the display mode of labels
-      chart.labelsDisplayMode("clip");
-    });
-
-    /* create a label for setting the display mode
-    of labels to "drop" */
-    createLabel("Drop", 162, function () {
-      // set the display mode of labels
-      chart.labelsDisplayMode("drop");
-    });
 });
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-    label.background().fill("#1976d2 0.5");
-    document.body.style.cursor = "pointer";
-    label.draw();
-  });
-  label.listen("mouseOut", function (){
-    label.background().fill("#1976d2");
-    document.body.style.cursor = "auto";
-    label.draw();
-  });    
-  return label;
+// a helper function for setting the display mode
+function displayMode(mode){
+  chart.labelsDisplayMode(mode);
 };
 </script>
 </body>
