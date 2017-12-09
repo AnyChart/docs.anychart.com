@@ -27,9 +27,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container");  
-
     // create data
     var data = [
       ["January", 12000, 10000],
@@ -48,32 +45,21 @@ anychart.onDocumentReady(function () {
     // enable the crosshair
     chart.crosshair(true);
 
-    // set the chart position and title
-    chart.top(15);
-    chart.title("Crosshair: Enabling");
+    // set the chart title
+    chart.title("Crosshair: Enabling = " + chart.crosshair().enabled());
 
-    // set the chart container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for disabling the crosshair
-    createLabel("Disable", 10, function () {
-      // disable the crosshair
-      chart.crosshair(false);
-    });
-
-    // create a label for enabling the crosshair
-    createLabel("Enable", 75, function () {
-      // enable the crosshair
-      chart.crosshair(true);
-    });
 });
 
 // a helper function for enabling/disabling the crosshair
 function crosshairEnabled(enabled){
   chart.crosshair(enabled);
+  // update the chart title
+  chart.title("Crosshair: Enabling = " + chart.crosshair().enabled());
 };
 </script>
 </body>

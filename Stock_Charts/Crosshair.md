@@ -23,7 +23,7 @@ chart.crosshair(false);
 
 This sample shows how to disable and enable the crosshair:
 
-{sample}STOCK\_Crosshair\_01{sample}
+{sample :height 425}STOCK\_Crosshair\_01{sample}
 
 ## Display Mode
 
@@ -60,7 +60,7 @@ plot_2.crosshair().xStroke(null);
 plot_2.crosshair().yStroke("#00bfa5", 1.5);
 ```
 
-{sample}STOCK\_Crosshair\_03{sample}
+{sample :height 425}STOCK\_Crosshair\_03{sample}
 
 ## Labels
 

@@ -29,28 +29,25 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // create data
     var data = [
       {name:     "Slavic Languages", children: [
-{name:   "East Slavic", children: [
-  {name: "Russian",        value: 150000000},
-  {name: "Ukrainian",      value:  45000000},
-  {name: "Belarusian",     value:   3200000}
-]},
-{name:   "West Slavic", children: [
-  {name: "Polish",         value:  55000000},
-  {name: "Czech",          value:  10600000},
-  {name: "Slovak",         value:   5200000}
-]},
-{name:   "South Slavic", children: [
-  {name: "Serbo-Croatian", value:  21000000},
-  {name: "Bulgarian",      value:   9000000},
-  {name: "Slovene",        value:   2500000},
-  {name: "Macedonian",     value:   1400000}
-]}  
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
+        ]},
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
       ]} 
     ];
 
@@ -68,42 +65,26 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Headers (Display Mode)<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Slavic Languages by Number of Speakers</span>");
+    chart.title("Treemap: Headers (Display Mode = " +
+      chart.headersDisplayMode() + ")<br><br>" + 
+      "<span style='font-size:12; font-style:italic'>" +
+      "Slavic Languages by Number of Speakers</span>");
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-
-    /* create a label for setting the display mode
-    of headers to "always show" */
-    createLabel("Always Show", 10, function () {
-      // set the display mode of headers
-      chart.headersDisplayMode("always-show");
-    });
-
-    /* create a label for setting the display mode
-    of headers to "clip" */
-    createLabel("Clip", 118, function () {
-      // set the display mode of headers
-      chart.headersDisplayMode("clip");
-    });
-
-    /* create a label for setting the display mode
-    of headers to "drop" */
-    createLabel("Drop", 162, function () {
-      // set the display mode of headers
-      chart.headersDisplayMode("drop");
-    });
 });
     
 // a helper function for setting the display mode of headers
 function displayMode(mode){
   chart.headersDisplayMode(mode);
-};
+  // update the chart title
+  chart.title("Treemap: Headers (Display Mode = " +
+    chart.headersDisplayMode() + ")<br><br>" + 
+    "<span style='font-size:12; font-style:italic'>" +
+    "Slavic Languages by Number of Speakers</span>");
 };
 </script>
 </body>

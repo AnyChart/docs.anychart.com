@@ -12,8 +12,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
     
-    
-    <style>
+        <style>
         html, body, #container {
             width: 100%;
             height: 100%;
@@ -28,9 +27,6 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");  
 
     // create a data table
     var dataTable = anychart.data.table();
@@ -65,11 +61,11 @@ anychart.onDocumentReady(function () {
     // create a plot and a line series
     chart.plot(0).line(mapping);
 
-    // set the chart title
-    chart.title("Crosshair: Enabling");
+    //set the chart title
+    chart.title("Crosshair: Enabling = " + chart.crosshair().enabled());
 
-    // set the chart container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
@@ -78,6 +74,8 @@ anychart.onDocumentReady(function () {
 // a helper function for enabling/disabling the crosshair
 function crosshairEnabled(enabled){
   chart.crosshair(enabled);
+  // update the chart title
+  chart.title("Crosshair: Enabling = " + chart.crosshair().enabled());
 };
 </script>
 </body>

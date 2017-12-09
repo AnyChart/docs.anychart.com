@@ -304,7 +304,7 @@ The following sample shows how these modes work:
 chart.labelsDisplayMode("alwaysShow");
 ```
   
-{sample}BCT\_Heat\_Map\_Chart\_09{sample}
+{sample :height 425}BCT\_Heat\_Map\_Chart\_09{sample}
 
 ### Scrollers
 

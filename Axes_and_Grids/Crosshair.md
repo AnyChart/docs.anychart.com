@@ -20,7 +20,7 @@ chart.crosshair(true);
 
 In this sample the crosshair is enabled, and there are also buttons to disable and enable it:
 
-{sample}AGST\_Crosshair\_01{sample}
+{sample :height 425}AGST\_Crosshair\_01{sample}
 
 ## Appearance
 

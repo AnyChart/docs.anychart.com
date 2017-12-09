@@ -27,29 +27,25 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // create data
     var data = [
       {name:     "Slavic Languages", children: [
-{name:   "East Slavic", children: [
-  {name: "Russian",        value: 150000000},
-  {name: "Ukrainian",      value:  45000000},
-  {name: "Belarusian",     value:   3200000}
-]},
-{name:   "West Slavic", children: [
-  {name: "Polish",         value:  55000000},
-  {name: "Czech",          value:  10600000},
-  {name: "Slovak",         value:   5200000}
-]},
-{name:   "South Slavic", children: [
-  {name: "Serbo-Croatian", value:  21000000},
-  {name: "Bulgarian",      value:   9000000},
-  {name: "Slovene",        value:   2500000},
-  {name: "Macedonian",     value:   1400000}
-]}  
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
+        ]},
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
       ]} 
     ];
 
@@ -74,8 +70,8 @@ anychart.onDocumentReady(function () {
         "<span style='font-size:12; font-style:italic'>" +
         "Slavic Languages by Number of Speakers</span>");
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();

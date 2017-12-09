@@ -27,9 +27,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // data
     var data = [
       ["John", 10000, 12500],
@@ -48,8 +45,8 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.title("Vertical Charts: Changing On-the-Fly (Chart)");
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();

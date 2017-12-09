@@ -29,9 +29,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // create data
     var data = [
       [0.6, 22],
@@ -49,7 +46,7 @@ anychart.onDocumentReady(function () {
     chart = anychart.scatter();
 
     // create a marker series and set the data
-    series = chart.marker(data);
+    var series = chart.marker(data);
 
     // create and configure error bars
     error = series.error();
@@ -67,10 +64,13 @@ anychart.onDocumentReady(function () {
     chart.yMinorGrid().enabled(true);
 
     // set the chart title
-    chart.title("Error Chart: Error Mode");
+    chart.listen("chartDraw", function () {
+      chart.title("Error Chart: Error Mode = " +
+                  error.mode());
+    });
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();

@@ -69,9 +69,10 @@ anychart.onDocumentReady(function () {
     // set the chart size and title
     chart.width(320);
     chart.height(320);
-    chart.title("Heat Map: Labels (Display Mode)");
+    chart.title("Heat Map: Labels\n(Display Mode = " +
+                chart.labelsDisplayMode() + ")");
     
-    // set the container 
+    // set the container id
     chart.container("container");
 
     // initiate drawing the chart
@@ -81,6 +82,9 @@ anychart.onDocumentReady(function () {
 // a helper function for setting the display mode of labels
 function displayMode(mode){
   chart.labelsDisplayMode(mode);
+  // update the chart title
+  chart.title("Heat Map: Labels\n(Display Mode = " +
+              chart.labelsDisplayMode() + ")");
 };
 </script>
 </body>

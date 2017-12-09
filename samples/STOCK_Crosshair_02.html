@@ -11,8 +11,7 @@
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
-    
-    
+        
     <style>
         html, body, #container {
             width: 100%;
@@ -28,9 +27,6 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");  
 
     // create a data table
     var dataTable = anychart.data.table();
@@ -69,8 +65,8 @@ anychart.onDocumentReady(function () {
     chart.title("Crosshair: Display Mode = " +
         chart.crosshair().displayMode());
 
-    // set the chart container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();

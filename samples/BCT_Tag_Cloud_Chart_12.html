@@ -28,9 +28,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
     // create data
     var text =
     "Tyger, tyger, burning bright " +
@@ -69,11 +66,11 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.listen("chartDraw", function () {
-    chart.title("Tag Cloud Chart: Mode = " +  chart.mode());
+      chart.title("Tag Cloud Chart: Mode = " +  chart.mode());
     });
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
