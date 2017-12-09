@@ -588,7 +588,7 @@ The sample below shows how to change the display mode, which is initially set to
 chart.headersDisplayMode("drop");
 ```
 
-{sample :height 625}BCT\_Treemap\_Chart\_16{sample}
+{sample :height 425}BCT\_Treemap\_Chart\_16{sample}
 
 ### Interactivity
 
