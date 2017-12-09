@@ -22,6 +22,9 @@
     </style>
 </head>
 <body>
+<button onclick="displayMode('always-show')">Always Show</button>
+<button onclick="displayMode('clip')">Clip</button>
+<button onclick="displayMode('drop')">Drop</button>   
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -63,8 +66,7 @@ anychart.onDocumentReady(function () {
     // set the display mode of headers
     chart.headersDisplayMode("drop");
 
-    // set the chart position and title
-    chart.top(35);
+    // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Headers (Display Mode)<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
@@ -98,28 +100,10 @@ anychart.onDocumentReady(function () {
     });
 });
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-    label.background().fill("#1976d2 0.5");
-    document.body.style.cursor = "pointer";
-    label.draw();
-  });
-  label.listen("mouseOut", function (){
-    label.background().fill("#1976d2");
-    document.body.style.cursor = "auto";
-    label.draw();
-  });    
-  return label;
+// a helper function for setting the display mode of headers
+function displayMode(mode){
+  chart.headersDisplayMode(mode);
+};
 };
 </script>
 </body>

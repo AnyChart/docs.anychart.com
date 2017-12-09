@@ -22,6 +22,8 @@
     </style>
 </head>
 <body>
+<button onclick="tagCloudMode('rect')">Rectangle Mode</button>
+<button onclick="tagCloudMode('spiral')">Spiral Mode</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -65,10 +67,9 @@ anychart.onDocumentReady(function () {
     // set the parsing mode
     chart.data(text, {mode: "by-word"});
 
-    // set the chart position
-    chart.top(35);
+    // set the chart title
     chart.listen("chartDraw", function () {
-chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
+    chart.title("Tag Cloud Chart: Mode = " +  chart.mode());
     });
 
     // set the container
@@ -76,44 +77,11 @@ chart.title("Tag Cloud Chart: Mode\n(" +  chart.mode() + ")");
 
     // initiate drawing the chart
     chart.draw();
-
-    /* create a label for setting
-    the mode of the tag cloud to "rectangle" */
-    createLabel("Rectangle Mode", 10, function () {
-// set the mode of the tag cloud
-chart.mode("rect");
-    });
-
-    /* create a label for setting
-    the mode of the tag cloud to "spiral" */
-    createLabel("Spiral Mode", 135, function () {
-// set the mode of the tag cloud
-chart.mode("spiral");
-    });
 });
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5");
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2");
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
+// a helper function for setting the mode of the tag cloud
+function tagCloudMode(mode){
+  chart.mode(mode);
 };
 </script>
 </body>

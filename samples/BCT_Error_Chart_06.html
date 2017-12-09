@@ -21,6 +21,10 @@
     </style>
 </head>
 <body>
+<button onclick="errorMode('none')">None</button>
+<button onclick="errorMode('value')">Value</button>
+<button onclick="errorMode('x')">X</button>
+<button onclick="errorMode('both')">Both</button>     
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -45,10 +49,10 @@ anychart.onDocumentReady(function () {
     chart = anychart.scatter();
 
     // create a marker series and set the data
-    var series = chart.marker(data);
+    series = chart.marker(data);
 
     // create and configure error bars
-    var error = series.error();
+    error = series.error();
     error.xLowerError(0.1);
     error.xUpperError(0.2);
     error.valueUpperError(5);
@@ -62,8 +66,7 @@ anychart.onDocumentReady(function () {
     chart.xMinorGrid().enabled(true);
     chart.yMinorGrid().enabled(true);
 
-    // set the chart position and title
-    chart.top(35);
+    // set the chart title
     chart.title("Error Chart: Error Mode");
 
     // set the container
@@ -71,50 +74,11 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for turning error bars off
-    createLabel("None", 50, function () {
-error.mode("none");
-    });
-
-    // create a label for showing only value error bars 
-    createLabel("Value", 110, function () {
-error.mode("value");
-    });
-
-    // create a label for showing only x-error bars
-    createLabel("X", 173, function () {
-error.mode("x");
-    });
-
-    // create a label for showing all error bars
-    createLabel("Both", 211, function () {
-error.mode("both");
-    });
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5");
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2");
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
+// a helper function for setting the error mode
+function errorMode(mode){
+  error.mode(mode);
 };
 </script>
 </body>

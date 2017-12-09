@@ -23,6 +23,8 @@
     </style>
 </head>
 <body>
+ <button onclick="displayMode('float')">Float</button>
+<button onclick="displayMode('sticky')">Sticky</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -63,8 +65,7 @@ anychart.onDocumentReady(function () {
     // create a plot and a line series
     chart.plot(0).line(mapping);
 
-    // set the chart position and title
-    chart.top(15);
+    // set the chart title
     chart.title("Crosshair: Display Mode = " +
         chart.crosshair().displayMode());
 
@@ -73,50 +74,11 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
-
-    /* create a label for setting the display mode
-    of the crosshair to "float" */
-    createLabel("Float", 10, function () {
-      // set the display mode of the crosshair
-      chart.crosshair().displayMode("float");
-      // update the title
-      chart.title("Crosshair: Display Mode = " +
-          chart.crosshair().displayMode());
-    });
-
-    /* create a label for setting the display mode
-    of the crosshair to "sticky" */
-    createLabel("Sticky", 60, function () {
-      // set the display mode of the crosshair
-      chart.crosshair().displayMode("sticky");
-      // update the title
-      chart.title("Crosshair: Display Mode = " +
-          chart.crosshair().displayMode());
-    });
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-      label.background().fill("#1976d2 0.5");
-      document.body.style.cursor = "pointer";
-      label.draw();
-  });
-  label.listen("mouseOut", function (){
-      label.background().fill("#1976d2");
-      document.body.style.cursor = "auto";
-      label.draw();
-  });    
-  return label;
+// a helper function for setting the display mode of the crosshair
+function displayMode(mode){
+  chart.crosshair().displayMode(mode);
 };
 </script>
 </body>

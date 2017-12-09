@@ -22,6 +22,9 @@
     </style>
 </head>
 <body>
+<button onclick="drillToLevel()">Drill Down to Lvl 3-4</button>
+<button onclick="drillUpALevel()">Drill Up a Level</button>
+
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -33,7 +36,7 @@ anychart.onDocumentReady(function () {
     var data = getData(); 
 
     // create a storage for the data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
     chart = anychart.treeMap(treeData);
@@ -57,29 +60,11 @@ anychart.onDocumentReady(function () {
           + text + "</span>");
     });
 
-    // set the chart position
-    chart.top(35);
-
     // set the container
     chart.container(stage);
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for drilling down to the level 3-4
-    createLabel("Drill Down to Lvl 3-4", 10, function () {
-      /* locate an item in the data tree,
-      get the item as an object*/
-      var item = treeData.search("name", "Lvl 3-4");
-      // drill down to the item
-      chart.drillTo(item);
-    });
-
-    // create a label for drilling up a level"
-    createLabel("Drill Up a Level", 166, function () {
-      // drill up
-      chart.drillUp();
-    });
 });
 
 // a function for getting data
@@ -147,28 +132,18 @@ function printPath(path){
   return text;
 };
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-    label.background().fill("#1976d2 0.5");
-    document.body.style.cursor = "pointer";
-    label.draw();
-  });
-  label.listen("mouseOut", function (){
-    label.background().fill("#1976d2");
-    document.body.style.cursor = "auto";
-    label.draw();
-  });    
-  return label;
+// a helper function for drilling down to the level 3-4
+function drillToLevel(){
+  /* locate an item in the data tree,
+  get the item as an object*/
+  var item = treeData.search("name", "Lvl 3-4");
+  // drill down to the item
+  chart.drillTo(item);
+};
+
+// a helper function for drilling up a level
+function drillUpALevel(){
+   chart.drillUp();
 };
 </script>
 </body>

@@ -22,6 +22,8 @@
     </style>
 </head>
 <body>
+<button onclick="headersEnabled(false)">Disable Headers</button>
+<button onclick="headersEnabled(true)">Enable Headers</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -66,9 +68,7 @@ anychart.onDocumentReady(function () {
     chart.normal().headers().fontSize("14");
     chart.hovered().headers().fontColor("#000099");
 
-    // set the chart position and title
-    chart.top(35);
-    chart.title("Treemap: Headers");
+    // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Headers<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
@@ -79,42 +79,11 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for disabling headers
-    createLabel("Disable Headers", 10, function () {
-      // disable headers
-      chart.headers(false);
-    });
-
-    // create a label for enabling headers
-    createLabel("Enable Headers", 136, function () {
-      // enable headers
-      chart.headers(true);
-    });
 });
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-    label.background().fill("#1976d2 0.5");
-    document.body.style.cursor = "pointer";
-    label.draw();
-  });
-  label.listen("mouseOut", function (){
-    label.background().fill("#1976d2");
-    document.body.style.cursor = "auto";
-    label.draw();
-  });    
-  return label;
+// a helper function enabling/disabling headers
+function headersEnabled(enabled){
+  chart.headers(enabled);
 };
 </script>
 </body>

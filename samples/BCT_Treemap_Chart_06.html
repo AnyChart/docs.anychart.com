@@ -22,6 +22,9 @@
     </style>
 </head>
 <body>
+<button onclick="sortingMode('asc')">Ascending</button>
+<button onclick="sortingMode('desc')">Descending</button>
+<button onclick="sortingMode('none')">No Sorting</button>   
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -48,9 +51,8 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.treeMap(data, "as-tree");
 
-    // set the chart position and title
-    chart.top(35);
-     chart.title().useHtml(true);
+    // set the chart title
+    chart.title().useHtml(true);
     chart.title("Treemap: Sorting Order<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
         "Top 10 European Union Countries by Population</span>");
@@ -60,48 +62,11 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for setting the sorting mode to "ascending"
-    createLabel("Ascending", 10, function () {
-      // set the sorting mode
-      chart.sort("asc");
-    });
-
-    // create a label for setting the sorting mode to "descending"
-    createLabel("Descending", 98, function () {
-      // set the sorting mode
-      chart.sort("desc");
-    });
-
-    // create a label for setting the sorting mode to "no sorting"
-    createLabel("No Sorting", 194, function () {
-      // set the sorting mode
-      chart.sort("none");
-    });
 });
     
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-  var label = anychart.standalones.label();
-  label.background({fill: "#1976d2"});
-  label.text(text);
-  label.fontColor("#fff");
-  label.padding(5);
-  label.parentBounds(offset, 5, 130, 100);    
-  label.listen("click", action);
-  label.container(stage);
-  label.draw();
-  label.listen("mouseOver", function (){
-    label.background().fill("#1976d2 0.5");
-    document.body.style.cursor = "pointer";
-    label.draw();
-  });
-  label.listen("mouseOut", function (){
-    label.background().fill("#1976d2");
-    document.body.style.cursor = "auto";
-    label.draw();
-  });    
-  return label;
+// a helper function for setting the sorting mode
+function sortingMode(mode){
+  chart.sort(mode);
 };
 </script>
 </body>
