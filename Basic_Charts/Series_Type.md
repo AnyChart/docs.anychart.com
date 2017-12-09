@@ -27,7 +27,7 @@ var series = chart.line(data);
 series.seriesType("area");
 ```
 
-{sample}BCT\_Series\_Type\_01{sample}
+{sample :height 425}{sample}BCT\_Series\_Type\_01{sample}
 
 In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which require four values, as well as to a range area series:
 
