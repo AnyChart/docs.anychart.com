@@ -20,12 +20,18 @@
     </style>
 </head>
 <body>
+<select id="typeSelect" onchange="switchType()">
+    <option value="ohlc">OHLC</option>
+    <option value="candlestick">Japanese Candlestick</option>
+    <option value="hilo">HiLo</option>
+    <option value="range-area">Range Area</option>
+    <option value="range-column">Range Column</option>
+    <option value="range-spline-area">Range Spline Area</option>  
+    <option value="range-step-area">Range Step Area</option>  
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");  
 
     // set the data
     var data = [
@@ -38,62 +44,25 @@ anychart.onDocumentReady(function () {
 
     // set the chart type and title
     var chart = anychart.financial();
-    chart.title("Switching the Series Type");
-    chart.title().padding(25);
 
     // set the series type
-    var series = chart.ohlc(data);
+    series = chart.ohlc(data);
 
-    // set the chart container and initiate drawing the chart
-    chart.container(stage);
+    // set the chart title
+    chart.title("Switching the Series Type");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
-
-    // create a label for switching to the line series
-    createLabel("Switch to OHLC", 10, function () {
-// change the series type
-series.seriesType("ohlc");
-chart.title("Switching the Series Type \n OHLC");
-    });    
-
-    // create a label for switching to the column series
-    createLabel("Switch to Japanese Candlestick", 140, function () {
-// change the series type
-series.seriesType("candlestick");
-chart.title("Switching the Series Type \n Japanese Candlestick");
-    });    
-
-    // create a label for switching to the area series
-    createLabel("Switch to Range Area", 375, function () {
-// change the series type
-series.seriesType("range-area");
-chart.title("Switching the Series Type \n Range Area");
-    });    
-
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+// a helper function for switching the series type
+function switchType(){
+  select = document.getElementById("typeSelect");
+  series.seriesType(select.value);
+};
 </script>
 </body>
 </html>

@@ -21,13 +21,14 @@
 <body>
 <select id="typeSelect" onchange="switchType()">
     <option value="area">Area</option>
-    <option value="bar">Bar</option>
     <option value="column">Column</option>
-    <option value="jumpLine">Jump Line</option>
+    <option value="jump-line">Jump Line</option>
     <option value="line">Line</option>
     <option value="marker">Marker</option>  
-    <option value="splineArea">Spline Area</option>  
+    <option value="spline-area">Spline Area</option>  
     <option value="spline">Spline</option>
+    <option value="step-area">Step Area</option>
+    <option value="step-line">Step Line</option>
     <option value="stick">Stick</option>
 </select>
 <div id="container"></div>
@@ -40,7 +41,7 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a chart
-    chart = anychart.line();
+    var chart = anychart.line();
 
     // set the series type
     series = chart.line(data);

@@ -23,36 +23,51 @@
     </style>
 </head>
 <body>
+    <select id="typeSelect" onclick="create()">
+    <option selected disabled>Annotation Type</option>
+    <option value="andrews-pitchfork">Andrews' Pitchfork</option>
+    <option value="ellipse">Ellipse</option>
+    <option value="fibonacci-arc">Fibonacci Arc</option>
+    <option value="fibonacci-fan">Fibonacci Fan</option>
+    <option value="fibonacci-retracement">Fibonacci Retracement</option>
+    <option value="fibonacci-timezones">Fibonacci Time Zones</option>  
+    <option value="horizontal-line">Horizontal Line</option> 
+    <option value="infinite-line">Infinite Line</option>
+    <option value="line">Line Segment</option>
+    <option value="ray">Ray</option>
+    <option value="rectangle">Rectangle</option>
+    <option value="trend-channel">Trend Channel</option>
+    <option value="triangle">Triangle</option>
+    <option value="vertical-line">Vertical Line</option>
+</select>
+<button onclick="removeAll()">Remove All</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container");  
-
     // create a data table
     var dataTable = anychart.data.table();
     dataTable.addData([
-['2015-12-24', 511.53, 514.98, 505.79, 506.40],
-['2015-12-25', 512.53, 514.88, 505.69, 507.34],
-['2015-12-26', 511.83, 514.98, 505.59, 506.23],
-['2015-12-27', 511.22, 515.30, 505.49, 506.47],
-['2015-12-28', 510.35, 515.72, 505.23, 505.80],
-['2015-12-29', 510.53, 515.86, 505.38, 508.25],
-['2015-12-30', 511.43, 515.98, 505.66, 507.45],
-['2015-12-31', 511.50, 515.33, 505.99, 507.98],
-['2016-01-01', 511.32, 514.29, 505.99, 506.37],
-['2016-01-02', 511.70, 514.87, 506.18, 506.75],
-['2016-01-03', 512.30, 514.78, 505.87, 508.67],
-['2016-01-04', 512.50, 514.77, 505.83, 508.35],
-['2016-01-05', 511.53, 516.18, 505.91, 509.42],
-['2016-01-06', 511.13, 516.01, 506.00, 509.26],
-['2016-01-07', 510.93, 516.07, 506.00, 510.99],
-['2016-01-08', 510.88, 515.93, 505.22, 509.95],
-['2016-01-09', 509.12, 515.97, 505.15, 510.12],
-['2016-01-10', 508.53, 516.13, 505.66, 510.42],
-['2016-01-11', 508.90, 516.24, 505.73, 510.40]  
-]);
+      ['2015-12-24', 511.53, 514.98, 505.79, 506.40],
+      ['2015-12-25', 512.53, 514.88, 505.69, 507.34],
+      ['2015-12-26', 511.83, 514.98, 505.59, 506.23],
+      ['2015-12-27', 511.22, 515.30, 505.49, 506.47],
+      ['2015-12-28', 510.35, 515.72, 505.23, 505.80],
+      ['2015-12-29', 510.53, 515.86, 505.38, 508.25],
+      ['2015-12-30', 511.43, 515.98, 505.66, 507.45],
+      ['2015-12-31', 511.50, 515.33, 505.99, 507.98],
+      ['2016-01-01', 511.32, 514.29, 505.99, 506.37],
+      ['2016-01-02', 511.70, 514.87, 506.18, 506.75],
+      ['2016-01-03', 512.30, 514.78, 505.87, 508.67],
+      ['2016-01-04', 512.50, 514.77, 505.83, 508.35],
+      ['2016-01-05', 511.53, 516.18, 505.91, 509.42],
+      ['2016-01-06', 511.13, 516.01, 506.00, 509.26],
+      ['2016-01-07', 510.93, 516.07, 506.00, 510.99],
+      ['2016-01-08', 510.88, 515.93, 505.22, 509.95],
+      ['2016-01-09', 509.12, 515.97, 505.15, 510.12],
+      ['2016-01-10', 508.53, 516.13, 505.66, 510.42],
+      ['2016-01-11', 508.90, 516.24, 505.73, 510.40]  
+    ]);
   
      // map the data
      mapping = dataTable.mapAs();
@@ -73,70 +88,31 @@ anychart.onDocumentReady(function () {
     var lineSeries = chart.plot(1).line(mapping);
     lineSeries.name("Series 2")
 
-    // an auxiliary variable for working with annotations
-    var controller = chart.annotations();
-
     // allow drawing on the first plot
     chart.plot(0).annotations().enabled(true);
 
     // forbid drawing on the second plot
     chart.plot(1).annotations().enabled(false);
 
-    // set the chart position and title
-    chart.top(15);
+    // set the chart title
     chart.title("Forbidding Drawing");
 
-    // set the chart container and initiate drawing the chart
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
-
-    // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 10, function () {
-// start drawing the annotation
-controller.startDrawing("andrewsPitchfork");
-    });
-
-    // create a label for the Triangle annotation
-    createLabel("Triangle", 150, function () {
-// start drawing the annotation
-controller.startDrawing("triangle");
-    });
-
-    // create a label for the Ellipse annotation
-    createLabel("Ellipse", 219, function () {
-// start drawing the annotation
-controller.startDrawing("ellipse");
-    });
-
-    // create a label for removing annotations
-    createLabel("Remove All", 300, function () {
-// remove all annotations
-controller.removeAllAnnotations();
-    });
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5");
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2");
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
+// a helper function for creating annotations
+function create(){
+  select = document.getElementById("typeSelect");
+  chart.annotations().startDrawing(select.value);
+};
+
+// a helper function for removing all annotations
+function removeAll(){
+  chart.annotations().removeAllAnnotations();
 };
 </script>
 </body>
