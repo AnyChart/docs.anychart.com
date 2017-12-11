@@ -100,7 +100,7 @@ chart.listen("annotationSelect", function(e){
 });
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_07{sample}
+{sample}STOCK\_Drawing\_Drawing\_04{sample}
 
 ## Managing Annotations
 
@@ -140,7 +140,7 @@ var selectedAnnotation = plot.annotations().getSelectedAnnotation();
 plot.annotations().removeAnnotation(selectedAnnotation);
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_04{sample}
+{sample}STOCK\_Drawing\_Drawing\_05{sample}
 
 ## Selecting/Unselecting
 
@@ -157,7 +157,7 @@ plot.annotations().select(firstAnnotation);
 plot.annotations().unselect();
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_05{sample}
+{sample}STOCK\_Drawing\_Drawing\_06{sample}
 
 ### Saving
 
@@ -184,4 +184,4 @@ var annotations = getAnnotationsFromServer();
 chart.plot().annotations().fromJson(annotations);
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_06{sample}
+{sample}STOCK\_Drawing\_Drawing\_07{sample}
