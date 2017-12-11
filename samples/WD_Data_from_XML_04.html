@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-polar.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function () {
   
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/8.0.1/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
       // set chart type and chart container
       '<chart type="polar" container="container">' +
 // series for this chart
