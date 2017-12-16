@@ -159,7 +159,7 @@ error.valueLowerError(8);
 error.mode("value");
 ```
 
-{sample :height 425}BCT\_Error\_Chart\_06{sample}
+{sample}BCT\_Error\_Chart\_06{sample}
 
 ## Appearance
 

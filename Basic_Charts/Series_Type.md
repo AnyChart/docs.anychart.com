@@ -30,7 +30,7 @@ series.seriesType("column");
 
 The sample below demonstrates how this feature works with Area, Line, Column, and other series types requiring only one value:
 
-{sample :height 425}{sample}BCT\_Series\_Type\_01{sample}
+{sample}{sample}BCT\_Series\_Type\_01{sample}
 
 In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC, Japanese Candlestick, and similar types:
 
@@ -54,7 +54,7 @@ var series = chart.ohlc(data);
 series.seriesType("range-area");
 ```
 
-{sample :height 425}BCT\_Series\_Type\_02{sample}
+{sample}BCT\_Series\_Type\_02{sample}
 
 Please note that the Range Area series uses only two values from the data set, but it works because it shares the default names of data fields (`low` and `high`) with Japanese Candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
 
