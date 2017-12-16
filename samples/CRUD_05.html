@@ -21,19 +21,19 @@
     </style>
 </head>
 <body>
+<button onclick="addPoint()">Add Point</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
-  stage = anychart.graphics.create("container");  
 
   // data
-  var data = anychart.data.set([
+  data = anychart.data.set([
     {x: "P1", value: 10},
     {x: "P2", value: 2},
     {x: "P3", value: 15},
     {x: "P4", value: 10}
   ]);
+
   // set chart type
   var chart = anychart.column();
   
@@ -42,71 +42,40 @@ anychart.onDocumentReady(function () {
   // set data
   chart.column(data);
   
-  // add point function
-  function addPoint(e) {
-    var view = data.mapAs();
-    
-    // set default color for each point
-    for (var i = 0;i<view.getRowsCount();i++)
-      view.set(i,"fill", undefined);
-    
-    // get random position in range of chart length
-    var randomIndex = Math.floor((Math.random() * (view.getRowsCount())) + 1);
-    
-    // insert data
-    data.insert(
-      {
-x: "P" + ((randomIndex)+1),                   // set name
-value : Math.floor((Math.random() * 100)+ 1), // set random value in range 1 - 100
-fill: "red"                                   // set red color to define inserted column from others
-      },
-      randomIndex                                     // position for inserting column
-    );
-    
-    // get all columns after inserted one and change x value
-    for(var indexCounter = randomIndex; indexCounter < view.getRowsCount(); indexCounter++){
-      view.set(
-(indexCounter),         // column index
-"x",                    // parameter to adjust
-"P" + (indexCounter+1)  // set as new parameter
-      );
-    }
-  }
-  
   // set container and draw chart
-  chart.container(stage).draw();
-
-  // create a label for switching to the area series
-  createLabel("Add Point", 10, function () {
-      // change the series type
-      addPoint();
-  });    
+  chart.container("container").draw();  
 });
 
-
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+// add point function
+function addPoint(e) {
+  var view = data.mapAs();
+  
+  // set default color for each point
+  for (var i = 0;i<view.getRowsCount();i++)
+    view.set(i,"fill", undefined);
+  
+  // get random position in range of chart length
+  var randomIndex = Math.floor((Math.random() * (view.getRowsCount())) + 1);
+  
+  // insert data
+  data.insert(
+    {
+       x: "P" + ((randomIndex)+1),                   // set name
+       value : Math.floor((Math.random() * 100)+ 1), // set random value in range 1 - 100
+       fill: "red"                                   // set red color to define inserted column from others
+    },
+    randomIndex                                     // position for inserting column
+   );
+   
+   // get all columns after inserted one and change x value
+   for(var indexCounter = randomIndex; indexCounter < view.getRowsCount(); indexCounter++){
+     view.set(
+                (indexCounter),         // column index
+                "x",                    // parameter to adjust
+                "P" + (indexCounter+1)  // set as new parameter
+     );
+   }
+ }
 </script>
 </body>
 </html>

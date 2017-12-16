@@ -21,12 +21,13 @@
     </style>
 </head>
 <body>
+<button id="streamButton" onclick="startStream()">Start Stream</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
   // data
-  var dataSet = anychart.data.set([
+  dataSet = anychart.data.set([
     {x: "P1", value: 100},
     {x: "P2", value: 200},
     {x: "P3", value: 15},
@@ -52,85 +53,54 @@ anychart.onDocumentReady(function () {
   // set data
   chart.spline(dataSet).markers(null);
 
-  chart.padding().right(80);
-
   // disable stagger mode. Only one line for x axis labels
   chart.xAxis().staggerMode(false);
 
   // set container and draw chart
   chart.container("container").draw();
+});
 
-  // create new button
-  var streamButton = document.createElement("div");
+function startStream() {
 
-  // set button style
-  streamButton.style.top = 0;
-  streamButton.style.right = 0;
-  streamButton.style.width = "auto";
-  streamButton.style.height = "auto";
-  streamButton.style.backgroundColor = "#444444";
-  streamButton.style.color = "white";
-  streamButton.style.position = "absolute";
-  streamButton.style.zIndex = 2;
-  streamButton.style.transition = "0.5s";
-  streamButton.style.textAlign = "center";
-  streamButton.style.border = "3px solid #444444";
-  streamButton.style.borderRadius = "7px 7px 7px 7px";
-  streamButton.style.fontSize = "18px";
-  streamButton.style.MozUserSelect= "none";
-  streamButton.style.KhtmlUserSelect= "none";
-  streamButton.style.WebkitUserSelect= "none";
-  streamButton.style.userSelect= "none";
-  streamButton.innerHTML = "Start" + "\nstream";
-  streamButton.style.cursor = "pointer";
-  streamButton.onclick = function () {
-    startStream();
-  };
-
-  // append button to container
-  container.appendChild(streamButton);
+  // adjust button content
+  var streamButton = document.getElementById("streamButton");
+  streamButton.innerHTML = "Stop" + "\nstream";
 
   // first index for new point
-  var indexSetter = (dataSet.mapAs().getRowsCount())+1;
+  indexSetter = (dataSet.mapAs().getRowsCount())+1;
 
-  function startStream() {
+  // set interval of data stream
+  var myVar = setInterval(
 
-    // adjust button content
-    streamButton.innerHTML = "Stop" + "\nstream";
+    // data streaming itself
+    function(e) {
 
-    // set interval of data stream
-    var myVar = setInterval(
+      // append data
+      dataSet.append({
 
-      // data streaming itself
-      function(e) {
+        // x value
+        x: "P" + indexSetter,
 
-// append data
-dataSet.append({
+        // random value from 1 to 500
+        value : Math.floor((Math.random() * 500)+ 1)
+      });
 
-  // x value
-  x: "P" + indexSetter,
+      // removes first point
+      dataSet.remove(0);
+      indexSetter++;
+    }, 200            // interval
+  );
 
-  // random value from 1 to 500
-  value : Math.floor((Math.random() * 500)+ 1)
-});
+  streamButton.onclick = function (){
 
-// removes first point
-dataSet.remove(0);
-indexSetter++;
-      }, 200            // interval
-    );
-
-    streamButton.onclick = function (){
-
-      // clears interval which stops streaming
-      clearInterval(myVar);
-      streamButton.onclick = function () {
-startStream();
-      };
-    streamButton.innerHTML = "Start" + "\nstream";
+    // clears interval which stops streaming
+    clearInterval(myVar);
+    streamButton.onclick = function () {
+      startStream();
     };
-  }
-});
+    streamButton.innerHTML = "Start" + "\nstream";
+  };
+};
 </script>
 </body>
 </html>
