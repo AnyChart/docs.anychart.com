@@ -49,7 +49,7 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    annotationsAtServer = '{"annotationsList":[{"enabled":true,"type":"triangle"},{"enabled":true,"type":"ellipse","xAnchor":1175481606099,"valueAnchor":34.733333333333334,"secondXAnchor":1204609494282,"secondValueAnchor":26.033333333333335}]}';
+    annotationsAtServer = '{"annotationsList":[{"enabled":true,"type":"ellipse","xAnchor":1175481606099,"valueAnchor":34.733333333333334,"secondXAnchor":1204609494282,"secondValueAnchor":26.033333333333335}]}';
 
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping);
 
-    // load an existing annotation (???)
+    // load an annotation
     plot.annotations().fromJson(annotationsAtServer);
 
     // set the chart title

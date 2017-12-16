@@ -21,10 +21,10 @@ var data = [
 // set the chart type
 var chart = anychart.area();
 
-// set the series type and data
+// set the series type
 var series = chart.area(data);
 
-// switch the series typen
+// switch the series type
 series.seriesType("column");
 ```
 
@@ -35,7 +35,7 @@ The sample below demonstrates how this feature works with Area, Line, Column, an
 In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC, Japanese Candlestick, and similar types:
 
 ```
-// set the data
+// create data
 var data = [
     {x: Date.UTC(2015, 4, 1), open: 18.23, high: 19.36, low: 18.18, close: 19.31},
     {x: Date.UTC(2015, 4, 2), open: 19.50, high: 19.89, low: 19.00, close: 19.29},
@@ -47,7 +47,7 @@ var data = [
 // set the chart type
 var chart = anychart.financial();
 
-// set the series type and data
+// set the series type 
 var series = chart.ohlc(data);
 
 // switch the series type
