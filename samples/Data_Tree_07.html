@@ -22,15 +22,13 @@
     </style>
 </head>
 <body>
+<button onclick="nextNode()">Get next node and drill to it</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create stage to put sort buttons along the chart
-    stage = anychart.graphics.create("container");
-
     // create treemap
-    var chart = anychart.treeMap();
+    chart = anychart.treeMap();
     
     // setting the maximum levels depth
     chart.maxDepth(4);
@@ -38,40 +36,25 @@ anychart.onDocumentReady(function () {
     // set title
     chart.title("Traversing sample: click button to get next item and drill to it");
 
-    // create ascending sort label
-    nextOne = createLabel("Get next node and drill to it", 10, function () {
-      // try to go to the next node in a tree
-      if (traverser.advance()) {
-// if successuful - get current node as a data item instance
-var dataItem = traverser.current();
-// drill down to this item
-chart.drillTo(dataItem);
-      } 
-      else
-      {
-// if we can't advance any more - reset the traverser
-traverser.reset();
-      }
-    });    
- 
     // data
     var rawData = [
-    {name: 'Eurasia',
-    children:[
-{name: "Asia", children:[
-    {name: "Eastern Asia", value: "7"},
-    {name: "Western Asia", value: "19"},
-    {name: "Southern Asia", value: "8"},
-    {name: "South-Eastern Asia", value: "11"},
-    {name: "Central Asia", value: "5"}
-]},
-{name: "Europe", children: [
-    {name: "Eastern Europe", value: "10"},
-    {name: "Western Europe", value: "18"},
-    {name: "Southern Europe", value: "5"},
-    {name: "Northern Europe", value: "10"},                        
-]}
-     ]}];
+      {name: 'Eurasia',
+      children:[
+        {name: "Asia", children:[
+           {name: "Eastern Asia", value: "7"},
+           {name: "Western Asia", value: "19"},
+           {name: "Southern Asia", value: "8"},
+           {name: "South-Eastern Asia", value: "11"},
+           {name: "Central Asia", value: "5"}
+        ]},
+        {name: "Europe", children: [
+           {name: "Eastern Europe", value: "10"},
+           {name: "Western Europe", value: "18"},
+           {name: "Southern Europe", value: "5"},
+           {name: "Northern Europe", value: "10"},                        
+        ]}
+      ]}
+    ];
 
     data =  anychart.data.tree(rawData, "as-tree");
     
@@ -86,35 +69,25 @@ traverser.reset();
     // set data to a chart
     chart.data(data);
     
-    // set chart bounds and display it
-    chart.bounds(0, "30", "100%", "90%");
-    chart.container(stage);
+    // set container and draw chart
+    chart.container("container");
     chart.draw();
 });
 
-// helper function to create buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#9E9E9E"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-      label.background().fill("#9E9E9E 0.5")
-      document.body.style.cursor = "pointer";
-      label.draw();
-    });
-    label.listen("mouseOut", function (){
-      label.background().fill("#9E9E9E")
-      document.body.style.cursor = "auto";
-      label.draw();
-    });    
-    return label;
-}
+// get next node and drill to it
+function nextNode() {
+  // try to go to the next node in a tree
+  if (traverser.advance()) {
+    // if successuful - get current node as a data item instance
+    var dataItem = traverser.current();
+    // drill down to this item
+    chart.drillTo(dataItem);
+  }
+  else {
+    // if we can't advance any more - reset the traverser
+    traverser.reset();
+  }
+};    
 </script>
 </body>
 </html>
