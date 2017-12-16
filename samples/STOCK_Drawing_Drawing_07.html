@@ -117,9 +117,8 @@ function save(){
   sendAnnotationsToServer(plot.annotations().toJson(true));
 };
 
-// a helper function for loading annotations
+// a helper function for loading all saved annotations
 function load(){
-  // load all saved annotations
   var annotations = getAnnotationsFromServer();
   plot.annotations().fromJson(annotations);
 };

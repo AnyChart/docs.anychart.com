@@ -24,7 +24,7 @@ plot.annotations().startDrawing("triangle");
 plot.annotations().startDrawing({type: "triangle", color: "red"});
 ```
 
-Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Andrews' Pitchforks, Triangles, and Ellipses or remove all annotations from the plot (to learn more about removing annotations, see the [Removing](#removing) subsection below):
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw annotations of all types or remove all annotations from the plot (to learn more about removing annotations, see the [Removing](#removing) subsection below):
 
 {sample}STOCK\_Drawing\_Drawing\_01{sample}
 
@@ -173,7 +173,7 @@ The following methods are of a great help:
 
 - the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method is used for serialization the list of annotations.
 
-In the following code sample, there are custom functions *sendAnnotationsToServer()* and *getAnnotationsFromServer()* used, which act like placeholders for functions that would send and receive the annotations from a server.
+In the following code sample, custom functions *sendAnnotationsToServer()* and *getAnnotationsFromServer()* used, which act like placeholders for functions that would send and receive the annotations from a server.
 
 ```
 // save all annotations
