@@ -7,12 +7,10 @@ AnyChart provides a method allowing to change the series type if the current typ
 
 ## seriesType()
 
-To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used to create series of this type, e.g. **bar()** method turns into `"bar"`, **line()** turns into `"line"` and so on.
-
-The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
+To switch the series type, use the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method creating series of this type, e.g. the **bar()** method turns into `"bar"`, **line()** turns into `"line"`, and so on:
 
 ```
-// set the data
+// create data
 var data = [
     ["Spring", 10], 
     ["Summer", 15],
@@ -20,16 +18,21 @@ var data = [
     ["Winter", 23]
 ];
 
-// create a series
-var series = chart.line(data);
+// set the chart type
+var chart = anychart.area();
 
-// change the series type to area
-series.seriesType("area");
+// set the series type and data
+var series = chart.area(data);
+
+// switch the series typen
+series.seriesType("column");
 ```
+
+The sample below demonstrates how this feature works with Area, Line, Column, and other series types requiring only one value:
 
 {sample :height 425}{sample}BCT\_Series\_Type\_01{sample}
 
-In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which require four values, as well as to a range area series:
+In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC, Japanese Candlestick, and similar types:
 
 ```
 // set the data
@@ -41,20 +44,23 @@ var data = [
     {x: Date.UTC(2015, 4, 7), open: 18.76, high: 19.14, low: 18.63, close: 18.76}
 ];
 
-// set the series type
+// set the chart type
+var chart = anychart.financial();
+
+// set the series type and data
 var series = chart.ohlc(data);
 
-// change the series type
+// switch the series type
 series.seriesType("range-area");
 ```
 
 {sample :height 425}BCT\_Series\_Type\_02{sample}
 
-Please note that the range area series uses only two values from the data set, but it works because it shares the default names of data fields (`low` and `high`) with Japanese candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
+Please note that the Range Area series uses only two values from the data set, but it works because it shares the default names of data fields (`low` and `high`) with Japanese Candlestick and OHLC series. So, series types do not have to use the same number of fields to be convertible to each other.
 
 ## defaultSeriesType()
 
-{api:anychart.charts.Cartesian#defaultSeriesType}defaultSeriesType(){api} combined with {api:anychart.charts.Cartesian#addSeries}addSeries(){api} method allows vary the type of series:
+The {api:anychart.charts.Cartesian#defaultSeriesType}defaultSeriesType(){api} method combined with {api:anychart.charts.Cartesian#addSeries}addSeries(){api} allows you to vary the type of series:
 
 ```
 var data1 = [16, 30, 45, 12, 5];
@@ -63,10 +69,10 @@ var data3 = [18, 25, 10, 20, 35];
 
 var chart = anychart.cartesian();
 
-// sets default series type
+// set the default series type
 chart.defaultSeriesType("column");
 
-// add a series of default type
+// add a series of the default type
 chart.addSeries(dataSet1);
 chart.addSeries(dataSet2);
 chart.addSeries(dataSet3);

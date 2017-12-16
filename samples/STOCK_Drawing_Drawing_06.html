@@ -24,8 +24,8 @@
     </style>
 </head>
 <body>
-    <select id="typeSelect" onclick="create()">
-    <option selected disabled>Annotation Type</option>
+    <select id="typeSelect" onchange="create()">
+    <option value="default" selected disabled>Annotation Type</option>
     <option value="andrews-pitchfork">Andrews' Pitchfork</option>
     <option value="ellipse">Ellipse</option>
     <option value="fibonacci-arc">Fibonacci Arc</option>
@@ -35,6 +35,7 @@
     <option value="horizontal-line">Horizontal Line</option> 
     <option value="infinite-line">Infinite Line</option>
     <option value="line">Line Segment</option>
+    <option value="marker">Marker</option> 
     <option value="ray">Ray</option>
     <option value="rectangle">Rectangle</option>
     <option value="trend-channel">Trend Channel</option>
@@ -75,11 +76,16 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
+
+    // reset the select list to the first option
+    chart.listen("annotationDrawingFinish", function(){
+      document.getElementById("typeSelect").value = "default";
+    });
 });
 
 // a helper function for creating annotations
 function create(){
-  select = document.getElementById("typeSelect");
+  var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
 };
 
@@ -93,12 +99,11 @@ function selectFirst(){
   // get the first annotation
   var firstAnnotation = plot.annotations().getAnnotationAt(0);
   // select the first annotation
-  plot.annotations().select(firstAnnotation);
+  plot.annotations().select(plot.annotations().getAnnotationAt(0));
 };
 
 // a helper function for unselecting a selected annotation
 function clearSelection(){
-  // unselect a selected annotation
   plot.annotations().unselect();
 };
 </script>

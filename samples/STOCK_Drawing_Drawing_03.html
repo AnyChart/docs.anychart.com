@@ -24,7 +24,7 @@
 </head>
 <body>
     <select id="typeSelect" onclick="create()">
-    <option selected disabled>Annotation Type</option>
+    <option value="default" selected disabled>Annotation Type</option>
     <option value="andrews-pitchfork">Andrews' Pitchfork</option>
     <option value="ellipse">Ellipse</option>
     <option value="fibonacci-arc">Fibonacci Arc</option>
@@ -34,6 +34,7 @@
     <option value="horizontal-line">Horizontal Line</option> 
     <option value="infinite-line">Infinite Line</option>
     <option value="line">Line Segment</option>
+    <option value="marker">Marker</option> 
     <option value="ray">Ray</option>
     <option value="rectangle">Rectangle</option>
     <option value="trend-channel">Trend Channel</option>
@@ -102,11 +103,16 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
+
+    // reset the select list to the first option
+    chart.listen("annotationDrawingFinish", function(){
+      document.getElementById("typeSelect").value = "default";
+    });
 });
 
 // a helper function for creating annotations
 function create(){
-  select = document.getElementById("typeSelect");
+  var select = document.getElementById("typeSelect");
   chart.annotations().startDrawing(select.value);
 };
 
