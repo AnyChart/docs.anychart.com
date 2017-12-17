@@ -19,20 +19,18 @@
             margin: 0;
             padding: 0;
         }
-        #buttons {
-          height: 10%
-        }
         #container {
-          height: 90%;
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
         }
     </style>
 </head>
 <body>
-<div id="buttons">
 <button onclick="displayMode('always-show')">Always Show</button>
 <button onclick="displayMode('clip')">Clip</button>
 <button onclick="displayMode('drop')">Drop</button>
-</div> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
