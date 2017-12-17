@@ -30,7 +30,7 @@ series.seriesType("column");
 
 The sample below demonstrates how this feature works with Area, Line, Column, and other series types requiring only one value:
 
-{sample}{sample}BCT\_Series\_Type\_01{sample}
+{sample}BCT\_Series\_Type\_01{sample}
 
 In the following sample, the {api:anychart.core.cartesian.series.Base#seriesType}seriesType(){api} method is applied to OHLC, Japanese Candlestick, and similar types:
 
