@@ -10,7 +10,7 @@ Like the regular pie chart, the doughnut chart is used with small sets of data t
 
 The Doughnut chart is a modification of the Pie chart and shares almost all the setting with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Pie_Chart) article. See also <a href="https://www.anychart.com/chartopedia/chart-types/donut-chart/" target="_blank">Chartopedia: Doughnut Chart</a>.
 
-##Quick Start
+## Quick Start
 
 To create a Doughnut chart, use the {api:anychart#pie}anychart.pie(){api} chart constructor and the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
 
@@ -91,3 +91,38 @@ chart.insideLabelsOffset("-75%");
 ```
 
 {sample}BCT\_Doughnut\_Chart\_03{sample}
+
+### Center Content
+
+The {api:anychart.charts.Pie#center}center(){api} method that provides the access to {api:anychart.core.pie.Center}anychart.core.pie.Center{api} object provide a very flexible way to place almost anything into the center of the Donut chart.
+
+In this section we will provide several typical use cases along with the samples and all code you will need to create charts like in your application. 
+
+#### Center Label
+
+To put some text in the center of a donut create a label and assign it to the center.
+
+```
+// create and configure a label
+var label = anychart.standalones.label();
+label.text("Activities");
+label.width("100%");
+label.height("100%");
+label.fontSize(30);
+label.fontColor("#60727b");
+label.hAlign("center");
+label.vAlign("middle");
+
+// Set center content.
+chart.center().content(label);
+```
+
+#### Chart
+
+```
+```
+
+#### Map
+
+```
+```
