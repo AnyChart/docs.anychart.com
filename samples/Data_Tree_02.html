@@ -13,20 +13,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="addPoint()">Append Point</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-  var tree = anychart.data.tree([
+  tree = anychart.data.tree([
     {name: "Node 1", id: "1"},
     {name: "Parent Node", id: "2"},
     {name: "Child Node 1", parent: 2, id: "3"},
@@ -48,12 +55,6 @@ anychart.onDocumentReady(function () {
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-  // create a label 
-  createLabel("Append Point", 10, function () {
-      // add data
-      addPoint();
-  });
-
   // draw chart
   treeDataGrid.container(stage).top(40).height(stage.height()).width("100%").draw();
 
@@ -65,40 +66,6 @@ anychart.onDocumentReady(function () {
     .text("Different Data From the Same Tree")
     .container(stage)
     .draw();
-
-  var nodeCount = 3;
-
-  function addPoint(){
-    var name = "Node " + nodeCount;
-    tree.addChild({name: name});
-    nodeCount++;
-    // resize container
-    treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
-  }
-
-  // get height of all children in the tree
-  function fullChildrenHeight () {
-    var height = 0;
-    var traverser = tree.getTraverser();
-    traverser.reset();
-    while(traverser.advance()){
-
-      // get an item
-      var currentItem = traverser.current();
-
-      // get height of the item
-      var currentHeight = currentItem.get("rowHeight");
-
-      // if item height is undefined
-      if (currentHeight !== void 0){
-height += (currentHeight + 1);
-      } else {
-// if height of current item is undefined, default height is 20px + 1px row space
-height +=21;
-      }
-    }
-    return height;
-  }
 });
 
 // style setter
@@ -112,29 +79,40 @@ function labelTextSettingsOverrider(label, dataItem) {
   }
 }
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+// get height of all children in the tree
+function fullChildrenHeight () {
+  var height = 0;
+  var traverser = tree.getTraverser();
+  traverser.reset();
+  while(traverser.advance()){
+
+    // get an item
+    var currentItem = traverser.current();
+
+    // get height of the item
+    var currentHeight = currentItem.get("rowHeight");
+
+    // if item height is undefined
+    if (currentHeight !== void 0){
+        height += (currentHeight + 1);
+    } else {
+        /* if height of current item is undefined,
+        default height is 20px + 1px row space*/
+        height +=21;
+    }
+  }
+  return height;
+}
+
+var nodeCount = 3;
+
+function addPoint(){
+  var name = "Node " + nodeCount;
+  tree.addChild({name: name});
+  nodeCount++;
+  // resize container
+  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
+}
 </script>
 </body>
 </html>

@@ -13,20 +13,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="addValue()">Update</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-  var tree = anychart.data.tree([
+  tree = anychart.data.tree([
     {"name": "Node 1", "id": "1", "value": "18000"},
     {"name": "Node 2", "id": "2", "value": "15000"},
     {"name": "Node 3", "id": "3", "value": "10000"},
@@ -55,12 +62,6 @@ anychart.onDocumentReady(function () {
     return item.get("value");
   });
 
-  // create a label 
-  createLabel("Update", 10, function () {
-      // change value
-      addValue();
-  });
-
   // draw chart
   treeDataGrid.container(stage).top(40).width("100%").draw();
 
@@ -72,10 +73,6 @@ anychart.onDocumentReady(function () {
     .text("Click on Button to Add 1000 to Third Node")
     .container(stage)
     .draw();
-
-  function addValue(){
-    tree.getChildAt(2).set("value", (parseInt(tree.getChildAt(2).get("value")) + 1000 )*1+"");
-  }
 
   // get height of all items in the tree
   function fullChildrenHeight () {
@@ -92,10 +89,11 @@ anychart.onDocumentReady(function () {
 
       // if item height is undefined
       if (currentHeight !== void 0){
-height += (currentHeight + 1);
+          height += (currentHeight + 1);
       } else {
-// if height of current item is undefined, default height is 20px + 1px row space
-height +=21;
+          /* if height of current item is undefined,
+          default height is 20px + 1px row space*/
+          height +=21;
       }
     }
     return height;
@@ -113,29 +111,9 @@ function labelTextSettingsOverrider(label, dataItem) {
   }
 }
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+function addValue(){
+  tree.getChildAt(2).set("value", (parseInt(tree.getChildAt(2).get("value")) + 1000 )*1+"");
+} 
 </script>
 </body>
 </html>

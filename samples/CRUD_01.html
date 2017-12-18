@@ -12,11 +12,17 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
         }
     </style>
 </head>
@@ -45,23 +51,22 @@ anychart.onDocumentReady(function () {
 
   // set container and draw chart
   chart.container("container").draw();
-
-  // first index for new point
-  indexSetter = 6;
 });
 
 // function, if listener triggers
-function addPoint(e) {
+function addPoint() {
+  // first index for new point
+  newIndex = (data.mapAs().getRowsCount())+1;
+
   // append data
   data.append({
 
     // x value
-    x: "new P" + indexSetter,
+    x: "new P" + newIndex,
 
     // random value from 1 to 100
     value : Math.floor((Math.random() * 100)+ 1)
   });
-  indexSetter++;
 };
 </script>
 </body>

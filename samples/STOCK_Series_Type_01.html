@@ -12,11 +12,17 @@
     
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
         }
     </style>
 </head>
@@ -76,7 +82,7 @@ function switchType(){
   scrollerSeries.seriesType(select.value);
 };  
 
-// a helper function for setting the data
+// a helper function for creating data
 function data_us_population() {
   return [
     {x:'1790-01-01', value:3.929214},

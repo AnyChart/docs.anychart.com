@@ -191,6 +191,7 @@ var ellipse = controller.ellipse({
 // bind the Ellipse annotation to the additional Y-scale
 ellipse.yScale(extraYScale);
 ```
+
 {sample}STOCK\_Drawing\_General\_06{sample}
 
 ## Drawing

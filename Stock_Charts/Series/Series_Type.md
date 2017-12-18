@@ -9,6 +9,7 @@ The sample below demonstrates how this feature works with Area, Line, Column, an
 
 ```
 // create data
+var table = anychart.data.table('x');
 table.addData([
     {x:'1790-01-01', value: 3929214},
     {x:'1795-01-01', value: 4390561},

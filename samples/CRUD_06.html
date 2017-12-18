@@ -12,11 +12,17 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.0.1/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
         }
     </style>
 </head>
@@ -66,14 +72,14 @@ function startStream() {
   var streamButton = document.getElementById("streamButton");
   streamButton.innerHTML = "Stop" + "\nstream";
 
-  // first index for new point
-  indexSetter = (dataSet.mapAs().getRowsCount())+1;
-
   // set interval of data stream
   var myVar = setInterval(
 
+    // first index for new point
+    indexSetter = (dataSet.mapAs().getRowsCount())+1;
+
     // data streaming itself
-    function(e) {
+    function() {
 
       // append data
       dataSet.append({
