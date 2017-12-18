@@ -374,9 +374,14 @@ There is a list of formatting parameters, which help to organize your data prese
 <td>zeroFillDecimals</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
 </tr>
 <tr>
-<td>scale</td><td></td><td>Sets value scaling.</td>
+<td>scale</td><td>Scaling string</td><td>Sets value scaling.</td>
 </tr>
-</table>
+<tr>
+<td>dateTimeFormat</td><td>Datetime format string</td><td>Sets datetime format.</td>
+</tr>
+<tr>
+<td>type</td><td>`datetime`, `time`, `date`, `number`, `string`, `percent`</td><td>Sets value type, see [Type](#type) section below.</td>
+</tr></table>
 
 In the next sample we have formatted the scale according to the Old British currency system (before 1971), when £1 was equivalent to 20 shillings and 1 shilling = 12 pence.
 
@@ -403,6 +408,27 @@ var formatter = "{%seriesName}: {%value}{scale:(1)(1000)(1000)(1000)|( d)( th)( 
 Here is a live sample with such settings:
 
 {sample}CS\_format\_03{sample}
+
+## Type
+
+AnyChart engine tries to determine the best way to format values and provide the best defaults whenever possible. Also, when formatting parameters are used values are implicitly converted to another type.
+
+In the following example different types of conversion and type formatting are shown:
+
+```
+// format the value and implicitly convert to date
+chart.xAxis().labels().format('{%Value}{dateTimeFormat:MM-dd}');
+
+// enable labels and explicitly specify time type
+chart.labels().enabled(true);
+chart.labels().format('{%x}{type:time}'); 
+// explictly specify type in the title
+chart.tooltip().titleFormat('{%x}{type:date}'); 
+// use another type in the tooltip text
+chart.tooltip().format('{%x}{type:number}'); 
+```
+
+{sample}CS\_format\_03\_1{sample}
 
 ### Escaping symbols
 
