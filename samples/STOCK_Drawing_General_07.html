@@ -15,22 +15,44 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<select id="typeSelect" onclick="create()">
+    <option value="default" selected disabled>Annotation Type</option>
+    <option value="andrews-pitchfork">Andrews' Pitchfork</option>
+    <option value="ellipse">Ellipse</option>
+    <option value="fibonacci-arc">Fibonacci Arc</option>
+    <option value="fibonacci-fan">Fibonacci Fan</option>
+    <option value="fibonacci-retracement">Fibonacci Retracement</option>
+    <option value="fibonacci-timezones">Fibonacci Time Zones</option>  
+    <option value="horizontal-line">Horizontal Line</option> 
+    <option value="infinite-line">Infinite Line</option>
+    <option value="line">Line Segment</option>
+    <option value="marker">Marker</option>   
+    <option value="ray">Ray</option>
+    <option value="rectangle">Rectangle</option>
+    <option value="trend-channel">Trend Channel</option>
+    <option value="triangle">Triangle</option>
+    <option value="vertical-line">Vertical Line</option>
+</select>
+<button onclick="removeAll()">Remove All</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");  
-   
+  
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
     // create a data table using this data
@@ -41,73 +63,39 @@ anychart.onDocumentReady(function () {
     var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // create a plot on the chart
-    var plot = chart.plot(0);
+    plot = chart.plot(0);
 
     // create a line series
     var lineSeries = plot.line(mapping);
     lineSeries.name("CSCO");
 
-    // an auxiliary variable for working with annotations
-    var controller = plot.annotations();
-
-    // set the chart position and title
-    chart.top(15);
+    // set the chart title
     chart.title("Annotations: Drawing");
 
-    // set the chart container and initiate drawing the chart
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
 
-    // create a label for the Ellipse annotation
-    createLabel("Ellipse", 10, function () {
-// start drawing the annotation
-controller.startDrawing("ellipse");
-    });
-
-    // create a label for the Rectangle annotation
-    createLabel("Rectangle", 70, function () {
-// start drawing the annotation
-controller.startDrawing("rectangle");
-    });
-
-    // create a label for the Triangle annotation
-    createLabel("Triangle", 155, function () {
-// start drawing the annotation
-controller.startDrawing("triangle");
-    });
-
-// create a label for removing annotations
-    createLabel("Remove All", 240, function () {
-// remove all annotations
-controller.removeAllAnnotations();
+    // reset the select list to the first option
+    chart.listen("annotationDrawingFinish", function(){
+      document.getElementById("typeSelect").value = "default";
     });
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5");
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2");
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
+// a helper function for creating annotations
+function create(){
+  var select = document.getElementById("typeSelect");
+  plot.annotations().startDrawing(select.value);   
+};
+
+// a helper function for removing all annotations
+function removeAll(){
+  plot.annotations().removeAllAnnotations();
 };
 </script>
 </body>

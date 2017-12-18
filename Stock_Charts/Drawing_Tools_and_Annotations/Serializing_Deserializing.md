@@ -16,28 +16,11 @@ To load the list of annotations, call the {api:anychart.core.annotations.PlotCon
 In the following sample, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding)) on the first plot and then deserialize them to the second plot:
 
 ```
-// create a stock chart
-chart = anychart.stock();
-
-// create a line series
-var series1 = chart.plot(0).line(mapping);
-series1.name("Series 1")
-
-// create an area series
-var series2 = chart.plot(1).area(mapping);
-series2.name("Series 2")
-
-// an auxiliary variable for working with annotations on the first plot
-var controller1 = chart.plot(0).annotations();
-
-// an auxiliary variable for working with annotations on the second plot
-var controller2 = chart.plot(1).annotations();
-
 // serialize annotations from the first plot
-var json = controller1.toJson();
+var json = chart.plot(0).annotations().toJson();
 
 // deserialize the annotations to the second plot
-controller2.fromJson(json);
+chart.plot(1).annotations().fromJson(json);
 ```
 
 {sample}STOCK\_Drawing\_Serializing\_01{sample}
@@ -51,28 +34,11 @@ To load the list of annotations, call the {api:anychart.core.annotations.PlotCon
 In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding)) on the first plot and then deserialize them to the second plot:
 
 ```
-// create a stock chart
-chart = anychart.stock();
-
-// create a line series
-var series1 = chart.plot(0).line(mapping);
-series1.name("Series 1")
-
-// create an area series
-var series2 = chart.plot(1).area(mapping);
-series2.name("Series 2")
-
-// an auxiliary variable for working with annotations on the first plot
-var controller1 = chart.plot(0).annotations();
-
-// an auxiliary variable for working with annotations on the second plot
-var controller2 = chart.plot(1).annotations();
-
 // serialize annotations from the first plot
-var xml = controller1.toXml();
+var xml = chart.plot(0).annotations().toXml();
 
 // deserialize the annotations to the second plot
-controller2.fromXml(xml);
+chart.plot(1).annotations().fromXml(xml);
 ```
 
 {sample}STOCK\_Drawing\_Serializing\_02{sample}

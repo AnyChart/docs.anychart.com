@@ -12,21 +12,30 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="add()">Add Series</button>
+<button onclick="remove()">Remove Series</button>
+<button onclick="removeAll()">Remove All Series</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
 	// data
-	var data = anychart.data.set([
+	data = anychart.data.set([
 		["Department Stores", 637166, 737166, 813000, 719242, 791736, 837164, 918364, 819363, 864213],
 		["Discount Stores", 721630, 537166, 128013, 471946, 385638, 764426, 237561, 628452 ,721645],
 		["Men's/Women's Specialty Stores", 148662, 188662, 194912, 573173, 384617, 481627, 615373, 274618 ,471846],
@@ -40,7 +49,7 @@ anychart.onDocumentReady(function () {
 	var Sales2005 = data.mapAs({x: 0, value: 3});
 
 	// define chart type
-	var chart = anychart.cartesian();
+	chart = anychart.cartesian();
 
 	// set default series type
 	chart.defaultSeriesType("column");
@@ -57,58 +66,24 @@ anychart.onDocumentReady(function () {
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
 
-	var add = chart.label(0);
-	add.padding(5,5);
-	add.position("left-top");
-	add.anchor("left-top");
-	add.offsetY(10);
-	add.offsetX(10);
-	add.text("Add Series");
-	var addBg = add.background();
-	addBg.enabled(true);
-	addBg.stroke("2 #BCBCBC");
-	addBg.cornerType("round");
-	addBg.corners(5);
-	add.listen("click",function (){
-		if (chart.getSeriesCount()<9)
-			chart.addSeries(data.mapAs({x: 0, value: [chart.getSeriesCount()+1]}));
-	});
-	var remove = chart.label(1);
-	remove.padding(5,5);
-	remove.position("left-top");
-	remove.anchor("left-top");
-	remove.offsetY(45);
-	remove.offsetX(10);
-	remove.text("Remove Series");
-	var removeBg = remove.background();
-	removeBg.enabled(true);
-	removeBg.stroke("2 #BCBCBC");
-	removeBg.cornerType("round");
-	removeBg.corners(5);
-	remove.listen("click",function (){
-		if (chart.getSeriesCount()>0)
-			chart.removeSeriesAt(chart.getSeriesCount()-1);
-	});
-	var removeAll = chart.label(2);
-	removeAll.padding(5,5);
-	removeAll.position("left-top");
-	removeAll.anchor("left-top");
-	removeAll.offsetY(80);
-	removeAll.offsetX(10);
-	removeAll.text("Remove All Series");
-	var removeAllBg = removeAll.background();
-	removeAllBg.enabled(true);
-	removeAllBg.stroke("2 #BCBCBC");
-	removeAllBg.cornerType("round");
-	removeAllBg.corners(5);
-	removeAll.listen("click",function (){
-		chart.removeAllSeries();
-	});
-
 	// draw chart
 	chart.container("container");
 	chart.draw();
 });
+
+function add(){
+  if (chart.getSeriesCount()<9)
+  	  chart.addSeries(data.mapAs({x: 0, value: [chart.getSeriesCount()+1]}));
+};
+
+function remove(){
+  if (chart.getSeriesCount()>0)
+  	  chart.removeSeriesAt(chart.getSeriesCount()-1);
+};
+
+function removeAll(){
+  chart.removeAllSeries();
+};
 </script>
 </body>
 </html>

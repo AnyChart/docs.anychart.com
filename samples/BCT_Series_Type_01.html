@@ -10,11 +10,17 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
        
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
         }
     </style>
 </head>
@@ -35,16 +41,19 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // set the data
+    // create data
     var data = [
-      ["Spring", 10], ["Summer", 15], ["Autumn", 8], ["Winter", 23]
+      ["Spring", 10],
+      ["Summer", 15],
+      ["Autumn", 8],
+      ["Winter", 23]
     ];
 
-    // create a chart
-    var chart = anychart.line();
+    // set the chart type
+    var chart = anychart.area();
 
-    // set the series type
-    series = chart.line(data);
+    // set the series type and data
+    series = chart.area(data);
 
     // set the chart title
     chart.title("Switching the Series Type");
@@ -58,7 +67,7 @@ anychart.onDocumentReady(function () {
 
 // a helper function for switching the series type
 function switchType(){
-  select = document.getElementById("typeSelect");
+  var select = document.getElementById("typeSelect");
   series.seriesType(select.value);
 };
 </script>

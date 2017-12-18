@@ -235,7 +235,7 @@ The sample below shows how to set the sorting mode:
 chart.sort("asc");
 ```
 
-{sample :height 425}BCT\_Treemap\_Chart\_06{sample}
+{sample}BCT\_Treemap\_Chart\_06{sample}
 
 ### Appearance
 
@@ -588,7 +588,7 @@ The sample below shows how to change the display mode, which is initially set to
 chart.headersDisplayMode("drop");
 ```
 
-{sample :height 425}BCT\_Treemap\_Chart\_16{sample}
+{sample}BCT\_Treemap\_Chart\_16{sample}
 
 ### Interactivity
 
@@ -641,4 +641,4 @@ chart.listen("drillchange", function(e){
 });
 ```
 
-{sample :height 425}BCT\_Treemap\_Chart\_18{sample}
+{sample}BCT\_Treemap\_Chart\_18{sample}

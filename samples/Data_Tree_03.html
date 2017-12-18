@@ -13,21 +13,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id="addPointButton" onclick="addPoint()">Add Data</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
   // data tree
-  var tree = anychart.data.tree([
+  tree = anychart.data.tree([
     {"name": "Node 1",      "id": "1"},
     {"name": "Parent Node", "id": "2"},
     {"name": "Child Node 1", parent: 2, "id": "3"},
@@ -50,12 +57,6 @@ anychart.onDocumentReady(function () {
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-  // create a label 
-  lbl = createLabel("Add Data", 10, function () {
-      // add data
-      addPoint();
-  });
-
   // draw chart
   treeDataGrid
     .container(stage)
@@ -66,23 +67,15 @@ anychart.onDocumentReady(function () {
     .text("Click on button to add Data into Data Tree")
     .container(stage)
     .draw();
-
-  // data to add
-  var newData = [
-    {name: "new Node 1", id: "6"},
-    {name: "new Parent Node", id: "7"},
-    {name: "new Node 3", id: "8"},
-    {name: "new Child Node", parent: 7, id: "9"}
-  ];
-
-
-  function addPoint(){
-    // add data
-    tree.addData(newData, "as-table");
-    // remove button
-    lbl.enabled(false);
-  }
 });
+
+// data to add
+var newData = [
+  {name: "new Node 1", id: "6"},
+  {name: "new Parent Node", id: "7"},
+  {name: "new Node 3", id: "8"},
+  {name: "new Child Node", parent: 7, id: "9"}
+];
 
 // style setter
 function labelTextSettingsOverrider(label, dataItem) {
@@ -95,29 +88,12 @@ function labelTextSettingsOverrider(label, dataItem) {
   }
 }
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+function addPoint(){
+  // add data
+  tree.addData(newData, "as-table");
+  // hide the button
+  document.getElementById("addPointButton").style.visibility = "hidden";
+}
 </script>
 </body>
 </html>

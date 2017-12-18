@@ -346,7 +346,7 @@ There are two modes of positioning elements on a Tag Cloud: **spiral** (default)
 chart.mode("rect");
 ```
 
-{sample :height 425}BCT\_Tag\_Cloud\_Chart\_12{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_12{sample}
 
 ### Scales
 

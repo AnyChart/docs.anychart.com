@@ -12,24 +12,28 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="addPoint()">Append Point</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-  // create a stage    
-  stage = anychart.graphics.create("container");  
-
   // data
-  var data = anychart.data.set([
+  data = anychart.data.set([
     {x: "P1", value: 10},
     {x: "P2", value: 2},
     {x: "P3", value: 15},
@@ -45,56 +49,25 @@ anychart.onDocumentReady(function () {
   // set data
   var area = chart.splineArea(data);
 
-  // first index for new point
-  var indexSetter = 6;
-
-  // function, if listener triggers
-  function addPoint(e) {
-    // append data
-    data.append({
-
-      // x value
-      x: "new P" + indexSetter,
-
-      // random value from 1 to 100
-      value : Math.floor((Math.random() * 100)+ 1)
-    });
-    indexSetter++;
-  }
-
   // set container and draw chart
-  chart.container(stage).draw();
-
-  // create a label for switching to the area series
-  createLabel("Append Point", 10, function () {
-      // change the series type
-      addPoint();
-  });     
+  chart.container("container").draw();
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
- };
+// function, if listener triggers
+function addPoint() {
+  // first index for new point
+  newIndex = (data.mapAs().getRowsCount())+1;
+
+  // append data
+  data.append({
+
+    // x value
+    x: "new P" + newIndex,
+
+    // random value from 1 to 100
+    value : Math.floor((Math.random() * 100)+ 1)
+  });
+};
 </script>
 </body>
 </html>

@@ -24,7 +24,7 @@ AnyChart allows to adjust chart at any moment after it is displayed. To add an e
 Here is the example:
 
 ```
-dataSet.append({x: 'P6', value: 20});
+data.append({x: 'P6', value: 20});
 ```
 
 That's how it looks with the button which adds a point on a click.
@@ -34,7 +34,9 @@ That's how it looks with the button which adds a point on a click.
 Note that in case of adding a point automatically it has to be done as a function:
 
 ```
-function addPoint(e) {
+function addPoint() {
+  // first index for new point
+  newIndex = (data.mapAs().getRowsCount())+1;
   // append data
   dataSet.append({
     // x value
@@ -42,7 +44,6 @@ function addPoint(e) {
     // random value from 1 to 100
     value : Math.floor((Math.random() * 100)+ 1)
   });
-  indexSetter++;
 }
 ```
 
@@ -108,10 +109,10 @@ This sample below demonstrates removing data. After clicking on any column the f
 {api:anychart.data.Set#insert}insert(){api} method is very similar to the {api:anychart.data.Set#append}append(){api} method, but it allows you to insert information into any position.
 
 ```
-dataSet.insert(
+data.insert(
   {x: 'new P', value : 50},   //new data to set
   2                           //row to insert data
-)
+);
 ```
 
 The sample illustrates inserting new column into a random position and colorizing it with red.
@@ -125,7 +126,7 @@ Data Streaming adds and/or removes points sequentially, usually by timer. To str
 That's how our function code looks like:
 
 ```
-function(e) {
+function() {
   // append data
   dataSet.append({
 

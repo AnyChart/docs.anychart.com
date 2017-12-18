@@ -94,7 +94,7 @@ chart = anychart.line();
 chart.isVertical(true);
 ```
 
-{sample :height 425}BCT\_Vertical\_03{sample}
+{sample}BCT\_Vertical\_03{sample}
 
 **Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical()** method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
 

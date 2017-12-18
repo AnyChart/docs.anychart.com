@@ -15,21 +15,44 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<select id="typeSelect" onclick="create()">
+    <option value="default" selected disabled>Annotation Type</option>
+    <option value="andrews-pitchfork">Andrews' Pitchfork</option>
+    <option value="ellipse">Ellipse</option>
+    <option value="fibonacci-arc">Fibonacci Arc</option>
+    <option value="fibonacci-fan">Fibonacci Fan</option>
+    <option value="fibonacci-retracement">Fibonacci Retracement</option>
+    <option value="fibonacci-timezones">Fibonacci Time Zones</option>  
+    <option value="horizontal-line">Horizontal Line</option> 
+    <option value="infinite-line">Infinite Line</option>
+    <option value="line">Line Segment</option>
+    <option value="marker">Marker</option> 
+    <option value="ray">Ray</option>
+    <option value="rectangle">Rectangle</option>
+    <option value="trend-channel">Trend Channel</option>
+    <option value="triangle">Triangle</option>
+    <option value="vertical-line">Vertical Line</option>
+</select>
+<button onclick="removeAll()">Remove All</button>
+<button onclick="copy()">Copy to the Second Plot</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");  
    
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
@@ -51,85 +74,56 @@ anychart.onDocumentReady(function () {
     var series2 = chart.plot(1).area(mapping);
     series2.name("Series 2")
 
-    // an auxiliary variable for working with annotations on the first plot
-    var controller1 = chart.plot(0).annotations();
-
-    // an auxiliary variable for working with annotations on the second plot
-    var controller2 = chart.plot(1).annotations();
-
     // create an Ellipse annotation
-    controller1.ellipse({
-xAnchor: "2006-11-20",
-valueAnchor: 35.41,
-secondXAnchor: "2007-02-24",
-secondValueAnchor: 18.05,
+    chart.plot(0).annotations().ellipse({
+        xAnchor: "2006-11-20",
+        valueAnchor: 35.41,
+        secondXAnchor: "2007-02-24",
+        secondValueAnchor: 18.05,
     });
 
     // create a Rectangle annotation
-    controller1.rectangle({
-xAnchor: "2007-06-01",
-valueAnchor: 35.41,
-secondXAnchor: "2007-12-09",
-secondValueAnchor: 18.05
+    chart.plot(0).annotations().rectangle({
+        xAnchor: "2007-06-01",
+        valueAnchor: 35.41,
+        secondXAnchor: "2007-12-09",
+        secondValueAnchor: 18.05
     });
 
-    // set the chart position and title
-    chart.top(15);
+    // set the chart title
     chart.title("Serializing and Deserializing (JSON)");
 
-    // set the chart container and initiate drawing the chart
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
 
-    // create a label for the Ellipse annotation
-    createLabel("Ellipse", 150, function () {
-// start drawing the annotation on the first plot
-controller1.startDrawing("ellipse");
-    });
-
-    // create a label for the Rectangle annotation
-    createLabel("Rectangle", 208, function () {
-// start drawing the annotation on the first plot
-controller1.startDrawing("rectangle");
-    });
-
-    // create a label for removing annotations
-    createLabel("Remove All", 312, function () {
-// remove annotations from all plots
-chart.annotations().removeAllAnnotations();
-    });
-
-    // create a label for serializing annotations from the first plot and deserializing them to the second one
-    createLabel("Copy to the Second Plot", 423, function () {
-// serialize annotations from the first plot
-var json = controller1.toJson();
-// deserialize the annotations to the second plot
-controller2.fromJson(json);
+    // reset the select list to the first option
+    chart.listen("annotationDrawingFinish", function(){
+      document.getElementById("typeSelect").value = "default";
     });
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-label.background().fill("#1976d2 0.5");
-document.body.style.cursor = "pointer";
-label.draw();
-    });
-    label.listen("mouseOut", function (){
-label.background().fill("#1976d2");
-document.body.style.cursor = "auto";
-label.draw();
-    });    
-    return label;
+// a helper function for creating annotations
+function create(){
+  var select = document.getElementById("typeSelect");
+  chart.plot(0).annotations().startDrawing(select.value);
+};
+
+// a helper function for removing all annotations
+function removeAll(){
+  chart.plot(0).annotations().removeAllAnnotations();
+};
+
+/* a helper function for serializing annotations
+from the first plot and deserializing them
+to the second one */
+function copy(){
+  // serialize annotations from the first plot
+  var json = chart.plot(0).annotations().toJson();
+  // deserialize the annotations to the second plot
+  chart.plot(1).annotations().fromJson(json);
 };
 </script>
 </body>

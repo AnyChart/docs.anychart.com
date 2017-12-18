@@ -15,17 +15,23 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
 <select id="typeSelect" onclick="create()">
-<option selected disabled>Annotation Type</option>
+<option value="default" selected disabled>Annotation Type</option>
 <option value="andrews-pitchfork">Andrews' Pitchfork</option>
 <option value="ellipse">Ellipse</option>
 <option value="fibonacci-arc">Fibonacci Arc</option>
@@ -35,6 +41,7 @@
 <option value="horizontal-line">Horizontal Line</option> 
 <option value="infinite-line">Infinite Line</option>
 <option value="line">Line Segment</option>
+<option value="marker">Marker</option> 
 <option value="ray">Ray</option>
 <option value="rectangle">Rectangle</option>
 <option value="trend-channel">Trend Channel</option>
@@ -83,11 +90,16 @@ anychart.onDocumentReady(function () {
       chart.title("The " + selectedAnnotation.getType() +
                   " annotation is selected.");
     });
+
+    // reset the select list to the first option
+    chart.listen("annotationDrawingFinish", function(){
+      document.getElementById("typeSelect").value = "default";
+    });
 });
 
 // a helper function for creating annotations
 function create(){
-  select = document.getElementById("typeSelect");
+  var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
 };
 

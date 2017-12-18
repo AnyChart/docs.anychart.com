@@ -191,6 +191,7 @@ var ellipse = controller.ellipse({
 // bind the Ellipse annotation to the additional Y-scale
 ellipse.yScale(extraYScale);
 ```
+
 {sample}STOCK\_Drawing\_General\_06{sample}
 
 ## Drawing
@@ -205,6 +206,6 @@ var controller = plot.annotations();
 controller.startDrawing("ellipse");
 ```
 
-Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Ellipses, Rectangles, and Triangles or remove all annotations from the plot:
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw annotations of all types or remove all annotations from the plot:
 
 {sample}STOCK\_Drawing\_General\_07{sample}
