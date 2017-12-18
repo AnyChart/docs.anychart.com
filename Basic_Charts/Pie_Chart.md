@@ -77,6 +77,7 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.StateSettings#outline}outline(){api} to set the [Outline](#outline)
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
@@ -122,6 +123,35 @@ chart = anychart.pie(data);
 
 {sample}BCT\_Pie\_Chart\_03{sample}
 
+#### Outline
+
+Outline a special element that is usually used to highlight hovered and selected elements of a pie chart. It is enabled by default and looks like a thin extra arc that extends from a slice when it is hovered or selected.
+
+Outline can be configured using the {api:anychart.charts.Pie#outline}{api} method or you can define how outline looks using [states](#all_points).
+
+To disable outline effect use this code:
+
+```
+chart.outline(false);
+```
+
+Here is a sample of a pie chart with the tuned outline:
+
+```
+// enable outline in the normal state
+chart.normal().outline().enabled(true);
+chart.normal().outline().width("5%");
+// make outline thick and red on hover
+// and use object notation
+chart.hovered().outline({width: "10%"});
+// make outline thin and red on select
+chart.selected().outline().width(3);
+chart.selected().outline().fill("black");
+chart.selected().outline().stroke(null);
+```
+
+{sample}BCT\_Pie\_Chart\_03\_1{sample}
+
 #### Aqua Style
 
 There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the `"aquastyle"` parameter:
@@ -161,36 +191,35 @@ pie3.sort("desc");
 
 ### Exploded Slices
 
-By default, there is no spaces between the slices of a Pie chart, and when a user clicks a slice, it "explodes", moving away from the others.
+By default, there is no spaces between the slices of a Pie chart, and when a user clicks a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
 
-You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method:
+You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method (you can do both pixels and percents):
 
 ```
 // set the explosion range
-chart.explode (30);
+chart.explode("3%");
 ```
 
-To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of a slice (numbering starts from 0), and the second one is a boolean value that enables explosion:
+To make some slices exploded by default, use the {api:anychart.charts.Pie#select}select(){api}:
 
 ```
 // explode the third slice
-chart.explodeSlice(2, true);
+chart.select([2]);
 ```
 
-Another way to enable explosion is to add a special field to your data, which should be set as an object:
+Another way to enable explode/select is to add a special field to your data, which should be set as an object:
 
 ```
-// create a data
 var data = [
   {x: "A", value: 637166},
-  {x: "B", value: 721630},
+  {x: "B", value: 721630, state: "selected"},
   {x: "C", value: 148662},
-  {x: "D", value: 78662, exploded: true},
+  {x: "D", value: 78662},
   {x: "E", value: 90000}
 ];
 ```
 
-In this sample, there is a Pie chart with two slices exploded by default and the explosion range set to 30:
+In this sample, there is a Pie chart with two slices exploded by default and the explosion range set to 3%:
 
 {sample}BCT\_Pie\_Chart\_08{sample}
 
