@@ -57,7 +57,7 @@ function getData(){
       var obj = {};
       obj.x = x;
       obj.y = y;
-      obj.heat = Math.floor(Math.random()*10000) + 1; 
+      obj.heat = (x*y)%13; 
       data.push(obj);
     }
   }
