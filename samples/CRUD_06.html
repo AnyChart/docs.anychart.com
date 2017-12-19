@@ -64,6 +64,9 @@ anychart.onDocumentReady(function () {
 
   // set container and draw chart
   chart.container("container").draw();
+
+  // first index for new point
+  indexSetter = (dataSet.mapAs().getRowsCount())+1;  
 });
 
 function startStream() {
@@ -74,9 +77,6 @@ function startStream() {
 
   // set interval of data stream
   var myVar = setInterval(
-
-    // first index for new point
-    indexSetter = (dataSet.mapAs().getRowsCount())+1;
 
     // data streaming itself
     function() {
