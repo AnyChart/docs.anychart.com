@@ -28,7 +28,7 @@ anychart.onDocumentReady(function () {
   // define chart
   var chart = anychart.financial();
 
-  chart.title("Monthly Iranian crudle oil production");
+  chart.title("Monthly Iranian crude oil production");
 
   // crosshair settings
   var crosshair = chart.crosshair();
@@ -162,7 +162,7 @@ anychart.onDocumentReady(function () {
      {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
    ]);
 
-  series.name("Сrude oil forecast and range of uncertainty");
+  series.name("Crude oil forecast and range of uncertainty");
 
   series.tooltip().title(false).separator(false).format(function (){
     var value = this.value.toFixed(3);
