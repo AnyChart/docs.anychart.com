@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Doughnut Chart 04"/>
+    <meta name="ac:name" content="BCT Doughnut Chart 05"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -24,31 +24,28 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-    var chart = anychart.pie([
-        {x: "Cycling", value: 10},
-        {x: "Swimming", value: 12},
-        {x: "Run", value: 18},
-        {x: "Hiking", value: 11},
-        {x: "Alpinism", value: 9}
-    ]);
 
-    chart.innerRadius("25%");
+    // data set
+    var data = [
+        {x: "Winter", value: 10},
+        {x: "Spring", value: 12},
+        {x: "Summer", value: 18},
+        {x: "Fall", value: 11},
+    ];
 
-    var label = anychart.standalones.label();
-    label.text("Activities");
-    label.width("100%");
-    label.height("100%");
-    label.adjustFontSize(true);
-    label.fontColor("#60727b");
-    label.hAlign("center");
-    label.vAlign("middle");
+    // create and configure a pie chart
+    var chart1 = anychart.pie(data);
+    chart1.innerRadius("75%");
 
-    // set label as the center content
-    chart.center().content(label);
+    // create a bar chart
+    var chart2 = anychart.bar(data);
 
-    chart.title("Donut Chart: Label in the center");
-    chart.container("container");
-    chart.draw();
+    // set bar chart as the center content of a pie chart
+    chart1.center().content(chart2);
+
+    chart1.title("Donut Chart: Chart in the center");
+    chart1.container("container");
+    chart1.draw();
 });
 </script>
 </body>
