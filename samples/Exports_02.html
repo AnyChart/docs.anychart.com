@@ -12,70 +12,50 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/RC-8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="pdf()">Save as PDF</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
   // create a stage
-  stage = anychart.graphics.create("container");  
+  var stage = anychart.graphics.create("container");  
   
   // data
   var data = [
-   ["Chocolate paste", 5],
-   ["White honey", 2],
-   ["Strawberry jam", 2],
-   ["Condensed milk", 1]
+    ["Chocolate paste", 5],
+    ["White honey", 2],
+    ["Strawberry jam", 2],
+    ["Condensed milk", 1]
   ];
 
   // set chart type
   chart = anychart.pie(data);
 
   // set chart title
-  chart.title("Save as PDF button");
+  chart.title("Save as PDF Button");
 
   // display chart
   chart.container(stage).draw();
-
-  // PDF Button
-  lbl1 = createLabel("Save as PDF", 10, function () {
-    lbl1.enabled(false);
-    chart.saveAsPdf();
-    lbl1.enabled(true);
-  });
-
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-      label.background().fill("#1976d2 0.5")
-      document.body.style.cursor = "pointer";
-      label.draw();
-    });
-    label.listen("mouseOut", function (){
-      label.background().fill("#1976d2")
-      document.body.style.cursor = "auto";
-      label.draw();
-    });    
-return label;
+// a helper function for saving the chart as pdf
+function pdf() {
+  chart.saveAsPdf();
 };
 </script>
 </body>

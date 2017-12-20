@@ -34,7 +34,7 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  stage = anychart.graphics.create("container");  
+  var stage = anychart.graphics.create("container");  
 
   // data
   var data = [
@@ -56,7 +56,10 @@ anychart.onDocumentReady(function () {
 
 // a helper function for saving the chart as png
 function png() {
-  chart.saveAsPng({"width": 360, "height": 500, "quality": 0.3, "filename": "My Chart PNG"});
+  chart.saveAsPng({"width": 360,
+                   "height": 500,
+                   "quality": 0.3,
+                   "filename": "My Chart PNG"});
   hideShowLabels(true);
 };
 

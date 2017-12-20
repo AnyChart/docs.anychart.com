@@ -46,13 +46,17 @@ AnyChart js charting library allows to save charts in 3 different image formats:
 {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api} can be launched in two modes, one with width and height passed:
 
 ```
-saveAsSvg({"width": 360, "height": 500, "filename": 'My Chart SVG'})
+saveAsSvg({"width": 360,
+	       "height": 500,
+	       "filename": 'My Chart SVG'})
 ```
 
 And another one with paper size and page orientation set:
 
 ```
-saveAsSvg({"paperSize": "A4", "landscape": false, "filename": "My Chart SVG"});  
+saveAsSvg({"paperSize": "A4",
+           "landscape": false,
+           "filename": "My Chart SVG"});  
 ```
 
 ### PNG
@@ -60,7 +64,10 @@ saveAsSvg({"paperSize": "A4", "landscape": false, "filename": "My Chart SVG"});
 With {api:anychart.core.Chart#saveAsPng}saveAsPng(){api} you can set width, height and quality in addition to file name:
 
 ```
-saveAsPng({"width": 360, "height": 500, "quality": 0.3, "filename": "My Chart PNG"});
+saveAsPng({"width": 360,
+           "height": 500,
+           "quality": 0.3,
+           "filename": "My Chart PNG"});
 ```
 
 ### JPG
@@ -68,7 +75,11 @@ saveAsPng({"width": 360, "height": 500, "quality": 0.3, "filename": "My Chart PN
 With {api:anychart.core.Chart#saveAsJpg}saveAsJpg(){api} you can set width, height, quality and forceTransparentWhite flag and in addition to file name:
 
 ```
-saveAsJpg({"width": 360, "height": 500, "quality": 0.3, "forceTransparentWhite": false, "filename": "My Chart JPG"});
+saveAsJpg({"width": 360,
+           "height": 500,
+           "quality": 0.3,
+           "forceTransparentWhite": false,
+           "filename": "My Chart JPG"});
 ```
 
 To launch the export you need to use these methods as shown:
