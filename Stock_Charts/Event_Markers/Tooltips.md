@@ -12,10 +12,10 @@ AnyChart Stock charts provide two ways to show tooltips for event markers: Built
 
 Built-in tooltips work as all other tooltips in AnyChart, learn the basics in [../../Common_Settings/Tooltip] article and see how it works with Event Markers:
 
-{sample}STOCK\_Event\_Markers\_Tooltips\_01{sample}
+*Sample coming soon*
 
 ## Custom HTML Tooltips
 
-External tooltips are custom HTML elements that can be created and tuned to your taste. They are created by the means of HTML/CSS and [Events](Events) mechanism:
+External tooltips are custom HTML elements that can be created and tuned to your taste. They are created by the means of HTML/CSS and [Events](Events) mechanism.
 
-{sample}STOCK\_Event\_Markers\_Tooltips\_02{sample}
+*Sample coming soon*

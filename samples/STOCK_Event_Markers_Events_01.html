@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Position"/>
+    <meta name="ac:name" content="STOCK Event Markers Basic Sample"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+<span id="info"></span>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -34,22 +35,21 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     var chart = anychart.stock();
 
     // create a plot on the chart
-    var plot1 = chart.plot(0);
+    var plot = chart.plot(0);
+
     // create a line series
-    plot1.ohlc(mapping).name("CSCO");
+    plot.line(mapping).name("CSCO");
 
-    // create a second plot on the chart
-    var plot2 = chart.plot(1);
-    // create an area series
-    plot2.line(mapping).name("CSCO");
-
-    events = [{
+    // set settings for event markers
+    var eventMarkers = plot.eventMarkers();
+    // set markers data
+    eventMarkers.data([{
         date: '2001-09-11',
         description: '9-11 attacks'
       },
@@ -65,26 +65,27 @@ anychart.onDocumentReady(function () {
         date: '2009-02-05',
         description: 'OPEC cuts production targets'
       }
-    ]
+    ]);
 
-    // set settings for event markers
-    var eventMarkers1 = plot1.eventMarkers();
-    // set markers data
-    eventMarkers1.data(events);
-    // set markers position
-    eventMarkers1.position('series');
-    eventMarkers1.fieldName('high');
+    // show info when
+    chart.listen('eventmarkermouseover', function (e) {
+        var symbol = e.eventMarker.symbol;
+        var description = e.eventMarker.description;
+        var date = e.eventMarker.date;
+        document.getElementById('info').innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description);
+    });
+    // reset text when mouse leaves a marker
+    chart.listen('eventmarkermouseout', function () {
+        document.getElementById('info').innerHTML = "";
+        chart.title("Event Marker Events: Move the mouse over or click markers");
+    });
+    // open new window on click
+    chart.listen('eventmarkermouseclick', function () {
+        window.open("https://www.google.ru/search?q=" + e.eventMarker.description);
+    });
 
-
-    // set settings for event markers
-    var eventMarkers2 = plot2.eventMarkers();
-    // set markers data
-    eventMarkers2.data(events);
-    // set markers position
-    eventMarkers2.position('axis');
-    
     // set the chart title
-    chart.title("Event Markers: Basic Sample");
+    chart.title("Event Markers: Events Sample");
 
     // set the container id
     chart.container("container");

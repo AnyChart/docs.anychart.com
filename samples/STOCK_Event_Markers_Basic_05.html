@@ -45,9 +45,9 @@ anychart.onDocumentReady(function () {
     plot1.ohlc(mapping).name("CSCO");
 
     // create a second plot on the chart
-    var plot2 = chart.plot(1);
+    var plot1 = chart.plot(0);
     // create an area series
-    plot2.line(mapping).name("CSCO");
+    plot1.line(mapping).name("CSCO");
 
     events = [{
         date: '2001-09-11',
