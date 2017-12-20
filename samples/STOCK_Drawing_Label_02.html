@@ -47,6 +47,9 @@ anychart.onDocumentReady(function () {
     var lineSeries = plot.line(mapping);
     lineSeries.name("CSCO");
 
+    // access the annotations() object of the plot to work with annotations
+    var controller = plot.annotations();
+
     // create the first label annotation and configure its text and size
     var label1 = controller.label({
         xAnchor: "2008-07-13",

@@ -46,10 +46,7 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
    // set settings for event markers
-    var eventMarkers = plot.eventMarkers();
-    // set markers data
-    eventMarkers.data([
-    {
+    plot.eventMarkers({groups: [    {
     "format": "J",
     "data": [
       {
@@ -75,8 +72,7 @@ anychart.onDocumentReady(function () {
         "date": "2009-01-21",
         "description": "Event Description"
       }
-    ]}
-    ]);
+    ]}]});
 
     // set the chart title
     chart.title("Event Markers: Groups from Array");
