@@ -10,7 +10,7 @@ AnyChart Stock charts provide two ways to show tooltips for event markers: Built
 
 ## Built-in Tooltips
 
-Built-in tooltips work as all other tooltips in AnyChart, learn the basics in [../../Common_Settings/Tooltip] article and see how it works with Event Markers:
+Built-in tooltips work as all other tooltips in AnyChart, learn the basics in [Tooltip](../../Common_Settings/Tooltip) article and see how it works with Event Markers:
 
 *Sample coming soon*
 
