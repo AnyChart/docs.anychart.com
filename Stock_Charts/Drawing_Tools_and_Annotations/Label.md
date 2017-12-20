@@ -81,7 +81,6 @@ The [appearance settings](../../../Appearance_Settings) of a Label annotation ca
 
 Combine them with these methods:
 
-* {api:anychart.core.StateSettings#background}background(){api}
 * {api:anychart.core.StateSettings#fontColor}fontColor(){api}
 * {api:anychart.core.StateSettings#fontSize}fontSize(){api}
 * {api:anychart.core.StateSettings#markers}markers(){api}
