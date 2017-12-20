@@ -98,20 +98,8 @@ var label1 = controller.label({
     valueAnchor: 21.66,
     fontSize: 30,
     text: "Buy",
-    hovered: {
-       background:
-        {
-            fill: "#398cae 0.3",
-            stroke: "2 #ff0000"
-        }
-    },
-    selected: {
-       background:
-        {    
-            fill: "#398cae 0.3",
-            stroke: "4 #ff0000"
-        }
-    }
+    hovered: {fontColor: "#398cae 0.3"},
+    selected: {fontColor: "Black"}
 });
 
 // create the second Label annotation
@@ -125,10 +113,9 @@ label2.valueAnchor(28.92);
 label2.text("Sell");
 
 // configure the visual settings of the second annotation
-label2.normal().background().fill(null);
-label2.normal().background().stroke("#006600", 1, "10 2");
-label2.hovered().background().stroke("#00b300", 2, "10 2");
-label2.selected().background().stroke("#00b300", 4, "10 2");
+label2.normal().fontColor("Red");
+label2.hovered().fontColor("Black");
+label2.selected().fontColor("Black");
 ```
 
 {sample}STOCK\_Drawing\_Label\_03{sample}
