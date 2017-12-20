@@ -12,21 +12,29 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/RC-8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="csv()">CSV</button>
+<button onclick="xlsx()">XLSX</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
   // create a stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
 
   // data
   var data = [
@@ -40,44 +48,20 @@ anychart.onDocumentReady(function () {
   chart = anychart.column(data);
 
   // set chart title
-  chart.title("Export data sample");
+  chart.title("Export Data Sample");
 
   // display a chart
   chart.container(stage).draw();
-
-  // create buttons
-  createLabel("CSV", 10, function () {
-    chart.saveAsCsv();
-  });
-
-  createLabel("XLSX", 50, function () {
-    chart.saveAsXlsx();
-  });
-
 });
 
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function (){
-      label.background().fill("#1976d2 0.5")
-      document.body.style.cursor = "pointer";
-      label.draw();
-    });
-    label.listen("mouseOut", function (){
-      label.background().fill("#1976d2")
-      document.body.style.cursor = "auto";
-      label.draw();
-    });    
-return label;
+// a helper function for saving chart data in csv format
+function csv() {
+  chart.saveAsCsv();
+};
+
+// a helper function for saving chart data in xlsx format
+function xlsx() {
+  chart.saveAsXlsx();
 };
 </script>
 </body>

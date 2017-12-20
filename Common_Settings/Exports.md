@@ -85,11 +85,11 @@ saveAsJpg({"width": 360,
 To launch the export you need to use these methods as shown:
 
 ```
-// save the chart in SVG format
+// save the chart in svg format
 chart.saveAsSvg();
-// save the chart in PNG format
+// save the chart in png format
 chart.saveAsPng();
-// save the chart in JPG format
+// save the chart in jpg format
 chart.saveAsJpg();
 ```
 
@@ -102,7 +102,7 @@ And here is a sample where you can see all methods in action:
 To save chart in Pdf format use: {api:anychart.core.Chart#saveAsPdf}saveAsPdf{api} method:
 
 ```
-// initiate saving chart in PDF format
+// save the chart in pdf format
 chart.saveAsPdf();
 ```
 
@@ -119,7 +119,10 @@ AnyChart provides several methods for saving current chart's data. Output format
 With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you export data and file name:
 
 ```
-saveAsCsv("raw", {"rowsSeparator": "\n", "columnsSeparator": ","}, filename: "csv_file");
+saveAsCsv("raw",
+          {"rowsSeparator": "\n",
+          "columnsSeparator": ","},
+          filename: "csv_file");
 ```
 
 CSV has several export modes that depend on chart type, see {api:anychart.enums.ChartDataExportMode}anychart.enums.ChartDataExportMode{api} to learn more.
@@ -129,7 +132,7 @@ CSV has several export modes that depend on chart type, see {api:anychart.enums.
 With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you export data and file name:
 
 ```
-// initiate saving chart's data in Xlsx format
+// save chart data in xlsx format
 chart.saveAsXlsx('default', "excel");
 ```
 
@@ -138,9 +141,9 @@ Excel has several export modes that depend on chart type, see {api:anychart.enum
 To launch the export you need to use these methods as shown:
 
 ```
-// initiate saving chart's data in Xlsx format
+// save chart data in xlsx format
 chart.saveAsXlsx();
-// initiate saving chart's data in CSV format
+// save chart data in csv format
 chart.saveAsCsv();
 ```
 
@@ -153,14 +156,14 @@ Chart config may be saved using {api:anychart.core.Chart#saveAsXml}XML{api} and 
 ### XML
 
 ```
-// save chart data and configuration in XML format
+// save chart data and configuration in xml format
 chart.saveAsXml("chart_xml", false);
 ```
 
 ### JSON
 
 ```
-// save chart data and configuration in Json format
+// save chart data and configuration in json format
 chart.saveAsJson("json_config", false);
 ```
 
