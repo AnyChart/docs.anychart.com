@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Drawing Label 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+   
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // create the first label annotation and configure its size, offset and visual settings
+    var label1 = controller.label({
+        xAnchor: "2008-07-13",
+        valueAnchor: 21.66,
+        fontSize: 30,
+        text: "Buy",
+        hovered: {
+           background:
+            {
+                fill: "#398cae 0.3",
+                stroke: "2 #ff0000"
+            }
+        },
+        selected: {
+           background:
+            {    
+                fill: "#398cae 0.3",
+                stroke: "4 #ff0000"
+            }
+        }
+    });
+
+    // create the second Label annotation
+    var label2 = controller.label();
+
+    // set the position of the second annotation
+    label2.xAnchor("2007-01-07");
+    label2.valueAnchor(28.92);
+
+    // set the text of the second annotation
+    label2.text("Sell");
+
+    // configure the visual settings of the second annotation
+    label2.normal().background().fill(null);
+    label2.normal().background().stroke("#006600", 1, "10 2");
+    label2.hovered().background().stroke("#00b300", 2, "10 2");
+    label2.selected().background().stroke("#00b300", 4, "10 2");
+
+    // set the chart title
+    chart.title("Label: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>
