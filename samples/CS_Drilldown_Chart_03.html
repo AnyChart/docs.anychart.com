@@ -12,19 +12,29 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/RC-8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id="backButton" onclick="back()">Back</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  var data = [
+  // hide the button
+  document.getElementById("backButton").style.visibility = "hidden";
+
+  data = [
     {"x": 2015, "value": 2195081, "drillDown": [
       {"x": "Q1", "value": 792026},
       {"x": "Q2", "value": 610501},
@@ -46,7 +56,7 @@ anychart.onDocumentReady(function () {
   ];
 
   // create column chart
-  var chart = anychart.column(data);
+  chart = anychart.column(data);
 
   // configure axis labels
   chart.yAxis().labels().format('${%value}{scale:(1000)(1000)|(k)(m)}');
@@ -57,24 +67,21 @@ anychart.onDocumentReady(function () {
 
   // configire drilldown on point click
   chart.listen('pointClick', function (e) {
-      if (e.point.get('drillDown')) {
-    chart.getSeries(0).data(e.point.get('drillDown'));
-    chart.label(0).enabled(true);            
-      }
+    if (e.point.get('drillDown')) {
+      chart.getSeries(0).data(e.point.get('drillDown'));
+      document.getElementById("backButton").style.visibility = "visible";
+    }
   });
-
-  // add chart label, set placement, color and text
-  chart.label(0, {enabled: false, position: 'rightTop', anchor: 'rightTop', padding: 5, offsetX: 5, offsetY: 5, text: "Back", background: {stroke: "1 black", enabled: true}});
-
-  // load initial data on label click
-  chart.label(0).listen('click', function () {
-      chart.getSeries(0).data(data);
-      chart.label(0).enabled(false);
-  });  
 
   // set container id and display chart
   chart.container('container').draw();
 });
+
+// load initial data on button click
+function back() {
+  chart.getSeries(0).data(data);
+  document.getElementById("backButton").style.visibility = "hidden";
+}; 
 </script>
 </body>
 </html>
