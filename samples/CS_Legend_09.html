@@ -12,15 +12,23 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/RC-8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+          position: absolute;
+          width: 100%;
+          top: 20px;
+          bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="remove()">Click to Remove 7 Series</button>
+<button onclick="add()">Click to Add 7 Series</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -34,12 +42,12 @@ anychart.onDocumentReady(function () {
 ["Oranges", 6, 29, 11, 46, 19, 49]
     ];
 
-    var chart = anychart.column();
+    chart = anychart.column();
 
-    var series = anychart.data.mapAsTable(data, "value");
+    series = anychart.data.mapAsTable(data, "value");
 
     for (var i in series) {
-chart.column(series[i]);
+      chart.column(series[i]);
     }
 
     var legend = chart.legend();
@@ -56,40 +64,20 @@ chart.column(series[i]);
     // paginator position
     legend.paginator().orientation("bottom");
 
-    
-    chart.title("Expandable legend");
+        chart.title("Expandable Legend");
     chart.container(stage);
     chart.draw();
-
-    createLabel("Click to remove 7 series", 5, function (){
-chart.removeSeriesAt(chart.getSeriesCount() - 1);
-    });
-
-    createLabel("Click to add 7 series", 180, function (){
-for (var i in series) {
-    chart.column(series[i]);
-}
-    });
 });
     
-function createLabel(text, offset, action){
-    var lbl = anychart.standalones.label();
-    lbl.background({fill: "#9E9E9E"});
-    lbl.text(text);
-    lbl.fontColor("#fff");
-    lbl.padding(5);
-    lbl.offsetX(offset);
-    lbl.offsetY(5);
-    lbl.listen("mouseOver", function () {
-document.body.style.cursor = "pointer";
-    });
-    lbl.listen("mouseOut", function () {
-document.body.style.cursor = "auto";
-    });
-    lbl.listen("click", action);
-    lbl.container(stage);
-    lbl.draw();    
-}
+ function remove(){
+   chart.removeSeriesAt(chart.getSeriesCount() - 1);
+    };
+
+function add(){
+  for (var i in series) {
+    chart.column(series[i]);
+  }
+};
 </script>
 </body>
 </html>
