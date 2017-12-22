@@ -22,10 +22,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -105,20 +105,18 @@ anychart.onDocumentReady(function () {
     });
 });
 
-// a helper function for creating annotations
+// create annotations
 function create(){
   var select = document.getElementById("typeSelect");
   chart.plot(0).annotations().startDrawing(select.value);
 };
 
-// a helper function for removing all annotations
+// remove all annotations
 function removeAll(){
   chart.plot(0).annotations().removeAllAnnotations();
 };
 
-/* a helper function for serializing annotations
-from the first plot and deserializing them
-to the second one */
+// copy annotations to the second plot
 function copy(){
   // serialize annotations from the first plot
   var xml = chart.plot(0).annotations().toXml();

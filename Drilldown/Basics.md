@@ -79,7 +79,7 @@ chart.listen('pointClick', function (e) {
 
 That’s it, you can see it for yourself: 
 
-{sample}CS\_Drilldown\_Chart\_01{sample}
+{sample}Drilldown\_01{sample}
 
 Basically the work is done, this foundation provides us with all we need and we will now [tune the chart](#tune_the_chart), add [a drill-up button](#drill_up_button), and show that [multilevel drilldown](#multilevel_drilldown) is also possible.
 
@@ -103,11 +103,13 @@ chart.interactivity().selectionMode('none');
 
 And now the chart looks and feels better:
 
-{sample}CS\_Drilldown\_Chart\_02{sample}
+{sample}Drilldown\_02{sample}
 
 ## Drill Up Button
 
 One thing you may want is to have a button on a chart that will take an end user a level up, this button may be implemented in several ways, we will show three of them.
+
+### AnyChart Label
 
 First, you can create an interactive label with AnyChart and add it to a chart. To do so we need to add a label, configure how it looks and behaves, and modify drilldown behavior so the button appears when needed:
 
@@ -132,19 +134,25 @@ chart.label(0).listen('click', function () {
 
 That's it, with a miniscule amount of coding you have a drilldown column chart:
 
-{sample}CS\_Drilldown\_Chart\_03{sample}
+{sample}Drilldown\_03{sample}
 
 ### jQuery Button
 
 With jQuery you need to create an element, assign proper styles and code reactions.
 
-Here is the same sample as above but with a button created using jQuery: [AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rnug0bxb/).
+Here is the same sample as above, but with a button created using jQuery:
+
+{sample}Drilldown\_04{sample}
+
+[AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rnug0bxb/)
 
 ### Pure HTML Button
 
 You can go and create a button without use of anything, just pure HTML and JavaScript:
 
-Here is the same sample as above but with a button created using pure HTML and JavaScript: [AnyChart Drilldown Chart sample with HTML Button](https://jsfiddle.net/1jum7L4j/).
+Here is the same sample as above but with a button created using pure HTML and JavaScript:
+
+{sample}Drilldown\_05{sample}
 
 ## Improvements
 
@@ -156,29 +164,31 @@ The first modification is not a modification at all, it is a demonstration of th
 
 ```
 var data = [
-{"x": "2015", "value": 2195081, "drillDown": [
-  {"x": "Q1", "value": 792026, "drillDown": [
-    {"x": "Jan", "value": 302000},
-    {"x": "Feb", "value": 190000},
-    {"x": "Mar", "value": 300026}]
-  },
-  {"x": "Q2", "value": 610501, "drillDown": [
-    {"x": "Apr", "value": 305000},
-    {"x": "May", "value": 100501},
-    {"x": "Jun", "value": 205000}]
-  },
-  {"x": "Q3", "value": 441843, "drillDown": [
-    {"x": "Jul", "value": 240000},
-    {"x": "Aug", "value":  51000},
-    {"x": "Sep", "value": 150843}]
-  },
-  {"x": "Q4", "value": 350711, "drillDown": [
-    {"x": "Oct", "value": 150000},
-    {"x": "Nov", "value": 100700},
-    {"x": "Dec", "value": 100011}
-  ]}]}];
+  {"x": "2015", "value": 2195081, "drillDown": [
+    {"x": "Q1", "value": 792026, "drillDown": [
+      {"x": "Jan", "value": 302000},
+      {"x": "Feb", "value": 190000},
+      {"x": "Mar", "value": 300026}]
+    },
+    {"x": "Q2", "value": 610501, "drillDown": [
+      {"x": "Apr", "value": 305000},
+      {"x": "May", "value": 100501},
+      {"x": "Jun", "value": 205000}]
+    },
+    {"x": "Q3", "value": 441843, "drillDown": [
+      {"x": "Jul", "value": 240000},
+      {"x": "Aug", "value":  51000},
+      {"x": "Sep", "value": 150843}]
+    },
+    {"x": "Q4", "value": 350711, "drillDown": [
+      {"x": "Oct", "value": 150000},
+      {"x": "Nov", "value": 100700},
+      {"x": "Dec", "value": 100011}
+    ]}
+  ]}
+];
 ```
 
 And if you feed such data to the code you'll be able to drill one more level down. And there is no limit, you can add more and more levels and it will still work.
 
-{sample}CS\_Drilldown\_Chart\_04{sample}
+{sample}CS\_Drilldown\_Chart\_06{sample}

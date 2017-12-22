@@ -19,10 +19,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -32,9 +32,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  // create a stage
-  var stage = anychart.graphics.create("container");  
-  
   // data
   var data = [
     ["Chocolate paste", 5],
@@ -50,10 +47,10 @@ anychart.onDocumentReady(function () {
   chart.title("Save as PDF Button");
 
   // display chart
-  chart.container(stage).draw();
+  chart.container("container").draw();
 });
 
-// a helper function for saving the chart as pdf
+// save the chart as pdf
 function pdf() {
   chart.saveAsPdf();
 };

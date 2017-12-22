@@ -22,10 +22,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -108,23 +108,23 @@ function getAnnotationsFromServer() {
   return annotationsAtServer;
 };
 
-// a helper function for creating annotations
+// create annotations
 function create(){
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
 };
 
-// a helper function for removing all annotations
+// remove all annotations
 function removeAll(){
   plot.annotations().removeAllAnnotations();
 };
 
-// a helper function for saving annotations
+// save annotations
 function save(){
   sendAnnotationsToServer(plot.annotations().toJson(true));
 };
 
-// a helper function for loading all saved annotations
+// load all saved annotations
 function load(){
   var annotations = getAnnotationsFromServer();
   plot.annotations().fromJson(annotations);

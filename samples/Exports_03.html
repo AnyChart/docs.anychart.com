@@ -19,10 +19,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -32,9 +32,6 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-  // create a stage
-  var stage = anychart.graphics.create("container");
 
   // data
   var data = [
@@ -51,15 +48,15 @@ anychart.onDocumentReady(function () {
   chart.title("Export Data Sample");
 
   // display a chart
-  chart.container(stage).draw();
+  chart.container("container").draw();
 });
 
-// a helper function for saving chart data in csv format
+// save chart data in csv format
 function csv() {
   chart.saveAsCsv();
 };
 
-// a helper function for saving chart data in xlsx format
+// save chart data in xlsx format
 function xlsx() {
   chart.saveAsXlsx();
 };

@@ -22,10 +22,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -97,13 +97,13 @@ anychart.onDocumentReady(function () {
     });
 });
 
-// a helper function for creating annotations
+// create annotations
 function create(){
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
 };
 
-// a helper function for removing all annotations
+// remove annotations
 function removeAll(){
   plot.annotations().removeAllAnnotations();
 };

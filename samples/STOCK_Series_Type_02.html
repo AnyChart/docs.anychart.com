@@ -19,10 +19,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });  
 
-// a helper function for switching the series type
+// switch the series type
 function switchType(){
   var select = document.getElementById("typeSelect");
   // switch the type of the main series
@@ -79,7 +79,7 @@ function switchType(){
   scrollerSeries.seriesType(select.value);
 };   
 
-// a helper function for creating data
+// create data
 function data_acme_stock (){
   return[
     {'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},

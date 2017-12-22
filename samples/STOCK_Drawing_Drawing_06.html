@@ -22,10 +22,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -89,18 +89,18 @@ anychart.onDocumentReady(function () {
     });
 });
 
-// a helper function for creating annotations
+// create annotations
 function create(){
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
 };
 
-// a helper function for removing all annotations
+// remove all annotations
 function removeAll(){
   plot.annotations().removeAllAnnotations();
 };
 
-// a helper function for selecting the first annotation
+// select the first annotation
 function selectFirst(){
   // get the first annotation
   var firstAnnotation = plot.annotations().getAnnotationAt(0);
@@ -108,7 +108,7 @@ function selectFirst(){
   plot.annotations().select(plot.annotations().getAnnotationAt(0));
 };
 
-// a helper function for unselecting a selected annotation
+// unselect a selected annotation
 function clearSelection(){
   plot.annotations().unselect();
 };

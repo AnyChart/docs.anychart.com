@@ -19,10 +19,10 @@
             padding: 0;
         }
         #container {
-          position: absolute;
-          width: 100%;
-          top: 20px;
-          bottom: 0;
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -32,9 +32,6 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-  // create a stage
-  var stage = anychart.graphics.create("container");
 
   // data
   var data = [
@@ -51,17 +48,15 @@ anychart.onDocumentReady(function () {
   chart.title("Export Configuration Sample");
 
   // set chart container and draw
-  chart.container(stage).draw();
+  chart.container("container").draw();
 });
 
-/* a helper function for saving
-chart data and configuration in xml format */
+// save chart data and configuration in xml format
 function xml() {
   chart.saveAsXml("pancakes_chart_xml");
 };
 
-/* a helper function for saving
-chart data and configuration in json format */
+// save chart data and configuration in json format
 function json() {
   chart.saveAsJson("pancakes_chart_json");
 };
