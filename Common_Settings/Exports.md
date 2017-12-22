@@ -151,20 +151,20 @@ chart.saveAsCsv();
 
 ## Chart Configuration
 
-Chart config may be saved using {api:anychart.core.Chart#saveAsXml}XML{api} and {api:anychart.core.Chart#saveAsJson}JSON{api} methods, this feature may be very useful in debug process or if you want to create some kind of import/export functionality for chart themselves. These methods get output of {api:anychart.core.Chart#toJson}toJson(){api} and {api:anychart.core.Chart#toXml}toXml(){api} methods and allow to save it as file. First parameter is boolean flag that defines if the current [Theme](../Appearance_Settings/Themes) is included in output configuration file.
+Chart config may be saved using {api:anychart.core.Chart#saveAsXml}XML{api} and {api:anychart.core.Chart#saveAsJson}JSON{api} methods, this feature may be very useful in debug process or if you want to create some kind of import/export functionality for chart themselves. These methods get output of {api:anychart.core.Chart#toJson}toJson(){api} and {api:anychart.core.Chart#toXml}toXml(){api} methods and allow to save it as file.
 
 ### XML
 
 ```
 // save chart data and configuration in xml format
-chart.saveAsXml("chart_xml", false);
+chart.saveAsXml("chart_xml");
 ```
 
 ### JSON
 
 ```
 // save chart data and configuration in json format
-chart.saveAsJson("json_config", false);
+chart.saveAsJson("json_config");
 ```
 
 Here is a sample of chart save as XML and save as JSON methods:

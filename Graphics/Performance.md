@@ -44,7 +44,7 @@ You can easily watch the difference between the next sample, where a special lay
 // a layer for green squares to be reused each new generation
 var rectLayer = stage.layer();
 
-//clear the layer
+// clear the layer
 rectLayer.removeChildren();
 ```
 
