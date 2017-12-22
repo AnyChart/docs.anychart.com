@@ -11,15 +11,16 @@ There are two special methods of our stage that allow to use [virtual DOM](Virtu
 
 The {api:anychart.graphics.vector.Stage#resume}resume(){api} method is necessary to finally put all DOM-elements on a stage.
 
-Two examples below show how much time it takes to draw 5000 small rects in an area of 300 x 300 px. In the 
+Two examples below show how much time it takes to draw 5000 small rects in an area of 300 x 300 px.
 
 ```
 stage.suspend();
+
 for (var i = 0; i < 5000; i++) {
-    var left = Math.random() * 300;
-    var qwer = Math.random() * 300;    
-    var rect = stage.rect(left, qwer, rectSide, rectSide);
-    rect.fill('green');
+  var left = Math.random() * 300;
+  var qwer = Math.random() * 300;    
+  var rect = stage.rect(left, qwer, rectSide, rectSide);
+  rect.fill('green');
 }
 
 stage.resume();
@@ -43,8 +44,7 @@ You can easily watch the difference between the next sample, where a special lay
 // a layer for green squares to be reused each new generation
 var rectLayer = stage.layer();
 
-// this is to be performed on a click
-labelBg.listen("click", function (){
+//clear the layer
 rectLayer.removeChildren();
 ```
 
