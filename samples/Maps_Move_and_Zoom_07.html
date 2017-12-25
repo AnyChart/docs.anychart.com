@@ -15,15 +15,25 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id="leftButton" onclick="left()">Left</button>
+<button id="upButton" onclick="up()">Up</button>
+<button id="downButton" onclick="down()">Down</button>
+<button id="rightButton" onclick="right()">Right</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -33,9 +43,6 @@ anychart.onDocumentReady(function () {
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/Maps/Map_Projections
-
-    // set the stage as a container
-    stage = anychart.graphics.create("container");
 
     // create data set
     var data = [
@@ -105,65 +112,35 @@ anychart.onDocumentReady(function () {
     map.zoom(1.2);
 
     // put the map in the container 
-    map.container(stage);
+    map.container("container");
 
     // draw a map
     map.draw();
 
-    // up button
-    upButton = createButton("Up", 0, 50);
-    upButton.listen("click", function (){
-map.move(0, 10);
-    });
-
-    // down button
-    downButton = createButton("Down", 0, 20);
-    downButton.listen("click", function (){
-map.move(0, -10);
-    });
-
-    // left button
-    leftButton = createButton("Left", -50, 20);
-    leftButton.listen("click", function (){
-map.move(10, 0);
-    });
-
-    // right button
-    rightButton = createButton("Right", 50, 20);
-    rightButton.listen("click", function (){
-map.move(-10, 0);
-    });
-    
     // disable all default interactivity on the map
     map.interactivity(false);
-
 });
 
-// a helper function for creating buttons
-    function createButton(text, offsetX, offsetY){
-    var button = anychart.standalones.label();
-    button.background({fill: "#1976d2"});
-    button.text(text);
-    button.fontColor("#fff");
-    button.padding(5); 
-    button.position('center-bottom');
-    button.anchor('center-bottom');
-    button.offsetX(offsetX);
-    button.offsetY(offsetY);
-    button.container(stage);
-    button.draw();
-    button.listen("mouseOver", function (){
-button.background().fill("#1976d2 0.5")
-document.body.style.cursor = "pointer";
-button.draw();
-    });
-    button.listen("mouseOut", function (){
-button.background().fill("#1976d2")
-document.body.style.cursor = "auto";
-button.draw();
-    });     
-    return button;
-}
+// move left
+function left(){
+  map.move(-10, 0);
+};
+
+// move up
+function up(){
+  map.move(0, -10);
+};
+
+// move down
+function down(){
+  map.move(0, 10);
+};
+
+
+// move right
+function right(){
+  map.move(10, 0);
+};
 </script>
 </body>
 </html>

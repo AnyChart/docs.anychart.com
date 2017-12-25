@@ -23,15 +23,22 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="drillUp()">Drill Up</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -41,9 +48,6 @@ anychart.onDocumentReady(function () {
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
     // See https://docs.anychart.com/Maps/Map_Projections
-    
-    // create a container for maps and a button
-    stage = anychart.graphics.create("container");
 
     // world map
     chart = anychart.map();
@@ -55,20 +59,20 @@ anychart.onDocumentReady(function () {
     canadaMap = anychart.map();
 
     worldDataSet = [
-{id: "US", name: "USA", value: "1"},
-{id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
+      {id: "US", name: "USA", value: "1"},
+      {id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
     ];
 
     usaDataSet = [
-{"id": "US.LA", "value": 22},
-{"id": "US.TX", "value": 23},
-{"id": "US.NY", "value": 45}
+      {"id": "US.LA", "value": 22},
+      {"id": "US.TX", "value": 23},
+      {"id": "US.NY", "value": 45}
     ];
 
     canadaDataSet = [
-{"id": "CA.BC", "value": 3},
-{"id": "CA.NF", "value": 11},
-{"id": "CA.PE", "value": 12}
+      {"id": "CA.BC", "value": 3},
+      {"id": "CA.NF", "value": 11},
+      {"id": "CA.PE", "value": 12}
     ];
 
     // world data and series
@@ -103,53 +107,34 @@ anychart.onDocumentReady(function () {
     peMap = anychart.map();
     peMap.geoData(anychart.maps["prince_edward_island"]);
 
-
     // set the drillDownMaps
     chart.drillDownMap({
-"US": map,        
-"CA": canadaMap
+      "US": map,        
+      "CA": canadaMap
     });
 
     map.drillDownMap({
-"US.LA": laMap,  
-"US.TX": txMap,   
-"US.NY": nyMap
+      "US.LA": laMap,  
+      "US.TX": txMap,   
+      "US.NY": nyMap
     });
 
     canadaMap.drillDownMap({
-"CA.BC": bcMap,  
-"CA.NF": nfMap,   
-"CA.PE": peMap
-    });
-
-    // create drill up label
-    drillToLabel = createLabel("Drill Up", 0, function () {
-      // Drill down to the specified item.
-      chart.drillUp();
+      "CA.BC": bcMap,  
+      "CA.NF": nfMap,   
+      "CA.PE": peMap
     });
 
     // set the selectionMode    
     chart.interactivity({selectionMode: "drill-down"});
 
-    chart.container(stage);
-    chart.draw();
-    
+    chart.container("container");
+    chart.draw();   
 });
-    
-
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#9E9E9E"});
-    label.zIndex(1000);
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    return label;
+  
+// drill up 
+function drillUp() {
+  chart.drillUp();
 }
 </script>
 </body>
