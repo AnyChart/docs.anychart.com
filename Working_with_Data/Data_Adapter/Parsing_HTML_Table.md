@@ -116,7 +116,7 @@ var tableData = anychart.data.parseHtmlTable(".table", ".row", ".cell p", ".head
 
 Here is a live sample:
 
+{sample}WD\_Data\_Adapter\_HTML\_Table\_02{sample}
+
 <p data-height="265" data-theme-id="0" data-slug-hash="vmpEzq" data-default-tab="html,result" data-user="SitePoint" data-embed-version="2" data-pen-title="AnyChart HTML Div Table Parsing" class="codepen">See the Pen <a href="https://codepen.io/SitePoint/pen/vmpEzq/">AnyChart HTML Div Table Parsing</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{sample}WD\_Data\_Adapter\_HTML\_Table\_02{sample}
