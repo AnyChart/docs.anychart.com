@@ -58,7 +58,7 @@ rangePicker.target(chart);
 chart.container("container");
 chart.draw();
 
-// Render the range selection controls into some containers on a page
+// Render the range selection controls into containers on a page
 rangeSelector.render(document.getElementById("rangeselectorContainer"));
 rangePicker.render(document.getElementById("rangepickerContainer"));
 ```
