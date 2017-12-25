@@ -8,7 +8,7 @@ Creating a chart with drilldown in AnyChart is very easy and can be implemented 
 
 Here is a sample we will be creating in this step by step tutorial, if you have some experience with AnyChart you can simply launch it and dig into the comments in the code:
 
-{sample}CS\_Drilldown\_03{sample}
+{sample}Drilldown\_03{sample}
 
 For those who never worked with AnyChart and those who want to dig deeper, let's go through the creation of drill-down chart step by step.
 
