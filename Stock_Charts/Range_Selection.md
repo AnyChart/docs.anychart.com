@@ -63,6 +63,8 @@ rangeSelector.render(document.getElementById("rangeselectorContainer"));
 rangePicker.render(document.getElementById("rangepickerContainer"));
 ```
 
+{sample}STOCK\_Range\_Selection\_02{sample}
+
 ## Adjusting Range Selector
 
 ### Customizing preset periods
