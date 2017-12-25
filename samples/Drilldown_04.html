@@ -8,6 +8,7 @@
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
@@ -24,17 +25,28 @@
             top: 25px;
             bottom: 0;
         }
+
+        #backButton {
+            visibility: hidden;
+            cursor: pointer;
+            background: #7bc0f7;
+            border: 1px solid #64b5f6;
+            color: #fff;
+            padding: 10px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 100;
+        }
     </style>
 </head>
 <body>
-<button id="backButton" onclick="back()">Back</button>
+<button id="backButton">Back</button>
 <div id="container"></div>
 <script>
-anychart.onDocumentReady(function () {
-  // hide the button
-  document.getElementById("backButton").style.visibility = "hidden";
 
-  data = [
+anychart.onDocumentReady(function () {
+  var data = [
     {"x": 2015, "value": 2195081, "drillDown": [
       {"x": "Q1", "value": 792026},
       {"x": "Q2", "value": 610501},
@@ -56,32 +68,32 @@ anychart.onDocumentReady(function () {
   ];
 
   // create column chart
-  chart = anychart.column(data);
+  var chart = anychart.column(data);
 
   // configure axis labels
-  chart.yAxis().labels().format('${%value}{scale:(1000)(1000)|(k)(m)}');
+  chart.yAxis().labels().format("${%Value}{scale:(1000)(1000)|(k)(m)}");
   // tune tooltips format
-  chart.tooltip().format('${%value}');
+  chart.tooltip().format("${%Value}");
   // tune interactivity selection mode
-  chart.interactivity().selectionMode('none');
+  chart.interactivity().selectionMode("none");
 
   // configire drilldown on point click
-  chart.listen('pointClick', function (e) {
-    if (e.point.get('drillDown')) {
-      chart.getSeries(0).data(e.point.get('drillDown'));
-      document.getElementById("backButton").style.visibility = "visible";
-    }
+  chart.listen("pointClick", function (e) {
+    if (e.point.get("drillDown")) {
+      chart.getSeries(0).data(e.point.get("drillDown"));
+      $("#backButton").css("visibility", "visible");
+      }
+  });
+
+  // load initial data on click
+  $("#backButton").on("click", function () {
+    chart.getSeries(0).data(data);
+    $("#backButton").css("visibility", "hidden");
   });
 
   // set container id and display chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });
-
-// load initial data on button click
-function back() {
-  chart.getSeries(0).data(data);
-  document.getElementById("backButton").style.visibility = "hidden";
-}; 
 </script>
 </body>
 </html>
