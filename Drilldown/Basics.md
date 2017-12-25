@@ -191,4 +191,4 @@ var data = [
 
 And if you feed such data to the code you'll be able to drill one more level down. And there is no limit, you can add more and more levels and it will still work.
 
-{sample}CS\_Drilldown\_06{sample}
+{sample}Drilldown\_06{sample}
