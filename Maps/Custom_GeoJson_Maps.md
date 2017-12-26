@@ -86,8 +86,8 @@ You may notice that QGIS includes a large amount of decimals in the GeoJSON coor
 
 Don't forget to choose the CRS that you've used in the project, as the default one might be automatically set.
 
-8) Try your GeoJSON map by pasting the code into [jsFiddle](https://jsfiddle.net/y5c05qxs/). Your result should look something like this:
+8) Try your GeoJSON map by pasting the code into the text area:
 
-<a href="https://static.anychart.com/images/creating\_maps\_14.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_14.jpg"></a>
+{sample}Maps\_Custom\_GeoJson\_01{sample}
 
 Now you know how to use GeoJSON maps in AnyChart. Enjoy!

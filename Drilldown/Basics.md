@@ -144,8 +144,6 @@ Here is the same sample as above, but with a button created using jQuery:
 
 {sample}Drilldown\_04{sample}
 
-[AnyChart Drilldown Chart sample with jQuery Button](https://jsfiddle.net/rnug0bxb/)
-
 ### Pure HTML Button
 
 You can go and create a button without use of anything, just pure HTML and JavaScript:

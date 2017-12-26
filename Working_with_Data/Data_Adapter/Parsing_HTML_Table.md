@@ -74,9 +74,6 @@ Here is a live sample:
 
 {sample}WD\_Data\_Adapter\_HTML\_Table\_01{sample}
 
-<p data-height="265" data-theme-id="0" data-slug-hash="eWymYg" data-default-tab="html,result" data-user="SitePoint" data-embed-version="2" data-pen-title="AnyChart HTML Table Parsing" class="codepen">See the Pen <a href="https://codepen.io/SitePoint/pen/eWymYg/">AnyChart HTML Table Parsing</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
 ## CSS Table
 
 To load data from a table created with CSS you need to use the {api:anychart.data#parseHtmlTable}parseHtmlTable(){api} method and provide proper CSS selectors. For example, if the table is created in CSS like this:
@@ -117,6 +114,3 @@ var tableData = anychart.data.parseHtmlTable(".table", ".row", ".cell p", ".head
 Here is a live sample:
 
 {sample}WD\_Data\_Adapter\_HTML\_Table\_02{sample}
-
-<p data-height="265" data-theme-id="0" data-slug-hash="vmpEzq" data-default-tab="html,result" data-user="SitePoint" data-embed-version="2" data-pen-title="AnyChart HTML Div Table Parsing" class="codepen">See the Pen <a href="https://codepen.io/SitePoint/pen/vmpEzq/">AnyChart HTML Div Table Parsing</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
