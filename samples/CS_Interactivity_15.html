@@ -5,7 +5,6 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
@@ -19,82 +18,89 @@
             margin: 0;
             padding: 0;
         }
+        .custom-tooltip {
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            width: 100px;
+            padding: 4px;
+            border: solid black 2px;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
+<div id="tooltip" class="custom-tooltip"></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-tooltip = $("<div class='custom-tooltip'></div>").css({
-    "position": "absolute",
-    "pointerEvents": "none",
-    "width": "100px",
-    "background": "#fff",
-    "padding": "4px",
-    "border": "solid black 2px",
-    "display": "none"
-});
-
-// data
-var data = anychart.data.set([
+  // create data
+  var data = anychart.data.set([
     ["Velma", 10],
     ["Fred", 12],
     ["Daphne", 18],
     ["Shaggy", 6],
     ["Scooby", 46]
-]);
+  ]);
 
+  // map the data
+  var dataMapping = data.mapAs({x: 0, value: 1});
 
-// map data for the each series
-var dataMapping = data.mapAs({x: 0, value: 1});
+  // create a chart
+  var chart = anychart.column(dataMapping);
 
-// chart type
-var chart = anychart.column(dataMapping);
+  // set the data
+  var series = chart.getSeries(0);
 
-// set data
-var series = chart.getSeries(0);
-series.tooltip(false);
+  // disable default tooltips
+  series.tooltip(false);
 
-// chart title
-chart.title().useHtml(true);
-chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span>');
+  // set the selection mode to single
+  chart.interactivity().selectionMode("single-select");
 
-// switching the selection mode to single
-chart.interactivity().selectionMode("single-select");
+  // set the chart title
+  chart.title("How many pieces of pizza have they eaten?");
 
-series.stroke(null);
+  var tooltip = document.getElementById("tooltip");
 
-// enable legend
-chart.legend().enabled(false);
+  /* show a custom tooltip
+  when the mouse is over a column */
+  chart.listen("pointMouseOver", function(e) {
 
-chart.listen("mouseMove", function (e) {
-    var clientX = e['offsetX'];
-    var clientY = e['offsetY'];
-    var $container = $(this.container().getStage().container());
+    // show the tooltip
+    tooltip.style.visibility = "visible"; 
 
-    if (!$container.find('.custom-tooltip').length) {
-        $container.append(tooltip);
-    }
+    // set the text of the tooltip
+    tooltip.innerHTML = data.row(e.pointIndex)[0] + " has eaten "
+                      + data.row(e.pointIndex)[1] +
+                      " pieces of pizza in total";
+  });
 
-    tooltip.css({"left": clientX + 20, "top": clientY + 10, "z-index": 10000});
-});
+  /* hide the custom tooltip
+  when the mouse is out of a column */
+  chart.listen("pointMouseOut", function() {
+    tooltip.style.visibility = "hidden";
+  });
 
-chart.listen("pointMouseOver", function (e) {
-    tooltip.css({"display": "block"});
+  // set the position of custom tooltips
+  chart.listen("mouseMove", function(e) {
 
-    var ind = e.pointIndex;
-    tooltip.html(data.row(ind)[0] + " has eaten " + data.row(ind)[1] + " pieces of pizza in total");
-});
+    var clientX = e["offsetX"];
+    var clientY = e["offsetY"];
 
-chart.listen("pointMouseOut", function () {
-    tooltip.css("display", "none");
-});
+    tooltip.style.left = clientX + 20 + "px";
+    tooltip.style.top = clientY + 10 + "px";
+    tooltip.style.zIndex = 10000;
+    tooltip.style.border = "solid black 2px";
+  });
 
-// draw
-chart.container("container");
-chart.draw();
-    });
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+  });
 </script>
 </body>
 </html>
