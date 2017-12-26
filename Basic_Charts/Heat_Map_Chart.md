@@ -5,7 +5,7 @@
 
 A heat map is a visualization of a data matrix where values are represented as colors.
 
-This article explains how to create a basic Heat Map chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Heat Map chart's characteristics:
+This article explains how to create a basic Heat Map chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Heat Map chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
