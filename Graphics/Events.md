@@ -7,7 +7,7 @@ Any object, stage or layer in GraphicsJS can listen events. The list of events t
 
 ## Listening
 
-To set listening function use {api:anychart.graphics.events#listen}{api} or {api:anychart.graphics.events#listenOnce}listenOnce(){api} methods. Here is a sample code of listening of "click" event for a layer and a text object on it:
+To set listening function use {api:anychart.graphics.events#listen}listen(){api} or {api:anychart.graphics.events#listenOnce}listenOnce(){api} methods. Here is a sample code of listening of "click" event for a layer and a text object on it:
 
 ```
 stage = anychart.graphics.create("container");

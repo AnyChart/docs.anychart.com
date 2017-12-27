@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Doughnut Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/geodata/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function() {
+  // create palette
+  palette = [ "#E91D0E", "#232066", "#D3D3D3"]
+  
+  // donut chart data
+  var data = [
+    ["Republicans", 54],
+    ["Democrats", 44],
+    ["Independent", 2]
+  ];
+
+  // create pie chart and configure it
+  var pie = anychart.pie(data);
+  pie.title("Party Breakdown")
+  pie.palette(palette);
+  pie.innerRadius('85%');;
+  
+  // create a map and configure it
+  var map = anychart.map();
+  map.geoData('anychart.maps.united_states_of_america');
+  series = map.choropleth(getMapData());
+  series.colorScale(anychart.scales.linearColor(palette));
+  series.stroke(".5 white");
+
+  // set map as the center of the chart 
+  pie.center().content(map);
+  // display donut chart
+  pie.container('container').draw();
+});
+
+
+function getMapData(){
+  return [['US.MA',0],
+['US.MN', 1],
+['US.MT', 2],
+['US.ND', 3],
+['US.HI', 4],
+['US.ID', 5],
+['US.WA', 6],
+['US.AZ', 7],
+['US.CA', 8],
+['US.CO', 9],
+['US.NV', 10],
+['US.NM', 11],
+['US.OR', 12],
+['US.UT', 13],
+['US.WY', 14],
+['US.AR', 15],
+['US.IA', 16],
+['US.KS', 17],
+['US.MO', 18],
+['US.NE', 19],
+['US.OK', 20],
+['US.SD', 21],
+['US.LA', 22],
+['US.TX', 23],
+['US.CT', 24],
+['US.NH', 25],
+['US.RI', 26],
+['US.VT', 27],
+['US.AL', 28],
+['US.FL', 29],
+['US.GA', 30],
+['US.MS', 31],
+['US.SC', 32],
+['US.IL', 33],
+['US.IN', 34],
+['US.KY', 35],
+['US.NC', 36],
+['US.OH', 37],
+['US.TN', 38],
+['US.VA', 39],
+['US.WI', 40],
+['US.WV', 41],
+['US.DE', 42],
+['US.MD', 43],
+['US.NJ', 44],
+['US.NY', 45],
+['US.PA', 46],
+['US.ME', 47],
+['US.MI', 48],
+['US.AK', 49]];
+}
+</script>
+</body>
+</html>

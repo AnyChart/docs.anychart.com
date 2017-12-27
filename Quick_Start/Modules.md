@@ -110,7 +110,7 @@ Module to create [Geo Maps](../Maps/Quick_Start):
 
 ### Mekko
 
-Module to create cartesian [Mekko chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart):
+Module to create [Mekko chart](../Basic_Charts/Marimekko_Chart/Mekko_Chart):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
@@ -118,7 +118,7 @@ Module to create cartesian [Mekko chart](../Basic_Charts/Marimekko_Chart/Mekko_C
 
 ### Pareto
 
-Module to create cartesian [Pareto chart](../Basic_Charts/Pareto_Chart):
+Module to create [Pareto chart](../Basic_Charts/Pareto_Chart):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pareto.min.js"></script>
@@ -126,7 +126,7 @@ Module to create cartesian [Pareto chart](../Basic_Charts/Pareto_Chart):
 
 ### PERT
 
-Module to create cartesian [Pareto chart](../PERT_Chart/Overview):
+Module to create [PERT chart](../PERT_Chart/Overview):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js"></script>
@@ -134,7 +134,7 @@ Module to create cartesian [Pareto chart](../PERT_Chart/Overview):
 
 ### Pie and donut
 
-Module to create cartesian [Pie chart](../Basic_Charts/Pie_Chart) and [Donut chart](../Basic_Charts/Doughnut_Chart):
+Module to create [Pie chart](../Basic_Charts/Pie_Chart) and [Donut chart](../Basic_Charts/Doughnut_Chart):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
