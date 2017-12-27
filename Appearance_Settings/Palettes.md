@@ -8,7 +8,7 @@ Also, you can use predefined AnyChart distinct color palettes from {api:anychart
 
 ```
 // set palette to a chart:
-chart.palette = anychart.palettes.defaultPalette;
+chart.palette(anychart.palettes.defaultPalette);
 
 // Other available palettes:
 // anychart.palettes.earth 
