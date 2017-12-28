@@ -43,6 +43,15 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.polar();
 
+    // set the type of the x-scale
+    chart.xScale("ordinal");
+
+    // enable sorting points by x
+    chart.sortPointsByX(true);
+
+    // set the inner radius
+    chart.innerRadius(50);
+
     // set the interactivity mode
     chart.interactivity().hoverMode("single");
 
@@ -72,15 +81,6 @@ anychart.onDocumentReady(function () {
     series2.normal().stroke("#0066cc");
     series2.hovered().stroke("#0066cc", 2);
     series2.selected().stroke("#0066cc", 4);
-
-    // set the type of the x-scale
-    chart.xScale("ordinal");
-
-    // enable sorting points by x
-    chart.sortPointsByX(true);
-
-    // set the inner radius
-    chart.innerRadius(50);
 
     // set the chart title
     chart.title("Polygon Chart: Appearance");
