@@ -67,7 +67,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_Area\_Chart\_01{sample}
+{sample}BCT\_Polygon\_Chart\_01{sample}
 
 ## General Settings
 
@@ -118,7 +118,7 @@ series2.hovered().stroke("#0066cc", 2);
 series2.selected().stroke("#0066cc", 4);
 ```
 
-{sample}BCT\_Area\_Chart\_02{sample}
+{sample}BCT\_Polygon\_Chart\_02{sample}
 
 ### Labels
 
