@@ -12,30 +12,31 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        .custom-tooltip {
-            visibility: hidden;
-            pointer-events: none;
-            position: absolute;
-            height: 150px;
-            width: 320px;
-            border: solid #d8d8d8 1px;
-            background: #fff;
+      html, body, #container {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      .custom-tooltip {
+          position: absolute;
+          pointer-events: none;
+          visibility: visible;
+          display: none;
+          border: 1px solid #d8d8d8;
+          height: 150px;
+          width: 320px;
         }
     </style>
 </head>
 <body>
-<div id="tooltip" class="custom-tooltip"></div>
 <div id="container"></div>
+<div class='custom-tooltip' id='tooltip'></div>
 <script>
 anychart.onDocumentReady(function () {
+  var tooltip = document.getElementById("tooltip");
 
-  // create data
+  // data
   var data = anychart.data.set([
     ["2000", 10048, 2600, 3200, 2159, 2089],
     ["2001", 10938, 2367, 1989, 2383, 4199],
@@ -55,107 +56,102 @@ anychart.onDocumentReady(function () {
     ["2015", 13188, 3199, 2564, 3118, 4307]
   ]);
 
-  // map the data
+  // map data for the each series
   var dataMapping = data.mapAs({x: 0, value: 1});
 
-  // create a chart
+  // chart type
   var chart = anychart.column();
 
-  // set the data
+  // set data
   var column = chart.column(dataMapping);
-
-  // disable default tooltips
+  // disable default tooltip
   column.tooltip(false);
 
-  // disable the selection mode
+  // chart title
+  chart.title("Sales volume");
+
+  // disable select mode
   chart.interactivity().selectionMode("none");
 
-  // set the titles of the axes
-  chart.xAxis().title("Retail Channel");
-  chart.yAxis().title("Sales");
+  barChart = createTooltipChart();
 
-  // set the chart title
-  chart.title("Volume of Sales (ACME Corp.)");
+  // event for mouse over a column
+  chart.listen("pointMouseOver", function (e) {
+    // display hidden tooltip
+    tooltip.style.display = "block";
+    var index = e.pointIndex;
 
-  var tooltip = document.getElementById("tooltip");
-  var barChart = anychart.bar();
-  var barSeries = barChart.bar([0]);
-
-  // create and configure a tooltip chart
-  function createTooltipChart() {
-
-    // configure axes
-    barChart.xAxis().stroke(null);
-    barChart.xAxis().ticks(false);
-    barChart.xAxis().labels().fontSize(10);
-    barChart.yAxis().fontSize(10);
-
-    // configure the title
-    barChart.title().fontSize(12);
-
-    // set the padding
-    barChart.padding([0, 12, 0, 0]);
-
-    // set the container id
-    barChart.container("tooltip");
-
-    // initiate drawing the chart
-    barChart.draw();
-  }
-
-  /* show a custom tooltip
-  when the mouse is over a column */
-  chart.listen("pointMouseOver", function(e) {
-
-    // show the tooltip
-    tooltip.style.visibility = "visible"; 
-
-    var dataRow = data.row(e.pointIndex);
-
-    // set new data for the tooltip chart
-    barSeries.data([
+    var dataRow = data.row(index);
+    // set new data for tooltip chart
+    barChart.data([
       {x: "John", value: dataRow[2]},
       {x: "James", value: dataRow[3]},
       {x: "Peter", value: dataRow[4]},
       {x: "Mattew", value: dataRow[5]}
     ]);
-
-    // set the chart title
-    barChart.title("Personal Sales: " + dataRow[0]);
+    var titleText = "Sales Persons Share: ";
+    // adjust title
+    barChart.title(titleText + dataRow[0]);
   });
 
-  /* hide the custom tooltip
-  when the mouse is out of a column */
+  // event for mouse leaving column
   chart.listen("pointMouseOut", function () {
-    tooltip.style.visibility = "hidden";
+    tooltip.style.display = "none";
   });
 
-  // set the position of custom tooltips
-  chart.listen("mouseMove", function(e) {
+  // adjust tooltip position on mouse move
+  chart.listen("mouseMove", function (e) {
+    // get chart container elements
+    var container = this.container().getStage().container();
+    // get offsets
+    var rect = container.getBoundingClientRect();
+    offset = {
+        top: rect.top + document.body.scrollTop,
+        left: rect.left + document.body.scrollLeft
+    };
 
-    // prevent tooltips from leaving the screen
-    var container = (this.container().getStage().container());
-    var clientX = e["clientX"] - container.offsetLeft;
-    var clientY = e["clientY"] - container.offsetTop;
+    var clientX = e['clientX'] - offset['left'];
+    var clientY = e['clientY'] - offset['top'];
+
+    // prevent tooltip from leaving the screen    
     var left = (clientX - 10) - tooltip.offsetWidth / 2;
-    if (left + tooltip.offsetWidth > chart.container().offsetWidth) {
-      left = chart.container().offsetWidth - 2 - tooltip.offsetWidth;
-    }
-    if (left < 0) {
+    if (left + tooltip.offsetWidth > chart.container().width())
+      left = chart.container().width() - 2 - tooltip.offsetWidth;
+    if (left < 0)
       left = 0;
-    }
 
-    // get the mouse position and move a tooltip
-    tooltip.style.left = left;
-    tooltip.style.top = clientY - tooltip.offsetHeight - 10 + "px";
+    // get mouse position and move tooltip
+    tooltip.style.left = left + "px";
+    tooltip.style.top = clientY - 10 - tooltip.offsetHeight + "px";
   });
 
-  // set the container id
+  // draw main chart
   chart.container("container");
-
-  // initiate drawing the chart
   chart.draw();
 });
+
+// create tooltip chart and adjust settings
+function createTooltipChart() {
+
+  var barChart = anychart.bar();
+  
+  // configure axes and labels
+  barChart.xAxis().stroke(null).ticks(false);
+  barChart.xAxis().labels().fontSize(10);
+  barChart.yAxis().labels().fontSize(10);
+  // adjust title
+  var barTitle = barChart.title();
+  barTitle.enabled(true);
+  barTitle.fontSize(12);
+  // set padding
+  barChart.padding([0, 12, 0, 0]);
+  // set tooltip container
+  barChart.container("tooltip");
+  // draw tooltip chart
+  barChart.draw();
+  
+  return barChart;
+}
 </script>
 </body>
 </html>
