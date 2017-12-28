@@ -192,29 +192,29 @@ Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids).
 In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 
 ```
-// configure the main Y-scale
+// configure the main y-scale
 var yScale1 = anychart.scales.linear();
 yScale1.maximum(20000);
 
-// configure an extra Y-scale
+// configure an extra y-scale
 var yScale2 = anychart.scales.linear();
 yScale2.maximum(150);
 
-// configure the main Y-axis
+// configure the main y-axis
 var yAxis1 = chart.yAxis(0);
 yAxis1.scale(yScale1);
 yAxis1.title("Sales, $");
 
-// configure an extra Y-axis
+// configure an extra y-axis
 var yAxis2 = chart.yAxis(1);
 yAxis2.orientation("right")
 yAxis2.scale(yScale2);
 yAxis2.title("Number of Items Sold");
 
-// bind the first series to the main Y-scale
+// bind the first series to the main y-scale
 series1.yScale(yScale1);
 
-// bind the second series to the extra Y-scale
+// bind the second series to the extra y-scale
 series2.yScale(yScale2);
 ```
 

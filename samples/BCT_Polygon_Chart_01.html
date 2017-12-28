@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Area Chart 01"/>
+    <meta name="ac:name" content="BCT Polygon Chart 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-polar.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     
@@ -27,25 +28,31 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+      ["A", 4],
+      ["B", 2],
+      ["C", 8],
+      ["D", 5],
+      ["E", 3],
+      ["F", 9]
     ];
 
     // create a chart
-    var chart = anychart.area();
+    var chart = anychart.polar();
 
-    // create an area series and set the data
-    var series = chart.area(data);
+    // create a polygon series and set the data
+    var series = chart.polygon(data);
+
+    // set the type of the x-scale
+    chart.xScale("ordinal");
+
+    // enable sorting points by x
+    chart.sortPointsByX(true);
+
+    // set the inner radius
+    chart.innerRadius(50);
     
     // set the chart title
-    chart.title("Area Chart: Basic Sample");
-
-    // set the titles of the axes
-    chart.xAxis().title("Month");
-    chart.yAxis().title("Sales, $");
+    chart.title("Polygon Chart: Basic Sample");
 
     // set the container id
     chart.container("container");

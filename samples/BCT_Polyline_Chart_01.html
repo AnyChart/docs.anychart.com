@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Line Chart 01"/>
+    <meta name="ac:name" content="BCT Polyline Chart 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-polar.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     
@@ -27,27 +28,34 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "January", value: 10000},
-      {x: "February", value: 12000},
-      {x: "March", value: 18000},
-      {x: "April", value: 11000},
-      {x: "May", value: 9000}
+      ["A", 4],
+      ["B", 2],
+      ["C", 8],
+      ["D", 5],
+      ["E", 3],
+      ["F", 9]
     ];
 
     // create a chart
-    var chart = anychart.line();
+    var chart = anychart.polar();
 
-    // create a line series and set the data
-    var series = chart.line(data);
+    // create a polyline series and set the data
+    var series = chart.polyline(data);
     
     // set the chart title
     chart.title("Line Chart: Basic Sample");
 
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    // set the type of the x-scale
+    chart.xScale("ordinal");
+
+    // enable sorting points by x
+    chart.sortPointsByX(true);
+
+    // set the inner radius
+    chart.innerRadius(50);
+
+    // set the chart title
+    chart.title("Polyline Chart: Basic Sample");
 
     // set the container id
     chart.container("container");

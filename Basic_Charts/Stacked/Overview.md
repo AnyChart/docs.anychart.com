@@ -59,7 +59,7 @@ chart.yScale().ticks().interval(20);
 To add the percent symbol to axis labels, use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
-// configure labels on the Y-axis
+// configure labels on the y-axis
 chart.yAxis().labels().format("{%value}%");
 ```
 

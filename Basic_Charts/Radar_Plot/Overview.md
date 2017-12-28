@@ -84,7 +84,7 @@ In this section you can find some settings of axes and scales that are often use
 If you want to configure the stroke of the X- and Y-axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
-// configure the appearance of the Y-axis
+// configure the appearance of the y-axis
 chart.yAxis().stroke({
   color: "gray",
   thickness: 2,
@@ -101,7 +101,7 @@ chart.xAxis().stroke({
 To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
-// invert the Y-scale
+// invert the y-scale
 chart.yScale().inverted(true);
 ```
 
