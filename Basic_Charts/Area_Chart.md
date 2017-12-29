@@ -21,7 +21,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart/Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Area_Chart), [Polygon](Polygon/Line_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
@@ -31,6 +31,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Polygon](Polygon_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>

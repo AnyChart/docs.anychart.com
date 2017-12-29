@@ -1,5 +1,5 @@
 {:index 2}
-# Polar Line Chart
+# Polygon Chart
 
 ## Overview
 
