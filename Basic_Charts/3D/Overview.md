@@ -119,7 +119,7 @@ Here is the list of supported 3D charts:
 * [3D Line](Line_Chart)
 * [3D 2D Line](2D_Line_Chart)
 
-See also 3D stacked charts:
+See also stacked charts:
 
 * [3D Percent Stacked Area](../Stacked/Percent/3D_Area_Chart)
 * [3D Percent Stacked Bar](../Stacked/Percent/3D_Bar_Chart)
