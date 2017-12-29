@@ -175,7 +175,7 @@ radar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
-You can create [Radar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Radar Percent Stacked Area](../Stacked/Percent/Radar_Area_Chart) charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
+You can create stacked radar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 
 ## Supported Types
 

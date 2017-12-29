@@ -143,6 +143,10 @@ To learn about the stacked versions of the Area chart and its modifications, see
 * [Percent Stacked Spline Area](Stacked/Percent/Spline_Area_Chart)
 * [Stacked Step Area](Stacked/Value/Step_Area_Chart)
 * [Percent Stacked Step Area](Stacked/Percent/Area_Chart)
+* [Polar Stacked Area](Stacked/Value/Polar_Area_Chart)
+* [Polar Percent Stacked Area](Stacked/Percent/Polar_Area_Chart)
+* [Radar Stacked Area](Stacked/Value/Radar_Area_Chart)
+* [Radar Percent Stacked Area](Stacked/Percent/Radar_Area_Chart)
 
 ### Vertical Area
 

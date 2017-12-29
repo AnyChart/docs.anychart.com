@@ -250,6 +250,12 @@ To learn about the stacked versions of the Column chart, see:
 
 * [Stacked Column](Stacked/Value/Column_Chart)
 * [Percent Stacked Column](Stacked/Percent/Column_Chart)
+* [Stacked Column](Stacked/Value/Column_Chart)
+* [Percent Stacked Column](Stacked/Percent/Column_Chart)
+* [Stacked Column](Stacked/Value/Column_Chart)
+* [Percent Stacked Column](Stacked/Percent/Column_Chart)
+* [Polar Stacked Column](Stacked/Value/Polar_Column_Chart)
+* [Polar Percent Stacked Column](Stacked/Percent/Polar_Column_Chart)
 
 <a name='vertical_column'></a>
 ### Vertical Column (Bar)
