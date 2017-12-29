@@ -28,6 +28,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Spline](Spline_Chart)</td></tr>
 <tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><td></td><td>[Jump Line](Jump_Line_Chart)</td></tr>
 <tr><td></td><td>[Polyline](Polyline_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/" target="_blank">Chartopedia: Line Chart</a></td></tr>
