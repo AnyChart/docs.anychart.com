@@ -125,7 +125,7 @@ Here is the list of supported vertical charts:
 * [Vertical Step Line](Step_Line_Chart)
 * [Vertical Stick](Stick_Chart)
 
-See also [stacked](../Stacked/Overview) charts:
+See also stacked charts:
 
 * [Percent Stacked Bar (Vertical Column)](../Stacked/Percent/Bar_Chart)
 * [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)
