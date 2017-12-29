@@ -3,13 +3,13 @@
 
 ## Overview
 
-This article explains how to create a Polar Polyline chart in AnyChart.
+This article explains how to create a Polyline chart in AnyChart.
 
-To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Line Chart](../Line_Chart) article to learn about other available settings, these series have similar settings.
+To learn more about polar charts in general and how to customize them, see [Polar Charts (Overview)](Overview). In addition, you can read the [Polyline Chart](../Line_Chart) article to learn about other available settings.
 
 ## Quick Start
 
-To build a Polar Polyline chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polyline}polyline(){api} method to create a Polyline series:
+To build a Polyline chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor. Then call the {api:anychart.charts.Polar#polyline}polyline(){api} method to create a Polyline series:
 
 ```
 // create a chart
