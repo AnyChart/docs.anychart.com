@@ -229,7 +229,7 @@ Here are [polar](../Polar_Plot/Overview) and [radar](../Radar_Plot/Overview) sta
 * [Radar Stacked Area](./Value/Radar_Area_Chart)
 * [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
 
-See also [Vertical](../Vertical/Overview) and [3D](../3D/Overview) stacked charts:
+See also [vertical](../Vertical/Overview) and [3D](../3D/Overview) stacked charts:
 
 * [Vertical Stacked Area](./Value/Vertical_Area_Chart)
 * [Vertical Stacked Spline](./Value/Vertical_Spline_Area_Chart)
