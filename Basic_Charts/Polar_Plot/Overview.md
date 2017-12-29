@@ -162,7 +162,7 @@ polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
-You can create [Polar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Polar Percent Stacked Area](../Stacked/Percent/Polar_Area_Chart) charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
+You can create stacked polar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 
 ## Supported Types
 
@@ -176,11 +176,11 @@ Here is the list of supported polar charts:
 * [Polar Polyline](Polyline_Chart)
 * [Polar Range Column](Range_Column_Chart)
 
-See also [stacked](../Stacked/Overview) charts:
+See also stacked charts:
 
 * [Polar Stacked Area Chart](../Stacked/Value/Polar_Area_Chart)
-* [Polar Stacked Column Chart](../Stacked/Value/Polar_Column_Chart)
-* [Stacked Polygon Chart](../Stacked/Value/Polygon_Chart)
 * [Polar Percent Stacked Area Chart](../Stacked/Percent/Polar_Area_Chart)
+* [Polar Stacked Column Chart](../Stacked/Value/Polar_Column_Chart)
 * [Polar Percent Stacked Column Chart](../Stacked/Percent/Polar_Column_Chart)
+* [Stacked Polygon Chart](../Stacked/Value/Polygon_Chart)
 * [Percent Stacked Polygon Chart](../Stacked/Percent/Polygon_Chart)

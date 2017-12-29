@@ -218,7 +218,7 @@ Here is the list of supported stacked charts:
 * [Percent Stacked Step Area](./Percent/Step_Area_Chart)
 * [Percent Stacked Stick](./Percent/Stick_Chart)
 
-Here are [polar](../Polar_Plot/Overview) and [radar](../Radar_Plot/Overview) stacked charts:
+Here are polar and radar stacked charts:
 
 * [Polar Stacked Area](./Value/Polar_Area_Chart)
 * [Polar Stacked Column](./Value/Polar_Column_Chart)
@@ -229,7 +229,7 @@ Here are [polar](../Polar_Plot/Overview) and [radar](../Radar_Plot/Overview) sta
 * [Radar Stacked Area](./Value/Radar_Area_Chart)
 * [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
 
-See also [vertical](../Vertical/Overview) and [3D](../3D/Overview) stacked charts:
+See also vertical and 3D stacked charts:
 
 * [Vertical Stacked Area](./Value/Vertical_Area_Chart)
 * [Vertical Stacked Spline](./Value/Vertical_Spline_Area_Chart)

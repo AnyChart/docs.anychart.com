@@ -185,7 +185,7 @@ Here is the list of supported radar charts:
 * [Radar Line](Line_Chart)
 * [Radar Marker](Marker_Chart)
 
-See also [stacked](../Stacked/Overview) charts:
+See also stacked charts:
 
 * [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
 * [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)
