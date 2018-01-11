@@ -28,12 +28,12 @@ anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-      ["A", 4, 1],
-      ["B", 2, 11],
-      ["C", 8, 4],
-      ["D", 5, 2],
-      ["E", 3, 5],
-      ["F", 9, 4]
+      ["Strength", 15, 8],
+      ["Dexterity", 10, 14],
+      ["Concentration", 15, 14],
+      ["Intelligence", 10, 15],
+      ["Wisdom", 12, 12],
+      ["Charisma", 9, 8]
     ]);
 
     // map the data
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
 
     // create the first series, set the data and name
     var series1 = chart.polygon(seriesData_1);
-    series1.name("2004");
+    series1.name("Wizard");
 
     // configure the visual settings of the first series
     series1.normal().fill("#00cc99", 0.3);
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
 
     // create the second series, set the data and name  
     var series2 = chart.polygon(seriesData_2);
-    series2.name("2005");
+    series2.name("Fighter");
 
     // configure the visual settings of the second series
     series2.normal().fill("#0066cc", 0.3);
