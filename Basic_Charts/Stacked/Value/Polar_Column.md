@@ -23,7 +23,7 @@ var series1 = chart.area(seriesData_1);
 var series2 = chart.area(seriesData_2);
 ```
 
-{sample}BCT\_Stacked\_Area\_Chart{sample}
+{sample}BCT\_Polar\_Stacked\_Column\_Chart{sample}
 
 ## Adjusting
 

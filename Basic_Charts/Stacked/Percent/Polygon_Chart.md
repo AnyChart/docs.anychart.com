@@ -23,7 +23,7 @@ var series1 = chart.area(seriesData_1);
 var series2 = chart.area(seriesData_2);
 ```
 
-{sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}
+{sample}BCT\_Percent\_Stacked\_Polygon\_Chart{sample}
 
 ## Adjusting
 

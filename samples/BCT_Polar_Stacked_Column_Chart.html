@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT 3D Stacked Bar Chart"/>
+    <meta name="ac:name" content="BCT Polar Stacked Column Chart"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-cartesian-3d.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-polar.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     
@@ -26,31 +26,49 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  // data
-  var data = [
-    ["Winter", 20000, 40000, 20000],
-    ["Spring", 20000, 40000, 40000],
-    ["Summer", 40000, 30000, 30000],
-    ["Autumn", 20000, 20000, 40000]
-  ];
+  // create a data set
+  var data = anychart.data.set([
+    ["A", 12, 3, 8],
+    ["B", 13, 5, 9],
+    ["C", 11, 7, 8],
+    ["D", 8, 9, 13],
+    ["E", 13, 12, 7],
+    ["F", 11, 10, 19]
+  ]);
+
+  // map the data
+  var seriesData_1 = data.mapAs({x: 0, value: 1});
+  var seriesData_2 = data.mapAs({x: 0, value: 2});
+  var seriesData_3 = data.mapAs({x: 0, value: 3});
 
   // create a chart
-  var chart = anychart.bar3d();
-
-  // set data
-  chart.data(data);
+  var chart = anychart.polar();
 
   // enable the value stacking mode
   chart.yScale().stackMode("value");
 
+  // set the type of the x-scale
+  chart.xScale("ordinal");
+
+  // enable sorting points by x
+  chart.sortPointsByX(true);
+
+  // set the inner radius
+  chart.innerRadius(50);
+
+  // create area series, set the data
+  var series1 = chart.column(seriesData_1);
+  var series2 = chart.column(seriesData_2);
+  var series3 = chart.column(seriesData_3);
+
   // configure tooltips
-  chart.tooltip().format("{%value}");
+  chart.tooltip().format("{%value} ({%yPercentOfCategory}{decimalsCount:2}%)");
 
   // configure labels on the y-axis
   chart.yAxis().labels().format("{%value}");
 
   // set the chart title
-  chart.title("3D Stacked Bar Chart");
+  chart.title("Polar Stacked Column Chart");
 
   // set the container id
   chart.container("container");
