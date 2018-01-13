@@ -218,33 +218,31 @@ Here is the list of supported stacked charts:
 * [Percent Stacked Step Area](./Percent/Step_Area_Chart)
 * [Percent Stacked Stick](./Percent/Stick_Chart)
 
-Here are polar and radar stacked charts:
-
-* [Polar Stacked Area](./Value/Polar_Area_Chart)
-* [Polar Stacked Column](./Value/Polar_Column_Chart)
-* [Stacked Polygon](./Value/Polygon_Chart)
-* [Polar Percent Stacked Area](./Percent/Polar_Area_Chart)
-* [Polar Percent Stacked Column](./Percent/Polar_Column_Chart)
-* [Percent Stacked Polygon](./Percent/Polygon_Chart)
-* [Radar Stacked Area](./Value/Radar_Area_Chart)
-* [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
-
-See also vertical and 3D stacked charts:
+Here are vertical and 3D stacked charts:
 
 * [Vertical Stacked Area](./Value/Vertical_Area_Chart)
-* [Vertical Stacked Spline](./Value/Vertical_Spline_Area_Chart)
+* [Vertical Stacked Spline Area](./Value/Vertical_Spline_Area_Chart)
 * [Vertical Stacked Step Area](./Value/Vertical_Step_Area_Chart)
 * [Vertical Stacked Stick](./Value/Vertical_Stick_Chart)
-* [Vertical Percent Stacked Area](./Percent/Vertical_Area_Chart)
-* [Vertical Percent Stacked Area](./Percent/Vertical_Spline_Area_Chart)
-* [Vertical Percent Stacked Step Area](./Percent/Vertical_Step_Area_Chart)
-* [Vertical Percent Stacked Stick](./Percent/Vertical_Stick_Chart)
 * [3D Stacked Area](./Value/3D_Area_Chart)
 * [3D Stacked Bar](./Value/3D_Bar_Chart)
 * [3D Stacked Column](./Value/3D_Column_Chart)
+* [Vertical Percent Stacked Area](./Percent/Vertical_Area_Chart)
+* [Vertical Percent Stacked Spline Area](./Percent/Vertical_Spline_Area_Chart)
+* [Vertical Percent Stacked Step Area](./Percent/Vertical_Step_Area_Chart)
+* [Vertical Percent Stacked Stick](./Percent/Vertical_Stick_Chart)
 * [3D Percent Stacked Area](./Percent/3D_Area_Chart)
 * [3D Percent Stacked Bar](./Percent/3D_Bar_Chart)
 * [3D Percent Stacked Column](./Percent/3D_Column_Chart)
+
+See also polar and radar stacked charts:
+
+* [Stacked Polygon](./Value/Polygon_Chart)
+* [Polar Stacked Column](./Value/Polar_Column_Chart)
+* [Radar Stacked Area](./Value/Radar_Area_Chart)
+* [Percent Stacked Polygon](./Percent/Polygon_Chart)
+* [Polar Percent Stacked Column](./Percent/Polar_Column_Chart)
+* [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
 
 ## Marimekko Charts
 

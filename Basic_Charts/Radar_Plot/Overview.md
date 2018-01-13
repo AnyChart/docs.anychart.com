@@ -187,5 +187,5 @@ Here is the list of supported radar charts:
 
 See also stacked charts:
 
-* [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
-* [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)
+* [Radar Stacked Area Chart](../../Stacked/Value/Radar_Area_Chart)
+* [Radar Percent Stacked Area Chart](../../Stacked/Percent/Radar_Area_Chart)
