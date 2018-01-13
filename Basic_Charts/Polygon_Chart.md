@@ -25,6 +25,7 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
+<tr><td></td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
 <tr><td></td><td>[Radar Area](Radar_Area/Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/polygon-chart/" target="_blank">Chartopedia: Polygon Chart</a></td></tr>
