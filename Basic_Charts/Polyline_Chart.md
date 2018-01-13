@@ -82,7 +82,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Polyline chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Line#normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Line#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Polyline chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.polar.series.Polyline##normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.polar.series.Polyline##selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 

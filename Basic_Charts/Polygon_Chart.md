@@ -14,7 +14,7 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>* [Stacked Polygon](Stacked/Value/Polyline), [Percent Stacked Polygon](Stacked/Percent/Polyline)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Polygon](Stacked/Value/Polygon_Chart), [Percent Stacked Polygon](Stacked/Percent/Polygon_Chart)</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
@@ -76,16 +76,16 @@ The [appearance settings](../Appearance_Settings) of a Polygon chart can be conf
 
 Combine them with the following methods:
 
-* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
-* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.polar.series.Polygon##fill}fill(){api} to set the fill
+* {api:anychart.core.polar.series.Polygon##hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.polar.series.Polygon##stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-In the sample below, there are two Polyline series with appearance settings configured:
+In the sample below, there are two Polygon series with appearance settings configured:
 
 ```
-// create the first series and set the data:
+// create the first series
 var series1 = chart.polygon(series1.name("Wizard");
 
 // configure the visual settings of the first series
@@ -96,7 +96,7 @@ series1.normal().stroke("#00cc99", 1, "10 5", "round");
 series1.hovered().stroke("#00cc99", 2, "10 5", "round");
 series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
-// create the second series and set the data:  
+// create the second series
 var series2 = chart.polygon(seriesData_2);
 
 // configure the visual settings of the second series
