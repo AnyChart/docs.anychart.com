@@ -178,7 +178,7 @@ Here is the list of supported polar charts:
 
 See also stacked charts:
 
-* [Polar Stacked Column Chart](../../Stacked/Value/Polar_Column_Chart)
-* [Polar Percent Stacked Column Chart](../Stacked/Percent/Polar_Column_Chart)
-* [Stacked Polygon Chart](../../Stacked/Value/Polygon_Chart)
-* [Percent Stacked Polygon Chart](../../Stacked/Percent/Polygon_Chart)
+* [Polar Stacked Column Chart](Stacked/Value/Polar_Column_Chart)
+* [Polar Percent Stacked Column Chart](Stacked/Percent/Polar_Column_Chart)
+* [Stacked Polygon Chart](Stacked/Value/Polygon_Chart)
+* [Percent Stacked Polygon Chart](Stacked/Percent/Polygon_Chart)

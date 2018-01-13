@@ -129,5 +129,5 @@ In AnyChart, you can enable a special mode of the scale to make series stack tog
 
 To learn about the stacked versions of the Polygon chart, see:
 
-* [Stacked Polygon](Stacked/Value/Polyline)
-* [Percent Stacked Polygon](Stacked/Percent/Polyline)
+* [Stacked Polygon](Stacked/Value/Polygon_Chart)
+* [Percent Stacked Polygon](Stacked/Percent/Polygon_Chart)
