@@ -1,4 +1,4 @@
-{:index 10}
+{:index 2.3}
 # Radar Stacked Area Chart
 
 ## Overview

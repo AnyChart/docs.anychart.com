@@ -1,4 +1,4 @@
-{:index 0}
+{:index 2.1}
 # Polar Stacked Column Chart
 
 ## Overview
@@ -9,7 +9,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Polar Stacked Column Chart, create a multi-series [Polar Column Chart](../../Polar_Plot/Column_Chart and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
+To build a Polar Stacked Column Chart, create a multi-series [Polar Column Chart](../../Polar_Plot/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart

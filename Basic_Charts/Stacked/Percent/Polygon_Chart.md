@@ -1,4 +1,4 @@
-{:index 0}
+{:index 2.2}
 # Percent Stacked Polygon Chart
 
 ## Overview

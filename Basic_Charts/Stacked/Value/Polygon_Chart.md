@@ -1,4 +1,4 @@
-{:index 0}
+{:index 2.2}
 # Stacked Polygon Chart
 
 ## Overview

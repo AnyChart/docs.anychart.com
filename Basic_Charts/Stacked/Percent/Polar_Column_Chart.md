@@ -1,4 +1,4 @@
-{:index 10}
+{:index 2.1}
 # Polar Percent Stacked Column Chart
 
 ## Overview
