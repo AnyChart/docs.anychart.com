@@ -3,7 +3,7 @@
 
 ## Overview
 
-[A polyline chart is a special name that AnyChart uses for a line series displayed on a polar plot with a categorized X-scale + ссылка на раздел про шкалу в полярах]
+In AnyChart, Polyline is a special name for a Line series displayed on a polar plot with a [categorized X-scale](Polar_Plot/Overview#scales).
 
 This article explains how to create a basic Polyline chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Polyline chart's characteristics:
 

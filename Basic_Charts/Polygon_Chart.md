@@ -3,7 +3,7 @@
 
 ## Overview
 
-A polygon chart is...
+In AnyChart, Polygon is a special name for an Area series displayed on a polar plot with a [categorized X-scale](Polar_Plot/Overview#scales).
 
 This article explains how to create a basic Polygon chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Polygon chart's characteristics:
 
