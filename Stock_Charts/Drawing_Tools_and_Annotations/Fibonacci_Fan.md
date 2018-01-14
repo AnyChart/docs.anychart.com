@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Fibonacci Fan annotation allows to add a Fibonacci fan to a chart.
+The Fibonacci Fan annotation allows you to add a Fibonacci fan to a chart.
 
 This article explains how to add a Fibonacci Fan and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

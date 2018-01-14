@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first label annotation and configure its text and size
+    // create the first Label annotation and configure its text and font
     var label1 = controller.label({
         xAnchor: "2008-07-13",
         valueAnchor: 21.66,
@@ -68,7 +68,7 @@ anychart.onDocumentReady(function () {
     // set the text of the second annotation
     label2.text("Sell");
 
-    // configure the size and font family
+    // configure the font of the second annotation
     label2.fontSize(30);
     label2.fontFamily("Courier");
      

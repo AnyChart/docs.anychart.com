@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Triangle annotation allows to add a triangle to a chart.
+The Triangle annotation allows you to add a triangle to a chart.
 
 This article explains how to add a Triangle and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

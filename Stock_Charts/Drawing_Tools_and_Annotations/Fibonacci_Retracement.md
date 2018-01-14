@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Fibonacci Retracement annotation allows to add a Fibonacci retracement to a chart.
+The Fibonacci Retracement annotation allows you to add a Fibonacci retracement to a chart.
 
 This article explains how to add a Fibonacci Retracement and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

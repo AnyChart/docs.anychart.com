@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Infinite Line annotation allows to add an infinite line to a chart.
+The Infinite Line annotation allows you to add an infinite line to a chart.
 
 This article explains how to add an Infinite Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
