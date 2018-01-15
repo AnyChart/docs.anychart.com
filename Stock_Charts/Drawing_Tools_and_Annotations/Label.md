@@ -29,8 +29,8 @@ var controller = plot.annotations();
 
 // create a Label annotation
 controller.label({
-    xAnchor: "2008-07-13",
-    valueAnchor: 21.66,
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
     text: "Buy"
 });
 ```
@@ -50,24 +50,25 @@ This sample shows two Label annotations with text and font configured (by using 
 ```
 // create the first Label annotation and configure its text and font
 var label1 = controller.label({
-    xAnchor: "2008-07-13",
-    valueAnchor: 21.66,
-    fontSize: 30,
-    text: "Buy"
+     xAnchor: "2006-07-30",
+     valueAnchor: 17.24,
+     fontSize: 20,
+     fontFamily: "Courier",
+     text: "Buy"
 });
 
 // create the second Label annotation
 var label2 = controller.label();
 
 // set the position of the second annotation
-label2.xAnchor("2007-01-07");
-label2.valueAnchor(28.92);
+    label2.xAnchor("2007-10-28");
+    label2.valueAnchor(32.51);
 
 // set the text of the second annotation
 label2.text("Sell");
 
 // configure the font of the second annotation
-label2.fontSize(30);
+label2.fontSize(40);
 label2.fontFamily("Courier");
 ```
 
@@ -96,28 +97,31 @@ In the sample below, there are two Label annotations with some of the visual set
 /* create the first Label annotation
 and configure its size, offset, and visual settings*/
 var label1 = controller.label({
-    xAnchor: "2008-07-13",
-    valueAnchor: 21.66,
-    fontSize: 30,
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
     text: "Buy",
-    hovered: {fontColor: "#398cae 0.3"},
-    selected: {fontColor: "Black"}
+    normal: {fontColor: "#008000", fontSize: 20},
+    hovered: {fontColor: "#00e600", fontSize: 23},
+    selected: {fontColor: "#00e600", fontSize: 23}
 });
 
 // create the second Label annotation
 var label2 = controller.label();
 
 // set the position of the second annotation
-label2.xAnchor("2007-01-07");
-label2.valueAnchor(28.92);
+label2.xAnchor("2007-10-28");
+label2.valueAnchor(32.51);
 
 // set the text of the second annotation
 label2.text("Sell");
 
 // configure the visual settings of the second annotation
-label2.normal().fontColor("Red");
-label2.hovered().fontColor("Black");
-label2.selected().fontColor("Black");
+label2.normal().fontColor("#800000");
+label2.normal().fontSize(40);
+label2.hovered().fontColor("#e60000");
+label2.hovered().fontSize(43);
+label2.selected().fontColor("#e60000");
+label2.selected().fontSize(43);
 ```
 
 {sample}STOCK\_Drawing\_Label\_03{sample}

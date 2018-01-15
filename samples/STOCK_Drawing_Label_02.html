@@ -52,9 +52,10 @@ anychart.onDocumentReady(function () {
 
     // create the first Label annotation and configure its text and font
     var label1 = controller.label({
-        xAnchor: "2008-07-13",
-        valueAnchor: 21.66,
-        fontSize: 30,
+        xAnchor: "2006-07-30",
+        valueAnchor: 17.24,
+        fontSize: 20,
+        fontFamily: "Courier",
         text: "Buy"
     });
 
@@ -62,14 +63,14 @@ anychart.onDocumentReady(function () {
     var label2 = controller.label();
 
     // set the position of the second annotation
-    label2.xAnchor("2007-01-07");
-    label2.valueAnchor(28.92);
+    label2.xAnchor("2007-10-28");
+    label2.valueAnchor(32.51);
 
     // set the text of the second annotation
     label2.text("Sell");
 
     // configure the font of the second annotation
-    label2.fontSize(30);
+    label2.fontSize(40);
     label2.fontFamily("Courier");
      
     // set the chart title
