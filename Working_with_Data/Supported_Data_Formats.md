@@ -130,7 +130,7 @@ chart.container('container').draw();
 ```
 
 See detailed description in:
-- [Data From CDV](./Data_From_CSV) article
+- [Data From CSV](./Data_From_CSV) article
 - [Loading CSV Files](./Data_Adapter/Loading_CSV_File) article
 
 ## Google Spreadsheet
