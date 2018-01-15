@@ -69,8 +69,14 @@ anychart.onDocumentReady(function () {
     // set event markers type
     eventMarkers.type('pin');
 
+    // set normal fill
+    eventMarkers.normal().fill("#00802b");    
+
     // set hovered fill
-    eventMarkers.hovered().fill('#ff6e40');    
+    eventMarkers.hovered().fill("#a0d3b1");
+
+    // set selected fill
+    eventMarkers.selected().fill("#00cc44");       
 
     // set the chart title
     chart.title("Event Markers: Basic Sample");
