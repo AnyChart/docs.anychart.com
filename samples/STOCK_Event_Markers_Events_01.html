@@ -57,36 +57,36 @@ anychart.onDocumentReady(function () {
     var eventMarkers = plot.eventMarkers();
     // set markers data
     eventMarkers.data([{
-        date: '2001-09-11',
-        description: '9-11 attacks'
+        date: "2001-09-11",
+        description: "9-11 attacks"
       },
       {
-        date: '2003-03-20',
-        description: 'Iraq War'
+        date: "2003-03-20",
+        description: "Iraq War"
       },
       {
-        date: '2008-08-20',
-        description: 'Global financial collapse'
+        date: "2008-08-20",
+        description: "Global financial collapse"
       },
       {
-        date: '2009-02-05',
-        description: 'OPEC cuts production targets'
+        date: "2009-02-05",
+        description: "OPEC cuts production targets"
       }
     ]);
 
     // show info when
-    chart.listen('eventmarkermouseover', function (e) {
+    chart.listen("eventmarkermouseover", function (e) {
         var symbol = e.eventMarker.symbol;
         var description = e.eventMarker.description;
         var date = e.eventMarker.date;
-        document.getElementById('info').innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
+        document.getElementById("info").innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
     });
     // reset text when mouse leaves a marker
-    chart.listen('eventmarkermouseout', function () {
-        document.getElementById('info').innerHTML = "";
+    chart.listen("eventmarkermouseout", function () {
+        document.getElementById("info").innerHTML = "";
     });
     // open new window on click
-    chart.listen('eventmarkermouseclick', function () {
+    chart.listen("eventmarkermouseclick", function () {
         window.open("https://www.google.ru/search?q=" + e.eventMarker.description);
     });
 

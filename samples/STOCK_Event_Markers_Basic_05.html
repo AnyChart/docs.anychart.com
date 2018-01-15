@@ -50,20 +50,20 @@ anychart.onDocumentReady(function () {
     plot2.line(mapping).name("CSCO");
 
     events = [{
-        date: '2001-09-11',
-        description: '9-11 attacks'
+        date: "2001-09-11",
+        description: "9-11 attacks"
       },
       {
-        date: '2003-03-20',
-        description: 'Iraq War'
+        date: "2003-03-20",
+        description: "Iraq War"
       },
       {
-        date: '2008-08-20',
-        description: 'Global financial collapse'
+        date: "2008-08-20",
+        description: "Global financial collapse"
       },
       {
-        date: '2009-02-05',
-        description: 'OPEC cuts production targets'
+        date: "2009-02-05",
+        description: "OPEC cuts production targets"
       }
     ]
 
@@ -72,8 +72,8 @@ anychart.onDocumentReady(function () {
     // set markers data
     eventMarkers1.data(events);
     // set markers position
-    eventMarkers1.position('series');
-    eventMarkers1.fieldName('high');
+    eventMarkers1.position("series");
+    eventMarkers1.fieldName("high");
 
 
     // set settings for event markers
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
     // set markers data
     eventMarkers2.data(events);
     // set markers position
-    eventMarkers2.position('axis');
+    eventMarkers2.position("axis");
     
     // set the chart title
     chart.title("Event Markers: Basic Sample");
