@@ -3,7 +3,7 @@
 
 ## Overview
 
-(???) The Label annotation allows you to add a text annotation [information?] to the chart. [You can add any text of your choice and even have some nice features that can make adding annotations easier.]
+The Label annotation allows you to add a text information to the chart.
 
 This article explains how to add a Label and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -37,7 +37,7 @@ controller.label({
 
 {sample}STOCK\_Drawing\_Label\_01{sample}
 
-## Text and Font (???)
+## Text and Font
 
 To set the text of a Label annotation, use the {api:anychart.core.annotations.Label#text}text(){api} method. 
 
