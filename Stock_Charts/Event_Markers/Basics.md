@@ -14,6 +14,23 @@ Check out [Event Marker Tooltips](Tooltips) and [Event Marers Events](Events) to
 
 This is a basic sample that shows how to add single marker group to a chart:
 
+```
+// add event markers
+var eventMarkers = plot.eventMarkers();
+eventMarkers.data([
+  {
+    date: "2004-02-20",
+    description: "Cisco announced the acquisition " +
+                 "of Andiamo Systems, Inc."
+  },
+  {
+    date: "2008-04-27",
+    description: "Cisco announced its intent " +
+                 "to acquire PostPath, Inc."
+  }
+]);  
+```
+
 {sample}STOCK\_Event\_Markers\_Basic\_01{sample}
 
 ## Data
@@ -22,49 +39,86 @@ The only required field in an event marker is date, all other fields can be choo
 
 ### Array
 
-Event markers can be loaded into the chart or plot from a array of JSON objects of the following format:
+Event markers can be loaded into the chart or plot from an array of JSON objects:
 
 ```
-[
+// add two groups of event markers
+plot.eventMarkers({ groups: [
   {
-    "format": "J",
-    "data": [
-      {
-        "date": "2016-01-15",
-        "description": "Event Description",
-        "customField": "some data"
-      },
-      {
-        "date": "2016-01-21",
-        "description": "Event Description",
-        "customField": "some data"
-      }
-   },
+     "format": "A",
+     "data": [
+       {
+         "date": "2004-02-20",
+         "description": "Cisco announced the acquisition " +
+                        "of Andiamo Systems, Inc."
+       },
+       {
+         "date": "2008-04-27",
+         "description": "Cisco announced its intent " +
+                        "to acquire PostPath, Inc."
+       },
+     ]
+  },
   {
-    "format": "G",
-    "data": [
-      {
-        "date": "2016-01-15",
-        "description": "Event Description"
-      },
-      {
-        "date": "2016-01-21",
-        "description": "Event Description"
-      }
-   }
-]   
+     "format": "B",
+     "data": [
+       {
+         "date": "2009-02-10",
+         "description": "Cisco and Tata Consultancy Services " +
+                        "announce strategic alliance."
+       },
+       {
+         "date": "2009-02-12",
+         "description": "Cisco unveils 'Intelligent Urbanisation' " +
+                        "vision for Bengaluru."
+       }
+     ]
+  }
+]});
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_02{sample}
 
-### Method
+### Methods
 
 Or you can pass array to the {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} method and create groups. You can create as many event marker groups as you need and use the same or different symbols:
 
 ```
 var eventMarkers = plot.eventMarkers();
-eventMarkers.group(0, [{date: '2006-10-12', description: 'Event A'}]);
-eventMarkers.group(1, [{date: '2006-10-12', description: 'Event B1'}, {date: '2006-12-06', description: 'Event B2'}]).format("B");
+
+// add the first group of event markers
+eventMarkers.group(0, [
+  {
+    date: "2004-02-20",
+    description: "Cisco announced the acquisition " +
+                 "of Andiamo Systems, Inc."
+  },
+  {
+    date: "2008-04-27",
+    description: "Cisco announced its intent " +
+                 "to acquire PostPath, Inc."
+  }
+]);
+
+// set the symbol of the first group
+eventMarkers.group(0).format("A");
+
+// add the second group of event markers
+eventMarkers.group(1, [
+  {
+    date: "2009-02-10",
+    description: "Cisco and Tata Consultancy Services " +
+                   "announce strategic alliance."
+  },
+  {
+    date: "2009-02-12",
+    description: "Cisco unveils 'Intelligent Urbanisation' " +
+                   "vision for Bengaluru."
+  }
+]);
+
+// set the symbol of the second group
+eventMarkers.group(1).format("B");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_03{sample}
@@ -76,14 +130,37 @@ Configuring appearance is as easy as with any other element of AnyChart. Choose 
 ```
 var eventMarkers = plot.eventMarkers();
 
-// set event markers type
-eventMarkers.type('pin');
-
-// set hovered fill
-eventMarkers.hovered().fill('#ff6e40');
+// configure the type and appearance of markers
+eventMarkers.normal().type("rect");
+eventMarkers.normal().fill("#00802b");
+eventMarkers.hovered().fill("#a0d3b1");
+eventMarkers.selected().fill("#00cc44"); 
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_04{sample}
+
+```
+// add event markers
+var eventMarkers = plot.eventMarkers();
+eventMarkers.data([
+  {
+    date: "2004-02-20",
+    description: "Cisco announced the acquisition " +
+                 "of Andiamo Systems, Inc.",
+    normal:   {fill: "#00802b", type: "rect"},
+    hovered:  {fill: "#a0d3b1"},
+    selected: {fill: "#00cc44"}   
+  },
+  {
+    date: "2008-04-27",
+    description: "Cisco announced its intent " +
+                 "to acquire PostPath, Inc.",
+    normal:   {fill: "#802b00", type: "circle"},
+    hovered:  {fill: "#d3b1a0"},
+    selected: {fill: "#cc4400"}   
+  }
+]);
+```
 
 {sample}STOCK\_Event\_Markers\_Basic\_05{sample}
 

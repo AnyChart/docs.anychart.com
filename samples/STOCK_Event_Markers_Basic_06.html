@@ -34,22 +34,25 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 4});
+    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 5});
 
     // create a stock chart
     var chart = anychart.stock();
 
-    // create a plot on the chart
+    // create the first plot
     var plot1 = chart.plot(0);
-    // create a line series
+
+    // create an ohlc series on the first plot
     plot1.ohlc(mapping).name("CSCO");
 
-    // create a second plot on the chart
+    // create the second plot
     var plot2 = chart.plot(1);
-    // create an area series
-    plot2.line(mapping).name("CSCO");
 
-    events = [
+    // create a line series on the second plot
+    plot2.line(mapping).name("Volume");
+
+    // create data for event markers
+    var events = [
       {
         date: "2004-02-20",
         description: "Cisco announced the acquisition " +
@@ -62,21 +65,23 @@ anychart.onDocumentReady(function () {
       }
     ]
 
-    // set settings for event markers
+    // add event markers to the first plot
     var eventMarkers1 = plot1.eventMarkers();
-    // set markers data
     eventMarkers1.data(events);
-    // set markers position
+
+    // add event markers to the second plot
+    var eventMarkers2 = plot2.eventMarkers();
+    eventMarkers2.data(events);
+
+    // set the position of event markers on the first plot
     eventMarkers1.position("series");
     eventMarkers1.fieldName("high");
 
-
-    // set settings for event markers
-    var eventMarkers2 = plot2.eventMarkers();
-    // set markers data
-    eventMarkers2.data(events);
-    // set markers position
+    // set the position of event markers on the second plot
     eventMarkers2.position("axis");
+
+    // set the chart padding
+    chart.padding().left(90);
     
     // set the chart title
     chart.title("Event Markers: Position");

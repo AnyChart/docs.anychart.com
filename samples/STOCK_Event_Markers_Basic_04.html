@@ -45,9 +45,9 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    // set settings for event markers
     var eventMarkers = plot.eventMarkers();
-    // set markers data
+
+    // add event markers
     eventMarkers.data([
       {
         date: "2004-02-20",
@@ -61,17 +61,10 @@ anychart.onDocumentReady(function () {
       }
     ]);
 
-    // ...
+    // configure the type and appearance of markers
     eventMarkers.normal().type("rect");
-
-    // set normal fill
     eventMarkers.normal().fill("#00802b");
-
-
-    // set hovered fill
     eventMarkers.hovered().fill("#a0d3b1");
-
-    // set selected fill
     eventMarkers.selected().fill("#00cc44");   
 
     // set the chart title

@@ -16,13 +16,13 @@ AnyChart Stock has a very flexible and convenient set of tools for working with 
 - Full range of supported external events and methods for controlling event markers from the outside,
 - And much more...
 
-# Sample
+## Sample
 
 Here is a basic sample of a chart with Event Markers:
 
 {sample}STOCK\_Event\_Markers\_Basic\_01{sample}
 
-# Articles and Demos
+## Articles and Demos
 
 The following articles are available in the documentation:
 
