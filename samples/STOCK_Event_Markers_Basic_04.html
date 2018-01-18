@@ -61,26 +61,18 @@ anychart.onDocumentReady(function () {
       }
     ]);
 
-    // set event markers type
-    eventMarkers.type("rect");
+    // ...
+    eventMarkers.normal().type("rect");
 
     // set normal fill
     eventMarkers.normal().fill("#00802b");
 
-    // ...
-    eventMarkers.normal().type("rect") ;   
 
     // set hovered fill
     eventMarkers.hovered().fill("#a0d3b1");
 
-    // ...
-    eventMarkers.hovered().type("pin") ; 
-
     // set selected fill
     eventMarkers.selected().fill("#00cc44");   
-
-    // ...
-    eventMarkers.selected().type("pin") ;     
 
     // set the chart title
     chart.title("Event Markers: Appearance");
