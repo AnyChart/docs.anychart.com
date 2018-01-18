@@ -85,6 +85,8 @@ eventMarkers.hovered().fill('#ff6e40');
 
 {sample}STOCK\_Event\_Markers\_Basic\_04{sample}
 
+{sample}STOCK\_Event\_Markers\_Basic\_05{sample}
+
 ## Position
 
 Event markers can be placed on the X axis, or be bound to any series on the plot. When bound to a series - you can define which value is used in case of multi-value series (e.g. OHLC). When there is only one series on the plot and position is set to `'series'` - chart will determine this automatically.
@@ -99,4 +101,4 @@ eventMarkers.fieldName('high');
 eventMarkers.seriesId('someSeries');
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_05{sample}
+{sample}STOCK\_Event\_Markers\_Basic\_06{sample}

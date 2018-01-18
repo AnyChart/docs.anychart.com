@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basic 04"/>
+    <meta name="ac:name" content="STOCK Event Markers Basic 06"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,21 +34,22 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
 
     // create a plot on the chart
-    var plot = chart.plot(0);
-
+    var plot1 = chart.plot(0);
     // create a line series
-    plot.line(mapping).name("CSCO");
+    plot1.ohlc(mapping).name("CSCO");
 
-    // set settings for event markers
-    var eventMarkers = plot.eventMarkers();
-    // set markers data
-    eventMarkers.data([
+    // create a second plot on the chart
+    var plot2 = chart.plot(1);
+    // create an area series
+    plot2.line(mapping).name("CSCO");
+
+    events = [
       {
         date: "2004-02-20",
         description: "Cisco announced the acquisition " +
@@ -59,31 +60,26 @@ anychart.onDocumentReady(function () {
         description: "Cisco announced its intent " +
                      "to acquire PostPath, Inc."
       }
-    ]);
+    ]
 
-    // set event markers type
-    eventMarkers.type("rect");
+    // set settings for event markers
+    var eventMarkers1 = plot1.eventMarkers();
+    // set markers data
+    eventMarkers1.data(events);
+    // set markers position
+    eventMarkers1.position("series");
+    eventMarkers1.fieldName("high");
 
-    // set normal fill
-    eventMarkers.normal().fill("#00802b");
 
-    // ...
-    eventMarkers.normal().type("rect") ;   
-
-    // set hovered fill
-    eventMarkers.hovered().fill("#a0d3b1");
-
-    // ...
-    eventMarkers.hovered().type("pin") ; 
-
-    // set selected fill
-    eventMarkers.selected().fill("#00cc44");   
-
-    // ...
-    eventMarkers.selected().type("pin") ;     
-
+    // set settings for event markers
+    var eventMarkers2 = plot2.eventMarkers();
+    // set markers data
+    eventMarkers2.data(events);
+    // set markers position
+    eventMarkers2.position("axis");
+    
     // set the chart title
-    chart.title("Event Markers: Appearance");
+    chart.title("Event Markers: Position");
 
     // set the container id
     chart.container("container");

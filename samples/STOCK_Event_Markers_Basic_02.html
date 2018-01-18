@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Groups from Array"/>
+    <meta name="ac:name" content="STOCK Event Markers Basic 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -46,34 +46,38 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
    // set settings for event markers
-    plot.eventMarkers({groups: [    {
-    "format": "J",
-    "data": [
-      {
-        "date": "2005-01-15",
-        "description": "Event Description",
-        "customField": "some data",
-        "type": "rect"
-      },
-      {
-        "date": "2007-01-21",
-        "description": "Event Description",
-        "customField": "some data"
-      }
-      ]
-    },
-    {
-    "format": "G",
-    "data": [
-      {
-        "date": "2008-01-15",
-        "description": "Event Description"
-      },
-      {
-        "date": "2009-01-21",
-        "description": "Event Description"
-      }
-    ]}]});
+   plot.eventMarkers({groups: [
+     {
+        "format": "A",
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition " +
+                           "of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent " +
+                           "to acquire PostPath, Inc."
+          },
+        ]
+     },
+     {
+        "format": "B",
+        "data": [
+          {
+            "date": "2009-02-10",
+            "description": "Cisco and Tata Consultancy Services " +
+                           "announce strategic alliance."
+          },
+          {
+            "date": "2009-02-12",
+            "description": "Cisco unveils 'Intelligent Urbanisation' " +
+                           "vision for Bengaluru."
+          }
+        ]
+     }
+   ]});
 
     // set the chart title
     chart.title("Event Markers: Groups (Array)");
