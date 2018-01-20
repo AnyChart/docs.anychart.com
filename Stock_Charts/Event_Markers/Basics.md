@@ -203,31 +203,26 @@ plot.eventMarkers({ "groups": [
 
 ```
 // add event markers to the first plot
-var eventMarkers_1 = plot_1.eventMarkers();
-eventMarkers_1.data(events);
+plot_1.eventMarkers(events);
 
 // add event markers to the second plot
-var eventMarkers_2 = plot_2.eventMarkers();
-eventMarkers_2.data(events);
+plot_2.eventMarkers(events);
 
 // set the position of event markers on the first plot
-eventMarkers_1.position("series");
-eventMarkers_1.fieldName("high");
+plot_1.eventMarkers().position("series");
+plot_1.eventMarkers().fieldName("high");
 
 // set the position of event markers on the second plot
-eventMarkers_2.position("axis");
+var eventMarkers_2 = plot_2.eventMarkers()
+plot_2.eventMarkers().position("axis");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_07{sample}
 
 ```
-// get eventMarkers
-var eventMarkers = plot.eventMarkers();
-
-// set the position of event markers
-eventMarkers.position("series");
-eventMarkers.fieldName("high");
-eventMarkers.seriesId("someSeries");
+// bind event markers to the first series
+plot.eventMarkers().position("series");
+plot.eventMarkers().seriesId(0);
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_08{sample}

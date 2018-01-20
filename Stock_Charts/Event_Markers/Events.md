@@ -12,7 +12,7 @@ To handle event markers events listen to appropriate events like this:
 
 ```
 // show information when mouse is over a marker
-chart.listen("eventmarkermouseover", function (e) {
+chart.listen("eventMarkerMouseOver", function (e) {
     var symbol = e.eventMarker.symbol;
     var description = e.eventMarker.description;
     var date = e.eventMarker.date;
@@ -22,16 +22,16 @@ chart.listen("eventmarkermouseover", function (e) {
 });
 
 // hide information when mouse leaves a marker
-chart.listen("eventmarkermouseout", function () {
+chart.listen("eventMarkerMouseOut", function () {
     document.getElementById("info").innerHTML = "";
     chart.title("Event Marker Events: Move the mouse over or click markers");
 });
 
 // open a new window on click
-chart.listen("eventmarkerclick", function (e) {
+chart.listen("eventMarkerClick", function (e) {
     var url = "https://www.google.ru/search?q=" +
               e.eventMarker.description;
-    window.open(url);
+    window.open(url, "_blank");
 });
 ```
 

@@ -52,31 +52,34 @@ anychart.onDocumentReady(function () {
     plot_2.line(mapping).name("Volume");
 
     // create data for event markers
-    var events = [
+    var events = { "groups": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
-      },
-      {
-        "date": "2008-04-27",
-        "description": "Cisco announced its intent to acquire PostPath, Inc."
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       }
-    ]
+    ]};
 
     // add event markers to the first plot
-    var eventMarkers_1 = plot_1.eventMarkers();
-    eventMarkers_1.data(events);
+    plot_1.eventMarkers(events);
 
     // add event markers to the second plot
-    var eventMarkers_2 = plot_2.eventMarkers();
-    eventMarkers_2.data(events);
+    plot_2.eventMarkers(events);
 
     // set the position of event markers on the first plot
-    eventMarkers_1.position("series");
-    eventMarkers_1.fieldName("high");
+    plot_1.eventMarkers().position("series");
+    plot_1.eventMarkers().fieldName("high");
 
     // set the position of event markers on the second plot
-    eventMarkers_2.position("axis");
+    var eventMarkers_2 = plot_2.eventMarkers()
+    plot_2.eventMarkers().position("axis");
 
     // set the chart padding
     chart.padding().left(90);

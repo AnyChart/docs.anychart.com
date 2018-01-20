@@ -10,6 +10,7 @@
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/msft-daily-short.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
@@ -29,13 +30,17 @@ anychart.onDocumentReady(function () {
 
     // the data used in this sample can be obtained from the CDN
     // https://cdn.anychart.com/csv-data/csco-daily.js
+    // https://cdn.anychart.com/csv-data/msft-daily-short.js
     // create a data table using this data
     var dataTable = anychart.data.table();
     dataTable.addData(get_csco_daily_short_data());
 
+    var msftDataTable = anychart.data.table();
+    msftDataTable.addData(get_msft_daily_short_data());
+
     // map the data
-    var mapping_1 = dataTable.mapAs({value: 1});
-    var mapping_2 = dataTable.mapAs({value: 2});
+    var mapping_1 = dataTable.mapAs({value: 4});
+    var mapping_2 = msftDataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -44,24 +49,28 @@ anychart.onDocumentReady(function () {
     var plot = chart.plot(0);
 
     // create two line series
-    var series_1 = plot.line(mapping_1).name("CSCO open");
-    var series_2 = plot.line(mapping_2).name("CSCO high");
+    var series_1 = plot.line(mapping_1).name("CSCO");
+    var series_2 = plot.line(mapping_2).name("MSFT");
 
     // add event markers
-    var eventMarkers = plot.eventMarkers().data([
+    plot.eventMarkers({ "groups": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
-      },
-      {
-        "date": "2008-04-27",
-        "description": "Cisco announced its intent to acquire PostPath, Inc."
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       }
-    ]);
+    ]});
 
-    // bind the event markers to the first series
-    eventMarkers.position("series");
-    eventMarkers.seriesId(0);
+    // bind event markers to the first series
+    plot.eventMarkers().position("series");
+    plot.eventMarkers().seriesId(0);
 
     // set the chart title
     chart.title("Event Markers: Position");

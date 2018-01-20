@@ -70,7 +70,7 @@ anychart.onDocumentReady(function () {
     ]});
 
     // show information when mouse is over a marker
-    chart.listen("eventmarkermouseover", function (e) {
+    chart.listen("eventMarkerMouseover", function (e) {
         var symbol = e.eventMarker.symbol;
         var description = e.eventMarker.description;
         var date = e.eventMarker.date;
@@ -80,15 +80,15 @@ anychart.onDocumentReady(function () {
     });
 
     // hide information when mouse leaves a marker
-    chart.listen("eventmarkermouseout", function () {
+    chart.listen("eventMarkerMouseOut", function () {
         document.getElementById("info").innerHTML = "";
     });
 
     // open a new window on click
-    chart.listen("eventmarkerclick", function (e) {
+    chart.listen("eventMarkerClick", function (e) {
         var url = "https://www.google.ru/search?q=" +
                   e.eventMarker.description;
-        window.open(url);
+        window.open(url, "_blank");
     });
 
     // set the chart title
