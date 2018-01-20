@@ -11,21 +11,27 @@ Using AnyChart [Event handling](../../Common_Settings/) with Event Markers allow
 To handle event markers events listen to appropriate events like this:
 
 ```
-// show info when
-chart.listen('eventmarkermouseover', function (e) {
+// show information when mouse is over a marker
+chart.listen("eventmarkermouseover", function (e) {
     var symbol = e.eventMarker.symbol;
     var description = e.eventMarker.description;
     var date = e.eventMarker.date;
-    document.getElementById('info').innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
+    document.getElementById("info").innerHTML =
+      symbol + "@" + anychart.format.date(date)
+      + ": " + description;
 });
-// reset text when mouse leaves a marker
-chart.listen('eventmarkermouseout', function () {
-    document.getElementById('info').innerHTML = "";
+
+// hide information when mouse leaves a marker
+chart.listen("eventmarkermouseout", function () {
+    document.getElementById("info").innerHTML = "";
     chart.title("Event Marker Events: Move the mouse over or click markers");
 });
-// open new window on click
-chart.listen('eventmarkermouseclick', function () {
-    window.open("https://www.google.ru/search?q=" + e.eventMarker.description);
+
+// open a new window on click
+chart.listen("eventmarkerclick", function (e) {
+    var url = "https://www.google.ru/search?q=" +
+              e.eventMarker.description;
+    window.open(url);
 });
 ```
 

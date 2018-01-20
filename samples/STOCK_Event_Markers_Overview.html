@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Overview"/>
+    <meta name="ac:name" content="STOCK Event Markers Basic 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -27,48 +27,48 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  // the data used in this sample can be obtained from the CDN
-  // https://cdn.anychart.com/csv-data/csco-daily.js
-  // create a data table using this data
-  var dataTable = anychart.data.table();
-  dataTable.addData(get_csco_daily_short_data());
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
 
-  // map the data
-  var mapping = dataTable.mapAs({"value": 4});
+    // map the data
+    var mapping = dataTable.mapAs({value: 4});
 
-  // create a stock chart
-  var chart = anychart.stock();
+    // create a stock chart
+    var chart = anychart.stock();
 
-  // create a plot on the chart
-  var plot = chart.plot(0);
+    // create a plot on the chart
+    var plot = chart.plot(0);
 
-  // create a line series
-  plot.line(mapping).name("CSCO");
+    // create a line series
+    plot.line(mapping).name("CSCO");
 
-  // set settings for event markers
-  var eventMarkers = plot.eventMarkers();
-  // set markers data
-  eventMarkers.data([
-    {
-      date: "2004-02-20",
-      description: "Cisco announced the acquisition " +
-                   "of Andiamo Systems, Inc."
-    },
-    {
-      date: "2008-04-27",
-      description: "Cisco announced its intent " +
-                   "to acquire PostPath, Inc."
-    }
-  ]);
+    // add event markers
+    plot.eventMarkers({ "groups": [
+      {
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
+      }
+    ]});
 
-  // set the chart title
-  chart.title("Event Markers: Basic Sample");
+    // set the chart title
+    chart.title("Event Markers: Basic Sample");
 
-  // set the container id
-  chart.container("container");
+    // set the container id
+    chart.container("container");
 
-  // initiate drawing the chart
-  chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });
 </script>
 </body>

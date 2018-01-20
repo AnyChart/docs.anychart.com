@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -46,19 +46,20 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    var eventMarkers = plot.eventMarkers();
-    eventMarkers.data([
+    plot.eventMarkers({ "groups": [
       {
-        date: "2004-02-20",
-        description: "Cisco announced the acquisition " +
-                     "of Andiamo Systems, Inc."
-      },
-      {
-        date: "2008-04-27",
-        description: "Cisco announced its intent " +
-                     "to acquire PostPath, Inc."
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       }
-    ]);
+    ]});
 
     // set the chart title
     chart.title("Event Markers: Basic Sample");

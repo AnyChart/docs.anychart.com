@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -50,14 +50,12 @@ anychart.onDocumentReady(function () {
     // add the first group of event markers
     eventMarkers.group(0, [
       {
-        date: "2004-02-20",
-        description: "Cisco announced the acquisition " +
-                     "of Andiamo Systems, Inc."
+        "date": "2004-02-20",
+        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
       },
       {
-        date: "2008-04-27",
-        description: "Cisco announced its intent " +
-                     "to acquire PostPath, Inc."
+        "date": "2008-04-27",
+        "description": "Cisco announced its intent to acquire PostPath, Inc."
       }
     ]);
 
@@ -67,14 +65,12 @@ anychart.onDocumentReady(function () {
     // add the second group of event markers
     eventMarkers.group(1, [
       {
-        date: "2009-02-10",
-        description: "Cisco and Tata Consultancy Services " +
-                       "announce strategic alliance."
+        "date": "2009-02-10",
+        "description": "Cisco and Tata Consultancy Services announce strategic alliance."
       },
       {
-        date: "2009-02-12",
-        description: "Cisco unveils 'Intelligent Urbanisation' " +
-                       "vision for Bengaluru."
+        "date": "2009-02-12",
+        "description": "Cisco unveils 'Intelligent Urbanisation' vision for Bengaluru."
       }
     ]);
 
@@ -82,7 +78,7 @@ anychart.onDocumentReady(function () {
     eventMarkers.group(1).format("B");
 
     // set the chart title
-    chart.title("Event Markers: Data (Methods)");
+    chart.title("Event Markers: Data\nUsing group() Method");
 
     // set the container id
     chart.container("container");

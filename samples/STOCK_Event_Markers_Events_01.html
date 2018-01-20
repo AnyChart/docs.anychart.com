@@ -42,7 +42,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -54,40 +54,41 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    var eventMarkers = plot.eventMarkers();
-    // set markers data
-    eventMarkers.data([{
-        date: "2001-09-11",
-        description: "9-11 attacks"
-      },
+    plot.eventMarkers({ "groups": [
       {
-        date: "2003-03-20",
-        description: "Iraq War"
-      },
-      {
-        date: "2008-08-20",
-        description: "Global financial collapse"
-      },
-      {
-        date: "2009-02-05",
-        description: "OPEC cuts production targets"
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       }
-    ]);
+    ]});
 
-    // show info when
+    // show information when mouse is over a marker
     chart.listen("eventmarkermouseover", function (e) {
         var symbol = e.eventMarker.symbol;
         var description = e.eventMarker.description;
         var date = e.eventMarker.date;
-        document.getElementById("info").innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
+        document.getElementById("info").innerHTML =
+          symbol + "@" + anychart.format.date(date)
+          + ": " + description;
     });
-    // reset text when mouse leaves a marker
+
+    // hide information when mouse leaves a marker
     chart.listen("eventmarkermouseout", function () {
         document.getElementById("info").innerHTML = "";
     });
-    // open new window on click
-    chart.listen("eventmarkermouseclick", function () {
-        window.open("https://www.google.ru/search?q=" + e.eventMarker.description);
+
+    // open a new window on click
+    chart.listen("eventmarkerclick", function (e) {
+        var url = "https://www.google.ru/search?q=" +
+                  e.eventMarker.description;
+        window.open(url);
     });
 
     // set the chart title

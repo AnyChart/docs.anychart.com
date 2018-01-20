@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -46,41 +46,37 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add two groups of event markers
-    plot.eventMarkers({ groups: [
+    plot.eventMarkers({ "groups": [
       {
-         "format": "A",
-         "data": [
-           {
-             "date": "2004-02-20",
-             "description": "Cisco announced the acquisition " +
-                            "of Andiamo Systems, Inc."
-           },
-           {
-             "date": "2008-04-27",
-             "description": "Cisco announced its intent " +
-                            "to acquire PostPath, Inc."
-           },
-         ]
+        "format": "A",
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       },
       {
-         "format": "B",
-         "data": [
-           {
-             "date": "2009-02-10",
-             "description": "Cisco and Tata Consultancy Services " +
-                            "announce strategic alliance."
-           },
-           {
-             "date": "2009-02-12",
-             "description": "Cisco unveils 'Intelligent Urbanisation' " +
-                            "vision for Bengaluru."
-           }
-         ]
+        "format": "B",
+        "data": [
+          {
+            "date": "2009-02-10",
+            "description": "Cisco and Tata Consultancy Services announce strategic alliance."
+          },
+          {
+            "date": "2009-02-12",
+            "description": "Cisco unveils 'Intelligent Urbanisation' vision for Bengaluru."
+          }
+        ]
       }
     ]});
 
     // set the chart title
-    chart.title("Event Markers: Data (Array)");
+    chart.title("Event Markers: Data\nUsing eventMarkers() Method");
 
     // set the container id
     chart.container("container");
