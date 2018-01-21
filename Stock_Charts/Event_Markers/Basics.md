@@ -14,7 +14,7 @@
 
 ```
 // add event markers
-plot.eventMarkers({ "groups": [
+plot.eventMarkers({"groups": [
   {
     "data": [
       {
@@ -24,7 +24,7 @@ plot.eventMarkers({ "groups": [
       {
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc."
-      },
+      }
     ]
   }
 ]});  
@@ -52,7 +52,7 @@ data
 
 ```
 // add two groups of event markers
-plot.eventMarkers({ "groups": [
+plot.eventMarkers({"groups": [
   {
     "format": "A",
     "data": [
@@ -63,7 +63,7 @@ plot.eventMarkers({ "groups": [
       {
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc."
-      },
+      }
     ]
   },
   {
@@ -71,11 +71,11 @@ plot.eventMarkers({ "groups": [
     "data": [
       {
         "date": "2009-02-10",
-        "description": "Cisco and Tata Consultancy Services announce strategic alliance."
+        "description": "Cisco and Tata Consultancy Services announced strategic alliance."
       },
       {
         "date": "2009-02-12",
-        "description": "Cisco unveils 'Intelligent Urbanisation' vision for Bengaluru."
+        "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
       }
     ]
   }
@@ -117,11 +117,11 @@ eventMarkers.group(0).format("A");
 eventMarkers.group(1, [
   {
     "date": "2009-02-10",
-    "description": "Cisco and Tata Consultancy Services announce strategic alliance."
+    "description": "Cisco and Tata Consultancy Services announced strategic alliance."
   },
   {
     "date": "2009-02-12",
-    "description": "Cisco unveils 'Intelligent Urbanisation' vision for Bengaluru."
+    "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
   }
 ]);
 
@@ -173,7 +173,7 @@ eventMarkers.selected().fill("#00cc44");
 
 ```
 // add event markers
-plot.eventMarkers({ "groups": [
+plot.eventMarkers({"groups": [
   {
     "data": [
       {

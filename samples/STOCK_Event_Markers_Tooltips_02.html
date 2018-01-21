@@ -46,8 +46,9 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    plot.eventMarkers({ "groups": [
+    plot.eventMarkers({"groups": [
       {
+        "format": "A",
         "data": [
           {
             "date": "2004-02-20",
@@ -56,10 +57,33 @@ anychart.onDocumentReady(function () {
           {
             "date": "2008-04-27",
             "description": "Cisco announced its intent to acquire PostPath, Inc."
+          }
+        ]
+      },
+      {
+        "format": "B",
+        "data": [
+          {
+            "date": "2009-02-10",
+            "description": "Cisco and Tata Consultancy Services announced strategic alliance."
           },
+          {
+            "date": "2009-02-12",
+            "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
+          }
         ]
       }
     ]});
+
+    plot.eventMarkers().tooltip().titleFormat( function (){
+      return anychart.format.dateTime(this.date, "yyyy") +
+             " (" + this.symbol + ")";
+    });
+
+    plot.eventMarkers().tooltip().format( function (){
+      return "On " + anychart.format.dateTime(this.date, "MMMM dd") +
+             ", " + this.description;
+    });
 
     // set the chart title
     chart.title("Event Markers: Tooltips (Formatting Functions)");

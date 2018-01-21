@@ -46,20 +46,42 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    plot.eventMarkers({ "groups": [
+    plot.eventMarkers({"groups": [
       {
+        "format": "A",
         "data": [
           {
             "date": "2004-02-20",
-            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
+            "short_desc": "Andiamo Systems Acquisition"
           },
           {
             "date": "2008-04-27",
-            "description": "Cisco announced its intent to acquire PostPath, Inc."
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "short_desc": "PostPath Acquisition"
+          }
+        ]
+      },
+      {
+        "format": "B",
+        "data": [
+          {
+            "date": "2009-02-10",
+            "description": "Cisco and Tata Consultancy Services announced strategic alliance.",
+            "short_desc": "Alliance with TCS"
           },
+          {
+            "date": "2009-02-12",
+            "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore.",
+            "short_desc": "Intelligent Urbanisation"
+          }
         ]
       }
     ]});
+
+    // configure the tooltips of event markers
+    plot.eventMarkers().tooltip().titleFormat("{%short_desc} ({%symbol})");
+    plot.eventMarkers().tooltip().format("Event: {%description}");
 
     // set the chart title
     chart.title("Event Markers: Tooltips (Tokens)");
