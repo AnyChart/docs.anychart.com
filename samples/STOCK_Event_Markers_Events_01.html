@@ -14,19 +14,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    #container {
-    position: absolute;
-    width: 100%;
-    top: 20px;
-    bottom: 0;
-    }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 20px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +69,7 @@ anychart.onDocumentReady(function () {
     ]});
 
     // show information when mouse is over a marker
-    chart.listen("eventMarkerMouseover", function (e) {
+    chart.listen("eventMarkerMouseOver", function (e) {
         var symbol = e.eventMarker.symbol;
         var description = e.eventMarker.description;
         var date = e.eventMarker.date;

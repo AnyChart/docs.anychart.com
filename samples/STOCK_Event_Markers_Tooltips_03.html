@@ -20,9 +20,19 @@
             margin: 0;
             padding: 0;
         }
+         .custom-tooltip {
+            visibility: hidden;
+            pointer-events: none;
+            position: absolute;
+            width: 100px;
+            padding: 4px;
+            border: solid black 2px;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
+<div id="tooltip" class="custom-tooltip"></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -51,15 +61,50 @@ anychart.onDocumentReady(function () {
         "data": [
           {
             "date": "2004-02-20",
-            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+            "description": "Andiamo Systems Acquisition"
           },
           {
             "date": "2008-04-27",
-            "description": "Cisco announced its intent to acquire PostPath, Inc."
+            "description": "PostPath Acquisition"
           }
         ]
       }
     ]});
+
+    // disable the default tooltips of event markers
+    var eventMarker = plot.eventMarkers();
+    eventMarker.tooltip(false);
+
+    var tooltip = document.getElementById("tooltip");
+
+    /* show a custom tooltip
+    when the mouse is over a marker */
+    eventMarker.listen("eventMarkerMouseOver", function(e) {
+
+      // show the tooltip
+      tooltip.style.visibility = "visible"; 
+
+      // set the text of the tooltip
+      tooltip.innerHTML = e.eventMarker.description;
+    });
+
+    /* hide the custom tooltip
+    when the mouse is out of a marker */
+    eventMarker.listen("eventMarkerMouseOut", function() {
+      tooltip.style.visibility = "hidden";
+    });
+
+    // set the position of custom tooltips
+    chart.listen("mouseMove", function(e) {
+
+      var clientX = e["offsetX"];
+      var clientY = e["offsetY"];
+
+      tooltip.style.left = clientX + 20 + "px";
+      tooltip.style.top = clientY + 10 + "px";
+      tooltip.style.zIndex = 10000;
+      tooltip.style.border = "solid black 2px";
+    });
 
     // set the chart title
     chart.title("Event Markers: Custom HTML Tooltips");
