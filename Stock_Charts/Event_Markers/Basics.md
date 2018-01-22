@@ -57,7 +57,7 @@ The `date` is the only field that is always required. The `description` field is
 
 The symbol is a text element displayed on markers and shared by all elements of the group. The way to customize symbols depends on the method you use. Since they are resized to fit markers, the best choice is to specify one or two letters (with an empty string, no text is displayed). The default symbol is "A" for all groups.
 
-**Note:** You can add custom fields to your data. See [Event Marker Tooltips](Tooltips).
+**Note:** You can add custom fields to your data. See [Tooltips](Tooltips).
 
 ### eventMarkers()
 
@@ -69,14 +69,14 @@ Here are data fields affecting groups:
 * `data`
 * `format` (optional)
 
-The `groups` field contains an array of groups, and `data` contains an array of events belonging to one group. To specify the symbol of a group, use `format`.
-
-**Note:** Even if you are going to create only one group of markers, you still have to include the `group` field into your data.
-
 The following fields affect events inside groups: 
 
 * `date`
 * `description` (optional)
+
+The `groups` field contains an array of groups, and `data` contains an array of events belonging to one group. To specify the symbol of a group, use `format`.
+
+**Note:** Even if you are going to create only one group of markers, you still have to include the `group` field into your data.
 
 In this sample, there are two groups of markers. For each group a symbol is specified, and each event has a description:
 
@@ -116,7 +116,7 @@ plot.eventMarkers({"groups": [
 
 ### group()
 
-You can create a group of markers with a certain index: combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}.
+You can create a group with a certain index: combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}.
 
 This method accepts an index as the first parameter and an array of objects (with the information about events) as the second one.
 
@@ -125,9 +125,9 @@ Only standard data fields are used:
 * `date`
 * `description` (optional)
 
-**Note:** As a "getter", {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} allows you to access a group with a certain index.
+You cannot change the symbols of groups through data, but you can use the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method.
 
-In this case you cannot change the symbols of groups through data, but you can use the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method.
+**Note:** As a "getter", {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} allows you to access a group with a certain index.
 
 The following sample shows how to add two groups of markers. For each group a symbol is specified, and each event has a description:
 
