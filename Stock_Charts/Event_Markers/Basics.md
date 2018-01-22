@@ -4,13 +4,19 @@
 
 ## Overview
 
-*Event Markers are very helpful elements of the chart, as they allow showing user explicitly an event that took place at a specific moment of time.*
+An event marker is an element of the chart indicating an event that took place at a certain time. As a rule, each marker has a text symbol, and the description of events is shown in tooltips.
 
-*This article explains how to add event markers to a chart, how to create different markers groups, and how to configure the appearance.*
+This article explains how to add event markers, group them, and configure their appearance.
 
-*Check out [Event Marker Tooltips](Tooltips) and [Event Marers Events](Events) to learn more.*
+To learn more, see the [Tooltips](Tooltips) and [Events](Events) articles.
 
 ## Quick Start
+
+To add event markers, pass your data to the {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} method.
+
+The only thing you need to specify is the dates of events. If you want the information about events to be shown in tooltips, add the `description` data field.
+
+This sample demonstrates how to add one group of event markers with basic settings:
 
 ```
 // add event markers
@@ -34,21 +40,45 @@ plot.eventMarkers({"groups": [
 
 ## Data
 
-поля для событий:
-date - единств. обязательное поле
-description - берется в тултипы по умолчанию
-+ примечание custom field (ссылка на статью про тултипы)
+You can use three methods to add event markers:
 
-поля для групп:
-format
-data
+* {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api}
+* {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}
+* {api:anychart.core.stock.eventMarkers.Controller#data}data(){api}
 
-+ само поле group
+As shown in the subsections below, for each method you should organize data in a different way and use different data fields. 
+
+There are two data fields working with all methods:
+
+* `date`
+* `description`
+
+The `date` is the only field that is always required. The `description` field is optional, but it is shown in tooltips by default. If there is no description, the symbol of a group is shown instead.
+
+The symbol is a text element displayed on markers and shared by all elements of the group. The way to customize symbols depends on the method you use. Since they are resized to fit markers, the best choice is to specify one or two letters (with an empty string, no text is displayed). The default symbol is "A" for all groups.
+
+**Note:** You can add custom fields to your data. See [Event Marker Tooltips](Tooltips).
 
 ### eventMarkers()
 
-принимает JSON-объект, который содержит информацию о группах
-написать здесь про поле format - работает только для группы
+The {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} method accepts a JSON object with the information about the groups of markers.
+
+Here are data fields affecting groups:
+
+* `group`
+* `data`
+* `format` (optional)
+
+The `groups` field contains an array of groups, and `data` contains an array of events belonging to one group. To specify the symbol of a group, use `format`.
+
+**Note:** Even if you are going to create only one group of markers, you still have to include the `group` field into your data.
+
+The following fields affect events inside groups: 
+
+* `date`
+* `description` (optional)
+
+In this sample, there are two groups of markers. For each group a symbol is specified, and each event has a description:
 
 ```
 // add two groups of event markers
@@ -86,14 +116,20 @@ plot.eventMarkers({"groups": [
 
 ### group()
 
-{api:anychart.core.stock.eventMarkers.Controller#group}group(){api}
+You can create a group of markers with a certain index: combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}.
 
-groups() как геттер позволяет обратиться к группам по индексу
-как сеттер - создать группу с определенным индексом
-принимает индекс + массив объектов, содержащий информацию об отдельных событиях
-тут используется метод format()
-по умолчанию у все групп символ - A
+This method accepts an index as the first parameter and an array of objects (with the information about events) as the second one.
 
+Only standard data fields are used:
+
+* `date`
+* `description` (optional)
+
+**Note:** As a "getter", {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} allows you to access a group with a certain index.
+
+In this case you cannot change the symbols of groups through data, but you can use the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method.
+
+The following sample shows how to add two groups of markers. For each group a symbol is specified, and each event has a description:
 
 ```
 var eventMarkers = plot.eventMarkers();
@@ -133,9 +169,9 @@ eventMarkers.group(1).format("B");
 
 ### data()
 
-написать про методы data() и groups()
-создает одну группу с индексом 0
-принимает тоже массив объектов
+If you need to add only one group of markers, it makes sense to combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#data}data(){api}.
+
+This method accepts an array of objects with the information about events belonging to one group. Unlike {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}, it does not allow specifying the index of your group explicitly. Therefore, only one group can be created this way (its index is 0).
 
 ```
 // add event markers
