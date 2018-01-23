@@ -77,9 +77,9 @@ The [appearance settings](../Appearance_Settings) of a Polygon chart can be conf
 
 Combine them with the following methods:
 
-* {api:anychart.core.polar.series.Polygon##fill}fill(){api} to set the fill
-* {api:anychart.core.polar.series.Polygon##hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.polar.series.Polygon##stroke}stroke(){api} to set the stroke
+* {api:anychart.core.polar.series.Polygon#fill}fill(){api} to set the fill
+* {api:anychart.core.polar.series.Polygon#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.polar.series.Polygon#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 

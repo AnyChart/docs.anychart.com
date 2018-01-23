@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Event Markers Events 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, .wrapper {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            position: relative;
+        }
+        .chart-column {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+        }
+        .feed-column {
+            position: absolute;
+            top: 2%;
+            right: 15px;
+            width: 29.5%;
+            height: 94%;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+        .news-scrollbar {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+        .news-scrollbar a {
+            color: #337ab7;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .news-item .cluster {
+            display: block;
+            margin: 0 0 0 30px;
+            width: auto;
+            float: none;
+        }
+        .news-item {
+            display: block;
+            padding: 7px 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .news-item .source {
+            color: #666;
+        }
+        .news-item .pin {
+            float: left;
+            background: #eee;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 3px;
+            text-align: center;
+            vertical-align: middle;
+            display: inline;
+            border: 1px solid #bebebe;
+        }
+        .news-item:hover {
+            background: rgba(86, 112, 122, 0.1);
+        }
+        .news-item:hover .pin {
+            background: #7cc742;
+            color: #fff;
+            border: 1px solid #858585;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper"> 
+<div class="chart-column" id="container"></div> 
+<div class="feed-column news-scrollbar" id="news"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data for the news column
+    var mapping = dataTable.mapAs({value: 4});
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    plot.line(mapping).name("CSCO");
+
+    // create data for event markers and the newsfeed
+    var events = {"groups": [
+      {
+        "format": "A",
+        "data": [
+          {
+            "description": "Andiamo Systems Acquisition",
+            "full_desc": "Cisco announced the acquisition of Andiamo Systems, Inc.",
+            "date": "2004-02-20",
+            "url": "..."
+          },
+          {
+            "description": "PostPath Acquisition",
+            "full_desc": "Cisco announced its intent to acquire PostPath, Inc.",
+            "date": "2008-04-27",
+            "url": "..."
+          }
+        ]
+      },
+      {
+        "format": "B",
+        "data": [
+          {
+            "description": "Alliance with TCS",
+            "full_desc": "Cisco and Tata Consultancy Services announced strategic alliance",
+            "date": "2009-02-10",
+            "url": "..."
+          },
+          {
+            "description": "Intelligent Urbanisation",
+            "full_desc": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore",
+            "date": "2009-02-12",
+            "url": "..."
+          },
+        ]
+      }
+    ]};
+
+    // add event markers
+    plot.eventMarkers(events);
+
+    // set the chart title
+    chart.title("Events: Displaying Info Box");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>
