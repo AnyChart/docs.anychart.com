@@ -20,7 +20,7 @@ AnyChart Stock has a very flexible and convenient set of tools for working with 
 
 Here is a basic sample of a chart with Event Markers:
 
-{sample}STOCK\_Event\_Markers\_Basic\_Overview{sample}
+{sample}STOCK\_Event\_Markers\_Overview{sample}
 
 ## Articles and Demos
 

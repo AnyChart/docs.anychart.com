@@ -189,9 +189,23 @@ plot.eventMarkers().data([
 
 {sample}STOCK\_Event\_Markers\_Basic\_04{sample}
 
-## Appearance
+## Type and Appearance
 
 ### Groups
+
+The [appearance settings](../Appearance_Settings) of event markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+
+Combine them with the following methods:
+
+* {api:anychart.core.StateSettings#type}type(){api} to set the type
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+Here is the list of available marker types: {api:anychart.enums.EventMarkerType}Event Marker Types{api}.
+
+Please note that these methods affect all markers belonging to the same group. To learn how to configure adjust individual markers, see the [next section](#individual_markers).
+
+In the sample below, there is a chart with one group of event markers, their type and other appearance settings configured:
 
 ```
 var eventMarkers = plot.eventMarkers();
@@ -200,12 +214,17 @@ var eventMarkers = plot.eventMarkers();
 eventMarkers.normal().type("rect");
 eventMarkers.normal().fill("#00802b");
 eventMarkers.hovered().fill("#a0d3b1");
-eventMarkers.selected().fill("#00cc44"); 
+eventMarkers.selected().fill("#00cc44");
+eventMarkers.normal().stroke("#00802b")
+eventMarkers.hovered().stroke("#a0d3b1");  
+eventMarkers.selected().stroke("#00cc44");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_05{sample}
 
 ### Individual Markers
+
+You can also configure each marker individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // add event markers
@@ -215,16 +234,16 @@ plot.eventMarkers({"groups": [
       {
         "date": "2004-02-20",
         "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
-        "normal":   {"fill": "#00802b", "type": "rect"},
-        "hovered":  {"fill": "#a0d3b1"},
-        "selected": {"fill": "#00cc44"}   
+        "normal":   {"type": "rect", "fill": "#00802b", "stroke": "#00802b"},
+        "hovered":  {"fill": "#a0d3b1", "stroke": "#a0d3b1"},
+        "selected": {"fill": "#00cc44", "stroke": "#00cc44"}   
       },
       {
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
-        "normal":   {"fill": "#802b00", "type": "circle"},
-        "hovered":  {"fill": "#d3b1a0"},
-        "selected": {"fill": "#cc4400"}   
+        "normal":   {"type": "circle", "fill": "#802b00", "stroke": "#802b00"},
+        "hovered":  {"fill": "#d3b1a0", "stroke": "#d3b1a0"},
+        "selected": {"fill": "#cc4400", "stroke": "#cc4400"}   
       }
     ]
   }
