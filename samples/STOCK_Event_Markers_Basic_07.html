@@ -26,6 +26,9 @@
             top: 25px;
             bottom: 0;
         }
+        #fieldSelect {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -36,8 +39,8 @@
     <option value="series-positive">Series Positive</option>
     <option value="series-zero">Series Zero</option>
 </select>
-<select id="fieldSelect" onchange="setPosition()">
-
+<select id="fieldSelect">
+    <option value="default" selected disabled>Select Field</option>
     <option value="open">open</option>
     <option value="high">high</option>
     <option value="low">low</option>
@@ -92,24 +95,20 @@ anychart.onDocumentReady(function () {
 });
 
 // set the position of event markers
-function setPosition(position){
+function setPosition(){
   var positionSelect = document.getElementById("positionSelect");
-  plot.eventMarkers().position(positionSelect);
-  if (positionSelect == "series") {
-  };
-  // update the chart title
-  chart.title("Event Markers: Position\n(position = " +
-              plot.eventMarkers().position() + ", field = " +
-              plot.eventMarkers().fieldName() + ")");
-};
-
-function setField(field){
   var fieldSelect = document.getElementById("fieldSelect");
-  plot.eventMarkers().fieldName(fieldSelect);
+  if (positionSelect == "series") {
+    fieldSelect.style.visibility = "visible";
+    plot.eventMarkers().position(positionSelect);
+    plot.eventMarkers().fieldName(fieldSelect);
+  } else { 
+      plot.eventMarkers().position(positionSelect);
   // update the chart title
-  chart.title("Event Markers: Position\n(position = " +
-              plot.eventMarkers().position() + ", field = " +
-              plot.eventMarkers().fieldName() + ")");
+  // chart.title("Event Markers: Position\n(position = " +
+              // plot.eventMarkers().position() + ", field = " +
+              // plot.eventMarkers().fieldName() + ")");
+  }
 };
 </script>
 </body>
