@@ -254,11 +254,7 @@ plot.eventMarkers({"groups": [
 
 ## Position
 
-*Event markers can be placed on the X axis, or be bound to any series on the plot. When bound to a series - you can define which value is used in case of multi-value series (e.g. OHLC). When there is only one series on the plot and position is set to `"series"` - chart will determine this automatically.*
-
-By default, event markers are bound to the X-axis. However, you can bind them to a series or...
-
-To set the position of event markers, call the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the following parameters:
+By default, event markers are bound to the X-axis, but you can also bind them to a series value. To set the position of event markers, call the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the following parameters:
 
 * `axis` (default)
 * `series` 
@@ -266,13 +262,24 @@ To set the position of event markers, call the {api:anychart.core.stock.eventMar
 * `series-positive`
 * `series-zero`
 
+When you choose `series-negative`, `series-positive`, or `series-zero`, a marker is displayed on the series only if the value corresponding to its date is negative / positive / zero. Otherwise, the marker is shown on the X-axis.
+
+Some series types (for example, OHLC) suggest that each data point has more than one value. In this case, all positions except `axis` require specifying the value (data field) you want markers to be bound to. Use the {api:anychart.core.stock.eventMarkers.Controller#fieldName}fieldName(){api} method:
+
 ```
+// create an ohlc series
+plot.ohlc(mapping);
+
 // set the position of event markers
 plot.eventMarkers().position("series");
 plot.eventMarkers().fieldName("high");
 ```
 
+In this sample, you can bind event markers either to the X-axis or to one of the four values of the OHLC series:
+
 {sample}STOCK\_Event\_Markers\_Basic\_07{sample}
+
+If there are two or more series on the plot, for all position except `axis` you need to specify the id of the series – use {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
 ```
 // bind event markers to the first series
