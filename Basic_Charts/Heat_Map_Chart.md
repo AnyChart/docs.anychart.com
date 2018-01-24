@@ -289,13 +289,11 @@ chart.tooltip().format(function (){
 
 #### Display Mode
 
-You can configure the display mode of labels – call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
+By default, a label is not shown if it does not fit the width of a cell. However, you can hide such labels or always show all labels. To set the display mode of labels, call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
 
-* `"alwaysShow"` to always labels
-* `"clip"` – to crop labels to fit cells
-* `"drop"` – to hide labels that are too long to fit cells
-
-The default display mode is `drop`: a label is not shown if it does not fit the width of a cell.
+* `"drop"` (default)
+* `"clip"`
+* `"alwaysShow"`
 
 The following sample shows how these modes work:
 
