@@ -279,12 +279,14 @@ In this sample, you can bind event markers either to the X-axis or to one of the
 
 {sample}STOCK\_Event\_Markers\_Basic\_07{sample}
 
-If there are two or more series on the plot, for all position except `axis` you need to specify the id of the series – use {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
+If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers – {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
 ```
 // bind event markers to the first series
 plot.eventMarkers().position("series");
 plot.eventMarkers().seriesId(0);
 ```
+
+In the following sample, there are two series, and you can display markers on either of them:
 
 {sample}STOCK\_Event\_Markers\_Basic\_08{sample}
