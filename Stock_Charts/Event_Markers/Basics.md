@@ -262,7 +262,7 @@ By default, event markers are bound to the X-axis, but you can also bind them to
 * `series-positive`
 * `series-zero`
 
-When you choose `series-negative`, `series-positive`, or `series-zero`, a marker is displayed on the series only if the value corresponding to its date is negative / positive / zero. Otherwise, the marker is shown on the X-axis.
+When you choose `series-negative`, `series-positive`, or `series-zero`, a marker is displayed on the series only if the value corresponding to its date is <= 0 / >= 0 / = 0. Otherwise, the marker is shown on the zero of the Y-axis.
 
 Some series types (for example, OHLC) suggest that each data point has more than one value. In this case, all positions except `axis` require specifying the value (data field) you want markers to be bound to. Use the {api:anychart.core.stock.eventMarkers.Controller#fieldName}fieldName(){api} method:
 

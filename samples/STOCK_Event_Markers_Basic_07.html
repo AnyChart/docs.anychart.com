@@ -26,16 +26,18 @@
             top: 25px;
             bottom: 0;
         }
-        #fieldSelect {
+        #fieldSelect, #fieldSelectId {
             visibility: hidden;
         }
     </style>
 </head>
 <body>
+<label for="positionSelect">Position: </label>
 <select id="positionSelect" onchange="setPosition()">
-    <option value="axis">Axis</option>  
-    <option value="series">Series</option>
+    <option value="axis">axis</option>  
+    <option value="series">series</option>
 </select>
+<label id="fieldSelectId" for="fieldSelect">Field: </label>
 <select id="fieldSelect" onchange="setPosition()">
     <option value="open" selected>open</option>
     <option value="high">high</option>
@@ -112,14 +114,17 @@ anychart.onDocumentReady(function () {
 function setPosition(){
   var positionSelect = document.getElementById("positionSelect");
   var fieldSelect = document.getElementById("fieldSelect");
+  var fieldSelectId = document.getElementById("fieldSelectId");
   plot.eventMarkers().position(positionSelect.value);
   if (positionSelect.value == "axis") {
     fieldSelect.style.visibility = "hidden";
+    fieldSelectId.style.visibility = "hidden";
     // update the chart title
     chart.title("Event Markers: Position\n(position = " +
                 plot.eventMarkers().position() + ")");
   } else { 
-  	  fieldSelect.style.visibility = "visible";
+      fieldSelect.style.visibility = "visible";
+      fieldSelectId.style.visibility = "visible";
       plot.eventMarkers().fieldName(fieldSelect.value);
       // update the chart title
       chart.title("Event Markers: Position\n(position = " +

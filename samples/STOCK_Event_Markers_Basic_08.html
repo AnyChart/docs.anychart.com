@@ -27,21 +27,19 @@
             top: 25px;
             bottom: 0;
         }
-        #fieldSelect {
-            visibility: hidden;
-        }
     </style>
 </head>
 <body>
-<select id="positionSelect" onchange="setPosition()">
-    <option value="axis">Axis</option>  
-    <option value="series">Series</option>
+<select id="seriesSelect" onchange="setPosition()">
+    <option value="0">Series 1</option>  
+    <option value="1">Series 2</option>
 </select>
-<select id="fieldSelect" onchange="setPosition()">
-    <option value="open" selected>open</option>
-    <option value="high">high</option>
-    <option value="low">low</option>
-    <option value="close">close</option>
+<label for="positionSelect">Position: </label>
+<select id="positionSelect" onchange="setPosition()">
+    <option value="series">series</option>  
+    <option value="series-negative">series-negative</option>
+    <option value="series-positive">series-positive</option>  
+    <option value="series-zero">series-zero</option>
 </select>
 <div id="container"></div>
 <script>
@@ -78,27 +76,31 @@ anychart.onDocumentReady(function () {
     var mapping_2 = dataTable.mapAs({value: 2});
 
     // create a stock chart
-    var chart = anychart.stock();
+    chart = anychart.stock();
 
     // create a plot on the chart
-    var plot = chart.plot(0);
+    plot = chart.plot(0);
 
     // create two line series
-    var series_1 = plot.line(mapping_1);
-    var series_2 = plot.line(mapping_2);
+    var series_1 = plot.line(mapping_1).name("Series 1");
+    var series_2 = plot.line(mapping_2).name("Series 2");
 
     // add event markers
     plot.eventMarkers({"groups": [
       {
         "data": [
           {
-            "date": "2004-02-20",
-            "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+            "date": "2015-12-24",
+            "description": "Event 1"
           },
           {
-            "date": "2008-04-27",
-            "description": "Cisco announced its intent to acquire PostPath, Inc."
-          }
+            "date": "2016-01-03",
+            "description": "Event 2"
+          },
+          {
+            "date": "2016-01-07",
+            "description": "Event 3"
+          },
         ]
       }
     ]});
@@ -108,7 +110,9 @@ anychart.onDocumentReady(function () {
     plot.eventMarkers().seriesId(0);
 
     // set the chart title
-    chart.title("Event Markers: Position");
+    chart.title("Event Markers: Position\n(series index = " +
+                plot.eventMarkers().seriesId() + ", position = " +
+                plot.eventMarkers().position() + ")");
 
     // set the container id
     chart.container("container");
@@ -116,6 +120,18 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// set the position of event markers
+function setPosition(){
+  var seriesSelect = document.getElementById("seriesSelect");
+  var positionSelect = document.getElementById("positionSelect");
+  plot.eventMarkers().seriesId(seriesSelect.value);
+  plot.eventMarkers().position(positionSelect.value);
+  // update the chart title
+  chart.title("Event Markers: Position\n(series index = " +
+              plot.eventMarkers().seriesId() + ", position = " +
+              plot.eventMarkers().position() + ")");
+};
 </script>
 </body>
 </html>
