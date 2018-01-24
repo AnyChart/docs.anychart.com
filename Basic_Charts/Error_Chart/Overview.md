@@ -140,12 +140,12 @@ var data = [
 
 ## Error Mode
 
-The {api:anychart.core.utils.Error#mode}mode(){api} method allows you to change the error mode of a series (to enable or disable error bars on it). There are four possible error modes that are set by these parameters:
+By default, both Y- and X-error bars are shown. However, you can show only Y- or X-bars or disable both. To set the error mode, call the {api:anychart.core.utils.Error#mode}mode(){api} method with one of the four parameters:
 
-* `"both"` enables both X- and Y-error bars
-* `"none"` disables all error bars
-* `"value"` shows only Y-bars
-* `"x"` shows only X-bars
+* `"both"` (default)
+* `"none"`
+* `"value"`
+* `"x"`
 
 ```
 // create and configure error bars

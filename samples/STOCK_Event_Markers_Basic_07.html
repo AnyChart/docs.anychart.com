@@ -29,11 +29,20 @@
     </style>
 </head>
 <body>
-<button onclick="positionSeries('open')">Series: Open</button>
-<button onclick="positionSeries('high')">Series: High</button>
-<button onclick="positionSeries('low')">Series: Low</button>
-<button onclick="positionSeries('close')">Series: Close</button>
-<button onclick="positionAxis()">X-Axis</button>
+<select id="positionSelect" onchange="setPosition()">
+    <option value="axis">Axis</option>  
+    <option value="series">Series</option>
+    <option value="series-negative">Series Negative</option>
+    <option value="series-positive">Series Positive</option>
+    <option value="series-zero">Series Zero</option>
+</select>
+<select id="fieldSelect" onchange="setPosition()">
+
+    <option value="open">open</option>
+    <option value="high">high</option>
+    <option value="low">low</option>
+    <option value="close">close</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -82,18 +91,21 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// bind event markers to the X-axis
-function positionAxis(){
-  plot.eventMarkers().position("axis");
+// set the position of event markers
+function setPosition(position){
+  var positionSelect = document.getElementById("positionSelect");
+  plot.eventMarkers().position(positionSelect);
+  if (positionSelect == "series") {
+  };
   // update the chart title
   chart.title("Event Markers: Position\n(position = " +
-              plot.eventMarkers().position() + ")");
+              plot.eventMarkers().position() + ", field = " +
+              plot.eventMarkers().fieldName() + ")");
 };
 
-// bind event markers to the series
-function positionSeries(field){
-  plot.eventMarkers().position("series");
-  plot.eventMarkers().fieldName(field);
+function setField(field){
+  var fieldSelect = document.getElementById("fieldSelect");
+  plot.eventMarkers().fieldName(fieldSelect);
   // update the chart title
   chart.title("Event Markers: Position\n(position = " +
               plot.eventMarkers().position() + ", field = " +
