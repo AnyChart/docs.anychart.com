@@ -14,15 +14,26 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="positionSeries('open')">Series: Open</button>
+<button onclick="positionSeries('high')">Series: High</button>
+<button onclick="positionSeries('low')">Series: Low</button>
+<button onclick="positionSeries('close')">Series: Close</button>
+<button onclick="positionAxis()">X-Axis</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -34,25 +45,19 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 5});
+    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 
     // create a stock chart
-    var chart = anychart.stock();
+    chart = anychart.stock();
 
-    // create the first plot
-    var plot_1 = chart.plot(0);
+    // create a plot on the chart
+    plot = chart.plot(0);
 
-    // create an ohlc series on the first plot
-    plot_1.ohlc(mapping).name("CSCO");
+    // create an ohlc series
+    plot.ohlc(mapping).name("CSCO");
 
-    // create the second plot
-    var plot_2 = chart.plot(1);
-
-    // create a line series on the second plot
-    plot_2.line(mapping).name("Volume");
-
-    // create data for event markers
-    var events = {"groups": [
+    // add event markers
+    plot.eventMarkers({"groups": [
       {
         "data": [
           {
@@ -62,26 +67,11 @@ anychart.onDocumentReady(function () {
           {
             "date": "2008-04-27",
             "description": "Cisco announced its intent to acquire PostPath, Inc."
-          }
+          },
         ]
       }
-    ]};
+    ]});
 
-    // add event markers to the first plot
-    plot_1.eventMarkers(events);
-
-    // add event markers to the second plot
-    plot_2.eventMarkers(events);
-
-    // set the position of event markers on the first plot
-    plot_1.eventMarkers().position("series");
-    plot_1.eventMarkers().fieldName("high");
-
-
-
-    // set the chart padding
-    chart.padding().left(90);
-    
     // set the chart title
     chart.title("Event Markers: Position");
 
@@ -91,6 +81,24 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// bind event markers to the X-axis
+function positionAxis(){
+  plot.eventMarkers().position("axis");
+  // update the chart title
+  chart.title("Event Markers: Position\n(position = " +
+              plot.eventMarkers().position() + ")");
+};
+
+// bind event markers to the series
+function positionSeries(field){
+  plot.eventMarkers().position("series");
+  plot.eventMarkers().fieldName(field);
+  // update the chart title
+  chart.title("Event Markers: Position\n(position = " +
+              plot.eventMarkers().position() + ", field = " +
+              plot.eventMarkers().fieldName() + ")");
+};
 </script>
 </body>
 </html>

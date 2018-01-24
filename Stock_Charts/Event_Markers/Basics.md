@@ -254,22 +254,26 @@ plot.eventMarkers({"groups": [
 
 ## Position
 
+By default, event markers are bound to the X-axis. You can set their position by calling the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the following parameters:
+
+* `x` – 
+* `x` –
+* `x` –
+* `x` –
+* `x` –
+* `axis` – markers are bound to the X-axis
+
 *Event markers can be placed on the X axis, or be bound to any series on the plot. When bound to a series - you can define which value is used in case of multi-value series (e.g. OHLC). When there is only one series on the plot and position is set to `"series"` - chart will determine this automatically.*
 
 ```
-// add event markers to the first plot
-plot_1.eventMarkers(events);
+// bind event markers to the X-axis
+plot.eventMarkers().position("axis");
+```
 
-// add event markers to the second plot
-plot_2.eventMarkers(events);
-
-// set the position of event markers on the first plot
-plot_1.eventMarkers().position("series");
-plot_1.eventMarkers().fieldName("high");
-
-// set the position of event markers on the second plot
-var eventMarkers_2 = plot_2.eventMarkers()
-plot_2.eventMarkers().position("axis");
+```
+// bind event markers to the series
+plot.eventMarkers().position("series");
+plot.eventMarkers().fieldName("high");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basic\_07{sample}
