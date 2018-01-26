@@ -108,7 +108,34 @@ plot.eventMarkers().tooltip().format( function (){
 *External tooltips are custom HTML elements that can be created and tuned to your taste. They are created by the means of HTML/CSS and [Events](Events) mechanism.*
 
 ```
+/* show a custom tooltip
+when the mouse is over a marker */
+eventMarker.listen("eventMarkerMouseOver", function(e) {
 
+  // show the tooltip
+  tooltip.style.visibility = "visible"; 
+
+  // set the text of the tooltip
+  tooltip.innerHTML = e.eventMarker.description;
+});
+
+/* hide the custom tooltip
+when the mouse is out of a marker */
+eventMarker.listen("eventMarkerMouseOut", function() {
+  tooltip.style.visibility = "hidden";
+});
+
+// set the position of custom tooltips
+chart.listen("mouseMove", function(e) {
+
+  var clientX = e["offsetX"];
+  var clientY = e["offsetY"];
+
+  tooltip.style.left = clientX + 20 + "px";
+  tooltip.style.top = clientY + 10 + "px";
+  tooltip.style.zIndex = 10000;
+  tooltip.style.border = "solid black 2px";
+});
 ```
 
 {sample}STOCK\_Event\_Markers\_Tooltips\_03{sample}

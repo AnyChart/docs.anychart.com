@@ -83,7 +83,7 @@ anychart.onDocumentReady(function () {
         document.getElementById("info").innerHTML = "";
     });
 
-    // open a new window on click
+    // open a new window when a marker is clicked
     chart.listen("eventMarkerClick", function (e) {
         var url = "https://www.google.ru/search?q=" +
                   e.eventMarker.description;
