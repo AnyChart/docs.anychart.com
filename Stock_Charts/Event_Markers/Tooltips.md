@@ -54,7 +54,7 @@ plot.eventMarkers().tooltip().format("Event: {%description}");
 
 {sample}STOCK\_Event\_Markers\_Tooltips\_01{sample}
 
-### Formatting Funcitons
+### Formatting Functions
 
 You can also adjust tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
