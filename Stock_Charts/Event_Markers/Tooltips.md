@@ -31,21 +31,6 @@ plot.eventMarkers({"groups": [
         "short_desc": "PostPath Acquisition"
       }
     ]
-  },
-  {
-    "format": "B",
-    "data": [
-      {
-        "date": "2009-02-10",
-        "description": "Cisco and Tata Consultancy Services announced strategic alliance.",
-        "short_desc": "Alliance with TCS"
-      },
-      {
-        "date": "2009-02-12",
-        "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore.",
-        "short_desc": "Intelligent Urbanisation"
-      }
-    ]
   }
 ]});
 
@@ -71,19 +56,6 @@ plot.eventMarkers({"groups": [
       {
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc."
-      }
-    ]
-  },
-  {
-    "format": "B",
-    "data": [
-      {
-        "date": "2009-02-10",
-        "description": "Cisco and Tata Consultancy Services announced strategic alliance."
-      },
-      {
-        "date": "2009-02-12",
-        "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
       }
     ]
   }
