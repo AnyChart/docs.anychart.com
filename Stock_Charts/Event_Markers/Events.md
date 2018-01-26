@@ -26,7 +26,7 @@ chart.listen("eventMarkerMouseOut", function () {
     document.getElementById("info").innerHTML = "";
 });
 
-// open a new window when a marker is clicked
+// open a url when a marker is clicked
 chart.listen("eventMarkerClick", function (e) {
     var url = "https://www.google.ru/search?q=" +
               e.eventMarker.description;

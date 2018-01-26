@@ -71,7 +71,7 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // disable the default tooltips of event markers
+    // disable the built-in tooltips of event markers
     var eventMarker = plot.eventMarkers();
     eventMarker.tooltip(false);
 
@@ -96,10 +96,8 @@ anychart.onDocumentReady(function () {
 
     // set the position of custom tooltips
     chart.listen("mouseMove", function(e) {
-
       var clientX = e["offsetX"];
       var clientY = e["offsetY"];
-
       tooltip.style.left = clientX + 20 + "px";
       tooltip.style.top = clientY + 10 + "px";
       tooltip.style.zIndex = 10000;

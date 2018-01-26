@@ -4,15 +4,28 @@
 
 ## Overview
 
-*Event Markers are very helpful elements of the chart, as they allow showing user explicitly an event that took place at a specific moment of time. Tooltip is an important part of Event markers, it shows detailed information when user moves the mouse over the event marker.*
+A tooltip is a text box displayed when a point on a chart is hovered, which allows you to show the detailed information about an event marker. You can either adjust the built-in AnyChart tooltips or create custom HTML tooltips.
 
-*AnyChart Stock charts provide two ways to show tooltips for event markers: Built-in Tooltips and custom HTML tooltips.*
 
 ## Built-In Tooltips
 
-*Built-in tooltips work as all other tooltips in AnyChart, learn the basics in [Tooltip](../../Common_Settings/Tooltip) article and see how it works with Event Markers:*
+The built-in tooltips of event markers work the same way as any other tooltips – see the [Tooltip](../../Common_Settings/Tooltip) article. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
+When you create data for event markers, you can add an optional data field – `description`. By default, it is shown in tooltips, and if there is no description, the symbol of a group is shown instead.
+
+The built-in tooltips are adjusted with the help of either tokens or formatting functions.
 
 ### Tokens
+
+You can configure the main text or titles of tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and the following [tokens](../../Common_Settings/Text_Formatters#string_tokens):
+
+* `{%date}`
+* `{%symbol}`
+* `{%description}`
+
+Please note that you can always add a custom field in your data and use a custom token corresponding to it.
+
+In the sample below, both the main text and title of tooltips are configured. In addition to the default tokens, a custom one (*{%short_desc}*) is used:
 
 ```
 // add event markers
@@ -42,6 +55,14 @@ plot.eventMarkers().tooltip().format("Event: {%description}");
 {sample}STOCK\_Event\_Markers\_Tooltips\_01{sample}
 
 ### Formatting Funcitons
+
+You can also configure the main text or titles of tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
+
+Here are fields that work with formatting functions: 
+
+* `date`
+* `symbol`
+* `description`
 
 ```
 // add event markers
@@ -74,12 +95,15 @@ plot.eventMarkers().tooltip().format( function (){
 
 {sample}STOCK\_Event\_Markers\_Tooltips\_02{sample}
 
-
 ## Custom HTML Tooltips
 
-*External tooltips are custom HTML elements that can be created and tuned to your taste. They are created by the means of HTML/CSS and [Events](Events) mechanism.*
+The built-in tooltips can be turned off and replaced with custom HTML tooltips. Use HTML/CSS and [Events](Events):
 
 ```
+// disable the built-in tooltips of event markers
+var eventMarker = plot.eventMarkers();
+eventMarker.tooltip(false);
+
 /* show a custom tooltip
 when the mouse is over a marker */
 eventMarker.listen("eventMarkerMouseOver", function(e) {
@@ -99,10 +123,8 @@ eventMarker.listen("eventMarkerMouseOut", function() {
 
 // set the position of custom tooltips
 chart.listen("mouseMove", function(e) {
-
   var clientX = e["offsetX"];
   var clientY = e["offsetY"];
-
   tooltip.style.left = clientX + 20 + "px";
   tooltip.style.top = clientY + 10 + "px";
   tooltip.style.zIndex = 10000;
