@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basic 03"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -45,10 +45,8 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    var eventMarkers = plot.eventMarkers();
-
-    // add the first group of event markers
-    eventMarkers.group(0, [
+    // add event markers
+    plot.eventMarkers().data([
       {
         "date": "2004-02-20",
         "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
@@ -59,26 +57,8 @@ anychart.onDocumentReady(function () {
       }
     ]);
 
-    // set the symbol of the first group
-    eventMarkers.group(0).format("A");
-
-    // add the second group of event markers
-    eventMarkers.group(1, [
-      {
-        "date": "2009-02-10",
-        "description": "Cisco and Tata Consultancy Services announced strategic alliance."
-      },
-      {
-        "date": "2009-02-12",
-        "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
-      }
-    ]);
-
-    // set the symbol of the second group
-    eventMarkers.group(1).format("B");
-
     // set the chart title
-    chart.title("Event Markers: Data\ngroup()");
+    chart.title("Event Markers: Data\ndata()");
 
     // set the container id
     chart.container("container");

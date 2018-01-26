@@ -36,7 +36,7 @@ plot.eventMarkers({"groups": [
 ]});  
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_01{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_01{sample}
 
 ## Data
 
@@ -112,7 +112,7 @@ plot.eventMarkers({"groups": [
 ]});
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_02{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_02{sample}
 
 ### group()
 
@@ -165,7 +165,7 @@ eventMarkers.group(1, [
 eventMarkers.group(1).format("B");
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_03{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_03{sample}
 
 ### data()
 
@@ -187,7 +187,7 @@ plot.eventMarkers().data([
 ]);
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_04{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_04{sample}
 
 ## Type and Appearance
 
@@ -220,7 +220,7 @@ eventMarkers.hovered().stroke("#a0d3b1");
 eventMarkers.selected().stroke("#00cc44");
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_05{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_05{sample}
 
 ### Individual Markers
 
@@ -250,7 +250,7 @@ plot.eventMarkers({"groups": [
 ]});
 ```
 
-{sample}STOCK\_Event\_Markers\_Basic\_06{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_06{sample}
 
 ## Position
 
@@ -260,9 +260,9 @@ By default, event markers are bound to the X-axis, but you can also bind them to
 * `series` 
 * `series-negative`
 * `series-positive`
-* `series-zero`
+* `zero`
 
-When you choose `series-negative`, `series-positive`, or `series-zero`, a marker is displayed on the series only if the value corresponding to its date is <= 0 / >= 0 / = 0. Otherwise, the marker is shown on the zero of the Y-axis.
+When you choose `series-negative`, `series-positive`, or `zero`, a marker is displayed on the series only if the value corresponding to its date is <= 0 / >= 0 / = 0. Otherwise, the marker is shown on the zero of the Y-axis.
 
 Some series types (for example, OHLC) suggest that each data point has more than one value. In this case, all positions except `axis` require specifying the value (data field) you want markers to be bound to. Use the {api:anychart.core.stock.eventMarkers.Controller#fieldName}fieldName(){api} method:
 
@@ -277,7 +277,7 @@ plot.eventMarkers().fieldName("high");
 
 In this sample, you can bind event markers either to the X-axis or to one of the four values of the OHLC series:
 
-{sample}STOCK\_Event\_Markers\_Basic\_07{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_07{sample}
 
 If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers – {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
@@ -289,4 +289,4 @@ plot.eventMarkers().seriesId(0);
 
 In the following sample, there are two series, and you can display markers on either of them:
 
-{sample}STOCK\_Event\_Markers\_Basic\_08{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_08{sample}

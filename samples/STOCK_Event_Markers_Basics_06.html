@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basic 04"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 06"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -46,19 +46,29 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    plot.eventMarkers().data([
+    plot.eventMarkers({"groups": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
-      },
-      {
-        "date": "2008-04-27",
-        "description": "Cisco announced its intent to acquire PostPath, Inc."
+        "data": [
+          {
+            "date": "2004-02-20",
+            "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
+            "normal":   {"type": "rect", "fill": "#00802b", "stroke": "#00802b"},
+            "hovered":  {"fill": "#a0d3b1", "stroke": "#a0d3b1"},
+            "selected": {"fill": "#00cc44", "stroke": "#00cc44"}   
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "normal":   {"type": "circle", "fill": "#802b00", "stroke": "#802b00"},
+            "hovered":  {"fill": "#d3b1a0", "stroke": "#d3b1a0"},
+            "selected": {"fill": "#cc4400", "stroke": "#cc4400"}   
+          }
+        ]
       }
-    ]);
+    ]});
 
     // set the chart title
-    chart.title("Event Markers: Data\ndata()");
+    chart.title("Event Markers: Basic Sample");
 
     // set the container id
     chart.container("container");
