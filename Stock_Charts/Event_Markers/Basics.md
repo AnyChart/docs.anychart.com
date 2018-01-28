@@ -222,14 +222,20 @@ In the sample below, there is a chart with one group of event markers, their typ
 ```
 var eventMarkers = plot.eventMarkers();
 
-// configure the type and appearance of markers
-eventMarkers.normal().type("rect");
-eventMarkers.normal().fill("#00802b");
-eventMarkers.hovered().fill("#a0d3b1");
-eventMarkers.selected().fill("#00cc44");
-eventMarkers.normal().stroke("#00802b")
-eventMarkers.hovered().stroke("#a0d3b1");  
-eventMarkers.selected().stroke("#00cc44");
+// configure the appearance of markers
+
+eventMarkers.normal().fill("#d1ead9");
+eventMarkers.hovered().fill("white");
+eventMarkers.selected().fill("white");
+
+eventMarkers.normal().stroke("2 #009933");
+eventMarkers.hovered().stroke("2 #009933");
+eventMarkers.selected().stroke("2 #004d1a");
+
+eventMarkers.normal().fontColor("#009933");
+eventMarkers.hovered().fontColor("#009933");
+eventMarkers.selected().fontColor("#004d1a");
+eventMarkers.normal().fontWeight(600);
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_06{sample}
@@ -295,17 +301,25 @@ plot.eventMarkers({"groups": [
       {
         "date": "2004-02-20",
         "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
-        "normal":   {"type": "rect", "fill": "#00802b", "stroke": "#00802b"},
-        "hovered":  {"fill": "#a0d3b1", "stroke": "#a0d3b1"},
-        "selected": {"fill": "#00cc44", "stroke": "#00cc44"}   
+        "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
+                     "fontColor": "#009933", "fontWeight": 600,
+                     "type": "rect"},
+        "hovered":  {"fill": "white", "stroke": "2 #009933",
+                     "fontColor": "#009933"},
+        "selected": {"fill": "white", "stroke": "2 #194d00",
+                     "fontColor": "#194d00"}   
       },
       {
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
-        "normal":   {"type": "circle", "fill": "#802b00", "stroke": "#802b00"},
-        "hovered":  {"fill": "#d3b1a0", "stroke": "#d3b1a0"},
-        "selected": {"fill": "#cc4400", "stroke": "#cc4400"}   
-      }
+        "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
+                     "fontColor": "#990033", "fontWeight": 600,
+                     "type": "circle"},
+        "hovered":  {"fill": "white", "stroke": "2 #990033",
+                     "fontColor": "#990033"},
+        "selected": {"fill": "white", "stroke": "2 #4d1a00",
+                     "fontColor": "#4d1a00"}   
+      },
     ]
   }
 ]});

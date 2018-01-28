@@ -63,14 +63,20 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // configure the type and appearance of markers
-    eventMarkers.normal().type("rect");
-    eventMarkers.normal().fill("#00802b");
-    eventMarkers.hovered().fill("#a0d3b1");
-    eventMarkers.selected().fill("#00cc44");
-    eventMarkers.normal().stroke("#00802b")
-    eventMarkers.hovered().stroke("#a0d3b1");  
-    eventMarkers.selected().stroke("#00cc44");
+    // configure the appearance of markers
+
+    eventMarkers.normal().fill("#d1ead9");
+    eventMarkers.hovered().fill("white");
+    eventMarkers.selected().fill("white");
+
+    eventMarkers.normal().stroke("2 #009933");
+    eventMarkers.hovered().stroke("2 #009933");
+    eventMarkers.selected().stroke("2 #004d1a");
+
+    eventMarkers.normal().fontColor("#009933");
+    eventMarkers.hovered().fontColor("#009933");
+    eventMarkers.selected().fontColor("#004d1a");
+    eventMarkers.normal().fontWeight(600);
 
     // set the chart title
     chart.title("Event Markers: Appearance");
