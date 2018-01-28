@@ -194,6 +194,7 @@ plot.eventMarkers().data([
 ...
 
 ```
+
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_05{sample}
