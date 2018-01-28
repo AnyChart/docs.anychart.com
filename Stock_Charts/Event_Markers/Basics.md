@@ -189,9 +189,20 @@ plot.eventMarkers().data([
 
 {sample}STOCK\_Event\_Markers\_Basics\_04{sample}
 
-## Type and Appearance
+## Type
 
-### Groups
+...
+
+```
+```
+
+{sample}STOCK\_Event\_Markers\_Basics\_05{sample}
+
+## Format
+
+...
+
+## Appearance
 
 The [appearance settings](../Appearance_Settings) of event markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
@@ -220,37 +231,17 @@ eventMarkers.hovered().stroke("#a0d3b1");
 eventMarkers.selected().stroke("#00cc44");
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_05{sample}
-
-### Individual Markers
-
-You can also configure each marker individually – use extra data fields corresponding with the methods mentioned above:
-
-```
-// add event markers
-plot.eventMarkers({"groups": [
-  {
-    "data": [
-      {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
-        "normal":   {"type": "rect", "fill": "#00802b", "stroke": "#00802b"},
-        "hovered":  {"fill": "#a0d3b1", "stroke": "#a0d3b1"},
-        "selected": {"fill": "#00cc44", "stroke": "#00cc44"}   
-      },
-      {
-        "date": "2008-04-27",
-        "description": "Cisco announced its intent to acquire PostPath, Inc.",
-        "normal":   {"type": "circle", "fill": "#802b00", "stroke": "#802b00"},
-        "hovered":  {"fill": "#d3b1a0", "stroke": "#d3b1a0"},
-        "selected": {"fill": "#cc4400", "stroke": "#cc4400"}   
-      }
-    ]
-  }
-]});
-```
-
 {sample}STOCK\_Event\_Markers\_Basics\_06{sample}
+
+## Width
+
+...
+
+```
+
+```
+
+{sample}STOCK\_Event\_Markers\_Basics\_07{sample}
 
 ## Position
 
@@ -277,7 +268,7 @@ plot.eventMarkers().fieldName("high");
 
 In this sample, you can bind event markers either to the X-axis or to one of the four values of the OHLC series:
 
-{sample}STOCK\_Event\_Markers\_Basics\_07{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_08{sample}
 
 If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers – {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
@@ -289,4 +280,34 @@ plot.eventMarkers().seriesId(0);
 
 In the following sample, there are two series, and you can display markers on either of them:
 
-{sample}STOCK\_Event\_Markers\_Basics\_08{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_09{sample}
+
+## Individual Markers
+
+You can also configure each marker individually – use extra data fields corresponding with the methods... :
+
+```
+// add event markers
+plot.eventMarkers({"groups": [
+  {
+    "data": [
+      {
+        "date": "2004-02-20",
+        "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
+        "normal":   {"type": "rect", "fill": "#00802b", "stroke": "#00802b"},
+        "hovered":  {"fill": "#a0d3b1", "stroke": "#a0d3b1"},
+        "selected": {"fill": "#00cc44", "stroke": "#00cc44"}   
+      },
+      {
+        "date": "2008-04-27",
+        "description": "Cisco announced its intent to acquire PostPath, Inc.",
+        "normal":   {"type": "circle", "fill": "#802b00", "stroke": "#802b00"},
+        "hovered":  {"fill": "#d3b1a0", "stroke": "#d3b1a0"},
+        "selected": {"fill": "#cc4400", "stroke": "#cc4400"}   
+      }
+    ]
+  }
+]});
+```
+
+{sample}STOCK\_Event\_Markers\_Basics\_10{sample}
