@@ -50,6 +50,7 @@ anychart.onDocumentReady(function () {
       {
         "data": [
           {
+            "symbol": "1",
             "date": "2004-02-20",
             "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
             "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
@@ -61,6 +62,7 @@ anychart.onDocumentReady(function () {
                          "fontColor": "#194d00"}   
           },
           {
+            "symbol": "2",
             "date": "2008-04-27",
             "description": "Cisco announced its intent to acquire PostPath, Inc.",
             "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
@@ -74,6 +76,11 @@ anychart.onDocumentReady(function () {
         ]
       }
     ]});
+
+    // set the symbol of event markers
+    plot.eventMarkers().format(function (){
+      return this.getData("symbol");
+    });
 
     // set the chart title
     chart.title("Event Markers: Individual Markers");

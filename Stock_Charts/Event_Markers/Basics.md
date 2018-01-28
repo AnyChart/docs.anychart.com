@@ -191,7 +191,13 @@ plot.eventMarkers().data([
 
 ## Type
 
+{api:anychart.core.StateSettings#type}type(){api}
+
+Here is the list of available marker types: {api:anychart.enums.EventMarkerType}Event Marker Types{api}.
+
 ...
+
+**Note**: These method affect all markers belonging to the same group. To learn how to adjust individual markers, see [Individual Markers](#individual_markers).
 
 ```
 
@@ -201,6 +207,9 @@ plot.eventMarkers().data([
 
 ## Format
 
+* [Data](#data)
+* [Individual Markers](#individual_markers)
+
 ...
 
 ## Appearance
@@ -209,13 +218,17 @@ The [appearance settings](../Appearance_Settings) of event markers can be config
 
 Combine them with the following methods:
 
-* {api:anychart.core.StateSettings#type}type(){api} to set the type
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-Here is the list of available marker types: {api:anychart.enums.EventMarkerType}Event Marker Types{api}.
+...
 
-Please note that these methods affect all markers belonging to the same group. To learn how to configure adjust individual markers, see the [next section](#individual_markers).
+* {api:anychart.core.StateSettings#fontStyle}fontColor(){api} to set the font color
+* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
+
+{api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+**Note**: These methods affect all markers belonging to the same group. To learn how to adjust individual markers, see [Individual Markers](#individual_markers).
 
 In the sample below, there is a chart with one group of event markers, their type and other appearance settings configured:
 
@@ -299,6 +312,7 @@ plot.eventMarkers({"groups": [
   {
     "data": [
       {
+        "symbol": "1",
         "date": "2004-02-20",
         "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
         "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
@@ -310,6 +324,7 @@ plot.eventMarkers({"groups": [
                      "fontColor": "#194d00"}   
       },
       {
+        "symbol": "2",
         "date": "2008-04-27",
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
@@ -323,6 +338,11 @@ plot.eventMarkers({"groups": [
     ]
   }
 ]});
+
+// set the symbol of event markers
+plot.eventMarkers().format(function (){
+  return this.getData("symbol");
+});
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_10{sample}
