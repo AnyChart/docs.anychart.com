@@ -205,11 +205,7 @@ Here is the list of available marker types: {api:anychart.enums.EventMarkerType}
 
 The symbol is a text element displayed on markers and shared by all elements of the group. The default symbol is "A" for all groups.
 
-To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more.
-
-You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers).
-
-Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
+To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more. You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers). Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
 
 **Note** To create a marker or group of markers with no text, use an empty string when you set the symbol.
 
