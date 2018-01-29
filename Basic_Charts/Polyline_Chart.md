@@ -28,7 +28,7 @@ This article explains how to create a basic Polyline chart as well as configure 
 <tr><td></td><td>[Polar Line](Polar_Plot/Line_Chart)</td></tr>
 <tr><td></td><td>[Radar Line](Radar_Plot/Line_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/polyline-chart/" target="_blank">Chartopedia: Polyline Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/radar-chart/" target="_blank">Chartopedia: Radar Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -83,7 +83,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Polyline chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.polar.series.Polyline##normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.polar.series.Polyline##selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of a Polyline chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.polar.series.Polyline#normal}normal(){api}, {api:anychart.core.cartesian.series.Line#hovered}hovered(){api}, and {api:anychart.core.polar.series.Polyline#selected}selected(){api} methods.
 
 Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 

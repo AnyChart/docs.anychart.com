@@ -28,7 +28,7 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><td></td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
 <tr><td></td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/polygon-chart/" target="_blank">Chartopedia: Polygon Chart</a></td></tr>
+<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/radar-chart/" target="_blank">Chartopedia: Radar Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -77,9 +77,9 @@ The [appearance settings](../Appearance_Settings) of a Polygon chart can be conf
 
 Combine them with the following methods:
 
-* {api:anychart.core.polar.series.Polygon##fill}fill(){api} to set the fill
-* {api:anychart.core.polar.series.Polygon##hatchFill}hatchFill(){api} to set the hatch fill
-* {api:anychart.core.polar.series.Polygon##stroke}stroke(){api} to set the stroke
+* {api:anychart.core.polar.series.Polygon#fill}fill(){api} to set the fill
+* {api:anychart.core.polar.series.Polygon#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.polar.series.Polygon#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
