@@ -319,7 +319,7 @@ Most settings are shared by markers belonging to the same group, but there is a 
 
 To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} with a function as a parameter. In this function, refer to the custom field with the help of {api: anychart.format.Context#getData}getData(){api}.
 
-This sample shows how to adjust individual markers. Please note that a custom data field (*"symbol"*) is used to set symbols:
+This sample shows how to adjust individual markers. Please note that a custom data field (*symbol*) is used to set symbols:
 
 ```
 // add event markers
