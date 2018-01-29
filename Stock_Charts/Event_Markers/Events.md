@@ -1,14 +1,29 @@
 {:index 5}
 
-# Event Markers Events
+# Events
 
 ## Overview
 
-*Using AnyChart [Event handling](../../Common_Settings/) with Event Markers allows you to integrate them in your application in more deep and meaningfull way.*
+This section explains how handling AnyChart [Event Listeners](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
 
 ## Events
 
-*To handle event markers events listen to appropriate events like this:*
+Here is the full list of events that work with event markers:
+
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>eventMarkersHover</td><td>Event type for hover on markers.</td></tr>
+<tr><td>eventMarkersSelect</td><td>Event type for select on markers.</td></tr>
+<tr><td>eventMarkerClick</td><td>Event type for the marker click.</td></tr>
+<tr><td>eventMarkerDblClick</td><td>Event type for the marker double click.</td></tr>
+<tr><td>eventMarkerMouseDown</td><td>Event type for the marker mouse down.</td></tr>
+<tr><td>eventMarkerMouseMove</td><td>Event type for the marker mouse move.</td></tr>
+<tr><td>eventMarkerMouseOut</td><td>Event type for the marker mouse over.</td></tr>
+<tr><td>eventMarkerMouseOver</td><td>Event type for the marker mouse over.</td></tr>
+<tr><td>eventMarkerMouseUp</td><td>Event type for the marker mouse up.</td></tr>
+</table>
+
+The following sample shows how listening to these events can be used:
 
 ```
 // show information when mouse is over a marker
@@ -38,12 +53,8 @@ chart.listen("eventMarkerClick", function (e) {
 
 ## Interactive List
 
-*Here is a sample of attaching a list element: {pg:gallery/Stock_Event_Markers/Stock_OHLC_Chart_with_Sidebar_Events_Feed}Event Markers with Sidebar List{pg}*
+In this sample, events are used to create an interactive list showing additional information about event markers: {pg:gallery/Stock_Event_Markers/Stock_OHLC_Chart_with_Sidebar_Events_Feed}Event Markers with Sidebar List{pg}*
 
 ## HTML Tooltips
 
-*Creating HTML tooltips is shown in [Tooltips](Tooltips) article.*
-
-## Info Box
-
-Coming soon.
+You can also use events to add custom HTML tooltips to your chart – see the [Tooltips](Tooltips) article.

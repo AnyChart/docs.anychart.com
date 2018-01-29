@@ -1,6 +1,6 @@
 {:index 2}
 
-# Event Markers Basics
+# Basics
 
 ## Overview
 
