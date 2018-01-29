@@ -4,9 +4,9 @@
 
 ## Overview
 
-An event marker is an element of the chart indicating an event that took place at a certain time. As a rule, each marker has a text symbol, and the description of events is shown in tooltips.
+An event marker is an element of the chart indicating an event that took place at a certain time. As a rule, a text symbol is displayed on each marker, and the description of events is shown in tooltips.
 
-This article explains how to add event markers, group them, and configure their appearance.
+This article explains how to add and configure event markers.
 
 To learn more, see the [Tooltips](Tooltips) and [Events](Events) articles.
 
@@ -53,11 +53,9 @@ There are two data fields working with all methods:
 * `date`
 * `description`
 
-The `date` is the only field that is always required. The `description` field is optional, but it is shown in tooltips by default. If there is no description, the symbol of a group is shown instead.
+The `date` is the only field that is always required. The `description` field is optional, but it is shown in tooltips by default (if there is no description, the symbol of a group is shown instead).
 
-The symbol is a text element displayed on markers and shared by all elements of the group. The way to customize symbols depends on the method you use. Since they are resized to fit markers, the best choice is to specify one or two letters (with an empty string, no text is displayed). The default symbol is "A" for all groups.
-
-**Note:** You can add custom fields to your data. See [Tooltips](Tooltips).
+**Note:** Sometimes it makes sense to add custom fields to your data. See the [Individual Markers](#individual_markers) section and [Tooltips](Tooltips) article.
 
 ### eventMarkers()
 
@@ -74,7 +72,7 @@ The following fields affect events inside groups:
 * `date`
 * `description` (optional)
 
-The `groups` field contains an array of groups, and `data` contains an array of events belonging to one group. To specify the symbol of a group, use `format`.
+The `groups` field contains an array of groups, and `data` contains an array of events belonging to the same group. To specify the symbol of a group, use `format`.
 
 **Note:** Even if you are going to create only one group of markers, you still have to include the `group` field into your data.
 
@@ -171,7 +169,7 @@ eventMarkers.group(1).format("B");
 
 If you need to add only one group of markers, it makes sense to combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#data}data(){api}.
 
-This method accepts an array of objects with the information about events belonging to one group. Unlike {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}, it does not allow specifying the index of your group explicitly. Therefore, only one group can be created this way (its index is 0).
+This method accepts an array of objects with the information about events. Unlike {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}, it does not allow specifying the index of a group explicitly. Therefore, only one group can be created this way (its index is 0).
 
 ```
 // add event markers
@@ -197,20 +195,23 @@ Here is the list of available marker types: {api:anychart.enums.EventMarkerType}
 
 ...
 
-**Note**: These method affect all markers belonging to the same group. To learn how to adjust individual markers, see [Individual Markers](#individual_markers).
-
 ```
 
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_05{sample}
 
-## Format
+## Format (Symbol)
 
-* [Data](#data)
-* [Individual Markers](#individual_markers)
+The symbol is a text element displayed on markers and shared by all elements of the group. The default symbol is "A" for all groups.
 
-...
+To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more.
+
+You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers).
+
+Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
+
+**Note** To create a marker or group of markers with no text, use an empty string when you set the symbol.
 
 ## Appearance
 
@@ -221,21 +222,17 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-...
+To adjust the font of symbols, use:
+* {api:anychart.core.StateSettings#fontStyle}fontColor(){api}
+* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
+* other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-* {api:anychart.core.StateSettings#fontStyle}fontColor(){api} to set the font color
-* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
-
-{api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
-
-**Note**: These methods affect all markers belonging to the same group. To learn how to adjust individual markers, see [Individual Markers](#individual_markers).
-
-In the sample below, there is a chart with one group of event markers, their type and other appearance settings configured:
+In the sample below, there is a chart with one group of event markers, their appearance settings configured:
 
 ```
 var eventMarkers = plot.eventMarkers();
 
-// configure the appearance of markers
+// configure the appearance of event markers
 
 eventMarkers.normal().fill("#d1ead9");
 eventMarkers.hovered().fill("white");
@@ -253,12 +250,26 @@ eventMarkers.normal().fontWeight(600);
 
 {sample}STOCK\_Event\_Markers\_Basics\_06{sample}
 
-## Width
+## Height and Width
 
-...
+You can set the height and Width of event markers in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#height}height(){api}
+* {api:anychart.core.StateSettings#width}width(){api}
+
 
 ```
+// set the height of event markers
+eventMarkers.normal().height(30);
+eventMarkers.hovered().height(35);
+eventMarkers.selected().height(40);
 
+// set the width of event markers
+eventMarkers.normal().width(35);
+eventMarkers.hovered().width(40);
+eventMarkers.selected().width(45);
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_07{sample}
@@ -298,13 +309,17 @@ plot.eventMarkers().position("series");
 plot.eventMarkers().seriesId(0);
 ```
 
-In the following sample, there are two series, and you can display markers on either of them:
+In the sample below, there are two series, and you can display markers on either of them:
 
 {sample}STOCK\_Event\_Markers\_Basics\_09{sample}
 
 ## Individual Markers
 
-You can also configure each marker individually – use extra data fields corresponding with the methods... :
+Most settings are shared by markers belonging to the same group. However, they can have different settings – use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Height and Width](#height_and_with).
+
+To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} with a function as a parameter. In this function, refer to the custom field with the help of {api: anychart.format.Context#getData}getData(){api}.
+
+This sample shows how to adjust individual markers. Please note that a custom data field (**"symbol"**) is used to set symbols:
 
 ```
 // add event markers
@@ -317,7 +332,7 @@ plot.eventMarkers({"groups": [
         "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
         "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
                      "fontColor": "#009933", "fontWeight": 600,
-                     "type": "rect"},
+                     "type": "circle"},
         "hovered":  {"fill": "white", "stroke": "2 #009933",
                      "fontColor": "#009933"},
         "selected": {"fill": "white", "stroke": "2 #194d00",
@@ -329,7 +344,7 @@ plot.eventMarkers({"groups": [
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
                      "fontColor": "#990033", "fontWeight": 600,
-                     "type": "circle"},
+                     "type": "rect", "width": 40},
         "hovered":  {"fill": "white", "stroke": "2 #990033",
                      "fontColor": "#990033"},
         "selected": {"fill": "white", "stroke": "2 #4d1a00",

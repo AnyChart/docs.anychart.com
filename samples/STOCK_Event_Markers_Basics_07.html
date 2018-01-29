@@ -63,17 +63,18 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // configure the type and appearance of markers
-    eventMarkers.normal().type("rect");
-    eventMarkers.normal().fill("#00802b");
-    eventMarkers.hovered().fill("#a0d3b1");
-    eventMarkers.selected().fill("#00cc44");
-    eventMarkers.normal().stroke("#00802b")
-    eventMarkers.hovered().stroke("#a0d3b1");  
-    eventMarkers.selected().stroke("#00cc44");
+    // set the height of event markers
+    eventMarkers.normal().height(30);
+    eventMarkers.hovered().height(35);
+    eventMarkers.selected().height(40);
+
+    // set the width of event markers
+    eventMarkers.normal().width(35);
+    eventMarkers.hovered().width(40);
+    eventMarkers.selected().width(45);
 
     // set the chart title
-    chart.title("Event Markers: Width");
+    chart.title("Event Markers: Height and Width");
 
     // set the container id
     chart.container("container");
