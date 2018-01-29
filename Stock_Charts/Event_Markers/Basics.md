@@ -189,14 +189,16 @@ plot.eventMarkers().data([
 
 ## Type
 
-{api:anychart.core.StateSettings#type}type(){api}
+Four types of event markers are available: **circle**, **flag**, **pin**, and **rectangle**. To set the type, call the {api:anychart.core.stock.eventMarkers.Controller#type}type(){api} method with one of these parameters:
 
-Here is the list of available marker types: {api:anychart.enums.EventMarkerType}Event Marker Types{api}.
-
-...
+* `"circle"` (default)
+* `"flag"`
+* `"pin"`
+* `"rect"`
 
 ```
-
+// set the type of event markers
+eventMarkers().type("rect");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_05{sample}

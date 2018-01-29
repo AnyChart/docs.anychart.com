@@ -23,6 +23,17 @@
     </style>
 </head>
 <body>
+<fieldset  data-role="controlgroup" data-type="horizontal">
+  <legend>Type:</legend>
+    <label for="circle">Circle</label>
+    <input onclick="switchType('circle')" type="radio" name="type" id="type" checked="checked">
+    <label for="flag">Flag</label>
+    <input onclick="switchType('flag')" type="radio" name="type" id="type">
+    <label for="pin">Pin</label>
+    <input onclick="switchType('pin')" type="radio" name="type" id="type">
+    <label for="rect">Rectangle</label>
+    <input onclick="switchType('rect')" type="radio" name="type" id="type">
+</fieldset>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -45,7 +56,7 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    var eventMarkers = plot.eventMarkers();
+    eventMarkers = plot.eventMarkers();
 
     // add event markers
     plot.eventMarkers({"groups": [
@@ -63,15 +74,6 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // configure the type and appearance of markers
-    eventMarkers.normal().type("rect");
-    eventMarkers.normal().fill("#00802b");
-    eventMarkers.hovered().fill("#a0d3b1");
-    eventMarkers.selected().fill("#00cc44");
-    eventMarkers.normal().stroke("#00802b")
-    eventMarkers.hovered().stroke("#a0d3b1");  
-    eventMarkers.selected().stroke("#00cc44");
-
     // set the chart title
     chart.title("Event Markers: Type");
 
@@ -81,6 +83,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// switch the type of event markers
+function switchType(type){
+eventMarkers.type(type);
+}
 </script>
 </body>
 </html>
