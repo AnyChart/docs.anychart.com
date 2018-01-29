@@ -4,7 +4,7 @@
 
 ## Overview
 
-This section explains how handling AnyChart [Event Listeners](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
+This section explains how handling AnyChart [Events](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
 
 ## Events
 

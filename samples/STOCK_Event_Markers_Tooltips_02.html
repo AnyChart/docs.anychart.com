@@ -52,11 +52,13 @@ anychart.onDocumentReady(function () {
         "data": [
           {
             "date": "2006-06-08",
-            "description": "Cisco announced the acquisition of Audium Corporation."
+            "description": "Cisco announced the acquisition of Audium Corporation.",
+            "short_desc": "Audium Corporation Acquisition"
           },
           {
             "date": "2008-04-27",
-            "description": "Cisco announced its intent to acquire PostPath, Inc."
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "short_desc": "PostPath Acquisition"
           }
         ]
       },
@@ -65,19 +67,20 @@ anychart.onDocumentReady(function () {
         "data": [
           {
             "date": "2009-02-10",
-            "description": "Cisco and Tata Consultancy Services announced strategic alliance."
+            "description": "Cisco and Tata Consultancy Services announced strategic alliance.",
+            "short_desc": "Alliance with TCS"
           },
           {
             "date": "2009-02-12",
-            "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
+            "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore.",
+            "short_desc": "Intelligent Urbanisation"
           }
         ]
       }
     ]});
 
     plot.eventMarkers().tooltip().titleFormat( function (){
-      return anychart.format.dateTime(this.date, "yyyy") +
-             " (" + this.symbol + ")";
+      return this.getData("short_desc") + " (" + this.symbol + ")";
     });
 
     plot.eventMarkers().tooltip().format( function (){

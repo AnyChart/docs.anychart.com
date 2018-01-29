@@ -64,6 +64,10 @@ Here are fields that work with formatting functions:
 * `symbol`
 * `description`
 
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+This sample shows how adjust the main text and titles of tooltips. Along with the default fields, a custom data field *"short desc"* is used:
+
 ```
 // add event markers
 plot.eventMarkers({"groups": [
@@ -83,8 +87,7 @@ plot.eventMarkers({"groups": [
 ]});
 
 plot.eventMarkers().tooltip().titleFormat( function (){
-  return anychart.format.dateTime(this.date, "yyyy") +
-         " (" + this.symbol + ")";
+  return this.getData("short_desc") + " (" + this.symbol + ")";
 });
 
 plot.eventMarkers().tooltip().format( function (){

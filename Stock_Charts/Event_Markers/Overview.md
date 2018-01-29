@@ -4,7 +4,7 @@
 
 ## Overview
 
-Event Markers are very helpful elements of the chart, as they allow showing user explicitly an event that took place at a specific moment of time.
+Event markers are very helpful elements of the chart, as they allow showing user explicitly an event that took place at a specific moment of time.
 
 AnyChart Stock has a very flexible and convenient set of tools for working with event markers. Here is a brief list of what it can do:
 
@@ -18,7 +18,7 @@ AnyChart Stock has a very flexible and convenient set of tools for working with 
 
 ## Sample
 
-Here is a basic sample of a chart with Event Markers:
+Here is a basic sample of a chart with event markers:
 
 {sample}STOCK\_Event\_Markers\_Overview{sample}
 
