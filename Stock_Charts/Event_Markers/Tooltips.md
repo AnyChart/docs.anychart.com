@@ -1,6 +1,6 @@
 {:index 4}
 
-# Event Marker Tooltips
+# Event Markers Tooltips
 
 ## Overview
 

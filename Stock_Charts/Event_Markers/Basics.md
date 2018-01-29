@@ -213,7 +213,7 @@ To set the symbol of a group, you should use either the `format` data field or t
 
 ## Appearance
 
-The [appearance settings](../Appearance_Settings) of event markers can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+The [appearance settings](../../Appearance_Settings) of event markers can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
@@ -254,7 +254,7 @@ eventMarkers.normal().fontWeight(600);
 
 ## Height and Width
 
-You can set the height and width of event markers in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+You can set the height and width of event markers in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
 Combine them with these methods:
 
@@ -317,9 +317,9 @@ In the sample below, there are two series, and you can display markers on either
 
 ## Individual Markers
 
-Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Height and Width](#height_and_with).
+Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Height and Width](#height_and_width).
 
-To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method with a function as a parameter. In the function, refer to the custom field with the help of {api: anychart.format.Context#getData}getData(){api}.
+To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method with a function as a parameter. In the function, refer to the custom field with the help of {api:anychart.format.Context#getData}getData(){api}.
 
 This sample shows how to adjust individual markers. Please note that a custom data field (*symbol*) is used to set symbols:
 
