@@ -55,7 +55,7 @@ There are two data fields working with all methods:
 
 The `date` is the only field that is always required. The `description` field is optional, but it is shown in tooltips by default (if there is no description, the symbol of a group is shown instead).
 
-**Note:** Sometimes it makes sense to add custom fields to your data. See the [Individual Markers](#individual_markers) section and [Tooltips](Tooltips) article.
+**Note:** Sometimes it makes sense to add custom fields to your data. See [Individual Markers](#individual_markers) and [Tooltips](Tooltips).
 
 ### eventMarkers()
 
@@ -74,7 +74,7 @@ The following fields affect events inside groups:
 
 The `groups` field contains an array of groups, and `data` contains an array of events belonging to the same group. To specify the symbol of a group, use `format`.
 
-**Note:** Even if you are going to create only one group of markers, you still have to include the `group` field into your data.
+**Note:** Even if you are going to create only one group of markers, you still have to include the `group` field to your data.
 
 In this sample, there are two groups of markers. For each group a symbol is specified, and each event has a description:
 
@@ -207,7 +207,11 @@ eventMarkers().type("rect");
 
 The symbol is a text element displayed on markers and shared by all elements of the group. The default symbol is "A" for all groups.
 
-To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more. You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers). Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
+To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more.
+
+You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers).
+
+Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
 
 **Note:** To create a marker or group of markers with no text, use an empty string when you set the symbol.
 
