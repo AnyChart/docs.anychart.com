@@ -34,9 +34,9 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
-        "short_desc": "Andiamo Systems Acquisition"
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation.",
+        "short_desc": "Audium Corporation Acquisition"
       },
       {
         "date": "2008-04-27",
@@ -71,8 +71,8 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
         "date": "2008-04-27",

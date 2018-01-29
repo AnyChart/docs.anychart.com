@@ -24,8 +24,8 @@ plot.eventMarkers({"groups": [
   {
     "data": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
         "date": "2008-04-27",
@@ -85,8 +85,8 @@ plot.eventMarkers({"groups": [
     "format": "A",
     "data": [
       {
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
         "date": "2008-04-27",
@@ -135,8 +135,8 @@ var eventMarkers = plot.eventMarkers();
 // add the first group of event markers
 eventMarkers.group(0, [
   {
-    "date": "2004-02-20",
-    "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+    "date": "2006-06-08",
+    "description": "Cisco announced the acquisition of Audium Corporation."
   },
   {
     "date": "2008-04-27",
@@ -175,8 +175,8 @@ This method accepts an array of objects with the information about events. Unlik
 // add event markers
 plot.eventMarkers().data([
   {
-    "date": "2004-02-20",
-    "description": "Cisco announced the acquisition of Andiamo Systems, Inc."
+    "date": "2006-06-08",
+    "description": "Cisco announced the acquisition of Audium Corporation."
   },
   {
     "date": "2008-04-27",
@@ -218,10 +218,14 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-To adjust the font of symbols, use:
+To configure the font of symbols, use:
 * {api:anychart.core.StateSettings#fontStyle}fontColor(){api}
 * {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
+* {api:anychart.core.StateSettings#fontWeight}fontSize(){api}
+* {api:anychart.core.StateSettings#fontWeight}adjustFontSize(){api}
 * other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
+
+**Note:** By default, the font size of symbols is adjusted to the size of markers. You can disable this setting by calling the {api:anychart.core.StateSettings#fontWeight}adjustFontSize(){api} method with `false` as a parameter and set the font size manually with {api:anychart.core.StateSettings#fontWeight}fontSize(){api}.
 
 In the sample below, there is a chart with one group of event markers, their appearance settings configured:
 
@@ -324,8 +328,8 @@ plot.eventMarkers({"groups": [
     "data": [
       {
         "symbol": "1",
-        "date": "2004-02-20",
-        "description": "Cisco announced the acquisition of Andiamo Systems, Inc.",
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation.",
         "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
                      "fontColor": "#009933", "fontWeight": 600,
                      "type": "circle"},
