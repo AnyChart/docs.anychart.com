@@ -100,6 +100,6 @@ plot.eventMarkers().tooltip().format( function (){
 
 ## Custom HTML Tooltips
 
-The built-in tooltips can be turned off and replaced with custom HTML tooltips. Use HTML/CSS and [Events](Events):
+The built-in tooltips can be turned off and replaced with custom HTML tooltips. Use HTML/CSS and [events](Events):
 
 {sample}STOCK\_Event\_Markers\_Tooltips\_03{sample}

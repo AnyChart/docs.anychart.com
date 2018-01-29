@@ -4,7 +4,7 @@
 
 ## Overview
 
-This section explains how handling AnyChart [Events](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
+This section explains how handling [AnyChart Events](../../Common_Settings/Event_Listeners) helps to embed event markers into your application.
 
 ## Events
 
@@ -53,7 +53,7 @@ chart.listen("eventMarkerClick", function (e) {
 
 ## Interactive List
 
-In this sample, events are used to create an interactive list showing additional information about event markers: {pg:gallery/Stock_Event_Markers/Stock_OHLC_Chart_with_Sidebar_Events_Feed}Event Markers with Sidebar List{pg}*
+In this sample, events are used to create an interactive list showing additional information about event markers: {pg:gallery/Stock_Event_Markers/Stock_OHLC_Chart_with_Sidebar_Events_Feed}Event Markers with Sidebar List{pg}.
 
 ## HTML Tooltips
 
