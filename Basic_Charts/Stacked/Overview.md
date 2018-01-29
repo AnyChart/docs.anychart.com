@@ -59,7 +59,7 @@ chart.yScale().ticks().interval(20);
 To add the percent symbol to axis labels, use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
-// configure labels on the Y-axis
+// configure labels on the y-axis
 chart.yAxis().labels().format("{%value}%");
 ```
 
@@ -205,34 +205,44 @@ Here is a sample that shows both stacking order directions"
 
 Here is the list of supported stacked charts:
 
-* [Stacked Area Chart](./Value/Area_Chart)
-* [Stacked Bar Chart](./Value/Bar_Chart)
-* [Stacked Column Chart](./Value/Column_Chart)
-* [Stacked Spline Area Chart](./Value/Spline_Area_Chart)
-* [Stacked Step Area Chart](./Value/Step_Area_Chart)
-* [Stacked Stick Chart](./Value/Stick_Chart)
-* [Percent Stacked Area Chart](./Percent/Area_Chart)
-* [Percent Stacked Bar Chart](./Percent/Bar_Chart)
-* [Percent Stacked Column Chart](./Percent/Column_Chart)
-* [Percent Stacked Spline Area Chart](./Percent/Spline_Area_Chart)
-* [Percent Stacked Step Area Chart](./Percent/Step_Area_Chart)
-* [Percent Stacked Stick Chart](./Percent/Stick_Chart)
-* [Radar Stacked Area Chart](./Value/Radar_Area_Chart)
-* [Radar Percent Stacked Area Chart](./Percent/Radar_Area_Chart)
-* [Vertical Stacked Area Chart](./Value/Vertical_Area_Chart)
-* [Vertical Stacked Spline Chart](./Value/Vertical_Spline_Area_Chart)
-* [Vertical Stacked Step Area Chart](./Value/Vertical_Step_Area_Chart)
-* [Vertical Stacked Stick Chart](./Value/Vertical_Stick_Chart)
-* [Vertical Percent Stacked Area Chart](./Percent/Vertical_Area_Chart)
-* [Vertical Percent Stacked Area Chart](./Percent/Vertical_Spline_Area_Chart)
-* [Vertical Percent Stacked Step Area Chart](./Percent/Vertical_Step_Area_Chart)
-* [Vertical Percent Stacked Stick Chart](./Percent/Vertical_Stick_Chart)
-* [3D Stacked Area Chart](./Value/3D_Area_Chart)
-* [3D Stacked Bar Chart](./Value/3D_Bar_Chart)
-* [3D Stacked Column Chart](./Value/3D_Column_Chart)
-* [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)
-* [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
-* [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
+* [Stacked Area](./Value/Area_Chart)
+* [Stacked Bar](./Value/Bar_Chart)
+* [Stacked Column](./Value/Column_Chart)
+* [Stacked Spline Area](./Value/Spline_Area_Chart)
+* [Stacked Step Area](./Value/Step_Area_Chart)
+* [Stacked Stick](./Value/Stick_Chart)
+* [Percent Stacked Area](./Percent/Area_Chart)
+* [Percent Stacked Bar](./Percent/Bar_Chart)
+* [Percent Stacked Column](./Percent/Column_Chart)
+* [Percent Stacked Spline Area](./Percent/Spline_Area_Chart)
+* [Percent Stacked Step Area](./Percent/Step_Area_Chart)
+* [Percent Stacked Stick](./Percent/Stick_Chart)
+
+Here are vertical and 3D stacked charts:
+
+* [Vertical Stacked Area](./Value/Vertical_Area_Chart)
+* [Vertical Stacked Spline Area](./Value/Vertical_Spline_Area_Chart)
+* [Vertical Stacked Step Area](./Value/Vertical_Step_Area_Chart)
+* [Vertical Stacked Stick](./Value/Vertical_Stick_Chart)
+* [3D Stacked Area](./Value/3D_Area_Chart)
+* [3D Stacked Bar](./Value/3D_Bar_Chart)
+* [3D Stacked Column](./Value/3D_Column_Chart)
+* [Vertical Percent Stacked Area](./Percent/Vertical_Area_Chart)
+* [Vertical Percent Stacked Spline Area](./Percent/Vertical_Spline_Area_Chart)
+* [Vertical Percent Stacked Step Area](./Percent/Vertical_Step_Area_Chart)
+* [Vertical Percent Stacked Stick](./Percent/Vertical_Stick_Chart)
+* [3D Percent Stacked Area](./Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar](./Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column](./Percent/3D_Column_Chart)
+
+See also polar and radar stacked charts:
+
+* [Stacked Polygon](./Value/Polygon_Chart)
+* [Polar Stacked Column](./Value/Polar_Column_Chart)
+* [Radar Stacked Area](./Value/Radar_Area_Chart)
+* [Percent Stacked Polygon](./Percent/Polygon_Chart)
+* [Polar Percent Stacked Column](./Percent/Polar_Column_Chart)
+* [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
 
 ## Marimekko Charts
 

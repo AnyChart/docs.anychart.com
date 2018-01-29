@@ -5,13 +5,13 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -49,31 +49,37 @@ anychart.onDocumentReady(function () {
     var eventMarkers = plot.eventMarkers();
     // set markers data
     eventMarkers.data([{
-        date: '2001-09-11',
-        description: '9-11 attacks'
+        date: "2001-09-11",
+        description: "9-11 attacks"
       },
       {
-        date: '2003-03-20',
-        description: 'Iraq War'
+        date: "2003-03-20",
+        description: "Iraq War"
       },
       {
-        date: '2008-08-20',
-        description: 'Global financial collapse'
+        date: "2008-08-20",
+        description: "Global financial collapse"
       },
       {
-        date: '2009-02-05',
-        description: 'OPEC cuts production targets'
+        date: "2009-02-05",
+        description: "OPEC cuts production targets"
       }
     ]);
 
     // set event markers type
-    eventMarkers.type('pin');
+    eventMarkers.type("pin");
+
+    // set normal fill
+    eventMarkers.normal().fill("#00802b");    
 
     // set hovered fill
-    eventMarkers.hovered().fill('#ff6e40');    
+    eventMarkers.hovered().fill("#a0d3b1");
+
+    // set selected fill
+    eventMarkers.selected().fill("#00cc44");       
 
     // set the chart title
-    chart.title("Event Markers: Basic Sample");
+    chart.title("Event Markers: Appearance");
 
     // set the container id
     chart.container("container");

@@ -40,13 +40,13 @@ anychart.onDocumentReady(function () {
   // set data
   chart.data(data);
 
-  // enable the percent stacking mode
+  // enable the value stacking mode
   chart.yScale().stackMode("value");
 
   // configure tooltips
   chart.tooltip().format("{%value}");
 
-  // configure labels on the Y-axis
+  // configure labels on the y-axis
   chart.yAxis().labels().format("{%value}");
 
   // set the chart title

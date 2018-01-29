@@ -41,24 +41,24 @@ anychart.onDocumentReady(function () {
     // set the chart type
     var chart = anychart.column();
 
-    // configure the main Y-scale
+    // configure the main y-scale
     var yScale1 = anychart.scales.linear();
     yScale1.maximum(20000);
 
-    // configure an extra Y-scale
+    // configure an extra y-scale
     var yScale2 = anychart.scales.linear();
     yScale2.maximum(150);
 
-    // set the title of the X-axis
+    // set the title of the x-axis
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
 
-    // configure the main Y-axis
+    // configure the main y-axis
     var yAxis1 = chart.yAxis(0);
     yAxis1.scale(yScale1);
     yAxis1.title("Sales, $");
 
-    // configure an extra Y-axis
+    // configure an extra y-axis
     var yAxis2 = chart.yAxis(1);
     yAxis2.orientation("right")
     yAxis2.scale(yScale2);
@@ -72,10 +72,10 @@ anychart.onDocumentReady(function () {
     var series2 = chart.line(seriesData_2);
     series2.name("Number of Items Sold");
 
-    // bind the first series to the main Y-scale
+    // bind the first series to the main y-scale
     series1.yScale(yScale1);
 
-    // bind the second series to the extra Y-scale
+    // bind the second series to the extra y-scale
     series2.yScale(yScale2);
 
     // set the chart title

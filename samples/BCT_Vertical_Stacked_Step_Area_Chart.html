@@ -41,7 +41,7 @@ anychart.onDocumentReady(function () {
   // create a chart
   var chart = anychart.verticalArea();
 
-  // enable the percent stacking mode
+  // enable the value stacking mode
   chart.yScale().stackMode("value");
 
   // create stepArea series, set the data
@@ -52,7 +52,7 @@ anychart.onDocumentReady(function () {
   // configure tooltips
   chart.tooltip().format("{%value}");
 
-  // configure labels on the Y-axis
+  // configure labels on the y-axis
   chart.yAxis().labels().format("{%value}");
 
   // set the chart title

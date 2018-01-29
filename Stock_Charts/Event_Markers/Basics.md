@@ -20,6 +20,8 @@ This is a basic sample that shows how to add single marker group to a chart:
 
 The only required field in an event marker is date, all other fields can be choosen by you. By default the description field is shown in built-in tooltip and format field is used as the source of the symbol.
 
+### Array
+
 Event markers can be loaded into the chart or plot from a array of JSON objects of the following format:
 
 ```
@@ -55,11 +57,9 @@ Event markers can be loaded into the chart or plot from a array of JSON objects 
 
 {sample}STOCK\_Event\_Markers\_Basic\_02{sample}
 
-Or you can pass array to the {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} method and create groups like this:
+### Method
 
-### Groups
-
-You can create as many event marker groups as you need and use the same or different symbols:
+Or you can pass array to the {api:anychart.core.stock.eventMarkers.Controller#group}group(){api} method and create groups. You can create as many event marker groups as you need and use the same or different symbols:
 
 ```
 var eventMarkers = plot.eventMarkers();

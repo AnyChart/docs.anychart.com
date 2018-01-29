@@ -84,7 +84,7 @@ In this section you can find some settings of axes and scales that are often use
 If you want to configure the stroke of the X- and Y-axes of your radar chart, use the {api:anychart.core.axes.Radar#stroke}stroke(){api} method:
 
 ```
-// configure the appearance of the Y-axis
+// configure the appearance of the y-axis
 chart.yAxis().stroke({
   color: "gray",
   thickness: 2,
@@ -101,7 +101,7 @@ chart.xAxis().stroke({
 To [invert](../../Axes_and_Grids/Scales#inversion) a scale, call the {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
-// invert the Y-scale
+// invert the y-scale
 chart.yScale().inverted(true);
 ```
 
@@ -175,7 +175,7 @@ radar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
-You can create [Radar Stacked Area](../Stacked/Value/Radar_Area_Chart) and [Radar Percent Stacked Area](../Stacked/Percent/Radar_Area_Chart) charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
+You can create stacked radar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 
 ## Supported Types
 
@@ -185,7 +185,7 @@ Here is the list of supported radar charts:
 * [Radar Line](Line_Chart)
 * [Radar Marker](Marker_Chart)
 
-See also [stacked](../Stacked/Overview) charts:
+See also stacked charts:
 
 * [Radar Stacked Area Chart](../Stacked/Value/Radar_Area_Chart)
 * [Radar Percent Stacked Area Chart](../Stacked/Percent/Radar_Area_Chart)

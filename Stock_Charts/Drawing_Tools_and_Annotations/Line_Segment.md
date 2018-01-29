@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Line annotation allows to add a line segment to a chart.
+The Line annotation allows you to add a line segment to a chart.
 
 This article explains how to add a Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

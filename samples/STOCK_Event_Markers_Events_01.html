@@ -5,21 +5,28 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    bottom: 0;
+    }
     </style>
 </head>
 <body>
@@ -50,41 +57,41 @@ anychart.onDocumentReady(function () {
     var eventMarkers = plot.eventMarkers();
     // set markers data
     eventMarkers.data([{
-        date: '2001-09-11',
-        description: '9-11 attacks'
+        date: "2001-09-11",
+        description: "9-11 attacks"
       },
       {
-        date: '2003-03-20',
-        description: 'Iraq War'
+        date: "2003-03-20",
+        description: "Iraq War"
       },
       {
-        date: '2008-08-20',
-        description: 'Global financial collapse'
+        date: "2008-08-20",
+        description: "Global financial collapse"
       },
       {
-        date: '2009-02-05',
-        description: 'OPEC cuts production targets'
+        date: "2009-02-05",
+        description: "OPEC cuts production targets"
       }
     ]);
 
     // show info when
-    chart.listen('eventmarkermouseover', function (e) {
+    chart.listen("eventmarkermouseover", function (e) {
         var symbol = e.eventMarker.symbol;
         var description = e.eventMarker.description;
         var date = e.eventMarker.date;
-        document.getElementById('info').innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
+        document.getElementById("info").innerHTML = symbol + "@" + anychart.format.date(date) + ":" + description;
     });
     // reset text when mouse leaves a marker
-    chart.listen('eventmarkermouseout', function () {
-        document.getElementById('info').innerHTML = "";
+    chart.listen("eventmarkermouseout", function () {
+        document.getElementById("info").innerHTML = "";
     });
     // open new window on click
-    chart.listen('eventmarkermouseclick', function () {
+    chart.listen("eventmarkermouseclick", function () {
         window.open("https://www.google.ru/search?q=" + e.eventMarker.description);
     });
 
     // set the chart title
-    chart.title("Event Markers: Events Sample");
+    chart.title("Event Markers: Events");
 
     // set the container id
     chart.container("container");

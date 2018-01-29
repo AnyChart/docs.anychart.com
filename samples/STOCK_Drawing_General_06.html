@@ -63,14 +63,14 @@ anychart.onDocumentReady(function () {
     // create a plot on the chart
     var plot = chart.plot(0);
 
-    // create and configure an additional Y-scale
+    // create and configure an additional y-scale
     var extraYScale = anychart.scales.linear();
     extraYScale.minimum(0);
     extraYScale.maximum(3000000000);
     var extraTicks = extraYScale.ticks();
     extraTicks.interval(500000000);
 
-    // create and configure an additional Y-axis
+    // create and configure an additional y-axis
     var extraYAxis = plot.yAxis(1);
     extraYAxis.orientation("right");
     extraYAxis.scale(extraYScale);
@@ -91,7 +91,7 @@ return value/1000000 + " mil";
     // an auxiliary variable for working with annotations
     var controller = plot.annotations();
 
-    // create an Infinite Line annotation (automatically bound to the main Y-scale)
+    // create an Infinite Line annotation (automatically bound to the main y-scale)
     controller.infiniteLine({
 xAnchor: "2004-01-06",
 valueAnchor: 2039.63,
@@ -107,7 +107,7 @@ secondXAnchor: "2004-01-09",
 secondValueAnchor: 2783950080
     });
 
-    // bind the Ellipse annotation to the additional Y-scale
+    // bind the Ellipse annotation to the additional y-scale
     ellipse.yScale(extraYScale);
 
     // set the chart title

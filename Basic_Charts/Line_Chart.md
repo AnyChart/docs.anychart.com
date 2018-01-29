@@ -21,13 +21,17 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart/Line_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Line_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Line_Chart), [Polyline](Polar_Plot/Polyline_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Line](Radar_Plot/Line_Chart)</td></tr>
 <tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Line_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Line)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Spline](Spline_Chart)</td></tr>
 <tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><td></td><td>[Jump Line](Jump_Line_Chart)</td></tr>
+<tr><td></td><td>[Line Sparkline](Sparkline_Chart#line_sparkline_chart)</td></tr>
+<tr><td></td><td>[Polyline](Polyline_Chart)</td></tr>
+
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/" target="_blank">Chartopedia: Line Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -44,13 +48,13 @@ The following sample demonstrates how a basic Line chart is created:
 ```
 // create data
 var data = [
-  {x: "January", value: 10000},
-  {x: "February", value: 12000},
-  {x: "March", value: 18000},
-  {x: "April", value: 11000},
-  {x: "May", value: 9000}
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
 ];
-
+    
 // create a chart
 chart = anychart.line();
 

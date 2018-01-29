@@ -1,5 +1,5 @@
 {:index 2}
-# Polar Line Chart
+# Polar Range Column Chart
 
 ## Overview
 

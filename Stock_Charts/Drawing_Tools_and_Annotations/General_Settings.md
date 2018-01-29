@@ -163,16 +163,16 @@ If there is an extra axis on your plot, you can bind an annotation to that axis 
 In the sample below, there is an Infinite Line annotation, bound to the main Y-scale, and an Ellipse annotation, bound to the additional Y-scale:
 
 ```
-// create an additional Y-scale
+// create an additional y-scale
 var extraYScale = anychart.scales.linear();
 
-// create an additional Y-axis
+// create an additional y-axis
 var extraYAxis = plot.yAxis(1);
 
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an Infinite Line annotation (automatically bound to the main Y-scale)
+// create an Infinite Line annotation (automatically bound to the main y-scale)
 controller.infiniteLine({
     xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
@@ -188,7 +188,7 @@ var ellipse = controller.ellipse({
     secondValueAnchor: 2783950080
 });
 
-// bind the Ellipse annotation to the additional Y-scale
+// bind the Ellipse annotation to the additional y-scale
 ellipse.yScale(extraYScale);
 ```
 

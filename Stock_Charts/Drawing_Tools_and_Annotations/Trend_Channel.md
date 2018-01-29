@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Trend Channel annotation allows to add a trend channel to a chart.
+The Trend Channel annotation allows you to add a trend channel to a chart.
 
 This article explains how to add a Trend Channel and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

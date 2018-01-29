@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Rectangle annotation allows to add a rectangle or a square to a chart.
+The Rectangle annotation allows you to add a rectangle or a square to a chart.
 
 This article explains how to add a Rectangle and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

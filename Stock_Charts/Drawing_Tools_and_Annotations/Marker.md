@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Marker annotation allows to add a marker to a chart.
+The Marker annotation allows you to add a marker to a chart.
 
 This article explains how to add a Marker and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

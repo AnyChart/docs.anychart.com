@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Ellipse annotation allows to add an ellipse or a circle to a chart.
+The Ellipse annotation allows you to add an ellipse or a circle to a chart.
 
 This article explains how to add an Ellipse and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

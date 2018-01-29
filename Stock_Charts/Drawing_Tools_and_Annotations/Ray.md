@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Ray annotation allows to add a ray to a chart.
+The Ray annotation allows you to add a ray to a chart.
 
 This article explains how to add a Ray and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 

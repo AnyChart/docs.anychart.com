@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Andrews' Pitchfork annotation allows to add an Andrews' pitchfork (an analysis tool developed by Alan Andrews) to a chart.
+The Andrews' Pitchfork annotation allows you to add an Andrews' pitchfork (an analysis tool developed by Alan Andrews) to a chart.
 
 This article explains how to add an Andrews' Pitchfork and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
