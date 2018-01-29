@@ -283,15 +283,15 @@ eventMarkers.selected().width(45);
 
 By default, event markers are bound to the X-axis, but you can also bind them to a series value. To set the position of event markers, call the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the following parameters:
 
-* `axis` (default)
-* `series` 
-* `series-negative`
-* `series-positive`
-* `zero`
+* `"axis"` (default)
+* `"series"` 
+* `"series-negative"`
+* `"series-positive"`
+* `"zero"`
 
-When you choose `series-negative`, `series-positive`, or `zero`, a marker is displayed on the series only if the value corresponding to its date is <= 0 / >= 0 / = 0. Otherwise, the marker is shown on the zero of the Y-axis.
+When you choose `"series-negative"`, `"series-positive"`, or `"zero"`, a marker is displayed on the series only if the value corresponding to its date is <= 0 / >= 0 / = 0. Otherwise, the marker is shown on the zero of the Y-axis.
 
-Some series types (for example, OHLC) suggest that each data point has more than one value. In this case, all positions except `axis` require specifying the value (data field) you want markers to be bound to. Use the {api:anychart.core.stock.eventMarkers.Controller#fieldName}fieldName(){api} method:
+Some series types (for example, OHLC) suggest that each data point has more than one value. In this case, all positions except `"axis"` require specifying the value (data field) you want markers to be bound to. Use the {api:anychart.core.stock.eventMarkers.Controller#fieldName}fieldName(){api} method:
 
 ```
 // create an ohlc series
@@ -324,7 +324,7 @@ Most settings are shared by markers belonging to the same group, but there is a 
 
 To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method with a function as a parameter. In the function, refer to the custom field with the help of {api:anychart.format.Context#getData}getData(){api}.
 
-This sample shows how to adjust individual markers. Please note that a custom data field (*symbol*) is used to set symbols:
+This sample shows how to adjust individual markers. Please note that here a custom data field (*symbol*) is used to set symbols:
 
 ```
 // add event markers
