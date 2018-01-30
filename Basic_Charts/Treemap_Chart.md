@@ -390,7 +390,9 @@ Here is the list of tokens that work with the Treemap chart:
 
 Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data – the `{%value}` and `{%size}` tokens work anyway.
 
-You can use custom data fields and custom tokens of the same name, like in this sample:
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens. Along with regular tokens, a custom token *{%capital}* is used:
 
 ```
 // create data
@@ -430,13 +432,17 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `name`
 * `size`
 * `value`
 
-Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data. If there is a custom field in your data, you can use the {api:anychart.format.Context#getData}getData(){api} method to refer this field:
+Values and sizes of parent elements are calculated automatically, so you do not need to specify them in data.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *capital* is used:
 
 ```
 // create data
