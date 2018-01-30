@@ -270,7 +270,7 @@ Here are tokens that work with the Venn diagram:
 * `{%value}`
 * `{%name}`
 
-Also, you can add a custom field to your data and use it as a token, like in the sample below.
+Also, you can add a custom field to your data and use it as a token, like in the sample below:
 
 ```
 //create data
@@ -293,6 +293,9 @@ var data = [
         value: 25
     }
 ];
+
+// create a chart and set the data
+chart = anychart.venn(data);
 
 // configure the labels of circles
 chart.labels().format("{%name}\n\n{%custom_field}\n{%value}");
@@ -321,19 +324,36 @@ Labels and tooltips are also configured with the help of [formatting functions](
 * `value`
 * `name`
 
-That is how it looks like:
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the following sample, formatting function are used to show labels only on the intersections of three or more circles and display the number of intersections and a custom field in tooltips:
 
 ```
+//create data
+var data = [
+    {x: "A", value: 100},
+    {x: "B", value: 100},
+    {x: "C", value: 100},
+    {x: ["A", "B"], value: 20, "custom_field": "info 1"},
+    {x: ["A", "C"], value: 20, "custom_field": "info 2"},
+    {x: ["B", "C"], value: 20, "custom_field": "info 3"},
+    {x: ["A", "B", "C"], value: 20, "custom_field": "info 4"}
+];
+
+// create a chart and set the data
+chart = anychart.venn(data);
+
 // configure the labels of intersections
 chart.intersections().labels().format(function (){
   if (this.x.length > 2)
-      return this.x; 
+    return this.x; 
 });
 
 // configure the tooltips of intersections
 chart.intersections().tooltip().format(function (){
   return "Value: " + this.value + "\n(" +
-         this.x.length + " sets intersecting)"; 
+         this.x.length + " sets intersecting)\n\n" +
+         this.getData("custom_field"); 
 });
 ```
 
