@@ -198,7 +198,7 @@ Four types of event markers are available: **circle**, **flag**, **pin**, and **
 
 ```
 // set the type of event markers
-eventMarkers().type("rect");
+plot.eventMarkers().type("rect");
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_05{sample}
