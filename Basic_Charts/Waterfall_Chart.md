@@ -94,6 +94,8 @@ Use the following data fields:
 * `value` to set values
 * `isTotal` to show a total value
 
+**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+
 The `isTotal` field is boolean, used optionally for showing/hiding a total value. By default, a total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
 The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter.
@@ -263,9 +265,35 @@ To configure tooltips, do the same with the {api:anychart.charts.Waterfall#toolt
 
 Besides tokens that work with all chart types, there are two tokens that are specific to the Waterfall: `{%diff}` and `{%absolute}`. The first one returns the difference between points and the second one returns the absolute value of a point.
 
-By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including their titles, is modified too:
+Also, you can add a custom field to your data and use a custom token corresponding to it.
+
+By default, labels show the difference, and in the following sample the `{%absolute}` token is used to show absolute values. The text of tooltips, including their titles, is modified too, and a custom token is used:
 
 ```
+// create data   
+var data = [
+    {x: "Start", value:  23, custom_field: "info 1"},
+    {x: "Jan",   value:  22, custom_field: "info 2"},
+    {x: "Feb",   value: -46, custom_field: "info 3"},
+    {x: "Mar",   value: -91, custom_field: "info 4"},
+    {x: "Apr",   value:  37, custom_field: "info 5"},
+    {x: "May",   value: -21, custom_field: "info 6"},
+    {x: "Jun",   value:  53, custom_field: "info 7"},
+    {x: "Jul",   value:  31, custom_field: "info 8"},
+    {x: "Aug",   value: -15, custom_field: "info 9"},
+    {x: "Sep",   value:  42, custom_field: "info 10"},
+    {x: "Oct",   value:  53, custom_field: "info 11"},
+    {x: "Nov",   value: -15, custom_field: "info 12"},
+    {x: "Dec",   value:  51, custom_field: "info 13"},
+    {x: "End", isTotal: true, custom_field: "info 14"}
+];
+
+// create a waterfall chart
+var chart = anychart.waterfall();
+
+// create a series and set the data
+var series = chart.waterfall(data);
+
 // configure labels
 chart.labels().format("{%absolute}");
 
@@ -278,11 +306,43 @@ chart.tooltip().format("{%absolute}\n{%diff}");
 
 #### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones): `diff`, `absolute`, `isTotal`. The last one allows to find out whether a column indicates a total value or not.
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields (in addition to the default ones):
 
-For example, in the sample below all labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too:
+* `diff`
+* `absolute`
+* `isTotal`
+
+The *isTotal* field allows to find out whether a column indicates a total value or not.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the sample below all labels show absolute values, and the labels of columns indicating total values are colored. The tooltips of columns indicating total values are modified too, and a custom field is used:
 
 ```
+// create data   
+var data = [
+    {x: "Start", value:  23, custom_field: "info 1"},
+    {x: "Jan",   value:  22, custom_field: "info 2"},
+    {x: "Feb",   value: -46, custom_field: "info 3"},
+    {x: "Mar",   value: -91, custom_field: "info 4"},
+    {x: "Apr",   value:  37, custom_field: "info 5"},
+    {x: "May",   value: -21, custom_field: "info 6"},
+    {x: "Jun",   value:  53, custom_field: "info 7"},
+    {x: "Jul",   value:  31, custom_field: "info 8"},
+    {x: "Aug",   value: -15, custom_field: "info 9"},
+    {x: "Sep",   value:  42, custom_field: "info 10"},
+    {x: "Oct",   value:  53, custom_field: "info 11"},
+    {x: "Nov",   value: -15, custom_field: "info 12"},
+    {x: "Dec",   value:  51, custom_field: "info 13"},
+    {x: "End", isTotal: true, custom_field: "info 14"}
+];
+
+// create a waterfall chart
+var chart = anychart.waterfall();
+
+// create a series and set the data
+var series = chart.waterfall(data);
+
 // enable HTML for labels
 chart.labels().useHtml(true);
 
@@ -290,14 +350,15 @@ chart.labels().useHtml(true);
 chart.labels().format(function (){
     if (this.isTotal)
         return "<span style='color:#dd2c00;font-weight:bold'>" +
-        this.absolute + "</span>";
+               this.absolute + "</span>";
     return this.absolute;
 });
 
 // configure tooltips
 chart.tooltip().titleFormat(function (){
-    if (this.isTotal) return "TOTAL";
-    return this.x;
+    if (this.isTotal)
+        return "TOTAL (" + this.getData("custom_field") + ")";
+    return this.x + " (" + this.getData("custom_field") + ")";
 });
 ```
 

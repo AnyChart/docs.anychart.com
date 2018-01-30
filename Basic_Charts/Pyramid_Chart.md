@@ -237,44 +237,72 @@ To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}la
 
 To configure tooltips, do the same with the {api:anychart.charts.Pyramid#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Pyramid – `{%yPercentOfTotal}`. It returns an element's percentage of the total:
+Besides tokens that work with all chart types, there is a token that is specific to the Pyramid – `{%yPercentOfTotal}`. It returns an element's percentage of the total.
+
+Also, you can add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
 
 ```
+// create a chart and set the data
+var chart = anychart.pyramid([
+  {name: "Fantasy", value: 637166, custom_field: "info 1"},
+  {name: "Science Fiction", value: 721630, custom_field: "info 1"},
+  {name: "Detective", value: 148662, custom_field: "info 1"},
+  {name: "Classics", value: 78662, custom_field: "info 1"},
+  {name: "Textbooks", value: 90000, custom_field: "info 1"}
+]);
+
 // configure labels
 chart.labels().format("{%name}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
 ```
 
 {sample}BCT\_Pyramid\_Chart\_09{sample}
 
 #### Formatting Functions
 
-You can also configure labels and tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). For example, functions in the sample below modify the format of labels and tooltips depending on elements' percentages of the total:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the sample below, functions modify the format of labels and tooltips depending on elements' percentages of the total, and a custom data field is used:
 
 ```
+// create a chart and set the data
+var chart = anychart.pyramid([
+  {name: "Fantasy", value: 637166, custom_field: "info 1"},
+  {name: "Science Fiction", value: 721630, custom_field: "info 2"},
+  {name: "Detective", value: 148662, custom_field: "info 3"},
+  {name: "Classics", value: 78662, custom_field: "info 4"},
+  {name: "Textbooks", value: 90000, custom_field: "info 5"}
+]);
+
 // enable HTML for labels and tooltips
 chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
 chart.labels().format(function (){
-var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-if (percentOfTotal > 40)
-  return "<span style='color:#dd2c00;font-weight:bold'>" +
-         this.name + ": " + percentOfTotal.toFixed(1) + "%</span>";
-return this.name + ": " +percentOfTotal.toFixed(1) + "%";
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal > 40)
+      return "<span style='color:#dd2c00;font-weight:bold'>" +
+             this.name + ": " + percentOfTotal.toFixed(1) + "%</span>";
+  return this.name + ": " +percentOfTotal.toFixed(1) + "%";
 });
 
 // configure tooltips
 chart.tooltip().format(function (){
-var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-if (percentOfTotal > 40)
-  return "<span style='font-size:18'>" +
-         percentOfTotal.toFixed(1) + "% (" +
-         this.value +")</span>";
-return percentOfTotal.toFixed(1) + "% (" + this.value +")";
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal > 40)
+      return "<span style='font-size:18'>" +
+             percentOfTotal.toFixed(1) + "% (" +
+             this.value + ")</span><br></br><br>" +
+             this.getData("custom_field");
+  return percentOfTotal.toFixed(1) + "% (" + this.value +
+         ")<br></br><br></br>" + this.getData("custom_field");
 });
 ```
 

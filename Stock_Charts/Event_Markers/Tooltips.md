@@ -23,7 +23,7 @@ You can configure the main text or titles of tooltips by combining the {api:anyc
 * `{%symbol}`
 * `{%description}`
 
-Please note that you can always add a custom field to your data and use a custom token corresponding to it.
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
 In the sample below, both the main text and titles of tooltips are configured. In addition to the default tokens, a custom token *{%short_desc}* is used:
 
@@ -56,7 +56,7 @@ plot.eventMarkers().tooltip().format("Event: {%description}");
 
 ### Formatting Functions
 
-You can also adjust tooltips by combining the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
+To adjust tooltips, you can combine the {api:anychart.core.stock.eventMarkers.Controller#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions).
 
 Here are fields that work with formatting functions: 
 

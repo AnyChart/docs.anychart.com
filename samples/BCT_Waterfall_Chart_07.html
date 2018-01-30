@@ -28,20 +28,20 @@ anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
-{x: "Start", value:  23},
-{x: "Jan",   value:  22},
-{x: "Feb",   value: -46},
-{x: "Mar",   value: -91},
-{x: "Apr",   value:  37},
-{x: "May",   value: -21},
-{x: "Jun",   value:  53},
-{x: "Jul",   value:  31},
-{x: "Aug",   value: -15},
-{x: "Sep",   value:  42},
-{x: "Oct",   value:  53},
-{x: "Nov",   value: -15},
-{x: "Dec",   value:  51},
-{x: "End", isTotal: true}
+        {x: "Start", value:  23, custom_field: "info 1"},
+        {x: "Jan",   value:  22, custom_field: "info 2"},
+        {x: "Feb",   value: -46, custom_field: "info 3"},
+        {x: "Mar",   value: -91, custom_field: "info 4"},
+        {x: "Apr",   value:  37, custom_field: "info 5"},
+        {x: "May",   value: -21, custom_field: "info 6"},
+        {x: "Jun",   value:  53, custom_field: "info 7"},
+        {x: "Jul",   value:  31, custom_field: "info 8"},
+        {x: "Aug",   value: -15, custom_field: "info 9"},
+        {x: "Sep",   value:  42, custom_field: "info 10"},
+        {x: "Oct",   value:  53, custom_field: "info 11"},
+        {x: "Nov",   value: -15, custom_field: "info 12"},
+        {x: "Dec",   value:  51, custom_field: "info 13"},
+        {x: "End", isTotal: true, custom_field: "info 14"}
     ];
 
     // create a waterfall chart
@@ -55,16 +55,17 @@ anychart.onDocumentReady(function () {
 
     // configure labels
     chart.labels().format(function (){
-if (this.isTotal)
-    return "<span style='color:#dd2c00;font-weight:bold'>" +
-    this.absolute + "</span>";
-return this.absolute;
+        if (this.isTotal)
+            return "<span style='color:#dd2c00;font-weight:bold'>" +
+                   this.absolute + "</span>";
+        return this.absolute;
     });
 
     // configure tooltips
     chart.tooltip().titleFormat(function (){
-if (this.isTotal) return "TOTAL";
-return this.x;
+        if (this.isTotal)
+            return "TOTAL (" + this.getData("custom_field") + ")";
+        return this.x + " (" + this.getData("custom_field") + ")";
     });
 
     // set the chart title

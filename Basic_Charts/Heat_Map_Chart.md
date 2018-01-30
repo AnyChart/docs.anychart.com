@@ -81,6 +81,8 @@ Use the following data fields:
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
 
+**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+
 This is how working with data fields of the Heat Map chart looks like:
 
 ```
@@ -242,23 +244,77 @@ To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}la
 
 To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Heat Map – `{%heat}`. It returns the value (heat) of an element:
+Besides tokens that work with all chart types, there is a token that is specific to the Heat Map – `{%heat}`. It returns the value (heat) of an element.
+
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
 
 ```
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15, custom_field: "info 1"},
+  {x: "2011", y: "A", heat: 17, custom_field: "info 2"},
+  {x: "2012", y: "A", heat: 21, custom_field: "info 3"},
+  {x: "2013", y: "A", heat: 23, custom_field: "info 4"},
+  {x: "2010", y: "B", heat: 34, custom_field: "info 5"},
+  {x: "2011", y: "B", heat: 33, custom_field: "info 6"},
+  {x: "2012", y: "B", heat: 32, custom_field: "info 7"},
+  {x: "2013", y: "B", heat: 30, custom_field: "info 8"},
+  {x: "2010", y: "C", heat: 43, custom_field: "info 9"},
+  {x: "2011", y: "C", heat: 42, custom_field: "info 10"},
+  {x: "2012", y: "C", heat: 40, custom_field: "info 11"},
+  {x: "2013", y: "C", heat: 38, custom_field: "info 12"},
+  {x: "2010", y: "D", heat: 8, custom_field: "info 13"},
+  {x: "2011", y: "D", heat: 8, custom_field: "info 14"},
+  {x: "2012", y: "D", heat: 7, custom_field: "info 15"},
+  {x: "2013", y: "D", heat: 8, custom_field: "info 16"}
+];
+
+// create a chart and set the data
+var chart = anychart.heatMap(data);
+
 // configure labels
 chart.labels().format("{%heat}%");
 
 // configure tooltips
-chart.tooltip().format("{%y}: {%heat}%");
+chart.tooltip().format("{%y}: {%heat}%\n{%custom_field}");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
 
 #### Formatting Functions
 
-Labels and tooltips are also configured with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default fields):
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default ones).
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+The sample below demonstrates how to work with formatting functions:
 
 ```
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15, custom_field: "info 1"},
+  {x: "2011", y: "A", heat: 17, custom_field: "info 2"},
+  {x: "2012", y: "A", heat: 21, custom_field: "info 3"},
+  {x: "2013", y: "A", heat: 23, custom_field: "info 4"},
+  {x: "2010", y: "B", heat: 34, custom_field: "info 5"},
+  {x: "2011", y: "B", heat: 33, custom_field: "info 6"},
+  {x: "2012", y: "B", heat: 32, custom_field: "info 7"},
+  {x: "2013", y: "B", heat: 30, custom_field: "info 8"},
+  {x: "2010", y: "C", heat: 43, custom_field: "info 9"},
+  {x: "2011", y: "C", heat: 42, custom_field: "info 10"},
+  {x: "2012", y: "C", heat: 40, custom_field: "info 11"},
+  {x: "2013", y: "C", heat: 38, custom_field: "info 12"},
+  {x: "2010", y: "D", heat: 8, custom_field: "info 13"},
+  {x: "2011", y: "D", heat: 8, custom_field: "info 14"},
+  {x: "2012", y: "D", heat: 7, custom_field: "info 15"},
+  {x: "2013", y: "D", heat: 8, custom_field: "info 16"}
+];
+
+// create a chart and set the data
+var chart = anychart.heatMap(data);
+
 // enable HTML for labels
 chart.labels().useHtml(true);
 
@@ -270,18 +326,22 @@ chart.labels().format(function (){
   if (heat < 40)
     return "Medium<br/>" + heat + "%";
   if (heat >= 40)
-    return "<span style='font-weight:bold'>High</span><br/>" + heat + "%";
+    return "<span style='font-weight:bold'>High</span><br/>" +
+           heat + "%";
 });
 
 // configure tooltips
 chart.tooltip().format(function (){
   var heat = (this.heat);
   if (heat < 20)
-    return this.y + ": Low (" + heat + "%)";
+    return this.y + ": Low (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
   if (heat < 40)
-    return this.y + ": Medium (" + heat + "%)";
+    return this.y + ": Medium (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
   if (heat >= 40)
-    return this.y + ": High (" + heat + "%)";
+    return this.y + ": High (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
 });
 ```
 

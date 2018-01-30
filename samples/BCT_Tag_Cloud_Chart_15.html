@@ -28,16 +28,16 @@ anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
-{x: "learning", value: 80},
-{x: "includes", value: 56},
-{x: "lists", value: 44},
-{x: "meaning", value: 40},
-{x: "useful", value: 36},
-{x: "different", value: 32},
-{x: "grammar", value: 28},
-{x: "teaching", value: 24},
-{x: "example", value: 20},
-{x: "thing", value: 12}
+      {x: "learning", value: 80, custom_field: "info 1"},
+      {x: "includes", value: 56, custom_field: "info 2"},
+      {x: "lists", value: 44, custom_field: "info 3"},
+      {x: "meaning", value: 40, custom_field: "info 4"},
+      {x: "useful", value: 36, custom_field: "info 5"},
+      {x: "different", value: 32, custom_field: "info 6"},
+      {x: "grammar", value: 28, custom_field: "info 7"},
+      {x: "teaching", value: 24, custom_field: "info 8"},
+      {x: "example", value: 20, custom_field: "info 9"},
+      {x: "thing", value: 12, custom_field: "info 10"}
     ];
 
     // create a chart and set the data
@@ -50,12 +50,17 @@ anychart.onDocumentReady(function () {
     chart.tooltip().format(function (){
       var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
       if (percentOfTotal < 7)
-return percentOfTotal.toFixed(1) +  "%";
+        return percentOfTotal.toFixed(1) +
+               "%<br></br><br></br>" + this.getData("custom_field");
       if (percentOfTotal > 15)
-return "<span style='font-size:26'>" +
-       percentOfTotal.toFixed(1) +  "%</span>";
+        return "<span style='font-size:26'>" +
+               percentOfTotal.toFixed(1) +
+               "%</span><br></br><br></br>" +
+               this.getData("custom_field");
       return "<span style='font-size:18'>" +
-     percentOfTotal.toFixed(1) +  "%</span>";
+             percentOfTotal.toFixed(1) +
+             "%</span><br></br><br></br>" +
+             this.getData("custom_field");
     });
 
     // set the chart title
