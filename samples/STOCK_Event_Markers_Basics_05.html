@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Groups Method"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 05"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -23,6 +23,17 @@
     </style>
 </head>
 <body>
+<fieldset  data-role="controlgroup" data-type="horizontal">
+  <legend>Type:</legend>
+    <label for="circle">Circle</label>
+    <input onclick="switchType('circle')" type="radio" name="type" id="type" checked="checked">
+    <label for="flag">Flag</label>
+    <input onclick="switchType('flag')" type="radio" name="type" id="type">
+    <label for="pin">Pin</label>
+    <input onclick="switchType('pin')" type="radio" name="type" id="type">
+    <label for="rect">Rectangle</label>
+    <input onclick="switchType('rect')" type="radio" name="type" id="type">
+</fieldset>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -34,7 +45,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -45,13 +56,26 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    // set settings for event markers
-    var eventMarkers = plot.eventMarkers();
-    eventMarkers.group(0, [{date: "2006-10-12", description: "Event A"}]);
-    eventMarkers.group(1, [{date: "2006-10-12", description: "Event B1"}, {date: "2007-12-06", description: "Event B2", type: "rect"}]).format("B");
+    eventMarkers = plot.eventMarkers();
+
+    // add event markers
+    plot.eventMarkers({"groups": [
+      {
+         "data": [
+           {
+             "date": "2006-06-08",
+             "description": "Cisco announced the acquisition of Audium Corporation."
+           },
+           {
+             "date": "2008-04-27",
+             "description": "Cisco announced its intent to acquire PostPath, Inc."
+           }
+         ]
+      }
+    ]});
 
     // set the chart title
-    chart.title("Event Markers: Groups (Method)");
+    chart.title("Event Markers: Type");
 
     // set the container id
     chart.container("container");
@@ -59,6 +83,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// switch the type of event markers
+function switchType(type){
+eventMarkers.type(type);
+}
 </script>
 </body>
 </html>

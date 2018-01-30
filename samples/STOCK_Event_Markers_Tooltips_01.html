@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Groups from Array"/>
+    <meta name="ac:name" content="STOCK Event Markers Tooltips 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -45,38 +45,46 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-   // set settings for event markers
-    plot.eventMarkers({groups: [    {
-    "format": "J",
-    "data": [
+    // add event markers
+    plot.eventMarkers({"groups": [
       {
-        "date": "2005-01-15",
-        "description": "Event Description",
-        "customField": "some data",
-        "type": "rect"
+        "format": "A",
+        "data": [
+          {
+            "date": "2006-06-08",
+            "description": "Cisco announced the acquisition of Audium Corporation.",
+            "short_desc": "Audium Corporation Acquisition"
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "short_desc": "PostPath Acquisition"
+          }
+        ]
       },
       {
-        "date": "2007-01-21",
-        "description": "Event Description",
-        "customField": "some data"
+        "format": "B",
+        "data": [
+          {
+            "date": "2009-02-10",
+            "description": "Cisco and Tata Consultancy Services announced strategic alliance.",
+            "short_desc": "Alliance with TCS"
+          },
+          {
+            "date": "2009-02-12",
+            "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore.",
+            "short_desc": "Intelligent Urbanisation"
+          }
+        ]
       }
-      ]
-    },
-    {
-    "format": "G",
-    "data": [
-      {
-        "date": "2008-01-15",
-        "description": "Event Description"
-      },
-      {
-        "date": "2009-01-21",
-        "description": "Event Description"
-      }
-    ]}]});
+    ]});
+
+    // configure the tooltips of event markers
+    plot.eventMarkers().tooltip().titleFormat("{%short_desc} ({%symbol})");
+    plot.eventMarkers().tooltip().format("Event: {%description}");
 
     // set the chart title
-    chart.title("Event Markers: Groups (Array)");
+    chart.title("Event Markers: Tooltips (Tokens)");
 
     // set the container id
     chart.container("container");

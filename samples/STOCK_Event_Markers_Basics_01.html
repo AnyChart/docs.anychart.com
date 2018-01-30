@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basic Sample"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -45,26 +45,21 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    // set settings for event markers
-    var eventMarkers = plot.eventMarkers();
-    // set markers data
-    eventMarkers.data([{
-        date: "2001-09-11",
-        description: "9-11 attacks"
-      },
+    // add event markers
+    plot.eventMarkers({"groups": [
       {
-        date: "2003-03-20",
-        description: "Iraq War"
-      },
-      {
-        date: "2008-08-20",
-        description: "Global financial collapse"
-      },
-      {
-        date: "2009-02-05",
-        description: "OPEC cuts production targets"
+        "data": [
+          {
+            "date": "2006-06-08",
+            "description": "Cisco announced the acquisition of Audium Corporation."
+          },
+          {
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc."
+          },
+        ]
       }
-    ]);
+    ]});
 
     // set the chart title
     chart.title("Event Markers: Basic Sample");

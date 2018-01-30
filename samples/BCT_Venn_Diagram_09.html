@@ -28,13 +28,13 @@ anychart.onDocumentReady(function () {
 
     //create data
     var data = [
-{x: "A", value: 100},
-{x: "B", value: 100},
-{x: "C", value: 100},
-{x: ["A", "B"], value: 20},
-{x: ["A", "C"], value: 20},
-{x: ["B", "C"], value: 20},
-{x: ["A", "B", "C"], value: 20}
+        {x: "A", value: 100},
+        {x: "B", value: 100},
+        {x: "C", value: 100},
+        {x: ["A", "B"], value: 20, custom_field: "info 1"},
+        {x: ["A", "C"], value: 20, custom_field: "info 2"},
+        {x: ["B", "C"], value: 20, custom_field: "info 3"},
+        {x: ["A", "B", "C"], value: 20, custom_field: "info 4"}
     ];
 
     // create a chart and set the data
@@ -43,13 +43,14 @@ anychart.onDocumentReady(function () {
     // configure the labels of intersections
     chart.intersections().labels().format(function (){
       if (this.x.length > 2)
-  return this.x; 
+        return this.x; 
     });
 
     // configure the tooltips of intersections
     chart.intersections().tooltip().format(function (){
       return "Value: " + this.value + "\n(" +
-     this.x.length + " sets intersecting)"; 
+             this.x.length + " sets intersecting)\n\n" +
+             this.getData("custom_field"); 
     });
 
     // set the chart title

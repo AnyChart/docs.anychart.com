@@ -4,32 +4,22 @@
 
 ## Overview
 
-Event Markers are very helpful elements of the chart, as they allow showing user explicitly an event that took place at a specific moment of time.
+An event marker is an element of the chart indicating an event that took place at a certain time: Key Developments, Dividends, Splits, etc. This information is important for financial analysis and has to be properly visualized. AnyChart Stock provides a very flexible and convenient set of tools for configuring event markers.
 
-AnyChart Stock has a very flexible and convenient set of tools for working with event markers. Here is a brief list of what it can do:
+## Sample
 
-- Rich interactivity makes the perception of events more convenient,
-- Selecting event marker feature,
-- Grouping into stacks or into a single marker when several markers hit same date,
-- Complete control over all visual settings,
-- Binding any data to each event marker,
-- Full range of supported external events and methods for controlling event markers from the outside,
-- And much more...
+Here is a basic sample of a chart with event markers:
 
-# Sample
+{sample}STOCK\_Event\_Markers\_Overview{sample}
 
-Here is a basic sample of a chart with Event Markers:
+## Articles and Demos
 
-{sample}STOCK\_Event\_Markers\_Basic\_01{sample}
+The documentation explains how to adjust the basic settings of event markers, configure tooltips, and handle events to embed event markers into your application. See the following articles:
 
-# Articles and Demos
+* [Event Markers Basics](Basics)
+* [Tooltips](Tooltips) 
+* [Events](Events)
 
-The following articles are available in the documentation:
+Also, we highly recommend you to study a special section of our Chart Gallery demonstrating the features of event markers:
 
-- [Event Markers Basics](Basics) - contains basic information on adding event markers to chart,
-- [Tooltips](Tooltips) - contains information on using and configuring the tooltips,
-- [Events](Events) - these articles explains how to handle events from these elements, as well as add, delete and modify event markers dynamically using the external methods.
-
-Besides the documentation, we highly recommend studying the following resources to get better understanding of all the features Event Markers have:
-
-- [Stock Event Markers Gallery](https://www.anychart.com/products/anystock/gallery/Stock_Event_Markers/) - contains a special section with Event Markers examples.
+* [Stock Event Markers Gallery](https://www.anychart.com/products/anystock/gallery/Stock_Event_Markers/)

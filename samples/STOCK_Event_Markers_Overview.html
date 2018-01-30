@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Events 01"/>
+    <meta name="ac:name" content="STOCK Event Markers Basic 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -14,22 +14,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 20px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<span id="info"></span>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -53,11 +46,11 @@ anychart.onDocumentReady(function () {
     plot.line(mapping).name("CSCO");
 
     // add event markers
-    plot.eventMarkers({"groups": [
+    plot.eventMarkers({ "groups": [
       {
         "data": [
           {
-            "date": "2006-06-02",
+            "date": "2006-06-08",
             "description": "Cisco announced the acquisition of Audium Corporation."
           },
           {
@@ -68,30 +61,8 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // show information when mouse is over a marker
-    chart.listen("eventMarkerMouseOver", function (e) {
-        var symbol = e.eventMarker.symbol;
-        var description = e.eventMarker.description;
-        var date = e.eventMarker.date;
-        document.getElementById("info").innerHTML =
-          symbol + "@" + anychart.format.date(date)
-          + ": " + description;
-    });
-
-    // hide information when mouse leaves a marker
-    chart.listen("eventMarkerMouseOut", function () {
-        document.getElementById("info").innerHTML = "";
-    });
-
-    // open a url when a marker is clicked
-    chart.listen("eventMarkerClick", function (e) {
-        var url = "https://www.google.ru/search?q=" +
-                  e.eventMarker.description;
-        window.open(url, "_blank");
-    });
-
     // set the chart title
-    chart.title("Event Markers: Events");
+    chart.title("Event Markers: Basic Sample");
 
     // set the container id
     chart.container("container");

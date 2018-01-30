@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Appearance"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,7 +34,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({"value": 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -45,41 +45,40 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    // set settings for event markers
     var eventMarkers = plot.eventMarkers();
-    // set markers data
-    eventMarkers.data([{
-        date: "2001-09-11",
-        description: "9-11 attacks"
+
+    // add the first group of event markers
+    eventMarkers.group(0, [
+      {
+        "date": "2006-06-08",
+        "description": "Cisco announced the acquisition of Audium Corporation."
       },
       {
-        date: "2003-03-20",
-        description: "Iraq War"
-      },
-      {
-        date: "2008-08-20",
-        description: "Global financial collapse"
-      },
-      {
-        date: "2009-02-05",
-        description: "OPEC cuts production targets"
+        "date": "2008-04-27",
+        "description": "Cisco announced its intent to acquire PostPath, Inc."
       }
     ]);
 
-    // set event markers type
-    eventMarkers.type("pin");
+    // set the symbol of the first group
+    eventMarkers.group(0).format("A");
 
-    // set normal fill
-    eventMarkers.normal().fill("#00802b");    
+    // add the second group of event markers
+    eventMarkers.group(1, [
+      {
+        "date": "2009-02-10",
+        "description": "Cisco and Tata Consultancy Services announced strategic alliance."
+      },
+      {
+        "date": "2009-02-12",
+        "description": "Cisco unveiled 'Intelligent Urbanisation' vision for Bangalore."
+      }
+    ]);
 
-    // set hovered fill
-    eventMarkers.hovered().fill("#a0d3b1");
-
-    // set selected fill
-    eventMarkers.selected().fill("#00cc44");       
+    // set the symbol of the second group
+    eventMarkers.group(1).format("B");
 
     // set the chart title
-    chart.title("Event Markers: Appearance");
+    chart.title("Event Markers: Data\ngroup()");
 
     // set the container id
     chart.container("container");

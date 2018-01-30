@@ -315,7 +315,7 @@ Check out some other drilldown samples in the gallery:
 
 ## Creating Custom Tooltip
 
-There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips but only through jQuery. 
+There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips:
 
 {sample}CS\_Interactivity\_15{sample} 
 

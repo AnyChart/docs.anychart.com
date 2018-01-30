@@ -370,20 +370,64 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-In the case of Tag Clouds, you need to know that the `{%value}` [token](../Common_Settings/Text_Formatters#string_tokens) returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage frequency. By default, both are shown. To change the text of tooltips, use tokens with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}:
+To change the text of tooltips, use [tokens](../Common_Settings/Text_Formatters#string_tokens) with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}.
+
+The `{%value}` token returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage frequency. By default, both are shown.
+
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
 
 ```
+// create data   
+var data = [
+  {x: "learning", value: 80, custom_field: "info 1"},
+  {x: "includes", value: 56, custom_field: "info 2"},
+  {x: "lists", value: 44, custom_field: "info 3"},
+  {x: "meaning", value: 40, custom_field: "info 4"},
+  {x: "useful", value: 36, custom_field: "info 5"},
+  {x: "different", value: 32, custom_field: "info 6"},
+  {x: "grammar", value: 28, custom_field: "info 7"},
+  {x: "teaching", value: 24, custom_field: "info 8"},
+  {x: "example", value: 20, custom_field: "info 9"},
+  {x: "thing", value: 12, custom_field: "info 10"}
+];
+
+// create a chart and set the data
+var chart = anychart.tagCloud(data);
+
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
 
 #### Formatting Functions
 
-You can also configure tooltips by using [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens. For example, the function in the sample below modifies the format of tooltips depending on percentage frequencies of elements:
+To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the sample below, there is a function modifying the format of tooltips depending on percentage frequencies of elements, and a custom data field is used:
 
 ```
+// create data   
+var data = [
+  {x: "learning", value: 80, custom_field: "info 1"},
+  {x: "includes", value: 56, custom_field: "info 2"},
+  {x: "lists", value: 44, custom_field: "info 3"},
+  {x: "meaning", value: 40, custom_field: "info 4"},
+  {x: "useful", value: 36, custom_field: "info 5"},
+  {x: "different", value: 32, custom_field: "info 6"},
+  {x: "grammar", value: 28, custom_field: "info 7"},
+  {x: "teaching", value: 24, custom_field: "info 8"},
+  {x: "example", value: 20, custom_field: "info 9"},
+  {x: "thing", value: 12, custom_field: "info 10"}
+];
+
+// create a chart and set the data
+var chart = anychart.tagCloud(data);
+
 // enable HTML for tooltips
 chart.tooltip().useHtml(true);
 
@@ -391,12 +435,17 @@ chart.tooltip().useHtml(true);
 chart.tooltip().format(function (){
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal < 7)
-    return percentOfTotal.toFixed(1) +  "%";
+    return percentOfTotal.toFixed(1) +
+           "%<br></br><br></br>" + this.getData("custom_field");
   if (percentOfTotal > 15)
     return "<span style='font-size:26'>" +
-           percentOfTotal.toFixed(1) +  "%</span>";
+           percentOfTotal.toFixed(1) +
+           "%</span><br></br><br></br>" +
+           this.getData("custom_field");
   return "<span style='font-size:18'>" +
-         percentOfTotal.toFixed(1) +  "%</span>";
+         percentOfTotal.toFixed(1) +
+         "%</span><br></br><br></br>" +
+         this.getData("custom_field");
 });
 ```
 

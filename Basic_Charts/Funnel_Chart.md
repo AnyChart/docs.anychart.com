@@ -205,7 +205,7 @@ chart.connectorLength(45);
 
 #### Overlapping
 
-Sometimes labels overlap each other. To allow or forbid overlapping, use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
+Sometimes labels overlap each other. To allow or forbid overlapping, use the {api:anychart.charts.Funnel#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed:
 
 ```
 // allow labels overlapping
@@ -222,44 +222,76 @@ To change the text of labels, combine the {api:anychart.charts.Funnel#labels}lab
 
 To configure tooltips, do the same with the {api:anychart.charts.Funnel#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Funnel – `{%yPercentOfTotal}`. It returns an element's percentage of the total:
+Besides tokens that work with all chart types, there is a token that is specific to the Funnel – `{%yPercentOfTotal}`. It returns an element's percentage of the total.
+
+Also, you can add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
 
 ```
+// create data
+var data = [
+  {name: "Total Market", value: 232000, custom_field: "info 1"},
+  {name: "Prospects", value: 94480, custom_field: "info 2"},
+  {name: "Leads", value: 47390, custom_field: "info 3"},
+  {name: "Sales", value: 22181, custom_field: "info 4"}
+];
+
+// create a chart and set the data
+var chart = anychart.funnel(data);
+
 // configure labels
 chart.labels().format("{%x}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
 ```
 
 {sample}BCT\_Funnel\_Chart\_08{sample}
 
 #### Formatting Functions
 
-You can also configure labels and tooltips with the help of [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). For example, functions in the sample below modify the format of labels and tooltips depending on elements' percentages of the total:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the sample below, functions modify the format of labels and tooltips depending on elements' percentages of the total, and a custom data field is used:
 
 ```
+// create data
+var data = [
+  {name: "Total Market", value: 232000, custom_field: "info 1"},
+  {name: "Prospects", value: 94480, custom_field: "info 2"},
+  {name: "Leads", value: 47390, custom_field: "info 3"},
+  {name: "Sales", value: 22181, custom_field: "info 4"}
+];
+
+// create a chart and set the data
+var chart = anychart.funnel(data);
+
 // enable HTML for labels and tooltips
 chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
 chart.labels().format(function (){
-var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-if (percentOfTotal > 50)
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal > 50)
     return "<span style='color:#dd2c00;font-weight:bold'>" +
            this.x + ": " + percentOfTotal.toFixed(1) + "%</span>";
-return this.x + ": " + percentOfTotal.toFixed(1) + "%";
+  return this.x + ": " + percentOfTotal.toFixed(1) + "%";
 });
 
 // configure tooltips
 chart.tooltip().format(function (){
 var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-if (percentOfTotal > 50)
+  if (percentOfTotal > 50)
     return "<span style='font-size:18'>" +
            percentOfTotal.toFixed(1) + "% (" +
-           this.value +")</span>";
-return percentOfTotal.toFixed(1) + "% (" + this.value +")";
+           this.value + ")</span><br></br><br>" +
+           this.getData("custom_field");
+  return percentOfTotal.toFixed(1) + "% (" + this.value +
+         ")<br></br><br></br>" + this.getData("custom_field");
 });
 ```
 

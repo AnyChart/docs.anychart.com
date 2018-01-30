@@ -86,7 +86,7 @@ Use the following data fields to create data for a Treemap chart:
 * `size` to set sizes
 * `value` to set values
 
-In addition, it is possible to add custom fields to your data – read the [Labels and Tooltips](#labels_and_tooltips) section of this article to learn how you can use this feature.
+**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
 
@@ -222,8 +222,8 @@ By default, tiles of Treemaps are sorted in descending order according to their 
 
 To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the three parameters:
 
+* `"desc"` (default)
 * `"asc"`
-* `"desc"`
 * `"none"`
 
 **Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order of their listing in data.
@@ -575,11 +575,11 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of headers is always shown. However, if the text does not fit the height of headers, it can be cropped or hidden. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
 
-* `"alwaysShow"`
+* `"drop"` (default)
 * `"clip"`
-* `"drop"`
+* `"alwaysShow"`
 
 The sample below shows how to change the display mode, which is initially set to "drop":
 
