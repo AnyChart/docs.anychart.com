@@ -370,7 +370,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
-To change the text of tooltips, use [tokens](../Common_Settings/Text_Formatters#string_tokens) with the {api:anychart.core.ui.Tooltip#format}format(){api} method, combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}.
+To change the text of tooltips, use [tokens](../Common_Settings/Text_Formatters#string_tokens) with the {api:anychart.core.ui.Tooltip#format}format(){api} method combined with {api:anychart.charts.TagCloud#tooltip}tooltip(){api}.
 
 The `{%value}` token returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage frequency. By default, both are shown.
 
