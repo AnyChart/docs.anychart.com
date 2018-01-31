@@ -232,9 +232,9 @@ Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectivel
 
 The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend — or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
 
-The α value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded. *Initial values is set using step_period attribute of <psar_indicator> node.*
+The α value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded. [Initial values is set using step_period attribute of <psar_indicator> node.]
 
-To keep it from getting too large, a maximum value for the acceleration factor is normally set at 0.20, so that it never goes beyond that. *Maximum value for the acceleration factor is set using max_step_period attribute of <psar_indicator> node.*
+To keep it from getting too large, a maximum value for the acceleration factor is normally set at 0.20, so that it never goes beyond that. [Maximum value for the acceleration factor is set using max_step_period attribute of <psar_indicator> node.]
 
 The SAR is recursively calculated in this manner for each new period. There are, however, two special cases that will modify the SAR value:
 
@@ -318,5 +318,3 @@ Coming soon.
 [Williams %R](Williams_%25R) is calculated according to this formula:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/williams-r.png"></center>
-
-http://6.anychart.com/products/stock/docs/users-guide/img/williams-r.png
