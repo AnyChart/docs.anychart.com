@@ -57,7 +57,17 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Modified (Smoothed) Moving Average](Modified_Moving_Average_\(MMA\))</td>
 		</tr>
 		<tr>
+			<td>[Momentum](Momentum)</td>
+		</tr>
+		<tr>
+			<td>[Money Flow Index (MFI)](Money_Flow_Index_\(MFI\))</td>
+		</tr>
+		<tr>
 			<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_\(MACD\))</td>
+		</tr>		
+		<tr>
+		<tr>
+			<td>[Parabolic SAR (PSAR)](Parabolic_SAR_\(PSAR\))</td>
 		</tr>		
 		<tr>
 			<td>[Rate of Change (ROC)](Rate_of_Change_\(ROC\))</td>
@@ -77,5 +87,9 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 		<tr>
 			<td>[Stochastic Oscillator](Stochastic_Oscillator)</td>
 		</tr>
+		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
+		<tr>
 	</tbody>
 </table>
