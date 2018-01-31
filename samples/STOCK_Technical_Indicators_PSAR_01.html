@@ -33,7 +33,12 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs();
+mapping.addField('open', 1, 'first');
+mapping.addField('high', 2, 'max');
+mapping.addField('low', 3, 'min');
+mapping.addField('close', 4, 'last');
+mapping.addField('value', 4, 'close');
 
 // create stock chart
 var chart = anychart.stock();
@@ -41,14 +46,14 @@ var chart = anychart.stock();
 // create plot on the chart
 var plot = chart.plot(0);
 
-// create line series
+// create a line series
 var lineSeries = plot.line(mapping);
 lineSeries.name('CSCO');
 lineSeries.stroke('2px #64b5f6');
 
-// create SMA indicators with period 20
-var sma20 = plot.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create PSAR indicators with with step period 0.08 and maximum step period 0.60
+var psar = plot.psar(mapping, 0.08, 0.60).series();
+psar.stroke('black');
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);

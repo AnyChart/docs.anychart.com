@@ -31,8 +31,15 @@ anychart.onDocumentReady(function () {
 // create data table on loaded data
 var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
+
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs();
+mapping.addField('open', 1, 'first');
+mapping.addField('high', 2, 'max');
+mapping.addField('low', 3, 'min');
+mapping.addField('close', 4, 'last');
+mapping.addField('value', 4, 'close');
+
 // create stock chart
 var chart = anychart.stock();
 // create plots on the chart
@@ -48,13 +55,16 @@ var lineSeries_1 = plot_1.line(mapping);
 lineSeries_1.name('CSCO');
 lineSeries_1.stroke('2px #64b5f6');
 
-// create SMA indicator with period 20 and show as line on the first plot
-var sma20 = plot_0.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create PSAR indicator with with step period 0.08 and maximum step period 0.60 on the first plot
+var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
+psar_0.stroke('black');
 
-// create SMA indicators with period 50 and show as column on the second plot
-var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.fill('#ff6d00');
+// create PSAR indicator with step period 0.02 and maximum step period 0.20 on the second plot
+var psar_1 = plot_1.psar(mapping, 0.02, 0.20).series();
+psar_1.stroke('black');
+psar_1.fill('#ff6d00');
+psar_1.type('circle');
+psar_1.size(2);
 
 // set container id for the chart
 chart.container('container');
