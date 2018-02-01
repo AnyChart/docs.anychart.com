@@ -2,35 +2,45 @@
 
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+Williams %R, or just %R, is a momentum indicator showing the current closing price in relation to the high and low of the past N days (for a given N). It was developed by trader and author Larry Williams and is used in the stock and commodities markets.
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
-
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Find the mathematical description of the indicator on the [Williams %R Mathematical Description](Mathematical_Description#williams_%25r) page.
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+Williams %R indicator is added through the {api:anychart.core.stock.Plot#williamsR}williamsR(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`.
+
+Williams %R is measured on a -100 — 0 scale, so to show it properly, you need to configure the Y-scale of its plot (see [Scales](../Scales) to learn more):
+
+```
+plot_1.yScale().minimum(-100);
+plot_1.yScale().maximum(0);
+```
+
+The following sample demonstrates the Williams %R indicator applied to an OHLC series:
 
 ```
 // create data table on loaded data
 var dataTable = anychart.data.table();
-
-// add data to a table
-dataTable.addData(get_data());
+dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
 
-// create SMA indicators with period 20
-var sma20 = plot.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO");
+
+// create Williams %R indicator
+var williamsR = plot_1.williamsR(mapping, 4).series();
+williamsR.stroke("2 red");
 ```
 
 Here is a live sample:
@@ -39,26 +49,26 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are three parameters a Williams %R indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a Williams %R indicator with parameters set as default.
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var psar = plot.psar(mapping, 10, "line");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where Williams %R with different parameters and settings is added to different plots:
 
 ```
-// create SMA indicator with period 20 and show as line on the first plot
-var sma20 = plot_0.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create and adjust the Williams %R indicator with settings adjusted
+var williamsR_1 = plot_1.williamsR(mapping, 5, "area").series();
+williamsR_1.stroke("0.5 gray");
+williamsR_1.fill("#ffd54f");
 
-// create SMA indicator with period 50 and show as column on the second plot
-var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.fill('#ff6d00');
+// create and adjust the Williams %R indicator with settings adjusted
+var williamsR_2 = plot_2.williamsR(mapping, 60, "column").series();
+williamsR_2.stroke("0.5 lightGray");
+williamsR_2.fill("#ff6d00");
 ```
-
-Live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Williams\_R\_02{sample}

@@ -1,36 +1,36 @@
-# Parabolic SAR (PSAR)
+# Parabolic SAR (PSAR)	
 
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+Parabolic SAR (SAR - stop and reverse) is a method devised by J. Welles Wilder, Jr, to find trends in market prices or securities. It may be used as a trailing stop loss based on prices tending to stay within a parabolic curve during a strong trend.
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
-
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Find the mathematical description of the indicator on the [Parabolic SAR (PSAR) Mathematical Description](Mathematical_Description#parabolic_sar) page.
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+PSAR indicator is added through the {api:anychart.core.stock.Plot#psar}psar(){api} method. It requires a mapping with two fields: `"high"` and `"low"`. The following sample demonstrates the PSAR indicator applied to an OHLC series:
 
 ```
 // create data table on loaded data
 var dataTable = anychart.data.table();
-
-// add data to a table
-dataTable.addData(get_data());
+dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
 // create plot on the chart
 var plot = chart.plot(0);
 
-// create SMA indicators with period 20
-var sma20 = plot.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create ohlc series
+var ohlcSeries = plot.ohlc(mapping);
+ohlcSeries.name("CSCO");
+
+// create PSAR indicator
+var psar = plot.psar(mapping, 0.08, 0.60).series();
+psar.stroke("0.5 lightGray");
 ```
 
 Here is a live sample:
@@ -39,26 +39,27 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are four parameters a PSAR indicator has, one of them is necessary - the mapping. Three other ones are the acceleration factor, maximum acceleration factor and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a CMF indicator with parameters set as default.
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var psar = plot.psar(mapping, 0.02, 0.3, "marker");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where PSAR with different parameters and settings is added to different plots:
 
 ```
-// create SMA indicator with period 20 and show as line on the first plot
-var sma20 = plot_0.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create the PSAR indicator with settings adjusted
+var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
+psar_0.stroke("0.5 lightGray");
+psar_0.fill("green");
+psar_0.type("circle");
+psar_0.size(2);
 
-// create SMA indicator with period 50 and show as column on the second plot
-var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.fill('#ff6d00');
+// create and adjust the PSAR indicator with settings adjusted
+var psar_1 = plot_1.psar(mapping, 0.03, 0.20, "line").series();
+psar_1.stroke("2 red");
 ```
-
-Live sample:
 
 {sample}STOCK\_Technical\_Indicators\_PSAR\_02{sample}

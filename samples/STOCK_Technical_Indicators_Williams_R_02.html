@@ -53,12 +53,12 @@ plot_2.yScale().maximum(0);
 var ohlcSeries = plot_0.ohlc(mapping);
 ohlcSeries.name("CSCO");
 
-// create and adjust the MFI indicator with settings adjusted
+// create and adjust the Williams %R indicator with settings adjusted
 var williamsR_1 = plot_1.williamsR(mapping, 5, "area").series();
 williamsR_1.stroke("0.5 gray");
 williamsR_1.fill("#ffd54f");
 
-// create and adjust the MFI indicator with settings adjusted
+// create and adjust the Williams %R indicator with settings adjusted
 var williamsR_2 = plot_2.williamsR(mapping, 60, "column").series();
 williamsR_2.stroke("0.5 lightGray");
 williamsR_2.fill("#ff6d00");

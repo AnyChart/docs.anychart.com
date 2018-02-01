@@ -47,12 +47,12 @@ var plot_2 = chart.plot(2);
 var ohlcSeries = plot_0.ohlc(mapping);
 ohlcSeries.name("CSCO");
 
-// create and adjust the MFI indicator with settings adjusted
+// create and adjust the Momentum indicator with settings adjusted
 var momentum_1 = plot_1.momentum(mapping, 10, "area").series();
 momentum_1.stroke("0.5 gray");
 momentum_1.fill("#ffd54f");
 
-// create and adjust the MFI indicator with settings adjusted
+// create and adjust the Momentum indicator with settings adjusted
 var momentum_2 = plot_2.momentum(mapping, 40, "column").series();
 momentum_2.stroke("0.5 lightGray");
 momentum_2.fill("#ff6d00");

@@ -2,35 +2,38 @@
 
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+The Momentum indicator is a speed of movement indicator, that is designed to identify the speed (or strength) of a price movement. The momentum indicator compares the most recent closing price to a previous closing price and may be used as a trend-following oscillator (similar to the [Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_\(MACD\))).
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
+The Momentum indicator identifies when the price is moving upwards or downwards, and also by how much the price is moving upwards or downwards. When the momentum indicator is above zero, the price has upwards momentum, and when the momentum indicator is below zero the price has downwards momentum.
 
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Find the mathematical description of the indicator on the [Momentum Mathematical Description](Mathematical_Description#momentum) page.
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+Momentum indicator is added through the {api:anychart.core.stock.Plot#momentum}momentum(){api} method. It requires a mapping with the `"close"` field. The following sample demonstrates the Momentum indicator applied to an OHLC series:
 
 ```
 // create data table on loaded data
 var dataTable = anychart.data.table();
-
-// add data to a table
-dataTable.addData(get_data());
+dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
 
-// create SMA indicators with period 20
-var sma20 = plot.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO");
+
+// create Momentum indicator
+var momentum = plot_1.momentum(mapping, 10).series();
+momentum.stroke("2 red");
 ```
 
 Here is a live sample:
@@ -39,26 +42,26 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are three parameters a Momentum indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a Momentum indicator with parameters set as default.
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var momentum = plot.momentum(mapping, 14, "line");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where Momentum with different parameters and settings is added to different plots:
 
 ```
-// create SMA indicator with period 20 and show as line on the first plot
-var sma20 = plot_0.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create and adjust the Momentum indicator with settings adjusted
+var momentum_1 = plot_1.momentum(mapping, 10, "area").series();
+momentum_1.stroke("0.5 gray");
+momentum_1.fill("#ffd54f");
 
-// create SMA indicator with period 50 and show as column on the second plot
-var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.fill('#ff6d00');
+// create and adjust the Momentum indicator with settings adjusted
+var momentum_2 = plot_2.momentum(mapping, 40, "column").series();
+momentum_2.stroke("0.5 lightGray");
+momentum_2.fill("#ff6d00");
 ```
-
-Live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Momentum\_02{sample}
