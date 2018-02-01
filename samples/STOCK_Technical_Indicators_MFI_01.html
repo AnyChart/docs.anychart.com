@@ -33,21 +33,22 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 5, "value": 4});
 
 // create stock chart
 var chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
 
-// create ohlc series
-var ohlcSeries = plot.ohlc(mapping);
-ohlcSeries.name("CSCO");
+// create line series
+var lineSeries = plot_0.line(mapping);
+lineSeries.name("CSCO");
 
-// create PSAR indicator
-var psar = plot.psar(mapping, 0.08, 0.60).series();
-psar.stroke("0.5 lightGray");
+// create MFI indicator
+var mfi = plot_1.mfi(mapping, 5).series();
+mfi.stroke("2 red");
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
