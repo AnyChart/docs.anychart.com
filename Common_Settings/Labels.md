@@ -49,11 +49,11 @@ You can also change background, font and other settings.
 ```
 // background border color
 series.labels().background().stroke("#663399");
-series.selectLabels().background().stroke("Green");
+series.selected().labels().background().stroke("Green");
 
 // font color
 series.labels().fontColor("#663399");
-series.selectLabels().fontColor("Green");
+series.selected().labels().fontColor("Green");
 ```
 
 {sample}CS\_Labels\_03{sample}

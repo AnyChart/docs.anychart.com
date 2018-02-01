@@ -189,12 +189,12 @@ chart.getSeriesAt(0).labels().position("Center");
 chart.getSeriesAt(0).labels().anchor("Center");
 
 // columns series enable labels
-chart.getSeriesAt(1).labels(false);
-chart.getSeriesAt(1).selectLabels().enabled(true);
-chart.getSeriesAt(1).selectLabels().anchor("bottom");
-chart.getSeriesAt(1).hoverLabels(true);
-chart.getSeriesAt(1).hoverLabels().anchor("bottom");
-chart.getSeriesAt(1).hoverLabels().format("{%value}%");
+chart.getSeries(1).labels(false);
+chart.getSeries(1).selected().labels().enabled(true);
+chart.getSeries(1).selected().labels().anchor("center-bottom");
+chart.getSeries(1).hovered().labels(true);
+chart.getSeries(1).hovered().labels().anchor("center-bottom");
+chart.getSeries(1).hovered().labels().format("{%value}%");
 ```
 
 Here is a sample of a Pareto chart with a custom labels configuration:
