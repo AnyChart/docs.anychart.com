@@ -33,37 +33,29 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs();
-mapping.addField('open', 1, 'first');
-mapping.addField('high', 2, 'max');
-mapping.addField('low', 3, 'min');
-mapping.addField('close', 4, 'last');
-mapping.addField('value', 4, 'close');
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
 var chart = anychart.stock();
+
 // create plots on the chart
 var plot_0 = chart.plot(0);
 var plot_1 = chart.plot(1);
 
-// create line series on both of them
-var lineSeries_0 = plot_0.line(mapping);
-lineSeries_0.name('CSCO');
-lineSeries_0.stroke('2px #64b5f6');
+// create ohlc series on both of them
+var ohlcSeries_0 = plot_0.ohlc(mapping);
+ohlcSeries_0.name("CSCO");
+var ohlcSeries_1 = plot_1.ohlc(mapping);
+ohlcSeries_1.name('CSCO');
 
-var lineSeries_1 = plot_1.line(mapping);
-lineSeries_1.name('CSCO');
-lineSeries_1.stroke('2px #64b5f6');
+// create a PSAR indicator with default parameters
+var psar_0 = plot_0.psar(mapping).series();
 
-// create PSAR indicator with with step period 0.08 and maximum step period 0.60 on the first plot
-var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
-psar_0.stroke('0.5 gray');
-
-// create PSAR indicator with step period 0.02 and maximum step period 0.20 on the second plot
-var psar_1 = plot_1.psar(mapping, 0.02, 0.20, "column").series();
-psar_1.stroke('0.5 gray');
-psar_1.fill('#ff6d00');
-psar_1.type('circle');
+// create and adjust the CMF indicator with settings adjusted
+var psar_1 = plot_1.psar(mapping, 0.08, 0.60, "line").series();
+psar_1.stroke("2 red");
+psar_1.fill("#ff6d00");
+psar_1.type("circle");
 psar_1.size(2);
 
 // set container id for the chart
