@@ -46,17 +46,15 @@ var plot_1 = chart.plot(1);
 var ohlcSeries_0 = plot_0.ohlc(mapping);
 ohlcSeries_0.name("CSCO");
 var ohlcSeries_1 = plot_1.ohlc(mapping);
-ohlcSeries_1.name('CSCO');
+ohlcSeries_1.name("CSCO");
 
 // create a PSAR indicator with default parameters
 var psar_0 = plot_0.psar(mapping).series();
 
 // create and adjust the CMF indicator with settings adjusted
-var psar_1 = plot_1.psar(mapping, 0.08, 0.60, "line").series();
+var psar_1 = plot_1.psar(mapping, 0.08, 0.60, "column").series();
 psar_1.stroke("2 red");
 psar_1.fill("#ff6d00");
-psar_1.type("circle");
-psar_1.size(2);
 
 // set container id for the chart
 chart.container('container');
