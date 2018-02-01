@@ -33,7 +33,7 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"high": 2, "low": 3, "close": 4, "value": 5});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
 var chart = anychart.stock();
@@ -42,9 +42,13 @@ var chart = anychart.stock();
 var plot_0 = chart.plot(0);
 var plot_1 = chart.plot(1);
 
-// create line series
-var lineSeries = plot_0.line(mapping);
-lineSeries.name("CSCO");
+// configure the y-scale of the second plot
+plot_1.yScale().minimum(-100);
+plot_1.yScale().maximum(0);
+
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO");
 
 // create momentum indicator
 var williamsR = plot_1.williamsR(mapping, 4).series();
