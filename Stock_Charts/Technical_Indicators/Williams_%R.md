@@ -4,7 +4,7 @@
 
 Williams %R, or just %R, is a momentum indicator showing the current closing price in relation to the high and low of the past N days (for a given N). It was developed by trader and author Larry Williams and is used in the stock and commodities markets.
 
-Find the mathematical description of the indicator on the [Williams %R Mathematical Description](Mathematical_Description#williams_%25r) page.
+Find the mathematical description of the indicator on the [Williams %R Mathematical Description](Mathematical_Description#williams_%r) page.
 
 ## Adding indicator
 

@@ -4,7 +4,7 @@
 
 Money flow index (MFI) is an oscillator calculated over an N-day period, ranging from 0 to 100, showing money flow on up days as a percentage of the total of up and down days.
 
-Find the mathematical description of the indicator on the [Momentum Mathematical Description](Mathematical_Description#money_flow_index) page.
+Find the mathematical description of the indicator on the [Money Flow Index (MFI)](Mathematical_Description#money_flow_index) page.
 
 ## Adding indicator
 
