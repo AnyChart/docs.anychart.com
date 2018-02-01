@@ -57,11 +57,11 @@ lineSeries_1.stroke('2px #64b5f6');
 
 // create PSAR indicator with with step period 0.08 and maximum step period 0.60 on the first plot
 var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
-psar_0.stroke('0.5 black');
+psar_0.stroke('0.5 gray');
 
 // create PSAR indicator with step period 0.02 and maximum step period 0.20 on the second plot
-var psar_1 = plot_1.psar(mapping, 0.02, 0.20).series();
-psar_1.stroke('0.5 black');
+var psar_1 = plot_1.psar(mapping, 0.02, 0.20, "column").series();
+psar_1.stroke('0.5 gray');
 psar_1.fill('#ff6d00');
 psar_1.type('circle');
 psar_1.size(2);
