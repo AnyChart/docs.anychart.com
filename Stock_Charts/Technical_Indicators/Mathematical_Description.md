@@ -167,7 +167,7 @@ Coming soon.
 
 ## Money Flow Index
 
-[Money Flow Index](Money\Flow\_Index\_\(MFI\))  is calculated as follows:
+[Money Flow Index](Money_Flow_Index_\(MFI\))  is calculated as follows:
 
 <ol>
 <li>The typical price for each day is the average of high, low and close:</li><br>
