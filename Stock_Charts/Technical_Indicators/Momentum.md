@@ -10,7 +10,9 @@ Find the mathematical description of the indicator on the [Momentum Mathematical
 
 ## Adding indicator
 
-Momentum indicator is added through the {api:anychart.core.stock.Plot#momentum}momentum(){api} method. It requires a mapping with the `"close"` field. The following sample demonstrates the Momentum indicator applied to an OHLC series:
+Momentum indicator is added through the {api:anychart.core.stock.Plot#momentum}momentum(){api} method. It requires a mapping with the `"value"` or `"close"` field (please note that if there are both in you data, `"value"` overrides `"close"`).
+
+The following sample demonstrates the Momentum indicator applied to an OHLC series:
 
 ```
 // create data table on loaded data

@@ -46,7 +46,7 @@ var ohlcSeries = plot.ohlc(mapping);
 ohlcSeries.name("CSCO");
 
 // create PSAR indicator
-var psar = plot.psar(mapping, 0.08, 0.60).series();
+var psar = plot.psar(mapping, 0.08, 0.60, 0.10).series();
 psar.stroke("0.5 lightGray");
 
 // create scroller series with mapped data

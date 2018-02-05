@@ -29,7 +29,7 @@ var ohlcSeries = plot.ohlc(mapping);
 ohlcSeries.name("CSCO");
 
 // create PSAR indicator
-var psar = plot.psar(mapping, 0.08, 0.60).series();
+var psar = plot.psar(mapping, 0.08, 0.60, 0.10).series();
 psar.stroke("0.5 lightGray");
 ```
 
@@ -39,10 +39,12 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are four parameters a PSAR indicator has, one of them is necessary - the mapping. Three other ones are the acceleration factor, maximum acceleration factor and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a CMF indicator with parameters set as default.
+There are five parameters a PSAR indicator has, one of them is necessary - the mapping. Three other ones are the acceleration factor start, acceleration factor increment, acceleration factor maximum, and the series type.
+
+The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates a CMF indicator with parameters set as default.
 
 ```
-var psar = plot.psar(mapping, 0.02, 0.3, "marker");
+var psar = plot.psar(mapping, 0.02, 0.2, 0.2, "marker");
 ```
 
 ## Visualization
@@ -51,14 +53,14 @@ Visualization of an indicator depends on series type. Here is a sample where PSA
 
 ```
 // create the PSAR indicator with settings adjusted
-var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
+var psar_0 = plot_0.psar(mapping, 0.08, 0.60, 0.10).series();
 psar_0.stroke("0.5 lightGray");
 psar_0.fill("green");
 psar_0.type("circle");
 psar_0.size(2);
 
 // create and adjust the PSAR indicator with settings adjusted
-var psar_1 = plot_1.psar(mapping, 0.03, 0.20, "line").series();
+var psar_1 = plot_1.psar(mapping, 0.03, 0.20, 0.50, "line").series();
 psar_1.stroke("2 red");
 ```
 

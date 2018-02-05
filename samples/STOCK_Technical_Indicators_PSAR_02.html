@@ -49,14 +49,14 @@ var ohlcSeries_1 = plot_1.ohlc(mapping);
 ohlcSeries_1.name('CSCO');
 
 // create the PSAR indicator with settings adjusted
-var psar_0 = plot_0.psar(mapping, 0.08, 0.60).series();
+var psar_0 = plot_0.psar(mapping, 0.08, 0.60, 0.10).series();
 psar_0.stroke("0.5 lightGray");
 psar_0.fill("green");
 psar_0.type("circle");
 psar_0.size(2);
 
 // create and adjust the PSAR indicator with settings adjusted
-var psar_1 = plot_1.psar(mapping, 0.03, 0.20, "line").series();
+var psar_1 = plot_1.psar(mapping, 0.03, 0.20, 0.50, "line").series();
 psar_1.stroke("2 red");
 
 // set container id for the chart
