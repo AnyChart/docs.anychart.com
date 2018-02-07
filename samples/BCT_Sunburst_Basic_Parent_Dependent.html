@@ -26,8 +26,8 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Italian", children: [
-        {name: "Consonants", children: [
+      {name:     "Italian", children: [
+        {name:   "Consonants", children: [
           {name: "m"}, {name: "n"}, {name: "ɲ"},
           {name: "p"}, {name: "b"}, {name: "t"},
           {name: "d"}, {name: "k"}, {name: "g"},
@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
           {name: "j"}, {name: "w"}, {name: "l"},
           {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
         ]},
-        {name: "Vowels", children: [
+        {name:   "Vowels", children: [
           {name: "i"}, {name: "u"}, {name: "e"},
           {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
           {name: "a"}
@@ -48,11 +48,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
+
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Sunburst: Quick Start<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Phonemic System</span>");
+    chart.title("Sunburst: Quick Start");
 
     // set the container id
     chart.container("container");
