@@ -28,9 +28,12 @@
     </style>
 </head>
 <body>
-<button onclick="displayMode('always-show')">Always Show</button>
-<button onclick="displayMode('clip')">Clip</button>
-<button onclick="displayMode('drop')">Drop</button>    
+<label>Drop</label> 
+<input onclick="displayMode('clip')" type="radio" name="type" checked> 
+<label>Clip</label> 
+<input onclick="displayMode('clip')" type="radio" name="type" > 
+<label>Always Show</label> 
+<input onclick="displayMode('always-show')" type="radio" name="type" >   
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

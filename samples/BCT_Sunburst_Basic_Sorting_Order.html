@@ -20,12 +20,12 @@
     </style>
 </head>
 <body>
-<label for="flag">Descending</label> 
-<input onclick="sortingMode('desc')" type="radio" name="type" id="type" checked>
-<label for="circle">Ascending</label> 
-<input onclick="sortingMode('asc')" type="radio" name="type" id="type"> 
-<label for="pin">No Sorting</label> 
-<input onclick="sortingMode('none')" type="radio" name="type" id="type"> 
+<label>Descending</label> 
+<input onclick="sortingMode('desc')" type="radio" name="type" checked>
+<label>Ascending</label> 
+<input onclick="sortingMode('asc')" type="radio" name="type"> 
+<label>No Sorting</label> 
+<input onclick="sortingMode('none')" type="radio" name="type"> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

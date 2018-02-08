@@ -23,17 +23,14 @@
     </style>
 </head>
 <body>
-<fieldset  data-role="controlgroup" data-type="horizontal">
-  <legend>Type:</legend>
-    <label for="circle">Circle</label>
-    <input onclick="switchType('circle')" type="radio" name="type" id="type" checked="checked">
-    <label for="flag">Flag</label>
-    <input onclick="switchType('flag')" type="radio" name="type" id="type">
-    <label for="pin">Pin</label>
-    <input onclick="switchType('pin')" type="radio" name="type" id="type">
-    <label for="rect">Rectangle</label>
-    <input onclick="switchType('rect')" type="radio" name="type" id="type">
-</fieldset>
+<label>Circle</label>
+<input onclick="switchType('circle')" type="radio" name="type" checked="checked">
+<label>Flag</label>
+<input onclick="switchType('flag')" type="radio" name="type">
+<label>Pin</label>
+<input onclick="switchType('pin')" type="radio" name="type">
+<label>Rectangle</label>
+<input onclick="switchType('rect')" type="radio" name="type">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

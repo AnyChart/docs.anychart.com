@@ -28,12 +28,12 @@
     </style>
 </head>
 <body>
-<label for="pin">Always Show</label> 
-<input onclick="displayMode('always-show')" type="radio" name="type" id="type"> 
-<label for="circle">Clip</label> 
-<input onclick="displayMode('clip')" type="radio" name="type" id="type"> 
-<label for="flag">Drop</label> 
-<input onclick="displayMode('drop')" type="radio" name="type" id="type" checked>
+<label>Always Show</label> 
+<input onclick="displayMode('always-show')" type="radio" name="type"> 
+<label>Clip</label> 
+<input onclick="displayMode('clip')" type="radio" name="type"> 
+<label>Drop</label> 
+<input onclick="displayMode('drop')" type="radio"  name="type" checked>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
