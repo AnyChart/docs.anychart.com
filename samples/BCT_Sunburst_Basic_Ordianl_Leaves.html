@@ -26,26 +26,22 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name:     "Andorra", value: 57600000, children: [
-        {name:   "Machines", value: 22400000, children: [
-          {name: "Integrated Circuits", value: 12200000},
-          {name: "Blank Audio Media", value: 2500000},
-          {name: "Computers", value: 1100000}
+      {name: "Italian", children: [
+        {name: "Consonants", children: [
+          {name: "m"}, {name: "n"}, {name: "ɲ"},
+          {name: "p"}, {name: "b"}, {name: "t"},
+          {name: "d"}, {name: "k"}, {name: "g"},
+          {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
+          {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
+          {name: "s"}, {name: "z"}, {name: "ʃ"},
+          {name: "j"}, {name: "w"}, {name: "l"},
+          {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
         ]},
-        {name:   "Instruments", value: 9750000, children: [
-          {name: "Orthopedic Appliances", value: 8900000}
-        ]},
-        {name:   "Chemical Products", value: 4740000, children: [
-          {name: "Essential Oils", value: 3690000},
-          {name: "Beauty Products", value: 423000}
-        ]},
-        {name:   "Mineral Products", value: 4540000, children: [
-          {name: "Coal Briquettes", value: 4280000}
-        ]},
-        {name:   "Transportation", value: 4060000, children: [
-          {name: "Cars", value: 2870000},
-          {name: "Vehicle Parts", value: 640000}
-        ]}
+        {name: "Vowels", children: [
+          {name: "i"}, {name: "u"}, {name: "e"},
+          {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
+          {name: "a"}
+        ]} 
       ]}
     ];
 
@@ -53,13 +49,13 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sunburst(data, "as-tree");
 
     // set the calculation mode
-    chart.calculatingMode("parent-dependent");
+    chart.calculatingMode("ordinal-leaves");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (parent-dependent)<br><br>" +
+    chart.title("Sunburst: Calculation Mode (ordinal-from-leaves)<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
-        "Export Sales</span>");
+        "Phonemic System</span>");
 
     // set the container id
     chart.container("container");
