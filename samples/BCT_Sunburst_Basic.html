@@ -26,22 +26,17 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Italian", children: [
-        {name: "Consonants", children: [
-          {name: "m"}, {name: "n"}, {name: "ɲ"},
-          {name: "p"}, {name: "b"}, {name: "t"},
-          {name: "d"}, {name: "k"}, {name: "g"},
-          {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
-          {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
-          {name: "s"}, {name: "z"}, {name: "ʃ"},
-          {name: "j"}, {name: "w"}, {name: "l"},
-          {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
+      {name: "Company A", children: [
+        {name: "Technical", children: [
+          {name: "Developers", value: 35},
+          {name: "Testers", value: 15}
         ]},
-        {name: "Vowels", children: [
-          {name: "i"}, {name: "u"}, {name: "e"},
-          {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
-          {name: "a"}
-        ]} 
+        {name: "Sales", children: [
+          {name: "Analysts", value: 12},
+          {name: "Executives", value: 8}
+        ]},
+        {name: "HR", value: 3},
+        {name: "Management", value: 7}
       ]}
     ];
 
@@ -52,7 +47,7 @@ anychart.onDocumentReady(function () {
     chart.title().useHtml(true);
     chart.title("Sunburst: Quick Start<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
-        "Phonemic System</span>");
+        "Number of Employees</span>");
 
     // set the container id
     chart.container("container");
