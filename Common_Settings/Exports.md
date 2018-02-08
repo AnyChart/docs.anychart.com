@@ -35,7 +35,7 @@ chart.exports.filename('custom_name');
 
 ## Image
 
-AnyChart js charting library allows to save charts in 3 different image formats: SVG, PNG and JPG:
+AnyChart JS charting library allows to save charts in 3 different image formats: SVG, PNG and JPG:
 
 - {api:anychart.core.Chart#saveAsSvg}saveAsSvg(){api}, 
 - {api:anychart.core.Chart#saveAsPng}saveAsPng(){api},
