@@ -113,7 +113,7 @@ label.fontColor("#60727b");
 label.hAlign("center");
 label.vAlign("middle");
 
-// Set center content.
+// set the label as the center content
 chart.center().content(label);
 ```
 

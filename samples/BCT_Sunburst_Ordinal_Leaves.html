@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-  <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-bundle.min.js"></script>
 
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
@@ -26,28 +26,36 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Company A", children: [
-        {name: "Technical", children: [
-          {name: "Developers", value: 35},
-          {name: "Testers", value: 15}
+      {name: "Italian", children: [
+        {name: "Consonants", children: [
+          {name: "m"}, {name: "n"}, {name: "ɲ"},
+          {name: "p"}, {name: "b"}, {name: "t"},
+          {name: "d"}, {name: "k"}, {name: "g"},
+          {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
+          {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
+          {name: "s"}, {name: "z"}, {name: "ʃ"},
+          {name: "j"}, {name: "w"}, {name: "l"},
+          {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
         ]},
-        {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
-        ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "Vowels", children: [
+          {name: "i"}, {name: "u"}, {name: "e"},
+          {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
+          {name: "a"}
+        ]} 
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
+    // set the calculation mode
+    chart.calculationMode("ordinal-leaves");
+
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Quick Start<br><br>" +
+    chart.title("Sunburst: Calculation Mode (ordinal-from-leaves)<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
-        "Number of Employees</span>");
+        "Phonemic System</span>");
 
     // set the container id
     chart.container("container");

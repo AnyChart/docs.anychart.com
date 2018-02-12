@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-  <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-bundle.min.js"></script>
 
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
@@ -43,12 +43,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
-    // set the calculation mode
-    chart.calculatingMode("parent-independent");
-
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (parent-independent)<br><br>" +
+    chart.title("Sunburst: Labels and Tooltips (Formatting Functions)<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
         "Number of Employees</span>");
 

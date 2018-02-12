@@ -258,7 +258,7 @@ In this sample, there is a Treemap chart with appearance settings configured:
 chart.hovered().fill("gray", 0.4);
 chart.selected().fill("gray", 0.6);
 chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-chart.stroke("gray");
+chart.normal().stroke("gray");
 chart.hovered().stroke("gray");
 chart.selected().stroke("gray", 2);
 ```
@@ -283,19 +283,10 @@ var data = [
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
     {name: "Germany",        value: 80636124,
-     normal:   {
-                 fill: "#ff0000",
-                 stroke: "4 #b30059",
-               },
-     hovered:  {
-                 fill: "#ff0000",
-                 stroke: "5 white"
-               },
-     selected: {
-                 fill: "#b30059",
-                 stroke: "5 white"
-               }
-    }  
+     normal:   {fill: "#ff0000", stroke: "4 #b30059"},
+     hovered:  {fill: "#ff0000", stroke: "5 white"},
+     selected: {fill: "#b30059", stroke: "5 white"}
+    }
   ]} 
 ];
 
