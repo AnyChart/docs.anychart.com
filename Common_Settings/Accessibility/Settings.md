@@ -1,20 +1,6 @@
 {:index 4}
 
-# Accessibility (508 Section)
-
-## What is Section 508
-
-The Web unites millions of people all over the world. Some web users are part-disabled, they can't use some electronic devices, e.g. mouse, keyboards, etc. When a visually-impaired users use the Internet, the best option is to use a screen reader which reads the page content and makes it understandable to such persons.
-
-International accessibility standards are invented to make technology and the Internet available to all users, regardless of disability status. Using these standards is a way to provide such people more opportunities. AnyChart supports these standards.
-
-You can find a lot of information about section 508 at [https://www.section508.gov/](https://www.section508.gov/).
-
-There are several methods AnyChart supports that make charts accessible. The main idea is in creating special tags (ARIA tags) in SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, it helps disabled people to understand the information on charts and maps. 
-
-## Why a11y
-
-Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](Localization) as i18n and l10n respectively and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
+# Accessibility Settings
 
 ## Default
 
@@ -44,7 +30,7 @@ Accessibility support for series is separated from the chart's accessibility. To
 series.a11y(true);
 ```
 
-{sample}CMN\_508\_Section\_01{sample}
+{sample}CMN\_Accessibility\_01{sample}
 
 ## Accessible Elements
 
@@ -66,8 +52,7 @@ series2014.a11y().titleFormat(function(e){
 });
 ```
 
-{sample}CMN\_508\_Section\_02{sample}
-
+{sample}CMN\_Accessibility\_02{sample}
 
 ## Accessibility Modes
 
@@ -82,7 +67,7 @@ The "chartElements" mode is enabled by default. In this mode, a user interacts w
 chart.a11y().mode("chartElements")
 ```
 
-{sample}CMN\_508\_Section\_03{sample}
+{sample}CMN\_Accessibility\_03{sample}
 
 Note that setting the mode to the chart does not affect the series.
 
@@ -95,4 +80,4 @@ In this mode, an invisible table with chart data is generated. This table contai
 chart.a11y().mode("dataTable")
 ```
 
-{sample}CMN\_508\_Section\_04{sample}
+{sample}CMN\_Accessibility\_04{sample}
