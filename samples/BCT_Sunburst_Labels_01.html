@@ -6,7 +6,6 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-bundle.min.js"></script>
-
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
@@ -26,22 +25,44 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Company A", children: [
-        {name: "Technical", children: [
-          {name: "Developers", value: 35},
-          {name: "Testers", value: 15}
+      {name: "Company A", custom_field: "info 1", children: [
+        {name: "Technical", custom_field: "info 2", children: [
+          {name: "Team Leaders", custom_field: "info 6", value: 7},
+          {name: "Architects", custom_field: "info 7", value: 3},
+          {name: "Developers", custom_field: "info 8", value: 35},
+          {name: "Testers", custom_field: "info 9", value: 15}
         ]},
-        {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
+        {name: "Sales", custom_field: "info 3", children: [
+          {name: "Analysts", custom_field: "info 10", value: 12},
+          {name: "Executives", custom_field: "info 11", value: 8}
         ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "HR", custom_field: "info 4", value: 3},
+        {name: "Management", custom_field: "info 5", value: 7}
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
+
+    // set the calculation mode
+    chart.calculationMode("parent-independent");
+
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+
+    // configure labels
+    //chart.labels().format(
+    //  "<span style='font-weight:bold'>{%name}</span><br>{%value}"
+    //);
+
+    // configure tooltips
+    //chart.tooltip().titleFormat(
+    //  "{%name}"
+    //);
+
+    chart.tooltip().format(
+      "{%value}\n\n{%custom_field}"
+    );
 
     // set the chart title
     chart.title().useHtml(true);

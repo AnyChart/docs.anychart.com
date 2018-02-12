@@ -28,22 +28,24 @@ anychart.onDocumentReady(function () {
     var data = [
       {name: "Company A", children: [
         {name: "Technical", children: [
-          {name: "Developers", value: 35},
-          {name: "Testers", value: 15}
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
         ]},
         {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
+          {name: "Analysts"},
+          {name: "Executives"}
         ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "HR"},
+        {name: "Management"}
       ]}
     ];
 
     // create a stage
     var stage = anychart.graphics.create("container");
 
-    // create and configure the first pie chart
+    // create and configure the first sunburst chart
     var sunburst1 = anychart.sunburst(data, "as-tree");
     sunburst1.title("Start Angle: Default (0°)");
     sunburst1.bounds(0, 0, "50%", "100%");
@@ -52,7 +54,7 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     sunburst1.draw();   
 
-    // create and configure the second pie chart
+    // create and configure the second sunburst chart
     var sunburst2 = anychart.sunburst(data, "as-tree");
     sunburst2.title("Start Angle: 90°");
     sunburst2.bounds("50%", 0, "50%", "100%");

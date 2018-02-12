@@ -26,10 +26,8 @@
     </style>
 </head>
 <body>
-<label>Default</label> 
-<input onclick="labelsPosition('')" type="radio" name="type" checked> 
 <label>Circular</label> 
-<input onclick="labelsPosition('circular')" type="radio" name="type"> 
+<input onclick="labelsPosition('circular')" type="radio" name="type" checked> 
 <label>Radial</label> 
 <input onclick="labelsPosition('radial')" type="radio"  name="type">
 <div id="container"></div>
@@ -40,29 +38,38 @@ anychart.onDocumentReady(function () {
     var data = [
       {name: "Company A", children: [
         {name: "Technical", children: [
-          {name: "Developers", value: 35},
-          {name: "Testers", value: 15}
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
         ]},
         {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
+          {name: "Analysts"},
+          {name: "Executives"}
         ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "HR"},
+        {name: "Management"}
       ]}
     ];
 
     // create a chart and set the data
     chart = anychart.sunburst(data, "as-tree");
 
+    // create a chart and set the data
+    chart = anychart.sunburst(data, "as-tree");
+
+    // set the position of labels
+    chart.labels().position("circular");
+
+    // set the rotation of labels
     chart.labels().rotation(25);
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Sunburst: Labels (Position = " +
-      chart.labels().position() + ")<br><br>" + 
+      chart.labels().position() + ")<br><br>" +
       "<span style='font-size:12; font-style:italic'>" +
-      "Number of Employees");
+      "Company Structure");
 
     // set the container id
     chart.container("container");
@@ -75,10 +82,10 @@ anychart.onDocumentReady(function () {
 function labelsPosition(position){
   chart.labels().position(position);
   // update the chart title
-  chart.title("Treemap: Labels (Position = " +
+  chart.title("Sunburst: Labels (Position = " +
     chart.labels().position() + ")<br><br>" + 
     "<span style='font-size:12; font-style:italic'>" +
-    "Slavic Languages by Number of Speakers</span>");
+    "Company Structure</span>");
 };
 </script>
 </body>

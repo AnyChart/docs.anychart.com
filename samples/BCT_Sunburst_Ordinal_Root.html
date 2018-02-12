@@ -28,6 +28,8 @@ anychart.onDocumentReady(function () {
     var data = [
       {name: "Company A", children: [
         {name: "Technical", children: [
+          {name: "Team Leaders"},
+          {name: "Architects"},
           {name: "Developers"},
           {name: "Testers"}
         ]},
@@ -44,7 +46,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sunburst(data, "as-tree");
 
     // set the calculation mode
-    chart.calculationMode("ordinal-root");
+    chart.calculationMode("ordinal-from-root");
 
     // set the chart title
     chart.title().useHtml(true);

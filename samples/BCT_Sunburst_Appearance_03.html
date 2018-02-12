@@ -27,34 +27,32 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {name: "Company A", children: [
-        {name: "Technical",
-         normal:   {fill: "#ff0000", stroke: "4 #b30059"},
-         hovered:  {fill: "#ff0000", stroke: "5 white"}
-         children: [
-          {name: "Developers", value: 35,
-           normal:   {fill: "blue", stroke: "4 #b30059"},
-           hovered:  {fill: "#ff0000", stroke: "5 white"},
-           selected: {fill: "#b30059", stroke: "5 white"},
-       },
-          {name: "Testers", value: 15}
+        {name: "Technical", children: [
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
         ]},
         {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
+          {name: "Analysts"},
+          {name: "Executives"}
         ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "HR"},
+        {name: "Management"}
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
+    // set the calculation mode
+    chart.calculationMode("ordinal-from-root");
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Sunburst: Appearance<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
-        "Number of Employees</span>");
+        "Company Structure</span>");
 
     // set the container id
     chart.container("container");
