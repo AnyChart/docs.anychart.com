@@ -12,7 +12,6 @@
 ## Special Settings
 
 ### Data
-нужны ли подразделы (?)
 
 ### Calculation Mode
 
@@ -81,7 +80,7 @@
 
 {sample}BCT\_Sunburst\_Labels\_04{sample}
 
-### Interactivity (?)
+### Interactivity
 
 #### Drilldown
 
