@@ -49,12 +49,12 @@ anychart.onDocumentReady(function () {
     chart.calculationMode("ordinal-from-root");
 
     // configure the visual settings of the chart
-    chart.hovered().fill("gray", 0.4);
-    chart.selected().fill("gray", 0.6);
-    chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-    chart.normal().stroke("black", 0.5);
-    chart.hovered().stroke("white", 2);
-    chart.selected().stroke("white", 2);
+    chart.hovered().fill("#96a6a6", 0.4);
+    chart.selected().fill("#96a6a6", 0.6);
+    chart.selected().hatchFill("forward-diagonal", "#96a6a6", 4, 20);
+    chart.normal().stroke("#96a6a6", 2);
+    chart.hovered().stroke("#96a6a6", 2);
+    chart.selected().stroke("#96a6a6", 4);
 
     // set the chart title
     chart.title().useHtml(true);

@@ -27,10 +27,15 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {name: "Company A", children: [
-        {name: "Technical", children: [
+        {name: "Technical",
+         normal: {fill: "#ffad99"},
+         children: [
           {name: "Team Leaders"},
           {name: "Architects"},
-          {name: "Developers"},
+          {name: "Developers",
+           normal: {fill: "#dd2c00"},
+           selected: {fill: "#b32400"}
+          },
           {name: "Testers"}
         ]},
         {name: "Sales", children: [
