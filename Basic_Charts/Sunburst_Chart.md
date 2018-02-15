@@ -34,7 +34,8 @@
 ### Levels and Leaves
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Levels\_Leaves{sample}
-(!позже поменять режим на дефолтный)
+
+(позже поменять режим на дефолтный?)
 
 ### Appearance
 
@@ -60,9 +61,10 @@
 {sample :width 500 :height 500}BCT\_Sunburst\_Radius{sample}
 
 ### Center Content
-+ ссылка на doughnut
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Center\_Content{sample}
+
+(+ ссылка на doughnut)
 
 ### Labels and Tooltips
 
