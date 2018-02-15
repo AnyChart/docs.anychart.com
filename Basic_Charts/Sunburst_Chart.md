@@ -5,7 +5,7 @@
 
 ## Quick Start
 
-{sample}BCT\_Sunburst\_Quick\_Start{sample}
+{sample :width 600 :height 600}BCT\_Sunburst\_Quick\_Start{sample}
 
 ## General Settings
 
@@ -18,7 +18,7 @@
 
 #### Ordinal from Root
 
-{sample}BCT\_Sunburst\_Ordinal\_Root{sample}
+{sample :height 600}BCT\_Sunburst\_Ordinal\_Root{sample}
 
 #### Ordinal from Leaves
 
@@ -45,7 +45,7 @@
 #### Individual Points
 {sample}BCT\_Sunburst\_Appearance\_02{sample}
 
-#### Functions (?)
+#### Fill Functions
 {sample}BCT\_Sunburst\_Appearance\_03{sample}
 
 ### Start Angle
