@@ -42,10 +42,10 @@
 #### All Points
 {sample}BCT\_Sunburst\_Appearance\_01{sample}
 
-#### Levels and Leaves
+#### Individual Points
 {sample}BCT\_Sunburst\_Appearance\_02{sample}
 
-#### Individual Points
+#### Functions (?)
 {sample}BCT\_Sunburst\_Appearance\_03{sample}
 
 ### Start Angle

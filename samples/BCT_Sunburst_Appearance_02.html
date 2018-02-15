@@ -27,10 +27,15 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {name: "Company A", children: [
-        {name: "Technical", children: [
+        {name: "Technical",
+         normal: {fill: "#ffad99"},
+         children: [
           {name: "Team Leaders"},
           {name: "Architects"},
-          {name: "Developers"},
+          {name: "Developers",
+           normal: {fill: "#dd2c00"},
+           selected: {fill: "#b32400"}
+          },
           {name: "Testers"}
         ]},
         {name: "Sales", children: [
@@ -50,31 +55,9 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Appearance (Levels and Leaves)<br><br>" +
+    chart.title("Sunburst: Appearance (Individual Points)<br><br>" +
         "<span style='font-size:12; font-style:italic'>" +
         "Company Structure</span>");
-
-    var level1 = chart.level(0);
-    var level2 = chart.level(1);
-    var leaves = chart.leaves();
-
-    // configure the visual settings of levels
-    level1.normal().fill("red");
-    level1.hovered().fill("gray", 0.4);
-    level1.selected().fill("gray", 0.6);
-    level1.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-    level1.normal().stroke("black", 0.5);
-    level1.hovered().stroke("white", 2);
-    level1.selected().stroke("white", 2);
-
-    // configure the visual settings of leaves
-    leaves.normal().fill("blue");
-    leaves.hovered().fill("gray", 0.4);
-    leaves.selected().fill("gray", 0.6);
-    leaves.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-    leaves.normal().stroke("black", 0.5);
-    leaves.hovered().stroke("white", 2);
-    leaves.selected().stroke("white", 2);
 
     // set the container id
     chart.container("container");
