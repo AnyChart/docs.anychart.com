@@ -50,11 +50,18 @@ anychart.onDocumentReady(function () {
     // set the calculation mode
     chart.calculationMode("ordinal-from-root");
 
+    // configure the visual settings of the chart
+    chart.fill(function () {
+      return this.parent ?
+             anychart.color.lighten(this.parentColor, 0.5) : 
+             this.mainColor;
+    });
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Sunburst: Appearance (Fill Functions)<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Company Structure</span>");
+                "<span style='font-size:12; font-style:italic'>" +
+                "Company Structure</span>");
 
     // set the container id
     chart.container("container");

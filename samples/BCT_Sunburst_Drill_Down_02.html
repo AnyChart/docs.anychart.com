@@ -9,7 +9,7 @@
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
@@ -50,19 +50,16 @@ anychart.onDocumentReady(function () {
     // set the calculation mode
     chart.calculationMode("ordinal-from-root");
 
-    // configure the visual settings of the chart
-    chart.hovered().fill("#96a6a6", 0.4);
-    chart.selected().fill("#96a6a6", 0.6);
-    chart.selected().hatchFill("forward-diagonal", "#96a6a6", 0.5, 12);
-    chart.normal().stroke("#96a6a6", 2);
-    chart.hovered().stroke("#96a6a6", 2);
-    chart.selected().stroke("#96a6a6", 4);
+    // disable the drilldown feature
+    chart.listen("drillchange", function(e){
+      return false;
+    });
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Appearance<br><br>" +
+    chart.title("Sunburst: Interactivity (Disabling Drilldown)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Company Structure</span>");
+                "Number of Employees</span>");
 
     // set the container id
     chart.container("container");

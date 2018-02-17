@@ -9,19 +9,27 @@
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="drillToLevel()">Drill Down to "Developers"</button>
+<button onclick="drillUpALevel()">Drill Up a Level</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -44,25 +52,27 @@ anychart.onDocumentReady(function () {
       ]}
     ];
 
+    // create a storage for the data tree
+    treeData = anychart.data.tree(data, "as-tree");
+
     // create a chart and set the data
-    var chart = anychart.sunburst(data, "as-tree");
+    chart = anychart.sunburst(treeData);
 
     // set the calculation mode
     chart.calculationMode("ordinal-from-root");
 
-    // configure the visual settings of the chart
-    chart.hovered().fill("#96a6a6", 0.4);
-    chart.selected().fill("#96a6a6", 0.6);
-    chart.selected().hatchFill("forward-diagonal", "#96a6a6", 0.5, 12);
-    chart.normal().stroke("#96a6a6", 2);
-    chart.hovered().stroke("#96a6a6", 2);
-    chart.selected().stroke("#96a6a6", 4);
-
-    // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Sunburst: Appearance<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Company Structure</span>");
+    /* listen to the chartDraw event
+    and add the drilldown path to the chart title */
+    chart.listen("chartDraw",function (){
+      // get the drilldown path and convert it to a string
+      var text = printPath(chart.getDrilldownPath());
+      // set the chart title
+      chart.title().useHtml(true);
+      chart.title("Sunburst: Interactivity (Drilling Down and Up)<br>" +
+                  "Path: <span style = 'color:#990000; font-style:italic'>" + text +
+                  "</span><br><br><span style='font-size:12; font-style:italic'>" +
+                  "Number of Employees</span>");
+    });
 
     // set the container id
     chart.container("container");
@@ -70,6 +80,32 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+/* a function for converting the current
+drilldown path to a string */
+function printPath(path){
+  /* go through the array of the data tree items
+  and use the get() method to obtain the "name" field */
+  var text = "";
+  for (i = 0; i <  path.length; i++){ 
+    text += path[i].get("name") + "\\";
+  }
+  return text;
+};
+    
+// drill down to "developers"
+function drillToLevel(){
+  /* locate an item in the data tree,
+  get the item as an object*/
+  var item = treeData.search("name", "Developers");
+  // drill down to the item
+  chart.drillTo(item);
+};
+
+// drill up a level
+function drillUpALevel(){
+   chart.drillUp();
+};
 </script>
 </body>
 </html>

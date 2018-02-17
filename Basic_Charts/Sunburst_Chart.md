@@ -86,4 +86,8 @@
 
 #### Drilldown
 
+{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_01{sample}
+
 #### Disabling Drilldown
+
+{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_02{sample}
