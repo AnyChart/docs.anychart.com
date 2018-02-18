@@ -4,15 +4,16 @@
 
 ## Overview
 
-The Web unites millions of people all over the world. Some web users are part-disabled, they can't use some electronic devices, e.g. mouse, keyboards, etc. When a visually-impaired users use the Internet, the best option is to use a screen reader which reads the page content and makes it understandable to such persons.
+The Web unites millions of people all over the world. Some web users are partially disabled and cannot operate some electronic devices, e.g. mouses and keyboards. For visually impaired persons, the best option is to use a screen reader, which reads the page content and makes it understandable to them.
 
-International accessibility standards are invented to make technology and the Internet available to all users, regardless of disability status. Using these standards is a way to provide such people more opportunities. AnyChart supports these standards.
+International accessibility standards were invented to make technology and the Internet available to all people, regardless of their disability status. AnyChart supports these standards to provide users with more opportunities.
 
-There are several methods AnyChart supports that make charts accessible. The main idea is in creating special tags (ARIA tags) in SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, it helps disabled people to understand the information on charts and maps.
+There are several methods (??? или ways) in AnyChart that allow adding accessibility options. The main idea is to create special tags (ARIA tags) in the SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, so that disabled people could understand the information on charts and maps.
 
 ## Compliance
 
-AnyChart Charts and Maps have be checked for compliance with the following standards:
+AnyChart Charts and Maps have been (??? не уверена, что ты хотел сказать,
+но если это, то наверное лучше вообще were) checked for compliance with the following standards:
 
 * [Section 508 Amendment to the Rehabilitation Act of 1973](Section_508)
 * [EN 301 549 Accessibility requirements suitable for public procurement of ICT products and services in Europe](Standard_EN_301_549)
@@ -24,6 +25,6 @@ Accessibility is often abbreviated as the numeronym **a11y**, where the number 1
 
 ## Settings
 
-The accessibility support is enabled by default. It means that you don't need to enable accessibility unless you've turned it off. Switching the accessibility support off will lead to the absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information available to a screen reader will be barely understandable.
+The accessibility support is enabled by default. It means that you do not need to enable accessibility unless you have turned it off. If the accessibility support is disabled, there are neither ARIA-tags nor ARIA-labels in the SVG structure, so the information available to a screen reader is barely understandable.
 
-AnyChart offer a wide variety of options to confugure accessibility, please see [Accessibility Settings](Settings) article to learn more.
+AnyChart offers a wide variety of options to confugure accessibility. Please see the [Accessibility Settings](Settings) article to learn more.
