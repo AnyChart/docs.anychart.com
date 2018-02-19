@@ -377,7 +377,7 @@ The sample below demonstrates how to work with formatting functions:
 
 #### Position
 
-To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter (see (???)).
+To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter.
 
 The following sample shows how to change the position of labels, which is initially set to `"circular"`:
 
@@ -406,7 +406,7 @@ chart.leaves().labels().position("circular");
 
 The Sunburst chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on the parent element, you drill up a level. This behavior can be modified.
 
-(???) **Note** It is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, either of these options is available for the element).
+**Note** It is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, either of these options is available for the element).
 
 When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [data tree model](../Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 

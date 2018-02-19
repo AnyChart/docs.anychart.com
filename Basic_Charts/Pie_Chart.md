@@ -188,9 +188,9 @@ To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} meth
 
 ```
 // set the sorting mode
-pie1.sort("none");
+pie1.sort("desc");
 pie2.sort("asc");
-pie3.sort("desc");
+pie3.sort("none");
 ```
 
 {sample}BCT\_Pie\_Chart\_07{sample}

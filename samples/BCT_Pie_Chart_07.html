@@ -39,10 +39,10 @@ anychart.onDocumentReady(function () {
 
     // create and configure  the first pie chart
     var pie1 = anychart.pie(data);
-    pie1.title("No Sorting");
+    pie1.title("Descending Order");
     pie1.bounds(0, 0, "33.3%", "100%");
     // set the sorting mode
-    pie1.sort("none");
+    pie1.sort("desc");
     // disable the legend
     pie1.legend(false);
     // set the chart container
@@ -65,10 +65,10 @@ anychart.onDocumentReady(function () {
 
     // create and configure the third pie chart
     var pie3 = anychart.pie(data);
-    pie3.title("Descending Order");
+    pie3.title("No Sorting");
     pie3.bounds("66.6%", 0, "33.3%", "100%");
     // set the sorting mode
-    pie3.sort("desc");
+    pie3.sort("none");
     // disable the legend
     pie3.legend(false);
     // set the chart container

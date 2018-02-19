@@ -98,7 +98,7 @@ Use the following data fields:
 
 The `isTotal` field is boolean, used optionally for showing/hiding a total value. By default, a total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
-The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter (see {api:anychart.enums.WaterfallDataMode}anychart.enums.WaterfallDataMode{api}).
+The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter – see {api:anychart.enums.WaterfallDataMode}anychart.enums.WaterfallDataMode{api}.
 
 The default data mode is **difference**. It means that the `value` data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 
