@@ -578,7 +578,7 @@ By default, the text of a header is not shown if it does not fit its height. How
 * `"clip"`
 * `"drop"`
 
-The sample below shows how to change the display mode, which is initially set to "drop":
+The sample below shows how to change the display mode, which is initially set to `"drop"`:
 
 ```
 // set the display mode of headers

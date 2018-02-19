@@ -289,7 +289,7 @@ chart.innerRadius(20);
 
 ### Center Content
 
-If the [inner radius](#inner_radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map.
+If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map.
 
 The center content is set with the {api:anychart.charts.Sunburst#center}center(){api} method, which provides the access to the {api:anychart.core.sunburst.Center}anychart.core.sunburst.Center{api} object.
 
@@ -315,6 +315,8 @@ chart.center().content(label);
 
 To learn about other types of center content, see the [Doughnut Chart](Doughnut_Chart#center_content) article.
 
+(поднять эту ссылку повыше)
+
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -329,6 +331,7 @@ To configure tooltips, do the same with the {api:anychart.charts.Sunburst#toolti
 
 Here is the list of tokens that work with the Sunburst chart:
 
+* `{%id}`
 * `{%name}`
 * `{%value}`
 
@@ -375,7 +378,7 @@ The sample below demonstrates how to work with formatting functions:
 
 To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter.
 
-The following sample shows how to change the position of labels, which is initially set to circular:
+The following sample shows how to change the position of labels, which is initially set to `"circular"`:
 
 ```
 // set the position of labels
@@ -386,7 +389,7 @@ chart.labels().position("circular");
 
 The position of labels can also be set separately for levels and leaves – use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
 
-The default position is circular for levels and radial for leaves, and this sample demonstrates how to reverse it:
+The default position is `"circular"` for levels and `"radial"` for leaves, and this sample demonstrates how to reverse it:
 
 ```
 // set the position of labels
