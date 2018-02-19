@@ -142,7 +142,7 @@ chart.calculationMode("parent-independent");
 
 * !!! написать про level() с индексом и без индекса
 * уровни называть кольцами (тогда можно будет использовать thickness)
-* (???) отсылка на лейблы и тултипы?
+* (???) отсылка на лейблы?
 
 ```
 // hide the first level
@@ -385,6 +385,8 @@ chart.labels().useHtml(true);
 chart.labels().format(
   "<span style='font-weight:bold'>{%name}</span><br>{%value}"
 );
+
+// configure the labels of leaves
 chart.leaves().labels().format("{%name}");
 
 // configure tooltips
@@ -405,7 +407,25 @@ You can also add a custom field to your data and refer to it by using the {api:a
 The sample below demonstrates how to work with formatting functions:
 
 ```
+// configure labels
+chart.labels().format(function (){
+  var sales = Math.round(this.value/100000)/10;
+  return "<span style='font-weight:bold'>" + this.name + 
+         "</span><br/>" + sales + " mln";
+});
 
+// configure the labels of leaves
+chart.leaves().labels().format(function (){
+  var sales = Math.round(this.value/100000)/10;
+  return sales + " mln";
+});
+
+// configure tooltips
+chart.tooltip().format(function (){
+  var sales = Math.round(this.value/100000)/10;
+  return "population: " + sales + " mln" +
+     "\n\n" + this.getData("custom_field");
+});
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Labels\_02{sample}
