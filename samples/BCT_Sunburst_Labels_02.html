@@ -76,8 +76,8 @@ anychart.onDocumentReady(function () {
     // configure tooltips
     chart.tooltip().format(function (){
       var sales = Math.round(this.value/100000)/10;
-      return "population: " + sales + " mln" +
-         "\n\n" + this.getData("custom_field");
+      return this.name + "\n\nsales: " + sales +
+             " mln\n" + this.getData("custom_field");
     });
 
     // set the chart title

@@ -388,7 +388,7 @@ chart.labels().format("<span style='font-weight:bold'>{%name}</span><br>{%value}
 chart.leaves().labels().format("{%name}");
 
 // configure tooltips
-chart.tooltip().format("{%name}: {%value}\n\n{%custom_field}");
+chart.tooltip().format("{%name}\n\nsales: {%value}\n{%custom_field}");
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Labels\_01{sample}
@@ -421,9 +421,9 @@ chart.leaves().labels().format(function (){
 // configure tooltips
 chart.tooltip().format(function (){
   var sales = Math.round(this.value/100000)/10;
-  return "population: " + sales + " mln" +
-     "\n\n" + this.getData("custom_field");
-});
+  return this.name + "\n\nsales: " + sales +
+         " mln\n" + this.getData("custom_field");
+})
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Labels\_02{sample}

@@ -67,7 +67,7 @@ anychart.onDocumentReady(function () {
     chart.leaves().labels().format("{%name}");
 
     // configure tooltips
-    chart.tooltip().format("{%name}: {%value}\n\n{%custom_field}");
+    chart.tooltip().format("{%name}\n\nsales: {%value}\n{%custom_field}");
 
     // set the chart title
     chart.title().useHtml(true);

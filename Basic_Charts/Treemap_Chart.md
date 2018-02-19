@@ -468,8 +468,8 @@ chart.labels().format(function (){
 // configure tooltips
 chart.tooltip().format(function (){
   var population = Math.round(this.value/100000)/10;
-  return "population: " + population + " mln" +
-         "\ncapital: " + this.getData("capital");
+  return "population: " + population +
+         " mln\ncapital: " + this.getData("capital");
 });
 ```
 
