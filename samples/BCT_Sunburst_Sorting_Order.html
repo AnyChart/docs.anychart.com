@@ -28,12 +28,12 @@
     </style>
 </head>
 <body>
-<label>Descending</label> 
-<input onclick="sortingMode('desc')" type="radio" name="type" checked>
+<label>No Sorting</label> 
+<input onclick="sortingMode('none')" type="radio" name="type" checked>
 <label>Ascending</label> 
 <input onclick="sortingMode('asc')" type="radio" name="type"> 
-<label>No Sorting</label> 
-<input onclick="sortingMode('none')" type="radio" name="type"> 
+<label>Descending</label> 
+<input onclick="sortingMode('desc')" type="radio" name="type"> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -64,9 +64,12 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Sorting Order<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Company Structure</span>");
+    chart.listen("chartDraw", function () {
+      chart.title("Sunburst: Sorting Order = " +
+                  chart.sort() + "<br><br>" + 
+                  "<span style='font-size:12; font-style:italic'>" +
+                  "Number of Employees</span>");
+    });
 
     // set the container id
     chart.container("container");
@@ -78,11 +81,6 @@ anychart.onDocumentReady(function () {
 // set the sorting mode
 function sortingMode(mode){
   chart.sort(mode);
-  // update the chart title
-  chart.title("Sunburst: Sorting Order = " +
-      chart.sort() + "<br><br>" + 
-      "<span style='font-size:12; font-style:italic'>" +
-      "Number of Employees</span>");
 };
 </script>
 </body>

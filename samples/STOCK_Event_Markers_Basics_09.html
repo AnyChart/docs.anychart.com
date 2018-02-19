@@ -110,9 +110,11 @@ anychart.onDocumentReady(function () {
     plot.eventMarkers().seriesId(0);
 
     // set the chart title
-    chart.title("Event Markers: Position\n(series index = " +
-                plot.eventMarkers().seriesId() + ", position = " +
-                plot.eventMarkers().position() + ")");
+    chart.listen("chartDraw", function () {
+      chart.title("Event Markers: Position\n(series index = " +
+                  plot.eventMarkers().seriesId() + ", position = " +
+                  plot.eventMarkers().position() + ")");
+    });
 
     // set the container id
     chart.container("container");
@@ -127,10 +129,6 @@ function setPosition(){
   var positionSelect = document.getElementById("positionSelect");
   plot.eventMarkers().seriesId(seriesSelect.value);
   plot.eventMarkers().position(positionSelect.value);
-  // update the chart title
-  chart.title("Event Markers: Position\n(series index = " +
-              plot.eventMarkers().seriesId() + ", position = " +
-              plot.eventMarkers().position() + ")");
 };
 </script>
 </body>

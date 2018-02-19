@@ -27,10 +27,12 @@
     </style>
 </head>
 <body>
-<button onclick="errorMode('none')">None</button>
-<button onclick="errorMode('value')">Value</button>
-<button onclick="errorMode('x')">X</button>
-<button onclick="errorMode('both')">Both</button>     
+<label>Both</label> 
+<input onclick="errorMode('both')" type="radio" name="type" checked><label>None</label> 
+<input onclick="errorMode('none')" type="radio"  name="type">
+<label>Value</label> 
+<input onclick="errorMode('value')" type="radio" name="type"><label>X</label> 
+<input onclick="errorMode('x')" type="radio"  name="type">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -82,7 +84,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// setthe error mode
+// set the error mode
 function errorMode(mode){
   error.mode(mode);
 };

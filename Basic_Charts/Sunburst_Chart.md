@@ -261,9 +261,9 @@ By default, point of Sunburst charts are sorted in descending order according to
 
 To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
-* `"desc"` (default)
+* `"none"` (default)
 * `"asc"`
-* `"none"`
+* `"desc"`
 
 ```
 // set the sorting mode

@@ -61,10 +61,12 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Labels (Position = " +
-                chart.labels().position() + ")<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Company Structure");
+    chart.listen("chartDraw", function () {
+      chart.title("Sunburst: Labels (Position = " +
+                  chart.labels().position() + ")<br><br>" +
+                  "<span style='font-size:12; font-style:italic'>" +
+                  "Company Structure");
+    });
 
     // set the container id
     chart.container("container");
@@ -76,11 +78,6 @@ anychart.onDocumentReady(function () {
 // set the position of labels
 function labelsPosition(position){
   chart.labels().position(position);
-  // update the chart title
-  chart.title("Sunburst: Labels (Position = " +
-    chart.labels().position() + ")<br><br>" + 
-    "<span style='font-size:12; font-style:italic'>" +
-    "Company Structure</span>");
 };
 </script>
 </body>
