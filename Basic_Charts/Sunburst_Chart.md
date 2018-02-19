@@ -382,9 +382,7 @@ chart.calculationMode("parent-dependent");
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(
-  "<span style='font-weight:bold'>{%name}</span><br>{%value}"
-);
+chart.labels().format("<span style='font-weight:bold'>{%name}</span><br>{%value}");
 
 // configure the labels of leaves
 chart.leaves().labels().format("{%name}");
