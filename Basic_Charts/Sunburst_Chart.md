@@ -132,8 +132,11 @@ chart.calculationMode("parent-independent");
 
 * {api:anychart.charts.Sunburst#level}level(){api}
 * {api:anychart.charts.Sunburst#level}leaves(){api}
+* thickness()
+* enabled()
 
-уровни называть кольцами (тогда можно будет использовать thickness)
+!!! написать про level() с индексом и без индекса
+(???) уровни называть кольцами (тогда можно будет использовать thickness)
 
 ```
 // hide the first level
