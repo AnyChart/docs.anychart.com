@@ -66,7 +66,7 @@ AnyChart supports two accessibility modes: representing the chart/series element
 The `"chartElements"` mode is enabled by default. In this mode, a user interacts with elements of a chart. The chart title, created by the *titleFormat()* or *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
 
 ```
-// set the accessibility mode to "chart elements"
+// set the accessibility mode
 chart.a11y().mode("chartElements")
 ```
 
@@ -79,7 +79,7 @@ Please note that setting the accessibility mode of a chart does not affect its s
 In the `"dataTable"` mode, an invisible table with chart data is generated. The chart title, taken from the *titleFormat()* or *title()* methods, becomes the head of this table. All other information shown on the chart is also transformed into the table structure, so the VoiceOver can read it correctly.  
 
 ```
-// set the accessibility mode to "data table"
+// set the accessibility mode
 chart.a11y().mode("dataTable")
 ```
 
