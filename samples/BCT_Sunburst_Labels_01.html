@@ -64,6 +64,8 @@ anychart.onDocumentReady(function () {
     chart.labels().format(
       "<span style='font-weight:bold'>{%name}</span><br>{%value}"
     );
+
+    // configure the labels of leaves
     chart.leaves().labels().format("{%name}");
 
     // configure tooltips
