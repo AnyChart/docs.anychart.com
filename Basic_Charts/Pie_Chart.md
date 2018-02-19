@@ -165,7 +165,7 @@ chart.fill("aquastyle");
 
 ### Start Angle
 
-You can set the start angle of the first slice by using the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
+You can set the angle where the first slice is placed. Use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
 
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
@@ -178,7 +178,13 @@ pie2.startAngle(90);
 
 ### Sorting Order
 
-In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use `"asc"`, `"desc"`, or `"none"` as a parameter (the default sorting mode is "none"):
+By default, slices of Pie charts are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
+
+To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} method with one of the three parameters:
+
+* `"desc"` (default)
+* `"asc"`
+* `"none"`
 
 ```
 // set the sorting mode

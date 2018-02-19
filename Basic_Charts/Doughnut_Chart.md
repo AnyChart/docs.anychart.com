@@ -94,13 +94,11 @@ chart.insideLabelsOffset("-75%");
 
 ### Center Content
 
-The {api:anychart.charts.Pie#center}center(){api} method that provides the access to {api:anychart.core.pie.Center}anychart.core.pie.Center{api} object provide a very flexible way to place almost anything into the center of the Donut chart.
-
-In this section we will provide several typical use cases along with the samples and all code you will need to create charts like in your application. 
+You can place almost anything in the center of a Doughnut chart: e.g., a text label, a chart, a map. Use the {api:anychart.charts.Pie#center}center(){api} method, which provides the access to the {api:anychart.core.pie.Center}anychart.core.pie.Center{api} object.
 
 #### Center Label
 
-To put some text in the center of a donut create a label and assign it to the center.
+To put some text in the center of a Doughnut chart, create a label and assign it to the center:
 
 ```
 // create and configure a label
@@ -121,7 +119,7 @@ chart.center().content(label);
 
 #### Chart
 
-To put another chart in the center of the donut chart create a chart and specify it as the center content:
+To put a chart in the center of a Doughnut, create this chart and specify it as the center content:
 
 ```
 // create and configure a pie chart
@@ -139,7 +137,7 @@ chart1.center().content(chart2);
 
 #### Map
 
-To put a map in the center of the donut create a map and specify it as the center content
+To put a map in the center of a Doughnut, create this map and specify it as the center content:
 
 ```
 // create pie chart and configure it
@@ -156,10 +154,9 @@ pie.center().content(map);
 
 {sample}BCT\_Doughnut\_Chart\_06{sample}
 
-
 #### Custom Drawing
 
-You can put any kind of custom drawing created with the [Graphics](../Graphics/Overview) engine. Here a basic sample with several simple shapes:
+Another thing you can place in the center is a custom drawing created with the [Graphics](../Graphics/Overview) engine. Here a basic sample with several simple shapes:
 
 ```
 // create pie chart and configure it
