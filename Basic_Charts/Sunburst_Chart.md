@@ -7,7 +7,7 @@ A sunburst chart...
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.Sunburst{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[children, name, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
@@ -366,7 +366,7 @@ The sample below demonstrates how to work with formatting functions:
 
 To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter.
 
-The following sample shows how to change the position of labels, which is initially set to "circular":
+The following sample shows how to change the position of labels, which is initially set to circular:
 
 ```
 // set the position of labels
@@ -375,7 +375,9 @@ chart.labels().position("circular");
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Labels\_03{sample}
 
-The position of labels can also be set separately for levels and leaves – by default it is circular for levels and radial for leaves. This sample demonstrates how to reverse the default state:
+The position of labels can also be set separately for levels and leaves – use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
+
+The default position is circular for levels and radial for leaves, and this sample demonstrates how to reverse it:
 
 ```
 // set the position of labels
