@@ -189,7 +189,7 @@ plot.eventMarkers().data([
 
 ## Type
 
-Four types of event markers are available: **circle**, **flag**, **pin**, and **rectangle**. To set the type, call the {api:anychart.core.stock.eventMarkers.Controller#type}type(){api} method with one of these parameters:
+Four types of event markers are available: **circle**, **flag**, **pin**, and **rectangle**. To set the type, call the {api:anychart.core.stock.eventMarkers.Controller#type}type(){api} method with one of the parameters listed in {api:anychart.enums.EventMarkerType}anychart.enums.EventMarkerType{api}:
 
 * `"circle"` (default)
 * `"flag"`
@@ -281,7 +281,7 @@ eventMarkers.selected().width(45);
 
 ## Position
 
-By default, event markers are bound to the X-axis, but you can also bind them to a series value. To set the position of event markers, call the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the following parameters:
+By default, event markers are bound to the X-axis, but you can also bind them to a series value. To set the position of event markers, call the {api:anychart.core.stock.eventMarkers.Controller#position}position(){api} method with one of the parameters listed in {api:anychart.enums.EventMarkerPosition}anychart.enums.EventMarkerPosition{api}:
 
 * `"axis"` (default)
 * `"series"` 

@@ -220,7 +220,7 @@ chart.hintOpacity(0.7);
 
 By default, tiles of Treemaps are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
 
-To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the three parameters:
+To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
 * `"desc"` (default)
 * `"asc"`
@@ -572,7 +572,7 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
 * `"alwaysShow"` (default)
 * `"clip"`

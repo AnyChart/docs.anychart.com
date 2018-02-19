@@ -180,7 +180,7 @@ pie2.startAngle(90);
 
 By default, slices of Pie charts are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
 
-To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} method with one of the three parameters:
+To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
 * `"desc"` (default)
 * `"asc"`

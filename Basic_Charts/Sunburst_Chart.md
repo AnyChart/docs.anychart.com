@@ -88,6 +88,7 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 ### Calculation Mode
 
 * {api:anychart.charts.Sunburst#calculationMode}calculationMode(){api}
+* {api:anychart.enums.SunburstCalculationMode}anychart.anychart.enums.SunburstCalculationMode{api}
 
 * `"ordinal-from-root"` (default)
 * `"ordinal-from-leaves"`
@@ -258,7 +259,7 @@ By default, point of Sunburst charts are sorted in descending order according to
 
 (???) дописать про режимы калькуляции?
 
-To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the three parameters:
+To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
 * `"desc"` (default)
 * `"asc"`
@@ -376,7 +377,7 @@ The sample below demonstrates how to work with formatting functions:
 
 #### Position
 
-To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter.
+To set the position of labels, use {api:anychart.charts.Sunburst#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#position}position(){api} with either `"circular"` or `"radial"` as a parameter (see (???)).
 
 The following sample shows how to change the position of labels, which is initially set to `"circular"`:
 

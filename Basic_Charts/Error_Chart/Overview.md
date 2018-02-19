@@ -140,7 +140,7 @@ var data = [
 
 ## Error Mode
 
-By default, both Y- and X-error bars are shown. However, you can show only Y- or X-bars or disable both. To set the error mode, call the {api:anychart.core.utils.Error#mode}mode(){api} method with one of the four parameters:
+By default, both Y- and X-error bars are shown. However, you can show only Y- or X-bars or disable both. To set the error mode, call the {api:anychart.core.utils.Error#mode}mode(){api} method with one of the parameters listed in {api:anychart.enums.ErrorMode}anychart.enums.ErrorMode{api}:
 
 * `"both"` (default)
 * `"none"`
