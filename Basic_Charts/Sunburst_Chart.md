@@ -139,8 +139,8 @@ chart.calculationMode("parent-independent");
 * thickness()
 * enabled()
 
-!!! написать про level() с индексом и без индекса
-(???) уровни называть кольцами (тогда можно будет использовать thickness)
+* !!! написать про level() с индексом и без индекса
+* уровни называть кольцами (тогда можно будет использовать thickness)
 
 ```
 // hide the first level
@@ -151,8 +151,6 @@ chart.leaves().thickness("70%");
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Levels\_Leaves{sample}
-
-(позже поменять режим на дефолтный?)
 
 ### Appearance
 
@@ -215,6 +213,8 @@ var data = [
 
 #### Fill Functions
 
+сделать алфавитный порядок:
+
 * `index`
 * `level`
 * `isLeaf`
@@ -237,7 +237,7 @@ chart.fill(function () {
 });
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Appearance\_03{sample}
+{sample :height 500}BCT\_Sunburst\_Appearance\_03{sample}
 
 ### Start Angle
 
