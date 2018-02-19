@@ -106,7 +106,6 @@ var label = anychart.standalones.label();
 label.text("Activities");
 label.width("100%");
 label.height("100%");
-label.fontSize(30);
 label.fontColor("#60727b");
 label.hAlign("center");
 label.vAlign("middle");

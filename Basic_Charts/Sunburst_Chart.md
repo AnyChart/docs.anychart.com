@@ -142,6 +142,7 @@ chart.calculationMode("parent-independent");
 
 * !!! написать про level() с индексом и без индекса
 * уровни называть кольцами (тогда можно будет использовать thickness)
+* (???) отсылка на лейблы и тултипы?
 
 ```
 // hide the first level
@@ -304,7 +305,7 @@ label.width("100%");
 label.height("100%");
 label.fontSize(12);
 label.fontWeight(600);
-label.fontColor("red");
+label.fontColor("#dd2c00");
 label.hAlign("center");
 label.vAlign("middle");
 
@@ -338,22 +339,56 @@ Here is the list of tokens that work with the Sunburst chart:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
+Добавить инфу про уровни и листья:
+
+* {api:anychart.charts.Sunburst#level}level(){api}
+* {api:anychart.charts.Sunburst#level}leaves(){api}
+
 This sample shows how to work with tokens:
 
 ```
+// create data
+var data = [
+  {name:     "Andorra", value: 57600000, custom_field: "info 1", children: [
+    {name:   "Machines", value: 22400000, custom_field: "info 2", children: [
+      {name: "Integrated Circuits", value: 12200000, custom_field: "info 7"},
+      {name: "Blank Audio Media", value: 2500000, custom_field: "info 8"},
+      {name: "Computers", value: 1100000, custom_field: "info 9"}
+    ]},
+    {name:   "Instruments", value: 9750000, custom_field: "info 3", children: [
+      {name: "Orthopedic Appliances", value: 8900000, custom_field: "info 10"}
+    ]},
+    {name:   "Chemical Products", value: 4740000, custom_field: "info 4", children: [
+      {name: "Essential Oils", value: 3690000, custom_field: "info 11"},
+      {name: "Beauty Products", value: 423000, custom_field: "info 12"}
+    ]},
+    {name:   "Mineral Products", value: 4540000, custom_field: "info 5", children: [
+      {name: "Coal Briquettes", value: 4280000, custom_field: "info 13"}
+    ]},
+    {name:   "Transportation", value: 4060000, custom_field: "info 6", children: [
+      {name: "Cars", value: 2870000, custom_field: "info 14"},
+      {name: "Vehicle Parts", value: 640000, custom_field: "info 15"}
+    ]}
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+
+// set the calculation mode
+chart.calculationMode("parent-dependent");
+
+// enable HTML for labels
+chart.labels().useHtml(true);
+
 // configure labels
 chart.labels().format(
   "<span style='font-weight:bold'>{%name}</span><br>{%value}"
 );
+chart.leaves().labels().format("{%name}");
 
 // configure tooltips
-chart.tooltip().titleFormat(
-  "{%name}"
-);
-
-chart.tooltip().format(
-  "{%value}\n\n{%custom_field}"
-);
+chart.tooltip().format("{%name}: {%value}\n\n{%custom_field}");
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Labels\_01{sample}
