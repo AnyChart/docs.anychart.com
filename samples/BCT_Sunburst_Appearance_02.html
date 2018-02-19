@@ -52,9 +52,6 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
-    // set the calculation mode
-    chart.calculationMode("ordinal-from-root");
-
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Sunburst: Appearance (Individual Points)<br><br>" +

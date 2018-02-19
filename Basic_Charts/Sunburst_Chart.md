@@ -249,6 +249,8 @@ sunburst2.startAngle(90);
 
 By default, point of Sunburst charts are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
 
+(???) дописать про режимы калькуляции?
+
 To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the three parameters:
 
 * `"desc"` (default)

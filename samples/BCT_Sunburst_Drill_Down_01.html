@@ -58,9 +58,6 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.sunburst(treeData);
 
-    // set the calculation mode
-    chart.calculationMode("ordinal-from-root");
-
     /* listen to the chartDraw event
     and add the drilldown path to the chart title */
     chart.listen("chartDraw",function (){
