@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-<button onclick="drillToLevel()">Drill Down to "Developers"</button>
+<button onclick="drillToLevel()">Drill Down to "Technical"</button>
 <button onclick="drillUpALevel()">Drill Up a Level</button>
 <div id="container"></div>
 <script>
@@ -94,7 +94,7 @@ function printPath(path){
 function drillToLevel(){
   /* locate an item in the data tree,
   get the item as an object*/
-  var item = treeData.search("name", "Developers");
+  var item = treeData.search("name", "Technical");
   // drill down to the item
   chart.drillTo(item);
 };

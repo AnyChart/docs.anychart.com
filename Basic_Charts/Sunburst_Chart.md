@@ -440,7 +440,7 @@ If you want to drill down to a particular item in the data tree, call the {api:a
 ```
 /* locate an item in the data tree,
 get the item as an object*/
-var item = treeData.search("name", "Developers");
+var item = treeData.search("name", "Technical");
 // drill down to the item
 chart.drillTo(item);
 
