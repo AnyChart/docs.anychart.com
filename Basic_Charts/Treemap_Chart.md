@@ -11,7 +11,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[children, id, name, parent, size, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[id, parent, children, name, size, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -79,10 +79,10 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Use the following data fields to create data for a Treemap chart:
 
-* `children` to set children
 * `id` to set unique identifiers
-* `name` to set names
 * `parent` to set parents
+* `children` to set children
+* `name` to set names
 * `size` to set sizes
 * `value` to set values
 

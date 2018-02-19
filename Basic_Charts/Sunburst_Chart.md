@@ -9,7 +9,7 @@ A sunburst chart...
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[children, name, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[id, parent, children, name, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -77,6 +77,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 This chart type requires the [tree data structure](../Working_with_Data/Using_Data_Tree_Model). Use the following fields:
 
+* `id` to set unique identifiers
+* `parent` to set parents
 * `children` to set children
 * `name` to set names
 * `value` to set values
@@ -91,6 +93,8 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 * `"ordinal-from-leaves"`
 * `"parent-dependent"`
 * `"parent-independent"`
+
+Написать, где значение влияет на размер точки и каким образом. Есть режимы, которые можно назвать value-dependent и value-independent.
 
 #### Ordinal from Root
 
