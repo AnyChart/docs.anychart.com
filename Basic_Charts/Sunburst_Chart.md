@@ -87,15 +87,16 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 ### Calculation Mode
 
-* {api:anychart.charts.Sunburst#calculationMode}calculationMode(){api}
-* {api:anychart.enums.SunburstCalculationMode}anychart.anychart.enums.SunburstCalculationMode{api}
+You can choose the calculation mode of your Sunburst chart. Use the {api:anychart.charts.Sunburst#calculationMode}calculationMode(){api} method whith on of the parameters listed in {api:anychart.enums.SunburstCalculationMode}anychart.anychart.enums.SunburstCalculationMode{api}:
 
 * `"ordinal-from-root"` (default)
 * `"ordinal-from-leaves"`
 * `"parent-dependent"`
 * `"parent-independent"`
 
-Написать, где значение влияет на размер точки и каким образом. Есть режимы, которые можно назвать value-dependent и value-independent.
+In the `"ordinal-from-root"` and `"ordinal-from-leaves"` modes, values do not affect the way the chart looks, so the `value` data field is not required for them. By contrast, the `"parent-dependent"` and `"parent-independent"` modes are value-dependent, and you need to specify the `value` field to set them.
+
+...
 
 #### Ordinal from Root
 
