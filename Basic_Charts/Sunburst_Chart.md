@@ -94,7 +94,9 @@ When you create a Sunburst chart, you can specify how the size of its points sho
 * `"parent-dependent"`
 * `"parent-independent"`
 
-In the `"ordinal-from-root"` and `"ordinal-from-leaves"` modes, values do not affect the way the chart looks, so the `value` data field is not required for them. By contrast, the `"parent-dependent"` and `"parent-independent"` modes are value-dependent, and you need to specify the `value` field to set them.
+**Note:** In the `"ordinal-from-root"` and `"ordinal-from-leaves"` modes, values do not affect the way the chart looks, so the `value` data field is not required for them. By contrast, the `"parent-dependent"` and `"parent-independent"` modes are value-dependent, and you need to specify the `value` field to set them.
+
+In the subsections below...
 
 #### Ordinal from Root
 
