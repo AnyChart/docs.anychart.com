@@ -430,7 +430,7 @@ chart.innerRadius(20);
 
 ### Center Content
 
-If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map.
+If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map. See the [Doughnut Chart](Doughnut_Chart#center_content) article to learn about various types of center content.
 
 The center content is set with the {api:anychart.charts.Sunburst#center}center(){api} method, which provides the access to the {api:anychart.core.sunburst.Center}anychart.core.sunburst.Center{api} object.
 
@@ -454,10 +454,6 @@ chart.center().content(label);
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Center\_Content{sample}
 
-To learn about other types of center content, see the [Doughnut Chart](Doughnut_Chart#center_content) article.
-
-(поднять эту ссылку повыше)
-
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -470,6 +466,8 @@ To change the text of labels, combine the {api:anychart.charts.Sunburst#labels}l
 
 To configure tooltips, do the same with the {api:anychart.charts.Sunburst#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
+Please note that you can configure the labels and tokens of [levels and leaves](#levels_and_leaves). Use the methods mentioned above with {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api}.
+
 Here is the list of tokens that work with the Sunburst chart:
 
 * `{%id}`
@@ -477,11 +475,6 @@ Here is the list of tokens that work with the Sunburst chart:
 * `{%value}`
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
-
-Добавить инфу про уровни и листья:
-
-* {api:anychart.charts.Sunburst#level}level(){api}
-* {api:anychart.charts.Sunburst#level}leaves(){api}
 
 This sample shows how to work with tokens:
 
