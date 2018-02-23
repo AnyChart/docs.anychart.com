@@ -356,7 +356,7 @@ var data = [
 
 #### Fill Functions
 
-You can also set the colors of your chart by calling the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function a parameter. In this function, you can use the following fields:
+You can also set the colors of your chart by calling the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
 * `autoColor`
 * `chart`
@@ -384,7 +384,7 @@ chart.fill(function () {
 
 ### Start Angle
 
-You can set the angle where the first point is placed. Use the {api:anychart.charts.Sunburst#startAngle}startAngle(){api} method. The angle is 0° by default.
+You can set the angle where the first point is placed – use the {api:anychart.charts.Sunburst#startAngle}startAngle(){api} method. The angle is 0° by default.
 
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
