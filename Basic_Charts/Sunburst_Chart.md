@@ -85,20 +85,26 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
+В отличие от других чартов, требующих древовидных данных, здесь можно показывать больше одной ноды. (пример!)
+
 ### Calculation Mode
 
-When you create a Sunburst chart, you can specify how the size of its points should be calculated. To set the calculation mode, use the {api:anychart.charts.Sunburst#calculationMode}calculationMode(){api} method whith on of the parameters listed in {api:anychart.enums.SunburstCalculationMode}anychart.anychart.enums.SunburstCalculationMode{api}:
+When you create a Sunburst chart, you can specify how the size of its points should be calculated. To set the calculation mode, use the {api:anychart.charts.Sunburst#calculationMode}calculationMode(){api} method with one of the parameters listed in {api:anychart.enums.SunburstCalculationMode}anychart.anychart.enums.SunburstCalculationMode{api}:
 
 * `"ordinal-from-root"` (default)
 * `"ordinal-from-leaves"`
 * `"parent-dependent"`
 * `"parent-independent"`
 
-**Note:** In the `"ordinal-from-root"` and `"ordinal-from-leaves"` modes, values do not affect the way the chart looks, so the `value` data field is not required. By contrast, the `"parent-dependent"` and `"parent-independent"` modes are value-dependent, and you need to specify the `value` field to set them.
+Please note that in the `"ordinal-from-root"` and `"ordinal-from-leaves"` modes, values do not affect the way the chart looks, so the `value` data field is not required. By contrast, to set the `"parent-dependent"` and `"parent-independent"` modes, you need to specify values.
 
-In the subsections below...
+To learn more about the difference between calculation modes, see the subsections below.
 
 #### Ordinal from Root
+
+The default calculation mode, `"ordinal-from-root"`, is used to focus solely on the hierarchy of categories.
+
+In this mode the values of elements are not taken into account, so the `value` data field is not required. Root nodes divide the circle into equal parts, and if there is only one root node, it occupies the whole circle. Child elements also divide their parents into equal parts. 
 
 ```
 // set the calculation mode
@@ -109,6 +115,10 @@ chart.calculationMode("ordinal-from-root");
 
 #### Ordinal from Leaves
 
+The `"ordinal-from-leaves"` mode is used to compare categories by the number of their child elements.
+
+In this mode the values of nodes are not taken into account, so the `value` data field is not required. The elements at the last level of the hierarchy (leaves), divide the circle into equal parts, and the size of each parent element depends on the number of its children.
+
 ```
 // set the calculation mode
 chart.calculationMode("ordinal-from-leaves");
@@ -118,6 +128,10 @@ chart.calculationMode("ordinal-from-leaves");
 
 #### Parent Dependent
 
+The `"parent-dependent"` calculation mode is used to compare elements by their values in case only some of the elements in each category are shown, while others are omitted (or when data is incomplete). 
+
+In this mode the sizes of nodes depend on their values, so the `value` data field is required. The value of a parent node can exceed the sum of its child nodes' values. 
+
 ```
 // set the calculation mode
 chart.calculationMode("parent-dependent");
@@ -126,6 +140,10 @@ chart.calculationMode("parent-dependent");
 {sample :width 500 :height 500}BCT\_Sunburst\_Parent\_Dependent{sample}
 
 #### Parent Independent
+
+The `"parent-independent"` calculation mode is used to compare elements by their values in case all elements belonging to each category are shown.
+
+This mode requires the `value` data field: you need to specify the values of the elements at the last level of the hierarchy (leaves). The size of each leaf depends on its value, while the size of each parent depends on the sum of its child nodes' values, which is calculated automatically.
 
 ```
 // set the calculation mode
