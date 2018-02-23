@@ -121,7 +121,7 @@ Note that the center of the stage coordinate system is in the left top corner of
 
 ## Custom elements
 
-Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example where the biocenosis of a fir-tree is shown. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
+Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g., lines, curves, circles and other shapes, like in the following example where the biocenosis of a fir-tree is shown. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
 
 {sample :width 688 :height 700 }DB\_Stage\_06{sample}
 

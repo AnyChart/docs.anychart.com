@@ -21,7 +21,7 @@ A line chart with labels enabled for both Y-axes and disabled for the X-axis is 
 
 ## Formatting Labels
 
-In order to make a chart readable and understandable it is very important to format axes labels in a proper way, e.g. add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
+In order to make a chart readable and understandable it is very important to format axes labels in a proper way, e.g., add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
 You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
@@ -73,7 +73,7 @@ chart.yAxis(1).labels().format(function (){
 
 ### Number Formatting
 
-It might be necessary to format the value that corresponds to the label, e.g. do scaling or some mathematical operations using tokens, format or any other javascript functions.
+It might be necessary to format the value that corresponds to the label, e.g., do scaling or some mathematical operations using tokens, format or any other javascript functions.
   
 Here is a sample of financial chart with euro and dollar axes. Axis that represents dollar rate is set as main and the additional euro axis gets value from the dollar axis and transforms it into euro according to the exchange rate. Some separators are added to adjust the X-axis labels appearance.
 

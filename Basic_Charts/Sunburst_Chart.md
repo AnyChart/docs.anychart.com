@@ -85,7 +85,7 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-Unlike other chart types based on tree data, e.g. the [Treemap](Treemap_Chart) chart, this type allows adding more than one parent node:
+Unlike other chart types based on tree data, e.g., the [Treemap](Treemap_Chart) chart, this type allows adding more than one parent node:
 
 ```
 // create data

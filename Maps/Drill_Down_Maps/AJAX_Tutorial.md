@@ -22,7 +22,7 @@ It is better to add the root map the same way:
 
 ## Data Adapter
 
-There are a lot of ways how to add the maps into the charts. This article describes using the special AnyChart Data Adapter. If necessary, it is possible to use any other library, e.g. jQuery; though, the Data Adapter is functional enough. To create a sample with maps being added through AJAX request, include an AJAX component to the Drill Down Map sample (in the same &lt;head&gt; section):
+There are a lot of ways how to add the maps into the charts. This article describes using the special AnyChart Data Adapter. If necessary, it is possible to use any other library, e.g., jQuery; though, the Data Adapter is functional enough. To create a sample with maps being added through AJAX request, include an AJAX component to the Drill Down Map sample (in the same &lt;head&gt; section):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>

@@ -60,7 +60,7 @@ Note: this sample uses third party proj4.js library, to learn how, why and figur
 
 #### Region ID
 
-In case when we define the ID of the point, we'll get the region's name shown above the point. It's a good way of setting the data if you need to show something on the map that has no particular place (e.g. a big lake, desert, etc.) or if you need to show something connected to a region but not a particular place (e.g. numerical parameters, like population density or some rates).
+In case when we define the ID of the point, we'll get the region's name shown above the point. It's a good way of setting the data if you need to show something on the map that has no particular place (e.g., a big lake, desert, etc.) or if you need to show something connected to a region but not a particular place (e.g., numerical parameters, like population density or some rates).
 
 That's how it looks like in the code:
 

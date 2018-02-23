@@ -4,7 +4,7 @@
 
 ## What is Section 508
 
-The Web unites millions of people all over the world. Some web users are part-disabled, they can't use some electronic devices, e.g. mouse, keyboards, etc. When a visually-impaired users use the Internet, the best option is to use a screen reader which reads the page content and makes it understandable to such persons.
+The Web unites millions of people all over the world. Some web users are part-disabled, they can't use some electronic devices, e.g., mouse, keyboards, etc. When a visually-impaired users use the Internet, the best option is to use a screen reader which reads the page content and makes it understandable to such persons.
 
 International accessibility standards are invented to make technology and the Internet available to all users, regardless of disability status. Using these standards is a way to provide such people more opportunities. AnyChart supports these standards.
 

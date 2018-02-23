@@ -21,7 +21,7 @@ chart.xScroller().enabled(false);
 
 ### Limits by ratio
 
-The simplest way of limiting the show area is using the ratio. Do this with the {api:anychart.core.utils.OrdinalZoom#setTo}setTo(){api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3):
+The simplest way of limiting the show area is using the ratio. Do this with the {api:anychart.core.utils.OrdinalZoom#setTo}setTo(){api} method for that. Use two values with this method: the start ratio value (e.g., 0) and the end one (e.g., 0.3):
 
 ```
 // set zoom ratio

@@ -98,7 +98,7 @@ minorLabels.fontSize(9);
 
 You can handle scroller events using event listeners (find out more about them in [Event Listeners](../Common_Settings/Event_Listeners) article).
 
-There are 4 events that can be handled when the selected time range changes. These events can be used to handle user actions, e.g. to display a chosen time interval as text or to update any extra UI elements. 
+There are 4 events that can be handled when the selected time range changes. These events can be used to handle user actions, e.g., to display a chosen time interval as text or to update any extra UI elements. 
 
 Events that can be listened by a chart:
 - **selectedrangebeforechange** - dispatches before user changes the selected range of the scroller

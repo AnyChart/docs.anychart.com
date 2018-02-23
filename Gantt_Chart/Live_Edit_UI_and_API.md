@@ -256,7 +256,7 @@ tree.listen("treeItemRemove", function(e){
 
 The **beforeCreateConnector** event is similar to **treeItemCreate**, but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and it is dispatched before the action itself, so it will not have any information about the source. To get this information one has to listen to the "update" event. The fields of the **beforeCreateConnector** event are:
 
-- "type": the event type (e.g. "beforeCreateConnector"),
+- "type": the event type (e.g., "beforeCreateConnector"),
 - "source": which data item the connector starts from,
 - "target": which data item the connector ends at (is connected to),
 - "connectorType": the connector type.

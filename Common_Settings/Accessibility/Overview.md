@@ -4,7 +4,7 @@
 
 ## Overview
 
-The Web unites millions of people all over the world. Some web users are partially disabled and cannot operate some electronic devices, e.g. mouses and keyboards. For visually impaired persons, the best option is to use a screen reader, which reads the page content and makes it understandable to them.
+The Web unites millions of people all over the world. Some web users are partially disabled and cannot operate some electronic devices, e.g., mouses and keyboards. For visually impaired persons, the best option is to use a screen reader, which reads the page content and makes it understandable to them.
 
 International accessibility standards were invented to make technology and the Internet available to all people, regardless of their disability status. AnyChart supports these standards to provide users with more opportunities.
 
