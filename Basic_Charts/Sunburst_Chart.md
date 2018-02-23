@@ -356,20 +356,20 @@ var data = [
 
 #### Fill Functions
 
-сделать алфавитный порядок:
+You can also set the colors of your chart by calling the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function a parameter. In this function, you can use the following fields:
 
-* `index`
-* `level`
-* `isLeaf`
-* `parent`
-* `point`
-* `path`
 * `autoColor`
-* `parentColor`
-* `sourceColor`
-* `iterator`
-* `series`
 * `chart`
+* `index`
+* `isLeaf`
+* `iterator`
+* `level`
+* `parent`
+* `parentColor`
+* `path`
+* `point`
+* `series`
+* `sourceColor`
 
 ```
 // configure the visual settings of the chart
@@ -397,9 +397,7 @@ sunburst2.startAngle(90);
 
 ### Sorting Order
 
-By default, point of Sunburst charts are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
-
-(???) дописать про режимы калькуляции?
+By default, points of Sunburst charts are not sorted: they are shown as they appear in data. However, if you use [calculation modes](#calculation_mode) that take values into account (`"parent-dependent"` and `"parent-independent"`), you can sort points in ascending or descending order according to their values.
 
 To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
