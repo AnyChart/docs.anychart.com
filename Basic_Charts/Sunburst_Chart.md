@@ -397,7 +397,7 @@ sunburst2.startAngle(90);
 
 ### Sorting Order
 
-By default, points of Sunburst charts are not sorted: they are shown as they appear in data. However, if you use [calculation modes](#calculation_mode) that take values into account (`"parent-dependent"` and `"parent-independent"`), you can sort points in ascending or descending order according to their values.
+By default, points are not sorted: they are shown as they appear in data. However, if you use [calculation modes](#calculation_mode) that take values into account (`"parent-dependent"` and `"parent-independent"`), you can sort points in ascending or descending order according to their values.
 
 To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
