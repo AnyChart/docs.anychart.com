@@ -85,7 +85,35 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-В отличие от других чартов, требующих древовидных данных, здесь можно показывать больше одной ноды. (пример!)
+В отличие от других чартов, требующих древовидных данных, здесь можно показывать больше одной ноды.
+
+```
+// create data
+var data = [
+  {name: "London", children: [
+    {name: "Management"},
+    {name: "Sales", children: [
+      {name: "Analysts"},
+      {name: "Executives"}
+    ]},
+    {name: "Accounting"}
+  ]},
+  {name: "New York", children: [
+    {name: "Technical", children: [
+      {name: "Team Leaders"},
+      {name: "Architects"},
+      {name: "Developers"},
+      {name: "Testers"}
+    ]},
+    {name: "HR"}
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+```
+
+{sample :width 500 :height 500}BCT\_Sunburst\_Two\_Parents{sample}
 
 ### Calculation Mode
 
@@ -107,6 +135,27 @@ The default calculation mode, `"ordinal-from-root"`, is used to focus solely on 
 In this mode the values of elements are not taken into account, so the `value` data field is not required. Root nodes divide the circle into equal parts, and if there is only one root node, it occupies the whole circle. Child elements also divide their parents into equal parts. 
 
 ```
+// create data
+var data = [
+  {name: "Company A", children: [
+    {name: "Technical", children: [
+      {name: "Team Leaders"},
+      {name: "Architects"},
+      {name: "Developers"},
+      {name: "Testers"}
+    ]},
+    {name: "Sales", children: [
+      {name: "Analysts"},
+      {name: "Executives"}
+    ]},
+    {name: "HR"},
+    {name: "Management"}
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+
 // set the calculation mode
 chart.calculationMode("ordinal-from-root");
 ```
@@ -120,6 +169,30 @@ The `"ordinal-from-leaves"` mode is used to compare categories by the number of 
 In this mode the values of nodes are not taken into account, so the `value` data field is not required. The elements at the last level of the hierarchy (leaves), divide the circle into equal parts, and the size of each parent element depends on the number of its children.
 
 ```
+// create data
+var data = [
+  {name: "Italian", children: [
+    {name: "Consonants", children: [
+      {name: "m"}, {name: "n"}, {name: "ɲ"},
+      {name: "p"}, {name: "b"}, {name: "t"},
+      {name: "d"}, {name: "k"}, {name: "g"},
+      {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
+      {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
+      {name: "s"}, {name: "z"}, {name: "ʃ"},
+      {name: "j"}, {name: "w"}, {name: "l"},
+      {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
+    ]},
+    {name: "Vowels", children: [
+      {name: "i"}, {name: "u"}, {name: "e"},
+      {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
+      {name: "a"}
+    ]} 
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+
 // set the calculation mode
 chart.calculationMode("ordinal-from-leaves");
 ```
@@ -133,6 +206,34 @@ The `"parent-dependent"` calculation mode is used to compare elements by their v
 In this mode the sizes of nodes depend on their values, so the `value` data field is required. The value of a parent node can exceed the sum of its child nodes' values. 
 
 ```
+// create data
+var data = [
+  {name:     "Andorra", value: 57600000, children: [
+    {name:   "Machines", value: 22400000, children: [
+      {name: "Integrated Circuits", value: 12200000},
+      {name: "Blank Audio Media", value: 2500000},
+      {name: "Computers", value: 1100000}
+    ]},
+    {name:   "Instruments", value: 9750000, children: [
+      {name: "Orthopedic Appliances", value: 8900000}
+    ]},
+    {name:   "Chemical Products", value: 4740000, children: [
+      {name: "Essential Oils", value: 3690000},
+      {name: "Beauty Products", value: 423000}
+    ]},
+    {name:   "Mineral Products", value: 4540000, children: [
+      {name: "Coal Briquettes", value: 4280000}
+    ]},
+    {name:   "Transportation", value: 4060000, children: [
+      {name: "Cars", value: 2870000},
+      {name: "Vehicle Parts", value: 640000}
+    ]}
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+
 // set the calculation mode
 chart.calculationMode("parent-dependent");
 ```
@@ -146,6 +247,27 @@ The `"parent-independent"` calculation mode is used to compare elements by their
 This mode requires the `value` data field: you need to specify the values of the elements at the last level of the hierarchy (leaves). The size of each leaf depends on its value, while the size of each parent depends on the sum of its child nodes' values, which is calculated automatically.
 
 ```
+// create data
+var data = [
+  {name: "Company A", children: [
+    {name: "Technical", children: [
+      {name: "Team Leaders", value: 7},
+      {name: "Architects", value: 3},
+      {name: "Developers", value: 35},
+      {name: "Testers", value: 15}
+    ]},
+    {name: "Sales", children: [
+      {name: "Analysts", value: 12},
+      {name: "Executives", value: 8}
+    ]},
+    {name: "HR", value: 3},
+    {name: "Management", value: 7}
+  ]}
+];
+
+// create a chart and set the data
+var chart = anychart.sunburst(data, "as-tree");
+
 // set the calculation mode
 chart.calculationMode("parent-independent");
 ```

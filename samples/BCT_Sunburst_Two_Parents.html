@@ -9,7 +9,7 @@
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
@@ -28,33 +28,34 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Company A", children: [
+      {name: "London", children: [
+        {name: "Management"},
+        {name: "Sales", children: [
+          {name: "Analysts"},
+          {name: "Executives"}
+        ]},
+        {name: "Accounting"}
+      ]},
+      {name: "New York", children: [
         {name: "Technical", children: [
           {name: "Team Leaders"},
           {name: "Architects"},
           {name: "Developers"},
           {name: "Testers"}
         ]},
-        {name: "Sales", children: [
-          {name: "Analysts"},
-          {name: "Executives"}
-        ]},
-        {name: "HR"},
-        {name: "Management"}
+        {name: "HR"}
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
-    // set the calculation mode
-    chart.calculationMode("ordinal-from-root");
-
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (ordinal-from-root)<br><br>" +
+    chart.title("Sunburst: Data (Parent Nodes)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Corporate Structure</span>");
+                "The Corporate Structure of Company A</span>");
+
     // set the container id
     chart.container("container");
 
