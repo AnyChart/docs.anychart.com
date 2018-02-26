@@ -261,7 +261,7 @@ eventMarkers.normal().fontWeight(600);
 
 You can configure the connectors of event markers (lines that connect markers with the points they are bound to).
 
-To set the length of connectors, use the {api:anychart.core.StateSettings#connector}connector(){api} and {api:anychart.core.utils.Connector#length}length(){api} methods:
+To set the length of connectors, use the {api:anychart.core.stock.eventMarkers.Controller#connector}connector(){api} and {api:anychart.core.utils.Connector#length}length(){api} methods:
 
 ```
 eventMarkers.connector().length("20");
@@ -274,6 +274,10 @@ eventMarkers.normal().connector().stroke("#dd2c00");
 eventMarkers.hovered().connector().stroke("#dd2c00", 2);
 eventMarkers.selected().connector().stroke("#dd2c00", 3);
 ```
+
+**Note**: To hide the stroke, call {api:anychart.core.utils.Connector#stroke}stroke(){api} with `null` as a parameter.
+
+This sample shows how to configure both the length and stroke of connectors:
 
 {sample}STOCK\_Event\_Markers\_Basics\_07{sample}
 
@@ -359,7 +363,7 @@ In the default [position](#position) (`"axis"`), all markers are vertically orie
 
 ## Individual Markers
 
-Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Height and Width](#height_and_width).
+Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Connectors](#connectors), [Height and Width](#height_and_width).
 
 To set the format (symbol) of each marker individually, specify symbols in a custom data field and call the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method with a function as a parameter. In the function, refer to the custom field with the help of {api:anychart.format.Context#getData}getData(){api}.
 
@@ -374,13 +378,14 @@ plot.eventMarkers({"groups": [
         "symbol": "1",
         "date": "2006-06-08",
         "description": "Cisco announced the acquisition of Audium Corporation.",
-        "normal":   {"fill": "#d1ead9", "stroke": "2 #009933",
+        "normal":   {
+                     "fill": "#d1ead9", "stroke": "2 #009933",
                      "fontColor": "#009933", "fontWeight": 600,
-                     "type": "circle"},
+                     "type": "circle", "connector": {"stroke": "2 #009933"}},
         "hovered":  {"fill": "white", "stroke": "2 #009933",
-                     "fontColor": "#009933"},
+                     "fontColor": "#009933", "connector": {"stroke": "2 #009933"}},
         "selected": {"fill": "white", "stroke": "2 #194d00",
-                     "fontColor": "#194d00"}   
+                     "fontColor": "#194d00", "connector": {"stroke": "2 #194d00"}}
       },
       {
         "symbol": "2",
@@ -388,11 +393,11 @@ plot.eventMarkers({"groups": [
         "description": "Cisco announced its intent to acquire PostPath, Inc.",
         "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
                      "fontColor": "#990033", "fontWeight": 600,
-                     "type": "rect", "width": 40},
+                     "type": "rect", "width": 40, "connector": {"stroke": "2 #990033"}},
         "hovered":  {"fill": "white", "stroke": "2 #990033",
-                     "fontColor": "#990033"},
+                     "fontColor": "#990033", "connector": {"stroke": "2 #990033"}},
         "selected": {"fill": "white", "stroke": "2 #4d1a00",
-                     "fontColor": "#4d1a00"}   
+                     "fontColor": "#4d1a00", "connector": {"stroke": "2 #4d1a00"}}   
       },
     ]
   }
