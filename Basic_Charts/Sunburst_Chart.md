@@ -75,7 +75,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-This chart type requires the [tree data structure](../Working_with_Data/Using_Data_Tree_Model). Use the following fields:
+The Sunburst chart requires the [tree data structure](../Working_with_Data/Using_Data_Tree_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -85,7 +85,7 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-Unlike other charts based on the tree data structure, e.g., the [Treemap](Treemap_Chart) chart, the Sunburst chart allows adding more than one parent node:
+Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one parent node:
 
 ```
 // create data
@@ -282,11 +282,9 @@ You can access any level (ring) of a Sunburst chart by its index – use the {ap
 
 **Note 2:** If the index is not specified, this method affects all levels.
 
-There is an alternative way to access the elements of the last level (leaves): you can use the {api:anychart.charts.Sunburst#level}leaves(){api} method.
+There is also an alternative way to access the elements of the last level (leaves): you can use the {api:anychart.charts.Sunburst#level}leaves(){api} method.
 
-The available settings of levels and leaves can be found here: {api:anychart.core.sunburst.Level}anychart.core.sunburst.Level{api}. For example, you can enable/disable them or set their thickness by calling {anychart.core.sunburst.Level#enabled}enabled(){api} or {api:anychart.core.sunburst.Level#thickness}thickness(){api}.
-
-To learn how to configure the labels of levels and leaves, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+Here are the available settings of levels and leaves: {api:anychart.core.sunburst.Level}anychart.core.sunburst.Level{api}. For example, you can enable/disable them or set their thickness by calling {api:anychart.core.sunburst.Level#enabled}enabled(){api} or {api:anychart.core.sunburst.Level#thickness}thickness(){api}.To learn how to configure the labels of levels and leaves, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 In this sample, there is a Sunburst chart with the first level hidden and the thickness of leaves modified:
 
