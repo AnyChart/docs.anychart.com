@@ -8,7 +8,7 @@ The Web unites millions of people all over the world. Some web users are partial
 
 International accessibility standards were invented to make technology and the Internet available to all people, regardless of their disability status. AnyChart supports these standards to provide users with more opportunities.
 
-There are several methods (??? или ways) in AnyChart that allow adding accessibility options. The main idea is to create special tags (ARIA tags) in the SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, so that disabled people could understand the information on charts and maps.
+There are several methods (??? или ways) in AnyChart that allow adding accessibility options. The main idea is to create special tags (ARIA tags) in the SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, so that disabled people can understand the information on charts and maps.
 
 ## Compliance
 
