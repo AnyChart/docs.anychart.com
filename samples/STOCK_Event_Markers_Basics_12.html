@@ -53,26 +53,31 @@ anychart.onDocumentReady(function () {
             "symbol": "1",
             "date": "2006-06-08",
             "description": "Cisco announced the acquisition of Audium Corporation.",
-            "normal":   {
+            "normal":   {"type": "circle",
                          "fill": "#d1ead9", "stroke": "2 #009933",
                          "fontColor": "#009933", "fontWeight": 600,
-                         "type": "circle", "connector": {"stroke": "2 #009933"}},
+                         "connector": {"stroke": "2 #009933"}},
             "hovered":  {"fill": "white", "stroke": "2 #009933",
-                         "fontColor": "#009933", "connector": {"stroke": "2 #009933"}},
+                         "fontColor": "#009933",
+                         "connector": {"stroke": "2 #009933"}},
             "selected": {"fill": "white", "stroke": "2 #194d00",
-                         "fontColor": "#194d00", "connector": {"stroke": "2 #194d00"}}
+                         "fontColor": "#194d00",
+                         "connector": {"stroke": "2 #194d00"}}
           },
           {
             "symbol": "2",
             "date": "2008-04-27",
             "description": "Cisco announced its intent to acquire PostPath, Inc.",
-            "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
+            "normal":   {"type": "rect", "width": 40,
+                         "fill": "#ead9d1", "stroke": "2 #990033",
                          "fontColor": "#990033", "fontWeight": 600,
-                         "type": "rect", "width": 40, "connector": {"stroke": "2 #990033"}},
+                         "connector": {"stroke": "2 #990033"}},
             "hovered":  {"fill": "white", "stroke": "2 #990033",
-                         "fontColor": "#990033", "connector": {"stroke": "2 #990033"}},
+                         "fontColor": "#990033",
+                         "connector": {"stroke": "2 #990033"}},
             "selected": {"fill": "white", "stroke": "2 #4d1a00",
-                         "fontColor": "#4d1a00", "connector": {"stroke": "2 #4d1a00"}}   
+                         "fontColor": "#4d1a00",
+                         "connector": {"stroke": "2 #4d1a00"}}   
           },
         ]
       }
