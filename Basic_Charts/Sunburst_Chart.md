@@ -278,7 +278,7 @@ chart.calculationMode("parent-independent");
 
 You can access any level (ring) of a Sunburst chart by its index – use the {api:anychart.charts.Sunburst#level}level(){api} method with an index as a parameter.
 
-**Note 1:** The index of the root node or nodes is 0.
+**Note 1:** The index of the root level is 0.
 
 **Note 2:** If the index is not specified, this method affects all levels.
 
@@ -286,7 +286,7 @@ There is an alternative way to access the elements of the last level (leaves): y
 
 The available settings of levels and leaves can be found here: {api:anychart.core.sunburst.Level}anychart.core.sunburst.Level{api}. For example, you can enable/disable them or set their thickness by calling {anychart.core.sunburst.Level#enabled}enabled(){api} or {api:anychart.core.sunburst.Level#thickness}thickness(){api}.
 
-To learn how to configure the labels of levels, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+To learn how to configure the labels of levels and leaves, see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 In this sample, there is a Sunburst chart with the first level hidden and the thickness of leaves modified:
 
@@ -576,7 +576,7 @@ The following sample shows how to change the position of labels, which is initia
 chart.labels().position("circular");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_17{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_17{sample}
 
 The position of labels can also be set separately for levels and leaves – use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
 
