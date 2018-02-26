@@ -435,7 +435,7 @@ chart.innerRadius(20);
 
 If the [inner radius](#radius) of a Sunburst chart if more than 0, there is a blank space in the center. You can place almost anything there: e.g., a text label, a chart, a map. See the [Doughnut Chart](Doughnut_Chart#center_content) article to learn about various types of center content.
 
-The center content is set with the {api:anychart.charts.Sunburst#center}center(){api} method, which provides the access to the {api:anychart.core.sunburst.Center}anychart.core.sunburst.Center{api} object.
+The center content is set with the {api:anychart.charts.Sunburst#center}center(){api} method, which provides the access to the {api:anychart.core.ui.Center}anychart.core.ui.Center{api} object.
 
 To put some text in the center, create a label and assign it to the center:
 
@@ -624,7 +624,7 @@ treeData = anychart.data.tree(data, "as-tree");
 chart = anychart.sunburst(treeData);
 ```
 
-If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Sunburst#search}search(){api} method to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp{api}:
+If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp{api}:
 
 ```
 /* locate an item in the data tree,
