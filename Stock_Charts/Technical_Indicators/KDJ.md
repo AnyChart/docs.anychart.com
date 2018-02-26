@@ -2,7 +2,7 @@
 
 ## Overview
 
-KDJ indicator is a technical indicator used to analyze and predict changes in stock trends and price patterns in a traded asset. KDJ indicator is also known as the random index. It is a very practical technical indicator which is most commonly used in market trend analysis of short-term stock.
+KDJ indicator is a technical indicator used to analyze and predict changes in stock trends and price patterns in a traded asset. KDJ indicator is otherwise known as the random index. It is a very practical technical indicator which is most commonly used in market trend analysis of short-term stock.
 
 KDJ is a derived form of the [Stochastic Oscillator Indicator](Stochastic_Oscillator) with the only difference of having an extra line called the J line. Values of %K and %D lines show if the security is overbought (over 80) or oversold (below 20). The moments of %K crossing %D are the moments for selling or buying. The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
 

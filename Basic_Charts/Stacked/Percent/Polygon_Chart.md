@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Percent Stacked Polygon Chart (also known as a 100% Stacked Polygon Chart) is a multi-series Polygon Chart that displays the trend of the percentage each value contributes over time or categories.
+A Percent Stacked Polygon Chart (otherwise known as a 100% Stacked Polygon Chart) is a multi-series Polygon Chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../Overview).
 

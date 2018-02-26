@@ -3,7 +3,7 @@
 
 ## Overview
 
-Marker chart (also known as a point chart) is identical to a line chart without the lines. A marker chart shows only endpoints of segments that make each line up.
+Marker chart (otherwise known as a point chart) is identical to a line chart without the lines. A marker chart shows only endpoints of segments that make each line up.
 
 This article explains how to create a basic Marker chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Marker chart's characteristics:
 

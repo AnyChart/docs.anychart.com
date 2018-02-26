@@ -3,7 +3,7 @@
 
 ## Overview
 
-A tag cloud, also known as a word cloud or weighted list,  is a visual representation of text data. This chart is typically used to show keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag, which is often based on its frequency, is shown with font size or color.
+A tag cloud, otherwise known as a word cloud or weighted list,  is a visual representation of text data. This chart is typically used to show keyword metadata (tags) on websites, or to visualize free form text. Tags are usually single words, and the importance of each tag, which is often based on its frequency, is shown with font size or color.
 
 This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
 

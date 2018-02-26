@@ -3,7 +3,7 @@
 
 ## Overview
 
-The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
+The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are otherwise known as stacked graphs. 
 
 In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack_mode) set by {api:?entry=stackMode}stackMode(){api} method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
