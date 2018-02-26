@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-
+    
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
@@ -30,17 +30,17 @@ anychart.onDocumentReady(function () {
     var data = [
       {name: "Company A", children: [
         {name: "Technical", children: [
-          {name: "Team Leaders", value: 7},
-          {name: "Architects", value: 3},
-          {name: "Developers", value: 35},
-          {name: "Testers", value: 15}
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
         ]},
         {name: "Sales", children: [
-          {name: "Analysts", value: 12},
-          {name: "Executives", value: 8}
+          {name: "Analysts"},
+          {name: "Executives"}
         ]},
-        {name: "HR", value: 3},
-        {name: "Management", value: 7}
+        {name: "HR"},
+        {name: "Management"}
       ]}
     ];
 
@@ -48,14 +48,13 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sunburst(data, "as-tree");
 
     // set the calculation mode
-    chart.calculationMode("parent-independent");
+    chart.calculationMode("ordinal-from-root");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (parent-independent)<br><br>" +
+    chart.title("Sunburst: Calculation Mode (ordinal-from-root)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Number of Employees</span>");
-
+                "Corporate Structure</span>");
     // set the container id
     chart.container("container");
 

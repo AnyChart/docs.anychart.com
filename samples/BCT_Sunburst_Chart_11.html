@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 11"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -44,22 +44,28 @@ anychart.onDocumentReady(function () {
       ]}
     ];
 
-    // create a chart and set the data
-    var chart = anychart.sunburst(data, "as-tree");
+    // create a stage
+    var stage = anychart.graphics.create("container");
 
-    // set the calculation mode
-    chart.calculationMode("ordinal-from-root");
-
-    // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (ordinal-from-root)<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Corporate Structure</span>");
-    // set the container id
-    chart.container("container");
-
+    // create and configure the first sunburst chart
+    var sunburst1 = anychart.sunburst(data, "as-tree");
+    sunburst1.title("Start Angle: Default (0°)");
+    sunburst1.bounds(0, 0, "50%", "100%");
+    // set the chart container
+    sunburst1.container(stage);
     // initiate drawing the chart
-    chart.draw();
+    sunburst1.draw();   
+
+    // create and configure the second sunburst chart
+    var sunburst2 = anychart.sunburst(data, "as-tree");
+    sunburst2.title("Start Angle: 90°");
+    sunburst2.bounds("50%", 0, "50%", "100%");
+    // set the start angle
+    sunburst2.startAngle(90);
+    // set the chart container
+    sunburst2.container(stage);
+    // initiate drawing the chart
+    sunburst2.draw();
 });
 </script>
 </body>

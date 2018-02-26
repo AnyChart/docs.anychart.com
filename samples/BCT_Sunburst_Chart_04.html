@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -9,7 +9,7 @@
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
-
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
@@ -28,33 +28,36 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "London", children: [
-        {name: "Management"},
-        {name: "Sales", children: [
-          {name: "Analysts"},
-          {name: "Executives"}
+      {name: "Italian", children: [
+        {name: "Consonants", children: [
+          {name: "m"}, {name: "n"}, {name: "ɲ"},
+          {name: "p"}, {name: "b"}, {name: "t"},
+          {name: "d"}, {name: "k"}, {name: "g"},
+          {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
+          {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
+          {name: "s"}, {name: "z"}, {name: "ʃ"},
+          {name: "j"}, {name: "w"}, {name: "l"},
+          {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
         ]},
-        {name: "Accounting"}
-      ]},
-      {name: "New York", children: [
-        {name: "Technical", children: [
-          {name: "Team Leaders"},
-          {name: "Architects"},
-          {name: "Developers"},
-          {name: "Testers"}
-        ]},
-        {name: "HR"}
+        {name: "Vowels", children: [
+          {name: "i"}, {name: "u"}, {name: "e"},
+          {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
+          {name: "a"}
+        ]} 
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
+    // set the calculation mode
+    chart.calculationMode("ordinal-from-leaves");
+
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Data (Parent Nodes)<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "The Corporate Structure of Company A</span>");
+    chart.title("Sunburst: Calculation Mode (ordinal-from-leaves)<br><br>" +
+        "<span style='font-size:12; font-style:italic'>" +
+        "Phonemic System</span>");
 
     // set the container id
     chart.container("container");

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 18"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
-    
+
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
@@ -47,15 +47,13 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
-    // set the radius
-    chart.radius("30%");
-
-    // set the inner radius
-    chart.innerRadius(20);
+    // set the position of labels
+    chart.level().labels().position("radial");
+    chart.leaves().labels().position("circular");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Radius<br><br>" +
+    chart.title("Sunburst: Labels (Position) <br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
                 "Corporate Structure</span>");
 

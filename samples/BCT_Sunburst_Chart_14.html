@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -44,28 +44,34 @@ anychart.onDocumentReady(function () {
       ]}
     ];
 
-    // create a stage
-    var stage = anychart.graphics.create("container");
+    // create a chart and set the data
+    var chart = anychart.sunburst(data, "as-tree");
 
-    // create and configure the first sunburst chart
-    var sunburst1 = anychart.sunburst(data, "as-tree");
-    sunburst1.title("Start Angle: Default (0°)");
-    sunburst1.bounds(0, 0, "50%", "100%");
-    // set the chart container
-    sunburst1.container(stage);
-    // initiate drawing the chart
-    sunburst1.draw();   
+    // set the inner radius
+    chart.innerRadius(50);
 
-    // create and configure the second sunburst chart
-    var sunburst2 = anychart.sunburst(data, "as-tree");
-    sunburst2.title("Start Angle: 90°");
-    sunburst2.bounds("50%", 0, "50%", "100%");
-    // set the start angle
-    sunburst2.startAngle(90);
-    // set the chart container
-    sunburst2.container(stage);
+    // create and configure a label
+    var label = anychart.standalones.label();
+    label.text("Corporate Structure");
+    label.width("100%");
+    label.height("100%");
+    label.fontSize(12);
+    label.fontWeight(600);
+    label.fontColor("#dd2c00");
+    label.hAlign("center");
+    label.vAlign("middle");
+
+    // set the center content
+    chart.center().content(label);
+
+    // set the chart title
+    chart.title("Sunburst: Center Content");
+
+    // set the container id
+    chart.container("container");
+
     // initiate drawing the chart
-    sunburst2.draw();
+    chart.draw();
 });
 </script>
 </body>

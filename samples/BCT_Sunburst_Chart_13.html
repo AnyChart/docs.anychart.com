@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -13,24 +13,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 25px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<label>Circular</label> 
-<input onclick="labelsPosition('circular')" type="radio" name="type" checked><label>Radial</label> 
-<input onclick="labelsPosition('radial')" type="radio"  name="type">
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -54,19 +45,19 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a chart and set the data
-    chart = anychart.sunburst(data, "as-tree");
+    var chart = anychart.sunburst(data, "as-tree");
 
-    // set the position of labels
-    chart.labels().position("circular");
+    // set the radius
+    chart.radius("30%");
+
+    // set the inner radius
+    chart.innerRadius(20);
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.listen("chartDraw", function () {
-      chart.title("Sunburst: Labels (Position = " +
-                  chart.labels().position() + ")<br><br>" +
-                  "<span style='font-size:12; font-style:italic'>" +
-                  "Company Structure");
-    });
+    chart.title("Sunburst: Radius<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Corporate Structure</span>");
 
     // set the container id
     chart.container("container");
@@ -74,11 +65,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-
-// set the position of labels
-function labelsPosition(position){
-  chart.labels().position(position);
-};
 </script>
 </body>
 </html>

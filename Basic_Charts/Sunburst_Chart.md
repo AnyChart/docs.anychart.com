@@ -63,7 +63,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Quick\_Start{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_01{sample}
 
 ## General Settings
 
@@ -85,7 +85,7 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-Unlike other chart types based on tree data, e.g., the [Treemap](Treemap_Chart) chart, this type allows adding more than one parent node:
+Unlike other charts based on the tree data structure, e.g., the [Treemap](Treemap_Chart) chart, this type allows adding more than one parent node:
 
 ```
 // create data
@@ -113,7 +113,7 @@ var data = [
 var chart = anychart.sunburst(data, "as-tree");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Two\_Parents{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_02{sample}
 
 ### Calculation Mode
 
@@ -160,7 +160,7 @@ var chart = anychart.sunburst(data, "as-tree");
 chart.calculationMode("ordinal-from-root");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Ordinal\_Root{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_03{sample}
 
 #### Ordinal from Leaves
 
@@ -197,7 +197,7 @@ var chart = anychart.sunburst(data, "as-tree");
 chart.calculationMode("ordinal-from-leaves");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Ordinal\_Leaves{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_04{sample}
 
 #### Parent Dependent
 
@@ -238,7 +238,7 @@ var chart = anychart.sunburst(data, "as-tree");
 chart.calculationMode("parent-dependent");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Parent\_Dependent{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_05{sample}
 
 #### Parent Independent
 
@@ -272,7 +272,7 @@ var chart = anychart.sunburst(data, "as-tree");
 chart.calculationMode("parent-independent");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Parent\_Independent{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_06{sample}
 
 ### Levels and Leaves
 
@@ -293,7 +293,7 @@ chart.level(1).enabled(false);
 chart.leaves().thickness("70%");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Levels\_Leaves{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_07{sample}
 
 ### Appearance
 
@@ -321,7 +321,7 @@ chart.hovered().stroke("#96a6a6", 2);
 chart.selected().stroke("#96a6a6", 4);
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Appearance\_01{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_08{sample}
 
 #### Individual Points
 
@@ -352,7 +352,7 @@ var data = [
 ];
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Appearance\_02{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_09{sample}
 
 #### Fill Functions
 
@@ -380,7 +380,7 @@ chart.fill(function () {
 });
 ```
 
-{sample :height 500}BCT\_Sunburst\_Appearance\_03{sample}
+{sample :height 500}BCT\_Sunburst\_Chart\_10{sample}
 
 ### Start Angle
 
@@ -393,7 +393,7 @@ In the sample below, the start angle of the first chart is not configured, and f
 sunburst2.startAngle(90);
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Start\_Angle{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_11{sample}
 
 ### Sorting Order
 
@@ -410,7 +410,7 @@ To set the sorting mode, call the {api:anychart.charts.Sunburst#sort}sort(){api}
 chart.sort("asc");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Sorting\_Order{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_12{sample}
 
 ### Radius
 
@@ -426,7 +426,7 @@ chart.radius("30%");
 chart.innerRadius(20);
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Radius{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_13{sample}
 
 ### Center Content
 
@@ -452,7 +452,7 @@ label.vAlign("middle");
 chart.center().content(label);
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Center\_Content{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_14{sample}
 
 ### Labels and Tooltips
 
@@ -523,7 +523,7 @@ chart.leaves().labels().format("{%name}");
 chart.tooltip().format("{%name}\n\nsales: {%value}\n{%custom_field}");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_01{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_15{sample}
 
 #### Formatting Functions
 
@@ -558,7 +558,7 @@ chart.tooltip().format(function (){
 })
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_02{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_16{sample}
 
 #### Position
 
@@ -571,7 +571,7 @@ The following sample shows how to change the position of labels, which is initia
 chart.labels().position("circular");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_03{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_17{sample}
 
 The position of labels can also be set separately for levels and leaves – use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
 
@@ -583,7 +583,7 @@ chart.level().labels().position("radial");
 chart.leaves().labels().position("circular");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_04{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_18{sample}
 
 ### Interactivity
 
@@ -638,7 +638,7 @@ You can also call {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPat
 
 The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_01{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_19{sample}
 
 #### Disabling Drilldown
 
@@ -651,4 +651,4 @@ chart.listen("drillchange", function(e){
 });
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_02{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_20{sample}

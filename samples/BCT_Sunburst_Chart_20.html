@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Sunburst Chart"/>
+    <meta name="ac:name" content="BCT Sunburst Chart 20"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -9,7 +9,7 @@
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
@@ -28,36 +28,35 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name: "Italian", children: [
-        {name: "Consonants", children: [
-          {name: "m"}, {name: "n"}, {name: "ɲ"},
-          {name: "p"}, {name: "b"}, {name: "t"},
-          {name: "d"}, {name: "k"}, {name: "g"},
-          {name: "t͡s"}, {name: "d͡z"}, {name: "t͡ʃ"},
-          {name: "d͡ʒ"}, {name: "f"}, {name: "v"},
-          {name: "s"}, {name: "z"}, {name: "ʃ"},
-          {name: "j"}, {name: "w"}, {name: "l"},
-          {name: "ʎ"}, {name: "r"}, {name: "ɾ"}
+      {name: "Company A", children: [
+        {name: "Technical", children: [
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
         ]},
-        {name: "Vowels", children: [
-          {name: "i"}, {name: "u"}, {name: "e"},
-          {name: "o"}, {name: "ɛ"}, {name: "ɔ"},
-          {name: "a"}
-        ]} 
+        {name: "Sales", children: [
+          {name: "Analysts"},
+          {name: "Executives"}
+        ]},
+        {name: "HR"},
+        {name: "Management"}
       ]}
     ];
 
     // create a chart and set the data
     var chart = anychart.sunburst(data, "as-tree");
 
-    // set the calculation mode
-    chart.calculationMode("ordinal-from-leaves");
+    // disable the drilldown feature
+    chart.listen("drillchange", function(e){
+      return false;
+    });
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Sunburst: Calculation Mode (ordinal-from-leaves)<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Phonemic System</span>");
+    chart.title("Sunburst: Interactivity (Disabling Drilldown)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Corporate Structure</span>");
 
     // set the container id
     chart.container("container");
