@@ -279,7 +279,7 @@ eventMarkers.selected().connector().stroke("#dd2c00", 3);
 
 ## Height and Width
 
-You can set the height and width of event markers in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+The height and width of event markers can be set in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
 
 Combine them with these methods:
 
