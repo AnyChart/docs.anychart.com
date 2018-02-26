@@ -69,20 +69,11 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // configure the appearance of event markers
-
-    eventMarkers.normal().fill("#d1ead9");
-    eventMarkers.hovered().fill("white");
-    eventMarkers.selected().fill("white");
-
-    eventMarkers.normal().stroke("2 #009933");
-    eventMarkers.hovered().stroke("2 #009933");
-    eventMarkers.selected().stroke("2 #004d1a");
-
-    eventMarkers.normal().fontColor("#009933");
-    eventMarkers.hovered().fontColor("#009933");
-    eventMarkers.selected().fontColor("#004d1a");
-    eventMarkers.normal().fontWeight(600);
+    // configure the connectors of event markers
+    eventMarkers.connector().length("20");
+    eventMarkers.normal().connector().stroke("#dd2c00");
+    eventMarkers.hovered().connector().stroke("#dd2c00", 2);
+    eventMarkers.selected().connector().stroke("#dd2c00", 3);
 
     // set the chart title
     chart.title("Event Markers: Connectors");

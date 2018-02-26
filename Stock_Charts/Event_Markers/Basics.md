@@ -259,17 +259,20 @@ eventMarkers.normal().fontWeight(600);
 
 ## Connectors
 
-The connectors of event markers (lines that connect markers with the points they are bound to) can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+You can configure the connectors of event markers (lines that connect markers with the points they are bound to).
 
-Combine them with {api:anychart.core.StateSettings#connector}connector(){api} and the following metods:
-
-* {api:anychart.core.utils.Connector#length}length(){api} to set the length
-* {api:anychart.core.utils.Connector#stroke}stroke(){api} to set the stroke
-
-...
+To set the length of connectors, use the {api:anychart.core.StateSettings#connector}connector(){api} and {api:anychart.core.utils.Connector#length}length(){api} methods:
 
 ```
+eventMarkers.connector().length("20");
+```
 
+The stroke of connectors can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods, combined with {api:anychart.core.StateSettings#connector}connector(){api} and  {api:anychart.core.utils.Connector#stroke}stroke(){api}:
+
+```
+eventMarkers.normal().connector().stroke("#dd2c00");
+eventMarkers.hovered().connector().stroke("#dd2c00", 2);
+eventMarkers.selected().connector().stroke("#dd2c00", 3);
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_07{sample}
