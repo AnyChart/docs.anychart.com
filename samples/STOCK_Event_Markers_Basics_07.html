@@ -14,11 +14,17 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
         }
     </style>
 </head>
@@ -63,18 +69,23 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    // set the height of event markers
-    eventMarkers.normal().height(30);
-    eventMarkers.hovered().height(35);
-    eventMarkers.selected().height(40);
+    // configure the appearance of event markers
 
-    // set the width of event markers
-    eventMarkers.normal().width(35);
-    eventMarkers.hovered().width(40);
-    eventMarkers.selected().width(45);
+    eventMarkers.normal().fill("#d1ead9");
+    eventMarkers.hovered().fill("white");
+    eventMarkers.selected().fill("white");
+
+    eventMarkers.normal().stroke("2 #009933");
+    eventMarkers.hovered().stroke("2 #009933");
+    eventMarkers.selected().stroke("2 #004d1a");
+
+    eventMarkers.normal().fontColor("#009933");
+    eventMarkers.hovered().fontColor("#009933");
+    eventMarkers.selected().fontColor("#004d1a");
+    eventMarkers.normal().fontWeight(600);
 
     // set the chart title
-    chart.title("Event Markers: Height and Width");
+    chart.title("Event Markers: Connectors");
 
     // set the container id
     chart.container("container");

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Basics 08"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 12"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -45,36 +45,46 @@ anychart.onDocumentReady(function () {
     // create a line series
     plot.line(mapping).name("CSCO");
 
-    var eventMarkers = plot.eventMarkers();
-
     // add event markers
     plot.eventMarkers({"groups": [
       {
-         "data": [
-           {
-             "date": "2006-06-08",
-             "description": "Cisco announced the acquisition of Audium Corporation."
-           },
-           {
-             "date": "2008-04-27",
-             "description": "Cisco announced its intent to acquire PostPath, Inc."
-           }
-         ]
+        "data": [
+          {
+            "symbol": "1",
+            "date": "2006-06-08",
+            "description": "Cisco announced the acquisition of Audium Corporation.",
+            "normal":   {
+                         "fill": "#d1ead9", "stroke": "2 #009933",
+                         "fontColor": "#009933", "fontWeight": 600,
+                         "type": "circle"},
+            "hovered":  {"fill": "white", "stroke": "2 #009933",
+                         "fontColor": "#009933"},
+            "selected": {"fill": "white", "stroke": "2 #194d00",
+                         "fontColor": "#194d00"}
+          },
+          {
+            "symbol": "2",
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
+                         "fontColor": "#990033", "fontWeight": 600,
+                         "type": "rect", "width": 40},
+            "hovered":  {"fill": "white", "stroke": "2 #990033",
+                         "fontColor": "#990033"},
+            "selected": {"fill": "white", "stroke": "2 #4d1a00",
+                         "fontColor": "#4d1a00"}   
+          },
+        ]
       }
     ]});
 
-    // set the height of event markers
-    eventMarkers.normal().height(30);
-    eventMarkers.hovered().height(35);
-    eventMarkers.selected().height(40);
-
-    // set the width of event markers
-    eventMarkers.normal().width(35);
-    eventMarkers.hovered().width(40);
-    eventMarkers.selected().width(45);
+    // set the symbol of event markers
+    plot.eventMarkers().format(function (){
+      return this.getData("symbol");
+    });
 
     // set the chart title
-    chart.title("Event Markers: Height and Width");
+    chart.title("Event Markers: Individual Markers");
 
     // set the container id
     chart.container("container");

@@ -230,7 +230,9 @@ To configure the font of symbols, use:
 * {api:anychart.core.StateSettings#fontSize}fontSize(){api}
 * other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
 
-**Note:** By default, the font size of symbols is adjusted to the size of markers. You can disable this setting by calling the {api:anychart.core.stock.eventMarkers.Controller#adjustFontSize}adjustFontSize(){api} method with `false` as a parameter and set the font size manually with {api:anychart.core.StateSettings#fontWeight}fontSize(){api}.
+**Note 1:** By default, the font size of symbols is adjusted to the size of markers. You can disable this setting by calling the {api:anychart.core.stock.eventMarkers.Controller#adjustFontSize}adjustFontSize(){api} method with `false` as a parameter and set the font size manually with {api:anychart.core.StateSettings#fontWeight}fontSize(){api}.
+
+**Note 2:** You can also set the stroke of [connectors](#connectors).
 
 In the sample below, there is a chart with one group of event markers, their appearance settings configured:
 
@@ -255,6 +257,23 @@ eventMarkers.normal().fontWeight(600);
 
 {sample}STOCK\_Event\_Markers\_Basics\_06{sample}
 
+## Connectors
+
+The connectors of event markers (lines that connect markers with the points they are bound to) can be configured in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
+
+Combine them with {api:anychart.core.StateSettings#connector}connector(){api} and the following metods:
+
+* {api:anychart.core.utils.Connector#length}length(){api} to set the length
+* {api:anychart.core.utils.Connector#stroke}stroke(){api} to set the stroke
+
+...
+
+```
+
+```
+
+{sample}STOCK\_Event\_Markers\_Basics\_07{sample}
+
 ## Height and Width
 
 You can set the height and width of event markers in three [states](../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.stock.eventMarkers.Controller#normal}normal(){api}, {api:anychart.core.stock.eventMarkers.Controller#hovered}hovered(){api}, and {api:anychart.core.stock.eventMarkers.Controller#selected}selected(){api} methods.
@@ -277,7 +296,7 @@ eventMarkers.hovered().width(40);
 eventMarkers.selected().width(45);
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_07{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_08{sample}
 
 ## Position
 
@@ -304,7 +323,7 @@ plot.eventMarkers().fieldName("high");
 
 In this sample, you can bind event markers either to the X-axis or to one of the four values of the OHLC series:
 
-{sample}STOCK\_Event\_Markers\_Basics\_08{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_09{sample}
 
 If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers – {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
@@ -316,7 +335,7 @@ plot.eventMarkers().seriesId(0);
 
 In the sample below, there are two series, and you can display markers on either of them:
 
-{sample}STOCK\_Event\_Markers\_Basics\_09{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_10{sample}
 
 ## Direction
 
@@ -333,7 +352,7 @@ plot.eventMarkers().direction("down");
 
 In the default [position](#position) (`"axis"`), all markers are vertically oriented, no matter what direction you set. However, in other positions the direction matters. The following sample shows how changing the direction of markers affects them when the position is set to `"series"`:
 
-{sample}STOCK\_Event\_Markers\_Basics\_10{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_11{sample}
 
 ## Individual Markers
 
@@ -382,4 +401,4 @@ plot.eventMarkers().format(function (){
 });
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_11{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_12{sample}
