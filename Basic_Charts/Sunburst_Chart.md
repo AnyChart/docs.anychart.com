@@ -3,7 +3,9 @@
 
 ## Overview
 
-A sunburst chart...
+A sunburst chart is a visualization that displays hierarchically organized data as a set of rings, the top level of the hierarchy shown at the inner ring or circle. Rings are divided into pieces that represent data points, and sometimes the sizes of this pieces represent the values of data points.
+
+This article explains how to create a basic Sunburst chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sunburst chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
