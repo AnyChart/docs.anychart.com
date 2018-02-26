@@ -318,6 +318,23 @@ In the sample below, there are two series, and you can display markers on either
 
 {sample}STOCK\_Event\_Markers\_Basics\_09{sample}
 
+## Direction
+
+By default, the direction of markers is adjusted automatically so that they overlap the series as little as possible. To set the direction manually, use the {api:anychart.core.stock.eventMarkers.Controller#direction}direction(){api} method with one of the parameters listed in {api:anychart.enums.EventMarkerDirection}anychart.enums.EventMarkerDirection{api}:
+
+* `"auto"` (default)
+* `"down"`
+* `"up"`
+
+```
+// set the position of event markers
+plot.eventMarkers().direction("down");
+```
+
+In the default [position](#position) (`"axis"`), all markers are vertically oriented, no matter what direction you set. However, in other positions the direction matters. The following sample shows how changing the direction of markers affects them when the position is set to `"series"`:
+
+{sample}STOCK\_Event\_Markers\_Basics\_10{sample}
+
 ## Individual Markers
 
 Most settings are shared by markers belonging to the same group, but there is a way to make them look different from each other. Use extra data fields corresponding with the methods mentioned in the following sections: [Type](#type), [Appearance](#appearance), [Height and Width](#height_and_width).
@@ -365,4 +382,4 @@ plot.eventMarkers().format(function (){
 });
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_10{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_11{sample}

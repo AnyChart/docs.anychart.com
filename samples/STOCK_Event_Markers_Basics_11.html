@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Event Markers Position"/>
+    <meta name="ac:name" content="STOCK Event Markers Basics 11"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,57 +34,57 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, value: 4});
+    var mapping = dataTable.mapAs({value: 4});
 
     // create a stock chart
     var chart = anychart.stock();
 
     // create a plot on the chart
-    var plot1 = chart.plot(0);
+    var plot = chart.plot(0);
+
     // create a line series
-    plot1.ohlc(mapping).name("CSCO");
+    plot.line(mapping).name("CSCO");
 
-    // create a second plot on the chart
-    var plot2 = chart.plot(1);
-    // create an area series
-    plot2.line(mapping).name("CSCO");
-
-    events = [{
-        date: "2001-09-11",
-        description: "9-11 attacks"
-      },
+    // add event markers
+    plot.eventMarkers({"groups": [
       {
-        date: "2003-03-20",
-        description: "Iraq War"
-      },
-      {
-        date: "2008-08-20",
-        description: "Global financial collapse"
-      },
-      {
-        date: "2009-02-05",
-        description: "OPEC cuts production targets"
+        "data": [
+          {
+            "symbol": "1",
+            "date": "2006-06-08",
+            "description": "Cisco announced the acquisition of Audium Corporation.",
+            "normal":   {
+                         "fill": "#d1ead9", "stroke": "2 #009933",
+                         "fontColor": "#009933", "fontWeight": 600,
+                         "type": "circle"},
+            "hovered":  {"fill": "white", "stroke": "2 #009933",
+                         "fontColor": "#009933"},
+            "selected": {"fill": "white", "stroke": "2 #194d00",
+                         "fontColor": "#194d00"}
+          },
+          {
+            "symbol": "2",
+            "date": "2008-04-27",
+            "description": "Cisco announced its intent to acquire PostPath, Inc.",
+            "normal":   {"fill": "#ead9d1", "stroke": "2 #990033",
+                         "fontColor": "#990033", "fontWeight": 600,
+                         "type": "rect", "width": 40},
+            "hovered":  {"fill": "white", "stroke": "2 #990033",
+                         "fontColor": "#990033"},
+            "selected": {"fill": "white", "stroke": "2 #4d1a00",
+                         "fontColor": "#4d1a00"}   
+          },
+        ]
       }
-    ]
+    ]});
 
-    // set settings for event markers
-    var eventMarkers1 = plot1.eventMarkers();
-    // set markers data
-    eventMarkers1.data(events);
-    // set markers position
-    eventMarkers1.position("series");
-    eventMarkers1.fieldName("high");
+    // set the symbol of event markers
+    plot.eventMarkers().format(function (){
+      return this.getData("symbol");
+    });
 
-
-    // set settings for event markers
-    var eventMarkers2 = plot2.eventMarkers();
-    // set markers data
-    eventMarkers2.data(events);
-    // set markers position
-    eventMarkers2.position("axis");
-    
     // set the chart title
-    chart.title("Event Markers: Position");
+    chart.title("Event Markers: Individual Markers");
 
     // set the container id
     chart.container("container");
