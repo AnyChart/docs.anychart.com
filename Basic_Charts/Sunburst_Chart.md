@@ -85,7 +85,7 @@ This chart type requires the [tree data structure](../Working_with_Data/Using_Da
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-Unlike other charts based on the tree data structure, e.g., the [Treemap](Treemap_Chart) chart, this type allows adding more than one parent node:
+Unlike other charts based on the tree data structure, e.g., the [Treemap](Treemap_Chart) chart, the Sunburst chart allows adding more than one parent node:
 
 ```
 // create data
@@ -276,14 +276,16 @@ chart.calculationMode("parent-independent");
 
 ### Levels and Leaves
 
-* {api:anychart.charts.Sunburst#level}level(){api}
-* {api:anychart.charts.Sunburst#level}leaves(){api}
+You can access any level (ring) of a Sunburst chart by index – use the {api:anychart.charts.Sunburst#level}level(){api} method with the index as a parameter. [If the index is not specified, this method affects all levels.]
+
+The elements of the last level (leaves) can also be accessed with the {api:anychart.charts.Sunburst#level}leaves(){api} method.
+
+
 * thickness()
 * enabled()
 
-* !!! написать про level() с индексом и без индекса
-* уровни называть кольцами (тогда можно будет использовать thickness)
-* (???) отсылка на лейблы?
+
+* отсылка на лейблы?
 
 ```
 // hide the first level
@@ -558,7 +560,7 @@ chart.tooltip().format(function (){
 })
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_16{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_16{sample}
 
 #### Position
 
@@ -583,7 +585,7 @@ chart.level().labels().position("radial");
 chart.leaves().labels().position("circular");
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Labels\_18{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_18{sample}
 
 ### Interactivity
 
@@ -638,7 +640,7 @@ You can also call {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPat
 
 The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_19{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_19{sample}
 
 #### Disabling Drilldown
 
@@ -651,4 +653,4 @@ chart.listen("drillchange", function(e){
 });
 ```
 
-{sample :width 500 :height 500}BCT\_Sunburst\_Drill\_Down\_20{sample}
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_20{sample}
