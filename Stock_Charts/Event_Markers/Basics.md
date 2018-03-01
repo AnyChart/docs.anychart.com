@@ -40,13 +40,13 @@ plot.eventMarkers({"groups": [
 
 ## Data
 
-You can use three methods to add event markers:
+Event markers in AnyChart are organized in groups. There are different ways to add and group them – you can choose one of the three methods:
 
 * {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api}
 * {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}
 * {api:anychart.core.stock.eventMarkers.Controller#data}data(){api}
 
-As shown in the subsections below, for each method you should organize data in a different way and use different data fields. 
+As shown in the subsections below, for each method you should structure data in a different way and use different data fields. 
 
 There are two data fields working with all methods:
 
