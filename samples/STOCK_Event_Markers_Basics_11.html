@@ -18,24 +18,21 @@
         html, body {
             width: 100%;
             height: 100%;
-            margin: 0;
+            margin: 10;
             padding: 0;
         }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<label>Auto</label>
-<input onclick="setDirection('auto')" type="radio" name="type" checked>
-<label>Down</label>
-<input onclick="setDirection('down')" type="radio" name="type">
-<label>Up</label>
-<input onclick="setDirection('up')" type="radio" name="type">
+<label><input onclick="setDirection('auto')" type="radio" name="type" checked>Auto</label>
+<label><input onclick="setDirection('down')" type="radio" name="type">Down</label>
+<label><input onclick="setDirection('up')" type="radio" name="type">Up</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
