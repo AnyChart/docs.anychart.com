@@ -593,9 +593,7 @@ chart.headersDisplayMode("drop");
 
 The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified.
 
-**Note 1:** It is possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
-
-**Note 2:** You can also use the **Esc** and **Backspace** keys to drill up.
+**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
 When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [data tree model](../Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
