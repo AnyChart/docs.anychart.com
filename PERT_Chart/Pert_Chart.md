@@ -9,7 +9,7 @@ This article explains how to create a basic Pert Chart as well as configure sett
 
 Pert Chart Data should be arranged as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
 
-See also: <a href="https://www.anychart.com/chartopedia/chart-types/pert-chart/" target="_blank">Chartopedia: PERT Chart</a>
+See also: [Chartopedia: PERT Chart](https://www.anychart.com/chartopedia/chart-types/pert-chart/).
 
 ## Quick Start
 
