@@ -373,7 +373,7 @@ Another way to set the colors of a chart is to call the {api:anychart.charts.Sun
 * `parent` – the parent node of the current node (инстанс класса?)
 * `parentColor` – the color of the parent node
 * `path` – an array of nodes representing the path from the root to the current node (?)
-* `point` – an instance of the {api:anychart.treeChartBase.Point}Point{api} class
+* `point` – an instance of the {api:anychart.treeChartBase.Point}Point{api} class (ссылка не работает, но есть вот такая штука: {api:anychart.core.TreeChartPoint}TreeChartPoint{api})
 * `series` – the chart (инстанс чарта?) (вообще про это не писать?)
 * `sourceColor` – the color of a node from the data or, if not specified, the `mainColor` (???)
 
