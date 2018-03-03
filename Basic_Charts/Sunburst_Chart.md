@@ -361,7 +361,7 @@ var data = [
 
 #### Fill Functions
 
-You can also set the colors of your chart by calling the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
+Another way to set the colors of a chart is to call the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
 * `autoColor` – the default color of a node or its color from the data, if specified (???) (цвет из палитры по линейному индексу ноды)
 * `chart` – the chart (инстанс чарта?)
