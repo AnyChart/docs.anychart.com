@@ -211,7 +211,7 @@ chart.xScale().minimum(-100);
 chart.xScale().maximum(100);
 ```
 
-Please note that quarters always divide scales into two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the [origin](https://en.wikipedia.org/wiki/Origin%5F(mathematics) only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
+Please note that quarters always divide scales into two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the [origin](https://en.wikipedia.org/wiki/Origin%5F(mathematics)) only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
 
 ### Axes
 
