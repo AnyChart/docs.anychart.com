@@ -363,7 +363,7 @@ var data = [
 
 Another way to set the colors of a chart is to call the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
-* `autoColor` – the default color of a node or its color from the data, if specified (???) (цвет из палитры по линейному индексу ноды)
+* `autoColor` – the default color of a node or its color from the data, if specified (???) (цвет из палитры по линейному индексу ноды) (возвращается дефолтный цвет сектора, даже если предок этого сектора был перекрашен)
 * `chart` – the chart (инстанс чарта?)
 * `index` – the (linear? внутренний?) index of a node
 * `isLeaf` – a test whether a node is a leaf
