@@ -27,7 +27,7 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><td></td><td>[Treemap](TreeMap_Chart)</td></tr>
 <tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/" target="_blank">Chartopedia: Heat Map Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Heat Map Chart](https://www.anychart.com/chartopedia/chart-types/heatmap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

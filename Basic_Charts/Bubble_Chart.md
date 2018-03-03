@@ -33,7 +33,7 @@ This article explains how to create a basic Bubble chart as well as configure se
 <tr><td></td><td>[Marker](Marker_Chart)</td></tr>
 <tr><td></td><td>[Dot (Point) Maps](../Maps/Dot_(Point\)_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Bubble Chart](https://www.anychart.com/chartopedia/chart-types/bubble-chart/)</a></td></tr>
+<tr><td></td><td>[Chartopedia: Bubble Chart](https://www.anychart.com/chartopedia/chart-types/bubble-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

@@ -28,7 +28,7 @@ This article explains how to create a basic Polygon chart as well as configure s
 <tr><td></td><td>[Polar Area](Polar_Plot/Area_Chart)</td></tr>
 <tr><td></td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/radar-chart/" target="_blank">Chartopedia: Radar Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Radar Chart](https://www.anychart.com/chartopedia/chart-types/radar-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

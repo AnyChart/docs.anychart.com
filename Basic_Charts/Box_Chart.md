@@ -29,7 +29,7 @@ This article explains how to create a basic Box chart as well as configure setti
 <tr><td></td><td>[Error](Error_Chart)</td></tr>
 <tr><td></td><td>[Pareto](Pareto_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Box Chart](https://www.anychart.com/chartopedia/chart-types/box-chart/)</a></td></tr>
+<tr><td></td><td>[Chartopedia: Box Chart](https://www.anychart.com/chartopedia/chart-types/box-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

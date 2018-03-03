@@ -28,7 +28,7 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 <tr><td></td><td>[Pie](Pie_Chart)</td></tr>
 <tr><td></td><td>[Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/pyramid-chart/" target="_blank">Chartopedia: Pyramid Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Pyramid Chart](https://www.anychart.com/chartopedia/chart-types/pyramid-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
