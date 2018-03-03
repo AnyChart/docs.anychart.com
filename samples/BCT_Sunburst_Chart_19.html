@@ -16,20 +16,22 @@
         html, body {
             width: 100%;
             height: 100%;
-            margin: 0;
+            margin: 10;
             padding: 0;
         }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<button onclick="drillToLevel()">Drill Down to "Technical"</button>
-<button onclick="drillUpALevel()">Drill Up a Level</button>
+<label><input onclick="interactivitySelectionMode('drill-down')" type="radio" name="mode">drill-down</label>
+<label><input onclick="interactivitySelectionMode('multi-select')" type="radio"  name="mode">multi-select</label>
+<label><input onclick="interactivitySelectionMode('single-select')" type="radio" name="mode">single-select</label>
+<label><input onclick="interactivitySelectionMode('none')" type="radio"  name="mode" checked>none</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -52,24 +54,19 @@ anychart.onDocumentReady(function () {
       ]}
     ];
 
-    // create a storage for the data tree
-    treeData = anychart.data.tree(data, "as-tree");
-
     // create a chart and set the data
-    chart = anychart.sunburst(treeData);
+    chart = anychart.sunburst(data, "as-tree");
 
-    /* listen to the chartDraw event
-    and add the drilldown path to the chart title */
-    chart.listen("chartDraw",function (){
-      // get the drilldown path and convert it to a string
-      var text = printPath(chart.getDrilldownPath());
-      // set the chart title
-      chart.title().useHtml(true);
-      chart.title("Sunburst: Interactivity (Drilling Down and Up)<br>" +
-                  "Path: <span style = 'color:#990000; font-style:italic'>" + text +
-                  "</span><br><br><span style='font-size:12; font-style:italic'>" +
-                  "Corporate Structure</span>");
-    });
+    // set the selection mode
+    chart.interactivity().selectionMode("none");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Sunburst: Selection Mode = " +
+                chart.interactivity().selectionMode() + "<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Company Structure");
+
 
     // set the container id
     chart.container("container");
@@ -78,30 +75,14 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-/* a function for converting the current
-drilldown path to a string */
-function printPath(path){
-  /* go through the array of the data tree items
-  and use the get() method to obtain the "name" field */
-  var text = "";
-  for (i = 0; i <  path.length; i++){ 
-    text += path[i].get("name") + "\\";
-  }
-  return text;
-};
-    
-// drill down to "developers"
-function drillToLevel(){
-  /* locate an item in the data tree,
-  get the item as an object*/
-  var item = treeData.search("name", "Technical");
-  // drill down to the item
-  chart.drillTo(item);
-};
-
-// drill up a level
-function drillUpALevel(){
-   chart.drillUp();
+// set the selection mode
+function interactivitySelectionMode(mode){
+  chart.interactivity().selectionMode(mode);
+  // update the chart title
+  chart.title("Sunburst: Selection Mode = " +
+              chart.interactivity().selectionMode() + "<br><br>" +
+              "<span style='font-size:12; font-style:italic'>" +
+              "Company Structure");
 };
 </script>
 </body>

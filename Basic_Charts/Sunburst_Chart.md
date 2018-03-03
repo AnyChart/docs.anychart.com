@@ -369,14 +369,14 @@ Another way to set the colors of a chart is to call the {api:anychart.charts.Sun
 * `isLeaf` – a test whether a node is a leaf
 * `iterator` – the tree iterator, an instance of the {api:anychart.data.Iterator}anychart.data.Iterator{api} class
 * `level` – the index of a level the current node belongs to
-* `mainColor` – the color of a node's ancestor at the first level or, if there is more than one root, of its root ancestor (inherited by default) (???) 
+* `mainColor` – the color of a node's ancestor at the first level (if there is one root) or at the zero level (if there is more than one root)
 * `parent` – the parent node of the current node, an instance of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class
 * `parentColor` – the color of the parent node
 * `path` – an array of nodes (instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class) representing the path from the root to the current node
 * `point` – an instance of the {api:anychart.core.TreeChartPoint}TreeChartPoint{api} class
-* `sourceColor` – the color of a node from the data or, if not specified, the `mainColor` (???)
+* `sourceColor` – in the normal state: the color of a node from the data, the palette, or the inherited color; in the hovered and selected states: the color in the normal state
 
-That is how the {api:anychart.core.StateSettings#fill}fill(){api} (на то ссылка?) method works in the normal state:
+That is how the {api:anychart.core.StateSettings#fill}fill(){api} method works in the normal state:
 
 ```
 function() {
@@ -602,9 +602,31 @@ chart.leaves().labels().position("circular");
 
 ### Interactivity
 
+#### Selection Mode
+
+By default, if you click a leaf of a Sunburst chart, the leaf is selected, and if you click a node that has children, a drilldown is performed (see the [drilldown](#drilldown) section to learn more).
+
+You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection – this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
+
+* `"drill-down"` (default)
+* `"multi-select"`
+* `"single-select"`
+* `"none"`
+
+**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
+
+The sample below shows how to change the selection mode, which is initially set to `"none"`:
+
+```
+// set the selection mode
+chart.interactivity().selectionMode("none");
+```
+
+{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_19{sample}
+
 #### Drilldown
 
-The Sunburst chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on the parent element or press **Esc**/**Backspace**, you drill up a level. This behavior can be modified.
+The Sunburst chart comes with a built-in drilldown feature: if you click on an element that has children, you drill down to its children, and if you click on the parent element or press **Esc**/**Backspace**, you drill up a level. This behavior can be modified.
 
 **Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
@@ -640,7 +662,7 @@ If you want to drill down to a particular item in the data tree, call the {api:a
 
 ```
 /* locate an item in the data tree,
-get the item as an object*/
+get the item as an object */
 var item = treeData.search("name", "Technical");
 // drill down to the item
 chart.drillTo(item);
@@ -652,25 +674,5 @@ chart.drillUp();
 You can also call {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path.
 
 The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
-
-{sample :width 500 :height 500}BCT\_Sunburst\_Chart\_19{sample}
-
-#### Selection Mode
-
-Instead of the drilldown, you can use other [selection modes](../Common_Settings/Interactivity/Overview#select). This setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
-
-* `"drill-down"` (default)
-* `"multi-select"`
-* `"single-select"`
-* `"none"`
-
-**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
-
-The sample below shows how to change the selection mode, which is initially set to `"none"`:
-
-```
-// set the selection mode
-chart.interactivity().selectionMode("none");
-```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_20{sample}
