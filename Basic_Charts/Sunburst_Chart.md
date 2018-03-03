@@ -363,25 +363,36 @@ var data = [
 
 You can also set the colors of your chart by calling the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
-* `autoColor`
-* `chart`
-* `index`
-* `isLeaf`
-* `iterator`
-* `level`
-* `parent`
-* `parentColor`
-* `path`
-* `point`
-* `series`
-* `sourceColor`
+* `autoColor` – the default color of a node or its color from the data, if specified (???) (цвет из палитры по линейному индексу ноды)
+* `chart` – the chart (инстанс чарта?)
+* `index` – the (linear? внутренний?) index of a node
+* `isLeaf` – a test whether a node is a leaf
+* `iterator` – the linear iterator
+* `level` – the index of a level the current node belongs to
+* `mainColor` – the color of a node's ancestor at the first level or, if there is more than one root, of its root ancestor (inherited by default) (???) 
+* `parent` – the parent node of the current node (инстанс класса?)
+* `parentColor` – the color of the parent node
+* `path` – an array of nodes representing the path from the root to the current node (?)
+* `point` – an instance of the {api:anychart.treeChartBase.Point}Point{api} class
+* `series` – the chart (инстанс чарта?) (вообще про это не писать?)
+* `sourceColor` – the color of a node from the data or, if not specified, the `mainColor` (???)
+
+That is how the {api:anychart.core.StateSettings#fill}fill(){api} (на то ссылка?) method works in the normal state:
+
+```
+function() {
+  return this.sourceColor;
+};
+```
+
+The following sample demonstrates a simple fill function:
 
 ```
 // configure the visual settings of the chart
 chart.fill(function () {
   return this.parent ?
-         anychart.color.lighten(this.parentColor, 0.5) : 
-         this.mainColor;
+   anychart.color.lighten(this.parentColor, 0.5) : 
+   this.mainColor;
 });
 ```
 
@@ -522,7 +533,7 @@ chart.labels().useHtml(true);
 chart.labels().format("<span style='font-weight:bold'>{%name}</span><br>{%value}");
 
 // configure the labels of leaves
-chart.leaves().labels().format("{%name}");
+chart.leaves().labels().format("<span style='font-weight:bold'>{%name}</span>");
 
 // configure tooltips
 chart.tooltip().format("{%name}\n\nsales: {%value}\n{%custom_field}");
@@ -596,7 +607,9 @@ chart.leaves().labels().position("circular");
 
 The Sunburst chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on the parent element, you drill up a level. This behavior can be modified.
 
-**Note:** It is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, either of these options is available for the element).
+**Note 1:** It is possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
+
+**Note 2:** You can also use the **Esc** and **Backspace** keys to drill up.
 
 When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [data tree model](../Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
@@ -645,15 +658,22 @@ The following sample shows how to drill down to a particular item, dill up, and 
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_19{sample}
 
-#### Disabling Drilldown
+#### Selection Mode
 
-To disable the drilldown feature, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type – `drillchange`:
+Instead of the drilldown, you can use other [selection modes](../Common_Settings/Interactivity/Overview#select). This setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
+
+* `"drill-down"` (default)
+* `"multi-select"`
+* `"single-select"`
+* `"none"`
+
+**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
+
+The sample below shows how to change the selection mode, which is initially set to `"none"`:
 
 ```
-// disable the drilldown feature
-chart.listen("drillchange", function(e){
-  return false;
-});
+// set the selection mode
+chart.interactivity().selectionMode("none");
 ```
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_20{sample}
