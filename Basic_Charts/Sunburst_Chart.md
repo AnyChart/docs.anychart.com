@@ -364,17 +364,16 @@ var data = [
 Another way to set the colors of a chart is to call the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
 * `autoColor` – the default color of a node or its color from the data, if specified (???) (цвет из палитры по линейному индексу ноды) (возвращается дефолтный цвет сектора, даже если предок этого сектора был перекрашен)
-* `chart` – the chart (инстанс чарта?)
-* `index` – the (linear? внутренний?) index of a node
+* `chart` – the chart, an instance of the {api:anychart.charts.Sunburst}anychart.charts.Sunburst{api} class
+* `index` – the index of a node in the tree
 * `isLeaf` – a test whether a node is a leaf
-* `iterator` – the linear iterator
+* `iterator` – the tree iterator, an instance of the {api:anychart.data.Iterator}anychart.data.Iterator{api} class
 * `level` – the index of a level the current node belongs to
 * `mainColor` – the color of a node's ancestor at the first level or, if there is more than one root, of its root ancestor (inherited by default) (???) 
-* `parent` – the parent node of the current node (инстанс класса?)
+* `parent` – the parent node of the current node, an instance of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class
 * `parentColor` – the color of the parent node
-* `path` – an array of nodes representing the path from the root to the current node (?)
-* `point` – an instance of the {api:anychart.treeChartBase.Point}Point{api} class (ссылка не работает, но есть вот такая штука: {api:anychart.core.TreeChartPoint}TreeChartPoint{api})
-* `series` – the chart (инстанс чарта?) (вообще про это не писать?)
+* `path` – an array of nodes (instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class) representing the path from the root to the current node
+* `point` – an instance of the {api:anychart.core.TreeChartPoint}TreeChartPoint{api} class
 * `sourceColor` – the color of a node from the data or, if not specified, the `mainColor` (???)
 
 That is how the {api:anychart.core.StateSettings#fill}fill(){api} (на то ссылка?) method works in the normal state:
