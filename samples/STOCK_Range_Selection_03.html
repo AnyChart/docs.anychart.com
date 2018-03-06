@@ -33,17 +33,23 @@ var mapping = dataTable.mapAs({value: 1});
 
 var chart = anychart.stock();
 
-var currentPlot = chart.plot();
-currentPlot.line(mapping);
+chart.plot().line(mapping);
 
 var rangeSelector = anychart.ui.rangeSelector();
 
-// remove the last element
-rangeSelector.ranges().pop();
+// get a copy of existing ranges
+var customRanges = rangeSelector.ranges();
 
+// remove the last element
+customRanges.pop();
 // modify the first element
-rangeSelector.ranges()[0].count=5;
-rangeSelector.ranges()[0].text="5 DAY";
+customRanges[0].type = "unit";
+customRanges[0].unit = "day";
+customRanges[0].count = 5;
+customRanges[0].text = "5 DAY";
+
+// apply the changes
+rangeSelector.ranges(customRanges);
 
 chart.title("Set custom ranges for range selector");
 chart.container("container");

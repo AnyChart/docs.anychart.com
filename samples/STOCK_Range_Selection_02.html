@@ -51,8 +51,7 @@ anychart.onDocumentReady(function () {
 
     var chart = anychart.stock();
 
-    var currentPlot = chart.plot();
-    currentPlot.line(mapping);
+    chart.plot().line(mapping);
 
     var rangePicker = anychart.ui.rangePicker();
     var rangeSelector = anychart.ui.rangeSelector();

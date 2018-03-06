@@ -77,20 +77,39 @@ To customize preset periods you need to access {api:anychart.ui.RangeSelector#ra
 <th>Type</th>
 </tr>
 <tr>
-<td>anchor</td>
-<td>{api:anychart.enums.StockRangeAnchor}StockRangeAnchor{api}</td>
+<td>`anchor`</td>
+<td>{api:anychart.enums.StockRangeAnchor}anychart.enums.StockRangeAnchor{api}</td>
+<td>Range starting point.</td>
+</tr>
+<tr>
+<td>`type`</td>
+<td>{api:anychart.enums.StockRangeType}anychart.enums.StockRangeType{api}</td>
+<td>Type of range measurement: preset or unit.</td>
+</tr>
+<tr>
+<td>`unit`</td>
+<td>{api:anychart.enums.Interval}anychart.enums.Interval{api}</td>
+<td>When `type` is set to `'unit'` - range measurement.</td>
 </tr>
 <tr>
 <td>count</td>
 <td>Number</td>
+<td>When `type` is set to `'unit'` and `unit` is set - number of units.</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>String</td>
+<td>Start date for the fixed range.</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>String</td>
+<td>End date for the fixed range.</td>
 </tr>
 <tr>
 <td>text</td>
 <td>String</td>
-</tr>
-<tr>
-<td>Unit</td>
-<td>{api:anychart.enums.StockRangeType}StockRangeType{api}</td>
+<td>Text to display.</td>
 </tr>
 </table>
 
@@ -99,11 +118,19 @@ Modification of the fields may look like this:
 ```
 var rangeSelector = anychart.ui.rangeSelector();
 
+// get a copy of existing ranges
+var customRanges = rangeSelector.ranges();
+
 // remove the last element
-rangeSelector.ranges().pop();
+customRanges.pop();
 // modify the first element
-rangeSelector.ranges()[0].count=5;
-rangeSelector.ranges()[0].text="5 DAY";
+customRanges[0].type = "unit";
+customRanges[0].unit = "day";
+customRanges[0].count = 5;
+customRanges[0].text = "5 DAY";
+
+// apply the changes
+rangeSelector.ranges(customRanges);
 ```
 
 {sample}STOCK\_Range\_Selection\_03{sample}
@@ -115,19 +142,31 @@ You can completely override the list of ranges and specify your own list:
 ```
 var rangeSelector = anychart.ui.rangeSelector();
 
-// Set custom ranges for range selector.
-rangeSelector.ranges([{
-    'text': 'Year 2006',
-    'startDate': '2006 Jan 1',
-    'endDate': '2006 Dec 31'
-}, {
-    'text': 'Year 2007',
-    'startDate': '2007 Jan 1',
-    'endDate': '2007 Dec 31'
-}, {
-    'text': 'Full Range',
-    'type': 'max'
-}]);
+var customRanges = [
+    {
+        'text': 'Year 2006',
+        'startDate': '2006 Jan 1',
+        'endDate': '2006 Dec 31'
+    },
+    {
+        'text': 'Year 2007',
+        'startDate': '2007 Jan 1',
+        'endDate': '2007 Dec 31'
+    },
+    {
+        'text': 'Full Range',
+        'type': 'max'
+    },
+    {
+        'text': '10',
+        'type': 'points'
+        'count' 10,
+        'anchor': 'last-date'
+    }
+];
+
+// Set custom ranges for the range selector.
+rangeSelector.ranges(customRanges);
 ```
 
 {sample}STOCK\_Range\_Selection\_04{sample}
