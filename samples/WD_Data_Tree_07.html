@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="Data Tree 02"/>
+    <meta name="ac:name" content="WD Data Tree 07"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -28,17 +28,17 @@
     </style>
 </head>
 <body>
-<button onclick="addPoint()">Append Point</button>
+<button onclick="removePoint()">Remove</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
   tree = anychart.data.tree([
     {name: "Node 1", id: "1"},
-    {name: "Parent Node", id: "2"},
-    {name: "Child Node 1", parent: 2, id: "3"},
-    {name: "Child Node 2", parent: 2, id: "4"},
-    {name: "Node 2", id: "5"}
+    {name: "Node 2", id: "2"},
+    {name: "Node 3", id: "3"},
+    {name: "Node 4", id: "4"},
+    {name: "Node 5", id: "5"}
   ], "as-table");
 
   stage = anychart.graphics.create("container");
@@ -56,16 +56,19 @@ anychart.onDocumentReady(function () {
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
   // draw chart
-  treeDataGrid.container(stage).top(40).height(stage.height()).width("100%").draw();
+  treeDataGrid.container(stage).top(40).width("100%").draw();
 
-  // resize container
+  // set container height
   treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
 
   var title = anychart.standalones.title();
   title.parentBounds(0, 0, "100%", 30)
-    .text("Different Data From the Same Tree")
+    .text("Click on Button to Remove First Element")
     .container(stage)
     .draw();
+
+  // custom variable with the number of children
+  childNum = tree.numChildren();
 });
 
 // style setter
@@ -104,14 +107,15 @@ function fullChildrenHeight () {
   return height;
 }
 
-var nodeCount = 3;
+function removePoint(){
+  // check if there any children
+  if (childNum>0){
+    tree.removeChildAt(0);  // remove child
 
-function addPoint(){
-  var name = "Node " + nodeCount;
-  tree.addChild({name: name});
-  nodeCount++;
-  // resize container
-  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
+    // change container size for the sake of visual appearance
+    treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
+  }
+  childNum--;               // reduce number of children in custom variable
 }
 </script>
 </body>

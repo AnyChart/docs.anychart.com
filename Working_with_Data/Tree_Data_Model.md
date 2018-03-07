@@ -44,10 +44,11 @@ var treeType = anychart.data.tree(
 
 Here is a sample with the result of processing data from the code above.
 
-{sample :height 180}Data\_Tree\_01{sample}
-
+{sample :height 180}WD\_Data\_Tree\_01{sample}
 
 ### Table
+
+{sample :height 180}WD\_Data\_Tree\_02{sample}
 
 ## Data Manipulation
 
@@ -67,7 +68,7 @@ Note: Create, Read, Update and Delete operations for non-tree data is described 
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
-{sample :height 400}Data\_Tree\_02{sample}
+{sample :height 400}WD\_Data\_Tree\_03{sample}
 
 Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes. Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -89,7 +90,7 @@ tree.addData(
 
 You can see how it works on the sample below.
 
-{sample :height 270}Data\_Tree\_03{sample}
+{sample :height 270}WD\_Data\_Tree\_04{sample}
 
 ### Reading
 
@@ -100,7 +101,7 @@ Data tree item may have an unlimited number of data fields thus it requires meth
 return item.get('year2004'); 
 ```
 
-{sample :height 200}Data\_Tree\_04{sample}
+{sample :height 200}WD\_Data\_Tree\_05{sample}
 
 ### Updating
 
@@ -113,7 +114,7 @@ function addValue() {
 }
 ```
 
-{sample :height 200}Data\_Tree\_05{sample}
+{sample :height 200}WD\_Data\_Tree\_06{sample}
 
 ### Deleting
 
@@ -125,7 +126,7 @@ tree.removeChildAt(0); // remove first element in data tree
 
 The sample below demonstrates removing first element from the data tree.
 
-{sample :height 200}Data\_Tree\_06{sample}
+{sample :height 200}WD\_Data\_Tree\_07{sample}
 
 ### Searching
 
@@ -144,8 +145,7 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-{sample :height 600}BCT\_Treemap\_Chart\_17{sample}
-
+{sample :height 180}WD\_Data\_Tree\_08{sample}
 ### Traversing
 
 Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with
@@ -153,4 +153,4 @@ Traversing (or cycling through) the tree is the way to go through all the elemen
 
 In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts/Treemap_Chart#interactivity) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
 
-{sample :height 600}Data\_Tree\_07{sample}
+{sample :height 600}WD\_Data\_Tree\_09{sample}
