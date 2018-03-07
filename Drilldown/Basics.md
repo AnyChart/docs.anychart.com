@@ -41,7 +41,7 @@ var data = [
 ];
 ```
 
-Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../Working_with_Data/Using_Data_Sets).
+Note: `x` and `value` are reserved names for AnyChart and it is the easiest way to go but you can use any names or even simple arrays using our data set mapping option, see more at [Data Set Article](../Working_with_Data/Data_Sets).
 
 ### Create a Chart
 

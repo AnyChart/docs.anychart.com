@@ -4,7 +4,7 @@
 
 ## Overview
 
-AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}table(){api} method. You can find more about table data model in [AnyChart Table Data Model](../Working_with_Data/Using_Table_Data_Model) article.
+AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}table(){api} method. You can find more about table data model in [AnyChart Table Data Model](../Working_with_Data/Table_Data_Model) article.
 
 First of all, we need to create a table for our data. It looks like this:
 
@@ -101,7 +101,7 @@ In case of defining the data as array of objects, we need to set the field names
 var mapping = table.mapAs({'open':'open', 'high': 'high', 'low': 'low', 'close': 'close'});
 ```
 
-That's how we map the data for AnyStock. For more information see the [Using Table Data Model](../Working_with_Data/Using_Table_Data_Model) article.
+That's how we map the data for AnyStock. For more information see the [Using Table Data Model](../Working_with_Data/Table_Data_Model) article.
 
 ## Remove
 

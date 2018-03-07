@@ -77,7 +77,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-The Sunburst chart requires the [tree data structure](../Working_with_Data/Using_Data_Tree_Model). Use the following fields:
+The Sunburst chart requires the [tree data model](../Working_with_Data/Tree_Data_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -630,7 +630,7 @@ The Sunburst chart comes with a built-in drilldown feature: if you click on an e
 
 **Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
-When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [data tree model](../Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
+When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [tree model](../Working_with_Data/Tree_Data_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
 ```
 // create data

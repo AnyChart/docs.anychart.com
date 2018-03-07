@@ -28,7 +28,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 ## Prepare the Data
 
-There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
+There are two ways to set data for PERT charts, both based on [Anychart Tree Data Model](../Working_with_Data/Tree_Data_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
 
 ```
 // data

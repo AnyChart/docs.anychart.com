@@ -1,5 +1,5 @@
 {:index 6}
-# Using Table Data Model
+# Table Data Model
 
 ## Overview
 

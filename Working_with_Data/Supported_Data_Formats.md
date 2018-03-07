@@ -18,7 +18,7 @@ Each way has some strengths and weaknesses. We recommend JavaScript API – this
 
 JavaScript API helps you the best when you need to [Create, Read, Update, and Delete](./Data_Manipulation) data points dynamically.
 
-We recommend to use [Data Sets](./Using_Data_Sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
+We recommend to use [Data Sets](./Data_Sets) when you work with data in JavaScipt but you can also pass data directly to a chart:
 
 ```
 // create a pie chart
@@ -37,7 +37,7 @@ chart.container('container');
 chart.draw();
 ```
 
-See details on [Using Data Sets](./Using_Data_Sets) article.
+See details on [Data Sets](./Data_Sets) article.
 
 ## XML
 

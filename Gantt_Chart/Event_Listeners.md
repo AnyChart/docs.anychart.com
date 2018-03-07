@@ -81,7 +81,7 @@ As you can see from the code above, it is possible to get any information about 
 </tr>
 <tr>
 <td>.item</td>
-<td>It is a [Data Item](../Working_with_Data/Using_Data_Tree_Model) that displays the active row.</td>
+<td>It is a [Data Item](../Working_with_Data/Tree_Data_Model) that displays the active row.</td>
 </tr>
 <tr>
 <td>.hoveredIndex</td>

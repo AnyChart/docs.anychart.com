@@ -1,5 +1,5 @@
 {:index 5}
-# Using Data Tree Model
+# Tree Data Model
 
 ## Overview
 
@@ -7,7 +7,9 @@ Tree Data is a way of implementing hierarchical structures with parent/child rel
 
 Tree Data Structure is crucial for [AnyGantt: AnyChart Gantt Charts](../Gantt_Chart/Quick_Start) and [Treemap Charts](../Basic_Charts/Treemap_Chart).
 
-## Usage
+## Structure
+
+### Tree
 
 In this sample we will use standalone Datagrid to show how to work with tree data. AnyChart charting library accepts two methods of setting data tree: through table and through tree. The code below demonstrates setting the same data through both methods. You can also use CSV, which is similar to table in terms of structure, but set differently, see [Gantt: Getting Data from JSON, XML or CSV](../Gantt_Chart/Data_from_JSON,_XML,_CSV#csv) to learn more.
 
@@ -44,6 +46,9 @@ Here is a sample with the result of processing data from the code above.
 
 {sample :height 180}Data\_Tree\_01{sample}
 
+
+### Table
+
 ## Data Manipulation
 
 Data Manipulation includes CRUD operations, such as:
@@ -58,7 +63,7 @@ These operations can be performed on root elements as well as on children of a n
 
 Note: Create, Read, Update and Delete operations for non-tree data is described in [Data Manipulation article](Data_Manipulation).
 
-### Create
+### Creating
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
@@ -86,7 +91,7 @@ You can see how it works on the sample below.
 
 {sample :height 270}Data\_Tree\_03{sample}
 
-### Read
+### Reading
 
 Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates a data grid with custom columns. Each column reads data from custom fields of the data grid (`"year 2004"`, `"year 2005"`). The code below shows how to use this method.
 
@@ -97,7 +102,7 @@ return item.get('year2004');
 
 {sample :height 200}Data\_Tree\_04{sample}
 
-### Update
+### Updating
 
 Every node in a data tree may be updated. The node should be obtained to proceed with data adjustment. Here is how you can add 1000 to a value of the third node:
 
@@ -110,7 +115,7 @@ function addValue() {
 
 {sample :height 200}Data\_Tree\_05{sample}
 
-### Delete
+### Deleting
 
 As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}removeChild(){api} method to delete an item from data set.
 
@@ -122,7 +127,7 @@ The sample below demonstrates removing first element from the data tree.
 
 {sample :height 200}Data\_Tree\_06{sample}
 
-### Search
+### Searching
 
 When you work with tree data sets you may need to look for an element of the tree to navigate or highlight, or use other CRUD operations. There are two methods for this: {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api}.
 
@@ -141,7 +146,7 @@ chart.drillUp();
 
 {sample :height 600}BCT\_Treemap\_Chart\_17{sample}
 
-### Traverse
+### Traversing
 
 Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with
 {api:anychart.data.Tree#getTraverser}getTraverser(){api} method that obtains an instance of {api:anychart.data.Traverser}Traverser{api} object, which has everything you need to go over the tree in an efficient way.

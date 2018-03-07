@@ -1,5 +1,5 @@
 {:index 2}
-# Using Data Sets
+# Data Sets
 
 ## Why do we need Data Sets?
 
