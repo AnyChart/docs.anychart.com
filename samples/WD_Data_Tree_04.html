@@ -53,7 +53,7 @@ anychart.onDocumentReady(function () {
     treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+    chart = anychart.treeMap(treeData);
 
     // set the chart title
     chart.title("Tree Data Model (Adding Data)");
@@ -65,9 +65,10 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
+// create new data
 var newData = [
-  {name: "New Point 1"},
-  {name: "New Point 2"}
+  {name: "New Point 1", value: 10000000},
+  {name: "New Point 2", value: 10000000}
 ];
 
 function addPoints(){

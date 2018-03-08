@@ -28,69 +28,70 @@
     </style>
 </head>
 <body>
-<button onclick="nextNode()">Get next node and drill to it</button>
+<button onclick="nextNode()">Drill to the Next Node</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create treemap
-    chart = anychart.treeMap();
-    
-    // setting the maximum levels depth
-    chart.maxDepth(4);
-    
-    // set title
-    chart.title("Traversing sample: click button to get next item and drill to it");
-
-    // data
-    var rawData = [
-      {name: 'Eurasia',
-      children:[
-        {name: "Asia", children:[
-           {name: "Eastern Asia", value: "7"},
-           {name: "Western Asia", value: "19"},
-           {name: "Southern Asia", value: "8"},
-           {name: "South-Eastern Asia", value: "11"},
-           {name: "Central Asia", value: "5"}
+    // create data
+    var data = [
+      {name:     "Slavic Languages", children: [
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
         ]},
-        {name: "Europe", children: [
-           {name: "Eastern Europe", value: "10"},
-           {name: "Western Europe", value: "18"},
-           {name: "Southern Europe", value: "5"},
-           {name: "Northern Europe", value: "10"},                        
-        ]}
-      ]}
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
+      ]} 
     ];
 
-    data =  anychart.data.tree(rawData, "as-tree");
+    // create a storage for the data tree
+    var treeData =  anychart.data.tree(data, "as-tree");
     
-    // get traverser of a tree
-    traverser = data.getTraverser();
-    // skip root node first time so the first click didn't seem useless
-    traverser.advance()          
-    
-    // set up label
-    chart.labels().format("{%name}\n({%value} countries)");
+    // get the traverser of a tree
+    traverser = treeData.getTraverser();
 
-    // set data to a chart
-    chart.data(data);
+    // skip the root node
+    traverser.advance();
+
+    // create a chart and set the data
+    chart = anychart.treeMap(treeData);
+
+    // set the maximum depth of levels shown
+    chart.maxDepth(4);
     
-    // set container and draw chart
+    // set the chart title
+    chart.title("Data Tree Model: Traversing Data");
+    
+    // set the container id
     chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
 });
 
-// get next node and drill to it
+// get the next node and drill to it
 function nextNode() {
-  // try to go to the next node in a tree
+  // try to go to the next node
   if (traverser.advance()) {
-    // if successuful - get current node as a data item instance
+    /* get the current node
+    as the instance of the dataItem class */
     var dataItem = traverser.current();
-    // drill down to this item
+    // drill down to the item
     chart.drillTo(dataItem);
   }
   else {
-    // if we can't advance any more - reset the traverser
+    //reset the traverser
     traverser.reset();
   }
 };    
