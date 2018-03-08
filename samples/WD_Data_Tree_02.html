@@ -47,6 +47,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.treeMap(data, "as-table");
 
+    // set the maximum depth of levels shown
+    chart.maxDepth(2);
+
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Tree Data Model (Table Structure)<br><br>" +
