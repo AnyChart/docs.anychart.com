@@ -164,3 +164,41 @@ var themeSettings = {
 Settings for the labels in the sample below are applied using themes. Click "launch in playground" to see how settings for labels can be applied using AnyChart themes.
 
 {sample}CS\_Labels\_08{sample}
+
+## Minimum and Maximum Labels
+
+If you want to highlight points that have minimal or maximal values you can either manually enable labels for those points or use {api:anychart.core.StateSettings#minLabels}minLabels(){api} and {api:anychart.core.StateSettings#maxLabels}maxLabels(){api} methods.
+
+Here are a couple of samples that show how these methods can be applied.
+
+To show labels only for maximal and minimal points on a [stock chart](../Stock_Charts/Overview) use code like this:
+
+```
+var series = plot.line(mapping);
+// enable minimum and maximum labels for a series
+series.minLabels(true);
+// and change format for minLabels
+series.minLabels().format("{%Value}");
+// leave the maxLabels format default
+series.maxLabels(true);
+```
+
+{sample}CS\_Labels\_09{sample}
+
+To color and configure minimal and maximal points differently in different states use code like this:
+
+```
+// create a series
+series = chart.column(data);
+
+// configure min and max labels
+series.normal().maxLabels(true);
+series.normal().maxLabels().fontColor("Red");
+series.hovered().maxLabels().fontSize(16);
+
+series.normal().minLabels(true);  
+series.normal().minLabels().fontColor("Green");
+series.hovered().minLabels().fontSize(16);
+```
+
+{sample}CS\_Labels\_10{sample}
