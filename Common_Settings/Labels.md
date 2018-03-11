@@ -174,23 +174,29 @@ Here are a couple of samples that show how these methods can be applied.
 To show labels only for maximal and minimal points on a [stock chart](../Stock_Charts/Overview) use code like this:
 
 ```
-// enable minimum and maximum labels
-chart.minLabel(true);
-chart.maxLabel(true);
+var series = plot.line(mapping);
+// enable minimum and maximum labels for a series
+series.minLabels(true);
+// and change format for minLabels
+series.minLabels().format("{%Value}");
+// leave the maxLabels format default
+series.maxLabels(true);
 ```
 
 {sample}CS\_Labels\_09{sample}
 
-To color minimal and maximal points differently in different states use code like this:
+To color and configure minimal and maximal points differently in different states use code like this:
 
 ```
-// configure maximum labels in different states
-chart.normal().maxLabels().fontColor("Red");
-chart.hovered().maxLabels().fontSize(16);
+// create a series
+series = chart.column(data);
 
-// configure minimum labels in different states
-chart.normal().maxLabels().fontColor("Green");
-chart.hovered().maxLabels().fontSize(16);
+// configure min and max labels
+series.normal().maxLabels().fontColor("Red");
+series.hovered().maxLabels().fontSize(16);
+
+series.normal().minLabels().fontColor("Green");
+series.hovered().minLabels().fontSize(16);
 ```
 
 {sample}CS\_Labels\_10{sample}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Labels 08"/>
+    <meta name="ac:name" content="CS Minimum and Maximum Labels 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -31,39 +31,24 @@ anychart.onDocumentReady(function () {
     {x: "Phocēans", value: 40},
     {x: "Locrians", value: 40},
     {x: "Abantes",  value: 40},
-    {x: "Athenians", value: 50},
-    {x: "Salamineans", value: 12},
-    {x: "Argives", value: 80},
-    {x: "Mycenaeans", value: 100},
-    {x: "Lacedaemonians", value: 60},
-    {x: "Nestor", value: 90},
-    {x: "Epeans of Elis", value: 40},
-    {x: "Men of Dulichium", value: 40},
-    {x: "Cephallenians", value: 12},
-    {x: "Aetolians", value: 40},
-    {x: "Cretans", value: 80},
-    {x: "Rhodians", value: 9},
-    {x: "Symians", value: 3},
-    {x: "Pheidippus and Antiphus", value: 30},
-    {x: "Achilles", value: 50},
-    {x: "Protesilaus", value: 40},
-    {x: "Eumelus", value: 11},
-    {x: "Philoctetes, ", value: 7},
-    {x: "Lapiths", value: 40},
-    {x: "Enienes and Peraebi", value: 22},
-    {x: "Magnetes", value: 40},
-
+    {x: "Athenians", value: 50}
   ];
 
   // chart type
-  var chart = anychart.bar(data);
+  var chart = anychart.column();
   
   // set title
   chart.title("Labels: Minimum and Maximum Labels Coloring");
 
-  chart.labels(true);
-  chart.normal().maxLabels().fontColor("Red");
-  chart.hovered().maxLabels().fontSize(16);
+  // create a series
+  series = chart.column(data);
+
+  // configure min and max labels
+  series.normal().maxLabels().fontColor("Red");
+  series.hovered().maxLabels().fontSize(16);
+
+  series.normal().minLabels().fontColor("Green");
+  series.hovered().minLabels().fontSize(16);
 
   // assign a container and draw a chart
   chart.container("container");
