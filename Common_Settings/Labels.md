@@ -192,9 +192,11 @@ To color and configure minimal and maximal points differently in different state
 series = chart.column(data);
 
 // configure min and max labels
+series.normal().maxLabels(true);
 series.normal().maxLabels().fontColor("Red");
 series.hovered().maxLabels().fontSize(16);
 
+series.normal().minLabels(true);  
 series.normal().minLabels().fontColor("Green");
 series.hovered().minLabels().fontSize(16);
 ```
