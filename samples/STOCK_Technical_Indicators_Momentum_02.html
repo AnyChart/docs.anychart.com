@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Technical Indicators CMF 01"/>
+    <meta name="ac:name" content="STOCK Technical Indicators Momentum 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -33,26 +33,32 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 5, "value": 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
 var chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
-var plot1 = chart.plot(1);
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
+var plot_2 = chart.plot(2);
 
-// create line series
-var splineSeries = plot.spline(mapping);
-splineSeries.name("CSCO");
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO");
 
-// create CMF indicator
-var cmf = plot1.cmf(mapping).series();
-cmf.stroke("#bf360c");
+// create and adjust the Momentum indicator with settings adjusted
+var momentum_1 = plot_1.momentum(mapping, 10, "area").series();
+momentum_1.stroke("0.5 gray");
+momentum_1.fill("#ffd54f");
+
+// create and adjust the Momentum indicator with settings adjusted
+var momentum_2 = plot_2.momentum(mapping, 40, "column").series();
+momentum_2.stroke("0.5 lightGray");
+momentum_2.fill("#ff6d00");
 
 // set container id for the chart
-chart.container("container");
-
+chart.container('container');
 // initiate chart drawing
 chart.draw();
     });

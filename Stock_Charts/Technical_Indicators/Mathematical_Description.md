@@ -167,11 +167,33 @@ Coming soon.
 
 ## Money Flow Index
 
-Coming soon.
+[Money Flow Index](Money_Flow_Index_\(MFI\))  is calculated as follows:
+
+<ol>
+<li>The typical price for each day is the average of high, low and close:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-typical-price.png"></center><br>
+
+<li>Money flow is the product of typical price and the volume on that day:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-money-flow.png"></center><br>
+
+<li>Totals of the money flow amounts over the given N days are then formed. Positive money flow is the total for those days where the typical price is higher than the previous day's typical price, and negative money flow where below. If typical price is unchanged then that day is discarded.</li><br>
+
+<li>A money ratio is then formed:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-money-ratio.png"></center><br>
+
+<li>From which a money flow index ranging from 0 to 100 is formed:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-mfi.png"></center><br>
+</ol>
 
 ## Momentum
 
-Coming soon.
+[Momentum](Momentum) indicator in each point is calculated in accordance to the folowing formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/momentum.png" width="400"></center>
 
 ## Moving Average Convergence Divergence
 
@@ -200,7 +222,24 @@ Coming soon.
 
 ## Parabolic SAR
 
-Coming soon.
+[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the following algorithm.
+
+At each step within a trend, the SAR is calculated ahead of time. That is, tomorrow's SAR value is built using data available today. The general formula used for this is:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/psar.png" width="400"></center>
+
+Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
+
+The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend — or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
+
+The α value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded.
+
+To keep it from getting too large, a maximum value for the acceleration factor is normally set at 0.20, so that it never goes beyond that.
+
+The SAR is recursively calculated in this manner for each new period. There are, however, two special cases that will modify the SAR value:
+
+* If tomorrow's SAR value lies within (or beyond) today's or yesterday's price range, the SAR must be set to the closest price bound. For example, if in an up trend, the new SAR value is calculated and it results to be greater than today's or yesterday's lowest price, the SAR must be set equal to that lower boundary.
+* If tomorrow's SAR value lies within (or beyond) tomorrow's price range, a new trend direction is then signaled, and the SAR must "switch sides." Upon a trend switch, several things happen. The first SAR value for this new trend is set to the last EP recorded on the previous trend. The EP is then reset accordingly to this period's maximum. The acceleration factor is reset to its initial value.
 
 ## Price Channels
 
@@ -276,4 +315,6 @@ Coming soon.
 
 ## Williams %R
 
-Coming soon.
+[Williams %R](Williams_%25R) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/williams-r.png"></center>

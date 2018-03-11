@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Technical Indicators CMF 01"/>
+    <meta name="ac:name" content="STOCK Technical Indicators PSAR 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -33,22 +33,24 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"high": 1, "low": 3, "close": 4, "volume": 5, "value": 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
 var chart = anychart.stock();
 
 // create plot on the chart
 var plot = chart.plot(0);
-var plot1 = chart.plot(1);
 
-// create line series
-var splineSeries = plot.spline(mapping);
-splineSeries.name("CSCO");
+// create ohlc series
+var ohlcSeries = plot.ohlc(mapping);
+ohlcSeries.name("CSCO");
 
-// create CMF indicator
-var cmf = plot1.cmf(mapping).series();
-cmf.stroke("#bf360c");
+// create PSAR indicator
+var psar = plot.psar(mapping, 0.08, 0.60, 0.10).series();
+psar.stroke("0.5 lightGray");
+
+// create scroller series with mapped data
+chart.scroller().line(mapping);
 
 // set container id for the chart
 chart.container("container");
