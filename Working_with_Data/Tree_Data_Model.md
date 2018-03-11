@@ -48,7 +48,7 @@ Here is a sample with the result of processing data from the code above.
 
 ### Table
 
-{sample :height 180}WD\_Data\_Tree\_02{sample}
+{sample}WD\_Data\_Tree\_02{sample}
 
 ## Data Manipulation
 
@@ -146,6 +146,7 @@ chart.drillUp();
 ```
 
 {sample}WD\_Data\_Tree\_08{sample}
+
 ### Traversing
 
 Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with

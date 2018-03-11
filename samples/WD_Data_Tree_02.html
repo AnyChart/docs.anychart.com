@@ -28,20 +28,20 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {id:  1, parent: null, name: "Slavic Languages"},
-      {id:  2, parent:    1, name: "East Slavic"},
-      {id:  3, parent:    2, name: "Russian",        value: 150000000},
-      {id:  4, parent:    2, name: "Ukrainian",      value:  45000000},
-      {id:  5, parent:    2, name: "Belarusian",     value:   3200000},
-      {id:  6, parent:    1, name: "West Slavic"},
-      {id:  7, parent:    6, name: "Polish",         value:  55000000},
-      {id:  8, parent:    6, name: "Czech",          value:  10600000},
-      {id:  9, parent:    6, name: "Slovak",         value:   5200000},
-      {id: 10, parent:    1, name: "South Slavic"},
-      {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
-      {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
-      {id: 13, parent:   10, name: "Slovene",        value:   2500000},
-      {id: 13, parent:   10, name: "Macedonian",     value:   1400000}
+      {id:  1, parent: null, name: "Root"},
+      {id:  2, parent:    1, name: "Parent 1"},
+      {id:  3, parent:    2, name: "Child 1", value: 150000000},
+      {id:  4, parent:    2, name: "Child 2", value:  45000000},
+      {id:  5, parent:    2, name: "Child 3", value:   3200000},
+      {id:  6, parent:    1, name: "Parent 2"},
+      {id:  7, parent:    6, name: "Child 1", value:  55000000},
+      {id:  8, parent:    6, name: "Child 2", value:  10600000},
+      {id:  9, parent:    6, name: "Child 3", value:   5200000},
+      {id: 10, parent:    1, name: "Parent 3"},
+      {id: 11, parent:   10, name: "Child 1", value:  21000000},
+      {id: 12, parent:   10, name: "Child 2", value:   9000000},
+      {id: 13, parent:   10, name: "Child 3", value:   2500000},
+      {id: 13, parent:   10, name: "Child 4", value:   1400000}
     ];
 
     // create a chart and set the data
@@ -51,10 +51,7 @@ anychart.onDocumentReady(function () {
     chart.maxDepth(2);
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Tree Data Model (Table Structure)<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Slavic Languages by Number of Speakers");
+    chart.title("Tree Data Model (Table Structure)");
 
     // set the container id
     chart.container("container");
