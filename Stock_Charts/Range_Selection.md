@@ -75,6 +75,7 @@ To customize preset periods you need to access {api:anychart.ui.RangeSelector#ra
 <tr>
 <th>Field</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>`anchor`</td>
@@ -160,7 +161,7 @@ var customRanges = [
     {
         'text': '10',
         'type': 'points'
-        'count' 10,
+        'count': 10,
         'anchor': 'last-date'
     }
 ];

@@ -24,8 +24,6 @@ chart.scroller().enabled(false);
 
 ## Basics
 
-In Stock charts the position of the scroller cannot be changed, as well as its orientation, as its function is to scroll the time (X) axis. 
-
 There are several basic methods to configure the scroller:
 - {api:anychart.charts.Stock#selectRange}selectRange(){api}
 - {api:anychart.core.stock.Scroller#thumbs}thumbs(){api}
