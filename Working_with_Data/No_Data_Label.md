@@ -41,11 +41,11 @@ To handle "No data" event manually add `'dataChanged'` event handler, `hasData` 
 ```
 chart.listen("dataChanged", function(event){
     // prevents no data label from showing when 
-    // there are series on the chart
+    // there no data to show on the chart
     // ie series are hidden using legend
 
-    if (chart.getSeriesCount() > 0) {
-        event.preventDefault();
+    if (!event.hasData) {
+      event.preventDefault();
     }
 });
 ```

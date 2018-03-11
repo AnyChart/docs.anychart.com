@@ -30,15 +30,15 @@ anychart.onDocumentReady(function () {
     // enable no data label
     chart.noData().label(true);
 
-// handle event and prevent showing on showing legend
+    // handle event and prevent showing on showing legend
     chart.listen("dataChanged", function(event){
     // prevents no data label from showing when 
-    // there are series on the chart
+    // there no data to show on the chart
     // ie series are hidden using legend
 
-    if (chart.getSeriesCount() > 0) {
+      if (!event.hasData) {
         event.preventDefault();
-    }
+      }
     }); 
 
     // enable legend
