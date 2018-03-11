@@ -1,77 +1,115 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 03"/>
+    <meta name="ac:name" content="WD Data Tree 05"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-gantt.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 25px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<button onclick="addNode()">Add a Node</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data
-    var data = [
-      {name:   "Root",   children: [
-        {name:   "Child 1",  value: 80636124},
-        {name:   "Child 2",  value: 65511098},
-        {name:   "Child 3",  value: 64938716},
-        {name:   "Child 4",  value: 59797978},
-        {name:   "Child 5",  value: 46070146},
-        {name:   "Child 6",  value: 38563573},
-        {name:   "Child 7",  value: 19237513},
-        {name:   "Child 8",  value: 17032845}, 
-        {name:   "Child 9",  value: 11443830},
-        {name:   "Child 10", value: 10892931}  
-      ]} 
-    ];
+  var tree = anychart.data.tree([
+    {"name": "January", "id": "1", "year 2004": "12000", "year 2005": "18000"},
+    {"name": "Parent Node", "id": "2", "year 2004": "15000", "year 2005": "10000"},
+    {"name": "Child Node 1", "parent": "2", "id": "3", "year 2004": "16000", "year 2005": "18000"},
+    {"name": "Child Node 2", "parent": "2", "id": "4", "year 2004": "15000", "year 2005": "11000"},
+    {"name": "Node 2", "id": "5", "year 2004": "14000", "year 2005": "9000"}
+  ], "as-table");
 
-    // create a storage for the data tree
-    treeData = anychart.data.tree(data, "as-tree");
+  var stage = anychart.graphics.create("container");
 
-    // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+  // create Data Grid
+  treeDataGrid = anychart.standalones.dataGrid();
 
-    // set the chart title
-    chart.title("Tree Data Model (Adding a Point)");
+  // set Data Tree
+  treeDataGrid.data(tree).headerHeight(20);
 
-    // set the container id
-    chart.container("container");
+  // create button for Parent node
+  treeDataGrid.listen("signal", treeDataGrid.draw, false, treeDataGrid);
 
-    // initiate drawing the chart
-    chart.draw();
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2004 = treeDataGrid.column(2);
+  column2004.title().text("Year 2004");         // set title for the second column
+  column2004.width(100);                        // set width for the second column
+  column2004.format(function(item) {     // format data
+    return item.get("year 2004");               // set name of the field with required data
+  });
+
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2005 = treeDataGrid.column(3);
+  column2005.title().text("Year 2005");         // set title for the third column
+  column2005.width(100);                        // set width for the third column
+  column2005.format(function(item) {     // format data
+    return item.get("year 2005");               // set name of the field with required data
+  });
+
+  // draw chart
+  treeDataGrid.container(stage).height(127).top(37).draw();
+
+  var title = anychart.standalones.title();
+  title.parentBounds(0, 0, "100%", 30)
+    .text("Data from Custom Columns")
+    .container(stage)
+    .draw();
+
+  // set container height
+  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
+
+  // get height of all items in the tree
+  function fullChildrenHeight () {
+    var height = 0;
+    var traverser = tree.getTraverser();
+    traverser.reset();
+    while(traverser.advance()){
+
+      // get an item
+      var currentItem = traverser.current();
+
+      // get height of the item
+      var currentHeight = currentItem.get("rowHeight");
+
+      // if item height is undefined
+      if (currentHeight !== void 0){
+height += (currentHeight + 1);
+      } else {
+// if height of current item is undefined, default height is 20px + 1px row space
+height +=21;
+      }
+    }
+    return height;
+  }
 });
 
-var nodeCount = 1;
-
-function addNode(){
-  var name = "New Node " + nodeCount;
-  treeData.addChild({"name": name, "value": 10000000});
-  nodeCount++;
-};
+// style setter
+function labelTextSettingsOverrider(label, dataItem) {
+  if (!dataItem.getParent()) {
+    label.fontColor("#0055aa").fontWeight("bold").fontSize(12).fontStyle("italic");
+  } else {
+    if (dataItem.numChildren()) {
+      label.fontColor("#559955").fontWeight("bold").fontStyle("italic");
+    }
+  }
+}
 </script>
 </body>
 </html>

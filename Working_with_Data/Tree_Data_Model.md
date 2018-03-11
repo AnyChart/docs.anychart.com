@@ -64,6 +64,17 @@ These operations can be performed on root elements as well as on children of a n
 
 Note: Create, Read, Update and Delete operations for non-tree data is described in [Data Manipulation article](Data_Manipulation).
 
+### Reading
+
+Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates a data grid with custom columns. Each column reads data from custom fields of the data grid (`"year 2004"`, `"year 2005"`). The code below shows how to use this method.
+
+```
+// get the value in a field "year2004" of an item
+return item.get('year2004'); 
+```
+
+{sample}WD\_Data\_Tree\_03{sample}
+
 ### Creating
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
@@ -92,17 +103,6 @@ You can see how it works on the sample below.
 
 {sample}WD\_Data\_Tree\_04{sample}
 
-### Reading
-
-Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates a data grid with custom columns. Each column reads data from custom fields of the data grid (`"year 2004"`, `"year 2005"`). The code below shows how to use this method.
-
-```
-// get the value in a field "year2004" of an item
-return item.get('year2004'); 
-```
-
-{sample}WD\_Data\_Tree\_05{sample}
-
 ### Updating
 
 Every node in a data tree may be updated. The node should be obtained to proceed with data adjustment. Here is how you can add 1000 to a value of the third node:
@@ -114,7 +114,7 @@ function addValue() {
 }
 ```
 
-{sample}WD\_Data\_Tree\_06{sample}
+{sample}WD\_Data\_Tree\_05{sample}
 
 ### Deleting
 

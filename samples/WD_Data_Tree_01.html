@@ -48,8 +48,11 @@ anychart.onDocumentReady(function () {
       ]} 
     ];
 
+    // create a storage for the data tree
+    treeData = anychart.data.tree(data, "as-tree");
+
     // create a chart and set the data
-    var chart = anychart.treeMap(data, "as-tree");
+    var chart = anychart.treeMap(treeData);
 
     // set the maximum depth of levels shown
     chart.maxDepth(2);

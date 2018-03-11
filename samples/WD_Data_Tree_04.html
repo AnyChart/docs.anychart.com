@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 04"/>
+    <meta name="ac:name" content="WD Data Tree 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-<button onclick="addNodes()">Add Data</button>
+<button onclick="addNode()">Add a Node</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -53,10 +53,10 @@ anychart.onDocumentReady(function () {
     treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
-    chart = anychart.treeMap(treeData);
+    var chart = anychart.treeMap(treeData);
 
     // set the chart title
-    chart.title("Tree Data Model (Adding Data)");
+    chart.title("Tree Data Model (Adding a Point)");
 
     // set the container id
     chart.container("container");
@@ -65,14 +65,12 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// create new data
-var newData = [
-  {name: "New Node 1", value: 10000000},
-  {name: "New Node 2", value: 10000000}
-];
+var nodeCount = 1;
 
-function addNodes(){
-  treeData.addData(newData, "as-tree");
+function addNode(){
+  var name = "New Node " + nodeCount;
+  treeData.addChild({"name": name, "value": 10000000});
+  nodeCount++;
 };
 </script>
 </body>

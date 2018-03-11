@@ -30,22 +30,25 @@ anychart.onDocumentReady(function () {
     var data = [
       {id:  1, parent: null, name: "Root"},
       {id:  2, parent:    1, name: "Parent 1"},
-      {id:  3, parent:    2, name: "Child 1", value: 150000000},
-      {id:  4, parent:    2, name: "Child 2", value:  45000000},
-      {id:  5, parent:    2, name: "Child 3", value:   3200000},
+      {id:  3, parent:    2, name: "Child 1-1", value: 150000000},
+      {id:  4, parent:    2, name: "Child 1-2", value:  45000000},
+      {id:  5, parent:    2, name: "Child 1-3", value:   3200000},
       {id:  6, parent:    1, name: "Parent 2"},
-      {id:  7, parent:    6, name: "Child 1", value:  55000000},
-      {id:  8, parent:    6, name: "Child 2", value:  10600000},
-      {id:  9, parent:    6, name: "Child 3", value:   5200000},
+      {id:  7, parent:    6, name: "Child 2-1", value:  55000000},
+      {id:  8, parent:    6, name: "Child 2-2", value:  10600000},
+      {id:  9, parent:    6, name: "Child 2-3", value:   5200000},
       {id: 10, parent:    1, name: "Parent 3"},
-      {id: 11, parent:   10, name: "Child 1", value:  21000000},
-      {id: 12, parent:   10, name: "Child 2", value:   9000000},
-      {id: 13, parent:   10, name: "Child 3", value:   2500000},
-      {id: 13, parent:   10, name: "Child 4", value:   1400000}
+      {id: 11, parent:   10, name: "Child 3-1", value:  21000000},
+      {id: 12, parent:   10, name: "Child 3-2", value:   9000000},
+      {id: 13, parent:   10, name: "Child 3-3", value:   2500000},
+      {id: 13, parent:   10, name: "Child 3-4", value:   1400000}
     ];
 
+    // create a storage for the data tree
+    treeData = anychart.data.tree(data, "as-table");
+
     // create a chart and set the data
-    var chart = anychart.treeMap(data, "as-table");
+    var chart = anychart.treeMap(treeData);
 
     // set the maximum depth of levels shown
     chart.maxDepth(2);
