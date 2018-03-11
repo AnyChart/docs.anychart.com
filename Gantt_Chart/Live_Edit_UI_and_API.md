@@ -75,7 +75,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The [tree of data](../Working_with_Data/Tree_Data_Model) will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The {api:anychart.data.Tree}anychart.data.Tree{api} object will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time without lengthening or shortening it.</td>
 <td>
 

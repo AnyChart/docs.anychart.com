@@ -87,7 +87,7 @@ The Sunburst chart requires the [tree data model](../Working_with_Data/Tree_Data
 
 **Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one parent node:
+Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one root node:
 
 ```
 // create data

@@ -44,7 +44,7 @@ var treeType = anychart.data.tree(
 
 Here is a sample with the result of processing data from the code above.
 
-{sample :height 180}WD\_Data\_Tree\_01{sample}
+{sample}WD\_Data\_Tree\_01{sample}
 
 ### Table
 
@@ -54,11 +54,11 @@ Here is a sample with the result of processing data from the code above.
 
 Data Manipulation includes CRUD operations, such as:
 
- * Updating - you can change the values of the existing points,
- * Adding - you can add one or several points between the existing points,
- * Removing - you can remove any point from a data set,
- * Searching - you can look for a certain element in a tree basing on some criteria,
- * Cycling (Traversing) - you can go through all the elements of the tree.
+* Updating - you can change the values of the existing points,
+* Adding - you can add one or several points between the existing points,
+* Removing - you can remove any point from a data set,
+* Searching - you can look for a certain element in a tree basing on some criteria,
+* Cycling (Traversing) - you can go through all the elements of the tree.
 
 These operations can be performed on root elements as well as on children of a node. 
 
@@ -68,7 +68,7 @@ Note: Create, Read, Update and Delete operations for non-tree data is described 
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
-{sample :height 400}WD\_Data\_Tree\_03{sample}
+{sample}WD\_Data\_Tree\_03{sample}
 
 Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes. Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -90,7 +90,7 @@ tree.addData(
 
 You can see how it works on the sample below.
 
-{sample :height 270}WD\_Data\_Tree\_04{sample}
+{sample}WD\_Data\_Tree\_04{sample}
 
 ### Reading
 
@@ -101,7 +101,7 @@ Data tree item may have an unlimited number of data fields thus it requires meth
 return item.get('year2004'); 
 ```
 
-{sample :height 200}WD\_Data\_Tree\_05{sample}
+{sample}WD\_Data\_Tree\_05{sample}
 
 ### Updating
 
@@ -114,7 +114,7 @@ function addValue() {
 }
 ```
 
-{sample :height 200}WD\_Data\_Tree\_06{sample}
+{sample}WD\_Data\_Tree\_06{sample}
 
 ### Deleting
 
@@ -126,7 +126,7 @@ tree.removeChildAt(0); // remove first element in data tree
 
 The sample below demonstrates removing first element from the data tree.
 
-{sample :height 200}WD\_Data\_Tree\_07{sample}
+{sample}WD\_Data\_Tree\_07{sample}
 
 ### Searching
 
@@ -145,7 +145,7 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-{sample :height 180}WD\_Data\_Tree\_08{sample}
+{sample}WD\_Data\_Tree\_08{sample}
 ### Traversing
 
 Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with
@@ -153,4 +153,4 @@ Traversing (or cycling through) the tree is the way to go through all the elemen
 
 In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts/Treemap_Chart#interactivity) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
 
-{sample :height 600}WD\_Data\_Tree\_09{sample}
+{sample}WD\_Data\_Tree\_09{sample}
