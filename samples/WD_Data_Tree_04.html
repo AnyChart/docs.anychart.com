@@ -56,7 +56,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.treeMap(treeData);
 
     // set the chart title
-    chart.title("Tree Data Model (Adding a Point)");
+    chart.title("Tree Data Model (Adding a Node)");
 
     // set the container id
     chart.container("container");
@@ -67,9 +67,10 @@ anychart.onDocumentReady(function () {
 
 var nodeCount = 1;
 
+//add a new node
 function addNode(){
   var name = "New Node " + nodeCount;
-  treeData.addChild({"name": name, "value": 10000000});
+  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
   nodeCount++;
 };
 </script>
