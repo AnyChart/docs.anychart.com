@@ -43,6 +43,8 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title("Labels: Minimum and Maximum");
+    // left padding
+    chart.padding().left(80);
 
     // create a series
     var series = chart.plot(0).line(mapping);
