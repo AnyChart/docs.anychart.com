@@ -116,7 +116,7 @@ function addValue() {
 
 {sample}WD\_Data\_Tree\_06{sample}
 
-### Deleting
+### Removing
 
 As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}removeChild(){api} method to delete an item from data set.
 
