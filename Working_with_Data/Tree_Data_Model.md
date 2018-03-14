@@ -79,7 +79,7 @@ return item.get('year2004');
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
-{sample}WD\_Data\_Tree\_03{sample}
+{sample}WD\_Data\_Tree\_04{sample}
 
 Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes. Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -101,7 +101,7 @@ tree.addData(
 
 You can see how it works on the sample below.
 
-{sample}WD\_Data\_Tree\_04{sample}
+{sample}WD\_Data\_Tree\_05{sample}
 
 ### Updating
 
@@ -114,7 +114,7 @@ function addValue() {
 }
 ```
 
-{sample}WD\_Data\_Tree\_05{sample}
+{sample}WD\_Data\_Tree\_06{sample}
 
 ### Deleting
 
