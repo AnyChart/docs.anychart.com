@@ -44,7 +44,7 @@ var treeType = anychart.data.tree(
 
 Here is a sample with the result of processing data from the code above.
 
-{sample}WD\_Data\_Tree\_01{sample}
+{sample :height 450}WD\_Data\_Tree\_01{sample}
 
 ### Table
 

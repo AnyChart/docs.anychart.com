@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-treemap.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-ui.min.js"></script>
     
@@ -28,92 +28,50 @@
     </style>
 </head>
 <body>
-<button onclick="addValue()">Update</button>
+<button onclick="addNode()">Add a Node</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-  tree = anychart.data.tree([
-    {"name": "Node 1", "id": "1", "value": "18000"},
-    {"name": "Node 2", "id": "2", "value": "15000"},
-    {"name": "Node 3", "id": "3", "value": "10000"},
-    {"name": "Node 4", "id": "4", "value": "12000"},
-    {"name": "Node 5", "id": "5", "value": "9000"}
-  ], "as-table");
+    // create data
+    var data = [
+      {name:   "Root",   children: [
+        {name:   "Child 1",  value: 80636124},
+        {name:   "Child 2",  value: 65511098},
+        {name:   "Child 3",  value: 64938716},
+        {name:   "Child 4",  value: 59797978},
+        {name:   "Child 5",  value: 46070146},
+        {name:   "Child 6",  value: 38563573},
+        {name:   "Child 7",  value: 19237513},
+        {name:   "Child 8",  value: 17032845}, 
+        {name:   "Child 9",  value: 11443830},
+        {name:   "Child 10", value: 10892931}  
+      ]} 
+    ];
 
-  stage = anychart.graphics.create("container");
+    // create a storage for the data tree
+    treeData = anychart.data.tree(data, "as-tree");
 
-  // create Data Grid
-  treeDataGrid = anychart.standalones.dataGrid();
+    // create a chart and set the data
+    var chart = anychart.treeMap(treeData);
 
-  // set Data Tree
-  treeDataGrid.data(tree).headerHeight(20);
+    // set the chart title
+    chart.title("Tree Data Model (Updating)");
 
-  // create button for Parent node
-  treeDataGrid.listen("signal", treeDataGrid.draw, false, treeDataGrid);
+    // set the container id
+    chart.container("container");
 
-  // set style for second column
-  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
-
-  var valueColumn = treeDataGrid.column(2);
-  valueColumn.title().text("Value");
-  valueColumn.width(100);
-  valueColumn.format(function(item) {
-    return item.get("value");
-  });
-
-  // draw chart
-  treeDataGrid.container(stage).top(40).width("100%").draw();
-
-  // set container height
-  treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.headerHeight()+1);
-
-  var title = anychart.standalones.title();
-  title.parentBounds(0, 0, "100%", 30)
-    .text("Click on Button to Add 1000 to Third Node")
-    .container(stage)
-    .draw();
-
-  // get height of all items in the tree
-  function fullChildrenHeight () {
-    var height = 0;
-    var traverser = tree.getTraverser();
-    traverser.reset();
-    while(traverser.advance()){
-
-      // get an item
-      var currentItem = traverser.current();
-
-      // get height of the item
-      var currentHeight = currentItem.get("rowHeight");
-
-      // if item height is undefined
-      if (currentHeight !== void 0){
-          height += (currentHeight + 1);
-      } else {
-          /* if height of current item is undefined,
-          default height is 20px + 1px row space*/
-          height +=21;
-      }
-    }
-    return height;
-  }
+    // initiate drawing the chart
+    chart.draw();
 });
 
-// style setter
-function labelTextSettingsOverrider(label, dataItem) {
-  if (!dataItem.getParent()) {
-    label.fontColor("#0055aa").fontWeight("bold").fontSize(12).fontStyle("italic");
-  } else {
-    if (dataItem.numChildren()) {
-      label.fontColor("#559955").fontWeight("bold").fontStyle("italic");
-    }
-  }
-}
+var nodeCount = 1;
 
-function addValue(){
-  tree.getChildAt(2).set("value", (parseInt(tree.getChildAt(2).get("value")) + 1000));
-} 
+//add a new node
+function addNode(){
+  var name = "New Node " + nodeCount++;
+  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
+};
 </script>
 </body>
 </html>
