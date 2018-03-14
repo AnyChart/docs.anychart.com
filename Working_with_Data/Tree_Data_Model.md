@@ -48,7 +48,7 @@ Here is a sample with the result of processing data from the code above.
 
 ### Table
 
-{sample :height 500}WD\_Data\_Tree\_02{sample}
+{sample :height 450}WD\_Data\_Tree\_02{sample}
 
 ## Data Manipulation
 
