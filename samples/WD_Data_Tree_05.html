@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF‌-2784-sunburst-chart/js/anychart-ui.min.js"></script>
     
@@ -38,14 +38,7 @@ anychart.onDocumentReady(function () {
       {name:   "Root",   children: [
         {name:   "Child 1",  value: 80636124},
         {name:   "Child 2",  value: 65511098},
-        {name:   "Child 3",  value: 64938716},
-        {name:   "Child 4",  value: 59797978},
-        {name:   "Child 5",  value: 46070146},
-        {name:   "Child 6",  value: 38563573},
-        {name:   "Child 7",  value: 19237513},
-        {name:   "Child 8",  value: 17032845}, 
-        {name:   "Child 9",  value: 11443830},
-        {name:   "Child 10", value: 10892931}  
+        {name:   "Child 3",  value: 64938716} 
       ]} 
     ];
 
@@ -53,7 +46,7 @@ anychart.onDocumentReady(function () {
     treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+    var chart = anychart.sunburst(treeData);
 
     // set the chart title
     chart.title("Tree Data Model (Adding Data)");
@@ -65,32 +58,19 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// create new data
-/* var newData = [
-  {name: "New Node 1", value: 10000000},
-  {name: "New Node 2", value: 10000000}
-];
-
-// add new data
-function addNodes(){
-  treeData.getChildAt(0).addData(newData, "as-tree");  
-}; */
-
 var nodeCount = 1;
 
 // add new data
 function addNodes(){
   //create new data
-  var name_1 = "New Node " + nodeCount;
-  nodeCount++;
-  var name_2 = "New Node " + nodeCount;
+  var name_1 = "New Node " + nodeCount++;
+  var name_2 = "New Node " + nodeCount++;
   var newData = [
     {"name": name_1, "value": 10000000},
     {"name": name_2, "value": 10000000}
   ];
   // add new data
   treeData.addData(newData, "as-tree");
-  nodeCount++;
 };
 </script>
 </body>
