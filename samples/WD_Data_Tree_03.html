@@ -48,17 +48,19 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.treeMap(treeData);
 
+    // get the number of children
+    var childrenTotal = treeData.getChildAt(0).numChildren();
+
     // get the name and index of the last child
     var lastChild = treeData.getChildAt(0).getChildren().length - 1;
     var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
-    var lastChildIndex = treeData.getChildAt(0).getChildAt(lastChild).indexOfChild();
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Tree Data Model (Reading)<br><br> Last Child: " +
-                "<span style = 'color:#990000; font-style:italic'>" +
-                "name = " + lastChildName + ", index = " +
-                lastChildIndex + "</span>");
+    chart.title("Tree Data Model (Reading)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "The number of children: " + childrenTotal +
+                "<br>Last child: " + "name = " + lastChildName + "</span>");
 
     // set the container id
     chart.container("container");
