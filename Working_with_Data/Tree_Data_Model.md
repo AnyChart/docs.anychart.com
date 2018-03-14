@@ -44,7 +44,7 @@ var treeType = anychart.data.tree(
 
 Here is a sample with the result of processing data from the code above.
 
-{sample :height 500}WD\_Data\_Tree\_01{sample}
+{sample}WD\_Data\_Tree\_01{sample}
 
 ### Table
 
@@ -75,7 +75,7 @@ return item.get('year2004');
 
 {sample}WD\_Data\_Tree\_03{sample}
 
-### Creating
+### Adding
 
 You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
