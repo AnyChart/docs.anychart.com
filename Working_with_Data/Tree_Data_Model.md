@@ -5,6 +5,9 @@
 
 ... [Gantt](../Gantt_Chart/Quick_Start), [Treemap](../Basic_Charts/Treemap_Chart)
 
+деревья представляются экземплярами (instances) класс anychart.data.Tree
+элементы деревьев - экземплярами anychart.data.Tree.DataItem
+
 ## Structure
 
 строчку про maxDepth не выводить при цитировании кода
@@ -27,12 +30,15 @@
 
 ## Data Manipulation
 
+список операций с данными - переименовать так, чтобы согласовалось с оглавлением
+
 ...[Data Manipulation](Data_Manipulation)
 
 ### Reading
 
 getChildAt(), getChildren(), numChildren()
 + indexOfChild() ?
+эти методы возвращают instances of anychart.data.Tree.DataItem
 ссылки на этот раздел из других разделов!
 
 ```
@@ -65,6 +71,8 @@ getChildAt(), getChildren(), numChildren()
 
 ### Updating
 
+метод set() класса anychart.data.Tree.DataItem
+
 ```
 
 ```
@@ -73,6 +81,7 @@ getChildAt(), getChildren(), numChildren()
 
 ### Removing
 
+упомянуть три разных метода remove
 
 ```
 
