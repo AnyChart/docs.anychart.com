@@ -21,15 +21,20 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
+<label for="seriesSelect">Series: </label>
 <select id="seriesSelect" onchange="setPosition()">
     <option value="0">Series 1</option>  
     <option value="1">Series 2</option>
