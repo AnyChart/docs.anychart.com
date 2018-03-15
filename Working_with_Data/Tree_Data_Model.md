@@ -3,14 +3,13 @@
 
 ## Overview
 
-... [Gantt](../Gantt_Chart/Quick_Start), [Treemap](../Basic_Charts/Treemap_Chart)
-
-деревья представляются экземплярами (instances) класс anychart.data.Tree
-элементы деревьев - экземплярами anychart.data.Tree.DataItem
+* [Gantt](../Gantt_Chart/Quick_Start), [Treemap](../Basic_Charts/Treemap_Chart)
+* деревья представляются экземплярами (instances) класса anychart.data.Tree
+* элементы деревьев - экземплярами anychart.data.Tree.DataItem
 
 ## Structure
 
-строчку про maxDepth не выводить при цитировании кода
+* строчку про maxDepth не выводить при цитировании кода
 
 ### Tree
 
@@ -30,16 +29,15 @@
 
 ## Data Manipulation
 
-список операций с данными - переименовать так, чтобы согласовалось с оглавлением
-
-...[Data Manipulation](Data_Manipulation)
+* список операций с данными - переименовать так, чтобы согласовалось с оглавлением
+* [Data Manipulation](Data_Manipulation)
 
 ### Reading
 
-getChildAt(), getChildren(), numChildren()
-+ indexOfChild() ?
-эти методы возвращают instances of anychart.data.Tree.DataItem
-ссылки на этот раздел из других разделов!
+* getChildAt(), getChildren(), numChildren()
+* indexOfChild() ?
+* эти методы возвращают instances of anychart.data.Tree.DataItem
+* ссылки на этот раздел из других разделов!
 
 ```
 
@@ -49,9 +47,8 @@ getChildAt(), getChildren(), numChildren()
 
 ### Adding
 
-пример: прямое обращение к элементам через такие-то методы, ссылка на read
-
-примечание: также к элементам можно обращаться с помощью методов, описанных в разделе searching
+* пример: прямое обращение к элементам через такие-то методы, ссылка на read
+* примечание: также к элементам можно обращаться с помощью методов, описанных в разделе searching
 
 ```
 
@@ -59,9 +56,7 @@ getChildAt(), getChildren(), numChildren()
 
 {sample}WD\_Data\_Tree\_04{sample}
 
-примечание: addData добавляет новые корневые элементы
-в тримапах данные будут обновляться, но новые данные не будут отображаться,
-т.к. всегда отображается только 1 корневой элемент
+* примечание: addData добавляет новые корневые элементы --> в тримапах данные будут обновляться, но новые данные не будут отображаться, т.к. всегда отображается только 1 корневой элемент
 
 ```
 
@@ -71,7 +66,7 @@ getChildAt(), getChildren(), numChildren()
 
 ### Updating
 
-метод set() класса anychart.data.Tree.DataItem
+* метод set() класса anychart.data.Tree.DataItem
 
 ```
 
@@ -81,7 +76,7 @@ getChildAt(), getChildren(), numChildren()
 
 ### Removing
 
-упомянуть три разных метода remove
+* упомянуть три разных метода remove
 
 ```
 
