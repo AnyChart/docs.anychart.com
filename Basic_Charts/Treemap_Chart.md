@@ -528,7 +528,7 @@ chart.hovered().headers().fontColor("#000099");
 
 The following sample demonstrates how to disable/enable headers; their text is customized in the hovered state, and font settings are changed in all states:
 
-{sample :height 525}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 535}BCT\_Treemap\_Chart\_14{sample}
 
 #### Individual Headers
 
