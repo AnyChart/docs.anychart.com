@@ -19,6 +19,14 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 80px;
+            margin-left: 5px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -28,7 +36,10 @@
     </style>
 </head>
 <body>
-<button onclick="addNode()">Add a Node</button>
+<button onclick="updateChild()">Update First Child</button>
+<label>Name:<input id = "inputName" value = "First Child"></label>
+<label>Value:<input id = "inputValue" value = "90000000"></label>
+<label>Color:<input id = "inputColor" value = "#dd2c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -65,12 +76,14 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-var nodeCount = 1;
-
-//add a new node
-function addNode(){
-  var name = "New Node " + nodeCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
+// update the first child
+function updateChild(name, value, color){
+  var name = document.getElementById("inputName").value;
+  var value = document.getElementById("inputValue").value;
+  var color = document.getElementById("inputColor").value;
+  treeData.getChildAt(0).getChildAt(0).set("name", name);
+  treeData.getChildAt(0).getChildAt(0).set("value", value);
+  treeData.getChildAt(0).getChildAt(0).set("fill", color);
 };
 </script>
 </body>
