@@ -661,9 +661,10 @@ chart = anychart.sunburst(treeData);
 If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp{api}:
 
 ```
-/* locate an item in the data tree,
-get the item as an object */
+/* locate an item in the data tree
+and get it as an object */
 var item = treeData.search("name", "Technical");
+
 // drill down to the item
 chart.drillTo(item);
 

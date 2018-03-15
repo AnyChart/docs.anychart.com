@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="removeNode()">Remove the Last Child</button>
+<button onclick="removeItem()">Remove the Last Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -71,7 +71,7 @@ anychart.onDocumentReady(function () {
 var nodeCount = 1;
 
 // remove the last child
-function removeNode(){
+function removeItem(){
   var lastChild = treeData.getChildAt(0).getChildren().length - 1;
   treeData.getChildAt(0).removeChildAt(lastChild);
 };

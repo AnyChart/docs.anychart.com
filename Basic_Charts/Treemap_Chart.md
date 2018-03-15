@@ -613,9 +613,10 @@ chart = anychart.treeMap(treeData);
 If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
 
 ```
-/* locate an item in the data tree,
-get the item as an object */
+/* locate an item in the data tree
+and get it as an object */
 var item = treeData.search("name", "Lvl 3-4");
+
 // drill down to the item
 chart.drillTo(item);
 

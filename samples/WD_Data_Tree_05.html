@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="addNodes()">Add Data</button>
+<button onclick="addItems()">Add Data</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -61,13 +61,13 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-var nodeCount = 1;
+var itemCount = 1;
 
 // add new data
-function addNodes(){
+function addItems(){
   //create new data
-  var name_1 = "New Node " + nodeCount++;
-  var name_2 = "New Node " + nodeCount++;
+  var name_1 = "New Node " + itemCount++;
+  var name_2 = "New Node " + itemCount++;
   var newData = [
     {"name": name_1, "value": 10000000},
     {"name": name_2, "value": 10000000}

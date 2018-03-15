@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="drillToLevel()">Drill Down to "Technical"</button>
+<button onclick="drillToItem()">Drill Down to Technical</button>
 <button onclick="drillUpALevel()">Drill Up a Level</button>
 <div id="container"></div>
 <script>
@@ -84,7 +84,7 @@ anychart.onDocumentReady(function () {
 /* a function for converting the current
 drilldown path to a string */
 function printPath(path){
-  /* go through the array of the data tree items
+  /* go through the array of data items
   and use the get() method to obtain the "name" field */
   var text = "";
   for (i = 0; i <  path.length; i++){ 
@@ -93,10 +93,10 @@ function printPath(path){
   return text;
 };
     
-// drill down to "developers"
-function drillToLevel(){
-  /* locate an item in the data tree,
-  get the item as an object */
+// drill down to a data item
+function drillToItem(){
+  /* locate an item in the data tree
+  and get it as an object */
   var item = treeData.search("name", "Technical");
   // drill down to the item
   chart.drillTo(item);
