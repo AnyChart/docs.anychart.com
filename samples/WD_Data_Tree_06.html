@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-<button onclick="updateChild()">Update Child 1</button>
+<button onclick="updateNode()">Update the First Child</button>
 <label>Name:<input id = "inputName" value = "New Name"></label>
 <label>Value:<input id = "inputValue" value = "90000000"></label>
 <label>Color:<input id = "inputColor" value = "#00bfa5"></label>
@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
 });
 
 // update the first child
-function updateChild(name, value, color){
+function updateNode(name, value, color){
   var name = document.getElementById("inputName").value;
   var value = document.getElementById("inputValue").value;
   var color = document.getElementById("inputColor").value;

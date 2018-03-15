@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-<button onclick="addNode()">Add a Node</button>
+<button onclick="removeNode()">Remove the Last Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -67,10 +67,10 @@ anychart.onDocumentReady(function () {
 
 var nodeCount = 1;
 
-//add a new node
-function addNode(){
-  var name = "New Node " + nodeCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
+// remove the last child
+function removeNode(){
+  var lastChild = treeData.getChildAt(0).getChildren().length - 1;
+  treeData.getChildAt(0).removeChildAt(lastChild);
 };
 </script>
 </body>
