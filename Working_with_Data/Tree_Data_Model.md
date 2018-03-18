@@ -105,7 +105,7 @@
 
 ```
 
-{sample}WD\_Data\_Tree\_10{sample}
+{sample :height 500}WD\_Data\_Tree\_10{sample}
 
 ```
 
