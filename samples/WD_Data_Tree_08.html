@@ -45,7 +45,7 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
+    data = [
       {name:   "Root",   children: [
         {name:   "Child 1",  value: 80636124},
         {name:   "Child 2",  value: 65511098},
@@ -60,11 +60,8 @@ anychart.onDocumentReady(function () {
       ]} 
     ];
 
-    // create a storage for the data tree
-    treeData = anychart.data.tree(data, "as-tree");
-
     // create a chart and set the data
-    chart = anychart.treeMap(treeData);
+    chart = anychart.treeMap(data, "as-tree");
 
     // set the depth of hints
     chart.hintDepth(2);
@@ -82,27 +79,46 @@ anychart.onDocumentReady(function () {
 });
 
 // a comparison function
-function compare(field, value) {
-  if (field > value )
-    return 0;
+function comparisonFunction(fieldValue, comparisonValue) {
+  if (comparisonValue > fieldValue)
+    return true;
   else
-    return 1;
+    return false;
 };
 
-// search items with values larger than a given one
+// search items with values greater than a given one
 function searchValues(){
-  // search items and get their names
-  var value = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems("value", value, compare);
-  var itemsNames = [];
+
+  // reset the colors of the chart
+  resetColors();
+
+  // get the chart data as an instance of anychart.data.Tree
+  var treeData = chart.data();
+
+  // search items
+  var inputValue = (document.getElementById("inputValue").value) * 1000000;
+  var items = treeData.searchItems("value", inputValue, comparisonFunction);
+
+  /* get the names of the found items, add them to a string variable,
+  and set the fill colors of their nodes */
+  var text = "";
   for (var i = 0; i < items.length; i++) {
-    itemsNames.push(" " + items[i].get("name"));
+    text += items[i].get("name") + ", ";
+    items[i].set("fill", "#00bfa5");
   };
-  if (itemsNames.length == 0)
-    itemsNames = "(none)";
+  if (items.length == 0)
+    text = "(none)";
+
   // update the chart title
   chart.title("Tree Data Model: Searching<br><br>" +
-              "<span style = 'color:#990000'>" + itemsNames + "</span>");
+              "<span style = 'color:#990000'>" +
+              text.substr(0, text.length - 2) + "</span>");
+
+};
+
+// a function for resetting the colors of the chart
+function resetColors() {
+  chart.data(data, "as-tree");  
 };
 </script>
 </body>

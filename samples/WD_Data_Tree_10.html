@@ -120,7 +120,7 @@ function nextItem() {
   // try to go to the next item
   if (traverser.advance()) {
     /* get the current item
-    as the instance of the dataItem class */
+    as an instance of the dataItem class */
     var dataItem = traverser.current();
     // drill down to the item
     chart.drillTo(dataItem);

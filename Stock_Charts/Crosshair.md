@@ -10,7 +10,7 @@ The crosshair in AnyStock is similar to the [crosshair in basic charts](../Axes_
 
 ## Enabling
 
-In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return an instance of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
+In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return instances of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
 By default the crosshair is enabled. To disable or enable it on a chart or a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` or `true` parameter:
 
