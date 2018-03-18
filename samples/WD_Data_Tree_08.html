@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-<button onclick="searchValues()">Search</button>
+<button onclick="searchValues()">Search Items</button>
 <label>value ><input id="inputValue" value="50"> mln</label>
 <div id="container"></div>
 <script>
@@ -98,6 +98,8 @@ function searchValues(){
   for (var i = 0; i < items.length; i++) {
     itemsNames.push(" " + items[i].get("name"));
   };
+  if (itemsNames.length == 0)
+    itemsNames = "(none)";
   // update the chart title
   chart.title("Tree Data Model: Searching<br><br>" +
               "<span style = 'color:#990000'>" + itemsNames + "</span>");
