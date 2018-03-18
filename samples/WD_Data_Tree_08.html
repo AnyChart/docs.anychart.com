@@ -22,6 +22,13 @@
         button {
             margin: 10px 0 0 10px;
         }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 30px;
+            margin: 10px 0 0 5px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -31,7 +38,8 @@
     </style>
 </head>
 <body>
-<button onclick="searchValues()">Search Items</button>
+<button onclick="searchValues()">Search</button>
+<label>value ><input id="inputValue" value="50"> mln</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -63,8 +71,8 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Tree Data Model: Searching<br><br>values > 50 mln: " +
-                "<span style = 'color:#990000'>" + "? </span>");
+    chart.title("Tree Data Model: Searching<br><br>" +
+                "<span style = 'color:#990000'>?</span>");
 
     // set the container id
     chart.container("container");
@@ -81,16 +89,17 @@ function compare(field, value) {
     return 1;
 };
 
-// search items
+// search items with values larger than a given one
 function searchValues(){
-  // search items with values > 50 mln and get their names
-  var items = treeData.searchItems("value", 50000000, compare);
+  // search items and get their names
+  var value = (document.getElementById("inputValue").value) * 1000000;
+  var items = treeData.searchItems("value", value, compare);
   var itemsNames = [];
-    for (var i = 0; i < items.length; i++) {
-      itemsNames.push(" " + items[i].get("name"));
-    };
+  for (var i = 0; i < items.length; i++) {
+    itemsNames.push(" " + items[i].get("name"));
+  };
   // update the chart title
-  chart.title("Tree Data Model: Searching<br><br>values > 50 mln: " +
+  chart.title("Tree Data Model: Searching<br><br>" +
               "<span style = 'color:#990000'>" + itemsNames + "</span>");
 };
 </script>
