@@ -32,8 +32,8 @@
             right: 0px;
             bottom: 0;
             color: #990000;
-    </style>
         }
+    </style>
 </head>
 <body>
 <div id="treeInfo">Tree of Data<br><br></div>
@@ -80,6 +80,7 @@ anychart.onDocumentReady(function () {
       // display the name of the current item
       var newElement = document.createElement("li");
       newElement.innerText = dataItem.get("name");
+      newElement.style ="font-style:italic";
       treeInfo.appendChild(newElement);
 
     };
