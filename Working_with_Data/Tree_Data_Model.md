@@ -105,10 +105,28 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-* getChildAt(), getChildren(), numChildren()
-* indexOfChild() ?
-* эти методы возвращают instances of anychart.data.Tree.DataItem
-* ссылки на этот раздел из других разделов!
+Here are the methods for reading data:
+
+* {api:anychart.data.Tree#getChildAt}Tree.getChildAt(){api} and {api:anychart.data.Tree.DataItem#getChildAt}DataItem.getChildAt(){api} – return a given data item
+* {api:anychart.data.Tree#getChildren}Tree.getChildren(){api} and {api:anychart.data.Tree.DataItem#getChildren}DataItem.getChildren(){api} –  return all children of a given item
+* {api:anychart.data.Tree#numChildren}Tree.numChildren(){api} and {api:anychart.data.Tree.DataItem#numChildren}DataItem.numChildren(){api} – return the number of children of a given item
+* {api:anychart.data.Tree.DataItem#indexOfChild}DataItem.indexOfChild(){api} – (?)
+* {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of a given data field
+
+When you call the {api:anychart.data.Tree#getChildAt}Tree.getChildAt(){api} method, it returns a root item (instance of {api}anychart.data.Tree.DataItem{api}) with a given index.
+
+To go deeper than the root level, you need to call the {api:anychart.data.Tree.DataItem#getChildAt}DataItem.getChildAt(){api} method. For example, that is how you get the third child of the root element:
+
+```
+treeData.getChildAt(0).getChildAt(3);
+```
+
+The {api:anychart.data.Tree#getChildren}getChildren(){api} method is used to get all children of an element with a given index. It returns an array of data items (instance of {api}anychart.data.Tree.DataItem{api}):
+
+```
+
+```
+
 
 ```
 // get the number of children
