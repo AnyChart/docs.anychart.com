@@ -3,15 +3,29 @@
 
 ## Overview
 
-* [Gantt](../Gantt_Chart/Quick_Start), [Treemap](../Basic_Charts/Treemap_Chart)
-* деревья представляются экземплярами (instances) класса anychart.data.Tree
-* элементы деревьев - экземплярами anychart.data.Tree.DataItem
+The Tree Data Model is a data model in which the data is organized as a hierarchical tree-like structure with data items connected by parent/child relationships.
+
+It is used in the following chart types:
+
+* [Gantt](../Gantt_Chart/Quick_Start)
+* [Treemap](../Basic_Charts/Treemap_Chart)
+* [Sunburst](../Basic_Charts/Sunburst_Chart)
+
+Data trees in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+
+This article explains how to organize your data to create a data tree and how to manipulate it: see the [Structure](#structure) and [Data Manipulation](#data_manipulation) sections.
 
 ## Structure
 
-There are two ways to arrange tree data: [as a tree](#tree) or [as a table](#table).
+To create a data tree, you can arrange your data either [as a tree](#tree) or [as a table](#table).
 
 ### Tree
+
+To organize data as a tree, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-tree"` as the second parameter. Then pass the data tree to the chart constructor.
+
+You can also pass your data directly to the chart constructor or to the **data()** method of the chart. However, [data manipulations](#data_manipulation) require the data tree to be created explicitly with {api:anychart.data#tree}anychart.data.tree(){api}.
+
+The choice of data fields depends on the chart type. But `children` is always required – it is used to specify the hierarchy of elements.
 
 ```
 // create data
@@ -44,6 +58,12 @@ var chart = anychart.treeMap(treeData);
 {sample :height 450}WD\_Data\_Tree\_01{sample}
 
 ### Table
+
+To organize your data as a table, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-table"` as the second parameter. Then pass the data tree to the chart constructor.
+
+**Note:** You can also pass your data directly to the chart constructor or to the **data()** method of the chart. However, [data manipulations](#data_manipulation) require the data tree to be created explicitly with {api:anychart.data#tree}anychart.data.tree(){api}.
+
+The choice of data fields depends on the chart type. But `id` and `parent` are always required – they are used to specify the hierarchy of elements.
 
 ```
 // create data
