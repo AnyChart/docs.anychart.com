@@ -114,9 +114,7 @@ Here are the methods for reading data:
 * {api:anychart.data.Tree.DataItem#indexOfChild}DataItem.indexOfChild(){api} – (?)
 * {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of a given data field
 
-When you call the {api:anychart.data.Tree#getChildAt}Tree.getChildAt(){api} method, it returns a root item (instance of {api}anychart.data.Tree.DataItem{api}) with a given index.
-
-To go deeper than the root level, you need to call the {api:anychart.data.Tree.DataItem#getChildAt}DataItem.getChildAt(){api} method. For example, that is how you get the third child of the first root item:
+When you call the {api:anychart.data.Tree#getChildAt}Tree.getChildAt(){api} method, it returns a root item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index. To go deeper than the root level, you need to call the {api:anychart.data.Tree.DataItem#getChildAt}DataItem.getChildAt(){api} method. For example, that is how you get the third child of the first root item:
 
 ```
 treeData.getChildAt(0).getChildAt(2);
