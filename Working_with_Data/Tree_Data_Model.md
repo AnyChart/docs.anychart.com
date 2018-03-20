@@ -112,7 +112,7 @@ To read data at the root level, use the following methods of {api:anychart.data.
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
 * {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns (?)
 
-To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}, combined with the methods mentioned above and each other:
+To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}, combined with the methods mentioned above or each other:
 
 * {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children (instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) of an item with a given index
