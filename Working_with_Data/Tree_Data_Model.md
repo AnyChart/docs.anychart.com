@@ -105,7 +105,7 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-To read data on the root level, use the following methods of {api:anychart.data.Tree class}anychart.data.Tree{api}:
+To read data at the root level, use the following methods of {api:anychart.data.Tree class}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children (instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) of a root item with a given index
