@@ -23,7 +23,7 @@ To create a data tree, you can arrange your data either [as a tree](#tree) or [a
 
 To organize data as a tree, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-tree"` as the second parameter. Then pass the data tree to the chart constructor.
 
-You can also pass your data directly to the chart constructor or to the **data()** method of the chart. However, [data manipulations](#data_manipulation) require the data tree to be created explicitly with {api:anychart.data#tree}anychart.data.tree(){api}.
+You can also pass your data directly to the chart constructor or to the **data()** method of the chart.
 
 The choice of data fields depends on the chart type. But `children` is always required – it is used to specify the hierarchy of elements.
 
@@ -61,7 +61,7 @@ var chart = anychart.treeMap(treeData);
 
 To organize your data as a table, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-table"` as the second parameter. Then pass the data tree to the chart constructor.
 
-**Note:** You can also pass your data directly to the chart constructor or to the **data()** method of the chart. However, [data manipulations](#data_manipulation) require the data tree to be created explicitly with {api:anychart.data#tree}anychart.data.tree(){api}.
+**Note:** You can also pass your data directly to the chart constructor or to the **data()** method of the chart.
 
 The choice of data fields depends on the chart type. But `id` and `parent` are always required – they are used to specify the hierarchy of elements.
 
@@ -95,9 +95,9 @@ var chart = anychart.treeMap(treeData);
 You can perform the following data operations (including CRUD):
 
 * [Reading](#reading)
-* [Adding (Creating)](#adding)
+* [Adding](#adding)
 * [Updating](#updating)
-* [Removing (Deleting)](#removing)
+* [Removing](#removing)
 * [Searching](#searching)
 * [Traversing](#traversing)
 
