@@ -92,8 +92,16 @@ var chart = anychart.treeMap(treeData);
 
 ## Data Manipulation
 
-* список операций с данными - переименовать так, чтобы согласовалось с оглавлением
-* [Data Manipulation](Data_Manipulation)
+You can perform the following data operations (including CRUD):
+
+* [Reading](#reading)
+* [Adding (Creating)](#adding)
+* [Updating](#updating)
+* [Removing (Deleting)](#removing)
+* [Searching](#searching)
+* [Traversing](#traversing)
+
+**Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
 ### Reading
 
