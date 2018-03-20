@@ -112,7 +112,7 @@ To read data at the root level, use the following methods of {api:anychart.data.
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
 * {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns (?)
 
-To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}, combined with the methods mentioned above or each other:
+To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 * {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children (instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) of an item with a given index
@@ -121,10 +121,10 @@ To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.
 * {api:anychart.data.Tree.DataItem#indexOfChild}DataItem.indexOfChild(){api} – returns (?)
 * {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of an item's data field with a given name
 
-For example, that is how you get the third child of the first root item:
+For example, that is how you get the 6th child of the 3rd child of the first root item:
 
 ```
-treeData.getChildAt(0).getChildAt(2);
+treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
 In the sample below, the number of the root item's children and the name of the last child are displayed in the title of the chart:
