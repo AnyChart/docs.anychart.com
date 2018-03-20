@@ -9,7 +9,7 @@
 
 ## Structure
 
-* строчку про maxDepth не выводить при цитировании кода
+There are two ways to arrange tree data: [as a tree](#tree) or [as a table](#table).
 
 ### Tree
 
@@ -63,6 +63,7 @@ var data = [
 ];
 // create a storage for the data tree
 treeData = anychart.data.tree(data, "as-table");
+
 // create a chart and set the data
 var chart = anychart.treeMap(treeData);
 ```
