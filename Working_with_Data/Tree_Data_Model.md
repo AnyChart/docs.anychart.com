@@ -109,17 +109,17 @@ To read data at the root level, use the following methods of {api:anychart.data.
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children (instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) of a root item with a given index
-* {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of children of a root item with a given index
+* {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
 * {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns (?)
 
 To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}, combined each other or the methods mentioned above:
 
 * {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item (instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) with a given index
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children (instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}) of an item with a given index
-* {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of children of an item with a given index
+* {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item with a given index
 * {api:anychart.data.Tree.DataItem#indexOfChild}DataItem.indexOfChild(){api} – returns (?)
-* {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of a data field
+* {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of an item's given data field
 
 For example, that is how you get the third child of the first root item:
 
