@@ -223,7 +223,7 @@ To remove a child of a data item, access an instance of {api:anychart.data.Tree.
 In the sample below, the current last child of the root item is removed each time you press the button:
 
 ```
-var lastChild = treeData.getChildAt(0).getChildren().length - 2;
+var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 treeData.getChildAt(0).removeChildAt(lastChild);
 ```
 
