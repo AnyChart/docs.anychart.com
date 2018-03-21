@@ -105,7 +105,7 @@ You can perform the following data operations (including CRUD):
 
 **Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
-Manipulating data very often requires addressing data items. You can either [search](#searching) for them or use special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes, which are used in most samples below.
+Manipulating data very often requires addressing data items. You can either [search](#searching) for them or call special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes, which are used in most samples below.
 
 To address items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
@@ -130,7 +130,7 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 
 ### Reading
 
-You can read the value of an item's data field with a given name: first access it, and then use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+You can read the value of an item's data field with a given name: access the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
