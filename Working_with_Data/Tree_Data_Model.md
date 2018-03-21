@@ -105,9 +105,9 @@ You can perform the following data operations (including CRUD):
 
 **Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
-There are several methods allowing you to address data items, which is very often required when you manipulate data.
+Manipulating data very often requires addressing data items. You can either [Search](#searching) for them or use special methods of the {api:the anychart.data.Tree class}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
 
-To address items at the root level, use the following methods of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class:
+To address items at the root level, use the following methods of {api:the anychart.data.Tree class}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
@@ -129,8 +129,6 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
 To learn more, you can look at samples in the subsections below, since these methods are used in most of them.
-
-**Note:** Another way to address data items is using the methods described in the [Searching](#searching) subsection.
 
 ### Reading
 
