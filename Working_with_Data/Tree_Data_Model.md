@@ -147,9 +147,9 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}. The second method adds an item with a given index.
+You can add a root item to your data: [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. The second method adds an item with a given index.
 
-To add a child element to a given data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api}:
+To add a child element to a given data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 ```
 var itemCount = 1;
@@ -188,7 +188,7 @@ function addItems(){
 
 ### Updating
 
-To update a data field of an item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(){api}. Use the name of the field and a new value as parameters:
+To update a data field of an item, [access](#accessing_items) an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(){api}. Use the name of the field and a new value as parameters:
 
 ```
 // update the first child
@@ -206,7 +206,7 @@ function updateItem(){
 
 ### Removing
 
-To remove root items from your data, call one of the following methods on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}:
+To remove root items from your data,  [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
 
 * {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
 * {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
