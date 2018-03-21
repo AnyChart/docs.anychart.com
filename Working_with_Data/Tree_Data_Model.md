@@ -202,7 +202,19 @@ function updateItem(){
 
 ### Removing
 
-* упомянуть три разных метода remove
+To remove root items from your data, call one of the following methods on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}:
+
+* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
+* {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
+* {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
+
+To remove a child of a given data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
+
+* {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} – removes a child
+* {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
+* {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} – removes all children 
+
+In the sample below, the current last child of the root item is removed each time you press the button:
 
 ```
 var lastChild = treeData.getChildAt(0).getChildren().length - 1;
@@ -245,7 +257,6 @@ function searchValues(){
 ```
 
 {sample}WD\_Data\_Tree\_08{sample}
-
 
 ```
 /* locate an item in the data tree
