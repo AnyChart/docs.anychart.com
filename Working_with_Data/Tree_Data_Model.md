@@ -130,7 +130,7 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 
 ### Reading
 
-You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element.
+You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element (first you need to access it).
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
@@ -144,7 +144,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-To add a child element to a given data item, call the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+To add a child element to a given data item, use the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
 You can also add a root item if you call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
 
