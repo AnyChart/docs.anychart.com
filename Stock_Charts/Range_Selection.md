@@ -93,22 +93,22 @@ To customize preset periods you need to access {api:anychart.ui.RangeSelector#ra
 <td>When `type` is set to `'unit'` - range measurement.</td>
 </tr>
 <tr>
-<td>count</td>
+<td>`count`</td>
 <td>Number</td>
-<td>When `type` is set to `'unit'` and `unit` is set - number of units.</td>
+<td>When `type` is set to `'unit'` (and `unit` is set) or `'points'` - number of units or points.</td>
 </tr>
 <tr>
-<td>startDate</td>
+<td>`startDate`</td>
 <td>String</td>
-<td>Start date for the fixed range.</td>
+<td>Start date for the fixed range when type is set to `'range'`.</td>
 </tr>
 <tr>
-<td>endDate</td>
+<td>`endDate`</td>
 <td>String</td>
-<td>End date for the fixed range.</td>
+<td>End date for the fixed range when type is set to `'range'`.</td>
 </tr>
 <tr>
-<td>text</td>
+<td>`text`</td>
 <td>String</td>
 <td>Text to display.</td>
 </tr>
