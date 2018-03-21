@@ -144,9 +144,9 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-To add a child element to a given data item, use the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+You can add a root item to your data: call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
 
-You can also add a root item if you call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
+To add a child element to a given data item, use the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 ```
 var itemCount = 1;
