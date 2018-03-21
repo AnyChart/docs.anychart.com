@@ -101,7 +101,7 @@ To access items at the root level, use the following methods of {api:anychart.da
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array of root items
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given element if it is a root (or -1 if it is not)
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given item if it is a root (or -1 if it is not)
 
 To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -116,7 +116,7 @@ For example, that is how you get the sixth child of the third child of the first
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
-You can also see the [Data Manipulation](#data_manipulation) section to learn more. Since manipulating data very often requires accessing data items, these methods are used in most samples there.
+Manipulating data very often requires accessing data items, so the methods listed above are used in most samples in [Data Manipulation](#data_manipulation) section.
 
 ## Data Manipulation
 
