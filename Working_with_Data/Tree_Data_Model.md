@@ -112,7 +112,7 @@ To address items at the root level, use the following methods of {api:anychart.d
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
-* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns (?)
+* {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given element if it is a root (or -1 if it is not)
 
 To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -120,7 +120,6 @@ To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children of an item with a given index
 * {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
-* {api:anychart.data.Tree.DataItem#indexOfChild}indexOfChild(){api} – returns (?)
 
 For example, that is how you get the 6th child of the 3rd child of the first root item:
 
@@ -144,7 +143,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
+You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}. The second method adds an item with a given index.
 
 To add a child element to a given data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api}:
 
