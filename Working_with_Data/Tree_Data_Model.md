@@ -11,17 +11,17 @@ It is used in the following chart types:
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 
-This article explains how to create a tree data structure and manipulate it: see the [Setting Data](#setting_data) and [Data Manipulation](#data_manipulation) sections.
+This article explains how to create a tree data structure, pass it to a chart, and manipulate it: see the [Setting Data](#setting_data) and [Data Manipulation](#data_manipulation) sections.
 
 ## Setting Data
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-The raw data can be arranged either [as a tree](#as-tree) or [as a table](#as-table).
+Your data can be arranged either [as a tree](#as-tree) or [as a table](#as-table).
 
 ### As Tree
 
-To organize data as a tree, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-tree"` as the second parameter. Then pass the data tree to the chart constructor.
+If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
 You can also pass your data directly to the chart constructor or to the **data()** method of the chart.
 
