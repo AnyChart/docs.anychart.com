@@ -49,6 +49,9 @@ anychart.onDocumentReady(function () {
     // set the depth of hints
     chart.hintDepth(2);
 
+    // configure labels
+    chart.labels().format("{%name}");
+
     /* listen to the chartDraw event
     and add the drilldown path to the chart title */
     chart.listen("chartDraw",function (){

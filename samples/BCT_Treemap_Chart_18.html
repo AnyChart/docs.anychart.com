@@ -32,6 +32,9 @@ anychart.onDocumentReady(function () {
     // set the depth of hints
     chart.hintDepth(2);
 
+    // configure labels
+    chart.labels().format("{%name}");
+
     // disable the drilldown feature
     chart.listen("drillchange", function(e){
       return false;

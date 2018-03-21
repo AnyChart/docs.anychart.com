@@ -118,8 +118,8 @@ To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children of an item with a given index
 * {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
-* {api:anychart.data.Tree.DataItem#indexOfChild}DataItem.indexOfChild(){api} – returns (?)
-* {api:anychart.data.Tree.DataItem#get}DataItem.get(){api} – returns the value of an item's data field with a given name
+* {api:anychart.data.Tree.DataItem#indexOfChild}indexOfChild(){api} – returns (?)
+* {api:anychart.data.Tree.DataItem#get}get(){api} – returns the value of an item's data field with a given name
 
 For example, that is how you get the 6th child of the 3rd child of the first root item:
 

@@ -53,6 +53,9 @@ anychart.onDocumentReady(function () {
 
     // set the depth of hints
     chart.hintDepth(2);
+
+    // configure labels
+    chart.labels().format("{%name}");
     
     // set the chart title
     chart.title("Tree Data Model: Traversing");
