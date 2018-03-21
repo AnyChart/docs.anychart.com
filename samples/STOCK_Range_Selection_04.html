@@ -26,48 +26,53 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-var dataTable = anychart.data.table();
-dataTable.addData(get_dji_daily_short_data());
+    
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_dji_daily_short_data());
 
-var mapping = dataTable.mapAs({value: 1});
+    var mapping = dataTable.mapAs({value: 1});
 
-var chart = anychart.stock();
+    var chart = anychart.stock();
 
-chart.plot().line(mapping);
+    chart.plot().line(mapping);
 
-var rangeSelector = anychart.ui.rangeSelector();
+    var rangeSelector = anychart.ui.rangeSelector();
 
-var customRanges = [
-    {
-        'text': 'Year 2006',
-        'startDate': '2006 Jan 1',
-        'endDate': '2006 Dec 31'
-    },
-    {
-        'text': 'Year 2007',
-        'startDate': '2007 Jan 1',
-        'endDate': '2007 Dec 31'
-    },
-    {
-        'text': 'Full Range',
-        'type': 'max'
-    },
-    {
-        'text': '10',
-        'type': 'points'
-        'count': 10,
-        'anchor': 'last-date'
-    }
-];
+    var customRanges = [
+        {
+            'text': '5 Days',
+            'type': 'unit',
+            'unit': 'day',
+            'count': 5,
+            'anchor': 'first-visible-date'
+        },
+        {
+            'text': 'Year 2007',
+            'startDate': '2007 Jan 1',
+            'endDate': '2007 Dec 31',
+            'type': 'range'
+        },
+        {
+            'text': 'Full Range',
+            'type': 'max'
+        },
+        {
+            'text': '10',
+            'type': 'points'
+            'count': 10,
+            'anchor': 'last-date'
+        }
+    ];
 
-// Set custom ranges for the range selector.
-rangeSelector.ranges(customRanges);
 
-chart.title("Set custom ranges for range selector");
-chart.container("container");
-chart.draw();
+    // Set custom ranges for the range selector.
+    rangeSelector.ranges(customRanges);
 
-rangeSelector.render(chart);
+    chart.title("Set custom ranges for range selector");
+    chart.container("container");
+    chart.draw();
+
+    rangeSelector.render(chart);
 });
 </script>
 </body>

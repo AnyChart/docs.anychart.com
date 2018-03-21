@@ -128,7 +128,7 @@ customRanges.pop();
 customRanges[0].type = "unit";
 customRanges[0].unit = "day";
 customRanges[0].count = 5;
-customRanges[0].text = "5 DAY";
+customRanges[0].text = "5 DAYS";
 
 // apply the changes
 rangeSelector.ranges(customRanges);
@@ -145,14 +145,17 @@ var rangeSelector = anychart.ui.rangeSelector();
 
 var customRanges = [
     {
-        'text': 'Year 2006',
-        'startDate': '2006 Jan 1',
-        'endDate': '2006 Dec 31'
+        'text': '5 Days',
+        'type': 'unit',
+        'unit': 'day',
+        'count': 5,
+        'anchor': 'first-visible-date'
     },
     {
         'text': 'Year 2007',
         'startDate': '2007 Jan 1',
-        'endDate': '2007 Dec 31'
+        'endDate': '2007 Dec 31',
+        'type': 'range'
     },
     {
         'text': 'Full Range',
