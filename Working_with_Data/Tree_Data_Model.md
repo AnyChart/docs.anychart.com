@@ -92,18 +92,7 @@ var chart = anychart.treeMap(treeData);
 
 {sample :height 450}WD\_Data\_Tree\_02{sample}
 
-## Data Manipulation
-
-You can perform the following data operations (including CRUD):
-
-* [Reading](#reading)
-* [Adding](#adding)
-* [Updating](#updating)
-* [Removing](#removing)
-* [Searching](#searching)
-* [Traversing](#traversing)
-
-**Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
+### Accessing Data Items
 
 Manipulating data very often requires addressing data items. You can either [search](#searching) for them or call special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes, which are used in most samples below.
 
@@ -126,6 +115,19 @@ For example, that is how you get the 6th child of the 3rd child of the first roo
 ```
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
+
+## Data Manipulation
+
+You can perform the following data operations (including CRUD):
+
+* [Reading](#reading)
+* [Adding](#adding)
+* [Updating](#updating)
+* [Removing](#removing)
+* [Searching](#searching)
+* [Traversing](#traversing)
+
+**Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
 ### Reading
 
@@ -184,7 +186,7 @@ function addItems(){
 
 ### Updating
 
-To update a data field of an item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(). Use the name of the field and a new value as parameters:
+To update a data field of an item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(){api}. Use the name of the field and a new value as parameters:
 
 ```
 // update the first child
