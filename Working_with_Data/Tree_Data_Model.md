@@ -110,7 +110,7 @@ To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.
 * {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
 
-For example, that is how you get the 6th child of the 3rd child of the first root item:
+For example, that is how you get the sixth child of the third child of the first root item:
 
 ```
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
@@ -147,7 +147,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. The second method adds an item with a given index.
+You can add a root item to your data: [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. Please note that the second method adds an item with a given index.
 
 To add a child element to a given data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
@@ -166,6 +166,8 @@ function addItem(){
 You can also add a several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
 **Note:** In Treemap charts only one root element can be displayed, so using this method does not change the way a Treemap looks, though the data is updated anyway.
+
+Here is a Sunburst chart with a button adding two root nodes at a time:
 
 ```
 var itemCount = 1;
