@@ -116,7 +116,7 @@ For example, that is how you get the sixth child of the third child of the first
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
-Manipulating data very often requires accessing data items, so the methods listed above are used in most samples in [Data Manipulation](#data_manipulation) section.
+Manipulating data very often requires accessing data items, so the methods listed above are used in most samples in the [Data Manipulation](#data_manipulation) section.
 
 ## Data Manipulation
 
@@ -210,7 +210,7 @@ function updateItem(){
 
 To remove root items from your data, [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
 
-* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes root
+* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
 * {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
 * {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
 
@@ -220,7 +220,7 @@ To remove a child of a data item, access an instance of {api:anychart.data.Tree.
 * {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
 * {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} – removes all children
 
-In the sample below, the current last child of the root item is removed each time you press the button:
+In the sample below the current last child of the root item is removed each time you press the button:
 
 ```
 var lastChild = treeData.getChildAt(0).getChildren().length - 1;
@@ -242,9 +242,6 @@ function comparisonFunction(fieldValue, comparisonValue) {
 
 // search items with values greater than a given one
 function searchValues(){
-
-  // get the chart data as an instance of anychart.data.Tree
-  var treeData = chart.data();
 
   // search items
   var inputValue = (document.getElementById("inputValue").value) * 1000000;
