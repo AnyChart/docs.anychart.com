@@ -15,15 +15,15 @@ This article explains how to create a tree data structure, pass it to a chart, a
 
 ## Setting Data
 
-Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} is created.
+Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
-To create an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
+To create an instance of {{api:anychart.data.Tree}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
 
 ### As Tree
 
-If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
+If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
 You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-tree` parameter.
 
@@ -61,7 +61,7 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
+If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
 You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-table` parameter.
 
@@ -105,9 +105,9 @@ You can perform the following data operations (including CRUD):
 
 **Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
-Manipulating data very often requires addressing data items. You can either [Search](#searching) for them or use special methods of the {api:the anychart.data.Tree class}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
+Manipulating data very often requires addressing data items. You can either [Search](#searching) for them or use special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
 
-To address items at the root level, use the following methods of {api:the anychart.data.Tree class}anychart.data.Tree{api}:
+To address items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
@@ -132,7 +132,7 @@ To learn more, you can look at samples in the subsections below, since these met
 
 ### Reading
 
-You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree class}anychart.data.Tree{api}. It can be called on any data item, including a root element.
+You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
