@@ -13,11 +13,11 @@ It is used in the following chart types:
 
 This article explains how to create a tree data structure and manipulate it: see the [Structure](#structure) and [Data Manipulation](#data_manipulation) sections.
 
-## Creating Tree Data Structure
+## Creating Tree Data
 
-Data trees in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-To create a data tree, you can arrange your data either [as a tree](#tree) or [as a table](#table).
+The raw data can be arranged either [as a tree](#tree) or [as a table](#table).
 
 ### Tree
 
