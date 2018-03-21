@@ -130,7 +130,7 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 
 ### Reading
 
-You can read the value of an item's data field with a given name: access the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+You can read the value of an item's data field with a given name: access the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
@@ -144,9 +144,9 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
+You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
 
-To add a child element to a given data item, use the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
+To add a child element to a given data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 ```
 var itemCount = 1;
