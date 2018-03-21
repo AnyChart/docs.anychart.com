@@ -105,7 +105,7 @@ You can perform the following data operations (including CRUD):
 
 **Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
-Manipulating data very often requires addressing data items. You can either [Search](#searching) for them or use special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
+Manipulating data very often requires addressing data items. You can either [search](#searching) for them or use special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes, which are used in most samples below.
 
 To address items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
@@ -128,8 +128,6 @@ For example, that is how you get the 6th child of the 3rd child of the first roo
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
-To learn more, you can look at samples in the subsections below, since these methods are used in most of them.
-
 ### Reading
 
 You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element.
@@ -148,7 +146,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 To add a child element to a given data item, call the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-You can also add a root item if you call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}. 
+You can also add a root item if you call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}.
 
 ```
 var itemCount = 1;
