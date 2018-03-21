@@ -146,8 +146,9 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-* пример: прямое обращение к элементам через такие-то методы, ссылка на read
-* примечание: также к элементам можно обращаться с помощью методов, описанных в разделе searching
+To add a child element to a given data item, call the {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+
+You can also add a root item if you call {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} on an instance of {api:anychart.data.Tree}anychart.data.Tree{api}. 
 
 ```
 var itemCount = 1;
