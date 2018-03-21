@@ -61,11 +61,11 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-To organize your data as a table, create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class: pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method and use `"as-table"` as the second parameter. Then pass the data tree to the chart constructor.
+If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
-**Note:** You can also pass your data directly to the chart constructor or to the **data()** method of the chart.
+You can as well pass your data to the **data()** method of the chart or directly to the chart constructor (also with the `as-table` parameter).
 
-The choice of data fields depends on the chart type. But `id` and `parent` are always required – they are used to specify the hierarchy of elements.
+The choice of data fields depends on the chart type. But `id` and `parent` are always required – they are used to specify the hierarchy of elements:
 
 ```
 // create data
