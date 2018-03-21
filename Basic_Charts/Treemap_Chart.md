@@ -90,7 +90,7 @@ Use the following data fields to create data for a Treemap chart:
 
 **Note 2:** A Treemap chart can have only one root element.
 
-There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Tree_Data_Model#tree) or [as a table](../Working_with_Data/Tree_Data_Model#table).
+There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Tree_Data_Model#as-tree) or [as a table](../Working_with_Data/Tree_Data_Model#as-table).
 
 #### Tree Structure
 
