@@ -92,7 +92,7 @@ var chart = anychart.treeMap(treeData);
 
 {sample :height 450}WD\_Data\_Tree\_02{sample}
 
-### Accessing Items
+## Accessing Items
 
 If you need to access data items, you can either [search](#searching) for them or call special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
 
