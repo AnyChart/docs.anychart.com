@@ -130,7 +130,7 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 
 ### Reading
 
-You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element (first you need to access it).
+You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}. It can be called on any data item, including a root element.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
