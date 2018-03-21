@@ -17,9 +17,9 @@ This article explains how to create a tree data structure, pass it to a chart, a
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-To create an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
+Your data can be arranged either [as a tree](#as-tree) or [as a table](#as-table). Then it is interpreted by the component, and an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} is created.
 
-Your data can be arranged either [as a tree](#as-tree) or [as a table](#as-table).
+To create an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
 
 ### As Tree
 
