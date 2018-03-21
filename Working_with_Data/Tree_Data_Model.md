@@ -160,7 +160,9 @@ function addItem(){
 
 {sample}WD\_Data\_Tree\_04{sample}
 
-* примечание: addData добавляет новые корневые элементы --> в тримапах данные будут обновляться, но новые данные не будут отображаться, т.к. всегда отображается только 1 корневой элемент
+You can also add a several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
+
+**Note:** In Treemap charts only one root element can be displayed, so using this method does not change the way a Treemap looks, though the data is updated anyway.
 
 ```
 var itemCount = 1;
