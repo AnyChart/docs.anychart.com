@@ -99,14 +99,14 @@ If you need to access data items, you can either [search](#searching) for them o
 To access items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
-* {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
+* {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array of root items
 * {api:anychart.data.Tree#numChildren}numChildren(){api} – returns the number of roots
 * {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} – returns the index of a given element if it is a root (or -1 if it is not)
 
 To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
-* {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item with a given index
-* {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children of an item with a given index
+* {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} – returns an item's child with a given index
+* {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} – returns an array containing all children of an item
 * {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
 
@@ -133,7 +133,7 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-You can read the value of an item's data field with a given name: [access](#accessing_items) the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
+You can read the value of an item's data field with a given name: [access](#accessing_items) an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
@@ -149,7 +149,7 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 You can add a root item to your data: [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. Please note that the second method adds an item with a given index.
 
-To add a child element to a given data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
+To add a child element to a data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 ```
 var itemCount = 1;
@@ -208,22 +208,22 @@ function updateItem(){
 
 ### Removing
 
-To remove root items from your data,  [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
+To remove root items from your data, [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
 
-* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
+* {api:anychart.data.Tree#removeChild}removeChild(){api} – removes root
 * {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
 * {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
 
-To remove a child of a given data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
+To remove a child of a data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
 
 * {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} – removes a child
 * {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
-* {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} – removes all children 
+* {api:anychart.data.Tree.DataItem#removeChildren}removeChildren(){api} – removes all children
 
 In the sample below, the current last child of the root item is removed each time you press the button:
 
 ```
-var lastChild = treeData.getChildAt(0).getChildren().length - 1;
+var lastChild = treeData.getChildAt(0).getChildren().length - 2;
 treeData.getChildAt(0).removeChildAt(lastChild);
 ```
 
