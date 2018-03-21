@@ -92,11 +92,11 @@ var chart = anychart.treeMap(treeData);
 
 {sample :height 450}WD\_Data\_Tree\_02{sample}
 
-### Accessing Data Items
+### Accessing Items
 
-Manipulating data very often requires addressing data items. You can either [search](#searching) for them or call special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes, which are used in most samples below.
+If you need to access data items, you can either [search](#searching) for them or call special methods of the {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} classes.
 
-To address items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
+To access items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
@@ -116,6 +116,8 @@ For example, that is how you get the 6th child of the 3rd child of the first roo
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
+You can also see the [Data Manipulation](#data_manipulation) section to learn more. Since manipulating data very often requires accessing data items, these methods are used in most samples there.
+
 ## Data Manipulation
 
 You can perform the following data operations (including CRUD):
@@ -131,7 +133,7 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-You can read the value of an item's data field with a given name: access the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
+You can read the value of an item's data field with a given name: [access](#accessing_items) the item and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
