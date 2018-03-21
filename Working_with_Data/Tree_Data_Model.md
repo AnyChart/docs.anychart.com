@@ -132,14 +132,11 @@ To learn more, you can look at samples in the subsections below, since these met
 
 ### Reading
 
-To read data, use the {api:anychart.data.Tree.DataItem#get}get(){api method of {api:anychart.data.Tree class}anychart.data.Tree{api}. It returns the value of an item's data field with a given name.
+You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree class}anychart.data.Tree{api}. It can be called on any data item, including a root element.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
 ```
-// get the number of children
-var childrenTotal = treeData.getChildAt(0).numChildren();
-
 // get the name of the last child
 var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
