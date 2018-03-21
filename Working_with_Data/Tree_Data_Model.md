@@ -184,7 +184,7 @@ function addItems(){
 
 ### Updating
 
-* метод set() класса anychart.data.Tree.DataItem
+To update a data field of an item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(). Use the name of the field and a new value as parameters:
 
 ```
 // update the first child
