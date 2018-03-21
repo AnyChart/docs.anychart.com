@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Tree Data Model is a data model in which the data is organized as a hierarchical tree-like structure with data items connected by parent/child relationships.
+The Tree Data Model represents data as a hierarchical tree-like structure with data items connected by parent/child relationships.
 
 It is used in the following chart types:
 
@@ -11,11 +11,11 @@ It is used in the following chart types:
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 
+This article explains how to create a tree data structure and manipulate it: see the [Structure](#structure) and [Data Manipulation](#data_manipulation) sections.
+
+## Creating Tree Data Structure
+
 Data trees in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
-
-This article explains how to organize your data to create a data tree and how to manipulate it: see the [Structure](#structure) and [Data Manipulation](#data_manipulation) sections.
-
-## Structure
 
 To create a data tree, you can arrange your data either [as a tree](#tree) or [as a table](#table).
 
