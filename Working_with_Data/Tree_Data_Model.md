@@ -19,11 +19,11 @@ Tree data structures in Anychart are defined as instances of the {api:anychart.d
 
 Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
-To create an instance of {{api:anychart.data.Tree}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
+To create an instance of {api:anychart.data.Tree}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, the data tree is created implicitly.
 
 ### As Tree
 
-If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass it to the chart constructor.
+If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass the tree to the chart constructor.
 
 You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-tree` parameter.
 
@@ -61,7 +61,7 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass it to the chart constructor.
+If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class. Then pass the tree to the chart constructor.
 
 You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-table` parameter.
 
