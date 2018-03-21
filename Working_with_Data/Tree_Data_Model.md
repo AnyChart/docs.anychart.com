@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Tree Data Model represents data as a hierarchical tree-like structure with data items connected by parent–child relationships.
+The Tree Data Model represents data as a hierarchical tree-like structure with data items connected by parent-child relationships.
 
 It is used in the following chart types:
 
