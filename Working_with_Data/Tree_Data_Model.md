@@ -13,7 +13,7 @@ It is used in the following chart types:
 
 This article explains how to create a tree data structure and manipulate it: see the [Structure](#structure) and [Data Manipulation](#data_manipulation) sections.
 
-## Creating Tree Data
+## Creating Data
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api}, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
