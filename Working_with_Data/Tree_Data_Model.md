@@ -25,7 +25,7 @@ To create an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} e
 
 If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
-You can as well pass your data to the **data()** method of the chart or directly to the chart constructor (also with the `as-tree` parameter).
+You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-tree` parameter.
 
 The choice of data fields depends on the chart type. But `children` is always required – it is used to specify the hierarchy of elements:
 
@@ -63,7 +63,7 @@ var chart = anychart.treeMap(treeData);
 
 If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter to create an instance of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class. Then pass it to the chart constructor.
 
-You can as well pass your data to the **data()** method of the chart or directly to the chart constructor (also with the `as-table` parameter).
+You can as well pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-table` parameter.
 
 The choice of data fields depends on the chart type. But `id` and `parent` are always required – they are used to specify the hierarchy of elements:
 
