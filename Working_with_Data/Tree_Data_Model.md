@@ -130,6 +130,8 @@ treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 
 To learn more, you can look at samples in the subsections below, since these methods are used in most of them.
 
+**Note:** Another way to address data items is using the methods described in the [Searching](#searching) subsection.
+
 ### Reading
 
 You can read the value of an item's data field with a given name: use the {api:anychart.data.Tree.DataItem#get}get(){api} method of {api:anychart.data.Tree class}anychart.data.Tree{api}. It can be called on any data item, including a root element.
