@@ -17,7 +17,7 @@ This article explains how to create a tree data structure, pass it to a chart, a
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree class}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is interpreted by the component, and an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} is created.
+Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} is created.
 
 To create an instance of {api:anychart.data.Tree class}anychart.data.Tree{api} explicitly, pass the data to the {api:anychart.data#tree}anychart.data.tree(){api} method. If you pass the data to the **data()** method of the chart or directly to the chart constructor, it is created implicitly.
 
@@ -105,9 +105,9 @@ You can perform the following data operations (including CRUD):
 
 **Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
-### Reading
+There are several methods allowing you to address data items, which is very often required when you manipulate data.
 
-To read data at the root level, use the following methods of {api:anychart.data.Tree class}anychart.data.Tree{api}:
+To address items at the root level, use the following methods of the {api:the anychart.data.Tree class}anychart.data.Tree{api} class:
 
 * {api:anychart.data.Tree#getChildAt}getChildAt(){api} – returns a root item with a given index
 * {api:anychart.data.Tree#getChildren}getChildren(){api} - returns an array containing all children of a root item with a given index
@@ -121,7 +121,6 @@ To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.
 * {api:anychart.data.Tree.DataItem#numChildren}numChildren(){api} – returns the number of an item's children
 * {api:anychart.data.Tree.DataItem#getParent}getParent(){api} – returns the parent of an item
 * {api:anychart.data.Tree.DataItem#indexOfChild}indexOfChild(){api} – returns (?)
-* {api:anychart.data.Tree.DataItem#get}get(){api} – returns the value of an item's data field with a given name
 
 For example, that is how you get the 6th child of the 3rd child of the first root item:
 
@@ -129,7 +128,13 @@ For example, that is how you get the 6th child of the 3rd child of the first roo
 treeData.getChildAt(0).getChildAt(2).getChildAt(5);
 ```
 
-In the sample below, the number of the root item's children and the name of the last child are displayed in the title of the chart:
+To learn more, you can look at samples in the subsections below, since these methods are used in most of them.
+
+### Reading
+
+To read data, use the {api:anychart.data.Tree.DataItem#get}get(){api method of {api:anychart.data.Tree class}anychart.data.Tree{api}. It returns the value of an item's data field with a given name.
+
+In the sample below, this method is used to display the name of the last child in the title of the chart:
 
 ```
 // get the number of children
