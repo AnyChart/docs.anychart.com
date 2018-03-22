@@ -131,7 +131,7 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-You can read the value of an item's data field with a given name: [access](#accessing_items) an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
+You can read the value of an item's data field with a given name: [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and use the {api:anychart.data.Tree.DataItem#get}get(){api} method.
 
 In the sample below, this method is used to display the name of the last child in the title of the chart:
 
@@ -145,9 +145,9 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. Please note that the second method adds an item with a given index.
+You can add a root item to your data: [access](#accessing_items) the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. Please note that the second method adds an item with a given index.
 
-To add a child element to a data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
+To add a child element to a data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 ```
 var itemCount = 1;
@@ -163,7 +163,7 @@ function addItem(){
 
 You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
-**Note:** In Treemap charts only one root element can be displayed, so using this method does not change the way a Treemap looks, though the data is updated anyway.
+**Note:** Only one root element can be displayed on the Treemap chart, so using this method does not change the way the Treemap looks, though the data is updated anyway.
 
 Here is a Sunburst chart with a button adding two root nodes at a time:
 
@@ -188,7 +188,7 @@ function addItems(){
 
 ### Updating
 
-To update a data field of an item, [access](#accessing_items) an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(){api}. Use the name of the field and a new value as parameters:
+To update a data field of an item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#set}set(){api}. Use the name of the field and a new value as parameters:
 
 ```
 // update the first child
@@ -206,13 +206,13 @@ function updateItem(){
 
 ### Removing
 
-To remove root items from your data, [access](#accessing_items) an instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
+To remove root items from your data, [access](#accessing_items) the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
 
 * {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
 * {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
 * {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
 
-To remove a child of a data item, access an instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
+To remove a child of a data item, access the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
 
 * {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} – removes a child
 * {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
