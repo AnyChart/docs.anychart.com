@@ -92,7 +92,7 @@ var chart = anychart.treeMap(treeData);
 
 ## Accessing Items
 
-Data items in AnyChart are defined as instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class. If you need to access them, you can either [search](#searching) for them or call special methods of {api:anychart.data.Tree}anychart.data.Tree{api} and {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
+Data items in AnyChart are defined as instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class. If you need to access them, you can either [search](#searching) for them or call special methods.
 
 To access items at the root level, use the following methods of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
