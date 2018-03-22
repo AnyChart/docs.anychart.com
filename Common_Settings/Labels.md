@@ -185,10 +185,10 @@ series.maxLabels(true);
 
 // set positions
 series.maxLabels().position("open");
-series.minLabels().position("close");
+series.minLabels().position("center-bottom");
 ```
 
-*Note 1*: you can choose the position where label is located for multi-value series like candlestick, ohlc or range area.
+*Note 1*: Besided the usual {api:anychart.enums.Position}positions{api} you can choose the value-based position where label is located for multi-value series like candlestick, ohlc or range area.
 
 *Note 2*: Minimum and maximum labels are shown in the selected range.
 
