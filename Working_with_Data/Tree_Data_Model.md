@@ -17,7 +17,7 @@ This article explains how to create a tree data structure, pass it to a chart, a
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-Your data can be arranged either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created – see the subsections below to learn more.
+To create a chart based on tree-like data, you should organize your data either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created – see the subsections below to learn more.
 
 ### As Tree
 
