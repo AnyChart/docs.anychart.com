@@ -195,7 +195,7 @@ Here is a live sampe:
 The same can be done with X-scales if needed:
 
 ```
-// sync minimums and maximums of the scales
+// sync minimum and maximum values of the scales
 globalMax = chart.getStat("xScalesMax");
 globalMin = chart.getStat("xScalesMin");
 // get all y scales

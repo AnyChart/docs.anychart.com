@@ -39,8 +39,8 @@ anychart.onDocumentReady(function () {
 
     // set listener on chart
     chart.listen("pointClick", function(e) {
-e.series.excludePoint(e.pointIndex);
-xZoom.setToPointsCount(15);
+        e.series.excludePoint(e.pointIndex);
+        xZoom.setToPointsCount(15);
     });
 
     // change the scroller orientation
@@ -52,7 +52,7 @@ xZoom.setToPointsCount(15);
     // autoHide the scroller
     chart.xScroller().autoHide("true");
 
-    // define chart settings
+    // create a chart settings
     chart.xAxis().title("Hours");
     chart.yAxis().title("Support requests");
     chart.title("Amount of support requests by hours");

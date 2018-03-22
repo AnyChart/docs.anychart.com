@@ -44,17 +44,17 @@ anychart.onDocumentReady(function () {
 
     // adding a listener
     chart.xScroller().listen("scrollerchangefinish", function(e){
-var startRatio = e.startRatio;
-var endRatio = e.endRatio;
-// change the chart title
-chart.title("The chart shows the part from " + startRatio + " to " + endRatio);
+        var startRatio = e.startRatio;
+        var endRatio = e.endRatio;
+        // change the chart title
+        chart.title("The chart shows the part from " + startRatio + " to " + endRatio);
     });
 
     // create a series
     var series = chart.line(getData());
     series.name("Total support requests");
 
-    // define chart settings
+    // create a chart settings
     chart.xAxis().title("Hours");
     chart.yAxis().title("Support requests");
 

@@ -25,30 +25,29 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  // defining chart type
+  // create a line chart
   var chart = anychart.line();
 
-  // title setter
+  // set chart title
   chart.title("Logarithmic Scale Sample");
 
-  // setting yScale type as logarithmic.
+  // create a logarithmic scale
   var logScale = anychart.scales.log();
-  logScale.minimum(10);
+  // set minimum
+  logScale.minimum(-10);
+  // set logarithmic scale as primary y scale
   chart.yScale(logScale);
 
-  // y axis title setter
-  var yAxis = chart.yAxis();
-  yAxis.title("This Axis Has 'Logarithmic' Type");
-
-  // setting data
+  // create spline series
   chart.spline([
     ["A", 637166],
     ["B", 721630],
     ["C", 1000],
-    ["D", 78],
+    ["D", -8],
     ["E", 90]
   ]);
 
+  // display a chart
   chart.container("container");
   chart.draw();
 });
