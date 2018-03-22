@@ -233,6 +233,10 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.
 
+These methods accept three parameters: the name of a data field, a value, and a comparison function. The function is optional: you can just search for an item with a given value of a given data field. Also, please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array (which is the only difference between them).
+
+The following sample shows how to perform a search with a comparison function – it is used to find items with values greater than a given number. The names of these items are displayed in the title of the chart, and the fill color of their nodes is changed:
+
 ```
 // a comparison function
 function comparisonFunction(fieldValue, comparisonValue) {
