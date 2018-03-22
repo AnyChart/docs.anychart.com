@@ -272,7 +272,7 @@ function searchValues(){
 
 {sample}WD\_Data\_Tree\_08{sample}
 
-In the next sample, the {api:anychart.data.Tree#search}search(){api} method is used to find an item, and the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap chart is used to drill down to this item:
+In the next sample, the {api:anychart.data.Tree#search}search(){api} method is used to find an item with a certain name, and the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap chart is used to drill down to it:
 
 ```
 /* locate an item in the data tree
