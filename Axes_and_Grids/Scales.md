@@ -40,7 +40,7 @@ A logarithmic scale is a scale of measurement that uses the logarithm of a physi
 chart.yScale(anychart.scales.log());
 ```
 
-In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**, **E = 90**.
+**Note:** AnyChart supports negative values on logarithmic scales.
 
 {sample}AGST\_Scales\_02{sample}
 
