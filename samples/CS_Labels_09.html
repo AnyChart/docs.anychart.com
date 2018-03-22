@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    mapping = dataTable.mapAs({value: 5});
+    mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -47,13 +47,17 @@ anychart.onDocumentReady(function () {
     chart.padding().left(80);
 
     // create a series
-    var series = chart.plot(0).line(mapping);
+    var series = chart.plot(0).ohlc(mapping);
     // enable minimum and maximum labels for a series
     series.minLabels(true);
     // and change format for minLabels
-    series.minLabels().format("{%Value}");
+    series.minLabels().format("{%Low}");
     // leave the maxLabels format default
     series.maxLabels(true);
+  
+    // set positions
+    series.maxLabels().position("open");
+    series.minLabels().position("close");
 
     // set the container id
     chart.container("container");

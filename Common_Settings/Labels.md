@@ -174,14 +174,23 @@ Here are a couple of samples that show how these methods can be applied.
 To show labels only for maximal and minimal points on a [stock chart](../Stock_Charts/Overview) use code like this:
 
 ```
-var series = plot.line(mapping);
+// create a series
+var series = chart.plot(0).ohlc(mapping);
 // enable minimum and maximum labels for a series
 series.minLabels(true);
 // and change format for minLabels
-series.minLabels().format("{%Value}");
+series.minLabels().format("{%Low}");
 // leave the maxLabels format default
 series.maxLabels(true);
+
+// set positions
+series.maxLabels().position("open");
+series.minLabels().position("close");
 ```
+
+*Note 1*: you can choose the position where label is located for multi-value series like candlestick, ohlc or range area.
+
+*Note 2*: Minimum and maximum labels are shown in the selected range.
 
 {sample}CS\_Labels\_09{sample}
 
@@ -193,11 +202,11 @@ series = chart.column(data);
 
 // configure min and max labels
 series.normal().maxLabels(true);
-series.normal().maxLabels().fontColor("Red");
+series.normal().maxLabels().fontColor("red");
 series.hovered().maxLabels().fontSize(16);
 
 series.normal().minLabels(true);  
-series.normal().minLabels().fontColor("Green");
+series.normal().minLabels().fontColor("green");
 series.hovered().minLabels().fontSize(16);
 ```
 
