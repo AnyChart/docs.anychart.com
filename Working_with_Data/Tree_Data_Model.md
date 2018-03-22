@@ -161,7 +161,7 @@ function addItem(){
 
 {sample}WD\_Data\_Tree\_04{sample}
 
-You can also add a several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
+You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
 **Note:** In Treemap charts only one root element can be displayed, so using this method does not change the way a Treemap looks, though the data is updated anyway.
 
