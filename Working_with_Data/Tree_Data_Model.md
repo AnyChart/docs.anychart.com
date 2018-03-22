@@ -231,11 +231,11 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 ### Searching
 
-To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.
+To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.  Please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array, which is the only difference between them.
 
-These methods accept three parameters: the name of a data field, a value, and a comparison function. The function is optional: you can just search for an item with a given value of a given data field. Also, please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array (which is the only difference between them).
+These methods accept three parameters: the name of a data field, a value, and a comparison function. The function is optional: you can just search for an item with a given value of a given data field.
 
-The following sample shows how to perform a search with a comparison function – it is used to find items with values greater than a given number. The names of these items are displayed in the title of the chart, and the fill color of their nodes is changed:
+The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function – it is used to find items with values greater than a given number. The names of these items are displayed in the title of the chart, and the fill color of their nodes is changed:
 
 ```
 // a comparison function
@@ -262,10 +262,17 @@ function searchValues(){
   };
   if (items.length == 0)
     text = "(none)";
+
+  // update the chart title
+  chart.title("Tree Data Model: Searching<br><br>" +
+              "<span style = 'color:#990000'>" +
+              text.substr(0, text.length - 2) + "</span>");
 };
 ```
 
 {sample}WD\_Data\_Tree\_08{sample}
+
+In the next sample, the {api:anychart.data.Tree#search}search(){api} method is used to find an item, and the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap chart is used to drill down to this item:
 
 ```
 /* locate an item in the data tree
