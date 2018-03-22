@@ -145,9 +145,11 @@ var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
 ### Adding
 
-You can add a root item to your data: [access](#accessing_items) the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on it. Please note that the second method adds an item with a given index.
+You can add a root item to your data: call the {api:anychart.data.Tree#addChild}addChild(){api} or {api:anychart.data.Tree#addChildAt}addChildAt(){api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Please note that the second method adds an item with a given index.
 
-To add a child element to a data item, call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
+
+[access](#accessing_items)
+To add a child element to a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on it:
 
 ```
 var itemCount = 1;
@@ -206,13 +208,13 @@ function updateItem(){
 
 ### Removing
 
-To remove root items from your data, [access](#accessing_items) the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and call one of the following methods:
+To remove root items from your data, call one of the following methods on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}:
 
 * {api:anychart.data.Tree#removeChild}removeChild(){api} – removes a root
 * {api:anychart.data.Tree#removeChildAt}removeChildAt(){api} – removes a root with a given index
 * {api:anychart.data.Tree#removeChildren}removeChildren(){api} – removes all roots 
 
-To remove a child of a data item, access the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
+To remove a child of a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call one of these methods:
 
 * {api:anychart.data.Tree.DataItem#removeChild}removeChild(){api} – removes a child
 * {api:anychart.data.Tree.DataItem#removeChildAt}removeChildAt(){api} – removes a child with a given index
@@ -228,6 +230,8 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 {sample}WD\_Data\_Tree\_07{sample}
 
 ### Searching
+
+To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.
 
 ```
 // a comparison function
