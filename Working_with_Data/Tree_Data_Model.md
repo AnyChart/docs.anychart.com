@@ -11,7 +11,7 @@ It is used in the following chart types:
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 
-This article explains how to create a tree data structure, pass it to a chart, and manipulate it: see the [Setting Data](#setting_data) and [Data Manipulation](#data_manipulation) sections.
+This article explains how to set tree-like data, access data items, and perform data operations: see the [Setting Data](#setting_data), [Accessing Items](#accessing_items), and [Data Manipulation](#data_manipulation) sections.
 
 ## Setting Data
 
