@@ -320,9 +320,9 @@ while (traverser.advance()) {
 };
 ```
 
-In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all nodes. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
-
 {sample}WD\_Data\_Tree\_10{sample}
+
+In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
 ```
 // get the traverser of a tree
