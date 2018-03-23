@@ -249,6 +249,6 @@ See also polar and radar stacked charts:
 Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Mekko_Chart) articles to learn how to build them with AnyChart.
 
 * [Mekko Chart](../Marimekko_Chart/Mekko_Chart)
-* [BarMekko Chart](../Marimekko_Chart/BarMekko_Chart)
+* [Bar Mekko Chart](../Marimekko_Chart/Bar_Mekko_Chart)
 * [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart)
 

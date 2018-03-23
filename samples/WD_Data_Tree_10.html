@@ -83,12 +83,9 @@ anychart.onDocumentReady(function () {
 
     // display the names of all data items in the tree
     while (traverser.advance()) {
-
-      // display the name of the current item
       var newElement = document.createElement("li");
       newElement.innerText = traverser.get("name");
       treeInfo.appendChild(newElement);
-
     };
 
     // set the chart title

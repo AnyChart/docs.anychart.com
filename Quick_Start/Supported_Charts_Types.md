@@ -11,7 +11,7 @@ with links to tutorials where you can find out how to create them.
 <tr><th>Name</th></tr>
 <tr><td>[Area Chart](../Basic_Charts/Area_Chart)</td></tr>
 <tr><td>[Bar Chart](../Basic_Charts/Bar_Chart)</td></tr>
-<tr><td>[BarMekko Chart](../Basic_Charts/Marimekko_Chart/BarMekko_Chart)</td></tr>
+<tr><td>[Bar Mekko Chart](../Basic_Charts/Marimekko_Chart/Bar_Mekko_Chart)</td></tr>
 <tr><td>[Box Chart](../Basic_Charts/Box_Chart)</td></tr>
 <tr><td>[Bubble Chart](../Basic_Charts/Bubble_Chart)</td></tr>
 <tr><td>[Bullet Chart](../Basic_Charts/Bullet_Chart)</td></tr>
@@ -75,7 +75,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Treemap Chart](../Basic_Charts/Treemap_Chart)</td></tr>
 <tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
-<tr><td>[Vertical BarMekko Chart](../Basic_Charts/Vertical/BarMekko_Chart)</td></tr>
+<tr><td>[Vertical Bar Mekko Chart](../Basic_Charts/Vertical/Bar_Mekko_Chart)</td></tr>
 <tr><td>[Vertical Bubble Chart](../Basic_Charts/Vertical/Bubble_Chart)</td></tr>
 <tr><td>[Vertical HiLo Chart](../Basic_Charts/Vertical/HiLo_Chart)</td></tr>
 <tr><td>[Vertical Jump Line Chart](../Basic_Charts/Vertical/Jump_Line_Chart)</td></tr>

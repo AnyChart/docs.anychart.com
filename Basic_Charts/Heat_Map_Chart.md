@@ -24,7 +24,7 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Treemap](TreeMap_Chart)</td></tr>
+<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Heat Map Chart](https://www.anychart.com/chartopedia/chart-types/heatmap/)</td></tr>
