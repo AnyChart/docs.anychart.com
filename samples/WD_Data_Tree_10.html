@@ -84,13 +84,9 @@ anychart.onDocumentReady(function () {
     // display the names of all data items in the tree
     while (traverser.advance()) {
 
-      /* get the current item
-      as an instance of the dataItem class */
-      var dataItem = traverser.current();
-
       // display the name of the current item
       var newElement = document.createElement("li");
-      newElement.innerText = dataItem.get("name");
+      newElement.innerText = traverser.get("name");
       treeInfo.appendChild(newElement);
 
     };

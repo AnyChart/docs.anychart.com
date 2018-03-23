@@ -272,7 +272,7 @@ function searchValues(){
 
 {sample}WD\_Data\_Tree\_08{sample}
 
-In the next sample, the {api:anychart.data.Tree#search}search(){api} method is used to find an item with a certain name, and the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap chart is used to drill down to it:
+In the next sample, {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
 ```
 /* locate an item in the data tree
@@ -287,6 +287,23 @@ chart.drillTo(item);
 
 ### Traversing
 
+Traversing is a process of going through all the items of the tree. You can [access](#accessing_items) them directly, but AnyChart offers an easier and faster out-of-box solution.
+
+To perform a traversal, use the {api:anychart.data.Tree#getTraverser}getTraverser(){api} method to obtain the {api:anychart.data.Traverser}anychart.data.Traverser{api} object. Then call its methods:
+
+* {api:anychart.data.Traverser#advance}advance(){api} – advances the traverser to the next data item
+* {api:anychart.data.Traverser#current}current(){api} – returns the current item
+* {api:anychart.data.Traverser#get}get(){api} – returns the current item's value in a given data field
+* {api:anychart.data.Traverser#getDepth}getDepth(){api} – returns the depth of the current item
+* {api:anychart.data.Traverser#}{api} – sets/gets the meta value of the current item
+* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets/gets a function that determines whether an item is returned
+* {api:anychart.data.Traverser#set}set(){api} – sets the value of the current item in a given data field
+* {api:anychart.data.Traverser#reset}reset(){api} – resets the traverser to its default position before the first item
+* {api:anychart.data.Traverser#toArray}toArray(){api} – returns the current traverser as an array of data items
+* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets/gets a function that determines whether the traverser goes through the children of an item
+
+In the sample below the {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#get}get(){api} methods are used to display the names of all data items:
+
 ```
 // get the traverser of a tree
 var traverser = treeData.getTraverser();
@@ -297,18 +314,13 @@ var treeInfo = document.getElementById("treeInfo");
 
 // display the names of all data items in the tree
 while (traverser.advance()) {
-
-  /* get the current item
-  as an instance of the dataItem class */
-  var dataItem = traverser.current();
-
-  // display the name of the current item
   var newElement = document.createElement("li");
-  newElement.innerText = dataItem.get("name");
+  newElement.innerText = traverser.get("name");
   treeInfo.appendChild(newElement);
-
 };
 ```
+
+In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all nodes. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
 {sample}WD\_Data\_Tree\_10{sample}
 
