@@ -11,7 +11,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[children, id, name, parent, size, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[id, parent, children, name, size, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -28,7 +28,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td></td><td>[Marimekko](Marimekko_Chart/Mekko_Chart)</td></tr>
 <tr><td></td><td>[Venn](Venn_Diagram)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/treemap/" target="_blank">Chartopedia: Treemap Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Treemap Chart](https://www.anychart.com/chartopedia/chart-types/treemap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -79,16 +79,18 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Use the following data fields to create data for a Treemap chart:
 
-* `children` to set children
 * `id` to set unique identifiers
-* `name` to set names
 * `parent` to set parents
+* `children` to set children
+* `name` to set names
 * `size` to set sizes
 * `value` to set values
 
-**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note 1:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Using_Data_Tree_Model) or [as a table](../Working_with_Data/Using_Table_Data_Model).
+**Note 2:** A Treemap chart can have only one root element.
+
+There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Tree_Data_Model#as_tree) or [as a table](../Working_with_Data/Tree_Data_Model#as_table).
 
 #### Tree Structure
 
@@ -220,7 +222,7 @@ chart.hintOpacity(0.7);
 
 By default, tiles of Treemaps are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
 
-To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the three parameters:
+To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
 
 * `"desc"` (default)
 * `"asc"`
@@ -258,7 +260,7 @@ In this sample, there is a Treemap chart with appearance settings configured:
 chart.hovered().fill("gray", 0.4);
 chart.selected().fill("gray", 0.6);
 chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-chart.stroke("gray");
+chart.normal().stroke("gray");
 chart.hovered().stroke("gray");
 chart.selected().stroke("gray", 2);
 ```
@@ -283,19 +285,10 @@ var data = [
     {name: "Spain",          value: 46070146, fill: "#ff9933"},
     {name: "United Kingdom", value: 65511098, fill: "#ff6600"},
     {name: "Germany",        value: 80636124,
-     normal:   {
-                 fill: "#ff0000",
-                 stroke: "4 #b30059",
-               },
-     hovered:  {
-                 fill: "#ff0000",
-                 stroke: "5 white"
-               },
-     selected: {
-                 fill: "#b30059",
-                 stroke: "5 white"
-               }
-    }  
+     normal:   {fill: "#ff0000", stroke: "4 #b30059"},
+     hovered:  {fill: "#ff0000", stroke: "5 white"},
+     selected: {fill: "#b30059", stroke: "5 white"}
+    }
   ]} 
 ];
 
@@ -477,8 +470,8 @@ chart.labels().format(function (){
 // configure tooltips
 chart.tooltip().format(function (){
   var population = Math.round(this.value/100000)/10;
-  return "population: " + population + " mln" +
-         "\ncapital: " + this.getData("capital");
+  return "population: " + population +
+         " mln\ncapital: " + this.getData("capital");
 });
 ```
 
@@ -535,7 +528,7 @@ chart.hovered().headers().fontColor("#000099");
 
 The following sample demonstrates how to disable/enable headers; their text is customized in the hovered state, and font settings are changed in all states:
 
-{sample :height 525}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 535}BCT\_Treemap\_Chart\_14{sample}
 
 #### Individual Headers
 
@@ -581,20 +574,20 @@ chart = anychart.treeMap(data, "as-tree");
 
 #### Display Mode
 
-By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the three parameters:
+By default, the text of a header is not shown if it does not fit its height. However, you can hide such text or always show the text of headers. To set the display mode of headers, call the {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode{api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
-* `"drop"` (default)
+* `"alwaysShow"` (default)
 * `"clip"`
-* `"alwaysShow"`
+* `"drop"`
 
-The sample below shows how to change the display mode, which is initially set to "drop":
+The sample below shows how to change the display mode, which is initially set to `"drop"`:
 
 ```
 // set the display mode of headers
 chart.headersDisplayMode("drop");
 ```
 
-{sample}BCT\_Treemap\_Chart\_16{sample}
+{sample :height 525}BCT\_Treemap\_Chart\_16{sample}
 
 ### Interactivity
 
@@ -602,9 +595,9 @@ chart.headersDisplayMode("drop");
 
 The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified.
 
-**Note** It is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, either of these options is available for the element).
+**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
-When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method might be helpful. It requires your data to be organized in a special way: use the [data tree model](../Working_with_Data/Using_Data_Tree_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
+When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [tree data model](../Working_with_Data/Tree_Data_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
 
 ```
 // get data
@@ -620,9 +613,10 @@ chart = anychart.treeMap(treeData);
 If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
 
 ```
-/* locate an item in the data tree,
-get the item as an object*/
+/* locate an item in the data tree
+and get it as an object */
 var item = treeData.search("name", "Lvl 3-4");
+
 // drill down to the item
 chart.drillTo(item);
 

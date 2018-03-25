@@ -19,18 +19,22 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<button onclick="sortingMode('asc')">Ascending</button>
-<button onclick="sortingMode('desc')">Descending</button>
-<button onclick="sortingMode('none')">No Sorting</button>   
+<label><input onclick="sortingMode('desc')" type="radio" name="mode" checked>Descending</label>
+<label><input onclick="sortingMode('asc')" type="radio" name="mode">Ascending</label> 
+<label><input onclick="sortingMode('none')" type="radio" name="mode">No Sorting</label> 
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -56,10 +60,11 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Sorting Order = " +
-        chart.sort() + "<br><br>" + 
-        "<span style='font-size:12; font-style:italic'>" +
-        "Top 10 European Union Countries by Population</span>");
+    chart.listen("chartDraw", function () {
+      chart.title("Treemap: Sorting Order = " + chart.sort() +
+                  "<br><br><span style='font-size:12; font-style:italic'>" +
+                  "Top 10 European Union Countries by Population</span>");
+    });
 
     // set the container id
     chart.container("container");
@@ -71,11 +76,6 @@ anychart.onDocumentReady(function () {
 // set the sorting mode
 function sortingMode(mode){
   chart.sort(mode);
-  // update the chart title
-  chart.title("Treemap: Sorting Order = " +
-      chart.sort() + "<br><br>" + 
-      "<span style='font-size:12; font-style:italic'>" +
-      "Top 10 European Union Countries by Population</span>");
 };
 </script>
 </body>

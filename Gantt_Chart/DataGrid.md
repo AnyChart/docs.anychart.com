@@ -53,7 +53,7 @@ You can create and display custom fields in data items:
 
 ### Title
 
-Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
+Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g., set the custom title value:
 
 ```
 //set title values

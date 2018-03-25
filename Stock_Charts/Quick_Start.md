@@ -30,7 +30,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 When you work with AnyStock, you need to use {api:anychart.data#table}anychart.data.table(){api} and {api:anychart.data.Table#addData}addData(){api} before you load data into a chart.
 
-Putting data into an instance of {api:anychart.data.Table}anychart.data.Table{api} object allows to index that data and perform a lot of manipulations. Please see [Data Table](../Working_with_Data/Using_Table_Data_Model) to learn more.
+Putting data into an instance of {api:anychart.data.Table}anychart.data.Table{api} object allows to index that data and perform a lot of manipulations. Please see [Table Data Model](../Working_with_Data/Table_Data_Model) to learn more.
 
 ```
 table = anychart.data.table();

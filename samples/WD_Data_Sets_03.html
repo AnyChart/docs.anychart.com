@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Using Data Sets 01"/>
+    <meta name="ac:name" content="WD Data Sets 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -24,26 +24,29 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
-  var data = [
-    // column 0
-    28,   // row 0
-    26,   //    1
-    27,   //    2
-    "25", //    3
-    "29"  //    4
-  ];
+    var data = [
+// column 0    1    2    3
+["2014/6/25",  28,  23,  25], // row 1
+["2014/6/26",  26,  21,  26], //     2
+["2014/6/27",  27,  19,  26], //     3
+["2014/6/28",  25,  21,  27], //     4
+["2014/6/29",  29,  22,  28], //     5
+["2014/6/30",  28,  25,  27]  //     6
+    ];
 
-  // create a data set  
-  var dataSet = anychart.data.set(data);
+    // create mapping list on one data set
+    var dataMappingList = anychart.data.mapAsTable(data);
 
-  // create a pie chart using the data set
-  var chart = anychart.pie(dataSet);
-
-  // set container id for the chart  
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
+    // create line chart
+    var chart = anychart.line.apply(null, dataMappingList);
+    chart.getSeries(0).name("NY");
+    chart.getSeries(1).name("SF");
+    chart.getSeries(2).name("LA");
+    
+    // set container
+    chart.container("container");
+    // initiate chart drawing
+    chart.draw();
 });
 </script>
 </body>

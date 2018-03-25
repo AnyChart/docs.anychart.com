@@ -3,9 +3,9 @@
 
 ## Overview
 
-<a href="http://www.marimekko.com/" target="_blank">Marimekko</a> is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
+[Marimekko](https://www.marimekko.com/) is a Finnish home furnishings, textiles and fashion company. It made important contributions to fashion in the 1960s. It is particularly noted for its brightly colored printed fabrics and simple styles, used both in women's garments and in home furnishings. Marimekko designers created hundreds of distinctive patterns and helped to make Marimekko a household name across the world.
 
-The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a <a href="https://www.google.ru/search?q=Marimekko+print&tbm=isch" target="_blank">Marimekko print</a>. The chart's design encodes two variables (such as the percentage of sales and market share).
+The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a [Marimekko print](https://www.google.ru/search?q=Marimekko+print&tbm=isch). The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -30,9 +30,9 @@ The Marimekko name has been adopted within business and the management consultan
 <tr><td></td><td>[Bar Chart](../Bar_Chart)</td></tr>
 <tr><td></td><td>[Stacked Charts](../Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mekko-chart/" target="_blank">Chartopedia: Marimekko Mekko Chart</a></td></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/barmekko-chart/" target="_blank">Chartopedia: Marimekko Bar Mekko Chart</a></td></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/mosaic-chart/" target="_blank">Chartopedia: Marimekko Mosaic Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Marimekko Mekko Chart](https://www.anychart.com/chartopedia/chart-types/mekko-chart/)</td></tr>
+<tr><td></td><td>[Chartopedia: Marimekko Bar Mekko Chart](https://www.anychart.com/chartopedia/chart-types/barmekko-chart/)</td></tr>
+<tr><td></td><td>[Chartopedia: Marimekko Mosaic Chart](https://www.anychart.com/chartopedia/chart-types/mosaic-chart/)</td></tr>
 <tr><td></td><td>[General Settings](../General_Settings)</td></tr>
 </table>
 

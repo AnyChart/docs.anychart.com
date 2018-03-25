@@ -33,7 +33,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td></td><td>[Polyline](Polyline_Chart)</td></tr>
 
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/line-chart/" target="_blank">Chartopedia: Line Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Line Chart](https://www.anychart.com/chartopedia/chart-types/line-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

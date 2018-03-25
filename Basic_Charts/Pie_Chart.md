@@ -28,7 +28,7 @@ This article explains how to create a basic Pie chart as well as configure setti
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/pie-chart/" target="_blank">Chartopedia: Pie Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Pie Chart](https://www.anychart.com/chartopedia/chart-types/pie-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -165,7 +165,7 @@ chart.fill("aquastyle");
 
 ### Start Angle
 
-You can set the start angle of the first slice by using the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
+You can set the angle where the first slice is placed – use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
 
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
@@ -178,13 +178,19 @@ pie2.startAngle(90);
 
 ### Sorting Order
 
-In AnyChart you can sort the slices of a Pie chart in an ascending or descending order with the {api:anychart.charts.Pie#sort}sort(){api} method. Use `"asc"`, `"desc"`, or `"none"` as a parameter (the default sorting mode is "none"):
+By default, slices are sorted in descending order according to their values. You can sort them in ascending order or disable sorting.
+
+To set the sorting mode, call the {api:anychart.charts.Pie#sort}sort(){api} method with one of the parameters listed in {api:anychart.enums.Sort}anychart.enums.Sort{api}:
+
+* `"desc"` (default)
+* `"asc"`
+* `"none"`
 
 ```
 // set the sorting mode
-pie1.sort("none");
+pie1.sort("desc");
 pie2.sort("asc");
-pie3.sort("desc");
+pie3.sort("none");
 ```
 
 {sample}BCT\_Pie\_Chart\_07{sample}

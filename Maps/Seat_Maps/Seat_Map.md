@@ -70,7 +70,7 @@ anychart.onDocumentLoad(function () {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-Take a look at the <a href="https://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
+Take a look at the [AnyChart Seat Map sample](https://www.anychart.com/demos/seatmap/html-dom-embed.html) with an SVG file loaded from the HTML DOM.
 
 ## Mapping Data
 

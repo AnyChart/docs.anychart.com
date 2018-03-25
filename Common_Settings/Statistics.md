@@ -17,7 +17,7 @@ In the following sample, the {api:anychart.core.Chart#getStat}getStat(){api} met
 
 {sample}CS\_Statistics\_01{sample}
 
-You can call {api:anychart.core.Chart#getStat}getStat(){api} on the instances of three types of classes: charts, series, and points. Further we will consider the basics of how the method works with each type.
+You can call {api:anychart.core.Chart#getStat}getStat(){api} on instances of three types of classes: charts, series, and points. Further we will consider the basics of how the method works with each type.
 
 ## Chart
 

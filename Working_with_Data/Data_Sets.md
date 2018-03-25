@@ -1,5 +1,5 @@
 {:index 2}
-# Using Data Sets
+# Data Sets
 
 ## Why do we need Data Sets?
 
@@ -142,7 +142,7 @@ chart = anychart.pie([
 chart.container('container').draw();
 ```
 
-{sample}WD\_Using\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_01{sample}
 
 ### Object
 
@@ -174,7 +174,7 @@ lineChart.getSeries(0).name('New York');
 lineChart.draw();
 ```
 
-{sample}WD\_Using\_Data\_Sets\_02{sample}
+{sample}WD\_Data\_Sets\_02{sample}
 
 In this sample we specified the columns' names, the name of the chart and of the line and marked the lowest and the highest values.
 
@@ -211,7 +211,7 @@ lineChart.container('container');
 lineChart.draw();
 ```
 
-{sample}WD\_Using\_Data\_Sets\_03{sample}
+{sample}WD\_Data\_Sets\_03{sample}
 
 ## Data Mapping
 
@@ -240,4 +240,4 @@ var colChart = anychart.column(dataMappingList[0], dataMappingList[1], dataMappi
 
 This is a sample that utilized data mapping to show data in two different ways:
 
-{sample}WD\_Using\_Data\_Sets\_04{sample}
+{sample}WD\_Data\_Sets\_04{sample}

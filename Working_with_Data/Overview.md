@@ -14,15 +14,15 @@ There are single-series charts, like [Pie Chart](../Basic_Charts/Pie_Chart) or [
 
 ## Mapping Data Sets
 
-AnyChart [Data Sets](Using_Data_Sets) mechanism allows you to solve a number of tasks, like being able to plug in data from external CSV or JSON formatted sources without having to adapt format or being able to show different or same columns from the raw data source in different ways. Please see:
-- [Using Data Sets](Using_Data_Sets) article to learn more about this.
+AnyChart [Data Sets](Data_Sets) mechanism allows you to solve a number of tasks, like being able to plug in data from external CSV or JSON formatted sources without having to adapt format or being able to show different or same columns from the raw data source in different ways. Please see:
+- [Data Sets](Data_Sets) article to learn more about this.
 
 ## Data Models
 
 AnyChart Data engine is very flexible and it has several data models inside, these models are used in different chart types for the purpose of being as robust and comfortable to use as possible, please see:
-- [Using Data Tree Model](Using_Data_Tree_Model) to learn how hierarchical data is used in [Gantt Charts](../Gantt_Chart/Quick_Start) and [Treemaps](../Basic_Charts/Treemap_Chart),
-- [Using Table Data Model](Using_Table_Data_Model) to learn how to work with big date time based datasets in [Stock Charts](../Stock_Charts/Overview),
-- [Using Data Sets](Using_Data_Sets) and [AnyChart Data Streaming and Manipulation (CRUD)](Data_Manipulation) to learn how [most of AnyChart Charts](../Quick_Start/Supported_Charts_Types) work with the data.
+- [Tree Data Model](Tree_Data_Model) to learn how hierarchical data is used in [Gantt Charts](../Gantt_Chart/Quick_Start) and [Treemaps](../Basic_Charts/Treemap_Chart),
+- [Table Data Model](Table_Data_Model) to learn how to work with big date time based datasets in [Stock Charts](../Stock_Charts/Overview),
+- [Data Sets](Data_Sets) and [AnyChart Data Streaming and Manipulation (CRUD)](Data_Manipulation) to learn how [most of AnyChart Charts](../Quick_Start/Supported_Charts_Types) work with the data.
 
 ## Data Formats
 

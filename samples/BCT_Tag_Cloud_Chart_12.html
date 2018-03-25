@@ -19,17 +19,21 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<button onclick="tagCloudMode('rect')">Rectangle Mode</button>
-<button onclick="tagCloudMode('spiral')">Spiral Mode</button>
+<label><input onclick="tagCloudMode('spiral')" type="radio" name="type" checked>Spiral Mode</label>
+<label><input onclick="tagCloudMode('rect')" type="radio" name="type">Rectangle Mode</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

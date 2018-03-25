@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart JavaScript charting framework supports several ways of setting data. For the information about this see [Overview](../Overview), [Using Data Sets](../Using_Data_Sets) and [Supported Data Formats](../Supported_Data_Formats) articles - these are things built-in into AnyChart core engine.
+AnyChart JavaScript charting framework supports several ways of setting data. For the information about this see [Overview](../Overview), [Data Sets](../Data_Sets) and [Supported Data Formats](../Supported_Data_Formats) articles - these are things built-in into AnyChart core engine.
 
 Data Adapter is an additional script that can do even more: load [CSV](#csv_file), [JSON](#json_file) and [XML](#xml_file) files, load [data from HTML Tables](#html_tables) and [Google Spreadsheets](#google_spreadsheet).
 

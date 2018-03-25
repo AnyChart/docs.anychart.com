@@ -5,7 +5,7 @@
 
 A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
-The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
+The radar chart is otherwise known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
 
 This article explains how to create and configure radar charts. To find out which series can be drawn on a radar chart in AnyChart, see the [Supported Types](#supported_types) section.
 

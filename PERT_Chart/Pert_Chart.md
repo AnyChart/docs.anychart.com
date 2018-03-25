@@ -3,13 +3,13 @@
 
 ## Overview
 
-A PERT Chart (also known as a PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
+A PERT Chart (otherwise known as a PERT Diagram) is a chart type realizes the Project Evaluation and Review Technique technology. It is applied mostly in large-scale projects where time is the major factor and allows to schedule a project without knowing precisely the details and durations of all activities. Find more information about PERT technology and using it in [PERT Overview](Overview).
 
 This article explains how to create a basic Pert Chart as well as configure settings that are specific to the type. 
 
 Pert Chart Data should be arranged as array of objects, where ID's of the tasks are necessary to be created. Extra data can be added if necessary. Read more about setting and managing the data in the [PERT Data](Data) article.
 
-See also: <a href="https://www.anychart.com/chartopedia/chart-types/pert-chart/" target="_blank">Chartopedia: PERT Chart</a>
+See also: [Chartopedia: PERT Chart](https://www.anychart.com/chartopedia/chart-types/pert-chart/).
 
 ## Quick Start
 

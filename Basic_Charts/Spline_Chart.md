@@ -29,7 +29,7 @@ The Line and Spline chart types share all the settings, so this article explains
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
 <tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/spline-chart/" target="_blank">Chartopedia: Spline Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Spline Chart](https://www.anychart.com/chartopedia/chart-types/spline-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

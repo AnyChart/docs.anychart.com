@@ -75,7 +75,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The data [tree](../Working_with_Data/Using_Data_Tree_Model) will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time without lengthening or shortening it.</td>
 <td>
 
@@ -256,7 +256,7 @@ tree.listen("treeItemRemove", function(e){
 
 The **beforeCreateConnector** event is similar to **treeItemCreate**, but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and it is dispatched before the action itself, so it will not have any information about the source. To get this information one has to listen to the "update" event. The fields of the **beforeCreateConnector** event are:
 
-- "type": the event type (e.g. "beforeCreateConnector"),
+- "type": the event type (e.g., "beforeCreateConnector"),
 - "source": which data item the connector starts from,
 - "target": which data item the connector ends at (is connected to),
 - "connectorType": the connector type.

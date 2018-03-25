@@ -10,7 +10,7 @@ The crosshair in AnyStock is similar to the [crosshair in basic charts](../Axes_
 
 ## Enabling
 
-In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return an instance of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
+In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return instances of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
 By default the crosshair is enabled. To disable or enable it on a chart or a plot, use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method with the `false` or `true` parameter:
 
@@ -29,7 +29,7 @@ This sample shows how to disable and enable the crosshair:
 
 The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
 
-To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `"sticky"` or `"float"` as a parameter:
+To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `"sticky"` or `"float"` as a parameter – see {api:anychart.enums.CrosshairDisplayMode}anychart.enums.CrosshairDisplayMode{api}:
 
 ```
 // set the display mode of the crosshair

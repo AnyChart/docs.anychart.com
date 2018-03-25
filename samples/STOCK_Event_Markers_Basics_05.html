@@ -14,26 +14,29 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
-<fieldset  data-role="controlgroup" data-type="horizontal">
-  <legend>Type:</legend>
-    <label for="circle">Circle</label>
-    <input onclick="switchType('circle')" type="radio" name="type" id="type" checked="checked">
-    <label for="flag">Flag</label>
-    <input onclick="switchType('flag')" type="radio" name="type" id="type">
-    <label for="pin">Pin</label>
-    <input onclick="switchType('pin')" type="radio" name="type" id="type">
-    <label for="rect">Rectangle</label>
-    <input onclick="switchType('rect')" type="radio" name="type" id="type">
-</fieldset>
+<label><input onclick="switchType('circle')" type="radio" name="type" checked="checked">Circle</label>
+<label><input onclick="switchType('flag')" type="radio" name="type">Flag</label>
+<label><input onclick="switchType('pin')" type="radio" name="type">Pin</label>
+<label><input onclick="switchType('rect')" type="radio" name="type">Rectangle</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

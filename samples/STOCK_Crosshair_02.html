@@ -17,17 +17,21 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
- <button onclick="displayMode('float')">Float</button>
-<button onclick="displayMode('sticky')">Sticky</button>
+<label><input onclick="displayMode('sticky')" type="radio" name="mode" checked>Sticky</label>
+<label><input onclick="displayMode('float')" type="radio"  name="mode">Float</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -67,7 +71,7 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title("Crosshair: Display Mode = " +
-        chart.crosshair().displayMode());
+                chart.crosshair().displayMode());
 
     // set the container id
     chart.container("container");
@@ -79,6 +83,9 @@ anychart.onDocumentReady(function () {
 // set the display mode of the crosshair
 function displayMode(mode){
   chart.crosshair().displayMode(mode);
+  // update the chart title
+  chart.title("Crosshair: Display Mode = " +
+              chart.crosshair().displayMode());
 };
 </script>
 </body>

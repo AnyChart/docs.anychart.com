@@ -24,10 +24,10 @@ This article explains how to create a basic Heat Map chart as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Treemap](TreeMap_Chart)</td></tr>
+<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
 <tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/heatmap/" target="_blank">Chartopedia: Heat Map Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Heat Map Chart](https://www.anychart.com/chartopedia/chart-types/heatmap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -349,11 +349,11 @@ chart.tooltip().format(function (){
 
 #### Display Mode
 
-By default, a label is not shown if it does not fit the width of a cell. However, you can hide such labels or always show all labels. To set the display mode of labels, call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the three parameters:
+By default, a label is not shown if it does not fit the width of a cell. However, you can hide such labels or always show all labels. To set the display mode of labels, call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
 * `"drop"` (default)
-* `"clip"`
 * `"alwaysShow"`
+* `"clip"`
 
 The following sample shows how these modes work:
 

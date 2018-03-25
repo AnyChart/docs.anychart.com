@@ -19,10 +19,13 @@
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
@@ -73,8 +76,8 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Headers<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Slavic Languages by Number of Speakers</span>");
+                "<span style='font-size:12; font-style:italic'>" +
+                "Slavic Languages by Number of Speakers</span>");
 
     // set the container id
     chart.container("container");

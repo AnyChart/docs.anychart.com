@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Sunburst Chart 17"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-sunburst.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2784-sunburst-chart/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label><input onclick="labelsPosition('circular')" type="radio" name="position" checked>Circular</label>
+<label><input onclick="labelsPosition('radial')" type="radio"  name="position">Radial</label>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {name: "Company A", children: [
+        {name: "Technical", children: [
+          {name: "Team Leaders"},
+          {name: "Architects"},
+          {name: "Developers"},
+          {name: "Testers"}
+        ]},
+        {name: "Sales", children: [
+          {name: "Analysts"},
+          {name: "Executives"}
+        ]},
+        {name: "HR"},
+        {name: "Management"}
+      ]}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.sunburst(data, "as-tree");
+
+    // set the position of labels
+    chart.labels().position("circular");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.listen("chartDraw", function () {
+      chart.title("Sunburst: Labels (Position = " +
+                  chart.labels().position() + ")<br><br>" +
+                  "<span style='font-size:12; font-style:italic'>" +
+                  "Company Structure");
+    });
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// set the position of labels
+function labelsPosition(position){
+  chart.labels().position(position);
+};
+</script>
+</body>
+</html>

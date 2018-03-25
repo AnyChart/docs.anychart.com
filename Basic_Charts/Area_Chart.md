@@ -34,7 +34,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td></td><td>[Area Sparkline](Sparkline_Chart#area_sparkline_chart)</td></tr>
 <tr><td></td><td>[Polygon](Polygon_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Area Chart](https://www.anychart.com/chartopedia/chart-types/area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

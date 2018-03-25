@@ -7,7 +7,7 @@ AnyChart js charting library supports several ways of setting data. This article
 
 CSV is the best solution when you need to minimize the size of data input or when you are connecting to a data source that is already in CSV format. 
 
-For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+For the information on other ways of setting data see [Data Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
 
 Almost all charts and data methods in AnyChart can get data in CSV format without any problems, like this:
 

@@ -19,18 +19,22 @@
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
             width: 100%;
-            top: 25px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<button onclick="displayMode('always-show')">Always Show</button>
-<button onclick="displayMode('clip')">Clip</button>
-<button onclick="displayMode('drop')">Drop</button>
+<label><input onclick="displayMode('always-show')" type="radio" name="mode">Always Show</label> 
+<label><input onclick="displayMode('clip')" type="radio" name="mode">Clip</label> 
+<label><input onclick="displayMode('drop')" type="radio"  name="mode" checked>Drop</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -71,10 +75,12 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Headers (Display Mode = " +
-      chart.headersDisplayMode() + ")<br><br>" + 
-      "<span style='font-size:12; font-style:italic'>" +
-      "Slavic Languages by Number of Speakers</span>");
+    chart.listen("chartDraw", function () {
+      chart.title("Treemap: Headers (Display Mode = " +
+                  chart.headersDisplayMode() + ")<br><br>" + 
+                  "<span style='font-size:12; font-style:italic'>" +
+                  "Slavic Languages by Number of Speakers</span>");
+    });
 
     // set the container id
     chart.container("container");
@@ -86,11 +92,6 @@ anychart.onDocumentReady(function () {
 // set the display mode of headers
 function displayMode(mode){
   chart.headersDisplayMode(mode);
-  // update the chart title
-  chart.title("Treemap: Headers (Display Mode = " +
-    chart.headersDisplayMode() + ")<br><br>" + 
-    "<span style='font-size:12; font-style:italic'>" +
-    "Slavic Languages by Number of Speakers</span>");
 };
 </script>
 </body>

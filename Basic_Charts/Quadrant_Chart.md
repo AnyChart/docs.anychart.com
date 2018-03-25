@@ -3,7 +3,7 @@
 
 ## Overview
 
-Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants – for example, in <a href="https://en.wikipedia.org/wiki/SWOT%5Fanalysis" target="_blank">SWOT-analysis</a>. 
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants – for example, in [SWOT-analysis](https://en.wikipedia.org/wiki/SWOT%5Fanalysis). 
 
 In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
@@ -211,7 +211,7 @@ chart.xScale().minimum(-100);
 chart.xScale().maximum(100);
 ```
 
-Please note that quarters always divide scales into two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the <a href="https://en.wikipedia.org/wiki/Origin%5F(mathematics)" target="_blank">origin</a> only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
+Please note that quarters always divide scales into two parts, no matter what the minimum and maximum values are. So, the lines in the center of the chart ("crossing") intersect in the [origin](https://en.wikipedia.org/wiki/Origin%5F\(mathematics\)) only in one case: if the minimum and maximum values are of the same absolute value, like in the sample code above. You can go to the [Axes](#axes) section to see how it looks like.
 
 ### Axes
 

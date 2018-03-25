@@ -31,7 +31,7 @@ This article explains how to create a basic Range Bar chart as well as configure
 <tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-bar-chart/" target="_blank">Chartopedia: Range Bar Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Range Bar Chart](https://www.anychart.com/chartopedia/chart-types/range-bar-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

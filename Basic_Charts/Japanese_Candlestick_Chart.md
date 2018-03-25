@@ -33,7 +33,7 @@ This article explains how to create a basic Japanese Candlestick chart as as wel
 <tr><td></td><td>[OHLC](OHLC_Chart)</td></tr>
 <tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/" target="_blank">Chartopedia: Japanese Candlestick Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Japanese Candlestick Chart](https://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

@@ -29,7 +29,7 @@ Jump Line Charts are usually used for demonstrating rates.
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
 <tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/jump-line-chart/" target="_blank">Chartopedia: Jump Line Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Jump Line Chart](https://www.anychart.com/chartopedia/chart-types/jump-line-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 

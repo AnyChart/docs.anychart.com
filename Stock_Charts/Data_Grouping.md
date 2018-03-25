@@ -3,7 +3,7 @@
  
 ## Overview
 
-AnyStock Charts processes table-formatted data using [table data model](../Working_with_Data/Using_Table_Data_Model). Working with data in AnyStock is described in [AnyStock Data](Data) article.
+AnyStock Charts processes table-formatted data using [table data model](../Working_with_Data/Table_Data_Model). Working with data in AnyStock is described in [AnyStock Data](Data) article.
 
 To work with large data sets and represent them successfully on the screen AnyStock is able to group data points using {api:anychart.core.stock.Grouping}Grouping{api} methods. 
 

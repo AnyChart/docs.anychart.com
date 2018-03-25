@@ -49,15 +49,15 @@ anychart.onDocumentReady(function () {
     chart.hovered().fill("gray", 0.4);
     chart.selected().fill("gray", 0.6);
     chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-    chart.stroke("gray");
+    chart.normal().stroke("gray");
     chart.hovered().stroke("gray");
     chart.selected().stroke("gray", 2);
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Treemap: Appearance<br><br>" +
-        "<span style='font-size:12; font-style:italic'>" +
-        "Top 10 European Union Countries by Population</span>");
+                "<span style='font-size:12; font-style:italic'>" +
+                "Top 10 European Union Countries by Population</span>");
 
     // set the container id
     chart.container("container");

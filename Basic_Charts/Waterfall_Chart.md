@@ -3,7 +3,7 @@
 
 ## Overview
 
-A waterfall chart is a data visualization that shows how an initial value is affected by a series of intermediate positive or negative values. This type is also known as a cascade chart, bridge chart, flying bricks chart, or Mario chart. 
+A waterfall chart is a data visualization that shows how an initial value is affected by a series of intermediate positive or negative values. This type is otherwise known as a cascade chart, bridge chart, flying bricks chart, or Mario chart. 
 
 As a rule, intermediate values are visualized as floating columns, while the initial and the final values look like whole columns. The elements are usually connected with lines.
 
@@ -30,7 +30,7 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td></td><td>[Range Column](Range_Column_Chart)</td></tr>
 <tr><td></td><td>[Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/waterfall-chart/" target="_blank">Chartopedia: Waterfall Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Waterfall Chart](https://www.anychart.com/chartopedia/chart-types/waterfall-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -98,7 +98,7 @@ Use the following data fields:
 
 The `isTotal` field is boolean, used optionally for showing/hiding a total value. By default, a total value is shown in a point if its value is not specified, and not shown if the value is specified.
 
-The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter.
+The `value` field can be interpreted in different ways, depending on the data mode, which is set by using the {api:anychart.charts.Waterfall#dataMode}dataMode(){api} method with either `"diff"` or `"absolute"` as a parameter – see {api:anychart.enums.WaterfallDataMode}anychart.enums.WaterfallDataMode{api}.
 
 The default data mode is **difference**. It means that the `value` data field is interpreted as the difference between the current point and the previous one, the absolute value being calculated automatically.
 

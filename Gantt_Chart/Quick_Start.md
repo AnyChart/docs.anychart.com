@@ -28,7 +28,7 @@ Add a block-based HTML element into your page, set the `id`, `width` and `height
 
 ## Prepare the Data
 
-Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Using_Data_Tree_Model)), thus it requires preparing data before usage. Raw data set for html5 Gantt chart may look like this:
+Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Tree_Data_Model)), thus it requires preparing data before usage. Raw data set for html5 Gantt chart may look like this:
 
 ```
 var rawData = [
