@@ -158,7 +158,6 @@ timeline.editIntervalWidth(15);
 
 {sample}GANTT\_Interactivity\_09{sample}
 
-
 ## Events
 
 Changes made in Live Edit mode lead to data changes. Events can be used to track and handle the changes.
@@ -366,6 +365,49 @@ You can change the structure of the Gantt chart data by simply dragging any elem
 
 The parent items can be expanded and collapsed. Click "+"/"-" sign or double-click the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
 
+You can make Data Grid cells editable and handle both editing state display and validate input values before adding them to the data (or aborting the changes):
+
+```
+// enable chart editing
+chart.editing(true);
+
+// work on input and decide what to do
+dataGrid.onEditStart(function () {
+    // forbid editing the first column
+    if (this.columnIndex < 1) return {cancelEdit: true};
+    // show values as they are for names
+    if (this.columnIndex == 1) 
+         { return {value: this.value}; }  
+    else {
+    // parse dates and show them in another format
+        var parsed = anychart.format.parseDateTime(this.value);
+        return {value: anychart.format.dateTime(parsed, 'yyyy/MM/dd')};
+    }
+});
+
+// work on setting put into
+dataGrid.onEditEnd(function () {
+    if (this.columnIndex == 1) {
+        returnVal = {itemMap: {name: this.value}};
+    }
+    else { 
+        var date = anychart.format.dateTime(anychart.format.parseDateTime(this.value, 'yyyy/MM/dd'));
+
+        if (this.columnIndex == 2)
+            returnVal = {itemMap: {actualStart: date}};
+        else if (this.columnIndex == 3)
+            returnVal = {itemMap: {actualEnd: date}};
+
+    }
+  
+  return returnVal;
+});
+```
+
+Here is a live sample of editable data grid:
+
+{sample}GANTT\_Interactivity\_11{sample}
+
 ## Timeline
 
 ### Change the duration
@@ -437,4 +479,4 @@ timeline.editIntervalThumbFill({
 });
 ```
 
-{sample}GANTT\_Interactivity\_11{sample}
+{sample}GANTT\_Interactivity\_12{sample}

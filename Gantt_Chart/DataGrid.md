@@ -4,6 +4,10 @@
 
 Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
+## Editing
+
+Data Grid cells can be made editable, see [Live Edit UI and API: Data Grid](Live_Edit_UI_and_API#datagrid).
+
 ## Columns
 
 ### Columns Set
@@ -15,18 +19,12 @@ By default, JS Gantt Chart displays two columns: rows counts and names of Gantt 
 The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}column(){api} method:
 
 ```
-//create new column contains names
-dataGrid.column(4).width(100).format(function(item) {
+// create new column with names
+dataGrid.column(4).width(100);
+dataGrid.column(4).format(function(item) {
     return item.get('name');
-  }).title('Resources');
-```
-
-Just see simple code below. You can create new columns using this method and their ids can assume different values that do not have to be consecutive.
-```
-//this code in fact creates only two columns
-var firstColumn = dataGrid.column(10);
-
-var secondColumn = dataGrid.column(20);
+});
+dataGrid.column(4).title('Resources');
 ```
 
 For more information about the {api:anychart.core.ui.DataGrid.Column#format}format(){api} method see the [Text](#text) topic.
@@ -56,7 +54,7 @@ You can create and display custom fields in data items:
 Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g., set the custom title value:
 
 ```
-//set title values
+// set title values
 title.text("new column");
 title.fontWeight("bold").fontStyle("italic");
 title.hAlign("left");
@@ -75,10 +73,10 @@ column.format(function(item) {
 Or it can be more complicated:
 
 ```
-//create the third column
+// create the third column
 dataGrid.column(2).format(customColumnformat);
 
-//define a custom content with actual start values
+// define a custom content with actual start values
 function customColumnformat(item){
     var start = item.get("actualStart");
     var end = item.get("actualEnd");
@@ -101,7 +99,7 @@ Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#format}f
 You should use the {api:anychart.core.ui.DataGrid.Column#width}width(){api} method for customizing the column width.
 
 ```
-//set column width to 30
+// set column width to 30
 dataGrid.column(0).width(30);
 ```
 
