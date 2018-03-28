@@ -45,12 +45,6 @@ anychart.onDocumentReady(function (){
   // chart type
   chart = anychart.ganttProject();
 
-  // chart container
-  chart.container("container");
-
-  // chart position
-  chart.bounds(0, 0, "100%", "100%");
-
   // chart data
   chart.data(treeData);
 
@@ -60,18 +54,19 @@ anychart.onDocumentReady(function (){
   var dataGrid = chart.dataGrid();
 
   // settings for first column
-  dataGrid.column(0).width(30).title().text("#");
+  dataGrid.column(0).title().text("#");
 
   // settings for the second column
-  dataGrid.column(1).width(140).format(function(item) {
-    return item.get("name");
-  }).title().text("Plan");
+  dataGrid.column(1).title().text("Plan");
 
   // initiate drawing
   chart.draw();
 
+  // chart container
+  chart.container("container");
+
   // area to display by default
-  chart.zoomTo(Date.UTC(2007, 0, 1), Date.UTC(2007, 2, 29));
+  chart.fitAll();
 });
 
 // data
