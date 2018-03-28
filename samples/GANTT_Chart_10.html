@@ -31,44 +31,20 @@ anychart.onDocumentReady(function () {
   // create resource gantt chart
   var chart = anychart.ganttResource();
 
-  // set container id for the chart
-  chart.container("container");
-
   // set data for the chart
   chart.data(treeData);
-
-  // set start splitteformatDater position settings
-  chart.splitterPosition(220);
 
   // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  function formatDate(dateUnit) {
-  if (dateUnit < 10) dateUnit = "0" + dateUnit;
-  return dateUnit + "";
-}
+  dataGrid.column(0).title().text("#");
 
-function customformat(item) {
-  var periods = item.get("periods");
-  if (periods) {
-      var startTime = new Date(periods[0].start);
-    return formatDate(startTime.getUTCMonth() + 1) + "/" +
-formatDate(startTime.getUTCDate()) + "/" + startTime.getUTCFullYear()
-  }
-  else
-   return "";
-}
+  dataGrid.column(1).width(100);
+  dataGrid.column(1).labels().format('{%name}');
+  dataGrid.column(1).title().text("Resources");
 
-dataGrid.column(0).title().text("#");
-
-dataGrid.column(1).width(100).format(function(item) {
-    return item.get("name");
-  }).title().text("Resources");
-
-var custom = dataGrid.column(2);
-  custom.title("Start Date");
-  custom.width(90);
-  custom.format(customformat);
+  // set container id for the chart
+  chart.container("container");
 
   // initiate chart drawing
   chart.draw();

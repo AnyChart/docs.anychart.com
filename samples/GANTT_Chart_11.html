@@ -31,9 +31,6 @@ anychart.onDocumentReady(function () {
   // create project gantt chart
   var chart = anychart.ganttProject();
 
-  // set container id for the chart
-  chart.container("container");
-
   // set data for the chart
   chart.data(treeData);
 
@@ -44,51 +41,27 @@ anychart.onDocumentReady(function () {
 
   // set first column settings
   var firstColumn = dataGrid.column(0);
-  firstColumn.cellTextSettings().hAlign("center");
+  firstColumn.labels().hAlign("center");
   firstColumn.width(35);
-
 
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
   secondColumn.width(50);
-  secondColumn.format(function(item) {
-    return item.get("name");
-  });
+  secondColumn.labels().format("{%name}");
 
   var thirdColumn = dataGrid.column(2);
   thirdColumn.title("Actual Start");
   thirdColumn.width(100);
-  thirdColumn.format(thirdColumnformat);
+  thirdColumn.labels().format("{%actualStart}{dateTimeFormat:MM/dd/yyyy}");
 
   // set fourth column settings
   var fourthColumn = dataGrid.column(3);
   fourthColumn.title().text("Actual End");
-  fourthColumn.format(fourthColumnformat);
+  fourthColumn.labels().format("{%actualEnd}{dateTimeFormat:MM/dd/yyyy}");
 
-
-  function thirdColumnformat(item) {
-  var field = item.get("actualStart");
-
-    var actualStart = new Date(field);
-    return formatDate(actualStart.getUTCMonth() + 1) + "/" +
-formatDate(actualStart.getUTCDate()) + "/" + actualStart.getUTCFullYear();
-  }
-
-
-// do pretty formatting for dates in fourth column
-function fourthColumnformat(item) {
-  var field = item.get("actualEnd");
-    var actualEnd = new Date(field);
-    return formatDate((actualEnd.getUTCMonth() + 1)) + "/" +
-formatDate(actualEnd.getUTCDate()) + "/" + actualEnd.getUTCFullYear();
-}
-
-// do pretty formatting for passed date unit
-function formatDate(dateUnit) {
-  if (dateUnit < 10) dateUnit = "0" + dateUnit;
-  return dateUnit + "";
-}
-
+  // set container id for the chart
+  chart.container("container");
+  
   // initiate chart drawing
   chart.draw();
 

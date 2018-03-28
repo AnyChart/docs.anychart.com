@@ -84,34 +84,34 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 </tbody>
 </table>
 
-The tasks types are not explicitly defined, but they have a different behavior.
+The tasks types are not explicitly defined but task of each type behaves differently.
 
 ```
-    //how to create the tasks
-      return [
-      {
-        "name": "parent",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 2, 14),
-        "children": [
-          {
-            "name": "first child",
-            "actualStart": Date.UTC(2007, 0, 25),
-            "actualEnd": Date.UTC(2007, 1, 3)
-          },
-          {
-            "name": "second child",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 4)
-          },
-          {
-            "name": "milestone",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 24)
-          }
-        ]
-      }
-      ];
+// how to create the tasks
+data = [
+{
+  "name": "parent",
+  "actualStart": Date.UTC(2007, 0, 25),
+  "actualEnd": Date.UTC(2007, 2, 14),
+  "children": [
+    {
+      "name": "first child",
+      "actualStart": Date.UTC(2007, 0, 25),
+      "actualEnd": Date.UTC(2007, 1, 3)
+    },
+    {
+      "name": "second child",
+      "actualStart": Date.UTC(2007, 1, 4),
+      "actualEnd": Date.UTC(2007, 1, 4)
+    },
+    {
+      "name": "milestone",
+      "actualStart": Date.UTC(2007, 1, 4),
+      "actualEnd": Date.UTC(2007, 1, 24)
+    }
+  ]
+}
+];
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_07{sample}

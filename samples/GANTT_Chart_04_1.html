@@ -25,39 +25,22 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  //create data tree on our data
+  // create data tree on our data
   var treeData = anychart.data.tree(getData(), "as-table");
 
-  //create project gantt chart
+  // create project gantt chart
   var chart = anychart.ganttProject();
 
-  //swap actual and planned
+  // swap actual and planned
   chart.getTimeline().baselineAbove(true);
-  
-  //set container id for the chart
-  chart.container('container');
 
-  //set data for the chart
+  // set data for the chart
   chart.data(treeData);
 
-  //get chart data grid link to set column settings
-  var dataGrid = chart.dataGrid();
+  // set container id for the chart
+  chart.container('container');
 
-  chart.splitterPosition(150);
-
-  //set first column settings
-  var firstColumn = dataGrid.column(0);
-  firstColumn.cellTextSettings().hAlign('center');
-  firstColumn.width(35);
-
-
-  var secondColumn = dataGrid.column(1);
-  secondColumn.cellTextSettings().hAlign('left');
-  secondColumn.format(function(item) {
-    return item.get('name');
-  });
-
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 
   chart.fitAll();

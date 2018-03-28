@@ -31,41 +31,32 @@ anychart.onDocumentReady(function () {
   // create project gantt chart
   var chart = anychart.ganttProject();
 
-  // set container id for the chart
-  chart.container("container");
-
   // set data for the chart
   chart.data(treeData);
 
   // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-chart.splitterPosition(210);
-
   // set first column settings
   var firstColumn = dataGrid.column(0);
   firstColumn.cellTextSettings().hAlign("center");
   firstColumn.width(35);
 
-
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
   secondColumn.width(75);
-  secondColumn.format(function(item) {
-    return item.get("name");
-  });
+  secondColumn.labels().format("{%name}");
 
-var thirdColumn = dataGrid.column(2);
+  var thirdColumn = dataGrid.column(2);
   thirdColumn.cellTextSettings().hAlign("left");
   thirdColumn.title("Owner");
-  thirdColumn.format(function(item) {
-    return item.get("owner");
-  });
+  thirdColumn.labels().format("{%owner}");
 
+  // set container id for the chart
+  chart.container("container");
+  
   // initiate chart drawing
   chart.draw();
-
-  chart.fitAll();
 
 });
 

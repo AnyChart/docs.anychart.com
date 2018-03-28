@@ -19,17 +19,15 @@ By default, JS Gantt Chart displays two columns: rows counts and names of Gantt 
 The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}column(){api} method:
 
 ```
-// create new column with names
-dataGrid.column(4).width(100);
-dataGrid.column(4).format(function(item) {
-    return item.get('name');
-});
-dataGrid.column(4).title('Resources');
+var thirdColumn = dataGrid.column(2);
+thirdColumn.title("Actual Start");
+thirdColumn.width(100);
+thirdColumn.labels().format("{%actualStart}{dateTimeFormat:MM/dd/yyyy}");
 ```
 
 For more information about the {api:anychart.core.ui.DataGrid.Column#format}format(){api} method see the [Text](#text) topic.
 
-The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
+The sample below shows Resource Gantt Chart:
 
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
 
@@ -43,8 +41,8 @@ You can create and display custom fields in data items:
 'id': '1',
 'name': 'Task 1',
 'owner': 'Anthony Quayle',
-'actualStart': Date.UTC(2008, 7, 9),
-'actualEnd': Date.UTC(2008, 7, 20)
+'actualStart': '2008-07-09',
+'actualEnd': '2008-07-20'
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_12{sample}
@@ -62,32 +60,16 @@ title.hAlign("left");
 
 ### Text
 
-Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#format}format(){api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#format}format(){api} method. It used to define a cell text value formatter, so you can pass your own formatting string or custom function as an argument.
+
 ```
-//create a column contains all IDs
-column.format(function(item) {
+// format with formatting string
+chart.dataGrid().column(1).format("{%name}");
+
+// format with function
+chart.dataGrid().column(0).format(function(item) {
     return item.get('id') + '';
 });
-```
-
-Or it can be more complicated:
-
-```
-// create the third column
-dataGrid.column(2).format(customColumnformat);
-
-// define a custom content with actual start values
-function customColumnformat(item){
-    var start = item.get("actualStart");
-    var end = item.get("actualEnd");
-    var duration = end - start;
-    var hours = duration/1000/60/60;
-    if (hours>24){
-        return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
-    }else{
-        return hours + " hours";
-    }
-}
 ```
 
 Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#format}format(){api}.

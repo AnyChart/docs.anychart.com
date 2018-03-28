@@ -40,7 +40,7 @@ anychart.onDocumentReady(function () {
   // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-chart.splitterPosition(150);
+  chart.splitterPosition(150);
 
   // set first column settings
   var firstColumn = dataGrid.column(0);
@@ -50,9 +50,7 @@ chart.splitterPosition(150);
 
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
-  secondColumn.format(function(item) {
-    return item.get("name");
-  });
+  secondColumn.labels().format("{%name}");
 
   // initiate chart drawing
   chart.draw();
