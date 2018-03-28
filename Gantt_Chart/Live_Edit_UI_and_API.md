@@ -233,7 +233,7 @@ tree.listen("treeItemCreate", function(e){
 });
 ```
 
-#### rRemove
+#### Remove
 
 When an object is removed, the Gantt tree dispatches the **treeItemRemove** event. Its fields are similar to those the "create" event has:
 

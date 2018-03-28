@@ -6,7 +6,7 @@ Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually conta
 
 ## Editing
 
-Data Grid cells can be made editable, see [Live Edit UI and API: Data Grid](Live_Edit_UI_and_API#datagrid).
+Data Grid cells can be made editable, see [Live Edit UI and API: Data Grid](Live_Edit_UI_and_API#data_grid).
 
 ## Columns
 

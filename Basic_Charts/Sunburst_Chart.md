@@ -28,7 +28,7 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 <tr><td></td><td>[Pie](Pie_Chart)</td></tr>
 <tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Sunburst Chart](https://www.anychart.com/chartopedia/chart-types/sunburst/)</td></tr>
+<tr><td></td><td>[Chartopedia: Sunburst Chart](https://www.anychart.com/chartopedia/chart-types/sunburst-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
