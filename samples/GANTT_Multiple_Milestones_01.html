@@ -35,19 +35,6 @@ anychart.onDocumentReady(function (){
   // chart data
   chart.data(treeData);
 
-  // data tree width
-  chart.splitterPosition(170);
-
-  var dataGrid = chart.dataGrid();
-
-  // settings for first column
-  dataGrid.column(0).width(30).title().text("#");
-
-  // settings for the second column
-  dataGrid.column(1).width(140).format(function(item) {
-    return item.get("name");
-  }).title().text("Person");
-
   // chart container
   chart.container("container");
 

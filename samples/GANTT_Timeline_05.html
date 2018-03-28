@@ -31,58 +31,9 @@ anychart.onDocumentReady(function () {
     // create project gantt chart
     var chart = anychart.ganttProject();
 
-    // set container id for the chart
-    chart.container('container');
-
     // set data for the chart
     chart.data(treeData);
 
-    // set start splitter position settings
-    chart.splitterPosition(370);
-
-    // get chart data grid link to set column settings
-    var dataGrid = chart.dataGrid();
-
-    // set first column settings
-    var firstColumn = dataGrid.column(0);
-    firstColumn.title('#');
-    firstColumn.width(30);
-    firstColumn.cellTextSettings().hAlign('center');
-
-    // set second column settings
-    var secondColumn = dataGrid.column(1);
-    secondColumn.cellTextSettings().hAlign('left');
-    secondColumn.width(180);
-
-    // set third column settings
-    var thirdColumn = dataGrid.column(2);
-    thirdColumn.title('Start Time');
-    thirdColumn.width(70);
-    thirdColumn.cellTextSettings().hAlign('right');
-    thirdColumn.format(function (item) {
-var actStart = item.get("actualStart");
-var date = new Date(actStart || item.meta('autoStart'));
-var month = date.getUTCMonth() + 1;
-var strMonth = (month > 9) ? month : '0' + month;
-var utcDate = date.getUTCDate();
-var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
-    });
-
-    // set fourth column settings
-    var fourthColumn = dataGrid.column(3);
-    fourthColumn.title('End Time');
-    fourthColumn.width(80);
-    fourthColumn.cellTextSettings().hAlign('right');
-    fourthColumn.format(function (item) {
-var actEnd = item.get("actualEnd");
-var date = new Date(actEnd || item.meta('autoEnd'));
-var month = date.getUTCMonth() + 1;
-var strMonth = (month > 9) ? month : '0' + month;
-var utcDate = date.getUTCDate();
-var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
-    });
     var now = (new Date()).getTime();
     var sec = 1000;
     var min = 60 * sec;
@@ -99,12 +50,15 @@ return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
     tl.rangeMarker(1).from(now - 7 * day).to("current");
 
     // set colors for milestones
-    tl.milestoneFill("#4A148C");
-    tl.milestoneStroke("#1A237E");
+    tl.milestones().fill("#4A148C");
+    tl.milestones().stroke("#1A237E");
 
     // set colors for the connectors
-    tl.connectorFill("#0D47A1");
-    tl.connectorStroke("#90CAF9");
+    tl.connectors().fill("#0D47A1");
+    tl.connectors().stroke("#90CAF9");
+
+    // set container id for the chart
+    chart.container('container');
 
     // initiate chart drawing
     chart.draw();

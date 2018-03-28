@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
     
 	// set selection colors
     chart.rowSelectedFill('#FFFFCC');
-    chart.getTimeline().selectedElementFill('#CCFF99');
+    chart.getTimeline().elements().selected().fill('#CCFF99');
 
     // set container id for the chart
     chart.container('container');

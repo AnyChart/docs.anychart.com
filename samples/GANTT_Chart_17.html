@@ -49,12 +49,11 @@ anychart.onDocumentReady(function () {
   var customColumn = dataGrid.column(2);
   customColumn.title("Duration");
   customColumn.width(120);
+  
   // Sets column formats.
   customColumn.labels().format(customColumnFormat);
-
-  var columnStyle = customColumn.cellTextSettings();
-  columnStyle.useHtml(true);
-  columnStyle.fontColor("blue");
+  customColumn.labels().useHtml(true);
+  customColumn.labels().fontColor("blue");
 
   chart.container("container");
   chart.draw();

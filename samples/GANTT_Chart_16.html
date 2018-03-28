@@ -41,11 +41,11 @@ anychart.onDocumentReady(function () {
 
   // set first column settings
   var firstColumn = dataGrid.column(0);
-  firstColumn.labels().cellTextSettings().hAlign("center");
+  firstColumn.labels().hAlign("center");
   firstColumn.width(35);
 
   var secondColumn = dataGrid.column(1);
-  secondColumn.cellTextSettings().hAlign("left");
+  secondColumn.labels().hAlign("left");
   secondColumn.labels().format("{%name}");
 
   // set container id for the chart

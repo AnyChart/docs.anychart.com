@@ -53,7 +53,7 @@ anychart.onDocumentReady(function (){
   });
 
   // make connectors thicker
-  chart.getTimeline().connectorStroke('#455A64', 3);
+  chart.getTimeline().connectors().stroke('#455A64', 3);
 
   // set row height
   chart.defaultRowHeight(45);
@@ -73,10 +73,11 @@ anychart.onDocumentReady(function (){
 
   // set container id for the chart
   chart.container('container');
+
   // initiate chart drawing
   chart.draw();
 
-  // zoom chart to to all elements
+  // zoom chart to show all elements
   chart.fitAll();
 });
 </script>

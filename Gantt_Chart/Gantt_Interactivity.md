@@ -37,7 +37,7 @@ chart.getTimeline().rowHoverFill('#DEFFE3')
 
 ### Select
 
-To change the selected item color use the {api:anychart.core.ui.Timeline#selectedElementFill}getTimeline().selectedElementFill(){api} method and for the selected row there is the {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api} method. 
+To change the selected item color use the {api:anychart.core.ui.Timeline#elements}elements(){api} states: 
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_03{sample}
 
