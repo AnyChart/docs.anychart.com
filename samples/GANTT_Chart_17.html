@@ -45,12 +45,12 @@ anychart.onDocumentReady(function () {
   var dataGrid = chart.dataGrid();
   var firstColumn = dataGrid.column(1);
   firstColumn.width(120);
-  var customColumn = dataGrid.column(2);
 
+  var customColumn = dataGrid.column(2);
   customColumn.title("Duration");
   customColumn.width(120);
   // Sets column formats.
-  customColumn.format(customColumnFormat);
+  customColumn.labels().format(customColumnFormat);
 
   var columnStyle = customColumn.cellTextSettings();
   columnStyle.useHtml(true);
@@ -62,7 +62,7 @@ anychart.onDocumentReady(function () {
 
   // define a custom content with actual start values
   function customColumnFormat(e){
-    console.log(e);
+
     var start = e.actualStart;
     var end = e.actualEnd;
     var duration = end - start;

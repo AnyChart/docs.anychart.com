@@ -80,19 +80,19 @@ As you can see from the code above, it is possible to get any information about 
 <th>Description</th>
 </tr>
 <tr>
-<td>.item</td>
+<td>item</td>
 <td>It is a [Data Item](../Working_with_Data/Tree_Data_Model) that displays the active row.</td>
 </tr>
 <tr>
-<td>.hoveredIndex</td>
+<td>hoveredIndex</td>
 <td>Contains an index of active row.</td>
 </tr>
 <tr>
-<td>.period</td>
+<td>period</td>
 <td>Contains an active period.</td>
 </tr>
 <tr>
-<td>.periodIndex</td>
+<td>periodIndex</td>
 <td>Contains an index of active period.</td>
 </tr>
 <tr>

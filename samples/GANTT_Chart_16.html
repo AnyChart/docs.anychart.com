@@ -31,9 +31,6 @@ anychart.onDocumentReady(function () {
   // create project gantt chart
   var chart = anychart.ganttProject();
 
-  // set container id for the chart
-  chart.container("container");
-
   // set data for the chart
   chart.data(treeData);
 
@@ -44,13 +41,15 @@ anychart.onDocumentReady(function () {
 
   // set first column settings
   var firstColumn = dataGrid.column(0);
-  firstColumn.cellTextSettings().hAlign("center");
+  firstColumn.labels().cellTextSettings().hAlign("center");
   firstColumn.width(35);
-
 
   var secondColumn = dataGrid.column(1);
   secondColumn.cellTextSettings().hAlign("left");
   secondColumn.labels().format("{%name}");
+
+  // set container id for the chart
+  chart.container("container");
 
   // initiate chart drawing
   chart.draw();

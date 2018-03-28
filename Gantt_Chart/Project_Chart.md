@@ -221,10 +221,10 @@ To configure how actual or baseline bar looks like you need to set the "fill" va
 
 ### Swap Actual and Planned
 
-If you want to display Planned (baseline) bars above the Actual bars, use *baselineAbove()* method of the {api:anychart.charts.Gantt#getTimeline}Timeline{api}:
+If you want to display Planned (baseline) bars above the Actual bars, use the *above()* method of the {api:anychart.charts.Gantt#getTimeline}Timeline{api} baselines:
 
 ```
-chart.getTimeline().baselineAbove(true);
+chart.getTimeline().baselines().above(true);
 ```
 
 This is how it works:

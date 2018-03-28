@@ -45,7 +45,7 @@ anychart.onDocumentReady(function () {
   firstColumn.width(35);
 
   var secondColumn = dataGrid.column(1);
-  secondColumn.cellTextSettings().hAlign("left");
+  secondColumn.labels().cellTextSettings().hAlign("left");
   secondColumn.width(50);
   secondColumn.labels().format("{%name}");
 

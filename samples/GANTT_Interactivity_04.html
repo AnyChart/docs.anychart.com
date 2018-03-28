@@ -31,9 +31,6 @@ anychart.onDocumentReady(function () {
     // create resource gantt chart
     var chart = anychart.ganttResource();
 
-    // set container id for the chart
-    chart.container('container');
-
     // set data for the chart
     chart.data(treeData);
 
@@ -44,33 +41,14 @@ anychart.onDocumentReady(function () {
     chart.getTimeline().rowEvenFill('#fff');
     
     chart.listen('rowSelect', function(e) {
-e.item.remove();
+        e.item.remove();
     });
 
     chart.rowSelectedFill('#D4DFE8');
     chart.rowHoverFill('#EAEFF3');
 
-    // set start splitter position settings
-    chart.splitterPosition(150);
-    
-
-    // get chart data grid link to set column settings
-    var dataGrid = chart.dataGrid();
-
-    // set first column settings
-    var firstColumn = dataGrid.column(0);
-    firstColumn.title('#');
-    firstColumn.width(30);
-    firstColumn.cellTextSettings().hAlign('center');
-
-    // set second column settings
-    var secondColumn = dataGrid.column(1);
-    secondColumn.title('Person');
-    secondColumn.width(120);
-    secondColumn.cellTextSettings().hAlign('left');
-    secondColumn.format(function (item) {
-return item.get('name');
-    });
+    // set container id for the chart
+    chart.container('container');    
 
     // initiate chart drawing
     chart.draw();

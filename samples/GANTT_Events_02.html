@@ -25,71 +25,32 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-    var newData = getNewData();
 
-    //create data tree on our data
-    var treeData = anychart.data.tree(newData, "as-table");
+  //create data tree on our data
+  var treeData = anychart.data.tree(getData(), "as-table");
 
-    //create project gantt chart
-    var chart = anychart.ganttProject();
-    chart.title('Click on the row and see that nothing changes');
+  //create project gantt chart
+  var chart = anychart.ganttProject();
+  chart.title('Click on the row and see that nothing changes');
 
-    //set container id for the chart
-    chart.container('container');
+  //set data for the chart
+  chart.data(treeData);
 
-    //set data for the chart
-    chart.data(treeData);
+  //set container id for the chart
+  chart.container('container');
 
-    //set start splitter position settings
-    chart.splitterPosition(190);
+  // initiate chart drawing
+  chart.draw();
 
-    //get chart data grid link to set column settings
-    var dataGrid = chart.dataGrid();
-
-    //set first column settings
-    var firstColumn = dataGrid.column(1);
-    firstColumn.title('System Engineering');
-    firstColumn.width(140);
-    firstColumn.cellTextSettings().hAlign('left');
-    firstColumn.format(function(item) {
-      return item.get('name');
-    });
-    firstColumn.cellTextSettingsOverrider(labelTextSettingsOverrider);
-
-
-    //initiate chart drawing
-    chart.draw();
-
-    chart.zoomTo(Date.UTC(2008, 0, 31, 1, 36), Date.UTC(2008, 1, 15, 10, 3));
-
-    //--------------------------------------------------
-    // External events
-    //--------------------------------------------------
-    chart.listen("rowClick", function(e) {
-      e.preventDefault();
-    });
-
-
+  // handle row click events
+  chart.listen("rowClick", function(e) {
+    e.preventDefault();
   });
 
+});
 
 
-  function labelTextSettingsOverrider(label, item) {
-    switch (item.get('type')) {
-      case 'main':
-label.fontColor('red').fontWeight('bold');
-break;
-      case 'first':
-label.fontColor('green').fontWeight('bold');
-break;
-      case 'second':
-label.fontColor('orange').fontWeight('bold');
-break;
-    }
-  }
-
-
-  function getNewData() {
+function getData() {
     return [
       {
 'id': '1',

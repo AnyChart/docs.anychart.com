@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
   var chart = anychart.ganttProject();
 
   // swap actual and planned
-  chart.getTimeline().baselineAbove(true);
+  chart.getTimeline().baselines().above(true);
 
   // set data for the chart
   chart.data(treeData);
