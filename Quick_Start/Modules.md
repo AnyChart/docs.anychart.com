@@ -196,6 +196,14 @@ Module to create [Stock charts](../Stock_Charts/Overview):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
 ```
 
+### Sunburst
+
+Module to create [Sunburst charts](../Basic_Charts/Sunburst_Chart):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
+```
+
 ### Tag cloud
 
 Module to create [Sparkline charts](../Basic_Charts/Tag_Cloud):
