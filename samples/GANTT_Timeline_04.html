@@ -53,8 +53,8 @@ anychart.onDocumentReady(function () {
     tl.rowSelectedFill("#FFAB91 0.5");
     
     // set colors for selected elements
-    tl.selectedElementFill("#FFAB00");
-    tl.selectedElementStroke("#B8AA96");
+    tl.elements().selected().fill("#FFAB00");
+    tl.elements().selected().fill("#B8AA96");
 
     // set container id for the chart
     chart.container('container');

@@ -25,66 +25,42 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-// create data tree on our data
-var treeData = anychart.data.tree(getData(), "as-table");
+    // create data tree on our data
+    var treeData = anychart.data.tree(getData(), "as-table");
 
-// create resource gantt chart
-var chart = anychart.ganttResource();
+    // create resource gantt chart
+    var chart = anychart.ganttResource();
 
-// set container id for the chart
-chart.container('container');
+    // set data for the chart
+    chart.data(treeData);
 
-// set data for the chart
-chart.data(treeData);
+    //set DataGrid and TimeLine visual settings
+    chart.dataGrid().rowOddFill('#fff');
+    chart.dataGrid().rowEvenFill('#fff');
+    chart.getTimeline().rowOddFill('#fff');
+    chart.getTimeline().rowEvenFill('#fff');
 
-//set DataGrid and TimeLine visual settings
-chart.dataGrid().rowOddFill('#fff');
-chart.dataGrid().rowEvenFill('#fff');
-chart.getTimeline().rowOddFill('#fff');
-chart.getTimeline().rowEvenFill('#fff');
+    chart.rowSelectedFill('#D4DFE8');
+    chart.rowHoverFill('#EAEFF3');
 
-chart.rowSelectedFill('#D4DFE8');
-chart.rowHoverFill('#EAEFF3');
+    var tl = chart.getTimeline();
+    // creating a line marker
+    tl.lineMarker(0).value(Date.UTC(2007, 1, 29)).stroke('2 #FFE4C4');
+    // creating a text marker
+    tl.textMarker(0).value(Date.UTC(2007, 1, 29)).text('Text Marker').fontSize(15).fontColor('blue').fontWeight('bold').fontOpacity(0.5);
+    // creating a range marker
+    tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
+    tl.rangeMarker(0).fill('#FFE4C4 0.5');
 
-// set start splitter position settings
-chart.splitterPosition(150);
+    // set container id for the chart
+    chart.container('container');
 
-// get chart data grid link to set column settings
-var dataGrid = chart.dataGrid();
+    // initiate chart drawing
+    chart.draw();
 
-
-var tl = chart.getTimeline();
-// creating a line marker
-tl.lineMarker(0).value(Date.UTC(2007, 1, 29)).stroke('2 #FFE4C4');
-// creating a text marker
-tl.textMarker(0).value(Date.UTC(2007, 1, 29)).text('Text Marker').fontSize(15).fontColor('blue').fontWeight('bold').fontOpacity(0.5);
-// creating a range marker
-tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
-tl.rangeMarker(0).fill('#FFE4C4 0.5');
-
-// set first column settings
-var firstColumn = dataGrid.column(0);
-firstColumn.title('#');
-firstColumn.width(30);
-firstColumn.cellTextSettings().hAlign('center');
-
-// set second column settings
-var secondColumn = dataGrid.column(1);
-secondColumn.title('Person');
-secondColumn.width(120);
-secondColumn.cellTextSettings().hAlign('left');
-secondColumn.format(function (item) {
-    return item.get('name');
 });
 
-// initiate chart drawing
-chart.draw();
-
-// zoom chart to specified date
-chart.zoomTo(Date.UTC(2007, 0, 13), Date.UTC(2007, 2, 25));
-    });
-
-    function getData() {
+function getData() {
 
 return [
     {
