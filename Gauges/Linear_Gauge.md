@@ -110,22 +110,22 @@ var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
     [
             {
                 from: 0,
-                to: 0.25,
+                to: 25,
                 color: ['#D81E05', '#EB7A02']
             },
             {
-                from: 0.25,
-                to: 0.5,
+                from: 25,
+                to: 50,
                 color: ['#EB7A02', '#FFD700']
             },
             {
-                from: 0.5,
-                to: 0.75,
+                from: 50,
+                to: 75,
                 color: ['#FFD700', '#CAD70b']
             },
             {
-                from: 0.75,
-                to: 1,
+                from: 75,
+                to: 100,
                 color: ['#CAD70b', '#2AD62A']
             }
     ]
