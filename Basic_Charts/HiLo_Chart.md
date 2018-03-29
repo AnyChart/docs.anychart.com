@@ -50,11 +50,11 @@ The following sample demonstrates how a basic HiLo chart is created:
 ```
 // create data
 var data = [
-  ["January", 10000, 1000],
-  ["February", 12000, 500],
-  ["March", 18000, 3000],
-  ["April", 11000, 4000],
-  ["May", 9000, 6000]
+  ["January", 1000, 10000],
+  ["February", 500, 12000],
+  ["March", 3000, 18000],
+  ["April", 4000, 11000],
+  ["May", 6000, 9000]
 ];
 
 // create a chart
