@@ -634,7 +634,7 @@ The Sunburst chart comes with a built-in drilldown feature: if you click on an e
 
 **Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu – if, of course, these options are available for the element.
 
-Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data by using the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
 (see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp(){api}:
 
 ```
