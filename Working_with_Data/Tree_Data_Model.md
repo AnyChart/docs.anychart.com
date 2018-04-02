@@ -13,6 +13,12 @@ It is used in the following chart types:
 
 This article explains how to set tree-like data, access data items, and perform data operations: see the [Setting Data](#setting_data), [Accessing Items](#accessing_items), and [Data Manipulation](#data_manipulation) sections.
 
+## Quick Start
+
+пример с вкладками, где показать все типы чартов, или с радио
+
+{sample :height 450}WD\_Data\_Tree\_01{sample}
+
 ## Setting Data
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
@@ -55,7 +61,7 @@ treeData = anychart.data.tree(data, "as-tree");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample :height 450}WD\_Data\_Tree\_01{sample}
+{sample :height 450}WD\_Data\_Tree\_02{sample}
 
 ### As Table
 
@@ -88,7 +94,11 @@ treeData = anychart.data.tree(data, "as-table");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample :height 450}WD\_Data\_Tree\_02{sample}
+{sample :height 450}WD\_Data\_Tree\_03{sample}
+
+### Mapping
+
+{sample :height 450}WD\_Data\_Tree\_04{sample}
 
 ## Accessing Items
 
@@ -141,7 +151,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 ```
 
-{sample}WD\_Data\_Tree\_03{sample}
+{sample}WD\_Data\_Tree\_05{sample}
 
 ### Adding
 
@@ -159,7 +169,7 @@ function addItem(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_04{sample}
+{sample}WD\_Data\_Tree\_06{sample}
 
 You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -184,7 +194,7 @@ function addItems(){
 };
 ```
 
-{sample :width 500 :height 500}WD\_Data\_Tree\_05{sample}
+{sample :width 500 :height 500}WD\_Data\_Tree\_07{sample}
 
 ### Updating
 
@@ -202,7 +212,7 @@ function updateItem(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_06{sample}
+{sample}WD\_Data\_Tree\_08{sample}
 
 ### Removing
 
@@ -225,7 +235,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 treeData.getChildAt(0).removeChildAt(lastChild);
 ```
 
-{sample}WD\_Data\_Tree\_07{sample}
+{sample}WD\_Data\_Tree\_09{sample}
 
 ### Searching
 
@@ -268,7 +278,7 @@ function searchValues(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_08{sample}
+{sample}WD\_Data\_Tree\_10{sample}
 
 In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
@@ -281,7 +291,7 @@ var item = treeData.search("name", "Item 3-4");
 chart.drillTo(item);
 ```
 
-{sample}WD\_Data\_Tree\_09{sample}
+{sample}WD\_Data\_Tree\_11{sample}
 
 ### Traversing
 
@@ -318,7 +328,7 @@ while (traverser.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Tree\_10{sample}
+{sample}WD\_Data\_Tree\_12{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -346,4 +356,20 @@ function nextItem() {
 };
 ```
 
-{sample}WD\_Data\_Tree\_11{sample}
+{sample}WD\_Data\_Tree\_13{sample}
+
+## Index
+
+* {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api}
+* {api:anychart.data.Tree#removeIndex()}removeIndex(){api}
+
+{sample}WD\_Data\_Tree\_14{sample}
+
+## Events
+
+* список событий
+* упомянуть {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api}
+
+пример: гантт, кнопка, которая добавляет ноды + перетаскивание --> реакция на эти события
+
+{sample}WD\_Data\_Tree\_15{sample}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 08"/>
+    <meta name="ac:name" content="WD Data Tree 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -26,7 +26,7 @@
             margin: 10px 0 0 10px;
         }
         input {
-            width: 80px;
+            width: 30px;
             margin: 10px 0 0 5px;
         }
         #container {
@@ -38,16 +38,14 @@
     </style>
 </head>
 <body>
-<button onclick="updateItem()">Update First Child</button>
-<label>Name:<input id="inputName" value="New Name"></label>
-<label>Value:<input id="inputValue" value="120000000"></label>
-<label>Color:<input id="inputColor" value="#00bfa5"></label>
+<button onclick="searchValues()">Search Items</button>
+<label>value ><input id="inputValue" value="50"> mln</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
+    data = [
       {name:   "Root",   children: [
         {name:   "Child 1",  value: 80636124},
         {name:   "Child 2",  value: 65511098},
@@ -62,14 +60,16 @@ anychart.onDocumentReady(function () {
       ]} 
     ];
 
-    // create a storage for the data tree
-    treeData = anychart.data.tree(data, "as-tree");
-
     // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+    chart = anychart.treeMap(data, "as-tree");
+
+    // set the depth of hints
+    chart.hintDepth(2);
 
     // set the chart title
-    chart.title("Tree Data Model: Updating");
+    chart.title().useHtml(true);
+    chart.title("(!) Tree Data Model: Searching<br><br>" +
+                "<span style = 'color:#990000'>?</span>");
 
     // set the container id
     chart.container("container");
@@ -78,14 +78,47 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// update the first child
-function updateItem(){
-  var name = document.getElementById("inputName").value;
-  var value = document.getElementById("inputValue").value;
-  var color = document.getElementById("inputColor").value;
-  treeData.getChildAt(0).getChildAt(0).set("name", name);
-  treeData.getChildAt(0).getChildAt(0).set("value", value);
-  treeData.getChildAt(0).getChildAt(0).set("fill", color);
+// a comparison function
+function comparisonFunction(fieldValue, comparisonValue) {
+  if (comparisonValue > fieldValue)
+    return true;
+  else
+    return false;
+};
+
+// search items with values greater than a given one
+function searchValues(){
+
+  // reset the colors of the chart
+  resetColors();
+
+  // get the chart data as an instance of anychart.data.Tree
+  var treeData = chart.data();
+
+  // search items
+  var inputValue = (document.getElementById("inputValue").value) * 1000000;
+  var items = treeData.searchItems("value", inputValue, comparisonFunction);
+
+  /* get the names of the found items, add them to a string variable,
+  and set the fill colors of their nodes */
+  var text = "";
+  for (var i = 0; i < items.length; i++) {
+    text += items[i].get("name") + ", ";
+    items[i].set("fill", "#00bfa5");
+  };
+  if (items.length == 0)
+    text = "(none)";
+
+  // update the chart title
+  chart.title("Tree Data Model: Index<br><br>" +
+              "<span style = 'color:#990000'>" +
+              text.substr(0, text.length - 2) + "</span>");
+
+};
+
+// a function for resetting the colors of the chart
+function resetColors() {
+  chart.data(data, "as-tree");  
 };
 </script>
 </body>

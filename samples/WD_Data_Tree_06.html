@@ -22,13 +22,6 @@
         button {
             margin: 10px 0 0 10px;
         }
-        label {
-            margin: 10px 0 0 10px;
-        }
-        input {
-            width: 80px;
-            margin: 10px 0 0 5px;
-        }
         #container {
             position: absolute;
             width: 100%;
@@ -38,10 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="updateItem()">Update First Child</button>
-<label>Name:<input id="inputName" value="New Name"></label>
-<label>Value:<input id="inputValue" value="120000000"></label>
-<label>Color:<input id="inputColor" value="#00bfa5"></label>
+<button onclick="addItem()">Add Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -69,7 +59,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.treeMap(treeData);
 
     // set the chart title
-    chart.title("Tree Data Model: Updating");
+    chart.title("Tree Data Model: Adding a Data Item");
 
     // set the container id
     chart.container("container");
@@ -78,14 +68,12 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// update the first child
-function updateItem(){
-  var name = document.getElementById("inputName").value;
-  var value = document.getElementById("inputValue").value;
-  var color = document.getElementById("inputColor").value;
-  treeData.getChildAt(0).getChildAt(0).set("name", name);
-  treeData.getChildAt(0).getChildAt(0).set("value", value);
-  treeData.getChildAt(0).getChildAt(0).set("fill", color);
+var itemCount = 1;
+
+// add a new data item
+function addItem(){
+  var name = "New Child " + itemCount++;
+  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
 };
 </script>
 </body>

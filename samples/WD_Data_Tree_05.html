@@ -6,32 +6,22 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-sunburst.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-treemap.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3668-tree-data/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<button onclick="addItems()">Add Data</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -41,7 +31,14 @@ anychart.onDocumentReady(function () {
       {name:   "Root",   children: [
         {name:   "Child 1",  value: 80636124},
         {name:   "Child 2",  value: 65511098},
-        {name:   "Child 3",  value: 64938716} 
+        {name:   "Child 3",  value: 64938716},
+        {name:   "Child 4",  value: 59797978},
+        {name:   "Child 5",  value: 46070146},
+        {name:   "Child 6",  value: 38563573},
+        {name:   "Child 7",  value: 19237513},
+        {name:   "Child 8",  value: 17032845}, 
+        {name:   "Child 9",  value: 11443830},
+        {name:   "Child 10", value: 10892931}  
       ]} 
     ];
 
@@ -49,10 +46,17 @@ anychart.onDocumentReady(function () {
     treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
-    var chart = anychart.sunburst(treeData);
+    var chart = anychart.treeMap(treeData);
+
+    // get the name of the last child
+    var lastChild = treeData.getChildAt(0).getChildren().length - 1;
+    var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 
     // set the chart title
-    chart.title("Tree Data Model: Adding Data");
+    chart.title().useHtml(true);
+    chart.title("Tree Data Model: Reading<br><br>" +
+                "last child = <span style = 'color:#990000'>" + 
+                lastChildName + "</span>");
 
     // set the container id
     chart.container("container");
@@ -60,21 +64,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-
-var itemCount = 1;
-
-// add new data
-function addItems(){
-  //create new data
-  var name_1 = "New Node " + itemCount++;
-  var name_2 = "New Node " + itemCount++;
-  var newData = [
-    {"name": name_1, "value": 10000000},
-    {"name": name_2, "value": 10000000}
-  ];
-  // add new data
-  treeData.addData(newData, "as-tree");
-};
 </script>
 </body>
 </html>
