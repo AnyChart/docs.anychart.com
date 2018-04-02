@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3668-tree-data/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -28,23 +28,17 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name:     "Slavic Languages", children: [
-        {name:   "East Slavic", children: [
-          {name: "Russian",        value: 150000000},
-          {name: "Ukrainian",      value:  45000000},
-          {name: "Belarusian",     value:   3200000}
-        ]},
-        {name:   "West Slavic", children: [
-          {name: "Polish",         value:  55000000},
-          {name: "Czech",          value:  10600000},
-          {name: "Slovak",         value:   5200000}
-        ]},
-        {name:   "South Slavic", children: [
-          {name: "Serbo-Croatian", value:  21000000},
-          {name: "Bulgarian",      value:   9000000},
-          {name: "Slovene",        value:   2500000},
-          {name: "Macedonian",     value:   1400000}
-        ]}  
+      {name:   "European Union", children: [
+        {name: "Belgium",        size: 11443830, value: 378},
+        {name: "France",         size: 64938716, value: 119},
+        {name: "Germany",        size: 80636124, value: 231},
+        {name: "Greece",         size: 10892931, value:  85},
+        {name: "Italy",          size: 59797978, value: 203},
+        {name: "Netherlands",    size: 17032845, value: 505},
+        {name: "Poland",         size: 38563573, value: 126},
+        {name: "Romania",        size: 19237513, value:  84}, 
+        {name: "Spain",          size: 46070146, value:  92},
+        {name: "United Kingdom", size: 65511098, value: 271}  
       ]} 
     ];
 
@@ -53,9 +47,9 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Data (Tree)<br><br>" +
+    chart.title("Treemap: Data (Size and Value)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Slavic Languages by Number of Speakers");
+                "Top 10 Most Populated EU Countries - Population & Population Density</span>");
 
     // set the container id
     chart.container("container");

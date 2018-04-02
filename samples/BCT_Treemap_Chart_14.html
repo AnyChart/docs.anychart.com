@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3668-tree-data/css/anychart-ui.min.css" />
     
     <style>
         html, body {
@@ -19,7 +19,8 @@
             margin: 0;
             padding: 0;
         }
-        button {
+        label {
+            display: inline-block;
             margin: 10px 0 0 10px;
         }
         #container {
@@ -31,11 +32,13 @@
     </style>
 </head>
 <body>
-<button onclick="headersEnabled(false)">Disable Headers</button>
-<button onclick="headersEnabled(true)">Enable Headers</button>
+<label><input onclick="displayMode('always-show')" type="radio" name="mode">Always Show</label> 
+<label><input onclick="displayMode('clip')" type="radio" name="mode">Clip</label> 
+<label><input onclick="displayMode('drop')" type="radio"  name="mode" checked>Drop</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
     // create data
     var data = [
       {name:     "Slavic Languages", children: [
@@ -64,20 +67,20 @@ anychart.onDocumentReady(function () {
     // set the maximum depth of levels shown
     chart.maxDepth(3);
 
-    // configure the text of headers in the hovered state
-    chart.hovered().headers().format("{%value}");
-
     // configure the font of headers
-    chart.normal().headers().fontColor("#990000");
-    chart.normal().headers().fontWeight('bold');
-    chart.normal().headers().fontSize("14");
-    chart.hovered().headers().fontColor("#000099");
+    chart.headers().fontSize("30");
+
+    // set the display mode of headers
+    chart.headersDisplayMode("drop");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Headers<br><br>" +
-                "<span style='font-size:12; font-style:italic'>" +
-                "Slavic Languages by Number of Speakers</span>");
+    chart.listen("chartDraw", function () {
+      chart.title("Treemap: Headers (Display Mode = " +
+                  chart.headersDisplayMode() + ")<br><br>" + 
+                  "<span style='font-size:12; font-style:italic'>" +
+                  "Slavic Languages by Number of Speakers</span>");
+    });
 
     // set the container id
     chart.container("container");
@@ -86,9 +89,9 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
     
-// enable/disable headers
-function headersEnabled(enabled){
-  chart.headers(enabled);
+// set the display mode of headers
+function displayMode(mode){
+  chart.headersDisplayMode(mode);
 };
 </script>
 </body>

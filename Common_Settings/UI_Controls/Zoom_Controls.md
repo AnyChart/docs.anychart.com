@@ -10,7 +10,7 @@ Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Z
 First of all, it is necessary to reference the following files for sample functioning correctly.
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/css/DVF-3668-tree-data/anychart-ui.min.css" />
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css" />
 ```
 

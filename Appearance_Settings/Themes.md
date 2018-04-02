@@ -19,8 +19,8 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
 ```
 <head>
   <!--Link to the files with out of the box themes -->
-  <script src="https://cdn.anychart.com/themes/{{branch-name}}/coffee.min.js"></script>
-  <script src="https://cdn.anychart.com/themes/{{branch-name}}/dark_blue.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/DVF-3668-tree-data/coffee.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/DVF-3668-tree-data/dark_blue.min.js"></script>
   <script>
     anychart.onDocumentReady(function () {
       // data

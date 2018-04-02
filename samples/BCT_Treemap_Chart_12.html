@@ -5,68 +5,79 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3668-tree-data/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="headersEnabled(false)">Disable Headers</button>
+<button onclick="headersEnabled(true)">Enable Headers</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
     // create data
     var data = [
-      {name:   "European Union", children: [
-        {name: "Belgium",        value: 11443830, capital: "Brussels" },
-        {name: "France",         value: 64938716, capital: "Paris"    },
-        {name: "Germany",        value: 80636124, capital: "Berlin"   },
-        {name: "Greece",         value: 10892931, capital: "Athens"   },
-        {name: "Italy",          value: 59797978, capital: "Rome"     },
-        {name: "Netherlands",    value: 17032845, capital: "Amsterdam"},
-        {name: "Poland",         value: 38563573, capital: "Warsaw"   },
-        {name: "Romania",        value: 19237513, capital: "Bucharest"}, 
-        {name: "Spain",          value: 46070146, capital: "Madrid"   },
-        {name: "United Kingdom", value: 65511098, capital: "London"   }  
+      {name:     "Slavic Languages", children: [
+        {name:   "East Slavic", children: [
+          {name: "Russian",        value: 150000000},
+          {name: "Ukrainian",      value:  45000000},
+          {name: "Belarusian",     value:   3200000}
+        ]},
+        {name:   "West Slavic", children: [
+          {name: "Polish",         value:  55000000},
+          {name: "Czech",          value:  10600000},
+          {name: "Slovak",         value:   5200000}
+        ]},
+        {name:   "South Slavic", children: [
+          {name: "Serbo-Croatian", value:  21000000},
+          {name: "Bulgarian",      value:   9000000},
+          {name: "Slovene",        value:   2500000},
+          {name: "Macedonian",     value:   1400000}
+        ]}  
       ]} 
     ];
 
     // create a chart and set the data
-    var chart = anychart.treeMap(data, "as-tree");
+    chart = anychart.treeMap(data, "as-tree");
 
-    // enable HTML for labels
-    chart.labels().useHtml(true);
+    // set the maximum depth of levels shown
+    chart.maxDepth(3);
 
-    // configure labels
-    chart.labels().format(function (){
-      var population = Math.round(this.value/100000)/10;
-      return "<span style='font-weight:bold'>" + this.name + 
-             "</span><br/>" + population + " mln";
-    });
+    // configure the text of headers in the hovered state
+    chart.hovered().headers().format("{%value}");
 
-    // configure tooltips
-    chart.tooltip().format(function (){
-      var population = Math.round(this.value/100000)/10;
-      return "population: " + population +
-             " mln\ncapital: " + this.getData("capital");
-    });
+    // configure the font of headers
+    chart.normal().headers().fontColor("#990000");
+    chart.normal().headers().fontWeight('bold');
+    chart.normal().headers().fontSize("14");
+    chart.hovered().headers().fontColor("#000099");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Labels and Tooltips (Formatting Functions)<br><br>" +
+    chart.title("Treemap: Headers<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
-                "Top 10 European Union Countries by Population</span>");
+                "Slavic Languages by Number of Speakers</span>");
 
     // set the container id
     chart.container("container");
@@ -74,6 +85,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+    
+// enable/disable headers
+function headersEnabled(enabled){
+  chart.headers(enabled);
+};
 </script>
 </body>
 </html>

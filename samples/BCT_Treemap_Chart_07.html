@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3668-tree-data/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -45,17 +45,26 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.treeMap(data, "as-tree");
 
-    // configure the visual settings of the chart
-    chart.hovered().fill("gray", 0.4);
-    chart.selected().fill("gray", 0.6);
-    chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
-    chart.normal().stroke("gray");
-    chart.hovered().stroke("gray");
-    chart.selected().stroke("gray", 2);
+    // create and configure a color scale.
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+{less: 20000000},
+{from: 20000000, to: 50000000},
+{from: 50000000, to: 70000000},
+{greater: 70000000}
+    ]);
+    customColorScale.colors(["lightgray", "#9ed1de", "#00ccff", "#ffcc00"]);
+
+    // set the color scale as the color scale of the chart
+    chart.colorScale(customColorScale);
+
+    // add a color range
+    chart.colorRange().enabled(true);
+    chart.colorRange().length("100%");
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Appearance<br><br>" +
+    chart.title("Treemap: Color Scale (Ordinal)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
                 "Top 10 European Union Countries by Population</span>");
 
