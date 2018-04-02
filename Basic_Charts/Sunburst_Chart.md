@@ -626,39 +626,16 @@ chart.interactivity().selectionMode("none");
 
 #### Drilldown
 
-The Sunburst chart comes with a built-in drilldown feature: if you click on an element that has children, you drill down to its children, and if you click on the parent element or press **Esc**/**Backspace**, you drill up a level. This behavior can be modified.
+The Sunburst chart comes with a built-in drilldown feature: if you click on an element that has children, you drill down to its children, and if you click on the parent element or press **Esc**/**Backspace**, you drill up a level. This behavior can be modified – use the following methods:
+
+* {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill to an item
+* {api:anychart.charts.Sunburst#drillUp}drillUp(){api} to drill up
+* {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path
 
 **Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on an element and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
-When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [tree model](../Working_with_Data/Tree_Data_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
-
-```
-// create data
-var data = [
-  {name: "Company A", children: [
-    {name: "Technical", children: [
-      {name: "Team Leaders"},
-      {name: "Architects"},
-      {name: "Developers"},
-      {name: "Testers"}
-    ]},
-    {name: "Sales", children: [
-      {name: "Analysts"},
-      {name: "Executives"}
-    ]},
-    {name: "HR"},
-    {name: "Management"}
-  ]}
-];
-
-// create a storage for the data tree
-treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart and set the data
-chart = anychart.sunburst(treeData);
-```
-
-If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp{api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data by using the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.Sunburst#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.Sunburst#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree
@@ -672,8 +649,6 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-You can also call {api:anychart.charts.Sunburst#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path.
-
-The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
+The following sample shows how to drill down to a particular item, drill up, and add the drilldown path to the title of the chart (by using a custom function):
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_20{sample}
