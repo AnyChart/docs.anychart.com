@@ -38,18 +38,21 @@
     </style>
 </head>
 <body>
-<button onclick="searchValues()">Search Items</button>
-<button onclick="indexSearch()">Index and Search</button>
+<button onclick="searchValues('value', '#00bfa5')">Search</button>
+<button onclick="searchValues('indexValue', '#ef6c00')">Indexed Search</button>
 <label>value ><input id="inputValue" value="50"> mln</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // get the data
-    generatedData = getData(10);
+    generatedData = getData(50);
 
     // create a chart and set the data
     chart = anychart.treeMap(generatedData, "as-tree");
+
+    // create an index
+    chart.data().createIndexOn("indexValue");
 
     // set the chart title
     chart.title().useHtml(true);
@@ -74,7 +77,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 };
 
 // search items with values greater than a given one
-function searchValues(){
+function searchValues(field, color){
 
   // reset the colors of the chart
   resetColors();
@@ -84,48 +87,14 @@ function searchValues(){
 
   // search items
   var inputValue = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems("value", inputValue, comparisonFunction);
+  var items = treeData.searchItems(field, inputValue, comparisonFunction);
 
   /* get the names of the found items, add them to a string variable,
   and set the fill colors of their nodes */
   var text = "";
   for (var i = 0; i < items.length; i++) {
     text += items[i].get("name") + ", ";
-    items[i].set("fill", "#00bfa5");
-  };
-  if (items.length == 0)
-    text = "(none)";
-
-  // update the chart title
-  chart.title("Tree Data Model: Index<br><br>" +
-              "<span style = 'color:#990000'>" +
-              text.substr(0, text.length - 2) + "</span>");
-
-};
-
-/* create an index and search items
-with values greater than a given one*/
-function indexSearch(){
-
-  // reset the colors of the chart
-  resetColors();
-
-  // get the chart data as an instance of anychart.data.Tree
-  var treeData = chart.data();
-
-  // create an index
-  //treeData.createIndexOn("indexValue");
-
-  // search items
-  var inputValue = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems("indexValue", inputValue, comparisonFunction);
-
-  /* get the names of the found items, add them to a string variable,
-  and set the fill colors of their nodes */
-  var text = "";
-  for (var i = 0; i < items.length; i++) {
-    text += items[i].get("name") + ", ";
-    items[i].set("fill", "#ef6c00");
+    items[i].set("fill", color);
   };
   if (items.length == 0)
     text = "(none)";
