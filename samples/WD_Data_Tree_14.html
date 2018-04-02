@@ -39,37 +39,24 @@
 </head>
 <body>
 <button onclick="searchValues()">Search Items</button>
+<button onclick="indexSearch()">Index and Search</button>
 <label>value ><input id="inputValue" value="50"> mln</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data
-    data = [
-      {name:   "Root",   children: [
-        {name:   "Child 1",  value: 80636124},
-        {name:   "Child 2",  value: 65511098},
-        {name:   "Child 3",  value: 64938716},
-        {name:   "Child 4",  value: 59797978},
-        {name:   "Child 5",  value: 46070146},
-        {name:   "Child 6",  value: 38563573},
-        {name:   "Child 7",  value: 19237513},
-        {name:   "Child 8",  value: 17032845}, 
-        {name:   "Child 9",  value: 11443830},
-        {name:   "Child 10", value: 10892931}  
-      ]} 
-    ];
+    // get the data
+    generatedData = getData(10);
 
     // create a chart and set the data
-    chart = anychart.treeMap(data, "as-tree");
-
-    // set the depth of hints
-    chart.hintDepth(2);
+    chart = anychart.treeMap(generatedData, "as-tree");
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("(!) Tree Data Model: Index<br><br>" +
                 "<span style = 'color:#990000'>?</span>");
+
+    chart.labels().format("{%name}\n{%value}\n{%indexValue}");
 
     // set the container id
     chart.container("container");
@@ -116,10 +103,61 @@ function searchValues(){
 
 };
 
+/* create an index and search items
+with values greater than a given one*/
+function indexSearch(){
+
+  // reset the colors of the chart
+  resetColors();
+
+  // get the chart data as an instance of anychart.data.Tree
+  var treeData = chart.data();
+
+  // create an index
+  //treeData.createIndexOn("indexValue");
+
+  // search items
+  var inputValue = (document.getElementById("inputValue").value) * 1000000;
+  var items = treeData.searchItems("indexValue", inputValue, comparisonFunction);
+
+  /* get the names of the found items, add them to a string variable,
+  and set the fill colors of their nodes */
+  var text = "";
+  for (var i = 0; i < items.length; i++) {
+    text += items[i].get("name") + ", ";
+    items[i].set("fill", "#ef6c00");
+  };
+  if (items.length == 0)
+    text = "(none)";
+
+  // update the chart title
+  chart.title("Tree Data Model: Index<br><br>" +
+              "<span style = 'color:#990000'>" +
+              text.substr(0, text.length - 2) + "</span>");
+
+};
+
 // a function for resetting the colors of the chart
 function resetColors() {
-  chart.data(data, "as-tree");  
+  chart.data(generatedData, "as-tree");  
 };
+
+// a function for generating data
+function getData(n){
+  // generate data
+  var childArray = [];
+  for (var i = 1; i < n; i++){
+    var childObj = {};
+    var value = Math.floor((Math.random() * 90000000) + 1);
+    childObj.name = "Child " + i;
+    childObj.value = value;
+    childObj.indexValue = value;
+    childArray.push(childObj);
+  };
+  var data = [{name: "Root", children: childArray}];
+  return data;
+};
+
 </script>
 </body>
 </html>
