@@ -521,13 +521,16 @@ chart.headersDisplayMode("drop");
 
 The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified – use the following methods:
 
-* {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill to an item
-* {api:anychart.charts.TreeMap#drillUp}drillUp{api} to drill up
+* {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill to an item
+* {api:anychart.charts.TreeMap#drillUp}drillUp(){api} to drill up
 * {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path
 
 **Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
 
-Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data by using the {api:anychart.data.Tree#search}search(){api} method. For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data by using the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data).
+
+For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree
@@ -541,20 +544,7 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-Searching requires your data to be organized in a special way – you should use the [tree data model](../Working_with_Data/Tree_Data_Model) and explicitly create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
-
-```
-// get data
-var data = getData(); 
-
-// create a storage for the data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart and set the data
-chart = anychart.treeMap(treeData);
-```
-
-This sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
+This sample shows how to drill down to a particular item, drill up, and add the drilldown path to the title of the chart (by using a custom function):
 
 {sample}BCT\_Treemap\_Chart\_15{sample}
 

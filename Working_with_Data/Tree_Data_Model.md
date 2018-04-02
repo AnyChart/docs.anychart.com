@@ -21,7 +21,7 @@ To create a chart based on tree-like data, you should organize your data either 
 
 ### As Tree
 
-If your data is organized as a tree, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor.
+If your data is organized **as a tree**, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor.
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-tree` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly.
 
@@ -59,7 +59,7 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-If your data is organized as a table, pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter. Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor.
+If you store data in a relational database table, it is particularly useful to organize it **as a table**. To set such data, you should pass it to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-table"` as the second parameter. Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor.
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `as-table` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly.
 
