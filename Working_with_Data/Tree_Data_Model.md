@@ -59,7 +59,7 @@ treeData = anychart.data.tree(data, "as-tree");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample :height 450}WD\_Data\_Tree\_02{sample}
+{sample}WD\_Data\_Tree\_02{sample}
 
 ### As Table
 
@@ -92,11 +92,11 @@ treeData = anychart.data.tree(data, "as-table");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample :height 450}WD\_Data\_Tree\_03{sample}
+{sample}WD\_Data\_Tree\_03{sample}
 
 ### Mapping
 
-{sample :height 450}WD\_Data\_Tree\_04{sample}
+{sample}WD\_Data\_Tree\_04{sample}
 
 ## Accessing Items
 
