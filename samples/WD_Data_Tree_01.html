@@ -39,7 +39,6 @@
     </style>
 </head>
 <body>
-<label>Chart Type:</label>
 <label><input onclick="switchType(true, false)" type="radio" name="type" checked>Treemap</label>
 <label><input onclick="switchType(false, true)" type="radio" name="type">Sunburst</label>
 <div id="containerTreemap"></div>
@@ -68,7 +67,7 @@ anychart.onDocumentReady(function () {
 
     // create and configure a treemap chart
     chartTreemap = anychart.treeMap(treeData);
-    chartTreemap.title("(!) Tree Data Model: Quick Start (Treemap)");
+    chartTreemap.title("(!) Tree Data Model: Quick Start");
     // set the chart container
     chartTreemap.container("containerTreemap");
     // initiate drawing the chart
@@ -76,7 +75,7 @@ anychart.onDocumentReady(function () {
 
     // create and configure a sunburst chart
     chartSunburst = anychart.sunburst(treeData);
-    chartSunburst.title("(!) Tree Data Model: Quick Start (Sunburst)");
+    chartSunburst.title("(!) Tree Data Model: Quick Start");
     // hide the sunburst chart
     chartSunburst.enabled(false);
     // set the chart container
