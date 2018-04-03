@@ -101,12 +101,12 @@ anychart.onDocumentReady(function () {
     // create and configure a gantt chart
     gantt = anychart.ganttProject();
     gantt.data(treeData);
-    gantt.fitAll();
     gantt.title("(!) Tree Data Model: Quick Start");
     // set the chart container
     gantt.container("ganttContainer");
     // initiate drawing the chart   
     gantt.draw();
+    gantt.fitAll();
     // hide the gantt chart
     gantt.enabled(false);
 });
