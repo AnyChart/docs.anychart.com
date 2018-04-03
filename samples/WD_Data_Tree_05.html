@@ -43,7 +43,7 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a storage for the data tree
-    treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
     var chart = anychart.treeMap(treeData);
