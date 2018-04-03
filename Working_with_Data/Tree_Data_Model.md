@@ -15,10 +15,6 @@ This article explains how to set tree-like data, access data items, and perform 
 
 ## Quick Start
 
-* пример с вкладками, где показать все типы чартов, или с радио
-* container(null);
-* chart.enabled(false); ?
-
 {sample :height 450}WD\_Data\_Tree\_01{sample}
 
 ## Setting Data
