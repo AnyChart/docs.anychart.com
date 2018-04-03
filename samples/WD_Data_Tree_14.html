@@ -35,18 +35,35 @@
             top: 35px;
             bottom: 0;
         }
+        #search {
+            color: #00838f;
+        }
+        #indexedSearch {
+            color: #ef6c00;
+        }
+        #timeLabel {
+        	position: absolute;
+        	width: 100px;
+            padding: 10px;
+            right: 20px;
+            z-index: 100;
+            border: 1px solid #96a6a6;
+            color: #96a6a6;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<button onclick="searchValues('value', '#00bfa5')">Search</button>
-<button onclick="searchValues('indexValue', '#ef6c00')">Indexed Search</button>
+<button id="search" onclick="searchValues('value', '#00838f')">Search</button>
+<button id = "indexedSearch" onclick="searchValues('indexValue', '#ef6c00')">Indexed Search</button>
 <label>value ><input id="inputValue" value="50"> mln</label>
+<label id="timeLabel">Search Time</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // get the data
-    generatedData = getData(50);
+    generatedData = getData(100);
 
     // create a chart and set the data
     chart = anychart.treeMap(generatedData, "as-tree");
@@ -55,11 +72,7 @@ anychart.onDocumentReady(function () {
     chart.data().createIndexOn("indexValue");
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("(!) Tree Data Model: Index<br><br>" +
-                "<span style = 'color:#990000'>?</span>");
-
-    chart.labels().format("{%name}\n{%value}\n{%indexValue}");
+    chart.title("Tree Data Model: Index");
 
     // set the container id
     chart.container("container");
@@ -79,6 +92,9 @@ function comparisonFunction(fieldValue, comparisonValue) {
 // search items with values greater than a given one
 function searchValues(field, color){
 
+  // start measuring the time of search
+  var searchTime = performance.now();
+
   // reset the colors of the chart
   resetColors();
 
@@ -89,21 +105,18 @@ function searchValues(field, color){
   var inputValue = (document.getElementById("inputValue").value) * 1000000;
   var items = treeData.searchItems(field, inputValue, comparisonFunction);
 
-  /* get the names of the found items, add them to a string variable,
+  /* get the the found items
   and set the fill colors of their nodes */
-  var text = "";
   for (var i = 0; i < items.length; i++) {
-    text += items[i].get("name") + ", ";
     items[i].set("fill", color);
   };
-  if (items.length == 0)
-    text = "(none)";
 
-  // update the chart title
-  chart.title("Tree Data Model: Index<br><br>" +
-              "<span style = 'color:#990000'>" +
-              text.substr(0, text.length - 2) + "</span>");
-
+  // get the time of search and show it in the label
+  searchTime = (performance.now() - searchTime).toFixed(0) / 1000;
+  var timeLabel = document.getElementById("timeLabel");
+  timeLabel.innerHTML = searchTime + " s";
+  timeLabel.style.color = color;
+  timeLabel.style.borderColor = color;
 };
 
 // a function for resetting the colors of the chart
@@ -117,10 +130,10 @@ function getData(n){
   var childArray = [];
   for (var i = 1; i < n; i++){
     var childObj = {};
-    var value = Math.floor((Math.random() * 90000000) + 1);
+    var randomValue = Math.floor((Math.random() * 99999999) + 1);
     childObj.name = "Child " + i;
-    childObj.value = value;
-    childObj.indexValue = value;
+    childObj.value = randomValue;
+    childObj.indexValue = randomValue;
     childArray.push(childObj);
   };
   var data = [{name: "Root", children: childArray}];
