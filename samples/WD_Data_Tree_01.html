@@ -80,16 +80,18 @@ anychart.onDocumentReady(function () {
     // create a storage for the data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
-    // create and configure a treemap chart
+    // create a treemap chart and set the data
     treemap = anychart.treeMap(treeData);
+    // set the title
     treemap.title("(!) Tree Data Model: Quick Start");
     // set the chart container
     treemap.container("treemapContainer");
     // initiate drawing the chart
     treemap.draw();
 
-    // create and configure a sunburst chart
+    // create a sunburst chart and set the data
     sunburst = anychart.sunburst(treeData);
+    // set the title
     sunburst.title("(!) Tree Data Model: Quick Start");
     // set the chart container
     sunburst.container("sunburstContainer");
@@ -98,14 +100,17 @@ anychart.onDocumentReady(function () {
     // hide the sunburst chart
     sunburst.enabled(false);
 
-    // create and configure a gantt chart
+    // create a gantt chart
     gantt = anychart.ganttProject();
+    // set the data
     gantt.data(treeData);
+    // set the title
     gantt.title("(!) Tree Data Model: Quick Start");
     // set the chart container
     gantt.container("ganttContainer");
     // initiate drawing the chart   
     gantt.draw();
+    // fit items to the width of the timeline
     gantt.fitAll();
     // hide the gantt chart
     gantt.enabled(false);
