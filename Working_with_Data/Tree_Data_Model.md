@@ -15,7 +15,7 @@ This article explains how to set tree-like data, access data items, and perform 
 
 ## Quick Start
 
-{sample :height 180}WD\_Data\_Tree\_01{sample}
+{sample}WD\_Data\_Tree\_01{sample}
 
 ## Setting Data
 
