@@ -233,7 +233,7 @@ Module to create [Venn diagram](../Basic_Charts/Venn_Diagram):
 Module to create [Waterfall chart](../Basic_Charts/Waterfall_Chart):
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
 ```
 
 ## Features

@@ -39,16 +39,16 @@ anychart.onDocumentReady(function () {
   ];
 
   // create a chart
-  var chart = anychart.verticalLine();
+  var chart = anychart.area();
 
   // create a step line series and set the data
-  var series = chart.stepLine(data);
+  var series = chart.stepArea(data);
 
   // set step direction to the forward mode
   series.stepDirection("forward");  
 
   // set the chart title
-  chart.title("Vertical Step Line Chart");
+  chart.title("Step Area Chart");
 
   // set the container id
   chart.container("container");
