@@ -15,6 +15,32 @@ This article explains how to set tree-like data, access data items, and perform 
 
 ## Quick Start
 
+To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to the chart constructor:
+
+```
+// create data
+var data = [
+  {name:   "Root", children: [
+    {name:   "Child 1", value: 65511098},
+    {name:   "Child 2", value: 64938716},
+    {name:   "Child 3", value: 59797978},
+    {name:   "Child 4", value: 46070146}
+  ]}
+];
+
+// create a treemap chart and set the data
+treemap = anychart.treeMap(treeData);
+
+// set the chart container
+treemap.container("treemapContainer");
+
+// initiate drawing the chart
+treemap.draw();
+});
+```
+
+The following sample shows how to create different chart types with the same tree-like data:
+
 {sample :height 300}WD\_Data\_Tree\_01{sample}
 
 ## Setting Data
