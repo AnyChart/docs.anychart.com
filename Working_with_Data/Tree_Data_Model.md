@@ -387,7 +387,7 @@ function nextItem() {
 
 ## Index
 
-Some [data operations](#data_manipulations) are performed faster on indexed data. In AnyChart, you can automatically create an index on a data field – call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
+Some [data operations](#data_manipulation) are performed faster on indexed data. In AnyChart, you can automatically create an index on a data field – call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
 
 ```
 // create an index
@@ -396,7 +396,12 @@ treeData.createIndexOn("value");
 
 **Note:** You cannot create an index on the `parent` or `child` field.
 
-To remove the index, use {api:anychart.data.Tree#removeIndex()}removeIndex(){api}.
+To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn()}removeIndexOn(){api} with the name of the field as a parameter:
+
+```
+// remove the index
+treeData.removeIndexOn("value");
+```
 
 The following sample allows you to compare the time required for [searching](#searching) items with an index and without it:
 
