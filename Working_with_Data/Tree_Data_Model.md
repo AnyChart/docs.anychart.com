@@ -403,7 +403,7 @@ To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn()}remo
 treeData.removeIndexOn("value");
 ```
 
-The following sample allows you to compare the time required for [searching](#searching) items with an index and without it:
+The data in the following sample is randomly generated, and there are, among others, two data fields with different names and identical values. A simple [search](#searching) is performed by the first field and an indexed search by the second one, which allows comparing their speed. Please note that for illustrative purposes the displayed time includes the time it takes for the chart to be rendered.
 
 {sample}WD\_Data\_Tree\_14{sample}
 
