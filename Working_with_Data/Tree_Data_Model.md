@@ -35,7 +35,7 @@ var treeData = anychart.data.tree(data, "as-tree");
 var chart = anychart.treeMap(treeData);
 
 // set the chart container
-treemap.container("treemapContainer");
+treemap.container("container");
 
 // initiate drawing the chart
 treemap.draw();
