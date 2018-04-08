@@ -85,6 +85,7 @@ var data = [
   {id: 11, parent:   10, name: "Child 3-1", value:  21000000},
   {id: 12, parent:   10, name: "Child 3-2", value:   9000000}
 ];
+
 // create a storage for the data tree
 treeData = anychart.data.tree(data, "as-table");
 
