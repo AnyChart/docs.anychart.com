@@ -28,15 +28,17 @@ var data = [
   ]}
 ];
 
-// create a treemap chart and set the data
-treemap = anychart.treeMap(treeData);
+// create a storage for the data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// create a chart and set the data
+var chart = anychart.treeMap(treeData);
 
 // set the chart container
 treemap.container("treemapContainer");
 
 // initiate drawing the chart
 treemap.draw();
-});
 ```
 
 The following sample shows how to create different chart types with the same tree-like data:
