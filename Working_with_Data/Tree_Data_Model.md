@@ -387,7 +387,7 @@ function nextItem() {
 
 ## Index
 
-Some [data operations](#data_manipulation) are performed faster on indexed data. In AnyChart, you can automatically create an index on a data field – call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
+Some [data operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
 
 ```
 // create an index
