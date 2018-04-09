@@ -421,7 +421,7 @@ Here is the full list of [events](../Common_Settings/Event_Listeners) that work 
 
 Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
-In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change position and duration, rename). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title when an item is updated or added:
+In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, and name). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title when an item is updated or added:
 
 ```
 // update the chart title when an item is updated
