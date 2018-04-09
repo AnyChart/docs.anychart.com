@@ -12,15 +12,15 @@ Here is the full list of events that work with event markers:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>eventMarkersHover</td><td>Event type for hover on markers.</td></tr>
-<tr><td>eventMarkersSelect</td><td>Event type for select on markers.</td></tr>
-<tr><td>eventMarkerClick</td><td>Event type for the marker click.</td></tr>
-<tr><td>eventMarkerDblClick</td><td>Event type for the marker double click.</td></tr>
-<tr><td>eventMarkerMouseDown</td><td>Event type for the marker mouse down.</td></tr>
-<tr><td>eventMarkerMouseMove</td><td>Event type for the marker mouse move.</td></tr>
-<tr><td>eventMarkerMouseOut</td><td>Event type for the marker mouse over.</td></tr>
-<tr><td>eventMarkerMouseOver</td><td>Event type for the marker mouse over.</td></tr>
-<tr><td>eventMarkerMouseUp</td><td>Event type for the marker mouse up.</td></tr>
+<tr><td>eventMarkersHover</td><td>Event type for hover on markers</td></tr>
+<tr><td>eventMarkersSelect</td><td>Event type for select on markers</td></tr>
+<tr><td>eventMarkerClick</td><td>Event type for the marker click</td></tr>
+<tr><td>eventMarkerDblClick</td><td>Event type for the marker double click</td></tr>
+<tr><td>eventMarkerMouseDown</td><td>Event type for the marker mouse down</td></tr>
+<tr><td>eventMarkerMouseMove</td><td>Event type for the marker mouse move</td></tr>
+<tr><td>eventMarkerMouseOut</td><td>Event type for the marker mouse over</td></tr>
+<tr><td>eventMarkerMouseOver</td><td>Event type for the marker mouse over</td></tr>
+<tr><td>eventMarkerMouseUp</td><td>Event type for the marker mouse up</td></tr>
 </table>
 
 The following sample shows how listening to these events can be used:

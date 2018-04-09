@@ -409,8 +409,17 @@ The data in the following sample is randomly generated, and there are, among oth
 
 ## Events
 
-* список событий
-* упомянуть {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api}
+Here is the full list of [events](../Common_Settings/Event_Listeners) that work with the tree data model:
+
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><td>treeItemCreate</td><td> item created</td></tr>
+<tr><td>treeItemMove</td><td>item moved</td></tr>
+<tr><td>treeItemRemove</td><td>item removed</td></tr>
+<tr><td>treeItemUpdate</td><td>item updated</td></tr>
+</table>
+
+Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
 пример: гантт, кнопка, которая добавляет ноды + перетаскивание --> реакция на эти события
 
