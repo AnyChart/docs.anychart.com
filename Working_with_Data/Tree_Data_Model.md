@@ -11,7 +11,7 @@ It is used in the following chart types:
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 
-This article explains how to set tree-like data, access data items, and perform data operations: see the [Setting Data](#setting_data), [Accessing Items](#accessing_items), and [Data Manipulation](#data_manipulation) sections.
+This article explains how to set tree-like data, access data items, and perform operations on data: see the [Setting Data](#setting_data), [Accessing Items](#accessing_items), and [Data Manipulation](#data_manipulation) sections.
 
 ## Quick Start
 
@@ -28,7 +28,7 @@ var data = [
   ]}
 ];
 
-// create a storage for the data tree
+// create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
 // create a chart and set the data
@@ -80,7 +80,7 @@ var data = [
   ]} 
 ];
 
-// create a storage for the data tree
+// create a data tree
 treeData = anychart.data.tree(data, "as-tree");
 
 // create a chart and set the data
@@ -114,7 +114,7 @@ var data = [
   {id: 12, parent:   10, name: "Child 3-2", value:   9000000}
 ];
 
-// create a storage for the data tree
+// create a data tree
 treeData = anychart.data.tree(data, "as-table");
 
 // create a chart and set the data
@@ -155,7 +155,7 @@ Manipulating data very often requires accessing data items, so the methods liste
 
 ## Data Manipulation
 
-You can perform the following data operations (including CRUD):
+You can perform the following operations on data (including CRUD):
 
 * [Reading](#reading)
 * [Adding](#adding)
@@ -164,7 +164,7 @@ You can perform the following data operations (including CRUD):
 * [Searching](#searching)
 * [Traversing](#traversing)
 
-**Note:** Operations with non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
+**Note:** Operations on non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
 ### Reading
 
@@ -387,7 +387,7 @@ function nextItem() {
 
 ## Index
 
-Some [data operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
+Some [operations on data](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
 
 ```
 // create an index
