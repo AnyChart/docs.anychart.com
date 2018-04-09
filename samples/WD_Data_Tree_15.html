@@ -85,18 +85,18 @@ anychart.onDocumentReady(function () {
     treeData.listen("treeItemUpdate", function (e) {
       var itemName = e.item.get("name");
       chart.title().useHtml(true);
-      chart.title("Tree Data Model: Events<br><br>" +
+      chart.title("Tree Data Model: Events<br><br>< " +
                   "<span style = 'color:#990000'>" +
-                  itemName + "</span> updated");
+                  itemName + "</span> updated >");
     });
 
     // update the chart title when an item is added
     treeData.listen("treeItemCreate", function (e) {
       var itemName = e.item.get("name");
       chart.title().useHtml(true);
-      chart.title("Tree Data Model: Events<br><br>" +
+      chart.title("Tree Data Model: Events<br><br>< " +
                   "<span style = 'color:#990000'>" +
-                  itemName + "</span> added");
+                  itemName + "</span> added >");
     });
 
     // set the container id
