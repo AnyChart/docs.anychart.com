@@ -155,7 +155,7 @@ Manipulating data very often requires accessing data items, so the methods liste
 
 ## Data Manipulation
 
-You can perform the following operations on data (including CRUD):
+You can perform the following data operations (including CRUD):
 
 * [Reading](#reading)
 * [Adding](#adding)
@@ -387,7 +387,7 @@ function nextItem() {
 
 ## Index
 
-Some [data operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
+Some [operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
 
 ```
 // create an index
