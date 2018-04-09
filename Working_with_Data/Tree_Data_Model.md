@@ -421,6 +421,26 @@ Here is the full list of [events](../Common_Settings/Event_Listeners) that work 
 
 Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
-пример: гантт, кнопка, которая добавляет ноды + перетаскивание --> реакция на эти события
+In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items – change their position and duration. Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title when an item is updated or added:
+
+```
+// update the chart title when an item is updated
+treeData.listen("treeItemUpdate", function (e) {
+  var itemName = e.item.get("name");
+  chart.title().useHtml(true);
+  chart.title("Tree Data Model: Events<br><br>" +
+              "<span style = 'color:#990000'>" +
+              itemName + "</span> updated");
+});
+
+// update the chart title when an item is added
+treeData.listen("treeItemCreate", function (e) {
+  var itemName = e.item.get("name");
+  chart.title().useHtml(true);
+  chart.title("Tree Data Model: Events<br><br>" +
+              "<span style = 'color:#990000'>" +
+              itemName + "</span> added");
+});
+```
 
 {sample}WD\_Data\_Tree\_15{sample}
