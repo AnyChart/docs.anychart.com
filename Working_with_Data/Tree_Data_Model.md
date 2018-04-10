@@ -125,7 +125,55 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-{sample}WD\_Data\_Tree\_04{sample}
+If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
+
+In the following sample, custom fields `start` and `end` are mapped as the `actualStart` and `actualEnd` fields required by the Gantt chart:
+
+```
+// create data
+var data = [
+  {
+    name:   "Root",
+    start: Date.UTC(2018, 0, 25),
+    end: Date.UTC(2018, 2, 14),
+    children: [
+      {
+        name:   "Child 1",
+        start: Date.UTC(2018, 0, 25),
+        end: Date.UTC(2018, 1, 3)
+      },
+      {
+        name:   "Child 2",
+        start: Date.UTC(2018, 1, 4),
+        end: Date.UTC(2018, 1, 4)
+      },
+      {
+        name:   "Child 3",
+        start: Date.UTC(2018, 1, 4),
+        end: Date.UTC(2018, 1, 24)
+      },
+      {
+        name:   "Child 4",
+        start: Date.UTC(2018, 1, 24),
+        end: Date.UTC(2018, 2, 14)
+      }
+    ]
+}];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// map the data
+var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
+```
+
+{sample :height 250}WD\_Data\_Tree\_04{sample}
 
 ## Accessing Items
 
@@ -419,9 +467,9 @@ Here is the full list of [events](../Common_Settings/Event_Listeners) that work 
 <tr><td>treeItemUpdate</td><td>item updated</td></tr>
 </table>
 
-Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents()}dispatchEvents(){api} method with `true` or `false` as a parameter.
+Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
-In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, and name). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
+In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
 
 ```
 // update the chart title when an item is updated
