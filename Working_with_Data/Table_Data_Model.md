@@ -17,6 +17,9 @@ Learn how to use data table in [AnyStock Data Article](../Stock_Charts/Data).
 
 ## Setting Data
 
+* {api:anychart.data.Table}anychart.data.Table{api}
+* {api:anychart.data#table}table(){api}
+
 ???
 
 ### Mapping
