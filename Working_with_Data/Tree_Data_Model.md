@@ -125,7 +125,55 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-{sample}WD\_Data\_Tree\_04{sample}
+If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass mapped data to the chart constructor or the **data()** method of the chart type you use.
+
+In the following sample, custom fields `start` and `end` are mapped as the `actualStart` and `actualEnd` fields required by the Gantt chart:
+
+```
+// create data
+var data = [
+  {
+    name:   "Root",
+    start: Date.UTC(2018, 0, 25),
+    end: Date.UTC(2018, 2, 14),
+    children: [
+      {
+        name:   "Child 1",
+        start: Date.UTC(2018, 0, 25),
+        end: Date.UTC(2018, 1, 3)
+      },
+      {
+        name:   "Child 2",
+        start: Date.UTC(2018, 1, 4),
+        end: Date.UTC(2018, 1, 4)
+      },
+      {
+        name:   "Child 3",
+        start: Date.UTC(2018, 1, 4),
+        end: Date.UTC(2018, 1, 24)
+      },
+      {
+        name:   "Child 4",
+        start: Date.UTC(2018, 1, 24),
+        end: Date.UTC(2018, 2, 14)
+      }
+    ]
+}];
+
+// create a data tree
+var treeData = anychart.data.tree(data, "as-tree");
+
+// map the data
+var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+
+// create a chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(mapping);
+```
+
+{sample :height 300}WD\_Data\_Tree\_04{sample}
 
 ## Accessing Items
 
