@@ -173,7 +173,7 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 300}WD\_Data\_Tree\_04{sample}
+{sample :height 250}WD\_Data\_Tree\_04{sample}
 
 ## Accessing Items
 
