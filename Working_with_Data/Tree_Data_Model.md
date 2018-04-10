@@ -125,7 +125,7 @@ var chart = anychart.treeMap(treeData);
 
 ### Mapping
 
-If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass mapped data to the chart constructor or the **data()** method of the chart type you use.
+If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
 
 In the following sample, custom fields `start` and `end` are mapped as the `actualStart` and `actualEnd` fields required by the Gantt chart:
 
