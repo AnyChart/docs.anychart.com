@@ -3,30 +3,36 @@
 
 ## Overview
 
-```
-Table Data Model allows to store big ordered data sets and access their elements easily and fast. {api:anychart.data.Table}anychart.data.Table{api} is a data layer designed specifically to meet Stock and Financial Charts needs.Beside basic features like data streaming, data mapping, and transaction-based data flow, {api:anychart.data.Table}anychart.data.Table{api} provides the ability to search and select data by DateTime intervals.
-
-Table Data Structure is crucial for [AnyStock: AnyChart HTML5 Stock and Financial Charts](../Stock_Charts/Quick_Start).
-
-Learn how to use data table in [AnyStock Data Article](../Stock_Charts/Data).
-```
-
-## Quick Start
-
-???
+* [AnyStock: AnyChart HTML5 Stock and Financial Charts](../Stock_Charts/Quick_Start)
+* [AnyStock Data Article](../Stock_Charts/Data)
 
 ## Setting Data
 
 * {api:anychart.data.Table}anychart.data.Table{api}
 * {api:anychart.data#table}table(){api}
+* {api:anychart.data.Table#mapAs}anychart.data.Table#mapAs{api}
 
-???
+### Array of Arrays
+
+{sample}WD\_Data\_Table\_01{sample}
+
+### Array of Objects
+
+1 пример
 
 ### Mapping
 
-???
+3 примера:
+
+* просто mapAs и mapAs с addField в одном примере
+* многосерийность + индикаторы
+* две серии и две таблицы, чередующиеся даты
 
 ## Accessing Items
+
+* anychart.data.TableSelectable
+* anychart.data.TableSelectable.RowProxy
+* описать тонкости работы с selectable
 
 ## Data Manipulation
 
@@ -35,7 +41,7 @@ Learn how to use data table in [AnyStock Data Article](../Stock_Charts/Data).
 * [Updating](#updating)
 * [Removing](#removing)
 * [Searching](#searching)
-* [Traversing](#traversing)
+* [Iterating](#iterating)
 
 ### Reading
 
@@ -45,8 +51,13 @@ Learn how to use data table in [AnyStock Data Article](../Stock_Charts/Data).
 
 ### Removing
 
-### Traversing
+### Iterating
 
-## Index
+* anychart.data.TableIterator
+* еще подумать про название
+
+## Table Computer
+
+* anychart.data.TableComputer.RowProxy
 
 ## Events
