@@ -43,12 +43,7 @@ anychart.onDocumentReady(function () {
     ]);
     
     // map the data
-    mapping = dataTable.mapAs(0);
-    mapping.addField("open", 1, "first");
-    mapping.addField("high", 2, "max");
-    mapping.addField("low", 3, "min");
-    mapping.addField("close", 4, "last");
-    mapping.addField("value", 4, "last");
+    mapping = dataTable.mapAs({"open": 1, "high":  2, "low":  3, "close": 4});
     
     // create a stock chart
     var chart = anychart.stock();

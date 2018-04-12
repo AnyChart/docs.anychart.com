@@ -18,7 +18,7 @@
 
 ### Array of Objects
 
-1 пример
+{sample}WD\_Data\_Table\_02{sample}
 
 ### Mapping
 

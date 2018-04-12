@@ -27,29 +27,24 @@
 anychart.onDocumentReady(function () {
     
     // create a data table
-    var dataTable = anychart.data.table(0);
+    var dataTable = anychart.data.table("x");
     
     // add data
     dataTable.addData([
-      ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-      ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
-      ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-      ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-      ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-      ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-      ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-      ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-      ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
-    ]);
+      {"x": "2015-12-25", "open": 512.53, "high": 514.88, "low": 505.69, "close": 507.34},
+      {"x": "2015-12-26", "open": 511.83, "high": 514.98, "low": 505.59, "close": 506.23},
+      {"x": "2015-12-27", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
+      {"x": "2015-12-28", "open": 510.35, "high": 515.72, "low": 505.23, "close": 505.80},
+      {"x": "2015-12-29", "open": 510.53, "high": 515.86, "low": 505.38, "close": 508.25},
+      {"x": "2015-12-30", "open": 511.43, "high": 515.98, "low": 505.66, "close": 507.45},
+      {"x": "2015-12-31", "open": 511.50, "high": 515.33, "low": 505.99, "close": 507.98},
+      {"x": "2016-01-01", "open": 511.32, "high": 514.29, "low": 505.99, "close": 506.37},
+      {"x": "2016-01-02", "open": 511.70, "high": 514.87, "low": 506.18, "close": 506.75}
+    ]); 
     
     // map the data
-    mapping = dataTable.mapAs(0);
-    mapping.addField("open", 1, "first");
-    mapping.addField("high", 2, "max");
-    mapping.addField("low", 3, "min");
-    mapping.addField("close", 4, "last");
-    mapping.addField("value", 4, "last");
-    
+    mapping = dataTable.mapAs({"open": "open", "high": "high", "low": "low", "close": "close"});
+
     // create a stock chart
     var chart = anychart.stock();
     
@@ -58,7 +53,7 @@ anychart.onDocumentReady(function () {
     ohlcSeries.name("ACME Corp.");
     
     // setting the chart title
-    chart.title("Table Data: Setting Data (Array of Arrays)");
+    chart.title("Table Data: Setting Data (Array of Objects)");
     
     // set the container id
     chart.container("container");
