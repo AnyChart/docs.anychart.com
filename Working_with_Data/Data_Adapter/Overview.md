@@ -11,7 +11,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/RC-8.2.1/js/anychart-data-adapter.min.js"></script>
 ```
 
 ## HTML Tables

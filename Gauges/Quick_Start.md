@@ -7,8 +7,8 @@ Reference the anychart.min.js JavaScript file in the `<head>` section of your we
 
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/RC-8.2.1/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/RC-8.2.1/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -98,8 +98,8 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
 <!doctype html>
 <html>
 <head>
-  <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-core.min.js" type="text/javascript"></script>
-  <script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/RC-8.2.1/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/RC-8.2.1/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
   <style>
     html, body, #container {
       width: 100%;

@@ -11,7 +11,7 @@ XML or Extensible Markup Language, is a markup language that defines a set of ru
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version DVF-3668-tree-data is located at [https://cdn.anychart.com/schemas/DVF-3668-tree-data/xml-schema.xsd](https://cdn.anychart.com/schemas/DVF-3668-tree-data/xml-schema.xsd)). This file can be used to validate your own XML structure.
+XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version RC-8.2.1 is located at [https://cdn.anychart.com/schemas/RC-8.2.1/xml-schema.xsd](https://cdn.anychart.com/schemas/RC-8.2.1/xml-schema.xsd)). This file can be used to validate your own XML structure.
 
 ## XML vs JavaScript
 
@@ -20,7 +20,7 @@ To load chart configuration in XML format you should use {api:anychart#fromXml}f
 ```
 // xml data
 var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3668-tree-data/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/RC-8.2.1/xml-schema.xsd">' +
     '<chart type="pie" container="container" title="XML Sample Pie">' +
        '<data>' +
             '<point name="Apples" value="128.14" fill="Green"/>'+
@@ -53,7 +53,7 @@ The same chart can be created using XML
 ```
 anychart.fromXml(
 '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3668-tree-data/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/RC-8.2.1/xml-schema.xsd">' +
     '<chart type="column" container="container">' +
       '<series_list>'+
         '<series type="column">'+
