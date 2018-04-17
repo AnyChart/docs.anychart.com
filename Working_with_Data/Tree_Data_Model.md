@@ -11,7 +11,7 @@ It is used in the following chart types:
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
 
-This article explains how to set tree-like data, access data items, and perform operations on data: see the [Setting Data](#setting_data), [Accessing Items](#accessing_items), and [Data Manipulation](#data_manipulation) sections.
+This article explains how to set tree-like data, access data items, and perform operations on data.
 
 ## Quick Start
 
@@ -314,7 +314,20 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 ### Searching
 
+#### search()
+
+searchItems: старый пример
+searchItems: пример на поиск объекта, два поля - имя и фамилия
+
+{sample}WD\_Data\_Tree\_10{sample}
+
+{sample}WD\_Data\_Tree\_11{sample}
+
+{sample}WD\_Data\_Tree\_12{sample}
+
 To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.  Please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array, which is the only difference between them.
+
++ search возвращает либо массив итемов, либо итем, если результатом поиска является один элемент
 
 These methods accept three parameters: the name of a data field, a value, and a comparison function. The function is optional: you can just search for an item with a given value in a given data field.
 
@@ -353,8 +366,6 @@ function searchValues(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_10{sample}
-
 In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
 ```
@@ -366,7 +377,38 @@ var item = treeData.search("name", "Item 3-4");
 chart.drillTo(item);
 ```
 
-{sample}WD\_Data\_Tree\_11{sample}
+#### filter()
+
+пример: duration > ? day(s), actual: {fill: "red"}
+
+{sample :height 250}WD\_Data\_Tree\_13{sample}
+
+#### Indexes
+
+пример: лог --> создание графика, сравнение (больше или меньше опр. величины)
+пример: поиск по объектам
+
+{sample}WD\_Data\_Tree\_14{sample}
+
+{sample}WD\_Data\_Tree\_15{sample}
+
+Some [operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
+
+```
+// create an index
+treeData.createIndexOn("value");
+```
+
+**Note:** You cannot create an index on the `parent` or `child` field.
+
+To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn}removeIndexOn(){api} with the name of the field as a parameter:
+
+```
+// remove the index
+treeData.removeIndexOn("value");
+```
+
+The data in the following sample is randomly generated, and there are, among others, two data fields with different names and identical values. A simple [search](#searching) is performed by the first field, and an indexed search by the second one, which allows comparing their speed. Please note that for illustrative purposes the displayed time includes the time it takes for the chart to be rendered.
 
 ### Traversing
 
@@ -403,7 +445,7 @@ while (traverser.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Tree\_12{sample}
+{sample}WD\_Data\_Tree\_16{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -431,29 +473,7 @@ function nextItem() {
 };
 ```
 
-{sample}WD\_Data\_Tree\_13{sample}
-
-## Index
-
-Some [operations](#data_manipulation) are performed faster on indexed data. To create an index on a data field, call the {api:anychart.data.Tree#createIndexOn()}createIndexOn(){api} on the instance of {api:anychart.data.Tree}anychart.data.Tree{api} and specify the name of the field as a parameter:
-
-```
-// create an index
-treeData.createIndexOn("value");
-```
-
-**Note:** You cannot create an index on the `parent` or `child` field.
-
-To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn()}removeIndexOn(){api} with the name of the field as a parameter:
-
-```
-// remove the index
-treeData.removeIndexOn("value");
-```
-
-The data in the following sample is randomly generated, and there are, among others, two data fields with different names and identical values. A simple [search](#searching) is performed by the first field, and an indexed search by the second one, which allows comparing their speed. Please note that for illustrative purposes the displayed time includes the time it takes for the chart to be rendered.
-
-{sample}WD\_Data\_Tree\_14{sample}
+{sample}WD\_Data\_Tree\_17{sample}
 
 ## Events
 
@@ -491,4 +511,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Data\_Tree\_15{sample}
+{sample}WD\_Data\_Tree\_18{sample}
