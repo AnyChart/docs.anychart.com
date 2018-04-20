@@ -316,9 +316,6 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 #### search()
 
-searchItems: старый пример
-searchItems: пример на поиск объекта, два поля - имя и фамилия
-
 {sample}WD\_Data\_Tree\_10{sample}
 
 {sample}WD\_Data\_Tree\_11{sample}
