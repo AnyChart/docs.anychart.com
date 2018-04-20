@@ -320,7 +320,7 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 {sample}WD\_Data\_Tree\_11{sample}
 
-{sample}WD\_Data\_Tree\_12{sample}
+{sample :height 250}WD\_Data\_Tree\_12{sample}
 
 To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.  Please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array, which is the only difference between them.
 
