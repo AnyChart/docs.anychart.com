@@ -80,7 +80,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
   return fieldValue < comparisonValue;
 };
 
-// search items with values greater than a given one
+// search for items with values greater than a given one
 function searchValue(){
 
   // reset the colors of the chart
@@ -89,7 +89,7 @@ function searchValue(){
   // get the chart data as an instance of anychart.data.Tree
   var treeData = chart.data();
 
-  // search items
+  // search for items
   var inputValue = (document.getElementById("inputValue").value) * 1000000;
   var items = treeData.searchItems("value", inputValue, comparisonFunction);
 
@@ -104,7 +104,7 @@ function searchValue(){
     text = "(none)  ";
 
   // update the chart title
-  chart.title("Tree Data Model: Searching<br><br>" +
+  chart.title("Tree Data Model: search()<br><br>" +
               "<span style = 'color:#990000'>" +
               text.substr(0, text.length - 2) + "</span>");
 

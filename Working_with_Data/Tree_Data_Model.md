@@ -314,54 +314,16 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 
 ### Searching
 
+To search for an item, use the following methods of the {api:anychart.data.Tree}anychart.data.Tree{api} class:
+* {api:anychart.data.Tree#search}search(){api}
+* {api:anychart.data.Tree#searchItems}searchItems(){api}
+* {api:anychart.data.Tree#sfilter}filter(){api}
+
 #### search()
 
-{sample}WD\_Data\_Tree\_10{sample}
+The {api:anychart.data.Tree#search}search(){api} method returns either an array of data items or one item, while {api:anychart.data.Tree#searchItems}searchItems(){api} always returns an array. Both methods are called with three parameters: the name of a data field, a value, and a comparison function.
 
-{sample}WD\_Data\_Tree\_11{sample}
-
-{sample :height 300}WD\_Data\_Tree\_12{sample}
-
-To search for an item, use the {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class.  Please note that {api:anychart.data.Tree#searchItems}searchItems(){api}, unlike {api:anychart.data.Tree#search}search(){api}, always returns an array, which is the only difference between them.
-
-+ search возвращает либо массив итемов, либо итем, если результатом поиска является один элемент
-
-These methods accept three parameters: the name of a data field, a value, and a comparison function. The function is optional: you can just search for an item with a given value in a given data field.
-
-The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function – it is used to find items with values greater than a given number. The names of these items are displayed in the title of the chart, and the fill color of their nodes is changed:
-
-```
-// a comparison function
-function comparisonFunction(fieldValue, comparisonValue) {
-  if (comparisonValue > fieldValue)
-    return true;
-  else
-    return false;
-};
-
-// search items with values greater than a given one
-function searchValues(){
-
-  // search items
-  var inputValue = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems("value", inputValue, comparisonFunction);
-
-  /* get the names of the found items, add them to a string variable,
-  and set the fill colors of their nodes */
-  var text = "";
-  for (var i = 0; i < items.length; i++) {
-    text += items[i].get("name") + ", ";
-    items[i].set("fill", "#00bfa5");
-  };
-  if (items.length == 0)
-    text = "(none)";
-
-  // update the chart title
-  chart.title("Tree Data Model: Searching<br><br>" +
-              "<span style = 'color:#990000'>" +
-              text.substr(0, text.length - 2) + "</span>");
-};
-```
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number. It is optional: you can just search for an item with a given value in a given data field.
 
 In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
@@ -374,14 +336,105 @@ var item = treeData.search("name", "Item 3-4");
 chart.drillTo(item);
 ```
 
+{sample}WD\_Data\_Tree\_10{sample}
+
+The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function – here it is used to find items with values greater than a given number, their names displayed in the title of the chart and nodes colored:
+
+```
+// a comparison function
+function comparisonFunction(fieldValue, comparisonValue) {
+  return fieldValue < comparisonValue;
+};
+
+// search for items with values greater than a given one
+var inputValue = (document.getElementById("inputValue").value) * 1000000;
+var items = treeData.searchItems("value", inputValue, comparisonFunction);
+```
+
+{sample}WD\_Data\_Tree\_11{sample}
+
+In the sample below, a comparison function is used to access properties of objects in the custom data field `employee`:
+
+```
+// create data
+var data = [
+  {
+    name:   "Root",
+    actualStart: Date.UTC(2018, 0, 25),
+    actualEnd: Date.UTC(2018, 2, 14),
+    employee: {firstName: null, lastName: null},
+    children: [
+      {
+        name:   "Child 1",
+        actualStart: Date.UTC(2018, 0, 25),
+        actualEnd: Date.UTC(2018, 1, 3),
+        employee: {firstName: "John", lastName: "Doe"}
+      },
+      {
+        name:   "Child 2",
+        actualStart: Date.UTC(2018, 1, 4),
+        actualEnd: Date.UTC(2018, 1, 4),
+        employee: {firstName: "Frank", lastName: "Foe"}
+      },
+      {
+        name:   "Child 3",
+        actualStart: Date.UTC(2018, 1, 4),
+        actualEnd: Date.UTC(2018, 1, 24),
+        employee: {firstName: "John", lastName: "Doe"}
+      },
+      {
+        name:   "Child 4",
+        actualStart: Date.UTC(2018, 1, 24),
+        actualEnd: Date.UTC(2018, 2, 14),
+        employee: {firstName: "Marta", lastName: "Moe"}
+      }
+    ]
+}];
+
+// create a data tree
+treeData = anychart.data.tree(data, "as-tree");
+
+// create a gantt chart
+chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
+
+// a comparison function
+function comparisonFunction(fieldValue, comparisonValue) {
+  var firstName = fieldValue.firstName;
+  var secondName = fieldValue.lastName;
+  return comparisonValue != firstName + secondName;
+};
+
+// search for items
+var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
+```
+
+{sample :height 300}WD\_Data\_Tree\_12{sample}
+
 #### filter()
+
+The {api:anychart.data.Tree#sfilter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
+
+In this sample a filter function is used to find items with duration greater than a given one, their names displayed in the title of the chart and nodes colored:
+
+```
+// search for items with duration equal or greater than a given one
+var inputValue = (document.getElementById("inputValue").value);
+var items = treeData.filter(function(item) {
+  var actualEnd = item.get("actualEnd")/1000/3600/24;
+  var actualStart = item.get("actualStart")/1000/3600/24;
+  return actualEnd - actualStart + 1 >= inputValue;
+});
+```
 
 {sample :height 300}WD\_Data\_Tree\_13{sample}
 
 #### Indexes
 
-пример: лог --> создание графика, сравнение (больше или меньше опр. величины)
-пример: поиск по объектам
+* пример: лог --> создание графика, сравнение (больше или меньше опр. величины)
+* пример: поиск по объектам
 
 {sample}WD\_Data\_Tree\_14{sample}
 

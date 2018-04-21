@@ -97,7 +97,7 @@ anychart.onDocumentReady(function () {
 });
 
 
-// search items with values greater than a given one
+// search for items with values greater than a given one
 function filterDuration() {
 
   // reset the colors of the chart
@@ -106,7 +106,7 @@ function filterDuration() {
   // get the chart data as an instance of anychart.data.Tree
   var treeData = chart.data();
 
-  // search items with duration equal or greater than a given one
+  // search for items
   var inputValue = (document.getElementById("inputValue").value);
   var items = treeData.filter(function(item) {
     var actualEnd = item.get("actualEnd")/1000/3600/24;
