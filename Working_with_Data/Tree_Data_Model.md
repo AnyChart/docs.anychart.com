@@ -376,8 +376,6 @@ chart.drillTo(item);
 
 #### filter()
 
-пример: duration > ? day(s), actual: {fill: "red"}
-
 {sample :height 300}WD\_Data\_Tree\_13{sample}
 
 #### Indexes
