@@ -13,25 +13,44 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/RC-8.2.1/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 30px;
+            margin: 10px 0 0 5px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="filterDuration()">Filter Items</button>
+<label>duration >=<input id="inputValue" value="20"> day(s)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
+    data = [
       {
         name:   "Root",
         actualStart: Date.UTC(2018, 0, 25),
         actualEnd: Date.UTC(2018, 2, 14),
+        actual: {},
         children: [
           {
             name:   "Child 1",
@@ -56,17 +75,16 @@ anychart.onDocumentReady(function () {
         ]
     }];
     
-    // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
-
     // create a chart
-    var chart = anychart.ganttProject();
+    chart = anychart.ganttProject();
 
     // set the data
-    chart.data(treeData);
+    chart.data(data, "as-tree");
 
     // set the chart title
-    chart.title("Tree Data Model: filter()");
+    chart.title().useHtml(true);
+    chart.title("Tree Data Model: filter()<br><br>" +
+                "<span style = 'color:#990000'>?</span>");
 
     // set the container id
     chart.container("container");
@@ -77,6 +95,47 @@ anychart.onDocumentReady(function () {
     // fit items to the width of the timeline
     chart.fitAll();
 });
+
+
+// search items with values greater than a given one
+function filterDuration() {
+
+  // reset the colors of the chart
+  resetColors();
+
+  // get the chart data as an instance of anychart.data.Tree
+  var treeData = chart.data();
+
+  // search items with duration equal or greater than a given one
+  var inputValue = (document.getElementById("inputValue").value);
+  var items = treeData.filter(function(item) {
+    var actualEnd = item.get("actualEnd")/1000/3600/24;
+    var actualStart = item.get("actualStart")/1000/3600/24;
+    return actualEnd - actualStart + 1 >= inputValue;
+  });
+
+  /* get the names of the found items, add them to a string variable,
+  and set the fill colors of their nodes */
+  var text = "";
+  for (var i = 0; i < items.length; i++) {
+    text += items[i].get("name") + ", ";
+    items[i].set("actual", {fill: "#dd2c00"});
+  };
+  if (items.length == 0)
+    text = "(none)  ";
+
+  // update the chart title
+  chart.title("Tree Data Model: filter()<br><br>" +
+              "<span style = 'color:#990000'>" +
+              text.substr(0, text.length - 2) + "</span>");
+
+};
+
+// a function for resetting the colors of the chart
+function resetColors() {
+  chart.data(data, "as-tree");
+  chart.fitAll();  
+};
 </script>
 </body>
 </html>

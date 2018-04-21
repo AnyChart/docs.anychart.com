@@ -86,15 +86,13 @@ anychart.onDocumentReady(function () {
     // search items
     var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
-    /* get the names of the found items, add them to a string variable,
-    and set the fill colors of their nodes */
+    // get the names of the found items and add them to a string variable
     var text = "";
     for (var i = 0; i < items.length; i++) {
       text += items[i].get("name") + ", ";
-      items[i].set("fill", "#00838f");
     };
     if (items.length == 0)
-      text = "(none)";
+      text = "(none)  ";
 
     // set the chart title
     chart.title().useHtml(true);
