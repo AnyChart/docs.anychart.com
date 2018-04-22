@@ -76,11 +76,25 @@ anychart.onDocumentReady(function () {
     // set the data
     chart.data(treeData);
 
+    // configure the data grid
+
+    chart.dataGrid().column(2).format(function(item) {
+        return item.get("employee").firstName;
+    });
+
+    chart.dataGrid().column(3).format(function(item) {
+        return item.get("employee").lastName;
+    });
+
+    chart.dataGrid().column(1).title("Task");
+
+    chart.dataGrid().column(2).title("First Name");
+
+    chart.dataGrid().column(3).title("Last Name");
+
     // a comparison function
     function comparisonFunction(fieldValue, comparisonValue) {
-      var firstName = fieldValue.firstName;
-      var secondName = fieldValue.lastName;
-      return comparisonValue != firstName + secondName;
+      return comparisonValue != fieldValue.firstName + fieldValue.lastName;
     };
 
     // search for data items
