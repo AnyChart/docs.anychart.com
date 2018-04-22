@@ -22,7 +22,7 @@
         textarea {
             position: absolute;
             width: 100%;
-            height: 20%;
+            height: 30%;
             left: 0;
             border-left: none;
             resize: none;
@@ -77,10 +77,9 @@ function searchAndRender(){
 
   start = performance.now();
   treeData.createIndexOn("value");
-  log("Creating  an index on the 'value' field.", start);
+  log("Creating an index on the 'value' field.", start);
 
   start = performance.now();
-  treeData.removeIndexOn("value");
   var indexResult = treeData.searchItems("value", 99950, comparisonFunction);
   log("Searching on the indexed field. Result: " +
       indexResult.length + " items > 99950.", start);
@@ -92,7 +91,6 @@ function searchAndRender(){
       notIndexResult.length + " items > 99950.", start);
 
   start = performance.now();
-  console.log(indexResult)
   var newChildArray = [];
   for (var i = 1; i < indexResult.length; i++){
     var newChildObj = {};
