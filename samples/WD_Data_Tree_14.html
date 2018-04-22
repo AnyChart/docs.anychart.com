@@ -70,12 +70,8 @@ function comparisonFunction(fieldValue, comparisonValue) {
 // search for items and render the chart
 function searchAndRender(){
 
-  // clear the text area
-  var area = document.getElementById("log");
-  area.value = "";
-
   var start = performance.now();
-  var data = getData(30000);
+  var data = getData(50000);
   var treeData = anychart.data.tree(data, "as-tree");
   log("Generating data and creating a tree.", start);
 
@@ -114,7 +110,7 @@ function searchAndRender(){
   log("Showing the found items on a chart", start);
 
   // hide the button
-  //document.getElementById("searchButton").style.visibility = "hidden";
+  document.getElementById("searchButton").style.visibility = "hidden";
 };
 
 // a function for generating data

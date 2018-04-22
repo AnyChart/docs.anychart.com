@@ -436,7 +436,7 @@ var items = treeData.filter(function(item) {
 * пример: лог --> создание графика, сравнение (больше или меньше опр. величины)
 * пример: поиск по объектам
 
-{sample}WD\_Data\_Tree\_14{sample}
+{sample :height 450}WD\_Data\_Tree\_14{sample}
 
 {sample}WD\_Data\_Tree\_15{sample}
 
