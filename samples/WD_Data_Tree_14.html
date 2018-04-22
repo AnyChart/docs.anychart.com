@@ -36,7 +36,7 @@
         .container {
             position: absolute;
             width: 100%;
-            height: 60%;
+            height: 55%;
             bottom: 0;
         }
     </style>
@@ -92,10 +92,10 @@ function searchAndRender(){
 
   start = performance.now();
   var newChildArray = [];
-  for (var i = 1; i < indexResult.length; i++){
+  for (var i = 1; i < notIndexResult.length; i++){
     var newChildObj = {};
-    newChildObj.name = indexResult[i].get("name");
-    newChildObj.value = indexResult[i].get("value");
+    newChildObj.name = notIndexResult[i].get("name");
+    newChildObj.value = notIndexResult[i].get("value");
     newChildArray.push(newChildObj);
   };
   var newData = [{name: "Root", children: newChildArray}];
