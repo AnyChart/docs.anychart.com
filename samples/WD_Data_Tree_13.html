@@ -107,11 +107,9 @@ function filterDuration() {
   var treeData = chart.data();
 
   // search for items
-  var inputValue = (document.getElementById("inputValue").value);
+  var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
   var items = treeData.filter(function(item) {
-    var actualEnd = item.get("actualEnd")/1000/3600/24;
-    var actualStart = item.get("actualStart")/1000/3600/24;
-    return actualEnd - actualStart + 1 >= inputValue;
+    return item.get("actualEnd") - item.get("actualStart") >= inputValue;
   });
 
   /* get the names of the found items, add them to a string variable,

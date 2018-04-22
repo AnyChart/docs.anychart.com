@@ -70,13 +70,15 @@ function comparisonFunction(fieldValue, comparisonValue) {
 // search for items and render the chart
 function searchAndRender(){
 
+  // clear the text area
+
   var start = performance.now();
   var generatedData = getData(50000);
   var treeData = anychart.data.tree(generatedData, "as-tree");
   log("Generating data and creating a tree.", start);
 
   start = performance.now();
-  treeData.createIndexOn("value");
+  treeData.createIndexOn("value", false, comparisonFunction);
   log("Creating an index on the 'value' field.", start);
 
   start = performance.now();
@@ -99,16 +101,13 @@ function searchAndRender(){
     newChildArray.push(newChildObj);
   };
   var newData = [{name: "Root", children: newChildArray}];
-  chart_1.enabled(false);
-  var chart_2 = anychart.treeMap(newData);
-  chart_2.labels().format("{%name}");
-  chart_2.title("Tree Data Model: Indexes");
-  chart_2.container("container_2");
-  chart_2.draw();
-  log("Showing the found items on a chart", start);
+  chart_1.data(newData);
+  chart_1.labels().format("{%name}");
+  chart_1.title("Tree Data Model: Indexes");
+  log("Showing the found items on a chart.", start);
 
   // hide the button
-  document.getElementById("searchButton").style.visibility = "hidden";
+  //document.getElementById("searchButton").style.visibility = "hidden";
 };
 
 // a function for generating data
