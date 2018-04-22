@@ -70,8 +70,12 @@ function comparisonFunction(fieldValue, comparisonValue) {
 // search for items and render the chart
 function searchAndRender(){
 
+  // clear the text area
+  var area = document.getElementById("log");
+  area.value = "";
+
   var start = performance.now();
-  var data = getData(30);
+  var data = getData(30000);
   var treeData = anychart.data.tree(data, "as-tree");
   log("Generating data and creating a tree.", start);
 
@@ -81,15 +85,15 @@ function searchAndRender(){
 
   start = performance.now();
   treeData.removeIndexOn("value");
-  var indexResult = treeData.searchItems("value", 90000, comparisonFunction);
+  var indexResult = treeData.searchItems("value", 99950, comparisonFunction);
   log("Searching on the indexed field. Result: " +
-      indexResult.length + " items > 99990.", start);
+      indexResult.length + " items > 99950.", start);
 
   start = performance.now();
   treeData.removeIndexOn("value");
-  var notIndexResult = treeData.searchItems("value", 90000, comparisonFunction);
+  var notIndexResult = treeData.searchItems("value", 99950, comparisonFunction);
   log("Removing the index and searching. Result: " +
-      notIndexResult.length + " items > 99990.", start);
+      notIndexResult.length + " items > 99950.", start);
 
   start = performance.now();
   console.log(indexResult)
@@ -103,13 +107,14 @@ function searchAndRender(){
   var newData = [{name: "Root", children: newChildArray}];
   chart_1.enabled(false);
   var chart_2 = anychart.treeMap(newData);
+  chart_2.labels().format("{%name}");
   chart_2.title("Tree Data Model: Indexes");
   chart_2.container("container_2");
   chart_2.draw();
   log("Showing the found items on a chart", start);
 
   // hide the button
-  document.getElementById("searchButton").style.visibility = "hidden";
+  //document.getElementById("searchButton").style.visibility = "hidden";
 };
 
 // a function for generating data
