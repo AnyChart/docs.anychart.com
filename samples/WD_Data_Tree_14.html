@@ -67,7 +67,8 @@ function comparisonFunction(fieldValue, comparisonValue) {
 // search for items and render the chart
 function searchAndRender(){
 
-  // clear the text area
+  // clear the log
+  document.getElementById("log").innerHTML = "";
 
   var start = performance.now();
   var generatedData = getData(50000);
@@ -120,11 +121,12 @@ function getData(n){
   return data;
 };
 
-// a function for adding text to the text area
+// a function for adding text to the log
 function log(text, start) {
   var logText = document.getElementById("log");
-  logText.innerHTML = logText.innerHTML + "[" + (performance.now() - start).toFixed(2) +
-                            " ms]: " + text + "<br>";
+  logText.innerHTML = logText.innerHTML +
+                      "[" + (performance.now() - start).toFixed(2) +
+                      " ms]: " + text + "<br>";
 };
 </script>
 </body>
