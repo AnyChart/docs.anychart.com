@@ -89,12 +89,16 @@ anychart.onDocumentReady(function () {
         return item.get("employee").lastName;
     });
 
+    dataGrid.column(0).width(10);
+
     dataGrid.column(1).title("Task");
-    dataGrid.column(1).setColumnFormat("name", "short-text");
+    dataGrid.column(1).width(80);
 
     dataGrid.column(2).title("First Name");
+    dataGrid.column(2).width(70);
 
     dataGrid.column(3).title("Last Name");
+    dataGrid.column(3).width(70);
 
     // a comparison function
     function comparisonFunction(fieldValue, comparisonValue) {
