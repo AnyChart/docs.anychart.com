@@ -115,17 +115,19 @@ function filterDuration() {
   /* get the names of the found items, add them to a string variable,
   and set the fill colors of their nodes */
   var text = "";
-  for (var i = 0; i < items.length; i++) {
-    text += items[i].get("name") + ", ";
-    items[i].set("actual", {fill: "#dd2c00"});
-  };
-  if (items.length == 0)
-    text = "(none)  ";
+  if (items.length == 0) {
+    text = "(none)";
+  } else {
+    for (var i = 0; i < items.length; i++) {
+      text += items[i].get("name") + ", ";
+      items[i].set("actual", {fill: "#dd2c00"});
+    };
+    text = text.substr(0, text.length - 2);
+  }
 
   // update the chart title
-  chart.title("Tree Data Model: filter()<br><br>" +
-              "<span style = 'color:#990000'>" +
-              text.substr(0, text.length - 2) + "</span>");
+  chart.title("Tree Data Model: filter()<br><br><span style = 'color:#990000'>" +
+              text + "</span>");
 
 };
 

@@ -38,6 +38,7 @@ anychart.onDocumentReady(function () {
         name:   "Root",
         actualStart: Date.UTC(2018, 0, 25),
         actualEnd: Date.UTC(2018, 2, 14),
+        actual: {},
         employee: {firstName: null, lastName: null},
         children: [
           {
@@ -102,19 +103,24 @@ anychart.onDocumentReady(function () {
     // search for data items
     var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
-    // get the names of the found items and add them to a string variable
+    /* get the names of the found items, add them to a string variable,
+    and set the fill colors of their nodes */
     var text = "";
-    for (var i = 0; i < items.length; i++) {
-      text += items[i].get("name") + ", ";
-    };
-    if (items.length == 0)
-      text = "(none)  ";
+    if (items.length == 0) {
+      text = "(none)";
+    } else {
+      for (var i = 0; i < items.length; i++) {
+        text += items[i].get("name") + ", ";
+        items[i].set("actual", {fill: "#dd2c00"});
+      };
+      text = text.substr(0, text.length - 2);
+    }
 
     // set the chart title
     chart.title().useHtml(true);
     chart.title("Tree Data Model: searchItems()<br><br>" +
                 "firstName + lastName = John Doe: <span style = 'color:#990000'>" + 
-                text.substr(0, text.length - 2) + "</span>");
+                text + "</span>");
 
     // set the container id
     chart.container("container");

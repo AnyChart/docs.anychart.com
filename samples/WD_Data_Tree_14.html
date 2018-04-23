@@ -19,21 +19,19 @@
             margin: 0;
             padding: 0;
         }
-        textarea {
+        button {
+            margin: 10px 0 10px 10px;
+        }
+        #log {
             position: absolute;
             width: 100%;
             height: 30%;
-            left: 0;
-            border-left: none;
-            resize: none;
             top: 40px;
+            margin: 0 0 0 7px;
             font-family: Courier New;
+            font-size: 14px;
         }
-        button {
-            margin: 10px 0 10px 10px;
-            visibility: visible;
-        }
-        .container {
+        #container {
             position: absolute;
             width: 100%;
             height: 55%;
@@ -43,23 +41,22 @@
 </head>
 <body>
 <button id = "searchButton" onclick="searchAndRender()">Search & Render</button>
-<textarea id="log"></textarea>
-<div id="container_1" class="container"></div>
-<div id="container_2" class="container"></div>
+<div id="log"></div>
+<div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create a chart
-    chart_1 = anychart.treeMap();
+    chart = anychart.treeMap();
 
     // set the chart title
-    chart_1.title("Tree Data Model: Indexes");
+    chart.title("Tree Data Model: Indexes");
 
     // set the container id
-    chart_1.container("container_1");
+    chart.container("container");
 
     // initiate drawing the chart
-    chart_1.draw();
+    chart.draw();
 });
 
 // a comparison function
@@ -101,13 +98,11 @@ function searchAndRender(){
     newChildArray.push(newChildObj);
   };
   var newData = [{name: "Root", children: newChildArray}];
-  chart_1.data(newData);
-  chart_1.labels().format("{%name}");
-  chart_1.title("Tree Data Model: Indexes");
+  chart.data(newData);
+  chart.labels().format("{%name}");
+  chart.title("Tree Data Model: Indexes");
   log("Showing the found items on a chart.", start);
 
-  // hide the button
-  //document.getElementById("searchButton").style.visibility = "hidden";
 };
 
 // a function for generating data
@@ -127,9 +122,9 @@ function getData(n){
 
 // a function for adding text to the text area
 function log(text, start) {
-  var area = document.getElementById("log");
-  area.value = area.value + "[" + (performance.now() - start).toFixed(2) +
-                            " ms]: " + text + "\n";
+  var logText = document.getElementById("log");
+  logText.innerHTML = logText.innerHTML + "[" + (performance.now() - start).toFixed(2) +
+                            " ms]: " + text + "<br>";
 };
 </script>
 </body>
