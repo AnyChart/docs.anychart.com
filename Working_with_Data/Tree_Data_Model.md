@@ -323,7 +323,9 @@ To search for an item, use the following methods of the {api:anychart.data.Tree}
 
 The {api:anychart.data.Tree#search}search(){api} method returns either an array of data items or one item, while {api:anychart.data.Tree#searchItems}searchItems(){api} always returns an array. Both methods are called with three parameters: the name of a data field, a value, and a comparison function.
 
-The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number... + ДОПИСАТЬ ПОДРОБНОСТИ
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number...
+
+(+) ДОПИСАТЬ ПОДРОБНОСТИ
 
 In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
@@ -338,7 +340,7 @@ chart.drillTo(item);
 
 {sample}WD\_Data\_Tree\_10{sample}
 
-The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function – here it is used to find items with values greater than a given number, their names displayed in the title of the chart and nodes colored:
+The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to find items with values greater than a given number. Their names displayed in the title of the chart, and nodes are colored.
 
 ```
 // a comparison function
@@ -402,9 +404,7 @@ chart.data(treeData);
 
 // a comparison function
 function comparisonFunction(fieldValue, comparisonValue) {
-  var firstName = fieldValue.firstName;
-  var secondName = fieldValue.lastName;
-  return comparisonValue != firstName + secondName;
+  return comparisonValue != fieldValue.firstName + fieldValue.lastName;
 };
 
 // search for items
@@ -415,17 +415,17 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 #### filter()
 
-The {api:anychart.data.Tree#sfilter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`. ? ДОПИСАТЬ ПОДРОБНОСТИ
+The {api:anychart.data.Tree#sfilter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-In this sample a filter function is used to find items with duration greater than a given one, their names displayed in the title of the chart and nodes colored:
+(?) ДОПИСАТЬ ПОДРОБНОСТИ
+
+In this sample a filter function is used to find items with duration greater than a given one. Their names displayed in the title of the chart, and nodes are colored.
 
 ```
 // search for items with duration equal or greater than a given one
-var inputValue = (document.getElementById("inputValue").value);
+var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
 var items = treeData.filter(function(item) {
-  var actualEnd = item.get("actualEnd")/1000/3600/24;
-  var actualStart = item.get("actualStart")/1000/3600/24;
-  return actualEnd - actualStart + 1 >= inputValue;
+  return item.get("actualEnd") - item.get("actualStart") >= inputValue;
 });
 ```
 
@@ -442,7 +442,7 @@ treeData.createIndexOn("value");
 
 **Note:** You cannot create an index on the `parent` or `child` field.
 
-!!! ДОПИСАТЬ ПРО ФУНКЦИЮ
+(!) ДОПИСАТЬ ПРО ФУНКЦИЮ
 
 To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn}removeIndexOn(){api} with the name of the field as a parameter:
 
@@ -455,7 +455,7 @@ When you click the button in the following sample, random tree-like data is gene
 
 {sample :height 450}WD\_Data\_Tree\_14{sample}
 
-+ ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
+(+) ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
 
 {sample}WD\_Data\_Tree\_15{sample}
 
