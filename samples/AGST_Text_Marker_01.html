@@ -72,6 +72,11 @@ anychart.onDocumentReady(function () {
   textMarker.offsetX(5);
   // set marker text
   textMarker.text("Historical Maximum");
+  // enable text marker background and configure it
+  textMarker.background().enabled(true);
+  textMarker.background().stroke("1 gray");
+  textMarker.background().fill("gray 0.1");
+  textMarker.padding(3);  
 
   // set red marker
   var textMarker1 = chart.textMarker(1);
