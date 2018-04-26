@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="showHidePlot()">Show/Hide Plot</button><button onclick="addRemovePlot()">Remove Plot</button>
+<button onclick="showHidePlot()">Show/Hide Plot</button><button onclick="addRemovePlot()">Remove Plot</button><button onclick="configurePlot()">Configure Plot</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -62,9 +62,9 @@ anychart.onDocumentReady(function () {
     ]);
 
     // map loaded data
-    var mapping = dataTable.mapAs({'value': 2});
-    var ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-    var columnMapping = dataTable.mapAs({'value': 3});
+    mapping = dataTable.mapAs({'value': 2});
+    ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
+    columnMapping = dataTable.mapAs({'value': 3});
       
     // create stock chart
     chart = anychart.stock();
@@ -94,12 +94,30 @@ anychart.onDocumentReady(function () {
 function showHidePlot(){
     chart.plot(1).enabled(!chart.plot(1).enabled());
 }
-function addRemovePlot(){
-    if (chart.getPlotsCount() > 0) 
+function addRemovePlot(){  
+    if (chart.getPlotsCount() > 1) 
         chart.plot(1).dispose();
     else
         chart.plot(1);
 }
+function configurePlot(){
+    // if there is a plot to configure
+    if (chart.getPlotsCount() > 1) 
+        {
+            // change title
+            var now = new Date();
+            var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            chart.plot(1).title('Current time: ' + time);
+            // enable grid
+            chart.plot(1).yGrid().enabled(true);
+            chart.plot(1).yGrid().stroke('1 red');
+            // add a series if there is none
+            if (chart.plot(1).getSeriesCount() == 0)
+              chart.plot(1).ohlc(ohlcMapping).name('Price');
+  
+        }
+}
+
 </script>
 </body>
 </html>
