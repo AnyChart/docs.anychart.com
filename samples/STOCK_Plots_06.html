@@ -13,15 +13,25 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="showHidePlot()">Show/Hide Plot</button><button onclick="addRemovePlot()">Remove Plot</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -57,7 +67,7 @@ anychart.onDocumentReady(function () {
     var columnMapping = dataTable.mapAs({'value': 3});
       
     // create stock chart
-    var chart = anychart.stock();
+    chart = anychart.stock();
 
     // create first plot on the chart with column series
     var plot_1 = chart.plot(0);
@@ -69,11 +79,11 @@ anychart.onDocumentReady(function () {
     // create ohlc series on the second plot
     plot_2.ohlc(ohlcMapping).name('Price');
 
-    // create third plot
-    var plot_3 = chart.plot(2);
-
-    // create column series on the third plot
-    plot_3.column(columnMapping).name('Volume');
+    // configure plot
+    plot_2.legend(false);
+    plot_2.title('Prices');
+    plot_2.yGrid().enabled(true);
+    plot_2.yGrid().stroke({dash: "3 5"});    
 
     // set container id for the chart
     chart.container('container');
@@ -81,6 +91,15 @@ anychart.onDocumentReady(function () {
     // initiate chart drawing
     chart.draw();
 });
+function showHidePlot(){
+    chart.plot(1).enabled(!chart.plot(1).enabled());
+}
+function addRemovePlot(){
+    if (chart.getPlotsCount() > 0) 
+        chart.plot(1).dispose();
+    else
+        chart.plot(1);
+}
 </script>
 </body>
 </html>
