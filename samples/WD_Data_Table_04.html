@@ -42,18 +42,32 @@ anychart.onDocumentReady(function () {
       ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
     ]);
     
-    // map the data
-    mapping = dataTable.mapAs({"open": 1, "high":  2, "low":  3, "close": 4});
+    // map the data for the frist series
+    var mapping_1 = dataTable.mapAs({"value": 1});
+
+    // map the data for the second series
+    var mapping_2 = dataTable.mapAs({"value": 4});
+
+    // map the data for the tecnical indicator
+    var mapping_3 = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
     
     // create a stock chart
     var chart = anychart.stock();
     
-    // create a plot and an ohlc series
-    var ohlcSeries = chart.plot(0).ohlc(mapping);
-    ohlcSeries.name("ACME Corp.");
+    // create the first plot and and two line series
+    var line_1 = chart.plot(0).line(mapping_1);
+    var line_2 = chart.plot(0).line(mapping_2);
+    line_1.name("ACME Corp. (open)");
+    line_2.name("ACME Corp. (close)");
     
-    // setting the chart title
-    chart.title("Table Data: Setting Data (Array of Arrays)");
+    // create the second plot and a williams %r indicator
+    chart.plot(1).yScale().minimum(-100);
+    chart.plot(1).yScale().maximum(0);
+    var williamsR = chart.plot(1).williamsR(mapping_3, 2, "area");
+    //williamsR.stroke("2 red");
+
+    // set the chart title
+    chart.title("Table Data: Mapping\nMultiple Series and Technical Indicators");
     
     // set the container id
     chart.container("container");

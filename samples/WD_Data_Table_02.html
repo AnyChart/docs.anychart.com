@@ -43,7 +43,7 @@ anychart.onDocumentReady(function () {
     ]); 
     
     // map the data
-    mapping = dataTable.mapAs({"open": "open", "high": "high", "low": "low", "close": "close"});
+    var mapping = dataTable.mapAs({"open": "open", "high": "high", "low": "low", "close": "close"});
 
     // create a stock chart
     var chart = anychart.stock();
@@ -52,7 +52,7 @@ anychart.onDocumentReady(function () {
     var ohlcSeries = chart.plot(0).ohlc(mapping);
     ohlcSeries.name("ACME Corp.");
     
-    // setting the chart title
+    // set the chart title
     chart.title("Table Data: Setting Data (Array of Objects)");
     
     // set the container id

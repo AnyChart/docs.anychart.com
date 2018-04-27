@@ -22,10 +22,12 @@
 
 ### Mapping
 
-3 примера:
+{sample}WD\_Data\_Table\_03{sample}
 
-* просто mapAs и mapAs с addField в одном примере
-* многосерийность + индикаторы
+{sample}WD\_Data\_Table\_04{sample}
+
+{sample}WD\_Data\_Table\_05{sample}
+
 * две серии и две таблицы, чередующиеся даты
 
 ## Accessing Items
