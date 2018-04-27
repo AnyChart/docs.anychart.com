@@ -46,6 +46,8 @@
 
 ### Reading
 
+{sample}WD\_Data\_Table\_06{sample}
+
 ### Adding
 
 ### Updating
