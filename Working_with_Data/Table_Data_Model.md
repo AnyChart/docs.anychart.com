@@ -11,6 +11,7 @@
 * {api:anychart.data.Table}anychart.data.Table{api}
 * {api:anychart.data#table}table(){api}
 * {api:anychart.data.Table#mapAs}anychart.data.Table#mapAs{api}
+* написать про дополнительные параметы у метода table(0)
 
 ### Array of Arrays
 
