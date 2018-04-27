@@ -9,7 +9,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/DVF-3668-tree-data/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-data-adapter.min.js"></script>
 ```
 
 When the Data Adapter is plugged in, you can use the {api:anychart.data#loadGoogleSpreadsheet}loadGoogleSpreadsheet(){api} method.
