@@ -29,8 +29,6 @@
 
 {sample}WD\_Data\_Table\_05{sample}
 
-* две серии и две таблицы, чередующиеся даты
-
 ## Accessing Items
 
 * anychart.data.TableSelectable
