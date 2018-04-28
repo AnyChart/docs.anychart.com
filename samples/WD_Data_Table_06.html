@@ -11,33 +11,17 @@
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
-    
+
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        #container {
-            position: absolute;
-            width: 80%;
-            top: 0;
-            bottom: 0;
-        }
-        #tableInfo {
-            position: absolute;
-            width: 20%;
-            top: 70px;
-            right: 0;
-            bottom: 0;
-            color: #990000;
-            font-style: italic;
-        }
     </style>
 </head>
 <body>
-<div id="tableInfo"></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -69,30 +53,46 @@ anychart.onDocumentReady(function () {
     ohlcSeries.name("ACME Corp.");
     
     // set the selected range of the scroller (?)
-    chart.selectRange("2015-12-25", "2016-01-02");
+    chart.selectRange("2015-12-26", "2015-12-30");
 
     // get the selected range of the scroller (?)
     var range = chart.getSelectedRange();
+    var firstSelected = anychart.format.dateTime(range.firstSelected, "dd.MM.yy");
+    var lastSelected = anychart.format.dateTime(range.lastSelected, "dd.MM.yy");
 
-    // ...
+    // get the values of the first and last selected points (?)
     var selectable = mapping.createSelectable();
     selectable.select(range.firstSelected, range.lastSelected);
-    var selectSearch = selectable.search("2015-12-25", "exact");
-    var searchLow = selectSearch.get("low");
-    var searchHigh = selectSearch.get("high");
-    var xxx = selectSearch.getColumn(2);
-
-    /* get the element displaying
-    the information about the table */
-    var tableInfo = document.getElementById("tableInfo");
-
-    // display...
-      var newElement = document.createElement("li");
-      newElement.innerText = "low: " + searchLow + ", high: " + searchHigh;
-      tableInfo.appendChild(newElement);
+    var firstLow = selectable.search(range.firstSelected, "exact").get("low");
+    var firstHigh = selectable.search(range.firstSelected, "exact").get("high");
+    var lastLow = selectable.search(range.lastSelected, "exact").get("low");
+    var lastHigh = selectable.search(range.lastSelected, "exact").get("high");
 
     // set the chart title
-    chart.title("Table Data: Reading");
+    chart.title().useHtml(true);
+    chart.title("Table Data: Reading<br><br>first selected = <span style = 'color:#990000'>" +
+                firstSelected + " (low: " + firstLow + ", high: " + firstHigh + ")</span>" +
+                "<br>last selected = <span style = 'color:#990000'>" + 
+                lastSelected + " (low: " + lastLow + ", high: " + lastHigh + ")</span>");
+
+    console.log(selectable.search(range.firstSelected, "exact").get("low"))
+
+    // listen to changing the range of the scroller and update the title (?)
+    chart.scroller().listen("scrollerChange", function(){
+      var range = chart.getSelectedRange();
+      var firstSelected = anychart.format.dateTime(range.firstSelected, "dd.MM.yy");
+      var lastSelected = anychart.format.dateTime(range.lastSelected, "dd.MM.yy");
+      selectable.select(firstSelected, lastSelected);
+      //var firstLow = selectable.search(firstSelected, "exact").get("low");
+      //var firstHigh = selectable.search(firstSelected, "exact").get("high");
+      //var lastLow = selectable.search(lastSelected, "exact").get("low");
+      //var lastHigh = selectable.search(lastSelected, "exact").get("high");
+      //chart.title("Table Data: Reading<br><br>first selected = <span style = 'color:#990000'>" +
+      //            firstSelected + " (low: " + firstLow + ", high: " + firstHigh + ")</span>" +
+      //            "<br>last selected = <span style = 'color:#990000'>" + 
+      //            lastSelected + " (low: " + lastLow + ", high: " + lastHigh + ")</span>");
+      console.log(range.firstSelected);
+    });
     
     // set the container id
     chart.container("container");
