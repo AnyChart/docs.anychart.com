@@ -55,6 +55,10 @@ anychart.onDocumentReady(function () {
     // set the range of the scroller
     chart.selectRange("2015-12-26", "2015-12-30");
 
+    // select all points in the table
+    selectable = mapping.createSelectable();
+    selectable.selectAll();
+
     /* get the values of the first and last selected points
     and show them in the chart title */
     showSelected(); 
@@ -79,25 +83,24 @@ function showSelected(){
 
   // get the range of the scroller
   var range = chart.getSelectedRange();
-  var firstSelected = anychart.format.dateTime(range.firstVisible, "dd.MM.yy");
-  var lastSelected = anychart.format.dateTime(range.lastVisible, "dd.MM.yy");
   
   // get the values of the first and last point of the range
-  var selectable = mapping.createSelectable();
-  selectable.selectAll();
-  var firstSearch = selectable.search(range.firstVisible, "exact");
-  var lastSearch = selectable.search(range.lastVisible, "exact");
-  var firstLow = firstSearch.get("low");
-  var firstHigh = firstSearch.get("high");
-  var lastLow = lastSearch.get("low");
-  var lastHigh = lastSearch.get("high");
+  var firstRow = selectable.search(range.firstSelected, "nearest");
+  var lastRow = selectable.search(range.lastSelected, "nearest");
+  var firstDate = firstRow.getColumn(0);
+  var firstLow = firstRow.get("low");
+  var firstHigh = firstRow.get("high");
+  var lastDate = lastRow.getColumn(0);
+  var lastLow = lastRow.get("low");
+  var lastHigh = lastRow.get("high");
   
   // set the chart title
   chart.title().useHtml(true);
-  chart.title("Table Data: Reading<br><br>first selected = <span style = 'color:#990000'>" +
-              firstSelected + " (low: " + firstLow + ", high: " + firstHigh + ")</span>" +
+  chart.title("Table Data: Reading<br><br>" +
+  	          "first selected = <span style = 'color:#990000'>" +
+              firstDate + " (low: " + firstLow + ", high: " + firstHigh + ")</span>" +
               "<br>last selected = <span style = 'color:#990000'>" + 
-              lastSelected + " (low: " + lastLow + ", high: " + lastHigh + ")</span>");
+              lastDate + " (low: " + lastLow + ", high: " + lastHigh + ")</span>");
 
 
 };
