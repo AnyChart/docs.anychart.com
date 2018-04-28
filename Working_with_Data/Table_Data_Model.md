@@ -37,14 +37,13 @@
 
 ## Data Manipulation
 
-* [Reading](#reading)
+* [Reading](#searching_and_reading)
 * [Adding](#adding)
 * [Updating](#updating)
 * [Removing](#removing)
-* [Searching](#searching)
 * [Iterating](#iterating)
 
-### Reading
+### Searching and Reading
 
 {sample}WD\_Data\_Table\_06{sample}
 
@@ -58,6 +57,8 @@
 
 * anychart.data.TableIterator
 * еще подумать про название
+* один пример на список выбранных в скролле элементов, на маленьких данных
+* второй пример на такой же список, но сгруппированный по годам, на больших данных
 
 ## Table Computer
 
