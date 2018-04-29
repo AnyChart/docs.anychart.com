@@ -49,6 +49,8 @@
 
 ### Adding
 
+{sample}WD\_Data\_Table\_07{sample}
+
 ### Updating
 
 ### Removing
