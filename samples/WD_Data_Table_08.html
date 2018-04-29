@@ -22,6 +22,13 @@
         button {
             margin: 10px 0 0 10px;
         }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 45px;
+            margin: 10px 0 0 5px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -31,7 +38,11 @@
     </style>
 </head>
 <body>
-<button id = "addButton" onclick="addItems()">Add Data</button>
+<button onclick="updateItem()">Update First Point</button>
+<label>Open:<input id="inputOpen" value="514.53"></label>
+<label>High:<input id="inputHigh" value="516.88"></label>
+<label>Low:<input id="inputLow" value="507.69"></label>
+<label>Close:<input id="inputClose" value="509.34"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -63,8 +74,7 @@ anychart.onDocumentReady(function () {
     
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Table Data: Adding<br><br>new data = " +
-                "<span style = 'color:#990000'>?</span>");
+    chart.title("Table Data: Updating");
 
     // set the container id
     chart.container("container");
@@ -73,28 +83,14 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
   
-// add new data
-function addItems(){
-  //create new data
-  var newData = [
-    ["2016-01-03", 512.30, 514.78, 505.87, 508.67],
-    ["2016-01-04", 512.50, 514.77, 505.83, 508.35],
-    ["2016-01-05", 511.53, 516.18, 505.91, 509.42],
-    ["2016-01-06", 511.13, 516.01, 506.00, 509.26],
-    ["2016-01-07", 510.93, 516.07, 506.00, 510.99],
-    ["2016-01-08", 510.88, 515.93, 505.22, 509.95],
-    ["2016-01-09", 509.12, 515.97, 505.15, 510.12]
-  ];
-  // add new data
+// update the first point
+function updateItem(){
+  var open = document.getElementById("inputOpen").value;
+  var high = document.getElementById("inputHigh").value;
+  var low = document.getElementById("inputLow").value;
+  var close = document.getElementById("inputClose").value;
+  var newData = [["2015-12-25", open, high, low, close]];
   dataTable.addData(newData);
-  // set the range of the scroller
-  chart.selectRange("2016-01-03", "2016-01-09");
-  // update the chart title
-  chart.title().useHtml(true);
-  chart.title("Table Data: Adding<br><br>new data = " +
-              "<span style = 'color:#990000'>2016.01.03 – 2016.01.09</span>");
-  // hide the button
-  document.getElementById("addButton").style.visibility = "hidden";
 };
 </script>
 </body>
