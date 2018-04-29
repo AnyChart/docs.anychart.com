@@ -53,6 +53,8 @@
 
 ### Updating
 
+{sample}WD\_Data\_Table\_08{sample}
+
 ### Removing
 
 ### Iterating
