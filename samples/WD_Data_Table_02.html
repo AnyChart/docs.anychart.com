@@ -43,7 +43,7 @@ anychart.onDocumentReady(function () {
     ]); 
     
     // map the data
-    var mapping = dataTable.mapAs({"open": "open", "high": "high", "low": "low", "close": "close"});
+    var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 
     // create a stock chart
     var chart = anychart.stock();

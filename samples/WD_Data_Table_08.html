@@ -29,6 +29,10 @@
             width: 45px;
             margin: 10px 0 0 5px;
         }
+        #inputColor {
+            width: 60px;
+            margin: 10px 0 0 5px;
+        }        
         #container {
             position: absolute;
             width: 100%;
@@ -43,6 +47,7 @@
 <label>High:<input id="inputHigh" value="516.88"></label>
 <label>Low:<input id="inputLow" value="507.69"></label>
 <label>Close:<input id="inputClose" value="509.34"></label>
+<label>Color:<input id="inputColor" value="#00838f"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -63,11 +68,12 @@ anychart.onDocumentReady(function () {
     ]);
     
     // map the data
-    var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4,
+                                   risingStroke: 5, fallingStroke: 5});
     
-    // create a stock chart
-    chart = anychart.stock();
-    
+    // create a stock chart and allow coloring individual points
+    chart = anychart.stock(true);
+        
     // create a plot and an ohlc series
     var ohlcSeries = chart.plot(0).ohlc(mapping);
     ohlcSeries.name("ACME Corp.");
@@ -89,7 +95,8 @@ function updateItem(){
   var high = document.getElementById("inputHigh").value;
   var low = document.getElementById("inputLow").value;
   var close = document.getElementById("inputClose").value;
-  var newData = [["2015-12-25", open, high, low, close]];
+  var stroke = "4 " + document.getElementById("inputColor").value
+  var newData = [["2015-12-25", open, high, low, close, stroke]];
   dataTable.addData(newData);
 };
 </script>

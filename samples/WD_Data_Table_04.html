@@ -43,13 +43,13 @@ anychart.onDocumentReady(function () {
     ]);
     
     // map the data for the frist series
-    var mapping_1 = dataTable.mapAs({"value": 1});
+    var mapping_1 = dataTable.mapAs({value: 1});
 
     // map the data for the second series
-    var mapping_2 = dataTable.mapAs({"value": 4});
+    var mapping_2 = dataTable.mapAs({value: 4});
 
     // map the data for the tecnical indicator
-    var mapping_3 = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+    var mapping_3 = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
     
     // create a stock chart
     var chart = anychart.stock();
