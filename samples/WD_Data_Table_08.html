@@ -43,11 +43,9 @@
 </head>
 <body>
 <button onclick="updateItem()">Update First Item</button>
-<label>O:<input id="inputOpen" value="514.53"></label>
+<label>L:<input id="inputLow" value="510.69"></label>
 <label>H:<input id="inputHigh" value="516.88"></label>
-<label>L:<input id="inputLow" value="507.69"></label>
-<label>C:<input id="inputClose" value="509.34"></label>
-<label>Color:<input id="inputColor" value="#00838f"></label>
+<label>Color:<input id="inputColor" value="#dd2c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -57,25 +55,25 @@ anychart.onDocumentReady(function () {
     
     // add data
     dataTable.addData([
-      ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-      ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-      ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-      ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-      ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-      ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-      ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-      ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+      ["2015-12-25", 506.69, 511.88],
+      ["2015-12-26", 507.59, 514.98],
+      ["2015-12-27", 505.49, 516.30],
+      ["2015-12-28", 506.23, 514.72],
+      ["2015-12-29", 505.38, 517.86],
+      ["2015-12-30", 506.66, 516.98],
+      ["2015-12-31", 505.99, 513.33],
+      ["2016-01-01", 507.99, 515.29],
+      ["2016-01-02", 506.18, 514.87]
     ]);
     
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4,
-                                   risingStroke: 5, fallingStroke: 5});
+    mapping = dataTable.mapAs({low: 1, high: 2, fill: 3});
     
     // create a stock chart and allow coloring individual points
     chart = anychart.stock(true);
         
     // create a plot and an ohlc series
-    var ohlcSeries = chart.plot(0).ohlc(mapping);
+    var ohlcSeries = chart.plot(0).rangeColumn(mapping);
     ohlcSeries.name("ACME Corp.");
     
     // set the chart title
@@ -91,12 +89,10 @@ anychart.onDocumentReady(function () {
   
 // update the first point
 function updateItem(){
-  var open = document.getElementById("inputOpen").value;
-  var high = document.getElementById("inputHigh").value;
   var low = document.getElementById("inputLow").value;
-  var close = document.getElementById("inputClose").value;
-  var stroke = "4 " + document.getElementById("inputColor").value
-  var newData = [["2015-12-25", open, high, low, close, stroke]];
+  var high = document.getElementById("inputHigh").value;
+  var color = document.getElementById("inputColor").value
+  var newData = [["2015-12-25", low, high, color]];
   dataTable.addData(newData);
 };
 </script>
