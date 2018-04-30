@@ -52,21 +52,24 @@ anychart.onDocumentReady(function () {
     var ohlcSeries = chart.plot(0).rangeArea(mapping);
     ohlcSeries.name("ACME Corp.");
     
-    // set the range of the scroller
+    // set the range of points shown on the chart
     chart.selectRange("2015-12-26", "2015-12-30");
 
-    // select all points in the table
+    /* create the selectable object
+    and select all rows in the table*/
     selectable = mapping.createSelectable();
     selectable.selectAll();
 
-    /* get the values of the first and last selected points
+    // enable html in the chart title
+    chart.title().useHtml(true);
+
+    /* get the values of the first and last shown point
     and show them in the chart title */
     showSelected(); 
 
-    /* listen to changing the range of the scroller
+    /* listen to changing the shown range of points
     and update the chart title*/
-    chart.listen("scrollerChange", function(){
-      range = chart.getSelectedRange();
+    chart.listen("selectedRangeChange", function(){
       showSelected();
     });
     
@@ -78,24 +81,23 @@ anychart.onDocumentReady(function () {
 });
 
 /* a function for getting the values of the first and last
-selected points and showing them in the chart title*/
+shown point and showing them in the chart title */
 function showSelected(){
 
-  // get the range of the scroller
+  // get the shown range of points
   var range = chart.getSelectedRange();
   
   // get the values of the first and last point of the range
-  var firstRow = selectable.search(range.firstSelected, "nearest");
-  var lastRow = selectable.search(range.lastSelected, "nearest");
-  var firstDate = firstRow.getColumn(0);
-  var firstLow = firstRow.get("low");
-  var firstHigh = firstRow.get("high");
-  var lastDate = lastRow.getColumn(0);
-  var lastLow = lastRow.get("low");
-  var lastHigh = lastRow.get("high");
+  var firstPoint = selectable.search(range.firstSelected, "nearest");
+  var lastPoint = selectable.search(range.lastSelected, "nearest");
+  var firstDate = firstPoint.getColumn(0);
+  var firstLow = firstPoint.get("low");
+  var firstHigh = firstPoint.get("high");
+  var lastDate = lastPoint.getColumn(0);
+  var lastLow = lastPoint.get("low");
+  var lastHigh = lastPoint.get("high");
   
   // set the chart title
-  chart.title().useHtml(true);
   chart.title("Table Data: Reading<br><br>" +
   	          "first selected = <span style = 'color:#990000'>" +
               firstDate + " (low: " + firstLow + ", high: " + firstHigh + ")</span>" +

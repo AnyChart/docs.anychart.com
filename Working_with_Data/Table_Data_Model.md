@@ -37,13 +37,16 @@
 
 ## Data Manipulation
 
-* [Reading](#searching_and_reading)
+* [Reading](#reading)
+* [Searching](#searching)
 * [Adding](#adding)
 * [Updating](#updating)
 * [Removing](#removing)
 * [Iterating](#iterating)
 
-### Searching and Reading
+### Reading
+
+### Searching
 
 {sample}WD\_Data\_Table\_06{sample}
 

@@ -31,10 +31,13 @@
     </style>
 </head>
 <body>
-<button id = "addButton" onclick="addItems()">Add Data</button>
+<button id = "addButton" onclick="addRow()">Add a Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
+    // set the default number of digits after the decimal point
+    anychart.format.locales.default.numberLocale.decimalsCount = 2;
     
     // create a data table
     dataTable = anychart.data.table(0);
@@ -56,7 +59,7 @@ anychart.onDocumentReady(function () {
                                    risingStroke: 5, fallingStroke: 5});
     
     // create a stock chart and allow coloring individual points
-    chart = anychart.stock(true);
+    var chart = anychart.stock(true);
     
     // create a plot and an ohlc series
     var ohlcSeries = chart.plot(0).ohlc(mapping);
@@ -64,8 +67,7 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Table Data: Adding<br><br>new data = " +
-                "<span style = 'color:#990000'>?</span>");
+    chart.title("Table Data: Adding");
 
     // set the container id
     chart.container("container");
@@ -73,27 +75,22 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+lastDate = new Date(2016, 1, 2);
   
-// add new data
-function addItems(){
+// add a new data row
+function addRow(){
+  var newOpen = (Math.random() * 6) + 507;
+  var newHigh = (Math.random() * 3) + 513;
+  var newLow = (Math.random() * 2) + 505;
+  var newClose = (Math.random() * 6) + 507;
+  var newDate = new Date();
+  newDate.setDate(lastDate.getDate() + 1);
+  lastDate = newDate;
   //create new data
-  var newData = [
-    ["2016-01-03", 512.30, 514.78, 505.87, 508.67, "4 #00838f"],
-    ["2016-01-04", 512.50, 514.77, 505.83, 508.35, "4 #00838f"],
-    ["2016-01-05", 511.53, 516.18, 505.91, 509.42, "4 #00838f"],
-    ["2016-01-06", 511.13, 516.01, 506.00, 509.26, "4 #00838f"],
-    ["2016-01-07", 510.93, 516.07, 506.00, 510.99, "4 #00838f"],
-    ["2016-01-08", 510.88, 515.93, 505.22, 509.95, "4 #00838f"],
-    ["2016-01-09", 509.12, 515.97, 505.15, 510.12, "4 #00838f"]
-  ];
+  var newData = [[newDate, newOpen, newHigh, newLow, newClose, "4 #00838f"]];
   // add new data
   dataTable.addData(newData);
-  // update the chart title
-  chart.title().useHtml(true);
-  chart.title("Table Data: Adding<br><br>new data = " +
-              "<span style = 'color:#990000'>2016.01.03 – 2016.01.09</span>");
-  // hide the button
-  document.getElementById("addButton").style.visibility = "hidden";
 };
 </script>
 </body>
