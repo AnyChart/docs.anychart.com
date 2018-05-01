@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 01"/>
+    <meta name="ac:name" content="WD Data Tree 08"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -89,10 +89,10 @@ anychart.onDocumentReady(function () {
   
 // update the first row
 function updateRow(){
-  var low = document.getElementById("inputLow").value;
-  var high = document.getElementById("inputHigh").value;
+  var newLow = document.getElementById("inputLow").value;
+  var newHigh = document.getElementById("inputHigh").value;
   var color = document.getElementById("inputColor").value
-  var newData = [["2015-12-25", low, high, color]];
+  var newData = [["2015-12-25", newLow, newHigh, color]];
   dataTable.addData(newData);
 };
 </script>

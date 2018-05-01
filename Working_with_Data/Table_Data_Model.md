@@ -60,6 +60,8 @@
 
 ### Removing
 
+{sample}WD\_Data\_Table\_09{sample}
+
 ### Iterating
 
 * anychart.data.TableIterator
