@@ -15,17 +15,184 @@
 
 ### Array of Arrays
 
+```
+// create a data table
+var dataTable = anychart.data.table(0);
+
+// add data
+dataTable.addData([
+  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
+  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
+  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
+  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
+  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
+  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
+  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
+  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+]);
+
+// map the data
+var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create a plot and an ohlc series
+var ohlcSeries = chart.plot(0).ohlc(mapping);
+```
+
 {sample}WD\_Data\_Table\_01{sample}
 
 ### Array of Objects
+
+```
+ create a data table
+var dataTable = anychart.data.table("x");
+
+// add data
+dataTable.addData([
+  {"x": "2015-12-25", "open": 512.53, "high": 514.88, "low": 505.69, "close": 507.34},
+  {"x": "2015-12-26", "open": 511.83, "high": 514.98, "low": 505.59, "close": 506.23},
+  {"x": "2015-12-27", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
+  {"x": "2015-12-28", "open": 510.35, "high": 515.72, "low": 505.23, "close": 505.80},
+  {"x": "2015-12-29", "open": 510.53, "high": 515.86, "low": 505.38, "close": 508.25},
+  {"x": "2015-12-30", "open": 511.43, "high": 515.98, "low": 505.66, "close": 507.45},
+  {"x": "2015-12-31", "open": 511.50, "high": 515.33, "low": 505.99, "close": 507.98},
+  {"x": "2016-01-01", "open": 511.32, "high": 514.29, "low": 505.99, "close": 506.37},
+  {"x": "2016-01-02", "open": 511.70, "high": 514.87, "low": 506.18, "close": 506.75}
+]); 
+
+// map the data
+var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create a plot and an ohlc series
+var ohlcSeries = chart.plot(0).ohlc(mapping);
+```
 
 {sample}WD\_Data\_Table\_02{sample}
 
 ### Mapping
 
+```
+// create a data table
+var dataTable = anychart.data.table(0);
+
+// add data
+dataTable.addData([
+  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
+  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
+  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
+  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
+  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
+  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
+  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
+  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+]);
+
+// map the data for the first series
+var mapping_1 = dataTable.mapAs({open: {column: 1, type: "open"},
+                                 high: 2, low: 3, close: 4});
+
+// map the data for the second series
+var mapping_2 = dataTable.mapAs();
+mapping_2.addField("open", 1, "open");
+mapping_2.addField("high", 2);
+mapping_2.addField("low", 3);
+mapping_2.addField("close", 4);
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create the first plot and ohlc series
+var ohlc_1 = chart.plot(0).ohlc(mapping_1);
+
+// create the second plot and ohlc series
+var ohlc_2 = chart.plot(1).ohlc(mapping_2);
+```
+
 {sample}WD\_Data\_Table\_03{sample}
 
+```
+// create a data table
+var dataTable = anychart.data.table(0);
+
+// add data
+dataTable.addData([
+  ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
+  ["2015-12-26", 511.83, 514.98, 505.59, 506.23],
+  ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
+  ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
+  ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
+  ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
+  ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
+  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+]);
+
+// map the data for the frist series
+var mapping_1 = dataTable.mapAs({value: 1});
+
+// map the data for the second series
+var mapping_2 = dataTable.mapAs({value: 4});
+
+// map the data for the tecnical indicator
+var mapping_3 = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create the first plot and and two line series
+var line_1 = chart.plot(0).line(mapping_1);
+var line_2 = chart.plot(0).line(mapping_2);
+
+// create the second plot and a williams %r indicator
+chart.plot(1).yScale().minimum(-100);
+chart.plot(1).yScale().maximum(0);
+chart.plot(1).williamsR(mapping_3, 4, "marker");
+```
+
 {sample}WD\_Data\_Table\_04{sample}
+
+```
+// create two data tables
+var dataTable_1 = anychart.data.table(0);
+var dataTable_2 = anychart.data.table(0);
+
+// add data to the first table
+dataTable_1.addData([
+  ["2018-01-01", 512.53],
+  ["2018-01-03", 511.22],
+  ["2018-01-05", 510.53],
+  ["2018-01-07", 511.50],
+  ["2018-01-09", 511.70]
+]);
+
+// add data to the second table
+dataTable_2.addData([
+  ["2018-01-02", 511.83],
+  ["2018-01-04", 510.35],
+  ["2018-01-06", 511.43],
+  ["2018-01-08", 511.32]
+]);
+
+// map the first table
+var mapping_1 = dataTable_1.mapAs({value: 1});
+
+// map the second table
+var mapping_2 = dataTable_2.mapAs({value: 1});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create a plot and an two column series
+var column_1 = chart.plot(0).column(mapping_1);
+var column_2 = chart.plot(0).column(mapping_2);
+```
 
 {sample}WD\_Data\_Table\_05{sample}
 
@@ -48,17 +215,33 @@
 
 ### Searching
 
+```
+
+```
+
 {sample}WD\_Data\_Table\_06{sample}
 
 ### Adding
+
+```
+
+```
 
 {sample}WD\_Data\_Table\_07{sample}
 
 ### Updating
 
+```
+
+```
+
 {sample}WD\_Data\_Table\_08{sample}
 
 ### Removing
+
+```
+
+```
 
 {sample}WD\_Data\_Table\_09{sample}
 
@@ -67,7 +250,16 @@
 * anychart.data.TableIterator
 * еще подумать про название
 
+```
+
+```
+
 {sample}WD\_Data\_Table\_10{sample}
+
+```
+
+```
+
 {sample}WD\_Data\_Table\_11{sample}
 
 ## Table Computer
