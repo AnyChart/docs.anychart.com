@@ -67,9 +67,7 @@
 * anychart.data.TableIterator
 * еще подумать про название
 
-{sample}WD\_Data\_Table\_10{sample}
-
-* второй пример на такой же список, но сгруппированный по годам, на больших данных
+{sample}WD\_Data\_Table\_11{sample}
 
 ## Table Computer
 
