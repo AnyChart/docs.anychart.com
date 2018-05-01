@@ -67,6 +67,7 @@
 * anychart.data.TableIterator
 * еще подумать про название
 
+{sample}WD\_Data\_Table\_10{sample}
 {sample}WD\_Data\_Table\_11{sample}
 
 ## Table Computer
