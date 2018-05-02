@@ -216,7 +216,18 @@ var column_2 = chart.plot(0).column(mapping_2);
 ### Searching
 
 ```
+// get the shown range of points
+var range = chart.getSelectedRange();
 
+// get the values of the first and last point of the range
+var firstPoint = selectable.search(range.firstSelected, "nearest");
+var lastPoint = selectable.search(range.lastSelected, "nearest");
+var firstDate = firstPoint.getColumn(0);
+var firstLow = firstPoint.get("low");
+var firstHigh = firstPoint.get("high");
+var lastDate = lastPoint.getColumn(0);
+var lastLow = lastPoint.get("low");
+var lastHigh = lastPoint.get("high");
 ```
 
 {sample}WD\_Data\_Table\_06{sample}
@@ -224,7 +235,23 @@ var column_2 = chart.plot(0).column(mapping_2);
 ### Adding
 
 ```
-
+lastDate = new Date(2016, 1, 2);
+  
+// add a new data row
+function addRow(){
+  var newOpen = (Math.random() * 6) + 507;
+  var newHigh = (Math.random() * 3) + 513;
+  var newLow = (Math.random() * 2) + 505;
+  var newClose = (Math.random() * 6) + 507;
+  var newDate = new Date();
+  newDate.setDate(lastDate.getDate() + 1);
+  lastDate = newDate;
+  //create new data
+  var newData = [[newDate, newOpen, newHigh,
+                  newLow, newClose, "4 #00838f"]];
+  // add new data
+  dataTable.addData(newData);
+};
 ```
 
 {sample}WD\_Data\_Table\_07{sample}
@@ -232,7 +259,14 @@ var column_2 = chart.plot(0).column(mapping_2);
 ### Updating
 
 ```
-
+// update the first row
+function updateRow(){
+  var newLow = document.getElementById("inputLow").value;
+  var newHigh = document.getElementById("inputHigh").value;
+  var color = document.getElementById("inputColor").value
+  var newData = [["2015-12-25", newLow, newHigh, color]];
+  dataTable.addData(newData);
+};
 ```
 
 {sample}WD\_Data\_Table\_08{sample}
@@ -240,7 +274,8 @@ var column_2 = chart.plot(0).column(mapping_2);
 ### Removing
 
 ```
-
+dataTable.removeFirst(1); 
+dataTable.remove("2015-12-28", "2015-12-31");  
 ```
 
 {sample}WD\_Data\_Table\_09{sample}
@@ -251,13 +286,76 @@ var column_2 = chart.plot(0).column(mapping_2);
 * еще подумать про название
 
 ```
+// get the shown range of points
+var range = chart.getSelectedRange();
 
+/* create the selectable object
+and select rows corresponding to the shown points */
+selectable = mapping.createSelectable();
+selectable.select(range.firstSelected, range.lastSelected);
+
+// get the iterator
+var iterator = selectable.getIterator();
+
+// get the table for displaying information
+var tableInfo = document.getElementById("tableInfo");
+
+// display the information about shown points in the table
+while (iterator.advance()) {
+  var key = iterator.getKey();
+  var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
+  var low = iterator.get("low");
+  var high = iterator.get("high");
+  var newRow = document.createElement("tr");
+  var newColumnDate = document.createElement("td");
+  var newColumnLow = document.createElement("td");
+  var newColumnHigh = document.createElement("td");
+  newColumnDate.innerText = date;
+  newColumnLow.innerText = low;
+  newColumnHigh.innerText = high;
+  newRow.appendChild(newColumnDate);
+  newRow.appendChild(newColumnLow);
+  newRow.appendChild(newColumnHigh);
+  tableInfo.appendChild(newRow);
+};
 ```
 
 {sample}WD\_Data\_Table\_10{sample}
 
 ```
+// get the shown range of points
+var range = chart.getSelectedRange();
 
+/* create the selectable object,
+select rows corresponding to the shown points,
+and group them */
+selectable = mapping.createSelectable();
+selectable.select(range.firstSelected, range.lastSelected, "year", 2);
+
+// get the iterator
+var iterator = selectable.getIterator();
+
+// get the table for displaying information
+var tableInfo = document.getElementById("tableInfo");
+
+// display the information about shown points in the table
+while (iterator.advance()) {
+  var key = iterator.getKey();
+  var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
+  var low = iterator.get("low");
+  var high = iterator.get("high");
+  var newRow = document.createElement("tr");
+  var newColumnDate = document.createElement("td");
+  var newColumnLow = document.createElement("td");
+  var newColumnHigh = document.createElement("td");
+  newColumnDate.innerText = date;
+  newColumnLow.innerText = low;
+  newColumnHigh.innerText = high;
+  newRow.appendChild(newColumnDate);
+  newRow.appendChild(newColumnLow);
+  newRow.appendChild(newColumnHigh);
+  tableInfo.appendChild(newRow);
+};
 ```
 
 {sample}WD\_Data\_Table\_11{sample}

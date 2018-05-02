@@ -100,7 +100,7 @@ anychart.onDocumentReady(function () {
 about shown points */
 function showSelected(){
 
-  // create a table
+  // create a table for displaying information
   var tablePlaceholder = document.getElementById("tablePlaceholder");
   tablePlaceholder.innerHTML = "<table id='tableInfo'>" +
                                "<caption>Shown Points</caption>" +
@@ -118,7 +118,7 @@ function showSelected(){
   // get the iterator
   var iterator = selectable.getIterator();
 
-  // get the table
+  // get the table for displaying information
   var tableInfo = document.getElementById("tableInfo");
 
   // display the information about shown points in the table
