@@ -12,17 +12,17 @@ This article explains how to set table data, access data items, and perform oper
 
 ## Setting Data
 
-Table data structuresin Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class, and the results of mapping are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. There are two ways to set this type of data: [as an array of arrays](#array_of_arrays) or [as an array of objects](#array_of_objects).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class, and the results of mapping are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. There are two ways to set this type of data: [as an array of arrays](#array_of_arrays) or [as an array of objects](#array_of_objects).
 
 ### Array of Arrays
 
-If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}). Specify the number of column containing table keys (dates) as a parameter (0 by default).
+If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default).
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
-The next step is passing the data table to the  {api:anychart.data.Table#addData}addData{api} method.
+The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, whis is defined an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 // create a data table
@@ -55,7 +55,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Array of Objects
 
-If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}). Specify the name of the field containing table keys (dates) as a parameter.
+If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter.
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
