@@ -234,7 +234,7 @@ selectable.select("2002-01-01", "2006-01-01");
 
 Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-You can use two additional parameters to group the selected data (see the second sample in the [Iterating](#iterating) subsection to learn how grouping works). One of them sets the time interval, and the other sets the number of intervals:
+You can use two additional parameters to group the selected data – see the second sample in the [Iterating](#iterating) subsection to learn how grouping works. One of the parameters sets the time interval, and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
@@ -248,7 +248,7 @@ Finally, call the {api:anychart.data.TableSelectable#search}search(){api} method
 selectable.search("2004-01-01");
 ```
 
-Manipulating table data often requires accessing rows, so the methods listed above are used in some sections in the [Data Manipulation](#data_manipulation) section.
+Manipulating table data often requires accessing rows, so the methods listed above are used in some samples in the [Data Manipulation](#data_manipulation) section.
 
 (?) как происходит поиск при группировке?
 
