@@ -245,12 +245,15 @@ The available intervals are listed in {api:anychart.enums.Interval}anychart.enum
 Finally, call the {api:anychart.data.TableSelectable#search}search(){api} method to perform a [search](#searching) on the key of the row you need to access:
 
 ```
-selectable.search("2004-01-01");
+selectable = mapping.createSelectable();
+selectable.select("2002-01-01", "2006-01-01, , "year", 2");
+selectable.search("2004-01-01", "exact");
 ```
 
 Manipulating table data often requires accessing rows, so the methods listed above are used in some samples in the [Data Manipulation](#data_manipulation) section.
 
 (?) как происходит поиск при группировке?
+(?) написать, как в принципе используется selectabel
 
 ## Data Manipulation
 
