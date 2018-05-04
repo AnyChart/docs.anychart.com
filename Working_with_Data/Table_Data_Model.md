@@ -6,13 +6,13 @@ The table data model...
 ## Overview
 
 * [AnyStock: AnyChart HTML5 Stock and Financial Charts](../Stock_Charts/Quick_Start)
-* [AnyStock Data Article](../Stock_Charts/Data)
+* [AnyStock Data](../Stock_Charts/Data)
 
 This article explains how to set table data, access data items, and perform operations on data.
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class, and the results of mapping are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. There are two ways to set this type of data: [as an array of arrays](#array_of_arrays) or [as an array of objects](#array_of_objects).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. There are two ways to set this type of data: [as an array of arrays](#array_of_arrays) or [as an array of objects](#array_of_objects).
 
 ### Array of Arrays
 
@@ -22,7 +22,7 @@ If your data is organized **as an array of arrays**, use the {api:anychart.data#
 
 The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 // create a data table
@@ -61,7 +61,7 @@ If your data is organized **as an array of arrays**, use the {api:anychart.data#
 
 The next step is passing the data table to the  {api:anychart.data.Table#addData}addData{api} method.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
  create a data table
@@ -93,6 +93,9 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 {sample}WD\_Data\_Table\_02{sample}
 
 ### Mapping
+
+* the results of mapping are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
+* grouping/approximation mode
 
 ```
 // create a data table
@@ -213,11 +216,41 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 {sample}WD\_Data\_Table\_05{sample}
 
-## Accessing Items
+## Accessing Rows
 
-* anychart.data.TableSelectable
-* anychart.data.TableSelectable.RowProxy
-* описать тонкости работы с selectable
+Rows in table data are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class. 
+
+If you need to access a row of a table, the first step is to create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+
+```
+selectable = mapping.createSelectable();
+```
+
+Then specify the range of dates the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call  {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters:
+
+```
+selectable.select("2002-01-01", "2006-01-01");
+```
+
+Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+
+You can use two additional parameters to group the selected data (see the second sample in the [Iterating](#iterating) subsection to learn how grouping works). One of them sets the time interval, and the other sets the number of intervals:
+
+```
+selectable.select("2002-01-01", "2006-01-01", "year", 2);
+```
+
+The available intervals are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}. It can be a day, a month, a year, etc.
+
+Finally, call the {api:anychart.data.TableSelectable#search}search(){api} method to perform a [search](#searching) on the key of the row you need to access:
+
+```
+selectable.search("2004-01-01");
+```
+
+Manipulating table data often requires accessing rows, so the methods listed above are used in some sections in the [Data Manipulation](#data_manipulation) section.
+
+(?) как происходит поиск при группировке?
 
 ## Data Manipulation
 
@@ -231,6 +264,8 @@ var column_2 = chart.plot(0).column(mapping_2);
 ### Reading
 
 ### Searching
+
+* дефолтный параметр, кажется, exact
 
 ```
 // get the shown range of points
