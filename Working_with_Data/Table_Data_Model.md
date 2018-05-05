@@ -12,11 +12,11 @@ This article explains how to set table data, access data items, and perform oper
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. There are two ways to set this type of data: [as an array of arrays](#array_of_arrays) or [as an array of objects](#array_of_objects).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. There are two ways to set this type of data: as an [array of arrays](#array_of_arrays) or as an [array of objects](#array_of_objects).
 
 ### Array of Arrays
 
-If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default).
+If your data is organized as an **array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default).
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
@@ -55,7 +55,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Array of Objects
 
-If your data is organized **as an array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter.
+If your data is organized as an **array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter.
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
@@ -94,7 +94,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Mapping
 
-* the results of mapping are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
+* Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
 * grouping/approximation mode
 
 ```
@@ -220,29 +220,27 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 If you need to access a row of a table, first you should access a selection of rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. 
 
-To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
 ```
 
-Then specify the range of dates the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters:
+Then specify the **range of dates** the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
 ```
 
-Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+**Note:** Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-You can use two additional parameters to group the selected data – see the second sample in the [Iterating](#iterating) subsection to learn how grouping works. One of the parameters sets the time interval (a day, a month, a year, etc.), and the other sets the number of intervals:
+You can use two optional parameters to **group the selected data**, like in the second sample in the [Iterating](#iterating) subsection. One of these parameters sets the time interval, for example a day, a month, a year, etc. (the available intervals are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-The available intervals are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}.
-
-To access a row, perform a [search](#searching) on the key of the row – сall the {api:anychart.data.TableSelectable#search}search(){api} method:
+To access a **row of a table**, perform a [search](#searching) on the key of the row. Call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
