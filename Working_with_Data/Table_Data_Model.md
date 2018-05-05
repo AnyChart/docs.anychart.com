@@ -238,8 +238,6 @@ You can use two optional parameters to **group the selected data**, like in the 
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-**Note:** The second sample in the [Iterating](#iterating) subsection demonstrates how grouping works.
-
 To access a **row of a table**, perform a [search](#searching) on the key of the row. Call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
