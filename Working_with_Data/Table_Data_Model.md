@@ -18,11 +18,11 @@ Here is the list of classes allowing you to work with table data in AnyChart:
 * mapping – {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
 * selection of rows – {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}
 * table row – {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}
+* iterator – {api:anychart.data.TableIterator}anychart.data.TableIterator{api}
 * computer – {api:anychart.data.TableComputer}anychart.data.TableComputer{api}
 * computer row – {api:anychart.data.TableComputer.RowProxy}anychart.data.TableComputer.RowProxy{api}
-* iterator – {api:anychart.data.TableIterator}anychart.data.TableIterator{api}
 
-Sections below explain in detail how to use these classes.
+You can learn how to use these classes in the sections below.
 
 ## Setting Data
 
