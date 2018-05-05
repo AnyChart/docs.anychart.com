@@ -256,11 +256,11 @@ To access a **row of a table**, perform a [search](#searching) on the key of the
 
 ```
 selectable = mapping.createSelectable();
-selectable.select("2002-01-01", "2006-01-01, , "year", 2");
+selectable.select("2002-01-01", "2006-01-01, "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
-Manipulating table data often requires accessing rows or selections of rows – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
+Manipulating table data often requires accessing rows or selections of rows, so the methods listed above are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
 
 ## Data Manipulation
 
