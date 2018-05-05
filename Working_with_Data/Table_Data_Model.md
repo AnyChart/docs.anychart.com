@@ -34,9 +34,9 @@ If your data is organized as an **array of arrays**, use the {api:anychart.data#
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
-The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method.
+The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method. Another instance of {api:anychart.data.Table}anychart.data.Table{api} is created.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 // create a data table
@@ -73,9 +73,9 @@ If your data is organized as an **array of arrays**, use the {api:anychart.data#
 
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
-The next step is passing the data table to the  {api:anychart.data.Table#addData}addData{api} method.
+The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method. Another instance of {api:anychart.data.Table}anychart.data.Table{api} is created.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to map the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
  create a data table
@@ -108,8 +108,34 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Mapping
 
-* Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
-* grouping/approximation mode
+Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
+
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays) or an [array of objects](#array_of_objects):
+
+```
+dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+```
+
+```
+dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
+```
+
+You can also set the **grouping/approximation mode** – the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
+
+```
+dataTable.mapAs({open: {column: 1, type: "open"},
+                        high: 2, low: 3, close: 4});
+```
+
+There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in data. The third parameter (optional) allows you to set the approximation mode:
+
+```
+mapping.addField("open", 1, "open");
+``` 
+
+Please note that {api:anychart.data.TableMapping#addField}addField(){api} maps only one field at a time.
+
+In the following sample there are two series based on the same data, but for the first one it is mapped with {api:anychart.data.Table#mapAs}mapAs(){api}, and for the second with {api:anychart.data.TableMapping#addField}addField(){api}:
 
 ```
 // create a data table
@@ -151,6 +177,8 @@ var ohlc_2 = chart.plot(1).ohlc(mapping_2);
 
 {sample}WD\_Data\_Table\_03{sample}
 
+This sample show how to map the data for multiple series and [technical indicators](../Technical_Indicators):
+
 ```
 // create a data table
 var dataTable = anychart.data.table(0);
@@ -189,6 +217,8 @@ chart.plot(1).yScale().minimum(-100);
 chart.plot(1).yScale().maximum(0);
 chart.plot(1).williamsR(mapping_3, 4, "marker");
 ```
+
+You can also map multiple tables, which allows you, for example, show odd and even days on different series: 
 
 {sample}WD\_Data\_Table\_04{sample}
 
@@ -265,6 +295,8 @@ selectable.search("2004-01-01", "exact");
 Manipulating table data often requires accessing rows or selections of rows, so the methods described here are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
 
 ## Data Manipulation
+
+You can perform the following data operations (including CRUD):
 
 * [Reading](#reading)
 * [Searching](#searching)
