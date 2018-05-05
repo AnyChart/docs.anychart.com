@@ -5,10 +5,24 @@ The table data model...
 
 ## Overview
 
-* [AnyStock: AnyChart HTML5 Stock and Financial Charts](../Stock_Charts/Quick_Start)
+* [AnyStock](../Stock_Charts/Quick_Start)
 * [AnyStock Data](../Stock_Charts/Data)
 
 This article explains how to set table data, access data items, and perform operations on data.
+
+## Classes
+
+Here is the list of classes allowing you to work with table data in AnyChart:
+
+* table – {api:anychart.data.Table}anychart.data.Table{api}
+* mapping – {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
+* selection of rows – {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}
+* table row – {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}
+* computer – {api:anychart.data.TableComputer}anychart.data.TableComputer{api}
+* computer row – {api:anychart.data.TableComputer.RowProxy}anychart.data.TableComputer.RowProxy{api}
+* iterator – {api:anychart.data.TableIterator}anychart.data.TableIterator{api}
+
+Sections below explain in detail how to use these classes.
 
 ## Setting Data
 
@@ -218,7 +232,7 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you need to access a row of a table, first you should access a selection of rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+If you need to access a row of a table, you should access a selection of rows and perform a [search](#searching). Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
 To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
@@ -246,10 +260,7 @@ selectable.select("2002-01-01", "2006-01-01, , "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
-Manipulating table data often requires accessing rows or selections of rows – see [Reading](#reading), [Searching](#iterating), [Iterating](#iterating).
-
-* (?) как происходит поиск при группировке?
-* (?) написать, как в принципе используется selectable
+Manipulating table data often requires accessing rows or selections of rows – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
 
 ## Data Manipulation
 
