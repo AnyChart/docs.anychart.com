@@ -218,15 +218,15 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-Rows in table data are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class. 
+If you need to access a row of a table, first you should access a selection of rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. 
 
-If you need to access a row of a table, the first step is to access a selection of rows. Create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
 ```
 
-Then specify the range of dates the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call  {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters:
+Then specify the range of dates the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
@@ -234,15 +234,15 @@ selectable.select("2002-01-01", "2006-01-01");
 
 Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-You can use two additional parameters to group the selected data – see the second sample in the [Iterating](#iterating) subsection to learn how grouping works. One of the parameters sets the time interval, and the other sets the number of intervals:
+You can use two additional parameters to group the selected data – see the second sample in the [Iterating](#iterating) subsection to learn how grouping works. One of the parameters sets the time interval (a day, a month, a year, etc.), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-The available intervals are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}. It can be a day, a month, a year, etc.
+The available intervals are listed in {api:anychart.enums.Interval}anychart.enums.Interval{api}.
 
-Finally, call the {api:anychart.data.TableSelectable#search}search(){api} method to perform a [search](#searching) on the key of the row you need to access:
+To access a row, perform a [search](#searching) on the key of the row – сall the {api:anychart.data.TableSelectable#search}search(){api} method:
 
 ```
 selectable = mapping.createSelectable();
@@ -252,8 +252,8 @@ selectable.search("2004-01-01", "exact");
 
 Manipulating table data often requires accessing rows, so the methods listed above are used in some samples in the [Data Manipulation](#data_manipulation) section.
 
-(?) как происходит поиск при группировке?
-(?) написать, как в принципе используется selectabel
+* (?) как происходит поиск при группировке?
+* (?) написать, как в принципе используется selectable
 
 ## Data Manipulation
 
