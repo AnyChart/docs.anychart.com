@@ -218,7 +218,7 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you need to access a row of a table, first you should access a selection of rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. 
+If you need to access a row of a table, first you should access a selection of rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
 To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
@@ -246,7 +246,7 @@ selectable.select("2002-01-01", "2006-01-01, , "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
-Manipulating table data often requires accessing rows, so the methods listed above are used in some samples in the [Data Manipulation](#data_manipulation) section.
+Manipulating table data often requires accessing rows or selections of rows – see [Reading](#reading), [Searching](#iterating), [Iterating](#iterating).
 
 * (?) как происходит поиск при группировке?
 * (?) написать, как в принципе используется selectable
