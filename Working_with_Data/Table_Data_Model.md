@@ -232,27 +232,29 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you need to access a row of a table, you should access a selection of rows and perform a [search](#searching). Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+Rows of tables are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections of rows as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+If you need to access a row, first you should access a selection of rows and then perform a [search](#searching):
+
+**1.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
 ```
 
-Then specify the **range of dates** the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
+**2.** Then specify the **range of dates** the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
 ```
 
-You can use two optional parameters to **group the selected data**, like in the second sample in the [Iterating](#iterating) subsection. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
+**3.** You can call {api:anychart.data.TableSelectable#select}select(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) subsection. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-To access a **row of a table**, perform a [search](#searching) on the key of the row. Call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+**4.** To access a **row of a table**, perform a [search](#searching) on the key of the row. Call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
@@ -260,7 +262,7 @@ selectable.select("2002-01-01", "2006-01-01, "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
-Manipulating table data often requires accessing rows or selections of rows, so the methods listed above are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
+Manipulating table data often requires accessing rows or selections of rows, so the methods described here are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
 
 ## Data Manipulation
 
