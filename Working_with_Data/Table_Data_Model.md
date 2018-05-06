@@ -127,7 +127,7 @@ dataTable.mapAs({open: {column: 1, type: "open"},
                         high: 2, low: 3, close: 4});
 ```
 
-There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in data. The third parameter (optional) allows you to set the approximation mode:
+There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
 
 ```
 mapping.addField("open", 1, "open");
@@ -218,9 +218,9 @@ chart.plot(1).yScale().maximum(0);
 chart.plot(1).williamsR(mapping_3, 4, "marker");
 ```
 
-You can also map multiple tables, which allows you, for example, show odd and even days on different series: 
-
 {sample}WD\_Data\_Table\_04{sample}
+
+You can also map multiple tables, which allows you, for example, to show odd and even days on different series: 
 
 ```
 // create two data tables
@@ -307,9 +307,29 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
+To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy#get}anychart.data.TableSelectable.RowProxy#get{api}:
+
+* {api:anychart.data.TableSelectable.RowProxy#get}get(){api}
+* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api}
+* {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api}
+* {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api}
+
+**Note** The {api:anychart.data.TableSelectable.RowProxy#get}get(){api} methods accepts the name of a data field and returns its value. The {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} method also returns the value, but accepts the number of a column.
+
+To call the methods listed above, you need to [access](#accessing_rows) a row of the table, which requires creating a selection of rows and performing a search – see the sample in the [Searching](#searching) section. 
+
 ### Searching
 
-* дефолтный параметр, кажется, exact
+To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as a parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy#get}anychart.data.TableSelectable.RowProxy#get{api}.
+
+An optional parameter allows you to set the **mode of search** – see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
+
+* `"exact"` (default)
+* `"exact-or-next"`
+* `"exact-or-prev"`
+* `"nearest"`
+
+In the following sample, the information about the first and last point of the shown range is displayed in the chart title, and when the range is changed, the description is updated. The {api:anychart.data.TableSelectable#search}search(){api} method is combined with the {api:anychart.data.TableSelectable.RowProxy#get}get(){api} and {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} methods allowing to [read](#reading) the data:
 
 ```
 // get the shown range of points
@@ -329,6 +349,10 @@ var lastHigh = lastPoint.get("high");
 {sample}WD\_Data\_Table\_06{sample}
 
 ### Adding
+
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting the data](#setting_data), but also for adding new rows:
+
+The sample below
 
 ```
 lastDate = new Date(2016, 1, 2);
