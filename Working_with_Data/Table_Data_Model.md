@@ -308,13 +308,13 @@ To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy
 * {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api}
 * {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api}
 
-**Note** The {api:anychart.data.TableSelectable.RowProxy#get}get(){api} methods accepts the name of a data field and returns its value. The {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} method also returns the value, but accepts the number of a column.
+**Note:** The {api:anychart.data.TableSelectable.RowProxy#get}get(){api} methods accepts the name of a data field and returns its value. The {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} method also returns the value, but accepts the number of a column.
 
 To call the methods listed above, you need to [access](#accessing_rows) a row of the table, which requires creating a selection of rows and performing a search – see the sample in the [Searching](#searching) section. 
 
 ### Searching
 
-To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as a parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy#get}anychart.data.TableSelectable.RowProxy#get{api}.
+To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as a parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}.
 
 An optional parameter allows you to set the **mode of search** – see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
 
