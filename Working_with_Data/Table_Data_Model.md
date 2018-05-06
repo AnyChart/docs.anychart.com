@@ -344,9 +344,9 @@ var lastHigh = lastPoint.get("high");
 
 ### Adding
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting) data, but also for adding new rows.
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding new rows.
 
-The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows you to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
 **Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
@@ -365,8 +365,7 @@ function addRow(){
   newDate.setDate(lastDate.getDate() + 1);
   lastDate = newDate;
   //create new data
-  var newData = [[newDate, newOpen, newHigh,
-                  newLow, newClose, "4 #00838f"]];
+  var newData = [[newDate, newOpen, newHigh, newLow, newClose, "4 #00838f"]];
   // add new data
   dataTable.addData(newData);
 };
@@ -376,7 +375,7 @@ function addRow(){
 
 ### Updating
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting) and [adding](#adding) data, but also for updating it. It means that when you can call this method, you can specify dates that are already included in your data and set new values for them: 
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you can call this method, you can specify dates that are already included in your data and set new values for them: 
 
 ```
 // update the first row
