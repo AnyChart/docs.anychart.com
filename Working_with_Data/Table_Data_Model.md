@@ -36,6 +36,8 @@ If your data is organized as an **array of arrays**, use the {api:anychart.data#
 
 The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method. Another instance of {api:anychart.data.Table}anychart.data.Table{api} is created.
 
+**Note:** This method is also used for [adding](#adding) and [updating](#updating) data.
+
 Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
@@ -74,6 +76,8 @@ If your data is organized as an **array of arrays**, use the {api:anychart.data#
 **Note:** You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method. Another instance of {api:anychart.data.Table}anychart.data.Table{api} is created.
+
+**Note:** This method is also used for [adding](#adding) and [updating](#updating) data.
 
 Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
@@ -350,9 +354,13 @@ var lastHigh = lastPoint.get("high");
 
 ### Adding
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting the data](#setting_data), but also for adding new rows:
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting) data, but also for adding new rows.
 
-The sample below
+The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+
+**Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
+
+In this sample, when you push the button, random data is added to the table and shown on the chart:
 
 ```
 lastDate = new Date(2016, 1, 2);
@@ -377,6 +385,8 @@ function addRow(){
 {sample}WD\_Data\_Table\_07{sample}
 
 ### Updating
+
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting) and [adding](#adding) data, but also for updating it. It means that when you can call this method, you can specify dates that are already included in your data and set new values for them: 
 
 ```
 // update the first row
