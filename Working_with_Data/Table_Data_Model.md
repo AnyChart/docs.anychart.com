@@ -284,7 +284,7 @@ selectable.select("2002-01-01", "2006-01-01, "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
-Manipulating table data often requires accessing rows or selections of rows, so the methods described here are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Reading](#reading), [Searching](#searching), [Iterating](#iterating).
+Manipulating table data often requires accessing rows or selections of rows, so the methods described here are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
 ## Data Manipulation
 
