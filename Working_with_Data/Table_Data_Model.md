@@ -270,7 +270,7 @@ Then specify the **range of dates** the row falls into. To select all dates in t
 selectable.select("2002-01-01", "2006-01-01");
 ```
 
-You can call {api:anychart.data.TableSelectable#select}select(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) subsection. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
+You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {api:anychart.data.TableSelectable#select}select(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) subsection. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
