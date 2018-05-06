@@ -1,9 +1,9 @@
 {:index 6}
 # Table Data Model
 
-The table data model...
-
 ## Overview
+
+The table data model...
 
 * [AnyStock](../Stock_Charts/Quick_Start)
 * [AnyStock Data](../Stock_Charts/Data)
