@@ -171,7 +171,7 @@ var ohlc_2 = chart.plot(1).ohlc(mapping_2);
 
 {sample}WD\_Data\_Table\_03{sample}
 
-This sample show how to map the data for multiple series and [technical indicators](../Technical_Indicators):
+This sample show how to map the data for multiple series and [technical indicators](../Stock_Charts/Technical_Indicators):
 
 ```
 // create a data table
