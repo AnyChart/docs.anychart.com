@@ -276,7 +276,7 @@ You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-To access a **row of a table**, perform a [search](#searching) on the key of the row. Call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+To access a **row of a table**, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
