@@ -119,8 +119,7 @@ dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 You can also set the **grouping/approximation mode** – the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
 
 ```
-dataTable.mapAs({open: {column: 1, type: "open"},
-                        high: 2, low: 3, close: 4});
+dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
 ```
 
 There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
@@ -151,8 +150,7 @@ dataTable.addData([
 ]);
 
 // map the data for the first series
-var mapping_1 = dataTable.mapAs({open: {column: 1, type: "open"},
-                                 high: 2, low: 3, close: 4});
+var mapping_1 = dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
 
 // map the data for the second series
 var mapping_2 = dataTable.mapAs();
@@ -303,7 +301,7 @@ You can perform the following data operations (including CRUD):
 
 ### Reading
 
-To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy#get}anychart.data.TableSelectable.RowProxy#get{api}:
+To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
 * {api:anychart.data.TableSelectable.RowProxy#get}get(){api}
 * {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api}
