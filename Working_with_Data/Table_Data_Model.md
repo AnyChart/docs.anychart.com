@@ -30,7 +30,7 @@ Table data structures in Anychart are defined as instances of the {api:anychart.
 
 ### Array of Arrays
 
-If your data is organized as an **array of arrays**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If your data is organized as an **array of arrays**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method, which creates another instance of {api:anychart.data.Table}anychart.data.Table{api}. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
@@ -67,7 +67,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Array of Objects
 
-If your data is organized as an **array of objects**, use the {api:anychart.data#table}table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If your data is organized as an **array of objects**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 The next step is passing the data table to the {api:anychart.data.Table#addData}addData{api} method, which creates another instance of {api:anychart.data.Table}anychart.data.Table{api}. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
