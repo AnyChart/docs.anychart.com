@@ -32,7 +32,7 @@ Table data structures in Anychart are defined as instances of the {api:anychart.
 
 If your data is organized as an **array of arrays**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
-The next step is calling the {api:anychart.data.Table#addData}addData(){api} method on the data table and passing your data to it, which creates another instance of {api:anychart.data.Table}anychart.data.Table{api}. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
+The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
 Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
@@ -69,7 +69,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 If your data is organized as an **array of objects**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
-The next step is calling the {api:anychart.data.Table#addData}addData(){api} method on the data table and passing your data to it, which creates another instance of {api:anychart.data.Table}anychart.data.Table{api}. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
+The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
 Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
@@ -116,7 +116,9 @@ dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 ```
 
-You can also set the **grouping/approximation mode** – the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
+**Note:** The column with keys (dates) is specified when the table is created with the {api:anychart.data#table}anychart.data.table(){api} method. You cannot remap the key column with {api:anychart.data.Table#mapAs}mapAs(){api}.
+
+You can also set the **approximation mode** for [grouping data](../Stock_Charts/Data_Grouping) – the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
 
 ```
 dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
@@ -264,7 +266,7 @@ To access a **selection of rows**, create an instance of {api:anychart.data.Tabl
 selectable = mapping.createSelectable();
 ```
 
-Then specify the **range of dates** the row falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. Also, please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
+Then specify the **range of dates**. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. This is how selecting a range of dates looks like:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
@@ -288,7 +290,7 @@ Manipulating table data often requires accessing rows or selections of rows, so 
 
 ## Data Manipulation
 
-You can perform the following data operations (including CRUD):
+You can perform the following data operations:
 
 * [Reading](#reading)
 * [Searching](#searching)
@@ -312,11 +314,11 @@ To call the methods listed above, you need to [access](#accessing_rows) a row of
 
 ### Searching
 
-To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as a parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}.
+To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as the first parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}.
 
-An optional parameter allows you to set the **mode of search** – see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
+The second parameter sets the **mode of search** – see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
 
-* `"exact"` (default)
+* `"exact"`
 * `"exact-or-next"`
 * `"exact-or-prev"`
 * `"nearest"`
@@ -346,28 +348,16 @@ The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.T
 
 The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows you to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
+```
+dataTable.addData([
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
+  ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+]);
+```
+
 **Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
-
-```
-lastDate = new Date(2016, 1, 2);
-  
-// add a new data row
-function addRow(){
-  var newOpen = (Math.random() * 6) + 507;
-  var newHigh = (Math.random() * 3) + 513;
-  var newLow = (Math.random() * 2) + 505;
-  var newClose = (Math.random() * 6) + 507;
-  var newDate = new Date();
-  newDate.setDate(lastDate.getDate() + 1);
-  lastDate = newDate;
-  //create new data
-  var newData = [[newDate, newOpen, newHigh, newLow, newClose, "4 #00838f"]];
-  // add new data
-  dataTable.addData(newData);
-};
-```
 
 {sample}WD\_Data\_Table\_07{sample}
 
@@ -376,14 +366,8 @@ function addRow(){
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you can call this method, you can specify dates that are already included in your data and set new values for them: 
 
 ```
-// update the first row
-function updateRow(){
-  var newLow = document.getElementById("inputLow").value;
-  var newHigh = document.getElementById("inputHigh").value;
-  var color = document.getElementById("inputColor").value
-  var newData = [["2015-12-25", newLow, newHigh, color]];
-  dataTable.addData(newData);
-};
+var newData = [["2015-12-25", newLow, newHigh, color]];
+dataTable.addData(newData);
 ```
 
 {sample}WD\_Data\_Table\_08{sample}
@@ -403,9 +387,6 @@ dataTable.remove("2015-12-28", "2015-12-31");
 * еще подумать про название
 
 ```
-// get the shown range of points
-var range = chart.getSelectedRange();
-
 /* create the selectable object
 and select rows corresponding to the shown points */
 selectable = mapping.createSelectable();
@@ -414,65 +395,23 @@ selectable.select(range.firstSelected, range.lastSelected);
 // get the iterator
 var iterator = selectable.getIterator();
 
-// get the table for displaying information
-var tableInfo = document.getElementById("tableInfo");
-
 // display the information about shown points in the table
 while (iterator.advance()) {
   var key = iterator.getKey();
   var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
   var low = iterator.get("low");
-  var high = iterator.get("high");
-  var newRow = document.createElement("tr");
-  var newColumnDate = document.createElement("td");
-  var newColumnLow = document.createElement("td");
-  var newColumnHigh = document.createElement("td");
-  newColumnDate.innerText = date;
-  newColumnLow.innerText = low;
-  newColumnHigh.innerText = high;
-  newRow.appendChild(newColumnDate);
-  newRow.appendChild(newColumnLow);
-  newRow.appendChild(newColumnHigh);
-  tableInfo.appendChild(newRow);
+  var high = iterator.get("high");  
 };
 ```
 
 {sample}WD\_Data\_Table\_10{sample}
 
 ```
-// get the shown range of points
-var range = chart.getSelectedRange();
-
 /* create the selectable object,
 select rows corresponding to the shown points,
 and group them */
 selectable = mapping.createSelectable();
 selectable.select(range.firstSelected, range.lastSelected, "year", 2);
-
-// get the iterator
-var iterator = selectable.getIterator();
-
-// get the table for displaying information
-var tableInfo = document.getElementById("tableInfo");
-
-// display the information about shown points in the table
-while (iterator.advance()) {
-  var key = iterator.getKey();
-  var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
-  var low = iterator.get("low");
-  var high = iterator.get("high");
-  var newRow = document.createElement("tr");
-  var newColumnDate = document.createElement("td");
-  var newColumnLow = document.createElement("td");
-  var newColumnHigh = document.createElement("td");
-  newColumnDate.innerText = date;
-  newColumnLow.innerText = low;
-  newColumnHigh.innerText = high;
-  newRow.appendChild(newColumnDate);
-  newRow.appendChild(newColumnLow);
-  newRow.appendChild(newColumnHigh);
-  tableInfo.appendChild(newRow);
-};
 ```
 
 {sample}WD\_Data\_Table\_11{sample}
