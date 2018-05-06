@@ -258,7 +258,7 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 Rows of tables are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections of rows as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-If you need to access a row, first you should access a selection of rows and then perform a [search](#searching):
+If you want access a row, first you should access a selection of rows and then perform a [search](#searching):
 
 **1.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
@@ -480,7 +480,5 @@ while (iterator.advance()) {
 {sample}WD\_Data\_Table\_11{sample}
 
 ## Table Computer
-
-* anychart.data.TableComputer.RowProxy
 
 ## Events
