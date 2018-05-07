@@ -10,9 +10,8 @@ In AnyChart axes are used to control axes labels, lines and tick marks.
 * To know what scale options are available - [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
-* To learn more about Date/Time Scale - [Date/Time Axes](../Axes_and_Grids/Date_Time_Axes)
 
-In this section we will demonstrate only the differences of AnyStock axes and scales from basic charts' ones.
+In this section we will demonstrate the differences of AnyStock axes and scales from basic charts' ones.
 
 ## Stock Axes features
 
@@ -31,7 +30,7 @@ Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis i
 
 While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientation settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the plot. The Y-axes act as usual.
 
-##Tickmarks
+## Tickmarks
 
 The ticks in AnyStocks are a little bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}ticks(){api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}minorTicks(){api} method) ticks: 
 
@@ -115,3 +114,7 @@ chart.padding("10%", 10, 10, 50);
 ```
 
 {sample}STOCK\_Plots\_03{sample}
+
+## Axes Markers
+
+
