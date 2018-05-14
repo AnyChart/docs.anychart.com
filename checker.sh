@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-
+clear && echo 'Start checking....'
 ################################################################################################################################################
 # Utility function to fix known troubles with production server
 ################################################################################################################################################
-function ord {
-  printf $1 | hexdump
-}
 # filter only MD files and html samples
 FILESLIST=$(find . -type f \( -name "*.md" -o -name "*.html" \) ) 
 
@@ -16,7 +13,8 @@ for filename in $FILESLIST; do
     perl -pi -e 's,(releases)/([^/])+/,$1/{{branch-name}}/,g' $filename
     
     # match all non-ascii symbols
-    # Search charcode here  https://www.compart.com/en/unicode/search?q=
+    # Search charcode by symbol here  https://www.compart.com/en/unicode/search?q=
+    # Search symbol by hex code here https://utf8-chartable.de/unicode-utf8-table.pl?start=8192&number=128&utf8=string-literal
     match=$(cat $filename | tr -d '\r' | tr -d '\n' | sed 's/\xC2\xA0/+/g' | \
         sed -e "s/'//g;s/[\s\t]/ /g" | sed -e 's/[0-9A-z"*+-=()/&!?.,:;$<>#{}%~|@ ]//g' | \
         awk '{$1=$1}1' )
@@ -33,7 +31,7 @@ done
 
 CHANGES=$(git diff --name-only)
 if [ "$CHANGES" ]; then    
-    git status
+    echo $CHANGES
     exit 1
 fi
 
