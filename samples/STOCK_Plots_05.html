@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Plots 02"/>
+    <meta name="ac:name" content="STOCK Plots 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -52,23 +52,34 @@ anychart.onDocumentReady(function () {
         ]);
 
     // map loaded data
-    var columnMapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({'value': 2});
     var ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-    var lineMapping = dataTable.mapAs({'value': 3});
+    var columnMapping = dataTable.mapAs({'value': 3});
       
     // create stock chart
     var chart = anychart.stock();
 
-    // create first plot on the chart with column series
+    // create the first plot on the chart with column series and no legend
     var plot_1 = chart.plot(0);
-    plot_1.column(columnMapping).name("Closing price");
-    plot_1.line(lineMapping).name("Lowest price");
+    plot_1.legend(false);
+    plot_1.column(mapping).name("Highest rates");
 
-    // create second plot on the chart
+    // enable title and set the text
+    plot_1.title('Rates');
+
+    // create the second plot on the chart with ohlc series and no legend
     var plot_2 = chart.plot(1);
+    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Prices");
+    plot_2.legend(false);    
 
-    // create column series on the second plot
-    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Price Rates");
+    // enable title and configure font
+    plot_2.title().enabled(true);
+    plot_2.title().text('Prices');
+    plot_2.title().fontWeight(900);    
+
+    // create the third plot with column series and legend and title setting left by default
+    var plot_3 = chart.plot(2);
+    plot_3.column(columnMapping).name("Lowest rates");
 
     // set container id for the chart
     chart.container('container');

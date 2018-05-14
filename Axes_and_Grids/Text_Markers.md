@@ -7,9 +7,9 @@ Text Markers are useful when you want to place custom texts or description with 
 
 ## Declare
 
-These text markers are just custom text placed on chart.
+These text markers are just custom text placed on a chart.
 
-To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}textMarker(){api} and set {api:anychart.core.axisMarkers.Text#value}value(){api}, {api:anychart.core.axisMarkers.Text#axis}axis(){api} and {api:anychart.core.axisMarkers.Text#text}text(){api}.You may use other options, but previous three are mandatory.
+To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}textMarker(){api} and set {api:anychart.core.axisMarkers.Text#value}value(){api}, {api:anychart.core.axisMarkers.Text#axis}axis(){api} and {api:anychart.core.axisMarkers.Text#text}text(){api}.
 
 ```
 var textMarker = chart.textMarker();
@@ -21,9 +21,13 @@ textMarker.fontSize(12);
 textMarker.fontColor("#212121");
 textMarker.offsetX(5);
 textMarker.text("Historical Maximum");
+textMarker.background().enabled(true);
+textMarker.background().stroke("1 gray");
+textMarker.background().fill("gray 0.1");
+textMarker.padding(3);
 ```
 
-Sample below shows several variants of Text Marker usage: marking up values (High, Low), describing values (Historical Maximum) and marking only selected values on certain axis (8.00).
+Sample below shows several variants of Text Markers: marking up values (High, Low), describing values (Historical Maximum) and marking values on an axis (8.00).
 
 {sample}AGST\_Text\_Marker\_01{sample}
 

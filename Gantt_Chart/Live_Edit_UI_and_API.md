@@ -245,7 +245,7 @@ When an object is removed, the Gantt tree dispatches the **treeItemRemove** even
 ```
 var tree = anychart.data.tree(getData(), "as-table");
 tree.listen("treeItemRemove", function(e){
-	chart.title.text("The " + e.itemIndex  " item was removed");
+	chart.title.text("The " + e.targetIndex + " item was removed");
 });
 ```
 
