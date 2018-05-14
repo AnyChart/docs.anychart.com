@@ -21,7 +21,7 @@ Let's first define the perimeter and form of the house and use a "Rectangle Tool
 
 Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same picture of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
-Note: to draw a straight line or curve at an angle, multiple of 45°, hold the Shift key on your keyboard while drawing.
+Note: to draw a straight line or curve at an angle, multiple of 45&deg;, hold the Shift key on your keyboard while drawing.
 
 <a href="https://static.anychart.com/images/docs/seat\_map/04\_preplan.png" target="_blank"><img src="https://static.anychart.com/images/docs/seat\_map/04\_preplan.png" alt="Plan Draft" title="Plan Draft" border="0" width=600 align="center"></a>
 

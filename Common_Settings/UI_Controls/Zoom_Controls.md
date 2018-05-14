@@ -11,7 +11,7 @@ First of all, it is necessary to reference the following files for sample functi
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css" />
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css" />
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css" />
 ```
 
 There is a new layer created for the Zoom Control Panel over the chart layer. The {api:anychart.ui.Zoom#target}target(){api} method is necessary to set the target map for the zooming panel, and the {api:anychart.ui.Zoom#render}render(){api} method provides the Zoom Controls Panel rendering.

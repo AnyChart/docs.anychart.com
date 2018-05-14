@@ -25,7 +25,7 @@ anychart.onDocumentReady(function () {
   // set tooltip text template
   var tooltip = chart.getSeries(0).tooltip();
   tooltip.title().text("Content");
-  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}°C");
+  tooltip.format("{%x} is a {%season} month\nLowest temp: {%value}&deg;C");
 
   // set series labels text template
   var seriesLabels = chart.getSeries(0).labels().enabled(true);

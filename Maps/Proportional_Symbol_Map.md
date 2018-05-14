@@ -34,7 +34,7 @@ There are two ways of defining bubble placement data properly. Let's look at the
 
 First of all, we need to remember, how we define the location of any object (town, country, house, memorial, ship, etc) in the world. Wherever the point is placed on the Earth and however small it is, there are always two geographic coordinates specifying this point location: latitude and longitude.
 
-Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0° at the Equator to 90° N at north and 90° S at south (or 90° and -90° accordingly); longitude is being ranged from 0° at the Prime Meridian to +180° eastward and −180° westward. 
+Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0&deg; at the Equator to 90&deg; N at north and 90&deg; S at south (or 90&deg; and -90&deg; accordingly); longitude is being ranged from 0&deg; at the Prime Meridian to +180&deg; eastward and -180&deg; westward. 
 
 We use this system of defining the point's location as the main one. While we use "x" and "y" in other charts and choropleth maps, we've got "long" and "lat" to define longitude and latitude.
 

@@ -52,7 +52,7 @@ anychart.onDocumentReady(function () {
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*6.65);
-    return "$" + this.value + "\n€" + value;
+    return "$" + this.value + "\n\u20ac" + value;
   });
 
   // set axes title

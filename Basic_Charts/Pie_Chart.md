@@ -165,9 +165,9 @@ chart.fill("aquastyle");
 
 ### Start Angle
 
-You can set the angle where the first slice is placed – use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
+You can set the angle where the first slice is placed – use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
 
-In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
+In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 
 ```
 // set the start angle
