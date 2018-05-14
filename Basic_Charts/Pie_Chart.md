@@ -96,7 +96,7 @@ chart.hovered().stroke("#669999", 3);
 
 #### Individual Points
 
-It is possible to configure the appearance of each slice individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each slice individually - use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -154,7 +154,7 @@ chart.selected().outline().stroke(null);
 
 #### Aqua Style
 
-There is a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the `"aquastyle"` parameter:
+There is a special visual setting available for the Pie chart - Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the `"aquastyle"` parameter:
 
 ```
 // enable aqua style
@@ -165,7 +165,7 @@ chart.fill("aquastyle");
 
 ### Start Angle
 
-You can set the angle where the first slice is placed – use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
+You can set the angle where the first slice is placed - use the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
 
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 

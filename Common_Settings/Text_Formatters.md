@@ -383,13 +383,13 @@ There is a list of formatting parameters, which help to organize your data prese
 <td>type</td><td>`datetime`, `time`, `date`, `number`, `string`, `percent`</td><td>Sets value type, see [Type](#type) section below.</td>
 </tr></table>
 
-In the next sample we have formatted the scale according to the Old British currency system (before 1971), when £1 was equivalent to 20 shillings and 1 shilling = 12 pence.
+In the next sample we have formatted the scale according to the Old British currency system (before 1971), when \u00a31 was equivalent to 20 shillings and 1 shilling = 12 pence.
 
 ```
 var columnTooltip = columnSeries.tooltip();
 
 // scaling value
-columnTooltip.format("{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( £)}");
+columnTooltip.format("{%seriesName}: {%value}{scale:(1)(12)(20)|( p)( s)( \u00a3)}");
 ```  
 
 Here is a live sample with such settings:

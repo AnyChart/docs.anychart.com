@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D – see the [Supported Types](#supported_types) section.
+AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure 3D charts.
 

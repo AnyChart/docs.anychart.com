@@ -77,7 +77,7 @@ When you create data, you should use these data fields for both circles and inte
 
 The `name` field is optional, and the names of elements, unlike identifiers, do not need to be unique. By default, the names of circles are shown in labels, tooltips, and the legend. However, in the case of intersections the default choice for labels is `value`.
 
-**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 The sample below shows two circles with their names set:
 

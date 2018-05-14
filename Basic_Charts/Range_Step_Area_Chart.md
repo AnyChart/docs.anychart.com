@@ -7,7 +7,7 @@ A range step area chart is a range area chart in which points are connected by h
 
 Step charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. They show periods with no change and emphasize the exact time of each change (the range version also emphasizing the difference between high and low values).
 
-The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting – step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
+The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>

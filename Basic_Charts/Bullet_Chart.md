@@ -121,7 +121,7 @@ Look at the demonstration of maximum and minimum values in the Single-series sam
 
 ## Markers
 
-Marker is an object with a specified shape, size and color or an image used to represent any comparative measures. 
+Marker is an object with a specified shape, size and color or an image used to represent any comparative measures. 
 Markers are controlled through the data. You will find a plenty of examples with different types of markers below.
 
 ### Types
@@ -158,7 +158,7 @@ chart = anychart.bulletChart([
 
 ## Colors
 
-Bullet Chart ranges use variables of color intensity rather than of hue. Ranges' colors are controlled using {api:anychart.charts.Bullet#rangePalette}rangePalette(){api} method:
+Bullet Chart ranges use variables of color intensity rather than of hue. Ranges' colors are controlled using {api:anychart.charts.Bullet#rangePalette}rangePalette(){api} method:
 
 ```
 chart.rangePalette([

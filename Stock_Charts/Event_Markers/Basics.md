@@ -40,7 +40,7 @@ plot.eventMarkers({"groups": [
 
 ## Data
 
-Event markers in AnyChart are organized in groups. There are different ways to add and group them – you can choose one of the three methods:
+Event markers in AnyChart are organized in groups. There are different ways to add and group them - you can choose one of the three methods:
 
 * {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api}
 * {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}
@@ -209,7 +209,7 @@ The symbol is a text element displayed on markers and shared by all elements of 
 
 To set the symbol of a group, you should use either the `format` data field or the {api:anychart.core.stock.eventMarkers.Controller#format}format(){api} method, depending on the way your data are organized. See the [Data](#data) section to learn more.
 
-You can also assign different symbols to markers belonging to the same group – read [Individual Markers](#individual_markers).
+You can also assign different symbols to markers belonging to the same group - read [Individual Markers](#individual_markers).
 
 Finally, the [Appearance](#appearance) section explains how to adjust the font of symbols.
 
@@ -332,7 +332,7 @@ In this sample, you can bind event markers either to the X-axis or to one of the
 
 {sample}STOCK\_Event\_Markers\_Basics\_09{sample}
 
-If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers – {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
+If there are two or more series on the plot, for all positions except `axis` you need to specify the index of the series on which you are going to show markers - {api:anychart.core.stock.eventMarkers.Controller#seriesId}seriesId(){api}:
 
 ```
 // bind event markers to the first series

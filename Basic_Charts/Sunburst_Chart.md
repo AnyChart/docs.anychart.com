@@ -85,7 +85,7 @@ The Sunburst chart requires the [tree data model](../Working_with_Data/Tree_Data
 * `name` to set names
 * `value` to set values
 
-**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 Unlike other chart types based on the tree data structure (e.g., the [Treemap](Treemap_Chart) chart), this chart allows adding more than one root node:
 
@@ -278,7 +278,7 @@ chart.calculationMode("parent-independent");
 
 ### Levels and Leaves
 
-You can access any level (ring) of a Sunburst chart by its index – use the {api:anychart.charts.Sunburst#level}level(){api} method with an index as a parameter.
+You can access any level (ring) of a Sunburst chart by its index - use the {api:anychart.charts.Sunburst#level}level(){api} method with an index as a parameter.
 
 **Note 1:** The index of the root level is 0.
 
@@ -330,7 +330,7 @@ chart.selected().stroke("#96a6a6", 4);
 
 #### Individual Points
 
-It is possible to configure the appearance of each point individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each point individually - use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -363,18 +363,18 @@ var data = [
 
 Another way to set the colors of a chart is to call the {api:anychart.charts.Sunburst#fill}fill(){api} method with a function as a parameter. In this function, you can use the following fields:
 
-* `autoColor` – the default color of a node or its color from the data, if specified
-* `chart` – the chart, an instance of the {api:anychart.charts.Sunburst}anychart.charts.Sunburst{api} class
-* `index` – the index of a node in the tree
-* `isLeaf` – a test whether a node is a leaf
-* `iterator` – the tree iterator, an instance of the {api:anychart.data.Iterator}anychart.data.Iterator{api} class
-* `level` – the index of a level the current node belongs to
-* `mainColor` – the color of a node's ancestor at the first level (if there is one root) or at the zero level (if there is more than one root)
-* `parent` – the parent node of the current node, an instance of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class
-* `parentColor` – the color of the parent node
-* `path` – an array of nodes (instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class) representing the path from the root to the current node
-* `point` – an instance of the {api:anychart.core.TreeChartPoint}TreeChartPoint{api} class
-* `sourceColor` – in the normal state: the color of a node from the data, the palette, or the inherited color; in the hovered and selected states: the color in the normal state
+* `autoColor` - the default color of a node or its color from the data, if specified
+* `chart` - the chart, an instance of the {api:anychart.charts.Sunburst}anychart.charts.Sunburst{api} class
+* `index` - the index of a node in the tree
+* `isLeaf` - a test whether a node is a leaf
+* `iterator` - the tree iterator, an instance of the {api:anychart.data.Iterator}anychart.data.Iterator{api} class
+* `level` - the index of a level the current node belongs to
+* `mainColor` - the color of a node's ancestor at the first level (if there is one root) or at the zero level (if there is more than one root)
+* `parent` - the parent node of the current node, an instance of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class
+* `parentColor` - the color of the parent node
+* `path` - an array of nodes (instances of the {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} class) representing the path from the root to the current node
+* `point` - an instance of the {api:anychart.core.TreeChartPoint}TreeChartPoint{api} class
+* `sourceColor` - in the normal state: the color of a node from the data, the palette, or the inherited color; in the hovered and selected states: the color in the normal state
 
 That is how the {api:anychart.core.StateSettings#fill}fill(){api} method works in the normal state:
 
@@ -399,7 +399,7 @@ chart.fill(function () {
 
 ### Start Angle
 
-You can set the angle where the first point is placed – use the {api:anychart.charts.Sunburst#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
+You can set the angle where the first point is placed - use the {api:anychart.charts.Sunburst#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
 
 In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 
@@ -588,7 +588,7 @@ chart.labels().position("circular");
 
 {sample :width 500 :height 500}BCT\_Sunburst\_Chart\_17{sample}
 
-The position of labels can also be set separately for levels and leaves – use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
+The position of labels can also be set separately for levels and leaves - use the {api:anychart.charts.Sunburst#level}level(){api} and {api:anychart.charts.Sunburst#level}leaves(){api} methods.
 
 The default position is `"circular"` for levels and `"radial"` for leaves, and this sample demonstrates how to reverse it:
 
@@ -606,7 +606,7 @@ chart.leaves().labels().position("circular");
 
 By default, if you click a leaf of a Sunburst chart, the leaf is selected, and if you click a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
 
-You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection – this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
+You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
 
 * `"drill-down"` (default)
 * `"multi-select"`

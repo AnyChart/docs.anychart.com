@@ -41,7 +41,7 @@ In the sample below, there is a basic Treemap comparing the top 10 most populate
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries", children: [
+  {name:   "European Union - Top 10 Most Populated Countries", children: [
     {name: "Belgium",        value: 11443830},
     {name: "France",         value: 64938716},
     {name: "Germany",        value: 80636124},
@@ -86,7 +86,7 @@ Use the following data fields to create data for a Treemap chart:
 * `size` to set sizes
 * `value` to set values
 
-**Note 1:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 **Note 2:** A Treemap chart can have only one root element.
 
@@ -96,14 +96,14 @@ There are two ways to arrange data for a Treemap chart: [as a tree](../Working_w
 
 The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-tree"` as the second parameter.
 
-Three data fields are required: `value`, `name` / `id`, and `children` – the last one is used to specify the hierarchy of elements.
+Three data fields are required: `value`, `name` / `id`, and `children` - the last one is used to specify the hierarchy of elements.
 
 That is how it looks like:
 
 ```
 // create data
 var data = [
-  {name:     "Slavic Languages – Number of Speakers", children: [
+  {name:     "Slavic Languages - Number of Speakers", children: [
     {name:   "East Slavic", children: [
       {name: "Russian",        value: 150000000},
       {name: "Ukrainian",      value:  45000000},
@@ -133,14 +133,14 @@ chart = anychart.treeMap(data, "as-tree");
 
 The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
 
-Four data fields are required: `name`, `value`, `id`, and `parent` – the last two are used to specify the hierarchy of elements.
+Four data fields are required: `name`, `value`, `id`, and `parent` - the last two are used to specify the hierarchy of elements.
 
 That is how it looks like:
 
 ```
 // create data
 var data = [
-  {id:  1, parent: null, name: "Slavic Languages – Number of Speakers"},
+  {id:  1, parent: null, name: "Slavic Languages - Number of Speakers"},
   {id:  2, parent:    1, name: "East Slavic"},
   {id:  3, parent:    2, name: "Russian",        value: 150000000},
   {id:  4, parent:    2, name: "Ukrainian",      value:  45000000},
@@ -166,14 +166,14 @@ chart = anychart.treeMap(data, "as-table");
 
 No matter what data structure you use, colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
-Please note: you do not need to specify values and sizes of parent elements – they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
+Please note: you do not need to specify values and sizes of parent elements - they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
 
 On the Treemap chart below, the size of each tile represents the population of a country (`size`), and the color represents the population density (`value`):
 
 ```
 // create data
 var data = [
-  {name:   "EU – Population Density in Top 10 Most Populated Countries", children: [
+  {name:   "EU - Population Density in Top 10 Most Populated Countries", children: [
     {name: "Belgium",        size: 11443830, value: 378},
     {name: "France",         size: 64938716, value: 119},
     {name: "Germany",        size: 80636124, value: 231},
@@ -199,7 +199,7 @@ You can specify how many levels of the hierarchy are shown simultaneously on a c
 
 All elements shown with this method are interactive, and their parents are visualized as [headers](#headers). The default value is 1, which means that users can see only one level with its parent at a time, and the lower levels are hidden.
 
-The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints – lines indicating the elements of hidden levels. The elements shown with this method are not interactive; the default value is 0, which means that hints are disabled.
+The {api:anychart.charts.TreeMap#hintDepth}hintDepth(){api} method sets the depth of hints - lines indicating the elements of hidden levels. The elements shown with this method are not interactive; the default value is 0, which means that hints are disabled.
 
 To set the opacity of hints, use {api:anychart.charts.TreeMap#hintOpacity}hintOpacity(){api}.
 
@@ -269,7 +269,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each tile individually – use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each tile individually - use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -310,7 +310,7 @@ Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set he
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TreeMap#colorScale}colorScale(){api} method.
 
-Optionally, you can use {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to enable a **color range** – a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
+Optionally, you can use {api:anychart.charts.TreeMap#colorRange}colorRange(){api} to enable a **color range** - a special interactive element representing the color scale. With the ordinal color scale, the color range shows the ranges and their colors.
 
 The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
@@ -381,7 +381,7 @@ Here is the list of tokens that work with the Treemap chart:
 * `{%size}`
 * `{%value}`
 
-Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data – the `{%value}` and `{%size}` tokens work anyway.
+Please note that values and sizes of parent elements are calculated automatically, so you do not need to specify them in data - the `{%value}` and `{%size}` tokens work anyway.
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -390,7 +390,7 @@ This sample shows how to work with tokens. Along with regular tokens, a custom t
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries", children: [
+  {name:   "European Union - Top 10 Most Populated Countries", children: [
     {name: "Belgium",        value: 11443830, capital: "Brussels" },
     {name: "France",         value: 64938716, capital: "Paris"    },
     {name: "Germany",        value: 80636124, capital: "Berlin"   },
@@ -440,7 +440,7 @@ The sample below demonstrates how to work with formatting functions. Along with 
 ```
 // create data
 var data = [
-  {name:   "European Union – Top 10 Most Populated Countries", children: [
+  {name:   "European Union - Top 10 Most Populated Countries", children: [
     {name: "Belgium",        value: 11443830, capital: "Brussels" },
     {name: "France",         value: 64938716, capital: "Paris"    },
     {name: "Germany",        value: 80636124, capital: "Berlin"   },
@@ -479,7 +479,7 @@ chart.tooltip().format(function (){
 
 #### Font Size
 
-The font size of labels can be automatically adjusted according to the size of tiles – use {api:anychart.charts.TreeMap#labels}labels(){api} with {api:anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
+The font size of labels can be automatically adjusted according to the size of tiles - use {api:anychart.charts.TreeMap#labels}labels(){api} with {api:anychart.core.ui.LabelsFactory#adjustFontSize}adjustFontSize(){api} and `true` as a parameter to enable this mode:
 
 ```
 /* adjust the font size of labels
@@ -632,7 +632,7 @@ The following sample shows how to drill down to a particular item, dill up, and 
 
 #### Disabling Drilldown
 
-To disable the drilldown feature, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type – `drillchange`:
+To disable the drilldown feature, you should add an [event listener](../Common_Settings/Event_Listeners) to your chart. Use the {api:anychart.core.Base#listen}listen(){api} method and specify the event type - `drillchange`:
 
 ```
 // disable the drilldown feature

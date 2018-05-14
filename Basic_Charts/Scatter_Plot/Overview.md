@@ -87,7 +87,7 @@ chart.yMinorGrid().stroke({color: "#85adad", thickness: 0.3, dash: 5});
 
 ## Date/Time Scale
 
-Scatter charts are typically used with date/time scales – to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
+Scatter charts are typically used with date/time scales - to create such a scale, use the {api:anychart.scales#dateTime}dateTime(){api} method. You can learn more from this article: [Date/Time Axes](../../Axes_and_Grids/Date_Time_Axes).
 
 In the following sample a data/time scale is set as the X-scale of a scatter chart (with the {api:anychart.charts.Scatter#xScale}xScale(){api} method):
 
@@ -142,7 +142,7 @@ error.xUpperError(0.2);
 
 ## Drawing Tools and Annotations
 
-Drawing tools provide you with the ability to draw/display custom objects on a chart – in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
+Drawing tools provide you with the ability to draw/display custom objects on a chart - in our documentation these objects are usually called annotations. Typically, annotations are used in [stock charts](../../Stock_Charts/Overview). However, sometimes you may need to use hardcoded annotations with a scatter chart to visualize some basic shapes.
 
 To add an annotation to a chart, refer to the {api:anychart.charts.Scatter#annotations}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. To learn more, read about [annotations](../../Stock_Charts/Drawing_Tools_and_Annotations/Overview) in AnyStock.
 

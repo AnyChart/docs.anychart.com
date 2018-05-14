@@ -4,7 +4,7 @@
 
 ## Overview
 
-Funnel Charts are so-called Accumulation Charts and they show percentage ratio. Funnel Charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. 
+Funnel Charts are so-called Accumulation Charts and they show percentage ratio. Funnel Charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization's sales processes. 
 
 This article explains how to create a basic Funnel Chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel Chart's characteristics:
 
@@ -214,7 +214,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) – text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered.
 
 #### Tokens
 
@@ -222,7 +222,7 @@ To change the text of labels, combine the {api:anychart.charts.Funnel#labels}lab
 
 To configure tooltips, do the same with the {api:anychart.charts.Funnel#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Funnel – `{%yPercentOfTotal}`. It returns an element's percentage of the total.
+Besides tokens that work with all chart types, there is a token that is specific to the Funnel - `{%yPercentOfTotal}`. It returns an element's percentage of the total.
 
 Also, you can add a custom field to your data and use a custom token corresponding to it.
 

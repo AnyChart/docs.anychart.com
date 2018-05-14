@@ -3,12 +3,12 @@
 
 ## Getting Started
 
-Create an HTML file and give it the “index.html” name if you want to make a new web page, or open your HTML file where the drawing should be.
+Create an HTML file and give it the "index.html" name if you want to make a new web page, or open your HTML file where the drawing should be.
 
 ## Include GraphicsJS
 
 Reference the JavaScript file in the `<head>` section of your web page.  
-You can use the link as shown below or download graphics.min.js from the [GraphicsJS CDN page](https://cdn.anychart.com/) and then put it into any folder of your site (you’ll have to use your own link in this case). 
+You can use the link as shown below or download graphics.min.js from the [GraphicsJS CDN page](https://cdn.anychart.com/) and then put it into any folder of your site (you'll have to use your own link in this case). 
 
 ```
 <head>

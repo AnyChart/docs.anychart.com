@@ -19,6 +19,6 @@ chart = anychart.scatter();
 var series = chart.bubble(data);
 ```
 
-**Note:** There is also the {api:anychart#bubble}anychart.bubble(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method after using it, a Scatter Bubble chart is created. However, you can create basic Bubble charts too – see [Bubble Chart](../Bubble_Chart).
+**Note:** There is also the {api:anychart#bubble}anychart.bubble(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method after using it, a Scatter Bubble chart is created. However, you can create basic Bubble charts too - see [Bubble Chart](../Bubble_Chart).
 
 {sample}BCT\_Scatter\_Bubble\_Chart{sample}

@@ -57,4 +57,4 @@ In this sample, events are used to create an interactive list showing additional
 
 ## HTML Tooltips
 
-You can also use events to add custom HTML tooltips to your chart – see the [Tooltips](Tooltips) article.
+You can also use events to add custom HTML tooltips to your chart - see the [Tooltips](Tooltips) article.

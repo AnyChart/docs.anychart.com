@@ -19,7 +19,7 @@ By default the crosshair is enabled. To disable or enable it on a chart or a plo
 chart.crosshair(false);
 ```
 
-**Note:** You can also hide a line or a label of the crosshair – see the [Appearance](#appearance) and [Labels](#labels) sections.
+**Note:** You can also hide a line or a label of the crosshair - see the [Appearance](#appearance) and [Labels](#labels) sections.
 
 This sample shows how to disable and enable the crosshair:
 
@@ -29,7 +29,7 @@ This sample shows how to disable and enable the crosshair:
 
 The default display mode of the crosshair is **sticky**: its vertical line always sticks to the data points of the series, jumping from one point to another. You can make it move more smoothly (float) by changing the display mode to **float**.
 
-To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `"sticky"` or `"float"` as a parameter – see {api:anychart.enums.CrosshairDisplayMode}anychart.enums.CrosshairDisplayMode{api}:
+To set the display mode, call the {api:anychart.core.ui.Crosshair#displayMode}displayMode(){api} method with either `"sticky"` or `"float"` as a parameter - see {api:anychart.enums.CrosshairDisplayMode}anychart.enums.CrosshairDisplayMode{api}:
 
 ```
 // set the display mode of the crosshair

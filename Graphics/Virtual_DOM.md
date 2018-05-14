@@ -18,7 +18,7 @@ item.parentNode.removeChild(item);
 
 Document is an abstraction of the root node, while getElementById, parentNode and removeChild are methods from HTML DOM API.
 
-The HTML DOM is always tree-structured, and it is the nature of the structure of any HTML document. Tree-like structures can be traversed easily. But, unfortunately, easily doesn’t always mean quickly. Libraries like React provide a Virtual DOM for working with HTML DOM.
+The HTML DOM is always tree-structured, and it is the nature of the structure of any HTML document. Tree-like structures can be traversed easily. But, unfortunately, easily doesn't always mean quickly. Libraries like React provide a Virtual DOM for working with HTML DOM.
 
 The Virtual DOM is an abstraction of the HTML DOM, it is lightweight and it is detached from the browser-specific implementation details. It is worth noticing that since the DOM itself is an abstraction, the virtual DOM is an abstraction of an abstraction.
 

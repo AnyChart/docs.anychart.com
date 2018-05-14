@@ -17,7 +17,7 @@ See [how to configure the tasks in AnyChart PERT Charts](Pert_Chart#tasks).
 
 ## Critical Path
 
-A critical path is the longest possible continuous pathway taken from the initial event to the terminal event (some projects can have several critical paths). It determines the total duration of the project, so any delay along the path means a delay for the whole project. The critical path is calculated by the Critical Path Method (CPM) – an algorithm for scheduling a set of project activities.
+A critical path is the longest possible continuous pathway taken from the initial event to the terminal event (some projects can have several critical paths). It determines the total duration of the project, so any delay along the path means a delay for the whole project. The critical path is calculated by the Critical Path Method (CPM) - an algorithm for scheduling a set of project activities.
 
 See [how to configure the critical path in AnyChart PERT Charts](Pert_Chart#critical_path).
 
@@ -57,7 +57,7 @@ Find more about getting the expected activity duration value in the [expected du
 
 ## Standard deviation of time
 
-The standard deviation of time is the variability of the time for accomplishing an activity (σte) or a path (σTE). It is being calculated by the following formula:
+The standard deviation of time is the variability of the time for accomplishing an activity (&sigma;te) or a path (&sigma;TE). It is being calculated by the following formula:
 
 <img src="https://static.anychart.com/images/docs/standardeviation.png"/>,
 

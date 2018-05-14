@@ -77,7 +77,7 @@ chart.listen('pointClick', function (e) {
 });
 ```
 
-That’s it, you can see it for yourself: 
+That's it, you can see it for yourself: 
 
 {sample}Drilldown\_01{sample}
 

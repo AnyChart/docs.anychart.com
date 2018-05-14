@@ -2,7 +2,7 @@
 
 ## Overview
 
-A linear gauge is visual representation of a measuring device with a horizontal or vertical scale and a pointer or multiple pointers indicating particular values. The scale is usually color zoned, which helps to see what range the value of interest falls in. Linear gauges can represent thermometers, radio scales, battery indicators, rulers, and any other devices with straight line–shaped scales.
+A linear gauge is visual representation of a measuring device with a horizontal or vertical scale and a pointer or multiple pointers indicating particular values. The scale is usually color zoned, which helps to see what range the value of interest falls in. Linear gauges can represent thermometers, radio scales, battery indicators, rulers, and any other devices with straight line-shaped scales.
 
 ## Basics
 

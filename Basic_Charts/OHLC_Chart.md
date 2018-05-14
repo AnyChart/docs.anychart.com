@@ -7,7 +7,7 @@ An open-high-low-close chart (otherwise known as an OHLC or HLOC chart) is a cha
 
 The [Japanese candlestick chart](Japanese_Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show exactly the same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the Japanese candlestick chart easier to read.
 
-OHLC is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart OHLC series are also available in AnyStock – see the [OHLC series in AnyStock](../Stock_Charts/Series/OHLC) article to learn more.
+OHLC is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart OHLC series are also available in AnyStock - see the [OHLC series in AnyStock](../Stock_Charts/Series/OHLC) article to learn more.
 
 This article explains how to create a basic OHLC chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the OHLC chart's characteristics:
 

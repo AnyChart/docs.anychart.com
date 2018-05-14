@@ -5,7 +5,7 @@
 
 Error bars are visual representations of the variability of data: they indicate the error or uncertainty in a measurement or calculation. The length of bars shows how far from the reported value the true value might be.
 
-This feature is often used with scatter charts, but Cartesian charts in AnyChart also support error bars – see the [Supported Types](#supported_types) section.
+This feature is often used with scatter charts, but Cartesian charts in AnyChart also support error bars - see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure error bars on both Cartesian and scatter charts.
 
@@ -170,7 +170,7 @@ Here is a full list of methods used to configure the appearance of error bars:
 * {api:anychart.core.utils.Error#valueErrorStroke}valueErrorStroke(){api} sets the stroke of Y-bars
 * {api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api} sets the stroke of X-bars
 
-Each of the series types that support error bars has its own visual settings – see the [Supported Types](#supported_types) section. Also, you can learn more from the [Appearance Settings](../../Appearance_Settings) section.
+Each of the series types that support error bars has its own visual settings - see the [Supported Types](#supported_types) section. Also, you can learn more from the [Appearance Settings](../../Appearance_Settings) section.
 
 In the sample below, there is scatter chart with two Marker series and error bars on both of them, some of the appearance settings configured:
 
@@ -226,11 +226,11 @@ That is how they can be used to customize labels and tooltips:
 ```
 //configure labels
 series.labels().enabled(true);
-series.labels().format("{%value} (±{%valueUpperError})");
+series.labels().format("{%value} (\u00b1{%valueUpperError})");
 series.labels().offsetY(+35);
 
 //configure tooltips
-series.tooltip().format("{%value} (±{%valueUpperError})");
+series.tooltip().format("{%value} (\u00b1{%valueUpperError})");
 ```
 
 {sample}BCT\_Error\_Chart\_08{sample}

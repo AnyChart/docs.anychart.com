@@ -9,9 +9,9 @@ A tooltip is a text box displayed when a point on a chart is hovered, which allo
 
 ## Built-In Tooltips
 
-The built-in tooltips of event markers work the same way as any other tooltips – see the [Tooltip](../../Common_Settings/Tooltip) article. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+The built-in tooltips of event markers work the same way as any other tooltips - see the [Tooltip](../../Common_Settings/Tooltip) article. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-When you create data for event markers, you can add an optional data field – `description`. By default, it is shown in tooltips, and if there is no description, the symbol of a group is shown instead.
+When you create data for event markers, you can add an optional data field - `description`. By default, it is shown in tooltips, and if there is no description, the symbol of a group is shown instead.
 
 The built-in tooltips are adjusted with the help of either tokens or formatting functions.
 

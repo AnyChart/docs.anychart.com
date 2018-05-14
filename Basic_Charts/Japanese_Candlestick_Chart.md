@@ -9,7 +9,7 @@ Candlesticks consist of the body (black or white) and an upper and a lower shado
   
 Some traders find candlestick charts easier to read than [OHLC charts](OHLC_Chart).
 
-Japanese candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock – see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
+Japanese candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock - see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
 
 This article explains how to create a basic Japanese Candlestick chart as as well as configure settings that are specific to the type. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
@@ -190,11 +190,11 @@ Here are the most popular simple patterns, shown in the sample below:
 </tr>
 <tr>
 <td>Spinning top white</td>
-<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren't many buyers left, if a spinning top forms during a downtrend, this means there aren't many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
 <td>Spinning top black</td>
-<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren't many buyers left, if a spinning top forms during a downtrend, this means there aren't many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
 <td>Four Price Doji</td>
