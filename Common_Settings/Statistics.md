@@ -70,8 +70,8 @@ latestPointMaleMartians = maleMartians.getPoint(numberOfPoints - 1);
 latestPointFemaleMartians = femaleMartians.getPoint(numberOfPoints - 1);
 
 // get the values of the latest points from both series and use them in the title
-mainTitleText = "The Height of Martians Today: Males — " +
-latestPointMaleMartians.getStat("value") + ", Females — " +
+mainTitleText = "The Height of Martians Today: Males - " +
+latestPointMaleMartians.getStat("value") + ", Females - " +
 latestPointFemaleMartians.getStat("value")
 ```
 
@@ -87,7 +87,7 @@ chart.listen("pointsSelect", function(e){
   // loop through the array of the selected points
   for (var i = 0; i < e.points.length; i++) {
     // get the name of the series a selected point belongs to and the value of the point
-    subtitleText += e.points[i].getSeries().name() + " — " + e.points[i].getStat("value") + ", ";
+    subtitleText += e.points[i].getSeries().name() + " - " + e.points[i].getStat("value") + ", ";
   }
   // remove the extra comma at the end of the subtitle and close the <span> tag
   subtitleText = subtitleText.slice(0, subtitleText.length - 2) + "</span>";

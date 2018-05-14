@@ -3,7 +3,7 @@
 
 ## Overview
 
-A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar coordinate system – a two-dimensional coordinate system where each point is determined by a distance from a fixed point and an angle from a fixed direction.
+A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar coordinate system - a two-dimensional coordinate system where each point is determined by a distance from a fixed point and an angle from a fixed direction.
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
@@ -51,9 +51,9 @@ chart.draw();
 
 ## Start Angle
 
-You can set the start angle of a polar chart by using the {api:anychart.charts.Polar#startAngle}startAngle(){api} method. The angle is 0° by default.
+You can set the start angle of a polar chart by using the {api:anychart.charts.Polar#startAngle}startAngle(){api} method. The angle is 0&deg; by default.
 
-In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
+In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90&deg;:
 
 ```
 // set the start angle
@@ -116,7 +116,7 @@ This section explains how to configure the appearance and layout of grids on pol
 
 By default, there are two grids: {api:anychart.charts.Polar#yGrid}yGrid(){api} and {api:anychart.charts.Polar#xGrid}xGrid(){api}
 
-You can configure the appearance of any grid — here is the list of available methods:
+You can configure the appearance of any grid - here is the list of available methods:
 
 * {api:anychart.core.grids.Polar#stroke}stroke(){api} sets the stroke
 * {api:anychart.core.grids.Polar#palette}palette(){api} sets the fills to create solid or interlaced effects.

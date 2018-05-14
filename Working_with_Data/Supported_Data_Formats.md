@@ -12,7 +12,7 @@ AnyChart charting library supports a lot of ways to set data to your charts. You
 - [Google Spreadsheet](#google_spreadsheet)
 - [HTML Table](#html_table)
 
-Each way has some strengths and weaknesses. We recommend JavaScript API – this option is generally the most flexible and most of the sample you will see in [AnyChart JavaScript Charts Documentation](https://docs.anychart.com/) and [AnyChart JavaScript Charts API](https://api.anychart.com/) use this format.
+Each way has some strengths and weaknesses. We recommend JavaScript API - this option is generally the most flexible and most of the sample you will see in [AnyChart JavaScript Charts Documentation](https://docs.anychart.com/) and [AnyChart JavaScript Charts API](https://api.anychart.com/) use this format.
 
 ## JavaScript API
 

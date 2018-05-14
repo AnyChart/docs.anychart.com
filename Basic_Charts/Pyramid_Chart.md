@@ -229,7 +229,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) – text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered.
 
 #### Tokens
 
@@ -237,7 +237,7 @@ To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}la
 
 To configure tooltips, do the same with the {api:anychart.charts.Pyramid#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Pyramid – `{%yPercentOfTotal}`. It returns an element's percentage of the total.
+Besides tokens that work with all chart types, there is a token that is specific to the Pyramid - `{%yPercentOfTotal}`. It returns an element's percentage of the total.
 
 Also, you can add a custom field to your data and use a custom token corresponding to it.
 

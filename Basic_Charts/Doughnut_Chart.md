@@ -4,7 +4,7 @@
 
 ## Overview
 
-A doughnut (or donut) chart is a pie chart with a "hole" – a blank circular area in the center. The chart is divided into parts that show the percentage each value contributes to a total. 
+A doughnut (or donut) chart is a pie chart with a "hole" - a blank circular area in the center. The chart is divided into parts that show the percentage each value contributes to a total. 
 
 Like the regular pie chart, the doughnut chart is used with small sets of data to compare categories. It drives attention from the area taken by each part to emphasize the length of arcs. The blank space also allows displaying some additional information in the center: for example, labels, the name of a selected category, or the chart title.
 

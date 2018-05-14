@@ -101,7 +101,7 @@ chart.data(extra_data);
 
 ### Series
 
-The Pareto chart in AnyChart [sorts data, calculates cumulative and relative frequency](#data), and automatically creates two series: a [Line](Line_Chart) and a [Column](Column_Chart) – instances of the {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes.
+The Pareto chart in AnyChart [sorts data, calculates cumulative and relative frequency](#data), and automatically creates two series: a [Line](Line_Chart) and a [Column](Column_Chart) - instances of the {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes.
 
 To access these series, call the {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods. In the sections below there are some samples showing how to use them for configuring the chart.
 
@@ -122,7 +122,7 @@ See below to learn more about using these values in chart's configuration.
 - [Line Chart](Line_Chart)
 - [Column Chart](Column_Chart)
 
-The Line and Column series have their own visual settings – see the [Line Chart](Line_Chart) and [Column Chart](Column_Chart) articles.
+The Line and Column series have their own visual settings - see the [Line Chart](Line_Chart) and [Column Chart](Column_Chart) articles.
 
 In this sample there is a Pareto chart with the appearance settings of its series configured:
 

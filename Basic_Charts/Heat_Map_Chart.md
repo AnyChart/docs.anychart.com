@@ -81,7 +81,7 @@ Use the following data fields:
 
 By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
 
-**Note:** It is possible to add custom fields to your data – see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 This is how working with data fields of the Heat Map chart looks like:
 
@@ -142,7 +142,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each cell individually – use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
+It is possible to configure the appearance of each cell individually - use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
 
 ```
 // create data
@@ -244,7 +244,7 @@ To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}la
 
 To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Besides tokens that work with all chart types, there is a token that is specific to the Heat Map – `{%heat}`. It returns the value (heat) of an element.
+Besides tokens that work with all chart types, there is a token that is specific to the Heat Map - `{%heat}`. It returns the value (heat) of an element.
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -366,7 +366,7 @@ chart.labelsDisplayMode("alwaysShow");
 
 ### Scrollers
 
-Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers – to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
+Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers - to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
 
 You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api}, a certain number of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
 

@@ -186,7 +186,7 @@ var colors = anychart.color.singleHueProgression("#336666");
 
 // define the colors 
 currentColorScale.colors(colors);
-series.сolorScale(currentColorScale);
+series.colorScale(currentColorScale);
 
 // create and enable the Color Range
 var colorrange = chart.colorRange();

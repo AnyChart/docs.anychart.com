@@ -21,7 +21,7 @@ Let's first define the perimeter and form of the house and use a "Rectangle Tool
 
 Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same picture of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
-Note: to draw a straight line or curve at an angle, multiple of 45°, hold the Shift key on your keyboard while drawing.
+Note: to draw a straight line or curve at an angle, multiple of 45&deg;, hold the Shift key on your keyboard while drawing.
 
 <a href="https://static.anychart.com/images/docs/seat\_map/04\_preplan.png" target="_blank"><img src="https://static.anychart.com/images/docs/seat\_map/04\_preplan.png" alt="Plan Draft" title="Plan Draft" border="0" width=600 align="center"></a>
 
@@ -100,7 +100,7 @@ Another way to set the names for groups is to do it through the SVG code of the 
 Open this file in any editor that supports SVG files. Look through the code. All "g" tags mean "groups" - those groups which creation is demonstrated in the picture before. Add the "id" field to each group you need to manage. Remember that IDs have to be unique.
 
 ```
-<g id="kitсhen">
+<g id="kitchen">
 	<polygon fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" points="252.5,535 252.5,406 252,405.5 322,405.5 322.5,405 
 		322.5,266 323,265.5 112,265.5 111.5,266 111.5,536 111,535.5 251,535.5"/>
 	<text transform="matrix(1 0 0 1 142.2422 345.1572)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="15.9953">Kitchen &amp; Dining room</tspan><tspan x="31.264" y="19.194" fill="#996633" font-family="'ArialMT'" font-size="15.9953">13&apos; 0&quot; x 16&apos; 0&quot;</tspan></text>

@@ -3,7 +3,7 @@
 
 ## Overview
 
-In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature – see the [Supported Types](#supported_types) section.
+In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature - see the [Supported Types](#supported_types) section.
 
 This article explains how to create a vertical chart and how to change the orientation of a chart on-the-fly.
 

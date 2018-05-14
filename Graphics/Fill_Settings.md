@@ -96,7 +96,7 @@ This can be shown in the following way:
 
 {sample}GFX\_fill\_linearG\_userspace{sample}
 
-Gradient settings are set by 'fill settings’, and these gradient fills **figures 1-3**.
+Gradient settings are set by 'fill settings', and these gradient fills **figures 1-3**.
 
 If the container size in gradient settings are larger than the filled element size, it will result in the following:
 

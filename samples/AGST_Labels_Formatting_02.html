@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*0.7094716);
-    return "€" + value;
+    return "\u20ac" + value;
   });
 
   var xAxis = chart.xAxis();

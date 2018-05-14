@@ -80,7 +80,7 @@ Dash settings can be set in two ways:
 }
 ```
 
-Dash settings are set by a string with numbers separated by spaces. This string is used as the dash pattern. For example, if string value is `5` – the resulting pattern will be `5 5 5 5 5 ...`, and if string value is  `5 5 10`, that will result in `5 5 10 5 5 10 5 5 10 ...`.
+Dash settings are set by a string with numbers separated by spaces. This string is used as the dash pattern. For example, if string value is `5` - the resulting pattern will be `5 5 5 5 5 ...`, and if string value is  `5 5 10`, that will result in `5 5 10 5 5 10 5 5 10 ...`.
  
 Every number in an odd position is a dash length, and every number in an even position is a space length.
 

@@ -10,7 +10,7 @@ Here is the full list of available settings: {api:anychart.core.StateSettings}an
 
 ### Single Series
 
-Some chart types can have only one series. To configure their states, use the **normal()**, **hovered()**, and **selected()** methods of the chart. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} – choose ones that work with your chart type.
+Some chart types can have only one series. To configure their states, use the **normal()**, **hovered()**, and **selected()** methods of the chart. The next step is to combine them with the methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} - choose ones that work with your chart type.
 
 **Note 1:** To configure an individual point of a chart, add to your data extra fields corresponding with the methods mentioned above.
 
@@ -62,7 +62,7 @@ See the [Series](#series) section of this article to learn more. Some additional
 
 ### Methods
 
-To configure the states of a series, use its **normal()**, **hovered()**, and **selected()** methods. The next step is to combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} – choose ones that work with your series type.
+To configure the states of a series, use its **normal()**, **hovered()**, and **selected()** methods. The next step is to combine them with methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api} - choose ones that work with your series type.
 
 In the following sample, there is a Column chart with its visual settings, markers, and labels adjusted with the help of {api:anychart.core.cartesian.series.Column#normal}normal(){api}, {api:anychart.core.cartesian.series.Column#hovered}hovered(){api}, {api:anychart.core.cartesian.series.Column#selected}selected(){api} methods:
 

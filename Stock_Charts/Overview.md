@@ -20,7 +20,7 @@ If you are not satisfied with having the generalized data shown on a data plot, 
 
 ## Streaming
 
-AnyStock allows to stream data efficiently, you can see this on our [х]AnyStock Speed Test Page](https://www.anychart.com/solutions/big-data-speed-test/).
+AnyStock allows to stream data efficiently, you can see this on our [AnyStock Speed Test Page](https://www.anychart.com/solutions/big-data-speed-test/).
 
 ## Useful links
 

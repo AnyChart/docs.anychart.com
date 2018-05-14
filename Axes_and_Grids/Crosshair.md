@@ -16,7 +16,7 @@ By default the crosshair is disabled. To enable or disable it, use {api:anychart
 chart.crosshair(true);
 ```
 
-**Note:** You can also hide a line or a label of the crosshair – see the [Appearance](#appearance) and [Labels](#labels) sections.
+**Note:** You can also hide a line or a label of the crosshair - see the [Appearance](#appearance) and [Labels](#labels) sections.
 
 In this sample the crosshair is enabled, and there are also buttons to disable and enable it:
 

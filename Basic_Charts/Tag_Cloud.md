@@ -178,10 +178,10 @@ The [appearance settings](../Appearance_Settings) of a Tag Cloud can be configur
 Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
-* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.core.StateSettings#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
 * {api:anychart.core.StateSettings#fontSize}fontSize(){api} to set the font size
-* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
-* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant – normal or small caps
+* {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
+* {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant - normal or small caps
 * {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
@@ -212,7 +212,7 @@ Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two color
 
 To set your scale as the color scale of the chart, use the {api:anychart.charts.TagCloud#colorScale}colorScale(){api} method.
 
-Optionally, you can use {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to enable a **color range** – a special interactive element representing the color scale. With the linear color scale, it looks like a gradient from the first to the second color.
+Optionally, you can use {api:anychart.charts.TagCloud#colorRange}colorRange(){api} to enable a **color range** - a special interactive element representing the color scale. With the linear color scale, it looks like a gradient from the first to the second color.
 
 The {api:anychart.core.ui.ColorRange#colorLineSize}colorLineSize(){api} allows you to customize the size of the color scale (20 by default). See other settings: {api:anychart.core.ui.ColorRange}anychart.core.ui.ColorRange{api}.
 
@@ -339,7 +339,7 @@ chart.textSpacing(15);
 
 ### Mode
 
-There are two modes of positioning elements on a Tag Cloud: **spiral** (default) and **rectangle**. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either `"spiral"` or `"rect"` as a parameter – see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
+There are two modes of positioning elements on a Tag Cloud: **spiral** (default) and **rectangle**. To set the mode, use the {api:anychart.charts.TagCloud#mode}mode(){api} method with either `"spiral"` or `"rect"` as a parameter - see {api:anychart.enums.TagCloudMode}anychart.enums.TagCloudMode{api}:
 
 ```
 // set the mode of the tag cloud

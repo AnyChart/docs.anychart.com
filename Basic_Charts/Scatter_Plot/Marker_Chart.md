@@ -21,6 +21,6 @@ chart = anychart.scatter();
 var series = chart.marker(data);
 ```
 
-**Note:** There is also the {api:anychart#marker}anychart.marker(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#marker}marker(){api} method after using it, a Scatter Marker chart is created. However, you can create basic Marker charts too – see [Marker Chart](../Marker_Chart).
+**Note:** There is also the {api:anychart#marker}anychart.marker(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#marker}marker(){api} method after using it, a Scatter Marker chart is created. However, you can create basic Marker charts too - see [Marker Chart](../Marker_Chart).
 
 {sample}BCT\_Scatter\_Marker\_Chart{sample}

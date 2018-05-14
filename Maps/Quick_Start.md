@@ -16,7 +16,7 @@ Reference the JavaScript file in the `<head>` section of your web page.
 </head>
 ```
 
-You can use the link as shown above or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in such case).
+You can use the link as shown above or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you'll have to use your own link in such case).
 
 ## Include the GeoData
 
@@ -30,7 +30,7 @@ Reference the GeoData JavaScript file in the `<head>` section of your web page.
 
 You also can use **GeoJSON**, **TopoJSON** or **SVG** formats. See [AnyChart Map List](./Maps_List) and [Supported Formats](Architecture#supported_formats) to learn more about supported formats and ways of creating maps.
 
-You can use the link as shown above or download file from the [Map Collection](./Maps_List), put it into any folder of your site (you’ll have to use your own link in such case).
+You can use the link as shown above or download file from the [Map Collection](./Maps_List), put it into any folder of your site (you'll have to use your own link in such case).
 
 If you are going to use geographic cooridnates, it is necessary to reference to proj4.js library file:
 
@@ -42,7 +42,7 @@ If you are going to use geographic cooridnates, it is necessary to reference to 
 
 ## Create a Container
 
-Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyMap will use 100% of the container.
+Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don't, AnyMap will use 100% of the container.
 
 ```
 <body>

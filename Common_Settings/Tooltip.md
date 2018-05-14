@@ -220,7 +220,7 @@ seriesSpline.tooltip().format(function(e){
 
 ### Prefix and Postfix
 
-Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
+Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (&deg;F).
 
 {sample}CS\_Tooltip\_11{sample}
 

@@ -24,7 +24,7 @@ When setting color using Hexadecimal notation you should use "#" before hex cons
 
 ### RGB Macro
 
-This format, just as Hexadecimal, sets color using three components: red, green and blue, but uses decimal, not hexadecimal values, for example: RGB(255,255,0) stands for absolutely Yellow. The syntax: RGB(red,green,blue), where red, green and blue – decimal values, that vary from 0 to 255.
+This format, just as Hexadecimal, sets color using three components: red, green and blue, but uses decimal, not hexadecimal values, for example: RGB(255,255,0) stands for absolutely Yellow. The syntax: RGB(red,green,blue), where red, green and blue - decimal values, that vary from 0 to 255.
 
 ```
 .fontColor("rgb(0,0,255)");

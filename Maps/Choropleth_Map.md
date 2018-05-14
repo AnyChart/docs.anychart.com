@@ -4,7 +4,7 @@
 ## Choropleth Map
 
 These are maps, where areas are colored or shaded according to a prearranged key. Each shade or colour represents a range of values. 
-Population density information, expressed as 'per mile²,' is appropriately represented using a choropleth map. 
+Population density information, expressed as 'per mile&sup2;,' is appropriately represented using a choropleth map. 
 Choropleth maps are also appropriate for indicating differences in land use, like the amount of recreational land or type of forest cover.
 
 ## Data

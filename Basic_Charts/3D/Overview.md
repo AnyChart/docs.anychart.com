@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D – see the [Supported Types](#supported_types) section.
+AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure 3D charts.
 
@@ -56,9 +56,9 @@ chart.draw();
 
 3D charts can be shown from different angles of view: to set the angle, use the {api:anychart.charts.Cartesian3d#zAngle}zAngle(){api} method with any 3D chart except the 3D Pie.
 
-**Note:** The value you use as a parameter should fall in the range from 0 to 90. By default, the angle is 45°. 
+**Note:** The value you use as a parameter should fall in the range from 0 to 90. By default, the angle is 45&deg;. 
 
-In the following sample, there is a 3D Column chart with the Z-angle set to 20°.
+In the following sample, there is a 3D Column chart with the Z-angle set to 20&deg;.
 
 ```
 // configure the z-angle of the chart

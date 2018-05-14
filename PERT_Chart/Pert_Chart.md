@@ -247,7 +247,7 @@ chart.milestones().labels().format(function (){
             comma = i == this.predecessors.length - 1 ? "" : ",";
             result += this.predecessors[i].get("name") + comma;
         }
-        result += " → ";
+        result += " - ";
         
         for (i = 0; i < this.successors.length; i++){
             comma = i == this.successors.length - 1 ? "" : ",";

@@ -248,19 +248,19 @@ Types of task connectors:
 </tr>
 <tr>
 <td>start-start</td>
-<td>The second can’t start until the first task starts</td>
+<td>The second can't start until the first task starts</td>
 </tr>
 <tr>
 <td>start-finish</td>
-<td>The second task can’t finish until the first begins. </td>
+<td>The second task can't finish until the first begins. </td>
 </tr>
 <tr>
 <td>finish-start</td>
-<td>The second task can’t start until the first is done. </td>
+<td>The second task can't start until the first is done. </td>
 </tr>
 <tr>
 <td>finish-finish</td>
-<td>The second task can’t finish until the first task is done.</td>
+<td>The second task can't finish until the first task is done.</td>
 </tr>
 </tbody>
 </table>

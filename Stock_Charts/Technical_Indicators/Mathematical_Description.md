@@ -73,7 +73,7 @@ The [Bollinger Bands %B](Bollinger_Bands_%25B) indicator is calculated according
 The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculated according to the following formula:
 
 ```
-bandwidth = (upperBB − lowerBB) / middleBB
+bandwidth = (upperBB - lowerBB) / middleBB
 ```
 
 ## Commodity Channel Index
@@ -230,9 +230,9 @@ At each step within a trend, the SAR is calculated ahead of time. That is, tomor
 
 Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
 
-The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend — or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
+The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend - or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
 
-The α value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded.
+The &alpha; value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded.
 
 To keep it from getting too large, a maximum value for the acceleration factor is normally set at 0.20, so that it never goes beyond that.
 

@@ -330,7 +330,7 @@ legend.listen("legendItemMouseDown", function(e){
 });
 
 // set the action to the click event
-legend.listen("legendItemСlick", function(e){
+legend.listen("legendItemClick", function(e){
   var series = chart.getSeriesAt(e.itemIndex);
   var selected = !series.meta("selected");
   if(selected){

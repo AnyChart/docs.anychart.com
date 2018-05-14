@@ -7,7 +7,7 @@ A step line chart is a line chart in which points are connected by horizontal an
 
 Step line charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. While the line chart emphasizes the trend in data over time, the step line chart draws attention from the trend to show periods with no change and emphasize the exact time of each change as well as its magnitude.
 
-The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting – step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
+The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting - step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>

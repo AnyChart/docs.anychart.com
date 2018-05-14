@@ -3,7 +3,7 @@
 
 ## Overview
 
-Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants – for example, in [SWOT-analysis](https://en.wikipedia.org/wiki/SWOT%5Fanalysis). 
+Technically, a quadrant chart is a [scatter chart](Scatter_Plot/Overview) divided into four quarters (quadrants) to make the visualization more readable. This chart type is used when data can be categorized into quadrants - for example, in [SWOT-analysis](https://en.wikipedia.org/wiki/SWOT%5Fanalysis). 
 
 In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](Bubble_Chart), and [Line](Line_Chart) series.
 
@@ -66,7 +66,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Each of the supported series types has its own visual settings – see the following articles:
+Each of the supported series types has its own visual settings - see the following articles:
 
 * [Marker Chart](Marker_Chart#appearance)
 * [Bubble Chart](Bubble_Chart#appearance)
@@ -215,7 +215,7 @@ Please note that quarters always divide scales into two parts, no matter what th
 
 ### Axes
 
-The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them – read more in the [Axes and Grids](../Axes_and_Grids) article:
+The Quadrant chart is framed by two X- and Y-axes, which can be referred to by indexes (0 and 1). By default, ticks, labels, and titles are disabled, but you can enable them - read more in the [Axes and Grids](../Axes_and_Grids) article:
 
 ```
 // configure axes
@@ -230,7 +230,7 @@ chart.yAxis(1, {ticks: true, labels: true});
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Labels of series are configured according to the rules of the series type – for example, see the [Marker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
+Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](Marker_Chart#labels) article. You can also configure labels of quarters by using the {api:anychart.core.utils.Quarter#label}label(){api} method. Please note that a quarter can have more than one label.
 
 The sample below shows how to create quarter labels:
 
@@ -261,4 +261,4 @@ labelLBottom2.rotation(-90);
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-Labels of series are configured according to the rules of the series type – for example, see the [Marker Chart](Marker_Chart#labels) article.
+Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](Marker_Chart#labels) article.
