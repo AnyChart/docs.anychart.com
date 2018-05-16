@@ -390,9 +390,19 @@ dataTable.removeFirst(1);
 
 ### Iterating
 
-* anychart.data.TableIterator
-* еще подумать про название
-* iterating over
+Iterating is a process of going through all the items of a tree. You can [acess](#accessing_rows) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
+
+To iterate over a table, first access a selection of rows – create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} (see [Accessing Rows](#accessing_rows)). Then call {api:anychart.data.TableSelectable#getIterator}getIterator(){api} on it to obtain the {api:anychart.data.TableIterator}anychart.data.TableIterator{api} object.
+
+Finally, call the methods of the iterator:
+
+* {api:anychart.data.TableIterator#advance}advance(){api} – advances the iterator to hte next data item
+* {api:anychart.data.TableIterator#get}get(){api} – returns the value in a given field of the current row
+* {api:anychart.data.TableIterator#getIndex}getIndex(){api} – returns the index of a current row
+* {api:anychart.data.TableIterator#getKey}getKey(){api} – returns the key of a current row
+* {api:anychart.data.TableIteratorreset}reset(){api} – resets the iterator to its default position before the first item
+
+In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display the information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
 
 ```
 /* create the selectable object
