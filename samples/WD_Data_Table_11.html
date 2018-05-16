@@ -107,8 +107,7 @@ function showSelected(){
   var range = chart.getSelectedRange();
 
   /* create the selectable object,
-  select rows corresponding to the shown points,
-  and group them */
+  select rows corresponding to the shown points, and group them */
   selectable = mapping.createSelectable();
   selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 

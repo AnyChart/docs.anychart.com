@@ -374,7 +374,7 @@ dataTable.addData(newData);
 
 ### Removing
 
-To remove a range of rows, call the {api:anychart.data.Table#remove}remove{api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters – they can be passed as numbers, strings, or Date objects:
+To remove a range of rows, call the {api:anychart.data.Table#remove}remove(){api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters – they can be passed as numbers, strings, or Date objects:
 
 ```
 dataTable.remove("2015-12-28", "2015-12-31");  
@@ -426,8 +426,7 @@ while (iterator.advance()) {
 
 ```
 /* create the selectable object,
-select rows corresponding to the shown points,
-and group them */
+select rows corresponding to the shown points, and group them */
 selectable = mapping.createSelectable();
 selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 ```
