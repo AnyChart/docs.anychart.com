@@ -374,9 +374,16 @@ dataTable.addData(newData);
 
 ### Removing
 
+To remove a range of rows, call the {api:anychart.data.Table#remove}remove{api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters – they can be passed as numbers, strings, or Date objects:
+
+```
+dataTable.remove("2015-12-28", "2015-12-31");  
+```
+
+The {api:anychart.data.Table#removeFirst}removeFirst{api} method allows you to remove the first n rows (1 by default):
+
 ```
 dataTable.removeFirst(1); 
-dataTable.remove("2015-12-28", "2015-12-31");  
 ```
 
 {sample}WD\_Data\_Table\_09{sample}
@@ -385,6 +392,7 @@ dataTable.remove("2015-12-28", "2015-12-31");
 
 * anychart.data.TableIterator
 * еще подумать про название
+* iterating over
 
 ```
 /* create the selectable object
