@@ -102,6 +102,8 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 {sample}WD\_Data\_Table\_02{sample}
 
+### CSV Object
+
 ### Mapping
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
