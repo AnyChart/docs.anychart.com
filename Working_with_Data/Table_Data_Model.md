@@ -380,7 +380,7 @@ To remove a range of rows, call the {api:anychart.data.Table#remove}remove(){api
 dataTable.remove("2015-12-28", "2015-12-31");  
 ```
 
-The {api:anychart.data.Table#removeFirst}removeFirst{api} method allows you to remove the first n rows (1 by default):
+The {api:anychart.data.Table#removeFirst}removeFirst(){api} method allows you to remove the first n rows (1 by default):
 
 ```
 dataTable.removeFirst(1); 
@@ -400,7 +400,7 @@ Finally, call the methods of the iterator:
 * {api:anychart.data.TableIterator#get}get(){api} – returns the value in a given field of the current row
 * {api:anychart.data.TableIterator#getIndex}getIndex(){api} – returns the index of a current row
 * {api:anychart.data.TableIterator#getKey}getKey(){api} – returns the key of a current row
-* {api:anychart.data.TableIteratorreset}reset(){api} – resets the iterator to its default position before the first item
+* {api:anychart.data.TableIterator#reset}reset(){api} – resets the iterator to its default position before the first item
 
 In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display the information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
 
@@ -424,12 +424,16 @@ while (iterator.advance()) {
 
 {sample}WD\_Data\_Table\_10{sample}
 
+In the next sample the selected data is grouped by two years (see [Accessing Rows](#accessing_rows)): 
+
 ```
 /* create the selectable object,
 select rows corresponding to the shown points, and group them */
 selectable = mapping.createSelectable();
 selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 ```
+
+The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
 
 {sample}WD\_Data\_Table\_11{sample}
 
