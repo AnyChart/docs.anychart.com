@@ -13,6 +13,14 @@ It is used in the following chart types:
 
 This article explains how to set tree-like data, access data items, and perform operations on data.
 
+## Classes
+
+Here is the list of classes allowing you to work with tree data in AnyChart:
+
+* tree – {api:anychart.data.Tree}anychart.data.Tree{api}
+* item – {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}
+* traverser – {api:anychart.data.Traverser}anychart.data.Traverser{api}
+
 ## Quick Start
 
 To create a chart with tree-like data, create a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` as the second parameter. Then pass the tree to the chart constructor:
@@ -203,7 +211,7 @@ Manipulating data very often requires accessing data items, so the methods liste
 
 ## Data Manipulation
 
-You can perform the following data operations (including CRUD):
+You can perform the following data operations:
 
 * [Reading](#reading)
 * [Adding](#adding)
@@ -211,8 +219,6 @@ You can perform the following data operations (including CRUD):
 * [Removing](#removing)
 * [Searching](#searching)
 * [Traversing](#traversing)
-
-**Note:** Operations on non-tree data are described in the [Data Manipulation](Data_Manipulation) article.
 
 ### Reading
 
