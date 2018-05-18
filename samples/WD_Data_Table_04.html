@@ -42,31 +42,30 @@ anychart.onDocumentReady(function () {
       ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
     ]);
     
-    // map the data for the frist series
-    var mapping_1 = dataTable.mapAs({value: 1});
+    // map the data for the first series
+    var mapping_1 = dataTable.mapAs({open: {column: 1, type: "open"},
+                                     high: 2, low: 3, close: 4});
 
     // map the data for the second series
-    var mapping_2 = dataTable.mapAs({value: 4});
-
-    // map the data for the tecnical indicator
-    var mapping_3 = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+    var mapping_2 = dataTable.mapAs();
+    mapping_2.addField("open", 1, "open");
+    mapping_2.addField("high", 2);
+    mapping_2.addField("low", 3);
+    mapping_2.addField("close", 4);
     
     // create a stock chart
     var chart = anychart.stock();
     
-    // create the first plot and and two line series
-    var line_1 = chart.plot(0).line(mapping_1);
-    var line_2 = chart.plot(0).line(mapping_2);
-    line_1.name("Open");
-    line_2.name("Close");
-    
-    // create the second plot and a williams %r indicator
-    chart.plot(1).yScale().minimum(-100);
-    chart.plot(1).yScale().maximum(0);
-    chart.plot(1).williamsR(mapping_3, 4, "marker");
+    // create the first plot and ohlc series
+    var ohlc_1 = chart.plot(0).ohlc(mapping_1);
+    ohlc_1.name("ACME Corp. 1");
 
+    // create the second plot and ohlc series
+    var ohlc_2 = chart.plot(1).ohlc(mapping_2);
+    ohlc_2.name("ACME Corp. 2");
+    
     // set the chart title
-    chart.title("Table Data: Mapping\nMultiple Series and Technical Indicators");
+    chart.title("Table Data: Mapping\nmapAs() and addField()");
     
     // set the container id
     chart.container("container");

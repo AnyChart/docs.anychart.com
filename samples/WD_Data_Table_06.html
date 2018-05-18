@@ -11,7 +11,7 @@
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
-
+    
     <style>
         html, body, #container {
             width: 100%;
@@ -26,52 +26,44 @@
 <script>
 anychart.onDocumentReady(function () {
     
-    // create a data table
-    var dataTable = anychart.data.table(0);
-    
-    // add data
-    dataTable.addData([
-      ["2015-12-25", 505.69, 514.88],
-      ["2015-12-26", 505.59, 514.98],
-      ["2015-12-27", 505.49, 515.30],
-      ["2015-12-28", 505.23, 515.72],
-      ["2015-12-29", 505.38, 515.86],
-      ["2015-12-30", 505.66, 515.98],
-      ["2015-12-31", 505.99, 515.33],
-      ["2016-01-01", 505.99, 514.29],
-      ["2016-01-02", 506.18, 514.87]
+    // create two data tables
+    var dataTable_1 = anychart.data.table(0);
+    var dataTable_2 = anychart.data.table(0);
+
+    // add data to the first table
+    dataTable_1.addData([
+      ["2018-01-01", 512.53],
+      ["2018-01-03", 511.22],
+      ["2018-01-05", 510.53],
+      ["2018-01-07", 511.50],
+      ["2018-01-09", 511.70]
+    ]);
+
+    // add data to the second table
+    dataTable_2.addData([
+      ["2018-01-02", 511.83],
+      ["2018-01-04", 510.35],
+      ["2018-01-06", 511.43],
+      ["2018-01-08", 511.32]
     ]);
     
-    // map the data
-    mapping = dataTable.mapAs({low: 1, high: 2});
+    // map the first table
+    var mapping_1 = dataTable_1.mapAs({value: 1});
+
+    // map the second table
+    var mapping_2 = dataTable_2.mapAs({value: 1});
     
     // create a stock chart
-    chart = anychart.stock();
+    var chart = anychart.stock();
     
-    // create a plot and a range area series
-    var ohlcSeries = chart.plot(0).rangeArea(mapping);
-    ohlcSeries.name("ACME Corp.");
+    // create a plot and an two column series
+    var column_1 = chart.plot(0).column(mapping_1);
+    var column_2 = chart.plot(0).column(mapping_2);
+    column_1.name("Odd Days");
+    column_2.name("Even Days");
     
-    // set the range of points shown on the chart
-    chart.selectRange("2015-12-26", "2015-12-30");
-
-    /* create the selectable object
-    and select all rows in the table*/
-    selectable = mapping.createSelectable();
-    selectable.selectAll();
-
-    // enable html in the chart title
-    chart.title().useHtml(true);
-
-    /* get the values of the first and last shown point
-    and show them in the chart title */
-    showSelected(); 
-
-    /* listen to changing the shown range of points
-    and update the chart title*/
-    chart.listen("selectedRangeChange", function(){
-      showSelected();
-    });
+    // set the chart title
+    chart.title("Table Data: Mapping Multiple Tables");
     
     // set the container id
     chart.container("container");
@@ -79,32 +71,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-
-/* a function for getting the values of the first and last
-shown point and showing them in the chart title */
-function showSelected(){
-
-  // get the shown range of points
-  var range = chart.getSelectedRange();
-  
-  // get the values of the first and last point of the range
-  var firstPoint = selectable.search(range.firstSelected, "nearest");
-  var lastPoint = selectable.search(range.lastSelected, "nearest");
-  var firstDate = firstPoint.getColumn(0);
-  var firstLow = firstPoint.get("low");
-  var firstHigh = firstPoint.get("high");
-  var lastDate = lastPoint.getColumn(0);
-  var lastLow = lastPoint.get("low");
-  var lastHigh = lastPoint.get("high");
-  
-  // set the chart title
-  chart.title("Table Data: Reading<br><br>" +
-  	          "first selected = <span style = 'color:#990000'>" +
-              firstDate + " (L: " + firstLow + ", H: " + firstHigh + ")</span>" +
-              "<br>last selected = <span style = 'color:#990000'>" + 
-              lastDate + " (L: " + lastLow + ", H: " + lastHigh + ")</span>");
-
-};
 </script>
 </body>
 </html>

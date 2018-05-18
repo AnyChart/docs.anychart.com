@@ -30,7 +30,7 @@ Table data structures in Anychart are defined as instances of the {api:anychart.
 
 ### Array of Arrays
 
-If your data is organized as an **array of arrays**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If your data is organized as an **array of arrays**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of the column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
@@ -102,7 +102,50 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 {sample}WD\_Data\_Table\_02{sample}
 
-### CSV Object
+### CSV String
+
+If your data is a [CSV string](Data_From_CSV), use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of the column containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+
+The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data. By default AnyChart considers commas to be column separators and line breaks to be row separators, but you can pass an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
+
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+
+This sample shows how to add CSV data with settings:
+
+```
+// create data
+var data = "Dates;Open;High;Low;Close*" +
+           "2015-12-25;512.53;514.88;505.69;507.34*" +
+           "2015-12-26;511.83;514.98;505.59;506.23*" +
+           "2015-12-27;511.22;515.30;505.49;506.47*" +
+           "2015-12-28;510.35;515.72;505.23;505.80*" +
+           "2015-12-29;510.53;515.86;505.38;508.25*" +
+           "2015-12-30;511.43;515.98;505.66;507.45*" +
+           "2015-12-31;511.50;515.33;505.99;507.98*" +
+           "2016-01-01;511.32;514.29;505.99;506.37*" +
+           "2016-01-02;511.70;514.87;506.18;506.75";
+
+// create an object with csv settings
+csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
+
+// create a data table
+var dataTable = anychart.data.table(0);
+
+// add data
+dataTable.addData(data, null, csvSettings);
+
+// map the data
+var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+
+// create a stock chart
+var chart = anychart.stock();
+
+// create a plot and an ohlc series
+var ohlcSeries = chart.plot(0).ohlc(mapping);
+ohlcSeries.name("ACME Corp.");
+```
+
+{sample}WD\_Data\_Table\_03{sample}
 
 ### Mapping
 
@@ -173,7 +216,7 @@ var ohlc_1 = chart.plot(0).ohlc(mapping_1);
 var ohlc_2 = chart.plot(1).ohlc(mapping_2);
 ```
 
-{sample}WD\_Data\_Table\_03{sample}
+{sample}WD\_Data\_Table\_04{sample}
 
 This sample show how to map the data for multiple series and [technical indicators](../Stock_Charts/Technical_Indicators):
 
@@ -216,7 +259,7 @@ chart.plot(1).yScale().maximum(0);
 chart.plot(1).williamsR(mapping_3, 4, "marker");
 ```
 
-{sample}WD\_Data\_Table\_04{sample}
+{sample}WD\_Data\_Table\_05{sample}
 
 You can also map multiple tables, which allows you, for example, to show odd and even days on different series: 
 
@@ -256,7 +299,7 @@ var column_1 = chart.plot(0).column(mapping_1);
 var column_2 = chart.plot(0).column(mapping_2);
 ```
 
-{sample}WD\_Data\_Table\_05{sample}
+{sample}WD\_Data\_Table\_06{sample}
 
 ## Accessing Rows
 
@@ -342,7 +385,7 @@ var lastLow = lastPoint.get("low");
 var lastHigh = lastPoint.get("high");
 ```
 
-{sample}WD\_Data\_Table\_06{sample}
+{sample}WD\_Data\_Table\_07{sample}
 
 ### Adding
 
@@ -361,7 +404,7 @@ dataTable.addData([
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
-{sample}WD\_Data\_Table\_07{sample}
+{sample}WD\_Data\_Table\_08{sample}
 
 ### Updating
 
@@ -372,7 +415,7 @@ var newData = [["2015-12-25", newLow, newHigh, color]];
 dataTable.addData(newData);
 ```
 
-{sample}WD\_Data\_Table\_08{sample}
+{sample}WD\_Data\_Table\_09{sample}
 
 ### Removing
 
@@ -388,7 +431,7 @@ The {api:anychart.data.Table#removeFirst}removeFirst(){api} method allows you to
 dataTable.removeFirst(1); 
 ```
 
-{sample}WD\_Data\_Table\_09{sample}
+{sample}WD\_Data\_Table\_10{sample}
 
 ### Iterating
 
@@ -424,7 +467,7 @@ while (iterator.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Table\_10{sample}
+{sample}WD\_Data\_Table\_11{sample}
 
 In the next sample the selected data is grouped by two years (see [Accessing Rows](#accessing_rows)): 
 
@@ -437,7 +480,7 @@ selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 
 The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
 
-{sample}WD\_Data\_Table\_11{sample}
+{sample}WD\_Data\_Table\_12{sample}
 
 ## Table Computer
 

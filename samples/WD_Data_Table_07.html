@@ -11,64 +11,68 @@
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
-    
+
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<button id = "addButton" onclick="addRow()">Add a Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // set the default number of digits after the decimal point
-    anychart.format.locales.default.numberLocale.decimalsCount = 2;
     
     // create a data table
-    dataTable = anychart.data.table(0);
+    var dataTable = anychart.data.table(0);
     
     // add data
     dataTable.addData([
-      ["2015-12-25", 512.53, 514.88, 505.69, 507.34],
-      ["2015-12-27", 511.22, 515.30, 505.49, 506.47],
-      ["2015-12-28", 510.35, 515.72, 505.23, 505.80],
-      ["2015-12-29", 510.53, 515.86, 505.38, 508.25],
-      ["2015-12-30", 511.43, 515.98, 505.66, 507.45],
-      ["2015-12-31", 511.50, 515.33, 505.99, 507.98],
-      ["2016-01-01", 511.32, 514.29, 505.99, 506.37],
-      ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
+      ["2015-12-25", 505.69, 514.88],
+      ["2015-12-26", 505.59, 514.98],
+      ["2015-12-27", 505.49, 515.30],
+      ["2015-12-28", 505.23, 515.72],
+      ["2015-12-29", 505.38, 515.86],
+      ["2015-12-30", 505.66, 515.98],
+      ["2015-12-31", 505.99, 515.33],
+      ["2016-01-01", 505.99, 514.29],
+      ["2016-01-02", 506.18, 514.87]
     ]);
     
     // map the data
-    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4,
-                                   risingStroke: 5, fallingStroke: 5});
+    mapping = dataTable.mapAs({low: 1, high: 2});
     
-    // create a stock chart and allow coloring individual points
-    var chart = anychart.stock(true);
+    // create a stock chart
+    chart = anychart.stock();
     
-    // create a plot and an ohlc series
-    var ohlcSeries = chart.plot(0).ohlc(mapping);
+    // create a plot and a range area series
+    var ohlcSeries = chart.plot(0).rangeArea(mapping);
     ohlcSeries.name("ACME Corp.");
+    
+    // set the range of points shown on the chart
+    chart.selectRange("2015-12-26", "2015-12-30");
 
-    // set the chart title
+    /* create the selectable object
+    and select all rows in the table*/
+    selectable = mapping.createSelectable();
+    selectable.selectAll();
+
+    // enable html in the chart title
     chart.title().useHtml(true);
-    chart.title("Table Data: Adding");
 
+    /* get the values of the first and last shown point
+    and show them in the chart title */
+    showSelected(); 
+
+    /* listen to changing the shown range of points
+    and update the chart title*/
+    chart.listen("selectedRangeChange", function(){
+      showSelected();
+    });
+    
     // set the container id
     chart.container("container");
 
@@ -76,22 +80,30 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-lastDate = new Date(2016, 1, 2);
+/* a function for getting the values of the first and last
+shown point and showing them in the chart title */
+function showSelected(){
+
+  // get the shown range of points
+  var range = chart.getSelectedRange();
   
-// add a new data row
-function addRow(){
-  var newOpen = (Math.random() * 6) + 507;
-  var newHigh = (Math.random() * 3) + 513;
-  var newLow = (Math.random() * 2) + 505;
-  var newClose = (Math.random() * 6) + 507;
-  var newDate = new Date();
-  newDate.setDate(lastDate.getDate() + 1);
-  lastDate = newDate;
-  //create new data
-  var newData = [[newDate, newOpen, newHigh,
-                  newLow, newClose, "4 #00838f"]];
-  // add new data
-  dataTable.addData(newData);
+  // get the values of the first and last point of the range
+  var firstPoint = selectable.search(range.firstSelected, "nearest");
+  var lastPoint = selectable.search(range.lastSelected, "nearest");
+  var firstDate = firstPoint.getColumn(0);
+  var firstLow = firstPoint.get("low");
+  var firstHigh = firstPoint.get("high");
+  var lastDate = lastPoint.getColumn(0);
+  var lastLow = lastPoint.get("low");
+  var lastHigh = lastPoint.get("high");
+  
+  // set the chart title
+  chart.title("Table Data: Reading<br><br>" +
+  	          "first selected = <span style = 'color:#990000'>" +
+              firstDate + " (L: " + firstLow + ", H: " + firstHigh + ")</span>" +
+              "<br>last selected = <span style = 'color:#990000'>" + 
+              lastDate + " (L: " + lastLow + ", H: " + lastHigh + ")</span>");
+
 };
 </script>
 </body>
