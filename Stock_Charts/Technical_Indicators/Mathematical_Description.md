@@ -301,17 +301,19 @@ The Full Stochastic Oscillator is a fully customizable version of the Slow Stoch
 
 where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fullD.png"></center>
+<center><img src="https://static.anychart.com/images/technical\_indicators/trix.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-## TRIX
+## Triple Exponential Moving Average (TRIX)
 
-Coming soon.
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
+
+<center><img src=""></center>
 
 ## Volume + MA
 
-Coming soon.
+Volume + MA does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponentia_movin_average) type calculated from Volume series.
 
 ## Williams %R
 
