@@ -142,6 +142,10 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 
+## Heikin-Ashi
+
+<center><img src=""></center>
+
 ## KDJ
 
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
@@ -157,7 +161,11 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Keltner Channels
 
-Coming soon.
+Keltner Channels bands in each point are calculated according to the following formulas:
+
+<center><img src=""></center>
+
+You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) and [ATR (Average True Range)](#average_true_range) indicators are calculated in corresponding sections of this article.
 
 ## Modified Moving Average
 
@@ -217,6 +225,20 @@ Coming soon.
 Coming soon.
 
 ## On Balance Volume
+
+On Balance Volume indicator is calculated according to the folowing rules:
+
+* If the closing price is above the prior close price then:
+
+<center><img src=""></center>
+
+* If the closing price is below the prior close price then:
+
+<center><img src=""></center>
+
+* If the closing prices equals yesterday's closing price then:
+
+<center><img src=""></center>
 
 Coming soon.
 
@@ -313,7 +335,7 @@ where p3 is the third period that is set through the {api:anychart.core.stock.Pl
 
 ## Volume + MA
 
-Volume + MA does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponentia_movin_average) type calculated from Volume series.
+Volume + MA does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
 
 ## Williams %R
 
