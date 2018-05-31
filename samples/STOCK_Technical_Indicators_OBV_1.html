@@ -44,20 +44,19 @@ var plot_0 = chart.plot(0);
 
 // create ohlc series
 var ohlcSeries = plot_0.ohlc(mapping);
-ohlcSeries.name('CSCO');
+ohlcSeries.name("CSCO");
 
 // create the second plot on the chart
 var plot_1 = chart.plot(1);
-plot_1.height('30%');
 
-// create On Balance Volume indicator
+// create an On Balance Volume indicator
 var obv = plot_1.obv(mapping);
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
 
 // set container id for the chart
-chart.container('container');
+chart.container("container");
 
 // initiate chart drawing
 chart.draw();

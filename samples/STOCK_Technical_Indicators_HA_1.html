@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Technical Indicators OBV 2"/>
+    <meta name="ac:name" content="STOCK Technical Indicators HA 1"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -26,7 +26,7 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-// The data that used in this sample can be obtained from the CDN
+// The data used in this sample can be obtained from the CDN
 // https://cdn.anychart.com/csv-data/csco-daily.js
 
 // create data table on loaded data
@@ -34,28 +34,23 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4, "volume": 3});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
 var chart = anychart.stock();
 
-// create plots on the chart
+// create the first plot on the chart
 var plot_0 = chart.plot(0);
-var plot_1 = chart.plot(1);
-var plot_2 = chart.plot(2);
 
 // create ohlc series
 var ohlcSeries = plot_0.ohlc(mapping);
-ohlcSeries.name("CSCO");
+ohlcSeries.name('CSCO');
 
-// create and adjust an On Balance Volume indicator
-var obv_1 = plot_1.obv(mapping, "area").series();
-obv_1.stroke("0.5 gray");
-obv_1.fill("#ffd54f");
+// create the second plot on the chart
+var plot_1 = chart.plot(1);
 
-// create and adjust an On Balance Volume indicator
-var obv_2 = plot_2.obv(mapping, "stick").series();
-obv_2.stroke("2 #ff6d00");
+// create a Heikin-Ashi indicator
+var ha = plot_1.ha(mapping);
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
