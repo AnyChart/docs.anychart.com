@@ -144,6 +144,8 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Heikin-Ashi
 
+[Heikin-Ashi](Heikin-Ashi)
+
 <center><img src=""></center>
 
 ## KDJ
@@ -161,7 +163,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Keltner Channels
 
-Keltner Channels bands in each point are calculated according to the following formulas:
+[Keltner Channels](Keltner_Channels) bands in each point are calculated according to the following formulas:
 
 <center><img src=""></center>
 
@@ -226,21 +228,19 @@ Coming soon.
 
 ## On Balance Volume
 
-On Balance Volume indicator is calculated according to the folowing rules:
+[On Balance Volume](On_Balance_Volume) indicator is calculated according to the following rules:
 
-* If the closing price is above the prior close price then:
-
-<center><img src=""></center>
-
-* If the closing price is below the prior close price then:
+* If the closing price is above the prior close price, then:
 
 <center><img src=""></center>
 
-* If the closing prices equals yesterday's closing price then:
+* If the closing price is below the prior close price, then:
 
 <center><img src=""></center>
 
-Coming soon.
+* If the closing prices equals yesterday's closing price, then:
+
+<center><img src=""></center>
 
 ## Parabolic SAR
 
@@ -335,7 +335,7 @@ where p3 is the third period that is set through the {api:anychart.core.stock.Pl
 
 ## Volume + MA
 
-Volume + MA does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
+[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
 
 ## Williams %R
 
