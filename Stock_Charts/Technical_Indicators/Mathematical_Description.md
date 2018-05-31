@@ -165,7 +165,7 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 [Keltner Channels](Keltner_Channels) bands in each point are calculated according to the following formulas:
 
-<center><img src=""></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/keltnerchannels.png"></center>
 
 You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) and [ATR (Average True Range)](#average_true_range) indicators are calculated in corresponding sections of this article.
 
@@ -232,15 +232,15 @@ Coming soon.
 
 * If the closing price is above the prior close price, then:
 
-<center><img src=""></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-positive.png"></center>
 
 * If the closing price is below the prior close price, then:
 
-<center><img src=""></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-negative.png"></center>
 
 * If the closing prices equals yesterday's closing price, then:
 
-<center><img src=""></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-zero.png"></center>
 
 ## Parabolic SAR
 
@@ -331,7 +331,7 @@ where p3 is the third period that is set through the {api:anychart.core.stock.Pl
 
 [Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
 
-<center><img src=""></center>
+<center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
 ## Volume + MA
 
