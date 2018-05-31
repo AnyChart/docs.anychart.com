@@ -88,8 +88,22 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Stochastic Oscillator](Stochastic_Oscillator)</td>
 		</tr>
 		<tr>
+			<td>[Volume + Moving Average](Volume_+_Moving_Average)</td>
+		</tr>
+		<tr>
 			<td>[Williams %R](Williams_%25R)</td>
 		</tr>
 		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
+		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
+		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
+		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
 	</tbody>
 </table>
