@@ -37,9 +37,9 @@ FILESLIST=$(git diff --name-only origin/develop | grep -e .html -e .md )
 # function for "fix" file.
 function heal_file(){
     filename=$1
-    # replace all STG url on COM and  non-{{branch-name}}
+    # replace all STG url on COM and  non-DVF-3742-indicators
     perl -pi -e 's/\.stg/\.com/g' ${filename}
-    perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
+    perl -pi -e 's,(releases)/([^/])+/,\1/DVF-3742-indicators/,g' ${filename}
 
     if [[ ! " ${IGNOREFILES[*]} " == *"$filename"* ]]; then
         # match all non-ascii symbols
@@ -65,7 +65,7 @@ FILE_MODIFYER="heal_file"
 # sugar function
 function broke_file(){
     FILENAME=$1
-    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" ${FILENAME}
+    perl -pi -e "s,(releases)/(DVF-3742-indicators)+/,\1/$CURRENT_BRANCH/,g" ${FILENAME}
 }
 
 ########################################################################################################################
@@ -79,7 +79,7 @@ do
             replace|r|"-r")    FILE_MODIFYER="broke_file" ;;
             all|a|"-a")        FILESLIST=$(find . -type f -name "*.html") ;;
             "-h"|"--help"|help|h|"-help")  printf "parameters: \
-                \n 'replace (-r)' - to rename all {{branch-name}} to current branch\
+                \n 'replace (-r)' - to rename all DVF-3742-indicators to current branch\
                 \n 'all (-a)' - modify all files (by default False, modify only diff with origin/develop)\
                 \n 'links (-l)' - get links to pg and github.com for changed samples\
                 \n" && exit 1 ;;

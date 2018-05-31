@@ -34,7 +34,7 @@ sma20.stroke('#bf360c');
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_SMA\_1{sample}
+{sample}STOCK\_Technical\_Indicators\_OBV\_1{sample}
 
 ## Indicator parameters
 
@@ -60,4 +60,4 @@ sma50.fill('#ff6d00');
 
 Live sample:
 
-{sample}STOCK\_Technical\_Indicators\_SMA\_2{sample}
+{sample}STOCK\_Technical\_Indicators\_OBV\_2{sample}

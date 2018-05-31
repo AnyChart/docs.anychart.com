@@ -13,9 +13,9 @@ Range Selection UI is on of the great chart navigation features AnyStock provide
 Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{api} package and you need to reference UI CSS file:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anystock.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"/>
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anystock.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-ui.min.js"/>
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/DVF-3742-indicators/css/anychart-ui.min.css" />
 ```
 
 ## Add to a chart
