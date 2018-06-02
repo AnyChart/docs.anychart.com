@@ -15,22 +15,25 @@ SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method
 ```
 // create data table on loaded data
 var dataTable = anychart.data.table();
-
-// add data to a table
-dataTable.addData(get_data());
+dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({'value': 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+// create the first plot on the chart
+var plot_0 = chart.plot(0);
 
-// create SMA indicators with period 20
-var sma20 = plot.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+
+// create the second plot on the chart
+var plot_1 = chart.plot(1);
+
+// create a Heikin-Ashi indicator
+var ha = plot_1.ha(mapping);
 ```
 
 Here is a live sample:
@@ -50,13 +53,17 @@ var sma10 = plot.sma(mapping, 10, "column");
 Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
 
 ```
-// create SMA indicator with period 20 and show as line on the first plot
-var sma20 = plot_0.sma(mapping, 20).series();
-sma20.stroke('#bf360c');
+// create and adjust a Heikin-Ashi indicator
+var ha_1 = plot_1.ha(mapping).series();
+ha_1.risingFill("#33ccff");
+ha_1.fallingFill("#ff33cc");
+ha_1.risingStroke(null);
+ha_1.fallingStroke(null);
 
-// create SMA indicator with period 50 and show as column on the second plot
-var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.fill('#ff6d00');
+// create and adjust a Heikin-Ashi indicator
+var ha_2 = plot_2.ha(mapping, "ohlc").series();
+ha_2.risingStroke("#37474f");
+ha_2.fallingStroke("#90a4ae");
 ```
 
 Live sample:
