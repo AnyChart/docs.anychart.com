@@ -8,7 +8,7 @@ Mathematical description of the indicator: [Volume + Moving Average Mathematical
 
 ## Adding indicator
 
-Volume + MA indicator is added using {api:anychart.core.stock.Plot#volumema}volumema(){api} method. t requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
+Volume + MA indicator is added using {api:anychart.core.stock.Plot#volumema}volumema(){api} method. It requires a mapping with two fields: `"volume"` and `"close"` / `"value"`.
 
 ```
 // create data table on loaded data

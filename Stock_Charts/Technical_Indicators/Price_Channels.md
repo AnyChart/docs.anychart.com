@@ -1,4 +1,4 @@
-# Keltner Channels
+# Price Channels
 
 ## Overview
 
@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Keltner Channels Mathematical Descri
 
 ## Adding indicator
 
-Keltner Channels indicator is added using {api:anychart.core.stock.Plot#keltnerChannels}keltnerChannels(){api} method. It requires a mapping with three fields: `"high"`, `"low"`, and `"close"`.
+Keltner Channels indicator is added using {api:anychart.core.stock.Plot#keltnerChannels}keltnerChannels(){api} method. It requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"value"`.
 
 ```
 // create data table on loaded data
@@ -18,7 +18,7 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4, "value": 3});
 
 // create stock chart
 var chart = anychart.stock();

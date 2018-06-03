@@ -1,4 +1,4 @@
-# On Balance Volume (OBV)
+# Awesome Oscillator
 
 ## Overview
 
@@ -8,7 +8,7 @@ Mathematical description of the indicator: [On Balance Volume Mathematical Descr
 
 ## Adding indicator
 
-On Balance Volume indicator is added using {api:anychart.core.stock.Plot#obv}obv(){api} method. It requires a mapping with two fields: `"volume"` and `"close"` / `"value"`.
+On Balance Volume indicator is added using {api:anychart.core.stock.Plot#obv}obv(){api} method. It requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
 
 ```
 // create data table on loaded data

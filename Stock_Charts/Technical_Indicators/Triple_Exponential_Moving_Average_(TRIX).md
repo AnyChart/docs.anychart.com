@@ -10,7 +10,7 @@ Mathematical description of the indicator: [Triple Exponential Moving Average Ma
 
 ## Adding indicator
 
-TRIX indicator is added using {api:anychart.core.stock.Plot#trix}trix(){api} method. Tt requires a mapping with four fields: `"open"`, `"high"`, `"low"`, and `"close"`.
+TRIX indicator is added using {api:anychart.core.stock.Plot#trix}trix(){api} method. Tt requires a mapping with one field: `"close"` or `"value"`.
 
 ```
 // create data table on loaded data
