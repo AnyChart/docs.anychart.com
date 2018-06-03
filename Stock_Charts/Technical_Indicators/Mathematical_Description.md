@@ -50,6 +50,12 @@ This formula is based on the True Range definition. ATR is defined as the greate
 - current High less than previous Close (absolute value)
 - current Low less than previous Close (absolute value)
 
+## Awesome Oscillator
+
+[Awesome Oscillator](Awsome_Oscillator) is calculated according to the following formula:
+
+<center><img src="" width="500"></center>
+
 ## Bollinger Bands
 
 [Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
@@ -265,7 +271,9 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Price Channels
 
-Coming soon.
+[Price Channels](Price_Channels) bands are calculated according to the following formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
 ## Rate of Change
 
