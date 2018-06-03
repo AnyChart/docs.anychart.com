@@ -36,7 +36,7 @@ var obv = plot_1.obv(mapping);
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_On\_Balance\_Volume\_1{sample}
+{sample}STOCK\_Technical\_Indicators\_OBV\_1{sample}
 
 ## Indicator parameters
 
@@ -62,4 +62,4 @@ obv_2.stroke("2 #ff6d00");
 
 Live sample:
 
-{sample}STOCK\_Technical\_Indicators\_On\_Balance\_Volume\_2{sample}
+{sample}STOCK\_Technical\_Indicators\_OBV\_2{sample}
