@@ -4,7 +4,7 @@
 
 Keltner Channels are volatility-based envelopes set above and below an exponential moving average (EMA).
 
-This indicator is similar to [Bollinger Bands](Bollinger_Bands), which uses the standard deviation to set the bands. Instead of using the standard deviation, Keltner Channels use the [Average True Range (ATR)](Average_True_Range_(ATR)) to set the channel distance. The channels are typically set two Average True Range values above and below the 20-day [EMA(Exponential_Moving_Average). The exponential moving average dictates  the direction, and the Average True Range sets the channel width. Keltner Channels are a trend following indicator used to identify reversals with channel breakouts and channel direction. Channels can also be used to identify overbought and oversold levels when the trend is flat.
+This indicator is similar to [Bollinger Bands](Bollinger_Bands), which uses the standard deviation to set the bands. Instead of using the standard deviation, Keltner Channels use the [Average True Range (ATR)](Average_True_Range_(ATR)) to set the channel distance. The channels are typically set two Average True Range values above and below the 20-day [EMA](Exponential_Moving_Average). The exponential moving average dictates  the direction, and the Average True Range sets the channel width. Keltner Channels are a trend following indicator used to identify reversals with channel breakouts and channel direction. Channels can also be used to identify overbought and oversold levels when the trend is flat.
 
 Mathematical description of the indicator: [Keltner Channels Mathematical Description](Mathematical_Description#keltner_channels).
 
