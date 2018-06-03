@@ -340,7 +340,7 @@ where p3 is the third period that is set through the {api:anychart.core.stock.Pl
 
 <center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
-## Volume + MA
+## Volume + Moving Average
 
 [Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
 

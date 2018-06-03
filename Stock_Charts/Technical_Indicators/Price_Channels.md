@@ -49,7 +49,7 @@ var priceChannels = plot.priceChannels(mapping, 20, "line", "line", "line");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Price Channels indicators with with different parameters and settings are added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Price Channels indicators with different parameters and settings are added to different plots:
 
 ```
 // create and adjust a Price Channels indicator

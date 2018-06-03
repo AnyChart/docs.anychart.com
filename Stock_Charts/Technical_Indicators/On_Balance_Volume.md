@@ -50,7 +50,7 @@ The series type can be easily changed any time using the {api:anychart.core.stoc
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where On Balance Volume indicators with with different parameters and settings are added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where On Balance Volume indicators with different parameters and settings are added to different plots:
 
 ```
 var obv_1 = plot_1.obv(mapping, "area").series();

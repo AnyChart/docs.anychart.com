@@ -48,7 +48,6 @@ The next two parameters, "period" and "signalPeriod", set the TRIX and signal pe
 
 The following code sample demonstrates a TRIX indicator with parameters set as default:
 
-
 ```
 var trix = plot.trix(mapping, 15, 9, "ema", "ema", "line", "line");
 ```

@@ -51,7 +51,7 @@ var keltnerChannels = plot.keltnerChannels(mapping, 20, 10, "ema", 2, "line", "l
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Keltner Channels indicators with with different parameters and settings are added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Keltner Channels indicators with different parameters and settings are added to different plots:
 
 ```
 // create and adjust a Keltner Channels indicator
