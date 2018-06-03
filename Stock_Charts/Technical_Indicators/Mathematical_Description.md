@@ -52,7 +52,7 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 ## Awesome Oscillator
 
-[Awesome Oscillator](Awsome_Oscillator) is calculated according to the following formula:
+[Awesome Oscillator](Awesome_Oscillator) is calculated according to the following formula:
 
 <center><img src="" width="500"></center>
 
