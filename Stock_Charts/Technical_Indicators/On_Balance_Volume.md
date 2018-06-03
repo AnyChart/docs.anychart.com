@@ -46,6 +46,8 @@ There are two parameters an On Balance Volume indicator has, one of them is nece
 var obv = plot.obv(mapping, "line");
 ```
 
+The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
+
 ## Visualization
 
 Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where On Balance Volume indicators with with different parameters and settings are added to different plots:
