@@ -6,7 +6,7 @@ A Simple Moving Average (SMA) is the unweighted mean of the previous n data poin
 
 AnyChart Stock allows you to add SMA with desired period to any of your charts.
 
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description#heikin-ashi).
 
 ## Adding indicator
 
