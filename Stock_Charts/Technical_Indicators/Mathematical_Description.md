@@ -228,7 +228,7 @@ Coming soon.
 
 ## On Balance Volume
 
-[On Balance Volume](On_Balance_Volume) indicator is calculated according to the following rules:
+[On Balance Volume](On_Balance_Volume_\(OBV\)) indicator is calculated according to the following rules:
 
 * If the closing price is above the prior close price, then:
 
@@ -327,8 +327,7 @@ where p2 is the second period that is set through the {api:anychart.core.stock.P
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-## Triple Exponential Moving Average (TRIX)
-
+## Triple Exponential Moving Average
 [Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
 
 <center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>

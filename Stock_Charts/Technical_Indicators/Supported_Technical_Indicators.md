@@ -72,7 +72,7 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_\(MACD\))</td>
 		</tr>		
 		<tr>
-			<td>[On Balance Volume](On_Balance_Volume)</td>
+			<td>[On Balance Volume (OBV)](On_Balance_Volume_\(OBV\))</td>
 		</tr>
 		<tr>
 			<td>[Parabolic SAR (PSAR)](Parabolic_SAR_\(PSAR\))</td>

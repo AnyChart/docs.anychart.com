@@ -1,15 +1,14 @@
-# On Balance Volume
+# On Balance Volume (OBV)
+
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+On Balance Volume (OBV) measures buying and selling pressure as a cumulative indicator that adds volume on up days and subtracts volume on down days. OBV was developed by Joe Granville and introduced in his 1963 book, Granville's New Key to Stock Market Profits. It was one of the first indicators to measure positive and negative volume flow. Chartists can look for divergences between OBV and price to predict price movements or use OBV to confirm price trends.
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
-
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Mathematical description of the indicator: [On Balance Volume Mathematical Description]](Mathematical_Description#on_balance_volume).
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+On Balance Volume indicator is added using {api:anychart.core.stock.Plot#obv}obv(){api} method. It requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
 
 ```
 // create data table on loaded data
@@ -37,22 +36,21 @@ var obv = plot_1.obv(mapping);
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_OBV\_1{sample}
+{sample}STOCK\_Technical\_Indicators\_Keltner\_Channels\_1{sample}
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are two parameters an On Balance Volume indicator has, one of them is necessary – the mapping. The second parameter sets the series type. The following code sample demonstrates an OBV indicator with parameters set as default:
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var obv = plot.obv(mapping, "line");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where On Balance Volume indicators with with different parameters and settings are added to different plots:
 
 ```
-// create and adjust an On Balance Volume indicator
 var obv_1 = plot_1.obv(mapping, "area").series();
 obv_1.stroke("0.5 gray");
 obv_1.fill("#ffd54f");
@@ -64,4 +62,4 @@ obv_2.stroke("2 #ff6d00");
 
 Live sample:
 
-{sample}STOCK\_Technical\_Indicators\_OBV\_2{sample}
+{sample}STOCK\_Technical\_Indicators\_Keltner\_Channels\_2{sample}

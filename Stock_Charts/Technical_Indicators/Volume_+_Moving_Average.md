@@ -2,15 +2,13 @@
 
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+A Volume + Moving Average indicator is used in charts and technical analysis. It refers to the average volume of a security, commodity, or index constructed in a period as short as a few minutes or as long as several years and showing trends for the latest interval.
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
-
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Mathematical description of the indicator: [Volume + Moving Average Mathematical Description](Mathematical_Description#volume_+_moving_average).
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+Volume + MA indicator is added using {api:anychart.core.stock.Plot#volumema}volumema(){api} method. t requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"volume"`.
 
 ```
 // create data table on loaded data
@@ -42,15 +40,19 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are five parameters Volume + MA indicator has, one of them is necessary – the mapping.
+
+The next two parameters, `maPeriod` and `"maType"`, set the period and type of the Moving Average. The last two, `volumeSeriesType` and `maSeriesType`, allow you to set the Volume and MA series types.
+
+The following code sample demonstrates a Volume + MA indicator with parameters set as default:
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var sma10 = plot.sma(mapping, 20, "sma", "stick", "line");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Volume + MA indicators with different parameters and settings are added to different plots:
 
 ```
 // create and adjust a Volume + MA indicator

@@ -2,15 +2,15 @@
 
 ## Overview
 
-A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
+Keltner Channels are volatility-based envelopes set above and below an exponential moving average (EMA).
 
-AnyChart Stock allows you to add SMA with desired period to any of your charts.
+This indicator is similar to [Bollinger Bands](Bollinger_Bands), which uses the standard deviation to set the bands. Instead of using the standard deviation, Keltner Channels use the [Average True Range (ATR)](Average_True_Range) to set the channel distance. The channels are typically set two Average True Range values above and below the 20-day [EMA(Exponential_Moving_Average). The exponential moving average dictates  thedirection, and the Average True Range sets the channel width. Keltner Channels are a trend following indicator used to identify reversals with channel breakouts and channel direction. Channels can also be used to identify overbought and oversold levels when the trend is flat.
 
-Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
+Mathematical description of the indicator: [Keltner Channels Mathematical Description]](Mathematical_Description#keltner_channels).
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
+Keltner Channels indicator is added using {api:anychart.core.stock.Plot#keltnerChannels}keltnerChannels(){api} method. It requires a mapping with five fields: `"open"`, `"high"`, `"low"`, `"close"`, and `"value"`.
 
 ```
 // create data table on loaded data
@@ -39,22 +39,32 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
+There are eight parameters a Keltner Channel indicator has, one of them is necessary – the mapping.
+
+The `maPeriod`, `atrPeriod` parameters set the Moving Average period and Average True Range period. The `maType` parameter sets the soothing type (`"ema"` by default), the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average, the upper series, and the lower series.
+
+The following code sample demonstrates a Keltner Channels indicator with parameters set as default:
 
 ```
-var sma10 = plot.sma(mapping, 10, "column");
+var keltnerChannels = plot.keltnerChannels(mapping, 20, 10, "ema", 2, "line", "line", "line");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Keltner Channels indicators with with different parameters and settings are added to different plots:
 
 ```
 // create and adjust a Keltner Channels indicator
-var keltnerChannels = plot.keltnerChannels(mapping, 10, 15, "sma", 4, "stepLine", "stepLine", "stepLine");
-keltnerChannels.lowerSeries().stroke("#dd2c00");
-keltnerChannels.upperSeries().stroke("#00bfa5");
-keltnerChannels.maSeries().stroke("#455a64");
+var keltnerChannels_0 = plot_0.keltnerChannels(mapping, 10, 15, "sma", 4, "line", "line", "line");
+keltnerChannels_0.lowerSeries().stroke("2 #00bfa5");
+keltnerChannels_0.upperSeries().stroke("2 #dd2c00");
+keltnerChannels_0.maSeries().stroke("2 #ef6c00");
+
+// create and adjust a Keltner Channels indicator
+var keltnerChannels_1 = plot_1.keltnerChannels(mapping, 10, 15, "sma", 4, "stepLine", "stepLine", "stepLine");
+keltnerChannels_1.lowerSeries().stroke("2 #00bfa5");
+keltnerChannels_1.upperSeries().stroke("2 #dd2c00");
+keltnerChannels_1.maSeries().stroke("2 #64b5f6");
 ```
 
 Live sample:
