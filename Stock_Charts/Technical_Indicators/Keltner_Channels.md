@@ -41,7 +41,7 @@ Here is a live sample:
 
 There are eight parameters a Keltner Channel indicator has, one of them is necessary – the mapping.
 
-The `maPeriod`, `atrPeriod` parameters set the Moving Average period and Average True Range period. The `maType` parameter sets the soothing type (`"ema"` by default), the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average, the upper series, and the lower series.
+The `maPeriod`, `atrPeriod` parameters set the Moving Average period and Average True Range period. The `maType` parameter sets the soothing type, the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average, the upper series, and the lower series.
 
 The following code sample demonstrates a Keltner Channels indicator with parameters set as default:
 
