@@ -42,7 +42,7 @@ Here is a live sample:
 
 There are five parameters Volume + MA indicator has, one of them is necessary – the mapping.
 
-The next two parameters, `maPeriod` and `"maType"`, set the period and type of the Moving Average. The last two, `volumeSeriesType` and `maSeriesType`, allow you to set the Volume and MA series types.
+The next two parameters, "maPeriod" and "maType", set the period and type of the Moving Average. The last two, "volumeSeriesType" and "maSeriesType", allow you to set the Volume and MA series types.
 
 The following code sample demonstrates a Volume + MA indicator with parameters set as default:
 

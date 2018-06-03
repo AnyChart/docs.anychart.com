@@ -44,7 +44,7 @@ Here is a live sample:
 
 There are seven parameters a TRIX Channel indicator has, one of them is necessary – the mapping.
 
-The next two parameters, `period` and `"signalPeriod"`, set the TRIX and signal periods. The `maType` and `signal maType` parameters set the soothing types of the indicator and the signal. Finally, the last two allow you to set the seires type of both the indicator and the signal.
+The next two parameters, "period" and "signalPeriod", set the TRIX and signal periods. The "maType" and "signalMaType" parameters set the soothing types of the indicator and the signal. Finally, the last two allow you to set the seires type of both the indicator and the signal.
 
 The following code sample demonstrates a TRIX indicator with parameters set as default:
 

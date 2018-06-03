@@ -56,6 +56,7 @@ var bbands = plot.bbands(mapping, 10, 3, "spline", "spline", "spline");
 bbands.upperSeries().stroke('#bf360c');
 bbands.middleSeries().stroke('#ff6600');
 bbands.lowerSeries().stroke('#bf360c');
+bbands.rangeSeries().fill('#ffd54f 0.2');
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);

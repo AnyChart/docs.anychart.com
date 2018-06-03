@@ -59,6 +59,7 @@ plot_1.height('25%');
 aroon25 = plot_1.aroon(mapping, 25, "step-line", "step-line");
 aroon25.upSeries().stroke('#bf360c');
 aroon25.downSeries().stroke('#ff6d00');
+aroon25.rangeSeries().fill('#ffd54f 0.2');
 
 // create third plot on the chart
 var plot_2 = chart.plot(2);
@@ -70,7 +71,8 @@ aroon30.period(30);
 aroon30.upSeries().seriesType("spline");
 aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
 aroon30.downSeries().seriesType("spline");        
-aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');              
+aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');   
+aroon30.rangeSeries().fill(null);           
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);

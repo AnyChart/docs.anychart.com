@@ -49,6 +49,7 @@ var bbands = plot.bbands(mapping);
 bbands.upperSeries().stroke('#bf360c');
 bbands.middleSeries().stroke('#ff6600');
 bbands.lowerSeries().stroke('#bf360c');
+bbands.rangeSeries().fill('#ffd54f 0.2');
 ```
 
 Live sample:
