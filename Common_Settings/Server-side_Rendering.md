@@ -8,14 +8,72 @@ AnyChart Export server is also used to provide Export chart to CSV, Excel, JSON 
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files, using [Apache Batik](https://xmlgraphics.apache.org/batik/). Export to Excel uses [Apache POI](https://poi.apache.org/).
-Exporting to CSV, JSON and XML doesn't require PhantomJS, server serves only as an intermediary to allow file to be saved using a browser.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files. If you need to take a screenshot of a page in the Internet or in a local HTML file, you can just use Chrome or Firefox in headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON and XML doesn't require PhantomJS, the server serves only as an intermediary to allow file to be saved using a browser.
 AnyChart Export Server itself is a jar-file that runs using Java so it works Windows, Linux, MacOS or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
-* Install PhantomJS: instructions and downloads at [http://phantomjs.org/](http://phantomjs.org/))
-* Install Java: version above 6.0 - [https://java.com/en/download/](https://java.com/en/download/) )
+1. Install PhantomJS, Firefox or Chrome/Chromium. Use instructions and downloads given below:
+* download PhantomJS from the [official site](http://phantomjs.org/) and make sure PhantomJS binary is in your PATH;
+* install Firefox browser (version 56.0 and above) or install `geckodriver`:
+  * `brew install geckodriver` for Mac users
+  * or download it from the [official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH;
+* install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
+  * `brew install chromedriver` for Mac users
+  * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH;
+* Install Java: version above 6, 7, 8 - [https://java.com/en/download/](https://java.com/en/download/) )
 * Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar)
+
+## How to Set the Path to PhantomJS
+As it was mentioned before, export server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
+
+```
+java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
+```
+
+## How to Set the Path to Export Server 
+If you have decided to use your own server, use the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
+
+```
+anychart.exports.server("http://localhost:2000");
+```
+## Common Arguments
+
+Before you choose the mode in what you will use Export Server (command line or web server), check the commands below. They will work fine in both modes:
+
+<table width="490" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th width="190">**Name**</th>
+<th width="190">**Short name**</th>
+<th width="100">**Options**</th>
+<th width="200">**Description**</th>
+</tr>
+<tr>
+<td>--config PATH</td>
+<td>-C</td>
+<td></td>
+<td>Path to config</td>
+</tr>
+<tr>
+<td>--engine BROWSER</td>
+<td>-e</td>
+<td></td>
+<td>Headless browser: phantom, chrome or firefox</td>
+</tr>
+<tr>
+<td>--help</td>
+<td>-h</td>
+<td></td>
+<td>Print help</td>
+</tr>
+<tr>
+<td>--version</td>
+<td>-v</td>
+<td></td>
+<td>Print version, can be used without action</td>
+</tr>
+</tbody>
+</table>
 
 ## Command Line Usage
 
@@ -31,101 +89,135 @@ Full list of the parameters available:
 <tbody>
 <tr>
 <th width="190">**Name**</th>
+<th width="190">**Short name**</th>
 <th width="100">**Options**</th>
 <th width="200">**Description**</th>
 </tr>
 <tr>
-<td>--help</td>
-<td></td>
-<td>Shows help</td>
-</tr>
-<tr>
 <td>--script</td>
+<td>-s</td>
 <td></td>
 <td>The chart code</td>
 </tr>
 <tr>
 <td>--input-file</td>
+<td>-i</td>
 <td></td>
 <td>Set the path to the file with the chart code (script)</td>
 </tr>
 <tr>
+<td>--svg SVG</td>
+<td></td>
+<td></td>
+<td>SVG string to Execute</td>
+</tr>
+<tr>
+<td>--svg-file SVG_FILE</td>
+<td></td>
+<td></td>
+<td>SVG file to Execute</td>
+</tr>
+<tr>
+<td>--html-file HTML_FILE</td>
+<td></td>
+<td></td>
+<td>HTML page file to Execute (consider using just Chrome or Firefox binary in headless mode instead of it)</td>
+</tr>
+<tr>
 <td>--output-file</td>
+<td>-o</td>
 <td></td>
 <td>Name for the output file (e.g.: "Chart_1" or "Chart_0.png")</td>
 </tr>
 <tr>
 <td>--output-path</td>
+<td>-p</td>
 <td></td>
 <td>Set the path for the folder where the chart will be saved</td>
 </tr>
 <tr>
 <td>--type</td>
+<td>-t</td>
 <td>svg, png, jpg, pdf, csv, xlsx, xml, json</td>
 <td>The file type</td>
 </tr>
 <tr>
 <td>--container-id</td>
+<td>-c</td>
 <td></td>
 <td>The id for the container which will be generated in PhantomJS for the chart</td>
 </tr>
 <tr>
 <td>--container-width</td>
+<td>-W</td>
 <td></td>
 <td>The container width. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
 <td>--container-height</td>
+<td>-L</td>
 <td></td>
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
+<tr>Export Images Args</tr>
 <tr>
 <td>--image-width</td>
+<td>-w</td>
 <td></td>
-<td>The image width. Doesn't work for \*.pdf</td>
+<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up. Container-width will be used instead.</td>
 </tr>
 <tr>
 <td>--image-height</td>
+<td>-l</td>
 <td></td>
-<td>The image height. Doesn't work for \*.pdf</td>
+<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up. Container-height will be used instead.</td>
 </tr>
 <tr>
 <td>--force-transparent-white</td>
+<td>-f</td>
 <td></td>
 <td>If the chart's background is originally transparent - makes it white</td>
 </tr>
 <tr>
 <td>--jpg-quality</td>
+<td>-q</td>
 <td>from 0 to 1</td>
 <td>The image quality</td>
 </tr>
+<tr>Export PDF Args</tr>
 <tr>
 <td>--pdf-size</td>
+<td>-S</td>
 <td></td>
 <td>Define the \*.pdf document paper size</td>
 </tr>
 <tr>
 <td>--pdf-x</td>
+<td>-x</td>
 <td></td>
 <td>X-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-y</td>
+<td>-y</td>
 <td></td>
 <td>Y-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-width</td>
+<td>-X</td>
 <td></td>
 <td>\*.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-height</td>
+<td>-Y</td>
 <td></td>
 <td>\*.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-landscape</td>
+<td>-O</td>
 <td>Portrait or Landscape</td>
 <td>The \*.pdf document layout</td>
 </tr>
@@ -207,19 +299,6 @@ Optional request parameters:
 * pdf-height -  pdf height
 * landscape - the document orientation
 
-## How to Set the Path to PhantomJS
-As it was mentioned before, export server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
-
-```
-java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
-```
-
-## How to Set the Path to Export Server 
-If you have decided to use your own server, use the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
-
-```
-anychart.exports.server("http://localhost:2000");
-```
 
 ## Contribution 
 
