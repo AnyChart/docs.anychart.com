@@ -57,7 +57,7 @@ Before you choose the mode in what you will use Export Server (command line or w
 <tr>
 <td>--engine BROWSER</td>
 <td>-e</td>
-<td>Phantom, chrome or firefox</td>
+<td>phantom, chrome or firefox</td>
 <td>Headless browser</td>
 </tr>
 <tr>
@@ -495,7 +495,7 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <td>data-type</td>
 <td>required</td>
 <td>-</td>
-<td>a field that contains the information about the data, it might be "script" or "SVG"</td>
+<td>a field that contains the information about the data, it might be "script" or "svg"</td>
 </tr>
 <tr>
 <td>response-type</td>
