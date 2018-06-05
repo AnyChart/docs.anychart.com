@@ -2,14 +2,14 @@
 
 ## Overview
 
-Server-side rendering is a tool that helps a lot in some cases: for example, when you've got an automated email system, and you need to include charts in letters; when you need charts in reports, which are generated on servers; when you need to show the charts on a Smart TV with a stripped version of a browser; etc. In such cases we offer you to use AnyChart Export Server.
+Server-side rendering is a tool that helps a lot in some cases: for example, when you've got an automated email system, and you need to include charts in letters; when you need charts in reports, which are generated on servers; when you need to show the charts on a Smart TV with a stripped version of a browser; etc. In such cases, we offer you to use AnyChart Export Server.
 
-AnyChart Export server is also used to provide Export chart to CSV, Excel, JSON and XML options.
+AnyChart Export server is also used to provide exporting chart to CSV, Excel, JSON, and XML.
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files. If you need to take a screenshot of a page in the Internet or in a local HTML file, you can just use Chrome or Firefox in headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON and XML doesn't require PhantomJS, the server serves only as an intermediary to allow file to be saved using a browser.
-AnyChart Export Server itself is a jar-file that runs using Java so it works Windows, Linux, MacOS or any other OS where Java is available.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files. If you need to take a screenshot of a page on the Internet or in a local HTML file, you can just use Chrome or Firefox in headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON and XML doesn't require PhantomJS, the server serves only as an intermediary to allow the file to be saved using a browser.
+AnyChart Export Server itself is a jar-file that runs using Java so it works on Windows, Linux, MacOS or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
 1. Install PhantomJS, Firefox or Chrome/Chromium. Use instructions and downloads given below:
@@ -160,7 +160,7 @@ Full list of the parameters available:
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
-<td>Export Images Args</td>
+<th>Export Images Args</th>
 </tr>
 <tr>
 <td>--image-width</td>
@@ -187,7 +187,7 @@ Full list of the parameters available:
 <td>The image quality</td>
 </tr>
 <tr>
-<td>Export PDF Args</td>
+<th>Export PDF Args</th>
 </tr>
 <tr>
 <td>--pdf-size</td>
@@ -230,10 +230,10 @@ Full list of the parameters available:
 
 ## Web Server Usage 
 
-AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default AnyChart component uses server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability.
-If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default, AnyChart component uses server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability.
+If you want to have full control over the ability of the component to export images or just don't want to use AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 
-To run Export server in server mode set `server` as the first parameter. Host and port parameters are optional.
+To run the Export server in server mode set `server` as the first parameter. Host and port parameters are optional.
 The usual HTTP web server is run, it receives POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
 
 *When you stop the server, you must stop the PhantomJS process too.*
@@ -279,10 +279,10 @@ Full list of the server parameters that can be set:
 <td>--allow-scripts-executing</td>
 <td></td>
 <td>y (yes), n (no)</td>
-<td>A boolean parameter. Allows to execute violent scripts in phantom js. If set in Y (e.g., as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default.</td>
+<td>A boolean parameter. Allows executing violent scripts in phantom js. If set in Y (e.g., as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default.</td>
 </tr>
 <tr>
-<td>Saving images or pdf files to a folder</td> 
+<th>Saving images or pdf files to a folder</th>
 </tr>
 <tr>
 <td>--saving-folder PATH</td>
@@ -297,7 +297,7 @@ Full list of the server parameters that can be set:
 <td>URL prefix will be returned to request</td>
 </tr>
 <tr>
-<td>Sharing</td>
+<th>Sharing</th>
 </tr>
 <tr>
 <td>--sharing-port PORT</td>
@@ -324,7 +324,7 @@ Full list of the server parameters that can be set:
 <td>Sharing mysql database password</td>
 </tr>
 <tr>
-<td>Twitter</td>
+<th>Twitter</th>
 </tr>
 <tr>
 <td>--twitter-key KEY</td>
@@ -352,22 +352,22 @@ The AnyChart Export Server provides an ability to share chart images in social n
 LinkedIn, Pinterest and Twitter.
 When you use the Export Server on your own server and you want the sharing to work properly, you should
 set up `--saving-folder` and `--saving-prefix`. The first parameter is the path to the folder where images will be
-stored. The second parameter is the URL prefix which will be concatenated with a shared image name and returned to user.
+stored. The second parameter is the URL prefix which will be concatenated with a shared image name and returned to a user.
 You should provide the access to shared image through that URL by setting up Nginx, for example.
 
-### Sharing on Facebook, LinkedIn and Pinterest
-Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images.
-Mentioned social networks get the prepared picture via the link and just allow a user to post it on the page.
+### Sharing on Facebook, LinkedIn, and Pinterest
+Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images. 
+Mentioned social networks get the prepared picture via the link and just allow the user to post it on the page.
 
 ### Sharing on Twitter
 Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up
 and uses three types of requests.
 
 #### `/sharing/twitter` 
-First of all, user sends a request to `/sharing/twitter` that contains SVG or script 
+First of all, the user sends a request to `/sharing/twitter` that contains SVG or script 
 from which the image will be generated and posted on the page - 
 the request should contain the same parameters as a request to `/png` URL does.
-There are two options here: a user is authorized in the AnyChart Twitter application or not.
+There are two options here: the user is authorized in the AnyChart Twitter application or not.
 
 If the user isn't authorized, the Twitter Authorization dialog will be displayed. The user should confirm that he
 gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth`
@@ -664,4 +664,4 @@ It should be noted here that if the same parameters set both in the config file 
 
 ## Contribution 
 
-If you've got any suggestions or ideas about export server work and improvements, welcome to our [open repository on github](https://github.com/AnyChart/export-server).
+If you've got any suggestions or ideas about export server work and improvements, welcome to our [open repository on GitHub](https://github.com/AnyChart/export-server).
