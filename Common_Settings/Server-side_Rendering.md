@@ -4,7 +4,7 @@
 
 Server-side rendering is a tool that helps a lot in some cases: for example, when you've got an automated email system, and you need to include charts in letters; when you need charts in reports, which are generated on servers; when you need to show the charts on a Smart TV with a stripped version of a browser; etc. In such cases, we offer you to use AnyChart Export Server.
 
-AnyChart Export server is also used to provide exporting chart to CSV, Excel, JSON, and XML.
+AnyChart Export server is also used to provide chart export to PNG, JPG, PDF, SVG, CSV, Excel, JSON, and XML.
 
 ## Environment
 
@@ -375,12 +375,9 @@ callback.
 
 #### `/sharing/twitter_oauth`
 This request accepts `oauth_token` and `oauth_verifier` parameters, you can read about [OAuth here](https://en.wikipedia.org/wiki/OAuth).
-In the handler of `/sharing/twitter_oauth` request the Export Server gets such params as oauth_token,
-oauth_token_secret, user_id, screen_name, image_url (user picture) and user_name and saves them to MySQL database.
-After that, the dialog window of posting images will be displayed.
+In the handler of /sharing/twitter_oauth request, the Export Server gets such params as oauth_token, oauth_token_secret, user_id, screen_name, image_url (user picture) and user_name and saves them to the MySQL database. After that, the dialog window of posting images will be displayed.
 
-If a user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms
-to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm `.
+If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm `.
 
 #### `/sharing/twitter_confirm`
 This request should contain Twitter `message` parameter only - a string of no more than 140 characters.
@@ -402,7 +399,7 @@ anychart.exports.twitter(
     "500"
 );
 ```
-For more details you may checkout AnyChart API for sharing [here](http://api.anychart.com/anychart.exports).
+For more details check out AnyChart API for sharing [here](http://api.anychart.com/anychart.exports).
 
 ## Requests 
 
@@ -492,13 +489,13 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <td>data</td>
 <td>required</td>
 <td>-</td>
-<td>script or svg that should be transformed into a picture</td>
+<td>script or SVG that should be transformed into a picture</td>
 </tr>
 <tr>
 <td>data-type</td>
 <td>required</td>
 <td>-</td>
-<td>a field that contains the information about the data, it might be "script" or "svg"</td>
+<td>a field that contains the information about the data, it might be "script" or "SVG"</td>
 </tr>
 <tr>
 <td>response-type</td>
