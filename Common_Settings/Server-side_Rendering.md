@@ -57,8 +57,8 @@ Before you choose the mode in what you will use Export Server (command line or w
 <tr>
 <td>--engine BROWSER</td>
 <td>-e</td>
-<td></td>
-<td>Headless browser: phantom, chrome or firefox</td>
+<td>Phantom, chrome or firefox</td>
+<td>Headless browser</td>
 </tr>
 <tr>
 <td>--help</td>
