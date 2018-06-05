@@ -20,8 +20,8 @@ To run the AnyChart Export Server, do the following:
 * install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
   * `brew install chromedriver` for Mac users
   * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH;
-* Install Java: version above 6, 7, 8 - [https://java.com/en/download/](https://java.com/en/download/) )
-* Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar)
+2. Install Java: version above 6, 7, 8 - [https://java.com/en/download/](https://java.com/en/download/) )
+3. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar)
 
 ## How to Set the Path to PhantomJS
 As it was mentioned before, export server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
@@ -43,9 +43,9 @@ Before you choose the mode in what you will use Export Server (command line or w
 <table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="190">**Name**</th>
-<th width="190">**Short name**</th>
-<th width="100">**Options**</th>
+<th width="160">**Name**</th>
+<th width="50">**Short name**</th>
+<th width="80">**Options**</th>
 <th width="200">**Description**</th>
 </tr>
 <tr>
@@ -88,9 +88,9 @@ Full list of the parameters available:
 <table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="190">**Name**</th>
-<th width="190">**Short name**</th>
-<th width="100">**Options**</th>
+<th width="160">**Name**</th>
+<th width="50">**Short name**</th>
+<th width="80">**Options**</th>
 <th width="200">**Description**</th>
 </tr>
 <tr>
@@ -159,7 +159,9 @@ Full list of the parameters available:
 <td></td>
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
-<tr>Export Images Args</tr>
+<tr>
+<td>Export Images Args</td>
+</tr>
 <tr>
 <td>--image-width</td>
 <td>-w</td>
@@ -184,7 +186,9 @@ Full list of the parameters available:
 <td>from 0 to 1</td>
 <td>The image quality</td>
 </tr>
-<tr>Export PDF Args</tr>
+<tr>
+<td>Export PDF Args</td>
+</tr>
 <tr>
 <td>--pdf-size</td>
 <td>-S</td>
@@ -230,7 +234,7 @@ AnyChart Export Server is also used when you use AnyChart [Export](Exports) meth
 If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 
 To run Export server in server mode set `server` as the first parameter. Host and port parameters are optional.
-The usual http web server is run, it receives POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
+The usual HTTP web server is run, it receives POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
 
 *When you stop the server, you must stop the PhantomJS process too.*
 
@@ -243,62 +247,420 @@ The sample of a command written in console:
 ```
 curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" localhost:2000/png
 ```
-Full list of server parameters that can be set:
+Full list of the server parameters that can be set:
 
 <table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="190">**Name**</th>
-<th width="100">**Options**</th>
+<th width="160">**Name**</th>
+<th width="50">**Short name**</th>
+<th width="80">**Options**</th>
 <th width="200">**Description**</th>
 </tr>
 <tr>
 <td>--host</td>
+<td>-H</td>
 <td></td>
 <td>The host where to run the server</td>
 </tr>
 <tr>
 <td>--port</td>
+<td>-P</td>
 <td></td>
 <td>The port where to run the server</td>
 </tr>
 <tr>
+<td>--log FILE</td>
+<td>-F</td>
+<td></td>
+<td>File for server logging</td>
+</tr>
+<tr>
 <td>--allow-scripts-executing</td>
+<td></td>
 <td>y (yes), n (no)</td>
-<td>A boolean parameter. If set in Y (e.g., as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
+<td>A boolean parameter. Allows to execute violent scripts in phantom js. If set in Y (e.g., as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default.</td>
+</tr>
+<tr>
+<td>Saving images or pdf files to a folder</td> 
+</tr>
+<tr>
+<td>--saving-folder PATH</td>
+<td>-z</td>
+<td></td>
+<td>Path to save images or pdf</td>
+</tr>
+<tr>
+<td>--saving-url-prefix PREFIX</td>
+<td>-Z</td>
+<td></td>
+<td>URL prefix will be returned to request</td>
+</tr>
+<tr>
+<td>Sharing</td>
+</tr>
+<tr>
+<td>--sharing-port PORT</td>
+<td></td>
+<td></td>
+<td>Sharing mysql database port</td>
+</tr>
+<tr>
+<td>--sharing-db NAME</td>
+<td></td>
+<td></td>
+<td>Sharing mysql database name</td>
+</tr>
+<tr>
+<td>--sharing-user USER</td>
+<td></td>
+<td></td>
+<td>Sharing mysql database user</td>
+</tr>
+<tr>
+<td>--sharing-password PASSWORD</td>
+<td></td>
+<td></td>
+<td>Sharing mysql database password</td>
+</tr>
+<tr>
+<td>Twitter</td>
+</tr>
+<tr>
+<td>--twitter-key KEY</td>
+<td></td>
+<td></td>
+<td>Twitter application key</td>
+</tr>
+<tr>
+<td>--twitter-secret SECRET</td>
+<td></td>
+<td></td>
+<td>Twitter application secret</td>
+</tr>
+<tr>
+<td>--twitter-callback</td>
+<td></td>
+<td></td>
+<td>Twitter application callback URL</td>
 </tr>
 </tbody>
 </table>
 
-There's a list of URL's which export server responds to:
-* /status
-* /png
-* /jpg
-* /pdf
-* /svg
-* /csv
-* /xlsx
-* /xml
-* /json
+## Sharing
+The AnyChart Export Server provides an ability to share chart images in social networks, such as Facebook,
+LinkedIn, Pinterest and Twitter.
+When you use the Export Server on your own server and you want the sharing to work properly, you should
+set up `--saving-folder` and `--saving-prefix`. The first parameter is the path to the folder where images will be
+stored. The second parameter is the URL prefix which will be concatenated with a shared image name and returned to user.
+You should provide the access to shared image through that URL by setting up Nginx, for example.
 
-Request parameters (required):
-* data - script or svg that should be transformed into a picture.
-* data-type - a field that contains the information about the data, it might be "script" or "svg".
-* response-type - a field that tells how to export the result (file or as base64)
+### Sharing on Facebook, LinkedIn and Pinterest
+Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images.
+Mentioned social networks get the prepared picture via the link and just allow a user to post it on the page.
 
-Optional request parameters:
-* file-name - file name
-* width - picture width
-* height - picture height 
-* quality - picture quality
-* force-transparent-white - make the background white or leave it transparent
-* pdf-size - the \*.pdf-document sheet size
-* pdf-x - x of the chart in the \*.pdf document 
-* pdf-y - y of the chart in the \*.pdf document
-* pdf-width - pdf width
-* pdf-height -  pdf height
-* landscape - the document orientation
+### Sharing on Twitter
+Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up
+and uses three types of requests.
 
+#### `/sharing/twitter` 
+First of all, user sends a request to `/sharing/twitter` that contains SVG or script 
+from which the image will be generated and posted on the page - 
+the request should contain the same parameters as a request to `/png` URL does.
+There are two options here: a user is authorized in the AnyChart Twitter application or not.
+
+If the user isn't authorized, the Twitter Authorization dialog will be displayed. The user should confirm that he
+gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth`
+callback.
+
+#### `/sharing/twitter_oauth`
+This request accepts `oauth_token` and `oauth_verifier` parameters, you can read about [OAuth here](https://en.wikipedia.org/wiki/OAuth).
+In the handler of `/sharing/twitter_oauth` request the Export Server gets such params as oauth_token,
+oauth_token_secret, user_id, screen_name, image_url (user picture) and user_name and saves them to MySQL database.
+After that, the dialog window of posting images will be displayed.
+
+If a user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms
+to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm `.
+
+#### `/sharing/twitter_confirm`
+This request should contain Twitter `message` parameter only - a string of no more than 140 characters.
+In the handler of `/sharing/twitter_confirm` request, the Export Server uploads the shared image with Twitter API and
+posts a new tweet with that image.
+
+Nota bene, the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export server,
+which means you don't need to send anything by yourself there.
+
+If you want Twitter sharing to work through your server, you should:
+1. create your own Twitter App and provide `twitter_key`, `twitter_secret` and `twitter_callback` 
+(last path of which is always `/sharing/twitter_oauth`) to the Export Server. 
+2. setup a MySQL database for Twitter sharing using [SQL scheme](https://github.com/AnyChart/export-server/blob/master/src/sql/scheme.sql).
+3. setup a Twitter sharing URL separately when setting the `anychart.export.server()` URL:
+```javascript
+anychart.exports.twitter(
+    "http://your.export.server.url/sharing/twitter", 
+    "1000",    
+    "500"
+);
+```
+For more details you may checkout AnyChart API for sharing [here](http://api.anychart.com/anychart.exports).
+
+## Requests 
+
+AnyChart Export Server supports the following requests:
+
+<table width="490" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th width="190">**URL**</th>
+<th width="100">**Type**</th>
+<th width="200">**Description**</th>
+</tr>
+<tr>
+<td>/status</td>
+<td>GET or POST</td>
+<td>Server status</td>
+</tr>
+<tr>
+<td>/png</td>
+<td>POST</td>
+<td>Export to PNG</td>
+</tr>
+<tr>
+<td>/jpg</td>
+<td>POST</td>
+<td>Export to JPG</td>
+</tr>
+<tr>
+<td>/svg</td>
+<td>POST</td>
+<td>Export to SVG</td>
+</tr>
+<tr>
+<td>/pdf</td>
+<td>POST</td>
+<td>Export to PDF</td>
+</tr>
+<tr>
+<td>/xml</td>
+<td>POST</td>
+<td>Export to XML</td>
+</tr>
+<tr>
+<td>/json</td>
+<td>POST</td>
+<td>Export to JSON</td>
+</tr>
+<tr>
+<td>/csv</td>
+<td>POST</td>
+<td>Export to CSV</td>
+</tr>
+<tr>
+<td>/xlsx</td>
+<td>POST</td>
+<td>Export to XLSX</td>
+</tr>
+<tr>
+<td>/sharing/twitter</td>
+<td>POST</td>
+<td>Twitter Sharing request</td>
+</tr>
+<tr>
+<td>/sharing/twitter_oauth</td>
+<td>GET</td>
+<td>Twitter Sharing OAuth callback</td>
+</tr>
+<tr>
+<td>/sharing/twitter_confirm</td>
+<td>POST</td>
+<td>Twitter Sharing posting confirmation</td>
+</tr>
+</tbody>
+</table>
+
+Typical Export and Twitter Sharing request contains the params listed below:
+
+<table width="490" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th width="160">**Parameter**</th>
+<th width="50">**Type**</th>
+<th width="80">**Default**</th>
+<th width="200">**Description**</th>
+</tr>
+<tr>
+<td>data</td>
+<td>required</td>
+<td>-</td>
+<td>script or svg that should be transformed into a picture</td>
+</tr>
+<tr>
+<td>data-type</td>
+<td>required</td>
+<td>-</td>
+<td>a field that contains the information about the data, it might be "script" or "svg"</td>
+</tr>
+<tr>
+<td>response-type</td>
+<td>required</td>
+<td>-</td>
+<td>a field that tells how to export the result (file or as base64)</td>
+</tr>
+<tr>
+<td>file-name</td>
+<td>optional</td>
+<td>anychart</td>
+<td>file name</td>
+</tr>
+<tr>
+<td>save</td>
+<td>optional</td>
+<td>-</td>
+<td>if it presents, request returns URL of a saved image</td>
+</tr>
+<tr>
+<td>container-id</td>
+<td>optional</td>
+<td>container</td>
+<td>div container id</td>
+</tr>
+<tr>
+<td>container-width</td>
+<td>optional</td>
+<td>100%</td>
+<td>div container width</td>
+</tr>
+<tr>
+<td>container-height</td>
+<td>optional</td>
+<td>100%</td>
+<td>div container height</td>
+</tr>
+<tr>
+<td>width</td>
+<td>optional</td>
+<td>1024</td>
+<td>image width</td>
+</tr>
+<tr>
+<td>height</td>
+<td>optional</td>
+<td>800</td>
+<td>image height</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>optional</td>
+<td>1</td>
+<td>picture quality</td>
+</tr>
+<tr>
+<td>force-transparent-white</td>
+<td>optional</td>
+<td>false</td>
+<td>make the background white or leave it transparent</td>
+</tr>
+<tr>
+<td>pdf-size</td>
+<td>optional</td>
+<td>-</td>
+<td>the *.pdf-document sheet size</td>
+</tr>
+<tr>
+<td>pdf-x</td>
+<td>optional</td>
+<td>0</td>
+<td>x of the chart in the *.pdf document</td>
+</tr>
+<tr>
+<td>pdf-y</td>
+<td>optional</td>
+<td>0</td>
+<td>y of the chart in the *.pdf document</td>
+</tr>
+<tr>
+<td>pdf-width</td>
+<td>optional</td>
+<td>595</td>
+<td>pdf width</td>
+</tr>
+<tr>
+<td>pdf-height</td>
+<td>optional</td>
+<td>842</td>
+<td>pdf height</td>
+</tr>
+<tr>
+<td>landscape</td>
+<td>optional</td>
+<td>false</td>
+<td>the document orientation</td>
+</tr>
+</tbody>
+</table>
+
+## Config file format
+
+AnyChart Export Server provides an ability to pass all parameters within a config file using [TOML](https://github.com/toml-lang/toml) format:
+
+```
+# can be "server" or "cmd"
+mode = "server"
+engine = "firefox"
+
+[server]
+port = 80
+host = "0.0.0.0"
+allow-scripts-executing = false
+log = "/path/to/log/file"
+
+[server.images]
+# folder to save images
+folder = "/export-server/shared"
+# prefix which will be returned when saving image
+prefix = "http://static.example.com/shared/"
+
+[server.sharing]
+# MySQL settings
+port = 3306
+db = "shared_db"
+user = "export_server_user"
+password = "export_server_password"
+
+[server.sharing.twitter]
+# settings from twitter app settings for sharing in Twitter
+key = "key"
+secret = "secret"
+callback = "http://example.com/sharing/twitter_oauth"
+
+[cmd] 
+# here you can pass cmd options for mode = "cmd"
+script = "var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" 
+output-file = "anychart"
+output-path = ""
+container-width = "1024px"
+container-height = "800px"
+container-id = "container"
+input-file = "file.name"
+type = "png"
+image-width = 1024
+image-height = 800
+force-transparent-white = false
+pdf-size = "a4"
+pdf-x = 0
+pdf-y = 0
+pdf-width  = 500
+pdf-height = 500
+jpg-quality = 1
+```
+
+You can pass a config file witn `-C` option, e.g.
+
+```
+java -jar export-server.jar -C settings.toml
+ ```
+ 
+It should be noted here that if the same parameters set both in the config file and in the command line, the former will be ignored because command line has a higher priority.
 
 ## Contribution 
 
