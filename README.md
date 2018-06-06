@@ -1,4 +1,4 @@
-# AnyChart Documentation
+# AnyChart Documentation 
 ### Overview
 
 The AnyChart Technical Documentation Team welcomes you!
