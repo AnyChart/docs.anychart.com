@@ -2,17 +2,17 @@
 
 ## Overview
 
-Server-side rendering is a tool that helps a lot in some cases: for example, when you've got an automated email system, and you need to include charts in letters; when you need charts in reports, which are generated on servers; when you need to show the charts on a Smart TV with a stripped version of a browser; etc. In such cases, we offer you to use AnyChart Export Server.
+Server-side rendering is a tool that is very helpful in some cases: for example, when you have got an automated email system, and you need to include charts in letters; when you need charts in reports that are generated on servers; when you need to show charts on a Smart TV with a stripped version of a browser; etc. In such cases, we suggest that you use AnyChart Export Server.
 
-AnyChart Export server is also used to provide chart export to PNG, JPG, PDF, SVG, CSV, Excel, JSON, and XML.
+AnyChart Export Server is also used to provide chart export to PNG, JPG, PDF, SVG, CSV, Excel, JSON, and XML.
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files. If you need to take a screenshot of a page on the Internet or in a local HTML file, you can just use Chrome or Firefox in headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON and XML doesn't require PhantomJS, the server serves only as an intermediary to allow the file to be saved using a browser.
-AnyChart Export Server itself is a jar-file that runs using Java so it works on Windows, Linux, MacOS or any other OS where Java is available.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/), which emulates a browser on the server (WebKit), runs our charts in it, gets SVG, and converts it into \*.PNG, \*.JPG, or \*.PDF files. If you need to take a screenshot of a page on the Internet or in a local HTML file, you can just use Chrome or Firefox in the headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON, and XML does not require PhantomJS: the server acts as only an intermediary allowing the file to be saved using a browser.
+AnyChart Export Server itself is a JAR file that runs using Java, so it works on Windows, Linux, MacOS, or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
-1. Install PhantomJS, Firefox or Chrome/Chromium. Use instructions and downloads given below:
+1. Install PhantomJS, Firefox, or Chrome/Chromium. Use instructions and downloads given below:
 * download PhantomJS from the [official site](http://phantomjs.org/) and make sure PhantomJS binary is in your PATH;
 * install Firefox browser (version 56.0 and above) or install `geckodriver`:
   * `brew install geckodriver` for Mac users
