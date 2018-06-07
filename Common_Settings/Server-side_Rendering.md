@@ -12,16 +12,15 @@ AnyChart Export Server uses [PhantomJS](http://phantomjs.org/), which emulates a
 AnyChart Export Server itself is a JAR file that runs using Java, so it works on Windows, Linux, MacOS, or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
-1. Install PhantomJS, Firefox, or Chrome/Chromium. Use instructions and downloads given below:
-* download PhantomJS from the [official site](http://phantomjs.org/) and make sure PhantomJS binary is in your PATH;
-* install Firefox browser (version 56.0 and above) or install `geckodriver`:
+1. Download PhantomJS from the [official site](http://phantomjs.org/) and make sure PhantomJS binary is in your PATH.
+2. Install Firefox browser (version 56.0 and above) or install `geckodriver`:
   * `brew install geckodriver` for Mac users
-  * or download it from the [official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH;
-* install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
+  * or download it from the [official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH.
+Alternatively, install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
   * `brew install chromedriver` for Mac users
-  * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH;
-2. Install Java: version above 6, 7, 8 - [https://java.com/en/download/](https://java.com/en/download/) )
-3. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar)
+  * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
+3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
+4. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
 ## How to Set the Path to PhantomJS
 As it was mentioned before, export server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
