@@ -23,21 +23,21 @@ Alternatively, install Chrome or Chromium browser (version 60.0 and above) or in
 4. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
 ## Path to PhantomJS
-As it was mentioned before, Export Server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
+As it was mentioned before, the Export Server needs PhantomJS. If its location is different from the default one, or you have got Windows OS, check the place where Phantom JS is installed and set the right path for the server:
 
 ```
 java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## Path to Export Server 
-If you have decided to use your own server, use the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
+If you use your own server, call the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
 
 ```
 anychart.exports.server("http://localhost:2000");
 ```
 ## Common Arguments
 
-Before you choose the mode in what you will use Export Server (command line or web server), check the commands below. They will work fine in both modes:
+Before you choose the mode of Export Server (command line or web server), check the commands below. They work fine in both modes:
 
 <table width="490" border="1" class="dtTABLE">
 <tbody>
