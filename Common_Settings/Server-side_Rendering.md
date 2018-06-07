@@ -22,14 +22,14 @@ Alternatively, install Chrome or Chromium browser (version 60.0 and above) or in
 3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
 4. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
-## How to Set the Path to PhantomJS
-As it was mentioned before, export server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
+## Path to PhantomJS
+As it was mentioned before, Export Server needs PhantomJS. If you have installed it somewhere different from the default or you've got Windows OS, check the place where Phantom JS is installed and set the right path for the export server. Like this:
 
 ```
 java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
-## How to Set the Path to Export Server 
+## Path to Export Server 
 If you have decided to use your own server, use the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
 
 ```
@@ -354,11 +354,11 @@ set up `--saving-folder` and `--saving-prefix`. The first parameter is the path 
 stored. The second parameter is the URL prefix which will be concatenated with a shared image name and returned to a user.
 You should provide the access to shared image through that URL by setting up Nginx, for example.
 
-### Sharing on Facebook, LinkedIn, and Pinterest
+### Facebook, LinkedIn, Pinterest
 Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images. 
 Mentioned social networks get the prepared picture via the link and just allow the user to post it on the page.
 
-### Sharing on Twitter
+### Twitter
 Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up
 and uses three types of requests.
 
@@ -595,7 +595,7 @@ Typical Export and Twitter Sharing request contains the params listed below:
 </tbody>
 </table>
 
-## Config file format
+## Config File Format
 
 AnyChart Export Server provides an ability to pass all parameters within a config file using [TOML](https://github.com/toml-lang/toml) format:
 
