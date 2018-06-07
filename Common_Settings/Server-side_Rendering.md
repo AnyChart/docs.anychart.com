@@ -153,13 +153,13 @@ Full list of the parameters available:
 <td>--container-width</td>
 <td>-W</td>
 <td></td>
-<td>The container width. The image quality will be better if the container is larger than the image</td>
+<td>The container width. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
 <td>--container-height</td>
 <td>-L</td>
 <td></td>
-<td>The container height. The image quality will be better if the container is larger than the image</td>
+<td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
 <th>Export Images Args</th>
@@ -168,13 +168,13 @@ Full list of the parameters available:
 <td>--image-width</td>
 <td>-w</td>
 <td></td>
-<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up – container-width will be used instead</td>
+<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up – container-width will be used instead.</td>
 </tr>
 <tr>
 <td>--image-height</td>
 <td>-l</td>
 <td></td>
-<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up – container-height will be used instead</td>
+<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up – container-height will be used instead.</td>
 </tr>
 <tr>
 <td>--force-transparent-white</td>
