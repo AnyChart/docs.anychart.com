@@ -213,13 +213,13 @@ Full list of the parameters available:
 <td>--pdf-width</td>
 <td>-X</td>
 <td></td>
-<td>\The *.pdf document height (in pixels)</td>
+<td>The \*.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-height</td>
 <td>-Y</td>
 <td></td>
-<td>\The *.pdf document height (in pixels)</td>
+<td>The \*.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-landscape</td>
