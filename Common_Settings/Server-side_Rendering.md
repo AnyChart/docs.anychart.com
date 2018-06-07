@@ -35,6 +35,7 @@ If you use your own server, call the {api:anychart.exports#server}anychart.expor
 ```
 anychart.exports.server("http://localhost:2000");
 ```
+
 ## Common Arguments
 
 Before you choose the mode of Export Server (command line or web server), check the commands below. They work fine in both modes:
@@ -74,14 +75,16 @@ Before you choose the mode of Export Server (command line or web server), check 
 </tbody>
 </table>
 
-## Command Line Usage
+## Command Line Mode
 
-If you want to use the AnyChart Export Server from the Command Line mode you have to set `cmd` (Command Line) as the first parameter, then define the path to the chart or insert the chart code as a string and then set the parameters of the image (dimensions, quality, extension and so on). You'll find the full list of  parameters below.
+If you want to use the AnyChart Export Server in the Command Line mode, you should set `cmd` (Command Line) as the first parameter. Then define the path to the chart or insert the chart code as a string and set the parameters of the image: dimensions, quality, extension, and so on (see the list below).
 
 Sample command line:
+
 ```
 java -jar anychart-export.jar cmd --script "var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
 ```
+
 Full list of the parameters available:
 
 <table width="490" border="1" class="dtTABLE">
@@ -120,7 +123,7 @@ Full list of the parameters available:
 <td>--html-file HTML_FILE</td>
 <td></td>
 <td></td>
-<td>HTML page file to Execute (consider using just Chrome or Firefox binary in headless mode instead of it)</td>
+<td>HTML page file to Execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
 </tr>
 <tr>
 <td>--output-file</td>
@@ -150,13 +153,13 @@ Full list of the parameters available:
 <td>--container-width</td>
 <td>-W</td>
 <td></td>
-<td>The container width. The image quality will be better if the container is larger than the image.</td>
+<td>The container width. The image quality will be better if the container is larger than the image</td>
 </tr>
 <tr>
 <td>--container-height</td>
 <td>-L</td>
 <td></td>
-<td>The container height. The image quality will be better if the container is larger than the image.</td>
+<td>The container height. The image quality will be better if the container is larger than the image</td>
 </tr>
 <tr>
 <th>Export Images Args</th>
@@ -165,19 +168,19 @@ Full list of the parameters available:
 <td>--image-width</td>
 <td>-w</td>
 <td></td>
-<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up. Container-width will be used instead.</td>
+<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up – container-width will be used instead</td>
 </tr>
 <tr>
 <td>--image-height</td>
 <td>-l</td>
 <td></td>
-<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up. Container-height will be used instead.</td>
+<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up – container-height will be used instead</td>
 </tr>
 <tr>
 <td>--force-transparent-white</td>
 <td>-f</td>
 <td></td>
-<td>If the chart's background is originally transparent - makes it white</td>
+<td>Make the chart's background white if it is originally transparent</td>
 </tr>
 <tr>
 <td>--jpg-quality</td>
@@ -198,25 +201,25 @@ Full list of the parameters available:
 <td>--pdf-x</td>
 <td>-x</td>
 <td></td>
-<td>X-coordinate of the chart in the \*.pdf document (in pixels)</td>
+<td>The X-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-y</td>
 <td>-y</td>
 <td></td>
-<td>Y-coordinate of the chart in the \*.pdf document (in pixels)</td>
+<td>The Y-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-width</td>
 <td>-X</td>
 <td></td>
-<td>\*.pdf document height (in pixels)</td>
+<td>\The *.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-height</td>
 <td>-Y</td>
 <td></td>
-<td>\*.pdf document height (in pixels)</td>
+<td>\The *.pdf document height (in pixels)</td>
 </tr>
 <tr>
 <td>--pdf-landscape</td>
@@ -227,7 +230,7 @@ Full list of the parameters available:
 </tbody>
 </table>
 
-## Web Server Usage 
+## Web Server Mode 
 
 AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default, AnyChart component uses server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability.
 If you want to have full control over the ability of the component to export images or just don't want to use AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
