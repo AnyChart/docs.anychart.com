@@ -54,7 +54,9 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 [Awesome Oscillator](Awesome_Oscillator) is calculated according to the following formula:
 
-<center><img src="" width="500"></center>
+<b>lengthAO1=input(5, minval=1) //5 periods
+lengthAO2=input(34, minval=1) //34 periods
+AO = sma((high+low)/2, lengthAO1) - sma((high+low)/2, lengthAO2)</b>b>
 
 ## Bollinger Bands
 
