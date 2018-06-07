@@ -33,18 +33,20 @@ var bbands = plot.bbands(mapping);
 
 ## Indicator parameters
 
-Bollinger Bands indicator only required parameter is "mapping". Optional parameters are: "period", "deviation", "middle", "upper" and "lower" series types.
+Bollinger Bands indicator only required parameter is "mapping". Optional parameters are: "period", "deviation", "middle", "upper" and "lower" series types. The following code sample demonstrates a Bollinger Bands indicator with parameters set as default:
 
 ```
+var bbands = plot.bbands(mapping, 20, 2, "line", "line", "line");
+```
+
+## Visualization
+
+Visualization of an indicator depends on series type. Here is a sample with an adjusted Bollinger Bands indicator:
+
+```
+// create Bollinger Bands indicator with splines
 var bbands = plot.bbands(mapping, 10, 3, "spline", "spline", "spline");
-```
 
-## Visualization using lines
-
-Visualization of an indicator depends on the type of a series you display it with. Here is a sample where all series of the Bollinger Bands indicator are colored:
-
-```
-var bbands = plot.bbands(mapping);
 // color the series
 bbands.upperSeries().stroke('#bf360c');
 bbands.middleSeries().stroke('#ff6600');
@@ -52,14 +54,4 @@ bbands.lowerSeries().stroke('#bf360c');
 bbands.rangeSeries().fill('#ffd54f 0.2');
 ```
 
-Live sample:
-
 {sample}STOCK\_Technical\_Indicators\_BBands\_02{sample}
-
-## Visualization using ranges
-
-Visualization of the Bollinger Bands indicator can be done with Range series - [Range Area](../Series/Range_Area), [Range Spline Area](../Series/Range_Spline_Area), etc. 
-
-The sample below uses Range Spline Area for the Bollinger Bands indicator visualization.
-
-{sample}STOCK\_Technical\_Indicators\_BBands\_03{sample}
