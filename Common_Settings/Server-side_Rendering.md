@@ -123,7 +123,7 @@ The full list of the parameters available:
 <td>--html-file HTML_FILE</td>
 <td></td>
 <td></td>
-<td>The HTML page file to execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
+<td>The HTML page file to Execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
 </tr>
 <tr>
 <td>--output-file</td>
@@ -566,7 +566,7 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <td>pdf-size</td>
 <td>optional</td>
 <td>-</td>
-<td>The sheet size of the \*.pdf-document</td>
+<td>The sheet size of the \*.pdf document</td>
 </tr>
 <tr>
 <td>pdf-x</td>
