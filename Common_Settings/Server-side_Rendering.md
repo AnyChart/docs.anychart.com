@@ -353,34 +353,33 @@ The full list of the server parameters that can be set:
 </table>
 
 ## Sharing
-The AnyChart Export Server provides an ability to share chart images in social networks, such as Facebook,
+AnyChart Export Server provides an ability to share chart images in social networks, such as Facebook,
 LinkedIn, Pinterest and Twitter.
-When you use the Export Server on your own server and you want the sharing to work properly, you should
+
+When you use the export server on your own server and want sharing to work properly, you should
 set up `--saving-folder` and `--saving-prefix`. The first parameter is the path to the folder where images will be
-stored. The second parameter is the URL prefix which will be concatenated with a shared image name and returned to a user.
-You should provide the access to shared image through that URL by setting up Nginx, for example.
+stored. The second parameter is the URL prefix which will be concatenated with the shared image name and returned to the user.
+You should provide the access to the shared image through that URL by setting up Nginx, for example.
 
 ### Facebook, LinkedIn, Pinterest
 Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images. 
-Mentioned social networks get the prepared picture via the link and just allow the user to post it on the page.
+These social networks get the prepared picture via the link and just allow the user to post it on the page.
 
 ### Twitter
 Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up
 and uses three types of requests.
 
 #### `/sharing/twitter` 
-First of all, the user sends a request to `/sharing/twitter` that contains SVG or script 
-from which the image will be generated and posted on the page - 
-the request should contain the same parameters as a request to `/png` URL does.
+First of all, the user sends a request to `/sharing/twitter` that contains SVG or a script generating the image and posting in on the page. The request should contain the same parameters as a request to `/png` URL does.
 There are two options here: the user is authorized in the AnyChart Twitter application or not.
 
-If the user isn't authorized, the Twitter Authorization dialog will be displayed. The user should confirm that he
-gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth`
+If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth`
 callback.
 
 #### `/sharing/twitter_oauth`
-This request accepts `oauth_token` and `oauth_verifier` parameters, you can read about [OAuth here](https://en.wikipedia.org/wiki/OAuth).
-In the handler of /sharing/twitter_oauth request, the Export Server gets such params as oauth_token, oauth_token_secret, user_id, screen_name, image_url (user picture) and user_name and saves them to the MySQL database. After that, the dialog window of posting images will be displayed.
+This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
+
+In the handler of `/sharing/twitter_oauth` request, the export server gets such params as oauth_token, oauth_token_secret, user_id, screen_name, image_url (user picture), and user_name and saves them to the MySQL database. After that, the dialog window of posting images is displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm `.
 
