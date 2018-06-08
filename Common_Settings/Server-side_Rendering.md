@@ -388,14 +388,15 @@ This request should contain only Twitter `message` parameter – a string of no 
 In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and
 posts a new tweet with that image.
 
-Nota bene, the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export server,
-which means you don't need to send anything by yourself there.
+Nota bene: the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export Server,
+which means you do not need to send anything by yourself there.
 
 If you want Twitter sharing to work through your server, you should:
-1. create your own Twitter App and provide `twitter_key`, `twitter_secret` and `twitter_callback` 
-(last path of which is always `/sharing/twitter_oauth`) to the Export Server. 
-2. setup a MySQL database for Twitter sharing using [SQL scheme](https://github.com/AnyChart/export-server/blob/master/src/sql/scheme.sql).
-3. setup a Twitter sharing URL separately when setting the `anychart.export.server()` URL:
+1. Create your own Twitter App and provide `twitter_key`, `twitter_secret` and `twitter_callback` 
+(last path of which is always `/sharing/twitter_oauth`) to the Export Server 
+2. Setup a MySQL database for Twitter sharing using [SQL scheme](https://github.com/AnyChart/export-server/blob/master/src/sql/scheme.sql)
+3. Setup a Twitter sharing URL separately when setting the `anychart.export.server()` URL:
+
 ```javascript
 anychart.exports.twitter(
     "http://your.export.server.url/sharing/twitter", 
@@ -403,7 +404,7 @@ anychart.exports.twitter(
     "500"
 );
 ```
-For more details check out AnyChart API for sharing [here](http://api.anychart.com/anychart.exports).
+For more details check out [AnyChart API for sharing](http://api.anychart.com/anychart.exports).
 
 ## Requests 
 
@@ -493,31 +494,31 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <td>data</td>
 <td>required</td>
 <td>-</td>
-<td>script or SVG that should be transformed into a picture</td>
+<td>The script or SVG that will be transformed into a picture</td>
 </tr>
 <tr>
 <td>data-type</td>
 <td>required</td>
 <td>-</td>
-<td>a field that contains the information about the data, it might be "script" or "svg"</td>
+<td>A field that contains the information about the data. It might be "script" or "svg".</td>
 </tr>
 <tr>
 <td>response-type</td>
 <td>required</td>
 <td>-</td>
-<td>a field that tells how to export the result (file or as base64)</td>
+<td>A field that tells how to export the result (as a file or as base64).</td>
 </tr>
 <tr>
 <td>file-name</td>
 <td>optional</td>
 <td>anychart</td>
-<td>file name</td>
+<td>The file name</td>
 </tr>
 <tr>
 <td>save</td>
 <td>optional</td>
 <td>-</td>
-<td>if it presents, request returns URL of a saved image</td>
+<td>Return the URL of the saved image</td>
 </tr>
 <tr>
 <td>container-id</td>
@@ -541,61 +542,61 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <td>width</td>
 <td>optional</td>
 <td>1024</td>
-<td>image width</td>
+<td>The image width</td>
 </tr>
 <tr>
 <td>height</td>
 <td>optional</td>
 <td>800</td>
-<td>image height</td>
+<td>The image height</td>
 </tr>
 <tr>
 <td>quality</td>
 <td>optional</td>
 <td>1</td>
-<td>picture quality</td>
+<td>The quality of the picture</td>
 </tr>
 <tr>
 <td>force-transparent-white</td>
 <td>optional</td>
 <td>false</td>
-<td>make the background white or leave it transparent</td>
+<td>Make the background white or leave it transparent</td>
 </tr>
 <tr>
 <td>pdf-size</td>
 <td>optional</td>
 <td>-</td>
-<td>the *.pdf-document sheet size</td>
+<td>The sheet size of the \*.pdf-document</td>
 </tr>
 <tr>
 <td>pdf-x</td>
 <td>optional</td>
 <td>0</td>
-<td>x of the chart in the *.pdf document</td>
+<td>The X-coordinate of the chart in the \*.pdf document</td>
 </tr>
 <tr>
 <td>pdf-y</td>
 <td>optional</td>
 <td>0</td>
-<td>y of the chart in the *.pdf document</td>
+<td>The X-coordinate of the chart in the \*.pdf document</td>
 </tr>
 <tr>
 <td>pdf-width</td>
 <td>optional</td>
 <td>595</td>
-<td>pdf width</td>
+<td>The width of \*.pdf</td>
 </tr>
 <tr>
 <td>pdf-height</td>
 <td>optional</td>
 <td>842</td>
-<td>pdf height</td>
+<td>The height of \*.pdf</td>
 </tr>
 <tr>
 <td>landscape</td>
 <td>optional</td>
 <td>false</td>
-<td>the document orientation</td>
+<td>The document orientation</td>
 </tr>
 </tbody>
 </table>
@@ -661,8 +662,8 @@ You can pass a config file witn `-C` option, e.g.
 java -jar export-server.jar -C settings.toml
  ```
  
-It should be noted here that if the same parameters set both in the config file and in the command line, the former will be ignored because command line has a higher priority.
+It should be noted here that if the same parameters are set both in the config file and in the command line, the former will be ignored because the command line has a higher priority.
 
 ## Contribution 
 
-If you've got any suggestions or ideas about export server work and improvements, welcome to our [open repository on GitHub](https://github.com/AnyChart/export-server).
+If you have any suggestions or ideas about Export Server work and improvements, welcome to our [open repository on GitHub](https://github.com/AnyChart/export-server).
