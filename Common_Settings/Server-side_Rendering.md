@@ -656,7 +656,7 @@ pdf-height = 500
 jpg-quality = 1
 ```
 
-You can pass a config file witn `-C` option, e.g.
+You can pass a config file witn `-C` option, e.g.:
 
 ```
 java -jar export-server.jar -C settings.toml
