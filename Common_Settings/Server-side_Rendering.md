@@ -23,7 +23,7 @@ Alternatively, install Chrome or Chromium browser (version 60.0 and above) or in
 4. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
 ## Path to PhantomJS
-As it was mentioned before, the Export Server needs PhantomJS. If its location is different from the default one, or you have got Windows OS, check the place where Phantom JS is installed and set the right path for the server:
+As it was mentioned before, Export Server needs PhantomJS. If its location is different from the default one, or you have got Windows OS, check the place where Phantom JS is installed and set the right path for the server:
 
 ```
 java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
@@ -77,15 +77,15 @@ Before you choose the mode of Export Server (command line or web server), check 
 
 ## Command Line Mode
 
-If you want to use the AnyChart Export Server in the Command Line mode, you should set `cmd` (Command Line) as the first parameter. Then define the path to the chart or insert the chart code as a string and set the parameters of the image: dimensions, quality, extension, and so on (see the list below).
+If you want to use AnyChart Export Server in Command Line mode, you should set `cmd` (Command Line) as the first parameter. Then define the path to the chart or insert the chart code as a string and set the parameters of the image: dimensions, quality, extension, and so on (see the list below).
 
-Sample command line:
+A sample command line:
 
 ```
 java -jar anychart-export.jar cmd --script "var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
 ```
 
-Full list of the parameters available:
+The full list of the parameters available:
 
 <table width="490" border="1" class="dtTABLE">
 <tbody>
@@ -123,13 +123,13 @@ Full list of the parameters available:
 <td>--html-file HTML_FILE</td>
 <td></td>
 <td></td>
-<td>HTML page file to Execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
+<td>The HTML page file to execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
 </tr>
 <tr>
 <td>--output-file</td>
 <td>-o</td>
 <td></td>
-<td>Name for the output file (e.g.: "Chart_1" or "Chart_0.png")</td>
+<td>The name for the output file (e.g.: "Chart_1" or "Chart_0.png")</td>
 </tr>
 <tr>
 <td>--output-path</td>
@@ -232,24 +232,27 @@ Full list of the parameters available:
 
 ## Web Server Mode 
 
-AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default, AnyChart component uses server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability.
-If you want to have full control over the ability of the component to export images or just don't want to use AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods, and by default, AnyChart component uses the server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365, we *do not guarantee* the availability of the export server.
 
-To run the Export server in server mode set `server` as the first parameter. Host and port parameters are optional.
-The usual HTTP web server is run, it receives POST requests and sends the result as a base64-line or as a Byte Array with the "File Transfer" header.
+If you want to have full control over the ability of the component to export images or do not want to use AnyChart Server due to security or accessibility concerns, just run Export Server in Web Server mode on the server you control and trust.
+
+To run Export Server in Web Server mode, set `server` as the first parameter. The host and port parameters are optional. In this mode, a usual HTTP web server is run. It receives POST requests and sends the result as a base64 line or as a Byte Array with the "File Transfer" header.
 
 *When you stop the server, you must stop the PhantomJS process too.*
 
-The sample of server running:
+A sample of server running:
+
 ```
 java -jar anychart-export.jar server
 ```
 
-The sample of a command written in console:
+A sample of a command written in the console:
+
 ```
 curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" localhost:2000/png
 ```
-Full list of the server parameters that can be set:
+
+The full list of the server parameters that can be set:
 
 <table width="490" border="1" class="dtTABLE">
 <tbody>
@@ -263,40 +266,40 @@ Full list of the server parameters that can be set:
 <td>--host</td>
 <td>-H</td>
 <td></td>
-<td>The host where to run the server</td>
+<td>The host where the server will be run</td>
 </tr>
 <tr>
 <td>--port</td>
 <td>-P</td>
 <td></td>
-<td>The port where to run the server</td>
+<td>The port where the server will be run</td>
 </tr>
 <tr>
 <td>--log FILE</td>
 <td>-F</td>
 <td></td>
-<td>File for server logging</td>
+<td>The file for server logging</td>
 </tr>
 <tr>
 <td>--allow-scripts-executing</td>
 <td></td>
 <td>y (yes), n (no)</td>
-<td>A boolean parameter. Allows executing violent scripts in phantom js. If set in Y (e.g., as we do with https://export.anychart.com/) it might affect the security, so there's a flag which is N by default.</td>
+<td>A boolean parameter. Allows executing violent scripts in phantom js. If set to Y (e.g., as we do with https://export.anychart.com/), it might affect the security, so there is a flag, which is N by default.</td>
 </tr>
 <tr>
-<th>Saving images or pdf files to a folder</th>
+<th>Save images or \*.pdf files to a folder</th>
 </tr>
 <tr>
 <td>--saving-folder PATH</td>
 <td>-z</td>
 <td></td>
-<td>Path to save images or pdf</td>
+<td>The path to save images or \*.pdf files</td>
 </tr>
 <tr>
 <td>--saving-url-prefix PREFIX</td>
 <td>-Z</td>
 <td></td>
-<td>URL prefix will be returned to request</td>
+<td>Return the URL prefix upon request</td>
 </tr>
 <tr>
 <th>Sharing</th>
@@ -305,25 +308,25 @@ Full list of the server parameters that can be set:
 <td>--sharing-port PORT</td>
 <td></td>
 <td></td>
-<td>Sharing mysql database port</td>
+<td>Share mysql database port</td>
 </tr>
 <tr>
 <td>--sharing-db NAME</td>
 <td></td>
 <td></td>
-<td>Sharing mysql database name</td>
+<td>Share mysql database name</td>
 </tr>
 <tr>
 <td>--sharing-user USER</td>
 <td></td>
 <td></td>
-<td>Sharing mysql database user</td>
+<td>Share mysql database user</td>
 </tr>
 <tr>
 <td>--sharing-password PASSWORD</td>
 <td></td>
 <td></td>
-<td>Sharing mysql database password</td>
+<td>Share mysql database password</td>
 </tr>
 <tr>
 <th>Twitter</th>
