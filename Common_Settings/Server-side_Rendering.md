@@ -379,7 +379,7 @@ callback.
 #### `/sharing/twitter_oauth`
 This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
 
-In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and user_name and saves them to the MySQL database. After that, the dialog window of posting images will be displayed.
+In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the dialog window of posting images will be displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
