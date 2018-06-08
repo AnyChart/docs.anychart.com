@@ -16,7 +16,7 @@ To run the AnyChart Export Server, do the following:
 2. Install Firefox browser (version 56.0 and above) or install `geckodriver`:
   * `brew install geckodriver` for Mac users
   * or download it from the [official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH.
-Alternatively, install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
+3. Alternatively, install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
   * `brew install chromedriver` for Mac users
   * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
 3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
