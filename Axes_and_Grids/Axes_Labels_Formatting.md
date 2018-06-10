@@ -180,6 +180,8 @@ By default, labels are shown outside of the data area (the area limited by the a
 * `"inside"`
 * `"center"`
 
+The following sample shows how to place labels inside the data area: 
+
 ```
 // change the side position of labels on the y-axis
 chart.yAxis().labels().position("inside");
@@ -187,8 +189,6 @@ chart.yAxis().labels().position("inside");
 // change the side position of labels on the x-axis
 chart.xAxis().labels().position("inside");
 ```
-
-The following sample shows how to place labels inside the data area: 
 
 {sample}AGST\_Labels\_Formatting\_08{sample}
 
