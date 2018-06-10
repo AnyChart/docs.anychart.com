@@ -187,3 +187,5 @@ Here is a sample where grid coloring is used to highlight value zones:
 And by simply passing one color to a palette and disabling stroke you can fill the chart area with the single color:
 
 {sample}AGST\_Axes\_Basic\_12{sample}
+
+Please note that there is another way to do the same – see the [Data Area](../Appearance_Settings/Background#data_area) section.
