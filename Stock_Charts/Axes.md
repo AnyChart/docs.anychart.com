@@ -10,6 +10,7 @@ In AnyChart axes are used to control axes labels, lines and tick marks.
 * To know what scale options are available - [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
+* To find out how to add markers - see [Line Markers](../Axes_and_Grids/Line_Markers), [Range Markers](../Axes_and_Grids/Range_Markers), [Text Markers](../Axes_and_Grids/Text_Markers)
 
 In this section we will demonstrate the differences of AnyStock axes and scales from basic charts' ones.
 
