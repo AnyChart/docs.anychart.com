@@ -172,21 +172,23 @@ xLabels.offsetY(5);
 
 {sample}AGST\_Labels\_Formatting\_07{sample}
 
-### Padding
+### Side Position
 
-To change the paddings between the label's background borders and the text use {api:anychart.core.ui.Label#padding}padding(){api}. This parameter's value is to be set in px. Padding may contain up to 4 values in the following order: Top, Right, Bottom and Left. It is not necessary to set all 4 values. 
+By default, labels are shown outside of the data area (the area limited by the axes). However, they can be shown inside this area or on the axes. To set the side position of labels, call the {api:anychart.core.ui.Label#position}position(){api} method with one of the parameters listed in {api:anychart.enums.SidePosition}anychart.enums.SidePosition{api}:
 
-```
-labels.padding(0, 10, 15, 0);
-```
-
-Setting padding allows to position labels somehow unusual, for example, inside of a chart (on the other side of the axis). The next sample shows how to use the {api:anychart.core.ui.Label#padding}padding(){api} method for that. Also, there are {api:anychart.core.ui.Label#offsetX}offsetX(){api} and {api:anychart.core.ui.Label#offsetY}offsetY(){api} methods can be used for the same purpose.
+* `"outside"` (default)
+* `"inside"`
+* `"center"`
 
 ```
-// setting labels a bit higher and adjusting its values
-innerLabels = labelsInside.xAxis().labels();
-innerLabels.offsetY(-30);
+// change the side position of labels on the y-axis
+chart.yAxis().labels().position("inside");
+
+// change the side position of labels on the x-axis
+chart.xAxis().labels().position("inside");
 ```
+
+The following sample shows how to place labels inside the data area: 
 
 {sample}AGST\_Labels\_Formatting\_08{sample}
 
