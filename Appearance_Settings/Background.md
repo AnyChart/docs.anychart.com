@@ -138,4 +138,6 @@ In the sample below there are all hatch types shown that are available in AnyCha
 
 ## Data Area
 
-{sample}AS\_Background\_09{sample}
+{api:anychart.charts.Cartesian#dataArea}dataArea(){api}
+
+{sample :height 400}AS\_Background\_09{sample}
