@@ -141,7 +141,6 @@ In the sample below there are all hatch types shown that are available in AnyCha
 To color the background of the data area (the area limited by the axes), use the {api:anychart.charts.Cartesian#dataArea}dataArea(){api} method:
 
 ```
-// configure the background of the data area
 chart.dataArea().background({fill: "#ffd54f 0.2"});
 ```
 
