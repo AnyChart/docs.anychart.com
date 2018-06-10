@@ -135,3 +135,7 @@ series0.hatchFill("verticalBrick");
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
 
 {sample :height 680}AS\_Background\_08{sample}
+
+## Data Area
+
+{sample}AS\_Background\_09{sample}
