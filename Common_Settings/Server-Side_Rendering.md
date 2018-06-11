@@ -23,21 +23,23 @@ To run the AnyChart Export Server, do the following:
 3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
 4. Download [AnyChart Export Server binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
-## Path to PhantomJS
+## Path
+
+### PhantomJS
 AnyChart Export Server needs PhantomJS. If its location is different from the default one, or you are installing Export Server on Windows, check the location where Phantom JS is installed and set the right path for the server:
 
 ```
 java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
-## Path to Export Server 
+###  Export Server 
 If you have installed your own server and want AnyChart charts to use it for exports, use the {api:anychart.exports#server}anychart.exports.server(){api} method in you JavaScript code and set the address of your server as a parameter:
 
 ```
 anychart.exports.server("http://localhost:2000");
 ```
 
-## Common Arguments
+## Parameters
 
 The following arguments work both in [Web Server Mode](#web_server_mode), and [Command Line Mode](#command_line_mode):
 
@@ -312,7 +314,7 @@ The full list of the server parameters:
 </tbody>
 </table>
 
-## Sharing
+## Social Networks Sharing
 AnyChart Export Server provides an ability to share chart images in social networks, such as Facebook,
 LinkedIn, Pinterest and Twitter.
 
@@ -326,19 +328,19 @@ These social networks get the prepared picture via the link and just allow users
 ### Twitter
 Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up and uses three types of requests.
 
-#### /sharing/twitter
+*/sharing/twitter*
 First of all, the user sends a request to `/sharing/twitter` that contains SVG or a script generating the image and posting in on the page. The request should contain the same parameters as a request to `/png` URL does. There are two options here: the user is authorized in the AnyChart Twitter application or not.
 
 If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth` callback.
 
-#### /sharing/twitter\_oauth
+*/sharing/twitter\_oauth*
 This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
 
 In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the posting images dialog window will be displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
-#### /sharing/twitter\_confirm
+*/sharing/twitter\_confirm*
 This request should contain only Twitter `message` parameter – a string of no more than 140 characters.
 In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and posts a new tweet with that image.
 
