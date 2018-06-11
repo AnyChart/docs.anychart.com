@@ -14,10 +14,10 @@ AnyChart Export Server is a Java application (JAR file) that runs using Java, so
  
 To run the AnyChart Export Server, do the following:
 1. Download PhantomJS from the [PhantomJS official site](http://phantomjs.org/) and make sure PhantomJS binary is in the PATH.
-2. Install Firefox browser (version 56.0 and above) or install `geckodriver`:
+2. Install Firefox browser (version 56.0 and above) and install `geckodriver`:
   * `brew install geckodriver` for Mac users
   * or download it from the [geckodriver official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH.
-3. Alternatively, install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
+3. Alternatively, install Chrome or Chromium browser (version 60.0 and above) and install `chromedriver`:
   * `brew install chromedriver` for Mac users
   * or download it from the [chromedriver official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
 3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
@@ -258,95 +258,86 @@ The full list of the server parameters:
 <table>
 <tbody>
 <tr>
-<th>Name</th>
-<th>Short name</th>
+<th>Command</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>--host</td>
-<td>-H</td>
+<td>--host
+-H</td>
 <td></td>
 <td>The host where the server will be run</td>
 </tr>
 <tr>
-<td>--port</td>
-<td>-P</td>
+<td>--port
+-P</td>
 <td></td>
 <td>The port where the server will be run</td>
 </tr>
 <tr>
-<td>--log FILE</td>
-<td>-F</td>
+<td>--log FILE
+-F</td>
 <td></td>
 <td>The file for server logging</td>
 </tr>
 <tr>
 <td>--allow-scripts-executing</td>
-<td></td>
 <td>y (yes), n (no)</td>
 <td>A boolean parameter. Allows executing violent scripts in phantom js. If set to Y (e.g., as we do with https://export.anychart.com/), it might affect the security, so there is a flag, which is N by default.</td>
 </tr>
 <tr>
-<th colspan=4>Save images or \*.pdf files to a folder</th>
+<th colspan=3>Save images or \*.pdf files to a folder</th>
 </tr>
 <tr>
-<td>--saving-folder PATH</td>
-<td>-z</td>
+<td>--saving-folder PATH
+-z</td>
 <td></td>
 <td>The path to save images or \*.pdf files</td>
 </tr>
 <tr>
-<td>--saving-url-prefix PREFIX</td>
-<td>-Z</td>
+<td>--saving-url-prefix PREFIX
+-Z</td>
 <td></td>
 <td>Return the URL prefix upon request</td>
 </tr>
 <tr>
-<th colspan=4>Sharing</th>
+<th colspan=3>Sharing</th>
 </tr>
 <tr>
 <td>--sharing-port PORT</td>
-<td></td>
 <td></td>
 <td>Share mysql database port</td>
 </tr>
 <tr>
 <td>--sharing-db NAME</td>
 <td></td>
-<td></td>
 <td>Share mysql database name</td>
 </tr>
 <tr>
 <td>--sharing-user USER</td>
-<td></td>
 <td></td>
 <td>Share mysql database user</td>
 </tr>
 <tr>
 <td>--sharing-password PASSWORD</td>
 <td></td>
-<td></td>
 <td>Share mysql database password</td>
 </tr>
 <tr>
-<th colspan=4>Twitter</th>
+<th colspan=3>Twitter</th>
 </tr>
 <tr>
 <td>--twitter-key KEY</td>
-<td></td>
 <td></td>
 <td>Twitter application key</td>
 </tr>
 <tr>
 <td>--twitter-secret SECRET</td>
 <td></td>
-<td></td>
 <td>Twitter application secret</td>
 </tr>
 <tr>
 <td>--twitter-callback</td>
-<td></td>
 <td></td>
 <td>Twitter application callback URL</td>
 </tr>
@@ -367,19 +358,19 @@ These social networks get the prepared picture via the link and just allow users
 ### Twitter
 Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up and uses three types of requests.
 
-#### `/sharing/twitter` 
+#### /sharing/twitter
 First of all, the user sends a request to `/sharing/twitter` that contains SVG or a script generating the image and posting in on the page. The request should contain the same parameters as a request to `/png` URL does. There are two options here: the user is authorized in the AnyChart Twitter application or not.
 
 If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth` callback.
 
-#### `/sharing/twitter_oauth`
+#### /sharing/twitter_oauth
 This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
 
 In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the posting images dialog window will be displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
-#### `/sharing/twitter_confirm`
+#### /sharing/twitter_confirm
 This request should contain only Twitter `message` parameter – a string of no more than 140 characters.
 In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and posts a new tweet with that image.
 
@@ -661,4 +652,4 @@ It should be noted here that if the same parameters are set both in the config f
 
 ## Contribution 
 
-If you have any suggestions or ideas about Export Server work and improvements, welcome to our [open repository on GitHub](https://github.com/AnyChart/export-server).
+If you have any suggestions or ideas about Export Server work and improvements, welcome to [AnyChart Export Server repository on GitHub](https://github.com/AnyChart/export-server).
