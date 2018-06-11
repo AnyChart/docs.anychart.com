@@ -2,35 +2,36 @@
 
 ## Overview
 
-Server-side rendering is a tool that is very helpful in some cases: for example, when you have got an automated email system, and you need to include charts in letters; when you need charts in reports that are generated on servers; when you need to show charts on a Smart TV with a stripped version of a browser; etc. In such cases, we suggest that you use AnyChart Export Server.
+Server-side rendering is a tool that is very helpful in many cases: when you have an automated email system, and you need to include charts in letters; when you need charts in reports that are generated on servers; when you need to show charts on a Smart TV with a stripped version of a browser; and so on. In such cases, we suggest that you use AnyChart Export Server.
 
 AnyChart Export Server is also used to provide chart export to PNG, JPG, PDF, SVG, CSV, Excel, JSON, and XML.
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/), which emulates a browser on the server (WebKit), runs our charts in it, gets SVG, and converts it into \*.PNG, \*.JPG, or \*.PDF files. If you need to take a screenshot of a page on the Internet or in a local HTML file, you can just use Chrome or Firefox in the headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON, and XML does not require PhantomJS: the server acts as only an intermediary allowing the file to be saved using a browser.
-AnyChart Export Server itself is a JAR file that runs using Java, so it works on Windows, Linux, MacOS, or any other OS where Java is available.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/), which emulates a browser on the server (WebKit), runs our charts in it, gets SVG, and converts it into \*.PNG, \*.JPG, or \*.PDF files. If you need to take a screenshot of a page on the Internet or in a local HTML file, you can just use Chrome or Firefox in the headless mode without the AnyChart Export Server. Export to Excel uses [Apache POI](https://poi.apache.org/). Exporting to CSV, JSON, and XML does not require PhantomJS: the server acts only as an intermediary allowing the file to be saved using a browser.
+
+AnyChart Export Server is a Java application (JAR file) that runs using Java, so it works on Windows, Linux, MacOS, or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
-1. Download PhantomJS from the [official site](http://phantomjs.org/) and make sure PhantomJS binary is in your PATH.
+1. Download PhantomJS from the [PhantomJS official site](http://phantomjs.org/) and make sure PhantomJS binary is in the PATH.
 2. Install Firefox browser (version 56.0 and above) or install `geckodriver`:
   * `brew install geckodriver` for Mac users
-  * or download it from the [official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH.
+  * or download it from the [geckodriver official site](https://github.com/mozilla/geckodriver/releases) and add it to the PATH.
 3. Alternatively, install Chrome or Chromium browser (version 60.0 and above) or install `chromedriver`:
   * `brew install chromedriver` for Mac users
-  * or download it from the [official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
+  * or download it from the [chromedriver official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
 3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
-4. Download AnyChart Export Server [binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
+4. Download [AnyChart Export Server binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
 ## Path to PhantomJS
-As it was mentioned before, Export Server needs PhantomJS. If its location is different from the default one, or you have got Windows OS, check the place where Phantom JS is installed and set the right path for the server:
+AnyChart Export Server needs PhantomJS. If its location is different from the default one, or you are installing Export Server on Windows, check the location where Phantom JS is installed and set the right path for the server:
 
 ```
 java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## Path to Export Server 
-If you use your own server, call the {api:anychart.exports#server}anychart.exports.server(){api} method and set the address of your server as a parameter:
+If you have installed your own server and want AnyChart charts to use it for exports, use the {api:anychart.exports#server}anychart.exports.server(){api} method in you JavaScript code and set the address of your server as a parameter:
 
 ```
 anychart.exports.server("http://localhost:2000");
@@ -38,15 +39,15 @@ anychart.exports.server("http://localhost:2000");
 
 ## Common Arguments
 
-Before you choose the mode of Export Server (command line or web server), check the commands below. They work fine in both modes:
+The following arguments work both in [Web Server Mode](#web_server_mode), and [Command Line Mode](#command_line_mode):
 
-<table width="490" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="160">**Name**</th>
-<th width="50">**Short name**</th>
-<th width="80">**Options**</th>
-<th width="200">**Description**</th>
+<th width="160">Name</th>
+<th width="50">Short name</th>
+<th width="80">Options</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>--config PATH</td>
@@ -87,13 +88,13 @@ java -jar anychart-export.jar cmd --script "var chart = anychart.line([1,2,5]); 
 
 The full list of the parameters available:
 
-<table width="490" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="160">**Name**</th>
-<th width="50">**Short name**</th>
-<th width="80">**Options**</th>
-<th width="200">**Description**</th>
+<th width="160">Name</th>
+<th width="50">Short name</th>
+<th width="80">Options</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>--script</td>
@@ -180,7 +181,7 @@ The full list of the parameters available:
 <td>--force-transparent-white</td>
 <td>-f</td>
 <td></td>
-<td>Make the chart's background white if it is originally transparent</td>
+<td>Make the chart background white if it is originally transparent</td>
 </tr>
 <tr>
 <td>--jpg-quality</td>
@@ -232,7 +233,7 @@ The full list of the parameters available:
 
 ## Web Server Mode 
 
-AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods, and by default, AnyChart component uses the server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365, we *do not guarantee* the availability of the export server.
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods, and by default, AnyChart uses the server hosted at https://www.anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365, we *do not guarantee* the availability of the export server.
 
 If you want to have full control over the ability of the component to export images or do not want to use AnyChart Server due to security or accessibility concerns, just run Export Server in Web Server mode on the server you control and trust.
 
@@ -246,21 +247,21 @@ A sample of server running:
 java -jar anychart-export.jar server
 ```
 
-A sample of a command written in the console:
+A sample of a command in the console:
 
 ```
 curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" localhost:2000/png
 ```
 
-The full list of the server parameters that can be set:
+The full list of the server parameters:
 
-<table width="490" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="160">**Name**</th>
-<th width="50">**Short name**</th>
-<th width="80">**Options**</th>
-<th width="200">**Description**</th>
+<th width="160">Name</th>
+<th width="50">Short name</th>
+<th width="80">Options</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>--host</td>
@@ -357,38 +358,32 @@ AnyChart Export Server provides an ability to share chart images in social netwo
 LinkedIn, Pinterest and Twitter.
 
 When you use the export server on your own server and want sharing to work properly, you should
-set up `--saving-folder` and `--saving-prefix`. The first parameter is the path to the folder where images will be
-stored. The second parameter is the URL prefix which will be concatenated with the shared image name and returned to the user.
-You should provide the access to the shared image through that URL by setting up Nginx, for example.
+set up `--saving-folder` and `--saving-prefix`. The first parameter is the path to the folder where images will be stored. The second parameter is the URL prefix which will be concatenated with the shared image name and returned to the user. You should provide the access to the shared image through that URL by setting up Nginx, for example.
 
 ### Facebook, LinkedIn, Pinterest
 Sharing on Facebook, LinkedIn, and Pinterest is implemented with the help of the commands for saving images. 
-These social networks get the prepared picture via the link and just allow the user to post it on the page.
+These social networks get the prepared picture via the link and just allow users to post it on the page.
 
 ### Twitter
-Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up
-and uses three types of requests.
+Sharing images on Twitter is implemented with the AnyChart Twitter app. It requires MySQL database to be set up and uses three types of requests.
 
 #### `/sharing/twitter` 
-First of all, the user sends a request to `/sharing/twitter` that contains SVG or a script generating the image and posting in on the page. The request should contain the same parameters as a request to `/png` URL does.
-There are two options here: the user is authorized in the AnyChart Twitter application or not.
+First of all, the user sends a request to `/sharing/twitter` that contains SVG or a script generating the image and posting in on the page. The request should contain the same parameters as a request to `/png` URL does. There are two options here: the user is authorized in the AnyChart Twitter application or not.
 
-If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth`
-callback.
+If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth` callback.
 
 #### `/sharing/twitter_oauth`
 This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
 
-In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the dialog window of posting images will be displayed.
+In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the posting images dialog window will be displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
 #### `/sharing/twitter_confirm`
 This request should contain only Twitter `message` parameter – a string of no more than 140 characters.
-In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and
-posts a new tweet with that image.
+In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and posts a new tweet with that image.
 
-Nota bene: the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export Server,
+Note: the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export Server,
 which means you do not need to send anything by yourself there.
 
 If you want Twitter sharing to work through your server, you should:
@@ -404,18 +399,18 @@ anychart.exports.twitter(
     "500"
 );
 ```
-For more details check out [AnyChart API for sharing](http://api.anychart.com/anychart.exports).
+For more details check out {api:anychart.exports}AnyChart Exports API{api}.
 
 ## Requests 
 
 AnyChart Export Server supports the following requests:
 
-<table width="490" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="190">**URL**</th>
-<th width="100">**Type**</th>
-<th width="200">**Description**</th>
+<th width="190">URL</th>
+<th width="100">Type</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>/status</td>
@@ -482,13 +477,13 @@ AnyChart Export Server supports the following requests:
 
 Typical Export and Twitter Sharing request contains the params listed below:
 
-<table width="490" border="1" class="dtTABLE">
+<table>
 <tbody>
 <tr>
-<th width="160">**Parameter**</th>
-<th width="50">**Type**</th>
-<th width="80">**Default**</th>
-<th width="200">**Description**</th>
+<th width="160">Parameter</th>
+<th width="50">Type</th>
+<th width="80">Default</th>
+<th>Description</th>
 </tr>
 <tr>
 <td>data</td>
