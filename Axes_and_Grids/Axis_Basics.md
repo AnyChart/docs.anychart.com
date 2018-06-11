@@ -184,8 +184,4 @@ Here is a sample where grid coloring is used to highlight value zones:
 
 {sample}AGST\_Axes\_Basic\_11{sample}
 
-And by simply passing one color to a palette and disabling stroke you can fill the chart area with the single color:
-
-{sample}AGST\_Axes\_Basic\_12{sample}
-
-Please note that there is another way to do the same – see the [Data Area](../Appearance_Settings/Background#data_area) section.
+**Note:** To fill the background of the data area (the area limited by the axes) with one color, you do not need to use data grids – see the [Data Area](../Appearance_Settings/Background#data_area) section.
