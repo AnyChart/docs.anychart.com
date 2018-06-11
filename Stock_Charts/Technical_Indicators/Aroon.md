@@ -49,13 +49,14 @@ var aroon25 = plot.aroon(mapping, 25, "line", "line");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Aroon with different parameters and settings is added to different plots, {api:anychart.core.stock.indicators.Aroon#upSeries}upSeries(){api} and {api:anychart.core.stock.indicators.Aroon#downSeries}downSeries(){api} methods are used to configure the display,  {api:anychart.core.stock.indicators.Aroon#period}period(){api} method can be used to change the period:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Aroon with different parameters and settings is added to different plots, {api:anychart.core.stock.indicators.Aroon#upSeries}upSeries(){api}, {api:anychart.core.stock.indicators.Aroon#downSeries}downSeries(){api}, and {api:anychart.core.stock.indicators.Aroon#rangeSeries}rangeSeries(){api} methods are used to configure the display, {api:anychart.core.stock.indicators.Aroon#period}period(){api} method can be used to change the period:
 
 ```
-// create Aroon indicator with period 25 and shown as lines on the second plot
-aroon25 = plot_1.aroon(mapping, 25);
+// create Aroon indicator with period 25 and shown as steplines on the second plot
+aroon25 = plot_1.aroon(mapping, 25, "step-line", "step-line");
 aroon25.upSeries().stroke('#bf360c');
 aroon25.downSeries().stroke('#ff6d00');
+aroon25.rangeSeries().fill('#ffd54f 0.2');
 
 // create Aroon indicator with period 30 and shown as splines on the third plot
 aroon30 = plot_2.aroon(mapping);
@@ -63,7 +64,8 @@ aroon30.period(30);
 aroon30.upSeries().seriesType("spline");
 aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
 aroon30.downSeries().seriesType("spline");        
-aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');
+aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');   
+aroon30.rangeSeries().fill(null);    
 ```
 
 Live sample:

@@ -19,7 +19,7 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_data());
 
 // map loaded data
-var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "volume": 3});
+var mapping = dataTable.mapAs({"high": 1, "open": 2, "low": 3, "close": 4, "volume": 5});
 
 // create stock chart
 chart = anychart.stock();

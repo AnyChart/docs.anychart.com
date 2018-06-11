@@ -51,7 +51,13 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 		</tr>
 		<tr>
+			<td>[Heikin-Ashi](Heikin-Ashi)</td>
+		</tr>
+		<tr>
 			<td>[KDJ](KDJ)</td>
+		</tr>
+		<tr>
+			<td>[Keltner Channels](Keltner_Channels)</td>
 		</tr>
 		<tr>
 			<td>[Modified (Smoothed) Moving Average](Modified_Moving_Average_\(MMA\))</td>
@@ -66,6 +72,8 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_\(MACD\))</td>
 		</tr>		
 		<tr>
+			<td>[On Balance Volume (OBV)](On_Balance_Volume_\(OBV\))</td>
+		</tr>
 		<tr>
 			<td>[Parabolic SAR (PSAR)](Parabolic_SAR_\(PSAR\))</td>
 		</tr>		
@@ -88,8 +96,13 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Stochastic Oscillator](Stochastic_Oscillator)</td>
 		</tr>
 		<tr>
-			<td>[Williams %R](Williams_%25R)</td>
+			<td>[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\))</td>
 		</tr>
 		<tr>
+			<td>[Volume + Moving Average](Volume_+_Moving_Average)</td>
+		</tr>
+		<tr>
+			<td>[Williams %R](Williams_%25R)</td>
+		</tr>
 	</tbody>
 </table>

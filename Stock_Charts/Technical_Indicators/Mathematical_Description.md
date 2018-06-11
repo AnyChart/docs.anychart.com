@@ -50,6 +50,13 @@ This formula is based on the True Range definition. ATR is defined as the greate
 - current High less than previous Close (absolute value)
 - current Low less than previous Close (absolute value)
 
+## Awesome Oscillator
+
+[Awesome Oscillator](Awesome_Oscillator) is calculated according to the following formula:
+
+**Median Price = (High + Low) / 2**
+**AO = SMA (Median Price, 5) - SMA (Median Price, 34)**
+
 ## Bollinger Bands
 
 [Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
@@ -142,6 +149,32 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 
+## Heikin-Ashi
+
+[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values. In the following formula, a (0) refers to the current period, (-1) to the prior period, and HA  to Heikin-Ashi:
+
+1. The Heikin-Ashi Close is simply an average of the open, 
+high, low and close for the current period. 
+
+**HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**
+
+2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi 
+candlestick open plus the close of the prior Heikin-Ashi candlestick. 
+
+**HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** 
+
+3. The Heikin-Ashi High is the maximum of three data points: 
+the current period's high, the current Heikin-Ashi 
+candlestick open or the current Heikin-Ashi candlestick close. 
+
+**HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)** 
+
+4. The Heikin-Ashi low is the minimum of three data points: 
+the current period's low, the current Heikin-Ashi 
+candlestick open or the current Heikin-Ashi candlestick close.
+
+** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)** 
+
 ## KDJ
 
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
@@ -157,7 +190,11 @@ Chaikin Volatility indicator in each point is calculated according to the follow
 
 ## Keltner Channels
 
-Coming soon.
+[Keltner Channels](Keltner_Channels) bands in each point are calculated according to the following formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/keltnerchannels.png"></center>
+
+You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) and [ATR (Average True Range)](#average_true_range) indicators are calculated in corresponding sections of this article.
 
 ## Modified Moving Average
 
@@ -218,7 +255,19 @@ Coming soon.
 
 ## On Balance Volume
 
-Coming soon.
+[On Balance Volume](On_Balance_Volume_\(OBV\)) indicator is calculated according to the following rules:
+
+* If the closing price is above the prior close price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-positive.png"></center>
+
+* If the closing price is below the prior close price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-negative.png"></center>
+
+* If the closing prices equals yesterday's closing price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-zero.png"></center>
 
 ## Parabolic SAR
 
@@ -243,7 +292,9 @@ The SAR is recursively calculated in this manner for each new period. There are,
 
 ## Price Channels
 
-Coming soon.
+[Price Channels](Price_Channels) bands are calculated according to the following formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
 ## Rate of Change
 
@@ -301,17 +352,18 @@ The Full Stochastic Oscillator is a fully customizable version of the Slow Stoch
 
 where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fullD.png"></center>
+<center><img src="https://static.anychart.com/images/technical\_indicators/trix.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-## TRIX
+## Triple Exponential Moving Average
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
 
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
-## Volume + MA
+## Volume + Moving Average
 
-Coming soon.
+[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
 
 ## Williams %R
 
