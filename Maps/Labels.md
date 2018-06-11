@@ -44,7 +44,7 @@ custom_label.fontSize(10);
 custom_label.fontColor("black");
   
 // custom image label
-image = stage.image("//static.anychart.com/images/australia.png");
+image = stage.image("https://static.anychart.com/images/australia.png");
 image.width(150);
 image.height(150);
 image.x(stage.width()-225);
