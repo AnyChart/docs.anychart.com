@@ -3,6 +3,7 @@ http-ignore = ["http://support.anychart.com", "http://phantomjs.org", "http://ww
 
 [redirect]
 redirects = """
+/Common_Settings/Server-side_Rendering >> /Common_Settings/Server-Side_Rendering
 /Working_with_Data/Using_Data_Sets >> /Working_with_Data/Data_Sets
 /Working_with_Data/Using_Data_Tree_Model >> /Working_with_Data/Tree_Model
 /Working_with_Data/Using_Data_Sets >> /Working_with_Data/Table_Data_Model
