@@ -30,7 +30,7 @@ requests.name("Requests");
 
 You can see that the whole chart is divided in parts, where one contains OHLC and Line series and the second one has column in it, both parts have identical X Axis and are scrolled simultaneously. This parts we call **plots**, you can read about them [Chart Plots](../Chart_Plots) article. 
 
-### AnyStock Series Adjusting
+### Adjustment
 
 You can adjust the colors of the series, adjust the tooltips, etc. Let's now create a sample with adjusted colors.
 
@@ -44,7 +44,7 @@ requests.stroke("#00796B");
 
 {sample}STOCK\_Series\_02{sample}
 
-### AnyStock Scroller Series Adjusting
+### Scroller Series
 
 Adding a background series of a column type to the scroll bar background and adjusting its "selected" state colors:
 
@@ -52,14 +52,16 @@ Adding a background series of a column type to the scroll bar background and adj
 // create a thumbnail series in the scroller
 var thSeries = chart.scroller().column(lineMapping);
 
-// define the shown part of a chart 
+// set the part of a chart to be selected
 chart.selectRange('2014-02-01','2014-05-06');
     
 // set the color for the selected columns in the thumbnail series
-thSeries.selectedFill("#4527A0");
+thSeries.selected().fill("#00796B");
 ```
 
 {sample}STOCK\_Series\_03{sample}
+
+### Individual Settings
 
 ## List of supported series
 
