@@ -44,7 +44,7 @@ The following arguments work both in [Web Server Mode](#web_server_mode), and [C
 <table>
 <tbody>
 <tr>
-<th>Name</th>
+<th width='150'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -86,7 +86,7 @@ The full list of the parameters available:
 <table>
 <tbody>
 <tr>
-<th>Name</th>
+<th width='150'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -146,7 +146,7 @@ The full list of the parameters available:
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
-<th colspan=3>Export Images Args</th>
+<th colspan=3>Export Images Parameters</th>
 </tr>
 <tr>
 <td>--image-width<br>-w</td>
@@ -169,7 +169,7 @@ The full list of the parameters available:
 <td>The image quality</td>
 </tr>
 <tr>
-<th colspan=3>Export PDF Args</th>
+<th colspan=3>Export PDF Parameters</th>
 </tr>
 <tr>
 <td>--pdf-size<br>-S</td>
@@ -231,7 +231,7 @@ The full list of the server parameters:
 <table>
 <tbody>
 <tr>
-<th>Name</th>
+<th width='150'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -367,7 +367,7 @@ AnyChart Export Server supports the following requests:
 <table>
 <tbody>
 <tr>
-<th>URL</th>
+<th width='100'>URL</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -439,7 +439,7 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <table>
 <tbody>
 <tr>
-<th>Parameter</th>
+<th width='100'>Parameter</th>
 <th>Type</th>
 <th>Default</th>
 <th>Description</th>
@@ -614,7 +614,7 @@ You can pass a config file witn `-C` option, e.g.:
 
 ```
 java -jar export-server.jar -C settings.toml
- ```
+```
  
 It should be noted here that if the same parameters are set both in the config file and in the command line, the former will be ignored because the command line has a higher priority.
 
