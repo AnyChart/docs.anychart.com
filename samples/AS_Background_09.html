@@ -53,7 +53,8 @@ anychart.onDocumentReady(function () {
   column2.title("Data Area Background");
   column2.bounds("50%", 0, "50%", "100%");
   // configure the background of the data area
-  column2.dataArea().background({fill: "#ffd54f 0.2"});
+  column2.dataArea().background().enabled(true);
+  column2.dataArea().background().fill("#ffd54f 0.2");
   // set the chart container
   column2.container(stage);
   // initiate drawing the chart

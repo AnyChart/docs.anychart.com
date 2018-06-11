@@ -4,7 +4,9 @@
 
 In this tutorial we will explain in details how to configure background in AnyChart charting framework.
 
-Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}fill(){api}, {api:anychart.core.ui.Background#stroke}stroke(){api} and {api:anychart.core.ui.Background#corners}corners(){api} attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
+You can configure the background of the whole chart or labels, tooltips, data plot, and so on. In all these cases you should use the **background** method of the element – for example, {api:anychart.charts.Cartesian#background}background(){api} allows adjusting the background of Cartesian charts.
+
+Background consists of fill, stroke and border corners. These elements are configured by combining **background()** with {api:anychart.core.ui.Background#fill}fill(){api}, {api:anychart.core.ui.Background#stroke}stroke(){api}, and {api:anychart.core.ui.Background#corners}corners(){api}.
 
 Below you will find the reference of the most important parameters of the mentioned methods and see the demonstration of theirs settings.
 
@@ -138,13 +140,12 @@ In the sample below there are all hatch types shown that are available in AnyCha
 
 ## Data Area
 
-To color the background of the data area (the area limited by the axes), use the {api:anychart.charts.Cartesian#dataArea}dataArea(){api} method:
+To color the background of the data area (the area limited by the axes), use the {api:anychart.charts.Cartesian#dataArea}dataArea(){api} method and enable the background:
 
 ```
-chart.dataArea().background({fill: "#ffd54f 0.2"});
+chart.dataArea().background().enabled(true);
+chart.dataArea().background().fill("#ffd54f 0.2");
 ```
-
-Please note that the {api:anychart.core.ui.DataArea#background}background(){api} method of the data area returns the data area, so you can add color settings only as an object, not by using methods.
 
 The following sample demonstrates the difference between coloring the background of the whole chart and of the data area:
 
