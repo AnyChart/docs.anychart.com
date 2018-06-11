@@ -71,6 +71,9 @@ anychart.onDocumentReady(function () {
     // create a column series
     chart.plot(0).column(mapping);
 
+    // set the part of a chart to be selected
+    chart.selectRange('2014-01-13','2014-02-04');
+
     // create the thumbnail series in the scroller
     var thSeries = chart.scroller().column(lineMapping);
 
