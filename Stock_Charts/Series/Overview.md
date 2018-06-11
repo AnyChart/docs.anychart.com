@@ -63,6 +63,8 @@ thSeries.selected().fill("#00796B");
 
 ### Individual Settings
 
+By default stock series doesn't allow settings to be applied to individual points, all points have the same settings for the sake of performance. You can either allow all series to be able to have individual as described in [Data](../Data#individual_point_settings) tutorial or use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to allow any particular series to color points differently.
+
 ## List of supported series
 
 AnyStock supports series of different types, like Line Series, OHLC, Marker and many other - find them all in the [Supported Series list](Supported_Series). Compatible series types can be [switched during run time](Series_Type).
