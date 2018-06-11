@@ -44,7 +44,7 @@ The following arguments work both in [Web Server Mode](#web_server_mode), and [C
 <table>
 <tbody>
 <tr>
-<th width='150'>Name</th>
+<th width='200'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -86,7 +86,7 @@ The full list of the parameters available:
 <table>
 <tbody>
 <tr>
-<th width='150'>Name</th>
+<th width='200'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -231,7 +231,7 @@ The full list of the server parameters:
 <table>
 <tbody>
 <tr>
-<th width='150'>Name</th>
+<th width='200'>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
@@ -367,7 +367,7 @@ AnyChart Export Server supports the following requests:
 <table>
 <tbody>
 <tr>
-<th width='100'>URL</th>
+<th width='200'>URL</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
@@ -439,7 +439,7 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <table>
 <tbody>
 <tr>
-<th width='100'>Parameter</th>
+<th width='200'>Parameter</th>
 <th>Type</th>
 <th>Default</th>
 <th>Description</th>
