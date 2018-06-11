@@ -20,7 +20,7 @@ To run the AnyChart Export Server, do the following:
 3. Alternatively, install Chrome or Chromium browser (version 60.0 and above) and install `chromedriver`:
   * `brew install chromedriver` for Mac users
   * or download it from the [chromedriver official site](https://sites.google.com/a/chromium.org/chromedriver/downloads) and add it to the PATH.
-3. Install Java: version above 6, 7, 8 – [https://java.com/en/download/](https://java.com/en/download/)).
+3. Install Java: version above 6, 7, 8 - [https://java.com/en/download/](https://java.com/en/download/)).
 4. Download [AnyChart Export Server binary file](https://static.anychart.com/cdn/export-server/export-server.jar).
 
 ## Path
@@ -153,12 +153,12 @@ The full list of the parameters available:
 <tr>
 <td>--image-width<br>-w</td>
 <td></td>
-<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up – container-width will be used instead.</td>
+<td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up - container-width will be used instead.</td>
 </tr>
 <tr>
 <td>--image-height<br>-l</td>
 <td></td>
-<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up – container-height will be used instead.</td>
+<td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up - container-height will be used instead.</td>
 </tr>
 <tr>
 <td>--force-transparent-white<br>-f</td>
@@ -341,7 +341,7 @@ In the handler of `/sharing/twitter_oauth` request, the export server gets such 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
 */sharing/twitter\_confirm*
-This request should contain only Twitter `message` parameter – a string of no more than 140 characters.
+This request should contain only Twitter `message` parameter - a string of no more than 140 characters.
 In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and posts a new tweet with that image.
 
 Note: the `/sharing/twitter_oauth` and `/sharing/twitter_confirm` requests are used inside Export Server,
