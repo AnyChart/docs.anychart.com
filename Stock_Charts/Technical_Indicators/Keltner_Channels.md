@@ -39,7 +39,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are eight parameters a Keltner Channel indicator has, one of them is necessary – the mapping.
+There are eight parameters a Keltner Channel indicator has, one of them is necessary - the mapping.
 
 The "maPeriod" and "atrPeriod" parameters set the Moving Average period and Average True Range period. The "maType" parameter sets the soothing type, the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average, the upper series, and the lower series.
 

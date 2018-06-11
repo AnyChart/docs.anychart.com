@@ -40,7 +40,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are two parameters an On Balance Volume indicator has, one of them is necessary – the mapping. The second parameter sets the series type. The following code sample demonstrates an OBV indicator with parameters set as default:
+There are two parameters an On Balance Volume indicator has, one of them is necessary - the mapping. The second parameter sets the series type. The following code sample demonstrates an OBV indicator with parameters set as default:
 
 ```
 var obv = plot.obv(mapping, "line");

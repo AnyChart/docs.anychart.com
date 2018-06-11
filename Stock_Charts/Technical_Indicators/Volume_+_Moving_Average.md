@@ -40,7 +40,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are five parameters Volume + MA indicator has, one of them is necessary – the mapping.
+There are five parameters Volume + MA indicator has, one of them is necessary - the mapping.
 
 The next two parameters, "maPeriod" and "maType", set the period and type of the Moving Average. The last two, "volumeSeriesType" and "maSeriesType", allow you to set the Volume and MA series types.
 

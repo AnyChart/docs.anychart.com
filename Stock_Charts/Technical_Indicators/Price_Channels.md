@@ -37,7 +37,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are five parameters a Price Channel indicator has, one of them is necessary – the mapping.
+There are five parameters a Price Channel indicator has, one of them is necessary - the mapping.
 
 The second parameter sets the period, and the next three parameters allow you to set the series type of the upper, middle, and lower series.
 
