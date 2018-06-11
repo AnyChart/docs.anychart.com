@@ -25,39 +25,30 @@
 <script>
 anychart.onDocumentReady(function () {
 
-  var stage = anychart.graphics.create("container");
+  // create data
+  var data = [
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ];
 
-  // chart with labels inside
-  labelsInside = anychart.scatter();
+  // create a line chart
+  var chart = anychart.line(data);
+  chart.title("Side Position");
 
-  // setting data
-  line = labelsInside.line([
-    [-4, 16],
-    [-2, 20],
-    [-1, 15],
-    [2, 20],
-    [3, 18],
-    [4, 16]
-  ]);
-  line.tooltip(false);
+  // change the side position of labels on the y-axis
+  chart.yAxis().labels().position("inside");
 
-  labelsInside.title("Labels Inside");
-  innerBackground = labelsInside.background();
-  innerBackground.stroke("#CCCCCC");
+  // change the side position of labels on the x-axis
+  chart.xAxis().labels().position("inside");
 
-  // adjusting scales
-  innerXTicks = labelsInside.xScale().ticks();
-  innerXTicks.interval(1);
+  // set the container id
+  chart.container("container");
 
-  // setting labels a bit higher and adjusting its values
-  innerLabels = labelsInside.xAxis().labels();
-  innerLabels.offsetY(-30);
-
-  // disabling labels for y axis
-  labelsInside.yAxis(false);
-
-  labelsInside.container(stage);
-  labelsInside.draw();
+  // initiate drawing the chart
+  chart.draw();
 });
 </script>
 </body>
