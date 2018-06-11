@@ -44,9 +44,9 @@ The following arguments work both in [Web Server Mode](#web_server_mode), and [C
 <table>
 <tbody>
 <tr>
-<th width="160">Name</th>
-<th width="50">Short name</th>
-<th width="80">Options</th>
+<th>Name</th>
+<th>Short name</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -91,9 +91,9 @@ The full list of the parameters available:
 <table>
 <tbody>
 <tr>
-<th width="160">Name</th>
-<th width="50">Short name</th>
-<th width="80">Options</th>
+<th>Name</th>
+<th>Short name</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -163,7 +163,7 @@ The full list of the parameters available:
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
-<th>Export Images Args</th>
+<th colspan=4>Export Images Args</th>
 </tr>
 <tr>
 <td>--image-width</td>
@@ -190,7 +190,7 @@ The full list of the parameters available:
 <td>The image quality</td>
 </tr>
 <tr>
-<th>Export PDF Args</th>
+<th colspan=4>Export PDF Args</th>
 </tr>
 <tr>
 <td>--pdf-size</td>
@@ -258,9 +258,9 @@ The full list of the server parameters:
 <table>
 <tbody>
 <tr>
-<th width="160">Name</th>
-<th width="50">Short name</th>
-<th width="80">Options</th>
+<th>Name</th>
+<th>Short name</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -288,7 +288,7 @@ The full list of the server parameters:
 <td>A boolean parameter. Allows executing violent scripts in phantom js. If set to Y (e.g., as we do with https://export.anychart.com/), it might affect the security, so there is a flag, which is N by default.</td>
 </tr>
 <tr>
-<th>Save images or \*.pdf files to a folder</th>
+<th colspan=4>Save images or \*.pdf files to a folder</th>
 </tr>
 <tr>
 <td>--saving-folder PATH</td>
@@ -303,7 +303,7 @@ The full list of the server parameters:
 <td>Return the URL prefix upon request</td>
 </tr>
 <tr>
-<th>Sharing</th>
+<th colspan=4>Sharing</th>
 </tr>
 <tr>
 <td>--sharing-port PORT</td>
@@ -330,7 +330,7 @@ The full list of the server parameters:
 <td>Share mysql database password</td>
 </tr>
 <tr>
-<th>Twitter</th>
+<th colspan=4>Twitter</th>
 </tr>
 <tr>
 <td>--twitter-key KEY</td>
@@ -408,8 +408,8 @@ AnyChart Export Server supports the following requests:
 <table>
 <tbody>
 <tr>
-<th width="190">URL</th>
-<th width="100">Type</th>
+<th>URL</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -480,9 +480,9 @@ Typical Export and Twitter Sharing request contains the params listed below:
 <table>
 <tbody>
 <tr>
-<th width="160">Parameter</th>
-<th width="50">Type</th>
-<th width="80">Default</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 <tr>
