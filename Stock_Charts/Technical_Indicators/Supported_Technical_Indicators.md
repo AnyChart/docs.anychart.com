@@ -76,7 +76,10 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 		</tr>
 		<tr>
 			<td>[Parabolic SAR (PSAR)](Parabolic_SAR_\(PSAR\))</td>
-		</tr>		
+		</tr>
+		<tr>
+			<td>[Price Channels](Price_Channels)</td>
+		</tr>
 		<tr>
 			<td>[Rate of Change (ROC)](Rate_of_Change_\(ROC\))</td>
 		</tr>
