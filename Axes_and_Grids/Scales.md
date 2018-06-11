@@ -137,6 +137,19 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 {sample}AGST\_Scales\_08{sample}
 
+## Integer Ticks
+
+If you don't want to see fractional values on the axis you can use the {api:anychart.scales.ScatterTicks#allowFractional}allowFractional(){api} method:
+
+```
+// force ticks to stick to integer values
+chart.yScale().ticks().allowFractional(false);
+```
+
+Take a look at the sample and see how enabling and disabling this
+
+{sample}AGST\_Scales\_08\_1{sample}
+
 ## Minimum and Maximum Gap
 
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
