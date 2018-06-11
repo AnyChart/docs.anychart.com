@@ -45,31 +45,26 @@ The following arguments work both in [Web Server Mode](#web_server_mode), and [C
 <tbody>
 <tr>
 <th>Name</th>
-<th>Short name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>--config PATH</td>
-<td>-C</td>
+<td>--config PATH<br>-C</td>
 <td></td>
 <td>Path to config</td>
 </tr>
 <tr>
-<td>--engine BROWSER</td>
-<td>-e</td>
+<td>--engine BROWSER<br>-e</td>
 <td>phantom, chrome or firefox</td>
 <td>Headless browser</td>
 </tr>
 <tr>
-<td>--help</td>
-<td>-h</td>
+<td>--help<br>-h</td>
 <td></td>
 <td>Print help</td>
 </tr>
 <tr>
-<td>--version</td>
-<td>-v</td>
+<td>--version<br>-v</td>
 <td></td>
 <td>Print version, can be used without action</td>
 </tr>
@@ -92,139 +87,117 @@ The full list of the parameters available:
 <tbody>
 <tr>
 <th>Name</th>
-<th>Short name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>--script</td>
-<td>-s</td>
+<td>--script<br>-s</td>
 <td></td>
 <td>The chart code</td>
 </tr>
 <tr>
-<td>--input-file</td>
-<td>-i</td>
+<td>--input-file<br>-i</td>
 <td></td>
 <td>Set the path to the file with the chart code (script)</td>
 </tr>
 <tr>
 <td>--svg SVG</td>
 <td></td>
-<td></td>
 <td>SVG string to Execute</td>
 </tr>
 <tr>
 <td>--svg-file SVG_FILE</td>
-<td></td>
 <td></td>
 <td>SVG file to Execute</td>
 </tr>
 <tr>
 <td>--html-file HTML_FILE</td>
 <td></td>
-<td></td>
 <td>The HTML page file to Execute (consider using just Chrome or Firefox binary in the headless mode instead)</td>
 </tr>
 <tr>
-<td>--output-file</td>
-<td>-o</td>
+<td>--output-file<br>-o</td>
 <td></td>
 <td>The name for the output file (e.g.: "Chart_1" or "Chart_0.png")</td>
 </tr>
 <tr>
-<td>--output-path</td>
-<td>-p</td>
+<td>--output-path<br>-p</td>
 <td></td>
 <td>Set the path for the folder where the chart will be saved</td>
 </tr>
 <tr>
-<td>--type</td>
-<td>-t</td>
+<td>--type<br>-t</td>
 <td>svg, png, jpg, pdf, csv, xlsx, xml, json</td>
 <td>The file type</td>
 </tr>
 <tr>
-<td>--container-id</td>
-<td>-c</td>
+<td>--container-id<br>-c</td>
 <td></td>
 <td>The id for the container which will be generated in PhantomJS for the chart</td>
 </tr>
 <tr>
-<td>--container-width</td>
-<td>-W</td>
+<td>--container-width<br>-W</td>
 <td></td>
 <td>The container width. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
-<td>--container-height</td>
-<td>-L</td>
+<td>--container-height<br>-L</td>
 <td></td>
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
 <tr>
-<th colspan=4>Export Images Args</th>
+<th colspan=3>Export Images Args</th>
 </tr>
 <tr>
-<td>--image-width</td>
-<td>-w</td>
+<td>--image-width<br>-w</td>
 <td></td>
 <td>The image width. Doesn't work for \*.pdf. Ignored when container-width is also set up – container-width will be used instead.</td>
 </tr>
 <tr>
-<td>--image-height</td>
-<td>-l</td>
+<td>--image-height<br>-l</td>
 <td></td>
 <td>The image height. Doesn't work for \*.pdf. Ignored when container-height is also set up – container-height will be used instead.</td>
 </tr>
 <tr>
-<td>--force-transparent-white</td>
-<td>-f</td>
+<td>--force-transparent-white<br>-f</td>
 <td></td>
 <td>Make the chart background white if it is originally transparent</td>
 </tr>
 <tr>
-<td>--jpg-quality</td>
-<td>-q</td>
+<td>--jpg-quality<br>-q</td>
 <td>from 0 to 1</td>
 <td>The image quality</td>
 </tr>
 <tr>
-<th colspan=4>Export PDF Args</th>
+<th colspan=3>Export PDF Args</th>
 </tr>
 <tr>
-<td>--pdf-size</td>
-<td>-S</td>
+<td>--pdf-size<br>-S</td>
 <td></td>
 <td>Define the \*.pdf document paper size</td>
 </tr>
 <tr>
-<td>--pdf-x</td>
-<td>-x</td>
+<td>--pdf-x<br>-x</td>
 <td></td>
 <td>The X-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
-<td>--pdf-y</td>
-<td>-y</td>
+<td>--pdf-y<br>-y</td>
 <td></td>
 <td>The Y-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
 <tr>
-<td>--pdf-width</td>
-<td>-X</td>
+<td>--pdf-width<br>-X</td>
 <td></td>
 <td>The \*.pdf document height (in pixels)</td>
 </tr>
 <tr>
-<td>--pdf-height</td>
-<td>-Y</td>
+<td>--pdf-height<br>-Y</td>
 <td></td>
 <td>The \*.pdf document height (in pixels)</td>
 </tr>
 <tr>
-<td>--pdf-landscape</td>
-<td>-O</td>
+<td>--pdf-landscape<br>-O</td>
 <td>Portrait or Landscape</td>
 <td>The \*.pdf document layout</td>
 </tr>
@@ -258,25 +231,22 @@ The full list of the server parameters:
 <table>
 <tbody>
 <tr>
-<th>Command</th>
+<th>Name</th>
 <th>Options</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>--host
--H</td>
+<td>--host<br>-H</td>
 <td></td>
 <td>The host where the server will be run</td>
 </tr>
 <tr>
-<td>--port
--P</td>
+<td>--port<br>-P</td>
 <td></td>
 <td>The port where the server will be run</td>
 </tr>
 <tr>
-<td>--log FILE
--F</td>
+<td>--log FILE<br>-F</td>
 <td></td>
 <td>The file for server logging</td>
 </tr>
@@ -289,14 +259,12 @@ The full list of the server parameters:
 <th colspan=3>Save images or \*.pdf files to a folder</th>
 </tr>
 <tr>
-<td>--saving-folder PATH
--z</td>
+<td>--saving-folder PATH<br>-z</td>
 <td></td>
 <td>The path to save images or \*.pdf files</td>
 </tr>
 <tr>
-<td>--saving-url-prefix PREFIX
--Z</td>
+<td>--saving-url-prefix PREFIX<br>-Z</td>
 <td></td>
 <td>Return the URL prefix upon request</td>
 </tr>
@@ -363,14 +331,14 @@ First of all, the user sends a request to `/sharing/twitter` that contains SVG o
 
 If the user is not authorized, the Twitter Authorization dialog is displayed. The user should confirm that he or she gives the app the rights to post the image. After that, the user will be redirected to the `/sharing/twitter_oauth` callback.
 
-#### /sharing/twitter_oauth
+#### /sharing/twitter\_oauth
 This request accepts the `oauth_token` and `oauth_verifier` parameters. Read more: [OAuth (Wikipedia)](https://en.wikipedia.org/wiki/OAuth).
 
 In the handler of `/sharing/twitter_oauth` request, the export server gets such params as `oauth_token`, `oauth_token_secret`, `user_id`, `screen_name`, `image_url` (user picture), and `user_name` and saves them to the MySQL database. After that, the posting images dialog window will be displayed.
 
 If the user is already authorized in the app, the posting dialog will be displayed immediately. When the user confirms to post the image and clicks the TWEET button, there will be a request to `/sharing/twitter_confirm`.
 
-#### /sharing/twitter_confirm
+#### /sharing/twitter\_confirm
 This request should contain only Twitter `message` parameter – a string of no more than 140 characters.
 In the handler of `/sharing/twitter_confirm` request, the export server uploads the shared image with Twitter API and posts a new tweet with that image.
 
