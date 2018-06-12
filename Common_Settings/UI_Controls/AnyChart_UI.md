@@ -1,11 +1,10 @@
 # AnyChart UI
 
-AnyChart UI is a set of utility components that may help you with integration and improve user experience, UI elements are not the part of rendered SVG/VML chart images, they are dynamic HTML elements with JavaScript coded interactivity and their outtlook is controlled by anychart.css.
+AnyChart UI is a set of utility components that may help you with integration and improve user experience, UI elements are not the part of rendered SVG/VML chart images, they are dynamic HTML elements with JavaScript coded interactivity and their outlook is controlled by anychart.css.
 
 The following UI components are available and supported:
 
 * [Context Menu](Context_Menu)
-* [Chart Editor](Chart_Editor)
 * [Preloader](Preloader)
 
 The following UI components are present in the Framework but are in beta:
@@ -19,3 +18,5 @@ In the upcoming releases we plan to add:
 * Updated Gantt Toolbar Component
 * Export Data/Image Toolbar
 * Breacrumbs for Drill Down Control
+
+**NOTE:** In previous versions [Chart Editor](../../Chart_Editor/Overview) was a part of AnyChart UI, now it is an [AnyChart Extension](../../Quick_Start/Modules#extensions).

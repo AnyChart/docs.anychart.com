@@ -248,14 +248,6 @@ Module to work with [Annotations](../Stock_Charts/Drawing_Tools_and_Annotations/
 <script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-annotations.min.js"></script>
 ```
 
-### Chart Editor
-
-Module to work with [Chart Editor](../Common_Settings/UI_Controls/Chart_Editor):
-
-```
-<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-chart-editor.min.js"></script>
-```
-
 ### Data Adapter
 
 Module to work with [Data Adapter](../Working_with_Data/Data_Adapter/Overview):
@@ -303,4 +295,16 @@ Module that enables VML support for old browsers.
 
 ```
 <script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-vml.min.js"></script>
+```
+
+## Extensions
+
+Extension is a special type of modules that provide additional functionality. Extensions **CAN NOT** be a part of [Bundle](#bunle) or compiled into it using [Builder](#builder).
+
+### Chart Editor
+
+Chart Editor an extension that provides the UI to configure charts and chart data. Read more about Chart Editor in [AnyChart Chart Editor](../Chart_Editor/Overview) section.
+
+```
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-editor.min.js"></script>
 ```
