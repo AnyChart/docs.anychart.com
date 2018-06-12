@@ -33,7 +33,7 @@ chart.dataGrid().rowHoverFill('#DEFFE3')
 chart.getTimeline().rowHoverFill('#DEFFE3')
 ```
 
-{sample :width 825 :height 200 }GANTT\_Interactivity\_02{sample}
+{sample :width 825 :height 200}GANTT\_Interactivity\_02{sample}
 
 ### Select
 
