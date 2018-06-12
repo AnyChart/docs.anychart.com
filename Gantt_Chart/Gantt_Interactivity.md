@@ -64,6 +64,6 @@ You can edit Gantt Charts in the "live" mode. To enable live editing use the {ap
 chart.edit(true);
 ```
 
-{sample :width 825 :height 300 }GANTT\_Interactivity\_05{sample}
+{sample :width 825 :height 300}GANTT\_Interactivity\_05{sample}
 
 Learn more in [Editing mode in AnyGantt](Live_Edit_UI_and_API) article.
