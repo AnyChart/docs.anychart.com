@@ -35,7 +35,7 @@ anychart.onDocumentReady(function (){
 	chart.data(treeData);
 	
 	// enable Gantt editing
-	chart.editing(true);
+	chart.edit(true);
 
     // edit connetors appearance
     timeline = chart.getTimeline();
@@ -65,7 +65,7 @@ anychart.onDocumentReady(function (){
 	// set pixel position of the main splitter
     chart.splitterPosition(300);
 
-    // rowheight
+    // row height
     chart.defaultRowHeight(30);
 
 	// set container id for the chart
@@ -74,10 +74,8 @@ anychart.onDocumentReady(function (){
 	// initiate chart drawing
 	chart.draw();
 
-	// zoom chart to specified date
+	// zoom chart to fit all
 	chart.fitAll();
-	
-	chart.editing(true);
 
 });
 function getData() {

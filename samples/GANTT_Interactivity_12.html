@@ -35,7 +35,7 @@ anychart.onDocumentReady(function (){
 	var timeline = chart.getTimeline();
 
 	// changing the color of the connector preview to red
-	timeline.connectorPreviewStroke("red", 1, "5 2");
+	timeline.connectors().previewStroke("red", 1, "5 2");
 	// sets edit interval thumb fill
 	timeline.editIntervalThumbFill("red");
 	// sets edit interval thumb fill
@@ -47,7 +47,7 @@ anychart.onDocumentReady(function (){
 	chart.data(treeData);
 
 	// enable Gantt editing
-	chart.editing(true);
+	chart.edit(true);
 
 	dataGrid = chart.dataGrid();
 	
@@ -68,10 +68,8 @@ anychart.onDocumentReady(function (){
 	// initiate chart drawing
 	chart.draw();
 
-	// zoom chart to specified date
+	// zoom chart to fit all
 	chart.fitAll();
-	
-	chart.editing(true);
 
 });
 function getData() {
