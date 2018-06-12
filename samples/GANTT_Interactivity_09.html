@@ -40,19 +40,19 @@ anychart.onDocumentReady(function (){
     // edit connetors appearance
     timeline = chart.getTimeline();
     // set the connector control marker type
-	timeline.editStartConnectorMarkerType("arrowLeft");
-	timeline.editFinishConnectorMarkerType("arrowRight");
+	timeline.elements().edit().start().connectorThumb().type("arrowLeft");
+	timeline.elements().edit().end().connectorThumb().type("arrowRight");
 	// connectors controls marker type
-	timeline.editStartConnectorMarkerSize(30);
-	timeline.editFinishConnectorMarkerSize(30);
+	timeline.elements().edit().start().connectorThumb().size(30);
+	timeline.elements().edit().end().connectorThumb().size(30);
 	// offsets of the connectors controls
-	timeline.editStartConnectorMarkerHorizontalOffset(10);
-	timeline.editFinishConnectorMarkerHorizontalOffset(-10);
-	timeline.editStartConnectorMarkerVerticalOffset(-7);
-	timeline.editFinishConnectorMarkerVerticalOffset(7);
+	timeline.elements().edit().start().connectorThumb().horizontalOffset(10);
+	timeline.elements().edit().end().connectorThumb().horizontalOffset(-10);
+	timeline.elements().edit().start().connectorThumb().verticalOffset(-7);
+	timeline.elements().edit().end().connectorThumb().verticalOffset(7);
 
 	// the width of the interval length editor
-	timeline.editIntervalWidth(15);
+	timeline.elements().edit().thumbs().size(15);
 
 	// disable tooltips
 	timeline.tooltip().enabled(false);

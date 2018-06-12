@@ -37,11 +37,7 @@ anychart.onDocumentReady(function (){
 	// changing the color of the connector preview to red
 	timeline.connectors().previewStroke("red", 1, "5 2");
 	// sets edit interval thumb fill
-	timeline.editIntervalThumbFill("red");
-	// sets edit interval thumb fill
-	timeline.editIntervalThumbFill({
-	    color: "red"
-	});
+	timeline.elements().edit().thumbs().fill("red");
 
 	// set data for the chart
 	chart.data(treeData);
