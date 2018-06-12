@@ -117,44 +117,33 @@ Progress slider
 
 The controls above are shown in their default state. AnyChart provides anyone an opportunity to become unique and remarkable, so it is not hard to customize colors and shapes of all chart details - even so small as Live Edit Chart Controls.
 
-When an interval on a Live Edit Chart is hovered, its controls appear. It is possible to drag the interval, make it longer or shorter, drag the scroller or connect this interval to another one. To make the connectors' controls of another type, size or color, just use the {api:anychart.core.ui.Timeline#editStartConnectorMarkerType}editStartConnectorMarkerType(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerType}editFinishConnectorMarkerType(){api} methods - those are responsible for the connector marker type, which you can choose from the {api:anychart.enums.MarkerType}Marker Type List{api}.
+When an interval on a Live Edit Chart is hovered, its controls appear. It is possible to drag the interval, make it longer or shorter, drag the scroller or connect this interval to another one. To make the connectors' controls of another type, size or color, just use the {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} and {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} methods - those are responsible for the editing thumb controls via {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} methid, for example you can switch the marker type, which you can choose from the {api:anychart.enums.MarkerType}Marker Type List{api}. Same goes for marker size, offset and other settings:
 
 ```
+// link to timeline 
+timeline = chart.getTimeline();
+
+// links to start and end marker settings
+startMarker = timeline.elements().edit().start().connectorThumb();
+endMarker =  timeline.elements().edit().end().connectorThumb();
+
 // set the connector control marker type
-timeline.editStartConnectorMarkerType("arrow-left");
-timeline.editFinishConnectorMarkerType("arrow-right");
+startMarker.type("arrowLeft");
+endMarker.type("arrowRight");
+
+// connectors controls marker type
+startMarker.size(30);
+endMarker.size(30);
+
+// offsets of the connectors controls
+startMarker.horizontalOffset(10);
+endMarker.horizontalOffset(-10);
+
+startMarker.verticalOffset(-7);
+endMarker.verticalOffset(7);
 ```
 
-The {api:anychart.core.ui.Timeline#editStartConnectorMarkerSize}editStartConnectorMarkerSize(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerSize}editFinishConnectorMarkerSize(){api} methods manage the size of the start and finish connector controls of an interval.
-
-```
-// set the connector control marker size
-timeline.editStartConnectorMarkerSize(30);
-timeline.editFinishConnectorMarkerSize(30);
-```
-
-To set the desired position for both connector controls, use the {api:anychart.core.ui.Timeline#editStartConnectorMarkerHorizontalOffset}editStartConnectorMarkerHorizontalOffset(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerHorizontalOffset}editFinishConnectorMarkerHorizontalOffset(){api} methods. They accept integer values (px). Positive values will shift the controls to the right and negative ones will shift them to the left.
-
-```
-// set the connector control marker offset
-timeline.editStartConnectorMarkerHorizontalOffset(10);
-timeline.editFinishConnectorMarkerHorizontalOffset(-10);
-```
-
-The {api:anychart.core.ui.Timeline#editStartConnectorMarkerVerticalOffset}editStartConnectorMarkerVerticalOffset(){api} and {api:anychart.core.ui.Timeline#editFinishConnectorMarkerVerticalOffset}editFinishConnectorMarkerVerticalOffset(){api} methods do the same as a couple of previous ones, but in vertical direction. Positive values will shift the controls downwards and negative ones will shift them upwards.
-
-```
-// set the connector control marker offset
-timeline.editStartConnectorMarkerVerticalOffset(-7);
-timeline.editFinishConnectorMarkerVerticalOffset(7);
-```
-
-There are other controls on an interval. The {api:anychart.core.ui.Timeline#editIntervalWidth}editIntervalWidth(){api} method changes the width of the conrol which helps to change the interval's length:
-
-```
-// the width of the interval length editor
-timeline.editIntervalWidth(15);
-```
+There are other settings you can set for thumbs, see the {api:anychart.core.gantt.edit.Thumb}anychart.core.gantt.edit.Thumb{api} class and a sample below:
 
 {sample}GANTT\_Interactivity\_09{sample}
 
@@ -445,38 +434,18 @@ When you change the length of the time bars or move them or milestones later or 
 
 Besides basic Gantt chart elements, there are some more elements which show up in the Live Edit mode. You can alter the view of these elements using special methods described below. 
 
-Connectors have only stroke and thumbs (no fill), use the {api:anychart.core.ui.Timeline#connectorPreviewStroke}connectorPreviewStroke(){api} method to change the stroke color:
+Connectors have only stroke and thumbs (no fill), use the {api:anychart.core.gantt.elements.ConnectorElement#previewStroke}previewStroke(){api} method to change the stroke color:
+
+To change the thumbs' fill and stroke use the proper methods of the {api:anychart.core.gantt.edit.ElementEdit}anychart.core.gantt.edit.ElementEdit{api} class:
 
 ```
+// link to timeline
 var timeline = chart.getTimeline();
 
 // changing the color of the connector preview to red
-timeline.connectorPreviewStroke("red", 1, "5 2");
-```
-
-To change the thumbs' fill and stroke use the {api:anychart.core.ui.Timeline#editConnectorThumbFill}editConnectorThumbFill(){api} and {api:anychart.core.ui.Timeline#editConnectorThumbStroke}editConnectorThumbStroke(){api} methods.
-
-To change the edit preview display use the following methods:
-
-- {api:anychart.core.ui.Timeline#editPreviewFill}editPreviewFill(){api} - for changing the fill color of the preview bar,
-- {api:anychart.core.ui.Timeline#editPreviewStroke}editPreviewStroke(){api} - for changing the stroke color of the preview bar,
-- {api:anychart.core.ui.Timeline#editProgressFill}editProgressFill(){api} - for changing the fill color of the progress part of the time interval bar,
-- {api:anychart.core.ui.Timeline#editProgressStroke}editProgressStroke(){api} - for changing the stroke color of progress.
-
-Thumbs fill color and stroke can be changed, use the {api:anychart.core.ui.Timeline#editIntervalThumbFill}editIntervalThumbFill(){api} and {api:anychart.core.ui.Timeline#editIntervalThumbStroke}editIntervalThumbStroke(){api} methods for that:
-
-```
+timeline.connectors().previewStroke("red", 1, "5 2");
 // sets edit interval thumb fill
-timeline.editIntervalThumbFill("red");
-```
-
-You can define colors as objects as well:
-
-```
-// sets edit interval thumb fill
-timeline.editIntervalThumbFill({
-    color: "red"
-});
+timeline.elements().edit().thumbs().fill("red");
 ```
 
 {sample}GANTT\_Interactivity\_12{sample}

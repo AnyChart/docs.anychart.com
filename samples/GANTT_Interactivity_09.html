@@ -37,19 +37,27 @@ anychart.onDocumentReady(function (){
 	// enable Gantt editing
 	chart.edit(true);
 
-    // edit connetors appearance
+    // link to timeline 
     timeline = chart.getTimeline();
+
+    // links to start and end marker settings
+    startMarker = timeline.elements().edit().start().connectorThumb();
+    endMarker =  timeline.elements().edit().end().connectorThumb();
+
     // set the connector control marker type
-	timeline.elements().edit().start().connectorThumb().type("arrowLeft");
-	timeline.elements().edit().end().connectorThumb().type("arrowRight");
+    startMarker.type("arrowLeft");
+    endMarker.type("arrowRight");
+
 	// connectors controls marker type
-	timeline.elements().edit().start().connectorThumb().size(30);
-	timeline.elements().edit().end().connectorThumb().size(30);
+	startMarker.size(30);
+	endMarker.size(30);
+
 	// offsets of the connectors controls
-	timeline.elements().edit().start().connectorThumb().horizontalOffset(10);
-	timeline.elements().edit().end().connectorThumb().horizontalOffset(-10);
-	timeline.elements().edit().start().connectorThumb().verticalOffset(-7);
-	timeline.elements().edit().end().connectorThumb().verticalOffset(7);
+	startMarker.horizontalOffset(10);
+	endMarker.horizontalOffset(-10);
+    
+	startMarker.verticalOffset(-7);
+	endMarker.verticalOffset(7);
 
 	// the width of the interval length editor
 	timeline.elements().edit().thumbs().size(15);
