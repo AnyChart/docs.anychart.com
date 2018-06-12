@@ -13,11 +13,11 @@ Chart editor works only if proper AnyChart files are included.
 
 ```
 <!-- anychart -->
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-bundle.min.js"></script>
 
 <!-- anychart CSS -->
-<link href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
-<link href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+<link href="https://cdn.anychart.com/releases/DVF-3742-indicators/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+<link href="https://cdn.anychart.com/releases/DVF-3742-indicators/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
 ```
 
 ### Maps
@@ -35,22 +35,22 @@ If you want to use [themes](../Appearance_Settings/Themes) you need to include d
 
 ```
 <!-- themes -->
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/coffee.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_blue.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_earth.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_glamour.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_provence.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_turquoise.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/monochrome.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/morning.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/pastel.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/sea.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/wines.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/coffee.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/dark_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/dark_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/dark_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/dark_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/dark_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/light_blue.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/light_earth.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/light_glamour.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/light_provence.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/light_turquoise.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/monochrome.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/morning.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/pastel.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/sea.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/themes/wines.min.js"></script>
 ```
 
 ## Files
@@ -59,9 +59,9 @@ Chart editor files to be included, not the [Prerequisites](#prerequisites):
 
 ```
 <!-- chart editor CSS-->
-<link href="https://cdn.anychart.com/releases/{{branch-name}}/css/chart-editor.min.css" type="text/css" rel="stylesheet"></script>
+<link href="https://cdn.anychart.com/releases/DVF-3742-indicators/css/chart-editor.min.css" type="text/css" rel="stylesheet"></script>
 <!-- chart editor JS-->
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/chart-editor.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/chart-editor.min.js"></script>
 ```
 
 ## Using
