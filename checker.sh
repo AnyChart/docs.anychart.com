@@ -28,7 +28,12 @@ CURRENT_BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* 
 # IGNORE files
 declare -a IGNOREFILES=(
     "./samples/AS_Fonts_01.html"
-    "./Maps/Map_Projections.md"
+    "./samples/BCT_Sunburst_Chart_04.html"
+    "./samples/CS_Labels_10.html"
+    "./samples/CS_Preloader_01.html"
+    "./samples/Maps_Connectors_11.html"
+    "./samples/WD_Data_Adapter_HTML_Table_02.html"
+    "./samples/quick_start_pie.html"
     )
 
 # filter only files that diff with origin/develop
@@ -37,9 +42,9 @@ FILESLIST=$(git diff --name-only origin/develop | grep -e .html -e .md )
 # function for "fix" file.
 function heal_file(){
     filename=$1
-    # replace all STG url on COM and  non-DVF-3742-indicators
+    # replace all STG url on COM and  non-{{branch-name}}
     perl -pi -e 's/\.stg/\.com/g' ${filename}
-    perl -pi -e 's,(releases)/([^/])+/,\1/DVF-3742-indicators/,g' ${filename}
+    perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
 
     if [[ ! " ${IGNOREFILES[*]} " == *"$filename"* ]]; then
         # match all non-ascii symbols
@@ -65,7 +70,7 @@ FILE_MODIFYER="heal_file"
 # sugar function
 function broke_file(){
     FILENAME=$1
-    perl -pi -e "s,(releases)/(DVF-3742-indicators)+/,\1/$CURRENT_BRANCH/,g" ${FILENAME}
+    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" ${FILENAME}
 }
 
 ########################################################################################################################
@@ -79,7 +84,7 @@ do
             replace|r|"-r")    FILE_MODIFYER="broke_file" ;;
             all|a|"-a")        FILESLIST=$(find . -type f -name "*.html") ;;
             "-h"|"--help"|help|h|"-help")  printf "parameters: \
-                \n 'replace (-r)' - to rename all DVF-3742-indicators to current branch\
+                \n 'replace (-r)' - to rename all {{branch-name}} to current branch\
                 \n 'all (-a)' - modify all files (by default False, modify only diff with origin/develop)\
                 \n 'links (-l)' - get links to pg and github.com for changed samples\
                 \n" && exit 1 ;;
