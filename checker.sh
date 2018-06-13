@@ -70,7 +70,6 @@ FILE_MODIFYER="heal_file"
 
 # sugar function
 function broke_file(){
-    echo $CURRENT_BRANCH $1
     perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" $1
 }
 
