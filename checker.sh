@@ -43,6 +43,7 @@ FILESLIST=$(git diff --name-only origin/develop | grep -e .html -e .md )
 function heal_file(){
     filename=$1
     # replace all STG url on COM and  non-{{branch-name}}
+    perl -pi -e 's,src="../anychart,src="https://cdn.anychart.com/releases/d/js/anychart,g' ${filename}
     perl -pi -e 's/\.stg/\.com/g' ${filename}
     perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
 
@@ -69,8 +70,8 @@ FILE_MODIFYER="heal_file"
 
 # sugar function
 function broke_file(){
-    FILENAME=$1
-    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" ${FILENAME}
+    echo $CURRENT_BRANCH $1
+    perl -pi -e "s,(releases)/({{branch-name}})+/,\1/$CURRENT_BRANCH/,g" $1
 }
 
 ########################################################################################################################
