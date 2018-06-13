@@ -5,7 +5,7 @@
 
 My broken ref link [my test ref link](./Downloading_AnyChart#abracadabra)
 
-My broken ref link [my internal ref link](#asdfasdfdd)
+My broken ref link [my internal ref link](#asdfasdfddd)
 
 To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
 
