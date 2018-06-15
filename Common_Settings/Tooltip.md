@@ -163,7 +163,7 @@ The default content of a tooltip may vary for different chart types and series, 
 
 There are two parts of a tooltip that can hold some information: its title and its body text. This section describes formatting both parts for making your tooltips more customized and informative in a way you need.
 
-### Title
+#### Title
 
 For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
@@ -173,7 +173,7 @@ tooltip1.titleFormat("Manager: {%x}");
 
 {sample}CS\_Tooltip\_14{sample}
 
-### Text
+#### Text
 
 In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
@@ -218,7 +218,7 @@ seriesSpline.tooltip().format(function(e){
 
 **Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity#creating_custom_tooltip)
 
-### Prefix and Postfix
+#### Prefix and Postfix
 
 Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (&deg;F).
 
@@ -393,8 +393,59 @@ Settings for the tooltip in the sample below are applied using themes. Click "la
 
 {sample}CS\_Tooltip\_21{sample}
 
-## Custom Tooltip
+## HTML
 
-If the built-in tooltip features are not enough - you can always create your own custom tooltip, which can contain anything, even another chart. 
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
 
-See [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip) article to learn more.
+```
+chart.tooltip().useHtml(true);
+```
+
+This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. For example, the following sample shows how to add an image to the tooltip:
+
+```
+// configure tooltips
+chart.tooltip().useHtml(true);  
+chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
+chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
+```
+
+{sample}CS\_Tooltip\_22{sample}
+
+Also, you can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
+
+Here are the defaults:
+
+```
+.anychart-tooltip {
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: rgba(33, 33, 33, 0.7);
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  color: #fff;
+  font-family: Verdana, Helvetica, Arial, 'sans-serif';
+  font-size: 12px;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.anychart-tooltip-separator {
+  color: rgba(206, 206, 206, 0.3);
+  border: none;
+  height: 1px;
+  margin: 5px 0;
+}
+
+.anychart-tooltip-title{
+  font-size: 14px;
+}
+```
+
+**Note:** Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use CSS classes or inline formatting.
+
+See also: [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip).

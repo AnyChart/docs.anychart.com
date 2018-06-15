@@ -84,6 +84,10 @@ The sample Pie chart below demonstrates all available tags on slice labels:
 
 {sample}AS\_Fonts\_02{sample}
 
+### HTML Tooltips
+
+In the case of tooltips, passig `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). Read more: [Tooltip: HTML](../Common_Settings/Tooltip#html)
+
 ## Text Formatting
 
 Here is a table with all possible methods for controlling the text view.
