@@ -112,8 +112,8 @@ As in any line, you can make it gradient, change opacity and thickness using {ap
 Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set `true` or `false` to the {api:anychart.core.axes.Ticks#enabled}enabled(){api} method of the {api:anychart.core.axes.Linear#ticks}ticks(){api} or {api:anychart.core.axes.Linear#minorTicks}minorTicks(){api}
 
 ```
-chart.yScale().minorTicks().enabled(true);
-chart.yScale().ticks().enabled(false)
+chart.yAxis().minorTicks().enabled(true);
+chart.yAxis().ticks().enabled(false)
 ```
 
 Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}position(){api} attributes:
