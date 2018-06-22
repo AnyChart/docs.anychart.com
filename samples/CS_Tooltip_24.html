@@ -28,7 +28,6 @@ html, body, #container {
 </style>
 </head>
 <body>
-<div id='tooltipContainer'></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -70,30 +69,37 @@ anychart.onDocumentReady(function () {
   chart.interactivity().selectionMode("none");
 
   // configure tooltips
-  var tooltip = chart.tooltip();
-  tooltip.useHtml(true);
-  tooltip.separator(false);
-  tooltip.title(false);
-  tooltip.format(document.getElementById("tooltipContainer").innerText);
+  chart.tooltip().useHtml(true);
+  chart.tooltip().separator(false);
 
   // create a tooltip chart
-  tooltipChart = createTooltipChart();
+  chart.tooltip().onDomReady(function() {
 
-  // listen to the pointMouseOver event
-  chart.listen("pointMouseOver", function(e) {
+  	// configure the contentElement div of the tooltip
+    this.contentElement.style.width = "200px";
+    this.contentElement.style.height = "100px";
 
-    // update the tooltip chart and set the data
-    var index = e.pointIndex;
-    var dataRow = data.row(index);
-    tooltipChart.data([
-      {x: "John", value: dataRow[2]},
-      {x: "James", value: dataRow[3]},
-      {x: "Peter", value: dataRow[4]},
-      {x: "Mattew", value: dataRow[5]}
-    ]);
+    // create a tooltip chart
+    tooltipChart = createTooltipChart(this.contentElement);
 
-    // set the chart title
-    tooltipChart.title("Sales Persons Share: " + dataRow[0]);
+    // listen to the pointMouseOver event
+    chart.listen("pointMouseOver", function(e) {
+  
+      // update the tooltip chart
+      var index = e.pointIndex;
+      var dataRow = data.row(index);
+      tooltipChart.data([
+        {x: "John", value: dataRow[2]},
+        {x: "James", value: dataRow[3]},
+        {x: "Peter", value: dataRow[4]},
+        {x: "Mattew", value: dataRow[5]}
+      ]);
+
+      console.log (dataRow[2], dataRow[3], dataRow[4], dataRow[5]);
+  
+      // set the chart title
+      tooltipChart.title("Sales Persons Share: " + dataRow[0]);
+    });
   });
 
   // set the container id
@@ -104,7 +110,7 @@ anychart.onDocumentReady(function () {
 });
 
 // a function for creating a tooltip chart
-function createTooltipChart() {
+function createTooltipChart(tooltipContainer) {
 
   // create a bar chart
   var tooltipChart = anychart.bar();
@@ -118,7 +124,7 @@ function createTooltipChart() {
   tooltipChart.padding([0, 12, 0, 0]);
 
   // set the container id
-  tooltipChart.container("tooltipContainer");
+  tooltipChart.container(tooltipContainer);
 
   // initiate drawing the chart
   tooltipChart.draw();
