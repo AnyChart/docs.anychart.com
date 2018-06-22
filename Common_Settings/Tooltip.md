@@ -232,11 +232,11 @@ To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Toolti
 chart.tooltip().useHtml(true);
 ```
 
-This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use [inline styles](#inline_styles) or [CSS classes](#css_classes).
+This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on – use [inline styles](#inline_styles) or [CSS classes](#css_classes). Please note that AnyChart methods for adjusting these settings do not affect the HTML tooltip.
 
 ### Inline Styles
 
-The following sample shows how to add an image to the tooltip by using inline styles:
+The following sample shows how to add an image to the tooltip and configure its font by using inline styles:
 
 ```
 // configure tooltips
@@ -282,6 +282,26 @@ Here are the defaults:
   font-size: 14px;
 }
 ```
+
+The sample below shows how to change the default settings:
+
+```
+.anychart-tooltip {
+    border-radius: 23px;
+    background: rgba(255, 160, 0, 0.7);
+    font-family: Courier, Helvetica, Arial, 'sans-serif';
+}
+
+.anychart-tooltip-separator {
+    border: 1px;
+    height: 3px;
+}
+
+.anychart-tooltip-title{
+    font-size: 28px;
+}
+```
+
 {sample}CS\_Tooltip\_23{sample}
 
 ### Chart as Tooltip
