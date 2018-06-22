@@ -82,24 +82,28 @@ anychart.onDocumentReady(function () {
     // create a tooltip chart
     tooltipChart = createTooltipChart(this.contentElement);
 
+    // set the chart title
+    tooltipChart.title("Sales Persons Share: " + dataRow[0]);
+    });
+
+    chart.tooltip().onBeforeContentChange(function() {
+    // Prevent overriding content of this.contentElement
+    return false;
+    }); 
+
     // listen to the pointMouseOver event
     chart.listen("pointMouseOver", function(e) {
-  
-      // update the tooltip chart
-      var index = e.pointIndex;
-      var dataRow = data.row(index);
-      tooltipChart.data([
-        {x: "John", value: dataRow[2]},
-        {x: "James", value: dataRow[3]},
-        {x: "Peter", value: dataRow[4]},
-        {x: "Mattew", value: dataRow[5]}
-      ]);
 
-      console.log (dataRow[2], dataRow[3], dataRow[4], dataRow[5]);
-  
-      // set the chart title
-      tooltipChart.title("Sales Persons Share: " + dataRow[0]);
-    });
+    // update the tooltip chart
+    var index = e.pointIndex;
+    var dataRow = data.row(index);
+    tooltipChart.data([
+      {x: "John", value: dataRow[2]},
+      {x: "James", value: dataRow[3]},
+      {x: "Peter", value: dataRow[4]},
+      {x: "Mattew", value: dataRow[5]}
+    ]);    
+
   });
 
   // set the container id
