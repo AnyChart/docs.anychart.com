@@ -306,9 +306,11 @@ The sample below shows how to change the default settings:
 
 ### Chart as Tooltip
 
-HTML tooltips can contain even charts – see the sample below. To learn more about event listeners, which are also used in this sample, read the [Event Listeners ](Interactivity/Event_Listeners) article.
+HTML tooltips can contain even charts:
 
 {sample}CS\_Tooltip\_24{sample}
+
+To learn more about event listeners, which are also used in this sample, read the [Event Listeners ](Interactivity/Event_Listeners) article.
 
 ## Size
 
