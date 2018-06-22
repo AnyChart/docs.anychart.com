@@ -34,15 +34,17 @@ anychart.onDocumentReady(function () {
     ["Mary", 9000]
   ];
 
-  // create a chart
+  // create a chart and set the data
   var chart = anychart.column(data);
+
+  // set the chart title
   chart.title().useHtml(true);
-  chart.title("Tooltip: HTML<br><br><span style='font-style:italic'>How Many Pieces of Pizza Have They Eaten?</span>");
+  chart.title("Tooltip: HTML (Inline Styles)<br><br><span style='font-style:italic'>How Many Pieces of Pizza Have They Eaten?</span>");
 
   // configure tooltips
   chart.tooltip().useHtml(true);  
-  chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
-  chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
+  chart.tooltip().titleFormat("<img width='20' src='http://cdn.anychart.com/images/anychart-logo-medium.png'> <span style='font-size:28px;font-family:courier'>{%x}");  
+  chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");  
 
   // set the container id
   chart.container("container");

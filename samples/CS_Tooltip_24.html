@@ -62,8 +62,9 @@ anychart.onDocumentReady(function () {
   // set the data
   var column = chart.column(dataMapping);
 
-  // set the chart data
-  chart.title("Sales Volume");
+  // set the chart title
+  chart.title().useHtml(true);
+  chart.title("Tooltip: HTML (Chart as Tooltip)<br><br><span style='font-style:italic'>Sales Volume</span>");
 
   // disable the selection mode
   chart.interactivity().selectionMode("none");
