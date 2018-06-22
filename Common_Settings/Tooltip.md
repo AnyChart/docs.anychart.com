@@ -306,7 +306,7 @@ The sample below shows how to change the default settings:
 
 ### Chart as Tooltip
 
-HTML tooltips can be more complicated. They can contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Event_Listeners) to get information on management of mouse events.
+HTML tooltips can contain even charts – see the sample below. To learn more about event listeners, which are also used in this sample, read the [Event Listeners ](Interactivity/Event_Listeners) article.
 
 {sample}CS\_Tooltip\_24{sample}
 
