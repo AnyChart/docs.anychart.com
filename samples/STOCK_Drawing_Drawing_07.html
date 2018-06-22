@@ -105,36 +105,36 @@ function sendAnnotationsToServer(data) {
   /* here a variable for saving annotations is used,
   but you can save them to a database, local storage, or server*/
   annotationsAtServer = data;
-};
+}
 
 // load annotations from the server
 function getAnnotationsFromServer() {
   /* here a variable for load annotations is used,
   but you can load them from a database, local storage, or server*/
   return annotationsAtServer;
-};
+}
 
 // create annotations
 function create(){
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
-};
+}
 
 // remove all annotations
 function removeAll(){
   plot.annotations().removeAllAnnotations();
-};
+}
 
 // save annotations
 function save(){
   sendAnnotationsToServer(plot.annotations().toJson(true));
-};
+}
 
 // load all saved annotations
 function load(){
   var annotations = getAnnotationsFromServer();
   plot.annotations().fromJson(annotations);
-};
+}
 </script>
 </body>
 </html>

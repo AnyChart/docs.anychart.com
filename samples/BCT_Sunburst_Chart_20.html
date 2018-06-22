@@ -83,7 +83,7 @@ anychart.onDocumentReady(function () {
 
 /* a function for converting the current
 drilldown path to a string */
-function printPath(path){
+function printPath(path) {
   /* go through the array of data items
   and use the get() method to obtain the "name" field */
   var text = "";
@@ -91,21 +91,21 @@ function printPath(path){
     text += path[i].get("name") + "\\";
   }
   return text;
-};
+}
     
 // drill down to a data item
-function drillToItem(){
+function drillToItem() {
   /* locate an item in the data tree
   and get it as an object */
   var item = treeData.search("name", "Technical");
   // drill down to the item
   chart.drillTo(item);
-};
+}
 
 // drill up a level
-function drillUpALevel(){
+function drillUpALevel() {
    chart.drillUp();
-};
+}
 </script>
 </body>
 </html>

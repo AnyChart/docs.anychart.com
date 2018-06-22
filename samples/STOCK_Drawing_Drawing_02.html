@@ -95,22 +95,22 @@ anychart.onDocumentReady(function () {
 });
 
 // create annotations
-function create(){
+function create() {
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
-};
+}
 
 // cancel drawing
-function cancel(){
+function cancel() {
   plot.annotations().cancelDrawing();
   // reset the select list to the first option
   document.getElementById("typeSelect").value = "default";
-};
+}
 
 // remove all annotations
-function removeAll(){
+function removeAll() {
   plot.annotations().removeAllAnnotations();
-};
+}
 </script>
 </body>
 </html>

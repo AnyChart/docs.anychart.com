@@ -381,7 +381,7 @@ That is how the {api:anychart.core.StateSettings#fill}fill(){api} method works i
 ```
 function() {
   return this.sourceColor;
-};
+}
 ```
 
 The following sample demonstrates a simple fill function:
