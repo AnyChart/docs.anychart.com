@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 22"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3214-html-tooltip/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3214-html-tooltip/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3214-html-tooltip/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // create a data set
+  var data = [
+    ["John", 10000],
+    ["Jake", 12000],
+    ["Peter", 18000],
+    ["James", 11000],
+    ["Mary", 9000]
+  ];
+
+  // create a chart and set the data
+  var chart = anychart.column(data);
+
+  // set the chart title
+  chart.title().useHtml(true);
+  chart.title("Tooltip: HTML (Inline Styles)<br><br><span style='font-style:italic'>Sales</span>");
+
+  // configure tooltips
+  chart.tooltip().useHtml(true);  
+  chart.tooltip().titleFormat("<img width='20' src='http://cdn.anychart.com/images/anychart-logo-medium.png'> <span style='font-size:28px;font-family:courier'>{%x}");  
+  chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");  
+
+  // set the container id
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>
