@@ -224,6 +224,62 @@ Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anycha
 
 {sample}CS\_Tooltip\_11{sample}
 
+## HTML
+
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
+
+```
+chart.tooltip().useHtml(true);
+```
+
+This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. For example, the following sample shows how to add an image to the tooltip:
+
+```
+// configure tooltips
+chart.tooltip().useHtml(true);  
+chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
+chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
+```
+{sample}CS\_Tooltip\_22{sample}
+
+Also, you can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
+
+Here are the defaults:
+
+```
+.anychart-tooltip {
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: rgba(33, 33, 33, 0.7);
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  color: #fff;
+  font-family: Verdana, Helvetica, Arial, 'sans-serif';
+  font-size: 12px;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.anychart-tooltip-separator {
+  color: rgba(206, 206, 206, 0.3);
+  border: none;
+  height: 1px;
+  margin: 5px 0;
+}
+
+.anychart-tooltip-title{
+  font-size: 14px;
+}
+```
+
+**Note:** Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use CSS classes or inline formatting.
+
+See also: [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip).
+
 ## Size
 
 Width and height can be also set for all tooltips at once or for the determined series. Use {api:anychart.core.ui.Tooltip#width}width(){api} and {api:anychart.core.ui.Tooltip#height}height(){api} to set the corresponding parameters. Don't forget to format the text of the tooltip properly to avoid text overflowing or to set the width corresponding to the maximum text length.
@@ -371,7 +427,7 @@ var tooltip = series.tooltip();
 tooltip.hideDelay(1000);
 ```
 
-### Themes
+## Themes
 
 Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
@@ -392,60 +448,3 @@ var themeSettings = {
 Settings for the tooltip in the sample below are applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
 
 {sample}CS\_Tooltip\_21{sample}
-
-## HTML
-
-To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
-
-```
-chart.tooltip().useHtml(true);
-```
-
-This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. For example, the following sample shows how to add an image to the tooltip:
-
-```
-// configure tooltips
-chart.tooltip().useHtml(true);  
-chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
-chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
-```
-
-{sample}CS\_Tooltip\_22{sample}
-
-Also, you can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
-
-Here are the defaults:
-
-```
-.anychart-tooltip {
-  border-radius: 3px;
-  padding: 5px 10px;
-  background: rgba(33, 33, 33, 0.7);
-  border: none;
-  display: inline-block;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  color: #fff;
-  font-family: Verdana, Helvetica, Arial, 'sans-serif';
-  font-size: 12px;
-  position: absolute;
-  pointer-events: none;
-  white-space: nowrap;
-  margin: 10px;
-}
-
-.anychart-tooltip-separator {
-  color: rgba(206, 206, 206, 0.3);
-  border: none;
-  height: 1px;
-  margin: 5px 0;
-}
-
-.anychart-tooltip-title{
-  font-size: 14px;
-}
-```
-
-**Note:** Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use CSS classes or inline formatting.
-
-See also: [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip).
