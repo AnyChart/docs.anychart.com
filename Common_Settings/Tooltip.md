@@ -232,7 +232,11 @@ To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Toolti
 chart.tooltip().useHtml(true);
 ```
 
-This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. For example, the following sample shows how to add an image to the tooltip:
+This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on. Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use [inline styles](#inline_styles) or [CSS classes](#css_classes).
+
+### Inline Styles
+
+The following sample shows how to add an image to the tooltip by using inline styles:
 
 ```
 // configure tooltips
@@ -240,9 +244,12 @@ chart.tooltip().useHtml(true);
 chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
 chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
 ```
+
 {sample}CS\_Tooltip\_22{sample}
 
-Also, you can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
+### CSS Classes
+
+You can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
 
 Here are the defaults:
 
@@ -275,10 +282,13 @@ Here are the defaults:
   font-size: 14px;
 }
 ```
+{sample}CS\_Tooltip\_23{sample}
 
-**Note:** Font settings adjusted with AnyChart methods do not affect the HTML tooltip. Instead, you should use CSS classes or inline formatting.
+### Chart as Tooltip
 
-See also: [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip).
+HTML tooltips can be more complicated. They can contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Event_Listeners) to get information on management of mouse events.
+
+{sample}CS\_Tooltip\_24{sample}
 
 ## Size
 
@@ -379,7 +389,6 @@ AnyChart html5 charting library allows to choose should the tooltip be bound to 
 ```
 chart.tooltip().positionMode("point");
 ```
-
 Here is a sample with the tooltip stuck to the hovered point:
 
 {sample}CS\_Tooltip\_18{sample}

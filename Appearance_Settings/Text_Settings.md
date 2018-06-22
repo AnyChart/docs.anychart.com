@@ -33,7 +33,7 @@ There are labels, tooltips and legend in English, French, Portuguese, Spanish, R
 
 ## HTML
 
-**Note:** If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}useHtml(){api} method to `true`:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}useHtml(){api} method to `true`:
 
 ```
 series.labels().useHtml(true).format(function (){
@@ -86,7 +86,7 @@ The sample Pie chart below demonstrates all available tags on slice labels:
 
 ### HTML Tooltips
 
-In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). Read more: [Tooltip: HTML](../Common_Settings/Tooltip#html).
+**Note:** In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). Read more: [Tooltip: HTML](../Common_Settings/Tooltip#html).
 
 ## Text Formatting
 

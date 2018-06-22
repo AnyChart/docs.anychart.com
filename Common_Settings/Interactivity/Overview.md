@@ -319,14 +319,6 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 {sample}CS\_Interactivity\_15{sample} 
 
-### Chart as Tooltip
-
-Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit complex. Study [Event Listeners article](../Event_Listeners) to get information on management of mouse events.
-
-{sample}CS\_Interactivity\_18{sample}
-
-**Note**: you can find more information about AnyChart tooltips [here](../../Common_Settings/Tooltip).
-
 ## Interactivity Settings in Data Sets
 
 Now, let's look at our dataSets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed some light on using dataSet values for defining interactivity parameters.
@@ -369,5 +361,4 @@ var data = anychart.data.set([
   {x:8, value:1000, selectFill: "Red"}
 ]);
 ```
-
 {sample}CS\_Interactivity\_17{sample}
