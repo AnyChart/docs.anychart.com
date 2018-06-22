@@ -86,7 +86,7 @@ The sample Pie chart below demonstrates all available tags on slice labels:
 
 ### HTML Tooltips
 
-**Note:** In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). Read more: [Tooltip: HTML](../Common_Settings/Tooltip#html).
+**Note:** In the case of tooltips, passing `true` to the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method turns them into fully functional HTML tooltips, making all possible HTML setting available (not only the tags listed above). See the [Tooltip: HTML](../Common_Settings/Tooltip#html) section.
 
 ## Text Formatting
 
