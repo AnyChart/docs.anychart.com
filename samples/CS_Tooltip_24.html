@@ -71,6 +71,7 @@ anychart.onDocumentReady(function () {
   // configure tooltips
   chart.tooltip().useHtml(true);
   chart.tooltip().separator(false);
+  chart.tooltip().title(false);
 
   // create a tooltip chart
   chart.tooltip().onDomReady(function() {
@@ -82,9 +83,7 @@ anychart.onDocumentReady(function () {
     // create a tooltip chart
     tooltipChart = createTooltipChart(this.contentElement);
 
-    // set the chart title
-    tooltipChart.title("Sales Persons Share: " + dataRow[0]);
-    });
+    console.log("chart created in onDomReady", tooltipChart);
 
     chart.tooltip().onBeforeContentChange(function() {
     // Prevent overriding content of this.contentElement
@@ -93,18 +92,24 @@ anychart.onDocumentReady(function () {
 
     // listen to the pointMouseOver event
     chart.listen("pointMouseOver", function(e) {
+      console.log("pointMouseOver");
 
-    // update the tooltip chart
-    var index = e.pointIndex;
-    var dataRow = data.row(index);
-    tooltipChart.data([
-      {x: "John", value: dataRow[2]},
-      {x: "James", value: dataRow[3]},
-      {x: "Peter", value: dataRow[4]},
-      {x: "Mattew", value: dataRow[5]}
-    ]);    
+      // update the tooltip chart
+      var index = e.pointIndex;
+      var dataRow = data.row(index);
+      tooltipChart.data([
+        {x: "John", value: dataRow[2]},
+        {x: "James", value: dataRow[3]},
+        {x: "Peter", value: dataRow[4]},
+        {x: "Mattew", value: dataRow[5]}
+      ]);    
+
+       // set the chart title
+      tooltipChart.title("Sales Persons Share: " + dataRow[0]);
+    });
 
   });
+
 
   // set the container id
   chart.container("container");
@@ -134,7 +139,7 @@ function createTooltipChart(tooltipContainer) {
   tooltipChart.draw();
   
   return tooltipChart;
-}
+};
 </script>
 </body>
 </html>
