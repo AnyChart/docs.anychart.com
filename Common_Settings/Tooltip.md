@@ -236,13 +236,13 @@ This feature gives your access to all possible HTML settings: you can adjust bac
 
 ### Inline Styles
 
-The following sample shows how to add an image to the tooltip and configure its font by using inline styles:
+The following sample shows how to add an image and font settings to the tooltip by using inline styles:
 
 ```
 // configure tooltips
 chart.tooltip().useHtml(true);  
-chart.tooltip().titleFormat("{%x} <img width='20' src='https://cdn.pixabay.com/photo/2013/07/13/13/18/pizza-160780_960_720.png'>");  
-chart.tooltip().format("<img width='20' src='https://upload.wikimedia.org/wikipedia/commons/d/d8/Pizza_slice_icon.png'> {%value}");  
+chart.tooltip().titleFormat("<img width='20' src='http://cdn.anychart.com/images/anychart-logo-medium.png'> <span style='font-size:28px;font-family:courier'>{%x}");  
+chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");
 ```
 
 {sample}CS\_Tooltip\_22{sample}
