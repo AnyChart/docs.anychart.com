@@ -72,7 +72,7 @@ background.cornerType("round");
 background.corners(5);
 ```
 
-That is how labels background with the settings from above looks like:
+This is how labels background with the settings from above looks like:
 
 {sample}CS\_Labels\_04{sample}
 

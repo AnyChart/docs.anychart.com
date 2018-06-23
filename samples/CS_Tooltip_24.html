@@ -80,15 +80,13 @@ anychart.onDocumentReady(function () {
     this.contentElement.style.width = "200px";
     this.contentElement.style.height = "100px";
 
-    // create a tooltip chart
-    tooltipChart = createTooltipChart(this.contentElement);
-
-    console.log("chart created in onDomReady", tooltipChart);
-
+    // prevent the content of this.contentElement from being overriden
     chart.tooltip().onBeforeContentChange(function() {
-    // Prevent overriding content of this.contentElement
-    return false;
+        return false;
     }); 
+
+    // create a tooltip chart in this.contentElement
+    tooltipChart = createTooltipChart(this.contentElement);
 
     // listen to the pointMouseOver event
     chart.listen("pointMouseOver", function(e) {
@@ -138,7 +136,7 @@ function createTooltipChart(tooltipContainer) {
   tooltipChart.draw();
   
   return tooltipChart;
-};
+}
 </script>
 </body>
 </html>

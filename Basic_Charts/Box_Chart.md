@@ -190,7 +190,7 @@ Whiskers are horizontal line segments on the tops of stems. Call these methods t
 
 **Note:** By default the width is 0.
 
-That is how it looks like:
+This is how it looks like:
 
 ```
 // configure whiskers

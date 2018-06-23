@@ -253,7 +253,17 @@ chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");
 
 You can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
 
-Here are the defaults:
+This is how the default div structure of the HTML tooltip looks like: 
+
+```
+<div class="anychart-tooltip"> //context.parentElement
+  <div class="anychart-tooltip-title"></div> //context.titleElement
+  <hr noshade="true" class="anychart-tooltip-separator"> //context.separatorElement
+  <div></div> //context.contentElement
+</div>
+```
+
+And here are the default settings:
 
 ```
 .anychart-tooltip {
@@ -333,7 +343,7 @@ background.cornerType("roundInner");
 background.corners(5);
 ```
 
-That is how tooltip background with the settings from above looks like:
+This is how tooltip background with the settings from above looks like:
 
 {sample}CS\_Tooltip\_12{sample}
 
@@ -437,7 +447,7 @@ var tooltip2 = series2.tooltip();
 tooltip2.position("rightCenter");
 ```
 
-That is how the sample with the code from above looks like:
+This is how the sample with the code from above looks like:
 
 {sample}CS\_Tooltip\_20{sample}
 

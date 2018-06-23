@@ -41,7 +41,7 @@ This article explains how to create a basic Range Area chart as well as configur
 
 To create a Range Area series, use the {api:anychart.charts.Cartesian#rangeArea}rangeArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the `low` and `high` parameters. That is how it looks like in object notation:
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the `low` and `high` parameters. This is how it looks like in object notation:
 
 ```
 var data = [

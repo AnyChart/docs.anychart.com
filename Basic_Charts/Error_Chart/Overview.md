@@ -221,7 +221,7 @@ Besides tokens that work everywhere, there are tokens that are specific to error
 * `{%xLowerError}`
 * `{%xUpperError}`
 
-That is how they can be used to customize labels and tooltips:
+This is how they can be used to customize labels and tooltips:
 
 ```
 //configure labels

@@ -25,7 +25,7 @@ You can either pass your data to the chart constructor or create a series by usi
 * {api:anychart.charts.Cartesian3d#line}line(){api}
 * {api:anychart.charts.Cartesian3d#line2d}line2d(){api}
 
-That is how it looks like:
+This is how it looks like:
 
 ```
 // create data

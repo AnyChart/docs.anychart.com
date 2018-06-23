@@ -376,7 +376,7 @@ Another way to set the colors of a chart is to call the {api:anychart.charts.Sun
 * `point` - an instance of the {api:anychart.core.TreeChartPoint}TreeChartPoint{api} class
 * `sourceColor` - in the normal state: the color of a node from the data, the palette, or the inherited color; in the hovered and selected states: the color in the normal state
 
-That is how the {api:anychart.core.StateSettings#fill}fill(){api} method works in the normal state:
+This is how the {api:anychart.core.StateSettings#fill}fill(){api} method works in the normal state:
 
 ```
 function() {

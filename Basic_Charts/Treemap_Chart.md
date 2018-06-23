@@ -98,7 +98,7 @@ The **tree data structure** is expected by this chart type by default. To organi
 
 Three data fields are required: `value`, `name` / `id`, and `children` - the last one is used to specify the hierarchy of elements.
 
-That is how it looks like:
+This is how it looks like:
 
 ```
 // create data
@@ -135,7 +135,7 @@ The **table data structure** is particularly useful when you store your data in 
 
 Four data fields are required: `name`, `value`, `id`, and `parent` - the last two are used to specify the hierarchy of elements.
 
-That is how it looks like:
+This is how it looks like:
 
 ```
 // create data
