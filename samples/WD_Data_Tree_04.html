@@ -32,7 +32,7 @@ anychart.onDocumentReady(function () {
         name:   "Root",
         start: Date.UTC(2018, 0, 25),
         end: Date.UTC(2018, 2, 14),
-        children: [
+        child_items: [
           {
             name:   "Child 1",
             start: Date.UTC(2018, 0, 25),
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     }];
     
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
     // map the data
     var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
