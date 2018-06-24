@@ -154,7 +154,7 @@ var chart = anychart.treeMap(treeData);
 
 If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to rename the default fields required by the chart type, but does not allow renaming the first-level fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null` unless the data is a CSV string.
+The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map the fields required by the chart type, but does not allow mapping the first-level fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null` unless the data is a CSV string.
 
 In the following sample, the {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
 
