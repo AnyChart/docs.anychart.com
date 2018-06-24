@@ -363,7 +363,7 @@ chart.drillTo(item);
 
 {sample}WD\_Data\_Tree\_10{sample}
 
-The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number depending on the conditions you should specify. When zero is returned, the item is added to the resulting array. If a condition is not specified for an item, zero is returned by default, and the item is included in the array.
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number depending on the conditions you should specify. When zero is returned, the item is added to the resulting array. Zero is returned by default: if a condition is not specified for an item, it is included in the array.
 
 The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to access properties of objects in the custom data field `employee`:
 
