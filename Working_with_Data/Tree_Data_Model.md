@@ -80,7 +80,7 @@ var chart = anychart.treeMap(treeData);
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `"as-tree"` or `"as-table"` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly (to get it, use the **data()** method of the chart).
 
-The choice of **data fields** depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
+The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`), see the [Mapping](#mapping) section.
 
