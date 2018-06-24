@@ -19,75 +19,44 @@
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
         #container {
             position: absolute;
-            width: 80%;
-            top: 0;
+            width: 100%;
+            top: 35px;
             bottom: 0;
-        }
-        #treeInfo {
-            position: absolute;
-            width: 20%;
-            top: 70px;
-            right: 0;
-            bottom: 0;
-            color: #990000;
-            font-style: italic;
         }
     </style>
 </head>
 <body>
-<div id="treeInfo"></div>
+<button onclick="nextItem()">Drill to Next Item</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data
-    var data = [
-      {name:     "Root", children: [
-        {name:   "Parent 1", children: [
-          {name: "Child 1-1", value: 150000000},
-          {name: "Child 1-2", value:  45000000},
-          {name: "Child 1-3", value:   3200000}
-        ]},
-        {name:   "Parent 2", children: [
-          {name: "Child 2-1", value:  55000000},
-          {name: "Child 2-2", value:  10600000},
-          {name: "Child 2-3", value:   5200000}
-        ]},
-        {name:   "Parent 3", children: [
-          {name: "Child 3-1", value:  21000000},
-          {name: "Child 3-2", value:   9000000}
-        ]}  
-      ]} 
-    ];
+    // get data
+    var data = getData(); 
 
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
-    // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+    // get the traverser of a tree
+    traverser = treeData.getTraverser();
 
-    // set the maximum depth of levels shown
-    chart.maxDepth(2);
+    // skip the root node
+    traverser.advance();
+
+    // create a chart and set the data
+    chart = anychart.treeMap(treeData);
+
+    // set the depth of hints
+    chart.hintDepth(2);
 
     // configure labels
     chart.labels().format("{%name}");
-
-    // get the traverser of a tree
-    var traverser = treeData.getTraverser();
-
-    /* get the element displaying
-    the information about the tree */
-    var treeInfo = document.getElementById("treeInfo");
-
-    // display the names of all data items in the tree
-    while (traverser.advance()) {
-      var newElement = document.createElement("li");
-      newElement.innerText = traverser.get("name");
-      treeInfo.appendChild(newElement);
-    };
-
+    
     // set the chart title
     chart.title("Tree Data Model: Traversing");
     
@@ -97,6 +66,73 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// a function for getting data
+function getData(){
+  // create data
+  var data = [
+    {name:       "Root", children: [
+      {name:     "Item 1", children: [
+        {name:   "Item 1-1", children: [
+          {name: "Item 1-1-1", value: 1000},
+          {name: "Item 1-1-2", value:  600},
+          {name: "Item 1-1-3", value:  550},
+          {name: "Item 1-1-4", value:  300},
+          {name: "Item 1-1-5", value:  150}
+        ]},
+        {name:   "Item 1-2",   value: 2300},
+        {name:   "Item 1-3",   value: 1500}
+      ]},
+      {name:     "Item 2", children: [
+        {name:   "Item 2-1", children: [
+          {name: "Item 2-1-1", value: 2100},
+          {name: "Item 2-1-2", value: 1000},
+          {name: "Item 2-1-3", value:  800},
+          {name: "Item 2-1-4", value:  750}
+        ]},
+        {name:   "Item 2-2", children: [
+          {name: "Item 2-2-1", value:  560},
+          {name: "Item 2-2-2", value:  300},
+          {name: "Item 2-2-3", value:  150},
+          {name: "Item 2-2-4", value:   90}
+        ]},
+        {name:   "Item 2-3",   value:  400}
+      ]},
+      {name:     "Item 3", children: [
+        {name:   "Item 3-1", children: [
+          {name: "Item 3-1-1", value:  850},
+          {name: "Item 3-1-2", value:  400},
+          {name: "Item 3-1-3", value:  150}
+        ]},
+        {name:   "Item 3-2",   value: 1350},
+        {name:   "Item 3-3",   value: 1300},
+        {name:   "Item 3-4", children: [
+          {name: "Item 3-4-1", value:  400},
+          {name: "Item 3-4-2", value:  300},
+          {name: "Item 3-4-3", value:  250},
+          {name: "Item 3-4-4", value:  150}
+        ]}
+      ]}  
+    ]} 
+  ];
+  return data;
+};
+
+// get the next data item and drill to it
+function nextItem() {
+  // try to go to the next item
+  if (traverser.advance()) {
+    /* get the current item
+    as an instance of the dataItem class */
+    var dataItem = traverser.current();
+    // drill down to the item
+    chart.drillTo(dataItem);
+  }
+  else {
+    //reset the traverser
+    traverser.reset();
+  }
+};
 </script>
 </body>
 </html>

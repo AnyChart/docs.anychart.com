@@ -367,22 +367,7 @@ chart.drillTo(item);
 
 {sample}WD\_Data\_Tree\_10{sample}
 
-The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to find items with values greater than a given number. Their names displayed in the title of the chart, and nodes are colored.
-
-```
-// a comparison function
-function comparisonFunction(fieldValue, comparisonValue) {
-  return fieldValue < comparisonValue;
-};
-
-// search for items with values greater than a given one
-var inputValue = (document.getElementById("inputValue").value) * 1000000;
-var items = treeData.searchItems("value", inputValue, comparisonFunction);
-```
-
-{sample}WD\_Data\_Tree\_11{sample}
-
-In the sample below, a comparison function is used to access properties of objects in the custom data field `employee`:
+The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to access properties of objects in the custom data field `employee`:
 
 ```
 // create data
@@ -431,14 +416,16 @@ chart.data(treeData);
 
 // a comparison function
 function comparisonFunction(fieldValue, comparisonValue) {
-  return comparisonValue != fieldValue.firstName + fieldValue.lastName;
+  if (comparisonValue != fieldValue.firstName + fieldValue.lastName) {
+    return 1;
+  };
 };
 
 // search for items
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 300}WD\_Data\_Tree\_12{sample}
+{sample :height 300}WD\_Data\_Tree\_11{sample}
 
 #### filter()
 
@@ -456,7 +443,7 @@ var items = treeData.filter(function(item) {
 });
 ```
 
-{sample :height 300}WD\_Data\_Tree\_13{sample}
+{sample :height 300}WD\_Data\_Tree\_12{sample}
 
 #### Indexes
 
@@ -480,11 +467,11 @@ treeData.removeIndexOn("value");
 
 When you click the button in the following sample, random tree-like data is generated, then an index is created, and a search on the indexed field is performed. Then the index is removed, and a new search on the same field is preformed. The time each step takes is logged, which allows you to see that the search on the indexed field is faster. The search result is shown on a Treemap chart:
 
-{sample :height 450}WD\_Data\_Tree\_14{sample}
+{sample :height 450}WD\_Data\_Tree\_13{sample}
 
 (+) ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
 
-{sample}WD\_Data\_Tree\_15{sample}
+{sample}WD\_Data\_Tree\_14{sample}
 
 ### Traversing
 
@@ -521,7 +508,7 @@ while (traverser.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Tree\_16{sample}
+{sample}WD\_Data\_Tree\_15{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -549,7 +536,7 @@ function nextItem() {
 };
 ```
 
-{sample}WD\_Data\_Tree\_17{sample}
+{sample}WD\_Data\_Tree\_16{sample}
 
 ## Events
 
@@ -587,4 +574,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Data\_Tree\_18{sample}
+{sample}WD\_Data\_Tree\_17{sample}

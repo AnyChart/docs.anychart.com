@@ -19,127 +19,84 @@
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        label {
-            margin: 10px 0 0 10px;
-        }
-        input {
-            width: 30px;
-            margin: 10px 0 0 5px;
-        }
         #container {
             position: absolute;
-            width: 100%;
-            top: 35px;
+            width: 80%;
+            top: 0;
             bottom: 0;
         }
-        #search {
-            color: #00838f;
-        }
-        #indexedSearch {
-            color: #ef6c00;
-        }
-        #timeLabel {
-        	position: absolute;
-        	width: 100px;
-            padding: 10px;
-            right: 20px;
-            z-index: 100;
-            border: 1px solid #96a6a6;
-            color: #96a6a6;
-            text-align: center;
+        #treeInfo {
+            position: absolute;
+            width: 20%;
+            top: 70px;
+            right: 0;
+            bottom: 0;
+            color: #990000;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-<button id="search" onclick="searchValues('value', '#00838f')">Search</button>
-<button id = "indexedSearch" onclick="searchValues('indexValue', '#ef6c00')">Indexed Search</button>
-<label>value ><input id="inputValue" value="50"> mln</label>
-<label id="timeLabel">Search Time</label>
+<div id="treeInfo"></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // get the data
-    generatedData = getData(100);
+    // create data
+    var data = [
+      {name:     "Root", children: [
+        {name:   "Parent 1", children: [
+          {name: "Child 1-1", value: 150000000},
+          {name: "Child 1-2", value:  45000000},
+          {name: "Child 1-3", value:   3200000}
+        ]},
+        {name:   "Parent 2", children: [
+          {name: "Child 2-1", value:  55000000},
+          {name: "Child 2-2", value:  10600000},
+          {name: "Child 2-3", value:   5200000}
+        ]},
+        {name:   "Parent 3", children: [
+          {name: "Child 3-1", value:  21000000},
+          {name: "Child 3-2", value:   9000000}
+        ]}  
+      ]} 
+    ];
+
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
-    chart = anychart.treeMap(generatedData, "as-tree");
+    var chart = anychart.treeMap(treeData);
 
-    // create an index
-    chart.data().createIndexOn("indexValue");
+    // set the maximum depth of levels shown
+    chart.maxDepth(2);
+
+    // configure labels
+    chart.labels().format("{%name}");
+
+    // get the traverser of a tree
+    var traverser = treeData.getTraverser();
+
+    /* get the element displaying
+    the information about the tree */
+    var treeInfo = document.getElementById("treeInfo");
+
+    // display the names of all data items in the tree
+    while (traverser.advance()) {
+      var newElement = document.createElement("li");
+      newElement.innerText = traverser.get("name");
+      treeInfo.appendChild(newElement);
+    };
 
     // set the chart title
-    chart.title("(!) СТАРЫЙ ПРИМЕР");
-
+    chart.title("Tree Data Model: Traversing");
+    
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
 });
-
-// a comparison function
-function comparisonFunction(fieldValue, comparisonValue) {
-  if (comparisonValue > fieldValue)
-    return true;
-  else
-    return false;
-};
-
-// search items with values greater than a given one
-function searchValues(field, color){
-
-  // start measuring the time of search
-  var searchTime = performance.now();
-
-  // reset the colors of the chart
-  resetColors();
-
-  // get the chart data as an instance of anychart.data.Tree
-  var treeData = chart.data();
-
-  // search items
-  var inputValue = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems(field, inputValue, comparisonFunction);
-
-  /* get the the found items
-  and set the fill colors of their nodes */
-  for (var i = 0; i < items.length; i++) {
-    items[i].set("fill", color);
-  };
-
-  // get the time of search and show it in the label
-  searchTime = (performance.now() - searchTime).toFixed(0) / 1000;
-  var timeLabel = document.getElementById("timeLabel");
-  timeLabel.innerHTML = searchTime + " s";
-  timeLabel.style.color = color;
-  timeLabel.style.borderColor = color;
-};
-
-// a function for resetting the colors of the chart
-function resetColors() {
-  chart.data(generatedData, "as-tree");  
-};
-
-// a function for generating data
-function getData(n){
-  // generate data
-  var childArray = [];
-  for (var i = 1; i < n; i++){
-    var childObj = {};
-    var randomValue = Math.floor((Math.random() * 99999999) + 1);
-    childObj.name = "Child " + i;
-    childObj.value = randomValue;
-    childObj.indexValue = randomValue;
-    childArray.push(childObj);
-  };
-  var data = [{name: "Root", children: childArray}];
-  return data;
-};
-
 </script>
 </body>
 </html>
