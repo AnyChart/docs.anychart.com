@@ -80,15 +80,9 @@ var chart = anychart.treeMap(treeData);
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `"as-tree"` or `"as-table"` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly (to get it, use the **data()** method of the chart).
 
-The default data fields include:
-
-* `children`
-* `parent`
-* `id`
-
 The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
 
-**Note 1:** To learn how to rename the default fields of the tree data model, see the [Mapping](#mapping) section.
+**Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`), see the [Mapping](#mapping) section.
 
 **Note 2:** The `id` field is required for the live edit mode of the Gantt Chart. To learn more, read the the [Live Edit UI and API](../Gantt_Chart/Live_Edit_UI_and_API) article and take a look at the sample in the [Events](#events) section of this article.
 
