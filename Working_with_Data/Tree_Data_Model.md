@@ -350,8 +350,6 @@ To search for an item, use the following methods of the {api:anychart.data.Tree}
 
 The {api:anychart.data.Tree#search}search(){api} method returns either an array of data items or one item, while {api:anychart.data.Tree#searchItems}searchItems(){api} always returns an array. Both methods are called with three parameters: the name of a data field, a value, and a comparison function.
 
-The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number depending on the conditions you should specify. When zero is returned, the item is added to the resulting array. If a condition is not specified for an item, zero is returned by default, and the item is included in the array.
-
 In the next sample {api:anychart.data.Tree#search}search(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, is used to find an item with a certain name and drill down to it:
 
 ```
@@ -364,6 +362,8 @@ chart.drillTo(item);
 ```
 
 {sample}WD\_Data\_Tree\_10{sample}
+
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number depending on the conditions you should specify. When zero is returned, the item is added to the resulting array. If a condition is not specified for an item, zero is returned by default, and the item is included in the array.
 
 The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to access properties of objects in the custom data field `employee`:
 
