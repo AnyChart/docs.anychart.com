@@ -435,7 +435,7 @@ The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data
 
 Use this method to set advanced search conditions, for example to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
-In this sample a filter function is used to find items with duration greater than a given one. Their names displayed in the title of the chart, and nodes are colored.
+In this sample a filter function is used to find items with duration greater than a given one, duration being calculated from two data fields (the names of these items are displayed in the title of the chart, and their nodes are colored):
 
 ```
 // search for items with duration equal or greater than a given one
