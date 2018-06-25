@@ -29,7 +29,7 @@ You can learn how to use these classes in the sections below.
 Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or [CSV string](#csv_string) (see also [Data from CSV](Data_From_CSV)).
 To create a chart based on this type of data, you should create a data table, add data, and map the table. 
 
-The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}.
+**1. Creating data table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
 If you set the data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
@@ -41,13 +41,13 @@ var dataTable = anychart.data.table(0);
 var dataTable = anychart.data.table("x");
 ```
 
-The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
+**1. Adding Data.** The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
 ```
 dataTable.addData(data);
 ```
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+**1. Mapping Data.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
