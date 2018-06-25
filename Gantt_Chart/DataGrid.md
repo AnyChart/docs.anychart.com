@@ -170,9 +170,7 @@ timeline.rowOddFill("#add8e6");
 In the sample below the odd rows are colored with a solid fill as well as the even rows.
 {sample :width 690 :height 190}GANTT\_Chart\_09{sample}
 
-## General Settings
-
-### Turning On/Off
+## Turning On/Off
 
 By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with <b>false</b> as the argument:
 
@@ -185,7 +183,7 @@ And here is a simple illustration of this idea:
 
 {sample :width 690 :height 190}GANTT\_Chart\_15{sample}
 
-### Data Grid Width
+## Width
 
 It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method:
 
@@ -194,13 +192,13 @@ It is possible to configure your html5 Gantt Charts by simply dragging and dropp
 chart.splitterPosition(100);
 ```
 
-### Expand/Collapse
+## Expand/Collapse
 
-Data Grid supports hierarchical data representation, so if the data is complicated, the Data Grid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
+Data Grid supports hierarchical data representation, so when the data structure has several levels, expand and collapse buttons appear:
 
 {sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
-Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}, collapseExpandButtons(){api} method.
+You can place expand/collapse buttons on any column using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}collapseExpandButtons(){api} method:
 
 ```
 column.collapseExpandButtons(false);
@@ -215,3 +213,63 @@ column.depthPaddingMultiplier(8);
 In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
 
 {sample :width 690 :height 200}GANTT\_Chart\_14{sample}
+
+### Buttons
+
+To customize how expand/collapse buttons look use the {api:anychart.core.ui.DataGrid#buttons}buttons(){api} method. Buttons settings are configured using the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
+
+Here is a sample of a data grid with customized expand/collapse buttons, the text is altered, background is turned of in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
+
+```
+// get buttons configuration object
+var buttons = chart.dataGrid().buttons();
+
+// configure buttons font
+buttons.fontColor('Black');
+buttons.fontFamily('Courier');
+// change width to match the custom font
+buttons.width(22);
+
+// change buttons text
+buttons.normal().content('[+]');
+buttons.selected().content('[-]');
+// disable buttons background in expanded and collapsed states
+buttons.normal().background(false);
+buttons.selected().background(false);
+// change the background and font in hovered state
+buttons.hovered().background().fill(null);
+buttons.hovered().background().stroke("1 red");
+buttons.hovered().fontColor('Red');
+```
+
+{sample :width 690 :height 200}GANTT\_Chart\_18{sample}
+
+You can also override the drawing of buttons completely by passing the drawing function to the content method:
+
+```
+var buttons = chart.dataGrid().buttons();
+
+// create custom drawing functions
+var contentFunction = function (path) {
+    // draw different primitives or anything else depending on the state
+    var half = this.width / 2;
+    switch (this.state) {
+      case 'normal':
+        fill = '#dd2c00';
+        anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+        break;
+      case 'hovered':
+        fill = anychart.color.lighten('#dd2c00');
+        anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+        break;
+      case 'selected':
+        fill = '#00bfa5';
+        anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
+        break;
+    }      
+};
+
+// Set content functions
+buttons.normal().content(contentFunction);
+buttons.selected().content(contentFunction);
+```
