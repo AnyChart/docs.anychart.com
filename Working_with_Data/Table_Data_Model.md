@@ -47,7 +47,7 @@ var dataTable = anychart.data.table("x");
 dataTable.addData(data);
 ```
 
-**1. Mapping Data.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+**1. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -55,6 +55,11 @@ var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 
 ```
 var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
+```
+
+```
+var chart = anychart.stock();
+var ohlcSeries = chart.plot(0).ohlc(mapping);
 ```
 
 ### Array of Arrays
