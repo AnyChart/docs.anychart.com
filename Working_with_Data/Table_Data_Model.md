@@ -305,7 +305,7 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching). Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+**1.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
@@ -323,11 +323,11 @@ You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-To access a **row of a table**, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+**2.** To access a **row of a table** in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
-selectable.select("2002-01-01", "2006-01-01, "year", 2");
+selectable.select("2002-01-01", "2006-01-01", "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
 
