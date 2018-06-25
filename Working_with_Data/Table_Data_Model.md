@@ -303,9 +303,13 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row. In other words, there is no direct access to rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
 
-**1.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+Please note that rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+
+Manipulating table data often requires accessing rows or selections of rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
+
+**1. Accessing Selections.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
@@ -323,15 +327,13 @@ You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-**2.** To access a **row of a table** in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+**2. Accessing Rows** To access a **row of a table** in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
 selectable.select("2002-01-01", "2006-01-01", "year", 2");
 selectable.search("2004-01-01", "exact");
 ```
-
-Manipulating table data often requires accessing rows or selections of rows, so the methods described here are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
 ## Data Manipulation
 
