@@ -59,28 +59,25 @@ Tree data structures in Anychart are defined as instances of the {api:anychart.d
 
 To create a chart based on tree-like data, you should organize your data either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
-The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
+**1. Creating Data Tree** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
 ```
-// create a data tree
 treeData = anychart.data.tree(data, "as-tree");
 ```
 
 ```
-// create a data tree
 treeData = anychart.data.tree(data, "as-table");
 ```
 
-Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor:
+**2. Creating Chart.** Then pass the instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class created by this method to the chart constructor:
 
 ```
-// create a chart and set the data
 var chart = anychart.treeMap(treeData);
 ```
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `"as-tree"` or `"as-table"` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly (to get it, use the **data()** method of the chart).
 
-The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
+**3. Data Fields.** The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`), see the [Mapping](#mapping) section.
 
