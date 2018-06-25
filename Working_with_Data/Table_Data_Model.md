@@ -303,7 +303,7 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching). Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row. In other words, there is no direct access to rows. Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
 **1.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
