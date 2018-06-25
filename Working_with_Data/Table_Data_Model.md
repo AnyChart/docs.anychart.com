@@ -309,13 +309,13 @@ Please note that rows are defined as instances of the {api:anychart.data.TableSe
 
 Manipulating table data often requires accessing rows or selections of rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
-**1. Accessing Selections.** To access a **selection of rows**, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+**1. Accessing Selections.** To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
 ```
 
-Then specify the **range of dates**. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. This is how selecting a range of dates looks like:
+Then specify the **range of dates** the selection falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. This is how selecting a range of dates looks like:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
@@ -327,7 +327,7 @@ You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-**2. Accessing Rows.** To access a **row of a table** in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+**2. Accessing Rows.** To access a row of a table in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
