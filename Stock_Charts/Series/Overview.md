@@ -4,9 +4,9 @@
 
 ## Overview
 
-AnyStock supports a lot of [different series types](Supported_Series), some of them compatible to be [switched during run time](Series_Type).
+AnyStock supports a lot of [different series types](Supported_Series), some of these series types are compatible and can be [switched during run time](Series_Type).
 
-Here's a sample where we put three of them. 
+Here's a basic sample with three different series on two plots. 
 
 ```
 // set the plots

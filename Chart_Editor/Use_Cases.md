@@ -25,5 +25,5 @@ Learn more about AnyChart Qlik Extension and see it in action:
 
 Chart Editor Demo application is the very basic sample of Chart Editor use, feel free to browse the source, or fork and use in your project:
 
-- [Run AnyChart Chart Editor Demo on AnyChart.Com](https://www.anychart.com/products/chart_editorRR/)
-- [AnyChart Chart Editor Demo Source Code on GitHub](https://www.anychart.com/products/chart_editorRR/)
+- [Run AnyChart Chart Editor Demo](https://anychart.github.io/chart-editor/)
+- [AnyChart Chart Editor Demo Source Code on GitHub](https://github.com/AnyChart/chart-editor/blob/master/index.html)
