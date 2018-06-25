@@ -412,10 +412,40 @@ In this sample, when you push the button, random data is added to the table and 
 
 ### Updating
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you can call this method, you can specify dates that are already included in your data and set new values for them: 
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you call this method, you can specify dates that are already included in your data and set new values for them.
+
+**Note:** When the data is updated, the mapping is updated automatically. Make sure that new data corresponds to the mapping.
+
+In the following sample, the first row of the table is updated:
 
 ```
-var newData = [["2015-12-25", newLow, newHigh, color]];
+// create a data table
+dataTable = anychart.data.table(0);
+
+// add data
+dataTable.addData([
+  ["2015-12-25", 506.69, 511.88],
+  ["2015-12-26", 507.59, 514.98],
+  ["2015-12-27", 505.49, 516.30],
+  ["2015-12-28", 506.23, 514.72],
+  ["2015-12-29", 505.38, 517.86],
+  ["2015-12-30", 506.66, 516.98],
+  ["2015-12-31", 505.99, 513.33],
+  ["2016-01-01", 507.99, 515.29],
+  ["2016-01-02", 506.18, 514.87]
+]);
+
+// map the data
+mapping = dataTable.mapAs({low: 1, high: 2});
+
+// create a stock chart
+var chart = anychart.stock();
+    
+// create a plot and an ohlc series
+var ohlcSeries = chart.plot(0).rangeColumn(mapping);
+
+// update the first row
+var newData = [["2015-12-25", 510.69, 516.88]];
 dataTable.addData(newData);
 ```
 
