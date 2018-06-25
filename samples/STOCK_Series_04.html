@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Series 03"/>
+    <meta name="ac:name" content="STOCK Series 04"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
     ]);
 
 
-    // map the data
+    // create mapping objects
     var mapping1 = dataTable.mapAs({'value': 4});
     var mapping2 = dataTable.mapAs({'value': 5});
       
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.stock();
 
     // create a column series
-    chart.plot(0).column(mapping);
+    chart.plot(0).column(mapping1);
 
     // set the part of a chart to be selected
     chart.selectRange('2014-01-13','2014-02-04');
