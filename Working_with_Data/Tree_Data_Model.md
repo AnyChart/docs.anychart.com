@@ -59,7 +59,7 @@ Tree data structures in Anychart are defined as instances of the {api:anychart.d
 
 To create a chart based on tree-like data, you should organize your data either [as a tree](#as_tree) or [as a table](#as_table). Then it is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
-**1. Creating Data Tree** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
+**1. Creating Data Tree.** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
 ```
 treeData = anychart.data.tree(data, "as-tree");
