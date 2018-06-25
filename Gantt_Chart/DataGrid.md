@@ -273,3 +273,7 @@ var contentFunction = function (path) {
 buttons.normal().content(contentFunction);
 buttons.selected().content(contentFunction);
 ```
+
+See a live sample of such customized buttons below:
+
+{sample :width 690 :height 200}GANTT\_Chart\_19{sample}
