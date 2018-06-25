@@ -484,4 +484,8 @@ The iterator is used to display the information about the grouped data falling i
 
 ## Table Computer
 
+Coming soon.
+
 ## Events
+
+Coming soon.
