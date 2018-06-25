@@ -315,7 +315,7 @@ Manipulating table data often requires accessing rows or selections of rows, so 
 selectable = mapping.createSelectable();
 ```
 
-Then specify the **range of dates** the selection falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters. Keys can be passed as numbers, strings, or Date objects. This is how selecting a range of dates looks like:
+Then specify the **range of dates** the selection falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects. Both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
