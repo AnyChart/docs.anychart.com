@@ -154,7 +154,7 @@ var chart = anychart.treeMap(treeData);
 
 If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map the fields required by the chart type, but does not allow mapping the first-level fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null` unless the data is a CSV string.
+The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null`.
 
 In the following sample, the {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
 
@@ -363,7 +363,9 @@ chart.drillTo(item);
 
 {sample}WD\_Data\_Tree\_10{sample}
 
-The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number depending on the conditions you should specify. When zero is returned, the item is added to the resulting array. Zero is returned by default: if a condition is not specified for an item, it is included in the array.
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number...
+
+(?) ДОПИСАТЬ ПОДРОБНОСТИ
 
 The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to access properties of objects in the custom data field `employee`:
 
@@ -414,9 +416,11 @@ chart.data(treeData);
 
 // a comparison function
 function comparisonFunction(fieldValue, comparisonValue) {
-  if (comparisonValue != fieldValue.firstName + fieldValue.lastName) {
+  if (comparisonValue == fieldValue.firstName + fieldValue.lastName) {
+    return 0;
+  } else {
     return 1;
-  };
+  }
 };
 
 // search for items
@@ -427,9 +431,9 @@ var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 
 #### filter()
 
-The {api:anychart.data.Tree#sfilter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
+The {api:anychart.data.Tree#filter}filter(){api} method returns an array of data items. It is always called with a filter function as a parameter, which accepts a data item and returns `true` or `false`.
 
-(?) ДОПИСАТЬ ПОДРОБНОСТИ
+Use this method to set advanced search conditions, for example to find all elements greater or less than a given value or to compare two data fields, like in the sample below.
 
 In this sample a filter function is used to find items with duration greater than a given one. Their names displayed in the title of the chart, and nodes are colored.
 

@@ -81,11 +81,11 @@ anychart.onDocumentReady(function () {
 
     var dataGrid =  chart.dataGrid()
 
-    dataGrid.column(2).format(function(item) {
+    dataGrid.column(2).labels().format(function(item) {
         return item.get("employee").firstName;
     });
 
-    dataGrid.column(3).format(function(item) {
+    dataGrid.column(3).labels().format(function(item) {
         return item.get("employee").lastName;
     });
 
@@ -99,7 +99,9 @@ anychart.onDocumentReady(function () {
 
     // a comparison function
     function comparisonFunction(fieldValue, comparisonValue) {
-      if (comparisonValue != fieldValue.firstName + fieldValue.lastName) {
+      if (comparisonValue == fieldValue.firstName + fieldValue.lastName) {
+        return 0;
+      } else {
         return 1;
       }
     };
