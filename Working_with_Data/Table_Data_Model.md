@@ -389,6 +389,8 @@ var lastHigh = lastPoint.get("high");
 
 {sample}WD\_Data\_Table\_07{sample}
 
+**Note:** To learn more about range selection, read the [Range Selection](../Stock_Charts/Range_Selection) article.
+
 ### Adding
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding new rows.
