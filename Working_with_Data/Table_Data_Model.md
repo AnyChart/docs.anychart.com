@@ -26,15 +26,40 @@ You can learn how to use these classes in the sections below.
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. There are two ways to set this type of data: as an [array of arrays](#array_of_arrays) or as an [array of objects](#array_of_objects).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or [CSV string](#csv_string) (see also [Data from CSV](Data_From_CSV)).
+To create a chart based on it, you should create a data table, add data, and map the table. 
 
-### Array of Arrays
+The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
-If your data is organized as an **array of arrays**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of the column containing table keys (dates) as a parameter (0 by default). You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If you set the data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+
+```
+var dataTable = anychart.data.table(0);
+```
+
+```
+var dataTable = anychart.data.table("x");
+```
 
 The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+```
+dataTable.addData(data);
+```
+
+Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+
+```
+var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+```
+
+```
+var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
+```
+
+### Array of Arrays
+
+This sample shows how to set data if it is organized as an **array of arrays**:
 
 ```
 // create a data table
@@ -67,11 +92,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### Array of Objects
 
-If your data is organized as an **array of objects**, use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the name of the field containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
-
-The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
-
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of fields in your data to the names required by the type of series you are going to create. Then pass the mapping, whis is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+This sample shows how to set data if it is organized as an **array of objects**:
 
 ```
  create a data table
@@ -104,13 +125,9 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### CSV String
 
-If your data is a [CSV string](Data_From_CSV), use the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the number of the column containing table keys (dates) as a parameter. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+**Note:**  By default AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
 
-The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data. By default AnyChart considers commas to be column separators and line breaks to be row separators, but you can pass an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
-
-Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the numbers of columns to the names of data fields required by the type of series you are going to create. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
-
-This sample shows how to add CSV data with settings:
+This sample shows how to set data if it is organized as an a **CSV string**:
 
 ```
 // create data
@@ -151,7 +168,7 @@ ohlcSeries.name("ACME Corp.");
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
 
-To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays) or an [array of objects](#array_of_objects):
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV String](#csv_string):
 
 ```
 dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -515,6 +532,8 @@ selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
 
 {sample}WD\_Data\_Table\_12{sample}
+
+**Note:** To learn more about range selection, read the [Range Selection](../Stock_Charts/Range_Selection) article.
 
 ## Table Computer
 
