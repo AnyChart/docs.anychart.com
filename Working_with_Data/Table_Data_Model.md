@@ -303,9 +303,9 @@ var column_2 = chart.plot(0).column(mapping_2);
 
 ## Accessing Rows
 
-If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
+Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-Please note that rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
+If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
 
 Manipulating table data often requires accessing rows or selections of rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
@@ -315,13 +315,13 @@ Manipulating table data often requires accessing rows or selections of rows, so 
 selectable = mapping.createSelectable();
 ```
 
-Then specify the **range of dates** the selection falls into. To select all dates in the table, call {api:anychart.data.TableSelectable#selectAll}selectAll(){api}, and to select a smaller range, call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects. Both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
+This method creates a selection including all rows. But you can narrow in down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects. Also, sometimes you might need the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
 ```
 
-You can call {api:anychart.data.TableSelectable#selectAll}selectAll(){api} and {api:anychart.data.TableSelectable#select}select(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
+You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
 ```
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
