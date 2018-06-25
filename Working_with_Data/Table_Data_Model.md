@@ -315,11 +315,13 @@ Manipulating table data often requires accessing rows or selections of rows, so 
 selectable = mapping.createSelectable();
 ```
 
-This method creates a selection including all rows. But you can narrow in down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects. Also, sometimes you might need the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}. This is how selecting a range of dates looks like:
+This method creates a selection including all rows. But you can narrow in down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
 ```
+
+Also, sometimes you might need the {api:anychart.data.TableSelectable#selectAll}selectAll(){api} method, allowing you to select all dates. Please note that both methods return instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
 You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:anychart.data.TableSelectable#selectAll}selectAll(){api} with two optional parameters for **grouping the selected data**, like in the second sample in the [Iterating](#iterating) section. One of these parameters sets the time interval, for example a day, a month, a year, etc. (see {api:anychart.enums.Interval}anychart.enums.Interval{api}), and the other sets the number of intervals:
 
