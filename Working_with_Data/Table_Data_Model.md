@@ -352,12 +352,10 @@ You can perform the following data operations:
 
 To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
-* {api:anychart.data.TableSelectable.RowProxy#get}get(){api}
-* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api}
-* {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api}
-* {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api}
-
-**Note:** The {api:anychart.data.TableSelectable.RowProxy#get}get(){api} methods accepts the name of a data field and returns its value. The {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} method also returns the value, but accepts the number of a column.
+* {api:anychart.data.TableSelectable.RowProxy#get}get(){api} – accepts the name of a data field, returns its value
+* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} – accepts the number of a column, returns the value
+* {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api} – returns the index of a row
+* {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api} – returns the key (date) of a row
 
 To call the methods listed above, you need to [access](#accessing_rows) a row of the table, which requires creating a selection of rows and performing a search – see the sample in the [Searching](#searching) section. 
 
