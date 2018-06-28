@@ -30,9 +30,7 @@ html, body, #container {
 <body>
 <div id="container"></div>
 <script>
-var tooltipChart = null;
-var pointData = null;
-var pointTitle = "";
+
 anychart.onDocumentReady(function () {
 
   // create data
@@ -72,6 +70,8 @@ anychart.onDocumentReady(function () {
   chart.tooltip().useHtml(true);
   chart.tooltip().separator(false);
   chart.tooltip().title(false);
+
+  var tooltipChart = null;
 
   /* listen to the onDomReady event
   and create a tooltip chart */
