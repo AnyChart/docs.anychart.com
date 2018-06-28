@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 02"/>
+    <meta name="ac:name" content="WD Table Data 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -25,26 +25,31 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
+    // create data
+    var data = "Dates;Open;High;Low;Close*" +
+               "2015-12-25;512.53;514.88;505.69;507.34*" +
+               "2015-12-26;511.83;514.98;505.59;506.23*" +
+               "2015-12-27;511.22;515.30;505.49;506.47*" +
+               "2015-12-28;510.35;515.72;505.23;505.80*" +
+               "2015-12-29;510.53;515.86;505.38;508.25*" +
+               "2015-12-30;511.43;515.98;505.66;507.45*" +
+               "2015-12-31;511.50;515.33;505.99;507.98*" +
+               "2016-01-01;511.32;514.29;505.99;506.37*" +
+               "2016-01-02;511.70;514.87;506.18;506.75";
+
+    // create an object with csv settings
+    csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
     
     // create a data table
-    var dataTable = anychart.data.table("x");
+    var dataTable = anychart.data.table(0);
     
     // add data
-    dataTable.addData([
-      {"x": "2015-12-25", "open": 512.53, "high": 514.88, "low": 505.69, "close": 507.34},
-      {"x": "2015-12-26", "open": 511.83, "high": 514.98, "low": 505.59, "close": 506.23},
-      {"x": "2015-12-27", "open": 511.22, "high": 515.30, "low": 505.49, "close": 506.47},
-      {"x": "2015-12-28", "open": 510.35, "high": 515.72, "low": 505.23, "close": 505.80},
-      {"x": "2015-12-29", "open": 510.53, "high": 515.86, "low": 505.38, "close": 508.25},
-      {"x": "2015-12-30", "open": 511.43, "high": 515.98, "low": 505.66, "close": 507.45},
-      {"x": "2015-12-31", "open": 511.50, "high": 515.33, "low": 505.99, "close": 507.98},
-      {"x": "2016-01-01", "open": 511.32, "high": 514.29, "low": 505.99, "close": 506.37},
-      {"x": "2016-01-02", "open": 511.70, "high": 514.87, "low": 506.18, "close": 506.75}
-    ]); 
+    dataTable.addData(data, null, csvSettings);
     
     // map the data
-    var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
-
+    var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+    
     // create a stock chart
     var chart = anychart.stock();
     
@@ -53,7 +58,7 @@ anychart.onDocumentReady(function () {
     ohlcSeries.name("ACME Corp.");
     
     // set the chart title
-    chart.title("Table Data: Setting Data (Array of Objects)");
+    chart.title("Table Data: Setting Data (CSV String)");
     
     // set the container id
     chart.container("container");

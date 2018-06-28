@@ -3,12 +3,11 @@
 
 ## Overview
 
-The table data model...
+The table data model represents data as a collection of rows and columns, which allows storing large ordered data sets.
 
-* [AnyStock](../Stock_Charts/Quick_Start)
-* [AnyStock Data](../Stock_Charts/Data)
+This model is required by [AnyChart Stock and Financial Charts](../Stock_Charts/Quick_Start). See also: [Stock Charts: Data](../Stock_Charts/Data).
 
-This article explains how to set table data, access data items, and perform operations on data.
+This article explains how to set table data, access rows, and perform operations on data.
 
 ## Classes
 
@@ -41,13 +40,13 @@ var dataTable = anychart.data.table(0);
 var dataTable = anychart.data.table("x");
 ```
 
-**1. Adding Data.** The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
+**2. Adding Data.** The next step is calling the {api:anychart.data.Table#addData}addData(){api} method for passing the data to the table. Please note that this method is also used for [adding](#adding) and [updating](#updating) data.
 
 ```
 dataTable.addData(data);
 ```
 
-**1. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -93,7 +92,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).ohlc(mapping);
 ```
 
-{sample}WD\_Data\_Table\_01{sample}
+{sample}WD\_Table\_Data\_01{sample}
 
 ### Array of Objects
 
@@ -126,7 +125,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).ohlc(mapping);
 ```
 
-{sample}WD\_Data\_Table\_02{sample}
+{sample}WD\_Table\_Data\_02{sample}
 
 ### CSV String
 
@@ -167,7 +166,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 ohlcSeries.name("ACME Corp.");
 ```
 
-{sample}WD\_Data\_Table\_03{sample}
+{sample}WD\_Table\_Data\_03{sample}
 
 ### Mapping
 
@@ -238,7 +237,7 @@ var ohlc_1 = chart.plot(0).ohlc(mapping_1);
 var ohlc_2 = chart.plot(1).ohlc(mapping_2);
 ```
 
-{sample}WD\_Data\_Table\_04{sample}
+{sample}WD\_Table\_Data\_04{sample}
 
 This sample show how to map the data for multiple series and [technical indicators](../Stock_Charts/Technical_Indicators):
 
@@ -281,7 +280,7 @@ chart.plot(1).yScale().maximum(0);
 chart.plot(1).williamsR(mapping_3, 4, "marker");
 ```
 
-{sample}WD\_Data\_Table\_05{sample}
+{sample}WD\_Table\_Data\_05{sample}
 
 You can also map multiple tables, which allows you, for example, to show odd and even days on different series: 
 
@@ -321,23 +320,23 @@ var column_1 = chart.plot(0).column(mapping_1);
 var column_2 = chart.plot(0).column(mapping_2);
 ```
 
-{sample}WD\_Data\_Table\_06{sample}
+{sample}WD\_Table\_Data\_06{sample}
 
 ## Accessing Rows
 
 Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api} class, and selections as instances of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}.
 
-If you want access a row of a table, first you should access a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
+If you want access a row of a table, first you should create a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
 
-Manipulating table data often requires accessing rows or selections of rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
+Manipulating table data often requires accessing rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
-**1. Accessing Selections.** To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
+**1. Creating Selections.** To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
 ```
 selectable = mapping.createSelectable();
 ```
 
-This method creates a selection including all rows. But you can narrow in down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
+This method creates a selection including all rows. You can narrow it down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
@@ -355,7 +354,7 @@ selectable.select("2002-01-01", "2006-01-01", "year", 2);
 
 ```
 selectable = mapping.createSelectable();
-selectable.select("2002-01-01", "2006-01-01", "year", 2");
+selectable.select("2002-01-01", "2006-01-01");
 selectable.search("2004-01-01", "exact");
 ```
 
@@ -409,9 +408,7 @@ var lastLow = lastPoint.get("low");
 var lastHigh = lastPoint.get("high");
 ```
 
-{sample}WD\_Data\_Table\_07{sample}
-
-**Note:** To learn more about range selection, read the [Range Selection](../Stock_Charts/Range_Selection) article.
+{sample}WD\_Table\_Data\_07{sample}
 
 ### Adding
 
@@ -430,15 +427,13 @@ dataTable.addData([
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
-{sample}WD\_Data\_Table\_08{sample}
+{sample}WD\_Table\_Data\_08{sample}
 
 ### Updating
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you call this method, you can specify dates that are already included in your data and set new values for them.
 
-**Note:** When the data is updated, the mapping is updated automatically. Make sure that new data corresponds to the mapping.
-
-In the following sample, the first row of the table is updated:
+**Note:** When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns.
 
 ```
 // create a data table
@@ -471,7 +466,9 @@ var newData = [["2015-12-25", 510.69, 516.88]];
 dataTable.addData(newData);
 ```
 
-{sample}WD\_Data\_Table\_09{sample}
+In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual_point_settings).
+
+{sample}WD\_Table\_Data\_09{sample}
 
 ### Removing
 
@@ -487,7 +484,7 @@ The {api:anychart.data.Table#removeFirst}removeFirst(){api} method allows you to
 dataTable.removeFirst(1); 
 ```
 
-{sample}WD\_Data\_Table\_10{sample}
+{sample}WD\_Table\_Data\_10{sample}
 
 ### Iterating
 
@@ -523,7 +520,7 @@ while (iterator.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Table\_11{sample}
+{sample}WD\_Table\_Data\_11{sample}
 
 In the next sample the selected data is grouped by two years (see [Accessing Rows](#accessing_rows)): 
 
@@ -536,9 +533,7 @@ selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 
 The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
 
-{sample}WD\_Data\_Table\_12{sample}
-
-**Note:** To learn more about range selection, read the [Range Selection](../Stock_Charts/Range_Selection) article.
+{sample}WD\_Table\_Data\_12{sample}
 
 ## Table Computer
 

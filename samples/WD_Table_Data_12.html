@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Tree 11"/>
+    <meta name="ac:name" content="WD Table Data 12"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -9,6 +9,8 @@
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    <script src=" https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
@@ -50,35 +52,29 @@ anychart.onDocumentReady(function () {
     
     // create a data table
     var dataTable = anychart.data.table(0);
-    
-    // add data
-    dataTable.addData([
-      ["2015-12-25", 505.69, 514.88],
-      ["2015-12-26", 505.59, 514.98],
-      ["2015-12-27", 505.49, 515.30],
-      ["2015-12-28", 505.23, 515.72],
-      ["2015-12-29", 505.38, 515.86],
-      ["2015-12-30", 505.66, 515.98],
-      ["2015-12-31", 505.99, 515.33],
-      ["2016-01-01", 505.99, 514.29],
-      ["2016-01-02", 506.18, 514.87]
-    ]);
+
+    // create a data table
+    var dataTable = anychart.data.table();
+
+    // add data from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    dataTable.addData(get_csco_daily_data());
     
     // map the data
-    mapping = dataTable.mapAs({low: 1, high: 2});
+    mapping = dataTable.mapAs({low: 3, high: 2});
     
     // create a stock chart
     chart = anychart.stock();
     
     // create a plot and a range area series
     var ohlcSeries = chart.plot(0).rangeArea(mapping);
-    ohlcSeries.name("ACME Corp.");
+    ohlcSeries.name("CSCO");
 
     // set the chart title
     chart.title("Table Data: Iterating");
 
     // set the range of points shown on the chart
-    chart.selectRange("2015-12-26", "2015-12-30");
+    chart.selectRange("2002-01-01", "2006-01-01");
 
     // display the information about shown points
     showSelected(); 
@@ -110,10 +106,10 @@ function showSelected(){
   // get the shown range of points
   var range = chart.getSelectedRange();
 
-  /* create the selectable object
-  and select rows corresponding to the shown points */
+  /* create the selectable object,
+  select rows corresponding to the shown points, and group them */
   selectable = mapping.createSelectable();
-  selectable.select(range.firstSelected, range.lastSelected);
+  selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 
   // get the iterator
   var iterator = selectable.getIterator();
