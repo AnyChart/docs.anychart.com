@@ -17,9 +17,9 @@ This article explains how to set tree-like data, access data items, and perform 
 
 Here is the list of classes allowing you to work with tree data in AnyChart:
 
-* tree – {api:anychart.data.Tree}anychart.data.Tree{api}
-* item – {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}
-* traverser – {api:anychart.data.Traverser}anychart.data.Traverser{api}
+* tree - {api:anychart.data.Tree}anychart.data.Tree{api}
+* item - {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}
+* traverser - {api:anychart.data.Traverser}anychart.data.Traverser{api}
 
 ## Quick Start
 
@@ -77,7 +77,7 @@ var chart = anychart.treeMap(treeData);
 
 You can as well skip the first step and pass your data to the **data()** method of the chart or directly to the chart constructor, also with the `"as-tree"` or `"as-table"` parameter. In this case the instance of {api:anychart.data#tree}anychart.data.tree(){api} is created implicitly (to get it, use the **data()** method of the chart).
 
-**3. Data Fields.** The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required – they are used to specify the hierarchy of elements.
+**3. Data Fields.** The choice of data fields depends on the chart type and on the way your data is structured. If the data is organized [as a tree](#as_tree), the `children` field is always required. If it is organized [as a table](#as_table), `id` and `parent` are required - they are used to specify the hierarchy of elements.
 
 **Note 1:** To learn how to rename the default fields of the tree data model (`children`, `parent`, `id`), see the [Mapping](#mapping) section.
 
@@ -151,7 +151,7 @@ var chart = anychart.treeMap(treeData);
 
 If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
 
-The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model – `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null`.
+The {api:anychart.data.Tree#mapAs}mapAs{api} method allows you to map any field fields except the fields required by the tree data model - `children`, `parent`, `id`. Instead, you should use the {api:anychart.data#tree}anychart.data.tree(){api} constructor with a mapping object as the fourth parameter. Please note that the third parameter works only with CSV data, so it should be set to `null`.
 
 In the following sample, the {api:anychart.data#tree}anychart.data.tree(){api} constructor is used to map a custom field `child_items` as the `children` field required by the tree data model. The {api:anychart.data.Tree#mapAs}mapAs{api} method maps `start` and `end` as `actualStart` and `actualEnd` required by the Gantt chart:
 
