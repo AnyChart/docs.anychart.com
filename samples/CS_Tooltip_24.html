@@ -30,7 +30,6 @@ html, body, #container {
 <body>
 <div id="container"></div>
 <script>
-
 anychart.onDocumentReady(function () {
 
   // create data
@@ -73,8 +72,27 @@ anychart.onDocumentReady(function () {
 
   var tooltipChart = null;
 
+  /* listen to the pointMouseOver event
+  and update the tooltip chart or create one */
+  chart.listen("pointMouseOver", function(e) {
+    // get the data for the current point
+    var index = e.pointIndex;
+    var dataRow = data.row(index);
+
+    /* create a tooltip chart
+    or update the chart created before */
+    if (tooltipChart == null) tooltipChart = createChart();
+    tooltipChart.data([
+      {x: "John", value: dataRow[2]},
+      {x: "James", value: dataRow[3]},
+      {x: "Peter", value: dataRow[4]},
+      {x: "Mathew", value: dataRow[5]}
+    ]);    
+    tooltipChart.title(dataRow[0] + ": Sales per Employee");
+  });
+
   /* listen to the onDomReady event
-  and create a tooltip chart */
+  and draw a tooltip chart */
   chart.tooltip().onDomReady(function() {
 
     // configure the contentElement div of the tooltip
@@ -84,35 +102,17 @@ anychart.onDocumentReady(function () {
     /* assign the contentElement div
     as a container for the tooltip chart */
     tooltipChart.container(this.contentElement);
+    console.log(this);
 
-    //initiate drawing the chart
+    // initiate drawing the chart
     tooltipChart.draw();
   });
 
   /* prevent the content of the contentElement div
-  from being overridden by the default formatter*/
+  from being overridden by the default formatter */
   chart.tooltip().onBeforeContentChange(function() {
       return false;
   }); 
-
-  /* listen to the pointMouseOver event
-  and update the tooltip chart or create one*/
-  chart.listen("pointMouseOver", function(e) {
-    // get the data for the current point
-    var index = e.pointIndex;
-    var dataRow = data.row(index);
-
-    /* create a tooltip chart
-    or update the chart created before*/
-    if (tooltipChart == null) tooltipChart = createChart();
-    tooltipChart.data([
-      {x: "John", value: dataRow[2]},
-      {x: "James", value: dataRow[3]},
-      {x: "Peter", value: dataRow[4]},
-      {x: "Mattew", value: dataRow[5]}
-    ]);    
-    tooltipChart.title(dataRow[0] + ": Sales per Employee");
-  });
 
   // set the container id
   chart.container("container");

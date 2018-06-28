@@ -256,10 +256,10 @@ You can change the CSS style of the tooltip by overwriting the default CSS class
 This is how the default div structure of the HTML tooltip looks like: 
 
 ```
-<div class="anychart-tooltip"> //context.parentElement
-  <div class="anychart-tooltip-title"></div> //context.titleElement
-  <hr noshade="true" class="anychart-tooltip-separator"> //context.separatorElement
-  <div></div> //context.contentElement
+<div class="anychart-tooltip">
+  <div class="anychart-tooltip-title"></div>
+  <hr noshade="true" class="anychart-tooltip-separator">
+  <div></div>
 </div>
 ```
 
@@ -318,7 +318,7 @@ The sample below shows how to change the default settings:
 
 ### Events
 
-The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with default point-oriented [event listeners](Event_Listeners), like in the sample below.
+The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with other [event listeners](Event_Listeners).
 
 Here is the full list of methods:
 
@@ -357,15 +357,16 @@ If the listener function returns `false`,the rules defined by [formatting method
 </tbody>
 </table>
 
-All methods get links to the four div elements of the tooltip (see the [CSS Classes](#css_classes) section):
+In the context, all methods get links to the four div elements of the tooltip (see the [CSS Classes](#css_classes) section). For example, this is how the context of {api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api} looks like:
 
 ```
-context = {
-  "parentElement": this.baseDiv_, // parent element
-  "titleElement": this.titleDiv_, // title
-  "separatorElement": this.hr_, // separator
-  "contentElement": this.contentDiv_ // content
-};
+// listen to the onDomReady event
+chart.tooltip().onDomReady(function() {
+  tooltipParentDiv = this.parentElement;
+  tooltipTitleContentDiv = this.titleElement;
+  tooltipSeparator = this.separatorElement;
+  tooltipContentDiv = this.contentElement;
+});
 ```
 
 In this sample event listeners are used to draw a chart in the tooltip:
