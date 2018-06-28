@@ -163,7 +163,7 @@ The default content of a tooltip may vary for different chart types and series, 
 
 There are two parts of a tooltip that can hold some information: its title and its body text. This section describes formatting both parts for making your tooltips more customized and informative in a way you need.
 
-### Title
+#### Title
 
 For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
@@ -173,7 +173,7 @@ tooltip1.titleFormat("Manager: {%x}");
 
 {sample}CS\_Tooltip\_14{sample}
 
-### Text
+#### Text
 
 In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
@@ -218,11 +218,160 @@ seriesSpline.tooltip().format(function(e){
 
 **Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity#creating_custom_tooltip)
 
-### Prefix and Postfix
+#### Prefix and Postfix
 
 Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (&deg;F).
 
 {sample}CS\_Tooltip\_11{sample}
+
+## HTML
+
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
+
+```
+chart.tooltip().useHtml(true);
+```
+
+This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on – use [inline styles](#inline_styles) or [CSS classes](#css_classes).
+
+Please note that AnyChart methods for the default tooltip do not affect the HTML tooltip.
+
+### Inline Styles
+
+The following sample shows how to add an image and font settings to the tooltip by using inline styles:
+
+```
+// configure tooltips
+chart.tooltip().useHtml(true);  
+chart.tooltip().titleFormat("<img width='20' src='http://cdn.anychart.com/images/anychart-logo-medium.png'> <span style='font-size:28px;font-family:courier'>{%x}");  
+chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");
+```
+
+{sample}CS\_Tooltip\_22{sample}
+
+### CSS Classes
+
+You can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
+
+This is how the default div structure of the HTML tooltip looks like: 
+
+```
+<div class="anychart-tooltip">
+  <div class="anychart-tooltip-title"></div>
+  <hr noshade="true" class="anychart-tooltip-separator">
+  <div></div>
+</div>
+```
+
+And here are the default settings:
+
+```
+.anychart-tooltip {
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: rgba(33, 33, 33, 0.7);
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  color: #fff;
+  font-family: Verdana, Helvetica, Arial, 'sans-serif';
+  font-size: 12px;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.anychart-tooltip-separator {
+  color: rgba(206, 206, 206, 0.3);
+  border: none;
+  height: 1px;
+  margin: 5px 0;
+}
+
+.anychart-tooltip-title{
+  font-size: 14px;
+}
+```
+
+The sample below shows how to change the default settings:
+
+```
+.anychart-tooltip {
+    border-radius: 23px;
+    background: rgba(255, 160, 0, 0.7);
+    font-family: Courier, Helvetica, Arial, 'sans-serif';
+}
+
+.anychart-tooltip-separator {
+    height: 3px;
+    background-color: rgba(221, 44, 0, 0.7);
+}
+
+.anychart-tooltip-title{
+    font-size: 28px;
+}
+```
+
+{sample}CS\_Tooltip\_23{sample}
+
+### Events
+
+The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with other [event listeners](Event_Listeners).
+
+Here is the full list of methods:
+
+<table>
+<tbody>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
+<td>All HTML elements of the tooltip are added to the DOM. Triggered once.
+</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
+<td> The tooltip title is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`, the rules defined by [formatting methods](#formatting) are not applied to the title, and the {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} is not triggered.
+</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
+<td>The tooltip content changed. Returns `true` or `false`.</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
+<td> The tooltip content is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
+<td>The tooltip title changed. Returns `true` or `false`.</td>
+</tr>
+</tbody>
+</table>
+
+In the context, all methods get links to the four div elements of the tooltip (see the [CSS Classes](#css_classes) section). For example, this is how the context of {api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api} looks like:
+
+```
+// listen to the onDomReady event
+chart.tooltip().onDomReady(function() {
+  tooltipParentDiv = this.parentElement;
+  tooltipTitleContentDiv = this.titleElement;
+  tooltipSeparator = this.separatorElement;
+  tooltipContentDiv = this.contentElement;
+});
+```
+
+In this sample event listeners are used to draw a chart in the tooltip:
+
+{sample}CS\_Tooltip\_24{sample}
 
 ## Size
 
@@ -248,7 +397,7 @@ background.cornerType("roundInner");
 background.corners(5);
 ```
 
-That is how tooltip background with the settings from above looks like:
+This is how tooltip background with the settings from above looks like:
 
 {sample}CS\_Tooltip\_12{sample}
 
@@ -323,7 +472,6 @@ AnyChart html5 charting library allows to choose should the tooltip be bound to 
 ```
 chart.tooltip().positionMode("point");
 ```
-
 Here is a sample with the tooltip stuck to the hovered point:
 
 {sample}CS\_Tooltip\_18{sample}
@@ -353,7 +501,7 @@ var tooltip2 = series2.tooltip();
 tooltip2.position("rightCenter");
 ```
 
-That is how the sample with the code from above looks like:
+This is how the sample with the code from above looks like:
 
 {sample}CS\_Tooltip\_20{sample}
 
@@ -371,7 +519,7 @@ var tooltip = series.tooltip();
 tooltip.hideDelay(1000);
 ```
 
-### Themes
+## Themes
 
 Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
@@ -392,9 +540,3 @@ var themeSettings = {
 Settings for the tooltip in the sample below are applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
 
 {sample}CS\_Tooltip\_21{sample}
-
-## Custom Tooltip
-
-If the built-in tooltip features are not enough - you can always create your own custom tooltip, which can contain anything, even another chart. 
-
-See [Interactivity: Custom Tooltip](Interactivity#creating_custom_tooltip) article to learn more.

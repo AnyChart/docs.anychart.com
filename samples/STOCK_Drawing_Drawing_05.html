@@ -96,31 +96,31 @@ anychart.onDocumentReady(function () {
 });
 
 // create annotations
-function create(){
+function create() {
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
-};
+}
 
 // remove all annotations
-function removeAll(){
+function removeAll() {
   plot.annotations().removeAllAnnotations();
-};
+}
 
 // remove the last annotation
-function removeLast(){
+function removeLast() {
   // get the number of annotations
   var annotationsCount = plot.annotations().getAnnotationsCount();
   // remove the last annotation
   plot.annotations().removeAnnotationAt(annotationsCount - 1);
-};
+}
 
 // remove the selected annotation
-function removeSelected(){
+function removeSelected() {
   // get the selected annotation
   var selectedAnnotation = plot.annotations().getSelectedAnnotation(); 
   // remove the selected annotation
   plot.annotations().removeAnnotation(selectedAnnotation);
-};
+}
 </script>
 </body>
 </html>

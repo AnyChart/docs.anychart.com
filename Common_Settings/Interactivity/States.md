@@ -104,7 +104,7 @@ Another way to configure the states of a series is using object notation.
 
 You can create objects with settings and then use them repeatedly, for example to make different series look the same. The properties of such objects should correspond with the [methods](#methods) mentioned in the previous section.
 
-That is how it looks like:
+This is how it looks like:
 
 ```
 // create two series

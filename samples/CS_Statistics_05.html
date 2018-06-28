@@ -58,12 +58,6 @@ anychart.onDocumentReady(function () {
   femaleMartians.name("Female Martians");
   femaleMartians.color("#E93F39"); 
 
-  // get statistical data (the average of all the y-values on the first series)
-  maleAverage = maleMartians.getStat("seriesYAverage");
-
-  // get statistical data (the average of all the y-values on the second series)
-  femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
-
   // get the number of points in the series
   // (in this case, the number of points is the same for the both series)
   numberOfPoints = maleMartians.getStat("seriesPointCount");

@@ -96,28 +96,28 @@ anychart.onDocumentReady(function () {
 });
 
 // create annotations
-function create(){
+function create() {
   var select = document.getElementById("typeSelect");
   plot.annotations().startDrawing(select.value);
-};
+}
 
 // remove all annotations
-function removeAll(){
+function removeAll() {
   plot.annotations().removeAllAnnotations();
-};
+}
 
 // select the first annotation
-function selectFirst(){
+function selectFirst() {
   // get the first annotation
   var firstAnnotation = plot.annotations().getAnnotationAt(0);
   // select the first annotation
   plot.annotations().select(plot.annotations().getAnnotationAt(0));
-};
+}
 
 // unselect a selected annotation
-function clearSelection(){
+function clearSelection() {
   plot.annotations().unselect();
-};
+}
 </script>
 </body>
 </html>

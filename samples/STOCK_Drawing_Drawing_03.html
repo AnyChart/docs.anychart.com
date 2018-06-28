@@ -123,15 +123,15 @@ anychart.onDocumentReady(function () {
 });
 
 // create annotations
-function create(){
+function create() {
   var select = document.getElementById("typeSelect");
   chart.annotations().startDrawing(select.value);
-};
+}
 
 // remove all annotations
-function removeAll(){
+function removeAll() {
   chart.annotations().removeAllAnnotations();
-};
+}
 </script>
 </body>
 </html>

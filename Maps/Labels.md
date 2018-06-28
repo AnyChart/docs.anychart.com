@@ -67,7 +67,7 @@ Labels can get information to show not only from data sets, it is possible to ob
 
 Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. 
 
-That is how properties are set in GeoJSON:
+This is how properties are set in GeoJSON:
 
 ```
 "properties": {
@@ -162,7 +162,7 @@ Note that the map's or series' overlapping mode set through the {api:anychart.co
 
 {sample}Maps\_Labels\_06{sample}
 
-You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. That is how the labelranks work.
+You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. This is how the labelranks work.
 
 ## Positioning
 
