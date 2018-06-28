@@ -337,9 +337,12 @@ Here is the full list of methods:
 <td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
 <td> The tooltip title is going to change. Returns `true` or `false`.
 
-If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the title, and the {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} is not triggered.
+If the listener function returns `false`, the rules defined by [formatting methods](#formatting) are not applied to the title, and the {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} is not triggered.
 </td>
 </tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
+<td>The tooltip content changed. Returns `true` or `false`.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
@@ -348,12 +351,9 @@ If the listener function returns `false`,the rules defined by [formatting method
 If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
-<td>The tooltip content changed. Returns `true` or `false`.</td>
-</tr>
-<tr>
 <td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
 <td>The tooltip title changed. Returns `true` or `false`.</td>
+</tr>
 </tbody>
 </table>
 
