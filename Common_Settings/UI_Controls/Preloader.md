@@ -9,7 +9,7 @@ Chart Preloader is a small animated object used when you want to show that some 
 Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/):
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/RC-8.2.1/anychart-ui.min.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css">
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css">
 ```
 
