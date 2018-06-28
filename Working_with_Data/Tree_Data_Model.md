@@ -470,7 +470,7 @@ When you click the button in the following sample, random tree-like data is gene
 
 (+) ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
 
-{sample}WD\_Data\_Tree\_14{sample}
+{sample}WD\_Tree\_Data\_14{sample}
 
 ### Traversing
 
