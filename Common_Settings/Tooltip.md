@@ -330,10 +330,9 @@ Here is the full list of methods:
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
-<td>all HTML elements of the tooltip added to the DOM
-срабатывает 1 раз
-ему передаются ссылки на 4 созданных элемента
-(контекст хэндлера + ссылка на div-структуру в предыдущем разделе)</td>
+<td>All HTML elements of the tooltip are added to the DOM.
+
+This method gets links to four div elements of the tooltip (see the  [CSS Classes](#css_classes) section). The event is triggered only once.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
@@ -354,6 +353,8 @@ Here is the full list of methods:
 <td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
 <td></td>
 </tr>
+</tbody>
+</table>
   
 In the following sample, event listeners are used to draw a chart in the tooltip:
 
