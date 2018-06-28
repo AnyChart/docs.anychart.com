@@ -30,6 +30,9 @@ html, body, #container {
 <body>
 <div id="container"></div>
 <script>
+var tooltipChart = null;
+var pointData = null;
+var pointTitle = "";
 anychart.onDocumentReady(function () {
 
   // create data
@@ -65,47 +68,50 @@ anychart.onDocumentReady(function () {
   chart.title().useHtml(true);
   chart.title("Tooltip: HTML (Chart as Tooltip)<br><br><span style='font-style:italic'>Sales Volume</span>");
 
-  // disable the selection mode
-  chart.interactivity().selectionMode("none");
-
   // configure tooltips
   chart.tooltip().useHtml(true);
   chart.tooltip().separator(false);
   chart.tooltip().title(false);
 
-  // create a tooltip chart
+  /* listen to the onDomReady event
+  and create a tooltip chart */
   chart.tooltip().onDomReady(function() {
 
-  	// configure the contentElement div of the tooltip
+    // configure the contentElement div of the tooltip
     this.contentElement.style.width = "200px";
-    this.contentElement.style.height = "100px";
+    this.contentElement.style.height = "140px";
 
-    // prevent the content of this.contentElement from being overriden
-    chart.tooltip().onBeforeContentChange(function() {
-        return false;
-    }); 
+    /* assign the contentElement div
+    as a container for the tooltip chart */
+    tooltipChart.container(this.contentElement);
 
-    // create a tooltip chart in this.contentElement
-    tooltipChart = createTooltipChart(this.contentElement);
+    //initiate drawing the chart
+    tooltipChart.draw();
+  });
 
-    // listen to the pointMouseOver event
-    chart.listen("pointMouseOver", function(e) {
-      console.log("pointMouseOver");
+  /* prevent the content of the contentElement div
+  from being overriden by the default formatter*/
+  chart.tooltip().onBeforeContentChange(function() {
+      return false;
+  }); 
 
-      // update the tooltip chart
-      var index = e.pointIndex;
-      var dataRow = data.row(index);
-      tooltipChart.data([
-        {x: "John", value: dataRow[2]},
-        {x: "James", value: dataRow[3]},
-        {x: "Peter", value: dataRow[4]},
-        {x: "Mattew", value: dataRow[5]}
-      ]);    
+  /* listen to the pointMouseOver event
+  and update the tooltip chart or create one*/
+  chart.listen("pointMouseOver", function(e) {
+    // get the data for the current point
+    var index = e.pointIndex;
+    var dataRow = data.row(index);
 
-       // set the chart title
-      tooltipChart.title("Sales Persons Share: " + dataRow[0]);
-    });
-
+    /* create a tooltip chart
+    or update the chart created before*/
+    if (tooltipChart == null) tooltipChart = createChart();
+    tooltipChart.data([
+      {x: "John", value: dataRow[2]},
+      {x: "James", value: dataRow[3]},
+      {x: "Peter", value: dataRow[4]},
+      {x: "Mattew", value: dataRow[5]}
+    ]);    
+    tooltipChart.title("Sales Persons Share: " + dataRow[0]);
   });
 
   // set the container id
@@ -116,26 +122,23 @@ anychart.onDocumentReady(function () {
 });
 
 // a function for creating a tooltip chart
-function createTooltipChart(tooltipContainer) {
+function createChart() {
 
   // create a bar chart
-  var tooltipChart = anychart.bar();
+  var chart = anychart.bar();
 
   // configure axes and labels
-  tooltipChart.xAxis().stroke(null).ticks(false);
-  tooltipChart.xAxis().labels().fontSize(10);
-  tooltipChart.yAxis().labels().fontSize(10);
+  chart.xAxis().stroke(null).ticks(false);
+  chart.xAxis().labels().fontSize(10);
+  chart.yAxis().labels().fontSize(10);
 
   // set padding
-  tooltipChart.padding([0, 12, 0, 0]);
+  chart.padding([0, 12, 0, 0]);
 
-  // set the container id
-  tooltipChart.container(tooltipContainer);
+  // configure the chart title
+  chart.title().fontSize(12);
 
-  // initiate drawing the chart
-  tooltipChart.draw();
-  
-  return tooltipChart;
+  return chart;
 }
 </script>
 </body>

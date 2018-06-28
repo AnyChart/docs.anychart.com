@@ -306,6 +306,7 @@ The sample below shows how to change the default settings:
 
 .anychart-tooltip-separator {
     height: 3px;
+    background-color: rgba(221, 44, 0, 0.7);
 }
 
 .anychart-tooltip-title{
