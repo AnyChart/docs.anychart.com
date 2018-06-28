@@ -5,7 +5,7 @@
 
 The table data model represents data as a collection of rows and columns, which allows storing large ordered data sets.
 
-This model is required by [AnyChart Stock and Financial Charts](../Stock_Charts/Quick_Start). See also: [Stock Charts: Data](../Stock_Charts/Data).
+It is required by [AnyChart Stock](../Stock_Charts/Quick_Start) charts. See also: [Stock Charts: Data](../Stock_Charts/Data).
 
 This article explains how to set table data, access rows, and perform operations on data.
 
