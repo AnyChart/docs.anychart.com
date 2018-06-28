@@ -318,6 +318,45 @@ The sample below shows how to change the default settings:
 
 ### Events
 
+The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with default point-oriented [event listeners](Event_Listeners), like in the sample below.
+
+Here is the full list of methods:
+
+<table>
+<tbody>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
+<td>all HTML elements of the tooltip added to the DOM
+срабатывает 1 раз
+ему передаются ссылки на 4 созданных элемента
+(контекст хэндлера + ссылка на div-структуру в предыдущем разделе)</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
+<td>срабатывает перед изменением заголовка, контекст тот же
+если listner возвращает false:
+правила, которые определяет formatter, не применятся к заголовку
+и событие {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} не произойдет</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
+<td>изменился тайтл или нет</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
+<td></td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
+<td></td>
+</tr>
+  
+In the following sample, event listeners are used to draw a chart in the tooltip:
+
 {sample}CS\_Tooltip\_24{sample}
 
 ## Size
