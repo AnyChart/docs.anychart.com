@@ -216,9 +216,9 @@ In the example below we have disabled the default appearance of the expand/colla
 
 ### Buttons
 
-To customize how expand/collapse buttons look use the {api:anychart.core.ui.DataGrid#buttons}buttons(){api} method. Buttons settings are configured using the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
+To customize how expand/collapse buttons look, use the {api:anychart.core.ui.DataGrid#buttons}buttons(){api} method. Their settings are configured using the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
 
-Here is a sample of a data grid with customized expand/collapse buttons, the text is altered, background is turned of in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
+Here is a sample of a data grid with customized expand/collapse buttons. The text is altered, the background is turned off in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
 
 ```
 // get buttons configuration object
@@ -278,7 +278,7 @@ See a live sample of such customized buttons below:
 
 {sample :width 690 :height 200}GANTT\_Chart\_19{sample}
 
-You can find more samples with custom datagrid buttons in [AnyGantt Gallery: General Features](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/):
+You can find more samples with custom data grid buttons in [AnyGantt Gallery: General Features](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/):
 
 * [AnyGantt Custom Datagrid: Buttons with Images](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Buttons.php)
 * [AnyGantt Custom Datagrid: Custom Buttons](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Image_Button.php)

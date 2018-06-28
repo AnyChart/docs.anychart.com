@@ -4,9 +4,9 @@
 
 ## Overview
 
-AnyStock supports a lot of [different series types](Supported_Series), some of these series types are compatible and can be [switched during run time](Series_Type).
+AnyStock supports a lot of different [series types](Supported_Series). Some of them share some or all data fields and can be [switched during the run time](Series_Type).
 
-AnyStock series are created within [chart plots](Stock_Charts/Chart_Plots) using either specific series constructors like {api:anychart.core.stock.Plot#line}line(){api} or {api:anychart.core.stock.Plot#column}column(){api}, and using {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method/
+AnyStock series are created within [chart plots](Stock_Charts/Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or specific series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on.
 
 Configuring series in AnyStock is similar to [Basic Series Settings](Basic_Charts/General_Settings) with few minor differences.
 
@@ -37,7 +37,7 @@ series3.name("Line");
 
 ## Adjustment
 
-You can adjust the colors of the series, adjust the tooltips, etc. 
+You can adjust tooltips, the colors of series, etc.:
 
 ```
 // create an ohlc series
@@ -62,7 +62,7 @@ series3.stroke("#aeb404", 1, "10 5", "round");
 
 ### States
 
-AnyStock series can't be selected and have only normal and hovered states, you can define how series look when legend item is hovered and turn on markers:
+AnyStock series cannot be selected and have only the normal and hover states. You can specify how series look when legend item is hovered and enable markers:
 
 ```
 // create an and configure hovered state of a line series
@@ -77,7 +77,7 @@ series1.hovered().markers().type("star5");
 
 ## Scroller Series
 
-You can add a background series of any type to the scrollbar and adjust its "selected" state colors:
+You can add a background series of any type to the scrollbar and adjust its colors in the selected state:
 
 ```
 // create the thumbnail series in the scroller
@@ -91,8 +91,8 @@ scrollerSeries.selected().fill("#00796B");
 
 ## Individual Settings
 
-By default stock series doesn't allow settings to be applied to individual points, all points have the same settings for the sake of performance. You can either allow all series to be able to have individual as described in [Data](../Data#individual_point_settings) tutorial or use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to allow any particular series to color points differently.
+By default stock series do not allow settings to be applied to individual points – all points have the same settings for the sake of performance. You can allow configuring individual points for all series as described in the [Data](../Data#individual_point_settings) tutorial. Also, you can use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to enable this option for a particular series.
 
-## List of supported series
+## Supported Series
 
-AnyStock supports series of different types, like Line Series, OHLC, Marker and many other - find them all in the [Supported Series list](Supported_Series). Compatible series types can be [switched during run time](Series_Type).
+AnyStock supports series of different types, such as Line, OHLC, Marker, and many others. You can find them all in the [Supported Series](Supported_Series) list. Series types that share some or all data fields can be [switched during the run time](Series_Type).

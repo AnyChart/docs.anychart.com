@@ -103,7 +103,9 @@ plot_3.bounds("55%", 0, "45%", "45%")
 
 ### Title
 
-Each plot can have a separate title which is set and configured using the {api:anychart.core.stock.Plot#title}title(){api}. Here is a sample of a chart with titles enabled and configured for plots:
+Each plot can have a separate title, which is set and configured using the {api:anychart.core.stock.Plot#title}title(){api} method.
+
+Here is a sample of a chart with three plots. Titles of the first two plots are enabled and configured, and the third one has default settings (no title):
 
 {sample}STOCK\_Plots\_05{sample}
 

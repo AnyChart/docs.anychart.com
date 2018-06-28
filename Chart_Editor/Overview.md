@@ -3,11 +3,11 @@
 
 ## Overview
 
-Chart Editor is an [AnyChart Extension](../Quick_Start/Modules#extensions) that provides the UI that allows to create and set up various chart types. The result can be saved with the data in XML or JSON format or in a reusable format with a JavaScript code string.
+Chart Editor is an [AnyChart Extension](../Quick_Start/Modules#extensions) that provides a UI allowing you to create and set up various chart types. The result can be saved with the data in XML or JSON format or in a reusable format with a JavaScript code string.
 
 ## Prerequisites
 
-Chart editor works only if proper AnyChart files are included.
+Chart DEitor works only if proper AnyChart files are included.
 
 ### Minimal
 
@@ -31,7 +31,7 @@ It is recommended to include **proj4.js** if you plan to use [Maps](../Maps/):
 
 ### Themes
 
-If you want to use [themes](../Appearance_Settings/Themes) you need to include desired themes files as well:
+If you want to use [themes](../Appearance_Settings/Themes), you need to include desired theme files as well:
 
 ```
 <!-- themes -->
@@ -66,11 +66,11 @@ Chart editor files to be included, not the [Prerequisites](#prerequisites):
 
 ## Using
 
-AnyChart Chart Editor UI can be configired and used in several ways, please see [Configuration](Configuration) and [Use Cases](Use_Cases) to learn more.
+AnyChart Chart Editor UI can be configured and used in several ways – please see [Configuration](Configuration) and [Use Cases](Use_Cases) to learn more.
 
 ## Contributing
 
-AnyChart Chart Editor is developed and supported by AnyChart team but it is not a part of the main AnyChart library. It is open source but subject to licensing. If you want to contribute, fork or report issues please see [https://github.com/AnyChart/chart-editor/](https://github.com/AnyChart/chart-editor/).
+AnyChart Chart Editor is developed and supported by AnyChart team, but it is not a part of the main AnyChart library. It is open source, but subject to licensing. If you want to contribute, fork, or report issues, please see [https://github.com/AnyChart/chart-editor/](https://github.com/AnyChart/chart-editor/).
 
 ## Licensing
 

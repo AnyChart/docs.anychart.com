@@ -139,14 +139,14 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 ## Integer Ticks
 
-If you don't want to see fractional values on the axis you can use the {api:anychart.scales.ScatterTicks#allowFractional}allowFractional(){api} method:
+If you do not want to see fractional values on the axis, you can use the {api:anychart.scales.ScatterTicks#allowFractional}allowFractional(){api} method:
 
 ```
 // force ticks to stick to integer values
 chart.yScale().ticks().allowFractional(false);
 ```
 
-Take a look at the sample and see how enabling and disabling this
+Take a look at the sample and see how to enable and disable this option:
 
 {sample}AGST\_Scales\_08\_1{sample}
 

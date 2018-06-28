@@ -303,7 +303,7 @@ Extension is a special type of modules that provide additional functionality. Ex
 
 ### Chart Editor
 
-Chart Editor an extension that provides the UI to configure charts and chart data. Read more about Chart Editor in [AnyChart Chart Editor](../Chart_Editor/Overview) section.
+Chart Editor is an extension that provides a UI for configuring charts and chart data. Read more about Chart Editor in the [AnyChart Chart Editor](../Chart_Editor/Overview) section.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-editor.min.js"></script>
