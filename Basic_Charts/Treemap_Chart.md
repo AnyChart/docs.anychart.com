@@ -77,7 +77,7 @@ Read the overview of general settings: [General Settings](General_Settings).
   
 ### Data
 
-Use the following data fields to create data for a Treemap chart:
+The Treemap chart requires the [tree data model](../Working_with_Data/Tree_Data_Model). Use the following fields:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -90,81 +90,7 @@ Use the following data fields to create data for a Treemap chart:
 
 **Note 2:** A Treemap chart can have only one root element.
 
-There are two ways to arrange data for a Treemap chart: [as a tree](../Working_with_Data/Tree_Data_Model#as_tree) or [as a table](../Working_with_Data/Tree_Data_Model#as_table).
-
-#### Tree Structure
-
-The **tree data structure** is expected by this chart type by default. To organize your data as a tree, pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-tree"` as the second parameter.
-
-Three data fields are required: `value`, `name` / `id`, and `children` - the last one is used to specify the hierarchy of elements.
-
-This is how it looks like:
-
-```
-// create data
-var data = [
-  {name:     "Slavic Languages - Number of Speakers", children: [
-    {name:   "East Slavic", children: [
-      {name: "Russian",        value: 150000000},
-      {name: "Ukrainian",      value:  45000000},
-      {name: "Belarusian",     value:   3200000}
-    ]},
-    {name:   "West Slavic", children: [
-      {name: "Polish",         value:  55000000},
-      {name: "Czech",          value:  10600000},
-      {name: "Slovak",         value:   5200000}
-    ]},
-    {name:   "South Slavic", children: [
-      {name: "Serbo-Croatian", value:  21000000},
-      {name: "Bulgarian",      value:   9000000},
-      {name: "Slovene",        value:   2500000},
-      {name: "Macedonian",     value:   1400000}
-    ]}  
-  ]} 
-];
-
-// create a chart and set the data
-chart = anychart.treeMap(data, "as-tree");
-```
-
-{sample}BCT\_Treemap\_Chart\_02{sample}
-
-#### Table Structure
-
-The **table data structure** is particularly useful when you store your data in a relational database table. Pass the data to the chart constructor {api:anychart#treeMap}anychart.treeMap(){api} or to the {api:anychart.charts.TreeMap#data}data(){api} method and use `"as-table"` as the second parameter.
-
-Four data fields are required: `name`, `value`, `id`, and `parent` - the last two are used to specify the hierarchy of elements.
-
-This is how it looks like:
-
-```
-// create data
-var data = [
-  {id:  1, parent: null, name: "Slavic Languages - Number of Speakers"},
-  {id:  2, parent:    1, name: "East Slavic"},
-  {id:  3, parent:    2, name: "Russian",        value: 150000000},
-  {id:  4, parent:    2, name: "Ukrainian",      value:  45000000},
-  {id:  5, parent:    2, name: "Belarusian",     value:   3200000},
-  {id:  6, parent:    1, name: "West Slavic"},
-  {id:  7, parent:    6, name: "Polish",         value:  55000000},
-  {id:  8, parent:    6, name: "Czech",          value:  10600000},
-  {id:  9, parent:    6, name: "Slovak",         value:   5200000},
-  {id: 10, parent:    1, name: "South Slavic"},
-  {id: 11, parent:   10, name: "Serbo-Croatian", value:  21000000},
-  {id: 12, parent:   10, name: "Bulgarian",      value:   9000000},
-  {id: 13, parent:   10, name: "Slovene",        value:   2500000},
-  {id: 13, parent:   10, name: "Macedonian",     value:   1400000}
-];
-
-// create a chart and set the data
-chart = anychart.treeMap(data, "as-table");
-```
-
-{sample}BCT\_Treemap\_Chart\_03{sample}
-
-#### Size and Value
-
-No matter what data structure you use, colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
+Сolors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
 Please note: you do not need to specify values and sizes of parent elements - they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
 
@@ -191,7 +117,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_04{sample}
+{sample}BCT\_Treemap\_Chart\_02{sample}
 
 ### Depth and Hints
 
@@ -216,7 +142,7 @@ chart.hintDepth(1);
 chart.hintOpacity(0.7);  
 ```
 
-{sample}BCT\_Treemap\_Chart\_05{sample}
+{sample}BCT\_Treemap\_Chart\_03{sample}
 
 ### Sorting Order
 
@@ -237,7 +163,7 @@ The sample below shows how to set the sorting mode:
 chart.sort("asc");
 ```
 
-{sample}BCT\_Treemap\_Chart\_06{sample}
+{sample}BCT\_Treemap\_Chart\_04{sample}
 
 ### Appearance
 
@@ -265,7 +191,7 @@ chart.hovered().stroke("gray");
 chart.selected().stroke("gray", 2);
 ```
 
-{sample}BCT\_Treemap\_Chart\_07{sample}
+{sample}BCT\_Treemap\_Chart\_05{sample}
 
 #### Individual Points
 
@@ -296,7 +222,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample}BCT\_Treemap\_Chart\_08{sample}
+{sample}BCT\_Treemap\_Chart\_06{sample}
 
 ### Color Scale
 
@@ -335,7 +261,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().length("100%");
 ```
 
-{sample}BCT\_Treemap\_Chart\_09{sample}
+{sample}BCT\_Treemap\_Chart\_07{sample}
 
 #### Linear
 
@@ -360,7 +286,7 @@ chart.colorRange().enabled(true);
 chart.colorRange().length("100%");
 ```
 
-{sample}BCT\_Treemap\_Chart\_10{sample}
+{sample}BCT\_Treemap\_Chart\_08{sample}
 
 ### Labels and Tooltips
 
@@ -421,7 +347,7 @@ chart.tooltip().format(
 );
 ```
 
-{sample}BCT\_Treemap\_Chart\_11{sample}
+{sample}BCT\_Treemap\_Chart\_09{sample}
 
 #### Formatting Functions
 
@@ -475,7 +401,7 @@ chart.tooltip().format(function (){
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_12{sample}
+{sample}BCT\_Treemap\_Chart\_102{sample}
 
 #### Font Size
 
@@ -487,7 +413,7 @@ according to the size of tiles */
 chart.labels().adjustFontSize(true);
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_13{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_11{sample}
 
 ### Headers
 
@@ -528,7 +454,7 @@ chart.hovered().headers().fontColor("#000099");
 
 The following sample demonstrates how to disable/enable headers; their text is customized in the hovered state, and font settings are changed in all states:
 
-{sample :height 535}BCT\_Treemap\_Chart\_14{sample}
+{sample :height 535}BCT\_Treemap\_Chart\_12{sample}
 
 #### Individual Headers
 
@@ -570,7 +496,7 @@ var data = [
 chart = anychart.treeMap(data, "as-tree");
 ```
 
-{sample :height 500}BCT\_Treemap\_Chart\_15{sample}
+{sample :height 500}BCT\_Treemap\_Chart\_13{sample}
 
 #### Display Mode
 
@@ -587,30 +513,22 @@ The sample below shows how to change the display mode, which is initially set to
 chart.headersDisplayMode("drop");
 ```
 
-{sample :height 525}BCT\_Treemap\_Chart\_16{sample}
+{sample :height 525}BCT\_Treemap\_Chart\_14{sample}
 
 ### Interactivity
 
 #### Drilldown
 
-The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified.
+The Treemap chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element, you drill down to its children, and if you click on a header, you drill up a level. This behavior can be modified – use the following methods:
 
-**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu (if, of course, these options are available for the element).
+* {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill to an item
+* {api:anychart.charts.TreeMap#drillUp}drillUp(){api} to drill up
+* {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path
 
-When you work with interactivity, sometimes the {api:anychart.data.Tree#search}search(){api} method can be helpful. It requires your data to be organized in a special way: use the [tree data model](../Working_with_Data/Tree_Data_Model) and create an instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class with the help of {api:anychart.data#tree}anychart.data.tree(){api}:
+**Note:** By default it is also possible to drill down or up from the [context menu](../Common_Settings/UI_Controls/Context_Menu): right-click on a tile or a header and select "Drill Down To" or "Drill Up" in the menu – if, of course, these options are available for the element.
 
-```
-// get data
-var data = getData(); 
-
-// create a storage for the data tree
-var treeData = anychart.data.tree(data, "as-tree");
-
-// create a chart and set the data
-chart = anychart.treeMap(treeData);
-```
-
-If you want to drill down to a particular item in the data tree, call the {api:anychart.data.Tree#search}search(){api} method to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo{api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp{api}:
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
 
 ```
 /* locate an item in the data tree
@@ -624,11 +542,9 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
-You can also call {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} to get the drilldown path.
+This sample shows how to drill down to a particular item, drill up, and add the drilldown path to the title of the chart by using a custom function:
 
-The following sample shows how to drill down to a particular item, dill up, and add the drilldown path to the title of the chart (by using a custom function):
-
-{sample}BCT\_Treemap\_Chart\_17{sample}
+{sample}BCT\_Treemap\_Chart\_15{sample}
 
 #### Disabling Drilldown
 
@@ -641,4 +557,4 @@ chart.listen("drillchange", function(e){
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_18{sample}
+{sample}BCT\_Treemap\_Chart\_16{sample}

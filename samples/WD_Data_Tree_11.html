@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body {
@@ -31,7 +31,8 @@
     </style>
 </head>
 <body>
-<button onclick="nextItem()">Drill to Next Item</button>
+<button onclick="drillToItem()">Drill Down to Item 3-4</button>
+<button onclick="drillUpALevel()">Drill Up 1 Level</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -39,14 +40,8 @@ anychart.onDocumentReady(function () {
     // get data
     var data = getData(); 
 
-    // create a storage for the data tree
-    var treeData = anychart.data.tree(data, "as-tree");
-
-    // get the traverser of a tree
-    traverser = treeData.getTraverser();
-
-    // skip the root node
-    traverser.advance();
+    // create a data tree
+    treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
     chart = anychart.treeMap(treeData);
@@ -56,10 +51,19 @@ anychart.onDocumentReady(function () {
 
     // configure labels
     chart.labels().format("{%name}");
-    
-    // set the chart title
-    chart.title("Tree Data Model: Traversing");
-    
+
+    /* listen to the chartDraw event
+    and add the drilldown path to the chart title */
+    chart.listen("chartDraw",function (){
+      // get the drilldown path and convert it to a string
+      var text = printPath(chart.getDrilldownPath());
+      // set the chart title
+      chart.title().useHtml(true);
+      chart.title("Tree Data Model: Searching<br><br>Path: " +
+                  "<span style = 'color:#990000; font-style:italic'>" +
+                  text + "</span>");
+    });
+
     // set the container id
     chart.container("container");
 
@@ -118,20 +122,30 @@ function getData(){
   return data;
 };
 
-// get the next data item and drill to it
-function nextItem() {
-  // try to go to the next item
-  if (traverser.advance()) {
-    /* get the current item
-    as an instance of the dataItem class */
-    var dataItem = traverser.current();
-    // drill down to the item
-    chart.drillTo(dataItem);
+/* a function for converting the current
+drilldown path to a string */
+function printPath(path){
+  /* go through the array of data items
+  and use the get() method to obtain the "name" field */
+  var text = "";
+  for (i = 0; i <  path.length; i++){ 
+    text += path[i].get("name") + "\\";
   }
-  else {
-    //reset the traverser
-    traverser.reset();
-  }
+  return text;
+};
+    
+// drill down to a data item
+function drillToItem(){
+  /* locate an item in the data tree
+  and get it as an object */
+  var item = treeData.search("name", "Item 3-4");
+  // drill down to the item
+  chart.drillTo(item);
+};
+
+// drill up a level
+function drillUpALevel(){
+  chart.drillUp();
 };
 </script>
 </body>

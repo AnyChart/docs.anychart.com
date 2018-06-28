@@ -10,8 +10,7 @@ Data Adapter is an additional script that can do even more: load [CSV](#csv_file
 To work with the features Data Adapter provides you need to plug it in along with AnyChart Library:
 
 ```
-<!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-data-adapter.min.js"></script>
 ```
 
 ## HTML Tables

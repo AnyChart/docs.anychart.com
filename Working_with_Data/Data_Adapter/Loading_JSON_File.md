@@ -9,7 +9,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-data-adapter.min.js"></script>
 ```
 
 You can load [Data from JSON](../Data_From_JSON) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadJsonFile}loadJsonFile(){api} and create charts from files with {api:anychart#fromJsonFile}fromJsonFile(){api} method.

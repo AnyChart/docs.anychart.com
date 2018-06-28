@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-polar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -28,32 +28,32 @@ anychart.onDocumentReady(function () {
   
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3742-indicators/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3692-table/xml-schema.xsd">' +
       // set chart type and chart container
       '<chart type="polar" container="container">' +
-// series for this chart
-'<series_list>'+
-  // series settings
-  '<series series_type="line">' +
-    // data set
-    '<data>' +
-      '<point x="0" value="0"/>'+
-      '<point x="50" value="100"/>'+
-      '<point x="100" value="0"/>'+
-    '</data>'+
-  '</series>'+
-  // second series set
-  '<series series_type="line" stroke="red">' +
-    // data set
-    '<data>' +
-      '<point x="50" value="0"/>'+
-      '<point x="100" value="100"/>'+
-      '<point x="50" value="0"/>'+
-    '</data>'+
-  '</series>'+
-'</series_list>'+
-// scales settings
-'<x_scale maximum="100"/>'+
+        // series for this chart
+        '<series_list>'+
+          // series settings
+          '<series series_type="line">' +
+            // data set
+            '<data>' +
+              '<point x="0" value="0"/>'+
+              '<point x="50" value="100"/>'+
+              '<point x="100" value="0"/>'+
+            '</data>'+
+          '</series>'+
+          // second series set
+          '<series series_type="line" stroke="red">' +
+            // data set
+            '<data>' +
+              '<point x="50" value="0"/>'+
+              '<point x="100" value="100"/>'+
+              '<point x="50" value="0"/>'+
+            '</data>'+
+          '</series>'+
+        '</series_list>'+
+        // scales settings
+        '<x_scale maximum="100"/>'+
       '</chart>'+
     '</anychart>';
   

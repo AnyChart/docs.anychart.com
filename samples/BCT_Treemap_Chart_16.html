@@ -5,82 +5,43 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        label {
-            display: inline-block;
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<label><input onclick="displayMode('always-show')" type="radio" name="mode">Always Show</label> 
-<label><input onclick="displayMode('clip')" type="radio" name="mode">Clip</label> 
-<label><input onclick="displayMode('drop')" type="radio"  name="mode" checked>Drop</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data
-    var data = [
-      {name:     "Slavic Languages", children: [
-        {name:   "East Slavic", children: [
-          {name: "Russian",        value: 150000000},
-          {name: "Ukrainian",      value:  45000000},
-          {name: "Belarusian",     value:   3200000}
-        ]},
-        {name:   "West Slavic", children: [
-          {name: "Polish",         value:  55000000},
-          {name: "Czech",          value:  10600000},
-          {name: "Slovak",         value:   5200000}
-        ]},
-        {name:   "South Slavic", children: [
-          {name: "Serbo-Croatian", value:  21000000},
-          {name: "Bulgarian",      value:   9000000},
-          {name: "Slovene",        value:   2500000},
-          {name: "Macedonian",     value:   1400000}
-        ]}  
-      ]} 
-    ];
-
     // create a chart and set the data
-    chart = anychart.treeMap(data, "as-tree");
+    var chart = anychart.treeMap(getData(), "as-tree");
 
-    // set the maximum depth of levels shown
-    chart.maxDepth(3);
+    // set the depth of hints
+    chart.hintDepth(2);
 
-    // configure the font of headers
-    chart.headers().fontSize("30");
+    // configure labels
+    chart.labels().format("{%name}");
 
-    // set the display mode of headers
-    chart.headersDisplayMode("drop");
+    // disable the drilldown feature
+    chart.listen("drillchange", function(e){
+      return false;
+    });
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.listen("chartDraw", function () {
-      chart.title("Treemap: Headers (Display Mode = " +
-                  chart.headersDisplayMode() + ")<br><br>" + 
-                  "<span style='font-size:12; font-style:italic'>" +
-                  "Slavic Languages by Number of Speakers</span>");
-    });
+    chart.title("Treemap: Interactivity (Disabling Drilldown)");
 
     // set the container id
     chart.container("container");
@@ -88,11 +49,57 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-    
-// set the display mode of headers
-function displayMode(mode) {
-  chart.headersDisplayMode(mode);
-}
+
+// a function for getting data
+function getData(){
+  // create data
+  var data = [
+    {name:       "Root", children: [
+      {name:     "Item 1", children: [
+        {name:   "Item 1-1", children: [
+          {name: "Item 1-1-1", value: 1000},
+          {name: "Item 1-1-2", value:  600},
+          {name: "Item 1-1-3", value:  550},
+          {name: "Item 1-1-4", value:  300},
+          {name: "Item 1-1-5", value:  150}
+        ]},
+        {name:   "Item 1-2",   value: 2300},
+        {name:   "Item 1-3",   value: 1500}
+      ]},
+      {name:     "Item 2", children: [
+        {name:   "Item 2-1", children: [
+          {name: "Item 2-1-1", value: 2100},
+          {name: "Item 2-1-2", value: 1000},
+          {name: "Item 2-1-3", value:  800},
+          {name: "Item 2-1-4", value:  750}
+        ]},
+        {name:   "Item 2-2", children: [
+          {name: "Item 2-2-1", value:  560},
+          {name: "Item 2-2-2", value:  300},
+          {name: "Item 2-2-3", value:  150},
+          {name: "Item 2-2-4", value:   90}
+        ]},
+        {name:   "Item 2-3",   value:  400}
+      ]},
+      {name:     "Item 3", children: [
+        {name:   "Item 3-1", children: [
+          {name: "Item 3-1-1", value:  850},
+          {name: "Item 3-1-2", value:  400},
+          {name: "Item 3-1-3", value:  150}
+        ]},
+        {name:   "Item 3-2",   value: 1350},
+        {name:   "Item 3-3",   value: 1300},
+        {name:   "Item 3-4", children: [
+          {name: "Item 3-4-1", value:  400},
+          {name: "Item 3-4-2", value:  300},
+          {name: "Item 3-4-3", value:  250},
+          {name: "Item 3-4-4", value:  150}
+        ]}
+      ]}  
+    ]} 
+  ];
+  return data;
+};
 </script>
 </body>
 </html>

@@ -5,11 +5,11 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -27,48 +27,47 @@ anychart.onDocumentReady(function () {
   
   // xml data                                             // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3742-indicators/xml-schema.xsd">' +
+    '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3692-table/xml-schema.xsd">' +
       // set chart type
       '<chart type="line" '+                              // var chart = anychart.line();
       'container="container">'+                           // chart.container("container");
+      // set intervals
+      '<y_scale><ticks '+                               // chart.yScale().ticks()
+      'interval="100000"/></y_scale>'+                  //   .interval(100000);
 
-// set intervals
-'<y_scale><ticks '+                               // chart.yScale().ticks()
-'interval="100000"/></y_scale>'+                  //   .interval(100000);
+      // custom y scale
+      '<scales><scale type="linear" '+                  // var newScale = anychart.scales.linear();
+      'minimum="0" '+                                   // newScale.minimum(0)
+      'maximum="100">'+                                 //     .maximum(100)
+        '<ticks '+                                      //     .ticks()
+        'interval="10"/>'+                              //         .interval(10);
+        '<minorTicks interval="2"/></scale></scales>'+  // extraYScale.minorTicks().interval(2);
 
-// custom y scale
-'<scales><scale type="linear" '+                  // var newScale = anychart.scales.linear();
-'minimum="0" '+                                   // newScale.minimum(0)
-'maximum="100">'+                                 //     .maximum(100)
-  '<ticks '+                                      //     .ticks()
-  'interval="10"/>'+                              //         .interval(10);
-  '<minorTicks interval="2"/></scale></scales>'+  // extraYScale.minorTicks().interval(2);
+      // y axes settings
+      '<y_axes>'+                                       // chart.yAxis().title()
+      '<axis title="Basic Y Axis"/>'+                   //   .text("Basic Y Axis");
+      '<axis '+                                         // chart.yAxis(1)
+      'orientation="right" '+                           //   .orientation("right")
+      'scale="0">'+                                     //   .scale(newScale)
+      '<title '+                                        //   .title()
+      'text="Extra Y Axis"/></axis></y_axes>'+          //     .text("Extra Y Axis");
 
-// y axes settings
-'<y_axes>'+                                       // chart.yAxis().title()
-'<axis title="Basic Y Axis"/>'+                   //   .text("Basic Y Axis");
-'<axis '+                                         // chart.yAxis(1)
-'orientation="right" '+                           //   .orientation("right")
-'scale="0">'+                                     //   .scale(newScale)
-'<title '+                                        //   .title()
-'text="Extra Y Axis"/></axis></y_axes>'+          //     .text("Extra Y Axis");
-
-'<series_list><series series_type="column">'+     // chart.column([
-  '<data><point x="A" value="637166"/>'+          //     ["A", 637166],
-    '<point x="B" value="721630"/>'+              //     ["B", 721630],
-    '<point x="C" value="148662"/>'+              //     ["C", 148662],
-    '<point x="D" value="78662"/>'+               //     ["D", 78662],
-    '<point x="E" value="90000"/>'+               //     ["E", 90000]
-  '</data></series>'+                             // ]);
-'<series series_type="line" '+                    // var line = chart.line();
-'y_scale="0">'+                                   // line.yScale(newScale);
-  '<data>'+                                       // line.data([
-    '<point x="A" value="95"/>'+                  //     ["A", 95],
-    '<point x="B" value="97"/>'+                  //     ["B", 97],
-    '<point x="C" value="96"/>'+                  //     ["C", 96],
-    '<point x="D" value="70"/>'+                  //     ["D", 70],
-    '<point x="E" value="35"/>'+                  //     ["E", 35]
-  '</data></series></series_list></chart>'+       // ]);
+      '<series_list><series series_type="column">'+     // chart.column([
+        '<data><point x="A" value="637166"/>'+          //     ["A", 637166],
+          '<point x="B" value="721630"/>'+              //     ["B", 721630],
+          '<point x="C" value="148662"/>'+              //     ["C", 148662],
+          '<point x="D" value="78662"/>'+               //     ["D", 78662],
+          '<point x="E" value="90000"/>'+               //     ["E", 90000]
+        '</data></series>'+                             // ]);
+      '<series series_type="line" '+                    // var line = chart.line();
+      'y_scale="0">'+                                   // line.yScale(newScale);
+        '<data>'+                                       // line.data([
+          '<point x="A" value="95"/>'+                  //     ["A", 95],
+          '<point x="B" value="97"/>'+                  //     ["B", 97],
+          '<point x="C" value="96"/>'+                  //     ["C", 96],
+          '<point x="D" value="70"/>'+                  //     ["D", 70],
+          '<point x="E" value="35"/>'+                  //     ["E", 35]
+        '</data></series></series_list></chart>'+       // ]);
     '</anychart>';
   
   // get XML data

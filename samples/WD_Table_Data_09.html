@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Table Data 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 45px;
+            margin: 10px 0 0 5px;
+        }
+        #inputColor {
+            width: 60px;
+            margin: 10px 0 0 5px;
+        }        
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button onclick="updateRow()">Update First Row</button>
+<label>Low:<input id="inputLow" value="510.69"></label>
+<label>High:<input id="inputHigh" value="516.88"></label>
+<label>Color:<input id="inputColor" value="#dd2c00"></label>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    
+    // create a data table
+    dataTable = anychart.data.table(0);
+    
+    // add data
+    dataTable.addData([
+      ["2015-12-25", 506.69, 511.88],
+      ["2015-12-26", 507.59, 514.98],
+      ["2015-12-27", 505.49, 516.30],
+      ["2015-12-28", 506.23, 514.72],
+      ["2015-12-29", 505.38, 517.86],
+      ["2015-12-30", 506.66, 516.98],
+      ["2015-12-31", 505.99, 513.33],
+      ["2016-01-01", 507.99, 515.29],
+      ["2016-01-02", 506.18, 514.87]
+    ]);
+    
+    // map the data
+    mapping = dataTable.mapAs({low: 1, high: 2, fill: 3});
+    
+    // create a stock chart and allow coloring individual points
+    var chart = anychart.stock(true);
+        
+    // create a plot and an ohlc series
+    var ohlcSeries = chart.plot(0).rangeColumn(mapping);
+    ohlcSeries.name("ACME Corp.");
+    
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Table Data: Updating");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+  
+// update the first row
+function updateRow(){
+  var newLow = document.getElementById("inputLow").value;
+  var newHigh = document.getElementById("inputHigh").value;
+  var color = document.getElementById("inputColor").value
+  var newData = [["2015-12-25", newLow, newHigh, color]];
+  dataTable.addData(newData);
+};
+</script>
+</body>
+</html>

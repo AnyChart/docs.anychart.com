@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/fonts/css/anychart.css" />
     
     <style>
         html, body, #container {
@@ -25,29 +25,29 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-      // create a preloader
-      preloader = anychart.ui.preloader();
-      // cover only chart container
-      preloader.render(document.getElementById("container"));      
-      // show preloader
-      preloader.visible(true);
+  // create a preloader
+  preloader = anychart.ui.preloader();
+  // cover only chart container
+  preloader.render(document.getElementById("container"));      
+  // show preloader
+  preloader.visible(true);
 
-      var chart = anychart.pie([
-["Chocolate", 5],
-["Rhubarb compote", 2],
-["Crêpe Suzette", 2],
-["American blueberry", 2],
-["Buttermilk", 1]
-      ]);
-      chart.title("Top 5 pancake fillings");
-      chart.container("container");
-      chart.draw();
+  var chart = anychart.pie([
+    ["Chocolate", 5],
+    ["Rhubarb compote", 2],
+    ["Crêpe Suzette", 2],
+    ["American blueberry", 2],
+    ["Buttermilk", 1]
+  ]);
+  chart.title("Top 5 pancake fillings");
+  chart.container("container");
+  chart.draw();
 
-      setTimeout(function (){ 
-// hide preloader after 20 seconds
-preloader.visible(false);
-      }, 20000)
-      });
+  setTimeout(function (){ 
+    // hide preloader after 20 seconds
+    preloader.visible(false);
+    }, 20000)
+});
 </script>
 </body>
 </html>

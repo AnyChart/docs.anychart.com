@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body {
@@ -26,7 +26,7 @@
             margin: 10px 0 0 10px;
         }
         input {
-            width: 30px;
+            width: 80px;
             margin: 10px 0 0 5px;
         }
         #container {
@@ -38,14 +38,16 @@
     </style>
 </head>
 <body>
-<button onclick="searchValues()">Search Items</button>
-<label>value ><input id="inputValue" value="50"> mln</label>
+<button onclick="updateItem()">Update First Child</button>
+<label>Name:<input id="inputName" value="New Name"></label>
+<label>Value:<input id="inputValue" value="120000000"></label>
+<label>Color:<input id="inputColor" value="#00bfa5"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    data = [
+    var data = [
       {name:   "Root",   children: [
         {name:   "Child 1",  value: 80636124},
         {name:   "Child 2",  value: 65511098},
@@ -60,16 +62,14 @@ anychart.onDocumentReady(function () {
       ]} 
     ];
 
-    // create a chart and set the data
-    chart = anychart.treeMap(data, "as-tree");
+    // create a data tree
+    treeData = anychart.data.tree(data, "as-tree");
 
-    // set the depth of hints
-    chart.hintDepth(2);
+    // create a chart and set the data
+    var chart = anychart.treeMap(treeData);
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Tree Data Model: Searching<br><br>" +
-                "<span style = 'color:#990000'>?</span>");
+    chart.title("Tree Data Model: Updating");
 
     // set the container id
     chart.container("container");
@@ -78,47 +78,14 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// a comparison function
-function comparisonFunction(fieldValue, comparisonValue) {
-  if (comparisonValue > fieldValue)
-    return true;
-  else
-    return false;
-};
-
-// search items with values greater than a given one
-function searchValues(){
-
-  // reset the colors of the chart
-  resetColors();
-
-  // get the chart data as an instance of anychart.data.Tree
-  var treeData = chart.data();
-
-  // search items
-  var inputValue = (document.getElementById("inputValue").value) * 1000000;
-  var items = treeData.searchItems("value", inputValue, comparisonFunction);
-
-  /* get the names of the found items, add them to a string variable,
-  and set the fill colors of their nodes */
-  var text = "";
-  for (var i = 0; i < items.length; i++) {
-    text += items[i].get("name") + ", ";
-    items[i].set("fill", "#00bfa5");
-  };
-  if (items.length == 0)
-    text = "(none)";
-
-  // update the chart title
-  chart.title("Tree Data Model: Searching<br><br>" +
-              "<span style = 'color:#990000'>" +
-              text.substr(0, text.length - 2) + "</span>");
-
-};
-
-// a function for resetting the colors of the chart
-function resetColors() {
-  chart.data(data, "as-tree");  
+// update the first child
+function updateItem(){
+  var name = document.getElementById("inputName").value;
+  var value = document.getElementById("inputValue").value;
+  var color = document.getElementById("inputColor").value;
+  treeData.getChildAt(0).getChildAt(0).set("name", name);
+  treeData.getChildAt(0).getChildAt(0).set("value", value);
+  treeData.getChildAt(0).getChildAt(0).set("fill", color);
 };
 </script>
 </body>

@@ -5,11 +5,11 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -27,33 +27,33 @@ anychart.onDocumentReady(function () {
 
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3742-indicators/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/DVF-3692-table/xml-schema.xsd">' +
     // set chart type, title and chart container
     '<chart type="column" container="container" title="XML Scale Inversion">' +
       // x axes setting
       '<x_axes>'+
-// adjust default x axis
-'<axis orientation="top" title="false"/>'+
-      '</x_axes>'+
-      // y axes settings
-      '<y_axes>' +
-// adjust default y axis
-'<axis orientation="right" title="false"/>'+
-      '</y_axes>'+
-      // y scale setting
-      '<y_scale inverted="true"/>'+
-      // series settings
-      '<series_list>'+
-'<series>' +
-  // data set
-  '<data>' +
-    '<point x="P1" value="128.14"/>'+
-    '<point x="P2" value="112.61"/>'+
-    '<point x="P3" value="163.21"/>'+
-    '<point x="P4" value="229.98"/>'+
-    '<point x="P5" value="90.54"/>'+
-  '</data>'+
-'</series>'+
+        // adjust default x axis
+        '<axis orientation="top" title="false"/>'+
+              '</x_axes>'+
+              // y axes settings
+              '<y_axes>' +
+        // adjust default y axis
+        '<axis orientation="right" title="false"/>'+
+              '</y_axes>'+
+              // y scale setting
+              '<y_scale inverted="true"/>'+
+              // series settings
+              '<series_list>'+
+        '<series>' +
+          // data set
+          '<data>' +
+            '<point x="P1" value="128.14"/>'+
+            '<point x="P2" value="112.61"/>'+
+            '<point x="P3" value="163.21"/>'+
+            '<point x="P4" value="229.98"/>'+
+            '<point x="P5" value="90.54"/>'+
+          '</data>'+
+        '</series>'+
       '</series_list>'+
     '</chart>'+
   '</anychart>';

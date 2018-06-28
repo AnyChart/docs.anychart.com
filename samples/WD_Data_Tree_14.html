@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Data Tree 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 30px;
+            margin: 10px 0 0 5px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+        #search {
+            color: #00838f;
+        }
+        #indexedSearch {
+            color: #ef6c00;
+        }
+        #timeLabel {
+        	position: absolute;
+        	width: 100px;
+            padding: 10px;
+            right: 20px;
+            z-index: 100;
+            border: 1px solid #96a6a6;
+            color: #96a6a6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<button id="search" onclick="searchValues('value', '#00838f')">Search</button>
+<button id = "indexedSearch" onclick="searchValues('indexValue', '#ef6c00')">Indexed Search</button>
+<label>value ><input id="inputValue" value="50"> mln</label>
+<label id="timeLabel">Search Time</label>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // get the data
+    generatedData = getData(100);
+
+    // create a chart and set the data
+    chart = anychart.treeMap(generatedData, "as-tree");
+
+    // create an index
+    chart.data().createIndexOn("indexValue");
+
+    // set the chart title
+    chart.title("Tree Data Model: Index");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// a comparison function
+function comparisonFunction(fieldValue, comparisonValue) {
+  if (comparisonValue > fieldValue)
+    return true;
+  else
+    return false;
+};
+
+// search items with values greater than a given one
+function searchValues(field, color){
+
+  // start measuring the time of search
+  var searchTime = performance.now();
+
+  // reset the colors of the chart
+  resetColors();
+
+  // get the chart data as an instance of anychart.data.Tree
+  var treeData = chart.data();
+
+  // search items
+  var inputValue = (document.getElementById("inputValue").value) * 1000000;
+  var items = treeData.searchItems(field, inputValue, comparisonFunction);
+
+  /* get the the found items
+  and set the fill colors of their nodes */
+  for (var i = 0; i < items.length; i++) {
+    items[i].set("fill", color);
+  };
+
+  // get the time of search and show it in the label
+  searchTime = (performance.now() - searchTime).toFixed(0) / 1000;
+  var timeLabel = document.getElementById("timeLabel");
+  timeLabel.innerHTML = searchTime + " s";
+  timeLabel.style.color = color;
+  timeLabel.style.borderColor = color;
+};
+
+// a function for resetting the colors of the chart
+function resetColors() {
+  chart.data(generatedData, "as-tree");  
+};
+
+// a function for generating data
+function getData(n){
+  // generate data
+  var childArray = [];
+  for (var i = 1; i < n; i++){
+    var childObj = {};
+    var randomValue = Math.floor((Math.random() * 99999999) + 1);
+    childObj.name = "Child " + i;
+    childObj.value = randomValue;
+    childObj.indexValue = randomValue;
+    childArray.push(childObj);
+  };
+  var data = [{name: "Root", children: childArray}];
+  return data;
+};
+
+</script>
+</body>
+</html>

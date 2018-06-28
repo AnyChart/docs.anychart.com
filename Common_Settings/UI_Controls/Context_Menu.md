@@ -10,8 +10,8 @@ To enable AnyChart Context Menu feature you need to reference the UI module and 
  
 ```
 <head>
-  <script src="https://cdn.anychart.com/releases/DVF-3742-indicators/js/anychart-ui.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/releases/DVF-3742-indicators/css/anychart-ui.css">
+  <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.css">
 </head>
 ```
 

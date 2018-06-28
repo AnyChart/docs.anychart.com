@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Treemap Chart 18"/>
+    <meta name="ac:name" content="WD Data Tree 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button onclick="nextItem()">Drill to Next Item</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
+    // get data
+    var data = getData(); 
+
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // get the traverser of a tree
+    traverser = treeData.getTraverser();
+
+    // skip the root node
+    traverser.advance();
+
     // create a chart and set the data
-    var chart = anychart.treeMap(getData(), "as-tree");
+    chart = anychart.treeMap(treeData);
 
     // set the depth of hints
     chart.hintDepth(2);
 
     // configure labels
     chart.labels().format("{%name}");
-
-    // disable the drilldown feature
-    chart.listen("drillchange", function(e){
-      return false;
-    });
-
+    
     // set the chart title
-    chart.title("Treemap: Interactivity (Disabling Drilldown)");
-
+    chart.title("Tree Data Model: Traversing");
+    
     // set the container id
     chart.container("container");
 
@@ -99,7 +116,23 @@ function getData() {
     ]} 
   ];
   return data;
-}
+};
+
+// get the next data item and drill to it
+function nextItem() {
+  // try to go to the next item
+  if (traverser.advance()) {
+    /* get the current item
+    as an instance of the dataItem class */
+    var dataItem = traverser.current();
+    // drill down to the item
+    chart.drillTo(dataItem);
+  }
+  else {
+    //reset the traverser
+    traverser.reset();
+  }
+};
 </script>
 </body>
 </html>

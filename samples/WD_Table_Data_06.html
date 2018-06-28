@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Table Data 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    
+    // create two data tables
+    var dataTable_1 = anychart.data.table(0);
+    var dataTable_2 = anychart.data.table(0);
+
+    // add data to the first table
+    dataTable_1.addData([
+      ["2018-01-01", 512.53],
+      ["2018-01-03", 511.22],
+      ["2018-01-05", 510.53],
+      ["2018-01-07", 511.50],
+      ["2018-01-09", 511.70]
+    ]);
+
+    // add data to the second table
+    dataTable_2.addData([
+      ["2018-01-02", 511.83],
+      ["2018-01-04", 510.35],
+      ["2018-01-06", 511.43],
+      ["2018-01-08", 511.32]
+    ]);
+    
+    // map the first table
+    var mapping_1 = dataTable_1.mapAs({value: 1});
+
+    // map the second table
+    var mapping_2 = dataTable_2.mapAs({value: 1});
+    
+    // create a stock chart
+    var chart = anychart.stock();
+    
+    // create a plot and an two column series
+    var column_1 = chart.plot(0).column(mapping_1);
+    var column_2 = chart.plot(0).column(mapping_2);
+    column_1.name("Odd Days");
+    column_2.name("Even Days");
+    
+    // set the chart title
+    chart.title("Table Data: Mapping Multiple Tables");
+    
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

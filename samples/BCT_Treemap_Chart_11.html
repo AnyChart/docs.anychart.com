@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
     
     <style>
         html, body, #container {
@@ -45,22 +45,13 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.treeMap(data, "as-tree");
 
-    // enable HTML for labels
-    chart.labels().useHtml(true);
-
-    // configure labels
-    chart.labels().format(
-      "<span style='font-weight:bold'>{%name}</span><br>{%value}"
-    );
-
-    // configure tooltips
-    chart.tooltip().format(
-      "population: {%value}\ncapital: {%capital}"
-    );
+    /* ajust the font size of labels
+    according to the size of tiles */
+    chart.labels().adjustFontSize(true);
 
     // set the chart title
     chart.title().useHtml(true);
-    chart.title("Treemap: Labels and Tooltips (Tokens)<br><br>" +
+    chart.title("Treemap: Labels and Tooltips (Adjusting Font Size)<br><br>" +
                 "<span style='font-size:12; font-style:italic'>" +
                 "Top 10 European Union Countries by Population</span>");
 
