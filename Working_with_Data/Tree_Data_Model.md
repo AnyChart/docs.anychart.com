@@ -250,7 +250,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 ```
 
-{sample}WD\_Data\_Tree\_05{sample}
+{sample}WD\_Tree\_Data\_05{sample}
 
 ### Adding
 
