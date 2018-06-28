@@ -227,7 +227,7 @@ To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Toolti
 chart.tooltip().useHtml(true);
 ```
 
-This feature allows you to usa any possible HTML settings: you can adjust background color, font style and size, the separator, and so on – use [inline styles](#inline_styles) or [CSS classes](#css_classes). Tooltips are rendered as separate HTML elements added to DOM. 
+This feature allows you to usa any possible HTML settings: you can adjust background color, font style and size, the separator, and so on - use [inline styles](#inline_styles) or [CSS classes](#css_classes). Tooltips are rendered as separate HTML elements added to DOM. 
 
 **NOTE:** AnyChart font and color settings methods for the default tooltip do not affect the HTML tooltip.
 

@@ -10,7 +10,7 @@ Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenc
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/css/DVF-3692-table/anychart-ui.min.css">
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.0.1/fonts/css/anychart.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css">
 ```
 
 ## Sample

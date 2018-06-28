@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
         html, body {
@@ -32,7 +32,7 @@
 </head>
 <body>
 <button onclick="removeRow()">Remove First Row</button>
-<button onclick="removeRows()">Remove 28–31 Dec</button>
+<button onclick="removeRows()">Remove 28-31 Dec</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {

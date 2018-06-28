@@ -15,7 +15,7 @@ Downloadable Installation Package contains everything you need to start evaluati
 - Geo Map Collection
 - Offline documentation
 
-Download the latest installation package at [https://cdn.anychart.com/releases/DVF-3692-table/anychart-installation-package-DVF-3692-table.zip](https://cdn.anychart.com/releases/DVF-3692-table/anychart-installation-package-DVF-3692-table.zip)
+Download the latest installation package at [https://cdn.anychart.com/releases/{{branch-name}}/anychart-installation-package-DVF-3692-table.zip](https://cdn.anychart.com/releases/{{branch-name}}/anychart-installation-package-DVF-3692-table.zip)
 
 ### Themes
 
@@ -30,16 +30,16 @@ To use AnyChart CDN simply reference any of the required [modules](Modules) usin
 For example, this is how you reference the bundle package:
 
 ```
-<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
 And this is how you link basic chart and add UI module to access context menu feature and exports:
 
 ```
-<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-base.min.js"></script>
-<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-exports.min.js"></script>
-<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-ui.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/DVF-3692-table/css/anychart-ui.min.css" />
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
 ```
   
 ## Custom Build

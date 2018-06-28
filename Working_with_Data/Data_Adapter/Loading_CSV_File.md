@@ -9,7 +9,7 @@ To work with the features Data Adapter provides you need to plug it in along wit
 
 ```
 <!-- Include the data adapter -->
-<script src="https://cdn.anychart.com/releases/DVF-3692-table/js/anychart-data-adapter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
 ```
 
 You can load [Data from CSV](../Data_From_CSV) into AnyChart without the help of Data Adapter but **if you want to load a file** you can do it using the data adapter and the {api:anychart.data#loadCsvFile}loadCsvFile(){api} method as described below.
