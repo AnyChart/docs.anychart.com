@@ -110,8 +110,7 @@ tooltip.displayMode("separated");
 
 ## Formatting 
 
-<a name="title_formatting"></a>
-### Title
+### Title Formatting
 
 You can manage tooltip title visual appearance using {api:anychart.core.ui.Tooltip#title}title(){api} method. You can adjust font's visual settings along with the title's background appearance.
 
@@ -142,7 +141,7 @@ Here is a sample with a title separator disabled.
 
 {sample}CS\_Tooltip\_09{sample}
 
-### Text
+### Text Formatting
 
 You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.Chart#tooltip}tooltip(){api} method.
 
@@ -163,8 +162,6 @@ The default content of a tooltip may vary for different chart types and series, 
 
 There are two parts of a tooltip that can hold some information: its title and its body text. This section describes formatting both parts for making your tooltips more customized and informative in a way you need.
 
-#### Title
-
 For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
 ```
@@ -172,8 +169,6 @@ tooltip1.titleFormat("Manager: {%x}");
 ```
 
 {sample}CS\_Tooltip\_14{sample}
-
-#### Text
 
 In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
@@ -232,13 +227,13 @@ To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Toolti
 chart.tooltip().useHtml(true);
 ```
 
-This feature gives your access to all possible HTML settings: you can adjust background color, font style and size, the separator, and so on – use [inline styles](#inline_styles) or [CSS classes](#css_classes).
+This feature allows you to usa any possible HTML settings: you can adjust background color, font style and size, the separator, and so on – use [inline styles](#inline_styles) or [CSS classes](#css_classes). Tooltips are rendered as separate HTML elements added to DOM. 
 
-Please note that AnyChart methods for the default tooltip do not affect the HTML tooltip.
+**NOTE:** AnyChart font and color settings methods for the default tooltip do not affect the HTML tooltip.
 
 ### Inline Styles
 
-The following sample shows how to add an image and font settings to the tooltip by using inline styles:
+The following sample shows how to add an image and font settings to the HTML tooltip using inline styles:
 
 ```
 // configure tooltips
@@ -330,7 +325,7 @@ Here is the full list of methods:
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
-<td>All HTML elements of the tooltip are added to the DOM. Triggered once.
+<td>All HTML elements of the tooltip are added to the DOM. Triggered once for every tooltip (in case of separated mode or different tooltips for different series).
 </td>
 </tr>
 <tr>
@@ -342,22 +337,22 @@ If the listener function returns `false`, the rules defined by [formatting metho
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
-<td>The tooltip content changed. Returns `true` or `false`.</td>
+<td>The tooltip content changed.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
 <td> The tooltip content is going to change. Returns `true` or `false`.
 
-If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
+If the listener function returns `false`, the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
-<td>The tooltip title changed. Returns `true` or `false`.</td>
+<td>The tooltip title changed.</td>
 </tr>
 </tbody>
 </table>
 
-In the context, all methods get links to the four div elements of the tooltip (see the [CSS Classes](#css_classes) section). For example, this is how the context of {api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api} looks like:
+In the context, all methods get links to the four HTML elements of the tooltip (see the [CSS Classes](#css_classes) section). For example, this is how the context of {api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api} looks like:
 
 ```
 // listen to the onDomReady event
@@ -369,7 +364,7 @@ chart.tooltip().onDomReady(function() {
 });
 ```
 
-In this sample event listeners are used to draw a chart in the tooltip:
+In the sample below HTML tooltip listeners and point event listeners are used to draw a chart in the tooltip:
 
 {sample}CS\_Tooltip\_24{sample}
 

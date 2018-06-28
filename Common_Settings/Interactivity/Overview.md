@@ -315,19 +315,23 @@ Check out some other drilldown samples in the gallery:
 
 ## Creating Custom Tooltip
 
-There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips:
+There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. 
+
+Please check out [AnyChart Native HTML Tooltips](../Tooltip#html) before choosing to go this way. AnyChart Native HTML tooltips are pretty powerfull and allow to solve most of the common tasks.
+
+In the next sample a custom tooltip with no usage of AnyChart tooltips is created:
 
 {sample}CS\_Interactivity\_15{sample} 
 
 ## Interactivity Settings in Data Sets
 
-Now, let's look at our dataSets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed some light on using dataSet values for defining interactivity parameters.
+Now, let's look at data sets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed  light on using data set values to define interactivity parameters.
  
 Look at the following sample.
 
 {sample}CS\_Interactivity\_16{sample} 
 
-Here we have defined all interactivity colors (selection and hovering fills) through the dataSet of the chart. That's how it looks like in the code:
+Here we have defined all interactivity colors (selection and hovering fills) through the data set of the chart. That's how it looks like in the code:
 
 ```
 // data
@@ -344,21 +348,21 @@ var Sales2003 = data.mapAs({x: 0, value: 1, hoverFill: 3, selectFill: 4});
 var Sales2004 = data.mapAs({x: 0, value: 2, hoverFill: 3, selectHatchFill: 5});
 ```
 
-So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
+So, when you need or want to use AnyChar data set to set the series interactive behavior, all you need is to map the parameters properly afterwards.
   
-Another way of defining interactivity through the dataSet is setting the data as objects, like in the following:
+Another way of defining interactivity through the data set is setting the data as objects, like in the following:
 
 ```
 // data
-var data = anychart.data.set([
-  {x:1, value:990, selectFill: "Red"},
-  {x:2, value:1100, selected: true, selectFill: "Blue"},
-  {x:3, value:1050, selectFill: "Red"},
-  {x:4, value:890, selectFill: "Red"},
-  {x:5, value:1300, selected:true, selectFill: "Red"},
-  {x:6, value:840, selected:true, selectFill: "Green"},
-  {x:7, value:900, selectFill: "Red"},
-  {x:8, value:1000, selectFill: "Red"}
-]);
+var data = [
+    {x:1, value:990, state: "selected", selected: {fill:"Green"}},
+    {x:2, value:1100, state: "selected", selected: {fill:"Blue"}},
+    {x:3, value:1050, selected: {fill:"Red"}},
+    {x:4, value:890, selected: {fill:"Red"}},
+    {x:5, value:1300, state: "selected", selected: {fill:"Red"}},
+    {x:6, value:840, state: "selected", selected: {fill:"Green"}},
+    {x:7, value:900, selected: {fill:"Red"}},
+    {x:8, value:1000, selected: {fill:"Red"}}
+];
 ```
 {sample}CS\_Interactivity\_17{sample}
