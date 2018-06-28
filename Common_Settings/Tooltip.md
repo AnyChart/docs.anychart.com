@@ -330,33 +330,45 @@ Here is the full list of methods:
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
-<td>All HTML elements of the tooltip are added to the DOM.
-
-This method gets links to four div elements of the tooltip (see the  [CSS Classes](#css_classes) section). The event is triggered only once.</td>
+<td>All HTML elements of the tooltip are added to the DOM. Triggered once.
+</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
-<td>срабатывает перед изменением заголовка, контекст тот же
-если listner возвращает false:
-правила, которые определяет formatter, не применятся к заголовку
-и событие {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} не произойдет</td>
+<td> The tooltip title is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the title, and the {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} is not triggered.
+</td>
 </tr>
-<tr>
-<td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
-<td>изменился тайтл или нет</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
-<td></td>
+<td> The tooltip content is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`,the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
-<td></td>
+<td>The tooltip content changed. Returns `true` or `false`.</td>
 </tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
+<td>The tooltip title changed. Returns `true` or `false`.</td>
 </tbody>
 </table>
-  
-In the following sample, event listeners are used to draw a chart in the tooltip:
+
+All methods get links to the four div elements of the tooltip (see the [CSS Classes](#css_classes) section):
+
+```
+context = {
+  "parentElement": this.baseDiv_, // parent element
+  "titleElement": this.titleDiv_, // title
+  "separatorElement": this.hr_, // separator
+  "contentElement": this.contentDiv_ // content
+};
+```
+
+In this sample event listeners are used to draw a chart in the tooltip:
 
 {sample}CS\_Tooltip\_24{sample}
 
