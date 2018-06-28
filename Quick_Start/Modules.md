@@ -299,7 +299,7 @@ Module that enables VML support for old browsers.
 
 ## Extensions
 
-Extension is a special type of modules that provide additional functionality. Extensions **CAN NOT** be a part of [Bundle](#bunle) or compiled into it using [Builder](#builder).
+Extension is a special type of modules that provide additional functionality. Extensions **CAN NOT** be a part of [Bundle](#bundle) or compiled into it using [Builder](#builder).
 
 ### Chart Editor
 
