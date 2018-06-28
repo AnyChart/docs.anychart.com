@@ -51,7 +51,7 @@ treemap.draw();
 
 The following sample shows how to create different chart types with the same tree-like data:
 
-{sample :height 300}WD\_Data\_Tree\_01{sample}
+{sample :height 300}WD\_Tree\_Data\_01{sample}
 
 ## Setting Data
 
@@ -115,7 +115,7 @@ treeData = anychart.data.tree(data, "as-tree");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample}WD\_Data\_Tree\_02{sample}
+{sample}WD\_Tree\_Data\_02{sample}
 
 ### As Table
 
@@ -145,7 +145,7 @@ treeData = anychart.data.tree(data, "as-table");
 var chart = anychart.treeMap(treeData);
 ```
 
-{sample}WD\_Data\_Tree\_03{sample}
+{sample}WD\_Tree\_Data\_03{sample}
 
 ### Mapping
 
@@ -199,7 +199,7 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 250}WD\_Data\_Tree\_04{sample}
+{sample :height 250}WD\_Tree\_Data\_04{sample}
 
 ## Accessing Items
 
@@ -268,7 +268,7 @@ function addItem(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_06{sample}
+{sample}WD\_Tree\_Data\_06{sample}
 
 You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -293,7 +293,7 @@ function addItems(){
 };
 ```
 
-{sample :width 500 :height 500}WD\_Data\_Tree\_07{sample}
+{sample :width 500 :height 500}WD\_Tree\_Data\_07{sample}
 
 ### Updating
 
@@ -311,7 +311,7 @@ function updateItem(){
 };
 ```
 
-{sample}WD\_Data\_Tree\_08{sample}
+{sample}WD\_Tree\_Data\_08{sample}
 
 ### Removing
 
@@ -334,7 +334,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 treeData.getChildAt(0).removeChildAt(lastChild);
 ```
 
-{sample}WD\_Data\_Tree\_09{sample}
+{sample}WD\_Tree\_Data\_09{sample}
 
 ### Searching
 
@@ -358,7 +358,7 @@ var item = treeData.search("name", "Item 3-4");
 chart.drillTo(item);
 ```
 
-{sample}WD\_Data\_Tree\_10{sample}
+{sample}WD\_Tree\_Data\_10{sample}
 
 The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number...
 
@@ -424,7 +424,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 300}WD\_Data\_Tree\_11{sample}
+{sample :height 300}WD\_Tree\_Data\_11{sample}
 
 #### filter()
 
@@ -442,7 +442,7 @@ var items = treeData.filter(function(item) {
 });
 ```
 
-{sample :height 300}WD\_Data\_Tree\_12{sample}
+{sample :height 300}WD\_Tree\_Data\_12{sample}
 
 #### Indexes
 
@@ -466,7 +466,7 @@ treeData.removeIndexOn("value");
 
 When you click the button in the following sample, random tree-like data is generated, then an index is created, and a search on the indexed field is performed. Then the index is removed, and a new search on the same field is preformed. The time each step takes is logged, which allows you to see that the search on the indexed field is faster. The search result is shown on a Treemap chart:
 
-{sample :height 450}WD\_Data\_Tree\_13{sample}
+{sample :height 450}WD\_Tree\_Data\_13{sample}
 
 (+) ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
 
@@ -507,7 +507,7 @@ while (traverser.advance()) {
 };
 ```
 
-{sample}WD\_Data\_Tree\_15{sample}
+{sample}WD\_Tree\_Data\_15{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -535,7 +535,7 @@ function nextItem() {
 };
 ```
 
-{sample}WD\_Data\_Tree\_16{sample}
+{sample}WD\_Tree\_Data\_16{sample}
 
 ## Events
 
@@ -573,4 +573,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Data\_Tree\_17{sample}
+{sample}WD\_Tree\_Data\_17{sample}
