@@ -277,3 +277,8 @@ buttons.selected().content(contentFunction);
 See a live sample of such customized buttons below:
 
 {sample :width 690 :height 200}GANTT\_Chart\_19{sample}
+
+You can find more samples with custom datagrid buttons in [AnyGantt Gallery: General Features](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/):
+
+* [AnyGantt Custom Datagrid: Buttons with Images](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Buttons.php)
+* [AnyGantt Custom Datagrid: Custom Buttons](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Image_Button.php)
