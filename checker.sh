@@ -8,7 +8,7 @@ clear
 #
 ########################################################################################################################
 
-# install pre-push hook if it not exists
+# install pre-push hook if it does not exists
 hook='.git/hooks/pre-push'
 if [ ! -f ${hook} ]; then
    echo 'Install pre-push hook'
@@ -42,7 +42,7 @@ FILESLIST=$(git diff --name-only origin/develop | grep -e .html -e .md )
 # function for "fix" file.
 function heal_file(){
     filename=$1
-    # replace all STG url on COM and  non-{{branch-name}}
+    # replace all STG urls to COM and non-{{branch-name}}
     perl -pi -e 's,src="../anychart,src="https://cdn.anychart.com/releases/d/js/anychart,g' ${filename}
     perl -pi -e 's/\.stg/\.com/g' ${filename}
     perl -pi -e 's,(releases)/([^/])+/,\1/{{branch-name}}/,g' ${filename}
@@ -74,7 +74,7 @@ function broke_file(){
 }
 
 ########################################################################################################################
-#   Main functioonality
+#   Main functionality
 ########################################################################################################################
 
 # read command arguments
@@ -104,9 +104,9 @@ do
     esac
 done
 
-echo 'Start checking....'
+echo 'Starting check...'
 
-printf "Items for check: \n$FILESLIST\n\nModifier: ${FILE_MODIFYER}\n"
+printf "Items to check: \n$FILESLIST\n\nModifier: ${FILE_MODIFYER}\n"
 
 # for each files in tree of folders do (like python walk)
 for filename in ${FILESLIST}; do
@@ -117,7 +117,7 @@ done
 CHANGES=$(git diff --name-only)
 if [ "$CHANGES" ] && [[ "${FILE_MODIFYER}"=~"heal_file" ]]; then
     echo
-    echo 'ABORTED! Files was modified (autofixed). Check them pleaze.'
+    echo 'ABORTED! Files were modified (autofixed). Check them before doing the commit, please.'
     echo '   git status'
     exit 1
 fi
