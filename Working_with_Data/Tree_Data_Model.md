@@ -42,7 +42,7 @@ var treeData = anychart.data.tree(data, "as-tree");
 // create a chart and set the data
 var chart = anychart.treeMap(treeData);
 
-// set the chart container
+// set the container id
 treemap.container("container");
 
 // initiate drawing the chart
