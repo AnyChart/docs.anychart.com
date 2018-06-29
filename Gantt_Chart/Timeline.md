@@ -29,7 +29,7 @@ You can navigate the Gantt timeline using the mouse and zoom in and out using mo
 - {api:anychart.charts.Gantt#zoomOut}zoomOut{api}
 - {api:anychart.charts.Gantt#zoomTo}zoomTo{api}
 - {api:anychart.charts.Gantt#fitAll}fitAll(){api}
-- {api:anychart.charts.Gantt#fitToTask}fitTotask()api}
+- {api:anychart.charts.Gantt#fitToTask}fitTotask(){api}
 
 Here is a sample with custom buttons to navigate the chart:
 
