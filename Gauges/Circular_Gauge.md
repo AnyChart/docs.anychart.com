@@ -200,7 +200,7 @@ Cap in gauges has no practical meaning: its purpose is to make an on-screen gaug
 ```
 //cap
 gauge.cap()
-    .radius('6%');
+    .radius('6%')
     .enabled(true);
 ```
 {sample}GAUGE\_Circular\_07{sample}
