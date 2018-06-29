@@ -66,7 +66,7 @@ Chart editor files to be included, not the [Prerequisites](#prerequisites):
 
 ## Using
 
-AnyChart Chart Editor UI can be configured and used in several ways – please see [Configuration](Configuration) and [Use Cases](Use_Cases) to learn more.
+AnyChart Chart Editor UI can be configured and used in several ways - please see [Configuration](Configuration) and [Use Cases](Use_Cases) to learn more.
 
 ## Contributing
 
