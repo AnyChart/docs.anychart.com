@@ -6,9 +6,7 @@
 
 AnyStock supports a lot of different [series types](Supported_Series). Some of them share some or all data fields and can be [switched during the run time](Series_Type).
 
-Series are created within [chart plots](../Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or specific series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on.
-
-Except for a few minor differences, settings of AnyStock series are similar to that of basic charts – see [Basic Charts: General Settings](../../Basic_Charts/General_Settings).
+Series are created within [chart plots](../Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or specific series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on. Except for a few minor differences, settings of AnyStock series are similar to that of basic charts – see [Basic Charts: General Settings](../../Basic_Charts/General_Settings).
 
 ## Basic Sample
 
