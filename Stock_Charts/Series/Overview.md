@@ -13,10 +13,10 @@ Series are created within [chart plots](../Chart_Plots) by using either the {api
 Here's a basic sample with three different series on two plots: 
 
 ```
-// create mapping objects
-var mapping1 = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-var mapping2 = dataTable.mapAs({'high': 2, 'low': 3});    
-var mapping3 = dataTable.mapAs({'value': 4});
+// map the data
+var mapping1 = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close":4});
+var mapping2 = dataTable.mapAs({"high": 2, "low": 3});    
+var mapping3 = dataTable.mapAs({"value": 4});
 
 // create an ohlc series
 var series1 = chart.plot(0).candlestick(mapping1);
@@ -63,9 +63,11 @@ series3.stroke("#aeb404", 1, "10 5", "round");
 AnyStock series cannot be selected and have only the normal and hover states. You can specify how series look when legend item is hovered and enable markers:
 
 ```
-// create an and configure hovered state of a line series
+// create a line series
 var series1 = chart.plot(0).line(mapping1);
 series1.name("Close");
+
+// configure the series in the hover state
 series1.hovered().stroke("#aeb404", 1, "10 5", "round");
 series1.hovered().markers(true);
 series1.hovered().markers().type("star5");
@@ -78,7 +80,7 @@ series1.hovered().markers().type("star5");
 You can add a background series of any type to the scrollbar and adjust its colors in the selected state:
 
 ```
-// create the thumbnail series in the scroller
+// create a thumbnail series in the scroller
 var scrollerSeries = chart.scroller().column(mapping2);
 
 // set the color for the selected columns in the scroller series
