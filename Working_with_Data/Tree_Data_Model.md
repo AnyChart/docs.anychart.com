@@ -455,22 +455,12 @@ treeData.createIndexOn("value");
 
 **Note:** You cannot create an index on the `parent` or `child` field.
 
-(!) ДОПИСАТЬ ПРО ФУНКЦИЮ
-
 To remove the index on a field, use {api:anychart.data.Tree#removeIndexOn}removeIndexOn(){api} with the name of the field as a parameter:
 
 ```
 // remove the index
 treeData.removeIndexOn("value");
 ```
-
-When you click the button in the following sample, random tree-like data is generated, then an index is created, and a search on the indexed field is performed. Then the index is removed, and a new search on the same field is preformed. The time each step takes is logged, which allows you to see that the search on the indexed field is faster. The search result is shown on a Treemap chart:
-
-{sample :height 450}WD\_Tree\_Data\_13{sample}
-
-(+) ПРИМЕР С ПОИСКОМ ПО ОБЪЕКТАМ
-
-{sample}WD\_Tree\_Data\_14{sample}
 
 ### Traversing
 
