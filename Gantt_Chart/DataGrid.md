@@ -221,25 +221,31 @@ To customize how expand/collapse buttons look, use the {api:anychart.core.ui.Dat
 Here is a sample of a data grid with customized expand/collapse buttons. The text is altered, the background is disabled in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
 
 ```
-// get buttons configuration object
+// access the object with button settings
 var buttons = chart.dataGrid().buttons();
 
-// configure buttons font
+// configure the font of buttons
 buttons.fontColor('Black');
 buttons.fontFamily('Courier');
-// change width to match the custom font
+
+/* change the width of buttons
+to make it match the custom font */
 buttons.width(22);
 
-// change buttons text
+// change the text of buttons
 buttons.normal().content('[+]');
 buttons.selected().content('[-]');
-// disable buttons background in expanded and collapsed states
+
+/* disable the background of buttons
+in the expanded and collapsed states */
 buttons.normal().background(false);
 buttons.selected().background(false);
-// change the background and font in hovered state
+
+/* change the background and font of buttons
+in the hover state */
 buttons.hovered().background().fill(null);
 buttons.hovered().background().stroke("1 red");
-buttons.hovered().fontColor('Red');
+buttons.hovered().fontColor('red');
 ```
 
 {sample :width 690 :height 200}GANTT\_Chart\_18{sample}
@@ -251,7 +257,8 @@ var buttons = chart.dataGrid().buttons();
 
 // create custom drawing functions
 var contentFunction = function (path) {
-    // draw different primitives or anything else depending on the state
+    /* draw different primitives
+    or anything else depending on the state */
     var half = this.width / 2;
     switch (this.state) {
       case 'normal':
@@ -269,7 +276,7 @@ var contentFunction = function (path) {
     }      
 };
 
-// Set content functions
+    // set content functions for buttons
 buttons.normal().content(contentFunction);
 buttons.selected().content(contentFunction);
 ```

@@ -26,43 +26,49 @@
 <script>
 anychart.onDocumentReady(function (){
 
-  // data tree settings
+  // get data and create a data tree
   var treeData = anychart.data.tree(getData(), "as-tree");
 
-  // chart type
+  // create a gantt chart
   var chart = anychart.ganttProject();
   
-  // chart data
+  // set the data
   chart.data(treeData);
 
-  // get buttons configuration object
+  // access the object with button settings
   var buttons = chart.dataGrid().buttons();
 
-  // configure buttons font
+  // configure the font of buttons
   buttons.fontColor('Black');
   buttons.fontFamily('Courier');
-  // change width to match the custom font
+
+  /* change the width of buttons
+  to make it match the custom font */
   buttons.width(22);
 
-  // change buttons text
+  // change the text of buttons
   buttons.normal().content('[+]');
   buttons.selected().content('[-]');
-  // disable buttons background in expanded and collapsed states
+
+  /* disable the background of buttons
+  in the expanded and collapsed states */
   buttons.normal().background(false);
   buttons.selected().background(false);
-  // change the background and font in hovered state
+
+  /* change the background and font of buttons
+  in the hover state */
   buttons.hovered().background().fill(null);
   buttons.hovered().background().stroke("1 red");
-  buttons.hovered().fontColor('Red');
+  buttons.hovered().fontColor('red');
 
+  // set the chart container
   chart.container("container");
   
-  // initiate drawing
+  // initiate drawing the chart
   chart.draw();
-
 });
 
-// data
+// create data
 function getData() {
   return [
   {
