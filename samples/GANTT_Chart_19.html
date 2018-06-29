@@ -25,16 +25,23 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+    
+    // get data
     var data = getData();
 
+    // create a gantt chart
     var chart = anychart.ganttProject();
+
+    // set the data
     chart.data(data, 'as-table');
 
+    // access the object with button settings
     var buttons = chart.dataGrid().buttons();
 
     // create custom drawing functions
     var contentFunction = function (path) {
-        // draw different primitives or anything else depending on the state
+        /* draw different primitives
+        or anything else depending on the state */
         var half = this.width / 2;
         switch (this.state) {
           case 'normal':
@@ -52,19 +59,26 @@ anychart.onDocumentReady(function () {
         }      
     };
 
-    // Set content functions
+    // set content functions for buttons
     buttons.normal().content(contentFunction);
     buttons.selected().content(contentFunction);
 
-    // disable standard backgrounds
+    /* disable the default backgrounds
+    of buttons in all states */
     buttons.normal().background(false);
     buttons.selected().background(false)
     buttons.hovered().background(false);
 
-    chart.title('Custom expand/collapse buttons');
+    // set the chart title
+    chart.title('Custom Expand/Collapse Buttons');
   
+    // set the chart container
     chart.container('container');
+
+    // initiate drawing the chart
     chart.draw();
+
+   // fit data items to the width of the timeline
     chart.fitAll();
 
 });

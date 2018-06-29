@@ -78,6 +78,18 @@ var credits = chart.credits();
 credits.enabled(false);
 ```
 
+### Dashboards
+
+If you are creating dashboards using [Stage-based Dashboard Layout](../Dashboards/Stage-Based_Layout) you can configure credits for the stage instead of a chart using the same {api:anychart.graphics.vector.Stage#credits}credits(){api} method:
+
+```
+// create a stage 
+var stage = anychart.graphics.create("container");
+// configure stage credits
+var credits = stage.credits();
+credits.text("Dashboard");
+```
+
 ### License
 
 When you purchase a license to AnyChart 7 you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
