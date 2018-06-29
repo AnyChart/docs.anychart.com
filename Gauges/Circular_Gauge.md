@@ -22,7 +22,7 @@ Let's start with a simple speedometer gauge. First of all, we need to set the da
 dataSet = anychart.data.set([50]);
 
 //set the chart type
-gauge = anychart.circularGauge();
+gauge = anychart.gauges.circular();
 
 //link the data with the gauge
 gauge.data(dataSet);
@@ -61,22 +61,19 @@ gauge.sweepAngle(180);
 axis.sweepAngle(180);
 ```
 
-Now, let's look at the sample. Here we've turned and limited the gauge itself:
+Now, let's look at the sample. Here we've turned and limited the gauge itself. Now we've got a half-circular gauge:
 
 {sample}GAUGE\_Circular\_02{sample}
 
-You can use negative values also. In this case, the count will be usual. Let's set our startAngle to -90 and leave the sweepAngle to 180:
+You can use negative values also:
 
 ```
-//set the angle
-gauge.startAngle(-90).sweepAngle(180);
+gauge.startAngle(-45);
+gauge.sweepAngle(-300);
 ```  
-
-As you can see, nothing has changed:
-
 {sample}GAUGE\_Circular\_02-1{sample}
 
-As shown above, now we've got a half-circular gauge. Now let's adjust our axis.
+Now let's adjust our axis.
 
 ##Scales 
 
@@ -204,6 +201,7 @@ Cap in gauges has no practical meaning: its purpose is to make an on-screen gaug
 //cap
 gauge.cap()
     .radius('6%');
+    .enabled(true);
 ```
 {sample}GAUGE\_Circular\_07{sample}
 
