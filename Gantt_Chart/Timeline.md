@@ -21,6 +21,20 @@ You can look up the [Project Chart](Project_Chart) article to know more about ma
 
 Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging.
 
+## Zoom
+
+You can navigate the Gantt timeline using the mouse and zoom in and out using mouse scroll wheel and Shift key. There are several methods to navigate timeline:
+
+- {api:anychart.charts.Gantt#zoomIn}zoomIn{api}
+- {api:anychart.charts.Gantt#zoomOut}zoomOut{api}
+- {api:anychart.charts.Gantt#zoomTo}zoomTo{api}
+- {api:anychart.charts.Gantt#fitAll}fitAll(){api}
+- {api:anychart.charts.Gantt#fitToTask}fitTotask()api}
+
+Here is a sample with custom buttons to navigate the chart:
+
+{sample}GANTT\_Timeline\_00{sample}
+
 ## Markers
 
 There are three marker types we've got in Gantt Charts:
