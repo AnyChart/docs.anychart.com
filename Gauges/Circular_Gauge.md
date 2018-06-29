@@ -107,7 +107,6 @@ So our gauge with the fixed axis will look the following way:
 
 {sample}GAUGE\_Circular\_03{sample}
 
-
 ###Ticks
 
 At the moment our speedometer has only 4 ticks each 40 mph, that is not actually informative. Let's set the limits for our ticks, make major tickes appear each 10 mph and enable minor ticks.
@@ -156,7 +155,7 @@ In this section we will talk about other elements of Gauges and demonstrate how 
 
 As you may remember, we have defined some data at the beginning of the article, but there's still no data shown on any of the samples. That's because we haven't enabled a pointer yet.
 
-There are 4 different types of pointers avaliable: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
+There are 4 different types of pointers available: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
 
 ```
 //needle
@@ -187,6 +186,7 @@ gauge.bar(0)
     .radius(50)
     .zIndex(10);
 ```
+
 {sample}GAUGE\_Circular\_06{sample}
 
 To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}axisIndex(){api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}dataIndex(){api} methods. The value transmitted to the method is the number of axis or data accordingly.
