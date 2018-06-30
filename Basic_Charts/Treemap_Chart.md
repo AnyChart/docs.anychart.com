@@ -401,7 +401,7 @@ chart.tooltip().format(function (){
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_102{sample}
+{sample}BCT\_Treemap\_Chart\_10{sample}
 
 #### Font Size
 
