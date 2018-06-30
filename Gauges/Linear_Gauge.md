@@ -143,7 +143,7 @@ Also, you can customize the height of the scale bar in different points by using
 ```
 // set the relative height of the control points of the scale bar
 scaleBar.points([
-    {height: 1, left: 1, right: 1}
+    {height: 1, left: 1, right: 0}
 ]);
 ```
 
