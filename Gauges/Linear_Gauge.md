@@ -102,8 +102,6 @@ axisRight.scale(cScale);
 
 The sample below shows a basic horizontally oriented linear gauge with three color zones:
 
-{sample :height 200}GAUGE\_Linear\_04{sample}
-
 ```
 // create a color scale
 var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
@@ -137,6 +135,8 @@ var scaleBar = gauge.scaleBar(0);
 // use the color scale (defined earlier) as the color scale of the Scale Bar
 scaleBar.colorScale(scaleBarColorScale);
 ```
+
+{sample :height 200}GAUGE\_Linear\_04{sample}
 
 Also, you can customize the height of the scale bar in different points by using the {api:anychart.core.linearGauge.ScaleBar#points}points(){api} method and specifying the relative height of three control points – see {api:anychart.core.linearGauge.ScaleBar.ControlPoint}anychart.core.linearGauge.ScaleBar.ControlPoint{api}:
 
