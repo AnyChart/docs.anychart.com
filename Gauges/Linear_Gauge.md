@@ -138,8 +138,13 @@ var scaleBar = gauge.scaleBar(0);
 scaleBar.colorScale(scaleBarColorScale);
 ```
 
-```
+Also, you can customize the height of the scale bar in different points by using the {api:anychart.core.linearGauge.ScaleBar#points}points(){api} method and specifying the relative height of three control points – see {api:anychart.core.linearGauge.ScaleBar.ControlPoint}{api}:
 
+```
+// set the relative height of the control points of the scale bar
+scaleBar.points([
+    {height: 1, left: 1, right: 1}
+]);
 ```
 
 {sample}GAUGE\_Linear\_05{sample}
