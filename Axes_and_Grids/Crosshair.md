@@ -3,7 +3,7 @@
 
 ## Overview
 
-A crosshair is a pair of perpendicular lines (horizontal and vertical) that moves when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
+A crosshair is a pair of perpendicular lines (horizontal and vertical) that move when the mouse is moved. As a rule, there are also two labels displayed on the X- and Y-axes in the points where the axes are crossed by the crosshair lines. The crosshair allows the user to "hit" a particular data point and see some extra information about it.
 
 ## Enabling
 
@@ -54,9 +54,12 @@ chart.crosshair().xLabel(false);
 The text of the labels can be changed with the help of the {api:anychart.core.ui.CrosshairLabel#format}format(){api} method and [formatting functions](../Common_Settings/Text_Formatters#formatting_functions):
 
 ```
+// set the text of the x-label using text formatter
+chart.crosshair().xLabel().format("{%Value}");
+
 // set the text of the y-label
 chart.crosshair().yLabel().format(function (){
-  return this.value + " $";
+  return Math.round(this.value) + " $";
 });
 ```
 

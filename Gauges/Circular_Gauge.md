@@ -22,7 +22,7 @@ Let's start with a simple speedometer gauge. First of all, we need to set the da
 dataSet = anychart.data.set([50]);
 
 //set the chart type
-gauge = anychart.circularGauge();
+gauge = anychart.gauges.circular();
 
 //link the data with the gauge
 gauge.data(dataSet);
@@ -61,22 +61,19 @@ gauge.sweepAngle(180);
 axis.sweepAngle(180);
 ```
 
-Now, let's look at the sample. Here we've turned and limited the gauge itself:
+Now, let's look at the sample. Here we've turned and limited the gauge itself. Now we've got a half-circular gauge:
 
 {sample}GAUGE\_Circular\_02{sample}
 
-You can use negative values also. In this case, the count will be usual. Let's set our startAngle to -90 and leave the sweepAngle to 180:
+You can use negative values also:
 
 ```
-//set the angle
-gauge.startAngle(-90).sweepAngle(180);
+gauge.startAngle(-45);
+gauge.sweepAngle(-300);
 ```  
-
-As you can see, nothing has changed:
-
 {sample}GAUGE\_Circular\_02-1{sample}
 
-As shown above, now we've got a half-circular gauge. Now let's adjust our axis.
+Now let's adjust our axis.
 
 ##Scales 
 
@@ -109,7 +106,6 @@ axis.scale()
 So our gauge with the fixed axis will look the following way:
 
 {sample}GAUGE\_Circular\_03{sample}
-
 
 ###Ticks
 
@@ -159,7 +155,7 @@ In this section we will talk about other elements of Gauges and demonstrate how 
 
 As you may remember, we have defined some data at the beginning of the article, but there's still no data shown on any of the samples. That's because we haven't enabled a pointer yet.
 
-There are 4 different types of pointers avaliable: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
+There are 4 different types of pointers available: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
 
 ```
 //needle
@@ -190,6 +186,7 @@ gauge.bar(0)
     .radius(50)
     .zIndex(10);
 ```
+
 {sample}GAUGE\_Circular\_06{sample}
 
 To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}axisIndex(){api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}dataIndex(){api} methods. The value transmitted to the method is the number of axis or data accordingly.
@@ -203,7 +200,8 @@ Cap in gauges has no practical meaning: its purpose is to make an on-screen gaug
 ```
 //cap
 gauge.cap()
-    .radius('6%');
+    .radius('6%')
+    .enabled(true);
 ```
 {sample}GAUGE\_Circular\_07{sample}
 
@@ -245,21 +243,14 @@ gauge.range()
 
 {sample}GAUGE\_Circular\_09{sample}
 
-##Colors
+## Colors
 
-AnyChart charting library uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+AnyChart charting library uses default color palette to color data elements of a chart automatically.
 
-###Colorizing Elements
-
-As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}fill(){api}  and {api:anychart.graphics.vector.Stroke}stroke(){api} parameters or {api:anychart.graphics.vector}fontColor(){api} for the labels. Let's change the colors to the elements on our sample:
+As you see, our speedometer does not look attractive at the moment. Let's color its elements to make the look of the speedometer more realistic and learn how to apply different colors to different data. To apply the color to an element we need to set {api:anychart.graphics.vector.Fill}fill(){api} and {api:anychart.graphics.vector.Stroke}stroke(){api} or {api:anychart.graphics.vector}fontColor(){api}.
 
 {sample}GAUGE\_Circular\_10{sample}
 
-In the sample above we have set the colors to the elements, besides that we have changed positions and sizes of several elements.
-
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
-* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
-
+AnyChart takes care of visualization and users convenience seriously: that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF". Depending on your system/site/application design you may need and use any of this color setting methods. Read more about setting colors below and in the following help sections: [different ways of setting colors in AnyChart](../Appearance_Settings/Color_Management).

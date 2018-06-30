@@ -26,65 +26,69 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data table on loaded data
+    // create a data table
     var dataTable = anychart.data.table();
-    dataTable.addData([
-        ['2004-01-02', 2011.08, 2022.37, 1999.77, 2006.6801, 1666780032],
-        ['2004-01-05', 2020.78, 2047.36, 2020.78, 2047.36, 2362909952],
-        ['2004-01-06', 2044.55, 2061.54, 2039.63, 2057.3701, 2273220096],
-        ['2004-01-07', 2056.75, 2078.0901, 2047.02, 2077.6799, 2294279936],
-        ['2004-01-08', 2089.6001, 2100.25, 2078.05, 2100.25, 2683950080],
-        ['2004-01-09', 2083.6399, 2113.3301, 2077.0901, 2086.9199, 2482759936],
-        ['2004-01-12', 2093.54, 2112.52, 2085.1499, 2111.78, 2284009984],
-        ['2004-01-13', 2113.1101, 2114.9099, 2080.29, 2096.4399, 2385700096],
-        ['2004-01-14', 2104.29, 2111.73, 2094.3201, 2111.1299, 2099970048],
-        ['2004-01-15', 2101.8601, 2121.6101, 2088.1001, 2109.0801, 2235589888],
-        ['2004-01-16', 2126.1201, 2140.47, 2119.3501, 2140.46, 2614390016],
-        ['2004-01-20', 2149.03, 2149.8501, 2130.2, 2147.98, 2574190080],
-        ['2004-01-21', 2139.3301, 2150.1101, 2120.2, 2142.45, 2421860096],
-        ['2004-01-22', 2146.3201, 2152.1201, 2119.01, 2119.01, 2353370112],
-        ['2004-01-23', 2124.76, 2138.4099, 2108.45, 2123.8701, 2253910016],
-        ['2004-01-26', 2120.5601, 2153.8301, 2115.3401, 2153.8301, 1946050048],
-        ['2004-01-27', 2148.05, 2152.75, 2116.04, 2116.04, 2151259904],
-        ['2004-01-28', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952],
-        ['2004-01-29', 2085.54, 2087.3301, 2041.0699, 2068.23, 2637760000],
-        ['2004-01-30', 2068.3601, 2078.8799, 2058.54, 2066.1499, 1931180032]
-        ]);
 
-    // map loaded data
-    var mapping = dataTable.mapAs({'value': 2});
-    var ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-    var columnMapping = dataTable.mapAs({'value': 3});
+    // add data
+    dataTable.addData([
+      ["2004-01-02", 2011.08, 2022.37, 1999.77, 2006.6801, 1666780032],
+      ["2004-01-05", 2020.78, 2047.36, 2020.78, 2047.36, 2362909952],
+      ["2004-01-06", 2044.55, 2061.54, 2039.63, 2057.3701, 2273220096],
+      ["2004-01-07", 2056.75, 2078.0901, 2047.02, 2077.6799, 2294279936],
+      ["2004-01-08", 2089.6001, 2100.25, 2078.05, 2100.25, 2683950080],
+      ["2004-01-09", 2083.6399, 2113.3301, 2077.0901, 2086.9199, 2482759936],
+      ["2004-01-12", 2093.54, 2112.52, 2085.1499, 2111.78, 2284009984],
+      ["2004-01-13", 2113.1101, 2114.9099, 2080.29, 2096.4399, 2385700096],
+      ["2004-01-14", 2104.29, 2111.73, 2094.3201, 2111.1299, 2099970048],
+      ["2004-01-15", 2101.8601, 2121.6101, 2088.1001, 2109.0801, 2235589888],
+      ["2004-01-16", 2126.1201, 2140.47, 2119.3501, 2140.46, 2614390016],
+      ["2004-01-20", 2149.03, 2149.8501, 2130.2, 2147.98, 2574190080],
+      ["2004-01-21", 2139.3301, 2150.1101, 2120.2, 2142.45, 2421860096],
+      ["2004-01-22", 2146.3201, 2152.1201, 2119.01, 2119.01, 2353370112],
+      ["2004-01-23", 2124.76, 2138.4099, 2108.45, 2123.8701, 2253910016],
+      ["2004-01-26", 2120.5601, 2153.8301, 2115.3401, 2153.8301, 1946050048],
+      ["2004-01-27", 2148.05, 2152.75, 2116.04, 2116.04, 2151259904],
+      ["2004-01-28", 2125.02, 2128, 2073.1499, 2077.3701, 2319549952],
+      ["2004-01-29", 2085.54, 2087.3301, 2041.0699, 2068.23, 2637760000],
+      ["2004-01-30", 2068.3601, 2078.8799, 2058.54, 2066.1499, 1931180032]
+    ]);
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 2});
+    var ohlcMapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4});
+    var columnMapping = dataTable.mapAs({"value": 3});
       
-    // create stock chart
+    // create a stock chart
     var chart = anychart.stock();
 
-    // create the first plot on the chart with column series and no legend
+    // create the first plot
     var plot_1 = chart.plot(0);
-    plot_1.legend(false);
-    plot_1.column(mapping).name("Highest rates");
 
-    // enable title and set the text
-    plot_1.title('Rates');
+    // set the title of the first plot
+    plot_1.title("Rates");
 
-    // create the second plot on the chart with ohlc series and no legend
+    // create the second plot
     var plot_2 = chart.plot(1);
-    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Prices");
-    plot_2.legend(false);    
 
-    // enable title and configure font
+    // enable the title of the second plot
     plot_2.title().enabled(true);
-    plot_2.title().text('Prices');
+    // set the text of the title
+    plot_2.title().text("Prices");
+    // configure the font
     plot_2.title().fontWeight(900);    
 
-    // create the third plot with column series and legend and title setting left by default
+    // create the third plot with default settings
     var plot_3 = chart.plot(2);
+
+    // create series on plots
+    plot_1.column(mapping).name("Highest rates");
+    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Prices");
     plot_3.column(columnMapping).name("Lowest rates");
 
-    // set container id for the chart
-    chart.container('container');
+    // set the container id
+    chart.container("container");
 
-    // initiate chart drawing
+    // initiate drawing the chart
     chart.draw();
 });
 </script>

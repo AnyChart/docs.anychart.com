@@ -38,25 +38,36 @@ anychart.onDocumentReady(function () {
     // access the object with button settings
     var buttons = chart.dataGrid().buttons();
 
-    // set background fill images for normal and selected states and disable strokes
-    buttons.background()
-        .enabled(true)
-        .fill({
-            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png',
-            mode: 'stretch'
-        })
-        .stroke(null);
-    buttons.selected().background()
-        .enabled(true)
-        .fill({
-            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png',
-            mode: 'stretch'
-        })
-        .stroke(null);
+    // create custom drawing functions
+    var contentFunction = function (path) {
+        /* draw different shapes
+        depending on the state */
+        var half = this.width / 2;
+        switch (this.state) {
+          case "normal":
+            fill = "#dd2c00";
+            anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);            
+            break;
+          case "hovered":
+            fill = anychart.color.lighten("#dd2c00");
+            anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+            break;
+          case "selected":
+            fill = "#00bfa5";
+            anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
+            break;
+        }      
+    };
 
-    // remove default content from buttons
-    buttons.content(null);
-    buttons.selected().content(null);
+    // set content functions for buttons
+    buttons.normal().content(contentFunction);
+    buttons.selected().content(contentFunction);
+
+    /* disable the default backgrounds
+    of buttons in all states */
+    buttons.normal().background(false);
+    buttons.selected().background(false)
+    buttons.hovered().background(false);
 
     // set the chart title
     chart.title("Custom Expand/Collapse Buttons");
