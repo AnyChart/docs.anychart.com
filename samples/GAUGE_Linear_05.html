@@ -26,54 +26,83 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create data
-    var data = [150, 250, 300, 170];
+    var data = [170, 210, 130, 310];
 
     // set the gauge type
-    var gauge = anychart.gauges.tank();
+    linear = anychart.gauges.linear();
 
-    // set the data for the gauge
-    gauge.data(data);
+    // set data for the gauge
+    linear.data(data);
 
-    // create the first pointer (tank)
-    var tank = gauge.tank(0);
+    // add the default pointer
+    linear.addPointer(0);
 
-    // set the width and offset of the tank pointer (both as percentages of the gauge width)
-    tank.width('10%');
-    tank.offset('10%');
-
-    // create the second pointer (marker)
-    var marker = gauge.marker(1);
-
-    // set the marker type
-    marker.type('triangle-left');
-
-    // set the zIndex of the marker
-    marker.zIndex(10);
-
-    // set the width and offset of the marker pointer (both as percentages of the gauge width)
-    marker.width('2.5%');
-    marker.offset('23%');
-
-    // configure the third pointer (bar)
-    var bar_1 = gauge.bar(2);
-    bar_1.offset('22%');
-    bar_1.width('2%');
-
-    // configure the fourth pointer (bar)
-    var bar_2 = gauge.bar(3);
-    bar_2.offset('26%');
-    bar_2.width('2%');
-
-    // configure the axis
-    var axis = gauge.axis();
-    axis.offset('-1%');
+    // set the size and position
+    linear.bounds(0, 0, "25%", "100%");
 
     // set the container id
-    gauge.container('container');
+    linear.container(stage);
 
     // initiate drawing the gauge
-    gauge.draw();
+    linear.draw();
+
+    // set the gauge type
+    tank = anychart.gauges.tank();
+
+    // set data for the gauge
+    tank.data(data);
+
+    // add the default pointer
+    tank.addPointer(1);
+
+    // set the size and position
+    tank.bounds("25%", 0, "25%", "100%");
+
+    // set the container id
+    tank.container(stage);
+
+    // initiate drawing the gauge
+    tank.draw();
+
+    // set the gauge type
+    led = anychart.gauges.led();
+
+    // set data for the gauge
+    led.data(data);
+
+    // add the default pointer
+    led.addPointer(2);
+
+    // set the size and position
+    led.bounds("50%", 0, "25%", "100%");
+
+    // set the container id
+    led.container(stage);
+
+    // initiate the gauge drawing
+    led.draw();
+
+    // set the gauge type
+    thermometer = anychart.gauges.thermometer();
+
+    // set data for the gauge
+    thermometer.data(data);
+
+    // add the default pointer
+    thermometer.addPointer(3);
+
+    // set the size and position
+    thermometer.bounds("75%", 0, "25%", "100%");
+
+    // set the container id
+    thermometer.container(stage);
+
+    // initiate drawing the gauge
+    thermometer.draw();
 });
 </script>
 </body>

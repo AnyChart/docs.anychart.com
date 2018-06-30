@@ -138,13 +138,19 @@ var scaleBar = gauge.scaleBar(0);
 scaleBar.colorScale(scaleBarColorScale);
 ```
 
+```
+
+```
+
+{sample}GAUGE\_Linear\_05{sample}
+
 ## Pointers
 
 To add a pointer to a linear gauge, the {api:anychart.charts.LinearGauge#addPointer}addPointer(){api} method is called. The type of pointer added by this method is implicitly defined by the constructor used to create the gauge. However, you can use any pointer with any gauge by calling the {api:anychart.charts.LinearGauge#bar}bar(){api}, {api:anychart.charts.LinearGauge#led}led(){api}, {api:anychart.charts.LinearGauge#marker}marker(){api}, {api:anychart.charts.LinearGauge#rangeBar}rangeBar(){api}, {api:anychart.charts.LinearGauge#tank}tank(){api}, and {api:anychart.charts.LinearGauge#thermometer}thermometer(){api} methods.
 
 In the following sample, there is a tank gauge with tank, marker, and two bar pointers: 
 
-{sample}GAUGE\_Linear\_05{sample}
+{sample}GAUGE\_Linear\_06{sample}
 
 Please note that you can bind pointers to particular values in the data set:
 
