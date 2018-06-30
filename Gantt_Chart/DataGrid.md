@@ -250,7 +250,11 @@ buttons.hovered().fontColor('red');
 
 {sample :width 690 :height 200}GANTT\_Chart\_18{sample}
 
-You can also override the drawing of buttons completely by passing the drawing function to the content method:
+You can also use images in background 
+
+{sample :width 690 :height 200}GANTT\_Chart\_19{sample}
+
+You can also override the drawing of buttons completely by passing the drawing function to the {api:anychart.core.gantt.DataGridButton#content}content{api} method:
 
 ```
 var buttons = chart.dataGrid().buttons();
@@ -281,11 +285,60 @@ buttons.normal().content(contentFunction);
 buttons.selected().content(contentFunction);
 ```
 
-See a live sample of such customized buttons below:
+See a live sample with customized buttons below:
 
-{sample :width 690 :height 200}GANTT\_Chart\_19{sample}
+{sample :width 690 :height 200}GANTT\_Chart\_20{sample}
 
-You can find more samples with custom data grid buttons in [AnyGantt Gallery: General Features](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/):
+You can also use images in fully customized buttons as well. Customization code can look like this:
 
-* [AnyGantt Custom Datagrid: Buttons with Images](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Buttons.php)
-* [AnyGantt Custom Datagrid: Custom Buttons](https://www.anychart.com/products/anygantt/gallery/Gantt_General_Features/Data_Grid_Image_Button.php)
+```
+var buttons = chart.dataGrid().buttons();
+
+// create custom drawing functions
+var contentFunction = function (path) {
+    // draw different primitives or anything else depending on the state
+    var half = this.width / 2;
+    switch (this.state) {
+      case 'normal':
+      case 'hovered':
+        path
+          .clear()
+          .moveTo(0, 0)
+          .lineTo(this.width, 0)
+          .lineTo(this.width, this.height)
+          .lineTo(0, this.height)
+          .lineTo(0, 0)
+          .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png',
+            mode: 'fit'
+        });
+        break;
+      case 'selected':
+        path
+          .clear()
+          .moveTo(0, 0)
+          .lineTo(this.width, 0)
+          .lineTo(this.width, this.height)
+          .lineTo(0, this.height)
+          .lineTo(0, 0)
+          .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png',
+            mode: 'fit'
+        });
+        break;
+    }      
+};
+
+// Set content functions
+buttons.normal().content(contentFunction);
+buttons.selected().content(contentFunction);
+
+// disable standard backgrounds
+buttons.normal().background(false);
+buttons.selected().background(false)
+buttons.hovered().background(false);
+```
+
+A live sample follows:
+
+{sample :width 690 :height 200}GANTT\_Chart\_21{sample}
