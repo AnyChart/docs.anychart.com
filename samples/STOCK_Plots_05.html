@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
@@ -63,20 +63,12 @@ anychart.onDocumentReady(function () {
 
     // create the first plot
     var plot_1 = chart.plot(0);
-    // create a column series
-    plot_1.column(mapping).name("Highest rates");
-    // disable the legend
-    plot_1.legend(false);
 
     // set the title of the first plot
     plot_1.title("Rates");
 
     // create the second plot
     var plot_2 = chart.plot(1);
-    // create an ohlc series
-    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Prices");
-    // disable the legend
-    plot_2.legend(false);    
 
     // enable the title of the second plot
     plot_2.title().enabled(true);
@@ -85,10 +77,12 @@ anychart.onDocumentReady(function () {
     // configure the font
     plot_2.title().fontWeight(900);    
 
-    /* create the third plot with default settings
-    (with legend enabled and no title) */
+    // create the third plot with default settings
     var plot_3 = chart.plot(2);
-    // create a column series
+
+    // create series on plots
+    plot_1.column(mapping).name("Highest rates");
+    plot_2.ohlc(ohlcMapping).name("ACME Corp. Stock Prices");
     plot_3.column(columnMapping).name("Lowest rates");
 
     // set the container id

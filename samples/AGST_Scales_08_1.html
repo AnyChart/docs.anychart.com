@@ -30,8 +30,8 @@
     </style>
 </head>
 <body>
-<button onclick="ticks.allowFractional(true)">Enable</button>
-<button onclick="ticks.allowFractional(false)">Disable</button>  
+<button onclick="ticks.allowFractional(true)">Fractional</button>
+<button onclick="ticks.allowFractional(false)">Integer</button>  
 <div id="container"></div>
 <script>
 var ticks;
@@ -43,12 +43,12 @@ anychart.onDocumentReady(function () {
         {x: "Bass", value: 1.8}
     ]);
 
-    // disable fractional values on the y-scale
+    // force ticks to stick to integer values
     ticks = chart.yScale().ticks();
     ticks.allowFractional(false);
 
     // set the chart title
-    chart.title("Ticks with Fractional Values: Disable and Enable");
+    chart.title("Ticks Fractional Values: Disable and Enable");
 
     // set the container id
     chart.container("container");
