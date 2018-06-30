@@ -261,23 +261,23 @@ var buttons = chart.dataGrid().buttons();
 
 // create custom drawing functions
 var contentFunction = function (path) {
-    /* draw different primitives
-    or anything else depending on the state */
-    var half = this.width / 2;
-    switch (this.state) {
-      case 'normal':
-        fill = '#dd2c00';
-        anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
-        break;
-      case 'hovered':
-        fill = anychart.color.lighten('#dd2c00');
-        anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
-        break;
-      case 'selected':
-        fill = '#00bfa5';
-        anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
-        break;
-    }      
+  /* draw different shapes
+  depending on the state */
+  var half = this.width / 2;
+  switch (this.state) {
+    case 'normal':
+      fill = '#dd2c00';
+      anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+      break;
+    case 'hovered':
+      fill = anychart.color.lighten('#dd2c00');
+      anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+      break;
+    case 'selected':
+      fill = '#00bfa5';
+      anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
+      break;
+  }      
 };
 
     // set content functions for buttons

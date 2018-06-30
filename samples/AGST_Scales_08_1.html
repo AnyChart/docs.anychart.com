@@ -44,7 +44,8 @@ anychart.onDocumentReady(function () {
     ]);
 
     // disable fractional values on the y-scale
-    chart.yScale().ticks().allowFractional(false);
+    ticks = chart.yScale().ticks();
+    ticks.allowFractional(false);
 
     // set the chart title
     chart.title("Ticks with Fractional Values: Disable and Enable");
