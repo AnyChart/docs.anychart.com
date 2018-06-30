@@ -7,7 +7,7 @@ Chart Editor is an [AnyChart Extension](../Quick_Start/Modules#extensions) that 
 
 ## Prerequisites
 
-Chart DEitor works only if proper AnyChart files are included.
+Chart Editor works only if proper AnyChart files are included.
 
 ### Minimal
 
@@ -55,7 +55,7 @@ If you want to use [themes](../Appearance_Settings/Themes), you need to include 
 
 ## Files
 
-Chart editor files to be included, not the [Prerequisites](#prerequisites):
+Chart Editor files to be included, not [Prerequisites](#prerequisites):
 
 ```
 <!-- chart editor CSS-->
