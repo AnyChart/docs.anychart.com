@@ -243,21 +243,14 @@ gauge.range()
 
 {sample}GAUGE\_Circular\_09{sample}
 
-##Colors
+## Colors
 
-AnyChart charting library uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+AnyChart charting library uses default color palette to color data elements of a chart automatically.
 
-###Colorizing Elements
-
-As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}fill(){api}  and {api:anychart.graphics.vector.Stroke}stroke(){api} parameters or {api:anychart.graphics.vector}fontColor(){api} for the labels. Let's change the colors to the elements on our sample:
+As you see, our speedometer does not look attractive at the moment. Let's color its elements to make the look of the speedometer more realistic and learn how to apply different colors to different data. To apply the color to an element we need to set {api:anychart.graphics.vector.Fill}fill(){api} and {api:anychart.graphics.vector.Stroke}stroke(){api} or {api:anychart.graphics.vector}fontColor(){api}.
 
 {sample}GAUGE\_Circular\_10{sample}
 
-In the sample above we have set the colors to the elements, besides that we have changed positions and sizes of several elements.
-
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
-* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
-
+AnyChart takes care of visualization and users convenience seriously: that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF". Depending on your system/site/application design you may need and use any of this color setting methods. Read more about setting colors below and in the following help sections: [different ways of setting colors in AnyChart](../Appearance_Settings/Color_Management).
