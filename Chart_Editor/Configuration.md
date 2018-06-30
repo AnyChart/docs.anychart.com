@@ -1,11 +1,11 @@
 {:index 2}
 # Configuration API
 
-All methods and class editor works with can be found in the {api:anychart.editor}anychart.editor{api} namespace.
+All methods and classes Chart Editor works with can be found in the {api:anychart.editor}anychart.editor{api} namespace.
 
 ## Create
 
-To create an instance of [AnyChart Chart Editor](Overview) use the {api:anychart#editor}anychart.editor(){api} method, it creates an instance of the {api:anychart.editor.Editor}anychart.editor.Editor{api} class:
+To create a chart editor [AnyChart Chart Editor](Overview) (instance of the {api:anychart.editor.Editor}anychart.editor.Editor{api} class:), use the {api:anychart#editor}anychart.editor(){api} method:
 
 ```
 // create a chart editor
