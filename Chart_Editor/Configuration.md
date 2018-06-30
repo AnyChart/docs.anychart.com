@@ -46,7 +46,7 @@ Use the {api:anychart.editor.Editor#show}show(){api} method and the {api:anychar
 
 ## Steps
 
-Chart Editor has several steps identified by their names defined by the {api:anychart.enums.EditorSteps}anychart.enums.EditorSteps{api} enum. You can disable any step if you don't want to see it:
+Chart Editor has several steps identified by their names. The names of the steps are listed in the {api:anychart.enums.EditorSteps}anychart.enums.EditorSteps{api} enum. You can disable any step if you don't want to see it:
 
 ```
 var editor = anychart.editor();
@@ -59,7 +59,7 @@ step.enabled(false);
 
 ### Tabs
 
-Steps contain tabs which are identified by their names defined by {api:anychart.enums.EditorTabs}anychart.enums.EditorTabs{api} enum. Tabs within steps can also be disabled:
+Steps contain tabs which are identified by their names. The names of the tabs are listed in the {api:anychart.enums.EditorTabs}anychart.enums.EditorTabs{api} enum. Tabs within steps can also be disabled:
 
 ```
 var editor = anychart.editor();

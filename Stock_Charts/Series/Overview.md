@@ -6,7 +6,7 @@
 
 AnyStock supports a lot of different [series types](Supported_Series). Some of them share some or all data fields and can be [switched during the run time](Series_Type).
 
-Series are created within [chart plots](../Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or specific series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on. Except for a few minor differences, settings of AnyStock series are similar to that of basic charts – see [Basic Charts: General Settings](../../Basic_Charts/General_Settings).
+Series are created within [chart plots](../Chart_Plots) by using either the {api:anychart.core.stock.Plot#addSeries}addSeries(){api} method or by series constructors, such as {api:anychart.core.stock.Plot#line}line(){api}, {api:anychart.core.stock.Plot#column}column(){api}, and so on. Except for a few minor differences, settings of AnyStock series are similar to that of basic charts – see [Basic Charts: General Settings](../../Basic_Charts/General_Settings).
 
 ## Basic Sample
 
@@ -33,7 +33,7 @@ series3.name("Line");
 
 {sample}STOCK\_Series\_01{sample}
 
-## Adjustment
+## Settings
 
 You can adjust tooltips, the colors of series, etc.:
 
@@ -75,9 +75,13 @@ series1.hovered().markers().type("star5");
 
 {sample}STOCK\_Series\_03{sample}
 
+## Individual Settings
+
+By default stock series do not allow settings to be applied to individual points – all points have the same settings for the sake of performance. You can allow configuring individual points for all series as described in the [Data](../Data#individual_point_settings) tutorial. Also, you can use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to enable this option for a particular series.
+
 ## Scroller Series
 
-You can add a background series of any type to the scrollbar and adjust its colors in the selected state:
+You can add a background series of any type to the [scroller](../Scroller) and adjust its colors in the selected state:
 
 ```
 // create a thumbnail series in the scroller
@@ -88,10 +92,6 @@ scrollerSeries.selected().fill("#00796B");
 ```
 
 {sample}STOCK\_Series\_04{sample}
-
-## Individual Settings
-
-By default stock series do not allow settings to be applied to individual points – all points have the same settings for the sake of performance. You can allow configuring individual points for all series as described in the [Data](../Data#individual_point_settings) tutorial. Also, you can use the {api:?entry=allowPointSettings}allowPointSettings(){api} method to enable this option for a particular series.
 
 ## Supported Series
 

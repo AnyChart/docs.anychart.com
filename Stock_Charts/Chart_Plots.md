@@ -122,7 +122,7 @@ Here is a sample of a chart with three plots. Titles of the first two plots are 
 
 ### Legend
 
-Each plot can have a legend, see [Legend](Legend) article to learn more about the legen configuration.
+Each plot can have a legend, see [Legend](Legend) article to learn more about the legend configuration.
 
 ### No Data Message
 

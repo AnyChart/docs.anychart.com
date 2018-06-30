@@ -55,7 +55,7 @@ If you want to use [themes](../Appearance_Settings/Themes), you need to include 
 
 ## Files
 
-Chart Editor files to be included, not [Prerequisites](#prerequisites):
+Chart Editor files to be included:
 
 ```
 <!-- chart editor CSS-->
