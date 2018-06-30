@@ -90,7 +90,7 @@ The Treemap chart requires the [tree data model](../Working_with_Data/Tree_Data_
 
 **Note 2:** A Treemap chart can have only one root element.
 
-Сolors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
+Colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
 Please note: you do not need to specify values and sizes of parent elements - they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
 

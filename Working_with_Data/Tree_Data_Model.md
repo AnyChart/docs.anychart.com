@@ -360,9 +360,7 @@ chart.drillTo(item);
 
 {sample}WD\_Tree\_Data\_10{sample}
 
-The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number...
-
-(?) ДОПИСАТЬ ПОДРОБНОСТИ
+The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number.
 
 The following sample shows how to perform a search with the {api:anychart.data.Tree#searchItems}searchItems(){api} method and a comparison function, which is used to access properties of objects in the custom data field `employee`:
 
