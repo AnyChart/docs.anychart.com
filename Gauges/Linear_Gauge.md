@@ -105,40 +105,40 @@ The sample below shows a basic horizontally oriented linear gauge with three col
 ```
 // create a color scale
 var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
-    [
-            {
-                from: 0,
-                to: 25,
-                color: ['#D81E05', '#EB7A02']
-            },
-            {
-                from: 25,
-                to: 50,
-                color: ['#EB7A02', '#FFD700']
-            },
-            {
-                from: 50,
-                to: 75,
-                color: ['#FFD700', '#CAD70b']
-            },
-            {
-                from: 75,
-                to: 100,
-                color: ['#CAD70b', '#2AD62A']
-            }
-    ]
+  [
+    {
+      from: 0,
+      to: 25,
+      color: ['#D81E05', '#EB7A02']
+    },
+    {
+      from: 25,
+      to: 50,
+      color: ['#EB7A02', '#FFD700']
+    },
+    {
+      from: 50,
+      to: 75,
+      color: ['#FFD700', '#CAD70b']
+    },
+    {
+      from: 75,
+      to: 100,
+      color: ['#CAD70b', '#2AD62A']
+    }
+  ]
 );
 
 // create a Scale Bar
 var scaleBar = gauge.scaleBar(0);
 
-// use the color scale (defined earlier) as the color scale of the Scale Bar
+// use the color scale as the color scale of the Scale Bar 
 scaleBar.colorScale(scaleBarColorScale);
 ```
 
 {sample :height 200}GAUGE\_Linear\_04{sample}
 
-Also, you can customize the height of the scale bar in different points by using the {api:anychart.core.linearGauge.ScaleBar#points}points(){api} method and specifying the relative height of three control points – see {api:anychart.core.linearGauge.ScaleBar.ControlPoint}anychart.core.linearGauge.ScaleBar.ControlPoint{api}:
+Also, you can customize the height of the scale bar in different points by using the {api:anychart.core.linearGauge.ScaleBar#points}points(){api} method and specifying the relative height of three control points using {api:anychart.core.linearGauge.ScaleBar.ControlPoint}ControlPoint{api} object:
 
 ```
 // set the relative height of the control points of the scale bar
@@ -147,7 +147,7 @@ scaleBar.points([
 ]);
 ```
 
-{sample}GAUGE\_Linear\_05{sample}
+{sample :height 200}GAUGE\_Linear\_05{sample}
 
 ## Pointers
 

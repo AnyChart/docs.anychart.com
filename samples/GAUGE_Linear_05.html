@@ -44,22 +44,22 @@ anychart.onDocumentReady(function () {
        {
            from: 0,
            to: 25,
-           color: ['red']
+           color: ['#dd2c00']
        },
        {
            from: 25,
            to: 50,
-           color: ['green']
+           color: ['#ef6c00']
        },
        {
            from: 50,
            to: 75,
-           color: ['orange']
+           color: ['#16685d']
        },
        {
            from: 75,
            to: 100 ,
-           color: ['blue']
+           color: ['#00838f']
        }
    ]
    );
@@ -73,8 +73,8 @@ anychart.onDocumentReady(function () {
     ]);
 
     // set the height and offset of the Scale Bar (both as percentages of the gauge height)
-    scaleBar.width('15%');
-    scaleBar.offset('31.5%');
+    scaleBar.width('10%');
+    scaleBar.offset('31%');
 
     // use the color scale (defined earlier) as the color scale of the Scale Bar
     scaleBar.colorScale(scaleBarColorScale);
