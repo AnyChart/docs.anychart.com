@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="AGST Crosshair 04"/>
+    <meta name="ac:name" content="AGST Crosshair 05"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -35,40 +35,26 @@ anychart.onDocumentReady(function () {
     ];
 
     // create an area chart
-    var chart = anychart.area(data);
+    var chart = anychart.column(data);
 
-    // add and configure a second y-scale
-    var YScale_2 = anychart.scales.linear();
-    YScale_2.minimum(0);
-    YScale_2.maximum(100);
-    YScale_2.ticks().interval(10);
+    // create an extra axes
+    chart.yAxis(1, {orientation: 'right'});
+    chart.xAxis(1, {orientation: 'top'});    
 
-    // add and configure a second y-axis
-    var YAxis_2 = chart.yAxis(1);
-    YAxis_2.orientation("right");
-    YAxis_2.labels().format(function (){
-      return this.value + "%";
-    });
+    // enable crosshair and create extra labels 
+    chart.crosshair().enabled(true);
 
-    // bind the second y-axis to the second y-scale
-    YAxis_2.scale(YScale_2);
+    chart.crosshair().yLabel(0).axisIndex(0);
+    chart.crosshair().yLabel(1).axisIndex(1);
 
-    // enable the crosshair
-    chart.crosshair(true);
+    chart.crosshair().xLabel(0).axisIndex(0);
+    chart.crosshair().xLabel(1).axisIndex(1);
 
-    // configure the crosshair
-
-    /* bind the y-label of the crosshair
-    to the second y-axis */
-    chart.crosshair().yLabel().axisIndex(1);
-
-    // set the text of the y-label
-    chart.crosshair().yLabel().format(function (){
-      return this.value + "%";
-    });
+    // set custom label format
+    chart.crosshair().xLabel(1).format("Month: {%Value}");
 
     // set the chart title
-    chart.title("Crosshair: Binding to Axes")
+    chart.title("Crosshair: Multiple labels")
 
     // set the container id
     chart.container("container");

@@ -80,7 +80,7 @@ In the sample below the Y-label is colored, its text changed, and the X-label is
 
 ## Binding to Axes
 
-The crosshair can have only one Y- and one X-label. If your chart has two or more Y-axes, by default the Y-label of the crosshair is shown on the first one (with the 0 index), and the same rule works with the X-label and multiple X-axes.
+The crosshair can have multiple  Y- and  X-labels. If your chart has two or more Y-axes, by default the Y-label of the crosshair is shown on the first one (with the 0 index), and the same rule works with the X-label and multiple X-axes.
 
 To bind the crosshair to an axis of your choice, specify the index of the axis by using the {api:anychart.core.ui.CrosshairLabel#axisIndex}axisIndex(){api} method. Combine it with {api:anychart.core.ui.Crosshair#xLabel}xLabel(){api} or {api:anychart.core.ui.Crosshair#yLabel}yLabel(){api}.
 
@@ -93,3 +93,27 @@ chart.crosshair().yLabel().axisIndex(1);
 ```
 
 {sample}AGST\_Crosshair\_04{sample}
+
+## Multiple Labels
+
+If your chart has several Y- or X-axes and you want to have a crosshair label on all (or some) of them you need to create extra crosshair labels and bind them to proper axes:
+
+```
+// create an extra axes
+chart.yAxis(1, {orientation: 'right'});
+chart.xAxis(1, {orientation: 'top'});
+
+// enable crosshair and create extra labels 
+chart.crosshair().enabled(true);
+
+chart.crosshair().yLabel(0).axisIndex(0);
+chart.crosshair().yLabel(1).axisIndex(1);
+
+chart.crosshair().xLabel(0).axisIndex(0);
+chart.crosshair().xLabel(1).axisIndex(1);
+
+// set custom label format
+chart.crosshair().xLabel(1).format("Month: {%Value}");
+```
+
+{sample}AGST\_Crosshair\_05{sample}
