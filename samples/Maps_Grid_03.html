@@ -1,51 +1,63 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="map">anychart.onDocumentReady(function () {
-
-    // This sample uses 3rd party proj4 component
-    // that makes it possible to set coordinates
-    // for the points and labels on the map and
-    // required for custom projections and grid labels formatting.
-    // See http://docs.anychart.com/latest/Maps/Map_Projections
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Grid 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
     
-    var dataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australian"}
-    ]);
-
-    var dataSetForSeries = dataSet.mapAs({id: "id"});
-
-    map = anychart.map();
-    map.geoData(anychart.maps.australia);
-    map.choropleth(dataSetForSeries);
-
-    map.grids(true)
-    // configure interlace fills
-    map.grids().vertical().oddFill("LightBlue 0.2");
-    map.grids().vertical().evenFill("LightBlue 0.4");
-
-    map.title("Map Parallels and Meridians Interlace Grid");
-    map.container("container");
-    map.draw();
-});</script>
-
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // This sample uses 3rd party Proj4js JavaScript library to transform coordinates
+    // See https://docs.anychart.com/Maps/Map_Projections to learn more.
+
+    var data = [
+{id: "AU.CT", value: 15, title: "Australian Capital Territory"},
+{id: "AU.VI", value: 23, title: "Victoria"},
+{id: "AU.WA", value: 86, title: "Western Australia"},
+{id: "AU.QL", value: 16, title: "Queensland"},
+{id: "AU.NS", value: 32, title: "New South Wales"},
+{id: "AU.NT", value: 64, title: "Northern Territory"},
+{id: "AU.TS", value: 28, title: "Tasmania"},
+{id: "AU.SA", value: 45, title: "South Australian"}
+    ];
+
+
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+    map.choropleth(data);
+    map.axes(true);
+    map.scale().yTicks({interval: 3});
+    map.scale().xTicks({interval: 3});
+
+    mapGrids = map.grids();
+    mapGrids.enabled(true);
+
+    mapGrids.vertical().palette(["LightBlue 0.2", "LightBlue 0.5"]);
+
+    map.title("Set grid color palette");
+    map.container("container");
+    map.draw();
+});
+</script>
 </body>
 </html>

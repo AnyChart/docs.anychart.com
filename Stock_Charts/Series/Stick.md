@@ -1,14 +1,5 @@
 # AnyStock Stick Series
 
-* [Overview](#overview)
-* [AnyStock Stick Series Adjustment](#anystock_stick_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Stick Series is very similar to [Column](Column) but with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Charts/Stick_Chart).
@@ -92,9 +83,7 @@ You can change the type of series to another compatible type. See the [Series Ty
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To set the stroke color for the series use the {api:anychart.core.stock.series.Line#stroke}stroke(){api} method.
 
@@ -104,14 +93,3 @@ series_total.stroke('#ff0000');
 ```
 
 {sample}STOCK\_Stick\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter('green', 0.5, '10 4');
-```
-
-{sample}STOCK\_Stick\_06{sample}

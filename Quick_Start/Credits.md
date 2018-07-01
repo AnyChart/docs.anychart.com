@@ -1,14 +1,5 @@
 # Credits
 
- * [Overview](#overview)
-   * [Text](#text)
-   * [Tooltip](#tooltip)
-   * [URL](#url)
-   * [Logo](#logo)
-   * [Position](#position)
-   * [Disable](#disable)
-   * [License](#license)
-
 ## Overview
 
 Credits is a single object shown as a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credits placed in your chart, you can purchase a license at [AnyChart Website](https://www.anychart.com/buy/).
@@ -64,18 +55,18 @@ Credits position can be adjusted only through CSS. There are three classes you c
 CSS code:
 
 ```
-  .anychart-credits {
-    left: 10px !important;
-    width: 200px !important;
-  }
-  .anychart-credits-logo {
-    right: 10px;
-    left: auto !important;
-  }
-  .anychart-credits-text{
-    right: 25px;
-    left: auto !important;
-  }
+.anychart-credits{
+  left: 10px !important;
+  width: 200px !important;
+}
+.anychart-credits-logo{
+  right: 10px;
+  left: auto !important;
+}
+.anychart-credits-text{
+  right: 25px;
+  left: auto !important;
+}
 ```
 
 ### Disable
@@ -85,6 +76,18 @@ To disable credits just put this in your code, but remember: it will work only i
 ```
 var credits = chart.credits();
 credits.enabled(false);
+```
+
+### Dashboards
+
+If you are creating dashboards using [Stage-based Dashboard Layout](../Dashboards/Stage-Based_Layout) you can configure credits for the stage instead of a chart using the same {api:anychart.graphics.vector.Stage#credits}credits(){api} method:
+
+```
+// create a stage 
+var stage = anychart.graphics.create("container");
+// configure stage credits
+var credits = stage.credits();
+credits.text("Dashboard");
 ```
 
 ### License

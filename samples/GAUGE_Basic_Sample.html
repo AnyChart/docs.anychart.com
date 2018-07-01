@@ -1,19 +1,36 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="gauge">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GAUGE Basic Sample"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
  
   // create data set
   var dataSet = anychart.data.set([81, 34.5]);
  
   // set the gauge type
-  gauge = anychart.gauges.circular();
+  var gauge = anychart.gauges.circular();
  
   // set the padding
   gauge.data(dataSet).padding("4%");
@@ -30,7 +47,7 @@
   axis.ticks()
       .fill("white")
       .stroke("#888")
-      .type("trapezoid")
+      .type("trapezium")
       .length(20);
  
   // configure minor ticks on the axis
@@ -38,21 +55,19 @@
       .enabled(true)
       .fill("white")
       .stroke("#ccc")
-      .type("trapezoid")
+      .type("trapezium")
       .length(10);
  
   // configure the bar presenting data
   gauge.bar(0)
-      .position("i")
+      .position("inside")
       .fill("#F0673B .9")
       .stroke("#F0673B")
       .radius(80);
  
   // initiate drawing the gauge
   gauge.container("container").draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

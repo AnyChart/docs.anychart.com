@@ -1,38 +1,6 @@
 {:index 3}
 
-#Technical Indicators Mathematical Decsription
-
-* [Overview](#overview)
-* [Accumulation Distribution Line (ADL)](#)
-* [Adaptive Moving Average (AMA)](#adaptive_moving_average)
-* [Aroon](#aroon)
-* [Average True Range (ATR)](#average_true_range)
-* [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
-* [Bollinger Bands Width (BBW)](#bollinger_bands_width)
-* [Commodity Channel Index (CCI)](#)
-* [Chaikin Money Flow (CMF)](#)
-* [Chaikin Oscillator (CHO)](#)
-* [Chaikin Volatility (CHV)](#)
-* [Directional Movement Indicator (DMI)](#)
-* [Exponential Moving Average (EMA)](#exponential\_moving\_average)
-* [KDJ](#kdj)
-* [Keltner Channels](#)
-* [Modified (Smoothed) Moving Average (MMA)](#modified_moving_average)
-* [Money Flow Index (MFI)](#)
-* [Momentum](#)
-* [Moving Average Convergence Divergence (MACD)](#moving_average_convergence_divergence)
-* [Moving Average Envelopes (MA Envelopes)](#)
-* [On Balance Volume (OBV)](#)
-* [Parabolic SAR (PSAR)](#)
-* [Price Channels](#)
-* [Rate of Change (ROC)](#rate_of_change)
-* [Relative Strength Index (RSI)](#relative_strength_index)
-* [Simple Moving Average (SMA)](#simple_moving_average)
-* [Stochastic Oscillator (Fast, Slow)](#stochastic_oscillator)
-* [TRIX](#)
-* [Volume + MA](#)
-* [Williams %R](#)
+# Technical Indicators Mathematical Description
 
 ## Overview
 
@@ -40,25 +8,29 @@ This document contains mathematical description of all technical indicators avai
 
 For all formulas and indicators below:
 <ul>
-	<li><strong>n</strong> is a period for which calculations are done, it is usually set by the <strong>period</strong> parameter of the 
+	<li>**n** is a period for which calculations are done, it is usually set by the **period** parameter of the 
 	method that creates an indicator.</li>
-	<li><strong>X<sub>i</sub></strong> is the value passed by the data source.</li>
+	<li>**X<sub>i</sub>** is the value passed by the data source.</li>
 </ul>
 
 ## Accumulation Distribution Line
 
-Coming soon.
+[Accumulation Distribution Line](Accumulation\_Distribution\_Line\_\(ADL\)) is calculated according to these formulas:
+
+<center><img src="https://static.anychart.com/images/technical\_indicators/adl.png" width="550"></center>
 
 ## Adaptive Moving Average
 
-Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) indicator is calculated by the following steps:
+Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_\(AMA\)) indicator is calculated by the following steps:
 
-1. Calculate the ER:
+<ol>
+<li>Calculate the ER:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
-2. Then, use the following formula to calculate the SSC value:
+<li>Then, use the following formula to calculate the SSC value:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
-3. Now, use the results from the actions made before and calcuate the indicator:
+<li>Now, use the results from the actions made before and calculate the indicator:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
+</ol>
 
 ## Aroon
 
@@ -68,29 +40,34 @@ Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) in
 
 ## Average True Range
 
-[Average True Range](Average\_True\_Range\_(ATR)) in each point is calculated according to the following formula:
+[Average True Range](Average\_True\_Range\_(ATR\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
 This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
-- current High less than current Low;
+- current High less than current Low
 - current High less than previous Close (absolute value)
 - current Low less than previous Close (absolute value)
+
+## Awesome Oscillator
+
+[Awesome Oscillator](Awesome_Oscillator) is calculated according to the following formula:
+
+**Median Price = (High + Low) / 2**
+**AO = SMA (Median Price, 5) - SMA (Median Price, 34)**
 
 ## Bollinger Bands
 
 [Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
 
-1. Calculate the SMA according to the SMA formula.
-
-2. Use the next formula to calculate the standard deviation:
-
-<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center>
-
-3. Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:
-
+<ol>
+<li>Calculate the SMA according to the SMA formula.</li><br>
+<li>Use the next formula to calculate the standard deviation:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center><br>
+<li>Bollinger Bands values are calculated according to this formula, where "d" is a deviation:</li><br>
 <center><img src="https://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
+</ol>
 
 ## Bollinger Bands %B
 
@@ -103,67 +80,157 @@ The [Bollinger Bands %B](Bollinger_Bands_%25B) indicator is calculated according
 The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculated according to the following formula:
 
 ```
-bandwidth = (upperBB − lowerBB) / middleBB
+bandwidth = (upperBB - lowerBB) / middleBB
 ```
 
+## Commodity Channel Index
+
+[Commodity Channel Index](Commodity\_Channel\_Index\_\(CCI\)) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cci.png"></center>
+
+Where TP is a Typical Price calculated as:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/tp.png"></center>
+
+And SMA is calculated as stated in [SMA part](#simple_moving_average) of this article.
+
+
+## Chaikin Money Flow
+
+[Chaikin Money Flow](Chaikin\_Money\_Flow\_\(CMF\)) is calculated in three steps.
+
+<ol>
+	<li>First a MFM(i) is calculated for all points according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfm.png"></center><br>
+	<li>Next an MFV(i) value is calculated for all points like this:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf\_mfv.png"></center><br>
+	<li>And finally the CMF(i) value is calculated according to this formula:</li><br>
+<center><img src="https://static.anychart.com/images/technical_indicators/cmf.png"></center><br>
+</ol>
+
+
+## Chaikin Oscillator
+
+[Chaikin Oscillator](Chaikin\_Oscillator\_\(CHO\)) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/cho.png"></center>
+
+You can see how the ADL indicator is calculated in the [ADL part](#accumulation_distribution_line) of this article</a>.
+
+## Chaikin Volatility
+
 Coming soon.
 
-## Commodity Channel Index (CCI)
+Chaikin Volatility indicator in each point is calculated according to the following formula:
 
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/chv.png"></center>
 
-## Chaikin Money Flow (CMF)
+## Directional Movement Indicator
 
-Coming soon.
+[Directional Movement Indicator](Directional\_Movement\_Index\_\(DMI\)) is calculated in three steps: 
+<ol>
+<li>First the True Range (TR), Plus Directional Movement (+DM) and Minus Directional Movement (-DM) are calculated for each period:</li><br>
 
-## Chaikin Oscillator (CHO)
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_tr.png"></center> <br>
 
-Coming soon.
+<li>Next they are smoothed using [EMA](#exponential_moving_average) or Wilder's method, calculated as:</li><br>
 
-## Chaikin Volatility (CHV)
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_smoothing.png"></center><br>
 
-Coming soon.
+<li>And finally the +DI and -DI values are calculated according to these formulas:</li><br>
 
-## Directional Movement Indicator (DMI)
-
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/dmi\_pdi.png"></center><br>
+</ol>
 
 ## Exponential Moving Average
 
-[Exponential Moving Average](Exponential\_Moving\_Average\_(EMA)) in each point is calculated according to the following formula:
+[Exponential Moving Average](Exponential\_Moving\_Average\_\(EMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
+
+## Heikin-Ashi
+
+[Heikin-Ashi](Heikin-Ashi) indicator is based on price data from the current open-high-low-close, the current Heikin-Ashi values, and the prior Heikin-Ashi values. In the following formula, a (0) refers to the current period, (-1) to the prior period, and HA  to Heikin-Ashi:
+
+1. The Heikin-Ashi Close is simply an average of the open, 
+high, low and close for the current period. 
+
+**HA-Close = (Open(0) + High(0) + Low(0) + Close(0)) / 4**
+
+2. The Heikin-Ashi Open is the average of the prior Heikin-Ashi 
+candlestick open plus the close of the prior Heikin-Ashi candlestick. 
+
+**HA-Open = (HA-Open(-1) + HA-Close(-1)) / 2** 
+
+3. The Heikin-Ashi High is the maximum of three data points: 
+the current period's high, the current Heikin-Ashi 
+candlestick open or the current Heikin-Ashi candlestick close. 
+
+**HA-High = Maximum of the High(0), HA-Open(0) or HA-Close(0)** 
+
+4. The Heikin-Ashi low is the minimum of three data points: 
+the current period's low, the current Heikin-Ashi 
+candlestick open or the current Heikin-Ashi candlestick close.
+
+** HA-Low = Minimum of the Low(0), HA-Open(0) or HA-Close(0)** 
 
 ## KDJ
 
 [KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
 
 <ol>
-	<li>The %K line is calculated the following way:<br>
+	<li>The %K line is calculated the following way:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj1.png"></center>
-	<li>To create the %D line, use the next formula:<br>
+	<li>To create the %D line, use the next formula:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj2.png"></center>
-	<li>This is how the %J line is calculated:<br>
+	<li>This is how the %J line is calculated:</li><br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
 </ol>
 
 ## Keltner Channels
 
-Coming soon.
+[Keltner Channels](Keltner_Channels) bands in each point are calculated according to the following formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/keltnerchannels.png"></center>
+
+You can see how [EMA (Exponential Moving Average)](#exponential_moving_average) and [ATR (Average True Range)](#average_true_range) indicators are calculated in corresponding sections of this article.
 
 ## Modified Moving Average
 
-[Modified Moving Average](Modified\_Moving\_Average\_(MMA)) indicator points are calculated by the following formula:
+[Modified Moving Average](Modified\_Moving\_Average\_\(MMA\)) indicator points are calculated by the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
 ## Money Flow Index
 
-Coming soon.
+[Money Flow Index](Money_Flow_Index_\(MFI\))  is calculated as follows:
+
+<ol>
+<li>The typical price for each day is the average of high, low and close:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-typical-price.png"></center><br>
+
+<li>Money flow is the product of typical price and the volume on that day:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-money-flow.png"></center><br>
+
+<li>Totals of the money flow amounts over the given N days are then formed. Positive money flow is the total for those days where the typical price is higher than the previous day's typical price, and negative money flow where below. If typical price is unchanged then that day is discarded.</li><br>
+
+<li>A money ratio is then formed:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-money-ratio.png"></center><br>
+
+<li>From which a money flow index ranging from 0 to 100 is formed:</li><br>
+
+<center><img src="https://static.anychart.com/images/technical_indicators/mfi-mfi.png"></center><br>
+</ol>
 
 ## Momentum
 
-Coming soon.
+[Momentum](Momentum) indicator in each point is calculated in accordance to the folowing formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/momentum.png" width="400"></center>
 
 ## Moving Average Convergence Divergence
 
@@ -171,11 +238,11 @@ Coming soon.
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
-	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
+	and fast period are set by **slowPeriod** (default 26) and **fastPeriod** (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
-	by <strong>signalPeriod</strong> parameter.</li>
+	by **signalPeriod** parameter.</li>
 	<li>Signal series value is calculated:<br>
 <center><img src="https://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
 	<li>Histogram series is calculated:<br>
@@ -188,15 +255,46 @@ Coming soon.
 
 ## On Balance Volume
 
-Coming soon.
+[On Balance Volume](On_Balance_Volume_\(OBV\)) indicator is calculated according to the following rules:
+
+* If the closing price is above the prior close price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-positive.png"></center>
+
+* If the closing price is below the prior close price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-negative.png"></center>
+
+* If the closing prices equals yesterday's closing price, then:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/obv-zero.png"></center>
 
 ## Parabolic SAR
 
-Coming soon.
+[Parabolic SAR](Parabolic_SAR_\(PSAR\)) is created according to the following algorithm.
+
+At each step within a trend, the SAR is calculated ahead of time. That is, tomorrow's SAR value is built using data available today. The general formula used for this is:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/psar.png" width="400"></center>
+
+Where SARi and SARi - 1 represent today's and tomorrow's SAR values, respectively.
+
+The extreme point, EP, is a record kept during each trend that represents the highest value reached by the price during the current up trend - or lowest value during a downtrend. On each period, if a new maximum (or minimum) is observed, the EP is updated with that value.
+
+The &alpha; value represents the acceleration factor. Usually, this is set to a value of 0.02 initially. This factor is increased by 0.02 each time a new EP is recorded.
+
+To keep it from getting too large, a maximum value for the acceleration factor is normally set at 0.20, so that it never goes beyond that.
+
+The SAR is recursively calculated in this manner for each new period. There are, however, two special cases that will modify the SAR value:
+
+* If tomorrow's SAR value lies within (or beyond) today's or yesterday's price range, the SAR must be set to the closest price bound. For example, if in an up trend, the new SAR value is calculated and it results to be greater than today's or yesterday's lowest price, the SAR must be set equal to that lower boundary.
+* If tomorrow's SAR value lies within (or beyond) tomorrow's price range, a new trend direction is then signaled, and the SAR must "switch sides." Upon a trend switch, several things happen. The first SAR value for this new trend is set to the last EP recorded on the previous trend. The EP is then reset accordingly to this period's maximum. The acceleration factor is reset to its initial value.
 
 ## Price Channels
 
-Coming soon.
+[Price Channels](Price_Channels) bands are calculated according to the following formulas:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/pricechannels.png"></center>
 
 ## Rate of Change
 
@@ -220,7 +318,7 @@ Coming soon.
 
 ## Simple Moving Average
 
-[Simple Moving Average](Simple\_Moving\_Average\_(SMA)) in each point is calculated according to the following formula:
+[Simple Moving Average](Simple\_Moving\_Average\_\(SMA\)) in each point is calculated according to the following formula:
 
 <center><img src="https://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
@@ -254,18 +352,21 @@ The Full Stochastic Oscillator is a fully customizable version of the Slow Stoch
 
 where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
 
-<center><img src="https://static.anychart.com/images/technical\_indicators/fullD.png"></center>
+<center><img src="https://static.anychart.com/images/technical\_indicators/trix.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
-## TRIX
+## Triple Exponential Moving Average
+[Triple Exponential Moving Average (TRIX)](Triple_Exponential_Moving_Average_\(TRIX\)) and its signal line are calculated in accordance to the following calculation flow:
 
-Coming soon.
+<center><img src="https://static.anychart.com/images/technical_indicators/trix.png"></center>
 
-## Volume + MA
+## Volume + Moving Average
 
-Coming soon.
+[Volume + Moving Average](Volume_+_Moving_Average) does no calculations with Volume and adds moving average of either [SMA](#simple_moving_average) or [EMA](#exponential_moving_average) type calculated from Volume series.
 
 ## Williams %R
 
-Coming soon.
+[Williams %R](Williams_%25R) is calculated according to this formula:
+
+<center><img src="https://static.anychart.com/images/technical_indicators/williams-r.png"></center>

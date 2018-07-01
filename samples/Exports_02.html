@@ -1,74 +1,62 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Exports 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button onclick="pdf()">Save as PDF</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
   var data = [
-    {x: "Chocolate paste", value: 5},
-    {x: "White honey", value: 2},
-    {x: "Strawberry jam", value: 2},
-    {x: "Condensed milk", value: 1}
+    ["Chocolate paste", 5],
+    ["White honey", 2],
+    ["Strawberry jam", 2],
+    ["Condensed milk", 1]
   ];
 
   // set chart type
   chart = anychart.pie(data);
 
   // set chart title
-  chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
+  chart.title("Save as PDF Button");
 
-  // set chart container
-  chart.container("container");
+  // display chart
+  chart.container("container").draw();
+});
 
-  // set chart bounds
-  chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
-
-  // initiate chart drawing
-  chart.draw();
-
-  // create new buttons
-  var printButton = document.createElement("div");
-
-  printButton.className = "custombutton";
-
-  printButton.innerHTML = "Save as PDF";
-
-  printButton.onclick = function() {
-    chart.saveAsPDF();
-  };
-
-  // append button to container
-  container.appendChild(printButton);
-
-  var custombuttons = document.getElementsByClassName("custombutton");
-
-  for (var i = 0; i<custombuttons.length; i++){
-    // set button style
-    custombuttons[i].style.top = 65*i + "px";
-    custombuttons[i].style.right = "5px";
-    custombuttons[i].style.width = "80px";
-    custombuttons[i].style.height = "auto";
-    custombuttons[i].style.backgroundColor = "#444444";
-    custombuttons[i].style.color = "white";
-    custombuttons[i].style.fontFamily = chart.title().fontFamily();
-    custombuttons[i].style.position = "absolute";
-    custombuttons[i].style.zIndex = 2;
-    custombuttons[i].style.transition = "0.5s";
-    custombuttons[i].style.textAlign = "center";
-    custombuttons[i].style.border = "3px solid #444444";
-    custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
-    custombuttons[i].style.fontSize = "15px";
-    custombuttons[i].style.cursor = "pointer";
-  }
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+// save the chart as pdf
+function pdf() {
+  chart.saveAsPdf();
+};
+</script>
 </body>
 </html>

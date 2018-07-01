@@ -1,168 +1,87 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-  
-  // set stage
-  stage = anychart.graphics.create("container");
-  
-  // chart data
-  var data2005 = anychart.data.set([
-    ["Quarter 1", 10000, 12000, 16000],
-    ["Quarter 2", 12000, 15000, 17000],
-    ["Quarter 3", 20000, 19000, 21000],
-    ["Quarter 4", 16000, 21000, 22000]
-  ]);
-  
-  var data2006 = anychart.data.set([
-    ["Quarter 1", 13000, 11700, 18000],
-    ["Quarter 2", 10000, 12000, 11000],
-    ["Quarter 3", 18000, 21000, 12000],
-    ["Quarter 4", 21000, 20000, 22000]
-  ]);
-  
-  // get default color palette
-  var palette = anychart.palettes.distinctColors().items();
-  
-  // create first chart
-  var chart2005 = anychart.line();
-  
-  // set chart series and tooltips
-  chart2005.spline(data2005.mapAs({x: [0], value: [1]})).name("John");
-  chart2005.spline(data2005.mapAs({x: [0], value: [2]})).name("Jake");
-  chart2005.spline(data2005.mapAs({x: [0], value: [3]})).name("Peter");
-  
-  // create second chart
-  var chart2006 = anychart.line();
-  
-  // set chart series and tooltips
-  chart2006.spline(data2006.mapAs({x: [0], value: [1]})).name("John");
-  chart2006.spline(data2006.mapAs({x: [0], value: [2]})).name("Jake");
-  chart2006.spline(data2006.mapAs({x: [0], value: [3]})).name("Peter");
-  
-  
-  // create variables for legend
-  var legendsItemsArray = [];
-  var managersNames=["John","Jake","Peter"];
-  
-  // create legend items from charts data
-  for(var managers=1;managers<data2005.data()[0].length;managers++){
-    var total2005 = 0;
-    var total2006 = 0;
-    for (var quarter=0;quarter<data2005.mapAs().getRowsCount();quarter++){
-      total2005+=data2005.data()[quarter][managers];
-      total2006+=data2006.data()[quarter][managers];
-    }
-    // create items array for legend 
-    legendsItemsArray.push({
-      text: managersNames[managers-1],
-      iconType: "SPLINE",
-      iconStroke: palette[managers-1],
-      iconMarkerStroke: anychart.color.darken(palette[managers-1],0.2),
-      iconMarkerFill: palette[managers-1],
-      iconMarkerType: chart2005.markerPalette().itemAt([managers-1]),
-      meta: {legendText:"<b>2005 Result:</b> "+total2005+"<br><b>2006 Result:</b> "+total2006}
-    });
-  }
-  
-  // create custom legend
-  var legend = anychart.standalones.legend();
-  legend.enabled(true);
-  legend.position("top");
-  var legendTitle = legend.title();
-  legendTitle.enabled(true);
-  legendTitle.text("2005 - 2006 Sales");
-  legendTitle.hAlign("center");
-
-  // settings for legend tooltips
-  legend.tooltip().useHtml(true).fontWeight(400);
-  // set source of content for legend tooltips
-  legend.tooltip().format(function(){
-    return this.meta.legendText;
-  });
-  
-  // set legend items from array
-  legend.itemsFormatter(function(){return legendsItemsArray});
-  
-  // set legend events
-  legend.listen("legendItemMouseOver", function(event) {
-    // get item's index
-    var index = event["itemIndex"];
-    // simulate hovering charts series
-    chart2005.getSeries(index).hover();
-    chart2006.getSeries(index).hover();
-  });
-  legend.listen("legendItemMouseOut", function(event) {
-    // get item's index
-    var index = event["itemIndex"];
-    // simulate unhovering charts series
-    chart2005.getSeries(index).unhover();
-    chart2006.getSeries(index).unhover();
-  });
-  legend.listen("legendItemClick", function(event) {
-    // get item's index
-    var index = event["itemIndex"];
-    // manage series
-    chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
-    chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
-    // manage clicked item visual appearance
-    if (chart2005.getSeries(index).enabled() == true){
-      legendsItemsArray[index].fontColor = "#777";
-      legendsItemsArray[index].iconStroke = palette[index];
-      legendsItemsArray[index].iconMarkerStroke= anychart.color.darken(palette[index], 0.2);
-      legendsItemsArray[index].iconMarkerFill= palette[index];
-      legend.itemsFormatter(function(){return legendsItemsArray});
-    }
-    else{
-      legendsItemsArray[index].fontColor = "#999";
-      legendsItemsArray[index].iconStroke = "#999";
-      legendsItemsArray[index].iconMarkerStroke= "#999";
-      legendsItemsArray[index].iconMarkerFill= "#999";
-      legend.itemsFormatter(function(){return legendsItemsArray});
-    }
-  });
-  
-  legend.container(stage).draw();
-  
-  // manage charts size and position
-  chart2005.bounds(0,0,"50%","100%").background().enabled(false);
-  chart2006.bounds("50%",0,"50%","100%").background().enabled(false);
-  chart2005.margin().top(stage.height() - legend.getRemainingBounds().getHeight());
-  chart2006.margin().top(stage.height() - legend.getRemainingBounds().getHeight());
-  chart2005.title().enabled(false);
-  chart2006.title().enabled(false);
-  chart2005.xAxis().title().text("Year 2005");
-  chart2006.xAxis().title().text("Year 2006");
-  chart2005.yAxis().title().enabled(false);
-  chart2006.yAxis().title().enabled(false);
-  
-  // redraw legend if the first chart is redrawn
-  chart2005.listen(
-    "chartDraw",
-    function (){
-      // define legend bounds
-      var legendBounds = anychart.math.rect(
-        0,
-        0,
-        chart2005.container().width(),
-        chart2005.container().height()
-      );
-      
-      // set bounds and draw legend
-      legend.parentBounds(legendBounds).draw();
-    });
-  
-  chart2005.container(stage).draw();
-  chart2006.container(stage).draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  
+  // data
+  var data = anychart.data.set([
+    ["John",  10000, 12000, 20000, 16000],
+    ["Jake",  12000, 15000, 19000, 21000],
+    ["Peter", 16000, 17000, 21000, 22000]
+  ]);
+  
+  // map data
+  var Quarter1 = data.mapAs({x: 0, value: 1});
+  var Quarter2 = data.mapAs({x: 0, value: 2});
+  var Quarter3 = data.mapAs({x: 0, value: 3});
+  var Quarter4 = data.mapAs({x: 0, value: 4});
+  
+  // chart type
+  var chart = anychart.column();
+  
+  // set title
+  chart.title("Legend Title Configuration");
+  
+  // set data
+  var series1 = chart.column(Quarter1);
+  series1.name("Quarter 1");
+  var series2 = chart.column(Quarter2);
+  series2.name("Quarter 2");
+  var series3 = chart.column(Quarter3);
+  series3.name("Quarter 3");
+  var series4 = chart.column(Quarter4);
+  series4.name("Quarter 4");
+  series4.enabled(false);
+  
+  // legend settings
+  var legend = chart.legend();
+  // enable title separator
+  legend.titleSeparator(true);
+  // enable legend
+  legend.enabled(true);
+  // set legend position
+  legend.position("right");
+  // set legend align
+  legend.align("top");
+  // set items layout
+  legend.itemsLayout("vertical");
+  
+  // settings for legend title  
+  var title = chart.legend().title();
+  title.useHtml(true);
+  // enables legend title
+  title.enabled(true);
+  title.text("Total sales<br><i style=\"color: #999; font-weight: 400; font-size: 11px;\">(Year 2004)</i>");
+  // set font size
+  title.fontSize(14);
+  title.hAlign("center");
+    
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});
+</script>
 </body>
 </html>

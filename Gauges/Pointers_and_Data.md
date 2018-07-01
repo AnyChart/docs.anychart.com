@@ -1,16 +1,4 @@
-#Pointers and Data
-
-* [Overview](#overview)
-* [Connection with the Data](#connection_with_the_data)
- * [Bind to Data](#bind_to_data)
- * [Bind to Axis](#bind_to_axis)
- * [Multiple pointers](#multiple_pointers)
-* [Types](#types)
- * [Bar](#bar)
- * [Marker](#marker)
- * [Needle](#needle)
- * [Knob](#knob)
- * [Tank](#tank)
+# Pointers and Data
 
 ## Overview
 
@@ -178,9 +166,8 @@ bar.radius(100);
 {sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
 
 There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke. 
-  
-  
-Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.enums.GaugeSidePosition}position(){api} method. The value is to be "outside", "inside" or "center". Let's put our bar inside the circle of the defined radius:
+
+Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.core.gauge.pointers.Bar#position}position(){api} method. The value is to be `"outside"`, `"inside"`, or `"center"`. Let's put a bar inside the circle of the defined radius:
 
 ```
 var bar = gauge.bar();
@@ -267,7 +254,7 @@ needle.endWidth(0);
 
 {sample}BCT\_Pointers-and-Data\_Needle\_08{sample} 
 
-As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or percents.
+As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or in percent.
 
 ```
 // needle
@@ -363,7 +350,6 @@ var tank = gauge.tank();
 
 There are several settings can be adjusted for the Tank pointer. It is possible to fill empty parts of the tanks with a color or hatch filling with the following methods: {api:anychart.core.linearGauge.pointers.Tank#emptyFill}emptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#emptyHatchFill}emptyHatchFill(){api}.
 
-
 ```
 // set colors for empty parts of tanks
 tankF.emptyFill("#fbceb1");
@@ -372,16 +358,16 @@ tankC.emptyHatchFill("percent30");
 
 {sample}BCT\_Pointers-and-Data\_Tank\_17{sample} 
 
-It is possible to make the colors of empty parts change on hovered and selected states, the same as the main filling color. Use {api:anychart.core.linearGauge.pointers.Tank#hoverEmptyFill}hoverEmptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#hoverEmptyHatchFill}hoverEmptyHatchFill(){api} for adjusting the empty part colors in hovered state and {api:anychart.core.linearGauge.pointers.Tank#selectEmptyFill}selectEmptyFill(){api} and {api:anychart.core.linearGauge.pointers.Tank#selectEmptyHatchFill}selectEmptyHatchFill(){api} for adjusting the empty part colors in selected state.
+The colors of empty parts (as well as the main colors) can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.linearGauge.pointers.Tank#normal}normal(){api}, {api:anychart.core.linearGauge.pointers.Tank#hovered}hovered(){api}, and {api:anychart.core.linearGauge.pointers.Tank#selected}selected(){api} methods and combine them with {api:anychart.core.StateSettings#fill}emptyFill(){api} and {api:anychart.core.StateSettings#hatchFill}emptyHatchFill(){api}:
 
 ```
 // set colors for empty parts of tanks
-tankF.emptyFill("#fbceb1");
-tankF.hoverEmptyFill(anychart.color.lighten("#fbceb1"));
-tankF.selectEmptyFill(anychart.color.darken("#fbceb1"));
-tankC.emptyHatchFill("percent05");
-tankC.hoverEmptyHatchFill("percent25");
-tankC.selectEmptyHatchFill("percent50");
+tankF.normal().emptyFill("#fbceb1");
+tankF.hovered().emptyFill(anychart.color.lighten("#fbceb1"));
+tankF.selected().emptyFill(anychart.color.darken("#fbceb1"));
+tankC.normal().emptyHatchFill("percent05");
+tankC.hovered().emptyHatchFill("percent25");
+tankC.selected().emptyHatchFill("percent50");  
 ```
 
 {sample}BCT\_Pointers-and-Data\_Tank\_18{sample} 

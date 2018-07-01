@@ -1,82 +1,68 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Exports 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+        <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button onclick="xml()">XML</button>
+<button onclick="json()">JSON</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
   var data = [
-    {x: "Winter", value: 5},
-    {x: "Spring", value: 2},
-    {x: "Summer", value: 2},
-    {x: "Autumn", value: 1}
+    ["Winter", 5],
+    ["Spring", 2],
+    ["Summer", 2],
+    ["Autumn", 1]
   ];
 
   // set chart type
   chart = anychart.line(data);
 
   // set chart title
-  chart.title("Export configuration sample");
+  chart.title("Export Configuration Sample");
 
-  // set chart container
-  chart.container("container");
+  // set chart container and draw
+  chart.container("container").draw();
+});
 
-  // set chart bounds
-  chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
+// save chart data and configuration in xml format
+function xml() {
+  chart.saveAsXml("pancakes_chart_xml");
+};
 
-  // initiate chart drawing
-  chart.draw();
-
-  // create new buttons
-  var xmlButton = document.createElement("div");
-  var jsonButton = document.createElement("div");
-
-  xmlButton.className = "custombutton";
-  jsonButton.className = "custombutton";
-
-  xmlButton.innerHTML = "XML";
-  jsonButton.innerHTML = "JSON";
-
-  xmlButton.onclick = function() {
-    chart.saveAsXml(true, "pancakes_data");
-  };
-  jsonButton.onclick = function() {
-    chart.saveAsJson(true, "pancakes_data");
-  };
-
-  // append button to container
-  container.appendChild(xmlButton);
-  container.appendChild(jsonButton);
-
-  var custombuttons = document.getElementsByClassName("custombutton");
-
-  // set style for all buttons
-  for (var i = 0; i<custombuttons.length; i++){
-    // set button style
-    custombuttons[i].style.top = 45*i + "px";
-    custombuttons[i].style.right = "5px";
-    custombuttons[i].style.width = "50px";
-    custombuttons[i].style.height = "auto";
-    custombuttons[i].style.backgroundColor = "#444444";
-    custombuttons[i].style.color = "white";
-    custombuttons[i].style.fontFamily = chart.title().fontFamily();
-    custombuttons[i].style.position = "absolute";
-    custombuttons[i].style.zIndex = 2;
-    custombuttons[i].style.transition = "0.5s";
-    custombuttons[i].style.textAlign = "center";
-    custombuttons[i].style.border = "3px solid #444444";
-    custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
-    custombuttons[i].style.fontSize = "18px";
-    custombuttons[i].style.cursor = "pointer";
-  }
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+// save chart data and configuration in json format
+function json() {
+  chart.saveAsJson("pancakes_chart_json");
+};
+</script>
 </body>
 </html>

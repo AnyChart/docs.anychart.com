@@ -1,17 +1,8 @@
 # AnyStock Step Line Series
 
-* [Overview](#overview)
-* [AnyStock Step Line Series Adjustment](#anystock_step_line_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
-Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Chart_Types/Step_Line_Chart).
+Step Line Series is rather similar to [Line Series](Line). Find all information about using Step Lines in the [Step Line Chart tutorial](../../Basic_Charts/Step_Line_Chart).
 
 ## AnyStock Step Line Series Adjustment
 
@@ -42,19 +33,18 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Step\_Line\_01{sample}
 
-
 ```
 // set the data
 table = anychart.data.table('x');
 table.addData([
-	{'x':"2004-01-02", 'value': 29955800},
-	{'x':"2004-01-05", 'value': 38892100},
-	{'x':"2004-01-06", 'value': 43684400},
-	{'x':"2004-01-07", 'value': 48757500},
-	{'x':"2004-01-08", 'value': 61683300},
-	{'x':"2004-01-09", 'value': 68856400},
-	{'x':"2004-01-12", 'value': 52871900},
-	{'x':"2004-01-13", 'value': 56334200}
+	{'x':'2004-01-02', 'value': 29955800},
+	{'x':'2004-01-05', 'value': 38892100},
+	{'x':'2004-01-06', 'value': 43684400},
+	{'x':'2004-01-07', 'value': 48757500},
+	{'x':'2004-01-08', 'value': 61683300},
+	{'x':'2004-01-09', 'value': 68856400},
+	{'x':'2004-01-12', 'value': 52871900},
+	{'x':'2004-01-13', 'value': 56334200}
 ]);
 
 // map the data
@@ -101,9 +91,7 @@ You can change the type of series to another compatible type. See the [Series Ty
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the stroke color use the {api:anychart.core.stock.series.StepLine#stroke}stroke(){api} method.
 
@@ -113,14 +101,3 @@ series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Step\_Line\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair.
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Step\_Line\_06{sample}

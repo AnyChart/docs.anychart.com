@@ -1,13 +1,9 @@
 {:index 3}
-#Line Segment
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Line Segment
 
 ## Overview
 
-The Line annotation allows to add a line segment to a chart.
+The Line annotation allows you to add a line segment to a chart.
 
 This article explains how to add a Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -44,29 +40,36 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Line\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Line annotation:
+The [appearance settings](../../../Appearance_Settings) of a Line annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Line#color}color(){api} and {api:anychart.core.annotations.Line#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.Line#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Line annotation and configure its visual settings
-line1 = controller.line({
+var line1 = controller.line({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-06",
     secondValueAnchor: 23.38,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Line annotation
-line2 = controller.line();
+var line2 = controller.line();
 
 // set the position of the second annotation
 line2.xAnchor("2004-06-06");
@@ -75,7 +78,9 @@ line2.secondXAnchor("2007-01-07");
 line2.secondValueAnchor(28.92);
  
 // configure the visual settings of the second annotation
-line2.stroke("#2196F3", 3, "10 2");
+line2.normal().stroke("#006600", 1, "10 2");
+line2.hovered().stroke("#00b300", 2, "10 2");
+line2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Line\_02{sample}

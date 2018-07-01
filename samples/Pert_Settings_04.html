@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Pert Settings 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    var data = [
+{id: "1", optimistic: 1, pessimistic: 10, mostLikely: 6, name: "A"},
+{id: "2", optimistic: 3, pessimistic: 8, mostLikely: 5, name: "B"},
+{id: "3", optimistic: 1, pessimistic: 4, mostLikely: 3, name: "D"},
+{id: "4", optimistic: 2, pessimistic: 12, mostLikely: 5, name: "AD", dependsOn: ["1", "3"]},
+{id: "5", optimistic: 4, pessimistic: 16, mostLikely: 10, name: "BC", dependsOn: ["2", "3"]}
+    ];
+
+    var chart = anychart.pert();
+    chart.data(data, "as-table");
+
+    // set vertical spacing between tasks
+    chart.verticalSpacing("20%");
+
+    tasks = chart.tasks();
+
+    // set tasks colors
+    tasks.stroke("#519790");
+    tasks.fill("#519790");
+    tasks.hovered().stroke("#519790", 0.7);
+    tasks.hovered().fill("#519790", 0.7);
+    tasks.selected().stroke("#519790", 2);
+    tasks.selected().fill("#519790", 2);
+
+    // set the slacks to the tasks labels
+    chart.tasks().lowerLabels().format(function(e){
+return "Slack: " + e.slack;
+    });
+
+    chart.title("Coloring tasks");
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</body>
+</html>

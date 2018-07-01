@@ -1,22 +1,11 @@
 {:index 14}
-Map Labels
-======================
-
-* [Overview](#overview)
-* [Common Settings](#common_settings)
-* [Source Data Access](#source_data_access)
-* [Overlap](#overlap)
-* [Positioning](#positioning)
- * [Inside](#inside)
- * [Out of region labels](#out_of_region_labels)
-* [Callout](#callout)
- * [Connectors](#connectors)
+# Map Labels
 
 ## Overview 
 
 Labels in Maps are somewhat similar to the usual labels you can find and configure for any other chart type, with the common differences of keywords and the fact that some data is provided by the map source itself.
 
-To learn about Labels editing and formatting in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](..\Common_Settings/Text_Formatters).
+To learn about Labels editing and formatting in general please visit [Text Settings](../Appearance_Settings/Text_Settings) and [Text Formatters](../Common_Settings/Text_Formatters).
 
 To learn about creating maps visit [Quick Start](Quick_Start) article.
 
@@ -55,12 +44,12 @@ custom_label.fontSize(10);
 custom_label.fontColor("black");
   
 // custom image label
-image = stage.image("//static.anychart.com/images/australia.png");
+image = stage.image("https://static.anychart.com/images/australia.png");
 image.width(150);
 image.height(150);
 image.x(stage.width()-225);
 image.y(stage.height()/2-75);
-stage.listen("stageresize", function(){
+stage.listen("stageresize", function (){
     image.x(stage.width()-200);
     image.y(stage.height()/2-50);
 });
@@ -78,7 +67,7 @@ Labels can get information to show not only from data sets, it is possible to ob
 
 Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. 
 
-That is how properties are set in GeoJSON:
+This is how properties are set in GeoJSON:
 
 ```
 "properties": {
@@ -122,15 +111,18 @@ Some maps contain tiny regions, so it is just necessary to have an opportunity t
 
 ### Map
 
-In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "anychart.enums.LabelsOverlapMode.NO\_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW\_OVERLAP" will allow it. Look at the next sample.
+In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, `true` allows labels to overlap each other, `false` disables those which overlap. If use enums, "no-overlap" will disable overlapping labels and "allow-overlap" will allow it. Look at the next sample.
 
 ```
 map.overlapMode(false);
 ```
 
+or
+
 ```
-map.overlapMode("noOverlap");
+map.overlapMode("no-overlap");
 ```
+
 Both code samples do the same: disable labels that overlap each other.
 
 {sample}Maps\_Labels\_04{sample}
@@ -145,14 +137,14 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 // set the overlapping mode for the map
 map.overlapMode(false);
 // enable overlapping for the series
-series_obama.overlapMode("allowOverlap");
+series_obama.overlapMode("allow-overlap");
 ```
 
 {sample}Maps\_Labels\_05{sample}
 
 Note that this setting isn't being changed if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other even if it is restricted. This is made on purpose to make the process of zooming more graphic.
 
-It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, the "index" parameter set to the series will solve the problem.
+It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the `"labelrank"` property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible.
 
 Those properties can be set through the GeoJSON code or through the data set.
 
@@ -170,7 +162,7 @@ Note that the map's or series' overlapping mode set through the {api:anychart.co
 
 {sample}Maps\_Labels\_06{sample}
 
-You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. That is how the labelranks work.
+You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. This is how the labelranks work.
 
 ## Positioning
 
@@ -186,20 +178,20 @@ Another property is responsible for positioning around the "middle-x" and "middl
 
 ```
 // data sets for series
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 0, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
     {'id': 'AU.NT', 'value': 2, "middle-y": 0.5, "middleXYMode": "relative"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
     {'id': 'AU.CT', 'value': 1.12, "labelrank": 9},
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
     {'id': 'AU.VI', 'value': 3.86, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
     {'id': 'AU.QL', 'value': 1.1, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
     {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 ```
 
 {sample}Maps\_Labels\_07{sample}
@@ -248,20 +240,20 @@ map.geoData(getData());
 The following sample demonstrates several region labels set with "absolute" positioning through the data set:
 
 ```
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"}, 
     {'id': 'AU.NT', 'value': 2, "middle-y": -20.159, "middle-x": 133.66, "middleXYMode": "absolute"},
     {'id': 'AU.WA', 'value': 3.2},
     {'id': 'AU.NS', 'value': 2.7}
-]);
+];
 
-var dataSet_2 = anychart.data.set([
+var dataSet_2 = [
     {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"}, 
     {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-y": -28.86, "middle-x": 134.678, "middleXYMode": "absolute"},
     {'id': 'AU.VI', 'value': 3.86, "middle-y": -37.68, "middle-x": 143.77, "middleXYMode": "absolute"},
     {'id': 'AU.QL', 'value': 1.1, "middle-y": -23.335, "middle-x": 143.71, "middleXYMode": "absolute"},
     {'id': 'AU.TS', 'value': 1.6}
-]);
+];
 ```
 
 {sample}Maps\_Labels\_09{sample}
@@ -270,7 +262,7 @@ Note that if the *middleXYMode* property is absolute, it is necessary to set bot
 
 ### Out of region labels
 
-If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X and Y coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the GeoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
+If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X- and Y-coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the GeoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
 
 In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 
@@ -287,9 +279,9 @@ In the sample below there are some regions with labels set as inside (with middl
 On the previous sample you can see a connector between each outside label and its region - it is created specially for this kind of labels. The {api:anychart.core.ui.LabelsFactory#connectorStroke}connectorStroke(){api} method helps to adjust its appearance. Also the connector color can be set through the data set. Setting the connector stroke color in "null" will disable the connector.
 
 ```
-var dataSet_1 = anychart.data.set([
+var dataSet_1 = [
     {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"}
-]);
+];
 
 // set the connector stroke color
 series_2.labels().connectorStroke("green", 2, "3 3");
@@ -341,7 +333,7 @@ calloutRight.length(100);
 
 {sample}Maps\_Labels\_12{sample}
 
-The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It is possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory.Label#fontSize}fontSize(){api} method and {api:anychart.core.ui.LabelsFactory#connectorStroke}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#format}format(){api} method allows to change the text displayed by the labels.
+The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It is possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory.Label#fontSize}fontSize(){api} method and {api:anychart.core.ui.LabelsFactory#connectorStroke}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory#format}format(){api} method allows to change the text displayed by the labels.
 
 ```
 {'id': 'AU.JB', 'value': 0, label:{format: "Jervis \nBay \nTerritory", fontColor: "white"}},

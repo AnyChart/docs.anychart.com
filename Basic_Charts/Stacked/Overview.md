@@ -1,23 +1,11 @@
 {:index 1}
-#Stacked Charts
-
-* [Overview](#overview)
-* [Value Stacking](#value_stacking)
-* [Percent Stacking](#percent_stacking)
- * [Scale Interval](#scale_interval)
- * [Axis Percent Labels](#axis_percent_labels)
- * [Tooltips and Labels](#tooltips_and_labels)
-* [Combination](#combination)
- * [Clustered](#clustered)
- * [Overlay](#overlay)
- * [With unstackable series](#with_unstackable_series)
-* [Supported Series Samples](#supported_series_samples)
+# Stacked Charts
 
 ## Overview
 
-The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
+The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are otherwise known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
+In AnyChart stacking is a [special mode of a Scale](../../Axes_and_Grids/Scales#stack_mode) set by {api:?entry=stackMode}stackMode(){api} method, and [several types of series](#supported_types) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
 
@@ -27,7 +15,7 @@ To create a **value stacked** chart you need to set scale stackMode to "value":
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 /* enable the value stacking mode
 on the default primary value scale*/
@@ -44,7 +32,7 @@ To create a **percent stacked** chart you need to set scale stackMode to "percen
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 /* enable the percent stacking mode
 on the default primary value scale*/
@@ -55,7 +43,7 @@ Percent stacked charts usually need some fine tuning to get going:
 
 ### Scale Interval
 
-Setting scale to percent stacked mode will force it's [minimum and maximum](/Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
+Setting scale to percent stacked mode will force it's [minimum and maximum](../../Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
 
 ```
 /* enable the value stacking mode
@@ -68,16 +56,16 @@ chart.yScale().ticks().interval(20);
 
 ### Axis Percent Labels
 
-To add percent symbol to axis labels use [Axes Labels](/Axes_and_Grids/Axes_Labels_Formatting) formatting:
+To add the percent symbol to axis labels, use [Axes Labels](../../Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
-// configure labels on the Y-axis
-chart.yAxis().labels().format("{%Value}%");
+// configure labels on the y-axis
+chart.yAxis().labels().format("{%value}%");
 ```
 
-### Tooltips and Labels
+### Labels and Tooltips
 
-To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](/Common_Settings/Text_Formatters):
+To add the percent symbol to labels and tooltips, use [Text Formatters](../../Common_Settings/Text_Formatters):
 
 ```
 // configure tooltips
@@ -136,26 +124,24 @@ yScale2.maximum(20);
 yScale2.minimum(0);
 ```
 
-But you can also sync scales after they auto-calculate their minimums and maximums, it can be done like that in case of two scales:
+But you can also [sync scales](../../Axes_and_Grids/Scales#synchronization) after they auto-calculate their minimums and maximums, it can be done like that:
 
 ```
 // sync minimums and maximums of the scales
-if (yScale1.maximum() > yScale2.maximum())
-    yScale2.maximum(yScale1.maximum());
-else
-    yScale1.maximum(yScale2.maximum());
-
-
-if (yScale1.minimum() < yScale2.minimum())
-    yScale2.minimum(yScale1.minimum());
-else
-    yScale1.minimum(yScale2.minimum());
+globalMax = chart.getStat("yScalesMax");
+globalMin = chart.getStat("yScalesMin");
+// get all y scales
+var yScales = chart.getYScales();
+// set the same minimum and maximum
+for (var i = 0; i < yScales.length; i++) {
+   yScales[i].minimum(globalMin);
+   yScales[i].maximum(globalMax);
+}  
 ```
 
-Here is a sample of clustered value stacked column chart with synced scales:
+Here is a sample of clustered value stacked column chart with [synced scales](../../Axes_and_Grids/Scales#synchronization):
 
 {sample}BCT\_Stacking\_04{sample}
-
 
 ### Overlay
 
@@ -163,7 +149,7 @@ If you want to display several stacks of different type at once you have to crea
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.column();
 
 // create scales and set stacking modes
 yScale1 = anychart.scales.linear();
@@ -183,7 +169,7 @@ chart.column(seriesData_4).yScale(yScale2);
 
 {sample}BCT\_Stacking\_05{sample}
 
-### With unstackable series
+### With Unstackable Series
 
 When you combine a set of stackable series with any number of series if unstackable type the stackable series form a stack and unstackable series are displayed as always. This way you can show a trend over a stack without creating any extra scales. Please see a sample below:
 
@@ -200,31 +186,69 @@ chart.line(seriesData_3);
 
 {sample}BCT\_Stacking\_06{sample}
 
-## Supported Series Samples
+## Stacking Order
 
-* [Stacked Area Chart](./Value/Area_Chart)
-* [Stacked Bar Chart](./Value/Bar_Chart)
-* [Stacked Column Chart](./Value/Column_Chart)
-* [Stacked Spline Area Chart](./Value/Spline_Area_Chart)
-* [Stacked Step Area Chart](./Value/Step_Area_Chart)
-* [Stacked Stick Chart](./Value/Stick_Chart)
-* [Percent Stacked Area Chart](./Percent/Area_Chart)
-* [Percent Stacked Bar Chart](./Percent/Bar_Chart)
-* [Percent Stacked Column Chart](./Percent/Column_Chart)
-* [Percent Stacked Spline Area Chart](./Percent/Spline_Area_Chart)
-* [Percent Stacked Step Area Chart](./Percent/Step_Area_Chart)
-* [Percent Stacked Stick Chart](./Percent/Stick_Chart)
-* [Vertical Stacked Area Chart](./Value/Vertical_Area_Chart)
-* [Vertical Stacked Spline Chart](./Value/Vertical_Spline_Area_Chart)
-* [Vertical Stacked Step Area Chart](./Value/Vertical_Step_Area_Chart)
-* [Vertical Stacked Stick Chart](./Value/Vertical_Stick_Chart)
-* [Vertical Percent Stacked Area Chart](./Percent/Vertical_Area_Chart)
-* [Vertical Percent Stacked Area Chart](./Percent/Vertical_Spline_Area_Chart)
-* [Vertical Percent Stacked Step Area Chart](./Percent/Vertical_Step_Area_Chart)
-* [Vertical Percent Stacked Stick Chart](./Percent/Vertical_Stick_Chart)
-* [3D Stacked Area Chart](./Value/3D/Area_Chart)
-* [3D Stacked Bar Chart](./Value/3D_Bar_Chart)
-* [3D Stacked Column Chart](./Value/3D_Column_Chart)
-* [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)
-* [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
-* [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
+You can change the order of stacking using the {api:anychart.scales.Linear#stackDirection}stackDirection(){api} method:
+
+```
+yScale().stackMode("value");
+
+// Set the stacking direction.
+yScale().stackDirection("reverse")
+```
+
+Here is a sample that shows both stacking order directions"
+
+{sample}BCT\_Stacking\_07{sample}
+
+## Supported Types
+
+Here is the list of supported stacked charts:
+
+* [Stacked Area](./Value/Area_Chart)
+* [Stacked Bar](./Value/Bar_Chart)
+* [Stacked Column](./Value/Column_Chart)
+* [Stacked Spline Area](./Value/Spline_Area_Chart)
+* [Stacked Step Area](./Value/Step_Area_Chart)
+* [Stacked Stick](./Value/Stick_Chart)
+* [Percent Stacked Area](./Percent/Area_Chart)
+* [Percent Stacked Bar](./Percent/Bar_Chart)
+* [Percent Stacked Column](./Percent/Column_Chart)
+* [Percent Stacked Spline Area](./Percent/Spline_Area_Chart)
+* [Percent Stacked Step Area](./Percent/Step_Area_Chart)
+* [Percent Stacked Stick](./Percent/Stick_Chart)
+
+Here are vertical and 3D stacked charts:
+
+* [Vertical Stacked Area](./Value/Vertical_Area_Chart)
+* [Vertical Stacked Spline Area](./Value/Vertical_Spline_Area_Chart)
+* [Vertical Stacked Step Area](./Value/Vertical_Step_Area_Chart)
+* [Vertical Stacked Stick](./Value/Vertical_Stick_Chart)
+* [3D Stacked Area](./Value/3D_Area_Chart)
+* [3D Stacked Bar](./Value/3D_Bar_Chart)
+* [3D Stacked Column](./Value/3D_Column_Chart)
+* [Vertical Percent Stacked Area](./Percent/Vertical_Area_Chart)
+* [Vertical Percent Stacked Spline Area](./Percent/Vertical_Spline_Area_Chart)
+* [Vertical Percent Stacked Step Area](./Percent/Vertical_Step_Area_Chart)
+* [Vertical Percent Stacked Stick](./Percent/Vertical_Stick_Chart)
+* [3D Percent Stacked Area](./Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar](./Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column](./Percent/3D_Column_Chart)
+
+See also polar and radar stacked charts:
+
+* [Stacked Polygon](./Value/Polygon_Chart)
+* [Polar Stacked Column](./Value/Polar_Column_Chart)
+* [Radar Stacked Area](./Value/Radar_Area_Chart)
+* [Percent Stacked Polygon](./Percent/Polygon_Chart)
+* [Polar Percent Stacked Column](./Percent/Polar_Column_Chart)
+* [Radar Percent Stacked Area](./Percent/Radar_Area_Chart)
+
+## Marimekko Charts
+
+Marimekko charts are a special type of stacked charts and though very similar, still are different. Please refer to [Marimekko Chart](../Marimekko_Chart/Mekko_Chart) articles to learn how to build them with AnyChart.
+
+* [Mekko Chart](../Marimekko_Chart/Mekko_Chart)
+* [Bar Mekko Chart](../Marimekko_Chart/Bar_Mekko_Chart)
+* [Mosaic Chart](../Marimekko_Chart/Mosaic_Chart)
+

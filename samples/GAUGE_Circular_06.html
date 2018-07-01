@@ -1,19 +1,36 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="gauge">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GAUGE Circular 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     
 		// create data set on our data
     var dataSet = anychart.data.set([50,400]);
     
 		// set the gauge type
-    gauge = anychart.gauges.circular();
+    var gauge = anychart.gauges.circular();
 
 		// gauge settings
     gauge.data(dataSet);
@@ -23,81 +40,79 @@
    
 		// axis settings
     var axis = gauge.axis()
-        .radius(95)
-        .width(1);
+.radius(95)
+.width(1);
 
 		// scale settings
     axis.scale()
-        .minimum(0)
-        .maximum(120)
-        .ticks({interval: 10})
-        .minorTicks({interval: 1});
+.minimum(0)
+.maximum(120)
+.ticks({interval: 10})
+.minorTicks({interval: 1});
 
 		// ticks settings
     axis.ticks()
-        .type("trapezoid")
-        .length(8);
+.type("trapezium")
+.length(8);
 
 		// minor ticks settings
     axis.minorTicks()
-        .enabled(true)
-        .length("1");
-        
-        // second axis settings
+.enabled(true)
+.length("1");
+
+// second axis settings
     var axis_1 = gauge.axis(1)
-        .radius(50)
-        .width(3);
+.radius(50)
+.width(3);
 
 		// second scale settings
     axis_1.scale()
-        .minimum(0)
-        .maximum(600)
-        .ticks({interval: 100})
-        .minorTicks({interval: 20});
+.minimum(0)
+.maximum(600)
+.ticks({interval: 100})
+.minorTicks({interval: 20});
 
 		// second ticks settings
     axis_1.ticks()
-        .type("trapezoid")
-        .length(8);
+.type("trapezium")
+.length(8);
 
 		// second minor ticks settings
     axis_1.minorTicks()
-        .enabled(true)
-        .length("3");
-        
-        // needle
+.enabled(true)
+.length("3");
+
+// needle
     gauge.needle(0)
-        .enabled(true)
-        .startRadius("-5%")
-        .endRadius("80%")
-        .middleRadius(0)
-        .startWidth("0.1%")
-        .endWidth("0.1%")
-        .middleWidth("5%");
-        
-        // marker
+.enabled(true)
+.startRadius("-5%")
+.endRadius("80%")
+.middleRadius(0)
+.startWidth("0.1%")
+.endWidth("0.1%")
+.middleWidth("5%");
+
+// marker
     gauge.marker(0)
-        .axisIndex(1)
-        .dataIndex(1)
-        .size(7)
-        .type("triangledown")
-        .position("outside")
-        .radius(50);
+.axisIndex(1)
+.dataIndex(1)
+.size(7)
+.type("triangle-down")
+.position("outside")
+.radius(50);
     
 		// bar
     gauge.bar(0)
-        .axisIndex(1)
-        .position("i")
-        .dataIndex(1)
-        .width(3)
-        .radius(50)
-        .zIndex(10);
-        
+.axisIndex(1)
+.position("inside")
+.dataIndex(1)
+.width(3)
+.radius(50)
+.zIndex(10);
+
 		// draw the chart
     gauge.container("container").draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

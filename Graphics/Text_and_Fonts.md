@@ -1,20 +1,13 @@
 {:index 8}
 # GraphicsJS Text and Fonts
 
-* [Overview](#overview)
-* [Basic methods](#basic_methods)
- * [Set the text](#set_the_text)
-* [Getting the text size](#getting_the_text_size)
-* [External fonts](#external_fonts)
-* [Multiline](#multiline)
-
 ## Basic Methods
  
-There are several methods adjusting custom text on a stage. You can find all of them in our <a href="https://api.anychart.com/latest/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set text and adjust its parameters.
+There are several methods adjusting custom text on a stage. You can find all of them in our {api:anychart.graphics.vector.Text}text API{api}. This article describes some basic methods which allow to set text and adjust its parameters.
 
 ### Set the text
 
-Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X and Y coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
+Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X- and Y-coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
 
 ```
 // set the text
@@ -92,31 +85,92 @@ If you want to use a custom font in your chart, use one of the services providin
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
 ```
 
+and then:
+
 ```
 font-family: 'Dancing Script', cursive;
 ```
 
 {sample :width 832 :height 120}GFX\_Basic\_Text\_06{sample}
 
-
 ## Multiline
 
-Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#textWrap}textWrap(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
+Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.core.Text#wordWrap}wordWrap(){api}, {api:anychart.core.Text#wordBreak}wordBreak(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
 
 ```
-// create the text element as html
+// create the text style object
+textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
+
+// create a text element as HTML
 text1  = stage.text().htmlText("<p fontFace='Dancing Script'>This is my custom text,<br>which has several lines, separated<br>with the &lt;br&gt; tags.</p>");
 
-// create second text 
+// create the second text 
 text2 = stage.text(20, 50, "This is my second custom text element, which is made multiline with the help of AnyChart Graphics methods", textStyle);
 
 // text settings
 text2.width(150);
 text2.height(150);
-text2.textWrap("byLetter");
+text2.wordWrap("break-all");
+text2.wordBreak("break-word");
 text2.textOverflow(true);
 text2.letterSpacing(3);
 text2.lineHeight(20);
 ```
 
-{sample :width 832 :height 155}GFX\_Basic\_Text\_07{sample}
+{sample :width 832 :height 255}GFX\_Basic\_Text\_07{sample}
+
+## Curved Text Along the Path
+
+You can easily create a curved text using the {api:anychart.graphics.vector.Text#path}path(){api} method of the text object. 
+
+```
+var circlePath = stage.path();
+circlePath.circularArc(100, 100, 50, 50, 0, 360);
+```
+
+[Path can be anything](Paths), here is a sample with several curved texts:
+
+{sample :height 255}GFX\_Basic\_Text\_08{sample}
+
+## Wrap
+
+There are two modes of the {api:anychart.core.Text#wordWrap}wordWrap(){api} method: 
+- "break-word" allows to break the word in any point if there are no acceptable points in the text line to break the text in there;
+- "normal" allows to break at normal word break points only. 
+
+There are three modes of the {api:anychart.core.Text#wordBreak}wordBreak(){api} method:
+- "break-all" means that the text can is allowed to be broken in any point of the text, even between the characters of one word;
+- "keep-all" means that the text will be broken in any place, except for the CJK texts;
+- "normal" means that words would be broken according to their usual rules.
+
+### Wrap by Word
+
+In the following sample, there are two pieces of the same text with different settings of wrapping and breaking. The sample shoes the difference:
+
+```
+// first text settings
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
+
+// second text settings
+text2.wordWrap("break-word");
+text2.wordBreak("normal");
+```
+
+{sample :width 832 :height 255}GFX\_Basic\_Text\_09{sample}
+
+### Wrap by Letter
+
+This sample shows two similar texts with two extremely long words, being wrapped and broken in different modes. 
+
+```
+// first text settings
+text1.wordWrap("break-word");
+text1.wordBreak("break-all");
+
+// second text settings
+text2.wordWrap("normal");
+text2.wordBreak("keep-all");
+```
+
+{sample :width 832 :height 255}GFX\_Basic\_Text\_10{sample}

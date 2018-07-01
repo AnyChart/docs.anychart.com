@@ -1,9 +1,5 @@
 {:index 3.1}
-#Range Spline Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
+# Range Spline Area Chart
 
 ## Overview
 
@@ -23,7 +19,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Range Spline Area](Vertical/Range_Spline_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Range Spline Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -35,8 +31,9 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 <tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/" target="_blank">Chartopedia: Range Spline Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Range Spline Area Chart](https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -44,7 +41,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 
 To create a Range Spline Area series, use the {api:anychart.charts.Cartesian#rangeSplineArea}rangeSplineArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong> and <strong>"high"</strong> parameters. 
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the `low` and `high` parameters. 
 
 ```
 // create data
@@ -57,7 +54,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a range spline area series and set the data
 var series = chart.rangeSplineArea(data);

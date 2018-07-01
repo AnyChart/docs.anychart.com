@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Data Sets 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var data = [
+    // column 0    1    2    3
+    ["2014/6/25",  28,  23,  28], // row 0
+    ["2014/6/26",  26,  21,  26], //     1
+    ["2014/6/27",  27,  19,  26], //     2
+    ["2014/6/28",  25,  21,  27], //     3
+    ["2014/6/29",  29,  22,  28], //     4
+    ["2014/6/30",  28,  25,  27]  //     5
+  ];
+
+  // create a data set
+  var dataSet = anychart.data.set(data);
+
+  // set stage
+  var stage = anychart.graphics.create("container");
+
+  // create a line chart using the data set
+  var line = anychart.line.apply(null, anychart.data.mapAsTable(data));
+
+  // axes labels
+  line.yAxis().labels().format("{%value}\xb0C");
+  // series titles setter
+  line.getSeries(0).name("NY");
+  line.getSeries(1).name("SF");
+  line.getSeries(2).name("LA");
+
+  // naming the chart
+  line.title("Weather in the USA");
+
+  // set container and position
+  line.container(stage);
+  line.bounds(0, 0, "100%", "50%");
+
+  // initiate chart drawing
+  line.draw();
+
+  // map x and value from the data set
+  var colChart = anychart.column.apply(null, anychart.data.mapAsTable(data));
+  
+  // naming the chart's series (legend)
+  colChart.getSeries(0).name("NY");
+  colChart.getSeries(1).name("SF");
+  colChart.getSeries(2).name("LA");
+    
+  // axes labels set
+  colChart.yAxis().labels().format("{%value}\xb0C");
+  
+  // naming the chart
+  colChart.title("Weather in the USA");
+
+  // set container and position
+  colChart.container(stage);
+  colChart.bounds(0, "50%", "100%", "50%");
+    
+  // draw
+  colChart.draw();
+});
+</script>
+</body>
+</html>

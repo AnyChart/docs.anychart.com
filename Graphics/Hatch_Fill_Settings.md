@@ -2,16 +2,6 @@
 
 # GraphicsJS Hatch Fill Settings
 
-* [Overview](#overview)
-* [Hatch fill presets](#hatch_fill_presets)
-  * [Color](#color)
-  * [Thickness](#thickness)
-  * [Pattern Size](#pattern_size)
-* [Pattern](#pattern)
-  * [Shape](#shape)
-  * [Font](#font)
-
-
 ## Overview
 
 Some color printers print colors unpredictable and sometimes it is quite hard to identify similar colors as different. 
@@ -20,7 +10,7 @@ AnyChart js charting library has very useful feature - hatch fills, ideal for di
 
 ## Hatch fill presets
 
-We provide a list of hatch fill presets, full list of them is available in the {api:anychart.graphics.vector.HatchFill#HatchFillType}API reference{api}.
+We provide a list of hatch fill presets, full list of them is available in the {api:anychart.graphics.vector.HatchFill.HatchFillType}HatchFillType API Enum{api}.
 
 In case of graphic elements, you need to set hatchFill through the **fill()** method: 
 
@@ -99,7 +89,7 @@ Here is a sample:
 
 ### Font
 
-The flexibility of GraphicsJS allows to create not only shapes-based patterns, but also font-based. An example of doing so with an Interdex font can be found in [AnyChart Interdex Hatch Fill Sample](https://playground.anychart.com/gallery/latest/Custom_Drawing/HatchFill_By_Font).
+The flexibility of GraphicsJS allows to create not only shapes-based patterns, but also font-based. An example of doing so with an Interdex font can be found in {pg:gallery/Custom_Drawing/HatchFill_By_Font}AnyChart Interdex Hatch Fill Sample{pg}).
 
 Here is a simplified version of a font-based pattern fill:
 

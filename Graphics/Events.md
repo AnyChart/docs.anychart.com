@@ -1,19 +1,13 @@
 {:index 4}
 # GraphicsJS Events
 
-* [Overview](#overview)
-* [Listening](#listening)
-* [Unlistening](#unlistening)
-* [Propagation](#propagation)
-* [Stage](#stage)
-
 ## Overview
 
 Any object, stage or layer in GraphicsJS can listen events. The list of events that can be handled for any element is available at: {api:anychart.graphics.events}API: events{api}
 
 ## Listening
 
-To set listening function use {api:anychart.graphics.events#listen}{api} or {api:anychart.graphics.events#listenOnce}listenOnce(){api} methods. Here is a sample code of listening of "click" event for a layer and a text object on it:
+To set listening function use {api:anychart.graphics.events#listen}listen(){api} or {api:anychart.graphics.events#listenOnce}listenOnce(){api} methods. Here is a sample code of listening of "click" event for a layer and a text object on it:
 
 ```
 stage = anychart.graphics.create("container");
@@ -67,9 +61,9 @@ Try this sample to see how it works:
 
 {sample}GFX\_Events\_02{sample}
 
-# Propagation
+## Propagation
 
-To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
+To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation()}stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
 
 The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
 
@@ -92,10 +86,9 @@ Try the sample and explore it in the Playground:
 
 {sample}GFX\_Events\_03{sample}
 
-
 ## Stage
 
-Besides all mentioned, there are also {apy:anychart.graphics.vector.Stage.EventType}events{api} managed by stage. There are four of them: 
+Besides all mentioned, there are also {api:anychart.graphics.vector.Stage.EventType}events{api} managed by stage. There are four of them: 
 - STAGE_RESIZE (stageresize) - listen to this event when you need some changes or actions done on a stage while it is being resized
 - STAGE_RENDERED (stagerendered) - listen to this event when you need some changes or actions done on a stage when it is rendered, i.e. when all images have been loaded to a stage
 - RENDER_START (renderstart) - listen to this event when you need some changes or actions done on a stage when the stage rendering process has started
@@ -104,7 +97,7 @@ Besides all mentioned, there are also {apy:anychart.graphics.vector.Stage.EventT
 In the following sample there is a text element of some width and height. Each time the stage is resized, width and height of this element is recounted
 
 ```
-stage.listen("stageresize", function(){
+stage.listen("stageresize", function (){
     var w = stage.width()-300;
     textObject.width(w);
     var h = textObject.height();
@@ -118,11 +111,11 @@ stage.listen("stageresize", function(){
 The following samples demonstrates the time between rendering start and finish. The "renderstart" and "renderfinish" methods are listened to:
 
 ```
-stage.listen("renderstart", function(){
+stage.listen("renderstart", function (){
     start = (new Date()).getTime();
 });
 
-stage.listenOnce("renderfinish", function(){
+stage.listenOnce("renderfinish", function (){
     finish = (new Date()).getTime();
     var labelBg = stage.rect();
     label = stage.text(130,130);

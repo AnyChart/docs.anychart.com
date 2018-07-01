@@ -1,13 +1,9 @@
 {:index 3}
-#Andrews' Pitchfork
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Andrews' Pitchfork
 
 ## Overview
 
-The Andrews' Pitchfork annotation allows to add an Andrews' pitchfork (an analysis tool developed by Alan Andrews) to a chart.
+The Andrews' Pitchfork annotation allows you to add an Andrews' pitchfork (an analysis tool developed by Alan Andrews) to a chart.
 
 This article explains how to add an Andrews' Pitchfork and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -46,31 +42,38 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of an Andrews' Pitchfork annotation:
+The [appearance settings](../../../Appearance_Settings) of an Andrews' Pitchfork annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.AndrewsPitchfork#color}color(){api} and {api:anychart.core.annotations.AndrewsPitchfork#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.AndrewsPitchfork#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.AndrewsPitchfork#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Andrews' Pitchfork annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Andrews' Pitchfork annotation and configure its visual settings
-andrewsPitchfork1 = controller.andrewsPitchfork({
+var andrewsPitchfork1 = controller.andrewsPitchfork({
     xAnchor: "2006-10-15",
     valueAnchor: 24.55,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
     thirdXAnchor: "2007-05-20",
     thirdValueAnchor: 25.52,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
-    });
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
+});
 
 // create the second Andrews' Pitchfork annotation
-andrewsPitchfork2 = controller.andrewsPitchfork();
+var andrewsPitchfork2 = controller.andrewsPitchfork();
 
 // set the position of the second annotation
 andrewsPitchfork2.xAnchor("2007-12-16");
@@ -81,7 +84,9 @@ andrewsPitchfork2.thirdXAnchor("2008-02-10");
 andrewsPitchfork2.thirdValueAnchor(23.30);
 
 // configure the visual settings of the second annotation
-andrewsPitchfork2.stroke("#2196F3", 3, "10 2");
+andrewsPitchfork2.normal().stroke("#006600", 1, "10 2");
+andrewsPitchfork2.hovered().stroke("#00b300", 2, "10 2");
+andrewsPitchfork2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_02{sample}

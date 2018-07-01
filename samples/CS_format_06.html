@@ -1,71 +1,66 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS format 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var data = anychart.data.set([
+  var data = {
+  header: ["#", "Winter", "Summer"],
+  rows: [
     ["Department Stores", 637166, 737166],
     ["Discount Stores", 721630, 537166],
     ["Men's/Women's Specialty Stores", 148662, 188662],
     ["Juvenile Specialty Stores", 78662, 178662],
     ["All other outlets", 90000, 89000]
-  ]);
+  ]};
 
-  // remapping data
-  var SalesWinter = data.mapAs({x: [0], value: [1]});
-  var SalesSummer = data.mapAs({x: [0], value: [2]});
+  // create chart
+  var chart = anychart.bar();
 
-  // define chart type
-  chart = anychart.bar();
+  // set data
+  chart.data(data);
+  
+  // enable chart labels
+  chart.labels(true);
+
+  // format labels
+  chart.labels().format(function (){
+      return(this.seriesName + ": $" + this.value);
+  });
 
   // set title
-  chart.title("Multi-series Bar Chart");
+  chart.title("Format Labels");
   
   // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
-
-  // set data series
-  var series_winter = chart.bar(SalesWinter);
-  var series_summer = chart.bar(SalesSummer);
-  
-  // set series name
-  series_winter.name("Winter");
-  series_summer.name("Summer");
-  
-  // set text formatter
-  var labels_winter = series_winter.labels();
-  labels_winter.enabled(true);
-  labels_winter.format(function(){
-      return(this.seriesName + ": $" + this.value);
-  });
-  var labels_summer = series_summer.labels();
-  labels_summer.enabled(true);
-  labels_summer.format(function(){
-      return(this.seriesName + ": $" + this.value);
-  });
-  
-  // set the labels position
-  labels_winter.position("right");
-  labels_winter.anchor("left");
-  labels_summer.position("right");
-  labels_summer.anchor("left");
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
   // draw chart
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

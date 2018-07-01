@@ -1,16 +1,32 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Range Marker 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  // setting data
-  var data = anychart.data.set([
+  // data
+  var data = [
     ["January", 200],
     ["February", 289],
     ["March", 297],
@@ -23,17 +39,11 @@
     ["October", 218],
     ["November", 289],
     ["December", 266]
-  ]);
+  ];
 
-  chart = anychart.column();
-
+  // create a chart
+  var chart = anychart.column(data);
   chart.title("Range Marker");
-
-  // series data
-  chart.column(data);
-
-  // y axis getter
-  var yAxis = chart.yAxis();
 
   // create range marker
   var marker = chart.rangeMarker(0);
@@ -44,10 +54,7 @@
   // set marker inner color
   marker.fill("#fcd8d7");
   // set axis
-  marker.axis(yAxis);
-
-  var scale = chart.yScale();
-  scale.minimum(0);
+  marker.axis(chart.yAxis());
 
   var vMarker = chart.rangeMarker(1);
   vMarker.from("June");
@@ -57,9 +64,7 @@
 
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,22 +1,38 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="chart">anychart.onDocumentReady(function () {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Custom Drawing 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     // create column chart
-    chart = anychart.column();
+    var chart = anychart.column();
 
     var dataSet = anychart.data.set([
-        ['Lip gloss', 22998, 12043],
-        ['Eyeliner', 12321, 15067],
-        ['Eyeshadows', 12998, 12043],
-        ['Powder', 10261, 14419],
-        ['Mascara', 11261, 10419]
+['Lip gloss', 22998, 12043],
+['Eyeliner', 12321, 15067],
+['Eyeshadows', 12998, 12043],
+['Powder', 10261, 14419],
+['Mascara', 11261, 10419]
     ]);
 
     // set chart title
@@ -44,7 +60,7 @@
 function drawer() {
     // if missing (not correct data), then skipping this point drawing
     if (this.missing) {
-        return;
+return;
     }
 
     // get shapes group
@@ -57,19 +73,16 @@ function drawer() {
     var rx = this.pointWidth / 2;
 
     shapes['path']
-            // resets all 'line' operations
-            .clear()
-            // draw column with rounded edges
-            .moveTo(leftX, this.zero)
-            .lineTo(leftX, this.value + rx)
-            .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
-            .lineTo(rightX, this.zero)
-            // close by connecting the last point with the first straight line
-            .close();
+    // resets all 'line' operations
+    .clear()
+    // draw column with rounded edges
+    .moveTo(leftX, this.zero)
+    .lineTo(leftX, this.value + rx)
+    .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
+    .lineTo(rightX, this.zero)
+    // close by connecting the last point with the first straight line
+    .close();
 }
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

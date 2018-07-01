@@ -1,44 +1,26 @@
 {:index 7.1}
 
-#Range Selection UI
-
-* [Overview](#overview)
-* [Add to a chart](#add_to_a_chart)
-* [Add to a separate DIV](#add_to_a_separate_div)
-* [Adjusting Range Selector](#adjusting_range_selector)
- * [Customizing preset periods](#customizing_preset_periods)
- * [Creating custom periods](#creating_custom_periods)
- * [Zoom To Label](#zoom_to_label)
-* [Adjusting Range Picker](#adjusting_range_picker)
- * [Input date format](#input_date_format)
- * [From and To Labels](#from_and_to_labels)
+# Range Selection UI
 
 ## Overview
 
-AnyStock provides a lot of features and tools to a chart viewer to make the working process rather comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](Scroller) article. 
+Range Selection UI is on of the great chart navigation features AnyStock provides to a chart viewer to make the data mining process comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in [Scroller](Scroller) article. 
 
 **Range Selector** helps to use scroller by providing a set of buttons to select certain periods of time.
 
 **Range Picker** helps to use scroller by providing two input fields of preset format so a user can type in start and end dates.
 
-Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{api} package and you need to reference UI CSS file if you are using `anychart-bundle.min.js`:
+Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{api} package and you need to reference UI CSS file:
 
 ```
-<script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
-```
-
-Or, if you are using a specialized `anystock.min.js` you need to reference ui JavaScript file as well:
-
-```
-<script src="https://cdn.anychart.com/js/latest/anystock.min.js"></script>
-<script src="https://cdn.anychart.com/js/latest/anychart-ui.min.js"/>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anystock.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"/>
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
 ```
 
 ## Add to a chart
 
-The easiest way to add range selector or range picker is to add them (render to) to an instance of a stock chart. You need to create them using constructor methods {api:}rangeSelector(){api} and {api:}rangePicker{api} before that:
+The easiest way to add range selector or range picker is to add them (render to) to an instance of a stock chart. You need to create them using constructor methods {api:anychart.ui.RangeSelector}rangeSelector(){api} and {api:anychart.ui.RangePicker}rangePicker{api} before that:
 
 ```
 chart = anychart.stock();
@@ -76,37 +58,59 @@ rangePicker.target(chart);
 chart.container("container");
 chart.draw();
 
-// Render the range selection controls into some containers on a page
-rangeSelector.render("rangeselectorContainer");
-rangePicker.render("rangepickerContainer");
+// Render the range selection controls into containers on a page
+rangeSelector.render(document.getElementById("rangeselectorContainer"));
+rangePicker.render(document.getElementById("rangepickerContainer"));
 ```
+
+{sample}STOCK\_Range\_Selection\_02{sample}
 
 ## Adjusting Range Selector
 
 ### Customizing preset periods
 
-To customize preset periods you need to access {api:api:anychart.ui.RangeSelector#ranges}ranges(){api} array and change the fields you want to change or remove items you don't want to see. Each element of this array is an object of {api:anychart.ui.RangeSelector.Range}Range{api} type and contains the following fields:
+To customize preset periods you need to use {api:anychart.ui.RangeSelector#ranges}ranges(){api} array and change the fields you want to change or remove items you don't want to see. Each element of this array is an object of {api:anychart.ui.RangeSelector.Range}Range{api} type and contains the following fields:
 
 <table>
 <tr>
 <th>Field</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 <tr>
-<td>anchor</td>
-<td>{api:anychart.enums.StockRangeAnchor}StockRangeAnchor{api}</td>
+<td>`anchor`</td>
+<td>{api:anychart.enums.StockRangeAnchor}anychart.enums.StockRangeAnchor{api}</td>
+<td>Range starting point.</td>
 </tr>
 <tr>
-<td>count</td>
+<td>`type`</td>
+<td>{api:anychart.enums.StockRangeType}anychart.enums.StockRangeType{api}</td>
+<td>Type of range measurement: preset or unit.</td>
+</tr>
+<tr>
+<td>`unit`</td>
+<td>{api:anychart.enums.Interval}anychart.enums.Interval{api}</td>
+<td>When `type` is set to `'unit'` - range measurement.</td>
+</tr>
+<tr>
+<td>`count`</td>
 <td>Number</td>
+<td>When `type` is set to `'unit'` (and `unit` is set) or `'points'` - number of units or points.</td>
 </tr>
 <tr>
-<td>text</td>
+<td>`startDate`</td>
 <td>String</td>
+<td>Start date for the fixed range when type is set to `'range'`.</td>
 </tr>
 <tr>
-<td>Unit</td>
-<td>{api:anychart.enums.StockRangeType}StockRangeType{api}</td>
+<td>`endDate`</td>
+<td>String</td>
+<td>End date for the fixed range when type is set to `'range'`.</td>
+</tr>
+<tr>
+<td>`text`</td>
+<td>String</td>
+<td>Text to display.</td>
 </tr>
 </table>
 
@@ -115,11 +119,19 @@ Modification of the fields may look like this:
 ```
 var rangeSelector = anychart.ui.rangeSelector();
 
+// get a copy of existing ranges
+var customRanges = rangeSelector.ranges();
+
 // remove the last element
-rangeSelector.ranges().pop();
+customRanges.pop();
 // modify the first element
-rangeSelector.ranges()[0].count=5;
-rangeSelector.ranges()[0].text="5 DAY";
+customRanges[0].type = "unit";
+customRanges[0].unit = "day";
+customRanges[0].count = 5;
+customRanges[0].text = "5 DAYS";
+
+// apply the changes
+rangeSelector.ranges(customRanges);
 ```
 
 {sample}STOCK\_Range\_Selection\_03{sample}
@@ -131,19 +143,34 @@ You can completely override the list of ranges and specify your own list:
 ```
 var rangeSelector = anychart.ui.rangeSelector();
 
-// Set custom ranges for range selector.
-rangeSelector.ranges([{
-    'text': 'Year 2006',
-    'startDate': '2006 Jan 1',
-    'endDate': '2006 Dec 31'
-}, {
-    'text': 'Year 2007',
-    'startDate': '2007 Jan 1',
-    'endDate': '2007 Dec 31'
-}, {
-    'text': 'Full Range',
-    'type': 'max'
-}]);
+var customRanges = [
+    {
+        'text': '5 Days',
+        'type': 'unit',
+        'unit': 'day',
+        'count': 5,
+        'anchor': 'first-visible-date'
+    },
+    {
+        'text': 'Year 2007',
+        'startDate': '2007 Jan 1',
+        'endDate': '2007 Dec 31',
+        'type': 'range'
+    },
+    {
+        'text': 'Full Range',
+        'type': 'max'
+    },
+    {
+        'text': '10',
+        'type': 'points'
+        'count': 10,
+        'anchor': 'last-date'
+    }
+];
+
+// Set custom ranges for the range selector.
+rangeSelector.ranges(customRanges);
 ```
 
 {sample}STOCK\_Range\_Selection\_04{sample}

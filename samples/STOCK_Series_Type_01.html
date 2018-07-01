@@ -1,14 +1,50 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-    // create a stage    
-    stage = anychart.graphics.create("container");
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Series Type 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        select {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<select id="typeSelect" onchange="switchType()">
+    <option value="area">Area</option>
+    <option value="column">Column</option>
+    <option value="jump-line">Jump Line</option>
+    <option value="line">Line</option>
+    <option value="marker">Marker</option>  
+    <option value="spline-area">Spline Area</option>  
+    <option value="spline">Spline</option>
+    <option value="step-area">Step Area</option>
+    <option value="step-line">Step Line</option>
+    <option value="stick">Stick</option>
+</select>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // set the data
     var table = anychart.data.table('x');
@@ -18,79 +54,40 @@
     mapping = table.mapAs({x:'x', value:'value'});
 
     // set the chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
-    // set the series type and title
-    var series = chart.plot(0).line(mapping);
+    // set the series type
+    series = chart.plot(0).area(mapping);
     series.name("Population");
 
     // format y-axis labels
-    chart.plot(0).yAxis().labels().format("{%Value}m");
+    chart.plot(0).yAxis().labels().format("{%value}m");
 
-    // set the chart title and padding
+    // set the chart title
     chart.title('Switching the Series Type in Stock Charts');
-    chart.title().padding(20);
 
     // create a scroller series with values
-    var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'value'}));
+    scrollerSeries = chart.scroller().area(table.mapAs({'value': 'value'}));
 
-    // set the chart container and initiate drawing the chart
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
     chart.draw();
-
-    // create a label for switching to the line series
-    createLabel("Switch to Line", 10, function() {
-        // change the series type
-        series.seriesType("line");
-        scrollerSeries.seriesType("line");
-        chart.title("Switching the Series Type in Stock Charts \n Line");
     });    
 
-    // create a label for switching to the column series
-    createLabel("Switch to Column", 127, function() {
-        // change the series type
-        series.seriesType("column");
-        scrollerSeries.seriesType("column");
-        chart.title("Switching the Series Type in Stock Charts \n Column");
-    });    
+// switch the series type
+function switchType(){
+  var select = document.getElementById("typeSelect");
+  // switch the type of the main series
+  series.seriesType(select.value);
+  // switch the type of the scroller series
+  scrollerSeries.seriesType(select.value);
+};  
 
-    // create a label for switching to the area series
-    createLabel("Switch to Area", 265, function() {
-        // change the series type
-        series.seriesType("area");
-        scrollerSeries.seriesType("area");
-        chart.title("Switching the Series Type in Stock Charts \n Area");
-    });    
-
-});
-
-// a helper function for creating buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5")
-        document.body.style.cursor = "pointer";
-        label.draw();
-    });
-    label.listen("mouseOut", function(){
-        label.background().fill("#1976d2")
-        document.body.style.cursor = "auto";
-        label.draw();
-    });    
-    return label;
-}   
-
-// a helper function for setting the data
+// create data
 function data_us_population() {
-return [
+  return [
     {x:'1790-01-01', value:3.929214},
     {x:'1795-01-01', value:4.390561},
     {x:'1800-01-01', value:5.236631},
@@ -137,9 +134,7 @@ return [
     {x:'2005-01-01', value:299.456285},
     {x:'2010-01-01', value:308.745538},
     {x:'2015-01-01', value:318.914629}
-]};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+]};
+</script>
 </body>
 </html>

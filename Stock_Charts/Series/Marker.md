@@ -1,17 +1,8 @@
 # AnyStock Marker Series
 
-* [Overview](#overview)
-* [AnyStock Marker Series Adjustment](#anystock_marker_series_adjustment)
- * [Data](#data)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Marker type](#marker_type)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
-With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Chart_Types/Marker_Chart).
+With Marker series every point on the plot is presented with a symbol. Find more about Marker series in the [Marker Chart tutorial](../../Basic_Charts/Marker_Chart).
 
 ## AnyStock Marker Series Adjustment
 
@@ -131,9 +122,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 Use {api:anychart.core.stock.series.Marker#fill}fill(){api} and {api:anychart.core.stock.series.Marker#stroke}stroke(){api} to change fill and stroke. 
 
@@ -152,7 +141,7 @@ series_uk.stroke("#000");
 
 {sample}STOCK\_Marker\_05{sample}
 
-### Marker type 
+## Marker type 
 
 Us the {api:anychart.core.stock.series.Marker#type}type(){api} method to change series marker type.
 
@@ -165,14 +154,3 @@ series_uk.size(7);
 ```
 
 {sample}STOCK\_Marker\_06{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#999", 1.5, "6 2", "round");
-```
-
-{sample}STOCK\_Marker\_07{sample}

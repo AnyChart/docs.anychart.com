@@ -1,27 +1,4 @@
-#Tooltip
-
-* [Overview](#overview)
-* [Default Tooltip](#default_tooltip)
-* [Basic Settings](#basic_setings)
-* [Display Mode](#display_mode)
- * [Single](#single)
- * [Union](#union)
- * [Separated](#separated)
-* [Formatting](#formatting)
- * [Title](#title)
- * [Separator](#separator)
- * [Text](#text)
- * [Prefix and Postfix](#prefix_and_postfix)
-* [Size](#size)
-* [Background](#background)
-* [Out of chart](#out_of_chart)
-* [Out of stage](#out_of_stage)
- * [Tooltip global container](#tooltip_global_container)
-* [Out of screen](#out_of_screen)
-* [Position](#position)
- * [Fixed Tooltip Position](#fixed_tooltip_position)
-* [Hiding Time](#hiding_time)
-* [Themes](#themes)
+# Tooltip
 
 ## Overview
 
@@ -29,7 +6,7 @@ Tooltip is a text box that is hidden by default and can be displayed when a poin
 
 ## Default Tooltip
 
-By default, the tooltip is being shown when a point on a chart is hovered. To disable them from showing at all set "false" to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
+By default, the tooltip is being shown when a point on a chart is hovered. To disable them from showing at all, set `false` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
 
 ```
 // enable tooltip for all series
@@ -48,7 +25,7 @@ Hover each of the series to see the difference.
 
 **NOTE:** Tooltips inherit settings. When settings are defined for tooltips of a whole chart, the series' tooltips  inherit them and have the same settings. You can override settings for any series.
 
-To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFace}fontFace(){api} methods.
+To change font color and font face use {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} and {api:anychart.core.ui.Tooltip#fontFamily}fontFamily(){api} methods.
 
 For example, let's set "gold" color to all tooltips and then override it with "green" for one of the series. 
 
@@ -133,8 +110,7 @@ tooltip.displayMode("separated");
 
 ## Formatting 
 
-<a name="title_formatting"></a>
-### Title
+### Title Formatting
 
 You can manage tooltip title visual appearance using {api:anychart.core.ui.Tooltip#title}title(){api} method. You can adjust font's visual settings along with the title's background appearance.
 
@@ -165,9 +141,9 @@ Here is a sample with a title separator disabled.
 
 {sample}CS\_Tooltip\_09{sample}
 
-### Text
+### Text Formatting
 
-You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.cartesian.series.Base#tooltip}tooltip(){api} method.
+You can adjust tooltip content in any way you want. All you have to do is to define custom settings for the {api:anychart.core.Chart#tooltip}tooltip(){api} method.
 
 ```
 var tooltip = chart.tooltip();
@@ -186,8 +162,6 @@ The default content of a tooltip may vary for different chart types and series, 
 
 There are two parts of a tooltip that can hold some information: its title and its body text. This section describes formatting both parts for making your tooltips more customized and informative in a way you need.
 
-### Title
-
 For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
 ```
@@ -196,13 +170,11 @@ tooltip1.titleFormat("Manager: {%x}");
 
 {sample}CS\_Tooltip\_14{sample}
 
-### Text
-
-In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#format}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.Tooltip#format}format(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();
-tooltip.format(function(){
+tooltip.format(function (){
   /* code of your function */
 });
 ```
@@ -212,10 +184,13 @@ There are several possible ways of formatting the tooltip text: tokens, external
 The following sample demonstrates using tokens for formatting tooltips:
 
 ```
+// enable HTML for tooltips
+chart.tooltip().useHtml(true);
+
 // tooltip settings
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
-tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
+tooltip.format("Manager: <b>{%x}</b>\nSales volume: <b>${%value}</b>");
 ```
 
 {sample}CS\_Tooltip\_15{sample}
@@ -224,8 +199,8 @@ Use several formatting ways if there are some series on your chart or charts on 
 
 ```
 // set the tooltip title and text for the Column Chart
-columnChart.tooltip().titleFormat("{%SeriesName}");
-columnChart.tooltip().format("Department: {%x} \nSum: {%Value}");
+columnChart.tooltip().titleFormat("{%seriesName}");
+columnChart.tooltip().format("Department: {%x} \nSum: {%value}");
 
 // set the tooltip content
 seriesSpline.tooltip().format(function(e){
@@ -238,11 +213,160 @@ seriesSpline.tooltip().format(function(e){
 
 **Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity#creating_custom_tooltip)
 
-### Prefix and Postfix
+#### Prefix and Postfix
 
-Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
+Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (&deg;F).
 
 {sample}CS\_Tooltip\_11{sample}
+
+## HTML
+
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
+
+```
+chart.tooltip().useHtml(true);
+```
+
+This feature allows you to usa any possible HTML settings: you can adjust background color, font style and size, the separator, and so on - use [inline styles](#inline_styles) or [CSS classes](#css_classes). Tooltips are rendered as separate HTML elements added to DOM. 
+
+**NOTE:** AnyChart font and color settings methods for the default tooltip do not affect the HTML tooltip.
+
+### Inline Styles
+
+The following sample shows how to add an image and font settings to the HTML tooltip using inline styles:
+
+```
+// configure tooltips
+chart.tooltip().useHtml(true);  
+chart.tooltip().titleFormat("<img width='20' src='http://cdn.anychart.com/images/anychart-logo-medium.png'> <span style='font-size:28px;font-family:courier'>{%x}");  
+chart.tooltip().format("<span style='font-family:courier'>{%value}</span>");
+```
+
+{sample}CS\_Tooltip\_22{sample}
+
+### CSS Classes
+
+You can change the CSS style of the tooltip by overwriting the default CSS classes used in AnyChart: just add new classes with the same names to your web page.
+
+This is how the default div structure of the HTML tooltip looks like: 
+
+```
+<div class="anychart-tooltip">
+  <div class="anychart-tooltip-title"></div>
+  <hr noshade="true" class="anychart-tooltip-separator">
+  <div></div>
+</div>
+```
+
+And here are the default settings:
+
+```
+.anychart-tooltip {
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: rgba(33, 33, 33, 0.7);
+  border: none;
+  display: inline-block;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  color: #fff;
+  font-family: Verdana, Helvetica, Arial, 'sans-serif';
+  font-size: 12px;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.anychart-tooltip-separator {
+  color: rgba(206, 206, 206, 0.3);
+  border: none;
+  height: 1px;
+  margin: 5px 0;
+}
+
+.anychart-tooltip-title{
+  font-size: 14px;
+}
+```
+
+The sample below shows how to change the default settings:
+
+```
+.anychart-tooltip {
+    border-radius: 23px;
+    background: rgba(255, 160, 0, 0.7);
+    font-family: Courier, Helvetica, Arial, 'sans-serif';
+}
+
+.anychart-tooltip-separator {
+    height: 3px;
+    background-color: rgba(221, 44, 0, 0.7);
+}
+
+.anychart-tooltip-title{
+    font-size: 28px;
+}
+```
+
+{sample}CS\_Tooltip\_23{sample}
+
+### Events
+
+The HTML tooltip has its own events and special methods allowing you to listen to them. These methods can be combined with other [event listeners](Event_Listeners).
+
+Here is the full list of methods:
+
+<table>
+<tbody>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api}</td>
+<td>All HTML elements of the tooltip are added to the DOM. Triggered once for every tooltip (in case of separated mode or different tooltips for different series).
+</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeTitleChange}onBeforeTitleChange(){api}</td>
+<td> The tooltip title is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`, the rules defined by [formatting methods](#formatting) are not applied to the title, and the {api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api} is not triggered.
+</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api}</td>
+<td>The tooltip content changed.</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onBeforeContentChange}onBeforeContentChange(){api}</td>
+<td> The tooltip content is going to change. Returns `true` or `false`.
+
+If the listener function returns `false`, the rules defined by [formatting methods](#formatting) are not applied to the content, and the {api:anychart.core.ui.Tooltip#onContentChanged}onContentChanged(){api} is not triggered.</td>
+</tr>
+<tr>
+<td>{api:anychart.core.ui.Tooltip#onTitleChanged}onTitleChanged(){api}</td>
+<td>The tooltip title changed.</td>
+</tr>
+</tbody>
+</table>
+
+In the context, all methods get links to the four HTML elements of the tooltip (see the [CSS Classes](#css_classes) section). For example, this is how the context of {api:anychart.core.ui.Tooltip#onDomReady}onDomReady(){api} looks like:
+
+```
+// listen to the onDomReady event
+chart.tooltip().onDomReady(function() {
+  tooltipParentDiv = this.parentElement;
+  tooltipTitleContentDiv = this.titleElement;
+  tooltipSeparator = this.separatorElement;
+  tooltipContentDiv = this.contentElement;
+});
+```
+
+In the sample below HTML tooltip listeners and point event listeners are used to draw a chart in the tooltip:
+
+{sample}CS\_Tooltip\_24{sample}
 
 ## Size
 
@@ -268,13 +392,13 @@ background.cornerType("roundInner");
 background.corners(5);
 ```
 
-That is how tooltip background with the settings from above looks like:
+This is how tooltip background with the settings from above looks like:
 
 {sample}CS\_Tooltip\_12{sample}
 
 ## Out of chart
 
-In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
+In case when a tooltip is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set `true` to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
 // applies to all series
@@ -293,7 +417,7 @@ series2.tooltip().allowLeaveChart(false);
 
 Note that series' individual tooltip settings override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting "true" to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a [Legend](Legend) or a [Data Grid](../Gantt_Chart/DataGrid), setting `true` to the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that element.
 
 ## Out of stage
 
@@ -318,11 +442,11 @@ Note: that stage the chart belongs to is considered as the stage of the tooltip 
 
 *IMPORTANT NOTE:*
 
-When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get "true" as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
+When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get `true` as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
 
 ## Out of screen
 
-If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting "true" will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
+If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting `true` will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
 
 ```
 // adjust series tooltips
@@ -338,29 +462,24 @@ The third series inherits the chart's defaults in this sample.
 
 There are several methods for managing tooltips position on the chart. This section contains information on most of these methods.
   
-AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow the cursor. Setting *point* and a parameter binds tooltip to the hovered series point. Use the *chart* parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
+AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. The `"float"` parameter is the default one for this method and makes tooltip to follow the cursor. Setting `"point"` and a parameter binds tooltip to the hovered series point. Use the `"chart"` parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
 
 ```
-var tooltip = chart.tooltip();
-tooltip.positionMode("point");
+chart.tooltip().positionMode("point");
 ```
-
 Here is a sample with the tooltip stuck to the hovered point:
 
 {sample}CS\_Tooltip\_18{sample}
 
 ### Fixed Tooltip Position
 
-You can bind tooltips to a certain point on the chart plot using **chart** as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
+You can bind tooltips to a certain point on the chart plot using `"chart"` as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found below. You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
 
 You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.Tooltip#anchor}anchor(){api} method defines the main part of the tooltip for further positioning.
 
 ```
-// tooltip settings
-var tooltip = chart.tooltip();
-
 // set tooltip anchor
-tooltip.anchor("bottomLeft");
+chart.tooltip().anchor("bottomLeft");
 ```
 
 Here is a sample of two series with fixed tooltip position. Tooltip settings are the same except for the the tooltip anchor.
@@ -377,7 +496,7 @@ var tooltip2 = series2.tooltip();
 tooltip2.position("rightCenter");
 ```
 
-That is how the sample with the code from above looks like:
+This is how the sample with the code from above looks like:
 
 {sample}CS\_Tooltip\_20{sample}
 
@@ -395,31 +514,19 @@ var tooltip = series.tooltip();
 tooltip.hideDelay(1000);
 ```
 
-### Themes
+## Themes
 
 Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
 ```
 var themeSettings = {
   "column":{
-    // set tooltip display mode
     "tooltip": {
-      "displayMode": "point"
-    },
-    // series hub
-    "defaultSeriesSettings":{
-      // series settings
-      "column":{
-        // tooltip settings
-        "tooltip": {
-          "anchor": "bottomCenter",
-          "position": "topCenter",
-          "offsetX": 0,
-          "hideDelay": 3000,
-          "fontFamily": "Menlo",
-          "fontSize": 14
-        }
-      }
+    "positionMode": "point",
+    "hideDelay": 3000,
+    "offsetX": 0,
+    "fontFamily": "Menlo",
+    "fontSize": 11
     }
   }
 };

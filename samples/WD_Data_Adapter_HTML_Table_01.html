@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Data Adapter HTML Table 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js">
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+          }
+
+        html, body {
+            height: 100%;
+        }
+
+        #container {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            float: left;
+            max-width: 13%;
+            margin: 10px 0 0 5px;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<table id="htmlTable" class="htmlTable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>EUR</th>
+      <th>USD</th>
+      <th>YEN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01/01</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>01/02</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>01/03</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>01/04</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>01/05</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table> 
+<script>
+anychart.onDocumentReady(function () {
+
+  // create a chart and set the data
+  var chart = anychart.column();
+  
+  var tableData = anychart.data.parseHtmlTable("#htmlTable");
+
+  chart.data(tableData);
+
+  chart.legend(true);
+
+  // set chart container and draw
+  chart.container("container").draw();
+});   
+</script>
+</body>
+</html>

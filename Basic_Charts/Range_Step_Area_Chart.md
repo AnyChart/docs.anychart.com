@@ -1,11 +1,5 @@
 {:index 3.1}
-#Range Step Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
-* [Special Settings](#special_settings)
-  * [Step Direction](#step_direction)
+# Range Step Area Chart
 
 ## Overview
 
@@ -13,7 +7,7 @@ A range step area chart is a range area chart in which points are connected by h
 
 Step charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. They show periods with no change and emphasize the exact time of each change (the range version also emphasizing the difference between high and low values).
 
-The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting – step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
+The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -25,7 +19,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Range Step Area](Vertical/Range_Step_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Range Step Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -37,8 +31,9 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/range-steplinearea-chart/" target="_blank">Chartopedia: Range Step Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Range Step Area Chart](https://www.anychart.com/chartopedia/chart-types/range-steplinearea-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -46,7 +41,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 
 To create a Range Step Area series, use the {api:anychart.charts.Cartesian#rangeStepArea}rangeStepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong> and <strong>"high"</strong> parameters.
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the `low` and `high` parameters.
 
 ```
 // create data
@@ -63,7 +58,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a range step area series and set the data
 var series = chart.rangeStepArea(data);
@@ -94,9 +89,9 @@ In addition, see the full list of methods available for the Range Step Area seri
 
 The Range Step Area chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.RangeStepArea#stepDirection}stepDirection(){api}.
 
-There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
+There are three modes of step direction: center, backward, and forward. The default mode is **center** (in this case data points are placed to the center of horizontal segments).
 
-In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
+In the **forward** mode data points are the starting points of horizontal segments:  
 
 ```
 // set step direction to the forward mode
@@ -105,7 +100,7 @@ series.stepDirection("forward");
 
 {sample}BCT\_Range\_Step\_Area\_Chart\_02{sample}
 
-The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
+The **backward** mode sets data points as the final points of horizontal segments: 
 
 ```
 // set step direction to the backward mode

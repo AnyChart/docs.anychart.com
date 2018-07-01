@@ -1,14 +1,5 @@
 # AnyStock Range Area Series
 
-* [Overview](#overview)
-* [AnyStock Range Area Series Adjustment](#anystock_range_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Range Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Area Chart](../../Basic_Charts/Range_Area_Chart).
@@ -27,18 +18,18 @@ Here is how to set data as an array of arrays, array contains values and then yo
 // set the data
 table = anychart.data.table();
 table.addData([
-    ["2000-01-01", 2, 6],
-    ["2000-02-01", 2, 7],
-    ["2000-03-01", 3, 10],
-    ["2000-04-01", 5, 13],
-    ["2000-05-01", 8, 17],
-    ["2000-06-01", 11, 20],
-    ["2000-07-01", 13, 22],
-    ["2000-08-01", 13, 21],
-    ["2000-09-01", 11, 19],
-    ["2000-10-01", 8, 14],
-    ["2000-11-01", 5, 10],
-    ["2000-12-01", 5, 7]
+    ['2000-01-01', 2, 6],
+    ['2000-02-01', 2, 7],
+    ['2000-03-01', 3, 10],
+    ['2000-04-01', 5, 13],
+    ['2000-05-01', 8, 17],
+    ['2000-06-01', 11, 20],
+    ['2000-07-01', 13, 22],
+    ['2000-08-01', 13, 21],
+    ['2000-09-01', 11, 19],
+    ['2000-10-01', 8, 14],
+    ['2000-11-01', 5, 10],
+    ['2000-12-01', 5, 7]
 ]);
   
 // map the data
@@ -62,18 +53,18 @@ The next sample demonstrates the data arranged as array of objects.
 // set the data
 table = anychart.data.table('x');
 table.addData([
-    {x: "2000-01-01", low: 2, high: 6},
-    {x: "2000-02-01", low: 2, high: 7},
-    {x: "2000-03-01", low: 3, high: 10},
-    {x: "2000-04-01", low: 5, high: 13},
-    {x: "2000-05-01", low: 8, high: 17},
-    {x: "2000-06-01", low: 11, high: 20},
-    {x: "2000-07-01", low: 13, high: 22},
-    {x: "2000-08-01", low: 13, high: 21},
-    {x: "2000-09-01", low: 11, high: 19},
-    {x: "2000-10-01", low: 8, high: 14},
-    {x: "2000-11-01", low: 5, high: 10},
-    {x: "2000-12-01", low: 5, high: 7}
+    {x: '2000-01-01', low: 2, high: 6},
+    {x: '2000-02-01', low: 2, high: 7},
+    {x: '2000-03-01', low: 3, high: 10},
+    {x: '2000-04-01', low: 5, high: 13},
+    {x: '2000-05-01', low: 8, high: 17},
+    {x: '2000-06-01', low: 11, high: 20},
+    {x: '2000-07-01', low: 13, high: 22},
+    {x: '2000-08-01', low: 13, high: 21},
+    {x: '2000-09-01', low: 11, high: 19},
+    {x: '2000-10-01', low: 8, high: 14},
+    {x: '2000-11-01', low: 5, high: 10},
+    {x: '2000-12-01', low: 5, high: 7}
 ]);
   
 // map the data
@@ -148,9 +139,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 Use {api:anychart.core.stock.series.RangeArea#fill}fill(){api} to changing the fill color:
 
@@ -174,14 +163,3 @@ series_ny.hatchFill("confetti");
 ```
 
 {sample}STOCK\_Range\_Area\_06{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#FF0000", 2, "8 2");
-```
-
-{sample}STOCK\_Range\_Area\_07{sample}

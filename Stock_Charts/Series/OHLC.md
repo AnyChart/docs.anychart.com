@@ -1,19 +1,10 @@
 # AnyStock OHLC Series
 
-* [Overview](#overview)
-* [AnyStock OHLC Series Adjustment](#anystock_ohlc_series_adjustment)
- * [Data](#data)
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
-
 ## Overview
 
 OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Charts/OHLC_Chart).
 
-See also: [Candlestick](Candlestick).
+See also: [Japanese Candlestick](Japanese_Candlestick).
 
 ## AnyStock OHLC Series Adjustment
 
@@ -97,9 +88,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
  To change the default stroke colors setting use {api:anychart.core.stock.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.stock.series.OHLC#risingStroke}risingStroke(){api} methods:
 
@@ -110,14 +99,3 @@ series_acme.risingStroke("#339999", 1.5, "6 2", "bevel");
 ```
 
 {sample}STOCK\_OHLC\_04{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// highlighter (crosshair) adjusting
-chart.plot(0).dateTimeHighlighter("#0000FF", 0.5);
-```
-
-{sample}STOCK\_OHLC\_05{sample} 

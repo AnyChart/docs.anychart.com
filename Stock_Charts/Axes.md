@@ -1,15 +1,6 @@
 {:index 4}
 
-#Axes
-
-* [Overview](#overview)
-* [Stock Axes features](#stock_axes_features)
-* [Orientation](#orientation)
-* [Tickmarks](#tickmarks)
-* [Labels](#labels)
-* [Axis Line](#axis_line)
-* [Extra/Additional Axes](#extra/additional_axes)
-* [Grids](#grids)
+# Axes
 
 ## Overview
 
@@ -19,9 +10,9 @@ In AnyChart axes are used to control axes labels, lines and tick marks.
 * To know what scale options are available - [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
-* To learn more about Date/Time Scale - [Date/Time Axes](../Axes_and_Grids/Date_Time_Axes)
+* To find out how to add markers - see [Line Markers](../Axes_and_Grids/Line_Markers), [Range Markers](../Axes_and_Grids/Range_Markers), [Text Markers](../Axes_and_Grids/Text_Markers)
 
-In this section we will demonstrate only the differences of AnyStock axes and scales from basic charts' ones.
+In this section we will demonstrate the differences of AnyStock axes and scales from basic charts' ones.
 
 ## Stock Axes features
 
@@ -40,7 +31,7 @@ Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis i
 
 While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientation settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the plot. The Y-axes act as usual.
 
-##Tickmarks
+## Tickmarks
 
 The ticks in AnyStocks are a little bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}ticks(){api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}minorTicks(){api} method) ticks: 
 
@@ -59,8 +50,8 @@ Labels of the X-axis have an additional feature: it is a helper label that "save
 That happens when the helperLabel is on (by default). You can disable it by passing false to the {api:anychart.core.axes.StockDateTime#showHelperLabel}showHelperLabel(){api} method.
 
 ```
-	// disabling the Helper Label
-	chart.plot(0).xAxis().showHelperLabel(false);
+// disabling the Helper Label
+chart.plot(0).xAxis().showHelperLabel(false);
 ```
 
 {sample}STOCK\_Axes\_02{sample}
@@ -68,10 +59,10 @@ That happens when the helperLabel is on (by default). You can disable it by pass
 Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}position(){api} and {api:anychart.core.ui.Label#anchor}anchor(){api} to move them correctly.
 
 ```
-	// moving the labels
-	xAxis = chart.plot(0).xAxis();
-	xAxis.labels().position('right').anchor('left_center');
-	xAxis.minorLabels().position('right').anchor('left_center');
+// moving the labels
+xAxis = chart.plot(0).xAxis();
+xAxis.labels().position('right').anchor('left_center');
+xAxis.minorLabels().position('right').anchor('left_center');
 ```
 
 {sample}STOCK\_Axes\_03{sample}
@@ -81,25 +72,26 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 In AnyStock, the x-axis is not a line, but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}background(){api} and {api:anychart.core.axes.StockDateTime#height}height(){api} methods. Let's apply these methods:
 
 ```
-	// changing the background and the height of the axis
-	xAxis.background('#CCFFFF');
-	xAxis.height(40);
+// changing the background and the height of the axis
+xAxis.background('#CCFFFF');
+xAxis.height(40);
 ```
 
 {sample}STOCK\_Axes\_04{sample}
 
 ## Grids
 
-Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axis_Basics#grids), but it is a method of a plot, not a chart:
+Grids are added to every plot using {api:anychart.core.stock.Plot#yGrid}grid{api} method, the settings are similar to [basic grids](../Axes_and_Grids/Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
 // defining the chart 
 chart = anychart.stock();
 
 // dashed horizontal grid
-chart.plot(0).grid(0).enabled(true);
-chart.plot(0).grid(0).stroke({dash: "3 5"});
+chart.plot(0).yGrid().enabled(true);
+chart.plot(0).yGrid().stroke({dash: "3 5"});
 ```
+
 {sample}STOCK\_Axes\_05{sample}
 
 ## Extra/Additional Axes
@@ -113,7 +105,7 @@ extraYAxis.orientation("right");
 extraYAxis.scale(extraYScale);
 ```
 
-Note that when you add an extra axis you need to change chart {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and percents:
+Note that when you add an extra axis you need to change chart {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and in percent:
 
 ```
 // create a chart
@@ -123,4 +115,7 @@ chart.padding("10%", 10, 10, 50);
 ```
 
 {sample}STOCK\_Plots\_03{sample}
+
+## Axes Markers
+
 

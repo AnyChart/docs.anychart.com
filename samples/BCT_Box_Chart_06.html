@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['sparkline']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Box Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   
   // create data
   var data = [
@@ -19,33 +35,29 @@
   ];
 
   // create a chart
-  chart = anychart.box();
+  var chart = anychart.box();
 
   // create a series and set the data
   series = chart.box(data);
 
   // configure whiskers
   series.whiskerWidth(30);
-  series.hoverWhiskerWidth(30);
-  series.selectWhiskerWidth(30);
-  series.whiskerStroke("#c2b65d", 0.7);
-  series.hoverWhiskerStroke("#c2b65d", 0.5);
-  series.selectWhiskerStroke("#c2b65d", 1);
+  series.normal().whiskerStroke("#dd2c00", 0.5);
+  series.hovered().whiskerStroke("#dd2c00", 1);
+  series.selected().whiskerStroke("#dd2c00", 2);
 
   // set the chart title
   var title = chart.title("Box Chart: Whiskers");
 
   // set the interactivity mode
-  chart.interactivity("byX");
+  chart.interactivity("by-x");
   
   // set the container id
   chart.container("container");
   
   // initiate drawing the chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

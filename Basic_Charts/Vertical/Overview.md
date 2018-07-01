@@ -1,16 +1,9 @@
 {:index 0}
-#Vertical Charts
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Switching On-the-Fly](#onthefly)
-  * [Series](#series)
-  * [Chart](#chart)
-* [Supported Types](#supported_types)
+# Vertical Charts
 
 ## Overview
 
-In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature – see the [Supported Types](#supported_types) section.
+In AnyChart you can draw a chart in a vertical orientation by switching the orientation of the axes. Most types of series support this feature - see the [Supported Types](#supported_types) section.
 
 This article explains how to create a vertical chart and how to change the orientation of a chart on-the-fly.
 
@@ -21,7 +14,6 @@ To create a vertical chart, use one of these three chart constructors:
 * {api:anychart#verticalArea}anychart.verticalArea(){api}
 * {api:anychart#verticalLine}anychart.verticalLine(){api}
 * {api:anychart#bar}anychart.bar(){api}
-
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
@@ -40,8 +32,8 @@ var data = anychart.data.set([
 ]);
 
 // map the data
-var seriesData_1 = data.mapAs({x: [0], value: [1]});
-var seriesData_2 = data.mapAs({x: [0], value: [2]});
+var seriesData_1 = data.mapAs({x: 0, value: 1});
+var seriesData_2 = data.mapAs({x: 0, value: 2});
 
 // create a chart
 chart = anychart.vertical();
@@ -61,12 +53,11 @@ chart.draw();
 
 {sample}BCT\_Vertical\_01{sample}
 
-<a name='onthefly'></a>
 ## Switching On-the-Fly
 
 ### Series
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
+After creating a series, you can change its orientation on-the-fly by calling the **isVertical()** method and setting its parameter to either `true` or `false` (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
 
 **Note:** This setting affects only the series, not the axes.
 
@@ -74,7 +65,7 @@ In the following sample, this method is used to draw two horizontal (area) and a
 
 ```
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create the first series
 var series1 = chart.area(seriesData_1);
@@ -93,28 +84,19 @@ chart.getSeriesAt(2).isVertical(true);
 
 ### Chart
 
-To switch the orientation of the whole chart on-the-fly, you should change the orientation of both the series and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical** and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods:
+To switch the orientation of the whole chart on-the-fly, with the basic cartesian charts you can simply use the {api:anychart.charts.Cartesian#isVertical}isVertical(){api} method.
 
 ```
 // create a chart
-var chart = anychart.column();
+chart = anychart.line();
 
-// create the first series
-var series1 = chart.column(seriesData_1);
-
-// create the second series
-var series2 = chart.column(seriesData_2);
-
-// change the orientation of the series
-chart.getSeriesAt(0).isVertical(true);
-chart.getSeriesAt(1).isVertical(true);
-
-// change the orientation of the axes
-chart.xAxis().orientation('left');
-chart.yAxis().orientation('bottom');
+// change the orientation of the chart
+chart.isVertical(true);
 ```
 
 {sample}BCT\_Vertical\_03{sample}
+
+**Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical()** method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
 
 ## Supported Types
 
@@ -123,12 +105,16 @@ Here is the list of supported vertical charts:
 * [Bar (Vertical Column)](../Bar_Chart)
 * [Range Bar (Vertical Column)](../Range_Bar_Chart)
 * [Vertical Area](Area_Chart)
+* [Vertical Bar Mekko](Bar_Mekko_Chart)
 * [Vertical Box](Box_Chart)
 * [Vertical Bubble](Bubble_Chart)
 * [Vertical Japanese Candlestick](Japanese_Candlestick_Chart)
 * [Vertical Jump Line](Jump_Line_Chart)
+* [Vertical HiLo](HiLo_Chart)
 * [Vertical Line](Line_Chart)
 * [Vertical Marker](Marker_Chart)
+* [Vertical Mekko](Mekko_Chart)
+* [Vertical Mosaic](Mosaic_Chart)
 * [Vertical OHLC](OHLC_Chart)
 * [Vertical Range Area](Range_Area_Chart) 
 * [Vertical Range Spline Area](Range_Spline_Area_Chart)
@@ -139,7 +125,7 @@ Here is the list of supported vertical charts:
 * [Vertical Step Line](Step_Line_Chart)
 * [Vertical Stick](Stick_Chart)
 
-See also [stacked](../Stacked/Overview) charts:
+See also stacked charts:
 
 * [Percent Stacked Bar (Vertical Column)](../Stacked/Percent/Bar_Chart)
 * [Percent Stacked Vertical Area](../Stacked/Percent/Vertical_Area_Chart)

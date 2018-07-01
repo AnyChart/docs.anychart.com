@@ -1,40 +1,51 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Text Marker 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [2000, 10000],
     [2001, 12000],
     [2002, 18000],
     [2003, 11000],
     [2004, 9000]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.area();
-
-  // set data
-  chart.area(data);
+  // create chart
+  var chart = anychart.area(data);
 
   // custom scale
   var additionalScale = anychart.scales.linear();
   // set ticks interval
   additionalScale.minimum(0);
   additionalScale.maximum(10);
-  var additionalTicks = additionalScale.ticks();
-  additionalTicks.interval(1);
+  additionalScale.ticks().interval(1);
 
   // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   // apply custom scale
   var yAxis1 = chart.yAxis(1);
@@ -46,13 +57,13 @@
   // set marker
   var textMarker = chart.textMarker(0);
   // bind marker to the scale
-  textMarker.axis(yAxis);
+  textMarker.axis(chart.yAxis());
   // set marker position
   textMarker.value(18000);
   // set marker alignment
   textMarker.align("left");
   // set anchor
-  textMarker.anchor("leftcenter");
+  textMarker.anchor("left-center");
   // set marker text size
   textMarker.fontSize(12);
   // set marker text color
@@ -61,6 +72,11 @@
   textMarker.offsetX(5);
   // set marker text
   textMarker.text("Historical Maximum");
+  // enable text marker background and configure it
+  textMarker.background().enabled(true);
+  textMarker.background().stroke("1 gray");
+  textMarker.background().fill("gray 0.1");
+  textMarker.padding(3);  
 
   // set red marker
   var textMarker1 = chart.textMarker(1);
@@ -101,7 +117,7 @@
   textMarker3.value(8);
   textMarker3.text("8.00");
   textMarker3.align("right");
-  textMarker3.anchor("leftcenter");
+  textMarker3.anchor("left-center");
   textMarker3.fontWeight("bold");
   textMarker3.fontSize(13);
   textMarker3.offsetX(10);
@@ -109,9 +125,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

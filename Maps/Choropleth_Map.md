@@ -1,22 +1,11 @@
 {:index 7}
-#Choropleth Maps
-
-* [Choropleth Map](#choropleth_map)
-* [Data](#data)
-* [Data Classes](#data_classes)
- * [Classed Choropleth](#classed_choropleth)
- * [Unclassed Choropleth](#unclassed_choropleth)
-* [Advantages and Disadvantages](#advantages_and_disadvantages)
- * [Advantages](#advantages)
- * [Disadvantages](#disadvantages)
-
+# Choropleth Maps
 
 ## Choropleth Map
 
 These are maps, where areas are colored or shaded according to a prearranged key. Each shade or colour represents a range of values. 
-Population density information, expressed as 'per mile²,' is appropriately represented using a choropleth map. 
+Population density information, expressed as 'per mile&sup2;,' is appropriately represented using a choropleth map. 
 Choropleth maps are also appropriate for indicating differences in land use, like the amount of recreational land or type of forest cover.
-
 
 ## Data
 
@@ -33,29 +22,28 @@ Example datasets appropriate for choropleths:
 - world map of income tax rates in each country;
 - number of deaths per 500,000 in 2015, reported by USA;
 - map showing the percentage change in solved to unresolved cases from 1995 to 2015 in the UK;
-- world map of percentage of population over 90 years old, reported by Canada.
+- world map of the percentage of population over 90 years old, reported by Canada.
 
-That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. 
-The value might be set as a numeric value or you may define a random value.
+That's the code sample of a dataset. All points are set as objects, each has an `id` field and a `value` field. 
 
 ```
-var dataSet = anychart.data.set([
-                {'id': 'AU.WA', 'value': 300},  // Western Australia
-                {'id': 'AU.JB'},                // Jervis Bay Territory
-                {'id': 'AU.NS', 'value': 240},  // New South Wales
-                {'id': 'AU.VI', 'value': 75},   // Victoria
-                {'id': 'AU.NT', 'value': 130},  // Northern Territory
-                {'id': 'AU.TS', 'value': 190},  // Tasmania
-                {'id': 'AU.CT', labels: false},  // Australian Capital Territory
-                {'id': 'AU.SA'},                // South Australia
-                {'id': 'AU.QL'}                 // Queensland
-            ]);
+var data = [
+    {'id': 'AU.WA', 'value': 300}, 
+    {'id': 'AU.JB'},               
+    {'id': 'AU.NS', 'value': 240}, 
+    {'id': 'AU.VI', 'value': 75},  
+    {'id': 'AU.NT', 'value': 130}, 
+    {'id': 'AU.TS', 'value': 190}, 
+    {'id': 'AU.CT'},
+    {'id': 'AU.SA'},               
+    {'id': 'AU.QL'}                
+]);
 ```
 
 To connect the data to the map and to define its type you may use the next construction:
 
 ```
-s1 = map.choropleth(dataSet1);
+series = map.choropleth(data);
 ```
 
 {sample}Maps\_Choropleth\_01{sample}
@@ -64,14 +52,14 @@ In the data above we haven't defined the value for some regions, but those regio
 they will become of default color for undefined regions, so it's better to set the fill for them:
 
 ```
-var dataSet = anychart.data.set([
-                {'id': 'AU.WA', 'value': 300},  // Western Australia
-                {'id': 'AU.NS', 'value': 240},  // New South Wales
-                {'id': 'AU.VI', 'value': 75},   // Victoria
-                {'id': 'AU.NT', 'value': 130},  // Northern Territory
-                {'id': 'AU.TS', 'value': 190},  // Tasmania
-                {'id': 'AU.CT', labels: false}, // Australian Capital Territory
-            ]);
+var data = [
+    {'id': 'AU.WA', 'value': 300},
+    {'id': 'AU.NS', 'value': 240},
+    {'id': 'AU.VI', 'value': 75}, 
+    {'id': 'AU.NT', 'value': 130},
+    {'id': 'AU.TS', 'value': 190},
+    {'id': 'AU.CT'}
+];
 			
 // set the fill for the regions you haven't defined in the dataSet
 map.unboundRegions().fill('#eee');
@@ -93,28 +81,11 @@ A map with only three classes is quite easy to understand, but it may hide some 
 
 Classed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Ordinal, so each class/color has some certain value bounds.
 
-<!--Classification Method-->
+The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges. The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
 
-The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges.
-The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
-<!-- There are three general ways to classify the data: -->
+One of the most popular ways to classify the data is using equal intervals. The data is divided into ranges of equal size (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range, but has no sense, when the data values are spread unequally. 	
 
-<!-- - Equal interval  -->
-One of the most popular ways to classify the data is using equal intervals. The data is divided into ranges of equal size 
-(e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
-but has no sense, when the data values are spread unequally. 	
-
-<!-- - Quantiles
-This way will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
-and 4 data classes, you'll get only 5 territories in each class. The problem 
-with quantiles is that there's no obvious borders between the less and the highest values, and classes may have very different numerical ranges, 
-e.g. 1-10, 10-20, 20-1200, 1200-1250, etc. Quantiles lead to having groups of places with very different rates, so use this only in specific situations.
-
-- Natural Breaks 
-This way is a kind of "optimal" classification scheme, when the value borders are set where the between-class difference is the biggest and 
-the difference between within-class values is the smallest.	-->
-	
-You can set the classes only by yourself<!--, no matter which classification method you decided to use-->. The sample of data classification is shown below.
+You can set the classes only by yourself. The sample of data classification is shown below.
 ```
 // making of the ordinal colorRange
 ordinalScale = anychart.scales.ordinalColor([
@@ -152,7 +123,7 @@ And there's the sample with the colorRange of linear type:
 
 {sample}Maps\_Choropleth\_04{sample}
 
-Read more about [ColorRange](../Color_Range.md).
+Read more about [ColorRange](ColorRange).
 
 ## Advantages and Disadvantages
 
@@ -178,8 +149,7 @@ It can be difficult to distinguish between different shades.
 Variations within map units are hidden, and for this reason smaller units are better than large ones.
 
 If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
-- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
+- [Dot Density Maps](Dot\_\(Point\)\_Map)
+- [Graduated/Proportional Symbol Maps](Proportional_Symbol_Map)
 
 These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.

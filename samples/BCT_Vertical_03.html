@@ -1,95 +1,71 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Vertical 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label><input onclick="verticalEnabled(false)" type="radio" name="orientation" checked>Horizontal Orientation</label>
+<label><input onclick="verticalEnabled(true)" type="radio" name="orientation">Vertical Orientation</label> 
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-    // create a stage    
-    stage = anychart.graphics.create("container"); 
-
-    // create a data set
-    var data = anychart.data.set([
+    // data
+    var data = [
       ["John", 10000, 12500],
       ["Jake", 12000, 15000],
       ["Peter", 13000, 16500],
       ["James", 10000, 13000],
       ["Mary", 9000, 11000]
-    ]);
-
-    // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+    ];
 
     // create a chart
-    var chart = anychart.column();
+    chart = anychart.column();
 
-    // create the first seriese
-    var series1 = chart.column(seriesData_1);
+    // set data
+    chart.data(data);
 
-    // create the second series, set the data and name
-    var series2 = chart.column(seriesData_2);
-
-    // set the chart position and title
-    chart.top(35);
+    // set the chart title
     chart.title("Vertical Charts: Changing On-the-Fly (Chart)");
 
-    // set the container
-    chart.container(stage);
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-
-    // create a label for changing the orientation of the chart to vertical
-    createLabel("Vertical Orientation", 10, function() {
-        // change the orientation of the series
-        chart.getSeriesAt(0).isVertical(true);
-        chart.getSeriesAt(1).isVertical(true);
-        // change the orientation of the axes
-        chart.xAxis().orientation('left');
-        chart.yAxis().orientation('bottom');
-    });
-
-    // create a label for change the orientation of the chart to horizontal
-    createLabel("Horizontal Orientation", 155, function() {
-        // change the orientation of the series
-        chart.getSeriesAt(0).isVertical(false);
-        chart.getSeriesAt(1).isVertical(false);
-        // change the orientation of the axes
-        chart.xAxis().orientation('bottom');
-        chart.yAxis().orientation('left');
-    });
 });
-
-    // a helper function for creating buttons
-    function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#1976d2"});
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    label.listen("mouseOver", function(){
-        label.background().fill("#1976d2 0.5");
-        document.body.style.cursor = "pointer";
-        label.draw();
-        });
-    label.listen("mouseOut", function(){
-        label.background().fill("#1976d2");
-        document.body.style.cursor = "auto";
-        label.draw();
-        });    
-    return label;
-};</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+    
+// change the orientation of the chart
+function verticalEnabled(enabled) {
+  chart.isVertical(enabled);
+}
+</script>
 </body>
 </html>

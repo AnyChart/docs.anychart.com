@@ -1,14 +1,5 @@
 # AnyStock JumpLine Series
 
-* [Overview](#overview)
-* [AnyStock JumpLine Series Adjustment](#anystock_jumpline_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 JumpLine Series are quite alike [Column](Column) or [Step Line](Step_Line) Series but the JumpLine Series uses line segments like stepline with no vertical lines. Read more about Jump Line Series in the [Jump Line Series tutorial](../../Basic_Charts/Jump_Line_Chart).
@@ -94,9 +85,7 @@ You can change the type of series to another compatible type. See the [Series Ty
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To set the stroke color for the series use {api:anychart.core.stock.series.Line#stroke}stroke(){api} with a color set as a parameter.
 
@@ -106,14 +95,3 @@ series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Jump\_Line\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair adjusting
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Jump\_Line\_06{sample}

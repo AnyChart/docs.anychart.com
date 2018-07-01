@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="x-cat-tags" content="anyMap"/>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="../anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-<script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-<script x-export="stage">
-anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Dashboard 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See http://docs.anychart.com/latest/Maps/Map_Projections
+    // See https://docs.anychart.com/Maps/Map_Projections
     
-    var dataSet = anychart.data.set([
-        ['AU.WA', 300],
-        ['AU.JB', 230],
-        ['AU.NS', 240],
-        ['AU.VI', 275],
-        ['AU.NT', 130],
-        ['AU.TS', 190],
-        ['AU.CT', 100],
-        ['AU.SA', 305],
-        ['AU.QL', 190]
-    ]);
+    var data = [
+['AU.WA', 300],
+['AU.JB', 230],
+['AU.NS', 240],
+['AU.VI', 275],
+['AU.NT', 130],
+['AU.TS', 190],
+['AU.CT', 100],
+['AU.SA', 305],
+['AU.QL', 190]
+    ];
 
-    // mapping the data to the chart
-    var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
-    var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
+    var stage = anychart.graphics.create("container");
 
-    stage = anychart.graphics.create("container");
-    var mapChart = anychart.map();
-    mapChart.geoData(anychart.maps.australia);
-    mapChart.container(stage);
-    mapChart.title('Australia Map');
-    // set the series
-    var series = mapChart.choropleth(mapDataSet);
+    // create and display map
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+    map.title('Australia Map');
+    map.choropleth(data);
 
-    // disable the labels
-    series.labels(false);
-    mapChart.bounds(0, 0, '100%', '70%');
-    mapChart.draw();
+    map.bounds(0, 0, '100%', '70%');
+    map.container(stage);    
+    map.draw();
 
-    var areaChart = anychart.area();
-    areaChart.container(stage);
-    areaChart.title('Spline-Area Chart');
-    areaChart.bounds(0, '70%', '100%', '30%');
-    areaChart.splineArea(chartDataSet);
-    areaChart.draw();
+    // create and display chart
+    var area = anychart.area();
+    area.title('Spline Area Chart');
+    area.splineArea(data);
 
-    var yAreaScale = areaChart.yScale();
-    yAreaScale.minimum(0);
-    yAreaScale.maximum(350);
+    area.bounds(0, '70%', '100%', '30%');
+    area.container(stage);    
+    area.draw();
 
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>
 </body>
 </html>

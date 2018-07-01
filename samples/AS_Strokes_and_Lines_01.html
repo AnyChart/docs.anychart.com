@@ -1,16 +1,32 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Strokes and Lines 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // chart type
-  chart = anychart.line();
+  var chart = anychart.line();
 
   // title
   chart.title("Sample Line Settings");
@@ -25,37 +41,37 @@
   ]);
 
   // set first series data
-  var line = chart.line(data.mapAs({x: [0], value: [1]}));
+  var line = chart.line(data.mapAs({x: 0, value: 1}));
   // set stroke thickness 5px and stroke color as red
   line.stroke("5 red");
   // stroke settings for mouse over the series
-  line.hoverStroke("5 red");
+  line.hovered().stroke("5 red");
   // set series name
   line.name("Solid Stroke Color");
 
   // set data into second series
-  var spline = chart.spline(data.mapAs({x: [0], value: [2]}));
+  var spline = chart.spline(data.mapAs({x: 0, value: 2}));
   // set stroke thickness 5px, stroke color green and stroke opacity 0.4
   spline.stroke("5 green 0.4");
   // stroke settings for mouse over the series 
-  spline.hoverStroke("5 #006600 0.4");
+  spline.hovered().stroke("5 #006600 0.4");
   // set series name
   spline.name("Solid Color with Opacity");
     
   // set data into third series
-  var step = chart.stepLine(data.mapAs({x: [0], value: [3]}));
+  var step = chart.stepLine(data.mapAs({x: 0, value: 3}));
   // set stroke thickness 5px and apply gradient colors
   step.stroke({
     keys: [".1 red", ".5 blue", ".9 green"],
     thickness: 5
   });
   // disable marker on mouse over
-  step.hoverMarkers(false);
+  step.hovered().markers(false);
   // set series name
   step.name("Gradient Color");
 
   // set data into forth series
-  var area = chart.splineArea(data.mapAs({x: [0], value: [4]}));
+  var area = chart.splineArea(data.mapAs({x: 0, value: 4}));
   area.stroke({
     // stroke color
     color: "darkblue",
@@ -64,7 +80,7 @@
     // stroke thickness
     thickness: 3}
   );
-  area.hoverStroke({
+  area.hovered().stroke({
     // stroke color
     color: "darkblue",
     // dash settings
@@ -77,9 +93,7 @@
 
   // draw
   chart.container("container").draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,66 +1,84 @@
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
- <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="stage">
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GFX Performance 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="renderButton" onclick="render()">Render</button>
+<div id="container"></div>
+<script>
 stage = acgraph.create("container");
 
 var start;
 var finish;
 
-var labelBg = stage.rect();
-var label = stage.text(130,130);
-    label.text("Click here to start the process of rendering");
+stage.listen("renderstart", function (){
+  start = (new Date()).getTime();
+});
+
+// render rectangles
+function render(){
+  stage.listenOnce("renderfinish", function (){
+
+    document.getElementById("renderButton")
+      .style.visibility = "hidden";
+
+    finish = (new Date()).getTime();
+
+    var labelBg = stage.rect();
+    var label = stage.text(130, 130);
+    label.text((finish - start) + "ms");
     var labelBounds = label.getBounds();
+    
     labelBg
-        .setX((labelBounds.left)-20)
-        .setY((labelBounds.top)+20)
-        .setWidth(labelBounds.width+40)
-        .setHeight(labelBounds.height-40)
-        .fill("#fff")
-        .stroke("#000")
-        .cursor("pointer");
+      .setX((labelBounds.left)-20)
+      .setY((labelBounds.top)+20)
+      .setWidth(labelBounds.width+40)
+      .setHeight(labelBounds.height-40)
+      .fill("#fff")
+      .stroke("#000")
+      .cursor("pointer");
     label.zIndex(1000000);
     label.disablePointerEvents(true);
     labelBg.zIndex(1000000);
+  });
 
+  stage.suspend();
 
-stage.listen("renderstart", function(){
-    start = (new Date()).getTime();
-});
-
-// this is to be performed on a click
-labelBg.listen("click", function(){
-
-stage.listenOnce("renderfinish", function(){
-    finish = (new Date()).getTime();
-    label.text((finish - start) + "ms");
-    var labelBounds = label.getBounds();
-    labelBg
-        .setX((labelBounds.left)-20)
-        .setY((labelBounds.top)+20)
-        .setWidth(labelBounds.width+40)
-        .setHeight(labelBounds.height-40);
-});
-
-stage.suspend();
-for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 500; i++) {
     var left = Math.random() * 300;
     var qwer = Math.random() * 300;
     
     var rect = stage.rect(left, qwer, 10, 10);
     rect.fill('green');
-}
-stage.resume();
-});
+  }
 
+  stage.resume();
+};
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

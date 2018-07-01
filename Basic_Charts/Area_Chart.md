@@ -1,16 +1,5 @@
 {:index 1}
-#Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Stacked Area](#stacked_area)
-  * [Vertical Area](#vertical_area)
-  * [3D Area](#3d_area)
+# Area Chart
 
 ## Overview
 
@@ -28,12 +17,12 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
-<tr><td>Vertical</td><td>[Vertical Area](Vertical/Vertical_Area_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Area](3D/3D_Area_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Area](Vertical/Area_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Area](3D/Area_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart/Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Area_Chart), [Polygon](Polar_Plot/Polygon_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Area_Chart)</td></tr>
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
@@ -42,8 +31,10 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Area Sparkline](Sparkline_Chart#area_sparkline_chart)</td></tr>
+<tr><td></td><td>[Polygon](Polygon_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Area Chart](https://www.anychart.com/chartopedia/chart-types/area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -56,17 +47,17 @@ To create an Area series explicitly, call the {api:anychart.charts.Cartesian#are
 The following sample demonstrates how a basic Area chart is created:
 
 ```
-// create a data set
-var data = anychart.data.set([
+// create data
+var data = [
   ["January", 10000],
   ["February", 12000],
   ["March", 18000],
   ["April", 11000],
   ["May", 9000]
-]);
+];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create an area series and set the data
 var series = chart.area(data);
@@ -90,39 +81,43 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Area series:
+The [appearance settings](../Appearance_Settings) of an Area chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
+Combine them with the following methods:
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-In the sample below, there are two Area series with some of the appearance settings configured:
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there are two Area series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.area(seriesData_1);
 
 // configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().fill("#00cc99", 0.3);
+series1.hovered().fill("#00cc99", 0.1);
+series1.selected().fill("#00cc99", 0.5);
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.area(seriesData_2);
 
 // configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.hatchFill("zigzag", "#808080", 1, 15);
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().fill("#0066cc", 0.3);
+series2.hovered().fill("#0066cc", 0.1);
+series2.selected().fill("#0066cc", 0.5);
+series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Area\_Chart\_02{sample}
@@ -166,4 +161,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Ar
 
 To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Area chart is described in the following article: [3D Area Chart](3D/3D_Area_Chart)
+The 3D Area chart is described in the following article: [3D Area Chart](3D/Area_Chart)

@@ -1,14 +1,5 @@
 # AnyStock Range Spline Area Series
 
-* [Overview](#overview)
-* [AnyStock Range Spline Area Series Adjustment](#anystock_range_spline_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series) 
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Range Spline Area demonstrates how a range changes in time. There are two values to be set for this series: low and high. Find more about this series type in [Range Spline Area Chart](../../Basic_Charts/Range_Spline_Area_Chart).
@@ -27,18 +18,18 @@ Here is how to set data as an array of arrays, array contains values and then yo
 // set the data
 table = anychart.data.table();
 table.addData([
-    ["2000-01-01", 2, 6],
-    ["2000-02-01", 2, 7],
-    ["2000-03-01", 3, 10],
-    ["2000-04-01", 5, 13],
-    ["2000-05-01", 8, 17],
-    ["2000-06-01", 11, 20],
-    ["2000-07-01", 13, 22],
-    ["2000-08-01", 13, 21],
-    ["2000-09-01", 11, 19],
-    ["2000-10-01", 8, 14],
-    ["2000-11-01", 5, 10],
-    ["2000-12-01", 5, 7],
+    ['2000-01-01', 2, 6],
+    ['2000-02-01', 2, 7],
+    ['2000-03-01', 3, 10],
+    ['2000-04-01', 5, 13],
+    ['2000-05-01', 8, 17],
+    ['2000-06-01', 11, 20],
+    ['2000-07-01', 13, 22],
+    ['2000-08-01', 13, 21],
+    ['2000-09-01', 11, 19],
+    ['2000-10-01', 8, 14],
+    ['2000-11-01', 5, 10],
+    ['2000-12-01', 5, 7],
 ]);
   
 // map the data
@@ -97,11 +88,11 @@ Simple multi-series chart:
 // set the data
 table = anychart.data.table();
 table.addData([
-    ["2000-01-01", 2, 6, -3, 4],
-    ["2000-02-01", 2, 7, -2, 5],
-    ["2000-03-01", 3, 10, 2, 10],
-    ["2000-04-01", 5, 13, 7, 16],
-    ["2000-05-01", 8, 17, 12, 22]
+    ['2000-01-01', 2, 6, -3, 4],
+    ['2000-02-01', 2, 7, -2, 5],
+    ['2000-03-01', 3, 10, 2, 10],
+    ['2000-04-01', 5, 13, 7, 16],
+    ['2000-05-01', 8, 17, 12, 22]
 ]);
   
 // map the data
@@ -150,9 +141,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+## Appearance
 
 Use {api:anychart.core.stock.series.RangeSplineArea#fill}fill(){api} to change fill color, {api:anychart.core.stock.series.RangeSplineArea#highStroke}highStroke(){api} and {api:anychart.core.stock.series.RangeSplineArea#lowStroke}lowStroke(){api} to color lines:
 
@@ -175,16 +164,3 @@ series_ny.hatchFill("confetti");
 ```
 
 {sample}STOCK\_Range\_Spline\_Area\_06{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#FF0000", 2, "8 2");
-```
-
-{sample}STOCK\_Range\_Spline\_Area\_07{sample}
-
-Find more about crosshair in the [Crosshair article](../../Axes_and_Grids/Crosshair).

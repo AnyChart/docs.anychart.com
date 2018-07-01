@@ -1,78 +1,57 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
-  var newData = getNewData();
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Events 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  //create data tree on our data
-  var treeData = anychart.data.tree(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+  // create data tree on our data
+  var treeData = anychart.data.tree(getData(), "as-table");
 
-  //create project gantt chart
-  chart = anychart.ganttProject();
+  // create project gantt chart
+  var chart = anychart.ganttProject();
   chart.title('Click on the row and change the title');
+
+  // set data for the chart
+  chart.data(treeData);
 
   //set container id for the chart
   chart.container('container');
 
-  //set data for the chart
-  chart.data(treeData);
-
-  //set start splitter position settings
-  chart.splitterPosition(200);
-
-  //get chart data grid link to set column settings
-  var dataGrid = chart.dataGrid();
-
-  //set first column settings
-  var firstColumn = dataGrid.column(1);
-  firstColumn.title('System Engineering');
-  firstColumn.width(140);
-  firstColumn.cellTextSettings().hAlign('left');
-  firstColumn.format(function(item) {
-    return item.get('name');
-  });
-  firstColumn.cellTextSettingsOverrider(labelTextSettingsOverrider);
-
-
   //initiate chart drawing
   chart.draw();
 
-  chart.zoomTo(Date.UTC(2008, 0, 31, 1, 36), Date.UTC(2008, 1, 15, 10, 3));
-
-  //--------------------------------------------------
-  // External events
-  //--------------------------------------------------
-  chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
-    msg = anychart.enums.EventType.ROW_CLICK + ': ' + e['item'].get('name');   // create a string from the information got by using listeners that will be placed in the Chart Title
+  // handle row click event
+  chart.listen("rowClick", function(e) {
+    msg = "rowClick" + ': ' + e['item'].get('name'); 
     chart.title(msg);
   });
 
 });
 
 
-
-function labelTextSettingsOverrider(label, item) {
-  switch (item.get('type')) {
-    case 'main':
-      label.fontColor('red').fontWeight('bold');
-      break;
-    case 'first':
-      label.fontColor('green').fontWeight('bold');
-      break;
-    case 'second':
-      label.fontColor('orange').fontWeight('bold');
-      break;
-  }
-}
-
-
-function getNewData() {
+function getData() {
   return [
     {
       'id': '1',
@@ -91,7 +70,7 @@ function getNewData() {
       'actualStart': Date.UTC(2008, 0, 30, 16, 0),
       'actualEnd': Date.UTC(2008, 1, 4, 14, 18),
       'connectTo': '3',
-      'connectorType': 'FinishStart'
+      'connectorType': 'finish-start'
     },
     {
       'id': '3',
@@ -103,7 +82,7 @@ function getNewData() {
       'actualStart': Date.UTC(2008, 0, 31, 0, 47),
       'actualEnd': Date.UTC(2008, 1, 5, 14, 18),
       'connectTo': '5',
-      'connectorType': 'FinishStart'
+      'connectorType': 'finish-start'
     },
     {
       'id': '4',
@@ -123,7 +102,7 @@ function getNewData() {
       'actualStart': Date.UTC(2008, 1, 5, 14, 18),
       'actualEnd': Date.UTC(2008, 1, 7, 14, 18),
       'connectTo': '6',
-      'connectorType': 'FinishStart'
+      'connectorType': 'finish-start'
     },
     {
       'id': '6',
@@ -137,9 +116,7 @@ function getNewData() {
     }
 
   ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

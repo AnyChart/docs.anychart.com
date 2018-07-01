@@ -1,27 +1,17 @@
 {:index 8}
 # Getting Data from XML
 
-* [Overview](#overview)
-* [Schema](#schema)
-* [XML vs JavaScript](#xml_vs_javascript)
-* [Serialization](#serialization)
-* [Multiple Series](#multiple_series)
-* [Settings](#settings)
- * [Axes](#axes)
- * [Visualization](#visualization)
-* [Samples](#samples)
-* [Complex](#complex)
-
 ## Overview
 
-AnyChart JavaScript charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+AnyChart JavaScript charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Data Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
   
+You can also load XML settings from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_XML_File).
   
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, XML is also playing an increasingly important role in the exchange of a wide variety of data on the Web and elsewhere. More information on XML can be found on [https://en.wikipedia.org/wiki/XML](https://en.wikipedia.org/wiki/XML)
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance, XML schema for AnyChart 7.4.1 version is located at [https://cdn.anychart.com/schemas/7.4.1/xml-schema.xsd](https://cdn.anychart.com/schemas/7.4.1/xml-schema.xsd)). Latest version of XML schema can be found at [https://cdn.anychart.com/schemas/latest/xml-schema.xsd](https://cdn.anychart.com/schemas/latest/xml-schema.xsd). This file can be used to validate your own XML structure.
+XML Schema specifies a XML-based format to define the structure of XML data (visit [https://en.wikipedia.org/wiki/XML_schema](https://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. XML schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd](https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd)). This file can be used to validate your own XML structure.
 
 ## XML vs JavaScript
 
@@ -30,7 +20,7 @@ To load chart configuration in XML format you should use {api:anychart#fromXml}f
 ```
 // xml data
 var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/latest/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
     '<chart type="pie" container="container" title="XML Sample Pie">' +
        '<data>' +
             '<point name="Apples" value="128.14" fill="Green"/>'+
@@ -52,7 +42,7 @@ This configuration creates chart like the one below
 
 **Note:** Pie chart can have only one series of data and requires no `<series></series>` tag. 
 
-Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](https://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](https://en.wikipedia.org/wiki/CamelCase) to [snakeCase](https://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}column(){api} method in API to create column chart.
+Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](https://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](https://en.wikipedia.org/wiki/CamelCase) to [snakeCase](https://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g., hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}column(){api} method in API to create column chart.
 
 ```
 anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -63,7 +53,7 @@ The same chart can be created using XML
 ```
 anychart.fromXml(
 '<?xml version="1.0" encoding="utf-8"?>' +
-  '<anychart xmlns="https://cdn.anychart.com/schemas/latest/xml-schema.xsd">' +
+  '<anychart xmlns="https://cdn.anychart.com/schemas/{{branch-name}}/xml-schema.xsd">' +
     '<chart type="column" container="container">' +
       '<series_list>'+
         '<series type="column">'+
@@ -173,10 +163,10 @@ Visual settings can be vital for a chart. XML can contain any method and paramet
 
 ```xml
 <!-- series settings -->
-<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
+<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonal-brick">
 
   <!-- customize hover hatch fill -->
-  <hover_hatch_fill type="diagonalbrick" color="darkred"/>
+  <hover_hatch_fill type="diagonal-brick" color="darkred"/>
 
 </series>
 ```

@@ -1,14 +1,11 @@
 {:index 2}
 # Scatter Bubble Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-
 ## Overview
 
 This article explains how to create a Scatter Bubble chart in AnyChart.
 
-To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). You can also read the [Bubble Chart](../Bubble_Chart) article to learn about other available settings.
+To learn more about scatter charts in general and how to customize them, see [Scatter Charts (Overview)](Overview). In addition, you can read the [Bubble Chart](../Bubble_Chart) article to learn about other available settings.
 
 ## Quick Start
 
@@ -22,6 +19,6 @@ chart = anychart.scatter();
 var series = chart.bubble(data);
 ```
 
-**Note:** There is also the {api:anychart#bubble}anychart.bubble(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method after using it, a Scatter Bubble chart is created. However, you can create basic Bubble charts too – see [Bubble Chart](../Bubble_Chart).
+**Note:** There is also the {api:anychart#bubble}anychart.bubble(){api} chart constructor. When you pass your data to this constructor or call the {api:anychart.charts.Cartesian#bubble}bubble(){api} method after using it, a Scatter Bubble chart is created. However, you can create basic Bubble charts too - see [Bubble Chart](../Bubble_Chart).
 
 {sample}BCT\_Scatter\_Bubble\_Chart{sample}

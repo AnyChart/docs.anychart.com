@@ -1,55 +1,71 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Column 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // set the data
   table = anychart.data.table('x');
   table.addData([
-        {"x":'2015-12-24', value: 27},
-        {"x":'2015-12-25', value: 25.5},
-        {"x":'2015-12-26', value: 23.1},
-        {"x":'2015-12-27', value: 26.9},
-        {"x":'2015-12-28', value: 29.7},
-        {"x":'2015-12-29', value: 30.3},
-        {"x":'2015-12-30', value: 23.7},
-        {"x":'2015-12-31', value: 20.4},
-        {"x":'2016-01-01', value: 23},
-        {"x":'2016-01-02', value: 27.5},
-        {"x":'2016-01-03', value: 28.2},
-        {"x":'2016-01-04', value: 23.3},
-        {"x":'2016-01-05', value: 28.9},
-        {"x":'2016-01-06', value: 29.3},
-        {"x":'2016-01-07', value: 28.4},
-        {"x":'2016-01-08', value: 22.8},
-        {"x":'2016-01-09', value: 25},
-        {"x":'2016-01-10', value: 26.5},
-        {"x":'2016-01-11', value: 27},
-        {"x":'2016-01-12', value: 27.8},
-        {"x":'2016-01-13', value: 24.2},
-        {"x":'2016-01-14', value: 29.3},
-        {"x":'2016-01-15', value: 28.1},
-        {"x":'2016-01-16', value: 30.4},
-        {"x":'2016-01-17', value: 28.9},
-        {"x":'2016-01-18', value: 24.8},
-        {"x":'2016-01-19', value: 31.7},
-        {"x":'2016-01-20', value: 29.9},
-        {"x":'2016-01-21', value: 24.9},
-        {"x":'2016-01-22', value: 29.9}
+{"x":'2015-12-24', value: 27},
+{"x":'2015-12-25', value: 25.5},
+{"x":'2015-12-26', value: 23.1},
+{"x":'2015-12-27', value: 26.9},
+{"x":'2015-12-28', value: 29.7},
+{"x":'2015-12-29', value: 30.3},
+{"x":'2015-12-30', value: 23.7},
+{"x":'2015-12-31', value: 20.4},
+{"x":'2016-01-01', value: 23},
+{"x":'2016-01-02', value: 27.5},
+{"x":'2016-01-03', value: 28.2},
+{"x":'2016-01-04', value: 23.3},
+{"x":'2016-01-05', value: 28.9},
+{"x":'2016-01-06', value: 29.3},
+{"x":'2016-01-07', value: 28.4},
+{"x":'2016-01-08', value: 22.8},
+{"x":'2016-01-09', value: 25},
+{"x":'2016-01-10', value: 26.5},
+{"x":'2016-01-11', value: 27},
+{"x":'2016-01-12', value: 27.8},
+{"x":'2016-01-13', value: 24.2},
+{"x":'2016-01-14', value: 29.3},
+{"x":'2016-01-15', value: 28.1},
+{"x":'2016-01-16', value: 30.4},
+{"x":'2016-01-17', value: 28.9},
+{"x":'2016-01-18', value: 24.8},
+{"x":'2016-01-19', value: 31.7},
+{"x":'2016-01-20', value: 29.9},
+{"x":'2016-01-21', value: 24.9},
+{"x":'2016-01-22', value: 29.9}
   ]);
   
   // map the data
   mapping = table.mapAs({x:'x', value:'value'});
 
   // set the chart type
-  chart = anychart.stock();
+  var chart = anychart.stock();
 
   // define the series
   var series = chart.plot(0).column(mapping);
@@ -61,8 +77,5 @@ anychart.onDocumentReady(function() {
   chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

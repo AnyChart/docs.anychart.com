@@ -1,18 +1,5 @@
 {:index 0}
-Seat Maps
-===========
-
-* [Overview](#overview)
-* [Preparing an SVG Image](#preparing_an_svg_image)
-* [SVG Data](#svg_data)
- * [AJAX](#ajax)
- * [As a String](#as_a_string)
- * [HTML DOM Image](#html_dom_image)
-* [Mapping Data](#mapping_data)
-* [Coloring](#coloring)
-* [Unbound Regions](#unbound_regions)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Gallery Samples](#gallery_samples)
+# Seat Maps
 
 ## Overview
 
@@ -22,7 +9,7 @@ A seat map is a diagram of a seat layout inside a passenger aircraft, theater, s
 
 ## Preparing an SVG Image
 
-To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
+To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](../Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
 If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
@@ -79,11 +66,11 @@ Put an `<object>` with the link to the SVG file into the `<body>` section of the
 Use the {api:anychart#onDocumentLoad}onDocumentLoad(){api} method to let the code run after the page is loaded with all external files.
 
 ```
-anychart.onDocumentLoad(function() {
+anychart.onDocumentLoad(function () {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-Take a look at the <a href="https://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
+Take a look at the [AnyChart Seat Map sample](https://www.anychart.com/demos/seatmap/html-dom-embed.html) with an SVG file loaded from the HTML DOM.
 
 ## Mapping Data
 
@@ -148,7 +135,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](../Tooltips) and [Map Labels](../Labels) articles.
 
 ```
 // data set
@@ -168,7 +155,7 @@ labels.format("{%id} \n{%info} \n{%sq}");
 
 {sample}Maps\_Seat\_06{sample}
 
-To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.ChartTooltip#format}format(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
 ```
 // set the tooltips

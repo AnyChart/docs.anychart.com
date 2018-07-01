@@ -1,17 +1,8 @@
 # AnyStock Line Series
 
-* [Overview](#overview)
-* [AnyStock Line Series Adjustment](#anystock_line_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
-Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts/Line_Chart).
+Line Series is usually used to show some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Read more about Line Series in the [Line Series tutorial](../../Basic_Charts/Line_Chart).
 
 ## AnyStock Line Series Adjustment
  
@@ -97,9 +88,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To set the stroke color for the line series use {api:anychart.core.stock.series.Line#stroke}stroke(){api}.
 
@@ -109,14 +98,3 @@ series_euro.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Line\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
-```
-
-{sample}STOCK\_Line\_06{sample}

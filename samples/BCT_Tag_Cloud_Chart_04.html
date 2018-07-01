@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Tag Cloud Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var text =
+"Tyger, tyger, burning bright " +
+"In the forests of the night, " +
+"What immortal hand or eye " +
+"Could frame thy fearful symmetry? " +
+"In what distant deeps or skies " +
+"Burnt the fire of thine eyes? " +
+"On what wings dare he aspire? " +
+"What the hand dare seize the fire? " +
+"And what shoulder and what art " +
+"Could twist the sinews of thy heart? " +
+"And, when thy heart began to beat, " +
+"What dread hand and what dread feet? " +
+"What the hammer? what the chain? " +
+"In what furnace was thy brain? " +
+"What the anvil? what dread grasp " +
+"Dare its deadly terrors clasp? " +
+"When the stars threw down their spears, " +
+"And watered heaven with their tears, " +
+"Did He smile His work to see? " +
+"Did He who made the lamb make thee? " +
+"Tyger, tyger, burning bright " +
+"In the forests of the night, " +
+"What immortal hand or eye " +
+"Dare frame thy fearful symmetry? ";
+
+    // create a chart
+    var chart = anychart.tagCloud();
+
+    // set the parsing mode and configure parsing settings
+    chart.data(text, {
+    mode: "by-word",
+    maxItems: 16,
+    ignoreItems: [
+
+                     "the",
+                     "and",
+                     "he",
+                     "or",
+                     "of",
+                     "in",
+                     "thy",
+    ]
+    });
+
+    // set the chart title
+    chart.title("Tag Cloud Chart: Data (Parsing Text)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

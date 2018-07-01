@@ -1,6 +1,5 @@
 {:index 0.6}
-Custom Drawing
-=========================
+# Custom Drawing
 
 * [Overview](#overview)
 * [Compatibility](#compatibility)
@@ -14,7 +13,7 @@ Custom Drawing
  * [Cone Chart](#cone_chart)
  * [Cherry Chart](#cherry_chart)
 
-# Overview
+## Overview
 
 AnyChart provides a lot of series types out of the box, you can see all of them in the [List of supported chart types](../Quick_Start/Supported_Charts_Types) and compatible series types can be [switched one into another during the runtime using](Series_Type).
 
@@ -24,15 +23,15 @@ However, if you also have on option to change the way the series is drawn and pr
 
 Some modifications can be done very easy, some require understanding how AnyChart draws series, and sometimes you will need more than one function to customize series display. This article will guide you through this process and provide [several examples](#samples) you can use to create your own custom series.
 
-# Compatibility
+## Compatibility
 
 At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
 
-You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
+You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter_Plot/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
 
 If you want something more than what this article offers, please [contact us](http://support.anychart.com/) or you can go ahead and try to create your own series by forking [AnyChart at Github](https://github.com/AnyChart/AnyChart). Note: you still need a license if you are going to use the derivate projects in a commercial application.
 
-# Rendering Object
+## Rendering Object
 
 Rendering object provides you access to all things you need to override standard drawing functions with your own. Rendering object itself does nothing, it is just a collection of functions and settings. Rendering object is an instance of {api:anychart.core.series.RenderingSettings}RenderingSettings{api} class.
 
@@ -62,7 +61,7 @@ series_2 = chart.column([["A",2],["B",4],["C",7]])
 series_2.rendering(customRenderer);
 ```
 
-## Point Renderer
+### Point Renderer
 
 Point renderer is a basic function that is responsible for the way each element (point) of any series is displayed, use {api:anychart.core.series.RenderingSettings#point}point(){api} method of the rendering settings object to override this function:
 
@@ -77,7 +76,7 @@ This method is enough to handle most of custom drawing situations, you can see t
 
 We will use "Cone chart" as it is one of the easiest way to show how custom point renderer works and how you can modify it:
 
-## Shapes Manager
+### Shapes Manager
 
 Shape manager is a way to keep track of objects used and reused during the process of handling chart elements display. It is always needed when you want to add or modify something in point display. By reading the shapes object of a created series you can learn how many shapes are used and what are they:
 
@@ -88,9 +87,9 @@ shapes = series.rendering().shapes();
 console.log(shapes);
 ```
 
-## States
+### States
 
-If you want something more than simply change color on hover and on select you need to override {api:anychart.core.series.RenderingSettings#updatePoint}updatePoint(){api} drawer and track draw/redraw things when differen states signals come:
+If you want something more than simply change color on hover and on select, you need to override the {api:anychart.core.series.RenderingSettings#updatePoint}updatePoint(){api} drawer and track draw/redraw things when different states signals come:
 
 ```
 series = chart.column([["A",1],["B",2],["C",3]])
@@ -100,20 +99,20 @@ function drawer(){
 	if (this.pointState==1) then {
 		// draw something in hover state
 	}
-	// selecte state
-	if (this.pointState==1) then {
+	// selected state
+	if (this.pointState==2) then {
 		// draw something in hover state		
 	}
 }
 ```
 
-## Prepare and Finalize
+### Prepare and Finalize
 
 Use the {api:anychart.core.series.RenderingSettings#start}start(){api} and {api:anychart.core.series.RenderingSettings#finish}finish(){api} methods to override function that are performed before and after the whole series is rendered. This is needed when series are drawn as whole, like lines or areas.
 
-# Samples
+## Samples
 
-## Cherry Chart
+### Cherry Chart
 
 {sample}BCT\_Custom\_Drawing\_01{sample}
 
@@ -121,6 +120,6 @@ Use the {api:anychart.core.series.RenderingSettings#start}start(){api} and {api:
 
 {sample}BCT\_Custom\_Drawing\_02{sample}
 
-## Cone Chart
+### Cone Chart
 
 {sample}BCT\_Custom\_Drawing\_03{sample}

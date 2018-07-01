@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Technical Indicators Volume MA 2"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+// The data that used in this sample can be obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close": 4, "volume": 5});
+
+// create stock chart
+var chart = anychart.stock();
+chart.left(25);
+
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
+var plot_2 = chart.plot(2);
+
+// create ohlc series
+var ohlcSeries = plot_0.ohlc(mapping);
+ohlcSeries.name("CSCO");
+
+// create and adjust a Volume + MA indicator
+var volumeMa_1 = plot_1.volumeMa(mapping, 10, "sma", "area", "stepLine");
+volumeMa_1.volumeSeries().stroke(null);
+volumeMa_1.volumeSeries().fill("#00838f 0.4");
+volumeMa_1.maSeries().stroke("1.5 #00838f");
+
+// create and adjust a Volume + MA indicator
+var volumeMa_2 = plot_2.volumeMa(mapping, 10, "ema", "area", "stepLine");
+volumeMa_2.volumeSeries().stroke(null);
+volumeMa_2.volumeSeries().fill("#455a64 0.4");
+volumeMa_2.maSeries().stroke("1.5 #455a64");
+
+// create scroller series with mapped data
+chart.scroller().line(mapping);
+
+// set container id for the chart
+chart.container("container");
+
+// initiate chart drawing
+chart.draw();
+});
+</script>
+</body>
+</html>

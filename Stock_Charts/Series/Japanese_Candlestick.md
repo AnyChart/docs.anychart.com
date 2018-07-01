@@ -1,17 +1,8 @@
 # AnyStock Candlestick Series
 
-* [Overview](#overview)
-* [AnyStock Candlestick Series Adjustment](#anystock_candlestick_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
-Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC]() charts): Open, High, Low and Close. Those params describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close").
+Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC charts](../../Basic_Charts/OHLC_Chart)): Open, High, Low and Close. Those parameters describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close"). Read more about Basic Candlestick Charts in the [Japanese Candlestick Chart article](../../Basic_Charts/Japanese_Candlestick_Chart)
 
 ## AnyStock Candlestick Series Adjustment
 
@@ -44,7 +35,7 @@ chart = anychart.stock();
 
 // set the series
 var series = chart.plot(0).candlestick(mapping);
-series.name("ACME Corp.");
+series.name("ACME Corp. stock prices");
 ```
 
 {sample}STOCK\_Candlestick\_01{sample}
@@ -68,7 +59,7 @@ chart = anychart.stock();
 
 // set the series
 var series = chart.plot(0).candlestick(mapping);
-series.name("ACME Corp.");
+series.name("ACME Corp. stock prices");
 ```
 
 {sample}STOCK\_Candlestick\_02{sample}
@@ -113,9 +104,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 There are "falling" and "rising" candlesticks, fill and stroke for them is set using these methods:
 - {api:anychart.core.stock.series.Candlestick#fallingStroke}fallingStroke(){api},
@@ -144,16 +133,3 @@ series_acme.fallingStroke("#000");
 ```
 
 {sample}STOCK\_Candlestick\_05{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// highlighter (crosshair) adjusting
-chart.plot(1).dateTimeHighlighter("#0000FF", 0.5);
-```
-
-{sample}STOCK\_Candlestick\_06{sample}
-
- 

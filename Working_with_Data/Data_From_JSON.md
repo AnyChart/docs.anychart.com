@@ -1,26 +1,17 @@
 {:index 7}
 # Getting Data from JSON
 
-* [Overview](#overview)
-* [Schema](#schema)
-* [JSON vs JavaScript](#json_vs_javascript)
-* [Serialization](#serialization)
-* [Multiple Series](#multiple_series)
-* [Settings](#settings)
- * [Axes](#axes)
- * [Visualization](#visualization)
-* [Samples](#samples)
-* [Complex](#complex)
-
 ## Overview
 
-AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [UData Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+
+You can also load JSON settings from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_JSON_File).
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](https://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.4.1 version is located at [https://cdn.anychart.com/schemas/7.4.1/json-schema.json](https://cdn.anychart.com/schemas/7.4.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. The latest schema can always be found at [https://cdn.anychart.com/schemas/latest/json-schema.json](https://cdn.anychart.com/schemas/latest/json-schema.json)
+JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. 
 
 ## JSON vs JavaScript
 
@@ -186,11 +177,11 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 "stroke": "gray",
 "hoverStroke": "darkred",
 "hatchFill": {
-  "type": "diagonalbrick",
+  "type": "diagonal-brick",
   "color": "gray"
 },
 "hoverHatchFill":{
-  "type:": "diagonalbrick",
+  "type:": "diagonal-brick",
   "color": "darkred"
 }
 ```
@@ -263,7 +254,7 @@ chart.spline(
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_07{sample}
+{sample}WD\_Data\_from\_JSON\_07{sample}
 </td>
 </tr>
 </tbody></table>
@@ -328,7 +319,7 @@ chart.title()
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_08{sample}
+{sample}WD\_Data\_from\_JSON\_08{sample}
 </td>
 </tr>
 </tbody></table>
@@ -409,7 +400,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_09{sample}
+{sample}WD\_Data\_from\_JSON\_09{sample}
 </td>
 </tr>
 </tbody></table>
@@ -486,7 +477,7 @@ chart.yAxis(1)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_10{sample}
+{sample}WD\_Data\_from\_JSON\_10{sample}
 </td>
 </tr>
 </tbody></table>
@@ -601,7 +592,7 @@ chart.textMarker(2)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_11{sample}
+{sample}WD\_Data\_from\_JSON\_11{sample}
 </td>
 </tr>
 </tbody></table>

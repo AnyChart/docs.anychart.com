@@ -1,10 +1,5 @@
 # Simple Moving Average
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 A Simple Moving Average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
@@ -15,7 +10,7 @@ Mathematical description of the indicator: [Simple moving average (SMA) Mathemat
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with value field in it:
+SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -44,7 +39,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
+SMA indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var sma10 = plot.sma(mapping, 10, "column");

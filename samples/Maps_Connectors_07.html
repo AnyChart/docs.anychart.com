@@ -1,59 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <script src="../anychart-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"  data-export="true"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Connectors 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
-  <script x-export="map">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
 // This sample uses 3rd party proj4 component
 // that makes it possible to set coordinates
 // for the points and labels on the map and
 // required for custom projections and grid labels formatting.
-// See http://docs.anychart.com/latest/Maps/Map_Projections
+// See https://docs.anychart.com/Maps/Map_Projections
 
 // create data set
-var data = anychart.data.set([    
-    {points: [50.8, -3.6, 50.8, -1.6], curvature: 0.5},
-    {points: [50.8, -1.6, 51.5, -0.16], stroke:'navy', to: "New Forest National Park", marker: {fill: "#9fa8da"}, curvature: -1.2},
-    {points: [51.5,-0.16, 51.7, -1.29], curvature: 0.3},
-    {points: [51.7, -1.29, 52.2, 0.27], curvature: 0.3},
-    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-    {points: [53.3, -1.5, 54.5,-3.4], to: "Edinburgh"},
-    {points: [54.5, -3.4, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
-]);
+var data = [    
+    {points: [51.5, -3.2, 57.1, -2.19], stroke:'navy', from: "Cardiff", to: "Aberdeen", marker: {fill: "#9fa8da"}, time: "2h 20m"},
+    {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"}
+    ];
 // create map chart
-map = anychart.map()
+var map = anychart.map()
 
 //create connector series
 var series = map.connector(data);
 
 // changing the curvature of the series
-series.curvature(0);
+series.curvature(0.3);
 
-// set geodata using
+// changing the startSize and endSize of the connectors
+series.startSize(10);
+series.endSize(0);
+
+// set geodata
 map.geoData(anychart.maps['united_kingdom']);
 
 //set markers
 series.markers({position: '100%', size: 3, type: 'circle'});
-series.hoverMarkers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
-series.selectMarkers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
+series.hovered().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
+series.selected().markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
 
 // name of the chart
-map.title("Setting the connectors curvature through the dataSet");
+map.title("Setting the size of the connectors in the start/end points");
+
+series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
 
 // set container id for the chart
 map.container('container');
@@ -61,7 +71,6 @@ map.container('container');
 // initiate chart drawing
 map.draw();
 });
-    
-    </script>
+</script>
 </body>
 </html>

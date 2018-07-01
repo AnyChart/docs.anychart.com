@@ -1,13 +1,9 @@
 {:index 3}
-#Infinite Line
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Infinite Line
 
 ## Overview
 
-The Infinite Line annotation allows to add an infinite line to a chart.
+The Infinite Line annotation allows you to add an infinite line to a chart.
 
 This article explains how to add an Infinite Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -44,29 +40,36 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Infinite\_Line\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of an Infinite Line annotation:
+The [appearance settings](../../../Appearance_Settings) of an Infinite Line annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.InfiniteLine#color}color(){api} and {api:anychart.core.annotations.InfiniteLine#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.InfiniteLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.InfiniteLine#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Infinite Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Infinite Line annotation and configure its visual settings
-infiniteLine1 = controller.infiniteLine({
+var infiniteLine1 = controller.infiniteLine({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-27",
     secondValueAnchor: 26.75,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Infinite Line annotation
-infiniteLine2 = controller.infiniteLine();
+var infiniteLine2 = controller.infiniteLine();
 
 // set the position of the second annotation
 infiniteLine2.xAnchor("2004-06-06");
@@ -75,7 +78,9 @@ infiniteLine2.secondXAnchor("2007-09-23");
 infiniteLine2.secondValueAnchor(33.13);
  
 // configure the visual settings of the second annotation
-infiniteLine2.stroke("#2196F3", 3, "10 2");
+infiniteLine2.normal().stroke("#006600", 1, "10 2");
+infiniteLine2.hovered().stroke("#00b300", 2, "10 2");
+infiniteLine2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Infinite\_Line\_02{sample}

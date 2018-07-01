@@ -2,12 +2,6 @@
 
 # GraphicsJS Fill Settings
 
-* [Overview](#overview)
-* [Solid Color](#solid_color)
-* [Linear Gradient](#linear_gradient)
-* [Radial Gradient](#radial_gradient)
-* [Image Fill](#image_fill)
-
 ## Overview
 
 Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and closed [Paths](Paths) have the **fill()** method.
@@ -16,12 +10,11 @@ Fill settings define how a shape inner area is drawn. All [Shapes](Shapes) and c
 
 The most simple fill is a solid color fill. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](https://www.w3schools.com/cssref/css_colors_legal.asp).
 
-Color opacity can be set in two ways:
+Color opacity can be set as:
 
-* RGBA, HSLA modificators;
-* Dedicated parameter:
-    * Call function with the parameters <code>{api:anychart.graphics.vector.Fill}fill{api}(_color_, _**opacity**_);</code>
-    * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
+* RGBA
+* HSLA
+* {api:anychart.graphics.vector.Fill}fill{api}
 
 {sample}GFX\_fill\_solid{sample}
 
@@ -29,11 +22,11 @@ Color opacity can be set in two ways:
 
 ### Gradient key
 
-Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color** and **opacity** as an option. If you have only one key the fill will be solid.
+Gradient is a required parameter to set {api:anychart.graphics.vector.LinearGradientFill}linear gradient{api}, it consists of two or three values: gradient **position**, **color**, and **opacity** as an option. If you have only one key the fill will be solid.
 
 Gradient position is set by a number from 0 to 1, where 0 and 1 are gradient borders. If gradient position is not set manually, it will be calculated automatically depending on the number of keys. 
 
-Gradient key settings: `'position color opacity'` or 
+Gradient key settings: `"position color opacity"` or 
 
 ```
 {
@@ -103,7 +96,7 @@ This can be shown in the following way:
 
 {sample}GFX\_fill\_linearG\_userspace{sample}
 
-Gradient settings are set by 'fill settings’, and these gradient fills **figures 1-3**.
+Gradient settings are set by 'fill settings', and these gradient fills **figures 1-3**.
 
 If the container size in gradient settings are larger than the filled element size, it will result in the following:
 
@@ -120,10 +113,10 @@ If the container size in gradient settings are larger than the filled element si
 
 ## Radial Gradient
 
-### Radial Gradient basic parameters are:
+Radial Gradient basic parameters are:
 
-1. _Gradient keys_, just like in linear gradient,
-2. _Center location_, which is set by a number from 0 to 1 as a percentage ratio from the container dimensions.
+1. **Gradient keys**, just like in linear gradient,
+2. **Center location**, which is set by a number from 0 to 1 as a percentage of the container dimensions.
 
 Radial gradient fill with center location (0.5, 0.5):
 
@@ -133,13 +126,13 @@ Radial gradient fill with center location (0.5, 0.5):
 
 {sample}GFX\_fill_radialG{sample}
 
-### Additional parameters:
+Additional parameters:
 
 * **opacity** - sets an opacity value for gradient;
 * **fill area** - same as in 1.2.3.3 (UserSpaceOnUse). 
  If fill area is not set, whole container is filled in.
  If the resulting proportions ratio is not 1:1, the fill will stretch to fill all area (resulting in an ellipse).
-* **focal spot location** - sets a focal point location as a percentage ratio from container dimensions (0, 1). Focal spot location must not overrun the ellipse borders.
+* **focal spot location** - sets a focal point location as a percentage of container dimensions (0, 1). Focal spot location must not overrun the ellipse borders.
 
 An example of focal spot shape. Focal spot must lay within ellipse borders.
 
@@ -163,8 +156,8 @@ To fill an element with an image you need to pass the following settings: object
 
 ```
 .fill({
-    src: '//static.anychart.com/images/kitty.png',
-    mode: acgraph.vector.ImageFillMode.TILE
+    src: 'https://static.anychart.com/images/kitty.png',
+    mode: 'tile'
 })
 ```
 

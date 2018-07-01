@@ -1,11 +1,6 @@
 {:index 13.5}
 # Map Geo Scale
 
-* [Overview](#overview)
-* [Tick intervals](#tick_intervals)
-* [Minimum and Maximum](#minimum_and_maximum)
-* [Precision](#precision)
-
 ## Overview
 
 Geo Scale controls parameters that define numerical parameters that primarily affect how [Map Grid](Map_Grid) and [Map_Axes](Map_Axes) are displayed. Map scale is represented by {api:anychart.scales.Geo}anychart.scales.Geo{api} class.
@@ -42,4 +37,4 @@ mapScale.maximumY(-10);
 
 ## Precision
 
-You can control map scale precision using the {api:anychart.scales.Geo#precision}precision(){api} method, it allows to change both x and y precision, if needed.
+You can control map scale precision using the {api:anychart.scales.Geo#precision}precision(){api} method, it allows to change both X- and Y-precision if needed.

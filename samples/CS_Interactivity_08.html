@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Interactivity 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // data
     var data = anychart.data.set([
@@ -26,11 +42,11 @@
     ]);
 
   // map data for the each series
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  var Sales2003 = data.mapAs({x: 0, value: 1});
+  var Sales2004 = data.mapAs({x: 0, value: 2});
 
   // chart type
-  chart = anychart.column();
+  var chart = anychart.column();
 
   // set data
   var series_1 = chart.column(Sales2003);
@@ -40,8 +56,8 @@
   series_2.name("Sales in 2014");
 
 
-  series_1.hoverHatchFill("checkerBoard");
-  series_2.hoverHatchFill("checkerBoard");
+  series_1.hovered().hatchFill("checker-board");
+  series_2.hovered().hatchFill("checker-board");
 
 
   // chart title
@@ -50,11 +66,11 @@
   title.enabled(true);
   
   // adding a listener
-  title.listen("mouseOver", function(){
+  title.listen("mouseOver", function (){
     series_1.hover([4, 6, 12, 16]);
     series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
   });
-  title.listen("mouseOut", function(){
+  title.listen("mouseOut", function (){
     series_1.unhover();
     series_2.unhover();
   });
@@ -67,11 +83,11 @@
   chart.legend(false);
 
   // adding a listener
-  chart.title().listen("mouseOver", function(){
+  chart.title().listen("mouseOver", function (){
       series_1.hover([4, 6, 12, 16]);
       series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
   });
-  chart.title().listen("mouseOut", function(){
+  chart.title().listen("mouseOut", function (){
       series_1.unhover();
       series_2.unhover([0, 1, 5, 16, 17]);
   });
@@ -80,9 +96,7 @@
   chart.container("container");
   chart.draw();
 
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

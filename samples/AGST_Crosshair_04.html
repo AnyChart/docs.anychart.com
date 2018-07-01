@@ -1,79 +1,84 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-  // create data set on our data
-  var dataSet = anychart.data.set([
-    ["P1" , 3.6 , 2.3],
-    ["P2" , 7.1 , 4.0],
-    ["P3" , 8.5 , 6.2],
-    ["P4" , 9.2 , 11.8],
-    ["P5" , 10.1, 13.0],
-    ["P6" , 11.6, 13.9],
-    ["P7" , 16.4, 18.0],
-    ["P8" , 18.0, 23.3],
-    ["P9" , 13.2, 24.7],
-    ["P10", 12.0, 18.0],
-    ["P11", 3.2 , 15.1],
-    ["P12", 4.1 , 11.3],
-    ["P13", 6.3 , 14.2],
-    ["P14", 9.4 , 13.7],
-    ["P15", 11.5, 9.9],
-    ["P16", 13.5, 12.1],
-    ["P17", 14.8, 13.5],
-    ["P18", 16.6, 15.1],
-    ["P19", 18.1, 17.9],
-    ["P20", 17.0, 18.9]
-  ]);
-
-  // create line chart
-  chart = anychart.column();
-
-  var crosshair = chart.crosshair();
-  // the same as above
-  crosshair.enabled(true);
-  // disable the x-axis labels
-  crosshair.yLabel(false);
-
-  // adding and adjusting extra Y scale
-  var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(0);
-  extraYScale.maximum(100);
-  var extraTicks = extraYScale.ticks();
-  extraTicks.interval(10);
-
-  // adding and adjusting extra X axis
-  var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation("right");
-  extraYAxis.scale(extraYScale);
-  var extraLabels = extraYAxis.labels();
-  extraLabels.format(function(){
-    return (this.value+"%");
-  });
-
-  // turn on chart animation
-  chart.animation(true);
-
-  // set chart title text settings
-  chart.title("Column Chart with a Crosshair");
-
-  // create first series with mapped data
-  chart.column(dataSet.mapAs({x: [0], value: [1]}));
-  chart.column(dataSet.mapAs({x: [0], value: [2]}));
-
-  // set container id for the chart
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Crosshair 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      ["January", 10000],
+      ["February", 12000],
+      ["March", 18000],
+      ["April", 11000],
+      ["May", 9000]
+    ];
+
+    // create an area chart
+    var chart = anychart.area(data);
+
+    // set the data
+    chart.data(data);
+
+    // add and configure a second y-scale
+    var YScale_2 = anychart.scales.linear();
+    YScale_2.minimum(0);
+    YScale_2.maximum(100);
+    YScale_2.ticks().interval(10);
+
+    // add and configure a second y-axis
+    var YAxis_2 = chart.yAxis(1);
+    YAxis_2.orientation("right");
+    YAxis_2.labels().format(function (){
+      return this.value + "%";
+    });
+
+    // bind the second y-axis to the second y-scale
+    YAxis_2.scale(YScale_2);
+
+    // enable the crosshair
+    chart.crosshair(true);
+
+    // configure the crosshair
+
+    /* bind the y-label of the crosshair
+    to the second y-axis */
+    chart.crosshair().yLabel().axisIndex(1);
+
+    // set the text of the y-label
+    chart.crosshair().yLabel().format(function (){
+      return this.value + "%";
+    });
+
+    // set the chart title
+    chart.title("Crosshair: Binding to Axes")
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
 </body>
 </html>

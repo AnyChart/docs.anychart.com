@@ -1,13 +1,9 @@
 {:index 3}
-#Ellipse
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Ellipse
 
 ## Overview
 
-The Ellipse annotation allows to add an ellipse or a circle to a chart.
+The Ellipse annotation allows you to add an ellipse or a circle to a chart.
 
 This article explains how to add an Ellipse and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -44,32 +40,45 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Ellipse\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of an Ellipse annotation:
+The [appearance settings](../../../Appearance_Settings) of an Ellipse annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Ellipse#color}color(){api}, {api:anychart.core.annotations.Ellipse#fill}fill(){api}, {api:anychart.core.annotations.Ellipse#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Ellipse#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Ellipse annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Ellipse annotation and configure its visual settings
-ellipse1 = controller.ellipse({
+var ellipse1 = controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectHatchFill: "brick",
-    selectStroke: "5 #FF0000"
+    hovered: {
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000"
+    },
+    selected: {
+        fill: "#398cae 0.3",
+        hatchFill: "forward-diagonal",
+        stroke: "4 #ff0000"
+    }
 });
 
 // create the second Ellipse annotation
-ellipse2 = controller.ellipse();
+var ellipse2 = controller.ellipse();
 
 // set the position of the second annotation
 ellipse2.xAnchor("2005-11-20");
@@ -78,9 +87,9 @@ ellipse2.secondXAnchor("2007-02-25");
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-ellipse2.stroke("#2196F3", 3, "10 2");
-ellipse2.fill(null);
+ellipse2.normal().stroke("#006600", 1, "10 2");
+ellipse2.hovered().stroke("#00b300", 2, "10 2");
+ellipse2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Ellipse\_02{sample}
-

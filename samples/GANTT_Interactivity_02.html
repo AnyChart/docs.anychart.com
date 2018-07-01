@@ -1,50 +1,67 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Interactivity 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
     // create data tree on our data
-    var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+    var treeData = anychart.data.tree(getData(), "as-table");
 
     // create resource gantt chart
-    chart = anychart.ganttResource();
-
-    // set container id for the chart
-    chart.container('container');
+    var chart = anychart.ganttResource();
 
     // set data for the chart
     chart.data(treeData);
-    // set start splitter position settings
-    chart.splitterPosition(150);
+
+    //set DataGrid and TimeLine visual settings
+    chart.dataGrid().rowOddFill('#fff');
+    chart.dataGrid().rowEvenFill('#fff');
+    chart.getTimeline().rowOddFill('#fff');
+    chart.getTimeline().rowEvenFill('#fff');
+
+    // adjust default rows color on mouse over
+    chart.dataGrid().rowHoverFill('#DEFFE3');
+    chart.getTimeline().rowHoverFill('#DEFFE3');
 
     // get chart data grid link to set column settings
     var dataGrid = chart.dataGrid();
-
-    // set first column settings
-    var firstColumn = dataGrid.column(0);
-    firstColumn.title('#');
-    firstColumn.width(30);
-    firstColumn.cellTextSettings().hAlign('center');
-
-    // set second column settings
-    var secondColumn = dataGrid.column(1);
-    secondColumn.title('Person');
-    secondColumn.width(120);
-    secondColumn.cellTextSettings().hAlign('left');
-    secondColumn.format(function (item) {
-return item.get('name');
+    chart.getTimeline().tooltip().useHtml(true);
+    chart.getTimeline().tooltip().format(function (e) {
+var item = e['item'];
+return item.get('name') + '<br>' + 'Start time: ' + anychart.utils.defaultDateFormatter(item.meta('minPeriodDate')) + '<br>'
+    + 'End time: ' + anychart.utils.defaultDateFormatter(item.meta('maxPeriodDate'));
     });
+
+
+    // set container id for the chart
+    chart.container('container');
 
     // initiate chart drawing
     chart.draw();
 
     // zoom chart to specified date
-    chart.zoomTo(1171036800000, 1175908400000);
+    chart.fitAll();
 });
 
 function getData() {
@@ -69,8 +86,7 @@ function getData() {
     "id": "1",
     "name": "Alex Exler",
     "periods": [
-        {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}},
-        {"id": "1_2", "start": 1174921200000, "end": 1175612400000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
+        {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 },
 {
     "id": "2",
@@ -101,9 +117,7 @@ function getData() {
         {"id": "5_2", "start": 1174233600000, "end": 1174579200000, "stroke": moccasin_border, "fill": {"angle": 90, "keys": [{"color": moccasin_bottom, "position": 0}, {"color": moccasin_middle, "position": 0.38}, {"color": moccasin_top, "position": 1}]}}]
 }
     ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

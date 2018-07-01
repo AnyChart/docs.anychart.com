@@ -1,41 +1,50 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Range Marker 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [2005, 10000],
     [2006, 12000],
     [2007, 18000],
     [2008, 19000],
     [2009, 29000]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.line();
-
-  // set data
-  var series = chart.line(data);
-  var tooltip = series.tooltip();
-  tooltip.format("Year: {%x}\nSales: {%Value}");
+  // create chart
+  var chart = anychart.line(data);
+  chart.tooltip().format("Year: {%x}\nSales: {%value}");
 
   // set y scale ticks interval
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-  yScale.maximum(30000);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(5000);
+  chart.yScale().minimum(0);
+  chart.yScale().maximum(30000);
+  chart.yScale().ticks().interval(5000);
 
   // adjust y axis labels
-  var yLabels = chart.yAxis().labels();
-  yLabels.format("${%Value}");
+  chart.yAxis().labels().format("${%value}");
 
   // set range marker
   var range = chart.rangeMarker();
@@ -84,9 +93,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

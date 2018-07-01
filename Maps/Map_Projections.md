@@ -1,25 +1,6 @@
 {:index 13}
 # Map Projections
 
-* [Overview](#overview)
-* [Setting map projection](#setting_map_projection)
-* [Available Projections](#available_projections)
- * [Aitoff](#aitoff)
- * [August](#august)
- * [Bonne](#bonne)
- * [Eckert1](#eckert1)
- * [Eckert3](#eckert3)
- * [Equirectangular](#equirectangular)
- * [Fahey](#fahey)
- * [Hammer](#hammer)
- * [Mercator](#mercator)
- * [Orthographic](#orthographic)
- * [Robinson](#robinson)
- * [Wagner6](#wagner6)
- * [WSG84](#wsg84)
-* [Changing region projection](#changing_region_projection)
- * [Using PROJ4.JS](#using_proj4.js)
-
 ##Overview
 
 A map projection is any method used in cartography to represent the two-dimensional curved surface of the earth or other body on a plane. The term "projection" here refers to any function defined on the earth's surface and with values on the plane, and not necessarily a geometric projection.  
@@ -36,21 +17,16 @@ Depending on your visualization task you can choose what projection to use in yo
 
 ##Setting Map Projection
 
-To set map projection you should set its type using {api:anychart.charts.Map#crs}.crs(){api} method:
+To set map projection you should set its type using the {api:anychart.charts.Map#crs}crs(){api} method:
 
 ```
 var map = anychart.map();
 map.crs("august");
 ```
 
-Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}.crs(){api} method. Here is how the projection can be set using {api:anychart.enums.MapProjections}enum{api}:
+Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}crs(){api} method. Possible string values for the projection are listed in {api:anychart.enums.MapProjections}anychart.enums.MapProjections{api} enum.
 
-```
-var map = anychart.map();
-map.crs(anychart.enums.MapProjections.AUGUST);
-```
-
-##Available Projections
+## Available Projections
 
 As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
 
@@ -92,7 +68,7 @@ Max Eckert (-Greifendorff) in 1906.</td>
 </tr>
 <tr>
 <td>[Hammer](#hammer)</td>
-<td>Hammer projection (also known as Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
+<td>The Hammer projection (otherwise known as the Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
 </tr>
 <tr>
 <td>[Mercator](#mercator)</td>
@@ -276,7 +252,7 @@ map.crs("wsg84");
 
 ## Changing region projection
 
-All samples above show how to change projection of a map, but there is also an option to change projection of any selected region or regions using {api:anychart.charts.Map#featureCrs}featureCrs(){api} method. This feature can come in particularly handy when you need to create a custom map with small regions or a region located in high/low latitudes. Usually this method is used along with {api:anychart.charts.Map#anychart.charts.Map#featureScaleFactor}featureScaleFactor(){api} and {api:anychart.charts.Map#featureTranslation}featureTranslation(){api}. For the moment regions projection settings can be set only using [PROJ.4 strings](https://www.nceas.ucsb.edu/scicomp/recipes/projections) (this will be improved in future versions on AnyMap), if you need assistance with such settings, do not hesitate to contact [AnyChart Support](http://support.anychart.com/).
+All samples above show how to change projection of a map, but there is also an option to change projection of any selected region or regions using {api:anychart.charts.Map#featureCrs}featureCrs(){api} method. This feature can come in particularly handy when you need to create a custom map with small regions or a region located in high/low latitudes. Usually this method is used along with {api:anychart.charts.Map#featureScaleFactor}featureScaleFactor(){api} and {api:anychart.charts.Map#featureTranslation}featureTranslation(){api}. For the moment regions projection settings can be set only using [PROJ.4 strings](https://www.nceas.ucsb.edu/scicomp/recipes/projections) (this will be improved in future versions on AnyMap), if you need assistance with such settings, do not hesitate to contact [AnyChart Support](http://support.anychart.com/).
 
 ### Using PROJ4.JS
 

@@ -1,18 +1,34 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Labels Formatting 16"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  chart = anychart.bar();
+  var chart = anychart.bar();
 
   // setting title
-  chart.title("Y axis Labels stick to the right");
+  chart.title("Y-axis labels stick to the right");
 
   // seting data
   chart.bar([
@@ -27,18 +43,17 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(200000000);
   var yLabels = chart.yAxis().labels();
-  yLabels.format("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
+  yLabels.format("${%value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
   var xLabels = chart.xAxis().labels();
-  xLabels.textWrap("byLetter");
-  xLabels.width(75);
+  xLabels.wordWrap("break-word");
+  xLabels.wordBreak("break-all");
+  xLabels.width(60);
   xLabels.hAlign("right");
 
   // draw chart
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,16 +1,35 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Table Layout 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   
   // set stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   
   // Title settings
   var title = anychart.standalones.title();
@@ -70,7 +89,7 @@
   table.getCol(3).width(50);
   
   // visual settings for text in table
-  table.vAlign("center").hAlign("center").fontWeight(600).fontSize(12);
+  table.vAlign("middle").hAlign("center").fontWeight(600).fontSize(12);
   
   // set table container and initiate draw
   table.container(stage).draw();
@@ -80,7 +99,7 @@
   
   // create new sparkline chart
   function newLine(i){
-    var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
+    var line = anychart.sparkline(Availability.mapAs({x: 0, value: [(i + 1)]}));
     
     // adjust visualization
     line
@@ -88,9 +107,9 @@
       .height("100%")
       .xScale(
       anychart.scales.dateTime()
-        .minimumGap(0)
-        .maximumGap(0)
-        .ticks([])
+.minimumGap(0)
+.maximumGap(0)
+.ticks([])
     );
     
     return line;
@@ -114,43 +133,43 @@
   
   // create legend
   var legend = anychart.standalones.legend();
-  legend.itemsFormatter(function(){
+  legend.itemsFormatter(function (){
     var items = [
       {
-        "index": 0,
-        "text": "Actual",
-        "iconType": function(path, size) {
-          path.clear();
-          var x = Math.round(size / 2);
-          var y = Math.round(size / 2);
-          var height = size * 0.6;
-          path.clear()
-            .moveTo(x, y - height / 2)
-            .lineTo(x, y + height / 2)
-            .lineTo(x + 2, y + height / 2)
-            .lineTo(x + 2, y - height / 2)
-            .close();
-        },
-        "iconStroke": "none",
-        "iconFill": "#000"
+"index": 0,
+"text": "Actual",
+"iconType": function(path, size) {
+  path.clear();
+  var x = Math.round(size / 2);
+  var y = Math.round(size / 2);
+  var height = size * 0.6;
+  path.clear()
+    .moveTo(x, y - height / 2)
+    .lineTo(x, y + height / 2)
+    .lineTo(x + 2, y + height / 2)
+    .lineTo(x + 2, y - height / 2)
+    .close();
+},
+"iconStroke": "none",
+"iconFill": "#000"
       },
       {
-        "index": 1,
-        "text": "Acceptable",
-        "iconType": function(path, size) {
-          path.clear();
-          var x = Math.round(size / 2);
-          var y = Math.round(size / 2);
-          var height = size * 0.8;
-          path.clear()
-            .moveTo(x - 2, y - height / 2)
-            .lineTo(x - 2, y + height / 2)
-            .lineTo(x + 3, y + height / 2)
-            .lineTo(x + 3, y - height / 2)
-            .close();
-        },
-        "iconStroke": "none",
-        "iconFill": "#ccc"
+"index": 1,
+"text": "Acceptable",
+"iconType": function(path, size) {
+  path.clear();
+  var x = Math.round(size / 2);
+  var y = Math.round(size / 2);
+  var height = size * 0.8;
+  path.clear()
+    .moveTo(x - 2, y - height / 2)
+    .lineTo(x - 2, y + height / 2)
+    .lineTo(x + 3, y + height / 2)
+    .lineTo(x + 3, y - height / 2)
+    .close();
+},
+"iconStroke": "none",
+"iconFill": "#ccc"
       }
     ];
     return items;
@@ -158,13 +177,11 @@
   legend.title().enabled(false);
   legend.titleSeparator().enabled(false);
   legend.paginator().enabled(false);
-  legend.fontSize("10px").itemsLayout("horizontal").iconTextSpacing(0).align("right").position("bottom").padding(0).margin(0).itemsSpacing(0);
+  legend.fontSize("10px").itemsLayout("horizontal").iconTextSpacing(0).align("right").position("center-bottom").padding(0).margin(0).itemsSpacing(0);
   legend.parentBounds(anychart.math.rect(0, 15, stage.width(),15));
   legend.background().enabled(false);
   legend.container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

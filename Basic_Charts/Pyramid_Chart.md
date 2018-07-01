@@ -1,20 +1,5 @@
-{:index 2.1}
-#Pyramid Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Base](#base)
-  * [Orientation](#orientation)
-  * [Padding](#padding)
-  * [Labels](#labels)
-   * [Connectors](#connectors)
-   * [Position](#position)
-   * [Overlapping](#overlapping)
-  * [Tooltips](#tooltips)
-
+{:index 2}
+# Pyramid Chart
 
 ## Overview
 
@@ -43,7 +28,7 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 <tr><td></td><td>[Pie](Pie_Chart)</td></tr>
 <tr><td></td><td>[Stacked](Stacked/Overview)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/pyramid-chart/" target="_blank">Chartopedia: Pyramid Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Pyramid Chart](https://www.anychart.com/chartopedia/chart-types/pyramid-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -79,38 +64,65 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Area series:
+#### All Points
 
-* {api:anychart.charts.Pyramid#fill}fill(){api}, {api:anychart.charts.Pyramid#hatchFill}hatchFill(){api}, {api:anychart.charts.Pyramid#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.charts.Pyramid#hoverFill}hoverFill(){api}, {api:anychart.charts.Pyramid#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pyramid#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.charts.Pyramid#selectFill}selectFill(){api}, {api:anychart.charts.Pyramid#selectHatchFill}selectHatchFill(){api}, {api:anychart.charts.Pyramid#selectStroke}selectStroke(){api} configure the visual settings on select
+The [appearance settings](../Appearance_Settings) of a Pyramid chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pyramid#normal}normal(){api}, {api:anychart.charts.Pyramid#hovered}hovered(){api}, and {api:anychart.charts.Pyramid#selected}selected(){api} methods.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+Combine them with the following methods:
 
-In the sample below, there is a Pyramid Chart with some of the appearance settings configured:
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there is a Pyramid chart with appearance settings configured:
 
 ```
-// edit appearance settings
-chart.fill("#8B4513", 0.6);
-chart.hoverFill("#8B4513", 0.3);
-chart.selectFill("#8B4513", 0.8);
-chart.stroke("#fff", 1);
-chart.hoverStroke("#fff", 2);
-chart.selectStroke("#fff", 3);
+// configure the visual settings of the chart
+chart.normal().fill("#004d39", 0.3);
+chart.hovered().fill("#004d39", 0.1);
+chart.selected().fill("#004d39", 0.5);
+chart.hovered().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.selected().hatchFill("forward-diagonal", "#004d39", 1, 15);
+chart.normal().stroke("white");
+chart.hovered().stroke("white", 2);
+chart.selected().stroke("white", 2);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_02{sample}
 
-**Note**: setting colors for the chart does not visually separate blocks between each other. So, there is another way to set colors for the pyramid blocks: use the dataset and set the filling and stroking colors directly to each block. Notice that it is not necessary to adjust all appearance settings for a point.
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
 
 ```
-chart = anychart.pyramid([
+// create data
+var data = [
   {name: "Fantasy", value: 637166},
-  {name: "Science Fiction", value: 721630, fill: "#1976d2", selectFill: "#1976d2", hatchFill: "backwardDiagonal", hoverHatchFill:"forwardDiagonal", selectHatchFill: "diagonalCross", stroke: "#455a64"},
+  {name: "Science Fiction", value: 721630,
+   normal:   {
+             hatchFill: "backward-diagonal",
+             stroke: "black"
+             },
+   hovered:  {
+               fill: "lightGray",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             },
+   selected: {
+               fill: "white",
+               hatchFill: "backward-diagonal",
+               stroke: "black"
+             }
+  },
   {name: "Detective", value: 148662},
   {name: "Classics", value: 78662},
   {name: "Textbooks", value: 90000}
-]);
+];
+
+// create a chart and set the data  
+chart = anychart.pyramid(data);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_03{sample}
@@ -119,7 +131,7 @@ chart = anychart.pyramid([
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define flexible base size in percentage ratio.
+Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or in percent):
 
 ```
 // set base width to 50% of the container width
@@ -161,7 +173,7 @@ Here is how the pyramid chart with a significant spacing looks like.
 
 ### Labels
 
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart. This section explains how to adjust the connectors and position of labels and to allow or forbid overlapping. To learn how to modify the text of labels, see the [Labels and Tooltips (Text)](#labels_and_tooltips_\(text\)) section of this article.
 
 #### Connectors
 
@@ -187,40 +199,111 @@ Find more information about lines in [Line Settings tutorial](../Appearance_Sett
 #### Position
 
 The position of the labels is controlled by the {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
-* **inside** - place labels inside each pyramid point.
-* **outsideLeftInColumn** - place labels to the left of the pyramid and align them in a column.
-* **outsideRightInColumn** - place labels to the right of the pyramid and align them in a column.
-* **outsideLeft** - place labels to the left of the pyramid.
-* **outsideRight** - place labels to the right of the pyramid.
 
-If you use **outsideLeft** or **outsideRight** it will be possible to adjust the length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
+* `"inside"` - place labels inside each pyramid point.
+* `"outsideLeftInColumn"` - place labels to the left of the pyramid and align them in a column.
+* `"outsideRightInColumn"` - place labels to the right of the pyramid and align them in a column.
+* `"outsideLeft"` - place labels to the left of the pyramid.
+* `"outsideRight"` - place labels to the right of the pyramid.
 
-```
-// change the labels position
-chart.labels().position('outsideRight');  // place labels to the right    
-chart.connectorLength(45);    // set 45px connectors length
-```
-
-These settings set each label's position as 45px to the right from each pyramid point. The {api:anychart.ui.LabelsFactory#format}format(){api} method is to be used for adjusting the labels' content.
+If you use `"outsideLeft"` or `"outsideRight"`, it will be possible to adjust the length of labels connectors. Use the {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} method to set custom length for all labels connectors:
 
 ```
-// format the labels text
-chart.labels().format("{%name}: {%Value}");
+// place labels to the right
+chart.labels().position('outside-right');
+
+// set 45px connectors length   
+chart.connectorLength(45);
 ```
 
 {sample}BCT\_Pyramid\_Chart\_08{sample}
 
 #### Overlapping
 
-After adjusting the content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. The code sample below demonstrates setting labels with overlapping allowed.
+Sometimes labels overlap each other. To allow or forbid overlapping, use the {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api} method. The code sample below demonstrates setting labels with overlapping allowed.
 
 ```
 // allow labels overlapping
 chart.overlapMode("allowOverlap");
 ```
 
+### Labels and Tooltips (Text)
 
-### Tooltips
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a chart point is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+#### Tokens
 
+To change the text of labels, combine the {api:anychart.charts.Pyramid#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To configure tooltips, do the same with the {api:anychart.charts.Pyramid#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work with all chart types, there is a token that is specific to the Pyramid - `{%yPercentOfTotal}`. It returns an element's percentage of the total.
+
+Also, you can add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
+
+```
+// create a chart and set the data
+var chart = anychart.pyramid([
+  {name: "Fantasy", value: 637166, custom_field: "info 1"},
+  {name: "Science Fiction", value: 721630, custom_field: "info 1"},
+  {name: "Detective", value: 148662, custom_field: "info 1"},
+  {name: "Classics", value: 78662, custom_field: "info 1"},
+  {name: "Textbooks", value: 90000, custom_field: "info 1"}
+]);
+
+// configure labels
+chart.labels().format("{%name}: {%yPercentOfTotal}%");
+
+// configure tooltips
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+```
+
+{sample}BCT\_Pyramid\_Chart\_09{sample}
+
+#### Formatting Functions
+
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+In the sample below, functions modify the format of labels and tooltips depending on elements' percentages of the total, and a custom data field is used:
+
+```
+// create a chart and set the data
+var chart = anychart.pyramid([
+  {name: "Fantasy", value: 637166, custom_field: "info 1"},
+  {name: "Science Fiction", value: 721630, custom_field: "info 2"},
+  {name: "Detective", value: 148662, custom_field: "info 3"},
+  {name: "Classics", value: 78662, custom_field: "info 4"},
+  {name: "Textbooks", value: 90000, custom_field: "info 5"}
+]);
+
+// enable HTML for labels and tooltips
+chart.labels().useHtml(true);
+chart.tooltip().useHtml(true);
+
+// configure labels
+chart.labels().format(function (){
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal > 40)
+      return "<span style='color:#dd2c00;font-weight:bold'>" +
+             this.name + ": " + percentOfTotal.toFixed(1) + "%</span>";
+  return this.name + ": " +percentOfTotal.toFixed(1) + "%";
+});
+
+// configure tooltips
+chart.tooltip().format(function (){
+  var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+  if (percentOfTotal > 40)
+      return "<span style='font-size:18'>" +
+             percentOfTotal.toFixed(1) + "% (" +
+             this.value + ")</span><br></br><br>" +
+             this.getData("custom_field");
+  return percentOfTotal.toFixed(1) + "% (" + this.value +
+         ")<br></br><br></br>" + this.getData("custom_field");
+});
+```
+
+{sample}BCT\_Pyramid\_Chart\_10{sample}

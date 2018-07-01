@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Interactivity States 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630,
+       normal:  { hatchFill: {
+            type: "forward-diagonal",
+            color: "#669999"
+        }
+       },
+       hovered: { hatchFill: {
+             type: "forward-diagonal",
+             color: "#669999",
+             thickness: 3
+        }
+       }
+      },
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.pie(data);
+
+    // configure the states of the chart
+    chart.normal().fill("#669999", 0.5);
+    chart.hovered().fill("#669999", 0.3);
+    chart.normal().stroke("#669999", 3);
+    chart.hovered().stroke("#669999", 3);
+
+    // set the chart title
+    chart.title("States: Single-Series Chart");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

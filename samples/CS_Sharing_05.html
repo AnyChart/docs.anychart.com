@@ -1,45 +1,51 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-    anychart.onDocumentReady(function() {
-
-    var container = $('#container');
-
-    // create a data set
-    var data = anychart.data.set([
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Sharing 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // create data
+    var data = [
       ["January", 10000],
       ["February", 12000],
       ["March", 18000],
       ["April", 11000],
       ["May", 9000]
-    ]);
+    ];
 
     // set the chart type
-    chart = anychart.area();
+    var chart = anychart.area(data);
 
-    chart.listen("click", function() {
-        chart.shareWithPinterest("Sharing with Pinterest", "This is a sample of an Area Chart created with AnyChart");
+    chart.listen("click", function () {
+chart.shareWithPinterest("Sharing with Pinterest", "This is a sample of an Area Chart created with AnyChart");
     });
-
-    // create a series and set the data
-    chart.area(data);
 
     // set the chart title
     chart.title("Share the chart with Pinterest with parameters");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Sales");
 
     // set the container id
     chart.container("container");
@@ -48,10 +54,6 @@
     chart.draw();
     
 });
-
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

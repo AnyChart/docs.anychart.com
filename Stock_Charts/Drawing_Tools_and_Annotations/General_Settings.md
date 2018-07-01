@@ -1,17 +1,9 @@
 {:index 2.1}
-#General Settings
-
-* [Overview](#overview)
-* [Hardcoding](#hardcoding)
-* [Visual Settings](#visual_settings)
-* [Hover Gap](#hover_gap)
-* [Forbidding Editing](#forbidding_editing)
-* [Binding to Axes](#binding_to_axes)
-* [Drawing](#drawing)
+# General Settings
 
 ## Overview
 
-In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#visual_settings) and [hover gap](#hover_gap).
+In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#appearance) and [hover gap](#hover_gap).
 
 ## Hardcoding
 
@@ -46,40 +38,71 @@ controller.ellipse({
 
 {sample}STOCK\_Drawing\_General\_01{sample}
 
-## Visual Settings
+## Appearance
 
-In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make an annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} or {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api}. These two are for the Triangle annotation, but you can find similar methods for other types: see our {api:anychart.core.annotations}API{api} or the articles on [annotation types](Overview#annotation_types) in this section. Please note that the list of the available settings may vary depending on the annotation type.
+The [appearance settings](../../../Appearance_Settings) of annotations can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api} 
+
+Combine them with these methods: {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. Please note that the list of the available settings may vary depending on the [annotation type](Overview#annotation_types).
+
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, with appearance configured. Like in the previous sample, object notation is used:
 
 ```
-// an auxiliary variable for working with annotations
-var controller = plot.annotations();
-
 // create an Ellipse annotation and configure its visual settings
-controller.ellipse({
+plot.annotations().ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
     secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectStroke: "5 #FF0000"
+    hovered: {
+        fill: "#398cae 0.3",
+        stroke: "2 #ff0000",
+    },
+    selected: {
+        fill: "#398cae 0.3",
+        stroke: "4 #ff0000"
+    }
+});
+
+// create an Infinite Line annotation and configure its visual settings
+controller.infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 ```
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
-
-In this sample, the hover and select colors of the Ellipse markers are set to green, and the Infinite Line markers are disabled on select:
+You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green on hover and select, and the markers of the Infinite Line are disabled on select:
 
 ```
-// configure the markers
-ellipse.hoverMarkers({size: 6, fill: "#8BC34A"});
-ellipse.selectMarkers({size: 6, fill: "#8BC34A"});
-infiniteLine.selectMarkers(false);
+// create an Ellipse annotation
+var ellipse = controller.ellipse({
+    xAnchor: "2006-11-20",
+    valueAnchor: 25.92,
+    secondXAnchor: "2007-02-24",
+    secondValueAnchor: 31.92,
+});
+
+// create an Infinite Line annotation
+var infiniteLine = controller.infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+});
+
+// configure the annotation markers
+ellipse.hovered().markers({size: 6, fill: "#00b300"});
+ellipse.selected().markers({size: 6, fill: "#00b300"});
+infiniteLine.selected().markers(false);
 ```
 
 {sample}STOCK\_Drawing\_General\_03{sample}
@@ -140,16 +163,16 @@ If there is an extra axis on your plot, you can bind an annotation to that axis 
 In the sample below, there is an Infinite Line annotation, bound to the main Y-scale, and an Ellipse annotation, bound to the additional Y-scale:
 
 ```
-// create an additional Y-scale
+// create an additional y-scale
 var extraYScale = anychart.scales.linear();
 
-// create an additional Y-axis
+// create an additional y-axis
 var extraYAxis = plot.yAxis(1);
 
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an Infinite Line annotation (automatically bound to the main Y-scale)
+// create an Infinite Line annotation (automatically bound to the main y-scale)
 controller.infiniteLine({
     xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
@@ -165,14 +188,15 @@ var ellipse = controller.ellipse({
     secondValueAnchor: 2783950080
 });
 
-// bind the Ellipse annotation to the additional Y-scale
+// bind the Ellipse annotation to the additional y-scale
 ellipse.yScale(extraYScale);
 ```
+
 {sample}STOCK\_Drawing\_General\_06{sample}
 
 ## Drawing
 
-To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. To learn more, see this article: [Drawing](Drawing).
+To provide users with the opportunity to draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one from the {api:anychart.enums.AnnotationTypes}Annotation Types{api} enum. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations
@@ -182,6 +206,6 @@ var controller = plot.annotations();
 controller.startDrawing("ellipse");
 ```
 
-Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Ellipses, Rectangles, and Triangles or remove all annotations from the plot:
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw annotations of all types or remove all annotations from the plot:
 
 {sample}STOCK\_Drawing\_General\_07{sample}

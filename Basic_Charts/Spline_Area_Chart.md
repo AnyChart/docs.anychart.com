@@ -1,9 +1,5 @@
 {:index 4.1}
-#Spline Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
+# Spline Area Chart
 
 ## Overview
 
@@ -23,7 +19,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 <tr><td>Stacked</td><td>[Stacked Spline Area](Stacked/Value/Spline_Area_Chart), [Percent Stacked Spline Area](Stacked/Percent/Spline_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Spline Area](Vertical/Spline_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Spline Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Spline Area Chart with Error Bars](Error_Chart/Spline_Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -31,12 +27,12 @@ The Spline Area and Area chart types share all the settings, so this article exp
 <tr><td>Stock</td><td>[Stock Spline Area](../Stock_Charts/Series/Spline_Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Area](Area_Chart)</td></tr>
-<tr><td></td><td>[Step Area](ST\tep_Area_Chart)</td></tr>
+<tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/spline-area-chart/" target="_blank">Chartopedia: Spline Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Spline Area Chart](https://www.anychart.com/chartopedia/chart-types/spline-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -55,7 +51,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a spline area series and set the data
 var series = chart.splineArea(data);

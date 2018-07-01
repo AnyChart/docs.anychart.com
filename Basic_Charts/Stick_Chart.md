@@ -1,15 +1,6 @@
 {:index 6}
 # Stick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Stick](#vertical_stick)
-
 ## Overview
 
 Stick Charts look like Column Charts with no width. Sticks are good at demonstrating some discrete data.
@@ -26,7 +17,7 @@ This article explains how to create a basic Stick chart as well as configure set
 <tr><td>Stacked</td><td>[Stacked Stick](Stacked/Value/Stick_Chart), [Percent Stacked Stick](Stacked/Percent/Stick_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Stick](Vertical/Stick_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](Error_Chart/Stick_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -35,8 +26,9 @@ This article explains how to create a basic Stick chart as well as configure set
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Column](Column_Chart)</td></tr>
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stick-chart/" target="_blank">Chartopedia: Stick Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Stick Chart](https://www.anychart.com/chartopedia/chart-types/stick-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -49,7 +41,7 @@ To create a Stick chart, use the {api:anychart#column}anychart.column(){api} cha
 After you created a column chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -77,22 +69,18 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Stick series:
+The [appearance settings](../Appearance_Settings) of a Stick chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Stick#normal}normal(){api}, {api:anychart.core.cartesian.series.Stick#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Stick#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Stick#color}color(){api} and {api:anychart.core.cartesian.series.Stick#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Stick#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Stick#selectStroke}selectStroke(){api} configures the stroke on select
+Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Stick series with some of the appearance settings configured:
+In the sample below, there are two Stick series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.stick(seriesData_1);
 
 // configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
 series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
@@ -100,12 +88,43 @@ series1.selectStroke("#00cc99", 4, "10 5", "round");
 var series2 = chart.stick(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#0066cc");
+series2.normal().stroke("#0066cc");
 series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Stick\_Chart\_02{sample}
+
+#### Individual Points
+
+If you use object notation to set the data, you can change the appearance (and some other settings) of individual points by adding special fields to your data:
+
+```
+// create data
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000,
+   normal:   {stroke: "3 #5cd65c"},
+   hovered:  {stroke: "4 #5cd65c"},
+   selected: {stroke: "4 #5cd65c"}
+  },
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
+
+// create a chart
+chart = anychart.column();
+
+// create a stick series and set the data
+var series = chart.stick(data);
+```
+
+{sample}BCT\_Stick\_Chart\_03{sample}
+
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
@@ -114,6 +133,17 @@ series2.selectStroke("#0066cc", 4);
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+### Stacked Stick
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
+
+To learn about the stacked versions of the Stick chart and its modifications, see:
+
+* [Stacked Stick](Stacked/Value/Stick_Chart)
+* [Percent Stacked Stick](Stacked/Percent/Stick_Chart)
 
 ### Vertical Stick
 

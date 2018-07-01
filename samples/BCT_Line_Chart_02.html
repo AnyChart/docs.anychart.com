@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Line Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
@@ -19,11 +35,11 @@
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
 
     // create a chart
-    chart = anychart.line();
+    var chart = anychart.line();
 
     // set the interactivity mode
     chart.interactivity().hoverMode("single");
@@ -33,36 +49,32 @@
     series1.name("2004");
 
     // configure the visual settings of the first series
-    series1.stroke("#00cc99", 1, "10 5", "round");
-    series1.hoverStroke("#00cc99", 2, "10 5", "round");
-    series1.selectStroke("#00cc99", 4, "10 5", "round");
+    series1.normal().stroke("#00cc99", 1, "10 5", "round");
+    series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+    series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
     // create the second series, set the data and name  
     var series2 = chart.line(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the second series
-    series2.stroke("#0066cc");
-    series2.hoverStroke("#0066cc", 2);
-    series2.selectStroke("#0066cc", 4);
+    series2.normal().stroke("#0066cc");
+    series2.hovered().stroke("#0066cc", 2);
+    series2.selected().stroke("#0066cc", 4);
 
     // set the chart title
     chart.title("Line Chart: Appearance");
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

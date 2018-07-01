@@ -1,20 +1,36 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Labels Formatting 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
 
   // title settings
   var mainTitle = anychart.standalones.title();
   mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  mainTitle.text("Y axis Labels: width is set to 70 pixels");
+  mainTitle.text("Y-axis labels: width is set to 70 pixels");
   mainTitle.container(stage);
   mainTitle.draw();
 
@@ -32,7 +48,7 @@
   var firstLabels = firstChart.yAxis().labels();
   firstLabels.width(80);
   firstLabels.hAlign("right");
-  firstLabels.format("{%Value}{groupsSeparator:.}");
+  firstLabels.format("{%value}{groupsSeparator:.}");
 
   firstChart.column([
       ["P1", 698712],
@@ -71,9 +87,7 @@
   secondChart.container(stage);
   secondChart.draw();
 
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

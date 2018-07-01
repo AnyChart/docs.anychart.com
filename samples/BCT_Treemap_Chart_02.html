@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Treemap Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {name:   "European Union", children: [
+        {name: "Belgium",        size: 11443830, value: 378},
+        {name: "France",         size: 64938716, value: 119},
+        {name: "Germany",        size: 80636124, value: 231},
+        {name: "Greece",         size: 10892931, value:  85},
+        {name: "Italy",          size: 59797978, value: 203},
+        {name: "Netherlands",    size: 17032845, value: 505},
+        {name: "Poland",         size: 38563573, value: 126},
+        {name: "Romania",        size: 19237513, value:  84}, 
+        {name: "Spain",          size: 46070146, value:  92},
+        {name: "United Kingdom", size: 65511098, value: 271}  
+      ]} 
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.treeMap(data, "as-tree");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Treemap: Data (Size and Value)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Top 10 Most Populated EU Countries - Population & Population Density</span>");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Plots 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button onclick="showHidePlot()">Show/Hide Plot</button><button onclick="addRemovePlot()">Add/Remove Plot</button><button onclick="configurePlot()">Configure Plot</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data table on loaded data
+    var dataTable = anychart.data.table();
+    dataTable.addData([
+    ["2004-06-02", 88.64, 88.64, 87.89, 87.98, 3912600],
+    ["2004-06-03", 87.85, 88.1, 87.35, 87.35, 3011500],
+    ["2004-06-04", 87.95, 88.49, 87.5, 87.56, 3803400],
+    ["2004-06-07", 88.75, 88.99, 88.01, 88.64, 4264500],
+    ["2004-06-08", 88.64, 90.5, 88.4, 90.04, 5400300],
+    ["2004-06-09", 89.9, 90.55, 89.81, 90.09, 5233400],
+    ["2004-06-10", 90.23, 90.75, 89.89, 90.46, 3468700],
+    ["2004-06-14", 90.05, 90.58, 89.62, 90.07, 4121400],
+    ["2004-06-15", 90.49, 91.21, 90.23, 90.54, 4508300],
+    ["2004-06-16", 90.25, 90.93, 90.09, 90.38, 3145700],
+    ["2004-06-17", 90.5, 90.56, 90.07, 90.44, 4180200],
+    ["2004-06-18", 90.2, 90.8, 89.9, 90.06, 6470800],
+    ["2004-06-21", 90.4, 90.43, 89.31, 89.49, 3843400],
+    ["2004-06-22", 89.28, 90.24, 89.13, 90.02, 4149300],
+    ["2004-06-23", 90.1, 90.84, 89.84, 90.79, 4354700],
+    ["2004-06-24", 90.28, 90.92, 89.84, 89.99, 4069400],
+    ["2004-06-25", 89.95, 90.23, 88.94, 89.55, 5604700],
+    ["2004-06-28", 89.71, 89.9, 88.36, 88.71, 4423200],
+    ["2004-06-29", 88.35, 88.49, 87.9, 88.29, 4394800],
+    ["2004-06-30", 88.3, 88.5, 87.7, 88.15, 4724000]
+    ]);
+
+    // map loaded data
+    mapping = dataTable.mapAs({'value': 2});
+    ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
+    columnMapping = dataTable.mapAs({'value': 3});
+      
+    // create stock chart
+    chart = anychart.stock();
+
+    // create first plot on the chart with column series
+    var plot_1 = chart.plot(0);
+    plot_1.column(mapping).name('Trend');
+
+    // create second plot on the chart
+    var plot_2 = chart.plot(1);
+
+    // create ohlc series on the second plot
+    plot_2.ohlc(ohlcMapping).name('Price');
+
+    // configure plot
+    plot_2.legend(false);
+    plot_2.title('Prices');
+    plot_2.yGrid().enabled(true);
+    plot_2.yGrid().stroke({dash: "3 5"});    
+
+    // set container id for the chart
+    chart.container('container');
+
+    // initiate chart drawing
+    chart.draw();
+});
+function showHidePlot(){
+    chart.plot(1).enabled(!chart.plot(1).enabled());
+}
+function addRemovePlot(){  
+    if (chart.getPlotsCount() > 1) 
+        chart.plot(1).dispose();
+    else
+        chart.plot(1);
+}
+function configurePlot(){
+    // if there is a plot to configure
+    if (chart.getPlotsCount() > 1) 
+        {
+            // change title
+            var now = new Date();
+            var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            chart.plot(1).title('Current time: ' + time);
+            // enable grid
+            chart.plot(1).yGrid().enabled(true);
+            chart.plot(1).yGrid().stroke('1 red');
+            // add a series if there is none
+            if (chart.plot(1).getSeriesCount() == 0)
+              chart.plot(1).ohlc(ohlcMapping).name('Price');
+  
+        }
+}
+
+</script>
+</body>
+</html>

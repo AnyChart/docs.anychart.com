@@ -1,14 +1,5 @@
-{:index 1}
+{:index 1.5}
 # Jump Line Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Vertical Jump Line](#vertical_jump_line)
 
 ## Overview
 
@@ -20,7 +11,7 @@ Jump Line Charts are usually used for demonstrating rates.
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Jumpline}anychart.core.cartesian.series.Jumpline{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.JumpLine}anychart.core.cartesian.series.JumpLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
@@ -28,7 +19,7 @@ Jump Line Charts are usually used for demonstrating rates.
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Jump Line](Vertical/Jump_Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Jump Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Jump Line Chart with Error Bars](Error_Chart/Jump_Line_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -38,20 +29,20 @@ Jump Line Charts are usually used for demonstrating rates.
 <tr><td></td><td>[Line](Line_Chart)</td></tr>
 <tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/jump-line-chart/" target="_blank">Chartopedia: Jump Line Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Jump Line Chart](https://www.anychart.com/chartopedia/chart-types/jump-line-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
 ## Quick Start
 
-To create a  chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+To create a chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
 
 To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method.
 
 The following sample demonstrates how a basic Jump Line chart is created:
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
@@ -61,7 +52,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.line();
+chart = anychart.line();
 
 // create a jump line series and set the data
 var series = chart.jumpLine(data);
@@ -85,32 +76,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Jump Line series:
+The [appearance settings](../Appearance_Settings) of a Jump Line chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.JumpLine#normal}normal(){api}, {api:anychart.core.cartesian.series.JumpLine#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.JumpLine#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Jumpline#color}color(){api} and {api:anychart.core.cartesian.series.Jumpline#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.Jumpline#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.Jumpline#selectStroke}selectStroke(){api} configures the stroke on select
+Combine them with the {api:anychart.core.StateSettings#stroke}stroke(){api} method. Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Jump Line series with some of the appearance settings configured:
+In the sample below, there are two Jump Line series with appearance settings configured:
 
 ```
 // create the first series
 var series1 = chart.jumpLine(seriesData_1);
 
 // configure the visual settings of the first series
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
+series1.normal().stroke("#00cc99", 1, "10 5", "round");
+series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
 var series2 = chart.jumpLine(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
+series2.normal().stroke("#0066cc");
+series2.hovered().stroke("#0066cc", 2);
+series2.selected().stroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Jump\_Line\_Chart\_02{sample}

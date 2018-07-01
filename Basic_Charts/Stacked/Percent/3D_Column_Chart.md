@@ -1,10 +1,6 @@
 {:index 12}
 # 3D Percent Stacked Column Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A 3D Percent Stacked Column Chart is a multi-series 3D Column Chart that displays the trend of the percentage each value contributes over time or categories.
@@ -13,11 +9,11 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a 3D Percent Stacked Column Chart, create a multi-series [3D Column Chart](../../3D/Overview#column) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>percent</strong>:
+To build a 3D Percent Stacked Column Chart, create a multi-series [3D Column Chart](../../3D/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a chart
-var chart = chart.column3d();
+chart = chart.column3d();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

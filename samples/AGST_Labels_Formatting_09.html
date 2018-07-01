@@ -1,50 +1,50 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-
-  stage = anychart.graphics.create("container");
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Labels Formatting 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data set
-  data = anychart.data.set([
+  data = [
     ["P1", 16, 20],
     ["P2", 12, 18],
     ["P3", 9, 14]
-  ]);
+  ];
 
-  // data remapping
-  seriesData_1 = data.mapAs({x: [0], value: [1]});
-  seriesData_2 = data.mapAs({x: [0], value: [2]});
-  // chart with rotated labels
-  rotatedLabels = anychart.column();
-  rotatedLabels.title("Rotated labels");
-  rotatedBackground = rotatedLabels.background();
-  rotatedBackground.stroke("#CCCCCC");
+  // create chart
+  var chart = anychart.column();
+  chart.data(data);
+  chart.title("Rotated labels");
 
-  // set scale minimum
-  rotatedYScale = rotatedLabels.yScale();
-  rotatedYScale.minimum(0);
+  // rotate labels
+  chart.xAxis().labels().rotation(-90);
+  chart.yAxis().labels().rotation(-90);
 
-  // rotating labels
-  rotatedXAxis = rotatedLabels.xAxis().labels();
-  rotatedXAxis.rotation(-90);
-  rotatedYAxis = rotatedLabels.yAxis().labels();
-  rotatedYAxis.rotation(-90);
-
-  rotatedLabels.column(seriesData_1);
-  rotatedLabels.column(seriesData_2);
-
-  rotatedLabels.container(stage);
-  rotatedLabels.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+  // display chart
+  chart.container("container");
+  chart.draw();
+});
+</script>
 </body>
 </html>

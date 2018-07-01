@@ -1,57 +1,50 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Chart 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   // create data tree on our data
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(getData(), "as-table");
 
   // create resource gantt chart
-  chart = anychart.ganttResource();
-
-  // set container id for the chart
-  chart.container("container");
+  var chart = anychart.ganttResource();
 
   // set data for the chart
   chart.data(treeData);
 
-  // set start splitteformatDater position settings
-  chart.splitterPosition(220);
-
   // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  function formatDate(dateUnit) {
-  if (dateUnit < 10) dateUnit = "0" + dateUnit;
-  return dateUnit + "";
-}
+  dataGrid.column(0).title().text("#");
 
-function customformat(item) {
-  var periods = item.get(anychart.enums.GanttDataFields.PERIODS);
-  if (periods) {
-      var startTime = new Date(periods[0].start);
-    return formatDate(startTime.getUTCMonth() + 1) + "/" +
-        formatDate(startTime.getUTCDate()) + "/" + startTime.getUTCFullYear()
-  }
-  else
-   return "";
-}
+  dataGrid.column(1).width(100);
+  dataGrid.column(1).labels().format('{%name}');
+  dataGrid.column(1).title().text("Resources");
 
-dataGrid.column(0).title().text("№");
-
-dataGrid.column(1).width(100).format(function(item) {
-    return item.get("name");
-  }).title().text("Resources");
-
-var custom = dataGrid.column(2);
-  custom.title("Start Date");
-  custom.width(90);
-  custom.format(customformat);
+  // set container id for the chart
+  chart.container("container");
 
   // initiate chart drawing
   chart.draw();
@@ -75,9 +68,9 @@ function getData() {
       "name": "Resource 1",
       "parent": "main_1",
       "periods": [
-        {"id": "1_1", "start": Date.UTC(2013, 5, 28), "end": Date.UTC(2013, 6, 1)},
-        {"id": "1_2",  "start": Date.UTC(2013, 6, 5), "end": Date.UTC(2013, 6, 15)},
-        {"id": "1_2", "start": Date.UTC(2013, 6, 20), "end": Date.UTC(2013, 6, 28)}
+{"id": "1_1", "start": Date.UTC(2013, 5, 28), "end": Date.UTC(2013, 6, 1)},
+{"id": "1_2",  "start": Date.UTC(2013, 6, 5), "end": Date.UTC(2013, 6, 15)},
+{"id": "1_2", "start": Date.UTC(2013, 6, 20), "end": Date.UTC(2013, 6, 28)}
       ]
     },
     {
@@ -85,8 +78,8 @@ function getData() {
       "name": "Resource 2",
       "parent": "main_1",
       "periods": [
-        {"id": "2_1", "start": Date.UTC(2013, 4, 20), "end": Date.UTC(2013, 5, 22)},
-        {"id": "2_2" , "start": Date.UTC(2013, 5, 25), "end": Date.UTC(2013, 6, 5)}
+{"id": "2_1", "start": Date.UTC(2013, 4, 20), "end": Date.UTC(2013, 5, 22)},
+{"id": "2_2" , "start": Date.UTC(2013, 5, 25), "end": Date.UTC(2013, 6, 5)}
       ]
     },
     {
@@ -94,14 +87,12 @@ function getData() {
       "name": "Resource 3",
       "parent": "main_2",
       "periods": [
-        {"id": "3_1", "start": Date.UTC(2013, 4, 28), "end": Date.UTC(2013, 5, 8)},
-        {"id": "3_2", "start": Date.UTC(2013, 5, 17), "end": Date.UTC(2013, 6, 30)}
+{"id": "3_1", "start": Date.UTC(2013, 4, 28), "end": Date.UTC(2013, 5, 8)},
+{"id": "3_2", "start": Date.UTC(2013, 5, 17), "end": Date.UTC(2013, 6, 30)}
       ]
     }
   ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

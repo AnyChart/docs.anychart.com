@@ -1,9 +1,5 @@
 # Chart Labels 
 
-* [Overview](#overview)
-* [Basics](#text_labels)
-* [Attaching Actions](#attaching_actions)
-
 ## Overview
 
 Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
@@ -33,7 +29,7 @@ label.listen(
   // event type
   "click",
   // your function
-  function() {/*custom function code*/}
+  function () {/*custom function code*/}
 );
 ```
 

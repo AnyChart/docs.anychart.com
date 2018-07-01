@@ -1,13 +1,9 @@
 {:index 3}
-#Ray
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+# Ray
 
 ## Overview
 
-The Ray annotation allows to add a ray to a chart.
+The Ray annotation allows you to add a ray to a chart.
 
 This article explains how to add a Ray and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -44,29 +40,36 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Ray\_01{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Ray annotation:
+The [appearance settings](../../../Appearance_Settings) of a Ray annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Ray#color}color(){api} and {api:anychart.core.annotations.Ray#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.Ray#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.Ray#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Ray annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Ray annotation and configure its visual settings
-ray1 = controller.ray({
+var ray1 = controller.ray({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2008-04-27",
     secondValueAnchor: 26.75,
-    hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
+    hovered: {stroke: "2 #ff0000"},
+    selected: {stroke: "4 #ff0000"}
 });
 
 // create the second Ray annotation
-ray2 = controller.ray();
+var ray2 = controller.ray();
 
 // set the position of the second annotation
 ray2.xAnchor("2004-06-06");
@@ -75,7 +78,9 @@ ray2.secondXAnchor("2007-09-23");
 ray2.secondValueAnchor(33.13);
  
 // configure the visual settings of the second annotation
-ray2.stroke("#2196F3", 3, "10 2");
+ray2.normal().stroke("#006600", 1, "10 2");
+ray2.hovered().stroke("#00b300", 2, "10 2");
+ray2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Ray\_02{sample}

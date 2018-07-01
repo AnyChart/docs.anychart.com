@@ -1,10 +1,5 @@
 # Aroon
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 Developed by Tushar Chande in 1995, Aroon is an indicator system that determines whether a stock is trending or not and how strong the trend is. "Aroon" means "Dawn's Early Light" in Sanskrit. Chande chose this name because the indicators are designed to reveal the beginning of a new trend.
@@ -15,7 +10,7 @@ Mathematical description of the indicator: [Aroon Mathematical Description](Math
 
 ## Adding indicator
 
-Aroon indicator is added using {api:anychart.core.stock.Plot#aroon}aroon(){api} method, it requires a mapping with high and low fields in it:
+Aroon indicator is added using {api:anychart.core.stock.Plot#aroon}aroon(){api} method, it requires a mapping with the `"high"` and `"low"` fields in it:
 
 ```
 // create data table on loaded data
@@ -46,7 +41,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-Aroon indicator has only one type specific parameter - period: mapping with value field in it, period and types of Up and Down series to be displayed as:
+Aroon indicator has only one type specific parameter - period: mapping with the `"value"` field in it, period and types of Up and Down series to be displayed as:
 
 ```
 var aroon25 = plot.aroon(mapping, 25, "line", "line");
@@ -54,13 +49,14 @@ var aroon25 = plot.aroon(mapping, 25, "line", "line");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Aroon with different parameters and settings is added to different plots, {api:anychart.core.stock.indicators.Aroon#upSeries}upSeries(){api} and {api:anychart.core.stock.indicators.Aroon#downSeries}downSeries(){api} methods are used to configure the display,  {api:anychart.core.stock.indicators.Aroon#period}period(){api} method can be used to change the period:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where Aroon with different parameters and settings is added to different plots, {api:anychart.core.stock.indicators.Aroon#upSeries}upSeries(){api}, {api:anychart.core.stock.indicators.Aroon#downSeries}downSeries(){api}, and {api:anychart.core.stock.indicators.Aroon#rangeSeries}rangeSeries(){api} methods are used to configure the display, {api:anychart.core.stock.indicators.Aroon#period}period(){api} method can be used to change the period:
 
 ```
-// create Aroon indicator with period 25 and shown as lines on the second plot
-aroon25 = plot_1.aroon(mapping, 25);
+// create Aroon indicator with period 25 and shown as steplines on the second plot
+aroon25 = plot_1.aroon(mapping, 25, "step-line", "step-line");
 aroon25.upSeries().stroke('#bf360c');
 aroon25.downSeries().stroke('#ff6d00');
+aroon25.rangeSeries().fill('#ffd54f 0.2');
 
 // create Aroon indicator with period 30 and shown as splines on the third plot
 aroon30 = plot_2.aroon(mapping);
@@ -68,7 +64,8 @@ aroon30.period(30);
 aroon30.upSeries().seriesType("spline");
 aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
 aroon30.downSeries().seriesType("spline");        
-aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');
+aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');   
+aroon30.rangeSeries().fill(null);    
 ```
 
 Live sample:

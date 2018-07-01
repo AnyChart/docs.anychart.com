@@ -1,14 +1,9 @@
 {:index 3}
-#Marker
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Type and Size](#type_and_size)
-* [Visual Settings](#visual_settings)
+# Marker
 
 ## Overview
 
-The Marker annotation allows to add a marker to a chart.
+The Marker annotation allows you to add a marker to a chart.
 
 This article explains how to add a Marker and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -47,7 +42,7 @@ This is how it looks like:
 
 There are two settings available only for the Marker annotation: type and size. In addition, you can configure the offset.
 
-By default, the Marker looks like a down arrow. To set another type, use the {api:anychart.core.annotations.Marker#markerType}markerType(){api} method and one of the {api:anychart.enums.MarkerType}Marker Types enums{api}. In AnyChart, you can choose from 22 types of markers. 
+By default, the Marker looks like a down arrow. To set another type, use the {api:anychart.core.annotations.Marker#markerType}markerType(){api} method and one of the {api:anychart.enums.MarkerType}Marker Types{api}. In AnyChart, you can choose from 22 types of markers. 
 
 To configure the size and offset (by X and Y), use the {api:anychart.core.annotations.Marker#size}size(){api}, {api:anychart.core.annotations.Marker#offsetX}offsetX(){api}, and {api:anychart.core.annotations.Marker#offsetY}offsetY(){api} methods.
 
@@ -55,7 +50,7 @@ The first annotation in the following sample is of the default type (down arrow)
 
 ```
 // create the first Marker annotation and configure its size and offset
-marker1 = controller.marker({
+var marker1 = controller.marker({
     xAnchor: "2008-07-13",
     valueAnchor: 21.66,
     size: 30,
@@ -63,7 +58,7 @@ marker1 = controller.marker({
 });
 
 // create the second Marker annotation
-marker2 = controller.marker();
+var marker2 = controller.marker();
 
 // set the position of the second annotation
 marker2.xAnchor("2007-01-07");
@@ -79,40 +74,58 @@ marker2.offsetY(-40);
 
 {sample}STOCK\_Drawing\_Marker\_02{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Marker annotation:
+The [appearance settings](../../../Appearance_Settings) of a Marker annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.Marker#color}color(){api}, {api:anychart.core.annotations.Marker#fill}fill(){api}, {api:anychart.core.annotations.Marker#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Marker#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Marker#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Marker#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Marker#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.Marker#selectFill}selectFill(){api}, {api:anychart.core.annotations.Marker#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Marker#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api}
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api}
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Marker annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first Marker annotation and configure its visual settings
-marker1 = controller.marker({
+// create the first Marker annotation and configure its size, offset and visual settings
+var marker1 = controller.marker({
     xAnchor: "2008-07-13",
     valueAnchor: 21.66,
-    selectFill: "#398CAE 0.3",
-    selectHatchFill: "brick",
-    selectStroke: "5 #FF0000"
+    size: 30,
+    offsetY: 10,
+    hovered: {
+       fill: "#398cae 0.3",
+       stroke: "2 #ff0000",
+    },
+    selected: {
+        fill: "#398cae 0.3",
+        hatchFill: "percent75",
+        stroke: "4 #ff0000"
+    }
 });
 
 // create the second Marker annotation
-marker2 = controller.marker();
+var marker2 = controller.marker();
 
 // set the position of the second annotation
 marker2.xAnchor("2007-01-07");
 marker2.valueAnchor(28.92);
 
 // set the type of the second annotation
-marker2.markerType("arrowDown");
+marker2.markerType("arrow-down");
 
 // configure the visual settings of the second annotation
-marker2.stroke("#2196F3", 3, "10 2");
-marker2.fill(null);
+marker2.normal().fill(null);
+marker2.normal().stroke("#006600", 1, "10 2");
+marker2.hovered().stroke("#00b300", 2, "10 2");
+marker2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Marker\_03{sample}
-

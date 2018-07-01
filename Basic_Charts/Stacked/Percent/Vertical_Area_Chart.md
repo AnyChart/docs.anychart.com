@@ -1,10 +1,6 @@
 {:index 6}
 # Vertical Percent Stacked Area Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
 A Vertical Percent Stacked Area Chart is a multi-series Area Chart that displays the trend of the percentage each value contributes over time or categories. The categories of this chart are spread among the vertical axis.
@@ -13,11 +9,11 @@ The concept of stacking in AnyChart is explained in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Vertical Percent Stacked Area Chart, you should create a multi-series [Vertical Area Chart](../../Vertical/Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
+To build a Vertical Percent Stacked Area Chart, you should create a multi-series [Vertical Area Chart](../../Vertical/Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart
-var chart = chart.verticalArea();
+chart = chart.verticalArea();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

@@ -1,13 +1,5 @@
 # Stochastic
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Fast](#fast)
-* [Slow](#slow)
-* [Full](#full)
-* [Visualization](#visualization)
-
 ## Overview
 
 Stochastic oscillator is a momentum indicator introduced by George Lane in the 1950s. Stochastic oscillator helps with comparing the closing price of a commodity to its price range over a given time span. The %K and %D lines  show whether it's better to buy or sell: the moments when those two lines cross each other are regarded as the best for money operations.
@@ -18,7 +10,7 @@ Mathematical description: [Stochastic Oscillator Mathematical Description](Mathe
 
 ## Adding indicator
 
-Stochastic Oscillator indicator is added using the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method. It requires three data fields: High, Low and Close:
+Stochastic Oscillator indicator is added using the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method. It requires three data fields: `"high"`, `"low"`, and `"close"`:
 
 ```
 // create data table on loaded data

@@ -1,39 +1,53 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Additional Axes 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  chart = anychart.line();
+  var chart = anychart.line();
 
   chart.title("Extra Axes Units Comparison Sample");
 
   // setting xScale settings
   chart.xScale(anychart.scales.linear());
+
   var xScale = chart.xScale();
   xScale.minimum(1940);
   xScale.maximum(2010);
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(5);
+  xScale.ticks().interval(5);
 
   // setting yScale settings
   var yScale = chart.yScale();
   yScale.minimum(0);
   yScale.maximum(12000000000000);
-  var yScaleTicks = chart.yScale().ticks();
-  yScaleTicks.interval(2000000000000);
+  yScale.ticks().interval(2000000000000);
 
   // adding and adjusting extra Y scale
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0);
   extraYScale.maximum(140);
-  var extraYScaleTicks = extraYScale.ticks();
-  extraYScaleTicks.interval(20);
+  extraYScale.ticks().interval(20);
 
   // adding and adjusting extra Y axis
   var extraYAxis = chart.yAxis(1);
@@ -41,22 +55,12 @@
   extraYAxis.scale(extraYScale);
 
   // setting yAxes titles
-  var yAxis = chart.yAxis(0);
-  yAxis.title("Debt");
+  chart.yAxis(0).title("Debt");
   extraYAxis.title("GDP");
 
   // yAxes labels text adjusting
-  var yLabels = chart.yAxis(0).labels();
-  yLabels.format(function(){
-    var value = (this.value/1000000000000);
-    if (value > 0)
-      value = (this.value/1000000000000) + " 000 bil.";
-    return "$" + value;
-  });
-  var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.format(function(){
-    return this.value + "%";
-  });
+  chart.yAxis(0).labels().format("${%value}{scale:(1000000000000)|(T)}");
+  chart.yAxis(1).labels().format("{%value}%");
 
   // disable x axis title
   var xAxis = chart.xAxis();
@@ -66,15 +70,39 @@
   xAxis.staggerMode(true);
 
   // settings for labels of x axis
-  var xLabels = chart.xAxis().labels();
-  xLabels.width(50);
-  xLabels.hAlign("center");
+  xAxis.labels().width(50);
+  xAxis.labels().hAlign("center");
 
-  // disable minorGrid
-  chart.minorGrid(null);
+  // adjusting data visualisation
+  var lineSeries = chart.line(getData1());
+  lineSeries.stroke("#00F");
+  lineSeries.hovered().stroke("#00F");
+  lineSeries.yScale(extraYScale);
 
-  // setting first series of data
-  var firstSeries = anychart.data.set([
+  var columnSeries = chart.column(getData2());
+  columnSeries.fill(["#FF0000", "#880000"], -90);
+  columnSeries.stroke("#000", 1);
+  columnSeries.hovered().stroke("#FFF", 1);
+  columnSeries.hovered().fill(["#FF0000", "#880000"], -90);
+
+  var tooltip = chart.tooltip();
+  tooltip.titleFormat(function (){
+    return "Year: " + this.points[0].x;
+  });
+  tooltip.unionFormat(function (){
+    var gdp = "GDP - " + this.points[0].value + "%";
+    var debt = (this.points[1].value / 1000000000).toFixed(0);
+    if (debt > 999)
+      debt = ("" + debt/1000).replace(".", " ");
+    return gdp + "\nDebt - $" + debt + " bil." ;
+  });
+
+  chart.container("container");
+  chart.draw();
+});
+
+function getData1(){
+    return [
     [1940, 52.4],
     [1941, 50.5],
     [1942, 54.9],
@@ -146,10 +174,11 @@
     [2008, 69.3],
     [2009, 69.8],
     [2010, 70]
-  ]);
+  ]
+}
 
-  // setting second series of data
-  var secondSeries = anychart.data.set([
+function getData2(){
+    return [
     [1940, 45500000000],
     [1941, 56500000000],
     [1942, 100000000000],
@@ -221,37 +250,8 @@
     { x: 2008, value: 9948640000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"},
     { x: 2009, value: 10543521000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"},
     { x: 2010, value: 11137297000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"}
-  ]);
-
-  // adjusting data visualisation
-  var lineSeries = chart.line(firstSeries);
-  lineSeries.stroke("#00F");
-  lineSeries.hoverStroke("#00F");
-  lineSeries.yScale(extraYScale);
-
-  var columnSeries = chart.column(secondSeries);
-  columnSeries.fill(["#FF0000", "#880000"], -90);
-  columnSeries.stroke("#000", 1);
-  columnSeries.hoverStroke("#FFF", 1);
-  columnSeries.hoverFill(["#FF0000", "#880000"], -90);
-
-  var tooltip = chart.tooltip();
-  tooltip.titleFormat(function(){
-    return "Year: " + this.points[0].x;
-  });
-  tooltip.unionFormat(function(){
-    var gdp = "GDP - " + this.points[0].value + "%";
-    var debt = (this.points[1].value / 1000000000).toFixed(0);
-    if (debt > 999)
-      debt = ("" + debt/1000).replace(".", " ");
-    return gdp + "\nDebt - $" + debt + " bil." ;
-  });
-
-  chart.container("container");
-  chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+  ];
+}
+</script>
 </body>
 </html>

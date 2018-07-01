@@ -1,14 +1,6 @@
 {:index 7}
 # GraphicsJS Shapes and Primitives
 
-* [Overview](#overview)
-* [Basic Shapes](#basic_shapes)
-* [Predefined Shapes](#predefined_shapes)
-* [Clip](#clip)
-* [Coloring](#coloring)
- * [Fill](#fill)
- * [Stroke](#stroke)
-
 ## Overview
 
 GraphicsJS is a lightweight JavaScript graphics library which allows to create graphic elements for all purposes, from very simple to very complex. This article describes how to draw simple shapes using GraphicsJS and use them to create more complex shapes.
@@ -21,7 +13,7 @@ There are three basic shapes: Rectangle, Circle and Ellipse. This section descri
 
 ### Rectangle
 
-The {api:anychart.graphics#rect}rect(){api} method allows to draw a rectangle of some width and height in some point. This method accepts X and Y coordinates of the left-top rectangle corner and two values that stand for its width and height. The following sample demonstrates creating a rectangular in the point (100, 10) with the width of 400px and height of 40px:
+The {api:anychart.graphics#rect}rect(){api} method allows to draw a rectangle of some width and height in some point. This method accepts X- and Y-coordinates of the left-top rectangle corner and two values that stand for its width and height. The following sample demonstrates creating a rectangular in the point (100, 10) with the width of 400px and height of 40px:
 
 ```
 stage.rect(100, 10, 400, 40);
@@ -44,7 +36,7 @@ stage.circle(300, 150, 70);
 
 ### Ellipse
 
-Another simple shape is ellipse. Use {api:anychart.graphics#ellipse}ellipse(){api} method for creating an ellipse on your stage. This method requires four parameters: X and Y coordinates of the ellipse center, X-radius and Y-radius.
+Another simple shape is ellipse. Use {api:anychart.graphics#ellipse}ellipse(){api} method for creating an ellipse on your stage. This method requires four parameters: X- and Y-coordinates of the ellipse center, X-radius and Y-radius.
 
 ```
 // draw an ellipse

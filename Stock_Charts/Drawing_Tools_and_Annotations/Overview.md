@@ -1,15 +1,5 @@
 {:index 1}
-#Drawing Tools and Annotations
-
-* [Overview](#overview)
-* [Sample Application](#sample_application)
-* [General Settings](#general_settings)
-* [Annotation Types](#annotation_types)
- * [Fibonacci Tools](#fibonacci_tools)
- * [Trend Lines](#trend_lines)
- * [Geometric Shapes](#geometric_shapes)
- * [Labels, Markers, Buy/Sell Signals](#signals)
- * [Other Tools](#other_tools)
+# Drawing Tools and Annotations
 
 ## Overview
 
@@ -21,7 +11,7 @@ In this section you can find all important information about working with annota
 
 To demonstrate how AnyStock drawing tools can be implemented, we created a sample web application with open source.
 
-To see the application live, visit [https://www.anychart.com/products/anystock/drawing_tools/](https://www.anychart.com/products/anystock/drawing_tools/).
+To see the application live, visit [https://www.anychart.com/solutions/drawing-tools/](https://www.anychart.com/solutions/drawing-tools/).
 
 You can also download its source or simply fork it here: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 
@@ -58,7 +48,6 @@ Here is a full list of annotations available in AnyStock (with links to the arti
 * [Rectangle](Rectangle)
 * [Triangle](Triangle)
 
-<a name="signals"></a>
 ### Labels, Markers, Buy/Sell Signals
 
 * [Markers, Buy/Sell Signals](Marker)

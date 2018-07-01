@@ -1,20 +1,5 @@
 {:index 0.45}
-#General Settings
-
-* [Overview](#overview)
-* [Data](#data)
-* [Appearance Settings](#appearance_settings)
-* [Markers](#markers)
-* [Labels](#labels)
-* [Tooltips](#tooltips)
-* [Legend](#legend)
-* [Axes and Scales](#axes_and_scales)
-  * [Stacking](#stacking)
-* [Interactivity](#interactivity)
-* [Events](#events)
-* [Vertical Charts](#vertical_charts)
-* [3D Charts](#3d_charts)
-* [Custom Drawing](#custom_drawing)
+# Series General Settings
 
 ## Overview
 
@@ -34,40 +19,43 @@ To learn how to prepare your data for using it in AnyChart, see this article: [W
 
 ## Appearance Settings
 
-You can configure some visual settings of your chart: for example, stroke and fill color, fill or hatch fill pattern, and so on. For different chart types different settings are available.
+AnyChart allows you to specify some visual settings of your chart: for example, the stroke and fill color, hatch fill pattern, and so on. All these settings can be configured in three states: **normal**, **hover**, and **selected**. Also, please note that the set of available options depends on the chart type.
 
-More information can be found in the [Appearance Settings](../Appearance_Settings) article and articles about particular chart types.
+You can find more information in the [Appearance Settings](../Appearance_Settings) and [States](../Common_Settings/Interactivity/States) aticles as well as articles about particular chart types.
 
-In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, select fill, and hatch fill are set:
+In the sample below, there is an Area and two Line series with appearance settings (fill, hatch fill, stroke) configured in all states :
 
 ```
 // create the first series (area)
 var series1 = chart.area(seriesData_1);
 
 // configure the visual settings of the first series
-series1.fill("#04B4AE", 0.3);
-series1.hoverFill("#04B4AE", 0.5);
-series1.selectFill("#04B4AE", 0.5);
-series1.hatchFill("zigzag", "#808080", 1, 15);
-series1.stroke("#04B4AE");
-series1.hoverStroke("#04B4AE", 4);
-series1.selectStroke("#04B4AE", 4);
+series1.normal().fill("#04b4ae", 0.3);
+series1.hovered().fill("#04b4ae", 0.1);
+series1.selected().fill("#04b4ae", 0.5);
+series1.normal().hatchFill("zig-zag", "#808080", 1, 15);
+series1.hovered().hatchFill("zig-zag", "#808080", 1, 15);
+series1.selected().hatchFill("zig-zag", "#808080", 1, 15);
+series1.normal().stroke("#04b4ae");
+series1.hovered().stroke("#04b4ae", 2);
+series1.selected().stroke("#04b4ae", 4);
 
 // create the second series (line)  
 var series2 = chart.line(seriesData_2);
 
 // configure the visual settings of the second series
-series2.stroke("#04B404");
-series2.hoverStroke("#04B404", 4);
-series2.selectStroke("#04B404", 4);
+series2.normal().stroke("#04b404");
+series2.hovered().stroke("#04b404", 2);
+series2.selected().stroke("#04b404", 4);
 
-// create the third series (line)  
+// create the third series (line)
 var series3 = chart.line(seriesData_3);
 
 // configure the visual settings of the third series
-series3.stroke("#AEB404", 1, "10 5", "round");
-series3.hoverStroke("#AEB404", 4, "10 5", "round");
-series3.selectStroke("#AEB404", 4, "10 5",  "round");
+series3.normal().stroke("#aeb404", 1, "10 5", "round");
+series3.hovered().stroke("#aeb404", 2, "10 5", "round");
+series3.selected().stroke("#aeb404", 4, "10 5",  "round");
+
 ```
 
 {sample}BCT\_General\_Settings\_01{sample}
@@ -76,9 +64,9 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 {api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
 
-All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
+All chart types allow configuring markers: both on a whole series and in individual points. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
+In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only on hover and select). On the other series a few custom settings are added:
 
 ```
 // enable and configure markers on the first series
@@ -88,9 +76,9 @@ series1.markers().fill("gold");
 series1.markers().size(10);
 ```
 
-This sample shows how you can configure markers in particular points:
-
 {sample}BCT\_General\_Settings\_02{sample}
+
+This sample shows how you can configure markers in individual points:
 
 ```
 // create data, enable and configure markers
@@ -102,11 +90,12 @@ var data = [
   {x: "May", value:9000}
 ];
 ```
+
 {sample}BCT\_General\_Settings\_03{sample}
 
 ## Labels
 
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in individual points). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 In the sample below, there is a Column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
@@ -118,7 +107,7 @@ series.labels().fontWeight(900);
 series.labels().format("${%value}");
 ```
 
-The next sample shows how to configure labels in particular points:
+The next sample shows how to configure labels in individual points:
 
 {sample}BCT\_General\_Settings\_04{sample}
 
@@ -137,7 +126,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart separately.
+A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart individually.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -146,7 +135,7 @@ In this sample, there is a Column chart with two series, and tooltips are config
 ```
 // configure tooltips on the chart
 chart.tooltip().title("Information");
-chart.tooltip().format("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
+chart.tooltip().format("Manager: {%categoryName} \n{%seriesName}: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_06{sample}
@@ -156,11 +145,11 @@ Here tooltips are configured on each series separately, and the tooltip text on 
 ```
 // configure tooltips on the first series
 series1.tooltip().title("Last Year");
-series1.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
+series1.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 
 // configure tooltips on the second series
 series2.tooltip().title("This Year");
-series2.tooltip().format("Manager: {%CategoryName} \nSales: ${%value}");
+series2.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_07{sample}
@@ -196,36 +185,36 @@ legend.itemsSourceMode("categories");
 
 ## Axes and Scales
 
-In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chart types allow you to add extra scales and axes and bind different series to different scales.
+In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids/Scales). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chart types allow you to add extra scales and axes and bind different series to different scales.
 
-Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
+Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids).
 
 In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 
 ```
-// configure the main Y-scale
+// configure the main y-scale
 var yScale1 = anychart.scales.linear();
 yScale1.maximum(20000);
 
-// configure an extra Y-scale
+// configure an extra y-scale
 var yScale2 = anychart.scales.linear();
 yScale2.maximum(150);
 
-// configure the main Y-axis
+// configure the main y-axis
 var yAxis1 = chart.yAxis(0);
 yAxis1.scale(yScale1);
 yAxis1.title("Sales, $");
 
-// configure an extra Y-axis
+// configure an extra y-axis
 var yAxis2 = chart.yAxis(1);
 yAxis2.orientation("right")
 yAxis2.scale(yScale2);
 yAxis2.title("Number of Items Sold");
 
-// bind the first series to the main Y-scale
+// bind the first series to the main y-scale
 series1.yScale(yScale1);
 
-// bind the second series to the extra Y-scale
+// bind the second series to the extra y-scale
 series2.yScale(yScale2);
 ```
 
@@ -236,6 +225,10 @@ series2.yScale(yScale2);
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked/Overview).
+
+## Point Size
+
+All charts with points looking like bars (Bar, Column, and related types) allow you to set the size of the points: the width, the maximum width, and the minimum length. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ## Interactivity
 
@@ -301,4 +294,4 @@ Using AnyChart, you can create 3D versions of the following chart types: Area, B
 
 ## Custom Drawing
 
-It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom Drawing).
+It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom_Drawing).

@@ -1,93 +1,94 @@
 {:index 1 :title "Quick Start | AnyChart"}
-Quick Start
-===========
-  
-## Getting started with AnyChart
+# Quick Start
 
-Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be.
+## Getting Started
 
-###1. Include AnyChart into your web page
+To get started with AnyChart follow these simple steps and you will get your first web html5 ready chart in a minute.
 
-Reference the JavaScript file in the `<head>` section of your web page.  
-You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case). 
+Create an HTML file and give it the *index.htm* name if you want to make a new web page, or open your HTML file where the chart should be.
+
+## Include AnyChart
+
+Reference the JavaScript file in the *head* section of your web page.  
+You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you have to use your own link in this case). 
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.css">
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js" type="text/javascript"></script>
 </head>
 ```
 
-**Note**: first link in the snippet above reference AnyChart JS file and the second one reference css file that is required for proper work of [AnyChart UI](../Common_Settings/UI_Controls/AnyChart_UI) elements including [Gantt Toolbar](../Common_Settings/UI_Controls/Gantt_Toolbar) and [Context Menu feature](../Common_Settings/UI_Controls/Context_Menu).
+**Note**: first link in the snippet above reference AnyChart JS file and the second one reference CSS file that is required for proper work of [AnyChart UI](../Common_Settings/UI_Controls/AnyChart_UI) elements.
 
-###2. Create a container for the chart
+## Create a Container
 
-Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
+Add a block-level HTML element into your page, set the element *id*, and its *width* and *height*.
 
-Example:
 ```
 <body>
-    <div id="container" style="width: 500px; height: 400px;"></div>
+  <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-``` 
+```
 
-###3. Create a chart
+## Create the Chart
 
-Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
-
-Example:
+Put the JavaScript tag *script* with the following code anywhere in the *head* or *body* section. This code example uses JavaScript API to create a chart, but you also can use JSON, XML, CSV and many other formats, see [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more.
 
 ```
 <script>
-  anychart.onDocumentLoad(function() {
-    // create an instance of a pie chart with data
-    var chart = anychart.pie([
+  anychart.onDocumentLoad(function () {
+    // create an instance of a pie chart
+    var chart = anychart.pie();
+    // set the data
+    chart.data([
       ["Chocolate", 5],
       ["Rhubarb compote", 2],
       ["Crêpe Suzette", 2],
       ["American blueberry", 2],
       ["Buttermilk", 1]
     ]);
+    // set chart title
     chart.title("Top 5 pancake fillings");
-    // pass the container id, chart will be displayed there
+    // set the container element 
     chart.container("container");
-    // call the chart draw() method to initiate chart display
+    // initiate chart display
     chart.draw();
   });
 </script>
 ```
   
-## The result
+## See the Chart
 
-###See the result
-
-After all these steps you should have the following result. You can launch and explore this example further [here](https://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
+After all these steps you should have the following result. Launch and explore {pg:docs/samples/quick_start_pie-plain}basic AnyChart chart{pg} or see and launch it below:
 
 {sample}quick\_start\_pie{sample}
 
-###Full source code
+## Full Source Code
 
 Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
-    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js" type="text/javascript"></script>
     <script>
-        anychart.onDocumentLoad(function() {
-            // create an instance of pie chart with data
-            var chart = anychart.pie([
-                ["Chocolate", 5],
-                ["Rhubarb compote", 2],
-                ["Crêpe Suzette", 2],
-                ["American blueberry", 2],
-                ["Buttermilk", 1]
-            ]);
-            chart.title("Top 5 pancake fillings");
-            // pass the container where chart will be drawn
-            chart.container("container");
-            // call the chart draw() method to initiate chart drawing
-            chart.draw();
-        });
+      anychart.onDocumentLoad(function () {
+        // create an instance of a pie chart
+        var chart = anychart.pie();
+        // set the data
+        chart.data([
+          ["Chocolate", 5],
+          ["Rhubarb compote", 2],
+          ["Crêpe Suzette", 2],
+          ["American blueberry", 2],
+          ["Buttermilk", 1]
+        ]);
+        // set chart title
+        chart.title("Top 5 pancake fillings");
+        // set the container element 
+        chart.container("container");
+        // initiate chart display
+        chart.draw();
+      });
     </script>
 </head>
 <body>
@@ -97,7 +98,6 @@ Below this you can see how your full web page code should look like.
 ```
 
 Also, you can copy and paste this code to a file on your computer and run it in browser to see how it works.  
-
   
 ## Further Steps
 

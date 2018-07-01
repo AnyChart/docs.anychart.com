@@ -1,9 +1,5 @@
 # Calendar
 
-* [Overview](#overview)
-* [Settings](#settings)
-* [Getting Data](#getting_data)
-
 ## Overview
 
 A calendar, according to the Wikipedia, is "a system of organizing days for social, religious, commercial or administrative purposes" by giving names to periods of time. 
@@ -56,5 +52,3 @@ calendar.availabilities([
 ]);
 var getWorkingTime = calendar.getWorkingSchedule(Date.UTC(2016, 0, 31), Date.UTC(2016, 1, 1));
 ```
-
-

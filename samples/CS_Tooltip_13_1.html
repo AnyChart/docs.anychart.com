@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 13 1"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   var stage = anychart.graphics.create("container");
 
   var dataSet = anychart.data.set([
@@ -18,9 +34,9 @@
     ["Mary", 9000, 16000, 19000]
   ]);
 
-  var data1 = dataSet.mapAs({x: [0], value: [1]});
-  var data2 = dataSet.mapAs({x: [0], value: [2]});
-  var data3 = dataSet.mapAs({x: [0], value: [3]});
+  var data1 = dataSet.mapAs({x: 0, value: 1});
+  var data2 = dataSet.mapAs({x: 0, value: 2});
+  var data3 = dataSet.mapAs({x: 0, value: 3});
 
   // chart type
   chart = anychart.bar();
@@ -64,9 +80,7 @@
   // limit the stage parameters for better illustration
   document.getElementById("container").style.width="85%";
   document.getElementById("container").style.background="#F0FFF0";
-});</script>
-</head>
-<body>
-<div id="container"></div>
+});
+</script>
 </body>
 </html>

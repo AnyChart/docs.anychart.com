@@ -1,23 +1,19 @@
 {:index 5}
 # Percent Stacked Stick Chart
 
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Adjusting](#adjusting)
-
 ## Overview
 
-A Percent Stacked Stick Chart (also known as a 100% Stacked Stick Chart) is a multi-series Stick Chart that displays the trend of the percentage each value contributes over time or categories.
+A Percent Stacked Stick Chart (otherwise known as a 100% Stacked Stick Chart) is a multi-series Stick Chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Percent Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
+To build a Percent Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart
-var chart = chart.column();
+chart = chart.column();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");

@@ -1,11 +1,5 @@
 {:index 6}
-#Step Area Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [Settings](#settings)
-* [Special Settings](#special_settings)
-  * [Step Direction](#step_direction)
+# Step Area Chart
 
 ## Overview
 
@@ -13,7 +7,7 @@ A step area chart is an area chart in which points are connected by horizontal a
 
 Step area charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to show periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
-The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Step Area chart's characteristics:
+The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -25,7 +19,7 @@ The Step Area and Area chart types share almost all the settings, so this articl
 <tr><td>Stacked</td><td>[Stacked Step Area](Stacked/Value/Step_Area_Chart), [Percent Stacked Step Area](Stacked/Percent/Step_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Step Area](Vertical/Step_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Step Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Step Area Chart with Error Bars](Error_Chart/Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -38,7 +32,7 @@ The Step Area and Area chart types share almost all the settings, so this articl
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/stepline-area-chart/" target="_blank">Chartopedia: Step Area Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Step Area Chart](https://www.anychart.com/chartopedia/chart-types/stepline-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -61,7 +55,7 @@ var data = [
 ];
 
 // create a chart
-var chart = anychart.area();
+chart = anychart.area();
 
 // create a step area series and set the data
 var series = chart.stepArea(data);
@@ -92,9 +86,9 @@ In addition, see the full list of methods available for the Step Area series: {a
 
 The Step Area chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepDirection(){api}.
 
-There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
+There are three modes of step direction: center, backward, and forward. The default mode is **center** (in this case data points are placed to the center of horizontal segments).
 
-In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
+In the **forward** mode data points are the starting points of horizontal segments:  
 
 ```
 // set step direction to the forward mode
@@ -103,7 +97,7 @@ series.stepDirection("forward");
 
 {sample}BCT\_Step\_Area\_Chart\_02{sample}
 
-The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
+The **backward** mode sets data points as the final points of horizontal segments: 
 
 ```
 // set step direction to the backward mode

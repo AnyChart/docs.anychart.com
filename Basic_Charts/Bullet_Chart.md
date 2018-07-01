@@ -29,7 +29,7 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
 
 ```
 // Create bullet chart
-var chart = anychart.bullet([
+chart = anychart.bullet([
   {value: 637.166}                  //2005 revenue
 ]);
 chart.range().from(0).to(750);      //maximum annual income ever 
@@ -39,7 +39,7 @@ chart.range().from(0).to(750);      //maximum annual income ever
 
 ## Ranges
 
-Ranges or range bars in Bullet chart are qualitative categories representations (such as bad, satisfactory and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}range(){api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}.from(){api} and {api:anychart.core.axisMarkers.Range#to}.to(){api} methods.
+Ranges or range bars in Bullet chart are qualitative categories representations (such as bad, satisfactory and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}range(){api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}from(){api} and {api:anychart.core.axisMarkers.Range#to}to(){api} methods.
 
 ```
 chart.range(<number_of_a_range>).from(<value1>).to(<value2>);
@@ -83,9 +83,9 @@ In this section we will quickly demonstrate how we can adjust axis orientation, 
 
 ### Orientation
 
-With AnyChart you can place axis to any side of the chart, all you need to do is to adjust the {api:anychart.core.axes.Linear#orientation}**orientation(){api} parameter of {api:anychart.charts.Bullet#axis}axis(){api}.
+With AnyChart you can place axis to any side of the chart, all you need to do is to adjust the {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Bullet#axis}axis(){api}.
 
-Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set either *top* or *bottom*. As for vertical layout, axis orientation parameter may be set in *left* or *right*.
+Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set to either `"top'`' or `"bottom"`". As for vertical layout, axis orientation parameter can be set to `"left"` or `"right"`.
 
 ```
 chart.axis().orientation('top');
@@ -97,7 +97,7 @@ Here is a sample with the data from dashboard above with an only change of axis 
 
 ### Inversion
 
-AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the {api:anychart.scales.Linear#inverted}**scale().inverted(){api} method:
+AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the {api:anychart.scales.Linear#inverted}scale().inverted(){api} method:
 
 ```
 chart.scale().inverted(true);
@@ -109,7 +109,7 @@ Below this you can see a demonstration of a horizontal bullet chart with inverte
 
 ### Minimum and Maximum
 
-By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters:
+By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y-Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters:
 
 ```
 chart.yScale().minimum(-5).maximum(20);
@@ -121,18 +121,18 @@ Look at the demonstration of maximum and minimum values in the Single-series sam
 
 ## Markers
 
-Marker is an object with a specified shape, size and color or an image used to represent any comparative measures. 
+Marker is an object with a specified shape, size and color or an image used to represent any comparative measures. 
 Markers are controlled through the data. You will find a plenty of examples with different types of markers below.
 
 ### Types
 
-Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
+Bullet charts have {api:anychart.enums.BulletMarkerType}4 marker types{api}: `'bar'`, `'X'`, `'line'`, `'ellipse'`. Note that the `'bar'` type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
 
 Here is the sample with all 4 marker types:
 
 {sample :width 832 :height 500}BCT\_Bullet\_Chart\_07{sample}
 
-**Note:** This chart contains all markers in one data set. It was done for demonstration purpose. It's highly recommended to **limit markers number to two** to avoid complexity.
+**Note:** This chart contains all markers in one data set. It is done for demonstration purposes. It's highly recommended to **limit the mumber of markers to two**.
 
 ### Style
 
@@ -141,7 +141,7 @@ For clearer distinction between markers it is very useful to adjust style settin
 Here is the sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart.
 
 ```
-var chart = anychart.bulletChart([
+chart = anychart.bulletChart([
   {value: 225},
   {value: 290,          // set marker position
     type: 'ellipse',    // set ellipse as marker type
@@ -158,7 +158,7 @@ var chart = anychart.bulletChart([
 
 ## Colors
 
-Bullet Chart ranges use variables of color intensity rather than of hue. Ranges' colors are controlled using {api:anychart.charts.Bullet#rangePalette}rangePalette(){api} method:
+Bullet Chart ranges use variables of color intensity rather than of hue. Ranges' colors are controlled using {api:anychart.charts.Bullet#rangePalette}rangePalette(){api} method:
 
 ```
 chart.rangePalette([

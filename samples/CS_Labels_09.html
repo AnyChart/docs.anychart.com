@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Minimum and Maximum Labels 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 25px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data table
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
+
+    // create a stock chart
+    chart = anychart.stock();
+
+    // set the chart title
+    chart.title("Labels: Minimum and Maximum");
+    // left padding
+    chart.padding().left(80);
+
+    // create a series
+    var series = chart.plot(0).ohlc(mapping);
+    // enable minimum and maximum labels for a series
+    series.minLabels(true);
+    // and change format for minLabels
+    series.minLabels().format("{%Low}");
+    // leave the maxLabels format default
+    series.maxLabels(true);
+  
+    // set positions
+    series.maxLabels().position("open");
+    series.minLabels().position("center-bottom");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

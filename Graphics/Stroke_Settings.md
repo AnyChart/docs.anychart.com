@@ -2,12 +2,6 @@
 
 # Stroke Settings
 
-* [Overview](#overview)
-* [Color](#color)
-* [Thickness](#thickness)
-* [Dash](#dash)
-* [Join and Cap](#join_and_cap)
-
 ## Overview
 
 Stroke settings define how a path (line), or a border of a shape is drawn. All [Shapes](Shapes) and [Paths](Paths) have a stroke method.
@@ -17,13 +11,14 @@ Stroke settings define how a path (line), or a border of a shape is drawn. All [
 Stroke color can be set in several ways:
 
 * using a parameter:  `stroke(colorSettings, otherParams...)`
-* as a String: `'thickness colorSetting'`
-* using an Object:
+* as a string: `'thickness colorSetting'`
+* using an object:
+
 ```
  {
     color: value,
     opacity: value,
-    otherParams ...
+    ...
  }
 ```
 
@@ -61,12 +56,12 @@ For example, that's how you do stroke color fill:
 Stroke thickness can be set in several ways:
 
 * using a parameter:  `stroke(colorSettings, thickness, otherParams...)`
-* as a String:  `'thickness colorSetting'`
-* as an Object:
+* as a string:  `'thickness colorSetting'`
+* as an object:
 ```
 {
   thickness: value,
-  otherParams ...
+  ...
 }
 ```
 
@@ -77,15 +72,15 @@ Stroke thickness can be set in several ways:
 Dash settings can be set in two ways:
 
 * using a parameter: `stroke(colorSettings, thickness, dashSetting, otherParams...)`
-* as an Object:
+* as an object:
 ```
 {
   dash: value,
-  otherParams ...
+  ...
 }
 ```
 
-Dash settings are set by a string with numbers separated by spaces. This string is used as the dash pattern. For example, if string value is `5` – the resulting pattern will be `5 5 5 5 5 ...`, and if string value is  `5 5 10`, that will result in `5 5 10 5 5 10 5 5 10 ...`.
+Dash settings are set by a string with numbers separated by spaces. This string is used as the dash pattern. For example, if string value is `5` - the resulting pattern will be `5 5 5 5 5 ...`, and if string value is  `5 5 10`, that will result in `5 5 10 5 5 10 5 5 10 ...`.
  
 Every number in an odd position is a dash length, and every number in an even position is a space length.
 
@@ -99,12 +94,12 @@ Every number in an odd position is a dash length, and every number in an even po
 
 {api:anychart.graphics.vector.SolidStroke}Join and cap{api} settings are set in two ways:
 * using a parameter: `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
-* as an Object:
+* as an object:
 ```
 {
   lineJoin: value,
   lineCap: value,
-  otherParams ...
+  ...
 }
 ```
 

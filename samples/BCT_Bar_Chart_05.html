@@ -1,25 +1,41 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Bar Chart 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
+    // create data
+    var data = [
       ["John", 10000],
       ["Jake", 12000],
       ["Peter", 13000],
       ["James", 10000],
       ["Mary", 9000]
-    ]);
+    ];
 
     // create a chart
-    chart = anychart.bar();
+    var chart = anychart.bar();
 
     // create a bar series and set the data
     var series = chart.bar(data);
@@ -31,19 +47,15 @@
     chart.barGroupsPadding(0);
 
     // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Manager");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

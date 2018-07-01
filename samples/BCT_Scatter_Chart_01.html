@@ -1,25 +1,41 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Scatter Chart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // create data for the first series
     var data_1 = [
       {x: 0.6, value: 22},
+      {x: 1.7, value: 55},
+      {x: 2.3, value: 50},
+      {x: 3.5, value: 80},
       {x: 3.9, value: 74},
       {x: 4, value: 68},
       {x: 4, value: 76},
-      {x: 3.5, value: 80},
       {x: 4.1, value: 84},
-      {x: 2.3, value: 50},
-      {x: 4.7, value: 93},
-      {x: 1.7, value: 55}
+      {x: 4.7, value: 93}
     ];
 
     // create data for the second series
@@ -29,21 +45,21 @@
     ];
 
     // create a chart
-    chart = anychart.scatter();
+    var chart = anychart.scatter();
 
-    // create the second series (marker) and set the data
+    // create the first series (marker) and set the data
     var series1 = chart.marker(data_1);
 
-    // create the first series (line) and set the data
+    // create the second series (line) and set the data
     var series2 = chart.line(data_2);
 
-    // create major grids and bind them to the X and Y axes
-    chart.grid(0).axis(chart.xAxis());
-    chart.grid(1).axis(chart.yAxis());
+    // enable major grids
+    chart.xGrid(true);
+    chart.yGrid(true);
 
-    // create minor grids and bind them to the X and Y axes
-    chart.minorGrid(0).axis(chart.xAxis());
-    chart.minorGrid(1).axis(chart.yAxis());
+    // enable minor grids 
+    chart.xMinorGrid(true);
+    chart.yMinorGrid(true);
 
     // set the chart title
     chart.title("Scatter Plot: Basic Sample");
@@ -53,9 +69,7 @@
 
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

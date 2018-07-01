@@ -1,13 +1,5 @@
 {:index 2}
-Drill Down Maps
-=================
-
-* [Overview](#overview)
-* [Methods](#methods)
- * [Drill To](#drill_to)
- * [Drill Up](#drill_up)
- * [Drill Down Map](#drill_down_map)
- * [Get Drill Down Path](#get_drill_down_path)
+# Drill Down Maps
 
 ## Overview
 
@@ -22,15 +14,15 @@ The following methods make working with drill down easier:
 - {api:anychart.charts.Map#drillTo}drillTo(){api},
 - {api:anychart.charts.Map#drillUp}drillUp(){api},
 - {api:anychart.charts.Map#drillDownMap}drillDownMap(){api}
-- {api:anychart.charts.Map#drillDownPath}drillDownPath(){api}. 
+- {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. 
 
 ### Drill To
 
-Using the {api:anychart.charts.Map#drillTo}.drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](Event_Listeners).
+Using the {api:anychart.charts.Map#drillTo}drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](../../Common_Settings/Event_Listeners).
 
 ```
 // Drill down to specified map
-map.drillTo("US", usaMap);
+map.drillTo("US", map);
 ```
 
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
@@ -39,7 +31,7 @@ Another way to create a map with a drill down function is not to specify all map
 
 ### Drill Up
 
-The {api:anychart.charts.Map#drillUp}drillUp(){api} method loads the map of the previous level. This method requires no params, it works only when drill down caused by {api:anychart.charts.Map#drillTo}drillTo(){api} or {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
+The {api:anychart.charts.Map#drillUp}drillUp(){api} method loads the map of the previous level. This method requires no parameters, it works only when drill down caused by {api:anychart.charts.Map#drillTo}drillTo(){api} or {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
 
 ```
 // drill up
@@ -58,7 +50,7 @@ map.interactivity().selectionMode("drillDown");
 
 // set the drillDownMaps
 map.drillDownMap({
-    "US": usaMap,        
+    "US": map,        
     "CA": canadaMap
 });
 ```

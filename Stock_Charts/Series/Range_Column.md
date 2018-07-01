@@ -1,17 +1,8 @@
 # AnyStock Range Column Series
 
-* [Overview](#overview)
-* [AnyStock Range Column Series Adjustment](#anystock_range_column_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
-Range Column series is quite similar to Basic [Column Chart](Column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Chart_Types/Range_Column_Chart).
+Range Column series is quite similar to Basic [Column Chart](Column). You can find all information about creating a standard column chart in the [Range Column Chart article](../../Basic_Charts/Range_Column_Chart).
 
 ## AnyStock Column Adjustment
 
@@ -85,9 +76,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-### Coloring
+##  Appearance
 
 To change the fill and stroke use {api:anychart.core.stock.series.RangeColumn#fill}fill(){api} and {api:anychart.core.stock.series.RangeColumn#stroke}stroke(){api}. Also it's possible to highlight a series not with a color but with a hatch fill using {api:anychart.core.stock.series.RangeColumn#hatchFill}hatchFill(){api} method. 
 
@@ -103,15 +92,3 @@ series_sydney.stroke("#000");
 ```
 
 {sample}STOCK\_Range\_Column\_04{sample}
-
-### Hovered state
-
-Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to tune the crosshair.
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-chart.plot(1).dateTimeHighlighter("#999", 1.5);
-```
-
-{sample}STOCK\_Range\_Column\_05{sample}

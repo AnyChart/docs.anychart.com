@@ -1,27 +1,10 @@
-#Scroller
-
-* [Overview](#overview)
-* [Zoom Settings](#zoom_settings)
- * [Limits by ratio](#limits_by_ratio)
- * [Limits by values](#limits_by_values)
- * [Limits by the number of points](#limits_by_the_number_of_points)
- * [Get the limits ratio](#get_the_limits_ratio)
- * [Allow range change](#allow_range_change) 
-* [Scroll bar](#scroll_bar)
- * [Orientation](#orientation)
- * [Position](#position)
- * [Colors](#colors)
- * [Size](#size)
- * [Thumbs](#thumbs)
-* [Live update](#live_update)
-* [Auto hide](#auto_hide)
-* [Events](#events)
+# Scroller
 
 ## Overview
 
 Sometimes when there is too much data that it cannot be displayed simultaneously keeping it comfortable for understanding. In this case we can enable the scroller.
 
-Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing "true" to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
+Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing `true` to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
 
 ```
 // turn on X Scroller
@@ -38,7 +21,7 @@ chart.xScroller().enabled(false);
 
 ### Limits by ratio
 
-The simplest way of limiting the show area is using the ratio. Do this with the {api:anychart.core.utils.OrdinalZoom#setTo}setTo(){api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3):
+The simplest way of limiting the show area is using the ratio. Do this with the {api:anychart.core.utils.OrdinalZoom#setTo}setTo(){api} method for that. Use two values with this method: the start ratio value (e.g., 0) and the end one (e.g., 0.3):
 
 ```
 // set zoom ratio
@@ -49,7 +32,7 @@ chart.xZoom().setTo(0, 0.3);
 
 ### Limits by values
 
-Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.charts.Cartesian.XZoom#setToValues}setToValues(){api} method:
+Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.core.utils.OrdinalZoom#setToValues}setToValues(){api} method:
 
 **Note:** only [Heat maps](../Basic_Charts/Heat_Map_Chart) support scroll or zoom by Y in this version.
 
@@ -62,7 +45,7 @@ chart.yZoom().setToValues("Part 1", "Part 4");
 
 ### Limits by the number of points
 
-The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as the second value.
+The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set `true` as the second value.
 
 ```
 // set limits using a number of points
@@ -73,7 +56,7 @@ chart.xZoom()setToPointsCount(10, true);
 
 ### Get the limits ratio
 
-To get the limiting points ratio using {api:anychart.charts.Cartesian.XZoom#getStartRatio}getStartRatio(){api} and {api:anychart.charts.Cartesian.XZoom#getEndRatio}getEndRatio(){api} methods.
+To get the limiting points ratio using {api:anychart.core.utils.OrdinalZoom#getStartRatio}getStartRatio(){api} and {api:anychart.core.utils.OrdinalZoom#getEndRatio}getEndRatio(){api} methods.
 
 ```
 // set the xZoom
@@ -144,7 +127,7 @@ chart.xScroller().outlineStroke("#33CC33", 2);
 
 ### Size
 
-To adjust scroll bar height (width) use the {api:anychart.ui.Scroller#height}height(){api} method. There are also  {api:anychart.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.ui.Scroller#minHeight}minHeight(){api} methods which are useful when your charts are being resized.
+To adjust scroll bar height (width) use the {api:anychart.core.ui.Scroller#height}height(){api} method. There are also  {api:anychart.core.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Scroller#minHeight}minHeight(){api} methods which are useful when your charts are being resized.
 
 ```
 // set the bar height
@@ -162,7 +145,7 @@ The scroll bar thumbs can be adjusted too. You change their look, dimensions or 
  - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enables and disables thumbs.
  - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}fill(){api} and {api:anychart.core.ui.Scroller.Thumbs#stroke}stroke(){api} color thumbs in the default state.
- - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}hoverFill(){api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}hoverStroke(){api} color thumbs in hovered state.
+ - {api:anychart.core.ui.Scroller.Thumbs#hovered}hovered(){api} to color thumbs in hovered state.
 
 ```
 // adjusting the thumbs behavior and look
@@ -174,7 +157,7 @@ chart.xScroller().thumbs().hoverFill("#FFD700");
 
 ## Live update
 
-By default, the chart is changing while being scrolled. To redraw a chart only when the mouse button is released use the {api:anychart.charts.Cartesian.XZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
+By default, the chart is changing while being scrolled. To redraw a chart only when the mouse button is released use the {api:anychart.core.utils.OrdinalZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
 
 ```
 // prevent the scrolling while the button is not released yet

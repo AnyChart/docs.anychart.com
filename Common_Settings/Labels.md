@@ -1,15 +1,4 @@
-#Labels
-
-* [Overview](#overview)
-* [Basic Settings](#basic_setings)
- * [Enable](#enable)
- * [Format Text](#format_text)
-* [Visual Settings](#visual_settings)
- * [Background](#background)
- * [Font](#font)
- * [Position](#position)
- * [Size](#size)
-* [Themes](#themes)
+# Labels
 
 ## Overview
 
@@ -21,7 +10,7 @@ You can configure different settings for labels on select and hover.
 
 ### Enable
 
-In most of the cases, series labels are disabled by default. To enable them set "true" using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
+In most of the cases, series labels are disabled by default. To enable them set `true` using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
 
 ```
 // create a chart
@@ -60,11 +49,11 @@ You can also change background, font and other settings.
 ```
 // background border color
 series.labels().background().stroke("#663399");
-series.selectLabels().background().stroke("Green");
+series.selected().labels().background().stroke("Green");
 
 // font color
 series.labels().fontColor("#663399");
-series.selectLabels().fontColor("Green");
+series.selected().labels().fontColor("Green");
 ```
 
 {sample}CS\_Labels\_03{sample}
@@ -83,13 +72,13 @@ background.cornerType("round");
 background.corners(5);
 ```
 
-That is how labels background with the settings from above looks like:
+This is how labels background with the settings from above looks like:
 
 {sample}CS\_Labels\_04{sample}
 
 ### Font
 
-Font settings are set as for any other [Text](Text_Settings):
+Font settings are set as for any other [Text](../Appearance_Settings/Text_Settings):
 
 ```
 // font labels font settings
@@ -114,8 +103,8 @@ Here is how you can put labels in the center of columns:
 ```
 // set labels position
 labels = series.labels();
-labels.position("Center");
-labels.anchor("Center");
+labels.position("center");
+labels.anchor("center");
 ```
 
 And here is a sample of rotated labels put on top of columns:
@@ -124,8 +113,8 @@ And here is a sample of rotated labels put on top of columns:
 // set labels position
 labels = chart.getSeries(0).labels();
 labels.enabled(true);
-labels.position("TopCenter");
-labels.anchor("Left");
+labels.position("center-top");
+labels.anchor("left");
 labels.offsetY(-10);
 labels.rotation(-90);
 ```
@@ -153,16 +142,18 @@ Labels can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). T
 ```
 var themeSettings = {
   "column":{
-    // series hub
     "defaultSeriesSettings":{
-      // series settings
       "column":{
-        // label settings
-        "labels": {
-          "anchor": "bottomCenter",
-          "position": "topCenter",
-          "fontFamily": "Menlo",
-          "fontSize": 14
+        "normal":{
+            "labels": {
+              "enabled": true,
+              "anchor": "center",
+              "position": "center",
+              "fontFamily": "Courier",
+              "fontSize": 18,
+              "fontColor": "#ffffff",
+              "format": "${%value}"
+          }
         }
       }
     }
@@ -173,3 +164,50 @@ var themeSettings = {
 Settings for the labels in the sample below are applied using themes. Click "launch in playground" to see how settings for labels can be applied using AnyChart themes.
 
 {sample}CS\_Labels\_08{sample}
+
+## Minimum and Maximum Labels
+
+If you want to highlight points that have minimal or maximal values you can either manually enable labels for those points or use {api:anychart.core.StateSettings#minLabels}minLabels(){api} and {api:anychart.core.StateSettings#maxLabels}maxLabels(){api} methods.
+
+Here are a couple of samples that show how these methods can be applied.
+
+To show labels only for maximal and minimal points on a [stock chart](../Stock_Charts/Overview) use code like this:
+
+```
+// create a series
+var series = chart.plot(0).ohlc(mapping);
+// enable minimum and maximum labels for a series
+series.minLabels(true);
+// and change format for minLabels
+series.minLabels().format("{%Low}");
+// leave the maxLabels format default
+series.maxLabels(true);
+
+// set positions
+series.maxLabels().position("open");
+series.minLabels().position("center-bottom");
+```
+
+**Note 1**: Besided the usual {api:anychart.enums.Position}positions{api} you can choose the value-based position where label is located for multi-value series like candlestick, ohlc or range area.
+
+**Note 2**: Minimum and maximum labels are shown in the selected range.
+
+{sample}CS\_Labels\_09{sample}
+
+To color and configure minimal and maximal points differently in different states use code like this:
+
+```
+// create a series
+series = chart.column(data);
+
+// configure min and max labels
+series.normal().maxLabels(true);
+series.normal().maxLabels().fontColor("red");
+series.hovered().maxLabels().fontSize(16);
+
+series.normal().minLabels(true);  
+series.normal().minLabels().fontColor("green");
+series.hovered().minLabels().fontSize(16);
+```
+
+{sample}CS\_Labels\_10{sample}

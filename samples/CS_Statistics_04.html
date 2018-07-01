@@ -1,14 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-
-anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Statistics 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   // create data set
   dataSet = anychart.data.set([
     ["1800", 170, 161],
@@ -25,13 +40,13 @@ anychart.onDocumentReady(function() {
   ]);
 
   // map data for the first series
-  data_maleMartians = dataSet.mapAs({x: [0], value: [1]});
+  data_maleMartians = dataSet.mapAs({x: 0, value: 1});
 
   // map data for the second series
-  data_femaleMartians = dataSet.mapAs({x: [0], value: [2]});
+  data_femaleMartians = dataSet.mapAs({x: 0, value: 2});
 
   // create a line chart
-  chart = anychart.line();
+  var chart = anychart.line();
 
   // create the first series with mapped data
   maleMartians = chart.line(data_maleMartians);
@@ -43,14 +58,14 @@ anychart.onDocumentReady(function() {
   femaleMartians.name("Female Martians");
   femaleMartians.color("#E93F39"); 
 
-  // get statistical data (the average of all the Y values on the first series)
+  // get statistical data (the average of all the y-values on the first series)
   maleAverage = maleMartians.getStat("seriesYAverage");
 
-  // get statistical data (the average of all the Y values on the second series)
+  // get statistical data (the average of all the y-values on the second series)
   femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
 
   // set the title of the chart
-  chart.title("The Average Height of Martians: Males — " + maleAverage + ", Females — " + femaleAverage);
+  chart.title("The Average Height of Martians: Males ~ " + maleAverage + ", Females ~ " + femaleAverage);
   
   // set the title of the y-axis
   chart.yAxis().title("Average Height (cm)");
@@ -63,9 +78,7 @@ anychart.onDocumentReady(function() {
 
   // initiate drawing the chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

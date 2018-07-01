@@ -1,19 +1,9 @@
 {:index 2.5}
 # GraphicJS Basics
 
-* [Overview](#overview)
-* [Note to AnyChart Users](#note_to_anychart_users)
-* [Basics](#basics)
-* [Shapes and primitives](#basic_shapes_and_primitives)
-* [Path](#path)
-  * [Building the path](#building_the_path)
-  * [Coloring](#coloring)
-* [Layers](#layers)
-* [Text and image](#text_and_image)
-  
 ## Overview
 
-As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an [intuitive graphics API](https://api.anychart.com/latest/anychart.graphics), [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.
+As you may have learned from [GraphicsJS Overview](Overview), GraphicJS is a JavaScript graphics library which includes an {api:anychart.graphics}intuitive graphics API{api}, [Virtual DOM](Virtual_DOM), and [SVG/VML](Browser_Support) renderers.
 
 In this article we will try to give an overview of GraphicsJS capabilities and go slightly far than [GraphicsJS Quick Start](Quick_Start) article does.
 
@@ -34,11 +24,11 @@ table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO
 
 These lines mean that the usage of anychart.graphics takes place in this or that sample. What is this anychart.graphics once again?
 
-anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](Overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or [pattern fills](/Fill/Pattern), you should deal with some methods and techniques from GraphicsJS.
+anychart.graphics is [the JavaScript drawing library AnyChart 7+ is build upon](Overview), and it is integrated in AnyChart, the library does everything in terms of rendering and display. All charts are based on this library. It *is not necessary to know how it works to use AnyChart charts*, but if you want to use options like drawing custom markers, create complicated dashboards or [pattern fills](./Hatch_Fill_Settings#pattern), you should deal with some methods and techniques from GraphicsJS.
 
 ## Basics
 
-Everything is drawn on a stage. To create the stage use the {api:anychart.graphics.create}create(){api} method:
+Everything is drawn on a stage. To create the stage use the {api:anychart.graphics#create}create(){api} method:
 
 ```
 var stage = anychart.graphics.create('container');
@@ -54,7 +44,7 @@ Note that the stage coordinate system starts in the left top corner.
 
 ## Basic shapes and primitives
 
-On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), [Images](Images) and more.Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
+On a stage, you can draw anything using simple shapes, such as [rectangles, ellipses, starts and more](Shapes), [lines](Paths), [Text](Text_and_Fonts), and more. Let's draw a simple picture: put a "ball" into the "box" using {api:anychart.graphics.vector.Stage#circle}circle(){api} and {api:anychart.graphics.vector.Stage#rect}rect(){api} methods:
 
 ```
 // draw a circle
@@ -108,7 +98,7 @@ stage.circle(200, 250, 100)
 
 {sample}GFX\_Basics\_03{sample}
 
-Visit the [Fill](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to learn more about coloring.
+Visit the [Fill](./Fill_Settings) or the [Stroke Guide](./Stroke_Settings) to learn more about coloring.
 
 ## Layers
 

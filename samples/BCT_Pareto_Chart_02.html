@@ -1,16 +1,33 @@
+<!DOCTYPE html>
 <html>
-<head>
-<meta name="x-cat-tags" content="anyChart"/>
-<meta charset="UTF-8"/>
-<meta name="tags" content="[]"/>
-<meta name="index" content="1000"/>
-<meta name="is-new" content="false"/>
-<script src="../anychart-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Pareto Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pareto.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-// create a Pareto chart
-chart = anychart.pareto([
+// create a chart
+var chart = anychart.pareto([
   {x: "Defect 1", value: 19},
   {x: "Defect 2", value: 9},
   {x: "Defect 3", value: 28},
@@ -19,24 +36,28 @@ chart = anychart.pareto([
 ]);
 
 // set the chart title
-chart.title("Pareto Chart: Configure Series");
+chart.title("Pareto Chart: Appearance");
 
-// make column series white with black border and hatch fill
-chart.getSeries(0).fill(null);
-chart.getSeries(0).stroke("#000000");
-chart.getSeries(0).hatchFill("#zigzag");
+// configure the visual settings of the first series
+chart.getSeries(0).normal().fill("#0066cc", 0.3);
+chart.getSeries(0).hovered().fill("#0066cc", 0.1);
+chart.getSeries(0).selected().fill("#0066cc", 0.5);
+chart.getSeries(0).normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+chart.getSeries(0).normal().stroke("#0066cc");
+chart.getSeries(0).hovered().stroke("#0066cc", 2);
+chart.getSeries(0).selected().stroke("#0066cc", 4);
 
-// make line series black and dashed
-chart.getSeries(1).stroke("#000000", "2", "2 2");
+// configure the visual settings of the second series
+chart.getSeries(1).normal().stroke("#0066cc", 4, "4 4", "round");
 
 // set the container id
 chart.container("container");
 
 // initiate drawing the chart
 chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,9 +1,6 @@
 {:index 3}
 # Virtual DOM
 
-* [Overview](#overview)
-* [Methods](#methods)
-
 ## Overview
 
 GraphicsJS implements Virtual DOM which makes drawing more robust and manageable.
@@ -21,7 +18,7 @@ item.parentNode.removeChild(item);
 
 Document is an abstraction of the root node, while getElementById, parentNode and removeChild are methods from HTML DOM API.
 
-The HTML DOM is always tree-structured, and it is the nature of the structure of any HTML document. Tree-like structures can be traversed easily. But, unfortunately, easily doesn’t always mean quickly. Libraries like React provide a Virtual DOM for working with HTML DOM.
+The HTML DOM is always tree-structured, and it is the nature of the structure of any HTML document. Tree-like structures can be traversed easily. But, unfortunately, easily doesn't always mean quickly. Libraries like React provide a Virtual DOM for working with HTML DOM.
 
 The Virtual DOM is an abstraction of the HTML DOM, it is lightweight and it is detached from the browser-specific implementation details. It is worth noticing that since the DOM itself is an abstraction, the virtual DOM is an abstraction of an abstraction.
 
@@ -49,7 +46,7 @@ And the following methods allow you to suspend and resume rendering at any time,
 
 * {api:anychart.graphics.vector.Stage#suspend}suspend(){api}
 * {api:anychart.graphics.vector.Stage#isSuspended}isSuspended(){api}
-* {api:anychart.graphics.vector.Stage#render}render(){api}
+* {api:anychart.graphics.vector.Stage#resume}resume(){api}
 * {api:anychart.graphics.vector.Stage#isRendering}isRendering{api}
 
 More about suspend and resume methods can be found in the [Performance](Performance#suspend_and_resume) article.
@@ -87,7 +84,7 @@ stage.suspend();
 How you can listen to [Events](Events) and resume rendering of needed:
 
 ```
-anychart.graphics.events.listen(rectangle, "click", function() {
+anychart.graphics.events.listen(rectangle, "click", function () {
     if (stage.isSuspended()){
         stage.resume();
         // remove objects

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Price Indicator 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data table
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    mapping = dataTable.mapAs({'open': 1, 'high': 2,'low': 3,'close':4, 'value': 5});
+
+    // create a chart
+    var chart = anychart.stock();
+
+    // add two series
+    ohlcSeries = chart.plot(0).ohlc(mapping);
+    lineSeries = chart.plot(1).line(mapping);
+
+    // add indicator to OHLC series
+    var indicator1 = chart.plot(0).priceIndicator();
+    indicator1.value('last-visible');
+    indicator1.fallingStroke('#EF9A9A');
+    indicator1.fallingLabel({background: '#F44336'});
+    indicator1.risingStroke('#4CAF50');
+    indicator1.risingLabel({background: '#A5D6A7'});
+
+    // add indicator to line series
+    var indicator2 = chart.plot(1).priceIndicator();
+    // set line settings
+    indicator2.stroke("Black", 2, "2 2");
+    // configure label
+    indicator2.label().background().fill("White");
+    indicator2.label().fontColor("Black");
+
+    // set the chart position and title
+    chart.title("Price Indicator: Appearance");
+
+    // set the chart container
+    chart.container("container");
+   
+    // set padding
+    chart.padding().left(75);
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

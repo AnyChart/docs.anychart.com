@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Data Adapter HTML Table 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-data-adapter.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js">
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+          }
+
+        html, body {
+            height: 100%;
+        }
+
+        #container {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        .heading {
+            display: table-row;
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            display: table-cell;
+            border: 1px solid #dddddd;
+            padding: 5px 3px;
+            text-align: center;
+        }
+
+        .row:nth-of-type(odd){
+            background: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div class="table">
+  <div class="heading">
+    <div class="cell">
+      <p>Date</p>
+    </div>
+    <div class="cell">
+      <p>ILS (₪)</p>
+    </div>
+    <div class="cell">
+      <p>CNY (¥)</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/01</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/02</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/03</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/04</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="cell">
+      <p>01/05</p>
+    </div>
+    <div class="cell">
+      <p>2</p>
+    </div>
+    <div class="cell">
+      <p>3</p>
+    </div>
+  </div>
+</div>
+<script>
+anychart.onDocumentLoad(function() {
+  // create a chart and set the data
+  var chart = anychart.column();
+  
+  var tableData = anychart.data.parseHtmlTable(".table",
+                                               ".row",
+                                               ".cell p",
+                                               ".heading .cell p",
+                                               ".title");
+
+  chart.data(tableData);
+
+  chart.legend(true);
+
+  // set chart container and draw
+  chart.container("container").draw();
+   
+});   
+</script>
+</body>
+</html>

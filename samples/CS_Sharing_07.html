@@ -1,22 +1,55 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-    anychart.onDocumentReady(function() {  
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Sharing 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        width: 25px;
+        height: 25px;
+      }
+      button {
+        border: none;
+        background: none;
+        padding: 0;
+      }
+      #container {
+        position: absolute;
+        width: 100%;
+        top: 35px;
+        bottom: 0;
+      }
+    </style>
+</head>
+<body>
+<button onclick="share('facebook')"><img src="https://static.anychart.com/images/fbicon.png"></button>
+<button onclick="share('twitter')"><img src="https://static.anychart.com/images/twicon.png"></button>
+<button onclick="share('linkedin')"><img src="https://static.anychart.com/images/linkicon.png"></button>
+<button onclick="share('pinterest')"><img src="https://static.anychart.com/images/pinicon.png"></button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {  
     // create pie chart with passed data
     chart = anychart.pie([
-        ['Department Stores', 6371664],
-        ['Discount Stores', 7216301],
-        ['Men\'s/Women\'s Stores', 1486621],
-        ['Juvenile Specialty Stores', 786622],
-        ['All other outlets', 900000]
+['Department Stores', 6371664],
+['Discount Stores', 7216301],
+['Men\'s/Women\'s Stores', 1486621],
+['Juvenile Specialty Stores', 786622],
+['All other outlets', 900000]
     ]);
 
     // set container id for the chart
@@ -33,61 +66,24 @@
 
     // initiate chart drawing
     chart.draw();
-
-    var domContainer = chart.container().container();
-    
-    createButton("Facebook", domContainer);
-    createButton("Twitter", domContainer);
-    createButton("LinkedIn", domContainer);
-    createButton("Pinterest", domContainer);
 });
 
-
-    function createButton(name, domContainer){
-    var c = $(domContainer);        
-
-    var imageSrc, clickCallback, topOffset;
-    switch (name) {
-    case "Facebook":
-        imageSrc = 'https://static.anychart.com/images/fbicon.png';
-        clickCallback = chart.shareWithFacebook;
-        topOffset = 50;
-        break;
-    case "Twitter":
-        imageSrc = 'https://static.anychart.com/images/twicon.png';
-        clickCallback = chart.shareWithTwitter;
-        topOffset = 85;
-        break;
-    case "LinkedIn":
-        imageSrc = 'https://static.anychart.com/images/linkicon.png';
-        clickCallback = chart.shareWithLinkedIn;
-        topOffset = 120;
-        break;
-    case "Pinterest":
-        imageSrc = 'https://static.anychart.com/images/pinicon.png';
-        clickCallback = chart.shareWithPinterest;
-        topOffset = 155;
-        break;
-    }
-    var button = $('<img/>');
-    button.click(function() {
-        clickCallback.call(chart);
-    });
-    button.attr("src", imageSrc);
-
-    button.css('right', 50)
-            .css('top', topOffset)
-            .css('z-index', 1000)
-            .css('position', 'absolute')
-            .css("cursor", "pointer");
-
-    button.attr("width", "25");
-    button.attr("height", "25");
-    c.append(button);        
+function share(network) {
+  switch(network) {
+  case "facebook":
+    chart.shareWithFacebook();
+    break;
+  case "twitter":
+    chart.shareWithTwitter();
+    break;
+  case "linkedin":
+    chart.shareWithLinkedIn();
+    break;
+  case "pinterest":
+    chart.shareWithPinterest();
+    break;
+  }
 };
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

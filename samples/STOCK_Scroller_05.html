@@ -1,13 +1,30 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Scroller 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
 // create data table on loaded data
 var dataTable = anychart.data.table();
@@ -17,7 +34,7 @@ dataTable.addData(getData());
 var mapping = dataTable.mapAs({'value': 1});
 
 // create stock chart
-chart = anychart.stock();
+var chart = anychart.stock();
 
 // add a series
 chart.plot(0).line(mapping);
@@ -27,14 +44,14 @@ labels = chart.scroller().xAxis().labels();
 minorLabels = chart.scroller().xAxis().minorLabels();
 
 // set major labels text format
-labels.format(function() {
+labels.format(function () {
   return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
 // set labels color
 labels.fontColor('#000');
 
 // set minor labels text format
-minorLabels.format(function(){
+minorLabels.format(function (){
   return anychart.format.dateTime(this.tickValue, 'MMM, d');
 });
 
@@ -82,9 +99,7 @@ return [
     ['2004-01-29', 2085.54],
     ['2004-01-30', 2068.36]
     ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

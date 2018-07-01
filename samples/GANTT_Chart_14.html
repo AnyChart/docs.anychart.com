@@ -1,46 +1,44 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyGantt"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function(){
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Chart 14"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function (){
 
   // data tree settings
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
+  var treeData = anychart.data.tree(getData(), "as-tree");
 
   // chart type
-  chart = anychart.ganttProject();
-
-  // chart container
-  chart.container("container");
-
-  // chart position
-  chart.bounds(0, 0, "100%", "100%");
-
+  var chart = anychart.ganttProject();
+  
   // chart data
   chart.data(treeData);
-
-  // data tree width
-  chart.splitterPosition(160);
 
   var dataGrid = chart.dataGrid();
 
   // enable buttons in the first column
   dataGrid.column(0).collapseExpandButtons(true);
-
-  // settings for the first column
-  dataGrid.column(0).width(25).format(function(item) {
-    return "";
-  }).title().text("#");
-  
-  // settings for the second column
-  dataGrid.column(1).width(135).format(function(item) {
-    return item.get("name");
-  }).title().text("Plan");
 
   // disable buttons in the second column
   dataGrid.column(1).collapseExpandButtons(false);
@@ -48,11 +46,11 @@
   // customize the data view
   dataGrid.column(1).depthPaddingMultiplier(0);
 
+  // chart container
+  chart.container("container");
+  
   // initiate drawing
   chart.draw();
-
-  // area to display by default
-  chart.zoomTo(Date.UTC(2007, 0, 1), Date.UTC(2007, 2, 29));
 
 });
 
@@ -65,39 +63,37 @@ function getData() {
     "actualEnd": Date.UTC(2007, 2, 14),
     "children": [
       {
-        "name": "Draft plan",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 1, 3)
+"name": "Draft plan",
+"actualStart": Date.UTC(2007, 0, 25),
+"actualEnd": Date.UTC(2007, 1, 3)
       },
       {
-        "name": "Board meeting",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 4)
+"name": "Board meeting",
+"actualStart": Date.UTC(2007, 1, 4),
+"actualEnd": Date.UTC(2007, 1, 4)
       },
       {
-        "name": "Research option",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 24)
+"name": "Research option",
+"actualStart": Date.UTC(2007, 1, 4),
+"actualEnd": Date.UTC(2007, 1, 24)
       },
       {
-        "id": "5",
-        "name": "Innovation activities",
+"id": "5",
+"name": "Innovation activities",
+"actualStart": Date.UTC(2007, 1, 24),
+"actualEnd": Date.UTC(2007, 2, 14),
+"children": [
+    {
+        "name": "Improvement research",
         "actualStart": Date.UTC(2007, 1, 24),
-        "actualEnd": Date.UTC(2007, 2, 14),
-        "children": [
-            {
-                "name": "Improvement research",
-                "actualStart": Date.UTC(2007, 1, 24),
-                "actualEnd": Date.UTC(2007, 2, 14)
+        "actualEnd": Date.UTC(2007, 2, 14)
       }
-            ]
+    ]
       },
     ]
   }
   ];
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+}
+</script>
 </body>
 </html>

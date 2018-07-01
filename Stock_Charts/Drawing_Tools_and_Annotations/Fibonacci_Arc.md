@@ -1,14 +1,9 @@
 {:index 3}
-#Fibonacci Arc
-
-* [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Configuring Levels](#configuring_levels)
-* [Visual Settings](#visual_settings)
+# Fibonacci Arc
 
 ## Overview
 
-The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
+The Fibonacci Arc annotation allows you to add a Fibonacci arc to a chart.
 
 This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -45,7 +40,7 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
 
-## Configuring Levels
+## Levels
 
 You can set the levels of a Fibonacci Arc annotation by using the {api:anychart.core.annotations.FibonacciArc#levels}levels(){api} method and passing an array of values as a parameter:
 
@@ -62,31 +57,49 @@ controller.fibonacciArc({
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
 
-## Visual Settings
+## Appearance
 
-You can also configure the visual settings of a Fibonacci Arc annotation:
+The [appearance settings](../../Appearance_Settings) of a Fibonacci Arc annotation can be configured in three [states](../../../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the following methods:
 
-* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
-* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
+* {api:anychart.core.annotations.Base#normal}normal(){api} 
+* {api:anychart.core.annotations.Base#selected}selected(){api} 
+* {api:anychart.core.annotations.Base#hovered}hovered(){api}
+
+Combine them with these methods:
+
+* {api:anychart.core.StateSettings#stroke}stroke(){api}
+* {api:anychart.core.StateSettings#trend}trend(){api}
+* {api:anychart.core.StateSettings#labels}labels(){api}
+* {api:anychart.core.StateSettings#markers}markers(){api}
+
+You can also use object notation to specify the settings.
 
 In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first Fibonacci Arc annotation and configure its visual settings
-fibonacciArc1 = controller.fibonacciArc({
+var fibonacciArc1 = controller.fibonacciArc({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    hoverTrend: "2 #0000FF",
-    hoverStroke: "2 #FF0000",
-    selectTrend: "5 #0000FF",
-    selectStroke: "5 #FF0000"        
+    normal: {
+        labels: {fontColor: "#ff0000"}
+    },
+    hovered: {
+        stroke: "2 #ff0000",
+        trend: "2 #0000ff",
+        labels: {fontColor: "#ff0000"}
+    },
+    selected: {
+        stroke: "4 #ff0000", 
+        trend: "4 #0000ff",
+        labels: {fontColor: "#ff0000"}
+    }       
 });
 
 // create the second Fibonacci Arc annotation
-fibonacciArc2 = controller.fibonacciArc();
+var fibonacciArc2 = controller.fibonacciArc();
 
 // set the position of the second annotation
 fibonacciArc2.xAnchor("2004-01-11");
@@ -95,12 +108,15 @@ fibonacciArc2.secondXAnchor("2004-08-08");
 fibonacciArc2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciArc2.stroke("#2196F3", 3, "10 2");
+fibonacciArc2.normal().labels().fontColor("#00b300");
+fibonacciArc2.normal().stroke("#006600", 1, "10 2");
+fibonacciArc2.hovered().stroke("#00b300", 2, "10 2");
+fibonacciArc2.selected().stroke("#00b300", 4, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_03{sample}
 
-To configure the visual settings of a certain level, use the {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level values from the context:
+To configure the visual settings of a certain level, use the {api:anychart.core.annotations.Base#normal}normal(){api}, {api:anychart.core.annotations.Base#selected}selected(){api}, and {api:anychart.core.annotations.Base#hovered}hovered(){api} methods combined with {api:anychart.core.StateSettings#stroke}stroke(){api} and a function as a parameter. In this function, get level values from the context:
 
 ```
 // create a Fibonacci Arc annotation
@@ -109,26 +125,70 @@ controller.fibonacciArc({
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    stroke: colorLevels,
-    hoverStroke: colorLevels,
-    selectStroke: colorLevels
+    normal: {stroke: colorLevels},
+    hovered: {stroke: colorLevels},
+    selected: {stroke: colorLevels}
 });
 
 function colorLevels(){
-  if (this.level!==undefined)
-  {
+  if (this.level!==undefined) {
     switch (this.level) {
         case 0.5:
-            return "Red";
+            return "red";
             break;
         case 0.618:
-            return {color: "Blue", dash: "2 2"};
+            return {color: "blue", dash: "2 2"};
             break;
         default:
-                return "Black"
-        }
+                return "black";
+    }
   }
 };
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_04{sample}
+
+## Labels
+
+You can change the text of Fibonacci Arc [labels](../../Common_Settings/Labels) with the help of [text formatters](../../Common_Settings/Text_Formatters).
+
+Combine the {api:anychart.core.annotations.FibonacciArc#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with the following [tokens](../../Common_Settings/Text_Formatters#string_tokens):
+
+* `{%level}` (shown by default)
+* `{%levelValue}`
+
+```
+// create a Fibonacci Arc annotation
+var fibonacciArc = controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92
+});
+
+// configure the annotation labels
+fibonacciArc.labels().format("{%level} ({%levelValue})");
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_05{sample}
+
+Instead of tokens, you can also use [formatting functions](../../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+
+* `level` (shown by default)
+* `levelValue`
+
+```
+// configure the annotation labels
+fibonacciArc.labels().format(function (){
+  var levelValue = this.levelValue.toFixed(1);
+  switch (this.level) {
+      case 1:
+          return this.level + " (" + levelValue + ")";
+          break;
+      default:
+              return this.level;
+  }
+});
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_06{sample}

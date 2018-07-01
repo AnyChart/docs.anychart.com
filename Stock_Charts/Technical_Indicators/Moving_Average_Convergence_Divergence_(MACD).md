@@ -1,10 +1,5 @@
 # Moving Average Convergence/Divergence
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 MACD, which stands for Moving Average Convergence / Divergence, is a technical analysis indicator created by Gerald Appel in the 1960s. It shows the difference between a fast and slow exponential moving average (EMA) of closing prices.
@@ -15,7 +10,7 @@ Mathematical description of the indicator: [Moving Average Convergence/Divergenc
 
 ## Adding indicator
 
-MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with value field in it:
+MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -51,7 +46,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-MACD indicator needs three parameters: mapping with value field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
+MACD indicator needs three parameters: mapping with the `"value"` field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
 
 ```
 var macd_default = plot_1.macd(mapping, 12, 26, 9);
@@ -77,4 +72,4 @@ macd_all_lines.histogramSeries().stroke('#ffe082');
 
 Live sample:
 
-{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_MACD\_2{sample}
+{sample :height 800}STOCK\_Technical\_Indicators\_MACD\_2{sample}

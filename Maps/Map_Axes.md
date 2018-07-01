@@ -1,12 +1,6 @@
 {:index 13.5}
 # Map Axes
 
-* [Overview](#axes)
-* [Lines](#lines)
-* [Labels](#labels)
-* [Ticks](#ticks)
-* [Titles](#titles)
-
 ## Overview
 
 Drawing Parallels and Meridians Axes, Labels and Ticks is controlled using Map Axes object described in this Article, [Grid](Map_Grid) controls Parallels and Meridians grid and [Geo Scale](Geo_Scale) to control axes and grid parameters.
@@ -81,4 +75,3 @@ map.axes().left().title().fontSize(14);
 ```
 
 {sample}Maps\_Axes\_04{sample}
-

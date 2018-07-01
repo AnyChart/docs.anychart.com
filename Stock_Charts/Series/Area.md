@@ -1,14 +1,5 @@
 # AnyStock Area Series
 
-* [Overview](#overview)
-* [AnyStock Area Series Adjustment](#anystock_area_series_adjustment)
- * [Data](#data)
- * [Multi-series](#multi_series)  
- * [Switching series type](#switching_series_type)
-* [Visualization](#visualization)
- * [Coloring](#coloring)
- * [Hovered state](#hovered_state)
-
 ## Overview
 
 Area series is a kind of basic chart series that can be used in stocks. To know how to manage Area series in see the [Area Chart article](../../Basic_Charts/Area_Chart).
@@ -108,10 +99,7 @@ You can change the type of the series to another compatible type. See the [Serie
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-## Visualization
-
-
-### Coloring
+## Appearance
 
 To change the default colors of the area fill and stroke use {api:anychart.core.stock.series.Area#fill}fill(){api} and {api:anychart.core.stock.series.Area#stroke}stroke(){api} methods.
 
@@ -131,17 +119,4 @@ series_uk.hatchFill("diagonalCross");
 ```
 
 {sample}STOCK\_Area\_05{sample}
-
-### Hovered state
-
-WUse the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
-
-```
-// crosshair settings
-chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-chart.plot(1).dateTimeHighlighter("#999", 1.5);
-```
-
-{sample}STOCK\_Area\_06{sample}
-
  

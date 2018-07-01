@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Heat Map Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "2010", y: "A", heat: 15},
+      {x: "2011", y: "A", heat: 17},
+      {x: "2012", y: "A", heat: 21},
+      {x: "2013", y: "A", heat: 23},
+      {x: "2010", y: "B", heat: 34},
+      {x: "2011", y: "B", heat: 33},
+      {x: "2012", y: "B", heat: 32},
+      {x: "2013", y: "B", heat: 30},
+      {x: "2010", y: "C", heat: 43},
+      {x: "2011", y: "C", heat: 42},
+      {x: "2012", y: "C", heat: 40},
+      {x: "2013", y: "C", heat: 38},
+      {x: "2010", y: "D", heat: 8},
+      {x: "2011", y: "D", heat: 8},
+      {x: "2012", y: "D", heat: 7},
+      {x: "2013", y: "D", heat: 8}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.heatMap(data);
+
+    // set the chart title
+    chart.title("Heat Map: Data");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

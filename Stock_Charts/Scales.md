@@ -1,14 +1,5 @@
 {:index 4}
-
-#Scales
-
-* [Overview](#overview)
-* [Stock Scales Features](#stock_axes_features)
-* [Multiple scales and axes](#multiple_scales_and_axes)
-* [Comparison Mode](#comparison_mode)
-  * [Values](#values)
-  * [Percents](#percents)
-  * [Comparison Base](#comparison_base)
+# Scales
 
 ## Overview
 
@@ -47,10 +38,10 @@ AnyChart Stock supports the "Comparison Mode" scale - a very important feature f
 To enable this mode use {api:anychart.scales.Linear#comparisonMode}comparisonMode(){api} method that accepts 
 values of {api:anychart.enums.ScaleComparisonMode}anychart.enums.ScaleComparisonMode{api} enum as a parameter value. Possible values:
 
-<table><tr><th>Mode</th><th>Enum Constant</th><th>Value</th><tr>
-<tr><td>No changes, values displayed</td><td>anychart.enums.ScaleComparisonMode.NONE</td><td>"none"</td></tr>
-<tr><td>Percent Changes Displayed</td><td>anychart.enums.ScaleComparisonMode.PERCENT</td><td>"percent"</td></tr>
-<tr><td>Value Changes Displayes</td><td>anychart.enums.ScaleComparisonMode.VALUE</td><td>"value"</td></tr>
+<table><tr><th>Mode</th><th>Value</th><tr>
+<tr><td>No changes, values displayed</td><td>"none"</td></tr>
+<tr><td>Percent Changes Displayed</td><td>"percent"</td></tr>
+<tr><td>Value Changes Displayes</td><td>"value"</td></tr>
 </table>
 
 ### Values
@@ -64,7 +55,7 @@ chart.plot(0).yScale().comparisonMode("value");
 
 ### Percents
 
-In "percent" mode the changes are displayed in percents.
+In the "percent" mode the changes are displayed in percent.
 
 ```
 chart = anychart.stock();
@@ -94,3 +85,33 @@ chart.plot(1).yScale().compareWith(1209081600000);
 ```
 
 {sample}STOCK\_Scales\_03{sample}
+
+## Stacked Mode
+
+The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are otherwise known as stacked graphs.
+
+Stacking is a special mode of a Scale set by {api:?entry=stackMode}stackMode(){api} method, and several types of series are compatible with this mode. If a series can not be stacked it simply ignores the mode.
+
+There are two modes of stacking: value and percent.
+
+### Value
+
+To create a value stacked chart you need to set scale stackMode to "value":
+
+```
+chart = anychart.stock();
+chart.plot(0).yScale().stackMode("value");
+```
+
+{sample}STOCK\_Scales\_04{sample}
+
+### Percent
+
+To create a value stacked chart you need to set scale stackMode to "percent":
+
+```
+chart = anychart.stock();
+chart.plot(0).yScale().stackMode("percent");
+```
+
+{sample}STOCK\_Scales\_05{sample}

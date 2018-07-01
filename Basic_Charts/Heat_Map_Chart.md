@@ -1,273 +1,383 @@
-{:index 1}
+{:index 1.5}
 # Heat Map Chart
-
-* [Overview](#overview)
-* [Chart](#chart)
-* [Coloring](#coloring)
-  * [Direct Coloring](#direct_coloring)
-  * [Color Scale](#color_scale)
-* [Visualization](#visualization)
-* [Labels](#labels)
-* [Tooltip](#tooltip)
-* [Scroller](#scroller)
 
 ## Overview
 
-AnyChart JavaScript Heat map is a graphical representation of data where the individual values contained in a matrix are represented as colors. This article will tell you how to work with Heat map charts in AnyChart JavaScript Charting Library.
+A heat map is a visualization of a data matrix where values are represented as colors.
 
-## Chart 
+This article explains how to create a basic Heat Map chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Heat Map chart's characteristics:
 
-Each data point for a heat map chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat"** parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the heat map points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value, heat](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>N/A</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>N/A</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Treemap](Treemap_Chart)</td></tr>
+<tr><td></td><td>[Choropleth Map](../Maps/Choropleth_Map)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td>[Chartopedia: Heat Map Chart](https://www.anychart.com/chartopedia/chart-types/heatmap/)</td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+</table>
+
+## Quick Start
+
+To create a Heat Map chart, use the {api:anychart#heatMap}anychart.heatMap(){api} chart constructor, like in the following sample:
 
 ```
-var dataSet = anychart.data.set([
-  {x: "Quarter 1", y: "Mobile", heat: 15},
-  {x: "Quarter 2", y: "Mobile", heat: 17},
-  {x: "Quarter 3", y: "Mobile", heat: 21},
-  {x: "Quarter 4", y: "Mobile", heat: 23},
-  {x: "Quarter 1", y: "WebMail", heat: 34},
-  {x: "Quarter 2", y: "WebMail", heat: 33},
-  {x: "Quarter 3", y: "WebMail", heat: 32},
-  {x: "Quarter 4", y: "WebMail", heat: 30},
-  {x: "Quarter 1", y: "Desktop", heat: 43},
-  {x: "Quarter 2", y: "Desktop", heat: 42},
-  {x: "Quarter 3", y: "Desktop", heat: 40},
-  {x: "Quarter 4", y: "Desktop", heat: 38},
-  {x: "Quarter 1", y: "Undetected", heat: 8},
-  {x: "Quarter 2", y: "Undetected", heat: 8},
-  {x: "Quarter 3", y: "Undetected", heat: 7},
-  {x: "Quarter 4", y: "Undetected", heat: 8}
-]);
-
-var chart = anychart.heatMap(dateSet);
-```
-
-Moreover, you can use an array of arrays without any parameters as a data source - in this case you'll need to map your data later:
-
-```
+// create data
 var data = [
-  ["Quarter 1", "Mobile", 15],
-  ["Quarter 2", "Mobile", 17],
-  ["Quarter 3", "Mobile", 21],
-  ["Quarter 4", "Mobile", 23],
-  ["Quarter 1", "WebMail", 34],
-  ["Quarter 2", "WebMail", 33],
-  ["Quarter 3", "WebMail", 32],
-  ["Quarter 4", "WebMail", 30],
-  ["Quarter 1", "Desktop", 43],
-  ["Quarter 2", "Desktop", 42],
-  ["Quarter 3", "Desktop", 40],
-  ["Quarter 4", "Desktop", 38],
-  ["Quarter 1", "Undetected", 8],
-  ["Quarter 2", "Undetected", 8],
-  ["Quarter 3", "Undetected", 7],
-  ["Quarter 4", "Undetected", 8],
+  {x: "2010", y: "A", heat: 15},
+  {x: "2011", y: "A", heat: 17},
+  {x: "2012", y: "A", heat: 21},
+  {x: "2010", y: "B", heat: 34},
+  {x: "2011", y: "B", heat: 33},
+  {x: "2012", y: "B", heat: 32},
+  {x: "2010", y: "C", heat: 51},
+  {x: "2011", y: "C", heat: 50},
+  {x: "2012", y: "C", heat: 47}
 ];
 
-// define the column for each parameter
-var dataSet = data.mapAs({
-  x: [0],
-  y: [1],
-  heat: [2]
-});
+// create a chart and set the data
+chart = anychart.heatMap(data);
 
-var chart = anychart.heatMap(dataSet);
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-As you can see, the data set is used as a parameter for  the {api:anychart#heatMap}heatMap(){api} method.
-  
-Here is a heat map with the data from above:
+{sample}BCT\_Heat\_Map\_Chart\_01{sample}
 
-{sample}BCT\_HeatMapChart\_01{sample}
+## General Settings
 
-## Coloring
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Heat Map chart (for example, legend and interactivity settings).
 
-While the majority of chart types represent differences in values of data points via series shapes on data plot the heat maps displays all differences with colors. That is why this section is quite important.
+Read the overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Data
+
+Data for a Heat Map chart can be passed to the chart constructor {api:anychart#heatMap}anychart.heatMap(){api} or to the {api:anychart.charts.HeatMap#data}data(){api} method.
+
+Use the following data fields:
+
+* `x` to set the names of columns
+* `y` to set the names of rows
+* `heat` to set values
+
+By default, items are colored automatically according to their values (heats). However, you can set the color of each item manually by adding extra fields to your data, and in this case the `heat` field can be omitted. See the [Appearance](#individual_points) section to learn more.
+
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+
+This is how working with data fields of the Heat Map chart looks like:
+
+```
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15},
+  {x: "2011", y: "A", heat: 17},
+  {x: "2012", y: "A", heat: 21},
+  {x: "2013", y: "A", heat: 23},
+  {x: "2010", y: "B", heat: 34},
+  {x: "2011", y: "B", heat: 33},
+  {x: "2012", y: "B", heat: 32},
+  {x: "2013", y: "B", heat: 30},
+  {x: "2010", y: "C", heat: 43},
+  {x: "2011", y: "C", heat: 42},
+  {x: "2012", y: "C", heat: 40},
+  {x: "2013", y: "C", heat: 38},
+  {x: "2010", y: "D", heat: 8},
+  {x: "2011", y: "D", heat: 8},
+  {x: "2012", y: "D", heat: 7},
+  {x: "2013", y: "D", heat: 8}
+];
+
+// create a chart and set the data
+chart = anychart.heatMap(data);
+```
+
+{sample}BCT\_Heat\_Map\_Chart\_02{sample}
+
+### Appearance
+
+#### All Points
+
+The [appearance settings](../Appearance_Settings) of a Heat Map chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.HeatMap#normal}normal(){api}, {api:anychart.charts.HeatMap#hovered}hovered(){api}, and {api:anychart.charts.HeatMap#selected}selected(){api} methods.
+
+Combine them with the following methods:
+
+* {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
+* {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
+
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+In the sample below, there is a Heat Map chart with appearance settings configured:
+
+```
+// configure the visual settings of the chart
+chart.hovered().fill("gray", 0.4);
+chart.selected().fill("gray", 0.6);
+chart.selected().hatchFill("forward-diagonal", "gray", 2, 20);
+chart.normal().stroke("gray");
+chart.hovered().stroke("gray");
+chart.selected().stroke("gray", 2);
+```
+
+{sample}BCT\_Heat\_Map\_Chart\_03{sample}
+
+#### Individual Points
+
+It is possible to configure the appearance of each cell individually - use extra data fields corresponding with the methods mentioned above. In this case the `heat` field can be omitted:
+
+```
+// create data
+var data = [
+  {x: "2000", value: 1100},
+  {x: "2001", value: 880},
+  {x: "2002", value: 1100},
+  {x: "2003", value: 1500,
+   normal:   {
+               fill: "#b30059 0.3",
+               stroke: "#b30059",
+               markerSize: 15,
+               type: "star4"
+             },
+   hovered:  {
+               fill: "#b30059 0.1",
+               stroke: "2 #b30059",
+               markerSize: 20,
+               type: "star5"
+             },
+   selected: {
+               fill: "#b30059 0.5",
+               stroke: "4 #b30059",
+               markerSize: 20,
+               type: "star6"
+             }
+  },
+  {x: "2004", value: 921},
+  {x: "2005", value: 1000},
+  {x: "2006", value: 1400}
+];
+
+// create a chart and set the data
+chart = anychart.heatMap(data);
+```
+
+{sample}BCT\_Heat\_Map\_Chart\_04{sample}
 
 ### Color Scale
 
-There are several ways of managing heat map's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method to define heat map's colors. Use {api:anychart.scales.OrdinalColor}ordinalColor(){api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
+By default, the color scale of a Heat Map chart is ordinal, and cells are colored in the colors of the default [palette](../Appearance_Settings/Palettes). Color ranges are set automatically.
+
+#### Ordinal
+
+To customize the **ordinal color scale**, you should create it explicitly by using the {api:anychart.scales#ordinalColor}ordinalColor(){api} constructor.
+
+Combine it with {api:anychart.scales.OrdinalColor#ranges}ranges(){api} to set heat ranges (two or more) you want to be marked by different colors. Then you can set a color for each of these ranges by using the {api:anychart.scales.OrdinalColor#colors}colors(){api} method. Please note that if you do not specify colors and ranges, the default settings of the ordinal color scale are used.
+
+To set your scale as the color scale of the chart, use the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method.
+
+This sample shows a Heat Map with an ordinal color scale:
 
 ```
-var chart = anychart.heatMap(dataSet);
-
-// create linerColor scale
-var colorScale = anychart.scales.ordinalColor();
-// set range of heat parameter's values and corresponding colors
-colorScale.ranges([
-  // set color for all points with the heat parameter less than 1200000
-  {less: 1200000, color: "#B2DFDB"},
-  // set color for all points with the heat parameter more than 1200000 but less than 3000000
-  {from: 1200000, to: 3000000, color: "#004D40"},
-  // set color for all points with the heat parameter more than 3000000
-  {greater: 3000000, color: "#004D40"}
+// create and configure a color scale.
+var customColorScale = anychart.scales.ordinalColor();
+customColorScale.ranges([
+  {less: 20},
+  {from: 20, to: 40},
+  {greater: 40}
 ]);
+customColorScale.colors(["lightgray", "#00ccff", "#ffcc00"]);
 
-// apply colorScale for colorizing heat map chart
-chart.colorScale(colorScale);
+// set the color scale as the color scale of the chart
+chart.colorScale(customColorScale);
 ```
 
-Here is a sample of a heat map with {api:anychart.scales.OrdinalColor}ordinalColor(){api} scale:
+{sample}BCT\_Heat\_Map\_Chart\_05{sample}
 
-{sample}BCT\_HeatMapChart\_02{sample}
+#### Linear
 
-### Direct Coloring
+To create a **linear color scale**, use the {api:anychart.scales#linearColor}linearColor(){api} constructor.
 
-Along with using color scale you can specify visual settings for an individual point. There are several sets for managing points visual appearance:
+Then call {api:anychart.scales.LinearColor#colors}colors(){api} to set two colors, the first one indicating 0, and the second one indicating the maximum heat. Cells are colored automatically in different mixtures of these two colors, and if you do not specify them, the default colors of the linear color scale are used.
 
-* **fill** sets inner color of the point.
-* **hoverFill** sets point's inner color while a mouse is over the point.
-* **stroke** sets points border.
-* **hoverStroke** sets points border while a mouse is over the point.
+Finally, call {api:anychart.charts.HeatMap#colorScale}colorScale(){api} to set your scale as the color scale of the chart.
 
-```
-var chart = anychart.heatMap([
-  {x: "Rare",             y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-  {x: "Rare",             y: "Minor",          heat: 0, fill: "#9ACD32"},
-  {x: "Rare",             y: "Moderate",       heat: 0, fill: "#9ACD32"},
-  {x: "Rare",             y: "Major",          heat: 0, fill: "#9ACD32"},
-  {x: "Rare",             y: "Extreme",        heat: 0, fill: "#9ACD32"},
-  {x: "Unlikely",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-  {x: "Unlikely",         y: "Minor",          heat: 0, fill: "#9ACD32"},
-  {x: "Unlikely",         y: "Moderate",       heat: 0, fill: "#9ACD32"},
-  {x: "Unlikely",         y: "Major",          heat: 1, fill: "#FFFF00"},
-  {x: "Unlikely",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
-  {x: "Possible",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-  {x: "Possible",         y: "Minor",          heat: 0, fill: "#9ACD32"},
-  {x: "Possible",         y: "Moderate",       heat: 1, fill: "#FFFF00"},
-  {x: "Possible",         y: "Major",          heat: 1, fill: "#FFFF00"},
-  {x: "Possible",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
-  {x: "Likely",           y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-  {x: "Likely",           y: "Minor",          heat: 1, fill: "#FFFF00"},
-  {x: "Likely",           y: "Moderate",       heat: 1, fill: "#FFFF00"},
-  {x: "Likely",           y: "Major",          heat: 2, fill: "#FF6347"},
-  {x: "Likely",           y: "Extreme",        heat: 2, fill: "#FF6347"},
-  {x: "Almost\nCertain",  y: "Insignificant",  heat: 0, fill: "#9ACD32"},
-  {x: "Almost\nCertain",  y: "Minor",          heat: 1, fill: "#FFFF00"},
-  {x: "Almost\nCertain",  y: "Moderate",       heat: 1, fill: "#FFFF00"},
-  {x: "Almost\nCertain",  y: "Major",          heat: 2, fill: "#FF6347"},
-  {
-    x: "Almost\nCertain",
-    y: "Extreme",
-    heat: 3,
-    fill: "#FF0000",
-    hoverFill: "#AA0000",
-    stroke: {color: "#AA0000"},
-    hoverStroke: {color: "#550000"}
-  }
-]);
-```
-
-**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.
-
-{sample}BCT\_HeatMapChart\_03{sample}
-
-##Visualization
-
-Even though the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} is the most convenient way of managing heat map's colors you can still set a single color for all points of a heat map and define a color for points' border.
-
-You can set heat map's colors either [in your dataSet](#direct_coloring) or using special methods. The easiest way to set the heat map's color is {api:anychart.charts.HeatMap#fill}fill(){api} method.
-  
-You can set a solid fill for each cell of the heat map. Use {api:anychart.charts.HeatMap#fill}fill(){api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). 
+In the following sample, there is a Heat Map with a linear color scale:
 
 ```
-var chart = anychart.heatMap(dataSet);
-// set inner color for every cell
-chart.fill("#FFD54F");
+// create and configure a color scale.
+var customColorScale = anychart.scales.linearColor();
+customColorScale.colors(["#00ccff", "#ffcc00"]);
+
+// set the color scale as the color scale of the chart
+chart.colorScale(customColorScale);
 ```
 
-Along with a single color for all points, you can manage the color of all points' borders. The heat map chart borders are controlled by {api:anychart.charts.HeatMap#stroke}.stroke(){api} method. Alone with {api:anychart.charts.HeatMap#stroke}stroke(){api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
+{sample}BCT\_Heat\_Map\_Chart\_06{sample}
+
+### Labels and Tooltips
+
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+
+#### Tokens
+
+To change the text of labels, combine the {api:anychart.charts.HeatMap#labels}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+To change the text of tooltips, do the same with the {api:anychart.charts.HeatMap#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+
+Besides tokens that work with all chart types, there is a token that is specific to the Heat Map - `{%heat}`. It returns the value (heat) of an element.
+
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens:
 
 ```
-// create chart
-var chart = anychart.heatMap(dataSet);
-chart.stroke("#FFF");
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15, custom_field: "info 1"},
+  {x: "2011", y: "A", heat: 17, custom_field: "info 2"},
+  {x: "2012", y: "A", heat: 21, custom_field: "info 3"},
+  {x: "2013", y: "A", heat: 23, custom_field: "info 4"},
+  {x: "2010", y: "B", heat: 34, custom_field: "info 5"},
+  {x: "2011", y: "B", heat: 33, custom_field: "info 6"},
+  {x: "2012", y: "B", heat: 32, custom_field: "info 7"},
+  {x: "2013", y: "B", heat: 30, custom_field: "info 8"},
+  {x: "2010", y: "C", heat: 43, custom_field: "info 9"},
+  {x: "2011", y: "C", heat: 42, custom_field: "info 10"},
+  {x: "2012", y: "C", heat: 40, custom_field: "info 11"},
+  {x: "2013", y: "C", heat: 38, custom_field: "info 12"},
+  {x: "2010", y: "D", heat: 8, custom_field: "info 13"},
+  {x: "2011", y: "D", heat: 8, custom_field: "info 14"},
+  {x: "2012", y: "D", heat: 7, custom_field: "info 15"},
+  {x: "2013", y: "D", heat: 8, custom_field: "info 16"}
+];
+
+// create a chart and set the data
+var chart = anychart.heatMap(data);
+
+// configure labels
+chart.labels().format("{%heat}%");
+
+// configure tooltips
+chart.tooltip().format("{%y}: {%heat}%\n{%custom_field}");
 ```
 
-Here is a sample with solid inner color and adjusted strokes.
+{sample}BCT\_Heat\_Map\_Chart\_07{sample}
 
-{sample}BCT\_HeatMapChart\_04{sample}
+#### Formatting Functions
 
-## Labels
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the `heat` field (as well as the default ones).
 
-Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}labels(){api} method.
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+The sample below demonstrates how to work with formatting functions:
 
 ```
-// create chart
-var chart = anychart.heatMap(dataSet);
+// create data
+var data = [
+  {x: "2010", y: "A", heat: 15, custom_field: "info 1"},
+  {x: "2011", y: "A", heat: 17, custom_field: "info 2"},
+  {x: "2012", y: "A", heat: 21, custom_field: "info 3"},
+  {x: "2013", y: "A", heat: 23, custom_field: "info 4"},
+  {x: "2010", y: "B", heat: 34, custom_field: "info 5"},
+  {x: "2011", y: "B", heat: 33, custom_field: "info 6"},
+  {x: "2012", y: "B", heat: 32, custom_field: "info 7"},
+  {x: "2013", y: "B", heat: 30, custom_field: "info 8"},
+  {x: "2010", y: "C", heat: 43, custom_field: "info 9"},
+  {x: "2011", y: "C", heat: 42, custom_field: "info 10"},
+  {x: "2012", y: "C", heat: 40, custom_field: "info 11"},
+  {x: "2013", y: "C", heat: 38, custom_field: "info 12"},
+  {x: "2010", y: "D", heat: 8, custom_field: "info 13"},
+  {x: "2011", y: "D", heat: 8, custom_field: "info 14"},
+  {x: "2012", y: "D", heat: 7, custom_field: "info 15"},
+  {x: "2013", y: "D", heat: 8, custom_field: "info 16"}
+];
 
-// labels settings
-var labels = chart.labels();
-// enable labels
-labels.enabled(true);
-labels.format(function(){
-  // get heat parameter of the point
-  var value = (this.heat).toFixed(0);
-  return "$" + value
+// create a chart and set the data
+var chart = anychart.heatMap(data);
+
+// enable HTML for labels
+chart.labels().useHtml(true);
+
+// configure labels
+chart.labels().format(function (){
+  var heat = (this.heat);
+  if (heat < 20)
+    return "Low<br/>" + heat + "%";
+  if (heat < 40)
+    return "Medium<br/>" + heat + "%";
+  if (heat >= 40)
+    return "<span style='font-weight:bold'>High</span><br/>" +
+           heat + "%";
+});
+
+// configure tooltips
+chart.tooltip().format(function (){
+  var heat = (this.heat);
+  if (heat < 20)
+    return this.y + ": Low (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
+  if (heat < 40)
+    return this.y + ": Medium (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
+  if (heat >= 40)
+    return this.y + ": High (" + heat + "%)\n\n" +
+                    this.getData("custom_field");
 });
 ```
 
-You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
+{sample}BCT\_Heat\_Map\_Chart\_08{sample}
 
-Here is a sample of a js Heat map with formatted labels.
+#### Display Mode
 
-{sample}BCT\_HeatMapChart\_05{sample}
+By default, a label is not shown if it does not fit the width of a cell. However, you can hide such labels or always show all labels. To set the display mode of labels, call the {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method with one of the parameters listed in {api:anychart.enums.LabelsDisplayMode}anychart.enums.LabelsDisplayMode{api}:
 
-Heat map is a kind of chart that usually contains quite a few points in dataSet. That is why heat maps have special {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method for managing labels appearance on the chart plot. There are three possible modes of displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+* `"drop"` (default)
+* `"alwaysShow"`
+* `"clip"`
 
-* **"Clip"** parameter makes all labels be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
-* **"Drop"** parameter hides the whole label, if it doesn't fit point's width
-* **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
+The following sample shows how these modes work:
+
+```
+// set the display mode of labels
+chart.labelsDisplayMode("alwaysShow");
+```
   
-{sample :width 690 :height 725}BCT\_HeatMapChart\_06{sample}
+{sample}BCT\_Heat\_Map\_Chart\_09{sample}
 
-## Tooltip
+### Scrollers
 
-In this section we will explain how to tune heat map's tooltip. Method {api:anychart.charts.HeatMap#tooltip}tooltip(){api} controls tooltip of the heat map. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
+Sometimes, when working with large data sets, you might need your chart to be scrollable. The Heat Map chart supports both X- and Y-scrollers - to enable them, call the {api:anychart.charts.HeatMap#xScroller}xScroller(){api} and {api:anychart.charts.HeatMap#yScroller}yScroller(){api} methods.
 
-```
-chart = anychart.heatMap(dataSet);
+You can as well set the area of a chart that is initially shown: use the {api:anychart.charts.HeatMap#xZoom}xZoom(){api} and {api:anychart.charts.HeatMap#yZoom}yZoom(){api} methods. For example, when they are combined with {api:anychart.core.utils.OrdinalZoom#setToPointsCount}setToPointsCount(){api}, a certain number of points is displayed. See the [Scroller](../Common_Settings/Scroller) article to learn about other options.
 
-var tooltip = chart.tooltip();
-var title = tooltip.title();
-title.hAlign("center");
-tooltip.titleFormat("{%y}");
-tooltip.format(function(){
-  return "Month: " + this.x + "\nOpens: " + this.heat + "%";
-});
-```
-
-{sample}BCT\_HeatMapChart\_07{sample}
-
-## Scroller
-
-As far as AnyChart doesn't limit the number of points on a chart, you may face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}xScroller(){api} and {api:anychart.charts.Cartesian#yScroller}yScroller(){api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
-  
-  
-You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}xZoom(){api} and {api:anychart.charts.Cartesian#yZoom}yZoom(){api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
+The sample below shows how to configure scrollers on a Heat Map chart. Initially, 4 rows and 8 columns are shown:
 
 ```
-// create horizontal chart scroller
-var xScroller = chart.xScroller();
-// scroller settings
-xScroller.enabled(true);
-
-// enables zoom on chart by default
-var xZoom = chart.xZoom();
-// define the number of visible points at the same time
-xZoom.setToPointsCount(8);
-
-// create vertical chart scroller
-var yScroller = chart.yScroller();
-// scroller settings
-yScroller.enabled(true);
-
-// enables zoom on chart by default
-var yZoom = chart.yZoom();
-// define the number of visible points at the same time
-yZoom.setToPointsCount(6);
+// enable and configure scrollers
+chart.xScroller().enabled(true);
+chart.xZoom().setToPointsCount(8);
+chart.yScroller().enabled(true);
+chart.yZoom().setToPointsCount(4);
 ```
 
-Here is a sample of html5 Heat map chart with horizontal and vertical scrollers:
-
-{sample}BCT\_HeatMapChart\_08{sample}
+{sample}BCT\_Heat\_Map\_Chart\_10{sample}

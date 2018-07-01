@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['sparkline']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Box Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   
   // create data
   var data1 = [
@@ -26,37 +42,40 @@
   ];
 
   // create a chart
-  chart = anychart.box();
+  var chart = anychart.box();
 
   // create the first series, set the data and name
   series1 = chart.box(data1);
-  series1.name("Documentary movies");
+  series1.name("Documentary Movies");
+
+  // configure the visual settings of the first series
+  series1.normal().fill("#00cc99", 0.3);
+  series1.hovered().fill("#00cc99", 0.1);
+  series1.selected().fill("#00cc99", 0.5);
+  series1.normal().stroke("#00cc99", 1, "10 5", "round");
+  series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+  series1.selected().stroke("#00cc99", 4, "10 5", "round");
 
   // create the second series, set the data and name
   series2 = chart.box(data2);
-  series2.name("Sci-Fi movies");
-
-  // configure the visual settings of the first series
-  series1.fill("#00cc99", 0.4);
-  series1.hoverFill("#00cc99", 0.2);
-  series1.selectFill("#00cc99", 0.6);
-  series1.stroke("#00cc99", 1, "10 5", "round");
-  series1.hoverStroke("#00cc99", 2, "10 5", "round");
-  series1.selectStroke("#00cc99", 4, "10 5", "round");
+  series2.name("Sci-Fi Movies");
 
   // configure the visual settings of the second series
-  series2.hatchFill("forwardDiagonal");
-  series2.hoverHatchFill("backwardDiagonal");
-  series2.selectHatchFill("diagonalCross");
-  series2.stroke("#000");
-  series2.hoverStroke("#000", 2);
-  series2.selectStroke("#000", 4);
+  series2.normal().fill("#0066cc", 0.3);
+  series2.hovered().fill("#0066cc", 0.1);
+  series2.selected().fill("#0066cc", 0.5);
+  series2.normal().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+  series2.hovered().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+  series2.selected().hatchFill("forward-diagonal", "#0066cc", 1, 15);
+  series2.normal().stroke("#0066cc");
+  series2.hovered().stroke("#0066cc", 2);
+  series2.selected().stroke("#0066cc", 4);
 
   // set the chart title
   var title = chart.title("Box Chart: Appearance");
 
   // set the interactivity mode
-  chart.interactivity("byX");
+  chart.interactivity("by-x");
 
   // enable the legend
   chart.legend(true);
@@ -66,9 +85,7 @@
   
   // initiate drawing the chart
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

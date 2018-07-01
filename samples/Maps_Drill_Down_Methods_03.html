@@ -1,74 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/custom/world/world.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/new_york/new_york.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/louisiana/louisiana.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/newfoundland_and_labrador/newfoundland_and_labrador.js" data-export = "true"></script>
-    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/british_columbia/british_columbia.js" data-export = "true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>   
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Drill Down Methods 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/new_york/new_york.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/louisiana/louisiana.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/newfoundland_and_labrador/newfoundland_and_labrador.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/canada_states/british_columbia/british_columbia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
-    <script x-export="stage">
+<button onclick="drillUp()">Drill Up</button>
+<div id="container"></div>
+<script>
 anychart.onDocumentReady(function () {
 
     // This sample uses 3rd party proj4 component
     // that makes it possible to set coordinates
     // for the points and labels on the map and
     // required for custom projections and grid labels formatting.
-    // See http://docs.anychart.com/latest/Maps/Map_Projections
-    
-    // create a container for maps and a button
-    stage = anychart.graphics.create("container");
+    // See https://docs.anychart.com/Maps/Map_Projections
 
     // world map
     chart = anychart.map();
 
     // major maps
-    usaMap = anychart.map();
+    map = anychart.map();
 
     // canada map
     canadaMap = anychart.map();
 
-    worldDataSet = anychart.data.set([
-        {id: "US", name: "USA", value: "1"},
-        {id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
-    ]);
+    worldDataSet = [
+      {id: "US", name: "USA", value: "1"},
+      {id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
+    ];
 
-    usaDataSet = anychart.data.set([
-        {"id": "US.LA", "value": 22},
-        {"id": "US.TX", "value": 23},
-        {"id": "US.NY", "value": 45}
-    ]);
+    usaDataSet = [
+      {"id": "US.LA", "value": 22},
+      {"id": "US.TX", "value": 23},
+      {"id": "US.NY", "value": 45}
+    ];
 
-    canadaDataSet = anychart.data.set([
-        {"id": "CA.BC", "value": 3},
-        {"id": "CA.NF", "value": 11},
-        {"id": "CA.PE", "value": 12}
-    ]);
+    canadaDataSet = [
+      {"id": "CA.BC", "value": 3},
+      {"id": "CA.NF", "value": 11},
+      {"id": "CA.PE", "value": 12}
+    ];
 
     // world data and series
     chart.geoData(anychart.maps.world);
     worldSeries = chart.choropleth(worldDataSet);
 
     // usa data and series
-    usaMap.geoData(anychart.maps.united_states_of_america);
-    usaSeries = usaMap.choropleth(usaDataSet);
+    map.geoData(anychart.maps.united_states_of_america);
+    usaSeries = map.choropleth(usaDataSet);
 
     // canada data and series
     canadaMap.geoData(anychart.maps.canada);
@@ -94,53 +110,34 @@ anychart.onDocumentReady(function () {
     peMap = anychart.map();
     peMap.geoData(anychart.maps["prince_edward_island"]);
 
-
     // set the drillDownMaps
     chart.drillDownMap({
-        "US": usaMap,        
-        "CA": canadaMap
+      "US": map,        
+      "CA": canadaMap
     });
 
-    usaMap.drillDownMap({
-        "US.LA": laMap,  
-        "US.TX": txMap,   
-        "US.NY": nyMap
+    map.drillDownMap({
+      "US.LA": laMap,  
+      "US.TX": txMap,   
+      "US.NY": nyMap
     });
 
     canadaMap.drillDownMap({
-        "CA.BC": bcMap,  
-        "CA.NF": nfMap,   
-        "CA.PE": peMap
-    });
-
-    // create drill up label
-    drillToLabel = createLabel("Drill Up", 0, function() {
-      // Drill down to the specified item.
-      chart.drillUp();
+      "CA.BC": bcMap,  
+      "CA.NF": nfMap,   
+      "CA.PE": peMap
     });
 
     // set the selectionMode    
-    chart.interactivity({selectionMode: "drillDown"});
+    chart.interactivity({selectionMode: "drill-down"});
 
-    chart.container(stage);
-    chart.draw();
-    
+    chart.container("container");
+    chart.draw();   
 });
-    
-
-// helper function to create buttons
-function createLabel(text, offset, action){
-    var label = anychart.standalones.label();
-    label.background({fill: "#9E9E9E"});
-    label.zIndex(1000);
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    return label;
+  
+// drill up 
+function drillUp() {
+  chart.drillUp();
 }
 </script>
 </body>

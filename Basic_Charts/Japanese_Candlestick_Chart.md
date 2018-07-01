@@ -1,15 +1,5 @@
-{:index 1}
+{:index 1.5}
 # Japanese Candlestick Chart
-
-* [Overview](#overview)
-* [Quick Start](#quick_start)
-* [General Settings](#general_settings)
-* [Special Settings](#special_settings)
-  * [Appearance](#appearance)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-* [Candlestick Patterns](#candlestick_patterns)
-
 
 ## Overview
 
@@ -19,7 +9,7 @@ Candlesticks consist of the body (black or white) and an upper and a lower shado
   
 Some traders find candlestick charts easier to read than [OHLC charts](OHLC_Chart).
 
-Japanese Candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock – see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
+Japanese candlestick is a series type that is predominantly used for demonstrating the stock market data, due to its specifics. So AnyChart Japanese Candlestick series are also available in AnyStock - see the [Japanese Candlestick series in AnyStock](../Stock_Charts/Series/Japanese_Candlestick) article to learn more.
 
 This article explains how to create a basic Japanese Candlestick chart as as well as configure settings that are specific to the type. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
@@ -27,7 +17,7 @@ This article explains how to create a basic Japanese Candlestick chart as as wel
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Candlestick}anychart.core.cartesian.series.Candlestick{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[open, high, low, close](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[x, open, high, low, close](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -41,8 +31,9 @@ This article explains how to create a basic Japanese Candlestick chart as as wel
 <tr><td>Stock</td><td>[Stock Japanese Candlestick](../Stock_Charts/Series/Japanese_Candlestick)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[OHLC](OHLC_Chart)</td></tr>
+<tr><td></td><td>[HiLo](HiLo_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="https://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/" target="_blank">Chartopedia: Japanese Candlestick Chart</a></td></tr>
+<tr><td></td><td>[Chartopedia: Japanese Candlestick Chart](https://www.anychart.com/chartopedia/chart-types/japanese-candlestick-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -56,30 +47,27 @@ To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesi
 The following sample demonstrates how a basic single-series Japanese Candlestick chart is created:
 
 ```
-// create a data set
-var data = anychart.data.set([
-    [Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44],
-    [Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97],
-    [Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92],
-    [Date.UTC(2007, 08, 02), 22.65, 23.7, 22.65, 23.36],
-    [Date.UTC(2007, 08, 01), 23.17, 23.4, 22.85, 23.25],
-    [Date.UTC(2007, 07, 31), 23.88, 23.93, 23.24, 23.25],
-    [Date.UTC(2007, 07, 30), 23.55, 23.88, 23.38, 23.62],
-    [Date.UTC(2007, 07, 27), 23.98, 24.49, 23.47, 23.49],
-    [Date.UTC(2007, 07, 26), 23.2, 23.39, 22.87, 22.92],
-    [Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44],
-    [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
-    [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62]
-]);
+// create data
+var data = [
+  [Date.UTC(2007, 07, 23), 23.55, 23.88, 23.38, 23.62],
+  [Date.UTC(2007, 07, 24), 22.65, 23.7, 22.65, 23.36],
+  [Date.UTC(2007, 07, 25), 22.75, 23.7, 22.69, 23.44],
+  [Date.UTC(2007, 07, 26), 23.2, 23.39, 22.87, 22.92],
+  [Date.UTC(2007, 07, 27), 23.98, 24.49, 23.47, 23.49],
+  [Date.UTC(2007, 07, 30), 23.55, 23.88, 23.38, 23.62],
+  [Date.UTC(2007, 07, 31), 23.88, 23.93, 23.24, 23.25],
+  [Date.UTC(2007, 08, 01), 23.17, 23.4, 22.85, 23.25],
+  [Date.UTC(2007, 08, 02), 22.65, 23.7, 22.65, 23.36],
+  [Date.UTC(2007, 08, 03), 23.2, 23.39, 22.87, 22.92],
+  [Date.UTC(2007, 08, 06), 23.03, 23.15, 22.44, 22.97],
+  [Date.UTC(2007, 08, 07), 22.75, 23.7, 22.69, 23.44]
+];
 
 // create a chart
 chart = anychart.financial();
- 
-// map the data    
-var seriesData = data.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
 
 // create a japanese candlestick series and set the data
-var series = chart.candlestick(seriesData);
+var series = chart.candlestick(data);
 
 // set the container id
 chart.container("container");
@@ -89,7 +77,6 @@ chart.draw();
 ```
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_01{sample}
-
 
 ## General Settings
 
@@ -101,62 +88,70 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-You can set the stroke, fill, and hatch fill of falling and rising candlesticks. Use the following methods:
+The [appearance settings](../Appearance_Settings) of a Japanese Candlestick series can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.cartesian.series.Area#normal}normal(){api}, {api:anychart.core.cartesian.series.Area#hovered}hovered(){api}, and {api:anychart.core.cartesian.series.Area#selected}selected(){api} methods.
 
-* {api:anychart.core.cartesian.series.Candlestick#fallingStroke}fallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingFill}fallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#fallingHatchFill}fallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}risingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#risingHatchFill}risingHatchFill(){api}
+Combine them with the following methods to adjust falling and rising candlesticks:
 
-To configure these settings on hover, use:
+* {api:anychart.core.StateSettings#fallingFill}fallingFill(){api} and {api:anychart.core.StateSettings#risingFill}risingFill(){api} to set the fill
+* {api:anychart.core.StateSettings#fallingHatchFill}fallingHatchFill(){api} and {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api} to set the hatch fill
+* {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api} and {api:anychart.core.StateSettings#risingStroke}risingStroke(){api}to set the stroke
 
-* {api:anychart.core.cartesian.series.Candlestick#hoverFallingStroke}hoverFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingFill}hoverFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverFallingHatchFill}hoverFallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#hoverRisingStroke}hoverRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingFill}hoverRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#hoverRisingHatchFill}hoverRisingHatchFill(){api}
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}. 
 
-To configure these settings on select, use:
-
-* {api:anychart.core.cartesian.series.Candlestick#selectFallingStroke}selectFallingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingFill}selectFallingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectFallingHatchFill}selectFallingHatchFill(){api}
-* {api:anychart.core.cartesian.series.Candlestick#selectRisingStroke}selectRisingStroke(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingFill}selectRisingFill(){api}, {api:anychart.core.cartesian.series.Candlestick#selectRisingHatchFill}selectRisingHatchFill(){api}
-
-You can learn more from the [Appearance Settings](../Appearance_Settings) section.
-
-In the sample below, there are two Japanese Candlestick series with some of the appearance settings configured:
+In the sample below, there are two Japanese Candlestick series with appearance settings configured:
 
 ```
 // configure the visual settings of the first series
-series1.risingStroke("#0066cc");
-series1.risingFill("#0066cc", 0.3);
-series1.hoverRisingStroke("#0066cc", 2);
-series1.hoverRisingFill("#0066cc", 0.1);
-series1.selectRisingStroke("#0066cc", 4);
-series1.selectRisingFill("#0066cc", 0.5);
+series1.normal().fallingFill("#00cc99", 0.3);
+series1.normal().fallingStroke("#00cc99", 1, "10 5", "round");
+series1.hovered().fallingFill("#00cc99", 0.1);
+series1.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
+series1.selected().fallingFill("#00cc99", 0.5);
+series1.selected().fallingStroke("#00cc99", 4, "10 5", "round");
 
-series1.fallingStroke("#00cc99", 1, "10 5", "round");
-series1.fallingFill("#00cc99", 0.3);
-series1.hoverFallingStroke("#00cc99", 2, "10 5", "round");
-series1.hoverFallingFill("#00cc99", 0.1);
-series1.selectFallingStroke("#00cc99", 4, "10 5", "round");
-series1.selectFallingFill("#00cc99", 0.5);
+series1.normal().risingFill("#0066cc", 0.3);
+series1.normal().risingStroke("#0066cc");
+series1.hovered().risingFill("#0066cc", 0.1);
+series1.hovered().risingStroke("#0066cc", 2);
+series1.selected().risingFill("#0066cc", 0.5);
+series1.selected().risingStroke("#0066cc", 4);
+
 
 // configure the visual settings of the second series
-series2.fallingHatchFill("forwardDiagonal");
-series2.risingHatchFill("backwardDiagonal");
-series2.hoverFallingHatchFill("diagonalCross");
-series2.hoverRisingHatchFill("diagonalCross");
-series2.selectFallingHatchFill("percent20");
-series2.selectRisingHatchFill("percent20");
+series2.normal().fallingFill("#00cc99", 0.3);
+series2.normal().fallingHatchFill("forward-diagonal", "#00cc99");
+series2.normal().fallingStroke("#00cc99", 1, "10 5", "round");
+series2.hovered().fallingFill("#00cc99", 0.1);
+series2.hovered().fallingHatchFill("forward-diagonal", "#00cc99");
+series2.hovered().fallingStroke("#00cc99", 2, "10 5", "round");
+series2.selected().fallingFill("#00cc99", 0.5);
+series2.selected().fallingStroke("#00cc99", 4, "10 5", "round");
+series2.selected().fallingHatchFill("forward-diagonal", "#00cc99");
+
+series2.normal().risingFill("#0066cc", 0.3);
+series2.normal().risingHatchFill("forward-diagonal", "#0066cc");
+series2.normal().risingStroke("#0066cc");
+series2.hovered().risingFill("#0066cc", 0.1);
+series2.hovered().risingHatchFill("forward-diagonal", "#0066cc");
+series2.hovered().risingStroke("#0066cc", 2);
+series2.selected().risingFill("#0066cc", 0.5);
+series2.selected().risingStroke("#0066cc", 4);
+series2.selected().risingHatchFill("forward-diagonal", "#0066cc");
 ```
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_02{sample}
 
+### Point Size
+
+This chart type allows you to set the size of its points. Read more in the [Point Size](../Common_Settings/Point_Size) article.
 
 ### Labels
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (they can be enabled on a whole series or for a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
 
 ## Candlestick Patterns
 
@@ -195,11 +190,11 @@ Here are the most popular simple patterns, shown in the sample below:
 </tr>
 <tr>
 <td>Spinning top white</td>
-<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren't many buyers left, if a spinning top forms during a downtrend, this means there aren't many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
 <td>Spinning top black</td>
-<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren’t many buyers left, if a spinning top forms during a downtrend, this means there aren’t many sellers left. Color of the body is not very important. </td>
+<td>This pattern indicates the indecision between the buyers and sellers. If a spinning top forms during an uptrend, this usually means there aren't many buyers left, if a spinning top forms during a downtrend, this means there aren't many sellers left. Color of the body is not very important. </td>
 </tr>
 <tr>
 <td>Four Price Doji</td>
