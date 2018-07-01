@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Error Chart 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: 0.6, value: 22, valueError: 8, xError: 0.2},
+      {x: 1.7, value: 55, xLowerError: "6%", xUpperError:  "10%"},
+      {x: 2.3, value: 50, valueError: "12%"},
+      {x: 2.6, value: 76, valueUpperError: 7},
+      {x: 2.7, value: 64},
+      {x: 4, value: 71},
+      {x: 4, value: 88, valueLowerError: 6, valueUpperError: 4, xError: 0.4},
+      {x: 4.5, value: 74},
+      {x: 4.9, value: 83}
+    ];
+
+    // create a chart
+    var chart = anychart.scatter();
+
+    // create a marker series and set the data
+    var series = chart.marker(data);
+
+    // configure tooltips
+    chart.tooltip().format(function (){
+      var output = "";
+      if (this.xUpperError != 0)
+ output = "xUpperError: " + this.xUpperError;
+      if (this.xLowerError != 0)
+ output = output + "\nxUpperError: " + this.xLowerError;
+      if (this.valueLowerError != 0)
+ output = output + "\nxUpperError: " + this.valueLowerError;
+      if (this.valueUpperError != 0)
+ output = output + "\nxUpperError: " + this.valueUpperError;
+      if (output == "") return "NO ERRORS";
+      return output;
+    });
+
+    // enable major grids
+    chart.xGrid().enabled(true);
+    chart.yGrid().enabled(true);
+
+    // enable minor grids
+    chart.xMinorGrid().enabled(true);
+    chart.yMinorGrid().enabled(true);
+
+    // set the chart title
+    chart.title("Error Chart: Labels and Tooltips (Formatting Functions)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

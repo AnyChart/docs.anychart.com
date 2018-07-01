@@ -1,12 +1,32 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Column Presets 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    var stage = anychart.graphics.create("container");
 
   var data = [
     {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000},
@@ -14,26 +34,24 @@
     {"id": "3", "name": "Identify available skills, information and support", "progressValue": "0", "actualStart": 951494400000},
     {"id": "4", "name": "Decide whether to proceed", "progressValue": "0", "actualStart": 951609600000}
   ];
-  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+  var treeData = anychart.data.tree(data, "as-table");
 
-  var dataGrid = anychart.ui.dataGrid();
+  dataGrid = anychart.standalones.dataGrid();
   dataGrid.data(treeData);
   var column0 = dataGrid.column(0);
   column0.title("Raw Data");
   column0.setColumnFormat("actualStart", "text");
   column0.width(100);
   var column1 = dataGrid.column(1);
-  column1.title("dateIso8601");
-  column1.setColumnFormat("actualStart", "dateIso8601");
+  column1.title("date-iso-8601");
+  column1.setColumnFormat("actualStart", "date-iso-8601");
   column1.width(150);
 
   dataGrid.tooltip(false);
   dataGrid.listen("signal", dataGrid.draw);
-  dataGrid.container("container");
+  dataGrid.container(stage);
   dataGrid.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

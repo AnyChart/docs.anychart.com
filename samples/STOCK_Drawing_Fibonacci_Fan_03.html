@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Drawing Fibonacci Fan 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+   
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // access the annotations() object of the plot to work with annotations
+    var controller = plot.annotations();
+
+    // create the first Fibonacci Fan annotation and configure its visual settings
+    var fibonacciFan1 = controller.fibonacciFan({
+xAnchor: "2007-01-07",
+valueAnchor: 28.92,
+secondXAnchor: "2009-03-01",
+secondValueAnchor: 14.18,
+normal: {
+    labels: {fontColor: "#ff0000"},
+    grid: null
+},
+hovered: {
+    stroke: "#ff0000",
+    trend: "#0000ff",
+    labels: {fontColor: "#ff0000"}
+},
+selected: {
+    stroke: "#ff0000",
+    trend: "#0000ff",
+    grid: "#a9a9a9",
+    labels: {fontColor: "#ff0000"} 
+}       
+    });
+
+    // create the second Fibonacci Fan annotation
+    var fibonacciFan2 = controller.fibonacciFan();
+
+    // set the position of the second annotation
+    fibonacciFan2.xAnchor("2006-01-29");
+    fibonacciFan2.valueAnchor(18.2);
+    fibonacciFan2.secondXAnchor("2004-01-11");
+    fibonacciFan2.secondValueAnchor(29.13);
+     
+    // configure the visual settings of the second annotation
+    fibonacciFan2.normal().labels().fontColor("#00b300");
+    fibonacciFan2.normal().grid(null);
+    fibonacciFan2.normal().stroke("#006600", 1, "10 2");
+    fibonacciFan2.hovered().stroke("#00b300", 1, "10 2");
+    fibonacciFan2.selected().stroke("#00b300", 1, "10 2");
+    fibonacciFan2.selected().grid("#a9a9a9");
+
+    // set the chart title
+    chart.title("Fibonacci Fan: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

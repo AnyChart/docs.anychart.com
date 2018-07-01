@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS format 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // chart type
+    var chart = anychart.financial();
+
+    // chart title
+    chart.title("Multi-series");
+
+    // adjust x scale type
+    var xScale = chart.xScale();
+    xScale.minimum(Date.UTC(2007, 7, 27));
+    xScale.maximum(Date.UTC(2007, 8, 2));
+    var xTicks = xScale.ticks();
+    xTicks.interval(0,0,1);
+
+    // set first series data
+    var series_1 = chart.ohlc([
+{x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+{x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
+{x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25}
+    ]);
+    series_1.xPointPosition(0.5);
+    series_1.meta("company", "ACME Corp.");
+     
+    // set second series data
+    var series_2 = chart.ohlc([
+{x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
+{x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
+{x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
+    ]);
+    series_2.xPointPosition(0.5);
+    series_2.meta("company", "Duff B. Corp.");
+    
+    // enable the labels
+    var labels_1 = series_1.labels();
+    var labels_2 = series_2.labels();
+     
+    // text formatter
+    labels_1.format(function (){
+return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
+    });
+    labels_2.format(function (){
+return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
+    });
+    
+    // labels positioning
+    labels_1.position("center-bottom");
+    labels_1.anchor("center-top");
+    labels_1.offsetY("5");
+    labels_1.enabled(true);
+    labels_2.position("center-top");
+    labels_2.anchor("center-bottom");
+    labels_2.offsetY("5");
+    labels_2.enabled(true);
+    
+    // set axes title
+    var xAxis = chart.xAxis();
+    xAxis.title("Day");
+    var xLabels = chart.xAxis().labels();
+    xLabels.format(function(value){
+var date = new Date(value["tickValue"]);
+var options = {
+    month: "short",
+    day: "numeric"
+};
+return date.toLocaleDateString("en-US", options);
+    });
+    var yAxis = chart.yAxis();
+    yAxis.title("Price");
+
+    // draw
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</body>
+</html>

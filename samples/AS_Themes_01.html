@@ -1,63 +1,75 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Themes 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
   // create variable for custom theme
   var customTheme = {
     // define settings for bar charts
     "bar": {
       // set chart title
       "title": {
-        "text": "Bar Chart",
-        "enabled": true
+"text": "Bar Chart",
+"enabled": true
       },
       // settings for default x axis
       "defaultXAxisSettings": {
-        // set x axis title
-        "title": {
-          "text": "Retail Channel",
-          "enabled": true
-        }
+// set x axis title
+"title": {
+  "text": "Retail Channel",
+  "enabled": true
+}
       },
       // settings for default y axis
       "defaultYAxisSettings": {
-        // set axis name
-        "title": {
-          "text": "Sales",
-          "enabled": true
-        }
+// set axis name
+"title": {
+  "text": "Sales",
+  "enabled": true
+}
       }
     }
   };
 
   // data
-  var data = anychart.data.set([
+  var data = [
     ["Department Stores", 637166],
     ["Discount Stores", 721630],
     ["Men's/Women's Specialty Stores", 148662],
     ["All other outlets", 90000]
-  ]);
+  ];
 
   // apply custom theme
   anychart.theme(customTheme);
 
-  // set chart type
-  chart = anychart.bar();
-  // set data
-  chart.bar(data);
+  // create chart
+  var chart = anychart.bar(data);
 
   // set container and draw chart
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

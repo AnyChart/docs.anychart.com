@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Waterfall Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data   
+    var data = [
+        {x: "Start", value:  23, custom_field: "info 1"},
+        {x: "Jan",   value:  22, custom_field: "info 2"},
+        {x: "Feb",   value: -46, custom_field: "info 3"},
+        {x: "Mar",   value: -91, custom_field: "info 4"},
+        {x: "Apr",   value:  37, custom_field: "info 5"},
+        {x: "May",   value: -21, custom_field: "info 6"},
+        {x: "Jun",   value:  53, custom_field: "info 7"},
+        {x: "Jul",   value:  31, custom_field: "info 8"},
+        {x: "Aug",   value: -15, custom_field: "info 9"},
+        {x: "Sep",   value:  42, custom_field: "info 10"},
+        {x: "Oct",   value:  53, custom_field: "info 11"},
+        {x: "Nov",   value: -15, custom_field: "info 12"},
+        {x: "Dec",   value:  51, custom_field: "info 13"},
+        {x: "End", isTotal: true, custom_field: "info 14"}
+    ];
+
+    // create a waterfall chart
+    var chart = anychart.waterfall();
+
+    // create a series and set the data
+    var series = chart.waterfall(data);
+
+    // enable HTML for labels
+    chart.labels().useHtml(true);
+
+    // configure labels
+    chart.labels().format(function (){
+        if (this.isTotal)
+            return "<span style='color:#dd2c00;font-weight:bold'>" +
+                   this.absolute + "</span>";
+        return this.absolute;
+    });
+
+    // configure tooltips
+    chart.tooltip().titleFormat(function (){
+        if (this.isTotal)
+            return "TOTAL (" + this.getData("custom_field") + ")";
+        return this.x + " (" + this.getData("custom_field") + ")";
+    });
+
+    // set the chart title
+    chart.title("Waterfall Chart: Labels and Tooltips (Formatting Functions)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

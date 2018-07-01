@@ -1,14 +1,6 @@
 {:index 5}
 
-#Chart Plots
-
-* [Overview](#overview)
-* [Add](#add)
-* [Edit](#edit)
- * [Series](#series)
- * [Axes](#axes)
- * [Position](#position)
- * [DateTime Highlighter](#datetime_highlighter)
+# Chart Plots
 
 ## Overview
 
@@ -16,71 +8,67 @@ One of the distinctive features of AnyStock is its ability to place several char
 
 The main purpose of creating several plots instead of one multi-axes plot is making the management of different Y-scales easier and data from the series more easy to read. Using plots helps you to watch the data points with the same X value simultaneously and be able to compare them.
 
-Now, let's study how to use chart plots and make our work with AnyStock a bit easier.
+## Adding
 
-## Add
+Use the {api:anychart.charts.Stock#plot}plot(){api} method of {api:anychart.charts.Stock}anychart.charts.Stock{api} chart to add plots to the chart which creates an instance of the {api:anychart.core.stock.Plot}anychart.core.stock.Plot{api} class. Plots are instantiated by index.
 
-First of all, we need to add plots to the chart and enable them. Let's create and enable three plots: two with column series and one with OHLC chart.
+Here is a sample code to create three plots, two with column series and one with the OHLC.
 
 ```
 // create stock chart
 chart = anychart.stock();
 
 // create first plot on the chart with column series
-var firstPlot = chart.plot(0);
-firstPlot.column(mapping);
+var plot_1 = chart.plot(0);
+plot_1.column(mapping);
 
 // create second plot on the chart
-var secondPlot = chart.plot(1);
+var plot_2 = chart.plot(1);
 
 // create ohlc series on the second plot
-var secondSeries = secondPlot.ohlc(ohlcMapping);
+plot_2.ohlc(ohlcMapping);
 
 // create third plot
-var thirdPlot = chart.plot(2);
+var plot_3 = chart.plot(2);
 // create column series on the third plot
-var thirdSeries = thirdPlot.column(columnMapping);
+plot_3.column(columnMapping);
 ```
 
 {sample :height 800}STOCK\_Plots\_01{sample}
 
-So, we use {api:anychart.charts.Stock#plot}plot(){api} for creating a plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
-
-Now we can manage the chart plots.
-
-## Edit
+## Configure
 
 We can change a lot in plots appearance: series, their number, axes, colors, etc. Let's start with adjusting the series.
 
-### Series
+### Adding Series
 
-Let's add one more series to one of the plots. This would look like the following:
+[Series](Series/Overview) are added to the plot using appropriate methods. See the [supported series list](Series/Supported_Series) to learn what series can be added.
+
+Here is a sample of a chart with several plots and series:
 
 ```
 // create stock chart
 chart = anychart.stock();
 
 // create first plot on the chart with column series
-var firstPlot = chart.plot(0);
-firstPlot.column(columnMapping);
-firstPlot.line(lineMapping);
+var plot_1 = chart.plot(0);
+plot_1.column(columnMapping);
+plot_1.line(lineMapping);
 
 // create second plot on the chart
-var secondPlot = chart.plot(1);
+var plot_2 = chart.plot(1);
 
 // create ohlc series on the second plot
-var secondSeries = secondPlot.ohlc(ohlcMapping);
+var secondSeries = plot_2.ohlc(ohlcMapping);
 ```
 
 {sample :height 800}STOCK\_Plots\_02{sample}
-
-One plot might contain an unlimited number of series, but still we recommend to split them into different plots if there are too many of them.
 
 ### Axes 
 
 Working with axes in AnyStock chart plots is similar, but not completely identical to working with them in basic charts. Visit the [Stock Axes Tutorial](Axes) and [Stock Scales](Scales) to know more about this.
 
-In AnyStock you can have axes attached to plots, not chart. While the X-axis is the only one for all plots, we can have different Y-axes. Furthermore, we can have an unlimited number of Y-axes for each plot. 
+In AnyStock axes are attached to plots, not achart. While the X-axis is the only one for all plots, each plot can have different Y axes. 
 
 ```
 // create an additional axis
@@ -97,35 +85,53 @@ We can position plots wherever we want and make them of the size we need. This c
 
 ```
 // set the first plot position through bounds
-var firstPlot = chart.plot(0);
-firstPlot.bounds(0,0,"45%","45%");
+var plot_1 = chart.plot(0);
+plot_1.bounds(0,0,"45%","45%");
 
 // set the second plot position through width, height, top
-var secondPlot = chart.plot(1);
-secondPlot.width("100%");
-secondPlot.height("45%");
-secondPlot.top("50%");
+var plot_2 = chart.plot(1);
+plot_2.width("100%");
+plot_2.height("45%");
+plot_2.top("50%");
 
 // set the third plot bounds
-var thirdPlot = chart.plot(2);
-thirdPlot.bounds("55%", 0, "45%", "45%")
+var plot_3 = chart.plot(2);
+plot_3.bounds("55%", 0, "45%", "45%")
 ```
 
 {sample}STOCK\_Plots\_04{sample}
 
-### DateTime Highlighter
+### Title
 
-DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on an AnyStock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
+Each plot can have a separate title, which is set and configured using the {api:anychart.core.stock.Plot#title}title(){api} method.
 
 ```
-// adjust the highlighter of the third plot
-firstPlot.dateTimeHighLighter("#F44336", 1.5, "6 2", "round");
+// create a stock chart
+var chart = anychart.stock();
 
-// make the second plot highlighter of green color
-secondPlot.dateTimeHighlighter({color: "green"});
+// create the first plot
+var plot_1 = chart.plot(0);
 
-// disable the highlighter on the first plot
-thirdPlot.dateTimeHighlighter(false);
+// set the title of the first plot
+plot_1.title("Rates");
 ```
 
-{sample}STOCK\_Plots\_05{sample}
+Here is a sample of a chart with three plots. Titles of the first two plots are enabled and configured, and the third one has default settings (no title):
+
+{sample :height 600}STOCK\_Plots\_05{sample}
+
+### Legend
+
+Each plot can have a legend, see [Legend](Legend) article to learn more about the legend configuration.
+
+### No Data Message
+
+Each plot can have {api:anychart.core.stock.Plot#noData}noData{api} label configured, see [No Data Label](../Working_with_Data/No_Data_Label) to learn more.
+
+## Disabling and Removing
+
+If you want to disable plot temporarily use the {api:anychart.core.stock.Plot#enabled}enabled(){api} method, the series and settings will stay there once you enable plot again.
+
+To remove plot with all its contents and settings use the `dispose()` method.
+
+{sample}STOCK\_Plots\_06{sample}

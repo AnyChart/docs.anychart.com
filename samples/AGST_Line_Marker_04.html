@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Line Marker 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
   var data = anychart.data.set([
@@ -16,7 +32,7 @@
   ]);
 
   // chart type
-  chart = anychart.column();
+  var chart = anychart.column();
 
   // set lowest line marker
   var lineMarker = chart.lineMarker();
@@ -30,13 +46,10 @@
     dash: "2 4"
   });
 
-  // set y scale ticks interval
-  var yScale = chart.yScale();
-  yScale.minimum(0);
+
 
   // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.yAxis().title("Sales");
 
   for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
     seriesFormatter(seriesNumber);
@@ -44,7 +57,7 @@
 
   function seriesFormatter(seriesNumber){
     // map data for series
-    var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
+    var seriesData = data.mapAs({x: 0, value: [seriesNumber], fill: 6});
     var series = chart.column(seriesData);
     series.stroke(null);
   }
@@ -52,9 +65,7 @@
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

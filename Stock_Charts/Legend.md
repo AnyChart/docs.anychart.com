@@ -1,14 +1,6 @@
 {:index 6}
 
-#Legend
-
-* [Overview](#overview)
-* [Positioning](#positioning)
-* [Title](#title)
-* [Items](#items)
-* [Visualization](#visualization)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
+# Legend
 
 ## Overview
 
@@ -18,22 +10,9 @@ Let's explore the legend usage in AnyStocks and have a look at a couple of sampl
 
 As the AnyStock legend is quite similar to other charts' legend, we're going to consider the cases of differences or when we need to change something.
 
-## Positioning
-
-We use the same methods for positioning the AnyStock Chart Legend as for the Basic Charts Legend. So, we use {api:anychart.core.ui.Legend#orientation}orientation(){api} and {api:anychart.core.ui.Legend#align}align(){api} methods to control legend's alignment. For more complicated settings, such as changing the items layout or space between items, we use {api:anychart.ui.Legend#itemsLayout}itemsLayout(){api} and {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} accordingly. Let's create a vertically arranged legend.
-
-```
-// making the legend vertical
-legend.itemsLayout('vertical');
-// setting the space between the items
-legend.itemsSpacing(1);
-```
-
-{sample}STOCK\_Legend\_01{sample}
-
 ## Title
 
-By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.ui.Legend#titleFormatter}titleFormatter(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.ui.Legend#position}position(){api}, {api:anychart.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive. 
+By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.core.ui.Legend#position}position(){api}, {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.core.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive.
 
 ```
 // turn the title on and set the position
@@ -41,7 +20,7 @@ legend.title(true);
 legend.title().orientation('top').align('left');
 
 // format the title
-legend.titleFormatter(function(){
+legend.titleFormat(function (){
     return "ACME Corp. Stock Prices"
 });
 
@@ -53,10 +32,10 @@ legend.titleSeparator(true);
 
 ## Items
 
-By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below 
+By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below
 
 ```
-firstPlot.legend().itemsFormatter(function(){
+firstPlot.legend().itemsFormatter(function (){
     return [
         {text: "High", iconType: "circle", iconFill:"#558B2F"},
         {text: "Low", iconFill:"#D84315"},
@@ -67,10 +46,10 @@ firstPlot.legend().itemsFormatter(function(){
 
 {sample}STOCK\_Legend\_03{sample}
 
-When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsTextFormatter}itemsTextFormatter(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
+When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
 
 ```
-plot.legend().itemsTextFormatter(function(){
+plot.legend().itemsFormat(function (){
       if (this.open !== undefined){ 
       return "Open: " + this.open + "   High: " + this.high+ "   Low: " + this.low + "   Close: " + this.close 
       }
@@ -108,7 +87,7 @@ item.iconType("ohlc");
 
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter(){api} method. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method.
 
 ```
 var legend = chart.legend();
@@ -136,7 +115,7 @@ The same as we create one legend to several series in basic charts, we can do wi
 
 ```
 // create custom legend
-var customLegend = anychart.ui.legend();
+var customLegend = anychart.standalones.legend()();
 // set sources for legend items
 customLegend.itemsSource([plot_column, plot_line_ohlc]);
 customLegend.enabled(true);

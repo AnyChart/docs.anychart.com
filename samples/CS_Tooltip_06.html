@@ -1,131 +1,70 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  // define chart
-  chart = anychart.financial();
-
-  chart.title("Complex Tooltip Title");
-
-  // set series data
-  var series = chart.line([
-    [Date.UTC(2010, 0, 01), 72924],
-    [Date.UTC(2010, 1, 01), 79371],
-    [Date.UTC(2010, 2, 01), 76899],
-    [Date.UTC(2010, 3, 01), 80891],
-    [Date.UTC(2010, 4, 01), 50548],
-    [Date.UTC(2010, 5, 01), 47039],
-    [Date.UTC(2010, 6, 01), 64029],
-    [Date.UTC(2010, 7, 01), 57180],
-    [Date.UTC(2010, 8, 01), 69809],
-    [Date.UTC(2010, 9, 01), 73899],
-    [Date.UTC(2010, 10, 01), 59456],
-    [Date.UTC(2010, 11, 01), 68822],
-    [Date.UTC(2011, 0, 01), 92536],
-    [Date.UTC(2011, 1, 01), 105108],
-    [Date.UTC(2011, 2, 01), 97777],
-    [Date.UTC(2011, 3, 01), 82511],
-    [Date.UTC(2011, 4, 01), 123476],
-    [Date.UTC(2011, 5, 01), 123113],
-    [Date.UTC(2011, 6, 01), 104613],
-    [Date.UTC(2011, 7, 01), 104919],
-    [Date.UTC(2011, 8, 01), 109661],
-    [Date.UTC(2011, 9, 01), 99281],
-    [Date.UTC(2011, 10, 01), 104695],
-    [Date.UTC(2011, 11, 01), 109492],
-    [Date.UTC(2012, 0, 01), 148910],
-    [Date.UTC(2012, 1, 01), 154197],
-    [Date.UTC(2012, 2, 01), 122224],
-    [Date.UTC(2012, 3, 01), 136687],
-    [Date.UTC(2012, 4, 01), 173808],
-    [Date.UTC(2012, 5, 01), 179910],
-    [Date.UTC(2012, 6, 01), 194502],
-    [Date.UTC(2012, 7, 01), 176565],
-    [Date.UTC(2012, 8, 01), 152765],
-    [Date.UTC(2012, 9, 01), 152950],
-    [Date.UTC(2012, 10, 01), 161812],
-    [Date.UTC(2012, 11, 01), 169217],
-    [Date.UTC(2013, 0, 01), 168348],
-    [Date.UTC(2013, 1, 01), 174274],
-    [Date.UTC(2013, 2, 01), 206777],
-    [Date.UTC(2013, 3, 01), 195678],
-    [Date.UTC(2013, 4, 01), 201773],
-    [Date.UTC(2013, 5, 01), 211041],
-    [Date.UTC(2013, 6, 01), 203658],
-    [Date.UTC(2013, 7, 01), 194100],
-    [Date.UTC(2013, 8, 01), 197417],
-    [Date.UTC(2013, 9, 01), 211506],
-    [Date.UTC(2013, 10, 01), 211488],
-    [Date.UTC(2013, 11, 01), 198981],
-    [Date.UTC(2014, 0, 01), 232004],
-    [Date.UTC(2014, 1, 01), 228394],
-    [Date.UTC(2014, 2, 01), 204727],
-    [Date.UTC(2014, 3, 01), 246861],
-    [Date.UTC(2014, 4, 01), 249813],
-    [Date.UTC(2014, 5, 01), 235604],
-    [Date.UTC(2014, 6, 01), 255414],
-    [Date.UTC(2014, 7, 01), 280067],
-    [Date.UTC(2014, 8, 01), 282872],
-    [Date.UTC(2014, 9, 01), 287978],
-    [Date.UTC(2014, 10, 01), 295558],
-    [Date.UTC(2014, 11, 01), 275614]
+  var data = anychart.data.set([
+    ["John" , 10000, 12000],
+    ["Jake" , 12000, 15000],
+    ["Peter" , 18000, 16000],
+    ["James" , 11000, 13000],
+    ["Mary" , 9000, 19000]
   ]);
 
-  var tooltipTitle = series.tooltip().title();
-  tooltipTitle.useHtml(true);
-  tooltipTitle.hAlign("center");
+  // map data for the each series
+  var data1 = data.mapAs({x: 0, value: 1});
+  var data2 = data.mapAs({x: 0, value: 2});
 
-  var tooltip = series.tooltip();
-  tooltip.titleFormatter(function(){
-    var time = "";
-    var date = new Date(this.x);
-    switch (true){
-      case (date.toLocaleDateString("en-US", {month: "numeric"})<4):
-        time = "first quarter";
-        break;
-      case (date.toLocaleDateString("en-US", {month: "numeric"})<7):
-        time = "second quarter";
-        break;
-      case (date.toLocaleDateString("en-US", {month: "numeric"})<10):
-        time = "third quarter";
-        break;
-      case (date.toLocaleDateString("en-US", {month: "numeric"})<13):
-        time = "fourth quarter";
-        break;
-    }
-    return "Year: " + date.toLocaleDateString("en-US", {year: "numeric"}) + "<br><a style=\"font-size: 11; font-style: italic;\">"+time+"</a>";
-  });
-  tooltip.textFormatter(function(){
-    return "Month: " + (new Date(this.x)).toLocaleDateString("en-US", {month: "long"}) + "\nIncome:$ " + this.value;
-  });
+  // chart type
+  var chart = anychart.line();
 
-  var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2010, 0, 1));
-  xScale.maximum(Date.UTC(2015, 0, 1));
+  // set title
+  chart.title("Separated Tooltip");
 
-  var xTicks = chart.xScale().ticks();
-  xTicks.interval(0,4);
+  // set series
+  var series1 = chart.line(data1);
+  series1.name("Year 2008");
+  var series2 = chart.line(data2);
+  series2.name("Year 2009");
 
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
-    var date = new Date(this.tickValue);
-    var options = {month: "short", year: "numeric"};
-    return date.toLocaleDateString("en-US", options);
-  });
+  var tooltip = chart.tooltip();
+  tooltip.displayMode("separated");
+  tooltip.positionMode("point");
 
-  var yLabels = chart.yAxis().labels();
-  yLabels.width(75);
+  var tooltip1 = series1.tooltip();
+  tooltip1.anchor("center-bottom");
+  tooltip1.title(false);
+  tooltip1.separator(false);
 
+  var tooltip2 = series2.tooltip();
+  tooltip2.anchor("center-bottom");
+  tooltip2.title(false);
+  tooltip2.separator(false);
 
   var interactivity = chart.interactivity();
-  interactivity.hoverMode("byX");
+  interactivity.hoverMode("by-x");
   interactivity.selectionMode("none");
 
   var crosshair = chart.crosshair();
@@ -133,25 +72,20 @@
   crosshair.yStroke(false);
   crosshair.yLabel(false);
 
-  var xLabel = crosshair.xLabel();
-  xLabel.textFormatter(function(){
-    var date = new Date(this.rawValue);
-    var options = {month: "short", year: "numeric"};
-    return date.toLocaleDateString("en-US", options);
-  });
+  series1.markers(false);
+  series2.markers(false);
 
-  series.markers(false);
+  var hoverMarkers1 = series1.hovered().markers();
+  hoverMarkers1.enabled(true);
+  hoverMarkers1.size(3);
+  var hoverMarkers2 = series2.hovered().markers();
+  hoverMarkers2.enabled(true);
+  hoverMarkers2.size(3);
 
-  var hoverMarkers = series.hoverMarkers();
-  hoverMarkers.enabled(true);
-  hoverMarkers.size(3);
-
-  // draw chart
+  // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

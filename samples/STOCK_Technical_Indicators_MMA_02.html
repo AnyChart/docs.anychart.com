@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Technical Indicators MMA 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+// The data used in this sample can be obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+// map loaded data
+var mapping = dataTable.mapAs({'value': 4});
+// create stock chart
+var chart = anychart.stock();
+// create plots on the chart
+var plot_0 = chart.plot(0);
+var plot_1 = chart.plot(1);
+
+// create line series on both of them
+var lineSeries_0 = plot_0.line(mapping);
+lineSeries_0.name('CSCO');
+lineSeries_0.stroke('2px #64b5f6');
+
+var lineSeries_1 = plot_1.line(mapping);
+lineSeries_1.name('CSCO');
+lineSeries_1.stroke('2px #64b5f6');
+
+// create MMA indicator with period 20 and show as line on the first plot
+var mma10 = plot_0.mma(mapping, 10).series();
+mma10.stroke('#bf360c');
+
+// create MMA indicators with period 50 and show as column on the second plot
+var mma30 = plot_1.mma(mapping, 30, "column").series();
+mma30.fill('#ff6d00');
+
+// set container id for the chart
+chart.container('container');
+// initiate chart drawing
+chart.draw();
+    });
+</script>
+</body>
+</html>

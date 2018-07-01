@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Technical Indicators BBandsB 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+// The data used in this sample can be obtained from the CDN
+// https://cdn.anychart.com/csv-data/csco-daily.js
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+var mapping = dataTable.mapAs({
+    'open': 1,
+    'high': 2,
+    'low': 3,
+    'close': 4,
+    'value': {column: 4, type: 'close'}
+});
+
+// create stock chart
+var chart = anychart.stock();
+
+// create ohlc series
+chart.plot(0).ohlc(mapping).name('CSCO');
+
+// create Bollinger Bands %B indicator with period 10 and show as a line on the second plot
+var BBandsB10 = chart.plot(1).bbandsB(mapping, 10, 0.2, "line").series();
+BBandsB10.stroke('#bf360c');
+
+// create Bollinger Bands %B indicator with period 50 and show as a column on the third plot
+var BBandsB50 = chart.plot(2).bbandsB(mapping, 50, 0.6, "column").series();
+BBandsB50.fill('#ff6d00');
+
+// create scroller series with mapped data
+chart.scroller().line(mapping);
+
+// set container id for the chart
+chart.container('container');
+
+// initiate chart drawing
+chart.draw();
+});
+</script>
+</body>
+</html>

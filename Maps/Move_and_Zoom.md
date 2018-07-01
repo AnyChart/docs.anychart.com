@@ -1,15 +1,5 @@
 {:index 17}
-Move and Zoom API
-=================
-
-* [Overview](#overview)
-* [Interactivity](#interactivity)
- * [Default](#default)
- * [Enable/Disable](#enable/disable)
- * [Navigational Interactivity](#navigational_interactivity)
- * [Clipboard Text](#clipboard_text)
- * [Zoom](#zoom)
- * [Move](#move)
+# Move and Zoom API
 
 ## Overview
 
@@ -29,7 +19,7 @@ When there is a point selected or a couple of them, it's possible to copy some i
 
 ### Enable/Disable
 
-To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable. 
+To enable or disable all interactive features we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
 
 **NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 
@@ -46,7 +36,7 @@ You can decide how you want to allow user to navigate a map, this is configured 
 
 To enable or disable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
 
-To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
+To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api}. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
 
 To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){} method.
 
@@ -63,15 +53,15 @@ The sample below shows the same map as above with navigational interactivity dis
 
 {sample}Maps\_Move\_and\_Zoom\_03{sample}
 
-### Clipbpard Text
+### Clipboard Text
 
-It's possible to put information about the points directly in computer clipboard by selecting a region or a couple of them and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}copyFormatter(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
+It is possible to put information about the points directly in computer clipboard by selecting a region or a several and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted using the {api:anychart.core.utils.MapInteractivity#copyFormat}copyFormat(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
 
 ```
 currentInteractivity = map.interactivity();
 
 // Adjust the text
-currentInteractivity.copyFormatter(function() {
+currentInteractivity.copyFormat(function () {
     return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
 });
 ```
@@ -80,7 +70,7 @@ currentInteractivity.copyFormatter(function() {
 
 ### Zoom
 
-You can control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X and Y coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
+You can control zoom using the {api:anychart.charts.Map#zoom}zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
 
 ```
 // Zoom map in 2 times.
@@ -89,7 +79,7 @@ map.zoom(2);
 
 {sample}Maps\_Move\_and\_Zoom\_04{sample}
 
-Another way to zoom a map is using {api:anychart.charts.Map#zoomTo}.zoomTo(){api}. This method also uses three parameters: zooming factor, X and Y coordinates. In the next sample, click any point you prefer; the map will be zoomed in this point's direction.
+Another way to zoom a map is using {api:anychart.charts.Map#zoomTo}zoomTo(){api}. This method also uses three parameters: zooming factor, X- and Y-coordinates. In the next sample, click any point you prefer; the map will be zoomed in this point's direction.
 
 ```
 // set zoom
@@ -107,9 +97,9 @@ clicked = !clicked;
 
 {sample}Maps\_Move\_and\_Zoom\_05{sample}
 
-Note the difference between the previous two methods. When you call {api:anychart.charts.Map#zoom}.zoom(){api} multiple times, the map will be zoomed as many times as the method was called, while using {api:anychart.charts.Map#zoomTo}.zoomTo(){api} will zoom the map only once to the defined factor.
+Note the difference between the previous two methods. When you call {api:anychart.charts.Map#zoom}zoom(){api} multiple times, the map will be zoomed as many times as the method was called, while using {api:anychart.charts.Map#zoomTo}zoomTo(){api} will zoom the map only once to the defined factor.
 
-The third zooming method is zooming to a particular region on a map using {api:anychart.charts.Map#zoomToFeature}.zoomToFeature(){api}.
+The third zooming method is zooming to a particular region on a map using {api:anychart.charts.Map#zoomToFeature}zoomToFeature(){api}.
 
 ```
 // zoom to a region
@@ -122,9 +112,17 @@ map.listen('pointClick', function(e) {
 
 Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](Event_Listeners).
 
+### Zoom Controls
+
+There is one more option how to manage your map zooming. Instead of using listeners and methods described above, add the Zoom Control Panel on the map. This panel includes 3 buttons: for 100% view, for zooming in and zooming out. 
+
+{sample}CS\_ZoomControls\_01{sample}
+
+Read more about this feature in the [Zoom Control Panel](../Common_Settings/UI_Controls/Zoom_Controls)
+
 ### Move
 
-Use the {api:anychart.charts.Map#move}.move(){api} method to the map with X and Y shifts as arguments, if you need to move the map on the defined distance.
+Use the {api:anychart.charts.Map#move}move(){api} method to the map with X- and Y-shifts as arguments, if you need to move the map on the defined distance.
 
 In this sample there are arrow buttons created that are intended to move the map.
 

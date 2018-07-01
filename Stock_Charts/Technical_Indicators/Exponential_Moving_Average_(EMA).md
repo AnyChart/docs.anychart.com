@@ -1,10 +1,5 @@
 # Exponential Moving Average
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 An exponential moving average (EMA), sometimes also called an exponentially weighted moving average (EWMA), applies weighting factors which decrease exponentially. The weighting for each older data point decreases exponentially, giving much more importance to recent observations while still not discarding older observations entirely.
@@ -15,7 +10,7 @@ Mathematical description of the indicator: [Exponential Moving Average (EMA) Mat
 
 ## Adding indicator
 
-EMA indicator is added using {api:anychart.core.stock.Plot#ema}.ema(){api} method, it requires a mapping with value field in it:
+EMA indicator is added using {api:anychart.core.stock.Plot#ema}ema(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -44,7 +39,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-EMA indicator need three parameters: mapping with value field in it, period and a type of series to be displayed as:
+EMA indicator need three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var ema10 = plot.ema(mapping, 10, "column");

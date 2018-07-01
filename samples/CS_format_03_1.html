@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS format 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // create column chart
+    chart = anychart.column([
+        [1507191173976, 80540],
+        [1507292173976, 94190],
+        [1507393173976, 102610],
+        [1507494173976, 110430],
+        [1507595173976, 128000],
+        [1507696173976, 143760]
+    ]);
+
+    // format the value and implicitly convert to date
+    chart.xAxis().labels().format('{%Value}{dateTimeFormat:MM-dd}');
+    
+    // enable labels and explicitly specify time type
+    chart.labels().enabled(true);
+    chart.labels().format('{%x}{type:time}'); 
+    // explictly specify type in the title
+    chart.tooltip().titleFormat('{%x}{type:date}'); 
+    // use another type in the tooltip text
+    chart.tooltip().format('{%x}{type:number}'); 
+    
+    // set container id for the chart
+    chart.container('container');
+
+    // initiate chart drawing
+    chart.draw();
+});
+</script>
+</body>
+</html>

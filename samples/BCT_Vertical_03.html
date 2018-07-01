@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Vertical 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<label><input onclick="verticalEnabled(false)" type="radio" name="orientation" checked>Horizontal Orientation</label>
+<label><input onclick="verticalEnabled(true)" type="radio" name="orientation">Vertical Orientation</label> 
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // data
+    var data = [
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
+    ];
+
+    // create a chart
+    chart = anychart.column();
+
+    // set data
+    chart.data(data);
+
+    // set the chart title
+    chart.title("Vertical Charts: Changing On-the-Fly (Chart)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+    
+// change the orientation of the chart
+function verticalEnabled(enabled) {
+  chart.isVertical(enabled);
+}
+</script>
+</body>
+</html>

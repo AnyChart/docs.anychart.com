@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Stacking 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 1.5, 2.5, 2.0, 1.5, 1.5, 1.0],
+      ["QTR2", 0.5, 2.0, 3.0, 2.5, 1.5, 0.5],
+      ["QTR3", 1.5, 3.0, 2.5, 1.5, 0.5, 1.0],
+      ["QTR4", 1.5, 2.0, 2.5, 1.5, 1.5, 1.0]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+    var seriesData_4 = data.mapAs({x: 0, value: 4});
+    var seriesData_5 = data.mapAs({x: 0, value: 5});
+    var seriesData_6 = data.mapAs({x: 0, value: 6});
+
+    // create a chart
+    var chart = anychart.column();
+
+    // create scales and set stacking modes
+    var yScale1 = anychart.scales.linear();
+    yScale1.stackMode("percent");
+
+    var yScale2 = anychart.scales.linear();
+    yScale2.stackMode("percent");
+
+    var yScale3 = anychart.scales.linear();
+    yScale3.stackMode("percent");
+
+    // create column series and bind them to different scales
+    chart.column(seriesData_1).yScale(yScale1);
+    chart.column(seriesData_2).yScale(yScale1);
+
+    chart.column(seriesData_3).yScale(yScale2);
+    chart.column(seriesData_4).yScale(yScale2);
+    
+    chart.column(seriesData_5).yScale(yScale3);
+    chart.column(seriesData_6).yScale(yScale3);
+
+    /* bind the Y-axis to the first scale
+    you can avoid this setting by reusing the primary y-scale
+    when you create yScale1:
+    var yScale1 = chart.yScale();*/
+    chart.yAxis().scale(yScale1);
+
+    // configure labels on the y-axis
+    chart.yAxis().labels().format("{%value}%");
+
+    // configure tooltips
+    chart.tooltip().format("{%yPercentOfCategory}{decimalsCount:2}%");
+
+    // set the chart title
+    chart.title("Percent Stacked Chart: Clustered");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

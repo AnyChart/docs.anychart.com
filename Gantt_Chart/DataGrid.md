@@ -1,18 +1,12 @@
-#Data Grid
+# Data Grid
 
-* [Columns](#columns)
- * [Columns Set](#columns_set)
- * [Title](#title)
- * [Content](#inner_content)
- * [Width](#width)
-* [Visual Settings](#visual_settings)
- * [Interlaced mode](#interlaced_mode)
-* [General Settings](#general_settings)
- * [Turning On/Off](#turning_on/off)
- * [Data Grid Width](#data_grid_width)
- * [Expand/Collapse](#expand/collapse)
+## Overview
 
-Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
+Data Grid is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
+
+## Editing
+
+Data Grid cells can be made editable, see [Live Edit UI and API: Data Grid](Live_Edit_UI_and_API#data_grid).
 
 ## Columns
 
@@ -22,26 +16,18 @@ By default, JS Gantt Chart displays two columns: rows counts and names of Gantt 
 
 {sample :width 690 :height 190}GANTT\_Basic\_Sample{sample}
 
-The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}column(){api} method:
 
 ```
-//create new column contains names
-dataGrid.column(4).width(100).textFormatter(function(item) {
-    return item.get('name');
-  }).title('Resources');
+var thirdColumn = dataGrid.column(2);
+thirdColumn.title("Actual Start");
+thirdColumn.width(100);
+thirdColumn.labels().format("{%actualStart}{dateTimeFormat:MM/dd/yyyy}");
 ```
 
-Just see simple code below. You can create new columns using this method and their ids can assume different values that do not have to be consecutive.
-```
-//this code in fact creates only two columns
-var firstColumn = dataGrid.column(10);
+For more information about the {api:anychart.core.ui.DataGrid.Column#format}format(){api} method see the [Text](#text) topic.
 
-var secondColumn = dataGrid.column(20);
-```
-
-For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
-
-The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
+The sample below shows Resource Gantt Chart:
 
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
 
@@ -52,67 +38,50 @@ The same for Project Gantt Chart. The next sample shows the data grid with the a
 You can create and display custom fields in data items:
 
 ```
-    'id': '1',
-    'name': 'Task 1',
-    'owner': 'Anthony Quayle',
-    'actualStart': Date.UTC(2008, 7, 9),
-    'actualEnd': Date.UTC(2008, 7, 20)
+'id': '1',
+'name': 'Task 1',
+'owner': 'Anthony Quayle',
+'actualStart': '2008-07-09',
+'actualEnd': '2008-07-20'
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_12{sample}
 
 ### Title
 
-Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
+Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g., set the custom title value:
 
 ```
-//set title values
+// set title values
 title.text("new column");
 title.fontWeight("bold").fontStyle("italic");
 title.hAlign("left");
 ```
 
-<a name="inner_content">
-### Content
+### Text
 
-Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#format}format(){api} method. It used to define a cell text value formatter, so you can pass your own formatting string or custom function as an argument.
+
 ```
-//create a column contains all IDs
-column.textFormatter(function(item) {
+// format with formatting string
+chart.dataGrid().column(1).format("{%name}");
+
+// format with function
+chart.dataGrid().column(0).format(function(item) {
     return item.get('id') + '';
 });
 ```
 
-Or it can be more complicated:
-
-```
-//create the third column
-dataGrid.column(2).textFormatter(customColumnTextFormatter);
-
-//define a custom content with actual start values
-function customColumnTextFormatter(item){
-    var start = item.get("actualStart");
-    var end = item.get("actualEnd");
-    var duration = end - start;
-    var hours = duration/1000/60/60;
-    if (hours>24){
-        return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
-    }else{
-        return hours + " hours";
-    }
-}
-```
-
-Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#format}format(){api}.
 
 {sample :width 690 :height 220}GANTT\_Chart\_17{sample}
 
 ### Width
 
-You should use the {api:anychart.core.ui.DataGrid.Column#width}**width()**{api} method for customizing the column width.
+You should use the {api:anychart.core.ui.DataGrid.Column#width}width(){api} method for customizing the column width.
 
 ```
-//set column width to 30
+// set column width to 30
 dataGrid.column(0).width(30);
 ```
 
@@ -127,11 +96,11 @@ These methods can be used to change the background color:
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#backgroundFill}**backgroundFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api}</td>
 <td>Allows to set background fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowFill}**rowFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowFill}rowFill(){api}</td>
 <td>Used to collapse all tasks.</td>
 </tr>
 </tbody>
@@ -154,11 +123,11 @@ By default, the odd and the even fields are differentiated by their fill. To cha
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowOddFill}**rowOddFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api}</td>
 <td>Used to set row odd fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowEvenFill}**rowEvenFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowEvenFill}rowEvenFill(){api}</td>
 <td>Used to set row even fill.</td>
 </tr>
 </tbody>
@@ -180,11 +149,11 @@ Use these methods to change the rows fill color of the main chart plot:
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowOddFill}**rowOddFill()**{api}</td>
+<td>{api:anychart.core.ui.Timeline#rowOddFill}rowOddFill(){api}</td>
 <td>Used to set row odd fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowEvenFill}**rowEvenFill()**{api}</td>
+<td>{api:anychart.core.ui.Timeline#rowEvenFill}rowEvenFill(){api}</td>
 <td>Used to set row even fill.</td>
 </tr>
 </tbody>
@@ -201,11 +170,9 @@ timeline.rowOddFill("#add8e6");
 In the sample below the odd rows are colored with a solid fill as well as the even rows.
 {sample :width 690 :height 190}GANTT\_Chart\_09{sample}
 
-## General Settings
+## Turning On/Off
 
-### Turning On/Off
-
-By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
+By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with <b>false</b> as the argument:
 
 ```
 //disable data grid
@@ -216,28 +183,28 @@ And here is a simple illustration of this idea:
 
 {sample :width 690 :height 190}GANTT\_Chart\_15{sample}
 
-### Data Grid Width
+## Width
 
-It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method:
 
 ```
 //set width to 100
 chart.splitterPosition(100);
 ```
 
-### Expand/Collapse
+## Expand/Collapse
 
-Data Grid supports hierarchical data representation, so if the data is complicated, the Data Grid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
+Data Grid supports hierarchical data representation, so when the data structure has several levels, expand and collapse buttons appear:
 
 {sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
-Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
+You can place expand/collapse buttons on any column using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}collapseExpandButtons(){api} method:
 
 ```
 column.collapseExpandButtons(false);
 ```
 
-You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to to customize the data view.
+You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api} method to to customize the data view.
 
 ```
 column.depthPaddingMultiplier(8);
@@ -246,3 +213,132 @@ column.depthPaddingMultiplier(8);
 In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
 
 {sample :width 690 :height 200}GANTT\_Chart\_14{sample}
+
+### Buttons
+
+To customize how expand/collapse buttons look, use the {api:anychart.core.ui.DataGrid#buttons}buttons(){api} method. Their settings are configured using the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
+
+Here is a sample of a data grid with customized expand/collapse buttons. The text is altered, the background is disabled in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
+
+```
+// access the object with button settings
+var buttons = chart.dataGrid().buttons();
+
+// configure the font of buttons
+buttons.fontColor('Black');
+buttons.fontFamily('Courier');
+
+/* change the width of buttons
+to make it match the custom font */
+buttons.width(22);
+
+// change the text of buttons
+buttons.normal().content('[+]');
+buttons.selected().content('[-]');
+
+/* disable the background of buttons
+in the expanded and collapsed states */
+buttons.normal().background(false);
+buttons.selected().background(false);
+
+/* change the background and font of buttons
+in the hover state */
+buttons.hovered().background().fill(null);
+buttons.hovered().background().stroke("1 red");
+buttons.hovered().fontColor('red');
+```
+
+{sample :width 690 :height 200}GANTT\_Chart\_18{sample}
+
+You can also use images in background 
+
+{sample :width 690 :height 200}GANTT\_Chart\_19{sample}
+
+You can also override the drawing of buttons completely by passing the drawing function to the {api:anychart.core.gantt.DataGridButton#content}content{api} method:
+
+```
+var buttons = chart.dataGrid().buttons();
+
+// create custom drawing functions
+var contentFunction = function (path) {
+  /* draw different shapes
+  depending on the state */
+  var half = this.width / 2;
+  switch (this.state) {
+    case 'normal':
+      fill = '#dd2c00';
+      anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+      break;
+    case 'hovered':
+      fill = anychart.color.lighten('#dd2c00');
+      anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
+      break;
+    case 'selected':
+      fill = '#00bfa5';
+      anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
+      break;
+  }      
+};
+
+    // set content functions for buttons
+buttons.normal().content(contentFunction);
+buttons.selected().content(contentFunction);
+```
+
+See a live sample with customized buttons below:
+
+{sample :width 690 :height 200}GANTT\_Chart\_20{sample}
+
+You can also use images in fully customized buttons as well. Customization code can look like this:
+
+```
+var buttons = chart.dataGrid().buttons();
+
+// create custom drawing functions
+var contentFunction = function (path) {
+    // draw different primitives or anything else depending on the state
+    var half = this.width / 2;
+    switch (this.state) {
+      case 'normal':
+      case 'hovered':
+        path
+          .clear()
+          .moveTo(0, 0)
+          .lineTo(this.width, 0)
+          .lineTo(this.width, this.height)
+          .lineTo(0, this.height)
+          .lineTo(0, 0)
+          .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png',
+            mode: 'fit'
+        });
+        break;
+      case 'selected':
+        path
+          .clear()
+          .moveTo(0, 0)
+          .lineTo(this.width, 0)
+          .lineTo(this.width, this.height)
+          .lineTo(0, this.height)
+          .lineTo(0, 0)
+          .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png',
+            mode: 'fit'
+        });
+        break;
+    }      
+};
+
+// Set content functions
+buttons.normal().content(contentFunction);
+buttons.selected().content(contentFunction);
+
+// disable standard backgrounds
+buttons.normal().background(false);
+buttons.selected().background(false)
+buttons.hovered().background(false);
+```
+
+A live sample follows:
+
+{sample :width 690 :height 200}GANTT\_Chart\_21{sample}

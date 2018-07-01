@@ -1,121 +1,88 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-
-  // setting data
-  var data = anychart.data.set([
-    ["P1", 16, 20, 10, 13],
-    ["P2", 12, 18, 15, 18],
-    ["P3", 9, 14, 17, 21]
-  ]);
-
-  // mapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
-  var Sales2003_1 = data.mapAs({x: [0], value: [3]});
-  var Sales2004_1 = data.mapAs({x: [0], value: [4]});
-
-  stage = anychart.graphics.create("container");
-
-  // setting basic title
-  var mainTitle = anychart.ui.title();
-  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  mainTitle.text("Clustered Stacked Modes");
-  mainTitle.container(stage);
-  mainTitle.draw();
-
-  // first chart
-  var valueStackedMode = anychart.column();
-
-  // set chart title
-  valueStackedMode.title("Value Stacked Mode");
-
-  // setting chart's size and position
-  valueStackedMode.bounds(0, "15%", "50%", "85%");
-
-  valueStackedMode.background().stroke("#CCCCCC");
-
-  // define mode type
-  var yScale = valueStackedMode.yScale();
-  yScale.stackMode("value");
-  var secondScale = anychart.scales.linear();
-  secondScale.stackMode("value");
-
-  // disable axes title
-  var xAxis = valueStackedMode.xAxis();
-  xAxis.title(false);
-  var yAxis = valueStackedMode.yAxis();
-  yAxis.title(false);
-
-  // first cluster
-  valueStackedMode.column(Sales2003);
-  valueStackedMode.column(Sales2004);
-
-  // second cluster
-  var series2003_1 = valueStackedMode.column(Sales2003_1);
-  series2003_1.yScale(secondScale);
-  var series2004_1 = valueStackedMode.column(Sales2004_1);
-  series2004_1.yScale(secondScale);
-
-  valueStackedMode.container(stage);
-  valueStackedMode.draw();
-
-  // manage scales values
-  var scales = [yScale, secondScale];
-  for (var i=0; i<scales.length;i++){
-    scales[i].minimum(Math.min(yScale.minimum(), secondScale.minimum()));
-    scales[i].maximum(Math.max(yScale.maximum(), secondScale.maximum()));
-  }
-
-  // second chart
-  var percentStackedMode = anychart.column();
-
-  percentStackedMode.title("Percent Stacked Mode");
-
-  // setting chart's size and position
-  percentStackedMode.bounds("50%", "15%", "50%", "85%");
-
-  percentStackedMode.background().stroke("#CCCCCC");
-
-  percentStackedMode.yScale().stackMode("percent");
-  var percentScale = anychart.scales.linear();
-  percentScale.stackMode("percent");
-
-  // disable Axes titles
-  var percentYAxis = percentStackedMode.yAxis();
-  percentYAxis.title(false);
-  var percentXAxis = percentStackedMode.xAxis();
-  percentXAxis.title(false);
-
-  var percentYTicks = percentStackedMode.yScale().ticks();
-  percentYTicks.interval(10);
-
-  // set yAxis labels formatting, force it to add % to values
-  var percentYLabels = percentStackedMode.yAxis().labels();
-  percentYLabels.textFormatter("{%Value}%");
-
-  // series data setter
-  percentStackedMode.column(Sales2003);
-  percentStackedMode.column(Sales2004);
-
-  var percentSeries2003 = percentStackedMode.column(Sales2003_1);
-  percentSeries2003.yScale(percentScale);
-  var percentSeries2004 = percentStackedMode.column(Sales2004_1);
-  percentSeries2004.yScale(percentScale);
-
-  percentStackedMode.container(stage);
-  percentStackedMode.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Scales 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 3.8, 5.5, 6.9, 7.9],
+      ["QTR2", 5.5, 7.0, 9.6, 8.6],
+      ["QTR3", 9.9, 9.7, 8.3, 7.3],
+      ["QTR4", 5.7, 7.6, 9.7, 18.7]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+    var seriesData_4 = data.mapAs({x: 0, value: 4});
+
+    // create a chart
+    chart = anychart.column();
+
+    // create scales and set stacking modes
+    yScale1 = anychart.scales.linear();
+    yScale1.stackMode("value");
+
+    yScale2 = anychart.scales.linear();
+    yScale2.stackMode("value");
+    
+    // create column series and bind them to different scales
+    chart.column(seriesData_1).yScale(yScale1);
+    chart.column(seriesData_2).yScale(yScale1);
+
+    chart.column(seriesData_3).yScale(yScale2);
+    chart.column(seriesData_4).yScale(yScale2);
+
+    /* bind the Y-axis to the first scale
+    you can avoid this setting by reusing the primary Y-scale
+    when you create yScale1:
+    var yScale1 = chart.yScale();*/
+    chart.yAxis().scale(yScale1);
+
+    // set the chart title
+    chart.title("Sync Y Scales");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // sync minimums and maximums of the scales
+    globalMax = chart.getStat("yScalesMax");
+    globalMin = chart.getStat("yScalesMin");
+    // get all y scales
+    var yScales = chart.getYScales();
+    // set the same minimum and maximum
+    for (var i = 0; i < yScales.length; i++) {
+       yScales[i].minimum(globalMin);
+       yScales[i].maximum(globalMax);
+    }    
+    
+});
+</script>
 </body>
 </html>

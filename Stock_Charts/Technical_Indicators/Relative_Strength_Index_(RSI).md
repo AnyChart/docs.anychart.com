@@ -1,10 +1,5 @@
 # Relative Strength Index
 
-* [Overview](#overview)
-* [Adding indicator](#adding_indicator)
-* [Indicator parameters](#indicator_parameters)
-* [Visualization](#visualization)
-
 ## Overview
 
 The Relative Strength Index (RSI) is a financial technical analysis momentum oscillator measuring the velocity and magnitude of directional price movement by comparing upward and downward close-to-close movements.
@@ -15,7 +10,7 @@ Mathematical description of the indicator: [The Relative Strength Index (RSI) Ma
 
 ## Adding indicator
 
-RSI indicator is added using {api:anychart.core.stock.Plot#rsi}.rsi(){api} method, it requires a mapping with value field in it:
+RSI indicator is added using {api:anychart.core.stock.Plot#rsi}rsi(){api} method, it requires a mapping with the `"value"` field in it:
 
 ```
 // create data table on loaded data
@@ -47,7 +42,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-RSI indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
+RSI indicator needs three parameters: mapping with the `"value"` field in it, period and a type of series to be displayed as:
 
 ```
 var rsi30 = plot.rsi(mapping, 30, "column");
@@ -69,4 +64,4 @@ rsi30.fill('#ff6d00');
 
 Live sample:
 
-{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}
+{sample :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT General Settings 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data, enable and configure labels
+    var data = [
+      {x: "John", value:10000},
+      {x: "Jake", value:12000, label:{enabled:true, fontColor:"green", fontWeight:900, format:"${%value}"}},
+      {x: "Peter", value:13000, label:{enabled:true, fontColor:"red", fontWeight:900, format:"${%value}"}},
+      {x: "James", value:10000},
+      {x: "Mary", value:9000}
+    ];
+
+    // set chart type
+    var chart = anychart.column();
+
+    // create a series, set the data and name
+    var series = chart.column(data);
+    series.name("Sales");
+    
+    // set the chart title
+    chart.title("Labels (Points)");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

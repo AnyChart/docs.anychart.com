@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  // create a chart
+  var chart = anychart.marker();
+
+  // add series
+  chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("FDH 1mg/day");
+  chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("FDH 5mg/day");
+  chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
+
+  // configure legend
+  var legend = chart.legend();
+  legend.enabled(true);
+  legend.background().enabled(true).stroke("1 black");
+  legend.padding(5);  
+
+  // set position mode
+  legend.positionMode("outside");
+  // set position and alignement
+  legend.position("center-top");
+  legend.align("right");
+  legend.itemsLayout("vertical-expandable");
+
+  chart.title("Outside Legend Position");
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

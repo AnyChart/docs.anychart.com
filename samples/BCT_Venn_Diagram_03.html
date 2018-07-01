@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Venn Diagram 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-venn.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    //create data
+    var data = [
+{
+    x: "A",
+    name: "Set A",
+    value: 100
+},
+{
+    x: "B",
+    name: "Set B",
+    value: 100
+},
+{
+    x: "C",
+    name: "Set C",
+    value: 100
+},
+{
+    x: ["A", "B"],
+    value: 20
+},
+{
+    x: ["A", "C"],
+    value: 20
+},
+{
+    x: ["B", "C"],
+    value: 20
+},
+{
+    x: ["A", "B", "C"],
+    value: 20
+}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.venn(data);
+
+    // configure the labels of intersections
+    chart.intersections().labels().format("{%x}");
+
+    // disable the legend
+    chart.legend(false);
+
+    // set the chart title
+    chart.title("Venn Diagram: Data\nSetting Intersections (Arrays)");
+
+    // set the container id
+    chart.container('container');
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

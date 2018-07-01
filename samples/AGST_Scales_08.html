@@ -1,62 +1,53 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-  // define chart type
-  chart = anychart.column();
-
-  // chart title
-  chart.title("Major and Minor Ticks");
-
-  // setteing data
-  var data = anychart.data.set([
-    ["C", 5, 10],
-    ["D", 25, 20],
-    ["E", 15, 15]
-  ]);
-
-  // mapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
-  // setting series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
-
-  // setting data for line chart
-  chart.line([
-    ["C", 10],
-    ["D", 30],
-    ["E", 15]
-  ]);
-
-  // adjusting y scale minimum and maximum values
-  var yScale = chart.yScale();
-  yScale.minimum(-50);
-  yScale.maximum(100);
-
-  // setting ticks and minor ticks
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(10);
-  var yMinorTicks = chart.yScale().minorTicks();
-  yMinorTicks.interval(2);
-
-  // display minor ticks
-  var minorTicks = chart.yAxis().minorTicks();
-  minorTicks.enabled(true);
-
-  chart.container("container");
-  chart.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Scales 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // data
+  var data = [
+    ["C", 5, 10, 10],
+    ["D", 25, 20, 30],
+    ["E", 15, 15, 15]
+  ];
+
+  // create chart
+  var chart = anychart.column();
+  chart.data(data);
+  chart.title("Major and Minor Ticks");
+
+  // setting ticks and minor ticks
+  chart.yScale().ticks().interval(10);
+  chart.yScale().minorTicks().interval(2);
+
+  // display minor ticks
+  chart.yAxis().minorTicks().enabled(true);
+
+  // display chart
+  chart.container("container");
+  chart.draw();
+});
+</script>
 </body>
 </html>

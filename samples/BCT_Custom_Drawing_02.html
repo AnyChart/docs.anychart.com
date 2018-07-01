@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Custom Drawing 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    // create column chart
+    var chart = anychart.column();
+
+    var dataSet = anychart.data.set([
+['Lip gloss', 22998, 12043],
+['Eyeliner', 12321, 15067],
+['Eyeshadows', 12998, 12043],
+['Powder', 10261, 14419],
+['Mascara', 11261, 10419]
+    ]);
+
+    // set chart title
+    chart.title('Rounded column sample');
+
+    var seriesData_one = dataSet.mapAs({x: 0, value: 1});
+    var seriesData_two = dataSet.mapAs({x: 0, value: 2});
+
+    // create first series with mapped data
+    var series_one = chart.column(seriesData_one);
+    series_one.name('Florida');
+
+    // set rendering settings
+    series_one.rendering().point(drawer);
+
+    var series_two = chart.column(seriesData_two);
+    series_two.name('Texas');
+    // set rendering settings
+    series_two.rendering().point(drawer);
+
+    // set container id for the chart and initiate chart drawing
+    chart.container('container').draw();
+});
+
+function drawer() {
+    // if missing (not correct data), then skipping this point drawing
+    if (this.missing) {
+return;
+    }
+
+    // get shapes group
+    var shapes = this.shapes || this.getShapesGroup(this.pointState);
+    // calculate the left value of the x-axis
+    var leftX = this.x - this.pointWidth / 2;
+    // calculate the right value of the x-axis
+    var rightX = leftX + this.pointWidth;
+    // calculate the half of point width
+    var rx = this.pointWidth / 2;
+
+    shapes['path']
+    // resets all 'line' operations
+    .clear()
+    // draw column with rounded edges
+    .moveTo(leftX, this.zero)
+    .lineTo(leftX, this.value + rx)
+    .circularArc(leftX + rx, this.value + rx, rx, rx, 180, 180)
+    .lineTo(rightX, this.zero)
+    // close by connecting the last point with the first straight line
+    .close();
+}
+</script>
+</body>
+</html>

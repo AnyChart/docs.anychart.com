@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS format 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // set chart type and data
+    var chart = anychart.pie([
+["Department Stores", 637166],
+["Discount Stores", 721630],
+["Men's/Women's Stores", 148662],
+["Juvenile Specialty Stores", 78662],
+["All other outlets", 90000]
+    ]);
+    // set chart title text settings
+    chart.title("Aqua Style");
+
+    // disable legend
+    chart.legend(false);
+
+    // set aqua style
+    chart.fill("aquastyle");
+    
+    // text formatter
+    var labels = chart.labels();
+    labels.format(function (){
+return((this.getData("value"))+"(of "+this.getStat("sum")+")");
+    });
+
+    // labels positioning
+    labels.position("outside");
+    
+    // draw
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -1,9 +1,5 @@
 {:index 16}
-Maps and Charts in one Dashboard
-======================
-
-* [Overview](#overview)
-* [Simple Dashboard](#simple_dashboard)
+# Maps and Charts in one Dashboard
 
 ## Overview
 
@@ -19,7 +15,7 @@ First of all, look at the simple dashboard with an only map and an only chart.
 
 ```
 stage = anychart.graphics.create("container");
-var dataSet = anychart.data.set([
+var data = [
 	['AU.WA', 300],
 	['AU.JB', 230],
 	['AU.NS', 240],
@@ -30,38 +26,26 @@ var dataSet = anychart.data.set([
 	['AU.SA', 305],
 	['AU.QL', 190]
 ]);
-
-// mapping the data to the chart
-var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
-var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
 ```
+
 At first we create a container which is stage now. Read more about stage-based dashboards [here](../../Dashboards/Stage-Based_Layout).
 
-We use one dataSet for both map and a chart. Both map and chart have series, so we should define the data, which have to be mapped first to be interpreted correctly.
-
-Then we should not forget about the bounds: unless we don't set them, a map or a chart will become invisible.
+Then we should not forget about the bounds to define where charts are displayed.
 
 ```
-var mapChart = anychart.map();
-mapChart.geoData(anychart.maps.australia);
-mapChart.container(stage);
-mapChart.title('Australia Map');
+var map = anychart.map();
+map.geoData(anychart.maps.australia);
+map.title('Australia Map');
+map.choropleth(data);
+map.bounds(0, 0, '100%', '70%');
+map.container(stage);
+map.draw();
 
-// set the series
-var series = mapChart.choropleth(mapDataSet);
-series.geoIdField('code_hasc');
-
-mapChart.bounds(0, 0, '100%', '70%');
-mapChart.draw();
-
-var areaChart = anychart.area();
-areaChart.container(stage);
-areaChart.title('Spline-Area Chart');
-areaChart.bounds(0, '70%', '100%', '30%');
-
-// set the series
-areaChart.splineArea(chartDataSet);
-areaChart.draw();
-			
+var area = anychart.area();
+area.title('Spline Area Chart');
+area.bounds(0, '70%', '100%', '30%');
+area.splineArea(data);
+area.container(stage);
+area.draw();
 ```
 

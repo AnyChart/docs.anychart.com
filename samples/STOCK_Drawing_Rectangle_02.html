@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Drawing Rectangle 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+   
+    // the data used in this sample can be obtained from the CDN
+    // https://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // access the annotations() object of the plot to work with annotations
+    var controller = plot.annotations();
+
+    // create the first Rectangle annotation and configure its visual settings
+    rectangle1 = controller.rectangle({
+xAnchor: "2006-11-19",
+valueAnchor: 29.84,
+secondXAnchor: "2007-03-25",
+secondValueAnchor: 25.11,
+hovered: {
+    fill: "#398cae 0.3",
+    stroke: "2 #ff0000"
+},
+selected: {
+    fill: "#398cae 0.3",
+    hatchFill: "forward-diagonal",
+    stroke: "4 #ff0000"
+}
+    });
+
+    // create the second Rectangle annotation
+    rectangle2 = controller.rectangle();
+
+    // set the position of the second annotation
+    rectangle2.xAnchor("2005-11-20");
+    rectangle2.valueAnchor(15.55);
+    rectangle2.secondXAnchor("2007-02-25");
+    rectangle2.secondValueAnchor(23.30);
+     
+    // configure the visual settings of the second annotation
+    rectangle2.normal().fill(null);
+    rectangle2.normal().stroke("#006600", 1, "10 2");
+    rectangle2.hovered().stroke("#00b300", 2, "10 2");
+    rectangle2.selected().stroke("#00b300", 4, "10 2");
+
+    // create the third Rectangle annotation
+    rectangle3 = controller.rectangle();
+
+    // set the position of the third annotation
+    rectangle3.xAnchor("2005-12-20");
+    rectangle3.valueAnchor(15.55);
+    rectangle3.secondXAnchor("2007-03-25");
+    rectangle3.secondValueAnchor(23.30);
+
+    // configure the visual settings of the third annotation
+    rectangle3.normal().fill(null);
+    rectangle3.normal().stroke("#006600", 1, "10 2");
+    rectangle3.hovered().stroke("#00b300", 2, "10 2");
+    rectangle3.selected().stroke("#00b300", 4, "10 2");
+
+    // set the chart title
+    chart.title("Rectangle: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

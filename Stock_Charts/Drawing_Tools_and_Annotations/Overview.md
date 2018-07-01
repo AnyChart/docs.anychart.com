@@ -1,32 +1,31 @@
 {:index 1}
-#Drawing Tools and Annotations
-
-* [Overview](#overview)
-* [General Settings](#general_settings)
-* [Annotation Types](#annotation_types)
- * [Fibonacci Tools](#fibonacci_tools)
- * [Lines, Trend Lines and Rays](#lines)
- * [Geometric Shapes](#geometric_shapes)
- * [Labels, Buy/Sell Signals](#signals)
- * [Other Tools](#other_tools)
+# Drawing Tools and Annotations
 
 ## Overview
 
-AnyChart Stock offers a large set of features that allow you to build your online financial portal and one of the most exciting features is the ability to draw/display on the chart custom objects (drawing tools) or, as they are called in our documentation and settings, annotations.
+[AnyStock](../Overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
 
-In this section of the documentation you can learn almost everything you need to know about things you can do with annotations: settings options, types of annotations and so on.
+In this section you can find all important information about working with annotations in general and with certain types of them.
+
+## Sample Application
+
+To demonstrate how AnyStock drawing tools can be implemented, we created a sample web application with open source.
+
+To see the application live, visit [https://www.anychart.com/solutions/drawing-tools/](https://www.anychart.com/solutions/drawing-tools/).
+
+You can also download its source or simply fork it here: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 
 ## General Settings
 
-General settings are the settings that can be done with any annotation regardless its type, this document also contains some other basic information you need to know about annotations: how to allow/forbid adding annotations, how to work with defaults and so on.
+A number of settings can be applied to any annotation regardless its type. For example, all annotation types share some visual settings as well as methods used for binding to axes, forbidding editing, and so on. General settings also include managing the drawing process and serializing/deserializing drawings. See the following articles:
 
-* [Annotations General Settings](General_Settings)
-* [Managing Drawing Process](Drawing)
-* [Serializing and Deserializing Drawings](Serializing_Deserializing)
+* [General Settings](General_Settings)
+* [Drawing](Drawing)
+* [Serializing and Deserializing](Serializing_Deserializing)
 
 ## Annotation Types
 
-Here is a full list of annotations/drawings available in [AnyStock](../Overview), with links to the tutorials that describe their settings.
+Here is a full list of annotations available in AnyStock (with links to the articles explaining how to configure them):
 
 ### Fibonacci Tools
 
@@ -35,11 +34,10 @@ Here is a full list of annotations/drawings available in [AnyStock](../Overview)
 * [Fibonacci Retracement](Fibonacci_Retracement)
 * [Fibonacci Time Zones](Fibonacci_Time_Zones)
 
-<a name="lines"></a>
-### Lines, Trend Lines and Rays
+### Trend Lines
 
-* [Infinite Line](Infinite_Line)
 * [Line Segment](Line_Segment)
+* [Infinite Line](Infinite_Line)
 * [Horizontal Line](Horizontal_Line)
 * [Vertical Line](Vertical_Line)
 * [Ray](Ray)
@@ -50,11 +48,10 @@ Here is a full list of annotations/drawings available in [AnyStock](../Overview)
 * [Rectangle](Rectangle)
 * [Triangle](Triangle)
 
-<a name="signals"></a>
-### Labels, Buy/Sell Signals
+### Labels, Markers, Buy/Sell Signals
 
-* [Arrow](Arrow)
-* [Label](Label)
+* [Markers, Buy/Sell Signals](Marker)
+* [Labels](Label)
 
 ### Other Tools
 

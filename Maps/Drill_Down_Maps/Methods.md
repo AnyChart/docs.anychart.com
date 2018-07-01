@@ -1,13 +1,5 @@
 {:index 2}
-Drill Down Maps
-=================
-
-* [Overview](#overview)
-* [Methods](#methods)
- * [Drill To](#drill_to)
- * [Drill Up](#drill_up)
- * [Drill Down Map](#drill_down_map)
- * [Get Drill Down Path](#get_drill_down_path)
+# Drill Down Maps
 
 ## Overview
 
@@ -18,15 +10,19 @@ In all samples of this article all necessary maps are being loaded ahead as scri
 
 ## Methods
 
-There are four general methods that make working with drill down easier: {api:anychart.charts.Map#drillTo}.drillTo(){api}, {api:anychart.charts.Map#drillUp}.drillUp(){api}, {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} and {api:anychart.charts.Map#drillDownPath}.drillDownPath(){api}. 
+The following methods make working with drill down easier:
+- {api:anychart.charts.Map#drillTo}drillTo(){api},
+- {api:anychart.charts.Map#drillUp}drillUp(){api},
+- {api:anychart.charts.Map#drillDownMap}drillDownMap(){api}
+- {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. 
 
 ### Drill To
 
-Using the {api:anychart.charts.Map#drillTo}.drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](Event_Listeners).
+Using the {api:anychart.charts.Map#drillTo}drillTo(){api} method will drill down to a selected region. This method requires the ID of the region/country and the map which matches the defined region and will be loaded. This method is used naturally in [listeners](../../Common_Settings/Event_Listeners).
 
 ```
 // Drill down to specified map
-map.drillTo("US", usaMap);
+map.drillTo("US", map);
 ```
 
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
@@ -35,7 +31,7 @@ Another way to create a map with a drill down function is not to specify all map
 
 ### Drill Up
 
-The {api:anychart.charts.Map#drillUp}.drillUp(){api} method loads the map of the previous level. This method requires no params, it works only when drill down caused by {api:anychart.charts.Map#drillTo}.drillTo(){api} or {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
+The {api:anychart.charts.Map#drillUp}drillUp(){api} method loads the map of the previous level. This method requires no parameters, it works only when drill down caused by {api:anychart.charts.Map#drillTo}drillTo(){api} or {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} happened prior to its execution. In the following sample we have set listeners to the chart title.
 
 ```
 // drill up
@@ -46,7 +42,7 @@ map.drillUp();
 
 ### Drill Down Map
 
-Another way to create a map with drill down is {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method, which defines transitions of drill down. This method requires those regions into which we want to perform a drill down. Besides this method, we should also set the appropriate selection mode. The code should look like this:
+Another way to create a map with drill down is {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} method, which defines transitions of drill down. This method requires those regions into which we want to perform a drill down. Besides this method, we should also set the appropriate selection mode. The code should look like this:
 
 ```
 // set the selection mode    
@@ -54,7 +50,7 @@ map.interactivity().selectionMode("drillDown");
 
 // set the drillDownMaps
 map.drillDownMap({
-    "US": usaMap,        
+    "US": map,        
     "CA": canadaMap
 });
 ```
@@ -65,7 +61,7 @@ More information about the use of these methods can be found in the [Basic Tutor
 
 ### Get Drill Down Path
 
-When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.Map#getDrilldownPath}.getDrilldownPath(){api} method. It returns the array of points of {api:anychart.core.MapPoint}MapPoint{api} type, which represent the regions that were clicked and used for drill down. Note that there is a root element in the drill down path which is a bit different from other elements as it contains no level. Let's make the title of the next sample show this path.
+When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method. It returns the array of points of {api:anychart.core.MapPoint}MapPoint{api} type, which represent the regions that were clicked and used for drill down. Note that there is a root element in the drill down path which is a bit different from other elements as it contains no level. Let's make the title of the next sample show this path.
 
 ```
 // get drilldown path
@@ -88,6 +84,6 @@ function printPath(path){
 
 {sample}Maps\_Drill\_Down\_Methods\_04{sample}
 
-In the sample above we've used the {api:anychart.core.MapPoint#getCurrentChart}.getCurrentChart(){api} method to obtain the link to the current map. A custom function *printpath(path)* helps to print the whole path in the title of the chart.
+In the sample above the {api:anychart.core.MapPoint#getCurrentChart}getCurrentChart(){api} method is used to obtain the link to the current map. A custom function *printpath(path)* helps to print the whole path in the title of the chart.
 
-Using {api:anychart.charts.Map#getDrilldownPath}.getDrilldownPath(){api}, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. Look up the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.
+Using the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. See the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.

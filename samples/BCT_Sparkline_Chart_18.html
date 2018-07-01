@@ -1,37 +1,48 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['sparkline']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-  stage = anychart.graphics.create("container");
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Sparkline Chart 18"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  var stage = anychart.graphics.create("container");
   // create charts
   chart1 = anychart.sparkline();
   chart2 = anychart.sparkline();
 
-  // set container id for the charts
-  chart1.container(stage);
-  chart2.container(stage);
-  chart1.title(true);
-  chart2.title(true);
+  chart1.seriesType("win-loss");  
+  chart2.seriesType("win-loss");  
 
-  chart1.title().text("WL 1");
-  chart2.title().text("WL 2");
+  chart1.title("WL 1");
+  chart2.title("WL 2");
 
   // create data for both charts
   chart1.data([-20, 30, 50, -10, 25, -50, 70, 10]);
   chart2.data([{value: 20, hatchFill: {type: "checkerboard"}}, 30, -10, {value: 20, hatchFill: {type: "checkerboard"}}, -35, {value: -15, hatchFill: {type: "checkerboard"}}, -40, 50]);
   
-  
   // set charts dimensions and position
   chart1.bounds(0, 0, 300, 40);
-  chart1.type("wl");  
   chart2.bounds(0, 50, 300, 40);
-  chart2.type("wl");  
 	
   // colorize our charts
   chart1.negativeHatchFill("checkerboard");
@@ -39,14 +50,16 @@
   chart1.fill("lightGray");
   chart2.negativeFill("lightGray");
   chart2.fill("lightGray");
-  
+
+  // set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);
+
   // initiate chart drawing
   chart1.draw();
   chart2.draw();
   
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

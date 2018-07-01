@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Box Chart 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  
+  // create data
+  var data = [
+    {x: "Jan", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, outliers: [800, 2500, 3200]},
+    {x: "Feb", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
+    {x: "Mar", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
+    {x: "Apr", low: 4000, q1: 5000, median: 6500, q3: 6900, high: 7200, outliers: [8930]},
+    {x: "May", low: 8000, q1: 8400, median: 8500, q3: 8800, high: 9000, outliers: [6950, 3000]}
+  ];
+
+  // create a chart
+  var chart = anychart.box();
+
+  // create a series and set the data
+  series = chart.box(data);
+
+  // configure whiskers
+  series.whiskerWidth(30);
+  series.normal().whiskerStroke("#dd2c00", 0.5);
+  series.hovered().whiskerStroke("#dd2c00", 1);
+  series.selected().whiskerStroke("#dd2c00", 2);
+
+  // set the chart title
+  var title = chart.title("Box Chart: Whiskers");
+
+  // set the interactivity mode
+  chart.interactivity("by-x");
+  
+  // set the container id
+  chart.container("container");
+  
+  // initiate drawing the chart
+  chart.draw();
+});
+</script>
+</body>
+</html>

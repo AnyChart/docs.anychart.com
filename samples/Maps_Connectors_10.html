@@ -1,31 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"  data-export="true"></script>
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Connectors 10"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="container"></div>
-  <script x-export="map">anychart.onDocumentReady(function() {
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// This sample uses 3rd party proj4 component
+// that makes it possible to set coordinates
+// for the points and labels on the map and
+// required for custom projections and grid labels formatting.
+// See https://docs.anychart.com/Maps/Map_Projections
 
   // create data set
-  var data = anychart.data.set([    
+  var data = [    
       {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
+      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"left-top"}},
       {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
-  ]);
+  ];
   // create map chart
-  map = anychart.map()
+  var map = anychart.map();
 
   //create connector series
   var series = map.connector(data);
@@ -43,32 +59,39 @@
   // setting colors for hovered and selected
   series.fill("#FF9966");
   series.stroke("#CCCC99");
-  series.hoverFill("#996633");
-  series.selectFill("#996633");
-  series.hoverStroke("#CCCC99");
-  series.selectStroke("#CCCC99");
+  series.hovered().fill("#996633");
+  series.selected().fill("#996633");
+  series.hovered().stroke("#CCCC99");
+  series.selected().stroke("#CCCC99");
 
   // name of the chart
-  map.title("Settings the markers");
+  map.title("Labels and tooltips adjusting");
 
-  series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
+  series.tooltip().format("A flight from {%from} to {%to} takes at least {%time}");
 
   // setting the marker position
   var markers = series.markers();
   markers.position("end");
   // setting the marker type
-  markers.type(anychart.enums.MarkerType.ARROWHEAD);
+  markers.type("arrowhead");
   markers.size(15);
 
   // setting the anchor
-  markers.anchor("leftCenter");
+  markers.anchor("left-center");
+
+  // set the labels
+  var labels = series.labels();
+  labels.enabled(true);
+  labels.position("end");
+  labels.anchor("left-bottom");
+  labels.format("To {%to}");
 
   // set container id for the chart
   map.container('container');
-
+  
   // initiate chart drawing
   map.draw();
-});     
+});
 </script>
 </body>
 </html>

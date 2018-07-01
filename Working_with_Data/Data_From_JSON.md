@@ -1,54 +1,43 @@
 {:index 7}
 # Getting Data from JSON
 
-* [Overview](#overview)
-* [Schema](#schema)
-* [JSON vs JavaScript](#json_vs_javascript)
-* [Serialization](#serialization)
-* [Multiple Series](#multiple_series)
-* [Settings](#settings)
- * [Axes](#axes)
- * [Visualization](#visualization)
-* [Samples](#samples)
-* [Complex](#complex)
-
 ## Overview
 
-AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
-  
-  
-JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikipedia.org/wiki/JSON)
+AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [UData Sets](Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
 
+You can also load JSON settings from files using [Data Adapter](./Data_Adapter/Overview) as described in [Data Adapter](./Data_Adapter/Loading_JSON_File).
+  
+JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [https://en.wikipedia.org/wiki/JSON](https://en.wikipedia.org/wiki/JSON)
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/7.4.1/json-schema.json](http://anychart.com/schemas/7.4.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json)
+JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata](https://en.wikipedia.org/wiki/JSON#Schema\_and\_metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart version {{branch-name}} is located at [https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json](https://cdn.anychart.com/schemas/{{branch-name}}/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. 
 
 ## JSON vs JavaScript
 
-To load chart configuration in JSON format you should use {api:anychart#fromJson}**.fromJson()**{api} method. Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JavaScript. Snippet below demonstrates configuration of the simple chart.
+To load chart configuration in JSON format you should use {api:anychart#fromJson}fromJson(){api} method. Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JavaScript. Snippet below demonstrates configuration of the simple chart.
 
 ```
-  // JSON data
-  var json = {
-    // chart settings
-    "chart": {
-      // chart type
-      "type": "pie",
-      // chart data
-      "data": [
-        {"x": "Apples", "value": "128.14", fill: "green"},
-        {"x": "Oranges", "value": "128.14", fill: "orange"},
-      ],
-      // chart container
-      "container": "container"
-    }
-  };
+// JSON data
+var json = {
+  // chart settings
+  "chart": {
+    // chart type
+    "type": "pie",
+    // chart data
+    "data": [
+      {"x": "Apples", "value": "128.14", fill: "green"},
+      {"x": "Oranges", "value": "128.14", fill: "orange"},
+    ],
+    // chart container
+    "container": "container"
+  }
+};
   
-  var chart = anychart.fromJson(json);
+var chart = anychart.fromJson(json);
   
-  // draw chart
-  chart.draw();
+// draw chart
+chart.draw();
 ```
 
 This configuration creates chart like the one below
@@ -56,30 +45,29 @@ This configuration creates chart like the one below
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
 **Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no **"series"** object.
-  
-  
-JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
+
+JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}column(){api} method in API to create column chart. 
 
 ```
-  var chart = anychart.column([128.14, 112.61, 163.21, 229.98]);
-  chart.container('container');
-  chart.draw();
+var chart = anychart.column([128.14, 112.61, 163.21, 229.98]);
+chart.container('container');
+chart.draw();
 ```
 
 The same chart can be created using JSON
 
 ```
-  var chart = anychart.fromJson({
-      "chart": {
-        "type": "column",
-        "series":[{
-          "data": [128.14, 112.61, 163.21, 229.98],
-        }],
-        "container": "container"
-      }
-    });
-    
-    chart.draw();
+var chart = anychart.fromJson({
+  "chart": {
+    "type": "column",
+    "series":[{
+      "data": [128.14, 112.61, 163.21, 229.98],
+    }],
+    "container": "container"
+  }
+});
+
+chart.draw();
 ```
 
 As you can see, JSON format isn't limited only to setting chart type and its data, but can set container for the chart as well.
@@ -88,31 +76,31 @@ As you can see, JSON format isn't limited only to setting chart type and its dat
 Another example: Y-Scale is configured using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and in JavaScript you use code like this:
 
 ```
-  // set chart type
-  var chart = anychart.column();
-  
-  chart.yScale()    // adjust y scale
-    .minimum(100)   // set minimum value
-    .maximum(350);  // set maximum value
+// set chart type
+var chart = anychart.column();
+
+chart.yScale()    // adjust y scale
+  .minimum(100)   // set minimum value
+  .maximum(350);  // set maximum value
 ```
 
 and in JSON format this looks like
 
 ```
-  "chart": {          // create chart
-    "type": "column", // set column type
-    "yScale": {       // invoke y scale
-      "minimum": 100, // set minimum value
-      "maximum": 350  // set maximum value
-    }
+"chart": {          // create chart
+  "type": "column", // set column type
+  "yScale": {       // invoke y scale
+    "minimum": 100, // set minimum value
+    "maximum": 350  // set maximum value
   }
+}
 ```
 
 {sample}WD\_Data\_from\_JSON\_02{sample}
 
 ## Serialization
 
-Predefined settings from JavaScript format can be serialized into JSON format. Method {api:anychart.core.Chart#toJson}**.toJson()**{api} transfers current chart settings into JSON object. This method creates an object that contains all chart settings and it can be used to store chart data and configuration, but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
+Predefined settings from JavaScript format can be serialized into JSON format. Method {api:anychart.core.Chart#toJson}toJson(){api} transfers current chart settings into JSON object. This method creates an object that contains all chart settings and it can be used to store chart data and configuration, but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
 
 {sample}WD\_Data\_from\_JSON\_03{sample}
 
@@ -121,29 +109,29 @@ Predefined settings from JavaScript format can be serialized into JSON format. M
 JSON data set can contain one or several series - almost the same way you can do this in JavaScript. Sample below demonstrates chart with several series from JSON.
 
 ```
-  // series settings
-  "series": [{
-    // first series data
-    "data": [
-      {"x": "P1", "value": "128.14"},
-      {"x": "P2", "value": "112.61"},
-      {"x": "P3", "value": "163.21"},
-      {"x": "P4", "value": "229.98"},
-      {"x": "P5", "value": "90.54"}
-    ]
-  },{
-    // second series data
-    "data": [
-      {"x": "P1", "value": "90.54"},
-      {"x": "P2", "value": "104.19"},
-      {"x": "P3", "value": "150.67"},
-      {"x": "P4", "value": "120.43"},
-      {"x": "P5", "value": "200.34"}
-    ]
-  }]
+// series settings
+"series": [{
+  // first series data
+  "data": [
+    {"x": "P1", "value": "128.14"},
+    {"x": "P2", "value": "112.61"},
+    {"x": "P3", "value": "163.21"},
+    {"x": "P4", "value": "229.98"},
+    {"x": "P5", "value": "90.54"}
+  ]
+},{
+  // second series data
+  "data": [
+    {"x": "P1", "value": "90.54"},
+    {"x": "P2", "value": "104.19"},
+    {"x": "P3", "value": "150.67"},
+    {"x": "P4", "value": "120.43"},
+    {"x": "P5", "value": "200.34"}
+  ]
+}]
 ```
 
-and here is a sample with multiple series
+Here is a sample with multiple series:
 
 {sample}WD\_Data\_from\_JSON\_04{sample}
 
@@ -154,29 +142,29 @@ and here is a sample with multiple series
 Data from JSON can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
 ```
-  // x axes settings
-  "xAxes": [{               // settings for default x axis
-    "orientation": "top",   // set axis position
-    "title":{               // settings for axis title
-      "enabled": false      // disable title
-    }
-  }],
-
-  // y axes settings
-  "yAxes": [{               // settings for default y axis
-    "orientation": "right", // set axis position
-    "title":{               // settings for axis title
-      "enabled": false      // disable title
-    }
-  }],
-
-  // y scale settings
-  "yScale": {
-    "inverted": true        // enable y scale inversion
+// x axes settings
+"xAxes": [{               // settings for default x axis
+  "orientation": "top",   // set axis position
+  "title":{               // settings for axis title
+    "enabled": false      // disable title
   }
+}],
+
+// y axes settings
+"yAxes": [{               // settings for default y axis
+  "orientation": "right", // set axis position
+  "title":{               // settings for axis title
+    "enabled": false      // disable title
+  }
+}],
+
+// y scale settings
+"yScale": {
+  "inverted": true        // enable y scale inversion
+}
 ```
 
-Here is a sample with adjusted axes
+Here is a sample with adjusted axes:
 
 {sample}WD\_Data\_from\_JSON\_05{sample}
 
@@ -185,17 +173,17 @@ Here is a sample with adjusted axes
 Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance. Here is configuration for column chart of golden color with brick hatch.
 
 ```
-  "fill":"gold",
-  "stroke": "gray",
-  "hoverStroke": "darkred",
-  "hatchFill": {
-    "type": "diagonalbrick",
-    "color": "gray"
-  },
-  "hoverHatchFill":{
-    "type:": "diagonalbrick",
-    "color": "darkred"
-  }
+"fill":"gold",
+"stroke": "gray",
+"hoverStroke": "darkred",
+"hatchFill": {
+  "type": "diagonal-brick",
+  "color": "gray"
+},
+"hoverHatchFill":{
+  "type:": "diagonal-brick",
+  "color": "darkred"
+}
 ```
 
 Sample with this configuration is below
@@ -266,7 +254,7 @@ chart.spline(
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_07{sample}
+{sample}WD\_Data\_from\_JSON\_07{sample}
 </td>
 </tr>
 </tbody></table>
@@ -331,7 +319,7 @@ chart.title()
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_08{sample}
+{sample}WD\_Data\_from\_JSON\_08{sample}
 </td>
 </tr>
 </tbody></table>
@@ -412,7 +400,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_09{sample}
+{sample}WD\_Data\_from\_JSON\_09{sample}
 </td>
 </tr>
 </tbody></table>
@@ -489,7 +477,7 @@ chart.yAxis(1)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_10{sample}
+{sample}WD\_Data\_from\_JSON\_10{sample}
 </td>
 </tr>
 </tbody></table>
@@ -604,7 +592,7 @@ chart.textMarker(2)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_11{sample}
+{sample}WD\_Data\_from\_JSON\_11{sample}
 </td>
 </tr>
 </tbody></table>

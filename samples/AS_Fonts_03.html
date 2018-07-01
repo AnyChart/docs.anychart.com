@@ -1,21 +1,38 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Fonts 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   anychart.theme({defaultFontSettings: {fontColor: "#000"}});
 
   // set stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   
   // create table
-  var table = anychart.ui.table();
+  var table = anychart.standalones.table();
 
   // set table content
   table.contents([
@@ -24,16 +41,16 @@
       "Samples"
     ],[
       "textDirection()",
-      "This text has Left to Right direction.",                 // table.getCell(1,1).content().textDirection( anychart.graphics.vector.Text.Direction.LTR );
-      "This text has Right to Left direction."                  // table.getCell(1,2).content().textDirection( anychart.graphics.vector.Text.Direction.RTL );
+      "This text has Left to Right direction.",                 // table.getCell(1,1).content().textDirection( "ltr" );
+      "This text has Right to Left direction."                  // table.getCell(1,2).content().textDirection( "rtl" );
     ],[
       "fontDecoration()",
-      "This text was decorated with the line above",            // table.getCell(2,1).content().fontDecoration( anychart.graphics.vector.Text.Decoration.OVERLINE );
-      "This text was decorated with the line below the text"    // table.getCell(2,2).content().fontDecoration( anychart.graphics.vector.Text.Decoration.UNDERLINE );
+      "This text was decorated with the line above",            // table.getCell(2,1).content().fontDecoration( "overline" );
+      "This text was decorated with the line below the text"    // table.getCell(2,2).content().fontDecoration( "underline" );
     ],[
       "fontVariant()",
-      "Text with default fontVariant",                          // table.getCell(3,1).content().fontVariant( anychart.graphics.vector.Text.FontVariant.NORMAL );
-      "This font is small cup"                                  // table.getCell(3,2).content().fontVariant( anychart.graphics.vector.Text.FontVariant.SMALL_CAP );
+      "Text with default fontVariant",                          // table.getCell(3,1).content().fontVariant( "normal" );
+      "This font is small cup"                                  // table.getCell(3,2).content().fontVariant( "small-caps" );
     ],[
       "fontWeight()",
       "this text has 700 fontWeight",                           // table.getCell(4,1).content().fontWeight(700);
@@ -44,18 +61,18 @@
       "this text align to the right"                            // table.getCell(5,2).content().hAlign("right");
     ],[
       "height()",
-      anychart.ui.label()                                       // create custom title
-        .text("This title has default height.")                 // set text for the title
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"}),              // set border color
-      anychart.ui.label()                                       // create custom title
-        .height(25)                                             // set custom height for the title
-        .text("This title has 25px height.")                    // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .vAlign("center")                                       // position text at the middle of the title
-        .background({fill: null, stroke: "#ccc"})               // set border color
+      anychart.standalones.label()                                       // create custom title
+.text("This title has default height.")                 // set text for the title
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"}),              // set border color
+      anychart.standalones.label()                                       // create custom title
+.height(25)                                             // set custom height for the title
+.text("This title has 25px height.")                    // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.vAlign("middle")                                       // position text at the middle of the title
+.background({fill: null, stroke: "#ccc"})               // set border color
     ],[
       "letterSpacing()",
       "This text has 3px letter spacing",                       // table.getCell(7,1).content().letterSpacing(3);
@@ -73,31 +90,31 @@
       "through letters"                                         // table.getCell(9,2).content().fontOpacity(0.4);
     ],[
       "rotation()",
-      anychart.ui.title()                                       // create custom title
-        .rotation(5)                                            // set rotation of the title
-        .text("This title is rotated by 5")                     // set text for the title
-        .padding(0)                                             // disable padding 
-        .margin(0)                                              // disable margin
-        .fontWeight(400),                                       // set font weight
-      anychart.ui.title()                                       // create custom title
-        .rotation(-7)                                           // set title rotation
-        .text("This title is rotated by -7")                    // set text for the title
-        .padding(0)                                             // disable padding 
-        .margin(0)                                              // disable margin
-        .fontWeight(400)                                        // set font weight
+      anychart.standalones.title()                                       // create custom title
+.rotation(5)                                            // set rotation of the title
+.text("This title is rotated by 5")                     // set text for the title
+.padding(0)                                             // disable padding 
+.margin(0)                                              // disable margin
+.fontWeight(400),                                       // set font weight
+      anychart.standalones.title()                                       // create custom title
+.rotation(-7)                                           // set title rotation
+.text("This title is rotated by -7")                    // set text for the title
+.padding(0)                                             // disable padding 
+.margin(0)                                              // disable margin
+.fontWeight(400)                                        // set font weight
     ],[
       "selectable()",
-      anychart.ui.label()                                       // create custom title
-        .selectable(true)                                       // make text selectable
-        .text("This text is selectable.\nIt is the only "
-        +"selectable text in this table.")                      // set text for the title
-        .fontWeight(400)                                        // set font weight
-        .padding(0),                                            // disable padding
-      anychart.ui.label()                                       // create custom title
-        .selectable(false)                                      // disable text selection
-        .text("This text can\'t be selected.")                  // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
+      anychart.standalones.label()                                       // create custom title
+.selectable(true)                                       // make text selectable
+.text("This text is selectable.\nIt is the only "
++"selectable text in this table.")                      // set text for the title
+.fontWeight(400)                                        // set font weight
+.padding(0),                                            // disable padding
+      anychart.standalones.label()                                       // create custom title
+.selectable(false)                                      // disable text selection
+.text("This text can\'t be selected.")                  // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
     ],[
       "textIndent()",
       "Text indent is a space before the first line in the "
@@ -111,34 +128,39 @@
       "The overflowing text clips by the limits of the cell. "
       +"You can see the text reaching cell border and clips "
       +"by the cell border, if there isn\'t enough space for "
-      +"another line",                                          // table.getCell(13,1).content().textOverflow(anychart.graphics.vector.Text.TextOverflow.CLIP);
+      +"another line",                                          // table.getCell(13,1).content().textOverflow("");
       "This text has \'Ellipsis\' value for textOverflow()."
       +"Overflowing text replaced with Ellipsis just before it"
       +" reaches the cell border and there is no space for "
       +"another line."                                          // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
     ],[
-      "textWrap()",
-      "This text has no wrapping. The whole text has no line "
-      +"breaking." ,                                            // table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO_WRAP);
-      "This text is wrapped by letters. The line breaks the "
-      +"moment it reaches the cell border"                      // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
+      "wordWrap()",
+      "The words in the text are allowed to be broken at arbitrary points",
+      													// table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.WordWrap.BREAK_WORD);
+      "The words in this text are broken only at normal word break points." // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.WordWrap.NORMAL);
+    ],[
+      "wordBreak()",
+      "In this text, all word breaks may be inserted between any character," +
+      " so it is broken without following the rules" ,		// table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.WordBreak.BREAK_ALL);
+      "In this text, all word breaks may be inserted only according to the rules "
+      +"moment it reaches the cell border"                     // table.getCell(14,2).content().textWrap(anychart.graphics.vector.Text.WordBreak.NORMAL);
     ],[
       "vAlign()",
-      "This text align to the center",                          // table.getCell(15,1).content().vAlign("center");
+      "This text align to the center",                          // table.getCell(15,1).content().vAlign("middle");
       "This text align to the bottom"                           // table.getCell(15,2).content().vAlign("bottom");
     ],[
       "width()",
-      anychart.ui.label()                                       // create custom title
-        .text("This title has default width.")                  // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"}),              // set title border
-      anychart.ui.label()                                       // create custom title
-        .width(175)                                             // set title width
-        .text("This title has 175px width.")                    // set title text
-        .padding(0)                                             // disable padding 
-        .fontWeight(400)                                        // set font weight
-        .background({fill: null, stroke: "#ccc"})               // set title border
+      anychart.standalones.label()                                       // create custom title
+.text("This title has default width.")                  // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"}),              // set title border
+      anychart.standalones.label()                                       // create custom title
+.width(175)                                             // set title width
+.text("This title has 175px width.")                    // set title text
+.padding(0)                                             // disable padding 
+.fontWeight(400)                                        // set font weight
+.background({fill: null, stroke: "#ccc"})               // set title border
     ]
   ]);
   
@@ -150,15 +172,15 @@
   table.getRow(12).height(45);
   table.getCol(0).width(100);
   table.cellBorder("#B8B8B8");
-  table.getCell(0,0).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
-  table.getCell(0,1).colSpan(2).hAlign("center").vAlign("center").fill("#f0f0f0").fontWeight(900);
+  table.getCell(0,0).hAlign("center").vAlign("middle").fill("#f0f0f0").fontWeight(900);
+  table.getCell(0,1).colSpan(2).hAlign("center").vAlign("middle").fill("#f0f0f0").fontWeight(900);
   
-  table.getCell(1,1).textDirection( anychart.graphics.vector.Text.Direction.LTR );
-  table.getCell(1,2).textDirection( anychart.graphics.vector.Text.Direction.RTL );
-  table.getCell(2,1).fontDecoration( anychart.graphics.vector.Text.Decoration.OVERLINE );
-  table.getCell(2,2).fontDecoration( anychart.graphics.vector.Text.Decoration.UNDERLINE );
-  table.getCell(3,1).fontVariant( anychart.graphics.vector.Text.FontVariant.NORMAL );
-  table.getCell(3,2).fontVariant( anychart.graphics.vector.Text.FontVariant.SMALL_CAP );
+  table.getCell(1,1).textDirection("ltr");
+  table.getCell(1,2).textDirection("rtl");
+  table.getCell(2,1).fontDecoration("overline");
+  table.getCell(2,2).fontDecoration("underline");
+  table.getCell(3,1).fontVariant("normal");
+  table.getCell(3,2).fontVariant("small-caps");
   table.getCell(4,1).fontWeight(700);
   table.getCell(4,2).fontWeight("bold");
   table.getCell(5,1).hAlign("center");
@@ -178,21 +200,21 @@
   
   table.getCell(12,1).textIndent(30);
   table.getCell(12,2).textIndent(0);
-  table.getCell(13,1).textOverflow(anychart.graphics.vector.Text.TextOverflow.CLIP);
-  table.getCell(13,2).textOverflow(anychart.graphics.vector.Text.TextOverflow.ELLIPSIS);
-  table.getCell(14,1).textWrap(anychart.graphics.vector.Text.TextWrap.NO_WRAP);
-  table.getCell(14,2).textWrap(anychart.graphics.vector.Text.TextWrap.BY_LETTER);
-  table.getCell(15,1).vAlign("center");
-  table.getCell(15,2).vAlign("bottom");
+  table.getCell(13,1).textOverflow(" ");
+  table.getCell(13,2).textOverflow("...");
+  table.getCell(14,1).wordWrap("break-word");
+  table.getCell(14,2).wordWrap("normal");
+  table.getCell(15,1).wordBreak("break-all");
+  table.getCell(15,2).wordBreak("normal");
+  table.getCell(16,1).vAlign("middle");
+  table.getCell(16,2).vAlign("bottom");
   
   stage.height(680);
   stage.width(690);
   
   // set table container and initiate draw
   table.container(stage).draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

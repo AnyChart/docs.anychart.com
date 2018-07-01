@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Heat Map Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "2010", y: "A", heat: 15, custom_field: "info 1"},
+      {x: "2011", y: "A", heat: 17, custom_field: "info 2"},
+      {x: "2012", y: "A", heat: 21, custom_field: "info 3"},
+      {x: "2013", y: "A", heat: 23, custom_field: "info 4"},
+      {x: "2010", y: "B", heat: 34, custom_field: "info 5"},
+      {x: "2011", y: "B", heat: 33, custom_field: "info 6"},
+      {x: "2012", y: "B", heat: 32, custom_field: "info 7"},
+      {x: "2013", y: "B", heat: 30, custom_field: "info 8"},
+      {x: "2010", y: "C", heat: 43, custom_field: "info 9"},
+      {x: "2011", y: "C", heat: 42, custom_field: "info 10"},
+      {x: "2012", y: "C", heat: 40, custom_field: "info 11"},
+      {x: "2013", y: "C", heat: 38, custom_field: "info 12"},
+      {x: "2010", y: "D", heat: 8, custom_field: "info 13"},
+      {x: "2011", y: "D", heat: 8, custom_field: "info 14"},
+      {x: "2012", y: "D", heat: 7, custom_field: "info 15"},
+      {x: "2013", y: "D", heat: 8, custom_field: "info 16"}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.heatMap(data);
+
+    // configure labels
+    chart.labels().format("{%heat}%");
+
+    // configure tooltips
+    chart.tooltip().format("{%y}: {%heat}%\n{%custom_field}");
+
+    // set the chart title
+    chart.title("Heat Map: Labels and Tooltips (Tokens)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

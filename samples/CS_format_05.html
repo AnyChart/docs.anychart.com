@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS format 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  var chart = anychart.line();
+
+  chart.title("Tokens with Options");
+  var tooltip = chart.tooltip();
+  tooltip.displayMode("separated");
+  tooltip.positionMode("point");
+
+  // string for formatting tooltips
+  var formatter = "{%seriesName}: {%value}{groupsSeparator:\\,}";
+
+  // setting and adjusting data visualisation
+  var columnSeries = chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+  ]);
+  columnSeries.name("Income");
+
+  var columnTooltip = columnSeries.tooltip();
+  columnTooltip.format(formatter);
+
+  var lineSeries = chart.line([
+    ["A", 95.073],
+    ["B", 97.12844],
+    ["C", 96.43],
+    ["D", 70.582],
+    ["E", 35]
+  ]);
+  lineSeries.name("Percentage");
+
+  // formatting through function
+  var lineTooltip = lineSeries.tooltip();
+  lineTooltip.format(function (){
+    return "Income: " + this.value + "%";
+  });
+
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(0).maximum(100);
+
+
+  // adding and adjust extra Y axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
+  lineSeries.yScale(extraYScale);
+
+  tooltipSetter(columnTooltip);
+  tooltipSetter(lineTooltip);
+
+  function tooltipSetter(seriesTooltip) {
+    seriesTooltip.anchor("center-bottom");
+    seriesTooltip.position("center-top");
+    seriesTooltip.title(false);
+    seriesTooltip.separator(false);
+  }
+
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

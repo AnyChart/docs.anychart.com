@@ -1,23 +1,5 @@
 {:index 13}
-# Map Projection
-
-* [Overview](#overview)
-* [Setting map projection](#setting_map_projection)
-* [Available Projections](#available_projections)
- * [Aitoff](#aitoff)
- * [August](#august)
- * [Bonne](#bonne)
- * [Eckert1](#eckert1)
- * [Eckert3](#eckert3)
- * [Equirectangular](#equirectangular)
- * [Fahey](#fahey)
- * [Hammer](#hammer)
- * [Mercator](#mercator)
- * [Orthographic](#orthographic)
- * [Robinson](#robinson)
- * [Wagner6](#wagner6)
- * [WSG84](#wsg84)
-* [Changing region projection](#changing_region_projection)
+# Map Projections
 
 ##Overview
 
@@ -35,21 +17,16 @@ Depending on your visualization task you can choose what projection to use in yo
 
 ##Setting Map Projection
 
-To set map projection you should set its type using {api:anychart.charts.Map#crs}.crs(){api} method:
+To set map projection you should set its type using the {api:anychart.charts.Map#crs}crs(){api} method:
 
 ```
-  var map = anychart.map();
-  map.crs("august");
+var map = anychart.map();
+map.crs("august");
 ```
 
-Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}.crs(){api} method. Here is how the projection can be set using {api:anychart.enums.MapProjections}enum{api}:
+Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}crs(){api} method. Possible string values for the projection are listed in {api:anychart.enums.MapProjections}anychart.enums.MapProjections{api} enum.
 
-```
-  var map = anychart.map();
-  map.crs(anychart.enums.MapProjections.AUGUST);
-```
-
-##Available Projections
+## Available Projections
 
 As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
 
@@ -91,7 +68,7 @@ Max Eckert (-Greifendorff) in 1906.</td>
 </tr>
 <tr>
 <td>[Hammer](#hammer)</td>
-<td>Hammer projection (also known as Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
+<td>The Hammer projection (otherwise known as the Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
 </tr>
 <tr>
 <td>[Mercator](#mercator)</td>
@@ -121,9 +98,9 @@ K. H. Wagner in 1932.</td>
 World map in Aitoff projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("aitoff");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("aitoff");
 ```
 
 {sample}Maps\_Projections\_01{sample}
@@ -133,9 +110,9 @@ World map in Aitoff projection:
 World map in August projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("august");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("august");
 ```
 
 {sample}Maps\_Projections\_02{sample}
@@ -145,9 +122,9 @@ World map in August projection:
 World map in August projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("bonne");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("bonne");
 ```
 
 {sample}Maps\_Projections\_03{sample}
@@ -157,9 +134,9 @@ World map in August projection:
 World map in Eckert1 projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("eckert1");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("eckert1");
 ```
 
 {sample}Maps\_Projections\_04{sample}
@@ -169,9 +146,9 @@ World map in Eckert1 projection:
 World map in Eckert3 projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("eckert3");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("eckert3");
 ```
 
 {sample}Maps\_Projections\_05{sample}
@@ -181,9 +158,9 @@ World map in Eckert3 projection:
 World map in Equirectangular projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("equirectangular");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("equirectangular");
 ```
 
 {sample}Maps\_Projections\_06{sample}
@@ -193,9 +170,9 @@ World map in Equirectangular projection:
 World map in Fahey projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("fahey");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("fahey");
 ```
 
 {sample}Maps\_Projections\_07{sample}
@@ -205,9 +182,9 @@ World map in Fahey projection:
 World map in Hammer projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("hammer");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("hammer");
 ```
 
 {sample}Maps\_Projections\_08{sample}
@@ -217,9 +194,9 @@ World map in Hammer projection:
 World map in Mercator projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("mercator");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("mercator");
 ```
 
 {sample}Maps\_Projections\_09{sample}
@@ -229,9 +206,9 @@ World map in Mercator projection:
 World map in Orthographic projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("orthographic");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("orthographic");
 ```
 
 {sample}Maps\_Projections\_10{sample}
@@ -241,9 +218,9 @@ World map in Orthographic projection:
 World map in Robinson projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("robinson");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("robinson");
 ```
 
 {sample}Maps\_Projections\_11{sample}
@@ -253,9 +230,9 @@ World map in Robinson projection:
 World map in Wagner6 projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("wagner6");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("wagner6");
 ```
 
 {sample}Maps\_Projections\_12{sample}
@@ -265,14 +242,24 @@ World map in Wagner6 projection:
 World map in WSG84 projection:
 
 ```
-  var map = anychart.map();
-  map.geoData(anychart.maps.world_source);
-  map.crs("wsg84");
+var map = anychart.map();
+map.geoData(anychart.maps.world_source);
+map.crs("wsg84");
 ```
 
 {sample}Maps\_Projections\_13{sample}
 
+
 ## Changing region projection
 
-All samples above show how to change projection of a map, but there is also an option to change projection of any selected region or regions using {api:anychart.charts.Map#featureCrs}featureCrs(){api} method. This feature can come in particularly handy when you need to create a custom map with small regions or a region located in high/low latitudes. Usually this method is used along with {api:anychart.charts.Map#anychart.charts.Map#featureScaleFactor}featureScaleFactor(){api} and {api:anychart.charts.Map#featureTranslation}featureTranslation(){api}. For the moment regions  projection settings can be set only using [PROJ.4 strings](https://www.nceas.ucsb.edu/scicomp/recipes/projections) (this will be improved in future versions on AnyMap), if you need assistance with such settings, do not hesitate to contact [AnyChart Support](http://support.anychart.com/).
+All samples above show how to change projection of a map, but there is also an option to change projection of any selected region or regions using {api:anychart.charts.Map#featureCrs}featureCrs(){api} method. This feature can come in particularly handy when you need to create a custom map with small regions or a region located in high/low latitudes. Usually this method is used along with {api:anychart.charts.Map#featureScaleFactor}featureScaleFactor(){api} and {api:anychart.charts.Map#featureTranslation}featureTranslation(){api}. For the moment regions projection settings can be set only using [PROJ.4 strings](https://www.nceas.ucsb.edu/scicomp/recipes/projections) (this will be improved in future versions on AnyMap), if you need assistance with such settings, do not hesitate to contact [AnyChart Support](http://support.anychart.com/).
 
+### Using PROJ4.JS
+
+Proj4 is a JavaScript library to transform coordinates from one coordinate system to another, including datum transformations. It is necessary to reference Proj4 if the map uses traditional coordinates for setting the position of any component of the map such as labels, bubbles, etc. Also proj4 is essential to be added when the map uses some projection. Reference it with the `<script>` tag:
+
+```
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```

@@ -1,11 +1,4 @@
-Statistics
-==========
-
-* [Overview](#overview)
-* [Basics](#basics)
-* [Chart](#chart)
-* [Series](#series)
-* [Point](#point)
+# Statistics
 
 ## Overview 
 
@@ -13,10 +6,10 @@ AnyChart's engine calculates a great number of values, which can be obtained wit
 
 ## Basics
 
-To obtain statistical data from a chart, the {api:anychart.core.Chart#getStat}getStat(){api} method with a field name as a parameter is called. Available field names can be found in {api:anychart.enums.Statistics}anychart.enums.Statistics{api} – you can use their name or string representation:
+To obtain statistical data from a chart, the {api:anychart.core.Chart#getStat}getStat(){api} method with a field name as a parameter is called. Available field names can be found in {api:anychart.enums.Statistics}anychart.enums.Statistics{api}:
 
 ```
-var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
+var pointsCount = chart.getStat("dataPlotPointCount");
 var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
 ```
 
@@ -24,7 +17,7 @@ In the following sample, the {api:anychart.core.Chart#getStat}getStat(){api} met
 
 {sample}CS\_Statistics\_01{sample}
 
-You can call {api:anychart.core.Chart#getStat}getStat(){api} on the instances of three types of classes: charts, series, and points. Further we will consider the basics of how the method works with each type.
+You can call {api:anychart.core.Chart#getStat}getStat(){api} on instances of three types of classes: charts, series, and points. Further we will consider the basics of how the method works with each type.
 
 ## Chart
 
@@ -48,7 +41,7 @@ numberOfTrees = chart.getStat("sum");
 
 ## Series
 
-Sometimes it is necessary to call the {api:anychart.core.Cartesian#getStat}getStat(){api} method of an instance of the series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
+Sometimes it is necessary to call the {api:anychart.charts.Cartesian#getStat}getStat(){api} method of an instance of the series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
 
 The following sample is based on one of the samples from the previous section. Here, the average is obtained for each series separately, and two numbers are displayed in the title: 
 
@@ -77,8 +70,8 @@ latestPointMaleMartians = maleMartians.getPoint(numberOfPoints - 1);
 latestPointFemaleMartians = femaleMartians.getPoint(numberOfPoints - 1);
 
 // get the values of the latest points from both series and use them in the title
-mainTitleText = "The Height of Martians Today: Males — " +
-latestPointMaleMartians.getStat("value") + ", Females — " +
+mainTitleText = "The Height of Martians Today: Males - " +
+latestPointMaleMartians.getStat("value") + ", Females - " +
 latestPointFemaleMartians.getStat("value")
 ```
 
@@ -94,7 +87,7 @@ chart.listen("pointsSelect", function(e){
   // loop through the array of the selected points
   for (var i = 0; i < e.points.length; i++) {
     // get the name of the series a selected point belongs to and the value of the point
-    subtitleText += e.points[i].getSeries().name() + " — " + e.points[i].getStat("value") + ", ";
+    subtitleText += e.points[i].getSeries().name() + " - " + e.points[i].getStat("value") + ", ";
   }
   // remove the extra comma at the end of the subtitle and close the <span> tag
   subtitleText = subtitleText.slice(0, subtitleText.length - 2) + "</span>";

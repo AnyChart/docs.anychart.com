@@ -1,13 +1,9 @@
 {:index 2}
-AnyStock Supported Series List
-==========
-
-* [Overview](#overview)
-* [List of Supported Series](#list_of_supported_series)
+# AnyStock Supported Series List
 
 ## Overview
 
-AnyStock supports a lot of different series types. For the general information on working with them see [Overview](Overview), the table below shows all series supported in the current version of AnyStock and planned to be released soon. Please [contact us](http://support.anychart.com/) if you are interested in receiving early adopter version prior to the official release.
+AnyStock supports a lot of different series types. For the general information on working with them see [Overview](Overview), the table below shows all series supported in the current version of AnyStock. Please [contact us](http://support.anychart.com/) if you are interested in any series type not listed here.
 
 ## List of supported series
 
@@ -21,11 +17,19 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
+<td>[Column series in AnyStock](Column)</td>
+<td>x, value</td>
+</tr>
+<tr>
+<td>[HiLo series in AnyStock](HiLo)</td>
+<td>x, high, low</td>
+</tr>
+<tr>
 <td>[Japanese Candlestick series in AnyStock](Japanese_Candlestick)</td>
 <td>x, open, high, low, close</td>
 </tr>
 <tr>
-<td>[Column series in AnyStock](Column)</td>
+<td>[Jump Line series in AnyStock](Jump_Line)</td>
 <td>x, value</td>
 </tr>
 <tr>
@@ -39,21 +43,13 @@ AnyStock supports a lot of different series types. For the general information o
 <tr>
 <td>[OHLC series in AnyStock](OHLC)</td>
 <td>x, open, high, low, close</td>
-</tr>
+</tr> 
 <tr>
-<td>[Spline Area series in AnyStock](Spline_Area)</td>
-<td>x, value</td>
-</tr>
-<tr>
-<td>Stick series in AnyStock</td>
-<td>*Coming soon*</td>
-</tr>
-<tr>
-<td>[Range Column series in AnyStock](Range_Column)</td>
+<td>[Range Area series in AnyStock](Range_Area)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Area series in AnyStock](Range_Area)</td>
+<td>[Range Column series in AnyStock](Range_Column)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
@@ -80,6 +76,8 @@ AnyStock supports a lot of different series types. For the general information o
 <td>[Step Line series in AnyStock](Step_Line)</td>
 <td>x, value</td>
 </tr>
+<tr>
+<td>[Stick series in AnyStock](Stick)</td>
+<td>x, value</td>
+</tr>
 </tbody></table>
-
-

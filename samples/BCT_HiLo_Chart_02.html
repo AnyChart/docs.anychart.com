@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT HiLo Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 1000, 10000, 13000, 17000],
+      ["February", 500, 12000, 13500, 16500],
+      ["March", 3000, 18000, 19000, 21000],
+      ["April", 4000, 11000, 11500, 14000],
+      ["May", 6000, 9000, 10000, 12500]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, low: 1, high: 2});
+    var seriesData_2 = data.mapAs({x: 0, low: 3, high: 4});
+
+    // create a chart
+    var chart = anychart.hilo();
+    
+    // set the interactivity mode
+    chart.interactivity().hoverMode("by-x");
+
+    // create the first series, set the data and name
+    var series1 = chart.hilo(seriesData_1);
+    series1.name("2004");
+
+    // configure the visual settings of the first series
+    series1.normal().stroke("#00cc99", 1, "10 5", "round");
+    series1.hovered().stroke("#00cc99", 2, "10 5", "round");
+    series1.selected().stroke("#00cc99", 4, "10 5", "round");
+
+    // create the second series, set the data and name  
+    var series2 = chart.hilo(seriesData_2);
+    series2.name("2005");
+
+    // configure the visual settings of the second series
+    series2.normal().stroke("#0066cc");
+    series2.hovered().stroke("#0066cc", 2);
+    series2.selected().stroke("#0066cc", 4);
+    
+    // set the chart title
+    chart.title("HiLo Chart: Appearance");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Price, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

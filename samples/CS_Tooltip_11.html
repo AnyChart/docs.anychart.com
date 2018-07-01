@@ -1,108 +1,50 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-  var data = anychart.data.set([
-    ["John" , 10000, 12000, 15000, 20000, 19000],
-    ["Jake" , 12000, 15000, 11500, 18350, 11000],
-    ["Peter" , 18000, 16000, 13000, 18000, 15000],
-    ["James" , 11000, 13000, 14000, 12500, 16000],
-    ["Mary" , 9000, 19000, 17200, 15000, 18000]
-  ]);
-
-  // map data for the each series
-  var data1 = data.mapAs({x: [0], value: [1]});
-  var data2 = data.mapAs({x: [0], value: [2]});
-  var data3 = data.mapAs({x: [0], value: [3]});
-  var data4 = data.mapAs({x: [0], value: [4]});
-  var data5 = data.mapAs({x: [0], value: [5]});
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 11"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // chart type
-  chart = anychart.column();
-
-  var series1 = chart.column(data1);
-  var series2 = chart.column(data2);
-  var series3 = chart.column(data3);
-  var series4 = chart.column(data4);
-  var series5 = chart.column(data5);
-
-  series1.name("Year 2008");
-  series2.name("Year 2009");
-  series3.name("Year 2010");
-  series4.name("Year 2011");
-  series5.name("Year 2012");
+  var chart = anychart.pie([
+    ["John" , 10000],
+    ["Jake" , 12000],
+    ["Peter" , 18000],
+    ["James" , 11000],
+    ["Mary" , 9000]
+  ]);
 
   // set title
-  chart.title("Managing Tooltip Content");
+  chart.title("Tooltip Prefix");
 
+  // tooltip settings
   var tooltip = chart.tooltip();
-  tooltip.positionMode("point");
-
-  var tooltip1 = series1.tooltip();
-  var tooltip2 = series2.tooltip();
-  var tooltip3 = series3.tooltip();
-  var tooltip4 = series4.tooltip();
-  var tooltip5 = series5.tooltip();
-
-  tooltip1.textFormatter("Manager: <b>{%x}</b><br>Sales: <b>{%value}</b>");
-  tooltip2.textFormatter(formattingFunction);
-  tooltip3.textFormatter(formattingFunction);
-  tooltip4.textFormatter(function(){
-    var value = (this.value).toString();
-    var formattedValue = "";
-    for (var i = 3; i<value.length; i=i+3)
-      formattedValue = "," + value.substr((value.length-i), 3) + formattedValue;
-    var remainingValue = value.substr(0, value.length-(formattedValue.length-formattedValue.length/4));
-
-    value = remainingValue + formattedValue;
-
-    return "<a style=\"font-weight: 400;\">Manager: </a><a style=\"font-weight: 900;\">" + this.x + "</a><br><a style=\"font-weight: 400;\">Sales: <a><a style=\"font-weight: 900;\">" + this.valuePrefix + value + "</a>"
-  });
-
-  tooltip5.textFormatter(
-    // get formatting function of the first series tooltip
-    tooltip4.textFormatter()
-  );
-
-  tooltipSettings(tooltip1);
-  tooltipSettings(tooltip2);
-  tooltipSettings(tooltip3);
-  tooltipSettings(tooltip4);
-  tooltipSettings(tooltip5);
-
-  function formattingFunction (){
-    var value = (this.value).toString();
-    var formattedValue = "";
-    for (var i = 3; i<value.length; i=i+3)
-      formattedValue = " " + value.substr((value.length-i), 3) + formattedValue;
-    var remainingValue = value.substr(0, value.length-(formattedValue.length-formattedValue.length/4));
-
-    value = remainingValue + formattedValue;
-
-    return "<a style=\"font-weight: 400;\">Manager: </a><a style=\"font-weight: 900;\">" + this.x + "</a><br><a style=\"font-weight: 400;\">Sales: <a><a style=\"font-weight: 900;\">" + this.valuePrefix + value + "</a>";
-  }
-
-  function tooltipSettings(tooltip){
-    tooltip.position("topCenter");
-    tooltip.anchor("bottomCenter");
-    tooltip.useHtml(true);
-    tooltip.offsetX(0);
-    tooltip.valuePrefix("$");
-  }
+  tooltip.valuePrefix("$");
 
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

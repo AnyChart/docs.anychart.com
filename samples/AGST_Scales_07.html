@@ -1,34 +1,53 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Scales 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
+  // set defaults
+  anychart.theme({chart:{xAxis:{title: false},yAxis:{title: false}}});
   // set stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
 
   // create table
-  var table = anychart.ui.table();
+  var table = anychart.standalones.table();
   var firstRow = table.getRow(0);
   firstRow.height("10%");
 
   // setting data
-  var data_1 = anychart.data.set([
+  var data_1 = [
     ["C", 5],
     ["D", 21],
     ["E", 34]
-  ]);
+  ];
 
-  var data_2 = anychart.data.set([
+  var data_2 = [
     ["C", 5],
     ["D", 1],
     ["E", 4]
-  ]);
+  ];
 
   // create charts
   var chart_1 = anychart.column(data_1);
@@ -38,22 +57,11 @@
   var chart_5 = anychart.column(data_2);
   var chart_6 = anychart.column(data_2);
 
-  var yScale2 = chart_2.yScale();
-  yScale2.maximum(10);
-  var yScale3 = chart_3.yScale();
-  yScale3.softMaximum(10);
+  chart_2.yScale().maximum(10);
+  chart_3.yScale().softMaximum(10);
+  chart_5.yScale().maximum(10);
+  chart_6.yScale().softMaximum(10);
 
-  var yScale5 = chart_5.yScale();
-  yScale5.maximum(10);
-  var yScale6 = chart_6.yScale();
-  yScale6.softMaximum(10);
-
-  formatChart(chart_1);
-  formatChart(chart_2);
-  formatChart(chart_3);
-  formatChart(chart_4);
-  formatChart(chart_5);
-  formatChart(chart_6);
 
   // set table content
   table.contents([
@@ -72,22 +80,13 @@
 
   
   // position text in the center of each cell
-  table.vAlign("center");
+  table.vAlign("middle");
   table.hAlign("center");
 
   // set table container and initiate draw
   table.container(stage);
   table.draw();
 });
-function formatChart(chart){
-  chart.title(false);
-  var xAxis = chart.xAxis();
-  xAxis.title(false);
-  var yAxis = chart.yAxis();
-  yAxis.title(false);
-}</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+</script>
 </body>
 </html>

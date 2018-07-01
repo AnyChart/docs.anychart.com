@@ -1,80 +1,93 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
-    stage = anychart.graphics.create("container");
-
-    var charts = [];
-
-    createLabel("Render 80 Charts Async", 20, function () {
-        disposeCharts(charts);
-
-        // Set rendering mode to async.
-        createCharts(charts, true);
-    });
-
-    createLabel("Render 80 in sync", 200, function () {
-        disposeCharts(charts);
-
-        // Set rendering mode to sync.
-        createCharts(charts, false);
-    });
-
-    var customTitle = anychart.ui.title();
-    customTitle.text("Asynchronous/synchronous Rendering");
-    customTitle.parentBounds(0, "50%", 100, 100);
-    customTitle.container(stage);
-    customTitle.draw();
-
-    function createCharts(charts, sync) {
-        for (var i = 0; i < 15; i++) {
-            for (var j = 2; j < 15; j++) {
-                pieChart = anychart.pie([Math.random(), Math.random(), Math.random()]);
-                pieChart.bounds(i * 10 + "%", j * 10 + "%", "10%", "10%");
-                pieChart.labels(false);
-                pieChart.legend(false);
-                pieChart.padding(0);
-                pieChart.margin(0);
-                pieChart.container(stage);
-
-                // Set render mode: true - async, false (default) - sync.
-                pieChart.draw(sync);
-                charts.push(pieChart);
-            }
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CMN Async 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-    }
-
-    function disposeCharts(charts) {
-        for (var i = 0; i < charts.length; i++) {
-            charts[i].dispose();
+        button {
+            margin: 10px 0 0 10px;
         }
-    }
-
-    function createLabel(text, offset, action) {
-        var customLabel = anychart.ui.label();
-        customLabel.text(text);
-        customLabel.parentBounds(offset, 30, 100, 100);
-        customLabel.listen("click", action);
-        customLabel.listen("mouseOver", function () {
-            document.body.style.cursor = "pointer";
-        });
-        customLabel.listen("mouseOut", function () {
-            document.body.style.cursor = "auto";
-        });
-        customLabel.background({fill: "#9E9E9E"});
-        customLabel.fontColor("#fff");
-        customLabel.padding(5);
-        customLabel.container(stage);
-        customLabel.draw();
-    }
-});</script>
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<button onclick="renderAsync()">Render 80 Charts Async</button>
+<button onclick="renderSync()">Render 80 Charts Sync</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+  stage = anychart.graphics.create("container");
+
+  var customTitle = anychart.standalones.title();
+  customTitle.text("Asynchronous/Synchronous Rendering");
+  customTitle.parentBounds(0, "50%", 100, 100);
+  customTitle.container(stage);
+  customTitle.draw();
+
+  charts = [];
+});
+
+function renderAsync() {
+  disposeCharts(charts);
+
+  // Set rendering mode to async.
+  createCharts(charts, true);
+}
+
+function renderSync() {
+  disposeCharts(charts);
+
+ // Set rendering mode to sync.
+ createCharts(charts, false);
+}
+
+function createCharts(charts, sync) {
+  for (var i = 0; i < 15; i++) {
+    for (var j = 2; j < 15; j++) {
+        pieChart = anychart.pie([
+                                 Math.random(),
+                                 Math.random(),
+                                 Math.random()
+                               ]);
+        pieChart.bounds(i * 10 + "%", j * 10 + "%", "10%", "10%");
+        pieChart.labels(false);
+        pieChart.legend(false);
+        pieChart.padding(0);
+        pieChart.margin(0);
+        pieChart.container(stage);
+
+        /* Set render mode:
+        true - async, false (default) - sync*/
+        pieChart.draw(sync);
+        charts.push(pieChart);
+    }
+  }
+}
+
+function disposeCharts(charts) {
+  for (var i = 0; i < charts.length; i++) {
+    charts[i].dispose();
+  }
+}
+</script>
 </body>
 </html>

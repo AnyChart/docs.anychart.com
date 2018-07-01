@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Pie Chart 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ];
+
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
+    // create and configure  the first pie chart
+    var pie1 = anychart.pie(data);
+    pie1.title("Descending Order");
+    pie1.bounds(0, 0, "33.3%", "100%");
+    // set the sorting mode
+    pie1.sort("desc");
+    // disable the legend
+    pie1.legend(false);
+    // set the chart container
+    pie1.container(stage);
+    // initiate drawing the chart
+    pie1.draw();
+
+    // create and configure second pie chart
+    var pie2 = anychart.pie(data);
+    pie2.title("Ascending Order");
+    pie2.bounds("33.3%", 0, "33.3%", "100%");
+    // set the sorting mode
+    pie2.sort("asc");
+    // disable the legend
+    pie2.legend(false);
+    // set the chart container
+    pie2.container(stage);
+    // initiate drawing the chart
+    pie2.draw();
+
+    // create and configure the third pie chart
+    var pie3 = anychart.pie(data);
+    pie3.title("No Sorting");
+    pie3.bounds("66.6%", 0, "33.3%", "100%");
+    // set the sorting mode
+    pie3.sort("none");
+    // disable the legend
+    pie3.legend(false);
+    // set the chart container
+    pie3.container(stage);
+    // initiate drawing the chart
+    pie3.draw();
+});
+</script>
+</body>
+</html>

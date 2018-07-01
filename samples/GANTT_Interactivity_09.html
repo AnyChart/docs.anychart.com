@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Interactivity 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function (){
+
+	// create data tree on our data
+	var treeData = anychart.data.tree(getData(), "as-table");
+
+	// create project gantt chart
+	var chart = anychart.ganttProject();
+
+	// set data for the chart
+	chart.data(treeData);
+	
+	// enable Gantt editing
+	chart.edit(true);
+
+    // link to timeline 
+    timeline = chart.getTimeline();
+
+    // links to start and end marker settings
+    startMarker = timeline.elements().edit().start().connectorThumb();
+    endMarker =  timeline.elements().edit().end().connectorThumb();
+
+    // set the connector control marker type
+    startMarker.type("arrowLeft");
+    endMarker.type("arrowRight");
+
+	// connectors controls marker type
+	startMarker.size(30);
+	endMarker.size(30);
+
+	// offsets of the connectors controls
+	startMarker.horizontalOffset(10);
+	endMarker.horizontalOffset(-10);
+    
+	startMarker.verticalOffset(-7);
+	endMarker.verticalOffset(7);
+
+	// the width of the interval length editor
+	timeline.elements().edit().thumbs().size(15);
+
+	// disable tooltips
+	timeline.tooltip().enabled(false);
+
+	// set width for the datagrid
+    dataGrid = chart.dataGrid();
+    dataGrid.column(0).width(30);
+    dataGrid.column(1).width(270);
+	
+	// set pixel position of the main splitter
+    chart.splitterPosition(300);
+
+    // row height
+    chart.defaultRowHeight(30);
+
+	// set container id for the chart
+	chart.container("container");
+
+	// initiate chart drawing
+	chart.draw();
+
+	// zoom chart to fit all
+	chart.fitAll();
+
+});
+function getData() {
+	return [
+		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000},
+		{"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000},
+		{"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "finish-start"},
+		{"id": "4", "name": "Identify available skills and information", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "finish-start"},
+		{"id": "5", "name": "Decide whether to proceed", parent:"2", "progressValue": "0%", "actualStart": 951753600000, "actualEnd": 951786000000, "connectTo": "7", "connectorType": "finish-start"},
+		{"id": "6", "name": "Define the Opportunity", parent:"1", "progressValue": "27%", "actualStart": 951782400000, "actualEnd": 952992000000},
+		{"id": "7", "name": "Research the market and competition", parent:"6", "progressValue": "0%", "actualStart": 951840000000, "actualEnd": 951872400000, "connectTo": "8", "connectorType": "finish-start"},
+		{"id": "8", "name": "Interview owners of similar businesses", parent:"6", "progressValue": "60%", "actualStart": 951868800000, "actualEnd": 952473600000, "connectTo": "9", "connectorType": "finish-start"},
+		{"id": "9", "name": "Identify needed resources", parent:"6", "progressValue": "0%", "actualStart": 952531200000, "actualEnd": 952650000000, "connectTo": "10", "connectorType": "finish-start"},
+		{"id": "10", "name": "Identify operating cost elements", parent:"6", "progressValue": "0%", "actualStart": 952704000000, "actualEnd": 952995600000, "connectTo": "12", "connectorType": "finish-start"}
+	];
+}
+</script>
+</body>
+</html>

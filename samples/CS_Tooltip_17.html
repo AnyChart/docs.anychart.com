@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 17"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  var stage = anychart.graphics.create("container");
+
+  // data
+  var dataSet = anychart.data.set([
+    ["Department Stores", 637166, 254463, 353554, 856175, 2101358],
+    ["Discount Stores", 721630, 366655, 734634, 365654, 2188573],
+    ["Men's/Women's Specialty Stores", 148662, 252522, 123488, 903112, 1427784],
+    ["All other outlets", 90000, 61000, 72000, 94000, 400000]
+  ]);
+
+
+  // create charts
+  columnChart = anychart.column();
+  splineChart = anychart.line();
+
+  series1 = columnChart.column(dataSet.mapAs({x: 0, value: 1}));
+  series2 = columnChart.column(dataSet.mapAs({x: 0, value: 2}));
+  series3 = columnChart.column(dataSet.mapAs({x: 0, value: 3}));
+  series4 = columnChart.column(dataSet.mapAs({x: 0, value: 4}));
+
+  series1.name("Shop 1");
+  series2.name("Shop 2");
+  series3.name("Shop 3");
+  series4.name("Shop 4");
+
+  seriesSpline = splineChart.spline(dataSet.mapAs({x: 0, value: 5}));
+
+  // set bounds
+  columnChart.bounds(0, 0, "100%", "50%");
+  splineChart.bounds(0, "50%", "100%", "50%");
+
+  columnChart.tooltip().titleFormat("{%seriesName}");
+  columnChart.tooltip().format("Department: {%x} \nSum: {%value}");
+
+  seriesSpline.tooltip().format(function(e){
+    var value = (this.value)/1000000;
+    return "Total: $" + value + "M";
+  });
+
+  // set tooltip size
+  columnChart.tooltip().width(200);
+  columnChart.tooltip().height(80);
+
+  // set container and draw charts
+  columnChart.container(stage);
+  columnChart.draw();
+  splineChart.container(stage);
+  splineChart.draw();
+});
+</script>
+</body>
+</html>

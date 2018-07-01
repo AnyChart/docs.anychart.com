@@ -1,17 +1,33 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Labels Formatting 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  chart = anychart.area();
+  var chart = anychart.area();
 
-  chart.title("Axes Labels Enable/Disable Sample");
+  chart.title("Axes Labels Scaling Sample");
 
   chart.area([
     ["January" , 10000],
@@ -24,61 +40,31 @@
   var yScale = chart.yScale();
   yScale.minimum(8000);
   yScale.maximum(20000);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2000);
+  var ticks = chart.yScale().ticks();
+  ticks.interval(2000);
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(dollarFormatter);
+  yLabels.format("${%value}{groupsSeparator: }");
   // set y axis title
-  var yAxis = chart.yAxis(0);
-  yAxis.title("Revenue in US Dollars");
+  var yTitle = chart.yAxis(0).title();
+  yTitle.text("Revenue in US Dollars");
 
   // adjust additional axis
-  var yAxsi1 = chart.yAxis(1);
-  yAxsi1.orientation("right");
-  yAxsi1.title("Revenue in Euros");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.title("Revenue in Euros");
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.textFormatter(function(){
-    var value = this.value;
-    // scale of USD
-    value = value*0.7094716;
-    // num decimal
-    value = value.toFixed(2);
-    // thousand separator
-    var num = value.split(".");
-    var main = "";
-    for (var i=1;(i*3)<num[0].length;i++)
-      main = "'"+num[0].substr(num[0].length-(i*3), 3) + main;
-    var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
-    num[0]=tail+main;
-    // decimal Separator
-    value = num.join(".");
-
-    return "€ " + value;
-  });
+  yLabels1.format("\u20ac{%value}{scale:(113e-2)|( )}");
 
   var xAxis = chart.xAxis();
   xAxis.title("Month");
 
-  // limits length of x axis labels to 3 or less
-  chart.xAxis().labels().textFormatter(function(){
-    var value = this.value;
-    value = value.substr(0, 3);
-    return value
-  });
-
-  function dollarFormatter() {
-    return "$" + (this.value/1000) + " 000 USD";
-  }
-
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

@@ -1,36 +1,52 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Interactivity 17"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var data = anychart.data.set([
-    {x:1, value:990, selectFill:"Red"},
-    {x:2, value:1100, selected:true, selectFill:"Blue"},
-    {x:3, value:1050, selectFill:"Red"},
-    {x:4, value:890,  selectFill:"Red"},
-    {x:5, value:1300, selected:true, selectFill:"Red"},
-    {x:6, value:840, selected:true, selectFill:"Green"},
-    {x:7, value:900, selectFill:"Red"},
-    {x:8, value:1000, selectFill:"Red"}
-  ]);
+  var data = [
+    {x:1, value:990, state: "selected", selected: {fill:"Green"}},
+    {x:2, value:1100, state: "selected", selected: {fill:"Blue"}},
+    {x:3, value:1050, selected: {fill:"Red"}},
+    {x:4, value:890, selected: {fill:"Red"}},
+    {x:5, value:1300, state: "selected", selected: {fill:"Red"}},
+    {x:6, value:840, state: "selected", selected: {fill:"Green"}},
+    {x:7, value:900, selected: {fill:"Red"}},
+    {x:8, value:1000, selected: {fill:"Red"}}
+  ];
 
   // chart type
-  chart = anychart.cartesian();
+  var chart = anychart.cartesian();
 
   // set data
   var series = chart.marker(data); 
   series.name("Price");
   series.xPointPosition(0.5); 
   series.size(15);
-  series.hoverSize(25);
-  series.selectSize(15);
+  series.hovered().size(25);
+  series.selected().size(15);
 
   series.fill("#E0F08F");
   series.stroke("none");
@@ -39,24 +55,20 @@
   chart.title("Interactivity through the dataSet with objects");
 
   // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
   // enable legend
   chart.legend(true);
 
   // switching the select mode to multi
   var interactivity = chart.interactivity();
-  interactivity.selectionMode("multiselect");
+  interactivity.selectionMode("multi-select");
 
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

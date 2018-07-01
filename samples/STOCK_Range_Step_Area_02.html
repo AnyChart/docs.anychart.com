@@ -1,18 +1,34 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
-anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Range Step Area 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
     // set the data
-    table = anychart.data.table("x");
+    table = anychart.data.table('x');
     table.addData([ 
-            {'x': "2004-07-01", 'low': 23.65, 'high': 23.68},
+    {'x': "2004-07-01", 'low': 23.65, 'high': 23.68},
     {'x': "2004-07-02", 'low': 23.14, 'high': 23.21},
     {'x': "2004-07-06", 'low': 22.68, 'high': 22.71},
     {'x': "2004-07-07", 'low': 22.41, 'high': 22.74},
@@ -42,111 +58,14 @@ anychart.onDocumentReady(function() {
     {'x': "2004-08-10", 'low': 20.31, 'high': 20.47},
     {'x': "2004-08-11", 'low': 18.60, 'high': 18.65},
     {'x': "2004-08-12", 'low': 18.25, 'high': 18.35},
-    {'x': "2004-08-13", 'low': 18.23, 'high': 18.23},
-    {'x': "2004-08-16", 'low': 17.85, 'high': 18.46},
-    {'x': "2004-08-17", 'low': 18.39, 'high': 18.68},
-    {'x': "2004-08-18", 'low': 18.54, 'high': 19.02},
-    {'x': "2004-08-19", 'low': 18.90, 'high': 19.21},
-    {'x': "2004-08-20", 'low': 18.95, 'high': 19.02},
-    {'x': "2004-08-23", 'low': 18.93, 'high': 19.28},
-    {'x': "2004-08-24", 'low': 19.14, 'high': 19.16},
-    {'x': "2004-08-25", 'low': 18.99, 'high': 19.37},
-    {'x': "2004-08-26", 'low': 19.25, 'high': 19.43},
-    {'x': "2004-08-27", 'low': 19.20, 'high': 19.52},
-    {'x': "2004-08-30", 'low': 19.31, 'high': 19.46},
-    {'x': "2004-08-31", 'low': 19.15, 'high': 19.19},
-    {'x': "2004-09-01", 'low': 18.65, 'high': 19.12},
-    {'x': "2004-09-02", 'low': 19.05, 'high': 19.37},
-    {'x': "2004-09-03", 'low': 19.03, 'high': 19.16},
-    {'x': "2004-09-07", 'low': 18.98, 'high': 19.18},
-    {'x': "2004-09-08", 'low': 18.96, 'high': 19.53},
-    {'x': "2004-09-09", 'low': 19.49, 'high': 20.03},
-    {'x': "2004-09-10", 'low': 19.88, 'high': 20.61},
-    {'x': "2004-09-13", 'low': 20.55, 'high': 20.63},
-    {'x': "2004-09-14", 'low': 20.31, 'high': 20.44},
-    {'x': "2004-09-15", 'low': 19.87, 'high': 19.89},
-    {'x': "2004-09-16", 'low': 19.60, 'high': 19.75},
-    {'x': "2004-09-17", 'low': 19.30, 'high': 19.33},
-    {'x': "2004-09-20", 'low': 19.03, 'high': 19.48},
-    {'x': "2004-09-21", 'low': 19.39, 'high': 19.71},
-    {'x': "2004-09-22", 'low': 19.19, 'high': 19.29},
-    {'x': "2004-09-23", 'low': 18.90, 'high': 19.12},
-    {'x': "2004-09-24", 'low': 18.88, 'high': 18.93},
-    {'x': "2004-09-27", 'low': 18.25, 'high': 18.35},
-    {'x': "2004-09-28", 'low': 18.09, 'high': 18.14},
-    {'x': "2004-09-29", 'low': 18.16, 'high': 18.44},
-    {'x': "2004-09-30", 'low': 18.28, 'high': 18.36},
-    {'x': "2004-10-01", 'low': 18.27, 'high': 19.00},
-    {'x': "2004-10-04", 'low': 19.21, 'high': 19.30},
-    {'x': "2004-10-05", 'low': 18.90, 'high': 19.25},
-    {'x': "2004-10-06", 'low': 19.05, 'high': 19.54},
-    {'x': "2004-10-07", 'low': 19.46, 'high': 19.74},
-    {'x': "2004-10-08", 'low': 18.96, 'high': 19.22},
-    {'x': "2004-10-11", 'low': 18.77, 'high': 19.02},
-    {'x': "2004-10-12", 'low': 18.68, 'high': 19.35},
-    {'x': "2004-10-13", 'low': 19.46, 'high': 19.50},
-    {'x': "2004-10-14", 'low': 18.78, 'high': 18.88},
-    {'x': "2004-10-15", 'low': 18.65, 'high': 18.80},
-    {'x': "2004-10-18", 'low': 18.52, 'high': 18.73},
-    {'x': "2004-10-19", 'low': 18.91, 'high': 19.14},
-    {'x': "2004-10-20", 'low': 18.59, 'high': 18.66},
-    {'x': "2004-10-21", 'low': 18.67, 'high': 18.72},
-    {'x': "2004-10-22", 'low': 18.68, 'high': 18.77},
-    {'x': "2004-10-25", 'low': 18.15, 'high': 18.29},
-    {'x': "2004-10-26", 'low': 18.12, 'high': 18.21},
-    {'x': "2004-10-27", 'low': 18.08, 'high': 18.65},
-    {'x': "2004-10-28", 'low': 18.54, 'high': 18.97},
-    {'x': "2004-10-29", 'low': 18.96, 'high': 19.37},
-    {'x': "2004-11-01", 'low': 19.21, 'high': 19.35},
-    {'x': "2004-11-02", 'low': 19.30, 'high': 19.52},
-    {'x': "2004-11-03", 'low': 19.77, 'high': 19.80},
-    {'x': "2004-11-04", 'low': 19.25, 'high': 19.56},
-    {'x': "2004-11-05", 'low': 19.79, 'high': 20.01},
-    {'x': "2004-11-08", 'low': 19.98, 'high': 20.01},
-    {'x': "2004-11-09", 'low': 19.90, 'high': 20.00},
-    {'x': "2004-11-10", 'low': 18.98, 'high': 19.03},
-    {'x': "2004-11-11", 'low': 18.50, 'high': 18.76},
-    {'x': "2004-11-12", 'low': 18.81, 'high': 19.28},
-    {'x': "2004-11-15", 'low': 19.15, 'high': 19.55},
-    {'x': "2004-11-16", 'low': 19.44, 'high': 19.52},
-    {'x': "2004-11-17", 'low': 19.49, 'high': 19.83},
-    {'x': "2004-11-18", 'low': 19.50, 'high': 19.77},
-    {'x': "2004-11-19", 'low': 19.51, 'high': 19.64},
-    {'x': "2004-11-22", 'low': 18.88, 'high': 19.17},
-    {'x': "2004-11-23", 'low': 18.99, 'high': 19.15},
-    {'x': "2004-11-24", 'low': 19.05, 'high': 19.25},
-    {'x': "2004-11-26", 'low': 19.14, 'high': 19.38},
-    {'x': "2004-11-29", 'low': 19.20, 'high': 19.39},
-    {'x': "2004-11-30", 'low': 18.85, 'high': 19.15},
-    {'x': "2004-12-01", 'low': 18.88, 'high': 19.16},
-    {'x': "2004-12-02", 'low': 19.09, 'high': 19.46},
-    {'x': "2004-12-03", 'low': 19.43, 'high': 19.69},
-    {'x': "2004-12-06", 'low': 19.51, 'high': 19.87},
-    {'x': "2004-12-07", 'low': 19.96, 'high': 20.35},
-    {'x': "2004-12-08", 'low': 19.79, 'high': 19.91},
-    {'x': "2004-12-09", 'low': 19.50, 'high': 19.77},
-    {'x': "2004-12-10", 'low': 19.35, 'high': 19.72},
-    {'x': "2004-12-13", 'low': 19.50, 'high': 19.56},
-    {'x': "2004-12-14", 'low': 19.13, 'high': 19.48},
-    {'x': "2004-12-15", 'low': 19.20, 'high': 19.42},
-    {'x': "2004-12-16", 'low': 19.28, 'high': 19.66},
-    {'x': "2004-12-17", 'low': 19.19, 'high': 19.58},
-    {'x': "2004-12-20", 'low': 19.10, 'high': 19.33},
-    {'x': "2004-12-21", 'low': 19.07, 'high': 19.52},
-    {'x': "2004-12-22", 'low': 19.21, 'high': 19.46},
-    {'x': "2004-12-23", 'low': 19.23, 'high': 19.56},
-    {'x': "2004-12-27", 'low': 19.45, 'high': 19.58},
-    {'x': "2004-12-28", 'low': 19.30, 'high': 19.41},
-    {'x': "2004-12-29", 'low': 19.23, 'high': 19.36},
-    {'x': "2004-12-30", 'low': 19.28, 'high': 19.50},
-    {'x': "2004-12-31", 'low': 19.39, 'high': 19.50} 
+    {'x': "2004-08-13", 'low': 18.23, 'high': 18.23}
     ]);
   
     // map the data
     mapping = table.mapAs({'x': 'x', 'low': 'low', 'high': 'high'});
 
     // chart type
-    chart = anychart.stock();
+    var chart = anychart.stock();
 
     // set the series
     var series = chart.plot(0).rangeStepArea(mapping);
@@ -158,8 +77,5 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>

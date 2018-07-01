@@ -1,29 +1,42 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Text Marker 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var data = anychart.data.set([
+  var data = [
     [1990, 20],
     [1991, 12],
     [1992, 8],
     [1993, 7],
     [1994, 11]
-  ]);
+  ];
 
-  // chart type
-  chart = anychart.line();
+  // create a chart
+  var chart = anychart.line(data);
   chart.padding(20, 50, 0, 100);
-
-  // set data
-  chart.line(data);
 
   // first marker
   var marker = chart.textMarker(0);
@@ -48,8 +61,7 @@
   marker1.align("left");
   marker1.offsetX(5);
   marker1.fontColor("#212121");
-  marker1.anchor("leftcenter");
-
+  marker1.anchor("left-center");
 
   // third marker
   var marker2 = chart.textMarker(2);
@@ -59,7 +71,7 @@
   marker2.align("right");
   marker2.offsetX(5);
   marker2.fontColor("#212121");
-  marker2.anchor("rightcenter");
+  marker2.anchor("right-center");
 
   // forth marker
   var marker3 = chart.textMarker(3);
@@ -70,7 +82,7 @@
   marker3.align("left");
   marker3.fontColor("#212121");
   marker3.offsetX(5);
-  marker3.anchor("rightcenter");
+  marker3.anchor("right-center");
 
   // fifth marker
   var marker4 = chart.textMarker(4);
@@ -81,14 +93,12 @@
   marker4.align("left");
   marker4.fontColor("#212121");
   marker4.offsetX(40);
-  marker4.anchor("rightcenter");
+  marker4.anchor("right-center");
 
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

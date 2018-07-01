@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Axes 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/Maps/Map_Projections
+
+    var data =[
+{id: "AU.CT", value: 15},
+{id: "AU.VI", value: 23},
+{id: "AU.WA", value: 86},
+{id: "AU.QL", value: 16},
+{id: "AU.NS", value: 32},
+{id: "AU.NT", value: 64},
+{id: "AU.TS", value: 28},
+{id: "AU.SA", value: 45}
+    ];
+
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+    map.choropleth(data);
+
+    // enable axes and configure labels
+    map.axes(true);
+    map.axes().title("Custom title");
+    map.axes().right().title(false);
+    map.axes().top().title("Longitude");
+    map.axes().top().title().fontSize(14);
+
+    map.title("Map Axes Titles");
+    map.container("container");
+    map.draw();
+});
+</script>
+</body>
+</html>

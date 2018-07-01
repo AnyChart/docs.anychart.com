@@ -1,83 +1,70 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Additional Axes 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-  chart = anychart.column();
+  // setting first series of data
+  var data = [
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+  ];
+  
+  var chart = anychart.column();
 
+  chart.data(data);
   // setting title
   chart.title("Extra Axes Simple Sample");
 
   var yScale = chart.yScale();
   yScale.minimum(0);
   yScale.maximum(800000);
-  var yScaleTicks = chart.yScale().ticks();
-  yScaleTicks.interval(100000);
-  var yScaleMinorTicks = chart.yScale().minorTicks();
-  yScaleMinorTicks.interval(20000);
+  yScale.ticks().interval(100000);
+  yScale.minorTicks().interval(20000);
 
+  // setting for y axis title
+  chart.yAxis().title("Basic Y-Axis");
+  
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(800000);
   extraYScale.maximum(1600000);
-  var eYScaleTicks = extraYScale.ticks();
-  eYScaleTicks.interval(100000);
-  var eYScaleMinorTicks = extraYScale.minorTicks();
-  eYScaleMinorTicks.interval(20000);
+  extraYScale.ticks().interval(100000);
+  extraYScale.minorTicks().interval(20000);
 
   // adding and adjust extra Y axis
   var extraYAxis = chart.yAxis(1);
   extraYAxis.orientation("right");
   extraYAxis.scale(extraYScale);
-  extraYAxis.title("Extra Y Axis");
-
-  // setting for y axis title
-  var yAxis = chart.yAxis(0);
-  yAxis.title("Basic Y Axes");
-
-  // adjusting Grid
-  var grid = chart.grid(0);
-  grid.stroke("gray 0.8");
-  grid.layout("vertical");
-  var grid1 = chart.grid(1);
-  grid1.stroke("gray 0.8");
-  grid1.layout("horizontal");
-
-  // setting minorGrid settings
-  var minorGrid = chart.minorGrid(0);
-  minorGrid.layout("horizontal");
-  minorGrid.oddFill(null);
-  minorGrid.evenFill(null);
-  minorGrid.stroke("gray 0.3");
-  var minorGrid1 = chart.minorGrid(1);
-  minorGrid1.layout("vertical");
-  minorGrid1.oddFill(null);
-  minorGrid1.evenFill(null);
-  minorGrid1.stroke("gray 0.3");
-
-  // setting first series of data
-  var data = anychart.data.set([
-    ["A", 637166],
-    ["B", 721630],
-    ["C", 148662],
-    ["D", 78662],
-    ["E", 90000]
-  ]);
-
-  var column = chart.column(data);
-  column.tooltip(false);
+  extraYAxis.title("Extra Y-Axis");
 
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

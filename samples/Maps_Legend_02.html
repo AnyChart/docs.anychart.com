@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyMap"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/geodata/countries/usa/usa_mainland.js" data-export="true"></script>
-    <script x-export="stage">var dataSet = anychart.data.set([
-  {id: 'US-MN', name: "Minnesota", 'value': 8.4},
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Legend 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/countries/usa/usa_mainland.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // create a map
+  map = anychart.map();
+
+  //set map geo data
+  map.geoData(anychart.maps.usa_mainland);
+  
+  // create color scale with thesholds
+  var scale = anychart.scales.ordinalColor([
+    {less: 5},
+    {from: 5, to: 10},
+    {greater: 10}
+  ]);
+    
+  scale.colors(['#73E6BF', '#54D1B5', '#26B2A6']);
+  
+  // create series
+  var series = map.choropleth(getData());
+  series.geoIdField('iso_3166_2');
+  series.stroke(null);
+
+  // set color scale  
+  series.colorScale(scale);  
+    
+  // display legend and set items source
+  map.legend().enabled(true);
+  map.legend().itemsSourceMode('categories');
+  
+  // display map
+  map.container('container');
+  map.draw();
+}); 
+
+// a helper function for loading data
+function getData(){
+  var data = [
+  {id: 'US-MN', 'value': 8.4},
   {id: 'US-MT', name: "Montana", 'value': 8.5},
   {id: 'US-ND', name: "North Dakota", 'value': 5.1},
   {id: 'US-ID', name: "Idaho", 'value': 8.0},
@@ -18,75 +70,50 @@
   {id: 'US-AZ', name: "Arizona", 'value': 9.7},
   {id: 'US-CA', name: "California", 'value': 14.0},
   {id: 'US-CO', name: "Colorado", 'value': 8.7},
-]);
-
-var dataSet_expansion = anychart.data.set([
-  {id: 'US-UT', name: "Utah"},
-  {id: 'US-WY', name: "Wyoming"},
-  {id: 'US-AR', name: "Arkansas"},
-  {id: 'US-IA', name: "Iowa"},
-  {id: 'US-KS', name: "Kansas"},
-  {id: 'US-MO', name: "Missouri"},
-]);
-
-anychart.onDocumentReady(function() {
-  map = anychart.map();
-
-  //set map Geo data
-  map.geoData(anychart.maps.usa_mainland);
-    
-  var colorRange = map.colorRange();
-  colorRange.enabled(true);
-  colorRange.labels().padding(3);
-
-  colorRange.stroke('#B9B9B9');
-  colorRange.ticks().stroke('#B9B9B9').position('outside').length(10).enabled(true);
-  colorRange.minorTicks().stroke('#B9B9B9').position('outside').length(5).enabled(true);
-  colorRange.marker().fill('#D98026').offsetY(0);
-  
-  var series = map.choropleth(dataSet);
-  series.geoIdField('iso_3166_2');
-  series.colorScale(anychart.scales.linearColor());
-  series.hoverFill('#FF9933');
-  series.name('Sales of ACME Corp.');
-  series.hoverStroke(anychart.color.darken('#F79430'));
-  series.selectFill('#663300');
-  series.selectStroke(anychart.color.darken('#663300'));
-  series.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
-	return (this.name+'\n'+this.value);
-  });
-  series.tooltip().textWrap('byLetter').useHtml(true);
-  series.tooltip().textFormatter(function() {
-    return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
-  });
-  series.colorScale(anychart.scales.linearColor('#E08529', '#753D05'));
-  
-  // second series
-  var series_exp = map.choropleth(dataSet_expansion);
-  series_exp.geoIdField('iso_3166_2');
-  series_exp.hoverFill('#99FF66');
-  series_exp.name('Sales of ACME Corp.');
-  series_exp.hoverStroke(anychart.color.darken('#8FF05C'));
-  series_exp.selectFill('#336600');
-  series_exp.selectStroke(anychart.color.darken('#336600'));
-  series_exp.fill('#75C942');
-  series_exp.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
-	return this.name;
-  });
-  
-  // some legend settings
-  map.legend(true);
-  series.legendItem().iconFill('#D98026');
-  series.legendItem().iconType("circle");
-  series_exp.legendItem().iconFill('#75C942');
-  series_exp.legendItem().iconType("circle");
-  
-  map.container('container');
-  map.draw();
-}); </script>
-
-</head>
-<body>
-<div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>
+  {id: 'US-UT', name: "Utah", 'value': 17.5},
+  {id: 'US-WY', name: "Wyoming", 'value': 2.8},
+  {id: 'US-AR', name: "Arkansas", 'value': 6.1},
+  {id: 'US-IA', name: "Iowa", 'value': 5.7},
+  {id: 'US-KS', name: "Kansas", 'value': 7.2},
+  {id: 'US-MO', name: "Missouri", 'value': 16.9},
+  {id: 'US-NV', name: "Nevada", 'value': 14.7},
+  {id: 'US-NM', name: "New Mexico", 'value': 6.9},
+  {id: 'US-OR', name: "Oregon", 'value': 12.2},
+  {id: 'US-NE', name: "Nebraska", 'value': 5.0},
+  {id: 'US-OK', name: "Oklahoma", 'value': 4.5},
+  {id: 'US-SD', name: "South Dakota", 'value': 5.0},
+  {id: 'US-LA', name: "Louisiana", 'value': 5.7},
+  {id: 'US-TX', name: "Texas", 'value': 5.0},
+  {id: 'US-CT', name: "Connecticut", 'value': 14.4},
+  {id: 'US-MA', name: "Massachusetts", 'value': 16.9},
+  {id: 'US-NH', name: "New Hampshire", 'value': 19.6},
+  {id: 'US-RI', name: "Rhode Island", 'value': 14.0},
+  {id: 'US-VT', name: "Vermont", 'value': 17.5},
+  {id: 'US-AL', name: "Alabama", 'value': 6.0},
+  {id: 'US-FL', name: "Florida", 'value': 12.4},
+  {id: 'US-GA', name: "Georgia", 'value': 5.9},
+  {id: 'US-MS', name: "Mississippi", 'value': 2.8},
+  {id: 'US-SC', name: "South Carolina", 'value': 6.1},
+  {id: 'US-IL', name: "Illinois", 'value': 10.2},
+  {id: 'US-IN', name: "Indiana", 'value': 6.1},
+  {id: 'US-KY', name: "Kentucky", 'value': 3.9},
+  {id: 'US-NC', name: "North Carolina", 'value': 6.6},
+  {id: 'US-OH', name: "Ohio", 'value': 7.2},
+  {id: 'US-TN', name: "Tennessee", 'value': 5.4},
+  {id: 'US-VA', name: "Virginia", 'value': 10.7},
+  {id: 'US-WI', name: "Wisconsin", 'value': 9.1},
+  {id: 'US-WY', name: "Wyoming", 'value': 5.2},
+  {id: 'US-WV', name: "West Virginia", 'value': 2.4},
+  {id: 'US-DE', name: "Delaware", 'value': 13.5},
+  {id: 'US-DC', name: "District of Columbia", 'value': 25.7},
+  {id: 'US-MD', name: "Maryland", 'value': 8.9},
+  {id: 'US-NJ', name: "New Jersey", 'value': 14.9},
+  {id: 'US-NY', name: "New York", 'value': 11.9},
+  {id: 'US-PA', name: "Pennsylvania", 'value': 5.6},
+  {id: 'US-ME', name: "Maine", 'value': 10.4},
+  {id: 'US-MI', name: "Michigan", 'value': 7.6}];
+  return data;
+}
+</script>
 </body>
 </html>

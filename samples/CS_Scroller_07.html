@@ -1,69 +1,94 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    chart = anychart.bar();
-
-    var dataSet = anychart.data.set([
-    ["00:00", 10],
-    ["01:00", 4],
-    ["02:00", 17],
-    ["03:00", 20],
-    ["04:00", 20],
-    ["05:00", 16],
-    ["06:00", 35],
-    ["07:00", 6],
-    ["08:00", 15],
-    ["09:00", 19],
-    ["10:00", 25],
-    ["11:00", 34],
-    ["12:00", 42],
-    ["13:00", 14],
-    ["14:00", 50],
-    ["15:00", 25],
-    ["16:00", 34],
-    ["17:00", 40],
-    ["18:00", 64],
-    ["19:00", 48],
-    ["20:00", 22],
-    ["21:00", 37],
-    ["22:00", 53],
-    ["23:00", 62]
-    ]);
-
-    //create series
-    var series = chart.column(dataSet);
-
-    series.name("Total support requests");
-
-    chart.xAxis().title("Hours");
-    chart.yAxis().title("Support requests");
-    chart.title("Amount of support requests by hours");
-    var xScale = chart.xScale();
-    xScale.inverted(false);
-
-    var xZoom = chart.xZoom();
-
-    // Zooms series by defined points count.
-    xZoom.setToPointsCount(5);
-
-    // enable the scroller
-    chart.xScroller(true);
-
-    // change the scroller orientation
-    chart.xScroller().orientation("right");
-
-    chart.container("container");
-    chart.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Scroller 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a chart 
+    var chart = anychart.heatMap(getData());
+
+    // enable scrollers
+    chart.yScroller(true);
+    chart.xScroller(true);
+
+    // set scrollers orientation
+    chart.xScroller().orientation("top");
+    chart.yScroller().orientation("left");
+
+    // create ordinalColor scale
+    var colorScale = anychart.scales.ordinalColor();
+    
+    // set range of heat parameter's values and corresponding colors
+    colorScale.ranges([
+{less: 7, color: "#33CC33"},
+{from: 7, to: 22, color: "#CCFF66"},
+{from: 22, to: 32, color: "#EB9E33"},
+{greater: 32, color: "#FF3300"}
+    ]);
+
+    // apply colorScale for colorizing heatMap chart
+    chart.colorScale(colorScale);
+
+    // display the chart
+    chart.container("container");
+    chart.draw();
+});
+
+// get data function
+function getData(){
+    return [
+{y: "Part 1", x: "Mobile", heat: 15},
+{y: "Part 2", x: "Mobile", heat: 17},
+{y: "Part 3", x: "Mobile", heat: 21},
+{y: "Part 4", x: "Mobile", heat: 23},
+{y: "Part 5", x: "Mobile", heat: 20},
+{y: "Part 6", x: "Mobile", heat: 33},
+{y: "Part 7", x: "Mobile", heat: 19},
+{y: "Part 1", x: "WebMail", heat: 34},
+{y: "Part 2", x: "WebMail", heat: 33},
+{y: "Part 3", x: "WebMail", heat: 32},
+{y: "Part 4", x: "WebMail", heat: 30},
+{y: "Part 5", x: "WebMail", heat: 20},
+{y: "Part 6", x: "WebMail", heat: 7},
+{y: "Part 7", x: "WebMail", heat: 21},
+{y: "Part 1", x: "Desktop", heat: 43},
+{y: "Part 2", x: "Desktop", heat: 42},
+{y: "Part 3", x: "Desktop", heat: 40},
+{y: "Part 4", x: "Desktop", heat: 38},
+{y: "Part 5", x: "Desktop", heat: 24},
+{y: "Part 6", x: "Desktop", heat: 36},
+{y: "Part 7", x: "Desktop", heat: 23},
+{y: "Part 1", x: "Undetected", heat: 6},
+{y: "Part 2", x: "Undetected", heat: 8},
+{y: "Part 3", x: "Undetected", heat: 7},
+{y: "Part 4", x: "Undetected", heat: 8},
+{y: "Part 5", x: "Undetected", heat: 15},
+{y: "Part 6", x: "Undetected", heat: 4},
+{y: "Part 7", x: "Undetected", heat: 9}
+    ];    
+}
+</script>
 </body>
 </html>

@@ -2,17 +2,11 @@
 
 # Custom SVG Maps
 
-* [Overview](#overview)
-* [Loading SVG](#loading_svg)
-* [SVG Structure](#svg_structure)
-* [Sample SVG String](#sample_svg_string)
-* [Sample SVG Map](#sample_svg_map)
-
 ## Overview
 
-AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](Custom_TopoJson_Maps) and SVG formats.
+AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and [TopoJSON](Custom_TopoJSON) and SVG formats.
 
-All maps in [AnyChart Map Collection](https://cdn.anychart.com/#map-collection) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
+All maps in [AnyChart Map Collection](https://cdn.anychart.com/) have GeoJSON, TopoJSON and versions, you can use whichever you like most.
 
 ## Loading SVG
 
@@ -28,7 +22,7 @@ You can dynamically load SVG image somehow, for example using jQuery:
 
 ```
 var stage, chart;
-$(document).ready(function() {
+$(document).ready(function () {
   stage = anychart.graphics.create('container');
   $.ajax({
     type: 'GET',
@@ -101,7 +95,7 @@ or in `<desc>` node as a content of `<id>` node:
 
 **NOTE:** if some parent element has an `id` and its child element has it too: parent element will be considered by AnyMap.
 
-If you want to assign any other text data to an element, like you do in GeoJSON or SHP you can de that in `<desc>` as well - all this data can be accessed by AnyMap when it comes to formatting tooltips and labels:
+If you want to assign any other text data to an element, like you do in GeoJSON or SHP you can do that in `<desc>` as well - all this data can be accessed by AnyMap when it comes to formatting tooltips and labels:
 
 ```
 <rect x="161.141" y="144.445" width="164" height="64">
@@ -135,5 +129,5 @@ Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used wit
 
 {sample}Maps\_SVG\_02{sample}
 
-You can find more samples of using SVG images to create [Seat Maps](Seat_Map) in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/).
+You can find more samples of using SVG images to create [Seat Maps](Seat_Maps) in [AnyMap: Seat Maps Gallery](https://www.anychart.com/products/anymap/gallery/Seat_Maps/).
 

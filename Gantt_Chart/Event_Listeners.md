@@ -1,11 +1,6 @@
-#Event Listeners
+# Event Listeners
 
-* [Overview](#overview)
-* [Event Types](#event_types)
-* [Default Events](#default_events)
-* [Prevent Defaults](#prevent_defaults)
-
-##Overview
+## Overview
 
 AnyChart charting library supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
 explain when they are dispatched and what data is available in them. There is also some useful information about how to create an event handler and how to use the data coming from AnyGantt.
@@ -69,7 +64,7 @@ To listen an event use the code below:
 
 ```
 //choose an event type from table above:
-chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
+chart.listen("rowClick", function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
     return msg;
@@ -85,19 +80,19 @@ As you can see from the code above, it is possible to get any information about 
 <th>Description</th>
 </tr>
 <tr>
-<td>.item</td>
-<td>It is a [Data Item](../Working_with_Data/Using_Data_Tree_Model) that displays the active row.</td>
+<td>item</td>
+<td>It is a [Data Item](../Working_with_Data/Tree_Data_Model) that displays the active row.</td>
 </tr>
 <tr>
-<td>.hoveredIndex</td>
+<td>hoveredIndex</td>
 <td>Contains an index of active row.</td>
 </tr>
 <tr>
-<td>.period</td>
+<td>period</td>
 <td>Contains an active period.</td>
 </tr>
 <tr>
-<td>.periodIndex</td>
+<td>periodIndex</td>
 <td>Contains an index of active period.</td>
 </tr>
 <tr>
@@ -171,7 +166,7 @@ event.preventDefault();
 In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
 ```
-chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
+chart.listen("rowClick", function(e) {
     e.preventDefault();
 });
 ```

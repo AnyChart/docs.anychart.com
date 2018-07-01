@@ -1,62 +1,80 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyMap"/>
-  <meta charset="UTF-8"/>
-  <meta name="tags" content="[]"/>
-  <meta name="index" content="1000"/>
-  <meta name="is-new" content="false"/>
-  <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="map">anychart.onDocumentReady(function() {
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
-      {'id': 'AU.NS', 'value': 240},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
-      {'id': 'AU.SA', 'value': 280},  // South Australia
-      {'id': 'AU.QL', 'value': 220}   // Queensland
-    ]);
-
-    // create map
-    map = anychart.map();
-    map.geoData(anychart.maps.australia);
-
-    // set the title and its preferences
-    map.title("Single Hue Progression - Ordinal Scale");
-
-    // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-
-    // set the stroke
-    series.stroke("2 white 0");
-	
-    // disable the labels
-    series.labels(false);
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Scales 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
     
-    // set the colors and ranges for the scale
-    series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
-
-    //set the single hue progression
-    var colors = anychart.color.singleHueProgression('#0068BC');
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
     
-	// define the colors 
-    series.colorScale().colors(colors);
-	
-	// create and enable the colorRange
-	var colorRange = map.colorRange(true);
-
-    // set the container
-    map.container('container');
-    map.draw();
-  });</script>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// This sample uses 3rd party proj4 component
+// that makes it possible to set coordinates
+// for the points and labels on the map and
+// required for custom projections and grid labels formatting.
+// See https://docs.anychart.com/Maps/Map_Projections
+
+var data = [
+  {'id': 'AU.WA', 'value': 300},
+  {'id': 'AU.JB', 'value': 270},
+  {'id': 'AU.NS', 'value': 240},
+  {'id': 'AU.VI', 'value': 75}, 
+  {'id': 'AU.NT', 'value': 130},
+  {'id': 'AU.TS', 'value': 190},
+  {'id': 'AU.CT', 'value': 100},
+  {'id': 'AU.SA', 'value': 280},
+  {'id': 'AU.QL', 'value': 220} 
+];
+
+// create map
+var map = anychart.map();
+map.geoData(anychart.maps.australia);
+
+// set the title and its preferences
+map.title("Single Hue Progression - Ordinal Scale");
+
+// set the series
+var series = map.choropleth(data);
+
+// set the stroke
+series.stroke("2 white 0");
+
+// set the colors and ranges for the scale
+series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+
+//set the single hue progression
+var colors = anychart.color.singleHueProgression('#0068BC');
+
+// define the colors 
+series.colorScale().colors(colors);
+
+// enable the colorRange
+map.colorRange(true);
+
+// set the container
+map.container('container');
+map.draw();
+});
+</script>
 </body>
 </html>

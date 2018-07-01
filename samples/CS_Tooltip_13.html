@@ -1,57 +1,83 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
-  var data = anychart.data.set([
-    ["John" , 10000, 12000],
-    ["Jake" , 12000, 15000],
-    ["Peter" , 18000, 16000],
-    ["James" , 11000, 13000],
-    ["Mary" , 9000, 19000]
-  ]);
-
-  // map data for the each series
-  var data1 = data.mapAs({x: [0], value: [1]});
-  var data2 = data.mapAs({x: [0], value: [2]});
-
-  // chart type
-  chart = anychart.column();
-
-  // set title
-  chart.title("Tooltip Anchor");
-
-  var series1 = chart.column(data1);
-  series1.name("Year 2008");
-  var series2 = chart.column(data2);
-  series2.name("Year 2009");
-
-  // tooltip settings
-  var tooltip = chart.tooltip();
-
-  // set union display mode
-  tooltip.displayMode("union");
-
-  // set tooltip display mode
-  tooltip.positionMode("chart");
-
-  // set tooltip anchor
-  tooltip.anchor("topRight");
-
-  tooltip.position("topRight");
-
-  // draw
-  chart.container("container");
-  chart.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Tooltip 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+var stage = anychart.graphics.create("container");
+
+var dataSet = anychart.data.set([
+    ["John", 10000, 13000, 15000],
+    ["Jake", 12000, 10000, 18000],
+    ["Peter", 18000, 19000, 16000],
+    ["James", 11000, 10000, 14000],
+    ["Mary", 9000, 16000, 19000]
+  ]);
+
+  var data1 = dataSet.mapAs({x: 0, value: 1});
+  var data2 = dataSet.mapAs({x: 0, value: 2});
+  var data3 = dataSet.mapAs({x: 0, value: 3});
+
+  // chart type
+  var chart = anychart.bar();
+  series1 = chart.bar(data1);
+  series1.name("Year 2008");
+  series2 = chart.bar(data2);
+  series2.name("Year 2010");
+  series3 = chart.bar(data3);
+  series3.name("Year 2012");
+
+  // set title
+  chart.title("Tooltips of one of the series can leave the chart bounds");
+
+  // set the padding for the chart
+  chart.bounds(10, 20, "90%", "70%");
+  chart.background("green 0.1");
+
+  // let tooltips to leave the chart bounds
+  series1.tooltip().allowLeaveChart(true);
+  series2.tooltip().allowLeaveChart(false);
+
+  series1.tooltip().format("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
+  series2.tooltip().format("This tooltip is not able to be demonstrated out of the chart");
+
+  // font settings for tooltip text
+  var tooltip1 = series1.tooltip();
+  tooltip1.fontWeight(900);
+  var title1 = series1.tooltip().title();
+  title1.fontWeight(900);
+
+  // adjust chart tooltips for the third series
+  chart.tooltip().format("This series tooltips' settings are inherited from chart tooltip defaults");
+  
+  // draw
+  chart.container(stage);
+  chart.draw();
+
+  // limit the stage parameters for better illustration
+  document.getElementById("container").style.width="85%";
+  document.getElementById("container").style.background="#F0FFF0";
+});
+</script>
 </body>
 </html>

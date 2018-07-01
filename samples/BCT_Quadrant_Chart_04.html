@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Quadrant Chart 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: 4, value: 42},
+      {x: 13, value: 59},
+      {x: 25, value: 68},
+      {x: 25, value: 63},
+      {x: 44, value: 54},
+      {x: 55, value: 58},
+      {x: 56, value: 46},
+      {x: 60, value: 54},
+      {x: 72, value: 73}
+    ];
+
+    // create a chart
+    var chart = anychart.quadrant(data);
+
+    // configure quarters
+    chart.quarters(
+    {
+        rightTop: {
+            title: {
+                text: "Right Top",
+                fontSize: "24",
+                fontWeight: "bold",
+                fontColor: "#fa8072"
+            }
+        },
+        rightBottom: {
+            title: {
+                text: "Right Bottom",
+                fontSize: "24",
+                fontWeight: "bold",
+                fontColor: "#72fa80"
+            }
+        },
+        leftTop: {
+            title: {
+                text: "Left Top",
+                fontSize: "24",
+                fontWeight: "bold",
+                fontColor: "#72fa80"
+            }
+        },
+        leftBottom: {
+            title: {
+                text: "Left Bottom",
+                fontSize: "24",
+                fontWeight: "bold",
+                fontColor: "#fa8072"
+            }
+        },
+    }
+    );
+
+    // set the chart title
+    chart.title("Quadrant Chart: Quarters (Titles)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -1,18 +1,14 @@
 {:index 3}
-#Basic tutorial
-
-* [Include AnyMap component](#include_anymap_component)
-* [Add maps](#add_maps)
-* [Data](#data)
-* [Drill Down Map](#drill_down_map)
+# Basic tutorial
 
 ## Include AnyMap component
 
-First of all, you need the Anymap component, which can be found on the [download page](../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
+First of all, you need the Anymap component, which can be found on the [download page](../../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
-<script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -23,14 +19,14 @@ If you need any other AnyChart components, it's better to include anychart-bundl
 There are several ways how to include maps in your Drill Down Map: through scripts or using AJAX. The first way is described in this article; if you need the tutorial for AJAX, visit the [AJAX](AJAX_Tutorial) page.
 
 To include a map as script, reference the JavaScript file with this map in the <head> section of your web page.
-You can use the link as shown below or download all necessary maps from the <a href="http://cdn.anychart.com/#map-collection">download page</a> and then reference them locally.
+You can use the link as shown below or download all necessary maps from the [download page](https://cdn.anychart.com/) and then reference them locally.
 Note that all maps that will be used should be referenced like in this code sample. In the following code sample we reference the USA map and maps of Texas and Florida, as we're not going to use any other maps.
 
 ```
 <head>
-<script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
-<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
-<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
+<script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script>
+<script src="https://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -38,11 +34,11 @@ After the maps are referenced in the &lt;head&gt; section, we can create the map
 
 ```
 // creating the map of the USA
-var usaMap = anychart.map();
-usaMap.geoData(anychart.maps.united_states_of_america);
+var map = anychart.map();
+map.geoData(anychart.maps.united_states_of_america);
 ```
 
-Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
+Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the [AnyMap Map Collection](https://cdn.anychart.com/) page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
 
 ## Data
 
@@ -52,38 +48,38 @@ Let's use some statistical data about population in those states in 2000 for the
 
 ``` 
 // set the data for the USA map
-var dataSetUSA = anychart.data.set([
+var dataSetUSA = [
     {'id': 'US.TX', 'value': 26956958},
     {'id': 'US.FL', 'value': 19552860}
-]);
+];
 
 // create dataset for Texas
-var dataSetTX = anychart.data.set([
-    {'id': 'US.TX.111', 'value': 6222}, // Dallam
-    {'id': 'US.TX.421', 'value': 3186}, // Sherman
-    {'id': 'US.TX.195', 'value': 5369}, // Hansford
-    {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
-    {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
-]);
+var dataSetTX = [
+    {'id': 'US.TX.111', 'value': 6222},
+    {'id': 'US.TX.421', 'value': 3186},
+    {'id': 'US.TX.195', 'value': 5369},
+    {'id': 'US.TX.357', 'value': 9006},
+    {'id': 'US.TX.295', 'value': 3057}, 
+];
 
 // create dataset for Florida 
-var dataSetFL = anychart.data.set([
-    {'id': 'US.FL.063', 'value': 46755},  // Jackson
-    {'id': 'US.FL.091', 'value': 170498}, // Okaloosa
-    {'id': 'US.FL.077', 'value': 7021},   // Liberty County
-    {'id': 'US.FL.079', 'value': 18733},  //Madison
-});
+var dataSetFL = [
+    {'id': 'US.FL.063', 'value': 46755},
+    {'id': 'US.FL.091', 'value': 170498},
+    {'id': 'US.FL.077', 'value': 7021}, 
+    {'id': 'US.FL.079', 'value': 18733},
+};
 ```
 
 After we have defined the data, it's time to pass it to series.
 
 AnyMap provide a wide range of series, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map
 
-In this sample we've decided to use [Choropleth Map](Choropleth_Map), as it's one of the most popular series type.
+In this sample we've decided to use [Choropleth Map](../Choropleth_Map), as it's one of the most popular series type.
 
 ```
 // Set the series for all maps
-usaSeries = usaMap.choropleth(dataSetUSA);
+usaSeries = map.choropleth(dataSetUSA);
 txSeries = txMap.choropleth(dataSetTX);    
 flSeries = flMap.choropleth(dataSetFL);
 ```
@@ -92,23 +88,23 @@ Now, it's time to enable the drill down interactivity in our map.
 
 ## Drill Down Map
 
-To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method. Explore the next sample.
+To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} method. Explore the next sample.
 
 ```
-usaMap.drillDownMap({
+map.drillDownMap({
     "US.TX": txMap,   
     "US.FL": flMap
 });
 
 // set the Selection Mode    
-usaMap.interactivity().selectionMode("drillDown");
+map.interactivity().selectionMode("drillDown");
 ```
 
-Note that using this method requires setting the {api:anychart.charts.Map#interactivity}.interactivity(){api} method into drillDown mode.
+Note that using this method requires setting the {api:anychart.charts.Map#interactivity}interactivity(){api} method into drillDown mode.
 
 {sample}Maps\_Drill\_Down\_Basic\_01{sample}
 
-By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
+By default, the {api:anychart.charts.Map#drillUp}drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
 
 ## Adjust settings
 

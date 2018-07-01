@@ -1,16 +1,42 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CRUD 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="streamButton" onclick="startStream()">Start Stream</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // data
-  var dataSet = anychart.data.set([
+  dataSet = anychart.data.set([
     {x: "P1", value: 100},
     {x: "P2", value: 200},
     {x: "P3", value: 15},
@@ -29,14 +55,12 @@
   ]);
 
   // set chart type
-  chart = anychart.line();
+  var chart = anychart.line();
 
   chart.title().text("Click on Chart to Add a Point ");
 
   // set data
   chart.spline(dataSet).markers(null);
-
-  chart.padding().right(80);
 
   // disable stagger mode. Only one line for x axis labels
   chart.xAxis().staggerMode(false);
@@ -44,79 +68,48 @@
   // set container and draw chart
   chart.container("container").draw();
 
-  // create new button
-  var streamButton = document.createElement("div");
-
-  // set button style
-  streamButton.style.top = 0;
-  streamButton.style.right = 0;
-  streamButton.style.width = "auto";
-  streamButton.style.height = "auto";
-  streamButton.style.backgroundColor = "#444444";
-  streamButton.style.color = "white";
-  streamButton.style.position = "absolute";
-  streamButton.style.zIndex = 2;
-  streamButton.style.transition = "0.5s";
-  streamButton.style.textAlign = "center";
-  streamButton.style.border = "3px solid #444444";
-  streamButton.style.borderRadius = "7px 7px 7px 7px";
-  streamButton.style.fontSize = "18px";
-  streamButton.style.MozUserSelect= "none";
-  streamButton.style.KhtmlUserSelect= "none";
-  streamButton.style.WebkitUserSelect= "none";
-  streamButton.style.userSelect= "none";
-  streamButton.innerHTML = "Start" + "\nstream";
-  streamButton.style.cursor = "pointer";
-  streamButton.onclick = function() {
-    startStream();
-  };
-
-  // append button to container
-  container.appendChild(streamButton);
-
   // first index for new point
-  var indexSetter = (dataSet.mapAs().getRowsCount())+1;
+  indexSetter = (dataSet.mapAs().getRowsCount())+1;  
+});
 
-  function startStream() {
+function startStream() {
 
-    // adjust button content
-    streamButton.innerHTML = "Stop" + "\nstream";
+  // adjust button content
+  var streamButton = document.getElementById("streamButton");
+  streamButton.innerHTML = "Stop" + "\nstream";
 
-    // set interval of data stream
-    var myVar = setInterval(
+  // set interval of data stream
+  var myVar = setInterval(
 
-      // data streaming itself
-      function(e) {
+    // data streaming itself
+    function() {
 
-        // append data
-        dataSet.append({
+      // append data
+      dataSet.append({
 
-          // x value
-          x: "P" + indexSetter,
+        // x value
+        x: "P" + indexSetter,
 
-          // random value from 1 to 500
-          value : Math.floor((Math.random() * 500)+ 1)
-        });
+        // random value from 1 to 500
+        value : Math.floor((Math.random() * 500)+ 1)
+      });
 
-        // removes first point
-        dataSet.remove(0);
-        indexSetter++;
-      }, 200            // interval
-    );
+      // removes first point
+      dataSet.remove(0);
+      indexSetter++;
+    }, 200            // interval
+  );
 
-    streamButton.onclick = function(){
+  streamButton.onclick = function (){
 
-      // clears interval which stops streaming
-      clearInterval(myVar);
-      streamButton.onclick = function() {
-        startStream();
-      };
-    streamButton.innerHTML = "Start" + "\nstream";
+    // clears interval which stops streaming
+    clearInterval(myVar);
+    streamButton.onclick = function () {
+      startStream();
     };
-  }
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+    streamButton.innerHTML = "Start" + "\nstream";
+  };
+};
+</script>
 </body>
 </html>

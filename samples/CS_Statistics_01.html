@@ -1,28 +1,42 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">
-
-    anychart.onDocumentReady(function () {
-    chart = anychart.scatter();
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Statistics 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+    var chart = anychart.scatter();
 
     // create a bubble chart
     chart.bubble([
-        [4, 9, 10],
-        [1, 7, 6],
-        [2, 7, 15],
-        [3, 8, 20]
+[4, 9, 10],
+[1, 7, 6],
+[2, 7, 15],
+[3, 8, 20]
     ]);
 
     // get statistical data (the maximum bubble size and the mumber of the bubbles)
     var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
-	var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
+	var pointsCount = chart.getStat("dataPlotPointCount");
 
     // set the title of the chart
     chart.title("There Are " + pointsCount + " Bubbles, The Maximum Bubble Size Is " + bubbleMaxSize);
@@ -32,9 +46,7 @@
     
     // initiate drawing the chart
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

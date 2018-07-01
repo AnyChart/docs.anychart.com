@@ -1,15 +1,9 @@
 {:index 1}
-Overview
-=================
-
-* [Overview](#overview)
-* [Use Cases](#use_cases)
-* [Drill Down Methods](#methods)
-* [Breadcrumbs](#breadcrumbs)
+# Drill Down Maps
 
 ## Overview
 
-AnyChart Maps are JavaScript interactive maps, with ability to create Drill Down maps, you can find several samples of such maps at [AnyChart Drill Down Maps Gallery](http://www.anychart.com/products/anymap/gallery/Maps_with_Drill_Down/).
+AnyChart Maps are JavaScript interactive maps, with ability to create Drill Down maps, you can find several samples of such maps at [AnyChart Drill Down Maps Gallery](https://www.anychart.com/products/anymap/gallery/Maps_with_Drill_Down/).
 
 Drill Down Maps are those which use several maps to become multi-level, so it becomes possible to zoom into regions, towns and even smaller geographical units - in case you've got maps for them. 
 
@@ -19,7 +13,7 @@ The main thing about a drill down map data is that it should contain the data ab
 
 ## Drill Down Methods
 
-There are four main methods that we use to manage Drill Down Maps: {api:anychart.charts.Map#drillTo}.drillTo(){api}, {api:anychart.charts.Map#drillUp}.drillUp(){api}, {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} and {api:anychart.charts.Map#drillDownPath}.drillDownPath(){api}. You can find more information about them in the [Methods tutorial](Methods).
+There are four main methods that we use to manage Drill Down Maps: {api:anychart.charts.Map#drillTo}drillTo(){api}, {api:anychart.charts.Map#drillUp}drillUp(){api}, {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} and {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api}. You can find more information about them in the [Methods tutorial](Methods).
 
 ## Breadcrumbs
 

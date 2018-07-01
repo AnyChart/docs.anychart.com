@@ -1,85 +1,85 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Scroller 12"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
-    chart = anychart.column();
+    // create a chart
+    var chart = anychart.line();
 
-    var dataSet = anychart.data.set([
-    ["00:00", 10],
-    ["01:00", 4],
-    ["02:00", 17],
-    ["03:00", 20],
-    ["04:00", 20],
-    ["05:00", 16],
-    ["06:00", 35],
-    ["07:00", 6],
-    ["08:00", 15],
-    ["09:00", 19],
-    ["10:00", 25],
-    ["11:00", 34],
-    ["12:00", 42],
-    ["13:00", 14],
-    ["14:00", 50],
-    ["15:00", 25],
-    ["16:00", 34],
-    ["17:00", 40],
-    ["18:00", 64],
-    ["19:00", 48],
-    ["20:00", 22],
-    ["21:00", 37],
-    ["22:00", 53],
-    ["23:00", 62]
-    ]);
+    // Zooms series by defined points count.
+    chart.xZoom().setToPointsCount(10, true);
 
-    //create series
-    var series = chart.column(dataSet);
-
-    series.name("Total support requests");
-
-    chart.xAxis().title("Hours");
-    chart.yAxis().title("Support requests");
-    chart.title("Amount of support requests by hours");
-
-    var xZoom = chart.xZoom();
+    // prevent the scrolling while the button is not released yet
+    chart.xZoom().continuous(false);
 
     // enable the scroller
     chart.xScroller(true);
 
-    var xScroller = chart.xScroller();
+    // create a series
+    var series = chart.column(getData());
+    series.name("New users");
 
-    // Zooms series by defined points count.
-    xZoom.setToPointsCount(15);
+    // create a chart settings
+    chart.xAxis().title("Month");
+    chart.yAxis().title("New users");
+    chart.title("New internet users \nPrevent scrolling");
 
-    // autoHide the scroller
-    xScroller.autoHide("true");
-
-    // set the fill color
-    xScroller.fill("#33CC33");
-
-    // set the selected fill color
-    xScroller.selectedFill("#339966");
-
-    // set the stroke of the bar
-    xScroller.outlineStroke("#33CC33");
-
-    // set the bar height
-    xScroller.minHeight(5);
-
-    // set the bar height
-    xScroller.maxHeight(35);
-
+    // display a chart
     chart.container("container");
     chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+
+// get data function
+function getData(){
+    return [
+    ["Jan 15", 2094],
+    ["Feb 15", 1865],
+    ["Mar 15", 2051],
+    ["Apr 15", 2301],
+    ["May 15", 1509],
+    ["Jun 15", 1044],
+    ["Jul 15", 1935],
+    ["Aug 15", 2109],
+    ["Sep 15", 2002],
+    ["Oct 15", 1609],
+    ["Nov 15", 1634],
+    ["Dec 15", 2403],
+    ["Jan 16", 2105],
+    ["Feb 16", 2844],
+    ["Mar 16", 2523],
+    ["Apr 16", 2766],
+    ["May 16", 1985],
+    ["Jun 16", 1646],
+    ["Jul 16", 934],
+    ["Aug 16", 1104],
+    ["Sep 16", 1824],
+    ["Oct 16", 1534],
+    ["Nov 16", 1911],
+    ["Dec 16", 2323]
+    ]    
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Chart 18"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function (){
+
+  // get data and create a data tree
+  var treeData = anychart.data.tree(getData(), "as-tree");
+
+  // create a gantt chart
+  var chart = anychart.ganttProject();
+  
+  // set the data
+  chart.data(treeData);
+
+  // access the object with button settings
+  var buttons = chart.dataGrid().buttons();
+
+  // configure the font of buttons
+  buttons.fontColor("Black");
+  buttons.fontFamily("Courier");
+
+  /* change the width of buttons
+  to make it match the custom font */
+  buttons.width(22);
+
+  // change the text of buttons
+  buttons.normal().content("[+]");
+  buttons.selected().content("[-]");
+
+  /* disable the background of buttons
+  in the expanded and collapsed states */
+  buttons.normal().background(false);
+  buttons.selected().background(false);
+
+  /* change the background and font of buttons
+  in the hover state */
+  buttons.hovered().background().fill(null);
+  buttons.hovered().background().stroke("1 red");
+  buttons.hovered().fontColor("red");
+
+  // set the container id
+  chart.container("container");
+  
+  // initiate drawing the chart
+  chart.draw();
+});
+
+// create data
+function getData() {
+  return [
+  {
+    "name": "Activities",
+    "actualStart": Date.UTC(2007, 0, 25),
+    "actualEnd": Date.UTC(2007, 2, 14),
+    "children": [
+      {
+"name": "Draft plan",
+"actualStart": Date.UTC(2007, 0, 25),
+"actualEnd": Date.UTC(2007, 1, 3)
+      },
+      {
+"name": "Board meeting",
+"actualStart": Date.UTC(2007, 1, 4),
+"actualEnd": Date.UTC(2007, 1, 4)
+      },
+      {
+"name": "Research option",
+"actualStart": Date.UTC(2007, 1, 4),
+"actualEnd": Date.UTC(2007, 1, 24)
+      },
+      {
+"id": "5",
+"name": "Innovation activities",
+"actualStart": Date.UTC(2007, 1, 24),
+"actualEnd": Date.UTC(2007, 2, 14),
+"collapsed": true,
+"children": [
+    {
+        "name": "Improvement research",
+        "actualStart": Date.UTC(2007, 1, 24),
+        "actualEnd": Date.UTC(2007, 2, 14)
+      }
+    ]
+      },
+    ]
+  }
+  ];
+}
+</script>
+</body>
+</html>

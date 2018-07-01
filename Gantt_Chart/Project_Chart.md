@@ -1,14 +1,4 @@
-#Project Chart
-
-* [Overview](#overview)
-* [Chart](#chart)
-* [Hierarchy](#hierarchy)
-* [Tasks Types](#tasks_types)
-* [Expand/Collapse control](#expand/collapse_control)
-* [Task Progress](#task_progress)
-* [Actual and Planned](#actual_and_planned)
- * [Swap Actual and Planned](#swap_actual_and_planned) 
-* [Connectors](#connectors)
+# Project Chart
 
 ## Overview
 
@@ -16,7 +6,7 @@ Project Gantt Chart is intended for showing a progress of completion of a single
 
 ## Chart
 
-To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}**anychart.ganttProject()**{api} method.
+To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}ganttProject(){api} method.
 
 ```
 // chart type
@@ -30,7 +20,7 @@ Here is a simple sample to illustrate how to create a project chart:
 
 ## Hierarchy
 
-[Tree data model](../Working_with_Data/Using_Data_Tree_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
+[Tree data model](../Working_with_Data/Tree_Data_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
 
 ```
 // hierarchy 1 by table
@@ -67,7 +57,7 @@ Here is a simple sample to illustrate how to create a project chart:
  }
 ```
 
-Read more about handling tree data at: [Using Data Tree Model](Using_Data_Tree_Model) section.
+Read more about handling tree data at: [Tree Data Model](../Working_with_Data/Tree_Data_Model) section.
 
 ## Tasks Types
 
@@ -94,34 +84,34 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 </tbody>
 </table>
 
-The tasks types are not explicitly defined, but they have a different behavior.
+The tasks types are not explicitly defined but task of each type behaves differently.
 
 ```
-    //how to create the tasks
-      return [
-      {
-        "name": "parent",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 2, 14),
-        "children": [
-          {
-            "name": "first child",
-            "actualStart": Date.UTC(2007, 0, 25),
-            "actualEnd": Date.UTC(2007, 1, 3)
-          },
-          {
-            "name": "second child",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 4)
-          },
-          {
-            "name": "milestone",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 24)
-          }
-        ]
-      }
-      ];
+// how to create the tasks
+data = [
+{
+  "name": "parent",
+  "actualStart": Date.UTC(2007, 0, 25),
+  "actualEnd": Date.UTC(2007, 2, 14),
+  "children": [
+    {
+      "name": "first child",
+      "actualStart": Date.UTC(2007, 0, 25),
+      "actualEnd": Date.UTC(2007, 1, 3)
+    },
+    {
+      "name": "second child",
+      "actualStart": Date.UTC(2007, 1, 4),
+      "actualEnd": Date.UTC(2007, 1, 4)
+    },
+    {
+      "name": "milestone",
+      "actualStart": Date.UTC(2007, 1, 4),
+      "actualEnd": Date.UTC(2007, 1, 24)
+    }
+  ]
+}
+];
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_07{sample}
@@ -137,19 +127,19 @@ You can control if the summary task is expanded or collapsed using these methods
 <th>Description</th>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#expandAll}**expandAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#expandAll}expandAll(){api}</td>
 <td>Allows to expand all tasks.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseAll}**collapseAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseAll}collapseAll(){api}</td>
 <td>Used to collapse all tasks.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#expandTask}**expandTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#expandTask}expandTask(taskID){api}</td>
 <td>Expands one task.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseTask}**collapseTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseTask}collapseTask(taskID){api}</td>
 <td>Collapses one task.</td>
 </tr>
 </tbody>
@@ -159,7 +149,7 @@ You can control if the summary task is expanded or collapsed using these methods
 
 ## Task Progress
 
-Tracking progress can be complicated, but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue".
+Tracking progress can be complicated, but you can show the percent complete using a progress bar. To use it you need to provide the required value of the "progressValue".
 
 ```
 // progress in data
@@ -231,10 +221,10 @@ To configure how actual or baseline bar looks like you need to set the "fill" va
 
 ### Swap Actual and Planned
 
-If you want to display Planned (baseline) bars above the Actual bars, use *baselineAbove()* method of the {api:anychart.charts.Gantt#getTimeline}**Timeline**{api}:
+If you want to display Planned (baseline) bars above the Actual bars, use the *above()* method of the {api:anychart.charts.Gantt#getTimeline}Timeline{api} baselines:
 
 ```
-chart.getTimeline().baselineAbove(true);
+chart.getTimeline().baselines().above(true);
 ```
 
 This is how it works:
@@ -243,11 +233,10 @@ This is how it works:
 
 ## Connectors
 
-If there is a need to add an additional connection between tasks, you can define connectors with these settings:
+If there is a need to add an additional connection between tasks, you can define connectors with these settings: {api:anychart.enums.ConnectorType}connectorType{api}. It can belong be one of four types: "start-start", "start-finish", "finish-start", "finish-finish".
 
-{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
-
-{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
+(taskID
+{api:anychart.enums.GanttDataFields}connectTo){api} defines another node which will be connected with the first.
 
 Types of task connectors:
 
@@ -258,20 +247,20 @@ Types of task connectors:
 <th>Description</th>
 </tr>
 <tr>
-<td>StartStart</td>
-<td>The second can’t start until the first task starts</td>
+<td>start-start</td>
+<td>The second can't start until the first task starts</td>
 </tr>
 <tr>
-<td>StartFinish</td>
-<td>The second task can’t finish until the first begins. </td>
+<td>start-finish</td>
+<td>The second task can't finish until the first begins. </td>
 </tr>
 <tr>
-<td>FinishStart</td>
-<td>The second task can’t start until the first is done. </td>
+<td>finish-start</td>
+<td>The second task can't start until the first is done. </td>
 </tr>
 <tr>
-<td>FinishFinish</td>
-<td>The second task can’t finish until the first task is done.</td>
+<td>finish-finish</td>
+<td>The second task can't finish until the first task is done.</td>
 </tr>
 </tbody>
 </table>
@@ -285,13 +274,13 @@ Types of task connectors:
     "actualStart": Date.UTC(2010, 4, 29, 9),
     "actualEnd": Date.UTC(2010, 5, 12, 11),
     "connectTo": "5",
-    "connectorType": "FinishStart"
+    "connectorType": "finish-start"
 }
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_06{sample}
 
-AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in **connector**, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
+AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the `"fill"` and `"stroke"` parameters in `"connector"`, where "stroke" defines a color of connector line and `"fill"` defines the color of connector arrow.
 
 ```
 'connector': {

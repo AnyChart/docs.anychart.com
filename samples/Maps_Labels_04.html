@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Maps Labels 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See https://docs.anychart.com/Maps/Map_Projections
+
+  var map = anychart.map();
+  var data = [
+    {'id': 'US.MA', 'value': 0},
+    {'id': 'US.MN', 'value': 1},
+    {'id': 'US.MT', 'value': 2},
+    {'id': 'US.ND', 'value': 3},
+    {'id': 'US.HI', 'value': 4},
+    {'id': 'US.ID', 'value': 5},
+    {'id': 'US.WA', 'value': 6},
+    {'id': 'US.AZ', 'value': 7},
+    {'id': 'US.CA', 'value': 8},
+    {'id': 'US.CO', 'value': 9},
+    {'id': 'US.NV', 'value': 10},
+    {'id': 'US.NM', 'value': 11},
+    {'id': 'US.OR', 'value': 12},
+    {'id': 'US.UT', 'value': 13},
+    {'id': 'US.WY', 'value': 14},
+    {'id': 'US.AR', 'value': 15},
+    {'id': 'US.IA', 'value': 16},
+    {'id': 'US.KS', 'value': 17},
+    {'id': 'US.MO', 'value': 18},
+    {'id': 'US.NE', 'value': 19},
+    {'id': 'US.OK', 'value': 20},
+    {'id': 'US.SD', 'value': 21},
+    {'id': 'US.LA', 'value': 22},
+    {'id': 'US.TX', 'value': 23},
+    {'id': 'US.CT', 'value': 24},
+    {'id': 'US.NH', 'value': 25},
+    {'id': 'US.RI', 'value': 26},
+    {'id': 'US.VT', 'value': 27},
+    {'id': 'US.AL', 'value': 28},
+    {'id': 'US.FL', 'value': 29},
+    {'id': 'US.GA', 'value': 30},
+    {'id': 'US.MS', 'value': 31},
+    {'id': 'US.SC', 'value': 32},
+    {'id': 'US.IL', 'value': 33},
+    {'id': 'US.IN', 'value': 34},
+    {'id': 'US.KY', 'value': 35},
+    {'id': 'US.NC', 'value': 36},
+    {'id': 'US.OH', 'value': 37},
+    {'id': 'US.TN', 'value': 38},
+    {'id': 'US.VA', 'value': 39},
+    {'id': 'US.WI', 'value': 40},
+    {'id': 'US.WV', 'value': 41},
+    {'id': 'US.DE', 'value': 42},
+    {'id': 'US.MD', 'value': 43},
+    {'id': 'US.NJ', 'value': 44},
+    {'id': 'US.NY', 'value': 45},
+    {'id': 'US.PA', 'value': 46},
+    {'id': 'US.ME', 'value': 47},
+    {'id': 'US.MI', 'value': 48},
+    {'id': 'US.AK', 'value': 49}
+    ];
+
+  map.geoData("anychart.maps.united_states_of_america");
+
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Set the overlapping mode for the whole map</span>');
+
+  // set the series
+  var series = map.choropleth(data);
+  // enable labels
+  series.labels(true);
+  labels = series.labels();
+    
+  // labels setting
+  labels.fontColor('black');
+  labels.fontSize("10px");
+  labels.offsetY(-10);
+
+  // set the overlapping mode
+  map.overlapMode(false);
+  // the following line means the same as the line above
+  // map.overlapMode("no-overlap");
+
+  // set the container
+  map.container('container');
+  map.draw();
+});
+</script>
+</body>
+</html>

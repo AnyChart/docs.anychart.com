@@ -1,109 +1,76 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-
-  // set stage
-  stage = anychart.graphics.create("container");
-
-  // data
-  var data = anychart.data.set([
-    ["2000", 10048, 2600, 3200, 2159, 2089],
-    ["2001", 10938, 2367, 1989, 2383, 4199],
-    ["2002", 9989, 2156, 2399, 2867, 2567],
-    ["2003", 10226, 2398, 2225, 3010, 2593],
-    ["2004", 11004, 2851, 3007, 2805, 2341],
-    ["2005", 10934, 3400, 2105, 2563, 2866],
-    ["2006", 11275, 2878, 2933, 3561, 1903],
-    ["2007", 11945, 2959, 3855, 3109, 2022],
-    ["2008", 12245, 4001, 2156, 3928, 2160],
-    ["2009", 12056, 1995, 2057, 4902, 3102],
-    ["2010", 11734, 2584, 3166, 3101, 2883],
-    ["2011", 12337, 3106, 2845, 2933, 3453],
-    ["2012", 12761, 3296, 2655, 3144, 3666],
-    ["2013", 13390, 2611, 4194, 3206, 3379],
-    ["2014", 13818, 3000, 2599, 4107, 4112],
-    ["2015", 13188, 3199, 2564, 3118, 4307]
-  ]);
-
-  // map data for the each series
-  var dataMapping = data.mapAs({x: [0], value: [1]});
-
-
-  var pieTitle = "Sales Persons Share";
-
-  // chart type
-  var chart = anychart.column();
-
-  // set data
-  var series = chart.column(dataMapping); 
-
-  // chart title
-  var title = chart.title();
-  title.useHtml(true);
-  title.text("<span style=\"color:#545f69; font-size: 18px;\">Sales volume</span><br><span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
-
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
-
-  // enable legend
-  chart.legend(false);
-
-  series.select([0]);
-
-  // switching the select mode to multi
-  var interactivity = chart.interactivity();
-  interactivity.selectionMode("singleSelect");
-
-  chart.bounds("0","0", "50%", "100%");
-
-  var dataRow = data.row(0);
-  var pieDataSet = anychart.data.set([
-    {x: "John", value: dataRow[2]},
-    {x: "James", value: dataRow[3]},
-    {x: "Peter", value: dataRow[4]},
-    {x: "Mattew", value: dataRow[5]}
-  ]);
-  var pieSubTitle = "\nYear "+ dataRow[0];
-
-  var pie = anychart.pie(pieDataSet);
-  pie.title(pieTitle + pieSubTitle);
-
-  chart.listen("pointClick", function(evt){
-    var ind = evt.pointIndex;
-
-    dataRow = data.row(ind);
-    pieDataSet.data([
-      {x: "John", value: dataRow[2]},
-      {x: "James", value: dataRow[3]},
-      {x: "Peter", value: dataRow[4]},
-      {x: "Mattew", value: dataRow[5]}
-    ]);
-    pieSubTitle = "\nYear: "+ dataRow[0];
-
-        pie.data(pieDataSet);
-        pie.title(pieTitle + pieSubTitle);
-    });
-
-  pie.bounds("50%", 0, "50%", "100%");
-
-  // draw
-  chart.container(stage);
-  chart.draw();
-  pie.container(stage);
-  pie.draw();
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Interactivity 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+// data set
+var data = [
+    {x:"2000", value: 10048, qtrBreakdown: [["Q1", 761], ["Q2", 530], ["Q3", 890], ["Q4", 979]]},
+    {x:"2001", value: 10938, qtrBreakdown: [["Q1", 886], ["Q2", 580], ["Q3", 990], ["Q4", 997]]},
+    {x:"2002", value: 9989,  qtrBreakdown: [["Q1", 832], ["Q2", 740], ["Q3", 912], ["Q4", 850]]},
+    {x:"2003", value: 10226, qtrBreakdown: [["Q1", 904], ["Q2", 912], ["Q3", 914], ["Q4", 899]]},
+    {x:"2004", value: 11004, qtrBreakdown: [["Q1", 886], ["Q2", 980], ["Q3", 109], ["Q4", 812]]},
+    {x:"2005", value: 10934, qtrBreakdown: [["Q1", 902], ["Q2", 867], ["Q3", 830], ["Q4", 993]]},
+    {x:"2006", value: 11275, qtrBreakdown: [["Q1", 104], ["Q2", 839], ["Q3", 854], ["Q4", 993]]},
+    {x:"2007", value: 11945, qtrBreakdown: [["Q1", 855], ["Q2", 103], ["Q3", 982], ["Q4", 100]]},
+    {x:"2008", value: 12245, qtrBreakdown: [["Q1", 934], ["Q2", 982], ["Q3", 973], ["Q4", 999]]},
+    {x:"2009", value: 12056, qtrBreakdown: [["Q1", 134], ["Q2", 873], ["Q3", 109], ["Q4", 903]]},
+    {x:"2010", value: 11734, qtrBreakdown: [["Q1", 928], ["Q2", 103], ["Q3", 793], ["Q4", 887]]},
+    {x:"2011", value: 12337, qtrBreakdown: [["Q1", 934], ["Q2", 982], ["Q3", 973], ["Q4", 124]]},
+    {x:"2012", value: 12761, qtrBreakdown: [["Q1", 982], ["Q2", 965], ["Q3", 100], ["Q4", 183]]},
+    {x:"2013", value: 13390, qtrBreakdown: [["Q1", 182], ["Q2", 110], ["Q3", 995], ["Q4", 999]]},
+    {x:"2014", value: 13818, qtrBreakdown: [["Q1", 400], ["Q2", 507], ["Q3", 380], ["Q4", 620]]},
+    {x:"2015", value: 13188, qtrBreakdown: [["Q1", 156], ["Q2", 120], ["Q3", 100], ["Q4", 890]]}
+];
+
+// create and configure chart
+chart = anychart.column();
+chart.legend(true);
+chart.tooltip().title(false).separator(false);
+chart.tooltip().format("{%x}: {%value}");
+
+// create column series on the main chart
+chart.column(data).name("ACME Corp. sales");
+
+// chart titles and settings
+chart.title('Sales volume: ACME Corp.');
+
+chart.listen("pointClick", function(e){
+  var x = e.point.get('x');
+  var drillData = e.point.get('qtrBreakdown');
+  chart.removeAllSeries();  
+  if (drillData!==undefined) {
+    chart.column(drillData).name(x);
+  } else {
+    chart.column(data).name("ACME Corp. sales");
+  }
+});
+
+// draw charts
+chart.container("container").draw();
+});
+</script>
 </body>
 </html>

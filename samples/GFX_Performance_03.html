@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GFX Performance 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/graphics.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="renderButton" onclick="render()">Render</button>
+<div id="container"></div>
+<script>
+stage = acgraph.create("container");
+
+var start;
+var finish;
+// a layer for green squares to be reused each new generation
+var rectLayer = stage.layer();
+var labelBg = stage.rect();
+var label = stage.text(130, 130);
+
+stage.listen("renderstart", function (){
+  start = (new Date()).getTime();
+});
+
+stage.listen("renderfinish", function (){
+
+  finish = (new Date()).getTime();
+
+  label.text((finish - start) + "ms");
+  var labelBounds = label.getBounds();
+  
+  labelBg
+    .setX((labelBounds.left)-20)
+    .setY((labelBounds.top)+20)
+    .setWidth(labelBounds.width+40)
+    .setHeight(labelBounds.height-40)
+    .fill("#fff")
+    .stroke("#000")
+    .cursor("pointer");
+  label.zIndex(1000000);
+  label.disablePointerEvents(true);
+  labelBg.zIndex(1000000);
+});
+
+// render rectangles
+function render(){
+ 
+  // clear the layer
+  rectLayer.removeChildren();
+
+  stage.suspend();
+
+  for (var i = 0; i < 500; i++) {
+    var left = Math.random() * 300;
+    var qwer = Math.random() * 300;
+    var rect = stage.rect(left, qwer, 10, 10);
+    rect.fill('green');
+  }
+
+  stage.resume();
+};
+</script>
+</body>
+</html>

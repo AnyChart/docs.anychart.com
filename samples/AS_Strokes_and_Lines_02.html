@@ -1,16 +1,32 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Strokes and Lines 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
 
   // chart type
-  chart = anychart.line();
+  var chart = anychart.line();
 
   // set chart title and adjust it
   var title = chart.title();
@@ -29,7 +45,7 @@
   });
 
   // data
-  var data = anychart.data.set([
+  var data =[
     ["Jan", 34],
     ["Feb", 44],
     ["Mar", 48],
@@ -42,30 +58,28 @@
     ["Oct", 45],
     ["Nov", 39],
     ["Dec", 23]
-  ]);
+  ];
 
   // set data into series
   var series = chart.line(data);
 
   // set chart stroke color, thickness dash
   series.stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
-  series.hoverStroke({color: "#BBDA00", dash: "4 3", thickness: 3});
-   series.name("dashed stroke");
+  series.hovered().stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
+  series.name("dashed stroke");
 
   // adjust markers of a series
   var markers = series.markers();
   markers.enabled(true);
   markers.fill("#BBDA00");
   markers.stroke("2 white");
-  var hoverMarkers = series.hoverMarkers();
+  var hoverMarkers = series.hovered().markers();
   hoverMarkers.fill("darkred");
   hoverMarkers.stroke("2 white");
 
   // adjust tooltip
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
-    return this.x + ", " + this.value + "%";
-  });
+  tooltip.format("{%x}, {%value}%");
   tooltip.fontColor("white");
 
   var tooltipBackground = series.tooltip().background();
@@ -73,7 +87,6 @@
   tooltipBackground.stroke("white");
   tooltipBackground.cornerType("round");
   tooltipBackground.corners(4);
-
 
   // adjust y axis
   var yAxis = chart.yAxis();
@@ -83,9 +96,7 @@
   var yLabels = chart.yAxis().labels();
   yLabels.fontColor("white");
   yLabels.fontWeight(900);
-  yLabels.textFormatter(function() {
-    return this.value + " %";
-  });
+  yLabels.format("{%value}%");
 
   // set additional y axis hide dashed right stroke of a grid
   var yAxis1 = chart.yAxis(1);
@@ -97,37 +108,28 @@
   // adjust x axis
   var xAxis = chart.xAxis();
   xAxis.stroke("white");
-  var xLabels = chart.xAxis().labels();
+  var xLabels = xAxis.labels();
   xLabels.fontColor("white");
   xLabels.fontWeight(900);
   xLabels.height(30);
   xLabels.vAlign("middle");
 
-
   // adjust grid
-  var grid = chart.grid();
-  grid.enabled(true);
-  grid.stroke({color: "white", dash: "3 5"});
-  grid.evenFill(null);
-  grid.oddFill("black 0.1");
-  grid.layout("vertical");
-  var grid1 = chart.grid(1);
-  grid1.enabled(true);
-  grid1.stroke("white");
-  grid1.layout("horizontal");
+  chart.xGrid().enabled(true);
+  chart.xGrid().stroke({color: "white", dash: "3 5"});
+  chart.xGrid().palette([null, "black 0.1"]);
+  
+  chart.yGrid().enabled(true);
+  chart.yGrid().stroke("white");
 
   // adjust y scale
-  var yScale = chart.yScale();
-  yScale.maximum(100);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(20);
+  chart.yScale().maximum(100);
+  chart.yScale().ticks().interval(20);
 
   // draw
   chart.container("container");
   chart.draw();
-});</script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
+});
+</script>
 </body>
 </html>

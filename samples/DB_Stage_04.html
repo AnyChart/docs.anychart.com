@@ -1,195 +1,174 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta name="x-cat-tags" content="anyChart"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function () {
-
-	// set stage
-	stage = anychart.graphics.create("container");
-
-	// set layers
-
-	//for the Winter Sales chart
-	var layer_1 = stage.layer();
-	layer_1.zIndex(80);
-	//for the Spring Sales chart
-	var layer_2 = stage.layer();
-	//for the Summer Sales chart
-	var layer_3 = stage.layer();
-	//for the Fall Sales chart
-	var layer_4 = stage.layer();
-	//for the buttons
-	var layer_5 = stage.layer();
-	layer_5.zIndex(100);
-
-	// set data for the Winter Sales
-	var data_1 = anychart.data.set([
-		{x: "Ice-Cream", value: 5000, fill:"#00FFFF"},
-		{x: "Sweets", value: 10000, fill:"#0DD9E6"},
-		{x: "Chocolates", value: 19000, fill:"#1AB2CC"},
-		{x: "Hot chocolate", value: 16000, fill:"#268CB2"},
-		{x: "Cookies", value: 9000, fill:"#336699"}
-	]);
-
-	// chart type
-	var chart_1 = anychart.column();
-	chart_1.title("Winter Sales");
-	chart_1.padding(50, 0, 0, 0);
-	var series_1 = chart_1.column(data_1);
-	series_1.fill(data_1);
-	series_1.stroke(null);
-
-	// draw
-	chart_1.container(layer_1).draw();
-
-
-	// set data for the Spring Sales
-	var data_2 = anychart.data.set([
-		{x: "Ice-Cream", value: 10000, fill:"#FFCC99"},
-		{x: "Sweets", value: 12000, fill:"#F2BFB2"},
-		{x: "Chocolates", value: 13000, fill:"#E6B2CC"},
-		{x: "Hot chocolate", value: 6000, fill:"#D9A6E6"},
-		{x: "Cookies", value: 3000, fill:"#CC99FF"}
-	]);
-
-	// set series data
-	var chart_2 = anychart.column();
-	chart_2.title("Spring Sales");
-	chart_2.padding(50, 0, 0, 0);
-	var series_2 = chart_2.column(data_2);
-	series_2.stroke(null);
-
-	// draw
-	chart_2.container(layer_2).draw();
-
-
-	//set data for the Summer Sales
-	var data_3 = anychart.data.set([
-		{x: "Ice-Cream", value: 16350, fill:"#CCFF33"},
-		{x: "Sweets", value: 8930, fill:"#99EF50"},
-		{x: "Chocolates", value: 3400, fill:"#66DF6C"},
-		{x: "Hot chocolate", value: 2780, fill:"#33CF88"},
-		{x: "Cookies", value: 2000, fill:"#00bfa5"}
-	]);
-
-	// set series data
-	var chart_3 = anychart.column();
-	chart_3.title("Summer Sales");
-	chart_3.padding(50, 0, 0, 0);
-	var series_3 = chart_3.column(data_3);
-	series_3.stroke(null);
-
-	// draw
-	chart_3.container(layer_3).draw();
-
-	var data_4 = anychart.data.set([
-		{x: "Ice-Cream", value: 5000, fill:"#ffa000"},
-		{x: "Sweets", value: 7000, fill:"#DF7800"},
-		{x: "Chocolates", value: 8440, fill:"#C05000"},
-		{x: "Hot chocolate", value: 9800, fill:"#A02800"},
-		{x: "Cookies", value: 10250, fill:"#800000"}
-	]);
-
-
-	// set series data
-	var chart_4 = anychart.column();
-	chart_4.title("Fall Sales");
-	chart_4.padding(50, 0, 0, 0);
-	var series_4 = chart_4.column(data_4);
-	series_4.stroke(null);
-
-	// draw
-	chart_4.container(layer_4).draw();
-
-	layer_1.remove();
-	layer_2.remove();
-	layer_3.remove();
-	layer_4.remove();
-	layer_5.remove();
-
-
-	//buttons
-	var container = document.getElementById("container");
-	var b1 = document.createElement("button");
-	b1.innerHTML = "Winter Sales";
-	container.appendChild(b1);
-
-	b1.style.position = "absolute";
-	b1.style.top = "10px";
-	b1.style.left = "10px";
-	b1.style.width = "120px";
-
-	b1.onclick = function() {
-		stage.suspend();
-		stage.addChild(layer_1);
-		layer_2.remove();
-		layer_3.remove();
-		layer_4.remove();
-		stage.resume();
-	};
-
-	var b2 = document.createElement("button");
-	b2.innerHTML = "Spring Sales";
-	container.appendChild(b2);
-
-	b2.style.position = "absolute";
-	b2.style.top = "10px";
-	b2.style.left = "140px";
-	b2.style.width = "120px";
-
-	b2.onclick = function() {
-		stage.suspend();
-		stage.addChild(layer_2);
-		layer_1.remove();
-		layer_3.remove();
-		layer_4.remove();
-		stage.resume();
-	};
-
-	var b3 = document.createElement("button");
-	b3.innerHTML = "Summer Sales";
-	container.appendChild(b3);
-
-	b3.style.position = "absolute";
-	b3.style.top = "10px";
-	b3.style.left = "280px";
-	b3.style.width = "120px";
-
-	b3.onclick = function() {
-		stage.suspend();
-		stage.addChild(layer_3);
-		layer_1.remove();
-		layer_2.remove();
-		layer_4.remove();
-		stage.resume();
-	};
-
-	var b4 = document.createElement("button");
-	b4.innerHTML = "Autumn Sales";
-	container.appendChild(b4);
-
-	b4.style.position = "absolute";
-	b4.style.top = "10px";
-	b4.style.left = "420px";
-	b4.style.width = "120px";
-
-	b4.onclick = function() {
-		stage.suspend();
-		stage.addChild(layer_4);
-		layer_1.remove();
-		layer_2.remove();
-		layer_3.remove();
-		stage.resume();
-	};
-
-});</script>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="DB Stage 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+    </style>
 </head>
 <body>
-<div id="container" style="width: 100%; height: 100%"></div>
+<button onclick="winter()">Winter Sales</button>
+<button onclick="spring()">Spring Sales</button>
+<button onclick="summer()">Summer Sales</button>
+<button onclick="autumn()">Autumn Sales</button>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // set stage
+    stage = anychart.graphics.create("container");
+
+    // set layers
+
+    //for the Winter Sales chart
+    layer_1 = stage.layer();
+    layer_1.zIndex(80);
+    //for the Spring Sales chart
+    layer_2 = stage.layer();
+    //for the Summer Sales chart
+    layer_3 = stage.layer();
+    //for the Fall Sales chart
+    layer_4 = stage.layer();
+    //for the buttons
+    layer_5 = stage.layer();
+    layer_5.zIndex(100);
+
+    // set data for the Winter Sales
+    var data_1 = [
+      {x: "Ice-Cream", value: 5000, fill:"#00FFFF"},
+      {x: "Sweets", value: 10000, fill:"#0DD9E6"},
+      {x: "Chocolates", value: 19000, fill:"#1AB2CC"},
+      {x: "Hot chocolate", value: 16000, fill:"#268CB2"},
+      {x: "Cookies", value: 9000, fill:"#336699"}
+    ];
+
+    // chart type
+    var chart_1 = anychart.column();
+    chart_1.title("Winter Sales");
+    chart_1.padding(50, 0, 0, 0);
+    var series_1 = chart_1.column(data_1);
+    series_1.fill(data_1);
+    series_1.stroke(null);
+
+    // draw
+    chart_1.container(layer_1).draw();
+
+    // set data for the Spring Sales
+    var data_2 = [
+      {x: "Ice-Cream", value: 10000, fill:"#FFCC99"},
+      {x: "Sweets", value: 12000, fill:"#F2BFB2"},
+      {x: "Chocolates", value: 13000, fill:"#E6B2CC"},
+      {x: "Hot chocolate", value: 6000, fill:"#D9A6E6"},
+      {x: "Cookies", value: 3000, fill:"#CC99FF"}
+    ];
+
+    // set series data
+    var chart_2 = anychart.column();
+    chart_2.title("Spring Sales");
+    chart_2.padding(50, 0, 0, 0);
+    var series_2 = chart_2.column(data_2);
+    series_2.stroke(null);
+
+    // draw
+    chart_2.container(layer_2).draw();
+
+    //set data for the Summer Sales
+    var data_3 = [
+      {x: "Ice-Cream", value: 16350, fill:"#CCFF33"},
+      {x: "Sweets", value: 8930, fill:"#99EF50"},
+      {x: "Chocolates", value: 3400, fill:"#66DF6C"},
+      {x: "Hot chocolate", value: 2780, fill:"#33CF88"},
+      {x: "Cookies", value: 2000, fill:"#00bfa5"}
+    ];
+
+    // set series data
+    var chart_3 = anychart.column();
+    chart_3.title("Summer Sales");
+    chart_3.padding(50, 0, 0, 0);
+    var series_3 = chart_3.column(data_3);
+    series_3.stroke(null);
+
+    // draw
+    chart_3.container(layer_3).draw();
+
+    var data_4 = [
+      {x: "Ice-Cream", value: 5000, fill:"#ffa000"},
+      {x: "Sweets", value: 7000, fill:"#DF7800"},
+      {x: "Chocolates", value: 8440, fill:"#C05000"},
+      {x: "Hot chocolate", value: 9800, fill:"#A02800"},
+      {x: "Cookies", value: 10250, fill:"#800000"}
+    ];
+
+
+    // set series data
+    var chart_4 = anychart.column();
+    chart_4.title("Fall Sales");
+    chart_4.padding(50, 0, 0, 0);
+    var series_4 = chart_4.column(data_4);
+    series_4.stroke(null);
+
+    // draw
+    chart_4.container(layer_4).draw();
+
+    layer_1.remove();
+    layer_2.remove();
+    layer_3.remove();
+    layer_4.remove();
+    layer_5.remove();
+});
+
+function winter() {
+  stage.suspend();
+  stage.addChild(layer_1);
+  layer_2.remove();
+  layer_3.remove();
+  layer_4.remove();
+  stage.resume();
+};
+
+function spring() {
+  stage.suspend();
+  stage.addChild(layer_2);
+  layer_1.remove();
+  layer_3.remove();
+  layer_4.remove();
+  stage.resume();
+};
+
+function summer() {
+  stage.suspend();
+  stage.addChild(layer_3);
+  layer_1.remove();
+  layer_2.remove();
+  layer_4.remove();
+  stage.resume();
+};
+
+function autumn() {
+  stage.suspend();
+  stage.addChild(layer_4);
+  layer_1.remove();
+  layer_2.remove();
+  layer_3.remove();
+  stage.resume();
+};
+</script>
 </body>
 </html>
