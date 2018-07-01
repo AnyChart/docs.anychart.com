@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>    
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-ui.min.js"></script>    
     
     <style>
         html, body, #container {
@@ -55,10 +55,14 @@ anychart.onDocumentReady(function () {
 
     // create a stock chart
     var chart = anychart.stock();
+    chart.right(50);
 
     // create two plots
     var plot_1 = chart.plot(0);
     var plot_2 = chart.plot(1);
+
+    // add an extra axis
+    plot_1.yAxis(1, {orientation: 'right'});
 
     // create two series: line and ohlc
     plot_1.line(mapping);
@@ -70,9 +74,7 @@ anychart.onDocumentReady(function () {
     plot_1.crosshair().xLabel(true);
   
     // set the text of the y-labels on both plots
-    chart.crosshair().yLabel().format(function (){
-      return this.value + " $";
-    });
+    chart.crosshair().yLabel().format("${%Value}");
 
     /* configure the appearance of the labels
     on the first plot */
@@ -82,11 +84,16 @@ anychart.onDocumentReady(function () {
       fill: "white",
       stroke: "#64b5f6"
     });
-    crosshair_1.yLabel().fontColor("#64b5f6");
-    crosshair_1.yLabel().background({
+
+    // configure a label on the default axis
+    crosshair_1.yLabel(0).fontColor("#64b5f6");
+    crosshair_1.yLabel(0).background({
       fill: "white",
       stroke: "#64b5f6"
     });
+
+    // create an extra label on extra axis
+    crosshair_1.yLabel(1).axisIndex(1);
 
     /* configure the appearance of the labels
     on the second plot */
@@ -94,11 +101,11 @@ anychart.onDocumentReady(function () {
     crosshair_2.xLabel().fontColor("#ffa000");
     crosshair_2.xLabel().background({
       fill: "white",
+      fill: "white",
       stroke: "#ffa000"
     });
     crosshair_2.yLabel().fontColor("#ffa000");
     crosshair_2.yLabel().background({
-      fill: "white",
       stroke: "#ffa000"
     });
 
