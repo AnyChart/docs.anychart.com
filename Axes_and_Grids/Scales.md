@@ -150,6 +150,66 @@ Take a look at the sample and see how to enable and disable this option:
 
 {sample}AGST\_Scales\_08\_1{sample}
 
+## Array of Ticks
+
+If you need deep customization of ticks you can access and change the number of position of ticks manually. To access the array of ticks use the {api:anychart.scales.ScatterTicks#get}get(){api} method. 
+
+**Note:** to get the proper array of calculated ticks use the {api:anychart.scales.ScatterTicks#get}get(){api} method after chart *"draw"* event.
+
+To set the array of ticks use the {api:anychart.scales.ScatterTicks#set}set(){api} method.
+
+Here is a sample that makes use of both methods to overhaul the set of ticks:
+
+```
+// get the array of generated ticks
+ticksArray = chart.yScale().ticks().get();
+// modify the array of ticks
+if (ticksArray.length > 2) ticksArray.pop();
+// set the array of ticks
+chart.yScale().ticks().set(ticksArray);
+```
+
+And shows how to load some precalculated array:
+
+```
+// set a fixed array as ticks
+var ticksArray = [0, 1, 2, 2.8];
+chart.yScale().ticks().set(ticksArray);
+```
+
+{sample}AGST\_Scales\_08\_2{sample}
+
+Another example of using this feature of the scale is shown below: the data that is set to chart can be sorted, read and then used to fill the array of ticks and axis markers to highlight the values:
+
+```
+// get raw data
+dataSet = anychart.data.set([
+    {x: "Soprano", value: 1.1},
+    {x: "Alto", value: 0.1},
+    {x: "Tenor", value: 2.5},
+    {x: "Bass", value: 1.8}
+]);
+
+// create a sorted view
+sortedData = dataSet.mapAs().sort('value', 'asc');
+
+// create a chart using sorted data
+chart = anychart.column(sortedData);
+
+// create an empty array
+var ticksArray = [];
+
+// get data point value from the data set
+// and populate the array
+for (i=0;i < sortedData.getRowsCount();i++){
+  ticksArray[i] = sortedData.get(i, 'value');
+}
+// set the populated array as ticks array
+chart.yScale().ticks().set(ticksArray);
+```    
+
+{sample}AGST\_Scales\_08\_3{sample}
+
 ## Minimum and Maximum Gap
 
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
