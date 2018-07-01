@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-polar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/develop/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
@@ -29,7 +29,7 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {x: 0, value: 500},
-      {x: 180, value: 200}
+      {x: 180, value: 0}
     ];
 
     // create a chart
@@ -41,8 +41,12 @@ anychart.onDocumentReady(function () {
     // set the maximum value of the x-scale
     chart.xScale().maximum(360);
 
+    // configure Y scale
+    chart.yScale().minimum(0).maximum(600);
+    chart.yScale().ticks().interval(100);
+
     // set the chart title
-    chart.title("[Polar Plot: Scales]");
+    chart.title("Polar Plot: Standard Polar Scales");
 
     // set the container id
     chart.container("container");

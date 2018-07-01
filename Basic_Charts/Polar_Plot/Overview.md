@@ -104,11 +104,42 @@ chart.xAxis().stroke({
 
 To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) section.
 
-```
+Polar charts have one special setting that changes how polar chart behave: by default polar plot is an implementations of a standard polar coordinate system where both x and y coordinates are considered numbers, this mode is usually used for mathematical purposes.
+
+In this case you usually need to set minium and maximum values, as well as tick intervals:
 
 ```
+// set the maximum value of the x-scale
+chart.xScale().maximum(360);
+
+// configure Y scale
+chart.yScale().minimum(0).maximum(600);
+chart.yScale().ticks().interval(100);
+```
+
+Here is a sample of such plot with a cardioid:
 
 {sample}BCT\_Polar\_Chart\_05{sample}
+
+But in some data visualization cases it may be useful to work with polar chart is a slightly different way that resembles, in a way, [Radar Charts](../Radar_Plot). This is a case when X coordinates are texts, not numbers. To turn this mode of use the {api:anychart.charts.Polar#sortPointsByX}sortPointsByX(){api} method and set X-scale type to ordinal:
+
+```
+// set the type of the x-scale
+chart.xScale("ordinal");
+
+// enable sorting points by x
+chart.sortPointsByX(true);
+```
+
+With these setting you can use:
+- [Polygon Chart](Polygon_Chart)
+- [Polyline Chart](Polyline_Chart)
+- [Column Chart](Column_Chart)
+- [Range Column Chart](Range_Column_Chart)
+
+And create charts like this one:
+
+{sample}BCT\_Polar\_Chart\_05\_1{sample}
 
 ## Grids
 
