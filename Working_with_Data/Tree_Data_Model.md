@@ -341,7 +341,7 @@ treeData.getChildAt(0).removeChildAt(lastChild);
 To search for an item, use the following methods of the {api:anychart.data.Tree}anychart.data.Tree{api} class:
 * {api:anychart.data.Tree#search}search(){api}
 * {api:anychart.data.Tree#searchItems}searchItems(){api}
-* {api:anychart.data.Tree#sfilter}filter(){api}
+* {api:anychart.data.Tree#filter}filter(){api}
 
 #### search()
 
@@ -537,7 +537,7 @@ Here is the full list of [events](../Common_Settings/Event_Listeners) that work 
 <tr><td>treeItemUpdate</td><td>item updated</td></tr>
 </table>
 
-Please note that you can not only [listen to events](../Common_Settings/Event_Listeners#listener_types), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
+Please note that you can not only [listen to events](../Common_Settings/Event_Listeners), but also stop or start dispatching them by calling the {api:anychart.data.Tree#dispatchEvents}dispatchEvents(){api} method with `true` or `false` as a parameter.
 
 In the sample below, there is a Gantt chart with the [editing mode](../Gantt_Chart/Live_Edit_UI_and_API) enabled: you can use the mouse to update items (change the position, duration, name, etc). Also, there is a button for [adding items](#adding). Even listeners are used to update the chart title whenever an item is updated or added:
 
