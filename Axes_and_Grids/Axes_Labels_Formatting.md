@@ -298,3 +298,63 @@ xAxis.overlapMode("allowOverlap");
 **Note**: overlapping is disabled by default. The sample below demonstrates x labels with overlapping allowed:
 
 {sample}AGST\_Labels\_Formatting\_17{sample}
+
+## Individual Settings
+
+In some cases when there is a need in deep customization you can use {api:anychart.core.ui.LabelsFactory#getLabel}getLabel{api} and {api:anychart.core.ui.LabelsFactory#getLabelsCount}getLabelsCount{api} methods to access individual labels and solve different tasks.
+
+**Note:** these methods work properly only after the full chart display. Use [Event listeners](../Common_Settings/Event_Listeners) or be sure you execute the code with these methods in proper tim.
+
+Here is how you can change the look of selected labels, in this sample the labels with values greater than data series average:
+
+```
+// wait until chart is displayed
+chart.listen('chartDraw', function () {
+  // get a number of labels on the Y axis
+  var count = chart.yAxis().labels().getLabelsCount();
+  // go to through all labels
+  for (var i = 0; i < count; i++) {
+    // get label object
+    var label = chart.yAxis().labels().getLabel(i);
+    // get value of the scale this label
+    value = chart.yAxis().scale().ticks().get()[i];
+    // get chart average
+    avg = chart.getSeries(0).getStat('average');
+    // if the value is greater
+    if (value > avg) {
+      label.fontColor("red");
+      label.background().enabled(true).stroke("black");
+      label.draw();
+    }
+  }
+});
+```
+
+{sample}AGST\_Labels\_Formatting\_18{sample}
+
+Here is how you can create even/odd colored axis labels:
+
+```
+// wait until chart display
+chart.listen('chartDraw', function () {
+    // get the number of labels
+    var count = chart.xAxis().labels().getLabelsCount();
+    // loop through labels
+    for (var i = 0; i < count; i++) {
+        // choose color
+        var color = i % 2 ? '#CD4A2D' : '#4C4C4C';
+        // color the label
+        var label = chart.xAxis().labels().getLabel(i);
+        if (label) {
+            label.fontColor(color);
+            label.draw();
+        }
+    }
+});
+```
+
+{sample}AGST\_Labels\_Formatting\_19{sample}
+
+Or you can make axis labels interactive and change their look and content when user moves a mouse over them:
+
+{sample}AGST\_Labels\_Formatting\_20{sample}
