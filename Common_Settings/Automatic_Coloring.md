@@ -67,8 +67,8 @@ series.fill(coloringFunction);
 // custom coloring function
 function coloringFunction() {
 
-  // color all values above average
-  if (this.value > this.series.getStat('average')) return '#94353C';
+  // color the maximal value
+  if (this.value == this.series.getStat('seriesMax')) return '#94353C';
 
   // color elements depending on the argument
   var x = this.x;
