@@ -38,18 +38,46 @@ You can configure Rising and Falling colors for easier tracking the trend chart 
 
 These methods can be applied to [OHLC](../Basic_Charts/OHLC_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), as well as [Lines](../Basic_Charts/Line_Chart), [Splines](../Basic_Charts/Spline_Chart), and others, even [Columns](../Basic_Charts/Column_Chart) or [Stick](../Basic_Charts/Stick_Chart).
 
+```
+// set rising / falling colors
+series.risingStroke('#3ba158');
+series.risingFill('#3ba158');
+
+series.fallingStroke('#fa6b71');
+series.fallingFill('#fa6b71');
+```
+
 Take a look at the sample and change the series type to see how it works:
 
 {sample}CS\_Auto\_Color\_03{sample}
 
-## Bubble
+## Coloring Functions
 
-*Coming soon.*
+If you want to color points depending on the value in your completely own way you can set color as functions and use values as the way to decide what the color should be.
 
-## Color Scale
+Here is a sample of column chart that does that for column chart:
 
-*Coming soon.*
+```
+// create a series
+series = chart.column(data);
 
-## Manual
+// set custom coloring functions
+series.fill(coloringFunction);
 
-*Coming soon.*
+// custom coloring function
+function coloringFunction() {
+
+  // color all values above average
+  if (this.value > this.series.getStat('average')) return '#94353C';
+
+  // color elements depending on the argument
+  var x = this.x;
+  if  ((x == 'Jan') || (x == 'Feb') || (x == 'Dec')) return '#B2E3E8';
+  if  ((x == 'Jul') || (x == 'Jun') || (x == 'Aug')) return '#D94330';
+
+  // get the default otherwise
+  return this.sourceColor;
+}
+```
+
+{sample}CS\_Auto\_Color\_04{sample}

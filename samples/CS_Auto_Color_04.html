@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Auto Color 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-2979-condition-filling/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2979-condition-filling/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-2979-condition-filling/js/anychart-ui.min.js"></script>
+       
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      ["Jan", 10],
+      ["Feb", 15],
+      ["Mar", 18],
+      ["Apr", 23],
+      ["May", 10],
+      ["Jun", 5],
+      ["Jul", 8],
+      ["Aug", 3],
+      ["Sep", -10],
+      ["Oct", -15],
+      ["Nov", 18],
+      ["Dec", 23]
+    ];
+
+    // set the chart type
+    var chart = anychart.column();
+
+    // set the series type and data
+    series = chart.column(data);
+
+    // set custom coloring functions
+    series.fill(coloringFunction);
+    series.stroke('1 Black');
+
+    // set the chart title
+    chart.title("Rising Falling Coloring");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// custom color function
+function coloringFunction() {
+
+  // color all values above average
+  if (this.value > this.series.getStat('average')) return '#94353C';
+
+  // color elements depending on the argument
+  var x = this.x;
+  if  ((x == 'Jan') || (x == 'Feb') || (x == 'Dec')) return '#B2E3E8';
+  if  ((x == 'Jul') || (x == 'Jun') || (x == 'Aug')) return '#D94330';
+
+  // get the default otherwise
+  return this.sourceColor;
+}
+</script>
+</body>
+</html>
