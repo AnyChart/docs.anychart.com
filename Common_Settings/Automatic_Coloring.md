@@ -28,15 +28,19 @@ In the next sample you can find area and line series with custom negative and po
 
 You can customize the thresholds where positive turns to negative using the {api:anychart.core.stock.Plot#baseline}baseline(){api} method. In the following sample baseline is set to custom value from the start and you can use slider to change it on-the-fly.
 
+Notice that we are dealing with [AnyStock](../Stock_Charts/Overview) here and everything works just the same way.
+
 {sample}CS\_Auto\_Color\_02{sample}
-
-## High Low
-
-*Coming soon.*
 
 ## Rising Falling
 
-*Coming soon.*
+You can configure Rising and Falling colors for easier tracking the trend chart follows, it is done using {api:anychart.core.StateSettings#risingStroke}risingStroke(){api}, {api:anychart.core.StateSettings#risingFill}risingFill(){api}, {api:anychart.core.StateSettings#risingHatchFill}risingHatchFill(){api}, {api:anychart.core.StateSettings#fallingStroke}fallingStroke(){api}, {api:anychart.core.StateSettings#fallingFill}fallingFill(){api}, and {api:anychart.core.StateSettings#fallingHatchFill}fallingHatchFill(){api} methods.
+
+These methods can be applied to [OHLC](../Basic_Charts/OHLC_Chart), [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart), as well as [Lines](../Basic_Charts/Line_Chart), [Splines](../Basic_Charts/Spline_Chart), and others, even [Columns](../Basic_Charts/Column_Chart) or [Stick](../Basic_Charts/Stick_Chart).
+
+Take a look at the sample and change the series type to see how it works:
+
+{sample}CS\_Auto\_Color\_03{sample}
 
 ## Bubble
 
