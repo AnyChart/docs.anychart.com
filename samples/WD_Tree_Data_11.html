@@ -81,12 +81,12 @@ anychart.onDocumentReady(function () {
 
     var dataGrid =  chart.dataGrid()
 
-    dataGrid.column(2).labels().format(function(item) {
-        return item.get("employee").firstName;
+    dataGrid.column(2).labels().format(function(e) {
+        return e.item.get("employee").firstName ? e.item.get("employee").firstName : '';
     });
 
-    dataGrid.column(3).labels().format(function(item) {
-        return item.get("employee").lastName;
+    dataGrid.column(3).labels().format(function(e) {
+        return e.item.get("employee").lastName ? e.item.get("employee").lastName  : '';
     });
 
     dataGrid.column(0).width(10);
