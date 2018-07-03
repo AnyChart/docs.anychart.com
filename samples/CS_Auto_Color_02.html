@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="AGST Labels Formatting 01"/>
+    <meta name="ac:name" content="CS Auto 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -12,21 +12,33 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        fieldset {
+            margin: 10px 0 0 10px;
+            border: 0;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
-<label for="rangeVal">Baseline:</label>
-<input type ="range" max="1000" min="-1000"
-    oninput="changeBaseline(this.value)"
-    step="1" name="rangeVal" id="rangeVal" value="250">
-</input>
-<em id="rangeValLabel" style="font-style: normal;"></em>
+<fieldset>
+    <label for="rangeVal">Baseline:</label>
+    <input type ="range" max="1000" min="-1000"
+        oninput="changeBaseline(this.value)"
+        step="1" name="rangeVal" id="rangeVal" value="250">
+    </input>
+    <em id="rangeValLabel" style="font-style: normal;"></em>
+</fieldset>
 <div id="container"></div>
 <script>
 var plot;
@@ -40,10 +52,12 @@ anychart.onDocumentReady(function () {
 
     plot = chart.plot();
 
-    // Set baseline value.
+    // set baseline value
     plot.baseline(250);
 
+    // create series
     var series = plot.area(mapping);
+    // configure negative / positive colors
     series.normal().negativeFill('#EAECC6');
     series.normal().fill('#2BC0E4');
     series.normal().negativeStroke('3 #EAECC6');
@@ -61,18 +75,24 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
+// function to change baseline on-the-fly
 function changeBaseline(value){
-  document.getElementById('rangeValLabel').innerHTML = value;
+  // change baseline
   plot.baseline(value);  
+  // update markers on the plot
   setMarkers(value);
+  // update label
+  document.getElementById('rangeValLabel').innerHTML = value;  
 }
 
+// function to set markers value
 function setMarkers(value){
     plot.lineMarker(0).value(value);
     plot.textMarker(0).text(value);
     plot.textMarker(0).value(value);
 }
 
+// function to get data
 function get_msft_daily_short_data() {
     return [
         ['2004-01-02', 27.58, 27.77, 27.33, 27.45, 444],

@@ -1,4 +1,3 @@
-{:index 3}
 # Exports
 
 ## Overview

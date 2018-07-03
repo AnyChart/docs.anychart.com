@@ -1,5 +1,3 @@
-{:index 5}
-
 # Localization
 
 ##Overview
