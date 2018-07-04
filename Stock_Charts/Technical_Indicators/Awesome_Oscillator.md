@@ -8,7 +8,7 @@ Mathematical description: [Awesome Oscillator (AO) Mathematical Description](Mat
 
 ## Adding indicator
 
-Heikin-Ashi indicator is added using {api:anychart.core.stock.Plot#ao}ao(){api} method. It requires a mapping with four fields: `"high"` and `"low"`.
+Awesome Oscillator indicator is added using {api:anychart.core.stock.Plot#ao}ao(){api} method. It requires a mapping with two fields: `"high"` and `"low"`.
 
 ```
 // create data table on loaded data
@@ -31,7 +31,7 @@ var ohlcSeries = plot_0.ohlc(mapping);
 var plot_1 = chart.plot(1);
 
 // create an Awesome Oscillator indicator
-var ha = plot_1.ha(mapping);
+var ao = plot_1.ao(mapping);
 ```
 
 Here is a live sample:
@@ -40,10 +40,10 @@ Here is a live sample:
 
 ## Indicator parameters
 
-There are four parameters a Heikin-Ashi indicator has, one of them is necessary - the mapping. The second parameter and third parameters set perod, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
+There are four parameters an Awesome Oscillator indicator has, one of them is necessary - the mapping. The second parameter and third parameters set perod, fourth - {api:anychart.enums.MovingAverageType}Moving Average Type{api}. The last parameter sets the series type. The following code sample demonstrates an Awesome Oscillator indicator with parameters set as default:
 
 ```
-var ha = plot.ha(mapping, 5, 34, "sma", "stick");
+var ao = plot.ao(mapping, 5, 34, "sma", "stick");
 ```
 
 The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
