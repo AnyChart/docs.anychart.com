@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Awesome Oscillator (AO) was created by Bill Williams. The Awesome Oscillator is an indicator used to measure market momentum. AO calculates the difference between a 34 Period and 5 Period Simple Moving Average. The Simple Moving Averages that are used are not calculated using closing price but rather each bar's midpoints. AO is generally used to affirm trends or to anticipate possible reversals. 
+The Awesome Oscillator (AO) was created by Bill Williams. The Awesome Oscillator is an indicator used to measure market momentum. The Awesome Oscillator indicator is a histogram, it is similar to the [MACD indicator](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) – displaying the market momentum of a recent number of periods compared to the momentum of a larger number of previous periods. AO calculates the difference between a 34 Period and 5 Period Simple Moving Average. The Simple Moving Averages that are used are not calculated using closing price but rather each bar's midpoints. AO is generally used to affirm trends or to anticipate possible reversals. If the AO histogram is crossing above the zero line that’s indicative of bullish momentum, reverse is true as well - when AO crosses below that’s indicative of bearish momentum.
 
 Mathematical description: [Awesome Oscillator (AO) Mathematical Description](Mathematical_Description#awesome_oscillator).
 
