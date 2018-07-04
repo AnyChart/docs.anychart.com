@@ -36,7 +36,7 @@ var ha = plot_1.ha(mapping);
 
 Here is a live sample:
 
-{sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_1{sample}
+{sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_01{sample}
 
 ## Indicator parameters
 
@@ -68,4 +68,4 @@ ao_2.fallingFill("#90a4ae");
 
 Live sample:
 
-{sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_2{sample}
+{sample}STOCK\_Technical\_Indicators\_Awesome\_Oscillator\_02{sample}
