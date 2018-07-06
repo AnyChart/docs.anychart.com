@@ -39,12 +39,12 @@ Here is a live sample:
 
 There are five parameters a Price Channel indicator has, one of them is necessary - the mapping.
 
-The second parameter sets the period, and the next three parameters allow you to set the series type of the upper, middle, and lower series.
+The second parameter sets the period, and the next three parameters allow you to set the series type of the middle and range series.
 
 The following code sample demonstrates a Price Channels indicator with parameters set as default:
 
 ```
-var priceChannels = plot.priceChannels(mapping, 20, "line", "line", "line");
+var priceChannels = plot.priceChannels(mapping, 20, "range-area", "line");
 ```
 
 ## Visualization
@@ -53,18 +53,16 @@ Vizualization of an indicator depends on the type of a series you display it wit
 
 ```
 // create and adjust a Price Channels indicator
-var priceChannels_0 = plot_0.priceChannels(mapping, 10, "line", "line", "line");
-priceChannels_0.lowerSeries().stroke("2 #00bfa5");
-priceChannels_0.upperSeries().stroke("2 #dd2c00");
+var priceChannels_0 = plot_0.priceChannels(mapping, 10);
 priceChannels_0.middleSeries().stroke("2 #ef6c00");
 priceChannels_0.rangeSeries().fill("#ffd54f 0.2");
 
 // create and adjust a Price Channels indicator
-var priceChannels_1 = plot_1.priceChannels(mapping, 10, "stepLine", "stepLine", "stepLine");
-priceChannels_1.lowerSeries().stroke("2 #00bfa5");
-priceChannels_1.upperSeries().stroke("2 #dd2c00");
+var priceChannels_1 = plot_1.priceChannels(mapping, 10, "step-line", "range-step-area");
 priceChannels_1.middleSeries().stroke("2 #64b5f6");
 priceChannels_1.rangeSeries().fill(null);
+priceChannels_1.rangeSeries().highStroke("2 #00bfa5");
+priceChannels_1.rangeSeries().lowStroke("2 #dd2c00");
 ```
 
 Live sample:

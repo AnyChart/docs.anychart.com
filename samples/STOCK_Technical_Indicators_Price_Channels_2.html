@@ -51,18 +51,16 @@ var ohlcSeries_1 = plot_1.ohlc(mapping);
 ohlcSeries_1.name("CSCO");
 
 // create and adjust a Price Channels indicator
-var priceChannels_0 = plot_0.priceChannels(mapping, 10, "line", "line", "line");
-priceChannels_0.lowerSeries().stroke("2 #00bfa5");
-priceChannels_0.upperSeries().stroke("2 #dd2c00");
+var priceChannels_0 = plot_0.priceChannels(mapping, 10);
 priceChannels_0.middleSeries().stroke("2 #ef6c00");
 priceChannels_0.rangeSeries().fill("#ffd54f 0.2");
 
 // create and adjust a Price Channels indicator
-var priceChannels_1 = plot_1.priceChannels(mapping, 10, "stepLine", "stepLine", "stepLine");
-priceChannels_1.lowerSeries().stroke("2 #00bfa5");
-priceChannels_1.upperSeries().stroke("2 #dd2c00");
+var priceChannels_1 = plot_1.priceChannels(mapping, 10, "range-step-area", "step-line");
 priceChannels_1.middleSeries().stroke("2 #64b5f6");
 priceChannels_1.rangeSeries().fill(null);
+priceChannels_1.rangeSeries().highStroke("2 #00bfa5", 2, 2);
+priceChannels_1.rangeSeries().lowStroke("2 #00bfa5", 2, 2);
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
