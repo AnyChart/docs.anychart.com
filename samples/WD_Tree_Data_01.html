@@ -34,12 +34,13 @@
     </style>
 </head>
 <body>
-<label><input onclick="switchType(true, false, false)" type="radio" name="type" checked>Treemap</label>
-<label><input onclick="switchType(false, true, false)" type="radio" name="type">Sunburst</label>
-<label><input onclick="switchType(false, false, true)" type="radio" name="type">Gantt</label>
-<div id="treemapContainer" class="container"></div>
-<div id="sunburstContainer" class="container"></div>
-<div id="ganttContainer" class="container"></div>
+<label><input onclick="switchChart('treemap')" type="radio" name="type" checked>Treemap</label>
+<label><input onclick="switchChart('sunburst')" type="radio" name="type">Sunburst</label>
+<label><input onclick="switchChart('gantt')" type="radio" name="type">Gantt</label>
+<div id="gantt" class="container"></div>
+<div id="sunburst" class="container"></div>
+<div id="treemap" class="container"></div>
+
 <script>
 anychart.onDocumentReady(function () {
 
@@ -84,21 +85,15 @@ anychart.onDocumentReady(function () {
     treemap = anychart.treeMap(treeData);
     // set the title
     treemap.title("Tree Data Model: Basic Sample");
-    // set the container id
-    treemap.container("treemapContainer");
-    // initiate drawing the chart
-    treemap.draw();
+    // set the container id and draw
+    treemap.container("treemap").draw();
 
     // create a sunburst chart and set the data
     sunburst = anychart.sunburst(treeData);
     // set the title
     sunburst.title("Tree Data Model: Quick Start");
-    // set the container id
-    sunburst.container("sunburstContainer");
-    // initiate drawing the chart   
-    sunburst.draw();
-    // hide the sunburst chart
-    sunburst.enabled(false);
+    // set the container id and draw
+    sunburst.container("sunburst").draw();
 
     // create a gantt chart
     gantt = anychart.ganttProject();
@@ -106,21 +101,20 @@ anychart.onDocumentReady(function () {
     gantt.data(treeData);
     // set the title
     gantt.title("Tree Data Model: Quick Start");
-    // set the container id
-    gantt.container("ganttContainer");
-    // initiate drawing the chart   
-    gantt.draw();
+    // set the container id and draw
+    gantt.container("gantt").draw();
     // fit items to the width of the timeline
     gantt.fitAll();
-    // hide the gantt chart
-    gantt.enabled(false);
+
 });
 
-// switch the chart type
-function switchType(treemapEnabled, sunburstEnabled, ganttEnabled){
-    treemap.enabled(treemapEnabled);
-    sunburst.enabled(sunburstEnabled);
-    gantt.enabled(ganttEnabled);
+// switch the chart shown
+function switchChart(container){
+    containers = document.getElementsByClassName("container");
+    for (i = 0; i < containers.length; i++) {
+        containers[i].style.display = 'none';
+    }    
+    document.getElementById(container).style.display  = 'block';
 }
 </script>
 </body>
