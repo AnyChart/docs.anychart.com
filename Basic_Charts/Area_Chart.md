@@ -47,7 +47,7 @@ The Area chart requires adding the [Basic Cartesian Module](../Quick_Start/Modul
 <script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
 ```
 
-Learn more: [Modules](../Quick_Start/Modules)
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
