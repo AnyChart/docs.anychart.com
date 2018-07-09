@@ -68,7 +68,7 @@ Module to create cartesian [3D chart](../Basic_Charts/3D/Overview):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
-### Circular gauges
+### Circular gauge
 
 Module to create [Circular gauges](../Gauges/Circular_Gauge):
 
@@ -92,7 +92,7 @@ Module to create [Heat map](../Basic_Charts/Heat_Map_Chart):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
 ```
 
-### Linear gauges
+### Linear gauge
 
 Module to create [Linear gauges](../Gauges/Linear_Gauge):
 

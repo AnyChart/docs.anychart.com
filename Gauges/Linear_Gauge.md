@@ -4,6 +4,16 @@
 
 A linear gauge is visual representation of a measuring device with a horizontal or vertical scale and a pointer or multiple pointers indicating particular values. The scale is usually color zoned, which helps to see what range the value of interest falls in. Linear gauges can represent thermometers, radio scales, battery indicators, rulers, and any other devices with straight line-shaped scales.
 
+## Modules
+
+The Linear Gauge requires adding the [Linear Gauge](../Quick_Start/Modules#linear-gauge) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Basics
 
 To create all types of linear gauges, you can use a basic constructor: {api:anychart.gauges#linear}linear(){api}. Also, AnyChart supports three special constructors with presets of tank, led, and thermometer gauges: {api:anychart.gauges#tank}tank(){api}, {api:anychart.gauges#led}led(){api}, {api:anychart.gauges#thermometer}thermometer(){api}. These presets define the visual style of a gauge and the type of its pointer (see the [Pointers](#pointers) section below).

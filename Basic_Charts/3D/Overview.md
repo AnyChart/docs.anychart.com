@@ -21,11 +21,13 @@ The 3D Pie and Doughnut charts require the [Pie and Doughnut](../../Quick_Start/
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, Pie and Doughnut charts:
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, the Pie and Doughnut charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
+
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
