@@ -8,6 +8,16 @@ So, a Circular Gauge is a visual representation of a measuring device with a rad
 
 Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical JavaScript speedometer gauge as a result.
 
+## Modules
+
+The Circular Gauge requires adding the [Circular Gauge](../Quick_Start/Modules#circular-gauge) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Chart
 
 Depending on data model and the visualization purpose the gauge may contain single series or multi series.
