@@ -9,6 +9,20 @@ This feature is often used with scatter charts, but Cartesian charts in AnyChart
 
 This article explains how to create and configure error bars on both Cartesian and scatter charts.
 
+## Module
+
+Error bars require adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Scatter](../Quick_Start/Modules#scatter) module:
+
+```
+<script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-scatter.min.js"></script>
+```
+
+You can also use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian and Scatter charts. Learn more: [Modules](../Quick_Start/Modules).
+
 ## Quick Start
 
 To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either in percent or in pixels).

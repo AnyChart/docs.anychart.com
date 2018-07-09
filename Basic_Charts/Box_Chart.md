@@ -10,6 +10,7 @@ Box charts allow showing the minimum and maximum with a median (a numerical valu
 This article explains how to create a basic Box chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Box chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Module</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Box}anychart.core.cartesian.series.Box{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -33,6 +34,15 @@ This article explains how to create a basic Box chart as well as configure setti
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
+## Module
+
+The Box chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

@@ -11,7 +11,7 @@ This article explains how to create a basic Area chart as well as configure sett
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Module</td><td>[Basic Cartesian Module](../Quick_Start/Modules#basic_cartesian_charts)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
@@ -39,12 +39,21 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-## Module
+## Modules
 
-The Area chart requires adding the [Basic Cartesian Module](../Quick_Start/Modules#basic_cartesian_charts):
+The Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things the core of the engine and basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
