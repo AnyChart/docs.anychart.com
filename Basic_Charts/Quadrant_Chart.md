@@ -9,6 +9,22 @@ In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](
 
 This article explains how to create a basic Quadrant chart as well as configure settings that are specific to the type.
 
+## Modules
+
+The Quadrant chart requires adding the [Scatter](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, scatter charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
