@@ -10,6 +10,7 @@ This type is sometimes referred to as the floating column chart since it looks l
 This article explains how to create a basic Range Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeColumn}anychart.core.cartesian.series.RangeColumn{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -34,6 +35,22 @@ This article explains how to create a basic Range Column chart as well as config
 <tr><td></td><td>[Chartopedia: Range Column Chart](https://www.anychart.com/chartopedia/chart-types/range-column-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Range Column chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

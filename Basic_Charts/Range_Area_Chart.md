@@ -10,6 +10,7 @@ Such charts are used to emphasize the magnitude of difference between high and l
 This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeArea}anychart.core.cartesian.series.RangeArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,6 +37,22 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td></td><td>[Chartopedia: Range Area Chart](https://www.anychart.com/chartopedia/chart-types/range-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Range Area chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

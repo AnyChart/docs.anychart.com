@@ -10,6 +10,7 @@ Like the regular range area chart, it looks like two lines representing low and 
 The Range Spline Area and Range Area chart types share all the settings, so this article explains just how to create a basic Range Area chart. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Spline Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeSplineArea}anychart.core.cartesian.series.RangeSplineArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,6 +37,22 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 <tr><td></td><td>[Chartopedia: Range Spline Area Chart](https://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Range Spline Area chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ##Quick Start
 

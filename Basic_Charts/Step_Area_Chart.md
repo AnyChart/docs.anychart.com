@@ -10,6 +10,7 @@ Step area charts are used when it is necessary to highlight the irregularity of 
 The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepArea}anychart.core.cartesian.series.StepArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -35,6 +36,22 @@ The Step Area and Area chart types share almost all the settings, so this articl
 <tr><td></td><td>[Chartopedia: Step Area Chart](https://www.anychart.com/chartopedia/chart-types/stepline-area-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Step Area chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ##Quick Start
 
