@@ -28,7 +28,7 @@ The following modules are available:
 
 AnyChart Base is a handy module that contains:
 - [Core](#core)
-- [Pie and donut](#pie_and_donut)
+- [Pie and doughnut](#pie_and_doughnut)
 - [Basic cartesian charts](#basic_cartesian_charts)
 - [Scatter](../Basic_Charts/Scatter_Plot)
 
@@ -132,9 +132,9 @@ Module to create [PERT chart](../PERT_Chart/Overview):
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js"></script>
 ```
 
-### Pie and donut
+### Pie and doughnut
 
-Module to create [Pie chart](../Basic_Charts/Pie_Chart) and [Donut chart](../Basic_Charts/Doughnut_Chart):
+Module to create [Pie chart](../Basic_Charts/Pie_Chart) and [Doughnut chart](../Basic_Charts/Doughnut_Chart):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>

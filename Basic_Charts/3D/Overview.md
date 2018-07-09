@@ -3,9 +3,29 @@
 
 ## Overview
 
-AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
+AnyChart supports the 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure 3D charts.
+
+## Modules
+
+Most 3D charts require adding the [Basic 3D](../../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
+```
+
+The 3D Pie and Doughnut charts require the [Pie and Doughnut](../../Quick_Start/Modules#pie_and_doughnut) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
+```
+
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, Pie and Doughnut charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
 
 ## Quick Start
 
