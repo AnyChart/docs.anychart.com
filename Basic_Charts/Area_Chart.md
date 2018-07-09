@@ -50,7 +50,7 @@ The Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basi
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things the core of the engine and basic Cartesian charts: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
