@@ -10,7 +10,7 @@ The bar chart is used very widely to show comparison among categories and someti
 This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type. In addition, you see the table below to get a brief overview of the Bar chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Module</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bar}anychart.core.cartesian.series.Bar{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -33,7 +33,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-## Module
+## Modules
 
 The Bar chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
 

@@ -9,7 +9,7 @@ This feature is often used with scatter charts, but Cartesian charts in AnyChart
 
 This article explains how to create and configure error bars on both Cartesian and scatter charts.
 
-## Module
+## Modules
 
 Error bars require adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Scatter](../Quick_Start/Modules#scatter) module:
 

@@ -10,7 +10,7 @@ The column chart is used very widely to show comparison among categories and som
 This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Module</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -35,7 +35,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-## Module
+## Modules
 
 The Column chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
 
