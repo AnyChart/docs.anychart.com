@@ -14,7 +14,7 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 This article explains how to create a basic Bubble chart as well as configure settings that are specific to the type. See the table below to get a brief overview of the Bubble chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Module</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts)</td></tr>
+<tr><td>Module</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bubble}anychart.core.cartesian.series.Bubble{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -43,7 +43,13 @@ This article explains how to create a basic Bubble chart as well as configure se
 The Bubble chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).

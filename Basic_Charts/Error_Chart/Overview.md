@@ -14,14 +14,20 @@ This article explains how to create and configure error bars on both Cartesian a
 Error bars require adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) or [Scatter](../Quick_Start/Modules#scatter) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-scatter.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-You can also use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian and Scatter charts. Learn more: [Modules](../Quick_Start/Modules).
+You can also use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian and Scatter charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
