@@ -10,6 +10,7 @@ The difference between Step Line and Jump Line is in vertical line segments, con
 Jump Line Charts are usually used for demonstrating rates.
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.JumpLine}anychart.core.cartesian.series.JumpLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -32,6 +33,22 @@ Jump Line Charts are usually used for demonstrating rates.
 <tr><td></td><td>[Chartopedia: Jump Line Chart](https://www.anychart.com/chartopedia/chart-types/jump-line-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Jump Line chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
