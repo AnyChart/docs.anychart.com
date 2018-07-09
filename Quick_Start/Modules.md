@@ -84,7 +84,7 @@ Module to create [Gantt and gantt resource](../Gantt_Chart/Quick_Start) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
 ```
 
-### Heatmap
+### Heat map
 
 Module to create [Heat map](../Basic_Charts/Heat_Map_Chart):
 
@@ -234,7 +234,7 @@ Module to create [Venn diagram](../Basic_Charts/Venn_Diagram):
 Module to create [Waterfall chart](../Basic_Charts/Waterfall_Chart):
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterall.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
 ```
 
 ## Features

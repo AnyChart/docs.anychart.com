@@ -7,6 +7,16 @@ A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar 
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
+## Modules
+
+Polar charts require adding the [Polar](../../Quick_Start/Modules#polar) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a polar chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor.

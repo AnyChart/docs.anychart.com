@@ -8,6 +8,8 @@ A treemap is a visualization that displays hierarchically organized data as a se
 This article explains how to create a basic Treemap chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Treemap chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Treemap](../Quick_Start/Modules#treemap)</td></tr>
+<tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +33,16 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td></td><td>[Chartopedia: Treemap Chart](https://www.anychart.com/chartopedia/chart-types/treemap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Sunburst chart requires adding the [Treemap](../Quick_Start/Modules#treemap) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

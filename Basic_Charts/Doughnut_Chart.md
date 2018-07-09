@@ -10,6 +10,22 @@ Like the regular pie chart, the doughnut chart is used with small sets of data t
 
 The Doughnut chart is a modification of the Pie chart and shares almost all the setting with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Pie_Chart) article. See also [Chartopedia: Doughnut Chart](https://www.anychart.com/chartopedia/chart-types/donut-chart/).
 
+## Modules
+
+The Doughnut chart requires adding the [Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things,Pie and Doughnut charts: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a Doughnut chart, use the {api:anychart#pie}anychart.pie(){api} chart constructor and the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.

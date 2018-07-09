@@ -10,6 +10,8 @@ The AnyChart Venn chart type can be also used for creating Euler diagrams. The E
 This article explains how to create a basic Venn (or Euler) diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Venn](../Quick_Start/Modules#venn_diagram)</td></tr>
+<tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Venn}anychart.charts.Venn{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +33,16 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 <tr><td></td><td>[Chartopedia: Venn Diagram](https://www.anychart.com/chartopedia/chart-types/venn-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Venn diagram requires adding the [Venn Diagram](../Quick_Start/Modules#venn_diagram) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-venn.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 

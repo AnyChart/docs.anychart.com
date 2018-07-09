@@ -11,6 +11,22 @@ To learn more about the difference between the scatter and Cartesian constructor
 
 This article explains how to create and configure scatter charts.
 
+## Modules
+
+Scatter charts require adding the [Scatter](../../Quick_Start/Modules#scatter) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
+```
+
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, scatter charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a scatter chart, use the {api:anychart#scatter}anychart.scatter(){api} chart constructor. Then create one of the supported series types from this enum: {api:anychart.enums.ScatterSeriesType}anychart.enums.ScatterSeriesType{api}.

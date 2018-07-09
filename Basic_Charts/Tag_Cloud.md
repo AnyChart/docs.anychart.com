@@ -8,6 +8,8 @@ A tag cloud, otherwise known as a word cloud or weighted list,  is a visual repr
 This article explains how to create a basic Tag Cloud chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Tag Cloud's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Tag Cloud](../Quick_Start/Modules#tag_cloud)</td></tr>
+<tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -29,6 +31,17 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><td></td><td>[Chartopedia: Tag Cloud](https://www.anychart.com/chartopedia/chart-types/tag-cloud-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Tag Cloud requires adding the [Tag Cloud](../Quick_Start/Modules#tag_cloud) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 
 ## Quick Start
 

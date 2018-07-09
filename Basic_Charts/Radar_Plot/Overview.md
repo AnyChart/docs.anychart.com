@@ -9,6 +9,16 @@ The radar chart is otherwise known as a web chart, spider chart, star chart, cob
 
 This article explains how to create and configure radar charts. To find out which series can be drawn on a radar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
+## Modules
+
+Radar charts require adding the [Radar](../Quick_Start/Modules#radar) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-radar.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a radar chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor.

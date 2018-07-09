@@ -4,6 +4,16 @@
 
 AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#chart_configuration) which may be used to debug charts and report issues.
 
+## Modules
+
+To enable export, add the [Exports](../Quick_Start/Modules#exports) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Export server
 
 **IMPORTANT, DO NOT SKIP THIS PART**

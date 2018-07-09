@@ -8,6 +8,7 @@
 The Marimekko name has been adopted within business and the management consultancy industry to refer to a specific type of **bar chart known as a variable-width chart** or **Mosaic plot** in which all the bars are of equal height, there are no spaces between the bars, and the bars are in turn each divided into segments of different width. The design of the mosaic plot resembles a [Marimekko print](https://www.google.ru/search?q=Marimekko+print&tbm=isch). The chart's design encodes two variables (such as the percentage of sales and market share).
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Mekko](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#mekko)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.mekko.series.Mekko}anychart.core.mekko.series.Mekko{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -35,6 +36,16 @@ The Marimekko name has been adopted within business and the management consultan
 <tr><td></td><td>[Chartopedia: Marimekko Mosaic Chart](https://www.anychart.com/chartopedia/chart-types/mosaic-chart/)</td></tr>
 <tr><td></td><td>[General Settings](../General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Marimekko chart requires adding the [Mekko](../../Quick_Start/Modules#mekko) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-mekko.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 

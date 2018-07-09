@@ -7,6 +7,16 @@ In some cases it might be necessary to represent a lot of similar data over a lo
 
 Sparkline charts are rather small with neither axes nor grids, amount of additional information is minimized, but they tell a richer story than trend arrows: we can make a chart display not just the current situation, but its changing over time. Sometimes sparklines can be even more informative than any of usual chart types - just because of its simplicity.
 
+## Modules
+
+The Sparkline chart requires adding the [Sparkline](../Quick_Start/Modules#sparkline) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Chart
 
 As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multi-series.

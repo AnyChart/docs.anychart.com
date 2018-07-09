@@ -21,7 +21,7 @@ Error bars require adding the [Basic Cartesian](../../Quick_Start/Modules#basic_
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian and Scatter charts:
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian and scatter charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>

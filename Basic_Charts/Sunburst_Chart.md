@@ -8,6 +8,7 @@ A sunburst chart, otherwise known as a radial treemap or multi-level pie chart, 
 This article explains how to create a basic Sunburst chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sunburst chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Sunburst](../Quick_Start/Modules#sunburst)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +32,16 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 <tr><td></td><td>[Chartopedia: Sunburst Chart](https://www.anychart.com/chartopedia/chart-types/sunburst-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Sunburst chart requires adding the [Sunburst](../Quick_Start/Modules#sunburst) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
