@@ -9,19 +9,27 @@ This article explains how to create and configure 3D charts.
 
 ## Modules
 
-Most 3D charts require adding the [Basic 3D](../../Quick_Start/Modules#basic_cartesian_charts) module:
+Most 3D charts require adding the [Core](../../Quick_Start/Modules#core) and [Basic 3D](../../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
 ```
 
-The 3D Pie and Doughnut charts require the [Pie and Doughnut](../../Quick_Start/Modules#pie_and_doughnut) module:
+The 3D Pie and Doughnut charts require combining the [Core](../../Quick_Start/Modules#core) module with [Pie and Doughnut](../../Quick_Start/Modules#pie_and_doughnut):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, the Pie and Doughnut charts:
+These two modules are included in the [Base](../../Quick_Start/Modules#base) module, so it can also be used to create the 3D Pie and Doughnut charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>

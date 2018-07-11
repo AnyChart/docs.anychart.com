@@ -14,7 +14,7 @@ Japanese candlestick is a series type that is predominantly used for demonstrati
 This article explains how to create a basic Japanese Candlestick chart as as well as configure settings that are specific to the type. See the table below to get a brief overview of the Japanese Candlestick chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Candlestick}anychart.core.cartesian.series.Candlestick{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -40,13 +40,17 @@ This article explains how to create a basic Japanese Candlestick chart as as wel
 
 ## Modules
 
-The Japanese Candlestick chart requires adding the [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) module:
+The Japanese Candlestick chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, basic Cartesian charts: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
