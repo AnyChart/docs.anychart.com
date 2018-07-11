@@ -11,23 +11,19 @@ This article explains how to create and configure error bars on both Cartesian a
 
 ## Modules
 
-Error bars require adding the [Core](../../Quick_Start/Modules#core) module:
+Error bars do not require any modules except the modules required by the chart on which they are created.
+
+For scatter charts, combine the [Core](../../Quick_Start/Modules#core) module with the [Scatter](../../Quick_Start/Modules#scatter) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-```
-
-Combine it with the [Basic Cartesian](../../Quick_Start/Modules#basic_cartesian_charts) or [Scatter](../../Quick_Start/Modules#scatter) modules:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
 ```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
 ```
 
-You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, the modules mentioned above:
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, all the modules mentioned above:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>

@@ -9,7 +9,11 @@ This article explains how to create and configure polar charts. To find out whic
 
 ## Modules
 
-Polar charts require adding the [Polar](../../Quick_Start/Modules#polar) module:
+Polar charts require adding the [Core](../../Quick_Start/Modules#core) and [Polar](../../Quick_Start/Modules#polar) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>

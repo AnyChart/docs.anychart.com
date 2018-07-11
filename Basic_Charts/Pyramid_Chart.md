@@ -8,7 +8,7 @@ Pyramid chart is a kind of [Funnel chart](Funnel_Chart) that presents data in th
 This article explains how to create a basic Pyramid Chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pyramid chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pyramid}anychart.charts.Pyramid{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -35,7 +35,11 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 
 ## Modules
 
-The Pyramid chart requires adding the [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) module:
+The Pyramid chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pyramid-funnel.min.js"></script>

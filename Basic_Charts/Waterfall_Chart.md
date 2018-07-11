@@ -10,7 +10,7 @@ As a rule, intermediate values are visualized as floating columns, while the ini
 This article explains how to create a basic Waterfall chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waterfall chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Waterfall](../Quick_Start/Modules#waterfall)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Waterfall](../Quick_Start/Modules#waterfall)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
@@ -38,7 +38,11 @@ This article explains how to create a basic Waterfall chart as well as configure
 
 ## Modules
 
-The Waterfall chart requires adding the [Waterfall](../Quick_Start/Modules#waterfall) module:
+The Waterfall chart requires adding the [Core](../Quick_Start/Modules#core) and [Waterfall](../Quick_Start/Modules#waterfall) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>

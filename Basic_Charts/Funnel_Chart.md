@@ -9,7 +9,7 @@ Funnel Charts are so-called Accumulation Charts and they show percentage ratio. 
 This article explains how to create a basic Funnel Chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Funnel}anychart.charts.Funnel{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,7 +36,11 @@ This article explains how to create a basic Funnel Chart as well as configure se
 
 ## Modules
 
-The Funnel chart requires adding the [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) module:
+The Funnel chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pyramid-funnel.min.js"></script>

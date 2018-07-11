@@ -8,7 +8,7 @@ A heat map is a visualization of a data matrix where values are represented as c
 This article explains how to create a basic Heat Map chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Heat Map chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Heat Map](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#heat_map)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Heat Map](../Quick_Start/Modules#heat_map)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.HeatMap}anychart.charts.HeatMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -34,7 +34,11 @@ This article explains how to create a basic Heat Map chart as well as configure 
 
 ## Modules
 
-The Heat Map chart requires adding the [Heat Map](../Quick_Start/Modules#heat_map) module:
+The Heat Map chart requires adding the [Core](../Quick_Start/Modules#core) and [Heat Map](../Quick_Start/Modules#heat_map) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>

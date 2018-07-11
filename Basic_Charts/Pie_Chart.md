@@ -10,7 +10,7 @@ Pie charts are used very widely with small sets of data to compare categories. T
 This article explains how to create a basic Pie chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pie chart's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) / [Base](../Quick_Start/Modules#base)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pie}anychart.charts.Pie{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -35,13 +35,17 @@ This article explains how to create a basic Pie chart as well as configure setti
 
 ## Modules
 
-The Pie chart requires adding the [Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) module:
+The Pie chart requires adding the [Core](../Quick_Start/Modules#core) and [Pie and Doughnut](../Quick_Start/Modules#pie_and_doughnut) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
 ```
 
-Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things,Pie and Doughnut charts: 
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>

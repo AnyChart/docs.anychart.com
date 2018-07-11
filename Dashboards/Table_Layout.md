@@ -10,7 +10,11 @@ Table Layout helps to manage several elements within the limits of one chart con
 
 ## Modules
 
-The table layout requires adding the [Table UI](../Quick_Start/Modules#table_ui) module:
+The table layout requires adding the [Core](../Quick_Start/Modules#core) and [Table UI](../Quick_Start/Modules#table_ui) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
