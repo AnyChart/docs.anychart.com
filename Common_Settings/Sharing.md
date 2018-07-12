@@ -20,11 +20,7 @@ When sharing is done using the context menu, the sharing function uses default s
 
 ## Modules
 
-To enable sharing, add the [Core](../Quick_Start/Modules#core) and [Exports](../Quick_Start/Modules#exports) modules:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-```
+To enable sharing, add the [Exports](../Quick_Start/Modules#exports) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>

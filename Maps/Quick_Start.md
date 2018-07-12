@@ -16,7 +16,7 @@ AnyMap requires adding the [Core](../Quick_Start/Modules#core) and [Geo Maps](..
 </head>
 ```
 
-You can use the link as shown above or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it in any folder of your site (in this case you have to use your own link).
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
 
 Learn more: [Modules](../Quick_Start/Modules).
 

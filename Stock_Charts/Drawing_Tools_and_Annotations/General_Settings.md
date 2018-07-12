@@ -7,11 +7,7 @@ In this article, you can learn about the main general settings of annotations, a
 
 ## Modules
 
-Annotations require adding the [Core](../../Quick_Start/Modules#core) and [Annotations](../../Quick_Start/Modules#annotations) modules:
-
-```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-```
+Annotations require adding the [Annotations](../../Quick_Start/Modules#annotations) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
