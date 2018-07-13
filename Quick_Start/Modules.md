@@ -64,7 +64,7 @@ A module for creating basic Cartesian charts: [Area](../Basic_Charts/Area_Chart)
 
 ### Basic 3D
 
-A module for creating Cartesian [3D](../Basic_Charts/3D/Overview) charts (except Pie and Doughnut):
+A module for creating [Cartesian 3D](../Basic_Charts/3D/Overview) charts (except Pie and Doughnut):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
@@ -136,7 +136,7 @@ A module for creating [PERT](../PERT_Chart/Overview) charts:
 
 ### Pie and Doughnut
 
-A module for creating [Pie](../Basic_Charts/Pie_Chart) and [Doughnut](../Basic_Charts/Doughnut_Chart) charts:
+A module for creating [Pie](../Basic_Charts/Pie_Chart) and [Doughnut](../Basic_Charts/Doughnut_Chart) charts (including the 3D versions):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
