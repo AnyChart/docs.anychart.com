@@ -6,6 +6,38 @@ Modular System is the core of AnyChart 8. It allows you to significantly reduce 
 
 - [Modules List](https://anychart.com/download/products/)
 
+## Basics
+
+You should always add one of the following modules:
+
+- [Core](#core)
+- [Bundle](#bundle)
+- [Base](#base)
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+**Note:** These modules should be referenced before any other ones.
+
+The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
+
+You should combine the Core module with the modules required by the chart type you are going to create and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
+
+The same applies to Base, but it already includes some chart types. You have to reference other modules only if you need to add some chart types that are not included or some features.
+
+
+As for Bundle , it includes all other modules except [Extentions](#extentions).
+
+
 ## Builder
 
 Custom JavaScript Builder is designed for assembling a JavaScript file that contains only the features and chart types you are really going to use. You can also build a file that contains your [license key](Credits).
