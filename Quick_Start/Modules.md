@@ -27,10 +27,12 @@ The following modules are available:
 ### Base
 
 AnyChart Base is a handy module that contains:
+
 - [Core](#core)
 - [Pie and Doughnut](#pie_and_doughnut)
 - [Basic Cartesian Charts](#basic_cartesian_charts)
 - [Scatter](../Basic_Charts/Scatter_Plot)
+
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
@@ -46,7 +48,7 @@ AnyChart Core is the core of the engine. It is needed whenever you use any modul
 
 ### Bullet
 
-Module to create [Bullet charts](../Basic_Charts/Bullet_Chart).
+Module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
