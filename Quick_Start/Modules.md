@@ -8,11 +8,13 @@ Modular System is the core of AnyChart 8. It allows you to significantly reduce 
 
 ## Basics
 
-You should always reference one of the following modules in the `<head>` section of your page **before any other modules**:
+You should always add one of the following modules:
 
 - [Core](#core)
 - [Bundle](#bundle)
 - [Base](#base)
+
+Reference them the `<head>` section of your page **before any other modules**:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
