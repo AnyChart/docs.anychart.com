@@ -322,7 +322,7 @@ A module that enables [Table Layout](../Dashboards/Table_Layout):
 
 ### Common UI
 
-A module that enables UI features: [Context Menu](../Common_Settings/UI_Controls/Context_Menu), [Range Picker & Range Selector](../Stock_Charts/Range_Selection), and [Preloader](../Common_Settings/UI_Controls/Preloader):
+A module that enables UI features, such as [Context Menu](../Common_Settings/UI_Controls/Context_Menu), [Preloader](../Common_Settings/UI_Controls/Preloader), [Zoom Controls](../Common_Settings/UI_Controls/Zoom_Controls), [Range Picker & Range Selector](../Stock_Charts/Range_Selection):
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
