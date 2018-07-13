@@ -8,13 +8,11 @@ Modular System is the core of AnyChart 8. It allows you to significantly reduce 
 
 ## Basics
 
-You should always add one of the following modules:
+You should always reference one of the following modules in the `<head>` section of your page **before any other modules**:
 
 - [Core](#core)
 - [Bundle](#bundle)
 - [Base](#base)
-
-Reference them the `<head>` section of your page **before any other modules**:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
@@ -46,7 +44,7 @@ The same logic applies to the **Base** module, but it already includes some char
 
 As for **Bundle**, it includes all other modules except [Extentions](#extentions).
 
-**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server. Please note that you can any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
+**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server. Please note that you can download any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
 
 ## Builder
 
