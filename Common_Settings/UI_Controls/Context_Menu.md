@@ -6,19 +6,19 @@ A context menu (also called contextual, shortcut, and popup or pop-up menu) is a
 
 ## Modules
 
-The context menu requires the [Common UI](../Quick_Start/Modules#common_ui) module:
+The context menu requires the [Common UI](../../Quick_Start/Modules#common_ui) module:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
 ```
 
-Also, to style the menu, you should reference the `anychart-ui.css` CSS file:
+Also, you should reference the `anychart-ui.css` CSS file to style the menu:
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.css">
 ```
 
-Learn more: [Modules](../Quick_Start/Modules).
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Basic Sample
 
