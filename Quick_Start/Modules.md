@@ -32,7 +32,7 @@ The main module, required by all chart types, is [Core](#core), the core of the 
 
 The **Core** module should be combined with the modules required by the chart type and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
 
-For example, to create a Pie chart that can be exported, combine Core with the [Pie and Doughnut](#pie_and_doughnut) and [Exports](#exports) modules:
+For example, to create an exportable Pie chart, combine Core with the [Pie and Doughnut](#pie_and_doughnut) and [Exports](#exports) modules:
 
 ```
 <head>
