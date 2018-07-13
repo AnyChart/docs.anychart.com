@@ -14,6 +14,7 @@ You should always add one of the following modules:
 - [Bundle](#bundle)
 - [Base](#base)
 
+
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 ```
@@ -30,12 +31,12 @@ You should always add one of the following modules:
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
 
-You should combine the Core module with the modules required by the chart type you are going to create and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
+You should combine the **Core** module with the modules required by the chart type you are going to create and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
 
-The same applies to Base, but it already includes some chart types. You have to reference other modules only if you need to add some chart types that are not included or some features.
+The same applies to the **Base** module, but it already includes some chart types. You have to reference other modules only if you need to add some chart types that are not included or some features.
 
 
-As for Bundle , it includes all other modules except [Extentions](#extentions).
+As for **Bundle**, it includes all other modules except [Extentions](#extentions).
 
 
 ## Builder
