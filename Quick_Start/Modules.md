@@ -32,6 +32,8 @@ Reference them the `<head>` section of your page **before any other modules**:
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
 
+**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server, but you can download any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
+
 ### Combining Modules
 
 The **Core** module should be combined with the modules required by the chart type and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
@@ -49,8 +51,6 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 The same logic applies to the **Base** module. However, please note that it already includes some chart types, so you have to reference other modules only if you need to add a chart type that is not included or a feature.
 
 As for **Bundle**, it includes all other modules except [Extentions](#extentions).
-
-**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server, but you can download any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
 
 ## Builder
 
