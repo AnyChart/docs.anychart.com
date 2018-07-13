@@ -17,6 +17,9 @@ Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css`
 
 ```
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+```
+
+```
 <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 ```
 
