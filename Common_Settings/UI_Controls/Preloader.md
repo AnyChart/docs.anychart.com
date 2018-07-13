@@ -12,11 +12,11 @@ The preloader requires the [Common UI](../../Quick_Start/Modules#common_ui) modu
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
 ```
 
-Also, you should reference the `anychart-ui.css` and `anychart.css` files:
+Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.css">
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
 ```
 
 Learn more: [Modules](../../Quick_Start/Modules).

@@ -5,14 +5,24 @@
 
 Zoom Control Panel is an HTML object with three buttons: Zoom All (100%, or 1x Zoom), Zoom In and Zoom Out. To create a Zoom Control Panel use the {api:anychart.ui#zoom}zoom(){api} method. 
 
+## Modules
+
+Zoom controls require the [Common UI](../../Quick_Start/Modules#common_ui) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
+```
+
+Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files:
+
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Enable
-
-First of all, it is necessary to reference the following files for sample functioning correctly.
-
-```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css" />
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css" />
-```
 
 There is a new layer created for the Zoom Control Panel over the chart layer. The {api:anychart.ui.Zoom#target}target(){api} method is necessary to set the target map for the zooming panel, and the {api:anychart.ui.Zoom#render}render(){api} method provides the Zoom Controls Panel rendering.
 
