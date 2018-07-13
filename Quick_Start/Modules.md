@@ -17,22 +17,18 @@ You should always add one of the following modules:
 Reference them the `<head>` section of your page **before any other modules**:
 
 ```
-<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-</head>
 ```
 
 ```
-<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
-</head>
 ```
 
 ```
-<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-</head>
 ```
+
+These files are stored on the (AnyChart CDN)[] server. You can download them and put into another location. In this case, use a new link...
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
 
