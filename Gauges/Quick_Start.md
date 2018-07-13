@@ -3,7 +3,7 @@
 
 ## Modules
 
-Circular gauges require adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular-gauge) modules. Reference two JavaScript files in the `<head>` section of your web page: 
+The [Circular Gauge](Circular_Gauge_Chart) requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular-gauge) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -12,7 +12,7 @@ Circular gauges require adding the [Core](../Quick_Start/Modules#core) and [Circ
 </head>
 ```
 
-To create a Linear gauge, add the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear-gauge) modules:
+To create a [Linear Gauge](Linear_Gauge_Chart), add the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear-gauge) modules:
 
 ```
 <head>
