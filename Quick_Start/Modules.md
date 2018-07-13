@@ -28,8 +28,6 @@ Reference them the `<head>` section of your page **before any other modules**:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
 ```
 
-These files are stored on the (AnyChart CDN)[] server. You can download them and put into another location. In this case, use a new link...
-
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
 
 The **Core** module should be combined with the modules required by the chart type and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
@@ -44,9 +42,11 @@ For example, to create a Pie chart that can be exported, combine Core with the [
 </head>
 ```
 
-The same logic applies to the **Base** module, but it already includes some chart types. You have to reference other modules only if you need to add some chart types that are not included or some features.
+The same logic applies to the **Base** module, but it already includes some chart types. You have to reference other modules only if you need to add a chart type that is not included or a feature.
 
 As for **Bundle**, it includes all other modules except [Extentions](#extentions).
+
+**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server. Please note that you can any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
 
 ## Builder
 
