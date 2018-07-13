@@ -8,6 +8,8 @@ Modular System is the core of AnyChart 8. It allows you to significantly reduce 
 
 ## Basics
 
+### First Step
+
 You should always add one of the following modules:
 
 - [Core](#core)
@@ -29,6 +31,8 @@ Reference them the `<head>` section of your page **before any other modules**:
 ```
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
+
+## Combining Modules
 
 The **Core** module should be combined with the modules required by the chart type and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
 
