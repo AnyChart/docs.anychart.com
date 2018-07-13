@@ -8,44 +8,49 @@ Modular System is the core of AnyChart 8. It allows you to significantly reduce 
 
 ## Basics
 
-Modules are JS files that should be referenced in the ...
-
 You should always add one of the following modules:
 
 - [Core](#core)
 - [Bundle](#bundle)
 - [Base](#base)
 
+Reference them the `<head>` section of your page **before any other modules**:
 
 ```
+<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+</head>
 ```
 
 ```
+<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+</head>
 ```
 
 ```
+<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+</head>
 ```
-
-**Note:** These modules should be referenced before any other ones.
 
 The main module, required by all chart types, is [Core](#core), the core of the engine. It is included, among other things, in the [Bundle](#bundle) and [Base](#base) modules, so you can also use them instead.
 
-You should combine the **Core** module with the modules required by the chart type you are going to create and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections. For example, to create a Pie chart that can be exported, you combine Core with the [Pie and Doughnut](#pie_and_doughnut) and [Exports](#exports) modules:
+The **Core** module should be combined with the modules required by the chart type and features you want to add – see the [Chart Modules](#chart_modules) and [Features](#features) sections.
+
+For example, to create a Pie chart that can be exported, combine Core with the [Pie and Doughnut](#pie_and_doughnut) and [Exports](#exports) modules:
 
 ```
+<head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
 <script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-pie.min.js"></script>
 <script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-exports.min.js"></script>
+</head>
 ```
 
 The same logic applies to the **Base** module, but it already includes some chart types. You have to reference other modules only if you need to add some chart types that are not included or some features.
 
-
 As for **Bundle**, it includes all other modules except [Extentions](#extentions).
-
 
 ## Builder
 
