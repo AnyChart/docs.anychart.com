@@ -4,7 +4,7 @@
 
 Modular System is the core of AnyChart 8. It allows you to significantly reduce the size of the JavaScript code running on your web page by connecting only those chart types and features that you actually use. The modular-based AnyChart is perfectly compatible with popular bundling tools such as Webpack, Browserify, and so on. 
 
-- [Modules (List)](https://anychart.com/download/products/)
+- [Modules List](https://anychart.com/download/products/)
 
 ## Basics
 
