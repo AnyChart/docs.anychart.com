@@ -12,7 +12,7 @@ The context menu requires the [Common UI](../../Quick_Start/Modules#common_ui) m
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
 ```
 
-Also, you should reference the `anychart-ui.css` CSS file to style the menu:
+Also, you should reference the `anychart-ui.css` file:
 
 ```
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.css">

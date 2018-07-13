@@ -4,14 +4,22 @@
 
 Chart Preloader is a small animated object used when you want to show that some process is in progress and an end user needs to wait.
 
-## Prerequisites
+## Modules
 
-Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/):
+The preloader requires the [Common UI](../../Quick_Start/Modules#common_ui) module:
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/{{branch-name}}/anychart-ui.min.css">
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
+```
+
+Also, you should reference the `anychart-ui.css` and `anychart.css` files:
+
+```
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.css">
 <link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css">
 ```
+
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Sample
 
