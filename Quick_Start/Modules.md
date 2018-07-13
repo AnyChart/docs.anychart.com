@@ -48,7 +48,7 @@ AnyChart Core is the core of the engine. It is needed whenever you use any modul
 
 ### Bullet
 
-Module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts.
+A module for creating [Bullet](../Basic_Charts/Bullet_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
