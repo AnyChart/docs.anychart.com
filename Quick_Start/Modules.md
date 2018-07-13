@@ -46,7 +46,7 @@ The same logic applies to the **Base** module, but it already includes some char
 
 As for **Bundle**, it includes all other modules except [Extentions](#extentions).
 
-**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server. Please note that you can download any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
+**Note:** All JS files with modules are stored on the [AnyChart CDN](https://cdn.anychart.com/) server, but you can download any file and place it in another location. Learn more: [Downloading AnyChart](Downloading_AnyChart).
 
 ## Builder
 
