@@ -54,9 +54,12 @@ As for **Bundle**, it includes all other modules except [Extentions](#extentions
 
 ## Builder
 
-Custom JavaScript Builder is designed for assembling a JavaScript file that contains only the features and chart types you are really going to use. You can also build a file that contains your [license key](Credits).
-
+Custom JavaScript Builder is designed for assembling a JavaScript file that contains only the features and chart types you are really going to use.
 - [Online Builder](https://anychart.com/download/products/#custom-build)
+
+To build a custom JavaScript binary, check modules you want to include in the build: specify the chart types you are going to create and add features and themes if you need them. Then press the green "Build" button at the bottom.
+
+You can also build a file that contains your license key. See the [Credits](Credits) article to learn more.
 
 ## Bundle
 
