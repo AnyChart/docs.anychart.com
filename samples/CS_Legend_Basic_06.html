@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend 01"/>
+    <meta name="ac:name" content="CS Legend Basic 06"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -24,41 +24,50 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
-  // data
-  var data = anychart.data.set([
-    ["John",  10000, 12000, 20000, 16000],
-    ["Jake",  12000, 15000, 19000, 21000],
-    ["Peter", 16000, 17000, 21000, 22000]
-  ]);
-  
-  var Quarter1 = data.mapAs({x: 0, value: 1});
-  var Quarter2 = data.mapAs({x: 0, value: 2});
-  var Quarter3 = data.mapAs({x: 0, value: 3});
-  var Quarter4 = data.mapAs({x: 0, value: 4});
-  
-  // chart type
-  var chart = anychart.area();
-  
-  // set title
-  chart.title("Bar Chart");
-  
-  // set data
-  var series1 = chart.column(Quarter1);
-  series1.name("Quarter 1");
-  var series2 = chart.area(Quarter2);
-  series2.name("Quarter 2");
-  var series3 = chart.line(Quarter3);
-  series3.name("Quarter 3");
-  var series4 = chart.spline(Quarter4);
-  series4.name("Quarter 4");
-  
-  // enable legend
-  chart.legend(true);
-  
-  // draw chart
-  chart.container("container");
-  chart.draw();
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 12000, 10000, 7000, 11000],
+      ["February", 15000, 12000, 9000, 13000],
+      ["March", 16000, 15000, 14000, 12000],
+      ["April", 15000, 11000, 13000, 10000],
+      ["May", 14000, 9000, 11000, 6000]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+    var seriesData_4 = data.mapAs({x: 0, value: 4});
+
+    // create a chart
+    var chart = anychart.line();
+
+    // create four line series, set the data and names
+    var series1 = chart.line(seriesData_1);
+    var series2 = chart.line(seriesData_2);
+    var series3 = chart.line(seriesData_3);
+    var series4 = chart.line(seriesData_4);
+    series1.name("2015");
+    series2.name("2016");
+    series3.name("2017");
+    series4.name("2018");
+
+    // enable the legend
+    chart.legend(true);
+
+    // set the chart title
+    chart.title("Legend: Position (Drag and Drop)");
+
+    // set the titles of the axes
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });
 </script>
 </body>
