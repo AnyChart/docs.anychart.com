@@ -56,21 +56,8 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // configure the background of the legend
-    //var background = chart.legend().background();
-    //background.enabled(true);
-    //background.fill("#96a6a6 0.3");
-    //background.cornerType("round");
-    //background.corners(10);
-
-    // configure the background of the legend
-    chart.legend().background({fill: "#96a6a6 0.3",
-                               height: 50,
-                               cornerType: "round",
-                               corners: 10});
-
     // set the chart title
-    chart.title("Legend: Background");
+    chart.title("Legend: Size (Expandable)");
 
     // set the titles of the axes
     chart.xAxis().title("Month");

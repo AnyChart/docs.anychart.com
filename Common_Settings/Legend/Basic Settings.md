@@ -37,19 +37,25 @@
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
-## Position
-
 ```
 
 ```
 
 {sample}CS\_Legend\_Basic\_05{sample}
 
+## Position
+
 ```
 
 ```
 
 {sample}CS\_Legend\_Basic\_06{sample}
+
+```
+
+```
+
+{sample}CS\_Legend\_Basic\_07{sample}
 
 ## Size
 
@@ -61,7 +67,7 @@
 
 ```
 
-{sample}CS\_Legend\_Basic\_07{sample}
+{sample}CS\_Legend\_Basic\_08{sample}
 
 ## Background
 
@@ -69,4 +75,4 @@
 
 ```
 
-{sample}CS\_Legend\_Basic\_08{sample}
+{sample}CS\_Legend\_Basic\_09{sample}
