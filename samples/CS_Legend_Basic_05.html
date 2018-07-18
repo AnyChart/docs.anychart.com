@@ -32,42 +32,46 @@
 </head>
 <body>
 <label><input onclick="legendLayout('horizontal')" type="radio" name="mode" checked>Horizontal</label>
-<label><input onclick="legendLayout('vertical')" type="radio" name="mode">Vertical</label>  
+<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="mode">Horizontal-Expandable</label>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["January", 7000, 11000],
-      ["February", 9000, 13000],
-      ["March", 14000, 12000],
-      ["April", 13000, 10000],
-      ["May", 11000, 6000]
-    ]);
+    // create data
+    var data = [
+      {x: "A", value: 1},
+      {x: "B", value: 1},
+      {x: "C", value: 1},
+      {x: "D", value: 1},
+      {x: "E", value: 1},
+      {x: "F", value: 1},
+      {x: "G", value: 1},
+      {x: "H", value: 1},
+      {x: "I", value: 1},
+      {x: "J", value: 1},
+      {x: "K", value: 1},
+      {x: "L", value: 1},
+      {x: "M", value: 1},
+      {x: "N", value: 1},
+      {x: "O", value: 1},
+      {x: "P", value: 1},
+      {x: "Q", value: 1},
+      {x: "R", value: 1},
+      {x: "S", value: 1},
+      {x: "T", value: 1},
+      {x: "U", value: 1},
+      {x: "V", value: 1},
+      {x: "W", value: 1},
+      {x: "X", value: 1},
+      {x: "Y", value: 1},
+      {x: "Z", value: 1},
+    ];
 
-    // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
-
-    // create a chart
-    chart = anychart.line();
-
-    // create series, set the data and names
-    var series1 = chart.line(seriesData_1);
-    var series2 = chart.line(seriesData_2);
-    series1.name("2017");
-    series2.name("2018");
-
-    // enable the legend
-    chart.legend(true);
+    // create a chart and set the data
+    chart = anychart.pie(data);
 
     // set the chart title
     chart.title("Legend: Layout");
-
-    // set the titles of the axes
-    chart.xAxis().title("Month");
-    chart.yAxis().title("Sales, $");
 
     // set the container id
     chart.container("container");
