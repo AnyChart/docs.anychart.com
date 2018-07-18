@@ -35,13 +35,13 @@
 
 ```
 
-{sample :width 500 :height 500}CS\_Legend\_Basic\_04{sample}
+{sample}CS\_Legend\_Basic\_04{sample}
 
 ```
 
 ```
 
-{sample}CS\_Legend\_Basic\_05{sample}
+{sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
 ## Position
 
