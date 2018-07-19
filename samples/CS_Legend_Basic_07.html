@@ -18,8 +18,7 @@
             margin: 0;
             padding: 0;
         }
-        label {
-            display: inline-block;
+        select {
             margin: 10px 0 0 10px;
         }
         #container {
@@ -31,8 +30,12 @@
     </style>
 </head>
 <body>
-<label><input onclick="legendPositionMode('outside')" type="radio" name="mode" checked>Outside</label>
-<label><input onclick="legendPositionMode('inside')" type="radio" name="mode">Inside</label>  
+<select id="positionSelect" onclick="legendPosition()">
+    <option value="right" selected>Position: Right</option>
+    <option value="left">Position: Left</option>
+    <option value="top">Position: Top</option>
+    <option value="bottom">Position: Bottom</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -79,7 +82,7 @@ anychart.onDocumentReady(function () {
     // set the position of the legend
     legend.position("right");
 
-    // set the align of the legend
+    // set the alignment of the legend
     legend.align("top");
 
     // set the chart title
@@ -91,9 +94,10 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-// set the legend position mode
-function legendPositionMode(mode) {
-  legend.positionMode(mode);
+// set the position of the legend
+function legendPosition() {
+  var position = document.getElementById("positionSelect");
+  legend.position(position.value);
 }
 </script>
 </body>
