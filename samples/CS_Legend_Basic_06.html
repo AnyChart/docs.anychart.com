@@ -39,11 +39,11 @@ anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 12000, 10000, 7000, 11000],
+      ["January", 9000, 10000, 7000, 11000],
       ["February", 15000, 12000, 9000, 13000],
       ["March", 16000, 15000, 14000, 12000],
       ["April", 15000, 11000, 13000, 10000],
-      ["May", 14000, 9000, 11000, 6000]
+      ["May", 10000, 9000, 11000, 6000]
     ]);
 
     // map the data
@@ -79,10 +79,10 @@ anychart.onDocumentReady(function () {
     // set the position of the legend
     legend.position("right");
 
-    legend.positionMode("inside")
-
     // set the align of the legend
     legend.align("top");
+
+    legend.positionMode("inside");
 
     // set the chart title
     chart.title("Legend: Position");
