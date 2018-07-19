@@ -12,52 +12,54 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<label><input onclick="legendLayout('horizontal')" type="radio" name="layout" checked>Horizontal</label>
+<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="layout">Horizontal-Expandable</label>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["January", 12000, 10000, 7000, 11000],
-      ["February", 15000, 12000, 9000, 13000],
-      ["March", 16000, 15000, 14000, 12000],
-      ["April", 15000, 11000, 13000, 10000],
-      ["May", 10000, 9000, 11000, 6000]
-    ]);
+    // create data
+    var data = [
+      {x: "John Doe", value: 1},
+      {x: "Richard Roe", value: 1},
+      {x: "Marta Moe", value: 1},
+      {x: "Larry Loe", value: 1},
+      {x: "Jane Poe", value: 1},
+      {x: "Norma Noe", value: 1},
+      {x: "William Woe", value: 1}
+    ];
 
-    // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
-    var seriesData_3 = data.mapAs({x: 0, value: 3});
-    var seriesData_4 = data.mapAs({x: 0, value: 4});
-
-    // create a chart
-    var chart = anychart.line();
-
-    // create series, set the data and names
-    var series1 = chart.line(seriesData_1);
-    var series2 = chart.line(seriesData_2);
-    var series3 = chart.line(seriesData_3);
-    var series4 = chart.line(seriesData_4);
-    series1.name("2015");
-    series2.name("2016");
-    series3.name("2017");
-    series4.name("2018");
-
-    // enable the legend
-    chart.legend(true);
+    // create a chart and set the data
+    chart = anychart.pie(data);
 
     // set the chart title
     chart.title("Legend: Size (Expandable)");
+
+    // set the layout of the legend
+    chart.legend().itemsLayout("horizontal-expandable");
+
+    // set the max width and height of the legend
+    chart.legend().maxHeight("120");
+    chart.legend().maxWidth("200");
 
     // set the container id
     chart.container("container");
@@ -65,6 +67,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// set the layout of the legend
+function legendLayout(layout) {
+  chart.legend().itemsLayout(layout);
+}
 </script>
 </body>
 </html>
