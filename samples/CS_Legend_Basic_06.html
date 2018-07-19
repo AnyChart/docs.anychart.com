@@ -55,10 +55,6 @@ anychart.onDocumentReady(function () {
     // create a chart
     chart = anychart.line();
 
-    // set the background of the data area
-    chart.dataArea().background().enabled(true);
-    chart.dataArea().background().fill("#96a6a6 0.3");
-
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
@@ -68,6 +64,10 @@ anychart.onDocumentReady(function () {
     series2.name("2016");
     series3.name("2017");
     series4.name("2018");
+
+    // set the background of the data area
+    chart.dataArea().background().enabled(true);
+    chart.dataArea().background().fill("#96a6a6 0.3");
 
     // enable the legend
     legend = chart.legend();
@@ -91,7 +91,7 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-// set the legend position mode
+// set the position mode of the legend
 function legendPositionMode(mode) {
   legend.positionMode(mode);
 }
