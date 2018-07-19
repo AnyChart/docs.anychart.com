@@ -42,13 +42,22 @@ anychart.onDocumentReady(function () {
     chart.yMinorGrid(true);
 
     // enable the legend
-    chart.legend(true);
-
-    // set the position mode of the legend
-    chart.legend().positionMode("inside");
+    var legend = chart.legend();
+    legend.enabled(true);
 
     // enable the drag and drop mode of the legend
-    chart.legend().drag(true);
+    legend.drag(true);
+
+    // set the position mode of the legend
+    legend.positionMode("inside");
+
+    // set the padding of the legend
+    chart.legend().padding(10);
+
+    // configure the background of the legend
+    legend.background().enabled(true);
+    legend.background().fill("#96a6a6 0.3");
+    legend.background().stroke("#96a6a6");
 
     // set the chart title
     chart.title("Legend: Position (Drag and Drop)");

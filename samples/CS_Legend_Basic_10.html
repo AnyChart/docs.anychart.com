@@ -56,9 +56,6 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // set the padding of the legend
-    chart.legend().padding(10);
-
     // configure the background of the legend
     var background = chart.legend().background();
     background.enabled(true);
@@ -66,6 +63,9 @@ anychart.onDocumentReady(function () {
     background.stroke("#96a6a6");
     background.cornerType("round");
     background.corners(10);
+
+    // set the padding of the legend
+    chart.legend().padding(10);
 
     // set the chart title
     chart.title("Legend: Background");
