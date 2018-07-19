@@ -31,8 +31,8 @@
     </style>
 </head>
 <body>
-<label><input onclick="legendLayout('horizontal')" type="radio" name="mode" checked>Horizontal</label>
-<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="mode">Horizontal-Expandable</label>  
+<label><input onclick="legendLayout('horizontal')" type="radio" name="layout" checked>Horizontal</label>
+<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="layout">Horizontal-Expandable</label>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -61,7 +61,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// set the legend layout
+// set the layout of the legend
 function legendLayout(layout) {
   chart.legend().itemsLayout(layout);
 }
