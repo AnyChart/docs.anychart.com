@@ -36,6 +36,13 @@
     <option value="top">Position: Top</option>
     <option value="bottom">Position: Bottom</option>
 </select>
+<select id="alignSelect" onclick="legendAlign()">
+    <option value="top" selected>Align: Top</option>
+    <option value="bottom">Align: Bottom</option>
+    <option value="center">Align: Center</option>
+    <option value="right">Align: Right</option>
+    <option value="left">Align: Left</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -92,6 +99,12 @@ anychart.onDocumentReady(function () {
 function legendPosition() {
   var position = document.getElementById("positionSelect");
   legend.position(position.value);
+}
+
+// set the alignment of the legend
+function legendAlign() {
+  var align = document.getElementById("alignSelect");
+  legend.align(align.value);
 }
 </script>
 </body>
