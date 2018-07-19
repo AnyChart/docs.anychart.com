@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Basic 09"/>
+    <meta name="ac:name" content="CS Legend Basic 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -56,8 +56,19 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // set the padding of the legend
+    chart.legend().padding(10);
+
+    // configure the background of the legend
+    var background = chart.legend().background();
+    background.enabled(true);
+    background.fill("#96a6a6 0.3");
+    background.stroke("#96a6a6");
+    background.cornerType("round");
+    background.corners(10);
+
     // set the chart title
-    chart.title("Legend: Size (Expandable)");
+    chart.title("Legend: Background");
 
     // set the container id
     chart.container("container");

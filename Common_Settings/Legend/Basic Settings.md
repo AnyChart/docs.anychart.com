@@ -57,6 +57,12 @@
 
 {sample}CS\_Legend\_Basic\_07{sample}
 
+```
+
+```
+
+{sample}CS\_Legend\_Basic\_08{sample}
+
 ## Size
 
 ### Fixed
@@ -67,7 +73,7 @@
 
 ```
 
-{sample}CS\_Legend\_Basic\_08{sample}
+{sample}CS\_Legend\_Basic\_09{sample}
 
 ## Background
 
@@ -75,4 +81,4 @@
 
 ```
 
-{sample}CS\_Legend\_Basic\_09{sample}
+{sample}CS\_Legend\_Basic\_10{sample}
