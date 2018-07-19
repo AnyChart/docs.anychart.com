@@ -79,7 +79,7 @@
 
 ```
 
-{sample}CS\_Legend\_Basic\_09{sample}
+{samplesample :width 500 :height 500}CS\_Legend\_Basic\_09{sample}
 
 ## Background
 
