@@ -45,15 +45,21 @@
 
 ## Position
 
+### Mode (Inside / Outside)
+
 ```
 
 ```
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
+### Position and Align
+
 ```
 
 ```
+
+### Drag and Drop
 
 {sample}CS\_Legend\_Basic\_07{sample}
 
