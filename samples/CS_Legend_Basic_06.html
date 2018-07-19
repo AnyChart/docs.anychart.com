@@ -87,7 +87,10 @@ anychart.onDocumentReady(function () {
     legend.align("top");
 
     // set the chart title
-    chart.title("Legend: Position and Alignment");
+    chart.listen("chartDraw", function () {
+      chart.title("Legend: Position = " + chart.legend().position() +
+                  ", Align = " + chart.legend().align());
+    });
 
     // set the container id
     chart.container("container");

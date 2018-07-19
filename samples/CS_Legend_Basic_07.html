@@ -83,7 +83,10 @@ anychart.onDocumentReady(function () {
     legend.align("top");
 
     // set the chart title
-    chart.title("Legend: Position (Inside / Outside)");
+    chart.listen("chartDraw", function () {
+      chart.title("Legend: Position Mode = " +
+                  chart.legend().positionMode());
+    });
 
     // set the container id
     chart.container("container");

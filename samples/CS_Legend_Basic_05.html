@@ -52,7 +52,10 @@ anychart.onDocumentReady(function () {
     chart = anychart.pie(data);
 
     // set the chart title
-    chart.title("Legend: Layout");
+    chart.listen("chartDraw", function () {
+      chart.title("Legend: Layout = " +
+                  chart.legend().itemsLayout());
+    });
 
     // set the container id
     chart.container("container");

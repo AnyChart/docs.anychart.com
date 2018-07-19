@@ -63,7 +63,13 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // set the chart title
-    chart.title("Legend: Layout");
+    //chart.title("Legend: Layout");
+
+    // set the chart title
+    chart.listen("chartDraw", function () {
+      chart.title("Legend: Layout = " +
+                  chart.legend().itemsLayout());
+    });
 
     // set the container id
     chart.container("container");
