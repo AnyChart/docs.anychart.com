@@ -45,7 +45,7 @@
 
 ## Position
 
-### Position and Align
+### Position + Alignment
 
 ```
 
