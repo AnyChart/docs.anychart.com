@@ -45,7 +45,7 @@
 
 ## Position
 
-### Inside / Outside
+### Outside / Inside
 
 ```
 
@@ -53,7 +53,7 @@
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
-### Position and Align
+### Position & Align
 
 ```
 
