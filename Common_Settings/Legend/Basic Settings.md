@@ -45,7 +45,7 @@
 
 ## Position
 
-### Outside / Inside
+### Position and Align
 
 ```
 
@@ -53,15 +53,15 @@
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
-### Position and Align
+### Outside / Inside
 
 ```
 
 ```
-
-### Drag and Drop
 
 {sample}CS\_Legend\_Basic\_07{sample}
+
+### Drag and Drop
 
 ```
 
