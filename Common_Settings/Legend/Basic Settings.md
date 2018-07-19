@@ -45,7 +45,7 @@
 
 ## Position
 
-### Mode (Inside / Outside)
+### Inside / Outside
 
 ```
 
