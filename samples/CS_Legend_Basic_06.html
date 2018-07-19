@@ -37,11 +37,11 @@
     <option value="bottom">Position: Bottom</option>
 </select>
 <select id="alignSelect" onclick="legendAlign()">
-    <option value="top" selected>Alignment: Top</option>
-    <option value="bottom">Alignment: Bottom</option>
-    <option value="center">Alignment: Center</option>
-    <option value="right">Alignment: Right</option>
-    <option value="left">Alignment: Left</option>
+    <option value="top" selected>Align: Top</option>
+    <option value="bottom">Align: Bottom</option>
+    <option value="center">Align: Center</option>
+    <option value="right">Align: Right</option>
+    <option value="left">Align: Left</option>
 </select>
 <div id="container"></div>
 <script>
@@ -89,7 +89,7 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.listen("chartDraw", function () {
       chart.title("Legend: Position = " + chart.legend().position() +
-                  ", Alignment = " + chart.legend().align());
+                  ", Align = " + chart.legend().align());
     });
 
     // set the container id
