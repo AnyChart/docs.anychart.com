@@ -18,8 +18,7 @@
             margin: 0;
             padding: 0;
         }
-        label {
-            display: inline-block;
+        select {
             margin: 10px 0 0 10px;
         }
         #container {
@@ -31,26 +30,35 @@
     </style>
 </head>
 <body>
-<label><input onclick="legendPositionMode('outside')" type="radio" name="mode" checked>Outside</label>
-<label><input onclick="legendPositionMode('inside')" type="radio" name="mode">Inside</label>  
+<select id="positionSelect" onclick="legendPosition()">
+    <option value="right" selected>Position: Right</option>
+    <option value="left">Position: Left</option>
+    <option value="top">Position: Top</option>
+    <option value="bottom">Position: Bottom</option>
+</select>
+<select id="alignSelect" onclick="legendAlign()">
+    <option value="top" selected>Align: Top</option>
+    <option value="bottom">Align: Bottom</option>
+    <option value="center">Align: Center</option>
+    <option value="right">Align: Right</option>
+    <option value="left">Align: Left</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 9000, 10000, 7000, 11000],
-      ["February", 15000, 12000, 9000, 13000],
-      ["March", 16000, 15000, 14000, 12000],
-      ["April", 15000, 11000, 13000, 10000],
-      ["May", 10000, 9000, 11000, 6000]
+      ["January", 7000, 11000],
+      ["February", 9000, 13000],
+      ["March", 14000, 12000],
+      ["April", 13000, 10000],
+      ["May", 11000, 6000]
     ]);
 
     // map the data
     var seriesData_1 = data.mapAs({x: 0, value: 1});
     var seriesData_2 = data.mapAs({x: 0, value: 2});
-    var seriesData_3 = data.mapAs({x: 0, value: 3});
-    var seriesData_4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
     chart = anychart.line();
@@ -58,12 +66,8 @@ anychart.onDocumentReady(function () {
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
-    var series3 = chart.line(seriesData_3);
-    var series4 = chart.line(seriesData_4);
-    series1.name("2015");
-    series2.name("2016");
-    series3.name("2017");
-    series4.name("2018");
+    series1.name("2017");
+    series2.name("2018");
 
     // set the background of the data area
     chart.dataArea().background().enabled(true);
@@ -83,7 +87,7 @@ anychart.onDocumentReady(function () {
     legend.align("top");
 
     // set the chart title
-    chart.title("Legend: Position (Inside / Outside)");
+    chart.title("Legend: Position and Alignment");
 
     // set the container id
     chart.container("container");
@@ -91,9 +95,16 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-// set the position mode of the legend
-function legendPositionMode(mode) {
-  legend.positionMode(mode);
+// set the position of the legend
+function legendPosition() {
+  var position = document.getElementById("positionSelect");
+  legend.position(position.value);
+}
+
+// set the alignment of the legend
+function legendAlign() {
+  var align = document.getElementById("alignSelect");
+  legend.align(align.value);
 }
 </script>
 </body>
