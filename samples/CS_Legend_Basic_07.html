@@ -31,8 +31,8 @@
     </style>
 </head>
 <body>
-<label><input onclick="legendPositionMode('outside')" type="radio" name="mode" checked>Outside</label>
-<label><input onclick="legendPositionMode('inside')" type="radio" name="mode">Inside</label>  
+<label><input onclick="legendPositionMode('outside')" type="radio" name="mode">Outside</label>
+<label><input onclick="legendPositionMode('inside')" type="radio" name="mode" checked>Inside</label>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -75,6 +75,9 @@ anychart.onDocumentReady(function () {
 
     // set the layout of the legend
     legend.itemsLayout("vertical");
+
+    // set the position mode of the legend
+    legend.positionMode("inside");
 
     // set the position of the legend
     legend.position("right");
