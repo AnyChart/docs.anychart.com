@@ -53,7 +53,7 @@
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
-### Position & Align
+### Position and Align
 
 ```
 
