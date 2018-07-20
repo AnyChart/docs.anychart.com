@@ -12,7 +12,7 @@
 
 The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 
-To enable the legend, use the **legend()** method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend().
+To enable the legend, use the **legend()** method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}.
 
 Pass the `true` parameter to the legend constructor:
 
