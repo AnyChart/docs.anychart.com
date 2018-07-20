@@ -39,7 +39,7 @@ This sample shows how to enable the legend of a multi-series line chart:
 
 ### Default Interactivity
 
-When you click a [legend item](Legend_Item), the series of the chart it represents is shown / hidden.
+When you click a [legend item](Legend_Items), the series of the chart it represents is shown / hidden.
 
 In the following sample, the last series is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
 
@@ -61,7 +61,7 @@ series4.enabled(false);
 
 ## Source
 
-By default, each [legend item](Legend_Item) represents one of the series on the chart.
+By default, each [legend item](Legend_Items) represents one of the series on the chart.
 
 You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter see – {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}.
 
