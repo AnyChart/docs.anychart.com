@@ -3,6 +3,7 @@
 
 ## Overview
 
+* (?) The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 * [Stock Charts (Legend)](../../Stock_Charts/Legend)
 * (?) color range (color legend) (но куда ссылаться?)
 
@@ -10,11 +11,9 @@
 
 ### Enabling
 
-The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
+When you create charts of some types, for example the [Pie](../../Basic_Charts/Pie) chart (?), the legend is enabled by default, but most types require enabling it manually.
 
-To enable the legend, use the **legend()** method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}.
-
-Pass the `true` parameter to the legend constructor:
+To enable / disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
 ```
 // create a chart
@@ -24,7 +23,7 @@ var chart = anychart.line();
 chart.legend(true);
 ```
 
-You can also pass `true` to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
+You can also pass `true` / `false` to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
 ```
 // create a chart
@@ -34,9 +33,7 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
-**Note:** When you create charts of some types, for example the [Pie](../../Basic_Charts/Pie) chart, the legend is enabled by default. (?)
-
-That is how the default legend looks like:
+This sample shows how to enable the legend of a multi-series line chart:
 
 {sample}CS\_Legend\_Basic\_01{sample}
 
