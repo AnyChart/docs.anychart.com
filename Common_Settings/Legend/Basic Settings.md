@@ -3,6 +3,11 @@
 
 ## Overview
 
+* [Stock Charts (Legend)](../../Stock_Charts/Legend)
+* возможно, упомянуть color range, его иногда иногда называют цветовой легендой (но куда ссылаться?)
+
+
+
 ## Default Legend
 
 ### Enabling
