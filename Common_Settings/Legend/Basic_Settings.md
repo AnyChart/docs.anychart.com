@@ -152,8 +152,8 @@ legend.drag(true);
 
 * {api:anychart.core.ui.Legend#height}height(){api}
 * {api:anychart.core.ui.Legend#width}width(){api}
-* {api:anychart.core.ui.Legend#padding}margin(){api}
-* {api:anychart.core.ui.Legend#padding}margin(){api}
+* {api:anychart.core.ui.Legend#padding}padding(){api}
+* {api:anychart.core.ui.Legend#margin}margin(){api}
 
 ### Expandable
 
