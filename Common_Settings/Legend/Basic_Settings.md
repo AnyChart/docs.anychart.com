@@ -80,7 +80,7 @@ chart.legend().itemsLayout("vertical")
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
-* [Paginator](Paginator)
+* [Paginator](Advanced_Settings#paginator)
 * [Size (Expandable)](#expandable)
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
@@ -160,7 +160,7 @@ legend.drag(true);
 * {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api}
 * {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}
 * [Layout](#layout)
-* [Paginator](Paginator)
+* [Paginator](Advanced_Settings#paginator)
 
 ```
 // set the max width and height of the legend
