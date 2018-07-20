@@ -110,14 +110,14 @@ This sample shows the difference between the `"horizontal"` and `"horizontal-exp
 * {api:anychart.core.ui.Legend#align}align(){api}
 * [Layout](#layout)
 
-position:
+{api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top` (default)
 * `bottom`
 * `right`
 * `left`
 
-alignment:
+{api:anychart.enums.Align}anychart.enums.Align{api}:
 
 * `center` (default)
 * `top`
@@ -138,6 +138,7 @@ legend.align("top");
 ### Outside / Inside
 
 * {api:anychart.core.ui.Legend#positionMode}positionMode(){api}
+* {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}
 * `outside` (default)
 * `inside`
 * [Layout](#layout)
