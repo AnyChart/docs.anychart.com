@@ -4,26 +4,17 @@
 ## Overview
 
 * [Stock Charts (Legend)](../../Stock_Charts/Legend)
-* возможно, упомянуть color range, его иногда иногда называют цветовой легендой (но куда ссылаться?)
-
-
+* (?) color range (color legend) (но куда ссылаться?)
 
 ## Default Legend
 
 ### Enabling
 
-* {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
-* {api:anychart.charts.Cartesian#legend}legend(){api} (Cartesian)
-* {api:anychart.core.ui.Legend#enabled}enabled(){api}
-* `true`
+The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 
-```
-// create a chart
-var chart = anychart.line();
+To enable the legend, use the **legend()** method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend().
 
-// enable the legend
-chart.legend().enabled(true);
-```
+Pass the `true` parameter to the legend constructor:
 
 ```
 // create a chart
@@ -33,9 +24,23 @@ var chart = anychart.line();
 chart.legend(true);
 ```
 
+You can also pass `true` to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
+
+```
+// create a chart
+var chart = anychart.line();
+
+// enable the legend
+chart.legend().enabled(true);
+```
+
 {sample}CS\_Legend\_Basic\_01{sample}
 
 ### Default Interactivity
+
+When you click a [legend item](Legend_Item), the series of the chart it represents is shown / hidden.
+
+In the following sample, the last series is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
 
 ```
 // create a chart
@@ -55,9 +60,11 @@ series4.enabled(false);
 
 ## Source
 
-* легенда по дефолту привязана к сериям одного чарта
-* [Standalone Legend](Standalone_Legend)
-* {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api}
+By default, each [legend item](Legend_Item) represents one of the series on the chart.
+
+You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter see – {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}.
+
+Setting the source to `"categories"` is reasonable if there is only one series on the chart:
 
 ```
 // set the legend source mode
@@ -65,6 +72,8 @@ chart.legend().itemsSourceMode("categories");
 ```
 
 {sample}CS\_Legend\_Basic\_03{sample}
+
+You can also create a [standalone legend](Standalone_Legend) to access advanced options, such as binding one legend to several charts. (?)
 
 ## Layout
 
