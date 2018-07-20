@@ -173,7 +173,7 @@ chart.legend().maxWidth("40%");
 ## Background
 
 * {api:anychart.core.ui.Legend#background}background(){api}
-* (?) {api:anychart.core.ui.Background}background(){api}
+* (?) {api:anychart.core.ui.Background}anychart.core.ui.Background{api}
 * [Background](../../Appearance_Settings/Background)
 
 ```
