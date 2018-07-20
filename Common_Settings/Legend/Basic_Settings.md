@@ -90,7 +90,7 @@ chart.legend().itemsLayout("vertical")
 ### Position + Alignment
 
 * {api:anychart.core.ui.Legend#position}position(){api}
-* {api:anychart.core.ui.Legend#position}align(){api}
+* {api:anychart.core.ui.Legend#align}align(){api}
 * [Layout](#layout)
 
 position:
@@ -136,7 +136,7 @@ legend.positionMode("inside");
 
 * {api:anychart.core.ui.Legend#drag}drag(){api}
 * [Events](Events)
-* [Inside / Outside](#inside_outside)
+* [Inside / Outside](#inside_/_outside)
 * [Background](#background)
 
 ```
