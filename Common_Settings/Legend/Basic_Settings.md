@@ -34,6 +34,8 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
+That is how the default legend looks like:
+
 {sample}CS\_Legend\_Basic\_01{sample}
 
 ### Default Interactivity
