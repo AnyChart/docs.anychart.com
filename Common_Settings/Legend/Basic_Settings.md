@@ -11,7 +11,7 @@
 
 ### Enabling
 
-When you create charts of some types, for example the [Pie](../../Basic_Charts/Pie) chart (?), the legend is enabled by default, but most types require enabling it manually.
+When you create charts of some types, for example the [Pie](../../Basic_Charts/Pie_Chart) chart (?), the legend is enabled by default, but most types require enabling it manually.
 
 To enable / disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
