@@ -34,6 +34,8 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
+**Note:** When you create charts of some types, for example the [Pie](../../Basic_Charts/Pie) chart, the legend is enabled by default. (?)
+
 That is how the default legend looks like:
 
 {sample}CS\_Legend\_Basic\_01{sample}
