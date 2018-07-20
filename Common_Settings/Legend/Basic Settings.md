@@ -50,6 +50,8 @@ series4.enabled(false);
 
 ## Source
 
+* легенда по дефолту привязана к сериям одного чарта
+* [Standalone Legend](Standalone_Legend)
 * {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api}
 
 ```
@@ -73,6 +75,9 @@ chart.legend().itemsLayout("vertical")
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
+* [Paginator](Paginator)
+* [Size (Expandable)](#expandable)
+
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
 ## Position
@@ -81,6 +86,7 @@ chart.legend().itemsLayout("vertical")
 
 * {api:anychart.core.ui.Legend#position}position(){api}
 * {api:anychart.core.ui.Legend#position}align(){api}
+* [Layout](#layout)
 
 position:
 
@@ -112,6 +118,7 @@ legend.align("top");
 * {api:anychart.core.ui.Legend#positionMode}positionMode(){api}
 * `outside` (default)
 * `inside`
+* [Layout](#layout)
 
 ```
 // set the position mode of the legend
@@ -123,6 +130,9 @@ legend.positionMode("inside");
 ### Drag and Drop
 
 * {api:anychart.core.ui.Legend#drag}drag(){api}
+* [Events](Events)
+* [Inside / Outside](#inside_outside)
+* [Background](#background)
 
 ```
 // enable the drag and drop mode of the legend
@@ -144,6 +154,8 @@ legend.drag(true);
 
 * {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api}
 * {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}
+* [Layout](#layout)
+* [Paginator](Paginator)
 
 ```
 // set the max width and height of the legend
@@ -157,6 +169,7 @@ chart.legend().maxWidth("40%");
 
 * {api:anychart.core.ui.Legend#background}background(){api}
 * (?) {api:anychart.core.ui.Background}background(){api}
+* [Background](../../Appearance_Settings/Background)
 
 ```
 // configure the background of the legend
