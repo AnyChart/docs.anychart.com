@@ -136,7 +136,7 @@ legend.positionMode("inside");
 
 * {api:anychart.core.ui.Legend#drag}drag(){api}
 * [Events](Events)
-* [Inside / Outside](#inside_/_outside)
+* [Inside / Outside](#outside_/_inside)
 * [Background](#background)
 
 ```
