@@ -77,20 +77,28 @@ You can also create a [standalone legend](Standalone_Legend) to access advanced 
 
 ## Layout
 
-* {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api}
-* `horizontal` (default)
-* `vertical`
-* `horizontal-expandable`
-* `vertical-expandable`
+The default legend is oriented horizontally. To change its layout, call the {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method with one of the parameters listed in {api:anychart.enums.LegendLayout}anychart.enums.LegendLayout{api}:
+
+* `"horizontal"` (default)
+* `"vertical"`
+* `"horizontal-expandable"`
+* `"vertical-expandable"`
 
 ```
 chart.legend().itemsLayout("vertical")
 ```
 
+The sample below shows the difference between the `"horizontal"` and `"vertical"` layouts:
+
 {sample}CS\_Legend\_Basic\_04{sample}
 
-* [Paginator](Advanced_Settings#paginator)
-* [Size (Expandable)](#expandable)
+The `"horizontal-expandable"` and `"vertical-expandable"` parameters change the behavior of the legend when there are too many items (and they do not fit its [size](#size)).
+
+If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and a [paginator](Advanced_Settings#paginator) appears, allowing you to flip through them.
+
+If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes a smaller place. You can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
+
+This sample shows the difference between the `"horizontal"` and `"horizontal-expandable"` layouts:
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
