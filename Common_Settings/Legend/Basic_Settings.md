@@ -205,7 +205,7 @@ The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.co
 
 If the [layout](#layout) of the legend is `"horizontal"` / `"vertical"`, the legend occupies the minimum possible space within the limits set by these methods. If the legend does not fit the limits, it is [paged](Advanced_Settings#paginator).
 
-If the layout is `"horizontal-expandable"` or `"vertical-expandable"`, the legend can be expanded only within the given limits.
+If the layout is `"horizontal-expandable"` or `"vertical-expandable"`, the legend can be expanded in any possible direction and occupies the maximum possible space, but only within the given limits.
 
 This sample shows how setting maximum width and height affects the legend depending on the layout:
 
