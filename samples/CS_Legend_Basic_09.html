@@ -49,27 +49,17 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a chart and set the data
-    var chart = anychart.pie(data);
+    chart = anychart.pie(data);
 
     // set the chart title
     chart.listen("chartDraw", function () {
-      chart.title("Legend: Size (Fixed)\n\n" +
-                  "Width = 30%, Height = 50%");
+      chart.title("Legend: Size (Expandable)\n\n" +
+                  "Max Width = 30%, Max Height = 50%");
     });
 
-    legend = chart.legend();
-
-    // set the width and height of the legend
-    legend.height("30%");
-    legend.width("50%");
-
-    // set the padding of the legend
-    legend.padding(10);
-
-    // configure the background of the legend
-    legend.background().enabled(true);
-    legend.background().fill("white");
-    legend.background().stroke("2 #96a6a6");
+    // set the max width and height of the legend
+    chart.legend().maxHeight("30%");
+    chart.legend().maxWidth("50%");
 
     // set the container id
     chart.container("container");
@@ -80,7 +70,7 @@ anychart.onDocumentReady(function () {
 
 // set the layout of the legend
 function legendLayout(layout) {
-  legend.itemsLayout(layout);
+  chart.legend().itemsLayout(layout);
 }
 </script>
 </body>
