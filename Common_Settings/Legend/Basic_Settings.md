@@ -135,24 +135,25 @@ legend.position("right");
 legend.align("top");
 ```
 
-The sample below shows how these methods affect the legend with the [layout](#layout) set to `vertical`:
+The sample below shows how these methods affect the legend with a vertical [layout](#layout):
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
 ### Outside / Inside
 
-By default, the legend is shown outside the data area (the area limited by the axes).
+By default, the legend is shown outside the data area (the area limited by the axes). (?) You can 
 
-* {api:anychart.core.ui.Legend#positionMode}positionMode(){api}
-* {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}
+The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows you to place the legend outside or inside the data area (the area limited by the axes). (?) It accepts the parameters listed in {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}:
 * `outside` (default)
 * `inside`
-* [Layout](#layout)
+
 
 ```
 // set the position mode of the legend
 legend.positionMode("inside");
 ```
+
+In the following sample, these two modes are applied to the legend with a vertical [layout](#layout) (its [position and alignment](#position_+_alignment) are also configured):
 
 {sample}CS\_Legend\_Basic\_07{sample}
 
