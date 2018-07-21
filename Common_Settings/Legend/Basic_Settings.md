@@ -63,14 +63,15 @@ series4.enabled(false);
 
 By default, each [legend item](Legend_Items) represents one of the series on the chart.
 
-You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}.
+You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
 
-Setting the source to `"categories"` is reasonable if there is only one series:
 
 ```
 // set the legend source mode
 chart.legend().itemsSourceMode("categories");
 ```
+
+Setting the source to `"categories"` is reasonable if there is only one series:
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
