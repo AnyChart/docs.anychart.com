@@ -94,11 +94,7 @@ The following sample shows the difference between the `"horizontal"` and `"verti
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
-The other two parameters change the behavior of the legend when there are too many items (and they do not fit its [size](#size)).
-
-If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and a [paginator](Advanced_Settings#paginator) appears, allowing you to flip through them.
-
-If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes a smaller place.
+The other two parameters change the behavior of the legend when there are too many items (and they do not fit its [size](#size)). If the layout is `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and a [paginator](Advanced_Settings#paginator) appears, allowing you to flip through them. With `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes a smaller place.
 
 **Note:** You can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
 
