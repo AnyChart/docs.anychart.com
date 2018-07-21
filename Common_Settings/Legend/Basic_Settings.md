@@ -97,19 +97,13 @@ The following sample shows the difference between the `"horizontal"` and `"verti
 
 Sometimes there are too many legend items, and the space they would take up if they were shown simultaneously exceeds the [size](#size) of the legend. The layout affects the behavior of the legend in this situation:
 
-* `"horizontal"` / `"vertical"`: only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them
+If the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them.
 
-* `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space.
+When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space.
 
 **Note 1:** The paginator can be configured: read [Advanced Settings: Paginator](Advanced_Settings#paginator) to learn more.
 
 **Note 2:** You can set a limit to the expansion – see the [Size: Expandable](#expandable) section.
-
-Sometimes there are too many legend items, and the space they would take up if they were shown simultaneously exceeds the [size](#size) of the legend.
-
-In this case, with the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them. The paginator can be configured: read [Advanced Settings: Paginator](Advanced_Settings#paginator) to learn more.
-
-If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space. Please note that you can set a limit to the expansion – see the [Size: Expandable](#expandable) section.
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
