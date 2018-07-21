@@ -163,6 +163,7 @@ The {api:anychart.core.ui.Legend#drag}drag(){api} method with `true` as a parame
 // enable the drag and drop mode of the legend
 legend.drag(true);
 ```
+
 **Note:** The drag-and-drop mode works within the limits set by the position mode ([Outside / Inside](#outside_/_inside)). If the position mode is the default `outside`, an additional limit is set by the position of the legend relative to the chart ([Position + Alignment](#position_+_alignment)).
 
 * {api:anychart.core.ui.Legend#drag}drag(){api}
