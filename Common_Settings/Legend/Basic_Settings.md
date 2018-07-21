@@ -11,7 +11,7 @@
 
 ### Enabling
 
-Most of the chart types require you to enable the legend manually. But there are some exceptions, such as [Waterfall](../../Basic_Charts/Waterfall_Chart), [Pie](../../Basic_Charts/Pie_Chart) and [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart) and [Pyramid](../../Basic_Charts/Pyramid_Chart) charts, and [Venn](../../Basic_Charts/Venn_Diagram) diagrams. (?)
+Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Waterfall](../../Basic_Charts/Waterfall_Chart), [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart) charts, [Venn](../../Basic_Charts/Venn_Diagram).
 
 To enable / disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
@@ -41,7 +41,7 @@ This sample shows how to enable the legend of a multi-series line chart:
 
 When you click a [legend item](Legend_Items), the series of the chart it represents is shown / hidden.
 
-In the following sample, the last series is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
+In the sample below, the last series is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
 
 ```
 // create a chart
@@ -89,7 +89,7 @@ The default legend is oriented horizontally. To change its layout, call the {api
 chart.legend().itemsLayout("vertical")
 ```
 
-The sample below shows the difference between the `"horizontal"` and `"vertical"` layouts:
+The following sample shows the difference between the `"horizontal"` and `"vertical"` layouts:
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
