@@ -11,7 +11,7 @@
 
 ### Enabling
 
-Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
+Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart). (?)
 
 To enable / disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
@@ -61,7 +61,7 @@ series4.enabled(false);
 
 ## Source
 
-By default, each legend item represents one of the series on the chart.
+By default, each legend item represents one of the series of the chart.
 
 You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
 
@@ -97,9 +97,9 @@ The following sample shows the difference between the `"horizontal"` and `"verti
 
 Sometimes there are too many legend items, and the space they would take up if they were shown simultaneously exceeds the [size](#size) of the legend.
 
-In this case, with the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them. The paginator can be configured: read [Advanced Settings (Paginator)](Advanced_Settings#paginator) to learn more.
+In this case, with the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them. The paginator can be configured: read [Advanced Settings: Paginator](Advanced_Settings#paginator) to learn more.
 
-If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space. Please note that you can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
+If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space. Please note that you can set a limit to the expansion – see the [Size: Expandable](#expandable) section.
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
