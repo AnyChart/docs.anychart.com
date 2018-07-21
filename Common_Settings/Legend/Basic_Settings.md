@@ -94,7 +94,7 @@ The following sample shows the difference between the `"horizontal"` and `"verti
 
 {sample}CS\_Legend\_Basic\_04{sample}
 
-Sometimes there are too many legend items, and all of them cannot be shown simultaneously without exceeding the [size](#size) to the legend.
+Sometimes there are too many legend items, and all of them cannot be shown simultaneously without exceeding the [size](#size) of the legend.
 
 If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and a [paginator](Advanced_Settings#paginator) appears, allowing you to flip through them.
 
