@@ -191,6 +191,12 @@ Also, the legend always takes up the full height and width, even if the number o
 
 In the sample below, there is a legend with custom width and height and the [background](#background) configured to visualize its size:
 
+```
+// set the width and height of the legend
+cgart.legend().height("30%");
+cgart.legend().width("40%");
+```
+
 {sample :width 500 :height 500}CS\_Legend\_Basic\_09{sample}
 
 ### Expandable
