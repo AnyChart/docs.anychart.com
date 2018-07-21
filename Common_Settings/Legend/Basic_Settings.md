@@ -183,11 +183,21 @@ To configure the size of the legend, use the following methods:
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
 
-The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: when there are too many items, the legend is [paged](Advanced_Settings#paginator).
+The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: if there are too many items, the legend is [paged](Advanced_Settings#paginator).
 
-However, this is true only when the [layout](#layout) is set to`"horizontal"` or `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
+However, this is true only when the [layout](#layout) is set to `"horizontal"` or `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
+
+Also, the legend always takes up the full height and width, even if the number of items requires a smaller space. The layout does not matter.
+
+In the sample below, there is a legend with custom width and height and the [background](#background) configured to visualize its size:
+
+{sample :width 500 :height 500}CS\_Legend\_Basic\_09{sample}
 
 ### Expandable
+
+The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size.
+
+If the [layout](#layout) of the legend is `"horizontal"` or `"vertical"`, the legend occupies the minimal possible space within the limits set by these methods. If the legend does not fit the limits, it is [paged](Advanced_Settings#paginator).
 
 The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} methods {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}...
 
@@ -202,7 +212,7 @@ chart.legend().maxHeight("30%");
 chart.legend().maxWidth("40%");
 ```
 
-{sample :width 500 :height 500}CS\_Legend\_Basic\_09{sample}
+{sample :width 500 :height 500}CS\_Legend\_Basic\_10{sample}
 
 ## Background
 
@@ -221,4 +231,4 @@ background.cornerType("round");
 background.corners(10);
 ```
 
-{sample}CS\_Legend\_Basic\_10{sample}
+{sample}CS\_Legend\_Basic\_11{sample}
