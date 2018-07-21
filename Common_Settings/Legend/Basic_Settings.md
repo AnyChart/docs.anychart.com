@@ -111,7 +111,9 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 ### Position + Alignment
 
-The {api:anychart.core.ui.Legend#position}position(){api} and {api:anychart.core.ui.Legend#align}align(){api} methods allow positioning the legend relative to the chart and setting its alignment.
+You can position the legend relative to the chart by calling the {api:anychart.core.ui.Legend#position}position(){api} method. To align the legend, call {api:anychart.core.ui.Legend#align}align(){api}.
+
+The parameters accepted by {api:anychart.core.ui.Legend#position}position(){api} are listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top` (default)
 * `bottom`
