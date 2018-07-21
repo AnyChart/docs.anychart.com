@@ -80,6 +80,7 @@ You can also create a [standalone legend](Standalone_Legend) to access advanced 
 
 The default legend is oriented horizontally. To change its layout, call the {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api} method with one of the parameters listed in {api:anychart.enums.LegendLayout}anychart.enums.LegendLayout{api}:
 
+
 * `"horizontal"` (default)
 * `"vertical"`
 * `"horizontal-expandable"`
