@@ -141,9 +141,7 @@ The sample below shows how these methods affect the legend with a vertical [layo
 
 ### Outside / Inside
 
-By default, the legend is shown outside the data area (the area limited by the axes). (?) You can 
-
-The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows you to place the legend outside or inside the data area (the area limited by the axes). (?) It accepts the parameters listed in {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}:
+The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows you to place the legend outside or inside the the area limited by the axes. (?) It accepts the parameters listed in {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}:
 * `outside` (default)
 * `inside`
 
