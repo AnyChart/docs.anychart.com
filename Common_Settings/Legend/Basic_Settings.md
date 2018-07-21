@@ -194,7 +194,7 @@ In the sample below, there is a legend with custom width and height and the [bac
 ```
 // set the width and height of the legend
 cgart.legend().height("30%");
-cgart.legend().width("40%");
+cgart.legend().width("50%");
 ```
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_09{sample}
@@ -212,7 +212,7 @@ This sample shows how setting maximum width and height affects the legend, depen
 ```
 // set the max width and height of the legend
 chart.legend().maxHeight("30%");
-chart.legend().maxWidth("40%");
+chart.legend().maxWidth("50%");
 ```
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_10{sample}
