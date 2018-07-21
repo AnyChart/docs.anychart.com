@@ -99,7 +99,7 @@ Sometimes there are too many legend items, and the space they would take up if t
 
 If the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them.
 
-When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space.
+When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded in any possible direction, and the chart takes up a smaller space.
 
 **Note 1:** The paginator can be configured: read [Advanced Settings: Paginator](Advanced_Settings#paginator) to learn more.
 
@@ -183,9 +183,9 @@ To configure the size of the legend, use the following methods:
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
 
-The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: if there are too many items, the legend is [paged](Advanced_Settings#paginator).
+The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: if there are too many items, and the legend does not fit any of the dimensions, it is [paged](Advanced_Settings#paginator).
 
-However, this is true only when the [layout](#layout) is set to `"horizontal"` / `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
+However, this is true only when the [layout](#layout) is set to `"horizontal"` / `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings: the legend is expanded in any possible direction, and the chart takes up a smaller space.
 
 Also, the legend always takes up the full height and width, even if the number of items requires a smaller space. The layout does not matter.
 
@@ -203,7 +203,7 @@ cgart.legend().width("40%");
 
 The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size.
 
-If the [layout](#layout) of the legend is `"horizontal"` / `"vertical"`, the legend occupies the minimum possible space within the limits set by these methods. If the legend does not fit the limits, it is [paged](Advanced_Settings#paginator).
+If the [layout](#layout) of the legend is `"horizontal"` / `"vertical"`, the legend occupies the minimum possible space within the limits set by these methods. If the legend does not fit any of the dimensions, it is [paged](Advanced_Settings#paginator).
 
 If the layout is `"horizontal-expandable"` or `"vertical-expandable"`, the legend can be expanded in any possible direction and occupies the maximum possible space, but only within the given limits.
 
