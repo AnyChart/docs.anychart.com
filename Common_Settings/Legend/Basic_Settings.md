@@ -151,7 +151,7 @@ The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows 
 legend.positionMode("inside");
 ```
 
-In the following sample, these two modes are applied to the legend with a vertical [layout](#layout) (its [position and alignment](#position_+_alignment) are also configured):
+In the following sample, these two modes are applied to the legend with a vertical [layout](#layout) and [position & alignment](#position_+_alignment) configured:
 
 {sample}CS\_Legend\_Basic\_07{sample}
 
@@ -164,12 +164,11 @@ The {api:anychart.core.ui.Legend#drag}drag(){api} method with `true` as a parame
 legend.drag(true);
 ```
 
-**Note:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
+**Note 1:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
 
-* {api:anychart.core.ui.Legend#drag}drag(){api}
-* [Events](Events)
-* [Inside / Outside](#outside_/_inside)
-* [Background](#background)
+**Note 2:** [Events](Events) (?)
+
+This sample demonstrates the drag-and-drop mode, applied to the legend with position mode set to [inside](#outside_/_inside) and [background](#background) configured:
 
 {sample}CS\_Legend\_Basic\_08{sample}
 
