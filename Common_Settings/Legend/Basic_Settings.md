@@ -137,7 +137,7 @@ legend.position("right");
 legend.align("top");
 ```
 
-The sample below shows ho to configure the position of the legend. Please note that the [layout](#layout) is set to `vertical`:
+The sample below shows how these methods affect a legend with the [layout](#layout) set to `vertical`:
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
