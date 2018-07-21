@@ -183,9 +183,13 @@ To configure the size of the legend, use the following methods:
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
 
-With the `"horizontal"` and `"vertical"` [layouts](#layout), these methods work as an absolute limit: if there are too many items, the legend is [paged](Advanced_Settings#paginator). However, the `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
+The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: when there are too many items, the legend is [paged](Advanced_Settings#paginator).
+
+However, this is true only when the [layout](#layout) is set to`"horizontal"` or `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
 
 ### Expandable
+
+The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} methods {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}...
 
 * {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api}
 * {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}
