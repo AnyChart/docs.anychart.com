@@ -98,7 +98,7 @@ Sometimes there are too many legend items, and the space they would take up if t
 
 In this case, with the layout set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and a **paginator** appears, allowing you to flip through them. The paginator can be configured: read [Advanced Settings (Paginator)](Advanced_Settings#paginator) to learn more.
 
-If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space. You can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
+If the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend is expanded, and the chart takes up a smaller space. Please note that you can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
 
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
