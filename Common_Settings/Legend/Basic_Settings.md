@@ -113,7 +113,7 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 To change the position of the legend, use the {api:anychart.core.ui.Legend#position}position(){api} and  {api:anychart.core.ui.Legend#align}align(){api} methods.
 
-The {api:anychart.core.ui.Legend#position}position(){api} method sets the position of the legend relative to the chart. It should be called with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
+The {api:anychart.core.ui.Legend#position}position(){api} method sets the position of the legend relative to the chart. Use one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top` (default)
 * `bottom`
@@ -136,7 +136,7 @@ legend.position("right");
 legend.align("top");
 ```
 
-* [Layout](#layout)
+The sample below shows ho to configure the position of the legend. Please note that the [layout](#layout) is set to `vertical`:
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
