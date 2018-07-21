@@ -11,7 +11,7 @@
 
 ### Enabling
 
-Most of the chart types require you to enable the legend manually. But there are some exceptions, such as [Waterfall](../../Basic_Charts/Waterfall_Chart), [Pie](../../Basic_Charts/Pie_Chart) and [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart) and [Pyramid](../../Basic_Charts/Pyramid_Chart) charts and [Venn](../../Basic_Charts/Venn_Diagram) diagrams. (?)
+Most of the chart types require you to enable the legend manually. But there are some exceptions, such as [Waterfall](../../Basic_Charts/Waterfall_Chart), [Pie](../../Basic_Charts/Pie_Chart) and [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart) and [Pyramid](../../Basic_Charts/Pyramid_Chart) charts, and [Venn](../../Basic_Charts/Venn_Diagram) diagrams. (?)
 
 To enable / disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
