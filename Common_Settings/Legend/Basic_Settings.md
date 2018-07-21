@@ -207,7 +207,7 @@ If the [layout](#layout) of the legend is `"horizontal"` / `"vertical"`, the leg
 
 If the layout is `"horizontal-expandable"` or `"vertical-expandable"`, the legend expands in any possible direction and occupies the maximum possible space, but only within the given limits.
 
-This sample shows how setting maximum width and height affects the legend depending on the layout:
+This sample shows how setting maximum width and height affects the legend, depending on the layout:
 
 ```
 // set the max width and height of the legend
