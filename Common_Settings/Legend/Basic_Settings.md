@@ -111,7 +111,7 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 ### Position + Alignment
 
-You can position the legend relative to the chart by calling the {api:anychart.core.ui.Legend#position}position(){api} method with of the parameters {api:anychart.core.ui.Legend#position}position(){api} listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
+You can position the legend relative to the chart by calling the {api:anychart.core.ui.Legend#position}position(){api} method with of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top` (default)
 * `bottom`
@@ -140,6 +140,8 @@ The sample below shows how these methods affect the legend with the [layout](#la
 {sample}CS\_Legend\_Basic\_06{sample}
 
 ### Outside / Inside
+
+By default, the legend is shown outside the data area (the area limited by the axes).
 
 * {api:anychart.core.ui.Legend#positionMode}positionMode(){api}
 * {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}
