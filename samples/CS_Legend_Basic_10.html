@@ -57,9 +57,19 @@ anychart.onDocumentReady(function () {
                   "Max Width = 30%, Max Height = 50%");
     });
 
+    legend = chart.legend();
+
     // set the max width and height of the legend
-    chart.legend().maxHeight("30%");
-    chart.legend().maxWidth("50%");
+    legend.maxHeight("30%");
+    legend.maxWidth("50%");
+
+    // set the padding of the legend
+    legend.padding(10);
+
+    // configure the background of the legend
+    legend.background().enabled(true);
+    legend.background().fill("white");
+    legend.background().stroke("2 #96a6a6");
 
     // set the container id
     chart.container("container");
