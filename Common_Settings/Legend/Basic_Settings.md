@@ -128,6 +128,7 @@ The {api:anychart.core.ui.Legend#align}align(){api} methods sets the alignment o
 * `right`
 * `left`
 
+
 ```
 // set the position of the legend
 legend.position("right");
