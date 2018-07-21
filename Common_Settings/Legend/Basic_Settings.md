@@ -164,7 +164,7 @@ The {api:anychart.core.ui.Legend#drag}drag(){api} method with `true` as a parame
 legend.drag(true);
 ```
 
-**Note:** The drag-and-drop mode works within the limits set by the position mode ([Outside / Inside](#outside_/_inside)). If the position mode is the default `outside`, an additional limit is set by the position of the legend relative to the chart ([Position + Alignment](#position_+_alignment)).
+**Note:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
 
 * {api:anychart.core.ui.Legend#drag}drag(){api}
 * [Events](Events)
