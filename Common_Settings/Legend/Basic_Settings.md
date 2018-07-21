@@ -185,7 +185,7 @@ To configure the size of the legend, use the following methods:
 
 The {api:anychart.core.ui.Legend#height}height(){api} and {api:anychart.core.ui.Legend#width}width(){api} work as an absolute limit: if there are too many items, the legend is [paged](Advanced_Settings#paginator).
 
-However, this is true only when the [layout](#layout) is set to `"horizontal"` or `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
+However, this is true only when the [layout](#layout) is set to `"horizontal"` / `"vertical"`. The `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
 
 Also, the legend always takes up the full height and width, even if the number of items requires a smaller space. The layout does not matter.
 
@@ -203,14 +203,11 @@ cgart.legend().width("40%");
 
 The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size.
 
-If the [layout](#layout) of the legend is `"horizontal"` or `"vertical"`, the legend occupies the minimal possible space within the limits set by these methods. If the legend does not fit the limits, it is [paged](Advanced_Settings#paginator).
+If the [layout](#layout) of the legend is `"horizontal"` / `"vertical"`, the legend occupies the minimum possible space within the limits set by these methods. If the legend does not fit the limits, it is [paged](Advanced_Settings#paginator).
 
-The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} methods {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}...
+If the layout is `"horizontal-expandable"` or `"vertical-expandable"`, the legend can be expanded only within the given limits.
 
-* {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api}
-* {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api}
-* [Layout](#layout)
-* [Paginator](Advanced_Settings#paginator)
+This sample shows how setting maximum width and height affects the legend depending on the layout:
 
 ```
 // set the max width and height of the legend
