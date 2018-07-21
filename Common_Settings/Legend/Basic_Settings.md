@@ -135,7 +135,7 @@ legend.position("right");
 legend.align("top");
 ```
 
-The sample below shows how these methods affect the legend with a vertical [layout](#layout):
+The sample below shows how these methods affect a legend with a vertical [layout](#layout):
 
 {sample}CS\_Legend\_Basic\_06{sample}
 
@@ -151,7 +151,7 @@ The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows 
 legend.positionMode("inside");
 ```
 
-In the following sample, these two modes are applied to the legend with a vertical [layout](#layout) and [position & alignment](#position_+_alignment) configured:
+In the following sample, these two modes are applied to a legend with a vertical [layout](#layout) and [position & alignment](#position_+_alignment) configured:
 
 {sample}CS\_Legend\_Basic\_07{sample}
 
@@ -168,7 +168,7 @@ legend.drag(true);
 
 **Note 2:** [Events](Events) (?)
 
-This sample demonstrates the drag-and-drop mode, applied to the legend with the position mode set to [inside](#outside_/_inside) and [background](#background) configured:
+This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) and the [background](#background) configured:
 
 {sample}CS\_Legend\_Basic\_08{sample}
 
@@ -187,7 +187,7 @@ To set a fixed legend size, use the following methods:
 
 The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size. They limit the extent to which the legend expands if its  [layout](#layout) is `"horizontal-expandable"` or `"vertical-expandable"`.
 
-In the following sample, the maximum width and height are applied to the horizontally oriented expandable legend:
+In the following sample, the maximum width and height are applied to a horizontally oriented expandable legend:
 
 ```
 // set the max width and height of the legend
