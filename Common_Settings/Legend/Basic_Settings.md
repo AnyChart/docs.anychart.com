@@ -100,6 +100,8 @@ In this case, with the layout set to `"horizontal"` / `"vertical"`, only a part 
 
 **Note:** You can set a limit to the expansion – see the [Size (Expandable)](#expandable) section.
 
+**Note:** Learn more about the paginator: [Advanced Settings (Paginator)](Advanced_Settings#paginator)
+
 {sample :width 500 :height 500}CS\_Legend\_Basic\_05{sample}
 
 ## Position
