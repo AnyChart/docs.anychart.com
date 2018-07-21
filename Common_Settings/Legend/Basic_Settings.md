@@ -168,7 +168,7 @@ legend.drag(true);
 
 **Note 2:** [Events](Events) (?)
 
-This sample demonstrates the drag-and-drop mode, applied to the legend with position mode set to [inside](#outside_/_inside) and [background](#background) configured:
+This sample demonstrates the drag-and-drop mode, applied to the legend with the position mode set to [inside](#outside_/_inside) and [background](#background) configured:
 
 {sample}CS\_Legend\_Basic\_08{sample}
 
@@ -176,10 +176,14 @@ This sample demonstrates the drag-and-drop mode, applied to the legend with posi
 
 ### Fixed
 
+To configure the size of the legend, use the following methods:
+
 * {api:anychart.core.ui.Legend#height}height(){api}
 * {api:anychart.core.ui.Legend#width}width(){api}
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
+
+With the `"horizontal"` and `"vertical"` [layouts](#layout), these methods work as an absolute limit: if there are too many items, the legend is [paged](Advanced_Settings#paginator). However, the `"horizontal-expandable"` and `"vertical-expandable"` layouts ignore these settings.
 
 ### Expandable
 
