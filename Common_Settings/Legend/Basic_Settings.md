@@ -111,10 +111,7 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 ### Position + Alignment
 
-To change the position of the legend, call these methods:
-
-* {api:anychart.core.ui.Legend#position}position(){api} – the position relative to the chart
-* {api:anychart.core.ui.Legend#align}align(){api} – the alignment of the legend
+You can set the position of the legend relative to the chart by calling the {api:anychart.core.ui.Legend#position}position(){api} method. To set the alignment of the legend, call {api:anychart.core.ui.Legend#align}align(){api}.
 
 The parameters accepted by {api:anychart.core.ui.Legend#position}position(){api} are listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
