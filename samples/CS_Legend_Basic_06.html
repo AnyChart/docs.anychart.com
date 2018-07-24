@@ -41,11 +41,16 @@ anychart.onDocumentReady(function () {
       {x: "John Doe", value: 1},
       {x: "Richard Roe", value: 1},
       {x: "Marta Moe", value: 1},
-      {x: "Larry Loe", value: 1}
+      {x: "Larry Loe", value: 1},
+      {x: "Jane Poe", value: 1},
+      {x: "Norma Noe", value: 1},
+      {x: "William Woe", value: 1}
     ];
 
+    newData = data.slice(0, 4);
+
     // create a chart and set the data
-    chart = anychart.pie(data);
+    chart = anychart.pie(newData);
 
     // set the chart title
     chart.listen("chartDraw", function () {
@@ -67,32 +72,21 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-var items = [
-  {x: "John Doe", value: 1},
-  {x: "Richard Roe", value: 1},
-  {x: "Marta Moe", value: 1},
-  {x: "Larry Loe", value: 1},
-  {x: "Jane Poe", value: 1},
-  {x: "Norma Noe", value: 1},
-  {x: "William Woe", value: 1}
-];
-
 // add items to the chart
 function addItem() {
-  data = data.concat(items[data.length]);
-  chart.data(data);
-  if (data.length == items.length) {
+  newData = newData.concat(data[newData.length]);
+  chart.data(newData);
+  if (newData.length == data.length) {
     document.getElementById("addItemButton").disabled = true;
-    counter = 0;
   }
   document.getElementById("removeItemButton").disabled = false;
 }
 
 // remove items from the chart
 function removeItem() { 
-  data = data.slice(0, data.length - 1);
-  chart.data(data);
-  if (data.length == 0) {
+  newData = newData.slice(0, newData.length - 1);
+  chart.data(newData);
+  if (newData.length == 1) {
     document.getElementById("removeItemButton").disabled = true;
   }
   document.getElementById("addItemButton").disabled = false;
