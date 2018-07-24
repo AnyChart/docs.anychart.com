@@ -205,6 +205,7 @@ Read more: [Background](../../Appearance_Settings/Background).
 
 * (?) [Legend Items](Legend_Items)
 
+
 ```
 // configure the background of the legend
 var background = chart.legend().background();
