@@ -40,7 +40,8 @@ anychart.onDocumentReady(function () {
     data = [
       {x: "John Doe", value: 1},
       {x: "Richard Roe", value: 1},
-      {x: "Marta Moe", value: 1}
+      {x: "Marta Moe", value: 1},
+      {x: "Larry Loe", value: 1}
     ];
 
     // create a chart and set the data
@@ -49,7 +50,7 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.listen("chartDraw", function () {
       chart.title("Legend: Size (Expandable)\n\n" +
-                  "Max Height = 30%, Max Width = r0%");
+                  "Max Height = 30%, Max Width = 50%");
     });
 
     // set the max width and height of the legend
