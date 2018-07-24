@@ -49,12 +49,12 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.listen("chartDraw", function () {
       chart.title("Legend: Size (Expandable)\n\n" +
-                  "Max Width = 30%, Max Height = 50%");
+                  "Max Width = 60%, Max Height = 20%");
     });
 
     // set the max width and height of the legend
-    chart.legend().maxHeight("30%");
     chart.legend().maxWidth("60%");
+    chart.legend().maxHeight("20%");
 
     // set the layout of the legend
     chart.legend().itemsLayout("horizontal-expandable")
