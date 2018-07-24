@@ -199,7 +199,7 @@ This sample demonstrates the drag-and-drop mode, applied to a legend with the po
 
 ## Background
 
-To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners of the background. 
+To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners. 
 
 Read more: [Background](../../Appearance_Settings/Background).
 
