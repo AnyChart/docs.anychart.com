@@ -18,7 +18,8 @@
             margin: 0;
             padding: 0;
         }
-        select {
+        label {
+            display: inline-block;
             margin: 10px 0 0 10px;
         }
         #container {
@@ -30,67 +31,35 @@
     </style>
 </head>
 <body>
-<select id="positionSelect" onclick="legendPosition()">
-    <option value="top">Position: Top</option>
-    <option value="bottom">Position: Bottom</option>
-    <option value="right" selected>Position: Right</option>
-    <option value="left">Position: Left</option>
-</select>
-<select id="alignSelect" onclick="legendAlign()">
-    <option value="center">Align: Center</option>
-    <option value="top" selected>Align: Top</option>
-    <option value="bottom">Align: Bottom</option>
-    <option value="right">Align: Right</option>
-    <option value="left">Align: Left</option>
-</select>
+<label><input onclick="legendLayout('horizontal')" type="radio" name="layout" checked>Horizontal</label>
+<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="layout">Horizontal-Expandable</label>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["January", 7000, 11000],
-      ["February", 9000, 13000],
-      ["March", 14000, 12000],
-      ["April", 13000, 10000],
-      ["May", 11000, 6000]
-    ]);
+    // create data
+    var data = [
+      {x: "John Doe", value: 1},
+      {x: "Richard Roe", value: 1},
+      {x: "Marta Moe", value: 1},
+      {x: "Larry Loe", value: 1},
+      {x: "Jane Poe", value: 1},
+      {x: "Norma Noe", value: 1},
+      {x: "William Woe", value: 1}
+    ];
 
-    // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
-
-    // create a chart
-    chart = anychart.line();
-
-    // create series, set the data and names
-    var series1 = chart.line(seriesData_1);
-    var series2 = chart.line(seriesData_2);
-    series1.name("2017");
-    series2.name("2018");
-
-    // set the background of the data area
-    chart.dataArea().background().enabled(true);
-    chart.dataArea().background().fill("#96a6a6 0.3");
-
-    // enable the legend
-    legend = chart.legend();
-    legend.enabled(true);
-
-    // set the layout of the legend
-    legend.itemsLayout("vertical");
-
-    // set the position of the legend
-    legend.position("right");
-
-    // set the alignment of the legend
-    legend.align("top");
+    // create a chart and set the data
+    chart = anychart.pie(data);
 
     // set the chart title
     chart.listen("chartDraw", function () {
-      chart.title("Legend: Position = " + chart.legend().position() +
-                  ", Align = " + chart.legend().align());
+      chart.title("Legend: Size (Expandable)\n\n" +
+                  "Max Width = 30%, Max Height = 50%");
     });
+
+    // set the max width and height of the legend
+    chart.legend().maxHeight("30%");
+    chart.legend().maxWidth("50%");
 
     // set the container id
     chart.container("container");
@@ -98,16 +67,10 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-// set the position of the legend
-function legendPosition() {
-  var position = document.getElementById("positionSelect");
-  legend.position(position.value);
-}
 
-// set the alignment of the legend
-function legendAlign() {
-  var align = document.getElementById("alignSelect");
-  legend.align(align.value);
+// set the layout of the legend
+function legendLayout(layout) {
+  chart.legend().itemsLayout(layout);
 }
 </script>
 </body>
