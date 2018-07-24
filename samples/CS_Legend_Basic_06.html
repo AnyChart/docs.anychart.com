@@ -18,8 +18,7 @@
             margin: 0;
             padding: 0;
         }
-        label {
-            display: inline-block;
+        button {
             margin: 10px 0 0 10px;
         }
         #container {
@@ -31,21 +30,16 @@
     </style>
 </head>
 <body>
-<label><input onclick="legendLayout('horizontal')" type="radio" name="layout" checked>Horizontal</label>
-<label><input onclick="legendLayout('horizontal-expandable')" type="radio" name="layout">Horizontal-Expandable</label>  
+<button onclick="addItems()">Add 4 Items</button>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
+    data = [
       {x: "John Doe", value: 1},
       {x: "Richard Roe", value: 1},
-      {x: "Marta Moe", value: 1},
-      {x: "Larry Loe", value: 1},
-      {x: "Jane Poe", value: 1},
-      {x: "Norma Noe", value: 1},
-      {x: "William Woe", value: 1}
+      {x: "Marta Moe", value: 1}
     ];
 
     // create a chart and set the data
@@ -61,6 +55,9 @@ anychart.onDocumentReady(function () {
     chart.legend().maxHeight("30%");
     chart.legend().maxWidth("50%");
 
+    // set the layout of the legend
+    chart.legend().itemsLayout("horizontal-expandable")
+
     // set the container id
     chart.container("container");
 
@@ -68,9 +65,15 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// set the layout of the legend
-function legendLayout(layout) {
-  chart.legend().itemsLayout(layout);
+// add items to the chart
+function addItems() {
+  var newData = [
+    {x: "Larry Loe", value: 1},
+    {x: "Jane Poe", value: 1},
+    {x: "Norma Noe", value: 1},
+    {x: "William Woe", value: 1}
+  ];
+  chart.data(data.concat(newData));
 }
 </script>
 </body>
