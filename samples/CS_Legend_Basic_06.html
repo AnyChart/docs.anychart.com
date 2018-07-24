@@ -30,7 +30,8 @@
     </style>
 </head>
 <body>
-<button onclick="addItems()">Add 4 Items</button>  
+<button id = "addItemButton" onclick="addItem()">Add Item</button>
+<button id = "removeItemButton" onclick="removeItem()">Remove Item</button>  
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -65,15 +66,35 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
+var items = [
+  {x: "John Doe", value: 1},
+  {x: "Richard Roe", value: 1},
+  {x: "Marta Moe", value: 1},
+  {x: "Larry Loe", value: 1},
+  {x: "Jane Poe", value: 1},
+  {x: "Norma Noe", value: 1},
+  {x: "William Woe", value: 1}
+];
+
 // add items to the chart
-function addItems() {
-  var newData = [
-    {x: "Larry Loe", value: 1},
-    {x: "Jane Poe", value: 1},
-    {x: "Norma Noe", value: 1},
-    {x: "William Woe", value: 1}
-  ];
-  chart.data(data.concat(newData));
+function addItem() {
+  data = data.concat(items[data.length]);
+  chart.data(data);
+  if (data.length == items.length) {
+    document.getElementById("addItemButton").disabled = true;
+    counter = 0;
+  }
+  document.getElementById("removeItemButton").disabled = false;
+}
+
+// remove items from the chart
+function removeItem() { 
+  data = data.slice(0, data.length - 1);
+  chart.data(data);
+  if (data.length == 0) {
+    document.getElementById("removeItemButton").disabled = true;
+  }
+  document.getElementById("addItemButton").disabled = false;
 }
 </script>
 </body>
