@@ -122,7 +122,7 @@ To set a fixed legend size, use the following methods:
 
 The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size. They limit the extent to which the legend expands if its  [layout](#layout) is `"horizontal-expandable"` or `"vertical-expandable"`.
 
-In the following sample, the maximum width and height are applied to a horizontally oriented expandable legend:
+In the following sample, the maximum width and height are applied to a horizontally oriented expandable legend. You can add a few items to see when the legend stop to expand:
 
 ```
 // set the max width and height of the legend
@@ -202,9 +202,6 @@ This sample demonstrates the drag-and-drop mode, applied to a legend with the po
 To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners. 
 
 Read more: [Background](../../Appearance_Settings/Background).
-
-* (?) [Legend Items](Legend_Items)
-
 
 ```
 // configure the background of the legend
