@@ -110,20 +110,16 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 ### Fixed
 
-To set a fixed legend size, use the following methods:
+You can set a fixed legend size (in pixels or in a percentage). Use the following methods:
 
 * {api:anychart.core.ui.Legend#height}height(){api}
 * {api:anychart.core.ui.Legend#width}width(){api}
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
 
-**Note:** The height and width are set either in pixels (numeric value) or as a percentage (string value).
-
 ### Expandable
 
-You can set set a flexible legend size. Combine the `"horizontal-expandable"` and `"vertical-expandable"` [layouts](#layout), which allow the legend to expand, with the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which limit the extent to which it expands.
-
-**Note:** The maximum height and width are set either in pixels (numeric value) or as a percentage (string value).
+You can set set a flexible legend size. Combine the `"horizontal-expandable"` and `"vertical-expandable"` [layouts](#layout), which allow the legend to expand, with the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which limit the extent to which it expands. The maximum height and width are set either in pixels or as a percentage.
 
 In the following sample, the maximum height and width are applied to a horizontally oriented expandable legend. You can add a few items to the chart to see when the legend stops to expand:
 
