@@ -65,7 +65,6 @@ By default, each legend item represents one of the series of the chart.
 
 You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
 
-
 ```
 // set the legend source mode
 chart.legend().itemsSourceMode("categories");
@@ -118,9 +117,13 @@ To set a fixed legend size, use the following methods:
 * {api:anychart.core.ui.Legend#padding}padding(){api}
 * {api:anychart.core.ui.Legend#margin}margin(){api}
 
+**Note:** The height and width are set either in pixels (numeric value) or as a percentage (string value).
+
 ### Expandable
 
-The {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods allow setting a flexible legend size. Combined with the `"horizontal-expandable"` and `"vertical-expandable"` [layouts](#layout), they limit the extend to which the legend expands.
+You can set set a flexible legend size. Combine the `"horizontal-expandable"` and `"vertical-expandable"` [layouts](#layout), which allow the legend to expand, with the {api:anychart.core.ui.Legend#maxHeight}maxHeight(){api} and {api:anychart.core.ui.Legend#maxWidth}maxWidth(){api} methods, which limit the extent to which it expands.
+
+**Note:** The maximum height and width are set either in pixels (numeric value) or as a percentage (string value).
 
 In the following sample, the maximum height and width are applied to a horizontally oriented expandable legend. You can add a few items to the chart to see when the legend stops to expand:
 
