@@ -105,7 +105,7 @@ extraYAxis.orientation("right");
 extraYAxis.scale(extraYScale);
 ```
 
-Note that when you add an extra axis you need to change chart {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and in percent:
+Note that when you add an extra axis you need to change chart {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and as a percentage:
 
 ```
 // create a chart

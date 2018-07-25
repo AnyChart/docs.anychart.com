@@ -426,7 +426,7 @@ By default, parent elements of the currently shown levels are visualized as head
 chart.headers(false);
 ```
 
-You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
+You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or as a percentage:
 
 ```
 //set the maximum height of headers

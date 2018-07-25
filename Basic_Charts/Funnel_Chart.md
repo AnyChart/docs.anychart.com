@@ -69,7 +69,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Head
 
-A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage value) and is demonstrated by areas' size. To set the width of the head (in pixels or in percent), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
+A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage terms) and is demonstrated by areas' size. To set the width of the head (in pixels or as a percentage), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
 
 ```
 // set the base width
