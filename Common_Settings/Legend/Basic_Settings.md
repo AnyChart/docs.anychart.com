@@ -110,7 +110,7 @@ When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the lege
 
 ### Fixed
 
-You can set a fixed legend size. Use the following methods:
+To set a fixed legend size, use the following methods:
 
 * {api:anychart.core.ui.Legend#height}height(){api}
 * {api:anychart.core.ui.Legend#width}width(){api}
