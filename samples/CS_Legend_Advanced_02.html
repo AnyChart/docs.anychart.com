@@ -57,8 +57,12 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // enable and configure the tooltip of the legend
-    chart.legend().tooltip().enabled(true);
-    chart.legend().tooltip().format("year: {%value}");
+    var legendTooltip = chart.legend().tooltip();
+    legendTooltip.enabled(true);
+    legendTooltip.title(true);
+    legendTooltip.separator(true);
+    legendTooltip.titleFormat("Sales Info");
+    legendTooltip.format("Year: {%value}");
 
     // set the chart title
     chart.title("Legend: Tooltip (Tokens)");

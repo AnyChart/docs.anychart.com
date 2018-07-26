@@ -299,7 +299,7 @@ chart.labels().format("{%absolute}");
 
 // configure tooltips
 chart.tooltip().titleFormat("Absolute | Difference");
-chart.tooltip().format("{%absolute}\n{%diff}");
+chart.tooltip().format("{%absolute}\n{%diff}\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}

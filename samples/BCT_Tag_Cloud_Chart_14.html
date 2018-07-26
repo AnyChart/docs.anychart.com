@@ -44,7 +44,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.tagCloud(data);
 
     // configure tooltips
-    chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+    chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 
     // set the chart title
     chart.title("Tag Cloud Chart: Tooltips (Tokens)");

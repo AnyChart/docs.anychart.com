@@ -397,7 +397,7 @@ var data = [
 var chart = anychart.tagCloud(data);
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
@@ -440,11 +440,11 @@ chart.tooltip().format(function() {
   if (percentOfTotal > 15)
     return "<span style='font-size:26'>" +
            percentOfTotal.toFixed(1) +
-           "%</span><br></br><br></br>" +
+           "%</span><br><br>" +
            this.getData("custom_field");
   return "<span style='font-size:18'>" +
          percentOfTotal.toFixed(1) +
-         "%</span><br></br><br></br>" +
+         "%</span><br><br>" +
          this.getData("custom_field");
 });
 ```

@@ -278,7 +278,7 @@ var chart = anychart.heatMap(data);
 chart.labels().format("{%heat}%");
 
 // configure tooltips
-chart.tooltip().format("{%y}: {%heat}%\n{%custom_field}");
+chart.tooltip().format("{%y}: {%heat}%\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}

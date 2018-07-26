@@ -257,7 +257,7 @@ var chart = anychart.pyramid([
 chart.labels().format("{%name}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Pyramid\_Chart\_09{sample}
@@ -299,10 +299,10 @@ chart.tooltip().format(function() {
   if (percentOfTotal > 40)
       return "<span style='font-size:18'>" +
              percentOfTotal.toFixed(1) + "% (" +
-             this.value + ")</span><br></br><br>" +
+             this.value + ")</span><br><br>" +
              this.getData("custom_field");
   return percentOfTotal.toFixed(1) + "% (" + this.value +
-         ")<br></br><br></br>" + this.getData("custom_field");
+         ")<br><br>" + this.getData("custom_field");
 });
 ```
 

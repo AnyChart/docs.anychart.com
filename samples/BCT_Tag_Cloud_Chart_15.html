@@ -51,15 +51,15 @@ anychart.onDocumentReady(function () {
       var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
       if (percentOfTotal < 7)
         return percentOfTotal.toFixed(1) +
-               "%<br></br><br></br>" + this.getData("custom_field");
+               "%<br><br>" + this.getData("custom_field");
       if (percentOfTotal > 15)
         return "<span style='font-size:26'>" +
                percentOfTotal.toFixed(1) +
-               "%</span><br></br><br></br>" +
+               "%</span><br><br>" +
                this.getData("custom_field");
       return "<span style='font-size:18'>" +
              percentOfTotal.toFixed(1) +
-             "%</span><br></br><br></br>" +
+             "%</span><br><br>" +
              this.getData("custom_field");
     });
 

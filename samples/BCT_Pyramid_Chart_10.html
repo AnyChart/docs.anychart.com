@@ -54,10 +54,10 @@ anychart.onDocumentReady(function () {
     if (percentOfTotal > 40)
         return "<span style='font-size:18'>" +
                percentOfTotal.toFixed(1) + "% (" +
-               this.value + ")</span><br></br><br>" +
+               this.value + ")</span><br><br>" +
                this.getData("custom_field");
     return percentOfTotal.toFixed(1) + "% (" + this.value +
-           ")<br></br><br></br>" + this.getData("custom_field");
+           ")<br><br>" + this.getData("custom_field");
   });
 
   // draw chart

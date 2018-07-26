@@ -54,10 +54,10 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // add meta-information about the series
-    series1.meta({sales: series1.getStat("sum"), top: "John"});
-    series2.meta({sales: series1.getStat("sum"), top: "Richard"});
-    series3.meta({sales: series1.getStat("sum"), top: "Marta"});
-    series4.meta({sales: series1.getStat("sum"), top: "Larry"});
+    series1.meta({sales: series1.getStat("sum"), top: "John Doe"});
+    series2.meta({sales: series2.getStat("sum"), top: "Richard Roe"});
+    series3.meta({sales: series3.getStat("sum"), top: "Marta Moe"});
+    series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
 
     // enable the legend
     chart.legend(true);
@@ -71,8 +71,8 @@ anychart.onDocumentReady(function () {
       return this.value;
     });
     legendTooltip.format(function() {
-      return "total sales: " + this.meta.sales +
-             "\ntop seller: " + this.meta.top;
+      return "Total Sales: $" + this.meta.sales +
+             "\nTop Seller: " + this.meta.top;
     });
 
     // set the chart title
