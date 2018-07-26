@@ -40,16 +40,30 @@ anychart.onDocumentReady(function () {
     chart = anychart.pie(data);
 
     // enable the legend
-    chart.legend(true);
+    var legend = chart.legend();
+    legend.enabled(true);
+
+    // set the layout of the legend
+    legend.itemsLayout("vertical");
+
+    // set the position of the legend
+    legend.position("right");
+
+    // set the alignment of the legend
+    legend.align("top");
+
+    // set the height of the legend
+    legend.height("25%");
 
     // configure the legend paginator
-    var paginator = chart.legend().paginator();
+    var paginator = legend.paginator();
     paginator.layout("vertical");
     paginator.orientation("left");
     paginator.fontSize(12);
     paginator.fontWeight(600);
     paginator.fontColor("#dd2c00");
-    paginator.padding(10);
+    paginator.padding(15);
+    paginator.currentPage(1);
 
     // set the chart title
     chart.title("Legend: Paginator");
