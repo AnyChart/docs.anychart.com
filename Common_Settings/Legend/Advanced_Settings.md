@@ -15,6 +15,6 @@
 
 {sample :width 500 :height 500}CS\_Legend\_Advanced\_04{sample}
 
-## Mouse Cursor
+## Hover Cursor
 
 {sample}CS\_Legend\_Advanced\_05{sample}
