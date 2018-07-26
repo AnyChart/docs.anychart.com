@@ -13,7 +13,7 @@
 
 ## Paginator
 
-{sample :width 500 :height 500}CS\_Legend\_Advanced\_04{sample}
+{sample :width 700 :height 500}CS\_Legend\_Advanced\_04{sample}
 
 ## Hover Cursor
 
