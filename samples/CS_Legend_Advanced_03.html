@@ -53,13 +53,26 @@ anychart.onDocumentReady(function () {
     series3.name("2017");
     series4.name("2018");
 
+    // add meta-information about the series
+    series1.meta({sales: series1.getStat("sum"), top: "John"});
+    series2.meta({sales: series1.getStat("sum"), top: "Richard"});
+    series3.meta({sales: series1.getStat("sum"), top: "Marta"});
+    series4.meta({sales: series1.getStat("sum"), top: "Larry"});
+
     // enable the legend
     chart.legend(true);
 
     // enable and configure the tooltip of the legend
-    chart.legend().tooltip().enabled(true);
-    chart.legend().tooltip().format(function() {
-      
+    var legendTooltip = chart.legend().tooltip();
+    legendTooltip.enabled(true);
+    legendTooltip.title(true);
+    legendTooltip.separator(true);
+    legendTooltip.titleFormat(function() {
+      return this.value;
+    });
+    legendTooltip.format(function() {
+      return "total sales: " + this.meta.sales +
+             "\ntop seller: " + this.meta.top;
     });
 
     // set the chart title
