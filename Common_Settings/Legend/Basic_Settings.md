@@ -87,6 +87,7 @@ The default legend is oriented horizontally. To change its layout, call the {api
 
 
 ```
+// set the layout of the legend
 chart.legend().itemsLayout("vertical")
 ```
 
