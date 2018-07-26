@@ -66,7 +66,7 @@ By default, each legend item represents one of the series of the chart.
 You can set the source of the items by using the {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} method with `"series"` (default) or `"categories"` as a parameter – see {api:anychart.enums.LegendItemsSourceMode}anychart.enums.LegendItemsSourceMode{api}:
 
 ```
-// set the legend source mode
+// set source mode of the legend
 chart.legend().itemsSourceMode("categories");
 ```
 
@@ -154,10 +154,10 @@ To align the legend, call {api:anychart.core.ui.Legend#align}align(){api} with o
 
 ```
 // set the position of the legend
-legend.position("right");
+chart.legend().position("right");
 
 // set the alignment of the legend
-legend.align("top");
+chart.legend().align("top");
 ```
 
 The sample below shows how these methods affect a legend with a vertical [layout](#layout):
@@ -173,7 +173,7 @@ The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows 
 
 ```
 // set the position mode of the legend
-legend.positionMode("inside");
+chart.legend().positionMode("inside");
 ```
 
 In the following sample, these two modes are applied to a legend with a vertical [layout](#layout) and [position & alignment](#position_+_alignment) configured:
@@ -186,7 +186,7 @@ The {api:anychart.core.ui.Legend#drag}drag(){api} method with `true` as a parame
 
 ```
 // enable the drag and drop mode of the legend
-legend.drag(true);
+chart.legend().drag(true);
 ```
 
 **Note 1:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
@@ -214,3 +214,11 @@ background.corners(10);
 ```
 
 {sample}CS\_Legend\_Basic\_10{sample}
+
+## Text
+
+```
+
+```
+
+{sample}CS\_Legend\_Basic\_11{sample}

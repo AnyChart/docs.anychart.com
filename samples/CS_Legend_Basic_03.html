@@ -38,14 +38,14 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.column();
 
-    // create a series, set the data names
+    // create a series, set the data and name
     var series = chart.column(seriesData);
     series.name("Sales");
 
     // enable the legend
     chart.legend(true);
 
-    // set the legend source mode
+    // set the source mode of the legend
     chart.legend().itemsSourceMode("categories");
 
     // set the chart title
