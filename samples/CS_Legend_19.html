@@ -170,7 +170,7 @@ bestResult2006 = data2006.data()[r][0];
     .fontWeight(400); // set font weigh
   
   // set legend tooltip content
-  legend.tooltip().format(function (){
+  legend.tooltip().format(function() {
       return this.meta.legendText;
     });
   
@@ -188,7 +188,7 @@ bestResult2006 = data2006.data()[r][0];
   // redraw legend every time the first chart is redrawn
   chart2005.listen(
     "chartDraw",
-    function (){
+    function() {
       // define legend bounds
       var legendBounds = anychart.math.rect(
 0,

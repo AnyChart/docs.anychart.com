@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.format(function (){
+  yLabels1.format(function() {
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*0.7094716);
@@ -68,7 +68,7 @@ anychart.onDocumentReady(function () {
   xAxis.title("Month");
 
   // limits length of the x-axis labels to 3 or less
-  chart.xAxis().labels().format(function (){
+  chart.xAxis().labels().format(function() {
     var value = this.value;
     value = value.substr(0, 3);
     return value

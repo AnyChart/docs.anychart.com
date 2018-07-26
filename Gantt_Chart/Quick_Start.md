@@ -68,7 +68,7 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 
 ```
 <script>
-anychart.onDocumentReady(function (){
+anychart.onDocumentReady(function() {
  var rawData = [
   {
     "name": "Activities",
@@ -122,7 +122,7 @@ You can copy this to a file on your computer and open it in your browser to disp
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
   <script>
-	anychart.onDocumentReady(function (){
+	anychart.onDocumentReady(function() {
 	
 	    var rawData = [
 	      {

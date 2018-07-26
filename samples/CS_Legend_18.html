@@ -66,7 +66,7 @@ anychart.onDocumentReady(function () {
   chart.title("Legend Items events");
  
   // reset legend items
-  chart.listen("click", function (){
+  chart.listen("click", function() {
     for (i=0;i<chart.getSeriesCount();i++){
       chart.getSeries(i).legendItem().disabled(false);
     }

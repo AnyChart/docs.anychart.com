@@ -99,12 +99,12 @@ anychart.onDocumentReady(function () {
   // settings for legend tooltips
   legend.tooltip().useHtml(true).fontWeight(400);
   // set source of content for legend tooltips
-  legend.tooltip().format(function (){
+  legend.tooltip().format(function() {
     return this.meta.legendText;
   });
   
   // set legend items from array
-  legend.itemsFormatter(function (){return legendsItemsArray});
+  legend.itemsFormatter(function() {return legendsItemsArray});
   
   // set legend events
   legend.listen("legendItemMouseOver", function(event) {
@@ -133,14 +133,14 @@ anychart.onDocumentReady(function () {
       legendsItemsArray[index].iconStroke = palette[index];
       legendsItemsArray[index].iconMarkerStroke= anychart.color.darken(palette[index], 0.2);
       legendsItemsArray[index].iconMarkerFill= palette[index];
-      legend.itemsFormatter(function (){return legendsItemsArray});
+      legend.itemsFormatter(function() {return legendsItemsArray});
     }
     else{
       legendsItemsArray[index].fontColor = "#999";
       legendsItemsArray[index].iconStroke = "#999";
       legendsItemsArray[index].iconMarkerStroke= "#999";
       legendsItemsArray[index].iconMarkerFill= "#999";
-      legend.itemsFormatter(function (){return legendsItemsArray});
+      legend.itemsFormatter(function() {return legendsItemsArray});
     }
   });
   
@@ -161,7 +161,7 @@ anychart.onDocumentReady(function () {
   // redraw legend if the first chart is redrawn
   chart2005.listen(
     "chartDraw",
-    function (){
+    function() {
       // define legend bounds
       var legendBounds = anychart.math.rect(
 0,

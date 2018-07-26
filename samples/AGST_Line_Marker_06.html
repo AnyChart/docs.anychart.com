@@ -36,7 +36,7 @@ anychart.onDocumentReady(function () {
   crosshair.enabled(true);
   // set custom function for formatting x crossshair label
   var xCrossLabel = crosshair.xLabel();
-  xCrossLabel.format(function (){
+  xCrossLabel.format(function() {
     // get label data
     var date = new Date(this.rawValue);
     // get month from date
@@ -60,7 +60,7 @@ anychart.onDocumentReady(function () {
   var xTicks = chart.xScale().ticks();
   xTicks.interval(0,4);
   var xLabels = chart.xAxis().labels();
-  xLabels.format(function (){
+  xLabels.format(function() {
     var date = new Date(this["tickValue"]);
     var options = {month: "short", year: "numeric"};
     return date.toLocaleDateString("en-US", options);
@@ -164,7 +164,7 @@ anychart.onDocumentReady(function () {
 
   series.name("Crude oil forecast and range of uncertainty");
 
-  series.tooltip().title(false).separator(false).format(function (){
+  series.tooltip().title(false).separator(false).format(function() {
     var value = this.value.toFixed(3);
     if (this.valueLowerError !==0)
       value = this.value.toFixed(3) + "\u0081" + this.valueLowerError.toFixed(3);

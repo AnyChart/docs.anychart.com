@@ -38,7 +38,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.pert();
     chart.data(data, "as-table");
 
-    chart.listen("chartDraw", function (){
+    chart.listen("chartDraw", function() {
 // get project duration
 var duration = chart.getStat("pertChartProjectDuration");
 // get project deviation

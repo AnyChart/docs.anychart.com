@@ -39,21 +39,21 @@ anychart.onDocumentReady(function () {
     var nonePlot = chart.plot(0);
     nonePlot.line(firstMapping);
     nonePlot.line(secondMapping);
-    nonePlot.legend().titleFormat(function (){return "comparisonMode='none'"});
+    nonePlot.legend().titleFormat(function() {return "comparisonMode='none'"});
     // Set comparison mode to 'none'
     nonePlot.yScale().comparisonMode("none");
 
     var valuePlot = chart.plot(1);
     valuePlot.line(firstMapping);
     valuePlot.line(secondMapping);
-    valuePlot.legend().titleFormat(function (){return "comparisonMode='value'"});
+    valuePlot.legend().titleFormat(function() {return "comparisonMode='value'"});
     // Set comparison mode 'value'
     valuePlot.yScale().comparisonMode("value");
 
     var percentPlot = chart.plot(2);
     percentPlot.line(firstMapping);
     percentPlot.line(secondMapping);
-    percentPlot.legend().titleFormat(function (){return "comparisonMode='percent'"});
+    percentPlot.legend().titleFormat(function() {return "comparisonMode='percent'"});
     percentPlot.yAxis().labels().format("{%value}%");
     // Set comparison mode to 'percent'
     percentPlot.yScale().comparisonMode("percent");

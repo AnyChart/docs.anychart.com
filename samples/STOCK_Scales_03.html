@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
     chart.padding(10, 10, 10, 50);
 
     var firstPlot = chart.plot(0);
-    firstPlot.legend().titleFormat(function (){return "Compare With SERIES_START"});
+    firstPlot.legend().titleFormat(function() {return "Compare With SERIES_START"});
     firstPlot.line(firstMapping);
     firstPlot.line(secondMapping);
 
@@ -48,7 +48,7 @@ anychart.onDocumentReady(function () {
     firstPlotYScale.compareWith("series-start");
 
     var secondPlot = chart.plot(1);
-    secondPlot.legend().titleFormat(function (){return "Compare With FIRST_VISIBLE"});    
+    secondPlot.legend().titleFormat(function() {return "Compare With FIRST_VISIBLE"});    
     secondPlot.line(firstMapping);
     secondPlot.line(secondMapping);
 
@@ -59,7 +59,7 @@ anychart.onDocumentReady(function () {
     secondPlotYScale.compareWith("first-visible");
 
     var thirdPlot = chart.plot(2);
-    thirdPlot.legend().titleFormat(function (){return "Compare With 24 of April 2008"});        
+    thirdPlot.legend().titleFormat(function() {return "Compare With 24 of April 2008"});        
     thirdPlot.line(firstMapping);
     thirdPlot.line(secondMapping);
 

@@ -71,7 +71,7 @@ anychart.onDocumentReady(function () {
   // configure tooltip considering new item 
   var tooltip = chart.legend().tooltip();
   tooltip.enabled(true);
-  tooltip.format(function (){
+  tooltip.format(function() {
     // to avoid failing on "total" item
     if(this.meta.pointValue === undefined)
       return this.value;

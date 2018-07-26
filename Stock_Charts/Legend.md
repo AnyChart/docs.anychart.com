@@ -20,7 +20,7 @@ legend.title(true);
 legend.title().orientation('top').align('left');
 
 // format the title
-legend.titleFormat(function (){
+legend.titleFormat(function() {
     return "ACME Corp. Stock Prices"
 });
 
@@ -35,7 +35,7 @@ legend.titleSeparator(true);
 By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below
 
 ```
-firstPlot.legend().itemsFormatter(function (){
+firstPlot.legend().itemsFormatter(function() {
     return [
         {text: "High", iconType: "circle", iconFill:"#558B2F"},
         {text: "Low", iconFill:"#D84315"},
@@ -49,7 +49,7 @@ firstPlot.legend().itemsFormatter(function (){
 When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
 
 ```
-plot.legend().itemsFormat(function (){
+plot.legend().itemsFormat(function() {
       if (this.open !== undefined){ 
       return "Open: " + this.open + "   High: " + this.high+ "   Low: " + this.low + "   Close: " + this.close 
       }
@@ -125,7 +125,7 @@ customLegend.height(50);
 // redraw legend every time the first chart is redrawn
 chart.listen(
   "chartDraw",
-  function (){
+  function() {
       // define legend bounds
       var legendBounds = anychart.math.rect(
             0,

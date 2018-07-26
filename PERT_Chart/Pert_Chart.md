@@ -238,7 +238,7 @@ chart.tasks().upperLabels().fontSize(20);
 It is possible to format the labels content using the {api:anychart.core.ui.LabelsFactory#format}format(){api} method. The following sample demonstrates formatting the milestones' labels.
 
 ```
-chart.milestones().labels().format(function (){
+chart.milestones().labels().format(function() {
     if (this.creator) {
         var result ="";
         var comma, i;
@@ -273,7 +273,7 @@ There are two statistic values can be got from the Pert Chart: standard deviatio
 
 ```
 // get both statistic values when rendered
-chart.listen("chartdraw", function (){
+chart.listen("chartdraw", function() {
     deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
     duration = chart.getStat("pertChartProjectDuration");
     chart.title("The critical path duration makes " + duration.toFixed(2) + 

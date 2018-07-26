@@ -360,7 +360,7 @@ There are only three events the Legend has:
 legend.drag(true);
 
 // chart title changes on dragging event
-legend.listen("drag", function (){
+legend.listen("drag", function() {
   chart.title("Legend is being dragged");
 });
 ```

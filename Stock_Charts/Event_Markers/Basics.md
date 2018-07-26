@@ -409,7 +409,7 @@ plot.eventMarkers({"groups": [
 ]});
 
 // set the symbol of event markers
-plot.eventMarkers().format(function (){
+plot.eventMarkers().format(function() {
   return this.getData("symbol");
 });
 ```

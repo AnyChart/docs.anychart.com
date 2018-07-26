@@ -248,7 +248,7 @@ In the sample below they are used to customize tooltips:
 
 ```
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var output = "";
   if (this.xUpperError != 0)
      output = "xUpperError: " + this.xUpperError;

@@ -285,7 +285,7 @@ chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -294,7 +294,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='font-size:18'>" +

@@ -56,6 +56,12 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // enable and configure the tooltip of the legend
+    chart.legend().tooltip().enabled(true);
+    chart.legend().tooltip().format(function() {
+      
+    });
+
     // set the chart title
     chart.title("Legend: Tooltip (Formatting Functions)");
 

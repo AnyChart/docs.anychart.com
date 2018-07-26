@@ -59,10 +59,10 @@ anychart.onDocumentReady(function () {
   legend.drag(true);
 
   // legend get emphasized when dragging through background darkening
-  legend.listen("dragStart", function (){
+  legend.listen("dragStart", function() {
       chart.background().fill("#eee");
   });
-  legend.listen("dragEnd", function (){
+  legend.listen("dragEnd", function() {
       chart.background().fill("#fff");
   });
 

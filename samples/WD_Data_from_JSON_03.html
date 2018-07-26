@@ -89,7 +89,7 @@ function showJson(){
   body.appendChild(display);
   var jsonButton = document.getElementById("jsonButton");
   jsonButton.innerHTML = "Hide JSON config";
-  jsonButton.onclick = function (){
+  jsonButton.onclick = function() {
     body.removeChild(display);
     jsonButton.onclick = showJson;
     jsonButton.innerHTML = "Show JSON config";

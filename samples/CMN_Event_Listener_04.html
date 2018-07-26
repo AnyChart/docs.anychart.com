@@ -62,7 +62,7 @@ anychart.onDocumentReady(function () {
   var indexSetter = 16;
   
   // create a function what to listen and then unlisten
-  var func_listen = function (){
+  var func_listen = function() {
     dataSet.append({
       // x value
       x: "P" + indexSetter,
@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
   // add a listener
   chart.listen("mouseMove", func_listen);
   
-  chart.listenOnce("click",function (){
+  chart.listenOnce("click",function() {
     // adding an unlistener 
     chart.unlisten("mouseMove", func_listen);
   });

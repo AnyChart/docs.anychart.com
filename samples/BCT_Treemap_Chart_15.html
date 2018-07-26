@@ -54,7 +54,7 @@ anychart.onDocumentReady(function () {
 
     /* listen to the chartDraw event
     and add the drilldown path to the chart title */
-    chart.listen("chartDraw",function (){
+    chart.listen("chartDraw",function() {
       // get the drilldown path and convert it to a string
       var text = printPath(chart.getDrilldownPath());
       // set the chart title

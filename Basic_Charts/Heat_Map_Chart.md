@@ -319,7 +319,7 @@ var chart = anychart.heatMap(data);
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var heat = (this.heat);
   if (heat < 20)
     return "Low<br/>" + heat + "%";
@@ -331,7 +331,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var heat = (this.heat);
   if (heat < 20)
     return this.y + ": Low (" + heat + "%)\n\n" +

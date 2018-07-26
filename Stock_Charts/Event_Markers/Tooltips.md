@@ -86,11 +86,11 @@ plot.eventMarkers({"groups": [
   }
 ]});
 
-plot.eventMarkers().tooltip().titleFormat( function (){
+plot.eventMarkers().tooltip().titleFormat( function() {
   return this.getData("short_desc") + " (" + this.symbol + ")";
 });
 
-plot.eventMarkers().tooltip().format( function (){
+plot.eventMarkers().tooltip().format( function() {
   return "On " + anychart.format.dateTime(this.date, "MMMM dd") +
          ", " + this.description;
 });

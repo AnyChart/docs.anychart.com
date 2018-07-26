@@ -81,7 +81,7 @@ The text of the labels can be changed with the help of the {api:anychart.core.ui
 
 ```
 // set the text of the y-label
-chart.crosshair().yLabel().format(function (){
+chart.crosshair().yLabel().format(function() {
   return this.value + " $";
 });
 ```

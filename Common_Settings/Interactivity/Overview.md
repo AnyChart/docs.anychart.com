@@ -138,7 +138,7 @@ series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
 If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}unhover(){api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
 
 ```
-chart.title().listen("mouseOut", function (){
+chart.title().listen("mouseOut", function() {
   series_1.unhover();
   series_2.unhover([0, 1, 5, 16, 17]);
 });

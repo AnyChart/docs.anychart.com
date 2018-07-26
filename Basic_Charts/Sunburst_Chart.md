@@ -553,20 +553,20 @@ The sample below demonstrates how to work with formatting functions:
 
 ```
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + sales + " mln";
 });
 
 // configure the labels of leaves
-chart.leaves().labels().format(function (){
+chart.leaves().labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return sales + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return this.name + "\n\nsales: " + sales +
          " mln\n" + this.getData("custom_field");

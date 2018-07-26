@@ -49,7 +49,7 @@ anychart.onDocumentReady(function () {
 
 	// adding dollar symbols to yAxis labels
 	var yLabels = chart.yAxis().labels();
-	yLabels.format(function (){
+	yLabels.format(function() {
 		return "$" + this.value;
 	});
 

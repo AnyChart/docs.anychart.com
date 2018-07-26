@@ -347,7 +347,7 @@ var series = chart.waterfall(data);
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
     if (this.isTotal)
         return "<span style='color:#dd2c00;font-weight:bold'>" +
                this.absolute + "</span>";
@@ -355,7 +355,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().titleFormat(function (){
+chart.tooltip().titleFormat(function() {
     if (this.isTotal)
         return "TOTAL (" + this.getData("custom_field") + ")";
     return this.x + " (" + this.getData("custom_field") + ")";

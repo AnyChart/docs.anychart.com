@@ -387,14 +387,14 @@ chart = anychart.treeMap(data, "as-tree");
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + population + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "population: " + population +
          " mln\ncapital: " + this.getData("capital");

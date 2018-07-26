@@ -48,7 +48,7 @@ anychart.onDocumentReady(function () {
   yLabels.hAlign("center");
   var xLabels = chart.xAxis().labels();
   xLabels.offsetY(-30);
-  yLabels.format(function (){
+  yLabels.format(function() {
     var value = this.value;
     // scale USD to EUR
     value = Math.round(value*6.65);

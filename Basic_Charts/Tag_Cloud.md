@@ -432,7 +432,7 @@ var chart = anychart.tagCloud(data);
 chart.tooltip().useHtml(true);
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal < 7)
     return percentOfTotal.toFixed(1) +

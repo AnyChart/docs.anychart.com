@@ -174,7 +174,7 @@ In case you need more complex content formatting there is the {api:anychart.core
 
 ```
 var tooltip = chart.tooltip();
-tooltip.format(function (){
+tooltip.format(function() {
   /* code of your function */
 });
 ```
