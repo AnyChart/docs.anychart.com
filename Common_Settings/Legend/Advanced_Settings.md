@@ -41,13 +41,17 @@ series3.meta({sales: series3.getStat("sum"), top:
 series4.meta({sales: series4.getStat("sum"), top: 
 
 // enable and configure the legend tooltip
+
 var legendTooltip = chart.legend().tooltip();
+
 legendTooltip.enabled(true);
 legendTooltip.title(true);
 legendTooltip.separator(true);
+
 legendTooltip.titleFormat(function() {
   return this.value;
 });
+
 legendTooltip.format(function() {
   return "Total Sales: $" + this.meta.sales +
          "\nTop Seller: " + this.meta.top;
@@ -59,13 +63,13 @@ legendTooltip.format(function() {
 ## Paginator
 
 ```
-// configure the legend pa
-var paginator = legend.pag
-paginator.layout("vertical
-paginator.orientation("lef
-paginator.fontSize(16);
+// configure the legend paginator
+var paginator = legend.paginator();
+paginator.layout("vertical");
+paginator.orientation("left");
+paginator.fontSize(12);
 paginator.fontWeight(600);
-paginator.fontColor("#dd2c
+paginator.fontColor("#dd2c00");
 paginator.padding(15);
 paginator.currentPage(1);
 ```

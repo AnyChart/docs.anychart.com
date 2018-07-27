@@ -63,13 +63,17 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // enable and configure the legend tooltip
+
     var legendTooltip = chart.legend().tooltip();
+
     legendTooltip.enabled(true);
     legendTooltip.title(true);
     legendTooltip.separator(true);
+
     legendTooltip.titleFormat(function() {
       return this.value;
     });
+    
     legendTooltip.format(function() {
       return "Total Sales: $" + this.meta.sales +
              "\nTop Seller: " + this.meta.top;

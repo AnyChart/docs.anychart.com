@@ -183,8 +183,7 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
 * {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant - normal or small caps
 * {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
-
-Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+* other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
 
 **Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
 
