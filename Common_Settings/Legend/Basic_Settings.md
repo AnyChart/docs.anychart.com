@@ -199,11 +199,7 @@ This sample demonstrates the drag-and-drop mode, applied to a legend with the po
 
 ## Background
 
-To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners. 
-
-Read more: [Background](../../Appearance_Settings/Background).
-
-The sample below shows a legend with a customized background:
+To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners: 
 
 ```
 // configure the background of the legend
@@ -214,6 +210,8 @@ background.stroke("#96a6a6");
 background.cornerType("round");
 background.corners(10);
 ```
+
+Read more: [Background](../../Appearance_Settings/Background).
 
 {sample}CS\_Legend\_Basic\_10{sample}
 
@@ -229,15 +227,13 @@ You can configure the font of the legend and some other text settings. Use the f
 * {api:anychart.core.ui.Legend#fontWeight}fontWeight(){api} to set the font weight
 * other methods from {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
 
-**Note:** These methods do not affect the text of the [legend title](Advanced_Settings#title). Similar methods of the title should be used instead.
-
-In the following sample, there is a legend with font settings adjusted:
-
 ```
 // configure the text of the legend
 legend.fontSize(16);
 legend.fontWeight(600);
 legend.fontColor("#96a6a6");
 ```
+
+**Note:** These methods do not affect the text of the [legend title](Advanced_Settings#title). Similar methods of the title should be used instead.
 
 {sample}CS\_Legend\_Basic\_11{sample}
