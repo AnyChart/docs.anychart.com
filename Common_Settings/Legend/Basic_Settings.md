@@ -203,6 +203,8 @@ To enable and configure the background of the legend, use the  {api:anychart.cor
 
 Read more: [Background](../../Appearance_Settings/Background).
 
+The sample below shows a legend with a customized background:
+
 ```
 // configure the background of the legend
 var background = chart.legend().background();
@@ -228,6 +230,8 @@ You can configure the font of the legend and some other text settings. Use the f
 * other methods from {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
 
 **Note:** These methods do not affect the text of the [legend title](Advanced_Settings#title). Similar methods of the title should be used instead.
+
+In the following sample, there is a legend with font settings adjusted:
 
 ```
 // configure the text of the legend
