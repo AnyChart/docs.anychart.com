@@ -129,10 +129,9 @@ paginator.currentPage(2);
 
 ## Hover Cursor
 
-* {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
-* {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
-* `"pointer"`, `"help"`
+To set the type of hover cursor of the legend, use {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} methods with one of the parameters listed in {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
 
+The default pointer is `"pointer"`, and in the following sample it is set to `"help"`:
 
 ```
 // customize the hover cursor of the legend
