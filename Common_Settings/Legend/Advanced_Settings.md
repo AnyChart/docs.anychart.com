@@ -7,7 +7,7 @@
 * {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api}
 * {api:anychart.core.ui.Title}anychart.core.ui.Title{api}
 * {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api}
-* [text of the legend](Basic_Settins#text)
+* [text of the legend](Basic_Settings#text)
 
 
 ```
