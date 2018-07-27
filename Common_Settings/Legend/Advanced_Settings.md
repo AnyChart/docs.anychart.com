@@ -89,7 +89,7 @@ legendTooltip.format(function() {
 
 ## Paginator
 
-* {api:api:api:anychart.core.ui.Legend#paginator}paginator(){api}
+* {api:anychart.core.ui.Legend#paginator}paginator(){api}
 * {api:anychart.core.ui.Paginator}anychart.core.ui.Paginator{api}
 
 
@@ -109,7 +109,7 @@ paginator.currentPage(1);
 
 ## Hover Cursor
 
-* {api:api:api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
+* {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
 * `"pointer"`
 
