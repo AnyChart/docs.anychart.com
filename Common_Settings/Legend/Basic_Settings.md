@@ -227,7 +227,7 @@ You can configure the font of the legend and some other text settings. Use the f
 * {api:anychart.core.ui.Legend#fontWeight}fontWeight(){api} to set the font weight
 * other methods from {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
 
-**Note:** These methods do not affect the text of the [legend title](Advanced_Settings#title).
+**Note:** These methods do not affect the text of the [legend title](Advanced_Settings#title). Similar methods of the title should be used instead.
 
 ```
 // configure the text of the legend
