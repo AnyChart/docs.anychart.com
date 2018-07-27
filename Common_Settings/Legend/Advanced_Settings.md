@@ -35,7 +35,19 @@ Here is a legend with the title and title separator enabled and configured:
 
 A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-By default, the legend tooltip is disabled. Use the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method to enable it. Also, {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} allow enabling the tooltip title and separator.
+By default, the legend tooltip is disabled. Use the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method to enable it. Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
+
+```
+// enable the legend tooltip
+var legendTooltip = chart.legend().tooltip();
+legendTooltip.enabled(true);
+
+// enable the tooltip title
+legendTooltip.title(true);
+
+// enable the tooltip separator
+legendTooltip.separator(true);
+```
 
 ### Tokens
 
