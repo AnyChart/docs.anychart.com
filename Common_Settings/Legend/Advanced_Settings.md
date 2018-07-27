@@ -97,11 +97,12 @@ legendTooltip.format(function() {
 
 In some cases – depending on the [Layout](Basic_Settings#layout) and [Size](Basic_Settings#size) settings of the legend – only a part of the items is shown simultaneously, and the legend paginator is automatically enabled, allowing you to flip through them.
 
-You can adjust the layout, position, font, and other settings of the paginator with the help of the {api:anychart.core.ui.Legend#paginator}paginator(){api} method, combined with the following methods:
+You can adjust the paginator with the help of the {api:anychart.core.ui.Legend#paginator}paginator(){api} method, combined with the following methods:
 
 * {api:anychart.core.ui.Paginator#currentPage}currentPage(){api} to set the page shown by default
 * {api:anychart.core.ui.Paginator#layout}layout(){api} to set the `"horizontal"` (default) or `"vertical"` layout
 * {api:anychart.core.ui.Paginator#orientation}orientation(){api} to set the position relative to the legend
+* {api:anychart.core.ui.Paginator#fontColor}fontColor(){api} to set the font color
 * other methods of the {api:anychart.core.ui.Paginator}anychart.core.ui.Paginator{api} class
 
 
@@ -111,9 +112,9 @@ var paginator = legend.paginator();
 paginator.layout("vertical");
 paginator.orientation("left");
 paginator.padding(15);
+paginator.fontColor("#dd2c00");
 paginator.fontSize(12);
 paginator.fontWeight(600);
-paginator.fontColor("#dd2c00");
 ```
 
 Please note that the {api:anychart.core.ui.Paginator#currentPage}currentPage(){api} method should be called after the chart is drawn:

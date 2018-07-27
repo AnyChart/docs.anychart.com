@@ -230,9 +230,9 @@ You can configure the font of the legend and some other text settings. Use the f
 
 ```
 // configure the text of the legend
+legend.fontColor("#96a6a6");
 legend.fontSize(16);
 legend.fontWeight(600);
-legend.fontColor("#96a6a6");
 ```
 
 **Note:** These methods do not affect the text of the title – similar methods of the title should be used instead. See [Advanced settings: Title](Advanced_Settings#title_+_separator).
