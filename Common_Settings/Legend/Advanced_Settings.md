@@ -3,7 +3,7 @@
 
 ## Title + Separator
 
-To enable and configure the legend title, combine the {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:
+The legend title is disabled by default. To enable and configure it, combine the {api:anychart.core.ui.Legend#title}title(){api} method with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:
 
 ```
 // enable and configure the legend title
@@ -35,18 +35,23 @@ Here is a legend with the title and title separator enabled and configured:
 
 A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
+By default, the legend tooltip is disabled. Use the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method to enable it.
+
 ### Tokens
 
-To change the text of the tooltip, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. Also, the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method allows enabling and adjusting the tooltip title.
+To change the text of the tooltip, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the name of the series.
 
-The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the name of the series.
+Also {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} allow enabling and adjusting the tooltip title and separator.
 
 ```
 // enable and configure the legend tooltip
+
 var legendTooltip = chart.legend().tooltip();
+
 legendTooltip.enabled(true);
 legendTooltip.title(true);
 legendTooltip.separator(true);
+
 legendTooltip.titleFormat("Sales Info");
 legendTooltip.format("Year: {%value}");
 ```
