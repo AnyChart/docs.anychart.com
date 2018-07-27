@@ -1,7 +1,7 @@
 {:index 3}
 # Advanced Settings
 
-## Title
+## Title and Title Separator
 
 To enable and configure the legend title, combine the {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:
 
@@ -15,7 +15,7 @@ title.fontWeight(600);
 title.fontColor("#96a6a6");
 ```
 
-You can also enable and adjust the title separator: use the {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} method, combined with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. For example, this how the fill and stroke are adjusted:
+You can also enable and adjust the title separator: use the {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} method, combined with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
 
 ```
 // enable and configure the title separator
