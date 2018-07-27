@@ -51,7 +51,7 @@ legendTooltip.separator(true);
 
 ### Tokens
 
-To change the text of the tooltip or tooltip title, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the name of the series.
+To change the text of the tooltip or tooltip title, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series.
 
 ```
 legendTooltip.titleFormat("Sales Info");
@@ -62,19 +62,16 @@ legendTooltip.format("Year: {%value}");
 
 ### Formatting Functions
 
-* {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
-* {api:anychart.core.ui.Tooltip#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
-* `value`
-* [Formatting Functions](../Text_Formatters#formatting_functions)
+Instead of tokens, you can also use [formatting functions](../Text_Formatters#formatting_functions) with the `value` and `meta` fields.
 
+The `value` field stands for the names of the series, and `meta` allows accessing custom information about the series. To add such information, pass an object with metadata to the **meta()** method of each series:
 
 ```
 // add meta-information about the series
-series1.meta({sales: series1.getStat("sum"), top: 
-series2.meta({sales: series2.getStat("sum"), top: 
-series3.meta({sales: series3.getStat("sum"), top: 
-series4.meta({sales: series4.getStat("sum"), top: 
+series1.meta({sales: series1.getStat("sum"), top: "John Doe"});
+series2.meta({sales: series2.getStat("sum"), top: "Richard Roe"});
+series3.meta({sales: series3.getStat("sum"), top: "Marta Moe"});
+series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
 
 // enable and configure the legend tooltip
 
