@@ -127,6 +127,8 @@ chart.draw();
 paginator.currentPage(2);
 ```
 
+Here is a sample with all the settings shown in the code snippets above applied to the paginator:
+
 {sample}CS\_Legend\_Advanced\_04{sample}
 
 ## Hover Cursor
