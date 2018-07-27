@@ -28,7 +28,7 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 
 ## Tooltip
 
-* (Tooltip)[../Text Formatters#string_tokens]
+* [Tooltip](../Tooltip)
 
 ### Tokens
 
@@ -36,7 +36,7 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
 * `{%value}`
-* (Tooltip)[../Text Formatters#string_tokens]
+* [Tooltip](../Text_Formatters#string_tokens)
 
 
 ```
@@ -55,7 +55,7 @@ legendTooltip.format("Year: {%value}");
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
 * `value`
-* (Tooltip)[../Text Formatters#string_tokens]
+* [Tooltip](../Text_Formatters#string_tokens)
 
 {sample}CS\_Legend\_Advanced\_02{sample}
 
