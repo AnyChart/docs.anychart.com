@@ -36,7 +36,7 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 * `{%value}`
-* [Tooltip](../Text_Formatters#string_tokens)
+* [Tokens](../Text_Formatters#string_tokens)
 
 
 ```
@@ -57,7 +57,7 @@ legendTooltip.format("Year: {%value}");
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 * `value`
-* [Tooltip](../Text_Formatters#string_tokens)
+* [Formatting functions](../Text_Formatters#string_tokens)
 
 
 ```
