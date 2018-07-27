@@ -133,7 +133,7 @@ Here is a sample with all the settings shown in the code snippets above applied 
 
 ## Hover Cursor
 
-To set the type of hover cursor of the legend, use {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} methods with one of the parameters listed in {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
+To adjust the hover cursor of the legend, use {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} methods with one of the parameters listed in {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
 
 The default pointer is `"pointer"`, and in the following sample it is set to `"help"`:
 
