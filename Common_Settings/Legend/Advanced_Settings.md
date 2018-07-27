@@ -57,7 +57,7 @@ legendTooltip.format("Year: {%value}");
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 * `value`
-* [Formatting functions](../Text_Formatters#string_tokens)
+* [Formatting functions](../Text_Formatters#formatting_functions)
 
 
 ```
