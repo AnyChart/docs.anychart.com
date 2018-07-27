@@ -34,7 +34,7 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 
 * {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
 * {api:anychart.core.ui.Tooltip#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 * `{%value}`
 * [Tooltip](../Text_Formatters#string_tokens)
 
@@ -49,15 +49,16 @@ legendTooltip.titleFormat("Sales Info");
 legendTooltip.format("Year: {%value}");
 ```
 
+{sample}CS\_Legend\_Advanced\_02{sample}
+
 ### Formatting Functions
 
 * {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
 * {api:anychart.core.ui.Tooltip#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
 * `value`
 * [Tooltip](../Text_Formatters#string_tokens)
 
-{sample}CS\_Legend\_Advanced\_02{sample}
 
 ```
 // add meta-information about the series
