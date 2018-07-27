@@ -32,7 +32,7 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 
 ### Tokens
 
-* {api:api:anychart.core.ui.Legend#tooltip}tooltip(){api}
+* {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
 * `{%value}`
@@ -51,7 +51,7 @@ legendTooltip.format("Year: {%value}");
 
 ### Formatting Functions
 
-* {api:api:anychart.core.ui.Legend#tooltip}tooltip(){api}
+* {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
 * {api:anychart.core.ui.Tooltip#format}format(){api}
 * {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
 * `value`
