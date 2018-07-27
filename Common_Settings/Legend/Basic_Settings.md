@@ -97,7 +97,7 @@ The following sample shows the difference between the `"horizontal"` and `"verti
 
 Sometimes there are too many legend items, and the space they would take up if they were shown simultaneously exceeds the [size](#size) of the legend. The layout affects the behavior of the legend in this situation:
 
-If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator appears, allowing you to flip through them.
+If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items is shown at once, and the legend paginator is automatically enabled, allowing you to flip through them.
 
 When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend expands, and the chart takes up a smaller space.
 
