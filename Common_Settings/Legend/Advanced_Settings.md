@@ -1,7 +1,7 @@
 {:index 3}
 # Advanced Settings
 
-## Title and Title Separator
+## Title + Separator
 
 To enable and configure the legend title, combine the {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:
 
@@ -33,16 +33,13 @@ Here is a legend with the title and title separator enabled and configured:
 
 ## Tooltip
 
-* [Tooltip](../Tooltip)
+A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 ### Tokens
 
-* {api:anychart.core.ui.Legend#tooltip}tooltip(){api}
-* {api:anychart.core.ui.Tooltip#format}format(){api}
-* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}
-* `{%value}`
-* [Tokens](../Text_Formatters#string_tokens)
+To change the text of the tooltip, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods. Also, the {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method allows enabling and adjusting the tooltip title.
 
+The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the name of the series.
 
 ```
 // enable and configure the legend tooltip
