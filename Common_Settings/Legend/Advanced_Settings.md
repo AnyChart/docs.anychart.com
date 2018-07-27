@@ -3,6 +3,13 @@
 
 ## Title
 
+* {api:anychart.core.ui.Legend#title}title(){api}
+* {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api}
+* {api:anychart.core.ui.Title}anychart.core.ui.Title{api}
+* {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api}
+* [text of the legend](Basic_Settins#text)
+
+
 ```
 // enable and configure the legend title
 var title = chart.legend().title();
@@ -21,6 +28,17 @@ chart.legend().titleSeparator().stroke("#96a6a6");
 
 ## Tooltip
 
+* (Tooltip)[../Text Formatters#string_tokens]
+
+### Tokens
+
+* {api:api:anychart.core.ui.Legend#tooltip}tooltip(){api}
+* {api:anychart.core.ui.Tooltip#format}format(){api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
+* `{%value}`
+* (Tooltip)[../Text Formatters#string_tokens]
+
+
 ```
 // enable and configure the legend tooltip
 var legendTooltip = chart.legend().tooltip();
@@ -30,6 +48,14 @@ legendTooltip.separator(true);
 legendTooltip.titleFormat("Sales Info");
 legendTooltip.format("Year: {%value}");
 ```
+
+### Formatting Functions
+
+* {api:api:anychart.core.ui.Legend#tooltip}tooltip(){api}
+* {api:anychart.core.ui.Tooltip#format}format(){api}
+* {api:anychart.core.ui.Tooltip#titleFormat}titleFormat{api}
+* `value`
+* (Tooltip)[../Text Formatters#string_tokens]
 
 {sample}CS\_Legend\_Advanced\_02{sample}
 
@@ -62,6 +88,9 @@ legendTooltip.format(function() {
 
 ## Paginator
 
+* {api:api:api:anychart.core.ui.Legend#paginator}paginator(){api}
+* {api:anychart.core.ui.Paginator}anychart.core.ui.Paginator{api}
+
 ```
 // configure the legend paginator
 var paginator = legend.paginator();
@@ -77,6 +106,10 @@ paginator.currentPage(1);
 {sample}CS\_Legend\_Advanced\_04{sample}
 
 ## Hover Cursor
+
+* {api:api:api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
+* {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
+* `"pointer"`
 
 ```
 // customize the hover cursor of the legend
