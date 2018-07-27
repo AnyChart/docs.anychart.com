@@ -3,12 +3,7 @@
 
 ## Title
 
-* {api:anychart.core.ui.Legend#title}title(){api}
-* {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api}
-* {api:anychart.core.ui.Title}anychart.core.ui.Title{api}
-* {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api}
-* [text of the legend](Basic_Settings#text)
-
+To enable and configure the legend title, combine the {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:
 
 ```
 // enable and configure the legend title
@@ -18,11 +13,21 @@ title.text("Total Sales");
 title.fontSize(12);
 title.fontWeight(600);
 title.fontColor("#96a6a6");
-    
+```
+
+You can also enable and adjust the title separator: use the {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} method, combined with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. For example, this how the fill and stroke are adjusted:
+
+```
 // enable and configure the title separator
 chart.legend().titleSeparator(true);
+chart.legend().titleSeparator().height(3);
 chart.legend().titleSeparator().stroke("#96a6a6");
+chart.legend().titleSeparator().fill("#96a6a6 0.5");
 ```
+
+See the [Title](../Title) article to learn more.
+
+Here is a legend with the title and title separator enabled and configured:
 
 {sample}CS\_Legend\_Advanced\_01{sample}
 
