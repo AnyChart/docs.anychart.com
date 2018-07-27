@@ -127,7 +127,7 @@ paginator.currentPage(2);
 
 * {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
-* `"pointer"`
+* `"pointer"`, `"help"`
 
 
 ```
