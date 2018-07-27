@@ -92,6 +92,7 @@ legendTooltip.format(function() {
 * {api:api:api:anychart.core.ui.Legend#paginator}paginator(){api}
 * {api:anychart.core.ui.Paginator}anychart.core.ui.Paginator{api}
 
+
 ```
 // configure the legend paginator
 var paginator = legend.paginator();
@@ -111,6 +112,7 @@ paginator.currentPage(1);
 * {api:api:api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api}
 * {api:anychart.enums.Cursor}anychart.enums.Cursor{api}
 * `"pointer"`
+
 
 ```
 // customize the hover cursor of the legend
