@@ -193,7 +193,7 @@ chart.legend().drag(true);
 
 **Note 2:** [Events](Events) (?)
 
-This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) and the [background](#background) enabled and customized:
+This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) (also, the [background](#background) is enabled):
 
 {sample}CS\_Legend\_Basic\_09{sample}
 
