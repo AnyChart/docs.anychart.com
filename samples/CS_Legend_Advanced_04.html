@@ -63,7 +63,6 @@ anychart.onDocumentReady(function () {
     paginator.fontWeight(600);
     paginator.fontColor("#dd2c00");
     paginator.padding(15);
-    paginator.currentPage(1);
 
     // set the chart title
     chart.title("Legend: Paginator");
@@ -73,6 +72,9 @@ anychart.onDocumentReady(function () {
 
     // initiate drawing the chart
     chart.draw();
+
+    // set the current page of the paginator
+    paginator.currentPage(2);
 });
 </script>
 </body>

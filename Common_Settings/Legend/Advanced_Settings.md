@@ -111,7 +111,17 @@ paginator.fontSize(12);
 paginator.fontWeight(600);
 paginator.fontColor("#dd2c00");
 paginator.padding(15);
-paginator.currentPage(1);
+```
+
+* {api:anychart.core.ui.Paginator#currentPage}currentPage(){api}
+
+
+```
+// initiate drawing the chart
+chart.draw();
+
+// set the current page of the paginator
+paginator.currentPage(2);
 ```
 
 {sample}CS\_Legend\_Advanced\_04{sample}

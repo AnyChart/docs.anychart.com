@@ -235,6 +235,6 @@ legend.fontWeight(600);
 legend.fontColor("#96a6a6");
 ```
 
-**Note:** These methods do not affect the text of the title – similar methods of the title should be used instead. See [Advanced settings: Title](Advanced_Settings#title).
+**Note:** These methods do not affect the text of the title – similar methods of the title should be used instead. See [Advanced settings: Title](Advanced_Settings#title_+_separator).
 
 {sample}CS\_Legend\_Basic\_11{sample}
