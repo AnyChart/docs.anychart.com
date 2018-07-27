@@ -104,6 +104,7 @@ You can adjust the layout, position, font, and other settings of the paginator w
 * {api:anychart.core.ui.Paginator#orientation}orientation(){api} to set the position relative to the legend
 * other methods of the {api:anychart.core.ui.Paginator}anychart.core.ui.Paginator{api} class
 
+
 ```
 // configure the legend paginator
 var paginator = legend.paginator();
