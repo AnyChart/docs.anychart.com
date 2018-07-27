@@ -99,7 +99,7 @@ In some cases – depending on the [Layout](Basic_Settings#layout) and [Size](Ba
 
 You can adjust the paginator with the help of the {api:anychart.core.ui.Legend#paginator}paginator(){api} method, combined with the following methods:
 
-* {api:anychart.core.ui.Paginator#currentPage}currentPage(){api} to set the number of the first shown page, which is 1 by default
+* {api:anychart.core.ui.Paginator#currentPage}currentPage(){api} to specify which page is initially displayed, which is 1 by default
 * {api:anychart.core.ui.Paginator#layout}layout(){api} to set the `"horizontal"` (default) or `"vertical"` layout
 * {api:anychart.core.ui.Paginator#orientation}orientation(){api} to set the position relative to the legend
 * {api:anychart.core.ui.Paginator#fontColor}fontColor(){api} to set the font color
