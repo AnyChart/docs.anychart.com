@@ -31,7 +31,7 @@ legend.fontWeight(600);
 
 * {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
 
-### Tokens
+#### Tokens
 
 * `"{%x}"`
 * `"{%value}"`
@@ -44,7 +44,7 @@ legend.fontWeight(600);
 
 {sample}CS\_Legend\_Items\_02{sample}
 
-### Formatting Functions
+#### Formatting Functions
 
 * `"x"`
 * `"value"`
