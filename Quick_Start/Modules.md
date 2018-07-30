@@ -43,8 +43,8 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 ```
 <head>
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
-<script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-pie.min.js"></script>
-<script src="https://cdn.anychart.com/releases/DVF-3174-module/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
 </head>
 ```
 
@@ -55,7 +55,8 @@ As for **Bundle**, it includes all other modules except [Extentions](#extentions
 ## Builder
 
 Custom JavaScript Builder is designed for assembling a JavaScript file that contains only the features and chart types you are really going to use.
-- [Online Builder](https://anychart.com/download/products/#custom-build)
+
+- [AnyChart Online Custom Binaries Builder](https://anychart.com/download/products/#custom-build)
 
 To build a custom JavaScript binary, check modules you want to include in the build: specify the chart types you are going to create and add features and themes if you need them. Then press the green "Build" button at the bottom.
 
