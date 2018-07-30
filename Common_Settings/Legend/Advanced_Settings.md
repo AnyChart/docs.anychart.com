@@ -1,6 +1,8 @@
 {:index 3}
 # Advanced Settings
 
+## Overview
+
 ## Title + Separator
 
 The legend title is disabled by default. To enable and configure it, combine the {api:anychart.core.ui.Legend#title}title(){api} method with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the font of the title:

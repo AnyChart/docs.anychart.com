@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Items 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 12000, 10000, 7000, 11000],
+      ["February", 15000, 12000, 9000, 13000],
+      ["March", 16000, 15000, 14000, 12000],
+      ["April", 15000, 11000, 13000, 10000],
+      ["May", 10000, 9000, 11000, 6000]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+    var seriesData_4 = data.mapAs({x: 0, value: 4});
+
+    // create a chart
+    var chart = anychart.line();
+
+    // create series, set the data and names
+    var series1 = chart.line(seriesData_1);
+    var series2 = chart.line(seriesData_2);
+    var series3 = chart.line(seriesData_3);
+    var series4 = chart.line(seriesData_4);
+    series1.name("2015");
+    series2.name("2016");
+    series3.name("2017");
+    series4.name("2018");
+
+    // enable the legend
+    var legend = chart.legend();
+    legend.enabled(true);
+
+    // configure the font of legend items
+    legend.fontColor("#96a6a6");
+    legend.fontSize(16);
+    legend.fontWeight(600);
+    
+    // set the chart title
+    chart.title("Legend Items: Icon Size");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -214,27 +214,3 @@ background.corners(10);
 Read more: [Background](../../Appearance_Settings/Background).
 
 {sample}CS\_Legend\_Basic\_10{sample}
-
-## Text
-
-You can configure the font of the legend and some other text settings. Use the following methods:
-
-* {api:anychart.core.ui.Legend#fontColor}fontColor(){api} to set the font color
-* {api:anychart.core.ui.Legend#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
-* {api:anychart.core.ui.Legend#fontSize}fontSize(){api} to set the font size
-* {api:anychart.core.ui.Legend#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
-* {api:anychart.core.ui.Legend#fontVariant}fontVariant(){api} to set the font variant - normal or small caps
-* {api:anychart.core.ui.Legend#fontWeight}fontWeight(){api} to set the font weight
-* other methods from {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
-
-
-```
-// configure the text of the legend
-legend.fontColor("#96a6a6");
-legend.fontSize(16);
-legend.fontWeight(600);
-```
-
-**Note:** These methods do not affect the text of the title – similar methods of the title should be used instead. See [Advanced settings: Title](Advanced_Settings#title_+_separator).
-
-{sample}CS\_Legend\_Basic\_11{sample}
