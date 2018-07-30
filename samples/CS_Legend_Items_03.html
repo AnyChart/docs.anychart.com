@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Items 03"/>
+    <meta name="ac:name" content="CS Legend Items 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -57,13 +57,14 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    // configure the font of legend items
-    legend.fontColor("#96a6a6");
-    legend.fontSize(16);
-    legend.fontWeight(600);
+    // configure the format of legend items
+    legend.itemsFormat(function() {
+        console.log(this);
+        return "?";
+    });
     
     // set the chart title
-    chart.title("Legend Items: Icon Size");
+    chart.title("Legend Items: Text Format (Formatting Functions)");
 
     // set the container id
     chart.container("container");

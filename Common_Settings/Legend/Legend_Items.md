@@ -31,12 +31,31 @@ legend.fontWeight(600);
 
 * {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
 
+### Tokens
+
+* `"{%x}"`
+* `"{%value}"`
+* `"{%seriesName}"` ??
+
 
 ```
-функция
+
 ```
 
 {sample}CS\_Legend\_Items\_02{sample}
+
+### Formatting Functions
+
+* `"x"`
+* `"value"`
+* `"seriesName"` ??
+
+
+```
+
+```
+
+{sample}CS\_Legend\_Items\_03{sample}
 
 ## Icon Size
 
@@ -48,7 +67,7 @@ legend.fontWeight(600);
 
 ```
 
-{sample}CS\_Legend\_Items\_03{sample}
+{sample}CS\_Legend\_Items\_04{sample}
 
 ## Spacing
 
@@ -61,7 +80,7 @@ legend.fontWeight(600);
 оба метода
 ```
 
-{sample}CS\_Legend\_Items\_04{sample}
+{sample}CS\_Legend\_Items\_05{sample}
 
 ## Order
 
@@ -72,7 +91,7 @@ legend.fontWeight(600);
 кнопка
 ```
 
-{sample}CS\_Legend\_Items\_05{sample}
+{sample}CS\_Legend\_Items\_06{sample}
 
 ## Individual Items
 
@@ -87,18 +106,18 @@ legend.fontWeight(600);
 ```
 размер, виз настройки
 ```
-{sample}CS\_Legend\_Items\_06{sample}
+{sample}CS\_Legend\_Items\_07{sample}
 
 ```
 тип иконки, тип маркера
 ```
-{sample}CS\_Legend\_Items\_07{sample}
+{sample}CS\_Legend\_Items\_08{sample}
 
 ```
 текст (?), темы
 ```
 
-{sample}CS\_Legend\_Items\_08{sample}
+{sample}CS\_Legend\_Items\_09{sample}
 
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
@@ -107,7 +126,7 @@ legend.fontWeight(600);
 Total (?)
 ```
 
-{sample}CS\_Legend\_Items\_09{sample}
+{sample}CS\_Legend\_Items\_10{sample}
 
 * {api:anychart.core.ui.Legend#items}items(){api}
 
@@ -116,4 +135,4 @@ Total (?)
 добавление итемов списком
 ```
 
-{sample}CS\_Legend\_Items\_10{sample}
+{sample}CS\_Legend\_Items\_11{sample}
