@@ -3,9 +3,7 @@
 
 ## Overview
 
-## Text
-
-### Font
+## Text Font
 
 You can configure the font of legend items by using the following methods:
 
@@ -27,34 +25,58 @@ legend.fontWeight(600);
 
 {sample}CS\_Legend\_Items\_01{sample}
 
-### Format
+## Text Format
 
 * {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
 
-#### Tokens
+### Tokens
 
-* `"{%x}"`
-* `"{%value}"`
-* `"{%index}"` ?
-* `"{%seriesName}"` ??
+МНОГОСЕРИЙНЫЕ ЧАРТЫ
+
+* всегда доступно: `"{%seriesName}"`
+* + токены, связанные с данным типом серии
+* в этом примере: `"{%seriesYSum}"`
 
 
 ```
-
+отредактировать пример
 ```
 
 {sample}CS\_Legend\_Items\_02{sample}
 
-#### Formatting Functions
+ОДНОСЕРИЙНЫЕ ЧАРТЫ
 
-* `"x"`
-* `"value"`
-* `"index"` ?
-* `"seriesName"` ??
+* в односерийной легенде каждый элемент = точка -> доступно ее значение
+* в этом примере: `"{%x}"`, `"{%value}"`
 
 
 ```
+(+)
+```
 
+{sample}CS\_Legend\_Items\_02{sample}
+
+### Formatting Functions
+
+МНОГОСЕРИЙНЫЕ ЧАРТЫ
+
+* в односерийной легенде каждый элемент = точка -> доступно ее значение
+* `series` + методы серии
+
+
+```
+отредактировать пример
+```
+
+{sample}CS\_Legend\_Items\_03{sample}
+
+ОДНОСЕРИЙНЫЕ ЧАРТЫ
+
+* в этом примере: `"x"`, `"value"`
+
+
+```
+(+)
 ```
 
 {sample}CS\_Legend\_Items\_03{sample}
@@ -104,6 +126,12 @@ legend.fontWeight(600);
 * {api:}.{api}
 * {api:}...{api}
 
+
+```
+(+) отключение итема - метод enabled()
+(?) скаттер, маркеры + линия, линию не показывать
+```
+{sample}CS\_Legend\_Items\_07{sample}
 
 ```
 размер, виз настройки
