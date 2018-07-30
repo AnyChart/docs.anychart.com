@@ -31,8 +31,8 @@
     </style>
 </head>
 <body>
-<label><input onclick="invertOrder('false')" type="radio" name="order" checked>Default</label>
-<label><input onclick="invertOrder('true')" type="radio" name="order">Inverted</label>
+<label><input onclick="invertedOrder('false')" type="radio" name="order" checked>Default</label>
+<label><input onclick="invertedOrder('true')" type="radio" name="order">Inverted</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -80,7 +80,7 @@ anychart.onDocumentReady(function () {
 });
 
 // set the order of legend items
-function invertOrder(order) {
+function invertedOrder(order) {
   chart.legend().inverted(order);
 }
 </script>
