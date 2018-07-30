@@ -68,11 +68,10 @@ anychart.onDocumentReady(function () {
     //series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
+    chart.legend(true);
 
     // configure the format of legend items
-    legend.itemsFormat("{%x}: {%value}");
+    chart.legend().itemsFormat("{%x}: {%value}");
     
     // set the chart title
     chart.title("Legend Items: Text Format (Tokens)");
