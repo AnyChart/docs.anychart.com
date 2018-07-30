@@ -33,7 +33,7 @@ legend.fontWeight(600);
 
 
 ```
-
+функция
 ```
 
 {sample}CS\_Legend\_Items\_02{sample}
@@ -58,7 +58,7 @@ legend.fontWeight(600);
 
 
 ```
-
+оба метода
 ```
 
 {sample}CS\_Legend\_Items\_04{sample}
@@ -69,7 +69,7 @@ legend.fontWeight(600);
 
 
 ```
-
+кнопка
 ```
 
 {sample}CS\_Legend\_Items\_05{sample}
@@ -85,22 +85,35 @@ legend.fontWeight(600);
 
 
 ```
-
+размер, виз настройки
 ```
 {sample}CS\_Legend\_Items\_06{sample}
 
+```
+тип иконки, тип маркера
+```
+{sample}CS\_Legend\_Items\_07{sample}
+
+```
+текст (?), темы
+```
+
+{sample}CS\_Legend\_Items\_08{sample}
+
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
+
+
+```
+Total (?)
+```
+
+{sample}CS\_Legend\_Items\_09{sample}
+
 * {api:anychart.core.ui.Legend#items}items(){api}
 
 
 ```
-
+добавление итемов списком
 ```
 
-{sample}CS\_Legend\_Items\_07{sample}
-
-```
-
-```
-
-{sample}CS\_Legend\_Items\_08{sample}
+{sample}CS\_Legend\_Items\_10{sample}
