@@ -35,6 +35,7 @@ legend.fontWeight(600);
 
 * `"{%x}"`
 * `"{%value}"`
+* `"{%index}"` ?
 * `"{%seriesName}"` ??
 
 
@@ -48,6 +49,7 @@ legend.fontWeight(600);
 
 * `"x"`
 * `"value"`
+* `"index"` ?
 * `"seriesName"` ??
 
 
