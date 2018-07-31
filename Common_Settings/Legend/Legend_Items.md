@@ -53,7 +53,7 @@ chart.legend().itemsFormat(
 ОДНОСЕРИЙНЫЕ ЧАРТЫ
 
 * в односерийной легенде каждый элемент = точка -> доступно ее значение
-* в этом примере: `"{%x}"`, `"{%value}"`
+* в этом примере: `"{%x}"`, `"{%value}"`, также доступно `"{%percentValue}"`
 
 
 ```
@@ -91,11 +91,20 @@ chart.legend().itemsFormat(function() {
 
 ОДНОСЕРИЙНЫЕ ЧАРТЫ
 
-* в этом примере: `"x"`, `"value"`
+* в этом примере: `x`, `value`, `index` + обращение к точке по индексу
 
 
 ```
-(+)
+// enable html for the legend
+chart.legend().useHtml(true);
+
+// configure the format of legend items
+chart.legend().itemsFormat(function() {
+  var point = chart.getPoint(this.index);
+  var percent = point.getStat("percentValue").toFixed(1);
+  return "<span style='color:#dd2c00;font-weight:600'>" +
+         this.x + "</span>: " + percent + "%";
+});
 ```
 
 {sample}CS\_Legend\_Items\_05{sample}
