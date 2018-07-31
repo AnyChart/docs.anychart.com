@@ -12,15 +12,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<label><input onclick="invertedOrder('false')" type="radio" name="order" checked>Default</label>
+<label><input onclick="invertedOrder('true')" type="radio" name="order">Inverted</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -41,7 +53,7 @@ anychart.onDocumentReady(function () {
     var seriesData_4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
-    var chart = anychart.line();
+    chart = anychart.line();
 
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
@@ -54,16 +66,11 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
+    chart.legend(true);
 
-    // configure the font of legend items
-    legend.fontColor("#96a6a6");
-    legend.fontSize(16);
-    legend.fontWeight(600);
-    
     // set the chart title
-    chart.title("Individual Items: ...");
+    chart.title("Legend Items: Order (inverted = "
+                + chart.legend().inverted() + ")");
 
     // set the container id
     chart.container("container");
@@ -71,6 +78,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// set the order of legend items
+function invertedOrder(order) {
+  chart.legend().inverted(order);
+}
 </script>
 </body>
 </html>

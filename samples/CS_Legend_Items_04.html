@@ -25,6 +25,20 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    //// create data
+    //var data = [
+    //  {x: "John Doe", value: 1},
+    //  {x: "Richard Roe", value: 1},
+    //  {x: "Marta Moe", value: 1},
+    //  {x: "Larry Loe", value: 1},
+    //  {x: "Jane Poe", value: 1},
+    //  {x: "Norma Noe", value: 1},
+    //  {x: "William Woe", value: 1}
+    //];
+
+    //// create a chart and set the data
+    //chart = anychart.pie(data);
+
     // create a data set
     var data = anychart.data.set([
       ["January", 12000, 10000, 7000, 11000],
@@ -43,7 +57,7 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.line();
 
-    // create series, set the data and names
+    //create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
     var series3 = chart.line(seriesData_3);
@@ -56,11 +70,15 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // set the size of legend icons
-    chart.legend().iconSize (20);
-
+    // configure the format of legend items
+    chart.legend().itemsFormat(function() {
+      console.log(this);
+      return this.series.name() + ": " + this.series.getStat("sum");
+    });
+    
     // set the chart title
-    chart.title("Legend Items: Icon Size");
+    chart.title("Legend Items: Text Format (Formatting Functions)" +
+                "\nMultiple Series");
 
     // set the container id
     chart.container("container");

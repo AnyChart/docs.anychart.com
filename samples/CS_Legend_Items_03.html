@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Items 02"/>
+    <meta name="ac:name" content="CS Legend Items 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     // create a chart
     var chart = anychart.line();
 
-    //create series, set the data and names
+    // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
     var series3 = chart.line(seriesData_3);
@@ -71,13 +71,11 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // configure the format of legend items
-    chart.legend().itemsFormat(function() {
-      console.log(this);
-      return this.series.name() + ": " + this.series.getStat("sum");
-    });
+    chart.legend().itemsFormat("{%seriesYSum}");
     
     // set the chart title
-    chart.title("Legend Items: Text Format (Formatting Functions)");
+    chart.title("Legend Items: Text Format (Tokens)" +
+                "\nOne Series");
 
     // set the container id
     chart.container("container");

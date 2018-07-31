@@ -54,7 +54,7 @@ legend.fontWeight(600);
 (+)
 ```
 
-{sample}CS\_Legend\_Items\_02{sample}
+{sample}CS\_Legend\_Items\_03{sample}
 
 ### Formatting Functions
 
@@ -68,7 +68,7 @@ legend.fontWeight(600);
 отредактировать пример
 ```
 
-{sample}CS\_Legend\_Items\_03{sample}
+{sample}CS\_Legend\_Items\_04{sample}
 
 ОДНОСЕРИЙНЫЕ ЧАРТЫ
 
@@ -79,7 +79,7 @@ legend.fontWeight(600);
 (+)
 ```
 
-{sample}CS\_Legend\_Items\_03{sample}
+{sample}CS\_Legend\_Items\_05{sample}
 
 ## Icon Size
 
@@ -91,7 +91,7 @@ legend.fontWeight(600);
 
 ```
 
-{sample}CS\_Legend\_Items\_04{sample}
+{sample}CS\_Legend\_Items\_06{sample}
 
 ## Spacing
 
@@ -104,7 +104,7 @@ legend.fontWeight(600);
 оба метода
 ```
 
-{sample}CS\_Legend\_Items\_05{sample}
+{sample}CS\_Legend\_Items\_07{sample}
 
 ## Order
 
@@ -115,7 +115,7 @@ legend.fontWeight(600);
 кнопка
 ```
 
-{sample}CS\_Legend\_Items\_06{sample}
+{sample}CS\_Legend\_Items\_08{sample}
 
 ## Individual Items
 
@@ -128,26 +128,26 @@ legend.fontWeight(600);
 
 
 ```
-(+) отключение итема - метод enabled()
+отключение итема - метод enabled()
 (?) скаттер, маркеры + линия, линию не показывать
 ```
-{sample}CS\_Legend\_Items\_07{sample}
+{sample}CS\_Legend\_Items\_09{sample}
 
 ```
 размер, виз настройки
 ```
-{sample}CS\_Legend\_Items\_07{sample}
+{sample}CS\_Legend\_Items\_10{sample}
 
 ```
 тип иконки, тип маркера
 ```
-{sample}CS\_Legend\_Items\_08{sample}
+{sample}CS\_Legend\_Items\_11{sample}
 
 ```
 текст (?), темы
 ```
 
-{sample}CS\_Legend\_Items\_09{sample}
+{sample}CS\_Legend\_Items\_12{sample}
 
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
@@ -156,7 +156,7 @@ legend.fontWeight(600);
 Total (?)
 ```
 
-{sample}CS\_Legend\_Items\_10{sample}
+{sample}CS\_Legend\_Items\_13{sample}
 
 * {api:anychart.core.ui.Legend#items}items(){api}
 
@@ -165,4 +165,4 @@ Total (?)
 добавление итемов списком
 ```
 
-{sample}CS\_Legend\_Items\_11{sample}
+{sample}CS\_Legend\_Items\_14{sample}

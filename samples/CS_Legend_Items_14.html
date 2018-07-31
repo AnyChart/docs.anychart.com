@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Items 07"/>
+    <meta name="ac:name" content="CS Legend Items 14"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -54,16 +54,16 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // enable the legend
-    chart.legend(true);
+    var legend = chart.legend();
+    legend.enabled(true);
 
-    // set the spacing between legend items
-    chart.legend().itemsSpacing(50);
-
-    // set the spacing between legend icons and text
-    chart.legend().iconTextSpacing(15);
-
+    // configure the font of legend items
+    legend.fontColor("#96a6a6");
+    legend.fontSize(16);
+    legend.fontWeight(600);
+    
     // set the chart title
-    chart.title("Legend Items: Spacing");
+    chart.title("Individual Items: ...");
 
     // set the container id
     chart.container("container");
