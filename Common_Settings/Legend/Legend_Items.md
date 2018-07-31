@@ -166,8 +166,8 @@ chart.legend().inverted(true);
 
 
 ```
-отключение итема - метод enabled()
-(?) скаттер, маркеры + линия, линию не показывать
+// disable the last item
+series3.legendItem().enabled(enabled);
 ```
 {sample}CS\_Legend\_Items\_09{sample}
 
