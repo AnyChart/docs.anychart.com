@@ -120,7 +120,8 @@ chart.legend().itemsFormat(function() {
 
 
 ```
-
+// set the size of legend icons
+chart.legend().iconSize (20);
 ```
 
 {sample}CS\_Legend\_Items\_06{sample}
@@ -133,7 +134,11 @@ chart.legend().itemsFormat(function() {
 
 
 ```
-оба метода
+// set the spacing between legend items
+chart.legend().itemsSpacing(50);
+
+// set the spacing between legend icons and text
+chart.legend().iconTextSpacing(15);
 ```
 
 {sample}CS\_Legend\_Items\_07{sample}
@@ -144,7 +149,8 @@ chart.legend().itemsFormat(function() {
 
 
 ```
-кнопка
+// set the order of legend items
+chart.legend().inverted(true);
 ```
 
 {sample}CS\_Legend\_Items\_08{sample}
