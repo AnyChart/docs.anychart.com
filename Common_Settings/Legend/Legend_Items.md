@@ -39,7 +39,13 @@ legend.fontWeight(600);
 
 
 ```
-отредактировать пример
+// enable html for legend items
+chart.legend().useHtml(true);
+
+// configure the format of legend items
+chart.legend().itemsFormat(
+    "<span style='color:#dd2c00;font-weight:600'>{%seriesName}:</span> ${%seriesYSum}"
+);
 ```
 
 {sample}CS\_Legend\_Items\_02{sample}
