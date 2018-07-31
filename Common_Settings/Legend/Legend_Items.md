@@ -102,8 +102,12 @@ chart.legend().useHtml(true);
 chart.legend().itemsFormat(function() {
   var point = chart.getPoint(this.index);
   var percent = point.getStat("percentValue").toFixed(1);
-  return "<span style='color:#dd2c00;font-weight:600'>" +
-         this.x + "</span>: " + percent + "%";
+  if (percent >= 50) {
+    return "<span style='color:#dd2c00;font-weight:600'>" +
+           this.x + ": " + percent + "%</span>";
+  } else {
+    return this.x + "</span>: " + percent + "%";
+  }
 });
 ```
 
