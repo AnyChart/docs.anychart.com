@@ -39,7 +39,7 @@ legend.fontWeight(600);
 
 
 ```
-// enable html for legend items
+// enable html for the legend
 chart.legend().useHtml(true);
 
 // configure the format of legend items
@@ -57,7 +57,13 @@ chart.legend().itemsFormat(
 
 
 ```
-(+)
+// enable html for the legend
+chart.legend().useHtml(true);
+
+// configure the format of legend items
+chart.legend().itemsFormat(
+    "<span style='color:#dd2c00;font-weight:600'>{%x}:</span> ${%value}"
+);
 ```
 
 {sample}CS\_Legend\_Items\_03{sample}
@@ -71,7 +77,7 @@ chart.legend().itemsFormat(
 
 
 ```
-// enable html for legend items
+// enable html for the legend
 chart.legend().useHtml(true);
 
 // configure the format of legend items

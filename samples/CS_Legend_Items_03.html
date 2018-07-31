@@ -27,20 +27,23 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "John Doe", value: 1},
-      {x: "Richard Roe", value: 1},
-      {x: "Marta Moe", value: 1},
-      {x: "Larry Loe", value: 1},
-      {x: "Jane Poe", value: 1},
-      {x: "Norma Noe", value: 1},
-      {x: "William Woe", value: 1}
+      {x: "John", value: 5000},
+      {x: "Richard", value: 5000},
+      {x: "Marta", value: 15000},
+      {x: "Larry", value: 5000}
     ];
 
     // create a chart and set the data
     chart = anychart.pie(data);
 
+    // enable html for the legend
+    chart.legend().useHtml(true);
+
     // configure the format of legend items
-    chart.legend().itemsFormat("?");
+    chart.legend().itemsFormat(
+        "<span style='color:#dd2c00;font-weight:600'>" +
+        "{%x}:</span> ${%value}"
+    );
     
     // set the chart title
     chart.title("Legend Items: Text Format (Tokens)" +
