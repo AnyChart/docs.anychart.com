@@ -53,9 +53,8 @@ anychart.onDocumentReady(function () {
     chart = anychart.pie(newData);
 
     // set the chart title
-    chart.listen("chartDraw", function () {
-      chart.title("Legend: Size (Expandable)\n\n" +
-                  "Max Height = 30%, Max Width = 50%");
+    chart.title("Legend: Size (Expandable)\n\n" +
+                "Max Height = 30%, Max Width = 50%");
     });
 
     // set the max height and width of the legend

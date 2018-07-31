@@ -76,9 +76,8 @@ chart.legend().useHtml(true);
 
 // configure the format of legend items
 chart.legend().itemsFormat(function() {
-  return "<span style='color:" + this.series.color() +
-         ";font-weight:600'>" + this.series.name() +
-         "</span>: $" + this.series.getStat("sum");
+  return "<span style='color:" + this.series.color() + ";font-weight:600'>" +
+         this.series.name() + "</span>: $" + this.series.getStat("sum");
 });
 ```
 
