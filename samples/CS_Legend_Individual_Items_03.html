@@ -46,7 +46,7 @@ anychart.onDocumentReady(function () {
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
-    var series3 = chart.spline(seriesData_3);
+    var series3 = chart.line(seriesData_3);
     var series4 = chart.spline(seriesData_4);
     series1.name("2015");
     series2.name("2016");
@@ -72,12 +72,12 @@ anychart.onDocumentReady(function () {
     legendItem1.iconSize(50);
     legendItem2.iconSize(50);
     legendItem3.iconSize(50);
-    legendItem4.iconSize(50);
+    legendItem4.iconSize(80);
 
     // set the types of legend icons
     legendItem1.iconType("line");
     legendItem2.iconType("line");
-    legendItem3.iconType("spline");
+    legendItem3.iconType("line");
     legendItem4.iconType("spline");
 
     // set the fills of icon markers
