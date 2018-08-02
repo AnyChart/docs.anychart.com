@@ -114,11 +114,11 @@ chart.legend().itemsFormat(function() {
 
 {sample}CS\_Legend\_Items\_05{sample}
 
-### Icons
+## Icons
 
 * [Icons](Individual_Legend_Items#icons), [Markers](Individual_Legend_Items#markers) (?)
 
-## Size
+### Size
 
 * {api:anychart.core.ui.Legend#iconSize}iconSize(){api}
 * пиксели / проценты ?
