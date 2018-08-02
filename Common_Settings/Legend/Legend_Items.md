@@ -45,7 +45,7 @@ chart.legend().useHtml(true);
 
 // configure the format of legend items
 chart.legend().itemsFormat(
-    "<span style='color:#dd2c00;font-weight:600'>{%seriesName}:</span> ${%seriesYSum}"
+  "<span style='color:#dd2c00;font-weight:600'>{%seriesName}:</span> ${%seriesYSum}"
 );
 ```
 
@@ -63,7 +63,7 @@ chart.legend().useHtml(true);
 
 // configure the format of legend items
 chart.legend().itemsFormat(
-    "<span style='color:#dd2c00;font-weight:600'>{%x}:</span> ${%value}"
+  "<span style='color:#dd2c00;font-weight:600'>{%x}:</span> ${%value}"
 );
 ```
 

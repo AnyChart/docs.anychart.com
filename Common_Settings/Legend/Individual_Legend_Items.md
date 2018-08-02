@@ -78,18 +78,29 @@ series3.legendItem().enabled(enabled);
 * {api:anychart.core.utils.LegendItemSettings#format}format(){api}
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
+### Tokens
 
 ```
-format(): ?
+
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_05{sample}
+
+### Formatting Functions
+
+```
+
+```
+
+{sample}CS\_Legend\_Individual\_Items\_06{sample}
+
+### ???
 
 ```
 itemsFormatter: Total (?)
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_06{sample}
+{sample}CS\_Legend\_Individual\_Items\_07{sample}
 
 ## Themes
 
@@ -97,7 +108,7 @@ itemsFormatter: Total (?)
 
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_07{sample}
+{sample}CS\_Legend\_Individual\_Items\_08{sample}
 
 ## ???
 
@@ -108,4 +119,4 @@ itemsFormatter: Total (?)
 добавление итемов списком
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_08{sample}
+{sample}CS\_Legend\_Individual\_Items\_09{sample}

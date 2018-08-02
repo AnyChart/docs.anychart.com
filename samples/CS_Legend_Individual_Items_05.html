@@ -57,13 +57,18 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    // configure the font of legend items
-    legend.fontColor("#96a6a6");
-    legend.fontSize(16);
-    legend.fontWeight(600);
-    
+    // enable html for the legend
+    chart.legend().useHtml(true);
+
+    /* configure the format of the legend icon
+    representing the last series */
+    series4.legendItem().format(
+     "{%seriesName}: <span style='color:#dd2c00;font-weight:600'>" +
+     "${%seriesYSum}</span>"
+    );
+
     // set the chart title
-    chart.title("Individual Legend Items: Text Format");
+    chart.title("Individual Legend Items: Text Format (Tokens)");
 
     // set the container id
     chart.container("container");
