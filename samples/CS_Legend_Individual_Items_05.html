@@ -54,16 +54,14 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
+    chart.legend(true);
 
     var legendItem1 = series1.legendItem();
     var legendItem2 = series2.legendItem();
     var legendItem3 = series3.legendItem();
     var legendItem4 = series4.legendItem();
 
-    /* set the type of the legend icon
-    representing the last series */
+    // set the type of the last legend icon
     legendItem4.iconType("area");
 
     // set the sizes of legend items

@@ -54,14 +54,12 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
+    chart.legend(true);
 
-    // enable html for the legend
-    chart.legend().useHtml(true);
+    // enable html for the last legend item
+    series4.legendItem().useHtml(true);
 
-    /* configure the format of the legend icon
-    representing the last series */
+    // configure the format of the last legend item
     series4.legendItem().format(
      "{%seriesName}: <span style='color:#dd2c00;font-weight:600'>" +
      "${%seriesYSum}</span>"
