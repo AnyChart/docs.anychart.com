@@ -209,6 +209,10 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Items\_11{sample}
 
+### Spacing
+
+* {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api}
+
 ### Text Font
 
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
