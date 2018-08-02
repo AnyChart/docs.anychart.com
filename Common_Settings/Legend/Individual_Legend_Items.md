@@ -23,9 +23,13 @@ series3.legendItem().enabled(enabled);
 
 ## Text Font
 
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* ...
+* {api:anychart.core.utils.LegendItemSettings#fontColor}fontColor(){api} to set the font color
+* {api:anychart.core.utils.LegendItemSettings#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
+* {api:anychart.core.utils.LegendItemSettings#fontSize}fontSize(){api} to set the font size
+* {api:anychart.core.utils.LegendItemSettings#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
+* {api:anychart.core.utils.LegendItemSettings#fontVariant}fontVariant(){api} to set the font variant - normal or small caps
+* {api:anychart.core.utils.LegendItemSettings#fontWeight}fontWeight(){api} to set the font weight
+* other methods from {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 
 
 ```
