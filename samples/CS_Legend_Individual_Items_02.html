@@ -62,22 +62,23 @@ anychart.onDocumentReady(function () {
     var legendItem3 = series3.legendItem();
     var legendItem4 = series4.legendItem();
 
-    // ...   
+    /* set the type of the legend icon
+    representing the last series */
     legendItem4.iconType("area");
 
-    // ...
+    // set the sizes of legend items
     legendItem1.iconSize(20);
     legendItem2.iconSize(20);
     legendItem3.iconSize(20);
     legendItem4.iconSize(20);
 
-    // ...
+    // set the fills of legend items
     legendItem1.iconFill("white");
     legendItem2.iconFill("white");
     legendItem3.iconFill("white");
     legendItem4.iconFill("white");
 
-    // ...
+    // set the strokes of legend items
     legendItem1.iconStroke(series1.color(), 4);
     legendItem2.iconStroke(series2.color(), 4);
     legendItem3.iconStroke(series3.color(), 4);

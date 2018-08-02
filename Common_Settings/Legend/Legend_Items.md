@@ -28,6 +28,7 @@ legend.fontWeight(600);
 ## Text Format
 
 * {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
+* сослаться на [Individual Legend Items: Text Format](Individual_Legend_Items#text_format) ({api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}) (?)
 
 ### Tokens
 
@@ -113,7 +114,11 @@ chart.legend().itemsFormat(function() {
 
 {sample}CS\_Legend\_Items\_05{sample}
 
-## Icon Size
+### Icons
+
+* [Icons](Individual_Legend_Items#icons), [Markers](Individual_Legend_Items#markers) (?)
+
+## Size
 
 * {api:anychart.core.ui.Legend#iconSize}iconSize(){api}
 * пиксели / проценты ?
