@@ -175,7 +175,7 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Items\_09{sample}
 
-### Icon
+### Icons
 
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
@@ -188,7 +188,7 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Items\_10{sample}
 
-### Marker
+### Markers
 
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
