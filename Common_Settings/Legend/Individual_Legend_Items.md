@@ -101,7 +101,7 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Individual\_Items\_07{sample}
 
-### Adding Custom Items (?)
+## Adding Custom Items (?)
 
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 * {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}
