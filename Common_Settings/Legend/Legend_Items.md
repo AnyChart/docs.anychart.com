@@ -116,7 +116,7 @@ chart.legend().itemsFormat(function() {
 
 ## Icons
 
-* [Icons](Individual_Legend_Items#icons), [Markers](Individual_Legend_Items#markers) (?)
+* большая часть настроек задается только индивидуально, см. [Icons](Individual_Legend_Items#icons), [Markers](Individual_Legend_Items#markers) (?)
 
 ### Size
 
