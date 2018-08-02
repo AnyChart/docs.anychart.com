@@ -58,11 +58,25 @@ anychart.onDocumentReady(function () {
     legend.enabled(true);
 
     // ...
-    series1.legendItem().iconSize(40);
-    series1.legendItem().iconHatchFill("zigzag");
+    series1.legendItem().iconSize(20);
+    series2.legendItem().iconSize(20);
+    series3.legendItem().iconSize(20);
+    series4.legendItem().iconSize(20);
+
+    // ...
+    series1.legendItem().iconFill("white");
+    series2.legendItem().iconFill("white");
+    series3.legendItem().iconFill("white");
+    series4.legendItem().iconFill("white");
+
+    // ...
+    series1.legendItem().iconStroke(series1.color(), 4);
+    series2.legendItem().iconStroke(series2.color(), 4);
+    series3.legendItem().iconStroke(series3.color(), 4);
+    series4.legendItem().iconStroke(series4.color(), 4);
     
     // set the chart title
-    chart.title("Individual Items: Icon Appearance + Size");
+    chart.title("Individual Items: Markers");
 
     // set the container id
     chart.container("container");

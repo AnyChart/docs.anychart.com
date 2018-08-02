@@ -175,19 +175,7 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Items\_09{sample}
 
-### Icon / Marker Type
-
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-
-
-```
-тип иконки, тип маркера
-```
-
-{sample}CS\_Legend\_Items\_10{sample}
-
-### Icon Appearance + Size
+### Icon
 
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
@@ -195,7 +183,20 @@ series3.legendItem().enabled(enabled);
 
 
 ```
-размер, виз настройки
+
+```
+
+{sample}CS\_Legend\_Items\_10{sample}
+
+### Marker
+
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* ...
+
+
+```
+
 ```
 
 {sample}CS\_Legend\_Items\_11{sample}
