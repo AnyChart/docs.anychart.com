@@ -194,6 +194,9 @@ series3.legendItem().enabled(enabled);
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * ...
+* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* включить маркеры на серии + тип иконки сделать `"line"` или `"spline"`
+* маркер автоматически берется у серии, но можно настроить вручную
 
 
 ```
