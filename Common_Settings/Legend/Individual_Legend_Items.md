@@ -104,6 +104,7 @@ series3.legendItem().enabled(enabled);
 ### Adding Custom Items (?)
 
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
+* {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}
 
 
 ```
