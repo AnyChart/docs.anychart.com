@@ -57,14 +57,19 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    /* configure the font of the legend icon
+    // enable html for the legend
+    chart.legend().useHtml(true);
+
+    /* configure the format of the legend icon
     representing the last series */
-    series4.legendItem().fontSize(26);
-    series4.legendItem().fontWeight(600);
-    series4.legendItem().fontColor("#dd2c00");
+    series4.legendItem().format(function() {
+      return this.series.name() + ": <span style='color:" +
+             this.series.color() + ";font-weight:600'>$" +
+             this.series.getStat("sum");
+    });
     
     // set the chart title
-    chart.title("Individual Legend Items: Text Font");
+    chart.title("Individual Legend Items: Text Format (Formatting Functions)");
 
     // set the container id
     chart.container("container");

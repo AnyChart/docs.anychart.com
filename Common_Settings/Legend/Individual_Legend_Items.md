@@ -21,6 +21,39 @@ series3.legendItem().enabled(enabled);
 
 {sample}CS\_Legend\_Individual\_Items\_01{sample}
 
+## Text Font
+
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* ...
+
+
+```
+
+```
+
+{sample}CS\_Legend\_Individual\_Items\_02{sample}
+
+## Text Format
+
+* {api:anychart.core.utils.LegendItemSettings#format}format(){api}
+
+### Tokens
+
+```
+
+```
+
+{sample}CS\_Legend\_Individual\_Items\_03{sample}
+
+### Formatting Functions
+
+```
+
+```
+
+{sample}CS\_Legend\_Individual\_Items\_04{sample}
+
 ## Icons
 
 * тип, визуальные настройки, размер
@@ -37,7 +70,7 @@ series3.legendItem().enabled(enabled);
 
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_02{sample}
+{sample}CS\_Legend\_Individual\_Items\_05{sample}
 
 ## Markers
 
@@ -54,63 +87,30 @@ series3.legendItem().enabled(enabled);
 
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_03{sample}
+{sample}CS\_Legend\_Individual\_Items\_06{sample}
 
 ## Spacing
 
 * {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api}
 
-## Text Font
-
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* ...
-
+## Themes
 
 ```
-
-```
-
-{sample}CS\_Legend\_Individual\_Items\_04{sample}
-
-## Text Format
-
-* {api:anychart.core.utils.LegendItemSettings#format}format(){api}
-* {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
-
-### Tokens
-
-```
-
-```
-
-{sample}CS\_Legend\_Individual\_Items\_05{sample}
-
-### Formatting Functions
-
-```
-
-```
-
-{sample}CS\_Legend\_Individual\_Items\_06{sample}
-
-### ???
-
-```
-itemsFormatter: Total (?)
+?
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_07{sample}
 
-## Themes
+### Adding Custom Items (?)
+
+* {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
+
 
 ```
 
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_08{sample}
-
-## ???
+{sample}CS\_Legend\_Individual\_Items\_07{sample}
 
 * {api:anychart.core.ui.Legend#items}items(){api}
 

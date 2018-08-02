@@ -47,7 +47,7 @@ anychart.onDocumentReady(function () {
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
     var series3 = chart.line(seriesData_3);
-    var series4 = chart.area(seriesData_4);
+    var series4 = chart.line(seriesData_4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
@@ -57,35 +57,14 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    var legendItem1 = series1.legendItem();
-    var legendItem2 = series2.legendItem();
-    var legendItem3 = series3.legendItem();
-    var legendItem4 = series4.legendItem();
-
-    /* set the type of the legend icon
+    /* configure the font of the legend icon
     representing the last series */
-    legendItem4.iconType("area");
-
-    // set the sizes of legend items
-    legendItem1.iconSize(20);
-    legendItem2.iconSize(20);
-    legendItem3.iconSize(20);
-    legendItem4.iconSize(40);
-
-    // set the fills of legend items
-    legendItem1.iconFill("white");
-    legendItem2.iconFill("white");
-    legendItem3.iconFill("white");
-    legendItem4.iconFill("white");
-
-    // set the strokes of legend items
-    legendItem1.iconStroke(series1.color(), 4);
-    legendItem2.iconStroke(series2.color(), 4);
-    legendItem3.iconStroke(series3.color(), 4);
-    legendItem4.iconStroke(series4.color(), 4);
+    series4.legendItem().fontSize(26);
+    series4.legendItem().fontWeight(600);
+    series4.legendItem().fontColor("#dd2c00");
     
     // set the chart title
-    chart.title("Individual Legend Items: Icons");
+    chart.title("Individual Legend Items: Text Font");
 
     // set the container id
     chart.container("container");

@@ -28,7 +28,6 @@ legend.fontColor("#96a6a6");
 ## Text Format
 
 * {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
-* сослаться на [Individual Legend Items: Text Format](Individual_Legend_Items#text_format) ({api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}) (?)
 
 ### Tokens
 
