@@ -115,7 +115,7 @@ series3.legendItem().enabled(enabled);
 
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_07{sample}
+{sample}CS\_Legend\_Individual\_Items\_08{sample}
 
 * {api:anychart.core.ui.Legend#items}items(){api}
 
