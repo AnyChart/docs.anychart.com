@@ -1,5 +1,5 @@
 {:index 4}
-# Individual Legend Items
+# Legend Items
 
 ## Overview
 
@@ -18,9 +18,9 @@ You can configure the font of legend items by using the following methods:
 
 ```
 // configure the font of legend items
-legend.fontColor("#96a6a6");
 legend.fontSize(16);
 legend.fontWeight(600);
+legend.fontColor("#96a6a6");
 ```
 
 {sample}CS\_Legend\_Items\_01{sample}

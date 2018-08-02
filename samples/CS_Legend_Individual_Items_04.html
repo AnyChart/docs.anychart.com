@@ -57,10 +57,11 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    // configure the font of legend items
-    legend.fontColor("#96a6a6");
-    legend.fontSize(16);
-    legend.fontWeight(600);
+    /* configure the font of the legend icon
+    representing the last series */
+    series4.legendItem().fontSize(26);
+    series4.legendItem().fontWeight(600);
+    series4.legendItem().fontColor("#dd2c00");
     
     // set the chart title
     chart.title("Individual Legend Items: Text Font");
