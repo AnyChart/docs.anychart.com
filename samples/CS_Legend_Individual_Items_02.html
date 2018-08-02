@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Items 11"/>
+    <meta name="ac:name" content="CS Legend Individual Items 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -46,19 +46,12 @@ anychart.onDocumentReady(function () {
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
-    var series3 = chart.spline(seriesData_3);
-    var series4 = chart.spline(seriesData_4);
+    var series3 = chart.line(seriesData_3);
+    var series4 = chart.area(seriesData_4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
     series4.name("2018");
-
-    // ...
-    series1.markers(true);
-    series2.markers(true);
-    series3.markers(true);
-    series4.markers(true);
-    // series4.markers(true);
 
     // enable the legend
     var legend = chart.legend();
@@ -69,32 +62,29 @@ anychart.onDocumentReady(function () {
     var legendItem3 = series3.legendItem();
     var legendItem4 = series4.legendItem();
 
-    // ...
-    legendItem1.iconSize(50);
-    legendItem2.iconSize(50);
-    legendItem3.iconSize(50);
-    legendItem4.iconSize(50);
+    // ...   
+    legendItem4.iconType("area");
 
     // ...
-    legendItem1.iconType("line");
-    legendItem2.iconType("line");
-    legendItem3.iconType("spline");
-    legendItem4.iconType("spline");
+    legendItem1.iconSize(20);
+    legendItem2.iconSize(20);
+    legendItem3.iconSize(20);
+    legendItem4.iconSize(20);
 
     // ...
-    legendItem1.iconMarkerFill("white");
-    legendItem2.iconMarkerFill("white");
-    legendItem3.iconMarkerFill("white");
-    legendItem4.iconMarkerFill("white");
+    legendItem1.iconFill("white");
+    legendItem2.iconFill("white");
+    legendItem3.iconFill("white");
+    legendItem4.iconFill("white");
 
     // ...
-    legendItem1.iconMarkerStroke(series1.color(), 2);
-    legendItem2.iconMarkerStroke(series2.color(), 2);
-    legendItem3.iconMarkerStroke(series3.color(), 2);
-    legendItem4.iconMarkerStroke(series4.color(), 2);
-
+    legendItem1.iconStroke(series1.color(), 4);
+    legendItem2.iconStroke(series2.color(), 4);
+    legendItem3.iconStroke(series3.color(), 4);
+    legendItem4.iconStroke(series4.color(), 4);
+    
     // set the chart title
-    chart.title("Individual Items: Markers");
+    chart.title("Individual Legend Items: Icons");
 
     // set the container id
     chart.container("container");
