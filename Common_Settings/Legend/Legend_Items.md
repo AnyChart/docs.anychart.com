@@ -159,42 +159,87 @@ chart.legend().inverted(true);
 
 * **legendItem()**
 * {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
-* {api:}.{api}
-* {api:}.{api}
-* {api:}.{api}
-* {api:}...{api}
+* {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
+* упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}?
+
+### Disabling
+
+* {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api}
 
 
 ```
 // disable the last item
 series3.legendItem().enabled(enabled);
 ```
+
 {sample}CS\_Legend\_Items\_09{sample}
 
-```
-размер, виз настройки
-```
-{sample}CS\_Legend\_Items\_10{sample}
+### Icon / Marker Type
+
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+
 
 ```
 тип иконки, тип маркера
 ```
-{sample}CS\_Legend\_Items\_11{sample}
+
+{sample}CS\_Legend\_Items\_10{sample}
+
+### Icon Appearance + Size
+
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* ...
+
 
 ```
-текст (?), темы
+размер, виз настройки
+```
+
+{sample}CS\_Legend\_Items\_11{sample}
+
+### Text Font
+
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* {api:anychart.core.utils.LegendItemSettings#}(){api}
+* ...
+
+
+```
+
 ```
 
 {sample}CS\_Legend\_Items\_12{sample}
 
+### Text Format
+
+* {api:anychart.core.utils.LegendItemSettings#format}format(){api}
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
 
 ```
-Total (?)
+format(): ?
 ```
 
 {sample}CS\_Legend\_Items\_13{sample}
+
+```
+itemsFormatter: Total (?)
+```
+
+{sample}CS\_Legend\_Items\_14{sample}
+
+### Themes
+
+```
+
+```
+
+{sample}CS\_Legend\_Items\_15{sample}
+
+### ???
 
 * {api:anychart.core.ui.Legend#items}items(){api}
 
@@ -203,4 +248,4 @@ Total (?)
 добавление итемов списком
 ```
 
-{sample}CS\_Legend\_Items\_14{sample}
+{sample}CS\_Legend\_Items\_16{sample}
