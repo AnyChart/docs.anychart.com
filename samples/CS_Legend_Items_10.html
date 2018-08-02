@@ -46,8 +46,8 @@ anychart.onDocumentReady(function () {
     // create series, set the data and names
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
-    var series3 = chart.line(seriesData_3);
-    var series4 = chart.line(seriesData_4);
+    var series3 = chart.spline(seriesData_3);
+    var series4 = chart.area(seriesData_4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
@@ -58,15 +58,18 @@ anychart.onDocumentReady(function () {
     legend.enabled(true);
 
     // ...
-    series1.legendItem().iconSize(20);
-    series2.legendItem().iconSize(20);
-    series3.legendItem().iconSize(20);
-    series4.legendItem().iconSize(20);
+    series1.legendItem().iconType("line");
+    series2.legendItem().iconType("line");
+    series3.legendItem().iconType("spline");
+    series4.legendItem().iconType("area");
 
     // ...
-    series1.legendItem().iconFill("white");
-    series2.legendItem().iconFill("white");
-    series3.legendItem().iconFill("white");
+    series1.legendItem().iconSize(30);
+    series2.legendItem().iconSize(30);
+    series3.legendItem().iconSize(30);
+    series4.legendItem().iconSize(30);
+
+    // ...
     series4.legendItem().iconFill("white");
 
     // ...

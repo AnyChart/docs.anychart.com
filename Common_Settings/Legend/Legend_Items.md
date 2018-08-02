@@ -180,6 +180,7 @@ series3.legendItem().enabled(enabled);
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * {api:anychart.core.utils.LegendItemSettings#}(){api}
 * ...
+* {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}
 
 
 ```

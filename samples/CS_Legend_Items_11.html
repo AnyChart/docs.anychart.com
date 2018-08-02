@@ -47,7 +47,7 @@ anychart.onDocumentReady(function () {
     var series1 = chart.line(seriesData_1);
     var series2 = chart.line(seriesData_2);
     var series3 = chart.line(seriesData_3);
-    var series4 = chart.line(seriesData_4);
+    var series4 = chart.area(seriesData_4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
@@ -57,24 +57,6 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    // ...
-    series1.legendItem().iconSize(20);
-    series2.legendItem().iconSize(20);
-    series3.legendItem().iconSize(20);
-    series4.legendItem().iconSize(20);
-
-    // ...
-    series1.legendItem().iconFill("white");
-    series2.legendItem().iconFill("white");
-    series3.legendItem().iconFill("white");
-    series4.legendItem().iconFill("white");
-
-    // ...
-    series1.legendItem().iconStroke(series1.color(), 4);
-    series2.legendItem().iconStroke(series2.color(), 4);
-    series3.legendItem().iconStroke(series3.color(), 4);
-    series4.legendItem().iconStroke(series4.color(), 4);
-    
     // set the chart title
     chart.title("Individual Items: Markers");
 
