@@ -165,7 +165,6 @@ chart.legend().inverted(true);
 ### Disabling
 
 * {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api}
 
 
 ```
@@ -177,9 +176,13 @@ series3.legendItem().enabled(enabled);
 
 ### Icons
 
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* ...
+* тип, визуальные настройки, размер
+* {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconFill}iconFill(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api}
 * {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}
 
 
@@ -191,12 +194,13 @@ series3.legendItem().enabled(enabled);
 
 ### Markers
 
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* {api:anychart.core.utils.LegendItemSettings#}(){api}
-* ...
-* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+* включение, тип, визуальные настройки
 * включить маркеры на серии + тип иконки сделать `"line"` или `"spline"`
 * маркер автоматически берется у серии, но можно настроить вручную
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerFill}iconMarkerFill(){api}
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerStroke}iconMarkerStroke(){api}
+* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
 
 
 ```
