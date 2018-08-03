@@ -11,7 +11,7 @@ The legend title is disabled by default. To enable and configure it, combine the
 // enable and configure the legend title
 var title = chart.legend().title();
 title.enabled(true);
-title.text("Total Sales");
+title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
 title.fontSize(12);
 title.fontWeight(600);
 title.fontColor("#96a6a6");
@@ -22,9 +22,9 @@ You can also enable and adjust the title separator: use the {api:anychart.core.u
 ```
 // enable and configure the title separator
 chart.legend().titleSeparator(true);
-chart.legend().titleSeparator().height(3);
-chart.legend().titleSeparator().stroke("#96a6a6");
-chart.legend().titleSeparator().fill("#96a6a6 0.5");
+chart.legend().titleSeparator().height(5);
+chart.legend().titleSeparator().stroke("#455a64");
+chart.legend().titleSeparator().fill("#96a6a6 0.3");
 ```
 
 See the [Title](../Title) article to learn more.
