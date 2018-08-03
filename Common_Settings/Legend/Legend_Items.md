@@ -20,7 +20,7 @@ You can configure the font of legend items by using the following methods:
 // configure the font of legend items
 legend.fontSize(16);
 legend.fontWeight(600);
-legend.fontColor("#96a6a6");
+legend.fontColor("#455a64");
 ```
 
 {sample}CS\_Legend\_Items\_01{sample}
@@ -44,7 +44,7 @@ chart.legend().useHtml(true);
 
 // configure the format of legend items
 chart.legend().itemsFormat(
-  "<span style='color:#dd2c00;font-weight:600'>{%seriesName}:</span> ${%seriesYSum}"
+  "<span style='color:#455a64;font-weight:600'>{%seriesName}:</span> ${%seriesYSum}"
 );
 ```
 
@@ -62,7 +62,7 @@ chart.legend().useHtml(true);
 
 // configure the format of legend items
 chart.legend().itemsFormat(
-  "<span style='color:#dd2c00;font-weight:600'>{%x}:</span> ${%value}"
+  "<span style='color:#455a64;font-weight:600'>{%x}:</span> ${%value}"
 );
 ```
 
@@ -103,7 +103,7 @@ chart.legend().itemsFormat(function() {
   var point = chart.getPoint(this.index);
   var percent = point.getStat("percentValue").toFixed(1);
   if (percent >= 50) {
-    return "<span style='color:#dd2c00;font-weight:600'>" +
+    return "<span style='color:#455a64;font-weight:600'>" +
            this.x + ": " + percent + "%</span>";
   } else {
     return this.x + "</span>: " + percent + "%";
