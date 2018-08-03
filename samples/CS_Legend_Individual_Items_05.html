@@ -65,16 +65,21 @@ anychart.onDocumentReady(function () {
     legendItem4.iconType("area");
 
     // set the sizes of legend items
-    legendItem1.iconSize(20);
-    legendItem2.iconSize(20);
-    legendItem3.iconSize(20);
-    legendItem4.iconSize(40);
+    legendItem1.iconSize(30);
+    legendItem2.iconSize(30);
+    legendItem3.iconSize(30);
+    legendItem4.iconSize(50);
 
     // set the fills of legend items
     legendItem1.iconFill("white");
     legendItem2.iconFill("white");
     legendItem3.iconFill("white");
-    legendItem4.iconFill("white");
+    legendItem4.iconFill(series4.color());
+
+    // set the hatch fills of legend items
+    legendItem1.iconHatchFill("backward-diagonal", series1.color());
+    legendItem2.iconHatchFill("forward-diagonal", series2.color());
+    legendItem3.iconHatchFill("diagonal-cross", series3.color());
 
     // set the strokes of legend items
     legendItem1.iconStroke(series1.color(), 4);
