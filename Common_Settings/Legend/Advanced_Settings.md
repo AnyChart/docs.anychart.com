@@ -14,7 +14,7 @@ title.enabled(true);
 title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
 title.fontSize(12);
 title.fontWeight(600);
-title.fontColor("#455a64");
+title.fontColor("#96a6a6");
 ```
 
 You can also enable and adjust the title separator: use the {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} method, combined with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
@@ -22,9 +22,9 @@ You can also enable and adjust the title separator: use the {api:anychart.core.u
 ```
 // enable and configure the title separator
 chart.legend().titleSeparator(true);
-chart.legend().titleSeparator().height(5);
-chart.legend().titleSeparator().stroke("#455a64");
-chart.legend().titleSeparator().fill("#96a6a6 0.3");
+chart.legend().titleSeparator().height(4);
+chart.legend().titleSeparator().stroke("#96a6a6", 2);
+chart.legend().titleSeparator().fill(null);
 ```
 
 See the [Title](../Title) article to learn more.
