@@ -35,7 +35,7 @@ If you wish to render a chart editor as a modal window, use the {api:anychart.ed
 var editor = anychart.editor();
  
 // set a class name for the dialog element.
-editor.dialogRender("custom-editor-dialog)";
+editor.dialogRender("custom-editor-dialog");
 // display the modal chart editor
 editor.dialogVisible(true);
 ```
