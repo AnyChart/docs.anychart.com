@@ -154,7 +154,7 @@ To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} 
 * `"asc"`
 * `"none"`
 
-**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order of their listing in data.
+**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order in which they occur in data.
 
 The sample below shows how to set the sorting mode:
 

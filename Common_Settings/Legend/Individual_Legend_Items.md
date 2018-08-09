@@ -6,8 +6,9 @@
 * **legendItem()**
 * {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
 * {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
-* упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}?
-* написать что-то про оверрайд настроек из статьи [Legend Items](Legend_Items)?
+* [Legend Items](Legend_Items)
+* (?) написать что-то про оверрайд настроек из статьи [Legend Items](Legend_Items)
+* (?) упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
 
 ## Disabling
 

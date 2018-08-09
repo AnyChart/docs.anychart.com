@@ -4,6 +4,7 @@
 ## Overview
 
 * (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+* (?) классы
 
 ## Title + Separator
 

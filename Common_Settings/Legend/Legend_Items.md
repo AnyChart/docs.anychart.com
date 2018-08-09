@@ -3,8 +3,9 @@
 
 ## Overview
 
+* [Individual Legend Items](Individual_Legend_Items)
 * (?) {api:anychart.charts.Cartesian#legend}legend(){api}
-* (?) [Individual Legend Items](Individual_Legend_Items)
+* (?) классы
 
 ## Text Font
 

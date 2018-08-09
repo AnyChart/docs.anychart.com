@@ -4,8 +4,6 @@
 ## Overview
 
 * (?) The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
-* [Stock Charts (Legend)](../../Stock_Charts/Legend)
-* (?) color range (color legend) (но куда ссылаться?)
 
 ## Default Legend
 
