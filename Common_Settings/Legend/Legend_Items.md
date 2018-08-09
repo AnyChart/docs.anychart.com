@@ -3,7 +3,7 @@
 
 ## Overview
 
-...
+* (?) [Individual Legend Items](Individual_Legend_Items)
 
 ## Text Font
 
@@ -111,7 +111,9 @@ chart.legend().itemsFormat(function() {
 
 ## Icons
 
-* большая часть настроек задается только индивидуально, см. [Icons](Individual_Legend_Items#icons), [Markers](Individual_Legend_Items#markers) (?)
+Most settings of the legend icons, for example their colors and types, can be configured only individually for each icon – see the [Icons](Individual_Legend_Items#icons) and [Markers](Individual_Legend_Items#markers) sections of the [Individual Legend Items](Individual_Legend_Items) article.
+
+The only setting that can affect all icons at once is the size.
 
 ### Size
 
