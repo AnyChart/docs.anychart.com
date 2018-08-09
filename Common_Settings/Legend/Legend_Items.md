@@ -71,7 +71,7 @@ chart.legend().itemsFormat(
 
 Legend items of multiple-series charts represent series, so you can use formatting functions with the `series` field, allowing you to access the methods of the series.
 
-In this sample, a formatting function is used to get the colors, names, and total values of Line series by accessing the {api:anychart.core.cartesian.series.Line#color}color(){api}, {api:anychart.core.cartesian.series.Line#name}name(){api}, and {anychart.charts.Cartesian#getStat}getStat(){api} methods:
+In this sample, a formatting function is used to get the colors, names, and total values of Line series by accessing the {api:anychart.core.cartesian.series.Line#color}color(){api}, {api:anychart.core.cartesian.series.Line#name}name(){api}, and {api:anychart.charts.Cartesian#getStat}getStat(){api} methods:
 
 ```
 // enable html for the legend
