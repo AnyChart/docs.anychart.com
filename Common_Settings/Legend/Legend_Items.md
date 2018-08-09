@@ -29,13 +29,15 @@ legend.fontColor("#455a64");
 
 ## Text Format
 
-To set the text format of legend items, use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat() method with either [tokens](../Text_Formatters#string_tokens) or [formatting functions](../Text_Formatters#formatting_functions). Which settings are available depends on the series type and whether the chart type is single-series or multiple-series.
+To set the text format of legend items, use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Text_Formatters#string_tokens) or [formatting functions](../Text_Formatters#formatting_functions). Which settings are available depends on the series type and whether the chart type is single-series or multiple-series.
 
 You can also call the {api:anychart.core.ui.Legend#useHtml}useHtml(){api} method to enable HTML for the legend text.
 
 ### Tokens
 
-For chart types that allow adding multiple series, the `"{%seriesName}"` token is always available. You can also use tokens that are specific for the series type. For example, here the `"{%seriesYSum}"` token is used with line series:
+If the chart type allows adding multiple series, each legend item represents a series. In this case, you can use the `"{%seriesName}"` token, which is always available, and other series-related (not point-related) tokens supported by the given series type.
+
+For example, here the `"{%seriesName}"` and `"{%seriesYSum}"` tokens are used to configure the legend text of a multiple-series Line chart:
 
 ```
 // enable html for the legend
@@ -49,11 +51,9 @@ chart.legend().itemsFormat(
 
 {sample}CS\_Legend\_Items\_02{sample}
 
-ОДНОСЕРИЙНЫЕ ЧАРТЫ
+Each legend item of a single-series chart type is linked to a chart point, so you can use tokens representing the values of the points. The exact set of the tokens available depends on the chart type.
 
-* в односерийной легенде каждый элемент = точка -> доступно ее значение
-* в этом примере: `"{%x}"`, `"{%value}"`, также доступно `"{%percentValue}"`
-
+In the following sample, the `"{%x}"`, `"{%value}"`, and `"{%percentValue}"` tokens are used to configure the legend text of a Pie chart:
 
 ```
 // enable html for the legend
