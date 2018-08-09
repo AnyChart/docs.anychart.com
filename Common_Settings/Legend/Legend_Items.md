@@ -69,11 +69,9 @@ chart.legend().itemsFormat(
 
 ### Formatting Functions
 
-МНОГОСЕРИЙНЫЕ ЧАРТЫ
+Legend items of multiple-series charts represent series, so you can use formatting functions with the `series` field, allowing you to access the series. Combine it with the methods of the given series type.
 
-* в односерийной легенде каждый элемент = точка -> доступно ее значение
-* `series` + методы серии
-
+In this sample, a formatting function is used to get the color, name, and total value of each series:
 
 ```
 // enable html for the legend
@@ -90,6 +88,7 @@ chart.legend().itemsFormat(function() {
 
 ОДНОСЕРИЙНЫЕ ЧАРТЫ
 
+* в односерийной легенде каждый элемент = точка -> доступно ее значение
 * в этом примере: `x`, `value`, `index` + обращение к точке по индексу
 
 
