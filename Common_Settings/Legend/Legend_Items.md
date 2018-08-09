@@ -143,7 +143,7 @@ chart.legend().iconTextSpacing(15);
 
 ## Order
 
-You can invert the default order of legend items, which depends on the chart type, with the help of the {api:anychart.core.ui.Legend#inverted}inverted(){api} method:
+The default order of legend items depends on the chart type. You can invert it with the help of the {api:anychart.core.ui.Legend#inverted}inverted(){api} method:
 
 ```
 // set the order of legend items
