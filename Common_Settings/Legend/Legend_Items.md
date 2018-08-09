@@ -3,6 +3,7 @@
 
 ## Overview
 
+* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
 * (?) [Individual Legend Items](Individual_Legend_Items)
 
 ## Text Font
@@ -20,9 +21,9 @@ You can configure the font of legend items by using the following methods:
 
 ```
 // configure the font of legend items
-legend.fontSize(16);
-legend.fontWeight(600);
-legend.fontColor("#455a64");
+chart.legend().fontSize(16);
+chart.legend().fontWeight(600);
+chart.legend().fontColor("#455a64");
 ```
 
 {sample}CS\_Legend\_Items\_01{sample}
@@ -117,13 +118,11 @@ The only setting that can affect all icons at once is the size.
 
 ### Size
 
-* {api:anychart.core.ui.Legend#iconSize}iconSize(){api}
-* пиксели / проценты ?
-
+To set the size of legend items, call the {api:anychart.core.ui.Legend#iconSize}iconSize(){api} method:
 
 ```
 // set the size of legend icons
-chart.legend().iconSize (20);
+chart.legend().iconSize(20);
 ```
 
 {sample}CS\_Legend\_Items\_06{sample}

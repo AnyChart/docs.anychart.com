@@ -3,7 +3,7 @@
 
 ## Overview
 
-...
+* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 ## Title + Separator
 
