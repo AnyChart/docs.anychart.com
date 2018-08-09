@@ -3,6 +3,8 @@
 
 ## Overview
 
+...
+
 ## Text Font
 
 You can configure the font of legend items by using the following methods:
@@ -27,16 +29,13 @@ legend.fontColor("#455a64");
 
 ## Text Format
 
-* {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
+To set the text format of legend items, use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat() method with either [tokens](../Text_Formatters#string_tokens) or [formatting functions](../Text_Formatters#formatting_functions). Which settings are available depends on the series type and whether the chart type is single-series or multiple-series.
+
+You can also call the {api:anychart.core.ui.Legend#useHtml}useHtml(){api} method to enable HTML for the legend text.
 
 ### Tokens
 
-МНОГОСЕРИЙНЫЕ ЧАРТЫ
-
-* всегда доступно: `"{%seriesName}"`
-* + токены, связанные с данным типом серии
-* в этом примере: `"{%seriesYSum}"`
-
+For chart types that allow adding multiple series, the `"{%seriesName}"` token is always available. You can also use tokens that are specific for the series type. For example, here the `"{%seriesYSum}"` token is used with line series:
 
 ```
 // enable html for the legend
