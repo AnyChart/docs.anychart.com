@@ -143,7 +143,7 @@ chart.legend().iconTextSpacing(15);
 
 ## Order
 
-By default, the order of legend items represents the order in which series or points occur in data. You can invert the order with the help of the {api:anychart.core.ui.Legend#inverted}inverted(){api} method:
+You can invert the default order of legend items, which depends on the chart type, with the help of the {api:anychart.core.ui.Legend#inverted}inverted(){api} method:
 
 ```
 // set the order of legend items
