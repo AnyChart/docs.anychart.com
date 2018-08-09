@@ -129,7 +129,7 @@ chart.legend().iconSize(20);
 
 ## Spacing
 
-Use The {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} and {api:anychart.core.ui.Legend#iconTextSpacing}iconTextSpacing(){api} methods allow setting the spacing between legend items and between the icon and text of each item:
+The {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} and {api:anychart.core.ui.Legend#iconTextSpacing}iconTextSpacing(){api} methods allow setting the spacing between legend items and between the icon and text of each item:
 
 ```
 // set the spacing between legend items
