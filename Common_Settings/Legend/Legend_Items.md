@@ -69,9 +69,9 @@ chart.legend().itemsFormat(
 
 ### Formatting Functions
 
-Legend items of multiple-series charts represent series, so you can use formatting functions with the `series` field, allowing you to access the series. Combine it with the methods of the given series type.
+Legend items of multiple-series charts represent series, so you can use formatting functions with the `series` field, allowing you to access the series. Combine it with the methods of the series.
 
-In this sample, a formatting function is used to get the color, name, and total value of each series:
+In this sample, a formatting function is used to get the colors, names, and total values of Line series:
 
 ```
 // enable html for the legend
@@ -86,11 +86,9 @@ chart.legend().itemsFormat(function() {
 
 {sample}CS\_Legend\_Items\_04{sample}
 
-ОДНОСЕРИЙНЫЕ ЧАРТЫ
+Legend items of single-series charts represent points, so you can use formatting functions with the point-related fields supported by the given chart type.
 
-* в односерийной легенде каждый элемент = точка -> доступно ее значение
-* в этом примере: `x`, `value`, `index` + обращение к точке по индексу
-
+In the sample below, the `x` and `value`, and `index` fields are used to configure the legend of a Pie chart. The `index` field, which represents the index of the point, is combined with the {api:anychart.charts.Pie#getPoint}getPoint(){api} method of the chart to access the {api:anychart.core.PiePoint#getStat}getStat(){api} method of the point:
 
 ```
 // enable html for the legend
