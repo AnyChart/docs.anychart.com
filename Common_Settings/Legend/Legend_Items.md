@@ -129,10 +129,7 @@ chart.legend().iconSize(20);
 
 ## Spacing
 
-* {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api}
-* {api:anychart.core.ui.Legend#iconTextSpacing}iconTextSpacing(){api}
-* пиксели / ?
-
+You can set the spacing between legend items as well as between the icon and text of each item. Use the {api:anychart.core.ui.Legend#itemsSpacing}itemsSpacing(){api} and {api:anychart.core.ui.Legend#iconTextSpacing}iconTextSpacing(){api} methods:
 
 ```
 // set the spacing between legend items
@@ -146,8 +143,7 @@ chart.legend().iconTextSpacing(15);
 
 ## Order
 
-* {api:anychart.core.ui.Legend#inverted}inverted(){api}
-
+By default, the order of legend items represents the order in which series or points occur in data. You can invert the order with the help of the {api:anychart.core.ui.Legend#inverted}inverted(){api} method:
 
 ```
 // set the order of legend items
