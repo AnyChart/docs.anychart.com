@@ -7,7 +7,7 @@ A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is ho
 
 ## Enabling / Disabling
 
-By default, the legend tooltip is disabled. To enable it, combine the {api:anychart.charts.Cartesian#legend}legend(){api} method with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} set to `true`. Alternatively, pass `true` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of the tooltip.
+By default, the legend tooltip is disabled. To enable it, combine the {api:anychart.charts.Cartesian#legend}legend(){api} method with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#enabled}enabled(){api} set to `true`. Alternatively, pass `true` directly to the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method.
 
 Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
 
