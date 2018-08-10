@@ -1,9 +1,7 @@
 {:index 4}
 # Title and Separator
 
-(?) {api:anychart.charts.Cartesian#legend}legend(){api}
-
-The legend [Title](../Title) is disabled by default. To enable and configure it, combine combine the {api:anychart.charts.Cartesian#legend}legend(){api} and {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
+The legend [Title](../Title) is disabled by default. To enable and configure it, combine the {api:anychart.charts.Cartesian#legend}legend(){api} and {api:anychart.core.ui.Legend#title}title(){api} methods with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
 
 ```
 // enable and configure the legend title
