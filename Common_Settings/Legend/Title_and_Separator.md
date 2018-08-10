@@ -1,0 +1,32 @@
+{:index 4}
+# Title and Separator
+
+* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+
+The legend title is disabled by default. To enable and configure it, combine the {api:anychart.core.ui.Legend#title}title(){api} method with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
+
+```
+// enable and configure the legend title
+var title = chart.legend().title();
+title.enabled(true);
+title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
+title.fontSize(12);
+title.fontWeight(600);
+title.fontColor("#96a6a6");
+```
+
+You can also enable and adjust the title separator: use the {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} method, combined with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
+
+```
+// enable and configure the title separator
+chart.legend().titleSeparator(true);
+chart.legend().titleSeparator().height(4);
+chart.legend().titleSeparator().stroke("#96a6a6", 2);
+chart.legend().titleSeparator().fill(null);
+```
+
+See the [Title](../Title) article to learn more.
+
+Here is a legend with the title and title separator enabled and configured:
+
+{sample}CS\_Legend\_Title{sample}

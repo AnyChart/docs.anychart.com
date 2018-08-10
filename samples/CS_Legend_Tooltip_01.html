@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Advanced 05"/>
+    <meta name="ac:name" content="CS Legend Tooltip 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -56,11 +56,19 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // customize the hover cursor of the legend
-    chart.legend().hoverCursor("help");
+    // enable and configure the legend tooltip
+
+    var legendTooltip = chart.legend().tooltip();
+
+    legendTooltip.enabled(true);
+    legendTooltip.title(true);
+    legendTooltip.separator(true);
+    
+    legendTooltip.titleFormat("Sales Info");
+    legendTooltip.format("Year: {%value}");
 
     // set the chart title
-    chart.title("Legend: Hover Cursor");
+    chart.title("Legend: Tooltip (Tokens)");
 
     // set the container id
     chart.container("container");

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Advanced 01"/>
+    <meta name="ac:name" content="CS Legend Title 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -53,34 +53,28 @@ anychart.onDocumentReady(function () {
     series3.name("2017");
     series4.name("2018");
 
-    // add meta-information about the series
-    series1.meta({sales: series1.getStat("sum"), top: "John Doe"});
-    series2.meta({sales: series2.getStat("sum"), top: "Richard Roe"});
-    series3.meta({sales: series3.getStat("sum"), top: "Marta Moe"});
-    series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
-
     // enable the legend
     chart.legend(true);
 
-    // enable and configure the legend tooltip
+    // set the alignment of the legend
+    chart.legend().align("right");
 
-    var legendTooltip = chart.legend().tooltip();
-
-    legendTooltip.enabled(true);
-    legendTooltip.title(true);
-    legendTooltip.separator(true);
-
-    legendTooltip.titleFormat(function() {
-      return this.value;
-    });
+    // enable and configure the legend title
+    var title = chart.legend().title();
+    title.enabled(true);
+    title.text("Total Sales: $" + chart.getStat("dataPlotYSum"));
+    title.fontSize(16);
+    title.fontWeight(600);
+    title.fontColor("#96a6a6");
+        
+    // enable and configure the title separator
+    chart.legend().titleSeparator(true);
+    chart.legend().titleSeparator().height(4);
+    chart.legend().titleSeparator().stroke("#96a6a6", 2);
+    chart.legend().titleSeparator().fill(null);
     
-    legendTooltip.format(function() {
-      return "Total Sales: $" + this.meta.sales +
-             "\nTop Seller: " + this.meta.top;
-    });
-
     // set the chart title
-    chart.title("Legend: Tooltip (Formatting Functions)");
+    chart.title("Legend: Title");
 
     // set the container id
     chart.container("container");
