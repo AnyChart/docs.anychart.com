@@ -26,7 +26,7 @@ chart.legend().tooltip().separator(true);
 
 ## Tokens
 
-To change the text of the tooltip or tooltip title, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series.
+To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series:
 
 ```
 // enable and configure the legend tooltip
@@ -45,7 +45,7 @@ legendTooltip.format("Year: {%value}");
 
 ## Formatting Functions
 
-Instead of tokens, you can also use [formatting functions](../Text_Formatters#formatting_functions) with the `value` and `meta` fields.
+You can set the text of the tooltip and tooltip title by combining the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods with [formatting functions](../Text_Formatters#formatting_functions). The available fields include `value` and `meta`.
 
 The `value` field stands for the names of the series, and `meta` allows accessing custom information about the series. To add such information, pass an object with metadata to the **meta()** method of each series:
 
