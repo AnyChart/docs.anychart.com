@@ -9,7 +9,7 @@
 * [Legend Items](Legend_Items)
 * упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
 
-## Disabling
+## Enabling / Disabling
 
 * {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api}
 
