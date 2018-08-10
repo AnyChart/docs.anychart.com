@@ -124,7 +124,7 @@ series4.legendItem().format(function() {
 
 {sample}CS\_Legend\_Individual\_Items\_05{sample}
 
-## Markers
+## Icon Markers
 
 * включение, тип, визуальные настройки
 * включить маркеры на серии + тип иконки сделать `"line"` или `"spline"`
@@ -174,7 +174,7 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 {sample}CS\_Legend\_Individual\_Items\_07{sample}
 
-## Adding Custom Items (?)
+## Custom Items
 
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 * {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}
