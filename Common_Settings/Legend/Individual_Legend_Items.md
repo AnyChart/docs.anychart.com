@@ -54,8 +54,7 @@ series4.legendItem().useHtml(true);
 
 // configure the format of the last legend item
 series4.legendItem().format(
- "{%seriesName}: <span style='color:" + series4.color() +
- ";font-weight:600'>${%seriesYSum}</span>"
+ "{%seriesName}: <span style='color:" + series4.color() + ";font-weight:600'>${%seriesYSum}</span>"
 );
 ```
 
