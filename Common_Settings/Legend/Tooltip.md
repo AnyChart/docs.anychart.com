@@ -14,15 +14,14 @@ By default, the legend tooltip is disabled. To enable it, pass `true` either dir
 Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
 
 ```
-// enable the legend tooltip
-var legendTooltip = chart.legend().tooltip();
-legendTooltip.enabled(true);
+// enable the legend tooltp
+chart.legend().tooltip(true);
 
 // enable the tooltip title
-legendTooltip.title(true);
+chart.legend().title(true);
 
 // enable the tooltip separator
-legendTooltip.separator(true);
+chart.legend().separator(true);
 ```
 
 ## Tokens
@@ -33,7 +32,10 @@ To change the text of the tooltip or tooltip title, combine the {api:anychart.co
 // enable and configure the legend tooltip
 
 var legendTooltip = chart.legend().tooltip();
+
 legendTooltip.enabled(true);
+legendTooltip.title(true);
+legendTooltip.separator(true);
 
 legendTooltip.titleFormat("Sales Info");
 legendTooltip.format("Year: {%value}");
@@ -57,7 +59,10 @@ series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
 // enable and configure the legend tooltip
 
 var legendTooltip = chart.legend().tooltip();
+
 legendTooltip.enabled(true);
+legendTooltip.title(true);
+legendTooltip.separator(true);
 
 legendTooltip.titleFormat(function() {
   return this.value;
