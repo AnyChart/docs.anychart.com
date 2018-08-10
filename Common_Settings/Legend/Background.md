@@ -1,7 +1,7 @@
 {:index 3}
 # Background
 
-* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+(?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 To enable and configure the background of the legend, use the  {api:anychart.core.ui.Legend#background}background(){api} method, combined with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners: 
 

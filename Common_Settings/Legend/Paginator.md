@@ -1,7 +1,7 @@
 {:index 6}
 # Paginator
 
-* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+(?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 In some cases – depending on the [Layout](Basic_Settings#layout) and [Size](Basic_Settings#size) settings of the legend – only a part of the items is shown simultaneously, and the legend paginator is automatically enabled, allowing you to flip through them.
 

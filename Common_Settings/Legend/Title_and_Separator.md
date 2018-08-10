@@ -1,7 +1,7 @@
 {:index 4}
 # Title and Separator
 
-* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+(?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 The legend title is disabled by default. To enable and configure it, combine the {api:anychart.core.ui.Legend#title}title(){api} method with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
 

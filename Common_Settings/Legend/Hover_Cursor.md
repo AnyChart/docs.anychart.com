@@ -1,7 +1,7 @@
 {:index 7}
 # Hover Cursor
 
-* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+(?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 To adjust the hover cursor of the legend, use the {api:anychart.core.ui.Legend#hoverCursor}hoverCursor(){api} method with one of the parameters listed in {api:anychart.enums.Cursor}anychart.enums.Cursor{api}.
 
