@@ -90,7 +90,36 @@ series4.legendItem().format(function() {
 
 
 ```
+ var legendItem1 = series1.legendItem();
+ var legendItem2 = series2.legendItem();
+ var legendItem3 = series3.legendItem();
+ var legendItem4 = series4.legendItem();
 
+ // set the type of the last legend icon
+ legendItem4.iconType("area");
+
+ // set the sizes of legend items
+ legendItem1.iconSize(30);
+ legendItem2.iconSize(30);
+ legendItem3.iconSize(30);
+ legendItem4.iconSize(60);
+
+ // set the fills of legend items
+ legendItem1.iconFill("white");
+ legendItem2.iconFill("white");
+ legendItem3.iconFill("white");
+ legendItem4.iconFill(series4.color());
+
+ // set the hatch fills of legend items
+ legendItem1.iconHatchFill("backward-diagonal", series1.color());
+ legendItem2.iconHatchFill("forward-diagonal", series2.color());
+ legendItem3.iconHatchFill("diagonal-cross", series3.color());
+
+ // set the strokes of legend items
+ legendItem1.iconStroke(series1.color(), 4);
+ legendItem2.iconStroke(series2.color(), 4);
+ legendItem3.iconStroke(series3.color(), 4);
+ legendItem4.iconStroke(series4.color(), 4); 
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_05{sample}
@@ -107,7 +136,28 @@ series4.legendItem().format(function() {
 
 
 ```
+// enable markers
+series1.markers(true);
+series2.markers(true);
+series3.markers(true);
+series4.markers(true);
 
+var legendItem1 = series1.legendItem();
+var legendItem2 = series2.legendItem();
+var legendItem3 = series3.legendItem();
+var legendItem4 = series4.legendItem();
+
+// set the fills of icon markers
+legendItem1.iconMarkerFill("white");
+legendItem2.iconMarkerFill("white");
+legendItem3.iconMarkerFill("white");
+legendItem4.iconMarkerFill("white");
+
+// set the strokes of icon markers
+legendItem1.iconMarkerStroke(series1.color(), 2);
+legendItem2.iconMarkerStroke(series2.color(), 2);
+legendItem3.iconMarkerStroke(series3.color(), 2);
+legendItem4.iconMarkerStroke(series4.color(), 2);
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_06{sample}
@@ -131,7 +181,17 @@ series4.legendItem().format(function() {
 
 
 ```
-
+// add a custom legend item 
+chart.legend().itemsFormatter(function(items) {
+  items.push({
+    text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
+    iconEnabled: false,
+    fontWeight: 600,
+    fontColor: "#455a64",
+    fontStyle: "italic"
+  });
+  return items;
+});
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_08{sample}
@@ -140,7 +200,57 @@ series4.legendItem().format(function() {
 
 
 ```
-добавление итемов списком
+// add custom legend items
+chart.legend().items([
+  {
+    text: "1",  
+    iconSize: 25,
+    iconFill: null,
+    iconHatchFill: "backward-diagonal",
+    iconStroke: "2 #96a6a6",
+    fontSize: 16,
+    fontWeight: 600,
+    fontColor: "#96a6a6"
+  },
+  {
+    text: "2",  
+    iconSize: 25,
+    iconFill: null,
+    iconHatchFill: "forward-diagonal",
+    iconStroke: "2 #96a6a6",
+    fontSize: 16,
+    fontWeight: 600,
+    fontColor: "#96a6a6"
+  },
+  {
+    text: "3",  
+    iconSize: 25,
+    iconFill: null,
+    iconHatchFill: "diagonal-cross",
+    iconStroke: "2 #96a6a6",
+    fontSize: 16,
+    fontWeight: 600,
+    fontColor: "#96a6a6"
+  },
+  {
+    text: "4",
+    iconType: "area",   
+    iconSize: 25, 
+    iconFill: series4.color(),
+    iconStroke: "2 " + series4.color(),
+    fontSize: 16,
+    fontWeight: 600,
+    fontColor: series4.color()
+  },
+  {
+    text: "/ Total: $" + chart.getStat("dataPlotYSum") + " /",
+    iconEnabled: false,
+    fontSize: 20,
+    fontWeight: 600,
+    fontColor: "#455a64",
+    fontStyle: "italic"
+  }
+]);
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
