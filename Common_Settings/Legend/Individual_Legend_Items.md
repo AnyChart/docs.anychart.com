@@ -16,7 +16,7 @@
 
 ```
 // disable the last item
-series3.legendItem().enabled(enabled);
+series3.legendItem().enabled(false);
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_01{sample}
@@ -44,11 +44,19 @@ series4.legendItem().fontColor(series4.color());
 ## Text Format
 
 * {api:anychart.core.utils.LegendItemSettings#format}format(){api}
+* {api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api}
 
 ### Tokens
 
 ```
+// enable html for the last legend item
+series4.legendItem().useHtml(true);
 
+// configure the format of the last legend item
+series4.legendItem().format(
+ "{%seriesName}: <span style='color:" + series4.color() +
+ ";font-weight:600'>${%seriesYSum}</span>"
+);
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_03{sample}
@@ -56,7 +64,15 @@ series4.legendItem().fontColor(series4.color());
 ### Formatting Functions
 
 ```
+// enable html for the last legend item
+series4.legendItem().useHtml(true);
 
+// configure the format of the last legend item
+series4.legendItem().format(function() {
+  return this.series.name() + ": <span style='color:" +
+         this.series.color() + ";font-weight:600'>$" +
+         this.series.getStat("sum");
+});
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_04{sample}
