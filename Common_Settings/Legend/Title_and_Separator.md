@@ -24,6 +24,4 @@ separator.stroke("#96a6a6", 2);
 separator.fill(null);
 ```
 
-Here is a legend with the title and title separator enabled and configured:
-
 {sample}CS\_Legend\_Title{sample}
