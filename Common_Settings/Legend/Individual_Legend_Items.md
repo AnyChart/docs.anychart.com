@@ -7,8 +7,7 @@
 * {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
 * {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 * [Legend Items](Legend_Items)
-* (?) написать что-то про оверрайд настроек из [Legend Items](Legend_Items)
-* (?) упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
+* упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
 
 ## Disabling
 
@@ -34,7 +33,10 @@ series3.legendItem().enabled(enabled);
 
 
 ```
-
+// configure the font of the last legend item
+series4.legendItem().fontSize(26);
+series4.legendItem().fontWeight(600);
+series4.legendItem().fontColor(series4.color());
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_02{sample}

@@ -164,7 +164,7 @@ The sample below shows how these methods affect a legend with a vertical [layout
 
 ### Outside / Inside
 
-The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows you to set the position mode of the legend: you can place it outside or inside the the area limited by the axes. (?) This method accepts the parameters listed in {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}:
+The {api:anychart.core.ui.Legend#positionMode}positionMode(){api} method allows you to set the position mode of the legend: you can place it outside or inside the data area. This method accepts the parameters listed in {api:anychart.enums.LegendPositionMode}anychart.enums.LegendPositionMode{api}:
 * `outside` (default)
 * `inside`
 
