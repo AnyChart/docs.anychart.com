@@ -18,10 +18,10 @@ Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.cor
 chart.legend().tooltip(true);
 
 // enable the tooltip title
-chart.legend().title(true);
+chart.legend().tooltip().title(true);
 
 // enable the tooltip separator
-chart.legend().separator(true);
+chart.legend().tooltip().separator(true);
 ```
 
 ## Tokens
