@@ -37,7 +37,7 @@
 anychart.onDocumentReady(function () {
 
     // create data for the first series
-    var data_1 = [
+    var data1 = [
       {x: 0.6, value: 22},
       {x: 1.7, value: 55},
       {x: 2.3, value: 50},
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function () {
     ];
 
     // create data for the second series
-    var data_2 = [
+    var data2 = [
       {x: 1.3, value: 25},
       {x: 1.3, value: 44},
       {x: 1.5, value: 40},
@@ -63,7 +63,7 @@ anychart.onDocumentReady(function () {
     ];
 
     // create data for the third series
-    var data_3 = [
+    var data3 = [
       {x: 0.5, value: 17.5},
       {x: 4.75, value: 100}
     ];
@@ -72,9 +72,9 @@ anychart.onDocumentReady(function () {
     var chart = anychart.scatter();
 
     // create series, set the data and names
-    series1 = chart.marker(data_1);
-    series2 = chart.marker(data_2);
-    series3 = chart.line(data_3);
+    series1 = chart.marker(data1);
+    series2 = chart.marker(data2);
+    series3 = chart.line(data3);
     series1.name("Drug 1");
     series2.name("Drug 2");
     series3.name("Trend");
@@ -91,7 +91,7 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
     
     // set the chart title
-    chart.title("Individual Legend Items: Enabling / Disabling");
+    chart.title("Individual Legen1d Items: Enabling / Disabling");
 
     // set the container id
     chart.container("container");

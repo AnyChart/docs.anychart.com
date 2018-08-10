@@ -46,10 +46,10 @@ In the sample below, the last series is initially disabled, but its icon is show
 var chart = anychart.line();
 
 // create series and set the data
-var series1 = chart.line(seriesData_1);
-var series2 = chart.line(seriesData_2);
-var series3 = chart.line(seriesData_3);
-var series4 = chart.line(seriesData_4);
+var series1 = chart.line(seriesData1);
+var series2 = chart.line(seriesData2);
+var series3 = chart.line(seriesData3);
+var series4 = chart.line(seriesData4);
 
 // hide the last series
 series4.enabled(false);

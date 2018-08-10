@@ -57,15 +57,15 @@ anychart.onDocumentReady(function () {
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData1 = data.mapAs({x: 0, value: 1});
+    var seriesData2 = data.mapAs({x: 0, value: 2});
 
     // create a chart
     chart = anychart.line();
 
     // create series, set the data and names
-    var series1 = chart.line(seriesData_1);
-    var series2 = chart.line(seriesData_2);
+    var series1 = chart.line(seriesData1);
+    var series2 = chart.line(seriesData2);
     series1.name("2017");
     series2.name("2018");
 
