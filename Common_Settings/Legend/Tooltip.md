@@ -9,7 +9,9 @@ A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is ho
 
 ## Enabling / Disabling (?)
 
-By default, the legend tooltip is disabled. Use the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method to enable it. Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
+By default, the legend tooltip is disabled. To enable it, combine the api:anychart.charts.Cartesian#legend}legend(){api} method with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and `true` as the parameter. Alternatively, pass `true` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of the tooltip.
+
+Also, the {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#titleFormat}separator(){api} methods of the tooltip allow enabling its title and separator:
 
 ```
 // enable the legend tooltip
@@ -28,6 +30,11 @@ legendTooltip.separator(true);
 To change the text of the tooltip or tooltip title, combine the {api:anychart.core.ui.Legend#tooltip}tooltip(){api} method with {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series.
 
 ```
+// enable and configure the legend tooltip
+
+var legendTooltip = chart.legend().tooltip();
+legendTooltip.enabled(true);
+
 legendTooltip.titleFormat("Sales Info");
 legendTooltip.format("Year: {%value}");
 ```
@@ -50,10 +57,7 @@ series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
 // enable and configure the legend tooltip
 
 var legendTooltip = chart.legend().tooltip();
-
 legendTooltip.enabled(true);
-legendTooltip.title(true);
-legendTooltip.separator(true);
 
 legendTooltip.titleFormat(function() {
   return this.value;
