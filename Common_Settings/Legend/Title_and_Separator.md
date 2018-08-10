@@ -17,10 +17,11 @@ You can also enable and adjust the title separator: combine the {api:anychart.ch
 
 ```
 // enable and configure the title separator
-chart.legend().titleSeparator(true);
-chart.legend().titleSeparator().height(4);
-chart.legend().titleSeparator().stroke("#96a6a6", 2);
-chart.legend().titleSeparator().fill(null);
+var separator = chart.legend().titleSeparator()
+separator.enabled(true);
+separator.height(4);
+separator.stroke("#96a6a6", 2);
+separator.fill(null);
 ```
 
 Here is a legend with the title and title separator enabled and configured:

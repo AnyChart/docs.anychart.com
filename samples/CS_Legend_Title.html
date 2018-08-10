@@ -68,10 +68,11 @@ anychart.onDocumentReady(function () {
     title.fontColor("#96a6a6");
         
     // enable and configure the title separator
-    chart.legend().titleSeparator(true);
-    chart.legend().titleSeparator().height(4);
-    chart.legend().titleSeparator().stroke("#96a6a6", 2);
-    chart.legend().titleSeparator().fill(null);
+    var separator = chart.legend().titleSeparator()
+    separator.enabled(true);
+    separator.height(4);
+    separator.stroke("#96a6a6", 2);
+    separator.fill(null);
     
     // set the chart title
     chart.title("Legend: Title");
