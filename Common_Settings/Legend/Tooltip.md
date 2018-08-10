@@ -1,13 +1,11 @@
 {:index 5}
 # Tooltip
 
-## Overview (?)
-
-(?) {api:anychart.charts.Cartesian#legend}legend(){api}
+## Overview
 
 A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-## Enabling / Disabling (?)
+## Enabling / Disabling
 
 By default, the legend tooltip is disabled. To enable it, combine the api:anychart.charts.Cartesian#legend}legend(){api} method with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and `true` as the parameter. Alternatively, pass `true` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method of the tooltip.
 
