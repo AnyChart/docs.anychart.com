@@ -98,11 +98,15 @@ series4.legendItem().format(function() {
 Use the following method to configure the icon of an item:
 
 * {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api} to enable or disable an item
-* {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api} to set the type
+* {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} to set the type
 * {api:anychart.core.utils.LegendItemSettings#iconFill}iconFill(){api} to set the fill
 * {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api} to set the hatch fill
 * {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
 * {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api} to set the size
+
+To set the the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with on of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type, for example `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
+
+**Note:** If the icon type is `"line"` or `"spline"`, you can also enable and adjust icon markers — see the [Icon Markers](icon_markers) section to learn more.
 
 In the sample below, all legend items are configured individually:
 
