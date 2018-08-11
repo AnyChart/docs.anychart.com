@@ -99,7 +99,7 @@ If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items 
 
 When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend expands, and the chart takes up a smaller space.
 
-**Note 1:** The paginator can be configured: read the [Advanced Settings: Paginator](Paginator) article to learn more.
+**Note 1:** The paginator can be configured: read the [Paginator](Paginator) article to learn more.
 
 **Note 2:** You can set a limit to the expansion of the legend – see the [Size: Expandable](#expandable) section.
 
