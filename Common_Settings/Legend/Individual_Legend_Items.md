@@ -52,7 +52,7 @@ series4.legendItem().fontColor(series4.color());
 
 To set the text format of a legend item, use the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method with either [tokens](../Text_Formatters#string_tokens) or [formatting functions](../Text_Formatters#formatting_functions).
 
-You can also call the {api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api} method to enable HTML for the legend text.
+You can also call the {api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api} method to enable HTML for the item.
 
 ### Tokens
 
