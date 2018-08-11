@@ -226,8 +226,7 @@ chart.legend().itemsFormatter(function(items) {
 
 {sample}CS\_Legend\_Individual\_Items\_08{sample}
 
-* {api:anychart.core.ui.Legend#items}items(){api}
-
+Combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. (?)
 
 ```
 // add custom legend items
