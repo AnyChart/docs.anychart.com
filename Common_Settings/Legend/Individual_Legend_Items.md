@@ -194,7 +194,7 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 ## Spacing
 
-* {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api}
+You can set the spacing between the icon and text of a legend item with the help of the {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api} method.
 
 ## Themes
 
@@ -206,9 +206,9 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 ## Custom Items
 
-* {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
-* {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}
+You can add a custom item to the legend by combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend and the settings listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. (?)
 
+For example, here an item representing the sum of all the Y-values on the chart (?) is added to the automatically generated legend:
 
 ```
 // add a custom legend item 
