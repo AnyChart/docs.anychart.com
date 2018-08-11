@@ -3,9 +3,9 @@
 
 ## Overview
 
-* (?) The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
-* (?) the **legend()** method of the chart
-* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
+* The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
+* the **legend()** method of the chart
+* Cartesian: {api:anychart.charts.Cartesian#legend}legend(){api}
 
 ## Default Legend
 
@@ -13,7 +13,7 @@
 
 Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
 
-To enable or disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
+To enable or disable the legend, pass `true` / `false` either to the **legend()** method of the chart or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
 ```
 // create a chart
@@ -23,8 +23,6 @@ var chart = anychart.line();
 chart.legend(true);
 ```
 
-You can also pass `true` / `false` to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
-
 ```
 // create a chart
 var chart = anychart.line();
@@ -33,7 +31,7 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
-This sample shows how to enable the legend of a multiple-series line chart:
+This sample shows how to enable the legend of a multiple-series line chart by using the {api:anychart.charts.Cartesian#legend}legend(){api} method:
 
 {sample}CS\_Legend\_Basic\_01{sample}
 
