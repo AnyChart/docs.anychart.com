@@ -1,7 +1,7 @@
 {:index 4}
 # Title and Separator
 
-The legend [title](../Title) is disabled by default. To enable and configure it, combine the **legend()** method of the chart and {api:anychart.core.ui.Legend#title}title(){api} with the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
+The legend [title](../Title) is disabled by default. To enable and configure it, combine the **legend()** method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
 
 ```
 // enable and configure the legend title
