@@ -147,6 +147,7 @@ In the sample below, all legend items are configured individually:
 
 ## Icon Markers
 
+* [Icons](icons)
 * включение, тип, визуальные настройки
 * включить маркеры на серии + тип иконки сделать `"line"` или `"spline"`
 * маркер автоматически берется у серии, но можно настроить вручную
