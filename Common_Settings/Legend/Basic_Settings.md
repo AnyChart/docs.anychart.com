@@ -9,7 +9,7 @@
 
 ### Enabling / Disabling
 
-Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart). (?)
+Most of the chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](../../Basic_Charts/Pie_Chart), [Doughnut](../../Basic_Charts/Doughnut_Chart), [Funnel](../../Basic_Charts/Funnel_Chart), [Pyramid](../../Basic_Charts/Pyramid_Chart), [Venn](../../Basic_Charts/Venn_Diagram), [Waterfall](../../Basic_Charts/Waterfall_Chart).
 
 To enable or disable the legend, pass `true` / `false` to the **legend()** method of the chart – for example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}:
 
@@ -99,7 +99,7 @@ If the layout is set to `"horizontal"` / `"vertical"`, only a part of the items 
 
 When the layout is `"horizontal-expandable"` / `"vertical-expandable"`, the legend expands, and the chart takes up a smaller space.
 
-**Note 1:** The paginator can be configured: read [Advanced Settings: Paginator](Advanced_Settings#paginator) to learn more.
+**Note 1:** The paginator can be configured: read the [Advanced Settings: Paginator](Paginator) article to learn more.
 
 **Note 2:** You can set a limit to the expansion of the legend – see the [Size: Expandable](#expandable) section.
 
@@ -191,6 +191,6 @@ chart.legend().drag(true);
 
 **Note 2:** [Events](Events) (?)
 
-This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) (also, the [background](#background) is enabled):
+This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) (also, the [background](Background) is enabled):
 
 {sample}CS\_Legend\_Basic\_09{sample}
