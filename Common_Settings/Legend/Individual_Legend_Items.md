@@ -208,7 +208,7 @@ You can set the spacing between the icon and text of a legend item with the help
 
 You can add a custom item to the legend by combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. (?)
 
-For example, here an automatically generated legend is updated with a custom item representing the sum of all the Y-values on the chart: (?)
+For example, here an automatically generated legend is updated with a custom item representing the sum of the Y-values of all the points on the chart: (?)
 
 ```
 // add a custom legend item 
