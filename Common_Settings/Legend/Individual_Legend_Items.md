@@ -95,15 +95,14 @@ series4.legendItem().format(function() {
 
 ## Icons
 
-* тип, визуальные настройки, размер
-* {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconFill}iconFill(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api}
-* {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}
+Use the following method to configure the icon of an item:
 
+* {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api} to enable or disable an item
+* {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api} to set the type
+* {api:anychart.core.utils.LegendItemSettings#iconFill}iconFill(){api} to set the fill
+* {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api} to set the hatch fill
+* {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
+* {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api} to set the size
 
 ```
  var legendItem1 = series1.legendItem();
