@@ -11,8 +11,12 @@
 
 ## Enabling / Disabling
 
-* {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api}
+To enable or disable a legend item, pass `true` / `false` either directly to the **legendItem()** method of the series or to the {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api} method of the legend item:
 
+```
+// disable the last item
+series3.legendItem(false);
+```
 
 ```
 // disable the last item

@@ -4,6 +4,7 @@
 ## Overview
 
 * (?) The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
+* (?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 ## Default Legend
 
@@ -31,7 +32,7 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
-This sample shows how to enable the legend of a multi-series line chart:
+This sample shows how to enable the legend of a multiple-series line chart:
 
 {sample}CS\_Legend\_Basic\_01{sample}
 
