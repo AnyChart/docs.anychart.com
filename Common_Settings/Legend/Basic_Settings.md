@@ -4,6 +4,7 @@
 ## Overview
 
 * (?) The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
+* (?) the **legend()** method of the chart
 * (?) {api:anychart.charts.Cartesian#legend}legend(){api}
 
 ## Default Legend
