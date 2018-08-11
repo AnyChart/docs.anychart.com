@@ -104,6 +104,8 @@ Use the following method to configure the icon of an item:
 * {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
 * {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api} to set the size
 
+In the sample below, all legend items are configured individually:
+
 ```
  var legendItem1 = series1.legendItem();
  var legendItem2 = series2.legendItem();
