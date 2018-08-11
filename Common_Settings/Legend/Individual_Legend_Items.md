@@ -8,6 +8,7 @@
 * {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 * [Legend Items](Legend_Items)
 * упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
+* (?) сказать, что это только для многосерийных чартов работает?
 
 ## Enabling / Disabling
 
@@ -26,6 +27,8 @@ series3.legendItem().enabled(false);
 {sample}CS\_Legend\_Individual\_Items\_01{sample}
 
 ## Text Font
+
+You can configure the font of a legend item by using the following methods:
 
 * {api:anychart.core.utils.LegendItemSettings#fontColor}fontColor(){api} to set the font color
 * {api:anychart.core.utils.LegendItemSettings#fontFamily}fontFamily(){api} to set the font family - Verdana, Helvetica, Arial, etc.
@@ -47,10 +50,15 @@ series4.legendItem().fontColor(series4.color());
 
 ## Text Format
 
-* {api:anychart.core.utils.LegendItemSettings#format}format(){api}
-* {api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api}
+To set the text format of a legend item, use the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method with either [tokens](../Text_Formatters#string_tokens) or [formatting functions](../Text_Formatters#formatting_functions).
+
+You can also call the api:anychart.core.utils.LegendItemSettings#useHtml}useHtml(){api} method to enable HTML for the legend text.
 
 ### Tokens
+
+The `"{%seriesName}"` token works with all series types. Also, you can use other series-related tokens supported by the given series type. (?)
+
+For example, in the following sample, the `"{%seriesName}"` and `"{%seriesYSum}"` tokens are used to configure the text of a legend item representing one of the Line series of a multiple-series chart:
 
 ```
 // enable html for the last legend item
@@ -66,6 +74,10 @@ series4.legendItem().format(
 {sample}CS\_Legend\_Individual\_Items\_03{sample}
 
 ### Formatting Functions
+
+Instead of tokens, you can use formatting functions with the `series` field, allowing you to access the methods of the series.
+
+In this sample, a formatting function is used to get the color, name, and total value of a Line series by accessing the {api:anychart.core.cartesian.series.Line#color}color(){api}, {api:anychart.core.cartesian.series.Line#name}name(){api}, and {api:anychart.core.cartesian.series.Line#getStat}getStat(){api} methods:
 
 ```
 // enable html for the last legend item
