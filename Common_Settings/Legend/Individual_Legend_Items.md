@@ -106,7 +106,7 @@ Use the following method to configure the icon of an item:
 
 To set the the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type, for example `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
 
-**Note:** If the icon type is `"line"` or `"spline"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
+**Note:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
 
 In the sample below, all legend items are configured individually:
 
@@ -147,15 +147,17 @@ In the sample below, all legend items are configured individually:
 
 ## Icon Markers
 
-* [Icons](icons)
-* включение, тип, визуальные настройки
-* включить маркеры на серии + тип иконки сделать `"line"` или `"spline"`
-* маркер автоматически берется у серии, но можно настроить вручную
-* {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconMarkerFill}iconMarkerFill(){api}
-* {api:anychart.core.utils.LegendItemSettings#iconMarkerStroke}iconMarkerStroke(){api}
-* {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}
+Icon markers are automatically enabled on `"line"`, `"spline"`, and `"step-line"` [icons](#icons) when you enable the markers of the series.
 
+Use the following methods to adjust icon markers:
+
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api} to set the type
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerFill}iconMarkerFill(){api} to set the fill
+* {api:anychart.core.utils.LegendItemSettings#iconMarkerStroke}iconMarkerStroke(){api} to set the stroke
+
+Please note that by default the marker type corresponds to that of the series. However, you can set it manually by using the {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api} with one of the parameters listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
+
+In the following sample, the markers of the series are enabled, and the icon types of legend items are set to `"line"` and `"spline"`, so markers are automatically displayed on the icons as well. The fill and stroke of each marker is configured individually:
 
 ```
 // enable markers
@@ -168,6 +170,12 @@ var legendItem1 = series1.legendItem();
 var legendItem2 = series2.legendItem();
 var legendItem3 = series3.legendItem();
 var legendItem4 = series4.legendItem();
+
+// set the types of legend icons
+legendItem1.iconType("line");
+legendItem2.iconType("line");
+legendItem3.iconType("line");
+legendItem4.iconType("spline");
 
 // set the fills of icon markers
 legendItem1.iconMarkerFill("white");
