@@ -29,16 +29,9 @@ chart.legend().tooltip().separator(true);
 To change the text of the tooltip and tooltip title, use the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods. The only [token](../Text_Formatters#string_tokens) available is `{%value}` – it stands for the names of the series:
 
 ```
-// enable and configure the legend tooltip
-
-var legendTooltip = chart.legend().tooltip();
-
-legendTooltip.enabled(true);
-legendTooltip.title(true);
-legendTooltip.separator(true);
-
-legendTooltip.titleFormat("Sales Info");
-legendTooltip.format("Year: {%value}");
+// configure the legend tooltip
+chart.legend().tooltip().titleFormat("Sales Info");
+chart.legend().tooltip().format("Year: {%value}");
 ```
 
 {sample}CS\_Legend\_Tooltip\_01{sample}
