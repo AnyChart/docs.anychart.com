@@ -5,9 +5,7 @@
 
 This article explains how to adjust legend items individually. You can set the text font and text format of an item, its icon type and appearance, enable and configure icon markers, and so on.
 
-To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method.
-
-To adjust the item, use the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class.
+To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class.
 
 Also, combining the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items – see the [Custom Items](#custom_items) section of this article.
 
