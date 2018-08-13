@@ -4,7 +4,7 @@
 ## Overview
 
 * [Individual Legend Items](Individual_Legend_Items)
-* the **legend()** method of the chart
+* the {api:?entry=legend}legend(){api} method of the chart
 * Cartesian: {api:anychart.charts.Cartesian#legend}legend(){api}
 * (?) классы
 

@@ -5,7 +5,7 @@
 
 A [Tooltip](../Tooltip) is a text box displayed when an element of a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-To access the settings of the legend tooltip, combine the **legend()** method of the chart with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and the methods of the tooltip, which are listed in {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}.
+To access the settings of the legend tooltip, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#tooltip}tooltip(){api} and the methods of the tooltip, which are listed in {api:anychart.core.ui.Tooltip}anychart.core.ui.Tooltip{api}.
 
 ## Enabling / Disabling
 
@@ -40,7 +40,7 @@ chart.legend().tooltip().format("Year: {%value}");
 
 You can set the text of the tooltip and tooltip title by combining the {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods with [formatting functions](../Text_Formatters#formatting_functions). The available fields include `value` and `meta`.
 
-The `value` field stands for the names of the series, and `meta` allows accessing custom information about the series. To add such information, pass an object with metadata to the **meta()** method of each series:
+The `value` field stands for the names of the series, and `meta` allows accessing custom information about the series. To add such information, pass an object with metadata to the {api:?entry=meta}meta(){api} method of each series:
 
 ```
 // add meta-information about the series

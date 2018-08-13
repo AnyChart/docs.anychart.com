@@ -181,7 +181,7 @@ Here you will find some information about main parts of the sparkline chart styl
 
 ### Point width
 
-For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
+For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the {api:?entry=pointWidth}pointWidth(){api} method:
 
 ```
 chart1.pointWidth('50%');

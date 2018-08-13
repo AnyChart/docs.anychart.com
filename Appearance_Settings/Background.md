@@ -4,7 +4,7 @@
 
 In this tutorial we will explain in details how to configure background in AnyChart charting framework.
 
-You can configure the background of the whole chart or labels, tooltips, data plot, and so on. In all these cases you should use the **background** method of the element - for example, {api:anychart.charts.Cartesian#background}background(){api} allows adjusting the background of Cartesian charts.
+You can configure the background of the whole chart or labels, tooltips, data plot, and so on. In all these cases you should use the {api:?entry=background}background(){api} method of the element - for example, {api:anychart.charts.Cartesian#background}background(){api} allows adjusting the background of Cartesian charts.
 
 Background consists of fill, stroke and border corners. These elements are configured by combining **background()** with {api:anychart.core.ui.Background#fill}fill(){api}, {api:anychart.core.ui.Background#stroke}stroke(){api}, and {api:anychart.core.ui.Background#corners}corners(){api}.
 
