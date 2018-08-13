@@ -3,7 +3,7 @@
 
 ## Overview
 
-This article explains how to adjust legend items individually. You can set their ... and so on.
+This article explains how to adjust legend items individually. You can set the text font, text format, icon type, and so on.
 
 To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method.
 
@@ -113,7 +113,7 @@ To set the the type of the icon, combine the {api:anychart.core.utils.LegendItem
 
 **Note 2:** Instead of adjusting each icon individually, you can use [themes](Themes).
 
-In the sample below, all legend items are configured individually:
+In the sample below, all legend icons are configured individually:
 
 ```
  var legendItem1 = series1.legendItem();
@@ -201,8 +201,6 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 You can set the spacing between the icon and text of a legend item with the help of the {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api} method.
 
-{sample}CS\_Legend\_Individual\_Items\_07{sample}
-
 ## Custom Items
 
 You can add a custom item to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
@@ -223,7 +221,7 @@ chart.legend().itemsFormatter(function(items) {
 });
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_08{sample}
+{sample}CS\_Legend\_Individual\_Items\_07{sample}
 
 Combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
@@ -281,4 +279,4 @@ chart.legend().items([
 ]);
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_09{sample}
+{sample}CS\_Legend\_Individual\_Items\_08{sample}
