@@ -1,7 +1,7 @@
 {:index 3}
 # Background
 
-To enable and configure the [background](../../Appearance_Settings/Background) of the legend, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#background}background(){api} with the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners:
+To enable and configure the [background](../../Appearance_Settings/Background) of the legend, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#background}background(){api} and the methods of the {api:anychart.core.ui.Background}anychart.core.ui.Background{api} class. You can adjust the fill, stroke, and corners:
 
 ```
 // configure the background of the legend
