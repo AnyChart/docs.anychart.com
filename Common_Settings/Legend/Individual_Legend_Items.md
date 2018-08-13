@@ -3,11 +3,15 @@
 
 ## Overview
 
-* {api:?entry=legendItem}legendItem(){api}
-* Cartesian: {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
-* {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
-* [Legend Items](Legend_Items)
-* упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api} + the {api:?entry=legend}legend(){api} method of the chart
+This article explains how to adjust legend items individually. You can set their ... and so on.
+
+To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method.
+
+To adjust the item, use the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class.
+
+Also, combining the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items – see the [Custom Items](#custom_items) section of this article.
+
+Please note that settings listed in this article can be applied only to individual items. If you need to configure all items at once, look for the available settings in the [Legend Items](Legend_Items) section. In some cases, [themes](Themes) may also be helpful.
 
 ## Enabling / Disabling
 
