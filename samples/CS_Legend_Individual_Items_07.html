@@ -25,15 +25,6 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // set the default icons for legend items
-    anychart.theme({
-      chart: {
-        defaultSeriesSettings: {
-          line: {legendItem: {iconType: "line", iconSize: 30}},
-          spline: {legendItem: {iconType: "spline", iconSize: 30}},
-          area: {legendItem: {iconType: "area", iconSize: 60}}
-    }}});
-
     // create a data set
     var data = anychart.data.set([
       ["January", 12000, 10000, 7000, 11000],
@@ -55,19 +46,30 @@ anychart.onDocumentReady(function () {
     // create series, set the data and names
     var series1 = chart.line(seriesData1);
     var series2 = chart.line(seriesData2);
-    var series3 = chart.spline(seriesData3);
-    var series4 = chart.area(seriesData4);
+    var series3 = chart.line(seriesData3);
+    var series4 = chart.line(seriesData4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
     series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
-   
+    chart.legend(true);
+
+    // add a custom legend item 
+    chart.legend().itemsFormatter(function(items) {
+      items.push({
+        text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
+        iconEnabled: false,
+        fontWeight: 600,
+        fontColor: "#455a64",
+        fontStyle: "italic"
+      });
+      return items;
+    });
+
     // set the chart title
-    chart.title("Individual Legend Items: Themes");
+    chart.title("Custom Legend Items");
 
     // set the container id
     chart.container("container");

@@ -195,12 +195,6 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 You can set the spacing between the icon and text of a legend item with the help of the {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api} method.
 
-## Themes
-
-```
-?
-```
-
 {sample}CS\_Legend\_Individual\_Items\_07{sample}
 
 ## Custom Items

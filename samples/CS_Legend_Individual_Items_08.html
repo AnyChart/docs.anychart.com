@@ -47,8 +47,8 @@ anychart.onDocumentReady(function () {
     var series1 = chart.line(seriesData1);
     var series2 = chart.line(seriesData2);
     var series3 = chart.line(seriesData3);
-    var series4 = chart.line(seriesData4);
-    series1.name("2015");
+    var series4 = chart.area(seriesData4);
+    series1.name("2016");
     series2.name("2016");
     series3.name("2017");
     series4.name("2018");
@@ -56,17 +56,57 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // add a custom legend item 
-    chart.legend().itemsFormatter(function(items) {
-      items.push({
-        text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
+    // add custom legend items
+    chart.legend().items([
+      {
+        text: "1",  
+        iconSize: 25,
+        iconFill: null,
+        iconHatchFill: "backward-diagonal",
+        iconStroke: "2 #96a6a6",
+        fontSize: 16,
+        fontWeight: 600,
+        fontColor: "#96a6a6"
+      },
+      {
+        text: "2",  
+        iconSize: 25,
+        iconFill: null,
+        iconHatchFill: "forward-diagonal",
+        iconStroke: "2 #96a6a6",
+        fontSize: 16,
+        fontWeight: 600,
+        fontColor: "#96a6a6"
+      },
+      {
+        text: "3",  
+        iconSize: 25,
+        iconFill: null,
+        iconHatchFill: "diagonal-cross",
+        iconStroke: "2 #96a6a6",
+        fontSize: 16,
+        fontWeight: 600,
+        fontColor: "#96a6a6"
+      },
+      {
+        text: "4",
+        iconType: "area",   
+        iconSize: 25, 
+        iconFill: series4.color(),
+        iconStroke: "2 " + series4.color(),
+        fontSize: 16,
+        fontWeight: 600,
+        fontColor: series4.color()
+      },
+      {
+        text: "/ Total: $" + chart.getStat("dataPlotYSum") + " /",
         iconEnabled: false,
+        fontSize: 20,
         fontWeight: 600,
         fontColor: "#455a64",
         fontStyle: "italic"
-      });
-      return items;
-    });
+      }
+    ]);
 
     // set the chart title
     chart.title("Custom Legend Items");
