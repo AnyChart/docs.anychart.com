@@ -9,8 +9,6 @@ To access an individual item, call the {api:?entry=legendItem}legendItem(){api} 
 
 Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items – see the [Custom Items](#custom_items) section of this article.
 
-Please note that settings listed in this article can be applied only to individual items. If you need to configure all items at once, look for the available settings in the [Legend Items](Legend_Items) section. In some cases, [themes](Themes) may also be helpful.
-
 ## Enabling / Disabling
 
 To enable or disable a legend item, pass `true` / `false` either directly to the {api:?entry=legendItem}legendItem(){api} method of the series or to the {api:anychart.core.utils.LegendItemSettings#enabled}enabled(){api} method of the legend item:
