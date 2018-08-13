@@ -8,7 +8,6 @@
 * {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 * [Legend Items](Legend_Items)
 * упомянуть {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} и {api:anychart.core.ui.Legend#items}items(){api}
-* (?) сказать, что это только для многосерийных чартов работает?
 
 ## Enabling / Disabling
 
@@ -56,7 +55,7 @@ You can also call the {api:anychart.core.utils.LegendItemSettings#useHtml}useHtm
 
 ### Tokens
 
-The `"{%seriesName}"` token works with all series types. Also, you can use other series-related tokens supported by the given series type. (?)
+The `"{%seriesName}"` token works with all series types. Also, you can use other series-related tokens supported by the given series type.
 
 For example, in the following sample, the `"{%seriesName}"` and `"{%seriesYSum}"` tokens are used to configure the text of a legend item representing one of the Line series of a multiple-series chart:
 
@@ -206,9 +205,9 @@ You can set the spacing between the icon and text of a legend item with the help
 
 ## Custom Items
 
-You can add a custom item to the legend by combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. (?)
+You can add a custom item to the legend by combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
-For example, here an automatically generated legend is updated with a custom item representing the sum of the Y-values on the chart: (?)
+For example, here an automatically generated legend is updated with a custom item representing the sum of all the Y-values on the chart:
 
 ```
 // add a custom legend item 
@@ -226,7 +225,7 @@ chart.legend().itemsFormatter(function(items) {
 
 {sample}CS\_Legend\_Individual\_Items\_08{sample}
 
-Combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}. (?)
+Combining the **legend()** method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 ```
 // add custom legend items
