@@ -3,9 +3,9 @@
 
 ## Overview
 
-* The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
-* the {api:?entry=legend}legend(){api} method of the chart
-* Cartesian: {api:anychart.charts.Cartesian#legend}legend(){api}
+To access the legend, use the {api:?entry=legend}legend(){api} method of the chart. For example, with Cartesian charts you should use {api:anychart.charts.Cartesian#legend}legend(){api}.
+
+The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class – its methods allow adjusting most legend settings. This article includes those settings that affect the legend as a whole: its layout, size, position, and so on.
 
 ## Default Legend
 
