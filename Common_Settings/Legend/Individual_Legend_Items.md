@@ -105,7 +105,9 @@ Use the following method to configure the icon of an item:
 
 To set the the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type, for example `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
 
-**Note:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
+**Note 1:** If the icon type is set to `"line"`, `"spline"`, or `"step-line"`, you can also enable and adjust icon markers. See the [Icon Markers](#icon_markers) section to learn more.
+
+**Note 2:** Instead of adjusting each icon individually, you can use [themes](Themes).
 
 In the sample below, all legend items are configured individually:
 

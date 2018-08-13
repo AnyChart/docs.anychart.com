@@ -114,9 +114,7 @@ chart.legend().itemsFormat(function() {
 
 ## Icons
 
-Most settings of the legend icons, for example their colors and types, can be configured only individually for each icon – see the [Icons](Individual_Legend_Items#icons) and [Icon Markers](Individual_Legend_Items#icon_markers) sections of the [Individual Legend Items](Individual_Legend_Items) article.
-
-The only setting that can affect all icons at once is the size.
+Most settings of the legend icons, for example their colors and types, can be configured only individually for each icon – see the [Icons](Individual_Legend_Items#icons) and [Icon Markers](Individual_Legend_Items#icon_markers) sections of the [Individual Legend Items](Individual_Legend_Items) article. Also, you can use [themes](Themes), which is an alternative way to customize the legend, including its icons.
 
 ### Size
 
