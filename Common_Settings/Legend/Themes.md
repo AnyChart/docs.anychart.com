@@ -6,7 +6,14 @@ Sometimes it makes sense to configure the legend by using the [Themes](../../App
 In the sample below, a theme is used to set the default types of legend icons depending on the series type:
 
 ```
-
+// set the default types of legend icons
+anychart.theme({
+  chart: {
+    defaultSeriesSettings: {
+      line: {legendItem: {iconType: "line"}},
+      spline: {legendItem: {iconType: "spline"}},
+      area: {legendItem: {iconType: "area"}}
+}}});
 ```
 
 {sample}CS\_Legend\_Themes{sample}
