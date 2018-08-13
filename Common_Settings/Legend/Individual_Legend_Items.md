@@ -3,7 +3,7 @@
 
 ## Overview
 
-This article explains how to adjust legend items individually. You can set the text font, text format, icon type, and so on.
+This article explains how to adjust legend items individually. You can set the text font and text format of an item, its icon type and appearance, enable and configure icon markers, and so on.
 
 To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method.
 
