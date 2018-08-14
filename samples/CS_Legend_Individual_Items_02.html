@@ -57,9 +57,9 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // configure the font of the last legend item
+    series4.legendItem().fontColor(series4.color());
     series4.legendItem().fontSize(26);
     series4.legendItem().fontWeight(600);
-    series4.legendItem().fontColor(series4.color());
     
     // set the chart title
     chart.title("Individual Legend Items: Text Font");

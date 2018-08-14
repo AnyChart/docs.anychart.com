@@ -40,9 +40,9 @@ You can configure the font of a legend item by using the following methods:
 
 ```
 // configure the font of the last legend item
+series4.legendItem().fontColor(series4.color());
 series4.legendItem().fontSize(26);
 series4.legendItem().fontWeight(600);
-series4.legendItem().fontColor(series4.color());
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_02{sample}
@@ -98,10 +98,10 @@ Use the following method to configure the icon of an item:
 
 * {api:anychart.core.utils.LegendItemSettings#iconEnabled}iconEnabled(){api} to enable or disable an item
 * {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} to set the type
+* {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api} to set the size
 * {api:anychart.core.utils.LegendItemSettings#iconFill}iconFill(){api} to set the fill
 * {api:anychart.core.utils.LegendItemSettings#iconHatchFill}iconHatchFill(){api} to set the hatch fill
 * {api:anychart.core.utils.LegendItemSettings#iconStroke}iconStroke(){api} to set the stroke
-* {api:anychart.core.utils.LegendItemSettings#iconSize}iconSize(){api} to set the size
 
 To set the the type of the icon, combine the {api:anychart.core.utils.LegendItemSettings#iconType}iconType(){api} method with one of the parameters listed in {api:anychart.enums.LegendItemIconType}anychart.enums.LegendItemIconType{api}. It makes sense to choose the icon type corresponding to the series type, for example `"line"` for an item representing a Line series, `"area"` for an Area series, and so on. The default type is `"square"`.
 
@@ -197,6 +197,40 @@ legendItem4.iconMarkerStroke(series4.color(), 2);
 
 You can set the spacing between the icon and text of a legend item with the help of the {api:anychart.core.utils.LegendItemSettings#iconTextSpacing}iconTextSpacing(){api} method.
 
+## Single Series
+
+If your chart type allows adding only a single series, its legend items can also be customized individually. Combine the `legendItem` data field with fields corresponding to the methods mentioned in the sections above. (?)
+
+In the sample below, there is a Pie chart with one of the legend items adjusted. Special data fields are used to configure its [text font](#text_font) and [icon](#icon):
+
+```
+// create data
+var data = [
+  {x: "John", value: 5000},
+  {x: "Richard", value: 5000},
+  {x: "Marta", value: 15000},
+  {x: "Larry", value: 5000, legendItem: {
+    fontColor: "#455a64",
+    fontSize: 30,
+    fontWeight: 600,
+    iconType: "circle",
+    iconSize: 50,
+    iconStroke: "4 #455a64",
+    iconHatchFill: {
+      type: "forward-diagonal",
+      color: "#455a64",
+      thickness: 4,
+      size: 8
+    }
+  }}
+];
+
+// create a chart and set the data
+chart = anychart.pie(data);
+```
+
+{sample}CS\_Legend\_Individual\_Items\_07{sample}
+
 ## Custom Items
 
 You can add a custom item to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
@@ -209,15 +243,15 @@ chart.legend().itemsFormatter(function(items) {
   items.push({
     text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
     iconEnabled: false,
-    fontWeight: 600,
     fontColor: "#455a64",
+    fontWeight: 600,
     fontStyle: "italic"
   });
   return items;
 });
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_07{sample}
+{sample}CS\_Legend\_Individual\_Items\_08{sample}
 
 Combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
@@ -230,9 +264,9 @@ chart.legend().items([
     iconFill: "none",
     iconHatchFill: "backward-diagonal",
     iconStroke: "2 #96a6a6",
+    fontColor: "#96a6a6",
     fontSize: 16,
-    fontWeight: 600,
-    fontColor: "#96a6a6"
+    fontWeight: 600
   },
   {
     text: "2",  
@@ -240,9 +274,9 @@ chart.legend().items([
     iconFill: "none",
     iconHatchFill: "forward-diagonal",
     iconStroke: "2 #96a6a6",
+    fontColor: "#96a6a6",
     fontSize: 16,
-    fontWeight: 600,
-    fontColor: "#96a6a6"
+    fontWeight: 600
   },
   {
     text: "3",  
@@ -250,9 +284,9 @@ chart.legend().items([
     iconFill: "none",
     iconHatchFill: "diagonal-cross",
     iconStroke: "2 #96a6a6",
+    fontColor: "#96a6a6",
     fontSize: 16,
-    fontWeight: 600,
-    fontColor: "#96a6a6"
+    fontWeight: 600    
   },
   {
     text: "4",
@@ -260,19 +294,19 @@ chart.legend().items([
     iconSize: 25, 
     iconFill: series4.color(),
     iconStroke: "2 " + series4.color(),
+    fontColor: series4.color(),
     fontSize: 16,
-    fontWeight: 600,
-    fontColor: series4.color()
+    fontWeight: 600    
   },
   {
     text: "/ Total: $" + chart.getStat("dataPlotYSum") + " /",
     iconEnabled: false,
+    fontColor: "#455a64",
     fontSize: 20,
     fontWeight: 600,
-    fontColor: "#455a64",
     fontStyle: "italic"
   }
 ]);
 ```
 
-{sample}CS\_Legend\_Individual\_Items\_08{sample}
+{sample}CS\_Legend\_Individual\_Items\_09{sample}

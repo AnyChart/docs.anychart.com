@@ -63,9 +63,9 @@ anychart.onDocumentReady(function () {
     var title = chart.legend().title();
     title.enabled(true);
     title.text("Total Sales: $" + chart.getStat("dataPlotYSum"));
+    title.fontColor("#96a6a6");
     title.fontSize(16);
     title.fontWeight(600);
-    title.fontColor("#96a6a6");
         
     // enable and configure the title separator
     var separator = chart.legend().titleSeparator()

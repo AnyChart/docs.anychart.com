@@ -226,8 +226,8 @@ Combine them with the following methods:
 
 To configure the font of symbols, use:
 * {api:anychart.core.StateSettings#fontStyle}fontColor(){api}
-* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
-* {api:anychart.core.StateSettings#fontSize}fontSize(){api}
+* {api:anychart.core.StateSettings#fontSize}fontSize(){api}* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
+
 * other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
 
 **Note 1:** By default, the font size of symbols is adjusted to the size of markers. You can disable this setting by calling the {api:anychart.core.stock.eventMarkers.Controller#adjustFontSize}adjustFontSize(){api} method with `false` as a parameter and set the font size manually with {api:anychart.core.StateSettings#fontWeight}fontSize(){api}.

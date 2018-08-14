@@ -13,7 +13,9 @@ anychart.theme({
       line: {legendItem: {iconType: "line"}},
       spline: {legendItem: {iconType: "spline"}},
       area: {legendItem: {iconType: "area"}}
-}}});
+    }
+  }
+});
 ```
 
 {sample}CS\_Legend\_Themes{sample}

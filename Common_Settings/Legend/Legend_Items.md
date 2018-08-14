@@ -22,9 +22,9 @@ You can configure the font of legend items by using the following methods:
 
 ```
 // configure the font of legend items
+chart.legend().fontColor("#455a64");
 chart.legend().fontSize(16);
 chart.legend().fontWeight(600);
-chart.legend().fontColor("#455a64");
 ```
 
 {sample}CS\_Legend\_Items\_01{sample}

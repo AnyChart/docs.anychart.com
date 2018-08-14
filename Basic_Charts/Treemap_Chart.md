@@ -447,8 +447,8 @@ To [configure the font](../Appearance_Settings/Text_Settings) of headers, use me
 ```
 // configure the font of headers
 chart.normal().headers().fontColor("#990000");
-chart.normal().headers().fontWeight('bold');
 chart.normal().headers().fontSize("14");
+chart.normal().headers().fontWeight('bold');
 chart.hovered().headers().fontColor("#000099");
 ```
 
@@ -467,8 +467,8 @@ var data = [
    normal:  {header: {
                       format: "{%name} ({%value} Total)",
                       fontColor: "#990000",
-                      fontWeight: "bold",
                       fontSize: "14",
+                      fontWeight: "bold"
                      }
             },
    hovered: {header: {fontColor: "#000099"}},

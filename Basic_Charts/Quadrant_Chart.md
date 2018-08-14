@@ -167,17 +167,17 @@ chart.quarters(
             rightTop: {
                 title: {
                     text: "Right Top",
+                    fontColor: "#fa8072",
                     fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#fa8072"
+                    fontWeight: "bold"
                 }
             },
             rightBottom: {
                 title: {
+                    fontColor: "#72fa80",
                     text: "Right Bottom",
                     fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#72fa80"
+                    fontWeight: "bold"
                 }
             },
         }
@@ -239,9 +239,9 @@ The sample below shows how to create quarter labels:
 var labelLBottom1 = chart.quarters().leftBottom().label(0);
 labelLBottom1.text("3");
 labelLBottom1.fontColor("gray");
+labelLBottom1.fontSize(16);
 labelLBottom1.fontWeight("bold");
 labelLBottom1.position("rightTop");
-labelLBottom1.fontSize(16);
 labelLBottom1.offsetX(-20);
 labelLBottom1.offsetY(20);
 

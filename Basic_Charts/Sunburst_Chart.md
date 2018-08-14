@@ -457,9 +457,9 @@ var label = anychart.standalones.label();
 label.text("Company Structure");
 label.width("100%");
 label.height("100%");
+label.fontColor("#dd2c00");
 label.fontSize(12);
 label.fontWeight(600);
-label.fontColor("#dd2c00");
 label.hAlign("center");
 label.vAlign("middle");
 

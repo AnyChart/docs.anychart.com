@@ -25,51 +25,32 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["January", 12000, 10000, 7000, 11000],
-      ["February", 15000, 12000, 9000, 13000],
-      ["March", 16000, 15000, 14000, 12000],
-      ["April", 15000, 11000, 13000, 10000],
-      ["May", 10000, 9000, 11000, 6000]
-    ]);
-
-    // map the data
-    var seriesData1 = data.mapAs({x: 0, value: 1});
-    var seriesData2 = data.mapAs({x: 0, value: 2});
-    var seriesData3 = data.mapAs({x: 0, value: 3});
-    var seriesData4 = data.mapAs({x: 0, value: 4});
-
-    // create a chart
-    var chart = anychart.line();
-
-    // create series, set the data and names
-    var series1 = chart.line(seriesData1);
-    var series2 = chart.line(seriesData2);
-    var series3 = chart.line(seriesData3);
-    var series4 = chart.line(seriesData4);
-    series1.name("2015");
-    series2.name("2016");
-    series3.name("2017");
-    series4.name("2018");
-
-    // enable the legend
-    chart.legend(true);
-
-    // add a custom legend item 
-    chart.legend().itemsFormatter(function(items) {
-      items.push({
-        text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
-        iconEnabled: false,
-        fontWeight: 600,
+    // create data
+    var data = [
+      {x: "John", value: 5000},
+      {x: "Richard", value: 5000},
+      {x: "Marta", value: 15000},
+      {x: "Larry", value: 5000, legendItem: {
         fontColor: "#455a64",
-        fontStyle: "italic"
-      });
-      return items;
-    });
+        fontSize: 30,
+        fontWeight: 600,
+        iconType: "circle",
+        iconSize: 50,
+        iconStroke: "4 #455a64",
+        iconHatchFill: {
+          type: "forward-diagonal",
+          color: "#455a64",
+          thickness: 4,
+          size: 8
+        }
+      }}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.pie(data);
 
     // set the chart title
-    chart.title("Custom Legend Items");
+    chart.title("Individual Legend Items: Single Series");
 
     // set the container id
     chart.container("container");
