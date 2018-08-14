@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Items 05"/>
+    <meta name="ac:name" content="CS Legend Individual Items 00"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -27,34 +27,17 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "John", value: 5000},
+      {x: "John", value: 5000, legendItems: {fontColor: "red"}},
       {x: "Richard", value: 5000},
       {x: "Marta", value: 15000},
       {x: "Larry", value: 5000}
     ];
 
-    //create a chart and set the data
+    // create a chart and set the data
     chart = anychart.pie(data);
-  
-    // enable html for the legend
-    chart.legend().useHtml(true);
 
-    // configure the format of legend items
-    chart.legend().itemsFormat(function() {
-      var point = chart.getPoint(this.index);
-      var maxPoint = chart.getStat("max");
-      var percent = point.getStat("percentValue").toFixed(1);
-      if (point.get("value") == maxPoint) {
-        return "<span style='color:#455a64;font-weight:600'>" +
-               this.x + ": " + percent + "%</span>";
-      } else {
-        return this.x + "</span>: " + percent + "%";
-      }
-    });
-    
     // set the chart title
-    chart.title("Legend Items: Text Format (Formatting Functions)" +
-                "\nSingle Series");
+    chart.title("???");
 
     // set the container id
     chart.container("container");

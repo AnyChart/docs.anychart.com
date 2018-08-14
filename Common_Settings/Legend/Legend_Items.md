@@ -99,8 +99,9 @@ chart.legend().useHtml(true);
 // configure the format of legend items
 chart.legend().itemsFormat(function() {
   var point = chart.getPoint(this.index);
+  var maxPoint = chart.getStat("max");
   var percent = point.getStat("percentValue").toFixed(1);
-  if (percent >= 50) {
+  if (point.get("value") == maxPoint) {
     return "<span style='color:#455a64;font-weight:600'>" +
            this.x + ": " + percent + "%</span>";
   } else {
