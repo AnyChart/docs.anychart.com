@@ -243,7 +243,7 @@ buttons.selected().background(false);
 
 /* change the background and font of buttons
 in the hover state */
-buttons.hovered().background().fill(null);
+buttons.hovered().background().fill("none");
 buttons.hovered().background().stroke("1 red");
 buttons.hovered().fontColor('red');
 ```

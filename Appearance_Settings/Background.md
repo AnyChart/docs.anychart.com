@@ -130,7 +130,7 @@ We've got a chart a with 5 series with 5 data points in each. For every series w
 
 ```
 var series0 = chart.bar(series[0]);
-series0.fill(null);
+series0.fill("none");
 series0.hatchFill("verticalBrick");
 ```
 

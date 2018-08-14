@@ -64,9 +64,9 @@ keltnerChannels_0.rangeSeries().lowStroke("2 #dd2c00");
 // create and adjust a Keltner Channels indicator
 var keltnerChannels_1 = plot_1.keltnerChannels(mapping, 10, 15, "sma", 4, "step-line", "step-range-area");
 keltnerChannels_1.maSeries().stroke("2 #64b5f6");
-keltnerChannels_1.rangeSeries().fill(null);
+keltnerChannels_1.rangeSeries().fill("none");
 keltnerChannels_1.rangeSeries().lowStroke("2 #00bfa5");
-keltnerChannels_1.rangeSeries().highStroke("2 00bfa5");
+keltnerChannels_1.rangeSeries().highStroke("2 #00bfa5");
 ```
 
 Live sample:
