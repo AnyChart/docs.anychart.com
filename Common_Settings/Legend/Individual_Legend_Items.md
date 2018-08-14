@@ -127,9 +127,9 @@ In the sample below, all legend icons are configured individually:
  legendItem4.iconSize(60);
 
  // set the fills of legend items
- legendItem1.iconFill("white");
- legendItem2.iconFill("white");
- legendItem3.iconFill("white");
+ legendItem1.iconFill("none");
+ legendItem2.iconFill("none");
+ legendItem3.iconFill("none");
  legendItem4.iconFill(series4.color());
 
  // set the hatch fills of legend items
@@ -227,7 +227,7 @@ chart.legend().items([
   {
     text: "1",  
     iconSize: 25,
-    iconFill: null,
+    iconFill: "none",
     iconHatchFill: "backward-diagonal",
     iconStroke: "2 #96a6a6",
     fontSize: 16,
@@ -237,7 +237,7 @@ chart.legend().items([
   {
     text: "2",  
     iconSize: 25,
-    iconFill: null,
+    iconFill: "none",
     iconHatchFill: "forward-diagonal",
     iconStroke: "2 #96a6a6",
     fontSize: 16,
@@ -247,7 +247,7 @@ chart.legend().items([
   {
     text: "3",  
     iconSize: 25,
-    iconFill: null,
+    iconFill: "none",
     iconHatchFill: "diagonal-cross",
     iconStroke: "2 #96a6a6",
     fontSize: 16,

@@ -21,7 +21,7 @@ var separator = chart.legend().titleSeparator()
 separator.enabled(true);
 separator.height(4);
 separator.stroke("#96a6a6", 2);
-separator.fill(null);
+separator.fill("none");
 ```
 
 {sample}CS\_Legend\_Title{sample}
