@@ -8,6 +8,7 @@ The legend [title](../Title) is disabled by default. To enable and configure it,
 var title = chart.legend().title();
 title.enabled(true);
 title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
+title.padding(5);
 title.fontColor("#96a6a6");
 title.fontSize(12);
 title.fontWeight(600);
@@ -24,4 +25,14 @@ separator.stroke("#96a6a6", 2);
 separator.fill("none");
 ```
 
-{sample}CS\_Legend\_Title{sample}
+...
+
+{sample}CS\_Legend\_Title\_01{sample}
+
+...
+
+```
+
+```
+
+{sample}CS\_Legend\_Title\_02{sample}

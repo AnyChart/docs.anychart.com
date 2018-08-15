@@ -86,7 +86,7 @@ The default legend is oriented horizontally. To change its layout, call the {api
 
 ```
 // set the layout of the legend
-chart.legend().itemsLayout("vertical")
+chart.legend().itemsLayout("vertical");
 ```
 
 The following sample shows the difference between the `"horizontal"` and `"vertical"` layouts:
@@ -136,14 +136,14 @@ chart.legend().maxWidth("50%");
 
 You can position the legend relative to the chart by calling the {api:anychart.core.ui.Legend#position}position(){api} method with of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
-* `top` (default)
+* `top`
 * `bottom`
 * `right`
 * `left`
 
 To align the legend, call {api:anychart.core.ui.Legend#align}align(){api} with one of the parameters listed in {api:anychart.enums.Align}anychart.enums.Align{api}:
 
-* `center` (default)
+* `center`
 * `top`
 * `bottom`
 * `right`

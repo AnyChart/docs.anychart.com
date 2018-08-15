@@ -69,8 +69,10 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // set the chart title
-    chart.title("Legend Items: Order (inverted = "
-                + chart.legend().inverted() + ")");
+    chart.listen("chartDraw", function () {
+      chart.title("Legend Items: Order (inverted = "
+                  + chart.legend().inverted() + ")");
+    });
 
     // set the container id
     chart.container("container");
@@ -82,9 +84,6 @@ anychart.onDocumentReady(function () {
 // set the order of legend items
 function invertedOrder(inverted) {
   chart.legend().inverted(inverted);
-  // update the chart title
-  chart.title("Legend Items: Order (inverted = "
-              + chart.legend().inverted() + ")");
 }
 </script>
 </body>
