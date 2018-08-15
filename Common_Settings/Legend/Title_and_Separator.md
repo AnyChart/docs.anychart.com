@@ -10,7 +10,7 @@ title.enabled(true);
 title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
 title.padding(5);
 title.fontColor("#96a6a6");
-title.fontSize(16);
+title.fontSize(12);
 title.fontWeight(600);
 ```
 
@@ -32,7 +32,23 @@ separator.fill("none");
 ...
 
 ```
+// enable and configure the legend title
+var title = chart.legend().title();
+title.enabled(true);
+title.text("Number of Employees: " + chart.getStat("count"));
+title.orientation("left");
+title.padding(5);
+title.fontColor("#96a6a6");
+title.fontSize(12);
+title.fontWeight(600);
 
+// enable and configure the title separator
+var separator = chart.legend().titleSeparator()
+separator.enabled(true);
+separator.orientation("left");
+separator.height(4);
+separator.stroke("#96a6a6", 2);
+separator.fill("none");
 ```
 
 {sample}CS\_Legend\_Title\_02{sample}
