@@ -25,6 +25,8 @@ separator.stroke("#96a6a6", 2);
 separator.fill("none");
 ```
 
+Here is a legend with the title and separator configured:
+
 {sample}CS\_Legend\_Title\_01{sample}
 
 Please note that you can set the orientation of both elements: use the {api:anychart.core.ui.Title#orientation}orientation(){api} method of the title and the same method of the separator with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
@@ -43,6 +45,6 @@ chart.legend().title().orientation("left");
 chart.legend().titleSeparator().orientation("left");
 ```
 
-In the sample below, the title and separator are placed to the left of a legend with a vertical [layout](Basic_Settings#layout):
+In the sample below, there is a legend with a vertical [layout](Basic_Settings#layout), and the title and separator are placed to the left of it:
 
 {sample}CS\_Legend\_Title\_02{sample}
