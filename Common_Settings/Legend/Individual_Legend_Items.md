@@ -207,7 +207,7 @@ If the chart type allows adding only a single series, its legend items represent
 
 **Note:** The methods described in the [Custom Items](#custom_items) section also work with single-series chart types, so, alternatively, you can just add a custom item or create a fully custom legend. (?)
 
-In the sample below, there is a Pie chart with one of the legend items adjusted. Special data fields are used to configure its [text font](#text_font) and [icon](#icons):
+In the sample below, there is a Pie chart with a [vertically-oriented](Basic_Settings#layout) legend and one of the legend items adjusted. Special data fields are used to configure its [text font](#text_font) and [icon](#icons):
 
 ```
 // create data

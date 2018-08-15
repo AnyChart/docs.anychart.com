@@ -49,6 +49,12 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.pie(data);
 
+    // set the layout of the legend
+    chart.legend().itemsLayout("vertical");
+
+    // set the position of the legend
+    chart.legend().position("right");
+
     // set the chart title
     chart.title("Individual Legend Items: Single Series");
 
