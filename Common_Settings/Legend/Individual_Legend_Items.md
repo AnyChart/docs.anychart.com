@@ -152,7 +152,7 @@ In the sample below, there is a [vertically-oriented](Basic_Settings#layout) leg
 
 ## Icon Markers
 
-Icon markers are automatically enabled on `"line"`, `"spline"`, and `"step-line"` [icons](#icons) when you enable the markers of the series.
+Icon markers are automatically enabled on `"line"`, `"spline"`, and `"step-line"` [icons](#icons) when you enable series markers.
 
 Use the following methods to adjust icon markers:
 
@@ -162,10 +162,10 @@ Use the following methods to adjust icon markers:
 
 Please note that by default the marker type corresponds to that of the series. However, you can set it manually by using the {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api} with one of the parameters listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 
-In the following sample, the markers of the series are enabled, and the icon types of legend items are set to `"line"` and `"spline"`, so markers are automatically displayed on the icons as well. The fill and stroke of each marker is configured individually:
+In the following sample, series markers are enabled, and the types of legend icons are set to `"line"` and `"spline"`, so icon markers are automatically displayed as well. The fill and stroke of each marker is configured individually:
 
 ```
-// enable markers
+// enable series markers
 series1.markers(true);
 series2.markers(true);
 series3.markers(true);
