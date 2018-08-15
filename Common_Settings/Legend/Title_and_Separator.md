@@ -14,7 +14,7 @@ title.fontSize(12);
 title.fontWeight(600);
 ```
 
-To enable and adjust the title separator, combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
+To enable and adjust the title separator, combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are set:
 
 ```
 // enable and configure the title separator
@@ -27,7 +27,7 @@ separator.fill("none");
 
 {sample}CS\_Legend\_Title\_01{sample}
 
-You can also set the orientation of both elements: use the {api:anychart.core.ui.Title#orientation}orientation(){api} method of the title and same method of the separator with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
+You can also set the orientation of both elements: use the {api:anychart.core.ui.Title#orientation}orientation(){api} method of the title and the same method of the separator with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top`
 * `bottom`
@@ -42,5 +42,7 @@ chart.legend().title().orientation("left");
 ```
 chart.legend().titleSeparator().orientation("left");
 ```
+
+In the sample below, the title and separator are placed to the left of a legend with a vertical [layout](Basic_Settings#layout):
 
 {sample}CS\_Legend\_Title\_02{sample}
