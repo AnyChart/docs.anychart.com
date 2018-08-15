@@ -118,7 +118,7 @@ Most settings of the legend icons, for example their colors and types, can be co
 
 ### Size
 
-To set the size of legend items, call the {api:anychart.core.ui.Legend#iconSize}iconSize(){api} method:
+To set the size of legend icons, call the {api:anychart.core.ui.Legend#iconSize}iconSize(){api} method:
 
 ```
 // set the size of legend icons

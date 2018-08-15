@@ -62,16 +62,13 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // set the size of legend icons
+    chart.legend().iconSize(50);
+
     var legendItem1 = series1.legendItem();
     var legendItem2 = series2.legendItem();
     var legendItem3 = series3.legendItem();
     var legendItem4 = series4.legendItem();
-
-    // set the sizes of legend items
-    legendItem1.iconSize(50);
-    legendItem2.iconSize(50);
-    legendItem3.iconSize(50);
-    legendItem4.iconSize(80);
 
     // set the types of legend icons
     legendItem1.iconType("line");

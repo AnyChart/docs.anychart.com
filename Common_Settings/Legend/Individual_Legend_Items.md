@@ -124,24 +124,24 @@ In the sample below, there is a [vertically-oriented](Basic_Settings#layout) leg
  // set the type of the last legend icon
  legendItem4.iconType("area");
 
- // set the sizes of legend items
+ // set the sizes of legend icons
  legendItem1.iconSize(30);
  legendItem2.iconSize(30);
  legendItem3.iconSize(30);
  legendItem4.iconSize(60);
 
- // set the fills of legend items
+ // set the fills of legend icons
  legendItem1.iconFill("none");
  legendItem2.iconFill("none");
  legendItem3.iconFill("none");
  legendItem4.iconFill(series4.color());
 
- // set the hatch fills of legend items
+ // set the hatch fills of legend icons
  legendItem1.iconHatchFill("backward-diagonal", series1.color());
  legendItem2.iconHatchFill("forward-diagonal", series2.color());
  legendItem3.iconHatchFill("diagonal-cross", series3.color());
 
- // set the strokes of legend items
+ // set the strokes of legend icons
  legendItem1.iconStroke(series1.color(), 4);
  legendItem2.iconStroke(series2.color(), 4);
  legendItem3.iconStroke(series3.color(), 4);
