@@ -10,7 +10,7 @@ title.enabled(true);
 title.text("Total Sales: " + chart.getStat("dataPlotYSum"));
 title.padding(5);
 title.fontColor("#96a6a6");
-title.fontSize(12);
+title.fontSize(16);
 title.fontWeight(600);
 ```
 
