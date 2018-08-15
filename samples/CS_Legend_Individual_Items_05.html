@@ -56,6 +56,12 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // set the layout of the legend
+    chart.legend().itemsLayout("vertical");
+
+    // set the position of the legend
+    chart.legend().position("right");
+
     var legendItem1 = series1.legendItem();
     var legendItem2 = series2.legendItem();
     var legendItem3 = series3.legendItem();

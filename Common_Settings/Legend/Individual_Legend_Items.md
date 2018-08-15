@@ -113,7 +113,7 @@ To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSett
 
 **Note 2:** Instead of adjusting each icon individually, you can use [themes](Themes).
 
-In the sample below, all legend icons are configured individually:
+In the sample below, there is a [vertically-oriented](Basic_Settings#layout) legend with all the icons configured individually:
 
 ```
  var legendItem1 = series1.legendItem();
