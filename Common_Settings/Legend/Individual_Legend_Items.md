@@ -160,7 +160,7 @@ Use the following methods to adjust icon markers:
 * {api:anychart.core.utils.LegendItemSettings#iconMarkerFill}iconMarkerFill(){api} to set the fill
 * {api:anychart.core.utils.LegendItemSettings#iconMarkerStroke}iconMarkerStroke(){api} to set the stroke
 
-Please note that by default the type of a marker corresponds to that of the series it represents. However, you can set it manually by using the {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api} with one of the parameters listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
+Please note that by default the type of a marker corresponds to that of the series it represents. However, you can set the type manually by using the {api:anychart.core.utils.LegendItemSettings#iconMarkerType}iconMarkerType(){api} with one of the parameters listed in {api:anychart.enums.MarkerType}anychart.enums.MarkerType{api}.
 
 In the following sample, series markers are enabled, and the types of legend icons are set to `"line"` and `"spline"`, so icon markers are automatically displayed as well. The fill and stroke of each marker is configured individually:
 
