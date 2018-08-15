@@ -56,9 +56,15 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // set the layout of the legend
+    chart.legend().itemsLayout("vertical");
+
+    // set the position of the legend
+    chart.legend().position("right");
+
     // configure the font of the last legend item
     series4.legendItem().fontColor(series4.color());
-    series4.legendItem().fontSize(26);
+    series4.legendItem().fontSize(16);
     series4.legendItem().fontWeight(600);
     
     // set the chart title
