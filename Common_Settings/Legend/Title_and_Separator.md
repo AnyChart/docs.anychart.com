@@ -1,7 +1,7 @@
 {:index 4}
 # Title and Separator
 
-The legend [title](../Title) is disabled by default. To enable and configure it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class:
+The legend [title](../Title) is disabled by default. To enable and adjust it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. You can set the text, font, padding, and so on:
 
 ```
 // enable and configure the legend title
@@ -14,15 +14,15 @@ title.fontSize(12);
 title.fontWeight(600);
 ```
 
-To enable and adjust the title separator, combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class:
+To enable and configure the title separator, combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. For example, you can adjust the height, fill, and stroke:
 
 ```
 // enable and configure the title separator
 var separator = chart.legend().titleSeparator()
 separator.enabled(true);
 separator.height(4);
-separator.stroke("#96a6a6", 2);
 separator.fill("none");
+separator.stroke("#96a6a6", 2);
 ```
 
 Here is a legend with the title and separator configured:
