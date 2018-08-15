@@ -1,7 +1,7 @@
 {:index 4}
 # Title and Separator
 
-The legend [title](../Title) is disabled by default. To enable and configure it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. For example, you can adjust the text and font of the title:
+The legend [title](../Title) is disabled by default. To enable and configure it, combine the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#title}title(){api} and the methods of the {api:anychart.core.ui.Title}anychart.core.ui.Title{api} class. You can set the text, font, padding, and so on:
 
 ```
 // enable and configure the legend title
@@ -14,7 +14,7 @@ title.fontSize(12);
 title.fontWeight(600);
 ```
 
-You can also enable and adjust the title separator: combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
+To enable and adjust the title separator, combine the {api:?entry=legend}legend(){api} and {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} methods with the methods of the {api:anychart.core.ui.Separator}anychart.core.ui.Separator{api} class. This is how the fill and stroke are adjusted:
 
 ```
 // enable and configure the title separator
@@ -24,31 +24,23 @@ separator.height(4);
 separator.stroke("#96a6a6", 2);
 separator.fill("none");
 ```
-
-...
 
 {sample}CS\_Legend\_Title\_01{sample}
 
-...
+You can also set the orientation of the title and separator: use the {api:anychart.core.ui.Title#orientation}orientation(){api} and {api:anychart.core.ui.Separator#orientation}orientation(){api} methods with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
+
+* `top`
+* `bottom`
+* `right`
+* `left`
+
 
 ```
-// enable and configure the legend title
-var title = chart.legend().title();
-title.enabled(true);
-title.text("Number of Employees: " + chart.getStat("count"));
-title.orientation("left");
-title.padding(5);
-title.fontColor("#96a6a6");
-title.fontSize(12);
-title.fontWeight(600);
+chart.legend().title().orientation("left");
+```
 
-// enable and configure the title separator
-var separator = chart.legend().titleSeparator()
-separator.enabled(true);
-separator.orientation("left");
-separator.height(4);
-separator.stroke("#96a6a6", 2);
-separator.fill("none");
+```
+chart.legend().titleSeparator().orientation("left");
 ```
 
 {sample}CS\_Legend\_Title\_02{sample}
