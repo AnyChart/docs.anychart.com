@@ -167,7 +167,7 @@ anychart.onDocumentReady(function () {
   series.tooltip().title(false).separator(false).format(function (){
     var value = this.value.toFixed(3);
     if (this.valueLowerError !==0)
-      value = this.value.toFixed(3) + "\u0081" + this.valueLowerError.toFixed(3);
+      value = this.value.toFixed(3) + "\u00B1" + this.valueLowerError.toFixed(3);
     return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
   });
 
