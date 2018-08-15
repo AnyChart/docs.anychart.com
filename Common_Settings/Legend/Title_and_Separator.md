@@ -27,7 +27,7 @@ separator.fill("none");
 
 {sample}CS\_Legend\_Title\_01{sample}
 
-You can also set the orientation of the title and separator: use the {api:anychart.core.ui.Title#orientation}orientation(){api} and {api:anychart.core.ui.Separator#orientation}orientation(){api} methods with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
+You can also set the orientation of both elements: use the {api:anychart.core.ui.Title#orientation}orientation(){api} method of the title and same method of the separator with one of the parameters listed in {api:anychart.enums.Orientation}anychart.enums.Orientation{api}:
 
 * `top`
 * `bottom`
