@@ -29,9 +29,9 @@ anychart.onDocumentReady(function () {
     var chart = anychart.marker();
 
     // create series, set the data and names
-    chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("Drug 1");
-    chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("Drug 2");
-    chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
+    chart.marker([[1,1],[1,1],[5,4],[10,1]]).name("Drug 1");
+    chart.marker([[2,3],[1,5],[7,3],[13,6]]).name("Drug 2");
+    chart.marker([[2,1],[1,2],[3,3],[8,1]]).name("Placebo");
 
     // enable major grids
     chart.xGrid(true);
@@ -46,13 +46,13 @@ anychart.onDocumentReady(function () {
     legend.enabled(true);
 
     // set the layout of the legend
-    legend.itemsLayout("vertical");
+    // legend.itemsLayout("vertical");
 
     // set the position mode of the legend
     legend.positionMode("inside");
 
     // set the alignment of the legend
-    legend.align("right");
+    // legend.align("right");
 
     // set the padding of the legend
     legend.padding(35);
