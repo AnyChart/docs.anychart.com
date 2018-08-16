@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Basic 09"/>
+    <meta name="ac:name" content="CS Legend Events 03"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -25,48 +25,39 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 12000, 10000, 7000, 11000],
+      ["February", 15000, 12000, 9000, 13000],
+      ["March", 16000, 15000, 14000, 12000],
+      ["April", 15000, 11000, 13000, 10000],
+      ["May", 10000, 9000, 11000, 6000]
+    ]);
+
+    // map the data
+    var seriesData1 = data.mapAs({x: 0, value: 1});
+    var seriesData2 = data.mapAs({x: 0, value: 2});
+    var seriesData3 = data.mapAs({x: 0, value: 3});
+    var seriesData4 = data.mapAs({x: 0, value: 4});
+
     // create a chart
-    var chart = anychart.marker();
+    var chart = anychart.line();
 
     // create series, set the data and names
-    chart.marker([[1,1],[1,1],[5,6],[10,1]]).name("Drug 1");
-    chart.marker([[2,3],[1,4],[7,6],[13,1]]).name("Drug 2");
-    chart.marker([[2,1],[1,2],[3,6],[8,1]]).name("Placebo");
-
-    // enable major grids
-    chart.xGrid(true);
-    chart.yGrid(true);
-
-    // enable minor grids
-    chart.xMinorGrid(true);
-    chart.yMinorGrid(true);
+    var series1 = chart.line(seriesData1);
+    var series2 = chart.line(seriesData2);
+    var series3 = chart.line(seriesData3);
+    var series4 = chart.line(seriesData4);
+    series1.name("2015");
+    series2.name("2016");
+    series3.name("2017");
+    series4.name("2018");
 
     // enable the legend
-    var legend = chart.legend();
-    legend.enabled(true);
-
-    // set the layout of the legend
-    legend.itemsLayout("vertical");
-
-    // set the position mode of the legend
-    legend.positionMode("inside");
-
-    // set the alignment of the legend
-    legend.align("right");
-
-    // set the padding of the legend
-    legend.padding(35);
-
-    // configure the background of the legend
-    legend.background().enabled(true);
-    legend.background().fill("white");
-    legend.background().stroke("3 #96a6a6");
-
-    // enable the drag and drop mode of the legend
-    legend.drag(true);
+    chart.legend(true);
 
     // set the chart title
-    chart.title("Legend: Position (Drag and Drop)");
+    chart.title("Legend: Enabling");
 
     // set the container id
     chart.container("container");

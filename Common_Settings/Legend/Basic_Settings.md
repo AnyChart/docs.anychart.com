@@ -183,7 +183,7 @@ In the following sample, these two modes are applied to a legend with a vertical
 The {api:anychart.core.ui.Legend#drag}drag(){api} method with `true` as a parameter enables the drag-and-drop mode, allowing users to drag the legend to any position:
 
 ```
-// enable the drag and drop mode of the legend
+// enable the drag-and-drop mode of the legend
 chart.legend().drag(true);
 ```
 

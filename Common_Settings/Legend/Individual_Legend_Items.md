@@ -47,7 +47,7 @@ series4.legendItem().fontSize(16);
 series4.legendItem().fontWeight(600);
 ```
 
-Here is a [vertically-oriented](Basic_Settings#layout) legend with the font of the last item configured:
+Here is a vertically [oriented](Basic_Settings#layout) legend with the font of the last item configured:
 
 {sample}CS\_Legend\_Individual\_Items\_02{sample}
 
@@ -113,7 +113,7 @@ To set the type of the icon, combine the {api:anychart.core.utils.LegendItemSett
 
 **Note 2:** Instead of adjusting each icon individually, you can use [themes](Themes).
 
-In the sample below, there is a [vertically-oriented](Basic_Settings#layout) legend with all the icons configured individually:
+In the sample below, there is a vertically [oriented](Basic_Settings#layout) legend with all the icons configured individually:
 
 ```
  var legendItem1 = series1.legendItem();
@@ -207,7 +207,7 @@ If the chart type allows adding only a single series, its legend items represent
 
 **Note:** The methods described in the [Custom Items](#custom_items) section also work with single-series chart types, so, alternatively, you can just add a custom item or create a fully custom legend. (?)
 
-In the sample below, there is a Pie chart with a [vertically-oriented](Basic_Settings#layout) legend and one of the legend items adjusted. Special data fields are used to configure its [text font](#text_font) and [icon](#icons):
+In the sample below, there is a Pie chart with a vertically [oriented](Basic_Settings#layout) legend and one of the legend items adjusted. Special data fields are used to configure its [text font](#text_font) and [icon](#icons):
 
 ```
 // create data

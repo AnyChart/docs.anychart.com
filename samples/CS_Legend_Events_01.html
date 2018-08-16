@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="CS Legend Basic 09"/>
+    <meta name="ac:name" content="CS Legend Events 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -62,11 +62,21 @@ anychart.onDocumentReady(function () {
     legend.background().fill("white");
     legend.background().stroke("3 #96a6a6");
 
-    // enable the drag and drop mode of the legend
+    // enable the drag-and-drop mode of the legend
     legend.drag(true);
 
+    // ...
+    legend.listen("dragStart", function() {
+      chart.background().fill("#96a6a6 0.2");
+    });
+
+    // ...
+    legend.listen("dragEnd", function() {
+      chart.background().fill("none");
+    });    
+
     // set the chart title
-    chart.title("Legend: Position (Drag and Drop)");
+    chart.title("Legend: Events");
 
     // set the container id
     chart.container("container");
