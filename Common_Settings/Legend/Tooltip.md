@@ -46,8 +46,8 @@ The `value` field stands for the names of the series, and `meta` allows accessin
 // add meta-information about the series
 series1.meta({sales: series1.getStat("sum"), top: "John Doe"});
 series2.meta({sales: series2.getStat("sum"), top: "Richard Roe"});
-series3.meta({sales: series3.getStat("sum"), top: "Marta Moe"});
-series4.meta({sales: series4.getStat("sum"), top: "Larry Loe"});
+series3.meta({sales: series3.getStat("sum"), top: "Larry Loe"});
+series4.meta({sales: series4.getStat("sum"), top: "Marta Moe"});
 
 // enable and configure the legend tooltip
 

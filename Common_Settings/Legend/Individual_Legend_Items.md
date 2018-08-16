@@ -214,8 +214,8 @@ In the sample below, there is a Pie chart with a [vertically-oriented](Basic_Set
 var data = [
   {x: "John", value: 5000},
   {x: "Richard", value: 5000},
-  {x: "Marta", value: 15000},
-  {x: "Larry", value: 5000, legendItem: {
+  {x: "Larry", value: 5000},
+  {x: "Marta", value: 15000, legendItem: {
     fontColor: "#455a64",
     fontSize: 30,
     fontWeight: 600,
