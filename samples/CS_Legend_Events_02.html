@@ -53,7 +53,8 @@ anychart.onDocumentReady(function () {
     series3.name("2017");
     series4.name("2018");
 
-    // forbid selecting series by clicking on them
+    /* prevent series from being selected
+    when they are clicked on */
     chart.interactivity().selectionMode("none");
 
     // enable the legend
