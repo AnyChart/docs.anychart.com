@@ -21,10 +21,43 @@ legend.listen("dragEnd", function() {
 
 ## Legend Items
 
+```
+/* disable the default behavior of the legend
+on the legendItemMouseDown event */
+chart.legend().listen("legendItemMouseDown", function(e) {
+  e.preventDefault();
+});
+
+/* listen to the legendItemClick event
+and select / deselect the series */
+chart.legend().listen("legendItemClick", function(e) {
+  var series = chart.getSeriesAt(e.itemIndex);
+  var selected = !series.meta("selected");
+  if (selected) {
+    series.select();
+  } else {
+    series.unselect();
+  }
+  series.meta("selected", selected);
+});
+```
+
 {sample}CS\_Legend\_Events\_02{sample}
 
 ```
+/* listen to the legendItemMouseOver event
+and enable the hover state of the point */
+chart.legend().listen("legendItemMouseOver", function(e) {
+  var point = chart.getPoint(e.itemIndex);
+  point.hovered(true);
+});
 
+/* listen to the legendItemMouseOut event
+and disable the hover state of the point */
+chart.legend().listen("legendItemMouseOut", function(e) {
+  var point = chart.getPoint(e.itemIndex);
+  point.hovered(false);
+});
 ```
 
 {sample}CS\_Legend\_Events\_03{sample}
