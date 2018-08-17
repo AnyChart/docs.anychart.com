@@ -41,13 +41,13 @@ anychart.onDocumentReady(function () {
     var seriesData4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
-    var chart = anychart.line();
+    var chart = anychart.column();
 
     // create series, set the data and names
-    var series1 = chart.line(seriesData1);
-    var series2 = chart.line(seriesData2);
-    var series3 = chart.line(seriesData3);
-    var series4 = chart.line(seriesData4);
+    var series1 = chart.column(seriesData1);
+    var series2 = chart.column(seriesData2);
+    var series3 = chart.column(seriesData3);
+    var series4 = chart.column(seriesData4);
     series1.name("2015");
     series2.name("2016");
     series3.name("2017");
@@ -55,6 +55,32 @@ anychart.onDocumentReady(function () {
 
     // enable the legend
     chart.legend(true);
+
+    // set the height of the legend
+    chart.legend().height(50);
+
+    /* listen to the ... event and */
+    chart.legend().listen("legendItemMouseOver", function(e) {
+      var item = chart.getSeriesAt(e.itemIndex).legendItem();
+      item.iconSize(20);
+      item.iconStroke("black", 2);
+      item.fontColor("black");
+      item.fontWeight(600);
+    });
+
+    /*  listen to the ... event and  */
+    chart.legend().listen("legendItemMouseOut", function(e) {
+      var item = chart.getSeriesAt(e.itemIndex).legendItem();
+      item.iconSize(15);
+      item.iconStroke("none");
+      item.fontColor("#7c868e");
+      item.fontWeight("normal");
+    });
+
+    /*  listen to the ... event and  */
+    chart.legend().listen("legendItemMouseDown", function(e) {
+      var item = chart.getSeriesAt(e.itemIndex).legendItem();
+    });
 
     // set the chart title
     chart.title("Legend: Events (?)");
