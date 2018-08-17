@@ -30,7 +30,25 @@ legend.listen("dragEnd", function() {
 {sample}CS\_Legend\_Events\_03{sample}
 
 ```
+/* listen to the legendItemMouseOver event and
+configure the font and icon size of the legend item*/
+chart.legend().listen("legendItemMouseOver", function(e) {
+  var item = chart.getSeriesAt(e.itemIndex).legendItem();
+  item.iconSize(20);
+  item.iconStroke("black", 2);
+  item.fontColor("black");
+  item.fontWeight(600);
+});
 
+/*  listen to the legendItemMouseOut event and
+restore the default settings of the legend item*/
+chart.legend().listen("legendItemMouseOut", function(e) {
+  var item = chart.getSeriesAt(e.itemIndex).legendItem();
+  item.iconSize(15);
+  item.iconStroke("none");
+  item.fontColor("#7c868e");
+  item.fontWeight("normal");
+});
 ```
 
 {sample}CS\_Legend\_Events\_04{sample}
