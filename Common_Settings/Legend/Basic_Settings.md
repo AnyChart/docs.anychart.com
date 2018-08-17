@@ -31,6 +31,8 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
+**Note:** [Events](Events) (?)
+
 This sample shows how to enable the legend of a multiple-series line chart by using the {api:anychart.charts.Cartesian#legend}legend(){api} method:
 
 {sample}CS\_Legend\_Basic\_01{sample}

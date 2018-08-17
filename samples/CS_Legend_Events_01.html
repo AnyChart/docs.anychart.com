@@ -45,14 +45,8 @@ anychart.onDocumentReady(function () {
     var legend = chart.legend();
     legend.enabled(true);
 
-    // set the layout of the legend
-    // legend.itemsLayout("vertical");
-
     // set the position mode of the legend
     legend.positionMode("inside");
-
-    // set the alignment of the legend
-    // legend.align("right");
 
     // set the padding of the legend
     legend.padding(35);
@@ -65,18 +59,20 @@ anychart.onDocumentReady(function () {
     // enable the drag-and-drop mode of the legend
     legend.drag(true);
 
-    // ...
+    /* listen to the dragStart event
+    and configure the background of the chart */
     legend.listen("dragStart", function() {
       chart.background().fill("#96a6a6 0.2");
     });
 
-    // ...
+    /* listen to the dragEnd event
+    and reset the background of the chart */
     legend.listen("dragEnd", function() {
-      chart.background().fill("none");
+      chart.background().fill("white");
     });    
 
     // set the chart title
-    chart.title("Legend: Events");
+    chart.title("Legend: Events (?)");
 
     // set the container id
     chart.container("container");
