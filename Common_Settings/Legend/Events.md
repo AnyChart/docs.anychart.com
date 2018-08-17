@@ -4,15 +4,15 @@
 ## Legend
 
 ```
-// listen to the dragStart event
-chart.legend().listen("dragStart", function() {
-  // configure the background of the chart
+/* listen to the dragStart event
+and configure the background of the chart */
+legend.listen("dragStart", function() {
   chart.background().fill("#96a6a6 0.2");
 });
 
-// listen to the dragEnd event
-chart.legend().listen("dragEnd", function() {
-  // configure the background of the chart
+/* listen to the dragEnd event
+and reset the background of the chart */
+legend.listen("dragEnd", function() {
   chart.background().fill("white");
 });    
 ```
