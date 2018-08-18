@@ -28,17 +28,25 @@ chart.legend().listen("legendItemMouseDown", function(e) {
   e.preventDefault();
 });
 
-/* listen to the legendItemClick event
-and select / deselect the series */
+/* disable the default behavior of the legend
+on the legendItemMouseOver event */
+chart.legend().listen("legendItemMouseOver", function(e) {
+  e.preventDefault();
+});
+
+/* listen to the legendItemClick event,
+select / deselect the series and configure the legend item */
 chart.legend().listen("legendItemClick", function(e) {
   var series = chart.getSeriesAt(e.itemIndex);
-  var selected = !series.meta("selected");
-  if (selected) {
+  var selected = series.meta("selected");
+  if (!selected) {
     series.select();
+    series.legendItem().iconFill("#455a64");
   } else {
     series.unselect();
+    series.legendItem().iconFill(series.color());
   }
-  series.meta("selected", selected);
+  series.meta("selected", !selected);
 });
 ```
 
@@ -63,8 +71,8 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 {sample}CS\_Legend\_Events\_03{sample}
 
 ```
-/* listen to the legendItemMouseOver event and
-configure the font and icon size of the legend item*/
+/* listen to the legendItemMouseOver event
+and configure the legend item*/
 chart.legend().listen("legendItemMouseOver", function(e) {
   var item = chart.getSeriesAt(e.itemIndex).legendItem();
   item.iconSize(20);
@@ -73,8 +81,8 @@ chart.legend().listen("legendItemMouseOver", function(e) {
   item.fontWeight(600);
 });
 
-/*  listen to the legendItemMouseOut event and
-restore the default settings of the legend item*/
+/* listen to the legendItemMouseOut event
+and restore the default settings of the legend item */
 chart.legend().listen("legendItemMouseOut", function(e) {
   var item = chart.getSeriesAt(e.itemIndex).legendItem();
   item.iconSize(15);
@@ -86,8 +94,56 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 
 {sample}CS\_Legend\_Events\_04{sample}
 
-```
-
-```
-
 ## ???
+
+```
+/* disable the default behavior of the legend
+on the legendItemMouseDown event
+and prevent the legendItemMouseDown event */
+chart.legend().listen("legendItemMouseDown", function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+/* disable the default behavior of the legend
+on the legendItemMouseOver event */
+chart.legend().listen("legendItemMouseOver", function(e) {
+  e.preventDefault();
+});
+
+// customize the hover cursor of the legend
+chart.legend().hoverCursor("default");
+
+/* listen to the pointsSelect event
+and configure legend items */
+chart.listen("pointsSelect", function(e) {
+  e.currentPoint.series.legendItem().iconFill("#455a64");
+  for (var i = 0; i < chart.getSeriesCount(); i++) {
+    var series = chart.getSeriesAt(i)
+    if (series.meta("selected")) {
+       series.meta("selected", false);
+       series.legendItem().iconFill(series.color());
+    }
+  }
+  e.currentPoint.series.meta("selected", true);
+});
+
+/* listen to the pointMouseOver event
+and configure the legend item */
+chart.listen("pointMouseOver", function(e) {
+  if (!e.series.meta("selected")) {
+    color = anychart.color.lighten(e.series.color());
+    e.series.legendItem().iconFill(color);
+  }
+});
+
+/* listen to the pointMouseOut event
+and restore the default settings of the legend item */
+chart.listen("pointMouseOut", function(e) {
+  if (!e.series.meta("selected")) {
+    e.series.legendItem().iconFill(e.series.color());
+  }
+});
+```
+
+{sample}CS\_Legend\_Events\_05{sample}

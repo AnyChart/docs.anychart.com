@@ -59,8 +59,8 @@ anychart.onDocumentReady(function () {
     // set the height of the legend
     chart.legend().height(50);
 
-    /* listen to the legendItemMouseOver event and
-    configure the font and icon size of the legend item*/
+    /* listen to the legendItemMouseOver event
+    configure the legend item */
     chart.legend().listen("legendItemMouseOver", function(e) {
       var item = chart.getSeriesAt(e.itemIndex).legendItem();
       item.iconSize(20);
@@ -69,8 +69,8 @@ anychart.onDocumentReady(function () {
       item.fontWeight(600);
     });
 
-    /*  listen to the legendItemMouseOut event and
-    restore the default settings of the legend item*/
+    /*  listen to the legendItemMouseOut event
+    and restore the default settings of the legend item*/
     chart.legend().listen("legendItemMouseOut", function(e) {
       var item = chart.getSeriesAt(e.itemIndex).legendItem();
       item.iconSize(15);

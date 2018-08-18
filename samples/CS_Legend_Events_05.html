@@ -57,26 +57,55 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     /* disable the default behavior of the legend
-    on the legendItemMouseDown event */
+    on the legendItemMouseDown event
+    and prevent the legendItemMouseDown event */
     chart.legend().listen("legendItemMouseDown", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    /* disable the default behavior of the legend
+    on the legendItemMouseOver event */
+    chart.legend().listen("legendItemMouseOver", function(e) {
       e.preventDefault();
     });
 
-    /* listen to the legendItemClick event
-    and select / deselect the series */
-    chart.legend().listen("legendItemClick", function(e) {
-      var series = chart.getSeriesAt(e.itemIndex);
-      var selected = !series.meta("selected");
-      if (selected) {
-        series.select();
-      } else {
-        series.unselect();
+    // customize the hover cursor of the legend
+    chart.legend().hoverCursor("default");
+
+    /* listen to the pointsSelect event
+    and configure legend items */
+    chart.listen("pointsSelect", function(e) {
+      e.currentPoint.series.legendItem().iconFill("#455a64");
+      for (var i = 0; i < chart.getSeriesCount(); i++) {
+        var series = chart.getSeriesAt(i)
+        if (series.meta("selected")) {
+           series.meta("selected", false);
+           series.legendItem().iconFill(series.color());
+        }
       }
-      series.meta("selected", selected);
+      e.currentPoint.series.meta("selected", true);
+    });
+
+    /* listen to the pointMouseOver event
+    and configure the legend item */
+    chart.listen("pointMouseOver", function(e) {
+      if (!e.series.meta("selected")) {
+        color = anychart.color.lighten(e.series.color());
+        e.series.legendItem().iconFill(color);
+      }
+    });
+
+    /* listen to the pointMouseOut event
+    and restore the default settings of the legend item */
+    chart.listen("pointMouseOut", function(e) {
+      if (!e.series.meta("selected")) {
+        e.series.legendItem().iconFill(e.series.color());
+      }
     });
 
     // set the chart title
-    chart.title("?");
+    chart.title("Legend Interactivity: Point Events");
 
     // set the container id
     chart.container("container");
