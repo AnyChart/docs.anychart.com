@@ -56,6 +56,9 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
+    // prevent points from being deselected
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
     /* disable the default behavior of the legend
     on the legendItemMouseDown event
     and prevent the legendItemMouseDown event */

@@ -97,36 +97,7 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 ## ???
 
 ```
-/* listen to the pointsSelect event
-and configure legend items */
-chart.listen("pointsSelect", function(e) {
-  e.currentPoint.series.legendItem().iconFill("#455a64");
-  for (var i = 0; i < chart.getSeriesCount(); i++) {
-    var series = chart.getSeriesAt(i)
-    if (series.meta("selected")) {
-       series.meta("selected", false);
-       series.legendItem().iconFill(series.color());
-    }
-  }
-  e.currentPoint.series.meta("selected", true);
-});
 
-/* listen to the pointMouseOver event
-and configure the legend item */
-chart.listen("pointMouseOver", function(e) {
-  if (!e.series.meta("selected")) {
-    color = anychart.color.lighten(e.series.color());
-    e.series.legendItem().iconFill(color);
-  }
-});
-
-/* listen to the pointMouseOut event
-and restore the default settings of the legend item */
-chart.listen("pointMouseOut", function(e) {
-  if (!e.series.meta("selected")) {
-    e.series.legendItem().iconFill(e.series.color());
-  }
-});
 ```
 
 {sample}CS\_Legend\_Events\_05{sample}
