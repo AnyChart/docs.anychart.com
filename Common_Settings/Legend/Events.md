@@ -97,23 +97,6 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 ## ???
 
 ```
-/* disable the default behavior of the legend
-on the legendItemMouseDown event
-and prevent the legendItemMouseDown event */
-chart.legend().listen("legendItemMouseDown", function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-});
-
-/* disable the default behavior of the legend
-on the legendItemMouseOver event */
-chart.legend().listen("legendItemMouseOver", function(e) {
-  e.preventDefault();
-});
-
-// customize the hover cursor of the legend
-chart.legend().hoverCursor("default");
-
 /* listen to the pointsSelect event
 and configure legend items */
 chart.listen("pointsSelect", function(e) {
