@@ -82,7 +82,7 @@ anychart.onDocumentReady(function () {
       e.currentPoint.series.legendItem().iconFill("#455a64");
       for (var i = 0; i < chart.getSeriesCount(); i++) {
         var series = chart.getSeriesAt(i)
-        if (series.meta("selected")) {
+        if (series.meta("selected") & series != e.currentPoint.series) {
            series.meta("selected", false);
            series.legendItem().iconFill(series.color());
         }
