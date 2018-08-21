@@ -70,31 +70,42 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 
 {sample}CS\_Legend\_Events\_03{sample}
 
+## Chart Points
+
 ```
-/* listen to the legendItemMouseOver event
-and configure the legend item*/
-chart.legend().listen("legendItemMouseOver", function(e) {
-  var item = chart.getSeriesAt(e.itemIndex).legendItem();
-  item.iconSize(20);
-  item.iconStroke("black", 2);
-  item.fontColor("black");
-  item.fontWeight(600);
+/* listen to the pointsSelect event
+and configure legend items */
+chart.listen("pointsSelect", function(e) {
+  e.currentPoint.series.legendItem().iconFill("#455a64");
+  for (var i = 0; i < chart.getSeriesCount(); i++) {
+    var series = chart.getSeriesAt(i)
+    if (series.meta("selected") & series != e.currentPoint.series) {
+       series.meta("selected", false);
+       series.legendItem().iconFill(series.color());
+    }
+  }
+  e.currentPoint.series.meta("selected", true);
 });
 
-/* listen to the legendItemMouseOut event
+/* listen to the pointMouseOver event
+and configure the legend item */
+chart.listen("pointMouseOver", function(e) {
+  if (!e.series.meta("selected")) {
+    color = anychart.color.lighten(e.series.color());
+    e.series.legendItem().iconFill(color);
+  }
+});
+
+/* listen to the pointMouseOut event
 and restore the default settings of the legend item */
-chart.legend().listen("legendItemMouseOut", function(e) {
-  var item = chart.getSeriesAt(e.itemIndex).legendItem();
-  item.iconSize(15);
-  item.iconStroke("none");
-  item.fontColor("#7c868e");
-  item.fontWeight("normal");
+chart.listen("pointMouseOut", function(e) {
+  if (!e.series.meta("selected")) {
+    e.series.legendItem().iconFill(e.series.color());
+  }
 });
 ```
 
 {sample}CS\_Legend\_Events\_04{sample}
-
-## ???
 
 ```
 

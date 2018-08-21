@@ -56,31 +56,59 @@ anychart.onDocumentReady(function () {
     // enable the legend
     chart.legend(true);
 
-    // set the height of the legend
-    chart.legend().height(50);
+    // prevent points from being deselected
+    chart.interactivity().unselectOnClickOutOfPoint(false);
 
-    /* listen to the legendItemMouseOver event
-    configure the legend item */
-    chart.legend().listen("legendItemMouseOver", function(e) {
-      var item = chart.getSeriesAt(e.itemIndex).legendItem();
-      item.iconSize(20);
-      item.iconStroke("black", 2);
-      item.fontColor("black");
-      item.fontWeight(600);
+    /* disable the default behavior of the legend
+    on the legendItemMouseDown event
+    and prevent the legendItemMouseDown event */
+    chart.legend().listen("legendItemMouseDown", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
     });
 
-    /*  listen to the legendItemMouseOut event
-    and restore the default settings of the legend item*/
-    chart.legend().listen("legendItemMouseOut", function(e) {
-      var item = chart.getSeriesAt(e.itemIndex).legendItem();
-      item.iconSize(15);
-      item.iconStroke("none");
-      item.fontColor("#7c868e");
-      item.fontWeight("normal");
+    /* disable the default behavior of the legend
+    on the legendItemMouseOver event */
+    chart.legend().listen("legendItemMouseOver", function(e) {
+      e.preventDefault();
+    });
+
+    // customize the hover cursor of the legend
+    chart.legend().hoverCursor("default");
+
+    /* listen to the pointsSelect event
+    and configure legend items */
+    chart.listen("pointsSelect", function(e) {
+      e.currentPoint.series.legendItem().iconFill("#455a64");
+      for (var i = 0; i < chart.getSeriesCount(); i++) {
+        var series = chart.getSeriesAt(i)
+        if (series.meta("selected") & series != e.currentPoint.series) {
+           series.meta("selected", false);
+           series.legendItem().iconFill(series.color());
+        }
+      }
+      e.currentPoint.series.meta("selected", true);
+    });
+
+    /* listen to the pointMouseOver event
+    and configure the legend item */
+    chart.listen("pointMouseOver", function(e) {
+      if (!e.series.meta("selected")) {
+        color = anychart.color.lighten(e.series.color());
+        e.series.legendItem().iconFill(color);
+      }
+    });
+
+    /* listen to the pointMouseOut event
+    and restore the default settings of the legend item */
+    chart.listen("pointMouseOut", function(e) {
+      if (!e.series.meta("selected")) {
+        e.series.legendItem().iconFill(e.series.color());
+      }
     });
 
     // set the chart title
-    chart.title("Events of Legend Items (Mouse Over / Out)");
+    chart.title("Chart Points ...");
 
     // set the container id
     chart.container("container");
