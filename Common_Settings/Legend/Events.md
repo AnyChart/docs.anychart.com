@@ -56,19 +56,23 @@ chart.legend().listen("legendItemClick", function(e) {
 /* listen to the legendItemMouseOver event
 and enable the hover state of the point */
 chart.legend().listen("legendItemMouseOver", function(e) {
-  chart.getPoint(e.itemIndex).hovered(true);
-  chart.getPoint(e.itemIndex).set("legendItem", {
-                 fontWeight: 600, iconStroke: "2"
-               });
+  var point = chart.getPoint(e.itemIndex);
+  point.hovered(true);
+  point.set("legendItem", {
+            fontWeight: 600, fontColor: "#455a64",
+            iconStroke: "2 #455a64"
+  });
 });
 
 /* listen to the legendItemMouseOut event
 and disable the hover state of the point */
 chart.legend().listen("legendItemMouseOut", function(e) {
-  chart.getPoint(e.itemIndex).hovered(false);
-  chart.getPoint(e.itemIndex).set("legendItem", {
-                fontWeight: "normal", iconStroke: "none"
-               });
+  var point = chart.getPoint(e.itemIndex);
+  point.hovered(false);
+  point.set("legendItem", {
+            fontWeight: "normal", fontColor: "#7c868e",
+            iconStroke: "none"
+  });
 });
 ```
 
