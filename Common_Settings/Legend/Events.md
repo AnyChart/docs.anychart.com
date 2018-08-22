@@ -56,15 +56,13 @@ chart.legend().listen("legendItemClick", function(e) {
 /* listen to the legendItemMouseOver event
 and enable the hover state of the point */
 chart.legend().listen("legendItemMouseOver", function(e) {
-  var point = chart.getPoint(e.itemIndex);
-  point.hovered(true);
+  chart.getPoint(e.itemIndex).hovered(true);
 });
 
 /* listen to the legendItemMouseOut event
 and disable the hover state of the point */
 chart.legend().listen("legendItemMouseOut", function(e) {
-  var point = chart.getPoint(e.itemIndex);
-  point.hovered(false);
+  chart.getPoint(e.itemIndex).hovered(false);
 });
 ```
 
