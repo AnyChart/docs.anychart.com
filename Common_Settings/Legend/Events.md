@@ -1,7 +1,20 @@
 {:index 11}
 # Events
 
+* [events](../Common_Settings/Event_Listeners)
+* [default interactivity](Basic_Settings#default_interactivity)
+
 ## Legend
+
+All the events of legend are related to its [drag-and-drop mode](Basic_Settings#drag_and_drop):
+
+<table>
+<tr><th>drag</th><th></th>The legend is being dragged.</tr>
+<tr><td>dragStart</td><td>The user has started dragging the legend.</td></tr>
+<tr><td>dragEnd</td><td>The user has stopped dragging the legend.</td></tr>
+</table>
+
+In this sample, dragging the legend affects the background of the chart:
 
 ```
 /* listen to the dragStart event
@@ -20,6 +33,20 @@ legend.listen("dragEnd", function() {
 {sample}CS\_Legend\_Events\_01{sample}
 
 ## Legend Items
+
+Here are the events of legend items:
+
+<table>
+<tr><th>legendItemClick</th><th></th>An item has been clicked.</tr>
+<tr><td>legendItemDblclick </td><td>An item has been double-clicked.</td></tr>
+<tr><td>legendItemMouseDown </td><td>A mouse button has been pressed on an item.</td></tr>
+<tr><th>legendItemMouseMove </th><th></th>A mouse has is being moved over an item.</tr>
+<tr><td>legendItemMouseOut </td><td>A mouse has been moved off of an item.</td></tr>
+<tr><td>legendItemMouseOver </td><td>A mouse has been moved over an item.</td></tr>
+<tr><th>legendItemMouseUp </th><th></th>A mouse button has been released over an item.</tr>
+</table>
+
+In the following sample, there is a multiple-series chart with the default interactivity of the legend disabled...
 
 ```
 /* disable the default behavior of the legend
