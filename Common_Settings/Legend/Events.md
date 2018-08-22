@@ -106,7 +106,20 @@ chart.listen("pointMouseOut", function(e) {
 {sample}CS\_Legend\_Events\_04{sample}
 
 ```
-
+/* listen to the pointClick event
+and configure legend items */
+chart.listen("pointClick", function(e) {
+  if (e.point.selected()) {
+    e.point.set("legendItem", {
+                fontWeight: 600, fontColor: "#455a64",
+                iconStroke: "2 #455a64"
+               });
+  } else {
+    e.point.set("legendItem", {
+                fontWeight: "normal", fontColor: "#7c868e"
+               });
+  }
+});
 ```
 
 {sample}CS\_Legend\_Events\_05{sample}
