@@ -41,7 +41,8 @@ anychart.onDocumentReady(function () {
     chart.listen("pointClick", function(e) {
       if (e.point.selected()) {
         e.point.set("legendItem", {
-                    fontWeight: 600, fontColor: "#455a64"
+                    fontWeight: 600, fontColor: "#455a64",
+                    iconStroke: "2 #455a64"
                    });
       } else {
         e.point.set("legendItem", {
