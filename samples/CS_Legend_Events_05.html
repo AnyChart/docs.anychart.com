@@ -36,6 +36,14 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.pie(data);
 
+    /* disable the default behavior of the legend
+    on the legendItemMouseDown event
+    and prevent the legendItemMouseDown event */
+    chart.legend().listen("legendItemMouseDown", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
     /* listen to the pointClick event
     and configure legend items */
     chart.listen("pointClick", function(e) {

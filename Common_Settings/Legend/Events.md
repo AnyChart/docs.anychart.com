@@ -57,12 +57,18 @@ chart.legend().listen("legendItemClick", function(e) {
 and enable the hover state of the point */
 chart.legend().listen("legendItemMouseOver", function(e) {
   chart.getPoint(e.itemIndex).hovered(true);
+  chart.getPoint(e.itemIndex).set("legendItem", {
+                 fontWeight: 600, iconStroke: "2"
+               });
 });
 
 /* listen to the legendItemMouseOut event
 and disable the hover state of the point */
 chart.legend().listen("legendItemMouseOut", function(e) {
   chart.getPoint(e.itemIndex).hovered(false);
+  chart.getPoint(e.itemIndex).set("legendItem", {
+                fontWeight: "normal", iconStroke: "none"
+               });
 });
 ```
 
