@@ -39,9 +39,9 @@ This sample shows how to enable the legend of a multiple-series line chart by us
 
 ### Default Interactivity
 
-When you click a [legend item](Legend_Items), the series of the chart it represents is shown / hidden.
+When you click a [legend item](Legend_Items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the series is hovered. (As for single-series chart types, their behavior varies with the type.)
 
-In the sample below, the last series is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
+In the sample below, the last series of a multiple-series chart is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
 
 ```
 // create a chart
