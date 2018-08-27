@@ -13,7 +13,7 @@ When the [drag-and-drop mode](Basic_Settings#drag_and_drop) of the legend is ena
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><th>drag</th><td>The legend is being dragged.</td></tr>
+<tr><td>drag</td><td>The legend is being dragged.</td></tr>
 <tr><td>dragStart</td><td>The user has started dragging the legend.</td></tr>
 <tr><td>dragEnd</td><td>The user has stopped dragging the legend.</td></tr>
 </table>
@@ -42,13 +42,13 @@ Here are the events of legend items:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><th>legendItemClick</td><td>An item has been clicked.</td></tr>
+<tr><td>legendItemClick</td><td>An item has been clicked.</td></tr>
 <tr><td>legendItemDblclick</td><td>An item has been double-clicked.</td></tr>
 <tr><td>legendItemMouseDown</td><td>A mouse button has been pressed on an item.</td></tr>
-<tr><th>legendItemMouseMove</th><td>A mouse has is being moved over an item.</td></tr>
+<tr><td>legendItemMouseMove</td><td>A mouse has is being moved over an item.</td></tr>
 <tr><td>legendItemMouseOut</td><td>A mouse has been moved off of an item.</td></tr>
 <tr><td>legendItemMouseOver</td><td>A mouse has been moved over an item.</td></tr>
-<tr><th>legendItemMouseUp</td><td>A mouse button has been released over an item.</td></tr>
+<tr><td>legendItemMouseUp</td><td>A mouse button has been released over an item.</td></tr>
 </table>
 
 ### Multiple Series
