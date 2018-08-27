@@ -120,7 +120,7 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 
 ## Chart Points
 
-By default, the events of legend items affect the chart: for example, when a legend item of a multiple-series chart is clicked on, the series it represents is enabled or disabled. Conversely, you can use the events of chart points to modify the legend and its items.
+By default, the events of legend items affect the chart: for example, when a legend item of a multiple-series chart is clicked on, the series it represents is enabled or disabled. Conversely, you can use the [events of chart points](../Event_Listeners#point-related) to modify the legend and its items.
 
 In this sample, selecting a point of a multiple-series chart or moving a mouse over it affects the appearance settings of its legend item. The `pointsSelect`, `pointMouseOver`, and `pointMouseOut` events are used.
 
@@ -163,7 +163,7 @@ chart.listen("pointMouseOut", function(e) {
 
 In the following sample, when you click on a point of a single-series chart, the appearance of its icon is modified. The `pointClick` event is used.
 
-**Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data (see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series)).
+**Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data – see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
 
 ```
 /* listen to the pointClick event
