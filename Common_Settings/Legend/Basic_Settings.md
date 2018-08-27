@@ -31,15 +31,15 @@ var chart = anychart.line();
 chart.legend().enabled(true);
 ```
 
-**Note:** [Events](Events) (?)
-
 This sample shows how to enable the legend of a multiple-series line chart by using the {api:anychart.charts.Cartesian#legend}legend(){api} method:
 
 {sample}CS\_Legend\_Basic\_01{sample}
 
 ### Default Interactivity
 
-When you click a [legend item](Legend_Items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the series is hovered. (As for single-series chart types, their behavior varies with the type.)
+When you click a [legend item](Legend_Items) of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the series is hovered. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
+
+**Note:** To learn how to change the default interactivity settings of the legend, see the [Events](Events) section.
 
 In the sample below, the last series of a multiple-series chart is initially disabled, but its icon is shown in the legend, and you can make the series appear by clicking the icon:
 
@@ -191,7 +191,7 @@ chart.legend().drag(true);
 
 **Note 1:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
 
-**Note 2:** [Events](Events) (?)
+**Note 2:** When the drag-and-drop is enabled, you can use special events of the legend. See the [Events: Legend](Events#legend) section.
 
 This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) (also, the [background](Background) is enabled):
 
