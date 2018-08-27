@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
     });
 
     /* listen to the legendItemClick event,
-    select / deselect the series and configure the legend item */
+    select / deselect the series, and configure the legend item */
     chart.legend().listen("legendItemClick", function(e) {
       var series = chart.getSeriesAt(e.itemIndex);
       var selected = series.meta("selected");
@@ -92,7 +92,10 @@ anychart.onDocumentReady(function () {
     });
 
     // set the chart title
-    chart.title("Events: Legend Items (Multiple Series)");
+    chart.title().useHtml(true);
+    chart.title("Events: Legend Items (Multiple Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Click on Legend Items");
 
     // set the container id
     chart.container("container");

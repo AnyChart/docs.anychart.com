@@ -59,7 +59,10 @@ anychart.onDocumentReady(function () {
     });
 
     // set the chart title
-    chart.title("Events: Legend Items (Single Series)");
+    chart.title().useHtml(true);
+    chart.title("Events: Legend Items (Single Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Hover over Legend Items");
 
     // set the container id
     chart.container("container");

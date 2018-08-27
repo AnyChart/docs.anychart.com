@@ -44,6 +44,13 @@ anychart.onDocumentReady(function () {
       e.stopPropagation();
     });
 
+    /* disable the default behavior of the legend
+    on the legendItemMouseOver event */
+    chart.legend().listen("legendItemMouseOver", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
     /* listen to the pointClick event
     and configure legend items */
     chart.listen("pointClick", function(e) {
@@ -60,7 +67,10 @@ anychart.onDocumentReady(function () {
     });
 
     // set the chart title
-    chart.title("Events: Chart Points (Single Series)");
+    chart.title().useHtml(true);
+    chart.title("Events: Chart Points (Single Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Click on Chart Points");
 
     // set the container id
     chart.container("container");

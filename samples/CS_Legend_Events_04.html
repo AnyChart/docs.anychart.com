@@ -109,7 +109,10 @@ anychart.onDocumentReady(function () {
     });
 
     // set the chart title
-    chart.title("Events: Chart Points (Multiple Series)");
+    chart.title().useHtml(true);
+    chart.title("Events: Chart Points (Multiple Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Click on and Hover over Chart Points");
 
     // set the container id
     chart.container("container");

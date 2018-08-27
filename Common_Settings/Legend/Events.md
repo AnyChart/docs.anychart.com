@@ -44,8 +44,8 @@ Here are the events of legend items:
 
 <table>
 <tr><th>Value</th><th>Description</th></tr>
-<tr><td>legendItemClick</td><td>An item has been clicked.</td></tr>
-<tr><td>legendItemDblclick</td><td>An item has been double-clicked.</td></tr>
+<tr><td>legendItemClick</td><td>An item has been clicked on.</td></tr>
+<tr><td>legendItemDblclick</td><td>An item has been double-clicked on.</td></tr>
 <tr><td>legendItemMouseDown</td><td>A mouse button has been pressed on an item.</td></tr>
 <tr><td>legendItemMouseMove</td><td>A mouse has is being moved over an item.</td></tr>
 <tr><td>legendItemMouseOut</td><td>A mouse has been moved off of an item.</td></tr>
@@ -55,7 +55,7 @@ Here are the events of legend items:
 
 ### Multiple Series
 
-In the sample below, there is a multiple-series chart with the default interactivity of the legend disabled. When you click an icon, its fill color is modified, and its series, instead of being hidden / shown, is selected.
+In the sample below, there is a multiple-series chart with the default interactivity of the legend disabled. When you click on an icon, its fill color is modified, and its series, instead of being hidden / shown, is selected.
 
 **Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](Individual_Legend_Items) section.
 
@@ -73,7 +73,7 @@ chart.legend().listen("legendItemMouseOver", function(e) {
 });
 
 /* listen to the legendItemClick event,
-select / deselect the series and configure the legend item */
+select / deselect the series, and configure the legend item */
 chart.legend().listen("legendItemClick", function(e) {
   var series = chart.getSeriesAt(e.itemIndex);
   var selected = series.meta("selected");
@@ -124,7 +124,7 @@ chart.legend().listen("legendItemMouseOut", function(e) {
 
 ## Chart Points
 
-By default, the events of legend items affect the chart: for example, when a legend item of a multiple-series chart is clicked, the series it represents is enabled or disabled. Conversely, you can also use the events of chart points to modify the legend and its items.
+By default, the events of legend items affect the chart: for example, when a legend item of a multiple-series chart is clicked on, the series it represents is enabled or disabled. Conversely, you can use the events of chart points to modify the legend and its items.
 
 ### Multiple Series
 
@@ -169,7 +169,7 @@ chart.listen("pointMouseOut", function(e) {
 
 ### Single Series
 
-In the following sample, when you click a point of a single-series chart, the appearance of its icon is modified. The `pointClick` event is used.
+In the following sample, when you click on a point of a single-series chart, the appearance of its icon is modified. The `pointClick` event is used.
 
 **Note**: an individual legend item of a single-series chart can be customized only by adding special fields to the data (see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series)).
 
