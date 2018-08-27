@@ -197,7 +197,7 @@ pie3.sort("none");
 
 ### Exploded Slices
 
-By default, there is no spaces between the slices of a Pie chart, and when a user clicks a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
+By default, there is no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
 
 You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method (you can do both pixels and percents):
 

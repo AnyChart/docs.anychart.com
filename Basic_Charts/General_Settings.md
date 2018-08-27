@@ -271,13 +271,13 @@ chart.listen("pointsSelect", function(e){
   chart.title("$" + value);
 });
 
-// create an event listener for double-clicking a point
+// create an event listener for double-clicking on a point
 chart.listen("pointDblClick", function(e){
-  // get the category the double-clicked point belongs to
+  // get the category the point belongs to
   var name = e.point.getStat("categoryName");
-  // get the value of the double-clicked point
+  // get the value of the point
   var value = e.point.getStat("value");
-  // change the chart title on double-clicking a point
+  // change the chart title on double-clicking on a point
   chart.title(name + ": $" + value);
 });
 ```

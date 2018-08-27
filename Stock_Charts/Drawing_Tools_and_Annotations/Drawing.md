@@ -36,7 +36,7 @@ To cancel the drawing process, call the {api:anychart.core.annotations.PlotContr
 plot.annotations().cancelDrawing()
 ```
 
-For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
+For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click on any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
 {sample}STOCK\_Drawing\_Drawing\_02{sample}
 

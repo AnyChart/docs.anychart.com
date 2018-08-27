@@ -88,7 +88,7 @@ chart.legend().listen("legendItemClick", function(e) {
 
 {sample}CS\_Legend\_Events\_02{sample}
 
-In the following sample, hovering over a legend item of a single-series chart changes its visual style and enables the hovered state of the point it represents.
+In the following sample, hovering over a legend item of a single-series chart changes its visual style and enables the hover state of the point it represents.
 
 **Note**: An individual legend item of a single-series chart can be customized only by adding special fields to the data – see [Individual Legend Items: Single Series](Individual_Legend_Items#single_series).
 

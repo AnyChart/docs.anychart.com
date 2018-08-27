@@ -604,7 +604,7 @@ chart.leaves().labels().position("circular");
 
 #### Selection Mode
 
-By default, if you click a leaf of a Sunburst chart, the leaf is selected, and if you click a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
+By default, if you click on a leaf of a Sunburst chart, the leaf is selected, and if you click on a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
 
 You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
 
@@ -613,7 +613,7 @@ You can set another [selection mode](../Common_Settings/Interactivity/Overview#s
 * `"single-select"`
 * `"none"`
 
-**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
+**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking on them.
 
 The sample below shows how to change the selection mode, which is initially set to `"none"`:
 
