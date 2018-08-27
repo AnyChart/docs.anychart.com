@@ -191,7 +191,7 @@ chart.legend().drag(true);
 
 **Note 1:** The drag-and-drop mode works within the limits set by the position mode, which places the legend [outside or inside](#outside_/_inside) the area limited by the axes. If the position mode is the default `outside`, an additional limit is set by the [position](#position_+_alignment) of the legend relative to the chart.
 
-**Note 2:** When the drag-and-drop is enabled, you can use special events of the legend. See the [Events: Legend](Events#legend) section.
+**Note 2:** When the drag-and-drop mode is enabled, you can use special events of the legend. See the [Events: Legend](Events#legend) section.
 
 This sample demonstrates the drag-and-drop mode, applied to a legend with the position mode set to [inside](#outside_/_inside) (also, the [background](Background) is enabled):
 

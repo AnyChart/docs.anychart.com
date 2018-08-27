@@ -1,16 +1,19 @@
 {:index 11}
 # Events
 
+## Overview
+
 This article explains how to work with the [events](../Common_Settings/Event_Listeners) of the legend and legend items. Also, it shows how to use the events of chart points to modify the legend or its items.
 
 Please note: the [default interactivity](Basic_Settings#default_interactivity) of multiple-series charts differs from that of single-series charts, so the exact way of working with events depends on whether the chart type allows adding multiple series.
 
 ## Legend
 
-When the [drag-and-drop mode](Basic_Settings#drag_and_drop) mode of the legend is enabled, you can use the following events:
+When the [drag-and-drop mode](Basic_Settings#drag_and_drop) of the legend is enabled, you can use the following events:
 
 <table>
-<tr><th>drag</th><th>The legend is being dragged.</th></tr>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><th>drag</th><td>The legend is being dragged.</td></tr>
 <tr><td>dragStart</td><td>The user has started dragging the legend.</td></tr>
 <tr><td>dragEnd</td><td>The user has stopped dragging the legend.</td></tr>
 </table>
@@ -38,20 +41,21 @@ legend.listen("dragEnd", function() {
 Here are the events of legend items:
 
 <table>
-<tr><th>legendItemClick</th><th>An item has been clicked.</th></tr>
-<tr><td>legendItemDblclick </td><td>An item has been double-clicked.</td></tr>
-<tr><td>legendItemMouseDown </td><td>A mouse button has been pressed on an item.</td></tr>
-<tr><th>legendItemMouseMove </th><th></th>A mouse has is being moved over an item.</tr>
-<tr><td>legendItemMouseOut </td><td>A mouse has been moved off of an item.</td></tr>
-<tr><td>legendItemMouseOver </td><td>A mouse has been moved over an item.</td></tr>
-<tr><th>legendItemMouseUp </th><th>A mouse button has been released over an item.</th></tr>
+<tr><th>Value</th><th>Description</th></tr>
+<tr><th>legendItemClick</td><td>An item has been clicked.</td></tr>
+<tr><td>legendItemDblclick</td><td>An item has been double-clicked.</td></tr>
+<tr><td>legendItemMouseDown</td><td>A mouse button has been pressed on an item.</td></tr>
+<tr><th>legendItemMouseMove</th><td>A mouse has is being moved over an item.</td></tr>
+<tr><td>legendItemMouseOut</td><td>A mouse has been moved off of an item.</td></tr>
+<tr><td>legendItemMouseOver</td><td>A mouse has been moved over an item.</td></tr>
+<tr><th>legendItemMouseUp</td><td>A mouse button has been released over an item.</td></tr>
 </table>
 
 ### Multiple Series
 
 In the sample below, there is a multiple-series chart with the default interactivity of the legend disabled. When you click an icon, its fill color is modified, and its series, instead of being hidden / shown, is selected.
 
-**Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](individual_legend_items) section.
+**Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](Individual_Legend_Items) section.
 
 ```
 /* disable the default behavior of the legend
@@ -122,9 +126,9 @@ By default, the events of legend items affect the chart: for example, when a leg
 
 ### Multiple Series
 
-In this sample selecting a point of a multiple-series chart or moving a mouse over it affects the appearance settings of its legend item. The `pointsSelect`, `pointMouseOver`, and `pointMouseOut` events are used.
+In this sample, selecting a point of a multiple-series chart or moving a mouse over it affects the appearance settings of its legend item. The `pointsSelect`, `pointMouseOver`, and `pointMouseOut` events are used.
 
-**Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](individual_legend_items) section.
+**Note:** The methods allowing you to configure legend items individually can be found in the [Individual Legend Items](Individual_Legend_Items) section.
 
 ```
 /* listen to the pointsSelect event
