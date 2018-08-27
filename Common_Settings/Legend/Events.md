@@ -3,9 +3,11 @@
 
 ## Overview
 
-This article explains how to work with the [events](../Common_Settings/Event_Listeners) of the legend and legend items. Also, it shows how to use the events of chart points to modify the legend or its items.
+This article explains how to work with the events of the legend and legend items. Also, it shows how to use the events of chart points to modify the legend or its items.
 
 Please note: the [default interactivity](Basic_Settings#default_interactivity) of multiple-series charts differs from that of single-series charts, so the exact way of working with events depends on whether the chart type allows adding multiple series.
+
+See [Event Listeners](../Event_Listeners) and [Interactivity](../Interactivity) to learn more.
 
 ## Legend
 
