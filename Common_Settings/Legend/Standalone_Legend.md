@@ -10,6 +10,8 @@
 
 ## 1
 
+* {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
+
 ```
 // create a standalone legend
 var legend = anychart.standalones.legend();
@@ -27,6 +29,9 @@ legend.draw();
 {sample}CS\_Legend\_Standalone\_01{sample}
 
 ## 2
+
+* {api:anychart.standalones.Legend#items}items(){api}
+* [Events](Events)
 
 ```
 // create a standalone legend
@@ -53,6 +58,7 @@ legend.items([
     iconStroke: "3 #ef6c00"
   }
 ]);
+```
 
 /* listen to the legendItemClick event
 and enable / disable the current series on both charts */
