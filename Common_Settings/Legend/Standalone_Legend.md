@@ -32,7 +32,7 @@ legend.draw();
 
 ```
 
-{sample}CS\_Legend\_Standalone\_01{sample}
+{sample}CS\_Legend\_Standalone\_02{sample}
 
 ## 3
 
@@ -40,4 +40,4 @@ legend.draw();
 
 ```
 
-{sample}CS\_Legend\_Standalone\_01{sample}
+{sample}CS\_Legend\_Standalone\_03{sample}
