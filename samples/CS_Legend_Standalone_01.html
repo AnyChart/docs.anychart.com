@@ -27,13 +27,10 @@ anychart.onDocumentReady(function () {
 
     // create data for the first chart
     var data1 = [
-      {x: "John Doe", value: 1},
-      {x: "Richard Roe", value: 1},
-      {x: "Larry Loe", value: 1},
-      {x: "Marta Moe", value: 1},
-      {x: "Jane Poe", value: 1},
-      {x: "Norma Noe", value: 1},
-      {x: "William Woe", value: 1}
+      {x: "John", value: 5000},
+      {x: "Richard", value: 5000},
+      {x: "Larry", value: 5000},
+      {x: "Marta", value: 15000}
     ];
 
     // create data for the second chart
@@ -50,7 +47,7 @@ anychart.onDocumentReady(function () {
 
     // create and configure the first chart
     var chart1 = anychart.pie(data1);
-    chart1.bounds(0, 0, "40%", "100%");
+    chart1.bounds(0, "10%", "40%", "90%");
     // disable the legend
     chart1.legend(false);
     // set the chart container
@@ -60,15 +57,24 @@ anychart.onDocumentReady(function () {
 
     // create and configure the second chart
     var chart2 = anychart.line(data2);
-    chart2.bounds("40%", 0, "60%", "100%");
+    chart2.bounds("40%", "10%", "60%", "90%");
     // set the chart container
     chart2.container(stage);
     // initiate drawing the chart
     chart2.draw();   
 
     // create a standalone legend
-    // ...
+    var legend = anychart.standalones.legend();
 
+    // set the source of legend items
+    legend.itemsSource([chart1, chart2]);
+
+    // set the padding of the legend
+    legend.padding(10);
+
+    // draw the legend
+    legend.container(stage);
+    legend.draw();
 });
 </script>
 </body>
