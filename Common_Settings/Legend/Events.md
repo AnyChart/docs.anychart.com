@@ -176,7 +176,8 @@ chart.listen("pointClick", function(e) {
                });
   } else {
     e.point.set("legendItem", {
-                fontWeight: "normal", fontColor: "#7c868e"
+                fontWeight: "normal", fontColor: "#7c868e",
+                iconStroke: null
                });
   }
 });

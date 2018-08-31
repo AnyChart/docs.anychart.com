@@ -97,7 +97,37 @@ anychart.onDocumentReady(function () {
     ]);
 
     // ...
-    
+    legend.listen("legendItemMouseOver", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      series1.markers(true);
+      series2.markers(true);
+      series1.color("red");
+      series2.color("red");
+    });
+
+    // ...
+    legend.listen("legendItemMouseOut", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      series1.markers(false);
+      series2.markers(false);
+      series1.color("blue");
+      series2.color("blue");
+    });
+
+    // ...
+    legend.listen("legendItemClick", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      if (series1.enabled()) {
+        series1.enabled(false);
+        series2.enabled(false);
+      } else {
+        series1.enabled(true);
+        series2.enabled(true);
+      }
+    });
 
     // set the container for the legend
     legend.container(stage);
