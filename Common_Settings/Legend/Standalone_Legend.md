@@ -11,7 +11,17 @@
 ## 1
 
 ```
+// create a standalone legend
+var legend = anychart.standalones.legend();
 
+// set the source of legend items
+legend.itemsSource([chart1, chart2]);
+
+// set the container for the legend
+legend.container(stage);
+
+// draw the legend
+legend.draw();
 ```
 
 {sample}CS\_Legend\_Standalone\_01{sample}
