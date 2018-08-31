@@ -100,20 +100,16 @@ anychart.onDocumentReady(function () {
     legend.listen("legendItemMouseOver", function(e) {
       var series1 = chart1.getSeriesAt(e.itemIndex);
       var series2 = chart2.getSeriesAt(e.itemIndex);
-      series1.markers(true);
-      series2.markers(true);
-      series1.color("red");
-      series2.color("red");
+      series1.stroke(anychart.color.lighten(series1.color()), 5);
+      series2.stroke(anychart.color.lighten(series2.color()), 5);
     });
 
     // ...
     legend.listen("legendItemMouseOut", function(e) {
       var series1 = chart1.getSeriesAt(e.itemIndex);
       var series2 = chart2.getSeriesAt(e.itemIndex);
-      series1.markers(false);
-      series2.markers(false);
-      series1.color("blue");
-      series2.color("blue");
+      series1.stroke(series1.color(), 1.5);
+      series2.stroke(series2.color(), 1.5);
     });
 
     // ...
