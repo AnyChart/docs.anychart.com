@@ -46,10 +46,11 @@ anychart.onDocumentReady(function () {
 
     // create and configure the first chart
     var chart1 = anychart.line();
-    chart1.spline(data1.mapAs({x: 0, value: 1}));
-    chart1.spline(data1.mapAs({x: 0, value: 2}));
-    chart1.spline(data1.mapAs({x: 0, value: 3}));
+    chart1.spline(data1.mapAs({x: 0, value: 1})).name("John");
+    chart1.spline(data1.mapAs({x: 0, value: 2})).name("Larry");
+    chart1.spline(data1.mapAs({x: 0, value: 3})).name("Marta");
     chart1.bounds(0, "10%", "50%", "90%");
+    chart1.title("2017");
     // set the chart container
     chart1.container(stage);
     // initiate drawing the chart
@@ -57,20 +58,46 @@ anychart.onDocumentReady(function () {
 
     // create and configure the first chart
     var chart2 = anychart.line();
-    chart2.spline(data2.mapAs({x: 0, value: 1}));
-    chart2.spline(data2.mapAs({x: 0, value: 2}));
-    chart2.spline(data2.mapAs({x: 0, value: 3}));
+    chart2.spline(data2.mapAs({x: 0, value: 1})).name("John");
+    chart2.spline(data2.mapAs({x: 0, value: 2})).name("Larry");
+    chart2.spline(data2.mapAs({x: 0, value: 3})).name("Marta");
     chart2.bounds("50%", "10%", "50%", "90%");
+    chart2.title("2018");
     // set the chart container
     chart2.container(stage);
     // initiate drawing the chart
-    chart2.draw();   
+    chart2.draw();
 
     // create a standalone legend
     var legend = anychart.standalones.legend();
 
+    // enable the legend
+    legend.enabled(true);
+
     // set the padding of the legend
     legend.padding(10);
+
+    // ...
+    legend.items([
+      {
+        text: "John",
+        iconType: "spline",
+        iconStroke: "3 #64b5f6"
+      },
+      {
+        text: "Larry",
+        iconType: "spline",
+        iconStroke: "3 #1976d2"
+      },
+      {
+        text: "Marta",
+        iconType: "spline",
+        iconStroke: "3 #ef6c00"
+      }
+    ]);
+
+    // ...
+    
 
     // set the container for the legend
     legend.container(stage);
