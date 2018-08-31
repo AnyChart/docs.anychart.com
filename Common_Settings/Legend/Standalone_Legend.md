@@ -56,8 +56,9 @@ legend.items([
   }
 ]);
 
-/* when a legend item is clicked on,
-enable / disable the series it represents */
+/* listen to the legendItemClick event
+and enable / disable the series
+the current legend item corresponds to */
 legend.listen("legendItemClick", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
@@ -70,8 +71,9 @@ legend.listen("legendItemClick", function(e) {
   }
 });
 
-/* when a mouse is moved over a legend item,
-configure the appearance of the series it represents */
+/* listen to the legendItemMouseOver event
+and configure the appearance of the series
+the current legend item corresponds to */
 legend.listen("legendItemMouseOver", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
@@ -79,8 +81,9 @@ legend.listen("legendItemMouseOver", function(e) {
   series2.stroke(anychart.color.lighten(series2.color()), 5);
 });
 
-/* when a mouse is moved off a legend item,
-restore the default settings of the series it represents */
+/* listen to the legendItemMouseOver event
+and restore the default settings of the series
+the current legend item corresponds to */
 legend.listen("legendItemMouseOut", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
