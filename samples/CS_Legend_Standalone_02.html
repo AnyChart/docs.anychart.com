@@ -97,8 +97,7 @@ anychart.onDocumentReady(function () {
     ]);
 
 /* listen to the legendItemClick event
-and enable / disable the series
-the current legend item corresponds to */
+and enable / disable the current series on both charts */
 legend.listen("legendItemClick", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
@@ -112,8 +111,7 @@ legend.listen("legendItemClick", function(e) {
 });
 
 /* listen to the legendItemMouseOver event
-and configure the appearance of the series
-the current legend item corresponds to */
+and configure the current series on both charts */
 legend.listen("legendItemMouseOver", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
@@ -122,8 +120,7 @@ legend.listen("legendItemMouseOver", function(e) {
 });
 
 /* listen to the legendItemMouseOver event
-and restore the default settings of the series
-the current legend item corresponds to */
+and restore the defaults of the current series on both charts */
 legend.listen("legendItemMouseOut", function(e) {
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
