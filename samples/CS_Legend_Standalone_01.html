@@ -35,11 +35,11 @@ anychart.onDocumentReady(function () {
 
     // create data for the second chart
     var data2 = [
-      {x: "January", value: 7000},
-      {x: "February", value: 9000},
-      {x: "March", value: 14000},
-      {x: "April", value: 13000},
-      {x: "May", value: 11000}
+      {x: "January", value: 2000},
+      {x: "February", value: 4000},
+      {x: "March", value: 10000},
+      {x: "April", value: 9000},
+      {x: "May", value: 5000}
     ];
 
     // create a stage
@@ -56,7 +56,10 @@ anychart.onDocumentReady(function () {
     chart1.draw();   
 
     // create and configure the second chart
-    var chart2 = anychart.line(data2);
+    var chart2 = anychart.line();    
+    var series = chart2.line(data2);
+    series.name("Total");
+    series.color("#455a64");
     chart2.bounds("40%", "10%", "60%", "90%");
     // set the chart container
     chart2.container(stage);
