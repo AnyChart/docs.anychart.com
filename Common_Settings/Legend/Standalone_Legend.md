@@ -3,7 +3,7 @@
 
 ## Overview
 
-* [Standalones](../../Dashabords/Standalones)
+* [Standalones](../../Dashboards/Standalones)
 * {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 * ...
