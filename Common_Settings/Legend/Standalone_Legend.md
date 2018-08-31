@@ -8,7 +8,7 @@
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 * ...
 
-## 1 Legend – Multiple Charts
+## One Legend for Multiple Charts
 
 ### One Series
 
@@ -100,7 +100,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_02{sample}
 
-## 1 Chart – Multiple Legends
+## Multiple Legends for One Chart
 
 ```
 
