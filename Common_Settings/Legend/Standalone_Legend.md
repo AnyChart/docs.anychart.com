@@ -12,6 +12,7 @@
 
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 
+
 ```
 // create a standalone legend
 var legend = anychart.standalones.legend();
@@ -31,7 +32,8 @@ legend.draw();
 ## 2
 
 * {api:anychart.standalones.Legend#items}items(){api}
-* [Events](Events)
+* [Events: Legend Items](Events#legend_items)
+
 
 ```
 // create a standalone legend
