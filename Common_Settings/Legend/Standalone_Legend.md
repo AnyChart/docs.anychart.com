@@ -60,6 +60,12 @@ legend.items([
     iconStroke: "3 #ef6c00"
   }
 ]);
+
+// set the container for the legend
+legend.container(stage);
+
+// draw the legend
+legend.draw();
 ```
 
 ```
@@ -94,12 +100,6 @@ legend.listen("legendItemMouseOut", function(e) {
   series1.stroke(series1.color(), 1.5);
   series2.stroke(series2.color(), 1.5);
 });
-
-// set the container for the legend
-legend.container(stage);
-
-// draw the legend
-legend.draw();
 ```
 
 {sample}CS\_Legend\_Standalone\_02{sample}
