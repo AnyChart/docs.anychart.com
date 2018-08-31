@@ -8,7 +8,7 @@
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 * ...
 
-## One Legend for Multiple Charts
+## 1
 
 ```
 // create a standalone legend
@@ -26,7 +26,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_01{sample}
 
-## One Legend Item for Multiple Series
+## 2
 
 ```
 // create a standalone legend
@@ -98,7 +98,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_02{sample}
 
-## Multiple Legends for One Chart
+## 3
 
 ```
 
