@@ -82,24 +82,6 @@ legend.listen("legendItemClick", function(e) {
     series2.enabled(true);
   }
 });
-
-/* listen to the legendItemMouseOver event
-and configure the current series on both charts */
-legend.listen("legendItemMouseOver", function(e) {
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  series1.stroke(anychart.color.lighten(series1.color()), 5);
-  series2.stroke(anychart.color.lighten(series2.color()), 5);
-});
-
-/* listen to the legendItemMouseOver event
-and restore the defaults of the current series on both charts */
-legend.listen("legendItemMouseOut", function(e) {
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  series1.stroke(series1.color(), 1.5);
-  series2.stroke(series2.color(), 1.5);
-});
 ```
 
 {sample}CS\_Legend\_Standalone\_02{sample}
