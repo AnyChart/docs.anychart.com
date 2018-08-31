@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
     // set the padding of the legend
     legend.padding(10);
 
-    // ...
+    // add custom legend items
     legend.items([
       {
         text: "John",
@@ -96,34 +96,43 @@ anychart.onDocumentReady(function () {
       }
     ]);
 
-    // ...
-    legend.listen("legendItemMouseOver", function(e) {
-      var series1 = chart1.getSeriesAt(e.itemIndex);
-      var series2 = chart2.getSeriesAt(e.itemIndex);
-      series1.stroke(anychart.color.lighten(series1.color()), 5);
-      series2.stroke(anychart.color.lighten(series2.color()), 5);
-    });
+/* when a legend item is clicked on,
+enable / disable the series it represents */
+legend.listen("legendItemClick", function(e) {
+  var series1 = chart1.getSeriesAt(e.itemIndex);
+  var series2 = chart2.getSeriesAt(e.itemIndex);
+  if (series1.enabled()) {
+    series1.enabled(false);
+    series2.enabled(false);
+  } else {
+    series1.enabled(true);
+    series2.enabled(true);
+  }
+});
 
-    // ...
-    legend.listen("legendItemMouseOut", function(e) {
-      var series1 = chart1.getSeriesAt(e.itemIndex);
-      var series2 = chart2.getSeriesAt(e.itemIndex);
-      series1.stroke(series1.color(), 1.5);
-      series2.stroke(series2.color(), 1.5);
-    });
+/* when a mouse is moved over a legend item,
+configure the appearance of the series it represents */
+legend.listen("legendItemMouseOver", function(e) {
+  var series1 = chart1.getSeriesAt(e.itemIndex);
+  var series2 = chart2.getSeriesAt(e.itemIndex);
+  series1.stroke(anychart.color.lighten(series1.color()), 5);
+  series2.stroke(anychart.color.lighten(series2.color()), 5);
+});
 
-    // ...
-    legend.listen("legendItemClick", function(e) {
-      var series1 = chart1.getSeriesAt(e.itemIndex);
-      var series2 = chart2.getSeriesAt(e.itemIndex);
-      if (series1.enabled()) {
-        series1.enabled(false);
-        series2.enabled(false);
-      } else {
-        series1.enabled(true);
-        series2.enabled(true);
-      }
-    });
+/* when a mouse is moved off a legend item,
+restore the default settings of the series it represents */
+legend.listen("legendItemMouseOut", function(e) {
+  var series1 = chart1.getSeriesAt(e.itemIndex);
+  var series2 = chart2.getSeriesAt(e.itemIndex);
+  series1.stroke(series1.color(), 1.5);
+  series2.stroke(series2.color(), 1.5);
+});
+
+// set the container for the legend
+legend.container(stage);
+
+// draw the legend
+legend.draw();
 
     // set the container for the legend
     legend.container(stage);
