@@ -10,8 +10,6 @@
 
 ## One Legend for Multiple Charts
 
-### One Series
-
 ```
 // create a standalone legend
 var legend = anychart.standalones.legend();
@@ -28,7 +26,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_01{sample}
 
-### Multiple Series
+## One Legend Item for Multiple Series
 
 ```
 // create a standalone legend
