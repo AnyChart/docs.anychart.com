@@ -60,6 +60,7 @@ legend.items([
 ]);
 ```
 
+```
 /* listen to the legendItemClick event
 and enable / disable the current series on both charts */
 legend.listen("legendItemClick", function(e) {
