@@ -30,9 +30,9 @@ anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-      ["John", 13000, 10000, 18000],
-      ["Larry", 15000, 12000, 21000],
-      ["Marta", 18000, 11000, 13000]
+      ["John", 1300, 1000, 1800],
+      ["Larry", 1500, 1200, 2100],
+      ["Marta", 1800, 1100, 1300]
     ]);
 
     // map the data
@@ -53,10 +53,45 @@ anychart.onDocumentReady(function () {
     // draw the chart
     chart.draw();
 
+    // ??? get default color palette
+    var palette = anychart.palettes.distinctColors().items();
+  
+    // ??? variables for legend items
+    var legendItems1 = [];
+    var legendItems2 = [];
+    var legendItems3 = [];
+  
+    // ??? push settings into arrays of legend items
+    for (var i0=1;i0<data.data()[0].length;i0++){
+      legendItems1.push({
+        text: "$" + data.data()[0][i0].toString(),  // text of item
+        iconType: "square",                   // type of icons
+        iconFill: palette[i0-1],              // color of icons
+        iconStroke: anychart.color.darken(palette[i0-1], 0.2)
+      });
+    }
+    for (var i1=1;i1<data.data()[1].length;i1++){
+      legendItems2.push({
+        text: "$" + data.data()[1][i1].toString(),  // text of item
+        iconType: "square",                   // type of icons
+        iconFill: palette[i1-1],              // color of icons
+        iconStroke: anychart.color.darken(palette[i1-1], 0.2)
+      });
+    }
+    for (var i2=1;i2<data.data()[2].length;i2++){
+      legendItems3.push({
+        index: i2,
+        text: "$" + data.data()[2][i2].toString(),  // text of item
+        iconType: "square",                   // type of icons
+        iconFill: palette[i2-1],              // color of icons
+        iconStroke: anychart.color.darken(palette[i2-1], 0.2)
+      });
+    }
+
     // create the first standalone legend
     var legend1 = anychart.standalones.legend();
-    // set the source of legend items
-    legend1.itemsSource([chart]);
+    // set the legend items
+    legend1.items(legendItems1);
     // set the layout of the legend
     legend1.itemsLayout("vertical");
     // set the position of the legend
@@ -82,8 +117,8 @@ anychart.onDocumentReady(function () {
 
     // create the second standalone legend
     var legend2 = anychart.standalones.legend();
-    // set the source of legend items
-    legend2.itemsSource([chart]);
+    // set the legend items
+    legend2.items(legendItems2);
     // set the layout of the legend
     legend2.itemsLayout("vertical");
     // set the position of the legend
@@ -109,8 +144,8 @@ anychart.onDocumentReady(function () {
 
     // create the third standalone legend
     var legend3 = anychart.standalones.legend();
-    // set the source of legend items
-    legend3.itemsSource([chart]);
+    // set the legend items
+    legend3.items(legendItems3);
     // set the layout of the legend
     legend3.itemsLayout("vertical");
     // set the position of the legend
