@@ -79,6 +79,7 @@ anychart.onDocumentReady(function () {
     /* listen to the legendItemClick event,
     select / deselect the series, and configure the legend item */
     chart.legend().listen("legendItemClick", function(e) {
+        console.log(e);
       var series = chart.getSeriesAt(e.itemIndex);
       var selected = series.meta("selected");
       if (!selected) {

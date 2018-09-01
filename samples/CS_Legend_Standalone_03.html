@@ -35,17 +35,12 @@ anychart.onDocumentReady(function () {
       ["Marta", 1800, 1100, 1300]
     ]);
 
-    // map the data
-    var seriesData1 = data.mapAs({x: 0, value: 1});
-    var seriesData2 = data.mapAs({x: 0, value: 2});
-    var seriesData3 = data.mapAs({x: 0, value: 3});
-
     // create a chart
     var chart = anychart.column();
     // create series, set the data and names
-    chart.column(seriesData1).name("2016");
-    chart.column(seriesData2).name("2017");
-    chart.column(seriesData3).name("2018");
+    chart.column(data.mapAs({x: 0, value: 1})).name("2016");
+    chart.column(data.mapAs({x: 0, value: 2})).name("2017");
+    chart.column(data.mapAs({x: 0, value: 3})).name("2018");
     // set the chart bounds
     chart.bounds(0, 0, "85%", "100%");
     // set the container for the chart

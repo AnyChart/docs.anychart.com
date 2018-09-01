@@ -99,6 +99,7 @@ anychart.onDocumentReady(function () {
 /* listen to the legendItemClick event
 and enable / disable the current series on both charts */
 legend.listen("legendItemClick", function(e) {
+  console.log(e);
   var series1 = chart1.getSeriesAt(e.itemIndex);
   var series2 = chart2.getSeriesAt(e.itemIndex);
   if (series1.enabled()) {
