@@ -30,26 +30,24 @@ anychart.onDocumentReady(function () {
 
     // create a data set
     var data = anychart.data.set([
-      ["John", 13000, 10000, 18000, 21000],
-      ["Larry", 15000, 12000, 21000, 20000],
-      ["Marta", 18000, 11000, 13000, 22000]
+      ["John", 13000, 10000, 18000],
+      ["Larry", 15000, 12000, 21000],
+      ["Marta", 18000, 11000, 13000]
     ]);
 
     // map the data
     var seriesData1 = data.mapAs({x: 0, value: 1});
     var seriesData2 = data.mapAs({x: 0, value: 2});
     var seriesData3 = data.mapAs({x: 0, value: 3});
-    var seriesData4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
     var chart = anychart.column();
     // create series, set the data and names
-    chart.column(seriesData1).name("Q 1");
-    chart.column(seriesData2).name("Q 2");
-    chart.column(seriesData3).name("Q 3");
-    chart.column(seriesData4).name("Q 4");
+    chart.column(seriesData1).name("2016");
+    chart.column(seriesData2).name("2017");
+    chart.column(seriesData3).name("2018");
     // set the chart bounds
-    chart.bounds(0, 0, "100%", "90%");
+    chart.bounds(0, 0, "85%", "100%");
     // set the container for the chart
     chart.container(stage);
     // draw the chart
@@ -59,21 +57,22 @@ anychart.onDocumentReady(function () {
     var legend1 = anychart.standalones.legend();
     // set the source of legend items
     legend1.itemsSource([chart]);
-    // set the padding of the legend
-    legend1.padding(20);
+    // set the layout of the legend
+    legend1.itemsLayout("vertical");
     // set the position of the legend
-    legend1.position("bottom");
+    legend1.position("right");
     // set the alignment of the legend
-    legend1.align("left");
+    legend1.align("top");
+    // set the legend height
+    legend1.height("30%");
     // set the legend width
-    legend1.width("25%");
+    legend1.width("15%");
     // set the spacing between legend items
-    legend1.itemsSpacing(10);
-    // set the spacing between legend icons and text
-    legend1.iconTextSpacing(3);
+    legend1.itemsSpacing(5);
     // set the legend title
     legend1.title("John");
     legend1.title().padding(5);
+    legend1.title().orientation("left");
     // set the container for the legend
     legend1.container(stage);
     // draw the legend
@@ -83,21 +82,22 @@ anychart.onDocumentReady(function () {
     var legend2 = anychart.standalones.legend();
     // set the source of legend items
     legend2.itemsSource([chart]);
-    // set the padding of the legend
-    legend2.padding(20);
+    // set the layout of the legend
+    legend2.itemsLayout("vertical");
     // set the position of the legend
-    legend2.position("bottom");
+    legend2.position("right");
     // set the alignment of the legend
     legend2.align("center");
+    // set the legend height
+    legend2.height("30%");
     // set the legend width
-    legend2.width("25%");
+    legend2.width("15%");
     // set the spacing between legend items
-    legend2.itemsSpacing(10);
-    // set the spacing between legend icons and text
-    legend2.iconTextSpacing(3);
+    legend2.itemsSpacing(5);
     // set the legend title
     legend2.title("Larry");
     legend2.title().padding(5);
+    legend2.title().orientation("left");
     // set the container for the legend
     legend2.container(stage);
     // draw the legend
@@ -107,21 +107,22 @@ anychart.onDocumentReady(function () {
     var legend3 = anychart.standalones.legend();
     // set the source of legend items
     legend3.itemsSource([chart]);
-    // set the padding of the legend
-    legend3.padding(20);
+    // set the layout of the legend
+    legend3.itemsLayout("vertical");
     // set the position of the legend
-    legend3.position("bottom");
+    legend3.position("right");
     // set the alignment of the legend
-    legend3.align("right");
+    legend3.align("bottom");
+    // set the legend height
+    legend3.height("30%");
     // set the legend width
-    legend3.width("25%");
+    legend3.width("15%");
     // set the spacing between legend items
-    legend3.itemsSpacing(10);
-    // set the spacing between legend icons and text
-    legend3.iconTextSpacing(3);
+    legend3.itemsSpacing(5);
     // set the legend title
     legend3.title("Marta");
     legend3.title().padding(5);
+    legend3.title().orientation("left");
     // set the container for the legend
     legend3.container(stage);
     // draw the legend
