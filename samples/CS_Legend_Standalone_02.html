@@ -25,6 +25,9 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create a data set for the first chart
     var data1 = anychart.data.set([
       ["Q 1", 10000, 12000, 16000],
@@ -35,14 +38,11 @@ anychart.onDocumentReady(function () {
 
     // create a data set for the second chart
     var data2 = anychart.data.set([
-      ["Q 1", 13000, 11700, 18000],
+      ["Q 1", 13000, 15000, 18000],
       ["Q 2", 10000, 12000, 11000],
-      ["Q 3", 18000, 21000, 12000],
+      ["Q 3", 18000, 21000, 13000],
       ["Q 4", 21000, 20000, 22000]
     ]);
-
-    // create a stage
-    var stage = anychart.graphics.create("container");
 
     // create and configure the first chart
     var chart1 = anychart.line();
@@ -56,7 +56,7 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart1.draw();   
 
-    // create and configure the first chart
+    // create and configure the second chart
     var chart2 = anychart.line();
     chart2.spline(data2.mapAs({x: 0, value: 1})).name("John");
     chart2.spline(data2.mapAs({x: 0, value: 2})).name("Larry");

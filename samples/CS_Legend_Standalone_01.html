@@ -25,6 +25,9 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create data for the first chart
     var data1 = [
       {x: "John", value: 5000},
@@ -41,9 +44,6 @@ anychart.onDocumentReady(function () {
       {x: "April", value: 9000},
       {x: "May", value: 5000}
     ];
-
-    // create a stage
-    var stage = anychart.graphics.create("container");
 
     // create and configure the first chart
     var chart1 = anychart.pie(data1);

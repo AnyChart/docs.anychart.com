@@ -26,15 +26,15 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create data
     var data = [
       {x: 0, value: 500},
       {x: 180, value: 200}
     ];
     
-    // create a stage
-    var stage = anychart.graphics.create("container");
-
     // set the position and data for the first chart
     var polar1 = anychart.polar();
     polar1.title("Cell Color: Radial Grid");

@@ -25,13 +25,14 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create a data set
     var data = anychart.data.set([
-      ["January", 12000, 10000, 7000, 11000],
-      ["February", 15000, 12000, 9000, 13000],
-      ["March", 16000, 15000, 14000, 12000],
-      ["April", 15000, 11000, 13000, 10000],
-      ["May", 10000, 9000, 11000, 6000]
+      ["John", 13000, 10000, 18000, 21000],
+      ["Larry", 15000, 12000, 21000, 20000],
+      ["Marta", 18000, 11000, 13000, 22000]
     ]);
 
     // map the data
@@ -41,29 +42,72 @@ anychart.onDocumentReady(function () {
     var seriesData4 = data.mapAs({x: 0, value: 4});
 
     // create a chart
-    var chart = anychart.line();
-
+    var chart = anychart.column();
     // create series, set the data and names
-    var series1 = chart.line(seriesData1);
-    var series2 = chart.line(seriesData2);
-    var series3 = chart.line(seriesData3);
-    var series4 = chart.line(seriesData4);
-    series1.name("2015");
-    series2.name("2016");
-    series3.name("2017");
-    series4.name("2018");
-
-    // enable the legend
-    chart.legend(true);
-
-    // set the chart title
-    chart.title("Standalone Legend: ...");
-
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
+    chart.column(seriesData1).name("Q 1");
+    chart.column(seriesData2).name("Q 2");
+    chart.column(seriesData3).name("Q 3");
+    chart.column(seriesData4).name("Q 4");
+    // set the chart bounds
+    chart.bounds(0, 0, "100%", "90%");
+    // set the container for the chart
+    chart.container(stage);
+    // draw the chart
     chart.draw();
+
+    // create the first standalone legend
+    var legend1 = anychart.standalones.legend();
+    // set the source of legend items
+    legend1.itemsSource([chart]);
+    // set the padding of the legend
+    legend1.padding(20);
+    // set the position of the legend
+    legend1.position("bottom");
+    // set the alignment of the legend
+    legend1.align("left");
+    // set the legend title
+    legend1.title("John");
+    legend1.title().padding(5);
+    // set the container for the legend
+    legend1.container(stage);
+    // draw the legend
+    legend1.draw();
+
+    // create the second standalone legend
+    var legend2 = anychart.standalones.legend();
+    // set the source of legend items
+    legend2.itemsSource([chart]);
+    // set the padding of the legend
+    legend2.padding(20);
+    // set the position of the legend
+    legend2.position("bottom");
+    // set the alignment of the legend
+    legend2.align("center");
+    // set the legend title
+    legend2.title("Larry");
+    legend2.title().padding(5);
+    // set the container for the legend
+    legend2.container(stage);
+    // draw the legend
+    legend2.draw();
+
+    // create the third standalone legend
+    var legend3 = anychart.standalones.legend();
+    // set the source of legend items
+    legend3.itemsSource([chart]);
+    // set the padding of the legend
+    legend3.padding(20);
+    // set the position of the legend
+    legend3.position("bottom");
+    // set the alignment of the legend
+    legend3.align("right");
+    // set the legend title
+    legend3.title("Marta");
+    legend3.title().padding(5);
+    // set the container for the legend
+    legend3.container(stage);
+    // draw the legend
+    legend3.draw();
 });
 </script>
 </body>

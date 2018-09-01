@@ -125,7 +125,7 @@ You can set a flexible legend size. Use the `"horizontal-expandable"` or `"verti
 In the following sample, the maximum height and width are applied to a horizontally oriented expandable legend. You can add a few items to the chart to see when the legend stops expanding:
 
 ```
-// set the max height and width of the legend
+// set the maximum height and width of the legend
 chart.legend().maxHeight("30%");
 chart.legend().maxWidth("50%");
 ```
