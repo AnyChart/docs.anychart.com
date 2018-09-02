@@ -96,48 +96,41 @@ anychart.onDocumentReady(function () {
       }
     ]);
 
-/* listen to the legendItemClick event
-and enable / disable the current series on both charts */
-legend.listen("legendItemClick", function(e) {
-  console.log(e);
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  if (series1.enabled()) {
-    series1.enabled(false);
-    series2.enabled(false);
-  } else {
-    series1.enabled(true);
-    series2.enabled(true);
-  }
-});
-
-/* listen to the legendItemMouseOver event
-and configure the current series on both charts */
-legend.listen("legendItemMouseOver", function(e) {
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  series1.stroke(anychart.color.lighten(series1.color()), 5);
-  series2.stroke(anychart.color.lighten(series2.color()), 5);
-});
-
-/* listen to the legendItemMouseOver event
-and restore the defaults of the current series on both charts */
-legend.listen("legendItemMouseOut", function(e) {
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  series1.stroke(series1.color(), 1.5);
-  series2.stroke(series2.color(), 1.5);
-});
-
-// set the container for the legend
-legend.container(stage);
-
-// draw the legend
-legend.draw();
-
+    /* listen to the legendItemClick event
+    and enable / disable the current series on both charts */
+    legend.listen("legendItemClick", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      if (series1.enabled()) {
+        series1.enabled(false);
+        series2.enabled(false);
+      } else {
+        series1.enabled(true);
+        series2.enabled(true);
+      }
+    });
+    
+    /* listen to the legendItemMouseOver event
+    and configure the current series on both charts */
+    legend.listen("legendItemMouseOver", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      series1.stroke(anychart.color.lighten(series1.color()), 5);
+      series2.stroke(anychart.color.lighten(series2.color()), 5);
+    });
+    
+    /* listen to the legendItemMouseOver event
+    and restore the defaults of the current series on both charts */
+    legend.listen("legendItemMouseOut", function(e) {
+      var series1 = chart1.getSeriesAt(e.itemIndex);
+      var series2 = chart2.getSeriesAt(e.itemIndex);
+      series1.stroke(series1.color(), 1.5);
+      series2.stroke(series2.color(), 1.5);
+    });
+    
     // set the container for the legend
     legend.container(stage);
-
+    
     // draw the legend
     legend.draw();
 });

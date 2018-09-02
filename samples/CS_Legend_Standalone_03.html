@@ -50,9 +50,8 @@ anychart.onDocumentReady(function () {
 
     // a function for creating legends
     function createLegend(dataRow, alignment) {
-
       // create a standalone legend
-      var legend = anychart.standalones.legend()
+      var legend = anychart.standalones.legend();
 
       // create an array for storing legend items
       var legendItems = [];
@@ -65,7 +64,6 @@ anychart.onDocumentReady(function () {
           iconFill: palette[i-1],
         });
       }
-
       // add items to the legend
       legend.items(legendItems);
 
@@ -91,17 +89,32 @@ anychart.onDocumentReady(function () {
       // set the container for the legend
       legend.container(stage);
       // draw the legend
-      legend.draw();  
+      legend.draw();
+
+      /* listen to the legendItemClick event
+      and enable / disable the current chart point */
+      legend.listen("legendItemClick", function(e) {
+        var series = chart.getSeriesAt(e.itemIndex);
+        var item = legendItems[e.itemIndex];
+        var value = data.data()[dataRow][e.itemIndex + 1];
+        if (series.data().get(1, "value") != "missing") {
+          series.data().set(1, "value", "missing");
+          item.iconFill = "red";
+          legend.itemsFormatter(function() {return legendItems})
+        } else {
+          series.data().set(1, "value", value);
+        }
+      });
     }
 
     // create the first standalone legend
-    createLegend(0, "top");
+    var legend1 = createLegend(0, "top");
 
     // create the second standalone legend
-    createLegend(1, "center");
+    var legend2 = createLegend(1, "center");
 
     // create the third standalone legend
-    createLegend(2, "bottom");
+    var legend3 = createLegend(2, "bottom");
 });
 </script>
 </body>
