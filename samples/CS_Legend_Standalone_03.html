@@ -48,34 +48,33 @@ anychart.onDocumentReady(function () {
     // draw the chart
     chart.draw();
 
-    // create arrays for storing legend items
-    var legendItems1 = [];
-    var legendItems2 = [];
-    var legendItems3 = [];
-    // get the palette of the chart
-    var palette = chart.palette().items();
-    // push the settings of legend items to the arrays
-    for (var i = 1; i < data.data()[0].length; i++) {
-      legendItems1.push({
-        text: "$" + data.data()[0][i],
-        iconFill: palette[i-1],
-      });
-      legendItems2.push({
-        text: "$" + data.data()[1][i],
-        iconFill: palette[i-1],
-      });
-      legendItems3.push({
-        text: "$" + data.data()[2][i],
-        iconFill: palette[i-1],
-      });
-    }
+    // a function for creating legends
+    function createLegend(dataRow, alignment) {
 
-    // a function for configuring and drawing legends
-    function legendSettings(legend) {
+      // create a standalone legend
+      var legend = anychart.standalones.legend()
+
+      // create an array for storing legend items
+      var legendItems = [];
+      // get the palette of the chart
+      var palette = chart.palette().items();
+      // push legend items to the array
+      for (var i = 1; i < data.data()[dataRow].length; i++) {
+        legendItems.push({
+          text: "$" + data.data()[dataRow][i],
+          iconFill: palette[i-1],
+        });
+      }
+
+      // add items to the legend
+      legend.items(legendItems);
+
       // set the layout of the legend
       legend.itemsLayout("vertical");
       // set the position of the legend
       legend.position("right");
+      // set the alignment of the legend
+      legend.align(alignment);
       // set the legend height
       legend.height("30%");
       // set the legend width
@@ -84,9 +83,11 @@ anychart.onDocumentReady(function () {
       legend.padding(10, 10, 10, 0);
       // set the spacing between legend items
       legend.itemsSpacing(5);
-      // configure the legend title
+      // set the legend title
+      legend.title(data.data()[dataRow][0]);
       legend.title().padding(10);
       legend.title().orientation("left");
+
       // set the container for the legend
       legend.container(stage);
       // draw the legend
@@ -94,37 +95,13 @@ anychart.onDocumentReady(function () {
     }
 
     // create the first standalone legend
-    var legend1 = anychart.standalones.legend();
-    // set the legend items
-    legend1.items(legendItems1);
-    // set the alignment of the legend
-    legend1.align("top");
-    // set the legend title
-    legend1.title("John");
-    // configure and draw the legend
-    legendSettings(legend1);
+    createLegend(0, "top");
 
     // create the second standalone legend
-    var legend2 = anychart.standalones.legend();
-    // set the legend items
-    legend2.items(legendItems2);
-    // set the alignment of the legend
-    legend2.align("center");
-    // set the legend title
-    legend2.title("Larry");
-    // configure and draw the legend
-    legendSettings(legend2);
+    createLegend(1, "center");
 
     // create the third standalone legend
-    var legend3 = anychart.standalones.legend();
-    // set the legend items
-    legend3.items(legendItems3);
-    // set the alignment of the legend
-    legend3.align("bottom");
-    // set the legend title
-    legend3.title("Marta");
-    // configure and draw the legend
-    legendSettings(legend3);
+    createLegend(2, "bottom");
 });
 </script>
 </body>
