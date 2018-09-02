@@ -5,11 +5,9 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <script src="../../[    JS    ]/anychart-base.min.js"></script>
+    <script src="../../[    JS    ]/anychart-base.min.js"></script>
+    <script src="../../[    JS    ]/anychart-base.min.js"></script>
     
     <style>
         html, body, #container {
@@ -47,6 +45,17 @@ anychart.onDocumentReady(function () {
     chart.container(stage);
     // draw the chart
     chart.draw();
+
+    /* prevent series from being selected
+    when they are clicked on */
+    chart.interactivity().selectionMode("none");
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
+    // set the hover mode of the chart
+    chart.interactivity().hoverMode("single");
 
     // a function for creating legends
     function createLegend(dataRow, alignment) {
@@ -91,22 +100,42 @@ anychart.onDocumentReady(function () {
       // draw the legend
       legend.draw();
 
-      /* listen to the legendItemClick event
-      and enable / disable the current chart point */
+      /* listen to the legendItemClick event,
+      configure the legend item, and select / deselect its point */
       legend.listen("legendItemClick", function(e) {
-        var series = chart.getSeriesAt(e.itemIndex);
-        var item = legendItems[e.itemIndex];
-        var value = data.data()[dataRow][e.itemIndex + 1];
-        if (series.data().get(1, "value") != "missing") {
-          series.data().set(1, "value", "missing");
-          item.iconFill = "red";
+        var index = e.itemIndex;
+        var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
+        if (!chartPoint.selected()) {
+          chartPoint.selected(true);
+          legendItems[index].iconFill = "#455a64";
           legend.itemsFormatter(function() {return legendItems})
         } else {
-          series.data().set(1, "value", value);
+          chartPoint.selected(false);
+          legendItems[index].iconFill = palette[index];
+          legend.itemsFormatter(function() {return legendItems})
         }
       });
-    }
 
+      /* listen to the legendItemMouseOver event
+      and enable the hover mode of the current chart point */
+      legend.listen("legendItemMouseOver", function(e) {
+        var index = e.itemIndex;
+        var point = chart.getSeriesAt(index).getPoint(dataRow);
+        point.hovered(true);
+        /* if the chart point is selected,
+        prevent the colors of legend item from changing */
+        if (point.selected()) {e.preventDefault();}
+      });
+
+      /* listen to the legendItemMouseOut event
+      and disable the hover mode of the current chart point */
+      legend.listen("legendItemMouseOut", function(e) {
+        var index = e.itemIndex;
+        var point = chart.getSeriesAt(index).getPoint(dataRow);
+        point.hovered(false);
+      });
+    }
+   
     // create the first standalone legend
     var legend1 = createLegend(0, "top");
 

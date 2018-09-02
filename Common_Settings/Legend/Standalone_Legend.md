@@ -31,62 +31,21 @@ legend.draw();
 
 ## 2
 
-* {api:anychart.standalones.Legend#items}items(){api}
 * [Events: Legend Items](Events#legend_items)
+* ...
 
 
 ```
-// create a standalone legend
-var legend = anychart.standalones.legend();
 
-// enable the legend
-legend.enabled(true);
-
-// add custom legend items
-legend.items([
-  {
-    text: "John",
-    iconType: "spline",
-    iconStroke: "3 #64b5f6"
-  },
-  {
-    text: "Larry",
-    iconType: "spline",
-    iconStroke: "3 #1976d2"
-  },
-  {
-    text: "Marta",
-    iconType: "spline",
-    iconStroke: "3 #ef6c00"
-  }
-]);
-
-// set the container for the legend
-legend.container(stage);
-
-// draw the legend
-legend.draw();
-```
-
-```
-/* listen to the legendItemClick event
-and enable / disable the current series on both charts */
-legend.listen("legendItemClick", function(e) {
-  var series1 = chart1.getSeriesAt(e.itemIndex);
-  var series2 = chart2.getSeriesAt(e.itemIndex);
-  if (series1.enabled()) {
-    series1.enabled(false);
-    series2.enabled(false);
-  } else {
-    series1.enabled(true);
-    series2.enabled(true);
-  }
-});
 ```
 
 {sample}CS\_Legend\_Standalone\_02{sample}
 
 ## 3
+
+* [Events: Legend Items](Events#legend_items)
+* ...
+
 
 ```
 
