@@ -36,9 +36,13 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.pie(data);
 
+    /* prevent the cursor from changing
+    when it hovers over the legend */
+    chart.legend().hoverCursor("default");
+
     /* disable the default behavior of the legend
     on the legendItemMouseDown event
-    and prevent the legendItemMouseDown event */
+    and prevent the legendItemClick event */
     chart.legend().listen("legendItemMouseDown", function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -48,22 +52,15 @@ anychart.onDocumentReady(function () {
     on the legendItemMouseOver event */
     chart.legend().listen("legendItemMouseOver", function(e) {
       e.preventDefault();
-      e.stopPropagation();
     });
 
     /* listen to the pointClick event
-    and configure legend items */
+    and configure the appearance of the legend item */
     chart.listen("pointClick", function(e) {
       if (e.point.selected()) {
-        e.point.set("legendItem", {
-                    fontWeight: 600, fontColor: "#455a64",
-                    iconStroke: "2 #455a64"
-                   });
+        e.point.set("legendItem", {iconFill: "#455a64"});
       } else {
-        e.point.set("legendItem", {
-                    fontWeight: "normal", fontColor: "#7c868e",
-                    iconStroke: null
-                   });
+        e.point.set("legendItem", null);
       }
     });
 

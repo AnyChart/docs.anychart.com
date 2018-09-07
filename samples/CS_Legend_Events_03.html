@@ -36,26 +36,22 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.pie(data);
 
-    /* listen to the legendItemMouseOver event
-    and enable the hover state of the point */
+    /* listen to the legendItemMouseOver event,
+    enable the hover state of the chart point,
+    and configure the appearance of the legend item */
     chart.legend().listen("legendItemMouseOver", function(e) {
       var point = chart.getPoint(e.itemIndex);
       point.hovered(true);
-      point.set("legendItem", {
-                fontWeight: 600, fontColor: "#455a64",
-                iconStroke: "2 #455a64"
-      });
+      point.set("legendItem", {iconFill: "#455a64"});
     });
 
-    /* listen to the legendItemMouseOut event
-    and disable the hover state of the point */
+    /* listen to the legendItemMouseOut event,
+    disable the hover state of the chart point
+    and reset the appearance of the legend item */
     chart.legend().listen("legendItemMouseOut", function(e) {
       var point = chart.getPoint(e.itemIndex);
       point.hovered(false);
-      point.set("legendItem", {
-                fontWeight: "normal", fontColor: "#7c868e",
-                iconStroke: "none"
-      });
+      point.set("legendItem", null);
     });
 
     // set the chart title

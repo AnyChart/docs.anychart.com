@@ -54,35 +54,37 @@ anychart.onDocumentReady(function () {
     series4.name("2018");
 
     // enable the legend
-    chart.legend(true);
+    var legend = chart.legend();
+    legend.enabled(true);
 
-    /* prevent points from being deselected
-    when a click happens outside of them */
-    chart.interactivity().unselectOnClickOutOfPoint(false);
+    /* prevent the cursor from changing
+    when it hovers over the legend */
+    legend.hoverCursor("default");
 
     /* disable the default behavior of the legend
     on the legendItemMouseDown event
-    and prevent the legendItemMouseDown event */
-    chart.legend().listen("legendItemMouseDown", function(e) {
+    and prevent the legendItemClick event */
+    legend.listen("legendItemMouseDown", function(e) {
       e.preventDefault();
       e.stopPropagation();
     });
 
     /* disable the default behavior of the legend
     on the legendItemMouseOver event */
-    chart.legend().listen("legendItemMouseOver", function(e) {
+    legend.listen("legendItemMouseOver", function(e) {
       e.preventDefault();
     });
 
-    // customize the hover cursor of the legend
-    chart.legend().hoverCursor("default");
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
 
     /* listen to the pointsSelect event
-    and configure legend items */
+    and configure the appearance of the legend item */
     chart.listen("pointsSelect", function(e) {
       e.currentPoint.series.legendItem().iconFill("#455a64");
       for (var i = 0; i < chart.getSeriesCount(); i++) {
-        var series = chart.getSeriesAt(i)
+        var series = chart.getSeriesAt(i);
         if (series.meta("selected") & series != e.currentPoint.series) {
            series.meta("selected", false);
            series.legendItem().iconFill(series.color());
@@ -92,7 +94,7 @@ anychart.onDocumentReady(function () {
     });
 
     /* listen to the pointMouseOver event
-    and configure the legend item */
+    and configure the appearance of the legend item */
     chart.listen("pointMouseOver", function(e) {
       if (!e.series.meta("selected")) {
         color = anychart.color.lighten(e.series.color());
@@ -101,7 +103,7 @@ anychart.onDocumentReady(function () {
     });
 
     /* listen to the pointMouseOut event
-    and restore the default settings of the legend item */
+    and reset appearance of the legend item */
     chart.listen("pointMouseOut", function(e) {
       if (!e.series.meta("selected")) {
         e.series.legendItem().iconFill(e.series.color());

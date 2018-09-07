@@ -48,16 +48,13 @@ anychart.onDocumentReady(function () {
     // draw the chart
     chart.draw();
 
-    /* prevent series from being selected
+    /* prevent points from being selected
     when they are clicked on */
     chart.interactivity().selectionMode("none");
 
     /* prevent points from being deselected
     when a click happens outside of them */
     chart.interactivity().unselectOnClickOutOfPoint(false);
-
-    // set the hover mode of the chart
-    chart.interactivity().hoverMode("single");
 
     // a function for creating legends
     function createLegend(dataRow, alignment) {
@@ -97,13 +94,9 @@ anychart.onDocumentReady(function () {
       legend.title().padding(10);
       legend.title().orientation("left");
 
-      // set the container for the legend
-      legend.container(stage);
-      // draw the legend
-      legend.draw();
-
       /* listen to the legendItemClick event,
-      configure the legend item, and select / deselect its point */
+      select / deselect the point,
+      and configure the appearance of the legend item */
       legend.listen("legendItemClick", function(e) {
         var index = e.itemIndex;
         var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
@@ -119,23 +112,30 @@ anychart.onDocumentReady(function () {
       });
 
       /* listen to the legendItemMouseOver event
-      and enable the hover mode of the current chart point */
+      and enable the hover mode of the chart point */
       legend.listen("legendItemMouseOver", function(e) {
         var index = e.itemIndex;
         var point = chart.getSeriesAt(index).getPoint(dataRow);
         point.hovered(true);
         /* if the chart point is selected,
-        prevent the colors of legend item from changing */
+        prevent the default behavior of the legend */
         if (point.selected()) {e.preventDefault();}
       });
 
       /* listen to the legendItemMouseOut event
-      and disable the hover mode of the current chart point */
+      and disable the hover mode of the chart point */
       legend.listen("legendItemMouseOut", function(e) {
         var index = e.itemIndex;
         var point = chart.getSeriesAt(index).getPoint(dataRow);
         point.hovered(false);
       });
+
+      // set the container for the legend
+      legend.container(stage);
+      // draw the legend
+      legend.draw();
+
+      return legend;
     }
    
     // create the first standalone legend
