@@ -110,11 +110,11 @@ anychart.onDocumentReady(function () {
         if (!chartPoint.selected()) {
           chartPoint.selected(true);
           legendItems[index].iconFill = "#455a64";
-          legend.itemsFormatter(function() {return legendItems})
+          legend.itemsFormatter(function() {return legendItems});
         } else {
           chartPoint.selected(false);
           legendItems[index].iconFill = palette[index];
-          legend.itemsFormatter(function() {return legendItems})
+          legend.itemsFormatter(function() {return legendItems});
         }
       });
 

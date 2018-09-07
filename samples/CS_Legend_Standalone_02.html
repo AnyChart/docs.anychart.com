@@ -74,39 +74,46 @@ anychart.onDocumentReady(function () {
     // enable the legend
     legend.enabled(true);
 
+    // create an array for storing legend items
+    var legendItems = [];
+
+    // push legend items to the array
+    for (var i = 0; i < chart1.getSeriesCount(); i++) {
+      var series = chart1.getSeriesAt(i);
+      legendItems.push({
+        text: series.name(),
+        iconType: "spline",
+        iconStroke: {color: series.color(), thickness: 3}
+      });
+    }
+
+    // add items to the legend
+    legend.items(legendItems);
+
     // set the padding of the legend
     legend.padding(10);
-
-    // add custom legend items
-    legend.items([
-      {
-        text: "John",
-        iconType: "spline",
-        iconStroke: "3 #64b5f6"
-      },
-      {
-        text: "Larry",
-        iconType: "spline",
-        iconStroke: "3 #1976d2"
-      },
-      {
-        text: "Marta",
-        iconType: "spline",
-        iconStroke: "3 #ef6c00"
-      }
-    ]);
 
     /* listen to the legendItemClick event
     and enable / disable the current series on both charts */
     legend.listen("legendItemClick", function(e) {
-      var series1 = chart1.getSeriesAt(e.itemIndex);
-      var series2 = chart2.getSeriesAt(e.itemIndex);
+      var index = e.itemIndex;
+      var series1 = chart1.getSeriesAt(index);
+      var series2 = chart2.getSeriesAt(index);
       if (series1.enabled()) {
         series1.enabled(false);
         series2.enabled(false);
+        legendItems[index].iconStroke = "3 #999999";
+        legendItems[index].fontColor = "#999999";
+        legend.itemsFormatter(function() {return legendItems});
       } else {
         series1.enabled(true);
         series2.enabled(true);
+        legendItems[index].iconStroke = {
+          color: series1.color(),
+          thickness: 3
+        };
+        legendItems[index].fontColor = series1.color();
+        legend.itemsFormatter(function() {return legendItems});
       }
     });
     
@@ -120,7 +127,7 @@ anychart.onDocumentReady(function () {
     });
     
     /* listen to the legendItemMouseOver event
-    and restore the defaults of the current series on both charts */
+    and restore the defaults of the current series */
     legend.listen("legendItemMouseOut", function(e) {
       var series1 = chart1.getSeriesAt(e.itemIndex);
       var series2 = chart2.getSeriesAt(e.itemIndex);
