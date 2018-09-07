@@ -55,6 +55,49 @@ for (var i = 0; i < chart1.getSeriesCount(); i++) {
 // add items to the legend
 legend.items(legendItems);
 
+/* listen to the legendItemClick event,
+enable / disable the series on both charts,
+and configure the appearance of the legend item */
+legend.listen("legendItemClick", function(e) {
+  var index = e.itemIndex;
+  var series1 = chart1.getSeriesAt(index);
+  var series2 = chart2.getSeriesAt(index);
+  if (series1.enabled()) {
+    series1.enabled(false);
+    series2.enabled(false);
+    legendItems[index].iconStroke = "3 #999999";
+    legendItems[index].fontColor = "#999999";
+    legend.itemsFormatter(function() {return legendItems});
+  } else {
+    series1.enabled(true);
+    series2.enabled(true);
+    legendItems[index].iconStroke = {
+      color: series1.color(),
+      thickness: 3
+    };
+    legendItems[index].fontColor = series1.color();
+    legend.itemsFormatter(function() {return legendItems});
+  }
+});
+
+/* listen to the legendItemMouseOver event
+and configure the appearance of the series on both charts */
+legend.listen("legendItemMouseOver", function(e) {
+  var series1 = chart1.getSeriesAt(e.itemIndex);
+  var series2 = chart2.getSeriesAt(e.itemIndex);
+  series1.stroke(anychart.color.lighten(series1.color()), 5);
+  series2.stroke(anychart.color.lighten(series2.color()), 5);
+});
+
+/* listen to the legendItemMouseOver event
+and reset the appearance of the series on both charts */
+legend.listen("legendItemMouseOut", function(e) {
+  var series1 = chart1.getSeriesAt(e.itemIndex);
+  var series2 = chart2.getSeriesAt(e.itemIndex);
+  series1.stroke(series1.color(), 1.5);
+  series2.stroke(series2.color(), 1.5);
+});
+
 // set the container for the legend
 legend.container(stage);
 
@@ -100,6 +143,42 @@ function createLegend(dataRow, alignment) {
   legend.container(stage);
   // draw the legend
   legend.draw();
+
+  /* listen to the legendItemClick event,
+  select / deselect the point,
+  and configure the appearance of the legend item */
+  legend.listen("legendItemClick", function(e) {
+    var index = e.itemIndex;
+    var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
+    if (!chartPoint.selected()) {
+      chartPoint.selected(true);
+      legendItems[index].iconFill = "#455a64";
+      legend.itemsFormatter(function() {return legendItems});
+    } else {
+      chartPoint.selected(false);
+      legendItems[index].iconFill = palette[index];
+      legend.itemsFormatter(function() {return legendItems});
+    }
+  });
+
+  /* listen to the legendItemMouseOver event
+  and enable the hover mode of the chart point */
+  legend.listen("legendItemMouseOver", function(e) {
+    var index = e.itemIndex;
+    var point = chart.getSeriesAt(index).getPoint(dataRow);
+    point.hovered(true);
+    /* if the chart point is selected,
+    prevent the default behavior of the legend */
+    if (point.selected()) {e.preventDefault();}
+  });
+
+  /* listen to the legendItemMouseOut event
+  and disable the hover mode of the chart point */
+  legend.listen("legendItemMouseOut", function(e) {
+    var index = e.itemIndex;
+    var point = chart.getSeriesAt(index).getPoint(dataRow);
+    point.hovered(false);
+  });
 
   return legend;
 }
