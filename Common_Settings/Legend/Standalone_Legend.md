@@ -122,8 +122,10 @@ function createLegend(dataRow, alignment) {
 
   // create an array for storing legend items
   var legendItems = [];
+
   // get the palette of the chart
   var palette = chart.palette().items();
+  
   // push legend items to the array
   for (var i = 1; i < data.data()[dataRow].length; i++) {
     legendItems.push({
@@ -179,7 +181,7 @@ function createLegend(dataRow, alignment) {
 
   // set the container for the legend
   legend.container(stage);
-  
+
   // draw the legend
   legend.draw();
 

@@ -64,8 +64,10 @@ anychart.onDocumentReady(function () {
 
       // create an array for storing legend items
       var legendItems = [];
+
       // get the palette of the chart
       var palette = chart.palette().items();
+
       // push legend items to the array
       for (var i = 1; i < data.data()[dataRow].length; i++) {
         legendItems.push({
@@ -77,12 +79,13 @@ anychart.onDocumentReady(function () {
       // add items to the legend
       legend.items(legendItems);
 
+      // set the alignment of the legend
+      legend.align(alignment);
+
       // set the layout of the legend
       legend.itemsLayout("vertical");
       // set the position of the legend
       legend.position("right");
-      // set the alignment of the legend
-      legend.align(alignment);
       // set the legend height
       legend.height("30%");
       // set the legend width
@@ -134,7 +137,7 @@ anychart.onDocumentReady(function () {
 
       // set the container for the legend
       legend.container(stage);
-      
+
       // draw the legend
       legend.draw();
 
