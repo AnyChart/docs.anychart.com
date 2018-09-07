@@ -131,7 +131,7 @@ function createLegend(dataRow, alignment) {
       iconFill: palette[i-1],
     });
   }
-  
+
   // add items to the legend
   legend.items(legendItems);
 
@@ -140,11 +140,6 @@ function createLegend(dataRow, alignment) {
 
   // set the legend title
   legend.title(data.data()[dataRow][0]);
-
-  // set the container for the legend
-  legend.container(stage);
-  // draw the legend
-  legend.draw();
 
   /* listen to the legendItemClick event,
   select / deselect the point,
@@ -181,6 +176,11 @@ function createLegend(dataRow, alignment) {
     var point = chart.getSeriesAt(index).getPoint(dataRow);
     point.hovered(false);
   });
+
+  // set the container for the legend
+  legend.container(stage);
+  // draw the legend
+  legend.draw();
 
   return legend;
 
