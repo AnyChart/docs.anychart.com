@@ -90,24 +90,11 @@ function createLegend(dataRow, alignment) {
   // add items to the legend
   legend.items(legendItems);
 
-  // set the layout of the legend
-  legend.itemsLayout("vertical");
-  // set the position of the legend
-  legend.position("right");
   // set the alignment of the legend
   legend.align(alignment);
-  // set the legend height
-  legend.height("30%");
-  // set the legend width
-  legend.width("20%");
-  // set the padding of the legend
-  legend.padding(10, 10, 10, 0);
-  // set the spacing between legend items
-  legend.itemsSpacing(5);
+
   // set the legend title
   legend.title(data.data()[dataRow][0]);
-  legend.title().padding(10);
-  legend.title().orientation("left");
 
   // set the container for the legend
   legend.container(stage);
