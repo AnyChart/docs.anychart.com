@@ -179,6 +179,7 @@ function createLegend(dataRow, alignment) {
 
   // set the container for the legend
   legend.container(stage);
+  
   // draw the legend
   legend.draw();
 
