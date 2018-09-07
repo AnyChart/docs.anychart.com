@@ -116,7 +116,7 @@ legend.draw();
 ```
 // a function for creating legends
 function createLegend(dataRow, alignment) {
-  
+
   // create a standalone legend
   var legend = anychart.standalones.legend();
 
@@ -131,6 +131,7 @@ function createLegend(dataRow, alignment) {
       iconFill: palette[i-1],
     });
   }
+  
   // add items to the legend
   legend.items(legendItems);
 
