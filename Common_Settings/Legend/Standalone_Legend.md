@@ -7,12 +7,6 @@ The most advanced tasks require using a standalone legend. [Standalones](../../D
 
 The standalone legend is defined...
 
-* Multiple charts and one legend. Each legend item represents a series.
-* Multiple charts and one legend. Each legend item represents multiple series.
-* Single chart and one legend? Each legend item represents multiple series / points (?)
-* Single chart and multiple legends. Each legend item represents a point.
-
-
 * {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
 
 ## Basics
@@ -26,7 +20,7 @@ The standalone legend is defined...
 
 ## Multiple Charts
 
-### Item = Series
+### Item = Series / Point
 
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 
