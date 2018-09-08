@@ -5,14 +5,26 @@
 
 The most advanced tasks require using a standalone legend. [Standalones](../../Dashboards/Standalones) are building blocks, independent from the chart, that allow creating completely custom data visualizations. For example, you can...
 
+* Multiple charts and one legend. Each legend item represents a series.
+* Multiple charts and one legend. Each legend item represents multiple series.
+* Single chart and one legend? Each legendd item represents multiple series (?)
+* Single chart and multiple legends. Each legend item represents a point.
+
+
 * {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
+
+## Basics
+
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 * anychart.standalones.legend()
 * itemsFormatter(), items() + сслыка на Individual Legend Items?
 * itemsSource()
 * про контейнер и отрисовку
 
-## 1
+
+## Multiple Charts
+
+### Item = Series
 
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 
@@ -33,7 +45,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_01{sample}
 
-## 2
+### Item = Multiple Series
 
 * [Events: Legend Items](Events#legend_items)
 * ...
@@ -111,7 +123,7 @@ legend.draw();
 
 {sample}CS\_Legend\_Standalone\_02{sample}
 
-## 3
+## Multiple Legends
 
 * [Events: Legend Items](Events#legend_items)
 * ...
