@@ -74,7 +74,7 @@ Setting the source to `"categories"` is reasonable if there is only one series:
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
-**Note:** You can also create a standalone legend to access advanced options, such as binding one legend to several charts. (?) See the [Standalone Legend](Standalone_Legend) article.
+**Note:** You can also create a standalone legend to access advanced options, such as binding one legend to several charts. (?) See the [Standalone Legend](Standalone_Legend) article. + Custom Items (?)
 
 ## Layout
 

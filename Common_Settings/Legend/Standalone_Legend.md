@@ -3,11 +3,13 @@
 
 ## Overview
 
-The most advanced tasks require using a standalone legend. [Standalones](../../Dashboards/Standalones) are building blocks, independent from the chart, that allow creating completely custom data visualizations. For example, you can...
+The most advanced tasks require using a standalone legend. [Standalones](../../Dashboards/Standalones) are building blocks, independent from the chart, that allow creating completely custom data visualizations. For example, one legend can be shared by [multiple charts](#multiple_charts), and one chart can have [multiple legends](#multiple_legends).
+
+The standalone legend is defined...
 
 * Multiple charts and one legend. Each legend item represents a series.
 * Multiple charts and one legend. Each legend item represents multiple series.
-* Single chart and one legend? Each legendd item represents multiple series (?)
+* Single chart and one legend? Each legend item represents multiple series / points (?)
 * Single chart and multiple legends. Each legend item represents a point.
 
 
