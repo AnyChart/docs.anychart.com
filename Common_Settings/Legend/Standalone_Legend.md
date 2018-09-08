@@ -11,6 +11,7 @@ The standalone legend is defined as an instance of the {api:anychart.standalones
 * anychart.standalones.legend()
 * про контейнер и отрисовку
 * itemsFormatter(), items()
+* {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}, автоматич. легенда
 * про события
 
 
