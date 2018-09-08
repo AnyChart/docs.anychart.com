@@ -3,19 +3,18 @@
 
 ## Overview
 
-The most advanced tasks require using a standalone legend. [Standalones](../../Dashboards/Standalones) are building blocks, independent from the chart, that allow creating completely custom data visualizations. For example, one legend can be shared by [multiple charts](#multiple_charts), and one chart can have [multiple legends](#multiple_legends).
-
-The standalone legend is defined...
-
-* {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
+The standalone legend is one of [Standalones](../../Dashboards/Standalones) – building blocks, independent from the chart, that allow creating advanced data visualizations. For example, you can bind one legend to [multiple charts](#multiple_charts) or add [multiple legends](#multiple_legends) to a chart. See the sections below to learn more.
 
 ## Basics
+
+The standalone legend is defined as an instance of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class.
 
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
 * anychart.standalones.legend()
 * itemsFormatter(), items() + сслыка на Individual Legend Items?
 * itemsSource()
 * про контейнер и отрисовку
+* про события
 
 
 ## Multiple Charts

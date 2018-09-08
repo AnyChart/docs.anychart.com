@@ -318,3 +318,5 @@ chart.legend().items([
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
+
+(?) пример на 1 итем = 1 точка (мультисерийный чарт)

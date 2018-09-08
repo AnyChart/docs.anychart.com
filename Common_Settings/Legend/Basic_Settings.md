@@ -69,6 +69,7 @@ You can set the source of the items by using the {api:anychart.core.ui.Legend#it
 // set source mode of the legend
 chart.legend().itemsSourceMode("categories");
 ```
+(?) сслыки на Events, Individual Legend Items
 
 Setting the source to `"categories"` is reasonable if there is only one series:
 
