@@ -10,7 +10,8 @@ The standalone legend is one of [Standalones](../../Dashboards/Standalones) – 
 The standalone legend is defined as an instance of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class.
 * anychart.standalones.legend()
 * про контейнер и отрисовку
-* itemsFormatter(), items()
+* наполнение: itemsFormatter(), items()
+* индивидуальный итем: itemsFormatter()
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}, автоматич. легенда
 * про события
 

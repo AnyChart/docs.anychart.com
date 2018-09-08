@@ -239,9 +239,11 @@ chart = anychart.pie(data);
 
 ## Custom Items
 
-(?) ссылка на Events
+* (?) ссылка на Events
+* (?) itemsFormatter() принимает функцию / массив, а items() только массив
+* (?) пример на 1 итем = 1 точка (мультисерийный чарт)
 
-You can add a custom item to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+You can add a custom item or items to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 For example, here an automatically generated legend is updated with a custom item representing the sum of all the Y-values on the chart:
 
@@ -318,5 +320,3 @@ chart.legend().items([
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
-
-(?) пример на 1 итем = 1 точка (мультисерийный чарт)
