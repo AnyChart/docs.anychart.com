@@ -3,10 +3,14 @@
 
 ## Overview
 
-* [Standalones](../../Dashboards/Standalones)
+The most advanced tasks require using a standalone legend. [Standalones](../../Dashboards/Standalones) are building blocks, independent from the chart, that allow creating completely custom data visualizations. For example, you can...
+
 * {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
 * {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
-* ...
+* anychart.standalones.legend()
+* itemsFormatter(), items() + сслыка на Individual Legend Items?
+* itemsSource()
+* про контейнер и отрисовку
 
 ## 1
 
