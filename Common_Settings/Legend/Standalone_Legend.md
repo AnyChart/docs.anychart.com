@@ -66,7 +66,11 @@ A standalone legend with automatically added items is interactive by default. If
 
 ### Item = Series / Point
 
-In the following sample, the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method is used to bind the standalone legend to two charts: Pie and Line. Legend items represent points of the Pie chart and the only series of the Line chart. The legend is interactive by default.
+In this sample, each legend item represents a point of the Pie chart, and the last item represents the only series of the Line chart:
+
+{sample}CS\_Legend\_Standalone\_01{sample}
+
+The legend is interactive by default. The {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method is used to bind it to the charts:
 
 ```
 // create a standalone legend
@@ -82,13 +86,13 @@ legend.container(stage);
 legend.draw();
 ```
 
-{sample}CS\_Legend\_Standalone\_01{sample}
-
 ### Item = Multiple Series
 
-* [Events: Legend Items](Events#legend_items)
-* ...
+In the sample below, there are two Spline charts with multiple series. Each item of the standalone legend represents two series: one on the first chart, and one on the second chart.
 
+{sample}CS\_Legend\_Standalone\_02{sample}
+
+To add items to the legend, the {api:anychart.standalones.Legend#items}items(){api} method is used:
 
 ```
 // create a standalone legend
@@ -110,6 +114,18 @@ for (var i = 0; i < chart1.getSeriesCount(); i++) {
 // add items to the legend
 legend.items(legendItems);
 
+// set the container for the legend
+legend.container(stage);
+
+// draw the legend
+legend.draw();
+```
+
+Since legend items are custom, there is no default interactivity, so [events](Events#legend_items) are used to bind items to series.
+
+This is how the `legendItemClick` event is handled:
+
+```
 /* listen to the legendItemClick event,
 enable / disable the series on both charts,
 and configure the appearance of the legend item */
@@ -134,7 +150,18 @@ legend.listen("legendItemClick", function(e) {
     legend.itemsFormatter(function() {return legendItems});
   }
 });
+```
 
+Please note that configuring a custom item on the fly requires rewriting the whole array of items with the help of the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method:
+
+```
+legendItems[index].fontColor = series1.color();
+legend.itemsFormatter(function() {return legendItems}
+```
+
+The behavior of the legend on `legendItemMouseOver` and `legendItemMouseOver` is also adjusted:
+
+```
 /* listen to the legendItemMouseOver event
 and configure the appearance of the series on both charts */
 legend.listen("legendItemMouseOver", function(e) {
@@ -152,17 +179,11 @@ legend.listen("legendItemMouseOut", function(e) {
   series1.stroke(series1.color(), 1.5);
   series2.stroke(series2.color(), 1.5);
 });
-
-// set the container for the legend
-legend.container(stage);
-
-// draw the legend
-legend.draw();
 ```
 
-{sample}CS\_Legend\_Standalone\_02{sample}
-
 ## Multiple Legends
+
+In the following sample,
 
 * [Events: Legend Items](Events#legend_items)
 * ...
