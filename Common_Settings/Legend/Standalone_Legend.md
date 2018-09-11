@@ -60,7 +60,7 @@ Please note that configuring an individual item on the fly requires rewriting th
 
 ### Interactivity
 
-A standalone legend with automatically added items is interactive by default. If legend items are added manually, you have to manually bind them to elements of the chart with the help of [events](../Event_Listeners). For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events: Legend Items](Events#legend_items) article.
+A standalone legend with automatically added items is interactive by default. If legend items are added manually, you have to manually bind them to elements of the chart with the help of events. For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events](Events) article.
 
 ## Multiple Charts
 
