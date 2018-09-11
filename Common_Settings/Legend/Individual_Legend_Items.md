@@ -239,9 +239,10 @@ chart = anychart.pie(data);
 
 ## Custom Items
 
-* (?) ссылка на Events
 * (?) itemsFormatter() принимает функцию / массив, а items() только массив
 * (?) пример на 1 итем = 1 точка (мультисерийный чарт)
+* (?) ссылка на Events
+* (?) примечание на изменение на лету, ссылка на Stanalone legend
 
 You can add a custom item or items to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
