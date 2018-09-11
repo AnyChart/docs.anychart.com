@@ -117,7 +117,7 @@ anychart.onDocumentReady(function () {
       });
 
       /* listen to the legendItemMouseOver event
-      and enable the hover mode of the chart point */
+      and enable the hover state of the chart point */
       legend.listen("legendItemMouseOver", function(e) {
         var index = e.itemIndex;
         var point = chart.getSeriesAt(index).getPoint(dataRow);
@@ -128,7 +128,7 @@ anychart.onDocumentReady(function () {
       });
 
       /* listen to the legendItemMouseOut event
-      and disable the hover mode of the chart point */
+      and disable the hover state of the chart point */
       legend.listen("legendItemMouseOut", function(e) {
         var index = e.itemIndex;
         var point = chart.getSeriesAt(index).getPoint(dataRow);
@@ -142,7 +142,6 @@ anychart.onDocumentReady(function () {
       legend.draw();
 
       return legend;
-
     }
    
     // create the first standalone legend

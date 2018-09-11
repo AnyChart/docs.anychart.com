@@ -60,7 +60,7 @@ Please note that configuring an individual item on the fly requires rewriting th
 
 ### Interactivity
 
-A standalone legend with automatically added items is interactive by default. If legend items are added manually, you have to manually bind them to elements of the chart with the help of events. For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events](Events) article.
+Legend items that are added automatically are by default bound to points or series of the chart or charts . If items are added manually, you have to manually bind them to elements of the chart with the help of events. For further information, take a look at samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events](Events) article.
 
 ## Multiple Charts
 
@@ -70,7 +70,7 @@ In this sample, each legend item represents a point of the Pie chart, and the la
 
 {sample}CS\_Legend\_Standalone\_01{sample}
 
-The legend is interactive by default – it is bound to the chart by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method:
+The legend is automatically bound to the charts by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method:
 
 ```
 // create a standalone legend
@@ -92,7 +92,7 @@ In the sample below, there are two Spline charts with multiple series. Each item
 
 {sample}CS\_Legend\_Standalone\_02{sample}
 
-To add items to the legend, the {api:anychart.standalones.Legend#items}items(){api} method is used:
+The {api:anychart.standalones.Legend#items}items(){api} method is used to add items to the legend:
 
 ```
 // create a standalone legend
@@ -121,9 +121,9 @@ legend.container(stage);
 legend.draw();
 ```
 
-Legend items are custom, so there is no default interactivity, and the [events of legend items](Events#legend_items) are used to bind them to series.
+The legend is custom, so the [events of legend items](Events#legend_items) are used to bind items to series.
 
-This is how the `legendItemClick` event is handled:
+On the `legendItemClick` event, both series represented by the item are enabled or disabled, and the appearance to the item is adjusted:
 
 ```
 /* listen to the legendItemClick event,
@@ -155,11 +155,11 @@ legend.listen("legendItemClick", function(e) {
 Please note that configuring a custom item on the fly requires rewriting the whole array of items with the help of the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method:
 
 ```
-legendItems[index].fontColor = series1.color();
+legendItems[index].fontColor = "#999999";
 legend.itemsFormatter(function() {return legendItems}
 ```
 
-The behavior of the legend on `legendItemMouseOver` and `legendItemMouseOver` is also adjusted:
+On `legendItemMouseOver` and `legendItemMouseOut`, the color of the series is configured:
 
 ```
 /* listen to the legendItemMouseOver event
@@ -183,11 +183,11 @@ legend.listen("legendItemMouseOut", function(e) {
 
 ## Multiple Legends
 
-In the following sample,
+The following sample shows how to create multiple legends on a single chart. Each legend represents a data row, and each legend item stands for a point on the chart:
 
-* [Events: Legend Items](Events#legend_items)
-* ...
+{sample}CS\_Legend\_Standalone\_03{sample}
 
+The {api:anychart.standalones.Legend#items}items(){api} method is used to add items to the legends:
 
 ```
 // a function for creating legends
@@ -219,50 +219,7 @@ function createLegend(dataRow, alignment) {
   // set the legend title
   legend.title(data.data()[dataRow][0]);
 
-  /* listen to the legendItemClick event,
-  select / deselect the point,
-  and configure the appearance of the legend item */
-  legend.listen("legendItemClick", function(e) {
-    var index = e.itemIndex;
-    var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
-    if (!chartPoint.selected()) {
-      chartPoint.selected(true);
-      legendItems[index].iconFill = "#455a64";
-      legend.itemsFormatter(function() {return legendItems});
-    } else {
-      chartPoint.selected(false);
-      legendItems[index].iconFill = palette[index];
-      legend.itemsFormatter(function() {return legendItems});
-    }
-  });
-
-  /* listen to the legendItemMouseOver event
-  and enable the hover mode of the chart point */
-  legend.listen("legendItemMouseOver", function(e) {
-    var index = e.itemIndex;
-    var point = chart.getSeriesAt(index).getPoint(dataRow);
-    point.hovered(true);
-    /* if the chart point is selected,
-    prevent the default behavior of the legend */
-    if (point.selected()) {e.preventDefault();}
-  });
-
-  /* listen to the legendItemMouseOut event
-  and disable the hover mode of the chart point */
-  legend.listen("legendItemMouseOut", function(e) {
-    var index = e.itemIndex;
-    var point = chart.getSeriesAt(index).getPoint(dataRow);
-    point.hovered(false);
-  });
-
-  // set the container for the legend
-  legend.container(stage);
-
-  // draw the legend
-  legend.draw();
-
   return legend;
-
 }
 
 // create the first standalone legend
@@ -275,4 +232,55 @@ var legend2 = createLegend(1, "center");
 var legend3 = createLegend(2, "bottom");
 ```
 
-{sample}CS\_Legend\_Standalone\_03{sample}
+Since the legends are custom, the [events of legend items](Events#legend_items) are used to bind items to chart points.
+
+When the `legendItemClick` event fires, the point is selected or deselected, and the appearance of the legend item is adjusted:
+
+```
+/* listen to the legendItemClick event,
+select / deselect the point,
+and configure the appearance of the legend item */
+legend.listen("legendItemClick", function(e) {
+  var index = e.itemIndex;
+  var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
+  if (!chartPoint.selected()) {
+    chartPoint.selected(true);
+    legendItems[index].iconFill = "#455a64";
+    legend.itemsFormatter(function() {return legendItems});
+  } else {
+    chartPoint.selected(false);
+    legendItems[index].iconFill = palette[index];
+    legend.itemsFormatter(function() {return legendItems});
+  }
+});
+```
+
+Please note that configuring a custom item on the fly requires rewriting the whole array of items with the help of the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method:
+
+```
+legendItems[index].iconFill = "#455a64";
+legend.itemsFormatter(function() {return legendItems}
+```
+
+On `legendItemMouseOver` and `legendItemMouseOut`, the hover state of the point is enabled and disabled:
+
+```
+/* listen to the legendItemMouseOver event
+and enable the hover state of the chart point */
+legend.listen("legendItemMouseOver", function(e) {
+  var index = e.itemIndex;
+  var point = chart.getSeriesAt(index).getPoint(dataRow);
+  point.hovered(true);
+  /* if the chart point is selected,
+  prevent the default behavior of the legend */
+  if (point.selected()) {e.preventDefault();}
+});
+
+/* listen to the legendItemMouseOut event
+and disable the hover state of the chart point */
+legend.listen("legendItemMouseOut", function(e) {
+  var index = e.itemIndex;
+  var point = chart.getSeriesAt(index).getPoint(dataRow);
+  point.hovered(false);
+});
+```
