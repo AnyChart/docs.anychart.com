@@ -30,20 +30,22 @@ legend.draw();
 
 To adjust a standalone legend, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The available settings generally correspond to the settings of the default legend and its elements, which can be found in [Basic Settings](Basic_Settings) and other articles in the [Legend](Overview) folder.
 
-### Items
+### Legend Items
 
-You can **add legend items automatically** by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to:
+**Adding Items Automatically.** You can add legend items automatically by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to:
 
 ```
 // set the source of legend items
 legend.itemsSource([chart1, chart2]);
 ```
 
-This method adds items representing series or points of charts – like in the sample from [Item = Series / Point](#item_=_series_/_point).
+**Adding Items Manually.** This method adds items representing series or points of charts – like in the sample from [Item = Series / Point](#item_=_series_/_point).
 
-Also, you can **add items manually**. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
+Also, you can add items manually. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
 
-To **adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items). The settings available for **individual items** are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
+**Adjusting Items.** To adjust legend items, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
+
+**Adjusting Individual Items.** The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
 **1.** If legend items are added automatically with the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and the chart type allows adding multiple series, you can adjust an individual legend item by calling the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. 
 
