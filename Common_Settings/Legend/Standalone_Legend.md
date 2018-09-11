@@ -70,7 +70,7 @@ In this sample, each legend item represents a point of the Pie chart, and the la
 
 {sample}CS\_Legend\_Standalone\_01{sample}
 
-The legend is interactive by default. The {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method is used to bind it to the charts:
+The legend is interactive by default – it is bound to the chart by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method:
 
 ```
 // create a standalone legend
