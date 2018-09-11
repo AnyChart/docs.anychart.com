@@ -32,18 +32,21 @@ To adjust a standalone legend, use methods of the {api:anychart.standalones.Lege
 
 ### Legend Items
 
-**Adding items.** You can add legend items automatically by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to:
+You can **add legend items** automatically by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to. This method adds items representing series or points of charts – like in the sample from [Item = Series / Point](#item_=_series_/_point).
 
 ```
 // set the source of legend items
 legend.itemsSource([chart1, chart2]);
 ```
 
-This method adds items representing series or points of charts – like in the sample from [Item = Series / Point](#item_=_series_/_point).
-
 Also, you can add items manually. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
 
-**Adjusting Items.** To adjust legend items, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
+```
+// add items to the legend
+legend.items(legendItemsArray);
+```
+
+To **adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
 
 The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
