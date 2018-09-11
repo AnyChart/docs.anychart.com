@@ -183,7 +183,7 @@ legend.listen("legendItemMouseOut", function(e) {
 
 ## Multiple Legends
 
-The following sample shows how to create multiple legends on a single chart. Each legend represents a data row, and each legend item stands for a point on the chart:
+The following sample shows how to add multiple legends to a single chart. Each legend represents a data row, and each legend item stands for a point on the chart:
 
 {sample}CS\_Legend\_Standalone\_03{sample}
 
