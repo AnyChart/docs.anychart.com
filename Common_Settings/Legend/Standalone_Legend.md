@@ -66,8 +66,7 @@ A standalone legend with automatically added items is interactive by default. If
 
 ### Item = Series / Point
 
-* {api:anychart.standalones.Legend#itemsSource}itemsSource(){api}
-
+In the following sample, the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method is used to bind the standalone legend to two charts: Pie and Line. Legend items represent points of the Pie chart and the only series of the Line chart. The legend is interactive by default.
 
 ```
 // create a standalone legend
