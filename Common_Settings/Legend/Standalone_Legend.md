@@ -41,7 +41,7 @@ legend.itemsSource([chart1, chart2]);
 
 This method adds items representing series or points of charts – like in the sample from [Item = Series / Point](#item_=_series_/_point).
 
-Also, you can add items manually. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the following sections show how to use these methods: [Item = Multiple Series](#item_=_multiple_series), [Multiple Legends](#multiple_legends).
+Also, you can add items manually. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
 
 ### Adjusting Items
 
