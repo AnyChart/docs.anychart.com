@@ -49,6 +49,7 @@ To adjust legend items, use methods of the {api:anychart.standalones.Legend}anyc
 
 The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
+
 * If legend items are added automatically with the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and the chart type allows adding multiple series, you can adjust an individual legend item by calling the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. 
 
 * If the legend is automatic, but the chart is single-series, individual items are customized by adding special fields to the data, like in the sample from the [Individual Items: Single Series](Individual_Legend_Items#single_series).
