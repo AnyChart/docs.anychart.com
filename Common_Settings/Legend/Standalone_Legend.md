@@ -121,7 +121,7 @@ legend.container(stage);
 legend.draw();
 ```
 
-Since legend items are custom, there is no default interactivity, so [events](Events#legend_items) are used to bind items to series.
+Legend items are custom, so there is no default interactivity, and the [events of legend items](Events#legend_items) are used to bind them to series.
 
 This is how the `legendItemClick` event is handled:
 
