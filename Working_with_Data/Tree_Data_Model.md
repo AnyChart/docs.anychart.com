@@ -212,7 +212,7 @@ To access items at the root level, use the following methods of {api:anychart.da
 * {api:anychart.data.Tree#numChildren}numChildren(){api} - returns the number of roots
 * {api:anychart.data.Tree#indexOfChild}indexOfChild(){api} - returns the index of a given item if it is a root (or -1 if it is not)
 
-To go deeper, use the methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
+To go deeper, use methods of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}:
 
 * {api:anychart.data.Tree.DataItem#getChildAt}getChildAt(){api} - returns an item's child with a given index
 * {api:anychart.data.Tree.DataItem#getChildren}getChildren(){api} - returns an array containing all children of an item

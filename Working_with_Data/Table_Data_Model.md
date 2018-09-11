@@ -371,7 +371,7 @@ You can perform the following data operations:
 
 ### Reading
 
-To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
+To read the data, use methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
 * {api:anychart.data.TableSelectable.RowProxy#get}get(){api} - accepts the name of a data field, returns its value
 * {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} - accepts the number of a column, returns the value
@@ -492,7 +492,7 @@ Iterating is a process of going through all the items of a tree. You can [acess]
 
 To iterate over a table, first access a selection of rows - create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} (see [Accessing Rows](#accessing_rows)). Then call {api:anychart.data.TableSelectable#getIterator}getIterator(){api} on it to obtain the {api:anychart.data.TableIterator}anychart.data.TableIterator{api} object.
 
-Finally, call the methods of the iterator:
+Finally, call methods of the iterator:
 
 * {api:anychart.data.TableIterator#advance}advance(){api} - advances the iterator to hte next data item
 * {api:anychart.data.TableIterator#get}get(){api} - returns the value in a given field of the current row

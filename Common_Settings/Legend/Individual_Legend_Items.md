@@ -5,9 +5,9 @@
 
 This article explains how to adjust legend items individually. You can set the text font and text format of an item, its icon type and appearance, enable and configure icon markers, and so on.
 
-To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method. Combine it with the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class.
+To access an individual item, call the {api:?entry=legendItem}legendItem(){api} method of the series represented by this item. For example, with a Cartesian series you should use the {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api} method. Combine it with methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class.
 
-Please note that legend items of single-series chart types cannot be customized this way. However, you can use the `legendItem` data field with fields corresponding to the methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. Read the [Single Series](#single_series) section to learn more.
+Please note that legend items of single-series chart types cannot be customized this way. However, you can use the `legendItem` data field with fields corresponding to methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. Read the [Single Series](#single_series) section to learn more.
 
 Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items (both to single-series and multiple-series charts) – see the [Custom Items](#custom_items) section of this article.
 
@@ -78,7 +78,7 @@ series4.legendItem().format(
 
 ### Formatting Functions
 
-Instead of tokens, you can use formatting functions with the `series` field, allowing you to access the methods of the series.
+Instead of tokens, you can use formatting functions with the `series` field, allowing you to access methods of the series.
 
 In this sample, a formatting function is used to get the color, name, and total value of a Line series by accessing the {api:anychart.core.cartesian.series.Line#color}color(){api}, {api:anychart.core.cartesian.series.Line#name}name(){api}, and {api:anychart.core.cartesian.series.Line#getStat}getStat(){api} methods:
 
