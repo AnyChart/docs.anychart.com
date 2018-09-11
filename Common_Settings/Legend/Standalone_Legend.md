@@ -57,7 +57,7 @@ The settings available for individual items are described in the [Individual Leg
 
 Please note that configuring an individual item on the fly requires rewriting the whole array. The {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method should be used, like in the samples from [Multiple Charts: Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) (see how the `legendItemClick` event is handled in both).
 
-### Interactivity
+### Adding Interactivity
 
 A standalone legend with automatically added items is interactive by default. If legend items are added manually, you have to manually bind them to elements of the chart with the help of [events](../Event_Listeners). To learn more, take a look at samples in the [Multiple Charts: Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections and read the [Events: Legend Items](Events#legend_items) article.
 
