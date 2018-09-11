@@ -7,7 +7,7 @@ The standalone legend is one of [Standalones](../../Dashboards/Standalones) – 
 
 ## Basics
 
-### Legend
+### Creating Legend
 
 The standalone legend is defined as an instance of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class.
 
@@ -30,9 +30,7 @@ legend.draw();
 
 To adjust a standalone legend, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The available settings generally correspond to the settings of the default legend and its elements, which can be found in [Basic Settings](Basic_Settings) and other articles in the [Legend](Overview) folder.
 
-### Items
-
-#### Adding
+### Adding Items
 
 You can add legend items automatically by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to:
 
@@ -45,7 +43,7 @@ This method adds items representing series or points of charts – like in the s
 
 Also, you can add items manually. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method, which takes an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api}, which takes an array. Samples in the [Multiple Charts: Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
 
-#### Adjusting
+### Adjusting Items
 
 To adjust legend items, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
 
