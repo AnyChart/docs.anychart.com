@@ -43,7 +43,7 @@ legend.itemsSource([chart1, chart2]);
 
 ```
 // add items to the legend
-legend.items(legendItemsArray);
+legend.items([item1, item2, item3]);
 ```
 
 **To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
