@@ -3,7 +3,7 @@
 
 ## Overview
 
-This article explains how to adjust legend items. You can set their text font, text format, the size of icons, and so on – combine the {api:?entry=legend}legend(){api} method of the chart with the methods of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class that affect items.
+This article explains how to adjust legend items. You can set their text font, text format, the size of icons, and so on – combine the {api:?entry=legend}legend(){api} method of the chart with methods of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class that affect items.
 
 Please note that settings listed in this article are applied to all items at once. If you need to configure items individually, see the [Individual Legend Items](Individual_Legend_Items) article.
 

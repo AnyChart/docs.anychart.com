@@ -46,7 +46,7 @@ legend.itemsSource([chart1, chart2]);
 legend.items([item1, item2, item3]);
 ```
 
-**To adjust legend items**, use the methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
+**To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
 
 The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
