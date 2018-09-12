@@ -323,3 +323,5 @@ chart.legend().items([
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
+
+{sample}CS\_Legend\_Individual\_Items\_10{sample}
