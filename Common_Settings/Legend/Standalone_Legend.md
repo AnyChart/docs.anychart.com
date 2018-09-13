@@ -39,7 +39,7 @@ To adjust a standalone legend, use methods of the {api:anychart.standalones.Lege
 legend.itemsSource([chart1, chart2]);
 ```
 
-**Also, you can add items manually**. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function as the parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
+**Also, you can add items manually**. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function (returning an array of items) as a parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
 
 ```
 // add items to the legend

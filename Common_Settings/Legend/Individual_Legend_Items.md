@@ -244,9 +244,11 @@ chart = anychart.pie(data);
 * (?) ссылка на Events
 * (?) примечание на изменение на лету, ссылка на Stanalone legend
 
-You can add a custom item or items to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+You can add a custom item or items to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes an array of items or a function (returning an array of items) as a parameter. Alternatively, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, which takes an array.
 
-For example, here an automatically generated legend is updated with a custom item representing the sum of all the Y-values on the chart:
+The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+
+In this sample, there is a chart with a default legend. The {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method with a function as a parameter is used to add a custom legend item representing the sum of all the Y-values on the chart:
 
 ```
 // add a custom legend item 
@@ -323,5 +325,23 @@ chart.legend().items([
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
+
+```
+// push legend items to the array
+for (var i = 0; i < chart.getSeriesCount(); i++) {
+    var series = chart.getSeriesAt(i);
+    for (var k = 0; k < series.data().getRowsCount(); k++) {
+      legendItems.push({
+        text: series.name() + ": " + data.data()[k][0] + 
+              " – $" + data.data()[k][i + 1],
+        iconType: "square",
+        iconFill: series.color()
+      });
+    }
+}
+
+// add custom legend items
+legend.items(legendItems);
+```
 
 {sample}CS\_Legend\_Individual\_Items\_10{sample}
