@@ -9,7 +9,7 @@ To access an individual item, call the {api:?entry=legendItem}legendItem(){api} 
 
 Please note that legend items of single-series chart types cannot be customized this way. However, you can use the `legendItem` data field with fields corresponding to methods of the {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api} class. Read the [Single Series](#single_series) section to learn more.
 
-Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items (both to single-series and multiple-series charts) – see the [Custom Items](#custom_items) section of this article.
+Also, using the {api:?entry=legend}legend(){api} method of the chart with {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} and {api:anychart.core.ui.Legend#items}items(){api} allows adding custom legend items both to single-series and multiple-series charts (as well as editing the existing items) – see the [Custom Items](#custom_items) section of this article.
 
 ## Enabling / Disabling
 
@@ -239,7 +239,7 @@ chart = anychart.pie(data);
 
 ## Custom Items
 
-You can add a custom item or items to the default legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes a function returning an array of items.
+You can add a custom item or items to the default legend (as well as edit the existing items) by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes a function returning an array of items.
 
 Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, which takes an array of items as a parameter, to override the default set of legend items with custom ones.
 
