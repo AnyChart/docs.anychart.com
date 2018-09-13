@@ -70,13 +70,17 @@ You can set the source of the items by using the {api:anychart.core.ui.Legend#it
 chart.legend().itemsSourceMode("categories");
 ```
 
-* (?) Events
-* (?) Individual Legend Items
-* (?) You can also create a standalone legend to access advanced options, such as binding one legend to several charts.
+**Note:** In this case, the 
+[default interactivity settings](#default_interactivity) do not apply. To bind legend items to elements of the chart, you have to use events – see the [Events](Events) article.
 
 Setting the source to `"categories"` may be reasonable if, for example, there is only one series:
 
 {sample}CS\_Legend\_Basic\_03{sample}
+
+Also, you can create a custom legend....
+
+* (?) Individual Legend Items
+* (?) You can also create a standalone legend to access advanced options, such as binding one legend to several charts.
 
 ## Layout
 
