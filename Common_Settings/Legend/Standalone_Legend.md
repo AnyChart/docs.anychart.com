@@ -39,14 +39,14 @@ To adjust a standalone legend, use methods of the {api:anychart.standalones.Lege
 legend.itemsSource([chart1, chart2]);
 ```
 
-**Also, you can add items manually**. Call the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method with an array of items or a function (returning an array of items) as a parameter, or {api:anychart.standalones.Legend#items}items(){api} with an array as the parameter. Samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections show how to use these methods.
+**Also, you can add items manually**. Call the {api:anychart.standalones.Legend#items}items(){api} with an array of items as a parameter, or {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} with a function returning an array of items. See samples in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) sections.
 
 ```
 // add items to the legend
 legend.items([item1, item2, item3]);
 ```
 
-**To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings – see [Legend Items](Legend_Items).
+**To adjust legend items**, use methods of the {api:anychart.standalones.Legend}anychart.standalones.Legend{api} class that affect items. The items of the default legend have similar settings, which are listed in [Legend Items](Legend_Items).
 
 The settings available for individual items are described in the [Individual Legend Items](Individual_Legend_Items) article. You should keep in mind that the way of adjusting an individual item depends on the way how items are added:
 
@@ -54,9 +54,7 @@ The settings available for individual items are described in the [Individual Leg
 
 **2.** If the legend is automatic, but the chart is single-series, for example Pie, individual items are customized by adding special fields to the data. Learn more: [Individual Items: Single Series](Individual_Legend_Items#single_series).
 
-**3.** In case items are added manually, individual settings are specified right in the array of items that is passed to {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} or {api:anychart.standalones.Legend#items}items(){api}. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
-
-Please note that configuring an individual item on the fly requires rewriting the whole array. The {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method should be used, like in the [Item = Multiple Series](#item_=_multiple_series) and [Multiple Legends](#multiple_legends) samples (see how the `legendItemClick` event is handled in both).
+**3.** In case items are added manually, individual settings are specified right in the array of items that is passed to {api:anychart.standalones.Legend#items}items(){api} or {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api}. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 ### Interactivity
 
@@ -150,13 +148,6 @@ legend.listen("legendItemClick", function(e) {
     legend.itemsFormatter(function() {return legendItems});
   }
 });
-```
-
-Please note that configuring a custom item on the fly requires rewriting the whole array of items with the help of the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method:
-
-```
-legendItems[index].fontColor = "#999999";
-legend.itemsFormatter(function() {return legendItems}
 ```
 
 On `legendItemMouseOver` and `legendItemMouseOut`, the color of the series is configured:
@@ -253,13 +244,6 @@ legend.listen("legendItemClick", function(e) {
     legend.itemsFormatter(function() {return legendItems});
   }
 });
-```
-
-Please note that configuring a custom item on the fly requires rewriting the whole array of items with the help of the {api:anychart.standalones.Legend#itemsFormatter}itemsFormatter(){api} method:
-
-```
-legendItems[index].iconFill = "#455a64";
-legend.itemsFormatter(function() {return legendItems}
 ```
 
 On `legendItemMouseOver` and `legendItemMouseOut`, the hover state of the point is enabled and disabled:

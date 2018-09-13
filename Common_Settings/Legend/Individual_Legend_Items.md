@@ -239,36 +239,33 @@ chart = anychart.pie(data);
 
 ## Custom Items
 
-* (?) itemsFormatter() принимает функцию / массив, а items() только массив
-* (?) пример на 1 итем = 1 точка (мультисерийный чарт)
-* (?) ссылка на Events
-* (?) примечание на изменение на лету, ссылка на Stanalone legend
+You can add a custom item or items to the default legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes a function returning an array of items.
 
-You can add a custom item or items to the legend by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes an array of items or a function (returning an array of items) as a parameter. Alternatively, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, which takes an array.
+Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, which takes an array of items as a parameter, to override the default set of legend items with custom ones.
 
-The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+The available settings of custom legend items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+
+**Note:** To bind custom items to elements of the chart, you have to use events – see the [Events](Events) article. (?)
 
 In this sample, there is a chart with a default legend. The {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method with a function as a parameter is used to add a custom legend item representing the sum of all the Y-values on the chart:
 
 ```
 // add a custom legend item 
-chart.legend().itemsFormatter(function(items) {
-  items.push({
+chart.legend().itemsFormatter(function(legendItems) {
+  legendItems.push({
     text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
     iconEnabled: false,
     fontColor: "#455a64",
     fontWeight: 600,
     fontStyle: "italic"
   });
-  return items;
+  return legendItems;
 });
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_08{sample}
 
-Combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#items}items(){api} method of the legend allows creating a fully custom legend where each is item is configured manually. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
-
-(?) поправить цвет штриховки
+Here, the {api:anychart.core.ui.Legend#items}items(){api} method is used to create a fully custom legend where each item is configured manually:
 
 ```
 // add custom legend items
@@ -325,6 +322,8 @@ chart.legend().items([
 ```
 
 {sample}CS\_Legend\_Individual\_Items\_09{sample}
+
+In the sample below, there is also a custom legend, created with the help of the {api:anychart.core.ui.Legend#items}items(){api} method. Each point represents a point of a multiple-series chart:
 
 ```
 // push legend items to the array

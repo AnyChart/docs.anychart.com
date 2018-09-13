@@ -57,15 +57,15 @@ anychart.onDocumentReady(function () {
     chart.legend(true);
 
     // add a custom legend item 
-    chart.legend().itemsFormatter(function(items) {
-      items.push({
+    chart.legend().itemsFormatter(function(legendItems) {
+      legendItems.push({
         text: "/ Total Sales: $" + chart.getStat("dataPlotYSum") + " /",
         iconEnabled: false,
         fontColor: "#455a64",
         fontWeight: 600,
         fontStyle: "italic"
       });
-      return items;
+      return legendItems;
     });
 
     // set the chart title
