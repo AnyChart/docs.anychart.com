@@ -37,7 +37,7 @@ The options listed below allow creating advanced data visualizations:
 * [Events](Events)
 * [Standalone Legend](Standalone_Legend)
 
-## Classes
+## Classes (?)
 
 Here is a list of classes used to work with the legend: 
 
