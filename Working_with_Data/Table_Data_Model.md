@@ -391,7 +391,7 @@ The second parameter sets the **mode of search** - see {api:anychart.enums.Table
 * `"exact-or-prev"`
 * `"nearest"`
 
-In the following sample, the information about the first and last point of the shown range is displayed in the chart title, and when the range is changed, the description is updated. The {api:anychart.data.TableSelectable#search}search(){api} method is combined with the {api:anychart.data.TableSelectable.RowProxy#get}get(){api} and {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} methods allowing to [read](#reading) the data:
+In the following sample, information about the first and last point of the shown range is displayed in the chart title, and when the range is changed, the description is updated. The {api:anychart.data.TableSelectable#search}search(){api} method is combined with the {api:anychart.data.TableSelectable.RowProxy#get}get(){api} and {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} methods allowing to [read](#reading) the data:
 
 ```
 // get the shown range of points
@@ -500,7 +500,7 @@ Finally, call methods of the iterator:
 * {api:anychart.data.TableIterator#getKey}getKey(){api} - returns the key of a current row
 * {api:anychart.data.TableIterator#reset}reset(){api} - resets the iterator to its default position before the first item
 
-In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display the information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
+In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
 
 ```
 /* create the selectable object
@@ -511,7 +511,7 @@ selectable.select(range.firstSelected, range.lastSelected);
 // get the iterator
 var iterator = selectable.getIterator();
 
-// display the information about shown points in the table
+// display information about shown points in the table
 while (iterator.advance()) {
   var key = iterator.getKey();
   var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
@@ -531,7 +531,7 @@ selectable = mapping.createSelectable();
 selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 ```
 
-The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
+The iterator is used to display information about the grouped data falling into the range of points shown on the chart:
 
 {sample}WD\_Table\_Data\_12{sample}
 

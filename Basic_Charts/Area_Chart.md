@@ -149,7 +149,7 @@ To learn about the stacked versions of the Area chart and its modifications, see
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-Here is the information about creating Vertical Area series:
+Here is information about creating Vertical Area series:
 
 * [Vertical Area](Vertical/Area_Chart)
 * [Vertical Spline Area](Vertical/Spline_Area_Chart)

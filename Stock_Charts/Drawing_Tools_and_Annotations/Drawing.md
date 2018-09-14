@@ -165,7 +165,7 @@ There are a lot of ways to save annotations to a server or to load them. Below y
 
 - {api:anychart#onDocumentReady}onDocumentReady(){api} - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
+- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See information about annotation events in the [Handling events section](#handling_events).
 
 The following methods are of a great help:
 

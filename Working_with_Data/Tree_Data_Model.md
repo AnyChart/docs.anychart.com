@@ -483,8 +483,7 @@ In the sample below the {api:anychart.data.Traverser#advance}advance(){api} and 
 // get the traverser of a tree
 var traverser = treeData.getTraverser();
 
-/* get the element displaying
-the information about the tree */
+/* get the element displaying information about the tree */
 var treeInfo = document.getElementById("treeInfo");
 
 // display the names of all data items in the tree
