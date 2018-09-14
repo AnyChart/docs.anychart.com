@@ -5,7 +5,7 @@
 
 Legend is used predominantly to show names of the regions on a map and some side values that describes this series at some point (like sales amount, divorce rate, etc.). 
 
-AnyMap legend works the same way it works in all other chart types. Look through [Legend Settings](../Common_Settings/Legend) article for more information about legends.
+AnyMap legend works the same way it works in all other chart types. Look through the [Legend](../Common_Settings/Legend/Overview) section for more information about legends.
 
 This articles shows several samples how legend is used with AnyChart JavaScript maps.
 

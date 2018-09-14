@@ -4,7 +4,7 @@
 
 ## Overview
 
-The AnyStock legend is somewhat alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about basic legend in [Legend tutorial](../Common_Settings/Legend). The main difference you should remember is that the legend in AnyStock is bound to the plot, not to the chart itself.
+The AnyStock legend is somewhat alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about the basic legend in the [Legend](../Common_Settings/Legend/Overview) section. The main difference you should remember is that the legend in AnyStock is bound to the plot, not to the chart itself.
 
 Let's explore the legend usage in AnyStocks and have a look at a couple of samples.
 
