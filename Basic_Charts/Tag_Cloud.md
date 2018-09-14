@@ -99,7 +99,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
+The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#categories). Here is a sample showing how to add categories and how the chart looks after that:
 
 ```
 // create data   
@@ -118,6 +118,9 @@ var data = [
 
 // create a chart and set the data
 chart = anychart.tagCloud(data);
+
+// enable the legend
+chart.legend(true);
 ```
 
 {sample}BCT\_Tag\_Cloud\_Chart\_03{sample}
