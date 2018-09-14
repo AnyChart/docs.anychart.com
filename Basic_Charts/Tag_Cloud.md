@@ -99,7 +99,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field can be used with the ordinal color scale – see [Color Scale: Categories](#categories). Also, it automatically changes the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) to `"categories"`. (?) ...
+The `category` field is optional: it causes elements to be colored according to the categories they belong to. Also, it affects the ordinal color scale and the legend of the chart. See the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
 
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
@@ -431,7 +431,9 @@ chart.tooltip().format(function() {
 
 ### Legend
 
-(?) ... Here is a sample showing how to add categories and how the chart and its legend look after that:
+(?) ... automatically changes the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) to `"categories"`.
+
+... Here is a sample showing how to add categories and how the chart and its legend look after that:
 
 ```
 // create data   
