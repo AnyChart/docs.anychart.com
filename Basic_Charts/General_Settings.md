@@ -158,7 +158,7 @@ series2.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 
 A legend is a table on a chart listing and explaining the symbols and colors used there and displaying additional information that helps user to understand the chart. This element is supported by all charts in AnyChart: it is turned off by default, but can be enabled and, if needed, configured. You can customize the title, position, visual style, legend tooltips and add some other perks.
 
-For more information, read this article: [Legend](../Common_Settings/Legend).
+For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
 
 The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
 
