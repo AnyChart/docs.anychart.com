@@ -239,7 +239,7 @@ chart = anychart.pie(data);
 
 ## Custom Items
 
-You can add a custom item or items to the default legend (as well as edit the existing items) by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes a function returning an array of items.
+You can add a custom item or items to the default legend (as well as edit an existing item) by combining the {api:?entry=legend}legend(){api} method of the chart with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method of the legend. It takes a function returning an array of items.
 
 Also, you can use the {api:anychart.core.ui.Legend#items}items(){api} method, which takes an array of items as a parameter, to override the default set of legend items with custom ones.
 
