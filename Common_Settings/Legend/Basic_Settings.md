@@ -77,9 +77,7 @@ Setting the source to `"categories"` may be reasonable if there is only one seri
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
-Also, you can create [custom legend items](Individual_Legend_Items#custom_items) and bind them to chart elements of your choice – for example, to chart points.
-
-To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](Standalone_Legend).
+Also, you can create [custom legend items](Individual_Legend_Items#custom_items) and bind them to chart elements of your choice – for example, to chart points. To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the [standalone legend](Standalone_Legend).
 
 ## Layout
 
