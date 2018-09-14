@@ -366,7 +366,7 @@ chart.tooltip().titleFormat(function() {
 
 ### Legend
 
-The default [legend](../Common_Settings/Legend/Overwiew) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, change the [source](../Common_Settings/Legend/Basic_Settings#source) of the legend by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
+The default [legend](../Common_Settings/Legend/Overwiew) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multiple-series chart and want to show series instead, change the [source](../Common_Settings/Legend/Basic_Settings#source) of the legend by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
 
 ```
 // add hatch fills
