@@ -36,10 +36,3 @@ The options listed below allow creating advanced data visualizations:
 
 * [Events](Events)
 * [Standalone Legend](Standalone_Legend)
-
-## Classes
-
-* {api:?entry=legend}legend(){api} + Cartesian: {api:anychart.charts.Cartesian#legend}legend(){api}
-* {api:?entry=legendItem}legendItem(){api} + Cartesian: {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
-* The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
-* legend item: {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
