@@ -30,7 +30,7 @@ Legend items are also fully customizable – all at once or individually:
 * [Legend Items](Legend_Items)
 * [Individual Legend Items](Individual_Legend_Items)
 
-Finally, the advanced options listed below make working with the legend easier and allow tailoring data visualizations for your needs:
+Finally, the advanced options listed below allow create a legend tailored for your needs:
 
 * [Themes](Themes)
 * [Events](Events)
