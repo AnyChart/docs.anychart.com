@@ -7,8 +7,6 @@ A legend is an element of the chart that lists and explains its elements, making
 
 The legend and all its elements are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
 
-In this section, ...
-
 * (?) color range (color legend) (но куда ссылаться?)
 
 ## List of Articles
@@ -30,9 +28,12 @@ Legend items are also fully customizable – all at once or individually:
 * [Legend Items](Legend_Items)
 * [Individual Legend Items](Individual_Legend_Items)
 
-Finally, the advanced options listed below allow create a legend tailored for your needs:
+An alternative way to apply settings to the legend is using themes:
 
 * [Themes](Themes)
+
+Finally, the advanced options listed below...:
+
 * [Events](Events)
 * [Standalone Legend](Standalone_Legend)
 
