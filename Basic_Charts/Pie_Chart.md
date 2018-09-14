@@ -127,7 +127,7 @@ chart = anychart.pie(data);
 
 Outline a special element that is usually used to highlight hovered and selected elements of a pie chart. It is enabled by default and looks like a thin extra arc that extends from a slice when it is hovered or selected.
 
-Outline can be configured using the {api:anychart.charts.Pie#outline}{api} method or you can define how outline looks using [states](#all_points).
+Outline can be configured using the {api:anychart.charts.Pie#outline}outline(){api} method or you can define how outline looks using [states](#all_points).
 
 To disable outline effect use this code:
 

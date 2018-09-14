@@ -5,7 +5,7 @@
 
 In AnyChart, you always work with a series, no matter what chart type you create. It is the series type that determines what (and how) is drawn on a chart. Please note that it can be changed on-the-fly: [Series Type](Series_Type).
 
-Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
+Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multiple-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
 
 However, despite all the differences, many settings are configured in the same way for all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
@@ -62,7 +62,7 @@ series3.selected().stroke("#aeb404", 4, "10 5",  "round");
 
 ## Markers
 
-{api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
+{api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multiple-series chart more distinguishable.
 
 All chart types allow configuring markers: both on a whole series and in individual points. Available settings include type, size, fill color, and others.
 
@@ -126,7 +126,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart individually.
+A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multiple-series chart individually.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -179,7 +179,7 @@ In AnyChart axes are used to control grids, axes labels, lines, and tick marks. 
 
 Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids).
 
-In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
+In the sample below, there is a multiple-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 
 ```
 // configure the main y-scale
@@ -212,7 +212,7 @@ series2.yScale(yScale2);
 
 ### Stacking
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked/Overview).
 
@@ -222,15 +222,15 @@ All charts with points looking like bars (Bar, Column, and related types) allow 
 
 ## Interactivity
 
-You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity/Overview) section explains how to change the defaults and create custom interactivity settings.
+You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers over a point, it is highlighted, and a tooltip is shown; clicking on a legend item usually hides / shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity/Overview) section explains how to change the defaults and create custom interactivity settings.
 
 ## Events
 
-To make your chart more interactive, you can listen to such events as clicking, hovering, or unhovering (a chart or a point) and others. 
+To make your chart more interactive, you can listen to such events as clicking, moving the mouse over or off the chart or a chart point, and others. 
 
 See the [Event Listeners](../Common_Settings/Event_Listeners) to learn how to work with events.
 
-In this sample, event listeners are used to change the chart title on hovering, selecting, and double-clicking a point and to customize the cursor style on hovering and unhovering the chart:
+In this sample, event listeners are used to change the chart title when a point is hovered over, selected, and double-clicked on. Also, when the user moves the mouse over and off the chart, the cursor style is customized.
 
 ```
 // create an event listener for hovering the chart

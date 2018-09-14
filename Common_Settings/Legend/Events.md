@@ -46,11 +46,11 @@ Here are the events of legend items:
 <tr><th>Value</th><th>Description</th></tr>
 <tr><td>legendItemClick</td><td>An item has been clicked on.</td></tr>
 <tr><td>legendItemDblclick</td><td>An item has been double-clicked on.</td></tr>
-<tr><td>legendItemMouseDown</td><td>A mouse button has been pressed on an item.</td></tr>
-<tr><td>legendItemMouseMove</td><td>A mouse has been moved over an item.</td></tr>
-<tr><td>legendItemMouseOut</td><td>A mouse has been moved off an item.</td></tr>
-<tr><td>legendItemMouseOver</td><td>A mouse has been moved over an item.</td></tr>
-<tr><td>legendItemMouseUp</td><td>A mouse button has been released over an item.</td></tr>
+<tr><td>legendItemMouseDown</td><td>The left mouse button has been pressed on an item.</td></tr>
+<tr><td>legendItemMouseMove</td><td>The mouse has been moved over an item.</td></tr>
+<tr><td>legendItemMouseOut</td><td>The mouse has been moved off an item.</td></tr>
+<tr><td>legendItemMouseOver</td><td>The mouse has been moved over an item.</td></tr>
+<tr><td>legendItemMouseUp</td><td>The left mouse button has been released over an item.</td></tr>
 </table>
 
 In the sample below, there is a multiple-series chart with the interactivity of the legend modified: when you click on an icon, its fill color is changed, and its series, instead of being hidden / shown, is selected.

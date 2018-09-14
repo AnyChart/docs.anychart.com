@@ -28,43 +28,26 @@ anychart.onDocumentReady(function () {
 
     // create data   
     var data = [
-      {x: "learning", value: 80, custom_field: "info 1"},
-      {x: "includes", value: 56, custom_field: "info 2"},
-      {x: "lists", value: 44, custom_field: "info 3"},
-      {x: "meaning", value: 40, custom_field: "info 4"},
-      {x: "useful", value: 36, custom_field: "info 5"},
-      {x: "different", value: 32, custom_field: "info 6"},
-      {x: "grammar", value: 28, custom_field: "info 7"},
-      {x: "teaching", value: 24, custom_field: "info 8"},
-      {x: "example", value: 20, custom_field: "info 9"},
-      {x: "thing", value: 12, custom_field: "info 10"}
+{x: "learning", value: 80, category: "noun"},
+{x: "includes", value: 56, category: "verb"},
+{x: "lists", value: 44, category: "noun"},
+{x: "meaning", value: 40, category: "noun"},
+{x: "useful", value: 36, category: "adjective"},
+{x: "different", value: 32, category: "adjective"},
+{x: "grammar", value: 28, category: "noun"},
+{x: "teaching", value: 24, category: "noun"},
+{x: "example", value: 20, category: "noun"},
+{x: "thing", value: 12, category: "noun"}
     ];
 
     // create a chart and set the data
     var chart = anychart.tagCloud(data);
 
-    // enable HTML for tooltips
-    chart.tooltip().useHtml(true);
-
-    // configure tooltips
-    chart.tooltip().format(function() {
-      var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
-      if (percentOfTotal < 7)
-        return percentOfTotal.toFixed(1) +
-               "%<br><br>" + this.getData("custom_field");
-      if (percentOfTotal > 15)
-        return "<span style='font-size:26'>" +
-               percentOfTotal.toFixed(1) +
-               "%</span><br><br>" +
-               this.getData("custom_field");
-      return "<span style='font-size:18'>" +
-             percentOfTotal.toFixed(1) +
-             "%</span><br><br>" +
-             this.getData("custom_field");
-    });
+    // enable the legend
+    chart.legend(true);
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Tooltips (Formatting Functions)");
+    chart.title("Tag Cloud Chart: Legend");
 
     // set the container id
     chart.container("container");
