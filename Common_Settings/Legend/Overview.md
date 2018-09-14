@@ -42,5 +42,5 @@ The options listed below allow creating advanced data visualizations:
 Here is a list of classes used to work with the legend: 
 
 * legend – {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
-* legend item – {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
+* legend items – {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 * standalone legend – {api:anychart.standalones.Legend}anychart.standalones.Legend{api}
