@@ -431,7 +431,7 @@ chart.tooltip().format(function() {
 
 ### Legend
 
-Adding the `"category"` field to the data colors elements of the chart according to the categories they belong to. In this case, the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) is automatically set to `"categories"`, so legend items represent categories:
+Adding the `"category"` field to the data colors elements of the chart according to the categories they belong to. In this case, the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) is automatically set to `"categories"`, causing them to represent categories:
 
 ```
 // create data   
