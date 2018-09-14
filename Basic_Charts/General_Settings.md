@@ -164,7 +164,7 @@ The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) an
 
 For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
 
-The following sample shows a multiple-series Column chart with a default legend enabled. As you can see, it displays the names and colors of the series:
+The following sample shows a multiple-series Column chart with a default legend enabled. As you can see, it displays names and colors of the series:
 
 ```
 // enable the legend
