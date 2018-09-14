@@ -32,7 +32,7 @@ An alternative way to apply settings to the legend is using themes:
 
 * [Themes](Themes)
 
-Finally, the advanced options listed below...:
+The options listed below allow creating advanced data visualizations:
 
 * [Events](Events)
 * [Standalone Legend](Standalone_Legend)
