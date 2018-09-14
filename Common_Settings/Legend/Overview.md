@@ -11,7 +11,7 @@ The legend and all its elements are fully customizable: you can either modify an
 
 ## List of Articles
 
-The first article explains basic settings affecting the legend as a whole, such as layout, size, position, and so on:
+The first article explains basic settings affecting the whole legend:
 
 * [Basic Settings](Basic_Settings)
 
