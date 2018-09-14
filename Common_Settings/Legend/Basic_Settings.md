@@ -73,14 +73,13 @@ chart.legend().itemsSourceMode("categories");
 **Note:** In this case, the 
 [default interactivity settings](#default_interactivity) do not apply. To bind legend items to elements of the chart, you have to use events – see the [Events](Events) article.
 
-Setting the source to `"categories"` may be reasonable if, for example, there is only one series:
+Setting the source to `"categories"` may be reasonable if there is only one series:
 
 {sample}CS\_Legend\_Basic\_03{sample}
 
-Also, you can create a custom legend....
+Also, you can create a fully custom legend and bind its items to the chart elements of your choice – for example, to chart points. Read more: [Individual Legend Items: Custom Items](Individual_Legend_Items#custom_items).
 
-* (?) Individual Legend Items
-* (?) You can also create a standalone legend to access advanced options, such as binding one legend to several charts.
+To access such advanced options as as linking the legend to several charts at once or showing multiple legends on one chart, use the standalone legend: [Standalone Legend](Standalone_Legend).
 
 ## Layout
 
