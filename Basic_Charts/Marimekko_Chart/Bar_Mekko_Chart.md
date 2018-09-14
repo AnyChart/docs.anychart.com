@@ -8,7 +8,7 @@ A [Mekko chart](Mekko_Chart) with a single series and units is called Bar Mekko 
 The difference between this constructor and other variations are:
 - [Palette](../../Appearance_Settings/Palettes) applies to elements of a single series if there is only one series, similar to [Pie Chart](../Pie_Chart) or [Donut Chart](../Doughnut_Chart).
 - [Scale](../../Axes_and_Grids/Scales) stacked mode is set to [values stacking](../Stacked/Overview#value_stacking).
-- When only one series is present, the [source](../../Common_Settings/Legend/Basic_Settings#source) of the legend is set to `"categories"` to show names from the X-scale instead of series names.
+- When only one series is present, the [source of legend items](../../Common_Settings/Legend/Basic_Settings#source) is set to `"categories"` to show names from the X-scale instead of series names.
 - [Points padding](Mekko_Chart#padding) is set to 0.
 
 ## Quick Start
