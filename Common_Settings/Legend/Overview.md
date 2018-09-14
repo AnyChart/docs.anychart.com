@@ -11,7 +11,7 @@ The legend and its items are fully customizable: you can either modify any setti
 
 ## List of Articles
 
-The first article explains basic settings affecting the whole legend:
+The first article explains basic settings affecting the whole legend, such as size and position:
 
 * [Basic Settings](Basic_Settings)
 
