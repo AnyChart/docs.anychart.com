@@ -12,14 +12,29 @@ In this section, ...
 * The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 * legend item: {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
 * (?) color range (color legend) (но куда ссылаться?)
+
+Basic Settings:
+
 * [Basic Settings](Basic_Settings)
+
+Legend Elements:
+
 * [Background](Background)
 * [Title and Separator](Title_and_Separator)
 * [Tooltip](Tooltip)
 * [Paginator](Paginator)
 * [Hover Cursor](Hover_Cursor)
+
+Legend Items:
+
 * [Legend Items](Legend_Items)
 * [Individual Legend Items](Individual_Legend_Items)
+
+Themes and Events
+
 * [Themes](Themes)
 * [Events](Events)
+
+Standalone Legend:
+
 * [Standalone Legend](Standalone_Legend)
