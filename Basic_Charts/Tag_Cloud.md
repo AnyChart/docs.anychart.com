@@ -99,7 +99,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#categories). Here is a sample showing how to add categories and how the chart looks after that:
+The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field can be used with the ordinal [color scale](#categories). Also, it affects the [legend](../Common_Settings/Legend/Overwiew), automatically changing its [source](../Common_Settings/Legend/Basic_Settings#source) to `"categories"`. Here is a sample showing how to add categories and how the chart and its legend look after that:
 
 ```
 // create data   
