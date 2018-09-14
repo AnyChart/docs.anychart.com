@@ -156,32 +156,22 @@ series2.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 
 ## Legend
 
-A legend is a table on a chart listing and explaining the symbols and colors used there and displaying additional information that helps user to understand the chart. This element is supported by all charts in AnyChart: it is turned off by default, but can be enabled and, if needed, configured. You can customize the title, position, visual style, legend tooltips and add some other perks.
+A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. The legend and its items are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
+
+Most chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](Pie), [Doughnut](Doughnut), [Funnel](Funnel), [Pyramid](Pyramid), [Venn](Venn), [Waterfall](Waterfall).
+
+The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default interactivity](../Common_Settings/Legend/Basic_Settings#default_interactivity) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the series is hovered. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
 
 For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
 
-The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
+The following sample shows a multiple-series Column chart with a default legend enabled. As you can see, it displays the names and colors of the series:
 
 ```
 // enable the legend
-var legend = chart.legend();
-legend.enabled(true);
+chart.legend(true);
 ```
 
 {sample}BCT\_General\_Settings\_08{sample}
-
-In this sample, there is a single-series Column chart and a custom legend displaying the list of categories:
-
-```
-// enable the legend
-var legend = chart.legend();
-legend.enabled(true);
-
-// set the source of legend items
-legend.itemsSourceMode("categories");
-```
-
-{sample}BCT\_General\_Settings\_09{sample}
 
 ## Axes and Scales
 
@@ -218,7 +208,7 @@ series1.yScale(yScale1);
 series2.yScale(yScale2);
 ```
 
-{sample}BCT\_General\_Settings\_10{sample}
+{sample}BCT\_General\_Settings\_09{sample}
 
 ### Stacking
 
@@ -282,7 +272,7 @@ chart.listen("pointDblClick", function(e){
 });
 ```
 
-{sample}BCT\_General\_Settings\_11{sample}
+{sample}BCT\_General\_Settings\_10{sample}
 
 ## Vertical Charts
 
