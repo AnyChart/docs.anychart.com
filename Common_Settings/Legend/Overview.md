@@ -9,21 +9,22 @@ The legend and all its elements are fully customizable: you can either modify an
 
 In this section, ...
 
+* (?) color range (color legend) (но куда ссылаться?)
+
 ## Classes
 
 * {api:?entry=legend}legend(){api} + Cartesian: {api:anychart.charts.Cartesian#legend}legend(){api}
 * {api:?entry=legendItem}legendItem(){api} + Cartesian: {api:anychart.core.cartesian.series.Line#legendItem}legendItem(){api}
 * The legend is defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 * legend item: {api:anychart.core.utils.LegendItemSettings}anychart.core.utils.LegendItemSettings{api}
-* (?) color range (color legend) (но куда ссылаться?)
 
-## ?
+## List of Articles
 
-Basic Settings:
+The first article explains basic settings affecting the legend as a whole, such as layout, size, position, and so on:
 
 * [Basic Settings](Basic_Settings)
 
-Legend Elements:
+The following sections explain how to adjust various parts of the legend:
 
 * [Background](Background)
 * [Title and Separator](Title_and_Separator)
@@ -31,16 +32,13 @@ Legend Elements:
 * [Paginator](Paginator)
 * [Hover Cursor](Hover_Cursor)
 
-Legend Items:
+Legend items are also fully customizable – all at once or individually:
 
 * [Legend Items](Legend_Items)
 * [Individual Legend Items](Individual_Legend_Items)
 
-Themes and Events
+Finally, the advanced options listed below make working with the legend easier and allow tailoring data visualizations for your needs:
 
 * [Themes](Themes)
 * [Events](Events)
-
-Standalone Legend:
-
 * [Standalone Legend](Standalone_Legend)
