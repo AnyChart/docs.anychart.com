@@ -232,7 +232,7 @@ All charts with points looking like bars (Bar, Column, and related types) allow 
 
 ## Interactivity
 
-You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity) article explains how to change the defaults and create custom interactivity settings.
+You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity/Overview) section explains how to change the defaults and create custom interactivity settings.
 
 ## Events
 
