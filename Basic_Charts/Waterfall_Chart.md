@@ -199,6 +199,8 @@ var series3 = chart.waterfall(seriesData_3);
 
 ### Appearance
 
+#### Points
+
 The [appearance settings](../Appearance_Settings) of a Waterfall chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
 Combine them with the following methods to adjust columns indicating total values:
@@ -252,7 +254,7 @@ series.selected().risingStroke("#0066cc", 4);
 
 {sample}BCT\_Waterfall\_Chart\_04{sample}
 
-### Connectors
+#### Connectors
 
 A connector is a line connecting two columns of a Waterfall chart. To configure the stroke of connectors, use the {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} method:
 

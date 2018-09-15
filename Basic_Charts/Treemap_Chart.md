@@ -435,7 +435,7 @@ chart.labels().adjustFontSize(true);
 
 #### All Headers
 
-By default, parent elements of the currently shown levels are visualized as headers. To disable or enable them, call the {api:anychart.core.StateSettings#headers}headers(){api} method with `false` or `true` as a parameter:
+By default, parent elements of the currently shown levels are visualized as headers. To disable or enable them, call the {api:anychart.charts.TreeMap#headers}headers(){api} method with `false` or `true` as a parameter:
 
 ```
 // disable headers
