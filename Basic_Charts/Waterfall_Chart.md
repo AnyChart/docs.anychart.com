@@ -199,9 +199,9 @@ var series3 = chart.waterfall(seriesData_3);
 
 ### Appearance
 
-#### Points
+#### Columns
 
-The [appearance settings](../Appearance_Settings) of a Waterfall chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of Waterfall columns can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
 Combine them with the following methods to adjust columns indicating total values:
 
