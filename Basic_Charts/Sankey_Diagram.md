@@ -161,6 +161,12 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
+* вроде бы у чарта есть метод для настройки тултипов сразу у всех элементов, но нет такого же метода для настройки лейблов
+
+* кажись у флоу и дропоффов лейблы можно показать и настроить только на ховер 
+
+* а у лейблов наоборот только в нормале текст лейбла настраивается, нельзя сделать изменение на ховере, но изменение цвета можно
+
 #### Tokens
 
 To change the text of labels, combine the {api:anychart.charts.Sankey#label}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
