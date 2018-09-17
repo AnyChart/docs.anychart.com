@@ -226,6 +226,8 @@ A beta module for creating [Resource](../beta/Resource_Chart) charts:
 
 ### Sankey Diagram
 
+A module for creating [Sankey Diagrams](../Basic_Charts/Sankey_Diagram):
+
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
 ```
