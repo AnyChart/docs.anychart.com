@@ -171,7 +171,6 @@ Here is the list of tokens that work with the Sankey diagram:
 
 * `?`
 * `?`
-* `?`
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -187,7 +186,6 @@ This sample shows how to work with tokens:
 
 To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
-* `?`
 * `?`
 * `?`
 
