@@ -1,7 +1,5 @@
 {:index 1}
-# Legend
-
-## Overview
+# Overview
 
 A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. In AnyChart, the legend can be used with [Basic Charts](../../Basic_Charts/General_Settings#legend), [Stock Charts](../../Stock_Charts/Legend), [Maps](../../Maps/Legend), and every other chart type.
 
