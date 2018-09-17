@@ -76,7 +76,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 ### Nodes
 
 * [Appearance](#appearance)
-* {api:anychart.core.sankey.elements.Node}anychart.core.sankey.elements.Node{api}
+* [Labels and Tooltips](#labels_and_tooltips)
 
 #### Width
 
@@ -103,16 +103,16 @@ Read the overview of general settings: [General Settings](General_Settings).
 ### Flows
 
 * [Appearance](#appearance)
-* {api:anychart.core.sankey.elements.Flow}anychart.core.sankey.elements.Flow{api}
+* [Labels and Tooltips](#labels_and_tooltips)
 
 ### Dropoffs
 
 * [Appearance](#appearance)
-* {api:anychart.core.sankey.elements.Dropoff}anychart.core.sankey.elements.Dropoff{api}
+* [Labels and Tooltips](#labels_and_tooltips)
 
 ### Appearance
 
-#### All Points
+#### All Elements
 
 The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**...
 
@@ -136,7 +136,7 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 
 {sample}BCT\_Sankey\_Diagram\_04{sample}
 
-#### Individual Points
+#### Individual Elements
 
 ```
 
