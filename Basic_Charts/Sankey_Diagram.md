@@ -65,13 +65,25 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
-### Data
+### Data (?)
+
+* dropoffs: `null`
+* за логичность данных юзер отвечает сам
+* можно перескакивать через колонку
+
+поля:
+
+* `from`
+* `to`
+* `weight`
+* кастомные поля?
+
 
 ```
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_01{sample}
+{sample}BCT\_Sankey\_Diagram\_02{sample}
 
 ### Nodes
 
@@ -87,7 +99,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_02{sample}
+{sample}BCT\_Sankey\_Diagram\_03{sample}
 
 #### Padding
 
@@ -98,7 +110,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_03{sample}
+{sample}BCT\_Sankey\_Diagram\_04{sample}
 
 ### Flows
 
@@ -109,6 +121,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * [Appearance](#appearance)
 * [Labels and Tooltips](#labels_and_tooltips)
+* `null`
 
 ### Appearance
 
@@ -134,7 +147,7 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_04{sample}
+{sample}BCT\_Sankey\_Diagram\_05{sample}
 
 #### Individual Elements
 
