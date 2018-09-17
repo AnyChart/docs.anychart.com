@@ -1,5 +1,5 @@
 {:index 1}
-# Overview
+# Legend
 
 ## Overview
 
@@ -7,7 +7,7 @@ A legend is a part of the chart that lists and explains its elements, making it 
 
 The legend and its items are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
 
-## List of Articles
+## Articles
 
 The first article explains basic settings affecting the whole legend, e.g. size and position:
 
