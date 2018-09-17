@@ -3,7 +3,7 @@
 
 ## Overview
 
-A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. In AnyChart, the legend can be used with [Basic Charts](../../Basic_Charts/General_Settings#legend), [Stock Charts](../../Stock_Charts/Legend), and [Maps](../../Maps/Legend).
+A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. In AnyChart, the legend can be used with [Basic Charts](../../Basic_Charts/General_Settings#legend), [Stock Charts](../../Stock_Charts/Legend), [Maps](../../Maps/Legend), and every other chart type.
 
 The legend and its items are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
 
@@ -13,7 +13,7 @@ The first article explains basic settings affecting the whole legend, e.g. size 
 
 * [Basic Settings](Basic_Settings)
 
-suchThe following sections explain how to adjust various parts of the legend:
+The following sections explain how to adjust various parts of the legend:
 
 * [Background](Background)
 * [Title and Separator](Title_and_Separator)
