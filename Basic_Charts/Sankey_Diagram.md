@@ -118,7 +118,7 @@ The [appearance settings](../Appearance_Settings) of a Sankey diagram can be con
 
 * nodes: {api:anychart.core.sankey.elements.Node#normal}normal(){api}, {api:anychart.core.sankey.elements.Node#normal}hovered(){api}
 * flows: {api:anychart.core.sankey.elements.Flow#normal}normal(){api}, {api:anychart.core.sankey.elements.Flow#normal}hovered(){api}
-* dropoff: {api:anychart.core.sankey.elements.Dropoff#normal}normal(){api}, {api:anychart.core.sankey.elements.Dropoff#normal}hovered(){api}
+* dropoffs: {api:anychart.core.sankey.elements.Dropoff#normal}normal(){api}, {api:anychart.core.sankey.elements.Dropoff#normal}hovered(){api}
 
 Combine them with the following methods:
 
