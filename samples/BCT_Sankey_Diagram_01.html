@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-sankey.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
@@ -28,58 +28,61 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ['Brazil', 'Portugal', 5],
-      ['Brazil', 'France', 1],
-      ['Brazil', 'Spain', 1],
-      ['Brazil', 'England', 1],
-      ['Canada', 'Portugal', 1],
-      ['Canada', 'France', 5],
-      ['Canada', 'England', 1],
-      ['Mexico', 'Portugal', 1],
-      ['Mexico', 'France', 1],
-      ['Mexico', 'Spain', 5],
-      ['Mexico', 'England', 1],
-      ['USA', 'Portugal', 1],
-      ['USA', 'France', 1],
-      ['USA', 'Spain', 1],
-      ['USA', 'England', 5],
-      ['Portugal', 'Angola', 2],
-      ['Portugal', 'Senegal', 1],
-      ['Portugal', 'Morocco', 1],
-      ['Portugal', 'South Africa', 3],
-      ['Portugal', null, 1],
-      ['France', 'Angola', 1],
-      ['France', 'Senegal', 3],
-      ['France', 'Mali', 3],
-      ['France', 'Morocco', 3],
-      ['France', 'South Africa', 1],
-      ['Spain', 'Senegal', 1],
-      ['Spain', 'Morocco', 3],
-      ['Spain', 'South Africa', 1],
-      ['England', 'Angola', 1],
-      ['England', 'Senegal', 1],
-      ['England', 'Morocco', 2],
-      ['England', 'South Africa', 7],
-      ['South Africa', 'China', 5],
-      ['South Africa', 'India', 1],
-      ['South Africa', 'Japan', 3],
-      ['Angola', 'China', 5],
-      ['Angola', 'India', 1],
-      ['Angola', 'Japan', 3],
-      ['Senegal', 'China', 5],
-      ['Senegal', 'India', 1],
-      ['Senegal', 'Japan', 3],
-      ['Mali', 'China', 5],
-      ['Mali', 'India', 1],
-      ['Mali', 'Japan', 3],
-      ['Morocco', 'China', 5],
-      ['Morocco', 'India', 1],
-      ['Morocco', 'Japan', 3],
-      ['Brazil', 'China', 2]
+      {from: "Brazil",       to: "Portugal",     weight: 5},
+      {from: "Brazil",       to: "France",       weight: 1},
+      {from: "Brazil",       to: "Spain",        weight: 1},
+      {from: "Brazil",       to: "UK",           weight: 1},
+      {from: "Canada",       to: "Portugal",     weight: 1},
+      {from: "Canada",       to: "France",       weight: 5},
+      {from: "Canada",       to: "UK",           weight: 1},
+      {from: "Mexico",       to: "Portugal",     weight: 1},
+      {from: "Mexico",       to: "France",       weight: 1},
+      {from: "Mexico",       to: "Spain",        weight: 5},
+      {from: "Mexico",       to: "UK",           weight: 1},
+      {from: "USA",          to: "Portugal",     weight: 1},
+      {from: "USA",          to: "France",       weight: 1},
+      {from: "USA",          to: "Spain",        weight: 1},
+      {from: "USA",          to: "UK",           weight: 5},
+      {from: "Portugal",     to: "Angola",       weight: 2},
+      {from: "Portugal",     to: "Senegal",      weight: 1},
+      {from: "Portugal",     to: "Morocco",      weight: 1},
+      {from: "Portugal",     to: "Turkey",       weight: 3},
+      {from: "Portugal",     to: null,           weight: 1},
+      {from: "France",       to: "Angola",       weight: 1},
+      {from: "France",       to: "Senegal",      weight: 3},
+      {from: "France",       to: "Mali",         weight: 3},
+      {from: "France",       to: "Morocco",      weight: 3},
+      {from: "France",       to: "Turkey",       weight: 1},
+      {from: "Spain",        to: "Senegal",      weight: 1},
+      {from: "Spain",        to: "Morocco",      weight: 3},
+      {from: "Spain",        to: "Turkey",       weight: 1},
+      {from: "UK",           to: "Angola",       weight: 1},
+      {from: "UK",           to: "Senegal",      weight: 1},
+      {from: "UK",           to: "Morocco",      weight: 2},
+      {from: "UK",           to: "Turkey",       weight: 7},
+      {from: "Turkey",       to: "China",        weight: 5},
+      {from: "Turkey",       to: "India",        weight: 1},
+      {from: "Turkey",       to: "Japan",        weight: 3},
+      {from: "Angola",       to: "China",        weight: 5},
+      {from: "Angola",       to: "India",        weight: 1},
+      {from: "Angola",       to: "Japan",        weight: 3},
+      {from: "Senegal",      to: "China",        weight: 5},
+      {from: "Senegal",      to: "India",        weight: 1},
+      {from: "Senegal",      to: "Japan",        weight: 3},
+      {from: "Mali",         to: "China",        weight: 5},
+      {from: "Mali",         to: "India",        weight: 1},
+      {from: "Mali",         to: "Japan",        weight: 3},
+      {from: "Morocco",      to: "China",        weight: 5},
+      {from: "Morocco",      to: "India",        weight: 1},
+      {from: "Morocco",      to: "Japan",        weight: 3},
+      {from: "Brazil",       to: "China",        weight: 2}
     ];
 
     // create a chart and set the data
     var chart = anychart.sankey(data);
+
+    // set the width of nodes
+    chart.nodeWidth("35%");
 
     // set the chart title
     chart.title("Sankey Diagram: Basic Sample");
