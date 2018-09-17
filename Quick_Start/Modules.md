@@ -224,6 +224,12 @@ A beta module for creating [Resource](../beta/Resource_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-resource.min.js"></script>
 ```
 
+### Sankey Diagram
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
+```
+
 ### Scatter
 
 A module for creating [Scatter](../Basic_Charts/Scatter_Plot/Overview) charts:
