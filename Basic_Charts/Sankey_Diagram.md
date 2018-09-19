@@ -68,7 +68,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data (?)
 
-* dropoffs: `null` + [Dropoffs](#dropoffs)
+* [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
+* dropoffs: `null`
 * (?) за логичность данных юзер отвечает сам
 * пример: три колонки, перескакивание за колонку
 
@@ -135,6 +136,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Elements
 
+* [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
+
 The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**...
 
 * nodes: {api:anychart.core.sankey.elements.Node#normal}normal(){api}, {api:anychart.core.sankey.elements.Node#normal}hovered(){api}
@@ -183,7 +186,7 @@ It is possible to configure the appearance of each element individually - use ex
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-You can configure labels and tooltips of nodes, flows, and dropoffs.
+You can configure labels and tooltips of [nodes](#nodes), [flows](#flows), and [dropoffs](#dropoffs).
 
 #### Tokens
 
