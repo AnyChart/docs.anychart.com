@@ -66,7 +66,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ## Special Settings
 
-### Data (?)
+### Data
 
 * [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
 * dropoffs: `null`
