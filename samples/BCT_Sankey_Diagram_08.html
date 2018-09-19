@@ -28,11 +28,11 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {from: "Solar Energy", to: "Shading",  weight: 10},
-      {from: "Shading",      to: null,       weight: 7},
-      {from: "Shading",      to: "Facade",   weight: 3},
-      {from: "Facade",       to: null,       weight: 2},
-      {from: "Facade",       to: "Interior", weight: 1}
+      {from: "Solar Energy", to: "Shading",  weight: 10, custom_field: "info 1"},
+      {from: "Shading",      to: null,       weight: 7,  custom_field: "info 2"},
+      {from: "Shading",      to: "Facade",   weight: 3,  custom_field: "info 3"},
+      {from: "Facade",       to: null,       weight: 2,  custom_field: "info 4"},
+      {from: "Facade",       to: "Interior", weight: 1,  custom_field: "info 5"}
     ];
 
     // create a chart and set the data
@@ -51,9 +51,9 @@ anychart.onDocumentReady(function () {
     chart.dropoff().labels().padding(10);
 
     // configure tooltips
-    chart.node().tooltip().format("value: {%value}");
-    chart.flow().tooltip().format("value: {%value}");
-    chart.dropoff().tooltip().format("value: {%value}");
+    chart.node().tooltip().format("value: {%value}\n\n{%custom_field}");
+    chart.flow().tooltip().format("value: {%value}\n\n{%custom_field}");
+    chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 
     // configure the chart title
     chart.title("Sankey Diagram: Labels and Tooltips (Tokens)");

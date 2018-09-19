@@ -181,9 +181,10 @@ To configure tooltips, do the same with the **tooltip()** and {api:anychart.core
 
 * `{%name}`
 * `{%value}`
-* `{%type}`
+* `{%type}` (?)
 
 (?) Also, you can always add a custom field to your data and use a custom token corresponding to it.
+(?) [states](../Common_Settings/Interactivity/States)
 
 This sample shows how to work with tokens:
 
@@ -208,7 +209,7 @@ This sample shows how to work with tokens:
 * this.outcome: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
 * this.dropoff: number – дропофф ноды
 
-You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+(?) You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
 The sample below demonstrates how to work with formatting functions:
 
