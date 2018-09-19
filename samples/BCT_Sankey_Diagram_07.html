@@ -39,11 +39,11 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sankey(data);
 
     // set the width of nodes
-    chart.nodeWidth("50%");
+    chart.nodeWidth("45%");
 
     // configure the visual settings of nodes
-    chart.node().normal().fill("#1976d2 0.5");
-    chart.node().normal().stroke("#1976d2", 1.5);
+    chart.node().normal().fill("lightgray");
+    chart.node().normal().stroke("gray", 1.5);
     //chart.node().normal().hatchFill("percent80", "white");
     // chart.hovered().fill("#96a6a6", 0.4);
     // chart.selected().fill("#96a6a6", 0.6);
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
  
     // configure the visual settings of dropoffs
     chart.dropoff().normal().fill(
-      {keys: ["#ffa000 0.3", "gray"], angle: 270}
+      {keys: ["#dd2c00 0.3", "gray"], angle: 270}
     );
 
     // set the chart title
