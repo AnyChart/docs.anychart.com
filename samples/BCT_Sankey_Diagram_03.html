@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Sankey Diagram 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-sankey.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3171-sankey-diagram/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {from: "Canada",  to: "France",  weight: 2},
+      {from: "Canada",  to: "Germany", weight: 2},
+      {from: "Canada",  to: "Italy",   weight: 1},
+      {from: "Canada",  to: "Spain",   weight: 1},
+      {from: "USA",     to: "France",  weight: 1},
+      {from: "USA",     to: "Germany", weight: 2},
+      {from: "USA",     to: "Spain",   weight: 1}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.sankey(data);
+
+    // set the width of nodes
+    chart.nodeWidth("50%");
+
+    // set the curvature of the flows
+    chart.curveFactor(0);
+
+    // set the chart title
+    chart.title("Sankey Diagram: Flows (Width = 50%)");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>
