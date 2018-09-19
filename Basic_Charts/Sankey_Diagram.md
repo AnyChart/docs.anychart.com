@@ -94,6 +94,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * {api:anychart.charts.Sankey#nodeWidth}nodeWidth(){api}
 
+
 ```
 
 ```
@@ -103,6 +104,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 #### Padding
 
 * {api:anychart.charts.Sankey#nodePadding}nodePadding(){api}
+
 
 ```
 
