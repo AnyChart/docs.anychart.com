@@ -45,11 +45,7 @@ anychart.onDocumentReady(function () {
     chart.node().labels().format("{%name}\n{%value}");
     chart.flow().hovered().labels().enabled(false);
     chart.dropoff().normal().labels().enabled(true);
-    chart.dropoff().labels().useHtml(true);
     chart.dropoff().labels().padding(10);
-    chart.dropoff().labels().format(
-      "<span style='color:red;font-weight:bold'>({%value})</span>"
-    );
 
     // configure tooltips
     chart.node().tooltip().format("value: {%value}");
