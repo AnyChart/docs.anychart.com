@@ -42,7 +42,11 @@ anychart.onDocumentReady(function () {
     chart.nodeWidth("50%");
 
     // configure labels
-    chart.node().labels().format("{%name}\n{%value}");
+    // chart.node().labels().format("{%name}\n{%value}");
+    chart.node().labels().useHtml(true);
+    chart.node().labels().format(
+      "<span style='font-weight:bold'>{%name}</span><br>{%value}"
+    );
     chart.flow().hovered().labels().enabled(false);
     chart.dropoff().normal().labels().enabled(true);
     chart.dropoff().labels().padding(10);
