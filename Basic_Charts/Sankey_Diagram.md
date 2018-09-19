@@ -48,7 +48,6 @@ Learn more: [Modules](../Quick_Start/Modules).
 ## Quick Start
 
 * {api:anychart#sankey}anychart.sankey(){api}
-* пример: только две колонки
 
 The following sample demonstrates how a basic Sankey diagram is created:
 
@@ -71,7 +70,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 * [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
 * dropoffs: `null`
 * (?) за логичность данных юзер отвечает сам
-* пример: три колонки, перескакивание через колонку
 
 поля:
 
