@@ -123,7 +123,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * [Appearance](#appearance)
 * [Labels and Tooltips](#labels_and_tooltips)
-* `"null"` + [Data](#data)
+* [Data](#data) + `"null"`
 * пример: три колонки, несколько дропоффов
 
 
