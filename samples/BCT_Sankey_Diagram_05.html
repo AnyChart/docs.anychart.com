@@ -32,29 +32,22 @@ anychart.onDocumentReady(function () {
       {from: "Canada",  to: "Germany", weight: 2},
       {from: "Canada",  to: "Italy",   weight: 1},
       {from: "Canada",  to: "Spain",   weight: 1},
-      {from: "USA",     to: "China",   weight: 1},
       {from: "USA",     to: "France",  weight: 1},
       {from: "USA",     to: "Germany", weight: 2},
-      {from: "USA",     to: "Spain",   weight: 1},
-      {from: "France",  to: "China",   weight: 1},
-      {from: "France",  to: "Japan",   weight: 1},
-      {from: "France",  to: "India",   weight: 1},
-      {from: "Germany", to: "China",   weight: 2},
-      {from: "Germany", to: "Japan",   weight: 1},
-      {from: "Germany", to: "India",   weight: 1},
-      {from: "Italy",   to: null,      weight: 1},
-      {from: "Spain",   to: "China",   weight: 1},
-      {from: "Spain",   to: "Japan",   weight: 1}
+      {from: "USA",     to: "Spain",   weight: 1}
     ];
 
     // create a chart and set the data
     var chart = anychart.sankey(data);
 
     // set the width of nodes
-    chart.nodeWidth("30%");
+    chart.nodeWidth("15%");
+
+    // set the curvature of the flows
+    chart.curveFactor(0);
 
     // set the chart title
-    chart.title("Sankey Diagram: Dropoffs (ПЕРЕДЕЛАТЬ)");
+    chart.title("Sankey Diagram: Flows (Curvature)");
 
     // set the container id
     chart.container("container");

@@ -117,6 +117,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 * [Appearance](#appearance)
 * [Labels and Tooltips](#labels_and_tooltips)
 
+#### Curvature
+
+* {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
+* curvature, or curve factor...
+
+```
+
+```
+
+{sample}BCT\_Sankey\_Diagram\_05{sample}
+
 ### Dropoffs
 
 * [Appearance](#appearance)
@@ -129,7 +140,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_05{sample}
+{sample}BCT\_Sankey\_Diagram\_06{sample}
 
 ### Appearance
 
@@ -155,23 +166,11 @@ Combine them with the following methods:
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_06{sample}
+{sample}BCT\_Sankey\_Diagram\_07{sample}
 
 #### Individual Elements
 
 It is possible to configure the appearance of each element individually - use extra data fields corresponding with the methods mentioned above:
-
-```
-
-```
-
-{sample}BCT\_Sankey\_Diagram\_07{sample}
-
-### Curvature
-
-* {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
-* curvature, or curve factor...
-
 
 ```
 
