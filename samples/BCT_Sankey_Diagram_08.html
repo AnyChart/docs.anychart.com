@@ -48,8 +48,9 @@ anychart.onDocumentReady(function () {
     chart.dropoff().labels().useHtml(true);
     chart.dropoff().labels().padding(10);
     chart.dropoff().labels().format(
-      "<span style='color:#dd2c00;font-weight:bold'>lost: {%value}</span>"
+      "<span style='color:red;font-weight:bold'>lost: {%value}</span>"
     );
+    console.log(chart.dropoff().normal().fill())
 
     // configure the chart title
     chart.title("Sankey Diagram: Labels and Tooltips (Tokens)");
