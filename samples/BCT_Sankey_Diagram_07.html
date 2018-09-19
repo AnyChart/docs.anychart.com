@@ -43,22 +43,19 @@ anychart.onDocumentReady(function () {
 
     // configure the visual settings of nodes
     chart.node().normal().fill("#64b5f6 0.5");
-    chart.node().normal().stroke("#1976d2", 1.5);
-    //chart.node().normal().hatchFill("percent80", "white");
-    // chart.hovered().fill("#96a6a6", 0.4);
-    // chart.selected().fill("#96a6a6", 0.6);
-    // chart.selected().hatchFill("forward-diagonal", "#96a6a6", 0.5, 12);
-    // chart.normal().stroke("#96a6a6", 2);
-    // chart.hovered().stroke("#96a6a6", 2);
-    // chart.selected().stroke("#96a6a6", 4);
+    chart.node().hovered().fill(anychart.color.darken("#64b5f6"));
+    chart.node().normal().stroke("#455a64", 2);
 
     // configure the visual settings of flows
     chart.flow().normal().fill("#ffa000 0.4");
- 
+    chart.flow().hovered().fill(anychart.color.darken("#ffa000"));
+    chart.flow().hovered().stroke("#455a64");
+
     // configure the visual settings of dropoffs
     chart.dropoff().normal().fill(
       {keys: ["#dd2c00 0.4", "#64b5f6 0.7"], angle: 270}
     );
+    chart.dropoff().hovered().stroke("#455a64");
 
     // set the chart title
     chart.title("Sankey Diagram: Appearance");
