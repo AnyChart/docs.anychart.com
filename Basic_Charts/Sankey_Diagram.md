@@ -181,11 +181,11 @@ To change the text of labels, combine the **labels()** method of nodes / flows /
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-Here is the list of tokens that work with the Sankey diagram:
+(?) Here is the list of tokens that work with the Sankey diagram:
 
-* `?`
-* `?`
-* `?`
+* `{%name}`
+* `{%value}`
+* `{%type}`
 
 (?) Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
@@ -199,11 +199,18 @@ This sample shows how to work with tokens:
 
 #### Formatting Functions
 
-To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+(?) To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
-* `?`
-* `?`
-* `?`
+* `name`
+* `value`
+* `type`
+
+(?) nodes:
+
+* this.isConflict: boolean - true/false для ноды (является ли конфликтом)
+* this.income: Array.<{name: string, value: number}> - входящие ноды (имя/значение)
+* this.outcome: Array.<{name: string, value: number}> - исходящие ноды (имя/значение)
+* this.dropoff: number - дропофф ноды
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
