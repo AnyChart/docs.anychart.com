@@ -122,6 +122,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
 * curvature, or curve factor...
 
+
 ```
 
 ```
