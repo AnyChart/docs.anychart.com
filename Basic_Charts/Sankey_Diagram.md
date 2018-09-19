@@ -8,7 +8,7 @@ A Sankey diagram...
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Sankey Diagram](../Quick_Start/Modules#_diagram)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Sankey Diagram](../Quick_Start/Modules#sankey_diagram)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sankey}anychart.charts.Sankey{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
