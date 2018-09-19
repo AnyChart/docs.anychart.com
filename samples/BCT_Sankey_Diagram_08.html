@@ -48,7 +48,7 @@ anychart.onDocumentReady(function () {
     chart.dropoff().labels().useHtml(true);
     chart.dropoff().labels().padding(10);
     chart.dropoff().labels().format(
-      "<span style='color:red;font-weight:bold'>lost: {%value}</span>"
+      "<span style='color:red;font-weight:bold'>{%value} lost</span>"
     );
     console.log(chart.dropoff().normal().fill())
 
