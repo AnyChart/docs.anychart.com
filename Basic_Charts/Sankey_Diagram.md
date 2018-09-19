@@ -205,10 +205,10 @@ This sample shows how to work with tokens:
 
 (?) nodes:
 
-* this.isConflict: boolean - true/false для ноды (является ли конфликтом)
-* this.income: Array.<{name: string, value: number}> - входящие ноды (имя/значение)
-* this.outcome: Array.<{name: string, value: number}> - исходящие ноды (имя/значение)
-* this.dropoff: number - дропофф ноды
+* this.isConflict: boolean – true/false для ноды (является ли конфликтом)
+* this.income: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
+* this.outcome: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
+* this.dropoff: number – дропофф ноды
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
