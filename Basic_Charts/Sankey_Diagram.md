@@ -193,7 +193,7 @@ You can configure labels and tooltips of [nodes](#nodes), [flows](#flows), and [
 
 To change the text of labels, use the {api:anychart.core.sankey.elements.Node#labels}labels(){api} method of nodes and the similar methods of flows and dropoffs. Combine them with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips, do the same with the {api:anychart.core.sankey.elements.Node#tooltip}tooltip(){api} method of nodes and the similar methods of flows and dropoffs.
+To configure tooltips, do the same with the {api:anychart.core.sankey.elements.Node#tooltip}tooltip(){api} method of nodes and the similar methods of flows and dropoffs. Combine it with {api:anychart.core.ui.Tooltip#format}format(){api}.
 
 Here is the list of tokens that work with the Sankey diagram:
 
