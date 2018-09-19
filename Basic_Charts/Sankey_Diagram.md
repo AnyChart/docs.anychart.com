@@ -173,11 +173,9 @@ Combine them with the following methods:
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-You can configure labels and tooltips of [nodes](#nodes), [flows](#flows), and [dropoffs](#dropoffs).
-
 #### Tokens
 
-To change the text of labels, combine the **labels()** method of nodes / flows / dropoffs with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
+To change the text of labels, combine the **labels()** method of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
