@@ -145,8 +145,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Elements
-
 * [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
 
 The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**...
@@ -168,16 +166,6 @@ Combine them with the following methods:
 ```
 
 {sample}BCT\_Sankey\_Diagram\_07{sample}
-
-#### Individual Elements
-
-It is possible to configure the appearance of each element individually - use extra data fields corresponding with the methods mentioned above:
-
-```
-
-```
-
-{sample}BCT\_Sankey\_Diagram\_08{sample}
 
 ### Labels and Tooltips
 
@@ -207,7 +195,7 @@ This sample shows how to work with tokens:
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_09{sample}
+{sample}BCT\_Sankey\_Diagram\_08{sample}
 
 #### Formatting Functions
 
@@ -225,4 +213,4 @@ The sample below demonstrates how to work with formatting functions:
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_10{sample}
+{sample}BCT\_Sankey\_Diagram\_09{sample}
