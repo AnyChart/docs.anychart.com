@@ -48,6 +48,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 ## Quick Start
 
 * {api:anychart#sankey}anychart.sankey(){api}
+* пример: только две колонки
 
 The following sample demonstrates how a basic Sankey diagram is created:
 
@@ -67,17 +68,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data (?)
 
-* dropoffs: `null`
-* за логичность данных юзер отвечает сам
-* можно перескакивать через колонку
+* dropoffs: `null` + [Dropoffs](#dropoffs)
+* (?) за логичность данных юзер отвечает сам
+* пример: три колонки, перескакивание за колонку
 
 поля:
 
 * `from`
 * `to`
 * `weight`
-* кастомные поля?
 
+(?) **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 ```
 
@@ -121,7 +122,14 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * [Appearance](#appearance)
 * [Labels and Tooltips](#labels_and_tooltips)
-* `null`
+* `"null"` + [Data](#data)
+* пример: три колонки, несколько дропоффов
+
+```
+
+```
+
+{sample}BCT\_Sankey\_Diagram\_05{sample}
 
 ### Appearance
 
@@ -139,28 +147,7 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
-
-...
-
-```
-
-```
-
-{sample}BCT\_Sankey\_Diagram\_05{sample}
-
-#### Individual Elements
-
-```
-
-```
-
-{sample}BCT\_Sankey\_Diagram\_05{sample}
-
-### Curvature
-
-* {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
-
+(?) Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 ```
 
@@ -168,28 +155,45 @@ Also, you can use some other methods from {api:anychart.core.StateSettings}anych
 
 {sample}BCT\_Sankey\_Diagram\_06{sample}
 
+#### Individual Elements
+
+It is possible to configure the appearance of each element individually - use extra data fields corresponding with the methods mentioned above:
+
+```
+
+```
+
+{sample}BCT\_Sankey\_Diagram\_07{sample}
+
+### Curvature
+
+* {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
+* curvature, or curve factor...
+
+
+```
+
+```
+
+{sample}BCT\_Sankey\_Diagram\_08{sample}
+
 ### Labels and Tooltips
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
-наблюдения:
-
-* вроде бы у чарта есть метод для настройки тултипов сразу у всех элементов, но нет такого же метода для настройки лейблов
-
-* кажись у флоу и дропоффов лейблы можно показать и настроить только на ховер 
-
-* а у лейблов наоборот только в нормале текст лейбла настраивается, нельзя сделать изменение на ховере, но изменение цвета можно
+You can configure labels and tooltips of nodes, flows, and dropoffs.
 
 #### Tokens
 
-To change the text of labels, combine the {api:anychart.charts.Sankey#label}labels(){api} and {api:anychart.core.ui.LabelsFactory#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+To change the text of labels, use the {api:anychart.core.sankey.elements.Node#labels}labels(){api} method of nodes and the similar methods of flows and dropoffs. Combine them with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips, do the same with the {api:anychart.charts.Sankey#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+To configure tooltips, do the same with the {api:anychart.core.sankey.elements.Node#tooltip}tooltip(){api} method of nodes and the similar methods of flows and dropoffs.
 
 Here is the list of tokens that work with the Sankey diagram:
 
+* `?`
 * `?`
 * `?`
 
@@ -201,12 +205,13 @@ This sample shows how to work with tokens:
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_07{sample}
+{sample}BCT\_Sankey\_Diagram\_09{sample}
 
 #### Formatting Functions
 
 To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
+* `?`
 * `?`
 * `?`
 
@@ -218,4 +223,4 @@ The sample below demonstrates how to work with formatting functions:
 
 ```
 
-{sample}BCT\_Sankey\_Diagram\_08{sample}
+{sample}BCT\_Sankey\_Diagram\_10{sample}
