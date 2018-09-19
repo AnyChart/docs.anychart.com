@@ -71,7 +71,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
 * dropoffs: `null`
 * (?) за логичность данных юзер отвечает сам
-* пример: три колонки, перескакивание за колонку
+* пример: три колонки, перескакивание через колонку
 
 поля:
 
@@ -125,6 +125,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * [Labels and Tooltips](#labels_and_tooltips)
 * `"null"` + [Data](#data)
 * пример: три колонки, несколько дропоффов
+
 
 ```
 
