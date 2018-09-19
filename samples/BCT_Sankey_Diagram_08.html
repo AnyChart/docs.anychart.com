@@ -39,10 +39,10 @@ anychart.onDocumentReady(function () {
     var chart = anychart.sankey(data);
 
     // set the width of nodes
-    chart.nodeWidth("60%");
+    chart.nodeWidth("50%");
 
     // configure labels
-    chart.node().labels().format("{%name}: {%value}");
+    chart.node().labels().format("{%name}\n{%value}");
 
     // set the chart title
     chart.title("Sankey Diagram: Labels and Tooltips (Tokens)");
