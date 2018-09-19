@@ -43,18 +43,12 @@ anychart.onDocumentReady(function () {
 
     // configure labels
     chart.node().labels().format("{%name}\n{%value}");
-    chart.flow().normal().labels().enabled(true);
-    chart.flow().labels().padding(10);
-    chart.flow().labels().anchor("left-bottom");
-    chart.flow().labels().useHtml(true);
-    chart.flow().labels().format(
-      "<span style='color:#96a6a6;font-weight:bold'>{%name}: {%value}</span>"
-    );
+    chart.flow().hovered().labels().enabled(false);
     chart.dropoff().normal().labels().enabled(true);
     chart.dropoff().labels().useHtml(true);
     chart.dropoff().labels().padding(10);
     chart.dropoff().labels().format(
-      "<span style='color:#dd2c00;font-weight:bold'>{%name}: {%value}</span>"
+      "<span style='color:#dd2c00;font-weight:bold'>lost: {%value}</span>"
     );
 
     // configure the chart title
