@@ -28,11 +28,11 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {from: "Sun Power", to: "Shading",  weight: 10},
-      {from: "Shading",   to: null,       weight: 7},
-      {from: "Shading",   to: "Facade",   weight: 3},
-      {from: "Facade",    to: null,       weight: 2},
-      {from: "Facade",    to: "Interior", weight: 1}
+      {from: "Solar Energy", to: "Shading",  weight: 10},
+      {from: "Shading",      to: null,       weight: 7},
+      {from: "Shading",      to: "Facade",   weight: 3},
+      {from: "Facade",       to: null,       weight: 2},
+      {from: "Facade",       to: "Interior", weight: 1}
     ];
 
     // create a chart and set the data
@@ -42,13 +42,13 @@ anychart.onDocumentReady(function () {
     chart.nodeWidth("50%");
 
     // configure labels
-    chart.node().labels().format("{%name}: {%value}");
+    chart.node().labels().format("{%name}\n{%value}");
     chart.flow().hovered().labels().enabled(false);
     chart.dropoff().normal().labels().enabled(true);
     chart.dropoff().labels().useHtml(true);
     chart.dropoff().labels().padding(10);
     chart.dropoff().labels().format(
-      "<span style='color:red;font-weight:bold'>Lost: {%value}</span>"
+      "<span style='color:red;font-weight:bold'>({%value})</span>"
     );
 
     // configure tooltips
