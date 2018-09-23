@@ -28,11 +28,23 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {from: "Solar Energy",    to: "Shading",  weight: 10},
-      {from: "Shading",         to: null,       weight: 7},
-      {from: "Shading",         to: "Facade",   weight: 3},
-      {from: "Facade",          to: null,       weight: 2},
-      {from: "Facade",          to: "Interior", weight: 1}
+      {from: "Canada",  to: "France",  weight: 2230000, custom_field: "info 1"},
+      {from: "Canada",  to: "Germany", weight: 1990000, custom_field: "info 2"},
+      {from: "Canada",  to: "Italy",   weight: 1180000, custom_field: "info 3"},
+      {from: "Canada",  to: "Spain",   weight:  990000, custom_field: "info 4"},
+      {from: "USA",     to: "China",   weight: 1250000, custom_field: "info 5"},
+      {from: "USA",     to: "France",  weight:  950000, custom_field: "info 6"},
+      {from: "USA",     to: "Germany", weight: 2020000, custom_field: "info 7"},
+      {from: "USA",     to: "Spain",   weight: 1110000, custom_field: "info 8"},
+      {from: "France",  to: "China",   weight: 1100000, custom_field: "info 9"},
+      {from: "France",  to: "Japan",   weight:  880000, custom_field: "info 10"},
+      {from: "France",  to: "India",   weight: 1030000, custom_field: "info 11"},
+      {from: "Germany", to: "China",   weight: 2150000, custom_field: "info 12"},
+      {from: "Germany", to: "Japan",   weight: 1200000, custom_field: "info 13"},
+      {from: "Germany", to: "India",   weight: 1180000, custom_field: "info 14"},
+      {from: "Italy",   to: "China",   weight:  880000, custom_field: "info 15"},
+      {from: "Spain",   to: "China",   weight: 1150000, custom_field: "info 16"},
+      {from: "Spain",   to: "Japan",   weight: 1290000, custom_field: "info 17"}
     ];
 
     // create a chart and set the data
@@ -40,6 +52,44 @@ anychart.onDocumentReady(function () {
 
     // set the width of nodes
     chart.nodeWidth("50%");
+
+    // configure labels
+    chart.node().labels().useHtml(true);
+    chart.node().labels().format(function() {
+      var incomeText = "";
+      var outcomeText = "";
+      if (this.income.length > 0) {
+        incomeText = "<-";
+      }
+      if (this.outcome.length > 0) {
+        outcomeText = "->"
+      }
+      return "<span style='font-weight:bold'>" + this.name +
+             "</span><br>" + this.value;
+    });
+
+    // configure tooltips
+    chart.node().tooltip().format(function() {
+      var incomeText = "";
+      var outcomeText = "";
+      if (this.income.length > 0) {
+        for (i = 0; i < this.income.length; i++) {
+          incomeText = incomeText + this.income[i].value + 
+                       " <- " + this.income[i].name + "\n";
+        }
+      }
+      if (this.outcome.length > 0) {
+        for (i = 0; i < this.outcome.length; i++) {
+          outcomeText = outcomeText + this.outcome[i].value +
+                       " -> " + this.outcome[i].name + "\n";
+        }
+      }
+      if (this.income.length > 0 && this.outcome.length > 0) {
+        incomeText = incomeText + "\n";
+      } 
+      return incomeText + outcomeText +
+             "\n" + this.getData("custom_field");
+    });
 
     // set the chart title
     chart.title("Sankey Diagram: Labels and Tooltips (Formatting Functions)");
