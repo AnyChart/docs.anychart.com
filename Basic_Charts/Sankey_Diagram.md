@@ -288,7 +288,7 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-... nodes:
+... nodes (это тоже поля или что?):
 
 * `isConflict`: boolean – true/false для ноды (является ли конфликтом)
 * `income`: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
