@@ -56,16 +56,8 @@ anychart.onDocumentReady(function () {
     // configure labels
     chart.node().labels().useHtml(true);
     chart.node().labels().format(function() {
-      var incomeText = "";
-      var outcomeText = "";
-      if (this.income.length > 0) {
-        incomeText = "<-";
-      }
-      if (this.outcome.length > 0) {
-        outcomeText = "->"
-      }
       return "<span style='font-weight:bold'>" + this.name +
-             "</span><br>" + this.value;
+             "</span><br>" + Math.round(this.value/100000)/10 + "mln";
     });
 
     // configure tooltips
