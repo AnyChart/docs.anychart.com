@@ -52,7 +52,28 @@ Learn more: [Modules](../Quick_Start/Modules).
 The following sample demonstrates how a basic Sankey diagram is created:
 
 ```
+// create data
+var data = [
+  {from: "Canada",  to: "France",  weight: 2},
+  {from: "Canada",  to: "Germany", weight: 2},
+  {from: "Canada",  to: "Italy",   weight: 1},
+  {from: "Canada",  to: "Spain",   weight: 1},
+  {from: "USA",     to: "France",  weight: 1},
+  {from: "USA",     to: "Germany", weight: 2},
+  {from: "USA",     to: "Spain",   weight: 1}
+];
 
+// create a chart and set the data
+var chart = anychart.sankey(data);
+
+// set the width of nodes
+chart.nodeWidth("30%");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Sankey\_Diagram\_01{sample}
@@ -80,7 +101,29 @@ Read the overview of general settings: [General Settings](General_Settings).
 (?) **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 ```
+// create data
+var data = [
+  {from: "Canada",  to: "France",  weight: 2},
+  {from: "Canada",  to: "Germany", weight: 2},
+  {from: "Canada",  to: "Italy",   weight: 1},
+  {from: "Canada",  to: "Spain",   weight: 1},
+  {from: "USA",     to: "China",   weight: 1},
+  {from: "USA",     to: "France",  weight: 1},
+  {from: "USA",     to: "Germany", weight: 2},
+  {from: "USA",     to: "Spain",   weight: 1},
+  {from: "France",  to: "China",   weight: 1},
+  {from: "France",  to: "Japan",   weight: 1},
+  {from: "France",  to: "India",   weight: 1},
+  {from: "Germany", to: "China",   weight: 2},
+  {from: "Germany", to: "Japan",   weight: 1},
+  {from: "Germany", to: "India",   weight: 1},
+  {from: "Italy",   to: "China",   weight: 1},
+  {from: "Spain",   to: "China",   weight: 1},
+  {from: "Spain",   to: "Japan",   weight: 1}
+];
 
+// create a chart and set the data
+var chart = anychart.sankey(data);
 ```
 
 {sample}BCT\_Sankey\_Diagram\_02{sample}
@@ -96,7 +139,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 
 ```
-
+// set the width of nodes
+chart.nodeWidth("50%");
 ```
 
 {sample}BCT\_Sankey\_Diagram\_03{sample}
@@ -107,7 +151,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 
 ```
-
+// set the padding between nodes
+chart.nodePadding(0);
 ```
 
 {sample}BCT\_Sankey\_Diagram\_04{sample}
@@ -124,7 +169,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 
 ```
-
+// set the curvature of the flows
+chart.curveFactor(0);
 ```
 
 {sample}BCT\_Sankey\_Diagram\_05{sample}
@@ -137,7 +183,17 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 
 ```
+// create data
+var data = [
+  {from: "Solar Energy", to: "Shading",  weight: 10},
+  {from: "Shading",      to: null,       weight: 6},
+  {from: "Shading",      to: "Facade",   weight: 4},
+  {from: "Facade",       to: null,       weight: 3},
+  {from: "Facade",       to: "Interior", weight: 1}
+];
 
+// create a chart and set the data
+var chart = anychart.sankey(data);
 ```
 
 {sample}BCT\_Sankey\_Diagram\_06{sample}
@@ -160,7 +216,21 @@ Combine them with the following methods:
 (?) Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 ```
+// configure the visual settings of nodes
+chart.node().normal().fill("#64b5f6 0.5");
+chart.node().hovered().fill(anychart.color.darken("#64b5f6"));
+chart.node().normal().stroke("#455a64", 2);
 
+// configure the visual settings of flows
+chart.flow().normal().fill("#ffa000 0.4");
+chart.flow().hovered().fill(anychart.color.darken("#ffa000"));
+chart.flow().hovered().stroke("#455a64");
+
+// configure the visual settings of dropoffs
+chart.dropoff().normal().fill(
+  {keys: ["#dd2c00 0.4", "#455a64 0.7"], angle: 270}
+);
+chart.dropoff().hovered().stroke("#455a64");
 ```
 
 {sample}BCT\_Sankey\_Diagram\_07{sample}
@@ -189,7 +259,19 @@ To configure tooltips, do the same with the **tooltip()** and {api:anychart.core
 This sample shows how to work with tokens:
 
 ```
+// configure labels
+chart.node().labels().useHtml(true);
+chart.node().labels().format(
+  "<span style='font-weight:bold'>{%name}</span><br>{%value}"
+);
+chart.flow().hovered().labels().enabled(false);
+chart.dropoff().normal().labels().enabled(true);
+chart.dropoff().labels().padding(10);
 
+// configure tooltips
+chart.node().tooltip().format("value: {%value}\n\n{%custom_field}");
+chart.flow().tooltip().format("value: {%value}\n\n{%custom_field}");
+chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Sankey\_Diagram\_08{sample}
