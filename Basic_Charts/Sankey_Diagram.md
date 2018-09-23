@@ -295,7 +295,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 * `outcome`: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
 * `dropoff`: number – дропофф ноды
 
-In the sample below, ... `name` and `value` ... :
+In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles of nodes as well as labels and tooltips of flows:
 
 ```
 // configure labels of nodes
@@ -322,7 +322,7 @@ chart.flow().tooltip().format(function() {
 });
 ```
 
-... `income` and `outcome` ... :
+Tooltips of nodes are configured with the help of the `income` and `outcome` fields:
 
 ```
 // configure tooltips of nodes
