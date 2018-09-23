@@ -247,16 +247,16 @@ To change the text of labels, combine the **labels()** method of [nodes](#nodes)
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-(?) Here is the list of tokens that work with the Sankey diagram:
+* (?) [states](../Common_Settings/Interactivity/States)
+* (?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+
+Here is the list of tokens that work with the Sankey diagram:
 
 * `{%name}`
 * `{%value}`
 * `{%type}`
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
-
-* (?) [states](../Common_Settings/Interactivity/States)
-* (?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 This sample shows how to work with tokens:
 
@@ -280,7 +280,7 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 
 #### Formatting Functions
 
-(?) To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+To configure labels and tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `name`
 * `value`
@@ -288,7 +288,7 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-(?) nodes:
+... nodes:
 
 * `isConflict`: boolean – true/false для ноды (является ли конфликтом)
 * `income`: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
