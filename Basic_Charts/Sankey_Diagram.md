@@ -295,7 +295,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 * `outcome`: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
 * `dropoff`: number – дропофф ноды
 
-In the sample below, the `name` field is used to configure labels of nodes and flows and tooltips of flows:
+In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles / tooltips of nodes and flows:
 
 ```
 // configure labels of nodes
@@ -310,23 +310,19 @@ chart.flow().labels().format(function() {
   return Math.round(this.value/100000)/10 + " mln";
 });
 
+// configure tooltip titles of nodes
+chart.node().tooltip().titleFormat(function() {
+  return this.name + " (" + Math.round(this.value/100000)/10 +
+         " mln)";
+});
+
 // configure tooltips of flows
 chart.flow().tooltip().format(function() {
   return Math.round(this.value/100000)/10 + " mln";
 });
 ```
 
-The `name` field (as well as `value`) is used to configure tooltip titles of nodes:
-
-```
-// configure tooltip titles of nodes
-chart.node().tooltip().titleFormat(function() {
-  return this.name + " (" + Math.round(this.value/100000)/10 +
-         " mln)";
-});
-```
-
-Finally, tooltips of nodes are configured with the help of `income` and `outcome`:
+Tooltips of nodes are configured with the help of `income` and `outcome`:
 
 ```
 // configure tooltips of nodes
