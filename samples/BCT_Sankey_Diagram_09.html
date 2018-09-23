@@ -53,27 +53,32 @@ anychart.onDocumentReady(function () {
     // set the width of nodes
     chart.nodeWidth("50%");
 
-    // configure labels
+    // configure labels of nodes
     chart.node().labels().useHtml(true);
     chart.node().labels().format(function() {
       return "<span style='font-weight:bold'>" + this.name +
-             "</span><br>" + Math.round(this.value/100000)/10 + "mln";
+             "</span><br>" + Math.round(this.value/100000)/10 + " mln";
     });
 
-    // configure tooltips
+    // configure labels of flows
+    chart.flow().labels().format(function() {
+      return Math.round(this.value/100000)/10 + " mln";
+    });
+
+    // configure tooltips of nodes
     chart.node().tooltip().format(function() {
       var incomeText = "";
       var outcomeText = "";
       if (this.income.length > 0) {
         for (i = 0; i < this.income.length; i++) {
-          incomeText = incomeText + this.income[i].value + 
-                       " <- " + this.income[i].name + "\n";
+          incomeText += Math.round(this.income[i].value/100000)/10 +
+                        " mln <- " + this.income[i].name + "\n";
         }
       }
       if (this.outcome.length > 0) {
         for (i = 0; i < this.outcome.length; i++) {
-          outcomeText = outcomeText + this.outcome[i].value +
-                       " -> " + this.outcome[i].name + "\n";
+          outcomeText += Math.round(this.outcome[i].value/100000)/10 +
+                         " mln -> " + this.outcome[i].name + "\n";
         }
       }
       if (this.income.length > 0 && this.outcome.length > 0) {
@@ -82,6 +87,12 @@ anychart.onDocumentReady(function () {
       return incomeText + outcomeText +
              "\n" + this.getData("custom_field");
     });
+
+    // configure tooltips of flows
+    chart.flow().tooltip().format(function() {
+      return Math.round(this.value/100000)/10 + " mln";
+    });
+
 
     // set the chart title
     chart.title("Sankey Diagram: Labels and Tooltips (Formatting Functions)");
