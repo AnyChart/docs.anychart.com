@@ -251,10 +251,12 @@ To configure tooltips, do the same with the **tooltip()** and {api:anychart.core
 
 * `{%name}`
 * `{%value}`
-* `{%type}` (?)
+* `{%type}`
 
-(?) Also, you can always add a custom field to your data and use a custom token corresponding to it.
-(?) [states](../Common_Settings/Interactivity/States)
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+* (?) [states](../Common_Settings/Interactivity/States)
+* (?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 This sample shows how to work with tokens:
 
@@ -284,6 +286,8 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 * `value`
 * `type`
 
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
 (?) nodes:
 
 * this.isConflict: boolean – true/false для ноды (является ли конфликтом)
@@ -291,8 +295,7 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 * this.outcome: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
 * this.dropoff: number – дропофф ноды
 
-(?) You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
-(?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+In the sample below, ...
 
 ```
 // configure labels of nodes
