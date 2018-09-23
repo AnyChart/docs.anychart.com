@@ -295,7 +295,7 @@ You can also add a custom field to your data and refer to it by using the {api:a
 * `outcome`: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
 * `dropoff`: number – дропофф ноды
 
-In the sample below, the `name` field is used to configure labels of nodes and flows and tooltips of flows
+In the sample below, the `name` field is used to configure labels of nodes and flows and tooltips of flows:
 
 ```
 // configure labels of nodes
