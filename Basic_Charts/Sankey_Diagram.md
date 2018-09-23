@@ -290,12 +290,12 @@ You can also add a custom field to your data and refer to it by using the {api:a
 
 (?) nodes:
 
-* this.isConflict: boolean – true/false для ноды (является ли конфликтом)
-* this.income: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
-* this.outcome: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
-* this.dropoff: number – дропофф ноды
+* `isConflict`: boolean – true/false для ноды (является ли конфликтом)
+* `income`: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
+* `outcome`: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
+* `dropoff`: number – дропофф ноды
 
-In the sample below, ...
+In the sample below, ... `name` and `value` ... :
 
 ```
 // configure labels of nodes
@@ -316,6 +316,15 @@ chart.node().tooltip().titleFormat(function() {
          " mln)";
 });
 
+// configure tooltips of flows
+chart.flow().tooltip().format(function() {
+  return Math.round(this.value/100000)/10 + " mln";
+});
+```
+
+... `income` and `outcome` ... :
+
+```
 // configure tooltips of nodes
 chart.node().tooltip().format(function() {
   var incomeText = "";
@@ -337,11 +346,6 @@ chart.node().tooltip().format(function() {
   } 
   return incomeText + outcomeText +
          "\n" + this.getData("custom_field");
-});
-
-// configure tooltips of flows
-chart.flow().tooltip().format(function() {
-  return Math.round(this.value/100000)/10 + " mln";
 });
 ```
 
