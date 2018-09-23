@@ -65,6 +65,12 @@ anychart.onDocumentReady(function () {
       return Math.round(this.value/100000)/10 + " mln";
     });
 
+    // configure tooltip titles of nodes
+    chart.node().tooltip().titleFormat(function() {
+      return this.name + " (" + Math.round(this.value/100000)/10 +
+             " mln)";
+    });
+
     // configure tooltips of nodes
     chart.node().tooltip().format(function() {
       var incomeText = "";

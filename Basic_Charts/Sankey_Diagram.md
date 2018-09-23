@@ -292,11 +292,54 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 * this.dropoff: number – дропофф ноды
 
 (?) You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
-
-The sample below demonstrates how to work with formatting functions:
+(,) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 ```
+// configure labels of nodes
+chart.node().labels().useHtml(true);
+chart.node().labels().format(function() {
+  return "<span style='font-weight:bold'>" + this.name +
+         "</span><br>" + Math.round(this.value/100000)/10 + " mln";
+});
 
+// configure labels of flows
+chart.flow().labels().format(function() {
+  return Math.round(this.value/100000)/10 + " mln";
+});
+
+// configure tooltip titles of nodes
+chart.node().tooltip().titleFormat(function() {
+  return this.name + " (" + Math.round(this.value/100000)/10 +
+         " mln)";
+});
+
+// configure tooltips of nodes
+chart.node().tooltip().format(function() {
+  var incomeText = "";
+  var outcomeText = "";
+  if (this.income.length > 0) {
+    for (i = 0; i < this.income.length; i++) {
+      incomeText += Math.round(this.income[i].value/100000)/10 +
+                    " mln <- " + this.income[i].name + "\n";
+    }
+  }
+  if (this.outcome.length > 0) {
+    for (i = 0; i < this.outcome.length; i++) {
+      outcomeText += Math.round(this.outcome[i].value/100000)/10 +
+                     " mln -> " + this.outcome[i].name + "\n";
+    }
+  }
+  if (this.income.length > 0 && this.outcome.length > 0) {
+    incomeText = incomeText + "\n";
+  } 
+  return incomeText + outcomeText +
+         "\n" + this.getData("custom_field");
+});
+
+// configure tooltips of flows
+chart.flow().tooltip().format(function() {
+  return Math.round(this.value/100000)/10 + " mln";
+});
 ```
 
 {sample}BCT\_Sankey\_Diagram\_09{sample}
