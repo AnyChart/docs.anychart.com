@@ -292,7 +292,7 @@ chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 * this.dropoff: number – дропофф ноды
 
 (?) You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
-(,) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+(?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 ```
 // configure labels of nodes
