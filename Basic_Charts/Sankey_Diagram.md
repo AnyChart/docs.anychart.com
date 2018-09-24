@@ -104,9 +104,9 @@ On the chart, the width (?) of each flow represents its `weight` (?) value, and 
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
-**Note 2:** за логичность данных юзер отвечает сам (см. sankey у гугла)
+**Note 2:** You should avoid creating cycles in the data: if A links to itself, or links to B which links to C which links to A, chart cannot be drawn (?).
 
-In the following sample, there is a Sankey with nodes organized in three columns. The `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
+In the following sample, there is a Sankey with nodes organized in three columns. The `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly (?).
 
 ```
 // create data
