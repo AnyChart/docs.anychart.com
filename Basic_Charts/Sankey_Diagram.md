@@ -90,7 +90,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-Data for a sankey diagram can be passed to the chart constructor {api:anychart#sankey}anychart.sankey(){api} or to the {api:anychart.charts.Sankey#data}data(){api} method.
+Data for a Sankey diagram can be passed to the chart constructor {api:anychart#sankey}anychart.sankey(){api} or to the {api:anychart.charts.Sankey#data}data(){api} method.
 
 Use the following data fields:
 
