@@ -3,6 +3,10 @@
 
 ## Overview
 
+* A sankey diagram is a visualization used to depict a flow from one set of values to another. The things being connected are called nodes and the connections are called links.
+* A Sankey diagram is a specific type of flow diagram, in which the width of the links is shown proportionally to the flow quantity. Entities are represented by rectangles or text, and linked if there is a flow between them. It shows a directed network structure (with nodes and edges)...
+* Sankey diagrams are a specific type of flow diagram, in which the width of the arrows is shown proportionally to the flow quantity... Sankey diagrams put a visual emphasis on the major transfers or flows within a system. They are helpful in locating dominant contributions to an overall flow. Often, Sankey diagrams show conserved quantities within defined system boundaries.
+
 A Sankey diagram...
 
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
@@ -12,7 +16,7 @@ This article explains how to create a basic Sankey diagram as well as configure 
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sankey}anychart.charts.Sankey{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>[(?)](../Working_with_Data/Overview)</td></tr>
+<tr><td>Data Fields</td><td>[from, to, weight](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
@@ -47,9 +51,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-* {api:anychart#sankey}anychart.sankey(){api}
-
-The following sample demonstrates how a basic Sankey diagram is created:
+To create a Sankey diagram, use the {api:anychart#sankey}anychart.sankey(){api} chart constructor, like in the following sample:
 
 ```
 // create data
@@ -88,17 +90,23 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-* [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
-* dropoffs: `null`
-* (?) за логичность данных юзер отвечает сам (см. sankey у гугла)
+Data for a sankey diagram can be passed to the chart constructor {api:anychart#sankey}anychart.sankey(){api} or to the {api:anychart.charts.Sankey#data}data(){api} method.
 
-поля:
+Use the following data fields:
 
-* `from`
-* `to`
-* `weight`
+* `from` to set sources of flows
+* `to` to set destinations of flows
+* `weight` to set values
 
-**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+Each data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
+
+On the chart, the width (?) of each flow depends on its `weight` value, and the height of each node depends on the total weight of incoming flows (?). Please keep in mind that you can connect any two nodes in any two different columns, which are not necessarily next to each other (?) – see the sample below.
+
+**Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+
+**Note 2:** за логичность данных юзер отвечает сам (см. sankey у гугла)
+
+In the following sample, there is a Sankey with nodes organized in three columns. Please note that `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
 
 ```
 // create data
