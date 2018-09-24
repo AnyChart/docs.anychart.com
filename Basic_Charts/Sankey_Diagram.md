@@ -90,7 +90,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
 * dropoffs: `null`
-* (?) за логичность данных юзер отвечает сам
+* (?) за логичность данных юзер отвечает сам (см. sankey у гугла)
 
 поля:
 
@@ -98,7 +98,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * `to`
 * `weight`
 
-(?) **Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
+**Note:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 ```
 // create data
@@ -213,7 +213,9 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
-(?) Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+
+...
 
 ```
 // configure the visual settings of nodes
@@ -247,8 +249,8 @@ To change the text of labels, combine the **labels()** method of [nodes](#nodes)
 
 To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
 
-* (?) [states](../Common_Settings/Interactivity/States)
-* (?) It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+* [states](../Common_Settings/Interactivity/States)
+* ...It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
 Here is the list of tokens that work with the Sankey diagram:
 
@@ -258,7 +260,7 @@ Here is the list of tokens that work with the Sankey diagram:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-This sample shows how to work with tokens:
+This sample shows how to work with tokens...:
 
 ```
 // configure labels
