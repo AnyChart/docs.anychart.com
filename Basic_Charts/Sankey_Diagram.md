@@ -98,7 +98,7 @@ Use the following data fields:
 * `to` to set destinations of flows
 * `weight` to set values
 
-Each data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
+A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
 On the chart, the width (?) of each flow depends on its `weight` value, and the height of each node depends on the total weight of incoming flows (?). Please keep in mind that you can connect any two nodes in any two different columns, which are not necessarily next to each other (?) – see the sample below.
 
