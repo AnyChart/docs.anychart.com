@@ -203,7 +203,7 @@ You can configure the following settings of dropoffs:
 * [appearance](#appearance)
 * [labels and tooltips](#labels_and_tooltips)
 
-...
+The following sample shows how to create dropoffs:
 
 ```
 // create data
