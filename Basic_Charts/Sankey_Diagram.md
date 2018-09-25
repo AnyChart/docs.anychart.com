@@ -278,8 +278,6 @@ Also, you can always add a custom field to your data and use a custom token corr
 
 This sample shows how to work with tokens. Please note that labels of flows are disabled in the hover state, and labels of dropoffs are enabled in the normal state:
 
-This sample shows how to work with tokens:
-
 ```
 // configure labels
 chart.node().labels().useHtml(true);
