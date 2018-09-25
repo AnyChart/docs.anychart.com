@@ -306,10 +306,10 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 In addition the following fields (?) are available for nodes:
 
-* `isConflict`: boolean – indicates whether there is a conflict between nodes (?)
-* `income`: array – names and weights of incoming nodes
-* `outcome`: array – names and weights of outgoing nodes
-* `dropoff`: number – the weight of the dropoff node
+* `isConflict`– a boolean indicating whether there is a conflict between nodes (?)
+* `income` – an array with names and weights of incoming nodes
+* `outcome` – an array with names and weights of outgoing nodes
+* `dropoff` – the weight of the dropoff node
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
