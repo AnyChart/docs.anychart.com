@@ -264,10 +264,9 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of labels, combine the **labels()** method of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} methods.
+To configure tooltips and tooltip titles, do the same with the **tooltip()** and {api:anychart.core.ui.Tooltip#format}format(){api} and {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} methods.
 
-* [states](../Common_Settings/Interactivity/States)
-* ...It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
+Labels can also be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover** – use the **normal()** and **hovered()** methods. By default, labels of flows and dropoffs are enabled only in the hover state. Call {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} to enable or disable them in a given state.
 
 Here is the list of tokens that work with the Sankey diagram:
 
@@ -277,7 +276,7 @@ Here is the list of tokens that work with the Sankey diagram:
 
 Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-This sample shows how to work with tokens...:
+This sample shows how to work with tokens. Please note that labels of flows are disabled in the hover state, and labels of dropoffs are enabled in the normal state:
 
 ```
 // configure labels
