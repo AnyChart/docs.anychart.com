@@ -7,6 +7,8 @@
 * A Sankey diagram is a specific type of flow diagram, in which the width of the links is shown proportionally to the flow quantity. Entities are represented by rectangles or text, and linked if there is a flow between them. It shows a directed network structure (with nodes and edges)...
 * Sankey diagrams are a specific type of flow diagram, in which the width of the arrows is shown proportionally to the flow quantity... Sankey diagrams put a visual emphasis on the major transfers or flows within a system. They are helpful in locating dominant contributions to an overall flow. Often, Sankey diagrams show conserved quantities within defined system boundaries.
 
+* ссылка на flow diagram (?)
+
 A Sankey diagram...
 
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
@@ -100,7 +102,7 @@ Use the following data fields:
 
 A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
-On the chart, the width (?) of each flow represents its `weight` value, and the height of each node depends on the total weight of incoming flows (?). Nodes are automatically organized in multiple columns.
+On the chart, the width (?) of each flow represents its `weight` value, and the height of each node depends on the total weight of incoming flows. Nodes are automatically organized in multiple columns.
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -140,8 +142,14 @@ var chart = anychart.sankey(data);
 
 ### Nodes
 
-* [Appearance](#appearance)
-* [Labels and Tooltips](#labels_and_tooltips)
+Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields. On the chart, nodes are automatically organized in multiple columns; the height of a node depends on the total weight of incoming flows.
+
+You can configure the following settings of nodes:
+
+* [appearance](#appearance)
+* [labels and tooltips](#labels_and_tooltips)
+* [width](#width)
+* [padding](#padding)
 
 #### Width
 
@@ -169,8 +177,13 @@ chart.nodePadding(0);
 
 ### Flows
 
-* [Appearance](#appearance)
-* [Labels and Tooltips](#labels_and_tooltips)
+Flow are elements that connect [nodes](#nodes) (?). In your [data](#data), you should specify the source and target nodes of each flow and its weight – use the `from`, `to`, and `weight` fields. Weight defines the width (?) of a flow, and the total weight of incoming flows defines the height of a node.
+
+You can configure the following settings of flows:
+
+* [appearance](#appearance)
+* [labels and tooltips](#labels_and_tooltips)
+* [curvature](#curvature)
 
 #### Curvature
 
@@ -187,10 +200,14 @@ chart.curveFactor(0);
 
 ### Dropoffs
 
-* [Appearance](#appearance)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Data](#data) + `"null"`
+A dropoff is a [flow](#flow) without a target [node](#node). To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width (?).
 
+You can configure the following settings of dropoffs:
+
+* [appearance](#appearance)
+* [labels and tooltips](#labels_and_tooltips)
+
+...
 
 ```
 // create data
