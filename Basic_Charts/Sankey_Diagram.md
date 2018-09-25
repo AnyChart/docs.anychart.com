@@ -272,7 +272,7 @@ Here is the list of tokens that work with the Sankey diagram:
 * `{%value}`
 * `{%type}`
 
-You can also add a custom field to your data and use a custom token corresponding to it.
+Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
 **Note:** You can call combine the **normal()** and **hovered()** methods with {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} to enable or disable labels in a given [state](../Common_Settings/Interactivity/States). By default, labels of nodes are shown both in the normal** and hover states, while labels of flows and dropoffs are shown only in the hover state.
 
