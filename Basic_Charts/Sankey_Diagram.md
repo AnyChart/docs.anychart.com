@@ -185,7 +185,7 @@ You can configure the following settings of flows:
 
 #### Curvature
 
-The curvature, or curve factor, of flows is set as a decimal number from 0 to 1, passed to the {api:anychart.charts.Sankey#curveFactor}curveFactor(){api} method. Setting it 0 straightens flows, like in this sample:
+The curvature, or curve factor, of flows is specified as a decimal value from 0 to 1, passed to the {api:anychart.charts.Sankey#curveFactor}curveFactor(){api} method. Setting it 0 straightens flows, like in this sample:
 
 ```
 // set the curvature of the flows
