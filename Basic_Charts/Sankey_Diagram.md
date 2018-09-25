@@ -3,7 +3,9 @@
 
 ## Overview
 
-A Sankey diagram, named after Captain Matthew Sankey, is a flow diagram (?) that shows nodes linked by flows, the quantity of each flow being represented as its width.
+A Sankey diagram, named after Captain Matthew Sankey, is a flow diagram (?) that shows nodes linked by flows, the quantity of each flow being represented as its width. This chart type emphasizes the major transfers or flows within a system and helps to locate dominant contributions to an overall flow.
+
+(?) последняя рфаза почти дословно спизжена из википедии
 
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
 
