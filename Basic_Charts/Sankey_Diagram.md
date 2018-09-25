@@ -100,13 +100,15 @@ Use the following data fields:
 
 A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
-On the chart, the width (?) of each flow represents its `weight` value, and the height of each node depends on the total weight of incoming flows (?). Nodes are automatically organized in multiple columns. Please keep in mind that you can connect any two nodes in any two different columns (?), which are not necessarily next to each other (?) – see the sample below.
+On the chart, the width (?) of each flow represents its `weight` value, and the height of each node depends on the total weight of incoming flows (?). Nodes are automatically organized in multiple columns.
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 **Note 2:** You should avoid creating cycles in the data: if A links to itself, or links to B which links to C which links to A, chart cannot be drawn (?).
 
-In the following sample, there is a Sankey with nodes organized in three columns. The `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly (?).
+In the following sample, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
+
+(?) Нужно ли тут общее првило выводить? Не сформулируешь точно и красиво одновременно, да и стоит ли?
 
 ```
 // create data
