@@ -164,9 +164,7 @@ chart.nodeWidth("50%");
 
 #### Padding
 
-To set the vertical (?) padding between nodes, call the {api:anychart.charts.Sankey#nodePadding}nodePadding(){api} method.
-
-In the following sample, the padding is set to 0, so nodes stick together:
+To set the vertical (?) padding between nodes, call the {api:anychart.charts.Sankey#nodePadding}nodePadding(){api} method. In the following sample, the padding is set to 0, so nodes stick together:
 
 ```
 // set the padding between nodes
@@ -187,9 +185,7 @@ You can configure the following settings of flows:
 
 #### Curvature
 
-* {api:anychart.charts.Sankey#curveFactor}curveFactor(){api}
-* curvature, or curve factor...
-
+The curvature, or curve factor, of flows is set as a ratio from 0 to 1 passed the {api:anychart.charts.Sankey#curveFactor}curveFactor(){api} method. Setting it 0 straightens flow, like in this sample:
 
 ```
 // set the curvature of the flows
