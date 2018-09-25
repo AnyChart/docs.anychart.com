@@ -269,7 +269,7 @@ To configure tooltips, do the same with the **tooltip()** and {api:anychart.core
 * [states](../Common_Settings/Interactivity/States)
 * ...It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-Here is the (?) list of tokens that work with the Sankey diagram:
+Here is the list of tokens that work with the Sankey diagram:
 
 * `{%name}`
 * `{%value}`
