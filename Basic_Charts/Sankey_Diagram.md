@@ -106,7 +106,7 @@ On the chart, the width (?) of each flow represents its `weight` value, and the 
 
 **Note 2:** You should avoid creating cycles in the data: if A links to itself, or links to B which links to C which links to A, chart cannot be drawn (?).
 
-In the following sample, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
+In the sample below, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
 
 (?) Нужно ли тут общее правило выводить? Не сформулируешь точно и красиво одновременно, да и стоит ли?
 
