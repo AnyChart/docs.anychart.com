@@ -108,7 +108,7 @@ On the chart, the width (?) of each flow represents its `weight` value, and the 
 
 In the following sample, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
 
-(?) Нужно ли тут общее првило выводить? Не сформулируешь точно и красиво одновременно, да и стоит ли?
+(?) Нужно ли тут общее правило выводить? Не сформулируешь точно и красиво одновременно, да и стоит ли?
 
 ```
 // create data
