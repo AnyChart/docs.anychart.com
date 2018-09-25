@@ -304,14 +304,14 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 * `value`
 * `type`
 
+In addition the following fields (?) are available for nodes:
+
+* `isConflict` (boolean) – indicates whether there is a conflict between nodes (?)
+* `income` (array) – the names and weights of incoming nodes
+* `outcome` (array) – names and weights of outgoing nodes
+* `dropoff` (number) – the weight of the dropoff node
+
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
-
-... nodes (это тоже поля или что?):
-
-* `isConflict`: boolean – true/false для ноды (является ли конфликтом)
-* `income`: Array.<{name: string, value: number}> – входящие ноды (имя/значение)
-* `outcome`: Array.<{name: string, value: number}> – исходящие ноды (имя/значение)
-* `dropoff`: number – дропофф ноды
 
 In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles / tooltips of nodes and flows:
 
