@@ -203,7 +203,7 @@ You can configure the following settings of dropoffs:
 * [appearance](#appearance)
 * [labels and tooltips](#labels_and_tooltips)
 
-The following sample shows how to create dropoffs:
+The sample below shows how to create dropoffs:
 
 ```
 // create data
@@ -223,22 +223,14 @@ var chart = anychart.sankey(data);
 
 ### Appearance
 
-* [nodes](#nodes), [flows](#flows), [dropoffs](#dropoffs)
-
-The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**...
-
-* nodes: {api:anychart.core.sankey.elements.Node#normal}normal(){api}, {api:anychart.core.sankey.elements.Node#normal}hovered(){api}
-* flows: {api:anychart.core.sankey.elements.Flow#normal}normal(){api}, {api:anychart.core.sankey.elements.Flow#normal}hovered(){api}
-* dropoffs: {api:anychart.core.sankey.elements.Dropoff#normal}normal(){api}, {api:anychart.core.sankey.elements.Dropoff#normal}hovered(){api}
-
-Combine them with the following methods:
+The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Combine the **normal()** and **hovered()** (?) methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
-...
+In this sample, there is a Sankey chart with appearance settings configured:
 
 ```
 // configure the visual settings of nodes
@@ -275,7 +267,7 @@ To configure tooltips, do the same with the **tooltip()** and {api:anychart.core
 * [states](../Common_Settings/Interactivity/States)
 * ...It is also possible to change the titles of tooltips: use {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api}.
 
-Here is the list of tokens that work with the Sankey diagram:
+Here is the (?) list of tokens that work with the Sankey diagram:
 
 * `{%name}`
 * `{%value}`
