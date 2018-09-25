@@ -177,7 +177,7 @@ chart.nodePadding(0);
 
 ### Flows
 
-Flow are elements that connect [nodes](#nodes) (?). In your [data](#data), you should specify the source and target nodes of each flow and its weight – use the `from`, `to`, and `weight` fields. Weight defines the width (?) of a flow, and the total weight of incoming flows defines the height of a node.
+Flow are elements that connect [nodes](#nodes) (?). Each flow is specified by the names of its source and target nodes it the `from` and `to` [data](#data) fields. The value in the `weight` field defines the width (?) of the flow (and the total weight of incoming flows defines the height of a node).
 
 You can configure the following settings of flows:
 
