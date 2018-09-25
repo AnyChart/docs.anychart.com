@@ -225,7 +225,7 @@ var chart = anychart.sankey(data);
 
 The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**.
 
-Combine the **normal()** and **hovered()** (?) methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
+Combine the **normal()** and **hovered()** methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
@@ -264,7 +264,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of labels, combine the **labels()** method of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the {api:anychart.core.ui.LabelsFactory#format}format(){api} method and [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-To configure tooltips or tooltip titles, do the same with **tooltip()** and the{api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method.
+To configure tooltips or tooltip titles, do the same with **tooltip()** and the {api:anychart.core.ui.Tooltip#format}format(){api} or {api:anychart.core.ui.Tooltip#titleFormat}titleFormat(){api} method.
 
 Here is the list of tokens that work with the Sankey diagram:
 
