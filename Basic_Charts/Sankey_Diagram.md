@@ -223,7 +223,9 @@ var chart = anychart.sankey(data);
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Combine the **normal()** and **hovered()** (?) methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
+The [appearance settings](../Appearance_Settings) of a Sankey diagram can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**.
+
+Combine the **normal()** and **hovered()** (?) methods of [nodes](#nodes) / [flows](#flows) / [dropoffs](#dropoffs) with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
