@@ -153,8 +153,7 @@ You can configure the following settings of nodes:
 
 #### Width
 
-* {api:anychart.charts.Sankey#nodeWidth}nodeWidth(){api}
-
+You can set the width of nodes (either in percent or in pixels) by using the {api:anychart.charts.Sankey#nodeWidth}nodeWidth(){api} method:
 
 ```
 // set the width of nodes
@@ -165,8 +164,9 @@ chart.nodeWidth("50%");
 
 #### Padding
 
-* {api:anychart.charts.Sankey#nodePadding}nodePadding(){api}
+To set the vertical (?) padding between nodes, call the {api:anychart.charts.Sankey#nodePadding}nodePadding(){api} method.
 
+In the following sample, the padding is set to 0, so nodes stick together:
 
 ```
 // set the padding between nodes
@@ -200,7 +200,7 @@ chart.curveFactor(0);
 
 ### Dropoffs
 
-A dropoff is a [flow](#flow) without a target [node](#node). To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width (?).
+A dropoff is a [flow](#flow) without a target [node](#node), which usually indicates losses (?). To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width (?).
 
 You can configure the following settings of dropoffs:
 
