@@ -153,7 +153,7 @@ With these setting you can use:
 
 And create charts like this one:
 
-{sample}BCT\_Polar\_Chart\_05\_1{sample}
+{sample}BCT\_Polar\_Chart\_06{sample}
 
 ## Grids
 
@@ -187,7 +187,7 @@ chart.yGrid().stroke({
 });
 ```
 
-{sample}BCT\_Polar\_Chart\_06{sample}
+{sample}BCT\_Polar\_Chart\_07{sample}
 
 ### Cell Color
 
@@ -201,7 +201,7 @@ polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
 polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 
-{sample}BCT\_Polar\_Chart\_07{sample}
+{sample}BCT\_Polar\_Chart\_08{sample}
 
 ## Stacked Polar Charts
 

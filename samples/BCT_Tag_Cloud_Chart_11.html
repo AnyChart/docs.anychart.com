@@ -13,41 +13,71 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        label {
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<label><input onclick="tagCloudMode('spiral')" type="radio" name="type" checked>Spiral Mode</label>
+<label><input onclick="tagCloudMode('rect')" type="radio" name="type">Rectangle Mode</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data   
-    var data = [
-{x: "learning", value: 80},
-{x: "includes", value: 56},
-{x: "lists", value: 44},
-{x: "meaning", value: 40},
-{x: "useful", value: 36},
-{x: "different", value: 32},
-{x: "grammar", value: 28},
-{x: "teaching", value: 24},
-{x: "example", value: 20},
-{x: "thing", value: 12}
-    ];
+    // create data
+    var text =
+    "Tyger, tyger, burning bright " +
+    "In the forests of the night, " +
+    "What immortal hand or eye " +
+    "Could frame thy fearful symmetry? " +
+    "In what distant deeps or skies " +
+    "Burnt the fire of thine eyes? " +
+    "On what wings dare he aspire? " +
+    "What the hand dare seize the fire? " +
+    "And what shoulder and what art " +
+    "Could twist the sinews of thy heart? " +
+    "And, when thy heart began to beat, " +
+    "What dread hand and what dread feet? " +
+    "What the hammer? what the chain? " +
+    "In what furnace was thy brain? " +
+    "What the anvil? what dread grasp " +
+    "Dare its deadly terrors clasp? " +
+    "When the stars threw down their spears, " +
+    "And watered heaven with their tears, " +
+    "Did He smile His work to see? " +
+    "Did He who made the lamb make thee? " +
+    "Tyger, tyger, burning bright " +
+    "In the forests of the night, " +
+    "What immortal hand or eye " +
+    "Dare frame thy fearful symmetry? ";
 
-    // create a chart and set the data
-    var chart = anychart.tagCloud(data);
+    // create a chart
+    chart = anychart.tagCloud();
 
-    // set text spacing
-    chart.textSpacing(15);
+    // configure angles
+    chart.angles([0]);
+
+    // set the parsing mode
+    chart.data(text, {mode: "by-word"});
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Text Spacing");
+    chart.listen("chartDraw", function () {
+      chart.title("Tag Cloud Chart: Mode = " +  chart.mode());
+    });
 
     // set the container id
     chart.container("container");
@@ -55,6 +85,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+    
+// set the mode of the tag cloud
+function tagCloudMode(mode) {
+  chart.mode(mode);
+}
 </script>
 </body>
 </html>

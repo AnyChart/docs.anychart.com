@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Events 04"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 12000, 10000, 7000, 11000],
+      ["February", 15000, 12000, 9000, 13000],
+      ["March", 16000, 15000, 14000, 12000],
+      ["April", 15000, 11000, 13000, 10000],
+      ["May", 10000, 9000, 11000, 6000]
+    ]);
+
+    // map the data
+    var seriesData1 = data.mapAs({x: 0, value: 1});
+    var seriesData2 = data.mapAs({x: 0, value: 2});
+    var seriesData3 = data.mapAs({x: 0, value: 3});
+    var seriesData4 = data.mapAs({x: 0, value: 4});
+
+    // create a chart
+    var chart = anychart.column();
+
+    // create series, set the data and names
+    var series1 = chart.column(seriesData1);
+    var series2 = chart.column(seriesData2);
+    var series3 = chart.column(seriesData3);
+    var series4 = chart.column(seriesData4);
+    series1.name("2015");
+    series2.name("2016");
+    series3.name("2017");
+    series4.name("2018");
+
+    // enable the legend
+    var legend = chart.legend();
+    legend.enabled(true);
+
+    /* prevent the cursor from changing
+    when it hovers over the legend */
+    legend.hoverCursor("default");
+
+    /* disable the default behavior of the legend
+    on the legendItemMouseDown event
+    and prevent the legendItemClick event */
+    legend.listen("legendItemMouseDown", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    /* disable the default behavior of the legend
+    on the legendItemMouseOver event */
+    legend.listen("legendItemMouseOver", function(e) {
+      e.preventDefault();
+    });
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
+    /* listen to the pointsSelect event
+    and configure the appearance of the legend item */
+    chart.listen("pointsSelect", function(e) {
+      e.currentPoint.series.legendItem().iconFill("#455a64");
+      for (var i = 0; i < chart.getSeriesCount(); i++) {
+        var series = chart.getSeriesAt(i);
+        if (series.meta("selected") & series != e.currentPoint.series) {
+           series.meta("selected", false);
+           series.legendItem().iconFill(series.color());
+        }
+      }
+      e.currentPoint.series.meta("selected", true);
+    });
+
+    /* listen to the pointMouseOver event
+    and configure the appearance of the legend item */
+    chart.listen("pointMouseOver", function(e) {
+      if (!e.series.meta("selected")) {
+        color = anychart.color.lighten(e.series.color());
+        e.series.legendItem().iconFill(color);
+      }
+    });
+
+    /* listen to the pointMouseOut event
+    and reset appearance of the legend item */
+    chart.listen("pointMouseOut", function(e) {
+      if (!e.series.meta("selected")) {
+        e.series.legendItem().iconFill(e.series.color());
+      }
+    });
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Events: Chart Points (Multiple Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Click on and Hover over Chart Points");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

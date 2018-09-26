@@ -36,13 +36,13 @@ stage = acgraph.create("container");
 var start;
 var finish;
 
-stage.listen("renderstart", function (){
+stage.listen("renderstart", function() {
   start = (new Date()).getTime();
 });
 
 // render rectangles
 function render(){
-  stage.listenOnce("renderfinish", function (){
+  stage.listenOnce("renderfinish", function() {
 
     document.getElementById("renderButton")
       .style.visibility = "hidden";

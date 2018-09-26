@@ -315,7 +315,7 @@ chart.labels().format("{%absolute}");
 
 // configure tooltips
 chart.tooltip().titleFormat("Absolute | Difference");
-chart.tooltip().format("{%absolute}\n{%diff}");
+chart.tooltip().format("{%absolute}\n{%diff}\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
@@ -363,7 +363,7 @@ var series = chart.waterfall(data);
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
     if (this.isTotal)
         return "<span style='color:#dd2c00;font-weight:bold'>" +
                this.absolute + "</span>";
@@ -371,7 +371,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().titleFormat(function (){
+chart.tooltip().titleFormat(function() {
     if (this.isTotal)
         return "TOTAL (" + this.getData("custom_field") + ")";
     return this.x + " (" + this.getData("custom_field") + ")";
@@ -382,7 +382,7 @@ chart.tooltip().titleFormat(function (){
 
 ### Legend
 
-The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
+The default legend of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multiple-series chart and want to show series instead, change the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
 
 ```
 // add hatch fills

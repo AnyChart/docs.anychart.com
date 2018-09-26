@@ -58,7 +58,7 @@ femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
 
 As a rule, to call {api:anychart.core.Point#getStat}getStat(){api} on a point, one needs to use the so-called [event listeners](../Common_Settings/Event_Listeners) and [text formatters](../Common_Settings/Text_Formatters). However, in some cases you can use the {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method to get a link to a Point object, and invoke the {api:anychart.core.Point#getStat}getStat(){api} method on it. We will demonstrate the both ways.
 
-In the sample below, the title of the chart shows values of the latest points in both series. In addition, when a user selects a pair of points, a subtitle with information on these points appears:
+In the sample below, the title of the chart shows values of the latest points in both series. In addition, when a user selects a pair of points, a subtitle with information about these points appears:
 
 {sample}CS\_Statistics\_05{sample}
 
@@ -82,7 +82,7 @@ An event listener is used to listen to the pointsSelect event and get links to t
 chart.listen("pointsSelect", function(e){
   // get categoryName of the selected points
   selectedPointYear = e.point.getStat("categoryName");
-  // begin creating a subtitle with the information on the selected points
+  // begin creating a subtitle with information about the selected points
   subtitleText = "<span style='font-size:12'>" + selectedPointYear + ": ";
   // loop through the array of the selected points
   for (var i = 0; i < e.points.length; i++) {

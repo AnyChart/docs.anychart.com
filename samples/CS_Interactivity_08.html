@@ -66,11 +66,11 @@ anychart.onDocumentReady(function () {
   title.enabled(true);
   
   // adding a listener
-  title.listen("mouseOver", function (){
+  title.listen("mouseOver", function() {
     series_1.hover([4, 6, 12, 16]);
     series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
   });
-  title.listen("mouseOut", function (){
+  title.listen("mouseOut", function() {
     series_1.unhover();
     series_2.unhover();
   });
@@ -83,11 +83,11 @@ anychart.onDocumentReady(function () {
   chart.legend(false);
 
   // adding a listener
-  chart.title().listen("mouseOver", function (){
+  chart.title().listen("mouseOver", function() {
       series_1.hover([4, 6, 12, 16]);
       series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);
   });
-  chart.title().listen("mouseOut", function (){
+  chart.title().listen("mouseOut", function() {
       series_1.unhover();
       series_2.unhover([0, 1, 5, 16, 17]);
   });

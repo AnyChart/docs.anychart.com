@@ -44,7 +44,7 @@ The second parameter sets the period, and the next three parameters allow you to
 The following code sample demonstrates a Price Channels indicator with parameters set as default:
 
 ```
-var priceChannels = plot.priceChannels(mapping, 20, "range-area", "line");
+var priceChannels = plot.priceChannels(mapping, 20, "line", "range-area");
 ```
 
 ## Visualization
@@ -58,9 +58,9 @@ priceChannels_0.middleSeries().stroke("2 #ef6c00");
 priceChannels_0.rangeSeries().fill("#ffd54f 0.2");
 
 // create and adjust a Price Channels indicator
-var priceChannels_1 = plot_1.priceChannels(mapping, 10, "step-line", "range-step-area");
+var priceChannels_1 = plot_1.priceChannels(mapping, 10, "range-step-area", "step-line");
 priceChannels_1.middleSeries().stroke("2 #64b5f6");
-priceChannels_1.rangeSeries().fill(null);
+priceChannels_1.rangeSeries().fill("none");
 priceChannels_1.rangeSeries().highStroke("2 #00bfa5");
 priceChannels_1.rangeSeries().lowStroke("2 #dd2c00");
 ```

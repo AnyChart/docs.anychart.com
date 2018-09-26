@@ -43,7 +43,7 @@ Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
-To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either in percent or in pixels).
+To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either as a percentage or in pixels).
 
 Here is a basic sample showing how to create a Column chart with error bars:
 
@@ -280,7 +280,7 @@ In the sample below they are used to customize tooltips:
 
 ```
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var output = "";
   if (this.xUpperError != 0)
      output = "xUpperError: " + this.xUpperError;

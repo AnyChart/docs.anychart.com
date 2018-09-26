@@ -92,7 +92,7 @@ trendChannel2.thirdXAnchor("2004-08-08");
 trendChannel2.thirdValueAnchor(17.86);
 
 // configure the visual settings of the second annotation
-trendChannel2.normal().fill(null);
+trendChannel2.normal().fill("none");
 trendChannel2.normal().stroke("#006600", 1, "10 2");
 trendChannel2.hovered().stroke("#00b300", 2, "10 2");
 trendChannel2.selected().stroke("#00b300", 4, "10 2");  

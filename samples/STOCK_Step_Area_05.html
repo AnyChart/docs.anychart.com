@@ -177,7 +177,7 @@ anychart.onDocumentReady(function () {
     series_region.hatchFill("diagonal-cross");
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().format(function (){
+    chart.plot(0).yAxis().labels().format(function() {
       return this.value/1000000 + "m";
     });
 

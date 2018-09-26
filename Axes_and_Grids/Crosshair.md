@@ -58,7 +58,7 @@ The text of the labels can be changed with the help of the {api:anychart.core.ui
 chart.crosshair().xLabel().format("{%Value}");
 
 // set the text of the y-label
-chart.crosshair().yLabel().format(function (){
+chart.crosshair().yLabel().format(function() {
   return Math.round(this.value) + " $";
 });
 ```

@@ -41,13 +41,13 @@ anychart.onDocumentReady(function () {
     chart = anychart.venn(data);
 
     // configure the labels of intersections
-    chart.intersections().labels().format(function (){
+    chart.intersections().labels().format(function() {
       if (this.x.length > 2)
         return this.x; 
     });
 
     // configure the tooltips of intersections
-    chart.intersections().tooltip().format(function (){
+    chart.intersections().tooltip().format(function() {
       return "Value: " + this.value + "\n(" +
              this.x.length + " sets intersecting)\n\n" +
              this.getData("custom_field"); 

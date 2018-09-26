@@ -93,7 +93,7 @@ triangle2.thirdXAnchor("2005-10-02");
 triangle2.thirdValueAnchor(15);
 
 // configure the visual settings of the second annotation
-riangle2.normal().fill(null);
+riangle2.normal().fill("none");
 triangle2.normal().stroke("#006600", 1, "10 2");
 triangle2.hovered().stroke("#00b300", 2, "10 2");
 triangle2.selected().stroke("#00b300", 4, "10 2");

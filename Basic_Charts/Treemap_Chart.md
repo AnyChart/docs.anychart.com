@@ -170,7 +170,7 @@ To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} 
 * `"asc"`
 * `"none"`
 
-**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order of their listing in data.
+**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order in which they occur in data.
 
 The sample below shows how to set the sorting mode:
 
@@ -403,14 +403,14 @@ chart = anychart.treeMap(data, "as-tree");
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + population + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "population: " + population +
          " mln\ncapital: " + this.getData("capital");
@@ -442,7 +442,7 @@ By default, parent elements of the currently shown levels are visualized as head
 chart.headers(false);
 ```
 
-You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
+You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or as a percentage:
 
 ```
 //set the maximum height of headers
@@ -463,8 +463,8 @@ To [configure the font](../Appearance_Settings/Text_Settings) of headers, use me
 ```
 // configure the font of headers
 chart.normal().headers().fontColor("#990000");
-chart.normal().headers().fontWeight('bold');
 chart.normal().headers().fontSize("14");
+chart.normal().headers().fontWeight('bold');
 chart.hovered().headers().fontColor("#000099");
 ```
 
@@ -483,8 +483,8 @@ var data = [
    normal:  {header: {
                       format: "{%name} ({%value} Total)",
                       fontColor: "#990000",
-                      fontWeight: "bold",
                       fontSize: "14",
+                      fontWeight: "bold"
                      }
             },
    hovered: {header: {fontColor: "#000099"}},

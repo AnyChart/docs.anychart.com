@@ -294,7 +294,7 @@ var chart = anychart.heatMap(data);
 chart.labels().format("{%heat}%");
 
 // configure tooltips
-chart.tooltip().format("{%y}: {%heat}%\n{%custom_field}");
+chart.tooltip().format("{%y}: {%heat}%\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Heat\_Map\_Chart\_07{sample}
@@ -335,7 +335,7 @@ var chart = anychart.heatMap(data);
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var heat = (this.heat);
   if (heat < 20)
     return "Low<br/>" + heat + "%";
@@ -347,7 +347,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var heat = (this.heat);
   if (heat < 20)
     return this.y + ": Low (" + heat + "%)\n\n" +

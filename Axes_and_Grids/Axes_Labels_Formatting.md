@@ -30,7 +30,7 @@ It's possible to make text formatting easier by using tokens - special substring
 format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 
 ```
-chart.axis().format(function (){
+chart.axis().format(function() {
   return this.value
 });
 ```
@@ -61,7 +61,7 @@ chart.yAxis().labels().format("${%value}");
 The code above shows the axis value with the dollar sign as prefix. Also, it's possible to set a formatting function. This code recalculates the dollar-axis values into euro and sets the euro sign as a prefix:
 
 ```
-chart.yAxis(1).labels().format(function (){
+chart.yAxis(1).labels().format(function() {
   var value = this.value;
   // scale USD to EUR and rouns the result
   value = Math.round(value*0.7094716);
@@ -93,7 +93,7 @@ If the label value is too long, it's possible to limit the number of characters 
 
 ```
 // limits length of the x-axis labels to 3 or less
-chart.xAxis().labels().format(function (){
+chart.xAxis().labels().format(function() {
   var value = this.value;
   // limit the number of symbols to 3
   value = value.substr(0, 3);

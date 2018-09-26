@@ -61,20 +61,20 @@ anychart.onDocumentReady(function () {
   var i = 0;
 
   // listen for a click and select the next point
-  label.listen("click", function (){
+  label.listen("click", function() {
     chart.getSeries(0).getPoint(i).selected(true);
     i++;
     if (i==chart.getSeries(0).data().getRowsCount()) i=0;
   });
 
   // change cursor and label color on mouse hover
-  label.listen("mouseOver", function (){
+  label.listen("mouseOver", function() {
     this.background().fill("Gray 0.2");
     document.body.style.cursor = "hand";
   });
 
   // reset cursor and color on mouse out
-  label.listen("mouseOut", function (){
+  label.listen("mouseOut", function() {
     this.background().fill("White");
     document.body.style.cursor = "auto";    
   });

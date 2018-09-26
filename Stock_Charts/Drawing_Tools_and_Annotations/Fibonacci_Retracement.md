@@ -179,7 +179,7 @@ Instead of tokens, you can also use [formatting functions](../../Common_Settings
 
 ```
 // configure the annotation labels
-fibonacciRetracement.labels().format(function (){
+fibonacciRetracement.labels().format(function() {
   var levelValue = this.levelValue.toFixed(1);
   switch (this.level) {
       case 0:

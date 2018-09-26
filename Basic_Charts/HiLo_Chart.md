@@ -144,6 +144,6 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-Here is the information about creating Vertical HiLo series:
+Here is information about creating Vertical HiLo series:
 
 * [Vertical HiLo](Vertical/HiLo_Chart)

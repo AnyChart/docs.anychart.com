@@ -87,7 +87,7 @@ rectangle2.secondXAnchor("2007-02-25");
 rectangle2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-rectangle2.normal().fill(null);
+rectangle2.normal().fill("none");
 rectangle2.normal().stroke("#006600", 1, "10 2");
 rectangle2.hovered().stroke("#00b300", 2, "10 2");
 rectangle2.selected().stroke("#00b300", 4, "10 2");

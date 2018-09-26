@@ -130,7 +130,7 @@ function createSeatMap(svg){
     series = chart.choropleth(dataSet);
 
     // set the tooltips
-    series.tooltip().titleFormat(function (){
+    series.tooltip().titleFormat(function() {
 if (this.value == 12) return "Best seats (Rows 1-2)";    
 if (this.value == 10) return "Best seats (Rows 3-8)";  
 if (this.value == 7.5) return "Back seats";

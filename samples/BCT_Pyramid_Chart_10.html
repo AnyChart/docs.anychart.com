@@ -40,7 +40,7 @@ anychart.onDocumentReady(function () {
   chart.tooltip().useHtml(true);
 
   // configure labels
-  chart.labels().format(function (){
+  chart.labels().format(function() {
     var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
     if (percentOfTotal > 40)
         return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -49,15 +49,15 @@ anychart.onDocumentReady(function () {
   });
 
   // configure tooltips
-  chart.tooltip().format(function (){
+  chart.tooltip().format(function() {
     var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
     if (percentOfTotal > 40)
         return "<span style='font-size:18'>" +
                percentOfTotal.toFixed(1) + "% (" +
-               this.value + ")</span><br></br><br>" +
+               this.value + ")</span><br><br>" +
                this.getData("custom_field");
     return percentOfTotal.toFixed(1) + "% (" + this.value +
-           ")<br></br><br></br>" + this.getData("custom_field");
+           ")<br><br>" + this.getData("custom_field");
   });
 
   // draw chart

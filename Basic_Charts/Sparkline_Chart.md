@@ -195,14 +195,14 @@ Here you will find some information about main parts of the sparkline chart styl
 
 ### Point width
 
-For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
+For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the {api:?entry=pointWidth}pointWidth(){api} method:
 
 ```
 chart1.pointWidth('50%');
 chart2.pointWidth(25);
 ```
 
-Note that you can define pointWidth values in percent or in pixels.
+Note that you can define pointWidth values as a percentage or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}

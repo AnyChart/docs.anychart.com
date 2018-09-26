@@ -44,8 +44,13 @@ anychart.onDocumentReady(function () {
     var chart = anychart.tagCloud(data);
 
     // create and configure a color scale.
-    var customColorScale = anychart.scales.linearColor();
-    customColorScale.colors(["#ffcc00", "#00ccff"]);
+    var customColorScale = anychart.scales.ordinalColor();
+    customColorScale.ranges([
+{less: 50},
+{from: 50, to: 60},
+{greater: 60}
+    ]);
+    customColorScale.colors(["lightgray", "#ffcc00", "#00ccff"]);
 
     // set the color scale as the color scale of the chart
     chart.colorScale(customColorScale);
@@ -54,7 +59,7 @@ anychart.onDocumentReady(function () {
     chart.colorRange().enabled(true);
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Color Scale (Linear)");
+    chart.title("Tag Cloud Chart: Color Scale (Ordinal)");
 
     // set the container id
     chart.container("container");

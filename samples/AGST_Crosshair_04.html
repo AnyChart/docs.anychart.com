@@ -46,7 +46,7 @@ anychart.onDocumentReady(function () {
     // add and configure a second y-axis
     var YAxis_2 = chart.yAxis(1);
     YAxis_2.orientation("right");
-    YAxis_2.labels().format(function (){
+    YAxis_2.labels().format(function() {
       return this.value + "%";
     });
 
@@ -63,7 +63,7 @@ anychart.onDocumentReady(function () {
     chart.crosshair().yLabel().axisIndex(1);
 
     // set the text of the y-label
-    chart.crosshair().yLabel().format(function (){
+    chart.crosshair().yLabel().format(function() {
       return this.value + "%";
     });
 

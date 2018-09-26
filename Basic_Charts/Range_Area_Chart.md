@@ -170,7 +170,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
-Here is the information about creating Vertical Range Area series:
+Here is information about creating Vertical Range Area series:
 
 * [Vertical Range Area](Vertical/Range_Area_Chart)
 * [Vertical Range Spline Area](Vertical/Range_Spline_Area_Chart)

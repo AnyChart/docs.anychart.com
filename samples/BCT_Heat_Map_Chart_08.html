@@ -5,10 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-heatmap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{develop}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{develop}}/js/anychart-heatmap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{develop}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{develop}}/js/anychart-ui.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
@@ -53,7 +53,7 @@ anychart.onDocumentReady(function () {
     chart.labels().useHtml(true);
 
     // configure labels
-    chart.labels().format(function (){
+    chart.labels().format(function() {
       var heat = (this.heat);
       if (heat < 20)
         return "Low<br/>" + heat + "%";
@@ -65,7 +65,7 @@ anychart.onDocumentReady(function () {
     });
 
     // configure tooltips
-    chart.tooltip().format(function (){
+    chart.tooltip().format(function() {
       var heat = (this.heat);
       if (heat < 20)
         return this.y + ": Low (" + heat + "%)\n\n" +
