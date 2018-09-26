@@ -3,7 +3,7 @@
 
 ## Overview
 
-A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multi-series column charts, values are grouped by categories.
+A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multiple-series column charts, values are grouped by categories.
 
 The column chart is used very widely to show comparison among categories and sometimes to visualize time-based data.
 
@@ -231,9 +231,9 @@ chart.barGroupsPadding(0);
 
 #### Multiple Series
 
-The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
+The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multiple-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2:
+In the sample below, there is a multiple-series Column chart with the padding between columns and between column groups set to -0.5 and 2:
 
 ```
 // create the first series
@@ -265,7 +265,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Stacked Column
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
 In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 

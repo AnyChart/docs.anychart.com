@@ -5,7 +5,7 @@
 
 A pie chart is a circular chart looking like a pie divided into slices (sectors). Slices show the percentage each value contributes to a total, the area of each slice being proportional to the quantity it represents, and the circle representing 100%. A pie chart with a blank circular area in the center is called a [doughnut chart](Doughnut_Chart).
 
-Pie charts are used very widely with small sets of data to compare categories. They cannot be multi-series and should not be used when there are more than just a few categories.
+Pie charts are used very widely with small sets of data to compare categories. They cannot be multiple-series and should not be used when there are more than just a few categories.
 
 This article explains how to create a basic Pie chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pie chart's characteristics:
 

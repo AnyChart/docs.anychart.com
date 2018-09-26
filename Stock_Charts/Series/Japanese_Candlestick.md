@@ -68,7 +68,7 @@ The next sample contains the same data arranged as array of objects.
 
 ### Multi series
 
-Simple multi-series chart:
+Simple multiple-series chart:
 
 ```
 // set the series for ACME

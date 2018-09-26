@@ -23,4 +23,4 @@ var series = chart.area(data);
 
 ## Special Settings
 
-**Note:** When you use the {api:anychart#area3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
+**Note:** When you use the {api:anychart#area3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.

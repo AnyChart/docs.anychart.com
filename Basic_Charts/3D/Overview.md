@@ -114,7 +114,7 @@ chart.zAspect("100%"");
 
 ## Z-Distribution
 
-The series of multi-series 3D charts can be distributed either along the Z-axis or along the X-axis.
+The series of multiple-series 3D charts can be distributed either along the Z-axis or along the X-axis.
 
 To enable or disable the Z-axis distribution, call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use `true` or `false` as paramater (when the Z-axis distribution is disabled, series are distributed along the X-axis).
 

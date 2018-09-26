@@ -3,7 +3,7 @@
 
 ## Overview
 
-A range bar chart displays information as a range of data by plotting two Y-values (low and high) per data point. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. So, the range bar chart is a [vertical](Vertical/Overview) version of the [range column chart](Range_Column_Chart). In multi-series range bar charts, values are grouped by categories.
+A range bar chart displays information as a range of data by plotting two Y-values (low and high) per data point. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. So, the range bar chart is a [vertical](Vertical/Overview) version of the [range column chart](Range_Column_Chart). In multiple-series range bar charts, values are grouped by categories.
 
 This type is sometimes referred to as the floating bar chart since it looks like a set of bar "floating" above the horizontal axis. It is used to show the difference between high and low values while visualizing time-based data or showing comparison among categories.
 
@@ -242,9 +242,9 @@ chart.barGroupsPadding(0);
 
 #### Multiple Series
 
-The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
+The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multiple-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked chart](Stacked/Overview), which is not bound to zero. See the sample below (there is a multi-series Range Bar chart with the padding between bars and between bar groups set to -1 and 2):
+If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked chart](Stacked/Overview), which is not bound to zero. See the sample below (there is a multiple-series Range Bar chart with the padding between bars and between bar groups set to -1 and 2):
 
 ```
 // create the first series

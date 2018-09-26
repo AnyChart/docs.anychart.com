@@ -21,7 +21,7 @@ You can call {api:anychart.core.Chart#getStat}getStat(){api} on instances of thr
 
 ## Chart
 
-You should call the {api:anychart.core.Chart#getStat}getStat(){api} method of a chart object if you need to get overall statistics on all the series of a multi-series chart or if the chart type does not suggest that there are more than one series.
+You should call the {api:anychart.core.Chart#getStat}getStat(){api} method of a chart object if you need to get overall statistics on all the series of a multiple-series chart or if the chart type does not suggest that there are more than one series.
 
 The sample you see below demonstrates how the method allows to obtain the average Y-value of all the points in all the series of a chart (see the title):
 

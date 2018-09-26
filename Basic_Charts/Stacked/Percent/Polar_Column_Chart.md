@@ -3,13 +3,13 @@
 
 ## Overview
 
-A Polar Percent Stacked Column Chart is a multi-series Polar Column Chart that displays the trend of the percentage each value contributes over time or categories.
+A Polar Percent Stacked Column Chart is a multiple-series Polar Column Chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Polar Percent Stacked Column Chart, create a multi-series [Polar Column Chart](../../Polar_Plot/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
+To build a Polar Percent Stacked Column Chart, create a multiple-series [Polar Column Chart](../../Polar_Plot/Column_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **percent**:
 
 ```
 // create a chart

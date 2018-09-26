@@ -55,7 +55,7 @@ Find more about setting and arranging data in Stocks in the [Stocks Data tutoria
 
 ### Multi series
 
-Simple multi-series chart:
+Simple multiple-series chart:
 
 ```
 // set the series

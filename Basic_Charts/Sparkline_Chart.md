@@ -23,7 +23,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Chart
 
-As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multi-series.
+As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multiple-series.
 
 Sparkline series can be of 4 types: line, area, column and win/loss. 
 
