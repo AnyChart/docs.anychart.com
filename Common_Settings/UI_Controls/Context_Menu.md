@@ -30,7 +30,7 @@ Here is a sample with the default context menu:
 
 {sample}CS\_Context\_Menu\_01{sample}
 
-## Disable
+## Enabling / Disabling
 
 The Context Menu is enabled by default, use the {api:anychart.core.Chart#contextMenu}contextMenu(){api} method or the {api:anychart.ui.ContextMenu#enabled}enabled(){api} method if you want to disable it. The first one is the shortest way:
 

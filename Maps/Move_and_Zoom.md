@@ -17,9 +17,9 @@ Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")
 
 When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy their data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
 
-### Enable/Disable
+###  Enabling / Disabling
 
-To enable or disable all interactive features we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
+To enable or disable all interactive features, we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
 
 **NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 

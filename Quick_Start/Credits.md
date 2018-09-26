@@ -69,7 +69,7 @@ CSS code:
 }
 ```
 
-### Disable
+### Disabling
 
 To disable credits just put this in your code, but remember: it will work only if you have a [license key](#license).
 

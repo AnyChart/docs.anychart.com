@@ -6,7 +6,7 @@
 With AnyChart, you've got a full control over the axes labels: you can format them, tune visual appearance and position.
 All major settings and features of axes labels are described in this tutorial.
 
-## Enable or Disable
+## Enabling / Disabling
 
 Each axis in AnyChart JavaScript graphs has its own labels settings. By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of {api:anychart.core.axes.Linear#labels}labels(){api} method:
 

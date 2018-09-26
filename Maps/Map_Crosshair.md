@@ -7,7 +7,7 @@ Map crosshair is a pair of perpendicular lines (horizontal and vertical), moving
   
 Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside a map, Crosshair appears.
  
-## Enable           
+## Enabling / Disabling       
  
 If you want to switch the Crosshair on, use the {api:anychart.charts.Map#crosshair}crosshair(){api} method:
 
@@ -32,7 +32,7 @@ crosshair.xStroke(null);
 
 ## Labels
 
-### Disable
+### Enabling / Disabling
 
 Use the standard function to disable the axes labels.
 

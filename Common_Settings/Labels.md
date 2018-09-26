@@ -8,7 +8,7 @@ You can configure different settings of labels when they are hovered over and se
 
 ## Basic Setting
 
-### Enable
+### Enabling / Disabling
 
 In most of the cases, series labels are disabled by default. To enable them set `true` using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
 

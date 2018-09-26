@@ -25,7 +25,7 @@ Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css`
 
 Learn more: [Modules](../../Quick_Start/Modules).
 
-## Enable
+## Enabling
 
 There is a new layer created for the Zoom Control Panel over the chart layer. The {api:anychart.ui.Zoom#target}target(){api} method is necessary to set the target map for the zooming panel, and the {api:anychart.ui.Zoom#render}render(){api} method provides the Zoom Controls Panel rendering.
 

@@ -43,7 +43,7 @@ Here we took an Australia map for the example. You may notice that some regions 
 
 Note that a ColorRange can only be connected to an only axis, while it's possible to make a map with several series.
 
-## Enabling the ColorRange
+## Enabling / Disabling
 
 To enable the ColorRange, there's a simple method {api:anychart.charts.Map#colorRange}colorRange(){api}. 
 
