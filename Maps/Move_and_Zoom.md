@@ -70,7 +70,7 @@ currentInteractivity.copyFormat(function () {
 
 ### Zoom
 
-You can control zoom using the {api:anychart.charts.Map#zoom}zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
+You can control zoom using the {api:anychart.charts.Map#zoom}zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click on the button.
 
 ```
 // Zoom map in 2 times.

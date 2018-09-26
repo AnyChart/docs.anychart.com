@@ -264,11 +264,11 @@ There is the list of events connectors dispatch:
 <tr>
 <tr>
 <td>connectorclick</td>
-<td>Dispatched when connector is clicked</td>
+<td>Dispatched when connector is clicked on</td>
 <tr>
 <tr>
 <td>connectordblclick</td>
-<td>Dispatched when connector is doubleclicked</td>
+<td>Dispatched when connector is double-clicked on</td>
 <tr>
 <tr>
 <td>connectormouseover</td>
@@ -352,7 +352,7 @@ chart.listen('connectorclick', function(e){
 
 You can change the structure of the Gantt chart data by simply dragging any element to wherever you need in the DataGrid.
 
-The parent items can be expanded and collapsed. Click "+"/"-" sign or double-click the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
+The parent items can be expanded and collapsed. Click on the "+"/"-" sign or double-click on the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
 
 You can make Data Grid cells editable and handle both editing state display and validate input values before adding them to the data (or aborting the changes):
 

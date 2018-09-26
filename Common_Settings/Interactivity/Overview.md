@@ -11,7 +11,7 @@ That's what happens by default when users interact with charts:
 - points are selected
 - tooltips of hovered points are shown
 - series becomes highlighted when a legend is hovered
-- the series gets shown or hidden when a legend element is clicked
+- the series gets shown or hidden when a legend element is clicked on
 - a number of series are selected (multi-select)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
@@ -297,7 +297,7 @@ Explore the code of this sample in the playground.
 
 To create a drilldown chart you just need to decide which event you want chart to react to and then made the changes in the data accordingly.
 
-Here is a sample of a basic drill down chart where the new data is loaded into a chart when a column is clicked and goes back to initial state when click happens on drilled down data:
+Here is a sample of a basic drill down chart where the new data is loaded into a chart when a column is clicked on and goes back to initial state when click happens on drilled down data:
 
 {sample}CS\_Interactivity\_13{sample} 
 

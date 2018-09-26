@@ -65,7 +65,7 @@ Try this sample to see how it works:
 
 To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation()}stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
 
-The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
+The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked on, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
 
 ```
 // Adds an event listener to a text

@@ -118,6 +118,6 @@ chart.removeSeriesAt(2);
 
 Along with removing series one by one you can remove all series from the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}removeAllSeries(){api} method to remove all series from the current chart. Note, that if you use data sets and data mapping - the original data will not be  lost while managing series and series data, [you can create new series use mappings again](../Working_with_Data/Data_Sets).
   
-Click the buttons in the sample below to add or remove series.
+Click on the buttons in the sample below to add or remove series.
 
 {sample}CRUD\_09{sample}

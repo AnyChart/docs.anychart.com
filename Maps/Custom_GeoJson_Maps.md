@@ -72,11 +72,11 @@ When everything's over, you'll get a new layer with simplified geometry.
 
 <a href="https://static.anychart.com/images/creating\_maps\_10.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_10.jpg"></a>
 
-6) Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click the layer and select "Open Attribute Table". You'll see the list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
+6) Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click on the layer and select "Open Attribute Table". You'll see the list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
 
 <a href="https://static.anychart.com/images/creating\_maps\_11.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_11.jpg"></a>
 
-7) If you are finally satisfied with your map, you must export it to GeoJSON format to use with AnyChart. For that right-click the layer you want to export in the "Layers" table and select "Save As". Make sure you've selected to save the layer in GeoJSON format. The result file is appropriate for using directly with AnyChart. 
+7) If you are finally satisfied with your map, you must export it to GeoJSON format to use with AnyChart. For that right-click on the layer you want to export in the "Layers" table and select "Save As". Make sure you've selected to save the layer in GeoJSON format. The result file is appropriate for using directly with AnyChart. 
 
 You may notice that QGIS includes a large amount of decimals in the GeoJSON coordinates by default. You may strip it using a Regex or similar for optimization.
 

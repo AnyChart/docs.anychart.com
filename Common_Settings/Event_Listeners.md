@@ -210,7 +210,7 @@ Look through the next paragraph to understand the difference between the mouse-r
 
 Opposite to mouse-related methods, these point-related events can provide information about the point.
 
-In the next sample two listeners are added. One of them tracks clicks and changes the fill of the point, the second one handles double-click on the point and uses point's "url" value as the query for the google search and opens a new page with a google search. When a point is clicked once, it changes the color.
+In the next sample two listeners are added. One of them tracks clicks and changes the fill of the point, the second one handles double-click on the point and uses point's "url" value as the query for the google search and opens a new page with a google search. When a point is clicked on once, it changes the color.
 
 ```
 // add a listener
