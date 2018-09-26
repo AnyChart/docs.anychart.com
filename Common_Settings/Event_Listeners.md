@@ -248,7 +248,7 @@ var chart = anychart.column();
 // set series data
 chart.column(data);
 
-// create listener on point's hover event
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(event){
   // get hovered point
   var point = event.point;
@@ -276,7 +276,7 @@ chart.listen("pointsHover", function(event){
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
-// event on hovering a point
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(event){
   // getter for hovered point
   var point = event.point;
@@ -284,7 +284,8 @@ chart.listen("pointsHover", function(event){
   var index = point.getIndex();
   // getter for hovered point's series
   var currentSeries = point.getSeries();
-  // if this event is triggered on points unhovering, nothing will happen
+  /* if this event is triggered when the point
+  is not in the hover state, nothing will happen */
   if (!event.currentPoint.hovered) return;
   // get an array of months, hovered point belong to and hover it.
   currentSeries.hover(getQuarterMonths(index));

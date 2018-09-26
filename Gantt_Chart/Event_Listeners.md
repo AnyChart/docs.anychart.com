@@ -105,7 +105,7 @@ This sample with Project Gantt Chart demonstrates the usage of this feature. Cli
 
 ## Default Events
 
-When you click on a row or move the mouse over the row, there are some default actions take place. 
+When you click on a row or move the mouse over the row, there are some default actions taking place. 
 
 Events are dispatched in the following order on every click:
 

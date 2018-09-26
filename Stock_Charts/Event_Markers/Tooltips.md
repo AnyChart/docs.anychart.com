@@ -4,7 +4,7 @@
 
 ## Overview
 
-A tooltip is a text box displayed when a point on a chart is hovered, which allows you to show the detailed information about an event marker. You can either adjust the built-in AnyChart tooltips or create custom HTML tooltips.
+A tooltip is a text box displayed when a point on a chart is hovered over, which allows you to show the detailed information about an event marker. You can either adjust the built-in AnyChart tooltips or create custom HTML tooltips.
 
 
 ## Built-In Tooltips

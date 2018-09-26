@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
     lineSeries.name("CSCO");
 
     // set the chart title
-    chart.title("Selecting and Unselecting Annotations");
+    chart.title("Selecting / Deselecting Annotations");
 
     // set the container id
     chart.container("container");
@@ -114,7 +114,7 @@ function selectFirst() {
   plot.annotations().select(plot.annotations().getAnnotationAt(0));
 }
 
-// unselect a selected annotation
+// deselect a selected annotation
 function clearSelection() {
   plot.annotations().unselect();
 }

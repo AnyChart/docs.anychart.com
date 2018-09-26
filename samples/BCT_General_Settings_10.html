@@ -48,41 +48,41 @@ anychart.onDocumentReady(function () {
     chart.xAxis().title("Manager");
     chart.yAxis().title("Sales, $");
 
-    // create an event listener for hovering the chart
+    // create an event listener for the mouseOver event
     chart.listen("mouseOver", function(e){
-      // change the cursor style on hovering the chart
+      // change the cursor style
       document.body.style.cursor = "pointer";
     });
 
-    // create an event listener for unhovering the chart
+    // create an event listener for the mouseOut event
     chart.listen("mouseOut", function(e){
-      // set the default cursor style on unhovering the chart
+      // set the default cursor style
       document.body.style.cursor = "auto";
     });
    
-    // create an event listener for hovering points
+    // create an event listener for the pointsHover event
     chart.listen("pointsHover", function(e){
-      // get the category the hovered points belong to
+      // get the category the point belong to
       var name = e.point.getStat("categoryName");
-      // change the chart title on hovering points
+      // change the chart title
       chart.title(name);
     });
 
-    // create an event listener for selecting points
+    // create an event listener for the pointsSelect event
     chart.listen("pointsSelect", function(e){
-      // get the value of the selected points
+      // get the value of the point
       var value = e.point.getStat("value");
-      // change the chart title on selecting points
+      // change the chart title
       chart.title("$" + value);
     });
 
-    // create an event listener for double-clicking on a point
+    // create an event listener for the pointDblClick event
     chart.listen("pointDblClick", function(e){
       // get the category the point belongs to
       var name = e.point.getStat("categoryName");
       // get the value of the point
       var value = e.point.getStat("value");
-      // change the chart title on double-clicking on a point
+      // change the chart title
       chart.title(name + ": $" + value);
     });
 

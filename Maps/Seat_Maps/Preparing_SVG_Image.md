@@ -107,7 +107,7 @@ Open this file in any editor that supports SVG files. Look through the code. All
 </g>
 ```
 
-Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class have the same interactive settings, so be careful with setting them. Set the classes to the texts.
+Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on being hovered over or selected. All elements that belong to the same class have the same interactive settings, so be careful with setting them. Set the classes to the texts.
 
 ```
 <text class="info" transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>

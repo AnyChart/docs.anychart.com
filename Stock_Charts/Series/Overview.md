@@ -60,7 +60,7 @@ series3.stroke("#aeb404", 1, "10 5", "round");
 
 ### States
 
-AnyStock series cannot be selected and have only the normal and hover states. You can specify how series look when legend item is hovered and enable markers:
+AnyStock series cannot be selected and have only the normal and hover states. You can specify how series look when a legend item is hovered over and enable markers:
 
 ```
 // create a line series

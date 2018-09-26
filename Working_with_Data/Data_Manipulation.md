@@ -52,7 +52,7 @@ Append method helps to add information only at the end of the data set. To add i
 
 ### Meta-add
 
-Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be available on hovering a part of a chart, that's how your code will look like: 
+Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be available when a part of a chart is hovered over, that's how your code will look like: 
 
 ```
 // function, if listener triggers

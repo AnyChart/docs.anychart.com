@@ -46,7 +46,7 @@ There are also two basic events: hover and select.
 
 #### Hover
 
-Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select.
+Our interactive hover might be of two types: "bySpot", which is a sort of multi-hover, and "byX", which is the same as single-select.
 
 ##### bySpot 
 
@@ -61,7 +61,7 @@ interactivity.spotRadius(30);
 
 {sample}CS\_Interactivity\_03{sample}
 
-This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").
+This way of hovering, when the hover state is enabled for a couple of points simultaneously, is a multi-hover mode. Now let's look at the single-hover mode ("byX").
 
 ##### byX
 
@@ -72,7 +72,7 @@ Note that you can define the mode in a easier way:
 chart.interactivity("byX");
 ```
 
-The code line above does the same as the previous one, but we have changed the hovering mode. The following sample demonstrates the difference:
+The code line above does the same as the previous one, but we have changed the hover mode. The following sample demonstrates the difference:
 
 {sample}CS\_Interactivity\_04{sample}
 
@@ -123,11 +123,11 @@ interactivity.selectionMode("singleSelect");
 
 #### Hover 
 
-Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}hover(){api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
+Usually, when you hover over a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}hover(){api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
-If you provide no arguments to the {api:anychart.core.SeriesBase#hover}hover(){api} function, all points of the series (a series itself) will be hovered, no matter which interactivity type you use.
+If you provide no arguments to the {api:anychart.core.SeriesBase#hover}hover(){api} function, all points of the series (a series itself) will be highlighted, no matter which interactivity type you use.
 
-Change the hovering mode in playground and see the difference.
+Change the hover mode in playground and see the difference.
 
 ```	
 // setting some points hovered for the series
@@ -135,7 +135,7 @@ series_1.hover([4, 6, 12, 16]);
 series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);	
 ```
 
-If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}unhover(){api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
+If you need to disable the hover state for a number of points automatically, use the {api:anychart.core.SeriesBase#unhover}unhover(){api} method. You can specify the points or leave the method with no parameters - in this case it affects all points of the series.
 
 ```
 chart.title().listen("mouseOut", function() {
@@ -180,7 +180,7 @@ series.select([2,4,9]);
 
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} argument.
 
-To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}unselect(){api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
+To deselect the points without disabling the selection ability use {api:anychart.core.SeriesBase#unselect}unselect(){api} method. You can specify the points or set no parameters to the method. Try to use it in our playground.
 
 #### Single Point
 
@@ -271,7 +271,7 @@ var point = chart.getPoint(5);
 point.set("fill", "red");
 ```
 
-Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method we have colored each point separately according to the value of the point before it. Hover a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../../Common_Settings/Text_Formatters).
+Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method we have colored each point separately according to the value of the point before it. Hover over a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
@@ -279,7 +279,7 @@ Below there is a sample of a funnel chart. This chart shows sales proccess and e
 
 In some cases you might need a custom chart reaction on some user's actions which cannot be set simply using the methods described above. That's where listeners may help. 
 
-You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
+You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets deselected. It's possible to set some other custom interactivity using event listeners. 
 
 You can find more about listeners [here](../Event_Listeners).
 

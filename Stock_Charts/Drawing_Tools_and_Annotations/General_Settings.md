@@ -90,7 +90,7 @@ controller.infiniteLine({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green on hover and select, and the markers of the Infinite Line are disabled on select:
+You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green when they are hovered over and selected, and the markers of the Infinite Line are disabled when they are selected:
 
 ```
 // create an Ellipse annotation

@@ -17,7 +17,7 @@ credits.text("Company");
 
 ### Tooltip
 
-Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.ChartCredits#alt}alt(){api} method.
+Tooltip is shown when a credits is hovered over. It can be adjusted with {api:anychart.core.ui.ChartCredits#alt}alt(){api} method.
 
 ```
 var credits = chart.credits();

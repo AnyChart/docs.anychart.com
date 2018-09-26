@@ -48,7 +48,7 @@ Here are the events of legend items:
 <tr><td>legendItemDblclick</td><td>An item has been double-clicked on.</td></tr>
 <tr><td>legendItemMouseDown</td><td>The left mouse button has been pressed on an item.</td></tr>
 <tr><td>legendItemMouseMove</td><td>The mouse has been moved over an item.</td></tr>
-<tr><td>legendItemMouseOut</td><td>The mouse has been moved off an item.</td></tr>
+<tr><td>legendItemMouseOut</td><td>The mouse has been moved out of an item.</td></tr>
 <tr><td>legendItemMouseOver</td><td>The mouse has been moved over an item.</td></tr>
 <tr><td>legendItemMouseUp</td><td>The left mouse button has been released over an item.</td></tr>
 </table>

@@ -4,7 +4,7 @@
 
 Label is a text box that can be displayed along a point on a chart. Labels usually shows the information that each point contains. It may display any additional information if it is defined by the labels settings.
 
-You can configure different settings for labels on select and hover.
+You can configure different settings of labels when they are hovered over and selected.
 
 ## Basic Setting
 

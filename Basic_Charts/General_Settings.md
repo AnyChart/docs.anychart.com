@@ -66,7 +66,7 @@ series3.selected().stroke("#aeb404", 4, "10 5",  "round");
 
 All chart types allow configuring markers: both on a whole series and in individual points. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only on hover and select). On the other series a few custom settings are added:
+In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only when they are hovered over or selected). On the other series a few custom settings are added:
 
 ```
 // enable and configure markers on the first series
@@ -126,7 +126,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multiple-series chart individually.
+A tooltip is a text box displayed when a point on a chart is hovered over (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multiple-series chart individually.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -160,7 +160,7 @@ A legend is a part of the chart that lists and explains its elements, making it 
 
 Most chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](Pie_Chart), [Doughnut](Doughnut_Chart), [Funnel](Funnel_Chart), [Pyramid](Pyramid_Chart), [Venn](Venn_Diagram), [Waterfall](Waterfall_Chart).
 
-The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default interactivity](../Common_Settings/Legend/Basic_Settings#default_interactivity) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the series is hovered. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
+The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default interactivity](../Common_Settings/Legend/Basic_Settings#default_interactivity) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
 
 For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
 
@@ -233,41 +233,41 @@ See the [Event Listeners](../Common_Settings/Event_Listeners) to learn how to wo
 In this sample, event listeners are used to change the chart title when a point is hovered over, selected, and double-clicked on. Also, when the user moves the mouse over and off the chart, the cursor style is customized.
 
 ```
-// create an event listener for hovering the chart
+// create an event listener for the mouseOver event
 chart.listen("mouseOver", function(e){
-  // change the cursor style on hovering the chart
+  // change the cursor style
   document.body.style.cursor = "pointer";
 });
 
-// create an event listener for unhovering the chart
+// create an event listener for the mouseOut event
 chart.listen("mouseOut", function(e){
-  // set the default cursor style on unhovering the chart
+  // set the default cursor style
   document.body.style.cursor = "auto";
 });
 
-// create an event listener for hovering points
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(e){
-  // get the category the hovered points belong to
+  // get the category the point belong to
   var name = e.point.getStat("categoryName");
-  // change the chart title on hovering points
+  // change the chart title
   chart.title(name);
 });
 
-// create an event listener for selecting points
+// create an event listener for the pointsSelect event
 chart.listen("pointsSelect", function(e){
-  // get the value of the selected points
+  // get the value of the point
   var value = e.point.getStat("value");
-  // change the chart title on selecting points
+  // change the chart title
   chart.title("$" + value);
 });
 
-// create an event listener for double-clicking on a point
+// create an event listener for the pointDblClick event
 chart.listen("pointDblClick", function(e){
   // get the category the point belongs to
   var name = e.point.getStat("categoryName");
   // get the value of the point
   var value = e.point.getStat("value");
-  // change the chart title on double-clicking on a point
+  // change the chart title
   chart.title(name + ": $" + value);
 });
 ```

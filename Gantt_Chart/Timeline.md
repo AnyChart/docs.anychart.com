@@ -19,7 +19,7 @@ This illustration highlights almost all major project timeline elements, and thi
 
 You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 
-Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging.
+Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover over those splitters, you will how a mouse cursor will become of a typical kind for dragging.
 
 ## Zoom
 
