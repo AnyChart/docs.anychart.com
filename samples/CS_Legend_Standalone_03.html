@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Standalone 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 1300, 1000, 1800],
+      ["Larry", 1500, 1200, 2100],
+      ["Marta", 1800, 1100, 1300]
+    ]);
+
+    // create a chart
+    var chart = anychart.column();
+    // create series, set the data and names
+    chart.column(data.mapAs({x: 0, value: 1})).name("2016");
+    chart.column(data.mapAs({x: 0, value: 2})).name("2017");
+    chart.column(data.mapAs({x: 0, value: 3})).name("2018");
+    // set the chart bounds
+    chart.bounds(0, 0, "80%", "100%");
+    // set the container for the chart
+    chart.container(stage);
+    // draw the chart
+    chart.draw();
+
+    /* prevent points from being selected
+    when they are clicked on */
+    chart.interactivity().selectionMode("none");
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
+    // a function for creating legends
+    function createLegend(dataRow, alignment) {
+
+      // create a standalone legend
+      var legend = anychart.standalones.legend();
+
+      // create an array for storing legend items
+      var legendItems = [];
+
+      // get the palette of the chart
+      var palette = chart.palette().items();
+
+      // push legend items to the array
+      for (var i = 1; i < data.data()[dataRow].length; i++) {
+        legendItems.push({
+          text: "$" + data.data()[dataRow][i],
+          iconFill: palette[i-1],
+        });
+      }
+
+      // add items to the legend
+      legend.items(legendItems);
+
+      // set the alignment of the legend
+      legend.align(alignment);
+
+      // set the layout of the legend
+      legend.itemsLayout("vertical");
+      // set the position of the legend
+      legend.position("right");
+      // set the legend height
+      legend.height("30%");
+      // set the legend width
+      legend.width("20%");
+      // set the padding of the legend
+      legend.padding(10, 10, 10, 0);
+      // set the spacing between legend items
+      legend.itemsSpacing(5);
+      // set the legend title
+      legend.title(data.data()[dataRow][0]);
+      legend.title().padding(10);
+      legend.title().orientation("left");
+
+      /* listen to the legendItemClick event,
+      select / deselect the point,
+      and configure the appearance of the legend item */
+      legend.listen("legendItemClick", function(e) {
+        var index = e.itemIndex;
+        var chartPoint = chart.getSeriesAt(index).getPoint(dataRow);
+        if (!chartPoint.selected()) {
+          chartPoint.selected(true);
+          legendItems[index].iconFill = "#455a64";
+          legend.itemsFormatter(function() {return legendItems});
+        } else {
+          chartPoint.selected(false);
+          legendItems[index].iconFill = palette[index];
+          legend.itemsFormatter(function() {return legendItems});
+        }
+      });
+
+      /* listen to the legendItemMouseOver event
+      and enable the hover state of the chart point */
+      legend.listen("legendItemMouseOver", function(e) {
+        var index = e.itemIndex;
+        var point = chart.getSeriesAt(index).getPoint(dataRow);
+        point.hovered(true);
+        /* if the chart point is selected,
+        prevent the default behavior of the legend */
+        if (point.selected()) {e.preventDefault();}
+      });
+
+      /* listen to the legendItemMouseOut event
+      and disable the hover state of the chart point */
+      legend.listen("legendItemMouseOut", function(e) {
+        var index = e.itemIndex;
+        var point = chart.getSeriesAt(index).getPoint(dataRow);
+        point.hovered(false);
+      });
+
+      // set the container for the legend
+      legend.container(stage);
+
+      // draw the legend
+      legend.draw();
+
+      return legend;
+    }
+   
+    // create the first standalone legend
+    var legend1 = createLegend(0, "top");
+
+    // create the second standalone legend
+    var legend2 = createLegend(1, "center");
+
+    // create the third standalone legend
+    var legend3 = createLegend(2, "bottom");
+});
+</script>
+</body>
+</html>

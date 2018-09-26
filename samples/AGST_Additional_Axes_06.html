@@ -86,10 +86,10 @@ anychart.onDocumentReady(function () {
   columnSeries.hovered().fill(["#FF0000", "#880000"], -90);
 
   var tooltip = chart.tooltip();
-  tooltip.titleFormat(function (){
+  tooltip.titleFormat(function() {
     return "Year: " + this.points[0].x;
   });
-  tooltip.unionFormat(function (){
+  tooltip.unionFormat(function() {
     var gdp = "GDP - " + this.points[0].value + "%";
     var debt = (this.points[1].value / 1000000000).toFixed(0);
     if (debt > 999)

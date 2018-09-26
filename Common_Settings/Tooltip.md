@@ -174,7 +174,7 @@ In case you need more complex content formatting there is the {api:anychart.core
 
 ```
 var tooltip = chart.tooltip();
-tooltip.format(function (){
+tooltip.format(function() {
   /* code of your function */
 });
 ```
@@ -221,7 +221,7 @@ Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anycha
 
 ## HTML
 
-To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as a parameter:
 
 ```
 chart.tooltip().useHtml(true);

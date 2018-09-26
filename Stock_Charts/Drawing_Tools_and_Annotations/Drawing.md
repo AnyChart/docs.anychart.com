@@ -36,7 +36,7 @@ To cancel the drawing process, call the {api:anychart.core.annotations.PlotContr
 plot.annotations().cancelDrawing()
 ```
 
-For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
+For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click on any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
 {sample}STOCK\_Drawing\_Drawing\_02{sample}
 
@@ -165,7 +165,7 @@ There are a lot of ways to save annotations to a server or to load them. Below y
 
 - {api:anychart#onDocumentReady}onDocumentReady(){api} - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
+- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See information about annotation events in the [Handling events section](#handling_events).
 
 The following methods are of a great help:
 

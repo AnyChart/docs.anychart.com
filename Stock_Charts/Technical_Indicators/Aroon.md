@@ -65,7 +65,7 @@ aroon30.upSeries().seriesType("spline");
 aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
 aroon30.downSeries().seriesType("spline");        
 aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');   
-aroon30.rangeSeries().fill(null);    
+aroon30.rangeSeries().fill("none");    
 ```
 
 Live sample:

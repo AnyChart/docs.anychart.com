@@ -27,7 +27,7 @@ There are five listener methods in Anychart, each type for a special case. Read 
 The  {api:anychart.core.Base#listen}listen(){api} method adds an event listener to an object.
 
 ```
-chart.listen("click", function (){
+chart.listen("click", function() {
 	dataSet.append({
 		// x value
 		x: "P" + indexSetter,
@@ -50,7 +50,7 @@ The {api:anychart.core.Base#listenOnce}listenOnce(){api} method adds an event li
 // click twice on any range bar to see the result
 
 range.listenOnce("dblClick",
-  function (){
+  function() {
     range.fill("red");
   });
 ```
@@ -63,7 +63,7 @@ The {api:anychart.core.Base#removeAllListeners}removeAllListeners(){api} method 
 
 ```
 // remove all listeners
-chart.listen("dblClick", function (){
+chart.listen("dblClick", function() {
   chart.removeAllListeners();
 });
 ```
@@ -78,7 +78,7 @@ The {api:anychart.core.Base#unlisten}unlisten(){api} method disables the particu
 
 ```
 // create a function for what to listen and then unlisten
-var func_listen = function (){
+var func_listen = function() {
   dataSet.append({
     // x value
     x: "P" + indexSetter,
@@ -92,7 +92,7 @@ var func_listen = function (){
 // add a listener
 chart.listen("mouseMove", func_listen);
 
-chart.listenOnce("click",function (){
+chart.listenOnce("click",function() {
   // adding an unlistener 
   chart.unlisten("mouseMove", func_listen);
 });
@@ -113,7 +113,7 @@ var key = chart.listen("mouseMove", func_listen);
 // unlisten this
 // click twice on the chart to see the result
 chart.listen("dblclick",
-  function (){
+  function() {
     chart.unlistenByKey(key);
   }
 );
@@ -196,7 +196,7 @@ Mouse-Related events provide no information about the point.
 
 ```
 //add a listener
-chart.listen("mouseDown", function (){
+chart.listen("mouseDown", function() {
   // this will open a new page in a new tab
   window.open("https://google.com","_blank");
 });

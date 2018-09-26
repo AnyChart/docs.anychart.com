@@ -472,9 +472,9 @@ var label = anychart.standalones.label();
 label.text("Company Structure");
 label.width("100%");
 label.height("100%");
+label.fontColor("#dd2c00");
 label.fontSize(12);
 label.fontWeight(600);
-label.fontColor("#dd2c00");
 label.hAlign("center");
 label.vAlign("middle");
 
@@ -568,20 +568,20 @@ The sample below demonstrates how to work with formatting functions:
 
 ```
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + sales + " mln";
 });
 
 // configure the labels of leaves
-chart.leaves().labels().format(function (){
+chart.leaves().labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return sales + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return this.name + "\n\nsales: " + sales +
          " mln\n" + this.getData("custom_field");
@@ -619,7 +619,7 @@ chart.leaves().labels().position("circular");
 
 #### Selection Mode
 
-By default, if you click a leaf of a Sunburst chart, the leaf is selected, and if you click a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
+By default, if you click on a leaf of a Sunburst chart, the leaf is selected, and if you click on a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
 
 You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
 
@@ -628,7 +628,7 @@ You can set another [selection mode](../Common_Settings/Interactivity/Overview#s
 * `"single-select"`
 * `"none"`
 
-**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
+**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking on them.
 
 The sample below shows how to change the selection mode, which is initially set to `"none"`:
 

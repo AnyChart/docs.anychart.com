@@ -44,13 +44,13 @@ seatMapSeries.normal().fill(function () {
 });
 
 // set the fill in the hover state
-seatMapSeries.hovered().fill(function (){
+seatMapSeries.hovered().fill(function() {
     var attrs = this.attributes;
     return attrs ? anychart.color.lighten(attrs.fill, 0.5) : this.sourceColor;
 });
 
 // set the fill in the selected state
-seatMapSeries.selected().fill(function (){
+seatMapSeries.selected().fill(function() {
     var attrs = this.attributes;
     return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
 });
@@ -92,7 +92,7 @@ It is also possible to change the colors of separate elements or of parts of a g
 
 ```
 // set the fill in the hover state
-seatMapSeries.hovered().fill(function (){
+seatMapSeries.hovered().fill(function() {
     var attrs = this.attributes;
     if (attrs) {
         // get the class

@@ -148,7 +148,7 @@ chart = anychart.pie(data);
 
 Outline a special element that is usually used to highlight hovered and selected elements of a pie chart. It is enabled by default and looks like a thin extra arc that extends from a slice when it is hovered or selected.
 
-Outline can be configured using the {api:anychart.charts.Pie#outline}{api} method or you can define how outline looks using [states](#all_points).
+Outline can be configured using the {api:anychart.charts.Pie#outline}outline(){api} method or you can define how outline looks using [states](#all_points).
 
 To disable outline effect use this code:
 
@@ -218,7 +218,7 @@ pie3.sort("none");
 
 ### Exploded Slices
 
-By default, there is no spaces between the slices of a Pie chart, and when a user clicks a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
+By default, there is no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
 
 You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method (you can do both pixels and percents):
 

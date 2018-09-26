@@ -146,7 +146,7 @@ chart = anychart.pyramid(data);
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or in percent):
+Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or as a percentage):
 
 ```
 // set base width to 50% of the container width
@@ -272,7 +272,7 @@ var chart = anychart.pyramid([
 chart.labels().format("{%name}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Pyramid\_Chart\_09{sample}
@@ -300,7 +300,7 @@ chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -309,15 +309,15 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='font-size:18'>" +
              percentOfTotal.toFixed(1) + "% (" +
-             this.value + ")</span><br></br><br>" +
+             this.value + ")</span><br><br>" +
              this.getData("custom_field");
   return percentOfTotal.toFixed(1) + "% (" + this.value +
-         ")<br></br><br></br>" + this.getData("custom_field");
+         ")<br><br>" + this.getData("custom_field");
 });
 ```
 

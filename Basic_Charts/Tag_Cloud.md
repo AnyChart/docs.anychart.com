@@ -11,7 +11,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Tag Cloud](../Quick_Start/Modules#tag_cloud)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.charts.TagCloud}anychart.charts.TagCloud{api}</td></tr>ё
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[x, value, category](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>N/A</td></tr>
@@ -116,28 +116,7 @@ chart = anychart.tagCloud(data);
 
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
-The `category` field is optional: it causes elements to be colored according to the categories they belong to. This field also affects the legend and can be used with the ordinal [color scale](#color_scale). Here is a sample showing how to add categories and how the chart looks after that:
-
-```
-// create data   
-var data = [
-    {x: "learning", value: 80, category: "noun"},
-    {x: "includes", value: 56, category: "verb"},
-    {x: "lists", value: 44, category: "noun"},
-    {x: "meaning", value: 40, category: "noun"},
-    {x: "useful", value: 36, category: "adjective"},
-    {x: "different", value: 32, category: "adjective"},
-    {x: "grammar", value: 28, category: "noun"},
-    {x: "teaching", value: 24, category: "noun"},
-    {x: "example", value: 20, category: "noun"},
-    {x: "thing", value: 12, category: "noun"}
-];
-
-// create a chart and set the data
-chart = anychart.tagCloud(data);
-```
-
-{sample}BCT\_Tag\_Cloud\_Chart\_03{sample}
+The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend – see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
 
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
@@ -186,7 +165,7 @@ chart.data(text, {
 });
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_04{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_03{sample}
 
 ### Appearance
 
@@ -200,8 +179,7 @@ Combine them with the following methods:
 * {api:anychart.core.StateSettings#fontStyle}fontStyle(){api} to set the font style - normal, italic, oblique
 * {api:anychart.core.StateSettings#fontVariant}fontVariant(){api} to set the font variant - normal or small caps
 * {api:anychart.core.StateSettings#fontWeight}fontWeight(){api} to set the font weight 
-
-Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
+* other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
 
 **Note**: If settings are specified only for the normal state, they are inherited by the hover and selected states. The only exception is the fill: the selected state does not inherit its settings (but the hover state does).
 
@@ -215,7 +193,7 @@ chart.selected().fill("#1f66ad");
 chart.normal().fontWeight(600);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_04{sample}
 
 ### Color Scale
 
@@ -247,7 +225,7 @@ chart.colorScale(customColorScale);
 chart.colorRange().enabled(true);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_05{sample}
 
 #### Ordinal
 
@@ -276,7 +254,7 @@ chart.colorScale(customColorScale);
 chart.colorRange().enabled(true);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_06{sample}
 
 #### Categories
 
@@ -308,7 +286,7 @@ chart.colorScale(customColorScale);
 chart.colorRange().enabled(true);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_08{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_07{sample}
 
 ### Angles
 
@@ -326,7 +304,7 @@ You can specify the set of angles to be used in your chart by passing an array o
 chart.angles([0, 30, 90]);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_09{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_08{sample}
 
 There is also another way to configure angles. Call {api:anychart.charts.TagCloud#fromAngle}fromAngle(){api} and {api:anychart.charts.TagCloud#toAngle}toAngle(){api} to set the first and the last angle in a range, then call {api:anychart.charts.TagCloud#anglesCount}anglesCount(){api} to set the total number of angles. The defaults are: 0&deg;, 90&deg;, and 2.
 
@@ -339,7 +317,7 @@ chart.toAngle(100);
 chart.anglesCount(5);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_10{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_09{sample}
 
 ### Text Spacing
 
@@ -352,7 +330,7 @@ In the sample below the spacing is set to 15:
 chart.textSpacing(15);
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_11{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_10{sample}
 
 ### Mode
 
@@ -363,7 +341,7 @@ There are two modes of positioning elements on a Tag Cloud: **spiral** (default)
 chart.mode("rect");
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_12{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_11{sample}
 
 ### Scales
 
@@ -379,7 +357,7 @@ as the value scale of the chart */
 tagCloud2.scale(anychart.scales.log());
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_13{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_12{sample}
 
 ### Tooltips
 
@@ -414,10 +392,10 @@ var data = [
 var chart = anychart.tagCloud(data);
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
-{sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
+{sample}BCT\_Tag\_Cloud\_Chart\_13{sample}
 
 #### Formatting Functions
 
@@ -449,7 +427,7 @@ var chart = anychart.tagCloud(data);
 chart.tooltip().useHtml(true);
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal < 7)
     return percentOfTotal.toFixed(1) +
@@ -457,15 +435,42 @@ chart.tooltip().format(function (){
   if (percentOfTotal > 15)
     return "<span style='font-size:26'>" +
            percentOfTotal.toFixed(1) +
-           "%</span><br></br><br></br>" +
+           "%</span><br><br>" +
            this.getData("custom_field");
   return "<span style='font-size:18'>" +
          percentOfTotal.toFixed(1) +
-         "%</span><br></br><br></br>" +
+         "%</span><br><br>" +
          this.getData("custom_field");
 });
 ```
 
+{sample}BCT\_Tag\_Cloud\_Chart\_14{sample}
+
+### Legend
+
+Adding the `"category"` field to the data colors elements of the chart according to the categories they belong to. In this case, the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) is automatically set to `"categories"`, causing them to represent categories:
+
+```
+// create data   
+var data = [
+    {x: "learning", value: 80, category: "noun"},
+    {x: "includes", value: 56, category: "verb"},
+    {x: "lists", value: 44, category: "noun"},
+    {x: "meaning", value: 40, category: "noun"},
+    {x: "useful", value: 36, category: "adjective"},
+    {x: "different", value: 32, category: "adjective"},
+    {x: "grammar", value: 28, category: "noun"},
+    {x: "teaching", value: 24, category: "noun"},
+    {x: "example", value: 20, category: "noun"},
+    {x: "thing", value: 12, category: "noun"}
+];
+
+// create a chart and set the data
+chart = anychart.tagCloud(data);
+
+// enable the legend
+chart.legend(true);
+```
 {sample}BCT\_Tag\_Cloud\_Chart\_15{sample}
 
 ### Interactivity

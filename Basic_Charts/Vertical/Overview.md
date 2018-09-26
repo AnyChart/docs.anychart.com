@@ -17,7 +17,7 @@ To create a vertical chart, use one of these three chart constructors:
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-You can pass your data to the chart constructor to create a series of the same type. Alternatively, you can specify the series type manually. A series supports vertical orientation if its class has has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series. You can also see the [Supported Types](#supported_types) section of this article.
+You can pass your data to the chart constructor to create a series of the same type. Alternatively, you can specify the series type manually. A series supports vertical orientation if its class has has the {api:?entry=isVertical}isVertical(){api} method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series. You can also see the [Supported Types](#supported_types) section of this article.
 
 In the sample below, there are two series, Spline Area and Spline, created by the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} and {api:anychart.charts.Cartesian#spline}spline(){api} methods, and the chart constructor is {api:anychart#vertical}anychart.vertical(){api}:
 
@@ -57,7 +57,7 @@ chart.draw();
 
 ### Series
 
-After creating a series, you can change its orientation on-the-fly by calling the **isVertical()** method and setting its parameter to either `true` or `false` (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
+After creating a series, you can change its orientation on-the-fly by calling the {api:?entry=isVertical}isVertical(){api} method and setting its parameter to either `true` or `false` (for example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
 
 **Note:** This setting affects only the series, not the axes.
 
@@ -96,7 +96,7 @@ chart.isVertical(true);
 
 {sample}BCT\_Vertical\_03{sample}
 
-**Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the **isVertical()** method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
+**Note**: To rotate charts like [Mekko](Mekko_Chart) or [Mosaic](Mosaic_Chart) you should rotate series one by one and  and [axes](../../Axes_and_Grids/Axis_Orientation). So, use the {api:?entry=isVertical}isVertical(){api} method and {api:anychart.core.axes.Linear#orientation}orientation(){api} methods.
 
 ## Supported Types
 

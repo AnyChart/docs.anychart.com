@@ -84,7 +84,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Head
 
-A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage value) and is demonstrated by areas' size. To set the width of the head (in pixels or in percent), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
+A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage terms) and is demonstrated by areas' size. To set the width of the head (in pixels or as a percentage), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
 
 ```
 // set the base width
@@ -259,7 +259,7 @@ var chart = anychart.funnel(data);
 chart.labels().format("{%x}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Funnel\_Chart\_08{sample}
@@ -289,7 +289,7 @@ chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 50)
     return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -298,15 +298,15 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
 var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 50)
     return "<span style='font-size:18'>" +
            percentOfTotal.toFixed(1) + "% (" +
-           this.value + ")</span><br></br><br>" +
+           this.value + ")</span><br><br>" +
            this.getData("custom_field");
   return percentOfTotal.toFixed(1) + "% (" + this.value +
-         ")<br></br><br></br>" + this.getData("custom_field");
+         ")<br><br>" + this.getData("custom_field");
 });
 ```
 

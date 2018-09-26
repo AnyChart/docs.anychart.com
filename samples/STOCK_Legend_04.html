@@ -98,7 +98,7 @@ legend.title(false);
 // set legend position and items layout
 plot.legend().itemsLayout('horizontal');
 plot.legend().position('center-top');
-plot.legend().itemsFormat(function (){
+plot.legend().itemsFormat(function() {
     if (this.open !== undefined){
 return "Open: " + this.open.toFixed(2) + " High: " + this.high.toFixed(2) + " Low: " + this.low.toFixed(2) + " Close: " + this.close.toFixed(2)
     }

@@ -61,7 +61,7 @@ yoy: 2
     // series tooltip settings
     var tooltip = series.tooltip();
     // adjust tooltip text
-    tooltip.format(function (){
+    tooltip.format(function() {
 return this.seriesName + ": " + this.value + " millions\nYear over year: " + this.getData("yoy") + "%";
     });
 

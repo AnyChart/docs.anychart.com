@@ -172,12 +172,12 @@ anychart.onDocumentReady(function () {
     chart.title('Stock Step Line Demo');
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().format(function (){
+    chart.plot(0).yAxis().labels().format(function() {
       return this.value/1000000 + "m";
     });
 
     // y-axis labels formatting
-    chart.plot(1).yAxis().labels().format(function (){
+    chart.plot(1).yAxis().labels().format(function() {
       return this.value/1000000 + "m";
     });
 

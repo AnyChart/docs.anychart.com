@@ -91,7 +91,7 @@ anychart.onDocumentReady(function () {
 		});
 	});
 
-	chart.listen("pointsSelect", function (){
+	chart.listen("pointsSelect", function() {
 		legend.itemsFormatter(function (items){
 			for (var i=0;i<items.length;i++){
 				items[i].iconType = "square";

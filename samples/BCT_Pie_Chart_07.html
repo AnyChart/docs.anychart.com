@@ -24,7 +24,9 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
+    // create a stage
+    var stage = anychart.graphics.create("container");
+    
     // create data
     var data = [
       {x: "A", value: 637166},
@@ -33,9 +35,6 @@ anychart.onDocumentReady(function () {
       {x: "D", value: 78662},
       {x: "E", value: 90000}
     ];
-
-    // create a stage
-    var stage = anychart.graphics.create("container");
 
     // create and configure  the first pie chart
     var pie1 = anychart.pie(data);

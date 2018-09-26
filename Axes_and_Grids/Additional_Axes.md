@@ -12,7 +12,7 @@ Consider using multiple axes when you need:
   
 * Show data from the different ranges on the same plot, for example: absolute stock price changes and sales volume (price will be in dollars and volume in millions of dollars)
   
-* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percent)
+* Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be shown in billions and rate as a percentage)
 
 ## Declaration
 
