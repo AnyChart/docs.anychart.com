@@ -192,7 +192,7 @@ Sample with this configuration is below
 
 ## Samples
 
-As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (full list of all the methods and parameters can be found in {api:anychart}API{api}).
+As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (the full list of all the methods and parameters can be found in {api:anychart}API{api}).
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>

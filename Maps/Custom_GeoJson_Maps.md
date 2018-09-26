@@ -72,7 +72,7 @@ When everything's over, you'll get a new layer with simplified geometry.
 
 <a href="https://static.anychart.com/images/creating\_maps\_10.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_10.jpg"></a>
 
-6) Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click the layer and select "Open Attribute Table". You'll see a list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
+6) Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click the layer and select "Open Attribute Table". You'll see the list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
 
 <a href="https://static.anychart.com/images/creating\_maps\_11.jpg" target="_blank"><img width = "700" src = "https://static.anychart.com/images/creating\_maps\_11.jpg"></a>
 

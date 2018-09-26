@@ -251,7 +251,7 @@ The **beforeCreateConnector** event is similar to **treeItemCreate**, but this i
 
 ### Connector Events
 
-There is a list of events connectors dispatch: 
+There is the list of events connectors dispatch: 
 
 <table>
 <tr>

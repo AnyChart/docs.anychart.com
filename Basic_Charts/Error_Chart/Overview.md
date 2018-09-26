@@ -195,7 +195,7 @@ error.mode("value");
 
 ## Appearance
 
-Here is a full list of methods used to configure the appearance of error bars:
+Here is the full list of methods used to configure the appearance of error bars:
 
 * {api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api} sets the width of Y-bars
 * {api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api} sets the width of X-bars

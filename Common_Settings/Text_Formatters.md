@@ -48,7 +48,7 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 ### Tokens List
 
-Here is a list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%bubbleSize} outside of [Bubble series](../Basic_Charts/Bubble_Chart) or {%close} outside of [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts/OHLC_Chart) and so on. 
+Here is the list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%bubbleSize} outside of [Bubble series](../Basic_Charts/Bubble_Chart) or {%close} outside of [Candlestick](../Basic_Charts/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts/OHLC_Chart) and so on. 
 
 The full list of tokens is available in API: {api:anychart.enums.Statistics}anychart.enums.Statistics{api}
 
@@ -350,7 +350,7 @@ Here is a chart with a tooltip configured using tokens with options:
 
 ### Formatting Parameters List  
 
-There is a list of formatting parameters, which help to organize your data presentation in the way you prefer. You can find a sample after the table that list formatting parameters.
+Here is the list of formatting parameters that allow organizing your data presentation in the way you prefer. You can find a sample after the table that list formatting parameters.
   
 <table width="700px" class="dtTABLE">
 <tr>

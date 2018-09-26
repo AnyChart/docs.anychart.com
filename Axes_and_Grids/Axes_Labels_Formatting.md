@@ -25,7 +25,7 @@ In order to make a chart readable and understandable it is very important to for
   
 You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#format}format(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
-It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find a list of available tokens.
+It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like *{%keywordName}*, for example `{%value}` or `{%axisName}`. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](../Common_Settings/Text_Formatters#tokens_list) you can find the list of available tokens.
 
 format works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's format looks like the following:
 

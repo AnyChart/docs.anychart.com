@@ -315,7 +315,7 @@ But there are some very important characteristics and features in a theme: you c
   
 **Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values and this file can be used as a reference of all theme settings. Read more about default theme in [Default Theme section](#default_theme).
   
-Here is a list of global settings and defaults that can be defined in a theme:
+Here is the list of global settings and defaults that can be defined in a theme:
 
 <table class="dtTABLE" width="700">
 <tbody>
