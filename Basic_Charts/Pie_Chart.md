@@ -91,26 +91,28 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### Slices
 
-The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
+The [appearance settings](../Appearance_Settings) of slices can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#hovered}selected(){api} methods.
 
 Combine them with the following methods:
 
 * {api:anychart.core.StateSettings#fill}fill(){api} to set the fill
 * {api:anychart.core.StateSettings#hatchFill}hatchFill(){api} to set the hatch fill
 * {api:anychart.core.StateSettings#stroke}stroke(){api} to set the stroke
-* {api:anychart.core.StateSettings#outline}outline(){api} to set the [Outline](#outline)
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 
 In the sample below, there a Pie chart with appearance settings configured:
 
 ```
+// configure the visual settings of the chart
 chart.normal().fill("#669999", 0.5);
-chart.hovered().fill("#669999", 0.3);
+chart.hovered().fill("#666699", 0.5);
+chart.selected().fill("#666699", 0.7);
 chart.normal().hatchFill("forward-diagonal", "#669999");
-chart.hovered().hatchFill("forward-diagonal", "#669999", 3);
-chart.normal().stroke("#669999", 3);
-chart.hovered().stroke("#669999", 3);
+chart.hovered().hatchFill(null);
+chart.selected().hatchFill(null);
+chart.normal().stroke("#669999", 2);
+chart.hovered().stroke("#669999", 2);
 ```
 
 {sample}BCT\_Pie\_Chart\_02{sample}
