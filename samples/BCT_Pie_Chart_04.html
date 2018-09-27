@@ -27,21 +27,33 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "A", value: 637166},
-      {x: "B", value: 721630},
-      {x: "C", value: 148662},
-      {x: "D", value: 78662},
-      {x: "E", value: 90000}
+      {x: "Pacman", value: 400,
+       normal:  {
+          fill: "#ffff00",
+          hatchFill: "percent50"        
+        },
+       hovered: {
+          fill: "#ffff00",
+          hatchFill: "percent50"
+        }
+      },
+      {x: "Not Pacman", value: 130,
+       normal:  {fill: "#404040"},
+       hovered: {fill: "#404040"}
+      }
     ];
 
     // create a chart and set the data
     var chart = anychart.pie(data);
 
-    // enable aqua style
-    chart.fill("aquastyle");
+    // set the start angle
+    chart.startAngle(130);
 
     // set the chart title
-    chart.title("Pie Chart: Appearance (Aqua Style)");
+    chart.title("Pie Chart: Appearance (Individual Points)");
+
+    // disable labels
+    chart.labels(false);
 
     // set the container id
     chart.container("container");

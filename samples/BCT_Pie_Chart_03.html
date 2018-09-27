@@ -27,33 +27,29 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "Pacman", value: 400,
-       normal:  {
-          fill: "#ffff00",
-          hatchFill: "percent50"        
-        },
-       hovered: {
-          fill: "#ffff00",
-          hatchFill: "percent50"
-        }
-      },
-      {x: "Not Pacman", value: 130,
-       normal:  {fill: "#404040"},
-       hovered: {fill: "#404040"}
-      }
+      {x: "A", value: 637166},
+      {x: "B", value: 721630, state: "selected"},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
     ];
 
     // create a chart and set the data
     var chart = anychart.pie(data);
 
-    // set the start angle
-    chart.startAngle(130);
-
     // set the chart title
-    chart.title("Pie Chart: Appearance (Individual Points)");
+    chart.title("Pie Chart: Outline settings");
 
-    // disable labels
-    chart.labels(false);
+    // enable outline in the normal state
+    chart.normal().outline().enabled(true);
+    chart.normal().outline().width("5%");
+    // make outline thick and red on hover
+    // and use object notation
+    chart.hovered().outline({width: "10%"});
+    // make outline thin and red on select
+    chart.selected().outline().width(3);
+    chart.selected().outline().fill("black");
+    chart.selected().outline().stroke(null);
 
     // set the container id
     chart.container("container");

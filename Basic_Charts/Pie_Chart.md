@@ -89,7 +89,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-#### All Points
+#### Slices
 
 The [appearance settings](../Appearance_Settings) of a Pie chart can be configured in two [states](../Common_Settings/Interactivity/States): **normal** and **hover**. Use the {api:anychart.charts.Pie#normal}normal(){api} and {api:anychart.charts.Pie#hovered}hovered(){api} methods.
 
@@ -114,35 +114,6 @@ chart.hovered().stroke("#669999", 3);
 ```
 
 {sample}BCT\_Pie\_Chart\_02{sample}
-
-#### Individual Points
-
-It is possible to configure the appearance of each slice individually - use extra data fields corresponding with the methods mentioned above:
-
-```
-// create data
-var data = [
-  {x: "Pacman", value: 400,
-   normal:  {
-              fill: "#ffff00",
-              hatchFill: "percent50"        
-            },
-   hovered: {
-              fill: "#ffff00",
-              hatchFill: "percent50"
-            }
-  },
-  {x: "Not Pacman", value: 130,
-   normal:  {fill: "#404040"},
-   hovered: {fill: "#404040"}
-  }
-];
-
-// create a chart and set the data
-chart = anychart.pie(data);
-```
-
-{sample}BCT\_Pie\_Chart\_03{sample}
 
 #### Outline
 
@@ -171,7 +142,36 @@ chart.selected().outline().fill("black");
 chart.selected().outline().stroke(null);
 ```
 
-{sample}BCT\_Pie\_Chart\_03\_1{sample}
+{sample}BCT\_Pie\_Chart\_03{sample}
+
+#### Individual Points
+
+It is possible to configure the appearance of each slice individually - use extra data fields corresponding with the methods mentioned above:
+
+```
+// create data
+var data = [
+  {x: "Pacman", value: 400,
+   normal:  {
+              fill: "#ffff00",
+              hatchFill: "percent50"        
+            },
+   hovered: {
+              fill: "#ffff00",
+              hatchFill: "percent50"
+            }
+  },
+  {x: "Not Pacman", value: 130,
+   normal:  {fill: "#404040"},
+   hovered: {fill: "#404040"}
+  }
+];
+
+// create a chart and set the data
+chart = anychart.pie(data);
+```
+
+{sample}BCT\_Pie\_Chart\_04{sample}
 
 #### Aqua Style
 
@@ -182,7 +182,7 @@ There is a special visual setting available for the Pie chart - Aqua Style. To a
 chart.fill("aquastyle");
 ```
 
-{sample}BCT\_Pie\_Chart\_04{sample}
+{sample}BCT\_Pie\_Chart\_05{sample}
 
 ### Start Angle
 
@@ -289,7 +289,7 @@ Another setting available for outer labels is {api:anychart.charts.Pie#outsideLa
 
 In this sample, there are outside labels with customized connectors:
 
-{sample}BCT\_Pie\_Chart\_05{sample}
+{sample}BCT\_Pie\_Chart\_10{sample}
 
 ### Tooltips
 
