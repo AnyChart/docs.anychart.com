@@ -132,16 +132,14 @@ chart.outline(false);
 Here is a sample of a pie chart with the tuned outline:
 
 ```
-// enable outline in the normal state
+// configure outlines
 chart.normal().outline().enabled(true);
 chart.normal().outline().width("5%");
-// make outline thick and red on hover
-// and use object notation
-chart.hovered().outline({width: "10%"});
-// make outline thin and red on select
-chart.selected().outline().width(3);
-chart.selected().outline().fill("black");
+chart.hovered().outline().width("10%");
+chart.selected().outline().width("3");
+chart.selected().outline().fill("#455a64");
 chart.selected().outline().stroke(null);
+chart.selected().outline().offset(2)
 ```
 
 {sample}BCT\_Pie\_Chart\_03{sample}
