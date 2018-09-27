@@ -91,7 +91,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### Slices
 
-The [appearance settings](../Appearance_Settings) of slices can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#hovered}selected(){api} methods.
+The [appearance settings](../Appearance_Settings) of slices can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods.
 
 Combine them with the following methods:
 
