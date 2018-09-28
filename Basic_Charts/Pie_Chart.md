@@ -154,7 +154,7 @@ chart.selected().outline().offset(2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each chart point individually - use extra data fields corresponding with the methods mentioned in the [Slices](#slices) and [Outlines](#outlines) sections:
+It is possible to configure the appearance of each chart point individually – use extra data fields corresponding with the methods mentioned in the [Slices](#slices) and [Outlines](#outlines) sections:
 
 ```
 // create data
