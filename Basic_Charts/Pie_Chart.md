@@ -117,19 +117,27 @@ chart.hovered().stroke("#669999", 2);
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
-#### Outline
+#### Outlines
 
-Outline a special element that is usually used to highlight hovered and selected elements of a pie chart. It is enabled by default and looks like a thin extra arc that extends from a slice when it is hovered over or selected.
+Outlines are special elements for highlighting slices, looking like arcs around them.
 
-Outline can be configured using the {api:anychart.charts.Pie#outline}outline(){api} method or you can define how outline looks using [states](#all_points).
+By default, outlines are enabled only in the **hover** and **selected** [states](../Common_Settings/Interactivity/States), but they can be enabled and configured in the **normal** state as well. To adjust them, use the {api:anychart.charts.Pie#normal}normal(){api}, {api:anychart.charts.Pie#hovered}hovered(){api}, and {api:anychart.charts.Pie#selected}selected(){api} methods. Alternatively, you can use {api:anychart.charts.Pie#outline}outline(){api}, which affects all states at once. 
 
-To disable outline effect use this code:
+Combine these methods with the following ones:
+
+* {api:anychart.core.ui.Outline#enabled}enabled(){api} to enable / disable the outline
+* {anychart.core.ui.Outline#enabled#fill}fill(){api} to set the fill
+* {anychart.core.ui.Outline#enabled#offset}offset(){api} to set the offset (0 by default)
+* {anychart.core.ui.Outline#enabled#stroke}stroke(){api} to set the stroke
+* {anychart.core.ui.Outline#enabled#width}width(){api} to set the width (0 by default)
+
+The easiest way to enable or disable outlines in all states is calling {api:anychart.charts.Pie#outline}outline(){api} with `true` or `false` as a parameter:
 
 ```
 chart.outline(false);
 ```
 
-Here is a sample of a pie chart with the tuned outline:
+This sample shows a Pie chart with outlines configured:
 
 ```
 // configure outlines
@@ -139,31 +147,51 @@ chart.hovered().outline().width("10%");
 chart.selected().outline().width("3");
 chart.selected().outline().fill("#455a64");
 chart.selected().outline().stroke(null);
-chart.selected().outline().offset(2)
+chart.selected().outline().offset(2);
 ```
 
 {sample}BCT\_Pie\_Chart\_03{sample}
 
 #### Individual Points
 
-It is possible to configure the appearance of each slice individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each chart point individually - use extra data fields corresponding with the methods mentioned in the [Slices](#slices) and [Outlines](#outlines) sections:
 
 ```
 // create data
 var data = [
   {x: "Pacman", value: 400,
    normal:  {
-              fill: "#ffff00",
-              hatchFill: "percent50"        
-            },
+      fill: "#ffff00",
+      hatchFill: "percent50"        
+    },
    hovered: {
-              fill: "#ffff00",
-              hatchFill: "percent50"
-            }
+      fill: "#ffff00",
+      hatchFill: "percent50",
+      outline: {
+        enabled: true,
+        width: 6,
+        fill: "#404040",
+        stroke: null
+      }
+    },
+   selected: {
+      outline: {
+        enabled: true,
+        width: 6,
+        fill: "#404040",
+        stroke: null
+      }
+   }
   },
   {x: "Not Pacman", value: 130,
    normal:  {fill: "#404040"},
-   hovered: {fill: "#404040"}
+   hovered: {
+     fill: "#404040",
+     outline: {
+        enabled: false
+     }
+   },
+   selected: {outline: {enabled: false}}
   }
 ];
 

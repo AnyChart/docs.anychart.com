@@ -34,12 +34,32 @@ anychart.onDocumentReady(function () {
         },
        hovered: {
           fill: "#ffff00",
-          hatchFill: "percent50"
-        }
+          hatchFill: "percent50",
+          outline: {
+            enabled: true,
+            width: 6,
+            fill: "#404040",
+            stroke: null
+          }
+        },
+       selected: {
+          outline: {
+            enabled: true,
+            width: 6,
+            fill: "#404040",
+            stroke: null
+          }
+       }
       },
       {x: "Not Pacman", value: 130,
        normal:  {fill: "#404040"},
-       hovered: {fill: "#404040"}
+       hovered: {
+         fill: "#404040",
+         outline: {
+            enabled: false
+         }
+       },
+       selected: {outline: {enabled: false}}
       }
     ];
 
