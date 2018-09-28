@@ -163,7 +163,7 @@ var data = [
    normal:  {
       fill: "#ffff00",
       hatchFill: "percent50"        
-    },
+   },
    hovered: {
       fill: "#ffff00",
       hatchFill: "percent50",
@@ -173,7 +173,7 @@ var data = [
         fill: "#404040",
         stroke: null
       }
-    },
+   },
    selected: {
       outline: {
         enabled: true,
