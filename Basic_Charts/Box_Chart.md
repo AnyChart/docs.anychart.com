@@ -224,7 +224,7 @@ series.selected().whiskerStroke("#dd2c00", 2);
 
 #### Individual Points
 
-If you use object notation to set the data, you can configure the appearance settings of each point individually - use extra data fields corresponding with the methods mentioned in the previous sections of the article:
+If you use object notation to set the data, you can configure the appearance settings of each point individually – use extra data fields corresponding with the methods mentioned in the previous sections of the article:
 
 ```
 // create data

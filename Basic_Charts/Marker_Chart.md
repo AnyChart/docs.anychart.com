@@ -171,7 +171,7 @@ series2.selected().stroke("#0066cc", 4);
 
 ### Individual Points
 
-If you use object notation to set the data, you can configure each marker individually - use extra data fields corresponding with the methods mentioned in the [Size](#size), [Type](#type), and [Appearance](#appearance) sections of this article.
+If you use object notation to set the data, you can configure each marker individually – use extra data fields corresponding with the methods mentioned in the [Size](#size), [Type](#type), and [Appearance](#appearance) sections of this article.
 
 Also, you can use some other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}.
 

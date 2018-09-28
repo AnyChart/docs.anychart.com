@@ -345,7 +345,7 @@ chart.selected().stroke("#96a6a6", 4);
 
 #### Individual Points
 
-It is possible to configure the appearance of each point individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each point individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
