@@ -126,10 +126,10 @@ By default, outlines are enabled only in the **hover** and **selected** [states]
 Combine these methods with the following ones:
 
 * {api:anychart.core.ui.Outline#enabled}enabled(){api} to enable / disable the outline
-* {api:anychart.core.ui.Outline#enabled#fill}fill(){api} to set the fill
-* {api:anychart.core.ui.Outline#enabled#offset}offset(){api} to set the offset (0 by default)
-* {api:anychart.core.ui.Outline#enabled#stroke}stroke(){api} to set the stroke
-* {api:anychart.core.ui.Outline#enabled#width}width(){api} to set the width (0 by default)
+* {api:anychart.core.ui.Outline#fill}fill(){api} to set the fill
+* {api:anychart.core.ui.Outline#offset}offset(){api} to set the offset (0 by default)
+* {api:anychart.core.ui.Outline#stroke}stroke(){api} to set the stroke
+* {api:anychart.core.ui.Outline#width}width(){api} to set the width (0 by default)
 
 The easiest way to enable or disable outlines in all states is calling {api:anychart.charts.Pie#outline}outline(){api} with `true` or `false` as a parameter:
 
