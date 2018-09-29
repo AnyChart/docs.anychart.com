@@ -33,13 +33,13 @@ anychart.onDocumentReady(function () {
   
       // settings for custom y scale
       scales: [ {}, {},
-        {                                  // var customYScale = anychart.scales.linear();
-        type: "linear",                    // customYScale
+        {                                  // var newYScale = anychart.scales.linear();
+        type: "linear",                    // newYScale
         minimum: 0,                        //   .minimum(0)
         maximum: 100,                      //   .maximum(100)
         ticks: {                           //   .ticks()
           interval: 10},                   //     .interval(10);
-        minorTicks: {interval: 2} }],      // customYScale.minorTicks().interval(2);
+        minorTicks: {interval: 2} }],      // newYScale.minorTicks().interval(2);
   
       // y axes settings
       yAxes: [{title: "Basic Y Axis"       // chart.yAxis().title().text("Basic Y Axis");
@@ -63,7 +63,7 @@ anychart.onDocumentReady(function () {
           {x: "C", value: 96},             //   ["C", 96],
           {x: "D", value: 70},             //   ["D", 70],
           {x: "E", value: 35}],            //   ["E", 35]
-        yScale: 2}],                       // ]).yScale(customYScale);
+        yScale: 2}],                       // ]).yScale(newYScale);
           
       container: "container"}}             // chart.container("container")
   ).draw();        
