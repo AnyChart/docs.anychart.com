@@ -453,9 +453,7 @@ chart.yAxis(1)
     {interval: 100000}},
   
   // settings for custom y scale
-  scales: [
-    {},
-    {},
+  scales: [ {}, {},
     {                            
     type: "linear",              
     minimum: 0,                  
