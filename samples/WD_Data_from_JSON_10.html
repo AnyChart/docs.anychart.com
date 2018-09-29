@@ -39,7 +39,8 @@ anychart.onDocumentReady(function () {
         maximum: 100,                      //   .maximum(100)
         ticks: {                           //   .ticks()
           interval: 10},                   //     .interval(10);
-        minorTicks: {interval: 2} }],      // newYScale.minorTicks().interval(2);
+        minorTicks: {                      // newYScale.minorTicks()
+          interval: 2} }],                 //   .interval(2);
   
       // y axes settings
       yAxes: [{title: "Basic Y Axis"       // chart.yAxis().title().text("Basic Y Axis");
@@ -48,7 +49,8 @@ anychart.onDocumentReady(function () {
         scale: 2,                          //   .scale(customYScale)
         title:{                            //   .title()
           text: "Extra Y Axis"},           //   .text("Extra Y Axis");
-          minorTicks: {enabled: true} }],  //   .minorTicks().enabled(true);
+          minorTicks: {                    //   .minorTicks()
+            enabled: true} }],             //     .enabled(true);
 
       series:[{seriesType: "column",       // chart.column([
         data: [{x: "A", value: 637166},    //   ["A", 637166],

@@ -443,7 +443,8 @@ chart.yAxis(1)
   .scale(newYScale)
   .title()
     .text("Extra Y Axis");
-  .minorTicks().enabled(true);
+  .minorTicks()
+    .enabled(true);
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
@@ -460,9 +461,8 @@ chart.yAxis(1)
     maximum: 100,                
     ticks: {                     
       interval: 10},             
-    minorTicks: {interval: 2} }],
-  
-
+    minorTicks: {
+      interval: 2} }],
   
   // y axes settings
   yAxes: [{
@@ -472,7 +472,8 @@ chart.yAxis(1)
     scale: "newScale",
     title:{
       text: "Extra Y Axis"},
-      minorTicks: {enabled: true} }],
+      minorTicks: {
+        enabled: true} }],
 ```
 </td>	
 </tr>
