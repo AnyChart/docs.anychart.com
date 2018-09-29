@@ -426,13 +426,13 @@ chart.yScale().ticks()
 
 // settings for custom y scale
 
-var customYScale = anychart.scales.linear();
-customYScale
+var newYScale = anychart.scales.linear();
+newYScale
   .minimum(0)
   .maximum(100)
   .ticks()
     .interval(10);
-customYScale.minorTicks()
+newYScale.minorTicks()
   .interval(2);
 
 // y axes settings
@@ -440,7 +440,7 @@ chart.yAxis().title()
   .text("Basic Y Axis");
 chart.yAxis(1)
   .orientation("right")
-  .scale(customYScale)
+  .scale(newYScale)
   .title()
     .text("Extra Y Axis");
   .minorTicks().enabled(true);
