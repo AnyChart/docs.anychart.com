@@ -420,45 +420,51 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
 ```
-// set intervals
+// set interval of default y scale
 chart.yScale().ticks()
   .interval(100000);
 
-// custom y scale
-var newScale = anychart.scales.linear();
-newScale
+// settings for custom y scale
+
+
+
+var customYScale = anychart.scales.linear();
+customYScale
   .minimum(0)
   .maximum(100)
   .ticks()
     .interval(10);
-extraYScale.minorTicks()
+customYScale.minorTicks()
   .interval(2);
 
 // y axes settings
 chart.yAxis().title()
-  .text('Basic Y Axis');
+  .text("Basic Y Axis");
 chart.yAxis(1)
-  .orientation('right')
-  .scale(newScale)
+  .orientation("right")
+  .scale(customYScale)
   .title()
-    .text('Extra Y Axis');
+    .text("Extra Y Axis");
+  .minorTicks().enabled(true);
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
-  // set intervals
+  // set interval of default y scale
   yScale: {ticks: 
     {interval: 100000}},
   
-  // custom y scale
-  scales: {"newScale": { 
-    type: "linear",
-    minimum: 0,
-    maximum: 100,
-    ticks: {
-      interval: 10},
-    minorTicks: {
-      interval: 2} }},
+  // settings for custom y scale
+  scales: [
+    {},
+    {},
+    {                            
+    type: "linear",              
+    minimum: 0,                  
+    maximum: 100,                
+    ticks: {                     
+      interval: 10},             
+    minorTicks: {interval: 2} }],
   
   // y axes settings
   yAxes: [{
@@ -467,7 +473,8 @@ chart.yAxis(1)
     orientation: "right",
     scale: "newScale",
     title:{
-      text: "Extra Y Axis"}}],
+      text: "Extra Y Axis"},
+      minorTicks: {enabled: true} }],
 ```
 </td>	
 </tr>
