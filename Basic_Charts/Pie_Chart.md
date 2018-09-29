@@ -246,35 +246,35 @@ pie3.sort("none");
 
 ### Exploded Slices
 
-By default, there is no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others and this state is considered to show that a slice is selected.
+By default, there are no spaces between the slices of a Pie chart, and when a user clicks on a slice, it "explodes" moving away from the others. In other words, explosion indicates that a slice is selected.
 
-You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method (you can do both pixels and percents):
+You can set the range of explosion (in pixels or as a percentage) by using the {api:anychart.charts.Pie#explode}explode(){api} method:
 
 ```
 // set the explosion range
 chart.explode("3%");
 ```
 
-To make some slices exploded by default, use the {api:anychart.charts.Pie#select}select(){api}:
+To make some slices exploded (selected) by default, call {api:anychart.charts.Pie#select}select(){api} with an array of their indexes as a parameter:
 
 ```
-// explode the third slice
-chart.select([2]);
+// explode the fourth and fifth slices
+chart.select([3, 4]);
 ```
 
-Another way to enable explode/select is to add a special field to your data, which should be set as an object:
+Another way to explode a slice is to add a special field to your data, which should be set as an object:
 
 ```
 var data = [
   {x: "A", value: 637166},
-  {x: "B", value: 721630, state: "selected"},
-  {x: "C", value: 148662},
+  {x: "B", value: 721630},
+  {x: "C", value: 148662, state:"selected"},
   {x: "D", value: 78662},
   {x: "E", value: 90000}
 ];
 ```
 
-In this sample, there is a Pie chart with two slices exploded by default and the explosion range set to 3%:
+In this sample, there is a Pie chart with three slices exploded by default and the explosion range set to 3%:
 
 {sample}BCT\_Pie\_Chart\_08{sample}
 
