@@ -437,6 +437,8 @@ customYScale
 customYScale.minorTicks()
   .interval(2);
 
+
+
 // y axes settings
 chart.yAxis().title()
   .text("Basic Y Axis");
