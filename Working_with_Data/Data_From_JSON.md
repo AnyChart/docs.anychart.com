@@ -462,6 +462,8 @@ chart.yAxis(1)
       interval: 10},             
     minorTicks: {interval: 2} }],
   
+
+  
   // y axes settings
   yAxes: [{
     title: "Basic Y Axis"
