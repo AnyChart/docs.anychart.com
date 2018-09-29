@@ -32,9 +32,7 @@ anychart.onDocumentReady(function () {
       yScale: {ticks: {interval: 100000}}, // chart.yScale().ticks().interval(100000);
   
       // settings for custom y scale
-      scales: [
-        {},
-        {},
+      scales: [ {}, {},
         {                                  // var customYScale = anychart.scales.linear();
         type: "linear",                    // customYScale
         minimum: 0,                        //   .minimum(0)
@@ -50,9 +48,8 @@ anychart.onDocumentReady(function () {
         scale: 2,                          //   .scale(customYScale)
         title:{                            //   .title()
           text: "Extra Y Axis"},           //   .text("Extra Y Axis");
-          minorTicks: {enabled: true}      //   .minorTicks().enabled(true);
-      }],    
-  
+          minorTicks: {enabled: true} }],  //   .minorTicks().enabled(true);
+
       series:[{seriesType: "column",       // chart.column([
         data: [{x: "A", value: 637166},    //   ["A", 637166],
           {x: "B", value: 721630},         //   ["B", 721630],

@@ -426,8 +426,6 @@ chart.yScale().ticks()
 
 // settings for custom y scale
 
-
-
 var customYScale = anychart.scales.linear();
 customYScale
   .minimum(0)
@@ -436,8 +434,6 @@ customYScale
     .interval(10);
 customYScale.minorTicks()
   .interval(2);
-
-
 
 // y axes settings
 chart.yAxis().title()
