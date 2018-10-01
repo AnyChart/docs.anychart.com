@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart html5 charting library gives you the ability to create, read, update and delete charts in real-time without full reloading and redrawing - our charts can be cnanged fast and in a flexible manner.
+AnyChart html5 charting library gives you the ability to create, read, update and delete charts in real-time without full reloading and redrawing - our charts can be changed fast and in a flexible manner.
 
 You can solve the following tasks using some easy-in-use Java Script methods:
 
