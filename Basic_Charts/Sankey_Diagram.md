@@ -3,9 +3,7 @@
 
 ## Overview
 
-A Sankey diagram, named after Captain Matthew Sankey, is a flow diagram (?) that shows nodes linked by flows, the quantity of each flow being represented as its width. This chart type emphasizes the major transfers or flows within a system and helps to locate dominant contributions to an overall flow.
-
-(?) последняя фраза почти дословно спизжена из википедии
+A Sankey diagram, or chart, named after Captain Matthew Sankey, is a flow diagram that shows nodes linked by flows, the quantity of each flow being represented as its width. This chart type emphasizes the major transfers or flows within a system and helps to locate dominant contributions to an overall flow.
 
 This article explains how to create a basic Sankey diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sankey diagram's characteristics:
 
@@ -27,9 +25,9 @@ This article explains how to create a basic Sankey diagram as well as configure 
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>(?)</td></tr>
+<tr><td></td><td>N/A</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td>[Chartopedia: Sankey Diagram](https://www.anychart.com/chartopedia/chart-types/sankey-diagram/) (?)</td></tr>
+<tr><td></td><td>[Chartopedia: Sankey Diagram](https://www.anychart.com/chartopedia/chart-types/sankey-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
@@ -80,7 +78,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Sankey diagram (for example, legend (?) and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Sankey diagram (for example, legend and interactivity settings).
 
 Read the overview of general settings: [General Settings](General_Settings).
 
@@ -98,17 +96,13 @@ Use the following data fields:
 
 A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
-On the chart, the width of each flow represents its `weight` value, and the height (?) of each node represents the total weight of incoming flows. Nodes are automatically organized in multiple columns.
+On the chart, the width of each flow represents its `weight` value, and the height of each node represents the total weight of incoming flows. Nodes are automatically organized in multiple columns.
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
 **Note 2:** You should avoid creating cycles in the data: if A links to itself, or links to B which links to C which links to A, chart cannot be drawn.
 
-(?) второе примечание довольно близко к тексту взято у гугла
-
 In the sample below, there is a Sankey with nodes organized in three columns. Please note that the `"USA"` and `"China"`, unlike other nodes in the first and third columns, are linked directly.
-
-(?) нужно ли тут общее правило выводить? не сформулируешь точно и красиво одновременно, да и стоит ли?
 
 ```
 // create data
@@ -140,7 +134,7 @@ var chart = anychart.sankey(data);
 
 ### Nodes
 
-Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields. On the chart, nodes are automatically organized in multiple columns; the height (?) of a node represents the total weight of incoming flows.
+Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields. On the chart, nodes are automatically organized in multiple columns; the height of a node represents the total weight of incoming flows.
 
 You can configure the following settings of nodes:
 
@@ -162,7 +156,7 @@ chart.nodeWidth("50%");
 
 #### Padding
 
-To set the vertical (?) padding between nodes, call the {api:anychart.charts.Sankey#nodePadding}nodePadding(){api} method. In the following sample, the padding is set to 0, so nodes stick together:
+To set the vertical padding between nodes, call the {api:anychart.charts.Sankey#nodePadding}nodePadding(){api} method. In the following sample, the padding is set to 0, so nodes stick together:
 
 ```
 // set the padding between nodes
@@ -194,7 +188,7 @@ chart.curveFactor(0);
 
 ### Dropoffs
 
-A dropoff is a [flow](#flow) without a target [node](#node), which usually indicates losses (?). To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width.
+A dropoff is a [flow](#flow) without a target [node](#node), which usually indicates losses. To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width.
 
 You can configure the following settings of dropoffs:
 
@@ -300,9 +294,9 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 * `name`
 * `value`
-* `type` (?) нужно ли какое-то описание?
+* `type`
 
-In addition the following fields (?) are available for nodes:
+In addition the following fields are available for nodes:
 
 * `isConflict`– a boolean indicating whether there is a conflict between nodes (?)
 * `income` – an array with names and weights of incoming nodes
