@@ -312,7 +312,7 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 In addition the following fields are available for nodes:
 
-* `isConflict` – a boolean indicating whether the total weight of incoming flows is equal to that of outcoming flows, including dropoffs.
+* `isConflict` – a boolean indicating whether the total weight of incoming and outgoing flows (including dropoffs) is the same (?)
 * `income` – an array with names and weights of incoming nodes
 * `outcome` – an array with names and weights of outgoing nodes
 * `dropoff` – the weight of the dropoff node
