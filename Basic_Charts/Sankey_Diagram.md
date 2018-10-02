@@ -116,14 +116,14 @@ var data = [
   {from: "USA",     to: "Germany", weight: 2020000},
   {from: "USA",     to: "Spain",   weight: 1110000},
   {from: "France",  to: "China",   weight: 1100000},
-  {from: "France",  to: "Japan",   weight:  880000},
+  {from: "France",  to: "Japan",   weight: 1050000},
   {from: "France",  to: "India",   weight: 1030000},
   {from: "Germany", to: "China",   weight: 2150000},
-  {from: "Germany", to: "Japan",   weight: 1200000},
-  {from: "Germany", to: "India",   weight: 1180000},
-  {from: "Italy",   to: "China",   weight:  880000},
-  {from: "Spain",   to: "China",   weight: 1150000},
-  {from: "Spain",   to: "Japan",   weight: 1290000}
+  {from: "Germany", to: "Japan",   weight:  660000},
+  {from: "Germany", to: "India",   weight: 1200000},
+  {from: "Italy",   to: "China",   weight: 1180000},
+  {from: "Spain",   to: "China",   weight: 1120000},
+  {from: "Spain",   to: "Japan",   weight:  980000}
 ];
 
 // create a chart and set the data
@@ -271,6 +271,18 @@ Also, you can always add a custom field to your data and use a custom token corr
 This sample shows how to work with tokens:
 
 ```
+// create data
+var data = [
+  {from: "Solar Energy", to: "Shading",  weight: 10, custom_field: "info 1"},
+  {from: "Shading",      to: null,       weight: 7,  custom_field: "info 2"},
+  {from: "Shading",      to: "Facade",   weight: 3,  custom_field: "info 3"},
+  {from: "Facade",       to: null,       weight: 2,  custom_field: "info 4"},
+  {from: "Facade",       to: "Interior", weight: 1,  custom_field: "info 5"}
+];
+
+// create a chart and set the data
+var chart = anychart.sankey(data);
+
 // configure labels
 chart.node().labels().useHtml(true);
 chart.node().labels().format(
@@ -281,7 +293,7 @@ chart.dropoff().normal().labels().enabled(true);
 chart.dropoff().labels().padding(10);
 
 // configure tooltips
-chart.node().tooltip().format("value: {%value}\n\n{%custom_field}");
+chart.node().tooltip().format("value: {%value}");
 chart.flow().tooltip().format("value: {%value}\n\n{%custom_field}");
 chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 ```
@@ -308,6 +320,27 @@ You can also add a custom field to your data and refer to it by using the {api:a
 In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles / tooltips of nodes and flows:
 
 ```
+// create data
+var data = [
+  {from: "Canada",  to: "France",  weight: 2230000, custom_field: "info 1"},
+  {from: "Canada",  to: "Germany", weight: 1990000, custom_field: "info 2"},
+  {from: "Canada",  to: "Italy",   weight: 1180000, custom_field: "info 3"},
+  {from: "Canada",  to: "Spain",   weight:  990000, custom_field: "info 4"},
+  {from: "USA",     to: "China",   weight: 1250000, custom_field: "info 5"},
+  {from: "USA",     to: "France",  weight:  950000, custom_field: "info 6"},
+  {from: "USA",     to: "Germany", weight: 2020000, custom_field: "info 7"},
+  {from: "USA",     to: "Spain",   weight: 1110000, custom_field: "info 8"},
+  {from: "France",  to: "China",   weight: 1100000, custom_field: "info 9"},
+  {from: "France",  to: "Japan",   weight: 1050000, custom_field: "info 10"},
+  {from: "France",  to: "India",   weight: 1030000, custom_field: "info 11"},
+  {from: "Germany", to: "China",   weight: 2150000, custom_field: "info 12"},
+  {from: "Germany", to: "Japan",   weight:  660000, custom_field: "info 13"},
+  {from: "Germany", to: "India",   weight: 1200000, custom_field: "info 14"},
+  {from: "Italy",   to: "China",   weight: 1180000, custom_field: "info 15"},
+  {from: "Spain",   to: "China",   weight: 1120000, custom_field: "info 16"},
+  {from: "Spain",   to: "Japan",   weight:  980000, custom_field: "info 17"}
+];
+
 // configure labels of nodes
 chart.node().labels().useHtml(true);
 chart.node().labels().format(function() {
@@ -328,7 +361,8 @@ chart.node().tooltip().titleFormat(function() {
 
 // configure tooltips of flows
 chart.flow().tooltip().format(function() {
-  return Math.round(this.value/100000)/10 + " mln";
+  return Math.round(this.value/100000)/10 + " mln" + 
+  "\n\n" + this.getData("custom_field");
 });
 ```
 
@@ -337,25 +371,25 @@ Tooltips of nodes are configured with the help of `income` and `outcome`:
 ```
 // configure tooltips of nodes
 chart.node().tooltip().format(function() {
+
   var incomeText = "";
   var outcomeText = "";
-  if (this.income.length > 0) {
-    for (i = 0; i < this.income.length; i++) {
-      incomeText += Math.round(this.income[i].value/100000)/10 +
-                    " mln <- " + this.income[i].name + "\n";
-    }
+
+  for (i = 0; i < this.income.length; i++) {
+    incomeText += Math.round(this.income[i].value/100000)/10 +
+                  " mln <- " + this.income[i].name + "\n";
   }
+
+  for (i = 0; i < this.outcome.length; i++) {
+    outcomeText += Math.round(this.outcome[i].value/100000)/10 +
+                   " mln -> " + this.outcome[i].name + "\n";
+  }
+
   if (this.outcome.length > 0) {
-    for (i = 0; i < this.outcome.length; i++) {
-      outcomeText += Math.round(this.outcome[i].value/100000)/10 +
-                     " mln -> " + this.outcome[i].name + "\n";
-    }
-  }
-  if (this.income.length > 0 && this.outcome.length > 0) {
     incomeText = incomeText + "\n";
-  } 
-  return incomeText + outcomeText +
-         "\n" + this.getData("custom_field");
+  }
+   
+  return incomeText + outcomeText;
 });
 ```
 
