@@ -96,7 +96,7 @@ Use the following data fields:
 
 A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
-On the chart, the width of each flow represents its `weight` value, and the height of each node represents the total weight of incoming flows. Nodes are automatically organized in multiple columns.
+On the chart, the width of each flow represents its `weight` value, and the height of each node represents the total weight of either incoming or outcoming flows (including dropoffs), depending on which weight is greater. Nodes are automatically organized in multiple columns.
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -134,7 +134,9 @@ var chart = anychart.sankey(data);
 
 ### Nodes
 
-Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields. On the chart, nodes are automatically organized in multiple columns; the height of a node represents the total weight of incoming flows.
+Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields.
+
+On the chart, nodes are automatically organized in multiple columns. The height of a node represents the total weight of either incoming or outcoming flows (including dropoffs), depending on which weight is greater.
 
 You can configure the following settings of nodes:
 
