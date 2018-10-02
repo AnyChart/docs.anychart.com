@@ -317,7 +317,9 @@ In addition the following fields are available for nodes:
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles / tooltips of nodes and flows:
+In the sample below, the `name` and `value` fields are used to configure labels and tooltip titles / tooltips of nodes and flows. A custom field is used in labels and tooltips of flows.
+
+In the sample below, the `name` and `value` fields are used to configure labels and tooltips of flows as well as labels and tooltip titles of nodes. In addition, a custom field is used in tooltips of flows.
 
 ```
 // create data
@@ -388,7 +390,7 @@ chart.node().tooltip().format(function() {
   if (this.outcome.length > 0) {
     incomeText = incomeText + "\n";
   }
-   
+
   return incomeText + outcomeText;
 });
 ```
