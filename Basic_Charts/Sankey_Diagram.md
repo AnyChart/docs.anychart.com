@@ -96,7 +96,7 @@ Use the following data fields:
 
 A data row specifies a [flow](#flows) linking two [nodes](#nodes): their names are set in the `from` and `to` fields. You can also create a [dropoff](#dropoffs) by adding a row with `null` in the `to` field.
 
-On the chart, the width of each flow represents its `weight` value, and the height of each node represents the total weight of either incoming or outgoing flows (including dropoffs), depending on which weight is greater. Nodes are automatically organized in multiple columns.
+On the chart, the width of each flow represents its `weight` value, and the height of each node represents the total weight of either incoming or outgoing flows (including dropoffs) (?), depending on which weight is greater. Nodes are automatically organized in multiple columns.
 
 **Note 1:** It is possible to add custom fields to your data - see the [Labels and Tooltips](#labels_and_tooltips) section of this article.
 
@@ -136,7 +136,7 @@ var chart = anychart.sankey(data);
 
 Nodes are elements linked by [flows](#flows). In your [data](#data), you should specify the names of source and target nodes of each flow – use the `from` and `to` fields.
 
-On the chart, nodes are automatically organized in multiple columns. The height of a node represents the total weight of either incoming or outgoing flows, depending on which weight is greater.
+On the chart, nodes are automatically organized in multiple columns. The height of a node represents the total weight of either incoming or outgoing flows, depending on which weight is greater (?).
 
 You can configure the following settings of nodes:
 
@@ -147,7 +147,7 @@ You can configure the following settings of nodes:
 
 #### Width
 
-You can set the width of nodes (either in percent or in pixels) by using the {api:anychart.charts.Sankey#nodeWidth}nodeWidth(){api} method:
+You can set the width of nodes (either in pixels or as a percentage of the column's width) (?) by using the {api:anychart.charts.Sankey#nodeWidth}nodeWidth(){api} method:
 
 ```
 // set the width of nodes
@@ -312,7 +312,7 @@ To configure labels and tooltips, you can use [formatting functions](../Common_S
 
 In addition the following fields are available for nodes:
 
-* `isConflict`– a boolean indicating whether there is a conflict between nodes (?)
+* `isConflict` – a boolean indicating whether the total weight of incoming flows is equal to that of outcoming flows, including dropoffs.
 * `income` – an array with names and weights of incoming nodes
 * `outcome` – an array with names and weights of outgoing nodes
 * `dropoff` – the weight of the dropoff node
