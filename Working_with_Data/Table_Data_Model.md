@@ -129,7 +129,7 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as an a **CSV string**.
+The sample below shows how to set data if it is organized as an a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
 **Note:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
 
