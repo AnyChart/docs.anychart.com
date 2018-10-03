@@ -57,7 +57,7 @@ The following sample shows how to create different chart types with the same tre
 
 Tree data structures in Anychart are defined as instances of the {api:anychart.data.Tree}anychart.data.Tree{api} class, and data items are defined as instances of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api}.
 
-To create a chart based on tree-like data, you should organize your data either [as a tree](#as_tree) or [as a table](#as_table). Also, you can use a [CSV string](#csv_string). Then the data is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
+To create a chart based on tree-like data, you should organize your data either [as a tree](#as_tree) or [as a table](#as_table). Also, you can use a [CSV string](#csv_string) (see also [Data from CSV](Data_From_CSV)). Then the data is processed by the component, and an instance of {api:anychart.data.Tree}anychart.data.Tree{api} is created.
 
 **1. Creating Data Tree.** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
