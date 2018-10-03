@@ -25,7 +25,7 @@ You can learn how to use these classes in the sections below.
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also [Data from CSV](Data_From_CSV)).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also: [Data from CSV](Data_From_CSV)).
 To create a chart based on this type of data, you should create a data table, add data, and map the table. 
 
 **1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table - an instance of {api:anychart.data.Table}anychart.data.Table{api}.
