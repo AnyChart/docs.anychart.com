@@ -13,25 +13,15 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 0 10px;
-        }
-        #container {
-            position: absolute;
-            width: 100%;
-            top: 35px;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<button onclick="addItem()">Add Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -53,13 +43,20 @@ anychart.onDocumentReady(function () {
     ];
 
     // create a data tree
-    treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart and set the data
     var chart = anychart.treeMap(treeData);
 
+    // get the name of the last child
+    var lastChild = treeData.getChildAt(0).getChildren().length - 1;
+    var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
+
     // set the chart title
-    chart.title("Tree Data Model: Adding a Data Item");
+    chart.title().useHtml(true);
+    chart.title("Tree Data Model: Reading<br><br>" +
+                "last child = <span style = 'color:#990000'>" + 
+                lastChildName + "</span>");
 
     // set the container id
     chart.container("container");
@@ -67,14 +64,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-
-var itemCount = 1;
-
-// add a new data item
-function addItem(){
-  var name = "New Child " + itemCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
-};
 </script>
 </body>
 </html>

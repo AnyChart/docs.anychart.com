@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Tree Data 13"/>
+    <meta name="ac:name" content="WD Tree Data 18"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -22,13 +22,6 @@
         button {
             margin: 10px 0 0 10px;
         }
-        label {
-            margin: 10px 0 0 10px;
-        }
-        input {
-            width: 30px;
-            margin: 10px 0 0 5px;
-        }
         #container {
             position: absolute;
             width: 100%;
@@ -38,53 +31,78 @@
     </style>
 </head>
 <body>
-<button onclick="filterDuration()">Filter Items</button>
-<label>duration >=<input id="inputValue" value="20"> day(s)</label>
+<button onclick="addItem()">Add Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    data = [
+    var data = [
       {
+        id: 1,
         name:   "Root",
         actualStart: Date.UTC(2018, 0, 25),
         actualEnd: Date.UTC(2018, 2, 14),
-        actual: {},
         children: [
           {
+            id: 2,
             name:   "Child 1",
             actualStart: Date.UTC(2018, 0, 25),
             actualEnd: Date.UTC(2018, 1, 3)
           },
           {
+            id: 3,
             name:   "Child 2",
             actualStart: Date.UTC(2018, 1, 4),
             actualEnd: Date.UTC(2018, 1, 4)
           },
           {
+            id: 4,
             name:   "Child 3",
             actualStart: Date.UTC(2018, 1, 4),
             actualEnd: Date.UTC(2018, 1, 24)
           },
           {
+            id: 5,
             name:   "Child 4",
             actualStart: Date.UTC(2018, 1, 24),
             actualEnd: Date.UTC(2018, 2, 14)
           }
         ]
     }];
-    
-    // create a chart
+
+    // create a data tree
+    treeData = anychart.data.tree(data, "as-tree");
+
+    // create a gantt chart
     chart = anychart.ganttProject();
 
     // set the data
-    chart.data(data, "as-tree");
+    chart.data(treeData);
+
+    // allow editing the chart
+    chart.edit(true);
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Tree Data Model: filter()<br><br>" +
-                "<span style = 'color:#990000'>?</span>");
+    chart.title("Tree Data Model: Events\n\n");
+
+    // update the chart title when an item is updated
+    treeData.listen("treeItemUpdate", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span> updated >");
+    });
+
+    // update the chart title when an item is added
+    treeData.listen("treeItemCreate", function (e) {
+      var itemName = e.item.get("name");
+      chart.title().useHtml(true);
+      chart.title("Tree Data Model: Events<br><br>< " +
+                  "<span style = 'color:#990000'>" +
+                  itemName + "</span> added >");
+    });
 
     // set the container id
     chart.container("container");
@@ -96,45 +114,16 @@ anychart.onDocumentReady(function () {
     chart.fitAll();
 });
 
+var itemCount = 1;
 
-// search for items with duration equal or greater than a given one
-function filterDuration() {
-
-  // reset the colors of the chart
-  resetColors();
-
-  // get the chart data as an instance of anychart.data.Tree
-  var treeData = chart.data();
-
-  // search for items
-  var inputValue = (document.getElementById("inputValue").value) * 1000 * 3600 * 24;
-  var items = treeData.filter(function(item) {
-    return item.get("actualEnd") - item.get("actualStart") >= inputValue;
-  });
-
-  /* get the names of the found items, add them to a string variable,
-  and set the fill colors of their nodes */
-  var text = "";
-  if (items.length == 0) {
-    text = "(none)";
-  } else {
-    for (var i = 0; i < items.length; i++) {
-      text += items[i].get("name") + ", ";
-      items[i].set("actual", {fill: "#dd2c00"});
-    };
-    text = text.substr(0, text.length - 2);
-  }
-
-  // update the chart title
-  chart.title("Tree Data Model: filter()<br><br><span style = 'color:#990000'>" +
-              text + "</span>");
-
-};
-
-// a function for resetting the colors of the chart
-function resetColors() {
-  chart.data(data, "as-tree");
-  chart.fitAll();  
+// add a new data item
+function addItem(){
+  var name = "New Child " + itemCount++;
+  treeData.getChildAt(0).addChild({
+                                    "name": name,
+                                    actualStart: Date.UTC(2018, 1, 31),
+                                    actualEnd: Date.UTC(2018, 1, 31) 
+                                  });
 };
 </script>
 </body>

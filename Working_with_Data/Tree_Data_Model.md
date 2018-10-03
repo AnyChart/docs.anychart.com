@@ -147,6 +147,14 @@ var chart = anychart.treeMap(treeData);
 
 {sample}WD\_Tree\_Data\_03{sample}
 
+### CSV String
+
+```
+
+```
+
+{sample}WD\_Tree\_Data\_04{sample}
+
 ### Mapping
 
 If you need to map your data, call the {api:anychart.data.Tree#mapAs}mapAs{api} method on the instance of {api:anychart.data.Tree}anychart.data.Tree{api}. Then pass the mapped data to the chart constructor or to the **data()** method of the chart.
@@ -199,7 +207,7 @@ chart = anychart.ganttProject();
 chart.data(mapping);
 ```
 
-{sample :height 250}WD\_Tree\_Data\_04{sample}
+{sample :height 250}WD\_Tree\_Data\_05{sample}
 
 ## Accessing Items
 
@@ -250,7 +258,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
 ```
 
-{sample}WD\_Tree\_Data\_05{sample}
+{sample}WD\_Tree\_Data\_06{sample}
 
 ### Adding
 
@@ -268,7 +276,7 @@ function addItem(){
 };
 ```
 
-{sample}WD\_Tree\_Data\_06{sample}
+{sample}WD\_Tree\_Data\_07{sample}
 
 You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
 
@@ -293,7 +301,7 @@ function addItems(){
 };
 ```
 
-{sample :width 500 :height 500}WD\_Tree\_Data\_07{sample}
+{sample :width 500 :height 500}WD\_Tree\_Data\_08{sample}
 
 ### Updating
 
@@ -311,7 +319,7 @@ function updateItem(){
 };
 ```
 
-{sample}WD\_Tree\_Data\_08{sample}
+{sample}WD\_Tree\_Data\_09{sample}
 
 ### Removing
 
@@ -334,7 +342,7 @@ var lastChild = treeData.getChildAt(0).getChildren().length - 1;
 treeData.getChildAt(0).removeChildAt(lastChild);
 ```
 
-{sample}WD\_Tree\_Data\_09{sample}
+{sample}WD\_Tree\_Data\_10{sample}
 
 ### Searching
 
@@ -358,7 +366,7 @@ var item = treeData.search("name", "Item 3-4");
 chart.drillTo(item);
 ```
 
-{sample}WD\_Tree\_Data\_10{sample}
+{sample}WD\_Tree\_Data\_11{sample}
 
 The comparison function accepts the name of a data field and a value and returns a negative number, zero, or positive number.
 
@@ -422,7 +430,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
 ```
 
-{sample :height 300}WD\_Tree\_Data\_11{sample}
+{sample :height 300}WD\_Tree\_Data\_12{sample}
 
 #### filter()
 
@@ -440,7 +448,7 @@ var items = treeData.filter(function(item) {
 });
 ```
 
-{sample :height 300}WD\_Tree\_Data\_12{sample}
+{sample :height 300}WD\_Tree\_Data\_13{sample}
 
 #### Indexes
 
@@ -494,7 +502,7 @@ while (traverser.advance()) {
 };
 ```
 
-{sample}WD\_Tree\_Data\_15{sample}
+{sample}WD\_Tree\_Data\_16{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -522,7 +530,7 @@ function nextItem() {
 };
 ```
 
-{sample}WD\_Tree\_Data\_16{sample}
+{sample}WD\_Tree\_Data\_17{sample}
 
 ## Events
 
@@ -560,4 +568,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Tree\_Data\_17{sample}
+{sample}WD\_Tree\_Data\_18{sample}
