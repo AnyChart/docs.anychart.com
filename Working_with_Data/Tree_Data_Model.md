@@ -150,7 +150,32 @@ var chart = anychart.treeMap(treeData);
 ### CSV String
 
 ```
+// create data
+var data = "id;parent;name;value*" +
+           "1;null;Root*"+
+           "2;1;Parent 1*" +
+           "3;2;Child 1-1;150000000*" +
+           "4;2;Child 1-2;45000000*" +
+           "5;2;Child 1-3;3200000*" +
+           "6;1;Parent 2;*" +
+           "7;6;Child 2-1;55000000*" +
+           "8;6;Child 2-2;10600000*" +
+           "9;6;Child 2-3;5200000*" +
+           "10;1;Parent 3;*" +
+           "11;10;Child 3-1;21000000*" +
+           "12;10;Child 3-2;9000000*";
 
+// create an object with a csv mapping
+csvMapping = {"id": 0, "parent": 1, "name": 2, "value": 3};
+
+// create an object with csv settings
+csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
+
+// create a data tree
+var treeData = anychart.data.tree(data, csvMapping, csvSettings);
+
+// create a chart and set the data
+var chart = anychart.treeMap(treeData);
 ```
 
 {sample}WD\_Tree\_Data\_04{sample}
