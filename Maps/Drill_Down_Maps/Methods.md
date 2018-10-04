@@ -61,7 +61,7 @@ More information about the use of these methods can be found in the [Basic Tutor
 
 ### Get Drill Down Path
 
-When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method. It returns the array of points of {api:anychart.core.MapPoint}MapPoint{api} type, which represent the regions that were clicked and used for drill down. Note that there is a root element in the drill down path which is a bit different from other elements as it contains no level. Let's make the title of the next sample show this path.
+When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.Map#getDrilldownPath}getDrilldownPath(){api} method. It returns the array of points of {api:anychart.core.MapPoint}MapPoint{api} type, which represent the regions that were clicked on and used for drill down. Note that there is a root element in the drill down path which is a bit different from other elements as it contains no level. Let's make the title of the next sample show this path.
 
 ```
 // get drilldown path

@@ -121,7 +121,7 @@ chart.title("The current level is " + grouping.getCurrentDataInterval().count + 
 
 {sample}STOCK\_Grouping\_06{sample}
 
-#### Disable 
+#### Enabling / Disabling
 
 To enable or disable grouping use {api:anychart.core.stock.Grouping#enabled}enabled(){api} method. It works the same as with other features. As it is enabled by default, we've disabled it in the next sample.
 

@@ -22,7 +22,7 @@ All controls' appearance can be edited by using special methods, which are descr
 </tr>
 <tr>
 <td>Creating connectors</td>
-<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where the bar is hovered (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar, watch the final connector preview and then release the mouse, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
+<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover over the bar you want to connect with, there's a final connector preview shows up: depending on where the bar is hovered over (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover over the interval bar, watch the final connector preview and then release the mouse, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
 You can find more about events in [Event Listeners](../Common_Settings/Event_Listeners) article.
 </td>
@@ -30,11 +30,11 @@ You can find more about events in [Event Listeners](../Common_Settings/Event_Lis
 <td>
 <img src ="https://static.anychart.com/images/connector_creater.png" alt="Connector creater" />
 <br>
-A pointer that is shown when a connector thumb is hovered
+A pointer that is shown when a connector thumb is hovered over
 <br><br>
 <img src ="https://static.anychart.com/images/connector_thumb.png" alt="Connector thumb" />
 <br>
-The connector thumb shown when the interval is hovered
+The connector thumb shown when the interval is hovered over
 <br><br>
 <img src ="https://static.anychart.com/images/dashed_connector.jpg" alt="Dashed connector" />
 <br>
@@ -48,13 +48,13 @@ That's how the final connector looks like
 
 <tr>
 <td>Deleting connectors</td>
-<td>Hover the connector and select it. The cursor will become of a pointer type, the connector will become of an orange color. To remove the connector, press "Delete" in Windows or "cmd+Backspace" in Mac. The connector will be removed.</td>
+<td>Hover over the connector and select it. The cursor will become of a pointer type, the connector will become of an orange color. To remove the connector, press "Delete" in Windows or "cmd+Backspace" in Mac. The connector will be removed.</td>
 <td>The connector will be destroyed.</td>
 <td>
 
 <img src ="https://static.anychart.com/images/cursor_pointer.png" width="32" height="32" alt="Progress slider" />
 <br>
-The pointer cursor which is shown when the connector is hovered and selected
+The pointer cursor which is shown when the connector is hovered over and selected
 <br>
 
 </td>
@@ -62,7 +62,7 @@ The pointer cursor which is shown when the connector is hovered and selected
 
 <tr>
 <td>Changing duration</td>
-<td>Hover the duration changing thumb, press the left mouse button and drag the cursor. You will see the preview contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the Gantt tree. Find more information about those events downwards.</td>
+<td>Hover over the duration changing thumb, press the left mouse button and drag the cursor. You will see the preview contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the Gantt tree. Find more information about those events downwards.</td>
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
 
@@ -75,7 +75,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
+<td>Hover over the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The instance of the {api:anychart.data.Tree}anychart.data.Tree{api} class will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time without lengthening or shortening it.</td>
 <td>
 
@@ -88,7 +88,7 @@ The dragger
 </tr>
 <tr>
 <td>Changing the progress</td>
-<td>Hover the bar, look for the slider and press the button. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
+<td>Hover over the bar, look for the slider and press the button. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
 <td>Lengthens or shortens the progress part of the task.</td>
 <td>
 
@@ -105,7 +105,7 @@ Progress slider
 </tr>
 <tr>
 <td>Changing the Gantt chart tree structure</td>
-<td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
+<td>Hover over the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
 <td>Changes the Gantt chart tree structure visually and logically.</td>
 <td>
 </td>
@@ -117,7 +117,7 @@ Progress slider
 
 The controls above are shown in their default state. AnyChart provides anyone an opportunity to become unique and remarkable, so it is not hard to customize colors and shapes of all chart details - even so small as Live Edit Chart Controls.
 
-When an interval on a Live Edit Chart is hovered, its controls appear. It is possible to drag the interval, make it longer or shorter, drag the scroller or connect this interval to another one. To make the connectors' controls of another type, size or color, just use the {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} and {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} methods - those are responsible for the editing thumb controls via {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} methid, for example you can switch the marker type, which you can choose from the {api:anychart.enums.MarkerType}Marker Type List{api}. Same goes for marker size, offset and other settings:
+When an interval on a Live Edit Chart is hovered over, its controls appear. It is possible to drag the interval, make it longer or shorter, drag the scroller or connect this interval to another one. To make the connectors' controls of another type, size or color, just use the {api:anychart.core.gantt.edit.ElementEdit#start}start(){api} and {api:anychart.core.gantt.edit.ElementEdit#end}end(){api} methods - those are responsible for the editing thumb controls via {api:anychart.core.gantt.edit.SideControl#thumb}thumb(){api} methid, for example you can switch the marker type, which you can choose from the {api:anychart.enums.MarkerType}Marker Type List{api}. Same goes for marker size, offset and other settings:
 
 ```
 // link to timeline 
@@ -251,7 +251,7 @@ The **beforeCreateConnector** event is similar to **treeItemCreate**, but this i
 
 ### Connector Events
 
-There is a list of events connectors dispatch: 
+There is the list of events connectors dispatch: 
 
 <table>
 <tr>
@@ -264,11 +264,11 @@ There is a list of events connectors dispatch:
 <tr>
 <tr>
 <td>connectorclick</td>
-<td>Dispatched when connector is clicked</td>
+<td>Dispatched when connector is clicked on</td>
 <tr>
 <tr>
 <td>connectordblclick</td>
-<td>Dispatched when connector is doubleclicked</td>
+<td>Dispatched when connector is double-clicked on</td>
 <tr>
 <tr>
 <td>connectormouseover</td>
@@ -352,7 +352,7 @@ chart.listen('connectorclick', function(e){
 
 You can change the structure of the Gantt chart data by simply dragging any element to wherever you need in the DataGrid.
 
-The parent items can be expanded and collapsed. Click "+"/"-" sign or double-click the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
+The parent items can be expanded and collapsed. Click on the "+"/"-" sign or double-click on the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
 
 You can make Data Grid cells editable and handle both editing state display and validate input values before adding them to the data (or aborting the changes):
 
@@ -401,15 +401,15 @@ Here is a live sample of editable data grid:
 
 ### Change the duration
 
-You can change the duration of the interval, its start and end time. Hover right or left thumbs, see if the control is of this type and drag it. 
+You can change the duration of the interval, its start and end time. Hover over right or left thumbs, see if the control is of this type and drag it. 
 
 ### Drag&Drop
 
-Also you can change the start and end date without changing the duration of the interval - you can simply drag the actual time bar to wherever you want. Hover the element, wait for this control and drag the interval.
+Also you can change the start and end date without changing the duration of the interval - you can simply drag the actual time bar to wherever you want. Hover over the element, wait for this control and drag the interval.
 
 ### Change the connectors
 
-If you need to add the connections of some elements, you can do it also by simply dragging the connector thumb of an actual time bar. Again, hover the side of an actual time bar, catch the connector thumb and drag it to the element you need.
+If you need to add the connections of some elements, you can do it also by simply dragging the connector thumb of an actual time bar. Again, hover over the side of an actual time bar, catch the connector thumb and drag it to the element you need.
 
 Note that it's not possible to drop connectors into a baseline, as they cannot have ones.
 

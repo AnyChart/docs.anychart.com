@@ -3,13 +3,13 @@
 
 ## Overview
 
-A Percent Stacked Spline Area Chart (otherwise known as a 100% Stacked Spline Area Chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
+A Percent Stacked Spline Area Chart (otherwise known as a 100% Stacked Spline Area Chart) is a multiple-series area chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Percent Stacked Spline Area Chart, you should create a multi-series [Spline Area Chart](../../Spline_Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
+To build a Percent Stacked Spline Area Chart, you should create a multiple-series [Spline Area Chart](../../Spline_Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart

@@ -39,17 +39,17 @@ anychart.onDocumentReady(function () {
 
 
   // replace menu items provider
-  chart.contextMenu().itemsProvider(function (){
+  chart.contextMenu().itemsProvider(function() {
     var items = {
       'menu-item-1': {
 'text': 'Print chart',
-'action': function (){
+'action': function() {
   this.chart.print();
 }
       }, 
       'menu-item-2': {
 'text': 'Save chart as image',
-'action': function (){
+'action': function() {
   this.chart.saveAsPng();
 }
       }, 

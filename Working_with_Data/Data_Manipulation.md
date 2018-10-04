@@ -3,7 +3,7 @@
 
 ## Overview
 
-AnyChart html5 charting library gives you the ability to create, read, update and delete charts in real-time without full reloading and redrawing - our charts can be cnanged fast and in a flexible manner.
+AnyChart html5 charting library gives you the ability to create, read, update and delete charts in real-time without full reloading and redrawing - our charts can be changed fast and in a flexible manner.
 
 You can solve the following tasks using some easy-in-use Java Script methods:
 
@@ -52,7 +52,7 @@ Append method helps to add information only at the end of the data set. To add i
 
 ### Meta-add
 
-Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be available on hovering a part of a chart, that's how your code will look like: 
+Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be available when a part of a chart is hovered over, that's how your code will look like: 
 
 ```
 // function, if listener triggers

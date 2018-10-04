@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Paginator"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "John Doe", value: 1},
+      {x: "Richard Roe", value: 1},
+      {x: "Larry Loe", value: 1},
+      {x: "Marta Moe", value: 1},
+      {x: "Jane Poe", value: 1},
+      {x: "Norma Noe", value: 1},
+      {x: "William Woe", value: 1}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.pie(data);
+
+    var legend = chart.legend();
+
+    // set the layout of the legend
+    legend.itemsLayout("vertical");
+
+    // set the position of the legend
+    legend.position("right");
+
+    // set the alignment of the legend
+    legend.align("top");
+
+    // set the height of the legend
+    legend.height("25%");
+
+    // configure the legend paginator
+    var paginator = legend.paginator();
+    paginator.layout("vertical");
+    paginator.orientation("left");
+    paginator.padding(15);
+    paginator.fontColor("#dd2c00");
+    paginator.fontSize(12);
+    paginator.fontWeight(600);
+
+    // set the chart title
+    chart.title("Legend: Paginator");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // set the current page of the paginator
+    paginator.currentPage(2);
+});
+</script>
+</body>
+</html>

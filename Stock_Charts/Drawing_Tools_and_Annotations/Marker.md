@@ -122,7 +122,7 @@ marker2.valueAnchor(28.92);
 marker2.markerType("arrow-down");
 
 // configure the visual settings of the second annotation
-marker2.normal().fill(null);
+marker2.normal().fill("none");
 marker2.normal().stroke("#006600", 1, "10 2");
 marker2.hovered().stroke("#00b300", 2, "10 2");
 marker2.selected().stroke("#00b300", 4, "10 2");

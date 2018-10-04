@@ -218,7 +218,7 @@ In the example below we have disabled the default appearance of the expand/colla
 
 To customize how expand/collapse buttons look, use the {api:anychart.core.ui.DataGrid#buttons}buttons(){api} method. Their settings are configured using the {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api} class.
 
-Here is a sample of a data grid with customized expand/collapse buttons. The text is altered, the background is disabled in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered:
+Here is a sample of a data grid with customized expand/collapse buttons. The text is altered, the background is disabled in the *normal* (collapsed) and *selected* (expanded) states, and buttons are made more distinct when hovered over:
 
 ```
 // access the object with button settings
@@ -243,7 +243,7 @@ buttons.selected().background(false);
 
 /* change the background and font of buttons
 in the hover state */
-buttons.hovered().background().fill(null);
+buttons.hovered().background().fill("none");
 buttons.hovered().background().stroke("1 red");
 buttons.hovered().fontColor('red');
 ```

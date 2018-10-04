@@ -34,7 +34,7 @@ title.text("Sales Performance");
 
 {sample}CS\_Titles\_02{sample}
 
-*Note:* there is even more simple way to set custom text for a title. Text can be set using **chart.title("Sales Performance")** method without additional parameters.
+*Note:* there is even more simple way to set custom text for a title. Text can be set using {api:anychart.core.Chart#title}title(){api} method without additional parameters.
 
 ## Visualization
 

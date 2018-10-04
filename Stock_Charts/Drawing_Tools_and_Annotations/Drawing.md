@@ -36,7 +36,7 @@ To cancel the drawing process, call the {api:anychart.core.annotations.PlotContr
 plot.annotations().cancelDrawing()
 ```
 
-For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
+For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click on any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
 {sample}STOCK\_Drawing\_Drawing\_02{sample}
 
@@ -78,7 +78,7 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 <tr><th>Value</th><th>Description</th></tr>
 <tr><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
 <tr><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
-<tr><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
+<tr><td>annotationUnselect</td><td>Event type for the annotation deselect.</td></tr>
 
 <tr><td>annotationChangeStart</td><td>Event that occurs right after the mouseDown event.</td></tr>
 <tr><td>annotationChange</td><td>Event that occurs while dragging.</td></tr>
@@ -87,15 +87,15 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 
 Please note that you should attach listeners to the chart object.
 
-In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
+In the sample below, a listener is used to change the visual settings of annotations and the chart title when annotations are selected:
 
 ```
-// create an event listener for selection
+// create an event listener for the annotationSelect event
 chart.listen("annotationSelect", function(e){
     var selectedAnnotation = e.annotation;
-    // change the annotation stroke on selection
+    // change the annotation stroke
     selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
-    // change the chart title on selection
+    // change the chart title
     chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
 });
 ```
@@ -115,7 +115,7 @@ There are several methods that allow you to manage annotations:
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
-The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
+The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow removing and selecting / deselecting annotations.
 
 ### Removing
 
@@ -142,9 +142,9 @@ plot.annotations().removeAnnotation(selectedAnnotation);
 
 {sample}STOCK\_Drawing\_Drawing\_05{sample}
 
-## Selecting/Unselecting
+## Selecting / Deselecting
 
-To select or unselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
+To select or deselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
 
 ```
 // get the first annotation
@@ -153,7 +153,7 @@ var firstAnnotation = plot.annotations().getAnnotationAt(0);
 // select the first annotation
 plot.annotations().select(firstAnnotation);
 
-// unselect a selected annotation
+// deselect a selected annotation
 plot.annotations().unselect();
 ```
 
@@ -165,7 +165,7 @@ There are a lot of ways to save annotations to a server or to load them. Below y
 
 - {api:anychart#onDocumentReady}onDocumentReady(){api} - this method is called when the document is ready. The external content might not been loaded for this moment, though.
 
-- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See the information about annotation events in the [Handling events section](#handling_events).
+- {api:anychart.enums.EventType}annotationDrawingFinish{api} - this event can be used to track newly created (or changed) annotations and sending the list of annotations (or the new one) to a server. See information about annotation events in the [Handling events section](#handling_events).
 
 The following methods are of a great help:
 

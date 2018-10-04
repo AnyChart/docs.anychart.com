@@ -3,13 +3,14 @@
 
 ## Overview
 
-A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multi-series column charts, values are grouped by categories.
+A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multiple-series column charts, values are grouped by categories.
 
 The column chart is used very widely to show comparison among categories and sometimes to visualize time-based data.
 
 This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -33,6 +34,26 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td></td><td>[Chartopedia: Column Chart](https://www.anychart.com/chartopedia/chart-types/column-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Column chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -210,9 +231,9 @@ chart.barGroupsPadding(0);
 
 #### Multiple Series
 
-The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
+The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multiple-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2:
+In the sample below, there is a multiple-series Column chart with the padding between columns and between column groups set to -0.5 and 2:
 
 ```
 // create the first series
@@ -240,11 +261,11 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 ### Stacked Column
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
 In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 

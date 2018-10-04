@@ -26,6 +26,9 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create data
     var data = [
       {name: "Company A", children: [
@@ -43,9 +46,6 @@ anychart.onDocumentReady(function () {
         {name: "Management"}
       ]}
     ];
-
-    // create a stage
-    var stage = anychart.graphics.create("container");
 
     // create and configure the first sunburst chart
     var sunburst1 = anychart.sunburst(data, "as-tree");

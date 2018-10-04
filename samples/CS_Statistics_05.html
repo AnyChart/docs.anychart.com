@@ -79,7 +79,7 @@ anychart.onDocumentReady(function () {
   chart.listen("pointsSelect", function(e){
     // get categoryName of the selected points
     selectedPointYear = e.point.getStat("categoryName");
-    // begin creating a subtitle with the information on the selected points
+    // begin creating a subtitle with information about the selected points
     subtitleText = "<span style='font-size:12'>" + selectedPointYear + ": ";
     // loop through the array of the selected points
     for (var i = 0; i < e.points.length; i++) {

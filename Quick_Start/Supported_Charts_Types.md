@@ -2,7 +2,7 @@
 # Supported Charts Types
 
 AnyChart offers of chart types and their modifications and combinations, 
-in the table below you can find a full list of all chart types available, 
+in the table below you can find the full list of all chart types available, 
 with links to tutorials where you can find out how to create them.
     
 ## List of Supported Chart Types
@@ -60,6 +60,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Range Column Chart](../Basic_Charts/Range_Column_Chart)</td></tr>
 <tr><td>[Range Spline Area Chart](../Basic_Charts/Range_Spline_Area_Chart)</td></tr>
 <tr><td>[Range Step Area Chart](../Basic_Charts/Range_Step_Area_Chart)</td></tr>
+<tr><td>[Sankey Chart](../Basic_Charts/Sankey_Diagram)</td></tr>
 <tr><td>[Sparkline Chart](../Basic_Charts/Sparkline_Chart)</td></tr>
 <tr><td>[Spline Chart](../Basic_Charts/Spline_Chart)</td></tr>
 <tr><td>[Spline Area Chart](../Basic_Charts/Spline_Area_Chart)</td></tr> 

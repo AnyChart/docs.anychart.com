@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
   var markerSeries = chart.marker(data);
   markerSeries.clip(false);
   markerSeries.zIndex(chart.xAxis().zIndex()+1);
-  markerSeries.tooltip().format(function (){
+  markerSeries.tooltip().format(function() {
     return "Kelvin: "+ this.value.toFixed(2) +
       "\nCelsius: "+ (this.value - 273.15).toFixed(2) +
       "\nFahrenheit: " + ((this.value - 273.15)*1.8000 + 32).toFixed(2);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Events 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "John", value: 5000},
+      {x: "Richard", value: 5000},
+      {x: "Larry", value: 5000},
+      {x: "Marta", value: 15000}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.pie(data);
+
+    /* listen to the legendItemMouseOver event,
+    enable the hover state of the chart point,
+    and configure the appearance of the legend item */
+    chart.legend().listen("legendItemMouseOver", function(e) {
+      var point = chart.getPoint(e.itemIndex);
+      point.hovered(true);
+      point.set("legendItem", {iconFill: "#455a64"});
+    });
+
+    /* listen to the legendItemMouseOut event,
+    disable the hover state of the chart point
+    and reset the appearance of the legend item */
+    chart.legend().listen("legendItemMouseOut", function(e) {
+      var point = chart.getPoint(e.itemIndex);
+      point.hovered(false);
+      point.set("legendItem", null);
+    });
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Events: Legend Items (Single Series)<br><br>" +
+                "<span style='font-size:12; font-style:italic'>" +
+                "Hover over Legend Items");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

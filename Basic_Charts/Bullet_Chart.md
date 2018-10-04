@@ -21,6 +21,20 @@ A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a si
 
 Bullet chart always uses only one data series, but a dashboard may contain several bullet charts at the same time. This kind of charts can be of great help in some cases as far as it provides the clearest presentation of the data using less space.
 
+## Modules
+
+The Bullet Chart requires adding the [Core](../Quick_Start/Modules#core) and [Bullet](../Quick_Start/Modules#bullet) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bullet.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Chart
 
 JavaScript Bullet Chart consists of a main bar of key measure and a range bar of comparative measures. 

@@ -5,9 +5,9 @@
 
 To get started with PERT Chart follow these simple steps and you will get your first web PERT chart in a minute.
 
-## Include AnyChart
+## Modules
 
-Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below:
+PERT chart requires adding the [Core](../Quick_Start/Modules#core) and [PERT](../Quick_Start/Modules#pert) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -15,6 +15,10 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pert.min.js" type="text/javascript"></script>
 </head>
 ```
+
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 

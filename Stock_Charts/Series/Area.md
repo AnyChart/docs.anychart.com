@@ -55,7 +55,7 @@ To know more about the data setting in stocks, visit [Stock Data tutorial](../Da
 
 ### Multi series
 
-Basic multi-series chart:
+Basic multiple-series chart:
 
 ```
 // map the data

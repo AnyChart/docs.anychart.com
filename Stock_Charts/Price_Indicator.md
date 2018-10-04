@@ -6,7 +6,7 @@
 
 Price Indicator is an addition to [Crosshair](Crosshair) that allows to create a label on any axis to show price from a certain date, it may last price, current price or any other value.
 
-## Enable
+## Enabling
 
 ```
 // enable price indicator for the first plot

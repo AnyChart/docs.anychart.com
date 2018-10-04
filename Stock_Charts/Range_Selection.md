@@ -10,13 +10,22 @@ Range Selection UI is on of the great chart navigation features AnyStock provide
 
 **Range Picker** helps to use scroller by providing two input fields of preset format so a user can type in start and end dates.
 
-Both range selector and range picker are a part of {api:anychart.ui}anychart.ui{api} package and you need to reference UI CSS file:
+## Modules
+
+Both the range selector and range picker require the [Common UI](../Quick_Start/Modules#common_ui) module:
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anystock.min.js"></script>
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"/>
-<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
 ```
+
+Also, you should reference the `anychart-ui.min.css` file:
+
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css"/>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 
 ## Add to a chart
 

@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
@@ -87,12 +87,12 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 
-    // create an event listener for selection
+    // create an event listener for the annotationSelect event
     chart.listen("annotationSelect", function(e){
       var selectedAnnotation = e.annotation;
-      // change the annotation stroke on selection
+      // change the annotation stroke
       selectedAnnotation.selected().stroke("#FF0000", 3, "5 2", "round");
-      // change the chart title on selection
+      // change the chart title
       chart.title("The " + selectedAnnotation.getType() +
                   " annotation is selected.");
     });

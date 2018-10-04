@@ -4,7 +4,7 @@
 
 ## Overview
 
-The AnyStock legend is somewhat alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about basic legend in [Legend tutorial](../Common_Settings/Legend). The main difference you should remember is that the legend in AnyStock is bound to the plot, not to the chart itself.
+The AnyStock legend is somewhat alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about the basic legend in the [Legend](../Common_Settings/Legend/Overview) section. The main difference you should remember is that the legend in AnyStock is bound to the plot, not to the chart itself.
 
 Let's explore the legend usage in AnyStocks and have a look at a couple of samples.
 
@@ -12,7 +12,7 @@ As the AnyStock legend is quite similar to other charts' legend, we're going to 
 
 ## Title
 
-By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.core.ui.Legend#position}position(){api}, {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.core.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive.
+By default, a Stock chart legend title shows the date and time of the hovered point on a chart, or the date and time of the last point of the chart when the mouse is out of the chart and no point is hovered over. It is placed on the left side of the legend, while the whole legend is put in a line; title separator is disabled by default. We can change it all using {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method for changing the legend title, change its placement using some positioning methods (such as {api:anychart.core.ui.Legend#position}position(){api}, {api:anychart.core.ui.Legend#itemsLayout}itemsLayout(){api}), disable the title by setting "false" to {api:anychart.core.ui.Legend#enabled}enable(){api}, enable the title separator with {api:anychart.core.ui.Legend#titleSeparator}titleSeparator(){api} or add any of the events to make it interactive.
 
 ```
 // turn the title on and set the position
@@ -20,7 +20,7 @@ legend.title(true);
 legend.title().orientation('top').align('left');
 
 // format the title
-legend.titleFormat(function (){
+legend.titleFormat(function() {
     return "ACME Corp. Stock Prices"
 });
 
@@ -35,7 +35,7 @@ legend.titleSeparator(true);
 By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below
 
 ```
-firstPlot.legend().itemsFormatter(function (){
+firstPlot.legend().itemsFormatter(function() {
     return [
         {text: "High", iconType: "circle", iconFill:"#558B2F"},
         {text: "Low", iconFill:"#D84315"},
@@ -49,7 +49,7 @@ firstPlot.legend().itemsFormatter(function (){
 When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
 
 ```
-plot.legend().itemsFormat(function (){
+plot.legend().itemsFormat(function() {
       if (this.open !== undefined){ 
       return "Open: " + this.open + "   High: " + this.high+ "   Low: " + this.low + "   Close: " + this.close 
       }
@@ -107,11 +107,9 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 {sample}STOCK\_Legend\_06{sample}
 
-You can also create a custom legend. It's being done the same way as with basic chart legends, so you can look for it up in the [Basic Chart Legend](../Common_Settings/Legend#custom_legend) article.
-
 ## Custom Legend
 
-The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you'd better remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Chart Legend](../Common_Settings/Legend#one_legend_for_several_charts) article.
+The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you need to remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Charts Standalone Legend](../Common_Settings/Legend/Standalone_Legend) article.
 
 ```
 // create custom legend
@@ -125,7 +123,7 @@ customLegend.height(50);
 // redraw legend every time the first chart is redrawn
 chart.listen(
   "chartDraw",
-  function (){
+  function() {
       // define legend bounds
       var legendBounds = anychart.math.rect(
             0,

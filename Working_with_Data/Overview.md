@@ -9,8 +9,8 @@ It is recommended that you read [Quick Start](../Quick_Start/Quick_Start) articl
 
 ## Single Series and Multi Series Charts
 
-There are single-series charts, like [Pie Chart](../Basic_Charts/Pie_Chart) or [Funnel Chart](../Basic_Charts/Funnel_Chart) and multi-series charts, like [Column Chart](../Basic_Charts/Column_Chart) or [Line Chart](../Basic_Charts/Line_Chart), with the latter you may encounter a number of tasks when you need to list, access, remove or add series. Please see:
-- [Series Manipulation](Series_Manipulation) article to learn how you can add, remove and list series in multi-series charts in AnyChart.
+There are single-series charts, like [Pie Chart](../Basic_Charts/Pie_Chart) or [Funnel Chart](../Basic_Charts/Funnel_Chart) and multiple-series charts, like [Column Chart](../Basic_Charts/Column_Chart) or [Line Chart](../Basic_Charts/Line_Chart), with the latter you may encounter a number of tasks when you need to list, access, remove or add series. Please see:
+- [Series Manipulation](Series_Manipulation) article to learn how you can add, remove and list series in multiple-series charts in AnyChart.
 
 ## Mapping Data Sets
 

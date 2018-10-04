@@ -18,8 +18,6 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 </head>
 ```
 
-**Note**: first link in the snippet above reference AnyChart JS file and the second one reference CSS file that is required for proper work of [AnyChart UI](../Common_Settings/UI_Controls/AnyChart_UI) elements.
-
 ## Create a Container
 
 Add a block-level HTML element into your page, set the element *id*, and its *width* and *height*.

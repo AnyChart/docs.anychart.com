@@ -57,7 +57,7 @@ You can read more about managing Data in Stocks in the [Stock Data tutorial](../
 
 ### Multi series
 
-This sample shows a simple multi-series Step Line stock. 
+This sample shows a simple multiple-series Step Line stock. 
 
 ```  
 // set the series

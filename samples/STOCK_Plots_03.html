@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -76,7 +76,7 @@ anychart.onDocumentReady(function () {
     extraYAxis.orientation("right");
     extraYAxis.scale(extraYScale);
 
-    extraYAxis.labels().format(function (){
+    extraYAxis.labels().format(function() {
         var value = this.value;
         return value/1000000 + " mil";
     });

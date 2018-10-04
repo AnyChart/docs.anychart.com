@@ -3,9 +3,39 @@
 
 ## Overview
 
-AnyChart supports 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
+AnyChart supports the 3D versions of the following chart types: Area, Bar, Column, Line, and Pie. Some modifications of these types can be also drawn in 3D - see the [Supported Types](#supported_types) section.
 
 This article explains how to create and configure 3D charts.
+
+## Modules
+
+Most 3D charts require adding the [Core](../../Quick_Start/Modules#core) and [Basic 3D](../../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian-3d.min.js"></script>
+```
+
+The 3D Pie and Doughnut charts require combining the [Core](../../Quick_Start/Modules#core) module with [Pie and Doughnut](../../Quick_Start/Modules#pie_and_doughnut):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pie.min.js"></script>
+```
+
+These two modules are included in the [Base](../../Quick_Start/Modules#base) module, so it can also be used to create the 3D Pie and Doughnut charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -71,7 +101,7 @@ chart.zAngle(20);
 
 3D charts can vary in depth: to set it, use the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
-**Note:** You can set the depth either in pixels (numeric value) or in percent (string value).
+**Note:** You can set the depth either in pixels (numeric value) or as a percentage (string value).
 
 In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (the Z-angle is also configured):
 
@@ -84,7 +114,7 @@ chart.zAspect("100%"");
 
 ## Z-Distribution
 
-The series of multi-series 3D charts can be distributed either along the Z-axis or along the X-axis.
+The series of multiple-series 3D charts can be distributed either along the Z-axis or along the X-axis.
 
 To enable or disable the Z-axis distribution, call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use `true` or `false` as paramater (when the Z-axis distribution is disabled, series are distributed along the X-axis).
 

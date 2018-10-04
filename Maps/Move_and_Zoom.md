@@ -17,9 +17,9 @@ Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")
 
 When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy their data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
 
-### Enable/Disable
+###  Enabling / Disabling
 
-To enable or disable all interactive features we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
+To enable or disable all interactive features, we use the {api:anychart.charts.Map#interactivity}interactivity(){api} method. Set `true` or `false` to the method depending if you'd like to enable the map interactivity or disable. 
 
 **NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 
@@ -70,7 +70,7 @@ currentInteractivity.copyFormat(function () {
 
 ### Zoom
 
-You can control zoom using the {api:anychart.charts.Map#zoom}zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
+You can control zoom using the {api:anychart.charts.Map#zoom}zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X- and Y-coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click on the button.
 
 ```
 // Zoom map in 2 times.

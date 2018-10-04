@@ -99,7 +99,7 @@ anychart.onDocumentReady(function () {
   tooltipTitle.hAlign("center");
 
   var tooltip = series.tooltip();
-  tooltip.titleFormat(function (){
+  tooltip.titleFormat(function() {
     var time = "";
     var date = new Date(this.x);
     switch (true){
@@ -118,7 +118,7 @@ break;
     }
     return "Year: " + date.toLocaleDateString("en-US", {year: "numeric"}) + "<br><a style=\"font-size: 11; font-style: italic;\">"+time+"</a>";
   });
-  tooltip.format(function (){
+  tooltip.format(function() {
     return "Month: " + (new Date(this.x)).toLocaleDateString("en-US", {month: "long"}) + "\nIncome:$ " + this.value;
   });
 
@@ -130,7 +130,7 @@ break;
   xTicks.interval(0,4);
 
   var xLabels = chart.xAxis().labels();
-  xLabels.format(function (){
+  xLabels.format(function() {
     var date = new Date(this.tickValue);
     var options = {month: "short", year: "numeric"};
     return date.toLocaleDateString("en-US", options);
@@ -150,7 +150,7 @@ break;
   crosshair.yLabel(false);
 
   var xLabel = crosshair.xLabel();
-  xLabel.format(function (){
+  xLabel.format(function() {
     var date = new Date(this.rawValue);
     var options = {month: "short", year: "numeric"};
     return date.toLocaleDateString("en-US", options);

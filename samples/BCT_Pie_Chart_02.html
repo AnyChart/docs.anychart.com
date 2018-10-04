@@ -39,14 +39,16 @@ anychart.onDocumentReady(function () {
 
     // configure the visual settings of the chart
     chart.normal().fill("#669999", 0.5);
-    chart.hovered().fill("#669999", 0.3);
+    chart.hovered().fill("#666699", 0.5);
+    chart.selected().fill("#666699", 0.7);
     chart.normal().hatchFill("forward-diagonal", "#669999");
-    chart.hovered().hatchFill("forward-diagonal", "#669999", 3);
-    chart.normal().stroke("#669999", 3);
-    chart.hovered().stroke("#669999", 3);
+    chart.hovered().hatchFill(null);
+    chart.selected().hatchFill(null);
+    chart.normal().stroke("#669999", 2);
+    chart.hovered().stroke("#669999", 2);
 
     // set the chart title
-    chart.title("Pie Chart: Appearance");
+    chart.title("Pie Chart: Appearance (Slices)");
 
     // set the container id
     chart.container("container");

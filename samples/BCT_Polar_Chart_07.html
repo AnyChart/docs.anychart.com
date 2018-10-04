@@ -32,40 +32,38 @@ anychart.onDocumentReady(function () {
       {x: 180, value: 200}
     ];
     
-    // create a stage
-    var stage = anychart.graphics.create("container");
+    // create a chart
+    var chart = anychart.polar();
 
-    // set the position and data for the first chart
-    var polar1 = anychart.polar();
-    polar1.title("Cell Color: Radial Grid");
-    polar1.bounds(0, 0, "50%", "100%");
-    // create a line series
-    polar1.line(data);
-    // color the even-odd cells of the x-grid
-    polar1.xGrid().palette(["gray 0.05", "gray 0.1"]);
+    // create a line series and set the data
+    var series = chart.line(data);
+
+    // configure the stroke of the x-grid
+    chart.xGrid().stroke({
+      color: "green",
+      thickness: 0.5,
+      opacity: 0.5
+    });
+
+    // configure the stroke of the circular grid
+    chart.yGrid().stroke({
+      color: "green",
+      thickness: 0.5,
+      opacity: 0.5,
+      dash: "10 5"
+    });
 
     // set the maximum value of the x-scale
-    polar1.xScale().maximum(360);
-    // set the chart container
-    polar1.container(stage);
-    // initiate drawing the chart
-    polar1.draw();  
+    chart.xScale().maximum(360);
 
-    // set the position and data for the second chart
-    var polar2 = anychart.polar();
-    polar2.title("Cell Color: Circular Grid");
-    polar2.bounds("50%", 0, "50%", "100%");
-    // create a line series
-    polar2.line(data);
-    // color the even-odd cells of the y-grid 
-    polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
-    
-    // set the maximum value of the x-scale
-    polar2.xScale().maximum(360);
-    // set the chart container
-    polar2.container(stage);
+    // set the chart title
+    chart.title("Polar Plot: Grid Stroke");
+
+    // set the container id
+    chart.container("container");
+
     // initiate drawing the chart
-    polar2.draw();    
+    chart.draw();
 });
 </script>
 </body>

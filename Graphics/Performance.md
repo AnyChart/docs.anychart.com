@@ -38,7 +38,7 @@ As you can see, the {api:anychart.graphics.vector.Stage#suspend}suspend(){api} a
 
 There is another useful feature of AnyChart GraphicsJS. If there is an element of a stage that is not necessary anymore, but a similar one is necessary, you do not have to create a new object. It is enough to reuse the exsiting one. Due to not creating new objects, GraphicsJS works faster. 
 
-You can easily watch the difference between the next sample, where a special layer is added and is being cleaned each time you click the button, generating small squares, and two previous ones. The rendering time in this case does not grow depending on how many times you generate new squares, opposite to the previous samples.
+You can easily watch the difference between the next sample, where a special layer is added and is being cleaned each time you click on the button, generating small squares, and two previous ones. The rendering time in this case does not grow depending on how many times you generate new squares, opposite to the previous samples.
 
 ```
 // a layer for green squares to be reused each new generation

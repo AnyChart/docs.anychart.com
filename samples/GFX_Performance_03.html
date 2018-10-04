@@ -40,11 +40,11 @@ var rectLayer = stage.layer();
 var labelBg = stage.rect();
 var label = stage.text(130, 130);
 
-stage.listen("renderstart", function (){
+stage.listen("renderstart", function() {
   start = (new Date()).getTime();
 });
 
-stage.listen("renderfinish", function (){
+stage.listen("renderfinish", function() {
 
   finish = (new Date()).getTime();
 

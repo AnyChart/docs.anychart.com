@@ -49,7 +49,7 @@ image.width(150);
 image.height(150);
 image.x(stage.width()-225);
 image.y(stage.height()/2-75);
-stage.listen("stageresize", function (){
+stage.listen("stageresize", function() {
     image.x(stage.width()-200);
     image.y(stage.height()/2-50);
 });

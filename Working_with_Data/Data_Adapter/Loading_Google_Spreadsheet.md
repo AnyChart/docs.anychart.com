@@ -93,7 +93,7 @@ You have to create a chart yourself and then pass data to a chart. Please see a 
 
 ### From the default sheet
 
-Create a multi-series [Column chart](../../Basic_Charts/Column_Chart) from a default sheet:
+Create a multiple-series [Column chart](../../Basic_Charts/Column_Chart) from a default sheet:
 
 ```
 anychart.data.loadGoogleSpreadsheet('1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', function(data) {
@@ -114,7 +114,7 @@ Here is a live sample:
 
 ### From a sheet by index
 
-Create a multi-series [Line chart](../../Basic_Charts/Line_Chart) from the second sheet:
+Create a multiple-series [Line chart](../../Basic_Charts/Line_Chart) from the second sheet:
 
 ```
 anychart.data.loadGoogleSpreadsheet({key: '1vLGbBZoBDXVT3IaykMb4HhvfXgoAOzEM3Rrk1xLN5aU', sheet: '2'}, function(data) {

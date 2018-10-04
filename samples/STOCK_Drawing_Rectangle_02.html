@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
@@ -77,7 +77,7 @@ selected: {
     rectangle2.secondValueAnchor(23.30);
      
     // configure the visual settings of the second annotation
-    rectangle2.normal().fill(null);
+    rectangle2.normal().fill("none");
     rectangle2.normal().stroke("#006600", 1, "10 2");
     rectangle2.hovered().stroke("#00b300", 2, "10 2");
     rectangle2.selected().stroke("#00b300", 4, "10 2");
@@ -92,7 +92,7 @@ selected: {
     rectangle3.secondValueAnchor(23.30);
 
     // configure the visual settings of the third annotation
-    rectangle3.normal().fill(null);
+    rectangle3.normal().fill("none");
     rectangle3.normal().stroke("#006600", 1, "10 2");
     rectangle3.hovered().stroke("#00b300", 2, "10 2");
     rectangle3.selected().stroke("#00b300", 4, "10 2");

@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -56,9 +56,9 @@ priceChannels_0.middleSeries().stroke("2 #ef6c00");
 priceChannels_0.rangeSeries().fill("#ffd54f 0.2");
 
 // create and adjust a Price Channels indicator
-var priceChannels_1 = plot_1.priceChannels(mapping, 10, "range-step-area", "step-line");
+var priceChannels_1 = plot_1.priceChannels(mapping, 10, "step-line", "range-step-area");
 priceChannels_1.middleSeries().stroke("2 #64b5f6");
-priceChannels_1.rangeSeries().fill(null);
+priceChannels_1.rangeSeries().fill("none");
 priceChannels_1.rangeSeries().highStroke("2 #00bfa5", 2, 2);
 priceChannels_1.rangeSeries().lowStroke("2 #00bfa5", 2, 2);
 

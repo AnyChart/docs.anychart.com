@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function () {
     lineSeries.name("CSCO");
 
     // set the chart title
-    chart.title("Selecting and Unselecting Annotations");
+    chart.title("Selecting / Deselecting Annotations");
 
     // set the container id
     chart.container("container");
@@ -114,7 +114,7 @@ function selectFirst() {
   plot.annotations().select(plot.annotations().getAnnotationAt(0));
 }
 
-// unselect a selected annotation
+// deselect a selected annotation
 function clearSelection() {
   plot.annotations().unselect();
 }

@@ -25,44 +25,91 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+var dataSet = anychart.data.set([
+        {name: 'Planning and organizational skills', applicant: 5},
+        {name: 'Flexibility / Adaptability to changes', applicant: 5, company_high: 6, company_low: 8},
+        {name: 'Results-oriented', applicant: 7, company_high: 2, company_low: 4},
+        {name: 'Commitment and responsibility', applicant: 7},
+        {name: 'Communication efficiency (adequacy and precision)', applicant: 10, company_high: 6, company_low: 8},
+        {name: 'Development of business opportunities', applicant: 8},
+        {name: 'Learning and innovation', applicant: 7}
+    ]);
 
-    // create data
-    var data = [
-      {x: 0, value: 500},
-      {x: 180, value: 200}
-    ];
-    
-    // create a chart
-    var chart = anychart.polar();
+    chart = anychart.polar();
 
-    // create a line series and set the data
-    var series = chart.line(data);
+    // setup chart appearence settings
+    chart.startAngle(-27);
+    chart.innerRadius('10%');
 
-    // configure the stroke of the x-grid
-    chart.xGrid().stroke({
-      color: "green",
-      thickness: 0.5,
-      opacity: 0.5
+    // setup chart scales settings
+    chart.yScale().minimum(2).maximum(10);
+    chart.xScale('ordinal');
+    chart.xScale().names('name');
+    chart.sortPointsByX(true);
+
+    // setup chart interactivity and tooltip settings
+    chart.interactivity().hoverMode('single');
+    chart.tooltip().displayMode('union');
+    chart.tooltip().titleFormat("{%name}");
+
+    // setup chart axes and grid settings
+    chart.yAxis(false);
+    chart.xAxis().labels()
+                 .padding(7)
+                 .fontSize(10)
+                 .hAlign('center')
+                 .wordWrap('normal');
+    chart.xAxis().fill('rgb(237,236,239)')
+                 .stroke('none');
+    chart.xAxis().ticks()
+                 .length('100%')
+                 .stroke('#FEFEFE');
+
+    // setup chart legend settings
+    var legend = chart.legend();
+    legend.enabled(true);
+    legend.positionMode('outside');
+    legend.itemsLayout('vertical');
+    legend.position('bottom');
+    legend.align('left');
+    legend.margin().top(-30);
+    legend.itemsSpacing(5);
+
+    // create ploygon series
+    var polygonSeries = chart.polygon(dataSet.mapAs({x: 'x', value: 'applicant'}));
+    polygonSeries.name('Applicant');
+    polygonSeries.color('#CD4A2D');
+    polygonSeries.fill('rgba(180, 180, 180, 0.3)');
+    polygonSeries.zIndex(31);
+    polygonSeries.labels().enabled(true).fontColor('#CD4A2D').fontSize(11).fontWeight('bold');
+    polygonSeries.legendItem().iconFill('#CD4A2D').iconType('line').iconStroke('6 #CD4A2D');
+
+    // create range column series
+    var companySeries = chart.rangeColumn(dataSet.mapAs({x: 'x', high: 'company_high', low: 'company_low' }));
+    companySeries.pointWidth('85%');
+    companySeries.name('Company average');
+    companySeries.color('#E2DFE0');
+
+    // set chart container id
+    chart.container('container');
+
+    // make even/odd xAxis labels coloring
+    chart.listen('chartDraw', function () {
+    var stage = chart.container().getStage();
+      stage.suspend();
+      var count = chart.xAxis().labels().getLabelsCount();
+      for (var i = 0; i < count; i++) {
+        var color = i % 2 ? '#CD4A2D' : '#4C4C4C';
+        var label = chart.xAxis().labels().getLabel(i);
+        if (label) {
+          label.fontColor(color);
+          label.draw();
+        }
+      }
+      stage.resume();
     });
 
-    // configure the stroke of the circular grid
-    chart.yGrid().stroke({
-      color: "green",
-      thickness: 0.5,
-      opacity: 0.5,
-      dash: "10 5"
-    });
-
-    // set the maximum value of the x-scale
-    chart.xScale().maximum(360);
-
-    // set the chart title
-    chart.title("Polar Plot: Grid Stroke");
-
-    // set the container id
-    chart.container("container");
-
-    // initiate drawing the chart
+    // initiate chart drawing
     chart.draw();
 });
 </script>

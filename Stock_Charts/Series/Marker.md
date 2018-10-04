@@ -67,7 +67,7 @@ series.name("USA");
 
 {sample}STOCK\_Marker\_02{sample}
 
-Simple multi-series chart:
+Simple multiple-series chart:
 
 ```
 // set the data

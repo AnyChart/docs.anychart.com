@@ -8,7 +8,7 @@ A crosshair is a pair of perpendicular lines (horizontal and vertical) that move
 
 The crosshair in AnyStock is similar to the [crosshair in basic charts](../Axes_and_Grids/Crosshair#labels).
 
-## Enabling
+## Enabling / Disabling
 
 In Anystock you can configure the crosshair either on the whole chart or on a particular plot: use the {api:anychart.charts.Stock#crosshair}chart.crosshair(){api} or {api:anychart.core.stock.Plot#crosshair}plot.crosshair(){api} method. Both of them return instances of the {api:anychart.core.ui.Crosshair}anychart.core.ui.Crosshair{api} class.
 
@@ -81,7 +81,7 @@ The text of the labels can be changed with the help of the {api:anychart.core.ui
 
 ```
 // set the text of the y-label
-chart.crosshair().yLabel().format(function (){
+chart.crosshair().yLabel().format(function() {
   return this.value + " $";
 });
 ```

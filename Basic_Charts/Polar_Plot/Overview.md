@@ -7,6 +7,20 @@ A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar 
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
+## Modules
+
+Polar charts require adding the [Core](../../Quick_Start/Modules#core) and [Polar](../../Quick_Start/Modules#polar) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a polar chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor.
@@ -139,7 +153,7 @@ With these setting you can use:
 
 And create charts like this one:
 
-{sample}BCT\_Polar\_Chart\_05\_1{sample}
+{sample}BCT\_Polar\_Chart\_06{sample}
 
 ## Grids
 
@@ -173,7 +187,7 @@ chart.yGrid().stroke({
 });
 ```
 
-{sample}BCT\_Polar\_Chart\_06{sample}
+{sample}BCT\_Polar\_Chart\_07{sample}
 
 ### Cell Color
 
@@ -187,11 +201,11 @@ polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
 polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 
-{sample}BCT\_Polar\_Chart\_07{sample}
+{sample}BCT\_Polar\_Chart\_08{sample}
 
 ## Stacked Polar Charts
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 You can create stacked polar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 

@@ -46,7 +46,7 @@ anychart.onDocumentReady(function () {
   chart.labels(true);
 
   // format labels
-  chart.labels().format(function (){
+  chart.labels().format(function() {
       return(this.seriesName + ": $" + this.value);
   });
 

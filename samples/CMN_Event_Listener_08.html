@@ -49,11 +49,11 @@ anychart.onDocumentReady(function () {
 
 	// adding dollar symbols to yAxis labels
 	var yLabels = chart.yAxis().labels();
-	yLabels.format(function (){
+	yLabels.format(function() {
 		return "$" + this.value;
 	});
 
-	// event on hovering a point
+    // create an event listener for the pointsHover event
 	chart.listen("pointsHover", function(event){
 		// getter for hovered point
 		var point = event.point;
@@ -61,13 +61,14 @@ anychart.onDocumentReady(function () {
 		var index = point.getIndex();
 		// getter for hovered point's series
 		var currentSeries = point.getSeries();
-		// if this event is triggered on points unhovering, nothing will happen
+		/* if this event is triggered when the point
+		is not in the hover state, nothing will happen */
 		if (!event.currentPoint.hovered) return;
 		// get an array of months, hovered point belong to and hover it.
 		currentSeries.hover(getQuarterMonths(index));
 	});
 
-	// event on point hovering
+    // create an event listener for the pointsSelect event
 	chart.listen("pointsSelect", function(event){
 		// getter for selected point
 		var point = event.point;
@@ -75,9 +76,9 @@ anychart.onDocumentReady(function () {
 		var index = point.getIndex();
 		// getter for selected point's series
 		var currentSeries = point.getSeries();
-		// if the point was unselected
+		// if the point was deselected
 		if (!event.currentPoint.selected)
-			// unselect every point of the series
+			// deselect every point of the series
 			currentSeries.select(false);
 		// if the point was selected
 		else {

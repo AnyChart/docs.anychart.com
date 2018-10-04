@@ -26,6 +26,10 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+    
+
     // create data
     var data = [
       {x: "A", value: 1222},
@@ -38,9 +42,6 @@ anychart.onDocumentReady(function () {
       {x: "H", value: 3876}
     ];
     
-    // create a stage
-    var stage = anychart.graphics.create("container");
-
     // set the position and data for the first chart
     var radar1 = anychart.radar(data);
     radar1.title("Cell Color: Radial Grid");

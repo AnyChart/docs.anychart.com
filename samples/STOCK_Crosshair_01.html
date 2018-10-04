@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
     chart.plot(0).line(mapping);
 
     //set the chart title
-    chart.title("Crosshair: Enabling = " + chart.crosshair().enabled());
+    chart.title("Crosshair: Enabled = " + chart.crosshair().enabled());
 
     // set the container id
     chart.container("container");

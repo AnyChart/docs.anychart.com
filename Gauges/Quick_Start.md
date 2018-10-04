@@ -1,9 +1,9 @@
 {:index 1}
 # Quick Start
 
-## Including AnyChart
+## Modules
 
-Reference the anychart.min.js JavaScript file in the `<head>` section of your web page. You can use the link as shown below or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (in this case, you have to use your own link).
+The [Circular Gauge](Circular_Gauge) requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular_gauge) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -11,6 +11,19 @@ Reference the anychart.min.js JavaScript file in the `<head>` section of your we
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-circular-gauge.min.js" type="text/javascript"></script>
 </head>
 ```
+
+To create a [Linear Gauge](Linear_Gauge), add the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear_gauge) modules:
+
+```
+<head>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
+  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js" type="text/javascript"></script>
+</head>
+```
+
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 

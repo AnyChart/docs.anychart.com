@@ -5,6 +5,16 @@
 
 In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#appearance) and [hover gap](#hover_gap).
 
+## Modules
+
+Annotations require adding the [Annotations](../../Quick_Start/Modules#annotations) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Hardcoding
 
 To add an annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. You can find the full list of the available types of annotations in the [Overview](Overview#annotation_types) section.
@@ -80,7 +90,7 @@ controller.infiniteLine({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green on hover and select, and the markers of the Infinite Line are disabled on select:
+You can also use methods instead of objects. For example, in this sample the markers of the Ellipse are colored green when they are hovered over and selected, and the markers of the Infinite Line are disabled when they are selected:
 
 ```
 // create an Ellipse annotation

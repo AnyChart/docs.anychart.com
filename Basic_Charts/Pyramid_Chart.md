@@ -8,6 +8,7 @@ Pyramid chart is a kind of [Funnel chart](Funnel_Chart) that presents data in th
 This article explains how to create a basic Pyramid Chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pyramid chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pyramid}anychart.charts.Pyramid{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +32,20 @@ This article explains how to create a basic Pyramid Chart as well as configure s
 <tr><td></td><td>[Chartopedia: Pyramid Chart](https://www.anychart.com/chartopedia/chart-types/pyramid-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Pyramid chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pyramid-funnel.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -131,7 +146,7 @@ chart = anychart.pyramid(data);
 
 The base of a pyramid is the largest horizontal line of the pyramid chart. In this section, we will quickly demonstrate how we can set the custom base width and invert base position.
 
-Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or in percent):
+Use the {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to set the base size (in pixels or as a percentage):
 
 ```
 // set base width to 50% of the container width
@@ -229,7 +244,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered over.
 
 #### Tokens
 
@@ -257,7 +272,7 @@ var chart = anychart.pyramid([
 chart.labels().format("{%name}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Pyramid\_Chart\_09{sample}
@@ -285,7 +300,7 @@ chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -294,15 +309,15 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 40)
       return "<span style='font-size:18'>" +
              percentOfTotal.toFixed(1) + "% (" +
-             this.value + ")</span><br></br><br>" +
+             this.value + ")</span><br><br>" +
              this.getData("custom_field");
   return percentOfTotal.toFixed(1) + "% (" + this.value +
-         ")<br></br><br></br>" + this.getData("custom_field");
+         ")<br><br>" + this.getData("custom_field");
 });
 ```
 

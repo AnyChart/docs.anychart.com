@@ -37,17 +37,11 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.pie(data);
 
-    // set the position of labels
-    chart.labels().position("outside");
-
-    // configure connectors
-    chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
-
-    // disable the legend
-    chart.legend(false);
+    // enable aqua style
+    chart.fill("aquastyle");
 
     // set the chart title
-    chart.title("Pie Chart: Outer Labels");
+    chart.title("Pie Chart: Appearance (Aqua Style)");
 
     // set the container id
     chart.container("container");

@@ -47,7 +47,7 @@ stage.ellipse(300, 300, 200, 50);
 
 ## Predefined Shapes
 
-Predefined Shapes are complex shapes which can be drawn on a stage using paths or with the help of special methods. Below you can find a list of those shapes which can significally shorten and simplify your code. Some of them need a basic shape to be applied to.
+Predefined Shapes are complex shapes which can be drawn on a stage using paths or with the help of special methods. Below you can find the list of those shapes which can significally shorten and simplify your code. Some of them need a basic shape to be applied to.
 
 <table>
 <tbody><tr>

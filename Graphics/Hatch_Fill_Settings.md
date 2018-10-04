@@ -10,7 +10,7 @@ AnyChart js charting library has very useful feature - hatch fills, ideal for di
 
 ## Hatch fill presets
 
-We provide a list of hatch fill presets, full list of them is available in the {api:anychart.graphics.vector.HatchFill.HatchFillType}HatchFillType API Enum{api}.
+We provide a list of hatch fill presets, the full list of them is available in the {api:anychart.graphics.vector.HatchFill.HatchFillType}HatchFillType API Enum{api}.
 
 In case of graphic elements, you need to set hatchFill through the **fill()** method: 
 

@@ -45,7 +45,7 @@ dataTable.addData([
 var mapping = dataTable.mapAs({'value': 4});
 ```
 
-When mapping is ready, we create a {api:anychart.data.TableComputer}computer{api} object using {api:anychart.data.Table#createComputer}createComputer(){api} method. They are called this way because basically indicator is a *computed* series. After that we define calculation function using {api:anychart.data.TableComputer#setCalculationFunction}setCalculationfunction (){api} method and set the name of the output column(s) in it.
+When mapping is ready, we create a {api:anychart.data.TableComputer}computer{api} object using {api:anychart.data.Table#createComputer}createComputer(){api} method. They are called this way because basically indicator is a *computed* series. After that we define calculation function using {api:anychart.data.TableComputer#setCalculationFunction}setCalculationfunction() {api} method and set the name of the output column(s) in it.
 
 ```
 // create computer
@@ -80,4 +80,4 @@ That's it! In this sample we've created a very simple "indicator" that can't tel
 
 ## Advanced Options
 
-Coming soon: {api:anychart.data.TableComputer#setContext}setContext(){api} and {api:anychart.data.TableComputer#setStartFunction}setStartfunction (){api} description and building complex multi-series custom indicators description.
+Coming soon: {api:anychart.data.TableComputer#setContext}setContext(){api} and {api:anychart.data.TableComputer#setStartFunction}setStartfunction() {api} description and building complex multiple-series custom indicators description.

@@ -4,22 +4,33 @@
 
 A context menu (also called contextual, shortcut, and popup or pop-up menu) is a menu in a graphical user interface (GUI) that appears upon user interaction, such as a right-click mouse operation. A context menu offers a limited set of choices that are available in the current state, or context, of the operating system or application. Usually the available choices are actions related to the selected object. From a technical point of view, such a context menu is a graphical control element.
 
-## Enable
+## Modules
 
-To enable AnyChart Context Menu feature you need to reference the UI module and the CSS file in the `<head>` section of a web page, along with other [required modules](../../Quick_Start/Modules).
- 
+The context menu requires the [Common UI](../../Quick_Start/Modules#common_ui) module:
+
 ```
-<head>
-  <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.css">
-</head>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>  
 ```
+
+Also, you should reference the `anychart-ui.min.css` and `anychart-font.min.css` files file:
+
+```
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css">
+```
+
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css"/>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
+## Basic Sample
 
 Here is a sample with the default context menu: 
 
 {sample}CS\_Context\_Menu\_01{sample}
 
-## Disable
+## Enabling / Disabling
 
 The Context Menu is enabled by default, use the {api:anychart.core.Chart#contextMenu}contextMenu(){api} method or the {api:anychart.ui.ContextMenu#enabled}enabled(){api} method if you want to disable it. The first one is the shortest way:
 
@@ -137,7 +148,7 @@ You can adjust behavior of any element in {api:anychart.ui.ContextMenu#itemsForm
 chart.contextMenu().itemsFormatter(function(items){
 
   // modify print item action
-  items["print"].action = function (){
+  items["print"].action = function() {
     alert('Custom action');
   };
 
@@ -161,7 +172,7 @@ chart.contextMenu().itemsFormatter(function(items){
   // add item with custom action
   items['my-item'] ={
   'text': 'Custom item with alert action',
-  'action': function (){
+  'action': function() {
       alert('Custom action');
     },
    'index': index + 0.01
@@ -188,17 +199,17 @@ The custom menu has no items by default, {api:anychart.ui.ContextMenu#itemsProvi
 
 ```
 // replace menu items provider
-chart.contextMenu().itemsProvider(function (){
+chart.contextMenu().itemsProvider(function() {
   var items = {
     'menu-item-1': {
       'text': 'Print chart',
-      'action': function (){
+      'action': function() {
         this.chart.print();
       }
     }, 
     'menu-item-2': {
       'text': 'Save chart as image',
-      'action': function (){
+      'action': function() {
         this.chart.saveAsPng();
       }
     }, 

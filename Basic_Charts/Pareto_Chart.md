@@ -9,6 +9,20 @@ The left vertical axis is the frequency of occurrence, but it can alternatively 
 
 The purpose of the Pareto chart is to highlight the most important among a (typically large) set of factors. In quality control, it often represents the most common sources of defects, the highest occurring type of defect, or the most frequent reasons for customer complaints, and so on.
 
+## Modules
+
+The Pareto chart requires adding the [Core](../Quick_Start/Modules#core) and [Pareto](../Quick_Start/Modules#pareto) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pareto.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a Pareto chart use {api:anychart#pareto}pareto(){api} method, you can pass the data right into the constructor:

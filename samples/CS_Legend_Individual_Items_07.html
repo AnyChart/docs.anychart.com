@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Individual Items 07"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {x: "John", value: 5000},
+      {x: "Richard", value: 5000},
+      {x: "Larry", value: 5000},
+      {x: "Marta", value: 15000, legendItem: {
+        fontColor: "#455a64",
+        fontSize: 30,
+        fontWeight: 600,
+        iconType: "circle",
+        iconSize: 50,
+        iconStroke: "4 #455a64",
+        iconHatchFill: {
+          type: "forward-diagonal",
+          color: "#455a64",
+          thickness: 4,
+          size: 8
+        }
+      }}
+    ];
+
+    // create a chart and set the data
+    chart = anychart.pie(data);
+
+    // set the layout of the legend
+    chart.legend().itemsLayout("vertical");
+
+    // set the position of the legend
+    chart.legend().position("right");
+
+    // set the chart title
+    chart.title("Individual Legend Items: Single Series");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

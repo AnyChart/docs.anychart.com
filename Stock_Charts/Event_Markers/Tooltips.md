@@ -4,7 +4,7 @@
 
 ## Overview
 
-A tooltip is a text box displayed when a point on a chart is hovered, which allows you to show the detailed information about an event marker. You can either adjust the built-in AnyChart tooltips or create custom HTML tooltips.
+A tooltip is a text box displayed when a point on a chart is hovered over, which allows you to show the detailed information about an event marker. You can either adjust the built-in AnyChart tooltips or create custom HTML tooltips.
 
 
 ## Built-In Tooltips
@@ -86,11 +86,11 @@ plot.eventMarkers({"groups": [
   }
 ]});
 
-plot.eventMarkers().tooltip().titleFormat( function (){
+plot.eventMarkers().tooltip().titleFormat( function() {
   return this.getData("short_desc") + " (" + this.symbol + ")";
 });
 
-plot.eventMarkers().tooltip().format( function (){
+plot.eventMarkers().tooltip().format( function() {
   return "On " + anychart.format.dateTime(this.date, "MMMM dd") +
          ", " + this.description;
 });
