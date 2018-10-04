@@ -3,35 +3,44 @@
 
 // This section of documentation contains documents about features and options that are shared by most of the charts and modules of AnyChart library.
 
-... enable / disable and configure elements of the chart
+## Chart Elements
 
-* [Chart Labels](Chart_Labels)
 * [Legend](Legend)
-* [Scroller](Scroller)
 * [Title](Title)
+* [Chart Labels](Chart_Labels)
+* [Labels](Labels) + [Text Formatters](Text_Formatters)
+* [Tooltip](Tooltip) + [Text Formatters](Text_Formatters)
+* [Scroller](Scroller)
 * [UI Controls](UI_Controls)
-* [Labels](Labels), [Tooltip](Tooltip), [Text Formatters](Text_Formatters)
 
-... settings
+## Chart Settings
 
-* [Automatic Coloring](Automatic_Coloring)
-* [Event Listeners](Event_Listeners), [Interactivity](Interactivity)
-* [Calendar](Calendar)
-* [Point Size](Point_Size)
+* [Text Formatters](Text_Formatters)
 * [Statistics](Statistcs)
+* [Point Size](Point_Size)
+* [Automatic Coloring](Automatic_Coloring)
+* [Calendar](Calendar)
 
-...
+## Interactivity
+
+* [Interactivity](Interactivity)
+* [Event Listeners](Event_Listeners)
+
+## Rendering
 
 * [ASYNC Rendering](ASYNC_Rendering)
 * [Server-Side Rendering](Server-Side_Rendering)
 
-...
+## Export
 
 * [Exports](Exports)
 * [Sharing](Sharing)
 * [Printing](Printing)
 
-...
+## Localization
+
+* [Localization](Localization)
+
+## Accessibility
 
 * [Accessibility](Accessibility)
-* [Localization](Localization)
