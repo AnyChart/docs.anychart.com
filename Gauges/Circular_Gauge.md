@@ -10,7 +10,7 @@ Let's start with adding or configuring gauge elements step by step, so in the en
 
 ## Modules
 
-The Circular Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular-gauge) modules:
+The Circular Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Circular Gauge](../Quick_Start/Modules#circular_gauge) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

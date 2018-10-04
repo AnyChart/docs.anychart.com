@@ -50,7 +50,7 @@ For example, to create an exportable Pie chart, combine Core with the [Pie and D
 
 The same logic applies to the **Base** module. However, please note that it already includes some chart types, so you have to reference other modules only if you need to add a chart type that is not included or a feature.
 
-As for **Bundle**, it includes all other modules except [Extentions](#extentions).
+As for **Bundle**, it includes all other modules except [Extensions](#extensions).
 
 ## Builder
 

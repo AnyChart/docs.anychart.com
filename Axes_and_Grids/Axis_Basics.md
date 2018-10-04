@@ -131,7 +131,7 @@ The dashboard below shows how these settings work:
 
 There are two types of grid in AnyChart charting framework - major grids that can be controlled using {api:anychart.charts.Cartesian#xGrid}xGrid(){api} and {api:anychart.charts.Cartesian#yGrid}yGrid(){api} methods and minor grids that is controlled with {api:anychart.charts.Cartesian#xMinorGrid}xMinorGrid(){api} and {api:anychart.charts.Cartesian#yMinorGrid}yMinorGrid(){api} method. 
 
-**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#minor_and_major_ticks). To manage the number of ticks use {api:anychart.scales.ScatterTicks#interval}interval(){api} parameter of the corresponding scale.
+**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#tickmarks). To manage the number of ticks use {api:anychart.scales.ScatterTicks#interval}interval(){api} parameter of the corresponding scale.
 
 To enable grids use {api:anychart.core.grids.Linear#enabled}enabled(true){api} method.
 

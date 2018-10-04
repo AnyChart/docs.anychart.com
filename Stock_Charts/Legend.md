@@ -107,11 +107,9 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 {sample}STOCK\_Legend\_06{sample}
 
-You can also create a custom legend. It's being done the same way as with basic chart legends, so you can look for it up in the [Basic Chart Legend](../Common_Settings/Legend#custom_legend) article.
-
 ## Custom Legend
 
-The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you'd better remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Chart Legend](../Common_Settings/Legend#one_legend_for_several_charts) article.
+The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you need to remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Charts Standalone Legend](../Common_Settings/Legend/Standalone_Legend) article.
 
 ```
 // create custom legend
