@@ -51,7 +51,7 @@ anychart.onDocumentReady(function () {
     chart.dropoff().labels().padding(10);
 
     // configure tooltips
-    chart.node().tooltip().format("value: {%value}\n\n{%custom_field}");
+    chart.node().tooltip().format("value: {%value}");
     chart.flow().tooltip().format("value: {%value}\n\n{%custom_field}");
     chart.dropoff().tooltip().format("value: {%value}\n\n{%custom_field}");
 

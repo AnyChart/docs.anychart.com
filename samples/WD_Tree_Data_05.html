@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
     
@@ -28,41 +28,57 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {name:   "Root",   children: [
-        {name:   "Child 1",  value: 80636124},
-        {name:   "Child 2",  value: 65511098},
-        {name:   "Child 3",  value: 64938716},
-        {name:   "Child 4",  value: 59797978},
-        {name:   "Child 5",  value: 46070146},
-        {name:   "Child 6",  value: 38563573},
-        {name:   "Child 7",  value: 19237513},
-        {name:   "Child 8",  value: 17032845}, 
-        {name:   "Child 9",  value: 11443830},
-        {name:   "Child 10", value: 10892931}  
-      ]} 
-    ];
-
+      {
+        name: "Root",
+        start: Date.UTC(2018, 0, 25),
+        end: Date.UTC(2018, 2, 14),
+        child_items: [
+          {
+            name: "Child 1",
+            start: Date.UTC(2018, 0, 25),
+            end: Date.UTC(2018, 1, 3)
+          },
+          {
+            name: "Child 2",
+            start: Date.UTC(2018, 1, 4),
+            end: Date.UTC(2018, 1, 4)
+          },
+          {
+            name: "Child 3",
+            start: Date.UTC(2018, 1, 4),
+            end: Date.UTC(2018, 1, 24)
+          },
+          {
+            name: "Child 4",
+            start: Date.UTC(2018, 1, 24),
+            end: Date.UTC(2018, 2, 14)
+          }
+        ]
+    }];
+    
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
+    var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
 
-    // create a chart and set the data
-    var chart = anychart.treeMap(treeData);
+    // map the data
+    var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
 
-    // get the name of the last child
-    var lastChild = treeData.getChildAt(0).getChildren().length - 1;
-    var lastChildName = treeData.getChildAt(0).getChildAt(lastChild).get("name");
+    // create a chart
+    var chart = anychart.ganttProject();
+
+    // set the data
+    chart.data(mapping);
 
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Tree Data Model: Reading<br><br>" +
-                "last child = <span style = 'color:#990000'>" + 
-                lastChildName + "</span>");
+    chart.title("Tree Data Model: Mapping");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
+
+    // fit items to the width of the timeline
+    chart.fitAll();
 });
 </script>
 </body>
