@@ -1,26 +1,32 @@
 {:index 1}
 # Common Settings
 
-This section of documentation contains documents about features and options that are shared by most of the charts and modules of AnyChart library.
+// This section of documentation contains documents about features and options that are shared by most of the charts and modules of AnyChart library.
 
-[ASYNC Rendering](ASYNC_Rendering)
-[Accessibility](Accessibility)
+[Chart Labels](Chart_Labels)
+[Legend](Legend)
+[Scroller](Scroller)
+[Title](Title)
+[UI Controls](UI_Controls)
+
+[Labels](Labels)
+[Tooltip](Tooltip)
+[Text Formatters](Text_Formatters)
+
 [Automatic Coloring](Automatic_Coloring)
 [Calendar](Calendar)
-[Chart Labels](Chart_Labels)
-[Event Listeners](Event_Listeners)
-[Exports](Exports)
-[Interactivity](Interactivity)
-[Labels](Labels)
-[Legend](Legend)
-[Localization](Localization)
 [Point Size](Point_Size)
-[Printing](Printing)
-[Scroller](Scroller)
+
+[Event Listeners](Event_Listeners)
+[Interactivity](Interactivity)
+[Statistics](Statistcs)
+
+[ASYNC Rendering](ASYNC_Rendering)
 [Server-Side Rendering](Server-Side_Rendering)
+
+[Exports](Exports)
 [Sharing](Sharing)
-[Statistcs](Statistcs)
-[Text Formatters](Text_Formatters)
-[Title](Title)
-[Tooltip](Tooltip)
-[UI Controls](UI_Controls)
+[Printing](Printing)
+
+[Accessibility](Accessibility)
+[Localization](Localization)
