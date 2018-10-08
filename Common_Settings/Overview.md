@@ -1,7 +1,7 @@
 {:index 1}
 # Common Settings
 
-// This section of documentation contains documents about features and options that are shared by most of the charts and modules of AnyChart library.
+This section includes articles about features shared by most of the charts and modules of AnyChart library. Some articles explain how to configure certain [chart elements](#chart_elements), and others  describe particular [chart settings](#chart_settings). Here you can learn about [interactivity](#interactivity), [rendering](#rendering), [export](#export), [localization](#localization), [accessibility](#accessibility), and other options.
 
 ## Chart Elements
 
