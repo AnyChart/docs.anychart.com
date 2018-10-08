@@ -32,7 +32,7 @@ legend.titleSeparator(true);
 
 ## Items
 
-By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below
+By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method. It affects the list of items, so we can rename the items, change the appearance of their items. Look at the sample below:
 
 ```
 firstPlot.legend().itemsFormatter(function() {
