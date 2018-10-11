@@ -34,10 +34,23 @@ plot1.legend.enabled(false);
 
 ## Title Format
 
+* `{%dataIntervalUnit}`
+* `{%dataIntervalUnitCount}`
+* `{%hoveredDate}`
+* `{%value}`
+* `{%rawValue}`
+"
 ```
 
 ```
 {sample}STOCK\_Legend\_03{sample}
+
+* `dataIntervalUnit`
+* `dataIntervalUnitCount`
+* `hoveredDate`
+* `isGrouped`
+* `value`
+* `rawValue`
 
 ```
 

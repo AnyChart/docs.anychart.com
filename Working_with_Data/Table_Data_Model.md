@@ -514,7 +514,7 @@ var iterator = selectable.getIterator();
 // display information about shown points in the table
 while (iterator.advance()) {
   var key = iterator.getKey();
-  var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
+  var date = anychart.format.dateTime(key, "dd.MM.yyyy");
   var low = iterator.get("low");
   var high = iterator.get("high");  
 };
