@@ -75,7 +75,7 @@ plot.legend().titleFormat(function() {
 ```
 {sample}STOCK\_Legend\_04{sample}
 
-## Item Format
+## Item Text Format
 
 ```
 
