@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Legend 03"/>
+    <meta name="ac:name" content="STOCK Legend 06"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -53,19 +53,9 @@ anychart.onDocumentReady(function () {
     // create two series: line and ohlc
     plot.line(mapping);
     plot.ohlc(mapping);
-
-    var legend = plot.legend();
-
-    legend.title().enabled(true);
-    legend.title().orientation("top");
-    legend.title().align("center");
-
-    legend.titleSeparator().enabled(true);
-
-    legend.titleFormat("{%value}");
-
+   
     // set the chart title
-    chart.title("Legend: Title Format (Tokens)");
+    chart.title("Legend: Custom Items");
 
     // set the container id
     chart.container("container");
