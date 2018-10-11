@@ -34,26 +34,27 @@ plot1.legend.enabled(false);
 
 ## Title Format
 
-### Tokens
-
 ```
 
 ```
 {sample}STOCK\_Legend\_03{sample}
-
-### Formatting Functions
 
 ```
 
 ```
 {sample}STOCK\_Legend\_04{sample}
 
-## Items
+## Items Format
 
 ```
 
 ```
 {sample}STOCK\_Legend\_05{sample}
+
+```
+
+```
+{sample}STOCK\_Legend\_06{sample}
 
 
 ## Custom Items
@@ -61,4 +62,4 @@ plot1.legend.enabled(false);
 ```
 
 ```
-{sample}STOCK\_Legend\_06{sample}
+{sample}STOCK\_Legend\_07{sample}
