@@ -6,7 +6,7 @@
 
 * [Legend](../Common_Settings/Legend/Overview)
 
-## Default Legend
+## Default Settings
 
 {sample}STOCK\_Legend\_01{sample}
 
