@@ -54,9 +54,12 @@ anychart.onDocumentReady(function () {
     // create two series: line and ohlc
     plot1.line(mapping);
     plot2.ohlc(mapping);
+
+    // disable the legend on the first plot
+    plot1.legend(false);
    
     // set the chart title
-    chart.title("Legend: Enabling / Disabling");
+    chart.title("Legend: Basic Sample");
 
     // set the container id
     chart.container("container");
