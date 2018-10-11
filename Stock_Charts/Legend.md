@@ -58,6 +58,7 @@ plot.legend().titleFormat(
 * `value`
 * `rawValue`
 
+
 ```
 // enable html for the legend title
 plot.legend().title().useHtml(true);
