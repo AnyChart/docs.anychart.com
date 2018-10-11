@@ -6,7 +6,7 @@
 
 * [Legend](../Common_Settings/Legend/Overview)
 
-## Default Options (?)
+## Default Legend
 
 {sample}STOCK\_Legend\_01{sample}
 
@@ -44,7 +44,7 @@ plot1.legend.enabled(false);
 ```
 {sample}STOCK\_Legend\_04{sample}
 
-## Items Format
+## Item Format
 
 ```
 
