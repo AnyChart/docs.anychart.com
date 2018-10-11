@@ -53,9 +53,13 @@ anychart.onDocumentReady(function () {
     // create two series: line and ohlc
     plot.line(mapping);
     plot.ohlc(mapping);
+
+    plot.legend().itemsFormat(function() {
+      return  "lol";
+    });
    
     // set the chart title
-    chart.title("Legend: Item Format");
+    chart.title("Legend: Item Text Format (Formatting Functions)");
 
     // set the container id
     chart.container("container");
