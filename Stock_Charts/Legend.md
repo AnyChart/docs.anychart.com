@@ -39,7 +39,9 @@ plot1.legend.enabled(false);
 * `{%hoveredDate}`
 * `{%value}`
 * `{%rawValue}`
-"
+
+...
+
 ```
 // enable html for the legend title
 plot.legend().title().useHtml(true);
@@ -58,6 +60,7 @@ plot.legend().titleFormat(
 * `value`
 * `rawValue`
 
+...
 
 ```
 // enable html for the legend title
