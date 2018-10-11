@@ -54,8 +54,21 @@ anychart.onDocumentReady(function () {
     plot.line(mapping);
     plot.ohlc(mapping);
 
+    // enable html for the legend
+    plot.legend().useHtml(true);
+
     plot.legend().itemsFormat(function() {
-      return  "lol";
+      var series = this.series;
+      if (series.Id == "line") {
+        return "<span style='color:#455a64;font-weight:600'>" +
+               series.Id + ":</span> " + this.value;
+      }
+      if (series.Id == "ohlc") {
+        return "<span style='color:#455a64;font-weight:600'>" +
+               series.Id + ":</span> " +
+               this.open + " / " + this.high + " / " +
+               this.low + " / " + this.close;
+      }
     });
    
     // set the chart title
