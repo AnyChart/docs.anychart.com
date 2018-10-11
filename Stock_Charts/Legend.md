@@ -32,7 +32,7 @@ plot1.legend.enabled(false);
 
 {sample}STOCK\_Legend\_02{sample}
 
-## Title Format
+## Title Text Format
 
 * `{%dataIntervalUnit}`
 * `{%dataIntervalUnitCount}`
