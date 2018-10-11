@@ -53,8 +53,13 @@ anychart.onDocumentReady(function () {
     // create an ohlc series
     plot.ohlc(mapping);
 
+    // enable html for the legend title
+    plot.legend().title().useHtml(true);
+
     // set the format of the legend title
-    plot.legend().titleFormat("{%value}");
+    plot.legend().titleFormat(
+      "<span style='color:#455a64;font-weight:600'>{%value}</span>"
+    );
 
     // set the chart title
     chart.title("Legend: Title Format (Tokens)");

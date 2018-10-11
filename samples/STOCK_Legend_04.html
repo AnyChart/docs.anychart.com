@@ -53,10 +53,14 @@ anychart.onDocumentReady(function () {
     // create an ohlc series
     plot.ohlc(mapping);
 
+    // enable html for the legend title
+    plot.legend().title().useHtml(true);
+
     // set the format of the legend title
     plot.legend().titleFormat(function() {
       console.log(this);
-      return this.hoveredDate;
+      return "<span style='color:#455a64;font-weight:600'>" +
+             this.hoveredDate + "</span>";
     });
 
     // set the chart title
