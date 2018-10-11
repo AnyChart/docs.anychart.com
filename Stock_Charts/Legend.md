@@ -41,7 +41,13 @@ plot1.legend.enabled(false);
 * `{%rawValue}`
 "
 ```
+// enable html for the legend title
+plot.legend().title().useHtml(true);
 
+// set the format of the legend title
+plot.legend().titleFormat(
+  "<span style='color:#455a64;font-weight:600'>DATE: {%value}</span>"
+);
 ```
 {sample}STOCK\_Legend\_03{sample}
 
@@ -53,7 +59,15 @@ plot1.legend.enabled(false);
 * `rawValue`
 
 ```
+// enable html for the legend title
+plot.legend().title().useHtml(true);
 
+// set the format of the legend title
+plot.legend().titleFormat(function() {
+  var date = anychart.format.dateTime(this.value, "dd MMMM yyyy");
+  return "<span style='color:#455a64;font-weight:600'>DATE: " +
+         date + "</span>";
+});
 ```
 {sample}STOCK\_Legend\_04{sample}
 
