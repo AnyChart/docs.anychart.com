@@ -48,7 +48,8 @@ plot.legend().title().useHtml(true);
 
 // configure the format of the legend title
 plot.legend().titleFormat(
-  "<span style='color:#455a64;font-weight:600'>DATE: {%value}</span>"
+  "<span style='color:#455a64;font-weight:600'>" +
+  "DATE: {%value}{dateTimeFormat: dd MMM yyyy}</span>"
 );
 ```
 {sample}STOCK\_Legend\_03{sample}
@@ -77,9 +78,14 @@ plot.legend().titleFormat(function() {
 
 ## Item Text Format
 
-* ???
+всегда доступны:
+
 * `{%seriesName}`
 * `{%x}`
+
+series-related:
+
+* `{%value}`
 * `{%open}`
 * `{%high}`
 * `{%low}`
@@ -107,13 +113,12 @@ plot.legend().useHtml(true);
 
 // configure the format of legend items
 plot.legend().itemsFormat(function() {
-  console.log(this);
   var series = this.series;
-  if (series.Id == "line") {
+  if (series.getType() == "line") {
     return "<span style='color:#455a64;font-weight:600'>" +
            series.name() + ":</span> " + this.value;
   }
-  if (series.Id == "ohlc") {
+  if (series.getType() == "ohlc") {
     return "<span style='color:#455a64;font-weight:600'>" +
            series.name() + ":</span> " +
            this.open + " / " + this.high + " / " +
@@ -123,10 +128,42 @@ plot.legend().itemsFormat(function() {
 ```
 {sample}STOCK\_Legend\_06{sample}
 
+```
+// create two series: line and ohlc
+var line = plot.line(mapping);
+var ohlc = plot.ohlc(mapping);
+
+// enable html for legend items
+line.legendItem().useHtml(true);
+ohlc.legendItem().useHtml(true);
+
+// configure the format of legend items
+line.legendItem().format(
+ "<span style='color:#455a64;font-weight:600'>{%seriesName}: " +
+ "</span>{%value}"
+);
+
+ohlc.legendItem().format(
+ "<span style='color:#455a64;font-weight:600'>{%seriesName}: " +
+ "</span>{%open} / {%high} / {%low} / {%close}"
+);   
+```
+{sample}STOCK\_Legend\_08{sample}
+
 
 ## Custom Items
 
 ```
-
+// add a custom legend item 
+plot.legend().itemsFormatter(function(legendItems) {
+  legendItems.push({
+    text: "/ Number of Series: " + plot.getSeriesCount() + " /",
+    iconEnabled: false,
+    fontColor: "#455a64",
+    fontWeight: 600,
+    fontStyle: "italic"
+  });
+  return legendItems;
+});
 ```
-{sample}STOCK\_Legend\_07{sample}
+{sample}STOCK\_Legend\_08{sample}

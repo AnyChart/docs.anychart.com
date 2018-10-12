@@ -59,13 +59,12 @@ anychart.onDocumentReady(function () {
 
     // configure the format of legend items
     plot.legend().itemsFormat(function() {
-      console.log(this);
       var series = this.series;
-      if (series.Id == "line") {
+      if (series.getType() == "line") {
         return "<span style='color:#455a64;font-weight:600'>" +
                series.name() + ":</span> " + this.value;
       }
-      if (series.Id == "ohlc") {
+      if (series.getType() == "ohlc") {
         return "<span style='color:#455a64;font-weight:600'>" +
                series.name() + ":</span> " +
                this.open + " / " + this.high + " / " +
