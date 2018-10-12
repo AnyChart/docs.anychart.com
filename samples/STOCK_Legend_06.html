@@ -57,15 +57,17 @@ anychart.onDocumentReady(function () {
     // enable html for the legend
     plot.legend().useHtml(true);
 
+    // configure the format of legend items
     plot.legend().itemsFormat(function() {
+      console.log(this);
       var series = this.series;
       if (series.Id == "line") {
         return "<span style='color:#455a64;font-weight:600'>" +
-               series.Id + ":</span> " + this.value;
+               series.name() + ":</span> " + this.value;
       }
       if (series.Id == "ohlc") {
         return "<span style='color:#455a64;font-weight:600'>" +
-               series.Id + ":</span> " +
+               series.name() + ":</span> " +
                this.open + " / " + this.high + " / " +
                this.low + " / " + this.close;
       }

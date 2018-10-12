@@ -46,7 +46,7 @@ plot1.legend.enabled(false);
 // enable html for the legend title
 plot.legend().title().useHtml(true);
 
-// set the format of the legend title
+// configure the format of the legend title
 plot.legend().titleFormat(
   "<span style='color:#455a64;font-weight:600'>DATE: {%value}</span>"
 );
@@ -66,7 +66,7 @@ plot.legend().titleFormat(
 // enable html for the legend title
 plot.legend().title().useHtml(true);
 
-// set the format of the legend title
+// configure the format of the legend title
 plot.legend().titleFormat(function() {
   var date = anychart.format.dateTime(this.value, "dd MMMM yyyy");
   return "<span style='color:#455a64;font-weight:600'>DATE: " +
@@ -77,13 +77,45 @@ plot.legend().titleFormat(function() {
 
 ## Item Text Format
 
+* ???
+* `{%seriesName}`
+* `{%x}`
+* `{%open}`
+* `{%high}`
+* `{%low}`
+* `{%close}`
+
 ```
 
 ```
 {sample}STOCK\_Legend\_05{sample}
 
-```
+* ???
+* `series`
+* `open`
+* `high`
+* `low`
+* `close`
 
+```
+// enable html for the legend
+plot.legend().useHtml(true);
+
+// configure the format of legend items
+plot.legend().itemsFormat(function() {
+  console.log(this);
+  var series = this.series;
+  if (series.Id == "line") {
+    return "<span style='color:#455a64;font-weight:600'>" +
+           series.name() + ":</span> " + this.value;
+  }
+  if (series.Id == "ohlc") {
+    return "<span style='color:#455a64;font-weight:600'>" +
+           series.name() + ":</span> " +
+           this.open + " / " + this.high + " / " +
+           this.low + " / " + this.close;
+  }
+});
 ```
 {sample}STOCK\_Legend\_06{sample}
 

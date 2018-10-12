@@ -56,7 +56,7 @@ anychart.onDocumentReady(function () {
     // enable html for the legend title
     plot.legend().title().useHtml(true);
 
-    // set the format of the legend title
+    // configure the format of the legend title
     plot.legend().titleFormat(function() {
       var date = anychart.format.dateTime(this.value, "dd MMMM yyyy");
       return "<span style='color:#455a64;font-weight:600'>DATE: " +
