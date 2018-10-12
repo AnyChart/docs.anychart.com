@@ -85,6 +85,8 @@ plot.legend().titleFormat(function() {
 * `{%low}`
 * `{%close}`
 
+...
+
 ```
 
 ```
@@ -96,6 +98,8 @@ plot.legend().titleFormat(function() {
 * `high`
 * `low`
 * `close`
+
+...
 
 ```
 // enable html for the legend
