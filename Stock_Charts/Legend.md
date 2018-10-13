@@ -115,7 +115,7 @@ The following tokens can be applied to any legend:
 
 Depending on the series type, you can use some other tokens, displaying the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
 
-Of course, series-specific tokens work correctly only if all the series on the plot are of the same type or there is just one series, like in the sample below:
+Of course, these series-specific tokens work correctly only if all the series on the plot are of the same type or there is just one series, like in the sample below:
 
 ```
 // enable html for the legend
