@@ -5,12 +5,17 @@
 ## Overview
 
 * [Legend](../Common_Settings/Legend/Overview)
+* {api:anychart.core.stock.Plot#legend}legend(){api}
+* {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
 
 ## Default Settings
 
 {sample}STOCK\_Legend\_01{sample}
 
 ## Enabling / Disabling
+
+* {api:anychart.core.stock.Plot#legend}legend(){api}
+* {api:anychart.core.ui.Legend#enabled}enabled(){api}
 
 ```
 // create two plots
@@ -34,6 +39,13 @@ plot1.legend.enabled(false);
 
 ## Title Text Format
 
+* [Title](../Common_Settings/Legend/Title_and_Separator)
+* [Tokens](../Common_Settings/Text_Formatters#string_tokens)
+* [Formatting Functions](../Common_Settings/Text_Formatters#formatting_functions)
+* {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api}
+
+tokens:
+
 * `{%dataIntervalUnit}`
 * `{%dataIntervalUnitCount}`
 * `{%hoveredDate}`
@@ -53,6 +65,8 @@ plot.legend().titleFormat(
 );
 ```
 {sample}STOCK\_Legend\_03{sample}
+
+fields:
 
 * `dataIntervalUnit`
 * `dataIntervalUnitCount`
@@ -78,7 +92,12 @@ plot.legend().titleFormat(function() {
 
 ## Item Text Format
 
-всегда доступны:
+* [Legend Items](../Common_Settings/Legend/Legend_Items)
+* [Tokens](../Common_Settings/Text_Formatters#string_tokens)
+* [Formatting Functions](../Common_Settings/Text_Formatters#formatting_functions)
+* {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api}
+
+always available:
 
 * `{%seriesName}`
 * `{%x}`
@@ -133,6 +152,10 @@ plot.legend().itemsFormat(function() {
 ```
 {sample}STOCK\_Legend\_06{sample}
 
+* [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items)
+* {api:?entry=legendItem}legendItem(){api}
+* {api:anychart.core.utils.LegendItemSettings#format}format(){api}
+
 ```
 // create two series: line and ohlc
 var line = plot.line(mapping);
@@ -157,6 +180,9 @@ ohlc.legendItem().format(
 
 
 ## Custom Items
+
+* [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items)
+* {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
 ```
 // add a custom legend item 
