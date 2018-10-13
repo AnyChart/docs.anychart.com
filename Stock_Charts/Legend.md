@@ -74,7 +74,7 @@ plot.legend().titleFormat(
 
 **2. Formatting Functions**
 
-The {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} can be also combined with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+The {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method can be also combined with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
 
 * `dataIntervalUnit`
 * `dataIntervalUnitCount`
