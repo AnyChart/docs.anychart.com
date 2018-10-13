@@ -138,7 +138,7 @@ In formatting functions, the following fields are always available (?):
 
 There are also series-specific fields: `value` ([Line](Series/Line)), `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
 
-Formatting functions allow setting the text format of legend items even if there are multiple series of different types on the same plot, like in this sample:
+Formatting functions allow setting the text format of legend items when there are multiple series of different types on the same plot, like in this sample:
 
 ```
 // enable html for the legend
