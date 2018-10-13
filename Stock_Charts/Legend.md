@@ -153,7 +153,7 @@ ohlc.legendItem().format(
  "</span>{%open} / {%high} / {%low} / {%close}"
 );   
 ```
-{sample}STOCK\_Legend\_08{sample}
+{sample}STOCK\_Legend\_07{sample}
 
 
 ## Custom Items
