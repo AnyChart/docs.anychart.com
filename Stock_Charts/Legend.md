@@ -100,20 +100,20 @@ plot.legend().titleFormat(function() {
 
 ## Item Text Format
 
-In general, legend items of Stock charts are configured like legend items of other chart types – see the [Legend Items](../Common_Settings/Legend/Legend_Items) article. However, there is a difference in the way their text is formatted.
+The [Legend Items](../Common_Settings/Legend/Legend_Items) article explains how to configure legend items of all chart types, including Stock charts. In general, there is no difference, except for the available text format settings.
 
 AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information. For example, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
 
-To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that you can use both series- and point-related tokens / function fields.
+To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
 
 **1. Tokens**
 
-The following tokens are always available:
+The following tokens can be applied to any legend:
 
 * `{%seriesName}` – the name of the series
 * `{%x}` – the date (X-value) of the current point
 
-The exact set of available tokens depends on the series type: you can display the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
+Depending on the series type, you can use some other tokens, displaying the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
 
 Of course, series-specific tokens work correctly only if all the series on a plot are of the same type or there is just one series, like in the sample below:
 
