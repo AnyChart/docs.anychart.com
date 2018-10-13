@@ -113,7 +113,7 @@ The following tokens are always available:
 * `{%seriesName}` – the name of the series
 * `{%x}` – the date (X-value) of the current point
 
-The exact list of available tokens depends on the series type: you can display the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
+The exact set of available tokens depends on the series type: you can display the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
 
 Of course, series-specific tokens work correctly only if all the series on a plot are of the same type or there is just one series, like in the sample below:
 
@@ -165,7 +165,7 @@ plot.legend().itemsFormat(function() {
 
 Finally, you can format the text of an individual legend item: combine the {api:?entry=legendItem}legendItem(){api} method of the series with the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method and tokens or formatting functions. Read more: [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items).
 
-Please note that in this case even with tokens you can achieve enough flexibility to apply series-specific settings to a legend representing series of different types. For example, here are two series, Line and OHLC, and their legend items are configured individually with the help of different tokens:
+In this case, even with tokens you can achieve enough flexibility to apply series-specific settings to a legend representing series of different types. For example, here are two series, Line and OHLC, and their legend items are configured individually with the help of different tokens:
 
 ```
 // create two series: line and ohlc
