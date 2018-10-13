@@ -131,7 +131,7 @@ plot.legend().itemsFormat(
 
 **2. Formatting Functions**
 
-When you use formatting functions to set the text of legend items, the following fields are always available (?):
+In formatting functions, the following fields are always available (?):
 
 * `series` - the series object, which allows accessing methods of the series
 * `x` – the date (X-value) of the current point
