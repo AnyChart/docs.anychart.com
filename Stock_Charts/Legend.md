@@ -8,16 +8,17 @@
 * {api:anychart.core.stock.Plot#legend}legend(){api}
 * {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
 
+...
+
 ## Default Settings
+
+...
 
 {sample}STOCK\_Legend\_01{sample}
 
 ## Enabling / Disabling
 
-* {api:anychart.core.stock.Plot#legend}legend(){api}
-* {api:anychart.core.ui.Legend#enabled}enabled(){api}
-
-...
+The legend of Stock charts is enabled by default. To disable or enable it, pass `false` / `true` to the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
 ```
 // create two plots
@@ -37,6 +38,8 @@ var plot2 = chart.plot(1);
 plot1.legend.enabled(false);
 ```
 
+In the sample below, there is a Stock chart with two plots. The legend of the first plot is disabled by using the {api:anychart.core.stock.Plot#legend}legend(){api} method:
+
 {sample}STOCK\_Legend\_02{sample}
 
 ## Title Text Format
@@ -45,7 +48,6 @@ plot1.legend.enabled(false);
 * [Tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [Formatting Functions](../Common_Settings/Text_Formatters#formatting_functions)
 * {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api}
-
 
 tokens:
 
