@@ -17,6 +17,8 @@
 * {api:anychart.core.stock.Plot#legend}legend(){api}
 * {api:anychart.core.ui.Legend#enabled}enabled(){api}
 
+...
+
 ```
 // create two plots
 var plot1 = chart.plot(0);
@@ -43,6 +45,7 @@ plot1.legend.enabled(false);
 * [Tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [Formatting Functions](../Common_Settings/Text_Formatters#formatting_functions)
 * {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api}
+
 
 tokens:
 
@@ -156,6 +159,8 @@ plot.legend().itemsFormat(function() {
 * {api:?entry=legendItem}legendItem(){api}
 * {api:anychart.core.utils.LegendItemSettings#format}format(){api}
 
+...
+
 ```
 // create two series: line and ohlc
 var line = plot.line(mapping);
@@ -183,6 +188,8 @@ ohlc.legendItem().format(
 
 * [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items)
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
+
+...
 
 ```
 // add a custom legend item 
