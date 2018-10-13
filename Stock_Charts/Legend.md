@@ -133,7 +133,7 @@ plot.legend().itemsFormat(
 
 In formatting functions, the following fields are always available (?):
 
-* `series` - the series object, which allows accessing methods of the series
+* `series` – the series object, which allows accessing methods of the series
 * `x` – the date (X-value) of the current point
 
 There are also series-specific fields: `value` ([Line](Series/Line)), the `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
