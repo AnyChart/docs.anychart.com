@@ -102,7 +102,7 @@ plot.legend().titleFormat(function() {
 
 The [Legend Items](../Common_Settings/Legend/Legend_Items) article explains how to configure legend items of all chart types, including Stock charts. In general, there is no difference, except for the available text format settings.
 
-AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly (?). For example, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
+AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly (?). In particular, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
 
 To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
 
@@ -113,7 +113,7 @@ The following tokens can be applied to any legend:
 * `{%seriesName}` – the name of the series
 * `{%x}` – the date (X-value) of the current point
 
-Depending on the series type, you can use some other tokens, displaying the `{%value}` of the current point ([Line](Series/Line)), the `{%open}`, `{%high}`, `{%low}`, and `{%close}` values ([OHLC](Series/OHLC)), and so on.
+You can use other tokens supported by the given series type: for example, the [Line](Series/Line) allows displaying the `{%value}` of the current point, and ([OHLC](Series/OHLC)) supports the `{%open}`, `{%high}`, `{%low}`, and `{%close}` tokens.
 
 Of course, these series-specific tokens work correctly only when all the series on the plot are of the same type or there is just one series, like in the sample below:
 
