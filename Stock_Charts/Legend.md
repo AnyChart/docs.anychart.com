@@ -98,8 +98,13 @@ series-related:
 ```
 {sample}STOCK\_Legend\_05{sample}
 
-* ???
+always available:
+
 * `series`
+
+series-related:
+
+* value
 * `open`
 * `high`
 * `low`
