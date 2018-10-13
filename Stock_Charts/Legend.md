@@ -41,7 +41,7 @@ plot1.legend.enabled(false);
 
 ## Title Text Format
 
-* [Title](../Common_Settings/Legend/Title_and_Separator)
+* [Title and Separator](../Common_Settings/Legend/Title_and_Separator)
 * [Tokens](../Common_Settings/Text_Formatters#string_tokens)
 * [Formatting Functions](../Common_Settings/Text_Formatters#formatting_functions)
 * {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api}
@@ -186,7 +186,7 @@ ohlc.legendItem().format(
 
 ## Custom Items
 
-* [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items)
+* [Custom Legend Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items)
 * {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
 
 ...
