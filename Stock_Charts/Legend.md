@@ -102,7 +102,7 @@ plot.legend().titleFormat(function() {
 
 The [Legend Items](../Common_Settings/Legend/Legend_Items) article explains how to configure legend items of all chart types, including Stock charts. In general, there is no difference, except for the available text format settings.
 
-AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information. For example, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
+AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly (?). For example, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
 
 To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
 
