@@ -104,7 +104,7 @@ In general, legend items of Stock charts are configured like legend items of oth
 
 AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information. For example, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
 
-To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – both series- and point-related.
+To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions). Please note that you can use both series- and point-related tokens / function fields.
 
 **1. Tokens**
 
