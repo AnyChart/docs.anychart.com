@@ -24,55 +24,64 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create a data table
     var dataTable = anychart.data.table();
     dataTable.addData([
-      ["2016-12-24", 511.53, 506.40],
-      ["2016-12-25", 512.53, 507.34],
-      ["2016-12-26", 511.83, 506.23],
-      ["2016-12-27", 511.22, 506.47],
-      ["2016-12-28", 510.35, 505.80],
-      ["2016-12-29", 510.53, 508.25],
-      ["2016-12-30", 511.43, 507.45],
-      ["2016-12-31", 511.50, 507.98],
-      ["2017-01-01", 511.32, 506.37],
-      ["2017-01-02", 511.70, 506.75]
+      ["2016-12-24", 511.53, 514.98, 505.79, 506.40],
+      ["2016-12-25", 512.53, 514.88, 505.69, 507.34],
+      ["2016-12-26", 511.83, 514.98, 505.59, 506.23],
+      ["2016-12-27", 511.22, 515.30, 505.49, 506.47],
+      ["2016-12-28", 510.35, 515.72, 505.23, 505.80],
+      ["2016-12-29", 510.53, 515.86, 505.38, 508.25],
+      ["2016-12-30", 511.43, 515.98, 505.66, 507.45],
+      ["2016-12-31", 511.50, 515.33, 505.99, 507.98],
+      ["2017-01-01", 511.32, 514.29, 505.99, 506.37],
+      ["2017-01-02", 511.70, 514.87, 506.18, 506.75]
     ]);
   
     // map the data
-    mapping1 = dataTable.mapAs({value: 1});
-    mapping2 = dataTable.mapAs({value: 2});
+    mapping = dataTable.mapAs(
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
+    );
 
     // create a stock chart
     var chart = anychart.stock();
 
-    // create a plot
-    var plot = chart.plot(0);
-   
-    // create two line series
-    plot.line(mapping1);
-    plot.line(mapping2);
+    // create two plots
+    var plot1 = chart.plot(0);
+    var plot2 = chart.plot(1);
 
-    // add a custom legend item 
-    plot.legend().itemsFormatter(function(legendItems) {
-      legendItems.push({
-        text: "/ Number of Series: " + plot.getSeriesCount() + " /",
-        iconEnabled: false,
-        fontColor: "#455a64",
-        fontWeight: 600,
-        fontStyle: "italic"
-      });
-      return legendItems;
-    });
-   
-    // set the chart title
-    chart.title("Standalone Legend in AnyStock");
+    // create two series: line and ohlc
+    plot1.line(mapping);
+    plot2.ohlc(mapping);
 
-    // set the container id
-    chart.container("container");
+    // disable the legend on both plots
+    plot1.legend(false);
+    plot2.legend(false);
+      
+    // set the chart container
+    chart.container(stage);
 
     // initiate drawing the chart
     chart.draw();
+
+    // create a standalone legend
+    var legend = anychart.standalones.legend();
+
+    // set the source of legend items
+    legend.itemsSource([plot1, plot2]);
+
+    // set the padding of the legend
+    legend.padding(10);
+
+    // set the container for the legend
+    legend.container(stage);
+
+    // draw the legend
+    legend.draw();
 });
 </script>
 </body>
