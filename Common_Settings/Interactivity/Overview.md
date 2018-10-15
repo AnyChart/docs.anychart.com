@@ -237,9 +237,9 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 ### Charts
 
-Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee{api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee{api} methods to work with rectangle marqee select.
+Use the {api:anychart.core.Chart#startSelectMarquee}startSelectMarquee(){api} and {api:anychart.core.Chart#cancelMarquee}cancelMarquee(){api} methods to work with rectangle marquee select.
 
-Use the {api:anychart.core.Chart#selectMarqueeFill}{api} and {api:anychart.core.Chart#selectMarqueeStroke}{api} methods to configure marqee appearance.
+Use the {api:anychart.core.Chart#selectMarqueeFill}selectMarqueeFill(){api} and {api:anychart.core.Chart#selectMarqueeStroke}selectMarqueeStroke(){api} methods to configure marquee appearance.
 
 Handle `"selectMarqueeStart"`, `'selectMarqueeChange'` and `'selectMarqueeFinish'` events {api:anychart.core.Chart#inMarquee}inMarquee{api} property to track marquee progress.
 

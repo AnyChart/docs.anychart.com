@@ -190,7 +190,7 @@ chart.curveFactor(0);
 
 ### Dropoffs
 
-A dropoff is a [flow](#flow) without a target [node](#node), which usually indicates losses. To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width.
+A dropoff is a [flow](#flows) without a target [node](#nodes), which usually indicates losses. To create a dropoff, add a [data](#data) row with `null` in the `to` field. In the `from` and `weight` fields, specify the name of the source node and the value of the dropoff, which defines its width.
 
 You can configure the following settings of dropoffs:
 

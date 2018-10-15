@@ -114,7 +114,7 @@ chart.insideLabelsOffset("-75%");
 
 ### Center Content
 
-You can place almost anything in the center of a Doughnut chart: e.g., a text label, a chart, a map. Use the {api:anychart.charts.Pie#center}center(){api} method, which provides the access to the {api:anychart.core.pie.Center}anychart.core.pie.Center{api} object.
+You can place almost anything in the center of a Doughnut chart: e.g., a text label, a chart, a map. Use the {api:anychart.charts.Pie#center}center(){api} method, which provides the access to the {api:anychart.core.ui.Center}anychart.core.ui.Center{api} object.
 
 #### Center Label
 

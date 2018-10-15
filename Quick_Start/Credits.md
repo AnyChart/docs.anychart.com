@@ -92,7 +92,7 @@ credits.text("Dashboard");
 
 ### License
 
-When you purchase a license to AnyChart you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
+When you purchase a license to AnyChart you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disabling) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
 
 ```
 anychart.licenseKey("YOUR-LICENSE-KEY");
