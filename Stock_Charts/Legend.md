@@ -237,9 +237,6 @@ var legend = anychart.standalones.legend();
 // set the source of legend items
 legend.itemsSource([plot1, plot2]);
 
-// set the padding of the legend
-legend.padding(10);
-
 // set the container for the legend
 legend.container(stage);
 
