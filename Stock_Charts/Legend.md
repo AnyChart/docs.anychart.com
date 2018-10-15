@@ -194,6 +194,8 @@ ohlc.legendItem().format(
 
 ## Custom Items
 
+(?) где отличие от дефолтной легенды? может, снести этот раздел?
+
 Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating fully custom legends. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
 
 To add a custom item, use the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
@@ -217,5 +219,24 @@ plot.legend().itemsFormatter(function(legendItems) {
 ```
 
 {sample}STOCK\_Legend\_08{sample}
+
+### Standalone Legend
+
+```
+// create a standalone legend
+var legend = anychart.standalones.legend();
+
+// set the source of legend items
+legend.itemsSource([plot1, plot2]);
+
+// set the padding of the legend
+legend.padding(10);
+
+// set the container for the legend
+legend.container(stage);
+
+// draw the legend
+legend.draw();
+```
 
 {sample}STOCK\_Legend\_09{sample}
