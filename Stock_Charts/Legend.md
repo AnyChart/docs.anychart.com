@@ -197,9 +197,10 @@ Stock charts, as well as all other chart types, allow adding custom legend items
 To add a custom item, combine {api:anychart.core.stock.Plot#legend}legend(){api} with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings of items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 (?) а где специфика?
-(?) про метод items() не упомниаю
+(?) про метод items() не упоминаю
+(?) в старой статье была стэндалон-легенда, чтобы показать, что автоматическая стэндалон-легенда в качестве источников имеет не чарты, а плоты
 
-In the following sample, a custom item showing the number of the series is added to the default legend:
+In the following sample, a custom item showing the number of series is added to the default legend:
 
 ```
 // add a custom legend item 
