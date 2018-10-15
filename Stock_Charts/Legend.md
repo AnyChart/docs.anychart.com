@@ -192,10 +192,14 @@ ohlc.legendItem().format(
 
 ## Custom Items
 
-* [Custom Legend Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items)
-* {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api}
+Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating a fully custom legend. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
 
-...
+To add a custom item, combine {api:anychart.core.stock.Plot#legend}legend(){api} with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings of items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+
+(?) а где специфика?
+(?) про метод items() не упомниаю
+
+In the following sample, a custom item showing the number of the series is added to the default legend:
 
 ```
 // add a custom legend item 
@@ -210,4 +214,5 @@ plot.legend().itemsFormatter(function(legendItems) {
   return legendItems;
 });
 ```
+
 {sample}STOCK\_Legend\_08{sample}
