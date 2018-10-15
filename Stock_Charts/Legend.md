@@ -74,7 +74,7 @@ plot.legend().titleFormat(
 
 **2. Formatting Functions**
 
-The {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method can be also combined with [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) and the following fields:
+The {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method can be also combined with and the following fields:
 
 * `dataIntervalUnit`
 * `dataIntervalUnitCount`
@@ -100,9 +100,9 @@ plot.legend().titleFormat(function() {
 
 ## Item Text Format
 
-The [Legend Items](../Common_Settings/Legend/Legend_Items) article explains how to configure legend items of all chart types, including Stock charts. In general, there is no difference, except for the available text format settings.
+To learn how to configure legend items, read the [Legend Items](../Common_Settings/Legend/Legend_Items) article. In general, there is no difference between AnyStock settings and common settings, but AnyStock supports some extra text formatting options.
 
-AnyStock legend items, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly (?). In particular, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
+Legend items of Stock charts, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly (?). In particular, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
 
 To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
 
@@ -131,10 +131,12 @@ plot.legend().itemsFormat(
 
 **2. Formatting Functions**
 
-In formatting functions, the following fields are always available (?):
+In formatting functions, the following fields are always available:
 
 * `series` – the series object, which allows accessing methods of the series
 * `x` – the date (X-value) of the current point
+
+(?) `seriesName` ни тут, ни в основной статье не привожу, хотя это поле тоже всегда доступно
 
 There are also series-specific fields: `value` ([Line](Series/Line)), `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
 
@@ -163,7 +165,7 @@ plot.legend().itemsFormat(function() {
 
 **2. Individual Items**
 
-Finally, you can format the text of an individual legend item: combine the {api:?entry=legendItem}legendItem(){api} method of the series with the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method and tokens or formatting functions. Read more: [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items).
+You can format the text of a legend item individually: combine the {api:?entry=legendItem}legendItem(){api} method of the series with the {api:anychart.core.utils.LegendItemSettings#format}format(){api} method and tokens or formatting functions. Read more: [Individual Legend Items](../Common_Settings/Legend/Individual_Legend_Items).
 
 In this case, even with tokens you can achieve enough flexibility to apply series-specific settings to a legend representing series of different types. For example, here are two series, Line and OHLC, and their legend items are configured individually with the help of different tokens:
 
@@ -192,9 +194,9 @@ ohlc.legendItem().format(
 
 ## Custom Items
 
-Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating a fully custom legend. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
+Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating fully custom legends. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
 
-To add a custom item, combine {api:anychart.core.stock.Plot#legend}legend(){api} with the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings of items are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
+To add a custom item, use the {api:anychart.core.ui.Legend#itemsFormatter}itemsFormatter(){api} method, which takes a function returning an array of items. The available settings are listed in {api:anychart.core.ui.Legend.LegendItemProvider}anychart.core.ui.Legend.LegendItemProvider{api}.
 
 (?) а где специфика?
 (?) про метод items() не упоминаю
@@ -217,3 +219,5 @@ plot.legend().itemsFormatter(function(legendItems) {
 ```
 
 {sample}STOCK\_Legend\_08{sample}
+
+{sample}STOCK\_Legend\_09{sample}
