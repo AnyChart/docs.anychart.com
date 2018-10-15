@@ -224,7 +224,7 @@ plot.legend().itemsFormatter(function(legendItems) {
 
 The [standalone legend](../Common_Settings/Legend/Standalone_Legend) is a [Standalone](../Dashboards/Standalones) – a building block, independent from the chart, that allows creating advanced data visualizations.
 
-One of the ways to create items for a standalone legend is calling the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method with an array of source items as a parameter. Normally, it takes an array of charts, which allows [binding one legend to multiple charts](../Common_Settings/Legend/Standalone_Legend#item_=_series_/_point).
+One of the ways to add items to a standalone legend is calling the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method with an array of source items as a parameter. Normally, it takes an array of charts, which allows [binding one legend to multiple charts](../Common_Settings/Legend/Standalone_Legend#item_=_series_/_point).
 
 In AnyStock, this method requires specifying an array of plots – thus, the legend is linked to **multiple plots**. Legend items, created automatically, represent the series on these plots.
 
