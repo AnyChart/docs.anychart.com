@@ -12,13 +12,17 @@
 
 ## Default Settings
 
-...
+By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend shows information about the points that are currently hovered over.
+
+The text of a legend item includes the name of a series and, depending on the series type, the value or values of the current point.
+
+The title of the legend, enabled by default, shows the date (X-value) of the current point. 
 
 {sample}STOCK\_Legend\_01{sample}
 
 ## Enabling / Disabling
 
-On Stock charts, the legend is enabled by default. To disable or enable it, pass `false` / `true` to the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
+In AnyStock, the legend is enabled by default. To disable or enable it, pass `false` / `true` to the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot or to the {api:anychart.core.ui.Legend#enabled}enabled(){api} method of the legend:
 
 ```
 // create two plots
