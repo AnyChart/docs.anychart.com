@@ -12,7 +12,7 @@ Please note that AnyStock legend, unlike any other, is bound to the **plot** (no
 
 By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend shows information about the points that are currently hovered over.
 
-The text of a legend item includes the name of a series and – depending on the series type – the value or values of the current point. The legend title, enabled by default, shows the date (X-value) of the current point or points. See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
+The text of a legend item includes the name of a series and – depending on the series type – the value or values of the current point. The legend title, enabled by default, shows the date (X-value (?)) of the current point or points. See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
 
 In the following sample, there is a Stock chart with two plots and two default legends:
 
