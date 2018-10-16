@@ -220,7 +220,9 @@ plot.legend().itemsFormatter(function(legendItems) {
 
 {sample}STOCK\_Legend\_08{sample}
 
-## Standalone Legend (?)
+## Standalone Legend
+
+(?) Это далеко не базовая фича, но тут как раз отличие от обычной легенды есть, а значит надо рассказывать, я щетаю. Да и посмотри как кратко вышло! Никаких подробностей, только то, что действительно отличается.
 
 The [standalone legend](../Common_Settings/Legend/Standalone_Legend) is a [Standalone](../Dashboards/Standalones) – a building block, independent from the chart, that allows creating advanced data visualizations.
 
