@@ -4,7 +4,7 @@
 
 ## Overview
 
-There are general settings that can be applied to legends of all chart types including AnyStock legend – see the [Common Settings: Legend](../Common_Settings/Legend/Overview) section. In this article, only special features of AnyStock legend are described: alternative default settings, extra text formatting options for the title and items, and so on. Read more in the sections below.
+There are general settings that can be applied to legends of all chart types including AnyStock legend – see the [Common Settings: Legend](../Common_Settings/Legend/Overview) section. In this article, only special features of AnyStock legend are described: alternative default settings, extra text formatting options for the title and items, and so on.
 
 Please note that AnyStock legend, unlike any other, is bound to the **plot** (not the chart). It is configured with the help of the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot and defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
 
@@ -12,7 +12,7 @@ Please note that AnyStock legend, unlike any other, is bound to the **plot** (no
 
 By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend shows information about the points that are currently hovered over.
 
-The text of a legend item includes the name of a series and – depending on the series type – the value or values of the current point. The legend title, enabled by default, shows the date (X-value (?)) of the current point or points. See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
+The text of a legend item includes the name of a series and, depending on the series type, the value or values of the current point. The legend title, enabled by default, shows the date (X-value (?)) of the current point or points. See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
 
 In the following sample, there is a Stock chart with two plots and two default legends:
 
