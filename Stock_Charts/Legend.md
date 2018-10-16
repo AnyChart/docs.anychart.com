@@ -228,7 +228,11 @@ One of the ways to add items to a standalone legend is calling the {api:anychart
 
 In AnyStock, this method requires specifying an array of plots – thus, the legend is linked to **multiple plots**. Legend items, created automatically, represent the series on these plots.
 
-In the sample below, there is a Stock chart with two series on different plots and a single legend, each legend item representing a series:
+**Note:** There might be multiple Stock charts in your data visualization. However, if you want to show their series in one legend, you still have to specify plots as the source of items, no the charts themselves.
+
+(?) Это я протестила, но не знаю, нужны ли такие подробности, насколько распространенный кейс ваще. А так все работает: сделала два чарта с двумя плотами и легенду, на которой показаны серии сразу отовсюду, при этом легенда "съедала" только плоты в качестве источников.
+
+The sample below shows how to work with the standalone legend in AnyStock. There is a chart with two series on different plots and a single standalone legend, each legend item representing a series:
 
 ```
 // create a standalone legend
