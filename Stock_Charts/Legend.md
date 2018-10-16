@@ -4,11 +4,11 @@
 
 ## Overview
 
-* [Legend](../Common_Settings/Legend/Overview)
-* {api:anychart.core.stock.Plot#legend}legend(){api}
-* {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api}
+There are general settings that can be applied to legends of all chart types including AnyStock legend – see the [Common Settings: Legend](../Common_Settings/Legend/Overview) section. In this article, only special features of AnyStock legend are described.
 
-...
+AnyStock legend, unlike any other, is bound to the **plot** (not the chart). It is configured with the help of the {api:anychart.core.stock.Plot#legend}legend(){api} method of the plot and defined as an instance of the {api:anychart.core.ui.Legend}anychart.core.ui.Legend{api} class.
+
+Special features include alternative default settings, extra text formatting options for the title and items, and so on – read more in the sections below.
 
 ## Default Settings
 
