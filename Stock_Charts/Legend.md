@@ -12,7 +12,9 @@ Special features include alternative default settings, extra text formatting opt
 
 ## Default Settings
 
-By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend shows information about the points that are currently hovered over.
+By default, each plot of a Stock chart has a legend, its items representing the series on the plot.
+
+In addition, the legend shows information about the points that are currently hovered over.
 
 The text of a legend item includes the name of a series and – depending on the series type – the value or values of the current point. The legend title, enabled by default, shows the date (X-value) of the current point or points. See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
 
@@ -48,7 +50,7 @@ In the sample below, there is a Stock chart with two plots. The legend of the fi
 
 ## Title Text Format
 
-The title of AnyStock legend is enabled by default: it shows the date (X-value) of the point that is currently hovered over. The title is configured like the legend title of any other chart type – see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
+The title of AnyStock legend is enabled by default: it shows the date (X-value (?)) of the point that is currently hovered over. The title is configured like the legend title of any other chart type – see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
 
 Also, there is an option available only for Stock charts: you can format the text of the title by using the {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method of the legend, combined with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
@@ -115,7 +117,7 @@ To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}i
 The following tokens can be applied to any legend:
 
 * `{%seriesName}` – the name of the series
-* `{%x}` – the date (X-value) of the current point
+* `{%x}` – the date (X-value (?)) of the current point
 
 You can use other tokens supported by the given series type: for example, the [Line](Series/Line) allows displaying the `{%value}` of the current point, and ([OHLC](Series/OHLC)) supports the `{%open}`, `{%high}`, `{%low}`, and `{%close}` tokens.
 
@@ -138,7 +140,7 @@ plot.legend().itemsFormat(
 In formatting functions, the following fields are always available:
 
 * `series` – the series object, which allows accessing methods of the series
-* `x` – the date (X-value) of the current point
+* `x` – the date (X-value (?)) of the current point
 
 (?) `seriesName` ни тут, ни в основной статье не привожу, хотя это поле тоже всегда доступно
 
