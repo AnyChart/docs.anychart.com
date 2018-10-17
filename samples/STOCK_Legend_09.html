@@ -61,7 +61,10 @@ anychart.onDocumentReady(function () {
     // disable the legend on both plots
     plot1.legend(false);
     plot2.legend(false);
-      
+
+    // set chart position to avoid overlap with the custom legend
+    chart.top(20);
+
     // set the chart container
     chart.container(stage);
 
