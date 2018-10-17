@@ -5,7 +5,16 @@
 
 ## Classes
 
+Here is the list of classes allowing you to work with data sets in AnyChart:
+
+* data set – {api:anychart.data.Set}anychart.data.Set{api}
+* data view – {api:anychart.data.View}anychart.data.View{api}
+* iterator – {api:anychart.data.Iterator}anychart.data.Iterator{api}
+
 ## Setting Data
+
+* {api:anychart.data.Set}anychart.data.Set{api}
+* {api:anychart.data#set}anychart.data.set(){api}
 
 ### Array of Arrays
 
@@ -21,7 +30,7 @@
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_02{sample}
 
 ### CSV String
 
@@ -29,10 +38,11 @@
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_03{sample}
 
 ### Mapping
 
+* {api:anychart.data.Set#mapAs}mapAs(){api}
 * здесь про view не писать
 * в других разделах использовать mapAs() для доступа к view, не линкуя его
 
@@ -45,6 +55,8 @@
 
 ## Accessing Rows
 
+* {api:anychart.data.Set}anychart.data.Set{api}
+* {api:anychart.data.View}anychart.data.View{api}
 * у ряда нет своего класса, но есть классы dataset и view
 * они позволяют работать с рядами и конкретными полями: dataset - ряд, view - поле + через view можно делать итерацию и поиск
 
