@@ -62,8 +62,12 @@ anychart.onDocumentReady(function () {
     plot1.legend(false);
     plot2.legend(false);
 
-    // set chart position to avoid overlap with the custom legend
-    chart.top(20);
+    /* set the position of the chart to prevent 
+    the standalone legend from overlapping it */
+    chart.top(25);
+
+    // set the chart title
+    chart.title("Standalone Legend in AnyStock")
 
     // set the chart container
     chart.container(stage);
