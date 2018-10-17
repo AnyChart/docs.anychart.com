@@ -10,9 +10,9 @@ Please note that AnyStock legend, unlike any other, is bound to the [plot](Chart
 
 ## Default Settings
 
-By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend shows information about the points that are currently hovered over.
+By default, each plot of a Stock chart has a legend, its items representing the series on the plot. In addition, the legend displays information about the points that are currently hovered over or, if none are hovered over, about the last points shown on the plot.
 
-The text of a legend item includes the name of a series and, depending on the series type, the value or values of the current point. The legend title, enabled by default, shows the date (X-value) of the current point (? когда мышь над плотом и первую отображенную дату на плоте когда нет). See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
+The text of a legend item includes the name of a series and, depending on the series type, the value or values of the current or last point. The legend title, enabled by default, shows the current or last date (X-value). See [Title Text Format](#title_text_format) and [Item Text Format](#item_text_format) sections to learn how to format the text of title and items.
 
 In the following sample, there is a Stock chart with two plots and two default legends:
 
@@ -46,7 +46,9 @@ In the sample below, there is a Stock chart with two plots. The legend of the fi
 
 ## Title Text Format
 
-The title of AnyStock legend is enabled by default: it shows the date (X-value) (? то же что выше) of the point that is currently hovered over. The title is configured like the legend title of any other chart type – see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
+The title of AnyStock legend is enabled by default: it shows the date (X-value) of the point that is currently hovered over or, if none is hovered over, about the last date shown on the plot.
+
+The title is configured like the legend title of any other chart type – see the [Title and Separator](../Common_Settings/Legend/Title_and_Separator) article to learn more.
 
 Also, there is an option available only for Stock charts: you can format the text of the title by using the {api:anychart.core.ui.Legend#titleFormat}titleFormat(){api} method of the legend, combined with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions).
 
@@ -104,7 +106,7 @@ plot.legend().titleFormat(function() {
 
 To learn how to configure legend items, read the [Legend Items](../Common_Settings/Legend/Legend_Items) article. In general, there is no difference between AnyStock settings and common settings, but AnyStock supports some extra text formatting options.
 
-Legend items of Stock charts, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly. In particular, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over.
+Legend items of Stock charts, like legend items of other multiple-series charts, represent series, but they can also show point-related information, which is updated on-the-fly. In particular, the default item text includes the name of the series and the value (or values) of its point that is currently hovered over or, if none is hovered over, of the last point shown on the plot.
 
 To format the text of items, call the {api:anychart.core.ui.Legend#itemsFormat}itemsFormat(){api} method with either [tokens](../Common_Settings/Text_Formatters#string_tokens) or [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) – please note that both series- and point-related tokens / function fields are available.
 
@@ -137,8 +139,6 @@ In formatting functions, the following fields are always available:
 
 * `series` – the series object, which allows accessing methods of the series
 * `x` – the date (X-value) of the current point
-
-(?) `seriesName` ни тут, ни в основной статье не привожу, хотя это поле тоже всегда доступно - МОЖНО УПОМЯНУТЬ
 
 There are also series-specific fields: `value` ([Line](Series/Line)), `{%open}`, `high`, `low`, and `close` ([OHLC](Series/OHLC)), and so on.
 
@@ -195,9 +195,6 @@ ohlc.legendItem().format(
 
 
 ## Custom Items
-
-(?) где отличие от дефолтной легенды? может, снести этот раздел?
-ОТЛИЧИЙ НЕТ, НО ДАВАЙ ОСТАВИМ
 
 Stock charts, as well as all other chart types, allow adding custom legend items to the default legend or creating fully custom legends. Read more in the [Custom Items](../Common_Settings/Legend/Individual_Legend_Items#custom_items) section.
 
