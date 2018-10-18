@@ -44,7 +44,7 @@ anychart.onDocumentReady(function () {
     
     // text formatter
     var labels = chart.labels();
-    labels.format(function (){
+    labels.format(function() {
 return((this.getData("value"))+"(of "+this.getStat("sum")+")");
     });
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AGST Scales 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+      html, body, #container {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+      }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+var chart, data;
+anychart.onDocumentReady(function () {
+    dataSet = anychart.data.set([
+        {x: "Soprano", value: 1.1},
+        {x: "Alto", value: 0.1},
+        {x: "Tenor", value: 2.5},
+        {x: "Bass", value: 1.8}
+    ]);
+
+    sortedData = dataSet.mapAs().sort('value', 'asc');
+
+    chart = anychart.column(sortedData);
+
+    chart.yGrid(true);
+
+    // set the chart title
+    chart.title("Ticks Array: Match the Data");
+
+    // set the container and draw a chart
+    chart.container("container").draw();
+
+    // create an empty array
+    var ticksArray = [];
+    
+    // get data point value from the data set
+    // and populate the array
+    for (i=0;i<sortedData.getRowsCount();i++){
+      ticksArray[i] = sortedData.get(i, 'value');
+    }
+    // set the populated array as ticks array
+    chart.yScale().ticks().set(ticksArray);
+
+});
+
+</script>
+</body>
+</html>

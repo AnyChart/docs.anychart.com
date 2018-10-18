@@ -80,7 +80,7 @@ anychart.onDocumentReady(function () {
     // set the range of points shown on the chart
     chart.selectRange("2015-12-26", "2015-12-30");
 
-    // display the information about shown points
+    // display information about shown points
     showSelected(); 
 
     /* listen to changing the shown range of points
@@ -96,8 +96,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-/* a function for displaying the information
-about shown points */
+/* a function for displaying information about shown points */
 function showSelected(){
 
   // create a table for displaying information
@@ -121,10 +120,10 @@ function showSelected(){
   // get the table for displaying information
   var tableInfo = document.getElementById("tableInfo");
 
-  // display the information about shown points in the table
+  // display information about shown points in the table
   while (iterator.advance()) {
     var key = iterator.getKey();
-    var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
+    var date = anychart.format.dateTime(key, "dd.MM.yyyy");
     var low = iterator.get("low");
     var high = iterator.get("high");
     var newRow = document.createElement("tr");

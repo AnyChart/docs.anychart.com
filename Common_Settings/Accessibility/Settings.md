@@ -8,7 +8,7 @@ The accessibility support is enabled by default. It means that you do not need t
 
 The default accessibility mode is [Chart Elements](#chart_elements_mode): a user interacts with a chart and its elements, navigating them with a keyboard. When the mode is set to [Data Table](#data_table_mode), an invisible readable table is generated, its cells representing the data points of the chart. The interaction between a user and a chart is performed through this table.
 
-## Enable/Disable
+## Enabling / Disabling
 
 To make a chart accessible for everyone, you need to enable the {api:anychart.core.Chart#a11y}a11y(){api} method of the chart or series, which means "accessibility". Accessibility support is enabled by default, but in case you have switched it off and need to enable it back again, use {api:anychart.core.utils.ChartA11y#enabled}enable(){api}.
 

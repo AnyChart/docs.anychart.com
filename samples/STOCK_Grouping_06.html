@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -106,7 +106,7 @@ anychart.onDocumentReady(function () {
     ]);
 
     // put the current data interval in the chart title
-    chart.listen("selectedrangechange", function (){
+    chart.listen("selectedrangechange", function() {
 // Get the current data interval and use the title.
 chart.title("The current level is " + grouping.getCurrentDataInterval().count + " " + grouping.getCurrentDataInterval().unit + "s");
     });

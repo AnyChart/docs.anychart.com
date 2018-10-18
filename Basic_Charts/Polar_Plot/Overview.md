@@ -7,6 +7,20 @@ A polar chart is a [scatter chart](../Scatter_Plot/Overview) drawn in the polar 
 
 This article explains how to create and configure polar charts. To find out which series can be drawn on a polar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
+## Modules
+
+Polar charts require adding the [Core](../../Quick_Start/Modules#core) and [Polar](../../Quick_Start/Modules#polar) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-polar.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a polar chart, use the {api:anychart#polar}anychart.polar(){api} chart constructor.
@@ -104,11 +118,42 @@ chart.xAxis().stroke({
 
 To learn about scales in general, see the [Scales](../../Axes_and_Grids/Scales) section.
 
-```
+Polar charts have one special setting that changes how polar chart behave: by default polar plot is an implementations of a standard polar coordinate system where both x and y coordinates are considered numbers, this mode is usually used for mathematical purposes.
+
+In this case you usually need to set minium and maximum values, as well as tick intervals:
 
 ```
+// set the maximum value of the x-scale
+chart.xScale().maximum(360);
+
+// configure Y scale
+chart.yScale().minimum(0).maximum(600);
+chart.yScale().ticks().interval(100);
+```
+
+Here is a sample of such plot with a cardioid:
 
 {sample}BCT\_Polar\_Chart\_05{sample}
+
+But in some data visualization cases it may be useful to work with polar chart is a slightly different way that resembles, in a way, [Radar Charts](../Radar_Plot). This is a case when X coordinates are texts, not numbers. To turn this mode of use the {api:anychart.charts.Polar#sortPointsByX}sortPointsByX(){api} method and set X-scale type to ordinal:
+
+```
+// set the type of the x-scale
+chart.xScale("ordinal");
+
+// enable sorting points by x
+chart.sortPointsByX(true);
+```
+
+With these setting you can use:
+- [Polygon Chart](Polygon_Chart)
+- [Polyline Chart](Polyline_Chart)
+- [Column Chart](Column_Chart)
+- [Range Column Chart](Range_Column_Chart)
+
+And create charts like this one:
+
+{sample}BCT\_Polar\_Chart\_06{sample}
 
 ## Grids
 
@@ -142,7 +187,7 @@ chart.yGrid().stroke({
 });
 ```
 
-{sample}BCT\_Polar\_Chart\_06{sample}
+{sample}BCT\_Polar\_Chart\_07{sample}
 
 ### Cell Color
 
@@ -156,11 +201,11 @@ polar1.xGrid().palette(["gray 0.05", "gray 0.1"]));
 polar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 ```
 
-{sample}BCT\_Polar\_Chart\_07{sample}
+{sample}BCT\_Polar\_Chart\_08{sample}
 
 ## Stacked Polar Charts
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 You can create stacked polar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 

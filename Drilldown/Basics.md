@@ -2,7 +2,7 @@
 
 ## Overview
 
-Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](../Common_Settings/Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](../Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked.
+Creating a chart with drilldown in AnyChart is very easy and can be implemented using so-called [event listeners](../Common_Settings/Event_Listeners) and amazingly {api:anychart}flexible API{api} and [data model](../Working_with_Data/Overview). The very minimum you need is to create a chart, feed it proper data and then tell chart what to do when the point is clicked on.
 
 ## Step by Step Guide
 
@@ -59,7 +59,7 @@ chart.container('container').draw();
 
 ### Implement Drilldown
 
-When chart has the data all that is left to do for us is to tell chart what to do when a point (single chart element, a column in this case) is clicked:
+When chart has the data all that is left to do for us is to tell chart what to do when a point (single chart element, a column in this case) is clicked on:
 
 ```
 // when a 'pointClick' event happens

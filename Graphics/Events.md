@@ -65,7 +65,7 @@ Try this sample to see how it works:
 
 To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation()}stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.
 
-The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
+The next sample is the modification of the first sample again, now the propgation is stopped and layer doesn't get a "click" event when text is clicked on, however, if you click anywhere else, the event is catched and color of the text changes. Notice that is you resume clicking the text, counter increases but the color remains the same.
 
 ```
 // Adds an event listener to a text
@@ -97,7 +97,7 @@ Besides all mentioned, there are also {api:anychart.graphics.vector.Stage.EventT
 In the following sample there is a text element of some width and height. Each time the stage is resized, width and height of this element is recounted
 
 ```
-stage.listen("stageresize", function (){
+stage.listen("stageresize", function() {
     var w = stage.width()-300;
     textObject.width(w);
     var h = textObject.height();
@@ -111,11 +111,11 @@ stage.listen("stageresize", function (){
 The following samples demonstrates the time between rendering start and finish. The "renderstart" and "renderfinish" methods are listened to:
 
 ```
-stage.listen("renderstart", function (){
+stage.listen("renderstart", function() {
     start = (new Date()).getTime();
 });
 
-stage.listenOnce("renderfinish", function (){
+stage.listenOnce("renderfinish", function() {
     finish = (new Date()).getTime();
     var labelBg = stage.rect();
     label = stage.text(130,130);

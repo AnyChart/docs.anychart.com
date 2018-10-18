@@ -5,7 +5,7 @@
 
 In AnyChart, you always work with a series, no matter what chart type you create. It is the series type that determines what (and how) is drawn on a chart. Please note that it can be changed on-the-fly: [Series Type](Series_Type).
 
-Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
+Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multiple-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
 
 However, despite all the differences, many settings are configured in the same way for all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
@@ -62,11 +62,11 @@ series3.selected().stroke("#aeb404", 4, "10 5",  "round");
 
 ## Markers
 
-{api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
+{api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multiple-series chart more distinguishable.
 
 All chart types allow configuring markers: both on a whole series and in individual points. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only on hover and select). On the other series a few custom settings are added:
+In the following sample, there are two Line series. On one of them you can see how markers look by default (they are visible only when they are hovered over or selected). On the other series a few custom settings are added:
 
 ```
 // enable and configure markers on the first series
@@ -126,7 +126,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart individually.
+A tooltip is a text box displayed when a point on a chart is hovered over (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multiple-series chart individually.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -156,32 +156,22 @@ series2.tooltip().format("Manager: {%categoryName} \nSales: ${%value}");
 
 ## Legend
 
-A legend is a table on a chart listing and explaining the symbols and colors used there and displaying additional information that helps user to understand the chart. This element is supported by all charts in AnyChart: it is turned off by default, but can be enabled and, if needed, configured. You can customize the title, position, visual style, legend tooltips and add some other perks.
+A legend is a part of the chart that lists and explains its elements, making it easier to read and understand. The legend and its items are fully customizable: you can either modify any setting of the default legend or create a custom legend from scratch.
 
-For more information, read this article: [Legend](../Common_Settings/Legend).
+Most chart types require you to enable the legend manually. But there are some exceptions, for example the following types: [Pie](Pie_Chart), [Doughnut](Doughnut_Chart), [Funnel](Funnel_Chart), [Pyramid](Pyramid_Chart), [Venn](Venn_Diagram), [Waterfall](Waterfall_Chart).
 
-The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
+The [source of legend items](../Common_Settings/Legend/Basic_Settings#source) and their [default interactivity](../Common_Settings/Legend/Basic_Settings#default_interactivity) also depend on the chart type. As a rule, when you click on a legend item of a multiple-series chart, the series of the chart it represents is shown / hidden, and when you hover over an item, the hover state of the series is enabled. As for single-series chart types, their legend items represent points, and the behavior of the legend varies with the type.
+
+For more information, read this section: [Legend](../Common_Settings/Legend/Overview).
+
+The following sample shows a multiple-series Column chart with a default legend enabled. As you can see, it displays names and colors of the series:
 
 ```
 // enable the legend
-var legend = chart.legend();
-legend.enabled(true);
+chart.legend(true);
 ```
 
 {sample}BCT\_General\_Settings\_08{sample}
-
-In this sample, there is a single-series Column chart and a custom legend displaying the list of categories:
-
-```
-// enable the legend
-var legend = chart.legend();
-legend.enabled(true);
-
-// set the source of legend items
-legend.itemsSourceMode("categories");
-```
-
-{sample}BCT\_General\_Settings\_09{sample}
 
 ## Axes and Scales
 
@@ -189,7 +179,7 @@ In AnyChart axes are used to control grids, axes labels, lines, and tick marks. 
 
 Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids).
 
-In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
+In the sample below, there is a multiple-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 
 ```
 // configure the main y-scale
@@ -218,11 +208,11 @@ series1.yScale(yScale1);
 series2.yScale(yScale2);
 ```
 
-{sample}BCT\_General\_Settings\_10{sample}
+{sample}BCT\_General\_Settings\_09{sample}
 
 ### Stacking
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked/Overview).
 
@@ -232,57 +222,57 @@ All charts with points looking like bars (Bar, Column, and related types) allow 
 
 ## Interactivity
 
-You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity) article explains how to change the defaults and create custom interactivity settings.
+You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers over a point, it is highlighted, and a tooltip is shown; clicking on a legend item usually hides / shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity/Overview) section explains how to change the defaults and create custom interactivity settings.
 
 ## Events
 
-To make your chart more interactive, you can listen to such events as clicking, hovering, or unhovering (a chart or a point) and others. 
+To make your chart more interactive, you can listen to such events as clicking, moving the mouse over or off the chart or a chart point, and others. 
 
 See the [Event Listeners](../Common_Settings/Event_Listeners) to learn how to work with events.
 
-In this sample, event listeners are used to change the chart title on hovering, selecting, and double-clicking a point and to customize the cursor style on hovering and unhovering the chart:
+In this sample, event listeners are used to change the chart title when a point is hovered over, selected, and double-clicked on. Also, when the user moves the mouse over and off the chart, the cursor style is customized.
 
 ```
-// create an event listener for hovering the chart
+// create an event listener for the mouseOver event
 chart.listen("mouseOver", function(e){
-  // change the cursor style on hovering the chart
+  // change the cursor style
   document.body.style.cursor = "pointer";
 });
 
-// create an event listener for unhovering the chart
+// create an event listener for the mouseOut event
 chart.listen("mouseOut", function(e){
-  // set the default cursor style on unhovering the chart
+  // set the default cursor style
   document.body.style.cursor = "auto";
 });
 
-// create an event listener for hovering points
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(e){
-  // get the category the hovered points belong to
+  // get the category the point belong to
   var name = e.point.getStat("categoryName");
-  // change the chart title on hovering points
+  // change the chart title
   chart.title(name);
 });
 
-// create an event listener for selecting points
+// create an event listener for the pointsSelect event
 chart.listen("pointsSelect", function(e){
-  // get the value of the selected points
+  // get the value of the point
   var value = e.point.getStat("value");
-  // change the chart title on selecting points
+  // change the chart title
   chart.title("$" + value);
 });
 
-// create an event listener for double-clicking a point
+// create an event listener for the pointDblClick event
 chart.listen("pointDblClick", function(e){
-  // get the category the double-clicked point belongs to
+  // get the category the point belongs to
   var name = e.point.getStat("categoryName");
-  // get the value of the double-clicked point
+  // get the value of the point
   var value = e.point.getStat("value");
-  // change the chart title on double-clicking a point
+  // change the chart title
   chart.title(name + ": $" + value);
 });
 ```
 
-{sample}BCT\_General\_Settings\_11{sample}
+{sample}BCT\_General\_Settings\_10{sample}
 
 ## Vertical Charts
 

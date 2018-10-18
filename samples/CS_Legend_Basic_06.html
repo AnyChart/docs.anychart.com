@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Legend Basic 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id = "addItemButton" onclick="addItem()">Add Item</button>
+<button id = "removeItemButton" onclick="removeItem()">Remove Item</button>  
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    data = [
+      {x: "John Doe", value: 1},
+      {x: "Richard Roe", value: 1},
+      {x: "Larry Loe", value: 1},
+      {x: "Marta Moe", value: 1},
+      {x: "Jane Poe", value: 1},
+      {x: "Norma Noe", value: 1},
+      {x: "William Woe", value: 1}
+    ];
+
+    newData = data.slice(0, 4);
+
+    // create a chart and set the data
+    chart = anychart.pie(newData);
+
+    // set the chart title
+    chart.title("Legend: Size (Expandable)\n\n" +
+                "Max Height = 30%, Max Width = 50%");
+
+    // set the maximum height and width of the legend
+    chart.legend().maxHeight("30%");
+    chart.legend().maxWidth("50%");
+
+    // set the layout of the legend
+    chart.legend().itemsLayout("horizontal-expandable")
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// add items to the chart
+function addItem() {
+  newData = newData.concat(data[newData.length]);
+  chart.data(newData);
+  if (newData.length == data.length) {
+    document.getElementById("addItemButton").disabled = true;
+  }
+  document.getElementById("removeItemButton").disabled = false;
+}
+
+// remove items from the chart
+function removeItem() { 
+  newData = newData.slice(0, newData.length - 1);
+  chart.data(newData);
+  if (newData.length == 1) {
+    document.getElementById("removeItemButton").disabled = true;
+  }
+  document.getElementById("addItemButton").disabled = false;
+}
+</script>
+</body>
+</html>

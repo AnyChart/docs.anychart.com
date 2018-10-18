@@ -9,6 +9,7 @@ Funnel Charts are so-called Accumulation Charts and they show percentage ratio. 
 This article explains how to create a basic Funnel Chart as well as configure settings that are specific to the type. The table below gives a brief overview of the Funnel Chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Funnel}anychart.charts.Funnel{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -32,6 +33,20 @@ This article explains how to create a basic Funnel Chart as well as configure se
 <tr><td></td><td>[Chartopedia: Funnel Chart](https://www.anychart.com/chartopedia/chart-types/funnel-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Funnel chart requires adding the [Core](../Quick_Start/Modules#core) and [Pyramid and Funnel](../Quick_Start/Modules#pyramid_and_funnel) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-pyramid-funnel.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -69,7 +84,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Head
 
-A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage value) and is demonstrated by areas' size. To set the width of the head (in pixels or in percent), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
+A head, or base, is the upper part of a Funnel, where the difference between areas is significant (in percentage terms) and is demonstrated by areas' size. To set the width of the head (in pixels or as a percentage), use the {api:anychart.charts.Funnel#baseWidth}baseWidth(){api} method:
 
 ```
 // set the base width
@@ -214,7 +229,7 @@ chart.overlapMode("allowOverlap");
 
 ### Labels and Tooltips (Text)
 
-For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered.
+For text [labels](../Common_Settings/Labels), font settings and [text formatters](../Common_Settings/Text_Formatters) are available. The same settings can be applied to [tooltips](../Common_Settings/Tooltip) - text boxes displayed when chart points are hovered over.
 
 #### Tokens
 
@@ -244,7 +259,7 @@ var chart = anychart.funnel(data);
 chart.labels().format("{%x}: {%yPercentOfTotal}%");
 
 // configure tooltips
-chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Funnel\_Chart\_08{sample}
@@ -274,7 +289,7 @@ chart.labels().useHtml(true);
 chart.tooltip().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 50)
     return "<span style='color:#dd2c00;font-weight:bold'>" +
@@ -283,15 +298,15 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
 var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
   if (percentOfTotal > 50)
     return "<span style='font-size:18'>" +
            percentOfTotal.toFixed(1) + "% (" +
-           this.value + ")</span><br></br><br>" +
+           this.value + ")</span><br><br>" +
            this.getData("custom_field");
   return percentOfTotal.toFixed(1) + "% (" + this.value +
-         ")<br></br><br></br>" + this.getData("custom_field");
+         ")<br><br>" + this.getData("custom_field");
 });
 ```
 

@@ -37,7 +37,7 @@ anychart.onDocumentReady(function () {
     chart.data(data, "as-table");
 
     // get both statistic values when rendered
-    chart.listen("chartdraw", function (){
+    chart.listen("chartdraw", function() {
 deviation = chart.getStat("pertChartCriticalPathStandardDeviation");
 duration = chart.getStat("pertChartProjectDuration");
 chart.title("The critical path duration makes " + duration.toFixed(2) + 

@@ -3,13 +3,13 @@
 
 ## Overview
 
-A 3D Stacked Bar Chart is a multi-series 3D Bar Chart that displays the trend of the value each series contributes over time or categories.
+A 3D Stacked Bar Chart is a multiple-series 3D Bar Chart that displays the trend of the value each series contributes over time or categories.
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a 3D Stacked Bar Chart, create a multi-series [3D Bar Chart](../../3D/Bar_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
+To build a 3D Stacked Bar Chart, create a multiple-series [3D Bar Chart](../../3D/Bar_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart

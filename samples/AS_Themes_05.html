@@ -33,7 +33,7 @@ anychart.onDocumentReady(function () {
       "defaultXAxisSettings": {
 "labels": {
   // make all x labels 3 symbols long
-  "format": function (){
+  "format": function() {
     var value = this.value;
     value = value.substr(0, 3);
     return value
@@ -68,7 +68,7 @@ anychart.onDocumentReady(function () {
   "scale": 2,
   "orientation": "left",
   "labels": {
-    "format": function (){
+    "format": function() {
       return "$"+this.value
     }
   }
@@ -79,7 +79,7 @@ anychart.onDocumentReady(function () {
   "scale": 1,
   "drawLastLabel": false,
   "labels": {
-    "format": function (){
+    "format": function() {
       return this.value + "%"
     }
   }

@@ -4,6 +4,20 @@
 
 A linear gauge is visual representation of a measuring device with a horizontal or vertical scale and a pointer or multiple pointers indicating particular values. The scale is usually color zoned, which helps to see what range the value of interest falls in. Linear gauges can represent thermometers, radio scales, battery indicators, rulers, and any other devices with straight line-shaped scales.
 
+## Modules
+
+The Linear Gauge requires adding the [Core](../Quick_Start/Modules#core) and [Linear Gauge](../Quick_Start/Modules#linear_gauge) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-linear-gauge.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Basics
 
 To create all types of linear gauges, you can use a basic constructor: {api:anychart.gauges#linear}linear(){api}. Also, AnyChart supports three special constructors with presets of tank, led, and thermometer gauges: {api:anychart.gauges#tank}tank(){api}, {api:anychart.gauges#led}led(){api}, {api:anychart.gauges#thermometer}thermometer(){api}. These presets define the visual style of a gauge and the type of its pointer (see the [Pointers](#pointers) section below).
@@ -102,41 +116,52 @@ axisRight.scale(cScale);
 
 The sample below shows a basic horizontally oriented linear gauge with three color zones:
 
-{sample :height 200}GAUGE\_Linear\_04{sample}
-
 ```
 // create a color scale
 var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
-    [
-            {
-                from: 0,
-                to: 25,
-                color: ['#D81E05', '#EB7A02']
-            },
-            {
-                from: 25,
-                to: 50,
-                color: ['#EB7A02', '#FFD700']
-            },
-            {
-                from: 50,
-                to: 75,
-                color: ['#FFD700', '#CAD70b']
-            },
-            {
-                from: 75,
-                to: 100,
-                color: ['#CAD70b', '#2AD62A']
-            }
-    ]
+  [
+    {
+      from: 0,
+      to: 25,
+      color: ['#D81E05', '#EB7A02']
+    },
+    {
+      from: 25,
+      to: 50,
+      color: ['#EB7A02', '#FFD700']
+    },
+    {
+      from: 50,
+      to: 75,
+      color: ['#FFD700', '#CAD70b']
+    },
+    {
+      from: 75,
+      to: 100,
+      color: ['#CAD70b', '#2AD62A']
+    }
+  ]
 );
 
 // create a Scale Bar
 var scaleBar = gauge.scaleBar(0);
 
-// use the color scale (defined earlier) as the color scale of the Scale Bar
+// use the color scale as the color scale of the Scale Bar 
 scaleBar.colorScale(scaleBarColorScale);
 ```
+
+{sample :height 200}GAUGE\_Linear\_04{sample}
+
+Also, you can customize the height of the scale bar in different points by using the {api:anychart.core.linearGauge.ScaleBar#points}points(){api} method and specifying the relative height of three control points using {api:anychart.core.linearGauge.ScaleBar.ControlPoint}ControlPoint{api} object:
+
+```
+// set the relative height of the control points of the scale bar
+scaleBar.points([
+    {height: 1, left: 1, right: 0}
+]);
+```
+
+{sample :height 200}GAUGE\_Linear\_05{sample}
 
 ## Pointers
 
@@ -144,7 +169,7 @@ To add a pointer to a linear gauge, the {api:anychart.charts.LinearGauge#addPoin
 
 In the following sample, there is a tank gauge with tank, marker, and two bar pointers: 
 
-{sample}GAUGE\_Linear\_05{sample}
+{sample}GAUGE\_Linear\_06{sample}
 
 Please note that you can bind pointers to particular values in the data set:
 

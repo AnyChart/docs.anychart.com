@@ -143,9 +143,9 @@ chart.xScroller().maxHeight(35);
 
 The scroll bar thumbs can be adjusted too. You change their look, dimensions or enable/disable them. 
  - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enables and disables thumbs.
- - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered.
+ - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered over.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}fill(){api} and {api:anychart.core.ui.Scroller.Thumbs#stroke}stroke(){api} color thumbs in the default state.
- - {api:anychart.core.ui.Scroller.Thumbs#hovered}hovered(){api} to color thumbs in hovered state.
+ - {api:anychart.core.ui.Scroller.Thumbs#hovered}hovered(){api} to color thumbs in the hover state.
 
 ```
 // adjusting the thumbs behavior and look

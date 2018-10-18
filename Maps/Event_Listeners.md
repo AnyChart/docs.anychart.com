@@ -53,7 +53,7 @@ var func_listen = function(e){
 // add a listener
 map.listen('mouseOver', func_listen);
 
-map.listenOnce('click',function (){
+map.listenOnce('click',function() {
     //adding an unlistener 
     map.unlisten('mouseOver', func_listen);
 });
@@ -61,6 +61,6 @@ map.listenOnce('click',function (){
 
 {sample}Maps\_Events\_02{sample}
 
-This sample can be modified: you can add an extra field to the map data which would contain a specific URL, so each region will redirect to different pages when double-clicked.
+This sample can be modified: you can add an extra field to the map data which would contain a specific URL, so each region will redirect to different pages when double-clicked on.
 
 Look the main [Event Listener article](../Common_Settings/Event_Listeners) to learn more about the listeners.

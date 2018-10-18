@@ -192,7 +192,7 @@ Sample with this configuration is below
 
 ## Samples
 
-As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (full list of all the methods and parameters can be found in {api:anychart}API{api}).
+As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (the full list of all the methods and parameters can be found in {api:anychart}API{api}).
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -420,45 +420,49 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
 ```
-// set intervals
+// set interval of default y scale
 chart.yScale().ticks()
   .interval(100000);
 
-// custom y scale
-var newScale = anychart.scales.linear();
-newScale
+// settings for custom y scale
+
+var newYScale = anychart.scales.linear();
+newYScale
   .minimum(0)
   .maximum(100)
   .ticks()
     .interval(10);
-extraYScale.minorTicks()
+newYScale.minorTicks()
   .interval(2);
 
 // y axes settings
 chart.yAxis().title()
-  .text('Basic Y Axis');
+  .text("Basic Y Axis");
 chart.yAxis(1)
-  .orientation('right')
-  .scale(newScale)
+  .orientation("right")
+  .scale(newYScale)
   .title()
-    .text('Extra Y Axis');
+    .text("Extra Y Axis");
+  .minorTicks()
+    .enabled(true);
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
-  // set intervals
+  // set interval of default y scale
   yScale: {ticks: 
     {interval: 100000}},
   
-  // custom y scale
-  scales: {"newScale": { 
-    type: "linear",
-    minimum: 0,
-    maximum: 100,
-    ticks: {
-      interval: 10},
+  // settings for custom y scale
+  scales: [ {}, {},
+    {                            
+    type: "linear",              
+    minimum: 0,                  
+    maximum: 100,                
+    ticks: {                     
+      interval: 10},             
     minorTicks: {
-      interval: 2} }},
+      interval: 2} }],
   
   // y axes settings
   yAxes: [{
@@ -467,7 +471,9 @@ chart.yAxis(1)
     orientation: "right",
     scale: "newScale",
     title:{
-      text: "Extra Y Axis"}}],
+      text: "Extra Y Axis"},
+      minorTicks: {
+        enabled: true} }],
 ```
 </td>	
 </tr>

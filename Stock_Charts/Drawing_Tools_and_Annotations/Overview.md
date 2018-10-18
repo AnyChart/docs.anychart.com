@@ -25,7 +25,7 @@ A number of settings can be applied to any annotation regardless its type. For e
 
 ## Annotation Types
 
-Here is a full list of annotations available in AnyStock (with links to the articles explaining how to configure them):
+Here is the full list of annotations available in AnyStock (with links to the articles explaining how to configure them):
 
 ### Fibonacci Tools
 

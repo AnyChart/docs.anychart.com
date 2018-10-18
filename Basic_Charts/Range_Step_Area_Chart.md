@@ -10,6 +10,7 @@ Step charts are used when it is necessary to highlight the irregularity of chang
 The Range Step Area and Range Area chart types share almost all the settings, so this article explains just how to create a basic Range Step Area chart and configure its only special setting - step direction. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Step Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) / [Base](../Quick_Start/Modules#base)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeStepArea}anychart.core.cartesian.series.RangeStepArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -36,6 +37,26 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td></td><td>[Chartopedia: Range Step Area Chart](https://www.anychart.com/chartopedia/chart-types/range-steplinearea-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Range Step Area chart requires adding the [Core](../Quick_Start/Modules#core) and [Basic Cartesian](../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ##Quick Start
 

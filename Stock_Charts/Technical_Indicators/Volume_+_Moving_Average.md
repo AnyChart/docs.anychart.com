@@ -4,7 +4,7 @@
 
 A Volume + Moving Average indicator is used in charts and technical analysis. It refers to the average volume of a security, commodity, or index constructed in a period as short as a few minutes or as long as several years and showing trends for the latest interval.
 
-Mathematical description of the indicator: [Volume + Moving Average Mathematical Description](Mathematical_Description#volume_+_moving_average).
+Mathematical description of the indicator: [Volume + Moving Average Mathematical Description](Mathematical_Description#volume\_+\_moving\_average).
 
 ## Adding indicator
 

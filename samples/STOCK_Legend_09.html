@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Legend 09"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
+    // create a data table
+    var dataTable = anychart.data.table();
+    dataTable.addData([
+      ["2016-12-24", 511.53, 514.98, 505.79, 506.40],
+      ["2016-12-25", 512.53, 514.88, 505.69, 507.34],
+      ["2016-12-26", 511.83, 514.98, 505.59, 506.23],
+      ["2016-12-27", 511.22, 515.30, 505.49, 506.47],
+      ["2016-12-28", 510.35, 515.72, 505.23, 505.80],
+      ["2016-12-29", 510.53, 515.86, 505.38, 508.25],
+      ["2016-12-30", 511.43, 515.98, 505.66, 507.45],
+      ["2016-12-31", 511.50, 515.33, 505.99, 507.98],
+      ["2017-01-01", 511.32, 514.29, 505.99, 506.37],
+      ["2017-01-02", 511.70, 514.87, 506.18, 506.75]
+    ]);
+  
+    // map the data
+    mapping = dataTable.mapAs(
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
+    );
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create two plots
+    var plot1 = chart.plot(0);
+    var plot2 = chart.plot(1);
+
+    // create two series: line and ohlc
+    plot1.line(mapping);
+    plot2.ohlc(mapping);
+
+    // disable the legend on both plots
+    plot1.legend(false);
+    plot2.legend(false);
+
+    /* set the position of the chart to prevent 
+    the standalone legend from overlapping it */
+    chart.top(25);
+
+    // set the chart title
+    chart.title("Standalone Legend in AnyStock")
+
+    // set the chart container
+    chart.container(stage);
+
+    // initiate drawing the chart
+    chart.draw();
+
+    // create a standalone legend
+    var legend = anychart.standalones.legend();
+
+    // set the source of legend items
+    legend.itemsSource([plot1, plot2]);
+
+    // set the padding of the legend
+    legend.padding(10);
+
+    // set the container for the legend
+    legend.container(stage);
+
+    // draw the legend
+    legend.draw();
+});
+</script>
+</body>
+</html>

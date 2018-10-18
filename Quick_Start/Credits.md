@@ -17,7 +17,7 @@ credits.text("Company");
 
 ### Tooltip
 
-Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.ChartCredits#alt}alt(){api} method.
+Tooltip is shown when a credits is hovered over. It can be adjusted with {api:anychart.core.ui.ChartCredits#alt}alt(){api} method.
 
 ```
 var credits = chart.credits();
@@ -69,7 +69,7 @@ CSS code:
 }
 ```
 
-### Disable
+### Disabling
 
 To disable credits just put this in your code, but remember: it will work only if you have a [license key](#license).
 
@@ -92,10 +92,12 @@ credits.text("Dashboard");
 
 ### License
 
-When you purchase a license to AnyChart 7 you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
+When you purchase a license to AnyChart you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disabling) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
 
 ```
 anychart.licenseKey("YOUR-LICENSE-KEY");
 ```
+
+You can also use [Online Builder](Modules#builder) located at [AnyChart Download Page](https://www.anychart.com/download/products/#custom-build) to create custom AnyChart binary files with the license key built-in.
 
 To purchase a license proceed to [Buy AnyChart](https://www.anychart.com/buy/) page.

@@ -5,9 +5,9 @@
 
 To get started with AnyGantt follow these simple steps and you will get your first web Gantt chart in a minute.
 
-## Include AnyGantt
+## Modules
 
-Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
+AnyGantt requires adding the [Core](../Quick_Start/Modules#core) and [Gantt and Gantt Resource](../Quick_Start/Modules#gantt_and_gantt_resource) modules. Reference two JavaScript files in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -15,6 +15,10 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
 </head>
 ```
+
+**Note:** These files can be downloaded from the [AnyChart download page](../Quick_Start/Downloading_AnyChart). 
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Create a Container
 
@@ -68,7 +72,7 @@ This code example uses JavaScript API to create a chart, but you also can use [J
 
 ```
 <script>
-anychart.onDocumentReady(function (){
+anychart.onDocumentReady(function() {
  var rawData = [
   {
     "name": "Activities",
@@ -122,7 +126,7 @@ You can copy this to a file on your computer and open it in your browser to disp
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js" type="text/javascript"></script>
   <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js" type="text/javascript"></script>
   <script>
-	anychart.onDocumentReady(function (){
+	anychart.onDocumentReady(function() {
 	
 	    var rawData = [
 	      {

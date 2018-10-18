@@ -24,7 +24,7 @@
 <body>
 <div id="container"></div>
 <script>
-anychart.onDocumentReady(function (){
+anychart.onDocumentReady(function() {
 
   // get data and create a data tree
   var treeData = anychart.data.tree(getData(), "as-tree");
@@ -39,16 +39,16 @@ anychart.onDocumentReady(function (){
   var buttons = chart.dataGrid().buttons();
 
   // configure the font of buttons
-  buttons.fontColor('Black');
-  buttons.fontFamily('Courier');
+  buttons.fontColor("Black");
+  buttons.fontFamily("Courier");
 
   /* change the width of buttons
   to make it match the custom font */
   buttons.width(22);
 
   // change the text of buttons
-  buttons.normal().content('[+]');
-  buttons.selected().content('[-]');
+  buttons.normal().content("[+]");
+  buttons.selected().content("[-]");
 
   /* disable the background of buttons
   in the expanded and collapsed states */
@@ -57,11 +57,11 @@ anychart.onDocumentReady(function (){
 
   /* change the background and font of buttons
   in the hover state */
-  buttons.hovered().background().fill(null);
+  buttons.hovered().background().fill("none");
   buttons.hovered().background().stroke("1 red");
-  buttons.hovered().fontColor('red');
+  buttons.hovered().fontColor("red");
 
-  // set the chart container
+  // set the container id
   chart.container("container");
   
   // initiate drawing the chart

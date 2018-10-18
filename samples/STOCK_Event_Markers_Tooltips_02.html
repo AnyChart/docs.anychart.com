@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -79,11 +79,11 @@ anychart.onDocumentReady(function () {
       }
     ]});
 
-    plot.eventMarkers().tooltip().titleFormat( function (){
+    plot.eventMarkers().tooltip().titleFormat( function() {
       return this.getData("short_desc") + " (" + this.symbol + ")";
     });
 
-    plot.eventMarkers().tooltip().format( function (){
+    plot.eventMarkers().tooltip().format( function() {
       return "On " + anychart.format.dateTime(this.date, "MMMM dd") +
              ", " + this.description;
     });

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="CS Auto 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+  // data
+  var data = anychart.data.set([
+    ["January", -100, 200],
+    ["February", -120, -400],
+    ["March", -100, -300],
+    ["April", 110, -100],
+    ["May", 190, 400]
+  ]);
+
+  var chart = anychart.line();
+  chart.xGrid(true).yGrid(true);
+
+  // create line series
+  line = chart.line(data.mapAs({x: 0, value: 1}));
+  // set positive and negative stroke settings
+  line.stroke("#3ba158", 2, "2 2");
+  line.negativeStroke("2 #fa6b71");
+
+  // create area series
+  area = chart.area(data.mapAs({x: 0, value: 2}));
+
+  // set positive and negative stroke and fill settings
+  area.stroke(anychart.color.darken("#ed7d31"));  
+  area.fill('#ed7d31 0.5');
+  
+  area.negativeStroke(anychart.color.darken("#adadad"), 0.5);
+  area.negativeFill('#adadad 0.5');
+
+  // chart title
+  chart.title("Negative Fill and Stroke");
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});
+</script>
+</body>
+</html>

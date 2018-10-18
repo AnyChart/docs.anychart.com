@@ -1,15 +1,24 @@
-{:index 3}
 # Exports
 
 ## Overview
 
 AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_Menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#chart_configuration) which may be used to debug charts and report issues.
 
+## Modules
+
+To enable export, add the [Exports](../Quick_Start/Modules#exports) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Export server
 
 **IMPORTANT, DO NOT SKIP THIS PART**
 
-AnyChart "save as" features work via [AnyChart Export Server](Server-side_Rendering), which is hosted at AnyChart.Com server. Although we do our best to keep AnyChart site up and running 24x7x365 - we **do not guarantee** export server availability. If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust and configure your charts to custom server.
+AnyChart "save as" features work via [AnyChart Export Server](Server-Side_Rendering), which is hosted at AnyChart.Com server. Although we do our best to keep AnyChart site up and running 24x7x365 - we **do not guarantee** export server availability. If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust and configure your charts to custom server.
 
 Custom server address is set using the {api:anychart.exports#server}anychart.exports.server(){api} method:
 
@@ -17,7 +26,7 @@ Custom server address is set using the {api:anychart.exports#server}anychart.exp
 anychart.exports.server("http://localhost:2000");
 ```
 
-You can read all about AnyChart Export Server and Server-side rendering in [AnyChart Export Server](Server-side_Rendering) article.
+You can read all about AnyChart Export Server and Server-side rendering in [AnyChart Export Server](Server-Side_Rendering) article.
 
 ## File name
 

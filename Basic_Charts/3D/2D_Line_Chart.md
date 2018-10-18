@@ -13,7 +13,7 @@ Please note that there is also the [3D Line](Line_Chart) chart type.
 
 To build a 3D 2D Line chart, use the {api:anychart#line3d}anychart.line3d(){api} chart constructor. Then call the {api:anychart.charts.Cartesian3d#line2d}line2d(){api} method to create a 2D Line series. 
 
-In the sample below, there is a multi-series 3D chart with one 3D Column and two 2D Line series:
+In the sample below, there is a multiple-series 3D chart with one 3D Column and two 2D Line series:
 
 ```
 // create a 3d line chart
@@ -34,6 +34,6 @@ chart.zDistribution(false);
 
 ## Special Settings
 
-**Note 1:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multi-series charts are distributed along the Z-axis.
+**Note 1:** When you use the {api:anychart#line3d}anychart.line3d(){api} chart constructor, the [Z-distribution](Overview#z-distribution) is enabled by default, which means that the series of multiple-series charts are distributed along the Z-axis.
 
 **Note 2:** 2D Line series are always shown in the foreground if they are combined with series of other types.

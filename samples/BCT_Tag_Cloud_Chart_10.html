@@ -43,13 +43,11 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.tagCloud(data);
 
-    // configure angles
-    chart.fromAngle(10);
-    chart.toAngle(100);
-    chart.anglesCount(5);
+    // set text spacing
+    chart.textSpacing(15);
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Angles");
+    chart.title("Tag Cloud Chart: Text Spacing");
 
     // set the container id
     chart.container("container");

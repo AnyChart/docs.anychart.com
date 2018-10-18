@@ -13,7 +13,7 @@
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/fonts/css/anychart-font.min.css" />
     
     <style>
         html, body, #container {
@@ -38,7 +38,7 @@ anychart.onDocumentReady(function () {
   zoomController.render();
 
   // dispose the zoom controlling panel on click
-  map.listen("click", function (){
+  map.listen("click", function() {
     zoomController.dispose();
   });
 

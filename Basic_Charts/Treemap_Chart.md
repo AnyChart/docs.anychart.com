@@ -8,6 +8,7 @@ A treemap is a visualization that displays hierarchically organized data as a se
 This article explains how to create a basic Treemap chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Treemap chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Treemap](../Quick_Start/Modules#treemap)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +32,20 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <tr><td></td><td>[Chartopedia: Treemap Chart](https://www.anychart.com/chartopedia/chart-types/treemap/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -90,7 +105,7 @@ The Treemap chart requires the [tree data model](../Working_with_Data/Tree_Data_
 
 **Note 2:** A Treemap chart can have only one root element.
 
-Сolors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
+Colors and sizes of tiles represent the `value` field. Alternatively, sizes can represent an optional `size` field, so adding it to the data allows you to show two different parameters instead of one.
 
 Please note: you do not need to specify values and sizes of parent elements - they are calculated automatically. Also note that tiles are [sorted](#sorting_order) by value, but if you add the `size` field, they are sorted by size.
 
@@ -154,7 +169,7 @@ To set the sorting mode, call the {api:anychart.charts.TreeMap#sort}sort(){api} 
 * `"asc"`
 * `"none"`
 
-**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order of their listing in data.
+**Note**: If you add the `size` field to your data, tiles are sorted by size, not value. If you disable sorting, tiles are arranged according to the order in which they occur in data.
 
 The sample below shows how to set the sorting mode:
 
@@ -195,7 +210,7 @@ chart.selected().stroke("gray", 2);
 
 #### Individual Points
 
-It is possible to configure the appearance of each tile individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each tile individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -292,7 +307,7 @@ chart.colorRange().length("100%");
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
@@ -387,21 +402,21 @@ chart = anychart.treeMap(data, "as-tree");
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + population + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var population = Math.round(this.value/100000)/10;
   return "population: " + population +
          " mln\ncapital: " + this.getData("capital");
 });
 ```
 
-{sample}BCT\_Treemap\_Chart\_102{sample}
+{sample}BCT\_Treemap\_Chart\_10{sample}
 
 #### Font Size
 
@@ -419,14 +434,14 @@ chart.labels().adjustFontSize(true);
 
 #### All Headers
 
-By default, parent elements of the currently shown levels are visualized as headers. To disable or enable them, call the {api:anychart.core.StateSettings#headers}headers(){api} method with `false` or `true` as a parameter:
+By default, parent elements of the currently shown levels are visualized as headers. To disable or enable them, call the {api:anychart.charts.TreeMap#headers}headers(){api} method with `false` or `true` as a parameter:
 
 ```
 // disable headers
 chart.headers(false);
 ```
 
-You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or in percent:
+You can limit the maximum height of headers, which might be necessary in case your chart is small or its size is dynamically changing. Call the {api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} method and set the maximum height either in pixels (25 by default) or as a percentage:
 
 ```
 //set the maximum height of headers
@@ -447,8 +462,8 @@ To [configure the font](../Appearance_Settings/Text_Settings) of headers, use me
 ```
 // configure the font of headers
 chart.normal().headers().fontColor("#990000");
-chart.normal().headers().fontWeight('bold');
 chart.normal().headers().fontSize("14");
+chart.normal().headers().fontWeight('bold');
 chart.hovered().headers().fontColor("#000099");
 ```
 
@@ -467,8 +482,8 @@ var data = [
    normal:  {header: {
                       format: "{%name} ({%value} Total)",
                       fontColor: "#990000",
-                      fontWeight: "bold",
                       fontSize: "14",
+                      fontWeight: "bold"
                      }
             },
    hovered: {header: {fontColor: "#000099"}},

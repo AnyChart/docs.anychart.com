@@ -25,61 +25,66 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["John", 10000, 100],
-      ["Jake", 12000, 120],
-      ["Peter", 13000, 130],
-      ["James", 10000, 100],
-      ["Mary", 9000, 90]
-    ]);
-
-    // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    // create data
+    var data = [
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ];
 
     // set the chart type
-    var chart = anychart.column();
+    var chart = anychart.line();
 
-    // configure the main y-scale
-    var yScale1 = anychart.scales.linear();
-    yScale1.maximum(20000);
-
-    // configure an extra y-scale
-    var yScale2 = anychart.scales.linear();
-    yScale2.maximum(150);
-
-    // set the title of the x-axis
-    var xAxis = chart.xAxis();
-    xAxis.title("Manager");
-
-    // configure the main y-axis
-    var yAxis1 = chart.yAxis(0);
-    yAxis1.scale(yScale1);
-    yAxis1.title("Sales, $");
-
-    // configure an extra y-axis
-    var yAxis2 = chart.yAxis(1);
-    yAxis2.orientation("right")
-    yAxis2.scale(yScale2);
-    yAxis2.title("Number of Items Sold");
-
-    // create the first series, set the data and name
-    var series1 = chart.column(seriesData_1);
-    series1.name("Sales");
-
-    // create the second series, set the data and name
-    var series2 = chart.line(seriesData_2);
-    series2.name("Number of Items Sold");
-
-    // bind the first series to the main y-scale
-    series1.yScale(yScale1);
-
-    // bind the second series to the extra y-scale
-    series2.yScale(yScale2);
+    // create a series, set the data and name
+    var series = chart.column(data);
+    series.name("Sales");
 
     // set the chart title
-    chart.title("Axes and Scales");
+    chart.title("Events");
+
+    // set the titles of the axes
+    chart.xAxis().title("Manager");
+    chart.yAxis().title("Sales, $");
+
+    // create an event listener for the mouseOver event
+    chart.listen("mouseOver", function(e){
+      // change the cursor style
+      document.body.style.cursor = "pointer";
+    });
+
+    // create an event listener for the mouseOut event
+    chart.listen("mouseOut", function(e){
+      // set the default cursor style
+      document.body.style.cursor = "auto";
+    });
+   
+    // create an event listener for the pointsHover event
+    chart.listen("pointsHover", function(e){
+      // get the category the point belong to
+      var name = e.point.getStat("categoryName");
+      // change the chart title
+      chart.title(name);
+    });
+
+    // create an event listener for the pointsSelect event
+    chart.listen("pointsSelect", function(e){
+      // get the value of the point
+      var value = e.point.getStat("value");
+      // change the chart title
+      chart.title("$" + value);
+    });
+
+    // create an event listener for the pointDblClick event
+    chart.listen("pointDblClick", function(e){
+      // get the category the point belongs to
+      var name = e.point.getStat("categoryName");
+      // get the value of the point
+      var value = e.point.getStat("value");
+      // change the chart title
+      chart.title(name + ": $" + value);
+    });
 
     // set the container id
     chart.container("container");

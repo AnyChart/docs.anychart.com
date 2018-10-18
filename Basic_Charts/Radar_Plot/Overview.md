@@ -9,6 +9,20 @@ The radar chart is otherwise known as a web chart, spider chart, star chart, cob
 
 This article explains how to create and configure radar charts. To find out which series can be drawn on a radar chart in AnyChart, see the [Supported Types](#supported_types) section.
 
+## Modules
+
+Radar charts require adding the [Core](../../Quick_Start/Modules#core) and [Radar](../../Quick_Start/Modules#radar) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-radar.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a radar chart, use the {api:anychart#radar}anychart.radar(){api} chart constructor.
@@ -173,7 +187,7 @@ radar2.yGrid().palette(["gray 0.05", "gray 0.1"]);
 
 ## Stacked Radar Charts
 
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
 
 You can create stacked radar charts by enabling a special mode of the scale that makes series stack together. Read more: [Stacked Charts](../Stacked/Overview).
 

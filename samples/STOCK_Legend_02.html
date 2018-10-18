@@ -5,12 +5,10 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>    
     
     <style>
         html, body, #container {
@@ -26,117 +24,47 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    // create data table on loaded data
+    // create a data table
     var dataTable = anychart.data.table();
     dataTable.addData([
-['2014-01-02', 2011.08, 2022.37, 1999.77, 2006.6801, 1666780032],
-['2014-01-05', 2020.78, 2047.36, 2020.78, 2047.36, 2362909952],
-['2014-01-06', 2044.55, 2061.54, 2039.63, 2057.3701, 2273220096],
-['2014-01-07', 2056.75, 2078.0901, 2047.02, 2077.6799, 2294279936],
-['2014-01-08', 2089.6001, 2100.25, 2078.05, 2100.25, 2683950080],
-['2014-01-09', 2083.6399, 2113.3301, 2077.0901, 2086.9199, 2482759936],
-['2014-01-12', 2093.54, 2112.52, 2085.1499, 2111.78, 2284009984],
-['2014-01-13', 2113.1101, 2114.9099, 2080.29, 2096.4399, 2385700096],
-['2014-01-14', 2104.29, 2111.73, 2094.3201, 2111.1299, 2099970048],
-['2014-01-15', 2101.8601, 2121.6101, 2088.1001, 2109.0801, 2235589888],
-['2014-01-16', 2126.1201, 2140.47, 2119.3501, 2140.46, 2614390016],
-['2014-01-20', 2149.03, 2149.8501, 2130.2, 2147.98, 2574190080],
-['2014-01-21', 2139.3301, 2150.1101, 2120.2, 2142.45, 2421860096],
-['2014-01-22', 2146.3201, 2152.1201, 2119.01, 2119.01, 2353370112],
-['2014-01-23', 2124.76, 2138.4099, 2108.45, 2123.8701, 2253910016],
-['2014-01-26', 2120.5601, 2153.8301, 2115.3401, 2153.8301, 1946050048],
-['2014-01-27', 2148.05, 2152.75, 2116.04, 2116.04, 2151259904],
-['2014-01-28', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952],
-['2014-01-29', 2085.54, 2087.3301, 2041.0699, 2068.23, 2637760000],
-['2014-01-30', 2068.3601, 2078.8799, 2058.54, 2066.1499, 1931180032],
-['2014-01-31', 2020.78, 2047.36, 2020.78, 2047.36, 2362909952],
-['2014-02-01', 2044.55, 2061.54, 2039.63, 2057.3701, 2273220096],
-['2014-02-02', 2056.75, 2078.0901, 2047.02, 2077.6799, 2294279936],
-['2014-02-03', 2089.6001, 2100.25, 2078.05, 2100.25, 2683950080],
-['2014-02-04', 2083.6399, 2113.3301, 2077.0901, 2086.9199, 2482759936],
-['2014-02-05', 2093.54, 2112.52, 2085.1499, 2111.78, 2284009984],
-['2014-02-06', 2113.1101, 2114.9099, 2080.29, 2096.4399, 2385700096],
-['2014-02-07', 2104.29, 2111.73, 2094.3201, 2111.1299, 2099970048],
-['2014-02-08', 2101.8601, 2121.6101, 2088.1001, 2109.0801, 2235589888],
-['2014-02-09', 2126.1201, 2140.47, 2119.3501, 2140.46, 2614390016],
-['2014-02-10', 2149.03, 2149.8501, 2130.2, 2147.98, 2574190080],
-['2014-02-11', 2139.3301, 2150.1101, 2120.2, 2142.45, 2421860096],
-['2014-02-12', 2146.3201, 2152.1201, 2119.01, 2119.01, 2353370112],
-['2014-02-13', 2124.76, 2138.4099, 2108.45, 2123.8701, 2253910016],
-['2014-02-16', 2120.5601, 2153.8301, 2115.3401, 2153.8301, 1946050048],
-['2014-02-17', 2148.05, 2152.75, 2116.04, 2116.04, 2151259904],
-['2014-02-18', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952],
-['2014-02-19', 2085.54, 2087.3301, 2041.0699, 2068.23, 2637760000],
-['2014-02-20', 2149.03, 2149.8501, 2130.2, 2147.98, 2574190080],
-['2014-02-21', 2139.3301, 2150.1101, 2120.2, 2142.45, 2421860096],
-['2014-02-22', 2146.3201, 2152.1201, 2119.01, 2119.01, 2353370112],
-['2014-02-23', 2124.76, 2138.4099, 2108.45, 2123.8701, 2253910016],
-['2014-02-26', 2120.5601, 2153.8301, 2115.3401, 2153.8301, 1946050048],
-['2014-02-27', 2148.05, 2152.75, 2116.04, 2116.04, 2151259904],
-['2014-02-28', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952]
+      ["2016-12-24", 511.53, 514.98, 505.79, 506.40],
+      ["2016-12-25", 512.53, 514.88, 505.69, 507.34],
+      ["2016-12-26", 511.83, 514.98, 505.59, 506.23],
+      ["2016-12-27", 511.22, 515.30, 505.49, 506.47],
+      ["2016-12-28", 510.35, 515.72, 505.23, 505.80],
+      ["2016-12-29", 510.53, 515.86, 505.38, 508.25],
+      ["2016-12-30", 511.43, 515.98, 505.66, 507.45],
+      ["2016-12-31", 511.50, 515.33, 505.99, 507.98],
+      ["2017-01-01", 511.32, 514.29, 505.99, 506.37],
+      ["2017-01-02", 511.70, 514.87, 506.18, 506.75]
     ]);
+  
+    // map the data
+    mapping = dataTable.mapAs(
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
+    );
 
-    // map loaded data
-    var line_1_mapping = dataTable.mapAs({'value': 2});
-    var line_2_mapping = dataTable.mapAs({'value': 3});
-    var line_3_mapping = dataTable.mapAs({'value': 4});
-
-    // create stock chart
+    // create a stock chart
     var chart = anychart.stock();
 
-    // create first plot on the chart with column series
-    var firstPlot = chart.plot(0);
-    var series_1 = firstPlot.line(line_1_mapping);
-    var series_2 = firstPlot.line(line_2_mapping);
-    var series_3 = firstPlot.line(line_3_mapping);
+    // create two plots
+    var plot1 = chart.plot(0);
+    var plot2 = chart.plot(1);
 
-    series_1.stroke("#558B2F");
-    series_2.stroke("#D84315");
-    series_3.stroke("#FF8F00");
+    // create two series: line and ohlc
+    plot1.line(mapping);
+    plot2.ohlc(mapping);
 
-    series_1.name("High");
-    series_2.name("Low");
-    series_3.name("Close");
+    // disable the legend on the first plot
+    plot1.legend(false);
+   
+    // set the chart title
+    chart.title("AnyStock Legend: Enabling / Disabling");
 
-    var legend = firstPlot.legend();
-    // enables legend
-    legend.enabled(true);
+    // set the container id
+    chart.container("container");
 
-    // turn the title on and set the position
-    legend.title(true);
-    legend.title().orientation('top').align('left');
-    //legend.align('center');
-
-    // format the title
-    legend.titleFormat(function (){
-return "ACME Corp. Stock Prices"
-    });
-
-    //enable the titleSeparator
-    legend.titleSeparator(true);
-    // set legend position and items layout
-    firstPlot.legend().itemsLayout('horizontal');
-    firstPlot.legend().position('center-top');
-
-    // setting the space between the items
-    legend.itemsSpacing(10);
-
-    // enable the scroller
-    chart.scroller().enabled(true);
-
-    // adjust the scroller
-    chart.selectRange('2014-01-02','2014-02-03');
-
-    // set container id for the chart
-    chart.container('container');
-
-    // adjust the scroller axis
-    var labels = chart.scroller().xAxis().labels();
-    var minorLabels = chart.scroller().xAxis().minorLabels();
-    // create scroller series with mapped data
-    chart.scroller().column(line_3_mapping);
-
-    // initiate chart drawing
+    // initiate drawing the chart
     chart.draw();
 });
 </script>

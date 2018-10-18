@@ -55,7 +55,7 @@ You are free to choose how you will arrange your data. You can read more about m
 
 ### Multi series
 
-This sample shows a simple multi-series Spline stock. 
+This sample shows a simple multiple-series Spline stock. 
 
 ```  
 // set the series

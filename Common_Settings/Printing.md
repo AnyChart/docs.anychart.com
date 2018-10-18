@@ -1,5 +1,3 @@
-{:index 3}
-
 # Printing
 
 ## Overview

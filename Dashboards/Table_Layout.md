@@ -8,6 +8,17 @@ The table layout is a kind of dashboard tools, which provides a clear and effect
 
 Table Layout helps to manage several elements within the limits of one chart container. The table may help to control visual appearance and logic structure of data.
 
+## Modules
+
+The table layout requires adding the [Table UI](../Quick_Start/Modules#table_ui) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-table.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
+
 ## Acceptable Content
 
 A cell in table layout dashboard may contain: 

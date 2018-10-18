@@ -105,13 +105,24 @@ plot_3.bounds("55%", 0, "45%", "45%")
 
 Each plot can have a separate title, which is set and configured using the {api:anychart.core.stock.Plot#title}title(){api} method.
 
+```
+// create a stock chart
+var chart = anychart.stock();
+
+// create the first plot
+var plot_1 = chart.plot(0);
+
+// set the title of the first plot
+plot_1.title("Rates");
+```
+
 Here is a sample of a chart with three plots. Titles of the first two plots are enabled and configured, and the third one has default settings (no title):
 
-{sample}STOCK\_Plots\_05{sample}
+{sample :height 600}STOCK\_Plots\_05{sample}
 
 ### Legend
 
-Each plot can have a legend, see [Legend](Legend) article to learn more about the legen configuration.
+Each plot can have a legend, see [Legend](Legend) article to learn more about the legend configuration.
 
 ### No Data Message
 

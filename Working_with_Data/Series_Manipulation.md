@@ -9,7 +9,7 @@ Series is a single set of data, that is visualized on a chart's plot. Series has
 
 ## Adding Series
 
-In most cases you can create a new series using a method that is named after the series type (such as {api:anychart.charts.Cartesian#column}column(){api}, {api:anychart.charts.Cartesian#bar}bar(){api}, {api:anychart.charts.Cartesian#area}area(){api}, etc.) and use data array or [data set](Data_Sets) as a parameter for the method. There is one more way of creating multi-series charts: the {api:anychart.charts.Cartesian#addSeries}addSeries(){api} method can add any number of series to a chart. Data for the method can be passed in different formats: it can be a simple array of data objects, a data set or a data view. You can pass any number of parameters to create any number of series. But before adding series, you have to define the type of the series to be added. The type of series added by {api:anychart.charts.Cartesian#addSeries}addSeries(){api} is set by the {api:anychart.charts.Cartesian#defaultSeriesType}defaultSeriesType(){api} method.
+In most cases you can create a new series using a method that is named after the series type (such as {api:anychart.charts.Cartesian#column}column(){api}, {api:anychart.charts.Cartesian#bar}bar(){api}, {api:anychart.charts.Cartesian#area}area(){api}, etc.) and use data array or [data set](Data_Sets) as a parameter for the method. There is one more way of creating multiple-series charts: the {api:anychart.charts.Cartesian#addSeries}addSeries(){api} method can add any number of series to a chart. Data for the method can be passed in different formats: it can be a simple array of data objects, a data set or a data view. You can pass any number of parameters to create any number of series. But before adding series, you have to define the type of the series to be added. The type of series added by {api:anychart.charts.Cartesian#addSeries}addSeries(){api} is set by the {api:anychart.charts.Cartesian#defaultSeriesType}defaultSeriesType(){api} method.
 
 ```
 // set chart type
@@ -118,6 +118,6 @@ chart.removeSeriesAt(2);
 
 Along with removing series one by one you can remove all series from the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}removeAllSeries(){api} method to remove all series from the current chart. Note, that if you use data sets and data mapping - the original data will not be  lost while managing series and series data, [you can create new series use mappings again](../Working_with_Data/Data_Sets).
   
-Click the buttons in the sample below to add or remove series.
+Click on the buttons in the sample below to add or remove series.
 
 {sample}CRUD\_09{sample}

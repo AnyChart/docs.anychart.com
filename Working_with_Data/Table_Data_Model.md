@@ -25,12 +25,12 @@ You can learn how to use these classes in the sections below.
 
 ## Setting Data
 
-Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or [CSV string](#csv_string) (see also [Data from CSV](Data_From_CSV)).
+Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also: [Data from CSV](Data_From_CSV)).
 To create a chart based on this type of data, you should create a data table, add data, and map the table. 
 
 **1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table - an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
-If you set the data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If you set data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 ```
 var dataTable = anychart.data.table(0);
@@ -129,9 +129,9 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### CSV String
 
-**Note:**  By default AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
+The sample below shows how to set data if it is organized as an a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
-This sample shows how to set data if it is organized as an a **CSV string**:
+**Note:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
 
 ```
 // create data
@@ -172,7 +172,7 @@ ohlcSeries.name("ACME Corp.");
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
 
-To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV String](#csv_string):
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
 
 ```
 dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -371,7 +371,7 @@ You can perform the following data operations:
 
 ### Reading
 
-To read the data, use the methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
+To read the data, use methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
 * {api:anychart.data.TableSelectable.RowProxy#get}get(){api} - accepts the name of a data field, returns its value
 * {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} - accepts the number of a column, returns the value
@@ -391,7 +391,7 @@ The second parameter sets the **mode of search** - see {api:anychart.enums.Table
 * `"exact-or-prev"`
 * `"nearest"`
 
-In the following sample, the information about the first and last point of the shown range is displayed in the chart title, and when the range is changed, the description is updated. The {api:anychart.data.TableSelectable#search}search(){api} method is combined with the {api:anychart.data.TableSelectable.RowProxy#get}get(){api} and {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} methods allowing to [read](#reading) the data:
+In the following sample, information about the first and last point of the shown range is displayed in the chart title, and when the range is changed, the description is updated. The {api:anychart.data.TableSelectable#search}search(){api} method is combined with the {api:anychart.data.TableSelectable.RowProxy#get}get(){api} and {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} methods allowing to [read](#reading) the data:
 
 ```
 // get the shown range of points
@@ -492,7 +492,7 @@ Iterating is a process of going through all the items of a tree. You can [acess]
 
 To iterate over a table, first access a selection of rows - create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} (see [Accessing Rows](#accessing_rows)). Then call {api:anychart.data.TableSelectable#getIterator}getIterator(){api} on it to obtain the {api:anychart.data.TableIterator}anychart.data.TableIterator{api} object.
 
-Finally, call the methods of the iterator:
+Finally, call methods of the iterator:
 
 * {api:anychart.data.TableIterator#advance}advance(){api} - advances the iterator to hte next data item
 * {api:anychart.data.TableIterator#get}get(){api} - returns the value in a given field of the current row
@@ -500,7 +500,7 @@ Finally, call the methods of the iterator:
 * {api:anychart.data.TableIterator#getKey}getKey(){api} - returns the key of a current row
 * {api:anychart.data.TableIterator#reset}reset(){api} - resets the iterator to its default position before the first item
 
-In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display the information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
+In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
 
 ```
 /* create the selectable object
@@ -511,10 +511,10 @@ selectable.select(range.firstSelected, range.lastSelected);
 // get the iterator
 var iterator = selectable.getIterator();
 
-// display the information about shown points in the table
+// display information about shown points in the table
 while (iterator.advance()) {
   var key = iterator.getKey();
-  var date =  anychart.format.dateTime(key, "dd.MM.yyyy");
+  var date = anychart.format.dateTime(key, "dd.MM.yyyy");
   var low = iterator.get("low");
   var high = iterator.get("high");  
 };
@@ -531,7 +531,7 @@ selectable = mapping.createSelectable();
 selectable.select(range.firstSelected, range.lastSelected, "year", 2);
 ```
 
-The iterator is used to display the information about the grouped data falling into the range of points shown on the chart:
+The iterator is used to display information about the grouped data falling into the range of points shown on the chart:
 
 {sample}WD\_Table\_Data\_12{sample}
 

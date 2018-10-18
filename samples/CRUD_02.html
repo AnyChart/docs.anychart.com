@@ -42,7 +42,7 @@ anychart.onDocumentReady(function () {
   // set chart type
   var chart = anychart.column();
 
-  chart.title().enabled(true).useHtml(true).text("Hover point to get information on <br> one of top 10 Smartphone<br> Applications of 2013").hAlign("center");
+  chart.title().enabled(true).useHtml(true).text("Hover over point to get information on <br> one of top 10 Smartphone<br> Applications of 2013").hAlign("center");
 
   // disable x axis title
   chart.xAxis().title().enabled(false);
@@ -82,7 +82,7 @@ chart.title().text(infoGetter).fontWeight(300);
 
     // function, if listener triggers
     function () {
-      chart.title().fontWeight(900).text("Hover point to get information on <br> one of top 10 Smartphone<br> Applications of 2013");
+      chart.title().fontWeight(900).text("Hover over point to get information on <br> one of top 10 Smartphone<br> Applications of 2013");
   }
   );
 

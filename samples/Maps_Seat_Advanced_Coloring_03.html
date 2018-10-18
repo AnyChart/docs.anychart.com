@@ -75,7 +75,7 @@ if (attrs) {
     });
 
     // set the fill in the hover state
-    seatMapSeries.hovered().fill(function (){
+    seatMapSeries.hovered().fill(function() {
 var attrs = this.attributes;
 if (attrs) {
     // get the class
@@ -92,7 +92,7 @@ if (attrs) {
     });
 
     // set the fill in the selected state
-    seatMapSeries.selected().fill(function (){
+    seatMapSeries.selected().fill(function() {
 var attrs = this.attributes;
 return attrs ? anychart.color.darken(attrs.fill, 0.2) : this.sourceColor;
     });

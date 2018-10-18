@@ -29,7 +29,7 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {x: 0, value: 500},
-      {x: 180, value: 200}
+      {x: 180, value: 0}
     ];
 
     // create a chart
@@ -41,8 +41,12 @@ anychart.onDocumentReady(function () {
     // set the maximum value of the x-scale
     chart.xScale().maximum(360);
 
+    // configure Y scale
+    chart.yScale().minimum(0).maximum(600);
+    chart.yScale().ticks().interval(100);
+
     // set the chart title
-    chart.title("[Polar Plot: Scales]");
+    chart.title("Polar Plot: Standard Polar Scales");
 
     // set the container id
     chart.container("container");

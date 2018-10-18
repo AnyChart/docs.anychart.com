@@ -54,7 +54,7 @@ var data_2 = [
 
 ### Hovered
 
-By default there's no color for the hovered points but the settings, which make the hovered regions change its color to more pale shade. However, if you wish to have another hovering settings, look through the next example.
+By default there's no color for the hovered points but the settings, which make the hovered regions change its color to more pale shade. However, if you wish to have another hover settings, look through the next example.
 
 ```
 // set the color for the hovered regions of the first series

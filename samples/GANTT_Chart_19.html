@@ -33,47 +33,36 @@ anychart.onDocumentReady(function () {
     var chart = anychart.ganttProject();
 
     // set the data
-    chart.data(data, 'as-table');
+    chart.data(data, "as-table");
 
     // access the object with button settings
     var buttons = chart.dataGrid().buttons();
 
-    // create custom drawing functions
-    var contentFunction = function (path) {
-        /* draw different primitives
-        or anything else depending on the state */
-        var half = this.width / 2;
-        switch (this.state) {
-          case 'normal':
-            fill = '#dd2c00';
-            anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);            
-            break;
-          case 'hovered':
-            fill = anychart.color.lighten('#dd2c00');
-            anychart.graphics.vector.primitives.diagonalCross(path.clear(), half, half, half).fill(fill);
-            break;
-          case 'selected':
-            fill = '#00bfa5';
-            anychart.graphics.vector.primitives.cross(path.clear(), half, half, half).fill(fill);
-            break;
-        }      
-    };
+    // set background fill images for normal and selected states and disable strokes
+    buttons.background()
+        .enabled(true)
+        .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/close.png',
+            mode: 'stretch'
+        })
+        .stroke(null);
+    buttons.selected().background()
+        .enabled(true)
+        .fill({
+            src: 'https://cdn.anychart.com/samples/gantt-general-features/data-grid-buttons/open.png',
+            mode: 'stretch'
+        })
+        .stroke(null);
 
-    // set content functions for buttons
-    buttons.normal().content(contentFunction);
-    buttons.selected().content(contentFunction);
-
-    /* disable the default backgrounds
-    of buttons in all states */
-    buttons.normal().background(false);
-    buttons.selected().background(false)
-    buttons.hovered().background(false);
+    // remove default content from buttons
+    buttons.content(null);
+    buttons.selected().content(null);
 
     // set the chart title
-    chart.title('Custom Expand/Collapse Buttons');
+    chart.title("Custom Expand/Collapse Buttons");
   
-    // set the chart container
-    chart.container('container');
+    // set the container id
+    chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
@@ -86,63 +75,63 @@ function getData() {
     return [
         {
             id: 1,
-            name: 'Phase 1 - Strategic Plan',
+            name: "Phase 1 - Strategic Plan",
             progressValue: 0.14,
-            actualStart: '2000-02-24',
-            actualEnd: '2000-02-27'
+            actualStart: "2000-02-24",
+            actualEnd: "2000-02-27"
         },
         {
             id: 2,
-            name: 'Self-Assessment',
+            name: "Self-Assessment",
             parent: 1,
             progressValue: 0.25,
-            actualStart: '2000-02-24',
-            actualEnd: '2000-02-29',
+            actualStart: "2000-02-24",
+            actualEnd: "2000-02-29",
             collapsed: true
         },
         {
             id: 3,
-            name: 'Define business vision',
+            name: "Define business vision",
             parent: 2,
             progressValue: 0,
-            actualStart: '2000-02-24T24:00',
-            actualEnd: '2000-02-25T09:00',
+            actualStart: "2000-02-24T24:00",
+            actualEnd: "2000-02-25T09:00",
             connectTo: 4
         },
         {
             id: 4,
-            name: 'Identify available skills, information and support',
+            name: "Identify available skills, information and support",
             parent: 2,
             progressValue: 0,
-            actualStart: '2000-02-26T00:00',
-            actualEnd: '2000-02-26T09:00',
+            actualStart: "2000-02-26T00:00",
+            actualEnd: "2000-02-26T09:00",
             connectTo: 5
         },
         {
             id: 5,
-            name: 'Decide whether to proceed',
+            name: "Decide whether to proceed",
             parent: 2,
             progressValue: 0,
-            actualStart: '2000-02-27',
-            actualEnd: '2000-02-28T08:00',
+            actualStart: "2000-02-27",
+            actualEnd: "2000-02-28T08:00",
             connectTo: 6
         },
         {
             id: 6,
-            name: 'Define the Opportunity',
+            name: "Define the Opportunity",
             parent: 1,
             progressValue: 0.27,
-            actualStart: '2000-02-28T08:00',
-            actualEnd: '2000-02-29',
+            actualStart: "2000-02-28T08:00",
+            actualEnd: "2000-02-29",
             collapsed: true
         },
         {
             id: 7,
-            name: 'Research the market and competition',
+            name: "Research the market and competition",
             parent: 6,
             progressValue: 0,
-            actualStart: '2000-02-26T08:00',
-            actualEnd: '2000-02-27'
+            actualStart: "2000-02-26T08:00",
+            actualEnd: "2000-02-27"
         }
     ];
 }

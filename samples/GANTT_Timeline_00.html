@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="GANTT Timeline 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+<legend>Navigate:</legend>
+<input type="button" value="+" onclick="chart.zoomIn();"/>
+<input type="button" value="-" onclick="chart.zoomOut();"/>
+<input type="button" value="Fit All" onclick="chart.fitAll();"/>
+<input type="button" value="Zoom to 'Decide whether to proceed'" onclick="chart.fitToTask(5);">
+<input type="button" value="Zoom to Last day" onclick="chart.zoomTo('day', 1, 'last-date');">
+</fieldset>
+<div id="container"></div>
+<script>
+var chart;
+anychart.onDocumentReady(function () {
+    // create data tree on our data
+    var treeData = anychart.data.tree(getData(), "as-table");
+
+    // create resource gantt chart
+    chart = anychart.ganttProject();
+
+    // set data for the chart
+    chart.data(getData(), "as-table");
+
+    // set container id for the chart
+    chart.container('container');
+
+    // initiate chart drawing
+    chart.draw();
+
+});
+
+function getData() {
+    var now = (new Date()).getTime();
+    var sec = 1000;
+    var min = 60 * sec;
+    var hour = 60 * min;
+    var day = 24 * hour;
+    return [
+{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%"},
+{"id": "2", "name": "Self-Assessment", parent: "1", "progressValue": "25%"},
+{
+    "id": "3",
+    "name": "Define business vision",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now - 9 * day),
+    "actualEnd": (now - 2 * day),
+    "connectTo": "4",
+    "connectorType": "finish-start"
+},
+{
+    "id": "4",
+    "name": "Identify available skills, information and support",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now + 5 * day),
+    "actualEnd": (now + 10*day),
+    "connectTo": "5",
+    "connectorType": "finish-start"
+},
+{
+    "id": "5",
+    "name": "Decide whether to proceed",
+    parent: "2",
+    "progressValue": "0%",
+    "actualStart": (now + 3*day),
+    "actualEnd": (now + 5 * day),
+    "connectTo": "7",
+    "connectorType": "finish-start"
+},
+{"id": "6", "name": "Define the Opportunity", parent: "1", "progressValue": "27%"},
+{
+    "id": "7",
+    "name": "Research the market and competition",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 6*day),
+    "actualEnd": (now + 13 * day),
+    "connectTo": "8",
+    "connectorType": "finish-start"
+},
+{
+    "id": "8",
+    "name": "Interview owners of similar businesses",
+    parent: "6",
+    "progressValue": "60%",
+    "actualStart": (now + 5 * day),
+    "actualEnd": (now + 15 * day),
+    "connectTo": "9",
+    "connectorType": "finish-start"
+},
+{
+    "id": "9",
+    "name": "Identify needed resources",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 5 * day),
+    "actualEnd": (now + 10 * day),
+    "connectTo": "10",
+    "connectorType": "finish-start"
+},
+{
+    "id": "10",
+    "name": "Identify operating cost elements",
+    parent: "6",
+    "progressValue": "0%",
+    "actualStart": (now + 15 * day),
+    "actualEnd": (now + 29 * day),
+    "connectTo": "12",
+    "connectorType": "finish-start"
+}
+    ];
+}
+</script>
+</body>
+</html>

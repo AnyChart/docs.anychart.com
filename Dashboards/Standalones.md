@@ -75,7 +75,7 @@ Coming soon.
 
 ### Legend
 
-Coming soon.
+You can find information about the standalone legend in the following article: [Standalone Legend](../Common_Settings/Legend/Standalone_Legend).
 
 ### Axes
 

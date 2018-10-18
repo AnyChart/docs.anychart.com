@@ -8,6 +8,7 @@ A sunburst chart, otherwise known as a radial treemap or multi-level pie chart, 
 This article explains how to create a basic Sunburst chart in AnyChart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Sunburst chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Sunburst](../Quick_Start/Modules#sunburst)</td></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Sunburst}anychart.charts.Sunburst{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +32,20 @@ This article explains how to create a basic Sunburst chart in AnyChart as well a
 <tr><td></td><td>[Chartopedia: Sunburst Chart](https://www.anychart.com/chartopedia/chart-types/sunburst-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Sunburst](../Quick_Start/Modules#sunburst) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -330,7 +345,7 @@ chart.selected().stroke("#96a6a6", 4);
 
 #### Individual Points
 
-It is possible to configure the appearance of each point individually - use extra data fields corresponding with the methods mentioned above:
+It is possible to configure the appearance of each point individually – use extra data fields corresponding with the methods mentioned above:
 
 ```
 // create data
@@ -457,9 +472,9 @@ var label = anychart.standalones.label();
 label.text("Company Structure");
 label.width("100%");
 label.height("100%");
+label.fontColor("#dd2c00");
 label.fontSize(12);
 label.fontWeight(600);
-label.fontColor("#dd2c00");
 label.hAlign("center");
 label.vAlign("middle");
 
@@ -473,7 +488,7 @@ chart.center().content(label);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
@@ -553,20 +568,20 @@ The sample below demonstrates how to work with formatting functions:
 
 ```
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return "<span style='font-weight:bold'>" + this.name + 
          "</span><br/>" + sales + " mln";
 });
 
 // configure the labels of leaves
-chart.leaves().labels().format(function (){
+chart.leaves().labels().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return sales + " mln";
 });
 
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var sales = Math.round(this.value/100000)/10;
   return this.name + "\n\nsales: " + sales +
          " mln\n" + this.getData("custom_field");
@@ -604,7 +619,7 @@ chart.leaves().labels().position("circular");
 
 #### Selection Mode
 
-By default, if you click a leaf of a Sunburst chart, the leaf is selected, and if you click a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
+By default, if you click on a leaf of a Sunburst chart, the leaf is selected, and if you click on a node that has children, a drilldown is performed (see the [drilldown](#drilldown) subsection to learn more).
 
 You can set another [selection mode](../Common_Settings/Interactivity/Overview#select) or disable selection - this setting is configured by calling the {api:anychart.charts.Sunburst#interactivity}interactivity(){api} and {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} methods with one of the parameters listed in {api:anychart.enums.SelectionMode}anychart.enums.SelectionMode{api}:
 
@@ -613,7 +628,7 @@ You can set another [selection mode](../Common_Settings/Interactivity/Overview#s
 * `"single-select"`
 * `"none"`
 
-**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking them.
+**Note:** The `"multi-select"` mode allows selecting multiple elements by holding down the **Shift** key while clicking on them.
 
 The sample below shows how to change the selection mode, which is initially set to `"none"`:
 

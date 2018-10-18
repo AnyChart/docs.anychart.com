@@ -10,6 +10,8 @@ The AnyChart Venn chart type can be also used for creating Euler diagrams. The E
 This article explains how to create a basic Venn (or Euler) diagram as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Venn diagram's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Venn Diagram](../Quick_Start/Modules#venn_diagram)</td></tr>
+<tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Venn}anychart.charts.Venn{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -31,6 +33,20 @@ This article explains how to create a basic Venn (or Euler) diagram as well as c
 <tr><td></td><td>[Chartopedia: Venn Diagram](https://www.anychart.com/chartopedia/chart-types/venn-diagram/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Venn diagram requires adding the [Core](../Quick_Start/Modules#core) and [Venn Diagram](../Quick_Start/Modules#venn_diagram) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-venn.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
@@ -64,6 +80,8 @@ chart.draw();
 In AnyChart there are many settings that are configured in the same way for all chart types, including the Venn diagram (for example, legend and interactivity settings).
 
 Read the overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
 
 ### Data
 
@@ -254,7 +272,7 @@ chart = anychart.venn(data);
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
@@ -346,13 +364,13 @@ var data = [
 chart = anychart.venn(data);
 
 // configure the labels of intersections
-chart.intersections().labels().format(function (){
+chart.intersections().labels().format(function() {
   if (this.x.length > 2)
     return this.x; 
 });
 
 // configure the tooltips of intersections
-chart.intersections().tooltip().format(function (){
+chart.intersections().tooltip().format(function() {
   return "Value: " + this.value + "\n(" +
          this.x.length + " sets intersecting)\n\n" +
          this.getData("custom_field"); 

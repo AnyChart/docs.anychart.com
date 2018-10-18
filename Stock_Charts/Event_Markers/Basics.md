@@ -14,7 +14,7 @@ To learn more, see the [Tooltips](Tooltips) and [Events](Events) articles.
 
 To add event markers, pass your data to the {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} method.
 
-The only thing you need to specify is the dates of events. If you want the information about events to be shown in tooltips, add the `description` data field.
+The only thing you need to specify is the dates of events. If you want information about events to be shown in tooltips, add the `description` data field.
 
 This sample demonstrates how to add one group of event markers with basic settings:
 
@@ -59,7 +59,7 @@ The `date` is the only field that is always required. The `description` field is
 
 ### eventMarkers()
 
-The {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} method accepts a JSON object with the information about the groups of markers.
+The {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} method accepts a JSON object with information about the groups of markers.
 
 Here are data fields affecting groups:
 
@@ -116,7 +116,7 @@ plot.eventMarkers({"groups": [
 
 You can create a group with a certain index: combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}.
 
-This method accepts an index as the first parameter and an array of objects (with the information about events) as the second one.
+This method accepts an index as the first parameter and an array of objects (with information about events) as the second one.
 
 Only standard data fields are used:
 
@@ -169,7 +169,7 @@ eventMarkers.group(1).format("B");
 
 If you need to add only one group of markers, it makes sense to combine {api:anychart.core.stock.Plot#eventMarkers}eventMarkers(){api} with {api:anychart.core.stock.eventMarkers.Controller#data}data(){api}.
 
-This method accepts an array of objects with the information about events. Unlike {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}, it does not allow specifying the index of a group explicitly. Therefore, only one group can be created this way (its index is 0).
+This method accepts an array of objects with information about events. Unlike {api:anychart.core.stock.eventMarkers.Controller#group}group(){api}, it does not allow specifying the index of a group explicitly. Therefore, only one group can be created this way (its index is 0).
 
 ```
 // add event markers
@@ -226,8 +226,8 @@ Combine them with the following methods:
 
 To configure the font of symbols, use:
 * {api:anychart.core.StateSettings#fontStyle}fontColor(){api}
-* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
-* {api:anychart.core.StateSettings#fontSize}fontSize(){api}
+* {api:anychart.core.StateSettings#fontSize}fontSize(){api}* {api:anychart.core.StateSettings#fontWeight}fontWeight(){api}
+
 * other methods from {api:anychart.core.StateSettings}anychart.core.StateSettings{api}
 
 **Note 1:** By default, the font size of symbols is adjusted to the size of markers. You can disable this setting by calling the {api:anychart.core.stock.eventMarkers.Controller#adjustFontSize}adjustFontSize(){api} method with `false` as a parameter and set the font size manually with {api:anychart.core.StateSettings#fontWeight}fontSize(){api}.
@@ -409,7 +409,7 @@ plot.eventMarkers({"groups": [
 ]});
 
 // set the symbol of event markers
-plot.eventMarkers().format(function (){
+plot.eventMarkers().format(function() {
   return this.getData("symbol");
 });
 ```

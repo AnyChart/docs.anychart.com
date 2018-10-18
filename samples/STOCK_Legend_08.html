@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Legend 08"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>    
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create a data table
+    var dataTable = anychart.data.table();
+    dataTable.addData([
+      ["2016-12-24", 511.53, 506.40],
+      ["2016-12-25", 512.53, 507.34],
+      ["2016-12-26", 511.83, 506.23],
+      ["2016-12-27", 511.22, 506.47],
+      ["2016-12-28", 510.35, 505.80],
+      ["2016-12-29", 510.53, 508.25],
+      ["2016-12-30", 511.43, 507.45],
+      ["2016-12-31", 511.50, 507.98],
+      ["2017-01-01", 511.32, 506.37],
+      ["2017-01-02", 511.70, 506.75]
+    ]);
+  
+    // map the data
+    mapping1 = dataTable.mapAs({value: 1});
+    mapping2 = dataTable.mapAs({value: 2});
+
+    // create a stock chart
+    var chart = anychart.stock();
+
+    // create a plot
+    var plot = chart.plot(0);
+   
+    // create two line series
+    plot.line(mapping1);
+    plot.line(mapping2);
+
+    // add a custom legend item 
+    plot.legend().itemsFormatter(function(legendItems) {
+      legendItems.push({
+        text: "/ Number of Series: " + plot.getSeriesCount() + " /",
+        iconEnabled: false,
+        fontColor: "#455a64",
+        fontWeight: 600,
+        fontStyle: "italic"
+      });
+      return legendItems;
+    });
+   
+    // set the chart title
+    chart.title("AnyStock Legend: Custom Items");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

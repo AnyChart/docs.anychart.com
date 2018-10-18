@@ -210,7 +210,7 @@ Labels are enabled by default, they can be turned on and off using the {api:anyc
 
 ## Multi series
 
-You can add several series to a map, no matter which type. We can create a multi-series Bubble Map or have different kinds of series on a map. Let's first create an Australia Map with choropleth and bubble series. 
+You can add several series to a map, no matter which type. We can create a multiple-series Bubble Map or have different kinds of series on a map. Let's first create an Australia Map with choropleth and bubble series. 
 
 For this we'd better set the data as array as we should map it properly. Don't forget that bubble and choropleth series have different necessary data fields and the choropleth series has its own coloring settings. Read more about this [here](Choropleth_Map).
 

@@ -19,7 +19,7 @@ Let's first define the perimeter and form of the house and use a "Rectangle Tool
 
 <a href="https://static.anychart.com/images/docs/seat\_map/03\_rectangle.png" target="_blank"><img src="https://static.anychart.com/images/docs/seat\_map/03\_rectangle.png" alt="Rectangle Tool" title="Rectangle Tool" border="0" width=600 align="center"></a>
 
-Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same picture of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
+Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same picture of Line Segment Tool, to show other variations of Segment tools, click on the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
 Note: to draw a straight line or curve at an angle, multiple of 45&deg;, hold the Shift key on your keyboard while drawing.
 
@@ -107,7 +107,7 @@ Open this file in any editor that supports SVG files. Look through the code. All
 </g>
 ```
 
-Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class have the same interactive settings, so be careful with setting them. Set the classes to the texts.
+Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on being hovered over or selected. All elements that belong to the same class have the same interactive settings, so be careful with setting them. Set the classes to the texts.
 
 ```
 <text class="info" transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>

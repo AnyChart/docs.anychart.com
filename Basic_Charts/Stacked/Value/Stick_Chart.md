@@ -3,13 +3,13 @@
 
 ## Overview
 
-A Stacked Stick Chart is a multi-series Stick Chart that displays the trend of the value each series contributes over time or categories.
+A Stacked Stick Chart is a multiple-series Stick Chart that displays the trend of the value each series contributes over time or categories.
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Stacked Stick Chart, create a multi-series [Stick Chart](../../Stick_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
+To build a Stacked Stick Chart, create a multiple-series [Stick Chart](../../Stick_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into **value**:
 
 ```
 // create a chart

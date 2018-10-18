@@ -10,6 +10,8 @@ As a rule, intermediate values are visualized as floating columns, while the ini
 This article explains how to create a basic Waterfall chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Waterfall chart's characteristics:
 
 <table border="1" class="seriesTABLE">
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Waterfall](../Quick_Start/Modules#waterfall)</td></tr>
+<tr><th colspan=2>API</th></tr>
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Waterfall}anychart.charts.Waterfall{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
@@ -33,6 +35,20 @@ This article explains how to create a basic Waterfall chart as well as configure
 <tr><td></td><td>[Chartopedia: Waterfall Chart](https://www.anychart.com/chartopedia/chart-types/waterfall-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
+
+## Modules
+
+The Waterfall chart requires adding the [Core](../Quick_Start/Modules#core) and [Waterfall](../Quick_Start/Modules#waterfall) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules)
 
 ## Quick Start
 
@@ -183,7 +199,9 @@ var series3 = chart.waterfall(seriesData_3);
 
 ### Appearance
 
-The [appearance settings](../Appearance_Settings) of a Waterfall chart can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
+#### Columns
+
+The [appearance settings](../Appearance_Settings) of Waterfall columns can be configured in three [states](../Common_Settings/Interactivity/States): **normal**, **hover**, and **selected**. Use the {api:anychart.core.waterfall.series.Waterfall#normal}normal(){api}, {api:anychart.core.waterfall.series.Waterfall#hovered}hovered(){api}, and {api:anychart.core.waterfall.series.Waterfall#selected}selected(){api} methods.
 
 Combine them with the following methods to adjust columns indicating total values:
 
@@ -236,7 +254,7 @@ series.selected().risingStroke("#0066cc", 4);
 
 {sample}BCT\_Waterfall\_Chart\_04{sample}
 
-### Connectors
+#### Connectors
 
 A connector is a line connecting two columns of a Waterfall chart. To configure the stroke of connectors, use the {api:anychart.charts.Waterfall#connectorStroke}connectorStroke(){api} method:
 
@@ -255,7 +273,7 @@ This chart type allows you to set the size of its points. Read more in the [Poin
 
 [Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 #### Tokens
 
@@ -299,7 +317,7 @@ chart.labels().format("{%absolute}");
 
 // configure tooltips
 chart.tooltip().titleFormat("Absolute | Difference");
-chart.tooltip().format("{%absolute}\n{%diff}");
+chart.tooltip().format("{%absolute}\n{%diff}\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Waterfall\_Chart\_06{sample}
@@ -347,7 +365,7 @@ var series = chart.waterfall(data);
 chart.labels().useHtml(true);
 
 // configure labels
-chart.labels().format(function (){
+chart.labels().format(function() {
     if (this.isTotal)
         return "<span style='color:#dd2c00;font-weight:bold'>" +
                this.absolute + "</span>";
@@ -355,7 +373,7 @@ chart.labels().format(function (){
 });
 
 // configure tooltips
-chart.tooltip().titleFormat(function (){
+chart.tooltip().titleFormat(function() {
     if (this.isTotal)
         return "TOTAL (" + this.getData("custom_field") + ")";
     return this.x + " (" + this.getData("custom_field") + ")";
@@ -366,7 +384,7 @@ chart.tooltip().titleFormat(function (){
 
 ### Legend
 
-The default [legend](../Common_Settings/Legend) of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multi-series chart and want to show series instead, combine the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
+The default legend of the Waterfall chart shows increasing, decreasing, and total columns. If you work with a multiple-series chart and want to show series instead, change the [source of legend items](../Common_Settings/Legend/Basic_Settings#source) by combining the {api:anychart.charts.Waterfall#legend}legend(){api} method with {api:anychart.core.ui.Legend#itemsSourceMode}itemsSourceMode(){api} and use `"default"` as a parameter:
 
 ```
 // add hatch fills

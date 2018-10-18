@@ -7,9 +7,23 @@ In some cases it might be necessary to represent a lot of similar data over a lo
 
 Sparkline charts are rather small with neither axes nor grids, amount of additional information is minimized, but they tell a richer story than trend arrows: we can make a chart display not just the current situation, but its changing over time. Sometimes sparklines can be even more informative than any of usual chart types - just because of its simplicity.
 
+## Modules
+
+The Sparkline chart requires adding the [Core](../Quick_Start/Modules#core) and [Sparkline](../Quick_Start/Modules#sparkline) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sparkline.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Chart
 
-As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multi-series.
+As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multiple-series.
 
 Sparkline series can be of 4 types: line, area, column and win/loss. 
 
@@ -181,14 +195,14 @@ Here you will find some information about main parts of the sparkline chart styl
 
 ### Point width
 
-For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
+For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the {api:?entry=pointWidth}pointWidth(){api} method:
 
 ```
 chart1.pointWidth('50%');
 chart2.pointWidth(25);
 ```
 
-Note that you can define pointWidth values in percent or in pixels.
+Note that you can define pointWidth values as a percentage or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}

@@ -41,12 +41,12 @@ Here is a live sample:
 
 There are eight parameters a Keltner Channel indicator has, one of them is necessary - the mapping.
 
-The "maPeriod" and "atrPeriod" parameters set the Moving Average period and Average True Range period. The "maType" parameter sets the soothing type, the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average, the upper series, and the lower series.
+The "maPeriod" and "atrPeriod" parameters set the Moving Average period and Average True Range period. The "maType" parameter sets the smoothing type, the next parameter is the multiplier, and the three last parameters allow you to set the series type of Moving Average and the range series.
 
 The following code sample demonstrates a Keltner Channels indicator with parameters set as default:
 
 ```
-var keltnerChannels = plot.keltnerChannels(mapping, 20, 10, "ema", 2, "line", "line", "line");
+var keltnerChannels = plot.keltnerChannels(mapping, 20, 10, "ema", 2, "line", "range-area");
 ```
 
 ## Visualization
@@ -55,18 +55,18 @@ Vizualization of an indicator depends on the type of a series you display it wit
 
 ```
 // create and adjust a Keltner Channels indicator
-var keltnerChannels_0 = plot_0.keltnerChannels(mapping, 10, 15, "sma", 4, "line", "line", "line");
-keltnerChannels_0.lowerSeries().stroke("2 #00bfa5");
-keltnerChannels_0.upperSeries().stroke("2 #dd2c00");
+var keltnerChannels_0 = plot_0.keltnerChannels(mapping, 10, 15, "sma", 4);
 keltnerChannels_0.maSeries().stroke("2 #ef6c00");
 keltnerChannels_0.rangeSeries().fill("#ffd54f 0.2");
+keltnerChannels_0.rangeSeries().highStroke("2 #00bfa5");
+keltnerChannels_0.rangeSeries().lowStroke("2 #dd2c00");
 
 // create and adjust a Keltner Channels indicator
-var keltnerChannels_1 = plot_1.keltnerChannels(mapping, 10, 15, "sma", 4, "stepLine", "stepLine", "stepLine");
-keltnerChannels_1.lowerSeries().stroke("2 #00bfa5");
-keltnerChannels_1.upperSeries().stroke("2 #dd2c00");
+var keltnerChannels_1 = plot_1.keltnerChannels(mapping, 10, 15, "sma", 4, "step-line", "step-range-area");
 keltnerChannels_1.maSeries().stroke("2 #64b5f6");
-keltnerChannels_1.rangeSeries().fill(null);
+keltnerChannels_1.rangeSeries().fill("none");
+keltnerChannels_1.rangeSeries().lowStroke("2 #00bfa5");
+keltnerChannels_1.rangeSeries().highStroke("2 #00bfa5");
 ```
 
 Live sample:

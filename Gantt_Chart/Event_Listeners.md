@@ -5,7 +5,7 @@
 AnyChart charting library supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
 explain when they are dispatched and what data is available in them. There is also some useful information about how to create an event handler and how to use the data coming from AnyGantt.
 
-First, you need to create a listener to handle the specific event. In general [Event Listeners Article](../Common_Settings/Event_Listeners#listener_types) you can find more information about creating these  JavaScript functions.
+First, you need to create a listener to handle the specific event. In general [Event Listeners Article](../Common_Settings/Event_Listeners) you can find more information about creating these JavaScript functions.
 
 ## Event Types
 
@@ -71,7 +71,7 @@ chart.listen("rowClick", function(event) {
 });
 ```
 
-As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
+As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is the list of supported types of information:
 
 <table>
 <tbody>
@@ -105,7 +105,7 @@ This sample with Project Gantt Chart demonstrates the usage of this feature. Cli
 
 ## Default Events
 
-When you click on a row or move the mouse over the row, there are some default actions take place. 
+When you click on a row or move the mouse over the row, there are some default actions taking place. 
 
 Events are dispatched in the following order on every click:
 

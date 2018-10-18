@@ -43,11 +43,28 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     var chart = anychart.tagCloud(data);
 
+    // enable HTML for tooltips
+    chart.tooltip().useHtml(true);
+
     // configure tooltips
-    chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n{%custom_field}");
+    chart.tooltip().format(function() {
+      var percentOfTotal = (this.getData("value")*100)/this.getStat("sum");
+      if (percentOfTotal < 7)
+        return percentOfTotal.toFixed(1) +
+               "%<br><br>" + this.getData("custom_field");
+      if (percentOfTotal > 15)
+        return "<span style='font-size:26'>" +
+               percentOfTotal.toFixed(1) +
+               "%</span><br><br>" +
+               this.getData("custom_field");
+      return "<span style='font-size:18'>" +
+             percentOfTotal.toFixed(1) +
+             "%</span><br><br>" +
+             this.getData("custom_field");
+    });
 
     // set the chart title
-    chart.title("Tag Cloud Chart: Tooltips (Tokens)");
+    chart.title("Tag Cloud Chart: Tooltips (Formatting Functions)");
 
     // set the container id
     chart.container("container");

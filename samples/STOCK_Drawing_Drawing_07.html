@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
@@ -59,7 +59,7 @@
 <button onclick="load()">Load</button>
 <div id="container"></div>
 <script>
-// a list of annotations in JSON format
+// the list of annotations in JSON format
 var annotationsAtServer = {"annotationsList":[{"enabled":true,"type":"ellipse","xAnchor":"2007-04-01","valueAnchor":34.73,"secondXAnchor":"2008-03-02","secondValueAnchor":26.03}]};  
 
 anychart.onDocumentReady(function () {

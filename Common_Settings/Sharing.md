@@ -1,5 +1,3 @@
-{:index 3}
-
 # Sharing
 
 ## Overview
@@ -19,6 +17,16 @@ Another way to share a chart in any social network is to use special sharing met
 - {api:anychart.core.Chart#shareWithLinkedIn}shareWithLinkedIn(){api}
 
 When sharing is done using the context menu, the sharing function uses default settings. The image of the chart will be shared with no link on the sample, and the hostname of the link will be the same as the picture name. All sharing methods described above have settings that can be adjusted.
+
+## Modules
+
+To enable sharing, add the [Exports](../Quick_Start/Modules#exports) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
 
 ## Facebook
 

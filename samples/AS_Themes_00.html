@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="AS Themes 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+
+    <!-- themes -->
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/coffee.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_blue.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_earth.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_glamour.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_provence.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/dark_turquoise.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_blue.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_earth.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_glamour.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_provence.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/light_turquoise.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/monochrome.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/morning.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/pastel.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/sea.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/themes/wines.min.js"></script>    
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        select {
+            margin: 10px 0 10px 10px;
+        } 
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<select id="themeSelect" onchange="changeTheme()">
+  <option value="defaultTheme" selected="selected">Default</option>
+  <option value="lightBlue" >Light Blue</option>
+  <option value="darkEarth">Dark Earth</option>
+  <option value="lightEarth">Light Earth</option>
+  <option value="darkGlamour">Dark Glamour</option>
+  <option value="lightGlamour">Light Glamour</option>
+  <option value="darkProvence">Dark Provence</option>
+  <option value="lightProvence">Light Provence</option>
+  <option value="darkTurquoise">Dark Turquoise</option>
+  <option value="lightTurquoise">Light Turquoise</option>
+  <option value="coffee">Coffee</option>
+  <option value="monochrome">Monochrome</option>
+  <option value="morning">Morning</option>
+  <option value="pastel">Pastel</option>
+  <option value="sea">Sea</option>
+  <option value="wines">Wines</option>
+</select>
+<div id="container"></div>
+<script>
+var chart;
+// create a chart when document is ready
+anychart.onDocumentReady(function(){
+  // create chart when document is ready
+  createChart("defaultTheme")
+});
+
+// function to creat a chart
+function createChart(theme) {
+  // dispose chart if there is one already
+  if (chart != null) chart.dispose();
+
+  // set theme
+  anychart.theme(theme);  
+
+  // create chart
+  chart = anychart.column([["Earth", 1], ["Fire", 2], ["Wind", 3], ["Water", 1.5]]);
+  chart.title("Theme: " + theme);
+
+  // set container and draw chart
+  chart.container("container").draw();
+}
+function changeTheme(){
+  // recreate chart to reset theme
+  var select = document.getElementById("themeSelect");
+  createChart(select.value);
+}
+</script>
+</body>
+</html>

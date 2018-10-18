@@ -32,7 +32,7 @@ This format, just as Hexadecimal, sets color using three components: red, green 
 
 ### Web Colors
 
-Also you can use Web Color constants. For example: "Red", "Gold", "RoyalBlue", etc. Table with full list of color constants, along with their hexadecimal, RGB and HSB you can find on [Web Color Constants Table](Colors_Table).
+Also you can use Web Color constants. For example: "Red", "Gold", "RoyalBlue", etc. Table with the full list of color constants, along with their hexadecimal, RGB and HSB you can find on [Web Color Constants Table](Colors_Table).
 
 ```
 .fontColor("blue");

@@ -9,6 +9,26 @@ In AnyChart, Quadrant charts are combined with [Marker](Marker_Chart), [Bubble](
 
 This article explains how to create a basic Quadrant chart as well as configure settings that are specific to the type.
 
+## Modules
+
+The Quadrant chart requires adding the the [Core](../Quick_Start/Modules#core) and [Scatter](../Quick_Start/Modules#basic_cartesian_charts) modules:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
+```
+
+Alternatively, you can use the [Base](../Quick_Start/Modules#base) module, which includes, among other things, the two modules mentioned above: 
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../Quick_Start/Modules).
+
 ## Quick Start
 
 To create a Quadrant chart, use the {api:anychart#quadrant}anychart.quadrant(){api} chart constructor.
@@ -167,17 +187,17 @@ chart.quarters(
             rightTop: {
                 title: {
                     text: "Right Top",
+                    fontColor: "#fa8072",
                     fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#fa8072"
+                    fontWeight: "bold"
                 }
             },
             rightBottom: {
                 title: {
+                    fontColor: "#72fa80",
                     text: "Right Bottom",
                     fontSize: "24",
-                    fontWeight: "bold",
-                    fontColor: "#72fa80"
+                    fontWeight: "bold"
                 }
             },
         }
@@ -239,9 +259,9 @@ The sample below shows how to create quarter labels:
 var labelLBottom1 = chart.quarters().leftBottom().label(0);
 labelLBottom1.text("3");
 labelLBottom1.fontColor("gray");
+labelLBottom1.fontSize(16);
 labelLBottom1.fontWeight("bold");
 labelLBottom1.position("rightTop");
-labelLBottom1.fontSize(16);
 labelLBottom1.offsetX(-20);
 labelLBottom1.offsetY(20);
 
@@ -259,6 +279,6 @@ labelLBottom2.rotation(-90);
 
 ### Tooltips
 
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
 Labels of series are configured according to the rules of the series type - for example, see the [Marker Chart](Marker_Chart#labels) article.

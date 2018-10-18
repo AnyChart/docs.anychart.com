@@ -29,7 +29,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.financial();
 
     // chart title
-    chart.title("Multi-series");
+    chart.title("Multiple Series");
 
     // adjust x scale type
     var xScale = chart.xScale();
@@ -61,10 +61,10 @@ anychart.onDocumentReady(function () {
     var labels_2 = series_2.labels();
      
     // text formatter
-    labels_1.format(function (){
+    labels_1.format(function() {
 return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
-    labels_2.format(function (){
+    labels_2.format(function() {
 return("C: "+this.series.meta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     

@@ -9,9 +9,41 @@ This feature is often used with scatter charts, but Cartesian charts in AnyChart
 
 This article explains how to create and configure error bars on both Cartesian and scatter charts.
 
+## Modules
+
+Error bars do not require any modules except the modules required by the chart on which they are created.
+
+For scatter charts, combine the [Core](../../Quick_Start/Modules#core) module with the [Scatter](../../Quick_Start/Modules#scatter) module:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-scatter.min.js"></script>
+```
+
+For Cartesian charts, combine [Core](../../Quick_Start/Modules#core) module with [Basic Cartesian](../../Quick_Start/Modules#basic_cartesian_charts):
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
+```
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-cartesian.min.js"></script>
+```
+
+You can also use the [Base](../../Quick_Start/Modules#base) module, which includes, among other things, all the modules mentioned above:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+```
+
+Learn more: [Modules](../../Quick_Start/Modules).
+
 ## Quick Start
 
-To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either in percent or in pixels).
+To add error bars to a series, use the {api:anychart.core.cartesian.series.Base#error}error(){api} method with a parameter specifying the length of bars (either as a percentage or in pixels).
 
 Here is a basic sample showing how to create a Column chart with error bars:
 
@@ -163,7 +195,7 @@ error.mode("value");
 
 ## Appearance
 
-Here is a full list of methods used to configure the appearance of error bars:
+Here is the full list of methods used to configure the appearance of error bars:
 
 * {api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api} sets the width of Y-bars
 * {api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api} sets the width of X-bars
@@ -206,7 +238,7 @@ error2.xErrorStroke("black", 0.5);
 
 [Labels](../../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../../Common_Settings/Text_Formatters) are available.
 
-A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
+A [Tooltip](../../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and text formatters, change the style of background, adjust the position of a tooltip, and so on.
 
 ### Tokens
 
@@ -248,7 +280,7 @@ In the sample below they are used to customize tooltips:
 
 ```
 // configure tooltips
-chart.tooltip().format(function (){
+chart.tooltip().format(function() {
   var output = "";
   if (this.xUpperError != 0)
      output = "xUpperError: " + this.xUpperError;

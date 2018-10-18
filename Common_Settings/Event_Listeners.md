@@ -27,7 +27,7 @@ There are five listener methods in Anychart, each type for a special case. Read 
 The  {api:anychart.core.Base#listen}listen(){api} method adds an event listener to an object.
 
 ```
-chart.listen("click", function (){
+chart.listen("click", function() {
 	dataSet.append({
 		// x value
 		x: "P" + indexSetter,
@@ -50,7 +50,7 @@ The {api:anychart.core.Base#listenOnce}listenOnce(){api} method adds an event li
 // click twice on any range bar to see the result
 
 range.listenOnce("dblClick",
-  function (){
+  function() {
     range.fill("red");
   });
 ```
@@ -63,7 +63,7 @@ The {api:anychart.core.Base#removeAllListeners}removeAllListeners(){api} method 
 
 ```
 // remove all listeners
-chart.listen("dblClick", function (){
+chart.listen("dblClick", function() {
   chart.removeAllListeners();
 });
 ```
@@ -78,7 +78,7 @@ The {api:anychart.core.Base#unlisten}unlisten(){api} method disables the particu
 
 ```
 // create a function for what to listen and then unlisten
-var func_listen = function (){
+var func_listen = function() {
   dataSet.append({
     // x value
     x: "P" + indexSetter,
@@ -92,7 +92,7 @@ var func_listen = function (){
 // add a listener
 chart.listen("mouseMove", func_listen);
 
-chart.listenOnce("click",function (){
+chart.listenOnce("click",function() {
   // adding an unlistener 
   chart.unlisten("mouseMove", func_listen);
 });
@@ -113,7 +113,7 @@ var key = chart.listen("mouseMove", func_listen);
 // unlisten this
 // click twice on the chart to see the result
 chart.listen("dblclick",
-  function (){
+  function() {
     chart.unlistenByKey(key);
   }
 );
@@ -196,7 +196,7 @@ Mouse-Related events provide no information about the point.
 
 ```
 //add a listener
-chart.listen("mouseDown", function (){
+chart.listen("mouseDown", function() {
   // this will open a new page in a new tab
   window.open("https://google.com","_blank");
 });
@@ -210,7 +210,7 @@ Look through the next paragraph to understand the difference between the mouse-r
 
 Opposite to mouse-related methods, these point-related events can provide information about the point.
 
-In the next sample two listeners are added. One of them tracks clicks and changes the fill of the point, the second one handles double-click on the point and uses point's "url" value as the query for the google search and opens a new page with a google search. When a point is clicked once, it changes the color.
+In the next sample two listeners are added. One of them tracks clicks and changes the fill of the point, the second one handles double-click on the point and uses point's "url" value as the query for the google search and opens a new page with a google search. When a point is clicked on once, it changes the color.
 
 ```
 // add a listener
@@ -248,7 +248,7 @@ var chart = anychart.column();
 // set series data
 chart.column(data);
 
-// create listener on point's hover event
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(event){
   // get hovered point
   var point = event.point;
@@ -276,7 +276,7 @@ chart.listen("pointsHover", function(event){
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
-// event on hovering a point
+// create an event listener for the pointsHover event
 chart.listen("pointsHover", function(event){
   // getter for hovered point
   var point = event.point;
@@ -284,7 +284,8 @@ chart.listen("pointsHover", function(event){
   var index = point.getIndex();
   // getter for hovered point's series
   var currentSeries = point.getSeries();
-  // if this event is triggered on points unhovering, nothing will happen
+  /* if this event is triggered when the point
+  is not in the hover state, nothing will happen */
   if (!event.currentPoint.hovered) return;
   // get an array of months, hovered point belong to and hover it.
   currentSeries.hover(getQuarterMonths(index));

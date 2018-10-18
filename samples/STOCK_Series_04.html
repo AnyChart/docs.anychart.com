@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -28,6 +28,8 @@ anychart.onDocumentReady(function () {
 
     // create a data table
     var dataTable = anychart.data.table();
+
+    // add data
     dataTable.addData([
         ["2014-01-02",92.86,93.05,91.2,91.55,5327800],
         ["2014-01-05",92,93.09,92,93.05,5276300],
@@ -61,9 +63,9 @@ anychart.onDocumentReady(function () {
     ]);
 
 
-    // create mapping objects
-    var mapping1 = dataTable.mapAs({'value': 4});
-    var mapping2 = dataTable.mapAs({'value': 5});
+    // map the data
+    var mapping1 = dataTable.mapAs({"value": 4});
+    var mapping2 = dataTable.mapAs({"value": 5});
       
     // create stock chart
     var chart = anychart.stock();
@@ -71,19 +73,19 @@ anychart.onDocumentReady(function () {
     // create a column series
     chart.plot(0).column(mapping1);
 
-    // set the part of a chart to be selected
-    chart.selectRange('2014-01-13','2014-02-04');
+    // set the range of points shown on the chart
+    chart.selectRange("2014-01-13", "2014-02-04");
 
-    // create the thumbnail series in the scroller
+    // create a thumbnail series in the scroller
     var scrollerSeries = chart.scroller().column(mapping2);
 
     // set the color for the selected columns in the thumbnail series
     scrollerSeries.selected().fill("#00796B");
 
-    // set container id for the chart
-    chart.container('container');
+    // set container id
+    chart.container("container");
 
-    // initiate chart drawing
+    // initiate drawing the chart
     chart.draw();
     });
 </script>

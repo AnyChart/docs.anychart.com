@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
@@ -31,6 +31,8 @@ anychart.onDocumentReady(function () {
 
     // create a data table
     var dataTable = anychart.data.table();
+
+    // add data
     dataTable.addData([
         ["2004-01-02", 92.86, 93.05, 91.2, 91.55],
         ["2004-01-05", 92, 93.09, 92, 93.05],
@@ -45,10 +47,10 @@ anychart.onDocumentReady(function () {
         ["2004-01-16", 95, 95.35, 94.71, 95.32]
     ]);
 
-    // create mapping objects
-    var mapping1 = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-    var mapping2 = dataTable.mapAs({'high': 2, 'low': 3});    
-    var mapping3 = dataTable.mapAs({'value': 4});
+    // map the data
+    var mapping1 = dataTable.mapAs({"open": 1, "high": 2, "low": 3, "close":4});
+    var mapping2 = dataTable.mapAs({"high": 2, "low": 3});    
+    var mapping3 = dataTable.mapAs({"value": 4});
 
     // create an ohlc series
     var series1 = chart.plot(0).candlestick(mapping1);
@@ -62,10 +64,10 @@ anychart.onDocumentReady(function () {
     var series3 = chart.plot(1).line(mapping3);
     series3.name("Line");
 
-    // set container id for the chart
-    chart.container('container');
+    // set the container id
+    chart.container("container");
 
-    // initiate chart drawing
+    // initiate drawing the chart
     chart.draw();
 });
 </script>

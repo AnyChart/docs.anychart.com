@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Sankey Diagram 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sankey.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      {from: "Solar Energy", to: "Shading",  weight: 10},
+      {from: "Shading",      to: null,       weight: 6},
+      {from: "Shading",      to: "Facade",   weight: 4},
+      {from: "Facade",       to: null,       weight: 3},
+      {from: "Facade",       to: "Interior", weight: 1}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.sankey(data);
+
+    // set the width of nodes
+    chart.nodeWidth("50%");
+
+    // configure the visual settings of nodes
+    chart.node().normal().fill("#64b5f6 0.5");
+    chart.node().hovered().fill(anychart.color.darken("#64b5f6"));
+    chart.node().normal().stroke("#455a64", 2);
+
+    // configure the visual settings of flows
+    chart.flow().normal().fill("#ffa000 0.4");
+    chart.flow().hovered().fill(anychart.color.darken("#ffa000"));
+    chart.flow().hovered().stroke("#455a64");
+
+    // configure the visual settings of dropoffs
+    chart.dropoff().normal().fill(
+      {keys: ["#dd2c00 0.4", "#455a64 0.7"], angle: 270}
+    );
+    chart.dropoff().hovered().stroke("#455a64");
+
+    // set the chart title
+    chart.title("Sankey Diagram: Appearance");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-annotations.min.js"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
@@ -59,7 +59,7 @@ secondValueAnchor: 28.92
     });
 
     // configure the annotation labels
-    fibonacciRetracement.labels().format(function (){
+    fibonacciRetracement.labels().format(function() {
       var levelValue = this.levelValue.toFixed(1);
       switch (this.level) {
   case 0:

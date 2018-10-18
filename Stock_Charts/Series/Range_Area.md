@@ -82,7 +82,7 @@ series.name("Temperature Range");
 
 ### Multi series
 
-Simple multi-series chart:
+Simple multiple-series chart:
 
 ```
 // set the data

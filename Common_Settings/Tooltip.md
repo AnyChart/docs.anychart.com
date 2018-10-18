@@ -2,11 +2,11 @@
 
 ## Overview
 
-Tooltip is a text box that is hidden by default and can be displayed when a point on a chart is hovered. Tooltip demonstrates the information that each point contains. It may also display some additional information if this is defined by the tooltip settings.
+Tooltip is a text box that is hidden by default and can be displayed when a point on a chart is hovered over. Tooltip demonstrates the information that each point contains. It may also display some additional information if this is defined by the tooltip settings.
 
 ## Default Tooltip
 
-By default, the tooltip is being shown when a point on a chart is hovered. To disable them from showing at all, set `false` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
+By default, the tooltip is being shown when a point on a chart is hovered over. To disable them from showing at all, set `false` to the {api:anychart.core.ui.Tooltip#enabled}enabled(){api} method.
 
 ```
 // enable tooltip for all series
@@ -17,7 +17,7 @@ var tooltip = series.tooltip();
 tooltip.enabled(false);
 ```
 
-Hover each of the series to see the difference.
+Hover over each of the series to see the difference.
 
 {sample}CS\_Tooltip\_01{sample}
 
@@ -62,7 +62,7 @@ There are three modes of a tooltip display:
 
 ### Single
 
-Single tooltip is the default mode. In this mode tooltip displays information only for a single hovered point.
+Single tooltip is the default mode. In this mode tooltip displays information only for a single point that is hovered over.
 
 ```
 // create column chart plot
@@ -174,7 +174,7 @@ In case you need more complex content formatting there is the {api:anychart.core
 
 ```
 var tooltip = chart.tooltip();
-tooltip.format(function (){
+tooltip.format(function() {
   /* code of your function */
 });
 ```
@@ -221,7 +221,7 @@ Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anycha
 
 ## HTML
 
-To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as the parameter:
+To enable a fully functional HTML tooltip, call the {api:anychart.core.ui.Tooltip#useHtml}useHtml(){api} method with `true` as a parameter:
 
 ```
 chart.tooltip().useHtml(true);
@@ -442,7 +442,7 @@ Note: that stage the chart belongs to is considered as the stage of the tooltip 
 
 *IMPORTANT NOTE:*
 
-When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get `true` as the parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
+When any of the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} get `true` as a parameter, the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips  is to call the special {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
 
 ## Out of screen
 
@@ -462,12 +462,12 @@ The third series inherits the chart's defaults in this sample.
 
 There are several methods for managing tooltips position on the chart. This section contains information on most of these methods.
   
-AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. The `"float"` parameter is the default one for this method and makes tooltip to follow the cursor. Setting `"point"` and a parameter binds tooltip to the hovered series point. Use the `"chart"` parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
+AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, to the point that is hovered over or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. The `"float"` parameter is the default one for this method and makes tooltip to follow the cursor. Setting `"point"` and a parameter binds tooltip to the series point that is hovered over. Use the `"chart"` parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
 
 ```
 chart.tooltip().positionMode("point");
 ```
-Here is a sample with the tooltip stuck to the hovered point:
+Here is a sample with the tooltip stuck to the point that is hovered over:
 
 {sample}CS\_Tooltip\_18{sample}
 
@@ -504,7 +504,7 @@ This is how the sample with the code from above looks like:
 
 ## Hiding Time
 
-In some cases you may need to display a tooltip for a couple of moments after a point is no longer hovered (mouse left a point). Use {api:anychart.core.ui.Tooltip#hideDelay}hideDelay(){api} method to set timer to display tooltip a bit longer.
+In some cases you may need to display a tooltip for a couple of moments after a point is no longer hovered over (mouse has been moved out of the point). Use {api:anychart.core.ui.Tooltip#hideDelay}hideDelay(){api} method to set timer to display tooltip a bit longer.
 
 ```
 // tooltip settings

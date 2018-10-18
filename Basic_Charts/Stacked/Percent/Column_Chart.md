@@ -3,13 +3,13 @@
 
 ## Overview
 
-A percent Stacked Column Chart (otherwise known as a 100% Stacked Column Chart) is a multi-series Column Chart that displays the trend of the percentage each value contributes over time or categories.
+A percent Stacked Column Chart (otherwise known as a 100% Stacked Column Chart) is a multiple-series Column Chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Percent Stacked Column Chart, you should create a multi-series [Column Chart](../../Column_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
+To build a Percent Stacked Column Chart, you should create a multiple-series [Column Chart](../../Column_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to **percent**:
 
 ```
 // create a chart

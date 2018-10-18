@@ -54,7 +54,11 @@ There are 16 themes in AnyChart at the moment: *Coffee*, *Dark Blue*, *Dark Eart
 
 And there are 11 accompanying [Color palettes](Palettes) which are used by these themes, but their use can be combined if needed.
 
-You can take a look at the [AnyChart Themes Demo](https://www.anychart.com/solutions/themes-demo/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
+Here is a simple demo where you can choose a theme and a palette and change them on-the-fly:
+
+{sample}AS\_Themes\_00{sample}
+
+You can also take a look at the [AnyChart Themes Demo](https://www.anychart.com/solutions/themes-demo/) where you can try every theme and palette on any of charts and maps available in AnyChart JavaScript Charts package.
 
 ## Create Theme
 
@@ -311,7 +315,7 @@ But there are some very important characteristics and features in a theme: you c
   
 **Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values and this file can be used as a reference of all theme settings. Read more about default theme in [Default Theme section](#default_theme).
   
-Here is a list of global settings and defaults that can be defined in a theme:
+Here is the list of global settings and defaults that can be defined in a theme:
 
 <table class="dtTABLE" width="700">
 <tbody>

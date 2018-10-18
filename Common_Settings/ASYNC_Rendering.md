@@ -1,5 +1,3 @@
-{:index 3}
-
 # ASYNC Rendering
 
 ## Overview
@@ -43,7 +41,7 @@ stage = anychart.graphics.create("container");
 
 chart = anychart.pie([15, 16, 30]);
 
-stage.listenOnce('stagerendered', function (){
+stage.listenOnce('stagerendered', function() {
     if (isAsync) chart.title("Is Async");
 });
 

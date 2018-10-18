@@ -189,13 +189,14 @@ function draw_tree(layer, points, color, z_index, shadow){
 // an external function switching the behaviour
 function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
 	toggle(false);
-	piece.listen("mouseOver", function (){toggle(true);});
-	piece.listen("mouseOut", function (){toggle(false);});
-	line.listen("mouseOver", function (){toggle(true);});
-	line.listen("mouseOut", function (){toggle(false);});
-	img.listen("mouseOver", function (){toggle(true);});
-	img.listen("mouseOut", function (){toggle(false);});
-	// enables and disables all shadows when an element is hovered or unhovered
+	piece.listen("mouseOver", function() {toggle(true);});
+	piece.listen("mouseOut", function() {toggle(false);});
+	line.listen("mouseOver", function() {toggle(true);});
+	line.listen("mouseOut", function() {toggle(false);});
+	img.listen("mouseOver", function() {toggle(true);});
+	img.listen("mouseOut", function() {toggle(false);});
+	/* enables and disables all shadows when the mouse
+	is moved over an element or out of it */
     function toggle(e){
 shadow.visible(e);
 lineShadow.visible(e);

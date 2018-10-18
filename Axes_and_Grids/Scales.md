@@ -88,7 +88,21 @@ Here is a basic sample of a chart with a stacked scale:
 
 {sample}AGST\_Scales\_05{sample}
 
+## Inversion
+
+If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with `true` parameter.
+
+```
+chart.yScale().inverted(true);
+```
+
+Sample of the chart with inverted scale:
+
+{sample}AGST\_Scales\_10{sample}
+
 ## Minimum and Maximum
+
+### Hard
 
 Maximum and minimum values by default are calculated automatically. If you want to set them use 
 {api:anychart.scales.Linear#minimum}minimum(){api} and {api:anychart.scales.Linear#maximum}maximum(){api} methods:
@@ -100,7 +114,7 @@ chart.yScale().maximum(100);
 
 {sample}AGST\_Scales\_06{sample}
 
-## Soft Minimum and Soft Maximum
+### Soft
 
 In some cases you may have no need to define solid minimum or maximum and need a scale to be autocalculated, but at the same time you may want a scale to remain in a certain range (i.e. "never go below zero" or "never go above 100"): that's the case when soft maximum and soft minimum parameters help you.
 
@@ -115,11 +129,26 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 {sample}AGST\_Scales\_07{sample}
 
+### Gap
+
+For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
+
+```
+chart.yScale().minimumGap(1);
+chart.yScale().maximumGap(1);
+```
+
+In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+
+{sample}AGST\_Scales\_09{sample}
+
 ## Stick to Zero
 
 {api:anychart.scales.Linear#stickToZero}stickToZero(){api} method allows to disable the default scale autocalculation behavior and always include zero in scale range.
 
-## Minor and Major Ticks
+## Ticks
+
+### Minor and Major
 
 For any scale, but ordinal, you can set {api:anychart.scales.Linear#ticks}major{api} and {api:anychart.scales.Linear#minorTicks}minor{api} ticks intervals, which are calculated automatically by default. 
   
@@ -137,7 +166,7 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 {sample}AGST\_Scales\_08{sample}
 
-## Integer Ticks
+### Integer
 
 If you do not want to see fractional values on the axis, you can use the {api:anychart.scales.ScatterTicks#allowFractional}allowFractional(){api} method:
 
@@ -150,30 +179,65 @@ Take a look at the sample and see how to enable and disable this option:
 
 {sample}AGST\_Scales\_08\_1{sample}
 
-## Minimum and Maximum Gap
+### Array
 
-For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
+If you need deep customization of ticks you can access and change the number of position of ticks manually. To access the array of ticks use the {api:anychart.scales.ScatterTicks#get}get(){api} method. 
 
-```
-chart.yScale().minimumGap(1);
-chart.yScale().maximumGap(1);
-```
+**Note:** to get the proper array of calculated ticks use the {api:anychart.scales.ScatterTicks#get}get(){api} method after chart *"draw"* event.
 
-In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+To set the array of ticks use the {api:anychart.scales.ScatterTicks#set}set(){api} method.
 
-{sample}AGST\_Scales\_09{sample}
-
-## Inversion
-
-If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with `true` parameter.
+Here is a sample that makes use of both methods to overhaul the set of ticks:
 
 ```
-chart.yScale().inverted(true);
+// get the array of generated ticks
+ticksArray = chart.yScale().ticks().get();
+// modify the array of ticks
+if (ticksArray.length > 2) ticksArray.pop();
+// set the array of ticks
+chart.yScale().ticks().set(ticksArray);
 ```
 
-Sample of the chart with inverted scale:
+And shows how to load some precalculated array:
 
-{sample}AGST\_Scales\_10{sample}
+```
+// set a fixed array as ticks
+var ticksArray = [0, 1, 2, 2.8];
+chart.yScale().ticks().set(ticksArray);
+```
+
+{sample}AGST\_Scales\_08\_2{sample}
+
+Another example of using this feature of the scale is shown below: the data that is set to chart can be sorted, read and then used to fill the array of ticks and axis markers to highlight the values:
+
+```
+// get raw data
+dataSet = anychart.data.set([
+    {x: "Soprano", value: 1.1},
+    {x: "Alto", value: 0.1},
+    {x: "Tenor", value: 2.5},
+    {x: "Bass", value: 1.8}
+]);
+
+// create a sorted view
+sortedData = dataSet.mapAs().sort('value', 'asc');
+
+// create a chart using sorted data
+chart = anychart.column(sortedData);
+
+// create an empty array
+var ticksArray = [];
+
+// get data point value from the data set
+// and populate the array
+for (i=0;i < sortedData.getRowsCount();i++){
+  ticksArray[i] = sortedData.get(i, 'value');
+}
+// set the populated array as ticks array
+chart.yScale().ticks().set(ticksArray);
+```    
+
+{sample}AGST\_Scales\_08\_3{sample}
 
 ## One Scale for Different Charts
 
