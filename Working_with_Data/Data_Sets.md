@@ -5,6 +5,7 @@
 
 ## Classes
 
+<<<<<<< HEAD
 Here is the - list of classes allowing you to work with data sets in AnyChart:
 
 * data set - {api:anychart.data.Set}anychart.data.Set{api}
@@ -150,104 +151,136 @@ chart = anychart.pie([
 
 // draw
 chart.container('container').draw();
+=======
+Here is the list of classes allowing you to work with data sets in AnyChart:
+
+* data set – {api:anychart.data.Set}anychart.data.Set{api}
+* data view – {api:anychart.data.View}anychart.data.View{api}
+* iterator – {api:anychart.data.Iterator}anychart.data.Iterator{api}
+
+## Setting Data
+
+* {api:anychart.data.Set}anychart.data.Set{api}
+* {api:anychart.data#set}anychart.data.set(){api}
+
+### Array of Arrays
+
+```
+
+>>>>>>> DVF-3943-stock-legend
 ```
 
 {sample}WD\_Data\_Sets\_01{sample}
 
-### Object
-
-This variant is a bit more complicated. If you want to specify point properties explicitly, you can use an `Object` as a row.  
+### Array of Objects
 
 ```
-var data = [
-  // column name         value
-  {x: '2014/6/25', value: 28},                          // row 0
-  {x: '2014/6/26', value: 26},                          //    1
-  {x: '2014/6/27', value: 27},                          //    2
-  {x: '2014/6/28', value: 25, marker:{fill:'violet'}},  //    3
-  {x: '2014/6/29', value: 29, marker:{fill:'red'}},     //    4
-  {x: '2014/6/30', value: 28,}                          //    5
-];
 
-// create a data set
-var dataSet = anychart.data.set(data);
-
-// create a line chart using the data set
-var lineChart = anychart.line(dataSet);
-
-// set container id for the chart
-lineChart.container('container');
-lineChart.title('New York weather');
-lineChart.getSeries(0).name('New York');
-
-// initiate chart drawing
-lineChart.draw();
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}
 
-In this sample we specified the columns' names, the name of the chart and of the line and marked the lowest and the highest values.
-
-### Array
-
-If you want to create more than one series on one chart or a chart with similar data, it is recommended to use `Array` as a row. Values of "column 0" of each row will represent series X (argument), each of the following columns value will represent a series value.
-
-As a result we will have a js chart with 3 line series:
+### CSV String
 
 ```
-var data = [
-    // column 0    1    2    3
-    ["2014/6/25",  28,  23,  25], // row 1
-    ["2014/6/26",  26,  21,  26], //     2
-    ["2014/6/27",  27,  19,  26], //     3
-    ["2014/6/28",  25,  21,  27], //     4
-    ["2014/6/29",  29,  22,  28], //     5
-    ["2014/6/30",  28,  25,  27]  //     6
-];
 
-// create mapping list on one data set
-var dataMappingList = anychart.data.mapAsTable(data);
-
-// create line chart
-var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
-lineChart.getSeries(0).name('New York');
-lineChart.getSeries(1).name('San Francisco');
-lineChart.getSeries(2).name('Los Angeles');
-
-// set container
-lineChart.container('container');
-
-// initiate chart drawing
-lineChart.draw();
 ```
 
 {sample}WD\_Data\_Sets\_03{sample}
 
-## Data Mapping
+### Mapping
 
-Data mapping is a great option to show the same data in different ways, for example in different charts, grouped or sorted differently. That's how one can use the same data set to populate two different charts:
+* {api:anychart.data.Set#mapAs}mapAs(){api}
+* здесь про view не писать
+* в других разделах использовать mapAs() для доступа к view, не линкуя его
+
 
 ```
-var data = [
-  // column 0    1    2    3
-  ["2014/6/25",  28,  23,  28], // row 0
-  ["2014/6/26",  26,  21,  26], //     1
-  ["2014/6/27",  27,  19,  26], //     2
-  ["2014/6/28",  25,  21,  27], //     3
-  ["2014/6/29",  29,  22,  28], //     4
-  ["2014/6/30",  28,  25,  27]  //     5
-];
 
-// create mapping list on one data set
-var dataMappingList = anychart.data.mapAsTable(data);
-
-// create a line chart using the data set
-var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
-
-// map x and value from the data set
-var colChart = anychart.column(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
 ```
 
-This is a sample that utilized data mapping to show data in two different ways:
+{sample}WD\_Data\_Sets\_01{sample}
 
-{sample}WD\_Data\_Sets\_04{sample}
+## Accessing Rows
+
+* {api:anychart.data.Set}anychart.data.Set{api}
+* {api:anychart.data.View}anychart.data.View{api}
+* у ряда нет своего класса, но есть классы dataset и view
+* они позволяют работать с рядами и конкретными полями: dataset - ряд, view - поле + через view можно делать итерацию и поиск
+
+## Data Manipulation
+
+### Reading
+
+* строка: row() (dataset), getRowsCount() (dataset)
+* отдельное поле: get() (view)
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+### Adding
+
+* append() (dataset)
+* insert() (dataset)
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+### Updating
+
+* строка: row() (dataset)
+* отдельное поле: set() (view)
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+### Removing
+
+* remove() (dataset)
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+### Searching
+
+* filter() (view)
+* find() (view)
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+### Iterating
+
+* getIterator() (view)
+* методы итератора
+
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_01{sample}
+
+## Events
+
+(?)
