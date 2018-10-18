@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Legend 05"/>
+    <meta name="ac:name" content="STOCK Legend 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -41,29 +41,22 @@ anychart.onDocumentReady(function () {
   
     // map the data
     mapping = dataTable.mapAs(
-      {open: 1, high: 2, low: 3, close: 4}
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
     );
 
     // create a stock chart
     var chart = anychart.stock();
 
-    // create a plot
-    var plot = chart.plot(0);
-   
-    // create an ohlc series
-    plot.ohlc(mapping);
+    // create two plots
+    var plot1 = chart.plot(0);
+    var plot2 = chart.plot(1);
 
-    // enable html for the legend
-    plot.legend().useHtml(true);
-
-    // configure the format of legend items
-    plot.legend().itemsFormat(
-      "<span style='color:#455a64;font-weight:600'>{%seriesName}: </span>" +
-      "{%open} / {%high} / {%low} / {%close}"
-    );
-   
+    // create two series: line and ohlc
+    plot1.line(mapping);
+    plot2.ohlc(mapping);
+  
     // set the chart title
-    chart.title("AnyStock Legend: Item Text Format (Tokens)");
+    chart.title("AnyStock Legend: Basic Sample");
 
     // set the container id
     chart.container("container");

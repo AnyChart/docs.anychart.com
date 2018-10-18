@@ -37,9 +37,9 @@ You can also call the {api:anychart.core.ui.Legend#useHtml}useHtml(){api} method
 
 ### Tokens
 
-If the chart type allows adding multiple series, each legend item represents a series. In this case, you can use the `"{%seriesName}"` token, which is always available, and other series-related (not point-related) tokens supported by the given series type.
+If the chart type allows adding multiple series, each legend item represents a series. In this case, you can use the `{%seriesName}` token, which is always available, and other series-related (not point-related) tokens supported by the given series type.
 
-For example, here the `"{%seriesName}"` and `"{%seriesYSum}"` tokens are used to configure the legend text of a multiple-series Line chart:
+For example, here the `{%seriesName}` and `{%seriesYSum}` tokens are used to configure the legend text of a multiple-series Line chart:
 
 ```
 // enable html for the legend
@@ -55,7 +55,7 @@ chart.legend().itemsFormat(
 
 Each legend item of a single-series chart type is linked to a chart point, so you can use tokens representing the values of the points. The exact set of the tokens available depends on the chart type.
 
-In the following sample, the `"{%x}"`, `"{%value}"`, and `"{%percentValue}"` tokens are used to configure the legend text of a Pie chart:
+In the following sample, the `{%x}`, `{%value}`, and `{%percentValue}` tokens are used to configure the legend text of a Pie chart:
 
 ```
 // enable html for the legend

@@ -59,9 +59,9 @@ You can also call the {api:anychart.core.utils.LegendItemSettings#useHtml}useHtm
 
 ### Tokens
 
-The `"{%seriesName}"` token works with all series types. Also, you can use other series-related tokens supported by the given series type.
+The `{%seriesName}` token works with all series types. Also, you can use other series-related tokens supported by the given series type.
 
-For example, in the following sample, the `"{%seriesName}"` and `"{%seriesYSum}"` tokens are used to configure the text of a legend item representing one of the Line series of a multiple-series chart:
+For example, in the following sample, the `{%seriesName}` and `{%seriesYSum}` tokens are used to configure the text of a legend item representing one of the Line series of a multiple-series chart:
 
 ```
 // enable html for the last legend item
