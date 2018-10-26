@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="STOCK Legend 05"/>
+    <meta name="ac:name" content="STOCK Legend 09"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -24,6 +24,9 @@
 <script>
 anychart.onDocumentReady(function () {
 
+    // create a stage
+    var stage = anychart.graphics.create("container");
+
     // create a data table
     var dataTable = anychart.data.table();
     dataTable.addData([
@@ -41,35 +44,51 @@ anychart.onDocumentReady(function () {
   
     // map the data
     mapping = dataTable.mapAs(
-      {open: 1, high: 2, low: 3, close: 4}
+      {open: 1, high: 2, low: 3, close: 4, value: 4}
     );
 
     // create a stock chart
     var chart = anychart.stock();
 
-    // create a plot
-    var plot = chart.plot(0);
-   
-    // create an ohlc series
-    plot.ohlc(mapping);
+    // create two plots
+    var plot1 = chart.plot(0);
+    var plot2 = chart.plot(1);
 
-    // enable html for the legend
-    plot.legend().useHtml(true);
+    // create two series: line and ohlc
+    plot1.line(mapping);
+    plot2.ohlc(mapping);
 
-    // configure the format of legend items
-    plot.legend().itemsFormat(
-      "<span style='color:#455a64;font-weight:600'>{%seriesName}: </span>" +
-      "{%open} / {%high} / {%low} / {%close}"
-    );
-   
+    // disable the legend on both plots
+    plot1.legend(false);
+    plot2.legend(false);
+
+    /* set the position of the chart to prevent 
+    the standalone legend from overlapping it */
+    chart.top(25);
+
     // set the chart title
-    chart.title("AnyStock Legend: Item Text Format (Tokens)");
+    chart.title("Standalone Legend in AnyStock")
 
-    // set the container id
-    chart.container("container");
+    // set the chart container
+    chart.container(stage);
 
     // initiate drawing the chart
     chart.draw();
+
+    // create a standalone legend
+    var legend = anychart.standalones.legend();
+
+    // set the source of legend items
+    legend.itemsSource([plot1, plot2]);
+
+    // set the padding of the legend
+    legend.padding(10);
+
+    // set the container for the legend
+    legend.container(stage);
+
+    // draw the legend
+    legend.draw();
 });
 </script>
 </body>

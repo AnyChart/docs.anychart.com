@@ -10,7 +10,6 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Treemap](../Quick_Start/Modules#treemap)</td></tr>
 <tr><th colspan=2>API</th></tr>
-<tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.TreeMap}anychart.charts.TreeMap{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[id, parent, children, name, size, value](../Working_with_Data/Overview)</td></tr>

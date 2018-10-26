@@ -32,7 +32,7 @@ To adjust a standalone legend, use methods of the {api:anychart.standalones.Lege
 
 ### Legend Items
 
-**You can add items automatically** by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to. This method adds items representing series or points of charts, like in the following sample: [Item = Series / Point](#item_=_series_/_point).
+**You can add items automatically** by using the {api:anychart.standalones.Legend#itemsSource}itemsSource(){api} method and specifying a chart or an array of charts you want the legend to be bound to. This method creates items representing the series or points of the given charts, like in the following sample: [Item = Series / Point](#item_=_series_/_point).
 
 ```
 // set the source of legend items

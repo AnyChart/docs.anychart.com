@@ -83,12 +83,12 @@ Predefined Shapes are complex shapes which can be drawn on a stage using paths o
 <tr>
 <td>{api:anychart.graphics.vector.primitives#roundedInnerRect}roundedInnerRect(){api}</td>
 <td>stage or path, rectangle (which corners to truncate), radius (from 1 to 4 values: if set 1 value it will be applied to all corners; if set 2 values, first value will be applied to left-top and right-bottom corners and the second to right-top and left-bottom corners; if set 3 values, first one will be applied to the top-left corner, second to top-right and bottom-left and the third value will be applied to the bottom-right corner)</td>
-<td>Draws a rectangle with rounded corners.</td>
+<td>Draws a rectangle with rounded inner corners.</td>
 </tr>
 <tr>
 <td>{api:anychart.graphics.vector.primitives#roundedRect}roundedRect(){api}</td>
 <td>stage or path, rectangle (which corners to truncate), radius (from 1 to 4 values: if set 1 value it will be applied to all corners; if set 2 values, first value will be applied to left-top and right-bottom corners and the second to right-top and left-bottom corners; if set 3 values, first one will be applied to the top-left corner, second to top-right and bottom-left and the third value will be applied to the bottom-right corner)</td>
-<td>Draws a rectangle with rounded inner corners.</td>
+<td>Draws a rectangle with rounded corners.</td>
 </tr>
 <tr>
 <td>{api:anychart.graphics.vector.primitives#star}star(){api}</td>
