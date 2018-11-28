@@ -7,7 +7,7 @@ AnyChart allows you to create scatter charts by using a special scatter chart co
 
 Scatter charts are used mainly to visualize the results of mathematical calculations or physics experiments.
 
-To learn more about the difference between the scatter and Cartesian constructors, read the [Scatter vs. Cartesian](#) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
+To learn more about the difference between the scatter and Cartesian constructors, read the [Scatter vs. Cartesian](../../Common_Settings/X_Drawing_Mode) article. See also the [Supported Types](#supported_types) section to find the list of supported series types.
 
 This article explains how to create and configure scatter charts.
 
