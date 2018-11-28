@@ -43,7 +43,7 @@ Here is a live sample:
 There are three parameters an MFI indicator has, one of them is necessary - the mapping. Two other ones are the period and the series type. The series type can be easily changed any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. The following code sample demonstrates an MFI indicator with parameters set as default.
 
 ```
-var momentum = plot.momentum(mapping, 10, "line");
+var mfi = plot.mfi(mapping, 10, "line");
 ```
 
 ## Visualization
