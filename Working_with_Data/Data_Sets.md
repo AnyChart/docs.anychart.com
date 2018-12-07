@@ -155,8 +155,8 @@ var series2 = chart.line(mapping_2);
 ```
 // get the name and value of the last point
 var rowsCount = dataSet.getRowsCount();
-var lastPointName = seriesData.get(rowsCount - 1, "x");
-var lastPointValue = seriesData.get(rowsCount - 1, "value");
+var lastPointName = mapping.get(rowsCount - 1, "x");
+var lastPointValue = mapping.get(rowsCount - 1, "value");
 ```
 
 {sample}WD\_Data\_Sets\_05{sample}
