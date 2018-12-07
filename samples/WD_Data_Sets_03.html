@@ -24,28 +24,38 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-    var data = [
-// column 0    1    2    3
-["2014/6/25",  28,  23,  25], // row 1
-["2014/6/26",  26,  21,  26], //     2
-["2014/6/27",  27,  19,  26], //     3
-["2014/6/28",  25,  21,  27], //     4
-["2014/6/29",  29,  22,  28], //     5
-["2014/6/30",  28,  25,  27]  //     6
-    ];
+  
+    // create a data set
+    var data = anychart.data.set([
+      ["January", 12000, 10000],
+      ["February", 15000, 12000],
+      ["March", 16000, 18000],
+      ["April", 15000, 11000],
+      ["May", 14000, 9000]
+    ]);
 
-    // create mapping list on one data set
-    var dataMappingList = anychart.data.mapAsTable(data);
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
 
-    // create line chart
-    var chart = anychart.line.apply(null, dataMappingList);
-    chart.getSeries(0).name("NY");
-    chart.getSeries(1).name("SF");
-    chart.getSeries(2).name("LA");
-    
-    // set container
+    // create a chart
+    var chart = anychart.line();
+
+    // create the first series, set the data and name
+    var series1 = chart.line(seriesData_1);
+    series1.name("2004");
+
+    // create the second series, set the data and name  
+    var series2 = chart.line(seriesData_2);
+    series2.name("2005");
+
+    // set the chart title
+    chart.title("Data Sets: CSV String");
+
+    // set the container id
     chart.container("container");
-    // initiate chart drawing
+
+    // initiate drawing the chart
     chart.draw();
 });
 </script>

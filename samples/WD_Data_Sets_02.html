@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Sets 01"/>
+    <meta name="ac:name" content="WD Data Sets 02"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -34,14 +34,11 @@ anychart.onDocumentReady(function () {
       {x:"May", value:  14000}
     ]);
 
-    // map the data
-    var seriesData = data.mapAs({x: 0, value: 1});
-
     // create a chart
     var chart = anychart.line();
 
     // create a series, set the data and name
-    var series = chart.line(seriesData);
+    var series = chart.line(data);
     series.name("2004");
 
     // set the chart title
