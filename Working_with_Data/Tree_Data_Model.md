@@ -314,8 +314,8 @@ var itemCount = 1;
 
 // add a new data item
 function addItem(){
-  var name = "New Child " + itemCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
+  var newName = "New Child " + itemCount++;
+  treeData.getChildAt(0).addChild({"name": newName, "value": 10000000});
 };
 ```
 
