@@ -38,13 +38,13 @@ anychart.onDocumentReady(function () {
     var dataSet = anychart.data.set(data);
 
     // map the data
-    var seriesData = dataSet.mapAs({x: 0, value: 1});
+    var mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
     var chart = anychart.line();
 
     // create a series and set the data
-    var series = chart.line(seriesData);
+    var series = chart.line(mapping);
 
     // set the chart title
     chart.title("Data Sets: Array of Arrays");

@@ -32,13 +32,13 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // map the data
-var seriesData = dataSet.mapAs({x: 0, value: 1});
+var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(seriesData);
+var series = chart.line(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_01{sample}
@@ -59,13 +59,13 @@ var series = chart.line(seriesData);
 var dataSet = anychart.data.set(data);
 
 // map the data
-var seriesData = dataSet.mapAs({x: 0, value: 1});
+var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(seriesData);
+var series = chart.line(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}
@@ -88,13 +88,13 @@ csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
 var dataSet = anychart.data.set(data, csvSettings);
 
 // map the data
-var seriesData = dataSet.mapAs({x: 0, value: 1});
+var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(seriesData);
+var series = chart.line(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_03{sample}
@@ -120,17 +120,17 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // map the data
-var seriesData_1 = dataSet.mapAs({x: 0, value: 1});
-var seriesData_2 = dataSet.mapAs({x: 0, value: 2});
+var mapping_1 = dataSet.mapAs({x: 0, value: 1});
+var mapping_2 = dataSet.mapAs({x: 0, value: 2});
 
 // create a chart
 var chart = anychart.line();
 
 // create the first series and set the data
-var series1 = chart.line(seriesData_1);
+var series1 = chart.line(mapping_1);
 
 // create the second series and set the data  
-var series2 = chart.line(seriesData_2);
+var series2 = chart.line(mapping_2);
 ```
 
 {sample}WD\_Data\_Sets\_04{sample}
@@ -153,7 +153,10 @@ var series2 = chart.line(seriesData_2);
 
 
 ```
-
+// get the name and value of the last point
+var rowsCount = dataSet.getRowsCount();
+var lastPointName = seriesData.get(rowsCount - 1, "x");
+var lastPointValue = seriesData.get(rowsCount - 1, "value");
 ```
 
 {sample}WD\_Data\_Sets\_05{sample}

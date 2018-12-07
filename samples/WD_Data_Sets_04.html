@@ -38,17 +38,17 @@ anychart.onDocumentReady(function () {
     var dataSet = anychart.data.set(data);
 
     // map the data
-    var seriesData_1 = dataSet.mapAs({x: 0, value: 1});
-    var seriesData_2 = dataSet.mapAs({x: 0, value: 2});
+    var mapping_1 = dataSet.mapAs({x: 0, value: 1});
+    var mapping_2 = dataSet.mapAs({x: 0, value: 2});
 
     // create a chart
     var chart = anychart.line();
 
     // create the first series and set the data
-    var series1 = chart.line(seriesData_1);
+    var series1 = chart.line(mapping_1);
 
     // create the second series and set the data  
-    var series2 = chart.line(seriesData_2);
+    var series2 = chart.line(mapping_2);
 
     // set the chart title
     chart.title("Data Sets: Mapping");
