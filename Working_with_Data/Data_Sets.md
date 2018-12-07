@@ -138,9 +138,9 @@ var series2 = chart.line(seriesData_2);
 ### Reading
 
 * {api:anychart.data.Set}anychart.data.Set{api}
-
-* строка: {api:anychart.data.Set#row}row(){api}, {api:anychart.data.Set#getRowsCount}getRowsCount(){api}
-* отдельное поле: {api:anychart.data.View#get}get(){api}
+* строка: {api:anychart.data.Set#row}row(){api} (dataset)
+* строка: {api:anychart.data.Set#getRowsCount}getRowsCount(){api} (dataset)
+* отдельное поле: {api:anychart.data.View#get}get(){api} (view)
 
 
 ```
@@ -151,8 +151,8 @@ var series2 = chart.line(seriesData_2);
 
 ### Adding
 
-* append() (dataset)
-* insert() (dataset)
+* {api:anychart.data.Set#append}append(){api} (dataset)
+* {api:anychart.data.Set#insert}insert(){api} (dataset)
 
 
 ```
@@ -163,8 +163,8 @@ var series2 = chart.line(seriesData_2);
 
 ### Updating
 
-* строка: row() (dataset)
-* отдельное поле: set() (view)
+* строка: {api:anychart.data.View#row}row(){api} (dataset)
+* отдельное поле: {api:anychart.data.View#set}set(){api} (view)
 
 
 ```
@@ -175,7 +175,7 @@ var series2 = chart.line(seriesData_2);
 
 ### Removing
 
-* remove() (dataset)
+* {api:anychart.data.View#remove}remove(){api} (dataset)
 
 
 ```
@@ -186,8 +186,8 @@ var series2 = chart.line(seriesData_2);
 
 ### Searching
 
-* filter() (view)
-* find() (view)
+* {api:anychart.data.View#filter}filter(){api} (view)
+* {api:anychart.data.View#find}find(){api} (view)
 
 
 ```
@@ -198,8 +198,14 @@ var series2 = chart.line(seriesData_2);
 
 ### Iterating
 
-* getIterator() (view)
-* методы итератора
+* {api:anychart.data.View#getIterator}getIterator(){api} (view)
+* {api:anychart.data.Iterator#advance}advance(){api}
+* {api:anychart.data.Iterator#get}get(){api}
+* {api:anychart.data.Iterator#getIndex}getIndex(){api}
+* {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api}
+* {api:anychart.data.Iterator#meta}meta(){api}
+* {api:anychart.data.Iterator#reset}reset(){api}
+* {api:anychart.data.Iterator#select}select(){api}
 
 
 ```
