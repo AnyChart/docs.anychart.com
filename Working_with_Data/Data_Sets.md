@@ -137,8 +137,10 @@ var series2 = chart.line(seriesData_2);
 
 ### Reading
 
-* строка: row() (dataset), getRowsCount() (dataset)
-* отдельное поле: get() (view)
+* {api:anychart.data.Set}anychart.data.Set{api}
+
+* строка: {api:anychart.data.Set#row}row(){api}, {api:anychart.data.Set#getRowsCount}getRowsCount(){api}
+* отдельное поле: {api:anychart.data.View#get}get(){api}
 
 
 ```
