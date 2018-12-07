@@ -48,8 +48,8 @@ anychart.onDocumentReady(function () {
 
     // get the name and value of the last point
     var rowsCount = dataSet.getRowsCount();
-    var lastPointName = seriesData.get(rowsCount - 1, "x");
-    var lastPointValue = seriesData.get(rowsCount - 1, "value");
+    var lastPointName = mapping.get(rowsCount - 1, "x");
+    var lastPointValue = mapping.get(rowsCount - 1, "value");
 
     // set the chart title
     chart.title().useHtml(true);
