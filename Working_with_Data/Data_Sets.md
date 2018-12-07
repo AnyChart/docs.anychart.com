@@ -145,7 +145,7 @@ var series2 = chart.line(seriesData_2);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_05{sample}
 
 ### Adding
 
@@ -157,7 +157,7 @@ var series2 = chart.line(seriesData_2);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_06{sample}
 
 ### Updating
 
@@ -169,7 +169,7 @@ var series2 = chart.line(seriesData_2);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_07{sample}
 
 ### Removing
 
@@ -180,7 +180,7 @@ var series2 = chart.line(seriesData_2);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_08{sample}
 
 ### Searching
 
@@ -192,7 +192,7 @@ var series2 = chart.line(seriesData_2);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_09{sample}
 
 ### Iterating
 
