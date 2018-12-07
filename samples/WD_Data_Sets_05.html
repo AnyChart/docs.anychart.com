@@ -37,16 +37,19 @@ anychart.onDocumentReady(function () {
     // create a data set
     var dataSet = anychart.data.set(data);
 
+    // map the data
+    var seriesData = dataSet.mapAs({x: 0, value: 1});
+
     // create a chart
     var chart = anychart.line();
 
     // create a series and set the data
-    var series = chart.line(data);
+    var series = chart.line(seriesData);
 
     // get the name and value of the last point
-    var lastPoint = dataSet.row(dataSet.getRowsCount() - 1);
-    var lastPointName = lastPoint[0];
-    var lastPointValue = lastPoint[1];
+    var rowsCount = dataSet.getRowsCount();
+    var lastPointName = seriesData.get(rowsCount - 1, "x");
+    var lastPointValue = seriesData.get(rowsCount - 1, "value")
 
     // set the chart title
     chart.title().useHtml(true);
