@@ -24,22 +24,24 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-  
-    // create a data set
-    var data = anychart.data.set([
+
+    // create data
+    var data = [
       ["January", 12000],
       ["February", 15000],
       ["March", 16000],
       ["April", 15000],
       ["May", 14000]
-    ]);
+    ];
+  
+    // create a data set
+    var dataSet = anychart.data.set(data);
 
     // create a chart
     var chart = anychart.line();
 
-    // create a series, set the data and name
-    var series1 = chart.line(data);
-    series1.name("2004");
+    // create a series and set the data
+    var series = chart.line(dataSet);
 
     // set the chart title
     chart.title("Data Sets: Array of Arrays");

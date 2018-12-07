@@ -25,29 +25,30 @@
 <script>
 anychart.onDocumentReady(function () {
   
-    // create a data set
-    var data = anychart.data.set([
+    // create data
+    var data = [
       ["January", 12000, 10000],
       ["February", 15000, 12000],
       ["March", 16000, 18000],
       ["April", 15000, 11000],
       ["May", 14000, 9000]
-    ]);
+    ];
+
+    // create a data set
+    var dataSet = anychart.data.set(data);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: 0, value: 1});
-    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_1 = dataSet.mapAs({x: 0, value: 1});
+    var seriesData_2 = dataSet.mapAs({x: 0, value: 2});
 
     // create a chart
     var chart = anychart.line();
 
-    // create the first series, set the data and name
+    // create the first series and set the data
     var series1 = chart.line(seriesData_1);
-    series1.name("2004");
 
-    // create the second series, set the data and name  
+    // create the second series and set the data  
     var series2 = chart.line(seriesData_2);
-    series2.name("2005");
 
     // set the chart title
     chart.title("Data Sets: Mapping");
