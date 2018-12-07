@@ -31,11 +31,14 @@ var data = [
 // create a data set
 var dataSet = anychart.data.set(data);
 
+// map the data
+var seriesData = dataSet.mapAs({x: 0, value: 1});
+
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(dataSet);
+var series = chart.line(seriesData);
 ```
 
 {sample}WD\_Data\_Sets\_01{sample}
@@ -55,11 +58,14 @@ var series = chart.line(dataSet);
 // create a data set
 var dataSet = anychart.data.set(data);
 
+// map the data
+var seriesData = dataSet.mapAs({x: 0, value: 1});
+
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(dataSet);
+var series = chart.line(seriesData);
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}
@@ -81,11 +87,14 @@ csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
 // create a data set
 var dataSet = anychart.data.set(data, csvSettings);
 
+// map the data
+var seriesData = dataSet.mapAs({x: 0, value: 1});
+
 // create a chart
 var chart = anychart.line();
 
 // create a series and set the data
-var series = chart.line(dataSet);
+var series = chart.line(seriesData);
 ```
 
 {sample}WD\_Data\_Sets\_03{sample}
