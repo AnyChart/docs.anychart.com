@@ -51,7 +51,7 @@ Here is the list of classes allowing you to work with data sets in AnyChart:
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_04{sample}
 
 ## Accessing Rows
 
