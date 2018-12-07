@@ -41,10 +41,18 @@ anychart.onDocumentReady(function () {
     var chart = anychart.line();
 
     // create a series and set the data
-    var series = chart.line(dataSet);
+    var series = chart.line(data);
+
+    // get the name and value of the last point
+    var lastPoint = dataSet.row(dataSet.getRowsCount() - 1);
+    var lastPointName = lastPoint[0];
+    var lastPointValue = lastPoint[1];
 
     // set the chart title
-    chart.title("Data Sets: Reading");
+    chart.title().useHtml(true);
+    chart.title("Data Sets: Reading<br><br>" +
+                "last point = <span style = 'color:#990000'>" + 
+                lastPointName + " (" + lastPointValue + ")</span>");
 
     // set the container id
     chart.container("container");

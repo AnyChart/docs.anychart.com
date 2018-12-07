@@ -188,6 +188,7 @@ var series2 = chart.line(seriesData_2);
 
 * {api:anychart.data.View#filter}filter(){api} (view)
 * {api:anychart.data.View#find}find(){api} (view)
+* {api:anychart.data.View#sort}sort(){api} (view) 
 
 
 ```
