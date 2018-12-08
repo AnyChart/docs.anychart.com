@@ -73,14 +73,16 @@ var itemCount = 1;
 function addRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
   var newName = "New Point " + itemCount++;
-  dataSet.append({"x": newName, "value": newValue, fill: "red"});
+  dataSet.append({"x": newName, "value": newValue,
+                  fill: "#dd2c00", stroke: "#dd2c00"});
 };
 
 // insert a data row
 function insertRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
   var newName = "New Point " + itemCount++;
-  dataSet.insert({"x": newName, "value": newValue, fill: "green"}, -1);
+  dataSet.insert({"x": newName, "value": newValue,
+                  fill: "#00838f", stroke: "#00838f"}, -1);
 };
 </script>
 </body>
