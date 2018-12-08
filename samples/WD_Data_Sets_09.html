@@ -12,15 +12,25 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<button id = "removeButton" onclick="removeRow()">Remove Last Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -35,7 +45,7 @@ anychart.onDocumentReady(function () {
     ];
   
     // create a data set
-    var dataSet = anychart.data.set(data);
+    dataSet = anychart.data.set(data);
 
     // map the data
     var mapping = dataSet.mapAs({x: 0, value: 1});
@@ -54,6 +64,11 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// remove the last row
+function removeRow(){
+  dataSet.remove(dataSet.getRowsCount() - 1);
+};
 </script>
 </body>
 </html>

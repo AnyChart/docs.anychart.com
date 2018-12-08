@@ -224,7 +224,7 @@ mapping.set(0, "stroke", "#ef6c00");
 
 
 ```
-
+dataSet.remove(dataSet.getRowsCount() - 1);
 ```
 
 {sample}WD\_Data\_Sets\_09{sample}
