@@ -83,8 +83,9 @@ function updateRow(){
   var newName = document.getElementById("inputName").value;
   var newValue = document.getElementById("inputValue").value;
   var newColor = document.getElementById("inputColor").value;
-  dataSet.row(0, {"x": newName, "value": newValue,
-                  fill: newColor, stroke: newColor});
+  var newData = {"x": newName, "value": newValue,
+                 fill: newColor, stroke: newColor};
+  dataSet.row(0, newData);
 };
 </script>
 </body>
