@@ -190,12 +190,7 @@ dataSet.insert(["New Point", 16000], -1);
 
 * строка: {api:anychart.data.View#row}row(){api} (dataset)
 * отдельное поле: {api:anychart.data.View#set}set(){api} (view)
-* (?) написать, что можно передавать как value, так и сразу всю строку
 
-
-```
-dataSet.row(0, 16000);
-```
 
 ```
 dataSet.row(0, {"x": "New Name", "value": 16000});
@@ -207,6 +202,14 @@ dataSet.row(0, ["New Name", 16000]);
 
 {sample}WD\_Data\_Sets\_07{sample}
 
+```
+mapping.set(0, "x", "New Name");
+mapping.set(0, "value", 16000);
+mapping.set(0, "fill", "#ef6c00");
+```
+
+{sample}WD\_Data\_Sets\_08{sample}
+
 ### Removing
 
 * {api:anychart.data.View#remove}remove(){api} (dataset)
@@ -216,7 +219,7 @@ dataSet.row(0, ["New Name", 16000]);
 
 ```
 
-{sample}WD\_Data\_Sets\_08{sample}
+{sample}WD\_Data\_Sets\_09{sample}
 
 ### Searching
 
@@ -229,7 +232,7 @@ dataSet.row(0, ["New Name", 16000]);
 
 ```
 
-{sample}WD\_Data\_Sets\_09{sample}
+{sample}WD\_Data\_Sets\_10{sample}
 
 ### Iterating
 
@@ -247,7 +250,7 @@ dataSet.row(0, ["New Name", 16000]);
 
 ```
 
-{sample}WD\_Data\_Sets\_01{sample}
+{sample}WD\_Data\_Sets\_11{sample}
 
 ## Events
 

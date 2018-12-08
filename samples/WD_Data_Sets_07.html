@@ -68,7 +68,7 @@ anychart.onDocumentReady(function () {
     var series = chart.column(mapping);
 
     // set the chart title
-    chart.title("Data Sets: Update a Row");
+    chart.title("Data Sets: Updating");
 
     // set the container id
     chart.container("container");
@@ -85,7 +85,7 @@ function updateRow(){
   var newColor = document.getElementById("inputColor").value;
   var newData = {"x": newName, "value": newValue,
                  fill: newColor, stroke: newColor};
-  dataSet.row(0, newData);
+  dataSet.row(index, newData);
 };
 </script>
 </body>
