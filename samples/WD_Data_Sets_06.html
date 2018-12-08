@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     dataSet = anychart.data.set(data);
 
     // map the data
-    var mapping = dataSet.mapAs({x: 0, value: 1});
+    var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
 
     // create a chart
     var chart = anychart.column();
@@ -82,17 +82,17 @@ function addRow(){
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
   var newData = {"x": newName, "value": newValue,
-                  fill: "#ef6c00", stroke: null};
+                  "fill": "#ef6c00", "stroke": "#ef6c00"};
   dataSet.append(newData);
 };
 
-// insert a data row
+// insert a new data row
 function insertRow(){
   var index = document.getElementById("inputIndex").value;
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
   var newData = {"x": newName, "value": newValue,
-                 fill: "#00bfa5", stroke: null};
+                 "fill": "#00bfa5", "stroke": "#00bfa5"};
   dataSet.insert(newData, index);
 };
 </script>

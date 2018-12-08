@@ -38,7 +38,6 @@
 </head>
 <body>
 <button id = "updateButton" onclick="updateRow()">Update Row</button>
-<label>Index: <input id="inputIndex" value="0"></label>
 <label>Name: <input id="inputName" value="New Name"></label>
 <label>Value: <input id="inputValue" value="16000"></label>
 <label>Color: <input id="inputColor" value="#ef6c00"></label>
@@ -59,7 +58,7 @@ anychart.onDocumentReady(function () {
     dataSet = anychart.data.set(data);
 
     // map the data
-    var mapping = dataSet.mapAs({x: 0, value: 1});
+    var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
 
     // create a chart
     var chart = anychart.column();
@@ -79,13 +78,12 @@ anychart.onDocumentReady(function () {
 
 // update a row
 function updateRow(){
-  var index = document.getElementById("inputIndex").value;
   var newName = document.getElementById("inputName").value;
   var newValue = document.getElementById("inputValue").value;
   var newColor = document.getElementById("inputColor").value;
   var newData = {"x": newName, "value": newValue,
-                 fill: newColor, stroke: newColor};
-  dataSet.row(index, newData);
+                 "fill": newColor, "stroke": newColor};
+  dataSet.row(0, newData);
 };
 </script>
 </body>

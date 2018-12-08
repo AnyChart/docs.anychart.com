@@ -165,23 +165,28 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 * {api:anychart.data.Set#append}append(){api} (dataset)
 * {api:anychart.data.Set#insert}insert(){api} (dataset)
-* (?) написать, что данные можно добавлять как объектом, так и массивом
+* (?) данные можно добавлять как объектом, так и массивом
+* (?) при добавлении массивом доп. поля надо включить в маппинг
+* (?) такое же примечание про маппинг к примерам 8 и 9 в table data
++ иллюстрация в цитатах кода
 
 
 ```
-dataSet.append({"x": "New Point", "value": 16000});
+dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00", "stroke": "#ef6c00"});
 ```
 
 ```
-dataSet.append(["New Point", 16000]);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
+dataSet.append(["New Point", 16000, "#ef6c00","#ef6c00"]);
 ```
 
 ```
-dataSet.insert({"x": "New Point", "value": 16000}, -1);
+dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5", "stroke": "#00bfa5"}, -1);
 ```
 
 ```
-dataSet.insert(["New Point", 16000], -1);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
+dataSet.insert(["New Point", 16000, "#00bfa5", "#00bfa5"], -1);
 ```
 
 {sample}WD\_Data\_Sets\_06{sample}
@@ -190,14 +195,17 @@ dataSet.insert(["New Point", 16000], -1);
 
 * строка: {api:anychart.data.View#row}row(){api} (dataset)
 * отдельное поле: {api:anychart.data.View#set}set(){api} (view)
+* (?) данные можно добавлять как объектом, так и массивом
+* (?) при добавлении массивом доп. поля надо включить в маппинг
 
 
 ```
-dataSet.row(0, {"x": "New Name", "value": 16000});
+dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00", "stroke": "#ef6c00"});
 ```
 
 ```
-dataSet.row(0, ["New Name", 16000]);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
+dataSet.row(0, ["New Name", 16000, "#ef6c00", "#ef6c00"]);
 ```
 
 {sample}WD\_Data\_Sets\_07{sample}
@@ -206,6 +214,7 @@ dataSet.row(0, ["New Name", 16000]);
 mapping.set(0, "x", "New Name");
 mapping.set(0, "value", 16000);
 mapping.set(0, "fill", "#ef6c00");
+mapping.set(0, "stroke", "#ef6c00");
 ```
 
 {sample}WD\_Data\_Sets\_08{sample}
