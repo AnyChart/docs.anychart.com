@@ -321,7 +321,7 @@ You can also add several root items at once by using the {api:anychart.data.Tree
 ```
 //create new data
 var newData = [
-  {"name": "New Node 1, "value": 10000000},
+  {"name": "New Node 1", "value": 10000000},
   {"name": "New Node 2", "value": 10000000}
 ];
 
