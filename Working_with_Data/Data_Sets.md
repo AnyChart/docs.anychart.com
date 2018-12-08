@@ -188,9 +188,9 @@ function addRow(){
 
 // insert a data row
 function insertRow(){
+  var index = document.getElementById("inputIndex").value;
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
-  var index = document.getElementById("inputIndex").value;
   dataSet.insert({"x": newName, "value": newValue, fill: "#00bfa5", stroke: null}, index);
 };
 ```
@@ -213,7 +213,7 @@ dataSet.row(0, {"x": "New Name", "value": 16000});
 ```
 
 ```
-dataSet.row(0, [New Name, 16000]);
+dataSet.row(0, ["New Name", 16000]);
 ```
 
 ```
