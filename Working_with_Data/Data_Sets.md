@@ -172,7 +172,7 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 
 ```
-dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00", "stroke": "#ef6c00"});
+dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00"});
 ```
 
 ```
