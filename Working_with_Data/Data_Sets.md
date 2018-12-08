@@ -232,15 +232,17 @@ dataSet.remove(dataSet.getRowsCount() - 1);
 
 ### Searching
 
-* (?) {api:anychart.data.View#sort}sort(){api} (view) 
-
 #### find()
 
 * {api:anychart.data.View#find}find(){api} (view)
 
 
 ```
-mapping.find("x", "April");
+// find a row
+var name = document.getElementById("nameSelect").value;
+var index = mapping.find("x", name);
+// select a row
+series.select(index);
 ```
 
 {sample}WD\_Data\_Sets\_10{sample}
@@ -250,7 +252,14 @@ mapping.find("x", "April");
 * {api:anychart.data.View#filter}filter(){api} (view)
 
 ```
-
+// remove points with values less than a given one
+function filterValue() {
+  var minValue = document.getElementById("inputValue").value;
+  var newMapping = mapping.filter("value", function(value) {
+    return value >= minValue;
+  });
+  series.data(newMapping);
+};
 ```
 
 {sample}WD\_Data\_Sets\_10{sample}
@@ -273,6 +282,11 @@ mapping.find("x", "April");
 
 {sample}WD\_Data\_Sets\_12{sample}
 
+### Sorting
+
+* (?) {api:anychart.data.View#sort}sort(){api} (view) 
+
+
 ## Events
 
-(?)
+* (?)
