@@ -310,39 +310,28 @@ You can add a root item to your data: call the {api:anychart.data.Tree#addChild}
 To add a child element to a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on it:
 
 ```
-var itemCount = 1;
-
 // add a new data item
-function addItem(){
-  var newName = "New Child " + itemCount++;
-  treeData.getChildAt(0).addChild({"name": newName, "value": 10000000});
-};
+treeData.getChildAt(0).addChild({"name": New Child, "value": 10000000});
 ```
 
 {sample}WD\_Tree\_Data\_07{sample}
 
-You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
+You can also add several root items at once by using the {api:anychart.data.Tree#addData}addData(){api} method:
+
+```
+//create new data
+var newData = [
+  {"name": "New Node 1, "value": 10000000},
+  {"name": "New Node 2, "value": 10000000}
+];
+
+// add new data
+treeData.addData(newData, "as-tree");
+```
 
 **Note:** Only one root element can be displayed on the Treemap chart, so using this method does not change the way the Treemap looks, though the data is updated anyway.
 
 Here is a Sunburst chart with a button adding two root nodes at a time:
-
-```
-var itemCount = 1;
-
-// add new data
-function addItems(){
-  //create new data
-  var name_1 = "New Node " + itemCount++;
-  var name_2 = "New Node " + itemCount++;
-  var newData = [
-    {"name": name_1, "value": 10000000},
-    {"name": name_2, "value": 10000000}
-  ];
-  // add new data
-  treeData.addData(newData, "as-tree");
-};
-```
 
 {sample :width 500 :height 500}WD\_Tree\_Data\_08{sample}
 
@@ -352,14 +341,9 @@ To update a data field of an item, [access](#accessing_items) the instance of {a
 
 ```
 // update the first child
-function updateItem(){
-  var newName = document.getElementById("inputName").value;
-  var newValue = document.getElementById("inputValue").value;
-  var newColor = document.getElementById("inputColor").value;
-  treeData.getChildAt(0).getChildAt(0).set("name", newName);
-  treeData.getChildAt(0).getChildAt(0).set("value", newValue);
-  treeData.getChildAt(0).getChildAt(0).set("fill", newColor);
-};
+treeData.getChildAt(0).getChildAt(0).set("name", "New Name");
+treeData.getChildAt(0).getChildAt(0).set("value", 120000000);
+treeData.getChildAt(0).getChildAt(0).set("fill", "#00bfa5");
 ```
 
 {sample}WD\_Tree\_Data\_09{sample}

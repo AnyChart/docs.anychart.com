@@ -169,38 +169,19 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 
 ```
-dataSet.append({"x": "New Name", "value": 16000});
+dataSet.append({"x": "New Point", "value": 16000});
 ```
 
 ```
-dataSet.append(["New Name", 16000]);
+dataSet.append(["New Point", 16000]);
 ```
 
 ```
-dataSet.insert({"x": "New Name", "value": 16000}, -1);
+dataSet.insert({"x": "New Point", "value": 16000}, -1);
 ```
 
 ```
-dataSet.insert(["New Name", 16000], -1);
-```
-
-```
-var itemCount = 1;
-
-// add a new data row
-function addRow(){
-  var newValue = Math.floor(Math.random()*7 + 10)*1000;
-  var newName = "New " + itemCount++;
-  dataSet.append({"x": newName, "value": newValue, fill: "#ef6c00", stroke: null});
-};
-
-// insert a data row
-function insertRow(){
-  var index = document.getElementById("inputIndex").value;
-  var newValue = Math.floor(Math.random()*7 + 10)*1000;
-  var newName = "New " + itemCount++;
-  dataSet.insert({"x": newName, "value": newValue, fill: "#00bfa5", stroke: null}, index);
-};
+dataSet.insert(["New Point", 16000], -1);
 ```
 
 {sample}WD\_Data\_Sets\_06{sample}
@@ -222,17 +203,6 @@ dataSet.row(0, {"x": "New Name", "value": 16000});
 
 ```
 dataSet.row(0, ["New Name", 16000]);
-```
-
-```
-// update a row
-function updateRow(){
-  var index = document.getElementById("inputIndex").value;
-  var newName = document.getElementById("inputName").value;
-  var newValue = document.getElementById("inputValue").value;
-  var newColor = document.getElementById("inputColor").value;
-  dataSet.row(0, {"x": newName, "value": newValue, fill: newColor, stroke: newColor});
-};
 ```
 
 {sample}WD\_Data\_Sets\_07{sample}
