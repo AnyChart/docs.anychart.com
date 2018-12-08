@@ -233,7 +233,7 @@ dataSet.remove(dataSet.getRowsCount() - 1);
 
 * {api:anychart.data.View#filter}filter(){api} (view)
 * {api:anychart.data.View#find}find(){api} (view)
-* {api:anychart.data.View#sort}sort(){api} (view) 
+* (?) {api:anychart.data.View#sort}sort(){api} (view) 
 
 
 ```
