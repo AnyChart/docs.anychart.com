@@ -165,7 +165,16 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 * {api:anychart.data.Set#append}append(){api} (dataset)
 * {api:anychart.data.Set#insert}insert(){api} (dataset)
+* (?) написать, что данные можно добавлять как объектом, так и массивом
 
+
+```
+dataSet.append({"x": "New Name", "value": 16000});
+```
+
+```
+dataSet.append(["New Name", 16000]);
+```
 
 ```
 var itemCount = 1;
@@ -174,8 +183,7 @@ var itemCount = 1;
 function addRow(){
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
-  dataSet.append({"x": newName, "value": newValue,
-                  fill: "#ef6c00", stroke: null});
+  dataSet.append({"x": newName, "value": newValue, fill: "#ef6c00", stroke: null});
 };
 
 // insert a data row
@@ -183,8 +191,7 @@ function insertRow(){
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
   var index = document.getElementById("inputIndex").value;
-  dataSet.insert({"x": newName, "value": newValue,
-                  fill: "#00bfa5", stroke: null}, index);
+  dataSet.insert({"x": newName, "value": newValue, fill: "#00bfa5", stroke: null}, index);
 };
 ```
 
@@ -194,10 +201,30 @@ function insertRow(){
 
 * строка: {api:anychart.data.View#row}row(){api} (dataset)
 * отдельное поле: {api:anychart.data.View#set}set(){api} (view)
+* (?) написать, что можно передавать как value, так и сразу всю строку
 
 
 ```
+dataSet.row(0, 16000);
+```
 
+```
+dataSet.row(0, {"x": "New Name", "value": 16000});
+```
+
+```
+dataSet.row(0, [New Name, 16000]);
+```
+
+```
+// update a row
+function updateRow(){
+  var index = document.getElementById("inputIndex").value;
+  var newName = document.getElementById("inputName").value;
+  var newValue = document.getElementById("inputValue").value;
+  var newColor = document.getElementById("inputColor").value;
+  dataSet.row(0, {"x": newName, "value": newValue, fill: newColor, stroke: newColor});
+};
 ```
 
 {sample}WD\_Data\_Sets\_07{sample}
