@@ -176,17 +176,17 @@ dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00", "stroke": "
 ```
 
 ```
-var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
-dataSet.append(["New Point", 16000, "#ef6c00","#ef6c00"]);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
+dataSet.append(["New Point", 16000, "#ef6c00"]);
 ```
 
 ```
-dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5", "stroke": "#00bfa5"}, -1);
+dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5"}, -1);
 ```
 
 ```
-var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
-dataSet.insert(["New Point", 16000, "#00bfa5", "#00bfa5"], -1);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
+dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
 ```
 
 {sample}WD\_Data\_Sets\_06{sample}
@@ -200,12 +200,12 @@ dataSet.insert(["New Point", 16000, "#00bfa5", "#00bfa5"], -1);
 
 
 ```
-dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00", "stroke": "#ef6c00"});
+dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00"});
 ```
 
 ```
-var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 3});
-dataSet.row(0, ["New Name", 16000, "#ef6c00", "#ef6c00"]);
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
+dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
 ```
 
 {sample}WD\_Data\_Sets\_07{sample}
