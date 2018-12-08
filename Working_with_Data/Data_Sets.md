@@ -173,7 +173,7 @@ var itemCount = 1;
 // add a new data row
 function addRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
-  var newName = "New Point " + itemCount++;
+  var newName = "New " + itemCount++;
   dataSet.append({"x": newName, "value": newValue,
                   fill: "#ef6c00", stroke: null});
 };
@@ -181,7 +181,7 @@ function addRow(){
 // insert a data row
 function insertRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
-  var newName = "New Point " + itemCount++;
+  var newName = "New " + itemCount++;
   dataSet.insert({"x": newName, "value": newValue,
                   fill: "#00bfa5", stroke: null}, -1);
 };
