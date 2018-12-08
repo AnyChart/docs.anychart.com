@@ -39,7 +39,7 @@
 <body>
 <button id = "addButton" onclick="addRow()">Add Row</button>
 <button id = "insertButton" onclick="insertRow()">Insert Row</button>
-<label>position: <input id="inputPosition" value="-1"></label>
+<label>index: <input id="inputIndex" value="-1"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -89,9 +89,9 @@ function addRow(){
 function insertRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
   var newName = "New " + itemCount++;
-  var position = document.getElementById("inputPosition").value;
+  var index = document.getElementById("inputIndex").value;
   dataSet.insert({"x": newName, "value": newValue,
-                  fill: "#00bfa5", stroke: null}, position);
+                  fill: "#00bfa5", stroke: null}, index);
 };
 </script>
 </body>
