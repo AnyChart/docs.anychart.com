@@ -282,11 +282,6 @@ function filterValue() {
 
 {sample}WD\_Data\_Sets\_12{sample}
 
-### Sorting
-
-* (?) {api:anychart.data.View#sort}sort(){api} (view) 
-
-
 ## Events
 
 * (?)
