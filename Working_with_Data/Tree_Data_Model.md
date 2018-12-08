@@ -311,7 +311,7 @@ To add a child element to a data item, [access](#accessing_items) the instance o
 
 ```
 // add a new data item
-treeData.getChildAt(0).addChild({"name": New Child, "value": 10000000});
+treeData.getChildAt(0).addChild({"name": "New Child", "value": 10000000});
 ```
 
 {sample}WD\_Tree\_Data\_07{sample}
@@ -322,7 +322,7 @@ You can also add several root items at once by using the {api:anychart.data.Tree
 //create new data
 var newData = [
   {"name": "New Node 1, "value": 10000000},
-  {"name": "New Node 2, "value": 10000000}
+  {"name": "New Node 2", "value": 10000000}
 ];
 
 // add new data
