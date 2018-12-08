@@ -353,12 +353,12 @@ To update a data field of an item, [access](#accessing_items) the instance of {a
 ```
 // update the first child
 function updateItem(){
-  var name = document.getElementById("inputName").value;
-  var value = document.getElementById("inputValue").value;
-  var color = document.getElementById("inputColor").value;
-  treeData.getChildAt(0).getChildAt(0).set("name", name);
-  treeData.getChildAt(0).getChildAt(0).set("value", value);
-  treeData.getChildAt(0).getChildAt(0).set("fill", color);
+  var newName = document.getElementById("inputName").value;
+  var newValue = document.getElementById("inputValue").value;
+  var newColor = document.getElementById("inputColor").value;
+  treeData.getChildAt(0).getChildAt(0).set("name", newName);
+  treeData.getChildAt(0).getChildAt(0).set("value", newValue);
+  treeData.getChildAt(0).getChildAt(0).set("fill", newColor);
 };
 ```
 
