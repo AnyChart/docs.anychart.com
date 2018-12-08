@@ -31,6 +31,7 @@
 </head>
 <body>
 <button id = "addButton" onclick="addRow()">Add Row</button>
+<button id = "insertButton" onclick="insertRow()">Insert Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -51,10 +52,10 @@ anychart.onDocumentReady(function () {
     var mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
-    var chart = anychart.line();
+    var chart = anychart.column();
 
     // create a series and set the data
-    var series = chart.line(mapping);
+    var series = chart.column(mapping);
 
     // set the chart title
     chart.title("Data Sets: Add a Row");
@@ -68,12 +69,18 @@ anychart.onDocumentReady(function () {
 
 var itemCount = 1;
 
-// add a new data item
+// add a new data row
 function addRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
   var newName = "New Point " + itemCount++;
-  dataSet.append({"x": newName, "value": newValue,
-                  marker: {enabled: true, fill: "red"}});
+  dataSet.append({"x": newName, "value": newValue, fill: "red"});
+};
+
+// insert a data row
+function insertRow(){
+  var newValue = Math.floor(Math.random()*10 + 10)*1000;
+  var newName = "New Point " + itemCount++;
+  dataSet.insert({"x": newName, "value": newValue, fill: "green"}, -1);
 };
 </script>
 </body>

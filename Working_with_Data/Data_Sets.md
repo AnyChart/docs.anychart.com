@@ -170,12 +170,18 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 ```
 var itemCount = 1;
 
-// add a new data item
+// add a new data row
 function addRow(){
   var newValue = Math.floor(Math.random()*10 + 10)*1000;
   var newName = "New Point " + itemCount++;
-  dataSet.append({"x": newName, "value": newValue,
-                  marker: {enabled: true, fill: "red"}});
+  dataSet.append({"x": newName, "value": newValue, fill: "red"});
+};
+
+// insert a data row
+function insertRow(){
+  var newValue = Math.floor(Math.random()*10 + 10)*1000;
+  var newName = "New Point " + itemCount++;
+  dataSet.insert({"x": newName, "value": newValue, fill: "green"}, -1);
 };
 ```
 
