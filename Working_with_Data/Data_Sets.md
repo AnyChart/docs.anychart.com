@@ -238,7 +238,7 @@ dataSet.remove(dataSet.getRowsCount() - 1);
 
 
 ```
-
+mapping.find("x", "April");
 ```
 
 {sample}WD\_Data\_Sets\_10{sample}
