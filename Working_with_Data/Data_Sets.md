@@ -182,8 +182,9 @@ function addRow(){
 function insertRow(){
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
+  var index = document.getElementById("inputIndex").value;
   dataSet.insert({"x": newName, "value": newValue,
-                  fill: "#00bfa5", stroke: null}, -1);
+                  fill: "#00bfa5", stroke: null}, index);
 };
 ```
 
