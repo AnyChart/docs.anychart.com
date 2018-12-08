@@ -210,6 +210,7 @@ dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
 {sample}WD\_Data\_Sets\_07{sample}
 
 ```
+mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 2});
 mapping.set(0, "x", "New Name");
 mapping.set(0, "value", 16000);
 mapping.set(0, "fill", "#ef6c00");

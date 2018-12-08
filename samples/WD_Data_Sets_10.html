@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Sets 10"/>
+    <meta name="ac:name" content="WD Data Sets 08"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -12,42 +12,67 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
     
     <style>
-        html, body, #container {
+        html, body {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+        select {
+            margin: 10px 0 0 10px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 35px;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
+<select id="nameSelect" onchange="findRow()">
+    <option value="default" selected disabled>Find & Select</option>
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["January", 12000],
-      ["February", 15000],
-      ["March", 16000],
-      ["April", 15000],
-      ["May", 14000]
+      {x: "January", value: 12000},
+      {x: "February", value: 15000},
+      {x: "March", value: 16000},
+      {x: "April", value: 15000},
+      {x: "May", value: 14000}
     ];
   
     // create a data set
     var dataSet = anychart.data.set(data);
 
     // map the data
-    var mapping = dataSet.mapAs({x: 0, value: 1});
+    mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
     var chart = anychart.column();
 
     // create a series and set the data
-    var series = chart.column(mapping);
+    series = chart.column(mapping);
+
+    /* prevent points from being selected
+    when they are clicked on */
+    chart.interactivity().selectionMode("none");
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
 
     // set the chart title
-    chart.title("Data Sets: Searching");
+    chart.title("Data Sets: find()");
 
     // set the container id
     chart.container("container");
@@ -55,6 +80,16 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
+
+// find and select a row
+function findRow() {
+  series.unselect();
+  // find a row
+  var name = document.getElementById("nameSelect").value;
+  var index = mapping.find("x", name);
+  // select a row
+  series.select(index);
+};
 </script>
 </body>
 </html>
