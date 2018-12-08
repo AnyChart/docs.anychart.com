@@ -177,6 +177,14 @@ dataSet.append(["New Name", 16000]);
 ```
 
 ```
+dataSet.insert({"x": "New Name", "value": 16000}, -1);
+```
+
+```
+dataSet.insert(["New Name", 16000], -1);
+```
+
+```
 var itemCount = 1;
 
 // add a new data row
