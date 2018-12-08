@@ -35,10 +35,10 @@ var dataSet = anychart.data.set(data);
 var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
-var chart = anychart.line();
+var chart = anychart.column();
 
 // create a series and set the data
-var series = chart.line(mapping);
+var series = chart.column(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_01{sample}
@@ -62,10 +62,10 @@ var dataSet = anychart.data.set(data);
 var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
-var chart = anychart.line();
+var chart = anychart.column();
 
 // create a series and set the data
-var series = chart.line(mapping);
+var series = chart.column(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_02{sample}
@@ -91,10 +91,10 @@ var dataSet = anychart.data.set(data, csvSettings);
 var mapping = dataSet.mapAs({x: 0, value: 1});
 
 // create a chart
-var chart = anychart.line();
+var chart = anychart.column();
 
 // create a series and set the data
-var series = chart.line(mapping);
+var series = chart.column(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_03{sample}
@@ -124,13 +124,13 @@ var mapping_1 = dataSet.mapAs({x: 0, value: 1});
 var mapping_2 = dataSet.mapAs({x: 0, value: 2});
 
 // create a chart
-var chart = anychart.line();
+var chart = anychart.column();
 
 // create the first series and set the data
-var series1 = chart.line(mapping_1);
+var series1 = chart.column(mapping_1);
 
 // create the second series and set the data  
-var series2 = chart.line(mapping_2);
+var series2 = chart.column(mapping_2);
 ```
 
 {sample}WD\_Data\_Sets\_04{sample}

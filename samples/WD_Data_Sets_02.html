@@ -41,10 +41,10 @@ anychart.onDocumentReady(function () {
     var mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
-    var chart = anychart.line();
+    var chart = anychart.column();
 
     // create a series and set the data
-    var series = chart.line(mapping);
+    var series = chart.column(mapping);
     
     // set the chart title
     chart.title("Data Sets: Array of Objects");
