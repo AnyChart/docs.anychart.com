@@ -168,7 +168,15 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 
 ```
+var itemCount = 1;
 
+// add a new data item
+function addRow(){
+  var newValue = Math.floor(Math.random()*10 + 10)*1000;
+  var newName = "New Point " + itemCount++;
+  dataSet.append({"x": newName, "value": newValue,
+                  marker: {enabled: true, fill: "red"}});
+};
 ```
 
 {sample}WD\_Data\_Sets\_06{sample}
