@@ -25,7 +25,7 @@
             margin: 10px 0 0 10px;
         }
         input {
-            width: 30px;
+            width: 65px;
             margin: 10px 0 0 5px;
         }
         #container {
@@ -76,12 +76,10 @@ anychart.onDocumentReady(function () {
 });
 
 // update...
-function insertRow(){
-  var newValue = Math.floor(Math.random()*7 + 10)*1000;
-  var newName = "New " + itemCount++;
-  var index = document.getElementById("inputIndex").value;
-  dataSet.insert({"x": newName, "value": newValue,
-                  fill: "#00bfa5", stroke: null}, index);
+function updateRow(){
+  var newValue = document.getElementById("inputValue").value;
+  var newColor = document.getElementById("inputColor").value;
+  dataSet.row(1, newValue);
 };
 </script>
 </body>
