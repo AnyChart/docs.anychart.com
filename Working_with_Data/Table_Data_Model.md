@@ -516,7 +516,7 @@ while (iterator.advance()) {
   var date = anychart.format.dateTime(key, "dd.MM.yyyy");
   var low = iterator.get("low");
   var high = iterator.get("high");  
-};
+}
 ```
 
 {sample}WD\_Table\_Data\_11{sample}
