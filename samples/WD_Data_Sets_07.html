@@ -46,18 +46,18 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "January", value: 12000},
-      {x: "February", value: 15000},
-      {x: "March", value: 16000},
-      {x: "April", value: 15000},
-      {x: "May", value: 14000}
+      ["January", 12000],
+      ["February", 15000],
+      ["March", 16000],
+      ["April", 15000],
+      ["May", 14000]
     ];
   
     // create a data set
     dataSet = anychart.data.set(data);
 
     // map the data
-    var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
+    var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 2});
 
     // create a chart
     var chart = anychart.column();
@@ -81,8 +81,7 @@ var itemCount = 1;
 function addRow() {
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
-  var newData = {"x": newName, "value": newValue,
-                  "fill": "#ef6c00", "stroke": "#ef6c00"};
+  var newData = [newName, newValue, "#ef6c00"];
   dataSet.append(newData);
 };
 
@@ -91,8 +90,7 @@ function insertRow() {
   var index = document.getElementById("inputIndex").value;
   var newValue = Math.floor(Math.random()*7 + 10)*1000;
   var newName = "New " + itemCount++;
-  var newData = {"x": newName, "value": newValue,
-                 "fill": "#00bfa5", "stroke": "#00bfa5"};
+  var newData = [newName, newValue, "#00bfa5"];
   dataSet.insert(newData, index);
 };
 </script>

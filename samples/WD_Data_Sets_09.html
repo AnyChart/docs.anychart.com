@@ -46,18 +46,18 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "January", value: 12000},
-      {x: "February", value: 15000},
-      {x: "March", value: 16000},
-      {x: "April", value: 15000},
-      {x: "May", value: 14000}
+      ["January", 12000],
+      ["February", 15000],
+      ["March", 16000],
+      ["April", 15000],
+      ["May", 14000]
     ];
   
     // create a data set
     var dataSet = anychart.data.set(data);
 
     // map the data
-    mapping = dataSet.mapAs({x: 0, value: 1});
+    mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 2});
 
     // create a chart
     var chart = anychart.column();

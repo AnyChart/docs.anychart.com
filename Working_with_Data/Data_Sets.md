@@ -58,9 +58,6 @@ var series = chart.column(mapping);
 // create a data set
 var dataSet = anychart.data.set(data);
 
-// map the data
-var mapping = dataSet.mapAs({x: 0, value: 1});
-
 // create a chart
 var chart = anychart.column();
 
@@ -177,11 +174,8 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 * какой формат у начальных данных, в таком формате и добавляйте
 * при добавлении массивом доп. поля надо включить в маппинг
 * то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
+* пояснить про отрицательный индекс
 
-
-```
-dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00"});
-```
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
@@ -189,12 +183,16 @@ dataSet.append(["New Point", 16000, "#ef6c00"]);
 ```
 
 ```
-dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5"}, -1);
+dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00"});
 ```
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
+```
+
+```
+dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5"}, -1);
 ```
 
 {sample}WD\_Data\_Sets\_07{sample}
@@ -209,12 +207,12 @@ dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
 
 
 ```
-dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00"});
+var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
+dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
 ```
 
 ```
-var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
-dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
+dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00"});
 ```
 
 {sample}WD\_Data\_Sets\_08{sample}
