@@ -64,7 +64,7 @@ anychart.onDocumentReady(function () {
     // create and configure the first chart
     var chart_1 = anychart.column();
     var series_1 = chart_1.column(mapping);
-    chart_1.title("Default Data Set");
+    chart_1.title("Original Data");
     chart_1.bounds(0, 0, "50%", "100%");
     // set the chart container
     chart_1.container(stage);
@@ -74,7 +74,7 @@ anychart.onDocumentReady(function () {
     // create and configure the second chart
     var chart_2 = anychart.column();
     series_2 = chart_2.column();
-    chart_2.title("Filtered Data Set");
+    chart_2.title("Filtered Data");
     chart_2.bounds("50%", 0, "50%", "100%");
     // set the chart container
     chart_2.container(stage);
