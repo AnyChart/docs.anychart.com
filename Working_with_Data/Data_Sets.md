@@ -305,7 +305,15 @@ function filterValue() {
 
 
 ```
+// get the iterator
+var iterator = newMapping.getIterator();
 
+// select the points and get their arguments
+var pointNames = [];
+while (iterator.advance()) {
+  series.select(iterator.getIndex());
+  pointNames.push(iterator.get("x"));
+}
 ```
 
 {sample}WD\_Data\_Sets\_13{sample}
