@@ -451,7 +451,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
   } else {
     return 1;
   }
-};
+}
 
 // search for items
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
@@ -526,10 +526,10 @@ while (traverser.advance()) {
   var newElement = document.createElement("li");
   newElement.innerText = traverser.get("name");
   treeInfo.appendChild(newElement);
-};
+}
 ```
 
-{sample}WD\_Tree\_Data\_16{sample}
+{sample}WD\_Tree\_Data\_14{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -554,10 +554,10 @@ function nextItem() {
     //reset the traverser
     traverser.reset();
   }
-};
+}
 ```
 
-{sample}WD\_Tree\_Data\_17{sample}
+{sample}WD\_Tree\_Data\_15{sample}
 
 ## Events
 
@@ -595,4 +595,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Tree\_Data\_18{sample}
+{sample}WD\_Tree\_Data\_16{sample}

@@ -79,14 +79,14 @@ anychart.onDocumentReady(function () {
 });
 
 // update the first child
-function updateItem(){
+function updateItem() {
   var newName = document.getElementById("inputName").value;
   var newValue = document.getElementById("inputValue").value;
   var newColor = document.getElementById("inputColor").value;
   treeData.getChildAt(0).getChildAt(0).set("name", newName);
   treeData.getChildAt(0).getChildAt(0).set("value", newValue);
   treeData.getChildAt(0).getChildAt(0).set("fill", newColor);
-};
+}
 </script>
 </body>
 </html>

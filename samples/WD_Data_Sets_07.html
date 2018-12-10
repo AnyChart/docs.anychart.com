@@ -78,7 +78,7 @@ anychart.onDocumentReady(function () {
 // a function for generating values
 function getValue() {
   return Math.floor(Math.random()*7 + 10)*1000; 
-};
+}
 
 var rowCount = 1;
 
@@ -88,7 +88,7 @@ function addRow() {
   var newName = "New " + rowCount++;
   var newData = [newName, newValue, "#ef6c00"];
   dataSet.append(newData);
-};
+}
 
 // insert a new data row
 function insertRow() {
@@ -97,7 +97,7 @@ function insertRow() {
   var newName = "New " + rowCount++;
   var newData = [newName, newValue, "#00bfa5"];
   dataSet.insert(newData, index);
-};
+}
 </script>
 </body>
 </html>
