@@ -251,6 +251,7 @@ series.select(index);
 
 * {api:anychart.data.View#filter}filter(){api} (view)
 
+
 ```
 // remove points with values less than a given one
 function filterValue() {

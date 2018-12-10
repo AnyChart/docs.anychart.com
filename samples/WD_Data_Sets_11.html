@@ -31,17 +31,20 @@
         #container {
             position: absolute;
             width: 100%;
-            top: 35px;
+            top: 55px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
 <button id = "filterButton" onclick="filterValue()">Filter Rows</button>
-<label>Value >= <input id="inputValue" value="13000"></label>
+<label>Value >= <input id="inputValue" value="15000"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
+    // create a stage
+    stage = anychart.graphics.create("container");
 
     // create data
     var data = [
@@ -58,20 +61,25 @@ anychart.onDocumentReady(function () {
     // map the data
     mapping = dataSet.mapAs({x: 0, value: 1});
 
-    // create a chart
-    var chart = anychart.column();
-
-    // create a series and set the data
-    series = chart.column(mapping);
-
-    // set the chart title
-    chart.title("Data Sets: filter()");
-
-    // set the container id
-    chart.container("container");
-
+    // create and configure the first chart
+    var chart_1 = anychart.column();
+    var series_1 = chart_1.column(mapping);
+    chart_1.title("Default Data Set");
+    chart_1.bounds(0, 0, "50%", "100%");
+    // set the chart container
+    chart_1.container(stage);
     // initiate drawing the chart
-    chart.draw();
+    chart_1.draw(); 
+
+    // create and configure the second chart
+    var chart_2 = anychart.column();
+    series_2 = chart_2.column();
+    chart_2.title("Filtered Data Set");
+    chart_2.bounds("50%", 0, "50%", "100%");
+    // set the chart container
+    chart_2.container(stage);
+    // initiate drawing the chart
+    chart_2.draw();  
 });
 
 // remove points with values less than a given one
@@ -80,9 +88,8 @@ function filterValue() {
   var newMapping = mapping.filter("value", function(value) {
     return value >= minValue;
   });
-  series.data(newMapping);
+  series_2.data(newMapping);
 };
-
 </script>
 </body>
 </html>
