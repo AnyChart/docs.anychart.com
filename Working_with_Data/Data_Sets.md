@@ -46,7 +46,7 @@ var series = chart.column(mapping);
 ### Array of Objects
 
 ```
-// create a data set
+// create data
   var data = [
     {x:"January", value: 12000},
     {x:"February", value:  15000},
@@ -135,7 +135,26 @@ var series2 = chart.column(mapping_2);
 ### Remapping
 
 ```
+// create data
+var data = [
+  {month:"January", sales: 12000},
+  {month:"February", sales:  15000},
+  {month:"March", sales:  16000},
+  {month:"April", sales:  15000},
+  {month:"May", sales:  14000}
+];
 
+// create a data set
+var dataSet = anychart.data.set(data);
+
+// map the data
+var mapping = dataSet.mapAs({x: "month", value: "sales"});
+
+// create a chart
+var chart = anychart.column();
+
+// create a series and set the data
+var series = chart.column(mapping);
 ```
 
 {sample}WD\_Data\_Sets\_05{sample}
