@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Data Sets 06"/>
+    <meta name="ac:name" content="WD Data Sets 13"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -46,16 +46,8 @@ anychart.onDocumentReady(function () {
     // create a series and set the data
     var series = chart.column(mapping);
 
-    // get the argument and value of the last point
-    var rowsCount = dataSet.getRowsCount();
-    var lastPointName = mapping.get(rowsCount - 1, "x");
-    var lastPointValue = mapping.get(rowsCount - 1, "value");
-
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Data Sets: Reading<br><br>" +
-                "last point = <span style = 'color:#990000'>" + 
-                lastPointName + " (" + lastPointValue + ")</span>");
+    chart.title("Data Sets: Iterating");
 
     // set the container id
     chart.container("container");

@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
         }
-        select {
+        button {
             margin: 10px 0 0 10px;
         }
         #container {
@@ -30,49 +30,33 @@
     </style>
 </head>
 <body>
-<select id="nameSelect" onchange="findRow()">
-    <option value="default" selected disabled>Find & Select</option>
-    <option value="January">January</option>
-    <option value="February">February</option>
-    <option value="March">March</option>
-    <option value="April">April</option>
-    <option value="May">May</option>
-</select>
+<button id = "removeButton" onclick="removeRow()">Remove Last Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {x: "January", value: 12000},
-      {x: "February", value: 15000},
-      {x: "March", value: 16000},
-      {x: "April", value: 15000},
-      {x: "May", value: 14000}
+      ["January", 12000],
+      ["February", 15000],
+      ["March", 16000],
+      ["April", 15000],
+      ["May", 14000]
     ];
   
     // create a data set
-    var dataSet = anychart.data.set(data);
+    dataSet = anychart.data.set(data);
 
     // map the data
-    mapping = dataSet.mapAs({x: 0, value: 1});
+    var mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
     var chart = anychart.column();
 
     // create a series and set the data
-    series = chart.column(mapping);
-
-    /* prevent points from being selected
-    when they are clicked on */
-    chart.interactivity().selectionMode("none");
-
-    /* prevent points from being deselected
-    when a click happens outside of them */
-    chart.interactivity().unselectOnClickOutOfPoint(false);
-
+    var series = chart.column(mapping);
     // set the chart title
-    chart.title("Data Sets: find()");
+    chart.title("Data Sets: Removing");
 
     // set the container id
     chart.container("container");
@@ -81,15 +65,9 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// find and select a row
-function findRow() {
-  // clear all selections
-  series.unselect();
-  // find a row
-  var name = document.getElementById("nameSelect").value;
-  var index = mapping.find("x", name);
-  // select a row
-  series.select(index);
+// remove the last row
+function removeRow() {
+  dataSet.remove(dataSet.getRowsCount() - 1);
 };
 </script>
 </body>

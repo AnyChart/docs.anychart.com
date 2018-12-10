@@ -21,6 +21,13 @@
         button {
             margin: 10px 0 0 10px;
         }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 65px;
+            margin: 10px 0 0 5px;
+        }
         #container {
             position: absolute;
             width: 100%;
@@ -30,33 +37,36 @@
     </style>
 </head>
 <body>
-<button id = "removeButton" onclick="removeRow()">Remove Last Row</button>
+<button id = "updateButton" onclick="updateRow()">Update Row</button>
+<label>Index: <input id="inputIndex" type = "number" min="0" max = "4" value="0"></label>
+<label>Color: <input id="inputColor" value="#ef6c00"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["January", 12000],
-      ["February", 15000],
-      ["March", 16000],
-      ["April", 15000],
-      ["May", 14000]
+      {x: "January", value: 12000},
+      {x: "February", value: 15000},
+      {x: "March", value: 16000},
+      {x: "April", value: 15000},
+      {x: "May", value: 14000}
     ];
   
     // create a data set
-    dataSet = anychart.data.set(data);
+    var dataSet = anychart.data.set(data);
 
     // map the data
-    var mapping = dataSet.mapAs({x: 0, value: 1});
+    mapping = dataSet.mapAs({x: 0, value: 1});
 
     // create a chart
     var chart = anychart.column();
 
     // create a series and set the data
     var series = chart.column(mapping);
+
     // set the chart title
-    chart.title("Data Sets: Removing");
+    chart.title("Data Sets: Updating");
 
     // set the container id
     chart.container("container");
@@ -65,9 +75,12 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// remove the last row
-function removeRow() {
-  dataSet.remove(dataSet.getRowsCount() - 1);
+// update a row
+function updateRow() {
+  var index = document.getElementById("inputIndex").value;
+  var newColor = document.getElementById("inputColor").value;
+  mapping.set(index, "fill", newColor);
+  mapping.set(index, "stroke", newColor);
 };
 </script>
 </body>

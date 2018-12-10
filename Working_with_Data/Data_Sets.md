@@ -135,6 +135,14 @@ var series2 = chart.column(mapping_2);
 
 {sample}WD\_Data\_Sets\_04{sample}
 
+### Remapping
+
+```
+
+```
+
+{sample}WD\_Data\_Sets\_05{sample}
+
 ## Accessing Rows
 
 * {api:anychart.data.Set}anychart.data.Set{api}
@@ -153,21 +161,22 @@ var series2 = chart.column(mapping_2);
 
 
 ```
-// get the name and value of the last point
+// get the argument and value of the last point
 var rowsCount = dataSet.getRowsCount();
 var lastPointName = mapping.get(rowsCount - 1, "x");
 var lastPointValue = mapping.get(rowsCount - 1, "value");
 ```
 
-{sample}WD\_Data\_Sets\_05{sample}
+{sample}WD\_Data\_Sets\_06{sample}
 
 ### Adding
 
 * {api:anychart.data.Set#append}append(){api} (dataset)
 * {api:anychart.data.Set#insert}insert(){api} (dataset)
-* (?) данные можно добавлять как объектом, так и массивом
-* (?) при добавлении массивом доп. поля надо включить в маппинг
-* (?) то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
+* данные можно добавлять как объектом, так и массивом
+* какой формат у начальных данных, в таком формате и добавляйте
+* при добавлении массивом доп. поля надо включить в маппинг
+* то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
 
 
 ```
@@ -188,14 +197,15 @@ var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
 ```
 
-{sample}WD\_Data\_Sets\_06{sample}
+{sample}WD\_Data\_Sets\_07{sample}
 
 ### Updating
 
 * строка: {api:anychart.data.View#row}row(){api} (dataset)
 * отдельное поле: {api:anychart.data.View#set}set(){api} (view)
-* (?) данные можно добавлять как объектом, так и массивом
-* (?) при добавлении массивом доп. поля надо включить в маппинг
+* данные можно добавлять как объектом, так и массивом
+* какой формат у начальных данных, в таком формате и добавляйте
+* при добавлении массивом доп. поля надо включить в маппинг
 
 
 ```
@@ -207,7 +217,7 @@ var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
 ```
 
-{sample}WD\_Data\_Sets\_07{sample}
+{sample}WD\_Data\_Sets\_08{sample}
 
 ```
 mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 2});
@@ -217,7 +227,7 @@ mapping.set(0, "fill", "#ef6c00");
 mapping.set(0, "stroke", "#ef6c00");
 ```
 
-{sample}WD\_Data\_Sets\_08{sample}
+{sample}WD\_Data\_Sets\_09{sample}
 
 ### Removing
 
@@ -228,7 +238,7 @@ mapping.set(0, "stroke", "#ef6c00");
 dataSet.remove(dataSet.getRowsCount() - 1);
 ```
 
-{sample}WD\_Data\_Sets\_09{sample}
+{sample}WD\_Data\_Sets\_10{sample}
 
 ### Searching
 
@@ -239,13 +249,12 @@ dataSet.remove(dataSet.getRowsCount() - 1);
 
 ```
 // find a row
-var name = document.getElementById("nameSelect").value;
-var index = mapping.find("x", name);
+var index = mapping.find("x", "April");
 // select a row
 series.select(index);
 ```
 
-{sample}WD\_Data\_Sets\_10{sample}
+{sample}WD\_Data\_Sets\_11{sample}
 
 #### filter()
 
@@ -263,7 +272,7 @@ function filterValue() {
 };
 ```
 
-{sample}WD\_Data\_Sets\_11{sample}
+{sample}WD\_Data\_Sets\_12{sample}
 
 ### Iterating
 
@@ -275,13 +284,14 @@ function filterValue() {
 * {api:anychart.data.Iterator#meta}meta(){api}
 * {api:anychart.data.Iterator#reset}reset(){api}
 * {api:anychart.data.Iterator#select}select(){api}
+* пример, аналогичный примеру на фильтр + сослаться на него
 
 
 ```
 
 ```
 
-{sample}WD\_Data\_Sets\_12{sample}
+{sample}WD\_Data\_Sets\_13{sample}
 
 ## Events
 

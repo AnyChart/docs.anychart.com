@@ -46,16 +46,8 @@ anychart.onDocumentReady(function () {
     // create a series and set the data
     var series = chart.column(mapping);
 
-    // get the name and value of the last point
-    var rowsCount = dataSet.getRowsCount();
-    var lastPointName = mapping.get(rowsCount - 1, "x");
-    var lastPointValue = mapping.get(rowsCount - 1, "value");
-
     // set the chart title
-    chart.title().useHtml(true);
-    chart.title("Data Sets: Reading<br><br>" +
-                "last point = <span style = 'color:#990000'>" + 
-                lastPointName + " (" + lastPointValue + ")</span>");
+    chart.title("Data Sets: Remapping");
 
     // set the container id
     chart.container("container");

@@ -18,33 +18,29 @@
             margin: 0;
             padding: 0;
         }
-        button {
+        select {
             margin: 10px 0 0 10px;
-        }
-        label {
-            margin: 10px 0 0 10px;
-        }
-        input {
-            width: 65px;
-            margin: 10px 0 0 5px;
         }
         #container {
             position: absolute;
             width: 100%;
-            top: 55px;
+            top: 35px;
             bottom: 0;
         }
     </style>
 </head>
 <body>
-<button id = "filterButton" onclick="filterValue()">Filter Rows</button>
-<label>Value >= <input id="inputValue" value="15000"></label>
+<select id="nameSelect" onchange="findRow()">
+    <option value="default" selected disabled>Find & Select</option>
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
-
-    // create a stage
-    stage = anychart.graphics.create("container");
 
     // create data
     var data = [
@@ -61,34 +57,39 @@ anychart.onDocumentReady(function () {
     // map the data
     mapping = dataSet.mapAs({x: 0, value: 1});
 
-    // create and configure the first chart
-    var chart_1 = anychart.column();
-    var series_1 = chart_1.column(mapping);
-    chart_1.title("Original Data");
-    chart_1.bounds(0, 0, "50%", "100%");
-    // set the chart container
-    chart_1.container(stage);
-    // initiate drawing the chart
-    chart_1.draw(); 
+    // create a chart
+    var chart = anychart.column();
 
-    // create and configure the second chart
-    var chart_2 = anychart.column();
-    series_2 = chart_2.column();
-    chart_2.title("Filtered Data");
-    chart_2.bounds("50%", 0, "50%", "100%");
-    // set the chart container
-    chart_2.container(stage);
+    // create a series and set the data
+    series = chart.column(mapping);
+
+    /* prevent points from being selected
+    when they are clicked on */
+    chart.interactivity().selectionMode("none");
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
+    // set the chart title
+    chart.title("Data Sets: find()");
+
+    // set the container id
+    chart.container("container");
+
     // initiate drawing the chart
-    chart_2.draw();  
+    chart.draw();
 });
 
-// remove points with values less than a given one
-function filterValue() {
-  var minValue = document.getElementById("inputValue").value;
-  var newMapping = mapping.filter("value", function(value) {
-    return value >= minValue;
-  });
-  series_2.data(newMapping);
+// find and select a row
+function findRow() {
+  // clear all selections
+  series.unselect();
+  // find a row
+  var name = document.getElementById("nameSelect").value;
+  var index = mapping.find("x", name);
+  // select a row
+  series.select(index);
 };
 </script>
 </body>

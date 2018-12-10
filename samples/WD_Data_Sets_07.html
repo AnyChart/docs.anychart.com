@@ -25,7 +25,7 @@
             margin: 10px 0 0 10px;
         }
         input {
-            width: 75px;
+            width: 30px;
             margin: 10px 0 0 5px;
         }
         #container {
@@ -37,10 +37,9 @@
     </style>
 </head>
 <body>
-<button id = "updateButton" onclick="updateRow()">Update First Row</button>
-<label>Name: <input id="inputName" value="New Name"></label>
-<label>Value: <input id="inputValue" value="16000"></label>
-<label>Color: <input id="inputColor" value="#ef6c00"></label>
+<button id = "addButton" onclick="addRow()">Add Row</button>
+<button id = "insertButton" onclick="insertRow()">Insert Row</button>
+<label>Index: <input id="inputIndex" value="-1"></label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -67,7 +66,7 @@ anychart.onDocumentReady(function () {
     var series = chart.column(mapping);
 
     // set the chart title
-    chart.title("Data Sets: Updating");
+    chart.title("Data Sets: Adding");
 
     // set the container id
     chart.container("container");
@@ -76,14 +75,25 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// update a row
-function updateRow() {
-  var newName = document.getElementById("inputName").value;
-  var newValue = document.getElementById("inputValue").value;
-  var newColor = document.getElementById("inputColor").value;
+var itemCount = 1;
+
+// add a new data row
+function addRow() {
+  var newValue = Math.floor(Math.random()*7 + 10)*1000;
+  var newName = "New " + itemCount++;
   var newData = {"x": newName, "value": newValue,
-                 "fill": newColor, "stroke": newColor};
-  dataSet.row(0, newData);
+                  "fill": "#ef6c00", "stroke": "#ef6c00"};
+  dataSet.append(newData);
+};
+
+// insert a new data row
+function insertRow() {
+  var index = document.getElementById("inputIndex").value;
+  var newValue = Math.floor(Math.random()*7 + 10)*1000;
+  var newName = "New " + itemCount++;
+  var newData = {"x": newName, "value": newValue,
+                 "fill": "#00bfa5", "stroke": "#00bfa5"};
+  dataSet.insert(newData, index);
 };
 </script>
 </body>
