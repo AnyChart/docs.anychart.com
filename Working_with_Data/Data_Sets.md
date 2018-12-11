@@ -301,7 +301,6 @@ function filterValue() {
 * {api:anychart.data.Iterator#meta}meta(){api}
 * {api:anychart.data.Iterator#reset}reset(){api}
 * {api:anychart.data.Iterator#select}select(){api}
-* пример, аналогичный примеру на фильтр + сослаться на него
 
 
 ```
