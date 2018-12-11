@@ -20,12 +20,12 @@ Here is the list of classes allowing you to work with data sets in AnyChart:
 
 ```
 // create data
-var data = [
+data = [
   ["January", 12000],
   ["February", 15000],
   ["March", 16000],
-  ["April", 15000],
-  ["May", 14000]
+  ["April", 13000],
+  ["May", 10000]
 ];
 
 // create a data set
@@ -51,8 +51,8 @@ var series = chart.column(mapping);
     {x:"January", value: 12000},
     {x:"February", value:  15000},
     {x:"March", value:  16000},
-    {x:"April", value:  15000},
-    {x:"May", value:  14000}
+    {x:"April", value:  13000},
+    {x:"May", value:  10000}
   ];
 
 // create a data set
@@ -75,8 +75,8 @@ var data = "x;value*" +
        "January;12000*" +
        "February;15000*" +
        "March;16000*" +
-       "April;15000*" +
-       "May;14000*";
+       "April;13000*" +
+       "May;10000*";
 
 // create an object with csv settings
 csvSettings = {ignoreFirstRow: true, columnsSeparator: ";", rowsSeparator: "*"};
@@ -109,8 +109,8 @@ var data = [
   ["January", 12000, 10000],
   ["February", 15000, 12000],
   ["March", 16000, 18000],
-  ["April", 15000, 11000],
-  ["May", 14000, 9000]
+  ["April", 13000, 11000],
+  ["May", 10000, 9000]
 ];
 
 // create a data set
@@ -140,8 +140,8 @@ var data = [
   {month:"January", sales: 12000},
   {month:"February", sales:  15000},
   {month:"March", sales:  16000},
-  {month:"April", sales:  15000},
-  {month:"May", sales:  14000}
+  {month:"April", sales:  13000},
+  {month:"May", sales:  10000}
 ];
 
 // create a data set
