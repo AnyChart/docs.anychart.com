@@ -103,8 +103,10 @@ var iterator = newMapping.getIterator();
 // select the points and get their arguments
 var pointNames = [];
 while (iterator.advance()) {
-  series.select(iterator.getIndex());
-  pointNames.push(iterator.get("x"));
+  var name = iterator.get("x");
+  var index = mapping.find("x", name);
+  series.select(index);
+  pointNames.push(name);
 }
 
 // create a string displaying the arguments

@@ -305,14 +305,22 @@ function filterValue() {
 
 
 ```
+// search for points with values equal or greater than a given one
+var minValue = document.getElementById("inputValue").value;
+var newMapping = mapping.filter("value", function(value) {
+  return value >= minValue;
+});
+
 // get the iterator
 var iterator = newMapping.getIterator();
 
 // select the points and get their arguments
 var pointNames = [];
 while (iterator.advance()) {
-  series.select(iterator.getIndex());
-  pointNames.push(iterator.get("x"));
+  var name = iterator.get("x");
+  var index = mapping.find("x", name);
+  series.select(index);
+  pointNames.push(name);
 }
 ```
 
