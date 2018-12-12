@@ -46,7 +46,7 @@ var dataTable = anychart.data.table("x");
 dataTable.addData(data);
 ```
 
-**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the indexes of columns or names of fields in your data.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -55,6 +55,8 @@ var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 ```
 var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 ```
+
+Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor:
 
 ```
 var chart = anychart.stock();
@@ -174,7 +176,7 @@ ohlcSeries.name("ACME Corp.");
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
 
-To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to the indexes of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
 
 ```
 dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});

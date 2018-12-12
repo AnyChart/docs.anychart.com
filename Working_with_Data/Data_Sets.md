@@ -27,10 +27,17 @@ Data can be organized as an [array of arrays](#array_of_arrays), [array of objec
 var dataSet = anychart.data.set(data);
 ```
 
-**1. Mapping Data & Creating Series.** If you set data as an array of arrays or a CSV string, you need to create a [mapping](#mapping) by passing the data set to the {api:anychart.data.Set#mapAs}mapAs(){api} method. Then pass the mapping to the chart or series constructor.
+**1. Mapping Data & Creating Series.** If you set data as an array of arrays or a CSV string, you need to [map](#mapping) the data set.
+
+Call the {api:anychart.data.Set#mapAs}mapAs(){api} method and link the field names required by the type of series you are going to create to indexes of columns in your data.
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1});
+```
+
+Then pass the mapping to the chart or series constructor:
+
+```
 var chart = anychart.column();
 var series = chart.column(mapping);
 ```
@@ -136,10 +143,11 @@ var series = chart.column(mapping);
 
 ### Mapping
 
-* {api:anychart.data.Set#mapAs}mapAs(){api}
-* здесь про view не писать
-* в других разделах использовать mapAs() для доступа к view, не линкуя его
+Mapping is required if you set the data as an array of arrays or a CSV string.
 
+To map a data set, call the {api:anychart.data.Set#mapAs}mapAs(){api} method on an instance of the {api:anychart.data.Set}anychart.data.Set{api}. Specify the field names required by the type of series you are going to create and link them to the indexes of columns in the data.
+
+In the following sample, two mappings are created for two series of a multiple-series chart:
 
 ```
 // create data
