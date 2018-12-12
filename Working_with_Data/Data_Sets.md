@@ -101,9 +101,11 @@ var series = chart.column(mapping);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as an a **CSV string**. See also: [Data from CSV](Data_From_CSV). Also, please keep in mind that mapping is required.
+The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV). Also, please keep in mind that in this case the data set needs to be mapped.
 
-**Note:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data#set}anychart.data.set(){api} can accept an object with alternative settings as the second parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
+By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data#set}anychart.data.set(){api} can accept an object with alternative settings as the second parameter.
+
+Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed. Other CSV settings are listed here: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
 
 ```
 // create data

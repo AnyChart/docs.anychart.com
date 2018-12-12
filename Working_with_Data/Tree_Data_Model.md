@@ -151,17 +151,17 @@ var chart = anychart.treeMap(treeData);
 
 ### CSV String
 
-To set data as a **CSV string**, call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
+To set data as a **CSV string** (see also: [Data from CSV](Data_From_CSV)), call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
 
 * a CSV string
 * an object with CSV mapping
 * an object with CSV settings (optional)
 
-**Note 1:** The structure of your data should be similar to data set [as a table](#as_table): specify the hierarchy of elements by mapping the `id` and `parent` fields (the choice of other fields depends on the chart type).
+By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. 
 
-**Note 2:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
+Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
 
-See also: [Data from CSV](Data_From_CSV).
+**Note:** The structure of your data should be similar to data set [as a table](#as_table): specify the hierarchy of elements by mapping the `id` and `parent` fields (the choice of other fields depends on the chart type).
 
 The sample below shows how to set data as a CSV string:
 
