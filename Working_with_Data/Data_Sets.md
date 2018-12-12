@@ -161,7 +161,7 @@ If your data is organized as an [array of objects](#array_of_objects), you need 
 var mapping = dataSet.mapAs({x: "x", value: "value"});
 ```
 
-Please note that in this case mapping is optional. However, if your data contains custom fields, it needs to be [remapped](#remap).
+Please note that in this case mapping is optional. However, if your data contains custom fields, it needs to be [remapped](#remapping).
 
 In the following sample, two mappings are created for two series of a multiple-series chart:
 
