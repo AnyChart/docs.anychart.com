@@ -143,7 +143,7 @@ var series = chart.column(mapping);
 
 ### Mapping
 
-Mapping is required if you set the data as an array of arrays or a CSV string.
+Mapping is required if you set the data as an  [array of arrays](#array_of_arrays) or a [CSV string](#csv_string).
 
 To map a data set, call the {api:anychart.data.Set#mapAs}mapAs(){api} method on an instance of the {api:anychart.data.Set}anychart.data.Set{api}. Specify the field names required by the type of series you are going to create and link them to the indexes of columns in the data.
 
@@ -179,6 +179,12 @@ var series2 = chart.column(mapping_2);
 {sample}WD\_Data\_Sets\_04{sample}
 
 ### Remapping
+
+If your data is organized as an [array of objects](#array_of_objects) and contains custom fields, you need to remap it.
+
+Call the {api:anychart.data.Set#mapAs}mapAs(){api} method on an instance of the {api:anychart.data.Set}anychart.data.Set{api}, specify the field names required by the type of series you are going to create, and link them to the custom fields in the data.
+
+In this sample, custom fields `month` and `sales` are mapped as the `x` and `value` fields required by the Column series:
 
 ```
 // create data
