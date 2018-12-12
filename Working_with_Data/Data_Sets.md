@@ -46,7 +46,7 @@ var series = chart.column(dataSet);
 
 ### Array of Arrays
 
-The following sample shows how to set data if it is organized as an **array of arrays**. Please note that [mapping](#mapping) is required.
+The following sample shows how to set data if it is organized as an **array of arrays**:
 
 ```
 // create data
@@ -75,7 +75,7 @@ var series = chart.column(mapping);
 
 ### Array of Objects
 
-This sample shows how to set data if it is organized as an **array of objects**. Usually, mapping is not required, but if you use custom data fields, you need to [remap](#remapping) them.
+This sample shows how to set data if it is organized as an **array of objects**:
 
 ```
 // create data
@@ -101,7 +101,7 @@ var series = chart.column(mapping);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV). Also, please keep in mind that in this case the data set needs to be [mapped](#mapping).
+The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
 By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data#set}anychart.data.set(){api} can accept an object with alternative settings as the second parameter.
 
