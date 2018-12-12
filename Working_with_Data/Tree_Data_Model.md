@@ -159,7 +159,7 @@ To set data as a **CSV string**, call the {api:anychart.data#tree}anychart.data.
 
 **Note 1:** The structure of your data should be similar to data set [as a table](#as_table): specify the hierarchy of elements by mapping the `id` and `parent` fields (the choice of other fields depends on the chart type).
 
-**Note 2:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
+**Note 2:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
 
 See also: [Data from CSV](Data_From_CSV).
 
