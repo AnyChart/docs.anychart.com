@@ -35,14 +35,14 @@ var chart = anychart.column();
 var series = chart.column(mapping);
 ```
 
-If you set data as an array of objects, you can pass the data directly to the chart or series constructor:
+Mapping is not required for data organized as an array of objects, so you can pass the data set directly to the chart or series constructor:
 
 ```
 var chart = anychart.column();
-var series = chart.column(data);
+var series = chart.column(dataSet);
 ```
 
-**Note:** However, in case you use custom data fields, you need to [remap](#remapping) them.
+**Note:** However, if you use custom data fields, you need to [remap](#remapping) them.
 
 ### Array of Arrays
 
