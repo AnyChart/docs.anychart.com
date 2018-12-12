@@ -30,7 +30,7 @@ To create a chart based on this type of data, you should create a data table, ad
 
 **1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
-If you set data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If you set data as an array of arrays or a CSV string, specify the **index of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 ```
 var dataTable = anychart.data.table(0);
@@ -46,7 +46,7 @@ var dataTable = anychart.data.table("x");
 dataTable.addData(data);
 ```
 
-**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of series you are going to create to the indexes of columns or names of fields in your data.
+**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of the series you are going to create to the indexes of columns or names of fields in your data.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -176,7 +176,7 @@ ohlcSeries.name("ACME Corp.");
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
 
-To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to the indexes of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of the series you are going to create and link them either to the indexes of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
 
 ```
 dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -194,7 +194,7 @@ You can also set the **approximation mode** for [grouping data](../Stock_Charts/
 dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
 ```
 
-There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
+There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the index of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
 
 ```
 mapping.addField("open", 1, "open");
@@ -378,7 +378,7 @@ You can perform the following data operations:
 To read the data, use methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
 * {api:anychart.data.TableSelectable.RowProxy#get}get(){api} – accepts the name of a data field, returns its value
-* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} – accepts the number of a column, returns the value
+* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} – accepts the index of a column, returns the value
 * {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api} – returns the index of a row
 * {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api} – returns the key (date) of a row
 
@@ -418,7 +418,7 @@ var lastHigh = lastPoint.get("high");
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding new rows.
 
-The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows you to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
 ```
 dataTable.addData([
