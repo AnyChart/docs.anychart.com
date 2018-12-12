@@ -21,13 +21,13 @@ Data sets in AnyChart are defined as instances of the {api:anychart.data.Set}any
 
 Data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also: [Data from CSV](Data_From_CSV)). The choice of data fields depends on the chart type.
 
-**1. Creating Data Set** To create a data set, pass the data to the {api:anychart.data#set}anychart.data.set(){api} method:
+**1. Creating Data Set.** To create a data set, pass the data to the {api:anychart.data#set}anychart.data.set(){api} method:
 
 ```
 var dataSet = anychart.data.set(data);
 ```
 
-**1. Mapping Data & Creating Series** If you set data as an array of arrays or a CSV string, you need to create a [mapping](#mapping) by passing the data set to the {api:anychart.data.Set#mapAs}mapAs(){api} method. Then pass the mapping to the chart or series constructor.
+**1. Mapping Data & Creating Series.** If you set data as an array of arrays or a CSV string, you need to create a [mapping](#mapping) by passing the data set to the {api:anychart.data.Set#mapAs}mapAs(){api} method. Then pass the mapping to the chart or series constructor.
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1});
