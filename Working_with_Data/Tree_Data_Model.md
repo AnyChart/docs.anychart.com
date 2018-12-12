@@ -62,11 +62,11 @@ To create a chart based on tree-like data, you should organize your data either 
 **1. Creating Data Tree.** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
 ```
-treeData = anychart.data.tree(data, "as-tree");
+var treeData = anychart.data.tree(data, "as-tree");
 ```
 
 ```
-treeData = anychart.data.tree(data, "as-table");
+var treeData = anychart.data.tree(data, "as-table");
 ```
 
 If your data is a CSV string, you should pass a CSV mapping object as the second parameter. Read more in the [CSV String](#csv_string) section.

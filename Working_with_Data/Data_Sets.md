@@ -3,6 +3,10 @@
 
 ## Overview
 
+A data set...
+
+It is used in the following chart types: (?)
+
 ## Classes
 
 Here is the list of classes allowing you to work with data sets in AnyChart:
@@ -13,8 +17,32 @@ Here is the list of classes allowing you to work with data sets in AnyChart:
 
 ## Setting Data
 
-* {api:anychart.data.Set}anychart.data.Set{api}
-* {api:anychart.data#set}anychart.data.set(){api}
+Data sets in AnyChart are defined as instances of the {api:anychart.data.Set}anychart.data.Set{api} class.
+
+Data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also: [Data from CSV](Data_From_CSV)). The choice of data fields depends on the chart type.
+
+To create a data set, pass the data to the {api:anychart.data#set}anychart.data.set(){api} method:
+
+```
+var dataSet = anychart.data.set(data);
+```
+
+If you set data as an array of arrays or a CSV string, you need to create a [mapping](#mapping) by passing the data set to the {api:anychart.data.Set#mapAs}mapAs(){api} method. Then pass the mapping to the chart or series constructor.
+
+```
+var mapping = dataSet.mapAs({x: 0, value: 1});
+var chart = anychart.column();
+var series = chart.column(mapping);
+```
+
+If you set data as an array of objects, you can pass the data directly to the chart or series constructor:
+
+```
+var chart = anychart.column();
+var series = chart.column(data);
+```
+
+However, in case you use custom data fields, you need to [remap](#remapping) them.
 
 ### Array of Arrays
 
