@@ -42,7 +42,7 @@ var chart = anychart.column();
 var series = chart.column(data);
 ```
 
-However, in case you use custom data fields, you need to [remap](#remapping) them.
+**Note:** However, in case you use custom data fields, you need to [remap](#remapping) them.
 
 ### Array of Arrays
 
