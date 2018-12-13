@@ -480,7 +480,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).rangeColumn(mapping);
 
 // update the first row
-dataTable.addData([["2015-12-25", 510.69, 516.88, #dd2c00]]);
+dataTable.addData([["2015-12-25", 510.69, 516.88," #dd2c00"]]);
 ```
 
 In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual_point_settings).
