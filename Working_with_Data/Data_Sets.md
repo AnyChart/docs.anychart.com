@@ -243,7 +243,7 @@ var series = chart.column(mapping);
 To read the data, use the following methods:
 
 * {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row
-* строка: {api:anychart.data.Set#getRowsCount}getRowsCount(){api} returns the number of rows in the data set
+* {api:anychart.data.Set#getRowsCount}getRowsCount(){api} returns the number of rows in the data set
 * {api:anychart.data.View#get}get(){api} accepts the index of a row and the name of a field, returns the value of the field
 
 
