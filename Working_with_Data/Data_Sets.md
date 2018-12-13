@@ -231,7 +231,7 @@ var series = chart.column(mapping);
 
 ## Accessing Rows
 
-Rows do not have their own class, so there is no direct access to them. However, you can [read](#reading) a whole row or the value in a given data field. Also, you can [search](#searching) for rows and [iterate](#iterating) data. (?)
+Rows of a data set do not have their own class, so there is no direct access to them. However, you can [read](#reading) a whole row or the value in a given data field. Also, you can [search](#searching) for rows and [iterate](#iterating) data. (?)
 
 ## Data Manipulation
 
