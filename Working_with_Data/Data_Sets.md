@@ -275,7 +275,9 @@ dataSet.append({"x": "New Point 1", "value": 16000},
                {"x": "New Point 2", "value": 16000});
 ```
 
-**To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index (0 by default) indicating the position in the data set where you want to place the row. Negative indexes count backwards from the end of the data set.
+**To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index indicating the position in the data set where you want to place the row.
+
+The default index is 0: if the index is not specified, the row is inserted in the beginning of the data set. Negative indexes count backwards from the end of the data set.
 
 ```
 dataSet.insert(["New Point", 16000], -1);
@@ -289,7 +291,8 @@ dataSet.insert({"x": "New Point", "value": 16000}, -1);
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
-dataSet.append(["New Point", 16000, "#ef6c00"]);
+dataSet.append(["New Point 1", 16000, "#ef6c00"]);
+dataSet.insert(["New Point 2", 16000, "#ef6c00"]);
 ```
 
 In this sample, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
