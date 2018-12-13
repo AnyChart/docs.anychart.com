@@ -505,12 +505,12 @@ To perform a traversal, use the {api:anychart.data.Tree#getTraverser}getTraverse
 * {api:anychart.data.Traverser#current}current(){api} – returns the current item
 * {api:anychart.data.Traverser#get}get(){api} – returns the current item's value in a given data field
 * {api:anychart.data.Traverser#getDepth}getDepth(){api} – returns the depth of the current item
-* {api:anychart.data.Traverser#meta}meta(){api} – sets/gets the meta value of the current item
-* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets/gets a function that determines whether an item is returned
+* {api:anychart.data.Traverser#meta}meta(){api} – sets / gets the meta value of the current item in a given data field
+* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets / gets a function that determines whether an item is returned
 * {api:anychart.data.Traverser#set}set(){api} – sets the value of the current item in a given data field
 * {api:anychart.data.Traverser#reset}reset(){api} – resets the traverser to its default position before the first item
 * {api:anychart.data.Traverser#toArray}toArray(){api} – returns the current traverser as an array of data items
-* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets/gets a function that determines whether the traverser goes through the children of an item
+* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets / gets a function that determines whether the traverser goes through the children of an item
 
 In the sample below the {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#get}get(){api} methods are used to display the names of all the data items:
 

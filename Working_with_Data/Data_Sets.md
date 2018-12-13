@@ -231,10 +231,7 @@ var series = chart.column(mapping);
 
 ## Accessing Rows
 
-* {api:anychart.data.Set}anychart.data.Set{api}
-* {api:anychart.data.View}anychart.data.View{api}
-* у ряда нет своего класса, но есть классы dataset и view
-* они позволяют работать с рядами и конкретными полями: dataset - ряд, view - поле + через view можно делать итерацию и поиск
+Rows do not have their own class, so there is no direct access to them. However, you can [read](#reading) a whole row or the value in a given data field. Also, you can [search](#searching) for rows and [iterate](#iterating) data. (?)
 
 ## Data Manipulation
 
@@ -301,7 +298,7 @@ In the following sample, there are two buttons allowing you to add or insert a  
 
 ### Updating
 
-You can update a whole row or just a certain value.
+You can update a whole row or just a value in a certain field.
 
 **To update a row**, use the {api:anychart.data.View#row}row(){api} method. Pass the index of the row as the first parameter and a new row as the second one.
 
@@ -409,12 +406,12 @@ Iterating is a process of going through all the rows (?). You can [access](#acce
 To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
 
 * {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
-* {api:anychart.data.Iterator#get}get(){api} – returns the value in a given field of the current row
+* {api:anychart.data.Iterator#get}get(){api} – returns the value of the current row in a given field
 * {api:anychart.data.Iterator#getIndex}getIndex(){api} – returns the index of the current row
 * {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} – returns the total number of rows
-* {api:anychart.data.Iterator#meta}meta(){api} – sets a specifed metadata value in a given field
+* {api:anychart.data.Iterator#meta}meta(){api} – sets / gets the meta value of the current row in a given field
 * {api:anychart.data.Iterator#reset}reset(){api} – resets the iterator to its default position before the first row
-* {api:anychart.data.Iterator#select}select(){api} – moves iterator to the row with a given index, returns `true` if the index falls within the allowed range (?)
+* {api:anychart.data.Iterator#select}select(){api} – moves iterator to a row with a given index, returns `true` if the index falls within the allowed range (?)
 
 In this sample, iterator is used to select [filtered](#filter()) points, [find](#find()) their arguments, and display them in the chart title:
 

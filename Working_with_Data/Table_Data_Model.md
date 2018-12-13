@@ -512,7 +512,7 @@ To iterate over a table, first access a selection of rows – create an instance
 Finally, call methods of the iterator:
 
 * {api:anychart.data.TableIterator#advance}advance(){api} – advances the iterator to the next row
-* {api:anychart.data.TableIterator#get}get(){api} – returns the value in a given field of the current row
+* {api:anychart.data.TableIterator#get}get(){api} – returns the value of the current row in a given field
 * {api:anychart.data.TableIterator#getIndex}getIndex(){api} – returns the index of the current row
 * {api:anychart.data.TableIterator#getKey}getKey(){api} – returns the key of the current row
 * {api:anychart.data.TableIterator#reset}reset(){api} – resets the iterator to its default position before the first item
