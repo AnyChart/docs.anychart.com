@@ -263,7 +263,7 @@ You can add or insert rows to your data. New rows can be organized as objects or
 
 It is possible to add a row with new data fields that do not appear in the original data set. Please note: if you add such row as an array, you should also add the new field to the mapping.
 
-* то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
+* про маппинг нужно в table + маппинг в цитатах
 
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters.
 
