@@ -437,9 +437,9 @@ dataTable.addData([
 ]);
 ```
 
-**Note 1:** There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+**Note 1:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
-**Note 2:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
+**Note 2:** There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
