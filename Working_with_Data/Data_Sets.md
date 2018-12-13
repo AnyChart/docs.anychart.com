@@ -401,9 +401,10 @@ function filterValue() {
 
 ### Iterating
 
-Iterating is a process of going through all the rows (?). You can [access](#accessing) (?) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
+Iterating is a process of going through all the rows (?). You can [access](#accessing_rows) (?) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
 
 To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
+
 
 * {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
 * {api:anychart.data.Iterator#get}get(){api} – returns the value of the current row in a given field
