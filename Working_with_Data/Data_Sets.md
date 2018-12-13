@@ -157,7 +157,7 @@ To map a data set, call the {api:anychart.data.Set#mapAs}mapAs(){api} method on 
 var mapping = dataSet.mapAs({x: 0, value: 1});
 ```
 
-If your data is organized as an [array of objects](#array_of_objects), you need to link the field names required by the series to the names of fields in the data:
+If your data is organized as an [array of objects](#array_of_objects), you should to link the field names required by the series to the names of fields in the data:
 
 ```
 var mapping = dataSet.mapAs({x: "x", value: "value"});
