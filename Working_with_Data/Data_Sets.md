@@ -259,14 +259,13 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 ### Adding
 
-* {api:anychart.data.Set#append}append(){api} (dataset)
-* {api:anychart.data.Set#insert}insert(){api} (dataset)
-* данные можно добавлять как объектом, так и массивом
-* какой формат у начальных данных, в таком формате и добавляйте
-* при добавлении массивом доп. поля надо включить в маппинг
-* то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
-* пояснить про отрицательный индекс
+You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
 
+It is possible to add a row with new data fields that do not appear in the original data set. Please note: if you add such row as an array, you should also add the new field to the mapping.
+
+* то же примечание про маппинг к примерам 8 и 9 в table + маппинг в цитатах
+
+**To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters.
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
@@ -277,6 +276,8 @@ dataSet.append(["New Point", 16000, "#ef6c00"]);
 dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00"});
 ```
 
+**To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index (0 by default) indicating the position in the dataSet where you want to place the row. Negative indexes count backwards from the end of the data set.
+
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
@@ -285,6 +286,8 @@ dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
 ```
 dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5"}, -1);
 ```
+
+In this samples, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
 
 {sample}WD\_Data\_Sets\_07{sample}
 
