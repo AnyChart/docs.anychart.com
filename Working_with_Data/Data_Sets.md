@@ -259,11 +259,11 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 ### Adding
 
+* про маппинг нужно в table + маппинг в цитатах
+
 You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
 
 It is possible to add or insert a row with new data fields that do not appear in the original data set. Please note: if you add such row as an array, you should also add the new field to the mapping.
-
-* про маппинг нужно в table + маппинг в цитатах
 
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters.
 
@@ -287,7 +287,7 @@ dataSet.insert(["New Point", 16000, "#00bfa5"], -1);
 dataSet.insert({"x": "New Point", "value": 16000, "fill": "#00bfa5"}, -1);
 ```
 
-In this samples, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
+In this sample, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
 
 {sample}WD\_Data\_Sets\_07{sample}
 
