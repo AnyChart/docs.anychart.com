@@ -27,7 +27,7 @@ Data can be organized as an [array of arrays](#array_of_arrays), [array of objec
 var dataSet = anychart.data.set(data);
 ```
 
-**1. Mapping Data & Creating Series.** If you set data as an array of arrays or a CSV string, you need to [map](#mapping) the data set. For data organized as an array of objects, mapping is optional.
+**2. Mapping Data.** If you set data as an array of arrays or a CSV string, you need to [map](#mapping) the data set. For data organized as an array of objects, mapping is optional.
 
 Call the {api:anychart.data.Set#mapAs}mapAs(){api} method and link the field names required by the type of the series you are going to create to indexes of columns or names of fields in your data:
 
@@ -39,7 +39,9 @@ var mapping = dataSet.mapAs({x: 0, value: 1});
 var mapping = dataSet.mapAs({x: "x", value: "value"});
 ```
 
-Then pass the mapping to the chart or series constructor:
+**2. Creating Series.** 
+
+The final step is passing the mapping to the chart or series constructor:
 
 ```
 var chart = anychart.column();
