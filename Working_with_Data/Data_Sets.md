@@ -412,7 +412,7 @@ To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.
 * {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} – returns the total number of rows
 * {api:anychart.data.Iterator#meta}meta(){api} – sets / gets the meta value of the current row in a given field
 * {api:anychart.data.Iterator#reset}reset(){api} – resets the iterator to its default position before the first row
-* {api:anychart.data.Iterator#select}select(){api} – moves iterator to a row with a given index, returns `true` if the index falls within the allowed range (?)
+* {api:anychart.data.Iterator#select}select(){api} – moves iterator to a row with a given index (?) писать, что возвращает?
 
 In this sample, iterator is used to select [filtered](#filter()) points, [find](#find()) their arguments, and display them in the chart title:
 
