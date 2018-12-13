@@ -295,7 +295,7 @@ dataSet.append(["New Point 1", 16000, "#ef6c00"]);
 dataSet.insert(["New Point 2", 15000, "#00bfa5"]);
 ```
 
-In this sample, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
+In the following sample, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart. Before inserting a row, you can specify its position (index).
 
 {sample}WD\_Data\_Sets\_07{sample}
 
