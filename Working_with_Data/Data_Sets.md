@@ -261,7 +261,7 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
 
-It is possible to add a row with new data fields that do not appear in the original data set. Please note: if you add such row as an array, you should also add the new field to the mapping.
+It is possible to add or insert a row with new data fields that do not appear in the original data set. Please note: if you add such row as an array, you should also add the new field to the mapping.
 
 * про маппинг нужно в table + маппинг в цитатах
 
@@ -276,7 +276,7 @@ dataSet.append(["New Point", 16000, "#ef6c00"]);
 dataSet.append({"x": "New Point", "value": 16000, "fill": "#ef6c00"});
 ```
 
-**To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index (0 by default) indicating the position in the dataSet where you want to place the row. Negative indexes count backwards from the end of the data set.
+**To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index (0 by default) indicating the position in the data set where you want to place the row. Negative indexes count backwards from the end of the data set.
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
