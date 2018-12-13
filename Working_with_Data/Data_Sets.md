@@ -261,6 +261,8 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
 
+(?) а csv?
+
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters. New rows are always added at the end of the data set.
 
 ```
@@ -305,6 +307,8 @@ You can update a whole row or just a certain value.
 
 A new row can be organized as an object or arrays – the best practice is to use the same format of data as in the original data set.
 
+(?) а csv?
+
 ```
 dataSet.row(0, ["New Name", 16000]);
 ```
@@ -339,6 +343,8 @@ mapping.set(0, "fill", "#ef6c00");
 mapping.set(0, "stroke", "#ef6c00");
 ```
 
+(?) мы игнорим класс view --> здесь никак не комментирую то, что работа идет с маппингом и что все новые поля должны быть замаплены независимо от формата данных
+
 The sample below allows updating the fill color of any point:
 
 {sample}WD\_Data\_Sets\_09{sample}
@@ -366,7 +372,7 @@ To search for data rows, use the following methods:
 
 The {api:anychart.data.View#find}find(){api} method returns the index of the row containing a given value. It accepts two parameters: the name of a data field and the value.
 
-In the sample below this method is used to select points by their X-values:
+In the sample below this method is used to select points by their arguments:
 
 ```
 // find a row
@@ -379,9 +385,9 @@ series.select(index);
 
 #### filter()
 
-The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
+The {api:anychart.data.View#filter}filter(){api} methods finds data rows (?) with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all rows greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions, for example to find all rows (?) with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
@@ -398,15 +404,19 @@ function filterValue() {
 
 ### Iterating
 
-* {api:anychart.data.View#getIterator}getIterator(){api} (view)
-* {api:anychart.data.Iterator#advance}advance(){api}
-* {api:anychart.data.Iterator#get}get(){api}
-* {api:anychart.data.Iterator#getIndex}getIndex(){api}
-* {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api}
-* {api:anychart.data.Iterator#meta}meta(){api}
-* {api:anychart.data.Iterator#reset}reset(){api}
-* {api:anychart.data.Iterator#select}select(){api}
+Iterating is a process of going through all the rows (?). You can [access](#accessing) (?) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
 
+To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
+
+* {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
+* {api:anychart.data.Iterator#get}get(){api} – returns the value in a given field of the current row
+* {api:anychart.data.Iterator#getIndex}getIndex(){api} – returns the index of the current row
+* {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} – returns the total number of rows
+* {api:anychart.data.Iterator#meta}meta(){api} – sets a specifed metadata value in a given field
+* {api:anychart.data.Iterator#reset}reset(){api} – resets the iterator to its default position before the first row
+* {api:anychart.data.Iterator#select}select(){api} – moves iterator to the row with a given index, returns `true` if the index falls within the allowed range (?)
+
+In this sample, iterator is used to select [filtered](#filter()) points, [find](#find()) their arguments, and display them in the chart title:
 
 ```
 // search for points with values equal or greater than a given one
