@@ -405,7 +405,6 @@ Iterating is a process of going through all the rows (?). You can [access](#acce
 
 To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
 
-
 * {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
 * {api:anychart.data.Iterator#get}get(){api} – returns the value of the current row in a given field
 * {api:anychart.data.Iterator#getIndex}getIndex(){api} – returns the index of the current row
