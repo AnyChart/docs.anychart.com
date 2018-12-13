@@ -345,7 +345,7 @@ The sample below allows updating the fill color of any point:
 
 ### Removing
 
-To remove a row, call the {api:anychart.data.View#remove}remove(){api} method of {api:anychart.data.Set}anychart.data.Set{api} with the index of the row as a parameter.
+To remove a row, call the {anychart.data.Set#remove}remove(){api} method of {api:anychart.data.Set}anychart.data.Set{api} with the index of the row as a parameter.
 
 The following sample shows how to remove the last row. Its index is calculated with the help of the {api:anychart.data.Set#getRowsCount}getRowsCount(){api} method, which is used to [get](#reading) the total number of rows:
 
