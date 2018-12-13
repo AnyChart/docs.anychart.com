@@ -285,7 +285,7 @@ dataSet.insert(["New Point", 16000], -1);
 dataSet.insert({"x": "New Point", "value": 16000}, -1);
 ```
 
-**Note:** If you add or insert rows as arrays, the new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
+If you add or insert rows as arrays, the new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
@@ -313,7 +313,7 @@ dataSet.row(0, ["New Name", 16000]);
 dataSet.row(0, {"x": "New Name", "value": 16000});
 ```
 
-**Note:** If the new row is set as an array, it should correspond to the mapping. It is possible to pass a row with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
+If the new row is set as an array, it should correspond to the mapping. It is possible to pass a row with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});

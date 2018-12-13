@@ -425,9 +425,9 @@ dataTable.addData([
 ]);
 ```
 
-**Note 1:** There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
-**Note 2:** The new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
+Please keep in mind that the new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
 ```
 var mapping = dataTable.mapAs(
@@ -439,7 +439,7 @@ dataTable.addData([
 ]);
 ```
 
-**Note 3:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
+**Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
@@ -449,7 +449,7 @@ In this sample, when you push the button, random data is added to the table and 
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you call this method, you can specify dates that are already included in your data and set new values for them.
 
-**Note:** When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns. Also, please note that it is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping.
+When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns. Also, please note that it is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping.
 
 This is how updating table data looks like:
 
