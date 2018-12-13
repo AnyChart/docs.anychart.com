@@ -39,7 +39,7 @@ var mapping = dataSet.mapAs({x: 0, value: 1});
 var mapping = dataSet.mapAs({x: "x", value: "value"});
 ```
 
-**2. Creating Series.** 
+**3. Creating Series.** 
 
 The final step is passing the mapping to the chart or series constructor:
 
