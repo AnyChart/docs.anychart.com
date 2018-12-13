@@ -292,7 +292,7 @@ dataSet.insert({"x": "New Point", "value": 16000}, -1);
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.append(["New Point 1", 16000, "#ef6c00"]);
-dataSet.insert(["New Point 2", 16000, "#ef6c00"]);
+dataSet.insert(["New Point 2", 15000, "#00bfa5"]);
 ```
 
 In this sample, when you push the buttons, random data rows are added or inserted to the data set and shown on the chart:
