@@ -263,7 +263,7 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 
 You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
 
-**To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters. New rows are also added at the end of the data set.
+**To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters. New rows are always added at the end of the data set.
 
 ```
 dataSet.append(["New Point 1", 16000],
