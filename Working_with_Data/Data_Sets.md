@@ -266,17 +266,19 @@ You can add or insert rows to your data. New rows can be organized as objects or
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters.
 
 ```
-dataSet.append(["New Point", 16000]);
+dataSet.append(["New Point 1", 16000],
+               ["New Point 2", 16000]);
 ```
 
 ```
-dataSet.append({"x": "New Point", "value": 16000});
+dataSet.append({"x": "New Point 1", "value": 16000},
+               {"x": "New Point 2", "value": 16000});
 ```
 
 **To insert a row**, call {api:anychart.data.Set#insert}insert(){api} and pass two parameters: a row and the index (0 by default) indicating the position in the data set where you want to place the row. Negative indexes count backwards from the end of the data set.
 
 ```
-dataSet.insert(["New Point", 16000, -1);
+dataSet.insert(["New Point", 16000], -1);
 ```
 
 ```
