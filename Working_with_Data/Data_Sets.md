@@ -246,6 +246,7 @@ To read the data, use the following methods:
 * {api:anychart.data.Set#getRowsCount}getRowsCount(){api} returns the number of rows in the data set
 * {api:anychart.data.View#get}get(){api} accepts the index of a row and the name of a field, returns the value of the field
 
+In the sample below, some of these methods are used to get the argument and value of the chart's last point:
 
 ```
 // get the argument and value of the last point
