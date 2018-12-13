@@ -427,7 +427,16 @@ dataTable.addData([
 ]);
 ```
 
-**Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
+**Note 1:** The new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
+
+```
+var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, risingStroke: 5, fallingStroke: 5});
+dataTable.addData([
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37, "4 #00838f"],
+]);
+```
+
+**Note 2:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
@@ -437,7 +446,7 @@ In this sample, when you push the button, random data is added to the table and 
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you call this method, you can specify dates that are already included in your data and set new values for them.
 
-**Note:** When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns.
+**Note:** When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns. Also, please note that it is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping.
 
 ```
 // create a data table
@@ -457,7 +466,7 @@ dataTable.addData([
 ]);
 
 // map the data
-mapping = dataTable.mapAs({low: 1, high: 2});
+mapping = dataTable.mapAs({low: 1, high: 2, fill: 3});
 
 // create a stock chart
 var chart = anychart.stock();
@@ -466,7 +475,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).rangeColumn(mapping);
 
 // update the first row
-dataTable.addData([["2015-12-25", 510.69, 516.88]]);
+dataTable.addData([["2015-12-25", 510.69, 516.88, #dd2c00]]);
 ```
 
 In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual_point_settings).
