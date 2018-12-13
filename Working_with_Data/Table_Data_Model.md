@@ -416,9 +416,7 @@ var lastHigh = lastPoint.get("high");
 
 ### Adding
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding new rows.
-
-The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding rows – just pass an array of new rows as a parameter:
 
 ```
 dataTable.addData([
@@ -426,6 +424,8 @@ dataTable.addData([
   ["2016-01-02", 511.70, 514.87, 506.18, 506.75]
 ]);
 ```
+
+**Note:** There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
 
 The new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
