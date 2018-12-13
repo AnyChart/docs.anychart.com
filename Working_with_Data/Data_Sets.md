@@ -357,10 +357,16 @@ dataSet.remove(dataSet.getRowsCount() - 1);
 
 ### Searching
 
+To search for data rows, use the following methods:
+
+* {api:anychart.data.View#find}find(){api}
+* {api:anychart.data.View#filter}filter(){api}
+
 #### find()
 
-* {api:anychart.data.View#find}find(){api} (view)
+The {api:anychart.data.View#find}find(){api} method returns the index of the row containing a given value. It accepts two parameters: the name of a data field and the value.
 
+In the sample below this method is used to select points by their X-values:
 
 ```
 // find a row
@@ -373,8 +379,9 @@ series.select(index);
 
 #### filter()
 
-* {api:anychart.data.View#filter}filter(){api} (view)
+The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
+Use this method to set advanced search conditions, for example to find all rows greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
