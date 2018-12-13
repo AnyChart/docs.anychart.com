@@ -301,23 +301,37 @@ In the following sample, there are two buttons allowing you to add or insert a  
 
 ### Updating
 
-* строка: {api:anychart.data.View#row}row(){api} (dataset)
-* отдельное поле: {api:anychart.data.View#set}set(){api} (view)
-* данные можно добавлять как объектом, так и массивом
-* какой формат у начальных данных, в таком формате и добавляйте
-* при добавлении массивом доп. поля надо включить в маппинг
+You can update a whole row or just a certain value.
 
+**To update a row**, use the {api:anychart.data.View#row}row(){api} method. Pass the index of the row as the first parameter and a new row as the second one.
+
+A new row can be organized as an object or arrays – the best practice is to use the same format of data as in the original data set.
+
+```
+dataSet.row(0, ["New Name", 16000]);
+```
+
+```
+dataSet.row(0, {"x": "New Name", "value": 16000});
+```
+
+**Note:** If the new row is set as an array, it should correspond to the mapping. It is possible to pass a row with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
 ```
 var mapping = dataSet.mapAs({x: 0, value: 1, fill: 2});
 dataSet.row(0, ["New Name", 16000, "#ef6c00"]);
 ```
 
-```
-dataSet.row(0, {"x": "New Name", "value": 16000, "fill": "#ef6c00"});
-```
+In this sample, the first row of the data set is updated on-the-fly after you enter custom parameters:
 
 {sample}WD\_Data\_Sets\_08{sample}
+
+**To update a value**, call the {api:anychart.data.View#set}set(){api} method with three parameters:
+
+* the index of the row
+* the name of the field
+* the new value
+
 
 ```
 mapping = dataSet.mapAs({x: 0, value: 1, fill: 2, stroke: 2});
@@ -326,6 +340,8 @@ mapping.set(0, "value", 16000);
 mapping.set(0, "fill", "#ef6c00");
 mapping.set(0, "stroke", "#ef6c00");
 ```
+
+The sample below allows updating the fill color of any point:
 
 {sample}WD\_Data\_Sets\_09{sample}
 
