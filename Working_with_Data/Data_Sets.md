@@ -242,8 +242,8 @@ var series = chart.column(mapping);
 
 To read the data, use the following methods:
 
-* {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row (as an array or object) (?)
 * {api:anychart.data.Set#getRowsCount}getRowsCount(){api} – returns the number of rows in the data set
+* {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row (as an array or object) (?)
 * {api:anychart.data.View#get}get(){api} – accepts the index of a row and the name of a field, returns the value
 
 In the sample below, {api:anychart.data.Set#getRowsCount}getRowsCount(){api} and {api:anychart.data.View#get}get(){api} are used to get the argument and value of the chart's last point:
