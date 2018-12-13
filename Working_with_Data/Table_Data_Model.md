@@ -430,7 +430,10 @@ dataTable.addData([
 **Note 1:** The new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
 
 ```
-var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4, risingStroke: 5});
+var mapping = dataTable.mapAs(
+  {open: 1, high: 2, low: 3, close: 4, risingStroke: 5, fallingStroke: 5}
+);
+
 dataTable.addData([
   ["2016-01-01", 511.32, 514.29, 505.99, 506.37, "4 #00838f"],
 ]);
