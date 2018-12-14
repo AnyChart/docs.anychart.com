@@ -1,4 +1,4 @@
-{:index 1}
+{:index 7.5}
 # Word Tree
 
 ## Overview
