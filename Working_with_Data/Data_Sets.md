@@ -5,7 +5,7 @@
 
 A data set...
 
-It is used in the following chart types: (?)
+It is used in most chart types.
 
 ## Classes
 
@@ -118,7 +118,7 @@ The sample below shows how to set data if it is organized as a **CSV string**. S
 
 By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data#set}anychart.data.set(){api} can accept an object with alternative settings as the second parameter.
 
-Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed. Other CSV settings are listed here: {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}.
+Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
 
 ```
 // create data
@@ -231,7 +231,7 @@ var series = chart.column(mapping);
 
 ## Accessing Rows
 
-Rows of a data set do not have their own class, so there is no direct access to them. However, you can [read](#reading) a whole row or the value in a given data field. Also, you can [search](#searching) for rows and [iterate](#iterating) data. (?)
+Rows of a data set do not have their own class, so there is no direct access to them. However, you can [read](#reading) a whole row or the value in a given data field. Also, you can [search](#searching) for rows and [iterate](#iterating) data.
 
 ## Data Manipulation
 
@@ -240,7 +240,7 @@ Rows of a data set do not have their own class, so there is no direct access to 
 To read the data, use the following methods:
 
 * {api:anychart.data.Set#getRowsCount}getRowsCount(){api} – returns the number of rows in the data set
-* {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row (as an array or object) (?)
+* {api:anychart.data.Set#row}row(){api} – accepts the index of a row, returns the row
 * {api:anychart.data.View#get}get(){api} – accepts the index of a row and the name of a field, returns the value
 
 In the sample below, {api:anychart.data.Set#getRowsCount}getRowsCount(){api} and {api:anychart.data.View#get}get(){api} are used to get the argument and value of the chart's last point:
@@ -257,8 +257,6 @@ var lastPointValue = mapping.get(rowsCount - 1, "value");
 ### Adding
 
 You can add or insert rows to your data. New rows can be organized as objects or arrays – the best practice is to use the same format of data as in the original data set.
-
-(?) а csv?
 
 **To add a row or several rows**, call the {api:anychart.data.Set#append}append(){api} method on the instance of {api:anychart.data.Set}anychart.data.Set{api} and pass rows as parameters. New rows are always added at the end of the data set.
 
@@ -304,8 +302,6 @@ You can update a whole row or just a value in a certain field.
 
 A new row can be organized as an object or arrays – the best practice is to use the same format of data as in the original data set.
 
-(?) а csv?
-
 ```
 dataSet.row(0, ["New Name", 16000]);
 ```
@@ -340,8 +336,6 @@ mapping.set(0, "fill", "#ef6c00");
 mapping.set(0, "stroke", "#ef6c00");
 ```
 
-(?) мы игнорим класс view --> здесь никак не комментирую то, что работа идет с маппингом и что все новые поля должны быть замаплены независимо от формата данных
-
 The sample below allows updating the fill color of any point:
 
 {sample}WD\_Data\_Sets\_09{sample}
@@ -350,7 +344,7 @@ The sample below allows updating the fill color of any point:
 
 To remove a row, call the {api:anychart.data.Set#remove}remove(){api} method of {api:anychart.data.Set}anychart.data.Set{api} with the index of the row as a parameter.
 
-The following sample shows how to remove the last row. Its index is calculated with the help of the {api:anychart.data.Set#getRowsCount}getRowsCount(){api} method, which is used to [get](#reading) (?) the total number of rows:
+The following sample shows how to remove the last row. Its index is calculated with the help of the {api:anychart.data.Set#getRowsCount}getRowsCount(){api} method, which is used to [get](#reading) the total number of rows:
 
 ```
 dataSet.remove(dataSet.getRowsCount() - 1);
@@ -382,9 +376,9 @@ series.select(index);
 
 #### filter()
 
-The {api:anychart.data.View#filter}filter(){api} methods finds data rows (?) with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
+The {api:anychart.data.View#filter}filter(){api} methods finds data rows with values meeting a given condition. The first parameter is the name of a data field, and the second one is a filter function, which accepts a value and returns `true` or `false`.
 
-Use this method to set advanced search conditions, for example to find all rows (?) with values greater or less than a given value, like in the following sample:
+Use this method to set advanced search conditions, for example to find all rows with values greater or less than a given value, like in the following sample:
 
 ```
 // remove points with values less than a given one
@@ -401,9 +395,9 @@ function filterValue() {
 
 ### Iterating
 
-Iterating is a process of going through all the rows (?). You can [access](#accessing_rows) (?) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
+Iterating is a process of going through all the rows (?). You can access them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
 
-To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
+To iterate over a data set, obtain the {api:anychart.data.Iterator}anychart.data.Iterator{api} object by calling the {api:anychart.data.View#getIterator}getIterator(){api} method. Then us the methods of the iterator:
 
 * {api:anychart.data.Iterator#advance}advance(){api} – advances the iterator to the next row
 * {api:anychart.data.Iterator#get}get(){api} – returns the value of the current row in a given field
@@ -411,7 +405,7 @@ To iterate over a data set (?), obtain the {api:anychart.data.Iterator}anychart.
 * {api:anychart.data.Iterator#getRowsCount}getRowsCount(){api} – returns the total number of rows
 * {api:anychart.data.Iterator#meta}meta(){api} – sets / gets the meta value of the current row in a given field
 * {api:anychart.data.Iterator#reset}reset(){api} – resets the iterator to its default position before the first row
-* {api:anychart.data.Iterator#select}select(){api} – moves the iterator to a row with a given index (?) писать, что возвращает?
+* {api:anychart.data.Iterator#select}select(){api} – moves the iterator to a row with a given index
 
 In this sample, iterator is used to select [filtered](#filter\(\)) points, [find](#find\(\)) their arguments, and display them in the chart title:
 
@@ -439,4 +433,4 @@ while (iterator.advance()) {
 
 ## Events
 
-* (?)
+Coming soon.
