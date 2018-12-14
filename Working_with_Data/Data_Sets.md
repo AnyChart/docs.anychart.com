@@ -3,11 +3,12 @@
 
 ## Overview
 
-A data set is a representation of data as a collection of rows, similar to a database query result. This data model is used in most chart types. It is especially useful
+A data set is a representation of data as a collection of rows, similar to a database query result. This data model, used in most chart types, is especially helpful when setting data for multiple-series charts.
 
 * (?) про таблицу пишу - collection of rows and columns, но тут же не так?
 * (?) similar to a database query result - норм? взято из старой статьи
-* (?) data model - это тут применимо
+* (?) data model - это тут применимо?
+* (?) especially helpful when setting data for multiple-series charts - речь, конечно, идет об эксплицитном задании в противоречие имплицитному, так что примечание несколько лукавое
 
 This article explains how to create a data set and perform operations on it.
 
