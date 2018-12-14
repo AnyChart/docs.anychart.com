@@ -8,7 +8,7 @@ A data set is a representation of data as a collection of rows, similar to a dat
 * (?) про таблицу пишу - collection of rows and columns, но тут же не так?
 * (?) similar to a database query result - норм? взято из старой статьи
 * (?) data model - это тут применимо?
-* (?) especially helpful when setting data for multiple-series charts - речь, конечно, идет об эксплицитном задании в противоречие имплицитному, так что примечание несколько лукавое
+* (?) especially helpful when setting data for multiple-series charts - речь, конечно, идет об эксплицитном задании в противоречие имплицитному, так что немного вранье получается
 
 This article explains how to create a data set and perform operations on it.
 
