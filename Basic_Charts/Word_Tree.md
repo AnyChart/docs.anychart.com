@@ -1,5 +1,5 @@
 {:index 1}
-# Area Chart
+# Word Tree
 
 ## Overview
 
