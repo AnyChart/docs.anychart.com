@@ -5,9 +5,9 @@
 
 A data set is a representation of data as a collection of rows, similar to a database query result. This data model is used in most chart types. It is especially useful
 
-(?) про таблицу пишу - collection of rows and columns, но тут же не так?
-(?) similar to a database query result - норм? взято из старой статьи
-(?) data model - это тут применимо
+* (?) про таблицу пишу - collection of rows and columns, но тут же не так?
+* (?) similar to a database query result - норм? взято из старой статьи
+* (?) data model - это тут применимо
 
 This article explains how to create a data set and perform operations on it.
 
