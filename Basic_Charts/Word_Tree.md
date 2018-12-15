@@ -9,7 +9,7 @@ This article explains how to create a basic Word Tree chart as well as configure
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Word Tree](../Quick_Start/Modules#wordtree)</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Word Tree](../Quick_Start/Modules#word_tree)</td></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Wordtree}anychart.core.cartesian.series.Wordtree{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[?](../Working_with_Data/Overview)</td></tr>
@@ -40,7 +40,7 @@ The Word Tree requires adding the [Core](../Quick_Start/Modules#core) and [Word 
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-wordtree.min.js"></script>
+<script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-bundle.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
