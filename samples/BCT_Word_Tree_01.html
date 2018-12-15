@@ -26,30 +26,21 @@
 <script>
 anychart.onDocumentReady(function () {
 
-    var arrays_data = [
-        ['cats are better than dogs'],
-        ['cats eat kibble'],
-        ['cats are better than hamsters'],
-        ['are cats are awesome'],
-        ['cats are people too'],
-        ['cats eat mice'],
-        ['cats meowing'],
-        ['cats in the cradle'],
-        ['cats eat mice'],
-        ['cats in the cradle lyrics'],
-        ['cats eat kibble'],
-        ['cats for adoption'],
-        ['cats are family'],
-        ['cats eat mice'],
-        ['cats are better than kittens'],
-        ['cats are evil'],
-        ['cats are weird'],
-        ['cats eat mice'],
-        ['dogs eat mice'],
+    // create data
+    var data = [
+      {value:   "Cats", children: [
+        {value:   "Cats are evil."},
+        {value:   "Cats eat dogs."},
+        {value:   "Cats fuck children."},
+        {value:   "Cats kill people."}
+      ]}
     ];
 
+    // create a data tree
+    treeData = anychart.data.tree(data, "as-tree");
+    
     // create a chart and set the data
-    var chart = anychart.wordtree(arrays_data);
+    var chart = anychart.wordtree(treeData);
 
     // set the chart title
     chart.title().useHtml(true);
