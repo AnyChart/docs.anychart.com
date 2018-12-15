@@ -9,7 +9,7 @@ This article explains how to create a basic Word Tree chart as well as configure
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Treemap](../Quick_Start/Modules#wordtree</td></tr>
+<tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Treemap](../Quick_Start/Modules#wordtree)</td></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Wordtree}anychart.core.cartesian.series.Wordtree{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[?](../Working_with_Data/Overview)</td></tr>
