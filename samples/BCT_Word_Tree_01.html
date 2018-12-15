@@ -28,19 +28,24 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {value:   "Cats", children: [
-        {value:   "Cats are evil."},
-        {value:   "Cats eat dogs."},
-        {value:   "Cats fuck children."},
-        {value:   "Cats kill people."}
-      ]}
+      ["doctor strange"],
+      ["doctor who"],
+      ["doctor love"],
+      ["doctor strange watch"],
+      ["doctor strange comics"],
+      ["doctor strange film"],
+      ["doctor strange wiki"],
+      ["doctor strange trailer"],
+      ["doctor who season 11"],
+      ["doctor who whatch online"],
+      ["doctor who online"],
+      ["doctor who ratings"],
+      ["doctor love leisa rayven"],
+      ["doctor love book"]
     ];
-
-    // create a data tree
-    treeData = anychart.data.tree(data, "as-tree");
     
     // create a chart and set the data
-    var chart = anychart.wordtree(treeData);
+    var chart = anychart.wordtree(data);
 
     // set the chart title
     chart.title("Word Tree: Basic Sample");
