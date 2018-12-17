@@ -28,30 +28,29 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["doctor strange watch"],
-      ["doctor strange comics"],
-      ["doctor strange wiki"],
-      ["doctor strange book of caliostro"],
-      ["doctor strange book of vishanti"],
-      ["doctor strange book of spells"],
-      ["doctor who season 11"],
-      ["doctor who ratings"],
-      ["doctor who watch online"],
-      ["doctor who best episodes matt smith"],
-      ["doctor who best episodes david tennant"],
-      ["doctor who best doctors"],
-      ["doctor house cast"],
-      ["doctor house ost"],
-      ["doctor house wiki"],
-      ["doctor house quotes about love"],
-      ["doctor house quotes funny"],
-      ["doctor house quotes about life"],
-      ["doctor house quotes time changes everything"],
-      ["doctor house quotes about pain"]
+      {value:     "Slavic Languages",
+       children: [
+        {value:   "East Slavic", children: [
+          {value: "Russian"},
+          {value: "Ukrainian"},
+          {value: "Belarusian"}
+        ]},
+        {value:   "West Slavic", children: [
+          {value: "Polish"},
+          {value: "Czech"},
+          {value: "Slovak"}
+        ]},
+        {value:   "South Slavic", children: [
+          {value: "Serbo-Croatian"},
+          {value: "Bulgarian"},
+          {value: "Slovene"},
+          {value: "Macedonian"}
+        ]}  
+      ]} 
     ];
     
     // create a chart and set the data
-    var chart = anychart.wordtree(data);
+    var chart = anychart.wordtree(data, "as-tree");
 
     // set the chart title
     chart.title("Word Tree: Basic Sample");
