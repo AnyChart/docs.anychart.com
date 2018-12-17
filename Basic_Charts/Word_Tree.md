@@ -89,7 +89,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ```
 
-{sample :width 500}BCT\_Word\_Tree\_04{sample}
+{sample}BCT\_Word\_Tree\_04{sample}
 
 
 ### Word
