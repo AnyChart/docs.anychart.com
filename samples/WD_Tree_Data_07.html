@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="addItem()">Add Child</button>
+<button id = "addButton" onclick="addItem()">Add Child</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -71,10 +71,11 @@ anychart.onDocumentReady(function () {
 var itemCount = 1;
 
 // add a new data item
-function addItem(){
-  var name = "New Child " + itemCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
-};
+function addItem() {
+  var newName = "New Child " + itemCount++;
+  var newData = {"name": newName, "value": 10000000};
+  treeData.getChildAt(0).addChild(newData);
+}
 </script>
 </body>
 </html>

@@ -104,7 +104,7 @@ anychart.onDocumentReady(function () {
       } else {
         return 1;
       }
-    };
+    }
 
     // search for data items
     var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
@@ -118,7 +118,7 @@ anychart.onDocumentReady(function () {
       for (var i = 0; i < items.length; i++) {
         text += items[i].get("name") + ", ";
         items[i].set("actual", {fill: "#dd2c00"});
-      };
+      }
       text = text.substr(0, text.length - 2);
     }
 

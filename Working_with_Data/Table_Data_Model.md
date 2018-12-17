@@ -11,15 +11,15 @@ This article explains how to set table data, access rows, and perform operations
 
 ## Classes
 
-Here is the - list of classes allowing you to work with table data in AnyChart:
+Here is the list of classes allowing you to work with table data in AnyChart:
 
-* table - {api:anychart.data.Table}anychart.data.Table{api}
-* mapping - {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
-* selection of rows - {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}
-* table row - {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}
-* iterator - {api:anychart.data.TableIterator}anychart.data.TableIterator{api}
-* computer - {api:anychart.data.TableComputer}anychart.data.TableComputer{api}
-* computer row - {api:anychart.data.TableComputer.RowProxy}anychart.data.TableComputer.RowProxy{api}
+* table – {api:anychart.data.Table}anychart.data.Table{api}
+* mapping – {api:anychart.data.TableMapping}anychart.data.TableMapping{api}
+* selection of rows – {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}
+* table row – {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}
+* iterator – {api:anychart.data.TableIterator}anychart.data.TableIterator{api}
+* computer – {api:anychart.data.TableComputer}anychart.data.TableComputer{api}
+* computer row – {api:anychart.data.TableComputer.RowProxy}anychart.data.TableComputer.RowProxy{api}
 
 You can learn how to use these classes in the sections below.
 
@@ -28,9 +28,9 @@ You can learn how to use these classes in the sections below.
 Table data structures in Anychart are defined as instances of the {api:anychart.data.Table}anychart.data.Table{api} class. Table data can be organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects), or [CSV string](#csv_string) (see also: [Data from CSV](Data_From_CSV)).
 To create a chart based on this type of data, you should create a data table, add data, and map the table. 
 
-**1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table - an instance of {api:anychart.data.Table}anychart.data.Table{api}.
+**1. Creating Data Table.** The first step is using the {api:anychart.data#table}anychart.data.table(){api} method to create a data table – an instance of {api:anychart.data.Table}anychart.data.Table{api}.
 
-If you set data as an array of arrays or a CSV string, specify the **number of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
+If you set data as an array of arrays or a CSV string, specify the **index of the column** containing table keys (dates) as a parameter (0 by default). If you data is organized as an array of objects, specify the **name of the field** containing table keys. You can also use optional parameters to set the date/time pattern of the key column, time offset, base date, and [locale](../Common_Settings/Localization).
 
 ```
 var dataTable = anychart.data.table(0);
@@ -46,7 +46,7 @@ var dataTable = anychart.data.table("x");
 dataTable.addData(data);
 ```
 
-**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table - link the names of data fields required by the type of series you are going to create to the numbers of columns or names of fields in your data. Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor.
+**3. Mapping Data & Creating Series.** Finally, call {api:anychart.data.Table#mapAs}mapAs(){api} to [map](#mapping) the table – link the names of data fields required by the type of the series you are going to create to the indexes of columns or names of fields in your data.
 
 ```
 var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -55,6 +55,8 @@ var mapping = dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
 ```
 var mapping = dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 ```
+
+Then pass the mapping, which is defined as an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}, to the series constructor:
 
 ```
 var chart = anychart.stock();
@@ -129,9 +131,11 @@ var ohlcSeries = chart.plot(0).ohlc(mapping);
 
 ### CSV String
 
-The sample below shows how to set data if it is organized as an a **CSV string**. See also: [Data from CSV](Data_From_CSV).
+The sample below shows how to set data if it is organized as a **CSV string**. See also: [Data from CSV](Data_From_CSV).
 
-**Note:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
+By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but {api:anychart.data.Table#addData}addData(){api} can accept an object with alternative settings as the third parameter.
+
+Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
 
 ```
 // create data
@@ -172,7 +176,7 @@ ohlcSeries.name("ACME Corp.");
 
 Mappings are defined as instances of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}.
 
-To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of series you are going to create and link them either to numbers of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
+To map your data, call the {api:anychart.data.Table#mapAs}mapAs(){api} method on an instance of {api:anychart.data.Table}anychart.data.Table{api}. Specify the field names required by the type of the series you are going to create and link them either to the indexes of columns or to the names of fields in the data, depending on whether it is organized as an [array of arrays](#array_of_arrays), [array of objects](#array_of_objects) or a [CSV string](#csv_string):
 
 ```
 dataTable.mapAs({open: 1, high: 2, low: 3, close: 4});
@@ -184,13 +188,13 @@ dataTable.mapAs({open: "open", high: "high", low: "low", close: "close"});
 
 **Note:** The column with keys (dates) is specified when the table is created with the {api:anychart.data#table}anychart.data.table(){api} method. You cannot remap the key column with {api:anychart.data.Table#mapAs}mapAs(){api}.
 
-You can also set the **approximation mode** for [grouping data](../Stock_Charts/Data_Grouping) - the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
+You can also set the **approximation mode** for [grouping data](../Stock_Charts/Data_Grouping) – the available options are listed in {api:anychart.enums.AggregationType}anychart.enums.AggregationType{api}. For example, this is how you set the approximation mode of the first column to `"open"`:
 
 ```
 dataTable.mapAs({open: {column: 1, type: "open"}, high: 2, low: 3, close: 4});
 ```
 
-There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the number of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
+There is an alternative way to map the data: call {api:anychart.data.Table#mapAs}mapAs(){api} with no parameters, then call {api:anychart.data.TableMapping#addField}addField(){api} on the instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}. Use two parameters: the name of a field and the index of column / name of a field in the data. The third parameter (optional) allows you to set the approximation mode:
 
 ```
 mapping.addField("open", 1, "open");
@@ -328,7 +332,7 @@ Rows are defined as instances of the {api:anychart.data.TableSelectable.RowProxy
 
 If you want access a row of a table, first you should create a selection of rows and then perform a [search](#searching) of the row in this selection. In other words, there is no direct access to rows.
 
-Manipulating table data often requires accessing rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section - see [Searching](#searching) and [Iterating](#iterating).
+Manipulating table data often requires accessing rows, so the methods described below are used in some samples in the in the [Data Manipulation](#data_manipulation) section – see [Searching](#searching) and [Iterating](#iterating).
 
 **1. Creating Selections.** To access a selection of rows, create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} by calling the {api:anychart.data.TableMapping#createSelectable}createSelectable(){api} method on an instance of {api:anychart.data.TableMapping}anychart.data.TableMapping{api}:
 
@@ -336,7 +340,7 @@ Manipulating table data often requires accessing rows, so the methods described 
 selectable = mapping.createSelectable();
 ```
 
-This method creates a selection including all rows. You can narrow it down to a **range of dates** of your choice - call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
+This method creates a selection including all rows. You can narrow it down to a **range of dates** of your choice – call {api:anychart.data.TableSelectable#select}select(){api} with two keys (dates) as parameters, which can be passed as numbers, strings, or Date objects:
 
 ```
 selectable.select("2002-01-01", "2006-01-01");
@@ -350,7 +354,7 @@ You can call {api:anychart.data.TableSelectable#select}select(){api} and {api:an
 selectable.select("2002-01-01", "2006-01-01", "year", 2);
 ```
 
-**2. Accessing Rows.** To access a row of a table in a selection, perform a [search](#searching) on the key of the row - call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
+**2. Accessing Rows.** To access a row of a table in a selection, perform a [search](#searching) on the key of the row – call the {api:anychart.data.TableSelectable#search}search(){api} method on the instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}:
 
 ```
 selectable = mapping.createSelectable();
@@ -373,18 +377,18 @@ You can perform the following data operations:
 
 To read the data, use methods of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}:
 
-* {api:anychart.data.TableSelectable.RowProxy#get}get(){api} - accepts the name of a data field, returns its value
-* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} - accepts the number of a column, returns the value
-* {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api} - returns the index of a row
-* {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api} - returns the key (date) of a row
+* {api:anychart.data.TableSelectable.RowProxy#get}get(){api} – accepts the name of a data field, returns its value
+* {api:anychart.data.TableSelectable.RowProxy#getColumn}getColumn(){api} – accepts the index of a column, returns the value
+* {api:anychart.data.TableSelectable.RowProxy#getIndex}getIndex(){api} – returns the index of a row
+* {api:anychart.data.TableSelectable.RowProxy#getKey}getKey(){api} – returns the key (date) of a row
 
-To call the methods listed above, you need to [access](#accessing_rows) a row of the table, which requires creating a selection of rows and performing a search - see the sample in the [Searching](#searching) section. 
+To call the methods listed above, you need to [access](#accessing_rows) a row of the table, which requires creating a selection of rows and performing a search – see the sample in the [Searching](#searching) section. 
 
 ### Searching
 
 To find a row, [access](#accessing_rows) a selection of rows ({api:anychart.data.TableSelectable}anychart.data.TableSelectable{api}) and call {api:anychart.data.TableSelectable#search}search(){api} with the key (date) of the row as the first parameter. This method returns an instance of {api:anychart.data.TableSelectable.RowProxy}anychart.data.TableSelectable.RowProxy{api}.
 
-The second parameter sets the **mode of search** - see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
+The second parameter sets the **mode of search** – see {api:anychart.enums.TableSearchMode}anychart.enums.TableSearchMode{api}:
 
 * `"exact"`
 * `"exact-or-next"`
@@ -412,9 +416,7 @@ var lastHigh = lastPoint.get("high");
 
 ### Adding
 
-The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding new rows.
-
-The first parameter is the array of new data rows. There is also an optional second parameter that is used for streaming data - it allows you to remove a number of already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) data, but also for adding rows – just pass an array of new rows as a parameter:
 
 ```
 dataTable.addData([
@@ -423,7 +425,21 @@ dataTable.addData([
 ]);
 ```
 
-**Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row - see the section about [updating](#updating) data.
+There is also an optional second parameter that is used for streaming data – it allows you to remove already existing rows from the beginning of the storage. You can either specify the number of rows to be removed or pass `true` to remove as many rows as you add.
+
+Please keep in mind that the new data should correspond to the mapping. It is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping:
+
+```
+var mapping = dataTable.mapAs(
+  {open: 1, high: 2, low: 3, close: 4, risingStroke: 5, fallingStroke: 5}
+);
+
+dataTable.addData([
+  ["2016-01-01", 511.32, 514.29, 505.99, 506.37, "4 #00838f"],
+]);
+```
+
+**Note:** Rows with any dates can be added. For example, a new row can be inserted between two old ones or rewrite an old row – see the section about [updating](#updating) data.
 
 In this sample, when you push the button, random data is added to the table and shown on the chart:
 
@@ -433,7 +449,9 @@ In this sample, when you push the button, random data is added to the table and 
 
 The {api:anychart.data.Table#addData}addData{api} method of {api:anychart.data.Table}anychart.data.Table{api} is used not only for [setting](#setting_data) and [adding](#adding) data, but also for updating it. It means that when you call this method, you can specify dates that are already included in your data and set new values for them.
 
-**Note:** When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns.
+When the data in the table is updated, all mappings are updated automatically. Always make sure that you are updating the right columns. Also, please note that it is possible to pass rows with additional settings that do not appear in the original data set (for example, custom fill or stroke color), but it is necessary to include the corresponding fields in the mapping.
+
+This is how updating table data looks like:
 
 ```
 // create a data table
@@ -453,7 +471,7 @@ dataTable.addData([
 ]);
 
 // map the data
-mapping = dataTable.mapAs({low: 1, high: 2});
+mapping = dataTable.mapAs({low: 1, high: 2, fill: 3});
 
 // create a stock chart
 var chart = anychart.stock();
@@ -462,8 +480,7 @@ var chart = anychart.stock();
 var ohlcSeries = chart.plot(0).rangeColumn(mapping);
 
 // update the first row
-var newData = [["2015-12-25", 510.69, 516.88]];
-dataTable.addData(newData);
+dataTable.addData([["2015-12-25", 510.69, 516.88," #dd2c00"]]);
 ```
 
 In the following sample, the first row of the table is updated on-the-fly after you enter custom parameters. To learn more about coloring individual points in Stock charts, see [Stock Charts: Data](../Stock_Charts/Data#individual_point_settings).
@@ -472,7 +489,7 @@ In the following sample, the first row of the table is updated on-the-fly after 
 
 ### Removing
 
-To remove a range of rows, call the {api:anychart.data.Table#remove}remove(){api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters - they can be passed as numbers, strings, or Date objects:
+To remove a range of rows, call the {api:anychart.data.Table#remove}remove(){api} method of {api:anychart.data.Table}anychart.data.Table{api} with two keys (dates) as parameters – they can be passed as numbers, strings, or Date objects:
 
 ```
 dataTable.remove("2015-12-28", "2015-12-31");  
@@ -490,15 +507,15 @@ dataTable.removeFirst(1);
 
 Iterating is a process of going through all the items of a tree. You can [acess](#accessing_rows) them one by one by one, but AnyChart offers an easier and faster out-of-the-box solution.
 
-To iterate over a table, first access a selection of rows - create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} (see [Accessing Rows](#accessing_rows)). Then call {api:anychart.data.TableSelectable#getIterator}getIterator(){api} on it to obtain the {api:anychart.data.TableIterator}anychart.data.TableIterator{api} object.
+To iterate over a table, first access a selection of rows – create an instance of {api:anychart.data.TableSelectable}anychart.data.TableSelectable{api} (see [Accessing Rows](#accessing_rows)). Then call {api:anychart.data.TableSelectable#getIterator}getIterator(){api} on it to obtain the {api:anychart.data.TableIterator}anychart.data.TableIterator{api} object.
 
 Finally, call methods of the iterator:
 
-* {api:anychart.data.TableIterator#advance}advance(){api} - advances the iterator to hte next data item
-* {api:anychart.data.TableIterator#get}get(){api} - returns the value in a given field of the current row
-* {api:anychart.data.TableIterator#getIndex}getIndex(){api} - returns the index of a current row
-* {api:anychart.data.TableIterator#getKey}getKey(){api} - returns the key of a current row
-* {api:anychart.data.TableIterator#reset}reset(){api} - resets the iterator to its default position before the first item
+* {api:anychart.data.TableIterator#advance}advance(){api} – advances the iterator to the next row
+* {api:anychart.data.TableIterator#get}get(){api} – returns the value of the current row in a given field
+* {api:anychart.data.TableIterator#getIndex}getIndex(){api} – returns the index of the current row
+* {api:anychart.data.TableIterator#getKey}getKey(){api} – returns the key of the current row
+* {api:anychart.data.TableIterator#reset}reset(){api} – resets the iterator to its default position before the first item
 
 In the sample below the {api:anychart.data.TableIterator#advance}advance(){api}, {api:anychart.data.TableIterator#getKey}getKey(){api}, and {api:anychart.data.TableIterator#get}get(){api} methods are used to display information about all the points falling in the range shown on the chart. When the range is changed, the description is updated.
 
@@ -517,7 +534,7 @@ while (iterator.advance()) {
   var date = anychart.format.dateTime(key, "dd.MM.yyyy");
   var low = iterator.get("low");
   var high = iterator.get("high");  
-};
+}
 ```
 
 {sample}WD\_Table\_Data\_11{sample}

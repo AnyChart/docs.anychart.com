@@ -39,7 +39,7 @@
 </head>
 <body>
 <button onclick="filterDuration()">Filter Items</button>
-<label>duration >=<input id="inputValue" value="20"> day(s)</label>
+<label>Duration >=<input id="inputValue" value="20"> day(s)</label>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -129,13 +129,13 @@ function filterDuration() {
   chart.title("Tree Data Model: filter()<br><br><span style = 'color:#990000'>" +
               text + "</span>");
 
-};
+}
 
-// a function for resetting the colors of the chart
+// reset the colors of the chart
 function resetColors() {
   chart.data(data, "as-tree");
   chart.fitAll();  
-};
+}
 </script>
 </body>
 </html>

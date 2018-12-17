@@ -24,30 +24,33 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+  
+    // create a data set
+    var data = [
+      {x:"January", value: 12000},
+      {x:"February", value: 15000},
+      {x:"March", value: 16000},
+      {x:"April", value: 14000},
+      {x:"May", value: 10000}
+    ];
 
-var data = [
-      // column name         value
-  {x: "2014/6/25", value: 28},                          // row 0
-  {x: "2014/6/26", value: 26},                          //    1
-  {x: "2014/6/27", value: 27},                          //    2
-  {x: "2014/6/28", value: 25, marker:{fill:"violet"}},  //    3
-  {x: "2014/6/29", value: 29, marker:{fill:"red"}},  //    4
-  {x: "2014/6/30", value: 28}                          //    5
-];
+    // create a data set
+    var dataSet = anychart.data.set(data);
 
-// create a data set
-var dataSet = anychart.data.set(data);
+    // create a chart
+    var chart = anychart.column();
 
-// create a line chart using the data set
-var chart = anychart.line(dataSet);
+    // create a series and set the data
+    var series = chart.column(data);
+    
+    // set the chart title
+    chart.title("Data Sets: Array of Objects");
 
-chart.title("New York weather");
-chart.getSeries(0).name("New York");
+    // set the container id
+    chart.container("container");
 
-// set container id for the chart
-chart.container("container");
-// initiate chart drawing
-chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });
 </script>
 </body>

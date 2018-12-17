@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="WD Data Sets 13"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            margin: 10px 0 0 10px;
+        }
+        label {
+            margin: 10px 0 0 10px;
+        }
+        input {
+            width: 65px;
+            margin: 10px 0 0 5px;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 55px;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<button id = "filterButton" onclick="filterValue()">Filter Data</button>
+<label>Value >= <input id="inputValue" value="14000"></label>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    data = [
+      ["January", 12000],
+      ["February", 15000],
+      ["March", 16000],
+      ["April", 14000],
+      ["May", 10000]
+    ];
+  
+    // create a data set
+    var dataSet = anychart.data.set(data);
+
+    // map the data
+    mapping = dataSet.mapAs({x: 0, value: 1});
+
+    // create a chart
+    chart = anychart.column();
+
+    // create a series and set the data
+    series = chart.column(mapping);
+
+    /* prevent points from being selected
+    when they are clicked on */
+    chart.interactivity().selectionMode("none");
+
+    /* prevent points from being deselected
+    when a click happens outside of them */
+    chart.interactivity().unselectOnClickOutOfPoint(false);
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title("Data Sets: Iterating<br><br>" +
+                "<span style = 'color:#990000'>?</span>");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+/* search for points with values equal or greater than a given one,
+select them and display their arguments in the chart title */
+function filterValue() {
+
+// clear all selections
+series.unselect();
+
+// search for points with values equal or greater than a given one
+var minValue = document.getElementById("inputValue").value;
+var newMapping = mapping.filter("value", function(value) {
+  return value >= minValue;
+});
+
+// get the iterator
+var iterator = newMapping.getIterator();
+
+// select the points and get their arguments
+var pointNames = [];
+while (iterator.advance()) {
+  var name = iterator.get("x");
+  var index = mapping.find("x", name);
+  series.select(index);
+  pointNames.push(name);
+}
+
+// create a string displaying the arguments
+var text = "";
+if (pointNames.length == 0) {
+  text = "(none)";
+} else {
+  text = pointNames.join(", ");
+}
+
+// update the chart title
+chart.title("Data Sets: Iterating<br><br><span style = 'color:#990000'>" +
+            text + "</span>");
+}
+</script>
+</body>
+</html>
