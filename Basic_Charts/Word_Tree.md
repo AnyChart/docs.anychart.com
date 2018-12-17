@@ -13,7 +13,7 @@ This article explains how to create a basic Word Tree chart as well as configure
 <tr><td>Class</td><td>{api:anychart.charts.Wordtree}anychart.core.cartesian.series.Wordtree{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>[?](../Working_with_Data/Overview)</td></tr>
-<tr><td>Multiple Series</td><td>[?](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>N/A</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
