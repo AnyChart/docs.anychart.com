@@ -6,7 +6,7 @@
     <meta name="ac:desc" content=""/>
     
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
@@ -23,64 +23,68 @@
     </style>
 </head>
  <body>
-  <button onclick="chart.data(prepare_data(d3));">D3</button> 
-  <button onclick="chart.data(prepare_data(plane));">Plane</button> 
-  <button onclick="chart.data(prepare_data(cubic));">Cubic</button> 
-  <br> Step: 
-  <input type="number" id="step" step="0.1" value="1">
-  <br> Value: 
-  <input type="number" id="value" value="5" step="1"> Rotation Z: 
-  <input type="range" id="rotationZ" min="-360" max="360" step="1" onInput="rotateZ()"> Rotation Y: 
-  <input type="range" id="rotationY" min="-90" max="90" step="1" onInput="rotateY()"> 
   <div id="container"></div>
-  <script src="https://cdn.anychart.com/releases/DVF-3061-surface-plot/js/anychart-bundle.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/DVF-3061-surface-plot/js/anychart-ui.min.js"></script>
-  <script type="text/javascript">var prepare_data = function(z_function) {
-  var max_val = +document.getElementById('value').value;
-  var step = +document.getElementById('step').value;
-  var output = [];
-  for (var x = -max_val; x <= max_val; x += step) {
-    for (var y = -max_val; y <= max_val; y += step) {
-      output.push([x, y, z_function(x, y)]);
-    }
-  }
-  return output;
-};
-
-var cubic = function(x, y) {
-  return Math.pow(x + y, 3);
-};
-
-var d3 = function(x, y) {
-  return Math.sin(Math.sqrt(x*x+y*y)/5*Math.PI)*50;
-};
-
-var plane = function(x, y) {
-  return x + y;
-};
-
-var rotateZ = function() {
-  var value = +document.getElementById('rotationZ').value;
-  chart.rotationZ(value);
-};
-
-var rotateY = function() {
-  var value = +document.getElementById('rotationY').value;
-  chart.rotationY(value);
-};
-
+  <script type="text/javascript">
 anychart.onDocumentReady(function() {
-    chart = anychart.surface(prepare_data(cubic));
-    chart.legend(true);
-    var colorRange = chart.colorRange();
-    colorRange.enabled(true);
-    colorRange.orientation('right');
-    chart.box(null);
-    chart.xGrid(true);
-    chart.yGrid(true);
-    chart.zGrid(true);
- 
-    chart.container('container').draw();
-});</script>
+    var chart = anychart.surface(getData());
+
+
+    chart.container('container');
+    chart.draw();
+});
+
+function getData() {
+    return [
+        [-3, -3, -216],
+        [-3, -2, -125],
+        [-3, -1, -64],
+        [-3, 0, -27],
+        [-3, 1, -8],
+        [-3, 2, -1],
+        [-3, 3, 0],
+        [-2, -3, -125],
+        [-2, -2, -64],
+        [-2, -1, -27],
+        [-2, 0, -8],
+        [-2, 1, -1],
+        [-2, 2, 0],
+        [-2, 3, 1],
+        [-1, -3, -64],
+        [-1, -2, -27],
+        [-1, -1, -8],
+        [-1, 0, -1],
+        [-1, 1, 0],
+        [-1, 2, 1],
+        [-1, 3, 8],
+        [0, -3, -27],
+        [0, -2, -8],
+        [0, -1, -1],
+        [0, 0, 0],
+        [0, 1, 1],
+        [0, 2, 8],
+        [0, 3, 27],
+        [1, -3, -8],
+        [1, -2, -1],
+        [1, -1, 0],
+        [1, 0, 1],
+        [1, 1, 8],
+        [1, 2, 27],
+        [1, 3, 64],
+        [2, -3, -1],
+        [2, -2, 0],
+        [2, -1, 1],
+        [2, 0, 8],
+        [2, 1, 27],
+        [2, 2, 64],
+        [2, 3, 125],
+        [3, -3, 0],
+        [3, -2, 1],
+        [3, -1, 8],
+        [3, 0, 27],
+        [3, 1, 64],
+        [3, 2, 125],
+        [3, 3, 216]
+    ]
+}</script>
  </body>
 </html>
