@@ -31,9 +31,22 @@ anychart.onDocumentReady(function () {
       {value: "Balto-Slavic Languages", children: [
         {value:     "Slavic Languages",
          children: [
-          {value:   "East Slavic", weight: 3},
-          {value:   "West Slavic", weight: 3},
-          {value:   "South Slavic", weight: 4}  
+          {value:   "East Slavic", children: [
+            {value: "Russian"},
+            {value: "Ukrainian"},
+            {value: "Belarusian"}
+          ]},
+          {value:   "West Slavic", children: [
+            {value: "Polish"},
+            {value: "Czech"},
+            {value: "Slovak"}
+          ]},
+          {value:   "South Slavic", children: [
+            {value: "Serbo-Croatian"},
+            {value: "Bulgarian"},
+            {value: "Slovene"},
+            {value: "Macedonian"}
+          ]}  
         ]},
         {value: "Baltic Languages", weight: 2}
       ]}
