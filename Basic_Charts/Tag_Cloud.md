@@ -87,6 +87,8 @@ Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagClo
 
 There are two ways to create data: you can add either a list of words or a text.
 
+#### List
+
 When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
 * `x` to set words
@@ -117,6 +119,8 @@ chart = anychart.tagCloud(data);
 {sample}BCT\_Tag\_Cloud\_Chart\_02{sample}
 
 The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend – see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
+
+#### Text
 
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
