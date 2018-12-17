@@ -67,11 +67,15 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
+#### Tree
+
 ```
 
 ```
 
 {sample}BCT\_Word\_Tree\_02{sample}
+
+#### Array of Arrays
 
 ```
 
@@ -79,6 +83,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_03{sample}
 
+#### Text
 
 ```
 
@@ -87,7 +92,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 {sample}BCT\_Word\_Tree\_04{sample}
 
 
-### Word
+### Tree
 
 ```
 
@@ -98,6 +103,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
+#### All Points
+
 In the sample below... with appearance settings configured:
 
 ```
@@ -106,15 +113,7 @@ In the sample below... with appearance settings configured:
 
 {sample}BCT\_Word\_Tree\_06{sample}
 
-### Font (?)
-
-```
-
-```
-
-{sample}BCT\_Word\_Tree\_06{sample}
-
-### Connectors (?)
+#### Individual Points
 
 ```
 
@@ -122,13 +121,29 @@ In the sample below... with appearance settings configured:
 
 {sample}BCT\_Word\_Tree\_07{sample}
 
-### Postfix (?)
+### Font (?)
 
 ```
 
 ```
 
 {sample}BCT\_Word\_Tree\_08{sample}
+
+### Connectors (?)
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_09{sample}
+
+### Postfix (?)
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_10{sample}
 
 ### Tooltips (?)
 
@@ -142,7 +157,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Word\_Tree\_09{sample}
+{sample}BCT\_Word\_Tree\_11{sample}
 
 #### Disabling Drilldown (?)
 
@@ -150,4 +165,4 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Word\_Tree\_10{sample}
+{sample}BCT\_Word\_Tree\_12{sample}
