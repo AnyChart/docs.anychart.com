@@ -87,6 +87,15 @@ Read the overview of general settings: [General Settings](General_Settings).
 {sample}BCT\_Word\_Tree\_04{sample}
 
 
+### Word
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_05{sample}
+
+
 ### Appearance
 
 In the sample below... with appearance settings configured:
@@ -95,17 +104,9 @@ In the sample below... with appearance settings configured:
 
 ```
 
-{sample}BCT\_Word\_Tree\_05{sample}
+{sample}BCT\_Word\_Tree\_06{sample}
 
-### Labels (?)
-
-[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-### Tooltips (?)
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-### (?)
+### Font (?)
 
 ```
 
@@ -113,7 +114,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 {sample}BCT\_Word\_Tree\_06{sample}
 
-### (?)
+### Connectors (?)
 
 ```
 
@@ -121,7 +122,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 {sample}BCT\_Word\_Tree\_07{sample}
 
-### (?)
+### Postfix (?)
 
 ```
 
@@ -129,7 +130,21 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 {sample}BCT\_Word\_Tree\_08{sample}
 
-### (?)
+### Tooltips (?)
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+### Interactivity (?)
+
+#### Drilldown (?)
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_09{sample}
+
+#### Disabling Drilldown (?)
 
 ```
 
