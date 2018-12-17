@@ -28,27 +28,14 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {value: "Balto-Slavic Languages", children: [
-        {value:     "Slavic",
+      {value:     "Balto-Slavic Languages", children: [
+        {value:    "Slavic",
          children: [
-          {value:   "East Slavic", children: [
-            {value: "Russian"},
-            {value: "Ukrainian"},
-            {value: "Belarusian"}
-          ]},
-          {value:   "West Slavic", children: [
-            {value: "Polish"},
-            {value: "Czech"},
-            {value: "Slovak"}
-          ]},
-          {value:   "South Slavic", children: [
-            {value: "Serbo-Croatian"},
-            {value: "Bulgarian"},
-            {value: "Slovene"},
-            {value: "Macedonian"}
-          ]}  
+          {value:  "East", weight: 3},
+          {value:  "West", weight: 3},
+          {value:  "South Slavic", weight: 4}
         ]},
-        {value: "Baltic", weight: 2}
+        {value:    "Baltic", weight: 2}
       ]}
     ];
     
