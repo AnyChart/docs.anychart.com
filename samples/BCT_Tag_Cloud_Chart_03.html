@@ -27,7 +27,7 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var text =
+    var data =
 "Tyger, tyger, burning bright " +
 "In the forests of the night, " +
 "What immortal hand or eye " +
@@ -57,7 +57,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.tagCloud();
 
     // set the parsing mode and configure parsing settings
-    chart.data(text, {
+    chart.data(data, {
     mode: "by-word",
     maxItems: 16,
     ignoreItems: [

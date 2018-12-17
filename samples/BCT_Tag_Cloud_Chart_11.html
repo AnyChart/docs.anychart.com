@@ -39,7 +39,7 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var text =
+    var data =
     "Tyger, tyger, burning bright " +
     "In the forests of the night, " +
     "What immortal hand or eye " +
@@ -72,7 +72,7 @@ anychart.onDocumentReady(function () {
     chart.angles([0]);
 
     // set the parsing mode
-    chart.data(text, {mode: "by-word"});
+    chart.data(data, {mode: "by-word"});
 
     // set the chart title
     chart.listen("chartDraw", function () {

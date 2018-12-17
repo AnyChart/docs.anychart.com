@@ -147,14 +147,14 @@ The following sample shows how to work with parsing settings. It is a Tag Cloud 
 
 ```
 // create data
-var text =
+var data =
     "Tyger, tyger, burning bright " +
     "In the forests of the night, " +
     "What immortal hand or eye " +
     "Could frame thy fearful symmetry? ";
 
 // set the parsing mode and configure parsing settings
-chart.data(text, {
+chart.data(data, {
         mode: "byWord",
         maxItems: 16,
         ignoreItems: [
