@@ -75,7 +75,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_02{sample}
 
-#### Array of Arrays
+#### Arrays
 
 ```
 
@@ -92,7 +92,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 {sample}BCT\_Word\_Tree\_04{sample}
 
 
-### Tree
+### Word
 
 ```
 
