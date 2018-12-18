@@ -54,6 +54,14 @@ chart.xScale(anychart.scales.ordinal());
 
 {sample}AGST\_Scales\_03{sample}
 
+Ordinal Scale has the mode that is set by the {api:anychart.scales.Ordinal#mode}mode(){api} method. This mode defines where the start and end of the scale is. The default value is `'discrete'`, to change the default behaviour set it to `'continuous'`:
+
+```
+chart.xScale().mode('continuous');
+```
+
+{sample}AGST\_Scales\_03\_1{sample}
+
 **Note**: You can set custom names for ordinal scale using {api:anychart.scales.Ordinal#names}names(){api} method. Use string parameter for this method to set data field with names for scale values or use array as parameter for {api:anychart.scales.Ordinal#names}names(){api} method to set custom names.
 
 ### Date Time
