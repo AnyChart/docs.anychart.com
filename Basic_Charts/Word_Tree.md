@@ -101,8 +101,6 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-In the sample below... with appearance settings configured:
-
 ```
 
 ```
