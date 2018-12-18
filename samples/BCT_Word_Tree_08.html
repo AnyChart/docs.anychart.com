@@ -56,6 +56,13 @@ anychart.onDocumentReady(function () {
     // set the chart title
     chart.title("Word Tree: Connectors");
 
+    // configure the connectors
+    var connectors = chart.connectors();
+    connectors.stroke("3 #1976d2");
+    connectors.curveFactor(0);
+    connectors.length(20);
+    //connectors.offset(5);
+
     // set the container id
     chart.container("container");
 
