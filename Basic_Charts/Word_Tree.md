@@ -126,7 +126,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_08{sample}
 
-### Postfix (?)
+### Postfix
 
 ```
 
@@ -134,13 +134,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_09{sample}
 
-### Tooltips (?)
+### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-### Interactivity (?)
+### Interactivity
 
-#### Drilldown (?)
+#### Drilldown
 
 ```
 
@@ -148,7 +148,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 {sample}BCT\_Word\_Tree\_10{sample}
 
-#### Disabling Drilldown (?)
+#### Disabling Drilldown
 
 ```
 
