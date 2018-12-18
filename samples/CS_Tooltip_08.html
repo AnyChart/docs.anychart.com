@@ -26,7 +26,7 @@
 anychart.onDocumentReady(function () {
 
   // create a chart
-  var chart = anychart.financial();
+  var chart = anychart.cartesian();
 
   chart.title("Complex Tooltip Title");
 
@@ -122,7 +122,8 @@ break;
     return "Month: " + (new Date(this.x)).toLocaleDateString("en-US", {month: "long"}) + "\nIncome:$ " + this.value;
   });
 
-  var xScale = chart.xScale();
+  var xScale = anychart.scales.dateTime();
+  chart.xScale(xScale);
   xScale.minimum(Date.UTC(2010, 0, 1));
   xScale.maximum(Date.UTC(2015, 0, 1));
 

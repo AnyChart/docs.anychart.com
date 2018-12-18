@@ -60,7 +60,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Japanese Candlestick chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. If you pass the data to this chart constructor, it creates a Candlestick series.
+To create a Japanese Candlestick chart, use the {api:anychart#candlestick}anychart.candlestick(){api} chart constructor. If you pass the data to this chart constructor, it creates a Candlestick series.
 
 To create a Candlestick series explicitly, call the {api:anychart.charts.Cartesian#candlestick}candlestick(){api} method.
 
@@ -84,7 +84,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.financial();
+chart = anychart.candlestick();
 
 // create a japanese candlestick series and set the data
 var series = chart.candlestick(data);

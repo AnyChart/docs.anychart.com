@@ -43,7 +43,9 @@ anychart.onDocumentReady(function () {
   ];
 
   // chart type
-  var chart = anychart.financial();
+  var chart = anychart.line();
+
+  chart.xScale(anychart.scales.dateTime());
 
   chart.xScale().minimum(Date.UTC(2009, 11, 31));
   chart.xScale().maximum(Date.UTC(2011, 0, 01));

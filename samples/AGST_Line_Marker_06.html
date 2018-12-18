@@ -26,7 +26,7 @@
 anychart.onDocumentReady(function () {
 
   // create a chart
-  var chart = anychart.financial();
+  var chart = anychart.cartesian();
 
   chart.title("Monthly Iranian crude oil production");
 
@@ -54,7 +54,8 @@ anychart.onDocumentReady(function () {
 
   crosshair.yStroke(null);
 
-  var xScale = chart.xScale();
+  var xScale = anychart.scales.dateTime();
+  chart.xScale(xScale);
   xScale.minimum(Date.UTC(2011, 0, 1));
   xScale.maximum(Date.UTC(2018, 1, 1));
   var xTicks = chart.xScale().ticks();

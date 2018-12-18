@@ -58,7 +58,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create an OHLC chart, use the {api:anychart#financial}anychart.financial(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#ohlc}ohlc(){api} method to create an OHLC series.
+To create an OHLC chart, use the {api:anychart#ohlc}anychart.ohlc(){api} chart constructor. Then call the {api:anychart.charts.Cartesian#ohlc}ohlc(){api} method to create an OHLC series.
 
 The following sample demonstrates how a basic OHLC chart is created:
 
@@ -80,7 +80,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.financial();
+chart = anychart.ohlc();
 
 // create an OHLC series and set the data
 var series = chart.ohlc(data);
