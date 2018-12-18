@@ -16,7 +16,7 @@ To build a Step Area chart, use the {api:anychart#area}anychart.area(){api} char
 chart = anychart.area();
 
 // create a step area series and set the data
-var series = chart.stepLine(data);
+var series = chart.stepArea(data);
 
 // create error bars
 series.error("10%");
