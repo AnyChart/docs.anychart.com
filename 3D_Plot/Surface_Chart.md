@@ -158,7 +158,7 @@ The box is the set of twelve lines that surrounds the surface plot. You can disa
 chart.box('#F44336', 2, '5 2', 'round');
 ```
 
-The sample 
+The sample below features grids, axes, and box configurations:
 
 {sample}Surface\_Chart\_06{sample}
 
@@ -174,3 +174,25 @@ rotationY
 ```
 
 {sample}Surface\_Chart\_07{sample}
+
+## Special Settings
+
+### Color Range
+
+When color scale is used you can add color range element to make chart more readable. Color range is more suitable to be used with linear color scale:
+
+```
+// color range
+```
+
+{sample}Surface\_Chart\_08{sample}
+
+### Legend
+
+Legend is another way to provide context for the surface coloring, it makes sense to use legend with the ordinal color color scale:
+
+```
+// color range
+```
+
+{sample}Surface\_Chart\_09{sample}
