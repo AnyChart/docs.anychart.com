@@ -83,13 +83,15 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_03{sample}
 
+#### Text
+
 ```
 
 ```
 
 {sample}BCT\_Word\_Tree\_04{sample}
 
-#### Text
+### Root Word
 
 ```
 

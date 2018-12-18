@@ -13,63 +13,61 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
-        html, body {
+        html, body, #container {
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
-        select {
-            margin: 10px 0 0 10px;
-        }
-#container {
-    position: absolute;
-    width: 100%;
-    top: 35px;
-    bottom: 0;
-}
     </style>
 </head>
 <body>
-<select id="typeSelect" onchange="switchType()">
-    <option value="Doctor">Doctor</option>
-    <option value="Strange">[Doctor] Strange</option>
-    <option value="Who">[Doctor] Who</option>
-    <option value="House">[Doctor] House</option>
-</select>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
     // create data
-    var data = [
-      ["Doctor Strange watch"],
-      ["Doctor Strange comics"],
-      ["Doctor Strange wiki"],
-      ["Doctor Strange book of caliostro"],
-      ["Doctor Strange book of vishanti"],
-      ["Doctor Strange book of spells"],
-      ["Doctor Who season 11"],
-      ["Doctor Who ratings"],
-      ["Doctor Who watch online"],
-      ["Doctor Who best episodes matt smith"],
-      ["Doctor Who best episodes david tennant"],
-      ["Doctor Who best doctors"],
-      ["Doctor House cast"],
-      ["Doctor House ost"],
-      ["Doctor House wiki"],
-      ["Doctor House quotes about love"],
-      ["Doctor House quotes funny"],
-      ["Doctor House quotes about life"],
-      ["Doctor House quotes time changes everything"],
-      ["Doctor House quotes about pain"]
-    ];
-    
+    var data = "Here come old flat top, " +
+               "He come groovin' up slowly. " +
+               "He got joo joo eyeballs. " +
+               "He one holy roller. " +
+               "He got hair down to his knee. " +
+               "He wear no shoeshine. " +
+               "He got toe jam football. " +
+               "He got monkey finger. " +
+               "He shoot Coca-Cola. " +
+               "He say I know you, you know me. " +
+               "One thing I can tell you is " +
+               "You got to be free. " +
+               "Come together, right now" +
+               "Over me. " +
+               "He bad production. " +
+               "He got walrus gumboot. " +
+               "He got Ono sideboard. " +
+               "He one spinal cracker. " +
+               "He got feet down below his knee. " +
+               "Hold you in his armchair." +
+               "You can feel his disease. " +
+               "Come together, right now " +
+               "Over me. " +
+               "He roller coaster. " +
+               "He got early warning. " +
+               "He got muddy water. " +
+               "He one Mojo filter. " +
+               "He say one and one and one is three. " +
+               "Got to be good looking " +
+               "'Cause he's so hard to see. " +
+               "Come together, right now. " +
+               "Over me. ";
+
     // create a chart and set the data
-    chart = anychart.wordtree(data);
+    var chart = anychart.wordtree(data);
+
+    // set the root word
+    chart.word("He");
 
     // set the chart title
-    chart.title("Word Tree: Data (Arrays)");
+    chart.title("Word Tree: Data (Text)");
 
     // set the container id
     chart.container("container");
@@ -77,12 +75,6 @@ anychart.onDocumentReady(function () {
     // initiate drawing the chart
     chart.draw();
 });
-
-// set the root word
-function switchType() {
-  var select = document.getElementById("typeSelect");
-  chart.word(select.value);
-}
 </script>
 </body>
 </html>
