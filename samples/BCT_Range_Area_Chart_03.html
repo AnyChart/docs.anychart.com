@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Area Chart 03"/>
+    <meta name="ac:name" content="BCT Range Area Chart 01"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -27,28 +27,28 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+      ["January", 0.7, 6.1],
+      ["February", 0.6, 6.3],
+      ["March", 1.9, 8.5],
+      ["April", 3.1, 10.8],
+      ["May", 5.7, 14.4]
     ];
 
     // create a chart
     var chart = anychart.area();
 
-    // create an area series and set the data
-    var series = chart.area(data);
+    // create a range area series and set the data
+    var series = chart.rangeArea(data);
 
     // set scale mode
-    chart.xScale().mode('continuous');
+    chart.xScale().mode('continuous');    
     
     // set the chart title
-    chart.title("Area Chart: Scale Mode to Remove Gaps");
+    chart.title("Range Area Chart: Scale Mode to Remove Gaps");
 
     // set the titles of the axes
     chart.xAxis().title("Month");
-    chart.yAxis().title("Sales, $");
+    chart.yAxis().title("Temperature, \xb0C");
 
     // set the container id
     chart.container("container");
