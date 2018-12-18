@@ -13,7 +13,7 @@ To build a Stick chart, use the {api:anychart#column}anychart.column(){api} char
 
 ```
 // create a chart
-chart = anychart.column();
+chart = anychart.stick();
 
 // create a stick series and set the data
 var series = chart.stick(data);

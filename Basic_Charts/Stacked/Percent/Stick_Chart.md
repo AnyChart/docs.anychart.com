@@ -13,7 +13,7 @@ To build a Percent Stacked Stick Chart, create a multiple-series [Stick Chart](.
 
 ```
 // create a chart
-chart = chart.column();
+chart = chart.stick();
 
 // enable the percent stacking mode
 chart.yScale().stackMode("percent");
