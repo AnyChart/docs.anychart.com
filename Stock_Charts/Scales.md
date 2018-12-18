@@ -144,7 +144,7 @@ table.addData([
 
 And display it on two charts with different time scales:
 
-{sample}STOCK\_Scales\_06{sample}
+{sample :height 600 }STOCK\_Scales\_06{sample}
 
 ### Gaps
 
