@@ -32,10 +32,9 @@
 </head>
 <body>
 <select id="typeSelect" onchange="switchType()">
-    <option value="Doctor">Doctor</option>
-    <option value="Strange">[Doctor] Strange</option>
-    <option value="Who">[Doctor] Who</option>
-    <option value="House">[Doctor] House</option>
+    <option value="oxygen">oxygen</option>
+    <option value="pure">pure [oxygen]</option>
+    <option value="liquid">liquid [oxygen]</option>
 </select>
 <div id="container"></div>
 <script>
@@ -43,26 +42,24 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      ["Doctor Strange watch"],
-      ["Doctor Strange comics"],
-      ["Doctor Strange wiki"],
-      ["Doctor Strange book of caliostro"],
-      ["Doctor Strange book of vishanti"],
-      ["Doctor Strange book of spells"],
-      ["Doctor Who season 11"],
-      ["Doctor Who ratings"],
-      ["Doctor Who watch online"],
-      ["Doctor Who best episodes matt smith"],
-      ["Doctor Who best episodes david tennant"],
-      ["Doctor Who best doctors"],
-      ["Doctor House cast"],
-      ["Doctor House ost"],
-      ["Doctor House wiki"],
-      ["Doctor House quotes about love"],
-      ["Doctor House quotes funny"],
-      ["Doctor House quotes about life"],
-      ["Doctor House quotes time changes everything"],
-      ["Doctor House quotes about pain"]
+      ["oxygen is a chemical element"],
+      ["in nature, oxygen is a gas with no color or smell"],
+      ["oxygen is a very important element"],
+      ["oxygen was initially discovered in 1772"],
+      ["oxygen is what makes burning possible"],
+      ["oxygen can be used in smelting metal from ore"],
+      ["oxygen is used in hospitals for killing bacteria"],
+      ["oxygen is used to purify the water"],
+      ["in nature, oxygen is produced by plants"],
+      ["pure oxygen helps people with certain illnesses"],
+      ["pure oxygen can be used for treating decompression"],
+      ["pure oxygen is toxic"],
+      ["exposure to pure oxygen can cause lung collapse"],
+      ["(?) pure oxygen can cause a fire"],
+      ["liquid oxygen is used for industrial purposes"],
+      ["liquid oxygen is a powerful oxidizing agent"],
+      ["liquid oxygen is used in rocket fuel"],
+      ["liquid oxygen is supplied to hospitals"]
     ];
     
     // create a chart and set the data
