@@ -4,20 +4,29 @@
 
 Sometimes when there is too much data that it cannot be displayed simultaneously keeping it comfortable for understanding. In this case we can enable the scroller.
 
-Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing `true` to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
+Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing `true` to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} and/or the {api:anychart.charts.Cartesian#yScroller}yScroller(){api} method is a short way to enable scroller(s):
 
 ```
-// turn on X Scroller
 var chart = anychart.column();
+
+// turn on X Scroller
 chart.xScroller(true);
 
-// disable scroller
+// disable X Scroller
 chart.xScroller().enabled(false);
+
+// turn on Y Scroller
+chart.yScroller(true);
+
+// disable Y Scroller
+chart.yScroller().enabled(false);
 ```
 
 {sample}CS\_Scroller\_01{sample}
 
 ## Zoom Settings
+
+Both scrollers can be configured in the same way using {api:anychart.charts.Cartesian#xZoom}xZoom(){api} and {api:anychart.charts.Cartesian#xZoom}yZoom(){api} methods.
 
 ### Limits by ratio
 

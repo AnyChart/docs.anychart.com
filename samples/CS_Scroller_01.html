@@ -62,8 +62,10 @@ anychart.onDocumentReady(function () {
     chart.yAxis().title("Support requests");
     chart.title("Amount of support requests by hours");
 
-    // turn x scroller on
+    // turn scrollers on
     chart.xScroller(true);
+    chart.yScroller(true);
+
     chart.container("container");
     chart.draw();
 });

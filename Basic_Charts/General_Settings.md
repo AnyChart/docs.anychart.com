@@ -284,7 +284,7 @@ Using AnyChart, you can create 3D versions of the following chart types: Area, B
 
 ## Categorized By Series
 
-There are two ways how AnyChart can categorize series onon the axis with the ordinal scale. See [Categorized By Series](../Common_Settings/Categorized_By_Series) article to learn more.
+There are two ways how AnyChart can distribute series on the axis with the ordinal scale. See [Categorized By Series](../Common_Settings/Categorized_By_Series) article to learn more.
 
 ## Custom Drawing
 
