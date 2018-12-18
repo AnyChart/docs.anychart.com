@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="BCT Word Tree 08"/>
+    <meta name="ac:name" content="BCT Word Tree 10"/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -66,12 +66,8 @@ anychart.onDocumentReady(function () {
     // set the root word
     chart.word("He");
 
-    // configure the connectors
-    var connectors = chart.connectors();
-    connectors.stroke("0.5 #1976d2");
-    connectors.curveFactor(0);
-    connectors.length(100);
-    connectors.offset(20);
+    // set the chart title
+    chart.title("Word Tree: Interactivity (Drilling Down and Up)");
 
     // set the container id
     chart.container("container");
