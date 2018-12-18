@@ -28,15 +28,20 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {value:     "Balto-Slavic Languages", children: [
-        {value:    "Slavic",
-         children: [
-          {value:  "East", weight: 3},
-          {value:  "West", weight: 3},
-          {value:  "South", weight: 4}
+      {value:     "Slavic Languages",
+       children: [
+        {value:   "East", children: [
+          {value: "Russian"},
+          {value: "Ukrainian"},
+          {value: "Belarusian"}
         ]},
-        {value:    "Baltic", weight: 2}
-      ]}
+        {value:   "West", children: [
+          {value: "Polish"},
+          {value: "Czech"},
+          {value: "Slovak"}
+        ]},
+        {value:   "South", weight: 5}  
+      ]} 
     ];
     
     // create a chart and set the data
