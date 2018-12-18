@@ -56,7 +56,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+To create a chart, use the {api:anychart#jumpLine}anychart.jumpLine(){api} chart constructor. 
 
 To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method.
 
@@ -73,7 +73,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.line();
+chart = anychart.jumpLine();
 
 // create a jump line series and set the data
 var series = chart.jumpLine(data);
