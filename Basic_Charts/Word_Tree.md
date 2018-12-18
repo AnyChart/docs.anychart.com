@@ -97,7 +97,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 {sample}BCT\_Word\_Tree\_05{sample}
 
-### Appearance
+### Font
 
 #### All Points
 
@@ -117,13 +117,6 @@ In the sample below... with appearance settings configured:
 
 {sample}BCT\_Word\_Tree\_07{sample}
 
-### Font (?)
-
-```
-
-```
-
-{sample}BCT\_Word\_Tree\_08{sample}
 
 ### Connectors (?)
 
@@ -131,7 +124,7 @@ In the sample below... with appearance settings configured:
 
 ```
 
-{sample}BCT\_Word\_Tree\_09{sample}
+{sample}BCT\_Word\_Tree\_08{sample}
 
 ### Postfix (?)
 
@@ -139,7 +132,7 @@ In the sample below... with appearance settings configured:
 
 ```
 
-{sample}BCT\_Word\_Tree\_10{sample}
+{sample}BCT\_Word\_Tree\_09{sample}
 
 ### Tooltips (?)
 
@@ -153,7 +146,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Word\_Tree\_11{sample}
+{sample}BCT\_Word\_Tree\_10{sample}
 
 #### Disabling Drilldown (?)
 
@@ -161,4 +154,4 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ```
 
-{sample}BCT\_Word\_Tree\_12{sample}
+{sample}BCT\_Word\_Tree\_11{sample}
