@@ -282,6 +282,10 @@ Most types of series can be drawn both in horizontal and vertical orientation. T
 
 Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D/Overview).
 
+## Categorized By Series
+
+There are two ways how AnyChart can categorize series onon the axis with the ordinal scale. See [Categorized By Series](../Common_Settings/Categorized_By_Series) article to learn more.
+
 ## Custom Drawing
 
 It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom_Drawing).
