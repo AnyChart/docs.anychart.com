@@ -80,9 +80,9 @@ AnyChart Surface Charts have no series objects and in the current version can di
 
 You can use ready to use array or populate it with the data using functions and code. The sample below shows how to populate an array using mathematical functions with different precision.
 
-*Note:* at the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. The chart will break down and show nothing if more points are used.
-
 {sample}Surface\_Chart\_02{sample}
+
+*Note:* at the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. The chart will break down and show nothing if more points are used.
 
 ## Appearance
 
@@ -92,37 +92,40 @@ The plotted surface is colored according to the color scale, you can either set 
 
 To color the surface you can use AnyChart color scales. 
 
-The linear color color scale uses the set of color which will be evenly distributed along the z value change:
+The linear color color scale is created with the {api:anychart.scales#linearColor}anychart.scales.linearColor(){api} method. This scale uses the set of color which will be evenly distributed along the z value change:
 
 ```
-var customColorScale = anychart.scales.linearColor();
-customColorScale.colors(['#2BC0E4', '#EAECC6']);
+var colorScale = anychart.scales.linearColor();
+colorScale.colors(['#2bc0e4', '#eAecc6', '#dd2c00']);
 
 // Set color scale.
-chart.colorScale(customColorScale);
+chart.colorScale(colorScale);
 ```
 
 {sample}Surface\_Chart\_03{sample}
 
-With the ordinal color color scale you can specify the coloring range and color to be used to color parts of the surface that fall in the provided range:
+With the ordinal color color scale you can specify the coloring range and color to be used to color parts of the surface that fall in the provided range. This scale is created using the {api:anychart.scales#ordinalColor}anychart.scales.ordinalColor(){api} method:
 
 ```
-var customColorScale = anychart.scales.ordinalColor();
-customColorScale.ranges([
-    {less: -1.5, color: "red"},
-    {from: -1.5, to: 0, color: "yellow"},
-    {greater: 0,color: "green" }
+// create color scale
+var colorScale = anychart.scales.ordinalColor();
+
+// set ranges
+colorScale.ranges([
+    {less: -10, color: "#dd2c00"},
+    {from: -10, to: 5, color: "#ffd54f"},
+    {greater: 5,color: "#00bfa5" }
 ]);
 
-// Set color scale.
-chart.colorScale(customColorScale);
+// set color scale
+chart.colorScale(colorScale);
 ```
 
 {sample}Surface\_Chart\_04{sample}
 
 ### Mesh
 
-To configure the surface mesh use the {api:}stroke(){api}
+To configure the surface mesh use the {api:anychart.charts.Surface#stroke}stroke(){api} method of the chart:
 
 ```
 chart.stroke({color: '#ff4040', thickness: 3, dash: '5 5'});
@@ -132,7 +135,7 @@ chart.stroke({color: '#ff4040', thickness: 3, dash: '5 5'});
 
 ### Axes
 
-Surface plot has three axes, each of them can be confugured separately using xAxis, yAxis, and zAxis methods:
+Surface plot has three axes, each of them can be confugured separately using {api:anychart.charts.Surface#xAxis}xAxis{api}, {api:anychart.charts.Surface#yAxis}yAxis{api}, and {api:anychart.charts.Surface#zAxis}zAxis{api} methods:
 
 ```
 chart.xAxis(true);
@@ -142,7 +145,7 @@ chart.zAxis(true);
 
 ### Grids
 
-Surface plot has three grids, each of them can be configured separately using xGrid, yGrid, and zGrid methods.
+Surface plot has three grids, each of them can be configured separately using {api:anychart.charts.Surface#xGrid}xGrid{api}, {api:anychart.charts.Surface#yGrid}yGrid{api}, and {api:anychart.charts.Surface#zGrid}zGrid{api} methods.
 
 ```
 chart.xGrid(true);
@@ -152,7 +155,7 @@ chart.zGrid(true);
 
 ### Box
 
-The box is the set of twelve lines that surrounds the surface plot. You can disable it by passing `null` to the box method, or set the stroke color and properties.
+The box is the set of twelve lines that surrounds the surface plot. You can disable it by passing `null` to the {api:anychart.charts.Surface#box}box{api} method, or set the stroke color and properties.
 
 ```
 chart.box('#F44336', 2, '5 2', 'round');
@@ -164,7 +167,7 @@ The sample below features grids, axes, and box configurations:
 
 ### Rotation
 
-Surface charts can be rotated simply by dragging them with the mouse or you can set angles of rotation using rotationZ and rotationY methods.
+Surface charts can be rotated simply by dragging them with the mouse or you can set angles of rotation using {api:anychart.charts.Surface#rotationZ}rotationZ{api} and {api:anychart.charts.Surface#rotationY}rotationY{api} methods.
 
 The sample below shows how to work with these methods.
 
