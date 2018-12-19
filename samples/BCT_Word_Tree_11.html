@@ -28,33 +28,27 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {value:     "Slavic Languages",
-       children: [
-        {value:   "East", children: [
-          {value: "Russian"},
-          {value: "Ukrainian"},
-          {value: "Belarusian"}
-        ]},
-        {value:   "West", children: [
-          {value: "Polish"},
-          {value: "Czech"},
-          {value: "Slovak"}
-        ]},
-        {value:   "South", children: [
-          {value: "Bulgarian"},
-          {value: "Serbian"},
-          {value: "Croatian"},
-          {value: "Slovene"},
-          {value: "Macedonian"}
-        ]}  
-      ]} 
+      ["oxygen is a chemical element"],
+      ["in nature, oxygen is a gas with no color or smell"],
+      ["oxygen is a very important element"],
+      ["oxygen was initially discovered in 1772"],
+      ["oxygen is what makes burning possible"],
+      ["oxygen can be used in smelting metal from ore"],
+      ["oxygen is used in hospitals for killing bacteria"],
+      ["oxygen is used to purify the water"],
+      ["in nature, oxygen is produced by plants"]
     ];
     
     // create a chart and set the data
-    var chart = anychart.wordtree(data, "as-tree");
+    chart = anychart.wordtree(data);
 
-    // set the root word
-    chart.word("He");
+    // configure the font
+    chart.maxFontSize(18);
+
+    // disable the drilldown feature
+    chart.listen("drillchange", function(e){
+      return false;
+    });
 
     // set the chart title
     chart.title("Word Tree: Interactivity (Disabling Drilldown)");
