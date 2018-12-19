@@ -207,19 +207,15 @@ chart.word("He");
 
 A Word Tree can have only one [root word](#root_word).
 
-The root is always explicitly specified in [tree data](#tree_data). With [lists](#list) and [text](#texts), the {api:anychart.charts.Wordtree#word}word(){api} method is used.
-
-If your data is a list of phrases, the root word is set automatically – it is the first word in the first string you pass. Optionally, you can set another word. In case your data is a [text](#text), it always requires specifying the root.
-
-This is how setting the root word looks like:
+The root is always explicitly specified in [tree data](#tree_data). With [lists](#list) and [text](#texts), the {api:anychart.charts.Wordtree#word}word(){api} method is used:
 
 ```
 chart.word("word");
 ```
 
-In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into single words, so the root is also a single word. Even if you set it manually, it still needs to be a single word for the chart to work correctly.
+If your data is a list of phrases, the root word is set automatically – it is the first word in the first string you pass. Optionally, you can set another word. In case your data is a [text](#text), it always requires specifying the root.
 
-Please also note that the root word is case sensitive.
+When setting the root of a list of phrases or a text, keep in mind that it **case senstive** and needs to be **a single word**. In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into single words, so the root is also a single word. Even if you set it manually, it still needs to be a single word for the chart to work correctly.
 
 ...
 
