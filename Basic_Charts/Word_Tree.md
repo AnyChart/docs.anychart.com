@@ -25,7 +25,7 @@ This article explains how to create a basic Word Tree chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[?]()</td></tr>
+<tr><td></td><td>N/A</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Word Tree](https://www.anychart.com/chartopedia/chart-types/?/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -47,12 +47,45 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
+* {api:anychart#wordtree}anychart.wordtree(){api}
+
 To create a Word Tree...
 
 The following sample demonstrates how a basic Word Tree is created:
 
 ```
+// create data
+var data = [
+  {value:     "Slavic Languages",
+   children: [
+    {value:   "East", children: [
+      {value: "Russian"},
+      {value: "Ukrainian"},
+      {value: "Belarusian"}
+    ]},
+    {value:   "West", children: [
+      {value: "Polish"},
+      {value: "Czech"},
+      {value: "Slovak"}
+    ]},
+    {value:   "South", children: [
+      {value: "Bulgarian"},
+      {value: "Serbian"},
+      {value: "Croatian"},
+      {value: "Slovene"},
+      {value: "Macedonian"}
+    ]}  
+  ]} 
+];
 
+// create a chart and set the data
+var chart = anychart.wordtree(data, "as-tree");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_Word\_Tree\_01{sample}
@@ -67,31 +100,109 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
+* requires the [tree data model](../Working_with_Data/Tree_Data_Model)
+* explicitly: [tree](#tree)
+* implicitly (automatically): [arrays](#arrays), [#text](text)
+
 #### Tree
 
-```
+* `id` to set unique identifiers
+* `parent` to set parents
+* `children` to set children
+* `value` to set words
+* `weight` to set weight
 
+
+```
+// create data
+var data = [
+  {value:     "Slavic Languages",
+   children: [
+    {value:   "East", children: [
+      {value: "Russian"},
+      {value: "Ukrainian"},
+      {value: "Belarusian"}
+    ]},
+    {value:   "West", children: [
+      {value: "Polish"},
+      {value: "Czech"},
+      {value: "Slovak"}
+    ]},
+    {value:   "South", weight: 5}  
+  ]} 
+];
+
+// create a chart and set the data
+var chart = anychart.wordtree(data, "as-tree");
 ```
 
 {sample}BCT\_Word\_Tree\_02{sample}
 
 #### Arrays
 
-```
+* [root word](#root_word)
 
+
+```
+// create data
+var data = [
+  ["oxygen is a chemical element"],
+  ["in nature, oxygen is a gas with no color or smell"],
+  ["oxygen is a very important element"],
+  ["oxygen was initially discovered in 1772"],
+  ["oxygen is what makes burning possible"],
+  ["oxygen can be used in smelting metal from ore"],
+  ["oxygen is used in hospitals for killing bacteria"],
+  ["oxygen is used to purify the water"],
+  ["in nature, oxygen is produced by plants"]
+];
+    
+// create a chart and set the data
+var chart = anychart.wordtree(data);
 ```
 
 {sample}BCT\_Word\_Tree\_03{sample}
 
 #### Text
 
-```
+* [root word](#root_word)
+* {api:anychart.charts.Wordtree#word}word(){api}
 
+
+```
+// create data
+var data = "Here come old flat top, " +
+           "He come groovin' up slowly. " +
+           "He got joo joo eyeballs. " +
+           "He one holy roller. " +
+           "He got hair down to his knee. " +
+           "He wear no shoeshine. " +
+           "He got toe jam football. " +
+           "He got monkey finger. " +
+           "He shoot Coca-Cola. " +
+           "He say I know you, you know me. " +
+           "One thing I can tell you is " +
+           "You got to be free. " +
+           "Come together, right now" +
+           "Over me. ";
+
+// create a chart and set the data
+var chart = anychart.wordtree(data);
+
+// set the root word
+chart.word("He");
 ```
 
 {sample}BCT\_Word\_Tree\_04{sample}
 
 ### Root Word
+
+* {api:anychart.charts.Wordtree#word}word(){api}
+* [arrays](#arrays): optional
+* [text](#text): required
+* case sensitive
+* по дефолту берется первое слово первого массива / несколько слов, если они часто повторяются
+
 
 ```
 
@@ -103,16 +214,59 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 #### All Points
 
-```
+* {api:anychart.charts.Wordtree#fontColor}fontColor(){api} to set the font color
+* {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration
+* {api:anychart.charts.Wordtree#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
+* {api:anychart.charts.Wordtree#fontOpacity}fontOpacity(){api} to set the font opacity
+* {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
+* {api:anychart.charts.Wordtree#fontWeight}fontWeight(){api} to set the font weight
+* {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
+* {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
+* settings are applied to all children
 
+
+```
+// configure the font
+chart.fontColor("#1976d2");
+chart.fontWeight(600);
+chart.maxFontSize(20);
 ```
 
 {sample}BCT\_Word\_Tree\_06{sample}
 
 #### Individual Points
 
-```
+* [tree](#tree)
+* except for {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} and {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api}
 
+
+```
+// create data
+var data = [
+  {value:     "Slavic Languages",
+   children: [
+    {value:   "East", children: [
+      {value: "Russian"},
+      {value: "Ukrainian"},
+      {value: "Belarusian"}
+    ]},
+    {value:   "West", children: [
+      {value: "Polish"},
+      {value: "Czech"},
+      {value: "Slovak"}
+    ]},
+    {value:   "South", fontColor: "#1976d2", children: [
+      {value: "Bulgarian"},
+      {value: "Serbian"},
+      {value: "Croatian"},
+      {value: "Slovene"},
+      {value: "Macedonian", fontColor: "#dd2c00"}
+    ]}  
+  ]} 
+];
+
+// create a chart and set the data
+var chart = anychart.wordtree(data, "as-tree");
 ```
 
 {sample}BCT\_Word\_Tree\_07{sample}
@@ -120,16 +274,35 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Connectors
 
-```
+* {api:anychart.core.wordtree.Connectors#curveFactor}curveFactor(){api} to set the curvature
+* {api:anychart.core.wordtree.Connectors#length}length(){api} to set the length
+* {api:anychart.core.wordtree.Connectors#offset}offset(){api} to set the offset
+* {api:anychart.core.wordtree.Connectors#stroke}stroke(){api} to set the stroke
 
+**Note 1:** The curvature, or curve factor, of connectors is specified as a decimal value from 0 to 1. Setting it 0 straightens flows, like in this sample.
+
+**Note 2:** length = 0 --> vertical lines
+
+```
+// configure the connectors
+var connectors = chart.connectors();
+connectors.curveFactor(0);
+connectors.length(100);
+connectors.offset(20);
+connectors.stroke("0.5 #1976d2");
 ```
 
 {sample}BCT\_Word\_Tree\_08{sample}
 
 ### Postfix
 
-```
+* {api:anychart.charts.Wordtree#postfix}postfix(){api}
+* `"more"`
 
+
+```
+// set the postfix
+chart.postfix("lines");
 ```
 
 {sample}BCT\_Word\_Tree\_09{sample}
@@ -140,8 +313,24 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Interactivity
 
-```
+The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified - use the following methods:
 
+* {api:nychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
+* {api:nychart.charts.Wordtree#drillUp}drillUp(){api} to drill up
+
+Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
+(see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
+
+```
+/* locate an item in the data tree
+and get it as an object */
+var item = chart.data().search("value", "a");
+
+// drill down to the item
+chart.drillTo(item);
+
+// drill up
+chart.drillUp();
 ```
 
 {sample}BCT\_Word\_Tree\_10{sample}
