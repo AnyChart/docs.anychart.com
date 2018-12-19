@@ -205,9 +205,7 @@ chart.word("He");
 
 ### Root Word
 
-A Word Tree can have only one root word.
-
-The root is always explicitly specified in [tree data](#tree_data). With [lists](#list) and [text](#texts), the {api:anychart.charts.Wordtree#word}word(){api} method is used:
+A Word Tree can have only one root word. It is always explicitly specified in [tree data](#tree_data). With [lists](#list) and [text](#texts), the {api:anychart.charts.Wordtree#word}word(){api} method is used:
 
 ```
 chart.word("word");
