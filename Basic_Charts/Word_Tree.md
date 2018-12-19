@@ -300,7 +300,10 @@ connectors.stroke("0.5 #1976d2");
 ### Postfix
 
 * {api:anychart.charts.Wordtree#postfix}postfix(){api}
-* `"more"`
+* default: `"more"`
+* postfix = weight
+* this sample: [font size](#font_size) configured
+
 
 
 ```
