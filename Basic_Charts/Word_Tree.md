@@ -329,9 +329,9 @@ A connector is a line connecting words. Use the following methods to configure c
 * {api:anychart.core.wordtree.Connectors#offset}offset(){api} to set the offset
 * {api:anychart.core.wordtree.Connectors#stroke}stroke(){api} to set the stroke
 
-**Note 1:** The curvature, or curve factor, of connectors is specified as a decimal value from 0 to 1. Setting it 0 straightens flows, like in the sample below.
+**Note 1:** The curvature, or curve factor, is specified as a decimal value from 0 to 1. Setting it 0 straightens connectors, like in the sample below.
 
-**Note 2:** With length set to 0, connectors look like straight vertical lines, regardless of the curvature.
+**Note 2:** With the length set to 0, connectors look like straight vertical lines, regardless of the curvature.
 
 ```
 // configure the connectors
