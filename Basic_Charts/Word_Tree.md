@@ -235,7 +235,7 @@ var data = [
 chart = anychart.wordtree(data);
 
 //set the root word
-chart.word("pure")
+chart.word("liquid")
 ```
 
 {sample}BCT\_Word\_Tree\_05{sample}
