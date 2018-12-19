@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Surface Chart 02"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            position: absolute;
+            width: 100%;
+            top: 55px;
+            bottom: 0;
+        }
+        fieldset {
+            font-family: Verdana;
+            font-size: 13px;
+            border: none;
+        }
+    </style>
+    </head>
+    <body>
+        <!-- update data on button click -->
+        <fieldset>
+            <legend>Choose Function to Display</legend>
+            <button onclick="chart.data(generateData(plane));">Plane</button>
+            <button onclick="chart.data(generateData(parabaloid));">Paraboloid</button>
+            <button onclick="chart.data(generateData(hyperbolicParaboloid));">Hyperbolic Paraboloid</button>&nbsp;
+            Precision: <input type="number" id="step" step="0.1" value="1" min="0.5" max="1" size="3">
+        </fieldset>
+
+        <div id="container"></div>
+        <script type="text/javascript">
+            anychart.onDocumentReady(function() {
+                // create chart
+                chart = anychart.surface()
+                // set data
+                chart.data(generateData(parabaloid));
+                // display chart
+                chart.container('container').draw();
+            });
+            // generate a data set from function
+            var generateData = function(z_function) {
+              var max_val = 5;
+              var step = +document.getElementById('step').value;
+              var output = [];
+              for (var x = -max_val; x <= max_val; x += step) {
+                for (var y = -max_val; y <= max_val; y += step) {
+                  output.push([x, y, z_function(x, y)]);
+                }
+              }
+              return output;
+            };
+            // parabaloid function
+            var parabaloid = function(x, y) {
+              return Math.pow(x, 2)+Math.pow(y,2);
+            };
+            // hyperbolic paraboloid function
+            var hyperbolicParaboloid = function(x, y) {
+              return Math.pow(y,2)-Math.pow(x,2);
+            };
+            // plane function
+            var plane = function(x, y) {
+              return x + y;
+            };
+        </script>
+    </body>
+</html>
