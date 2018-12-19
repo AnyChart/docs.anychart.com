@@ -313,7 +313,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Interactivity
 
-The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified - use the following methods:
+The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified – use the following methods:
 
 * {api:nychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
 * {api:nychart.charts.Wordtree#drillUp}drillUp(){api} to drill up
