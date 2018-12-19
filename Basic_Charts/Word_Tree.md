@@ -113,7 +113,8 @@ Read the overview of general settings: [General Settings](General_Settings).
 * `children` to set children
 * `value` to set words
 * `weight` to set weight
-* `weight`: specify if children are not included --> [tooltips](#tooltips), correct font size
+
+**Note:** The weight (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually, like in the sample below. 
 
 
 ```
