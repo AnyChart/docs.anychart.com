@@ -3,6 +3,8 @@
 
 ## Overview
 
+* font size represents the number of children (weight)
+
 A word tree is...
 
 This article explains how to create a basic Word Tree chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
@@ -111,6 +113,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 * `children` to set children
 * `value` to set words
 * `weight` to set weight
+* `weight`: specify if children are not included --> [tooltips](#tooltips), correct font size
 
 
 ```
