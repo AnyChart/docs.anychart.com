@@ -175,31 +175,19 @@ Surface charts can be rotated simply by dragging them with the mouse or you can 
 
 The sample below shows how to work with these methods.  
 
-```
-rotationZ
-rotationY
-```
-
 {sample}Surface\_Chart\_07{sample}
 
 ## Special Settings
 
 ### Color Range
 
-When color scale is used you can add color range element to make chart more readable. Color range is more suitable to be used with linear color scale:
+When color scale is used you can add color range element to make chart more readable. It is created with the {api:anychart.charts.Surface#colorRange}colorRange(){api} method:
 
 ```
-// color range
+// enable and configure color range
+var colorRange = chart.colorRange();
+colorRange.enabled(true);
+colorRange.orientation('right');
 ```
 
 {sample}Surface\_Chart\_08{sample}
-
-### Legend
-
-Legend is another way to provide context for the surface coloring, it makes sense to use legend with the ordinal color color scale:
-
-```
-// color range
-```
-
-{sample}Surface\_Chart\_09{sample}
