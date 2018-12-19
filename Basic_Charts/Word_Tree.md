@@ -260,7 +260,7 @@ chart.word("liquid")
 You can configure the font of a Word Tree. Use the following methods:
 
 * {api:anychart.charts.Wordtree#fontColor}fontColor(){api} to set the font color
-* {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration
+* {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration – overline, underline, etc.
 * {api:anychart.charts.Wordtree#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
 * {api:anychart.charts.Wordtree#fontOpacity}fontOpacity(){api} to set the font opacity
 * {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
