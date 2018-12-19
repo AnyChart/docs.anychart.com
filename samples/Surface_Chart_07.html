@@ -38,7 +38,7 @@
         <fieldset>
             <legend>Rotation control</legend>
             <button onclick="startRotateZ()">Start</button>
-            <button onclick="clearInterval(rotateZ)">Stop</button><br>
+            <button onclick="clearInterval(autoRotateZ)">Stop</button><br>
             Z: <input type="range" id="rotationZ" min="-360" max="360" step="1" onInput="rotateZ()">
             Y: <input type="range" id="rotationY" min="-90" max="90" step="1" onInput="rotateY()">
         </fieldset>
@@ -57,7 +57,7 @@
 
             // auto Z rotation
             function startRotateZ(){
-                rotateZ = setInterval(function(){ 
+                autoRotateZ = setInterval(function(){ 
                     chart.rotationZ(chart.rotationZ()+1);
                   }, 30);
             };

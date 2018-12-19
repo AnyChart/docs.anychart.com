@@ -25,7 +25,7 @@ Surface charts (or 3D Surface plot) are useful when you want to find the optimum
 
 ## Modules
 
-The Surface chart requires adding the [Core](../Quick_Start/Modules#core) and [Surface Chart](../Quick_Start/Modules#surface_chart) modules:
+The Surface chart requires adding the [Core](../Quick_Start/Modules#core) and [Surface Chart](../Quick_Start/Modules#surface) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

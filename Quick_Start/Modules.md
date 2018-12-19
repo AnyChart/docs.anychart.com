@@ -266,7 +266,7 @@ A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:
 
 ### Surface
 
-A module for creating [Sunburst](../3D_Plot/Surface_Chart) charts:
+A module for creating [Surface](../3D_Plot/Surface_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js"></script>
