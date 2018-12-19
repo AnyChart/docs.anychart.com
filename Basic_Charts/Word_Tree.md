@@ -268,6 +268,8 @@ You can configure the font of a Word Tree. Use the following methods:
 * {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
 * {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
 
+The font size in Word Trees is calculated automatically from the weights of elements, but with the help of {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} and {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api}, you can set limits to it.
+
 ```
 // configure the font
 chart.fontColor("#1976d2");
