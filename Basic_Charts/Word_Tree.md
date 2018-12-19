@@ -213,7 +213,7 @@ The root is always explicitly specified in [tree data](#tree_data). With [lists]
 chart.word("word");
 ```
 
-If your data is a list of phrases, the root word is set automatically – it is the first word in the first string you pass. Optionally, you can set another word. In case your data is a [text](#text), it always requires specifying the root.
+If your data is a list of phrases, the root word is set automatically – it is the first word in the first string you pass. Optionally, you can set another word. In case your data is a [text](#text), specifying the root is required.
 
 When setting the root of a list of phrases or a text, keep in mind that it **case senstive** and needs to be **a single word**.
 
