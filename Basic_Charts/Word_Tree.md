@@ -266,7 +266,7 @@ You can configure the font of a Word Tree. Use the following methods:
 * {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
 * {api:anychart.charts.Wordtree#fontWeight}fontWeight(){api} to set the font weight
 
-The size of each element is calculated automatically from its weight, but you can set general limits to the font size with the help of these methods:
+The size of each element is calculated automatically from its weight, but you can establish general limits to the font size with the help of these methods:
 
 * {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
 * {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
