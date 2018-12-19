@@ -205,11 +205,37 @@ chart.word("He");
 * [arrays](#arrays): optional
 * [text](#text): required
 * case sensitive
-* по дефолту берется первое слово первого массива / несколько слов, если они часто повторяются
+* по дефолту берется первое слово первого массива
 
 
 ```
+// create data
+var data = [
+  ["oxygen is a chemical element"],
+  ["in nature, oxygen is a gas with no color or smell"],
+  ["oxygen is a very important element"],
+  ["oxygen was initially discovered in 1772"],
+  ["oxygen is what makes burning possible"],
+  ["oxygen can be used in smelting metal from ore"],
+  ["oxygen is used in hospitals for killing bacteria"],
+  ["oxygen is used to purify the water"],
+  ["in nature, oxygen is produced by plants"],
+  ["pure oxygen helps people with certain illnesses"],
+  ["pure oxygen can be breathed during decompression"],
+  ["pure oxygen is toxic"],
+  ["exposure to pure oxygen can cause lung collapse"],
+  ["liquid oxygen is a pale blue cryogenic liquid"],
+  ["liquid oxygen is used for industrial purposes"],
+  ["liquid oxygen is a powerful oxidizing agent"],
+  ["liquid oxygen is used in rocket fuel"],
+  ["liquid oxygen is supplied to hospitals"]
+];
 
+// create a chart and set the data
+chart = anychart.wordtree(data);
+
+//set the root word
+chart.word("pure")
 ```
 
 {sample}BCT\_Word\_Tree\_05{sample}

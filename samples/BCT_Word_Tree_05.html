@@ -34,7 +34,7 @@
 <select id="typeSelect" onchange="switchType()">
     <option value="oxygen">oxygen</option>
     <option value="pure">pure [oxygen]</option>
-    <option value="liquid">liquid [oxygen]</option>
+    <option value="liquid" selected="selected">liquid [oxygen]</option>
 </select>
 <div id="container"></div>
 <script>
@@ -64,6 +64,9 @@ anychart.onDocumentReady(function () {
     
     // create a chart and set the data
     chart = anychart.wordtree(data);
+
+    //set the root word
+    chart.word("liquid")
 
     // configure the font
     chart.maxFontSize(18);
