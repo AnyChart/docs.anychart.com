@@ -104,7 +104,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 * requires the [tree data model](../Working_with_Data/Tree_Data_Model)
 * explicitly: [tree](#tree)
-* implicitly (automatically): [arrays](#arrays), [#text](text)
+* implicitly (automatically): [arrays](#arrays), [text](#text)
 
 #### Tree
 
@@ -330,7 +330,7 @@ connectors.stroke("0.5 #1976d2");
 * composed of: "+" sign, number of children (weight), text you can configure
 * {api:anychart.charts.Wordtree#postfix}postfix(){api}
 * default: `"more"` ("+9 more" or "+3 more")
-* this sample: [font size](#font_size) configured
+* this sample: [font size](#font) configured
 
 
 
