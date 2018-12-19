@@ -349,8 +349,8 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified – use the following methods:
 
-* {api:nychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
-* {api:nychart.charts.Wordtree#drillUp}drillUp(){api} to drill up
+* {api:anychart.charts.Wordtree#drillTo}drillTo(){api} to drill to an item
+* {api:anychart.charts.Wordtree#drillUp}drillUp(){api} to drill up
 
 Sometimes you might also need to perform a [search](../Working_with_Data/Tree_Data_Model#searching) in the data with the {api:anychart.data.Tree#search}search(){api} method of the {api:anychart.data.Tree}anychart.data.Tree{api} class
 (see the [Tree Data Model](../Working_with_Data/Tree_Data_Model) article to learn more about operating tree-like data). For example, if you want to drill down to a particular item in the data tree, call {api:anychart.data.Tree#search}search(){api} to get the item and {api:anychart.charts.TreeMap#drillTo}drillTo(){api} to drill down to it. For drilling up, call {api:anychart.charts.TreeMap#drillUp}drillUp(){api}:
