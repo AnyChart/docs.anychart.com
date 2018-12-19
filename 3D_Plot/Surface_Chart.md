@@ -138,9 +138,11 @@ chart.stroke({color: '#ff4040', thickness: 3, dash: '5 5'});
 Surface plot has three axes, each of them can be confugured separately using {api:anychart.charts.Surface#xAxis}xAxis{api}, {api:anychart.charts.Surface#yAxis}yAxis{api}, and {api:anychart.charts.Surface#zAxis}zAxis{api} methods:
 
 ```
-chart.xAxis(true);
-chart.yAxis(true);
-chart.zAxis(true);
+// configure axes
+chart.zAxis().stroke(null); 
+chart.zAxis().ticks().stroke("1 lightgray");    
+chart.xAxis().labels(false);
+chart.yAxis().labels(false);
 ```
 
 ### Grids
@@ -148,9 +150,11 @@ chart.zAxis(true);
 Surface plot has three grids, each of them can be configured separately using {api:anychart.charts.Surface#xGrid}xGrid{api}, {api:anychart.charts.Surface#yGrid}yGrid{api}, and {api:anychart.charts.Surface#zGrid}zGrid{api} methods.
 
 ```
-chart.xGrid(true);
-chart.yGrid(true);
-chart.zGrid(true);
+// configure grids
+gridStroke = {color: 'lightgray', thickness: 1, dash: '5 5'};
+chart.xGrid().stroke(gridStroke);
+chart.yGrid().stroke(gridStroke);
+chart.zGrid().stroke(gridStroke);
 ```
 
 ### Box
@@ -158,7 +162,7 @@ chart.zGrid(true);
 The box is the set of twelve lines that surrounds the surface plot. You can disable it by passing `null` to the {api:anychart.charts.Surface#box}box{api} method, or set the stroke color and properties.
 
 ```
-chart.box('#F44336', 2, '5 2', 'round');
+chart.box({color: 'lightgray', thickness: 1});
 ```
 
 The sample below features grids, axes, and box configurations:
