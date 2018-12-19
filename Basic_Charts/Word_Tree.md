@@ -149,9 +149,9 @@ var chart = anychart.wordtree(data, "as-tree");
 
 #### List
 
-When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the [root word](#root_word) "oxygen".
+When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the [root word](#root_word) "oxygen". 
 
-Please note, however, that you can set the root word manually if necessary. 
+**Note:** If necessary, you can set the root word manually.
 
 ```
 // create data
