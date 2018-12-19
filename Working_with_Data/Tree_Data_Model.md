@@ -10,6 +10,7 @@ It is used in the following chart types:
 * [Gantt](../Gantt_Chart/Quick_Start)
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
+* [Word Tree](../Basic_Charts/Word_Tree)
 
 This article explains how to set tree-like data, access data items, and perform operations on data.
 
