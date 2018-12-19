@@ -3,9 +3,7 @@
 
 ## Overview
 
-* font size represents the number of children (weight)
-
-A word tree is...
+A word tree is a visualization that displays text data in a hierarchical way: as a tree of elements, usually single words, connected by lines. The font size of words represents their weight – the frequency / number of children. A word tree can be used to show typical contexts a root word appears in or a hierarchy of terms. 
 
 This article explains how to create a basic Word Tree chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
 
