@@ -286,7 +286,7 @@ chart.maxFontSize(20);
 
 In case of [tree data](#tree), you can configure the font of individual items – use extra data fields corresponding with the methods mentioned above.
 
-The maximum and minimum font size cannot be set this way. Also, please note: settings are applied to all the children of the element you adjust, like here:
+The maximum and minimum font size cannot be set this way. Also, please note: individul settings are applied to all the children of the element you adjust, but a child's own individual settings override the parent settings:
 
 ```
 // create data
