@@ -40,7 +40,7 @@ The Word Tree requires adding the [Core](../Quick_Start/Modules#core) and [Word 
 ```
 
 ```
-<script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
 Learn more: [Modules](../Quick_Start/Modules).
