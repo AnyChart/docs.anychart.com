@@ -257,6 +257,8 @@ chart.word("liquid")
 
 #### All Points
 
+You can configure the font of a Word Tree. Use the following methods:
+
 * {api:anychart.charts.Wordtree#fontColor}fontColor(){api} to set the font color
 * {api:anychart.charts.Wordtree#fontDecoration}fontDecoration(){api} to set the font decoration
 * {api:anychart.charts.Wordtree#fontFamily}fontFamily(){api} to set the font family – Verdana, Helvetica, Arial, etc.
@@ -265,8 +267,6 @@ chart.word("liquid")
 * {api:anychart.charts.Wordtree#fontWeight}fontWeight(){api} to set the font weight
 * {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
 * {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
-* settings are applied to all children
-
 
 ```
 // configure the font
@@ -281,7 +281,7 @@ chart.maxFontSize(20);
 
 * [tree](#tree)
 * except for {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} and {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api}
-
+* Please note: settings are also applied to all the children of the element you configure.
 
 ```
 // create data
