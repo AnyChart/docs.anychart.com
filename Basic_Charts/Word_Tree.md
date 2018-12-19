@@ -383,4 +383,6 @@ chart.drillTo(item);
 chart.drillUp();
 ```
 
+This sample shows how to drill down to a particular item and then drill up:
+
 {sample}BCT\_Word\_Tree\_10{sample}
