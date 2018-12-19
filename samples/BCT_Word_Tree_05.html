@@ -52,9 +52,10 @@ anychart.onDocumentReady(function () {
       ["oxygen is used to purify the water"],
       ["in nature, oxygen is produced by plants"],
       ["pure oxygen helps people with certain illnesses"],
-      ["pure oxygen can be used for treating decompression"],
+      ["pure oxygen can be breathed during decompression"],
       ["pure oxygen is toxic"],
       ["exposure to pure oxygen can cause lung collapse"],
+      ["liquid oxygen is a pale blue cryogenic liquid"],
       ["liquid oxygen is used for industrial purposes"],
       ["liquid oxygen is a powerful oxidizing agent"],
       ["liquid oxygen is used in rocket fuel"],
@@ -63,6 +64,9 @@ anychart.onDocumentReady(function () {
     
     // create a chart and set the data
     chart = anychart.wordtree(data);
+
+    // configure the font
+    chart.maxFontSize(20);
 
     // set the chart title
     chart.title("Word Tree: Root Word");
