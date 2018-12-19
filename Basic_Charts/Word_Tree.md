@@ -120,7 +120,7 @@ With tree-like data, the following data fields are used:
 
 When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
 
-The **weight** (number of children) is calculated automatically. It is shown in tooltips and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
+The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
 In the sample below, the children of the `"South"` element are not included in the data, but its `"weight"` is set to 5 to show that there are 5 South Slavic languages:
 
