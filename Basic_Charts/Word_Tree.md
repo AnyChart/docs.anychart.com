@@ -213,7 +213,7 @@ chart.word("word");
 
 If your data is a text, it is required to specify the root. For a list of phrases, this setting is optional: by default, the first word of the first string is automatically selected.
 
-Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **case senstive** and that the string you pass to it needs to be **a single word**:
+Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **case senstive** and that the string you pass to it needs to be **a single word**.
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into single words, so the root is also a single word, and even if you set it manually, it still needs to be a single word for the chart to work correctly.
 
