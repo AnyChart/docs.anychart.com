@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button onclick="drillToItem()">Drill Down to 'rocket'</button>
+<button onclick="drillToItem()">Drill Down to 'a'</button>
 <button onclick="drillUpALevel()">Drill Up 1 Level</button>
 <div id="container"></div>
 <script>
@@ -47,16 +47,7 @@ anychart.onDocumentReady(function () {
       ["oxygen can be used in smelting metal from ore"],
       ["oxygen is used in hospitals for killing bacteria"],
       ["oxygen is used to purify the water"],
-      ["in nature, oxygen is produced by plants"],
-      ["pure oxygen helps people with certain illnesses"],
-      ["pure oxygen can be breathed during decompression"],
-      ["pure oxygen is toxic"],
-      ["exposure to pure oxygen can cause lung collapse"],
-      ["liquid oxygen is a pale blue cryogenic liquid"],
-      ["liquid oxygen is used for industrial purposes"],
-      ["liquid oxygen is a powerful oxidizing agent"],
-      ["liquid oxygen is used in rocket fuel"],
-      ["liquid oxygen is supplied to hospitals"]
+      ["in nature, oxygen is produced by plants"]
     ];
     
     // create a chart and set the data
@@ -79,7 +70,7 @@ anychart.onDocumentReady(function () {
 function drillToItem(){
   /* locate an item in the data tree
   and get it as an object */
-  var item = chart.data().search("value", "rocket");
+  var item = chart.data().search("value", "a");
   // drill down to the item
   chart.drillTo(item);
 };
