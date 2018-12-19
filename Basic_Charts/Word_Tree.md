@@ -122,7 +122,7 @@ When you pass the data to the chart constructor, add a second parameter – `"as
 
 The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
-In the sample below, the children of the `"South"` element are not included in the data, but its `"weight"` is set to 5 to show that there are 5 South Slavic languages:
+In this sample, the children of the `"South"` element are not included in the data, but its `"weight"` is set to 5 to show that there are 5 South Slavic languages:
 
 ```
 // create data
@@ -177,7 +177,7 @@ var chart = anychart.wordtree(data);
 
 #### Text
 
-Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In this sample, it is the word `"He"`:
+Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In the following sample, it is the word `"He"`:
 
 ```
 // create data
@@ -219,7 +219,7 @@ Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **cas
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into words, so the root is also a single word. Even if you set it manually, it still needs to be just one word for the chart to work correctly.
 
-In the sample below, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly – the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
+In this sample, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly – the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
 
 ```
 // create data
@@ -271,6 +271,7 @@ The size of each element is calculated automatically from its weight, but you ca
 * {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
 * {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
 
+In the sample below, there is a Word Tree with font adjusted:
 
 ```
 // configure the font
