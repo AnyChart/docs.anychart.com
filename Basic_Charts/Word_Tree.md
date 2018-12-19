@@ -264,7 +264,7 @@ You can configure the font of a Word Tree. Use the following methods:
 * {api:anychart.charts.Wordtree#fontStyle}fontStyle(){api} to set the font style – normal, italic, oblique
 * {api:anychart.charts.Wordtree#fontWeight}fontWeight(){api} to set the font weight
 
-The size of each element is calculated automatically from its weight, but you can establish general limits to the font size. Call these methods:
+The size of each element is calculated automatically from its weight (frequency / number of children), but you can establish general limits to the font size. Call these methods:
 
 * {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api} to set the maximum font size
 * {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} to set the minimum font size
@@ -344,9 +344,9 @@ connectors.stroke("0.5 #1976d2");
 
 ### Postfix
 
-If a tree does not fit the height of the chart, children of some or all items are hidden. After each such item, the number of its children is shown, followed by a text element – postfix.
+If a tree does not fit the height of the chart, children of some or all items are hidden. After each such item, its weight (frequency / the number of children) is shown, followed by a text element – postfix.
 
-The default postfix is `"more"`, but you can set your own text by passing a custom string to the {api:anychart.charts.Wordtree#postfix}postfix(){api} method. When you pass an empty string, only the number of children is displayed.
+The default postfix is `"more"`, but you can set your own text by passing a custom string to the {api:anychart.charts.Wordtree#postfix}postfix(){api} method. When you pass an empty string, only the weight is displayed.
 
 In the following sample, the [font size](#font) is adjusted so that some child words are hidden. The postfix is customized:
 
