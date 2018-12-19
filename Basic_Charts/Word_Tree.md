@@ -211,16 +211,11 @@ The root is always explicitly specified in [tree data](#tree_data). With [lists]
 
 If your data is a list of phrases, the root word is set automatically – it is the first word in the first string you pass. Optionally, you can set it manually. In case your data is a [text](#text), it always requires specifying the root.
 
-
 In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into single words, so the root is also a single word. Even if you set it manually, it still needs to be a single word for the chart to work correctly.
 
-* {api:anychart.charts.Wordtree#word}word(){api}
-* [list](#list): optional
-* [text](#text): required
-* case sensitive
-* по дефолту берется первое слово первого массива
-* single word, no word combinations
+Please also note that the root word is case sensitive.
 
+...
 
 ```
 // create data
