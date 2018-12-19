@@ -300,9 +300,10 @@ connectors.stroke("0.5 #1976d2");
 
 ### Postfix
 
+* shown if an item's children do not fit the height of the chart
+* composed of: "+" sign, number of children (weight), text you can configure
 * {api:anychart.charts.Wordtree#postfix}postfix(){api}
-* default: `"more"`
-* postfix = weight
+* default: `"more"` ("+9 more" or "+3 more")
 * this sample: [font size](#font_size) configured
 
 
