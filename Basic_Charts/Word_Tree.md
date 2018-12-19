@@ -140,18 +140,8 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 ### Interactivity
 
-#### Drilldown
-
 ```
 
 ```
 
 {sample}BCT\_Word\_Tree\_10{sample}
-
-#### Disabling Drilldown
-
-```
-
-```
-
-{sample}BCT\_Word\_Tree\_11{sample}
