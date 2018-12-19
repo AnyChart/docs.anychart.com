@@ -284,9 +284,9 @@ chart.maxFontSize(20);
 
 #### Individual Points
 
-* [tree](#tree)
-* except for {api:anychart.charts.Wordtree#minFontSize}minFontSize(){api} and {api:anychart.charts.Wordtree#maxFontSize}maxFontSize(){api}
-* Please note: settings are also applied to all the children of the element you configure.
+If you use [tree](#tree) data, you can configure the font of individual items – use extra data fields corresponding with the methods mentioned above.
+
+The maximum and minimum font size cannot be set this way. Also, please note: settings are applied to all the children of the element you adjust, like here:
 
 ```
 // create data
