@@ -264,6 +264,14 @@ A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
 ```
 
+### Surface
+
+A module for creating [Sunburst](../3D_Plot/Surface_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js"></script>
+```
+
 ### Tag Cloud
 
 A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
