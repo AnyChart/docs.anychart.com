@@ -104,6 +104,10 @@ The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Dat
 
 You can establish the hierarchy between words **explicitly**, by passing [tree data](#tree) to the chart constructor. Alternatively, the relationship between words can be established **implicitly**: when you pass a [list of phrases](#list) or a [text](#text), AnyChart engine automatically analyzes the data.
 
+**Note:** A Word Tree can have only one [root word](#root_word).
+
+**Note:** When your data is a list or a text, it is parsed into single words, but in tree data you can set items both as words and word combinations.
+
 #### Tree
 
 With tree-like data, the following data fields are used:
@@ -116,7 +120,7 @@ With tree-like data, the following data fields are used:
 
 When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
 
-The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually, like in the sample below:
+The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually, like in the sample below.
 
 ```
 // create data
@@ -145,7 +149,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 #### List
 
-When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs the tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the [root word](#root_word) "oxygen".
+When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the [root word](#root_word) "oxygen".
 
 Please note, however, that you can set the root word manually if necessary. 
 
