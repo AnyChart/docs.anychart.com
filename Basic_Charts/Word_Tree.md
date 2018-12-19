@@ -115,7 +115,7 @@ With tree-like data, the following data fields are used:
 * `id` to set unique identifiers
 * `parent` to set parents
 * `children` to set children
-* `value` to set words
+* `value` to set words / word combinations
 * `weight` to set weight
 
 When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
