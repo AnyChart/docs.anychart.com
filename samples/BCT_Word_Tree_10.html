@@ -62,6 +62,9 @@ anychart.onDocumentReady(function () {
     // create a chart and set the data
     chart = anychart.wordtree(data);
 
+    // configure the font
+    chart.maxFontSize(20);
+
     // set the chart title
     chart.title("Word Tree: Interactivity (Drilling Down and Up)");
 
