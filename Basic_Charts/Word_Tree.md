@@ -322,14 +322,16 @@ var chart = anychart.wordtree(data, "as-tree");
 
 ### Connectors
 
+A connector is a line connecting words. Use the following methods to configure connectors:
+
 * {api:anychart.core.wordtree.Connectors#curveFactor}curveFactor(){api} to set the curvature
 * {api:anychart.core.wordtree.Connectors#length}length(){api} to set the length
 * {api:anychart.core.wordtree.Connectors#offset}offset(){api} to set the offset
 * {api:anychart.core.wordtree.Connectors#stroke}stroke(){api} to set the stroke
 
-**Note 1:** The curvature, or curve factor, of connectors is specified as a decimal value from 0 to 1. Setting it 0 straightens flows, like in this sample.
+**Note 1:** The curvature, or curve factor, of connectors is specified as a decimal value from 0 to 1. Setting it 0 straightens flows, like in the sample below.
 
-**Note 2:** length = 0 --> vertical lines
+**Note 2:** With length set to 0, connectors look like straight vertical lines, regardless of the curvature.
 
 ```
 // configure the connectors
