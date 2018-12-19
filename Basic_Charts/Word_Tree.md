@@ -350,7 +350,7 @@ If a tree does not fit the height of the chart, children of some or all items ar
 
 The default postfix is `"more"`, but you can set your own text by passing a custom string to the {api:anychart.charts.Wordtree#postfix}postfix(){api} method. When you pass an empty string, only the number of children is displayed.
 
-In the following sample, the [font size](#font) is adjusted so that some child words are hidden. The postfix is also customized:
+In the following sample, the [font size](#font) is adjusted so that some child words are hidden. The postfix is customized:
 
 ```
 // set the postfix
