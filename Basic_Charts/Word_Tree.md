@@ -217,7 +217,7 @@ Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **cas
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into words, so the root is also a single word. Even if you set it manually, it still needs to be just one word for the chart to work correctly.
 
-In the sample below, ...
+In the sample below, there is a chart based on a list of phrases about oxygen. The root word, "liquid", is set explicitly. The default root would be "oxygen" since it is the first word in the first string. You can select "oxygen" or "pure" to see how the choice of the root affects the chart.
 
 ```
 // create data
