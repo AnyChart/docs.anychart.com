@@ -64,7 +64,7 @@ You can also build a file that contains your license key. See the [Credits](Cred
 
 ## Bundle
 
-The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, so you should use it cautiously.
+The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, use it cautiously.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
