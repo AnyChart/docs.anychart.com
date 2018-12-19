@@ -149,7 +149,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 #### List
 
-When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root "oxygen". 
+When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root `"oxygen"`. 
 
 **Note:** If necessary, you can set the [root word](#root_word) manually.
 
@@ -175,7 +175,7 @@ var chart = anychart.wordtree(data);
 
 #### Text
 
-Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In this sample, it is the word "He":
+Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In this sample, it is the word `"He"`:
 
 ```
 // create data
@@ -217,7 +217,7 @@ Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **cas
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into words, so the root is also a single word. Even if you set it manually, it still needs to be just one word for the chart to work correctly.
 
-In the sample below, there is a chart based on a list of phrases about oxygen. The root word, "liquid", is set explicitly – the default root would be "oxygen" since it is the first word in the first string. You can switch to "oxygen" or "pure" to see how the choice of the root affects the chart.
+In the sample below, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly – the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
 
 ```
 // create data
