@@ -169,7 +169,7 @@ The sample below features grids, axes, and box configurations:
 
 Surface charts can be rotated simply by dragging them with the mouse or you can set angles of rotation using {api:anychart.charts.Surface#rotationZ}rotationZ{api} and {api:anychart.charts.Surface#rotationY}rotationY{api} methods.
 
-The sample below shows how to work with these methods.
+The sample below shows how to work with these methods.  
 
 ```
 rotationZ
