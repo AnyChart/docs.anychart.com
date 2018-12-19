@@ -209,7 +209,7 @@ A Word Tree can have only one root word.
 
 The root is always explicitly specified in [tree data](#tree_data). With [lists](#list) and [text](#texts), the {api:anychart.charts.Wordtree#word}word(){api} method is used.
 
-If your data is a text, it is required to specify the root. For a list of phrases, this setting is optional – by default, the first word of the first string is automatically selected.
+If your data is a text, it is required to specify the root. For a list of phrases, this setting is optional: by default, the first word of the first string is automatically selected.
 
 Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **case senstive** and that the string you pass to it needs to be **a single word**:
 
