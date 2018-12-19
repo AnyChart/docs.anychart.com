@@ -49,9 +49,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-* {api:anychart#wordtree}anychart.wordtree(){api}
-
-To create a Word Tree...
+To create a Word Tree, use the {api:anychart#wordtree}anychart.wordtree(){api} chart constructor.
 
 The following sample demonstrates how a basic Word Tree is created:
 
@@ -102,11 +100,13 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Data
 
-* requires the [tree data model](../Working_with_Data/Tree_Data_Model)
-* explicitly: [tree](#tree)
-* implicitly (automatically): [arrays](#arrays), [text](#text)
+The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Data_Model), which represents data as a hierarchical tree-like structure with data items connected by parent–child relationships.
+
+You can establish the hierarchy **explicitly**, by passing [tree](#tree) data to the chart constructor. Alternatively, hierarchy can be established **implicitly**: when you pass a [list](#list) of phrases or a [text](#text), AnyChart engine automatically analyzes relationship between words.
 
 #### Tree
+
+With tree-like data, the following data fields are used:
 
 * `id` to set unique identifiers
 * `parent` to set parents
@@ -114,8 +114,9 @@ Read the overview of general settings: [General Settings](General_Settings).
 * `value` to set words
 * `weight` to set weight
 
-**Note:** The weight (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually, like in the sample below. 
+When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
 
+The weight (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually, like in the sample below:
 
 ```
 // create data
@@ -142,7 +143,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 {sample}BCT\_Word\_Tree\_02{sample}
 
-#### Arrays
+#### List
 
 * [root word](#root_word)
 
@@ -202,7 +203,7 @@ chart.word("He");
 ### Root Word
 
 * {api:anychart.charts.Wordtree#word}word(){api}
-* [arrays](#arrays): optional
+* [list](#list): optional
 * [text](#text): required
 * case sensitive
 * по дефолту берется первое слово первого массива
