@@ -304,6 +304,14 @@ A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
 ```
 
+### Word Tree
+
+A module for creating [Word Tree](../Basic_Charts/Word_Tree) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
+```
+
 ## Features
 
 Additional modules that are responsible for various features of the library.

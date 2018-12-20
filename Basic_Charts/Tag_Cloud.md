@@ -26,7 +26,7 @@ This article explains how to create a basic Tag Cloud chart as well as configure
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>N/A</td></tr>
+<tr><td></td><td>[Word Tree](Word_Tree)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td></td><td>[Chartopedia: Tag Cloud](https://www.anychart.com/chartopedia/chart-types/tag-cloud-chart/)</td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
@@ -87,6 +87,8 @@ Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagClo
 
 There are two ways to create data: you can add either a list of words or a text.
 
+#### List
+
 When you add a list of words (or other elements), you have to specify their frequencies. Use the following data fields:
 
 * `x` to set words
@@ -118,6 +120,8 @@ chart = anychart.tagCloud(data);
 
 The `category` field is optional: it colors elements of the chart according to the categories they belong to. Also, it affects the ordinal color scale and legend – see the [Color Scale: Categories](#categories) and [Legend](#legend) sections to learn more.
 
+#### Text
+
 When you add just a text, the next step is to parse it into elements and calculate their frequencies. For parsing, use the {api:anychart.charts.TagCloud#data}data(){api} method with settings listed in {api:anychart.data.TextParsingSettings}anychart.data.TextParsingSettings{api}:
 
 * **cutLength** cuts the length of words
@@ -143,25 +147,24 @@ The following sample shows how to work with parsing settings. It is a Tag Cloud 
 
 ```
 // create data
-var text =
-    "Tyger, tyger, burning bright " +
-    "In the forests of the night, " +
-    "What immortal hand or eye " +
-    "Could frame thy fearful symmetry? ";
+var data = "Tyger, tyger, burning bright " +
+           "In the forests of the night, " +
+           "What immortal hand or eye " +
+           "Could frame thy fearful symmetry? ";
 
 // set the parsing mode and configure parsing settings
-chart.data(text, {
+chart.data(data, {
         mode: "byWord",
         maxItems: 16,
         ignoreItems: [
-                     "the",
-                     "and",
-                     "he",
-                     "or",
-                     "of",
-                     "in",
-                     "thy"
-        ]
+                      "the",
+                      "and",
+                      "he",
+                      "or",
+                      "of",
+                      "in",
+                      "thy"
+                     ]
 });
 ```
 

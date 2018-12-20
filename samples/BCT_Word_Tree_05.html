@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Word Tree 05"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/DVF-3894-wordtree/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        select {
+            margin: 10px 0 0 10px;
+        }
+#container {
+    position: absolute;
+    width: 100%;
+    top: 35px;
+    bottom: 0;
+}
+    </style>
+</head>
+<body>
+<select id="typeSelect" onchange="switchType()">
+    <option value="oxygen">oxygen</option>
+    <option value="pure">pure [oxygen]</option>
+    <option value="liquid" selected="selected">liquid [oxygen]</option>
+</select>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      ["oxygen is a chemical element"],
+      ["in nature, oxygen is a gas with no color or smell"],
+      ["oxygen is a very important element"],
+      ["oxygen was initially discovered in 1772"],
+      ["oxygen is what makes burning possible"],
+      ["oxygen can be used in smelting metal from ore"],
+      ["oxygen is used in hospitals for killing bacteria"],
+      ["oxygen is used to purify the water"],
+      ["in nature, oxygen is produced by plants"],
+      ["pure oxygen helps people with certain illnesses"],
+      ["pure oxygen can be breathed during decompression"],
+      ["pure oxygen is toxic"],
+      ["exposure to pure oxygen can cause lung collapse"],
+      ["liquid oxygen is a pale blue cryogenic liquid"],
+      ["liquid oxygen is used for industrial purposes"],
+      ["liquid oxygen is a powerful oxidizing agent"],
+      ["liquid oxygen is used in rocket fuel"],
+      ["liquid oxygen is supplied to hospitals"]
+    ];
+    
+    // create a chart and set the data
+    chart = anychart.wordtree(data);
+
+    //set the root word
+    chart.word("liquid")
+
+    // configure the font
+    chart.maxFontSize(18);
+
+    // set the chart title
+    chart.title("Word Tree: Root Word");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+
+// set the root word
+function switchType() {
+  var select = document.getElementById("typeSelect");
+  chart.word(select.value);
+}
+</script>
+</body>
+</html>
