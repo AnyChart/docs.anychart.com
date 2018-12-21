@@ -28,29 +28,38 @@ anychart.onDocumentReady(function () {
 
     // create data
     var data = [
-      {value:     "Slavic Languages", children: [
-        {value:   "East", children: [
-          {value: "Russian"},
-          {value: "Ukrainian"},
-          {value: "Belarusian"}
+      {value:     "Slavic Languages", custom_field: "info 1", children: [
+        {value:   "East", custom_field: "info 2", children: [
+          {value: "Russian", custom_field: "info 3"},
+          {value: "Ukrainian", custom_field: "info 4"},
+          {value: "Belarusian", custom_field: "info 5"}
         ]},
-        {value:   "West", children: [
-          {value: "Polish"},
-          {value: "Czech"},
-          {value: "Slovak"}
+        {value:   "West", custom_field: "info 6", children: [
+          {value: "Polish", custom_field: "info 7"},
+          {value: "Czech", custom_field: "info 8"},
+          {value: "Slovak", custom_field: "info 9"}
         ]},
-        {value:   "South", children: [
-          {value: "Bulgarian"},
-          {value: "Serbian"},
-          {value: "Croatian"},
-          {value: "Slovene"},
-          {value: "Macedonian"}
+        {value:   "South", custom_field: "info 10", children: [
+          {value: "Bulgarian", custom_field: "info 11"},
+          {value: "Serbian", custom_field: "info 12"},
+          {value: "Croatian", custom_field: "info 13"},
+          {value: "Slovene", custom_field: "info 14"},
+          {value: "Macedonian", custom_field: "info 15"}
         ]}  
       ]} 
     ];
     
     // create a chart and set the data
     var chart = anychart.wordtree(data, "as-tree");
+
+    // configure tooltips
+    chart.tooltip().format(function() {
+      if (this.weight > 1)
+        return this.weight + " languages \n\n" + 
+               this.getData("custom_field");
+      else
+        return this.getData("custom_field");
+    });
 
     // set the chart title
     chart.title("Word Tree: Tooltips (Formatting Functions)");
