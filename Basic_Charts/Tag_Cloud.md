@@ -85,7 +85,7 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 Data for a Tag Cloud can be passed to the chart constructor {api:anychart#tagCloud}anychart.tagCloud(){api} or to the {api:anychart.charts.TagCloud#data}data(){api} method.
 
-There are two ways to create data: you can add either a list of words or a text.
+There are two ways to create data: you can add either [a list of words](#list) or a [text](#text).
 
 #### List
 
@@ -374,7 +374,7 @@ To change the text of tooltips, combine the {api:anychart.charts.TagCloud#toolti
 
 The `{%value}` token returns the frequency of an element, and `{%yPercentOfTotal}` returns the percentage frequency. By default, both are shown.
 
-Also, you can always add a custom field to your data and use a custom token corresponding to it.
+Also, if you set data as a [list of words](#list), you can always add a custom field and use a custom token corresponding to it.
 
 This sample shows how to work with tokens:
 
@@ -406,7 +406,7 @@ chart.tooltip().format("{%yPercentOfTotal}% ({%value})\n\n{%custom_field}");
 
 To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) instead of tokens.
 
-You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+If you set data as a [list of words](#list), you can also add a custom field and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
 In the sample below, there is a function modifying the format of tooltips depending on percentage frequencies of elements, and a custom data field is used:
 

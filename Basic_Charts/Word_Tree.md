@@ -364,7 +364,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 To change the text of tooltips, combine the {api:anychart.charts.Wordtree#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
 
-The `{%value}` token returns the word, and `{%weight}` returns its weight. Also, you can always add a custom field to your data and use a custom token corresponding to it.
+The `{%value}` token returns the word, and `{%weight}` returns its weight. Also, if your data is a [tree](#tree), you can always add a custom field and use a custom token corresponding to it.
 
 This sample shows how to work with tokens:
 
@@ -407,7 +407,7 @@ chart.tooltip().format(
 
 To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) with the `value` and `weight` fields.
 
-You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+If your data is a [tree](#tree), you can also add a custom field and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
 The sample below demonstrates how to work with formatting functions. In the case of language groups, tooltips display the number of children (weight); in the case of languages, they show the number of native speakers – the information from the custom field *num_speakers*:
 
