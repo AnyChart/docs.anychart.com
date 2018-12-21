@@ -95,6 +95,8 @@ When you add a list of words (or other elements), you have to specify their freq
 * `value` to set frequencies
 * `category` to set categories
 
+**Note:** It is possible to add custom fields to your data – see the [Tooltips](#tooltips) section of this article.
+
 This is how working with `x` and `value` looks like:
 
 ```
