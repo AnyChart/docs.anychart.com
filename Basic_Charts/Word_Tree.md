@@ -115,7 +115,7 @@ With tree-like data, the following data fields are used:
 * `value` to set words / word combinations
 * `weight` to set weight
 
-The **weight** (number of children) is calculated automatically. It is shown in tooltips and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
+The **weight** (number of children) is calculated automatically. It is shown in tooltips and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually in the `weight` field.
 
 **Note:** It is possible to add custom fields to your data – see the [Tooltips](#tooltips) section of this article.
 
