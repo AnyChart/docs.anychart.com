@@ -54,8 +54,7 @@ The following sample demonstrates how a basic Word Tree is created:
 ```
 // create data
 var data = [
-  {value:     "Slavic Languages",
-   children: [
+  {value:     "Slavic Languages", children: [
     {value:   "East", children: [
       {value: "Russian"},
       {value: "Ukrainian"},
@@ -125,8 +124,7 @@ In this sample, the children of the *"South"* element are not included in the da
 ```
 // create data
 var data = [
-  {value:     "Slavic Languages",
-   children: [
+  {value:     "Slavic Languages", children: [
     {value:   "East", children: [
       {value: "Russian"},
       {value: "Ukrainian"},
@@ -289,8 +287,7 @@ The maximum and minimum font size cannot be set this way. Also, please note: the
 ```
 // create data
 var data = [
-  {value:     "Slavic Languages",
-   children: [
+  {value:     "Slavic Languages", children: [
     {value:   "East", children: [
       {value: "Russian"},
       {value: "Ukrainian"},
@@ -364,7 +361,34 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 #### Tokens
 
 ```
+// create data
+var data = [
+  {value:     "Slavic Languages", custom_field: "info 1", children: [
+    {value:   "East", custom_field: "info 2", children: [
+      {value: "Russian", custom_field: "info 3"},
+      {value: "Ukrainian", custom_field: "info 4"},
+      {value: "Belarusian", custom_field: "info 5"}
+    ]},
+    {value:   "West", custom_field: "info 6", children: [
+      {value: "Polish", custom_field: "info 7"},
+      {value: "Czech", custom_field: "info 8"},
+      {value: "Slovak", custom_field: "info 9"}
+    ]},
+    {value:   "South", custom_field: "info 10", children: [
+      {value: "Bulgarian", custom_field: "info 11"},
+      {value: "Serbian", custom_field: "info 12"},
+      {value: "Croatian", custom_field: "info 13"},
+      {value: "Slovene", custom_field: "info 14"},
+      {value: "Macedonian", custom_field: "info 15"}
+    ]}  
+  ]} 
+];
 
+// create a chart and set the data
+var chart = anychart.wordtree(data, "as-tree");
+
+// configure tooltips
+chart.tooltip().format("value: {%value}\nweight: {%weight}\n\n{%custom_field}");
 ```
 
 {sample}BCT\_Word\_Tree\_10{sample}
