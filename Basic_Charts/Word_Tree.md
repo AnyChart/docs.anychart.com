@@ -362,6 +362,12 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 #### Tokens
 
+To change the text of tooltips, combine the {api:anychart.charts.Wordtree#tooltip}tooltip(){api} and {api:anychart.core.ui.Tooltip#format}format(){api} methods with [tokens](../Common_Settings/Text_Formatters#string_tokens).
+
+The `{%value}` token returns the word, and `{%weight}` returns its weight. Also, you can always add a custom field to your data and use a custom token corresponding to it.
+
+This sample shows how to work with tokens. Along with regular tokens, a custom one is used:
+
 ```
 // create data
 var data = [
@@ -399,26 +405,32 @@ chart.tooltip().format(
 
 #### Formatting Functions
 
+To configure tooltips, you can use [formatting functions](../Common_Settings/Text_Formatters#formatting_functions) with the `value` and `weight` fields.
+
+You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
+
+The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *num_speakers* is used:
+
 ```
 // create data
 var data = [
   {value:     "Slavic Languages", children: [
     {value:   "East", children: [
-      {value: "Russian", custom_field: 150000000},
-      {value: "Ukrainian", custom_field: 37000000},
-      {value: "Belarusian", custom_field: 5100000}
+      {value: "Russian", num_speakers: 150000000},
+      {value: "Ukrainian", num_speakers: 37000000},
+      {value: "Belarusian", num_speakers: 5100000}
     ]},
     {value:   "West", children: [
-      {value: "Polish", custom_field: 45000000},
-      {value: "Czech", custom_field: 10700000},
-      {value: "Slovak", custom_field: 5200000}
+      {value: "Polish", num_speakers: 45000000},
+      {value: "Czech", num_speakers: 10700000},
+      {value: "Slovak", num_speakers: 5200000}
     ]},
     {value:   "South", children: [
-      {value: "Bulgarian", custom_field: 9000000},
-      {value: "Serbian", custom_field: 9500000},
-      {value: "Croatian", custom_field: 5600000},
-      {value: "Slovene", custom_field: 2500000},
-      {value: "Macedonian", custom_field: 1400000}
+      {value: "Bulgarian", num_speakers: 9000000},
+      {value: "Serbian", num_speakers: 9500000},
+      {value: "Croatian", num_speakers: 5600000},
+      {value: "Slovene", num_speakers: 2500000},
+      {value: "Macedonian", num_speakers: 1400000}
     ]}  
   ]} 
 ];
@@ -428,7 +440,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 // configure tooltips
 chart.tooltip().format(function() {
-  var numSpeakers = Math.round(this.getData("custom_field")/100000)/10;
+  var numSpeakers = Math.round(this.getData("num_speakers")/100000)/10;
   if (this.weight > 1) return "main living languages: " + this.weight;
   else return "native speakers: ~" + numSpeakers + " mln";
 });
