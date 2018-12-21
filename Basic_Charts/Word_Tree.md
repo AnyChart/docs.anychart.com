@@ -400,23 +400,23 @@ chart.tooltip().format(
 ```
 // create data
 var data = [
-  {value:     "Slavic Languages", custom_field: 315, children: [
-    {value:   "East", custom_field: 200, children: [
-      {value: "Russian", custom_field: 150},
-      {value: "Ukrainian", custom_field: 37},
-      {value: "Belarusian", custom_field: 5.1}
+  {value:     "Slavic Languages", children: [
+    {value:   "East", children: [
+      {value: "Russian", custom_field: 150000000},
+      {value: "Ukrainian", custom_field: 37000000},
+      {value: "Belarusian", custom_field: 5100000}
     ]},
-    {value:   "West", custom_field: 60, children: [
-      {value: "Polish", custom_field: 45},
-      {value: "Czech", custom_field: 10.7},
-      {value: "Slovak", custom_field: 5.2}
+    {value:   "West", children: [
+      {value: "Polish", custom_field: 45000000},
+      {value: "Czech", custom_field: 10700000},
+      {value: "Slovak", custom_field: 5200000}
     ]},
-    {value:   "South", custom_field: 30, children: [
-      {value: "Bulgarian", custom_field: 9},
-      {value: "Serbian", custom_field: 9.5},
-      {value: "Croatian", custom_field: 5.6},
-      {value: "Slovene", custom_field: 2.5},
-      {value: "Macedonian", custom_field: 1.4}
+    {value:   "South", children: [
+      {value: "Bulgarian", custom_field: 9000000},
+      {value: "Serbian", custom_field: 9500000},
+      {value: "Croatian", custom_field: 5600000},
+      {value: "Slovene", custom_field: 2500000},
+      {value: "Macedonian", custom_field: 1400000}
     ]}  
   ]} 
 ];
@@ -426,13 +426,9 @@ var chart = anychart.wordtree(data, "as-tree");
 
 // configure tooltips
 chart.tooltip().format(function() {
-  if (this.weight > 1)
-    return "main living languages: " + this.weight + "\n\n" +
-           "native speakers: ~" + 
-           this.getData("custom_field") + " mln";
-  else
-    return "native speakers: ~" +
-           this.getData("custom_field") + " mln";
+  var numSpeakers = Math.round(this.getData("custom_field")/100000)/10;
+  if (this.weight > 1) return "main living languages: " + this.weight;
+  else return "native speakers: ~" + numSpeakers + " mln";
 });
 ```
 
