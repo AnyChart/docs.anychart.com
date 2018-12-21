@@ -101,11 +101,9 @@ The Word Tree chart requires the [tree data model](../Working_with_Data/Tree_Dat
 
 You can establish the hierarchy between words **explicitly**, by passing [tree data](#tree) to the chart constructor. Alternatively, the relationship between words can be established **implicitly**: when you pass a [list of phrases](#list) or a [text](#text), AnyChart engine automatically analyzes the data.
 
-**Note 1:** It is possible to add custom fields to your data – see the [Tooltips](#tooltips) section of this article.
+**Note 1:** A Word Tree can have only one [root word](#root_word).
 
-**Note 2:** A Word Tree can have only one [root word](#root_word).
-
-**Note 3:** When your data is a list or a text, it is parsed into single words, but in tree data you can set items both as words and word combinations.
+**Note 2:** When your data is a list or a text, it is parsed into single words, but in tree data you can set items both as words and word combinations.
 
 #### Tree
 
@@ -116,6 +114,8 @@ With tree-like data, the following data fields are used:
 * `children` to set children
 * `value` to set words / word combinations
 * `weight` to set weight
+
+**Note:** It is possible to add custom fields to your data – see the [Tooltips](#tooltips) section of this article.
 
 When you pass the data to the chart constructor, add a second parameter – `"as-tree"` or `"as-table"`. The choice of the parameter and data fields depends on how exactly you data is organized. See [Tree Data Model: Setting Data](../Working_with_Data/Tree_Data_Model#setting_data) to learn more. 
 
