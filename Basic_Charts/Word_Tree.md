@@ -388,7 +388,9 @@ var data = [
 var chart = anychart.wordtree(data, "as-tree");
 
 // configure tooltips
-chart.tooltip().format("value: {%value}\nweight: {%weight}\n\n{%custom_field}");
+chart.tooltip().format(
+  "value: {%value}\nweight: {%weight}\n\n{%custom_field}"
+);
 ```
 
 {sample}BCT\_Word\_Tree\_10{sample}
