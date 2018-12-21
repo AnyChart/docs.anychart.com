@@ -121,7 +121,7 @@ When you pass the data to the chart constructor, add a second parameter – `"as
 
 **Note:** It is possible to add custom fields to your data – see the [Tooltips](#tooltips) section of this article.
 
-In this sample, the children of the *South* element are not included in the data, but its `weight` is set to 5 to show that there are 5 South Slavic languages:
+In this sample, the children of the *South* element are not included in the data, but its `weight` is set to 5 to show that there are 5 main South Slavic languages:
 
 ```
 // create data
