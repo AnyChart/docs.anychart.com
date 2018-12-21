@@ -400,23 +400,23 @@ chart.tooltip().format(
 ```
 // create data
 var data = [
-  {value:     "Slavic Languages", custom_field: "info 1", children: [
-    {value:   "East", custom_field: "info 2", children: [
-      {value: "Russian", custom_field: "info 3"},
-      {value: "Ukrainian", custom_field: "info 4"},
-      {value: "Belarusian", custom_field: "info 5"}
+  {value:     "Slavic Languages", custom_field: 315, children: [
+    {value:   "East", custom_field: 200, children: [
+      {value: "Russian", custom_field: 150},
+      {value: "Ukrainian", custom_field: 37},
+      {value: "Belarusian", custom_field: 5.1}
     ]},
-    {value:   "West", custom_field: "info 6", children: [
-      {value: "Polish", custom_field: "info 7"},
-      {value: "Czech", custom_field: "info 8"},
-      {value: "Slovak", custom_field: "info 9"}
+    {value:   "West", custom_field: 60, children: [
+      {value: "Polish", custom_field: 45},
+      {value: "Czech", custom_field: 10.7},
+      {value: "Slovak", custom_field: 5.2}
     ]},
-    {value:   "South", custom_field: "info 10", children: [
-      {value: "Bulgarian", custom_field: "info 11"},
-      {value: "Serbian", custom_field: "info 12"},
-      {value: "Croatian", custom_field: "info 13"},
-      {value: "Slovene", custom_field: "info 14"},
-      {value: "Macedonian", custom_field: "info 15"}
+    {value:   "South", custom_field: 30, children: [
+      {value: "Bulgarian", custom_field: 9},
+      {value: "Serbian", custom_field: 9.5},
+      {value: "Croatian", custom_field: 5.6},
+      {value: "Slovene", custom_field: 2.5},
+      {value: "Macedonian", custom_field: 1.4}
     ]}  
   ]} 
 ];
@@ -427,10 +427,12 @@ var chart = anychart.wordtree(data, "as-tree");
 // configure tooltips
 chart.tooltip().format(function() {
   if (this.weight > 1)
-    return this.weight + " languages \n\n" + 
-           this.getData("custom_field");
+    return "main living languages: " + this.weight + "\n\n" +
+           "native speakers: ~" + 
+           this.getData("custom_field") + " mln";
   else
-    return this.getData("custom_field");
+    return "native speakers: ~" +
+           this.getData("custom_field") + " mln";
 });
 ```
 
