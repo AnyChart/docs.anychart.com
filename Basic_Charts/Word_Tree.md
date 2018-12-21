@@ -119,7 +119,7 @@ When you pass the data to the chart constructor, add a second parameter – `"as
 
 The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
-In this sample, the children of the *"South"* element are not included in the data, but its weight is set to 5 to show that there are 5 South Slavic languages:
+In this sample, the children of the *South* element are not included in the data, but its weight is set to 5 to show that there are 5 South Slavic languages:
 
 ```
 // create data
@@ -147,7 +147,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 #### List
 
-When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root *"oxygen"*. 
+When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root *oxygen*. 
 
 **Note:** If necessary, you can set the [root word](#root_word) manually.
 
@@ -173,7 +173,7 @@ var chart = anychart.wordtree(data);
 
 #### Text
 
-Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In the following sample, it is the word *"He"*:
+Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In the following sample, it is the word *He*:
 
 ```
 // create data
