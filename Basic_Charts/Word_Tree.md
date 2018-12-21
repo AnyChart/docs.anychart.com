@@ -120,7 +120,7 @@ When you pass the data to the chart constructor, add a second parameter – `"as
 
 The **weight** (number of children) is calculated automatically. It is shown in [tooltips](#tooltips) and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
-In this sample, the children of the `"South"` element are not included in the data, but its `"weight"` is set to 5 to show that there are 5 South Slavic languages:
+In this sample, the children of the *"South"* element are not included in the data, but its weight is set to 5 to show that there are 5 South Slavic languages:
 
 ```
 // create data
@@ -149,7 +149,7 @@ var chart = anychart.wordtree(data, "as-tree");
 
 #### List
 
-When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root `"oxygen"`. 
+When you set the data as a list of phrases, AnyChart automatically analyzes it and constructs a tree. For example, in the sample below a set of phrases about oxygen is passed to the chart constructor, and it creates a tree with the root *"oxygen"*. 
 
 **Note:** If necessary, you can set the [root word](#root_word) manually.
 
@@ -217,7 +217,7 @@ Please keep in mind that {api:anychart.charts.Wordtree#word}word(){api} is **cas
 
 **Note:** In tree data the root can be both a word and a word combination. Phrases and texts, however, are parsed into words, so the root is also a single word. Even if you set it manually, it still needs to be just one word for the chart to work correctly.
 
-In this sample, there is a chart based on a list of phrases about oxygen. The root word, `"liquid"`, is set explicitly – the default root would be `"oxygen"` since it is the first word in the first string. You can switch to `"oxygen"` or `"pure"` to see how the choice of the root affects the chart.
+In this sample, there is a chart based on a list of phrases about oxygen. The root word, *"liquid"*, is set explicitly – the default root would be *"oxygen"* since it is the first word in the first string. You can switch to *"oxygen"* or *"pure"* to see how the choice of the root affects the chart.
 
 ```
 // create data
@@ -361,6 +361,22 @@ chart.postfix("lines");
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+#### Tokens
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_10{sample}
+
+#### Formatting Functions
+
+```
+
+```
+
+{sample}BCT\_Word\_Tree\_11{sample}
+
 ### Interactivity
 
 The Word Tree chart is interactive by default. It comes with a built-in drilldown feature: if you click on an element that has children, you drill down to it and its children, and if you click on the parent element of the current one, you drill up a level. This behavior can be modified – use the following methods:
@@ -385,4 +401,4 @@ chart.drillUp();
 
 This sample shows how to drill down to a particular item and then drill up:
 
-{sample}BCT\_Word\_Tree\_10{sample}
+{sample}BCT\_Word\_Tree\_12{sample}
