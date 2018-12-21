@@ -366,7 +366,7 @@ To change the text of tooltips, combine the {api:anychart.charts.Wordtree#toolti
 
 The `{%value}` token returns the word, and `{%weight}` returns its weight. Also, you can always add a custom field to your data and use a custom token corresponding to it.
 
-This sample shows how to work with tokens. Along with regular tokens, a custom one is used:
+This sample shows how to work with tokens:
 
 ```
 // create data
@@ -409,7 +409,7 @@ To configure tooltips, you can use [formatting functions](../Common_Settings/Tex
 
 You can also add a custom field to your data and refer to it by using the {api:anychart.format.Context#getData}getData(){api} method.
 
-The sample below demonstrates how to work with formatting functions. Along with regular fields, a custom field *num_speakers* is used:
+The sample below demonstrates how to work with formatting functions. In the case of language groups, tooltips display the number of children (weight); in the case of languages, they show the number of native speakers – the information from the custom field *num_speakers*:
 
 ```
 // create data
