@@ -173,7 +173,7 @@ var chart = anychart.wordtree(data);
 
 #### Text
 
-Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In the following sample, it is the word `"He"`:
+Setting data as a text requires setting the root [root word](#root_word) manually by using the {api:anychart.charts.Wordtree#word}word(){api} method. Then AnyChart automatically builds a tree with the specified root. In the following sample, it is the word *"He"*:
 
 ```
 // create data
