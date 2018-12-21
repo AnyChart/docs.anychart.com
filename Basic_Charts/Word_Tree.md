@@ -121,7 +121,7 @@ When you pass the data to the chart constructor, add a second parameter – `"as
 
 The **weight** (number of children) is calculated automatically. It is shown in tooltips and affects the font size. If for some reason you do not include an item's children in the data, you can specify the weight of this item manually.
 
-In this sample, the children of the *South* element are not included in the data, but its weight is set to 5 to show that there are 5 South Slavic languages:
+In this sample, the children of the *South* element are not included in the data, but its `weight` is set to 5 to show that there are 5 South Slavic languages:
 
 ```
 // create data
