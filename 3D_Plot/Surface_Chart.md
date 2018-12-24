@@ -183,7 +183,7 @@ The sample below shows how to work with them:
 
 ### Color Range
 
-When the [color scale](#color_scale) is used, you can add the color range element to make chart more readable. It is created with the {api:anychart.charts.Surface#colorRange}colorRange(){api} method:
+When the [color scale](#color_scale) is used, you can add a color range to make chart more readable. It is created with the {api:anychart.charts.Surface#colorRange}colorRange(){api} method:
 
 ```
 // enable and configure color range
