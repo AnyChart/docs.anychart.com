@@ -3,7 +3,9 @@
 
 ## Overview
 
-Surface charts (or 3D Surface plot) are useful when you want to find the optimum combinations between two sets of data. As in a topographic map, the colors and patterns indicate the areas that are in the same range of values.
+A Surface chart (or 3D Surface plot) is a chart type used for finding the optimum combinations between two sets of data. As in a topographic map, the colors and patterns indicate the areas that are in the same range of values.
+
+This article explains how to create a basic Surface chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Word Tree's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><td>Modules</td><td>[Core](../Quick_Start/Modules#core) + [Surface](../Quick_Start/Modules#surface)</td></tr>
@@ -39,7 +41,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ## Quick Start
 
-To create a Surface chart, use the {api:anychart#surface}anychart.surface(){api} chart constructor. If you pass the data to this chart constructor, it creates a surface chart.
+To create a Surface chart, use the {api:anychart#surface}anychart.surface(){api} chart constructor. If you pass the data to this constructor, it creates a surface chart.
 
 The following sample demonstrates how a basic Surface chart is created:
 
@@ -74,15 +76,15 @@ chart.draw();
 
 ## Data
 
-There are two ways to set data to a surface chart: pass an array to the {api:anychart#surface}surface chart constructor{api} (shown in [surface chart quick start sample](#quick_start) above) or use the {api:anychart.charts.Surface#data}data(){api} method.
+There are two ways to set data to a Surface chart: pass an array to the {api:anychart#surface}anychart.surface(){api} chart constructor (see the [Quick Start](#quick_start) sample) or call the {api:anychart.charts.Surface#data}data(){api} method.
 
-AnyChart Surface Charts have no series objects and in the current version can display only one surface.
+It is possible populate the array with generated data, like in the sample below, where mathematical functions with different precision are used to create data.
 
-You can use ready to use array or populate it with the data using functions and code. The sample below shows how to populate an array using mathematical functions with different precision.
+Also, please keep in mind that AnyChart Surface charts have no series objects and in the current version can display only one surface.
 
 {sample}Surface\_Chart\_02{sample}
 
-*Note:* at the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. The chart will break down and show nothing if more points are used.
+**Note:** at the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. The chart will break down and show nothing if more points are used.
 
 ## Appearance
 
