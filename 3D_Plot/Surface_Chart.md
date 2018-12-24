@@ -80,7 +80,7 @@ There are two ways to set data to a Surface chart: pass an array to the {api:any
 
 It is possible populate the array with generated data. See the sample below, where mathematical functions with different precision are used to create data.
 
-Also, please keep in mind that AnyChart Surface charts have no series objects and in the current version can display only one surface.
+Also, please keep in mind that AnyChart Surface charts do not support multiple series: in the current version, only one surface can be displayed.
 
 {sample}Surface\_Chart\_02{sample}
 
