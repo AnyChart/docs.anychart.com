@@ -76,15 +76,15 @@ chart.draw();
 
 ## Data
 
-There are two ways to set data to a Surface chart: pass an array to the {api:anychart#surface}anychart.surface(){api} chart constructor (see the [Quick Start](#quick_start) sample) or call the {api:anychart.charts.Surface#data}data(){api} method.
+There are two ways to set data to a Surface chart: pass an array to the {api:anychart#surface}anychart.surface(){api} chart constructor, like in the [Quick Start](#quick_start) sample, or to the {api:anychart.charts.Surface#data}data(){api} method.
 
-It is possible populate the array with generated data, like in the sample below, where mathematical functions with different precision are used to create data.
+It is possible populate the array with generated data. See the sample below, where mathematical functions with different precision are used to create data.
 
 Also, please keep in mind that AnyChart Surface charts have no series objects and in the current version can display only one surface.
 
 {sample}Surface\_Chart\_02{sample}
 
-**Note:** at the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. The chart will break down and show nothing if more points are used.
+*Note:* At the moment AnyChart Surface Chart module can handle data sets of 5.000 points or less on the average PC. Adding data sets with more points leads to chart breaking down and showing nothing.
 
 ## Appearance
 
