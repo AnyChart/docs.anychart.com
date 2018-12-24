@@ -161,7 +161,7 @@ chart.zGrid().stroke(gridStroke);
 
 ### Box
 
-The box is the set of twelve lines that surrounds the surface plot. You can disable it by passing `null` to the {api:anychart.charts.Surface#box}box{api} method or set the stroke color and properties.
+A box is a set of twelve lines that surrounds the surface plot. You can disable it by passing `null` to the {api:anychart.charts.Surface#box}box{api} method or set the stroke color and properties.
 
 ```
 chart.box({color: 'lightgray', thickness: 1});
