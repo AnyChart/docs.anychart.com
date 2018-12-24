@@ -57,7 +57,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 Stick Chart is a variation of a [Column](Column_Chart), so when a Stick Chart is created it is necessary to create a Column Chart first and set the series of a Stick type.
 
-To create a Stick chart, use the {api:anychart#column}anychart.column(){api} chart constructor. 
+To create a Stick chart, use the {api:anychart#stick}anychart.stick(){api} chart constructor. 
 
 After you created a column chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
@@ -72,7 +72,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.column();
+chart = anychart.stick();
 
 // create a stick series and set the data
 var series = chart.stick(data);

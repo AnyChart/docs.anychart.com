@@ -64,7 +64,7 @@ You can also build a file that contains your license key. See the [Credits](Cred
 
 ## Bundle
 
-The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, so you should use it cautiously.
+The AnyChart Bundle build contains all [chart modules](#chart_modules) and [features](#features). It is the biggest file, use it cautiously.
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
@@ -264,6 +264,14 @@ A module for creating [Sunburst](../Basic_Charts/Sunburst_Chart) charts:
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-sunburst.min.js"></script>
 ```
 
+### Surface
+
+A module for creating [Surface](../3D_Plot/Surface_Chart) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js"></script>
+```
+
 ### Tag Cloud
 
 A module for creating [Tag Clouds](../Basic_Charts/Tag_Cloud):
@@ -294,6 +302,14 @@ A module for creating [Waterfall](../Basic_Charts/Waterfall_Chart) charts:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-waterfall.min.js"></script>
+```
+
+### Word Tree
+
+A module for creating [Word Tree](../Basic_Charts/Word_Tree) charts:
+
+```
+<script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-bundle.min.js"></script>
 ```
 
 ## Features

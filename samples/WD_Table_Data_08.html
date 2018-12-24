@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body {
@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-<button id = "addButton" onclick="addRow()">Add a Row</button>
+<button id = "addButton" onclick="addRow()">Add Row</button>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
@@ -79,7 +79,7 @@ anychart.onDocumentReady(function () {
 lastDate = new Date(2016, 1, 2);
   
 // add a new data row
-function addRow(){
+function addRow() {
   var newOpen = (Math.random() * 6) + 507;
   var newHigh = (Math.random() * 3) + 513;
   var newLow = (Math.random() * 2) + 505;
@@ -92,7 +92,7 @@ function addRow(){
                   newLow, newClose, "4 #00838f"]];
   // add new data
   dataTable.addData(newData);
-};
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="STOCK Scales 06"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-stock.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/csv-data/dji-daily-short.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="container1" class="container"></div>
+<div id="container2" class="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data table
+    var table = anychart.data.table();
+    // add data
+    table.addData([
+        ['2015-12-01', 511.53, 514.98, 505.79, 506.40],
+        ['2015-12-12', 512.53, 514.88, 505.69, 510.34],
+        ['2015-12-26', 511.83, 514.98, 505.59, 507.23],
+        ['2015-12-27', 511.22, 515.30, 505.49, 506.47],
+        ['2015-12-28', 511.53, 514.98, 505.79, 506.40],
+        ['2015-12-29', 512.53, 513.88, 505.69, 510.34],
+        ['2015-12-30', 511.83, 512.98, 502.59, 503.23],
+        ['2015-12-31', 511.22, 515.30, 505.49, 506.47]
+    ]);
+
+    // map loaded data
+    var mapping = table.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4});
+
+    // create ordinal (default) stock chart
+    var chart1 = anychart.stock();  
+    // set x scale type
+    chart1.xScale('ordinal');
+    // configure and display chart
+    chart1.title('Ordinal Time Scale');    
+    chart1.plot(0).ohlc(mapping).name('ACME Corp. Stock Prices');  
+    chart1.container('container1').draw();
+  
+    // create scatter stock chart
+    var chart2 = anychart.stock();
+    // set x scale type  
+    chart2.xScale('scatter');
+    // configure and display chart  
+    chart2.title('Scatter Time Scale');
+    chart2.plot(0).ohlc(mapping).name('ACME Corp. Stock Prices');
+    chart2.container('container2').draw();
+});
+</script>
+</body>
+</html>

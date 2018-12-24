@@ -42,7 +42,7 @@ Here is a live sample:
 DMI indicator needs seven parameters: mapping with the `"value"` field in it (required), two periods: period and a period for ADX, a smoothing mode for whilders ad three series types (for +DI, -DI and ADX series of the indicator). The following code sample demonstrates a DMI indicator with all parameters set as default.
 
 ```
-var dmi = plot.dmi(mapping, 14, 14, "true, "line", "line", "line");
+var dmi = plot.dmi(mapping, 14, 14, true, "line", "line", "line");
 ```
 
 ## Visualization
@@ -54,7 +54,7 @@ Visualization of an indicator depends on series type. It is possible to change s
 var dmi1 = plot_1.dmi(mapping);
 
 // create a DMI indicator with parameters adjusted
-var dmi2 = plot_2.dmi(mapping, 30, 30, "false", "spline", "spline", "spline");
+var dmi2 = plot_2.dmi(mapping, 30, 30, false, "spline", "spline", "spline");
 dmi2.adxSeries().stroke("red");
 dmi2.ndiSeries().stroke("navy");
 dmi2.pdiSeries().stroke("green");

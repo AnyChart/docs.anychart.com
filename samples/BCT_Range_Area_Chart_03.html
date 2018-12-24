@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="BCT Range Area Chart 01"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      ["January", 0.7, 6.1],
+      ["February", 0.6, 6.3],
+      ["March", 1.9, 8.5],
+      ["April", 3.1, 10.8],
+      ["May", 5.7, 14.4]
+    ];
+
+    // create a chart
+    var chart = anychart.area();
+
+    // create a range area series and set the data
+    var series = chart.rangeArea(data);
+
+    // set scale mode
+    chart.xScale().mode('continuous');    
+    
+    // set the chart title
+    chart.title("Range Area Chart: Scale Mode to Remove Gaps");
+
+    // set the titles of the axes
+    chart.xAxis().title("Month");
+    chart.yAxis().title("Temperature, \xb0C");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});
+</script>
+</body>
+</html>

@@ -56,7 +56,7 @@ Learn more: [Modules](../Quick_Start/Modules).
 
 ##Quick Start
 
-To create a Step Line series, use the {api:anychart.charts.Cartesian#stepLine}stepLine(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.line(){api} or any other cartesian chart constructor):
+To create a Step Line series, use the {api:anychart.charts.Cartesian#stepLine}stepLine(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.stepLine(){api} or any other cartesian chart constructor):
 
 ```
 // create data
@@ -73,7 +73,7 @@ var data = [
 ];
 
 // create a chart
-chart = anychart.line();
+chart = anychart.stepLine();
 
 // create a step line series and set the data
 var series = chart.stepLine(data);

@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body {
@@ -71,8 +71,8 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// a function for getting data
-function getData(){
+// get data
+function getData() {
   // create data
   var data = [
     {name:       "Root", children: [
@@ -120,11 +120,10 @@ function getData(){
     ]} 
   ];
   return data;
-};
+}
 
-/* a function for converting the current
-drilldown path to a string */
-function printPath(path){
+// convert the current drilldown path to a string
+function printPath(path) {
   /* go through the array of data items
   and use the get() method to obtain the "name" field */
   var text = "";
@@ -132,21 +131,21 @@ function printPath(path){
     text += path[i].get("name") + "\\";
   }
   return text;
-};
+}
     
 // drill down to a data item
-function drillToItem(){
+function drillToItem() {
   /* locate an item in the data tree
   and get it as an object */
   var item = treeData.search("name", "Item 3-4");
   // drill down to the item
   chart.drillTo(item);
-};
+}
 
 // drill up a level
-function drillUpALevel(){
+function drillUpALevel() {
   chart.drillUp();
-};
+}
 </script>
 </body>
 </html>

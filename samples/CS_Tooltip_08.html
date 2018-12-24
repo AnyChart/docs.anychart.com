@@ -5,11 +5,11 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body, #container {
@@ -26,7 +26,7 @@
 anychart.onDocumentReady(function () {
 
   // create a chart
-  var chart = anychart.financial();
+  var chart = anychart.cartesian();
 
   chart.title("Complex Tooltip Title");
 
@@ -122,7 +122,8 @@ break;
     return "Month: " + (new Date(this.x)).toLocaleDateString("en-US", {month: "long"}) + "\nIncome:$ " + this.value;
   });
 
-  var xScale = chart.xScale();
+  var xScale = anychart.scales.dateTime();
+  chart.xScale(xScale);
   xScale.minimum(Date.UTC(2010, 0, 1));
   xScale.maximum(Date.UTC(2015, 0, 1));
 

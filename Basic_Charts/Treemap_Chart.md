@@ -35,7 +35,7 @@ This article explains how to create a basic Treemap chart in AnyChart as well as
 
 ## Modules
 
-The Sunburst chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
+The Treemap chart requires adding the [Core](../Quick_Start/Modules#core) and [Treemap](../Quick_Start/Modules#treemap) modules:
 
 ```
 <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js"></script>

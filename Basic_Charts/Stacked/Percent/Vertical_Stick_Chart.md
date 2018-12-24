@@ -13,7 +13,7 @@ To build a Vertical Percent Stacked Stick Chart, create a multiple-series [Verti
 
 ```
 // create a chart
-chart = chart.bar();
+chart = chart.vertical();
 
 // enable the value stacking mode
 chart.yScale().stackMode("percent");

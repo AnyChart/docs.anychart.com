@@ -45,7 +45,7 @@ var data = [
 ];
 
 // set the chart type
-var chart = anychart.financial();
+var chart = anychart.ohlc();
 
 // set the series type 
 var series = chart.ohlc(data);

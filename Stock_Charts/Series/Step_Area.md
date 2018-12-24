@@ -74,9 +74,9 @@ Multiple series on different plots:
 
 ```  
 // set the series
-var series_total = chart.plot(0).stepLine(mapping_total);
+var series_total = chart.plot(0).stepArea(mapping_total);
 series_total.name("Total Request Number");
-var series_region = chart.plot(1).stepLine(mapping_region);
+var series_region = chart.plot(1).stepArea(mapping_region);
 series_region.name("Region Request Number");
 ```
 

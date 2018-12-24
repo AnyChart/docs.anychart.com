@@ -10,6 +10,7 @@ It is used in the following chart types:
 * [Gantt](../Gantt_Chart/Quick_Start)
 * [Treemap](../Basic_Charts/Treemap_Chart)
 * [Sunburst](../Basic_Charts/Sunburst_Chart)
+* [Word Tree](../Basic_Charts/Word_Tree)
 
 This article explains how to set tree-like data, access data items, and perform operations on data.
 
@@ -62,11 +63,11 @@ To create a chart based on tree-like data, you should organize your data either 
 **1. Creating Data Tree.** The first step is passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
 
 ```
-treeData = anychart.data.tree(data, "as-tree");
+var treeData = anychart.data.tree(data, "as-tree");
 ```
 
 ```
-treeData = anychart.data.tree(data, "as-table");
+var treeData = anychart.data.tree(data, "as-table");
 ```
 
 If your data is a CSV string, you should pass a CSV mapping object as the second parameter. Read more in the [CSV String](#csv_string) section.
@@ -151,17 +152,17 @@ var chart = anychart.treeMap(treeData);
 
 ### CSV String
 
-To set data as a **CSV string**, call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
+To set data as a **CSV string** (see also: [Data from CSV](Data_From_CSV)), call the {api:anychart.data#tree}anychart.data.tree(){api} method with the following parameters:
 
 * a CSV string
 * an object with CSV mapping
 * an object with CSV settings (optional)
 
-**Note 1:** The structure of your data should be similar to data set [as a table](#as_table): specify the hierarchy of elements by mapping the `id` and `parent` fields (the choice of other fields depends on the chart type).
+By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. 
 
-**Note 2:**  By default, AnyChart considers commas in CSV data to be column separators and line breaks to be row separators, but you can specify alternative settings in an object and pass it as the third parameter. Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of the table if needed.
+Use the `columnsSeparator` and `rowsSeparator` fields to set separators and `ignoreFirstRow` to ignore the first row of data if needed.
 
-See also: [Data from CSV](Data_From_CSV).
+**Note:** The structure of your data should be similar to data set [as a table](#as_table): specify the hierarchy of elements by mapping the `id` and `parent` fields (the choice of other fields depends on the chart type).
 
 The sample below shows how to set data as a CSV string:
 
@@ -310,39 +311,28 @@ You can add a root item to your data: call the {api:anychart.data.Tree#addChild}
 To add a child element to a data item, [access](#accessing_items) the instance of {api:anychart.data.Tree.DataItem}anychart.data.Tree.DataItem{api} and call {api:anychart.data.Tree.DataItem#addChild}addChild(){api} or {api:anychart.data.Tree.DataItem#addChild}addChildAt(){api} on it:
 
 ```
-var itemCount = 1;
-
 // add a new data item
-function addItem(){
-  var name = "New Child " + itemCount++;
-  treeData.getChildAt(0).addChild({"name": name, "value": 10000000});
-};
+treeData.getChildAt(0).addChild({"name": "New Child", "value": 10000000});
 ```
 
 {sample}WD\_Tree\_Data\_07{sample}
 
-You can also add several root items at once: use the {api:anychart.data.Tree#addData}addData(){api} method.
+You can also add several root items at once by using the {api:anychart.data.Tree#addData}addData(){api} method:
+
+```
+//create new data
+var newData = [
+  {"name": "New Node 1", "value": 10000000},
+  {"name": "New Node 2", "value": 10000000}
+];
+
+// add new data
+treeData.addData(newData, "as-tree");
+```
 
 **Note:** Only one root element can be displayed on the Treemap chart, so using this method does not change the way the Treemap looks, though the data is updated anyway.
 
 Here is a Sunburst chart with a button adding two root nodes at a time:
-
-```
-var itemCount = 1;
-
-// add new data
-function addItems(){
-  //create new data
-  var name_1 = "New Node " + itemCount++;
-  var name_2 = "New Node " + itemCount++;
-  var newData = [
-    {"name": name_1, "value": 10000000},
-    {"name": name_2, "value": 10000000}
-  ];
-  // add new data
-  treeData.addData(newData, "as-tree");
-};
-```
 
 {sample :width 500 :height 500}WD\_Tree\_Data\_08{sample}
 
@@ -352,14 +342,9 @@ To update a data field of an item, [access](#accessing_items) the instance of {a
 
 ```
 // update the first child
-function updateItem(){
-  var name = document.getElementById("inputName").value;
-  var value = document.getElementById("inputValue").value;
-  var color = document.getElementById("inputColor").value;
-  treeData.getChildAt(0).getChildAt(0).set("name", name);
-  treeData.getChildAt(0).getChildAt(0).set("value", value);
-  treeData.getChildAt(0).getChildAt(0).set("fill", color);
-};
+treeData.getChildAt(0).getChildAt(0).set("name", "New Name");
+treeData.getChildAt(0).getChildAt(0).set("value", 120000000);
+treeData.getChildAt(0).getChildAt(0).set("fill", "#00bfa5");
 ```
 
 {sample}WD\_Tree\_Data\_09{sample}
@@ -467,7 +452,7 @@ function comparisonFunction(fieldValue, comparisonValue) {
   } else {
     return 1;
   }
-};
+}
 
 // search for items
 var items = treeData.searchItems("employee", "JohnDoe", comparisonFunction);
@@ -517,16 +502,16 @@ Traversing is a process of going through all the items of a tree. You can [acces
 
 To perform a traversal, use the {api:anychart.data.Tree#getTraverser}getTraverser(){api} method to obtain the {api:anychart.data.Traverser}anychart.data.Traverser{api} object. Then call its methods:
 
-* {api:anychart.data.Traverser#advance}advance(){api} – advances the traverser to the next data item
+* {api:anychart.data.Traverser#advance}advance(){api} – advances the traverser to the next item
 * {api:anychart.data.Traverser#current}current(){api} – returns the current item
-* {api:anychart.data.Traverser#get}get(){api} – returns the current item's value in a given data field
+* {api:anychart.data.Traverser#get}get(){api} – returns the current item's value in a given field
 * {api:anychart.data.Traverser#getDepth}getDepth(){api} – returns the depth of the current item
-* {api:anychart.data.Traverser#meta}meta(){api} – sets/gets the meta value of the current item
-* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets/gets a function that determines whether an item is returned
-* {api:anychart.data.Traverser#set}set(){api} – sets the value of the current item in a given data field
+* {api:anychart.data.Traverser#meta}meta(){api} – sets / gets the meta value of the current item in a given field
+* {api:anychart.data.Traverser#nodeYieldCondition}nodeYieldCondition(){api} – sets / gets a function that determines whether an item is returned
+* {api:anychart.data.Traverser#set}set(){api} – sets the value of the current item in a given field
 * {api:anychart.data.Traverser#reset}reset(){api} – resets the traverser to its default position before the first item
-* {api:anychart.data.Traverser#toArray}toArray(){api} – returns the current traverser as an array of data items
-* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets/gets a function that determines whether the traverser goes through the children of an item
+* {api:anychart.data.Traverser#toArray}toArray(){api} – returns the current traverser as an array of items
+* {api:anychart.data.Traverser#traverseChildrenCondition}traverseChildrenCondition(){api} – sets / gets a function that determines whether the traverser goes through the children of an item
 
 In the sample below the {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#get}get(){api} methods are used to display the names of all the data items:
 
@@ -542,10 +527,10 @@ while (traverser.advance()) {
   var newElement = document.createElement("li");
   newElement.innerText = traverser.get("name");
   treeInfo.appendChild(newElement);
-};
+}
 ```
 
-{sample}WD\_Tree\_Data\_16{sample}
+{sample}WD\_Tree\_Data\_14{sample}
 
 In the next sample {api:anychart.data.Traverser#advance}advance(){api} and {api:anychart.data.Traverser#current}current(){api}, combined with the {api:anychart.charts.TreeMap#drillTo}drillTo{api} method of the Treemap, are used to drill down through all the nodes of the chart. The {api:anychart.data.Traverser#reset}reset(){api} method allows starting the traversal again when it is finished.
 
@@ -570,10 +555,10 @@ function nextItem() {
     //reset the traverser
     traverser.reset();
   }
-};
+}
 ```
 
-{sample}WD\_Tree\_Data\_17{sample}
+{sample}WD\_Tree\_Data\_15{sample}
 
 ## Events
 
@@ -611,4 +596,4 @@ treeData.listen("treeItemCreate", function (e) {
 });
 ```
 
-{sample}WD\_Tree\_Data\_18{sample}
+{sample}WD\_Tree\_Data\_16{sample}

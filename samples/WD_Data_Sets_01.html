@@ -5,11 +5,11 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body, #container {
@@ -24,26 +24,36 @@
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
+
+    // create data
+    data = [
+      ["January", 12000],
+      ["February", 15000],
+      ["March", 16000],
+      ["April", 14000],
+      ["May", 10000]
+    ];
   
-  var data = [
-    // column 0
-    28,   // row 0
-    26,   //    1
-    27,   //    2
-    "25", //    3
-    "29"  //    4
-  ];
+    // create a data set
+    var dataSet = anychart.data.set(data);
 
-  // create a data set  
-  var dataSet = anychart.data.set(data);
+    // map the data
+    var mapping = dataSet.mapAs({x: 0, value: 1});
 
-  // create a pie chart using the data set
-  var chart = anychart.pie(dataSet);
+    // create a chart
+    var chart = anychart.column();
 
-  // set container id for the chart  
-  chart.container("container");
-  // initiate chart drawing
-  chart.draw();
+    // create a series and set the data
+    var series = chart.column(mapping);
+
+    // set the chart title
+    chart.title("Data Sets: Array of Arrays");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });
 </script>
 </body>

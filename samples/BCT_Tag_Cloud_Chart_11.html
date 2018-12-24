@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-tag-cloud.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body {
@@ -39,31 +39,30 @@
 anychart.onDocumentReady(function () {
 
     // create data
-    var text =
-    "Tyger, tyger, burning bright " +
-    "In the forests of the night, " +
-    "What immortal hand or eye " +
-    "Could frame thy fearful symmetry? " +
-    "In what distant deeps or skies " +
-    "Burnt the fire of thine eyes? " +
-    "On what wings dare he aspire? " +
-    "What the hand dare seize the fire? " +
-    "And what shoulder and what art " +
-    "Could twist the sinews of thy heart? " +
-    "And, when thy heart began to beat, " +
-    "What dread hand and what dread feet? " +
-    "What the hammer? what the chain? " +
-    "In what furnace was thy brain? " +
-    "What the anvil? what dread grasp " +
-    "Dare its deadly terrors clasp? " +
-    "When the stars threw down their spears, " +
-    "And watered heaven with their tears, " +
-    "Did He smile His work to see? " +
-    "Did He who made the lamb make thee? " +
-    "Tyger, tyger, burning bright " +
-    "In the forests of the night, " +
-    "What immortal hand or eye " +
-    "Dare frame thy fearful symmetry? ";
+    var data = "Tyger, tyger, burning bright " +
+               "In the forests of the night, " +
+               "What immortal hand or eye " +
+               "Could frame thy fearful symmetry? " +
+               "In what distant deeps or skies " +
+               "Burnt the fire of thine eyes? " +
+               "On what wings dare he aspire? " +
+               "What the hand dare seize the fire? " +
+               "And what shoulder and what art " +
+               "Could twist the sinews of thy heart? " +
+               "And, when thy heart began to beat, " +
+               "What dread hand and what dread feet? " +
+               "What the hammer? what the chain? " +
+               "In what furnace was thy brain? " +
+               "What the anvil? what dread grasp " +
+               "Dare its deadly terrors clasp? " +
+               "When the stars threw down their spears, " +
+               "And watered heaven with their tears, " +
+               "Did He smile His work to see? " +
+               "Did He who made the lamb make thee? " +
+               "Tyger, tyger, burning bright " +
+               "In the forests of the night, " +
+               "What immortal hand or eye " +
+               "Dare frame thy fearful symmetry? ";
 
     // create a chart
     chart = anychart.tagCloud();
@@ -72,7 +71,7 @@ anychart.onDocumentReady(function () {
     chart.angles([0]);
 
     // set the parsing mode
-    chart.data(text, {mode: "by-word"});
+    chart.data(data, {mode: "by-word"});
 
     // set the chart title
     chart.listen("chartDraw", function () {

@@ -73,7 +73,8 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Line Chart](../Basic_Charts/Step_Line_Chart)</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td></tr>
 <tr><td>[Sunburst Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
-<tr><td>[Tag Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
+<tr><td>[Surface Chart](../Basic_Charts/Sunburst_Chart)</td></tr>
+<tr><td>[Tag Cloud](../3D_Plot/Surface_Chart)</td></tr>
 <tr><td>[Treemap Chart](../Basic_Charts/Treemap_Chart)</td></tr>
 <tr><td>[Venn Diagram](../Basic_Charts/Venn_Diagram)</td></tr>
 <tr><td>[Vertical Area Chart](../Basic_Charts/Vertical/Area_Chart)</td></tr>
@@ -99,4 +100,5 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Vertical Step Line Chart](../Basic_Charts/Vertical/Step_Line_Chart)</td></tr>
 <tr><td>[Waterfall Chart](../Basic_Charts/Waterfall_Chart)</td></tr>
 <tr><td>[Word Cloud](../Basic_Charts/Tag_Cloud)</td></tr>
+<tr><td>[Word Tree](../Basic_Charts/Word_Tree)</td></tr>
 </table>

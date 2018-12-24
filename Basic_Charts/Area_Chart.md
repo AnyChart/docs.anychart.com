@@ -151,6 +151,16 @@ series2.selected().stroke("#0066cc", 4);
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+### Scales
+
+When Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../Axes_and_Grids/Scales#ordinal) to `'continuous'`:
+
+```
+chart.xScale().mode('continuous');
+```
+
+{sample}BCT\_Area\_Chart\_03{sample}
+
 ### Stacked Area
 
 Stacked and percent stacked charts are multiple-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 

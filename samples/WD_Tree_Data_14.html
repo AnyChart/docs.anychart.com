@@ -5,12 +5,12 @@
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-treemap.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
     
-    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
     
     <style>
         html, body {
@@ -19,115 +19,83 @@
             margin: 0;
             padding: 0;
         }
-        button {
-            margin: 10px 0 10px 10px;
-        }
-        #log {
-            position: absolute;
-            width: 90%;
-            height: 20%;
-            top: 40px;
-            margin: 0 0 0 7px;
-            font-family: Courier New;
-            font-size: 12px;
-        }
         #container {
             position: absolute;
-            width: 100%;
-            height: 75%;
+            width: 80%;
+            top: 0;
             bottom: 0;
+        }
+        #treeInfo {
+            position: absolute;
+            width: 20%;
+            top: 70px;
+            right: 0;
+            bottom: 0;
+            color: #990000;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-<button id = "searchButton" onclick="searchAndRender()">Search & Render</button>
-<div id="log"></div>
+<div id="treeInfo"></div>
 <div id="container"></div>
 <script>
 anychart.onDocumentReady(function () {
 
-    // create a chart
-    chart = anychart.treeMap();
+    // create data
+    var data = [
+      {name:     "Root", children: [
+        {name:   "Parent 1", children: [
+          {name: "Child 1-1", value: 150000000},
+          {name: "Child 1-2", value:  45000000},
+          {name: "Child 1-3", value:   3200000}
+        ]},
+        {name:   "Parent 2", children: [
+          {name: "Child 2-1", value:  55000000},
+          {name: "Child 2-2", value:  10600000},
+          {name: "Child 2-3", value:   5200000}
+        ]},
+        {name:   "Parent 3", children: [
+          {name: "Child 3-1", value:  21000000},
+          {name: "Child 3-2", value:   9000000}
+        ]}  
+      ]} 
+    ];
+
+    // create a data tree
+    var treeData = anychart.data.tree(data, "as-tree");
+
+    // create a chart and set the data
+    var chart = anychart.treeMap(treeData);
+
+    // set the maximum depth of levels shown
+    chart.maxDepth(2);
+
+    // configure labels
+    chart.labels().format("{%name}");
+
+    // get the traverser of a tree
+    var traverser = treeData.getTraverser();
+
+    /* get the element displaying information about the tree */
+    var treeInfo = document.getElementById("treeInfo");
+
+    // display the names of all data items in the tree
+    while (traverser.advance()) {
+      var newElement = document.createElement("li");
+      newElement.innerText = traverser.get("name");
+      treeInfo.appendChild(newElement);
+    }
 
     // set the chart title
-    chart.title("Tree Data Model: Indexes");
-
+    chart.title("Tree Data Model: Traversing");
+    
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
 });
-
-// a comparison function
-function comparisonFunction(fieldValue, comparisonValue) {
-  return fieldValue < comparisonValue;
-};
-
-// search for items and render the chart
-function searchAndRender(){
-
-  // clear the log
-  document.getElementById("log").innerHTML = "";
-
-  var start = performance.now();
-  var generatedData = getData(50000);
-  var treeData = anychart.data.tree(generatedData, "as-tree");
-  log("Generating data and creating a tree.", start);
-
-  start = performance.now();
-  treeData.createIndexOn("value", false, comparisonFunction);
-  log("Creating an index on the 'value' field.", start);
-
-  start = performance.now();
-  var indexResult = treeData.searchItems("value", 99950, comparisonFunction);
-  log("Searching on the indexed field. Result: " +
-      indexResult.length + " items > 99950.", start);
-  
-  start = performance.now();
-  treeData.removeIndexOn("value");
-  var notIndexResult = treeData.searchItems("value", 99950, comparisonFunction);
-  log("Removing the index and searching. Result: " +
-      notIndexResult.length + " items > 99950.", start);
-  
-  start = performance.now();
-  var newChildArray = [];
-  for (var i = 1; i < notIndexResult.length; i++){
-    var newChildObj = {};
-    newChildObj.name = notIndexResult[i].get("name");
-    newChildObj.value = notIndexResult[i].get("value");
-    newChildArray.push(newChildObj);
-  };
-  var newData = [{name: "Root", children: newChildArray}];
-  chart.data(newData);
-  chart.labels().format("{%name}");
-  chart.title("Tree Data Model: Indexes");
-  log("Showing the result on a chart.", start);
-
-};
-
-// a function for generating data
-function getData(n){
-  // generate data
-  var childArray = [];
-  for (var i = 1; i < n; i++){
-    var childObj = {};
-    var randomValue = Math.floor((Math.random() * 99999) + 1);
-    childObj.name = "Child " + i;
-    childObj.value = randomValue;
-    childArray.push(childObj);
-  };
-  var data = [{name: "Root", children: childArray}];
-  return data;
-};
-
-// a function for adding text to the log
-function log(text, start) {
-  var logText = document.getElementById("log");
-  logText.innerHTML = logText.innerHTML +
-                      "[" + (performance.now() - start).toFixed(2) +
-                      " ms]: " + text + "<br>";
-};
 </script>
 </body>
 </html>

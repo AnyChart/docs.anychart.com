@@ -166,6 +166,16 @@ series2.selected().highStroke("#ff6666", 4);
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered over. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
+### Scales
+
+When Range Area chart is used with the ordinal scale and you wish to remove the gaps to the right and left of the area you need to change the [ordinal scale mode](../Axes_and_Grids/Scales#ordinal) to `'continuous'`:
+
+```
+chart.xScale().mode('continuous');
+```
+
+{sample}BCT\_Range\_Area\_Chart\_03{sample}
+
 ### Vertical Range Area
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).

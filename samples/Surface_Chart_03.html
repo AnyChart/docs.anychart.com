@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="ac:name" content="Surface Chart 03"/>
+    <meta name="ac:short-desc" content=""/>
+    <meta name="ac:desc" content=""/>
+    
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-core.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-surface.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
+    <script src="https://cdn.anychart.com/csv-data/csco-daily.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/{{branch-name}}/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4" />
+    
+    <style>
+        html, body, #container {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/javascript">
+            anychart.onDocumentReady(function() {
+                // create chart
+                chart = anychart.surface()
+                // set data
+                chart.data(generateData(hyperbolicParaboloid));
+
+                // create a linear color scale
+                var colorScale = anychart.scales.linearColor();
+                colorScale.colors(['#2bc0e4', '#eAecc6', '#dd2c00']);
+
+                // set color scale
+                chart.colorScale(colorScale);
+
+                // display chart
+                chart.container('container').draw();
+            });
+            // generate a data set from function
+            var generateData = function(z_function) {
+              var max_val = 5;
+              var step = 0.5;
+              var output = [];
+              for (var x = -max_val; x <= max_val; x += step) {
+                for (var y = -max_val; y <= max_val; y += step) {
+                  output.push([x, y, z_function(x, y)]);
+                }
+              }
+              return output;
+            };
+            // hyperbolic paraboloid function
+            var hyperbolicParaboloid = function(x, y) {
+              return Math.pow(y,2)-Math.pow(x,2);
+            };
+        </script>
+    </body>
+</html>
