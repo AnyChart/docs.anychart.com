@@ -373,7 +373,7 @@ In the default [position](#position) (`"axis"`), all markers are vertically orie
 plot.eventMarkers().stickToLeft(false);
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_11{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_12{sample}
 
 ## Individual Markers
 
