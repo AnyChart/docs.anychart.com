@@ -127,7 +127,7 @@ On the `legendItemClick` event, both series represented by the item are enabled 
 
 ```
 /* listen to the legendItemClick event,
-enable / disable the series on both charts,
+enable/disable the series on both charts,
 and configure the appearance of the legend item */
 legend.listen("legendItemClick", function(e) {
   var index = e.itemIndex;

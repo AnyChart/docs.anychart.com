@@ -352,12 +352,26 @@ By default, the direction of markers is adjusted automatically so that they over
 * `"down"`
 * `"up"`
 
+
 ```
 // set the position of event markers
 plot.eventMarkers().direction("down");
 ```
 
 In the default [position](#position) (`"axis"`), all markers are vertically oriented, no matter what direction you set. However, in other positions the direction matters. The following sample shows how changing the direction of markers affects them when the position is set to `"series"`:
+
+{sample}STOCK\_Event\_Markers\_Basics\_11{sample}
+
+## Sticking to Left
+
+* {api:anychart.core.stock.eventMarkers.Controller#stickToLeft}stickToLeft(){api}
+* `false` or `true`
+
+
+```
+// enable/disable sticking to the left value
+plot.eventMarkers().stickToLeft(false);
+```
 
 {sample}STOCK\_Event\_Markers\_Basics\_11{sample}
 
@@ -414,4 +428,4 @@ plot.eventMarkers().format(function() {
 });
 ```
 
-{sample}STOCK\_Event\_Markers\_Basics\_12{sample}
+{sample}STOCK\_Event\_Markers\_Basics\_13{sample}
