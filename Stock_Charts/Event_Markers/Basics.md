@@ -369,6 +369,26 @@ In the default [position](#position) (`"axis"`), all markers are vertically orie
 
 
 ```
+// add event markers
+plot.eventMarkers({"groups": [
+  {
+    "data": [
+      {
+        "date": "2016-01-06",
+        "description": "Event 1"
+      },
+      {
+        "date": "2016-01-09",
+        "description": "Event 2"
+      },
+      {
+        "date": "2016-01-10",
+        "description": "Event 3"
+      },
+    ]
+  }
+]});
+
 // disable sticking to the left value
 plot.eventMarkers().stickToLeft(false);
 ```

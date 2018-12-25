@@ -50,8 +50,7 @@ anychart.onDocumentReady(function () {
     ]); 
 
     // map the data
-    var mapping_1 = dataTable.mapAs({value: 1});
-    var mapping_2 = dataTable.mapAs({value: 2});
+    var mapping = dataTable.mapAs({value: 1});
 
     // create a stock chart
     chart = anychart.stock();
@@ -59,10 +58,9 @@ anychart.onDocumentReady(function () {
     // create a plot on the chart
     plot = chart.plot(0);
 
-    // create two line series
-    var series_1 = plot.line(mapping_1).name("Series 1");
-    var series_2 = plot.line(mapping_2).name("Series 2");
-
+    // create a line series
+    var series = plot.line(mapping);
+    
     // add event markers
     plot.eventMarkers({"groups": [
       {
