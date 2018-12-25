@@ -60,7 +60,7 @@ anychart.onDocumentReady(function () {
 
     // create a line series
     var series = plot.line(mapping);
-    
+
     // add event markers
     plot.eventMarkers({"groups": [
       {
@@ -94,7 +94,7 @@ anychart.onDocumentReady(function () {
     chart.draw();
 });
 
-// enable/disable sticking to the left value
+// enable/disable sticking to the left point
 function stickToLeftEnabled(enabled) {
   plot.eventMarkers().stickToLeft(enabled);
   chart.title("Event Markers: Sticking to Left (Enabled = "

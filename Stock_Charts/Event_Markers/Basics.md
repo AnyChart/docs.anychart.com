@@ -362,13 +362,40 @@ In the default [position](#position) (`"axis"`), all markers are vertically orie
 
 {sample}STOCK\_Event\_Markers\_Basics\_11{sample}
 
-## Sticking to Left
+## Sticking to Left Point
 
-* {api:anychart.core.stock.eventMarkers.Controller#stickToLeft}stickToLeft(){api}
-* `false` or `true`
-
+By default, each event marker sticks to the left closest point. You can disable or enable this mode by passing `false` or `true`  to the {api:anychart.core.stock.eventMarkers.Controller#stickToLeft}stickToLeft(){api} method: 
 
 ```
+// disable sticking to the left point
+plot.eventMarkers().stickToLeft(false);
+```
+
+In the following sample, data does not include dates the event markers are bound to, so they are displayed in the points to the left of them. When sticking to the left point is disabled, markers are shown in their actual dates:
+
+```
+// create data
+dataTable = anychart.data.table();
+dataTable.addData([
+    ["2016-01-05",  -2.0],
+    ["2016-01-07",  -9.4],
+    ["2016-01-08",  -4.5],
+    ["2016-01-11",  -3.1],
+    ["2016-01-12",  -7.9]
+]); 
+
+// map the data
+var mapping = dataTable.mapAs({value: 1});
+
+// create a stock chart
+chart = anychart.stock();
+
+// create a plot on the chart
+plot = chart.plot(0);
+
+// create a line series
+var series = plot.line(mapping);
+
 // add event markers
 plot.eventMarkers({"groups": [
   {
@@ -389,7 +416,7 @@ plot.eventMarkers({"groups": [
   }
 ]});
 
-// disable sticking to the left value
+// disable sticking to the left point
 plot.eventMarkers().stickToLeft(false);
 ```
 
