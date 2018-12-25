@@ -369,7 +369,7 @@ In the default [position](#position) (`"axis"`), all markers are vertically orie
 
 
 ```
-// enable/disable sticking to the left value
+// disable sticking to the left value
 plot.eventMarkers().stickToLeft(false);
 ```
 
