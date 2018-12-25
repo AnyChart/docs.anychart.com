@@ -382,20 +382,10 @@ dataTable.addData([
     ["2016-01-08",  -4.5],
     ["2016-01-11",  -3.1],
     ["2016-01-12",  -7.9]
-]); 
+]);
+```
 
-// map the data
-var mapping = dataTable.mapAs({value: 1});
-
-// create a stock chart
-chart = anychart.stock();
-
-// create a plot on the chart
-plot = chart.plot(0);
-
-// create a line series
-var series = plot.line(mapping);
-
+```
 // add event markers
 plot.eventMarkers({"groups": [
   {
@@ -415,9 +405,6 @@ plot.eventMarkers({"groups": [
     ]
   }
 ]});
-
-// disable sticking to the left point
-plot.eventMarkers().stickToLeft(false);
 ```
 
 {sample}STOCK\_Event\_Markers\_Basics\_12{sample}
