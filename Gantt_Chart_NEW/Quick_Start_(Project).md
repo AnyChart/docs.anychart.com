@@ -1,4 +1,4 @@
 {:index 2}
-# Project Chart: Quick Start
+# Quick Start: Project Chart
 
 {sample :height 180}GANTT\_NEW\_Project\_Quick\_Start{sample}
