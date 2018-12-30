@@ -232,7 +232,7 @@ var data = [
       },
       {
         name:   "Child 4",
-        start: Date.UTC(2018, 1, 24),
+        start: Date.UTC(2018, 1, 25),
         end: Date.UTC(2018, 2, 14)
       }
     ]
@@ -429,7 +429,7 @@ var data = [
       },
       {
         name:   "Child 4",
-        actualStart: Date.UTC(2018, 1, 24),
+        actualStart: Date.UTC(2018, 1, 25),
         actualEnd: Date.UTC(2018, 2, 14),
         employee: {firstName: "Marta", lastName: "Moe"}
       }
