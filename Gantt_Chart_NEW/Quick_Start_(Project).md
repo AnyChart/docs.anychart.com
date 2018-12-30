@@ -101,7 +101,7 @@ var data = [
     // create a chart
     var chart = anychart.ganttProject();  
     // set the data
-    chart.data(data);  
+    chart.data(treeData);  
     // set the container id
     chart.container("container");  
     // initiate drawing the chart
@@ -168,7 +168,7 @@ var data = [
         // create a chart
         var chart = anychart.ganttProject();    
         // set the data
-        chart.data(data);    
+        chart.data(treeData);    
         // set the container id
         chart.container("container");    
         // initiate drawing the chart
