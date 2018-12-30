@@ -5,6 +5,11 @@
 
 ...
 
+## Quick Start
+
+* ссылка на раздел Quick Start (Project)
+* пример
+
 ## Data
 
-## Settings (?)
+## (?)
