@@ -1,4 +1,4 @@
 {:index 3}
 # Quick Start: Resource Gantt Chart
 
-{sample :height 270}GANTT\_NEW\_Quick\_Start\_Resource{sample}
+{sample :height 250}GANTT\_NEW\_Quick\_Start\_Resource{sample}
