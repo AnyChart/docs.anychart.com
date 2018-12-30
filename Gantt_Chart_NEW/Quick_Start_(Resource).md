@@ -98,7 +98,7 @@ var data = [
 
 ## Sample
 
-{sample :height 200}GANTT\_NEW\_Quick\_Start\_Resource{sample}
+{sample :height 160}GANTT\_NEW\_Quick\_Start\_Resource{sample}
 
 ## Source Code
 
