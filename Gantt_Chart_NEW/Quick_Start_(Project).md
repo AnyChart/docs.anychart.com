@@ -59,7 +59,7 @@ var data = [
 
 ```
 <script>
-  anychart.onDocumentReady(function () {  
+  anychart.onDocumentReady(function () {    	
     // create data
     var data = [
       {
@@ -93,23 +93,17 @@ var data = [
             actualEnd: Date.UTC(2018, 3, 7)
           }
         ]
-    }];
-    
+    }];    
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");
-  
+    var treeData = anychart.data.tree(data, "as-tree");  
     // create a chart
-    var chart = anychart.ganttProject();
-  
+    var chart = anychart.ganttProject();  
     // set the data
-    chart.data(data);
-  
+    chart.data(data);  
     // set the container id
-    chart.container("container");
-  
+    chart.container("container");  
     // initiate drawing the chart
     chart.draw();
-  
     // fit items to the width of the timeline
     chart.fitAll();
   });  
@@ -132,62 +126,54 @@ var data = [
   <body>
     <div id="container"></div>
     <script>
-    anychart.onDocumentReady(function () {
-    
-      // create data
-      var data = [
-        {
-          name: "Activities",
-          actualStart: Date.UTC(2018, 0, 25),
-          actualEnd: Date.UTC(2018, 3, 7),
-          children: [
-            {
-              name: "Analysis",
-              actualStart: Date.UTC(2018, 0, 25),
-              actualEnd: Date.UTC(2018, 1, 8)
-            },
-            {
-              name: "Design",
-              actualStart: Date.UTC(2018, 1, 4),
-              actualEnd: Date.UTC(2018, 1, 24)
-            },
-            {
-              name: "Meeting",
-              actualStart: Date.UTC(2018, 1, 25),
-              actualEnd: Date.UTC(2018, 1, 25)
-            },
-            {
-              name: "Implementation",
-              actualStart: Date.UTC(2018, 1, 25),
-              actualEnd: Date.UTC(2018, 2, 14)
-            },
-            {
-              name: "Testing",
-              actualStart: Date.UTC(2018, 2, 15),
-              actualEnd: Date.UTC(2018, 3, 7)
-            }
-          ]
-      }];
-      
-      // create a data tree
-      var treeData = anychart.data.tree(data, "as-tree");
-    
-      // create a chart
-      var chart = anychart.ganttProject();
-    
-      // set the data
-      chart.data(data);
-    
-      // set the container id
-      chart.container("container");
-    
-      // initiate drawing the chart
-      chart.draw();
-    
-      // fit items to the width of the timeline
-      chart.fitAll();
-    });
-    
+      anychart.onDocumentReady(function () {    
+        // create data
+        var data = [
+          {
+            name: "Activities",
+            actualStart: Date.UTC(2018, 0, 25),
+            actualEnd: Date.UTC(2018, 3, 7),
+            children: [
+              {
+                name: "Analysis",
+                actualStart: Date.UTC(2018, 0, 25),
+                actualEnd: Date.UTC(2018, 1, 8)
+              },
+              {
+                name: "Design",
+                actualStart: Date.UTC(2018, 1, 4),
+                actualEnd: Date.UTC(2018, 1, 24)
+              },
+              {
+                name: "Meeting",
+                actualStart: Date.UTC(2018, 1, 25),
+                actualEnd: Date.UTC(2018, 1, 25)
+              },
+              {
+                name: "Implementation",
+                actualStart: Date.UTC(2018, 1, 25),
+                actualEnd: Date.UTC(2018, 2, 14)
+              },
+              {
+                name: "Testing",
+                actualStart: Date.UTC(2018, 2, 15),
+                actualEnd: Date.UTC(2018, 3, 7)
+              }
+            ]
+        }];      
+        // create a data tree
+        var treeData = anychart.data.tree(data, "as-tree");    
+        // create a chart
+        var chart = anychart.ganttProject();    
+        // set the data
+        chart.data(data);    
+        // set the container id
+        chart.container("container");    
+        // initiate drawing the chart
+        chart.draw();    
+        // fit items to the width of the timeline
+        chart.fitAll();
+      });    
     </script>
   </body>
 </html>
