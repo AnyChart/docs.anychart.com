@@ -30,7 +30,7 @@
 
 ## Sample
 
-{sample :height 250}GANTT\_NEW\_Quick\_Start\_Project{sample}
+{sample :height 230}GANTT\_NEW\_Quick\_Start\_Project{sample}
 
 ## Source Code
 
