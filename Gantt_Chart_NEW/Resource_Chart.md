@@ -12,11 +12,17 @@
 
 ## Data
 
+### Setting Data (?)
+
+* ссылка на tree data
+* имплицитное и эксплицитное задание дерева
+
 ### Data Fields (?)
 
-* data fields
-* обязательные и дополнительные поля
-* ссылка на tree data
+* перечисление всех полей
+* обязательно: id
+* обязательно: name, periods, start, end
+* дополнительно: иерархия --> id + parent / children
 
 ### Hierarchy
 

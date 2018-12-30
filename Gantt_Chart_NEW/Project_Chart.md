@@ -12,11 +12,19 @@
 
 ## Data
 
+### Setting Data (?)
+
+* ссылка на tree data
+* имплицитное и эксплицитное задание дерева
+
 ### Data Fields (?)
 
-* data fields
-* обязательные и дополнительные поля
-* ссылка на tree data
+* перечисление всех полей
+* обязательно: id + parent / children
+* обязательно: name, actualStrart, actualEnd
+* дополнительно: progressValue, progress
+* дополнительно: baselineStart, baselineEnd, baseline
+* дополнительно: connectTo, connectorType, connector
 
 ### Hierarchy
 
@@ -26,9 +34,14 @@
 
 ### Tasks
 
+* типы тасков
+* пример: Parent task 1, Normal task 1, Milestone 1 и т.д.
+
 ### Progress
 
 ### Actual / Planned
+
+* swapping
 
 ### Connectors
 

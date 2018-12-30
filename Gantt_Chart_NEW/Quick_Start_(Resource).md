@@ -44,7 +44,7 @@ var data = [
     id: "3",
     name: "Server 3",
     periods: [
-    {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+      {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
   }
 ];
 ```
@@ -77,7 +77,7 @@ var data = [
         id: "3",
         name: "Server 3",
         periods: [
-        {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+          {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
       }
     ];    
     // create a data tree
@@ -136,7 +136,7 @@ var data = [
             id: "3",
             name: "Server 3",
             periods: [
-            {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+              {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
           }
         ];
         // create a data tree
