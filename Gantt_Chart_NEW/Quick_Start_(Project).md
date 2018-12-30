@@ -130,7 +130,7 @@ var data = [
     <script src="https://cdn.anychart.com/releases/{{branch-name}}/js/anychart-gantt.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4" type="text/javascript"></script>
   </head>
   <body>
-  <div id="container"></div>
+    <div id="container"></div>
     <script>
     anychart.onDocumentReady(function () {
     
