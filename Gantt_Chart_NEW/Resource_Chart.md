@@ -20,15 +20,26 @@
 ### Data Fields (?)
 
 * перечисление всех полей
-* обязательно: id
-* обязательно: name, periods, start, end
-* дополнительно: иерархия --> id + parent / children
+* обязательно: id, name + periods, start, end
+* дополнительно: иерархия --> id, parent / children
+
+### Resources and Periods (?)
+
+* resources: id, name
+* periods: periods, start, end
+* пример?
 
 ### Hierarchy
 
 #### Tree
 
+* children
+* пример
+
 #### Table
+
+* id, parent
+* пример
 
 ## Settings
 

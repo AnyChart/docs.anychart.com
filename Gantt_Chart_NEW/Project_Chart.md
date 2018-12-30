@@ -20,8 +20,8 @@
 ### Data Fields (?)
 
 * перечисление всех полей
-* обязательно: id + parent / children
-* обязательно: name, actualStrart, actualEnd
+* обязательно: id, parent / children
+* обязательно: name + actualStrart, actualEnd
 * дополнительно: progressValue, progress
 * дополнительно: baselineStart, baselineEnd, baseline
 * дополнительно: connectTo, connectorType, connector
@@ -30,20 +30,35 @@
 
 #### Tree
 
+* children
+* пример как в quick start
+
 #### Table
+
+* id, parent
+* пример как в quick start
 
 ### Tasks
 
+* name + actualStrart, actualEnd
 * типы тасков
 * пример: Parent task 1, Normal task 1, Milestone 1 и т.д.
 
 ### Progress
 
+* progressValue, progress
+* пример
+
 ### Actual / Planned
 
+* baselineStart, baselineEnd, baseline
 * swapping
+* пример с кнопкой
 
 ### Connectors
+
+* connectTo, connectorType, connector
+* пример
 
 ## Settings
 
