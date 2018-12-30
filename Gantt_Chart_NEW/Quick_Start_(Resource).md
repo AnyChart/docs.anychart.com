@@ -24,37 +24,29 @@
 // create data
 var data = [
   {
-    name: "Activities",
-    actualStart: Date.UTC(2018, 0, 25),
-    actualEnd: Date.UTC(2018, 3, 7),
-    children: [
-      {
-        name: "Analysis",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 1, 8)
-      },
-      {
-        name: "Design",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 24)
-      },
-      {
-        name: "Meeting",
-        actualStart: Date.UTC(2018, 1, 25),
-        actualEnd: Date.UTC(2018, 1, 25)
-      },
-      {
-        name: "Implementation",
-        actualStart: Date.UTC(2018, 1, 25),
-        actualEnd: Date.UTC(2018, 2, 14)
-      },
-      {
-        name: "Testing",
-        actualStart: Date.UTC(2018, 2, 15),
-        actualEnd: Date.UTC(2018, 3, 7)
-      }
+    id: "1",
+    name: "Server 1",
+    periods: [
+      {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+      {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
+      {id:"1_3", start: "2018-03-03", end: "2018-03-17"},
     ]
-}];
+  },
+  {
+    id: "2",
+    name: "Server 2",
+    periods: [
+      {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+      {id: "2_2", start: "2018-02-16", end: "2018-03-20"},
+    ]
+  },
+  {
+    id: "3",
+    name: "Server 3",
+    periods: [
+    {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+  }
+];
 ```
 
 ## Chart
@@ -65,41 +57,33 @@ var data = [
     // create data
     var data = [
       {
-        name: "Activities",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 3, 7),
-        children: [
-          {
-            name: "Analysis",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 1, 8)
-          },
-          {
-            name: "Design",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 24)
-          },
-          {
-            name: "Meeting",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 1, 25)
-          },
-          {
-            name: "Implementation",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 14)
-          },
-          {
-            name: "Testing",
-            actualStart: Date.UTC(2018, 2, 15),
-            actualEnd: Date.UTC(2018, 3, 7)
-          }
+        id: "1",
+        name: "Server 1",
+        periods: [
+          {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+          {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
+          {id:"1_3", start: "2018-03-03", end: "2018-03-17"},
         ]
-    }];    
+      },
+      {
+        id: "2",
+        name: "Server 2",
+        periods: [
+          {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+          {id: "2_2", start: "2018-02-16", end: "2018-03-20"},
+        ]
+      },
+      {
+        id: "3",
+        name: "Server 3",
+        periods: [
+        {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+      }
+    ];    
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree");  
+    var treeData = anychart.data.tree(data, "as-table");  
     // create a chart
-    var chart = anychart.ganttProject();  
+    var chart = anychart.ganttResource();  
     // set the data
     chart.data(treeData);  
     // set the container id
@@ -114,7 +98,7 @@ var data = [
 
 ## Sample
 
-{sample :height 250}GANTT\_NEW\_Quick\_Start\_Resource{sample}
+{sample :height 200}GANTT\_NEW\_Quick\_Start\_Resource{sample}
 
 ## Source Code
 
@@ -132,41 +116,33 @@ var data = [
         // create data
         var data = [
           {
-            name: "Activities",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 3, 7),
-            children: [
-              {
-                name: "Analysis",
-                actualStart: Date.UTC(2018, 0, 25),
-                actualEnd: Date.UTC(2018, 1, 8)
-              },
-              {
-                name: "Design",
-                actualStart: Date.UTC(2018, 1, 4),
-                actualEnd: Date.UTC(2018, 1, 24)
-              },
-              {
-                name: "Meeting",
-                actualStart: Date.UTC(2018, 1, 25),
-                actualEnd: Date.UTC(2018, 1, 25)
-              },
-              {
-                name: "Implementation",
-                actualStart: Date.UTC(2018, 1, 25),
-                actualEnd: Date.UTC(2018, 2, 14)
-              },
-              {
-                name: "Testing",
-                actualStart: Date.UTC(2018, 2, 15),
-                actualEnd: Date.UTC(2018, 3, 7)
-              }
+            id: "1",
+            name: "Server 1",
+            periods: [
+              {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+              {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
+              {id:"1_3", start: "2018-03-03", end: "2018-03-17"},
             ]
-        }];      
+          },
+          {
+            id: "2",
+            name: "Server 2",
+            periods: [
+              {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+              {id: "2_2", start: "2018-02-16", end: "2018-03-20"},
+            ]
+          },
+          {
+            id: "3",
+            name: "Server 3",
+            periods: [
+            {id: "3_1", start: "2018-01-13", end: "2018-03-05"}]
+          }
+        ];
         // create a data tree
-        var treeData = anychart.data.tree(data, "as-tree");    
+        var treeData = anychart.data.tree(data, "as-table");    
         // create a chart
-        var chart = anychart.ganttProject();    
+        var chart = anychart.ganttResource();    
         // set the data
         chart.data(data);    
         // set the container id
