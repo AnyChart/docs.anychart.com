@@ -13,7 +13,9 @@
 ## Container
 
 ```
-<div id="container"></div>
+<body>
+  <div id="container"></div>
+<body>
 ```
 
 ## Data
