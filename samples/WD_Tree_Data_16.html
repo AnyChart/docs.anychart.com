@@ -85,6 +85,7 @@ anychart.onDocumentReady(function () {
 
     // set the chart title
     chart.title("Tree Data Model: Events\n\n");
+    chart.title().padding(10);
 
     // update the chart title when an item is updated
     treeData.listen("treeItemUpdate", function (e) {
