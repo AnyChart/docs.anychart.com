@@ -29,44 +29,46 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        name: "Root",
+        name: "Activities",
         start: Date.UTC(2018, 0, 25),
         end: Date.UTC(2018, 2, 14),
-        child_items: [
+        children: [
           {
-            name: "Child 1",
-            start: Date.UTC(2018, 0, 25),
-            end: Date.UTC(2018, 1, 3)
+            name: "Analysis",
+            actualStart: Date.UTC(2018, 0, 25),
+            actualEnd: Date.UTC(2018, 1, 3)
           },
           {
-            name: "Child 2",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 4)
+            name: "Design",
+            actualStart: Date.UTC(2018, 1, 4),
+            actualEnd: Date.UTC(2018, 1, 24)
           },
           {
-            name: "Child 3",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 24)
+            name: "Implementation",
+            actualStart: Date.UTC(2018, 1, 24),
+            actualEnd: Date.UTC(2018, 2, 14)
           },
           {
-            name: "Child 4",
-            start: Date.UTC(2018, 1, 24),
-            end: Date.UTC(2018, 2, 14)
+            name: "Milestone",
+            actualStart: Date.UTC(2018, 2, 14),
+            actualEnd: Date.UTC(2018, 2, 14)
+          },
+          {
+            name: "Testing",
+            actualStart: Date.UTC(2018, 2, 14),
+            actualEnd: Date.UTC(2018, 3, 7)
           }
         ]
     }];
     
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
-
-    // map the data
-    var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     var chart = anychart.ganttProject();
 
     // set the data
-    chart.data(mapping);
+    chart.data(data);
 
     // set the chart title
     chart.title("Tree Data Model: Mapping");
