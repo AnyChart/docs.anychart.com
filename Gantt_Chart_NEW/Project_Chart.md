@@ -58,7 +58,7 @@
 * progressValue, progress
 * пример
 
-{sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
+{sample :height 200}GANTT\_NEW\_Project\_Chart\_05{sample}
 
 ### Actual / Planned
 
@@ -73,7 +73,7 @@
 * connectTo, connectorType, connector
 * пример
 
-{sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ## Settings
 
