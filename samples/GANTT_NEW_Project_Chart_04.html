@@ -29,35 +29,41 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        name: "Activities",
+        name: "Parent Task",
         actualStart: "2018-01-25",
-        actualEnd: "2018-04-07",
+        actualEnd: "2018-03-14",
         children: [
           {
-            name: "Analysis",
+            name: "Task",
             actualStart: "2018-01-25",
             actualEnd: "2018-02-08"
           },
           {
-            name: "Design",
+            name: "Task",
             actualStart: "2018-02-04",
             actualEnd: "2018-02-24"
           },
           {
-            name: "Meeting",
+            name: "Milestone",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25"
           },
           {
-            name: "Implementation",
+            name: "Parent Task",
             actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
-          },
-          {
-            name: "Testing",
-            actualStart: "2018-03-15",
-            actualEnd: "2018-04-07"
-          }
+            actualEnd: "2018-03-14",
+            children: [
+              {
+                name: "Task",
+                actualStart: "2018-02-25",
+                actualEnd: "2018-03-01"
+              },
+              {
+                name: "Task",
+                actualStart: "2018-03-02",
+                actualEnd: "2018-03-14"
+              }
+          ]}
       ]}
     ];
     

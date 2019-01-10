@@ -51,7 +51,7 @@
 * типы тасков
 * пример: Parent Task 1, Task 1, Milestone 1 и т.д. + родитель в родителе
 
-{sample :height 220}GANTT\_NEW\_Project\_Chart\_04{sample}
+{sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
 
 ### Progress
 

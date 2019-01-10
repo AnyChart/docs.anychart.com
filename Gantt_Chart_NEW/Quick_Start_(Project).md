@@ -24,7 +24,7 @@
 // create data
 var data = [
   {
-    name: "Activities",
+    name: "Development",
     actualStart: "2018-01-25",
     actualEnd: "2018-04-07",
     children: [
@@ -65,7 +65,7 @@ var data = [
     // create data
     var data = [
       {
-        name: "Activities",
+        name: "Development",
         actualStart: "2018-01-25",
         actualEnd: "2018-04-07",
         children: [
@@ -132,7 +132,7 @@ var data = [
         // create data
         var data = [
           {
-            name: "Activities",
+            name: "Development",
             actualStart: "2018-01-25",
             actualEnd: "2018-04-07",
             children: [
