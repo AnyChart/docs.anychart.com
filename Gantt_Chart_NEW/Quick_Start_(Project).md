@@ -25,33 +25,33 @@
 var data = [
   {
     name: "Activities",
-    actualStart: Date.UTC(2018, 0, 25),
-    actualEnd: Date.UTC(2018, 3, 7),
+    actualStart: "2018-01-25",
+    actualEnd: "2018-04-07",
     children: [
       {
         name: "Analysis",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 1, 8)
+        actualStart: "2018-01-25",
+        actualEnd: "2018-02-08"
       },
       {
         name: "Design",
-        actualStart: Date.UTC(2018, 1, 4),
-        actualEnd: Date.UTC(2018, 1, 24)
+        actualStart: "2018-02-04",
+        actualEnd: "2018-02-24"
       },
       {
         name: "Meeting",
-        actualStart: Date.UTC(2018, 1, 25),
-        actualEnd: Date.UTC(2018, 1, 25)
+        actualStart: "2018-02-25",
+        actualEnd: "2018-02-25"
       },
       {
         name: "Implementation",
-        actualStart: Date.UTC(2018, 1, 25),
-        actualEnd: Date.UTC(2018, 2, 14)
+        actualStart: "2018-02-25",
+        actualEnd: "2018-03-14"
       },
       {
         name: "Testing",
-        actualStart: Date.UTC(2018, 2, 15),
-        actualEnd: Date.UTC(2018, 3, 7)
+        actualStart: "2018-03-15",
+        actualEnd: "2018-04-07"
       }
     ]
 }];
@@ -66,33 +66,33 @@ var data = [
     var data = [
       {
         name: "Activities",
-        actualStart: Date.UTC(2018, 0, 25),
-        actualEnd: Date.UTC(2018, 3, 7),
+        actualStart: "2018-01-25",
+        actualEnd: "2018-04-07",
         children: [
           {
             name: "Analysis",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 1, 8)
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
           },
           {
             name: "Design",
-            actualStart: Date.UTC(2018, 1, 4),
-            actualEnd: Date.UTC(2018, 1, 24)
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-24"
           },
           {
             name: "Meeting",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 1, 25)
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
           },
           {
             name: "Implementation",
-            actualStart: Date.UTC(2018, 1, 25),
-            actualEnd: Date.UTC(2018, 2, 14)
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14"
           },
           {
             name: "Testing",
-            actualStart: Date.UTC(2018, 2, 15),
-            actualEnd: Date.UTC(2018, 3, 7)
+            actualStart: "2018-03-15",
+            actualEnd: "2018-04-07"
           }
         ]
     }];    
@@ -133,33 +133,33 @@ var data = [
         var data = [
           {
             name: "Activities",
-            actualStart: Date.UTC(2018, 0, 25),
-            actualEnd: Date.UTC(2018, 3, 7),
+            actualStart: "2018-01-25",
+            actualEnd: "2018-04-07",
             children: [
               {
                 name: "Analysis",
-                actualStart: Date.UTC(2018, 0, 25),
-                actualEnd: Date.UTC(2018, 1, 8)
+                actualStart: "2018-01-25",
+                actualEnd: "2018-02-08"
               },
               {
                 name: "Design",
-                actualStart: Date.UTC(2018, 1, 4),
-                actualEnd: Date.UTC(2018, 1, 24)
+                actualStart: "2018-02-04",
+                actualEnd: "2018-02-24"
               },
               {
                 name: "Meeting",
-                actualStart: Date.UTC(2018, 1, 25),
-                actualEnd: Date.UTC(2018, 1, 25)
+                actualStart: "2018-02-25",
+                actualEnd: "2018-02-25"
               },
               {
                 name: "Implementation",
-                actualStart: Date.UTC(2018, 1, 25),
-                actualEnd: Date.UTC(2018, 2, 14)
+                actualStart: "2018-02-25",
+                actualEnd: "2018-03-14"
               },
               {
                 name: "Testing",
-                actualStart: Date.UTC(2018, 2, 15),
-                actualEnd: Date.UTC(2018, 3, 7)
+                actualStart: "2018-03-15",
+                actualEnd: "2018-04-07"
               }
             ]
         }];      

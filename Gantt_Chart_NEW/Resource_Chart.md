@@ -12,22 +12,23 @@
 
 ## Data
 
-### Setting Data (?)
+### Setting Data
 
 * ссылка на tree data
 * имплицитное и эксплицитное задание дерева
 
-### Data Fields (?)
+### Data Fields
 
 * перечисление всех полей
 * обязательно: id, name + periods, start, end
 * дополнительно: иерархия --> id, parent / children
+* примечание про ремаппинг + ссылка на Data: Mapping
 
-### Resources and Periods (?)
+### Resources and Periods
 
 * resources: id, name
 * periods: periods, start, end
-* пример?
+* пример
 
 ### Hierarchy
 

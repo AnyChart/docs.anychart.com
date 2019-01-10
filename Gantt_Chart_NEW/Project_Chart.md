@@ -12,12 +12,12 @@
 
 ## Data
 
-### Setting Data (?)
+### Setting Data
 
 * ссылка на tree data
 * имплицитное и эксплицитное задание дерева
 
-### Data Fields (?)
+### Data Fields
 
 * перечисление всех полей
 * обязательно: id, parent / children
@@ -25,6 +25,7 @@
 * дополнительно: progressValue, progress
 * дополнительно: baselineStart, baselineEnd, baseline
 * дополнительно: connectTo, connectorType, connector
+* примечание про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
 
