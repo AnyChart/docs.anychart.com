@@ -36,14 +36,14 @@
 * children
 * пример с 2+ корнями
 
-{sample :height 300}GANTT\_NEW\_Project\_Chart\_02{sample}
+{sample :height 280}GANTT\_NEW\_Project\_Chart\_02{sample}
 
 #### Table
 
 * id, parent
 * пример с 2+ корнями
 
-{sample :height 300}GANTT\_NEW\_Project\_Chart\_03{sample}
+{sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
 
 ### Tasks
 
