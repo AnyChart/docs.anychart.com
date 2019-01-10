@@ -235,8 +235,8 @@ var data = [
         start: Date.UTC(2018, 1, 25),
         end: Date.UTC(2018, 2, 14)
       }
-    ]
-}];
+  ]}
+];
 
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
@@ -433,8 +433,8 @@ var data = [
         actualEnd: Date.UTC(2018, 2, 14),
         employee: {firstName: "Marta", lastName: "Moe"}
       }
-    ]
-}];
+  ]}
+];
 
 // create a data tree
 treeData = anychart.data.tree(data, "as-tree");

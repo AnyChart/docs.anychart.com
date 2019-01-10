@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
-    <meta name="ac:name" content="WD Tree Data 05"/>
+    <meta name="ac:name" content=""/>
     <meta name="ac:short-desc" content=""/>
     <meta name="ac:desc" content=""/>
     
@@ -29,48 +29,62 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        name: "Root",
-        start: Date.UTC(2018, 0, 25),
-        end: Date.UTC(2018, 2, 14),
-        child_items: [
+        name: "Development",
+        actualStart: "2018-01-25",
+        actualEnd: "2018-03-14",
+        children: [
           {
-            name: "Child 1",
-            start: Date.UTC(2018, 0, 25),
-            end: Date.UTC(2018, 1, 3)
+            name: "Analysis",
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08"
           },
           {
-            name: "Child 2",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 4)
+            name: "Design",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-02-24"
           },
           {
-            name: "Child 3",
-            start: Date.UTC(2018, 1, 4),
-            end: Date.UTC(2018, 1, 24)
+            name: "Meeting",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
           },
           {
-            name: "Child 4",
-            start: Date.UTC(2018, 1, 25),
-            end: Date.UTC(2018, 2, 14)
+            name: "Implementation",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14"
+          },
+          {
+            name: "Testing",
+            actualStart: "2018-03-15",
+            actualEnd: "2018-04-07"
+          }
+      ]},
+      { 
+        name: "PR Campaign",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-05-01",
+        children: [
+          {
+            name: "Planning",
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-25"
+          },
+          {
+            name: "Promoting",
+            actualStart: "2018-03-26",
+            actualEnd: "2018-05-01"
           }
       ]}
     ];
     
     // create a data tree
-    var treeData = anychart.data.tree(data, "as-tree", null, {children: "child_items"});
-
-    // map the data
-    var mapping = treeData.mapAs({actualStart: "start", actualEnd: "end"});
+    var treeData = anychart.data.tree(data, "as-tree");
 
     // create a chart
     var chart = anychart.ganttProject();
 
     // set the data
-    chart.data(mapping);
-
-    // set the chart title
-    chart.title("Tree Data Model: Mapping");
-    chart.title().padding(10);
+    chart.data(treeData);
 
     // set the container id
     chart.container("container");

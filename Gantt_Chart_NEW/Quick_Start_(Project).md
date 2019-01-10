@@ -53,8 +53,8 @@ var data = [
         actualStart: "2018-03-15",
         actualEnd: "2018-04-07"
       }
-    ]
-}];
+  ]}
+];
 ```
 
 ## Chart
@@ -94,8 +94,8 @@ var data = [
             actualStart: "2018-03-15",
             actualEnd: "2018-04-07"
           }
-        ]
-    }];    
+      ]}
+    ];
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");  
     // create a chart
@@ -161,8 +161,8 @@ var data = [
                 actualStart: "2018-03-15",
                 actualEnd: "2018-04-07"
               }
-            ]
-        }];      
+          ]}
+        ];
         // create a data tree
         var treeData = anychart.data.tree(data, "as-tree");    
         // create a chart

@@ -10,6 +10,8 @@
 * ссылка на раздел Quick Start (Project)
 * пример
 
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_01{sample}
+
 ## Data
 
 ### Setting Data
@@ -32,23 +34,31 @@
 #### Tree
 
 * children
-* пример как в quick start
+* пример с 2+ корнями
+
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_02{sample}
 
 #### Table
 
 * id, parent
-* пример как в quick start
+* пример с 2+ корнями
+
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_03{sample}
 
 ### Tasks
 
 * name + actualStrart, actualEnd
 * типы тасков
-* пример: Parent task 1, Normal task 1, Milestone 1 и т.д.
+* пример: Parent Task 1, Task 1, Milestone 1 и т.д. + родитель в родителе
+
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_04{sample}
 
 ### Progress
 
 * progressValue, progress
 * пример
+
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
 
 ### Actual / Planned
 
@@ -56,10 +66,14 @@
 * swapping
 * пример с кнопкой
 
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_06{sample}
+
 ### Connectors
 
 * connectTo, connectorType, connector
 * пример
+
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ## Settings
 
