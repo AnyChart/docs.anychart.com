@@ -28,7 +28,8 @@
 * дополнительно: progressValue, progress
 * дополнительно: baselineStart, baselineEnd, baseline
 * дополнительно: connectTo, connectorType, connector
-* примечание про ремаппинг + ссылка на Data: Mapping
+* примеч про rowHeight и collapsed + ссылки на разделы Basic Settings
+* примеч про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
 
@@ -69,7 +70,7 @@
 * примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
 * ссылка на статью Elements: Progress Bars
 
-{sample :height 200}GANTT\_NEW\_Project\_Chart\_06{sample}
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_06{sample}
 
 ### Connectors
 
