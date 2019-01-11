@@ -34,14 +34,12 @@
 #### Tree
 
 * children
-* пример с 2+ корнями
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_02{sample}
 
 #### Table
 
 * id, parent
-* пример с 2+ корнями
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
 
@@ -49,22 +47,24 @@
 
 * name + actualStrart, actualEnd
 * типы тасков
-* пример: Parent Task 1, Task 1, Milestone 1 и т.д. + родитель в родителе
+* ссылка на статью Elements: Tasks
 
 {sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
 
-### Progress
+### Progress Bars
 
 * progressValue, progress
-* пример
+* примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
+* ссылка на статью Elements: Progress Bars
 
 {sample :height 200}GANTT\_NEW\_Project\_Chart\_05{sample}
 
-### Actual / Planned
+### Baselines (Planned)
 
 * baselineStart, baselineEnd, baseline
 * swapping
 * пример с кнопкой
+* ссылка на статью Elements: Baselines
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_06{sample}
 
@@ -72,6 +72,7 @@
 
 * connectTo, connectorType, connector
 * пример
+* ссылка на статью Elements: Connectors
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
