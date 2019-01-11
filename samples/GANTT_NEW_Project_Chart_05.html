@@ -29,34 +29,47 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        name: "Analysis",
+        name: "Development",
+        baselineStart: "2018-01-25",
+        baselineEnd: "2018-04-07",
         actualStart: "2018-01-25",
-        actualEnd: "2018-02-08",
-        progressValue: "75%"
-      },
-      {
-        name: "Design",
-        actualStart: "2018-02-04",
-        actualEnd: "2018-02-24",
-        progressValue: "100%"
-      },
-      {
-        name: "Meeting",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-02-25"
-      },
-      {
-        name: "Implementation",
-        actualStart: "2018-02-25",
-        actualEnd: "2018-03-14",
-        progressValue: "60%",
-        progress: {fill: "red"}
-      },
-      {
-        name: "Testing",
-        actualStart: "2018-03-15",
-        actualEnd: "2018-04-07"
-      }
+        actualEnd: "2018-04-20",
+        baseline: {fill: "#dd2c00"},
+        children: [
+          {
+            name: "Analysis",
+            baselineStart: "2018-01-25",
+            baselineEnd: "2018-02-08",
+            actualStart: "2018-01-27",
+            actualEnd: "2018-02-08"
+          },
+          {
+            name: "Design",
+            baselineStart: "2018-02-04",
+            baselineEnd: "2018-02-24",
+            actualStart: "2018-02-04",
+            actualEnd: "2018-03-02"
+          },
+          {
+            name: "Meeting",
+            actualStart: "2018-03-02",
+            actualEnd: "2018-03-02"
+          },
+          {
+            name: "Implementation",
+            baselineStart: "2018-02-25",
+            baselineEnd: "2018-03-14",
+            actualStart: "2018-03-02",
+            actualEnd: "2018-03-24"
+          },
+          {
+            name: "Testing",
+            baselineStart: "2018-03-15",
+            baselineEnd: "2018-04-07",
+            actualStart: "2018-03-25",
+            actualEnd: "2018-04-20"
+          }
+      ]}
     ];
     
     // create a data tree

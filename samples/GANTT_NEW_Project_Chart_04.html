@@ -32,6 +32,7 @@ anychart.onDocumentReady(function () {
         name: "Parent Task",
         actualStart: "2018-01-25",
         actualEnd: "2018-03-14",
+        actual: {fill: "#dd2c00"},
         children: [
           {
             name: "Task",
@@ -72,6 +73,8 @@ anychart.onDocumentReady(function () {
 
     // create a chart
     var chart = anychart.ganttProject();
+
+    console.log(chart.getTimeline().milestones());
 
     // set the data
     chart.data(treeData);

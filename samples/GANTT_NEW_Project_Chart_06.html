@@ -30,48 +30,41 @@ anychart.onDocumentReady(function () {
     var data = [
       {
         name: "Development",
-        baselineStart: "2018-01-25",
-        baselineEnd: "2018-04-07",
         actualStart: "2018-01-25",
-        actualEnd: "2018-04-20",
-        baseline: {fill: "red"},
+        actualEnd: "2018-04-07",
+        progress: {fill: "#dd2c00"},
         children: [
           {
             name: "Analysis",
-            baselineStart: "2018-01-25",
-            baselineEnd: "2018-02-08",
-            actualStart: "2018-01-27",
-            actualEnd: "2018-02-08"
+            actualStart: "2018-01-25",
+            actualEnd: "2018-02-08",
+            progressValue: "75%"
           },
           {
             name: "Design",
-            baselineStart: "2018-02-04",
-            baselineEnd: "2018-02-24",
             actualStart: "2018-02-04",
-            actualEnd: "2018-03-02"
+            actualEnd: "2018-02-24",
+            progressValue: "100%"
           },
           {
             name: "Meeting",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-02"
+            actualStart: "2018-02-25",
+            actualEnd: "2018-02-25"
           },
           {
             name: "Implementation",
-            baselineStart: "2018-02-25",
-            baselineEnd: "2018-03-14",
-            actualStart: "2018-03-02",
-            actualEnd: "2018-03-24"
+            actualStart: "2018-02-25",
+            actualEnd: "2018-03-14",
+            progressValue: "60%"
           },
           {
             name: "Testing",
-            baselineStart: "2018-03-15",
-            baselineEnd: "2018-04-07",
-            actualStart: "2018-03-25",
-            actualEnd: "2018-04-20"
+            actualStart: "2018-03-15",
+            actualEnd: "2018-04-07"
           }
       ]}
     ];
-    
+
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");
 
