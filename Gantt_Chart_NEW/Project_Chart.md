@@ -64,8 +64,6 @@
 
 * baselineStart, baselineEnd, baseline
 * есть у обычных и родительских тасков, см. Tasks
-* swapping
-* пример с кнопкой
 * ссылка на статью Elements: Baselines
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
