@@ -86,8 +86,8 @@
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
-### Markers (?)
+### (?) Markers
 
 * ссылка на Milestones
 
-## Other Settings
+## (?) Other Settings

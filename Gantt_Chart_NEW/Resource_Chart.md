@@ -49,6 +49,6 @@
 * periods: periods, start, end
 * пример
 
-### Markers (?)
+### (?) Markers
 
-## Other Settings
+## (?) Other Settings
