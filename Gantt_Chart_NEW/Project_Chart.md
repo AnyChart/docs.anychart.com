@@ -21,14 +21,16 @@
 
 ### Data Fields
 
-* перечисление всех полей
+* перечисление всех полей со ссылками на подразделы
 * обязательно: id, parent / children
 * обязательно: name + actualStrart, actualEnd
 * дополнительно: actual
 * дополнительно: progressValue, progress
 * дополнительно: baselineStart, baselineEnd, baseline
 * дополнительно: connectTo, connectorType, connector
-* примеч про rowHeight и collapsed + ссылки на разделы Basic Settings
+* дополнительно: markers
+* дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
+* дополнительно: collapsed + ссылка на Basic Settings: Navigation
 * примеч про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
