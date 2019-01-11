@@ -22,16 +22,10 @@
 * перечисление всех полей со ссылками на подразделы
 * обязательно: id, name + periods, start, end
 * дополнительно: иерархия --> id, parent / children
-* дополнительно: markers
-* дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
-* дополнительно: collapsed + ссылка на Basic Settings: Navigation
+* (?) дополнительно: markers
+* (?) дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
+* (?) дополнительно: collapsed + ссылка на Basic Settings: Navigation
 * примечание про ремаппинг + ссылка на Data: Mapping
-
-### Resources and Periods
-
-* resources: id, name
-* periods: periods, start, end
-* пример
 
 ### Hierarchy
 
@@ -45,9 +39,16 @@
 * id, parent
 * пример
 
+## Elements
+
+* ссылка на Elements
+
+### Resources and Periods
+
+* resources: id, name
+* periods: periods, start, end
+* пример
+
 ### Markers (?)
 
-## Settings
-
-* ссылки на другие разделы
-* особенности настроек
+## Other Settings

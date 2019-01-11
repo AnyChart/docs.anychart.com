@@ -28,9 +28,9 @@
 * дополнительно: progressValue, progress
 * дополнительно: baselineStart, baselineEnd, baseline
 * дополнительно: connectTo, connectorType, connector
-* дополнительно: markers
-* дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
-* дополнительно: collapsed + ссылка на Basic Settings: Navigation
+* (?) дополнительно: markers
+* (?) дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
+* (?) дополнительно: collapsed + ссылка на Basic Settings: Navigation
 * примеч про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
@@ -46,6 +46,10 @@
 * id, parent
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
+
+## Elements
+
+* ссылка на Elements
 
 ### Tasks (Actual)
 
@@ -86,7 +90,4 @@
 
 * ссылка на Milestones
 
-## Settings
-
-* ссылки на другие разделы
-* особенности настроек
+## Other Settings
