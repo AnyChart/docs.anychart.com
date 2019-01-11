@@ -56,7 +56,7 @@
 * name + actualStrart, actualEnd, actual
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
 * ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
-* ссылка на Markers
+* ссылка на Elements: Markers
 
 {sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
 
@@ -84,8 +84,9 @@
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
-### (?) Markers
+### (?) Milestones
 
-* ссылка на Milestones
+* ссылка на Tasks (Actual)
+* ссылка на Elements: Markers
 
 ## (?) Other Settings
