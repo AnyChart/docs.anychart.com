@@ -22,8 +22,8 @@
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
-* обязательно: `id`, `parent` / `children`
-* обязательно: `name` + `actualStrart`, `actualEnd`
+* обязательно: `children` / `id`, `parent`
+* обязательно: `name`, `actualStrart`, `actualEnd`
 * дополнительно: `actual`
 * дополнительно: `progressValue`, `progress`
 * дополнительно: `baselineStart`, `baselineEnd`, `baseline`
@@ -50,10 +50,11 @@
 ## Elements
 
 * ссылка на Elements
+* ссылка на Timeline (elements shown on the timeline...)
 
 ### Tasks (Actual)
 
-* `name` + `actualStrart`, `actualEnd`, `actual`
+* `name`, `actualStrart`, `actualEnd` + `actual`
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
 * ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
 * ссылка на Elements: Markers
@@ -62,7 +63,7 @@
 
 ### Baselines (Planned)
 
-* `baselineStart`, `baselineEnd`, `baseline`
+* `baselineStart`, `baselineEnd` + `baseline`
 * есть у обычных и родительских тасков, см. Tasks
 * ссылка на статью Elements: Baselines
 
@@ -78,7 +79,7 @@
 
 ### Connectors
 
-* `connectTo`, `connectorType`, `connector`
+* `connectTo`, `connectorType` + `connector`
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
 * http://api.anychart.stg/develop/anychart.enums.ConnectorType
 * нужно поля `id` независимо от того, дерево или таблица (ссылки)

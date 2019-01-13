@@ -22,7 +22,7 @@
 
 * перечисление всех полей со ссылками на подразделы
 * обязательно: `id`, `name` + `periods`, `start`, `end`
-* дополнительно: иерархия --> `id`, `parent` / `children`
+* дополнительно: иерархия --> `children` / `parent`
 * (?) дополнительно: `markers`
 * (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
 * (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
@@ -38,18 +38,18 @@
 
 #### Table
 
-* `id`, `parent`
+* `parent`
 
 {sample :height 200}GANTT\_NEW\_Resource\_Chart\_03{sample}
 
 ## Elements
 
 * ссылка на Elements
+* ссылка на Timeline (elements shown on the timeline...)
 
 ### Periods
 
-* resources: `id`, `name`
-* periods: `periods`, `start`, `end`
+* `periods`, `start`, `end`
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
