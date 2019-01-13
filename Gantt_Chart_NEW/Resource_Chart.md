@@ -51,6 +51,7 @@
 
 * `periods`, `start`, `end`
 * Each resource, defined by the `name` and `id` data fields (ссылка), includes a period or periods, defined by `periods`, `start`, and `end`.
+* (?) Periods are shown on the timeline, while resources are just logical elements represented only as names on the data grid.
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
