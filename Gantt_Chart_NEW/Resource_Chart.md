@@ -34,19 +34,19 @@
 
 * `children`
 
-{sample :height 160}GANTT\_NEW\_Resource\_Chart\_02{sample}
+{sample :height 220}GANTT\_NEW\_Resource\_Chart\_02{sample}
 
 #### Table
 
 * `id`, `parent`
 
-{sample :height 160}GANTT\_NEW\_Resource\_Chart\_03{sample}
+{sample :height 220}GANTT\_NEW\_Resource\_Chart\_03{sample}
 
 ## Elements
 
 * ссылка на Elements
 
-### Resources and Periods
+### Periods
 
 * resources: `id`, `name`
 * periods: `periods`, `start`, `end`
