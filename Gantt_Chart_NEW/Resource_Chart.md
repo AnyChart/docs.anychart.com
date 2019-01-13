@@ -8,7 +8,8 @@
 ## Quick Start
 
 * ссылка на раздел Quick Start (Resource)
-* пример
+
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_01{sample}
 
 ## Data
 
@@ -32,12 +33,14 @@
 #### Tree
 
 * `children`
-* пример
+
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_02{sample}
 
 #### Table
 
 * `id`, `parent`
-* пример
+
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_03{sample}
 
 ## Elements
 
@@ -47,7 +50,8 @@
 
 * resources: `id`, `name`
 * periods: `periods`, `start`, `end`
-* пример
+
+{sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
 ### (?) Markers
 

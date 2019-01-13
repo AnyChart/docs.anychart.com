@@ -27,7 +27,7 @@ var data = [
     id: "1",
     name: "Server 1",
     periods: [
-      {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+      {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
       {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
       {id:"1_3", start: "2018-03-03", end: "2018-03-17"}
   ]},
@@ -42,7 +42,7 @@ var data = [
     id: "3",
     name: "Server 3",
     periods: [
-      {id: "3_1", start: "2018-01-01", end: "2018-04-01"}
+      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ]}
 ];
 ```
@@ -58,7 +58,7 @@ var data = [
         id: "1",
         name: "Server 1",
         periods: [
-          {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+          {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
           {id:"1_3", start: "2018-03-03", end: "2018-03-17"}
       ]},
@@ -73,9 +73,9 @@ var data = [
         id: "3",
         name: "Server 3",
         periods: [
-          {id: "3_1", start: "2018-01-01", end: "2018-04-01"}
+          {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
       ]}
-    ];  
+    ]; 
     // create a data tree
     var treeData = anychart.data.tree(data, "as-table");  
     // create a chart
@@ -115,7 +115,7 @@ var data = [
             id: "1",
             name: "Server 1",
             periods: [
-              {id:"1_1", start: "2018-01-01", end: "2018-01-25"},
+              {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
               {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
               {id:"1_3", start: "2018-03-03", end: "2018-03-17"}
           ]},
@@ -130,7 +130,7 @@ var data = [
             id: "3",
             name: "Server 3",
             periods: [
-              {id: "3_1", start: "2018-01-01", end: "2018-04-01"}
+              {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
           ]}
         ];
         // create a data tree
