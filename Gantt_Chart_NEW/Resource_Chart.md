@@ -20,23 +20,23 @@
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
-* обязательно: id, name + periods, start, end
-* дополнительно: иерархия --> id, parent / children
-* (?) дополнительно: markers
-* (?) дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
-* (?) дополнительно: collapsed + ссылка на Basic Settings: Navigation
+* обязательно: `id`, `name` + `periods`, `start`, `end`
+* дополнительно: иерархия --> `id`, `parent` / `children`
+* (?) дополнительно: `markers`
+* (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
+* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
 * примечание про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
 
 #### Tree
 
-* children
+* `children`
 * пример
 
 #### Table
 
-* id, parent
+* `id`, `parent`
 * пример
 
 ## Elements
@@ -45,8 +45,8 @@
 
 ### Resources and Periods
 
-* resources: id, name
-* periods: periods, start, end
+* resources: `id`, `name`
+* periods: `periods`, `start`, `end`
 * пример
 
 ### (?) Markers
