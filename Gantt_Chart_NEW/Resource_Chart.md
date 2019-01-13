@@ -34,13 +34,13 @@
 
 * `children`
 
-{sample :height 220}GANTT\_NEW\_Resource\_Chart\_02{sample}
+{sample :height 200}GANTT\_NEW\_Resource\_Chart\_02{sample}
 
 #### Table
 
 * `id`, `parent`
 
-{sample :height 220}GANTT\_NEW\_Resource\_Chart\_03{sample}
+{sample :height 200}GANTT\_NEW\_Resource\_Chart\_03{sample}
 
 ## Elements
 
