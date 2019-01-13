@@ -79,10 +79,11 @@
 ### Connectors
 
 * connectTo, connectorType, connector
-* пример
+* http://api.anychart.stg/develop/anychart.enums.ConnectorType
+* нужно поля id независимо от того, дерево или таблица (ссылки)
 * ссылка на статью Elements: Connectors
 
-{sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
+{sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ### (?) Milestones
 

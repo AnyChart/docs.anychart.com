@@ -29,36 +29,43 @@ anychart.onDocumentReady(function () {
     // create data
     var data = [
       {
-        name: "Development",
+        id: 1,
+        name: "Task 1",
         actualStart: "2018-01-25",
-        actualEnd: "2018-04-07",
-        children: [
-          {
-            name: "Analysis",
-            actualStart: "2018-01-25",
-            actualEnd: "2018-02-08"
-          },
-          {
-            name: "Design",
-            actualStart: "2018-02-04",
-            actualEnd: "2018-02-24"
-          },
-          {
-            name: "Meeting",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-02-25"
-          },
-          {
-            name: "Implementation",
-            actualStart: "2018-02-25",
-            actualEnd: "2018-03-14"
-          },
-          {
-            name: "Testing",
-            actualStart: "2018-03-15",
-            actualEnd: "2018-04-07"
-          }
-      ]}
+        actualEnd: "2018-02-08",
+        connectorType: "start-start",
+        connectTo: 3
+      },
+      {
+        id: 2,
+        name: "Task 2",
+        actualStart: "2018-02-09",
+        actualEnd: "2018-02-24",
+        connectorType: "start-finish",
+        connectTo: 1
+      },
+      {
+        id: 3,
+        name: "Task 3",
+        actualStart: "2018-01-27",
+        actualEnd: "2018-02-10",
+        connectorType: "finish-start",
+        connectTo: 4
+      },
+      {
+        id: 4,
+        name: "Task 4",
+        actualStart: "2018-02-11",
+        actualEnd: "2018-02-21",
+        connectorType: "finish-finish",
+        connectTo: 5
+      },
+      {
+        id: 5,
+        name: "Task 5",
+        actualStart: "2018-02-15",
+        actualEnd: "2018-02-25"
+      }
     ];
 
     // create a data tree
