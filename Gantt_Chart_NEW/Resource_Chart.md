@@ -25,7 +25,7 @@
 * дополнительно: иерархия --> `children` / `parent`
 * (?) дополнительно: `markers`
 * (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
-* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
+* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation и Hierarchy
 * примечание про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
