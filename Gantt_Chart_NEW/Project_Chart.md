@@ -79,6 +79,7 @@
 ### Connectors
 
 * connectTo, connectorType, connector
+* start-start, start-finish, finish-start, finish-finish
 * http://api.anychart.stg/develop/anychart.enums.ConnectorType
 * нужно поля id независимо от того, дерево или таблица (ссылки)
 * ссылка на статью Elements: Connectors
