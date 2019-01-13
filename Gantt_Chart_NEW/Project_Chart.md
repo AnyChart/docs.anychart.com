@@ -22,28 +22,28 @@
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
-* обязательно: id, parent / children
-* обязательно: name + actualStrart, actualEnd
-* дополнительно: actual
-* дополнительно: progressValue, progress
-* дополнительно: baselineStart, baselineEnd, baseline
-* дополнительно: connectTo, connectorType, connector
-* (?) дополнительно: markers
-* (?) дополнительно: rowHeight + ссылка на Basic Settings: Header / Row Height
-* (?) дополнительно: collapsed + ссылка на Basic Settings: Navigation
+* обязательно: `id`, `parent` / `children`
+* обязательно: `name` + `actualStrart`, `actualEnd`
+* дополнительно: `actual`
+* дополнительно: `progressValue`, `progress`
+* дополнительно: `baselineStart`, `baselineEnd`, `baseline`
+* дополнительно: `connectTo`, `connectorType`, `connector`
+* (?) дополнительно: `markers`
+* (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
+* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
 * примеч про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy
 
 #### Tree
 
-* children
+* `children`
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_02{sample}
 
 #### Table
 
-* id, parent
+* `id`, `parent`
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
 
@@ -53,7 +53,7 @@
 
 ### Tasks (Actual)
 
-* name + actualStrart, actualEnd, actual
+* `name` + `actualStrart`, `actualEnd`, `actual`
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
 * ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
 * ссылка на Elements: Markers
@@ -62,7 +62,7 @@
 
 ### Baselines (Planned)
 
-* baselineStart, baselineEnd, baseline
+* `baselineStart`, `baselineEnd`, `baseline`
 * есть у обычных и родительских тасков, см. Tasks
 * ссылка на статью Elements: Baselines
 
@@ -70,7 +70,7 @@
 
 ### Progress Bars
 
-* progressValue, progress
+* `progressValue`, `progress`
 * примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
 * ссылка на статью Elements: Progress Bars
 
@@ -78,10 +78,10 @@
 
 ### Connectors
 
-* connectTo, connectorType, connector
-* start-start, start-finish, finish-start, finish-finish
+* `connectTo`, `connectorType`, `connector`
+* `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
 * http://api.anychart.stg/develop/anychart.enums.ConnectorType
-* нужно поля id независимо от того, дерево или таблица (ссылки)
+* нужно поля `id` независимо от того, дерево или таблица (ссылки)
 * ссылка на статью Elements: Connectors
 
 {sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
