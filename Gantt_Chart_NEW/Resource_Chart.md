@@ -67,7 +67,7 @@ You can also use optional fields:
 ### Periods
 
 * `periods`, `start`, `end`
-* Each resource, defined by the `name` and `id` data fields, includes a period or periods, defined by `periods`, `id`, `start`, and `end`.
+* Each resource includes a **period** or periods, defined by `periods`, `id`, `start`, and `end`.
 * While resources are represented only as labels on the data grid, periods are elements shown on the timeline...
 * ссылки: Data fields, Data Grid, Timeline
 
