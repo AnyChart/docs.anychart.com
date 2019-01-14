@@ -28,11 +28,7 @@ You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent task
-
-* перечисление всех полей со ссылками на подразделы
-* обязательно: `id`, `name`
-* обязательно: `periods`, `start`, `end`
+* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent resource
 
 ... написать про ремаппинг + ссылка на Data: Mapping
 
