@@ -15,15 +15,26 @@
 
 ### Data Fields
 
+To create a Resource chart, use the following data fields:
+
+* `name` to set the names of resources
+* `id` to set the unique identifiers of resources
+* `periods` to set [periods](#periods)
+* `id` to set the unique identifiers of [periods](#periods)
+* `start` to set the start dates of [periods](#periods)
+* `end` to set teh end dates of [periods](#periods)
+
+You can also use optional fields:
+
+* `children` / `parent` to set the [hierarchy](#hierarchy)
+* `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
+* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent task
+
 * перечисление всех полей со ссылками на подразделы
 * обязательно: `id`, `name`
 * обязательно: `periods`, `start`, `end`
-* дополнительно: иерархия --> `children` / `parent`
-* дополнительно: `markers`
-* дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
-* дополнительно: `collapsed` + ссылка на Basic Settings: Navigation и Hierarchy
-* примечание про ремаппинг + ссылка на Data: Mapping
-* примечание: id не обязателен если дерево, но это плохая практика
+
+... написать про ремаппинг + ссылка на Data: Mapping
 
 ### Setting Data
 
