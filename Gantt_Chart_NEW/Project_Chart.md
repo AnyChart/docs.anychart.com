@@ -15,7 +15,7 @@
 
 ### Data Fields
 
-The Project chart requires setting [tasks](#tasks_\(actual\). Use the following data fields:
+The Project chart requires setting [tasks](#tasks_\(actual\)). Use the following data fields:
 
 * `name` to set names
 * `id` to set unique identifiers
