@@ -3,7 +3,8 @@
 
 ## Overview
 
-...
+* главный элемент - таск, отображается на таймлайне
+* ссылки: Timeline, Tasks
 
 ## Quick Start
 
@@ -54,7 +55,7 @@ You can also use optional fields:
 
 #### Table
 
-* `id`, `parent`
+* `parent`
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
 

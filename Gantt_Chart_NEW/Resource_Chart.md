@@ -3,7 +3,8 @@
 
 ## Overview
 
-...
+* главный элемент (на таймлайне) - периоды, сгруппированы по ресурсам (на датагриде)
+* ссылки: Data Grid, Timeline, Elements, Periods
 
 ## Quick Start
 
@@ -15,14 +16,17 @@
 
 ### Data Fields
 
-To create a Resource chart, use the following data fields:
+The Resource chart requires setting resources. Use the following data fields:
 
-* `name` to set the names of resources
-* `id` to set the unique identifiers of resources
-* `periods` to set [periods](#periods)
-* `id` to set the unique identifiers of [periods](#periods)
-* `start` to set the start dates of [periods](#periods)
-* `end` to set teh end dates of [periods](#periods)
+* `name` to set names
+* `id` to set unique identifiers
+
+All resources except for parent ones (see [Hierarchy](#hierarchy)) should include [periods](#periods). Use these fields:
+
+* `periods` to add an array of periods
+* `id` to set unique identifiers
+* `start` to set start dates
+* `end` to set end dates
 
 You can also use optional fields:
 
@@ -34,13 +38,16 @@ You can also use optional fields:
 
 ### Setting Data
 
-* ссылка на tree data
+* ссылка на Tree Data
 * имплицитное и эксплицитное задание дерева
 * ссылка на Quick Start - пример без иерархии
 * если иерархии нет, технически это множественные корни
 * если иерархии нет, неважно, как дерево задаешь данные или как таблицу
 
 ### Hierarchy
+
+* для родительских ресурсов можно не задавать периоды
+* ссылка: Data Grid
 
 #### Tree
 
@@ -62,8 +69,9 @@ You can also use optional fields:
 ### Periods
 
 * `periods`, `start`, `end`
-* (?) Each resource, defined by the `name` and `id` data fields (ссылка), includes a period or periods, defined by `periods`, `id`, `start`, and `end`.
-* (?) While resources are just logical elements represented only as labels on the data grid, periods are visual elements shown on the timeline... (ссылки?)
+* Each resource, defined by the `name` and `id` data fields, includes a period or periods, defined by `periods`, `id`, `start`, and `end`.
+* While resources are represented only as labels on the data grid, periods are elements shown on the timeline...
+* ссылки: Data fields, Data Grid, Timeline
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
