@@ -25,7 +25,7 @@
 var data = [
   {
     id: "1",
-    name: "Server 1",
+    name: "Resource 1",
     periods: [
       {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
       {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
@@ -33,14 +33,14 @@ var data = [
   ]},
   {
     id: "2",
-    name: "Server 2",
+    name: "Resource 2",
     periods: [
       {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
       {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
   ]},
   {
     id: "3",
-    name: "Server 3",
+    name: "Resource 3",
     periods: [
       {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ]}
@@ -56,7 +56,7 @@ var data = [
     var data = [
       {
         id: "1",
-        name: "Server 1",
+        name: "Resource 1",
         periods: [
           {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
           {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
@@ -64,18 +64,18 @@ var data = [
       ]},
       {
         id: "2",
-        name: "Server 2",
+        name: "Resource 2",
         periods: [
           {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
           {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
       ]},
       {
         id: "3",
-        name: "Server 3",
+        name: "Resource 3",
         periods: [
           {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
       ]}
-    ]; 
+    ];
     // create a data tree
     var treeData = anychart.data.tree(data, "as-table");  
     // create a chart
@@ -113,7 +113,7 @@ var data = [
         var data = [
           {
             id: "1",
-            name: "Server 1",
+            name: "Resource 1",
             periods: [
               {id:"1_1", start: "2018-01-02", end: "2018-01-25"},
               {id:"1_2", start: "2018-01-28", end: "2018-02-22"},
@@ -121,14 +121,14 @@ var data = [
           ]},
           {
             id: "2",
-            name: "Server 2",
+            name: "Resource 2",
             periods: [
               {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
               {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
           ]},
           {
             id: "3",
-            name: "Server 3",
+            name: "Resource 3",
             periods: [
               {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
           ]}
