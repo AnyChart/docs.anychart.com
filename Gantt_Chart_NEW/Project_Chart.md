@@ -3,8 +3,7 @@
 
 ## Overview
 
-* главный элемент - таск, отображается на таймлайне
-* ссылки: Timeline, Tasks
+* ссылки: Tasks, Hierarchy
 
 ## Quick Start
 
@@ -62,7 +61,7 @@ You can also use optional fields:
 ## Elements
 
 * ссылка на Elements
-* ссылка на Timeline (elements shown on the timeline...)
+* ссылка на Timeline
 
 ### Tasks (Actual)
 
@@ -70,6 +69,7 @@ You can also use optional fields:
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
 * ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
 * ссылка на Elements: Markers
+* ссылка на Hierarchy
 
 {sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
 

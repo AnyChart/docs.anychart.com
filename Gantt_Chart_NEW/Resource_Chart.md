@@ -3,8 +3,7 @@
 
 ## Overview
 
-* главный элемент (на таймлайне) - периоды, сгруппированы по ресурсам (на датагриде)
-* ссылки: Data Grid, Timeline, Elements, Periods
+* ссылки: Periods, Hierarchy
 
 ## Quick Start
 
@@ -47,7 +46,6 @@ You can also use optional fields:
 ### Hierarchy
 
 * для родительских ресурсов можно не задавать периоды
-* ссылка: Data Grid
 
 #### Tree
 
@@ -64,7 +62,7 @@ You can also use optional fields:
 ## Elements
 
 * ссылка на Elements
-* ссылка на Timeline (elements shown on the timeline...)
+* ссылка на Timeline
 
 ### Periods
 
