@@ -25,10 +25,10 @@ The Project chart requires setting [tasks](#tasks_\(actual\)). Use the following
 You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `actual` to configure [tasks](#tasks_\(actual\))
-* `progressValue` and `progress` to set and configure [progress bars](#progress_bars)
-* `baselineStart`, `baselineEnd`, and `baseline` to set and configure [baselines](#baselines_\(planned\))
-* `connectTo`, `connectorType`, and `connector` to set and configure [connectors](#connectors)
+* `actual` to add optional [task](#tasks_\(actual\)) settings
+* `progressValue` and `progress` to add and configure [progress bars](#progress_bars)
+* `baselineStart`, `baselineEnd`, and `baseline` to add and configure [baselines](#baselines_\(planned\))
+* `connectTo`, `connectorType`, and `connector` to ass and configure [connectors](#connectors)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent task
