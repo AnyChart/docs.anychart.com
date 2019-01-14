@@ -61,8 +61,7 @@ You can also use optional fields:
 
 ## Elements
 
-* ссылка на Elements
-* ссылка на Timeline
+* ссылки: Elements, Timeline
 
 ### Periods
 
