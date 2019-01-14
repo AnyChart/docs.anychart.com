@@ -16,7 +16,8 @@
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
-* обязательно: `id`, `name` + `periods`, `start`, `end`
+* обязательно: `id`, `name`
+* обязательно: `periods`, `start`, `end`
 * дополнительно: иерархия --> `children` / `parent`
 * дополнительно: `markers`
 * дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
