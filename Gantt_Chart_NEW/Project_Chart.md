@@ -15,18 +15,25 @@
 
 ### Data Fields
 
-* перечисление всех полей со ссылками на подразделы
-* обязательно: `name`, `id`, `actualStrart`, `actualEnd`
-* дополнительно: иерархия --> `children` / `parent`
-* дополнительно: `actual`
-* дополнительно: `progressValue`, `progress`
-* дополнительно: `baselineStart`, `baselineEnd`, `baseline`
-* дополнительно: `connectTo`, `connectorType`, `connector`
-* дополнительно: `markers`
-* дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
-* дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
-* примечание про ремаппинг + ссылка на Data: Mapping
-* примечание: id не обязателен если дерево, но это плохая практика
+The Project chart requires the following data fields, which set [tasks](#tasks):
+
+* `name` to set names
+* `id` to set unique identifiers
+* `actualStrart` to set the start date
+* `actualEnd` to set the end date
+
+You can also use optional fields:
+
+* `children` / `parent` to set the [hierarchy](#hierarchy)
+* `actual` to configure [tasks](#tasks)
+* `progressValue` and `progress` to set and configure [progress bars](#progress_bars)
+* `baselineStart`, `baselineEnd`, and `baseline` to set and configure [baselines](#baselines)
+* `connectTo`, `connectorType`, and `connector` to set and configure [connectors](#connectors)
+* `markers` to add [markers](#milestones)
+* `rowHeight` to set the [row height](Basic_Settings/Header_and_Row_Height)
+* `collapsed` to [expand or collapse](#Basic_Settings/Navigation) a parent task
+
+... написать про ремаппинг + ссылка на Data: Mapping
 
 ### Setting Data
 
