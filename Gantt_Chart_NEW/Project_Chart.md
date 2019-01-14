@@ -15,23 +15,23 @@
 
 ### Data Fields
 
-The Project chart requires the following data fields, which set [tasks](#tasks):
+The Project chart requires setting [tasks](#tasks_\(actual\). Use the following data fields:
 
 * `name` to set names
 * `id` to set unique identifiers
-* `actualStrart` to set the start date
-* `actualEnd` to set the end date
+* `actualStrart` to set start dates
+* `actualEnd` to set end dates
 
 You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `actual` to configure [tasks](#tasks)
+* `actual` to configure [tasks](#tasks_\(actual\))
 * `progressValue` and `progress` to set and configure [progress bars](#progress_bars)
-* `baselineStart`, `baselineEnd`, and `baseline` to set and configure [baselines](#baselines)
+* `baselineStart`, `baselineEnd`, and `baseline` to set and configure [baselines](#baselines_\(planned\))
 * `connectTo`, `connectorType`, and `connector` to set and configure [connectors](#connectors)
-* `markers` to add [markers](#milestones)
-* `rowHeight` to set the [row height](Basic_Settings/Header_and_Row_Height)
-* `collapsed` to [expand or collapse](#Basic_Settings/Navigation) a parent task
+* `markers` to add [markers](#milestones_and_markers)
+* `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
+* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent task
 
 ... написать про ремаппинг + ссылка на Data: Mapping
 
@@ -97,7 +97,7 @@ You can also use optional fields:
 
 {sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
 
-### (?) Milestones
+### Milestones and Markers
 
 * ссылка на Tasks (Actual)
 * ссылка на Elements: Markers

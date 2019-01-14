@@ -60,6 +60,6 @@
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
-### (?) Markers
+### Markers
 
 ## (?) Other Settings
