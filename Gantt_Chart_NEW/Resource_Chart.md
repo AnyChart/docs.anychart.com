@@ -17,15 +17,18 @@
 
 * ссылка на tree data
 * имплицитное и эксплицитное задание дерева
+* ссылка на Quick Start - пример без иерархии
+* если иерархии нет, технически это множественные корни
+* если иерархии нет, неважно, как дерево задаешь данные или как таблицу
 
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
 * обязательно: `id`, `name` + `periods`, `start`, `end`
 * дополнительно: иерархия --> `children` / `parent`
-* (?) дополнительно: `markers`
-* (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
-* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation и Hierarchy
+* дополнительно: `markers`
+* дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
+* дополнительно: `collapsed` + ссылка на Basic Settings: Navigation и Hierarchy
 * примечание про ремаппинг + ссылка на Data: Mapping
 
 ### Hierarchy

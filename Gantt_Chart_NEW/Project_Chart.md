@@ -8,7 +8,6 @@
 ## Quick Start
 
 * ссылка на раздел Quick Start (Project)
-* пример
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_01{sample}
 
@@ -18,22 +17,28 @@
 
 * ссылка на tree data
 * имплицитное и эксплицитное задание дерева
+* ссылка на Connectors - пример без иерархии
+* если иерархии нет, технически это множественные корни
+* если иерархии нет, неважно, как дерево задаешь данные или как таблицу
 
 ### Data Fields
 
 * перечисление всех полей со ссылками на подразделы
-* обязательно: `children` / `id`, `parent`
-* обязательно: `name`, `actualStrart`, `actualEnd`
+* обязательно: `name`, `id`, `actualStrart`, `actualEnd`
+* дополнительно: иерархия --> `children` / `parent`
 * дополнительно: `actual`
 * дополнительно: `progressValue`, `progress`
 * дополнительно: `baselineStart`, `baselineEnd`, `baseline`
 * дополнительно: `connectTo`, `connectorType`, `connector`
-* (?) дополнительно: `markers`
-* (?) дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
-* (?) дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
+* дополнительно: `markers`
+* дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
+* дополнительно: `collapsed` + ссылка на Basic Settings: Navigation
 * примеч про ремаппинг + ссылка на Data: Mapping
+* примеч: id не обязателен, но это плохая практика
 
 ### Hierarchy
+
+* multiple roots
 
 #### Tree
 
@@ -82,7 +87,6 @@
 * `connectTo`, `connectorType` + `connector`
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
 * http://api.anychart.stg/develop/anychart.enums.ConnectorType
-* нужно поля `id` независимо от того, дерево или таблица (ссылки)
 * ссылка на статью Elements: Connectors
 
 {sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
