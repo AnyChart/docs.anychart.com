@@ -96,7 +96,7 @@ You can also use optional fields:
 * http://api.anychart.stg/develop/anychart.enums.ConnectorType
 * ссылка на статью Elements: Connectors
 
-{sample :height 200}GANTT\_NEW\_Project\_Chart\_07{sample}
+{sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ### Milestones and Markers
 
