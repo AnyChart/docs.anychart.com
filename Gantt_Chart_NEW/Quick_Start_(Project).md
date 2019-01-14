@@ -24,31 +24,37 @@
 // create data
 var data = [
   {
+    id: "1",
     name: "Development",
     actualStart: "2018-01-25",
     actualEnd: "2018-04-07",
     children: [
       {
+        id: "1_1",
         name: "Analysis",
         actualStart: "2018-01-25",
         actualEnd: "2018-02-08"
       },
       {
+        id: "1_2",
         name: "Design",
         actualStart: "2018-02-04",
         actualEnd: "2018-02-24"
       },
       {
+        id: "1_3",
         name: "Meeting",
         actualStart: "2018-02-25",
         actualEnd: "2018-02-25"
       },
       {
+        id: "1_4",
         name: "Implementation",
         actualStart: "2018-02-25",
         actualEnd: "2018-03-14"
       },
       {
+        id: "1_5",
         name: "Testing",
         actualStart: "2018-03-15",
         actualEnd: "2018-04-07"
@@ -65,31 +71,37 @@ var data = [
     // create data
     var data = [
       {
+        id: "1",
         name: "Development",
         actualStart: "2018-01-25",
         actualEnd: "2018-04-07",
         children: [
           {
+            id: "1_1",
             name: "Analysis",
             actualStart: "2018-01-25",
             actualEnd: "2018-02-08"
           },
           {
+            id: "1_2",
             name: "Design",
             actualStart: "2018-02-04",
             actualEnd: "2018-02-24"
           },
           {
+            id: "1_3",
             name: "Meeting",
             actualStart: "2018-02-25",
             actualEnd: "2018-02-25"
           },
           {
+            id: "1_4",
             name: "Implementation",
             actualStart: "2018-02-25",
             actualEnd: "2018-03-14"
           },
           {
+            id: "1_5",
             name: "Testing",
             actualStart: "2018-03-15",
             actualEnd: "2018-04-07"
@@ -132,31 +144,37 @@ var data = [
         // create data
         var data = [
           {
+            id: "1",
             name: "Development",
             actualStart: "2018-01-25",
             actualEnd: "2018-04-07",
             children: [
               {
+                id: "1_1",
                 name: "Analysis",
                 actualStart: "2018-01-25",
                 actualEnd: "2018-02-08"
               },
               {
+                id: "1_2",
                 name: "Design",
                 actualStart: "2018-02-04",
                 actualEnd: "2018-02-24"
               },
               {
+                id: "1_3",
                 name: "Meeting",
                 actualStart: "2018-02-25",
                 actualEnd: "2018-02-25"
               },
               {
+                id: "1_4",
                 name: "Implementation",
                 actualStart: "2018-02-25",
                 actualEnd: "2018-03-14"
               },
               {
+                id: "1_5",
                 name: "Testing",
                 actualStart: "2018-03-15",
                 actualEnd: "2018-04-07"

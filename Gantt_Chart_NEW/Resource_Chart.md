@@ -30,6 +30,7 @@
 * дополнительно: `rowHeight` + ссылка на Basic Settings: Header / Row Height
 * дополнительно: `collapsed` + ссылка на Basic Settings: Navigation и Hierarchy
 * примечание про ремаппинг + ссылка на Data: Mapping
+* примечание: id не обязателен если дерево, но это плохая практика
 
 ### Hierarchy
 
@@ -53,7 +54,7 @@
 ### Periods
 
 * `periods`, `start`, `end`
-* (?) Each resource, defined by the `name` and `id` data fields (ссылка), includes a period or periods, defined by `periods`, `start`, and `end`.
+* (?) Each resource, defined by the `name` and `id` data fields (ссылка), includes a period or periods, defined by `periods`, `id`, `start`, and `end`.
 * (?) While resources are just logical elements represented only as labels on the data grid, periods are visual elements shown on the timeline... (ссылки?)
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
