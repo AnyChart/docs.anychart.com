@@ -69,7 +69,7 @@ You can also use optional fields:
 * `periods`, `start`, `end`
 * Each resource includes a **period** or periods, defined by `periods`, `id`, `start`, and `end`.
 * While resources are represented only as labels on the data grid, periods are elements shown on the timeline...
-* ссылки: Data fields, Data Grid, Timeline
+* ссылки: Data fields, Data Grid
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
