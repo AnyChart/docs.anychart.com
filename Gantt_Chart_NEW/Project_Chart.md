@@ -31,7 +31,7 @@ You can also use optional fields:
 * `connectTo`, `connectorType`, and `connector` to ass and configure [connectors](#connectors)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent task
+* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
 ... написать про ремаппинг + ссылка на Data: Mapping
 
