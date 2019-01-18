@@ -47,13 +47,13 @@ You can also use optional fields:
 
 * для родительских ресурсов можно не задавать периоды
 
-#### Tree
+#### As Tree
 
 * `children`
 
 {sample :height 200}GANTT\_NEW\_Resource\_Chart\_02{sample}
 
-#### Table
+#### As Table
 
 * `parent`
 

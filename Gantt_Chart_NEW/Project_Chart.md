@@ -33,26 +33,26 @@ You can also use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
-... написать про ремаппинг + ссылка на Data: Mapping
+... написать про ремаппинг + ссылка [Data: Mapping](Data#mapping)
 
 ### Setting Data
 
-* ссылка на tree data
 * имплицитное и эксплицитное задание дерева
 * если иерархии нет, технически это множественные корни
-* если иерархии нет, неважно, как дерево задаешь данные или как таблицу
+* если иерархии нет, неважно, как задаются данные, [as tree](#as_tree) or [as table](#as_table)
+* [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 
 ### Hierarchy
 
 * multiple roots
 
-#### Tree
+#### As Tree
 
 * `children`
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_02{sample}
 
-#### Table
+#### As Table
 
 * `parent`
 
