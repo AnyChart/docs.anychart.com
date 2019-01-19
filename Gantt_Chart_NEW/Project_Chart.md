@@ -115,6 +115,8 @@ var treeData = anychart.data.tree(data, "as-tree");
 var treeData = anychart.data.tree(data, "as-table");
 ```
 
+If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots), and both parameters can be used.
+
 **2. Creating Chart.** Then create a Project chart by using the {api:anychart#ganttProject}anychart.ganttProject{api} chart constructor:
 
 ```
@@ -128,8 +130,6 @@ chart.data(treeData);
 ```
 
 You can as well skip the first step and pass your data to the directly to the {api:anychart.charts.Gantt#data}data(){api} method, also with the `"as-tree"` or `"as-table"` parameter. In this case the data tree is created implicitly.
-
-**Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots). Both parameters can be used.
 
 ### Hierarchy
 
