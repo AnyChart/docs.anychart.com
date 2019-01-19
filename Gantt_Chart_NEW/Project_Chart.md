@@ -67,7 +67,7 @@ You can also use optional fields:
 
 * `name`, `actualStart`, `actualEnd` + `actual`
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
-* ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
+* ссылка на статьи Elements: Tasks, Parent Tasks, Milestones
 * [Elements: Markers](Elements#markers)
 * [Hierarchy](#hierarchy)
 
