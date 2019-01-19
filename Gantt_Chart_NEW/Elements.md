@@ -12,7 +12,7 @@
 
 ## Project Chart
 
-* [Project Chart](#Project_Chart)
+* [Project Chart](Project_Chart)
 
 ### Tasks (Actual)
 
