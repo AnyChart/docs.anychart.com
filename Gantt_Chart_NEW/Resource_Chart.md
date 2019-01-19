@@ -18,7 +18,7 @@
 
 ### Data Fields
 
-The Resource chart requires setting resources. Use the following data fields:
+The Resource chart requires setting resources by using the following data fields:
 
 * `name` to set names
 * `id` to set unique identifiers
@@ -36,16 +36,18 @@ You can also use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent resource
 
-... написать про ремаппинг + ссылка [Data: Mapping](Data#mapping)
+**Note:** If you need to use custom data fields, see [Data: Mapping](Data#mapping).
 
 ### Setting Data
 
-* ссылка на Tree Data
 * имплицитное и эксплицитное задание дерева
-* если иерархии нет, технически это множественные корни
-* если иерархии нет, неважно, как задаются данные, [as tree](#as_tree) or [as table](#as_table)
 * [Quick Start](#quick_start)
+* имплицитное и эксплицитное задание дерева
+* [as tree](#as_tree), [as table](#as_table)
+* [as tree](#as_table), [as table](#as_table)
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
+
+**(?) Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots). Both parameters can be used.
 
 ### Hierarchy
 
