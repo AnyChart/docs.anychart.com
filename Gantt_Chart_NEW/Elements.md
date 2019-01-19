@@ -5,12 +5,14 @@
 
 * [Timeline](Timeline)
 
-## Elements of All Types
+## All Elements
 
 * TimelineElement
 * 2 примера, на Project и Resource
 
 ## Project Chart
+
+* [Project Chart](#Project_Chart)
 
 ### Tasks (Actual)
 
@@ -25,6 +27,7 @@
 #### Milestones
 
 * MilestonesElement
+* [Markers](#markers)
 
 ### Baselines (Planned)
 
@@ -40,6 +43,8 @@
 
 ## Resource Chart
 
+* [Resource Chart](Resource_Chart)
+
 ### Periods
 
 * PeriodsElement
@@ -53,5 +58,6 @@
 ## Markers
 
 * 2 примера, на Project и Resource
+* [Milestones](#milestones)
 * [Project Chart: Data](#Project_Chart#data_fields)
 * [Resource Chart: Data](#Resource_Chart#data_fields)
