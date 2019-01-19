@@ -57,12 +57,10 @@
 ## Individual Elements
 
 * 2 примера, на Project и Resource
-* [Project Chart: Data](#Project_Chart#data_fields)
-* [Resource Chart: Data](#Resource_Chart#data_fields)
+* [Project Chart: Data Fields](Project_Chart#data_fields)
+* [Resource Chart: Data Fields](Resource_Chart#data_fields)
 
 ## Markers
 
 * 2 примера, на Project и Resource
 * [Milestones](#milestones)
-* [Project Chart: Data](#Project_Chart#data_fields)
-* [Resource Chart: Data](#Resource_Chart#data_fields)
