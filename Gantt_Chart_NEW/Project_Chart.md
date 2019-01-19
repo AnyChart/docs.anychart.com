@@ -96,8 +96,8 @@ You can also use optional fields:
 
 * `connectTo`, `connectorType` + `connector`
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
-* {api:anychart.enums.ConnectorType}api:anychart.enums.ConnectorType{api}
-* [Elements: Connectors](#Elements#connectors)
+* {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}
+* [Elements: Connectors](Elements#connectors)
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
