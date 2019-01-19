@@ -9,7 +9,7 @@
 
 ## Quick Start
 
-* ссылка на раздел Quick Start (Project)
+* [Quick Start (Project)](Quick_Start_\(Project\))
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_01{sample}
 
