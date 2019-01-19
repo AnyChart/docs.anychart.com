@@ -94,7 +94,7 @@ anychart.onDocumentReady(function () {
     map.geoData(anychart.maps.australia);
 
     // set the series
-    var series = map.choropleth(dataSet);
+    var series = map.choropleth(data);
 	
 	  // disable labels
     series.labels(false);
