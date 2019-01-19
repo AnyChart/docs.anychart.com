@@ -304,8 +304,7 @@ chart.data(treeData);
 
 ## Elements
 
-* [Elements](Elements)
-* [Timeline](Timeline)
+This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements](Elements) article.
 
 ### Tasks (Actual)
 
