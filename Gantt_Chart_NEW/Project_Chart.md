@@ -7,7 +7,7 @@
 
 * Project charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
  class.
-* The main [element](Elements) of a project chart is [task ](#tasks_\(actual\))...
+* The main [element](Elements) of a project chart is the [task](#tasks_\(actual\))...
 * (?) [Hierarchy](#hierarchy)
 
 ## Quick Start
@@ -308,13 +308,28 @@ This section briefly explains how to add and configure the elements that are sho
 
 ### Tasks (Actual)
 
-* `name`, `actualStart`, `actualEnd` + `actual`
-* **basic tasks**, **parent tasks**, **milestones**
-* так можно задать только actual, а planned см. [Baselines](#baselines_\(planned\))
-* [Elements: Tasks](Elements#tasks_\(actual\))
-* [Elements: Markers](Elements#markers)
-* [Hierarchy](#hierarchy)
+The main element of the Project chart is **task**. It shows the **actual** duration of a task (the planned duration is represented by [baselines](#baselines_\(planned\))). 
 
+Use the following data fields to set tasks:
+
+* `name` to set names
+* `id` to set unique identifiers
+* `actualStart` to set start dates
+* `actualEnd` to set end dates
+* `actual` (optional) to add optional task settings
+* `children` / `parent` (optional) to set the hierarchy
+
+There are three types of tasks:
+
+* basic tasks
+* parent tasks
+* milestones
+
+The difference between **basic tasks** and **parent tasks** is their place in the [hierarchy](#hierarchy). Also, they are visualized in a different way. Please note that a parent task can be a child itself, like in sample below. If the hierarchy is not specified, a chart with only basic tasks is created.
+
+**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: put the same value in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
+
+To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) article. 
 
 ```
 // create data
