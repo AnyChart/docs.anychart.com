@@ -9,19 +9,21 @@
 
 ### Tasks (Actual)
 
+#### Basic Tascs
+
 * TasksElement
+
+#### Grouping (Parent) Tasks
+
+* GroupingTasksElement
+
+#### Milestones
+
+* MilestonesElement
 
 ### Baselines (Planned)
 
 * BaselinesElement
-
-### Grouping (Parent) Tasks
-
-* GroupingTasksElement
-
-### Milestones
-
-* MilestonesElement
 
 ### Progress Bars
 
