@@ -41,9 +41,11 @@ You can also use optional fields:
 ### Setting Data
 
 * имплицитное и эксплицитное задание дерева
-* если иерархии нет, технически это множественные корни
-* если иерархии нет, неважно, как задаются данные, [as tree](#as_tree) or [as table](#as_table)
+* [as tree](#as_tree), [as table](#as_table)
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
+* [as tree](#as_tree), [as table](#as_table)
+
+**Note:** (?) If there is no hierarchical relationship between items in you data, there is no difference between setting it as a tree or as a table. In this case, technically, all items a roots.
 
 ### Hierarchy
 
