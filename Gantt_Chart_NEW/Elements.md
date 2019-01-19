@@ -5,45 +5,45 @@
 
 * TimelineElement
 
-### Project Chart
+## Project Chart
 
-## Tasks (Actual)
+### Tasks (Actual)
 
 * TasksElement
 
-## Baselines (Planned)
+### Baselines (Planned)
 
 * BaselinesElement
 
-## Grouping (Parent) Tasks
+### Grouping (Parent) Tasks
 
 * GroupingTasksElement
 
-## Milestones
+### Milestones
 
 * MilestonesElement
 
-## Progress Bars
+### Progress Bars
 
 * ProgressElement
 
-## Connectors
+### Connectors
 
 * ConnectorElement
 
-### Resource Chart
+## Resource Chart
 
-## Periods
+### Periods
 
 * PeriodsElement
 
-### Individual Elements
+## Individual Elements
 
 * 2 примера, на Project и Resource
 * [Project Chart: Data](#Project_Chart#data_fields)
 * [Resource Chart: Data](#Resource_Chart#data_fields)
 
-### Markers
+## Markers
 
 * 2 примера, на Project и Resource
 * [Project Chart: Data](#Project_Chart#data_fields)
