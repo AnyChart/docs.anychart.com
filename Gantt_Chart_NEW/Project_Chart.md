@@ -59,8 +59,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 
 // set the container id
 chart.container("container");
@@ -180,8 +183,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_02{sample}
@@ -262,8 +268,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-table");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 280}GANTT\_NEW\_Project\_Chart\_03{sample}
@@ -335,8 +344,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
@@ -402,8 +414,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
@@ -459,10 +474,15 @@ var data = [
       }
   ]}
 ];
+
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_06{sample}
@@ -528,8 +548,11 @@ var data = [
 // create a data tree
 var treeData = anychart.data.tree(data, "as-tree");
 
-// create a chart and set the data
-var chart = anychart.ganttProject(treeData);
+// create a chart
+var chart = anychart.ganttProject();
+
+// set the data
+chart.data(treeData);
 ```
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}

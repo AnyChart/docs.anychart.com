@@ -110,8 +110,10 @@ var data = [
     ];
     // create a data tree
     var treeData = anychart.data.tree(data, "as-tree");  
-    // create a chart and set the data
-    var chart = anychart.ganttProject(treeData); 
+    // create a chart
+    var chart = anychart.ganttProject();    
+    // set the data
+    chart.data(treeData);
     // set the container id
     chart.container("container");  
     // initiate drawing the chart
@@ -181,8 +183,10 @@ var data = [
         ];
         // create a data tree
         var treeData = anychart.data.tree(data, "as-tree");    
-        // create a chart and set the data
-        var chart = anychart.ganttProject(treeData);
+        // create a chart
+        var chart = anychart.ganttProject();        
+        // set the data
+        chart.data(treeData);
         // set the container id
         chart.container("container");    
         // initiate drawing the chart
