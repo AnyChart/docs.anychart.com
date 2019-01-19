@@ -12,7 +12,7 @@
 
 ## Quick Start
 
-To create a Project Gantt chart, use the {api:}{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Project)](Quick_Start_\(Project\)) article.
+To create a Project Gantt chart, use the {api:anychart#ganttProject}anychart.ganttProject{api} chart constructor, like in the sample below. To learn more, see the [Quick Start (Project)](Quick_Start_\(Project\)) article.
 
 ```
 // create data
@@ -103,12 +103,35 @@ You can also use optional fields:
 
 ### Setting Data
 
-* имплицитное и эксплицитное задание дерева
-* [as tree](#as_tree), [as table](#as_table)
-* [as tree](#as_table), [as table](#as_table)
-* [Tree Data Model](../Working_with_Data/Tree_Data_Model)
+To create a Project chart, you should use the [tree data model](../Working_with_Data/Tree_Data_Model) and organize your data either [as a tree](#as_tree) or [as a table](#as_table).
 
-**(?) Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots). Both parameters can be used.
+**1. Creating Data Tree.** The first step is creating a data tree by passing your data to the {api:anychart.data#tree}anychart.data.tree(){api} method with `"as-tree"` or `"as-table"` as the second parameter:
+
+```
+var treeData = anychart.data.tree(data, "as-tree");
+```
+
+```
+var treeData = anychart.data.tree(data, "as-table");
+```
+
+**2. Creating Chart.** Then create a Project chart by using the {api:anychart#ganttProject}anychart.ganttProject{api} chart constructor:
+
+```
+var chart = anychart.ganttProject();
+```
+
+**3. Setting Data.** 
+
+Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+
+```
+chart.data(treeData);
+```
+
+You can as well skip the first step and pass your data to the directly to the {api:anychart.charts.Gantt#data}data(){api} method, also with the `"as-tree"` or `"as-table"` parameter. In this case the data tree is created implicitly.
+
+**Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots). Both parameters can be used.
 
 ### Hierarchy
 

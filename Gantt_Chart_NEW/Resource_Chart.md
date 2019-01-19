@@ -42,8 +42,7 @@ You can also use optional fields:
 
 * имплицитное и эксплицитное задание дерева
 * [Quick Start](#quick_start)
-* [as tree](#as_tree), [as table](#as_table)
-* [as tree](#as_table), [as table](#as_table)
+* [as a tree](#as_tree), [as a table](#as_table)
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 
 **(?) Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structures (in this case, technically, all items a roots). Both parameters can be used.
