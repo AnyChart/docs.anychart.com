@@ -3,10 +3,12 @@
 
 ## Overview
 
-* [Elements](Elements)
-* [Tasks](#tasks_\(actual\))
-* [Hierarchy](#hierarchy)
-* {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
+...
+
+* Project charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
+ class.
+* The main [element](Elements) of a project chart is [task ](#tasks_\(actual\))...
+* (?) [Hierarchy](#hierarchy)
 
 ## Quick Start
 
@@ -45,7 +47,7 @@ You can also use optional fields:
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 * [as tree](#as_tree), [as table](#as_table)
 
-**Note:** (?) If there is no hierarchical relationship between items in you data, there is no difference between setting it as a tree or as a table. In this case, technically, all items a roots.
+**(?) Note:** If there is no hierarchical relationship between data items, there is no difference between the tree and table structure (in this case, technically, all items a roots). Both parameters can be used.
 
 ### Hierarchy
 
