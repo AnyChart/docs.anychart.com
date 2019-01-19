@@ -344,13 +344,13 @@ var data = [
     children: [
       {
         id: "1_1",
-        name: "Task",
+        name: "Basic Task",
         actualStart: "2018-01-25",
         actualEnd: "2018-02-08"
       },
       {
         id: "1_2",
-        name: "Task",
+        name: "Basic Task",
         actualStart: "2018-02-04",
         actualEnd: "2018-02-24"
       },
@@ -368,17 +368,23 @@ var data = [
         children: [
           {
             id: "1_4_1",
-            name: "Task",
+            name: "Basic Task",
             actualStart: "2018-02-25",
             actualEnd: "2018-03-01"
           },
           {
             id: "1_4_2",
-            name: "Task",
+            name: "Basic Task",
             actualStart: "2018-03-02",
             actualEnd: "2018-03-14"
           }
-      ]}
+      ]},
+      {
+        id: "2",
+        name: "Basic Task",
+        actualStart: "2018-02-25",
+        actualEnd: "2018-04-28",
+      }
   ]}
 ];
 
