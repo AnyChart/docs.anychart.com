@@ -6,6 +6,7 @@
 * [Elements](Elements)
 * [Tasks](#tasks_\(actual\))
 * [Hierarchy](#hierarchy)
+* {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
 
 ## Quick Start
 

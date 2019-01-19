@@ -36,6 +36,7 @@
 ### Progress Bars
 
 * ProgressElement
+* два метода progress() - у обычного и родительского таска
 
 ### Connectors
 
@@ -63,4 +64,5 @@
 ## Markers
 
 * 2 примера, на Project и Resource
+* сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)

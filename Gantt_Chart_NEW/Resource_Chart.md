@@ -3,11 +3,14 @@
 
 ## Overview
 
-* ссылки: Periods, Hierarchy
+* [Elements](Elements)
+* [Periods](#periods)
+* [Hierarchy](#hierarchy)
+* {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
 
 ## Quick Start
 
-* ссылка на раздел Quick Start (Resource)
+* [Quick Start (Project)](Quick_Start_\(Resource\))
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_01{sample}
 
