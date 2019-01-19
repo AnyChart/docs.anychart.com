@@ -316,7 +316,7 @@ Use the following data fields to set tasks:
 * `id` to set unique identifiers
 * `actualStart` to set start dates
 * `actualEnd` to set end dates
-* `actual` (optional) to add optional [individual settings](Elements#individual_settings))
+* `actual` (optional) to add optional [individual settings](Elements#individual_settings)
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
 
 There are three types of tasks:
