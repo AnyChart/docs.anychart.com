@@ -317,9 +317,6 @@ Use the following data fields to set tasks:
 * `actualStart` to set start dates
 * `actualEnd` to set end dates
 * `actual` (optional) to add optional [individual settings](Elements#individual_elements)
-* `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
-* `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
 There are three types of tasks:
 
