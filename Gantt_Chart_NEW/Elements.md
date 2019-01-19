@@ -4,6 +4,7 @@
 ## All Types
 
 * TimelineElement
+* 2 примера, на Project и Resource
 
 ## Project Chart
 
