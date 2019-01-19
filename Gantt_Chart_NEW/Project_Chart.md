@@ -3,7 +3,8 @@
 
 ## Overview
 
-* ссылки: Tasks, Hierarchy
+* [Tasks](#tasks_\(actual\))
+* [Hierarchy](#hierarchy)
 
 ## Quick Start
 
