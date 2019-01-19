@@ -18,42 +18,40 @@
 
 #### Basic Tasks
 
-* TasksElement
+* {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 
 #### Parent Tasks
 
-* GroupingTasksElement
+* {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 
 #### Milestones
 
-* MilestonesElement
+* {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
 * [Markers](#markers)
 
 ### Baselines (Planned)
 
-* BaselinesElement
+* {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
 
 ### Progress Bars
 
-* ProgressElement
-* два метода progress() - у обычного и родительского таска
+* {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
+* два метода progress() - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
 
 ### Connectors
 
-* ConnectorElement
-
+* {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 ## Resource Chart
 
 * [Resource Chart](Resource_Chart)
 
 ### Periods
 
-* PeriodsElement
-
+* {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
 ## All Elements
 
-* TimelineElement
-* 2 примера, на Project и Resource
+* {api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
+* 2 примера, на Project и Resource{api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
 
 ## Individual Elements
 

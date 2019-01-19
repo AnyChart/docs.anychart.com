@@ -3,14 +3,16 @@
 
 ## ?
 
+* {api:anychart.core.ui.DataGrid}anychart.core.ui.DataGrid{api}
+
 ## Columns
 
-* класс Column
+* {api:anychart.core.ui.DataGrid.Column}anychart.core.ui.DataGrid.Column{api}
 * не забыть про метод cellTextSettingsOverrider()
 
 ## Buttons
 
-* класс Buttons
+* {api:anychart.core.gantt.DataGridButton}anychart.core.gantt.DataGridButton{api}
 
 ## Tooltips
 

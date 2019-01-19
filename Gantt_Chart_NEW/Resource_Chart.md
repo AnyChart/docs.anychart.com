@@ -34,21 +34,22 @@ You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
-* `collapsed` to [expand or collapse](#Basic_Settings#navigation) a parent resource
+* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent resource
 
-... написать про ремаппинг + ссылка на Data: Mapping
+... написать про ремаппинг + ссылка [Data: Mapping](Data#mapping)
 
 ### Setting Data
 
 * ссылка на Tree Data
 * имплицитное и эксплицитное задание дерева
-* ссылка на Quick Start - пример без иерархии
 * если иерархии нет, технически это множественные корни
-* если иерархии нет, неважно, как дерево задаешь данные или как таблицу
+* если иерархии нет, неважно, как задаются данные, [as tree](#as_tree) or [as table](#as_table)
+* [Quick Start](#quick_start)
+* [Tree Data Model](../Working_with_Data/Tree_Data_Model)
 
 ### Hierarchy
 
-* для родительских ресурсов можно не задавать периоды
+* для родительских ресурсов можно не задавать [periods](#periods)
 
 #### As Tree
 
@@ -64,16 +65,19 @@ You can also use optional fields:
 
 ## Elements
 
-* ссылки: Elements, Timeline
+* [Elements](Elements)
+* [Timeline](Timeline)
 
 ### Periods
 
 * Each resource includes a **period** or periods, defined by the `periods`, `id`, `start`, and `end` data fields.
-* While resources are logical elements represented only as labels on the data grid, periods are elements shown on the timeline...
-* ссылка: Data Grid
+* While resources are logical elements represented only as text (?) on the data grid, periods are elements shown on the timeline...
+* [Data Grid](#data_grid)
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_04{sample}
 
 ### Markers
+
+* [Elements: Markers](Elements#markers)
 
 ## (?) Other Settings

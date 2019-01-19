@@ -27,7 +27,7 @@ Timeline:
 
 Timeline elements:
 
-* all elements – {api:anychart.core.gantt.elements.TimelineElement}{api}
+* all elements – {api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
 * basic tasks – {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * parent tasks – {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
 * milestones – {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
