@@ -137,8 +137,6 @@ Usually, there are hierarchical relationships between the data items of Project 
 
 Please note that Project charts can have multiple roots. Also, you can use data with no hierarchy – in this case, technically, all items are roots.
 
-* multiple roots
-
 #### As Tree
 
 * `children`
