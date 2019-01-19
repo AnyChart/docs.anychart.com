@@ -99,7 +99,7 @@ You can also use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
-**Note:** If you need to use custom data fields, see [Data: Mapping](Data#mapping).
+**Note:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
 ### Setting Data
 

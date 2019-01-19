@@ -36,13 +36,12 @@ You can also use optional fields:
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent resource
 
-**Note:** If you need to use custom data fields, see [Data: Mapping](Data#mapping).
+**Note:** To learn how to rename the default data fields, see [Data: Mapping](Data#mapping).
 
 ### Setting Data
 
 * имплицитное и эксплицитное задание дерева
 * [Quick Start](#quick_start)
-* имплицитное и эксплицитное задание дерева
 * [as tree](#as_tree), [as table](#as_table)
 * [as tree](#as_table), [as table](#as_table)
 * [Tree Data Model](../Working_with_Data/Tree_Data_Model)
