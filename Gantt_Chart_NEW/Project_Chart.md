@@ -27,8 +27,8 @@ You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `actual` to add optional [task](#tasks_\(actual\)) settings
-* `progressValue` and `progress` to add and configure [progress bars](#progress_bars)
 * `baselineStart`, `baselineEnd`, and `baseline` to add and configure [baselines](#baselines_\(planned\))
+* `progressValue` and `progress` to add and configure [progress bars](#progress_bars)
 * `connectTo`, `connectorType`, and `connector` to ass and configure [connectors](#connectors)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
