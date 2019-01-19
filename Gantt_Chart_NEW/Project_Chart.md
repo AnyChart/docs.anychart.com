@@ -91,10 +91,10 @@ The Project chart requires setting [tasks](#tasks_\(actual\)) by using the follo
 You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `actual` to add optional [task](#tasks_\(actual\)) settings
+* `actual` to add optional task settings
 * `baselineStart`, `baselineEnd`, and `baseline` to add and configure [baselines](#baselines_\(planned\))
 * `progressValue` and `progress` to add and configure [progress bars](#progress_bars)
-* `connectTo`, `connectorType`, and `connector` to ass and configure [connectors](#connectors)
+* `connectTo`, `connectorType`, and `connector` to add and configure [connectors](#connectors)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
@@ -318,6 +318,8 @@ Use the following data fields to set tasks:
 * `actualEnd` to set end dates
 * `actual` (optional) to add optional [individual settings](Elements#individual_elements)
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
+* `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
+* `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
 
 There are three types of tasks:
 
