@@ -218,7 +218,7 @@ chart.data(treeData);
 
 #### As Table
 
-If you organize data **as a table**, use the `parent` data field  to set the hierarchical relationships between items. If an item is a child, specify the `id` value of the parent. The parent of a root item should be set to `null`.
+If you organize data **as a table**, use the `parent` data field  to set the hierarchical relationships between items. For each child item, specify the `id` value of its parent as the value of this field. The parent of a root item should be set to `null`.
 
 This sample shows how to set data with two roots as a table:
 
