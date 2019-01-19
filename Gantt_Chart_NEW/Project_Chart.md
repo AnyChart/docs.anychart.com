@@ -218,7 +218,7 @@ chart.data(treeData);
 
 #### As Table
 
-If you organize data **as a table**, each item should the `parent` data field. Specify the `id` value of the parent as its value. The parent of a root item should be set to `null`.
+If you organize data **as a table**, each item should have the `parent` data field. Specify the `id` value of the parent as its value. The parent of a root item should be set to `null`.
 
 This sample shows how to set data with two roots as a table:
 
