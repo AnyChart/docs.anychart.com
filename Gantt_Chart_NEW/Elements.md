@@ -9,7 +9,7 @@
 
 ### Tasks (Actual)
 
-#### Basic Tascs
+#### Basic Tasks
 
 * TasksElement
 
