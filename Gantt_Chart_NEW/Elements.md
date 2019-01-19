@@ -10,11 +10,11 @@
 
 ### Tasks (Actual)
 
-#### Basic
+#### Basic Tasks
 
 * TasksElement
 
-#### Grouping (Parent)
+#### Parent Tasks
 
 * GroupingTasksElement
 
