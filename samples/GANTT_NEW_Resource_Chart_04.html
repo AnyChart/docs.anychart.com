@@ -54,11 +54,8 @@ anychart.onDocumentReady(function () {
     // create a data tree
     var treeData = anychart.data.tree(data, "as-table");
 
-    // create a chart
-    var chart = anychart.ganttResource();
-
-    // set the data
-    chart.data(treeData);
+    // create a chart and set the data
+    var chart = anychart.ganttResource(treeData);  
 
     // configure the labels of periods
     chart.getTimeline().labels().enabled(true);

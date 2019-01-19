@@ -1,5 +1,5 @@
 {:index 5}
-# Project Chart
+# Resource Chart
 
 ## Overview
 
@@ -10,7 +10,7 @@
 
 ## Quick Start
 
-* [Quick Start (Project)](Quick_Start_\(Resource\))
+* [Quick Start (Resource)](Quick_Start_\(Resource\))
 
 {sample :height 160}GANTT\_NEW\_Resource\_Chart\_01{sample}
 
