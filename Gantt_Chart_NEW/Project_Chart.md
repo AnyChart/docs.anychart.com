@@ -67,8 +67,8 @@ You can also use optional fields:
 
 * `name`, `actualStart`, `actualEnd` + `actual`
 * **basic tasks**, **parent tasks**, **milestones**
-* так можно задать только actual, а planned см. [Baselines](#baselines)
-* [Elements: Tasks](Elements#tasks)
+* так можно задать только actual, а planned см. [Baselines](#baselines_\(planned\))
+* [Elements: Tasks](Elements#tasks_\(actual\)
 * [Elements: Markers](Elements#markers)
 * [Hierarchy](#hierarchy)
 
@@ -77,8 +77,8 @@ You can also use optional fields:
 ### Baselines (Planned)
 
 * `baselineStart`, `baselineEnd` + `baseline`
-* есть у обычных и родительских тасков, см. Tasks
-* ссылка на статью Elements: Baselines
+* baselines can be added to basic and parent [tasks](#tasks_\(actual\))
+* [Elements: Baselines](Elements#baselines_\(planned\))
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
 
@@ -86,7 +86,7 @@ You can also use optional fields:
 
 * `progressValue`, `progress`
 * примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
-* ссылка на статью Elements: Progress Bars
+* [Elements: Progress Bars](Elements#progress_bars)
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_06{sample}
 
@@ -94,14 +94,14 @@ You can also use optional fields:
 
 * `connectTo`, `connectorType` + `connector`
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
-* http://api.anychart.stg/develop/anychart.enums.ConnectorType
-* ссылка на статью Elements: Connectors
+* {api:anychart.enums.ConnectorType}{api}
+* [Elements: Connectors](#Elements#connectors)
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ### Milestones and Markers
 
-* ссылка на Tasks (Actual)
-* ссылка на Elements: Markers
+* [Tasks](#tasks_\(actual\))
+* [Elements: Markers](Elements#markers)
 
 ## (?) Other Settings

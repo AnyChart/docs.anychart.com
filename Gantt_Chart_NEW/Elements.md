@@ -4,8 +4,8 @@
 ## Overview
 
 * elements are shown on the [Timeline](Timeline)
-* the [Project](#project_chart) chart and [Resource](#resource_chart) chart: different types of elements are available
-* all elements of one type: [tasks](#tasks), [baselines](#baselines), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
+* the [Project](#project_chart) and [Resource](#resource_chart) charts: different types of elements are available
+* all elements of one type: [tasks](#tasks_\(actual\)), [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), [periods](#periods)
 * [all elements](#all_elements) at once
 * [individual elements](#individual_elements)
 * [markers](#markers)
