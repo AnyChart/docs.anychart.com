@@ -3,10 +3,11 @@
 
 ## Overview
 
-* примечание про то, как переименовывать поля + ссылка на Mapping
+* примечание про то, как переименовывать поля
+* [Mapping](#mapping)
 
 ## ?
 
-* структура как в Project Chart и Resource Chart + ссылки на эти статьи
+* структура как в [Project Chart](Project_Chart) и [Resource Chart](Resource_Chart)
 
 ## Mapping
