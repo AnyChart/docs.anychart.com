@@ -60,16 +60,16 @@ You can also use optional fields:
 
 ## Elements
 
-* ссылка на Elements
-* ссылка на Timeline
+* [Elements](Elements)
+* [Timeline](Timeline)
 
 ### Tasks (Actual)
 
 * `name`, `actualStrart`, `actualEnd` + `actual`
 * типы тасков, причем: так можно задать только actual, а planned см. Baselines
 * ссылка на статьи Elements: Tasks, Grouping (Parent) Tasks, Milestones
-* ссылка на Elements: Markers
-* ссылка на Hierarchy
+* [Elements: Markers](Elements#markers)
+* [Hierarchy](#hierarchy)
 
 {sample :height 240}GANTT\_NEW\_Project\_Chart\_04{sample}
 
