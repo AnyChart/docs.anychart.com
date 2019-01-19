@@ -121,9 +121,7 @@ var treeData = anychart.data.tree(data, "as-table");
 var chart = anychart.ganttProject();
 ```
 
-**3. Setting Data.** 
-
-Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
+**3. Setting Data.** Finally, pass the data tree to the {api:anychart.charts.Gantt#data}data(){api} method of the chart:
 
 ```
 chart.data(treeData);
