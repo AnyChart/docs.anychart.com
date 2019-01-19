@@ -139,7 +139,7 @@ Please note that Project charts can have multiple roots. Also, you can create da
 
 #### As Tree
 
-If you organize data **as a tree**, use the `children` data field to set the hierarchical relationships between items. For each parent item, specify an array of its child items as the value of this field.
+If you organize data **as a tree**, each parent item should have a `children` data field. Specify an array of the child items as its value.
 
 The following sample shows how to set data with two roots as a tree:
 
@@ -218,7 +218,7 @@ chart.data(treeData);
 
 #### As Table
 
-If you organize data **as a table**, use the `parent` data field  to set the hierarchical relationships between items. For each child item, specify the `id` value of its parent as the value of this field. The parent of a root item should be set to `null`.
+If you organize data **as a table**, each item should the `parent` data field. Specify the `id` value of the parent as its value. The parent of a root item should be set to `null`.
 
 This sample shows how to set data with two roots as a table:
 
