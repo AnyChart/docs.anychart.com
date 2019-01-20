@@ -557,12 +557,36 @@ chart.data(treeData);
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
 * {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}
 * [Elements: Connectors](Elements#connectors)
-* `"start-start"` – this task must begin before the target task can begin
-* `"start-finish"` – this task must begin before the target task can finish
-* `"finish-start"` – this task must finish before the current one can begin
-* `"finish-finish"` – this task must finish before the first one can finish
+* `"start-start"` – the current task must begin before the target task can begin
+* `"start-finish"` – the current task must begin before the target task can finish
+* `"finish-start"` – the current task must finish before the current one can begin
+* `"finish-finish"` – the current task must finish before the target one can finish
 
 
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>`"start-start"`</td>
+<td>The current task must begin before the target task can begin.</td>
+</tr>
+<tr>
+<td>`"start-finish"`</td>
+<td>The current task must begin before the target task can finish. </td>
+</tr>
+<tr>
+<td>`"finish-start"`</td>
+<td>The current task must finish before the current one can begin. </td>
+</tr>
+<tr>
+<td>`"finish-finish"`</td>
+<td>The current task must finish before the target one can finish.</td>
+</tr>
+</tbody>
+</table>
 
 
 ```
