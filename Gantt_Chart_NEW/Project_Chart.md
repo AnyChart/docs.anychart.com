@@ -564,7 +564,7 @@ Use the following data fields:
 To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**.
 Please note that a task can have several predecessor, but only one successor.
 
-In the `connectorType`, specify the type of connector. There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
+The connector type is specified in the `connectorType` field. There are four types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
 <table border="1" class="dtTABLE">
 <tbody>
