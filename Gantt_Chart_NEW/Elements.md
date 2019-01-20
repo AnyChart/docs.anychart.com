@@ -55,7 +55,7 @@
 ### Periods
 
 * {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* [Resource Chart: Periods](Project_Chart#periods)
+* [Resource Chart: Periods](Resource_Chart#periods)
 
 ## All Elements
 
