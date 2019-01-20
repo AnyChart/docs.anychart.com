@@ -562,7 +562,8 @@ Use the following data fields:
 * `connector` (optional) to configure [individual connectors](Elements#individual_elements)
 
 To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**.
-Please note that a task can have several predecessors, but only one successor. Also, a task can be a successor to one task or tasks and a predecessor to another.
+
+Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are demonstrated in the sample below.
 
 The connector type is specified in the `connectorType` field. There are four types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
@@ -661,6 +662,8 @@ The code above sets the following dependencies:
 * Task 2 (predecessor) &#8594; Task 5 (successor): `"start-start"`
 * Task 3 (predecessor) &#8594; Task 4 (successor): `"finish-finish"`
 * Task 4 (predecessor) &#8594; Task 5 (successor): `"start-finish"`
+
+As you can see, Task 5 is a successor to two predecessors – Tasks 2 and 4. Also, tasks 2, 4, and 5 are successors to one tasks and predecessors to others.
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
