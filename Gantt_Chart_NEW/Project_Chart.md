@@ -592,7 +592,7 @@ There are four connector types, which are listed in {api:anychart.enums.Connecto
 
 To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
 
-Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are demonstrated in the sample below:
+Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are demonstrated in the sample below.
 
 ```
 // create data
