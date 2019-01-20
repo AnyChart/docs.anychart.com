@@ -60,7 +60,7 @@
 ## All Elements
 
 * {api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
-* 2 примера, на Project и Resource{api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
+* 2 примера, на Project и Resource
 
 ## Individual Elements
 
