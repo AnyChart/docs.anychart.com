@@ -488,7 +488,7 @@ Use the following data fields:
 * `progressValue` to set the progress value as a percentage
 * `progress` (optional) to configure [individual progress bars](Elements#individual_elements)
 
-By default, the progress value of all tasks is 0%. If you do not set the progress value of a parent task, it is calculated automatically from the progress values of its children.
+By default, the progress value of all tasks is 0%, so progress bars are not shown. If you do not set the progress value of a parent task, it is calculated automatically from the progress values of its children.
 
 To learn how to configure progress bars, see the [Elements: Progress Bars](Elements#progress_bars) section.
 
