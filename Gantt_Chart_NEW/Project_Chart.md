@@ -311,7 +311,7 @@ The main element of the Project chart is the [task](#tasks_\(actual\)). Other el
 
 A **task** is an element showing the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
-Use the following data fields to set and configure tasks:
+Use the following data fields:
 
 * `name` to set names
 * `id` to set unique identifiers
@@ -403,9 +403,9 @@ chart.data(treeData);
 
 ### Baselines (Planned)
 
-A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to basic and parent tasks.
+A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to regular and parent tasks.
 
-Use the following data fields to add and configure baselines:
+Use the following data fields:
 
 * `baselineStart` to set start dates
 * `baselineEnd` to set end dates
@@ -480,6 +480,18 @@ chart.data(treeData);
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_05{sample}
 
 ### Progress Bars
+
+A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to regular and parent tasks.
+
+Use the following data fields:
+
+* `baselineStart` to set start dates
+* `baselineEnd` to set end dates
+* `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
+
+To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
+
+In this sample, baselines are added to all regular tasks and the parent one:
 
 * `progressValue`, `progress`
 * примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
