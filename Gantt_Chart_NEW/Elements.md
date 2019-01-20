@@ -35,7 +35,7 @@
 ### Baselines (Planned)
 
 * {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* [Progress Chart: Baselines](Project_Chart#baselines)
+* [Progress Chart: Baselines](Project_Chart#baselines_\(planned\))
 
 ### Progress Bars
 
