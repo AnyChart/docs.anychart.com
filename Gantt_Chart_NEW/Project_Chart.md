@@ -403,7 +403,9 @@ chart.data(treeData);
 
 ### Baselines (Planned)
 
-A **baseline** is an element showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)). Use the following data fields:
+A **baseline** is an element showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)).
+
+Use the following data fields:
 
 * `baselineStart` to set start dates
 * `baselineEnd` to set end dates
@@ -479,18 +481,16 @@ chart.data(treeData);
 
 ### Progress Bars
 
-A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Use the following data fields:
+A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Also, the progress is shown in labels. Please note that if you do not set the progress of a parent task, it is calculated automatically. By default, the progress of all tasks is 0%.
 
-* `progressValue` to set the progress value
+Use the following data fields:
+
+* `progressValue` to set the progress value as a percentage
 * `progress` (optional) to configure [individual progress bars](Elements#individual_elements)
 
 To learn how to configure progress bars, see the [Elements: Progress Bars](Elements#progress_bars) section.
 
 In this sample, progress bars are added to all regular tasks and the parent one:
-
-* примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
-* про лейблы и дефолты
-
 
 ```
 // create data
