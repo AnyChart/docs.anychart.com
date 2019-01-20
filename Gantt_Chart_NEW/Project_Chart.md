@@ -318,7 +318,7 @@ Use the following data fields to set tasks:
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
 * `actual` (optional) to configure [individual tasks](Elements#individual_elements)
 
-There are three types of tasks, visualized in different ways:
+There are three types of tasks, each of them visualized in a different way:
 
 * basic tasks
 * parent tasks
