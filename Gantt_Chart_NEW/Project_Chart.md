@@ -663,7 +663,6 @@ The code above sets the following dependencies:
 * Task 3 (predecessor) &#8594; Task 4 (successor): `"finish-finish"`
 * Task 4 (predecessor) &#8594; Task 5 (successor): `"start-finish"`
 
-
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ### Milestones and Markers
