@@ -655,7 +655,7 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-This code sets the following dependencies:
+The code above sets the following dependencies:
 
 * Task 1 (predecessor) -> Task 2 (successor): `"finish-start"`
 * Task 2 (predecessor) -> Task 5 (successor): `"start-start"`
