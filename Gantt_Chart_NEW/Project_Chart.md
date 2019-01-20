@@ -572,20 +572,20 @@ There are four connection types, which are listed in {api:anychart.enums.Connect
 <th>Description</th>
 </tr>
 <tr>
-<td>`"start-start"` (default)</td>
-<td>The predecessor task must begin before the successor task can begin.</td>
+<td>`"start-start"`</td>
+<td>The predecessor must begin before the successor can begin.</td>
 </tr>
 <tr>
 <td>`"start-finish"`</td>
-<td>The predecessor task must begin before the successor task can finish. </td>
+<td>The predecessor must begin before the successor can finish. </td>
 </tr>
 <tr>
 <td>`"finish-start"`</td>
-<td>The predecessor task must finish before the successor task can begin. </td>
+<td>The predecessor must finish before the successor can begin. </td>
 </tr>
 <tr>
 <td>`"finish-finish"`</td>
-<td>The predecessor task must finish before the successor task can finish.</td>
+<td>The predecessor must finish before the successor can finish.</td>
 </tr>
 </tbody>
 </table>
