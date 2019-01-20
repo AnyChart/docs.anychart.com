@@ -66,8 +66,6 @@
 
 * список полей
 * 2 примера, на Project и Resource
-* [Project Chart: Data Fields](Project_Chart#data_fields)
-* [Resource Chart: Data Fields](Resource_Chart#data_fields)
 
 ## Markers
 
