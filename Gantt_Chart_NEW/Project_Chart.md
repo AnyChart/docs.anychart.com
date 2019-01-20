@@ -663,8 +663,8 @@ chart.data(treeData);
 
 ### Milestones and Markers
 
-**Milestones** are [tasks](#tasks_\(actual\)) with zero duration – they represent events. There is also and alternative way to show events: you can add **markers**.
+To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) and [Elements: Milestones](Elements#milestones) sections to learn more. 
 
-To learn more, see the [Elements: Milestones](Elements#milestones) and [Elements: Markers](Elements#markers) sections.
+There is also and alternative way to show events: you can add **markers**. For more information, see [Elements: Markers](Elements#markers).
 
 ## (?) Other Settings
