@@ -92,7 +92,7 @@ You can also use optional fields:
 * `children` / `parent` to set the [hierarchy](#hierarchy)
 * `baselineStart` and `baselineEnd` to add [baselines](#baselines_\(planned\))
 * `progressValue` to add [progress bars](#progress_bars)
-* `connectTo` and `connectorType`to add [connectors](#connectors)
+* `connectTo` and `connectorType` to add [connectors](#connectors)
 * `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements#individual_elements)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
@@ -553,15 +553,17 @@ chart.data(treeData);
 
 ### Connectors
 
-* `connectTo`, `connectorType` + `connector`
-* `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
-* {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}
-* [Elements: Connectors](Elements#connectors)
-* `"start-start"` – the current task must begin before the target task can begin
-* `"start-finish"` – the current task must begin before the target task can finish
-* `"finish-start"` – the current task must finish before the current one can begin
-* `"finish-finish"` – the current task must finish before the target one can finish
+A **connector** is an element showing the dependencies between all types of [tasks](#tasks_\(actual\)).
 
+Use the following data fields:
+
+* `connectTo` to set the target task
+* `connectorType` to set the connector type
+* `connector` (optional) to configure [individual connectors](Elements#individual_elements)
+
+To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**. In the `connectorType`, specify the type of connection.
+
+There are four connection types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -570,24 +572,27 @@ chart.data(treeData);
 <th>Description</th>
 </tr>
 <tr>
-<td>`"start-start"`</td>
-<td>The current task must begin before the target task can begin.</td>
+<td>`"start-start"` (default)</td>
+<td>The predecessor task must begin before the successor task can begin.</td>
 </tr>
 <tr>
 <td>`"start-finish"`</td>
-<td>The current task must begin before the target task can finish. </td>
+<td>The predecessor task must begin before the successor task can finish. </td>
 </tr>
 <tr>
 <td>`"finish-start"`</td>
-<td>The current task must finish before the current one can begin. </td>
+<td>The predecessor task must finish before the successor task can begin. </td>
 </tr>
 <tr>
 <td>`"finish-finish"`</td>
-<td>The current task must finish before the target one can finish.</td>
+<td>The predecessor task must finish before the successor task can finish.</td>
 </tr>
 </tbody>
 </table>
 
+To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
+
+In this sample, ...
 
 ```
 // create data
@@ -603,32 +608,32 @@ var data = [
         name: "Task 1",
         actualStart: "2018-02-02",
         actualEnd: "2018-02-07",
-        connectorType: "finish-start",
-        connectTo: "1_2"
+        connectTo: "1_2",
+        connectorType: "finish-start"
       },
       {
         id: "1_2",
         name: "Task 2",
         actualStart: "2018-02-09",
-        actualEnd: "2018-02-27",
-        connectorType: "start-start",
-        connectTo: "1_5"
+        actualEnd: "2018-02-09",
+        connectTo: "1_5",
+        connectorType: "start-start"
       },
       {
         id: "1_3",
         name: "Task 3",
         actualStart: "2018-02-11",
         actualEnd: "2018-02-23",
-        connectorType: "finish-finish",
-        connectTo: "1_4"
+        connectTo: "1_4",
+        connectorType: "finish-finish"
       },
       {
         id: "1_4",
         name: "Task 4",
         actualStart: "2018-02-18",
         actualEnd: "2018-02-25",
-        connectorType: "start-finish",
-        connectTo: "1_5"
+        connectTo: "1_5",
+        connectorType: "start-finish"
       },
       {
         id: "1_5",
