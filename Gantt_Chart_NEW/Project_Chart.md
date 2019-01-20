@@ -561,11 +561,9 @@ Use the following data fields:
 * `connectorType` to set the connector type
 * `connector` (optional) to configure [individual connectors](Elements#individual_elements)
 
-To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**.
+To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**. In `connectorType`, specify the type of the connector.
 
-Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are demonstrated in the sample below.
-
-The connector type is specified in the `connectorType` field. There are four types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
+There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -594,7 +592,7 @@ The connector type is specified in the `connectorType` field. There are four typ
 
 To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
 
-This is how adding connectors of all four types looks like:
+Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are demonstrated in the sample below:
 
 ```
 // create data
