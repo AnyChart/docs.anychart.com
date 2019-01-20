@@ -90,9 +90,9 @@ The Project chart requires setting [tasks](#tasks_\(actual\)) by using the follo
 You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `baselineStart` and `baselineEnd` to set [baselines](#baselines_\(planned\))
-* `progressValue` to set [progress bars](#progress_bars)
-* `connectTo` and `connectorType`to set [connectors](#connectors)
+* `baselineStart` and `baselineEnd` to add [baselines](#baselines_\(planned\))
+* `progressValue` to add [progress bars](#progress_bars)
+* `connectTo` and `connectorType`to add [connectors](#connectors)
 * `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements#individual_elements)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
@@ -307,9 +307,9 @@ This section briefly explains how to add and configure the elements that are sho
 
 ### Tasks (Actual)
 
-The main element of the Project chart is the **task**. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)). 
+The main element of the Project chart is the **task**. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)). Baselines and all other elements, such as [progress bars](#progress_bars), [connectors](#connectors), and [markers](#milestones_and_markersj), are added to tasks.
 
-Use the following data fields to set tasks:
+Use the following data fields to set and configure tasks:
 
 * `name` to set names
 * `id` to set unique identifiers
@@ -326,11 +326,11 @@ There are three types of tasks, each of them visualized in a different way:
 
 The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and basic ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
-Please note that regular and parent tasks can occupy different places in the hierarchy. A parent task can be a child itself, and a regular task can be a root, like in the sample below.
-
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
 
 To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) article. 
+
+The sample below demonstrates all types of tasks. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
 
 ```
 // create data
@@ -401,9 +401,15 @@ chart.data(treeData);
 
 ### Baselines (Planned)
 
-* `baselineStart`, `baselineEnd` + `baseline`
-* baselines can be added to basic and parent [tasks](#tasks_\(actual\))
-* [Elements: Baselines](Elements#baselines_\(planned\))
+A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to basic and parent tasks.
+
+Use the following data fields to add and configure baselines:
+
+* `baselineStart` to set start dates
+* `baselineEnd` to set end dates*
+* `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
+
+To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
 
 ```
 // create data
