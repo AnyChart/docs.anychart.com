@@ -305,9 +305,11 @@ chart.data(treeData);
 
 This section briefly explains how to add and configure the elements that are shown on the [timeline](Timeline) of the Project chart. To learn more, see the [Elements](Elements) article.
 
+The main element of the Project chart is the [task](#tasks_\(actual\)). Other elements, such as [baselines](#baselines_\(planned\)), [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements#markers), are set by adding special data fields to tasks.
+
 ### Tasks (Actual)
 
-The main element of the Project chart is the **task**. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)). Baselines and all other elements, such as [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements#markers), are added to tasks.
+The **task** element shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
 Use the following data fields to set and configure tasks:
 
@@ -406,7 +408,7 @@ A **baseline** is an element showing the **planned duration** of a task, while t
 Use the following data fields to add and configure baselines:
 
 * `baselineStart` to set start dates
-* `baselineEnd` to set end dates*
+* `baselineEnd` to set end dates
 * `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
 
 To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
