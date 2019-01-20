@@ -492,7 +492,7 @@ By default, the progress value of all tasks is 0%. If you do not set the progres
 
 To learn how to configure progress bars, see the [Elements: Progress Bars](Elements#progress_bars) section.
 
-In this sample, progress bars are added to all regular tasks and the parent one:
+In the following sample, progress values are added to all regular tasks except for the last one. The progress value of the parent task is calculated automatically.
 
 ```
 // create data
