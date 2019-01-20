@@ -657,10 +657,10 @@ chart.data(treeData);
 
 The code above sets the following dependencies:
 
-* Task 1 (predecessor) -> Task 2 (successor): `"finish-start"`
-* Task 2 (predecessor) -> Task 5 (successor): `"start-start"`
-* Task 3 (predecessor) -> Task 4 (successor): `"finish-finish"`
-* Task 4 (predecessor) -> Task 5 (successor): `"start-finish"`
+* Task 1 (predecessor) &#8594; Task 2 (successor): `"finish-start"`
+* Task 2 (predecessor) &#8594; Task 5 (successor): `"start-start"`
+* Task 3 (predecessor) &#8594; Task 4 (successor): `"finish-finish"`
+* Task 4 (predecessor) &#8594; Task 5 (successor): `"start-finish"`
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
