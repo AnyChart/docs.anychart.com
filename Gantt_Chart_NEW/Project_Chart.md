@@ -562,7 +562,7 @@ Use the following data fields:
 * `connector` (optional) to configure [individual connectors](Elements#individual_elements)
 
 To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**.
-Please note that a task can have several predecessor, but only one successor.
+Please note that a task can have several predecessors, but only one successor.
 
 The connector type is specified in the `connectorType` field. There are four types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
