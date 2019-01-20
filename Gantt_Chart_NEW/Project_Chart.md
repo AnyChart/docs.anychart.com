@@ -324,7 +324,7 @@ There are three types of tasks, each of them visualized in a different way:
 * parent tasks
 * milestones
 
-The difference between **basic tasks** and **regular tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a basic task can be a root, like in the sample below.
+The difference between **regular tasks** and **parent tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a regular task can be a root, like in the sample below.
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
 
