@@ -592,7 +592,7 @@ There are four connection types, which are listed in {api:anychart.enums.Connect
 
 To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
 
-In this sample, ...
+This sample shows all types of connections:
 
 ```
 // create data
