@@ -654,6 +654,13 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
+```
+Task 1 -> Task 2: "finish-start"
+Task 2 -> Task 5: "start-start"
+Task 3 -> Task 4: "finish-finish"
+Task 4 -> Task 5: "start-finish"
+```
+
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
 ### Milestones and Markers
