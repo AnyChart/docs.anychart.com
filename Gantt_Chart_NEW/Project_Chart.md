@@ -330,7 +330,7 @@ The difference between **regular tasks** and **parent tasks** lies in their rela
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
 
-To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) article. 
+To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) section. 
 
 The sample below demonstrates all types of tasks. Also, it shows that regular and parent tasks can occupy different places in the hierarchy: a parent task can be a child itself, and a regular task can be a root.
 
@@ -403,15 +403,13 @@ chart.data(treeData);
 
 ### Baselines (Planned)
 
-A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to regular and parent tasks.
-
-Use the following data fields:
+A **baseline** is an element showing the **planned duration** of a regular or parent [task](#tasks_\(actual\)). Use the following data fields:
 
 * `baselineStart` to set start dates
 * `baselineEnd` to set end dates
 * `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
 
-To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
+To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) section.
 
 In this sample, baselines are added to all regular tasks and the parent one:
 
@@ -481,21 +479,17 @@ chart.data(treeData);
 
 ### Progress Bars
 
-A **baseline** is an element showing the **planned duration** of a task, while the actual duration is represented by the [task](#tasks_\(actual\)) element. Baselines can be added to regular and parent tasks.
+A **progress bar** is an element showing the progress of a regular or parent [task](#tasks_\(actual\)). Use the following data fields:
 
-Use the following data fields:
+* `progressValue` to set the progress value
+* `progress` (optional) to configure [individual progress bars](Elements#individual_elements)
 
-* `baselineStart` to set start dates
-* `baselineEnd` to set end dates
-* `baseline` (optional) to configure [individual baselines](Elements#individual_elements)
+To learn how to configure progress bars, see the [Elements: Progress Bars](Elements#progress_bars) section.
 
-To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
+In this sample, progress bars are added to all regular tasks and the parent one:
 
-In this sample, baselines are added to all regular tasks and the parent one:
-
-* `progressValue`, `progress`
 * примечание: родитель автоматически вычисляет общий прогресс, но можно и задать вручную
-* [Elements: Progress Bars](Elements#progress_bars)
+* про лейблы и дефолты
 
 
 ```
