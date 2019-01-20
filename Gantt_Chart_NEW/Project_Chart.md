@@ -594,10 +594,10 @@ To learn how to configure connectors, see the [Elements: Connectors](Elements#co
 
 Please note that a task can have several predecessors, but only one successor. Also, a task can be at the same time a successor to one task or tasks and a predecessor to another. All these nuances are illustrated by the sample below, which visualizes the following dependencies between tasks:
 
-* Task 1 (predecessor) &#8594; Task 2 (successor): `"finish-start"`
-* Task 2 (predecessor) &#8594; Task 5 (successor): `"start-start"`
-* Task 3 (predecessor) &#8594; Task 4 (successor): `"finish-finish"`
-* Task 4 (predecessor) &#8594; Task 5 (successor): `"start-finish"`
+* Task 1 (predecessor) &#8594; Task 2 (successor) – `"finish-start"`
+* Task 2 (predecessor) &#8594; Task 5 (successor) – `"start-start"`
+* Task 3 (predecessor) &#8594; Task 4 (successor) – `"finish-finish"`
+* Task 4 (predecessor) &#8594; Task 5 (successor) – `"start-finish"`
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
