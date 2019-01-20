@@ -16,7 +16,7 @@
 
 ### Tasks (Actual)
 
-#### Basic Tasks
+#### Regular Tasks
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
 * `actual` + [Individual Elements](#individual_elements)

@@ -320,11 +320,11 @@ Use the following data fields to set tasks:
 
 There are three types of tasks, each of them visualized in a different way:
 
-* basic tasks
+* regular tasks
 * parent tasks
 * milestones
 
-The difference between **basic tasks** and **parent tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a basic task can be a root, like in the sample below.
+The difference between **basic tasks** and **regular tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a basic task can be a root, like in the sample below.
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
 
@@ -341,13 +341,13 @@ var data = [
     children: [
       {
         id: "1_1",
-        name: "Basic Task",
+        name: "Task",
         actualStart: "2018-01-25",
         actualEnd: "2018-02-08"
       },
       {
         id: "1_2",
-        name: "Basic Task",
+        name: "Task",
         actualStart: "2018-02-04",
         actualEnd: "2018-02-24"
       },
@@ -359,26 +359,26 @@ var data = [
       },
       {
         id: "1_4",
-        name: "Parent Task",
+        name: "Task",
         actualStart: "2018-02-25",
         actualEnd: "2018-03-14",
         children: [
           {
             id: "1_4_1",
-            name: "Basic Task",
+            name: "Task",
             actualStart: "2018-02-25",
             actualEnd: "2018-03-01"
           },
           {
             id: "1_4_2",
-            name: "Basic Task",
+            name: "Task",
             actualStart: "2018-03-02",
             actualEnd: "2018-03-14"
           }
       ]},
       {
         id: "2",
-        name: "Basic Task",
+        name: "Task",
         actualStart: "2018-02-25",
         actualEnd: "2018-04-28",
       }
