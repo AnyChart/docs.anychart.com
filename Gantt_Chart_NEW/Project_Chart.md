@@ -8,7 +8,6 @@
 * Project charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
  class.
 * The main [element](Elements) of a project chart is the [task](#tasks_\(actual\))...
-* (?) [Hierarchy](#hierarchy)
 
 ## Quick Start
 
@@ -91,10 +90,10 @@ The Project chart requires setting [tasks](#tasks_\(actual\)) by using the follo
 You can also use optional fields:
 
 * `children` / `parent` to set the [hierarchy](#hierarchy)
-* `actual` to add optional task settings
-* `baselineStart`, `baselineEnd`, and `baseline` to add and configure [baselines](#baselines_\(planned\))
-* `progressValue` and `progress` to add and configure [progress bars](#progress_bars)
-* `connectTo`, `connectorType`, and `connector` to add and configure [connectors](#connectors)
+* `baselineStart` and `baselineEnd` to set [baselines](#baselines_\(planned\))
+* `progressValue` to set [progress bars](#progress_bars)
+* `connectTo` and `connectorType`to set [connectors](#connectors)
+* `actual`, `baseline`, `progress`, and `connector` to configure [individual elements](Elements#individual_elements)
 * `markers` to add [markers](#milestones_and_markers)
 * `rowHeight` to set the [row height](Basic_Settings#header_and_row_height)
 * `collapsed` to [expand or collapse](Basic_Settings#navigation) a parent task
@@ -317,7 +316,7 @@ Use the following data fields to set tasks:
 * `actualStart` to set start dates
 * `actualEnd` to set end dates
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
-* `actual` (optional) to add optional [individual settings](Elements#individual_elements)
+* `actual` (optional) to configure [individual tasks](Elements#individual_elements)
 
 There are three types of tasks:
 
@@ -325,7 +324,7 @@ There are three types of tasks:
 * parent tasks
 * milestones
 
-The difference between **basic tasks** and **parent tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a basic task can be a root – see the sample below.
+The difference between **basic tasks** and **parent tasks** is their [hierarchical relationships](#hierarchy) with other elements: parent tasks have children, and basic ones do not. Please note that they can occupy different places in the hierarchy. A parent task can be a child itself, and a basic task can be a root, like in the sample below.
 
 **Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
 
