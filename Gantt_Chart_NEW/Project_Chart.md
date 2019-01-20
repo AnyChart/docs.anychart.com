@@ -557,6 +557,12 @@ chart.data(treeData);
 * `"start-start"`, `"start-finish"`, `"finish-start"`, `"finish-finish"`
 * {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}
 * [Elements: Connectors](Elements#connectors)
+* `"start-start"` – task A must begin before task B can begin
+* `"start-finish"` – task A must begin before task B can finish
+* `"finish-start"` – task A must finish before task B can begin
+* `"finish-finish"` – task A must finish before task B can finish
+
+
 
 
 ```
