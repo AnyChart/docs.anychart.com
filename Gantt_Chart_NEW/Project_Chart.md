@@ -413,6 +413,8 @@ Use the following data fields to add and configure baselines:
 
 To learn how to configure baselines, see the [Elements: Baselines](Elements#baselines_\(planned\)) article.
 
+In this sample, baselines are added to all regular tasks and the parent one:
+
 ```
 // create data
 var data = [
