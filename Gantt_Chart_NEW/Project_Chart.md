@@ -307,7 +307,7 @@ This section briefly explains how to add and configure the elements that are sho
 
 ### Tasks (Actual)
 
-The main element of the Project chart is the **task**. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)). Baselines and all other elements, such as [progress bars](#progress_bars), [connectors](#connectors), and [markers](#milestones_and_markersj), are added to tasks.
+The main element of the Project chart is the **task**. It shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)). Baselines and all other elements, such as [progress bars](#progress_bars), [connectors](#connectors), and [markers](Elements#markers), are added to tasks.
 
 Use the following data fields to set and configure tasks:
 
