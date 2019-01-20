@@ -324,7 +324,7 @@ There are three types of tasks, each of them visualized in a different way:
 * parent tasks
 * milestones
 
-The difference between **regular tasks** and **parent tasks** lies in their [hierarchical relationships](#hierarchy) with other tasks: parent tasks have children, and basic ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
+The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and basic ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
 Please note that regular and parent tasks can occupy different places in the hierarchy. A parent task can be a child itself, and a regular task can be a root, like in the sample below.
 
