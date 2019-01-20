@@ -19,34 +19,34 @@
 #### Regular Tasks
 
 * {api:anychart.core.gantt.elements.TasksElement}anychart.core.gantt.elements.TasksElement{api}
-* `actual` + [Individual Elements](#individual_elements)
+* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 
 #### Parent Tasks
 
 * {api:anychart.core.gantt.elements.GroupingTasksElement}anychart.core.gantt.elements.GroupingTasksElement{api}
-* `actual` + [Individual Elements](#individual_elements)
+* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 
 #### Milestones
 
 * {api:anychart.core.gantt.elements.MilestonesElement}anychart.core.gantt.elements.MilestonesElement{api}
-* `actual` + [Individual Elements](#individual_elements)
+* [Project Chart: Tasks](Project_Chart#tasks_\(actual\))
 * [Markers](#markers)
 
 ### Baselines (Planned)
 
 * {api:anychart.core.gantt.elements.BaselinesElement}anychart.core.gantt.elements.BaselinesElement{api}
-* `planned` + [Individual Elements](#individual_elements)
+* [Progress Chart: Baselines](Project_Chart#baselines)
 
 ### Progress Bars
 
 * {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * два метода progress() - [basic](#basic_tasks) and [parent](#parent_tasks) tasks
-* `progress` + [Individual Elements](#individual_elements)
+* [Progress Chart: Progress Bars](Project_Chart#progress_bars)
 
 ### Connectors
 
 * {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
-* `connector` + [Individual Elements](#individual_elements)
+* [Progress Chart: Connectors](Project_Chart#connectors)
 
 ## Resource Chart
 
@@ -55,7 +55,7 @@
 ### Periods
 
 * {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* ? + [Individual Elements](#individual_elements)
+* [Resource Chart: Periods](Project_Chart#periods)
 
 ## All Elements
 
@@ -64,7 +64,11 @@
 
 ## Individual Elements
 
-* список полей
+* `"actual"`
+* `"baseline"`
+* `"progress"`
+* `"connector"`
+* + объяснить, как настраивать отдельные ресурсы
 * 2 примера, на Project и Resource
 
 ## Markers
