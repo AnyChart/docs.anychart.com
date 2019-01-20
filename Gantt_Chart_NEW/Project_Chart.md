@@ -553,7 +553,7 @@ chart.data(treeData);
 
 ### Connectors
 
-A **connector** is an element showing the dependencies between all types of [tasks](#tasks_\(actual\)).
+A **connector** is an element showing the dependencies between all types of [tasks](#tasks_\(actual\)). 
 
 Use the following data fields:
 
@@ -561,9 +561,10 @@ Use the following data fields:
 * `connectorType` to set the connector type
 * `connector` (optional) to configure [individual connectors](Elements#individual_elements)
 
-To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**. In the `connectorType`, specify the type of connection.
+To add a connector, you should add these fields to a **predecessor task**. In the `connectTo` field, specify the `id` value of the **successor task**.
+Please note that a task can have several predecessor, but only one successor.
 
-There are four connection types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
+In the `connectorType`, specify the type of connector. There are four connector types, which are listed in {api:anychart.enums.ConnectorType}anychart.enums.ConnectorType{api}:
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -592,7 +593,7 @@ There are four connection types, which are listed in {api:anychart.enums.Connect
 
 To learn how to configure connectors, see the [Elements: Connectors](Elements#connectors) section.
 
-This sample shows all types of connections:
+This is how adding connectors of all four types looks like:
 
 ```
 // create data
@@ -654,12 +655,12 @@ var chart = anychart.ganttProject();
 chart.data(treeData);
 ```
 
-```
-Task 1 -> Task 2: "finish-start"
-Task 2 -> Task 5: "start-start"
-Task 3 -> Task 4: "finish-finish"
-Task 4 -> Task 5: "start-finish"
-```
+This code sets the following dependencies:
+
+* Task 1 (predecessor) -> Task 2 (successor): `"finish-start"`
+* Task 2 (predecessor) -> Task 5 (successor): `"start-start"`
+* Task 3 (predecessor) -> Task 4 (successor): `"finish-finish"`
+* Task 4 (predecessor) -> Task 5 (successor): `"start-finish"`
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
