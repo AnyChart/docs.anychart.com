@@ -663,7 +663,6 @@ The code above sets the following dependencies:
 * Task 3 (predecessor) &#8594; Task 4 (successor): `"finish-finish"`
 * Task 4 (predecessor) &#8594; Task 5 (successor): `"start-finish"`
 
-As you can see, Task 5 is a successor to two predecessors – Tasks 2 and 4. Also, tasks 2, 4, and 5 are successors to one tasks and predecessors to others.
 
 {sample :height 220}GANTT\_NEW\_Project\_Chart\_07{sample}
 
