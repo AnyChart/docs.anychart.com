@@ -309,7 +309,7 @@ The main element of the Project chart is the [task](#tasks_\(actual\)). Other el
 
 ### Tasks (Actual)
 
-The **task** element shows the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
+A **task** is an element showing the **actual duration** of a task, while the planned duration is represented by the [baseline](#baselines_\(planned\)).
 
 Use the following data fields to set and configure tasks:
 
