@@ -193,29 +193,29 @@ var data = [
     name: "Server 1",
     parent: "A",
     periods: [
-      {id: "1_1", start: "2018-01-02", end: "2018-01
-      {id: "1_2", start: "2018-01-28", end: "2018-02
-      {id: "1_3", start: "2018-03-03", end: "2018-03
+      {id: "1_1", start: "2018-01-02", end: "2018-01-25"},
+      {id: "1_2", start: "2018-01-28", end: "2018-02-22"},
+      {id: "1_3", start: "2018-03-03", end: "2018-03-17"}
   ]},
   {
     id: "2",
     name: "Server 2",
     parent: "A",
     periods: [
-      {id: "2_1", start: "2018-01-05", end: "2018-02
-      {id: "2_2", start: "2018-02-26", end: "2018-03
+      {id: "2_1", start: "2018-01-05", end: "2018-02-15"},
+      {id: "2_2", start: "2018-02-26", end: "2018-03-20"}
   ]},
   {
     id: "B",
     name: "Location B",
-   parent: null
+    parent: null
   },
   {
     id: "3",
     name: "Server 3",
     parent: "B",
     periods: [
-      {id: "3_1", start: "2018-01-04", end: "2018-03
+      {id: "3_1", start: "2018-01-04", end: "2018-03-25"}
   ]}
 ];
 
