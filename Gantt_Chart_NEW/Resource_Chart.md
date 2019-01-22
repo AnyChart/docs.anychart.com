@@ -116,7 +116,7 @@ You can as well skip the first step and pass your data directly to the {api:anyc
 
 ### Hierarchy
 
-You can specify the hierarchical relationships between the data items of Resource Gantt charts. There are two ways to set them, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
+You can specify the hierarchical relationships between the data items of a Resource Gantt chart. There are two ways to set them, depending on how you organize the data: [as a tree](#as_tree) or [as a table](#as_table).
 
 Please note that Resource charts can have multiple roots. Also, you can create data without specifying the hierarchy, like in the [Quick Start](#quick_start) section. In this case, technically, all items are roots.
 
