@@ -1,13 +1,11 @@
 {:index 4}
-# Project Chart
+# Project Gantt Chart
 
 ## Overview
 
-...
-
 * Project charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
  class.
-* The main [element](Elements) of a project chart is the [task](#tasks_\(actual\))...
+* The main [element](Elements) of the project chart is the [task](#tasks_\(actual\))...
 
 ## Quick Start
 
@@ -217,7 +215,7 @@ chart.data(treeData);
 
 #### As Table
 
-If you organize data **as a table**, each item should have the `parent` data field. Specify the `id` value of the parent as its value. The parent of a root item should be set to `null`.
+If you organize data **as a table**, each item should have the `parent` data field. Specify the `id` value of the parent as its value. The parent of a root item should be set to `null` or just not specified.
 
 This sample shows how to set data with two roots as a table:
 
@@ -328,7 +326,7 @@ There are three types of tasks, each of them visualized in a different way:
 
 The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and basic ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
-**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers).
+**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers), which can be shown on tasks or anywhere on the timeline depending on the dates you specify.
 
 To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) section. 
 
@@ -665,6 +663,6 @@ chart.data(treeData);
 
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) and [Elements: Milestones](Elements#milestones) sections to learn more. 
 
-There is also and alternative way to show events: you can add **markers**. For more information, see [Elements: Markers](Elements#markers).
+There is also and alternative way to show events: you can add **markers**. A marker can be shown on a task anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
 
 ## (?) Other Settings
