@@ -252,7 +252,7 @@ Any resource can include a **period** or periods, which are visualized as timeli
 * `start` to set start dates
 * `end` to set end dates
 
-To learn how to configure periods, see the [Elements: Tasks](Elements#periods) section. 
+To learn how to configure periods, see the [Elements: Periods](Elements#periods) section. 
 
 The sample below demonstrates how to set periods and resources and how they look like:
 
