@@ -324,9 +324,11 @@ There are three types of tasks, each of them visualized in a different way:
 * parent tasks
 * milestones
 
-The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and basic ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
+The difference between **regular tasks** and **parent tasks** lies in their relationships with other tasks: parent tasks have children, and regular ones do not. To set these relationships, use the  `children` or `parent` data field – read the [Hierarchy](#hierarchy) section to learn more.
 
-**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields. An alternative way to show events is adding [markers](Elements#markers), which can be shown on tasks or anywhere on the timeline depending on the dates you specify.
+**Milestones** are elements representing events. To add a milestone, you should create a task with zero duration: specify the same date in the `actualStart` and `actualEnd` fields.
+
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements#markers).
 
 To learn how to configure tasks, see the [Elements: Tasks](Elements#tasks_\(actual\)) section. 
 
@@ -663,6 +665,6 @@ chart.data(treeData);
 
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) and [Elements: Milestones](Elements#milestones) sections to learn more. 
 
-There is also and alternative way to show events: you can add **markers**. A marker can be shown on a task or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
+If you need to create multiple milestones in one row, use an alternative way to visualize events – add **markers**. Multiple markers can be shown in one row – on a task or anywhere on the timeline depending on the dates you specify. For more information, see [Elements: Markers](Elements#markers).
 
 ## (?) Other Settings

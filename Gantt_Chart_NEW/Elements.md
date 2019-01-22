@@ -59,7 +59,7 @@
 
 ## All Elements
 
-* {api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
+* {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}
 * 2 примера, на Project и Resource
 
 ## Individual Elements
@@ -73,6 +73,9 @@
 
 ## Markers
 
+* могут быть добавлены к заданию любого типа
 * 2 примера, на Project и Resource
+* показать: множественные маркеры; на элементе, вне элемента; в строке, где больше ничего нет
+* один общий параметр настроить методом {api:anychart.core.ui.Timeline#markers}markers(){api}
 * сослаться куда-то, где приведены все настройки
 * [Milestones](#milestones)

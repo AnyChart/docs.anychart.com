@@ -298,6 +298,6 @@ chart.data(treeData);
 
 ### Markers
 
-You can add **markers** to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
+You can add a **marker** or multiple markers to a resource. A marker can be shown on a period or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
 
 ## (?) Other Settings
