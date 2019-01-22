@@ -663,6 +663,6 @@ chart.data(treeData);
 
 To visualize an event, add a task with zero duration, or **milestone**. See the [Tasks (Actual)](#tasks_\(actual\)) and [Elements: Milestones](Elements#milestones) sections to learn more. 
 
-There is also and alternative way to show events: you can add **markers**. A marker can be shown on a task anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
+There is also and alternative way to show events: you can add **markers**. A marker can be shown on a task or anywhere on the timeline, depending on the date you specify. For more information, see [Elements: Markers](Elements#markers).
 
 ## (?) Other Settings
