@@ -239,7 +239,7 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 ### Periods and Resources
 
-**Resources** are logical elements. They have no direct representation on the timeline, but their names are shown on the [data grid](Data_Grid). Any resource can include a **period** or periods, which are visualized as [timeline](Timeline) elements.
+**Resources** are logical elements. They have no direct representation on the [timeline](Timeline), but their names are shown on the [data grid](Data_Grid). Any resource can include a **period** or periods, which are visualized as timeline elements.
 
 For resources, use the following data fields:
 
