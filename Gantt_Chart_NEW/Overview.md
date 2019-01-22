@@ -9,7 +9,7 @@
 
 ? :
 
-* project and resource charts – {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
+* project and resource charts – {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
 
 Data grid:
 
@@ -34,4 +34,4 @@ Timeline elements:
 * progress bars – {api:anychart.core.gantt.elements.ProgressElement}anychart.core.gantt.elements.ProgressElement{api}
 * connectors – {api:anychart.core.gantt.elements.ConnectorElement}anychart.core.gantt.elements.ConnectorElement{api}
 * periods – {api:anychart.core.gantt.elements.PeriodsElement}anychart.core.gantt.elements.PeriodsElement{api}
-* all elements – {api:anychart.core.gantt.elements.TimelineElement}api:anychart.core.gantt.elements.TimelineElement{api}
+* all elements – {api:anychart.core.gantt.elements.TimelineElement}anychart.core.gantt.elements.TimelineElement{api}

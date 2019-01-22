@@ -3,7 +3,7 @@
 
 ## Overview
 
-* Project charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
+* Project charts are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
  class.
 * The main [element](Elements) of the project chart is the [task](#tasks_\(actual\))...
 

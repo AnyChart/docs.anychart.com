@@ -3,7 +3,7 @@
 
 ## Overview
 
-* Resource charts are defined as instances of the {api:anychart.charts.Gantt}api:anychart.charts.Gantt{api}
+* Resource charts are defined as instances of the {api:anychart.charts.Gantt}anychart.charts.Gantt{api}
  class.
 * The main [elements](Elements) of the resource chart are the [periods and resources](#periods_and_resources)...
 
