@@ -88,7 +88,7 @@ You can as well skip the first step and pass your data to the **data()** method 
 
 ### As Tree
 
-This sample shows how to set data if it data is organized **as a tree**:
+If you organize data **as a tree**, each parent item should have a `children` data field where an array of child items is specified.
 
 ```
 // create data
@@ -122,7 +122,7 @@ var chart = anychart.treeMap(treeData);
 
 ### As Table
 
-In the following sample data is organized **as a table**:
+If you organize data **as a table**, in the `parent` field of each item, you should specify the `id` value of its parent. The parent of a root item should be set to `null` or just not specified.
 
 ```
 // create data
