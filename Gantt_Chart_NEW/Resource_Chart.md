@@ -239,7 +239,7 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 ### Periods and Resources
 
-A **resource** is the main logical element of the Resource chart. Resources have no direct representation on the timeline, but their names are shown on the [Data Grid](#data_grid). They are set by using the following data fields:
+A **resource** a logical element. Resources have no direct representation on the timeline, but their names are shown on the [Data Grid](#data_grid). They are set by using the following data fields:
 
 * `"name"` to set names
 * `"id"` to set unique identifiers
