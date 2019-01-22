@@ -239,7 +239,7 @@ The main timeline element of the Resource chart is the period, but logically, pe
 
 ### Periods and Resources
 
-A **resource** a logical element. Resources have no direct representation on the timeline, but their names are shown on the [data grid](Data_Grid).
+**Resources** are logical elements. They have no direct representation on the timeline, but their names are shown on the [data grid](Data_Grid).
 
 Use the following data fields:
 
@@ -247,7 +247,9 @@ Use the following data fields:
 * `"id"` to set unique identifiers
 * `children` / `parent` (optional) to set the [hierarchy](#hierarchy)
 
-Any resource can include a **period** or periods, which are visualized as timeline elements and set by using these fields:
+Any resource can include a **period** or periods, which are visualized as timeline elements
+
+Use these fields:
 
 * `periods` to add an array of periods
 * `id` to set unique identifiers
